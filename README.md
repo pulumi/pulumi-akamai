@@ -12,13 +12,13 @@ Modify this README to describe:
 
 ## Creating a Pulumi Terraform Bridge Provider
 
-First, clone this repo with the name of the desired provider in place of `xyz`:
+First, clone this repo with the name of the desired provider in place of `akamai`:
 
 ```
-git clone https://github.com/pulumi/pulumi-tf-provider-boilerplate pulumi-xyz
+git clone https://github.com/pulumi/pulumi-tf-provider-boilerplate pulumi-akamai
 ```
 
-Second, replace references to `xyz` with the name of your provider:
+Second, replace references to `akamai` with the name of your provider:
 
 ```
 make prepare NAME=foo REPOSITORY=github.com/pulumi/pulumi-foo
@@ -39,7 +39,7 @@ In the root of the repository, run:
 
 - `go get github.com/pulumi/scripts/gomod-doccopy` (Note: do not set `GO111MODULE=on` here)
 - `GO111MODULE=on go get github.com/pulumi/pulumi-terraform@master`
-- `GO111MODULE=on go get github.com/terraform-providers/terraform-provider-xyz` (where `xyz` is the name of the provider)
+- `GO111MODULE=on go get github.com/terraform-providers/terraform-provider-akamai` (where `akamai` is the name of the provider)
 - `GO111MODULE=on go mod vendor`
 - `make ensure`
 
@@ -73,14 +73,14 @@ To use from Python, install using `pip`:
 
 To use from Go, use `go get` to grab the latest version of the library
 
-    $ go get github.com/pulumi/pulumi-xyz/sdk/go/...
+    $ go get github.com/pulumi/pulumi-akamai/sdk/go/...
 
 ## Configuration
 
-The following configuration points are available for the `xyz` provider:
+The following configuration points are available for the `akamai` provider:
 
-- `xyz:apiKey` (environment: `XYZ_API_KEY`) - the API key for `xyz`
-- `xyz:region` (environment: `XYZ_REGION`) - the region in which to deploy resources
+- `akamai:apiKey` (environment: `XYZ_API_KEY`) - the API key for `akamai`
+- `akamai:region` (environment: `XYZ_REGION`) - the region in which to deploy resources
 
 ## Reference
 
