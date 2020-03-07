@@ -30,7 +30,10 @@ const (
 	// packages:
 	mainPkg = "akamai"
 	// modules:
-	mainMod = "index" // the y module
+	mainMod              = "index"
+	edgeDNSMod           = "EdgeDNS"
+	propertiesMod        = "Properties"
+	trafficManagementMod = "TrafficManagement"
 )
 
 // makeMember manufactures a type token for the package and the given module and type.
@@ -101,32 +104,45 @@ func Provider() tfbridge.ProviderInfo {
 		Config:      map[string]*tfbridge.SchemaInfo{
 			// Add any required configuration here, or remove the example below if
 			// no additional points are required.
-			// "region": {
-			// 	Type: makeType("region", "Region"),
-			// 	Default: &tfbridge.DefaultInfo{
-			// 		EnvVars: []string{"AWS_REGION", "AWS_DEFAULT_REGION"},
-			// 	},
-			// },
 		},
 		PreConfigureCallback: preConfigureCallback,
-		Resources:            map[string]*tfbridge.ResourceInfo{
-			// Map each resource in the Terraform provider to a Pulumi type. Two examples
-			// are below - the single line form is the common case. The multi-line form is
-			// needed only if you wish to override types or other default options.
-			//
-			// "aws_iam_role": {Tok: makeResource(mainMod, "IamRole")}
-			//
-			// "aws_acm_certificate": {
-			// 	Tok: makeResource(mainMod, "Certificate"),
-			// 	Fields: map[string]*tfbridge.SchemaInfo{
-			// 		"tags": {Type: makeType(mainPkg, "Tags")},
-			// 	},
-			// },
+		Resources: map[string]*tfbridge.ResourceInfo{
+			// Edge DNS
+			"akamai_dns_record": {Tok: makeResource(edgeDNSMod, "DnsRecord")},
+			"akamai_dns_zone":   {Tok: makeResource(edgeDNSMod, "DnsZone")},
+
+			// Properties
+			"akamai_cp_code":             {Tok: makeResource(propertiesMod, "CpCode")},
+			"akamai_edge_hostname":       {Tok: makeResource(propertiesMod, "EdgeHostName")},
+			"akamai_property":            {Tok: makeResource(propertiesMod, "Property")},
+			"akamai_property_activation": {Tok: makeResource(propertiesMod, "PropertyActivation")},
+			"akamai_property_rules":      {Tok: makeResource(propertiesMod, "PropertyRules")},
+			"akamai_property_variables":  {Tok: makeResource(propertiesMod, "PropertyVariables")},
+
+			// Traffic Management
+			"akamai_gtm_domain":     {Tok: makeResource(trafficManagementMod, "GtmDomain")},
+			"akamai_gtm_datacenter": {Tok: makeResource(trafficManagementMod, "GtmDatacenter")},
+			"akamai_gtm_property":   {Tok: makeResource(trafficManagementMod, "GtmProperty")},
+			"akamai_gtm_resource":   {Tok: makeResource(trafficManagementMod, "GtmResource")},
+			"akamai_gtm_cidrmap":    {Tok: makeResource(trafficManagementMod, "GtmCidrmap")},
+			"akamai_gtm_asmap":      {Tok: makeResource(trafficManagementMod, "GtmASmap")},
+			"akamai_gtm_geomap":     {Tok: makeResource(trafficManagementMod, "GtmGeomap")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
-			// Map each resource in the Terraform provider to a Pulumi function. An example
-			// is below.
-			// "aws_ami": {Tok: makeDataSource(mainMod, "getAmi")},
+			"akamai_contract": {Tok: makeDataSource(mainMod, "getContract")},
+			"akamai_group":    {Tok: makeDataSource(mainMod, "getGroup")},
+
+			// Edge DNS
+			"akamai_authorities_set": {Tok: makeDataSource(edgeDNSMod, "getAuthoritiesSet")},
+			"akamai_dns_record_set":  {Tok: makeDataSource(edgeDNSMod, "getDnsRecordSet")},
+
+			// Properties
+			"akamai_cp_code":        {Tok: makeDataSource(propertiesMod, "getCpCode")},
+			"akamai_property":       {Tok: makeDataSource(propertiesMod, "getProperty")},
+			"akamai_property_rules": {Tok: makeDataSource(propertiesMod, "getPropertyRules")},
+
+			// Traffic Management
+			"akamai_gtm_default_datacenter": {Tok: makeDataSource(trafficManagementMod, "getGtmDefaultDatacenter")},
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
 			// List any npm dependencies and their versions
@@ -137,10 +153,6 @@ func Provider() tfbridge.ProviderInfo {
 				"@types/node": "^8.0.25", // so we can access strongly typed node definitions.
 				"@types/mime": "^2.0.0",
 			},
-			// See the documentation for tfbridge.OverlayInfo for how to lay out this
-			// section, or refer to the AWS provider. Delete this section if there are
-			// no overlay files.
-			//Overlay: &tfbridge.OverlayInfo{},
 		},
 		Python: &tfbridge.PythonInfo{
 			// List any Python dependencies and their version ranges
