@@ -1,4 +1,4 @@
-PROJECT_NAME := akamai Package
+PROJECT_NAME := Akamai Package
 include build/common.mk
 
 PACK             := akamai
@@ -16,9 +16,9 @@ DOTNET_PREFIX  := $(firstword $(subst -, ,${VERSION:v%=%})) # e.g. 1.5.0
 DOTNET_SUFFIX  := $(word 2,$(subst -, ,${VERSION:v%=%}))    # e.g. alpha.1
 
 ifeq ($(strip ${DOTNET_SUFFIX}),)
-	DOTNET_VERSION := $(strip ${DOTNET_PREFIX})-preview
+	DOTNET_VERSION := $(strip ${DOTNET_PREFIX})
 else
-	DOTNET_VERSION := $(strip ${DOTNET_PREFIX})-preview-$(strip ${DOTNET_SUFFIX})
+	DOTNET_VERSION := $(strip ${DOTNET_PREFIX})-$(strip ${DOTNET_SUFFIX})
 endif
 
 TESTPARALLELISM := 4
@@ -26,31 +26,12 @@ TESTPARALLELISM := 4
 OS := $(shell uname)
 EMPTY_TO_AVOID_SED := ""
 
-prepare::
-	@if test -z "${NAME}"; then echo "NAME not set"; exit 1; fi
-	@if test -z "${REPOSITORY}"; then echo "REPOSITORY not set"; exit 1; fi
-	@if test ! -d "cmd/pulumi-tfgen-x${EMPTY_TO_AVOID_SED}yz"; then "Project already prepared"; exit 1; fi
-
-	mv "cmd/pulumi-tfgen-x${EMPTY_TO_AVOID_SED}yz" cmd/pulumi-tfgen-${NAME}
-	mv "cmd/pulumi-resource-x${EMPTY_TO_AVOID_SED}yz" cmd/pulumi-resource-${NAME}
-
-	if [[ "${OS}" != "Darwin" ]]; then \
-		sed -i 's,github.com/pulumi/pulumi-akamai,${REPOSITORY},g' go.mod; \
-		find ./ ! -path './.git/*' -type f -exec sed -i 's/[x]yz/${NAME}/g' {} \; &> /dev/null; \
-	fi
-
-	# In MacOS the -i parameter needs an empty string to execute in place.
-	if [[ "${OS}" == "Darwin" ]]; then \
-		sed -i '' 's,github.com/pulumi/pulumi-akamai,${REPOSITORY},g' go.mod; \
-		find ./ ! -path './.git/*' -type f -exec sed -i '' 's/[x]yz/${NAME}/g' {} \; &> /dev/null; \
-	fi
-
 # NOTE: Since the plugin is published using the nodejs style semver version
 # We set the PLUGIN_VERSION to be the same as the version we use when building
 # the provider (e.g. x.y.z-dev-... instead of x.y.zdev...)
-build:: tfgen provider
-	for LANGUAGE in "nodejs" "python" "go" "dotnet" ; do \
-		$(TFGEN) $$LANGUAGE --overlays overlays/$$LANGUAGE/ --out ${PACKDIR}/$$LANGUAGE/ || exit 3 ; \
+build:: tfgen provider install_plugins
+	cd provider && for LANGUAGE in "nodejs" "python" "go" "dotnet" ; do \
+		$(TFGEN) $$LANGUAGE --overlays overlays/$$LANGUAGE/ --out ../${PACKDIR}/$$LANGUAGE/ || exit 3 ; \
 	done
 	cd ${PACKDIR}/nodejs/ && \
 		yarn install && \
@@ -69,17 +50,23 @@ build:: tfgen provider
 		dotnet build /p:Version=${DOTNET_VERSION}
 
 tfgen::
-	go install -ldflags "-X github.com/pulumi/pulumi-${PACK}/pkg/version.Version=${VERSION}" ${PROJECT}/cmd/${TFGEN}
+	cd provider && go install -ldflags "-X github.com/pulumi/pulumi-${PACK}/provider/v2/pkg/version.Version=${VERSION}" ${PROJECT}/provider/v2/cmd/${TFGEN}
 
-provider::
-	go install -ldflags "-X github.com/pulumi/pulumi-${PACK}/pkg/version.Version=${VERSION}" ${PROJECT}/cmd/${PROVIDER}
+generate_schema:: tfgen
+	$(TFGEN) schema --out ./provider/cmd/${PROVIDER}
+
+provider:: generate_schema
+	cd provider && go generate cmd/${PROVIDER}/main.go
+	cd provider && go install -ldflags "-X github.com/pulumi/pulumi-${PACK}/provider/v2/pkg/version.Version=${VERSION}" ${PROJECT}/provider/v2/cmd/${PROVIDER}
+
+install_plugins::
+	[ -x $(shell which pulumi) ] || curl -fsSL https://get.pulumi.com | sh
+	pulumi plugin install resource aws 1.10.0
 
 lint::
-	golangci-lint run
+	#golangci-lint run
 
-install::
-	GOBIN=$(PULUMI_BIN) go install -ldflags "-X github.com/pulumi/pulumi-${PACK}/pkg/version.Version=${VERSION}" ${PROJECT}/cmd/${PROVIDER}
-	[ ! -e "$(PULUMI_NODE_MODULES)/$(NODE_MODULE_NAME)" ] || rm -rf "$(PULUMI_NODE_MODULES)/$(NODE_MODULE_NAME)"
+install:: tfgen provider
 	mkdir -p "$(PULUMI_NODE_MODULES)/$(NODE_MODULE_NAME)"
 	cp -r ${PACKDIR}/nodejs/bin/. "$(PULUMI_NODE_MODULES)/$(NODE_MODULE_NAME)"
 	rm -rf "$(PULUMI_NODE_MODULES)/$(NODE_MODULE_NAME)/node_modules"
@@ -88,9 +75,15 @@ install::
 		(yarn unlink > /dev/null 2>&1 || true) && \
 		yarn link
 	cd ${PACKDIR}/python/bin && $(PIP) install --user -e .
+	echo "Copying NuGet packages to ${PULUMI_NUGET}"
+	[ ! -e "$(PULUMI_NUGET)" ] || rm -rf "$(PULUMI_NUGET)/*"
+	find . -name '*.nupkg' -exec cp -p {} ${PULUMI_NUGET} \;
+
+test_fast::
+	cd examples && $(GO_TEST_FAST) .
 
 test_all::
-	PATH=$(PULUMI_BIN):$(PATH) go test -v -count=1 -cover -timeout 1h -parallel ${TESTPARALLELISM} ./examples
+	cd examples && $(GO_TEST) .
 
 .PHONY: publish_tgz
 publish_tgz:
@@ -101,6 +94,7 @@ publish_tgz:
 publish_packages:
 	$(call STEP_MESSAGE)
 	$$(go env GOPATH)/src/github.com/pulumi/scripts/ci/publish-tfgen-package .
+	$$(go env GOPATH)/src/github.com/pulumi/scripts/ci/build-package-docs.sh ${PACK}
 
 .PHONY: check_clean_worktree
 check_clean_worktree:

@@ -15,13 +15,13 @@
 package main
 
 import (
-	"github.com/pulumi/pulumi-terraform-bridge/pkg/tfbridge"
+	"github.com/pulumi/pulumi-terraform-bridge/v2/pkg/tfgen"
 
-	akamai "github.com/pulumi/pulumi-akamai"
-	"github.com/pulumi/pulumi-akamai/pkg/version"
+	akamai "github.com/pulumi/pulumi-akamai/provider/v2"
+	"github.com/pulumi/pulumi-akamai/provider/v2/pkg/version"
 )
 
 func main() {
 	// Modify the path to point to the new provider
-	tfbridge.Main("akamai", version.Version, akamai.Provider())
+	tfgen.Main("akamai", version.Version, akamai.Provider())
 }
