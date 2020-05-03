@@ -36,24 +36,24 @@ func TestExamples(t *testing.T) {
 	// 	return
 	// }
 
-	test := getJSBaseOptions(t).
-		With(integration.ProgramTestOptions{
-			// List each test
-			// baseJS.With(integration.ProgramTestOptions{
-			// 	Dir: path.Join(cwd, "api"),
-			// 	ExtraRuntimeValidation: validateAPITest(func(body string) {
-			// 		assert.Equal(t, "Hello, world!", body)
-			// 	}),
-			// 	EditDirs: []integration.EditDir{{
-			// 		Dir:      "./api/step2",
-			// 		Additive: true,
-			// 		ExtraRuntimeValidation: validateAPITest(func(body string) {
-			// 			assert.Equal(t, "<h1>Hello world!</h1>", body)
-			// 		}),
-			// 	}},
-			// 	ExpectRefreshChanges: true,
-			// }),
-		})
+	//test := getJSBaseOptions(t).
+	//	With(integration.ProgramTestOptions{
+	// List each test
+	// baseJS.With(integration.ProgramTestOptions{
+	// 	Dir: path.Join(cwd, "api"),
+	// 	ExtraRuntimeValidation: validateAPITest(func(body string) {
+	// 		assert.Equal(t, "Hello, world!", body)
+	// 	}),
+	// 	EditDirs: []integration.EditDir{{
+	// 		Dir:      "./api/step2",
+	// 		Additive: true,
+	// 		ExtraRuntimeValidation: validateAPITest(func(body string) {
+	// 			assert.Equal(t, "<h1>Hello world!</h1>", body)
+	// 		}),
+	// 	}},
+	// 	ExpectRefreshChanges: true,
+	// }),
+	//})
 
-	integration.ProgramTest(t, &test)
+	//integration.ProgramTest(t, &test)
 }

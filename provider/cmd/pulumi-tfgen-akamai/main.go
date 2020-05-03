@@ -15,10 +15,9 @@
 package main
 
 import (
+	akamai "github.com/pulumi/pulumi-akamai/provider"
+	"github.com/pulumi/pulumi-akamai/provider/pkg/version"
 	"github.com/pulumi/pulumi-terraform-bridge/v2/pkg/tfgen"
-
-	akamai "github.com/pulumi/pulumi-akamai/provider/v2"
-	"github.com/pulumi/pulumi-akamai/provider/v2/pkg/version"
 )
 
 func main() {
