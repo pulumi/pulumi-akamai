@@ -11,6 +11,31 @@ namespace Pulumi.Akamai.TrafficManagement
 {
     /// <summary>
     /// `akamai.TrafficManagement.GtmGeomap` provides the resource for creating, configuring and importing a gtm Geographic map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_map_name`
+    /// 
+    /// ## Example Usage
+    /// ### Basic usage:
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var demoGeomap = new Akamai.TrafficManagement.GtmGeomap("demoGeomap", new Akamai.TrafficManagement.GtmGeomapArgs
+    ///         {
+    ///             DefaultDatacenter = new Akamai.TrafficManagement.Inputs.GtmGeomapDefaultDatacenterArgs
+    ///             {
+    ///                 DatacenterId = 5400,
+    ///                 Nickname = "All Others",
+    ///             },
+    ///             Domain = "demo_domain.akadns.net",
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
     /// </summary>
     public partial class GtmGeomap : Pulumi.CustomResource
     {
@@ -26,7 +51,7 @@ namespace Pulumi.Akamai.TrafficManagement
         public Output<Outputs.GtmGeomapDefaultDatacenter> DefaultDatacenter { get; private set; } = null!;
 
         /// <summary>
-        /// — Domain name 
+        /// — Domain name
         /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
@@ -110,7 +135,7 @@ namespace Pulumi.Akamai.TrafficManagement
         public Input<Inputs.GtmGeomapDefaultDatacenterArgs> DefaultDatacenter { get; set; } = null!;
 
         /// <summary>
-        /// — Domain name 
+        /// — Domain name
         /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
@@ -155,7 +180,7 @@ namespace Pulumi.Akamai.TrafficManagement
         public Input<Inputs.GtmGeomapDefaultDatacenterGetArgs>? DefaultDatacenter { get; set; }
 
         /// <summary>
-        /// — Domain name 
+        /// — Domain name
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }

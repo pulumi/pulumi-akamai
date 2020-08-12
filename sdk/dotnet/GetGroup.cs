@@ -12,9 +12,10 @@ namespace Pulumi.Akamai
     public static class GetGroup
     {
         /// <summary>
-        /// Use `akamai..getGroup` data source to retrieve a group id.
+        /// Use `akamai.getGroup` data source to retrieve a group id.
         /// 
         /// {{% examples %}}
+        /// ## Example Usage
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetGroupResult> InvokeAsync(GetGroupArgs? args = null, InvokeOptions? options = null)

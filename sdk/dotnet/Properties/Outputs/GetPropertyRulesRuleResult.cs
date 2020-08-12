@@ -14,16 +14,16 @@ namespace Pulumi.Akamai.Properties.Outputs
     public sealed class GetPropertyRulesRuleResult
     {
         /// <summary>
-        /// — (Optional) One or more behaviors to apply to requests that match.
+        /// — (Optional) One or more behaviors to apply to requests that match.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPropertyRulesRuleBehaviorResult> Behaviors;
         public readonly string? CriteriaMatch;
         /// <summary>
-        /// — (Optional) Whether the property is a secure (Enhanced TLS) property or not (top-level only).
+        /// — (Optional) Whether the property is a secure (Enhanced TLS) property or not (top-level only).
         /// </summary>
         public readonly bool? IsSecure;
         /// <summary>
-        /// — (Optional) Child rules (may be nested five levels deep).
+        /// — (Optional) Child rules (may be nested five levels deep).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPropertyRulesRuleRuleResult> Rules;
         public readonly ImmutableArray<Outputs.GetPropertyRulesRuleVariableResult> Variables;

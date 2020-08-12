@@ -7,7 +7,8 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Union
-from . import utilities, tables
+from . import _utilities, _tables
+
 
 class Provider(pulumi.ProviderResource):
     def __init__(__self__, resource_name, opts=None, dns=None, dns_section=None, edgerc=None, gtm_section=None, gtms=None, papi_section=None, properties=None, property_section=None, __props__=None, __name__=None, __opts__=None):
@@ -22,27 +23,27 @@ class Provider(pulumi.ProviderResource):
 
         The **dns** object supports the following:
 
-          * `accessToken` (`pulumi.Input[str]`)
-          * `clientSecret` (`pulumi.Input[str]`)
-          * `clientToken` (`pulumi.Input[str]`)
+          * `access_token` (`pulumi.Input[str]`)
+          * `client_secret` (`pulumi.Input[str]`)
+          * `client_token` (`pulumi.Input[str]`)
           * `host` (`pulumi.Input[str]`)
-          * `maxBody` (`pulumi.Input[float]`)
+          * `max_body` (`pulumi.Input[float]`)
 
         The **gtms** object supports the following:
 
-          * `accessToken` (`pulumi.Input[str]`)
-          * `clientSecret` (`pulumi.Input[str]`)
-          * `clientToken` (`pulumi.Input[str]`)
+          * `access_token` (`pulumi.Input[str]`)
+          * `client_secret` (`pulumi.Input[str]`)
+          * `client_token` (`pulumi.Input[str]`)
           * `host` (`pulumi.Input[str]`)
-          * `maxBody` (`pulumi.Input[float]`)
+          * `max_body` (`pulumi.Input[float]`)
 
         The **properties** object supports the following:
 
-          * `accessToken` (`pulumi.Input[str]`)
-          * `clientSecret` (`pulumi.Input[str]`)
-          * `clientToken` (`pulumi.Input[str]`)
+          * `access_token` (`pulumi.Input[str]`)
+          * `client_secret` (`pulumi.Input[str]`)
+          * `client_token` (`pulumi.Input[str]`)
           * `host` (`pulumi.Input[str]`)
-          * `maxBody` (`pulumi.Input[float]`)
+          * `max_body` (`pulumi.Input[float]`)
         """
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
@@ -55,7 +56,7 @@ class Provider(pulumi.ProviderResource):
         if not isinstance(opts, pulumi.ResourceOptions):
             raise TypeError('Expected resource options to be a ResourceOptions instance')
         if opts.version is None:
-            opts.version = utilities.get_version()
+            opts.version = _utilities.get_version()
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
@@ -76,8 +77,7 @@ class Provider(pulumi.ProviderResource):
             opts)
 
     def translate_output_property(self, prop):
-        return tables._CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
     def translate_input_property(self, prop):
-        return tables._SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
-
+        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop

@@ -12,9 +12,10 @@ namespace Pulumi.Akamai
     public static class GetContract
     {
         /// <summary>
-        /// Use `akamai..getContract` data source to retrieve a group id.
+        /// Use `akamai.getContract` data source to retrieve a group id.
         /// 
         /// {{% examples %}}
+        /// ## Example Usage
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetContractResult> InvokeAsync(GetContractArgs? args = null, InvokeOptions? options = null)

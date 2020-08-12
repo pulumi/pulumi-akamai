@@ -14,21 +14,21 @@ namespace Pulumi.Akamai.Properties.Outputs
     public sealed class GetPropertyRulesRuleRuleResult
     {
         /// <summary>
-        /// — (Optional) One or more behaviors to apply to requests that match.
+        /// — (Optional) One or more behaviors to apply to requests that match.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPropertyRulesRuleRuleBehaviorResult> Behaviors;
         public readonly string? Comment;
         public readonly string? CriteriaMatch;
         /// <summary>
-        /// — (Optional) One or more criteria to match requests on.
+        /// — (Optional) One or more criteria to match requests on.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPropertyRulesRuleRuleCriteriaResult> Criterias;
         /// <summary>
-        /// — (Required) The name of the behavior.
+        /// — (Required) The name of the behavior.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// — (Optional) Child rules (may be nested five levels deep).
+        /// — (Optional) Child rules (may be nested five levels deep).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPropertyRulesRuleRuleRuleResult> Rules;
 

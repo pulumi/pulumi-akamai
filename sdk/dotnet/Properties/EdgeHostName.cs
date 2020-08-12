@@ -10,20 +10,43 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Properties
 {
     /// <summary>
-    /// The `akamai.Properties.EdgeHostName` provides the resource for configuring a secure edge hostname that determines how requests for your site, app, or content are mapped to Akamai edge servers. 
+    /// The `akamai.Properties.EdgeHostName` provides the resource for configuring a secure edge hostname that determines how requests for your site, app, or content are mapped to Akamai edge servers.
     /// 
     /// An edge hostname is the CNAME target you use when directing your end user traffic to Akamai. In a typical DNS CNAME, your www.customer.com hostname corresponds to an edge hostname of www.customer.com.edgesuite.net.
+    /// 
+    /// ## Example Usage
+    /// ### Basic usage:
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var terraform_demo = new Akamai.Properties.EdgeHostName("terraform-demo", new Akamai.Properties.EdgeHostNameArgs
+    ///         {
+    ///             Contract = "ctr_####",
+    ///             EdgeHostname = "www.example.org.edgesuite.net",
+    ///             Group = "grp_####",
+    ///             Product = "prd_####",
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
     /// </summary>
     public partial class EdgeHostName : Pulumi.CustomResource
     {
         /// <summary>
-        /// — (Optional) The certificate enrollment ID.  
+        /// — (Optional) The certificate enrollment ID.
         /// </summary>
         [Output("certificate")]
         public Output<int?> Certificate { get; private set; } = null!;
 
         /// <summary>
-        /// — (Required) The contract ID.  
+        /// — (Required) The contract ID.
         /// </summary>
         [Output("contract")]
         public Output<string> Contract { get; private set; } = null!;
@@ -35,7 +58,7 @@ namespace Pulumi.Akamai.Properties
         public Output<string> EdgeHostname { get; private set; } = null!;
 
         /// <summary>
-        /// — (Required) The group ID.  
+        /// — (Required) The group ID.
         /// </summary>
         [Output("group")]
         public Output<string> Group { get; private set; } = null!;
@@ -56,7 +79,7 @@ namespace Pulumi.Akamai.Properties
         public Output<bool?> Ipv6 { get; private set; } = null!;
 
         /// <summary>
-        /// — (Required) The product ID.  
+        /// — (Required) The product ID.
         /// </summary>
         [Output("product")]
         public Output<string> Product { get; private set; } = null!;
@@ -108,13 +131,13 @@ namespace Pulumi.Akamai.Properties
     public sealed class EdgeHostNameArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// — (Optional) The certificate enrollment ID.  
+        /// — (Optional) The certificate enrollment ID.
         /// </summary>
         [Input("certificate")]
         public Input<int>? Certificate { get; set; }
 
         /// <summary>
-        /// — (Required) The contract ID.  
+        /// — (Required) The contract ID.
         /// </summary>
         [Input("contract", required: true)]
         public Input<string> Contract { get; set; } = null!;
@@ -126,7 +149,7 @@ namespace Pulumi.Akamai.Properties
         public Input<string> EdgeHostname { get; set; } = null!;
 
         /// <summary>
-        /// — (Required) The group ID.  
+        /// — (Required) The group ID.
         /// </summary>
         [Input("group", required: true)]
         public Input<string> Group { get; set; } = null!;
@@ -144,7 +167,7 @@ namespace Pulumi.Akamai.Properties
         public Input<bool>? Ipv6 { get; set; }
 
         /// <summary>
-        /// — (Required) The product ID.  
+        /// — (Required) The product ID.
         /// </summary>
         [Input("product", required: true)]
         public Input<string> Product { get; set; } = null!;
@@ -157,13 +180,13 @@ namespace Pulumi.Akamai.Properties
     public sealed class EdgeHostNameState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// — (Optional) The certificate enrollment ID.  
+        /// — (Optional) The certificate enrollment ID.
         /// </summary>
         [Input("certificate")]
         public Input<int>? Certificate { get; set; }
 
         /// <summary>
-        /// — (Required) The contract ID.  
+        /// — (Required) The contract ID.
         /// </summary>
         [Input("contract")]
         public Input<string>? Contract { get; set; }
@@ -175,7 +198,7 @@ namespace Pulumi.Akamai.Properties
         public Input<string>? EdgeHostname { get; set; }
 
         /// <summary>
-        /// — (Required) The group ID.  
+        /// — (Required) The group ID.
         /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
@@ -196,7 +219,7 @@ namespace Pulumi.Akamai.Properties
         public Input<bool>? Ipv6 { get; set; }
 
         /// <summary>
-        /// — (Required) The product ID.  
+        /// — (Required) The product ID.
         /// </summary>
         [Input("product")]
         public Input<string>? Product { get; set; }

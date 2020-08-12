@@ -14,7 +14,7 @@ namespace Pulumi.Akamai.Properties.Outputs
     public sealed class GetPropertyRulesRuleRuleRuleRuleBehaviorResult
     {
         /// <summary>
-        /// — (Required) The name of the behavior.
+        /// — (Required) The name of the behavior.
         /// </summary>
         public readonly string Name;
         /// <summary>

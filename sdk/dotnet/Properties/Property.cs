@@ -11,12 +11,48 @@ namespace Pulumi.Akamai.Properties
 {
     /// <summary>
     /// The `akamai.Properties.Property` resource represents an Akamai property configuration, allowing you to create,
-    /// update, and activate properties on the Akamai platform. 
+    /// update, and activate properties on the Akamai platform.
+    /// 
+    /// ## Example Usage
+    /// ### Basic usage:
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var example = new Akamai.Properties.Property("example", new Akamai.Properties.PropertyArgs
+    ///         {
+    ///             Contacts = 
+    ///             {
+    ///                 "user@example.org",
+    ///             },
+    ///             Contract = "ctr_####",
+    ///             CpCode = "cpc_#####",
+    ///             Group = "grp_####",
+    ///             Hostnames = 
+    ///             {
+    ///                 { "example.org", "example.org.edgesuite.net" },
+    ///                 { "sub.example.org", "sub.example.org.edgesuite.net" },
+    ///                 { "www.example.org", "example.org.edgesuite.net" },
+    ///             },
+    ///             Product = "prd_SPM",
+    ///             RuleFormat = "v2018-02-27",
+    ///             Rules = data.Local_file.Terraform_demo.Content,
+    ///             Variables = akamai_property_variables.Origin.Json,
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
     /// </summary>
     public partial class Property : Pulumi.CustomResource
     {
         /// <summary>
-        /// — the Account ID under which the property is created.
+        /// — the Account ID under which the property is created.
         /// </summary>
         [Output("account")]
         public Output<string> Account { get; private set; } = null!;
@@ -52,13 +88,13 @@ namespace Pulumi.Akamai.Properties
         public Output<string?> Group { get; private set; } = null!;
 
         /// <summary>
-        /// — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
+        /// — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
         /// </summary>
         [Output("hostnames")]
         public Output<ImmutableDictionary<string, string>> Hostnames { get; private set; } = null!;
 
         /// <summary>
-        /// — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
+        /// — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
         /// </summary>
         [Output("isSecure")]
         public Output<bool?> IsSecure { get; private set; } = null!;
@@ -103,13 +139,13 @@ namespace Pulumi.Akamai.Properties
         public Output<string> Rulessha { get; private set; } = null!;
 
         /// <summary>
-        /// — the current version of the property active on the staging network.
+        /// — the current version of the property active on the staging network.
         /// </summary>
         [Output("stagingVersion")]
         public Output<int> StagingVersion { get; private set; } = null!;
 
         /// <summary>
-        /// — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+        /// — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
         /// </summary>
         [Output("variables")]
         public Output<string?> Variables { get; private set; } = null!;
@@ -200,7 +236,7 @@ namespace Pulumi.Akamai.Properties
         private InputMap<string>? _hostnames;
 
         /// <summary>
-        /// — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
+        /// — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
         /// </summary>
         public InputMap<string> Hostnames
         {
@@ -209,7 +245,7 @@ namespace Pulumi.Akamai.Properties
         }
 
         /// <summary>
-        /// — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
+        /// — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
         /// </summary>
         [Input("isSecure")]
         public Input<bool>? IsSecure { get; set; }
@@ -251,7 +287,7 @@ namespace Pulumi.Akamai.Properties
         public Input<string>? Rules { get; set; }
 
         /// <summary>
-        /// — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+        /// — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
         /// </summary>
         [Input("variables")]
         public Input<string>? Variables { get; set; }
@@ -264,7 +300,7 @@ namespace Pulumi.Akamai.Properties
     public sealed class PropertyState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// — the Account ID under which the property is created.
+        /// — the Account ID under which the property is created.
         /// </summary>
         [Input("account")]
         public Input<string>? Account { get; set; }
@@ -315,7 +351,7 @@ namespace Pulumi.Akamai.Properties
         private InputMap<string>? _hostnames;
 
         /// <summary>
-        /// — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
+        /// — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
         /// </summary>
         public InputMap<string> Hostnames
         {
@@ -324,7 +360,7 @@ namespace Pulumi.Akamai.Properties
         }
 
         /// <summary>
-        /// — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
+        /// — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
         /// </summary>
         [Input("isSecure")]
         public Input<bool>? IsSecure { get; set; }
@@ -375,13 +411,13 @@ namespace Pulumi.Akamai.Properties
         public Input<string>? Rulessha { get; set; }
 
         /// <summary>
-        /// — the current version of the property active on the staging network.
+        /// — the current version of the property active on the staging network.
         /// </summary>
         [Input("stagingVersion")]
         public Input<int>? StagingVersion { get; set; }
 
         /// <summary>
-        /// — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+        /// — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
         /// </summary>
         [Input("variables")]
         public Input<string>? Variables { get; set; }

@@ -16,7 +16,7 @@ namespace Pulumi.Akamai.Properties.Inputs
         private List<Inputs.GetPropertyRulesRuleBehaviorArgs>? _behaviors;
 
         /// <summary>
-        /// — (Optional) One or more behaviors to apply to requests that match.
+        /// — (Optional) One or more behaviors to apply to requests that match.
         /// </summary>
         public List<Inputs.GetPropertyRulesRuleBehaviorArgs> Behaviors
         {
@@ -28,7 +28,7 @@ namespace Pulumi.Akamai.Properties.Inputs
         public string? CriteriaMatch { get; set; }
 
         /// <summary>
-        /// — (Optional) Whether the property is a secure (Enhanced TLS) property or not (top-level only).
+        /// — (Optional) Whether the property is a secure (Enhanced TLS) property or not (top-level only).
         /// </summary>
         [Input("isSecure")]
         public bool? IsSecure { get; set; }
@@ -37,7 +37,7 @@ namespace Pulumi.Akamai.Properties.Inputs
         private List<Inputs.GetPropertyRulesRuleRuleArgs>? _rules;
 
         /// <summary>
-        /// — (Optional) Child rules (may be nested five levels deep).
+        /// — (Optional) Child rules (may be nested five levels deep).
         /// </summary>
         public List<Inputs.GetPropertyRulesRuleRuleArgs> Rules
         {

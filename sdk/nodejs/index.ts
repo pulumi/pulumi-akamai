@@ -7,9 +7,9 @@ export * from "./getGroup";
 export * from "./provider";
 
 // Export sub-modules:
-import * as EdgeDNS from "./EdgeDNS/index";
-import * as Properties from "./Properties/index";
-import * as TrafficManagement from "./TrafficManagement/index";
-import * as config from "./config/index";
-import * as types from "./types/index";
-export {EdgeDNS, Properties, TrafficManagement, config, types};
+import * as config from "./config";
+import * as edgedns from "./edgedns";
+import * as properties from "./properties";
+import * as trafficmanagement from "./trafficmanagement";
+import * as types from "./types";
+export {config, edgedns, properties, trafficmanagement, types};

@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Add prepare command to rename the `akamai` occurrences
+* Initial release against v0.8.1 of the Akamai Terraform Provider
 
 ---
 

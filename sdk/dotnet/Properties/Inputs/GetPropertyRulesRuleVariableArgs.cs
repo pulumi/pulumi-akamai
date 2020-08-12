@@ -19,7 +19,7 @@ namespace Pulumi.Akamai.Properties.Inputs
         public bool Hidden { get; set; }
 
         /// <summary>
-        /// — (Required) The name of the behavior.
+        /// — (Required) The name of the behavior.
         /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -28,7 +28,7 @@ namespace Pulumi.Akamai.Properties.Inputs
         public bool Sensitive { get; set; }
 
         /// <summary>
-        /// — (Optional) A single value for the option.
+        /// — (Optional) A single value for the option.
         /// </summary>
         [Input("value")]
         public string? Value { get; set; }

@@ -13,6 +13,28 @@ namespace Pulumi.Akamai.Properties
     /// The `akamai.Properties.CpCode` resource allows you to create or re-use CP Codes.
     /// 
     /// If the CP Code already exists it will be used instead of creating a new one.
+    /// 
+    /// ## Example Usage
+    /// ### Basic usage:
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var cpCode = new Akamai.Properties.CpCode("cpCode", new Akamai.Properties.CpCodeArgs
+    ///         {
+    ///             Contract = akamai_contract.Contract.Id,
+    ///             Group = akamai_group.Group.Id,
+    ///             Product = "prd_xxx",
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
     /// </summary>
     public partial class CpCode : Pulumi.CustomResource
     {

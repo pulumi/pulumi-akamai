@@ -21,8 +21,7 @@ type ProviderDn struct {
 // ProviderDnInput is an input type that accepts ProviderDnArgs and ProviderDnOutput values.
 // You can construct a concrete instance of `ProviderDnInput` via:
 //
-// 		 ProviderDnArgs{...}
-//
+//          ProviderDnArgs{...}
 type ProviderDnInput interface {
 	pulumi.Input
 
@@ -53,8 +52,7 @@ func (i ProviderDnArgs) ToProviderDnOutputWithContext(ctx context.Context) Provi
 // ProviderDnArrayInput is an input type that accepts ProviderDnArray and ProviderDnArrayOutput values.
 // You can construct a concrete instance of `ProviderDnArrayInput` via:
 //
-// 		 ProviderDnArray{ ProviderDnArgs{...} }
-//
+//          ProviderDnArray{ ProviderDnArgs{...} }
 type ProviderDnArrayInput interface {
 	pulumi.Input
 
@@ -141,8 +139,7 @@ type ProviderGtm struct {
 // ProviderGtmInput is an input type that accepts ProviderGtmArgs and ProviderGtmOutput values.
 // You can construct a concrete instance of `ProviderGtmInput` via:
 //
-// 		 ProviderGtmArgs{...}
-//
+//          ProviderGtmArgs{...}
 type ProviderGtmInput interface {
 	pulumi.Input
 
@@ -173,8 +170,7 @@ func (i ProviderGtmArgs) ToProviderGtmOutputWithContext(ctx context.Context) Pro
 // ProviderGtmArrayInput is an input type that accepts ProviderGtmArray and ProviderGtmArrayOutput values.
 // You can construct a concrete instance of `ProviderGtmArrayInput` via:
 //
-// 		 ProviderGtmArray{ ProviderGtmArgs{...} }
-//
+//          ProviderGtmArray{ ProviderGtmArgs{...} }
 type ProviderGtmArrayInput interface {
 	pulumi.Input
 
@@ -261,8 +257,7 @@ type ProviderProperty struct {
 // ProviderPropertyInput is an input type that accepts ProviderPropertyArgs and ProviderPropertyOutput values.
 // You can construct a concrete instance of `ProviderPropertyInput` via:
 //
-// 		 ProviderPropertyArgs{...}
-//
+//          ProviderPropertyArgs{...}
 type ProviderPropertyInput interface {
 	pulumi.Input
 
@@ -293,8 +288,7 @@ func (i ProviderPropertyArgs) ToProviderPropertyOutputWithContext(ctx context.Co
 // ProviderPropertyArrayInput is an input type that accepts ProviderPropertyArray and ProviderPropertyArrayOutput values.
 // You can construct a concrete instance of `ProviderPropertyArrayInput` via:
 //
-// 		 ProviderPropertyArray{ ProviderPropertyArgs{...} }
-//
+//          ProviderPropertyArray{ ProviderPropertyArgs{...} }
 type ProviderPropertyArrayInput interface {
 	pulumi.Input
 

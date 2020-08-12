@@ -11,6 +11,32 @@ namespace Pulumi.Akamai.Properties
 {
     /// <summary>
     /// The `akamai.Properties.PropertyActivation` provides the resource for activating a property in the appropriate environment. Once you are satisfied with any version of a property, an activation deploys it, either to the Akamai staging or production network. You activate a specific version, but the same version can be activated separately more than once.
+    /// 
+    /// ## Example Usage
+    /// ### Basic usage:
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var example = new Akamai.Properties.PropertyActivation("example", new Akamai.Properties.PropertyActivationArgs
+    ///         {
+    ///             Activate = @var.Akamai_property_activate,
+    ///             Contacts = 
+    ///             {
+    ///                 "user@example.org",
+    ///             },
+    ///             Network = "STAGING",
+    ///             Property = akamai_property.Example.Id,
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
     /// </summary>
     public partial class PropertyActivation : Pulumi.CustomResource
     {
@@ -42,7 +68,7 @@ namespace Pulumi.Akamai.Properties
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// — (Optional) The version to activate. When unset it will activate the latest version of the property.
+        /// — (Optional) The version to activate. When unset it will activate the latest version of the property.
         /// </summary>
         [Output("version")]
         public Output<int?> Version { get; private set; } = null!;
@@ -124,7 +150,7 @@ namespace Pulumi.Akamai.Properties
         public Input<string> Property { get; set; } = null!;
 
         /// <summary>
-        /// — (Optional) The version to activate. When unset it will activate the latest version of the property.
+        /// — (Optional) The version to activate. When unset it will activate the latest version of the property.
         /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }
@@ -170,7 +196,7 @@ namespace Pulumi.Akamai.Properties
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// — (Optional) The version to activate. When unset it will activate the latest version of the property.
+        /// — (Optional) The version to activate. When unset it will activate the latest version of the property.
         /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }

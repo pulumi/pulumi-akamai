@@ -2,13 +2,14 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * Use `akamai..getContract` data source to retrieve a group id.
- * 
+ * Use `akamai.getContract` data source to retrieve a group id.
  *
- * > This content is derived from https://github.com/terraform-providers/terraform-provider-akamai/blob/master/website/docs/d/contract.html.markdown.
+ * ## Example Usage
  */
 export function getContract(args?: GetContractArgs, opts?: pulumi.InvokeOptions): Promise<GetContractResult> {
     args = args || {};

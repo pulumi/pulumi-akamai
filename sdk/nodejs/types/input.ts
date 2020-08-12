@@ -3,6 +3,7 @@
 
 import * as pulumi from "@pulumi/pulumi";
 import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 
 export interface ProviderDn {
     accessToken?: pulumi.Input<string>;
@@ -27,20 +28,32 @@ export interface ProviderProperty {
     host?: pulumi.Input<string>;
     maxBody?: pulumi.Input<number>;
 }
+export namespace EdgeDNS {
+    export interface DnsZoneTsigKey {
+        algorithm: pulumi.Input<string>;
+        /**
+         * key name
+         * * `algorithm`
+         * * `secret`
+         */
+        name: pulumi.Input<string>;
+        secret: pulumi.Input<string>;
+    }
+}
 
 export namespace Properties {
     export interface GetPropertyRulesRule {
         /**
-         * — (Optional) One or more behaviors to apply to requests that match.
+         * — (Optional) One or more behaviors to apply to requests that match.
          */
         behaviors?: inputs.Properties.GetPropertyRulesRuleBehavior[];
         criteriaMatch?: string;
         /**
-         * — (Optional) Whether the property is a secure (Enhanced TLS) property or not (top-level only).
+         * — (Optional) Whether the property is a secure (Enhanced TLS) property or not (top-level only).
          */
         isSecure?: boolean;
         /**
-         * — (Optional) Child rules (may be nested five levels deep).
+         * — (Optional) Child rules (may be nested five levels deep).
          */
         rules?: inputs.Properties.GetPropertyRulesRuleRule[];
         variables?: inputs.Properties.GetPropertyRulesRuleVariable[];
@@ -48,7 +61,7 @@ export namespace Properties {
 
     export interface GetPropertyRulesRuleBehavior {
         /**
-         * — (Required) The name of the behavior.
+         * — (Required) The name of the behavior.
          */
         name: string;
         /**
@@ -63,39 +76,39 @@ export namespace Properties {
          */
         key: string;
         /**
-         * — (Optional) A single value for the option.
+         * — (Optional) A single value for the option.
          */
         value?: string;
         /**
-         * — (Optional) An array of values for the option.
+         * — (Optional) An array of values for the option.
          */
         values?: string[];
     }
 
     export interface GetPropertyRulesRuleRule {
         /**
-         * — (Optional) One or more behaviors to apply to requests that match.
+         * — (Optional) One or more behaviors to apply to requests that match.
          */
         behaviors?: inputs.Properties.GetPropertyRulesRuleRuleBehavior[];
         comment?: string;
-        /**
-         * — (Optional) One or more criteria to match requests on.
-         */
-        criterias?: inputs.Properties.GetPropertyRulesRuleRuleCriteria[];
         criteriaMatch?: string;
         /**
-         * — (Required) The name of the behavior.
+         * — (Optional) One or more criteria to match requests on.
+         */
+        criterias?: inputs.Properties.GetPropertyRulesRuleRuleCriteria[];
+        /**
+         * — (Required) The name of the behavior.
          */
         name: string;
         /**
-         * — (Optional) Child rules (may be nested five levels deep).
+         * — (Optional) Child rules (may be nested five levels deep).
          */
         rules?: inputs.Properties.GetPropertyRulesRuleRuleRule[];
     }
 
     export interface GetPropertyRulesRuleRuleBehavior {
         /**
-         * — (Required) The name of the behavior.
+         * — (Required) The name of the behavior.
          */
         name: string;
         /**
@@ -110,18 +123,18 @@ export namespace Properties {
          */
         key: string;
         /**
-         * — (Optional) A single value for the option.
+         * — (Optional) A single value for the option.
          */
         value?: string;
         /**
-         * — (Optional) An array of values for the option.
+         * — (Optional) An array of values for the option.
          */
         values?: string[];
     }
 
     export interface GetPropertyRulesRuleRuleCriteria {
         /**
-         * — (Required) The name of the behavior.
+         * — (Required) The name of the behavior.
          */
         name: string;
         /**
@@ -136,39 +149,39 @@ export namespace Properties {
          */
         key: string;
         /**
-         * — (Optional) A single value for the option.
+         * — (Optional) A single value for the option.
          */
         value?: string;
         /**
-         * — (Optional) An array of values for the option.
+         * — (Optional) An array of values for the option.
          */
         values?: string[];
     }
 
     export interface GetPropertyRulesRuleRuleRule {
         /**
-         * — (Optional) One or more behaviors to apply to requests that match.
+         * — (Optional) One or more behaviors to apply to requests that match.
          */
         behaviors?: inputs.Properties.GetPropertyRulesRuleRuleRuleBehavior[];
         comment?: string;
-        /**
-         * — (Optional) One or more criteria to match requests on.
-         */
-        criterias?: inputs.Properties.GetPropertyRulesRuleRuleRuleCriteria[];
         criteriaMatch?: string;
         /**
-         * — (Required) The name of the behavior.
+         * — (Optional) One or more criteria to match requests on.
+         */
+        criterias?: inputs.Properties.GetPropertyRulesRuleRuleRuleCriteria[];
+        /**
+         * — (Required) The name of the behavior.
          */
         name: string;
         /**
-         * — (Optional) Child rules (may be nested five levels deep).
+         * — (Optional) Child rules (may be nested five levels deep).
          */
         rules?: inputs.Properties.GetPropertyRulesRuleRuleRuleRule[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleBehavior {
         /**
-         * — (Required) The name of the behavior.
+         * — (Required) The name of the behavior.
          */
         name: string;
         /**
@@ -183,18 +196,18 @@ export namespace Properties {
          */
         key: string;
         /**
-         * — (Optional) A single value for the option.
+         * — (Optional) A single value for the option.
          */
         value?: string;
         /**
-         * — (Optional) An array of values for the option.
+         * — (Optional) An array of values for the option.
          */
         values?: string[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleCriteria {
         /**
-         * — (Required) The name of the behavior.
+         * — (Required) The name of the behavior.
          */
         name: string;
         /**
@@ -209,39 +222,39 @@ export namespace Properties {
          */
         key: string;
         /**
-         * — (Optional) A single value for the option.
+         * — (Optional) A single value for the option.
          */
         value?: string;
         /**
-         * — (Optional) An array of values for the option.
+         * — (Optional) An array of values for the option.
          */
         values?: string[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleRule {
         /**
-         * — (Optional) One or more behaviors to apply to requests that match.
+         * — (Optional) One or more behaviors to apply to requests that match.
          */
         behaviors?: inputs.Properties.GetPropertyRulesRuleRuleRuleRuleBehavior[];
         comment?: string;
-        /**
-         * — (Optional) One or more criteria to match requests on.
-         */
-        criterias?: inputs.Properties.GetPropertyRulesRuleRuleRuleRuleCriteria[];
         criteriaMatch?: string;
         /**
-         * — (Required) The name of the behavior.
+         * — (Optional) One or more criteria to match requests on.
+         */
+        criterias?: inputs.Properties.GetPropertyRulesRuleRuleRuleRuleCriteria[];
+        /**
+         * — (Required) The name of the behavior.
          */
         name: string;
         /**
-         * — (Optional) Child rules (may be nested five levels deep).
+         * — (Optional) Child rules (may be nested five levels deep).
          */
         rules?: inputs.Properties.GetPropertyRulesRuleRuleRuleRuleRule[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleRuleBehavior {
         /**
-         * — (Required) The name of the behavior.
+         * — (Required) The name of the behavior.
          */
         name: string;
         /**
@@ -256,18 +269,18 @@ export namespace Properties {
          */
         key: string;
         /**
-         * — (Optional) A single value for the option.
+         * — (Optional) A single value for the option.
          */
         value?: string;
         /**
-         * — (Optional) An array of values for the option.
+         * — (Optional) An array of values for the option.
          */
         values?: string[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleRuleCriteria {
         /**
-         * — (Required) The name of the behavior.
+         * — (Required) The name of the behavior.
          */
         name: string;
         /**
@@ -282,35 +295,35 @@ export namespace Properties {
          */
         key: string;
         /**
-         * — (Optional) A single value for the option.
+         * — (Optional) A single value for the option.
          */
         value?: string;
         /**
-         * — (Optional) An array of values for the option.
+         * — (Optional) An array of values for the option.
          */
         values?: string[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleRuleRule {
         /**
-         * — (Optional) One or more behaviors to apply to requests that match.
+         * — (Optional) One or more behaviors to apply to requests that match.
          */
         behaviors?: inputs.Properties.GetPropertyRulesRuleRuleRuleRuleRuleBehavior[];
         comment?: string;
-        /**
-         * — (Optional) One or more criteria to match requests on.
-         */
-        criterias?: inputs.Properties.GetPropertyRulesRuleRuleRuleRuleRuleCriteria[];
         criteriaMatch?: string;
         /**
-         * — (Required) The name of the behavior.
+         * — (Optional) One or more criteria to match requests on.
+         */
+        criterias?: inputs.Properties.GetPropertyRulesRuleRuleRuleRuleRuleCriteria[];
+        /**
+         * — (Required) The name of the behavior.
          */
         name: string;
     }
 
     export interface GetPropertyRulesRuleRuleRuleRuleRuleBehavior {
         /**
-         * — (Required) The name of the behavior.
+         * — (Required) The name of the behavior.
          */
         name: string;
         /**
@@ -325,18 +338,18 @@ export namespace Properties {
          */
         key: string;
         /**
-         * — (Optional) A single value for the option.
+         * — (Optional) A single value for the option.
          */
         value?: string;
         /**
-         * — (Optional) An array of values for the option.
+         * — (Optional) An array of values for the option.
          */
         values?: string[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleRuleRuleCriteria {
         /**
-         * — (Required) The name of the behavior.
+         * — (Required) The name of the behavior.
          */
         name: string;
         /**
@@ -351,11 +364,11 @@ export namespace Properties {
          */
         key: string;
         /**
-         * — (Optional) A single value for the option.
+         * — (Optional) A single value for the option.
          */
         value?: string;
         /**
-         * — (Optional) An array of values for the option.
+         * — (Optional) An array of values for the option.
          */
         values?: string[];
     }
@@ -364,12 +377,12 @@ export namespace Properties {
         description?: string;
         hidden: boolean;
         /**
-         * — (Required) The name of the behavior.
+         * — (Required) The name of the behavior.
          */
         name: string;
         sensitive: boolean;
         /**
-         * — (Optional) A single value for the option.
+         * — (Optional) A single value for the option.
          */
         value?: string;
     }
@@ -423,8 +436,8 @@ export namespace Properties {
     export interface PropertyRulesRuleRule {
         behaviors?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleBehavior>[]>;
         comment?: pulumi.Input<string>;
-        criterias?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleCriteria>[]>;
         criteriaMatch?: pulumi.Input<string>;
+        criterias?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleCriteria>[]>;
         name: pulumi.Input<string>;
         rules?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRule>[]>;
     }
@@ -454,8 +467,8 @@ export namespace Properties {
     export interface PropertyRulesRuleRuleRule {
         behaviors?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleBehavior>[]>;
         comment?: pulumi.Input<string>;
-        criterias?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleCriteria>[]>;
         criteriaMatch?: pulumi.Input<string>;
+        criterias?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleCriteria>[]>;
         name: pulumi.Input<string>;
         rules?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleRule>[]>;
     }
@@ -485,8 +498,8 @@ export namespace Properties {
     export interface PropertyRulesRuleRuleRuleRule {
         behaviors?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleRuleBehavior>[]>;
         comment?: pulumi.Input<string>;
-        criterias?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleRuleCriteria>[]>;
         criteriaMatch?: pulumi.Input<string>;
+        criterias?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleRuleCriteria>[]>;
         name: pulumi.Input<string>;
         rules?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleRuleRule>[]>;
     }
@@ -516,8 +529,8 @@ export namespace Properties {
     export interface PropertyRulesRuleRuleRuleRuleRule {
         behaviors?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleRuleRuleBehavior>[]>;
         comment?: pulumi.Input<string>;
-        criterias?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleRuleRuleCriteria>[]>;
         criteriaMatch?: pulumi.Input<string>;
+        criterias?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleRuleRuleCriteria>[]>;
         name: pulumi.Input<string>;
     }
 
@@ -557,23 +570,23 @@ export namespace Properties {
 
     export interface PropertyVariablesVariableVariable {
         /**
-         * — (Optional) A human-readable description
+         * — (Optional) A human-readable description
          */
         description?: pulumi.Input<string>;
         /**
-         * — (Optional) Whether to hide the variable when debugging requests
+         * — (Required) Whether to hide the variable when debugging requests
          */
         hidden: pulumi.Input<boolean>;
         /**
-         * — (Required) The name of the variable.
+         * — (Required) The name of the variable.
          */
         name: pulumi.Input<string>;
         /**
-         * — (Optional) Whether to obscure the value when debugging requests
+         * — (Required) Whether to obscure the value when debugging requests
          */
         sensitive: pulumi.Input<boolean>;
         /**
-         * — (Required) The default value to assign to the variable
+         * — (Required) The default value to assign to the variable
          */
         value?: pulumi.Input<string>;
     }
@@ -775,3 +788,7 @@ export namespace TrafficManagement {
         useDefaultLoadObject?: pulumi.Input<boolean>;
     }
 }
+
+export namespace config {
+}
+

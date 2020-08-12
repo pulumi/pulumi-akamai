@@ -15,6 +15,27 @@ namespace Pulumi.Akamai.EdgeDNS
         /// Use `akamai.EdgeDNS.getAuthoritiesSet` datasource to retrieve a contracts authorities set for use when creating new zones.
         /// 
         /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// ### Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var example = Output.Create(Akamai.EdgeDNS.GetAuthoritiesSet.InvokeAsync(new Akamai.EdgeDNS.GetAuthoritiesSetArgs
+        ///         {
+        ///             Contract = "ctr_xxxxx",
+        ///         }));
+        ///     }
+        /// 
+        /// }
+        /// ```
+        /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAuthoritiesSetResult> InvokeAsync(GetAuthoritiesSetArgs args, InvokeOptions? options = null)

@@ -18,11 +18,11 @@ namespace Pulumi.Akamai.Properties.Outputs
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// — (Optional) A single value for the option.
+        /// — (Optional) A single value for the option.
         /// </summary>
         public readonly string? Value;
         /// <summary>
-        /// — (Optional) An array of values for the option.
+        /// — (Optional) An array of values for the option.
         /// </summary>
         public readonly ImmutableArray<string> Values;
 

@@ -19,7 +19,7 @@ namespace Pulumi.Akamai.Properties.Inputs
         public string Key { get; set; } = null!;
 
         /// <summary>
-        /// — (Optional) A single value for the option.
+        /// — (Optional) A single value for the option.
         /// </summary>
         [Input("value")]
         public string? Value { get; set; }
@@ -28,7 +28,7 @@ namespace Pulumi.Akamai.Properties.Inputs
         private List<string>? _values;
 
         /// <summary>
-        /// — (Optional) An array of values for the option.
+        /// — (Optional) An array of values for the option.
         /// </summary>
         public List<string> Values
         {

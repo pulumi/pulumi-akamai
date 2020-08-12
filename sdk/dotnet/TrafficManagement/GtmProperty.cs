@@ -11,6 +11,37 @@ namespace Pulumi.Akamai.TrafficManagement
 {
     /// <summary>
     /// `akamai.TrafficManagement.GtmProperty` provides the resource for creating, configuring and importing a gtm property to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_property_name`
+    /// 
+    /// ## Example Usage
+    /// ### Basic usage:
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var demoProperty = new Akamai.TrafficManagement.GtmProperty("demoProperty", new Akamai.TrafficManagement.GtmPropertyArgs
+    ///         {
+    ///             Domain = "demo_domain.akadns.net",
+    ///             HandoutLimit = 5,
+    ///             HandoutMode = "normal",
+    ///             ScoreAggregationType = "median",
+    ///             TrafficTargets = 
+    ///             {
+    ///                 new Akamai.TrafficManagement.Inputs.GtmPropertyTrafficTargetArgs
+    ///                 {
+    ///                     DatacenterId = 3131,
+    ///                 },
+    ///             },
+    ///             Type = "weighted-round-robin",
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
     /// </summary>
     public partial class GtmProperty : Pulumi.CustomResource
     {
@@ -45,7 +76,7 @@ namespace Pulumi.Akamai.TrafficManagement
         public Output<string?> Comments { get; private set; } = null!;
 
         /// <summary>
-        /// — Domain name 
+        /// — Domain name
         /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
@@ -248,7 +279,7 @@ namespace Pulumi.Akamai.TrafficManagement
         public Input<string>? Comments { get; set; }
 
         /// <summary>
-        /// — Domain name 
+        /// — Domain name
         /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
@@ -424,7 +455,7 @@ namespace Pulumi.Akamai.TrafficManagement
         public Input<string>? Comments { get; set; }
 
         /// <summary>
-        /// — Domain name 
+        /// — Domain name
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }

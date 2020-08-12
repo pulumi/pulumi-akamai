@@ -16,12 +16,12 @@ namespace Pulumi.Akamai.Properties.Outputs
         public readonly string? Description;
         public readonly bool Hidden;
         /// <summary>
-        /// — (Required) The name of the behavior.
+        /// — (Required) The name of the behavior.
         /// </summary>
         public readonly string Name;
         public readonly bool Sensitive;
         /// <summary>
-        /// — (Optional) A single value for the option.
+        /// — (Optional) A single value for the option.
         /// </summary>
         public readonly string? Value;
 

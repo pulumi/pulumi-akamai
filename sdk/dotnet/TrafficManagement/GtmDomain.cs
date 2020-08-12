@@ -11,6 +11,29 @@ namespace Pulumi.Akamai.TrafficManagement
 {
     /// <summary>
     /// `akamai.TrafficManagement.GtmDomain` provides the resource for creating, configuring and importing a gtm domain to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`
+    /// 
+    /// ## Example Usage
+    /// ### Basic usage:
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var demodomain = new Akamai.TrafficManagement.GtmDomain("demodomain", new Akamai.TrafficManagement.GtmDomainArgs
+    ///         {
+    ///             Comment = "some comment",
+    ///             Contract = "XXX",
+    ///             Group = "100",
+    ///             Type = "basic",
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
     /// </summary>
     public partial class GtmDomain : Pulumi.CustomResource
     {
@@ -27,7 +50,7 @@ namespace Pulumi.Akamai.TrafficManagement
         public Output<string?> Comment { get; private set; } = null!;
 
         /// <summary>
-        /// — The contract ID (if creating domain) 
+        /// — The contract ID (if creating domain)
         /// </summary>
         [Output("contract")]
         public Output<string?> Contract { get; private set; } = null!;
@@ -65,7 +88,6 @@ namespace Pulumi.Akamai.TrafficManagement
         public Output<int?> DefaultTimeoutPenalty { get; private set; } = null!;
 
         /// <summary>
-        /// 
         /// * `min_pingable_region_fraction`
         /// * `servermonitor_liveness_count`
         /// * `round_robin_prefix`
@@ -102,7 +124,7 @@ namespace Pulumi.Akamai.TrafficManagement
         public Output<bool?> EndUserMappingEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// — The currently selected group ID (if creating domain)   
+        /// — The currently selected group ID (if creating domain)
         /// </summary>
         [Output("group")]
         public Output<string?> Group { get; private set; } = null!;
@@ -142,7 +164,7 @@ namespace Pulumi.Akamai.TrafficManagement
         public Output<int> MinTtl { get; private set; } = null!;
 
         /// <summary>
-        /// — Domain name  
+        /// — Domain name
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -166,7 +188,7 @@ namespace Pulumi.Akamai.TrafficManagement
         public Output<string> ServermonitorPool { get; private set; } = null!;
 
         /// <summary>
-        /// — Domain type  
+        /// — Domain type
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -236,7 +258,7 @@ namespace Pulumi.Akamai.TrafficManagement
         public Input<string>? Comment { get; set; }
 
         /// <summary>
-        /// — The contract ID (if creating domain) 
+        /// — The contract ID (if creating domain)
         /// </summary>
         [Input("contract")]
         public Input<string>? Contract { get; set; }
@@ -280,7 +302,7 @@ namespace Pulumi.Akamai.TrafficManagement
         public Input<bool>? EndUserMappingEnabled { get; set; }
 
         /// <summary>
-        /// — The currently selected group ID (if creating domain)   
+        /// — The currently selected group ID (if creating domain)
         /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
@@ -296,13 +318,13 @@ namespace Pulumi.Akamai.TrafficManagement
         public Input<double>? LoadImbalancePercentage { get; set; }
 
         /// <summary>
-        /// — Domain name  
+        /// — Domain name
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// — Domain type  
+        /// — Domain type
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -333,7 +355,7 @@ namespace Pulumi.Akamai.TrafficManagement
         public Input<string>? Comment { get; set; }
 
         /// <summary>
-        /// — The contract ID (if creating domain) 
+        /// — The contract ID (if creating domain)
         /// </summary>
         [Input("contract")]
         public Input<string>? Contract { get; set; }
@@ -371,7 +393,6 @@ namespace Pulumi.Akamai.TrafficManagement
         public Input<int>? DefaultTimeoutPenalty { get; set; }
 
         /// <summary>
-        /// 
         /// * `min_pingable_region_fraction`
         /// * `servermonitor_liveness_count`
         /// * `round_robin_prefix`
@@ -414,7 +435,7 @@ namespace Pulumi.Akamai.TrafficManagement
         public Input<bool>? EndUserMappingEnabled { get; set; }
 
         /// <summary>
-        /// — The currently selected group ID (if creating domain)   
+        /// — The currently selected group ID (if creating domain)
         /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
@@ -454,7 +475,7 @@ namespace Pulumi.Akamai.TrafficManagement
         public Input<int>? MinTtl { get; set; }
 
         /// <summary>
-        /// — Domain name  
+        /// — Domain name
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -478,7 +499,7 @@ namespace Pulumi.Akamai.TrafficManagement
         public Input<string>? ServermonitorPool { get; set; }
 
         /// <summary>
-        /// — Domain type  
+        /// — Domain type
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

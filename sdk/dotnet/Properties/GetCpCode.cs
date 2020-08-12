@@ -15,6 +15,7 @@ namespace Pulumi.Akamai.Properties
         /// Use `akamai.Properties.CpCode` data source to retrieve a group id.
         /// 
         /// {{% examples %}}
+        /// ## Example Usage
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCpCodeResult> InvokeAsync(GetCpCodeArgs args, InvokeOptions? options = null)

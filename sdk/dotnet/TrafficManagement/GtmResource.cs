@@ -11,6 +11,28 @@ namespace Pulumi.Akamai.TrafficManagement
 {
     /// <summary>
     /// `akamai.TrafficManagement.GtmResource` provides the resource for creating, configuring and importing a gtm resource to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_resource_name`
+    /// 
+    /// ## Example Usage
+    /// ### Basic usage:
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var demoResource = new Akamai.TrafficManagement.GtmResource("demoResource", new Akamai.TrafficManagement.GtmResourceArgs
+    ///         {
+    ///             AggregationType = "latest",
+    ///             Domain = "demo_domain.akadns.net",
+    ///             Type = "XML load object via HTTP",
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
     /// </summary>
     public partial class GtmResource : Pulumi.CustomResource
     {
@@ -27,7 +49,7 @@ namespace Pulumi.Akamai.TrafficManagement
         public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
-        /// — Domain name 
+        /// — Domain name
         /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
@@ -137,7 +159,7 @@ namespace Pulumi.Akamai.TrafficManagement
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// — Domain name 
+        /// — Domain name
         /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
@@ -214,7 +236,7 @@ namespace Pulumi.Akamai.TrafficManagement
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// — Domain name 
+        /// — Domain name
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }

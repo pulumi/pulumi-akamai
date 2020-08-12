@@ -21,8 +21,7 @@ type Dns struct {
 // DnsInput is an input type that accepts DnsArgs and DnsOutput values.
 // You can construct a concrete instance of `DnsInput` via:
 //
-// 		 DnsArgs{...}
-//
+//          DnsArgs{...}
 type DnsInput interface {
 	pulumi.Input
 
@@ -53,8 +52,7 @@ func (i DnsArgs) ToDnsOutputWithContext(ctx context.Context) DnsOutput {
 // DnsArrayInput is an input type that accepts DnsArray and DnsArrayOutput values.
 // You can construct a concrete instance of `DnsArrayInput` via:
 //
-// 		 DnsArray{ DnsArgs{...} }
-//
+//          DnsArray{ DnsArgs{...} }
 type DnsArrayInput interface {
 	pulumi.Input
 
@@ -141,8 +139,7 @@ type Gtms struct {
 // GtmsInput is an input type that accepts GtmsArgs and GtmsOutput values.
 // You can construct a concrete instance of `GtmsInput` via:
 //
-// 		 GtmsArgs{...}
-//
+//          GtmsArgs{...}
 type GtmsInput interface {
 	pulumi.Input
 
@@ -173,8 +170,7 @@ func (i GtmsArgs) ToGtmsOutputWithContext(ctx context.Context) GtmsOutput {
 // GtmsArrayInput is an input type that accepts GtmsArray and GtmsArrayOutput values.
 // You can construct a concrete instance of `GtmsArrayInput` via:
 //
-// 		 GtmsArray{ GtmsArgs{...} }
-//
+//          GtmsArray{ GtmsArgs{...} }
 type GtmsArrayInput interface {
 	pulumi.Input
 
@@ -261,8 +257,7 @@ type Properties struct {
 // PropertiesInput is an input type that accepts PropertiesArgs and PropertiesOutput values.
 // You can construct a concrete instance of `PropertiesInput` via:
 //
-// 		 PropertiesArgs{...}
-//
+//          PropertiesArgs{...}
 type PropertiesInput interface {
 	pulumi.Input
 
@@ -293,8 +288,7 @@ func (i PropertiesArgs) ToPropertiesOutputWithContext(ctx context.Context) Prope
 // PropertiesArrayInput is an input type that accepts PropertiesArray and PropertiesArrayOutput values.
 // You can construct a concrete instance of `PropertiesArrayInput` via:
 //
-// 		 PropertiesArray{ PropertiesArgs{...} }
-//
+//          PropertiesArray{ PropertiesArgs{...} }
 type PropertiesArrayInput interface {
 	pulumi.Input
 

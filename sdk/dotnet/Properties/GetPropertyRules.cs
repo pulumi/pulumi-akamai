@@ -15,6 +15,90 @@ namespace Pulumi.Akamai.Properties
         /// The `akamai.Properties.PropertyRules` data source allows you to configure a nested block of property rules, criteria, and behaviors. A property’s main functionality is encapsulated in its set of rules and rules are composed of the matches and the behavior that applies under those matches.
         /// 
         /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// ### Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var examplePropertyRules = Output.Create(Akamai.Properties.GetPropertyRules.InvokeAsync(new Akamai.Properties.GetPropertyRulesArgs
+        ///         {
+        ///             Rules = 
+        ///             {
+        ///                 new Akamai.Properties.Inputs.GetPropertyRulesRuleArgs
+        ///                 {
+        ///                     Behaviors = 
+        ///                     {
+        ///                         new Akamai.Properties.Inputs.GetPropertyRulesRuleBehaviorArgs
+        ///                         {
+        ///                             Name = "downstreamCache",
+        ///                             Option = 
+        ///                             {
+        ///                                 
+        ///                                 {
+        ///                                     { "key", "behavior" },
+        ///                                     { "value", "TUNNEL_ORIGIN" },
+        ///                                 },
+        ///                             },
+        ///                         },
+        ///                     },
+        ///                     Rules = 
+        ///                     {
+        ///                         new Akamai.Properties.Inputs.GetPropertyRulesRuleRuleArgs
+        ///                         {
+        ///                             Name = "Performance",
+        ///                             Rule = 
+        ///                             {
+        ///                                 
+        ///                                 {
+        ///                                     { "behavior", 
+        ///                                     {
+        ///                                         
+        ///                                         {
+        ///                                             { "name", "adaptiveImageCompression" },
+        ///                                             { "option", 
+        ///                                             {
+        ///                                                 
+        ///                                                 {
+        ///                                                     { "key", "tier1MobileCompressionMethod" },
+        ///                                                     { "value", "COMPRESS" },
+        ///                                                 },
+        ///                                                 
+        ///                                                 {
+        ///                                                     { "key", "tier1MobileCompressionValue" },
+        ///                                                     { "value", "80" },
+        ///                                                 },
+        ///                                                 
+        ///                                                 {
+        ///                                                     { "key", "tier2MobileCompressionMethod" },
+        ///                                                     { "value", "COMPRESS" },
+        ///                                                 },
+        ///                                             } },
+        ///                                         },
+        ///                                     } },
+        ///                                     { "name", "JPEG Images" },
+        ///                                 },
+        ///                             },
+        ///                         },
+        ///                     },
+        ///                 },
+        ///             },
+        ///         }));
+        ///         var exampleProperty = new Akamai.Properties.Property("exampleProperty", new Akamai.Properties.PropertyArgs
+        ///         {
+        ///             Rules = examplePropertyRules.Apply(examplePropertyRules =&gt; examplePropertyRules.Json),
+        ///         });
+        ///     }
+        /// 
+        /// }
+        /// ```
+        /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPropertyRulesResult> InvokeAsync(GetPropertyRulesArgs? args = null, InvokeOptions? options = null)

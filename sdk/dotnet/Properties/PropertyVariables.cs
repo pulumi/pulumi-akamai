@@ -18,6 +18,42 @@ namespace Pulumi.Akamai.Properties
     /// * Improve self serviceability by replacing or extending advanced metadata.
     /// * Automate redirects, forward path rewrites, HTTP header and cookie manipulation.
     /// * Move origin functionality to the edge.
+    /// 
+    /// ## Example Usage
+    /// ### Basic usage:
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var origin = new Akamai.Properties.PropertyVariables("origin", new Akamai.Properties.PropertyVariablesArgs
+    ///         {
+    ///             Variables = 
+    ///             {
+    ///                 new Akamai.Properties.Inputs.PropertyVariablesVariableArgs
+    ///                 {
+    ///                     Variables = 
+    ///                     {
+    ///                         new Akamai.Properties.Inputs.PropertyVariablesVariableVariableArgs
+    ///                         {
+    ///                             Description = "Origin Hostname",
+    ///                             Hidden = true,
+    ///                             Name = "PMUSER_ORIGIN",
+    ///                             Sensitive = true,
+    ///                             Value = "origin.example.org",
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
     /// </summary>
     public partial class PropertyVariables : Pulumi.CustomResource
     {

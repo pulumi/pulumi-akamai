@@ -16,7 +16,7 @@ namespace Pulumi.Akamai.Properties.Inputs
         private List<Inputs.GetPropertyRulesRuleRuleRuleRuleRuleBehaviorArgs>? _behaviors;
 
         /// <summary>
-        /// — (Optional) One or more behaviors to apply to requests that match.
+        /// — (Optional) One or more behaviors to apply to requests that match.
         /// </summary>
         public List<Inputs.GetPropertyRulesRuleRuleRuleRuleRuleBehaviorArgs> Behaviors
         {
@@ -34,7 +34,7 @@ namespace Pulumi.Akamai.Properties.Inputs
         private List<Inputs.GetPropertyRulesRuleRuleRuleRuleRuleCriteriaArgs>? _criterias;
 
         /// <summary>
-        /// — (Optional) One or more criteria to match requests on.
+        /// — (Optional) One or more criteria to match requests on.
         /// </summary>
         public List<Inputs.GetPropertyRulesRuleRuleRuleRuleRuleCriteriaArgs> Criterias
         {
@@ -43,7 +43,7 @@ namespace Pulumi.Akamai.Properties.Inputs
         }
 
         /// <summary>
-        /// — (Required) The name of the behavior.
+        /// — (Required) The name of the behavior.
         /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;

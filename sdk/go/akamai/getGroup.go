@@ -7,7 +7,9 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// Use `.getGroup` data source to retrieve a group id.
+// Use `getGroup` data source to retrieve a group id.
+//
+// ## Example Usage
 func GetGroup(ctx *pulumi.Context, args *GetGroupArgs, opts ...pulumi.InvokeOption) (*GetGroupResult, error) {
 	var rv GetGroupResult
 	err := ctx.Invoke("akamai:index/getGroup:getGroup", args, &rv, opts...)

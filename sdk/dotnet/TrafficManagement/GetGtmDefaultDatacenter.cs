@@ -15,6 +15,7 @@ namespace Pulumi.Akamai.TrafficManagement
         /// Use `akamai.TrafficManagement.getGtmDefaultDatacenter` data source to retrieve default datacenter id and nickname.
         /// 
         /// {{% examples %}}
+        /// ## Example Usage
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetGtmDefaultDatacenterResult> InvokeAsync(GetGtmDefaultDatacenterArgs args, InvokeOptions? options = null)
@@ -24,11 +25,14 @@ namespace Pulumi.Akamai.TrafficManagement
 
     public sealed class GetGtmDefaultDatacenterArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// — (Optional. Default 5400)
+        /// </summary>
         [Input("datacenter")]
         public int? Datacenter { get; set; }
 
         /// <summary>
-        /// — (Optional. Default 5400)
+        /// — (Required)
         /// </summary>
         [Input("domain", required: true)]
         public string Domain { get; set; } = null!;
