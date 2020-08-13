@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// `TrafficManagement.GtmDomain` provides the resource for creating, configuring and importing a gtm domain to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`
+// `trafficmanagement.GtmDomain` provides the resource for creating, configuring and importing a gtm domain to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`
 //
 // ## Example Usage
 // ### Basic usage:
@@ -19,13 +19,13 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/TrafficManagement"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/trafficmanagement"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := TrafficManagement.NewGtmDomain(ctx, "demodomain", &TrafficManagement.GtmDomainArgs{
+// 		_, err := trafficmanagement.NewGtmDomain(ctx, "demodomain", &trafficmanagement.GtmDomainArgs{
 // 			Comment:  pulumi.String("some comment"),
 // 			Contract: pulumi.String("XXX"),
 // 			Group:    pulumi.String("100"),
@@ -121,7 +121,7 @@ func NewGtmDomain(ctx *pulumi.Context,
 		args = &GtmDomainArgs{}
 	}
 	var resource GtmDomain
-	err := ctx.RegisterResource("akamai:TrafficManagement/gtmDomain:GtmDomain", name, args, &resource, opts...)
+	err := ctx.RegisterResource("akamai:trafficmanagement/gtmDomain:GtmDomain", name, args, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -133,7 +133,7 @@ func NewGtmDomain(ctx *pulumi.Context,
 func GetGtmDomain(ctx *pulumi.Context,
 	name string, id pulumi.IDInput, state *GtmDomainState, opts ...pulumi.ResourceOption) (*GtmDomain, error) {
 	var resource GtmDomain
-	err := ctx.ReadResource("akamai:TrafficManagement/gtmDomain:GtmDomain", name, id, state, &resource, opts...)
+	err := ctx.ReadResource("akamai:trafficmanagement/gtmDomain:GtmDomain", name, id, state, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}

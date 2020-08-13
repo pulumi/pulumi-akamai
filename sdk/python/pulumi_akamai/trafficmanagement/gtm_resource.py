@@ -61,7 +61,7 @@ class GtmResource(pulumi.CustomResource):
     """
     def __init__(__self__, resource_name, opts=None, aggregation_type=None, constrained_property=None, decay_rate=None, description=None, domain=None, host_header=None, leader_string=None, least_squares_decay=None, load_imbalance_percentage=None, max_u_multiplicative_increment=None, name=None, resource_instances=None, type=None, upper_bound=None, wait_on_complete=None, __props__=None, __name__=None, __opts__=None):
         """
-        `TrafficManagement.GtmResource` provides the resource for creating, configuring and importing a gtm resource to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_resource_name`
+        `trafficmanagement.GtmResource` provides the resource for creating, configuring and importing a gtm resource to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_resource_name`
 
         ## Example Usage
         ### Basic usage:
@@ -70,7 +70,7 @@ class GtmResource(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        demo_resource = akamai.traffic_management.GtmResource("demoResource",
+        demo_resource = akamai.trafficmanagement.GtmResource("demoResource",
             aggregation_type="latest",
             domain="demo_domain.akadns.net",
             type="XML load object via HTTP")
@@ -144,7 +144,7 @@ class GtmResource(pulumi.CustomResource):
             __props__['upper_bound'] = upper_bound
             __props__['wait_on_complete'] = wait_on_complete
         super(GtmResource, __self__).__init__(
-            'akamai:TrafficManagement/gtmResource:GtmResource',
+            'akamai:trafficmanagement/gtmResource:GtmResource',
             resource_name,
             __props__,
             opts)

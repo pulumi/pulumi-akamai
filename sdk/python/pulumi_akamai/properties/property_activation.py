@@ -33,7 +33,7 @@ class PropertyActivation(pulumi.CustomResource):
     """
     def __init__(__self__, resource_name, opts=None, activate=None, contacts=None, network=None, property=None, version=None, __props__=None, __name__=None, __opts__=None):
         """
-        The `Properties.PropertyActivation` provides the resource for activating a property in the appropriate environment. Once you are satisfied with any version of a property, an activation deploys it, either to the Akamai staging or production network. You activate a specific version, but the same version can be activated separately more than once.
+        The `properties.PropertyActivation` provides the resource for activating a property in the appropriate environment. Once you are satisfied with any version of a property, an activation deploys it, either to the Akamai staging or production network. You activate a specific version, but the same version can be activated separately more than once.
 
         ## Example Usage
         ### Basic usage:
@@ -85,7 +85,7 @@ class PropertyActivation(pulumi.CustomResource):
             __props__['version'] = version
             __props__['status'] = None
         super(PropertyActivation, __self__).__init__(
-            'akamai:Properties/propertyActivation:PropertyActivation',
+            'akamai:properties/propertyActivation:PropertyActivation',
             resource_name,
             __props__,
             opts)

@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * `akamai.TrafficManagement.GtmDomain` provides the resource for creating, configuring and importing a gtm domain to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`
+ * `akamai.trafficmanagement.GtmDomain` provides the resource for creating, configuring and importing a gtm domain to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`
  *
  * ## Example Usage
  * ### Basic usage:
@@ -14,7 +14,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const demodomain = new akamai.TrafficManagement.GtmDomain("demodomain", {
+ * const demodomain = new akamai.trafficmanagement.GtmDomain("demodomain", {
  *     comment: "some comment",
  *     contract: "XXX",
  *     group: "100",
@@ -37,7 +37,7 @@ export class GtmDomain extends pulumi.CustomResource {
     }
 
     /** @internal */
-    public static readonly __pulumiType = 'akamai:TrafficManagement/gtmDomain:GtmDomain';
+    public static readonly __pulumiType = 'akamai:trafficmanagement/gtmDomain:GtmDomain';
 
     /**
      * Returns true if the given object is an instance of GtmDomain.  This is designed to work even

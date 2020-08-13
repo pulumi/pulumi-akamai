@@ -7,12 +7,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// Use `Properties.CpCode` data source to retrieve a group id.
+// Use `properties.CpCode` data source to retrieve a group id.
 //
 // ## Example Usage
 func LookupCpCode(ctx *pulumi.Context, args *LookupCpCodeArgs, opts ...pulumi.InvokeOption) (*LookupCpCodeResult, error) {
 	var rv LookupCpCodeResult
-	err := ctx.Invoke("akamai:Properties/getCpCode:getCpCode", args, &rv, opts...)
+	err := ctx.Invoke("akamai:properties/getCpCode:getCpCode", args, &rv, opts...)
 	if err != nil {
 		return nil, err
 	}

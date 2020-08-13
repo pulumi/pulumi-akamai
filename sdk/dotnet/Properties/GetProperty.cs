@@ -12,7 +12,7 @@ namespace Pulumi.Akamai.Properties
     public static class GetProperty
     {
         public static Task<GetPropertyResult> InvokeAsync(GetPropertyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyResult>("akamai:Properties/getProperty:getProperty", args ?? new GetPropertyArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyResult>("akamai:properties/getProperty:getProperty", args ?? new GetPropertyArgs(), options.WithVersion());
     }
 
 

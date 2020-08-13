@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * `akamai.TrafficManagement.GtmDatacenter` provides the resource for creating, configuring and importing a gtm datacenter to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingDatacenterId`
+ * `akamai.trafficmanagement.GtmDatacenter` provides the resource for creating, configuring and importing a gtm datacenter to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingDatacenterId`
  *
  * ## Example Usage
  * ### Basic usage:
@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const demoDatacenter = new akamai.TrafficManagement.GtmDatacenter("demo_datacenter", {
+ * const demoDatacenter = new akamai.trafficmanagement.GtmDatacenter("demo_datacenter", {
  *     domain: "demo_domain.akadns.net",
  *     nickname: "demo_datacenter",
  * });
@@ -37,7 +37,7 @@ export class GtmDatacenter extends pulumi.CustomResource {
     }
 
     /** @internal */
-    public static readonly __pulumiType = 'akamai:TrafficManagement/gtmDatacenter:GtmDatacenter';
+    public static readonly __pulumiType = 'akamai:trafficmanagement/gtmDatacenter:GtmDatacenter';
 
     /**
      * Returns true if the given object is an instance of GtmDatacenter.  This is designed to work even
@@ -68,7 +68,7 @@ export class GtmDatacenter extends pulumi.CustomResource {
     public readonly continent!: pulumi.Output<string | undefined>;
     public readonly country!: pulumi.Output<string | undefined>;
     public /*out*/ readonly datacenterId!: pulumi.Output<number>;
-    public readonly defaultLoadObject!: pulumi.Output<outputs.TrafficManagement.GtmDatacenterDefaultLoadObject | undefined>;
+    public readonly defaultLoadObject!: pulumi.Output<outputs.trafficmanagement.GtmDatacenterDefaultLoadObject | undefined>;
     /**
      * — Domain name
      */
@@ -191,7 +191,7 @@ export interface GtmDatacenterState {
     readonly continent?: pulumi.Input<string>;
     readonly country?: pulumi.Input<string>;
     readonly datacenterId?: pulumi.Input<number>;
-    readonly defaultLoadObject?: pulumi.Input<inputs.TrafficManagement.GtmDatacenterDefaultLoadObject>;
+    readonly defaultLoadObject?: pulumi.Input<inputs.trafficmanagement.GtmDatacenterDefaultLoadObject>;
     /**
      * — Domain name
      */
@@ -243,7 +243,7 @@ export interface GtmDatacenterArgs {
     readonly cloudServerTargeting?: pulumi.Input<boolean>;
     readonly continent?: pulumi.Input<string>;
     readonly country?: pulumi.Input<string>;
-    readonly defaultLoadObject?: pulumi.Input<inputs.TrafficManagement.GtmDatacenterDefaultLoadObject>;
+    readonly defaultLoadObject?: pulumi.Input<inputs.trafficmanagement.GtmDatacenterDefaultLoadObject>;
     /**
      * — Domain name
      */

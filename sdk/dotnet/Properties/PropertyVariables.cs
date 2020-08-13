@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Properties
 {
     /// <summary>
-    /// The `akamai.Properties.PropertyVariables` allows you to implement dynamic functionality. You can perform conditional logic based on the variable’s value, and catch any unforeseen errors that execute on the edge at runtime.
+    /// The `akamai.properties.PropertyVariables` allows you to implement dynamic functionality. You can perform conditional logic based on the variable’s value, and catch any unforeseen errors that execute on the edge at runtime.
     /// 
     /// Typical uses for variables include:
     /// 
@@ -75,12 +75,12 @@ namespace Pulumi.Akamai.Properties
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
         public PropertyVariables(string name, PropertyVariablesArgs? args = null, CustomResourceOptions? options = null)
-            : base("akamai:Properties/propertyVariables:PropertyVariables", name, args ?? new PropertyVariablesArgs(), MakeResourceOptions(options, ""))
+            : base("akamai:properties/propertyVariables:PropertyVariables", name, args ?? new PropertyVariablesArgs(), MakeResourceOptions(options, ""))
         {
         }
 
         private PropertyVariables(string name, Input<string> id, PropertyVariablesState? state = null, CustomResourceOptions? options = null)
-            : base("akamai:Properties/propertyVariables:PropertyVariables", name, state, MakeResourceOptions(options, id))
+            : base("akamai:properties/propertyVariables:PropertyVariables", name, state, MakeResourceOptions(options, id))
         {
         }
 

@@ -9,7 +9,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// The `Properties.PropertyVariables` allows you to implement dynamic functionality. You can perform conditional logic based on the variable’s value, and catch any unforeseen errors that execute on the edge at runtime.
+// The `properties.PropertyVariables` allows you to implement dynamic functionality. You can perform conditional logic based on the variable’s value, and catch any unforeseen errors that execute on the edge at runtime.
 //
 // Typical uses for variables include:
 //
@@ -25,17 +25,17 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/Properties"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/properties"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Properties.NewPropertyVariables(ctx, "origin", &Properties.PropertyVariablesArgs{
-// 			Variables: Properties.PropertyVariablesVariableArray{
-// 				&Properties.PropertyVariablesVariableArgs{
-// 					Variables: Properties.PropertyVariablesVariableVariableArray{
-// 						&Properties.PropertyVariablesVariableVariableArgs{
+// 		_, err := properties.NewPropertyVariables(ctx, "origin", &properties.PropertyVariablesArgs{
+// 			Variables: properties.PropertyVariablesVariableArray{
+// 				&properties.PropertyVariablesVariableArgs{
+// 					Variables: properties.PropertyVariablesVariableVariableArray{
+// 						&properties.PropertyVariablesVariableVariableArgs{
 // 							Description: pulumi.String("Origin Hostname"),
 // 							Hidden:      pulumi.Bool(true),
 // 							Name:        pulumi.String("PMUSER_ORIGIN"),
@@ -68,7 +68,7 @@ func NewPropertyVariables(ctx *pulumi.Context,
 		args = &PropertyVariablesArgs{}
 	}
 	var resource PropertyVariables
-	err := ctx.RegisterResource("akamai:Properties/propertyVariables:PropertyVariables", name, args, &resource, opts...)
+	err := ctx.RegisterResource("akamai:properties/propertyVariables:PropertyVariables", name, args, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func NewPropertyVariables(ctx *pulumi.Context,
 func GetPropertyVariables(ctx *pulumi.Context,
 	name string, id pulumi.IDInput, state *PropertyVariablesState, opts ...pulumi.ResourceOption) (*PropertyVariables, error) {
 	var resource PropertyVariables
-	err := ctx.ReadResource("akamai:Properties/propertyVariables:PropertyVariables", name, id, state, &resource, opts...)
+	err := ctx.ReadResource("akamai:properties/propertyVariables:PropertyVariables", name, id, state, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}

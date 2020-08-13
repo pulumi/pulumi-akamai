@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// `TrafficManagement.GtmResource` provides the resource for creating, configuring and importing a gtm resource to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingResourceName`
+// `trafficmanagement.GtmResource` provides the resource for creating, configuring and importing a gtm resource to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingResourceName`
 //
 // ## Example Usage
 // ### Basic usage:
@@ -19,13 +19,13 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/TrafficManagement"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/trafficmanagement"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := TrafficManagement.NewGtmResource(ctx, "demoResource", &TrafficManagement.GtmResourceArgs{
+// 		_, err := trafficmanagement.NewGtmResource(ctx, "demoResource", &trafficmanagement.GtmResourceArgs{
 // 			AggregationType: pulumi.String("latest"),
 // 			Domain:          pulumi.String("demo_domain.akadns.net"),
 // 			Type:            pulumi.String("XML load object via HTTP"),
@@ -82,7 +82,7 @@ func NewGtmResource(ctx *pulumi.Context,
 		args = &GtmResourceArgs{}
 	}
 	var resource GtmResource
-	err := ctx.RegisterResource("akamai:TrafficManagement/gtmResource:GtmResource", name, args, &resource, opts...)
+	err := ctx.RegisterResource("akamai:trafficmanagement/gtmResource:GtmResource", name, args, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -94,7 +94,7 @@ func NewGtmResource(ctx *pulumi.Context,
 func GetGtmResource(ctx *pulumi.Context,
 	name string, id pulumi.IDInput, state *GtmResourceState, opts ...pulumi.ResourceOption) (*GtmResource, error) {
 	var resource GtmResource
-	err := ctx.ReadResource("akamai:TrafficManagement/gtmResource:GtmResource", name, id, state, &resource, opts...)
+	err := ctx.ReadResource("akamai:trafficmanagement/gtmResource:GtmResource", name, id, state, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}

@@ -164,7 +164,7 @@ class GtmProperty(pulumi.CustomResource):
     weighted_hash_bits_for_ipv6: pulumi.Output[float]
     def __init__(__self__, resource_name, opts=None, backup_cname=None, backup_ip=None, balance_by_download_score=None, cname=None, comments=None, domain=None, dynamic_ttl=None, failback_delay=None, failover_delay=None, ghost_demand_reporting=None, handout_limit=None, handout_mode=None, health_max=None, health_multiplier=None, health_threshold=None, ipv6=None, liveness_tests=None, load_imbalance_percentage=None, map_name=None, max_unreachable_penalty=None, min_live_fraction=None, name=None, score_aggregation_type=None, static_rr_sets=None, static_ttl=None, stickiness_bonus_constant=None, stickiness_bonus_percentage=None, traffic_targets=None, type=None, unreachable_threshold=None, use_computed_targets=None, wait_on_complete=None, __props__=None, __name__=None, __opts__=None):
         """
-        `TrafficManagement.GtmProperty` provides the resource for creating, configuring and importing a gtm property to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_property_name`
+        `trafficmanagement.GtmProperty` provides the resource for creating, configuring and importing a gtm property to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_property_name`
 
         ## Example Usage
         ### Basic usage:
@@ -173,7 +173,7 @@ class GtmProperty(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        demo_property = akamai.traffic_management.GtmProperty("demoProperty",
+        demo_property = akamai.trafficmanagement.GtmProperty("demoProperty",
             domain="demo_domain.akadns.net",
             handout_limit=5,
             handout_mode="normal",
@@ -355,7 +355,7 @@ class GtmProperty(pulumi.CustomResource):
             __props__['weighted_hash_bits_for_ipv4'] = None
             __props__['weighted_hash_bits_for_ipv6'] = None
         super(GtmProperty, __self__).__init__(
-            'akamai:TrafficManagement/gtmProperty:GtmProperty',
+            'akamai:trafficmanagement/gtmProperty:GtmProperty',
             resource_name,
             __props__,
             opts)

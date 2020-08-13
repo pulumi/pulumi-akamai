@@ -134,7 +134,7 @@ class PropertyRules(pulumi.CustomResource):
             __props__['variables'] = variables
             __props__['json'] = None
         super(PropertyRules, __self__).__init__(
-            'akamai:Properties/propertyRules:PropertyRules',
+            'akamai:properties/propertyRules:PropertyRules',
             resource_name,
             __props__,
             opts)

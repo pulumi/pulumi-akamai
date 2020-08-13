@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// The `EdgeDNS.DnsZone` provides the resource for configuring a dns zone to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
+// The `edgedns.DnsZone` provides the resource for configuring a dns zone to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
 //
 // ## Example Usage
 // ### Basic usage:
@@ -19,13 +19,13 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/EdgeDNS"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/edgedns"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := EdgeDNS.NewDnsZone(ctx, "demozone", &EdgeDNS.DnsZoneArgs{
+// 		_, err := edgedns.NewDnsZone(ctx, "demozone", &edgedns.DnsZoneArgs{
 // 			Comment:  pulumi.String("some comment"),
 // 			Contract: pulumi.String("ctr_XXX"),
 // 			Group:    pulumi.String("100"),
@@ -93,7 +93,7 @@ func NewDnsZone(ctx *pulumi.Context,
 		args = &DnsZoneArgs{}
 	}
 	var resource DnsZone
-	err := ctx.RegisterResource("akamai:EdgeDNS/dnsZone:DnsZone", name, args, &resource, opts...)
+	err := ctx.RegisterResource("akamai:edgedns/dnsZone:DnsZone", name, args, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -105,7 +105,7 @@ func NewDnsZone(ctx *pulumi.Context,
 func GetDnsZone(ctx *pulumi.Context,
 	name string, id pulumi.IDInput, state *DnsZoneState, opts ...pulumi.ResourceOption) (*DnsZone, error) {
 	var resource DnsZone
-	err := ctx.ReadResource("akamai:EdgeDNS/dnsZone:DnsZone", name, id, state, &resource, opts...)
+	err := ctx.ReadResource("akamai:edgedns/dnsZone:DnsZone", name, id, state, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}

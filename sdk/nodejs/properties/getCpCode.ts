@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * Use `akamai.Properties.CpCode` data source to retrieve a group id.
+ * Use `akamai.properties.CpCode` data source to retrieve a group id.
  *
  * ## Example Usage
  */
@@ -19,7 +19,7 @@ export function getCpCode(args: GetCpCodeArgs, opts?: pulumi.InvokeOptions): Pro
     if (!opts.version) {
         opts.version = utilities.getVersion();
     }
-    return pulumi.runtime.invoke("akamai:Properties/getCpCode:getCpCode", {
+    return pulumi.runtime.invoke("akamai:properties/getCpCode:getCpCode", {
         "contract": args.contract,
         "group": args.group,
         "name": args.name,

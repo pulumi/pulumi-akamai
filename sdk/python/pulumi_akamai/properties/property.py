@@ -71,7 +71,7 @@ class Property(pulumi.CustomResource):
     """
     rules: pulumi.Output[str]
     """
-    — (Required) A JSON encoded string of property rules (see: [`Properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+    — (Required) A JSON encoded string of property rules (see: [`properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
     """
     rulessha: pulumi.Output[str]
     staging_version: pulumi.Output[float]
@@ -80,7 +80,7 @@ class Property(pulumi.CustomResource):
     """
     variables: pulumi.Output[str]
     """
-    — (Optional) A JSON encoded string of property manager variable definitions (see: [`Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+    — (Optional) A JSON encoded string of property manager variable definitions (see: [`properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
     """
     version: pulumi.Output[float]
     """
@@ -88,7 +88,7 @@ class Property(pulumi.CustomResource):
     """
     def __init__(__self__, resource_name, opts=None, contacts=None, contract=None, cp_code=None, group=None, hostnames=None, is_secure=None, name=None, origins=None, product=None, rule_format=None, rules=None, variables=None, __props__=None, __name__=None, __opts__=None):
         """
-        The `Properties.Property` resource represents an Akamai property configuration, allowing you to create,
+        The `properties.Property` resource represents an Akamai property configuration, allowing you to create,
         update, and activate properties on the Akamai platform.
 
         ## Example Usage
@@ -126,8 +126,8 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[list] origins: — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
         :param pulumi.Input[str] product: — (Optional) The product ID. (Default: `prd_SPM` for Ion)
         :param pulumi.Input[str] rule_format: — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
-        :param pulumi.Input[str] rules: — (Required) A JSON encoded string of property rules (see: [`Properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
-        :param pulumi.Input[str] variables: — (Optional) A JSON encoded string of property manager variable definitions (see: [`Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+        :param pulumi.Input[str] rules: — (Required) A JSON encoded string of property rules (see: [`properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+        :param pulumi.Input[str] variables: — (Optional) A JSON encoded string of property manager variable definitions (see: [`properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
 
         The **origins** object supports the following:
 
@@ -178,7 +178,7 @@ class Property(pulumi.CustomResource):
             __props__['staging_version'] = None
             __props__['version'] = None
         super(Property, __self__).__init__(
-            'akamai:Properties/property:Property',
+            'akamai:properties/property:Property',
             resource_name,
             __props__,
             opts)
@@ -205,9 +205,9 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[str] product: — (Optional) The product ID. (Default: `prd_SPM` for Ion)
         :param pulumi.Input[float] production_version: — the current version of the property active on the production network.
         :param pulumi.Input[str] rule_format: — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
-        :param pulumi.Input[str] rules: — (Required) A JSON encoded string of property rules (see: [`Properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+        :param pulumi.Input[str] rules: — (Required) A JSON encoded string of property rules (see: [`properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
         :param pulumi.Input[float] staging_version: — the current version of the property active on the staging network.
-        :param pulumi.Input[str] variables: — (Optional) A JSON encoded string of property manager variable definitions (see: [`Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+        :param pulumi.Input[str] variables: — (Optional) A JSON encoded string of property manager variable definitions (see: [`properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
         :param pulumi.Input[float] version: — the current version of the property config.
 
         The **origins** object supports the following:

@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// The `EdgeDNS.DnsRecord` provides the resource for configuring a dns record to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
+// The `edgedns.DnsRecord` provides the resource for configuring a dns record to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
 //
 // ## Example Usage
 // ### Basic usage:
@@ -19,13 +19,13 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/EdgeDNS"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/edgedns"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := EdgeDNS.NewDnsRecord(ctx, "origin", &EdgeDNS.DnsRecordArgs{
+// 		_, err := edgedns.NewDnsRecord(ctx, "origin", &edgedns.DnsRecordArgs{
 // 			Active:     pulumi.Bool(true),
 // 			Recordtype: pulumi.String("A"),
 // 			Targets: pulumi.StringArray{
@@ -37,7 +37,7 @@ import (
 // 		if err != nil {
 // 			return err
 // 		}
-// 		_, err = EdgeDNS.NewDnsRecord(ctx, "www", &EdgeDNS.DnsRecordArgs{
+// 		_, err = edgedns.NewDnsRecord(ctx, "www", &edgedns.DnsRecordArgs{
 // 			Active:     pulumi.Bool(true),
 // 			Recordtype: pulumi.String("CNAME"),
 // 			Targets:    "origin.example.org.edgesuite.net",
@@ -363,7 +363,7 @@ func NewDnsRecord(ctx *pulumi.Context,
 		args = &DnsRecordArgs{}
 	}
 	var resource DnsRecord
-	err := ctx.RegisterResource("akamai:EdgeDNS/dnsRecord:DnsRecord", name, args, &resource, opts...)
+	err := ctx.RegisterResource("akamai:edgedns/dnsRecord:DnsRecord", name, args, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -375,7 +375,7 @@ func NewDnsRecord(ctx *pulumi.Context,
 func GetDnsRecord(ctx *pulumi.Context,
 	name string, id pulumi.IDInput, state *DnsRecordState, opts ...pulumi.ResourceOption) (*DnsRecord, error) {
 	var resource DnsRecord
-	err := ctx.ReadResource("akamai:EdgeDNS/dnsRecord:DnsRecord", name, id, state, &resource, opts...)
+	err := ctx.ReadResource("akamai:edgedns/dnsRecord:DnsRecord", name, id, state, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}

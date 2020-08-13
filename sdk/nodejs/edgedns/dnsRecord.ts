@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * The `akamai.EdgeDNS.DnsRecord` provides the resource for configuring a dns record to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
+ * The `akamai.edgedns.DnsRecord` provides the resource for configuring a dns record to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
  *
  * ## Example Usage
  * ### Basic usage:
@@ -14,14 +14,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const origin = new akamai.EdgeDNS.DnsRecord("origin", {
+ * const origin = new akamai.edgedns.DnsRecord("origin", {
  *     active: true,
  *     recordtype: "A",
  *     targets: ["192.0.2.42"],
  *     ttl: 30,
  *     zone: "origin.org",
  * });
- * const www = new akamai.EdgeDNS.DnsRecord("www", {
+ * const www = new akamai.edgedns.DnsRecord("www", {
  *     active: true,
  *     recordtype: "CNAME",
  *     targets: "origin.example.org.edgesuite.net",
@@ -265,7 +265,7 @@ export class DnsRecord extends pulumi.CustomResource {
     }
 
     /** @internal */
-    public static readonly __pulumiType = 'akamai:EdgeDNS/dnsRecord:DnsRecord';
+    public static readonly __pulumiType = 'akamai:edgedns/dnsRecord:DnsRecord';
 
     /**
      * Returns true if the given object is an instance of DnsRecord.  This is designed to work even

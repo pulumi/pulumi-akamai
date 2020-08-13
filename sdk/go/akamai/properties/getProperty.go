@@ -9,7 +9,7 @@ import (
 
 func LookupProperty(ctx *pulumi.Context, args *LookupPropertyArgs, opts ...pulumi.InvokeOption) (*LookupPropertyResult, error) {
 	var rv LookupPropertyResult
-	err := ctx.Invoke("akamai:Properties/getProperty:getProperty", args, &rv, opts...)
+	err := ctx.Invoke("akamai:properties/getProperty:getProperty", args, &rv, opts...)
 	if err != nil {
 		return nil, err
 	}

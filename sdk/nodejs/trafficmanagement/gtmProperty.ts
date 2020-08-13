@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * `akamai.TrafficManagement.GtmProperty` provides the resource for creating, configuring and importing a gtm property to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingPropertyName`
+ * `akamai.trafficmanagement.GtmProperty` provides the resource for creating, configuring and importing a gtm property to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingPropertyName`
  *
  * ## Example Usage
  * ### Basic usage:
@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const demoProperty = new akamai.TrafficManagement.GtmProperty("demo_property", {
+ * const demoProperty = new akamai.trafficmanagement.GtmProperty("demo_property", {
  *     domain: "demo_domain.akadns.net",
  *     handoutLimit: 5,
  *     handoutMode: "normal",
@@ -43,7 +43,7 @@ export class GtmProperty extends pulumi.CustomResource {
     }
 
     /** @internal */
-    public static readonly __pulumiType = 'akamai:TrafficManagement/gtmProperty:GtmProperty';
+    public static readonly __pulumiType = 'akamai:trafficmanagement/gtmProperty:GtmProperty';
 
     /**
      * Returns true if the given object is an instance of GtmProperty.  This is designed to work even
@@ -99,7 +99,7 @@ export class GtmProperty extends pulumi.CustomResource {
     /**
      * — (multiple allowed)
      */
-    public readonly livenessTests!: pulumi.Output<outputs.TrafficManagement.GtmPropertyLivenessTest[] | undefined>;
+    public readonly livenessTests!: pulumi.Output<outputs.trafficmanagement.GtmPropertyLivenessTest[] | undefined>;
     public readonly loadImbalancePercentage!: pulumi.Output<number | undefined>;
     public readonly mapName!: pulumi.Output<string | undefined>;
     public readonly maxUnreachablePenalty!: pulumi.Output<number | undefined>;
@@ -117,7 +117,7 @@ export class GtmProperty extends pulumi.CustomResource {
      * * `type`
      * * `ttl`
      */
-    public readonly staticRrSets!: pulumi.Output<outputs.TrafficManagement.GtmPropertyStaticRrSet[] | undefined>;
+    public readonly staticRrSets!: pulumi.Output<outputs.trafficmanagement.GtmPropertyStaticRrSet[] | undefined>;
     public readonly staticTtl!: pulumi.Output<number | undefined>;
     public readonly stickinessBonusConstant!: pulumi.Output<number | undefined>;
     public readonly stickinessBonusPercentage!: pulumi.Output<number | undefined>;
@@ -125,7 +125,7 @@ export class GtmProperty extends pulumi.CustomResource {
      * — (multiple allowed)
      * * `datacenterId`
      */
-    public readonly trafficTargets!: pulumi.Output<outputs.TrafficManagement.GtmPropertyTrafficTarget[]>;
+    public readonly trafficTargets!: pulumi.Output<outputs.trafficmanagement.GtmPropertyTrafficTarget[]>;
     /**
      * — Property type  
      * * `scoreAggregationType`
@@ -305,7 +305,7 @@ export interface GtmPropertyState {
     /**
      * — (multiple allowed)
      */
-    readonly livenessTests?: pulumi.Input<pulumi.Input<inputs.TrafficManagement.GtmPropertyLivenessTest>[]>;
+    readonly livenessTests?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmPropertyLivenessTest>[]>;
     readonly loadImbalancePercentage?: pulumi.Input<number>;
     readonly mapName?: pulumi.Input<string>;
     readonly maxUnreachablePenalty?: pulumi.Input<number>;
@@ -323,7 +323,7 @@ export interface GtmPropertyState {
      * * `type`
      * * `ttl`
      */
-    readonly staticRrSets?: pulumi.Input<pulumi.Input<inputs.TrafficManagement.GtmPropertyStaticRrSet>[]>;
+    readonly staticRrSets?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmPropertyStaticRrSet>[]>;
     readonly staticTtl?: pulumi.Input<number>;
     readonly stickinessBonusConstant?: pulumi.Input<number>;
     readonly stickinessBonusPercentage?: pulumi.Input<number>;
@@ -331,7 +331,7 @@ export interface GtmPropertyState {
      * — (multiple allowed)
      * * `datacenterId`
      */
-    readonly trafficTargets?: pulumi.Input<pulumi.Input<inputs.TrafficManagement.GtmPropertyTrafficTarget>[]>;
+    readonly trafficTargets?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmPropertyTrafficTarget>[]>;
     /**
      * — Property type  
      * * `scoreAggregationType`
@@ -400,7 +400,7 @@ export interface GtmPropertyArgs {
     /**
      * — (multiple allowed)
      */
-    readonly livenessTests?: pulumi.Input<pulumi.Input<inputs.TrafficManagement.GtmPropertyLivenessTest>[]>;
+    readonly livenessTests?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmPropertyLivenessTest>[]>;
     readonly loadImbalancePercentage?: pulumi.Input<number>;
     readonly mapName?: pulumi.Input<string>;
     readonly maxUnreachablePenalty?: pulumi.Input<number>;
@@ -418,7 +418,7 @@ export interface GtmPropertyArgs {
      * * `type`
      * * `ttl`
      */
-    readonly staticRrSets?: pulumi.Input<pulumi.Input<inputs.TrafficManagement.GtmPropertyStaticRrSet>[]>;
+    readonly staticRrSets?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmPropertyStaticRrSet>[]>;
     readonly staticTtl?: pulumi.Input<number>;
     readonly stickinessBonusConstant?: pulumi.Input<number>;
     readonly stickinessBonusPercentage?: pulumi.Input<number>;
@@ -426,7 +426,7 @@ export interface GtmPropertyArgs {
      * — (multiple allowed)
      * * `datacenterId`
      */
-    readonly trafficTargets: pulumi.Input<pulumi.Input<inputs.TrafficManagement.GtmPropertyTrafficTarget>[]>;
+    readonly trafficTargets: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmPropertyTrafficTarget>[]>;
     /**
      * — Property type  
      * * `scoreAggregationType`

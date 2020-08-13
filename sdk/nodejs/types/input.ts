@@ -28,7 +28,10 @@ export interface ProviderProperty {
     host?: pulumi.Input<string>;
     maxBody?: pulumi.Input<number>;
 }
-export namespace EdgeDNS {
+export namespace config {
+}
+
+export namespace edgedns {
     export interface DnsZoneTsigKey {
         algorithm: pulumi.Input<string>;
         /**
@@ -41,12 +44,12 @@ export namespace EdgeDNS {
     }
 }
 
-export namespace Properties {
+export namespace properties {
     export interface GetPropertyRulesRule {
         /**
          * — (Optional) One or more behaviors to apply to requests that match.
          */
-        behaviors?: inputs.Properties.GetPropertyRulesRuleBehavior[];
+        behaviors?: inputs.properties.GetPropertyRulesRuleBehavior[];
         criteriaMatch?: string;
         /**
          * — (Optional) Whether the property is a secure (Enhanced TLS) property or not (top-level only).
@@ -55,8 +58,8 @@ export namespace Properties {
         /**
          * — (Optional) Child rules (may be nested five levels deep).
          */
-        rules?: inputs.Properties.GetPropertyRulesRuleRule[];
-        variables?: inputs.Properties.GetPropertyRulesRuleVariable[];
+        rules?: inputs.properties.GetPropertyRulesRuleRule[];
+        variables?: inputs.properties.GetPropertyRulesRuleVariable[];
     }
 
     export interface GetPropertyRulesRuleBehavior {
@@ -67,7 +70,7 @@ export namespace Properties {
         /**
          * — (Optional) One or more options for the behavior.
          */
-        options?: inputs.Properties.GetPropertyRulesRuleBehaviorOption[];
+        options?: inputs.properties.GetPropertyRulesRuleBehaviorOption[];
     }
 
     export interface GetPropertyRulesRuleBehaviorOption {
@@ -89,13 +92,13 @@ export namespace Properties {
         /**
          * — (Optional) One or more behaviors to apply to requests that match.
          */
-        behaviors?: inputs.Properties.GetPropertyRulesRuleRuleBehavior[];
+        behaviors?: inputs.properties.GetPropertyRulesRuleRuleBehavior[];
         comment?: string;
         criteriaMatch?: string;
         /**
          * — (Optional) One or more criteria to match requests on.
          */
-        criterias?: inputs.Properties.GetPropertyRulesRuleRuleCriteria[];
+        criterias?: inputs.properties.GetPropertyRulesRuleRuleCriteria[];
         /**
          * — (Required) The name of the behavior.
          */
@@ -103,7 +106,7 @@ export namespace Properties {
         /**
          * — (Optional) Child rules (may be nested five levels deep).
          */
-        rules?: inputs.Properties.GetPropertyRulesRuleRuleRule[];
+        rules?: inputs.properties.GetPropertyRulesRuleRuleRule[];
     }
 
     export interface GetPropertyRulesRuleRuleBehavior {
@@ -114,7 +117,7 @@ export namespace Properties {
         /**
          * — (Optional) One or more options for the behavior.
          */
-        options?: inputs.Properties.GetPropertyRulesRuleRuleBehaviorOption[];
+        options?: inputs.properties.GetPropertyRulesRuleRuleBehaviorOption[];
     }
 
     export interface GetPropertyRulesRuleRuleBehaviorOption {
@@ -140,7 +143,7 @@ export namespace Properties {
         /**
          * — (Optional) One or more options for the behavior.
          */
-        options?: inputs.Properties.GetPropertyRulesRuleRuleCriteriaOption[];
+        options?: inputs.properties.GetPropertyRulesRuleRuleCriteriaOption[];
     }
 
     export interface GetPropertyRulesRuleRuleCriteriaOption {
@@ -162,13 +165,13 @@ export namespace Properties {
         /**
          * — (Optional) One or more behaviors to apply to requests that match.
          */
-        behaviors?: inputs.Properties.GetPropertyRulesRuleRuleRuleBehavior[];
+        behaviors?: inputs.properties.GetPropertyRulesRuleRuleRuleBehavior[];
         comment?: string;
         criteriaMatch?: string;
         /**
          * — (Optional) One or more criteria to match requests on.
          */
-        criterias?: inputs.Properties.GetPropertyRulesRuleRuleRuleCriteria[];
+        criterias?: inputs.properties.GetPropertyRulesRuleRuleRuleCriteria[];
         /**
          * — (Required) The name of the behavior.
          */
@@ -176,7 +179,7 @@ export namespace Properties {
         /**
          * — (Optional) Child rules (may be nested five levels deep).
          */
-        rules?: inputs.Properties.GetPropertyRulesRuleRuleRuleRule[];
+        rules?: inputs.properties.GetPropertyRulesRuleRuleRuleRule[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleBehavior {
@@ -187,7 +190,7 @@ export namespace Properties {
         /**
          * — (Optional) One or more options for the behavior.
          */
-        options?: inputs.Properties.GetPropertyRulesRuleRuleRuleBehaviorOption[];
+        options?: inputs.properties.GetPropertyRulesRuleRuleRuleBehaviorOption[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleBehaviorOption {
@@ -213,7 +216,7 @@ export namespace Properties {
         /**
          * — (Optional) One or more options for the behavior.
          */
-        options?: inputs.Properties.GetPropertyRulesRuleRuleRuleCriteriaOption[];
+        options?: inputs.properties.GetPropertyRulesRuleRuleRuleCriteriaOption[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleCriteriaOption {
@@ -235,13 +238,13 @@ export namespace Properties {
         /**
          * — (Optional) One or more behaviors to apply to requests that match.
          */
-        behaviors?: inputs.Properties.GetPropertyRulesRuleRuleRuleRuleBehavior[];
+        behaviors?: inputs.properties.GetPropertyRulesRuleRuleRuleRuleBehavior[];
         comment?: string;
         criteriaMatch?: string;
         /**
          * — (Optional) One or more criteria to match requests on.
          */
-        criterias?: inputs.Properties.GetPropertyRulesRuleRuleRuleRuleCriteria[];
+        criterias?: inputs.properties.GetPropertyRulesRuleRuleRuleRuleCriteria[];
         /**
          * — (Required) The name of the behavior.
          */
@@ -249,7 +252,7 @@ export namespace Properties {
         /**
          * — (Optional) Child rules (may be nested five levels deep).
          */
-        rules?: inputs.Properties.GetPropertyRulesRuleRuleRuleRuleRule[];
+        rules?: inputs.properties.GetPropertyRulesRuleRuleRuleRuleRule[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleRuleBehavior {
@@ -260,7 +263,7 @@ export namespace Properties {
         /**
          * — (Optional) One or more options for the behavior.
          */
-        options?: inputs.Properties.GetPropertyRulesRuleRuleRuleRuleBehaviorOption[];
+        options?: inputs.properties.GetPropertyRulesRuleRuleRuleRuleBehaviorOption[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleRuleBehaviorOption {
@@ -286,7 +289,7 @@ export namespace Properties {
         /**
          * — (Optional) One or more options for the behavior.
          */
-        options?: inputs.Properties.GetPropertyRulesRuleRuleRuleRuleCriteriaOption[];
+        options?: inputs.properties.GetPropertyRulesRuleRuleRuleRuleCriteriaOption[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleRuleCriteriaOption {
@@ -308,13 +311,13 @@ export namespace Properties {
         /**
          * — (Optional) One or more behaviors to apply to requests that match.
          */
-        behaviors?: inputs.Properties.GetPropertyRulesRuleRuleRuleRuleRuleBehavior[];
+        behaviors?: inputs.properties.GetPropertyRulesRuleRuleRuleRuleRuleBehavior[];
         comment?: string;
         criteriaMatch?: string;
         /**
          * — (Optional) One or more criteria to match requests on.
          */
-        criterias?: inputs.Properties.GetPropertyRulesRuleRuleRuleRuleRuleCriteria[];
+        criterias?: inputs.properties.GetPropertyRulesRuleRuleRuleRuleRuleCriteria[];
         /**
          * — (Required) The name of the behavior.
          */
@@ -329,7 +332,7 @@ export namespace Properties {
         /**
          * — (Optional) One or more options for the behavior.
          */
-        options?: inputs.Properties.GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOption[];
+        options?: inputs.properties.GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOption[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOption {
@@ -355,7 +358,7 @@ export namespace Properties {
         /**
          * — (Optional) One or more options for the behavior.
          */
-        options?: inputs.Properties.GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOption[];
+        options?: inputs.properties.GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOption[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOption {
@@ -415,16 +418,16 @@ export namespace Properties {
     }
 
     export interface PropertyRulesRule {
-        behaviors?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleBehavior>[]>;
+        behaviors?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleBehavior>[]>;
         criteriaMatch?: pulumi.Input<string>;
         isSecure?: pulumi.Input<boolean>;
-        rules?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRule>[]>;
-        variables?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleVariable>[]>;
+        rules?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRule>[]>;
+        variables?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleVariable>[]>;
     }
 
     export interface PropertyRulesRuleBehavior {
         name: pulumi.Input<string>;
-        options?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleBehaviorOption>[]>;
+        options?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleBehaviorOption>[]>;
     }
 
     export interface PropertyRulesRuleBehaviorOption {
@@ -434,17 +437,17 @@ export namespace Properties {
     }
 
     export interface PropertyRulesRuleRule {
-        behaviors?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleBehavior>[]>;
+        behaviors?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleBehavior>[]>;
         comment?: pulumi.Input<string>;
         criteriaMatch?: pulumi.Input<string>;
-        criterias?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleCriteria>[]>;
+        criterias?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleCriteria>[]>;
         name: pulumi.Input<string>;
-        rules?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRule>[]>;
+        rules?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRule>[]>;
     }
 
     export interface PropertyRulesRuleRuleBehavior {
         name: pulumi.Input<string>;
-        options?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleBehaviorOption>[]>;
+        options?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleBehaviorOption>[]>;
     }
 
     export interface PropertyRulesRuleRuleBehaviorOption {
@@ -455,7 +458,7 @@ export namespace Properties {
 
     export interface PropertyRulesRuleRuleCriteria {
         name: pulumi.Input<string>;
-        options?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleCriteriaOption>[]>;
+        options?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleCriteriaOption>[]>;
     }
 
     export interface PropertyRulesRuleRuleCriteriaOption {
@@ -465,17 +468,17 @@ export namespace Properties {
     }
 
     export interface PropertyRulesRuleRuleRule {
-        behaviors?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleBehavior>[]>;
+        behaviors?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleBehavior>[]>;
         comment?: pulumi.Input<string>;
         criteriaMatch?: pulumi.Input<string>;
-        criterias?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleCriteria>[]>;
+        criterias?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleCriteria>[]>;
         name: pulumi.Input<string>;
-        rules?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleRule>[]>;
+        rules?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRule>[]>;
     }
 
     export interface PropertyRulesRuleRuleRuleBehavior {
         name: pulumi.Input<string>;
-        options?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleBehaviorOption>[]>;
+        options?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleBehaviorOption>[]>;
     }
 
     export interface PropertyRulesRuleRuleRuleBehaviorOption {
@@ -486,7 +489,7 @@ export namespace Properties {
 
     export interface PropertyRulesRuleRuleRuleCriteria {
         name: pulumi.Input<string>;
-        options?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleCriteriaOption>[]>;
+        options?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleCriteriaOption>[]>;
     }
 
     export interface PropertyRulesRuleRuleRuleCriteriaOption {
@@ -496,17 +499,17 @@ export namespace Properties {
     }
 
     export interface PropertyRulesRuleRuleRuleRule {
-        behaviors?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleRuleBehavior>[]>;
+        behaviors?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRuleBehavior>[]>;
         comment?: pulumi.Input<string>;
         criteriaMatch?: pulumi.Input<string>;
-        criterias?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleRuleCriteria>[]>;
+        criterias?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRuleCriteria>[]>;
         name: pulumi.Input<string>;
-        rules?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleRuleRule>[]>;
+        rules?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRuleRule>[]>;
     }
 
     export interface PropertyRulesRuleRuleRuleRuleBehavior {
         name: pulumi.Input<string>;
-        options?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleRuleBehaviorOption>[]>;
+        options?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRuleBehaviorOption>[]>;
     }
 
     export interface PropertyRulesRuleRuleRuleRuleBehaviorOption {
@@ -517,7 +520,7 @@ export namespace Properties {
 
     export interface PropertyRulesRuleRuleRuleRuleCriteria {
         name: pulumi.Input<string>;
-        options?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleRuleCriteriaOption>[]>;
+        options?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRuleCriteriaOption>[]>;
     }
 
     export interface PropertyRulesRuleRuleRuleRuleCriteriaOption {
@@ -527,16 +530,16 @@ export namespace Properties {
     }
 
     export interface PropertyRulesRuleRuleRuleRuleRule {
-        behaviors?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleRuleRuleBehavior>[]>;
+        behaviors?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRuleRuleBehavior>[]>;
         comment?: pulumi.Input<string>;
         criteriaMatch?: pulumi.Input<string>;
-        criterias?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleRuleRuleCriteria>[]>;
+        criterias?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRuleRuleCriteria>[]>;
         name: pulumi.Input<string>;
     }
 
     export interface PropertyRulesRuleRuleRuleRuleRuleBehavior {
         name: pulumi.Input<string>;
-        options?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleRuleRuleBehaviorOption>[]>;
+        options?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRuleRuleBehaviorOption>[]>;
     }
 
     export interface PropertyRulesRuleRuleRuleRuleRuleBehaviorOption {
@@ -547,7 +550,7 @@ export namespace Properties {
 
     export interface PropertyRulesRuleRuleRuleRuleRuleCriteria {
         name: pulumi.Input<string>;
-        options?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRuleRuleRuleRuleRuleCriteriaOption>[]>;
+        options?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRuleRuleCriteriaOption>[]>;
     }
 
     export interface PropertyRulesRuleRuleRuleRuleRuleCriteriaOption {
@@ -565,7 +568,7 @@ export namespace Properties {
     }
 
     export interface PropertyVariablesVariable {
-        variables?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyVariablesVariableVariable>[]>;
+        variables?: pulumi.Input<pulumi.Input<inputs.properties.PropertyVariablesVariableVariable>[]>;
     }
 
     export interface PropertyVariablesVariableVariable {
@@ -592,7 +595,7 @@ export namespace Properties {
     }
 }
 
-export namespace TrafficManagement {
+export namespace trafficmanagement {
     export interface GtmASmapAssignment {
         /**
          * — (List)
@@ -678,7 +681,7 @@ export namespace TrafficManagement {
          * `name`
          * `value`
          */
-        httpHeaders?: pulumi.Input<pulumi.Input<inputs.TrafficManagement.GtmPropertyLivenessTestHttpHeader>[]>;
+        httpHeaders?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmPropertyLivenessTestHttpHeader>[]>;
         /**
          * — Liveness test name
          * * `testInterval`
@@ -787,8 +790,5 @@ export namespace TrafficManagement {
          */
         useDefaultLoadObject?: pulumi.Input<boolean>;
     }
-}
-
-export namespace config {
 }
 

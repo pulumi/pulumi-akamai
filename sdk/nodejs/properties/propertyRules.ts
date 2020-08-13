@@ -21,7 +21,7 @@ export class PropertyRules extends pulumi.CustomResource {
     }
 
     /** @internal */
-    public static readonly __pulumiType = 'akamai:Properties/propertyRules:PropertyRules';
+    public static readonly __pulumiType = 'akamai:properties/propertyRules:PropertyRules';
 
     /**
      * Returns true if the given object is an instance of PropertyRules.  This is designed to work even
@@ -38,7 +38,7 @@ export class PropertyRules extends pulumi.CustomResource {
      * JSON Rule representation
      */
     public /*out*/ readonly json!: pulumi.Output<string>;
-    public readonly rules!: pulumi.Output<outputs.Properties.PropertyRulesRule[] | undefined>;
+    public readonly rules!: pulumi.Output<outputs.properties.PropertyRulesRule[] | undefined>;
     public readonly variables!: pulumi.Output<string | undefined>;
 
     /**
@@ -81,7 +81,7 @@ export interface PropertyRulesState {
      * JSON Rule representation
      */
     readonly json?: pulumi.Input<string>;
-    readonly rules?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRule>[]>;
+    readonly rules?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRule>[]>;
     readonly variables?: pulumi.Input<string>;
 }
 
@@ -89,6 +89,6 @@ export interface PropertyRulesState {
  * The set of arguments for constructing a PropertyRules resource.
  */
 export interface PropertyRulesArgs {
-    readonly rules?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyRulesRule>[]>;
+    readonly rules?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRule>[]>;
     readonly variables?: pulumi.Input<string>;
 }

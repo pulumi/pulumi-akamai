@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// `TrafficManagement.GtmCidrmap` provides the resource for creating, configuring and importing a gtm Cidr Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingMapName`
+// `trafficmanagement.GtmCidrmap` provides the resource for creating, configuring and importing a gtm Cidr Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingMapName`
 //
 // ## Example Usage
 // ### Basic usage:
@@ -19,14 +19,14 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/TrafficManagement"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/trafficmanagement"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := TrafficManagement.NewGtmCidrmap(ctx, "demoCidrmap", &TrafficManagement.GtmCidrmapArgs{
-// 			DefaultDatacenter: &TrafficManagement.GtmCidrmapDefaultDatacenterArgs{
+// 		_, err := trafficmanagement.NewGtmCidrmap(ctx, "demoCidrmap", &trafficmanagement.GtmCidrmapArgs{
+// 			DefaultDatacenter: &trafficmanagement.GtmCidrmapDefaultDatacenterArgs{
 // 				DatacenterId: pulumi.Int(5400),
 // 				Nickname:     pulumi.String("All Other CIDR Blocks"),
 // 			},
@@ -71,7 +71,7 @@ func NewGtmCidrmap(ctx *pulumi.Context,
 		args = &GtmCidrmapArgs{}
 	}
 	var resource GtmCidrmap
-	err := ctx.RegisterResource("akamai:TrafficManagement/gtmCidrmap:GtmCidrmap", name, args, &resource, opts...)
+	err := ctx.RegisterResource("akamai:trafficmanagement/gtmCidrmap:GtmCidrmap", name, args, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -83,7 +83,7 @@ func NewGtmCidrmap(ctx *pulumi.Context,
 func GetGtmCidrmap(ctx *pulumi.Context,
 	name string, id pulumi.IDInput, state *GtmCidrmapState, opts ...pulumi.ResourceOption) (*GtmCidrmap, error) {
 	var resource GtmCidrmap
-	err := ctx.ReadResource("akamai:TrafficManagement/gtmCidrmap:GtmCidrmap", name, id, state, &resource, opts...)
+	err := ctx.ReadResource("akamai:trafficmanagement/gtmCidrmap:GtmCidrmap", name, id, state, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}

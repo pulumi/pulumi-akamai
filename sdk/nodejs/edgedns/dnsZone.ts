@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * The `akamai.EdgeDNS.DnsZone` provides the resource for configuring a dns zone to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
+ * The `akamai.edgedns.DnsZone` provides the resource for configuring a dns zone to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
  *
  * ## Example Usage
  * ### Basic usage:
@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const demozone = new akamai.EdgeDNS.DnsZone("demozone", {
+ * const demozone = new akamai.edgedns.DnsZone("demozone", {
  *     comment: "some comment",
  *     contract: "ctr_XXX",
  *     group: "100",
@@ -45,7 +45,7 @@ export class DnsZone extends pulumi.CustomResource {
     }
 
     /** @internal */
-    public static readonly __pulumiType = 'akamai:EdgeDNS/dnsZone:DnsZone';
+    public static readonly __pulumiType = 'akamai:edgedns/dnsZone:DnsZone';
 
     /**
      * Returns true if the given object is an instance of DnsZone.  This is designed to work even
@@ -95,7 +95,7 @@ export class DnsZone extends pulumi.CustomResource {
     /**
      * — (Optional) TSIG Key used in secure zone transfers
      */
-    public readonly tsigKey!: pulumi.Output<outputs.EdgeDNS.DnsZoneTsigKey | undefined>;
+    public readonly tsigKey!: pulumi.Output<outputs.edgedns.DnsZoneTsigKey | undefined>;
     /**
      * — (Required) Whether the zone is primary or secondary.
      */
@@ -213,7 +213,7 @@ export interface DnsZoneState {
     /**
      * — (Optional) TSIG Key used in secure zone transfers
      */
-    readonly tsigKey?: pulumi.Input<inputs.EdgeDNS.DnsZoneTsigKey>;
+    readonly tsigKey?: pulumi.Input<inputs.edgedns.DnsZoneTsigKey>;
     /**
      * — (Required) Whether the zone is primary or secondary.
      */
@@ -264,7 +264,7 @@ export interface DnsZoneArgs {
     /**
      * — (Optional) TSIG Key used in secure zone transfers
      */
-    readonly tsigKey?: pulumi.Input<inputs.EdgeDNS.DnsZoneTsigKey>;
+    readonly tsigKey?: pulumi.Input<inputs.edgedns.DnsZoneTsigKey>;
     /**
      * — (Required) Whether the zone is primary or secondary.
      */

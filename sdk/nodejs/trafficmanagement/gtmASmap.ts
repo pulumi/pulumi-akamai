@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * `akamai.TrafficManagement.GtmASmap` provides the resource for creating, configuring and importing a gtm AS Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingMapName`
+ * `akamai.trafficmanagement.GtmASmap` provides the resource for creating, configuring and importing a gtm AS Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingMapName`
  *
  * ## Example Usage
  * ### Basic usage:
@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const demoAsmap = new akamai.TrafficManagement.GtmASmap("demo_asmap", {
+ * const demoAsmap = new akamai.trafficmanagement.GtmASmap("demo_asmap", {
  *     defaultDatacenter: {
  *         datacenterId: 5400,
  *         nickname: "All Other AS numbers",
@@ -40,7 +40,7 @@ export class GtmASmap extends pulumi.CustomResource {
     }
 
     /** @internal */
-    public static readonly __pulumiType = 'akamai:TrafficManagement/gtmASmap:GtmASmap';
+    public static readonly __pulumiType = 'akamai:trafficmanagement/gtmASmap:GtmASmap';
 
     /**
      * Returns true if the given object is an instance of GtmASmap.  This is designed to work even
@@ -58,8 +58,8 @@ export class GtmASmap extends pulumi.CustomResource {
      * * `datacenterId`
      * * `nickname`
      */
-    public readonly assignments!: pulumi.Output<outputs.TrafficManagement.GtmASmapAssignment[] | undefined>;
-    public readonly defaultDatacenter!: pulumi.Output<outputs.TrafficManagement.GtmASmapDefaultDatacenter>;
+    public readonly assignments!: pulumi.Output<outputs.trafficmanagement.GtmASmapAssignment[] | undefined>;
+    public readonly defaultDatacenter!: pulumi.Output<outputs.trafficmanagement.GtmASmapDefaultDatacenter>;
     /**
      * — Domain name
      */
@@ -127,8 +127,8 @@ export interface GtmASmapState {
      * * `datacenterId`
      * * `nickname`
      */
-    readonly assignments?: pulumi.Input<pulumi.Input<inputs.TrafficManagement.GtmASmapAssignment>[]>;
-    readonly defaultDatacenter?: pulumi.Input<inputs.TrafficManagement.GtmASmapDefaultDatacenter>;
+    readonly assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmASmapAssignment>[]>;
+    readonly defaultDatacenter?: pulumi.Input<inputs.trafficmanagement.GtmASmapDefaultDatacenter>;
     /**
      * — Domain name
      */
@@ -155,8 +155,8 @@ export interface GtmASmapArgs {
      * * `datacenterId`
      * * `nickname`
      */
-    readonly assignments?: pulumi.Input<pulumi.Input<inputs.TrafficManagement.GtmASmapAssignment>[]>;
-    readonly defaultDatacenter: pulumi.Input<inputs.TrafficManagement.GtmASmapDefaultDatacenter>;
+    readonly assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmASmapAssignment>[]>;
+    readonly defaultDatacenter: pulumi.Input<inputs.trafficmanagement.GtmASmapDefaultDatacenter>;
     /**
      * — Domain name
      */

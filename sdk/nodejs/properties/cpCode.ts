@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * The `akamai.Properties.CpCode` resource allows you to create or re-use CP Codes.
+ * The `akamai.properties.CpCode` resource allows you to create or re-use CP Codes.
  *
  * If the CP Code already exists it will be used instead of creating a new one.
  *
@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const cpCode = new akamai.Properties.CpCode("cp_code", {
+ * const cpCode = new akamai.properties.CpCode("cp_code", {
  *     contract: akamai_contract_contract.id,
  *     group: akamai_group_group.id,
  *     product: "prd_xxx",
@@ -38,7 +38,7 @@ export class CpCode extends pulumi.CustomResource {
     }
 
     /** @internal */
-    public static readonly __pulumiType = 'akamai:Properties/cpCode:CpCode';
+    public static readonly __pulumiType = 'akamai:properties/cpCode:CpCode';
 
     /**
      * Returns true if the given object is an instance of CpCode.  This is designed to work even

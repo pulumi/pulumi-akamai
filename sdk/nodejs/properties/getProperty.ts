@@ -14,7 +14,7 @@ export function getProperty(args: GetPropertyArgs, opts?: pulumi.InvokeOptions):
     if (!opts.version) {
         opts.version = utilities.getVersion();
     }
-    return pulumi.runtime.invoke("akamai:Properties/getProperty:getProperty", {
+    return pulumi.runtime.invoke("akamai:properties/getProperty:getProperty", {
         "name": args.name,
         "version": args.version,
     }, opts);

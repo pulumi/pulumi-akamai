@@ -32,12 +32,12 @@ namespace Pulumi.Akamai.Properties
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
         public PropertyRules(string name, PropertyRulesArgs? args = null, CustomResourceOptions? options = null)
-            : base("akamai:Properties/propertyRules:PropertyRules", name, args ?? new PropertyRulesArgs(), MakeResourceOptions(options, ""))
+            : base("akamai:properties/propertyRules:PropertyRules", name, args ?? new PropertyRulesArgs(), MakeResourceOptions(options, ""))
         {
         }
 
         private PropertyRules(string name, Input<string> id, PropertyRulesState? state = null, CustomResourceOptions? options = null)
-            : base("akamai:Properties/propertyRules:PropertyRules", name, state, MakeResourceOptions(options, id))
+            : base("akamai:properties/propertyRules:PropertyRules", name, state, MakeResourceOptions(options, id))
         {
         }
 

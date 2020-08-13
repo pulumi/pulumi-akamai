@@ -31,9 +31,9 @@ const (
 	mainPkg = "akamai"
 	// modules:
 	mainMod              = "index"
-	edgeDNSMod           = "EdgeDNS"
-	propertiesMod        = "Properties"
-	trafficManagementMod = "TrafficManagement"
+	edgeDNSMod           = "edgedns"
+	propertiesMod        = "properties"
+	trafficManagementMod = "trafficmanagement"
 )
 
 // makeMember manufactures a type token for the package and the given module and type.

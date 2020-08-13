@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * The `akamai.Properties.PropertyVariables` allows you to implement dynamic functionality. You can perform conditional logic based on the variable’s value, and catch any unforeseen errors that execute on the edge at runtime.
+ * The `akamai.properties.PropertyVariables` allows you to implement dynamic functionality. You can perform conditional logic based on the variable’s value, and catch any unforeseen errors that execute on the edge at runtime.
  *
  * Typical uses for variables include:
  *
@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const origin = new akamai.Properties.PropertyVariables("origin", {
+ * const origin = new akamai.properties.PropertyVariables("origin", {
  *     variables: [{
  *         variables: [{
  *             description: "Origin Hostname",
@@ -51,7 +51,7 @@ export class PropertyVariables extends pulumi.CustomResource {
     }
 
     /** @internal */
-    public static readonly __pulumiType = 'akamai:Properties/propertyVariables:PropertyVariables';
+    public static readonly __pulumiType = 'akamai:properties/propertyVariables:PropertyVariables';
 
     /**
      * Returns true if the given object is an instance of PropertyVariables.  This is designed to work even
@@ -68,7 +68,7 @@ export class PropertyVariables extends pulumi.CustomResource {
      * JSON variables representation
      */
     public /*out*/ readonly json!: pulumi.Output<string>;
-    public readonly variables!: pulumi.Output<outputs.Properties.PropertyVariablesVariable[] | undefined>;
+    public readonly variables!: pulumi.Output<outputs.properties.PropertyVariablesVariable[] | undefined>;
 
     /**
      * Create a PropertyVariables resource with the given unique name, arguments, and options.
@@ -108,12 +108,12 @@ export interface PropertyVariablesState {
      * JSON variables representation
      */
     readonly json?: pulumi.Input<string>;
-    readonly variables?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyVariablesVariable>[]>;
+    readonly variables?: pulumi.Input<pulumi.Input<inputs.properties.PropertyVariablesVariable>[]>;
 }
 
 /**
  * The set of arguments for constructing a PropertyVariables resource.
  */
 export interface PropertyVariablesArgs {
-    readonly variables?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyVariablesVariable>[]>;
+    readonly variables?: pulumi.Input<pulumi.Input<inputs.properties.PropertyVariablesVariable>[]>;
 }

@@ -49,7 +49,7 @@ class AwaitableGetGtmDefaultDatacenterResult(GetGtmDefaultDatacenterResult):
 
 def get_gtm_default_datacenter(datacenter=None, domain=None, opts=None):
     """
-    Use `TrafficManagement.getGtmDefaultDatacenter` data source to retrieve default datacenter id and nickname.
+    Use `trafficmanagement.getGtmDefaultDatacenter` data source to retrieve default datacenter id and nickname.
 
     ## Example Usage
 
@@ -64,7 +64,7 @@ def get_gtm_default_datacenter(datacenter=None, domain=None, opts=None):
         opts = pulumi.InvokeOptions()
     if opts.version is None:
         opts.version = _utilities.get_version()
-    __ret__ = pulumi.runtime.invoke('akamai:TrafficManagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter', __args__, opts=opts).value
+    __ret__ = pulumi.runtime.invoke('akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter', __args__, opts=opts).value
 
     return AwaitableGetGtmDefaultDatacenterResult(
         datacenter=__ret__.get('datacenter'),

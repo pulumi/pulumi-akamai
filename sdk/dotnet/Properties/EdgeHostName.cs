@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Properties
 {
     /// <summary>
-    /// The `akamai.Properties.EdgeHostName` provides the resource for configuring a secure edge hostname that determines how requests for your site, app, or content are mapped to Akamai edge servers.
+    /// The `akamai.properties.EdgeHostName` provides the resource for configuring a secure edge hostname that determines how requests for your site, app, or content are mapped to Akamai edge servers.
     /// 
     /// An edge hostname is the CNAME target you use when directing your end user traffic to Akamai. In a typical DNS CNAME, your www.customer.com hostname corresponds to an edge hostname of www.customer.com.edgesuite.net.
     /// 
@@ -93,12 +93,12 @@ namespace Pulumi.Akamai.Properties
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
         public EdgeHostName(string name, EdgeHostNameArgs args, CustomResourceOptions? options = null)
-            : base("akamai:Properties/edgeHostName:EdgeHostName", name, args ?? new EdgeHostNameArgs(), MakeResourceOptions(options, ""))
+            : base("akamai:properties/edgeHostName:EdgeHostName", name, args ?? new EdgeHostNameArgs(), MakeResourceOptions(options, ""))
         {
         }
 
         private EdgeHostName(string name, Input<string> id, EdgeHostNameState? state = null, CustomResourceOptions? options = null)
-            : base("akamai:Properties/edgeHostName:EdgeHostName", name, state, MakeResourceOptions(options, id))
+            : base("akamai:properties/edgeHostName:EdgeHostName", name, state, MakeResourceOptions(options, id))
         {
         }
 
