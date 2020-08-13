@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// `TrafficManagement.GtmDatacenter` provides the resource for creating, configuring and importing a gtm datacenter to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingDatacenterId`
+// `trafficmanagement.GtmDatacenter` provides the resource for creating, configuring and importing a gtm datacenter to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingDatacenterId`
 //
 // ## Example Usage
 // ### Basic usage:
@@ -19,13 +19,13 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/TrafficManagement"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/trafficmanagement"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := TrafficManagement.NewGtmDatacenter(ctx, "demoDatacenter", &TrafficManagement.GtmDatacenterArgs{
+// 		_, err := trafficmanagement.NewGtmDatacenter(ctx, "demoDatacenter", &trafficmanagement.GtmDatacenterArgs{
 // 			Domain:   pulumi.String("demo_domain.akadns.net"),
 // 			Nickname: pulumi.String("demo_datacenter"),
 // 		})
@@ -86,7 +86,7 @@ func NewGtmDatacenter(ctx *pulumi.Context,
 		args = &GtmDatacenterArgs{}
 	}
 	var resource GtmDatacenter
-	err := ctx.RegisterResource("akamai:TrafficManagement/gtmDatacenter:GtmDatacenter", name, args, &resource, opts...)
+	err := ctx.RegisterResource("akamai:trafficmanagement/gtmDatacenter:GtmDatacenter", name, args, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +98,7 @@ func NewGtmDatacenter(ctx *pulumi.Context,
 func GetGtmDatacenter(ctx *pulumi.Context,
 	name string, id pulumi.IDInput, state *GtmDatacenterState, opts ...pulumi.ResourceOption) (*GtmDatacenter, error) {
 	var resource GtmDatacenter
-	err := ctx.ReadResource("akamai:TrafficManagement/gtmDatacenter:GtmDatacenter", name, id, state, &resource, opts...)
+	err := ctx.ReadResource("akamai:trafficmanagement/gtmDatacenter:GtmDatacenter", name, id, state, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}

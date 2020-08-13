@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// The `Properties.Property` resource represents an Akamai property configuration, allowing you to create,
+// The `properties.Property` resource represents an Akamai property configuration, allowing you to create,
 // update, and activate properties on the Akamai platform.
 //
 // ## Example Usage
@@ -20,13 +20,13 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/Properties"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/properties"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Properties.NewProperty(ctx, "example", &Properties.PropertyArgs{
+// 		_, err := properties.NewProperty(ctx, "example", &properties.PropertyArgs{
 // 			Contacts: pulumi.StringArray{
 // 				pulumi.String("user@example.org"),
 // 			},
@@ -79,12 +79,12 @@ type Property struct {
 	ProductionVersion pulumi.IntOutput `pulumi:"productionVersion"`
 	// — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
 	RuleFormat pulumi.StringPtrOutput `pulumi:"ruleFormat"`
-	// — (Required) A JSON encoded string of property rules (see: [`Properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+	// — (Required) A JSON encoded string of property rules (see: [`properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
 	Rules    pulumi.StringPtrOutput `pulumi:"rules"`
 	Rulessha pulumi.StringOutput    `pulumi:"rulessha"`
 	// — the current version of the property active on the staging network.
 	StagingVersion pulumi.IntOutput `pulumi:"stagingVersion"`
-	// — (Optional) A JSON encoded string of property manager variable definitions (see: [`Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+	// — (Optional) A JSON encoded string of property manager variable definitions (see: [`properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
 	Variables pulumi.StringPtrOutput `pulumi:"variables"`
 	// — the current version of the property config.
 	Version pulumi.IntOutput `pulumi:"version"`
@@ -103,7 +103,7 @@ func NewProperty(ctx *pulumi.Context,
 		args = &PropertyArgs{}
 	}
 	var resource Property
-	err := ctx.RegisterResource("akamai:Properties/property:Property", name, args, &resource, opts...)
+	err := ctx.RegisterResource("akamai:properties/property:Property", name, args, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -115,7 +115,7 @@ func NewProperty(ctx *pulumi.Context,
 func GetProperty(ctx *pulumi.Context,
 	name string, id pulumi.IDInput, state *PropertyState, opts ...pulumi.ResourceOption) (*Property, error) {
 	var resource Property
-	err := ctx.ReadResource("akamai:Properties/property:Property", name, id, state, &resource, opts...)
+	err := ctx.ReadResource("akamai:properties/property:Property", name, id, state, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -150,12 +150,12 @@ type propertyState struct {
 	ProductionVersion *int `pulumi:"productionVersion"`
 	// — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
 	RuleFormat *string `pulumi:"ruleFormat"`
-	// — (Required) A JSON encoded string of property rules (see: [`Properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+	// — (Required) A JSON encoded string of property rules (see: [`properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
 	Rules    *string `pulumi:"rules"`
 	Rulessha *string `pulumi:"rulessha"`
 	// — the current version of the property active on the staging network.
 	StagingVersion *int `pulumi:"stagingVersion"`
-	// — (Optional) A JSON encoded string of property manager variable definitions (see: [`Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+	// — (Optional) A JSON encoded string of property manager variable definitions (see: [`properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
 	Variables *string `pulumi:"variables"`
 	// — the current version of the property config.
 	Version *int `pulumi:"version"`
@@ -188,12 +188,12 @@ type PropertyState struct {
 	ProductionVersion pulumi.IntPtrInput
 	// — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
 	RuleFormat pulumi.StringPtrInput
-	// — (Required) A JSON encoded string of property rules (see: [`Properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+	// — (Required) A JSON encoded string of property rules (see: [`properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
 	Rules    pulumi.StringPtrInput
 	Rulessha pulumi.StringPtrInput
 	// — the current version of the property active on the staging network.
 	StagingVersion pulumi.IntPtrInput
-	// — (Optional) A JSON encoded string of property manager variable definitions (see: [`Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+	// — (Optional) A JSON encoded string of property manager variable definitions (see: [`properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
 	Variables pulumi.StringPtrInput
 	// — the current version of the property config.
 	Version pulumi.IntPtrInput
@@ -224,9 +224,9 @@ type propertyArgs struct {
 	Product *string `pulumi:"product"`
 	// — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
 	RuleFormat *string `pulumi:"ruleFormat"`
-	// — (Required) A JSON encoded string of property rules (see: [`Properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+	// — (Required) A JSON encoded string of property rules (see: [`properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
 	Rules *string `pulumi:"rules"`
-	// — (Optional) A JSON encoded string of property manager variable definitions (see: [`Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+	// — (Optional) A JSON encoded string of property manager variable definitions (see: [`properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
 	Variables *string `pulumi:"variables"`
 }
 
@@ -252,9 +252,9 @@ type PropertyArgs struct {
 	Product pulumi.StringPtrInput
 	// — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
 	RuleFormat pulumi.StringPtrInput
-	// — (Required) A JSON encoded string of property rules (see: [`Properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+	// — (Required) A JSON encoded string of property rules (see: [`properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
 	Rules pulumi.StringPtrInput
-	// — (Optional) A JSON encoded string of property manager variable definitions (see: [`Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+	// — (Optional) A JSON encoded string of property manager variable definitions (see: [`properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
 	Variables pulumi.StringPtrInput
 }
 

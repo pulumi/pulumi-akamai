@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// The `Properties.EdgeHostName` provides the resource for configuring a secure edge hostname that determines how requests for your site, app, or content are mapped to Akamai edge servers.
+// The `properties.EdgeHostName` provides the resource for configuring a secure edge hostname that determines how requests for your site, app, or content are mapped to Akamai edge servers.
 //
 // An edge hostname is the CNAME target you use when directing your end user traffic to Akamai. In a typical DNS CNAME, your www.customer.com hostname corresponds to an edge hostname of www.customer.com.edgesuite.net.
 //
@@ -21,13 +21,13 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/Properties"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/properties"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Properties.NewEdgeHostName(ctx, "terraform_demo", &Properties.EdgeHostNameArgs{
+// 		_, err := properties.NewEdgeHostName(ctx, "terraform_demo", &properties.EdgeHostNameArgs{
 // 			Contract:     pulumi.String("ctr_####"),
 // 			EdgeHostname: pulumi.String("www.example.org.edgesuite.net"),
 // 			Group:        pulumi.String("grp_####"),
@@ -79,7 +79,7 @@ func NewEdgeHostName(ctx *pulumi.Context,
 		args = &EdgeHostNameArgs{}
 	}
 	var resource EdgeHostName
-	err := ctx.RegisterResource("akamai:Properties/edgeHostName:EdgeHostName", name, args, &resource, opts...)
+	err := ctx.RegisterResource("akamai:properties/edgeHostName:EdgeHostName", name, args, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -91,7 +91,7 @@ func NewEdgeHostName(ctx *pulumi.Context,
 func GetEdgeHostName(ctx *pulumi.Context,
 	name string, id pulumi.IDInput, state *EdgeHostNameState, opts ...pulumi.ResourceOption) (*EdgeHostName, error) {
 	var resource EdgeHostName
-	err := ctx.ReadResource("akamai:Properties/edgeHostName:EdgeHostName", name, id, state, &resource, opts...)
+	err := ctx.ReadResource("akamai:properties/edgeHostName:EdgeHostName", name, id, state, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}

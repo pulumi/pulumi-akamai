@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * `akamai.TrafficManagement.GtmResource` provides the resource for creating, configuring and importing a gtm resource to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingResourceName`
+ * `akamai.trafficmanagement.GtmResource` provides the resource for creating, configuring and importing a gtm resource to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingResourceName`
  *
  * ## Example Usage
  * ### Basic usage:
@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const demoResource = new akamai.TrafficManagement.GtmResource("demo_resource", {
+ * const demoResource = new akamai.trafficmanagement.GtmResource("demo_resource", {
  *     aggregationType: "latest",
  *     domain: "demo_domain.akadns.net",
  *     type: "XML load object via HTTP",
@@ -38,7 +38,7 @@ export class GtmResource extends pulumi.CustomResource {
     }
 
     /** @internal */
-    public static readonly __pulumiType = 'akamai:TrafficManagement/gtmResource:GtmResource';
+    public static readonly __pulumiType = 'akamai:trafficmanagement/gtmResource:GtmResource';
 
     /**
      * Returns true if the given object is an instance of GtmResource.  This is designed to work even
@@ -75,7 +75,7 @@ export class GtmResource extends pulumi.CustomResource {
      * * `loadObject`
      * * `loadObjectPort`
      */
-    public readonly resourceInstances!: pulumi.Output<outputs.TrafficManagement.GtmResourceResourceInstance[] | undefined>;
+    public readonly resourceInstances!: pulumi.Output<outputs.trafficmanagement.GtmResourceResourceInstance[] | undefined>;
     /**
      * — Resource type
      */
@@ -179,7 +179,7 @@ export interface GtmResourceState {
      * * `loadObject`
      * * `loadObjectPort`
      */
-    readonly resourceInstances?: pulumi.Input<pulumi.Input<inputs.TrafficManagement.GtmResourceResourceInstance>[]>;
+    readonly resourceInstances?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmResourceResourceInstance>[]>;
     /**
      * — Resource type
      */
@@ -219,7 +219,7 @@ export interface GtmResourceArgs {
      * * `loadObject`
      * * `loadObjectPort`
      */
-    readonly resourceInstances?: pulumi.Input<pulumi.Input<inputs.TrafficManagement.GtmResourceResourceInstance>[]>;
+    readonly resourceInstances?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmResourceResourceInstance>[]>;
     /**
      * — Resource type
      */

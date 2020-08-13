@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Properties
 {
     /// <summary>
-    /// The `akamai.Properties.CpCode` resource allows you to create or re-use CP Codes.
+    /// The `akamai.properties.CpCode` resource allows you to create or re-use CP Codes.
     /// 
     /// If the CP Code already exists it will be used instead of creating a new one.
     /// 
@@ -71,12 +71,12 @@ namespace Pulumi.Akamai.Properties
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
         public CpCode(string name, CpCodeArgs args, CustomResourceOptions? options = null)
-            : base("akamai:Properties/cpCode:CpCode", name, args ?? new CpCodeArgs(), MakeResourceOptions(options, ""))
+            : base("akamai:properties/cpCode:CpCode", name, args ?? new CpCodeArgs(), MakeResourceOptions(options, ""))
         {
         }
 
         private CpCode(string name, Input<string> id, CpCodeState? state = null, CustomResourceOptions? options = null)
-            : base("akamai:Properties/cpCode:CpCode", name, state, MakeResourceOptions(options, id))
+            : base("akamai:properties/cpCode:CpCode", name, state, MakeResourceOptions(options, id))
         {
         }
 

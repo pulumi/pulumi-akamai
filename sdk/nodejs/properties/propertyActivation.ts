@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * The `akamai.Properties.PropertyActivation` provides the resource for activating a property in the appropriate environment. Once you are satisfied with any version of a property, an activation deploys it, either to the Akamai staging or production network. You activate a specific version, but the same version can be activated separately more than once.
+ * The `akamai.properties.PropertyActivation` provides the resource for activating a property in the appropriate environment. Once you are satisfied with any version of a property, an activation deploys it, either to the Akamai staging or production network. You activate a specific version, but the same version can be activated separately more than once.
  *
  * ## Example Usage
  * ### Basic usage:
@@ -14,7 +14,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const example = new akamai.Properties.PropertyActivation("example", {
+ * const example = new akamai.properties.PropertyActivation("example", {
  *     activate: (var_akamai_property_activate === "true"),
  *     contacts: ["user@example.org"],
  *     network: "STAGING",
@@ -37,7 +37,7 @@ export class PropertyActivation extends pulumi.CustomResource {
     }
 
     /** @internal */
-    public static readonly __pulumiType = 'akamai:Properties/propertyActivation:PropertyActivation';
+    public static readonly __pulumiType = 'akamai:properties/propertyActivation:PropertyActivation';
 
     /**
      * Returns true if the given object is an instance of PropertyActivation.  This is designed to work even

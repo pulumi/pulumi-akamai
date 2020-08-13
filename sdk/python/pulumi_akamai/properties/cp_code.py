@@ -28,7 +28,7 @@ class CpCode(pulumi.CustomResource):
     """
     def __init__(__self__, resource_name, opts=None, contract=None, group=None, name=None, product=None, __props__=None, __name__=None, __opts__=None):
         """
-        The `Properties.CpCode` resource allows you to create or re-use CP Codes.
+        The `properties.CpCode` resource allows you to create or re-use CP Codes.
 
         If the CP Code already exists it will be used instead of creating a new one.
 
@@ -80,7 +80,7 @@ class CpCode(pulumi.CustomResource):
                 raise TypeError("Missing required property 'product'")
             __props__['product'] = product
         super(CpCode, __self__).__init__(
-            'akamai:Properties/cpCode:CpCode',
+            'akamai:properties/cpCode:CpCode',
             resource_name,
             __props__,
             opts)

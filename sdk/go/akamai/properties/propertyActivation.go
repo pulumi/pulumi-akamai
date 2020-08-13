@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// The `Properties.PropertyActivation` provides the resource for activating a property in the appropriate environment. Once you are satisfied with any version of a property, an activation deploys it, either to the Akamai staging or production network. You activate a specific version, but the same version can be activated separately more than once.
+// The `properties.PropertyActivation` provides the resource for activating a property in the appropriate environment. Once you are satisfied with any version of a property, an activation deploys it, either to the Akamai staging or production network. You activate a specific version, but the same version can be activated separately more than once.
 //
 // ## Example Usage
 // ### Basic usage:
@@ -19,13 +19,13 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/Properties"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/properties"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Properties.NewPropertyActivation(ctx, "example", &Properties.PropertyActivationArgs{
+// 		_, err := properties.NewPropertyActivation(ctx, "example", &properties.PropertyActivationArgs{
 // 			Activate: pulumi.Any(_var.Akamai_property_activate),
 // 			Contacts: pulumi.StringArray{
 // 				pulumi.String("user@example.org"),
@@ -69,7 +69,7 @@ func NewPropertyActivation(ctx *pulumi.Context,
 		args = &PropertyActivationArgs{}
 	}
 	var resource PropertyActivation
-	err := ctx.RegisterResource("akamai:Properties/propertyActivation:PropertyActivation", name, args, &resource, opts...)
+	err := ctx.RegisterResource("akamai:properties/propertyActivation:PropertyActivation", name, args, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -81,7 +81,7 @@ func NewPropertyActivation(ctx *pulumi.Context,
 func GetPropertyActivation(ctx *pulumi.Context,
 	name string, id pulumi.IDInput, state *PropertyActivationState, opts ...pulumi.ResourceOption) (*PropertyActivation, error) {
 	var resource PropertyActivation
-	err := ctx.ReadResource("akamai:Properties/propertyActivation:PropertyActivation", name, id, state, &resource, opts...)
+	err := ctx.ReadResource("akamai:properties/propertyActivation:PropertyActivation", name, id, state, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}

@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// The `Properties.CpCode` resource allows you to create or re-use CP Codes.
+// The `properties.CpCode` resource allows you to create or re-use CP Codes.
 //
 // If the CP Code already exists it will be used instead of creating a new one.
 //
@@ -21,13 +21,13 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/Properties"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/properties"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Properties.NewCpCode(ctx, "cpCode", &Properties.CpCodeArgs{
+// 		_, err := properties.NewCpCode(ctx, "cpCode", &properties.CpCodeArgs{
 // 			Contract: pulumi.Any(akamai_contract.Contract.Id),
 // 			Group:    pulumi.Any(akamai_group.Group.Id),
 // 			Product:  pulumi.String("prd_xxx"),
@@ -68,7 +68,7 @@ func NewCpCode(ctx *pulumi.Context,
 		args = &CpCodeArgs{}
 	}
 	var resource CpCode
-	err := ctx.RegisterResource("akamai:Properties/cpCode:CpCode", name, args, &resource, opts...)
+	err := ctx.RegisterResource("akamai:properties/cpCode:CpCode", name, args, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func NewCpCode(ctx *pulumi.Context,
 func GetCpCode(ctx *pulumi.Context,
 	name string, id pulumi.IDInput, state *CpCodeState, opts ...pulumi.ResourceOption) (*CpCode, error) {
 	var resource CpCode
-	err := ctx.ReadResource("akamai:Properties/cpCode:CpCode", name, id, state, &resource, opts...)
+	err := ctx.ReadResource("akamai:properties/cpCode:CpCode", name, id, state, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}

@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * Use `akamai.EdgeDNS.getAuthoritiesSet` datasource to retrieve a contracts authorities set for use when creating new zones.
+ * Use `akamai.edgedns.getAuthoritiesSet` datasource to retrieve a contracts authorities set for use when creating new zones.
  *
  * ## Example Usage
  * ### Basic usage:
@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const example = pulumi.output(akamai.EdgeDNS.getAuthoritiesSet({
+ * const example = pulumi.output(akamai.edgedns.getAuthoritiesSet({
  *     contract: "ctr_xxxxx",
  * }, { async: true }));
  * ```
@@ -29,7 +29,7 @@ export function getAuthoritiesSet(args: GetAuthoritiesSetArgs, opts?: pulumi.Inv
     if (!opts.version) {
         opts.version = utilities.getVersion();
     }
-    return pulumi.runtime.invoke("akamai:EdgeDNS/getAuthoritiesSet:getAuthoritiesSet", {
+    return pulumi.runtime.invoke("akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet", {
         "contract": args.contract,
     }, opts);
 }

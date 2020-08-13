@@ -17,7 +17,7 @@ class PropertyVariables(pulumi.CustomResource):
     variables: pulumi.Output[list]
     def __init__(__self__, resource_name, opts=None, variables=None, __props__=None, __name__=None, __opts__=None):
         """
-        The `Properties.PropertyVariables` allows you to implement dynamic functionality. You can perform conditional logic based on the variable’s value, and catch any unforeseen errors that execute on the edge at runtime.
+        The `properties.PropertyVariables` allows you to implement dynamic functionality. You can perform conditional logic based on the variable’s value, and catch any unforeseen errors that execute on the edge at runtime.
 
         Typical uses for variables include:
 
@@ -76,7 +76,7 @@ class PropertyVariables(pulumi.CustomResource):
             __props__['variables'] = variables
             __props__['json'] = None
         super(PropertyVariables, __self__).__init__(
-            'akamai:Properties/propertyVariables:PropertyVariables',
+            'akamai:properties/propertyVariables:PropertyVariables',
             resource_name,
             __props__,
             opts)

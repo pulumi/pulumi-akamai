@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * The `akamai.Properties.PropertyRules` data source allows you to configure a nested block of property rules, criteria, and behaviors. A property’s main functionality is encapsulated in its set of rules and rules are composed of the matches and the behavior that applies under those matches.
+ * The `akamai.properties.PropertyRules` data source allows you to configure a nested block of property rules, criteria, and behaviors. A property’s main functionality is encapsulated in its set of rules and rules are composed of the matches and the behavior that applies under those matches.
  *
  * ## Example Usage
  * ### Basic usage:
@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const examplePropertyRules = pulumi.output(akamai.Properties.getPropertyRules({
+ * const examplePropertyRules = pulumi.output(akamai.properties.getPropertyRules({
  *     rules: [{
  *         behaviors: [{
  *             name: "downstreamCache", // Downstream Cache behavior
@@ -51,7 +51,7 @@ import * as utilities from "../utilities";
  *         }],
  *     }],
  * }, { async: true }));
- * const exampleProperty = new akamai.Properties.Property("example", {
+ * const exampleProperty = new akamai.properties.Property("example", {
  *     rules: examplePropertyRules.json,
  * });
  * ```
@@ -65,7 +65,7 @@ export function getPropertyRules(args?: GetPropertyRulesArgs, opts?: pulumi.Invo
     if (!opts.version) {
         opts.version = utilities.getVersion();
     }
-    return pulumi.runtime.invoke("akamai:Properties/getPropertyRules:getPropertyRules", {
+    return pulumi.runtime.invoke("akamai:properties/getPropertyRules:getPropertyRules", {
         "rules": args.rules,
         "variables": args.variables,
     }, opts);
@@ -75,7 +75,7 @@ export function getPropertyRules(args?: GetPropertyRulesArgs, opts?: pulumi.Invo
  * A collection of arguments for invoking getPropertyRules.
  */
 export interface GetPropertyRulesArgs {
-    readonly rules?: inputs.Properties.GetPropertyRulesRule[];
+    readonly rules?: inputs.properties.GetPropertyRulesRule[];
     readonly variables?: string;
 }
 
@@ -88,6 +88,6 @@ export interface GetPropertyRulesResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly rules?: outputs.Properties.GetPropertyRulesRule[];
+    readonly rules?: outputs.properties.GetPropertyRulesRule[];
     readonly variables?: string;
 }

@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * `akamai.TrafficManagement.GtmCidrmap` provides the resource for creating, configuring and importing a gtm Cidr Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingMapName`
+ * `akamai.trafficmanagement.GtmCidrmap` provides the resource for creating, configuring and importing a gtm Cidr Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingMapName`
  *
  * ## Example Usage
  * ### Basic usage:
@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const demoCidrmap = new akamai.TrafficManagement.GtmCidrmap("demo_cidrmap", {
+ * const demoCidrmap = new akamai.trafficmanagement.GtmCidrmap("demo_cidrmap", {
  *     defaultDatacenter: {
  *         datacenterId: 5400,
  *         nickname: "All Other CIDR Blocks",
@@ -40,7 +40,7 @@ export class GtmCidrmap extends pulumi.CustomResource {
     }
 
     /** @internal */
-    public static readonly __pulumiType = 'akamai:TrafficManagement/gtmCidrmap:GtmCidrmap';
+    public static readonly __pulumiType = 'akamai:trafficmanagement/gtmCidrmap:GtmCidrmap';
 
     /**
      * Returns true if the given object is an instance of GtmCidrmap.  This is designed to work even
@@ -58,8 +58,8 @@ export class GtmCidrmap extends pulumi.CustomResource {
      * * `datacenterId`
      * * `nickname`
      */
-    public readonly assignments!: pulumi.Output<outputs.TrafficManagement.GtmCidrmapAssignment[] | undefined>;
-    public readonly defaultDatacenter!: pulumi.Output<outputs.TrafficManagement.GtmCidrmapDefaultDatacenter>;
+    public readonly assignments!: pulumi.Output<outputs.trafficmanagement.GtmCidrmapAssignment[] | undefined>;
+    public readonly defaultDatacenter!: pulumi.Output<outputs.trafficmanagement.GtmCidrmapDefaultDatacenter>;
     /**
      * — Domain name
      */
@@ -127,8 +127,8 @@ export interface GtmCidrmapState {
      * * `datacenterId`
      * * `nickname`
      */
-    readonly assignments?: pulumi.Input<pulumi.Input<inputs.TrafficManagement.GtmCidrmapAssignment>[]>;
-    readonly defaultDatacenter?: pulumi.Input<inputs.TrafficManagement.GtmCidrmapDefaultDatacenter>;
+    readonly assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmCidrmapAssignment>[]>;
+    readonly defaultDatacenter?: pulumi.Input<inputs.trafficmanagement.GtmCidrmapDefaultDatacenter>;
     /**
      * — Domain name
      */
@@ -155,8 +155,8 @@ export interface GtmCidrmapArgs {
      * * `datacenterId`
      * * `nickname`
      */
-    readonly assignments?: pulumi.Input<pulumi.Input<inputs.TrafficManagement.GtmCidrmapAssignment>[]>;
-    readonly defaultDatacenter: pulumi.Input<inputs.TrafficManagement.GtmCidrmapDefaultDatacenter>;
+    readonly assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmCidrmapAssignment>[]>;
+    readonly defaultDatacenter: pulumi.Input<inputs.trafficmanagement.GtmCidrmapDefaultDatacenter>;
     /**
      * — Domain name
      */

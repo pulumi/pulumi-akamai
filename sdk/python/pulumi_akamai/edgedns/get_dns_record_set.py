@@ -59,7 +59,7 @@ def get_dns_record_set(host=None, record_type=None, zone=None, opts=None):
         opts = pulumi.InvokeOptions()
     if opts.version is None:
         opts.version = _utilities.get_version()
-    __ret__ = pulumi.runtime.invoke('akamai:EdgeDNS/getDnsRecordSet:getDnsRecordSet', __args__, opts=opts).value
+    __ret__ = pulumi.runtime.invoke('akamai:edgedns/getDnsRecordSet:getDnsRecordSet', __args__, opts=opts).value
 
     return AwaitableGetDnsRecordSetResult(
         host=__ret__.get('host'),

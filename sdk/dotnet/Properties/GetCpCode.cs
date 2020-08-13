@@ -12,14 +12,14 @@ namespace Pulumi.Akamai.Properties
     public static class GetCpCode
     {
         /// <summary>
-        /// Use `akamai.Properties.CpCode` data source to retrieve a group id.
+        /// Use `akamai.properties.CpCode` data source to retrieve a group id.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCpCodeResult> InvokeAsync(GetCpCodeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCpCodeResult>("akamai:Properties/getCpCode:getCpCode", args ?? new GetCpCodeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetCpCodeResult>("akamai:properties/getCpCode:getCpCode", args ?? new GetCpCodeArgs(), options.WithVersion());
     }
 
 

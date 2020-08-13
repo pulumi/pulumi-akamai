@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * The `akamai.Properties.Property` resource represents an Akamai property configuration, allowing you to create,
+ * The `akamai.properties.Property` resource represents an Akamai property configuration, allowing you to create,
  * update, and activate properties on the Akamai platform.
  *
  * ## Example Usage
@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const example = new akamai.Properties.Property("example", {
+ * const example = new akamai.properties.Property("example", {
  *     contacts: ["user@example.org"],
  *     contract: "ctr_####",
  *     cpCode: "cpc_#####",
@@ -49,7 +49,7 @@ export class Property extends pulumi.CustomResource {
     }
 
     /** @internal */
-    public static readonly __pulumiType = 'akamai:Properties/property:Property';
+    public static readonly __pulumiType = 'akamai:properties/property:Property';
 
     /**
      * Returns true if the given object is an instance of Property.  This is designed to work even
@@ -101,7 +101,7 @@ export class Property extends pulumi.CustomResource {
     /**
      * — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
      */
-    public readonly origins!: pulumi.Output<outputs.Properties.PropertyOrigin[] | undefined>;
+    public readonly origins!: pulumi.Output<outputs.properties.PropertyOrigin[] | undefined>;
     /**
      * — (Optional) The product ID. (Default: `prd_SPM` for Ion)
      */
@@ -115,7 +115,7 @@ export class Property extends pulumi.CustomResource {
      */
     public readonly ruleFormat!: pulumi.Output<string | undefined>;
     /**
-     * — (Required) A JSON encoded string of property rules (see: [`akamai.Properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+     * — (Required) A JSON encoded string of property rules (see: [`akamai.properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
      */
     public readonly rules!: pulumi.Output<string | undefined>;
     public /*out*/ readonly rulessha!: pulumi.Output<string>;
@@ -124,7 +124,7 @@ export class Property extends pulumi.CustomResource {
      */
     public /*out*/ readonly stagingVersion!: pulumi.Output<number>;
     /**
-     * — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+     * — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
      */
     public readonly variables!: pulumi.Output<string | undefined>;
     /**
@@ -243,7 +243,7 @@ export interface PropertyState {
     /**
      * — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
      */
-    readonly origins?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyOrigin>[]>;
+    readonly origins?: pulumi.Input<pulumi.Input<inputs.properties.PropertyOrigin>[]>;
     /**
      * — (Optional) The product ID. (Default: `prd_SPM` for Ion)
      */
@@ -257,7 +257,7 @@ export interface PropertyState {
      */
     readonly ruleFormat?: pulumi.Input<string>;
     /**
-     * — (Required) A JSON encoded string of property rules (see: [`akamai.Properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+     * — (Required) A JSON encoded string of property rules (see: [`akamai.properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
      */
     readonly rules?: pulumi.Input<string>;
     readonly rulessha?: pulumi.Input<string>;
@@ -266,7 +266,7 @@ export interface PropertyState {
      */
     readonly stagingVersion?: pulumi.Input<number>;
     /**
-     * — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+     * — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
      */
     readonly variables?: pulumi.Input<string>;
     /**
@@ -310,7 +310,7 @@ export interface PropertyArgs {
     /**
      * — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
      */
-    readonly origins?: pulumi.Input<pulumi.Input<inputs.Properties.PropertyOrigin>[]>;
+    readonly origins?: pulumi.Input<pulumi.Input<inputs.properties.PropertyOrigin>[]>;
     /**
      * — (Optional) The product ID. (Default: `prd_SPM` for Ion)
      */
@@ -320,11 +320,11 @@ export interface PropertyArgs {
      */
     readonly ruleFormat?: pulumi.Input<string>;
     /**
-     * — (Required) A JSON encoded string of property rules (see: [`akamai.Properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+     * — (Required) A JSON encoded string of property rules (see: [`akamai.properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
      */
     readonly rules?: pulumi.Input<string>;
     /**
-     * — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+     * — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
      */
     readonly variables?: pulumi.Input<string>;
 }

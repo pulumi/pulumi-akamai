@@ -106,7 +106,7 @@ class GtmDomain(pulumi.CustomResource):
     """
     def __init__(__self__, resource_name, opts=None, cname_coalescing_enabled=None, comment=None, contract=None, default_error_penalty=None, default_ssl_client_certificate=None, default_ssl_client_private_key=None, default_timeout_penalty=None, email_notification_lists=None, end_user_mapping_enabled=None, group=None, load_feedback=None, load_imbalance_percentage=None, name=None, type=None, wait_on_complete=None, __props__=None, __name__=None, __opts__=None):
         """
-        `TrafficManagement.GtmDomain` provides the resource for creating, configuring and importing a gtm domain to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`
+        `trafficmanagement.GtmDomain` provides the resource for creating, configuring and importing a gtm domain to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`
 
         ## Example Usage
         ### Basic usage:
@@ -115,7 +115,7 @@ class GtmDomain(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        demodomain = akamai.traffic_management.GtmDomain("demodomain",
+        demodomain = akamai.trafficmanagement.GtmDomain("demodomain",
             comment="some comment",
             contract="XXX",
             group=100,
@@ -194,7 +194,7 @@ class GtmDomain(pulumi.CustomResource):
             __props__['servermonitor_load_count'] = None
             __props__['servermonitor_pool'] = None
         super(GtmDomain, __self__).__init__(
-            'akamai:TrafficManagement/gtmDomain:GtmDomain',
+            'akamai:trafficmanagement/gtmDomain:GtmDomain',
             resource_name,
             __props__,
             opts)

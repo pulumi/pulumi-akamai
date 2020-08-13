@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Properties
 {
     /// <summary>
-    /// The `akamai.Properties.Property` resource represents an Akamai property configuration, allowing you to create,
+    /// The `akamai.properties.Property` resource represents an Akamai property configuration, allowing you to create,
     /// update, and activate properties on the Akamai platform.
     /// 
     /// ## Example Usage
@@ -130,7 +130,7 @@ namespace Pulumi.Akamai.Properties
         public Output<string?> RuleFormat { get; private set; } = null!;
 
         /// <summary>
-        /// — (Required) A JSON encoded string of property rules (see: [`akamai.Properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+        /// — (Required) A JSON encoded string of property rules (see: [`akamai.properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
         /// </summary>
         [Output("rules")]
         public Output<string?> Rules { get; private set; } = null!;
@@ -145,7 +145,7 @@ namespace Pulumi.Akamai.Properties
         public Output<int> StagingVersion { get; private set; } = null!;
 
         /// <summary>
-        /// — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+        /// — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
         /// </summary>
         [Output("variables")]
         public Output<string?> Variables { get; private set; } = null!;
@@ -165,12 +165,12 @@ namespace Pulumi.Akamai.Properties
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
         public Property(string name, PropertyArgs args, CustomResourceOptions? options = null)
-            : base("akamai:Properties/property:Property", name, args ?? new PropertyArgs(), MakeResourceOptions(options, ""))
+            : base("akamai:properties/property:Property", name, args ?? new PropertyArgs(), MakeResourceOptions(options, ""))
         {
         }
 
         private Property(string name, Input<string> id, PropertyState? state = null, CustomResourceOptions? options = null)
-            : base("akamai:Properties/property:Property", name, state, MakeResourceOptions(options, id))
+            : base("akamai:properties/property:Property", name, state, MakeResourceOptions(options, id))
         {
         }
 
@@ -281,13 +281,13 @@ namespace Pulumi.Akamai.Properties
         public Input<string>? RuleFormat { get; set; }
 
         /// <summary>
-        /// — (Required) A JSON encoded string of property rules (see: [`akamai.Properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+        /// — (Required) A JSON encoded string of property rules (see: [`akamai.properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
         /// </summary>
         [Input("rules")]
         public Input<string>? Rules { get; set; }
 
         /// <summary>
-        /// — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+        /// — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
         /// </summary>
         [Input("variables")]
         public Input<string>? Variables { get; set; }
@@ -402,7 +402,7 @@ namespace Pulumi.Akamai.Properties
         public Input<string>? RuleFormat { get; set; }
 
         /// <summary>
-        /// — (Required) A JSON encoded string of property rules (see: [`akamai.Properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+        /// — (Required) A JSON encoded string of property rules (see: [`akamai.properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
         /// </summary>
         [Input("rules")]
         public Input<string>? Rules { get; set; }
@@ -417,7 +417,7 @@ namespace Pulumi.Akamai.Properties
         public Input<int>? StagingVersion { get; set; }
 
         /// <summary>
-        /// — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.Properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+        /// — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
         /// </summary>
         [Input("variables")]
         public Input<string>? Variables { get; set; }

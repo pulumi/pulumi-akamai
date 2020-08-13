@@ -54,7 +54,7 @@ def get_property(name=None, version=None, opts=None):
         opts = pulumi.InvokeOptions()
     if opts.version is None:
         opts.version = _utilities.get_version()
-    __ret__ = pulumi.runtime.invoke('akamai:Properties/getProperty:getProperty', __args__, opts=opts).value
+    __ret__ = pulumi.runtime.invoke('akamai:properties/getProperty:getProperty', __args__, opts=opts).value
 
     return AwaitableGetPropertyResult(
         id=__ret__.get('id'),

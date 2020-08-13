@@ -25,7 +25,7 @@ func NewPropertyRules(ctx *pulumi.Context,
 		args = &PropertyRulesArgs{}
 	}
 	var resource PropertyRules
-	err := ctx.RegisterResource("akamai:Properties/propertyRules:PropertyRules", name, args, &resource, opts...)
+	err := ctx.RegisterResource("akamai:properties/propertyRules:PropertyRules", name, args, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -37,7 +37,7 @@ func NewPropertyRules(ctx *pulumi.Context,
 func GetPropertyRules(ctx *pulumi.Context,
 	name string, id pulumi.IDInput, state *PropertyRulesState, opts ...pulumi.ResourceOption) (*PropertyRules, error) {
 	var resource PropertyRules
-	err := ctx.ReadResource("akamai:Properties/propertyRules:PropertyRules", name, id, state, &resource, opts...)
+	err := ctx.ReadResource("akamai:properties/propertyRules:PropertyRules", name, id, state, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}

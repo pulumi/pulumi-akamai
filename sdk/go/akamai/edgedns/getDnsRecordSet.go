@@ -9,7 +9,7 @@ import (
 
 func GetDnsRecordSet(ctx *pulumi.Context, args *GetDnsRecordSetArgs, opts ...pulumi.InvokeOption) (*GetDnsRecordSetResult, error) {
 	var rv GetDnsRecordSetResult
-	err := ctx.Invoke("akamai:EdgeDNS/getDnsRecordSet:getDnsRecordSet", args, &rv, opts...)
+	err := ctx.Invoke("akamai:edgedns/getDnsRecordSet:getDnsRecordSet", args, &rv, opts...)
 	if err != nil {
 		return nil, err
 	}

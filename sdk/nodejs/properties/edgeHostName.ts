@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * The `akamai.Properties.EdgeHostName` provides the resource for configuring a secure edge hostname that determines how requests for your site, app, or content are mapped to Akamai edge servers.
+ * The `akamai.properties.EdgeHostName` provides the resource for configuring a secure edge hostname that determines how requests for your site, app, or content are mapped to Akamai edge servers.
  *
  * An edge hostname is the CNAME target you use when directing your end user traffic to Akamai. In a typical DNS CNAME, your www.customer.com hostname corresponds to an edge hostname of www.customer.com.edgesuite.net.
  *
@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const terraform_demo = new akamai.Properties.EdgeHostName("terraform-demo", {
+ * const terraform_demo = new akamai.properties.EdgeHostName("terraform-demo", {
  *     contract: "ctr_####",
  *     edgeHostname: "www.example.org.edgesuite.net",
  *     group: "grp_####",
@@ -39,7 +39,7 @@ export class EdgeHostName extends pulumi.CustomResource {
     }
 
     /** @internal */
-    public static readonly __pulumiType = 'akamai:Properties/edgeHostName:EdgeHostName';
+    public static readonly __pulumiType = 'akamai:properties/edgeHostName:EdgeHostName';
 
     /**
      * Returns true if the given object is an instance of EdgeHostName.  This is designed to work even

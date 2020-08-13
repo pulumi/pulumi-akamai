@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * Use `akamai.TrafficManagement.getGtmDefaultDatacenter` data source to retrieve default datacenter id and nickname.
+ * Use `akamai.trafficmanagement.getGtmDefaultDatacenter` data source to retrieve default datacenter id and nickname.
  *
  * ## Example Usage
  */
@@ -19,7 +19,7 @@ export function getGtmDefaultDatacenter(args: GetGtmDefaultDatacenterArgs, opts?
     if (!opts.version) {
         opts.version = utilities.getVersion();
     }
-    return pulumi.runtime.invoke("akamai:TrafficManagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter", {
+    return pulumi.runtime.invoke("akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter", {
         "datacenter": args.datacenter,
         "domain": args.domain,
     }, opts);

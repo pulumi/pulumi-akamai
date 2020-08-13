@@ -7,12 +7,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// Use `TrafficManagement.getGtmDefaultDatacenter` data source to retrieve default datacenter id and nickname.
+// Use `trafficmanagement.getGtmDefaultDatacenter` data source to retrieve default datacenter id and nickname.
 //
 // ## Example Usage
 func GetGtmDefaultDatacenter(ctx *pulumi.Context, args *GetGtmDefaultDatacenterArgs, opts ...pulumi.InvokeOption) (*GetGtmDefaultDatacenterResult, error) {
 	var rv GetGtmDefaultDatacenterResult
-	err := ctx.Invoke("akamai:TrafficManagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter", args, &rv, opts...)
+	err := ctx.Invoke("akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter", args, &rv, opts...)
 	if err != nil {
 		return nil, err
 	}

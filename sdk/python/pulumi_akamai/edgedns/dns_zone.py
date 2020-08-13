@@ -65,7 +65,7 @@ class DnsZone(pulumi.CustomResource):
     """
     def __init__(__self__, resource_name, opts=None, comment=None, contract=None, end_customer_id=None, group=None, masters=None, sign_and_serve=None, sign_and_serve_algorithm=None, target=None, tsig_key=None, type=None, zone=None, __props__=None, __name__=None, __opts__=None):
         """
-        The `EdgeDNS.DnsZone` provides the resource for configuring a dns zone to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
+        The `edgedns.DnsZone` provides the resource for configuring a dns zone to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
 
         ## Example Usage
         ### Basic usage:
@@ -74,7 +74,7 @@ class DnsZone(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        demozone = akamai.edge_dns.DnsZone("demozone",
+        demozone = akamai.edgedns.DnsZone("demozone",
             comment="some comment",
             contract="ctr_XXX",
             group=100,
@@ -149,7 +149,7 @@ class DnsZone(pulumi.CustomResource):
             __props__['alias_count'] = None
             __props__['version_id'] = None
         super(DnsZone, __self__).__init__(
-            'akamai:EdgeDNS/dnsZone:DnsZone',
+            'akamai:edgedns/dnsZone:DnsZone',
             resource_name,
             __props__,
             opts)

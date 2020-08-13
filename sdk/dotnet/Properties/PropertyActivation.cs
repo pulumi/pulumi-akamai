@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Properties
 {
     /// <summary>
-    /// The `akamai.Properties.PropertyActivation` provides the resource for activating a property in the appropriate environment. Once you are satisfied with any version of a property, an activation deploys it, either to the Akamai staging or production network. You activate a specific version, but the same version can be activated separately more than once.
+    /// The `akamai.properties.PropertyActivation` provides the resource for activating a property in the appropriate environment. Once you are satisfied with any version of a property, an activation deploys it, either to the Akamai staging or production network. You activate a specific version, but the same version can be activated separately more than once.
     /// 
     /// ## Example Usage
     /// ### Basic usage:
@@ -82,12 +82,12 @@ namespace Pulumi.Akamai.Properties
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
         public PropertyActivation(string name, PropertyActivationArgs args, CustomResourceOptions? options = null)
-            : base("akamai:Properties/propertyActivation:PropertyActivation", name, args ?? new PropertyActivationArgs(), MakeResourceOptions(options, ""))
+            : base("akamai:properties/propertyActivation:PropertyActivation", name, args ?? new PropertyActivationArgs(), MakeResourceOptions(options, ""))
         {
         }
 
         private PropertyActivation(string name, Input<string> id, PropertyActivationState? state = null, CustomResourceOptions? options = null)
-            : base("akamai:Properties/propertyActivation:PropertyActivation", name, state, MakeResourceOptions(options, id))
+            : base("akamai:properties/propertyActivation:PropertyActivation", name, state, MakeResourceOptions(options, id))
         {
         }
 

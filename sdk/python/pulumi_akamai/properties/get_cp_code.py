@@ -45,7 +45,7 @@ class AwaitableGetCpCodeResult(GetCpCodeResult):
 
 def get_cp_code(contract=None, group=None, name=None, opts=None):
     """
-    Use `Properties.CpCode` data source to retrieve a group id.
+    Use `properties.CpCode` data source to retrieve a group id.
 
     ## Example Usage
 
@@ -62,7 +62,7 @@ def get_cp_code(contract=None, group=None, name=None, opts=None):
         opts = pulumi.InvokeOptions()
     if opts.version is None:
         opts.version = _utilities.get_version()
-    __ret__ = pulumi.runtime.invoke('akamai:Properties/getCpCode:getCpCode', __args__, opts=opts).value
+    __ret__ = pulumi.runtime.invoke('akamai:properties/getCpCode:getCpCode', __args__, opts=opts).value
 
     return AwaitableGetCpCodeResult(
         contract=__ret__.get('contract'),

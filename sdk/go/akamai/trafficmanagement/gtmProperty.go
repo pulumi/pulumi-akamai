@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// `TrafficManagement.GtmProperty` provides the resource for creating, configuring and importing a gtm property to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingPropertyName`
+// `trafficmanagement.GtmProperty` provides the resource for creating, configuring and importing a gtm property to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingPropertyName`
 //
 // ## Example Usage
 // ### Basic usage:
@@ -19,19 +19,19 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/TrafficManagement"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/trafficmanagement"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := TrafficManagement.NewGtmProperty(ctx, "demoProperty", &TrafficManagement.GtmPropertyArgs{
+// 		_, err := trafficmanagement.NewGtmProperty(ctx, "demoProperty", &trafficmanagement.GtmPropertyArgs{
 // 			Domain:               pulumi.String("demo_domain.akadns.net"),
 // 			HandoutLimit:         pulumi.Int(5),
 // 			HandoutMode:          pulumi.String("normal"),
 // 			ScoreAggregationType: pulumi.String("median"),
-// 			TrafficTargets: TrafficManagement.GtmPropertyTrafficTargetArray{
-// 				&TrafficManagement.GtmPropertyTrafficTargetArgs{
+// 			TrafficTargets: trafficmanagement.GtmPropertyTrafficTargetArray{
+// 				&trafficmanagement.GtmPropertyTrafficTargetArgs{
 // 					DatacenterId: pulumi.Int(3131),
 // 				},
 // 			},
@@ -143,7 +143,7 @@ func NewGtmProperty(ctx *pulumi.Context,
 		args = &GtmPropertyArgs{}
 	}
 	var resource GtmProperty
-	err := ctx.RegisterResource("akamai:TrafficManagement/gtmProperty:GtmProperty", name, args, &resource, opts...)
+	err := ctx.RegisterResource("akamai:trafficmanagement/gtmProperty:GtmProperty", name, args, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -155,7 +155,7 @@ func NewGtmProperty(ctx *pulumi.Context,
 func GetGtmProperty(ctx *pulumi.Context,
 	name string, id pulumi.IDInput, state *GtmPropertyState, opts ...pulumi.ResourceOption) (*GtmProperty, error) {
 	var resource GtmProperty
-	err := ctx.ReadResource("akamai:TrafficManagement/gtmProperty:GtmProperty", name, id, state, &resource, opts...)
+	err := ctx.ReadResource("akamai:trafficmanagement/gtmProperty:GtmProperty", name, id, state, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}

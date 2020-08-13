@@ -7,12 +7,34 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// Use `EdgeDNS.getAuthoritiesSet` datasource to retrieve a contracts authorities set for use when creating new zones.
+// Use `edgedns.getAuthoritiesSet` datasource to retrieve a contracts authorities set for use when creating new zones.
 //
 // ## Example Usage
+// ### Basic usage:
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/edgedns"
+// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		_, err := edgedns.GetAuthoritiesSet(ctx, &edgedns.GetAuthoritiesSetArgs{
+// 			Contract: "ctr_xxxxx",
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
 func GetAuthoritiesSet(ctx *pulumi.Context, args *GetAuthoritiesSetArgs, opts ...pulumi.InvokeOption) (*GetAuthoritiesSetResult, error) {
 	var rv GetAuthoritiesSetResult
-	err := ctx.Invoke("akamai:EdgeDNS/getAuthoritiesSet:getAuthoritiesSet", args, &rv, opts...)
+	err := ctx.Invoke("akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet", args, &rv, opts...)
 	if err != nil {
 		return nil, err
 	}

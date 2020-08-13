@@ -38,7 +38,7 @@ class GtmCidrmap(pulumi.CustomResource):
     """
     def __init__(__self__, resource_name, opts=None, assignments=None, default_datacenter=None, domain=None, name=None, wait_on_complete=None, __props__=None, __name__=None, __opts__=None):
         """
-        `TrafficManagement.GtmCidrmap` provides the resource for creating, configuring and importing a gtm Cidr Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_map_name`
+        `trafficmanagement.GtmCidrmap` provides the resource for creating, configuring and importing a gtm Cidr Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_map_name`
 
         ## Example Usage
         ### Basic usage:
@@ -47,7 +47,7 @@ class GtmCidrmap(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        demo_cidrmap = akamai.traffic_management.GtmCidrmap("demoCidrmap",
+        demo_cidrmap = akamai.trafficmanagement.GtmCidrmap("demoCidrmap",
             default_datacenter={
                 "datacenter_id": 5400,
                 "nickname": "All Other CIDR Blocks",
@@ -105,7 +105,7 @@ class GtmCidrmap(pulumi.CustomResource):
             __props__['name'] = name
             __props__['wait_on_complete'] = wait_on_complete
         super(GtmCidrmap, __self__).__init__(
-            'akamai:TrafficManagement/gtmCidrmap:GtmCidrmap',
+            'akamai:trafficmanagement/gtmCidrmap:GtmCidrmap',
             resource_name,
             __props__,
             opts)

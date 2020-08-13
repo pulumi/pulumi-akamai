@@ -41,7 +41,7 @@ class AwaitableGetAuthoritiesSetResult(GetAuthoritiesSetResult):
 
 def get_authorities_set(contract=None, opts=None):
     """
-    Use `EdgeDNS.getAuthoritiesSet` datasource to retrieve a contracts authorities set for use when creating new zones.
+    Use `edgedns.getAuthoritiesSet` datasource to retrieve a contracts authorities set for use when creating new zones.
 
     ## Example Usage
     ### Basic usage:
@@ -50,7 +50,7 @@ def get_authorities_set(contract=None, opts=None):
     import pulumi
     import pulumi_akamai as akamai
 
-    example = akamai.EdgeDNS.get_authorities_set(contract="ctr_xxxxx")
+    example = akamai.edgedns.get_authorities_set(contract="ctr_xxxxx")
     ```
 
 
@@ -62,7 +62,7 @@ def get_authorities_set(contract=None, opts=None):
         opts = pulumi.InvokeOptions()
     if opts.version is None:
         opts.version = _utilities.get_version()
-    __ret__ = pulumi.runtime.invoke('akamai:EdgeDNS/getAuthoritiesSet:getAuthoritiesSet', __args__, opts=opts).value
+    __ret__ = pulumi.runtime.invoke('akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet', __args__, opts=opts).value
 
     return AwaitableGetAuthoritiesSetResult(
         authorities=__ret__.get('authorities'),

@@ -14,7 +14,7 @@ export function getDnsRecordSet(args: GetDnsRecordSetArgs, opts?: pulumi.InvokeO
     if (!opts.version) {
         opts.version = utilities.getVersion();
     }
-    return pulumi.runtime.invoke("akamai:EdgeDNS/getDnsRecordSet:getDnsRecordSet", {
+    return pulumi.runtime.invoke("akamai:edgedns/getDnsRecordSet:getDnsRecordSet", {
         "host": args.host,
         "recordType": args.recordType,
         "zone": args.zone,

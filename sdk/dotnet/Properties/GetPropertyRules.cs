@@ -12,7 +12,7 @@ namespace Pulumi.Akamai.Properties
     public static class GetPropertyRules
     {
         /// <summary>
-        /// The `akamai.Properties.PropertyRules` data source allows you to configure a nested block of property rules, criteria, and behaviors. A property’s main functionality is encapsulated in its set of rules and rules are composed of the matches and the behavior that applies under those matches.
+        /// The `akamai.properties.PropertyRules` data source allows you to configure a nested block of property rules, criteria, and behaviors. A property’s main functionality is encapsulated in its set of rules and rules are composed of the matches and the behavior that applies under those matches.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -102,7 +102,7 @@ namespace Pulumi.Akamai.Properties
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPropertyRulesResult> InvokeAsync(GetPropertyRulesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRulesResult>("akamai:Properties/getPropertyRules:getPropertyRules", args ?? new GetPropertyRulesArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRulesResult>("akamai:properties/getPropertyRules:getPropertyRules", args ?? new GetPropertyRulesArgs(), options.WithVersion());
     }
 
 

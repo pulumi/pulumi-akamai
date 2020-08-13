@@ -28,7 +28,33 @@ export interface ProviderProperty {
     host?: string;
     maxBody?: number;
 }
-export namespace EdgeDNS {
+export namespace config {
+    export interface Dns {
+        accessToken?: string;
+        clientSecret?: string;
+        clientToken?: string;
+        host?: string;
+        maxBody?: number;
+    }
+
+    export interface Gtms {
+        accessToken?: string;
+        clientSecret?: string;
+        clientToken?: string;
+        host?: string;
+        maxBody?: number;
+    }
+
+    export interface Properties {
+        accessToken?: string;
+        clientSecret?: string;
+        clientToken?: string;
+        host?: string;
+        maxBody?: number;
+    }
+}
+
+export namespace edgedns {
     export interface DnsZoneTsigKey {
         algorithm: string;
         /**
@@ -41,12 +67,12 @@ export namespace EdgeDNS {
     }
 }
 
-export namespace Properties {
+export namespace properties {
     export interface GetPropertyRulesRule {
         /**
          * — (Optional) One or more behaviors to apply to requests that match.
          */
-        behaviors?: outputs.Properties.GetPropertyRulesRuleBehavior[];
+        behaviors?: outputs.properties.GetPropertyRulesRuleBehavior[];
         criteriaMatch?: string;
         /**
          * — (Optional) Whether the property is a secure (Enhanced TLS) property or not (top-level only).
@@ -55,8 +81,8 @@ export namespace Properties {
         /**
          * — (Optional) Child rules (may be nested five levels deep).
          */
-        rules?: outputs.Properties.GetPropertyRulesRuleRule[];
-        variables?: outputs.Properties.GetPropertyRulesRuleVariable[];
+        rules?: outputs.properties.GetPropertyRulesRuleRule[];
+        variables?: outputs.properties.GetPropertyRulesRuleVariable[];
     }
 
     export interface GetPropertyRulesRuleBehavior {
@@ -67,7 +93,7 @@ export namespace Properties {
         /**
          * — (Optional) One or more options for the behavior.
          */
-        options?: outputs.Properties.GetPropertyRulesRuleBehaviorOption[];
+        options?: outputs.properties.GetPropertyRulesRuleBehaviorOption[];
     }
 
     export interface GetPropertyRulesRuleBehaviorOption {
@@ -89,13 +115,13 @@ export namespace Properties {
         /**
          * — (Optional) One or more behaviors to apply to requests that match.
          */
-        behaviors?: outputs.Properties.GetPropertyRulesRuleRuleBehavior[];
+        behaviors?: outputs.properties.GetPropertyRulesRuleRuleBehavior[];
         comment?: string;
         criteriaMatch?: string;
         /**
          * — (Optional) One or more criteria to match requests on.
          */
-        criterias?: outputs.Properties.GetPropertyRulesRuleRuleCriteria[];
+        criterias?: outputs.properties.GetPropertyRulesRuleRuleCriteria[];
         /**
          * — (Required) The name of the behavior.
          */
@@ -103,7 +129,7 @@ export namespace Properties {
         /**
          * — (Optional) Child rules (may be nested five levels deep).
          */
-        rules?: outputs.Properties.GetPropertyRulesRuleRuleRule[];
+        rules?: outputs.properties.GetPropertyRulesRuleRuleRule[];
     }
 
     export interface GetPropertyRulesRuleRuleBehavior {
@@ -114,7 +140,7 @@ export namespace Properties {
         /**
          * — (Optional) One or more options for the behavior.
          */
-        options?: outputs.Properties.GetPropertyRulesRuleRuleBehaviorOption[];
+        options?: outputs.properties.GetPropertyRulesRuleRuleBehaviorOption[];
     }
 
     export interface GetPropertyRulesRuleRuleBehaviorOption {
@@ -140,7 +166,7 @@ export namespace Properties {
         /**
          * — (Optional) One or more options for the behavior.
          */
-        options?: outputs.Properties.GetPropertyRulesRuleRuleCriteriaOption[];
+        options?: outputs.properties.GetPropertyRulesRuleRuleCriteriaOption[];
     }
 
     export interface GetPropertyRulesRuleRuleCriteriaOption {
@@ -162,13 +188,13 @@ export namespace Properties {
         /**
          * — (Optional) One or more behaviors to apply to requests that match.
          */
-        behaviors?: outputs.Properties.GetPropertyRulesRuleRuleRuleBehavior[];
+        behaviors?: outputs.properties.GetPropertyRulesRuleRuleRuleBehavior[];
         comment?: string;
         criteriaMatch?: string;
         /**
          * — (Optional) One or more criteria to match requests on.
          */
-        criterias?: outputs.Properties.GetPropertyRulesRuleRuleRuleCriteria[];
+        criterias?: outputs.properties.GetPropertyRulesRuleRuleRuleCriteria[];
         /**
          * — (Required) The name of the behavior.
          */
@@ -176,7 +202,7 @@ export namespace Properties {
         /**
          * — (Optional) Child rules (may be nested five levels deep).
          */
-        rules?: outputs.Properties.GetPropertyRulesRuleRuleRuleRule[];
+        rules?: outputs.properties.GetPropertyRulesRuleRuleRuleRule[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleBehavior {
@@ -187,7 +213,7 @@ export namespace Properties {
         /**
          * — (Optional) One or more options for the behavior.
          */
-        options?: outputs.Properties.GetPropertyRulesRuleRuleRuleBehaviorOption[];
+        options?: outputs.properties.GetPropertyRulesRuleRuleRuleBehaviorOption[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleBehaviorOption {
@@ -213,7 +239,7 @@ export namespace Properties {
         /**
          * — (Optional) One or more options for the behavior.
          */
-        options?: outputs.Properties.GetPropertyRulesRuleRuleRuleCriteriaOption[];
+        options?: outputs.properties.GetPropertyRulesRuleRuleRuleCriteriaOption[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleCriteriaOption {
@@ -235,13 +261,13 @@ export namespace Properties {
         /**
          * — (Optional) One or more behaviors to apply to requests that match.
          */
-        behaviors?: outputs.Properties.GetPropertyRulesRuleRuleRuleRuleBehavior[];
+        behaviors?: outputs.properties.GetPropertyRulesRuleRuleRuleRuleBehavior[];
         comment?: string;
         criteriaMatch?: string;
         /**
          * — (Optional) One or more criteria to match requests on.
          */
-        criterias?: outputs.Properties.GetPropertyRulesRuleRuleRuleRuleCriteria[];
+        criterias?: outputs.properties.GetPropertyRulesRuleRuleRuleRuleCriteria[];
         /**
          * — (Required) The name of the behavior.
          */
@@ -249,7 +275,7 @@ export namespace Properties {
         /**
          * — (Optional) Child rules (may be nested five levels deep).
          */
-        rules?: outputs.Properties.GetPropertyRulesRuleRuleRuleRuleRule[];
+        rules?: outputs.properties.GetPropertyRulesRuleRuleRuleRuleRule[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleRuleBehavior {
@@ -260,7 +286,7 @@ export namespace Properties {
         /**
          * — (Optional) One or more options for the behavior.
          */
-        options?: outputs.Properties.GetPropertyRulesRuleRuleRuleRuleBehaviorOption[];
+        options?: outputs.properties.GetPropertyRulesRuleRuleRuleRuleBehaviorOption[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleRuleBehaviorOption {
@@ -286,7 +312,7 @@ export namespace Properties {
         /**
          * — (Optional) One or more options for the behavior.
          */
-        options?: outputs.Properties.GetPropertyRulesRuleRuleRuleRuleCriteriaOption[];
+        options?: outputs.properties.GetPropertyRulesRuleRuleRuleRuleCriteriaOption[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleRuleCriteriaOption {
@@ -308,13 +334,13 @@ export namespace Properties {
         /**
          * — (Optional) One or more behaviors to apply to requests that match.
          */
-        behaviors?: outputs.Properties.GetPropertyRulesRuleRuleRuleRuleRuleBehavior[];
+        behaviors?: outputs.properties.GetPropertyRulesRuleRuleRuleRuleRuleBehavior[];
         comment?: string;
         criteriaMatch?: string;
         /**
          * — (Optional) One or more criteria to match requests on.
          */
-        criterias?: outputs.Properties.GetPropertyRulesRuleRuleRuleRuleRuleCriteria[];
+        criterias?: outputs.properties.GetPropertyRulesRuleRuleRuleRuleRuleCriteria[];
         /**
          * — (Required) The name of the behavior.
          */
@@ -329,7 +355,7 @@ export namespace Properties {
         /**
          * — (Optional) One or more options for the behavior.
          */
-        options?: outputs.Properties.GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOption[];
+        options?: outputs.properties.GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOption[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOption {
@@ -355,7 +381,7 @@ export namespace Properties {
         /**
          * — (Optional) One or more options for the behavior.
          */
-        options?: outputs.Properties.GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOption[];
+        options?: outputs.properties.GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOption[];
     }
 
     export interface GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOption {
@@ -415,16 +441,16 @@ export namespace Properties {
     }
 
     export interface PropertyRulesRule {
-        behaviors?: outputs.Properties.PropertyRulesRuleBehavior[];
+        behaviors?: outputs.properties.PropertyRulesRuleBehavior[];
         criteriaMatch?: string;
         isSecure?: boolean;
-        rules?: outputs.Properties.PropertyRulesRuleRule[];
-        variables?: outputs.Properties.PropertyRulesRuleVariable[];
+        rules?: outputs.properties.PropertyRulesRuleRule[];
+        variables?: outputs.properties.PropertyRulesRuleVariable[];
     }
 
     export interface PropertyRulesRuleBehavior {
         name: string;
-        options?: outputs.Properties.PropertyRulesRuleBehaviorOption[];
+        options?: outputs.properties.PropertyRulesRuleBehaviorOption[];
     }
 
     export interface PropertyRulesRuleBehaviorOption {
@@ -434,17 +460,17 @@ export namespace Properties {
     }
 
     export interface PropertyRulesRuleRule {
-        behaviors?: outputs.Properties.PropertyRulesRuleRuleBehavior[];
+        behaviors?: outputs.properties.PropertyRulesRuleRuleBehavior[];
         comment?: string;
         criteriaMatch?: string;
-        criterias?: outputs.Properties.PropertyRulesRuleRuleCriteria[];
+        criterias?: outputs.properties.PropertyRulesRuleRuleCriteria[];
         name: string;
-        rules?: outputs.Properties.PropertyRulesRuleRuleRule[];
+        rules?: outputs.properties.PropertyRulesRuleRuleRule[];
     }
 
     export interface PropertyRulesRuleRuleBehavior {
         name: string;
-        options?: outputs.Properties.PropertyRulesRuleRuleBehaviorOption[];
+        options?: outputs.properties.PropertyRulesRuleRuleBehaviorOption[];
     }
 
     export interface PropertyRulesRuleRuleBehaviorOption {
@@ -455,7 +481,7 @@ export namespace Properties {
 
     export interface PropertyRulesRuleRuleCriteria {
         name: string;
-        options?: outputs.Properties.PropertyRulesRuleRuleCriteriaOption[];
+        options?: outputs.properties.PropertyRulesRuleRuleCriteriaOption[];
     }
 
     export interface PropertyRulesRuleRuleCriteriaOption {
@@ -465,17 +491,17 @@ export namespace Properties {
     }
 
     export interface PropertyRulesRuleRuleRule {
-        behaviors?: outputs.Properties.PropertyRulesRuleRuleRuleBehavior[];
+        behaviors?: outputs.properties.PropertyRulesRuleRuleRuleBehavior[];
         comment?: string;
         criteriaMatch?: string;
-        criterias?: outputs.Properties.PropertyRulesRuleRuleRuleCriteria[];
+        criterias?: outputs.properties.PropertyRulesRuleRuleRuleCriteria[];
         name: string;
-        rules?: outputs.Properties.PropertyRulesRuleRuleRuleRule[];
+        rules?: outputs.properties.PropertyRulesRuleRuleRuleRule[];
     }
 
     export interface PropertyRulesRuleRuleRuleBehavior {
         name: string;
-        options?: outputs.Properties.PropertyRulesRuleRuleRuleBehaviorOption[];
+        options?: outputs.properties.PropertyRulesRuleRuleRuleBehaviorOption[];
     }
 
     export interface PropertyRulesRuleRuleRuleBehaviorOption {
@@ -486,7 +512,7 @@ export namespace Properties {
 
     export interface PropertyRulesRuleRuleRuleCriteria {
         name: string;
-        options?: outputs.Properties.PropertyRulesRuleRuleRuleCriteriaOption[];
+        options?: outputs.properties.PropertyRulesRuleRuleRuleCriteriaOption[];
     }
 
     export interface PropertyRulesRuleRuleRuleCriteriaOption {
@@ -496,17 +522,17 @@ export namespace Properties {
     }
 
     export interface PropertyRulesRuleRuleRuleRule {
-        behaviors?: outputs.Properties.PropertyRulesRuleRuleRuleRuleBehavior[];
+        behaviors?: outputs.properties.PropertyRulesRuleRuleRuleRuleBehavior[];
         comment?: string;
         criteriaMatch?: string;
-        criterias?: outputs.Properties.PropertyRulesRuleRuleRuleRuleCriteria[];
+        criterias?: outputs.properties.PropertyRulesRuleRuleRuleRuleCriteria[];
         name: string;
-        rules?: outputs.Properties.PropertyRulesRuleRuleRuleRuleRule[];
+        rules?: outputs.properties.PropertyRulesRuleRuleRuleRuleRule[];
     }
 
     export interface PropertyRulesRuleRuleRuleRuleBehavior {
         name: string;
-        options?: outputs.Properties.PropertyRulesRuleRuleRuleRuleBehaviorOption[];
+        options?: outputs.properties.PropertyRulesRuleRuleRuleRuleBehaviorOption[];
     }
 
     export interface PropertyRulesRuleRuleRuleRuleBehaviorOption {
@@ -517,7 +543,7 @@ export namespace Properties {
 
     export interface PropertyRulesRuleRuleRuleRuleCriteria {
         name: string;
-        options?: outputs.Properties.PropertyRulesRuleRuleRuleRuleCriteriaOption[];
+        options?: outputs.properties.PropertyRulesRuleRuleRuleRuleCriteriaOption[];
     }
 
     export interface PropertyRulesRuleRuleRuleRuleCriteriaOption {
@@ -527,16 +553,16 @@ export namespace Properties {
     }
 
     export interface PropertyRulesRuleRuleRuleRuleRule {
-        behaviors?: outputs.Properties.PropertyRulesRuleRuleRuleRuleRuleBehavior[];
+        behaviors?: outputs.properties.PropertyRulesRuleRuleRuleRuleRuleBehavior[];
         comment?: string;
         criteriaMatch?: string;
-        criterias?: outputs.Properties.PropertyRulesRuleRuleRuleRuleRuleCriteria[];
+        criterias?: outputs.properties.PropertyRulesRuleRuleRuleRuleRuleCriteria[];
         name: string;
     }
 
     export interface PropertyRulesRuleRuleRuleRuleRuleBehavior {
         name: string;
-        options?: outputs.Properties.PropertyRulesRuleRuleRuleRuleRuleBehaviorOption[];
+        options?: outputs.properties.PropertyRulesRuleRuleRuleRuleRuleBehaviorOption[];
     }
 
     export interface PropertyRulesRuleRuleRuleRuleRuleBehaviorOption {
@@ -547,7 +573,7 @@ export namespace Properties {
 
     export interface PropertyRulesRuleRuleRuleRuleRuleCriteria {
         name: string;
-        options?: outputs.Properties.PropertyRulesRuleRuleRuleRuleRuleCriteriaOption[];
+        options?: outputs.properties.PropertyRulesRuleRuleRuleRuleRuleCriteriaOption[];
     }
 
     export interface PropertyRulesRuleRuleRuleRuleRuleCriteriaOption {
@@ -565,7 +591,7 @@ export namespace Properties {
     }
 
     export interface PropertyVariablesVariable {
-        variables?: outputs.Properties.PropertyVariablesVariableVariable[];
+        variables?: outputs.properties.PropertyVariablesVariableVariable[];
     }
 
     export interface PropertyVariablesVariableVariable {
@@ -592,7 +618,7 @@ export namespace Properties {
     }
 }
 
-export namespace TrafficManagement {
+export namespace trafficmanagement {
     export interface GtmASmapAssignment {
         /**
          * — (List)
@@ -678,7 +704,7 @@ export namespace TrafficManagement {
          * `name`
          * `value`
          */
-        httpHeaders?: outputs.TrafficManagement.GtmPropertyLivenessTestHttpHeader[];
+        httpHeaders?: outputs.trafficmanagement.GtmPropertyLivenessTestHttpHeader[];
         /**
          * — Liveness test name
          * * `testInterval`
@@ -786,32 +812,6 @@ export namespace TrafficManagement {
          * * `decayRate`
          */
         useDefaultLoadObject?: boolean;
-    }
-}
-
-export namespace config {
-    export interface Dns {
-        accessToken?: string;
-        clientSecret?: string;
-        clientToken?: string;
-        host?: string;
-        maxBody?: number;
-    }
-
-    export interface Gtms {
-        accessToken?: string;
-        clientSecret?: string;
-        clientToken?: string;
-        host?: string;
-        maxBody?: number;
-    }
-
-    export interface Properties {
-        accessToken?: string;
-        clientSecret?: string;
-        clientToken?: string;
-        host?: string;
-        maxBody?: number;
     }
 }
 

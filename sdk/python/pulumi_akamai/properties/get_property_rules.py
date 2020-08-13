@@ -45,7 +45,7 @@ class AwaitableGetPropertyRulesResult(GetPropertyRulesResult):
 
 def get_property_rules(rules=None, variables=None, opts=None):
     """
-    The `Properties.PropertyRules` data source allows you to configure a nested block of property rules, criteria, and behaviors. A property’s main functionality is encapsulated in its set of rules and rules are composed of the matches and the behavior that applies under those matches.
+    The `properties.PropertyRules` data source allows you to configure a nested block of property rules, criteria, and behaviors. A property’s main functionality is encapsulated in its set of rules and rules are composed of the matches and the behavior that applies under those matches.
 
     ## Example Usage
     ### Basic usage:
@@ -54,7 +54,7 @@ def get_property_rules(rules=None, variables=None, opts=None):
     import pulumi
     import pulumi_akamai as akamai
 
-    example_property_rules = akamai.Properties.get_property_rules(rules=[{
+    example_property_rules = akamai.properties.get_property_rules(rules=[{
         "behaviors": [{
             "name": "downstreamCache",
             "option": [{
@@ -189,7 +189,7 @@ def get_property_rules(rules=None, variables=None, opts=None):
         opts = pulumi.InvokeOptions()
     if opts.version is None:
         opts.version = _utilities.get_version()
-    __ret__ = pulumi.runtime.invoke('akamai:Properties/getPropertyRules:getPropertyRules', __args__, opts=opts).value
+    __ret__ = pulumi.runtime.invoke('akamai:properties/getPropertyRules:getPropertyRules', __args__, opts=opts).value
 
     return AwaitableGetPropertyRulesResult(
         id=__ret__.get('id'),

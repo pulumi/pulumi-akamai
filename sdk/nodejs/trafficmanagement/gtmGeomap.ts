@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * `akamai.TrafficManagement.GtmGeomap` provides the resource for creating, configuring and importing a gtm Geographic map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingMapName`
+ * `akamai.trafficmanagement.GtmGeomap` provides the resource for creating, configuring and importing a gtm Geographic map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingMapName`
  *
  * ## Example Usage
  * ### Basic usage:
@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const demoGeomap = new akamai.TrafficManagement.GtmGeomap("demo_geomap", {
+ * const demoGeomap = new akamai.trafficmanagement.GtmGeomap("demo_geomap", {
  *     defaultDatacenter: {
  *         datacenterId: 5400,
  *         nickname: "All Others",
@@ -40,7 +40,7 @@ export class GtmGeomap extends pulumi.CustomResource {
     }
 
     /** @internal */
-    public static readonly __pulumiType = 'akamai:TrafficManagement/gtmGeomap:GtmGeomap';
+    public static readonly __pulumiType = 'akamai:trafficmanagement/gtmGeomap:GtmGeomap';
 
     /**
      * Returns true if the given object is an instance of GtmGeomap.  This is designed to work even
@@ -58,8 +58,8 @@ export class GtmGeomap extends pulumi.CustomResource {
      * * `datacenterId`
      * * `nickname`
      */
-    public readonly assignments!: pulumi.Output<outputs.TrafficManagement.GtmGeomapAssignment[] | undefined>;
-    public readonly defaultDatacenter!: pulumi.Output<outputs.TrafficManagement.GtmGeomapDefaultDatacenter>;
+    public readonly assignments!: pulumi.Output<outputs.trafficmanagement.GtmGeomapAssignment[] | undefined>;
+    public readonly defaultDatacenter!: pulumi.Output<outputs.trafficmanagement.GtmGeomapDefaultDatacenter>;
     /**
      * — Domain name
      */
@@ -127,8 +127,8 @@ export interface GtmGeomapState {
      * * `datacenterId`
      * * `nickname`
      */
-    readonly assignments?: pulumi.Input<pulumi.Input<inputs.TrafficManagement.GtmGeomapAssignment>[]>;
-    readonly defaultDatacenter?: pulumi.Input<inputs.TrafficManagement.GtmGeomapDefaultDatacenter>;
+    readonly assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmGeomapAssignment>[]>;
+    readonly defaultDatacenter?: pulumi.Input<inputs.trafficmanagement.GtmGeomapDefaultDatacenter>;
     /**
      * — Domain name
      */
@@ -155,8 +155,8 @@ export interface GtmGeomapArgs {
      * * `datacenterId`
      * * `nickname`
      */
-    readonly assignments?: pulumi.Input<pulumi.Input<inputs.TrafficManagement.GtmGeomapAssignment>[]>;
-    readonly defaultDatacenter: pulumi.Input<inputs.TrafficManagement.GtmGeomapDefaultDatacenter>;
+    readonly assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmGeomapAssignment>[]>;
+    readonly defaultDatacenter: pulumi.Input<inputs.trafficmanagement.GtmGeomapDefaultDatacenter>;
     /**
      * — Domain name
      */

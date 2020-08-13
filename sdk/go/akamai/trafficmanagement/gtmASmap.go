@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// `TrafficManagement.GtmASmap` provides the resource for creating, configuring and importing a gtm AS Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingMapName`
+// `trafficmanagement.GtmASmap` provides the resource for creating, configuring and importing a gtm AS Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingMapName`
 //
 // ## Example Usage
 // ### Basic usage:
@@ -19,14 +19,14 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/TrafficManagement"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/trafficmanagement"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := TrafficManagement.NewGtmASmap(ctx, "demoAsmap", &TrafficManagement.GtmASmapArgs{
-// 			DefaultDatacenter: &TrafficManagement.GtmASmapDefaultDatacenterArgs{
+// 		_, err := trafficmanagement.NewGtmASmap(ctx, "demoAsmap", &trafficmanagement.GtmASmapArgs{
+// 			DefaultDatacenter: &trafficmanagement.GtmASmapDefaultDatacenterArgs{
 // 				DatacenterId: pulumi.Int(5400),
 // 				Nickname:     pulumi.String("All Other AS numbers"),
 // 			},
@@ -71,7 +71,7 @@ func NewGtmASmap(ctx *pulumi.Context,
 		args = &GtmASmapArgs{}
 	}
 	var resource GtmASmap
-	err := ctx.RegisterResource("akamai:TrafficManagement/gtmASmap:GtmASmap", name, args, &resource, opts...)
+	err := ctx.RegisterResource("akamai:trafficmanagement/gtmASmap:GtmASmap", name, args, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -83,7 +83,7 @@ func NewGtmASmap(ctx *pulumi.Context,
 func GetGtmASmap(ctx *pulumi.Context,
 	name string, id pulumi.IDInput, state *GtmASmapState, opts ...pulumi.ResourceOption) (*GtmASmap, error) {
 	var resource GtmASmap
-	err := ctx.ReadResource("akamai:TrafficManagement/gtmASmap:GtmASmap", name, id, state, &resource, opts...)
+	err := ctx.ReadResource("akamai:trafficmanagement/gtmASmap:GtmASmap", name, id, state, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}

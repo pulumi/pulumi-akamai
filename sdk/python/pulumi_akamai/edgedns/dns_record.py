@@ -81,7 +81,7 @@ class DnsRecord(pulumi.CustomResource):
     """
     def __init__(__self__, resource_name, opts=None, active=None, algorithm=None, certificate=None, digest=None, digest_type=None, email_address=None, expiration=None, expiry=None, fingerprint=None, fingerprint_type=None, flags=None, flagsnaptr=None, hardware=None, inception=None, iterations=None, key=None, keytag=None, labels=None, mailbox=None, match_type=None, name=None, name_server=None, next_hashed_owner_name=None, nxdomain_ttl=None, order=None, original_ttl=None, port=None, preference=None, priority=None, priority_increment=None, protocol=None, recordtype=None, refresh=None, regexp=None, replacement=None, retry=None, salt=None, selector=None, service=None, signature=None, signer=None, software=None, subtype=None, targets=None, ttl=None, txt=None, type_bitmaps=None, type_covered=None, type_mnemonic=None, type_value=None, usage=None, weight=None, zone=None, __props__=None, __name__=None, __opts__=None):
         """
-        The `EdgeDNS.DnsRecord` provides the resource for configuring a dns record to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
+        The `edgedns.DnsRecord` provides the resource for configuring a dns record to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
 
         ## Example Usage
         ### Basic usage:
@@ -90,13 +90,13 @@ class DnsRecord(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        origin = akamai.edge_dns.DnsRecord("origin",
+        origin = akamai.edgedns.DnsRecord("origin",
             active=True,
             recordtype="A",
             targets=["192.0.2.42"],
             ttl=30,
             zone="origin.org")
-        www = akamai.edge_dns.DnsRecord("www",
+        www = akamai.edgedns.DnsRecord("www",
             active=True,
             recordtype="CNAME",
             targets="origin.example.org.edgesuite.net",
@@ -412,7 +412,7 @@ class DnsRecord(pulumi.CustomResource):
             __props__['record_sha'] = None
             __props__['serial'] = None
         super(DnsRecord, __self__).__init__(
-            'akamai:EdgeDNS/dnsRecord:DnsRecord',
+            'akamai:edgedns/dnsRecord:DnsRecord',
             resource_name,
             __props__,
             opts)
