@@ -11,3 +11,5 @@ from .gtm_domain import *
 from .gtm_geomap import *
 from .gtm_property import *
 from .gtm_resource import *
+from ._inputs import *
+from . import outputs

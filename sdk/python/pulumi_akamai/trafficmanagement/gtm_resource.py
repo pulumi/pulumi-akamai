@@ -5,61 +5,36 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from .. import _utilities, _tables
+from . import outputs
+from ._inputs import *
+
+__all__ = ['GtmResource']
 
 
 class GtmResource(pulumi.CustomResource):
-    aggregation_type: pulumi.Output[str]
-    constrained_property: pulumi.Output[str]
-    decay_rate: pulumi.Output[float]
-    description: pulumi.Output[str]
-    domain: pulumi.Output[str]
-    """
-    — Domain name
-    """
-    host_header: pulumi.Output[str]
-    leader_string: pulumi.Output[str]
-    least_squares_decay: pulumi.Output[float]
-    load_imbalance_percentage: pulumi.Output[float]
-    max_u_multiplicative_increment: pulumi.Output[float]
-    name: pulumi.Output[str]
-    """
-    — Resource name
-    * `aggregation_type`
-    """
-    resource_instances: pulumi.Output[list]
-    """
-    — (multiple allowed) 
-    * `datacenter_id`
-    * `load_object`
-    * `load_object_port`
-
-      * `datacenter_id` (`float`)
-      * `loadObject` (`str`)
-      * `loadObjectPort` (`float`)
-      * `loadServers` (`list`) - — (List)
-      * `useDefaultLoadObject` (`bool`) - — (Boolean)
-        * `host_header`
-        * `least_squares_decay`
-        * `upper_bound`
-        * `description`
-        * `leader_string`
-        * `constrained_property`
-        * `load_imbalance_percent`
-        * `max_u_multiplicative_increment`
-        * `decay_rate`
-    """
-    type: pulumi.Output[str]
-    """
-    — Resource type
-    """
-    upper_bound: pulumi.Output[float]
-    wait_on_complete: pulumi.Output[bool]
-    """
-    — (Boolean, Default: true) Wait for transaction to complete
-    """
-    def __init__(__self__, resource_name, opts=None, aggregation_type=None, constrained_property=None, decay_rate=None, description=None, domain=None, host_header=None, leader_string=None, least_squares_decay=None, load_imbalance_percentage=None, max_u_multiplicative_increment=None, name=None, resource_instances=None, type=None, upper_bound=None, wait_on_complete=None, __props__=None, __name__=None, __opts__=None):
+    def __init__(__self__,
+                 resource_name,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 aggregation_type: Optional[pulumi.Input[str]] = None,
+                 constrained_property: Optional[pulumi.Input[str]] = None,
+                 decay_rate: Optional[pulumi.Input[float]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 domain: Optional[pulumi.Input[str]] = None,
+                 host_header: Optional[pulumi.Input[str]] = None,
+                 leader_string: Optional[pulumi.Input[str]] = None,
+                 least_squares_decay: Optional[pulumi.Input[float]] = None,
+                 load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
+                 max_u_multiplicative_increment: Optional[pulumi.Input[float]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 resource_instances: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmResourceResourceInstanceArgs']]]]] = None,
+                 type: Optional[pulumi.Input[str]] = None,
+                 upper_bound: Optional[pulumi.Input[float]] = None,
+                 wait_on_complete: Optional[pulumi.Input[bool]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         """
         `trafficmanagement.GtmResource` provides the resource for creating, configuring and importing a gtm resource to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_resource_name`
 
@@ -81,29 +56,12 @@ class GtmResource(pulumi.CustomResource):
         :param pulumi.Input[str] domain: — Domain name
         :param pulumi.Input[str] name: — Resource name
                * `aggregation_type`
-        :param pulumi.Input[list] resource_instances: — (multiple allowed) 
+        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmResourceResourceInstanceArgs']]]] resource_instances: — (multiple allowed) 
                * `datacenter_id`
                * `load_object`
                * `load_object_port`
         :param pulumi.Input[str] type: — Resource type
         :param pulumi.Input[bool] wait_on_complete: — (Boolean, Default: true) Wait for transaction to complete
-
-        The **resource_instances** object supports the following:
-
-          * `datacenter_id` (`pulumi.Input[float]`)
-          * `loadObject` (`pulumi.Input[str]`)
-          * `loadObjectPort` (`pulumi.Input[float]`)
-          * `loadServers` (`pulumi.Input[list]`) - — (List)
-          * `useDefaultLoadObject` (`pulumi.Input[bool]`) - — (Boolean)
-            * `host_header`
-            * `least_squares_decay`
-            * `upper_bound`
-            * `description`
-            * `leader_string`
-            * `constrained_property`
-            * `load_imbalance_percent`
-            * `max_u_multiplicative_increment`
-            * `decay_rate`
         """
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
@@ -150,40 +108,40 @@ class GtmResource(pulumi.CustomResource):
             opts)
 
     @staticmethod
-    def get(resource_name, id, opts=None, aggregation_type=None, constrained_property=None, decay_rate=None, description=None, domain=None, host_header=None, leader_string=None, least_squares_decay=None, load_imbalance_percentage=None, max_u_multiplicative_increment=None, name=None, resource_instances=None, type=None, upper_bound=None, wait_on_complete=None):
+    def get(resource_name: str,
+            id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            aggregation_type: Optional[pulumi.Input[str]] = None,
+            constrained_property: Optional[pulumi.Input[str]] = None,
+            decay_rate: Optional[pulumi.Input[float]] = None,
+            description: Optional[pulumi.Input[str]] = None,
+            domain: Optional[pulumi.Input[str]] = None,
+            host_header: Optional[pulumi.Input[str]] = None,
+            leader_string: Optional[pulumi.Input[str]] = None,
+            least_squares_decay: Optional[pulumi.Input[float]] = None,
+            load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
+            max_u_multiplicative_increment: Optional[pulumi.Input[float]] = None,
+            name: Optional[pulumi.Input[str]] = None,
+            resource_instances: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmResourceResourceInstanceArgs']]]]] = None,
+            type: Optional[pulumi.Input[str]] = None,
+            upper_bound: Optional[pulumi.Input[float]] = None,
+            wait_on_complete: Optional[pulumi.Input[bool]] = None) -> 'GtmResource':
         """
         Get an existing GtmResource resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
 
         :param str resource_name: The unique name of the resulting resource.
-        :param str id: The unique provider ID of the resource to lookup.
+        :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] domain: — Domain name
         :param pulumi.Input[str] name: — Resource name
                * `aggregation_type`
-        :param pulumi.Input[list] resource_instances: — (multiple allowed) 
+        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmResourceResourceInstanceArgs']]]] resource_instances: — (multiple allowed) 
                * `datacenter_id`
                * `load_object`
                * `load_object_port`
         :param pulumi.Input[str] type: — Resource type
         :param pulumi.Input[bool] wait_on_complete: — (Boolean, Default: true) Wait for transaction to complete
-
-        The **resource_instances** object supports the following:
-
-          * `datacenter_id` (`pulumi.Input[float]`)
-          * `loadObject` (`pulumi.Input[str]`)
-          * `loadObjectPort` (`pulumi.Input[float]`)
-          * `loadServers` (`pulumi.Input[list]`) - — (List)
-          * `useDefaultLoadObject` (`pulumi.Input[bool]`) - — (Boolean)
-            * `host_header`
-            * `least_squares_decay`
-            * `upper_bound`
-            * `description`
-            * `leader_string`
-            * `constrained_property`
-            * `load_imbalance_percent`
-            * `max_u_multiplicative_increment`
-            * `decay_rate`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -206,8 +164,103 @@ class GtmResource(pulumi.CustomResource):
         __props__["wait_on_complete"] = wait_on_complete
         return GtmResource(resource_name, opts=opts, __props__=__props__)
 
+    @property
+    @pulumi.getter(name="aggregationType")
+    def aggregation_type(self) -> str:
+        return pulumi.get(self, "aggregation_type")
+
+    @property
+    @pulumi.getter(name="constrainedProperty")
+    def constrained_property(self) -> Optional[str]:
+        return pulumi.get(self, "constrained_property")
+
+    @property
+    @pulumi.getter(name="decayRate")
+    def decay_rate(self) -> Optional[float]:
+        return pulumi.get(self, "decay_rate")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> str:
+        """
+        — Domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="hostHeader")
+    def host_header(self) -> Optional[str]:
+        return pulumi.get(self, "host_header")
+
+    @property
+    @pulumi.getter(name="leaderString")
+    def leader_string(self) -> Optional[str]:
+        return pulumi.get(self, "leader_string")
+
+    @property
+    @pulumi.getter(name="leastSquaresDecay")
+    def least_squares_decay(self) -> Optional[float]:
+        return pulumi.get(self, "least_squares_decay")
+
+    @property
+    @pulumi.getter(name="loadImbalancePercentage")
+    def load_imbalance_percentage(self) -> Optional[float]:
+        return pulumi.get(self, "load_imbalance_percentage")
+
+    @property
+    @pulumi.getter(name="maxUMultiplicativeIncrement")
+    def max_u_multiplicative_increment(self) -> Optional[float]:
+        return pulumi.get(self, "max_u_multiplicative_increment")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        — Resource name
+        * `aggregation_type`
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="resourceInstances")
+    def resource_instances(self) -> Optional[List['outputs.GtmResourceResourceInstance']]:
+        """
+        — (multiple allowed) 
+        * `datacenter_id`
+        * `load_object`
+        * `load_object_port`
+        """
+        return pulumi.get(self, "resource_instances")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        — Resource type
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="upperBound")
+    def upper_bound(self) -> Optional[float]:
+        return pulumi.get(self, "upper_bound")
+
+    @property
+    @pulumi.getter(name="waitOnComplete")
+    def wait_on_complete(self) -> Optional[bool]:
+        """
+        — (Boolean, Default: true) Wait for transaction to complete
+        """
+        return pulumi.get(self, "wait_on_complete")
+
     def translate_output_property(self, prop):
         return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
     def translate_input_property(self, prop):
         return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
+

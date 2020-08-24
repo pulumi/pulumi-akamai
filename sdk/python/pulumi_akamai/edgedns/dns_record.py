@@ -5,81 +5,72 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from .. import _utilities, _tables
+
+__all__ = ['DnsRecord']
 
 
 class DnsRecord(pulumi.CustomResource):
-    active: pulumi.Output[bool]
-    """
-    — (Ignored, Boolean) Maintained for backward compatibility
-    """
-    algorithm: pulumi.Output[float]
-    answer_type: pulumi.Output[str]
-    certificate: pulumi.Output[str]
-    digest: pulumi.Output[str]
-    digest_type: pulumi.Output[float]
-    dns_name: pulumi.Output[str]
-    email_address: pulumi.Output[str]
-    expiration: pulumi.Output[str]
-    expiry: pulumi.Output[float]
-    fingerprint: pulumi.Output[str]
-    fingerprint_type: pulumi.Output[float]
-    flags: pulumi.Output[float]
-    flagsnaptr: pulumi.Output[str]
-    hardware: pulumi.Output[str]
-    inception: pulumi.Output[str]
-    iterations: pulumi.Output[float]
-    key: pulumi.Output[str]
-    keytag: pulumi.Output[float]
-    labels: pulumi.Output[float]
-    mailbox: pulumi.Output[str]
-    match_type: pulumi.Output[float]
-    name: pulumi.Output[str]
-    """
-    — (Required) The name of the record. The name is an owner name, that is, the name of the node to which this resource record pertains.
-    """
-    name_server: pulumi.Output[str]
-    next_hashed_owner_name: pulumi.Output[str]
-    nxdomain_ttl: pulumi.Output[float]
-    order: pulumi.Output[float]
-    original_ttl: pulumi.Output[float]
-    port: pulumi.Output[float]
-    preference: pulumi.Output[float]
-    priority: pulumi.Output[float]
-    priority_increment: pulumi.Output[float]
-    protocol: pulumi.Output[float]
-    record_sha: pulumi.Output[str]
-    recordtype: pulumi.Output[str]
-    refresh: pulumi.Output[float]
-    regexp: pulumi.Output[str]
-    replacement: pulumi.Output[str]
-    retry: pulumi.Output[float]
-    salt: pulumi.Output[str]
-    selector: pulumi.Output[float]
-    serial: pulumi.Output[float]
-    service: pulumi.Output[str]
-    signature: pulumi.Output[str]
-    signer: pulumi.Output[str]
-    software: pulumi.Output[str]
-    subtype: pulumi.Output[float]
-    targets: pulumi.Output[list]
-    ttl: pulumi.Output[float]
-    """
-    — (Required,Boolean) The TTL is a 32-bit signed integer that specifies the time interval that the resource record may be cached before the source of the information should be consulted again. Zero values are interpreted to mean that the RR can only be used for the transaction in progress, and should not be cached. Zero values can also be used for extremely volatile data.
-    """
-    txt: pulumi.Output[str]
-    type_bitmaps: pulumi.Output[str]
-    type_covered: pulumi.Output[str]
-    type_mnemonic: pulumi.Output[str]
-    type_value: pulumi.Output[float]
-    usage: pulumi.Output[float]
-    weight: pulumi.Output[float]
-    zone: pulumi.Output[str]
-    """
-    — (Required) Domain zone, encapsulating any nested subdomains.
-    """
-    def __init__(__self__, resource_name, opts=None, active=None, algorithm=None, certificate=None, digest=None, digest_type=None, email_address=None, expiration=None, expiry=None, fingerprint=None, fingerprint_type=None, flags=None, flagsnaptr=None, hardware=None, inception=None, iterations=None, key=None, keytag=None, labels=None, mailbox=None, match_type=None, name=None, name_server=None, next_hashed_owner_name=None, nxdomain_ttl=None, order=None, original_ttl=None, port=None, preference=None, priority=None, priority_increment=None, protocol=None, recordtype=None, refresh=None, regexp=None, replacement=None, retry=None, salt=None, selector=None, service=None, signature=None, signer=None, software=None, subtype=None, targets=None, ttl=None, txt=None, type_bitmaps=None, type_covered=None, type_mnemonic=None, type_value=None, usage=None, weight=None, zone=None, __props__=None, __name__=None, __opts__=None):
+    def __init__(__self__,
+                 resource_name,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 active: Optional[pulumi.Input[bool]] = None,
+                 algorithm: Optional[pulumi.Input[float]] = None,
+                 certificate: Optional[pulumi.Input[str]] = None,
+                 digest: Optional[pulumi.Input[str]] = None,
+                 digest_type: Optional[pulumi.Input[float]] = None,
+                 email_address: Optional[pulumi.Input[str]] = None,
+                 expiration: Optional[pulumi.Input[str]] = None,
+                 expiry: Optional[pulumi.Input[float]] = None,
+                 fingerprint: Optional[pulumi.Input[str]] = None,
+                 fingerprint_type: Optional[pulumi.Input[float]] = None,
+                 flags: Optional[pulumi.Input[float]] = None,
+                 flagsnaptr: Optional[pulumi.Input[str]] = None,
+                 hardware: Optional[pulumi.Input[str]] = None,
+                 inception: Optional[pulumi.Input[str]] = None,
+                 iterations: Optional[pulumi.Input[float]] = None,
+                 key: Optional[pulumi.Input[str]] = None,
+                 keytag: Optional[pulumi.Input[float]] = None,
+                 labels: Optional[pulumi.Input[float]] = None,
+                 mailbox: Optional[pulumi.Input[str]] = None,
+                 match_type: Optional[pulumi.Input[float]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 name_server: Optional[pulumi.Input[str]] = None,
+                 next_hashed_owner_name: Optional[pulumi.Input[str]] = None,
+                 nxdomain_ttl: Optional[pulumi.Input[float]] = None,
+                 order: Optional[pulumi.Input[float]] = None,
+                 original_ttl: Optional[pulumi.Input[float]] = None,
+                 port: Optional[pulumi.Input[float]] = None,
+                 preference: Optional[pulumi.Input[float]] = None,
+                 priority: Optional[pulumi.Input[float]] = None,
+                 priority_increment: Optional[pulumi.Input[float]] = None,
+                 protocol: Optional[pulumi.Input[float]] = None,
+                 recordtype: Optional[pulumi.Input[str]] = None,
+                 refresh: Optional[pulumi.Input[float]] = None,
+                 regexp: Optional[pulumi.Input[str]] = None,
+                 replacement: Optional[pulumi.Input[str]] = None,
+                 retry: Optional[pulumi.Input[float]] = None,
+                 salt: Optional[pulumi.Input[str]] = None,
+                 selector: Optional[pulumi.Input[float]] = None,
+                 service: Optional[pulumi.Input[str]] = None,
+                 signature: Optional[pulumi.Input[str]] = None,
+                 signer: Optional[pulumi.Input[str]] = None,
+                 software: Optional[pulumi.Input[str]] = None,
+                 subtype: Optional[pulumi.Input[float]] = None,
+                 targets: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 ttl: Optional[pulumi.Input[float]] = None,
+                 txt: Optional[pulumi.Input[str]] = None,
+                 type_bitmaps: Optional[pulumi.Input[str]] = None,
+                 type_covered: Optional[pulumi.Input[str]] = None,
+                 type_mnemonic: Optional[pulumi.Input[str]] = None,
+                 type_value: Optional[pulumi.Input[float]] = None,
+                 usage: Optional[pulumi.Input[float]] = None,
+                 weight: Optional[pulumi.Input[float]] = None,
+                 zone: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         """
         The `edgedns.DnsRecord` provides the resource for configuring a dns record to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
 
@@ -418,13 +409,72 @@ class DnsRecord(pulumi.CustomResource):
             opts)
 
     @staticmethod
-    def get(resource_name, id, opts=None, active=None, algorithm=None, answer_type=None, certificate=None, digest=None, digest_type=None, dns_name=None, email_address=None, expiration=None, expiry=None, fingerprint=None, fingerprint_type=None, flags=None, flagsnaptr=None, hardware=None, inception=None, iterations=None, key=None, keytag=None, labels=None, mailbox=None, match_type=None, name=None, name_server=None, next_hashed_owner_name=None, nxdomain_ttl=None, order=None, original_ttl=None, port=None, preference=None, priority=None, priority_increment=None, protocol=None, record_sha=None, recordtype=None, refresh=None, regexp=None, replacement=None, retry=None, salt=None, selector=None, serial=None, service=None, signature=None, signer=None, software=None, subtype=None, targets=None, ttl=None, txt=None, type_bitmaps=None, type_covered=None, type_mnemonic=None, type_value=None, usage=None, weight=None, zone=None):
+    def get(resource_name: str,
+            id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            active: Optional[pulumi.Input[bool]] = None,
+            algorithm: Optional[pulumi.Input[float]] = None,
+            answer_type: Optional[pulumi.Input[str]] = None,
+            certificate: Optional[pulumi.Input[str]] = None,
+            digest: Optional[pulumi.Input[str]] = None,
+            digest_type: Optional[pulumi.Input[float]] = None,
+            dns_name: Optional[pulumi.Input[str]] = None,
+            email_address: Optional[pulumi.Input[str]] = None,
+            expiration: Optional[pulumi.Input[str]] = None,
+            expiry: Optional[pulumi.Input[float]] = None,
+            fingerprint: Optional[pulumi.Input[str]] = None,
+            fingerprint_type: Optional[pulumi.Input[float]] = None,
+            flags: Optional[pulumi.Input[float]] = None,
+            flagsnaptr: Optional[pulumi.Input[str]] = None,
+            hardware: Optional[pulumi.Input[str]] = None,
+            inception: Optional[pulumi.Input[str]] = None,
+            iterations: Optional[pulumi.Input[float]] = None,
+            key: Optional[pulumi.Input[str]] = None,
+            keytag: Optional[pulumi.Input[float]] = None,
+            labels: Optional[pulumi.Input[float]] = None,
+            mailbox: Optional[pulumi.Input[str]] = None,
+            match_type: Optional[pulumi.Input[float]] = None,
+            name: Optional[pulumi.Input[str]] = None,
+            name_server: Optional[pulumi.Input[str]] = None,
+            next_hashed_owner_name: Optional[pulumi.Input[str]] = None,
+            nxdomain_ttl: Optional[pulumi.Input[float]] = None,
+            order: Optional[pulumi.Input[float]] = None,
+            original_ttl: Optional[pulumi.Input[float]] = None,
+            port: Optional[pulumi.Input[float]] = None,
+            preference: Optional[pulumi.Input[float]] = None,
+            priority: Optional[pulumi.Input[float]] = None,
+            priority_increment: Optional[pulumi.Input[float]] = None,
+            protocol: Optional[pulumi.Input[float]] = None,
+            record_sha: Optional[pulumi.Input[str]] = None,
+            recordtype: Optional[pulumi.Input[str]] = None,
+            refresh: Optional[pulumi.Input[float]] = None,
+            regexp: Optional[pulumi.Input[str]] = None,
+            replacement: Optional[pulumi.Input[str]] = None,
+            retry: Optional[pulumi.Input[float]] = None,
+            salt: Optional[pulumi.Input[str]] = None,
+            selector: Optional[pulumi.Input[float]] = None,
+            serial: Optional[pulumi.Input[float]] = None,
+            service: Optional[pulumi.Input[str]] = None,
+            signature: Optional[pulumi.Input[str]] = None,
+            signer: Optional[pulumi.Input[str]] = None,
+            software: Optional[pulumi.Input[str]] = None,
+            subtype: Optional[pulumi.Input[float]] = None,
+            targets: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            ttl: Optional[pulumi.Input[float]] = None,
+            txt: Optional[pulumi.Input[str]] = None,
+            type_bitmaps: Optional[pulumi.Input[str]] = None,
+            type_covered: Optional[pulumi.Input[str]] = None,
+            type_mnemonic: Optional[pulumi.Input[str]] = None,
+            type_value: Optional[pulumi.Input[float]] = None,
+            usage: Optional[pulumi.Input[float]] = None,
+            weight: Optional[pulumi.Input[float]] = None,
+            zone: Optional[pulumi.Input[str]] = None) -> 'DnsRecord':
         """
         Get an existing DnsRecord resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
 
         :param str resource_name: The unique name of the resulting resource.
-        :param str id: The unique provider ID of the resource to lookup.
+        :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] active: — (Ignored, Boolean) Maintained for backward compatibility
         :param pulumi.Input[str] name: — (Required) The name of the record. The name is an owner name, that is, the name of the node to which this resource record pertains.
@@ -494,8 +544,306 @@ class DnsRecord(pulumi.CustomResource):
         __props__["zone"] = zone
         return DnsRecord(resource_name, opts=opts, __props__=__props__)
 
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[bool]:
+        """
+        — (Ignored, Boolean) Maintained for backward compatibility
+        """
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter
+    def algorithm(self) -> Optional[float]:
+        return pulumi.get(self, "algorithm")
+
+    @property
+    @pulumi.getter(name="answerType")
+    def answer_type(self) -> str:
+        return pulumi.get(self, "answer_type")
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> Optional[str]:
+        return pulumi.get(self, "certificate")
+
+    @property
+    @pulumi.getter
+    def digest(self) -> Optional[str]:
+        return pulumi.get(self, "digest")
+
+    @property
+    @pulumi.getter(name="digestType")
+    def digest_type(self) -> Optional[float]:
+        return pulumi.get(self, "digest_type")
+
+    @property
+    @pulumi.getter(name="dnsName")
+    def dns_name(self) -> str:
+        return pulumi.get(self, "dns_name")
+
+    @property
+    @pulumi.getter(name="emailAddress")
+    def email_address(self) -> Optional[str]:
+        return pulumi.get(self, "email_address")
+
+    @property
+    @pulumi.getter
+    def expiration(self) -> Optional[str]:
+        return pulumi.get(self, "expiration")
+
+    @property
+    @pulumi.getter
+    def expiry(self) -> Optional[float]:
+        return pulumi.get(self, "expiry")
+
+    @property
+    @pulumi.getter
+    def fingerprint(self) -> Optional[str]:
+        return pulumi.get(self, "fingerprint")
+
+    @property
+    @pulumi.getter(name="fingerprintType")
+    def fingerprint_type(self) -> Optional[float]:
+        return pulumi.get(self, "fingerprint_type")
+
+    @property
+    @pulumi.getter
+    def flags(self) -> Optional[float]:
+        return pulumi.get(self, "flags")
+
+    @property
+    @pulumi.getter
+    def flagsnaptr(self) -> Optional[str]:
+        return pulumi.get(self, "flagsnaptr")
+
+    @property
+    @pulumi.getter
+    def hardware(self) -> Optional[str]:
+        return pulumi.get(self, "hardware")
+
+    @property
+    @pulumi.getter
+    def inception(self) -> Optional[str]:
+        return pulumi.get(self, "inception")
+
+    @property
+    @pulumi.getter
+    def iterations(self) -> Optional[float]:
+        return pulumi.get(self, "iterations")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def keytag(self) -> Optional[float]:
+        return pulumi.get(self, "keytag")
+
+    @property
+    @pulumi.getter
+    def labels(self) -> Optional[float]:
+        return pulumi.get(self, "labels")
+
+    @property
+    @pulumi.getter
+    def mailbox(self) -> Optional[str]:
+        return pulumi.get(self, "mailbox")
+
+    @property
+    @pulumi.getter(name="matchType")
+    def match_type(self) -> Optional[float]:
+        return pulumi.get(self, "match_type")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        — (Required) The name of the record. The name is an owner name, that is, the name of the node to which this resource record pertains.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="nameServer")
+    def name_server(self) -> Optional[str]:
+        return pulumi.get(self, "name_server")
+
+    @property
+    @pulumi.getter(name="nextHashedOwnerName")
+    def next_hashed_owner_name(self) -> Optional[str]:
+        return pulumi.get(self, "next_hashed_owner_name")
+
+    @property
+    @pulumi.getter(name="nxdomainTtl")
+    def nxdomain_ttl(self) -> Optional[float]:
+        return pulumi.get(self, "nxdomain_ttl")
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[float]:
+        return pulumi.get(self, "order")
+
+    @property
+    @pulumi.getter(name="originalTtl")
+    def original_ttl(self) -> Optional[float]:
+        return pulumi.get(self, "original_ttl")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[float]:
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter
+    def preference(self) -> Optional[float]:
+        return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter
+    def priority(self) -> Optional[float]:
+        return pulumi.get(self, "priority")
+
+    @property
+    @pulumi.getter(name="priorityIncrement")
+    def priority_increment(self) -> Optional[float]:
+        return pulumi.get(self, "priority_increment")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[float]:
+        return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter(name="recordSha")
+    def record_sha(self) -> str:
+        return pulumi.get(self, "record_sha")
+
+    @property
+    @pulumi.getter
+    def recordtype(self) -> str:
+        return pulumi.get(self, "recordtype")
+
+    @property
+    @pulumi.getter
+    def refresh(self) -> Optional[float]:
+        return pulumi.get(self, "refresh")
+
+    @property
+    @pulumi.getter
+    def regexp(self) -> Optional[str]:
+        return pulumi.get(self, "regexp")
+
+    @property
+    @pulumi.getter
+    def replacement(self) -> Optional[str]:
+        return pulumi.get(self, "replacement")
+
+    @property
+    @pulumi.getter
+    def retry(self) -> Optional[float]:
+        return pulumi.get(self, "retry")
+
+    @property
+    @pulumi.getter
+    def salt(self) -> Optional[str]:
+        return pulumi.get(self, "salt")
+
+    @property
+    @pulumi.getter
+    def selector(self) -> Optional[float]:
+        return pulumi.get(self, "selector")
+
+    @property
+    @pulumi.getter
+    def serial(self) -> float:
+        return pulumi.get(self, "serial")
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[str]:
+        return pulumi.get(self, "service")
+
+    @property
+    @pulumi.getter
+    def signature(self) -> Optional[str]:
+        return pulumi.get(self, "signature")
+
+    @property
+    @pulumi.getter
+    def signer(self) -> Optional[str]:
+        return pulumi.get(self, "signer")
+
+    @property
+    @pulumi.getter
+    def software(self) -> Optional[str]:
+        return pulumi.get(self, "software")
+
+    @property
+    @pulumi.getter
+    def subtype(self) -> Optional[float]:
+        return pulumi.get(self, "subtype")
+
+    @property
+    @pulumi.getter
+    def targets(self) -> Optional[List[str]]:
+        return pulumi.get(self, "targets")
+
+    @property
+    @pulumi.getter
+    def ttl(self) -> float:
+        """
+        — (Required,Boolean) The TTL is a 32-bit signed integer that specifies the time interval that the resource record may be cached before the source of the information should be consulted again. Zero values are interpreted to mean that the RR can only be used for the transaction in progress, and should not be cached. Zero values can also be used for extremely volatile data.
+        """
+        return pulumi.get(self, "ttl")
+
+    @property
+    @pulumi.getter
+    def txt(self) -> Optional[str]:
+        return pulumi.get(self, "txt")
+
+    @property
+    @pulumi.getter(name="typeBitmaps")
+    def type_bitmaps(self) -> Optional[str]:
+        return pulumi.get(self, "type_bitmaps")
+
+    @property
+    @pulumi.getter(name="typeCovered")
+    def type_covered(self) -> Optional[str]:
+        return pulumi.get(self, "type_covered")
+
+    @property
+    @pulumi.getter(name="typeMnemonic")
+    def type_mnemonic(self) -> Optional[str]:
+        return pulumi.get(self, "type_mnemonic")
+
+    @property
+    @pulumi.getter(name="typeValue")
+    def type_value(self) -> Optional[float]:
+        return pulumi.get(self, "type_value")
+
+    @property
+    @pulumi.getter
+    def usage(self) -> Optional[float]:
+        return pulumi.get(self, "usage")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> Optional[float]:
+        return pulumi.get(self, "weight")
+
+    @property
+    @pulumi.getter
+    def zone(self) -> str:
+        """
+        — (Required) Domain zone, encapsulating any nested subdomains.
+        """
+        return pulumi.get(self, "zone")
+
     def translate_output_property(self, prop):
         return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
     def translate_input_property(self, prop):
         return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
+

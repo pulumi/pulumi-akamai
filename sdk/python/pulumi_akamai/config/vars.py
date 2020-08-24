@@ -5,8 +5,20 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from .. import _utilities, _tables
+from . import outputs
+
+__all__ = [
+    'dns',
+    'dns_section',
+    'edgerc',
+    'gtm_section',
+    'gtms',
+    'papi_section',
+    'properties',
+    'property_section',
+]
 
 __config__ = pulumi.Config('akamai')
 

@@ -5,88 +5,33 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from .. import _utilities, _tables
+from . import outputs
+from ._inputs import *
+
+__all__ = ['Property']
 
 
 class Property(pulumi.CustomResource):
-    account: pulumi.Output[str]
-    """
-    — the Account ID under which the property is created.
-    """
-    contacts: pulumi.Output[list]
-    """
-    — (Required) One or more email addresses to inform about activation changes.
-    """
-    contract: pulumi.Output[str]
-    """
-    — (Optional) The contract ID.
-    """
-    cp_code: pulumi.Output[str]
-    """
-    — (Optional) The CP Code id or name to use (or create). Required unless a [cpCode behavior](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#cpcode) is present in the default rule.
-    """
-    edge_hostnames: pulumi.Output[dict]
-    """
-    — the final public hostname to edge hostname map
-    """
-    group: pulumi.Output[str]
-    """
-    — (Optional) The group ID.
-    """
-    hostnames: pulumi.Output[dict]
-    """
-    — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
-    """
-    is_secure: pulumi.Output[bool]
-    """
-    — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
-    """
-    name: pulumi.Output[str]
-    """
-    — (Required) The property name.
-    """
-    origins: pulumi.Output[list]
-    """
-    — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
-
-      * `cacheKeyHostname` (`str`) - — (Optional) The hostname uses for the cache key. (default: `ORIGIN_HOSTNAME`).
-      * `compress` (`bool`) - — (Optional, boolean) Whether origin supports gzip compression (default: `false`).
-      * `enableTrueClientIp` (`bool`) - — (Optional, boolean) Whether the X-True-Client-IP header should be sent to origin (default: `false`).
-      * `forwardHostname` (`str`) - — (Optional) The value for the Hostname header sent to origin. (default: `ORIGIN_HOSTNAME`).
-      * `hostname` (`str`) - — (Required) The origin hostname.
-      * `port` (`float`) - — (Optional) The origin port to connect to (default: 80).
-    """
-    product: pulumi.Output[str]
-    """
-    — (Optional) The product ID. (Default: `prd_SPM` for Ion)
-    """
-    production_version: pulumi.Output[float]
-    """
-    — the current version of the property active on the production network.
-    """
-    rule_format: pulumi.Output[str]
-    """
-    — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
-    """
-    rules: pulumi.Output[str]
-    """
-    — (Required) A JSON encoded string of property rules (see: [`properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
-    """
-    rulessha: pulumi.Output[str]
-    staging_version: pulumi.Output[float]
-    """
-    — the current version of the property active on the staging network.
-    """
-    variables: pulumi.Output[str]
-    """
-    — (Optional) A JSON encoded string of property manager variable definitions (see: [`properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
-    """
-    version: pulumi.Output[float]
-    """
-    — the current version of the property config.
-    """
-    def __init__(__self__, resource_name, opts=None, contacts=None, contract=None, cp_code=None, group=None, hostnames=None, is_secure=None, name=None, origins=None, product=None, rule_format=None, rules=None, variables=None, __props__=None, __name__=None, __opts__=None):
+    def __init__(__self__,
+                 resource_name,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 contacts: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 contract: Optional[pulumi.Input[str]] = None,
+                 cp_code: Optional[pulumi.Input[str]] = None,
+                 group: Optional[pulumi.Input[str]] = None,
+                 hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_secure: Optional[pulumi.Input[bool]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 origins: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]]] = None,
+                 product: Optional[pulumi.Input[str]] = None,
+                 rule_format: Optional[pulumi.Input[str]] = None,
+                 rules: Optional[pulumi.Input[str]] = None,
+                 variables: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         """
         The `properties.Property` resource represents an Akamai property configuration, allowing you to create,
         update, and activate properties on the Akamai platform.
@@ -116,27 +61,18 @@ class Property(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[list] contacts: — (Required) One or more email addresses to inform about activation changes.
+        :param pulumi.Input[List[pulumi.Input[str]]] contacts: — (Required) One or more email addresses to inform about activation changes.
         :param pulumi.Input[str] contract: — (Optional) The contract ID.
         :param pulumi.Input[str] cp_code: — (Optional) The CP Code id or name to use (or create). Required unless a [cpCode behavior](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#cpcode) is present in the default rule.
         :param pulumi.Input[str] group: — (Optional) The group ID.
-        :param pulumi.Input[dict] hostnames: — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] hostnames: — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
         :param pulumi.Input[bool] is_secure: — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
         :param pulumi.Input[str] name: — (Required) The property name.
-        :param pulumi.Input[list] origins: — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
+        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]] origins: — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
         :param pulumi.Input[str] product: — (Optional) The product ID. (Default: `prd_SPM` for Ion)
         :param pulumi.Input[str] rule_format: — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
         :param pulumi.Input[str] rules: — (Required) A JSON encoded string of property rules (see: [`properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
         :param pulumi.Input[str] variables: — (Optional) A JSON encoded string of property manager variable definitions (see: [`properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
-
-        The **origins** object supports the following:
-
-          * `cacheKeyHostname` (`pulumi.Input[str]`) - — (Optional) The hostname uses for the cache key. (default: `ORIGIN_HOSTNAME`).
-          * `compress` (`pulumi.Input[bool]`) - — (Optional, boolean) Whether origin supports gzip compression (default: `false`).
-          * `enableTrueClientIp` (`pulumi.Input[bool]`) - — (Optional, boolean) Whether the X-True-Client-IP header should be sent to origin (default: `false`).
-          * `forwardHostname` (`pulumi.Input[str]`) - — (Optional) The value for the Hostname header sent to origin. (default: `ORIGIN_HOSTNAME`).
-          * `hostname` (`pulumi.Input[str]`) - — (Required) The origin hostname.
-          * `port` (`pulumi.Input[float]`) - — (Optional) The origin port to connect to (default: 80).
         """
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
@@ -184,24 +120,44 @@ class Property(pulumi.CustomResource):
             opts)
 
     @staticmethod
-    def get(resource_name, id, opts=None, account=None, contacts=None, contract=None, cp_code=None, edge_hostnames=None, group=None, hostnames=None, is_secure=None, name=None, origins=None, product=None, production_version=None, rule_format=None, rules=None, rulessha=None, staging_version=None, variables=None, version=None):
+    def get(resource_name: str,
+            id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            account: Optional[pulumi.Input[str]] = None,
+            contacts: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            contract: Optional[pulumi.Input[str]] = None,
+            cp_code: Optional[pulumi.Input[str]] = None,
+            edge_hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            group: Optional[pulumi.Input[str]] = None,
+            hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            is_secure: Optional[pulumi.Input[bool]] = None,
+            name: Optional[pulumi.Input[str]] = None,
+            origins: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]]] = None,
+            product: Optional[pulumi.Input[str]] = None,
+            production_version: Optional[pulumi.Input[float]] = None,
+            rule_format: Optional[pulumi.Input[str]] = None,
+            rules: Optional[pulumi.Input[str]] = None,
+            rulessha: Optional[pulumi.Input[str]] = None,
+            staging_version: Optional[pulumi.Input[float]] = None,
+            variables: Optional[pulumi.Input[str]] = None,
+            version: Optional[pulumi.Input[float]] = None) -> 'Property':
         """
         Get an existing Property resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
 
         :param str resource_name: The unique name of the resulting resource.
-        :param str id: The unique provider ID of the resource to lookup.
+        :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] account: — the Account ID under which the property is created.
-        :param pulumi.Input[list] contacts: — (Required) One or more email addresses to inform about activation changes.
+        :param pulumi.Input[List[pulumi.Input[str]]] contacts: — (Required) One or more email addresses to inform about activation changes.
         :param pulumi.Input[str] contract: — (Optional) The contract ID.
         :param pulumi.Input[str] cp_code: — (Optional) The CP Code id or name to use (or create). Required unless a [cpCode behavior](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#cpcode) is present in the default rule.
-        :param pulumi.Input[dict] edge_hostnames: — the final public hostname to edge hostname map
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] edge_hostnames: — the final public hostname to edge hostname map
         :param pulumi.Input[str] group: — (Optional) The group ID.
-        :param pulumi.Input[dict] hostnames: — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] hostnames: — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
         :param pulumi.Input[bool] is_secure: — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
         :param pulumi.Input[str] name: — (Required) The property name.
-        :param pulumi.Input[list] origins: — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
+        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]] origins: — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
         :param pulumi.Input[str] product: — (Optional) The product ID. (Default: `prd_SPM` for Ion)
         :param pulumi.Input[float] production_version: — the current version of the property active on the production network.
         :param pulumi.Input[str] rule_format: — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
@@ -209,15 +165,6 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[float] staging_version: — the current version of the property active on the staging network.
         :param pulumi.Input[str] variables: — (Optional) A JSON encoded string of property manager variable definitions (see: [`properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
         :param pulumi.Input[float] version: — the current version of the property config.
-
-        The **origins** object supports the following:
-
-          * `cacheKeyHostname` (`pulumi.Input[str]`) - — (Optional) The hostname uses for the cache key. (default: `ORIGIN_HOSTNAME`).
-          * `compress` (`pulumi.Input[bool]`) - — (Optional, boolean) Whether origin supports gzip compression (default: `false`).
-          * `enableTrueClientIp` (`pulumi.Input[bool]`) - — (Optional, boolean) Whether the X-True-Client-IP header should be sent to origin (default: `false`).
-          * `forwardHostname` (`pulumi.Input[str]`) - — (Optional) The value for the Hostname header sent to origin. (default: `ORIGIN_HOSTNAME`).
-          * `hostname` (`pulumi.Input[str]`) - — (Required) The origin hostname.
-          * `port` (`pulumi.Input[float]`) - — (Optional) The origin port to connect to (default: 80).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -243,8 +190,150 @@ class Property(pulumi.CustomResource):
         __props__["version"] = version
         return Property(resource_name, opts=opts, __props__=__props__)
 
+    @property
+    @pulumi.getter
+    def account(self) -> str:
+        """
+        — the Account ID under which the property is created.
+        """
+        return pulumi.get(self, "account")
+
+    @property
+    @pulumi.getter
+    def contacts(self) -> List[str]:
+        """
+        — (Required) One or more email addresses to inform about activation changes.
+        """
+        return pulumi.get(self, "contacts")
+
+    @property
+    @pulumi.getter
+    def contract(self) -> Optional[str]:
+        """
+        — (Optional) The contract ID.
+        """
+        return pulumi.get(self, "contract")
+
+    @property
+    @pulumi.getter(name="cpCode")
+    def cp_code(self) -> Optional[str]:
+        """
+        — (Optional) The CP Code id or name to use (or create). Required unless a [cpCode behavior](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#cpcode) is present in the default rule.
+        """
+        return pulumi.get(self, "cp_code")
+
+    @property
+    @pulumi.getter(name="edgeHostnames")
+    def edge_hostnames(self) -> Mapping[str, str]:
+        """
+        — the final public hostname to edge hostname map
+        """
+        return pulumi.get(self, "edge_hostnames")
+
+    @property
+    @pulumi.getter
+    def group(self) -> Optional[str]:
+        """
+        — (Optional) The group ID.
+        """
+        return pulumi.get(self, "group")
+
+    @property
+    @pulumi.getter
+    def hostnames(self) -> Mapping[str, str]:
+        """
+        — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
+        """
+        return pulumi.get(self, "hostnames")
+
+    @property
+    @pulumi.getter(name="isSecure")
+    def is_secure(self) -> Optional[bool]:
+        """
+        — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
+        """
+        return pulumi.get(self, "is_secure")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        — (Required) The property name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def origins(self) -> Optional[List['outputs.PropertyOrigin']]:
+        """
+        — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
+        """
+        return pulumi.get(self, "origins")
+
+    @property
+    @pulumi.getter
+    def product(self) -> Optional[str]:
+        """
+        — (Optional) The product ID. (Default: `prd_SPM` for Ion)
+        """
+        return pulumi.get(self, "product")
+
+    @property
+    @pulumi.getter(name="productionVersion")
+    def production_version(self) -> float:
+        """
+        — the current version of the property active on the production network.
+        """
+        return pulumi.get(self, "production_version")
+
+    @property
+    @pulumi.getter(name="ruleFormat")
+    def rule_format(self) -> Optional[str]:
+        """
+        — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
+        """
+        return pulumi.get(self, "rule_format")
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Optional[str]:
+        """
+        — (Required) A JSON encoded string of property rules (see: [`properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+        """
+        return pulumi.get(self, "rules")
+
+    @property
+    @pulumi.getter
+    def rulessha(self) -> str:
+        return pulumi.get(self, "rulessha")
+
+    @property
+    @pulumi.getter(name="stagingVersion")
+    def staging_version(self) -> float:
+        """
+        — the current version of the property active on the staging network.
+        """
+        return pulumi.get(self, "staging_version")
+
+    @property
+    @pulumi.getter
+    def variables(self) -> Optional[str]:
+        """
+        — (Optional) A JSON encoded string of property manager variable definitions (see: [`properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+        """
+        return pulumi.get(self, "variables")
+
+    @property
+    @pulumi.getter
+    def version(self) -> float:
+        """
+        — the current version of the property config.
+        """
+        return pulumi.get(self, "version")
+
     def translate_output_property(self, prop):
         return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
     def translate_input_property(self, prop):
         return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
+

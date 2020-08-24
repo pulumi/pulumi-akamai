@@ -5,17 +5,22 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from .. import _utilities, _tables
+from . import outputs
+from ._inputs import *
+
+__all__ = ['PropertyVariables']
 
 
 class PropertyVariables(pulumi.CustomResource):
-    json: pulumi.Output[str]
-    """
-    JSON variables representation
-    """
-    variables: pulumi.Output[list]
-    def __init__(__self__, resource_name, opts=None, variables=None, __props__=None, __name__=None, __opts__=None):
+    def __init__(__self__,
+                 resource_name,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 variables: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['PropertyVariablesVariableArgs']]]]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         """
         The `properties.PropertyVariables` allows you to implement dynamic functionality. You can perform conditional logic based on the variable’s value, and catch any unforeseen errors that execute on the edge at runtime.
 
@@ -33,28 +38,19 @@ class PropertyVariables(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        origin = akamai.properties.PropertyVariables("origin", variables=[{
-            "variables": [{
-                "description": "Origin Hostname",
-                "hidden": True,
-                "name": "PMUSER_ORIGIN",
-                "sensitive": True,
-                "value": "origin.example.org",
-            }],
-        }])
+        origin = akamai.properties.PropertyVariables("origin", variables=[akamai.properties.PropertyVariablesVariableArgs(
+            variables=[akamai.properties.PropertyVariablesVariableVariableArgs(
+                description="Origin Hostname",
+                hidden=True,
+                name="PMUSER_ORIGIN",
+                sensitive=True,
+                value="origin.example.org",
+            )],
+        )])
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-
-        The **variables** object supports the following:
-
-          * `variables` (`pulumi.Input[list]`)
-            * `description` (`pulumi.Input[str]`) - — (Optional) A human-readable description
-            * `hidden` (`pulumi.Input[bool]`) - — (Required) Whether to hide the variable when debugging requests
-            * `name` (`pulumi.Input[str]`) - — (Required) The name of the variable.
-            * `sensitive` (`pulumi.Input[bool]`) - — (Required) Whether to obscure the value when debugging requests
-            * `value` (`pulumi.Input[str]`) - — (Required) The default value to assign to the variable
         """
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
@@ -82,24 +78,19 @@ class PropertyVariables(pulumi.CustomResource):
             opts)
 
     @staticmethod
-    def get(resource_name, id, opts=None, json=None, variables=None):
+    def get(resource_name: str,
+            id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            json: Optional[pulumi.Input[str]] = None,
+            variables: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['PropertyVariablesVariableArgs']]]]] = None) -> 'PropertyVariables':
         """
         Get an existing PropertyVariables resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
 
         :param str resource_name: The unique name of the resulting resource.
-        :param str id: The unique provider ID of the resource to lookup.
+        :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] json: JSON variables representation
-
-        The **variables** object supports the following:
-
-          * `variables` (`pulumi.Input[list]`)
-            * `description` (`pulumi.Input[str]`) - — (Optional) A human-readable description
-            * `hidden` (`pulumi.Input[bool]`) - — (Required) Whether to hide the variable when debugging requests
-            * `name` (`pulumi.Input[str]`) - — (Required) The name of the variable.
-            * `sensitive` (`pulumi.Input[bool]`) - — (Required) Whether to obscure the value when debugging requests
-            * `value` (`pulumi.Input[str]`) - — (Required) The default value to assign to the variable
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -109,8 +100,22 @@ class PropertyVariables(pulumi.CustomResource):
         __props__["variables"] = variables
         return PropertyVariables(resource_name, opts=opts, __props__=__props__)
 
+    @property
+    @pulumi.getter
+    def json(self) -> str:
+        """
+        JSON variables representation
+        """
+        return pulumi.get(self, "json")
+
+    @property
+    @pulumi.getter
+    def variables(self) -> Optional[List['outputs.PropertyVariablesVariable']]:
+        return pulumi.get(self, "variables")
+
     def translate_output_property(self, prop):
         return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
     def translate_input_property(self, prop):
         return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
+

@@ -6,6 +6,8 @@
 from .get_contract import *
 from .get_group import *
 from .provider import *
+from ._inputs import *
+from . import outputs
 
 # Make subpackages available:
 from . import (

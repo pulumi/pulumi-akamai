@@ -6,12 +6,28 @@ import json
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from . import _utilities, _tables
+from . import outputs
+
+__all__ = ['Provider']
 
 
 class Provider(pulumi.ProviderResource):
-    def __init__(__self__, resource_name, opts=None, dns=None, dns_section=None, edgerc=None, gtm_section=None, gtms=None, papi_section=None, properties=None, property_section=None, __props__=None, __name__=None, __opts__=None):
+    def __init__(__self__,
+                 resource_name,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 dns: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['ProviderDnArgs']]]]] = None,
+                 dns_section: Optional[pulumi.Input[str]] = None,
+                 edgerc: Optional[pulumi.Input[str]] = None,
+                 gtm_section: Optional[pulumi.Input[str]] = None,
+                 gtms: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['ProviderGtmArgs']]]]] = None,
+                 papi_section: Optional[pulumi.Input[str]] = None,
+                 properties: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['ProviderPropertyArgs']]]]] = None,
+                 property_section: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         """
         The provider type for the akamai package. By default, resources use package-wide configuration
         settings, however an explicit `Provider` instance may be created and passed during resource
@@ -20,30 +36,6 @@ class Provider(pulumi.ProviderResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-
-        The **dns** object supports the following:
-
-          * `access_token` (`pulumi.Input[str]`)
-          * `client_secret` (`pulumi.Input[str]`)
-          * `client_token` (`pulumi.Input[str]`)
-          * `host` (`pulumi.Input[str]`)
-          * `max_body` (`pulumi.Input[float]`)
-
-        The **gtms** object supports the following:
-
-          * `access_token` (`pulumi.Input[str]`)
-          * `client_secret` (`pulumi.Input[str]`)
-          * `client_token` (`pulumi.Input[str]`)
-          * `host` (`pulumi.Input[str]`)
-          * `max_body` (`pulumi.Input[float]`)
-
-        The **properties** object supports the following:
-
-          * `access_token` (`pulumi.Input[str]`)
-          * `client_secret` (`pulumi.Input[str]`)
-          * `client_token` (`pulumi.Input[str]`)
-          * `host` (`pulumi.Input[str]`)
-          * `max_body` (`pulumi.Input[float]`)
         """
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
@@ -81,3 +73,4 @@ class Provider(pulumi.ProviderResource):
 
     def translate_input_property(self, prop):
         return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
+
