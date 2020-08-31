@@ -791,4 +791,3 @@ export namespace trafficmanagement {
         useDefaultLoadObject?: pulumi.Input<boolean>;
     }
 }
-

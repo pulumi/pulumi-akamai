@@ -5,28 +5,23 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from .. import _utilities, _tables
+
+__all__ = ['CpCode']
 
 
 class CpCode(pulumi.CustomResource):
-    contract: pulumi.Output[str]
-    """
-    — (Required) The Contract ID
-    """
-    group: pulumi.Output[str]
-    """
-    — (Required) The Group ID
-    """
-    name: pulumi.Output[str]
-    """
-    — (Required) The CP Code name
-    """
-    product: pulumi.Output[str]
-    """
-    — (Required) The Product ID
-    """
-    def __init__(__self__, resource_name, opts=None, contract=None, group=None, name=None, product=None, __props__=None, __name__=None, __opts__=None):
+    def __init__(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 contract: Optional[pulumi.Input[str]] = None,
+                 group: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 product: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         """
         The `properties.CpCode` resource allows you to create or re-use CP Codes.
 
@@ -86,13 +81,19 @@ class CpCode(pulumi.CustomResource):
             opts)
 
     @staticmethod
-    def get(resource_name, id, opts=None, contract=None, group=None, name=None, product=None):
+    def get(resource_name: str,
+            id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            contract: Optional[pulumi.Input[str]] = None,
+            group: Optional[pulumi.Input[str]] = None,
+            name: Optional[pulumi.Input[str]] = None,
+            product: Optional[pulumi.Input[str]] = None) -> 'CpCode':
         """
         Get an existing CpCode resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
 
         :param str resource_name: The unique name of the resulting resource.
-        :param str id: The unique provider ID of the resource to lookup.
+        :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] contract: — (Required) The Contract ID
         :param pulumi.Input[str] group: — (Required) The Group ID
@@ -109,8 +110,41 @@ class CpCode(pulumi.CustomResource):
         __props__["product"] = product
         return CpCode(resource_name, opts=opts, __props__=__props__)
 
+    @property
+    @pulumi.getter
+    def contract(self) -> pulumi.Output[str]:
+        """
+        — (Required) The Contract ID
+        """
+        return pulumi.get(self, "contract")
+
+    @property
+    @pulumi.getter
+    def group(self) -> pulumi.Output[str]:
+        """
+        — (Required) The Group ID
+        """
+        return pulumi.get(self, "group")
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Output[str]:
+        """
+        — (Required) The CP Code name
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def product(self) -> pulumi.Output[str]:
+        """
+        — (Required) The Product ID
+        """
+        return pulumi.get(self, "product")
+
     def translate_output_property(self, prop):
         return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
     def translate_input_property(self, prop):
         return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
+

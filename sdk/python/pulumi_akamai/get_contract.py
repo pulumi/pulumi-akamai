@@ -5,10 +5,16 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from . import _utilities, _tables
 
+__all__ = [
+    'GetContractResult',
+    'AwaitableGetContractResult',
+    'get_contract',
+]
 
+@pulumi.output_type
 class GetContractResult:
     """
     A collection of values returned by getContract.
@@ -16,13 +22,23 @@ class GetContractResult:
     def __init__(__self__, group=None, id=None):
         if group and not isinstance(group, str):
             raise TypeError("Expected argument 'group' to be a str")
-        __self__.group = group
+        pulumi.set(__self__, "group", group)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
-        __self__.id = id
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter
+    def group(self) -> Optional[str]:
+        return pulumi.get(self, "group")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
         """
         The provider-assigned unique ID for this managed resource.
         """
+        return pulumi.get(self, "id")
 
 
 class AwaitableGetContractResult(GetContractResult):
@@ -35,7 +51,8 @@ class AwaitableGetContractResult(GetContractResult):
             id=self.id)
 
 
-def get_contract(group=None, opts=None):
+def get_contract(group: Optional[str] = None,
+                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetContractResult:
     """
     Use `getContract` data source to retrieve a group id.
 
@@ -50,8 +67,8 @@ def get_contract(group=None, opts=None):
         opts = pulumi.InvokeOptions()
     if opts.version is None:
         opts.version = _utilities.get_version()
-    __ret__ = pulumi.runtime.invoke('akamai:index/getContract:getContract', __args__, opts=opts).value
+    __ret__ = pulumi.runtime.invoke('akamai:index/getContract:getContract', __args__, opts=opts, typ=GetContractResult).value
 
     return AwaitableGetContractResult(
-        group=__ret__.get('group'),
-        id=__ret__.get('id'))
+        group=__ret__.group,
+        id=__ret__.id)

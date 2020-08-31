@@ -5,10 +5,16 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from .. import _utilities, _tables
 
+__all__ = [
+    'GetAuthoritiesSetResult',
+    'AwaitableGetAuthoritiesSetResult',
+    'get_authorities_set',
+]
 
+@pulumi.output_type
 class GetAuthoritiesSetResult:
     """
     A collection of values returned by getAuthoritiesSet.
@@ -16,16 +22,31 @@ class GetAuthoritiesSetResult:
     def __init__(__self__, authorities=None, contract=None, id=None):
         if authorities and not isinstance(authorities, list):
             raise TypeError("Expected argument 'authorities' to be a list")
-        __self__.authorities = authorities
+        pulumi.set(__self__, "authorities", authorities)
         if contract and not isinstance(contract, str):
             raise TypeError("Expected argument 'contract' to be a str")
-        __self__.contract = contract
+        pulumi.set(__self__, "contract", contract)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
-        __self__.id = id
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter
+    def authorities(self) -> List[str]:
+        return pulumi.get(self, "authorities")
+
+    @property
+    @pulumi.getter
+    def contract(self) -> str:
+        return pulumi.get(self, "contract")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
         """
         The provider-assigned unique ID for this managed resource.
         """
+        return pulumi.get(self, "id")
 
 
 class AwaitableGetAuthoritiesSetResult(GetAuthoritiesSetResult):
@@ -39,7 +60,8 @@ class AwaitableGetAuthoritiesSetResult(GetAuthoritiesSetResult):
             id=self.id)
 
 
-def get_authorities_set(contract=None, opts=None):
+def get_authorities_set(contract: Optional[str] = None,
+                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuthoritiesSetResult:
     """
     Use `edgedns.getAuthoritiesSet` datasource to retrieve a contracts authorities set for use when creating new zones.
 
@@ -62,9 +84,9 @@ def get_authorities_set(contract=None, opts=None):
         opts = pulumi.InvokeOptions()
     if opts.version is None:
         opts.version = _utilities.get_version()
-    __ret__ = pulumi.runtime.invoke('akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet', __args__, opts=opts).value
+    __ret__ = pulumi.runtime.invoke('akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet', __args__, opts=opts, typ=GetAuthoritiesSetResult).value
 
     return AwaitableGetAuthoritiesSetResult(
-        authorities=__ret__.get('authorities'),
-        contract=__ret__.get('contract'),
-        id=__ret__.get('id'))
+        authorities=__ret__.authorities,
+        contract=__ret__.contract,
+        id=__ret__.id)
