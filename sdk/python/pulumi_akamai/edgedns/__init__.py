@@ -7,3 +7,5 @@ from .dns_record import *
 from .dns_zone import *
 from .get_authorities_set import *
 from .get_dns_record_set import *
+from ._inputs import *
+from . import outputs

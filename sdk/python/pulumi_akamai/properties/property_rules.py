@@ -5,113 +5,27 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from .. import _utilities, _tables
+from . import outputs
+from ._inputs import *
+
+__all__ = ['PropertyRules']
 
 
 class PropertyRules(pulumi.CustomResource):
-    json: pulumi.Output[str]
-    """
-    JSON Rule representation
-    """
-    rules: pulumi.Output[list]
-    variables: pulumi.Output[str]
-    def __init__(__self__, resource_name, opts=None, rules=None, variables=None, __props__=None, __name__=None, __opts__=None):
+    def __init__(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 rules: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['PropertyRulesRuleArgs']]]]] = None,
+                 variables: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         """
         Create a PropertyRules resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-
-        The **rules** object supports the following:
-
-          * `behaviors` (`pulumi.Input[list]`)
-            * `name` (`pulumi.Input[str]`)
-            * `options` (`pulumi.Input[list]`)
-              * `key` (`pulumi.Input[str]`)
-              * `value` (`pulumi.Input[str]`)
-              * `values` (`pulumi.Input[list]`)
-
-          * `criteriaMatch` (`pulumi.Input[str]`)
-          * `is_secure` (`pulumi.Input[bool]`)
-          * `rules` (`pulumi.Input[list]`)
-            * `behaviors` (`pulumi.Input[list]`)
-              * `name` (`pulumi.Input[str]`)
-              * `options` (`pulumi.Input[list]`)
-                * `key` (`pulumi.Input[str]`)
-                * `value` (`pulumi.Input[str]`)
-                * `values` (`pulumi.Input[list]`)
-
-            * `comment` (`pulumi.Input[str]`)
-            * `criteriaMatch` (`pulumi.Input[str]`)
-            * `criterias` (`pulumi.Input[list]`)
-              * `name` (`pulumi.Input[str]`)
-              * `options` (`pulumi.Input[list]`)
-                * `key` (`pulumi.Input[str]`)
-                * `value` (`pulumi.Input[str]`)
-                * `values` (`pulumi.Input[list]`)
-
-            * `name` (`pulumi.Input[str]`)
-            * `rules` (`pulumi.Input[list]`)
-              * `behaviors` (`pulumi.Input[list]`)
-                * `name` (`pulumi.Input[str]`)
-                * `options` (`pulumi.Input[list]`)
-                  * `key` (`pulumi.Input[str]`)
-                  * `value` (`pulumi.Input[str]`)
-                  * `values` (`pulumi.Input[list]`)
-
-              * `comment` (`pulumi.Input[str]`)
-              * `criteriaMatch` (`pulumi.Input[str]`)
-              * `criterias` (`pulumi.Input[list]`)
-                * `name` (`pulumi.Input[str]`)
-                * `options` (`pulumi.Input[list]`)
-                  * `key` (`pulumi.Input[str]`)
-                  * `value` (`pulumi.Input[str]`)
-                  * `values` (`pulumi.Input[list]`)
-
-              * `name` (`pulumi.Input[str]`)
-              * `rules` (`pulumi.Input[list]`)
-                * `behaviors` (`pulumi.Input[list]`)
-                  * `name` (`pulumi.Input[str]`)
-                  * `options` (`pulumi.Input[list]`)
-                    * `key` (`pulumi.Input[str]`)
-                    * `value` (`pulumi.Input[str]`)
-                    * `values` (`pulumi.Input[list]`)
-
-                * `comment` (`pulumi.Input[str]`)
-                * `criteriaMatch` (`pulumi.Input[str]`)
-                * `criterias` (`pulumi.Input[list]`)
-                  * `name` (`pulumi.Input[str]`)
-                  * `options` (`pulumi.Input[list]`)
-                    * `key` (`pulumi.Input[str]`)
-                    * `value` (`pulumi.Input[str]`)
-                    * `values` (`pulumi.Input[list]`)
-
-                * `name` (`pulumi.Input[str]`)
-                * `rules` (`pulumi.Input[list]`)
-                  * `behaviors` (`pulumi.Input[list]`)
-                    * `name` (`pulumi.Input[str]`)
-                    * `options` (`pulumi.Input[list]`)
-                      * `key` (`pulumi.Input[str]`)
-                      * `value` (`pulumi.Input[str]`)
-                      * `values` (`pulumi.Input[list]`)
-
-                  * `comment` (`pulumi.Input[str]`)
-                  * `criteriaMatch` (`pulumi.Input[str]`)
-                  * `criterias` (`pulumi.Input[list]`)
-                    * `name` (`pulumi.Input[str]`)
-                    * `options` (`pulumi.Input[list]`)
-                      * `key` (`pulumi.Input[str]`)
-                      * `value` (`pulumi.Input[str]`)
-                      * `values` (`pulumi.Input[list]`)
-
-                  * `name` (`pulumi.Input[str]`)
-
-          * `variables` (`pulumi.Input[list]`)
-            * `description` (`pulumi.Input[str]`)
-            * `hidden` (`pulumi.Input[bool]`)
-            * `name` (`pulumi.Input[str]`)
-            * `sensitive` (`pulumi.Input[bool]`)
-            * `value` (`pulumi.Input[str]`)
         """
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
@@ -140,106 +54,20 @@ class PropertyRules(pulumi.CustomResource):
             opts)
 
     @staticmethod
-    def get(resource_name, id, opts=None, json=None, rules=None, variables=None):
+    def get(resource_name: str,
+            id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            json: Optional[pulumi.Input[str]] = None,
+            rules: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['PropertyRulesRuleArgs']]]]] = None,
+            variables: Optional[pulumi.Input[str]] = None) -> 'PropertyRules':
         """
         Get an existing PropertyRules resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
 
         :param str resource_name: The unique name of the resulting resource.
-        :param str id: The unique provider ID of the resource to lookup.
+        :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] json: JSON Rule representation
-
-        The **rules** object supports the following:
-
-          * `behaviors` (`pulumi.Input[list]`)
-            * `name` (`pulumi.Input[str]`)
-            * `options` (`pulumi.Input[list]`)
-              * `key` (`pulumi.Input[str]`)
-              * `value` (`pulumi.Input[str]`)
-              * `values` (`pulumi.Input[list]`)
-
-          * `criteriaMatch` (`pulumi.Input[str]`)
-          * `is_secure` (`pulumi.Input[bool]`)
-          * `rules` (`pulumi.Input[list]`)
-            * `behaviors` (`pulumi.Input[list]`)
-              * `name` (`pulumi.Input[str]`)
-              * `options` (`pulumi.Input[list]`)
-                * `key` (`pulumi.Input[str]`)
-                * `value` (`pulumi.Input[str]`)
-                * `values` (`pulumi.Input[list]`)
-
-            * `comment` (`pulumi.Input[str]`)
-            * `criteriaMatch` (`pulumi.Input[str]`)
-            * `criterias` (`pulumi.Input[list]`)
-              * `name` (`pulumi.Input[str]`)
-              * `options` (`pulumi.Input[list]`)
-                * `key` (`pulumi.Input[str]`)
-                * `value` (`pulumi.Input[str]`)
-                * `values` (`pulumi.Input[list]`)
-
-            * `name` (`pulumi.Input[str]`)
-            * `rules` (`pulumi.Input[list]`)
-              * `behaviors` (`pulumi.Input[list]`)
-                * `name` (`pulumi.Input[str]`)
-                * `options` (`pulumi.Input[list]`)
-                  * `key` (`pulumi.Input[str]`)
-                  * `value` (`pulumi.Input[str]`)
-                  * `values` (`pulumi.Input[list]`)
-
-              * `comment` (`pulumi.Input[str]`)
-              * `criteriaMatch` (`pulumi.Input[str]`)
-              * `criterias` (`pulumi.Input[list]`)
-                * `name` (`pulumi.Input[str]`)
-                * `options` (`pulumi.Input[list]`)
-                  * `key` (`pulumi.Input[str]`)
-                  * `value` (`pulumi.Input[str]`)
-                  * `values` (`pulumi.Input[list]`)
-
-              * `name` (`pulumi.Input[str]`)
-              * `rules` (`pulumi.Input[list]`)
-                * `behaviors` (`pulumi.Input[list]`)
-                  * `name` (`pulumi.Input[str]`)
-                  * `options` (`pulumi.Input[list]`)
-                    * `key` (`pulumi.Input[str]`)
-                    * `value` (`pulumi.Input[str]`)
-                    * `values` (`pulumi.Input[list]`)
-
-                * `comment` (`pulumi.Input[str]`)
-                * `criteriaMatch` (`pulumi.Input[str]`)
-                * `criterias` (`pulumi.Input[list]`)
-                  * `name` (`pulumi.Input[str]`)
-                  * `options` (`pulumi.Input[list]`)
-                    * `key` (`pulumi.Input[str]`)
-                    * `value` (`pulumi.Input[str]`)
-                    * `values` (`pulumi.Input[list]`)
-
-                * `name` (`pulumi.Input[str]`)
-                * `rules` (`pulumi.Input[list]`)
-                  * `behaviors` (`pulumi.Input[list]`)
-                    * `name` (`pulumi.Input[str]`)
-                    * `options` (`pulumi.Input[list]`)
-                      * `key` (`pulumi.Input[str]`)
-                      * `value` (`pulumi.Input[str]`)
-                      * `values` (`pulumi.Input[list]`)
-
-                  * `comment` (`pulumi.Input[str]`)
-                  * `criteriaMatch` (`pulumi.Input[str]`)
-                  * `criterias` (`pulumi.Input[list]`)
-                    * `name` (`pulumi.Input[str]`)
-                    * `options` (`pulumi.Input[list]`)
-                      * `key` (`pulumi.Input[str]`)
-                      * `value` (`pulumi.Input[str]`)
-                      * `values` (`pulumi.Input[list]`)
-
-                  * `name` (`pulumi.Input[str]`)
-
-          * `variables` (`pulumi.Input[list]`)
-            * `description` (`pulumi.Input[str]`)
-            * `hidden` (`pulumi.Input[bool]`)
-            * `name` (`pulumi.Input[str]`)
-            * `sensitive` (`pulumi.Input[bool]`)
-            * `value` (`pulumi.Input[str]`)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -250,8 +78,27 @@ class PropertyRules(pulumi.CustomResource):
         __props__["variables"] = variables
         return PropertyRules(resource_name, opts=opts, __props__=__props__)
 
+    @property
+    @pulumi.getter
+    def json(self) -> pulumi.Output[str]:
+        """
+        JSON Rule representation
+        """
+        return pulumi.get(self, "json")
+
+    @property
+    @pulumi.getter
+    def rules(self) -> pulumi.Output[Optional[List['outputs.PropertyRulesRule']]]:
+        return pulumi.get(self, "rules")
+
+    @property
+    @pulumi.getter
+    def variables(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "variables")
+
     def translate_output_property(self, prop):
         return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
     def translate_input_property(self, prop):
         return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
+

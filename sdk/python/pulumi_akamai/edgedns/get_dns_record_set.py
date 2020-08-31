@@ -5,10 +5,16 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from .. import _utilities, _tables
 
+__all__ = [
+    'GetDnsRecordSetResult',
+    'AwaitableGetDnsRecordSetResult',
+    'get_dns_record_set',
+]
 
+@pulumi.output_type
 class GetDnsRecordSetResult:
     """
     A collection of values returned by getDnsRecordSet.
@@ -16,22 +22,47 @@ class GetDnsRecordSetResult:
     def __init__(__self__, host=None, id=None, rdatas=None, record_type=None, zone=None):
         if host and not isinstance(host, str):
             raise TypeError("Expected argument 'host' to be a str")
-        __self__.host = host
+        pulumi.set(__self__, "host", host)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
-        __self__.id = id
+        pulumi.set(__self__, "id", id)
+        if rdatas and not isinstance(rdatas, list):
+            raise TypeError("Expected argument 'rdatas' to be a list")
+        pulumi.set(__self__, "rdatas", rdatas)
+        if record_type and not isinstance(record_type, str):
+            raise TypeError("Expected argument 'record_type' to be a str")
+        pulumi.set(__self__, "record_type", record_type)
+        if zone and not isinstance(zone, str):
+            raise TypeError("Expected argument 'zone' to be a str")
+        pulumi.set(__self__, "zone", zone)
+
+    @property
+    @pulumi.getter
+    def host(self) -> str:
+        return pulumi.get(self, "host")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
         """
         The provider-assigned unique ID for this managed resource.
         """
-        if rdatas and not isinstance(rdatas, list):
-            raise TypeError("Expected argument 'rdatas' to be a list")
-        __self__.rdatas = rdatas
-        if record_type and not isinstance(record_type, str):
-            raise TypeError("Expected argument 'record_type' to be a str")
-        __self__.record_type = record_type
-        if zone and not isinstance(zone, str):
-            raise TypeError("Expected argument 'zone' to be a str")
-        __self__.zone = zone
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def rdatas(self) -> List[str]:
+        return pulumi.get(self, "rdatas")
+
+    @property
+    @pulumi.getter(name="recordType")
+    def record_type(self) -> str:
+        return pulumi.get(self, "record_type")
+
+    @property
+    @pulumi.getter
+    def zone(self) -> str:
+        return pulumi.get(self, "zone")
 
 
 class AwaitableGetDnsRecordSetResult(GetDnsRecordSetResult):
@@ -47,7 +78,10 @@ class AwaitableGetDnsRecordSetResult(GetDnsRecordSetResult):
             zone=self.zone)
 
 
-def get_dns_record_set(host=None, record_type=None, zone=None, opts=None):
+def get_dns_record_set(host: Optional[str] = None,
+                       record_type: Optional[str] = None,
+                       zone: Optional[str] = None,
+                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDnsRecordSetResult:
     """
     Use this data source to access information about an existing resource.
     """
@@ -59,11 +93,11 @@ def get_dns_record_set(host=None, record_type=None, zone=None, opts=None):
         opts = pulumi.InvokeOptions()
     if opts.version is None:
         opts.version = _utilities.get_version()
-    __ret__ = pulumi.runtime.invoke('akamai:edgedns/getDnsRecordSet:getDnsRecordSet', __args__, opts=opts).value
+    __ret__ = pulumi.runtime.invoke('akamai:edgedns/getDnsRecordSet:getDnsRecordSet', __args__, opts=opts, typ=GetDnsRecordSetResult).value
 
     return AwaitableGetDnsRecordSetResult(
-        host=__ret__.get('host'),
-        id=__ret__.get('id'),
-        rdatas=__ret__.get('rdatas'),
-        record_type=__ret__.get('recordType'),
-        zone=__ret__.get('zone'))
+        host=__ret__.host,
+        id=__ret__.id,
+        rdatas=__ret__.rdatas,
+        record_type=__ret__.record_type,
+        zone=__ret__.zone)

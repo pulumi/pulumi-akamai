@@ -5,41 +5,26 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from .. import _utilities, _tables
+
+__all__ = ['EdgeHostName']
 
 
 class EdgeHostName(pulumi.CustomResource):
-    certificate: pulumi.Output[float]
-    """
-    — (Optional) The certificate enrollment ID.
-    """
-    contract: pulumi.Output[str]
-    """
-    — (Required) The contract ID.
-    """
-    edge_hostname: pulumi.Output[str]
-    """
-    — (Required) One or more edge hostnames (must be <= to the number of public hostnames).
-    """
-    group: pulumi.Output[str]
-    """
-    — (Required) The group ID.
-    """
-    ip_behavior: pulumi.Output[str]
-    ipv4: pulumi.Output[bool]
-    """
-    — (Optional) Whether the property supports IPv4 to origin.  (Default: `true`).
-    """
-    ipv6: pulumi.Output[bool]
-    """
-    —  (Optional) Whether the property supports IPv6 to origin. (Default: `false`).
-    """
-    product: pulumi.Output[str]
-    """
-    — (Required) The product ID.
-    """
-    def __init__(__self__, resource_name, opts=None, certificate=None, contract=None, edge_hostname=None, group=None, ipv4=None, ipv6=None, product=None, __props__=None, __name__=None, __opts__=None):
+    def __init__(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 certificate: Optional[pulumi.Input[float]] = None,
+                 contract: Optional[pulumi.Input[str]] = None,
+                 edge_hostname: Optional[pulumi.Input[str]] = None,
+                 group: Optional[pulumi.Input[str]] = None,
+                 ipv4: Optional[pulumi.Input[bool]] = None,
+                 ipv6: Optional[pulumi.Input[bool]] = None,
+                 product: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         """
         The `properties.EdgeHostName` provides the resource for configuring a secure edge hostname that determines how requests for your site, app, or content are mapped to Akamai edge servers.
 
@@ -109,13 +94,23 @@ class EdgeHostName(pulumi.CustomResource):
             opts)
 
     @staticmethod
-    def get(resource_name, id, opts=None, certificate=None, contract=None, edge_hostname=None, group=None, ip_behavior=None, ipv4=None, ipv6=None, product=None):
+    def get(resource_name: str,
+            id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            certificate: Optional[pulumi.Input[float]] = None,
+            contract: Optional[pulumi.Input[str]] = None,
+            edge_hostname: Optional[pulumi.Input[str]] = None,
+            group: Optional[pulumi.Input[str]] = None,
+            ip_behavior: Optional[pulumi.Input[str]] = None,
+            ipv4: Optional[pulumi.Input[bool]] = None,
+            ipv6: Optional[pulumi.Input[bool]] = None,
+            product: Optional[pulumi.Input[str]] = None) -> 'EdgeHostName':
         """
         Get an existing EdgeHostName resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
 
         :param str resource_name: The unique name of the resulting resource.
-        :param str id: The unique provider ID of the resource to lookup.
+        :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[float] certificate: — (Optional) The certificate enrollment ID.
         :param pulumi.Input[str] contract: — (Required) The contract ID.
@@ -139,8 +134,70 @@ class EdgeHostName(pulumi.CustomResource):
         __props__["product"] = product
         return EdgeHostName(resource_name, opts=opts, __props__=__props__)
 
+    @property
+    @pulumi.getter
+    def certificate(self) -> pulumi.Output[Optional[float]]:
+        """
+        — (Optional) The certificate enrollment ID.
+        """
+        return pulumi.get(self, "certificate")
+
+    @property
+    @pulumi.getter
+    def contract(self) -> pulumi.Output[str]:
+        """
+        — (Required) The contract ID.
+        """
+        return pulumi.get(self, "contract")
+
+    @property
+    @pulumi.getter(name="edgeHostname")
+    def edge_hostname(self) -> pulumi.Output[str]:
+        """
+        — (Required) One or more edge hostnames (must be <= to the number of public hostnames).
+        """
+        return pulumi.get(self, "edge_hostname")
+
+    @property
+    @pulumi.getter
+    def group(self) -> pulumi.Output[str]:
+        """
+        — (Required) The group ID.
+        """
+        return pulumi.get(self, "group")
+
+    @property
+    @pulumi.getter(name="ipBehavior")
+    def ip_behavior(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "ip_behavior")
+
+    @property
+    @pulumi.getter
+    def ipv4(self) -> pulumi.Output[Optional[bool]]:
+        """
+        — (Optional) Whether the property supports IPv4 to origin.  (Default: `true`).
+        """
+        return pulumi.get(self, "ipv4")
+
+    @property
+    @pulumi.getter
+    def ipv6(self) -> pulumi.Output[Optional[bool]]:
+        """
+        —  (Optional) Whether the property supports IPv6 to origin. (Default: `false`).
+        """
+        return pulumi.get(self, "ipv6")
+
+    @property
+    @pulumi.getter
+    def product(self) -> pulumi.Output[str]:
+        """
+        — (Required) The product ID.
+        """
+        return pulumi.get(self, "product")
+
     def translate_output_property(self, prop):
         return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
     def translate_input_property(self, prop):
         return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
+

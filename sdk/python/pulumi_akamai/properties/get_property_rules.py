@@ -5,10 +5,18 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from .. import _utilities, _tables
+from . import outputs
+from ._inputs import *
 
+__all__ = [
+    'GetPropertyRulesResult',
+    'AwaitableGetPropertyRulesResult',
+    'get_property_rules',
+]
 
+@pulumi.output_type
 class GetPropertyRulesResult:
     """
     A collection of values returned by getPropertyRules.
@@ -16,19 +24,39 @@ class GetPropertyRulesResult:
     def __init__(__self__, id=None, json=None, rules=None, variables=None):
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
-        __self__.id = id
+        pulumi.set(__self__, "id", id)
+        if json and not isinstance(json, str):
+            raise TypeError("Expected argument 'json' to be a str")
+        pulumi.set(__self__, "json", json)
+        if rules and not isinstance(rules, list):
+            raise TypeError("Expected argument 'rules' to be a list")
+        pulumi.set(__self__, "rules", rules)
+        if variables and not isinstance(variables, str):
+            raise TypeError("Expected argument 'variables' to be a str")
+        pulumi.set(__self__, "variables", variables)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
         """
         The provider-assigned unique ID for this managed resource.
         """
-        if json and not isinstance(json, str):
-            raise TypeError("Expected argument 'json' to be a str")
-        __self__.json = json
-        if rules and not isinstance(rules, list):
-            raise TypeError("Expected argument 'rules' to be a list")
-        __self__.rules = rules
-        if variables and not isinstance(variables, str):
-            raise TypeError("Expected argument 'variables' to be a str")
-        __self__.variables = variables
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def json(self) -> str:
+        return pulumi.get(self, "json")
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Optional[List['outputs.GetPropertyRulesRuleResult']]:
+        return pulumi.get(self, "rules")
+
+    @property
+    @pulumi.getter
+    def variables(self) -> Optional[str]:
+        return pulumi.get(self, "variables")
 
 
 class AwaitableGetPropertyRulesResult(GetPropertyRulesResult):
@@ -43,7 +71,9 @@ class AwaitableGetPropertyRulesResult(GetPropertyRulesResult):
             variables=self.variables)
 
 
-def get_property_rules(rules=None, variables=None, opts=None):
+def get_property_rules(rules: Optional[List[pulumi.InputType['GetPropertyRulesRuleArgs']]] = None,
+                       variables: Optional[str] = None,
+                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyRulesResult:
     """
     The `properties.PropertyRules` data source allows you to configure a nested block of property rules, criteria, and behaviors. A property’s main functionality is encapsulated in its set of rules and rules are composed of the matches and the behavior that applies under those matches.
 
@@ -54,17 +84,17 @@ def get_property_rules(rules=None, variables=None, opts=None):
     import pulumi
     import pulumi_akamai as akamai
 
-    example_property_rules = akamai.properties.get_property_rules(rules=[{
-        "behaviors": [{
-            "name": "downstreamCache",
-            "option": [{
+    example_property_rules = akamai.properties.get_property_rules(rules=[akamai.properties.GetPropertyRulesRuleArgs(
+        behaviors=[akamai.properties.GetPropertyRulesRuleBehaviorArgs(
+            name="downstreamCache",
+            option=[{
                 "key": "behavior",
                 "value": "TUNNEL_ORIGIN",
             }],
-        }],
-        "rules": [{
-            "name": "Performance",
-            "rule": [{
+        )],
+        rules=[akamai.properties.GetPropertyRulesRuleRuleArgs(
+            name="Performance",
+            rule=[{
                 "behavior": [{
                     "name": "adaptiveImageCompression",
                     "option": [
@@ -84,103 +114,10 @@ def get_property_rules(rules=None, variables=None, opts=None):
                 }],
                 "name": "JPEG Images",
             }],
-        }],
-    }])
+        )],
+    )])
     example_property = akamai.properties.Property("exampleProperty", rules=example_property_rules.json)
     ```
-
-
-
-    The **rules** object supports the following:
-
-      * `behaviors` (`list`) - — (Optional) One or more behaviors to apply to requests that match.
-        * `name` (`str`) - — (Required) The name of the behavior.
-        * `options` (`list`) - — (Optional) One or more options for the behavior.
-          * `key` (`str`) - — (Required) The option name.
-          * `value` (`str`) - — (Optional) A single value for the option.
-          * `values` (`list`) - — (Optional) An array of values for the option.
-
-      * `criteriaMatch` (`str`)
-      * `is_secure` (`bool`) - — (Optional) Whether the property is a secure (Enhanced TLS) property or not (top-level only).
-      * `rules` (`list`) - — (Optional) Child rules (may be nested five levels deep).
-        * `behaviors` (`list`) - — (Optional) One or more behaviors to apply to requests that match.
-          * `name` (`str`) - — (Required) The name of the behavior.
-          * `options` (`list`) - — (Optional) One or more options for the behavior.
-            * `key` (`str`) - — (Required) The option name.
-            * `value` (`str`) - — (Optional) A single value for the option.
-            * `values` (`list`) - — (Optional) An array of values for the option.
-
-        * `comment` (`str`)
-        * `criteriaMatch` (`str`)
-        * `criterias` (`list`) - — (Optional) One or more criteria to match requests on.
-          * `name` (`str`) - — (Required) The name of the behavior.
-          * `options` (`list`) - — (Optional) One or more options for the behavior.
-            * `key` (`str`) - — (Required) The option name.
-            * `value` (`str`) - — (Optional) A single value for the option.
-            * `values` (`list`) - — (Optional) An array of values for the option.
-
-        * `name` (`str`) - — (Required) The name of the behavior.
-        * `rules` (`list`) - — (Optional) Child rules (may be nested five levels deep).
-          * `behaviors` (`list`) - — (Optional) One or more behaviors to apply to requests that match.
-            * `name` (`str`) - — (Required) The name of the behavior.
-            * `options` (`list`) - — (Optional) One or more options for the behavior.
-              * `key` (`str`) - — (Required) The option name.
-              * `value` (`str`) - — (Optional) A single value for the option.
-              * `values` (`list`) - — (Optional) An array of values for the option.
-
-          * `comment` (`str`)
-          * `criteriaMatch` (`str`)
-          * `criterias` (`list`) - — (Optional) One or more criteria to match requests on.
-            * `name` (`str`) - — (Required) The name of the behavior.
-            * `options` (`list`) - — (Optional) One or more options for the behavior.
-              * `key` (`str`) - — (Required) The option name.
-              * `value` (`str`) - — (Optional) A single value for the option.
-              * `values` (`list`) - — (Optional) An array of values for the option.
-
-          * `name` (`str`) - — (Required) The name of the behavior.
-          * `rules` (`list`) - — (Optional) Child rules (may be nested five levels deep).
-            * `behaviors` (`list`) - — (Optional) One or more behaviors to apply to requests that match.
-              * `name` (`str`) - — (Required) The name of the behavior.
-              * `options` (`list`) - — (Optional) One or more options for the behavior.
-                * `key` (`str`) - — (Required) The option name.
-                * `value` (`str`) - — (Optional) A single value for the option.
-                * `values` (`list`) - — (Optional) An array of values for the option.
-
-            * `comment` (`str`)
-            * `criteriaMatch` (`str`)
-            * `criterias` (`list`) - — (Optional) One or more criteria to match requests on.
-              * `name` (`str`) - — (Required) The name of the behavior.
-              * `options` (`list`) - — (Optional) One or more options for the behavior.
-                * `key` (`str`) - — (Required) The option name.
-                * `value` (`str`) - — (Optional) A single value for the option.
-                * `values` (`list`) - — (Optional) An array of values for the option.
-
-            * `name` (`str`) - — (Required) The name of the behavior.
-            * `rules` (`list`) - — (Optional) Child rules (may be nested five levels deep).
-              * `behaviors` (`list`) - — (Optional) One or more behaviors to apply to requests that match.
-                * `name` (`str`) - — (Required) The name of the behavior.
-                * `options` (`list`) - — (Optional) One or more options for the behavior.
-                  * `key` (`str`) - — (Required) The option name.
-                  * `value` (`str`) - — (Optional) A single value for the option.
-                  * `values` (`list`) - — (Optional) An array of values for the option.
-
-              * `comment` (`str`)
-              * `criteriaMatch` (`str`)
-              * `criterias` (`list`) - — (Optional) One or more criteria to match requests on.
-                * `name` (`str`) - — (Required) The name of the behavior.
-                * `options` (`list`) - — (Optional) One or more options for the behavior.
-                  * `key` (`str`) - — (Required) The option name.
-                  * `value` (`str`) - — (Optional) A single value for the option.
-                  * `values` (`list`) - — (Optional) An array of values for the option.
-
-              * `name` (`str`) - — (Required) The name of the behavior.
-
-      * `variables` (`list`)
-        * `description` (`str`)
-        * `hidden` (`bool`)
-        * `name` (`str`) - — (Required) The name of the behavior.
-        * `sensitive` (`bool`)
-        * `value` (`str`) - — (Optional) A single value for the option.
     """
     __args__ = dict()
     __args__['rules'] = rules
@@ -189,10 +126,10 @@ def get_property_rules(rules=None, variables=None, opts=None):
         opts = pulumi.InvokeOptions()
     if opts.version is None:
         opts.version = _utilities.get_version()
-    __ret__ = pulumi.runtime.invoke('akamai:properties/getPropertyRules:getPropertyRules', __args__, opts=opts).value
+    __ret__ = pulumi.runtime.invoke('akamai:properties/getPropertyRules:getPropertyRules', __args__, opts=opts, typ=GetPropertyRulesResult).value
 
     return AwaitableGetPropertyRulesResult(
-        id=__ret__.get('id'),
-        json=__ret__.get('json'),
-        rules=__ret__.get('rules'),
-        variables=__ret__.get('variables'))
+        id=__ret__.id,
+        json=__ret__.json,
+        rules=__ret__.rules,
+        variables=__ret__.variables)

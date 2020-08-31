@@ -12,3 +12,5 @@ from .property import *
 from .property_activation import *
 from .property_rules import *
 from .property_variables import *
+from ._inputs import *
+from . import outputs

@@ -5,10 +5,16 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from .. import _utilities, _tables
 
+__all__ = [
+    'GetPropertyResult',
+    'AwaitableGetPropertyResult',
+    'get_property',
+]
 
+@pulumi.output_type
 class GetPropertyResult:
     """
     A collection of values returned by getProperty.
@@ -16,19 +22,39 @@ class GetPropertyResult:
     def __init__(__self__, id=None, name=None, rules=None, version=None):
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
-        __self__.id = id
+        pulumi.set(__self__, "id", id)
+        if name and not isinstance(name, str):
+            raise TypeError("Expected argument 'name' to be a str")
+        pulumi.set(__self__, "name", name)
+        if rules and not isinstance(rules, str):
+            raise TypeError("Expected argument 'rules' to be a str")
+        pulumi.set(__self__, "rules", rules)
+        if version and not isinstance(version, float):
+            raise TypeError("Expected argument 'version' to be a float")
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
         """
         The provider-assigned unique ID for this managed resource.
         """
-        if name and not isinstance(name, str):
-            raise TypeError("Expected argument 'name' to be a str")
-        __self__.name = name
-        if rules and not isinstance(rules, str):
-            raise TypeError("Expected argument 'rules' to be a str")
-        __self__.rules = rules
-        if version and not isinstance(version, float):
-            raise TypeError("Expected argument 'version' to be a float")
-        __self__.version = version
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def rules(self) -> str:
+        return pulumi.get(self, "rules")
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[float]:
+        return pulumi.get(self, "version")
 
 
 class AwaitableGetPropertyResult(GetPropertyResult):
@@ -43,7 +69,9 @@ class AwaitableGetPropertyResult(GetPropertyResult):
             version=self.version)
 
 
-def get_property(name=None, version=None, opts=None):
+def get_property(name: Optional[str] = None,
+                 version: Optional[float] = None,
+                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyResult:
     """
     Use this data source to access information about an existing resource.
     """
@@ -54,10 +82,10 @@ def get_property(name=None, version=None, opts=None):
         opts = pulumi.InvokeOptions()
     if opts.version is None:
         opts.version = _utilities.get_version()
-    __ret__ = pulumi.runtime.invoke('akamai:properties/getProperty:getProperty', __args__, opts=opts).value
+    __ret__ = pulumi.runtime.invoke('akamai:properties/getProperty:getProperty', __args__, opts=opts, typ=GetPropertyResult).value
 
     return AwaitableGetPropertyResult(
-        id=__ret__.get('id'),
-        name=__ret__.get('name'),
-        rules=__ret__.get('rules'),
-        version=__ret__.get('version'))
+        id=__ret__.id,
+        name=__ret__.name,
+        rules=__ret__.rules,
+        version=__ret__.version)

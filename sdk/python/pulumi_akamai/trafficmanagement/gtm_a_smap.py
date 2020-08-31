@@ -5,38 +5,26 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from .. import _utilities, _tables
+from . import outputs
+from ._inputs import *
+
+__all__ = ['GtmASmap']
 
 
 class GtmASmap(pulumi.CustomResource):
-    assignments: pulumi.Output[list]
-    """
-    — (multiple allowed)
-    * `datacenter_id`
-    * `nickname`
-
-      * `asNumbers` (`list`) - — (List)
-      * `datacenter_id` (`float`)
-      * `nickname` (`str`)
-    """
-    default_datacenter: pulumi.Output[dict]
-    domain: pulumi.Output[str]
-    """
-    — Domain name
-    """
-    name: pulumi.Output[str]
-    """
-    — Resource name
-    * `default_datacenter`
-    * `datacenter_id`
-    * `nickname`
-    """
-    wait_on_complete: pulumi.Output[bool]
-    """
-    — (Boolean, Default: true) Wait for transaction to complete
-    """
-    def __init__(__self__, resource_name, opts=None, assignments=None, default_datacenter=None, domain=None, name=None, wait_on_complete=None, __props__=None, __name__=None, __opts__=None):
+    def __init__(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 assignments: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmASmapAssignmentArgs']]]]] = None,
+                 default_datacenter: Optional[pulumi.Input[pulumi.InputType['GtmASmapDefaultDatacenterArgs']]] = None,
+                 domain: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 wait_on_complete: Optional[pulumi.Input[bool]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         """
         `trafficmanagement.GtmASmap` provides the resource for creating, configuring and importing a gtm AS Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_map_name`
 
@@ -48,16 +36,16 @@ class GtmASmap(pulumi.CustomResource):
         import pulumi_akamai as akamai
 
         demo_asmap = akamai.trafficmanagement.GtmASmap("demoAsmap",
-            default_datacenter={
-                "datacenter_id": 5400,
-                "nickname": "All Other AS numbers",
-            },
+            default_datacenter=akamai.trafficmanagement.GtmASmapDefaultDatacenterArgs(
+                datacenter_id=5400,
+                nickname="All Other AS numbers",
+            ),
             domain="demo_domain.akadns.net")
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[list] assignments: — (multiple allowed)
+        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmASmapAssignmentArgs']]]] assignments: — (multiple allowed)
                * `datacenter_id`
                * `nickname`
         :param pulumi.Input[str] domain: — Domain name
@@ -66,17 +54,6 @@ class GtmASmap(pulumi.CustomResource):
                * `datacenter_id`
                * `nickname`
         :param pulumi.Input[bool] wait_on_complete: — (Boolean, Default: true) Wait for transaction to complete
-
-        The **assignments** object supports the following:
-
-          * `asNumbers` (`pulumi.Input[list]`) - — (List)
-          * `datacenter_id` (`pulumi.Input[float]`)
-          * `nickname` (`pulumi.Input[str]`)
-
-        The **default_datacenter** object supports the following:
-
-          * `datacenter_id` (`pulumi.Input[float]`)
-          * `nickname` (`pulumi.Input[str]`)
         """
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
@@ -111,15 +88,22 @@ class GtmASmap(pulumi.CustomResource):
             opts)
 
     @staticmethod
-    def get(resource_name, id, opts=None, assignments=None, default_datacenter=None, domain=None, name=None, wait_on_complete=None):
+    def get(resource_name: str,
+            id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            assignments: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmASmapAssignmentArgs']]]]] = None,
+            default_datacenter: Optional[pulumi.Input[pulumi.InputType['GtmASmapDefaultDatacenterArgs']]] = None,
+            domain: Optional[pulumi.Input[str]] = None,
+            name: Optional[pulumi.Input[str]] = None,
+            wait_on_complete: Optional[pulumi.Input[bool]] = None) -> 'GtmASmap':
         """
         Get an existing GtmASmap resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
 
         :param str resource_name: The unique name of the resulting resource.
-        :param str id: The unique provider ID of the resource to lookup.
+        :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[list] assignments: — (multiple allowed)
+        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmASmapAssignmentArgs']]]] assignments: — (multiple allowed)
                * `datacenter_id`
                * `nickname`
         :param pulumi.Input[str] domain: — Domain name
@@ -128,17 +112,6 @@ class GtmASmap(pulumi.CustomResource):
                * `datacenter_id`
                * `nickname`
         :param pulumi.Input[bool] wait_on_complete: — (Boolean, Default: true) Wait for transaction to complete
-
-        The **assignments** object supports the following:
-
-          * `asNumbers` (`pulumi.Input[list]`) - — (List)
-          * `datacenter_id` (`pulumi.Input[float]`)
-          * `nickname` (`pulumi.Input[str]`)
-
-        The **default_datacenter** object supports the following:
-
-          * `datacenter_id` (`pulumi.Input[float]`)
-          * `nickname` (`pulumi.Input[str]`)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -151,8 +124,51 @@ class GtmASmap(pulumi.CustomResource):
         __props__["wait_on_complete"] = wait_on_complete
         return GtmASmap(resource_name, opts=opts, __props__=__props__)
 
+    @property
+    @pulumi.getter
+    def assignments(self) -> pulumi.Output[Optional[List['outputs.GtmASmapAssignment']]]:
+        """
+        — (multiple allowed)
+        * `datacenter_id`
+        * `nickname`
+        """
+        return pulumi.get(self, "assignments")
+
+    @property
+    @pulumi.getter(name="defaultDatacenter")
+    def default_datacenter(self) -> pulumi.Output['outputs.GtmASmapDefaultDatacenter']:
+        return pulumi.get(self, "default_datacenter")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> pulumi.Output[str]:
+        """
+        — Domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Output[str]:
+        """
+        — Resource name
+        * `default_datacenter`
+        * `datacenter_id`
+        * `nickname`
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="waitOnComplete")
+    def wait_on_complete(self) -> pulumi.Output[Optional[bool]]:
+        """
+        — (Boolean, Default: true) Wait for transaction to complete
+        """
+        return pulumi.get(self, "wait_on_complete")
+
     def translate_output_property(self, prop):
         return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
     def translate_input_property(self, prop):
         return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
+
