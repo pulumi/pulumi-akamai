@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
 
 __all__ = [
@@ -21,7 +21,7 @@ class Dns(dict):
                  client_secret: Optional[str] = None,
                  client_token: Optional[str] = None,
                  host: Optional[str] = None,
-                 max_body: Optional[float] = None):
+                 max_body: Optional[int] = None):
         if access_token is not None:
             pulumi.set(__self__, "access_token", access_token)
         if client_secret is not None:
@@ -55,7 +55,7 @@ class Dns(dict):
 
     @property
     @pulumi.getter(name="maxBody")
-    def max_body(self) -> Optional[float]:
+    def max_body(self) -> Optional[int]:
         return pulumi.get(self, "max_body")
 
     def _translate_property(self, prop):
@@ -69,7 +69,7 @@ class Gtms(dict):
                  client_secret: Optional[str] = None,
                  client_token: Optional[str] = None,
                  host: Optional[str] = None,
-                 max_body: Optional[float] = None):
+                 max_body: Optional[int] = None):
         if access_token is not None:
             pulumi.set(__self__, "access_token", access_token)
         if client_secret is not None:
@@ -103,7 +103,7 @@ class Gtms(dict):
 
     @property
     @pulumi.getter(name="maxBody")
-    def max_body(self) -> Optional[float]:
+    def max_body(self) -> Optional[int]:
         return pulumi.get(self, "max_body")
 
     def _translate_property(self, prop):
@@ -117,7 +117,7 @@ class Properties(dict):
                  client_secret: Optional[str] = None,
                  client_token: Optional[str] = None,
                  host: Optional[str] = None,
-                 max_body: Optional[float] = None):
+                 max_body: Optional[int] = None):
         if access_token is not None:
             pulumi.set(__self__, "access_token", access_token)
         if client_secret is not None:
@@ -151,7 +151,7 @@ class Properties(dict):
 
     @property
     @pulumi.getter(name="maxBody")
-    def max_body(self) -> Optional[float]:
+    def max_body(self) -> Optional[int]:
         return pulumi.get(self, "max_body")
 
     def _translate_property(self, prop):

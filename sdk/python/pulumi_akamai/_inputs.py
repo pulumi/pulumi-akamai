@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from . import _utilities, _tables
 
 __all__ = [
@@ -21,7 +21,7 @@ class ProviderDnArgs:
                  client_secret: Optional[pulumi.Input[str]] = None,
                  client_token: Optional[pulumi.Input[str]] = None,
                  host: Optional[pulumi.Input[str]] = None,
-                 max_body: Optional[pulumi.Input[float]] = None):
+                 max_body: Optional[pulumi.Input[int]] = None):
         if access_token is not None:
             pulumi.set(__self__, "access_token", access_token)
         if client_secret is not None:
@@ -71,11 +71,11 @@ class ProviderDnArgs:
 
     @property
     @pulumi.getter(name="maxBody")
-    def max_body(self) -> Optional[pulumi.Input[float]]:
+    def max_body(self) -> Optional[pulumi.Input[int]]:
         return pulumi.get(self, "max_body")
 
     @max_body.setter
-    def max_body(self, value: Optional[pulumi.Input[float]]):
+    def max_body(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "max_body", value)
 
 
@@ -86,7 +86,7 @@ class ProviderGtmArgs:
                  client_secret: Optional[pulumi.Input[str]] = None,
                  client_token: Optional[pulumi.Input[str]] = None,
                  host: Optional[pulumi.Input[str]] = None,
-                 max_body: Optional[pulumi.Input[float]] = None):
+                 max_body: Optional[pulumi.Input[int]] = None):
         if access_token is not None:
             pulumi.set(__self__, "access_token", access_token)
         if client_secret is not None:
@@ -136,11 +136,11 @@ class ProviderGtmArgs:
 
     @property
     @pulumi.getter(name="maxBody")
-    def max_body(self) -> Optional[pulumi.Input[float]]:
+    def max_body(self) -> Optional[pulumi.Input[int]]:
         return pulumi.get(self, "max_body")
 
     @max_body.setter
-    def max_body(self, value: Optional[pulumi.Input[float]]):
+    def max_body(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "max_body", value)
 
 
@@ -151,7 +151,7 @@ class ProviderPropertyArgs:
                  client_secret: Optional[pulumi.Input[str]] = None,
                  client_token: Optional[pulumi.Input[str]] = None,
                  host: Optional[pulumi.Input[str]] = None,
-                 max_body: Optional[pulumi.Input[float]] = None):
+                 max_body: Optional[pulumi.Input[int]] = None):
         if access_token is not None:
             pulumi.set(__self__, "access_token", access_token)
         if client_secret is not None:
@@ -201,11 +201,11 @@ class ProviderPropertyArgs:
 
     @property
     @pulumi.getter(name="maxBody")
-    def max_body(self) -> Optional[pulumi.Input[float]]:
+    def max_body(self) -> Optional[pulumi.Input[int]]:
         return pulumi.get(self, "max_body")
 
     @max_body.setter
-    def max_body(self, value: Optional[pulumi.Input[float]]):
+    def max_body(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "max_body", value)
 
 

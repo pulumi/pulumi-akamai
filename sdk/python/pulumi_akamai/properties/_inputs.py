@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
 
 __all__ = [
@@ -70,14 +70,14 @@ class PropertyOriginArgs:
                  compress: Optional[pulumi.Input[bool]] = None,
                  enable_true_client_ip: Optional[pulumi.Input[bool]] = None,
                  forward_hostname: Optional[pulumi.Input[str]] = None,
-                 port: Optional[pulumi.Input[float]] = None):
+                 port: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[str] hostname: — (Required) The origin hostname.
         :param pulumi.Input[str] cache_key_hostname: — (Optional) The hostname uses for the cache key. (default: `ORIGIN_HOSTNAME`).
         :param pulumi.Input[bool] compress: — (Optional, boolean) Whether origin supports gzip compression (default: `false`).
         :param pulumi.Input[bool] enable_true_client_ip: — (Optional, boolean) Whether the X-True-Client-IP header should be sent to origin (default: `false`).
         :param pulumi.Input[str] forward_hostname: — (Optional) The value for the Hostname header sent to origin. (default: `ORIGIN_HOSTNAME`).
-        :param pulumi.Input[float] port: — (Optional) The origin port to connect to (default: 80).
+        :param pulumi.Input[int] port: — (Optional) The origin port to connect to (default: 80).
         """
         pulumi.set(__self__, "hostname", hostname)
         if cache_key_hostname is not None:
@@ -153,25 +153,25 @@ class PropertyOriginArgs:
 
     @property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[float]]:
+    def port(self) -> Optional[pulumi.Input[int]]:
         """
         — (Optional) The origin port to connect to (default: 80).
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[float]]):
+    def port(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "port", value)
 
 
 @pulumi.input_type
 class PropertyRulesRuleArgs:
     def __init__(__self__, *,
-                 behaviors: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleBehaviorArgs']]]] = None,
+                 behaviors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleBehaviorArgs']]]] = None,
                  criteria_match: Optional[pulumi.Input[str]] = None,
                  is_secure: Optional[pulumi.Input[bool]] = None,
-                 rules: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleArgs']]]] = None,
-                 variables: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleVariableArgs']]]] = None):
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleArgs']]]] = None,
+                 variables: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleVariableArgs']]]] = None):
         if behaviors is not None:
             pulumi.set(__self__, "behaviors", behaviors)
         if criteria_match is not None:
@@ -185,11 +185,11 @@ class PropertyRulesRuleArgs:
 
     @property
     @pulumi.getter
-    def behaviors(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleBehaviorArgs']]]]:
+    def behaviors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleBehaviorArgs']]]]:
         return pulumi.get(self, "behaviors")
 
     @behaviors.setter
-    def behaviors(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleBehaviorArgs']]]]):
+    def behaviors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleBehaviorArgs']]]]):
         pulumi.set(self, "behaviors", value)
 
     @property
@@ -212,20 +212,20 @@ class PropertyRulesRuleArgs:
 
     @property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleArgs']]]]:
+    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleArgs']]]]:
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleArgs']]]]):
+    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @property
     @pulumi.getter
-    def variables(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleVariableArgs']]]]:
+    def variables(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleVariableArgs']]]]:
         return pulumi.get(self, "variables")
 
     @variables.setter
-    def variables(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleVariableArgs']]]]):
+    def variables(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleVariableArgs']]]]):
         pulumi.set(self, "variables", value)
 
 
@@ -233,7 +233,7 @@ class PropertyRulesRuleArgs:
 class PropertyRulesRuleBehaviorArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
-                 options: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleBehaviorOptionArgs']]]] = None):
+                 options: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleBehaviorOptionArgs']]]] = None):
         pulumi.set(__self__, "name", name)
         if options is not None:
             pulumi.set(__self__, "options", options)
@@ -249,11 +249,11 @@ class PropertyRulesRuleBehaviorArgs:
 
     @property
     @pulumi.getter
-    def options(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleBehaviorOptionArgs']]]]:
+    def options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleBehaviorOptionArgs']]]]:
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleBehaviorOptionArgs']]]]):
+    def options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleBehaviorOptionArgs']]]]):
         pulumi.set(self, "options", value)
 
 
@@ -262,7 +262,7 @@ class PropertyRulesRuleBehaviorOptionArgs:
     def __init__(__self__, *,
                  key: pulumi.Input[str],
                  value: Optional[pulumi.Input[str]] = None,
-                 values: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None):
+                 values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         pulumi.set(__self__, "key", key)
         if value is not None:
             pulumi.set(__self__, "value", value)
@@ -289,11 +289,11 @@ class PropertyRulesRuleBehaviorOptionArgs:
 
     @property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[List[pulumi.Input[str]]]]:
+    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[List[pulumi.Input[str]]]]):
+    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "values", value)
 
 
@@ -301,11 +301,11 @@ class PropertyRulesRuleBehaviorOptionArgs:
 class PropertyRulesRuleRuleArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
-                 behaviors: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleBehaviorArgs']]]] = None,
+                 behaviors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleBehaviorArgs']]]] = None,
                  comment: Optional[pulumi.Input[str]] = None,
                  criteria_match: Optional[pulumi.Input[str]] = None,
-                 criterias: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleCriteriaArgs']]]] = None,
-                 rules: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleArgs']]]] = None):
+                 criterias: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleCriteriaArgs']]]] = None,
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleArgs']]]] = None):
         pulumi.set(__self__, "name", name)
         if behaviors is not None:
             pulumi.set(__self__, "behaviors", behaviors)
@@ -329,11 +329,11 @@ class PropertyRulesRuleRuleArgs:
 
     @property
     @pulumi.getter
-    def behaviors(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleBehaviorArgs']]]]:
+    def behaviors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleBehaviorArgs']]]]:
         return pulumi.get(self, "behaviors")
 
     @behaviors.setter
-    def behaviors(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleBehaviorArgs']]]]):
+    def behaviors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleBehaviorArgs']]]]):
         pulumi.set(self, "behaviors", value)
 
     @property
@@ -356,20 +356,20 @@ class PropertyRulesRuleRuleArgs:
 
     @property
     @pulumi.getter
-    def criterias(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleCriteriaArgs']]]]:
+    def criterias(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleCriteriaArgs']]]]:
         return pulumi.get(self, "criterias")
 
     @criterias.setter
-    def criterias(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleCriteriaArgs']]]]):
+    def criterias(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleCriteriaArgs']]]]):
         pulumi.set(self, "criterias", value)
 
     @property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleArgs']]]]:
+    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleArgs']]]]:
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleArgs']]]]):
+    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
 
@@ -377,7 +377,7 @@ class PropertyRulesRuleRuleArgs:
 class PropertyRulesRuleRuleBehaviorArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
-                 options: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleBehaviorOptionArgs']]]] = None):
+                 options: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleBehaviorOptionArgs']]]] = None):
         pulumi.set(__self__, "name", name)
         if options is not None:
             pulumi.set(__self__, "options", options)
@@ -393,11 +393,11 @@ class PropertyRulesRuleRuleBehaviorArgs:
 
     @property
     @pulumi.getter
-    def options(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleBehaviorOptionArgs']]]]:
+    def options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleBehaviorOptionArgs']]]]:
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleBehaviorOptionArgs']]]]):
+    def options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleBehaviorOptionArgs']]]]):
         pulumi.set(self, "options", value)
 
 
@@ -406,7 +406,7 @@ class PropertyRulesRuleRuleBehaviorOptionArgs:
     def __init__(__self__, *,
                  key: pulumi.Input[str],
                  value: Optional[pulumi.Input[str]] = None,
-                 values: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None):
+                 values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         pulumi.set(__self__, "key", key)
         if value is not None:
             pulumi.set(__self__, "value", value)
@@ -433,11 +433,11 @@ class PropertyRulesRuleRuleBehaviorOptionArgs:
 
     @property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[List[pulumi.Input[str]]]]:
+    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[List[pulumi.Input[str]]]]):
+    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "values", value)
 
 
@@ -445,7 +445,7 @@ class PropertyRulesRuleRuleBehaviorOptionArgs:
 class PropertyRulesRuleRuleCriteriaArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
-                 options: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleCriteriaOptionArgs']]]] = None):
+                 options: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleCriteriaOptionArgs']]]] = None):
         pulumi.set(__self__, "name", name)
         if options is not None:
             pulumi.set(__self__, "options", options)
@@ -461,11 +461,11 @@ class PropertyRulesRuleRuleCriteriaArgs:
 
     @property
     @pulumi.getter
-    def options(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleCriteriaOptionArgs']]]]:
+    def options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleCriteriaOptionArgs']]]]:
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleCriteriaOptionArgs']]]]):
+    def options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleCriteriaOptionArgs']]]]):
         pulumi.set(self, "options", value)
 
 
@@ -474,7 +474,7 @@ class PropertyRulesRuleRuleCriteriaOptionArgs:
     def __init__(__self__, *,
                  key: pulumi.Input[str],
                  value: Optional[pulumi.Input[str]] = None,
-                 values: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None):
+                 values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         pulumi.set(__self__, "key", key)
         if value is not None:
             pulumi.set(__self__, "value", value)
@@ -501,11 +501,11 @@ class PropertyRulesRuleRuleCriteriaOptionArgs:
 
     @property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[List[pulumi.Input[str]]]]:
+    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[List[pulumi.Input[str]]]]):
+    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "values", value)
 
 
@@ -513,11 +513,11 @@ class PropertyRulesRuleRuleCriteriaOptionArgs:
 class PropertyRulesRuleRuleRuleArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
-                 behaviors: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleBehaviorArgs']]]] = None,
+                 behaviors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleBehaviorArgs']]]] = None,
                  comment: Optional[pulumi.Input[str]] = None,
                  criteria_match: Optional[pulumi.Input[str]] = None,
-                 criterias: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleCriteriaArgs']]]] = None,
-                 rules: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleArgs']]]] = None):
+                 criterias: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleCriteriaArgs']]]] = None,
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleArgs']]]] = None):
         pulumi.set(__self__, "name", name)
         if behaviors is not None:
             pulumi.set(__self__, "behaviors", behaviors)
@@ -541,11 +541,11 @@ class PropertyRulesRuleRuleRuleArgs:
 
     @property
     @pulumi.getter
-    def behaviors(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleBehaviorArgs']]]]:
+    def behaviors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleBehaviorArgs']]]]:
         return pulumi.get(self, "behaviors")
 
     @behaviors.setter
-    def behaviors(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleBehaviorArgs']]]]):
+    def behaviors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleBehaviorArgs']]]]):
         pulumi.set(self, "behaviors", value)
 
     @property
@@ -568,20 +568,20 @@ class PropertyRulesRuleRuleRuleArgs:
 
     @property
     @pulumi.getter
-    def criterias(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleCriteriaArgs']]]]:
+    def criterias(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleCriteriaArgs']]]]:
         return pulumi.get(self, "criterias")
 
     @criterias.setter
-    def criterias(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleCriteriaArgs']]]]):
+    def criterias(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleCriteriaArgs']]]]):
         pulumi.set(self, "criterias", value)
 
     @property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleArgs']]]]:
+    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleArgs']]]]:
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleArgs']]]]):
+    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
 
@@ -589,7 +589,7 @@ class PropertyRulesRuleRuleRuleArgs:
 class PropertyRulesRuleRuleRuleBehaviorArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
-                 options: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleBehaviorOptionArgs']]]] = None):
+                 options: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleBehaviorOptionArgs']]]] = None):
         pulumi.set(__self__, "name", name)
         if options is not None:
             pulumi.set(__self__, "options", options)
@@ -605,11 +605,11 @@ class PropertyRulesRuleRuleRuleBehaviorArgs:
 
     @property
     @pulumi.getter
-    def options(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleBehaviorOptionArgs']]]]:
+    def options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleBehaviorOptionArgs']]]]:
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleBehaviorOptionArgs']]]]):
+    def options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleBehaviorOptionArgs']]]]):
         pulumi.set(self, "options", value)
 
 
@@ -618,7 +618,7 @@ class PropertyRulesRuleRuleRuleBehaviorOptionArgs:
     def __init__(__self__, *,
                  key: pulumi.Input[str],
                  value: Optional[pulumi.Input[str]] = None,
-                 values: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None):
+                 values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         pulumi.set(__self__, "key", key)
         if value is not None:
             pulumi.set(__self__, "value", value)
@@ -645,11 +645,11 @@ class PropertyRulesRuleRuleRuleBehaviorOptionArgs:
 
     @property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[List[pulumi.Input[str]]]]:
+    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[List[pulumi.Input[str]]]]):
+    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "values", value)
 
 
@@ -657,7 +657,7 @@ class PropertyRulesRuleRuleRuleBehaviorOptionArgs:
 class PropertyRulesRuleRuleRuleCriteriaArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
-                 options: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleCriteriaOptionArgs']]]] = None):
+                 options: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleCriteriaOptionArgs']]]] = None):
         pulumi.set(__self__, "name", name)
         if options is not None:
             pulumi.set(__self__, "options", options)
@@ -673,11 +673,11 @@ class PropertyRulesRuleRuleRuleCriteriaArgs:
 
     @property
     @pulumi.getter
-    def options(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleCriteriaOptionArgs']]]]:
+    def options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleCriteriaOptionArgs']]]]:
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleCriteriaOptionArgs']]]]):
+    def options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleCriteriaOptionArgs']]]]):
         pulumi.set(self, "options", value)
 
 
@@ -686,7 +686,7 @@ class PropertyRulesRuleRuleRuleCriteriaOptionArgs:
     def __init__(__self__, *,
                  key: pulumi.Input[str],
                  value: Optional[pulumi.Input[str]] = None,
-                 values: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None):
+                 values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         pulumi.set(__self__, "key", key)
         if value is not None:
             pulumi.set(__self__, "value", value)
@@ -713,11 +713,11 @@ class PropertyRulesRuleRuleRuleCriteriaOptionArgs:
 
     @property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[List[pulumi.Input[str]]]]:
+    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[List[pulumi.Input[str]]]]):
+    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "values", value)
 
 
@@ -725,11 +725,11 @@ class PropertyRulesRuleRuleRuleCriteriaOptionArgs:
 class PropertyRulesRuleRuleRuleRuleArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
-                 behaviors: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleBehaviorArgs']]]] = None,
+                 behaviors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleBehaviorArgs']]]] = None,
                  comment: Optional[pulumi.Input[str]] = None,
                  criteria_match: Optional[pulumi.Input[str]] = None,
-                 criterias: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleCriteriaArgs']]]] = None,
-                 rules: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleArgs']]]] = None):
+                 criterias: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleCriteriaArgs']]]] = None,
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleArgs']]]] = None):
         pulumi.set(__self__, "name", name)
         if behaviors is not None:
             pulumi.set(__self__, "behaviors", behaviors)
@@ -753,11 +753,11 @@ class PropertyRulesRuleRuleRuleRuleArgs:
 
     @property
     @pulumi.getter
-    def behaviors(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleBehaviorArgs']]]]:
+    def behaviors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleBehaviorArgs']]]]:
         return pulumi.get(self, "behaviors")
 
     @behaviors.setter
-    def behaviors(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleBehaviorArgs']]]]):
+    def behaviors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleBehaviorArgs']]]]):
         pulumi.set(self, "behaviors", value)
 
     @property
@@ -780,20 +780,20 @@ class PropertyRulesRuleRuleRuleRuleArgs:
 
     @property
     @pulumi.getter
-    def criterias(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleCriteriaArgs']]]]:
+    def criterias(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleCriteriaArgs']]]]:
         return pulumi.get(self, "criterias")
 
     @criterias.setter
-    def criterias(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleCriteriaArgs']]]]):
+    def criterias(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleCriteriaArgs']]]]):
         pulumi.set(self, "criterias", value)
 
     @property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleArgs']]]]:
+    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleArgs']]]]:
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleArgs']]]]):
+    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
 
@@ -801,7 +801,7 @@ class PropertyRulesRuleRuleRuleRuleArgs:
 class PropertyRulesRuleRuleRuleRuleBehaviorArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
-                 options: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleBehaviorOptionArgs']]]] = None):
+                 options: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleBehaviorOptionArgs']]]] = None):
         pulumi.set(__self__, "name", name)
         if options is not None:
             pulumi.set(__self__, "options", options)
@@ -817,11 +817,11 @@ class PropertyRulesRuleRuleRuleRuleBehaviorArgs:
 
     @property
     @pulumi.getter
-    def options(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleBehaviorOptionArgs']]]]:
+    def options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleBehaviorOptionArgs']]]]:
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleBehaviorOptionArgs']]]]):
+    def options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleBehaviorOptionArgs']]]]):
         pulumi.set(self, "options", value)
 
 
@@ -830,7 +830,7 @@ class PropertyRulesRuleRuleRuleRuleBehaviorOptionArgs:
     def __init__(__self__, *,
                  key: pulumi.Input[str],
                  value: Optional[pulumi.Input[str]] = None,
-                 values: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None):
+                 values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         pulumi.set(__self__, "key", key)
         if value is not None:
             pulumi.set(__self__, "value", value)
@@ -857,11 +857,11 @@ class PropertyRulesRuleRuleRuleRuleBehaviorOptionArgs:
 
     @property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[List[pulumi.Input[str]]]]:
+    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[List[pulumi.Input[str]]]]):
+    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "values", value)
 
 
@@ -869,7 +869,7 @@ class PropertyRulesRuleRuleRuleRuleBehaviorOptionArgs:
 class PropertyRulesRuleRuleRuleRuleCriteriaArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
-                 options: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleCriteriaOptionArgs']]]] = None):
+                 options: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleCriteriaOptionArgs']]]] = None):
         pulumi.set(__self__, "name", name)
         if options is not None:
             pulumi.set(__self__, "options", options)
@@ -885,11 +885,11 @@ class PropertyRulesRuleRuleRuleRuleCriteriaArgs:
 
     @property
     @pulumi.getter
-    def options(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleCriteriaOptionArgs']]]]:
+    def options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleCriteriaOptionArgs']]]]:
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleCriteriaOptionArgs']]]]):
+    def options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleCriteriaOptionArgs']]]]):
         pulumi.set(self, "options", value)
 
 
@@ -898,7 +898,7 @@ class PropertyRulesRuleRuleRuleRuleCriteriaOptionArgs:
     def __init__(__self__, *,
                  key: pulumi.Input[str],
                  value: Optional[pulumi.Input[str]] = None,
-                 values: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None):
+                 values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         pulumi.set(__self__, "key", key)
         if value is not None:
             pulumi.set(__self__, "value", value)
@@ -925,11 +925,11 @@ class PropertyRulesRuleRuleRuleRuleCriteriaOptionArgs:
 
     @property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[List[pulumi.Input[str]]]]:
+    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[List[pulumi.Input[str]]]]):
+    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "values", value)
 
 
@@ -937,10 +937,10 @@ class PropertyRulesRuleRuleRuleRuleCriteriaOptionArgs:
 class PropertyRulesRuleRuleRuleRuleRuleArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
-                 behaviors: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleBehaviorArgs']]]] = None,
+                 behaviors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleBehaviorArgs']]]] = None,
                  comment: Optional[pulumi.Input[str]] = None,
                  criteria_match: Optional[pulumi.Input[str]] = None,
-                 criterias: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleCriteriaArgs']]]] = None):
+                 criterias: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleCriteriaArgs']]]] = None):
         pulumi.set(__self__, "name", name)
         if behaviors is not None:
             pulumi.set(__self__, "behaviors", behaviors)
@@ -962,11 +962,11 @@ class PropertyRulesRuleRuleRuleRuleRuleArgs:
 
     @property
     @pulumi.getter
-    def behaviors(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleBehaviorArgs']]]]:
+    def behaviors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleBehaviorArgs']]]]:
         return pulumi.get(self, "behaviors")
 
     @behaviors.setter
-    def behaviors(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleBehaviorArgs']]]]):
+    def behaviors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleBehaviorArgs']]]]):
         pulumi.set(self, "behaviors", value)
 
     @property
@@ -989,11 +989,11 @@ class PropertyRulesRuleRuleRuleRuleRuleArgs:
 
     @property
     @pulumi.getter
-    def criterias(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleCriteriaArgs']]]]:
+    def criterias(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleCriteriaArgs']]]]:
         return pulumi.get(self, "criterias")
 
     @criterias.setter
-    def criterias(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleCriteriaArgs']]]]):
+    def criterias(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleCriteriaArgs']]]]):
         pulumi.set(self, "criterias", value)
 
 
@@ -1001,7 +1001,7 @@ class PropertyRulesRuleRuleRuleRuleRuleArgs:
 class PropertyRulesRuleRuleRuleRuleRuleBehaviorArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
-                 options: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs']]]] = None):
+                 options: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs']]]] = None):
         pulumi.set(__self__, "name", name)
         if options is not None:
             pulumi.set(__self__, "options", options)
@@ -1017,11 +1017,11 @@ class PropertyRulesRuleRuleRuleRuleRuleBehaviorArgs:
 
     @property
     @pulumi.getter
-    def options(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs']]]]:
+    def options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs']]]]:
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs']]]]):
+    def options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs']]]]):
         pulumi.set(self, "options", value)
 
 
@@ -1030,7 +1030,7 @@ class PropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs:
     def __init__(__self__, *,
                  key: pulumi.Input[str],
                  value: Optional[pulumi.Input[str]] = None,
-                 values: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None):
+                 values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         pulumi.set(__self__, "key", key)
         if value is not None:
             pulumi.set(__self__, "value", value)
@@ -1057,11 +1057,11 @@ class PropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs:
 
     @property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[List[pulumi.Input[str]]]]:
+    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[List[pulumi.Input[str]]]]):
+    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "values", value)
 
 
@@ -1069,7 +1069,7 @@ class PropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs:
 class PropertyRulesRuleRuleRuleRuleRuleCriteriaArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
-                 options: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleCriteriaOptionArgs']]]] = None):
+                 options: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleCriteriaOptionArgs']]]] = None):
         pulumi.set(__self__, "name", name)
         if options is not None:
             pulumi.set(__self__, "options", options)
@@ -1085,11 +1085,11 @@ class PropertyRulesRuleRuleRuleRuleRuleCriteriaArgs:
 
     @property
     @pulumi.getter
-    def options(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleCriteriaOptionArgs']]]]:
+    def options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleCriteriaOptionArgs']]]]:
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleCriteriaOptionArgs']]]]):
+    def options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRulesRuleRuleRuleRuleRuleCriteriaOptionArgs']]]]):
         pulumi.set(self, "options", value)
 
 
@@ -1098,7 +1098,7 @@ class PropertyRulesRuleRuleRuleRuleRuleCriteriaOptionArgs:
     def __init__(__self__, *,
                  key: pulumi.Input[str],
                  value: Optional[pulumi.Input[str]] = None,
-                 values: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None):
+                 values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         pulumi.set(__self__, "key", key)
         if value is not None:
             pulumi.set(__self__, "value", value)
@@ -1125,11 +1125,11 @@ class PropertyRulesRuleRuleRuleRuleRuleCriteriaOptionArgs:
 
     @property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[List[pulumi.Input[str]]]]:
+    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[List[pulumi.Input[str]]]]):
+    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "values", value)
 
 
@@ -1198,17 +1198,17 @@ class PropertyRulesRuleVariableArgs:
 @pulumi.input_type
 class PropertyVariablesVariableArgs:
     def __init__(__self__, *,
-                 variables: Optional[pulumi.Input[List[pulumi.Input['PropertyVariablesVariableVariableArgs']]]] = None):
+                 variables: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyVariablesVariableVariableArgs']]]] = None):
         if variables is not None:
             pulumi.set(__self__, "variables", variables)
 
     @property
     @pulumi.getter
-    def variables(self) -> Optional[pulumi.Input[List[pulumi.Input['PropertyVariablesVariableVariableArgs']]]]:
+    def variables(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyVariablesVariableVariableArgs']]]]:
         return pulumi.get(self, "variables")
 
     @variables.setter
-    def variables(self, value: Optional[pulumi.Input[List[pulumi.Input['PropertyVariablesVariableVariableArgs']]]]):
+    def variables(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyVariablesVariableVariableArgs']]]]):
         pulumi.set(self, "variables", value)
 
 
@@ -1299,15 +1299,15 @@ class PropertyVariablesVariableVariableArgs:
 @pulumi.input_type
 class GetPropertyRulesRuleArgs:
     def __init__(__self__, *,
-                 behaviors: Optional[List['GetPropertyRulesRuleBehaviorArgs']] = None,
+                 behaviors: Optional[Sequence['GetPropertyRulesRuleBehaviorArgs']] = None,
                  criteria_match: Optional[str] = None,
                  is_secure: Optional[bool] = None,
-                 rules: Optional[List['GetPropertyRulesRuleRuleArgs']] = None,
-                 variables: Optional[List['GetPropertyRulesRuleVariableArgs']] = None):
+                 rules: Optional[Sequence['GetPropertyRulesRuleRuleArgs']] = None,
+                 variables: Optional[Sequence['GetPropertyRulesRuleVariableArgs']] = None):
         """
-        :param List['GetPropertyRulesRuleBehaviorArgs'] behaviors: — (Optional) One or more behaviors to apply to requests that match.
+        :param Sequence['GetPropertyRulesRuleBehaviorArgs'] behaviors: — (Optional) One or more behaviors to apply to requests that match.
         :param bool is_secure: — (Optional) Whether the property is a secure (Enhanced TLS) property or not (top-level only).
-        :param List['GetPropertyRulesRuleRuleArgs'] rules: — (Optional) Child rules (may be nested five levels deep).
+        :param Sequence['GetPropertyRulesRuleRuleArgs'] rules: — (Optional) Child rules (may be nested five levels deep).
         """
         if behaviors is not None:
             pulumi.set(__self__, "behaviors", behaviors)
@@ -1322,14 +1322,14 @@ class GetPropertyRulesRuleArgs:
 
     @property
     @pulumi.getter
-    def behaviors(self) -> Optional[List['GetPropertyRulesRuleBehaviorArgs']]:
+    def behaviors(self) -> Optional[Sequence['GetPropertyRulesRuleBehaviorArgs']]:
         """
         — (Optional) One or more behaviors to apply to requests that match.
         """
         return pulumi.get(self, "behaviors")
 
     @behaviors.setter
-    def behaviors(self, value: Optional[List['GetPropertyRulesRuleBehaviorArgs']]):
+    def behaviors(self, value: Optional[Sequence['GetPropertyRulesRuleBehaviorArgs']]):
         pulumi.set(self, "behaviors", value)
 
     @property
@@ -1355,23 +1355,23 @@ class GetPropertyRulesRuleArgs:
 
     @property
     @pulumi.getter
-    def rules(self) -> Optional[List['GetPropertyRulesRuleRuleArgs']]:
+    def rules(self) -> Optional[Sequence['GetPropertyRulesRuleRuleArgs']]:
         """
         — (Optional) Child rules (may be nested five levels deep).
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[List['GetPropertyRulesRuleRuleArgs']]):
+    def rules(self, value: Optional[Sequence['GetPropertyRulesRuleRuleArgs']]):
         pulumi.set(self, "rules", value)
 
     @property
     @pulumi.getter
-    def variables(self) -> Optional[List['GetPropertyRulesRuleVariableArgs']]:
+    def variables(self) -> Optional[Sequence['GetPropertyRulesRuleVariableArgs']]:
         return pulumi.get(self, "variables")
 
     @variables.setter
-    def variables(self, value: Optional[List['GetPropertyRulesRuleVariableArgs']]):
+    def variables(self, value: Optional[Sequence['GetPropertyRulesRuleVariableArgs']]):
         pulumi.set(self, "variables", value)
 
 
@@ -1379,10 +1379,10 @@ class GetPropertyRulesRuleArgs:
 class GetPropertyRulesRuleBehaviorArgs:
     def __init__(__self__, *,
                  name: str,
-                 options: Optional[List['GetPropertyRulesRuleBehaviorOptionArgs']] = None):
+                 options: Optional[Sequence['GetPropertyRulesRuleBehaviorOptionArgs']] = None):
         """
         :param str name: — (Required) The name of the behavior.
-        :param List['GetPropertyRulesRuleBehaviorOptionArgs'] options: — (Optional) One or more options for the behavior.
+        :param Sequence['GetPropertyRulesRuleBehaviorOptionArgs'] options: — (Optional) One or more options for the behavior.
         """
         pulumi.set(__self__, "name", name)
         if options is not None:
@@ -1402,14 +1402,14 @@ class GetPropertyRulesRuleBehaviorArgs:
 
     @property
     @pulumi.getter
-    def options(self) -> Optional[List['GetPropertyRulesRuleBehaviorOptionArgs']]:
+    def options(self) -> Optional[Sequence['GetPropertyRulesRuleBehaviorOptionArgs']]:
         """
         — (Optional) One or more options for the behavior.
         """
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[List['GetPropertyRulesRuleBehaviorOptionArgs']]):
+    def options(self, value: Optional[Sequence['GetPropertyRulesRuleBehaviorOptionArgs']]):
         pulumi.set(self, "options", value)
 
 
@@ -1418,11 +1418,11 @@ class GetPropertyRulesRuleBehaviorOptionArgs:
     def __init__(__self__, *,
                  key: str,
                  value: Optional[str] = None,
-                 values: Optional[List[str]] = None):
+                 values: Optional[Sequence[str]] = None):
         """
         :param str key: — (Required) The option name.
         :param str value: — (Optional) A single value for the option.
-        :param List[str] values: — (Optional) An array of values for the option.
+        :param Sequence[str] values: — (Optional) An array of values for the option.
         """
         pulumi.set(__self__, "key", key)
         if value is not None:
@@ -1456,14 +1456,14 @@ class GetPropertyRulesRuleBehaviorOptionArgs:
 
     @property
     @pulumi.getter
-    def values(self) -> Optional[List[str]]:
+    def values(self) -> Optional[Sequence[str]]:
         """
         — (Optional) An array of values for the option.
         """
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[List[str]]):
+    def values(self, value: Optional[Sequence[str]]):
         pulumi.set(self, "values", value)
 
 
@@ -1471,16 +1471,16 @@ class GetPropertyRulesRuleBehaviorOptionArgs:
 class GetPropertyRulesRuleRuleArgs:
     def __init__(__self__, *,
                  name: str,
-                 behaviors: Optional[List['GetPropertyRulesRuleRuleBehaviorArgs']] = None,
+                 behaviors: Optional[Sequence['GetPropertyRulesRuleRuleBehaviorArgs']] = None,
                  comment: Optional[str] = None,
                  criteria_match: Optional[str] = None,
-                 criterias: Optional[List['GetPropertyRulesRuleRuleCriteriaArgs']] = None,
-                 rules: Optional[List['GetPropertyRulesRuleRuleRuleArgs']] = None):
+                 criterias: Optional[Sequence['GetPropertyRulesRuleRuleCriteriaArgs']] = None,
+                 rules: Optional[Sequence['GetPropertyRulesRuleRuleRuleArgs']] = None):
         """
         :param str name: — (Required) The name of the behavior.
-        :param List['GetPropertyRulesRuleRuleBehaviorArgs'] behaviors: — (Optional) One or more behaviors to apply to requests that match.
-        :param List['GetPropertyRulesRuleRuleCriteriaArgs'] criterias: — (Optional) One or more criteria to match requests on.
-        :param List['GetPropertyRulesRuleRuleRuleArgs'] rules: — (Optional) Child rules (may be nested five levels deep).
+        :param Sequence['GetPropertyRulesRuleRuleBehaviorArgs'] behaviors: — (Optional) One or more behaviors to apply to requests that match.
+        :param Sequence['GetPropertyRulesRuleRuleCriteriaArgs'] criterias: — (Optional) One or more criteria to match requests on.
+        :param Sequence['GetPropertyRulesRuleRuleRuleArgs'] rules: — (Optional) Child rules (may be nested five levels deep).
         """
         pulumi.set(__self__, "name", name)
         if behaviors is not None:
@@ -1508,14 +1508,14 @@ class GetPropertyRulesRuleRuleArgs:
 
     @property
     @pulumi.getter
-    def behaviors(self) -> Optional[List['GetPropertyRulesRuleRuleBehaviorArgs']]:
+    def behaviors(self) -> Optional[Sequence['GetPropertyRulesRuleRuleBehaviorArgs']]:
         """
         — (Optional) One or more behaviors to apply to requests that match.
         """
         return pulumi.get(self, "behaviors")
 
     @behaviors.setter
-    def behaviors(self, value: Optional[List['GetPropertyRulesRuleRuleBehaviorArgs']]):
+    def behaviors(self, value: Optional[Sequence['GetPropertyRulesRuleRuleBehaviorArgs']]):
         pulumi.set(self, "behaviors", value)
 
     @property
@@ -1538,26 +1538,26 @@ class GetPropertyRulesRuleRuleArgs:
 
     @property
     @pulumi.getter
-    def criterias(self) -> Optional[List['GetPropertyRulesRuleRuleCriteriaArgs']]:
+    def criterias(self) -> Optional[Sequence['GetPropertyRulesRuleRuleCriteriaArgs']]:
         """
         — (Optional) One or more criteria to match requests on.
         """
         return pulumi.get(self, "criterias")
 
     @criterias.setter
-    def criterias(self, value: Optional[List['GetPropertyRulesRuleRuleCriteriaArgs']]):
+    def criterias(self, value: Optional[Sequence['GetPropertyRulesRuleRuleCriteriaArgs']]):
         pulumi.set(self, "criterias", value)
 
     @property
     @pulumi.getter
-    def rules(self) -> Optional[List['GetPropertyRulesRuleRuleRuleArgs']]:
+    def rules(self) -> Optional[Sequence['GetPropertyRulesRuleRuleRuleArgs']]:
         """
         — (Optional) Child rules (may be nested five levels deep).
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[List['GetPropertyRulesRuleRuleRuleArgs']]):
+    def rules(self, value: Optional[Sequence['GetPropertyRulesRuleRuleRuleArgs']]):
         pulumi.set(self, "rules", value)
 
 
@@ -1565,10 +1565,10 @@ class GetPropertyRulesRuleRuleArgs:
 class GetPropertyRulesRuleRuleBehaviorArgs:
     def __init__(__self__, *,
                  name: str,
-                 options: Optional[List['GetPropertyRulesRuleRuleBehaviorOptionArgs']] = None):
+                 options: Optional[Sequence['GetPropertyRulesRuleRuleBehaviorOptionArgs']] = None):
         """
         :param str name: — (Required) The name of the behavior.
-        :param List['GetPropertyRulesRuleRuleBehaviorOptionArgs'] options: — (Optional) One or more options for the behavior.
+        :param Sequence['GetPropertyRulesRuleRuleBehaviorOptionArgs'] options: — (Optional) One or more options for the behavior.
         """
         pulumi.set(__self__, "name", name)
         if options is not None:
@@ -1588,14 +1588,14 @@ class GetPropertyRulesRuleRuleBehaviorArgs:
 
     @property
     @pulumi.getter
-    def options(self) -> Optional[List['GetPropertyRulesRuleRuleBehaviorOptionArgs']]:
+    def options(self) -> Optional[Sequence['GetPropertyRulesRuleRuleBehaviorOptionArgs']]:
         """
         — (Optional) One or more options for the behavior.
         """
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[List['GetPropertyRulesRuleRuleBehaviorOptionArgs']]):
+    def options(self, value: Optional[Sequence['GetPropertyRulesRuleRuleBehaviorOptionArgs']]):
         pulumi.set(self, "options", value)
 
 
@@ -1604,11 +1604,11 @@ class GetPropertyRulesRuleRuleBehaviorOptionArgs:
     def __init__(__self__, *,
                  key: str,
                  value: Optional[str] = None,
-                 values: Optional[List[str]] = None):
+                 values: Optional[Sequence[str]] = None):
         """
         :param str key: — (Required) The option name.
         :param str value: — (Optional) A single value for the option.
-        :param List[str] values: — (Optional) An array of values for the option.
+        :param Sequence[str] values: — (Optional) An array of values for the option.
         """
         pulumi.set(__self__, "key", key)
         if value is not None:
@@ -1642,14 +1642,14 @@ class GetPropertyRulesRuleRuleBehaviorOptionArgs:
 
     @property
     @pulumi.getter
-    def values(self) -> Optional[List[str]]:
+    def values(self) -> Optional[Sequence[str]]:
         """
         — (Optional) An array of values for the option.
         """
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[List[str]]):
+    def values(self, value: Optional[Sequence[str]]):
         pulumi.set(self, "values", value)
 
 
@@ -1657,10 +1657,10 @@ class GetPropertyRulesRuleRuleBehaviorOptionArgs:
 class GetPropertyRulesRuleRuleCriteriaArgs:
     def __init__(__self__, *,
                  name: str,
-                 options: Optional[List['GetPropertyRulesRuleRuleCriteriaOptionArgs']] = None):
+                 options: Optional[Sequence['GetPropertyRulesRuleRuleCriteriaOptionArgs']] = None):
         """
         :param str name: — (Required) The name of the behavior.
-        :param List['GetPropertyRulesRuleRuleCriteriaOptionArgs'] options: — (Optional) One or more options for the behavior.
+        :param Sequence['GetPropertyRulesRuleRuleCriteriaOptionArgs'] options: — (Optional) One or more options for the behavior.
         """
         pulumi.set(__self__, "name", name)
         if options is not None:
@@ -1680,14 +1680,14 @@ class GetPropertyRulesRuleRuleCriteriaArgs:
 
     @property
     @pulumi.getter
-    def options(self) -> Optional[List['GetPropertyRulesRuleRuleCriteriaOptionArgs']]:
+    def options(self) -> Optional[Sequence['GetPropertyRulesRuleRuleCriteriaOptionArgs']]:
         """
         — (Optional) One or more options for the behavior.
         """
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[List['GetPropertyRulesRuleRuleCriteriaOptionArgs']]):
+    def options(self, value: Optional[Sequence['GetPropertyRulesRuleRuleCriteriaOptionArgs']]):
         pulumi.set(self, "options", value)
 
 
@@ -1696,11 +1696,11 @@ class GetPropertyRulesRuleRuleCriteriaOptionArgs:
     def __init__(__self__, *,
                  key: str,
                  value: Optional[str] = None,
-                 values: Optional[List[str]] = None):
+                 values: Optional[Sequence[str]] = None):
         """
         :param str key: — (Required) The option name.
         :param str value: — (Optional) A single value for the option.
-        :param List[str] values: — (Optional) An array of values for the option.
+        :param Sequence[str] values: — (Optional) An array of values for the option.
         """
         pulumi.set(__self__, "key", key)
         if value is not None:
@@ -1734,14 +1734,14 @@ class GetPropertyRulesRuleRuleCriteriaOptionArgs:
 
     @property
     @pulumi.getter
-    def values(self) -> Optional[List[str]]:
+    def values(self) -> Optional[Sequence[str]]:
         """
         — (Optional) An array of values for the option.
         """
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[List[str]]):
+    def values(self, value: Optional[Sequence[str]]):
         pulumi.set(self, "values", value)
 
 
@@ -1749,16 +1749,16 @@ class GetPropertyRulesRuleRuleCriteriaOptionArgs:
 class GetPropertyRulesRuleRuleRuleArgs:
     def __init__(__self__, *,
                  name: str,
-                 behaviors: Optional[List['GetPropertyRulesRuleRuleRuleBehaviorArgs']] = None,
+                 behaviors: Optional[Sequence['GetPropertyRulesRuleRuleRuleBehaviorArgs']] = None,
                  comment: Optional[str] = None,
                  criteria_match: Optional[str] = None,
-                 criterias: Optional[List['GetPropertyRulesRuleRuleRuleCriteriaArgs']] = None,
-                 rules: Optional[List['GetPropertyRulesRuleRuleRuleRuleArgs']] = None):
+                 criterias: Optional[Sequence['GetPropertyRulesRuleRuleRuleCriteriaArgs']] = None,
+                 rules: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleArgs']] = None):
         """
         :param str name: — (Required) The name of the behavior.
-        :param List['GetPropertyRulesRuleRuleRuleBehaviorArgs'] behaviors: — (Optional) One or more behaviors to apply to requests that match.
-        :param List['GetPropertyRulesRuleRuleRuleCriteriaArgs'] criterias: — (Optional) One or more criteria to match requests on.
-        :param List['GetPropertyRulesRuleRuleRuleRuleArgs'] rules: — (Optional) Child rules (may be nested five levels deep).
+        :param Sequence['GetPropertyRulesRuleRuleRuleBehaviorArgs'] behaviors: — (Optional) One or more behaviors to apply to requests that match.
+        :param Sequence['GetPropertyRulesRuleRuleRuleCriteriaArgs'] criterias: — (Optional) One or more criteria to match requests on.
+        :param Sequence['GetPropertyRulesRuleRuleRuleRuleArgs'] rules: — (Optional) Child rules (may be nested five levels deep).
         """
         pulumi.set(__self__, "name", name)
         if behaviors is not None:
@@ -1786,14 +1786,14 @@ class GetPropertyRulesRuleRuleRuleArgs:
 
     @property
     @pulumi.getter
-    def behaviors(self) -> Optional[List['GetPropertyRulesRuleRuleRuleBehaviorArgs']]:
+    def behaviors(self) -> Optional[Sequence['GetPropertyRulesRuleRuleRuleBehaviorArgs']]:
         """
         — (Optional) One or more behaviors to apply to requests that match.
         """
         return pulumi.get(self, "behaviors")
 
     @behaviors.setter
-    def behaviors(self, value: Optional[List['GetPropertyRulesRuleRuleRuleBehaviorArgs']]):
+    def behaviors(self, value: Optional[Sequence['GetPropertyRulesRuleRuleRuleBehaviorArgs']]):
         pulumi.set(self, "behaviors", value)
 
     @property
@@ -1816,26 +1816,26 @@ class GetPropertyRulesRuleRuleRuleArgs:
 
     @property
     @pulumi.getter
-    def criterias(self) -> Optional[List['GetPropertyRulesRuleRuleRuleCriteriaArgs']]:
+    def criterias(self) -> Optional[Sequence['GetPropertyRulesRuleRuleRuleCriteriaArgs']]:
         """
         — (Optional) One or more criteria to match requests on.
         """
         return pulumi.get(self, "criterias")
 
     @criterias.setter
-    def criterias(self, value: Optional[List['GetPropertyRulesRuleRuleRuleCriteriaArgs']]):
+    def criterias(self, value: Optional[Sequence['GetPropertyRulesRuleRuleRuleCriteriaArgs']]):
         pulumi.set(self, "criterias", value)
 
     @property
     @pulumi.getter
-    def rules(self) -> Optional[List['GetPropertyRulesRuleRuleRuleRuleArgs']]:
+    def rules(self) -> Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleArgs']]:
         """
         — (Optional) Child rules (may be nested five levels deep).
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[List['GetPropertyRulesRuleRuleRuleRuleArgs']]):
+    def rules(self, value: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleArgs']]):
         pulumi.set(self, "rules", value)
 
 
@@ -1843,10 +1843,10 @@ class GetPropertyRulesRuleRuleRuleArgs:
 class GetPropertyRulesRuleRuleRuleBehaviorArgs:
     def __init__(__self__, *,
                  name: str,
-                 options: Optional[List['GetPropertyRulesRuleRuleRuleBehaviorOptionArgs']] = None):
+                 options: Optional[Sequence['GetPropertyRulesRuleRuleRuleBehaviorOptionArgs']] = None):
         """
         :param str name: — (Required) The name of the behavior.
-        :param List['GetPropertyRulesRuleRuleRuleBehaviorOptionArgs'] options: — (Optional) One or more options for the behavior.
+        :param Sequence['GetPropertyRulesRuleRuleRuleBehaviorOptionArgs'] options: — (Optional) One or more options for the behavior.
         """
         pulumi.set(__self__, "name", name)
         if options is not None:
@@ -1866,14 +1866,14 @@ class GetPropertyRulesRuleRuleRuleBehaviorArgs:
 
     @property
     @pulumi.getter
-    def options(self) -> Optional[List['GetPropertyRulesRuleRuleRuleBehaviorOptionArgs']]:
+    def options(self) -> Optional[Sequence['GetPropertyRulesRuleRuleRuleBehaviorOptionArgs']]:
         """
         — (Optional) One or more options for the behavior.
         """
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[List['GetPropertyRulesRuleRuleRuleBehaviorOptionArgs']]):
+    def options(self, value: Optional[Sequence['GetPropertyRulesRuleRuleRuleBehaviorOptionArgs']]):
         pulumi.set(self, "options", value)
 
 
@@ -1882,11 +1882,11 @@ class GetPropertyRulesRuleRuleRuleBehaviorOptionArgs:
     def __init__(__self__, *,
                  key: str,
                  value: Optional[str] = None,
-                 values: Optional[List[str]] = None):
+                 values: Optional[Sequence[str]] = None):
         """
         :param str key: — (Required) The option name.
         :param str value: — (Optional) A single value for the option.
-        :param List[str] values: — (Optional) An array of values for the option.
+        :param Sequence[str] values: — (Optional) An array of values for the option.
         """
         pulumi.set(__self__, "key", key)
         if value is not None:
@@ -1920,14 +1920,14 @@ class GetPropertyRulesRuleRuleRuleBehaviorOptionArgs:
 
     @property
     @pulumi.getter
-    def values(self) -> Optional[List[str]]:
+    def values(self) -> Optional[Sequence[str]]:
         """
         — (Optional) An array of values for the option.
         """
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[List[str]]):
+    def values(self, value: Optional[Sequence[str]]):
         pulumi.set(self, "values", value)
 
 
@@ -1935,10 +1935,10 @@ class GetPropertyRulesRuleRuleRuleBehaviorOptionArgs:
 class GetPropertyRulesRuleRuleRuleCriteriaArgs:
     def __init__(__self__, *,
                  name: str,
-                 options: Optional[List['GetPropertyRulesRuleRuleRuleCriteriaOptionArgs']] = None):
+                 options: Optional[Sequence['GetPropertyRulesRuleRuleRuleCriteriaOptionArgs']] = None):
         """
         :param str name: — (Required) The name of the behavior.
-        :param List['GetPropertyRulesRuleRuleRuleCriteriaOptionArgs'] options: — (Optional) One or more options for the behavior.
+        :param Sequence['GetPropertyRulesRuleRuleRuleCriteriaOptionArgs'] options: — (Optional) One or more options for the behavior.
         """
         pulumi.set(__self__, "name", name)
         if options is not None:
@@ -1958,14 +1958,14 @@ class GetPropertyRulesRuleRuleRuleCriteriaArgs:
 
     @property
     @pulumi.getter
-    def options(self) -> Optional[List['GetPropertyRulesRuleRuleRuleCriteriaOptionArgs']]:
+    def options(self) -> Optional[Sequence['GetPropertyRulesRuleRuleRuleCriteriaOptionArgs']]:
         """
         — (Optional) One or more options for the behavior.
         """
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[List['GetPropertyRulesRuleRuleRuleCriteriaOptionArgs']]):
+    def options(self, value: Optional[Sequence['GetPropertyRulesRuleRuleRuleCriteriaOptionArgs']]):
         pulumi.set(self, "options", value)
 
 
@@ -1974,11 +1974,11 @@ class GetPropertyRulesRuleRuleRuleCriteriaOptionArgs:
     def __init__(__self__, *,
                  key: str,
                  value: Optional[str] = None,
-                 values: Optional[List[str]] = None):
+                 values: Optional[Sequence[str]] = None):
         """
         :param str key: — (Required) The option name.
         :param str value: — (Optional) A single value for the option.
-        :param List[str] values: — (Optional) An array of values for the option.
+        :param Sequence[str] values: — (Optional) An array of values for the option.
         """
         pulumi.set(__self__, "key", key)
         if value is not None:
@@ -2012,14 +2012,14 @@ class GetPropertyRulesRuleRuleRuleCriteriaOptionArgs:
 
     @property
     @pulumi.getter
-    def values(self) -> Optional[List[str]]:
+    def values(self) -> Optional[Sequence[str]]:
         """
         — (Optional) An array of values for the option.
         """
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[List[str]]):
+    def values(self, value: Optional[Sequence[str]]):
         pulumi.set(self, "values", value)
 
 
@@ -2027,16 +2027,16 @@ class GetPropertyRulesRuleRuleRuleCriteriaOptionArgs:
 class GetPropertyRulesRuleRuleRuleRuleArgs:
     def __init__(__self__, *,
                  name: str,
-                 behaviors: Optional[List['GetPropertyRulesRuleRuleRuleRuleBehaviorArgs']] = None,
+                 behaviors: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleBehaviorArgs']] = None,
                  comment: Optional[str] = None,
                  criteria_match: Optional[str] = None,
-                 criterias: Optional[List['GetPropertyRulesRuleRuleRuleRuleCriteriaArgs']] = None,
-                 rules: Optional[List['GetPropertyRulesRuleRuleRuleRuleRuleArgs']] = None):
+                 criterias: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleCriteriaArgs']] = None,
+                 rules: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleRuleArgs']] = None):
         """
         :param str name: — (Required) The name of the behavior.
-        :param List['GetPropertyRulesRuleRuleRuleRuleBehaviorArgs'] behaviors: — (Optional) One or more behaviors to apply to requests that match.
-        :param List['GetPropertyRulesRuleRuleRuleRuleCriteriaArgs'] criterias: — (Optional) One or more criteria to match requests on.
-        :param List['GetPropertyRulesRuleRuleRuleRuleRuleArgs'] rules: — (Optional) Child rules (may be nested five levels deep).
+        :param Sequence['GetPropertyRulesRuleRuleRuleRuleBehaviorArgs'] behaviors: — (Optional) One or more behaviors to apply to requests that match.
+        :param Sequence['GetPropertyRulesRuleRuleRuleRuleCriteriaArgs'] criterias: — (Optional) One or more criteria to match requests on.
+        :param Sequence['GetPropertyRulesRuleRuleRuleRuleRuleArgs'] rules: — (Optional) Child rules (may be nested five levels deep).
         """
         pulumi.set(__self__, "name", name)
         if behaviors is not None:
@@ -2064,14 +2064,14 @@ class GetPropertyRulesRuleRuleRuleRuleArgs:
 
     @property
     @pulumi.getter
-    def behaviors(self) -> Optional[List['GetPropertyRulesRuleRuleRuleRuleBehaviorArgs']]:
+    def behaviors(self) -> Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleBehaviorArgs']]:
         """
         — (Optional) One or more behaviors to apply to requests that match.
         """
         return pulumi.get(self, "behaviors")
 
     @behaviors.setter
-    def behaviors(self, value: Optional[List['GetPropertyRulesRuleRuleRuleRuleBehaviorArgs']]):
+    def behaviors(self, value: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleBehaviorArgs']]):
         pulumi.set(self, "behaviors", value)
 
     @property
@@ -2094,26 +2094,26 @@ class GetPropertyRulesRuleRuleRuleRuleArgs:
 
     @property
     @pulumi.getter
-    def criterias(self) -> Optional[List['GetPropertyRulesRuleRuleRuleRuleCriteriaArgs']]:
+    def criterias(self) -> Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleCriteriaArgs']]:
         """
         — (Optional) One or more criteria to match requests on.
         """
         return pulumi.get(self, "criterias")
 
     @criterias.setter
-    def criterias(self, value: Optional[List['GetPropertyRulesRuleRuleRuleRuleCriteriaArgs']]):
+    def criterias(self, value: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleCriteriaArgs']]):
         pulumi.set(self, "criterias", value)
 
     @property
     @pulumi.getter
-    def rules(self) -> Optional[List['GetPropertyRulesRuleRuleRuleRuleRuleArgs']]:
+    def rules(self) -> Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleRuleArgs']]:
         """
         — (Optional) Child rules (may be nested five levels deep).
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[List['GetPropertyRulesRuleRuleRuleRuleRuleArgs']]):
+    def rules(self, value: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleRuleArgs']]):
         pulumi.set(self, "rules", value)
 
 
@@ -2121,10 +2121,10 @@ class GetPropertyRulesRuleRuleRuleRuleArgs:
 class GetPropertyRulesRuleRuleRuleRuleBehaviorArgs:
     def __init__(__self__, *,
                  name: str,
-                 options: Optional[List['GetPropertyRulesRuleRuleRuleRuleBehaviorOptionArgs']] = None):
+                 options: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleBehaviorOptionArgs']] = None):
         """
         :param str name: — (Required) The name of the behavior.
-        :param List['GetPropertyRulesRuleRuleRuleRuleBehaviorOptionArgs'] options: — (Optional) One or more options for the behavior.
+        :param Sequence['GetPropertyRulesRuleRuleRuleRuleBehaviorOptionArgs'] options: — (Optional) One or more options for the behavior.
         """
         pulumi.set(__self__, "name", name)
         if options is not None:
@@ -2144,14 +2144,14 @@ class GetPropertyRulesRuleRuleRuleRuleBehaviorArgs:
 
     @property
     @pulumi.getter
-    def options(self) -> Optional[List['GetPropertyRulesRuleRuleRuleRuleBehaviorOptionArgs']]:
+    def options(self) -> Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleBehaviorOptionArgs']]:
         """
         — (Optional) One or more options for the behavior.
         """
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[List['GetPropertyRulesRuleRuleRuleRuleBehaviorOptionArgs']]):
+    def options(self, value: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleBehaviorOptionArgs']]):
         pulumi.set(self, "options", value)
 
 
@@ -2160,11 +2160,11 @@ class GetPropertyRulesRuleRuleRuleRuleBehaviorOptionArgs:
     def __init__(__self__, *,
                  key: str,
                  value: Optional[str] = None,
-                 values: Optional[List[str]] = None):
+                 values: Optional[Sequence[str]] = None):
         """
         :param str key: — (Required) The option name.
         :param str value: — (Optional) A single value for the option.
-        :param List[str] values: — (Optional) An array of values for the option.
+        :param Sequence[str] values: — (Optional) An array of values for the option.
         """
         pulumi.set(__self__, "key", key)
         if value is not None:
@@ -2198,14 +2198,14 @@ class GetPropertyRulesRuleRuleRuleRuleBehaviorOptionArgs:
 
     @property
     @pulumi.getter
-    def values(self) -> Optional[List[str]]:
+    def values(self) -> Optional[Sequence[str]]:
         """
         — (Optional) An array of values for the option.
         """
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[List[str]]):
+    def values(self, value: Optional[Sequence[str]]):
         pulumi.set(self, "values", value)
 
 
@@ -2213,10 +2213,10 @@ class GetPropertyRulesRuleRuleRuleRuleBehaviorOptionArgs:
 class GetPropertyRulesRuleRuleRuleRuleCriteriaArgs:
     def __init__(__self__, *,
                  name: str,
-                 options: Optional[List['GetPropertyRulesRuleRuleRuleRuleCriteriaOptionArgs']] = None):
+                 options: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleCriteriaOptionArgs']] = None):
         """
         :param str name: — (Required) The name of the behavior.
-        :param List['GetPropertyRulesRuleRuleRuleRuleCriteriaOptionArgs'] options: — (Optional) One or more options for the behavior.
+        :param Sequence['GetPropertyRulesRuleRuleRuleRuleCriteriaOptionArgs'] options: — (Optional) One or more options for the behavior.
         """
         pulumi.set(__self__, "name", name)
         if options is not None:
@@ -2236,14 +2236,14 @@ class GetPropertyRulesRuleRuleRuleRuleCriteriaArgs:
 
     @property
     @pulumi.getter
-    def options(self) -> Optional[List['GetPropertyRulesRuleRuleRuleRuleCriteriaOptionArgs']]:
+    def options(self) -> Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleCriteriaOptionArgs']]:
         """
         — (Optional) One or more options for the behavior.
         """
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[List['GetPropertyRulesRuleRuleRuleRuleCriteriaOptionArgs']]):
+    def options(self, value: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleCriteriaOptionArgs']]):
         pulumi.set(self, "options", value)
 
 
@@ -2252,11 +2252,11 @@ class GetPropertyRulesRuleRuleRuleRuleCriteriaOptionArgs:
     def __init__(__self__, *,
                  key: str,
                  value: Optional[str] = None,
-                 values: Optional[List[str]] = None):
+                 values: Optional[Sequence[str]] = None):
         """
         :param str key: — (Required) The option name.
         :param str value: — (Optional) A single value for the option.
-        :param List[str] values: — (Optional) An array of values for the option.
+        :param Sequence[str] values: — (Optional) An array of values for the option.
         """
         pulumi.set(__self__, "key", key)
         if value is not None:
@@ -2290,14 +2290,14 @@ class GetPropertyRulesRuleRuleRuleRuleCriteriaOptionArgs:
 
     @property
     @pulumi.getter
-    def values(self) -> Optional[List[str]]:
+    def values(self) -> Optional[Sequence[str]]:
         """
         — (Optional) An array of values for the option.
         """
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[List[str]]):
+    def values(self, value: Optional[Sequence[str]]):
         pulumi.set(self, "values", value)
 
 
@@ -2305,14 +2305,14 @@ class GetPropertyRulesRuleRuleRuleRuleCriteriaOptionArgs:
 class GetPropertyRulesRuleRuleRuleRuleRuleArgs:
     def __init__(__self__, *,
                  name: str,
-                 behaviors: Optional[List['GetPropertyRulesRuleRuleRuleRuleRuleBehaviorArgs']] = None,
+                 behaviors: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleRuleBehaviorArgs']] = None,
                  comment: Optional[str] = None,
                  criteria_match: Optional[str] = None,
-                 criterias: Optional[List['GetPropertyRulesRuleRuleRuleRuleRuleCriteriaArgs']] = None):
+                 criterias: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleRuleCriteriaArgs']] = None):
         """
         :param str name: — (Required) The name of the behavior.
-        :param List['GetPropertyRulesRuleRuleRuleRuleRuleBehaviorArgs'] behaviors: — (Optional) One or more behaviors to apply to requests that match.
-        :param List['GetPropertyRulesRuleRuleRuleRuleRuleCriteriaArgs'] criterias: — (Optional) One or more criteria to match requests on.
+        :param Sequence['GetPropertyRulesRuleRuleRuleRuleRuleBehaviorArgs'] behaviors: — (Optional) One or more behaviors to apply to requests that match.
+        :param Sequence['GetPropertyRulesRuleRuleRuleRuleRuleCriteriaArgs'] criterias: — (Optional) One or more criteria to match requests on.
         """
         pulumi.set(__self__, "name", name)
         if behaviors is not None:
@@ -2338,14 +2338,14 @@ class GetPropertyRulesRuleRuleRuleRuleRuleArgs:
 
     @property
     @pulumi.getter
-    def behaviors(self) -> Optional[List['GetPropertyRulesRuleRuleRuleRuleRuleBehaviorArgs']]:
+    def behaviors(self) -> Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleRuleBehaviorArgs']]:
         """
         — (Optional) One or more behaviors to apply to requests that match.
         """
         return pulumi.get(self, "behaviors")
 
     @behaviors.setter
-    def behaviors(self, value: Optional[List['GetPropertyRulesRuleRuleRuleRuleRuleBehaviorArgs']]):
+    def behaviors(self, value: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleRuleBehaviorArgs']]):
         pulumi.set(self, "behaviors", value)
 
     @property
@@ -2368,14 +2368,14 @@ class GetPropertyRulesRuleRuleRuleRuleRuleArgs:
 
     @property
     @pulumi.getter
-    def criterias(self) -> Optional[List['GetPropertyRulesRuleRuleRuleRuleRuleCriteriaArgs']]:
+    def criterias(self) -> Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleRuleCriteriaArgs']]:
         """
         — (Optional) One or more criteria to match requests on.
         """
         return pulumi.get(self, "criterias")
 
     @criterias.setter
-    def criterias(self, value: Optional[List['GetPropertyRulesRuleRuleRuleRuleRuleCriteriaArgs']]):
+    def criterias(self, value: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleRuleCriteriaArgs']]):
         pulumi.set(self, "criterias", value)
 
 
@@ -2383,10 +2383,10 @@ class GetPropertyRulesRuleRuleRuleRuleRuleArgs:
 class GetPropertyRulesRuleRuleRuleRuleRuleBehaviorArgs:
     def __init__(__self__, *,
                  name: str,
-                 options: Optional[List['GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs']] = None):
+                 options: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs']] = None):
         """
         :param str name: — (Required) The name of the behavior.
-        :param List['GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs'] options: — (Optional) One or more options for the behavior.
+        :param Sequence['GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs'] options: — (Optional) One or more options for the behavior.
         """
         pulumi.set(__self__, "name", name)
         if options is not None:
@@ -2406,14 +2406,14 @@ class GetPropertyRulesRuleRuleRuleRuleRuleBehaviorArgs:
 
     @property
     @pulumi.getter
-    def options(self) -> Optional[List['GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs']]:
+    def options(self) -> Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs']]:
         """
         — (Optional) One or more options for the behavior.
         """
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[List['GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs']]):
+    def options(self, value: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs']]):
         pulumi.set(self, "options", value)
 
 
@@ -2422,11 +2422,11 @@ class GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs:
     def __init__(__self__, *,
                  key: str,
                  value: Optional[str] = None,
-                 values: Optional[List[str]] = None):
+                 values: Optional[Sequence[str]] = None):
         """
         :param str key: — (Required) The option name.
         :param str value: — (Optional) A single value for the option.
-        :param List[str] values: — (Optional) An array of values for the option.
+        :param Sequence[str] values: — (Optional) An array of values for the option.
         """
         pulumi.set(__self__, "key", key)
         if value is not None:
@@ -2460,14 +2460,14 @@ class GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs:
 
     @property
     @pulumi.getter
-    def values(self) -> Optional[List[str]]:
+    def values(self) -> Optional[Sequence[str]]:
         """
         — (Optional) An array of values for the option.
         """
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[List[str]]):
+    def values(self, value: Optional[Sequence[str]]):
         pulumi.set(self, "values", value)
 
 
@@ -2475,10 +2475,10 @@ class GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOptionArgs:
 class GetPropertyRulesRuleRuleRuleRuleRuleCriteriaArgs:
     def __init__(__self__, *,
                  name: str,
-                 options: Optional[List['GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOptionArgs']] = None):
+                 options: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOptionArgs']] = None):
         """
         :param str name: — (Required) The name of the behavior.
-        :param List['GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOptionArgs'] options: — (Optional) One or more options for the behavior.
+        :param Sequence['GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOptionArgs'] options: — (Optional) One or more options for the behavior.
         """
         pulumi.set(__self__, "name", name)
         if options is not None:
@@ -2498,14 +2498,14 @@ class GetPropertyRulesRuleRuleRuleRuleRuleCriteriaArgs:
 
     @property
     @pulumi.getter
-    def options(self) -> Optional[List['GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOptionArgs']]:
+    def options(self) -> Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOptionArgs']]:
         """
         — (Optional) One or more options for the behavior.
         """
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[List['GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOptionArgs']]):
+    def options(self, value: Optional[Sequence['GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOptionArgs']]):
         pulumi.set(self, "options", value)
 
 
@@ -2514,11 +2514,11 @@ class GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOptionArgs:
     def __init__(__self__, *,
                  key: str,
                  value: Optional[str] = None,
-                 values: Optional[List[str]] = None):
+                 values: Optional[Sequence[str]] = None):
         """
         :param str key: — (Required) The option name.
         :param str value: — (Optional) A single value for the option.
-        :param List[str] values: — (Optional) An array of values for the option.
+        :param Sequence[str] values: — (Optional) An array of values for the option.
         """
         pulumi.set(__self__, "key", key)
         if value is not None:
@@ -2552,14 +2552,14 @@ class GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOptionArgs:
 
     @property
     @pulumi.getter
-    def values(self) -> Optional[List[str]]:
+    def values(self) -> Optional[Sequence[str]]:
         """
         — (Optional) An array of values for the option.
         """
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[List[str]]):
+    def values(self, value: Optional[Sequence[str]]):
         pulumi.set(self, "values", value)
 
 

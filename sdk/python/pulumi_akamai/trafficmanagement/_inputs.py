@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
 
 __all__ = [
@@ -26,11 +26,11 @@ __all__ = [
 @pulumi.input_type
 class GtmASmapAssignmentArgs:
     def __init__(__self__, *,
-                 as_numbers: pulumi.Input[List[pulumi.Input[float]]],
-                 datacenter_id: pulumi.Input[float],
+                 as_numbers: pulumi.Input[Sequence[pulumi.Input[int]]],
+                 datacenter_id: pulumi.Input[int],
                  nickname: pulumi.Input[str]):
         """
-        :param pulumi.Input[List[pulumi.Input[float]]] as_numbers: — (List)
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] as_numbers: — (List)
         """
         pulumi.set(__self__, "as_numbers", as_numbers)
         pulumi.set(__self__, "datacenter_id", datacenter_id)
@@ -38,23 +38,23 @@ class GtmASmapAssignmentArgs:
 
     @property
     @pulumi.getter(name="asNumbers")
-    def as_numbers(self) -> pulumi.Input[List[pulumi.Input[float]]]:
+    def as_numbers(self) -> pulumi.Input[Sequence[pulumi.Input[int]]]:
         """
         — (List)
         """
         return pulumi.get(self, "as_numbers")
 
     @as_numbers.setter
-    def as_numbers(self, value: pulumi.Input[List[pulumi.Input[float]]]):
+    def as_numbers(self, value: pulumi.Input[Sequence[pulumi.Input[int]]]):
         pulumi.set(self, "as_numbers", value)
 
     @property
     @pulumi.getter(name="datacenterId")
-    def datacenter_id(self) -> pulumi.Input[float]:
+    def datacenter_id(self) -> pulumi.Input[int]:
         return pulumi.get(self, "datacenter_id")
 
     @datacenter_id.setter
-    def datacenter_id(self, value: pulumi.Input[float]):
+    def datacenter_id(self, value: pulumi.Input[int]):
         pulumi.set(self, "datacenter_id", value)
 
     @property
@@ -70,7 +70,7 @@ class GtmASmapAssignmentArgs:
 @pulumi.input_type
 class GtmASmapDefaultDatacenterArgs:
     def __init__(__self__, *,
-                 datacenter_id: pulumi.Input[float],
+                 datacenter_id: pulumi.Input[int],
                  nickname: Optional[pulumi.Input[str]] = None):
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         if nickname is not None:
@@ -78,11 +78,11 @@ class GtmASmapDefaultDatacenterArgs:
 
     @property
     @pulumi.getter(name="datacenterId")
-    def datacenter_id(self) -> pulumi.Input[float]:
+    def datacenter_id(self) -> pulumi.Input[int]:
         return pulumi.get(self, "datacenter_id")
 
     @datacenter_id.setter
-    def datacenter_id(self, value: pulumi.Input[float]):
+    def datacenter_id(self, value: pulumi.Input[int]):
         pulumi.set(self, "datacenter_id", value)
 
     @property
@@ -98,11 +98,11 @@ class GtmASmapDefaultDatacenterArgs:
 @pulumi.input_type
 class GtmCidrmapAssignmentArgs:
     def __init__(__self__, *,
-                 datacenter_id: pulumi.Input[float],
+                 datacenter_id: pulumi.Input[int],
                  nickname: pulumi.Input[str],
-                 blocks: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None):
+                 blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
-        :param pulumi.Input[List[pulumi.Input[str]]] blocks: — (List)
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] blocks: — (List)
         """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         pulumi.set(__self__, "nickname", nickname)
@@ -111,11 +111,11 @@ class GtmCidrmapAssignmentArgs:
 
     @property
     @pulumi.getter(name="datacenterId")
-    def datacenter_id(self) -> pulumi.Input[float]:
+    def datacenter_id(self) -> pulumi.Input[int]:
         return pulumi.get(self, "datacenter_id")
 
     @datacenter_id.setter
-    def datacenter_id(self, value: pulumi.Input[float]):
+    def datacenter_id(self, value: pulumi.Input[int]):
         pulumi.set(self, "datacenter_id", value)
 
     @property
@@ -129,21 +129,21 @@ class GtmCidrmapAssignmentArgs:
 
     @property
     @pulumi.getter
-    def blocks(self) -> Optional[pulumi.Input[List[pulumi.Input[str]]]]:
+    def blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         — (List)
         """
         return pulumi.get(self, "blocks")
 
     @blocks.setter
-    def blocks(self, value: Optional[pulumi.Input[List[pulumi.Input[str]]]]):
+    def blocks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "blocks", value)
 
 
 @pulumi.input_type
 class GtmCidrmapDefaultDatacenterArgs:
     def __init__(__self__, *,
-                 datacenter_id: pulumi.Input[float],
+                 datacenter_id: pulumi.Input[int],
                  nickname: Optional[pulumi.Input[str]] = None):
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         if nickname is not None:
@@ -151,11 +151,11 @@ class GtmCidrmapDefaultDatacenterArgs:
 
     @property
     @pulumi.getter(name="datacenterId")
-    def datacenter_id(self) -> pulumi.Input[float]:
+    def datacenter_id(self) -> pulumi.Input[int]:
         return pulumi.get(self, "datacenter_id")
 
     @datacenter_id.setter
-    def datacenter_id(self, value: pulumi.Input[float]):
+    def datacenter_id(self, value: pulumi.Input[int]):
         pulumi.set(self, "datacenter_id", value)
 
     @property
@@ -172,10 +172,10 @@ class GtmCidrmapDefaultDatacenterArgs:
 class GtmDatacenterDefaultLoadObjectArgs:
     def __init__(__self__, *,
                  load_object: Optional[pulumi.Input[str]] = None,
-                 load_object_port: Optional[pulumi.Input[float]] = None,
-                 load_servers: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None):
+                 load_object_port: Optional[pulumi.Input[int]] = None,
+                 load_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
-        :param pulumi.Input[List[pulumi.Input[str]]] load_servers: — (List)
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] load_servers: — (List)
                * `city`
                * `clone_of`
         """
@@ -197,16 +197,16 @@ class GtmDatacenterDefaultLoadObjectArgs:
 
     @property
     @pulumi.getter(name="loadObjectPort")
-    def load_object_port(self) -> Optional[pulumi.Input[float]]:
+    def load_object_port(self) -> Optional[pulumi.Input[int]]:
         return pulumi.get(self, "load_object_port")
 
     @load_object_port.setter
-    def load_object_port(self, value: Optional[pulumi.Input[float]]):
+    def load_object_port(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "load_object_port", value)
 
     @property
     @pulumi.getter(name="loadServers")
-    def load_servers(self) -> Optional[pulumi.Input[List[pulumi.Input[str]]]]:
+    def load_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         — (List)
         * `city`
@@ -215,18 +215,18 @@ class GtmDatacenterDefaultLoadObjectArgs:
         return pulumi.get(self, "load_servers")
 
     @load_servers.setter
-    def load_servers(self, value: Optional[pulumi.Input[List[pulumi.Input[str]]]]):
+    def load_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "load_servers", value)
 
 
 @pulumi.input_type
 class GtmGeomapAssignmentArgs:
     def __init__(__self__, *,
-                 datacenter_id: pulumi.Input[float],
+                 datacenter_id: pulumi.Input[int],
                  nickname: pulumi.Input[str],
-                 countries: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None):
+                 countries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
-        :param pulumi.Input[List[pulumi.Input[str]]] countries: — (List)
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] countries: — (List)
         """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         pulumi.set(__self__, "nickname", nickname)
@@ -235,11 +235,11 @@ class GtmGeomapAssignmentArgs:
 
     @property
     @pulumi.getter(name="datacenterId")
-    def datacenter_id(self) -> pulumi.Input[float]:
+    def datacenter_id(self) -> pulumi.Input[int]:
         return pulumi.get(self, "datacenter_id")
 
     @datacenter_id.setter
-    def datacenter_id(self, value: pulumi.Input[float]):
+    def datacenter_id(self, value: pulumi.Input[int]):
         pulumi.set(self, "datacenter_id", value)
 
     @property
@@ -253,21 +253,21 @@ class GtmGeomapAssignmentArgs:
 
     @property
     @pulumi.getter
-    def countries(self) -> Optional[pulumi.Input[List[pulumi.Input[str]]]]:
+    def countries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         — (List)
         """
         return pulumi.get(self, "countries")
 
     @countries.setter
-    def countries(self, value: Optional[pulumi.Input[List[pulumi.Input[str]]]]):
+    def countries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "countries", value)
 
 
 @pulumi.input_type
 class GtmGeomapDefaultDatacenterArgs:
     def __init__(__self__, *,
-                 datacenter_id: pulumi.Input[float],
+                 datacenter_id: pulumi.Input[int],
                  nickname: Optional[pulumi.Input[str]] = None):
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         if nickname is not None:
@@ -275,11 +275,11 @@ class GtmGeomapDefaultDatacenterArgs:
 
     @property
     @pulumi.getter(name="datacenterId")
-    def datacenter_id(self) -> pulumi.Input[float]:
+    def datacenter_id(self) -> pulumi.Input[int]:
         return pulumi.get(self, "datacenter_id")
 
     @datacenter_id.setter
-    def datacenter_id(self, value: pulumi.Input[float]):
+    def datacenter_id(self, value: pulumi.Input[int]):
         pulumi.set(self, "datacenter_id", value)
 
     @property
@@ -296,7 +296,7 @@ class GtmGeomapDefaultDatacenterArgs:
 class GtmPropertyLivenessTestArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
-                 test_interval: pulumi.Input[float],
+                 test_interval: pulumi.Input[int],
                  test_object: pulumi.Input[str],
                  test_object_protocol: pulumi.Input[str],
                  test_timeout: pulumi.Input[float],
@@ -307,7 +307,7 @@ class GtmPropertyLivenessTestArgs:
                  http_error3xx: Optional[pulumi.Input[bool]] = None,
                  http_error4xx: Optional[pulumi.Input[bool]] = None,
                  http_error5xx: Optional[pulumi.Input[bool]] = None,
-                 http_headers: Optional[pulumi.Input[List[pulumi.Input['GtmPropertyLivenessTestHttpHeaderArgs']]]] = None,
+                 http_headers: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestHttpHeaderArgs']]]] = None,
                  peer_certificate_verification: Optional[pulumi.Input[bool]] = None,
                  recursion_requested: Optional[pulumi.Input[bool]] = None,
                  request_string: Optional[pulumi.Input[str]] = None,
@@ -316,7 +316,7 @@ class GtmPropertyLivenessTestArgs:
                  ssl_client_certificate: Optional[pulumi.Input[str]] = None,
                  ssl_client_private_key: Optional[pulumi.Input[str]] = None,
                  test_object_password: Optional[pulumi.Input[str]] = None,
-                 test_object_port: Optional[pulumi.Input[float]] = None,
+                 test_object_port: Optional[pulumi.Input[int]] = None,
                  test_object_username: Optional[pulumi.Input[str]] = None,
                  timeout_penalty: Optional[pulumi.Input[float]] = None):
         """
@@ -331,7 +331,7 @@ class GtmPropertyLivenessTestArgs:
         :param pulumi.Input[bool] http_error3xx: — (Boolean)
         :param pulumi.Input[bool] http_error4xx: — (Boolean)
         :param pulumi.Input[bool] http_error5xx: — (Boolean)
-        :param pulumi.Input[List[pulumi.Input['GtmPropertyLivenessTestHttpHeaderArgs']]] http_headers: — (multiple allowed)
+        :param pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestHttpHeaderArgs']]] http_headers: — (multiple allowed)
                `name`
                `value`
         :param pulumi.Input[bool] peer_certificate_verification: — (Boolean)
@@ -408,11 +408,11 @@ class GtmPropertyLivenessTestArgs:
 
     @property
     @pulumi.getter(name="testInterval")
-    def test_interval(self) -> pulumi.Input[float]:
+    def test_interval(self) -> pulumi.Input[int]:
         return pulumi.get(self, "test_interval")
 
     @test_interval.setter
-    def test_interval(self, value: pulumi.Input[float]):
+    def test_interval(self, value: pulumi.Input[int]):
         pulumi.set(self, "test_interval", value)
 
     @property
@@ -526,7 +526,7 @@ class GtmPropertyLivenessTestArgs:
 
     @property
     @pulumi.getter(name="httpHeaders")
-    def http_headers(self) -> Optional[pulumi.Input[List[pulumi.Input['GtmPropertyLivenessTestHttpHeaderArgs']]]]:
+    def http_headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestHttpHeaderArgs']]]]:
         """
         — (multiple allowed)
         `name`
@@ -535,7 +535,7 @@ class GtmPropertyLivenessTestArgs:
         return pulumi.get(self, "http_headers")
 
     @http_headers.setter
-    def http_headers(self, value: Optional[pulumi.Input[List[pulumi.Input['GtmPropertyLivenessTestHttpHeaderArgs']]]]):
+    def http_headers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestHttpHeaderArgs']]]]):
         pulumi.set(self, "http_headers", value)
 
     @property
@@ -628,11 +628,11 @@ class GtmPropertyLivenessTestArgs:
 
     @property
     @pulumi.getter(name="testObjectPort")
-    def test_object_port(self) -> Optional[pulumi.Input[float]]:
+    def test_object_port(self) -> Optional[pulumi.Input[int]]:
         return pulumi.get(self, "test_object_port")
 
     @test_object_port.setter
-    def test_object_port(self, value: Optional[pulumi.Input[float]]):
+    def test_object_port(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "test_object_port", value)
 
     @property
@@ -698,11 +698,11 @@ class GtmPropertyLivenessTestHttpHeaderArgs:
 @pulumi.input_type
 class GtmPropertyStaticRrSetArgs:
     def __init__(__self__, *,
-                 rdatas: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
-                 ttl: Optional[pulumi.Input[float]] = None,
+                 rdatas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 ttl: Optional[pulumi.Input[int]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[List[pulumi.Input[str]]] rdatas: — (List)
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] rdatas: — (List)
         :param pulumi.Input[str] type: — Property type  
                * `score_aggregation_type`
         """
@@ -715,23 +715,23 @@ class GtmPropertyStaticRrSetArgs:
 
     @property
     @pulumi.getter
-    def rdatas(self) -> Optional[pulumi.Input[List[pulumi.Input[str]]]]:
+    def rdatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         — (List)
         """
         return pulumi.get(self, "rdatas")
 
     @rdatas.setter
-    def rdatas(self, value: Optional[pulumi.Input[List[pulumi.Input[str]]]]):
+    def rdatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "rdatas", value)
 
     @property
     @pulumi.getter
-    def ttl(self) -> Optional[pulumi.Input[float]]:
+    def ttl(self) -> Optional[pulumi.Input[int]]:
         return pulumi.get(self, "ttl")
 
     @ttl.setter
-    def ttl(self, value: Optional[pulumi.Input[float]]):
+    def ttl(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "ttl", value)
 
     @property
@@ -751,11 +751,11 @@ class GtmPropertyStaticRrSetArgs:
 @pulumi.input_type
 class GtmPropertyTrafficTargetArgs:
     def __init__(__self__, *,
-                 datacenter_id: Optional[pulumi.Input[float]] = None,
+                 datacenter_id: Optional[pulumi.Input[int]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  handout_cname: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 servers: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  weight: Optional[pulumi.Input[float]] = None):
         """
         :param pulumi.Input[bool] enabled: — (Boolean)
@@ -764,7 +764,7 @@ class GtmPropertyTrafficTargetArgs:
                * `test_interval`
                * `test_object_protocol`
                * `test_timeout`
-        :param pulumi.Input[List[pulumi.Input[str]]] servers: — (List)
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] servers: — (List)
         """
         if datacenter_id is not None:
             pulumi.set(__self__, "datacenter_id", datacenter_id)
@@ -781,11 +781,11 @@ class GtmPropertyTrafficTargetArgs:
 
     @property
     @pulumi.getter(name="datacenterId")
-    def datacenter_id(self) -> Optional[pulumi.Input[float]]:
+    def datacenter_id(self) -> Optional[pulumi.Input[int]]:
         return pulumi.get(self, "datacenter_id")
 
     @datacenter_id.setter
-    def datacenter_id(self, value: Optional[pulumi.Input[float]]):
+    def datacenter_id(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "datacenter_id", value)
 
     @property
@@ -827,14 +827,14 @@ class GtmPropertyTrafficTargetArgs:
 
     @property
     @pulumi.getter
-    def servers(self) -> Optional[pulumi.Input[List[pulumi.Input[str]]]]:
+    def servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         — (List)
         """
         return pulumi.get(self, "servers")
 
     @servers.setter
-    def servers(self, value: Optional[pulumi.Input[List[pulumi.Input[str]]]]):
+    def servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "servers", value)
 
     @property
@@ -850,13 +850,13 @@ class GtmPropertyTrafficTargetArgs:
 @pulumi.input_type
 class GtmResourceResourceInstanceArgs:
     def __init__(__self__, *,
-                 datacenter_id: pulumi.Input[float],
+                 datacenter_id: pulumi.Input[int],
                  load_object: Optional[pulumi.Input[str]] = None,
-                 load_object_port: Optional[pulumi.Input[float]] = None,
-                 load_servers: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 load_object_port: Optional[pulumi.Input[int]] = None,
+                 load_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  use_default_load_object: Optional[pulumi.Input[bool]] = None):
         """
-        :param pulumi.Input[List[pulumi.Input[str]]] load_servers: — (List)
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] load_servers: — (List)
         :param pulumi.Input[bool] use_default_load_object: — (Boolean)
                * `host_header`
                * `least_squares_decay`
@@ -880,11 +880,11 @@ class GtmResourceResourceInstanceArgs:
 
     @property
     @pulumi.getter(name="datacenterId")
-    def datacenter_id(self) -> pulumi.Input[float]:
+    def datacenter_id(self) -> pulumi.Input[int]:
         return pulumi.get(self, "datacenter_id")
 
     @datacenter_id.setter
-    def datacenter_id(self, value: pulumi.Input[float]):
+    def datacenter_id(self, value: pulumi.Input[int]):
         pulumi.set(self, "datacenter_id", value)
 
     @property
@@ -898,23 +898,23 @@ class GtmResourceResourceInstanceArgs:
 
     @property
     @pulumi.getter(name="loadObjectPort")
-    def load_object_port(self) -> Optional[pulumi.Input[float]]:
+    def load_object_port(self) -> Optional[pulumi.Input[int]]:
         return pulumi.get(self, "load_object_port")
 
     @load_object_port.setter
-    def load_object_port(self, value: Optional[pulumi.Input[float]]):
+    def load_object_port(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "load_object_port", value)
 
     @property
     @pulumi.getter(name="loadServers")
-    def load_servers(self) -> Optional[pulumi.Input[List[pulumi.Input[str]]]]:
+    def load_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         — (List)
         """
         return pulumi.get(self, "load_servers")
 
     @load_servers.setter
-    def load_servers(self, value: Optional[pulumi.Input[List[pulumi.Input[str]]]]):
+    def load_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "load_servers", value)
 
     @property

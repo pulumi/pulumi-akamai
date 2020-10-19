@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
 from . import outputs
 from ._inputs import *
@@ -50,7 +50,7 @@ class GetPropertyRulesResult:
 
     @property
     @pulumi.getter
-    def rules(self) -> Optional[List['outputs.GetPropertyRulesRuleResult']]:
+    def rules(self) -> Optional[Sequence['outputs.GetPropertyRulesRuleResult']]:
         return pulumi.get(self, "rules")
 
     @property
@@ -71,7 +71,7 @@ class AwaitableGetPropertyRulesResult(GetPropertyRulesResult):
             variables=self.variables)
 
 
-def get_property_rules(rules: Optional[List[pulumi.InputType['GetPropertyRulesRuleArgs']]] = None,
+def get_property_rules(rules: Optional[Sequence[pulumi.InputType['GetPropertyRulesRuleArgs']]] = None,
                        variables: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyRulesResult:
     """

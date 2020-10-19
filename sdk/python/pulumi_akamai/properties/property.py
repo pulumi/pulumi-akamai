@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
 from . import outputs
 from ._inputs import *
@@ -17,14 +17,14 @@ class Property(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contacts: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  contract: Optional[pulumi.Input[str]] = None,
                  cp_code: Optional[pulumi.Input[str]] = None,
                  group: Optional[pulumi.Input[str]] = None,
                  hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_secure: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 origins: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]]] = None,
+                 origins: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]]] = None,
                  product: Optional[pulumi.Input[str]] = None,
                  rule_format: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input[str]] = None,
@@ -61,14 +61,14 @@ class Property(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[List[pulumi.Input[str]]] contacts: — (Required) One or more email addresses to inform about activation changes.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] contacts: — (Required) One or more email addresses to inform about activation changes.
         :param pulumi.Input[str] contract: — (Optional) The contract ID.
         :param pulumi.Input[str] cp_code: — (Optional) The CP Code id or name to use (or create). Required unless a [cpCode behavior](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#cpcode) is present in the default rule.
         :param pulumi.Input[str] group: — (Optional) The group ID.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] hostnames: — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
         :param pulumi.Input[bool] is_secure: — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
         :param pulumi.Input[str] name: — (Required) The property name.
-        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]] origins: — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]] origins: — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
         :param pulumi.Input[str] product: — (Optional) The product ID. (Default: `prd_SPM` for Ion)
         :param pulumi.Input[str] rule_format: — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
         :param pulumi.Input[str] rules: — (Required) A JSON encoded string of property rules (see: [`properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
@@ -124,7 +124,7 @@ class Property(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             account: Optional[pulumi.Input[str]] = None,
-            contacts: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             contract: Optional[pulumi.Input[str]] = None,
             cp_code: Optional[pulumi.Input[str]] = None,
             edge_hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -132,15 +132,15 @@ class Property(pulumi.CustomResource):
             hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             is_secure: Optional[pulumi.Input[bool]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            origins: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]]] = None,
+            origins: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]]] = None,
             product: Optional[pulumi.Input[str]] = None,
-            production_version: Optional[pulumi.Input[float]] = None,
+            production_version: Optional[pulumi.Input[int]] = None,
             rule_format: Optional[pulumi.Input[str]] = None,
             rules: Optional[pulumi.Input[str]] = None,
             rulessha: Optional[pulumi.Input[str]] = None,
-            staging_version: Optional[pulumi.Input[float]] = None,
+            staging_version: Optional[pulumi.Input[int]] = None,
             variables: Optional[pulumi.Input[str]] = None,
-            version: Optional[pulumi.Input[float]] = None) -> 'Property':
+            version: Optional[pulumi.Input[int]] = None) -> 'Property':
         """
         Get an existing Property resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -149,7 +149,7 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] account: — the Account ID under which the property is created.
-        :param pulumi.Input[List[pulumi.Input[str]]] contacts: — (Required) One or more email addresses to inform about activation changes.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] contacts: — (Required) One or more email addresses to inform about activation changes.
         :param pulumi.Input[str] contract: — (Optional) The contract ID.
         :param pulumi.Input[str] cp_code: — (Optional) The CP Code id or name to use (or create). Required unless a [cpCode behavior](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#cpcode) is present in the default rule.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] edge_hostnames: — the final public hostname to edge hostname map
@@ -157,14 +157,14 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] hostnames: — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
         :param pulumi.Input[bool] is_secure: — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
         :param pulumi.Input[str] name: — (Required) The property name.
-        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]] origins: — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]] origins: — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
         :param pulumi.Input[str] product: — (Optional) The product ID. (Default: `prd_SPM` for Ion)
-        :param pulumi.Input[float] production_version: — the current version of the property active on the production network.
+        :param pulumi.Input[int] production_version: — the current version of the property active on the production network.
         :param pulumi.Input[str] rule_format: — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
         :param pulumi.Input[str] rules: — (Required) A JSON encoded string of property rules (see: [`properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
-        :param pulumi.Input[float] staging_version: — the current version of the property active on the staging network.
+        :param pulumi.Input[int] staging_version: — the current version of the property active on the staging network.
         :param pulumi.Input[str] variables: — (Optional) A JSON encoded string of property manager variable definitions (see: [`properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
-        :param pulumi.Input[float] version: — the current version of the property config.
+        :param pulumi.Input[int] version: — the current version of the property config.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -200,7 +200,7 @@ class Property(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def contacts(self) -> pulumi.Output[List[str]]:
+    def contacts(self) -> pulumi.Output[Sequence[str]]:
         """
         — (Required) One or more email addresses to inform about activation changes.
         """
@@ -264,7 +264,7 @@ class Property(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def origins(self) -> pulumi.Output[Optional[List['outputs.PropertyOrigin']]]:
+    def origins(self) -> pulumi.Output[Optional[Sequence['outputs.PropertyOrigin']]]:
         """
         — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
         """
@@ -280,7 +280,7 @@ class Property(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="productionVersion")
-    def production_version(self) -> pulumi.Output[float]:
+    def production_version(self) -> pulumi.Output[int]:
         """
         — the current version of the property active on the production network.
         """
@@ -309,7 +309,7 @@ class Property(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="stagingVersion")
-    def staging_version(self) -> pulumi.Output[float]:
+    def staging_version(self) -> pulumi.Output[int]:
         """
         — the current version of the property active on the staging network.
         """
@@ -325,7 +325,7 @@ class Property(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def version(self) -> pulumi.Output[float]:
+    def version(self) -> pulumi.Output[int]:
         """
         — the current version of the property config.
         """

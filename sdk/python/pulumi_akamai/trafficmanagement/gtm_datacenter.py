@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
 from . import outputs
 from ._inputs import *
@@ -18,7 +18,7 @@ class GtmDatacenter(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  city: Optional[pulumi.Input[str]] = None,
-                 clone_of: Optional[pulumi.Input[float]] = None,
+                 clone_of: Optional[pulumi.Input[int]] = None,
                  cloud_server_host_header_override: Optional[pulumi.Input[bool]] = None,
                  cloud_server_targeting: Optional[pulumi.Input[bool]] = None,
                  continent: Optional[pulumi.Input[str]] = None,
@@ -115,22 +115,22 @@ class GtmDatacenter(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             city: Optional[pulumi.Input[str]] = None,
-            clone_of: Optional[pulumi.Input[float]] = None,
+            clone_of: Optional[pulumi.Input[int]] = None,
             cloud_server_host_header_override: Optional[pulumi.Input[bool]] = None,
             cloud_server_targeting: Optional[pulumi.Input[bool]] = None,
             continent: Optional[pulumi.Input[str]] = None,
             country: Optional[pulumi.Input[str]] = None,
-            datacenter_id: Optional[pulumi.Input[float]] = None,
+            datacenter_id: Optional[pulumi.Input[int]] = None,
             default_load_object: Optional[pulumi.Input[pulumi.InputType['GtmDatacenterDefaultLoadObjectArgs']]] = None,
             domain: Optional[pulumi.Input[str]] = None,
             latitude: Optional[pulumi.Input[float]] = None,
             longitude: Optional[pulumi.Input[float]] = None,
             nickname: Optional[pulumi.Input[str]] = None,
-            ping_interval: Optional[pulumi.Input[float]] = None,
-            ping_packet_size: Optional[pulumi.Input[float]] = None,
-            score_penalty: Optional[pulumi.Input[float]] = None,
-            servermonitor_liveness_count: Optional[pulumi.Input[float]] = None,
-            servermonitor_load_count: Optional[pulumi.Input[float]] = None,
+            ping_interval: Optional[pulumi.Input[int]] = None,
+            ping_packet_size: Optional[pulumi.Input[int]] = None,
+            score_penalty: Optional[pulumi.Input[int]] = None,
+            servermonitor_liveness_count: Optional[pulumi.Input[int]] = None,
+            servermonitor_load_count: Optional[pulumi.Input[int]] = None,
             servermonitor_pool: Optional[pulumi.Input[str]] = None,
             state_or_province: Optional[pulumi.Input[str]] = None,
             virtual: Optional[pulumi.Input[bool]] = None,
@@ -191,7 +191,7 @@ class GtmDatacenter(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="cloneOf")
-    def clone_of(self) -> pulumi.Output[Optional[float]]:
+    def clone_of(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "clone_of")
 
     @property
@@ -227,7 +227,7 @@ class GtmDatacenter(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="datacenterId")
-    def datacenter_id(self) -> pulumi.Output[float]:
+    def datacenter_id(self) -> pulumi.Output[int]:
         return pulumi.get(self, "datacenter_id")
 
     @property
@@ -266,27 +266,27 @@ class GtmDatacenter(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="pingInterval")
-    def ping_interval(self) -> pulumi.Output[float]:
+    def ping_interval(self) -> pulumi.Output[int]:
         return pulumi.get(self, "ping_interval")
 
     @property
     @pulumi.getter(name="pingPacketSize")
-    def ping_packet_size(self) -> pulumi.Output[float]:
+    def ping_packet_size(self) -> pulumi.Output[int]:
         return pulumi.get(self, "ping_packet_size")
 
     @property
     @pulumi.getter(name="scorePenalty")
-    def score_penalty(self) -> pulumi.Output[float]:
+    def score_penalty(self) -> pulumi.Output[int]:
         return pulumi.get(self, "score_penalty")
 
     @property
     @pulumi.getter(name="servermonitorLivenessCount")
-    def servermonitor_liveness_count(self) -> pulumi.Output[float]:
+    def servermonitor_liveness_count(self) -> pulumi.Output[int]:
         return pulumi.get(self, "servermonitor_liveness_count")
 
     @property
     @pulumi.getter(name="servermonitorLoadCount")
-    def servermonitor_load_count(self) -> pulumi.Output[float]:
+    def servermonitor_load_count(self) -> pulumi.Output[int]:
         return pulumi.get(self, "servermonitor_load_count")
 
     @property

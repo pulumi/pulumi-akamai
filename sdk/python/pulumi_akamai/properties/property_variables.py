@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
 from . import outputs
 from ._inputs import *
@@ -17,7 +17,7 @@ class PropertyVariables(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 variables: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['PropertyVariablesVariableArgs']]]]] = None,
+                 variables: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyVariablesVariableArgs']]]]] = None,
                  __props__=None,
                  __name__=None,
                  __opts__=None):
@@ -82,7 +82,7 @@ class PropertyVariables(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             json: Optional[pulumi.Input[str]] = None,
-            variables: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['PropertyVariablesVariableArgs']]]]] = None) -> 'PropertyVariables':
+            variables: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyVariablesVariableArgs']]]]] = None) -> 'PropertyVariables':
         """
         Get an existing PropertyVariables resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -110,7 +110,7 @@ class PropertyVariables(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def variables(self) -> pulumi.Output[Optional[List['outputs.PropertyVariablesVariable']]]:
+    def variables(self) -> pulumi.Output[Optional[Sequence['outputs.PropertyVariablesVariable']]]:
         return pulumi.get(self, "variables")
 
     def translate_output_property(self, prop):

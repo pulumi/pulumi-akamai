@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
 from . import outputs
 
@@ -27,11 +27,11 @@ __all__ = [
 @pulumi.output_type
 class GtmASmapAssignment(dict):
     def __init__(__self__, *,
-                 as_numbers: List[float],
-                 datacenter_id: float,
+                 as_numbers: Sequence[int],
+                 datacenter_id: int,
                  nickname: str):
         """
-        :param List[float] as_numbers: — (List)
+        :param Sequence[int] as_numbers: — (List)
         """
         pulumi.set(__self__, "as_numbers", as_numbers)
         pulumi.set(__self__, "datacenter_id", datacenter_id)
@@ -39,7 +39,7 @@ class GtmASmapAssignment(dict):
 
     @property
     @pulumi.getter(name="asNumbers")
-    def as_numbers(self) -> List[float]:
+    def as_numbers(self) -> Sequence[int]:
         """
         — (List)
         """
@@ -47,7 +47,7 @@ class GtmASmapAssignment(dict):
 
     @property
     @pulumi.getter(name="datacenterId")
-    def datacenter_id(self) -> float:
+    def datacenter_id(self) -> int:
         return pulumi.get(self, "datacenter_id")
 
     @property
@@ -62,7 +62,7 @@ class GtmASmapAssignment(dict):
 @pulumi.output_type
 class GtmASmapDefaultDatacenter(dict):
     def __init__(__self__, *,
-                 datacenter_id: float,
+                 datacenter_id: int,
                  nickname: Optional[str] = None):
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         if nickname is not None:
@@ -70,7 +70,7 @@ class GtmASmapDefaultDatacenter(dict):
 
     @property
     @pulumi.getter(name="datacenterId")
-    def datacenter_id(self) -> float:
+    def datacenter_id(self) -> int:
         return pulumi.get(self, "datacenter_id")
 
     @property
@@ -85,11 +85,11 @@ class GtmASmapDefaultDatacenter(dict):
 @pulumi.output_type
 class GtmCidrmapAssignment(dict):
     def __init__(__self__, *,
-                 datacenter_id: float,
+                 datacenter_id: int,
                  nickname: str,
-                 blocks: Optional[List[str]] = None):
+                 blocks: Optional[Sequence[str]] = None):
         """
-        :param List[str] blocks: — (List)
+        :param Sequence[str] blocks: — (List)
         """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         pulumi.set(__self__, "nickname", nickname)
@@ -98,7 +98,7 @@ class GtmCidrmapAssignment(dict):
 
     @property
     @pulumi.getter(name="datacenterId")
-    def datacenter_id(self) -> float:
+    def datacenter_id(self) -> int:
         return pulumi.get(self, "datacenter_id")
 
     @property
@@ -108,7 +108,7 @@ class GtmCidrmapAssignment(dict):
 
     @property
     @pulumi.getter
-    def blocks(self) -> Optional[List[str]]:
+    def blocks(self) -> Optional[Sequence[str]]:
         """
         — (List)
         """
@@ -121,7 +121,7 @@ class GtmCidrmapAssignment(dict):
 @pulumi.output_type
 class GtmCidrmapDefaultDatacenter(dict):
     def __init__(__self__, *,
-                 datacenter_id: float,
+                 datacenter_id: int,
                  nickname: Optional[str] = None):
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         if nickname is not None:
@@ -129,7 +129,7 @@ class GtmCidrmapDefaultDatacenter(dict):
 
     @property
     @pulumi.getter(name="datacenterId")
-    def datacenter_id(self) -> float:
+    def datacenter_id(self) -> int:
         return pulumi.get(self, "datacenter_id")
 
     @property
@@ -145,10 +145,10 @@ class GtmCidrmapDefaultDatacenter(dict):
 class GtmDatacenterDefaultLoadObject(dict):
     def __init__(__self__, *,
                  load_object: Optional[str] = None,
-                 load_object_port: Optional[float] = None,
-                 load_servers: Optional[List[str]] = None):
+                 load_object_port: Optional[int] = None,
+                 load_servers: Optional[Sequence[str]] = None):
         """
-        :param List[str] load_servers: — (List)
+        :param Sequence[str] load_servers: — (List)
                * `city`
                * `clone_of`
         """
@@ -166,12 +166,12 @@ class GtmDatacenterDefaultLoadObject(dict):
 
     @property
     @pulumi.getter(name="loadObjectPort")
-    def load_object_port(self) -> Optional[float]:
+    def load_object_port(self) -> Optional[int]:
         return pulumi.get(self, "load_object_port")
 
     @property
     @pulumi.getter(name="loadServers")
-    def load_servers(self) -> Optional[List[str]]:
+    def load_servers(self) -> Optional[Sequence[str]]:
         """
         — (List)
         * `city`
@@ -186,11 +186,11 @@ class GtmDatacenterDefaultLoadObject(dict):
 @pulumi.output_type
 class GtmGeomapAssignment(dict):
     def __init__(__self__, *,
-                 datacenter_id: float,
+                 datacenter_id: int,
                  nickname: str,
-                 countries: Optional[List[str]] = None):
+                 countries: Optional[Sequence[str]] = None):
         """
-        :param List[str] countries: — (List)
+        :param Sequence[str] countries: — (List)
         """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         pulumi.set(__self__, "nickname", nickname)
@@ -199,7 +199,7 @@ class GtmGeomapAssignment(dict):
 
     @property
     @pulumi.getter(name="datacenterId")
-    def datacenter_id(self) -> float:
+    def datacenter_id(self) -> int:
         return pulumi.get(self, "datacenter_id")
 
     @property
@@ -209,7 +209,7 @@ class GtmGeomapAssignment(dict):
 
     @property
     @pulumi.getter
-    def countries(self) -> Optional[List[str]]:
+    def countries(self) -> Optional[Sequence[str]]:
         """
         — (List)
         """
@@ -222,7 +222,7 @@ class GtmGeomapAssignment(dict):
 @pulumi.output_type
 class GtmGeomapDefaultDatacenter(dict):
     def __init__(__self__, *,
-                 datacenter_id: float,
+                 datacenter_id: int,
                  nickname: Optional[str] = None):
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         if nickname is not None:
@@ -230,7 +230,7 @@ class GtmGeomapDefaultDatacenter(dict):
 
     @property
     @pulumi.getter(name="datacenterId")
-    def datacenter_id(self) -> float:
+    def datacenter_id(self) -> int:
         return pulumi.get(self, "datacenter_id")
 
     @property
@@ -246,7 +246,7 @@ class GtmGeomapDefaultDatacenter(dict):
 class GtmPropertyLivenessTest(dict):
     def __init__(__self__, *,
                  name: str,
-                 test_interval: float,
+                 test_interval: int,
                  test_object: str,
                  test_object_protocol: str,
                  test_timeout: float,
@@ -257,7 +257,7 @@ class GtmPropertyLivenessTest(dict):
                  http_error3xx: Optional[bool] = None,
                  http_error4xx: Optional[bool] = None,
                  http_error5xx: Optional[bool] = None,
-                 http_headers: Optional[List['outputs.GtmPropertyLivenessTestHttpHeader']] = None,
+                 http_headers: Optional[Sequence['outputs.GtmPropertyLivenessTestHttpHeader']] = None,
                  peer_certificate_verification: Optional[bool] = None,
                  recursion_requested: Optional[bool] = None,
                  request_string: Optional[str] = None,
@@ -266,7 +266,7 @@ class GtmPropertyLivenessTest(dict):
                  ssl_client_certificate: Optional[str] = None,
                  ssl_client_private_key: Optional[str] = None,
                  test_object_password: Optional[str] = None,
-                 test_object_port: Optional[float] = None,
+                 test_object_port: Optional[int] = None,
                  test_object_username: Optional[str] = None,
                  timeout_penalty: Optional[float] = None):
         """
@@ -281,7 +281,7 @@ class GtmPropertyLivenessTest(dict):
         :param bool http_error3xx: — (Boolean)
         :param bool http_error4xx: — (Boolean)
         :param bool http_error5xx: — (Boolean)
-        :param List['GtmPropertyLivenessTestHttpHeaderArgs'] http_headers: — (multiple allowed)
+        :param Sequence['GtmPropertyLivenessTestHttpHeaderArgs'] http_headers: — (multiple allowed)
                `name`
                `value`
         :param bool peer_certificate_verification: — (Boolean)
@@ -354,7 +354,7 @@ class GtmPropertyLivenessTest(dict):
 
     @property
     @pulumi.getter(name="testInterval")
-    def test_interval(self) -> float:
+    def test_interval(self) -> int:
         return pulumi.get(self, "test_interval")
 
     @property
@@ -428,7 +428,7 @@ class GtmPropertyLivenessTest(dict):
 
     @property
     @pulumi.getter(name="httpHeaders")
-    def http_headers(self) -> Optional[List['outputs.GtmPropertyLivenessTestHttpHeader']]:
+    def http_headers(self) -> Optional[Sequence['outputs.GtmPropertyLivenessTestHttpHeader']]:
         """
         — (multiple allowed)
         `name`
@@ -494,7 +494,7 @@ class GtmPropertyLivenessTest(dict):
 
     @property
     @pulumi.getter(name="testObjectPort")
-    def test_object_port(self) -> Optional[float]:
+    def test_object_port(self) -> Optional[int]:
         return pulumi.get(self, "test_object_port")
 
     @property
@@ -550,11 +550,11 @@ class GtmPropertyLivenessTestHttpHeader(dict):
 @pulumi.output_type
 class GtmPropertyStaticRrSet(dict):
     def __init__(__self__, *,
-                 rdatas: Optional[List[str]] = None,
-                 ttl: Optional[float] = None,
+                 rdatas: Optional[Sequence[str]] = None,
+                 ttl: Optional[int] = None,
                  type: Optional[str] = None):
         """
-        :param List[str] rdatas: — (List)
+        :param Sequence[str] rdatas: — (List)
         :param str type: — Property type  
                * `score_aggregation_type`
         """
@@ -567,7 +567,7 @@ class GtmPropertyStaticRrSet(dict):
 
     @property
     @pulumi.getter
-    def rdatas(self) -> Optional[List[str]]:
+    def rdatas(self) -> Optional[Sequence[str]]:
         """
         — (List)
         """
@@ -575,7 +575,7 @@ class GtmPropertyStaticRrSet(dict):
 
     @property
     @pulumi.getter
-    def ttl(self) -> Optional[float]:
+    def ttl(self) -> Optional[int]:
         return pulumi.get(self, "ttl")
 
     @property
@@ -594,11 +594,11 @@ class GtmPropertyStaticRrSet(dict):
 @pulumi.output_type
 class GtmPropertyTrafficTarget(dict):
     def __init__(__self__, *,
-                 datacenter_id: Optional[float] = None,
+                 datacenter_id: Optional[int] = None,
                  enabled: Optional[bool] = None,
                  handout_cname: Optional[str] = None,
                  name: Optional[str] = None,
-                 servers: Optional[List[str]] = None,
+                 servers: Optional[Sequence[str]] = None,
                  weight: Optional[float] = None):
         """
         :param bool enabled: — (Boolean)
@@ -607,7 +607,7 @@ class GtmPropertyTrafficTarget(dict):
                * `test_interval`
                * `test_object_protocol`
                * `test_timeout`
-        :param List[str] servers: — (List)
+        :param Sequence[str] servers: — (List)
         """
         if datacenter_id is not None:
             pulumi.set(__self__, "datacenter_id", datacenter_id)
@@ -624,7 +624,7 @@ class GtmPropertyTrafficTarget(dict):
 
     @property
     @pulumi.getter(name="datacenterId")
-    def datacenter_id(self) -> Optional[float]:
+    def datacenter_id(self) -> Optional[int]:
         return pulumi.get(self, "datacenter_id")
 
     @property
@@ -654,7 +654,7 @@ class GtmPropertyTrafficTarget(dict):
 
     @property
     @pulumi.getter
-    def servers(self) -> Optional[List[str]]:
+    def servers(self) -> Optional[Sequence[str]]:
         """
         — (List)
         """
@@ -672,13 +672,13 @@ class GtmPropertyTrafficTarget(dict):
 @pulumi.output_type
 class GtmResourceResourceInstance(dict):
     def __init__(__self__, *,
-                 datacenter_id: float,
+                 datacenter_id: int,
                  load_object: Optional[str] = None,
-                 load_object_port: Optional[float] = None,
-                 load_servers: Optional[List[str]] = None,
+                 load_object_port: Optional[int] = None,
+                 load_servers: Optional[Sequence[str]] = None,
                  use_default_load_object: Optional[bool] = None):
         """
-        :param List[str] load_servers: — (List)
+        :param Sequence[str] load_servers: — (List)
         :param bool use_default_load_object: — (Boolean)
                * `host_header`
                * `least_squares_decay`
@@ -702,7 +702,7 @@ class GtmResourceResourceInstance(dict):
 
     @property
     @pulumi.getter(name="datacenterId")
-    def datacenter_id(self) -> float:
+    def datacenter_id(self) -> int:
         return pulumi.get(self, "datacenter_id")
 
     @property
@@ -712,12 +712,12 @@ class GtmResourceResourceInstance(dict):
 
     @property
     @pulumi.getter(name="loadObjectPort")
-    def load_object_port(self) -> Optional[float]:
+    def load_object_port(self) -> Optional[int]:
         return pulumi.get(self, "load_object_port")
 
     @property
     @pulumi.getter(name="loadServers")
-    def load_servers(self) -> Optional[List[str]]:
+    def load_servers(self) -> Optional[Sequence[str]]:
         """
         — (List)
         """

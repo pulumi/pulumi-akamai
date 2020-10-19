@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
 
 __all__ = ['DnsRecord']
@@ -16,57 +16,57 @@ class DnsRecord(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: Optional[pulumi.Input[bool]] = None,
-                 algorithm: Optional[pulumi.Input[float]] = None,
+                 algorithm: Optional[pulumi.Input[int]] = None,
                  certificate: Optional[pulumi.Input[str]] = None,
                  digest: Optional[pulumi.Input[str]] = None,
-                 digest_type: Optional[pulumi.Input[float]] = None,
+                 digest_type: Optional[pulumi.Input[int]] = None,
                  email_address: Optional[pulumi.Input[str]] = None,
                  expiration: Optional[pulumi.Input[str]] = None,
-                 expiry: Optional[pulumi.Input[float]] = None,
+                 expiry: Optional[pulumi.Input[int]] = None,
                  fingerprint: Optional[pulumi.Input[str]] = None,
-                 fingerprint_type: Optional[pulumi.Input[float]] = None,
-                 flags: Optional[pulumi.Input[float]] = None,
+                 fingerprint_type: Optional[pulumi.Input[int]] = None,
+                 flags: Optional[pulumi.Input[int]] = None,
                  flagsnaptr: Optional[pulumi.Input[str]] = None,
                  hardware: Optional[pulumi.Input[str]] = None,
                  inception: Optional[pulumi.Input[str]] = None,
-                 iterations: Optional[pulumi.Input[float]] = None,
+                 iterations: Optional[pulumi.Input[int]] = None,
                  key: Optional[pulumi.Input[str]] = None,
-                 keytag: Optional[pulumi.Input[float]] = None,
-                 labels: Optional[pulumi.Input[float]] = None,
+                 keytag: Optional[pulumi.Input[int]] = None,
+                 labels: Optional[pulumi.Input[int]] = None,
                  mailbox: Optional[pulumi.Input[str]] = None,
-                 match_type: Optional[pulumi.Input[float]] = None,
+                 match_type: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  name_server: Optional[pulumi.Input[str]] = None,
                  next_hashed_owner_name: Optional[pulumi.Input[str]] = None,
-                 nxdomain_ttl: Optional[pulumi.Input[float]] = None,
-                 order: Optional[pulumi.Input[float]] = None,
-                 original_ttl: Optional[pulumi.Input[float]] = None,
-                 port: Optional[pulumi.Input[float]] = None,
-                 preference: Optional[pulumi.Input[float]] = None,
-                 priority: Optional[pulumi.Input[float]] = None,
-                 priority_increment: Optional[pulumi.Input[float]] = None,
-                 protocol: Optional[pulumi.Input[float]] = None,
+                 nxdomain_ttl: Optional[pulumi.Input[int]] = None,
+                 order: Optional[pulumi.Input[int]] = None,
+                 original_ttl: Optional[pulumi.Input[int]] = None,
+                 port: Optional[pulumi.Input[int]] = None,
+                 preference: Optional[pulumi.Input[int]] = None,
+                 priority: Optional[pulumi.Input[int]] = None,
+                 priority_increment: Optional[pulumi.Input[int]] = None,
+                 protocol: Optional[pulumi.Input[int]] = None,
                  recordtype: Optional[pulumi.Input[str]] = None,
-                 refresh: Optional[pulumi.Input[float]] = None,
+                 refresh: Optional[pulumi.Input[int]] = None,
                  regexp: Optional[pulumi.Input[str]] = None,
                  replacement: Optional[pulumi.Input[str]] = None,
-                 retry: Optional[pulumi.Input[float]] = None,
+                 retry: Optional[pulumi.Input[int]] = None,
                  salt: Optional[pulumi.Input[str]] = None,
-                 selector: Optional[pulumi.Input[float]] = None,
+                 selector: Optional[pulumi.Input[int]] = None,
                  service: Optional[pulumi.Input[str]] = None,
                  signature: Optional[pulumi.Input[str]] = None,
                  signer: Optional[pulumi.Input[str]] = None,
                  software: Optional[pulumi.Input[str]] = None,
-                 subtype: Optional[pulumi.Input[float]] = None,
-                 targets: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
-                 ttl: Optional[pulumi.Input[float]] = None,
+                 subtype: Optional[pulumi.Input[int]] = None,
+                 targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 ttl: Optional[pulumi.Input[int]] = None,
                  txt: Optional[pulumi.Input[str]] = None,
                  type_bitmaps: Optional[pulumi.Input[str]] = None,
                  type_covered: Optional[pulumi.Input[str]] = None,
                  type_mnemonic: Optional[pulumi.Input[str]] = None,
-                 type_value: Optional[pulumi.Input[float]] = None,
-                 usage: Optional[pulumi.Input[float]] = None,
-                 weight: Optional[pulumi.Input[float]] = None,
+                 type_value: Optional[pulumi.Input[int]] = None,
+                 usage: Optional[pulumi.Input[int]] = None,
+                 weight: Optional[pulumi.Input[int]] = None,
                  zone: Optional[pulumi.Input[str]] = None,
                  __props__=None,
                  __name__=None,
@@ -319,7 +319,7 @@ class DnsRecord(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] active: — (Ignored, Boolean) Maintained for backward compatibility
         :param pulumi.Input[str] name: — (Required) The name of the record. The name is an owner name, that is, the name of the node to which this resource record pertains.
-        :param pulumi.Input[float] ttl: — (Required,Boolean) The TTL is a 32-bit signed integer that specifies the time interval that the resource record may be cached before the source of the information should be consulted again. Zero values are interpreted to mean that the RR can only be used for the transaction in progress, and should not be cached. Zero values can also be used for extremely volatile data.
+        :param pulumi.Input[int] ttl: — (Required,Boolean) The TTL is a 32-bit signed integer that specifies the time interval that the resource record may be cached before the source of the information should be consulted again. Zero values are interpreted to mean that the RR can only be used for the transaction in progress, and should not be cached. Zero values can also be used for extremely volatile data.
         :param pulumi.Input[str] zone: — (Required) Domain zone, encapsulating any nested subdomains.
         """
         if __name__ is not None:
@@ -413,61 +413,61 @@ class DnsRecord(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             active: Optional[pulumi.Input[bool]] = None,
-            algorithm: Optional[pulumi.Input[float]] = None,
+            algorithm: Optional[pulumi.Input[int]] = None,
             answer_type: Optional[pulumi.Input[str]] = None,
             certificate: Optional[pulumi.Input[str]] = None,
             digest: Optional[pulumi.Input[str]] = None,
-            digest_type: Optional[pulumi.Input[float]] = None,
+            digest_type: Optional[pulumi.Input[int]] = None,
             dns_name: Optional[pulumi.Input[str]] = None,
             email_address: Optional[pulumi.Input[str]] = None,
             expiration: Optional[pulumi.Input[str]] = None,
-            expiry: Optional[pulumi.Input[float]] = None,
+            expiry: Optional[pulumi.Input[int]] = None,
             fingerprint: Optional[pulumi.Input[str]] = None,
-            fingerprint_type: Optional[pulumi.Input[float]] = None,
-            flags: Optional[pulumi.Input[float]] = None,
+            fingerprint_type: Optional[pulumi.Input[int]] = None,
+            flags: Optional[pulumi.Input[int]] = None,
             flagsnaptr: Optional[pulumi.Input[str]] = None,
             hardware: Optional[pulumi.Input[str]] = None,
             inception: Optional[pulumi.Input[str]] = None,
-            iterations: Optional[pulumi.Input[float]] = None,
+            iterations: Optional[pulumi.Input[int]] = None,
             key: Optional[pulumi.Input[str]] = None,
-            keytag: Optional[pulumi.Input[float]] = None,
-            labels: Optional[pulumi.Input[float]] = None,
+            keytag: Optional[pulumi.Input[int]] = None,
+            labels: Optional[pulumi.Input[int]] = None,
             mailbox: Optional[pulumi.Input[str]] = None,
-            match_type: Optional[pulumi.Input[float]] = None,
+            match_type: Optional[pulumi.Input[int]] = None,
             name: Optional[pulumi.Input[str]] = None,
             name_server: Optional[pulumi.Input[str]] = None,
             next_hashed_owner_name: Optional[pulumi.Input[str]] = None,
-            nxdomain_ttl: Optional[pulumi.Input[float]] = None,
-            order: Optional[pulumi.Input[float]] = None,
-            original_ttl: Optional[pulumi.Input[float]] = None,
-            port: Optional[pulumi.Input[float]] = None,
-            preference: Optional[pulumi.Input[float]] = None,
-            priority: Optional[pulumi.Input[float]] = None,
-            priority_increment: Optional[pulumi.Input[float]] = None,
-            protocol: Optional[pulumi.Input[float]] = None,
+            nxdomain_ttl: Optional[pulumi.Input[int]] = None,
+            order: Optional[pulumi.Input[int]] = None,
+            original_ttl: Optional[pulumi.Input[int]] = None,
+            port: Optional[pulumi.Input[int]] = None,
+            preference: Optional[pulumi.Input[int]] = None,
+            priority: Optional[pulumi.Input[int]] = None,
+            priority_increment: Optional[pulumi.Input[int]] = None,
+            protocol: Optional[pulumi.Input[int]] = None,
             record_sha: Optional[pulumi.Input[str]] = None,
             recordtype: Optional[pulumi.Input[str]] = None,
-            refresh: Optional[pulumi.Input[float]] = None,
+            refresh: Optional[pulumi.Input[int]] = None,
             regexp: Optional[pulumi.Input[str]] = None,
             replacement: Optional[pulumi.Input[str]] = None,
-            retry: Optional[pulumi.Input[float]] = None,
+            retry: Optional[pulumi.Input[int]] = None,
             salt: Optional[pulumi.Input[str]] = None,
-            selector: Optional[pulumi.Input[float]] = None,
-            serial: Optional[pulumi.Input[float]] = None,
+            selector: Optional[pulumi.Input[int]] = None,
+            serial: Optional[pulumi.Input[int]] = None,
             service: Optional[pulumi.Input[str]] = None,
             signature: Optional[pulumi.Input[str]] = None,
             signer: Optional[pulumi.Input[str]] = None,
             software: Optional[pulumi.Input[str]] = None,
-            subtype: Optional[pulumi.Input[float]] = None,
-            targets: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
-            ttl: Optional[pulumi.Input[float]] = None,
+            subtype: Optional[pulumi.Input[int]] = None,
+            targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            ttl: Optional[pulumi.Input[int]] = None,
             txt: Optional[pulumi.Input[str]] = None,
             type_bitmaps: Optional[pulumi.Input[str]] = None,
             type_covered: Optional[pulumi.Input[str]] = None,
             type_mnemonic: Optional[pulumi.Input[str]] = None,
-            type_value: Optional[pulumi.Input[float]] = None,
-            usage: Optional[pulumi.Input[float]] = None,
-            weight: Optional[pulumi.Input[float]] = None,
+            type_value: Optional[pulumi.Input[int]] = None,
+            usage: Optional[pulumi.Input[int]] = None,
+            weight: Optional[pulumi.Input[int]] = None,
             zone: Optional[pulumi.Input[str]] = None) -> 'DnsRecord':
         """
         Get an existing DnsRecord resource's state with the given name, id, and optional extra
@@ -478,7 +478,7 @@ class DnsRecord(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] active: — (Ignored, Boolean) Maintained for backward compatibility
         :param pulumi.Input[str] name: — (Required) The name of the record. The name is an owner name, that is, the name of the node to which this resource record pertains.
-        :param pulumi.Input[float] ttl: — (Required,Boolean) The TTL is a 32-bit signed integer that specifies the time interval that the resource record may be cached before the source of the information should be consulted again. Zero values are interpreted to mean that the RR can only be used for the transaction in progress, and should not be cached. Zero values can also be used for extremely volatile data.
+        :param pulumi.Input[int] ttl: — (Required,Boolean) The TTL is a 32-bit signed integer that specifies the time interval that the resource record may be cached before the source of the information should be consulted again. Zero values are interpreted to mean that the RR can only be used for the transaction in progress, and should not be cached. Zero values can also be used for extremely volatile data.
         :param pulumi.Input[str] zone: — (Required) Domain zone, encapsulating any nested subdomains.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -554,7 +554,7 @@ class DnsRecord(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def algorithm(self) -> pulumi.Output[Optional[float]]:
+    def algorithm(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "algorithm")
 
     @property
@@ -574,7 +574,7 @@ class DnsRecord(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="digestType")
-    def digest_type(self) -> pulumi.Output[Optional[float]]:
+    def digest_type(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "digest_type")
 
     @property
@@ -594,7 +594,7 @@ class DnsRecord(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def expiry(self) -> pulumi.Output[Optional[float]]:
+    def expiry(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "expiry")
 
     @property
@@ -604,12 +604,12 @@ class DnsRecord(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="fingerprintType")
-    def fingerprint_type(self) -> pulumi.Output[Optional[float]]:
+    def fingerprint_type(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "fingerprint_type")
 
     @property
     @pulumi.getter
-    def flags(self) -> pulumi.Output[Optional[float]]:
+    def flags(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "flags")
 
     @property
@@ -629,7 +629,7 @@ class DnsRecord(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def iterations(self) -> pulumi.Output[Optional[float]]:
+    def iterations(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "iterations")
 
     @property
@@ -639,12 +639,12 @@ class DnsRecord(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def keytag(self) -> pulumi.Output[Optional[float]]:
+    def keytag(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "keytag")
 
     @property
     @pulumi.getter
-    def labels(self) -> pulumi.Output[Optional[float]]:
+    def labels(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "labels")
 
     @property
@@ -654,7 +654,7 @@ class DnsRecord(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="matchType")
-    def match_type(self) -> pulumi.Output[Optional[float]]:
+    def match_type(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "match_type")
 
     @property
@@ -677,42 +677,42 @@ class DnsRecord(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="nxdomainTtl")
-    def nxdomain_ttl(self) -> pulumi.Output[Optional[float]]:
+    def nxdomain_ttl(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "nxdomain_ttl")
 
     @property
     @pulumi.getter
-    def order(self) -> pulumi.Output[Optional[float]]:
+    def order(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "order")
 
     @property
     @pulumi.getter(name="originalTtl")
-    def original_ttl(self) -> pulumi.Output[Optional[float]]:
+    def original_ttl(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "original_ttl")
 
     @property
     @pulumi.getter
-    def port(self) -> pulumi.Output[Optional[float]]:
+    def port(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter
-    def preference(self) -> pulumi.Output[Optional[float]]:
+    def preference(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "preference")
 
     @property
     @pulumi.getter
-    def priority(self) -> pulumi.Output[Optional[float]]:
+    def priority(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "priority")
 
     @property
     @pulumi.getter(name="priorityIncrement")
-    def priority_increment(self) -> pulumi.Output[Optional[float]]:
+    def priority_increment(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "priority_increment")
 
     @property
     @pulumi.getter
-    def protocol(self) -> pulumi.Output[Optional[float]]:
+    def protocol(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "protocol")
 
     @property
@@ -727,7 +727,7 @@ class DnsRecord(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def refresh(self) -> pulumi.Output[Optional[float]]:
+    def refresh(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "refresh")
 
     @property
@@ -742,7 +742,7 @@ class DnsRecord(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def retry(self) -> pulumi.Output[Optional[float]]:
+    def retry(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "retry")
 
     @property
@@ -752,12 +752,12 @@ class DnsRecord(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def selector(self) -> pulumi.Output[Optional[float]]:
+    def selector(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "selector")
 
     @property
     @pulumi.getter
-    def serial(self) -> pulumi.Output[float]:
+    def serial(self) -> pulumi.Output[int]:
         return pulumi.get(self, "serial")
 
     @property
@@ -782,17 +782,17 @@ class DnsRecord(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def subtype(self) -> pulumi.Output[Optional[float]]:
+    def subtype(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "subtype")
 
     @property
     @pulumi.getter
-    def targets(self) -> pulumi.Output[Optional[List[str]]]:
+    def targets(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "targets")
 
     @property
     @pulumi.getter
-    def ttl(self) -> pulumi.Output[float]:
+    def ttl(self) -> pulumi.Output[int]:
         """
         — (Required,Boolean) The TTL is a 32-bit signed integer that specifies the time interval that the resource record may be cached before the source of the information should be consulted again. Zero values are interpreted to mean that the RR can only be used for the transaction in progress, and should not be cached. Zero values can also be used for extremely volatile data.
         """
@@ -820,17 +820,17 @@ class DnsRecord(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="typeValue")
-    def type_value(self) -> pulumi.Output[Optional[float]]:
+    def type_value(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "type_value")
 
     @property
     @pulumi.getter
-    def usage(self) -> pulumi.Output[Optional[float]]:
+    def usage(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "usage")
 
     @property
     @pulumi.getter
-    def weight(self) -> pulumi.Output[Optional[float]]:
+    def weight(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "weight")
 
     @property

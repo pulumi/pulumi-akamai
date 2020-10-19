@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
 from . import outputs
 from ._inputs import *
@@ -28,9 +28,9 @@ class GtmResource(pulumi.CustomResource):
                  load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
                  max_u_multiplicative_increment: Optional[pulumi.Input[float]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 resource_instances: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmResourceResourceInstanceArgs']]]]] = None,
+                 resource_instances: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmResourceResourceInstanceArgs']]]]] = None,
                  type: Optional[pulumi.Input[str]] = None,
-                 upper_bound: Optional[pulumi.Input[float]] = None,
+                 upper_bound: Optional[pulumi.Input[int]] = None,
                  wait_on_complete: Optional[pulumi.Input[bool]] = None,
                  __props__=None,
                  __name__=None,
@@ -56,7 +56,7 @@ class GtmResource(pulumi.CustomResource):
         :param pulumi.Input[str] domain: — Domain name
         :param pulumi.Input[str] name: — Resource name
                * `aggregation_type`
-        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmResourceResourceInstanceArgs']]]] resource_instances: — (multiple allowed) 
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmResourceResourceInstanceArgs']]]] resource_instances: — (multiple allowed) 
                * `datacenter_id`
                * `load_object`
                * `load_object_port`
@@ -122,9 +122,9 @@ class GtmResource(pulumi.CustomResource):
             load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
             max_u_multiplicative_increment: Optional[pulumi.Input[float]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            resource_instances: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmResourceResourceInstanceArgs']]]]] = None,
+            resource_instances: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmResourceResourceInstanceArgs']]]]] = None,
             type: Optional[pulumi.Input[str]] = None,
-            upper_bound: Optional[pulumi.Input[float]] = None,
+            upper_bound: Optional[pulumi.Input[int]] = None,
             wait_on_complete: Optional[pulumi.Input[bool]] = None) -> 'GtmResource':
         """
         Get an existing GtmResource resource's state with the given name, id, and optional extra
@@ -136,7 +136,7 @@ class GtmResource(pulumi.CustomResource):
         :param pulumi.Input[str] domain: — Domain name
         :param pulumi.Input[str] name: — Resource name
                * `aggregation_type`
-        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmResourceResourceInstanceArgs']]]] resource_instances: — (multiple allowed) 
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmResourceResourceInstanceArgs']]]] resource_instances: — (multiple allowed) 
                * `datacenter_id`
                * `load_object`
                * `load_object_port`
@@ -228,7 +228,7 @@ class GtmResource(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="resourceInstances")
-    def resource_instances(self) -> pulumi.Output[Optional[List['outputs.GtmResourceResourceInstance']]]:
+    def resource_instances(self) -> pulumi.Output[Optional[Sequence['outputs.GtmResourceResourceInstance']]]:
         """
         — (multiple allowed) 
         * `datacenter_id`
@@ -247,7 +247,7 @@ class GtmResource(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="upperBound")
-    def upper_bound(self) -> pulumi.Output[Optional[float]]:
+    def upper_bound(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "upper_bound")
 
     @property

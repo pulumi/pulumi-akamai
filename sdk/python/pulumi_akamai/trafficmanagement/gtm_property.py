@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
 from . import outputs
 from ._inputs import *
@@ -23,28 +23,28 @@ class GtmProperty(pulumi.CustomResource):
                  cname: Optional[pulumi.Input[str]] = None,
                  comments: Optional[pulumi.Input[str]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
-                 dynamic_ttl: Optional[pulumi.Input[float]] = None,
-                 failback_delay: Optional[pulumi.Input[float]] = None,
-                 failover_delay: Optional[pulumi.Input[float]] = None,
+                 dynamic_ttl: Optional[pulumi.Input[int]] = None,
+                 failback_delay: Optional[pulumi.Input[int]] = None,
+                 failover_delay: Optional[pulumi.Input[int]] = None,
                  ghost_demand_reporting: Optional[pulumi.Input[bool]] = None,
-                 handout_limit: Optional[pulumi.Input[float]] = None,
+                 handout_limit: Optional[pulumi.Input[int]] = None,
                  handout_mode: Optional[pulumi.Input[str]] = None,
                  health_max: Optional[pulumi.Input[float]] = None,
                  health_multiplier: Optional[pulumi.Input[float]] = None,
                  health_threshold: Optional[pulumi.Input[float]] = None,
                  ipv6: Optional[pulumi.Input[bool]] = None,
-                 liveness_tests: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmPropertyLivenessTestArgs']]]]] = None,
+                 liveness_tests: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyLivenessTestArgs']]]]] = None,
                  load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
                  map_name: Optional[pulumi.Input[str]] = None,
-                 max_unreachable_penalty: Optional[pulumi.Input[float]] = None,
+                 max_unreachable_penalty: Optional[pulumi.Input[int]] = None,
                  min_live_fraction: Optional[pulumi.Input[float]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  score_aggregation_type: Optional[pulumi.Input[str]] = None,
-                 static_rr_sets: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmPropertyStaticRrSetArgs']]]]] = None,
-                 static_ttl: Optional[pulumi.Input[float]] = None,
-                 stickiness_bonus_constant: Optional[pulumi.Input[float]] = None,
-                 stickiness_bonus_percentage: Optional[pulumi.Input[float]] = None,
-                 traffic_targets: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmPropertyTrafficTargetArgs']]]]] = None,
+                 static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyStaticRrSetArgs']]]]] = None,
+                 static_ttl: Optional[pulumi.Input[int]] = None,
+                 stickiness_bonus_constant: Optional[pulumi.Input[int]] = None,
+                 stickiness_bonus_percentage: Optional[pulumi.Input[int]] = None,
+                 traffic_targets: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyTrafficTargetArgs']]]]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  unreachable_threshold: Optional[pulumi.Input[float]] = None,
                  use_computed_targets: Optional[pulumi.Input[bool]] = None,
@@ -93,15 +93,15 @@ class GtmProperty(pulumi.CustomResource):
                * `stickiness_bonus_percentage`
                * `stickiness_bonus_constant`
                * `health_threshold`
-        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmPropertyLivenessTestArgs']]]] liveness_tests: — (multiple allowed)
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyLivenessTestArgs']]]] liveness_tests: — (multiple allowed)
         :param pulumi.Input[str] name: — Liveness test name
                * `test_interval`
                * `test_object_protocol`
                * `test_timeout`
-        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmPropertyStaticRrSetArgs']]]] static_rr_sets: — (multiple allowed)
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyStaticRrSetArgs']]]] static_rr_sets: — (multiple allowed)
                * `type`
                * `ttl`
-        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmPropertyTrafficTargetArgs']]]] traffic_targets: — (multiple allowed)
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyTrafficTargetArgs']]]] traffic_targets: — (multiple allowed)
                * `datacenter_id`
         :param pulumi.Input[str] type: — Property type  
                * `score_aggregation_type`
@@ -190,34 +190,34 @@ class GtmProperty(pulumi.CustomResource):
             cname: Optional[pulumi.Input[str]] = None,
             comments: Optional[pulumi.Input[str]] = None,
             domain: Optional[pulumi.Input[str]] = None,
-            dynamic_ttl: Optional[pulumi.Input[float]] = None,
-            failback_delay: Optional[pulumi.Input[float]] = None,
-            failover_delay: Optional[pulumi.Input[float]] = None,
+            dynamic_ttl: Optional[pulumi.Input[int]] = None,
+            failback_delay: Optional[pulumi.Input[int]] = None,
+            failover_delay: Optional[pulumi.Input[int]] = None,
             ghost_demand_reporting: Optional[pulumi.Input[bool]] = None,
-            handout_limit: Optional[pulumi.Input[float]] = None,
+            handout_limit: Optional[pulumi.Input[int]] = None,
             handout_mode: Optional[pulumi.Input[str]] = None,
             health_max: Optional[pulumi.Input[float]] = None,
             health_multiplier: Optional[pulumi.Input[float]] = None,
             health_threshold: Optional[pulumi.Input[float]] = None,
             ipv6: Optional[pulumi.Input[bool]] = None,
-            liveness_tests: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmPropertyLivenessTestArgs']]]]] = None,
+            liveness_tests: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyLivenessTestArgs']]]]] = None,
             load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
             map_name: Optional[pulumi.Input[str]] = None,
-            max_unreachable_penalty: Optional[pulumi.Input[float]] = None,
+            max_unreachable_penalty: Optional[pulumi.Input[int]] = None,
             min_live_fraction: Optional[pulumi.Input[float]] = None,
             name: Optional[pulumi.Input[str]] = None,
             score_aggregation_type: Optional[pulumi.Input[str]] = None,
-            static_rr_sets: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmPropertyStaticRrSetArgs']]]]] = None,
-            static_ttl: Optional[pulumi.Input[float]] = None,
-            stickiness_bonus_constant: Optional[pulumi.Input[float]] = None,
-            stickiness_bonus_percentage: Optional[pulumi.Input[float]] = None,
-            traffic_targets: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmPropertyTrafficTargetArgs']]]]] = None,
+            static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyStaticRrSetArgs']]]]] = None,
+            static_ttl: Optional[pulumi.Input[int]] = None,
+            stickiness_bonus_constant: Optional[pulumi.Input[int]] = None,
+            stickiness_bonus_percentage: Optional[pulumi.Input[int]] = None,
+            traffic_targets: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyTrafficTargetArgs']]]]] = None,
             type: Optional[pulumi.Input[str]] = None,
             unreachable_threshold: Optional[pulumi.Input[float]] = None,
             use_computed_targets: Optional[pulumi.Input[bool]] = None,
             wait_on_complete: Optional[pulumi.Input[bool]] = None,
-            weighted_hash_bits_for_ipv4: Optional[pulumi.Input[float]] = None,
-            weighted_hash_bits_for_ipv6: Optional[pulumi.Input[float]] = None) -> 'GtmProperty':
+            weighted_hash_bits_for_ipv4: Optional[pulumi.Input[int]] = None,
+            weighted_hash_bits_for_ipv6: Optional[pulumi.Input[int]] = None) -> 'GtmProperty':
         """
         Get an existing GtmProperty resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -243,15 +243,15 @@ class GtmProperty(pulumi.CustomResource):
                * `stickiness_bonus_percentage`
                * `stickiness_bonus_constant`
                * `health_threshold`
-        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmPropertyLivenessTestArgs']]]] liveness_tests: — (multiple allowed)
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyLivenessTestArgs']]]] liveness_tests: — (multiple allowed)
         :param pulumi.Input[str] name: — Liveness test name
                * `test_interval`
                * `test_object_protocol`
                * `test_timeout`
-        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmPropertyStaticRrSetArgs']]]] static_rr_sets: — (multiple allowed)
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyStaticRrSetArgs']]]] static_rr_sets: — (multiple allowed)
                * `type`
                * `ttl`
-        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['GtmPropertyTrafficTargetArgs']]]] traffic_targets: — (multiple allowed)
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyTrafficTargetArgs']]]] traffic_targets: — (multiple allowed)
                * `datacenter_id`
         :param pulumi.Input[str] type: — Property type  
                * `score_aggregation_type`
@@ -351,17 +351,17 @@ class GtmProperty(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="dynamicTtl")
-    def dynamic_ttl(self) -> pulumi.Output[Optional[float]]:
+    def dynamic_ttl(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "dynamic_ttl")
 
     @property
     @pulumi.getter(name="failbackDelay")
-    def failback_delay(self) -> pulumi.Output[Optional[float]]:
+    def failback_delay(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "failback_delay")
 
     @property
     @pulumi.getter(name="failoverDelay")
-    def failover_delay(self) -> pulumi.Output[Optional[float]]:
+    def failover_delay(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "failover_delay")
 
     @property
@@ -371,7 +371,7 @@ class GtmProperty(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="handoutLimit")
-    def handout_limit(self) -> pulumi.Output[float]:
+    def handout_limit(self) -> pulumi.Output[int]:
         return pulumi.get(self, "handout_limit")
 
     @property
@@ -407,7 +407,7 @@ class GtmProperty(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="livenessTests")
-    def liveness_tests(self) -> pulumi.Output[Optional[List['outputs.GtmPropertyLivenessTest']]]:
+    def liveness_tests(self) -> pulumi.Output[Optional[Sequence['outputs.GtmPropertyLivenessTest']]]:
         """
         — (multiple allowed)
         """
@@ -425,7 +425,7 @@ class GtmProperty(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="maxUnreachablePenalty")
-    def max_unreachable_penalty(self) -> pulumi.Output[Optional[float]]:
+    def max_unreachable_penalty(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "max_unreachable_penalty")
 
     @property
@@ -451,7 +451,7 @@ class GtmProperty(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="staticRrSets")
-    def static_rr_sets(self) -> pulumi.Output[Optional[List['outputs.GtmPropertyStaticRrSet']]]:
+    def static_rr_sets(self) -> pulumi.Output[Optional[Sequence['outputs.GtmPropertyStaticRrSet']]]:
         """
         — (multiple allowed)
         * `type`
@@ -461,22 +461,22 @@ class GtmProperty(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="staticTtl")
-    def static_ttl(self) -> pulumi.Output[Optional[float]]:
+    def static_ttl(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "static_ttl")
 
     @property
     @pulumi.getter(name="stickinessBonusConstant")
-    def stickiness_bonus_constant(self) -> pulumi.Output[Optional[float]]:
+    def stickiness_bonus_constant(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "stickiness_bonus_constant")
 
     @property
     @pulumi.getter(name="stickinessBonusPercentage")
-    def stickiness_bonus_percentage(self) -> pulumi.Output[Optional[float]]:
+    def stickiness_bonus_percentage(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "stickiness_bonus_percentage")
 
     @property
     @pulumi.getter(name="trafficTargets")
-    def traffic_targets(self) -> pulumi.Output[List['outputs.GtmPropertyTrafficTarget']]:
+    def traffic_targets(self) -> pulumi.Output[Sequence['outputs.GtmPropertyTrafficTarget']]:
         """
         — (multiple allowed)
         * `datacenter_id`
@@ -518,12 +518,12 @@ class GtmProperty(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="weightedHashBitsForIpv4")
-    def weighted_hash_bits_for_ipv4(self) -> pulumi.Output[float]:
+    def weighted_hash_bits_for_ipv4(self) -> pulumi.Output[int]:
         return pulumi.get(self, "weighted_hash_bits_for_ipv4")
 
     @property
     @pulumi.getter(name="weightedHashBitsForIpv6")
-    def weighted_hash_bits_for_ipv6(self) -> pulumi.Output[float]:
+    def weighted_hash_bits_for_ipv6(self) -> pulumi.Output[int]:
         return pulumi.get(self, "weighted_hash_bits_for_ipv6")
 
     def translate_output_property(self, prop):

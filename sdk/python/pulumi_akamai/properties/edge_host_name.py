@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
 
 __all__ = ['EdgeHostName']
@@ -15,7 +15,7 @@ class EdgeHostName(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate: Optional[pulumi.Input[float]] = None,
+                 certificate: Optional[pulumi.Input[int]] = None,
                  contract: Optional[pulumi.Input[str]] = None,
                  edge_hostname: Optional[pulumi.Input[str]] = None,
                  group: Optional[pulumi.Input[str]] = None,
@@ -46,7 +46,7 @@ class EdgeHostName(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[float] certificate: — (Optional) The certificate enrollment ID.
+        :param pulumi.Input[int] certificate: — (Optional) The certificate enrollment ID.
         :param pulumi.Input[str] contract: — (Required) The contract ID.
         :param pulumi.Input[str] edge_hostname: — (Required) One or more edge hostnames (must be <= to the number of public hostnames).
         :param pulumi.Input[str] group: — (Required) The group ID.
@@ -97,7 +97,7 @@ class EdgeHostName(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            certificate: Optional[pulumi.Input[float]] = None,
+            certificate: Optional[pulumi.Input[int]] = None,
             contract: Optional[pulumi.Input[str]] = None,
             edge_hostname: Optional[pulumi.Input[str]] = None,
             group: Optional[pulumi.Input[str]] = None,
@@ -112,7 +112,7 @@ class EdgeHostName(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[float] certificate: — (Optional) The certificate enrollment ID.
+        :param pulumi.Input[int] certificate: — (Optional) The certificate enrollment ID.
         :param pulumi.Input[str] contract: — (Required) The contract ID.
         :param pulumi.Input[str] edge_hostname: — (Required) One or more edge hostnames (must be <= to the number of public hostnames).
         :param pulumi.Input[str] group: — (Required) The group ID.
@@ -136,7 +136,7 @@ class EdgeHostName(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def certificate(self) -> pulumi.Output[Optional[float]]:
+    def certificate(self) -> pulumi.Output[Optional[int]]:
         """
         — (Optional) The certificate enrollment ID.
         """
