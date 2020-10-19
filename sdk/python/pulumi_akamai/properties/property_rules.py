@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
 from . import outputs
 from ._inputs import *
@@ -17,7 +17,7 @@ class PropertyRules(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 rules: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['PropertyRulesRuleArgs']]]]] = None,
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRulesRuleArgs']]]]] = None,
                  variables: Optional[pulumi.Input[str]] = None,
                  __props__=None,
                  __name__=None,
@@ -58,7 +58,7 @@ class PropertyRules(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             json: Optional[pulumi.Input[str]] = None,
-            rules: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['PropertyRulesRuleArgs']]]]] = None,
+            rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRulesRuleArgs']]]]] = None,
             variables: Optional[pulumi.Input[str]] = None) -> 'PropertyRules':
         """
         Get an existing PropertyRules resource's state with the given name, id, and optional extra
@@ -88,7 +88,7 @@ class PropertyRules(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def rules(self) -> pulumi.Output[Optional[List['outputs.PropertyRulesRule']]]:
+    def rules(self) -> pulumi.Output[Optional[Sequence['outputs.PropertyRulesRule']]]:
         return pulumi.get(self, "rules")
 
     @property

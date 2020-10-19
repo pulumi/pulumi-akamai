@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
 
 __all__ = [
@@ -29,8 +29,8 @@ class GetPropertyResult:
         if rules and not isinstance(rules, str):
             raise TypeError("Expected argument 'rules' to be a str")
         pulumi.set(__self__, "rules", rules)
-        if version and not isinstance(version, float):
-            raise TypeError("Expected argument 'version' to be a float")
+        if version and not isinstance(version, int):
+            raise TypeError("Expected argument 'version' to be a int")
         pulumi.set(__self__, "version", version)
 
     @property
@@ -53,7 +53,7 @@ class GetPropertyResult:
 
     @property
     @pulumi.getter
-    def version(self) -> Optional[float]:
+    def version(self) -> Optional[int]:
         return pulumi.get(self, "version")
 
 
@@ -70,7 +70,7 @@ class AwaitableGetPropertyResult(GetPropertyResult):
 
 
 def get_property(name: Optional[str] = None,
-                 version: Optional[float] = None,
+                 version: Optional[int] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyResult:
     """
     Use this data source to access information about an existing resource.

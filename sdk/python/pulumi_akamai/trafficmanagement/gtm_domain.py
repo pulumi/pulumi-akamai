@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
 
 __all__ = ['GtmDomain']
@@ -18,11 +18,11 @@ class GtmDomain(pulumi.CustomResource):
                  cname_coalescing_enabled: Optional[pulumi.Input[bool]] = None,
                  comment: Optional[pulumi.Input[str]] = None,
                  contract: Optional[pulumi.Input[str]] = None,
-                 default_error_penalty: Optional[pulumi.Input[float]] = None,
+                 default_error_penalty: Optional[pulumi.Input[int]] = None,
                  default_ssl_client_certificate: Optional[pulumi.Input[str]] = None,
                  default_ssl_client_private_key: Optional[pulumi.Input[str]] = None,
-                 default_timeout_penalty: Optional[pulumi.Input[float]] = None,
-                 email_notification_lists: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 default_timeout_penalty: Optional[pulumi.Input[int]] = None,
+                 email_notification_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  end_user_mapping_enabled: Optional[pulumi.Input[bool]] = None,
                  group: Optional[pulumi.Input[str]] = None,
                  load_feedback: Optional[pulumi.Input[bool]] = None,
@@ -55,11 +55,11 @@ class GtmDomain(pulumi.CustomResource):
         :param pulumi.Input[bool] cname_coalescing_enabled: — (Boolean)
         :param pulumi.Input[str] comment: — A descriptive comment
         :param pulumi.Input[str] contract: — The contract ID (if creating domain)
-        :param pulumi.Input[float] default_error_penalty: — (Default: 75)
-        :param pulumi.Input[float] default_timeout_penalty: — (Default: 25)
+        :param pulumi.Input[int] default_error_penalty: — (Default: 75)
+        :param pulumi.Input[int] default_timeout_penalty: — (Default: 25)
                * `load_imbalance_percentage`
                * `default_ssl_client_private_key`
-        :param pulumi.Input[List[pulumi.Input[str]]] email_notification_lists: — (List)
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] email_notification_lists: — (List)
         :param pulumi.Input[bool] end_user_mapping_enabled: — (Boolean)
         :param pulumi.Input[str] group: — The currently selected group ID (if creating domain)
         :param pulumi.Input[bool] load_feedback: — (Boolean)
@@ -134,34 +134,34 @@ class GtmDomain(pulumi.CustomResource):
             cname_coalescing_enabled: Optional[pulumi.Input[bool]] = None,
             comment: Optional[pulumi.Input[str]] = None,
             contract: Optional[pulumi.Input[str]] = None,
-            default_error_penalty: Optional[pulumi.Input[float]] = None,
+            default_error_penalty: Optional[pulumi.Input[int]] = None,
             default_health_max: Optional[pulumi.Input[float]] = None,
             default_health_multiplier: Optional[pulumi.Input[float]] = None,
             default_health_threshold: Optional[pulumi.Input[float]] = None,
-            default_max_unreachable_penalty: Optional[pulumi.Input[float]] = None,
+            default_max_unreachable_penalty: Optional[pulumi.Input[int]] = None,
             default_ssl_client_certificate: Optional[pulumi.Input[str]] = None,
             default_ssl_client_private_key: Optional[pulumi.Input[str]] = None,
-            default_timeout_penalty: Optional[pulumi.Input[float]] = None,
+            default_timeout_penalty: Optional[pulumi.Input[int]] = None,
             default_unreachable_threshold: Optional[pulumi.Input[float]] = None,
-            email_notification_lists: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            email_notification_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             end_user_mapping_enabled: Optional[pulumi.Input[bool]] = None,
             group: Optional[pulumi.Input[str]] = None,
             load_feedback: Optional[pulumi.Input[bool]] = None,
             load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
-            map_update_interval: Optional[pulumi.Input[float]] = None,
-            max_properties: Optional[pulumi.Input[float]] = None,
-            max_resources: Optional[pulumi.Input[float]] = None,
+            map_update_interval: Optional[pulumi.Input[int]] = None,
+            max_properties: Optional[pulumi.Input[int]] = None,
+            max_resources: Optional[pulumi.Input[int]] = None,
             max_test_timeout: Optional[pulumi.Input[float]] = None,
-            max_ttl: Optional[pulumi.Input[float]] = None,
+            max_ttl: Optional[pulumi.Input[int]] = None,
             min_pingable_region_fraction: Optional[pulumi.Input[float]] = None,
-            min_test_interval: Optional[pulumi.Input[float]] = None,
-            min_ttl: Optional[pulumi.Input[float]] = None,
+            min_test_interval: Optional[pulumi.Input[int]] = None,
+            min_ttl: Optional[pulumi.Input[int]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            ping_interval: Optional[pulumi.Input[float]] = None,
-            ping_packet_size: Optional[pulumi.Input[float]] = None,
+            ping_interval: Optional[pulumi.Input[int]] = None,
+            ping_packet_size: Optional[pulumi.Input[int]] = None,
             round_robin_prefix: Optional[pulumi.Input[str]] = None,
-            servermonitor_liveness_count: Optional[pulumi.Input[float]] = None,
-            servermonitor_load_count: Optional[pulumi.Input[float]] = None,
+            servermonitor_liveness_count: Optional[pulumi.Input[int]] = None,
+            servermonitor_load_count: Optional[pulumi.Input[int]] = None,
             servermonitor_pool: Optional[pulumi.Input[str]] = None,
             type: Optional[pulumi.Input[str]] = None,
             wait_on_complete: Optional[pulumi.Input[bool]] = None) -> 'GtmDomain':
@@ -175,8 +175,8 @@ class GtmDomain(pulumi.CustomResource):
         :param pulumi.Input[bool] cname_coalescing_enabled: — (Boolean)
         :param pulumi.Input[str] comment: — A descriptive comment
         :param pulumi.Input[str] contract: — The contract ID (if creating domain)
-        :param pulumi.Input[float] default_error_penalty: — (Default: 75)
-        :param pulumi.Input[float] default_timeout_penalty: — (Default: 25)
+        :param pulumi.Input[int] default_error_penalty: — (Default: 75)
+        :param pulumi.Input[int] default_timeout_penalty: — (Default: 25)
                * `load_imbalance_percentage`
                * `default_ssl_client_private_key`
         :param pulumi.Input[float] default_unreachable_threshold: * `min_pingable_region_fraction`
@@ -198,7 +198,7 @@ class GtmDomain(pulumi.CustomResource):
                * `default_health_threshold`
                * `min_test_interval`
                * `ping_packet_size`
-        :param pulumi.Input[List[pulumi.Input[str]]] email_notification_lists: — (List)
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] email_notification_lists: — (List)
         :param pulumi.Input[bool] end_user_mapping_enabled: — (Boolean)
         :param pulumi.Input[str] group: — The currently selected group ID (if creating domain)
         :param pulumi.Input[bool] load_feedback: — (Boolean)
@@ -273,7 +273,7 @@ class GtmDomain(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="defaultErrorPenalty")
-    def default_error_penalty(self) -> pulumi.Output[Optional[float]]:
+    def default_error_penalty(self) -> pulumi.Output[Optional[int]]:
         """
         — (Default: 75)
         """
@@ -296,7 +296,7 @@ class GtmDomain(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="defaultMaxUnreachablePenalty")
-    def default_max_unreachable_penalty(self) -> pulumi.Output[float]:
+    def default_max_unreachable_penalty(self) -> pulumi.Output[int]:
         return pulumi.get(self, "default_max_unreachable_penalty")
 
     @property
@@ -311,7 +311,7 @@ class GtmDomain(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="defaultTimeoutPenalty")
-    def default_timeout_penalty(self) -> pulumi.Output[Optional[float]]:
+    def default_timeout_penalty(self) -> pulumi.Output[Optional[int]]:
         """
         — (Default: 25)
         * `load_imbalance_percentage`
@@ -347,7 +347,7 @@ class GtmDomain(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="emailNotificationLists")
-    def email_notification_lists(self) -> pulumi.Output[Optional[List[str]]]:
+    def email_notification_lists(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
         — (List)
         """
@@ -385,17 +385,17 @@ class GtmDomain(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="mapUpdateInterval")
-    def map_update_interval(self) -> pulumi.Output[float]:
+    def map_update_interval(self) -> pulumi.Output[int]:
         return pulumi.get(self, "map_update_interval")
 
     @property
     @pulumi.getter(name="maxProperties")
-    def max_properties(self) -> pulumi.Output[float]:
+    def max_properties(self) -> pulumi.Output[int]:
         return pulumi.get(self, "max_properties")
 
     @property
     @pulumi.getter(name="maxResources")
-    def max_resources(self) -> pulumi.Output[float]:
+    def max_resources(self) -> pulumi.Output[int]:
         return pulumi.get(self, "max_resources")
 
     @property
@@ -405,7 +405,7 @@ class GtmDomain(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="maxTtl")
-    def max_ttl(self) -> pulumi.Output[float]:
+    def max_ttl(self) -> pulumi.Output[int]:
         return pulumi.get(self, "max_ttl")
 
     @property
@@ -415,12 +415,12 @@ class GtmDomain(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="minTestInterval")
-    def min_test_interval(self) -> pulumi.Output[float]:
+    def min_test_interval(self) -> pulumi.Output[int]:
         return pulumi.get(self, "min_test_interval")
 
     @property
     @pulumi.getter(name="minTtl")
-    def min_ttl(self) -> pulumi.Output[float]:
+    def min_ttl(self) -> pulumi.Output[int]:
         return pulumi.get(self, "min_ttl")
 
     @property
@@ -433,12 +433,12 @@ class GtmDomain(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="pingInterval")
-    def ping_interval(self) -> pulumi.Output[float]:
+    def ping_interval(self) -> pulumi.Output[int]:
         return pulumi.get(self, "ping_interval")
 
     @property
     @pulumi.getter(name="pingPacketSize")
-    def ping_packet_size(self) -> pulumi.Output[float]:
+    def ping_packet_size(self) -> pulumi.Output[int]:
         return pulumi.get(self, "ping_packet_size")
 
     @property
@@ -448,12 +448,12 @@ class GtmDomain(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="servermonitorLivenessCount")
-    def servermonitor_liveness_count(self) -> pulumi.Output[float]:
+    def servermonitor_liveness_count(self) -> pulumi.Output[int]:
         return pulumi.get(self, "servermonitor_liveness_count")
 
     @property
     @pulumi.getter(name="servermonitorLoadCount")
-    def servermonitor_load_count(self) -> pulumi.Output[float]:
+    def servermonitor_load_count(self) -> pulumi.Output[int]:
         return pulumi.get(self, "servermonitor_load_count")
 
     @property

@@ -9,7 +9,7 @@ replace (
 
 require (
 	github.com/hashicorp/terraform-plugin-sdk v1.11.0
-	github.com/pulumi/pulumi-terraform-bridge/v2 v2.9.1
-	github.com/pulumi/pulumi/sdk/v2 v2.10.0
+	github.com/pulumi/pulumi-terraform-bridge/v2 v2.11.0
+	github.com/pulumi/pulumi/sdk/v2 v2.12.0
 	github.com/terraform-providers/terraform-provider-akamai v0.8.1
 )

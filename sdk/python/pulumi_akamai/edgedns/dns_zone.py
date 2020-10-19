@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
 from . import outputs
 from ._inputs import *
@@ -21,7 +21,7 @@ class DnsZone(pulumi.CustomResource):
                  contract: Optional[pulumi.Input[str]] = None,
                  end_customer_id: Optional[pulumi.Input[str]] = None,
                  group: Optional[pulumi.Input[str]] = None,
-                 masters: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 masters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  sign_and_serve: Optional[pulumi.Input[bool]] = None,
                  sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
                  target: Optional[pulumi.Input[str]] = None,
@@ -60,7 +60,7 @@ class DnsZone(pulumi.CustomResource):
         :param pulumi.Input[str] contract: — (Required) The contract ID.
         :param pulumi.Input[str] end_customer_id: — (Optional)
         :param pulumi.Input[str] group: — (Required) The currently selected group ID.
-        :param pulumi.Input[List[pulumi.Input[str]]] masters: — (Required for Secondary) The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] masters: — (Required for Secondary) The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
         :param pulumi.Input[bool] sign_and_serve: — (Optional) Whether DNSSEC Sign&Serve is enabled.
         :param pulumi.Input[str] sign_and_serve_algorithm: — (Optional) Algorithm used by Sign&Serve.
         :param pulumi.Input[str] target: — (Required for Alias)
@@ -118,12 +118,12 @@ class DnsZone(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             activation_state: Optional[pulumi.Input[str]] = None,
-            alias_count: Optional[pulumi.Input[float]] = None,
+            alias_count: Optional[pulumi.Input[int]] = None,
             comment: Optional[pulumi.Input[str]] = None,
             contract: Optional[pulumi.Input[str]] = None,
             end_customer_id: Optional[pulumi.Input[str]] = None,
             group: Optional[pulumi.Input[str]] = None,
-            masters: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            masters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             sign_and_serve: Optional[pulumi.Input[bool]] = None,
             sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
             target: Optional[pulumi.Input[str]] = None,
@@ -142,7 +142,7 @@ class DnsZone(pulumi.CustomResource):
         :param pulumi.Input[str] contract: — (Required) The contract ID.
         :param pulumi.Input[str] end_customer_id: — (Optional)
         :param pulumi.Input[str] group: — (Required) The currently selected group ID.
-        :param pulumi.Input[List[pulumi.Input[str]]] masters: — (Required for Secondary) The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] masters: — (Required for Secondary) The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
         :param pulumi.Input[bool] sign_and_serve: — (Optional) Whether DNSSEC Sign&Serve is enabled.
         :param pulumi.Input[str] sign_and_serve_algorithm: — (Optional) Algorithm used by Sign&Serve.
         :param pulumi.Input[str] target: — (Required for Alias)
@@ -177,7 +177,7 @@ class DnsZone(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="aliasCount")
-    def alias_count(self) -> pulumi.Output[float]:
+    def alias_count(self) -> pulumi.Output[int]:
         return pulumi.get(self, "alias_count")
 
     @property
@@ -214,7 +214,7 @@ class DnsZone(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def masters(self) -> pulumi.Output[Optional[List[str]]]:
+    def masters(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
         — (Required for Secondary) The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
         """

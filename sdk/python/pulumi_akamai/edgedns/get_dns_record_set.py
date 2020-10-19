@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
 
 __all__ = [
@@ -51,7 +51,7 @@ class GetDnsRecordSetResult:
 
     @property
     @pulumi.getter
-    def rdatas(self) -> List[str]:
+    def rdatas(self) -> Sequence[str]:
         return pulumi.get(self, "rdatas")
 
     @property

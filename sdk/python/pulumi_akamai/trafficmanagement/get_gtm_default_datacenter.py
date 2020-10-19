@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
 
 __all__ = [
@@ -20,11 +20,11 @@ class GetGtmDefaultDatacenterResult:
     A collection of values returned by getGtmDefaultDatacenter.
     """
     def __init__(__self__, datacenter=None, datacenter_id=None, domain=None, id=None, nickname=None):
-        if datacenter and not isinstance(datacenter, float):
-            raise TypeError("Expected argument 'datacenter' to be a float")
+        if datacenter and not isinstance(datacenter, int):
+            raise TypeError("Expected argument 'datacenter' to be a int")
         pulumi.set(__self__, "datacenter", datacenter)
-        if datacenter_id and not isinstance(datacenter_id, float):
-            raise TypeError("Expected argument 'datacenter_id' to be a float")
+        if datacenter_id and not isinstance(datacenter_id, int):
+            raise TypeError("Expected argument 'datacenter_id' to be a int")
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         if domain and not isinstance(domain, str):
             raise TypeError("Expected argument 'domain' to be a str")
@@ -38,12 +38,12 @@ class GetGtmDefaultDatacenterResult:
 
     @property
     @pulumi.getter
-    def datacenter(self) -> Optional[float]:
+    def datacenter(self) -> Optional[int]:
         return pulumi.get(self, "datacenter")
 
     @property
     @pulumi.getter(name="datacenterId")
-    def datacenter_id(self) -> float:
+    def datacenter_id(self) -> int:
         return pulumi.get(self, "datacenter_id")
 
     @property
@@ -78,7 +78,7 @@ class AwaitableGetGtmDefaultDatacenterResult(GetGtmDefaultDatacenterResult):
             nickname=self.nickname)
 
 
-def get_gtm_default_datacenter(datacenter: Optional[float] = None,
+def get_gtm_default_datacenter(datacenter: Optional[int] = None,
                                domain: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGtmDefaultDatacenterResult:
     """
@@ -87,7 +87,7 @@ def get_gtm_default_datacenter(datacenter: Optional[float] = None,
     ## Example Usage
 
 
-    :param float datacenter: — (Optional. Default 5400)
+    :param int datacenter: — (Optional. Default 5400)
     :param str domain: — (Required)
     """
     __args__ = dict()

@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
 
 __all__ = ['PropertyActivation']
@@ -16,10 +16,10 @@ class PropertyActivation(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  activate: Optional[pulumi.Input[bool]] = None,
-                 contacts: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  property: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[float]] = None,
+                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None,
                  __name__=None,
                  __opts__=None):
@@ -43,10 +43,10 @@ class PropertyActivation(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] activate: — (Optional, boolean) Whether to activate the property on the network. (Default: `true`).
-        :param pulumi.Input[List[pulumi.Input[str]]] contacts: — (Required) One or more email addresses to inform about activation changes.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] contacts: — (Required) One or more email addresses to inform about activation changes.
         :param pulumi.Input[str] network: — (Optional) Akamai network to activate on. Allowed values `staging` or `production` (Default: `staging`).
         :param pulumi.Input[str] property: — (Required) The property ID.
-        :param pulumi.Input[float] version: — (Optional) The version to activate. When unset it will activate the latest version of the property.
+        :param pulumi.Input[int] version: — (Optional) The version to activate. When unset it will activate the latest version of the property.
         """
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
@@ -86,11 +86,11 @@ class PropertyActivation(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             activate: Optional[pulumi.Input[bool]] = None,
-            contacts: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             network: Optional[pulumi.Input[str]] = None,
             property: Optional[pulumi.Input[str]] = None,
             status: Optional[pulumi.Input[str]] = None,
-            version: Optional[pulumi.Input[float]] = None) -> 'PropertyActivation':
+            version: Optional[pulumi.Input[int]] = None) -> 'PropertyActivation':
         """
         Get an existing PropertyActivation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -99,10 +99,10 @@ class PropertyActivation(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] activate: — (Optional, boolean) Whether to activate the property on the network. (Default: `true`).
-        :param pulumi.Input[List[pulumi.Input[str]]] contacts: — (Required) One or more email addresses to inform about activation changes.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] contacts: — (Required) One or more email addresses to inform about activation changes.
         :param pulumi.Input[str] network: — (Optional) Akamai network to activate on. Allowed values `staging` or `production` (Default: `staging`).
         :param pulumi.Input[str] property: — (Required) The property ID.
-        :param pulumi.Input[float] version: — (Optional) The version to activate. When unset it will activate the latest version of the property.
+        :param pulumi.Input[int] version: — (Optional) The version to activate. When unset it will activate the latest version of the property.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -126,7 +126,7 @@ class PropertyActivation(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def contacts(self) -> pulumi.Output[List[str]]:
+    def contacts(self) -> pulumi.Output[Sequence[str]]:
         """
         — (Required) One or more email addresses to inform about activation changes.
         """
@@ -147,7 +147,7 @@ class PropertyActivation(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def version(self) -> pulumi.Output[Optional[float]]:
+    def version(self) -> pulumi.Output[Optional[int]]:
         """
         — (Optional) The version to activate. When unset it will activate the latest version of the property.
         """
