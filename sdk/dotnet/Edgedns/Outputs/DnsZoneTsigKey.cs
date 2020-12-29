@@ -14,11 +14,6 @@ namespace Pulumi.Akamai.Edgedns.Outputs
     public sealed class DnsZoneTsigKey
     {
         public readonly string Algorithm;
-        /// <summary>
-        /// key name
-        /// * `algorithm`
-        /// * `secret`
-        /// </summary>
         public readonly string Name;
         public readonly string Secret;
 

@@ -5,24 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * The `akamai.properties.EdgeHostName` provides the resource for configuring a secure edge hostname that determines how requests for your site, app, or content are mapped to Akamai edge servers.
- *
- * An edge hostname is the CNAME target you use when directing your end user traffic to Akamai. In a typical DNS CNAME, your www.customer.com hostname corresponds to an edge hostname of www.customer.com.edgesuite.net.
- *
- * ## Example Usage
- * ### Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const terraform_demo = new akamai.properties.EdgeHostName("terraform-demo", {
- *     contract: "ctr_####",
- *     edgeHostname: "www.example.org.edgesuite.net",
- *     group: "grp_####",
- *     product: "prd_####",
- * });
- * ```
+ * @deprecated akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName
  */
 export class EdgeHostName extends pulumi.CustomResource {
     /**
@@ -35,6 +18,7 @@ export class EdgeHostName extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: EdgeHostNameState, opts?: pulumi.CustomResourceOptions): EdgeHostName {
+        pulumi.log.warn("EdgeHostName is deprecated: akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName")
         return new EdgeHostName(name, <any>state, { ...opts, id: id });
     }
 
@@ -52,35 +36,24 @@ export class EdgeHostName extends pulumi.CustomResource {
         return obj['__pulumiType'] === EdgeHostName.__pulumiType;
     }
 
-    /**
-     * — (Optional) The certificate enrollment ID.
-     */
     public readonly certificate!: pulumi.Output<number | undefined>;
     /**
-     * — (Required) The contract ID.
+     * @deprecated use "contract_id" attribute instead
      */
     public readonly contract!: pulumi.Output<string>;
-    /**
-     * — (Required) One or more edge hostnames (must be <= to the number of public hostnames).
-     */
+    public readonly contractId!: pulumi.Output<string>;
     public readonly edgeHostname!: pulumi.Output<string>;
     /**
-     * — (Required) The group ID.
+     * @deprecated use "group_id" attribute instead
      */
     public readonly group!: pulumi.Output<string>;
-    public /*out*/ readonly ipBehavior!: pulumi.Output<string>;
+    public readonly groupId!: pulumi.Output<string>;
+    public readonly ipBehavior!: pulumi.Output<string>;
     /**
-     * — (Optional) Whether the property supports IPv4 to origin.  (Default: `true`).
-     */
-    public readonly ipv4!: pulumi.Output<boolean | undefined>;
-    /**
-     * —  (Optional) Whether the property supports IPv6 to origin. (Default: `false`).
-     */
-    public readonly ipv6!: pulumi.Output<boolean | undefined>;
-    /**
-     * — (Required) The product ID.
+     * @deprecated use "product_id" attribute instead
      */
     public readonly product!: pulumi.Output<string>;
+    public readonly productId!: pulumi.Output<string>;
 
     /**
      * Create a EdgeHostName resource with the given unique name, arguments, and options.
@@ -89,41 +62,40 @@ export class EdgeHostName extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
+    /** @deprecated akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName */
     constructor(name: string, args: EdgeHostNameArgs, opts?: pulumi.CustomResourceOptions)
+    /** @deprecated akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName */
     constructor(name: string, argsOrState?: EdgeHostNameArgs | EdgeHostNameState, opts?: pulumi.CustomResourceOptions) {
+        pulumi.log.warn("EdgeHostName is deprecated: akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName")
         let inputs: pulumi.Inputs = {};
         if (opts && opts.id) {
             const state = argsOrState as EdgeHostNameState | undefined;
             inputs["certificate"] = state ? state.certificate : undefined;
             inputs["contract"] = state ? state.contract : undefined;
+            inputs["contractId"] = state ? state.contractId : undefined;
             inputs["edgeHostname"] = state ? state.edgeHostname : undefined;
             inputs["group"] = state ? state.group : undefined;
+            inputs["groupId"] = state ? state.groupId : undefined;
             inputs["ipBehavior"] = state ? state.ipBehavior : undefined;
-            inputs["ipv4"] = state ? state.ipv4 : undefined;
-            inputs["ipv6"] = state ? state.ipv6 : undefined;
             inputs["product"] = state ? state.product : undefined;
+            inputs["productId"] = state ? state.productId : undefined;
         } else {
             const args = argsOrState as EdgeHostNameArgs | undefined;
-            if (!args || args.contract === undefined) {
-                throw new Error("Missing required property 'contract'");
-            }
-            if (!args || args.edgeHostname === undefined) {
+            if ((!args || args.edgeHostname === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'edgeHostname'");
             }
-            if (!args || args.group === undefined) {
-                throw new Error("Missing required property 'group'");
-            }
-            if (!args || args.product === undefined) {
-                throw new Error("Missing required property 'product'");
+            if ((!args || args.ipBehavior === undefined) && !(opts && opts.urn)) {
+                throw new Error("Missing required property 'ipBehavior'");
             }
             inputs["certificate"] = args ? args.certificate : undefined;
             inputs["contract"] = args ? args.contract : undefined;
+            inputs["contractId"] = args ? args.contractId : undefined;
             inputs["edgeHostname"] = args ? args.edgeHostname : undefined;
             inputs["group"] = args ? args.group : undefined;
-            inputs["ipv4"] = args ? args.ipv4 : undefined;
-            inputs["ipv6"] = args ? args.ipv6 : undefined;
+            inputs["groupId"] = args ? args.groupId : undefined;
+            inputs["ipBehavior"] = args ? args.ipBehavior : undefined;
             inputs["product"] = args ? args.product : undefined;
-            inputs["ipBehavior"] = undefined /*out*/;
+            inputs["productId"] = args ? args.productId : undefined;
         }
         if (!opts) {
             opts = {}
@@ -140,67 +112,46 @@ export class EdgeHostName extends pulumi.CustomResource {
  * Input properties used for looking up and filtering EdgeHostName resources.
  */
 export interface EdgeHostNameState {
-    /**
-     * — (Optional) The certificate enrollment ID.
-     */
     readonly certificate?: pulumi.Input<number>;
     /**
-     * — (Required) The contract ID.
+     * @deprecated use "contract_id" attribute instead
      */
     readonly contract?: pulumi.Input<string>;
-    /**
-     * — (Required) One or more edge hostnames (must be <= to the number of public hostnames).
-     */
+    readonly contractId?: pulumi.Input<string>;
     readonly edgeHostname?: pulumi.Input<string>;
     /**
-     * — (Required) The group ID.
+     * @deprecated use "group_id" attribute instead
      */
     readonly group?: pulumi.Input<string>;
+    readonly groupId?: pulumi.Input<string>;
     readonly ipBehavior?: pulumi.Input<string>;
     /**
-     * — (Optional) Whether the property supports IPv4 to origin.  (Default: `true`).
-     */
-    readonly ipv4?: pulumi.Input<boolean>;
-    /**
-     * —  (Optional) Whether the property supports IPv6 to origin. (Default: `false`).
-     */
-    readonly ipv6?: pulumi.Input<boolean>;
-    /**
-     * — (Required) The product ID.
+     * @deprecated use "product_id" attribute instead
      */
     readonly product?: pulumi.Input<string>;
+    readonly productId?: pulumi.Input<string>;
 }
 
 /**
  * The set of arguments for constructing a EdgeHostName resource.
  */
 export interface EdgeHostNameArgs {
-    /**
-     * — (Optional) The certificate enrollment ID.
-     */
     readonly certificate?: pulumi.Input<number>;
     /**
-     * — (Required) The contract ID.
+     * @deprecated use "contract_id" attribute instead
      */
-    readonly contract: pulumi.Input<string>;
-    /**
-     * — (Required) One or more edge hostnames (must be <= to the number of public hostnames).
-     */
+    readonly contract?: pulumi.Input<string>;
+    readonly contractId?: pulumi.Input<string>;
     readonly edgeHostname: pulumi.Input<string>;
     /**
-     * — (Required) The group ID.
+     * @deprecated use "group_id" attribute instead
      */
-    readonly group: pulumi.Input<string>;
+    readonly group?: pulumi.Input<string>;
+    readonly groupId?: pulumi.Input<string>;
+    readonly ipBehavior: pulumi.Input<string>;
     /**
-     * — (Optional) Whether the property supports IPv4 to origin.  (Default: `true`).
+     * @deprecated use "product_id" attribute instead
      */
-    readonly ipv4?: pulumi.Input<boolean>;
-    /**
-     * —  (Optional) Whether the property supports IPv6 to origin. (Default: `false`).
-     */
-    readonly ipv6?: pulumi.Input<boolean>;
-    /**
-     * — (Required) The product ID.
-     */
-    readonly product: pulumi.Input<string>;
+    readonly product?: pulumi.Input<string>;
+    readonly productId?: pulumi.Input<string>;
 }

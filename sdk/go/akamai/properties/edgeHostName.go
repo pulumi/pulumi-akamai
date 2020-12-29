@@ -4,79 +4,43 @@
 package properties
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// The `properties.EdgeHostName` provides the resource for configuring a secure edge hostname that determines how requests for your site, app, or content are mapped to Akamai edge servers.
-//
-// An edge hostname is the CNAME target you use when directing your end user traffic to Akamai. In a typical DNS CNAME, your www.customer.com hostname corresponds to an edge hostname of www.customer.com.edgesuite.net.
-//
-// ## Example Usage
-// ### Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/properties"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := properties.NewEdgeHostName(ctx, "terraform_demo", &properties.EdgeHostNameArgs{
-// 			Contract:     pulumi.String("ctr_####"),
-// 			EdgeHostname: pulumi.String("www.example.org.edgesuite.net"),
-// 			Group:        pulumi.String("grp_####"),
-// 			Product:      pulumi.String("prd_####"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
+// Deprecated: akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName
 type EdgeHostName struct {
 	pulumi.CustomResourceState
 
-	// — (Optional) The certificate enrollment ID.
 	Certificate pulumi.IntPtrOutput `pulumi:"certificate"`
-	// — (Required) The contract ID.
-	Contract pulumi.StringOutput `pulumi:"contract"`
-	// — (Required) One or more edge hostnames (must be <= to the number of public hostnames).
+	// Deprecated: use "contract_id" attribute instead
+	Contract     pulumi.StringOutput `pulumi:"contract"`
+	ContractId   pulumi.StringOutput `pulumi:"contractId"`
 	EdgeHostname pulumi.StringOutput `pulumi:"edgeHostname"`
-	// — (Required) The group ID.
+	// Deprecated: use "group_id" attribute instead
 	Group      pulumi.StringOutput `pulumi:"group"`
+	GroupId    pulumi.StringOutput `pulumi:"groupId"`
 	IpBehavior pulumi.StringOutput `pulumi:"ipBehavior"`
-	// — (Optional) Whether the property supports IPv4 to origin.  (Default: `true`).
-	Ipv4 pulumi.BoolPtrOutput `pulumi:"ipv4"`
-	// —  (Optional) Whether the property supports IPv6 to origin. (Default: `false`).
-	Ipv6 pulumi.BoolPtrOutput `pulumi:"ipv6"`
-	// — (Required) The product ID.
-	Product pulumi.StringOutput `pulumi:"product"`
+	// Deprecated: use "product_id" attribute instead
+	Product   pulumi.StringOutput `pulumi:"product"`
+	ProductId pulumi.StringOutput `pulumi:"productId"`
 }
 
 // NewEdgeHostName registers a new resource with the given unique name, arguments, and options.
 func NewEdgeHostName(ctx *pulumi.Context,
 	name string, args *EdgeHostNameArgs, opts ...pulumi.ResourceOption) (*EdgeHostName, error) {
-	if args == nil || args.Contract == nil {
-		return nil, errors.New("missing required argument 'Contract'")
-	}
-	if args == nil || args.EdgeHostname == nil {
-		return nil, errors.New("missing required argument 'EdgeHostname'")
-	}
-	if args == nil || args.Group == nil {
-		return nil, errors.New("missing required argument 'Group'")
-	}
-	if args == nil || args.Product == nil {
-		return nil, errors.New("missing required argument 'Product'")
-	}
 	if args == nil {
-		args = &EdgeHostNameArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.EdgeHostname == nil {
+		return nil, errors.New("invalid value for required argument 'EdgeHostname'")
+	}
+	if args.IpBehavior == nil {
+		return nil, errors.New("invalid value for required argument 'IpBehavior'")
 	}
 	var resource EdgeHostName
 	err := ctx.RegisterResource("akamai:properties/edgeHostName:EdgeHostName", name, args, &resource, opts...)
@@ -100,39 +64,33 @@ func GetEdgeHostName(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering EdgeHostName resources.
 type edgeHostNameState struct {
-	// — (Optional) The certificate enrollment ID.
 	Certificate *int `pulumi:"certificate"`
-	// — (Required) The contract ID.
-	Contract *string `pulumi:"contract"`
-	// — (Required) One or more edge hostnames (must be <= to the number of public hostnames).
+	// Deprecated: use "contract_id" attribute instead
+	Contract     *string `pulumi:"contract"`
+	ContractId   *string `pulumi:"contractId"`
 	EdgeHostname *string `pulumi:"edgeHostname"`
-	// — (Required) The group ID.
+	// Deprecated: use "group_id" attribute instead
 	Group      *string `pulumi:"group"`
+	GroupId    *string `pulumi:"groupId"`
 	IpBehavior *string `pulumi:"ipBehavior"`
-	// — (Optional) Whether the property supports IPv4 to origin.  (Default: `true`).
-	Ipv4 *bool `pulumi:"ipv4"`
-	// —  (Optional) Whether the property supports IPv6 to origin. (Default: `false`).
-	Ipv6 *bool `pulumi:"ipv6"`
-	// — (Required) The product ID.
-	Product *string `pulumi:"product"`
+	// Deprecated: use "product_id" attribute instead
+	Product   *string `pulumi:"product"`
+	ProductId *string `pulumi:"productId"`
 }
 
 type EdgeHostNameState struct {
-	// — (Optional) The certificate enrollment ID.
 	Certificate pulumi.IntPtrInput
-	// — (Required) The contract ID.
-	Contract pulumi.StringPtrInput
-	// — (Required) One or more edge hostnames (must be <= to the number of public hostnames).
+	// Deprecated: use "contract_id" attribute instead
+	Contract     pulumi.StringPtrInput
+	ContractId   pulumi.StringPtrInput
 	EdgeHostname pulumi.StringPtrInput
-	// — (Required) The group ID.
+	// Deprecated: use "group_id" attribute instead
 	Group      pulumi.StringPtrInput
+	GroupId    pulumi.StringPtrInput
 	IpBehavior pulumi.StringPtrInput
-	// — (Optional) Whether the property supports IPv4 to origin.  (Default: `true`).
-	Ipv4 pulumi.BoolPtrInput
-	// —  (Optional) Whether the property supports IPv6 to origin. (Default: `false`).
-	Ipv6 pulumi.BoolPtrInput
-	// — (Required) The product ID.
-	Product pulumi.StringPtrInput
+	// Deprecated: use "product_id" attribute instead
+	Product   pulumi.StringPtrInput
+	ProductId pulumi.StringPtrInput
 }
 
 func (EdgeHostNameState) ElementType() reflect.Type {
@@ -140,40 +98,75 @@ func (EdgeHostNameState) ElementType() reflect.Type {
 }
 
 type edgeHostNameArgs struct {
-	// — (Optional) The certificate enrollment ID.
 	Certificate *int `pulumi:"certificate"`
-	// — (Required) The contract ID.
-	Contract string `pulumi:"contract"`
-	// — (Required) One or more edge hostnames (must be <= to the number of public hostnames).
-	EdgeHostname string `pulumi:"edgeHostname"`
-	// — (Required) The group ID.
-	Group string `pulumi:"group"`
-	// — (Optional) Whether the property supports IPv4 to origin.  (Default: `true`).
-	Ipv4 *bool `pulumi:"ipv4"`
-	// —  (Optional) Whether the property supports IPv6 to origin. (Default: `false`).
-	Ipv6 *bool `pulumi:"ipv6"`
-	// — (Required) The product ID.
-	Product string `pulumi:"product"`
+	// Deprecated: use "contract_id" attribute instead
+	Contract     *string `pulumi:"contract"`
+	ContractId   *string `pulumi:"contractId"`
+	EdgeHostname string  `pulumi:"edgeHostname"`
+	// Deprecated: use "group_id" attribute instead
+	Group      *string `pulumi:"group"`
+	GroupId    *string `pulumi:"groupId"`
+	IpBehavior string  `pulumi:"ipBehavior"`
+	// Deprecated: use "product_id" attribute instead
+	Product   *string `pulumi:"product"`
+	ProductId *string `pulumi:"productId"`
 }
 
 // The set of arguments for constructing a EdgeHostName resource.
 type EdgeHostNameArgs struct {
-	// — (Optional) The certificate enrollment ID.
 	Certificate pulumi.IntPtrInput
-	// — (Required) The contract ID.
-	Contract pulumi.StringInput
-	// — (Required) One or more edge hostnames (must be <= to the number of public hostnames).
+	// Deprecated: use "contract_id" attribute instead
+	Contract     pulumi.StringPtrInput
+	ContractId   pulumi.StringPtrInput
 	EdgeHostname pulumi.StringInput
-	// — (Required) The group ID.
-	Group pulumi.StringInput
-	// — (Optional) Whether the property supports IPv4 to origin.  (Default: `true`).
-	Ipv4 pulumi.BoolPtrInput
-	// —  (Optional) Whether the property supports IPv6 to origin. (Default: `false`).
-	Ipv6 pulumi.BoolPtrInput
-	// — (Required) The product ID.
-	Product pulumi.StringInput
+	// Deprecated: use "group_id" attribute instead
+	Group      pulumi.StringPtrInput
+	GroupId    pulumi.StringPtrInput
+	IpBehavior pulumi.StringInput
+	// Deprecated: use "product_id" attribute instead
+	Product   pulumi.StringPtrInput
+	ProductId pulumi.StringPtrInput
 }
 
 func (EdgeHostNameArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*edgeHostNameArgs)(nil)).Elem()
+}
+
+type EdgeHostNameInput interface {
+	pulumi.Input
+
+	ToEdgeHostNameOutput() EdgeHostNameOutput
+	ToEdgeHostNameOutputWithContext(ctx context.Context) EdgeHostNameOutput
+}
+
+func (EdgeHostName) ElementType() reflect.Type {
+	return reflect.TypeOf((*EdgeHostName)(nil)).Elem()
+}
+
+func (i EdgeHostName) ToEdgeHostNameOutput() EdgeHostNameOutput {
+	return i.ToEdgeHostNameOutputWithContext(context.Background())
+}
+
+func (i EdgeHostName) ToEdgeHostNameOutputWithContext(ctx context.Context) EdgeHostNameOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EdgeHostNameOutput)
+}
+
+type EdgeHostNameOutput struct {
+	*pulumi.OutputState
+}
+
+func (EdgeHostNameOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*EdgeHostNameOutput)(nil)).Elem()
+}
+
+func (o EdgeHostNameOutput) ToEdgeHostNameOutput() EdgeHostNameOutput {
+	return o
+}
+
+func (o EdgeHostNameOutput) ToEdgeHostNameOutputWithContext(ctx context.Context) EdgeHostNameOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(EdgeHostNameOutput{})
 }

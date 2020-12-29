@@ -12,88 +12,41 @@ namespace Pulumi.Akamai.Trafficmanagement.Inputs
 
     public sealed class GtmPropertyLivenessTestGetArgs : Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// — (Boolean)
-        /// </summary>
         [Input("answersRequired")]
         public Input<bool>? AnswersRequired { get; set; }
 
-        /// <summary>
-        /// — (Boolean)
-        /// * `error_penalty`
-        /// </summary>
         [Input("disableNonstandardPortWarning")]
         public Input<bool>? DisableNonstandardPortWarning { get; set; }
 
-        /// <summary>
-        /// — (Boolean)
-        /// </summary>
         [Input("disabled")]
         public Input<bool>? Disabled { get; set; }
 
         [Input("errorPenalty")]
         public Input<double>? ErrorPenalty { get; set; }
 
-        /// <summary>
-        /// — (Boolean)
-        /// </summary>
         [Input("httpError3xx")]
         public Input<bool>? HttpError3xx { get; set; }
 
-        /// <summary>
-        /// — (Boolean)
-        /// </summary>
         [Input("httpError4xx")]
         public Input<bool>? HttpError4xx { get; set; }
 
-        /// <summary>
-        /// — (Boolean)
-        /// </summary>
         [Input("httpError5xx")]
         public Input<bool>? HttpError5xx { get; set; }
 
         [Input("httpHeaders")]
         private InputList<Inputs.GtmPropertyLivenessTestHttpHeaderGetArgs>? _httpHeaders;
-
-        /// <summary>
-        /// — (multiple allowed)
-        /// `name`
-        /// `value`
-        /// </summary>
         public InputList<Inputs.GtmPropertyLivenessTestHttpHeaderGetArgs> HttpHeaders
         {
             get => _httpHeaders ?? (_httpHeaders = new InputList<Inputs.GtmPropertyLivenessTestHttpHeaderGetArgs>());
             set => _httpHeaders = value;
         }
 
-        /// <summary>
-        /// — Liveness test name
-        /// * `test_interval`
-        /// * `test_object_protocol`
-        /// * `test_timeout`
-        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
-        /// <summary>
-        /// — (Boolean)
-        /// </summary>
         [Input("peerCertificateVerification")]
         public Input<bool>? PeerCertificateVerification { get; set; }
 
-        /// <summary>
-        /// — (Boolean)
-        /// * `request_string`
-        /// * `resource_type`
-        /// * `response_string`
-        /// * `ssl_client_certificate`
-        /// * `ssl_client_private_key`
-        /// * `test_object`
-        /// * `test_object_password`
-        /// * `test_object_port`
-        /// * `test_object_username`
-        /// * `timeout_penalty`
-        /// </summary>
         [Input("recursionRequested")]
         public Input<bool>? RecursionRequested { get; set; }
 

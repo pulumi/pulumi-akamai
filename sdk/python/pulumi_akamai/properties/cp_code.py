@@ -10,43 +10,30 @@ from .. import _utilities, _tables
 
 __all__ = ['CpCode']
 
+warnings.warn("""akamai.properties.CpCode has been deprecated in favor of akamai.CpCode""", DeprecationWarning)
+
 
 class CpCode(pulumi.CustomResource):
+    warnings.warn("""akamai.properties.CpCode has been deprecated in favor of akamai.CpCode""", DeprecationWarning)
+
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  contract: Optional[pulumi.Input[str]] = None,
+                 contract_id: Optional[pulumi.Input[str]] = None,
                  group: Optional[pulumi.Input[str]] = None,
+                 group_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  product: Optional[pulumi.Input[str]] = None,
                  __props__=None,
                  __name__=None,
                  __opts__=None):
         """
-        The `properties.CpCode` resource allows you to create or re-use CP Codes.
-
-        If the CP Code already exists it will be used instead of creating a new one.
-
-        ## Example Usage
-        ### Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        cp_code = akamai.properties.CpCode("cpCode",
-            contract=akamai_contract["contract"]["id"],
-            group=akamai_group["group"]["id"],
-            product="prd_xxx")
-        ```
-
+        Create a CpCode resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] contract: — (Required) The Contract ID
-        :param pulumi.Input[str] group: — (Required) The Group ID
-        :param pulumi.Input[str] name: — (Required) The CP Code name
-        :param pulumi.Input[str] product: — (Required) The Product ID
         """
+        pulumi.log.warn("CpCode is deprecated: akamai.properties.CpCode has been deprecated in favor of akamai.CpCode")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__
@@ -64,14 +51,18 @@ class CpCode(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = dict()
 
-            if contract is None:
-                raise TypeError("Missing required property 'contract'")
+            if contract is not None and not opts.urn:
+                warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
+                pulumi.log.warn("contract is deprecated: use \"contract_id\" attribute instead")
             __props__['contract'] = contract
-            if group is None:
-                raise TypeError("Missing required property 'group'")
+            __props__['contract_id'] = contract_id
+            if group is not None and not opts.urn:
+                warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
+                pulumi.log.warn("group is deprecated: use \"group_id\" attribute instead")
             __props__['group'] = group
+            __props__['group_id'] = group_id
             __props__['name'] = name
-            if product is None:
+            if product is None and not opts.urn:
                 raise TypeError("Missing required property 'product'")
             __props__['product'] = product
         super(CpCode, __self__).__init__(
@@ -85,7 +76,9 @@ class CpCode(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             contract: Optional[pulumi.Input[str]] = None,
+            contract_id: Optional[pulumi.Input[str]] = None,
             group: Optional[pulumi.Input[str]] = None,
+            group_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             product: Optional[pulumi.Input[str]] = None) -> 'CpCode':
         """
@@ -95,17 +88,15 @@ class CpCode(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] contract: — (Required) The Contract ID
-        :param pulumi.Input[str] group: — (Required) The Group ID
-        :param pulumi.Input[str] name: — (Required) The CP Code name
-        :param pulumi.Input[str] product: — (Required) The Product ID
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = dict()
 
         __props__["contract"] = contract
+        __props__["contract_id"] = contract_id
         __props__["group"] = group
+        __props__["group_id"] = group_id
         __props__["name"] = name
         __props__["product"] = product
         return CpCode(resource_name, opts=opts, __props__=__props__)
@@ -113,33 +104,31 @@ class CpCode(pulumi.CustomResource):
     @property
     @pulumi.getter
     def contract(self) -> pulumi.Output[str]:
-        """
-        — (Required) The Contract ID
-        """
         return pulumi.get(self, "contract")
+
+    @property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "contract_id")
 
     @property
     @pulumi.getter
     def group(self) -> pulumi.Output[str]:
-        """
-        — (Required) The Group ID
-        """
         return pulumi.get(self, "group")
+
+    @property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "group_id")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        — (Required) The CP Code name
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def product(self) -> pulumi.Output[str]:
-        """
-        — (Required) The Product ID
-        """
         return pulumi.get(self, "product")
 
     def translate_output_property(self, prop):

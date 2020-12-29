@@ -15,11 +15,6 @@ namespace Pulumi.Akamai.Trafficmanagement.Outputs
     {
         public readonly string? LoadObject;
         public readonly int? LoadObjectPort;
-        /// <summary>
-        /// — (List)
-        /// * `city`
-        /// * `clone_of`
-        /// </summary>
         public readonly ImmutableArray<string> LoadServers;
 
         [OutputConstructor]

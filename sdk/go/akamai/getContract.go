@@ -7,9 +7,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// Use `getContract` data source to retrieve a group id.
-//
-// ## Example Usage
 func GetContract(ctx *pulumi.Context, args *GetContractArgs, opts ...pulumi.InvokeOption) (*GetContractResult, error) {
 	var rv GetContractResult
 	err := ctx.Invoke("akamai:index/getContract:getContract", args, &rv, opts...)
@@ -21,13 +18,18 @@ func GetContract(ctx *pulumi.Context, args *GetContractArgs, opts ...pulumi.Invo
 
 // A collection of arguments for invoking getContract.
 type GetContractArgs struct {
-	// — (Optional) The group within which the contract can be found.
-	Group *string `pulumi:"group"`
+	// Deprecated: The setting "group" has been deprecated.
+	Group     *string `pulumi:"group"`
+	GroupId   *string `pulumi:"groupId"`
+	GroupName *string `pulumi:"groupName"`
 }
 
 // A collection of values returned by getContract.
 type GetContractResult struct {
-	Group *string `pulumi:"group"`
+	// Deprecated: The setting "group" has been deprecated.
+	Group     *string `pulumi:"group"`
+	GroupId   string  `pulumi:"groupId"`
+	GroupName string  `pulumi:"groupName"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 }

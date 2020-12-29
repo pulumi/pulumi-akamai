@@ -13,9 +13,6 @@ namespace Pulumi.Akamai.Trafficmanagement.Outputs
     [OutputType]
     public sealed class GtmCidrmapAssignment
     {
-        /// <summary>
-        /// — (List)
-        /// </summary>
         public readonly ImmutableArray<string> Blocks;
         public readonly int DatacenterId;
         public readonly string Nickname;

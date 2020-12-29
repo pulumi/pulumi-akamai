@@ -44,13 +44,32 @@ namespace Pulumi.Akamai
 
     public sealed class ProviderArgs : Pulumi.ResourceArgs
     {
-        [Input("dns", json: true)]
-        private InputList<Inputs.ProviderDnArgs>? _dns;
-        public InputList<Inputs.ProviderDnArgs> Dns
+        [Input("appsecSection")]
+        public Input<string>? AppsecSection { get; set; }
+
+        [Input("appsecs", json: true)]
+        private InputList<Inputs.ProviderAppsecArgs>? _appsecs;
+        [Obsolete(@"The setting ""appsec"" has been deprecated.")]
+        public InputList<Inputs.ProviderAppsecArgs> Appsecs
         {
-            get => _dns ?? (_dns = new InputList<Inputs.ProviderDnArgs>());
-            set => _dns = value;
+            get => _appsecs ?? (_appsecs = new InputList<Inputs.ProviderAppsecArgs>());
+            set => _appsecs = value;
         }
+
+        [Input("cacheEnabled", json: true)]
+        public Input<bool>? CacheEnabled { get; set; }
+
+        [Input("config", json: true)]
+        public Input<Inputs.ProviderConfigArgs>? ConfigDetails { get; set; }
+
+        /// <summary>
+        /// The section of the edgerc file to use for configuration
+        /// </summary>
+        [Input("configSection")]
+        public Input<string>? ConfigSection { get; set; }
+
+        [Input("dns", json: true)]
+        public Input<Inputs.ProviderDnsArgs>? Dns { get; set; }
 
         [Input("dnsSection")]
         public Input<string>? DnsSection { get; set; }
@@ -58,27 +77,17 @@ namespace Pulumi.Akamai
         [Input("edgerc")]
         public Input<string>? Edgerc { get; set; }
 
+        [Input("gtm", json: true)]
+        public Input<Inputs.ProviderGtmArgs>? Gtm { get; set; }
+
         [Input("gtmSection")]
         public Input<string>? GtmSection { get; set; }
-
-        [Input("gtms", json: true)]
-        private InputList<Inputs.ProviderGtmArgs>? _gtms;
-        public InputList<Inputs.ProviderGtmArgs> Gtms
-        {
-            get => _gtms ?? (_gtms = new InputList<Inputs.ProviderGtmArgs>());
-            set => _gtms = value;
-        }
 
         [Input("papiSection")]
         public Input<string>? PapiSection { get; set; }
 
-        [Input("properties", json: true)]
-        private InputList<Inputs.ProviderPropertyArgs>? _properties;
-        public InputList<Inputs.ProviderPropertyArgs> Properties
-        {
-            get => _properties ?? (_properties = new InputList<Inputs.ProviderPropertyArgs>());
-            set => _properties = value;
-        }
+        [Input("property", json: true)]
+        public Input<Inputs.ProviderPropertyArgs>? Property { get; set; }
 
         [Input("propertySection")]
         public Input<string>? PropertySection { get; set; }

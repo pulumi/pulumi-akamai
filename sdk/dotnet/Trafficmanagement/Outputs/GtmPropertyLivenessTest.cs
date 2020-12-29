@@ -13,62 +13,16 @@ namespace Pulumi.Akamai.Trafficmanagement.Outputs
     [OutputType]
     public sealed class GtmPropertyLivenessTest
     {
-        /// <summary>
-        /// — (Boolean)
-        /// </summary>
         public readonly bool? AnswersRequired;
-        /// <summary>
-        /// — (Boolean)
-        /// * `error_penalty`
-        /// </summary>
         public readonly bool? DisableNonstandardPortWarning;
-        /// <summary>
-        /// — (Boolean)
-        /// </summary>
         public readonly bool? Disabled;
         public readonly double? ErrorPenalty;
-        /// <summary>
-        /// — (Boolean)
-        /// </summary>
         public readonly bool? HttpError3xx;
-        /// <summary>
-        /// — (Boolean)
-        /// </summary>
         public readonly bool? HttpError4xx;
-        /// <summary>
-        /// — (Boolean)
-        /// </summary>
         public readonly bool? HttpError5xx;
-        /// <summary>
-        /// — (multiple allowed)
-        /// `name`
-        /// `value`
-        /// </summary>
         public readonly ImmutableArray<Outputs.GtmPropertyLivenessTestHttpHeader> HttpHeaders;
-        /// <summary>
-        /// — Liveness test name
-        /// * `test_interval`
-        /// * `test_object_protocol`
-        /// * `test_timeout`
-        /// </summary>
         public readonly string Name;
-        /// <summary>
-        /// — (Boolean)
-        /// </summary>
         public readonly bool? PeerCertificateVerification;
-        /// <summary>
-        /// — (Boolean)
-        /// * `request_string`
-        /// * `resource_type`
-        /// * `response_string`
-        /// * `ssl_client_certificate`
-        /// * `ssl_client_private_key`
-        /// * `test_object`
-        /// * `test_object_password`
-        /// * `test_object_port`
-        /// * `test_object_username`
-        /// * `timeout_penalty`
-        /// </summary>
         public readonly bool? RecursionRequested;
         public readonly string? RequestString;
         public readonly string? ResourceType;

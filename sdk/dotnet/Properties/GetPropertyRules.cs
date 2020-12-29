@@ -9,115 +9,27 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Properties
 {
+    [Obsolete(@"akamai.properties.getPropertyRules has been deprecated in favor of akamai.getPropertyRules")]
     public static class GetPropertyRules
     {
-        /// <summary>
-        /// The `akamai.properties.PropertyRules` data source allows you to configure a nested block of property rules, criteria, and behaviors. A property’s main functionality is encapsulated in its set of rules and rules are composed of the matches and the behavior that applies under those matches.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// ### Basic usage:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var examplePropertyRules = Output.Create(Akamai.Properties.GetPropertyRules.InvokeAsync(new Akamai.Properties.GetPropertyRulesArgs
-        ///         {
-        ///             Rules = 
-        ///             {
-        ///                 new Akamai.Properties.Inputs.GetPropertyRulesRuleArgs
-        ///                 {
-        ///                     Behaviors = 
-        ///                     {
-        ///                         new Akamai.Properties.Inputs.GetPropertyRulesRuleBehaviorArgs
-        ///                         {
-        ///                             Name = "downstreamCache",
-        ///                             Option = 
-        ///                             {
-        ///                                 
-        ///                                 {
-        ///                                     { "key", "behavior" },
-        ///                                     { "value", "TUNNEL_ORIGIN" },
-        ///                                 },
-        ///                             },
-        ///                         },
-        ///                     },
-        ///                     Rules = 
-        ///                     {
-        ///                         new Akamai.Properties.Inputs.GetPropertyRulesRuleRuleArgs
-        ///                         {
-        ///                             Name = "Performance",
-        ///                             Rule = 
-        ///                             {
-        ///                                 
-        ///                                 {
-        ///                                     { "behavior", 
-        ///                                     {
-        ///                                         
-        ///                                         {
-        ///                                             { "name", "adaptiveImageCompression" },
-        ///                                             { "option", 
-        ///                                             {
-        ///                                                 
-        ///                                                 {
-        ///                                                     { "key", "tier1MobileCompressionMethod" },
-        ///                                                     { "value", "COMPRESS" },
-        ///                                                 },
-        ///                                                 
-        ///                                                 {
-        ///                                                     { "key", "tier1MobileCompressionValue" },
-        ///                                                     { "value", "80" },
-        ///                                                 },
-        ///                                                 
-        ///                                                 {
-        ///                                                     { "key", "tier2MobileCompressionMethod" },
-        ///                                                     { "value", "COMPRESS" },
-        ///                                                 },
-        ///                                             } },
-        ///                                         },
-        ///                                     } },
-        ///                                     { "name", "JPEG Images" },
-        ///                                 },
-        ///                             },
-        ///                         },
-        ///                     },
-        ///                 },
-        ///             },
-        ///         }));
-        ///         var exampleProperty = new Akamai.Properties.Property("exampleProperty", new Akamai.Properties.PropertyArgs
-        ///         {
-        ///             Rules = examplePropertyRules.Apply(examplePropertyRules =&gt; examplePropertyRules.Json),
-        ///         });
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// </summary>
-        public static Task<GetPropertyRulesResult> InvokeAsync(GetPropertyRulesArgs? args = null, InvokeOptions? options = null)
+        public static Task<GetPropertyRulesResult> InvokeAsync(GetPropertyRulesArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRulesResult>("akamai:properties/getPropertyRules:getPropertyRules", args ?? new GetPropertyRulesArgs(), options.WithVersion());
     }
 
 
     public sealed class GetPropertyRulesArgs : Pulumi.InvokeArgs
     {
-        [Input("rules")]
-        private List<Inputs.GetPropertyRulesRuleArgs>? _rules;
-        public List<Inputs.GetPropertyRulesRuleArgs> Rules
-        {
-            get => _rules ?? (_rules = new List<Inputs.GetPropertyRulesRuleArgs>());
-            set => _rules = value;
-        }
+        [Input("contractId")]
+        public string? ContractId { get; set; }
 
-        [Input("variables")]
-        public string? Variables { get; set; }
+        [Input("groupId")]
+        public string? GroupId { get; set; }
+
+        [Input("propertyId", required: true)]
+        public string PropertyId { get; set; } = null!;
+
+        [Input("version")]
+        public int? Version { get; set; }
 
         public GetPropertyRulesArgs()
         {
@@ -128,28 +40,40 @@ namespace Pulumi.Akamai.Properties
     [OutputType]
     public sealed class GetPropertyRulesResult
     {
+        public readonly string ContractId;
+        public readonly string Errors;
+        public readonly string GroupId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        public readonly string Json;
-        public readonly ImmutableArray<Outputs.GetPropertyRulesRuleResult> Rules;
-        public readonly string? Variables;
+        public readonly string PropertyId;
+        public readonly string Rules;
+        public readonly int Version;
 
         [OutputConstructor]
         private GetPropertyRulesResult(
+            string contractId,
+
+            string errors,
+
+            string groupId,
+
             string id,
 
-            string json,
+            string propertyId,
 
-            ImmutableArray<Outputs.GetPropertyRulesRuleResult> rules,
+            string rules,
 
-            string? variables)
+            int version)
         {
+            ContractId = contractId;
+            Errors = errors;
+            GroupId = groupId;
             Id = id;
-            Json = json;
+            PropertyId = propertyId;
             Rules = rules;
-            Variables = variables;
+            Version = version;
         }
     }
 }

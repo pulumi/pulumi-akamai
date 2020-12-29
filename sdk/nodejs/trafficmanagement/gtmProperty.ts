@@ -2,31 +2,11 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "../types/input";
-import * as outputs from "../types/output";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
- * `akamai.trafficmanagement.GtmProperty` provides the resource for creating, configuring and importing a gtm property to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingPropertyName`
- *
- * ## Example Usage
- * ### Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const demoProperty = new akamai.trafficmanagement.GtmProperty("demo_property", {
- *     domain: "demo_domain.akadns.net",
- *     handoutLimit: 5,
- *     handoutMode: "normal",
- *     scoreAggregationType: "median",
- *     trafficTargets: [{
- *         datacenterId: 3131,
- *     }],
- *     type: "weighted-round-robin",
- * });
- * ```
+ * @deprecated akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty
  */
 export class GtmProperty extends pulumi.CustomResource {
     /**
@@ -39,6 +19,7 @@ export class GtmProperty extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: GtmPropertyState, opts?: pulumi.CustomResourceOptions): GtmProperty {
+        pulumi.log.warn("GtmProperty is deprecated: akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty")
         return new GtmProperty(name, <any>state, { ...opts, id: id });
     }
 
@@ -58,27 +39,9 @@ export class GtmProperty extends pulumi.CustomResource {
 
     public readonly backupCname!: pulumi.Output<string | undefined>;
     public readonly backupIp!: pulumi.Output<string | undefined>;
-    /**
-     * — (Boolean)
-     * * `staticTtl`
-     * * `unreachableThreshold`
-     * * `healthMultiplier`
-     * * `dynamicTtl`
-     * * `maxUnreachablePenalty`
-     * * `mapName`
-     * * `loadImbalancePercentage`
-     * * `healthMax`
-     * * `cname`
-     * * `comments`
-     * * `ghostDemandReporting`
-     * * `minLiveFraction`
-     */
     public readonly balanceByDownloadScore!: pulumi.Output<boolean | undefined>;
     public readonly cname!: pulumi.Output<string | undefined>;
     public readonly comments!: pulumi.Output<string | undefined>;
-    /**
-     * — Domain name
-     */
     public readonly domain!: pulumi.Output<string>;
     public readonly dynamicTtl!: pulumi.Output<number | undefined>;
     public readonly failbackDelay!: pulumi.Output<number | undefined>;
@@ -89,59 +52,22 @@ export class GtmProperty extends pulumi.CustomResource {
     public readonly healthMax!: pulumi.Output<number | undefined>;
     public readonly healthMultiplier!: pulumi.Output<number | undefined>;
     public readonly healthThreshold!: pulumi.Output<number | undefined>;
-    /**
-     * — (Boolean)
-     * * `stickinessBonusPercentage`
-     * * `stickinessBonusConstant`
-     * * `healthThreshold`
-     */
     public readonly ipv6!: pulumi.Output<boolean | undefined>;
-    /**
-     * — (multiple allowed)
-     */
     public readonly livenessTests!: pulumi.Output<outputs.trafficmanagement.GtmPropertyLivenessTest[] | undefined>;
     public readonly loadImbalancePercentage!: pulumi.Output<number | undefined>;
     public readonly mapName!: pulumi.Output<string | undefined>;
     public readonly maxUnreachablePenalty!: pulumi.Output<number | undefined>;
     public readonly minLiveFraction!: pulumi.Output<number | undefined>;
-    /**
-     * — Liveness test name
-     * * `testInterval`
-     * * `testObjectProtocol`
-     * * `testTimeout`
-     */
     public readonly name!: pulumi.Output<string>;
     public readonly scoreAggregationType!: pulumi.Output<string>;
-    /**
-     * — (multiple allowed)
-     * * `type`
-     * * `ttl`
-     */
     public readonly staticRrSets!: pulumi.Output<outputs.trafficmanagement.GtmPropertyStaticRrSet[] | undefined>;
     public readonly staticTtl!: pulumi.Output<number | undefined>;
     public readonly stickinessBonusConstant!: pulumi.Output<number | undefined>;
     public readonly stickinessBonusPercentage!: pulumi.Output<number | undefined>;
-    /**
-     * — (multiple allowed)
-     * * `datacenterId`
-     */
     public readonly trafficTargets!: pulumi.Output<outputs.trafficmanagement.GtmPropertyTrafficTarget[]>;
-    /**
-     * — Property type  
-     * * `scoreAggregationType`
-     */
     public readonly type!: pulumi.Output<string>;
     public readonly unreachableThreshold!: pulumi.Output<number | undefined>;
-    /**
-     * — (Boolean)
-     * * `backupIp`
-     */
     public readonly useComputedTargets!: pulumi.Output<boolean | undefined>;
-    /**
-     * — (Boolean, Default: true) Wait for transaction to complete
-     * * `failoverDelay`
-     * * `failbackDelay`
-     */
     public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
     public /*out*/ readonly weightedHashBitsForIpv4!: pulumi.Output<number>;
     public /*out*/ readonly weightedHashBitsForIpv6!: pulumi.Output<number>;
@@ -153,8 +79,11 @@ export class GtmProperty extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
+    /** @deprecated akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty */
     constructor(name: string, args: GtmPropertyArgs, opts?: pulumi.CustomResourceOptions)
+    /** @deprecated akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty */
     constructor(name: string, argsOrState?: GtmPropertyArgs | GtmPropertyState, opts?: pulumi.CustomResourceOptions) {
+        pulumi.log.warn("GtmProperty is deprecated: akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty")
         let inputs: pulumi.Inputs = {};
         if (opts && opts.id) {
             const state = argsOrState as GtmPropertyState | undefined;
@@ -194,22 +123,22 @@ export class GtmProperty extends pulumi.CustomResource {
             inputs["weightedHashBitsForIpv6"] = state ? state.weightedHashBitsForIpv6 : undefined;
         } else {
             const args = argsOrState as GtmPropertyArgs | undefined;
-            if (!args || args.domain === undefined) {
+            if ((!args || args.domain === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'domain'");
             }
-            if (!args || args.handoutLimit === undefined) {
+            if ((!args || args.handoutLimit === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'handoutLimit'");
             }
-            if (!args || args.handoutMode === undefined) {
+            if ((!args || args.handoutMode === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'handoutMode'");
             }
-            if (!args || args.scoreAggregationType === undefined) {
+            if ((!args || args.scoreAggregationType === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'scoreAggregationType'");
             }
-            if (!args || args.trafficTargets === undefined) {
+            if ((!args || args.trafficTargets === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'trafficTargets'");
             }
-            if (!args || args.type === undefined) {
+            if ((!args || args.type === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'type'");
             }
             inputs["backupCname"] = args ? args.backupCname : undefined;
@@ -264,27 +193,9 @@ export class GtmProperty extends pulumi.CustomResource {
 export interface GtmPropertyState {
     readonly backupCname?: pulumi.Input<string>;
     readonly backupIp?: pulumi.Input<string>;
-    /**
-     * — (Boolean)
-     * * `staticTtl`
-     * * `unreachableThreshold`
-     * * `healthMultiplier`
-     * * `dynamicTtl`
-     * * `maxUnreachablePenalty`
-     * * `mapName`
-     * * `loadImbalancePercentage`
-     * * `healthMax`
-     * * `cname`
-     * * `comments`
-     * * `ghostDemandReporting`
-     * * `minLiveFraction`
-     */
     readonly balanceByDownloadScore?: pulumi.Input<boolean>;
     readonly cname?: pulumi.Input<string>;
     readonly comments?: pulumi.Input<string>;
-    /**
-     * — Domain name
-     */
     readonly domain?: pulumi.Input<string>;
     readonly dynamicTtl?: pulumi.Input<number>;
     readonly failbackDelay?: pulumi.Input<number>;
@@ -295,59 +206,22 @@ export interface GtmPropertyState {
     readonly healthMax?: pulumi.Input<number>;
     readonly healthMultiplier?: pulumi.Input<number>;
     readonly healthThreshold?: pulumi.Input<number>;
-    /**
-     * — (Boolean)
-     * * `stickinessBonusPercentage`
-     * * `stickinessBonusConstant`
-     * * `healthThreshold`
-     */
     readonly ipv6?: pulumi.Input<boolean>;
-    /**
-     * — (multiple allowed)
-     */
     readonly livenessTests?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmPropertyLivenessTest>[]>;
     readonly loadImbalancePercentage?: pulumi.Input<number>;
     readonly mapName?: pulumi.Input<string>;
     readonly maxUnreachablePenalty?: pulumi.Input<number>;
     readonly minLiveFraction?: pulumi.Input<number>;
-    /**
-     * — Liveness test name
-     * * `testInterval`
-     * * `testObjectProtocol`
-     * * `testTimeout`
-     */
     readonly name?: pulumi.Input<string>;
     readonly scoreAggregationType?: pulumi.Input<string>;
-    /**
-     * — (multiple allowed)
-     * * `type`
-     * * `ttl`
-     */
     readonly staticRrSets?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmPropertyStaticRrSet>[]>;
     readonly staticTtl?: pulumi.Input<number>;
     readonly stickinessBonusConstant?: pulumi.Input<number>;
     readonly stickinessBonusPercentage?: pulumi.Input<number>;
-    /**
-     * — (multiple allowed)
-     * * `datacenterId`
-     */
     readonly trafficTargets?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmPropertyTrafficTarget>[]>;
-    /**
-     * — Property type  
-     * * `scoreAggregationType`
-     */
     readonly type?: pulumi.Input<string>;
     readonly unreachableThreshold?: pulumi.Input<number>;
-    /**
-     * — (Boolean)
-     * * `backupIp`
-     */
     readonly useComputedTargets?: pulumi.Input<boolean>;
-    /**
-     * — (Boolean, Default: true) Wait for transaction to complete
-     * * `failoverDelay`
-     * * `failbackDelay`
-     */
     readonly waitOnComplete?: pulumi.Input<boolean>;
     readonly weightedHashBitsForIpv4?: pulumi.Input<number>;
     readonly weightedHashBitsForIpv6?: pulumi.Input<number>;
@@ -359,27 +233,9 @@ export interface GtmPropertyState {
 export interface GtmPropertyArgs {
     readonly backupCname?: pulumi.Input<string>;
     readonly backupIp?: pulumi.Input<string>;
-    /**
-     * — (Boolean)
-     * * `staticTtl`
-     * * `unreachableThreshold`
-     * * `healthMultiplier`
-     * * `dynamicTtl`
-     * * `maxUnreachablePenalty`
-     * * `mapName`
-     * * `loadImbalancePercentage`
-     * * `healthMax`
-     * * `cname`
-     * * `comments`
-     * * `ghostDemandReporting`
-     * * `minLiveFraction`
-     */
     readonly balanceByDownloadScore?: pulumi.Input<boolean>;
     readonly cname?: pulumi.Input<string>;
     readonly comments?: pulumi.Input<string>;
-    /**
-     * — Domain name
-     */
     readonly domain: pulumi.Input<string>;
     readonly dynamicTtl?: pulumi.Input<number>;
     readonly failbackDelay?: pulumi.Input<number>;
@@ -390,58 +246,21 @@ export interface GtmPropertyArgs {
     readonly healthMax?: pulumi.Input<number>;
     readonly healthMultiplier?: pulumi.Input<number>;
     readonly healthThreshold?: pulumi.Input<number>;
-    /**
-     * — (Boolean)
-     * * `stickinessBonusPercentage`
-     * * `stickinessBonusConstant`
-     * * `healthThreshold`
-     */
     readonly ipv6?: pulumi.Input<boolean>;
-    /**
-     * — (multiple allowed)
-     */
     readonly livenessTests?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmPropertyLivenessTest>[]>;
     readonly loadImbalancePercentage?: pulumi.Input<number>;
     readonly mapName?: pulumi.Input<string>;
     readonly maxUnreachablePenalty?: pulumi.Input<number>;
     readonly minLiveFraction?: pulumi.Input<number>;
-    /**
-     * — Liveness test name
-     * * `testInterval`
-     * * `testObjectProtocol`
-     * * `testTimeout`
-     */
     readonly name?: pulumi.Input<string>;
     readonly scoreAggregationType: pulumi.Input<string>;
-    /**
-     * — (multiple allowed)
-     * * `type`
-     * * `ttl`
-     */
     readonly staticRrSets?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmPropertyStaticRrSet>[]>;
     readonly staticTtl?: pulumi.Input<number>;
     readonly stickinessBonusConstant?: pulumi.Input<number>;
     readonly stickinessBonusPercentage?: pulumi.Input<number>;
-    /**
-     * — (multiple allowed)
-     * * `datacenterId`
-     */
     readonly trafficTargets: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmPropertyTrafficTarget>[]>;
-    /**
-     * — Property type  
-     * * `scoreAggregationType`
-     */
     readonly type: pulumi.Input<string>;
     readonly unreachableThreshold?: pulumi.Input<number>;
-    /**
-     * — (Boolean)
-     * * `backupIp`
-     */
     readonly useComputedTargets?: pulumi.Input<boolean>;
-    /**
-     * — (Boolean, Default: true) Wait for transaction to complete
-     * * `failoverDelay`
-     * * `failbackDelay`
-     */
     readonly waitOnComplete?: pulumi.Input<boolean>;
 }

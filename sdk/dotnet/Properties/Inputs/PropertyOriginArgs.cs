@@ -12,39 +12,21 @@ namespace Pulumi.Akamai.Properties.Inputs
 
     public sealed class PropertyOriginArgs : Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// — (Optional) The hostname uses for the cache key. (default: `ORIGIN_HOSTNAME`).
-        /// </summary>
         [Input("cacheKeyHostname")]
         public Input<string>? CacheKeyHostname { get; set; }
 
-        /// <summary>
-        /// — (Optional, boolean) Whether origin supports gzip compression (default: `false`).
-        /// </summary>
         [Input("compress")]
         public Input<bool>? Compress { get; set; }
 
-        /// <summary>
-        /// — (Optional, boolean) Whether the X-True-Client-IP header should be sent to origin (default: `false`).
-        /// </summary>
         [Input("enableTrueClientIp")]
         public Input<bool>? EnableTrueClientIp { get; set; }
 
-        /// <summary>
-        /// — (Optional) The value for the Hostname header sent to origin. (default: `ORIGIN_HOSTNAME`).
-        /// </summary>
         [Input("forwardHostname")]
         public Input<string>? ForwardHostname { get; set; }
 
-        /// <summary>
-        /// — (Required) The origin hostname.
-        /// </summary>
-        [Input("hostname", required: true)]
-        public Input<string> Hostname { get; set; } = null!;
+        [Input("hostname")]
+        public Input<string>? Hostname { get; set; }
 
-        /// <summary>
-        /// — (Optional) The origin port to connect to (default: 80).
-        /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }
 

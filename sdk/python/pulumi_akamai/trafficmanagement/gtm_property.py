@@ -12,8 +12,12 @@ from ._inputs import *
 
 __all__ = ['GtmProperty']
 
+warnings.warn("""akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty""", DeprecationWarning)
+
 
 class GtmProperty(pulumi.CustomResource):
+    warnings.warn("""akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty""", DeprecationWarning)
+
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -53,64 +57,11 @@ class GtmProperty(pulumi.CustomResource):
                  __name__=None,
                  __opts__=None):
         """
-        `trafficmanagement.GtmProperty` provides the resource for creating, configuring and importing a gtm property to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_property_name`
-
-        ## Example Usage
-        ### Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        demo_property = akamai.trafficmanagement.GtmProperty("demoProperty",
-            domain="demo_domain.akadns.net",
-            handout_limit=5,
-            handout_mode="normal",
-            score_aggregation_type="median",
-            traffic_targets=[akamai.trafficmanagement.GtmPropertyTrafficTargetArgs(
-                datacenter_id=3131,
-            )],
-            type="weighted-round-robin")
-        ```
-
+        Create a GtmProperty resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] balance_by_download_score: — (Boolean)
-               * `static_ttl`
-               * `unreachable_threshold`
-               * `health_multiplier`
-               * `dynamic_ttl`
-               * `max_unreachable_penalty`
-               * `map_name`
-               * `load_imbalance_percentage`
-               * `health_max`
-               * `cname`
-               * `comments`
-               * `ghost_demand_reporting`
-               * `min_live_fraction`
-        :param pulumi.Input[str] domain: — Domain name
-        :param pulumi.Input[bool] ipv6: — (Boolean)
-               * `stickiness_bonus_percentage`
-               * `stickiness_bonus_constant`
-               * `health_threshold`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyLivenessTestArgs']]]] liveness_tests: — (multiple allowed)
-        :param pulumi.Input[str] name: — Liveness test name
-               * `test_interval`
-               * `test_object_protocol`
-               * `test_timeout`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyStaticRrSetArgs']]]] static_rr_sets: — (multiple allowed)
-               * `type`
-               * `ttl`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyTrafficTargetArgs']]]] traffic_targets: — (multiple allowed)
-               * `datacenter_id`
-        :param pulumi.Input[str] type: — Property type  
-               * `score_aggregation_type`
-        :param pulumi.Input[bool] use_computed_targets: — (Boolean)
-               * `backup_ip`
-        :param pulumi.Input[bool] wait_on_complete: — (Boolean, Default: true) Wait for transaction to complete
-               * `failover_delay`
-               * `failback_delay`
         """
+        pulumi.log.warn("GtmProperty is deprecated: akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__
@@ -133,17 +84,17 @@ class GtmProperty(pulumi.CustomResource):
             __props__['balance_by_download_score'] = balance_by_download_score
             __props__['cname'] = cname
             __props__['comments'] = comments
-            if domain is None:
+            if domain is None and not opts.urn:
                 raise TypeError("Missing required property 'domain'")
             __props__['domain'] = domain
             __props__['dynamic_ttl'] = dynamic_ttl
             __props__['failback_delay'] = failback_delay
             __props__['failover_delay'] = failover_delay
             __props__['ghost_demand_reporting'] = ghost_demand_reporting
-            if handout_limit is None:
+            if handout_limit is None and not opts.urn:
                 raise TypeError("Missing required property 'handout_limit'")
             __props__['handout_limit'] = handout_limit
-            if handout_mode is None:
+            if handout_mode is None and not opts.urn:
                 raise TypeError("Missing required property 'handout_mode'")
             __props__['handout_mode'] = handout_mode
             __props__['health_max'] = health_max
@@ -156,17 +107,17 @@ class GtmProperty(pulumi.CustomResource):
             __props__['max_unreachable_penalty'] = max_unreachable_penalty
             __props__['min_live_fraction'] = min_live_fraction
             __props__['name'] = name
-            if score_aggregation_type is None:
+            if score_aggregation_type is None and not opts.urn:
                 raise TypeError("Missing required property 'score_aggregation_type'")
             __props__['score_aggregation_type'] = score_aggregation_type
             __props__['static_rr_sets'] = static_rr_sets
             __props__['static_ttl'] = static_ttl
             __props__['stickiness_bonus_constant'] = stickiness_bonus_constant
             __props__['stickiness_bonus_percentage'] = stickiness_bonus_percentage
-            if traffic_targets is None:
+            if traffic_targets is None and not opts.urn:
                 raise TypeError("Missing required property 'traffic_targets'")
             __props__['traffic_targets'] = traffic_targets
-            if type is None:
+            if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
             __props__['type'] = type
             __props__['unreachable_threshold'] = unreachable_threshold
@@ -225,41 +176,6 @@ class GtmProperty(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] balance_by_download_score: — (Boolean)
-               * `static_ttl`
-               * `unreachable_threshold`
-               * `health_multiplier`
-               * `dynamic_ttl`
-               * `max_unreachable_penalty`
-               * `map_name`
-               * `load_imbalance_percentage`
-               * `health_max`
-               * `cname`
-               * `comments`
-               * `ghost_demand_reporting`
-               * `min_live_fraction`
-        :param pulumi.Input[str] domain: — Domain name
-        :param pulumi.Input[bool] ipv6: — (Boolean)
-               * `stickiness_bonus_percentage`
-               * `stickiness_bonus_constant`
-               * `health_threshold`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyLivenessTestArgs']]]] liveness_tests: — (multiple allowed)
-        :param pulumi.Input[str] name: — Liveness test name
-               * `test_interval`
-               * `test_object_protocol`
-               * `test_timeout`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyStaticRrSetArgs']]]] static_rr_sets: — (multiple allowed)
-               * `type`
-               * `ttl`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyTrafficTargetArgs']]]] traffic_targets: — (multiple allowed)
-               * `datacenter_id`
-        :param pulumi.Input[str] type: — Property type  
-               * `score_aggregation_type`
-        :param pulumi.Input[bool] use_computed_targets: — (Boolean)
-               * `backup_ip`
-        :param pulumi.Input[bool] wait_on_complete: — (Boolean, Default: true) Wait for transaction to complete
-               * `failover_delay`
-               * `failback_delay`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -314,21 +230,6 @@ class GtmProperty(pulumi.CustomResource):
     @property
     @pulumi.getter(name="balanceByDownloadScore")
     def balance_by_download_score(self) -> pulumi.Output[Optional[bool]]:
-        """
-        — (Boolean)
-        * `static_ttl`
-        * `unreachable_threshold`
-        * `health_multiplier`
-        * `dynamic_ttl`
-        * `max_unreachable_penalty`
-        * `map_name`
-        * `load_imbalance_percentage`
-        * `health_max`
-        * `cname`
-        * `comments`
-        * `ghost_demand_reporting`
-        * `min_live_fraction`
-        """
         return pulumi.get(self, "balance_by_download_score")
 
     @property
@@ -344,9 +245,6 @@ class GtmProperty(pulumi.CustomResource):
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Output[str]:
-        """
-        — Domain name
-        """
         return pulumi.get(self, "domain")
 
     @property
@@ -397,20 +295,11 @@ class GtmProperty(pulumi.CustomResource):
     @property
     @pulumi.getter
     def ipv6(self) -> pulumi.Output[Optional[bool]]:
-        """
-        — (Boolean)
-        * `stickiness_bonus_percentage`
-        * `stickiness_bonus_constant`
-        * `health_threshold`
-        """
         return pulumi.get(self, "ipv6")
 
     @property
     @pulumi.getter(name="livenessTests")
     def liveness_tests(self) -> pulumi.Output[Optional[Sequence['outputs.GtmPropertyLivenessTest']]]:
-        """
-        — (multiple allowed)
-        """
         return pulumi.get(self, "liveness_tests")
 
     @property
@@ -436,12 +325,6 @@ class GtmProperty(pulumi.CustomResource):
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        — Liveness test name
-        * `test_interval`
-        * `test_object_protocol`
-        * `test_timeout`
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -452,11 +335,6 @@ class GtmProperty(pulumi.CustomResource):
     @property
     @pulumi.getter(name="staticRrSets")
     def static_rr_sets(self) -> pulumi.Output[Optional[Sequence['outputs.GtmPropertyStaticRrSet']]]:
-        """
-        — (multiple allowed)
-        * `type`
-        * `ttl`
-        """
         return pulumi.get(self, "static_rr_sets")
 
     @property
@@ -477,19 +355,11 @@ class GtmProperty(pulumi.CustomResource):
     @property
     @pulumi.getter(name="trafficTargets")
     def traffic_targets(self) -> pulumi.Output[Sequence['outputs.GtmPropertyTrafficTarget']]:
-        """
-        — (multiple allowed)
-        * `datacenter_id`
-        """
         return pulumi.get(self, "traffic_targets")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
-        """
-        — Property type  
-        * `score_aggregation_type`
-        """
         return pulumi.get(self, "type")
 
     @property
@@ -500,20 +370,11 @@ class GtmProperty(pulumi.CustomResource):
     @property
     @pulumi.getter(name="useComputedTargets")
     def use_computed_targets(self) -> pulumi.Output[Optional[bool]]:
-        """
-        — (Boolean)
-        * `backup_ip`
-        """
         return pulumi.get(self, "use_computed_targets")
 
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> pulumi.Output[Optional[bool]]:
-        """
-        — (Boolean, Default: true) Wait for transaction to complete
-        * `failover_delay`
-        * `failback_delay`
-        """
         return pulumi.get(self, "wait_on_complete")
 
     @property

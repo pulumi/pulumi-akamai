@@ -4,60 +4,19 @@
 package properties
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// The `properties.PropertyVariables` allows you to implement dynamic functionality. You can perform conditional logic based on the variable’s value, and catch any unforeseen errors that execute on the edge at runtime.
-//
-// Typical uses for variables include:
-//
-// * Simplify configurations by reducing the number of rules and behaviors.
-// * Improve self serviceability by replacing or extending advanced metadata.
-// * Automate redirects, forward path rewrites, HTTP header and cookie manipulation.
-// * Move origin functionality to the edge.
-//
-// ## Example Usage
-// ### Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/properties"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := properties.NewPropertyVariables(ctx, "origin", &properties.PropertyVariablesArgs{
-// 			Variables: properties.PropertyVariablesVariableArray{
-// 				&properties.PropertyVariablesVariableArgs{
-// 					Variables: properties.PropertyVariablesVariableVariableArray{
-// 						&properties.PropertyVariablesVariableVariableArgs{
-// 							Description: pulumi.String("Origin Hostname"),
-// 							Hidden:      pulumi.Bool(true),
-// 							Name:        pulumi.String("PMUSER_ORIGIN"),
-// 							Sensitive:   pulumi.Bool(true),
-// 							Value:       pulumi.String("origin.example.org"),
-// 						},
-// 					},
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
+// Deprecated: akamai.properties.PropertyVariables has been deprecated in favor of akamai.PropertyVariables
 type PropertyVariables struct {
 	pulumi.CustomResourceState
 
 	// JSON variables representation
-	Json      pulumi.StringOutput                  `pulumi:"json"`
+	Json pulumi.StringOutput `pulumi:"json"`
+	// Deprecated: resource "akamai_property_variables" is no longer supported - See Akamai Terraform Upgrade Guide
 	Variables PropertyVariablesVariableArrayOutput `pulumi:"variables"`
 }
 
@@ -67,6 +26,7 @@ func NewPropertyVariables(ctx *pulumi.Context,
 	if args == nil {
 		args = &PropertyVariablesArgs{}
 	}
+
 	var resource PropertyVariables
 	err := ctx.RegisterResource("akamai:properties/propertyVariables:PropertyVariables", name, args, &resource, opts...)
 	if err != nil {
@@ -90,13 +50,15 @@ func GetPropertyVariables(ctx *pulumi.Context,
 // Input properties used for looking up and filtering PropertyVariables resources.
 type propertyVariablesState struct {
 	// JSON variables representation
-	Json      *string                     `pulumi:"json"`
+	Json *string `pulumi:"json"`
+	// Deprecated: resource "akamai_property_variables" is no longer supported - See Akamai Terraform Upgrade Guide
 	Variables []PropertyVariablesVariable `pulumi:"variables"`
 }
 
 type PropertyVariablesState struct {
 	// JSON variables representation
-	Json      pulumi.StringPtrInput
+	Json pulumi.StringPtrInput
+	// Deprecated: resource "akamai_property_variables" is no longer supported - See Akamai Terraform Upgrade Guide
 	Variables PropertyVariablesVariableArrayInput
 }
 
@@ -105,14 +67,55 @@ func (PropertyVariablesState) ElementType() reflect.Type {
 }
 
 type propertyVariablesArgs struct {
+	// Deprecated: resource "akamai_property_variables" is no longer supported - See Akamai Terraform Upgrade Guide
 	Variables []PropertyVariablesVariable `pulumi:"variables"`
 }
 
 // The set of arguments for constructing a PropertyVariables resource.
 type PropertyVariablesArgs struct {
+	// Deprecated: resource "akamai_property_variables" is no longer supported - See Akamai Terraform Upgrade Guide
 	Variables PropertyVariablesVariableArrayInput
 }
 
 func (PropertyVariablesArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*propertyVariablesArgs)(nil)).Elem()
+}
+
+type PropertyVariablesInput interface {
+	pulumi.Input
+
+	ToPropertyVariablesOutput() PropertyVariablesOutput
+	ToPropertyVariablesOutputWithContext(ctx context.Context) PropertyVariablesOutput
+}
+
+func (PropertyVariables) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyVariables)(nil)).Elem()
+}
+
+func (i PropertyVariables) ToPropertyVariablesOutput() PropertyVariablesOutput {
+	return i.ToPropertyVariablesOutputWithContext(context.Background())
+}
+
+func (i PropertyVariables) ToPropertyVariablesOutputWithContext(ctx context.Context) PropertyVariablesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesOutput)
+}
+
+type PropertyVariablesOutput struct {
+	*pulumi.OutputState
+}
+
+func (PropertyVariablesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyVariablesOutput)(nil)).Elem()
+}
+
+func (o PropertyVariablesOutput) ToPropertyVariablesOutput() PropertyVariablesOutput {
+	return o
+}
+
+func (o PropertyVariablesOutput) ToPropertyVariablesOutputWithContext(ctx context.Context) PropertyVariablesOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(PropertyVariablesOutput{})
 }

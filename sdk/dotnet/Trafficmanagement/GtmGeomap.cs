@@ -9,65 +9,21 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Trafficmanagement
 {
-    /// <summary>
-    /// `akamai.trafficmanagement.GtmGeomap` provides the resource for creating, configuring and importing a gtm Geographic map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_map_name`
-    /// 
-    /// ## Example Usage
-    /// ### Basic usage:
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var demoGeomap = new Akamai.Trafficmanagement.GtmGeomap("demoGeomap", new Akamai.Trafficmanagement.GtmGeomapArgs
-    ///         {
-    ///             DefaultDatacenter = new Akamai.Trafficmanagement.Inputs.GtmGeomapDefaultDatacenterArgs
-    ///             {
-    ///                 DatacenterId = 5400,
-    ///                 Nickname = "All Others",
-    ///             },
-    ///             Domain = "demo_domain.akadns.net",
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// </summary>
+    [Obsolete(@"akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap")]
     public partial class GtmGeomap : Pulumi.CustomResource
     {
-        /// <summary>
-        /// — (multiple allowed)
-        /// * `datacenter_id`
-        /// * `nickname`
-        /// </summary>
         [Output("assignments")]
         public Output<ImmutableArray<Outputs.GtmGeomapAssignment>> Assignments { get; private set; } = null!;
 
         [Output("defaultDatacenter")]
         public Output<Outputs.GtmGeomapDefaultDatacenter> DefaultDatacenter { get; private set; } = null!;
 
-        /// <summary>
-        /// — Domain name
-        /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
 
-        /// <summary>
-        /// — Resource name
-        /// * `default_datacenter`
-        /// * `datacenter_id`
-        /// * `nickname`
-        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Boolean, Default: true) Wait for transaction to complete
-        /// </summary>
         [Output("waitOnComplete")]
         public Output<bool?> WaitOnComplete { get; private set; } = null!;
 
@@ -119,12 +75,6 @@ namespace Pulumi.Akamai.Trafficmanagement
     {
         [Input("assignments")]
         private InputList<Inputs.GtmGeomapAssignmentArgs>? _assignments;
-
-        /// <summary>
-        /// — (multiple allowed)
-        /// * `datacenter_id`
-        /// * `nickname`
-        /// </summary>
         public InputList<Inputs.GtmGeomapAssignmentArgs> Assignments
         {
             get => _assignments ?? (_assignments = new InputList<Inputs.GtmGeomapAssignmentArgs>());
@@ -134,24 +84,12 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("defaultDatacenter", required: true)]
         public Input<Inputs.GtmGeomapDefaultDatacenterArgs> DefaultDatacenter { get; set; } = null!;
 
-        /// <summary>
-        /// — Domain name
-        /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
 
-        /// <summary>
-        /// — Resource name
-        /// * `default_datacenter`
-        /// * `datacenter_id`
-        /// * `nickname`
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// — (Boolean, Default: true) Wait for transaction to complete
-        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 
@@ -164,12 +102,6 @@ namespace Pulumi.Akamai.Trafficmanagement
     {
         [Input("assignments")]
         private InputList<Inputs.GtmGeomapAssignmentGetArgs>? _assignments;
-
-        /// <summary>
-        /// — (multiple allowed)
-        /// * `datacenter_id`
-        /// * `nickname`
-        /// </summary>
         public InputList<Inputs.GtmGeomapAssignmentGetArgs> Assignments
         {
             get => _assignments ?? (_assignments = new InputList<Inputs.GtmGeomapAssignmentGetArgs>());
@@ -179,24 +111,12 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("defaultDatacenter")]
         public Input<Inputs.GtmGeomapDefaultDatacenterGetArgs>? DefaultDatacenter { get; set; }
 
-        /// <summary>
-        /// — Domain name
-        /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
-        /// <summary>
-        /// — Resource name
-        /// * `default_datacenter`
-        /// * `datacenter_id`
-        /// * `nickname`
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// — (Boolean, Default: true) Wait for transaction to complete
-        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 

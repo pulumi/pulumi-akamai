@@ -14,6 +14,8 @@ __all__ = [
     'get_authorities_set',
 ]
 
+warnings.warn("""akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet""", DeprecationWarning)
+
 @pulumi.output_type
 class GetAuthoritiesSetResult:
     """
@@ -63,21 +65,9 @@ class AwaitableGetAuthoritiesSetResult(GetAuthoritiesSetResult):
 def get_authorities_set(contract: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuthoritiesSetResult:
     """
-    Use `edgedns.getAuthoritiesSet` datasource to retrieve a contracts authorities set for use when creating new zones.
-
-    ## Example Usage
-    ### Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    example = akamai.edgedns.get_authorities_set(contract="ctr_xxxxx")
-    ```
-
-
-    :param str contract: — (Required) The contract ID.
+    Use this data source to access information about an existing resource.
     """
+    pulumi.log.warn("get_authorities_set is deprecated: akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet")
     __args__ = dict()
     __args__['contract'] = contract
     if opts is None:

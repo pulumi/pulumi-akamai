@@ -9,40 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Trafficmanagement
 {
-    /// <summary>
-    /// `akamai.trafficmanagement.GtmProperty` provides the resource for creating, configuring and importing a gtm property to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_property_name`
-    /// 
-    /// ## Example Usage
-    /// ### Basic usage:
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var demoProperty = new Akamai.Trafficmanagement.GtmProperty("demoProperty", new Akamai.Trafficmanagement.GtmPropertyArgs
-    ///         {
-    ///             Domain = "demo_domain.akadns.net",
-    ///             HandoutLimit = 5,
-    ///             HandoutMode = "normal",
-    ///             ScoreAggregationType = "median",
-    ///             TrafficTargets = 
-    ///             {
-    ///                 new Akamai.Trafficmanagement.Inputs.GtmPropertyTrafficTargetArgs
-    ///                 {
-    ///                     DatacenterId = 3131,
-    ///                 },
-    ///             },
-    ///             Type = "weighted-round-robin",
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// </summary>
+    [Obsolete(@"akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty")]
     public partial class GtmProperty : Pulumi.CustomResource
     {
         [Output("backupCname")]
@@ -51,21 +18,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Output("backupIp")]
         public Output<string?> BackupIp { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Boolean)
-        /// * `static_ttl`
-        /// * `unreachable_threshold`
-        /// * `health_multiplier`
-        /// * `dynamic_ttl`
-        /// * `max_unreachable_penalty`
-        /// * `map_name`
-        /// * `load_imbalance_percentage`
-        /// * `health_max`
-        /// * `cname`
-        /// * `comments`
-        /// * `ghost_demand_reporting`
-        /// * `min_live_fraction`
-        /// </summary>
         [Output("balanceByDownloadScore")]
         public Output<bool?> BalanceByDownloadScore { get; private set; } = null!;
 
@@ -75,9 +27,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Output("comments")]
         public Output<string?> Comments { get; private set; } = null!;
 
-        /// <summary>
-        /// — Domain name
-        /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
 
@@ -108,18 +57,9 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Output("healthThreshold")]
         public Output<double?> HealthThreshold { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Boolean)
-        /// * `stickiness_bonus_percentage`
-        /// * `stickiness_bonus_constant`
-        /// * `health_threshold`
-        /// </summary>
         [Output("ipv6")]
         public Output<bool?> Ipv6 { get; private set; } = null!;
 
-        /// <summary>
-        /// — (multiple allowed)
-        /// </summary>
         [Output("livenessTests")]
         public Output<ImmutableArray<Outputs.GtmPropertyLivenessTest>> LivenessTests { get; private set; } = null!;
 
@@ -135,23 +75,12 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Output("minLiveFraction")]
         public Output<double?> MinLiveFraction { get; private set; } = null!;
 
-        /// <summary>
-        /// — Liveness test name
-        /// * `test_interval`
-        /// * `test_object_protocol`
-        /// * `test_timeout`
-        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         [Output("scoreAggregationType")]
         public Output<string> ScoreAggregationType { get; private set; } = null!;
 
-        /// <summary>
-        /// — (multiple allowed)
-        /// * `type`
-        /// * `ttl`
-        /// </summary>
         [Output("staticRrSets")]
         public Output<ImmutableArray<Outputs.GtmPropertyStaticRrSet>> StaticRrSets { get; private set; } = null!;
 
@@ -164,35 +93,18 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Output("stickinessBonusPercentage")]
         public Output<int?> StickinessBonusPercentage { get; private set; } = null!;
 
-        /// <summary>
-        /// — (multiple allowed)
-        /// * `datacenter_id`
-        /// </summary>
         [Output("trafficTargets")]
         public Output<ImmutableArray<Outputs.GtmPropertyTrafficTarget>> TrafficTargets { get; private set; } = null!;
 
-        /// <summary>
-        /// — Property type  
-        /// * `score_aggregation_type`
-        /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
 
         [Output("unreachableThreshold")]
         public Output<double?> UnreachableThreshold { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Boolean)
-        /// * `backup_ip`
-        /// </summary>
         [Output("useComputedTargets")]
         public Output<bool?> UseComputedTargets { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Boolean, Default: true) Wait for transaction to complete
-        /// * `failover_delay`
-        /// * `failback_delay`
-        /// </summary>
         [Output("waitOnComplete")]
         public Output<bool?> WaitOnComplete { get; private set; } = null!;
 
@@ -254,21 +166,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("backupIp")]
         public Input<string>? BackupIp { get; set; }
 
-        /// <summary>
-        /// — (Boolean)
-        /// * `static_ttl`
-        /// * `unreachable_threshold`
-        /// * `health_multiplier`
-        /// * `dynamic_ttl`
-        /// * `max_unreachable_penalty`
-        /// * `map_name`
-        /// * `load_imbalance_percentage`
-        /// * `health_max`
-        /// * `cname`
-        /// * `comments`
-        /// * `ghost_demand_reporting`
-        /// * `min_live_fraction`
-        /// </summary>
         [Input("balanceByDownloadScore")]
         public Input<bool>? BalanceByDownloadScore { get; set; }
 
@@ -278,9 +175,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("comments")]
         public Input<string>? Comments { get; set; }
 
-        /// <summary>
-        /// — Domain name
-        /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
 
@@ -311,21 +205,11 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("healthThreshold")]
         public Input<double>? HealthThreshold { get; set; }
 
-        /// <summary>
-        /// — (Boolean)
-        /// * `stickiness_bonus_percentage`
-        /// * `stickiness_bonus_constant`
-        /// * `health_threshold`
-        /// </summary>
         [Input("ipv6")]
         public Input<bool>? Ipv6 { get; set; }
 
         [Input("livenessTests")]
         private InputList<Inputs.GtmPropertyLivenessTestArgs>? _livenessTests;
-
-        /// <summary>
-        /// — (multiple allowed)
-        /// </summary>
         public InputList<Inputs.GtmPropertyLivenessTestArgs> LivenessTests
         {
             get => _livenessTests ?? (_livenessTests = new InputList<Inputs.GtmPropertyLivenessTestArgs>());
@@ -344,12 +228,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("minLiveFraction")]
         public Input<double>? MinLiveFraction { get; set; }
 
-        /// <summary>
-        /// — Liveness test name
-        /// * `test_interval`
-        /// * `test_object_protocol`
-        /// * `test_timeout`
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
@@ -358,12 +236,6 @@ namespace Pulumi.Akamai.Trafficmanagement
 
         [Input("staticRrSets")]
         private InputList<Inputs.GtmPropertyStaticRrSetArgs>? _staticRrSets;
-
-        /// <summary>
-        /// — (multiple allowed)
-        /// * `type`
-        /// * `ttl`
-        /// </summary>
         public InputList<Inputs.GtmPropertyStaticRrSetArgs> StaticRrSets
         {
             get => _staticRrSets ?? (_staticRrSets = new InputList<Inputs.GtmPropertyStaticRrSetArgs>());
@@ -381,39 +253,21 @@ namespace Pulumi.Akamai.Trafficmanagement
 
         [Input("trafficTargets", required: true)]
         private InputList<Inputs.GtmPropertyTrafficTargetArgs>? _trafficTargets;
-
-        /// <summary>
-        /// — (multiple allowed)
-        /// * `datacenter_id`
-        /// </summary>
         public InputList<Inputs.GtmPropertyTrafficTargetArgs> TrafficTargets
         {
             get => _trafficTargets ?? (_trafficTargets = new InputList<Inputs.GtmPropertyTrafficTargetArgs>());
             set => _trafficTargets = value;
         }
 
-        /// <summary>
-        /// — Property type  
-        /// * `score_aggregation_type`
-        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
         [Input("unreachableThreshold")]
         public Input<double>? UnreachableThreshold { get; set; }
 
-        /// <summary>
-        /// — (Boolean)
-        /// * `backup_ip`
-        /// </summary>
         [Input("useComputedTargets")]
         public Input<bool>? UseComputedTargets { get; set; }
 
-        /// <summary>
-        /// — (Boolean, Default: true) Wait for transaction to complete
-        /// * `failover_delay`
-        /// * `failback_delay`
-        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 
@@ -430,21 +284,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("backupIp")]
         public Input<string>? BackupIp { get; set; }
 
-        /// <summary>
-        /// — (Boolean)
-        /// * `static_ttl`
-        /// * `unreachable_threshold`
-        /// * `health_multiplier`
-        /// * `dynamic_ttl`
-        /// * `max_unreachable_penalty`
-        /// * `map_name`
-        /// * `load_imbalance_percentage`
-        /// * `health_max`
-        /// * `cname`
-        /// * `comments`
-        /// * `ghost_demand_reporting`
-        /// * `min_live_fraction`
-        /// </summary>
         [Input("balanceByDownloadScore")]
         public Input<bool>? BalanceByDownloadScore { get; set; }
 
@@ -454,9 +293,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("comments")]
         public Input<string>? Comments { get; set; }
 
-        /// <summary>
-        /// — Domain name
-        /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
@@ -487,21 +323,11 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("healthThreshold")]
         public Input<double>? HealthThreshold { get; set; }
 
-        /// <summary>
-        /// — (Boolean)
-        /// * `stickiness_bonus_percentage`
-        /// * `stickiness_bonus_constant`
-        /// * `health_threshold`
-        /// </summary>
         [Input("ipv6")]
         public Input<bool>? Ipv6 { get; set; }
 
         [Input("livenessTests")]
         private InputList<Inputs.GtmPropertyLivenessTestGetArgs>? _livenessTests;
-
-        /// <summary>
-        /// — (multiple allowed)
-        /// </summary>
         public InputList<Inputs.GtmPropertyLivenessTestGetArgs> LivenessTests
         {
             get => _livenessTests ?? (_livenessTests = new InputList<Inputs.GtmPropertyLivenessTestGetArgs>());
@@ -520,12 +346,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("minLiveFraction")]
         public Input<double>? MinLiveFraction { get; set; }
 
-        /// <summary>
-        /// — Liveness test name
-        /// * `test_interval`
-        /// * `test_object_protocol`
-        /// * `test_timeout`
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
@@ -534,12 +354,6 @@ namespace Pulumi.Akamai.Trafficmanagement
 
         [Input("staticRrSets")]
         private InputList<Inputs.GtmPropertyStaticRrSetGetArgs>? _staticRrSets;
-
-        /// <summary>
-        /// — (multiple allowed)
-        /// * `type`
-        /// * `ttl`
-        /// </summary>
         public InputList<Inputs.GtmPropertyStaticRrSetGetArgs> StaticRrSets
         {
             get => _staticRrSets ?? (_staticRrSets = new InputList<Inputs.GtmPropertyStaticRrSetGetArgs>());
@@ -557,39 +371,21 @@ namespace Pulumi.Akamai.Trafficmanagement
 
         [Input("trafficTargets")]
         private InputList<Inputs.GtmPropertyTrafficTargetGetArgs>? _trafficTargets;
-
-        /// <summary>
-        /// — (multiple allowed)
-        /// * `datacenter_id`
-        /// </summary>
         public InputList<Inputs.GtmPropertyTrafficTargetGetArgs> TrafficTargets
         {
             get => _trafficTargets ?? (_trafficTargets = new InputList<Inputs.GtmPropertyTrafficTargetGetArgs>());
             set => _trafficTargets = value;
         }
 
-        /// <summary>
-        /// — Property type  
-        /// * `score_aggregation_type`
-        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         [Input("unreachableThreshold")]
         public Input<double>? UnreachableThreshold { get; set; }
 
-        /// <summary>
-        /// — (Boolean)
-        /// * `backup_ip`
-        /// </summary>
         [Input("useComputedTargets")]
         public Input<bool>? UseComputedTargets { get; set; }
 
-        /// <summary>
-        /// — (Boolean, Default: true) Wait for transaction to complete
-        /// * `failover_delay`
-        /// * `failback_delay`
-        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 

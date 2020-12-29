@@ -4,71 +4,36 @@
 package trafficmanagement
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// `trafficmanagement.GtmGeomap` provides the resource for creating, configuring and importing a gtm Geographic map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingMapName`
-//
-// ## Example Usage
-// ### Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/trafficmanagement"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := trafficmanagement.NewGtmGeomap(ctx, "demoGeomap", &trafficmanagement.GtmGeomapArgs{
-// 			DefaultDatacenter: &trafficmanagement.GtmGeomapDefaultDatacenterArgs{
-// 				DatacenterId: pulumi.Int(5400),
-// 				Nickname:     pulumi.String("All Others"),
-// 			},
-// 			Domain: pulumi.String("demo_domain.akadns.net"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
+// Deprecated: akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap
 type GtmGeomap struct {
 	pulumi.CustomResourceState
 
-	// — (multiple allowed)
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       GtmGeomapAssignmentArrayOutput   `pulumi:"assignments"`
 	DefaultDatacenter GtmGeomapDefaultDatacenterOutput `pulumi:"defaultDatacenter"`
-	// — Domain name
-	Domain pulumi.StringOutput `pulumi:"domain"`
-	// — Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name pulumi.StringOutput `pulumi:"name"`
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrOutput `pulumi:"waitOnComplete"`
+	Domain            pulumi.StringOutput              `pulumi:"domain"`
+	Name              pulumi.StringOutput              `pulumi:"name"`
+	WaitOnComplete    pulumi.BoolPtrOutput             `pulumi:"waitOnComplete"`
 }
 
 // NewGtmGeomap registers a new resource with the given unique name, arguments, and options.
 func NewGtmGeomap(ctx *pulumi.Context,
 	name string, args *GtmGeomapArgs, opts ...pulumi.ResourceOption) (*GtmGeomap, error) {
-	if args == nil || args.DefaultDatacenter == nil {
-		return nil, errors.New("missing required argument 'DefaultDatacenter'")
-	}
-	if args == nil || args.Domain == nil {
-		return nil, errors.New("missing required argument 'Domain'")
-	}
 	if args == nil {
-		args = &GtmGeomapArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.DefaultDatacenter == nil {
+		return nil, errors.New("invalid value for required argument 'DefaultDatacenter'")
+	}
+	if args.Domain == nil {
+		return nil, errors.New("invalid value for required argument 'Domain'")
 	}
 	var resource GtmGeomap
 	err := ctx.RegisterResource("akamai:trafficmanagement/gtmGeomap:GtmGeomap", name, args, &resource, opts...)
@@ -92,37 +57,19 @@ func GetGtmGeomap(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering GtmGeomap resources.
 type gtmGeomapState struct {
-	// — (multiple allowed)
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       []GtmGeomapAssignment       `pulumi:"assignments"`
 	DefaultDatacenter *GtmGeomapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	// — Domain name
-	Domain *string `pulumi:"domain"`
-	// — Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name *string `pulumi:"name"`
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	Domain            *string                     `pulumi:"domain"`
+	Name              *string                     `pulumi:"name"`
+	WaitOnComplete    *bool                       `pulumi:"waitOnComplete"`
 }
 
 type GtmGeomapState struct {
-	// — (multiple allowed)
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       GtmGeomapAssignmentArrayInput
 	DefaultDatacenter GtmGeomapDefaultDatacenterPtrInput
-	// — Domain name
-	Domain pulumi.StringPtrInput
-	// — Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name pulumi.StringPtrInput
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrInput
+	Domain            pulumi.StringPtrInput
+	Name              pulumi.StringPtrInput
+	WaitOnComplete    pulumi.BoolPtrInput
 }
 
 func (GtmGeomapState) ElementType() reflect.Type {
@@ -130,40 +77,61 @@ func (GtmGeomapState) ElementType() reflect.Type {
 }
 
 type gtmGeomapArgs struct {
-	// — (multiple allowed)
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       []GtmGeomapAssignment      `pulumi:"assignments"`
 	DefaultDatacenter GtmGeomapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	// — Domain name
-	Domain string `pulumi:"domain"`
-	// — Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name *string `pulumi:"name"`
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	Domain            string                     `pulumi:"domain"`
+	Name              *string                    `pulumi:"name"`
+	WaitOnComplete    *bool                      `pulumi:"waitOnComplete"`
 }
 
 // The set of arguments for constructing a GtmGeomap resource.
 type GtmGeomapArgs struct {
-	// — (multiple allowed)
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       GtmGeomapAssignmentArrayInput
 	DefaultDatacenter GtmGeomapDefaultDatacenterInput
-	// — Domain name
-	Domain pulumi.StringInput
-	// — Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name pulumi.StringPtrInput
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrInput
+	Domain            pulumi.StringInput
+	Name              pulumi.StringPtrInput
+	WaitOnComplete    pulumi.BoolPtrInput
 }
 
 func (GtmGeomapArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*gtmGeomapArgs)(nil)).Elem()
+}
+
+type GtmGeomapInput interface {
+	pulumi.Input
+
+	ToGtmGeomapOutput() GtmGeomapOutput
+	ToGtmGeomapOutputWithContext(ctx context.Context) GtmGeomapOutput
+}
+
+func (GtmGeomap) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmGeomap)(nil)).Elem()
+}
+
+func (i GtmGeomap) ToGtmGeomapOutput() GtmGeomapOutput {
+	return i.ToGtmGeomapOutputWithContext(context.Background())
+}
+
+func (i GtmGeomap) ToGtmGeomapOutputWithContext(ctx context.Context) GtmGeomapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmGeomapOutput)
+}
+
+type GtmGeomapOutput struct {
+	*pulumi.OutputState
+}
+
+func (GtmGeomapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmGeomapOutput)(nil)).Elem()
+}
+
+func (o GtmGeomapOutput) ToGtmGeomapOutput() GtmGeomapOutput {
+	return o
+}
+
+func (o GtmGeomapOutput) ToGtmGeomapOutputWithContext(ctx context.Context) GtmGeomapOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(GtmGeomapOutput{})
 }

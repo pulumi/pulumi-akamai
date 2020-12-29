@@ -4,71 +4,36 @@
 package trafficmanagement
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// `trafficmanagement.GtmCidrmap` provides the resource for creating, configuring and importing a gtm Cidr Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingMapName`
-//
-// ## Example Usage
-// ### Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/trafficmanagement"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := trafficmanagement.NewGtmCidrmap(ctx, "demoCidrmap", &trafficmanagement.GtmCidrmapArgs{
-// 			DefaultDatacenter: &trafficmanagement.GtmCidrmapDefaultDatacenterArgs{
-// 				DatacenterId: pulumi.Int(5400),
-// 				Nickname:     pulumi.String("All Other CIDR Blocks"),
-// 			},
-// 			Domain: pulumi.String("demo_domain.akadns.net"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
+// Deprecated: akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap
 type GtmCidrmap struct {
 	pulumi.CustomResourceState
 
-	// — (multiple allowed)
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       GtmCidrmapAssignmentArrayOutput   `pulumi:"assignments"`
 	DefaultDatacenter GtmCidrmapDefaultDatacenterOutput `pulumi:"defaultDatacenter"`
-	// — Domain name
-	Domain pulumi.StringOutput `pulumi:"domain"`
-	// — Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name pulumi.StringOutput `pulumi:"name"`
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrOutput `pulumi:"waitOnComplete"`
+	Domain            pulumi.StringOutput               `pulumi:"domain"`
+	Name              pulumi.StringOutput               `pulumi:"name"`
+	WaitOnComplete    pulumi.BoolPtrOutput              `pulumi:"waitOnComplete"`
 }
 
 // NewGtmCidrmap registers a new resource with the given unique name, arguments, and options.
 func NewGtmCidrmap(ctx *pulumi.Context,
 	name string, args *GtmCidrmapArgs, opts ...pulumi.ResourceOption) (*GtmCidrmap, error) {
-	if args == nil || args.DefaultDatacenter == nil {
-		return nil, errors.New("missing required argument 'DefaultDatacenter'")
-	}
-	if args == nil || args.Domain == nil {
-		return nil, errors.New("missing required argument 'Domain'")
-	}
 	if args == nil {
-		args = &GtmCidrmapArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.DefaultDatacenter == nil {
+		return nil, errors.New("invalid value for required argument 'DefaultDatacenter'")
+	}
+	if args.Domain == nil {
+		return nil, errors.New("invalid value for required argument 'Domain'")
 	}
 	var resource GtmCidrmap
 	err := ctx.RegisterResource("akamai:trafficmanagement/gtmCidrmap:GtmCidrmap", name, args, &resource, opts...)
@@ -92,37 +57,19 @@ func GetGtmCidrmap(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering GtmCidrmap resources.
 type gtmCidrmapState struct {
-	// — (multiple allowed)
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       []GtmCidrmapAssignment       `pulumi:"assignments"`
 	DefaultDatacenter *GtmCidrmapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	// — Domain name
-	Domain *string `pulumi:"domain"`
-	// — Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name *string `pulumi:"name"`
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	Domain            *string                      `pulumi:"domain"`
+	Name              *string                      `pulumi:"name"`
+	WaitOnComplete    *bool                        `pulumi:"waitOnComplete"`
 }
 
 type GtmCidrmapState struct {
-	// — (multiple allowed)
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       GtmCidrmapAssignmentArrayInput
 	DefaultDatacenter GtmCidrmapDefaultDatacenterPtrInput
-	// — Domain name
-	Domain pulumi.StringPtrInput
-	// — Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name pulumi.StringPtrInput
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrInput
+	Domain            pulumi.StringPtrInput
+	Name              pulumi.StringPtrInput
+	WaitOnComplete    pulumi.BoolPtrInput
 }
 
 func (GtmCidrmapState) ElementType() reflect.Type {
@@ -130,40 +77,61 @@ func (GtmCidrmapState) ElementType() reflect.Type {
 }
 
 type gtmCidrmapArgs struct {
-	// — (multiple allowed)
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       []GtmCidrmapAssignment      `pulumi:"assignments"`
 	DefaultDatacenter GtmCidrmapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	// — Domain name
-	Domain string `pulumi:"domain"`
-	// — Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name *string `pulumi:"name"`
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	Domain            string                      `pulumi:"domain"`
+	Name              *string                     `pulumi:"name"`
+	WaitOnComplete    *bool                       `pulumi:"waitOnComplete"`
 }
 
 // The set of arguments for constructing a GtmCidrmap resource.
 type GtmCidrmapArgs struct {
-	// — (multiple allowed)
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       GtmCidrmapAssignmentArrayInput
 	DefaultDatacenter GtmCidrmapDefaultDatacenterInput
-	// — Domain name
-	Domain pulumi.StringInput
-	// — Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name pulumi.StringPtrInput
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrInput
+	Domain            pulumi.StringInput
+	Name              pulumi.StringPtrInput
+	WaitOnComplete    pulumi.BoolPtrInput
 }
 
 func (GtmCidrmapArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*gtmCidrmapArgs)(nil)).Elem()
+}
+
+type GtmCidrmapInput interface {
+	pulumi.Input
+
+	ToGtmCidrmapOutput() GtmCidrmapOutput
+	ToGtmCidrmapOutputWithContext(ctx context.Context) GtmCidrmapOutput
+}
+
+func (GtmCidrmap) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmCidrmap)(nil)).Elem()
+}
+
+func (i GtmCidrmap) ToGtmCidrmapOutput() GtmCidrmapOutput {
+	return i.ToGtmCidrmapOutputWithContext(context.Background())
+}
+
+func (i GtmCidrmap) ToGtmCidrmapOutputWithContext(ctx context.Context) GtmCidrmapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmCidrmapOutput)
+}
+
+type GtmCidrmapOutput struct {
+	*pulumi.OutputState
+}
+
+func (GtmCidrmapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmCidrmapOutput)(nil)).Elem()
+}
+
+func (o GtmCidrmapOutput) ToGtmCidrmapOutput() GtmCidrmapOutput {
+	return o
+}
+
+func (o GtmCidrmapOutput) ToGtmCidrmapOutputWithContext(ctx context.Context) GtmCidrmapOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(GtmCidrmapOutput{})
 }

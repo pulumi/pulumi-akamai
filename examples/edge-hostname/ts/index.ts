@@ -1,13 +1,19 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as akamai from "@pulumi/akamai";
 
-const contractId = akamai.getContract().then(x => x.id)
-const groupId = akamai.getGroup().then(x => x.id)
+let groupId = "175146";
+let productId = "prd_Fresca";
+const contractId = akamai.getContract({
+    groupId: groupId,
+}).then(x => x.id)
 
-const tsdomain = new akamai.properties.EdgeHostName("test", {
-    contract: contractId,
-    group: groupId,
-    product: "prd_Fresca",
+
+const tsdomain = new akamai.EdgeHostName("test", {
+    contractId: contractId,
+    groupId: groupId,
+    productId: productId,
     edgeHostname: "test-ts.mycompany.io",
-    ipv4: true,
+    ipBehavior: "ipv4",
 });
+
+export const id = contractId;

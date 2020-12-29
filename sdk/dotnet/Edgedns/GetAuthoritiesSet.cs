@@ -9,35 +9,9 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Edgedns
 {
+    [Obsolete(@"akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet")]
     public static class GetAuthoritiesSet
     {
-        /// <summary>
-        /// Use `akamai.edgedns.getAuthoritiesSet` datasource to retrieve a contracts authorities set for use when creating new zones.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// ### Basic usage:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var example = Output.Create(Akamai.Edgedns.GetAuthoritiesSet.InvokeAsync(new Akamai.Edgedns.GetAuthoritiesSetArgs
-        ///         {
-        ///             Contract = "ctr_xxxxx",
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// </summary>
         public static Task<GetAuthoritiesSetResult> InvokeAsync(GetAuthoritiesSetArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAuthoritiesSetResult>("akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet", args ?? new GetAuthoritiesSetArgs(), options.WithVersion());
     }
@@ -45,9 +19,6 @@ namespace Pulumi.Akamai.Edgedns
 
     public sealed class GetAuthoritiesSetArgs : Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// — (Required) The contract ID.
-        /// </summary>
         [Input("contract", required: true)]
         public string Contract { get; set; } = null!;
 

@@ -12,8 +12,12 @@ from ._inputs import *
 
 __all__ = ['GtmResource']
 
+warnings.warn("""akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource""", DeprecationWarning)
+
 
 class GtmResource(pulumi.CustomResource):
+    warnings.warn("""akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource""", DeprecationWarning)
+
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -36,33 +40,11 @@ class GtmResource(pulumi.CustomResource):
                  __name__=None,
                  __opts__=None):
         """
-        `trafficmanagement.GtmResource` provides the resource for creating, configuring and importing a gtm resource to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_resource_name`
-
-        ## Example Usage
-        ### Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        demo_resource = akamai.trafficmanagement.GtmResource("demoResource",
-            aggregation_type="latest",
-            domain="demo_domain.akadns.net",
-            type="XML load object via HTTP")
-        ```
-
+        Create a GtmResource resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] domain: — Domain name
-        :param pulumi.Input[str] name: — Resource name
-               * `aggregation_type`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmResourceResourceInstanceArgs']]]] resource_instances: — (multiple allowed) 
-               * `datacenter_id`
-               * `load_object`
-               * `load_object_port`
-        :param pulumi.Input[str] type: — Resource type
-        :param pulumi.Input[bool] wait_on_complete: — (Boolean, Default: true) Wait for transaction to complete
         """
+        pulumi.log.warn("GtmResource is deprecated: akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__
@@ -80,13 +62,13 @@ class GtmResource(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = dict()
 
-            if aggregation_type is None:
+            if aggregation_type is None and not opts.urn:
                 raise TypeError("Missing required property 'aggregation_type'")
             __props__['aggregation_type'] = aggregation_type
             __props__['constrained_property'] = constrained_property
             __props__['decay_rate'] = decay_rate
             __props__['description'] = description
-            if domain is None:
+            if domain is None and not opts.urn:
                 raise TypeError("Missing required property 'domain'")
             __props__['domain'] = domain
             __props__['host_header'] = host_header
@@ -96,7 +78,7 @@ class GtmResource(pulumi.CustomResource):
             __props__['max_u_multiplicative_increment'] = max_u_multiplicative_increment
             __props__['name'] = name
             __props__['resource_instances'] = resource_instances
-            if type is None:
+            if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
             __props__['type'] = type
             __props__['upper_bound'] = upper_bound
@@ -133,15 +115,6 @@ class GtmResource(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] domain: — Domain name
-        :param pulumi.Input[str] name: — Resource name
-               * `aggregation_type`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmResourceResourceInstanceArgs']]]] resource_instances: — (multiple allowed) 
-               * `datacenter_id`
-               * `load_object`
-               * `load_object_port`
-        :param pulumi.Input[str] type: — Resource type
-        :param pulumi.Input[bool] wait_on_complete: — (Boolean, Default: true) Wait for transaction to complete
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -187,9 +160,6 @@ class GtmResource(pulumi.CustomResource):
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Output[str]:
-        """
-        — Domain name
-        """
         return pulumi.get(self, "domain")
 
     @property
@@ -220,29 +190,16 @@ class GtmResource(pulumi.CustomResource):
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        — Resource name
-        * `aggregation_type`
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="resourceInstances")
     def resource_instances(self) -> pulumi.Output[Optional[Sequence['outputs.GtmResourceResourceInstance']]]:
-        """
-        — (multiple allowed) 
-        * `datacenter_id`
-        * `load_object`
-        * `load_object_port`
-        """
         return pulumi.get(self, "resource_instances")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
-        """
-        — Resource type
-        """
         return pulumi.get(self, "type")
 
     @property
@@ -253,9 +210,6 @@ class GtmResource(pulumi.CustomResource):
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> pulumi.Output[Optional[bool]]:
-        """
-        — (Boolean, Default: true) Wait for transaction to complete
-        """
         return pulumi.get(self, "wait_on_complete")
 
     def translate_output_property(self, prop):

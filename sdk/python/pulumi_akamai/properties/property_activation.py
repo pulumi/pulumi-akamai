@@ -10,44 +10,30 @@ from .. import _utilities, _tables
 
 __all__ = ['PropertyActivation']
 
+warnings.warn("""akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation""", DeprecationWarning)
+
 
 class PropertyActivation(pulumi.CustomResource):
+    warnings.warn("""akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation""", DeprecationWarning)
+
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 activate: Optional[pulumi.Input[bool]] = None,
+                 activation_id: Optional[pulumi.Input[str]] = None,
                  contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  property: Optional[pulumi.Input[str]] = None,
+                 property_id: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None,
                  __name__=None,
                  __opts__=None):
         """
-        The `properties.PropertyActivation` provides the resource for activating a property in the appropriate environment. Once you are satisfied with any version of a property, an activation deploys it, either to the Akamai staging or production network. You activate a specific version, but the same version can be activated separately more than once.
-
-        ## Example Usage
-        ### Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        example = akamai.properties.PropertyActivation("example",
-            activate=var["akamai_property_activate"],
-            contacts=["user@example.org"],
-            network="STAGING",
-            property=akamai_property["example"]["id"])
-        ```
-
+        Create a PropertyActivation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] activate: — (Optional, boolean) Whether to activate the property on the network. (Default: `true`).
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] contacts: — (Required) One or more email addresses to inform about activation changes.
-        :param pulumi.Input[str] network: — (Optional) Akamai network to activate on. Allowed values `staging` or `production` (Default: `staging`).
-        :param pulumi.Input[str] property: — (Required) The property ID.
-        :param pulumi.Input[int] version: — (Optional) The version to activate. When unset it will activate the latest version of the property.
         """
+        pulumi.log.warn("PropertyActivation is deprecated: akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__
@@ -65,16 +51,22 @@ class PropertyActivation(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = dict()
 
-            __props__['activate'] = activate
-            if contacts is None:
+            __props__['activation_id'] = activation_id
+            if contacts is None and not opts.urn:
                 raise TypeError("Missing required property 'contacts'")
             __props__['contacts'] = contacts
             __props__['network'] = network
-            if property is None:
-                raise TypeError("Missing required property 'property'")
+            if property is not None and not opts.urn:
+                warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("property is deprecated: The setting \"property\" has been deprecated.")
             __props__['property'] = property
+            __props__['property_id'] = property_id
+            if version is None and not opts.urn:
+                raise TypeError("Missing required property 'version'")
             __props__['version'] = version
+            __props__['errors'] = None
             __props__['status'] = None
+            __props__['warnings'] = None
         super(PropertyActivation, __self__).__init__(
             'akamai:properties/propertyActivation:PropertyActivation',
             resource_name,
@@ -85,12 +77,15 @@ class PropertyActivation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            activate: Optional[pulumi.Input[bool]] = None,
+            activation_id: Optional[pulumi.Input[str]] = None,
             contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            errors: Optional[pulumi.Input[str]] = None,
             network: Optional[pulumi.Input[str]] = None,
             property: Optional[pulumi.Input[str]] = None,
+            property_id: Optional[pulumi.Input[str]] = None,
             status: Optional[pulumi.Input[str]] = None,
-            version: Optional[pulumi.Input[int]] = None) -> 'PropertyActivation':
+            version: Optional[pulumi.Input[int]] = None,
+            warnings: Optional[pulumi.Input[str]] = None) -> 'PropertyActivation':
         """
         Get an existing PropertyActivation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -98,47 +93,46 @@ class PropertyActivation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] activate: — (Optional, boolean) Whether to activate the property on the network. (Default: `true`).
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] contacts: — (Required) One or more email addresses to inform about activation changes.
-        :param pulumi.Input[str] network: — (Optional) Akamai network to activate on. Allowed values `staging` or `production` (Default: `staging`).
-        :param pulumi.Input[str] property: — (Required) The property ID.
-        :param pulumi.Input[int] version: — (Optional) The version to activate. When unset it will activate the latest version of the property.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = dict()
 
-        __props__["activate"] = activate
+        __props__["activation_id"] = activation_id
         __props__["contacts"] = contacts
+        __props__["errors"] = errors
         __props__["network"] = network
         __props__["property"] = property
+        __props__["property_id"] = property_id
         __props__["status"] = status
         __props__["version"] = version
+        __props__["warnings"] = warnings
         return PropertyActivation(resource_name, opts=opts, __props__=__props__)
 
     @property
-    @pulumi.getter
-    def activate(self) -> pulumi.Output[Optional[bool]]:
-        """
-        — (Optional, boolean) Whether to activate the property on the network. (Default: `true`).
-        """
-        return pulumi.get(self, "activate")
+    @pulumi.getter(name="activationId")
+    def activation_id(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "activation_id")
 
     @property
     @pulumi.getter
     def contacts(self) -> pulumi.Output[Sequence[str]]:
-        """
-        — (Required) One or more email addresses to inform about activation changes.
-        """
         return pulumi.get(self, "contacts")
 
     @property
     @pulumi.getter
+    def errors(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "errors")
+
+    @property
+    @pulumi.getter
     def network(self) -> pulumi.Output[Optional[str]]:
-        """
-        — (Optional) Akamai network to activate on. Allowed values `staging` or `production` (Default: `staging`).
-        """
         return pulumi.get(self, "network")
+
+    @property
+    @pulumi.getter(name="propertyId")
+    def property_id(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "property_id")
 
     @property
     @pulumi.getter
@@ -147,18 +141,17 @@ class PropertyActivation(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def version(self) -> pulumi.Output[Optional[int]]:
-        """
-        — (Optional) The version to activate. When unset it will activate the latest version of the property.
-        """
+    def version(self) -> pulumi.Output[int]:
         return pulumi.get(self, "version")
 
     @property
     @pulumi.getter
+    def warnings(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "warnings")
+
+    @property
+    @pulumi.getter
     def property(self) -> pulumi.Output[str]:
-        """
-        — (Required) The property ID.
-        """
         return pulumi.get(self, "property")
 
     def translate_output_property(self, prop):

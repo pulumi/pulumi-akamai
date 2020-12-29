@@ -2,11 +2,240 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "../types/input";
-import * as outputs from "../types/output";
+import { input as inputs, output as outputs } from "../types";
 
-export interface ProviderDn {
+export interface DnsZoneTsigKey {
+    algorithm: pulumi.Input<string>;
+    /**
+     * key name
+     * * `algorithm`
+     * * `secret`
+     */
+    name: pulumi.Input<string>;
+    secret: pulumi.Input<string>;
+}
+
+export interface GetPropertyRulesTemplateVariable {
+    name: string;
+    type?: string;
+    value: string;
+}
+
+export interface GtmAsmapAssignment {
+    asNumbers: pulumi.Input<pulumi.Input<number>[]>;
+    datacenterId: pulumi.Input<number>;
+    nickname: pulumi.Input<string>;
+}
+
+export interface GtmAsmapDefaultDatacenter {
+    datacenterId: pulumi.Input<number>;
+    nickname?: pulumi.Input<string>;
+}
+
+export interface GtmCidrmapAssignment {
+    blocks?: pulumi.Input<pulumi.Input<string>[]>;
+    datacenterId: pulumi.Input<number>;
+    nickname: pulumi.Input<string>;
+}
+
+export interface GtmCidrmapDefaultDatacenter {
+    datacenterId: pulumi.Input<number>;
+    nickname?: pulumi.Input<string>;
+}
+
+export interface GtmDatacenterDefaultLoadObject {
+    loadObject?: pulumi.Input<string>;
+    loadObjectPort?: pulumi.Input<number>;
+    /**
+     * * `city`
+     * * `cloneOf`
+     */
+    loadServers?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface GtmGeomapAssignment {
+    countries?: pulumi.Input<pulumi.Input<string>[]>;
+    datacenterId: pulumi.Input<number>;
+    nickname: pulumi.Input<string>;
+}
+
+export interface GtmGeomapDefaultDatacenter {
+    datacenterId: pulumi.Input<number>;
+    nickname?: pulumi.Input<string>;
+}
+
+export interface GtmPropertyLivenessTest {
+    answersRequired?: pulumi.Input<boolean>;
+    /**
+     * * `errorPenalty`
+     */
+    disableNonstandardPortWarning?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean>;
+    errorPenalty?: pulumi.Input<number>;
+    httpError3xx?: pulumi.Input<boolean>;
+    httpError4xx?: pulumi.Input<boolean>;
+    httpError5xx?: pulumi.Input<boolean>;
+    /**
+     * `name`
+     * `value`
+     */
+    httpHeaders?: pulumi.Input<pulumi.Input<inputs.GtmPropertyLivenessTestHttpHeader>[]>;
+    /**
+     * Liveness test name
+     * * `testInterval`
+     * * `testObjectProtocol`
+     * * `testTimeout`
+     */
+    name: pulumi.Input<string>;
+    peerCertificateVerification?: pulumi.Input<boolean>;
+    /**
+     * * `requestString`
+     * * `resourceType`
+     * * `responseString`
+     * * `sslClientCertificate`
+     * * `sslClientPrivateKey`
+     * * `testObject`
+     * * `testObjectPassword`
+     * * `testObjectPort`
+     * * `testObjectUsername`
+     * * `timeoutPenalty`
+     */
+    recursionRequested?: pulumi.Input<boolean>;
+    requestString?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string>;
+    responseString?: pulumi.Input<string>;
+    sslClientCertificate?: pulumi.Input<string>;
+    sslClientPrivateKey?: pulumi.Input<string>;
+    testInterval: pulumi.Input<number>;
+    testObject: pulumi.Input<string>;
+    testObjectPassword?: pulumi.Input<string>;
+    testObjectPort?: pulumi.Input<number>;
+    testObjectProtocol: pulumi.Input<string>;
+    testObjectUsername?: pulumi.Input<string>;
+    testTimeout: pulumi.Input<number>;
+    timeoutPenalty?: pulumi.Input<number>;
+}
+
+export interface GtmPropertyLivenessTestHttpHeader {
+    /**
+     * Liveness test name
+     * * `testInterval`
+     * * `testObjectProtocol`
+     * * `testTimeout`
+     */
+    name?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface GtmPropertyStaticRrSet {
+    rdatas?: pulumi.Input<pulumi.Input<string>[]>;
+    ttl?: pulumi.Input<number>;
+    /**
+     * Property type  
+     * * `scoreAggregationType`
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface GtmPropertyTrafficTarget {
+    datacenterId?: pulumi.Input<number>;
+    /**
+     * * `weight`
+     */
+    enabled?: pulumi.Input<boolean>;
+    handoutCname?: pulumi.Input<string>;
+    /**
+     * Liveness test name
+     * * `testInterval`
+     * * `testObjectProtocol`
+     * * `testTimeout`
+     */
+    name?: pulumi.Input<string>;
+    servers?: pulumi.Input<pulumi.Input<string>[]>;
+    weight?: pulumi.Input<number>;
+}
+
+export interface GtmResourceResourceInstance {
+    datacenterId: pulumi.Input<number>;
+    loadObject?: pulumi.Input<string>;
+    loadObjectPort?: pulumi.Input<number>;
+    loadServers?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * * `hostHeader`
+     * * `leastSquaresDecay`
+     * * `upperBound`
+     * * `description`
+     * * `leaderString`
+     * * `constrainedProperty`
+     * * `loadImbalancePercent`
+     * * `maxUMultiplicativeIncrement`
+     * * `decayRate`
+     */
+    useDefaultLoadObject?: pulumi.Input<boolean>;
+}
+
+export interface PropertyOrigin {
+    cacheKeyHostname?: pulumi.Input<string>;
+    compress?: pulumi.Input<boolean>;
+    enableTrueClientIp?: pulumi.Input<boolean>;
+    forwardHostname?: pulumi.Input<string>;
+    hostname?: pulumi.Input<string>;
+    port?: pulumi.Input<number>;
+}
+
+export interface PropertyRuleError {
+    behaviorName?: pulumi.Input<string>;
+    detail?: pulumi.Input<string>;
+    errorLocation?: pulumi.Input<string>;
+    instance?: pulumi.Input<string>;
+    statusCode?: pulumi.Input<number>;
+    title?: pulumi.Input<string>;
+    type?: pulumi.Input<string>;
+}
+
+export interface PropertyRuleWarning {
+    behaviorName?: pulumi.Input<string>;
+    detail?: pulumi.Input<string>;
+    errorLocation?: pulumi.Input<string>;
+    instance?: pulumi.Input<string>;
+    statusCode?: pulumi.Input<number>;
+    title?: pulumi.Input<string>;
+    type?: pulumi.Input<string>;
+}
+
+export interface PropertyVariablesVariable {
+    variables?: pulumi.Input<pulumi.Input<inputs.PropertyVariablesVariableVariable>[]>;
+}
+
+export interface PropertyVariablesVariableVariable {
+    description?: pulumi.Input<string>;
+    hidden: pulumi.Input<boolean>;
+    name: pulumi.Input<string>;
+    sensitive: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface ProviderAppsec {
     accessToken?: pulumi.Input<string>;
+    accountKey?: pulumi.Input<string>;
+    clientSecret?: pulumi.Input<string>;
+    clientToken?: pulumi.Input<string>;
+    host?: pulumi.Input<string>;
+    maxBody?: pulumi.Input<number>;
+}
+
+export interface ProviderConfig {
+    accessToken?: pulumi.Input<string>;
+    accountKey?: pulumi.Input<string>;
+    clientSecret?: pulumi.Input<string>;
+    clientToken?: pulumi.Input<string>;
+    host?: pulumi.Input<string>;
+    maxBody?: pulumi.Input<number>;
+}
+
+export interface ProviderDns {
+    accessToken?: pulumi.Input<string>;
+    accountKey?: pulumi.Input<string>;
     clientSecret?: pulumi.Input<string>;
     clientToken?: pulumi.Input<string>;
     host?: pulumi.Input<string>;
@@ -15,6 +244,7 @@ export interface ProviderDn {
 
 export interface ProviderGtm {
     accessToken?: pulumi.Input<string>;
+    accountKey?: pulumi.Input<string>;
     clientSecret?: pulumi.Input<string>;
     clientToken?: pulumi.Input<string>;
     host?: pulumi.Input<string>;
@@ -23,6 +253,7 @@ export interface ProviderGtm {
 
 export interface ProviderProperty {
     accessToken?: pulumi.Input<string>;
+    accountKey?: pulumi.Input<string>;
     clientSecret?: pulumi.Input<string>;
     clientToken?: pulumi.Input<string>;
     host?: pulumi.Input<string>;
@@ -34,537 +265,39 @@ export namespace config {
 export namespace edgedns {
     export interface DnsZoneTsigKey {
         algorithm: pulumi.Input<string>;
-        /**
-         * key name
-         * * `algorithm`
-         * * `secret`
-         */
         name: pulumi.Input<string>;
         secret: pulumi.Input<string>;
     }
 }
 
 export namespace properties {
-    export interface GetPropertyRulesRule {
-        /**
-         * — (Optional) One or more behaviors to apply to requests that match.
-         */
-        behaviors?: inputs.properties.GetPropertyRulesRuleBehavior[];
-        criteriaMatch?: string;
-        /**
-         * — (Optional) Whether the property is a secure (Enhanced TLS) property or not (top-level only).
-         */
-        isSecure?: boolean;
-        /**
-         * — (Optional) Child rules (may be nested five levels deep).
-         */
-        rules?: inputs.properties.GetPropertyRulesRuleRule[];
-        variables?: inputs.properties.GetPropertyRulesRuleVariable[];
-    }
-
-    export interface GetPropertyRulesRuleBehavior {
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) One or more options for the behavior.
-         */
-        options?: inputs.properties.GetPropertyRulesRuleBehaviorOption[];
-    }
-
-    export interface GetPropertyRulesRuleBehaviorOption {
-        /**
-         * — (Required) The option name.
-         */
-        key: string;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-        /**
-         * — (Optional) An array of values for the option.
-         */
-        values?: string[];
-    }
-
-    export interface GetPropertyRulesRuleRule {
-        /**
-         * — (Optional) One or more behaviors to apply to requests that match.
-         */
-        behaviors?: inputs.properties.GetPropertyRulesRuleRuleBehavior[];
-        comment?: string;
-        criteriaMatch?: string;
-        /**
-         * — (Optional) One or more criteria to match requests on.
-         */
-        criterias?: inputs.properties.GetPropertyRulesRuleRuleCriteria[];
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) Child rules (may be nested five levels deep).
-         */
-        rules?: inputs.properties.GetPropertyRulesRuleRuleRule[];
-    }
-
-    export interface GetPropertyRulesRuleRuleBehavior {
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) One or more options for the behavior.
-         */
-        options?: inputs.properties.GetPropertyRulesRuleRuleBehaviorOption[];
-    }
-
-    export interface GetPropertyRulesRuleRuleBehaviorOption {
-        /**
-         * — (Required) The option name.
-         */
-        key: string;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-        /**
-         * — (Optional) An array of values for the option.
-         */
-        values?: string[];
-    }
-
-    export interface GetPropertyRulesRuleRuleCriteria {
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) One or more options for the behavior.
-         */
-        options?: inputs.properties.GetPropertyRulesRuleRuleCriteriaOption[];
-    }
-
-    export interface GetPropertyRulesRuleRuleCriteriaOption {
-        /**
-         * — (Required) The option name.
-         */
-        key: string;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-        /**
-         * — (Optional) An array of values for the option.
-         */
-        values?: string[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRule {
-        /**
-         * — (Optional) One or more behaviors to apply to requests that match.
-         */
-        behaviors?: inputs.properties.GetPropertyRulesRuleRuleRuleBehavior[];
-        comment?: string;
-        criteriaMatch?: string;
-        /**
-         * — (Optional) One or more criteria to match requests on.
-         */
-        criterias?: inputs.properties.GetPropertyRulesRuleRuleRuleCriteria[];
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) Child rules (may be nested five levels deep).
-         */
-        rules?: inputs.properties.GetPropertyRulesRuleRuleRuleRule[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleBehavior {
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) One or more options for the behavior.
-         */
-        options?: inputs.properties.GetPropertyRulesRuleRuleRuleBehaviorOption[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleBehaviorOption {
-        /**
-         * — (Required) The option name.
-         */
-        key: string;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-        /**
-         * — (Optional) An array of values for the option.
-         */
-        values?: string[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleCriteria {
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) One or more options for the behavior.
-         */
-        options?: inputs.properties.GetPropertyRulesRuleRuleRuleCriteriaOption[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleCriteriaOption {
-        /**
-         * — (Required) The option name.
-         */
-        key: string;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-        /**
-         * — (Optional) An array of values for the option.
-         */
-        values?: string[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRule {
-        /**
-         * — (Optional) One or more behaviors to apply to requests that match.
-         */
-        behaviors?: inputs.properties.GetPropertyRulesRuleRuleRuleRuleBehavior[];
-        comment?: string;
-        criteriaMatch?: string;
-        /**
-         * — (Optional) One or more criteria to match requests on.
-         */
-        criterias?: inputs.properties.GetPropertyRulesRuleRuleRuleRuleCriteria[];
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) Child rules (may be nested five levels deep).
-         */
-        rules?: inputs.properties.GetPropertyRulesRuleRuleRuleRuleRule[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRuleBehavior {
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) One or more options for the behavior.
-         */
-        options?: inputs.properties.GetPropertyRulesRuleRuleRuleRuleBehaviorOption[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRuleBehaviorOption {
-        /**
-         * — (Required) The option name.
-         */
-        key: string;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-        /**
-         * — (Optional) An array of values for the option.
-         */
-        values?: string[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRuleCriteria {
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) One or more options for the behavior.
-         */
-        options?: inputs.properties.GetPropertyRulesRuleRuleRuleRuleCriteriaOption[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRuleCriteriaOption {
-        /**
-         * — (Required) The option name.
-         */
-        key: string;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-        /**
-         * — (Optional) An array of values for the option.
-         */
-        values?: string[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRuleRule {
-        /**
-         * — (Optional) One or more behaviors to apply to requests that match.
-         */
-        behaviors?: inputs.properties.GetPropertyRulesRuleRuleRuleRuleRuleBehavior[];
-        comment?: string;
-        criteriaMatch?: string;
-        /**
-         * — (Optional) One or more criteria to match requests on.
-         */
-        criterias?: inputs.properties.GetPropertyRulesRuleRuleRuleRuleRuleCriteria[];
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRuleRuleBehavior {
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) One or more options for the behavior.
-         */
-        options?: inputs.properties.GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOption[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOption {
-        /**
-         * — (Required) The option name.
-         */
-        key: string;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-        /**
-         * — (Optional) An array of values for the option.
-         */
-        values?: string[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRuleRuleCriteria {
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) One or more options for the behavior.
-         */
-        options?: inputs.properties.GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOption[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOption {
-        /**
-         * — (Required) The option name.
-         */
-        key: string;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-        /**
-         * — (Optional) An array of values for the option.
-         */
-        values?: string[];
-    }
-
-    export interface GetPropertyRulesRuleVariable {
-        description?: string;
-        hidden: boolean;
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        sensitive: boolean;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-    }
-
     export interface PropertyOrigin {
-        /**
-         * — (Optional) The hostname uses for the cache key. (default: `ORIGIN_HOSTNAME`).
-         */
         cacheKeyHostname?: pulumi.Input<string>;
-        /**
-         * — (Optional, boolean) Whether origin supports gzip compression (default: `false`).
-         */
         compress?: pulumi.Input<boolean>;
-        /**
-         * — (Optional, boolean) Whether the X-True-Client-IP header should be sent to origin (default: `false`).
-         */
         enableTrueClientIp?: pulumi.Input<boolean>;
-        /**
-         * — (Optional) The value for the Hostname header sent to origin. (default: `ORIGIN_HOSTNAME`).
-         */
         forwardHostname?: pulumi.Input<string>;
-        /**
-         * — (Required) The origin hostname.
-         */
-        hostname: pulumi.Input<string>;
-        /**
-         * — (Optional) The origin port to connect to (default: 80).
-         */
+        hostname?: pulumi.Input<string>;
         port?: pulumi.Input<number>;
     }
 
-    export interface PropertyRulesRule {
-        behaviors?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleBehavior>[]>;
-        criteriaMatch?: pulumi.Input<string>;
-        isSecure?: pulumi.Input<boolean>;
-        rules?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRule>[]>;
-        variables?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleVariable>[]>;
+    export interface PropertyRuleError {
+        behaviorName?: pulumi.Input<string>;
+        detail?: pulumi.Input<string>;
+        errorLocation?: pulumi.Input<string>;
+        instance?: pulumi.Input<string>;
+        statusCode?: pulumi.Input<number>;
+        title?: pulumi.Input<string>;
+        type?: pulumi.Input<string>;
     }
 
-    export interface PropertyRulesRuleBehavior {
-        name: pulumi.Input<string>;
-        options?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleBehaviorOption>[]>;
-    }
-
-    export interface PropertyRulesRuleBehaviorOption {
-        key: pulumi.Input<string>;
-        value?: pulumi.Input<string>;
-        values?: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface PropertyRulesRuleRule {
-        behaviors?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleBehavior>[]>;
-        comment?: pulumi.Input<string>;
-        criteriaMatch?: pulumi.Input<string>;
-        criterias?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleCriteria>[]>;
-        name: pulumi.Input<string>;
-        rules?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRule>[]>;
-    }
-
-    export interface PropertyRulesRuleRuleBehavior {
-        name: pulumi.Input<string>;
-        options?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleBehaviorOption>[]>;
-    }
-
-    export interface PropertyRulesRuleRuleBehaviorOption {
-        key: pulumi.Input<string>;
-        value?: pulumi.Input<string>;
-        values?: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface PropertyRulesRuleRuleCriteria {
-        name: pulumi.Input<string>;
-        options?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleCriteriaOption>[]>;
-    }
-
-    export interface PropertyRulesRuleRuleCriteriaOption {
-        key: pulumi.Input<string>;
-        value?: pulumi.Input<string>;
-        values?: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface PropertyRulesRuleRuleRule {
-        behaviors?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleBehavior>[]>;
-        comment?: pulumi.Input<string>;
-        criteriaMatch?: pulumi.Input<string>;
-        criterias?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleCriteria>[]>;
-        name: pulumi.Input<string>;
-        rules?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRule>[]>;
-    }
-
-    export interface PropertyRulesRuleRuleRuleBehavior {
-        name: pulumi.Input<string>;
-        options?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleBehaviorOption>[]>;
-    }
-
-    export interface PropertyRulesRuleRuleRuleBehaviorOption {
-        key: pulumi.Input<string>;
-        value?: pulumi.Input<string>;
-        values?: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface PropertyRulesRuleRuleRuleCriteria {
-        name: pulumi.Input<string>;
-        options?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleCriteriaOption>[]>;
-    }
-
-    export interface PropertyRulesRuleRuleRuleCriteriaOption {
-        key: pulumi.Input<string>;
-        value?: pulumi.Input<string>;
-        values?: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface PropertyRulesRuleRuleRuleRule {
-        behaviors?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRuleBehavior>[]>;
-        comment?: pulumi.Input<string>;
-        criteriaMatch?: pulumi.Input<string>;
-        criterias?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRuleCriteria>[]>;
-        name: pulumi.Input<string>;
-        rules?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRuleRule>[]>;
-    }
-
-    export interface PropertyRulesRuleRuleRuleRuleBehavior {
-        name: pulumi.Input<string>;
-        options?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRuleBehaviorOption>[]>;
-    }
-
-    export interface PropertyRulesRuleRuleRuleRuleBehaviorOption {
-        key: pulumi.Input<string>;
-        value?: pulumi.Input<string>;
-        values?: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface PropertyRulesRuleRuleRuleRuleCriteria {
-        name: pulumi.Input<string>;
-        options?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRuleCriteriaOption>[]>;
-    }
-
-    export interface PropertyRulesRuleRuleRuleRuleCriteriaOption {
-        key: pulumi.Input<string>;
-        value?: pulumi.Input<string>;
-        values?: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface PropertyRulesRuleRuleRuleRuleRule {
-        behaviors?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRuleRuleBehavior>[]>;
-        comment?: pulumi.Input<string>;
-        criteriaMatch?: pulumi.Input<string>;
-        criterias?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRuleRuleCriteria>[]>;
-        name: pulumi.Input<string>;
-    }
-
-    export interface PropertyRulesRuleRuleRuleRuleRuleBehavior {
-        name: pulumi.Input<string>;
-        options?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRuleRuleBehaviorOption>[]>;
-    }
-
-    export interface PropertyRulesRuleRuleRuleRuleRuleBehaviorOption {
-        key: pulumi.Input<string>;
-        value?: pulumi.Input<string>;
-        values?: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface PropertyRulesRuleRuleRuleRuleRuleCriteria {
-        name: pulumi.Input<string>;
-        options?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRulesRuleRuleRuleRuleRuleCriteriaOption>[]>;
-    }
-
-    export interface PropertyRulesRuleRuleRuleRuleRuleCriteriaOption {
-        key: pulumi.Input<string>;
-        value?: pulumi.Input<string>;
-        values?: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface PropertyRulesRuleVariable {
-        description?: pulumi.Input<string>;
-        hidden: pulumi.Input<boolean>;
-        name: pulumi.Input<string>;
-        sensitive: pulumi.Input<boolean>;
-        value?: pulumi.Input<string>;
+    export interface PropertyRuleWarning {
+        behaviorName?: pulumi.Input<string>;
+        detail?: pulumi.Input<string>;
+        errorLocation?: pulumi.Input<string>;
+        instance?: pulumi.Input<string>;
+        statusCode?: pulumi.Input<number>;
+        title?: pulumi.Input<string>;
+        type?: pulumi.Input<string>;
     }
 
     export interface PropertyVariablesVariable {
@@ -572,34 +305,16 @@ export namespace properties {
     }
 
     export interface PropertyVariablesVariableVariable {
-        /**
-         * — (Optional) A human-readable description
-         */
         description?: pulumi.Input<string>;
-        /**
-         * — (Required) Whether to hide the variable when debugging requests
-         */
         hidden: pulumi.Input<boolean>;
-        /**
-         * — (Required) The name of the variable.
-         */
         name: pulumi.Input<string>;
-        /**
-         * — (Required) Whether to obscure the value when debugging requests
-         */
         sensitive: pulumi.Input<boolean>;
-        /**
-         * — (Required) The default value to assign to the variable
-         */
         value?: pulumi.Input<string>;
     }
 }
 
 export namespace trafficmanagement {
     export interface GtmASmapAssignment {
-        /**
-         * — (List)
-         */
         asNumbers: pulumi.Input<pulumi.Input<number>[]>;
         datacenterId: pulumi.Input<number>;
         nickname: pulumi.Input<string>;
@@ -611,9 +326,6 @@ export namespace trafficmanagement {
     }
 
     export interface GtmCidrmapAssignment {
-        /**
-         * — (List)
-         */
         blocks?: pulumi.Input<pulumi.Input<string>[]>;
         datacenterId: pulumi.Input<number>;
         nickname: pulumi.Input<string>;
@@ -627,18 +339,10 @@ export namespace trafficmanagement {
     export interface GtmDatacenterDefaultLoadObject {
         loadObject?: pulumi.Input<string>;
         loadObjectPort?: pulumi.Input<number>;
-        /**
-         * — (List)
-         * * `city`
-         * * `cloneOf`
-         */
         loadServers?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GtmGeomapAssignment {
-        /**
-         * — (List)
-         */
         countries?: pulumi.Input<pulumi.Input<string>[]>;
         datacenterId: pulumi.Input<number>;
         nickname: pulumi.Input<string>;
@@ -650,62 +354,16 @@ export namespace trafficmanagement {
     }
 
     export interface GtmPropertyLivenessTest {
-        /**
-         * — (Boolean)
-         */
         answersRequired?: pulumi.Input<boolean>;
-        /**
-         * — (Boolean)
-         * * `errorPenalty`
-         */
         disableNonstandardPortWarning?: pulumi.Input<boolean>;
-        /**
-         * — (Boolean)
-         */
         disabled?: pulumi.Input<boolean>;
         errorPenalty?: pulumi.Input<number>;
-        /**
-         * — (Boolean)
-         */
         httpError3xx?: pulumi.Input<boolean>;
-        /**
-         * — (Boolean)
-         */
         httpError4xx?: pulumi.Input<boolean>;
-        /**
-         * — (Boolean)
-         */
         httpError5xx?: pulumi.Input<boolean>;
-        /**
-         * — (multiple allowed)
-         * `name`
-         * `value`
-         */
         httpHeaders?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmPropertyLivenessTestHttpHeader>[]>;
-        /**
-         * — Liveness test name
-         * * `testInterval`
-         * * `testObjectProtocol`
-         * * `testTimeout`
-         */
         name: pulumi.Input<string>;
-        /**
-         * — (Boolean)
-         */
         peerCertificateVerification?: pulumi.Input<boolean>;
-        /**
-         * — (Boolean)
-         * * `requestString`
-         * * `resourceType`
-         * * `responseString`
-         * * `sslClientCertificate`
-         * * `sslClientPrivateKey`
-         * * `testObject`
-         * * `testObjectPassword`
-         * * `testObjectPort`
-         * * `testObjectUsername`
-         * * `timeoutPenalty`
-         */
         recursionRequested?: pulumi.Input<boolean>;
         requestString?: pulumi.Input<string>;
         resourceType?: pulumi.Input<string>;
@@ -723,47 +381,21 @@ export namespace trafficmanagement {
     }
 
     export interface GtmPropertyLivenessTestHttpHeader {
-        /**
-         * — Liveness test name
-         * * `testInterval`
-         * * `testObjectProtocol`
-         * * `testTimeout`
-         */
         name?: pulumi.Input<string>;
         value?: pulumi.Input<string>;
     }
 
     export interface GtmPropertyStaticRrSet {
-        /**
-         * — (List)
-         */
         rdatas?: pulumi.Input<pulumi.Input<string>[]>;
         ttl?: pulumi.Input<number>;
-        /**
-         * — Property type  
-         * * `scoreAggregationType`
-         */
         type?: pulumi.Input<string>;
     }
 
     export interface GtmPropertyTrafficTarget {
         datacenterId?: pulumi.Input<number>;
-        /**
-         * — (Boolean)
-         * * `weight`
-         */
         enabled?: pulumi.Input<boolean>;
         handoutCname?: pulumi.Input<string>;
-        /**
-         * — Liveness test name
-         * * `testInterval`
-         * * `testObjectProtocol`
-         * * `testTimeout`
-         */
         name?: pulumi.Input<string>;
-        /**
-         * — (List)
-         */
         servers?: pulumi.Input<pulumi.Input<string>[]>;
         weight?: pulumi.Input<number>;
     }
@@ -772,22 +404,7 @@ export namespace trafficmanagement {
         datacenterId: pulumi.Input<number>;
         loadObject?: pulumi.Input<string>;
         loadObjectPort?: pulumi.Input<number>;
-        /**
-         * — (List)
-         */
         loadServers?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * — (Boolean)
-         * * `hostHeader`
-         * * `leastSquaresDecay`
-         * * `upperBound`
-         * * `description`
-         * * `leaderString`
-         * * `constrainedProperty`
-         * * `loadImbalancePercent`
-         * * `maxUMultiplicativeIncrement`
-         * * `decayRate`
-         */
         useDefaultLoadObject?: pulumi.Input<boolean>;
     }
 }

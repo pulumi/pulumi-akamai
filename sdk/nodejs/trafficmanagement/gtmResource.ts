@@ -2,26 +2,11 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "../types/input";
-import * as outputs from "../types/output";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
- * `akamai.trafficmanagement.GtmResource` provides the resource for creating, configuring and importing a gtm resource to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingResourceName`
- *
- * ## Example Usage
- * ### Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const demoResource = new akamai.trafficmanagement.GtmResource("demo_resource", {
- *     aggregationType: "latest",
- *     domain: "demo_domain.akadns.net",
- *     type: "XML load object via HTTP",
- * });
- * ```
+ * @deprecated akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource
  */
 export class GtmResource extends pulumi.CustomResource {
     /**
@@ -34,6 +19,7 @@ export class GtmResource extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: GtmResourceState, opts?: pulumi.CustomResourceOptions): GtmResource {
+        pulumi.log.warn("GtmResource is deprecated: akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource")
         return new GtmResource(name, <any>state, { ...opts, id: id });
     }
 
@@ -55,35 +41,16 @@ export class GtmResource extends pulumi.CustomResource {
     public readonly constrainedProperty!: pulumi.Output<string | undefined>;
     public readonly decayRate!: pulumi.Output<number | undefined>;
     public readonly description!: pulumi.Output<string | undefined>;
-    /**
-     * — Domain name
-     */
     public readonly domain!: pulumi.Output<string>;
     public readonly hostHeader!: pulumi.Output<string | undefined>;
     public readonly leaderString!: pulumi.Output<string | undefined>;
     public readonly leastSquaresDecay!: pulumi.Output<number | undefined>;
     public readonly loadImbalancePercentage!: pulumi.Output<number | undefined>;
     public readonly maxUMultiplicativeIncrement!: pulumi.Output<number | undefined>;
-    /**
-     * — Resource name
-     * * `aggregationType`
-     */
     public readonly name!: pulumi.Output<string>;
-    /**
-     * — (multiple allowed) 
-     * * `datacenterId`
-     * * `loadObject`
-     * * `loadObjectPort`
-     */
     public readonly resourceInstances!: pulumi.Output<outputs.trafficmanagement.GtmResourceResourceInstance[] | undefined>;
-    /**
-     * — Resource type
-     */
     public readonly type!: pulumi.Output<string>;
     public readonly upperBound!: pulumi.Output<number | undefined>;
-    /**
-     * — (Boolean, Default: true) Wait for transaction to complete
-     */
     public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
 
     /**
@@ -93,8 +60,11 @@ export class GtmResource extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
+    /** @deprecated akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource */
     constructor(name: string, args: GtmResourceArgs, opts?: pulumi.CustomResourceOptions)
+    /** @deprecated akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource */
     constructor(name: string, argsOrState?: GtmResourceArgs | GtmResourceState, opts?: pulumi.CustomResourceOptions) {
+        pulumi.log.warn("GtmResource is deprecated: akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource")
         let inputs: pulumi.Inputs = {};
         if (opts && opts.id) {
             const state = argsOrState as GtmResourceState | undefined;
@@ -115,13 +85,13 @@ export class GtmResource extends pulumi.CustomResource {
             inputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
         } else {
             const args = argsOrState as GtmResourceArgs | undefined;
-            if (!args || args.aggregationType === undefined) {
+            if ((!args || args.aggregationType === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'aggregationType'");
             }
-            if (!args || args.domain === undefined) {
+            if ((!args || args.domain === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'domain'");
             }
-            if (!args || args.type === undefined) {
+            if ((!args || args.type === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'type'");
             }
             inputs["aggregationType"] = args ? args.aggregationType : undefined;
@@ -159,35 +129,16 @@ export interface GtmResourceState {
     readonly constrainedProperty?: pulumi.Input<string>;
     readonly decayRate?: pulumi.Input<number>;
     readonly description?: pulumi.Input<string>;
-    /**
-     * — Domain name
-     */
     readonly domain?: pulumi.Input<string>;
     readonly hostHeader?: pulumi.Input<string>;
     readonly leaderString?: pulumi.Input<string>;
     readonly leastSquaresDecay?: pulumi.Input<number>;
     readonly loadImbalancePercentage?: pulumi.Input<number>;
     readonly maxUMultiplicativeIncrement?: pulumi.Input<number>;
-    /**
-     * — Resource name
-     * * `aggregationType`
-     */
     readonly name?: pulumi.Input<string>;
-    /**
-     * — (multiple allowed) 
-     * * `datacenterId`
-     * * `loadObject`
-     * * `loadObjectPort`
-     */
     readonly resourceInstances?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmResourceResourceInstance>[]>;
-    /**
-     * — Resource type
-     */
     readonly type?: pulumi.Input<string>;
     readonly upperBound?: pulumi.Input<number>;
-    /**
-     * — (Boolean, Default: true) Wait for transaction to complete
-     */
     readonly waitOnComplete?: pulumi.Input<boolean>;
 }
 
@@ -199,34 +150,15 @@ export interface GtmResourceArgs {
     readonly constrainedProperty?: pulumi.Input<string>;
     readonly decayRate?: pulumi.Input<number>;
     readonly description?: pulumi.Input<string>;
-    /**
-     * — Domain name
-     */
     readonly domain: pulumi.Input<string>;
     readonly hostHeader?: pulumi.Input<string>;
     readonly leaderString?: pulumi.Input<string>;
     readonly leastSquaresDecay?: pulumi.Input<number>;
     readonly loadImbalancePercentage?: pulumi.Input<number>;
     readonly maxUMultiplicativeIncrement?: pulumi.Input<number>;
-    /**
-     * — Resource name
-     * * `aggregationType`
-     */
     readonly name?: pulumi.Input<string>;
-    /**
-     * — (multiple allowed) 
-     * * `datacenterId`
-     * * `loadObject`
-     * * `loadObjectPort`
-     */
     readonly resourceInstances?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmResourceResourceInstance>[]>;
-    /**
-     * — Resource type
-     */
     readonly type: pulumi.Input<string>;
     readonly upperBound?: pulumi.Input<number>;
-    /**
-     * — (Boolean, Default: true) Wait for transaction to complete
-     */
     readonly waitOnComplete?: pulumi.Input<boolean>;
 }

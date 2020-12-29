@@ -9,30 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Trafficmanagement
 {
-    /// <summary>
-    /// `akamai.trafficmanagement.GtmDatacenter` provides the resource for creating, configuring and importing a gtm datacenter to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_datacenter_id`
-    /// 
-    /// ## Example Usage
-    /// ### Basic usage:
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var demoDatacenter = new Akamai.Trafficmanagement.GtmDatacenter("demoDatacenter", new Akamai.Trafficmanagement.GtmDatacenterArgs
-    ///         {
-    ///             Domain = "demo_domain.akadns.net",
-    ///             Nickname = "demo_datacenter",
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// </summary>
+    [Obsolete(@"akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter")]
     public partial class GtmDatacenter : Pulumi.CustomResource
     {
         [Output("city")]
@@ -41,20 +18,9 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Output("cloneOf")]
         public Output<int?> CloneOf { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Boolean)
-        /// * `continent`
-        /// * `country`
-        /// * `latitude`
-        /// * `longitude`
-        /// * `state_or_province`
-        /// </summary>
         [Output("cloudServerHostHeaderOverride")]
         public Output<bool?> CloudServerHostHeaderOverride { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Boolean)
-        /// </summary>
         [Output("cloudServerTargeting")]
         public Output<bool?> CloudServerTargeting { get; private set; } = null!;
 
@@ -70,9 +36,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Output("defaultLoadObject")]
         public Output<Outputs.GtmDatacenterDefaultLoadObject?> DefaultLoadObject { get; private set; } = null!;
 
-        /// <summary>
-        /// — Domain name
-        /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
 
@@ -82,12 +45,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Output("longitude")]
         public Output<double?> Longitude { get; private set; } = null!;
 
-        /// <summary>
-        /// — datacenter nickname
-        /// * `default_load_object`
-        /// * `load_object`
-        /// * `load_object_port`
-        /// </summary>
         [Output("nickname")]
         public Output<string?> Nickname { get; private set; } = null!;
 
@@ -112,15 +69,9 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Output("stateOrProvince")]
         public Output<string?> StateOrProvince { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Boolean)
-        /// </summary>
         [Output("virtual")]
         public Output<bool> Virtual { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Boolean, Default: true) Wait for transaction to complete
-        /// </summary>
         [Output("waitOnComplete")]
         public Output<bool?> WaitOnComplete { get; private set; } = null!;
 
@@ -176,20 +127,9 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("cloneOf")]
         public Input<int>? CloneOf { get; set; }
 
-        /// <summary>
-        /// — (Boolean)
-        /// * `continent`
-        /// * `country`
-        /// * `latitude`
-        /// * `longitude`
-        /// * `state_or_province`
-        /// </summary>
         [Input("cloudServerHostHeaderOverride")]
         public Input<bool>? CloudServerHostHeaderOverride { get; set; }
 
-        /// <summary>
-        /// — (Boolean)
-        /// </summary>
         [Input("cloudServerTargeting")]
         public Input<bool>? CloudServerTargeting { get; set; }
 
@@ -202,9 +142,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("defaultLoadObject")]
         public Input<Inputs.GtmDatacenterDefaultLoadObjectArgs>? DefaultLoadObject { get; set; }
 
-        /// <summary>
-        /// — Domain name
-        /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
 
@@ -214,21 +151,12 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("longitude")]
         public Input<double>? Longitude { get; set; }
 
-        /// <summary>
-        /// — datacenter nickname
-        /// * `default_load_object`
-        /// * `load_object`
-        /// * `load_object_port`
-        /// </summary>
         [Input("nickname")]
         public Input<string>? Nickname { get; set; }
 
         [Input("stateOrProvince")]
         public Input<string>? StateOrProvince { get; set; }
 
-        /// <summary>
-        /// — (Boolean, Default: true) Wait for transaction to complete
-        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 
@@ -245,20 +173,9 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("cloneOf")]
         public Input<int>? CloneOf { get; set; }
 
-        /// <summary>
-        /// — (Boolean)
-        /// * `continent`
-        /// * `country`
-        /// * `latitude`
-        /// * `longitude`
-        /// * `state_or_province`
-        /// </summary>
         [Input("cloudServerHostHeaderOverride")]
         public Input<bool>? CloudServerHostHeaderOverride { get; set; }
 
-        /// <summary>
-        /// — (Boolean)
-        /// </summary>
         [Input("cloudServerTargeting")]
         public Input<bool>? CloudServerTargeting { get; set; }
 
@@ -274,9 +191,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("defaultLoadObject")]
         public Input<Inputs.GtmDatacenterDefaultLoadObjectGetArgs>? DefaultLoadObject { get; set; }
 
-        /// <summary>
-        /// — Domain name
-        /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
@@ -286,12 +200,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("longitude")]
         public Input<double>? Longitude { get; set; }
 
-        /// <summary>
-        /// — datacenter nickname
-        /// * `default_load_object`
-        /// * `load_object`
-        /// * `load_object_port`
-        /// </summary>
         [Input("nickname")]
         public Input<string>? Nickname { get; set; }
 
@@ -316,15 +224,9 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("stateOrProvince")]
         public Input<string>? StateOrProvince { get; set; }
 
-        /// <summary>
-        /// — (Boolean)
-        /// </summary>
         [Input("virtual")]
         public Input<bool>? Virtual { get; set; }
 
-        /// <summary>
-        /// — (Boolean, Default: true) Wait for transaction to complete
-        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 

@@ -11,7 +11,6 @@ import (
 )
 
 type GtmASmapAssignment struct {
-	// — (List)
 	AsNumbers    []int  `pulumi:"asNumbers"`
 	DatacenterId int    `pulumi:"datacenterId"`
 	Nickname     string `pulumi:"nickname"`
@@ -29,7 +28,6 @@ type GtmASmapAssignmentInput interface {
 }
 
 type GtmASmapAssignmentArgs struct {
-	// — (List)
 	AsNumbers    pulumi.IntArrayInput `pulumi:"asNumbers"`
 	DatacenterId pulumi.IntInput      `pulumi:"datacenterId"`
 	Nickname     pulumi.StringInput   `pulumi:"nickname"`
@@ -86,7 +84,6 @@ func (o GtmASmapAssignmentOutput) ToGtmASmapAssignmentOutputWithContext(ctx cont
 	return o
 }
 
-// — (List)
 func (o GtmASmapAssignmentOutput) AsNumbers() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v GtmASmapAssignment) []int { return v.AsNumbers }).(pulumi.IntArrayOutput)
 }
@@ -261,7 +258,6 @@ func (o GtmASmapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput {
 }
 
 type GtmCidrmapAssignment struct {
-	// — (List)
 	Blocks       []string `pulumi:"blocks"`
 	DatacenterId int      `pulumi:"datacenterId"`
 	Nickname     string   `pulumi:"nickname"`
@@ -279,7 +275,6 @@ type GtmCidrmapAssignmentInput interface {
 }
 
 type GtmCidrmapAssignmentArgs struct {
-	// — (List)
 	Blocks       pulumi.StringArrayInput `pulumi:"blocks"`
 	DatacenterId pulumi.IntInput         `pulumi:"datacenterId"`
 	Nickname     pulumi.StringInput      `pulumi:"nickname"`
@@ -336,7 +331,6 @@ func (o GtmCidrmapAssignmentOutput) ToGtmCidrmapAssignmentOutputWithContext(ctx 
 	return o
 }
 
-// — (List)
 func (o GtmCidrmapAssignmentOutput) Blocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GtmCidrmapAssignment) []string { return v.Blocks }).(pulumi.StringArrayOutput)
 }
@@ -511,12 +505,9 @@ func (o GtmCidrmapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput 
 }
 
 type GtmDatacenterDefaultLoadObject struct {
-	LoadObject     *string `pulumi:"loadObject"`
-	LoadObjectPort *int    `pulumi:"loadObjectPort"`
-	// — (List)
-	// * `city`
-	// * `cloneOf`
-	LoadServers []string `pulumi:"loadServers"`
+	LoadObject     *string  `pulumi:"loadObject"`
+	LoadObjectPort *int     `pulumi:"loadObjectPort"`
+	LoadServers    []string `pulumi:"loadServers"`
 }
 
 // GtmDatacenterDefaultLoadObjectInput is an input type that accepts GtmDatacenterDefaultLoadObjectArgs and GtmDatacenterDefaultLoadObjectOutput values.
@@ -531,12 +522,9 @@ type GtmDatacenterDefaultLoadObjectInput interface {
 }
 
 type GtmDatacenterDefaultLoadObjectArgs struct {
-	LoadObject     pulumi.StringPtrInput `pulumi:"loadObject"`
-	LoadObjectPort pulumi.IntPtrInput    `pulumi:"loadObjectPort"`
-	// — (List)
-	// * `city`
-	// * `cloneOf`
-	LoadServers pulumi.StringArrayInput `pulumi:"loadServers"`
+	LoadObject     pulumi.StringPtrInput   `pulumi:"loadObject"`
+	LoadObjectPort pulumi.IntPtrInput      `pulumi:"loadObjectPort"`
+	LoadServers    pulumi.StringArrayInput `pulumi:"loadServers"`
 }
 
 func (GtmDatacenterDefaultLoadObjectArgs) ElementType() reflect.Type {
@@ -623,9 +611,6 @@ func (o GtmDatacenterDefaultLoadObjectOutput) LoadObjectPort() pulumi.IntPtrOutp
 	return o.ApplyT(func(v GtmDatacenterDefaultLoadObject) *int { return v.LoadObjectPort }).(pulumi.IntPtrOutput)
 }
 
-// — (List)
-// * `city`
-// * `cloneOf`
 func (o GtmDatacenterDefaultLoadObjectOutput) LoadServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GtmDatacenterDefaultLoadObject) []string { return v.LoadServers }).(pulumi.StringArrayOutput)
 }
@@ -666,9 +651,6 @@ func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadObjectPort() pulumi.IntPtrO
 	}).(pulumi.IntPtrOutput)
 }
 
-// — (List)
-// * `city`
-// * `cloneOf`
 func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *GtmDatacenterDefaultLoadObject) []string {
 		if v == nil {
@@ -679,7 +661,6 @@ func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadServers() pulumi.StringArra
 }
 
 type GtmGeomapAssignment struct {
-	// — (List)
 	Countries    []string `pulumi:"countries"`
 	DatacenterId int      `pulumi:"datacenterId"`
 	Nickname     string   `pulumi:"nickname"`
@@ -697,7 +678,6 @@ type GtmGeomapAssignmentInput interface {
 }
 
 type GtmGeomapAssignmentArgs struct {
-	// — (List)
 	Countries    pulumi.StringArrayInput `pulumi:"countries"`
 	DatacenterId pulumi.IntInput         `pulumi:"datacenterId"`
 	Nickname     pulumi.StringInput      `pulumi:"nickname"`
@@ -754,7 +734,6 @@ func (o GtmGeomapAssignmentOutput) ToGtmGeomapAssignmentOutputWithContext(ctx co
 	return o
 }
 
-// — (List)
 func (o GtmGeomapAssignmentOutput) Countries() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GtmGeomapAssignment) []string { return v.Countries }).(pulumi.StringArrayOutput)
 }
@@ -929,56 +908,30 @@ func (o GtmGeomapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput {
 }
 
 type GtmPropertyLivenessTest struct {
-	// — (Boolean)
-	AnswersRequired *bool `pulumi:"answersRequired"`
-	// — (Boolean)
-	// * `errorPenalty`
-	DisableNonstandardPortWarning *bool `pulumi:"disableNonstandardPortWarning"`
-	// — (Boolean)
-	Disabled     *bool    `pulumi:"disabled"`
-	ErrorPenalty *float64 `pulumi:"errorPenalty"`
-	// — (Boolean)
-	HttpError3xx *bool `pulumi:"httpError3xx"`
-	// — (Boolean)
-	HttpError4xx *bool `pulumi:"httpError4xx"`
-	// — (Boolean)
-	HttpError5xx *bool `pulumi:"httpError5xx"`
-	// — (multiple allowed)
-	// `name`
-	// `value`
-	HttpHeaders []GtmPropertyLivenessTestHttpHeader `pulumi:"httpHeaders"`
-	// — Liveness test name
-	// * `testInterval`
-	// * `testObjectProtocol`
-	// * `testTimeout`
-	Name string `pulumi:"name"`
-	// — (Boolean)
-	PeerCertificateVerification *bool `pulumi:"peerCertificateVerification"`
-	// — (Boolean)
-	// * `requestString`
-	// * `resourceType`
-	// * `responseString`
-	// * `sslClientCertificate`
-	// * `sslClientPrivateKey`
-	// * `testObject`
-	// * `testObjectPassword`
-	// * `testObjectPort`
-	// * `testObjectUsername`
-	// * `timeoutPenalty`
-	RecursionRequested   *bool    `pulumi:"recursionRequested"`
-	RequestString        *string  `pulumi:"requestString"`
-	ResourceType         *string  `pulumi:"resourceType"`
-	ResponseString       *string  `pulumi:"responseString"`
-	SslClientCertificate *string  `pulumi:"sslClientCertificate"`
-	SslClientPrivateKey  *string  `pulumi:"sslClientPrivateKey"`
-	TestInterval         int      `pulumi:"testInterval"`
-	TestObject           string   `pulumi:"testObject"`
-	TestObjectPassword   *string  `pulumi:"testObjectPassword"`
-	TestObjectPort       *int     `pulumi:"testObjectPort"`
-	TestObjectProtocol   string   `pulumi:"testObjectProtocol"`
-	TestObjectUsername   *string  `pulumi:"testObjectUsername"`
-	TestTimeout          float64  `pulumi:"testTimeout"`
-	TimeoutPenalty       *float64 `pulumi:"timeoutPenalty"`
+	AnswersRequired               *bool                               `pulumi:"answersRequired"`
+	DisableNonstandardPortWarning *bool                               `pulumi:"disableNonstandardPortWarning"`
+	Disabled                      *bool                               `pulumi:"disabled"`
+	ErrorPenalty                  *float64                            `pulumi:"errorPenalty"`
+	HttpError3xx                  *bool                               `pulumi:"httpError3xx"`
+	HttpError4xx                  *bool                               `pulumi:"httpError4xx"`
+	HttpError5xx                  *bool                               `pulumi:"httpError5xx"`
+	HttpHeaders                   []GtmPropertyLivenessTestHttpHeader `pulumi:"httpHeaders"`
+	Name                          string                              `pulumi:"name"`
+	PeerCertificateVerification   *bool                               `pulumi:"peerCertificateVerification"`
+	RecursionRequested            *bool                               `pulumi:"recursionRequested"`
+	RequestString                 *string                             `pulumi:"requestString"`
+	ResourceType                  *string                             `pulumi:"resourceType"`
+	ResponseString                *string                             `pulumi:"responseString"`
+	SslClientCertificate          *string                             `pulumi:"sslClientCertificate"`
+	SslClientPrivateKey           *string                             `pulumi:"sslClientPrivateKey"`
+	TestInterval                  int                                 `pulumi:"testInterval"`
+	TestObject                    string                              `pulumi:"testObject"`
+	TestObjectPassword            *string                             `pulumi:"testObjectPassword"`
+	TestObjectPort                *int                                `pulumi:"testObjectPort"`
+	TestObjectProtocol            string                              `pulumi:"testObjectProtocol"`
+	TestObjectUsername            *string                             `pulumi:"testObjectUsername"`
+	TestTimeout                   float64                             `pulumi:"testTimeout"`
+	TimeoutPenalty                *float64                            `pulumi:"timeoutPenalty"`
 }
 
 // GtmPropertyLivenessTestInput is an input type that accepts GtmPropertyLivenessTestArgs and GtmPropertyLivenessTestOutput values.
@@ -993,56 +946,30 @@ type GtmPropertyLivenessTestInput interface {
 }
 
 type GtmPropertyLivenessTestArgs struct {
-	// — (Boolean)
-	AnswersRequired pulumi.BoolPtrInput `pulumi:"answersRequired"`
-	// — (Boolean)
-	// * `errorPenalty`
-	DisableNonstandardPortWarning pulumi.BoolPtrInput `pulumi:"disableNonstandardPortWarning"`
-	// — (Boolean)
-	Disabled     pulumi.BoolPtrInput    `pulumi:"disabled"`
-	ErrorPenalty pulumi.Float64PtrInput `pulumi:"errorPenalty"`
-	// — (Boolean)
-	HttpError3xx pulumi.BoolPtrInput `pulumi:"httpError3xx"`
-	// — (Boolean)
-	HttpError4xx pulumi.BoolPtrInput `pulumi:"httpError4xx"`
-	// — (Boolean)
-	HttpError5xx pulumi.BoolPtrInput `pulumi:"httpError5xx"`
-	// — (multiple allowed)
-	// `name`
-	// `value`
-	HttpHeaders GtmPropertyLivenessTestHttpHeaderArrayInput `pulumi:"httpHeaders"`
-	// — Liveness test name
-	// * `testInterval`
-	// * `testObjectProtocol`
-	// * `testTimeout`
-	Name pulumi.StringInput `pulumi:"name"`
-	// — (Boolean)
-	PeerCertificateVerification pulumi.BoolPtrInput `pulumi:"peerCertificateVerification"`
-	// — (Boolean)
-	// * `requestString`
-	// * `resourceType`
-	// * `responseString`
-	// * `sslClientCertificate`
-	// * `sslClientPrivateKey`
-	// * `testObject`
-	// * `testObjectPassword`
-	// * `testObjectPort`
-	// * `testObjectUsername`
-	// * `timeoutPenalty`
-	RecursionRequested   pulumi.BoolPtrInput    `pulumi:"recursionRequested"`
-	RequestString        pulumi.StringPtrInput  `pulumi:"requestString"`
-	ResourceType         pulumi.StringPtrInput  `pulumi:"resourceType"`
-	ResponseString       pulumi.StringPtrInput  `pulumi:"responseString"`
-	SslClientCertificate pulumi.StringPtrInput  `pulumi:"sslClientCertificate"`
-	SslClientPrivateKey  pulumi.StringPtrInput  `pulumi:"sslClientPrivateKey"`
-	TestInterval         pulumi.IntInput        `pulumi:"testInterval"`
-	TestObject           pulumi.StringInput     `pulumi:"testObject"`
-	TestObjectPassword   pulumi.StringPtrInput  `pulumi:"testObjectPassword"`
-	TestObjectPort       pulumi.IntPtrInput     `pulumi:"testObjectPort"`
-	TestObjectProtocol   pulumi.StringInput     `pulumi:"testObjectProtocol"`
-	TestObjectUsername   pulumi.StringPtrInput  `pulumi:"testObjectUsername"`
-	TestTimeout          pulumi.Float64Input    `pulumi:"testTimeout"`
-	TimeoutPenalty       pulumi.Float64PtrInput `pulumi:"timeoutPenalty"`
+	AnswersRequired               pulumi.BoolPtrInput                         `pulumi:"answersRequired"`
+	DisableNonstandardPortWarning pulumi.BoolPtrInput                         `pulumi:"disableNonstandardPortWarning"`
+	Disabled                      pulumi.BoolPtrInput                         `pulumi:"disabled"`
+	ErrorPenalty                  pulumi.Float64PtrInput                      `pulumi:"errorPenalty"`
+	HttpError3xx                  pulumi.BoolPtrInput                         `pulumi:"httpError3xx"`
+	HttpError4xx                  pulumi.BoolPtrInput                         `pulumi:"httpError4xx"`
+	HttpError5xx                  pulumi.BoolPtrInput                         `pulumi:"httpError5xx"`
+	HttpHeaders                   GtmPropertyLivenessTestHttpHeaderArrayInput `pulumi:"httpHeaders"`
+	Name                          pulumi.StringInput                          `pulumi:"name"`
+	PeerCertificateVerification   pulumi.BoolPtrInput                         `pulumi:"peerCertificateVerification"`
+	RecursionRequested            pulumi.BoolPtrInput                         `pulumi:"recursionRequested"`
+	RequestString                 pulumi.StringPtrInput                       `pulumi:"requestString"`
+	ResourceType                  pulumi.StringPtrInput                       `pulumi:"resourceType"`
+	ResponseString                pulumi.StringPtrInput                       `pulumi:"responseString"`
+	SslClientCertificate          pulumi.StringPtrInput                       `pulumi:"sslClientCertificate"`
+	SslClientPrivateKey           pulumi.StringPtrInput                       `pulumi:"sslClientPrivateKey"`
+	TestInterval                  pulumi.IntInput                             `pulumi:"testInterval"`
+	TestObject                    pulumi.StringInput                          `pulumi:"testObject"`
+	TestObjectPassword            pulumi.StringPtrInput                       `pulumi:"testObjectPassword"`
+	TestObjectPort                pulumi.IntPtrInput                          `pulumi:"testObjectPort"`
+	TestObjectProtocol            pulumi.StringInput                          `pulumi:"testObjectProtocol"`
+	TestObjectUsername            pulumi.StringPtrInput                       `pulumi:"testObjectUsername"`
+	TestTimeout                   pulumi.Float64Input                         `pulumi:"testTimeout"`
+	TimeoutPenalty                pulumi.Float64PtrInput                      `pulumi:"timeoutPenalty"`
 }
 
 func (GtmPropertyLivenessTestArgs) ElementType() reflect.Type {
@@ -1096,18 +1023,14 @@ func (o GtmPropertyLivenessTestOutput) ToGtmPropertyLivenessTestOutputWithContex
 	return o
 }
 
-// — (Boolean)
 func (o GtmPropertyLivenessTestOutput) AnswersRequired() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.AnswersRequired }).(pulumi.BoolPtrOutput)
 }
 
-// — (Boolean)
-// * `errorPenalty`
 func (o GtmPropertyLivenessTestOutput) DisableNonstandardPortWarning() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.DisableNonstandardPortWarning }).(pulumi.BoolPtrOutput)
 }
 
-// — (Boolean)
 func (o GtmPropertyLivenessTestOutput) Disabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.Disabled }).(pulumi.BoolPtrOutput)
 }
@@ -1116,52 +1039,30 @@ func (o GtmPropertyLivenessTestOutput) ErrorPenalty() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *float64 { return v.ErrorPenalty }).(pulumi.Float64PtrOutput)
 }
 
-// — (Boolean)
 func (o GtmPropertyLivenessTestOutput) HttpError3xx() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.HttpError3xx }).(pulumi.BoolPtrOutput)
 }
 
-// — (Boolean)
 func (o GtmPropertyLivenessTestOutput) HttpError4xx() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.HttpError4xx }).(pulumi.BoolPtrOutput)
 }
 
-// — (Boolean)
 func (o GtmPropertyLivenessTestOutput) HttpError5xx() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.HttpError5xx }).(pulumi.BoolPtrOutput)
 }
 
-// — (multiple allowed)
-// `name`
-// `value`
 func (o GtmPropertyLivenessTestOutput) HttpHeaders() GtmPropertyLivenessTestHttpHeaderArrayOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) []GtmPropertyLivenessTestHttpHeader { return v.HttpHeaders }).(GtmPropertyLivenessTestHttpHeaderArrayOutput)
 }
 
-// — Liveness test name
-// * `testInterval`
-// * `testObjectProtocol`
-// * `testTimeout`
 func (o GtmPropertyLivenessTestOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// — (Boolean)
 func (o GtmPropertyLivenessTestOutput) PeerCertificateVerification() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.PeerCertificateVerification }).(pulumi.BoolPtrOutput)
 }
 
-// — (Boolean)
-// * `requestString`
-// * `resourceType`
-// * `responseString`
-// * `sslClientCertificate`
-// * `sslClientPrivateKey`
-// * `testObject`
-// * `testObjectPassword`
-// * `testObjectPort`
-// * `testObjectUsername`
-// * `timeoutPenalty`
 func (o GtmPropertyLivenessTestOutput) RecursionRequested() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.RecursionRequested }).(pulumi.BoolPtrOutput)
 }
@@ -1239,10 +1140,6 @@ func (o GtmPropertyLivenessTestArrayOutput) Index(i pulumi.IntInput) GtmProperty
 }
 
 type GtmPropertyLivenessTestHttpHeader struct {
-	// — Liveness test name
-	// * `testInterval`
-	// * `testObjectProtocol`
-	// * `testTimeout`
 	Name  *string `pulumi:"name"`
 	Value *string `pulumi:"value"`
 }
@@ -1259,10 +1156,6 @@ type GtmPropertyLivenessTestHttpHeaderInput interface {
 }
 
 type GtmPropertyLivenessTestHttpHeaderArgs struct {
-	// — Liveness test name
-	// * `testInterval`
-	// * `testObjectProtocol`
-	// * `testTimeout`
 	Name  pulumi.StringPtrInput `pulumi:"name"`
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
@@ -1318,10 +1211,6 @@ func (o GtmPropertyLivenessTestHttpHeaderOutput) ToGtmPropertyLivenessTestHttpHe
 	return o
 }
 
-// — Liveness test name
-// * `testInterval`
-// * `testObjectProtocol`
-// * `testTimeout`
 func (o GtmPropertyLivenessTestHttpHeaderOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTestHttpHeader) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -1351,12 +1240,9 @@ func (o GtmPropertyLivenessTestHttpHeaderArrayOutput) Index(i pulumi.IntInput) G
 }
 
 type GtmPropertyStaticRrSet struct {
-	// — (List)
 	Rdatas []string `pulumi:"rdatas"`
 	Ttl    *int     `pulumi:"ttl"`
-	// — Property type
-	// * `scoreAggregationType`
-	Type *string `pulumi:"type"`
+	Type   *string  `pulumi:"type"`
 }
 
 // GtmPropertyStaticRrSetInput is an input type that accepts GtmPropertyStaticRrSetArgs and GtmPropertyStaticRrSetOutput values.
@@ -1371,12 +1257,9 @@ type GtmPropertyStaticRrSetInput interface {
 }
 
 type GtmPropertyStaticRrSetArgs struct {
-	// — (List)
 	Rdatas pulumi.StringArrayInput `pulumi:"rdatas"`
 	Ttl    pulumi.IntPtrInput      `pulumi:"ttl"`
-	// — Property type
-	// * `scoreAggregationType`
-	Type pulumi.StringPtrInput `pulumi:"type"`
+	Type   pulumi.StringPtrInput   `pulumi:"type"`
 }
 
 func (GtmPropertyStaticRrSetArgs) ElementType() reflect.Type {
@@ -1430,7 +1313,6 @@ func (o GtmPropertyStaticRrSetOutput) ToGtmPropertyStaticRrSetOutputWithContext(
 	return o
 }
 
-// — (List)
 func (o GtmPropertyStaticRrSetOutput) Rdatas() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GtmPropertyStaticRrSet) []string { return v.Rdatas }).(pulumi.StringArrayOutput)
 }
@@ -1439,8 +1321,6 @@ func (o GtmPropertyStaticRrSetOutput) Ttl() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GtmPropertyStaticRrSet) *int { return v.Ttl }).(pulumi.IntPtrOutput)
 }
 
-// — Property type
-// * `scoreAggregationType`
 func (o GtmPropertyStaticRrSetOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyStaticRrSet) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -1466,19 +1346,12 @@ func (o GtmPropertyStaticRrSetArrayOutput) Index(i pulumi.IntInput) GtmPropertyS
 }
 
 type GtmPropertyTrafficTarget struct {
-	DatacenterId *int `pulumi:"datacenterId"`
-	// — (Boolean)
-	// * `weight`
-	Enabled      *bool   `pulumi:"enabled"`
-	HandoutCname *string `pulumi:"handoutCname"`
-	// — Liveness test name
-	// * `testInterval`
-	// * `testObjectProtocol`
-	// * `testTimeout`
-	Name *string `pulumi:"name"`
-	// — (List)
-	Servers []string `pulumi:"servers"`
-	Weight  *float64 `pulumi:"weight"`
+	DatacenterId *int     `pulumi:"datacenterId"`
+	Enabled      *bool    `pulumi:"enabled"`
+	HandoutCname *string  `pulumi:"handoutCname"`
+	Name         *string  `pulumi:"name"`
+	Servers      []string `pulumi:"servers"`
+	Weight       *float64 `pulumi:"weight"`
 }
 
 // GtmPropertyTrafficTargetInput is an input type that accepts GtmPropertyTrafficTargetArgs and GtmPropertyTrafficTargetOutput values.
@@ -1493,19 +1366,12 @@ type GtmPropertyTrafficTargetInput interface {
 }
 
 type GtmPropertyTrafficTargetArgs struct {
-	DatacenterId pulumi.IntPtrInput `pulumi:"datacenterId"`
-	// — (Boolean)
-	// * `weight`
-	Enabled      pulumi.BoolPtrInput   `pulumi:"enabled"`
-	HandoutCname pulumi.StringPtrInput `pulumi:"handoutCname"`
-	// — Liveness test name
-	// * `testInterval`
-	// * `testObjectProtocol`
-	// * `testTimeout`
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// — (List)
-	Servers pulumi.StringArrayInput `pulumi:"servers"`
-	Weight  pulumi.Float64PtrInput  `pulumi:"weight"`
+	DatacenterId pulumi.IntPtrInput      `pulumi:"datacenterId"`
+	Enabled      pulumi.BoolPtrInput     `pulumi:"enabled"`
+	HandoutCname pulumi.StringPtrInput   `pulumi:"handoutCname"`
+	Name         pulumi.StringPtrInput   `pulumi:"name"`
+	Servers      pulumi.StringArrayInput `pulumi:"servers"`
+	Weight       pulumi.Float64PtrInput  `pulumi:"weight"`
 }
 
 func (GtmPropertyTrafficTargetArgs) ElementType() reflect.Type {
@@ -1563,8 +1429,6 @@ func (o GtmPropertyTrafficTargetOutput) DatacenterId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *int { return v.DatacenterId }).(pulumi.IntPtrOutput)
 }
 
-// — (Boolean)
-// * `weight`
 func (o GtmPropertyTrafficTargetOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
@@ -1573,15 +1437,10 @@ func (o GtmPropertyTrafficTargetOutput) HandoutCname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *string { return v.HandoutCname }).(pulumi.StringPtrOutput)
 }
 
-// — Liveness test name
-// * `testInterval`
-// * `testObjectProtocol`
-// * `testTimeout`
 func (o GtmPropertyTrafficTargetOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// — (List)
 func (o GtmPropertyTrafficTargetOutput) Servers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) []string { return v.Servers }).(pulumi.StringArrayOutput)
 }
@@ -1611,22 +1470,11 @@ func (o GtmPropertyTrafficTargetArrayOutput) Index(i pulumi.IntInput) GtmPropert
 }
 
 type GtmResourceResourceInstance struct {
-	DatacenterId   int     `pulumi:"datacenterId"`
-	LoadObject     *string `pulumi:"loadObject"`
-	LoadObjectPort *int    `pulumi:"loadObjectPort"`
-	// — (List)
-	LoadServers []string `pulumi:"loadServers"`
-	// — (Boolean)
-	// * `hostHeader`
-	// * `leastSquaresDecay`
-	// * `upperBound`
-	// * `description`
-	// * `leaderString`
-	// * `constrainedProperty`
-	// * `loadImbalancePercent`
-	// * `maxUMultiplicativeIncrement`
-	// * `decayRate`
-	UseDefaultLoadObject *bool `pulumi:"useDefaultLoadObject"`
+	DatacenterId         int      `pulumi:"datacenterId"`
+	LoadObject           *string  `pulumi:"loadObject"`
+	LoadObjectPort       *int     `pulumi:"loadObjectPort"`
+	LoadServers          []string `pulumi:"loadServers"`
+	UseDefaultLoadObject *bool    `pulumi:"useDefaultLoadObject"`
 }
 
 // GtmResourceResourceInstanceInput is an input type that accepts GtmResourceResourceInstanceArgs and GtmResourceResourceInstanceOutput values.
@@ -1641,22 +1489,11 @@ type GtmResourceResourceInstanceInput interface {
 }
 
 type GtmResourceResourceInstanceArgs struct {
-	DatacenterId   pulumi.IntInput       `pulumi:"datacenterId"`
-	LoadObject     pulumi.StringPtrInput `pulumi:"loadObject"`
-	LoadObjectPort pulumi.IntPtrInput    `pulumi:"loadObjectPort"`
-	// — (List)
-	LoadServers pulumi.StringArrayInput `pulumi:"loadServers"`
-	// — (Boolean)
-	// * `hostHeader`
-	// * `leastSquaresDecay`
-	// * `upperBound`
-	// * `description`
-	// * `leaderString`
-	// * `constrainedProperty`
-	// * `loadImbalancePercent`
-	// * `maxUMultiplicativeIncrement`
-	// * `decayRate`
-	UseDefaultLoadObject pulumi.BoolPtrInput `pulumi:"useDefaultLoadObject"`
+	DatacenterId         pulumi.IntInput         `pulumi:"datacenterId"`
+	LoadObject           pulumi.StringPtrInput   `pulumi:"loadObject"`
+	LoadObjectPort       pulumi.IntPtrInput      `pulumi:"loadObjectPort"`
+	LoadServers          pulumi.StringArrayInput `pulumi:"loadServers"`
+	UseDefaultLoadObject pulumi.BoolPtrInput     `pulumi:"useDefaultLoadObject"`
 }
 
 func (GtmResourceResourceInstanceArgs) ElementType() reflect.Type {
@@ -1722,21 +1559,10 @@ func (o GtmResourceResourceInstanceOutput) LoadObjectPort() pulumi.IntPtrOutput 
 	return o.ApplyT(func(v GtmResourceResourceInstance) *int { return v.LoadObjectPort }).(pulumi.IntPtrOutput)
 }
 
-// — (List)
 func (o GtmResourceResourceInstanceOutput) LoadServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GtmResourceResourceInstance) []string { return v.LoadServers }).(pulumi.StringArrayOutput)
 }
 
-// — (Boolean)
-// * `hostHeader`
-// * `leastSquaresDecay`
-// * `upperBound`
-// * `description`
-// * `leaderString`
-// * `constrainedProperty`
-// * `loadImbalancePercent`
-// * `maxUMultiplicativeIncrement`
-// * `decayRate`
 func (o GtmResourceResourceInstanceOutput) UseDefaultLoadObject() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmResourceResourceInstance) *bool { return v.UseDefaultLoadObject }).(pulumi.BoolPtrOutput)
 }

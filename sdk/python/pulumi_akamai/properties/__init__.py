@@ -10,7 +10,41 @@ from .get_property import *
 from .get_property_rules import *
 from .property import *
 from .property_activation import *
-from .property_rules import *
 from .property_variables import *
 from ._inputs import *
 from . import outputs
+
+def _register_module():
+    import pulumi
+    from .. import _utilities
+
+
+    class Module(pulumi.runtime.ResourceModule):
+        _version = _utilities.get_semver_version()
+
+        def version(self):
+            return Module._version
+
+        def construct(self, name: str, typ: str, urn: str) -> pulumi.Resource:
+            if typ == "akamai:properties/cpCode:CpCode":
+                return CpCode(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:properties/edgeHostName:EdgeHostName":
+                return EdgeHostName(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:properties/property:Property":
+                return Property(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:properties/propertyActivation:PropertyActivation":
+                return PropertyActivation(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:properties/propertyVariables:PropertyVariables":
+                return PropertyVariables(name, pulumi.ResourceOptions(urn=urn))
+            else:
+                raise Exception(f"unknown resource type {typ}")
+
+
+    _module_instance = Module()
+    pulumi.runtime.register_resource_module("akamai", "properties/cpCode", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "properties/edgeHostName", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "properties/property", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "properties/propertyActivation", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "properties/propertyVariables", _module_instance)
+
+_register_module()

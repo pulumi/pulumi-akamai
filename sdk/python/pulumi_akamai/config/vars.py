@@ -10,17 +10,35 @@ from .. import _utilities, _tables
 from . import outputs
 
 __all__ = [
+    'appsec_section',
+    'appsecs',
+    'cache_enabled',
+    'config',
+    'config_section',
     'dns',
     'dns_section',
     'edgerc',
+    'gtm',
     'gtm_section',
-    'gtms',
     'papi_section',
-    'properties',
+    'property',
     'property_section',
 ]
 
 __config__ = pulumi.Config('akamai')
+
+appsec_section = __config__.get('appsecSection')
+
+appsecs = __config__.get('appsecs')
+
+cache_enabled = __config__.get('cacheEnabled')
+
+config = __config__.get('config')
+
+config_section = __config__.get('configSection')
+"""
+The section of the edgerc file to use for configuration
+"""
 
 dns = __config__.get('dns')
 
@@ -28,13 +46,13 @@ dns_section = __config__.get('dnsSection')
 
 edgerc = __config__.get('edgerc')
 
-gtm_section = __config__.get('gtmSection')
+gtm = __config__.get('gtm')
 
-gtms = __config__.get('gtms')
+gtm_section = __config__.get('gtmSection')
 
 papi_section = __config__.get('papiSection')
 
-properties = __config__.get('properties')
+property = __config__.get('property')
 
 property_section = __config__.get('propertySection')
 

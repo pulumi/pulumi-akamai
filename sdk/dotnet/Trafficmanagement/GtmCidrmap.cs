@@ -9,65 +9,21 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Trafficmanagement
 {
-    /// <summary>
-    /// `akamai.trafficmanagement.GtmCidrmap` provides the resource for creating, configuring and importing a gtm Cidr Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_map_name`
-    /// 
-    /// ## Example Usage
-    /// ### Basic usage:
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var demoCidrmap = new Akamai.Trafficmanagement.GtmCidrmap("demoCidrmap", new Akamai.Trafficmanagement.GtmCidrmapArgs
-    ///         {
-    ///             DefaultDatacenter = new Akamai.Trafficmanagement.Inputs.GtmCidrmapDefaultDatacenterArgs
-    ///             {
-    ///                 DatacenterId = 5400,
-    ///                 Nickname = "All Other CIDR Blocks",
-    ///             },
-    ///             Domain = "demo_domain.akadns.net",
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// </summary>
+    [Obsolete(@"akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap")]
     public partial class GtmCidrmap : Pulumi.CustomResource
     {
-        /// <summary>
-        /// — (multiple allowed)
-        /// * `datacenter_id`
-        /// * `nickname`
-        /// </summary>
         [Output("assignments")]
         public Output<ImmutableArray<Outputs.GtmCidrmapAssignment>> Assignments { get; private set; } = null!;
 
         [Output("defaultDatacenter")]
         public Output<Outputs.GtmCidrmapDefaultDatacenter> DefaultDatacenter { get; private set; } = null!;
 
-        /// <summary>
-        /// — Domain name
-        /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
 
-        /// <summary>
-        /// — Resource name
-        /// * `default_datacenter`
-        /// * `datacenter_id`
-        /// * `nickname`
-        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Boolean, Default: true) Wait for transaction to complete
-        /// </summary>
         [Output("waitOnComplete")]
         public Output<bool?> WaitOnComplete { get; private set; } = null!;
 
@@ -119,12 +75,6 @@ namespace Pulumi.Akamai.Trafficmanagement
     {
         [Input("assignments")]
         private InputList<Inputs.GtmCidrmapAssignmentArgs>? _assignments;
-
-        /// <summary>
-        /// — (multiple allowed)
-        /// * `datacenter_id`
-        /// * `nickname`
-        /// </summary>
         public InputList<Inputs.GtmCidrmapAssignmentArgs> Assignments
         {
             get => _assignments ?? (_assignments = new InputList<Inputs.GtmCidrmapAssignmentArgs>());
@@ -134,24 +84,12 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("defaultDatacenter", required: true)]
         public Input<Inputs.GtmCidrmapDefaultDatacenterArgs> DefaultDatacenter { get; set; } = null!;
 
-        /// <summary>
-        /// — Domain name
-        /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
 
-        /// <summary>
-        /// — Resource name
-        /// * `default_datacenter`
-        /// * `datacenter_id`
-        /// * `nickname`
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// — (Boolean, Default: true) Wait for transaction to complete
-        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 
@@ -164,12 +102,6 @@ namespace Pulumi.Akamai.Trafficmanagement
     {
         [Input("assignments")]
         private InputList<Inputs.GtmCidrmapAssignmentGetArgs>? _assignments;
-
-        /// <summary>
-        /// — (multiple allowed)
-        /// * `datacenter_id`
-        /// * `nickname`
-        /// </summary>
         public InputList<Inputs.GtmCidrmapAssignmentGetArgs> Assignments
         {
             get => _assignments ?? (_assignments = new InputList<Inputs.GtmCidrmapAssignmentGetArgs>());
@@ -179,24 +111,12 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("defaultDatacenter")]
         public Input<Inputs.GtmCidrmapDefaultDatacenterGetArgs>? DefaultDatacenter { get; set; }
 
-        /// <summary>
-        /// — Domain name
-        /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
-        /// <summary>
-        /// — Resource name
-        /// * `default_datacenter`
-        /// * `datacenter_id`
-        /// * `nickname`
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// — (Boolean, Default: true) Wait for transaction to complete
-        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 

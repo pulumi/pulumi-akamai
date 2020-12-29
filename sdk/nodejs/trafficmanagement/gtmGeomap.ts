@@ -2,28 +2,11 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "../types/input";
-import * as outputs from "../types/output";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
- * `akamai.trafficmanagement.GtmGeomap` provides the resource for creating, configuring and importing a gtm Geographic map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingMapName`
- *
- * ## Example Usage
- * ### Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const demoGeomap = new akamai.trafficmanagement.GtmGeomap("demo_geomap", {
- *     defaultDatacenter: {
- *         datacenterId: 5400,
- *         nickname: "All Others",
- *     },
- *     domain: "demo_domain.akadns.net",
- * });
- * ```
+ * @deprecated akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap
  */
 export class GtmGeomap extends pulumi.CustomResource {
     /**
@@ -36,6 +19,7 @@ export class GtmGeomap extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: GtmGeomapState, opts?: pulumi.CustomResourceOptions): GtmGeomap {
+        pulumi.log.warn("GtmGeomap is deprecated: akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap")
         return new GtmGeomap(name, <any>state, { ...opts, id: id });
     }
 
@@ -53,27 +37,10 @@ export class GtmGeomap extends pulumi.CustomResource {
         return obj['__pulumiType'] === GtmGeomap.__pulumiType;
     }
 
-    /**
-     * — (multiple allowed)
-     * * `datacenterId`
-     * * `nickname`
-     */
     public readonly assignments!: pulumi.Output<outputs.trafficmanagement.GtmGeomapAssignment[] | undefined>;
     public readonly defaultDatacenter!: pulumi.Output<outputs.trafficmanagement.GtmGeomapDefaultDatacenter>;
-    /**
-     * — Domain name
-     */
     public readonly domain!: pulumi.Output<string>;
-    /**
-     * — Resource name
-     * * `defaultDatacenter`
-     * * `datacenterId`
-     * * `nickname`
-     */
     public readonly name!: pulumi.Output<string>;
-    /**
-     * — (Boolean, Default: true) Wait for transaction to complete
-     */
     public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
 
     /**
@@ -83,8 +50,11 @@ export class GtmGeomap extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
+    /** @deprecated akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap */
     constructor(name: string, args: GtmGeomapArgs, opts?: pulumi.CustomResourceOptions)
+    /** @deprecated akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap */
     constructor(name: string, argsOrState?: GtmGeomapArgs | GtmGeomapState, opts?: pulumi.CustomResourceOptions) {
+        pulumi.log.warn("GtmGeomap is deprecated: akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap")
         let inputs: pulumi.Inputs = {};
         if (opts && opts.id) {
             const state = argsOrState as GtmGeomapState | undefined;
@@ -95,10 +65,10 @@ export class GtmGeomap extends pulumi.CustomResource {
             inputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
         } else {
             const args = argsOrState as GtmGeomapArgs | undefined;
-            if (!args || args.defaultDatacenter === undefined) {
+            if ((!args || args.defaultDatacenter === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'defaultDatacenter'");
             }
-            if (!args || args.domain === undefined) {
+            if ((!args || args.domain === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'domain'");
             }
             inputs["assignments"] = args ? args.assignments : undefined;
@@ -122,27 +92,10 @@ export class GtmGeomap extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmGeomap resources.
  */
 export interface GtmGeomapState {
-    /**
-     * — (multiple allowed)
-     * * `datacenterId`
-     * * `nickname`
-     */
     readonly assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmGeomapAssignment>[]>;
     readonly defaultDatacenter?: pulumi.Input<inputs.trafficmanagement.GtmGeomapDefaultDatacenter>;
-    /**
-     * — Domain name
-     */
     readonly domain?: pulumi.Input<string>;
-    /**
-     * — Resource name
-     * * `defaultDatacenter`
-     * * `datacenterId`
-     * * `nickname`
-     */
     readonly name?: pulumi.Input<string>;
-    /**
-     * — (Boolean, Default: true) Wait for transaction to complete
-     */
     readonly waitOnComplete?: pulumi.Input<boolean>;
 }
 
@@ -150,26 +103,9 @@ export interface GtmGeomapState {
  * The set of arguments for constructing a GtmGeomap resource.
  */
 export interface GtmGeomapArgs {
-    /**
-     * — (multiple allowed)
-     * * `datacenterId`
-     * * `nickname`
-     */
     readonly assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmGeomapAssignment>[]>;
     readonly defaultDatacenter: pulumi.Input<inputs.trafficmanagement.GtmGeomapDefaultDatacenter>;
-    /**
-     * — Domain name
-     */
     readonly domain: pulumi.Input<string>;
-    /**
-     * — Resource name
-     * * `defaultDatacenter`
-     * * `datacenterId`
-     * * `nickname`
-     */
     readonly name?: pulumi.Input<string>;
-    /**
-     * — (Boolean, Default: true) Wait for transaction to complete
-     */
     readonly waitOnComplete?: pulumi.Input<boolean>;
 }

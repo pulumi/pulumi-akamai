@@ -12,8 +12,12 @@ from ._inputs import *
 
 __all__ = ['GtmDatacenter']
 
+warnings.warn("""akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter""", DeprecationWarning)
+
 
 class GtmDatacenter(pulumi.CustomResource):
+    warnings.warn("""akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter""", DeprecationWarning)
+
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -34,36 +38,11 @@ class GtmDatacenter(pulumi.CustomResource):
                  __name__=None,
                  __opts__=None):
         """
-        `trafficmanagement.GtmDatacenter` provides the resource for creating, configuring and importing a gtm datacenter to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_datacenter_id`
-
-        ## Example Usage
-        ### Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        demo_datacenter = akamai.trafficmanagement.GtmDatacenter("demoDatacenter",
-            domain="demo_domain.akadns.net",
-            nickname="demo_datacenter")
-        ```
-
+        Create a GtmDatacenter resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] cloud_server_host_header_override: — (Boolean)
-               * `continent`
-               * `country`
-               * `latitude`
-               * `longitude`
-               * `state_or_province`
-        :param pulumi.Input[bool] cloud_server_targeting: — (Boolean)
-        :param pulumi.Input[str] domain: — Domain name
-        :param pulumi.Input[str] nickname: — datacenter nickname
-               * `default_load_object`
-               * `load_object`
-               * `load_object_port`
-        :param pulumi.Input[bool] wait_on_complete: — (Boolean, Default: true) Wait for transaction to complete
         """
+        pulumi.log.warn("GtmDatacenter is deprecated: akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__
@@ -88,7 +67,7 @@ class GtmDatacenter(pulumi.CustomResource):
             __props__['continent'] = continent
             __props__['country'] = country
             __props__['default_load_object'] = default_load_object
-            if domain is None:
+            if domain is None and not opts.urn:
                 raise TypeError("Missing required property 'domain'")
             __props__['domain'] = domain
             __props__['latitude'] = latitude
@@ -142,20 +121,6 @@ class GtmDatacenter(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] cloud_server_host_header_override: — (Boolean)
-               * `continent`
-               * `country`
-               * `latitude`
-               * `longitude`
-               * `state_or_province`
-        :param pulumi.Input[bool] cloud_server_targeting: — (Boolean)
-        :param pulumi.Input[str] domain: — Domain name
-        :param pulumi.Input[str] nickname: — datacenter nickname
-               * `default_load_object`
-               * `load_object`
-               * `load_object_port`
-        :param pulumi.Input[bool] virtual: — (Boolean)
-        :param pulumi.Input[bool] wait_on_complete: — (Boolean, Default: true) Wait for transaction to complete
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -197,22 +162,11 @@ class GtmDatacenter(pulumi.CustomResource):
     @property
     @pulumi.getter(name="cloudServerHostHeaderOverride")
     def cloud_server_host_header_override(self) -> pulumi.Output[Optional[bool]]:
-        """
-        — (Boolean)
-        * `continent`
-        * `country`
-        * `latitude`
-        * `longitude`
-        * `state_or_province`
-        """
         return pulumi.get(self, "cloud_server_host_header_override")
 
     @property
     @pulumi.getter(name="cloudServerTargeting")
     def cloud_server_targeting(self) -> pulumi.Output[Optional[bool]]:
-        """
-        — (Boolean)
-        """
         return pulumi.get(self, "cloud_server_targeting")
 
     @property
@@ -238,9 +192,6 @@ class GtmDatacenter(pulumi.CustomResource):
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Output[str]:
-        """
-        — Domain name
-        """
         return pulumi.get(self, "domain")
 
     @property
@@ -256,12 +207,6 @@ class GtmDatacenter(pulumi.CustomResource):
     @property
     @pulumi.getter
     def nickname(self) -> pulumi.Output[Optional[str]]:
-        """
-        — datacenter nickname
-        * `default_load_object`
-        * `load_object`
-        * `load_object_port`
-        """
         return pulumi.get(self, "nickname")
 
     @property
@@ -302,17 +247,11 @@ class GtmDatacenter(pulumi.CustomResource):
     @property
     @pulumi.getter
     def virtual(self) -> pulumi.Output[bool]:
-        """
-        — (Boolean)
-        """
         return pulumi.get(self, "virtual")
 
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> pulumi.Output[Optional[bool]]:
-        """
-        — (Boolean, Default: true) Wait for transaction to complete
-        """
         return pulumi.get(self, "wait_on_complete")
 
     def translate_output_property(self, prop):

@@ -2,11 +2,270 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "../types/input";
-import * as outputs from "../types/output";
+import { input as inputs, output as outputs } from "../types";
 
-export interface ProviderDn {
+export interface DnsZoneTsigKey {
+    algorithm: string;
+    /**
+     * key name
+     * * `algorithm`
+     * * `secret`
+     */
+    name: string;
+    secret: string;
+}
+
+export interface GetContractsContract {
+    contractId: string;
+    contractTypeName: string;
+}
+
+export interface GetGroupsGroup {
+    contractIds: string[];
+    groupId: string;
+    groupName: string;
+    parentGroupId: string;
+}
+
+export interface GetPropertiesProperty {
+    contractId: string;
+    groupId: string;
+    latestVersion: number;
+    note: string;
+    productId: string;
+    productionVersion: number;
+    propertyId: string;
+    propertyName: string;
+    ruleFormat: string;
+    stagingVersion: number;
+}
+
+export interface GetPropertyProductsProduct {
+    productId: string;
+    productName: string;
+}
+
+export interface GetPropertyRulesTemplateVariable {
+    name: string;
+    type?: string;
+    value: string;
+}
+
+export interface GtmAsmapAssignment {
+    asNumbers: number[];
+    datacenterId: number;
+    nickname: string;
+}
+
+export interface GtmAsmapDefaultDatacenter {
+    datacenterId: number;
+    nickname?: string;
+}
+
+export interface GtmCidrmapAssignment {
+    blocks?: string[];
+    datacenterId: number;
+    nickname: string;
+}
+
+export interface GtmCidrmapDefaultDatacenter {
+    datacenterId: number;
+    nickname?: string;
+}
+
+export interface GtmDatacenterDefaultLoadObject {
+    loadObject?: string;
+    loadObjectPort?: number;
+    /**
+     * * `city`
+     * * `cloneOf`
+     */
+    loadServers?: string[];
+}
+
+export interface GtmGeomapAssignment {
+    countries?: string[];
+    datacenterId: number;
+    nickname: string;
+}
+
+export interface GtmGeomapDefaultDatacenter {
+    datacenterId: number;
+    nickname?: string;
+}
+
+export interface GtmPropertyLivenessTest {
+    answersRequired?: boolean;
+    /**
+     * * `errorPenalty`
+     */
+    disableNonstandardPortWarning?: boolean;
+    disabled?: boolean;
+    errorPenalty?: number;
+    httpError3xx?: boolean;
+    httpError4xx?: boolean;
+    httpError5xx?: boolean;
+    /**
+     * `name`
+     * `value`
+     */
+    httpHeaders?: outputs.GtmPropertyLivenessTestHttpHeader[];
+    /**
+     * Liveness test name
+     * * `testInterval`
+     * * `testObjectProtocol`
+     * * `testTimeout`
+     */
+    name: string;
+    peerCertificateVerification?: boolean;
+    /**
+     * * `requestString`
+     * * `resourceType`
+     * * `responseString`
+     * * `sslClientCertificate`
+     * * `sslClientPrivateKey`
+     * * `testObject`
+     * * `testObjectPassword`
+     * * `testObjectPort`
+     * * `testObjectUsername`
+     * * `timeoutPenalty`
+     */
+    recursionRequested?: boolean;
+    requestString?: string;
+    resourceType?: string;
+    responseString?: string;
+    sslClientCertificate?: string;
+    sslClientPrivateKey?: string;
+    testInterval: number;
+    testObject: string;
+    testObjectPassword?: string;
+    testObjectPort?: number;
+    testObjectProtocol: string;
+    testObjectUsername?: string;
+    testTimeout: number;
+    timeoutPenalty?: number;
+}
+
+export interface GtmPropertyLivenessTestHttpHeader {
+    /**
+     * Liveness test name
+     * * `testInterval`
+     * * `testObjectProtocol`
+     * * `testTimeout`
+     */
+    name?: string;
+    value?: string;
+}
+
+export interface GtmPropertyStaticRrSet {
+    rdatas?: string[];
+    ttl?: number;
+    /**
+     * Property type  
+     * * `scoreAggregationType`
+     */
+    type?: string;
+}
+
+export interface GtmPropertyTrafficTarget {
+    datacenterId?: number;
+    /**
+     * * `weight`
+     */
+    enabled?: boolean;
+    handoutCname?: string;
+    /**
+     * Liveness test name
+     * * `testInterval`
+     * * `testObjectProtocol`
+     * * `testTimeout`
+     */
+    name?: string;
+    servers?: string[];
+    weight?: number;
+}
+
+export interface GtmResourceResourceInstance {
+    datacenterId: number;
+    loadObject?: string;
+    loadObjectPort?: number;
+    loadServers?: string[];
+    /**
+     * * `hostHeader`
+     * * `leastSquaresDecay`
+     * * `upperBound`
+     * * `description`
+     * * `leaderString`
+     * * `constrainedProperty`
+     * * `loadImbalancePercent`
+     * * `maxUMultiplicativeIncrement`
+     * * `decayRate`
+     */
+    useDefaultLoadObject?: boolean;
+}
+
+export interface PropertyOrigin {
+    cacheKeyHostname?: string;
+    compress?: boolean;
+    enableTrueClientIp?: boolean;
+    forwardHostname?: string;
+    hostname?: string;
+    port?: number;
+}
+
+export interface PropertyRuleError {
+    behaviorName?: string;
+    detail?: string;
+    errorLocation?: string;
+    instance?: string;
+    statusCode?: number;
+    title?: string;
+    type?: string;
+}
+
+export interface PropertyRuleWarning {
+    behaviorName?: string;
+    detail?: string;
+    errorLocation?: string;
+    instance?: string;
+    statusCode?: number;
+    title?: string;
+    type?: string;
+}
+
+export interface PropertyVariablesVariable {
+    variables?: outputs.PropertyVariablesVariableVariable[];
+}
+
+export interface PropertyVariablesVariableVariable {
+    description?: string;
+    hidden: boolean;
+    name: string;
+    sensitive: boolean;
+    value?: string;
+}
+
+export interface ProviderAppsec {
     accessToken?: string;
+    accountKey?: string;
+    clientSecret?: string;
+    clientToken?: string;
+    host?: string;
+    maxBody?: number;
+}
+
+export interface ProviderConfig {
+    accessToken?: string;
+    accountKey?: string;
+    clientSecret?: string;
+    clientToken?: string;
+    host?: string;
+    maxBody?: number;
+}
+
+export interface ProviderDns {
+    accessToken?: string;
+    accountKey?: string;
     clientSecret?: string;
     clientToken?: string;
     host?: string;
@@ -15,6 +274,7 @@ export interface ProviderDn {
 
 export interface ProviderGtm {
     accessToken?: string;
+    accountKey?: string;
     clientSecret?: string;
     clientToken?: string;
     host?: string;
@@ -23,30 +283,52 @@ export interface ProviderGtm {
 
 export interface ProviderProperty {
     accessToken?: string;
+    accountKey?: string;
     clientSecret?: string;
     clientToken?: string;
     host?: string;
     maxBody?: number;
 }
 export namespace config {
+    export interface Appsecs {
+        accessToken?: string;
+        accountKey?: string;
+        clientSecret?: string;
+        clientToken?: string;
+        host?: string;
+        maxBody?: number;
+    }
+
+    export interface Config {
+        accessToken?: string;
+        accountKey?: string;
+        clientSecret?: string;
+        clientToken?: string;
+        host?: string;
+        maxBody?: number;
+    }
+
     export interface Dns {
         accessToken?: string;
+        accountKey?: string;
         clientSecret?: string;
         clientToken?: string;
         host?: string;
         maxBody?: number;
     }
 
-    export interface Gtms {
+    export interface Gtm {
         accessToken?: string;
+        accountKey?: string;
         clientSecret?: string;
         clientToken?: string;
         host?: string;
         maxBody?: number;
     }
 
-    export interface Properties {
+    export interface Property {
         accessToken?: string;
+        accountKey?: string;
         clientSecret?: string;
         clientToken?: string;
         host?: string;
@@ -57,537 +339,39 @@ export namespace config {
 export namespace edgedns {
     export interface DnsZoneTsigKey {
         algorithm: string;
-        /**
-         * key name
-         * * `algorithm`
-         * * `secret`
-         */
         name: string;
         secret: string;
     }
 }
 
 export namespace properties {
-    export interface GetPropertyRulesRule {
-        /**
-         * — (Optional) One or more behaviors to apply to requests that match.
-         */
-        behaviors?: outputs.properties.GetPropertyRulesRuleBehavior[];
-        criteriaMatch?: string;
-        /**
-         * — (Optional) Whether the property is a secure (Enhanced TLS) property or not (top-level only).
-         */
-        isSecure?: boolean;
-        /**
-         * — (Optional) Child rules (may be nested five levels deep).
-         */
-        rules?: outputs.properties.GetPropertyRulesRuleRule[];
-        variables?: outputs.properties.GetPropertyRulesRuleVariable[];
-    }
-
-    export interface GetPropertyRulesRuleBehavior {
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) One or more options for the behavior.
-         */
-        options?: outputs.properties.GetPropertyRulesRuleBehaviorOption[];
-    }
-
-    export interface GetPropertyRulesRuleBehaviorOption {
-        /**
-         * — (Required) The option name.
-         */
-        key: string;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-        /**
-         * — (Optional) An array of values for the option.
-         */
-        values?: string[];
-    }
-
-    export interface GetPropertyRulesRuleRule {
-        /**
-         * — (Optional) One or more behaviors to apply to requests that match.
-         */
-        behaviors?: outputs.properties.GetPropertyRulesRuleRuleBehavior[];
-        comment?: string;
-        criteriaMatch?: string;
-        /**
-         * — (Optional) One or more criteria to match requests on.
-         */
-        criterias?: outputs.properties.GetPropertyRulesRuleRuleCriteria[];
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) Child rules (may be nested five levels deep).
-         */
-        rules?: outputs.properties.GetPropertyRulesRuleRuleRule[];
-    }
-
-    export interface GetPropertyRulesRuleRuleBehavior {
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) One or more options for the behavior.
-         */
-        options?: outputs.properties.GetPropertyRulesRuleRuleBehaviorOption[];
-    }
-
-    export interface GetPropertyRulesRuleRuleBehaviorOption {
-        /**
-         * — (Required) The option name.
-         */
-        key: string;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-        /**
-         * — (Optional) An array of values for the option.
-         */
-        values?: string[];
-    }
-
-    export interface GetPropertyRulesRuleRuleCriteria {
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) One or more options for the behavior.
-         */
-        options?: outputs.properties.GetPropertyRulesRuleRuleCriteriaOption[];
-    }
-
-    export interface GetPropertyRulesRuleRuleCriteriaOption {
-        /**
-         * — (Required) The option name.
-         */
-        key: string;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-        /**
-         * — (Optional) An array of values for the option.
-         */
-        values?: string[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRule {
-        /**
-         * — (Optional) One or more behaviors to apply to requests that match.
-         */
-        behaviors?: outputs.properties.GetPropertyRulesRuleRuleRuleBehavior[];
-        comment?: string;
-        criteriaMatch?: string;
-        /**
-         * — (Optional) One or more criteria to match requests on.
-         */
-        criterias?: outputs.properties.GetPropertyRulesRuleRuleRuleCriteria[];
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) Child rules (may be nested five levels deep).
-         */
-        rules?: outputs.properties.GetPropertyRulesRuleRuleRuleRule[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleBehavior {
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) One or more options for the behavior.
-         */
-        options?: outputs.properties.GetPropertyRulesRuleRuleRuleBehaviorOption[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleBehaviorOption {
-        /**
-         * — (Required) The option name.
-         */
-        key: string;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-        /**
-         * — (Optional) An array of values for the option.
-         */
-        values?: string[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleCriteria {
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) One or more options for the behavior.
-         */
-        options?: outputs.properties.GetPropertyRulesRuleRuleRuleCriteriaOption[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleCriteriaOption {
-        /**
-         * — (Required) The option name.
-         */
-        key: string;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-        /**
-         * — (Optional) An array of values for the option.
-         */
-        values?: string[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRule {
-        /**
-         * — (Optional) One or more behaviors to apply to requests that match.
-         */
-        behaviors?: outputs.properties.GetPropertyRulesRuleRuleRuleRuleBehavior[];
-        comment?: string;
-        criteriaMatch?: string;
-        /**
-         * — (Optional) One or more criteria to match requests on.
-         */
-        criterias?: outputs.properties.GetPropertyRulesRuleRuleRuleRuleCriteria[];
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) Child rules (may be nested five levels deep).
-         */
-        rules?: outputs.properties.GetPropertyRulesRuleRuleRuleRuleRule[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRuleBehavior {
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) One or more options for the behavior.
-         */
-        options?: outputs.properties.GetPropertyRulesRuleRuleRuleRuleBehaviorOption[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRuleBehaviorOption {
-        /**
-         * — (Required) The option name.
-         */
-        key: string;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-        /**
-         * — (Optional) An array of values for the option.
-         */
-        values?: string[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRuleCriteria {
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) One or more options for the behavior.
-         */
-        options?: outputs.properties.GetPropertyRulesRuleRuleRuleRuleCriteriaOption[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRuleCriteriaOption {
-        /**
-         * — (Required) The option name.
-         */
-        key: string;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-        /**
-         * — (Optional) An array of values for the option.
-         */
-        values?: string[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRuleRule {
-        /**
-         * — (Optional) One or more behaviors to apply to requests that match.
-         */
-        behaviors?: outputs.properties.GetPropertyRulesRuleRuleRuleRuleRuleBehavior[];
-        comment?: string;
-        criteriaMatch?: string;
-        /**
-         * — (Optional) One or more criteria to match requests on.
-         */
-        criterias?: outputs.properties.GetPropertyRulesRuleRuleRuleRuleRuleCriteria[];
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRuleRuleBehavior {
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) One or more options for the behavior.
-         */
-        options?: outputs.properties.GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOption[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRuleRuleBehaviorOption {
-        /**
-         * — (Required) The option name.
-         */
-        key: string;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-        /**
-         * — (Optional) An array of values for the option.
-         */
-        values?: string[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRuleRuleCriteria {
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        /**
-         * — (Optional) One or more options for the behavior.
-         */
-        options?: outputs.properties.GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOption[];
-    }
-
-    export interface GetPropertyRulesRuleRuleRuleRuleRuleCriteriaOption {
-        /**
-         * — (Required) The option name.
-         */
-        key: string;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-        /**
-         * — (Optional) An array of values for the option.
-         */
-        values?: string[];
-    }
-
-    export interface GetPropertyRulesRuleVariable {
-        description?: string;
-        hidden: boolean;
-        /**
-         * — (Required) The name of the behavior.
-         */
-        name: string;
-        sensitive: boolean;
-        /**
-         * — (Optional) A single value for the option.
-         */
-        value?: string;
-    }
-
     export interface PropertyOrigin {
-        /**
-         * — (Optional) The hostname uses for the cache key. (default: `ORIGIN_HOSTNAME`).
-         */
         cacheKeyHostname?: string;
-        /**
-         * — (Optional, boolean) Whether origin supports gzip compression (default: `false`).
-         */
         compress?: boolean;
-        /**
-         * — (Optional, boolean) Whether the X-True-Client-IP header should be sent to origin (default: `false`).
-         */
         enableTrueClientIp?: boolean;
-        /**
-         * — (Optional) The value for the Hostname header sent to origin. (default: `ORIGIN_HOSTNAME`).
-         */
         forwardHostname?: string;
-        /**
-         * — (Required) The origin hostname.
-         */
-        hostname: string;
-        /**
-         * — (Optional) The origin port to connect to (default: 80).
-         */
+        hostname?: string;
         port?: number;
     }
 
-    export interface PropertyRulesRule {
-        behaviors?: outputs.properties.PropertyRulesRuleBehavior[];
-        criteriaMatch?: string;
-        isSecure?: boolean;
-        rules?: outputs.properties.PropertyRulesRuleRule[];
-        variables?: outputs.properties.PropertyRulesRuleVariable[];
+    export interface PropertyRuleError {
+        behaviorName?: string;
+        detail?: string;
+        errorLocation?: string;
+        instance?: string;
+        statusCode?: number;
+        title?: string;
+        type?: string;
     }
 
-    export interface PropertyRulesRuleBehavior {
-        name: string;
-        options?: outputs.properties.PropertyRulesRuleBehaviorOption[];
-    }
-
-    export interface PropertyRulesRuleBehaviorOption {
-        key: string;
-        value?: string;
-        values?: string[];
-    }
-
-    export interface PropertyRulesRuleRule {
-        behaviors?: outputs.properties.PropertyRulesRuleRuleBehavior[];
-        comment?: string;
-        criteriaMatch?: string;
-        criterias?: outputs.properties.PropertyRulesRuleRuleCriteria[];
-        name: string;
-        rules?: outputs.properties.PropertyRulesRuleRuleRule[];
-    }
-
-    export interface PropertyRulesRuleRuleBehavior {
-        name: string;
-        options?: outputs.properties.PropertyRulesRuleRuleBehaviorOption[];
-    }
-
-    export interface PropertyRulesRuleRuleBehaviorOption {
-        key: string;
-        value?: string;
-        values?: string[];
-    }
-
-    export interface PropertyRulesRuleRuleCriteria {
-        name: string;
-        options?: outputs.properties.PropertyRulesRuleRuleCriteriaOption[];
-    }
-
-    export interface PropertyRulesRuleRuleCriteriaOption {
-        key: string;
-        value?: string;
-        values?: string[];
-    }
-
-    export interface PropertyRulesRuleRuleRule {
-        behaviors?: outputs.properties.PropertyRulesRuleRuleRuleBehavior[];
-        comment?: string;
-        criteriaMatch?: string;
-        criterias?: outputs.properties.PropertyRulesRuleRuleRuleCriteria[];
-        name: string;
-        rules?: outputs.properties.PropertyRulesRuleRuleRuleRule[];
-    }
-
-    export interface PropertyRulesRuleRuleRuleBehavior {
-        name: string;
-        options?: outputs.properties.PropertyRulesRuleRuleRuleBehaviorOption[];
-    }
-
-    export interface PropertyRulesRuleRuleRuleBehaviorOption {
-        key: string;
-        value?: string;
-        values?: string[];
-    }
-
-    export interface PropertyRulesRuleRuleRuleCriteria {
-        name: string;
-        options?: outputs.properties.PropertyRulesRuleRuleRuleCriteriaOption[];
-    }
-
-    export interface PropertyRulesRuleRuleRuleCriteriaOption {
-        key: string;
-        value?: string;
-        values?: string[];
-    }
-
-    export interface PropertyRulesRuleRuleRuleRule {
-        behaviors?: outputs.properties.PropertyRulesRuleRuleRuleRuleBehavior[];
-        comment?: string;
-        criteriaMatch?: string;
-        criterias?: outputs.properties.PropertyRulesRuleRuleRuleRuleCriteria[];
-        name: string;
-        rules?: outputs.properties.PropertyRulesRuleRuleRuleRuleRule[];
-    }
-
-    export interface PropertyRulesRuleRuleRuleRuleBehavior {
-        name: string;
-        options?: outputs.properties.PropertyRulesRuleRuleRuleRuleBehaviorOption[];
-    }
-
-    export interface PropertyRulesRuleRuleRuleRuleBehaviorOption {
-        key: string;
-        value?: string;
-        values?: string[];
-    }
-
-    export interface PropertyRulesRuleRuleRuleRuleCriteria {
-        name: string;
-        options?: outputs.properties.PropertyRulesRuleRuleRuleRuleCriteriaOption[];
-    }
-
-    export interface PropertyRulesRuleRuleRuleRuleCriteriaOption {
-        key: string;
-        value?: string;
-        values?: string[];
-    }
-
-    export interface PropertyRulesRuleRuleRuleRuleRule {
-        behaviors?: outputs.properties.PropertyRulesRuleRuleRuleRuleRuleBehavior[];
-        comment?: string;
-        criteriaMatch?: string;
-        criterias?: outputs.properties.PropertyRulesRuleRuleRuleRuleRuleCriteria[];
-        name: string;
-    }
-
-    export interface PropertyRulesRuleRuleRuleRuleRuleBehavior {
-        name: string;
-        options?: outputs.properties.PropertyRulesRuleRuleRuleRuleRuleBehaviorOption[];
-    }
-
-    export interface PropertyRulesRuleRuleRuleRuleRuleBehaviorOption {
-        key: string;
-        value?: string;
-        values?: string[];
-    }
-
-    export interface PropertyRulesRuleRuleRuleRuleRuleCriteria {
-        name: string;
-        options?: outputs.properties.PropertyRulesRuleRuleRuleRuleRuleCriteriaOption[];
-    }
-
-    export interface PropertyRulesRuleRuleRuleRuleRuleCriteriaOption {
-        key: string;
-        value?: string;
-        values?: string[];
-    }
-
-    export interface PropertyRulesRuleVariable {
-        description?: string;
-        hidden: boolean;
-        name: string;
-        sensitive: boolean;
-        value?: string;
+    export interface PropertyRuleWarning {
+        behaviorName?: string;
+        detail?: string;
+        errorLocation?: string;
+        instance?: string;
+        statusCode?: number;
+        title?: string;
+        type?: string;
     }
 
     export interface PropertyVariablesVariable {
@@ -595,34 +379,16 @@ export namespace properties {
     }
 
     export interface PropertyVariablesVariableVariable {
-        /**
-         * — (Optional) A human-readable description
-         */
         description?: string;
-        /**
-         * — (Required) Whether to hide the variable when debugging requests
-         */
         hidden: boolean;
-        /**
-         * — (Required) The name of the variable.
-         */
         name: string;
-        /**
-         * — (Required) Whether to obscure the value when debugging requests
-         */
         sensitive: boolean;
-        /**
-         * — (Required) The default value to assign to the variable
-         */
         value?: string;
     }
 }
 
 export namespace trafficmanagement {
     export interface GtmASmapAssignment {
-        /**
-         * — (List)
-         */
         asNumbers: number[];
         datacenterId: number;
         nickname: string;
@@ -634,9 +400,6 @@ export namespace trafficmanagement {
     }
 
     export interface GtmCidrmapAssignment {
-        /**
-         * — (List)
-         */
         blocks?: string[];
         datacenterId: number;
         nickname: string;
@@ -650,18 +413,10 @@ export namespace trafficmanagement {
     export interface GtmDatacenterDefaultLoadObject {
         loadObject?: string;
         loadObjectPort?: number;
-        /**
-         * — (List)
-         * * `city`
-         * * `cloneOf`
-         */
         loadServers?: string[];
     }
 
     export interface GtmGeomapAssignment {
-        /**
-         * — (List)
-         */
         countries?: string[];
         datacenterId: number;
         nickname: string;
@@ -673,62 +428,16 @@ export namespace trafficmanagement {
     }
 
     export interface GtmPropertyLivenessTest {
-        /**
-         * — (Boolean)
-         */
         answersRequired?: boolean;
-        /**
-         * — (Boolean)
-         * * `errorPenalty`
-         */
         disableNonstandardPortWarning?: boolean;
-        /**
-         * — (Boolean)
-         */
         disabled?: boolean;
         errorPenalty?: number;
-        /**
-         * — (Boolean)
-         */
         httpError3xx?: boolean;
-        /**
-         * — (Boolean)
-         */
         httpError4xx?: boolean;
-        /**
-         * — (Boolean)
-         */
         httpError5xx?: boolean;
-        /**
-         * — (multiple allowed)
-         * `name`
-         * `value`
-         */
         httpHeaders?: outputs.trafficmanagement.GtmPropertyLivenessTestHttpHeader[];
-        /**
-         * — Liveness test name
-         * * `testInterval`
-         * * `testObjectProtocol`
-         * * `testTimeout`
-         */
         name: string;
-        /**
-         * — (Boolean)
-         */
         peerCertificateVerification?: boolean;
-        /**
-         * — (Boolean)
-         * * `requestString`
-         * * `resourceType`
-         * * `responseString`
-         * * `sslClientCertificate`
-         * * `sslClientPrivateKey`
-         * * `testObject`
-         * * `testObjectPassword`
-         * * `testObjectPort`
-         * * `testObjectUsername`
-         * * `timeoutPenalty`
-         */
         recursionRequested?: boolean;
         requestString?: string;
         resourceType?: string;
@@ -746,47 +455,21 @@ export namespace trafficmanagement {
     }
 
     export interface GtmPropertyLivenessTestHttpHeader {
-        /**
-         * — Liveness test name
-         * * `testInterval`
-         * * `testObjectProtocol`
-         * * `testTimeout`
-         */
         name?: string;
         value?: string;
     }
 
     export interface GtmPropertyStaticRrSet {
-        /**
-         * — (List)
-         */
         rdatas?: string[];
         ttl?: number;
-        /**
-         * — Property type  
-         * * `scoreAggregationType`
-         */
         type?: string;
     }
 
     export interface GtmPropertyTrafficTarget {
         datacenterId?: number;
-        /**
-         * — (Boolean)
-         * * `weight`
-         */
         enabled?: boolean;
         handoutCname?: string;
-        /**
-         * — Liveness test name
-         * * `testInterval`
-         * * `testObjectProtocol`
-         * * `testTimeout`
-         */
         name?: string;
-        /**
-         * — (List)
-         */
         servers?: string[];
         weight?: number;
     }
@@ -795,22 +478,7 @@ export namespace trafficmanagement {
         datacenterId: number;
         loadObject?: string;
         loadObjectPort?: number;
-        /**
-         * — (List)
-         */
         loadServers?: string[];
-        /**
-         * — (Boolean)
-         * * `hostHeader`
-         * * `leastSquaresDecay`
-         * * `upperBound`
-         * * `description`
-         * * `leaderString`
-         * * `constrainedProperty`
-         * * `loadImbalancePercent`
-         * * `maxUMultiplicativeIncrement`
-         * * `decayRate`
-         */
         useDefaultLoadObject?: boolean;
     }
 }

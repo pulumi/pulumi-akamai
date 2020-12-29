@@ -18,11 +18,6 @@ class DnsZoneTsigKey(dict):
                  algorithm: str,
                  name: str,
                  secret: str):
-        """
-        :param str name: key name
-               * `algorithm`
-               * `secret`
-        """
         pulumi.set(__self__, "algorithm", algorithm)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "secret", secret)
@@ -35,11 +30,6 @@ class DnsZoneTsigKey(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        key name
-        * `algorithm`
-        * `secret`
-        """
         return pulumi.get(self, "name")
 
     @property

@@ -10,8 +10,12 @@ from .. import _utilities, _tables
 
 __all__ = ['GtmDomain']
 
+warnings.warn("""akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain""", DeprecationWarning)
+
 
 class GtmDomain(pulumi.CustomResource):
+    warnings.warn("""akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain""", DeprecationWarning)
+
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -34,40 +38,11 @@ class GtmDomain(pulumi.CustomResource):
                  __name__=None,
                  __opts__=None):
         """
-        `trafficmanagement.GtmDomain` provides the resource for creating, configuring and importing a gtm domain to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`
-
-        ## Example Usage
-        ### Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        demodomain = akamai.trafficmanagement.GtmDomain("demodomain",
-            comment="some comment",
-            contract="XXX",
-            group="100",
-            type="basic")
-        ```
-
+        Create a GtmDomain resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] cname_coalescing_enabled: — (Boolean)
-        :param pulumi.Input[str] comment: — A descriptive comment
-        :param pulumi.Input[str] contract: — The contract ID (if creating domain)
-        :param pulumi.Input[int] default_error_penalty: — (Default: 75)
-        :param pulumi.Input[int] default_timeout_penalty: — (Default: 25)
-               * `load_imbalance_percentage`
-               * `default_ssl_client_private_key`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] email_notification_lists: — (List)
-        :param pulumi.Input[bool] end_user_mapping_enabled: — (Boolean)
-        :param pulumi.Input[str] group: — The currently selected group ID (if creating domain)
-        :param pulumi.Input[bool] load_feedback: — (Boolean)
-               * `default_ssl_client_certificate`
-        :param pulumi.Input[str] name: — Domain name
-        :param pulumi.Input[str] type: — Domain type
-        :param pulumi.Input[bool] wait_on_complete: — (Boolean, Default: true) Wait for transaction to complete
         """
+        pulumi.log.warn("GtmDomain is deprecated: akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__
@@ -98,7 +73,7 @@ class GtmDomain(pulumi.CustomResource):
             __props__['load_feedback'] = load_feedback
             __props__['load_imbalance_percentage'] = load_imbalance_percentage
             __props__['name'] = name
-            if type is None:
+            if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
             __props__['type'] = type
             __props__['wait_on_complete'] = wait_on_complete
@@ -172,40 +147,6 @@ class GtmDomain(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] cname_coalescing_enabled: — (Boolean)
-        :param pulumi.Input[str] comment: — A descriptive comment
-        :param pulumi.Input[str] contract: — The contract ID (if creating domain)
-        :param pulumi.Input[int] default_error_penalty: — (Default: 75)
-        :param pulumi.Input[int] default_timeout_penalty: — (Default: 25)
-               * `load_imbalance_percentage`
-               * `default_ssl_client_private_key`
-        :param pulumi.Input[float] default_unreachable_threshold: * `min_pingable_region_fraction`
-               * `servermonitor_liveness_count`
-               * `round_robin_prefix`
-               * `servermonitor_load_count`
-               * `ping_interval`
-               * `max_ttl`
-               * `default_health_max`
-               * `map_update_interval`
-               * `max_properties`
-               * `max_resources`
-               * `default_error_penalty`
-               * `max_test_timeout`
-               * `default_health_multiplier`
-               * `servermonitor_pool`
-               * `min_ttl`
-               * `default_max_unreachable_penalty`
-               * `default_health_threshold`
-               * `min_test_interval`
-               * `ping_packet_size`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] email_notification_lists: — (List)
-        :param pulumi.Input[bool] end_user_mapping_enabled: — (Boolean)
-        :param pulumi.Input[str] group: — The currently selected group ID (if creating domain)
-        :param pulumi.Input[bool] load_feedback: — (Boolean)
-               * `default_ssl_client_certificate`
-        :param pulumi.Input[str] name: — Domain name
-        :param pulumi.Input[str] type: — Domain type
-        :param pulumi.Input[bool] wait_on_complete: — (Boolean, Default: true) Wait for transaction to complete
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -250,33 +191,21 @@ class GtmDomain(pulumi.CustomResource):
     @property
     @pulumi.getter(name="cnameCoalescingEnabled")
     def cname_coalescing_enabled(self) -> pulumi.Output[Optional[bool]]:
-        """
-        — (Boolean)
-        """
         return pulumi.get(self, "cname_coalescing_enabled")
 
     @property
     @pulumi.getter
     def comment(self) -> pulumi.Output[Optional[str]]:
-        """
-        — A descriptive comment
-        """
         return pulumi.get(self, "comment")
 
     @property
     @pulumi.getter
     def contract(self) -> pulumi.Output[Optional[str]]:
-        """
-        — The contract ID (if creating domain)
-        """
         return pulumi.get(self, "contract")
 
     @property
     @pulumi.getter(name="defaultErrorPenalty")
     def default_error_penalty(self) -> pulumi.Output[Optional[int]]:
-        """
-        — (Default: 75)
-        """
         return pulumi.get(self, "default_error_penalty")
 
     @property
@@ -312,70 +241,31 @@ class GtmDomain(pulumi.CustomResource):
     @property
     @pulumi.getter(name="defaultTimeoutPenalty")
     def default_timeout_penalty(self) -> pulumi.Output[Optional[int]]:
-        """
-        — (Default: 25)
-        * `load_imbalance_percentage`
-        * `default_ssl_client_private_key`
-        """
         return pulumi.get(self, "default_timeout_penalty")
 
     @property
     @pulumi.getter(name="defaultUnreachableThreshold")
     def default_unreachable_threshold(self) -> pulumi.Output[float]:
-        """
-        * `min_pingable_region_fraction`
-        * `servermonitor_liveness_count`
-        * `round_robin_prefix`
-        * `servermonitor_load_count`
-        * `ping_interval`
-        * `max_ttl`
-        * `default_health_max`
-        * `map_update_interval`
-        * `max_properties`
-        * `max_resources`
-        * `default_error_penalty`
-        * `max_test_timeout`
-        * `default_health_multiplier`
-        * `servermonitor_pool`
-        * `min_ttl`
-        * `default_max_unreachable_penalty`
-        * `default_health_threshold`
-        * `min_test_interval`
-        * `ping_packet_size`
-        """
         return pulumi.get(self, "default_unreachable_threshold")
 
     @property
     @pulumi.getter(name="emailNotificationLists")
     def email_notification_lists(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        — (List)
-        """
         return pulumi.get(self, "email_notification_lists")
 
     @property
     @pulumi.getter(name="endUserMappingEnabled")
     def end_user_mapping_enabled(self) -> pulumi.Output[Optional[bool]]:
-        """
-        — (Boolean)
-        """
         return pulumi.get(self, "end_user_mapping_enabled")
 
     @property
     @pulumi.getter
     def group(self) -> pulumi.Output[Optional[str]]:
-        """
-        — The currently selected group ID (if creating domain)
-        """
         return pulumi.get(self, "group")
 
     @property
     @pulumi.getter(name="loadFeedback")
     def load_feedback(self) -> pulumi.Output[Optional[bool]]:
-        """
-        — (Boolean)
-        * `default_ssl_client_certificate`
-        """
         return pulumi.get(self, "load_feedback")
 
     @property
@@ -426,9 +316,6 @@ class GtmDomain(pulumi.CustomResource):
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        — Domain name
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -464,17 +351,11 @@ class GtmDomain(pulumi.CustomResource):
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
-        """
-        — Domain type
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> pulumi.Output[Optional[bool]]:
-        """
-        — (Boolean, Default: true) Wait for transaction to complete
-        """
         return pulumi.get(self, "wait_on_complete")
 
     def translate_output_property(self, prop):

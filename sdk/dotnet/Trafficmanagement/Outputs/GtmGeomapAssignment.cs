@@ -13,9 +13,6 @@ namespace Pulumi.Akamai.Trafficmanagement.Outputs
     [OutputType]
     public sealed class GtmGeomapAssignment
     {
-        /// <summary>
-        /// — (List)
-        /// </summary>
         public readonly ImmutableArray<string> Countries;
         public readonly int DatacenterId;
         public readonly string Nickname;

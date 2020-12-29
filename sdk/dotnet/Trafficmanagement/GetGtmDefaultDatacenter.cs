@@ -9,15 +9,9 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Trafficmanagement
 {
+    [Obsolete(@"akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter")]
     public static class GetGtmDefaultDatacenter
     {
-        /// <summary>
-        /// Use `akamai.trafficmanagement.getGtmDefaultDatacenter` data source to retrieve default datacenter id and nickname.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% /examples %}}
-        /// </summary>
         public static Task<GetGtmDefaultDatacenterResult> InvokeAsync(GetGtmDefaultDatacenterArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetGtmDefaultDatacenterResult>("akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter", args ?? new GetGtmDefaultDatacenterArgs(), options.WithVersion());
     }
@@ -25,15 +19,9 @@ namespace Pulumi.Akamai.Trafficmanagement
 
     public sealed class GetGtmDefaultDatacenterArgs : Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// — (Optional. Default 5400)
-        /// </summary>
         [Input("datacenter")]
         public int? Datacenter { get; set; }
 
-        /// <summary>
-        /// — (Required)
-        /// </summary>
         [Input("domain", required: true)]
         public string Domain { get; set; } = null!;
 

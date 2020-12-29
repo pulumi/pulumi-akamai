@@ -4,82 +4,49 @@
 package trafficmanagement
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// `trafficmanagement.GtmResource` provides the resource for creating, configuring and importing a gtm resource to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingResourceName`
-//
-// ## Example Usage
-// ### Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/trafficmanagement"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := trafficmanagement.NewGtmResource(ctx, "demoResource", &trafficmanagement.GtmResourceArgs{
-// 			AggregationType: pulumi.String("latest"),
-// 			Domain:          pulumi.String("demo_domain.akadns.net"),
-// 			Type:            pulumi.String("XML load object via HTTP"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
+// Deprecated: akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource
 type GtmResource struct {
 	pulumi.CustomResourceState
 
-	AggregationType     pulumi.StringOutput     `pulumi:"aggregationType"`
-	ConstrainedProperty pulumi.StringPtrOutput  `pulumi:"constrainedProperty"`
-	DecayRate           pulumi.Float64PtrOutput `pulumi:"decayRate"`
-	Description         pulumi.StringPtrOutput  `pulumi:"description"`
-	// — Domain name
-	Domain                      pulumi.StringOutput     `pulumi:"domain"`
-	HostHeader                  pulumi.StringPtrOutput  `pulumi:"hostHeader"`
-	LeaderString                pulumi.StringPtrOutput  `pulumi:"leaderString"`
-	LeastSquaresDecay           pulumi.Float64PtrOutput `pulumi:"leastSquaresDecay"`
-	LoadImbalancePercentage     pulumi.Float64PtrOutput `pulumi:"loadImbalancePercentage"`
-	MaxUMultiplicativeIncrement pulumi.Float64PtrOutput `pulumi:"maxUMultiplicativeIncrement"`
-	// — Resource name
-	// * `aggregationType`
-	Name pulumi.StringOutput `pulumi:"name"`
-	// — (multiple allowed)
-	// * `datacenterId`
-	// * `loadObject`
-	// * `loadObjectPort`
-	ResourceInstances GtmResourceResourceInstanceArrayOutput `pulumi:"resourceInstances"`
-	// — Resource type
-	Type       pulumi.StringOutput `pulumi:"type"`
-	UpperBound pulumi.IntPtrOutput `pulumi:"upperBound"`
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrOutput `pulumi:"waitOnComplete"`
+	AggregationType             pulumi.StringOutput                    `pulumi:"aggregationType"`
+	ConstrainedProperty         pulumi.StringPtrOutput                 `pulumi:"constrainedProperty"`
+	DecayRate                   pulumi.Float64PtrOutput                `pulumi:"decayRate"`
+	Description                 pulumi.StringPtrOutput                 `pulumi:"description"`
+	Domain                      pulumi.StringOutput                    `pulumi:"domain"`
+	HostHeader                  pulumi.StringPtrOutput                 `pulumi:"hostHeader"`
+	LeaderString                pulumi.StringPtrOutput                 `pulumi:"leaderString"`
+	LeastSquaresDecay           pulumi.Float64PtrOutput                `pulumi:"leastSquaresDecay"`
+	LoadImbalancePercentage     pulumi.Float64PtrOutput                `pulumi:"loadImbalancePercentage"`
+	MaxUMultiplicativeIncrement pulumi.Float64PtrOutput                `pulumi:"maxUMultiplicativeIncrement"`
+	Name                        pulumi.StringOutput                    `pulumi:"name"`
+	ResourceInstances           GtmResourceResourceInstanceArrayOutput `pulumi:"resourceInstances"`
+	Type                        pulumi.StringOutput                    `pulumi:"type"`
+	UpperBound                  pulumi.IntPtrOutput                    `pulumi:"upperBound"`
+	WaitOnComplete              pulumi.BoolPtrOutput                   `pulumi:"waitOnComplete"`
 }
 
 // NewGtmResource registers a new resource with the given unique name, arguments, and options.
 func NewGtmResource(ctx *pulumi.Context,
 	name string, args *GtmResourceArgs, opts ...pulumi.ResourceOption) (*GtmResource, error) {
-	if args == nil || args.AggregationType == nil {
-		return nil, errors.New("missing required argument 'AggregationType'")
-	}
-	if args == nil || args.Domain == nil {
-		return nil, errors.New("missing required argument 'Domain'")
-	}
-	if args == nil || args.Type == nil {
-		return nil, errors.New("missing required argument 'Type'")
-	}
 	if args == nil {
-		args = &GtmResourceArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.AggregationType == nil {
+		return nil, errors.New("invalid value for required argument 'AggregationType'")
+	}
+	if args.Domain == nil {
+		return nil, errors.New("invalid value for required argument 'Domain'")
+	}
+	if args.Type == nil {
+		return nil, errors.New("invalid value for required argument 'Type'")
 	}
 	var resource GtmResource
 	err := ctx.RegisterResource("akamai:trafficmanagement/gtmResource:GtmResource", name, args, &resource, opts...)
@@ -103,57 +70,39 @@ func GetGtmResource(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering GtmResource resources.
 type gtmResourceState struct {
-	AggregationType     *string  `pulumi:"aggregationType"`
-	ConstrainedProperty *string  `pulumi:"constrainedProperty"`
-	DecayRate           *float64 `pulumi:"decayRate"`
-	Description         *string  `pulumi:"description"`
-	// — Domain name
-	Domain                      *string  `pulumi:"domain"`
-	HostHeader                  *string  `pulumi:"hostHeader"`
-	LeaderString                *string  `pulumi:"leaderString"`
-	LeastSquaresDecay           *float64 `pulumi:"leastSquaresDecay"`
-	LoadImbalancePercentage     *float64 `pulumi:"loadImbalancePercentage"`
-	MaxUMultiplicativeIncrement *float64 `pulumi:"maxUMultiplicativeIncrement"`
-	// — Resource name
-	// * `aggregationType`
-	Name *string `pulumi:"name"`
-	// — (multiple allowed)
-	// * `datacenterId`
-	// * `loadObject`
-	// * `loadObjectPort`
-	ResourceInstances []GtmResourceResourceInstance `pulumi:"resourceInstances"`
-	// — Resource type
-	Type       *string `pulumi:"type"`
-	UpperBound *int    `pulumi:"upperBound"`
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	AggregationType             *string                       `pulumi:"aggregationType"`
+	ConstrainedProperty         *string                       `pulumi:"constrainedProperty"`
+	DecayRate                   *float64                      `pulumi:"decayRate"`
+	Description                 *string                       `pulumi:"description"`
+	Domain                      *string                       `pulumi:"domain"`
+	HostHeader                  *string                       `pulumi:"hostHeader"`
+	LeaderString                *string                       `pulumi:"leaderString"`
+	LeastSquaresDecay           *float64                      `pulumi:"leastSquaresDecay"`
+	LoadImbalancePercentage     *float64                      `pulumi:"loadImbalancePercentage"`
+	MaxUMultiplicativeIncrement *float64                      `pulumi:"maxUMultiplicativeIncrement"`
+	Name                        *string                       `pulumi:"name"`
+	ResourceInstances           []GtmResourceResourceInstance `pulumi:"resourceInstances"`
+	Type                        *string                       `pulumi:"type"`
+	UpperBound                  *int                          `pulumi:"upperBound"`
+	WaitOnComplete              *bool                         `pulumi:"waitOnComplete"`
 }
 
 type GtmResourceState struct {
-	AggregationType     pulumi.StringPtrInput
-	ConstrainedProperty pulumi.StringPtrInput
-	DecayRate           pulumi.Float64PtrInput
-	Description         pulumi.StringPtrInput
-	// — Domain name
+	AggregationType             pulumi.StringPtrInput
+	ConstrainedProperty         pulumi.StringPtrInput
+	DecayRate                   pulumi.Float64PtrInput
+	Description                 pulumi.StringPtrInput
 	Domain                      pulumi.StringPtrInput
 	HostHeader                  pulumi.StringPtrInput
 	LeaderString                pulumi.StringPtrInput
 	LeastSquaresDecay           pulumi.Float64PtrInput
 	LoadImbalancePercentage     pulumi.Float64PtrInput
 	MaxUMultiplicativeIncrement pulumi.Float64PtrInput
-	// — Resource name
-	// * `aggregationType`
-	Name pulumi.StringPtrInput
-	// — (multiple allowed)
-	// * `datacenterId`
-	// * `loadObject`
-	// * `loadObjectPort`
-	ResourceInstances GtmResourceResourceInstanceArrayInput
-	// — Resource type
-	Type       pulumi.StringPtrInput
-	UpperBound pulumi.IntPtrInput
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrInput
+	Name                        pulumi.StringPtrInput
+	ResourceInstances           GtmResourceResourceInstanceArrayInput
+	Type                        pulumi.StringPtrInput
+	UpperBound                  pulumi.IntPtrInput
+	WaitOnComplete              pulumi.BoolPtrInput
 }
 
 func (GtmResourceState) ElementType() reflect.Type {
@@ -161,60 +110,81 @@ func (GtmResourceState) ElementType() reflect.Type {
 }
 
 type gtmResourceArgs struct {
-	AggregationType     string   `pulumi:"aggregationType"`
-	ConstrainedProperty *string  `pulumi:"constrainedProperty"`
-	DecayRate           *float64 `pulumi:"decayRate"`
-	Description         *string  `pulumi:"description"`
-	// — Domain name
-	Domain                      string   `pulumi:"domain"`
-	HostHeader                  *string  `pulumi:"hostHeader"`
-	LeaderString                *string  `pulumi:"leaderString"`
-	LeastSquaresDecay           *float64 `pulumi:"leastSquaresDecay"`
-	LoadImbalancePercentage     *float64 `pulumi:"loadImbalancePercentage"`
-	MaxUMultiplicativeIncrement *float64 `pulumi:"maxUMultiplicativeIncrement"`
-	// — Resource name
-	// * `aggregationType`
-	Name *string `pulumi:"name"`
-	// — (multiple allowed)
-	// * `datacenterId`
-	// * `loadObject`
-	// * `loadObjectPort`
-	ResourceInstances []GtmResourceResourceInstance `pulumi:"resourceInstances"`
-	// — Resource type
-	Type       string `pulumi:"type"`
-	UpperBound *int   `pulumi:"upperBound"`
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	AggregationType             string                        `pulumi:"aggregationType"`
+	ConstrainedProperty         *string                       `pulumi:"constrainedProperty"`
+	DecayRate                   *float64                      `pulumi:"decayRate"`
+	Description                 *string                       `pulumi:"description"`
+	Domain                      string                        `pulumi:"domain"`
+	HostHeader                  *string                       `pulumi:"hostHeader"`
+	LeaderString                *string                       `pulumi:"leaderString"`
+	LeastSquaresDecay           *float64                      `pulumi:"leastSquaresDecay"`
+	LoadImbalancePercentage     *float64                      `pulumi:"loadImbalancePercentage"`
+	MaxUMultiplicativeIncrement *float64                      `pulumi:"maxUMultiplicativeIncrement"`
+	Name                        *string                       `pulumi:"name"`
+	ResourceInstances           []GtmResourceResourceInstance `pulumi:"resourceInstances"`
+	Type                        string                        `pulumi:"type"`
+	UpperBound                  *int                          `pulumi:"upperBound"`
+	WaitOnComplete              *bool                         `pulumi:"waitOnComplete"`
 }
 
 // The set of arguments for constructing a GtmResource resource.
 type GtmResourceArgs struct {
-	AggregationType     pulumi.StringInput
-	ConstrainedProperty pulumi.StringPtrInput
-	DecayRate           pulumi.Float64PtrInput
-	Description         pulumi.StringPtrInput
-	// — Domain name
+	AggregationType             pulumi.StringInput
+	ConstrainedProperty         pulumi.StringPtrInput
+	DecayRate                   pulumi.Float64PtrInput
+	Description                 pulumi.StringPtrInput
 	Domain                      pulumi.StringInput
 	HostHeader                  pulumi.StringPtrInput
 	LeaderString                pulumi.StringPtrInput
 	LeastSquaresDecay           pulumi.Float64PtrInput
 	LoadImbalancePercentage     pulumi.Float64PtrInput
 	MaxUMultiplicativeIncrement pulumi.Float64PtrInput
-	// — Resource name
-	// * `aggregationType`
-	Name pulumi.StringPtrInput
-	// — (multiple allowed)
-	// * `datacenterId`
-	// * `loadObject`
-	// * `loadObjectPort`
-	ResourceInstances GtmResourceResourceInstanceArrayInput
-	// — Resource type
-	Type       pulumi.StringInput
-	UpperBound pulumi.IntPtrInput
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrInput
+	Name                        pulumi.StringPtrInput
+	ResourceInstances           GtmResourceResourceInstanceArrayInput
+	Type                        pulumi.StringInput
+	UpperBound                  pulumi.IntPtrInput
+	WaitOnComplete              pulumi.BoolPtrInput
 }
 
 func (GtmResourceArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*gtmResourceArgs)(nil)).Elem()
+}
+
+type GtmResourceInput interface {
+	pulumi.Input
+
+	ToGtmResourceOutput() GtmResourceOutput
+	ToGtmResourceOutputWithContext(ctx context.Context) GtmResourceOutput
+}
+
+func (GtmResource) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmResource)(nil)).Elem()
+}
+
+func (i GtmResource) ToGtmResourceOutput() GtmResourceOutput {
+	return i.ToGtmResourceOutputWithContext(context.Background())
+}
+
+func (i GtmResource) ToGtmResourceOutputWithContext(ctx context.Context) GtmResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmResourceOutput)
+}
+
+type GtmResourceOutput struct {
+	*pulumi.OutputState
+}
+
+func (GtmResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmResourceOutput)(nil)).Elem()
+}
+
+func (o GtmResourceOutput) ToGtmResourceOutput() GtmResourceOutput {
+	return o
+}
+
+func (o GtmResourceOutput) ToGtmResourceOutputWithContext(ctx context.Context) GtmResourceOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(GtmResourceOutput{})
 }

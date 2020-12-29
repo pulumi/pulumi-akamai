@@ -2,26 +2,12 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "../types/input";
-import * as outputs from "../types/output";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
-/**
- * Use `akamai.edgedns.getAuthoritiesSet` datasource to retrieve a contracts authorities set for use when creating new zones.
- *
- * ## Example Usage
- * ### Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = pulumi.output(akamai.edgedns.getAuthoritiesSet({
- *     contract: "ctr_xxxxx",
- * }, { async: true }));
- * ```
- */
+/** @deprecated akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet */
 export function getAuthoritiesSet(args: GetAuthoritiesSetArgs, opts?: pulumi.InvokeOptions): Promise<GetAuthoritiesSetResult> {
+    pulumi.log.warn("getAuthoritiesSet is deprecated: akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet")
     if (!opts) {
         opts = {}
     }
@@ -38,9 +24,6 @@ export function getAuthoritiesSet(args: GetAuthoritiesSetArgs, opts?: pulumi.Inv
  * A collection of arguments for invoking getAuthoritiesSet.
  */
 export interface GetAuthoritiesSetArgs {
-    /**
-     * — (Required) The contract ID.
-     */
     readonly contract: string;
 }
 
