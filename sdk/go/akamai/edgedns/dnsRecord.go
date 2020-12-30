@@ -4,310 +4,39 @@
 package edgedns
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// The `edgedns.DnsRecord` provides the resource for configuring a dns record to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
-//
-// ## Example Usage
-// ### Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/edgedns"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := edgedns.NewDnsRecord(ctx, "origin", &edgedns.DnsRecordArgs{
-// 			Active:     pulumi.Bool(true),
-// 			Recordtype: pulumi.String("A"),
-// 			Targets: pulumi.StringArray{
-// 				pulumi.String("192.0.2.42"),
-// 			},
-// 			Ttl:  pulumi.Int(30),
-// 			Zone: pulumi.String("origin.org"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = edgedns.NewDnsRecord(ctx, "www", &edgedns.DnsRecordArgs{
-// 			Active:     pulumi.Bool(true),
-// 			Recordtype: pulumi.String("CNAME"),
-// 			Targets:    "origin.example.org.edgesuite.net",
-// 			Ttl:        pulumi.Int(600),
-// 			Zone:       pulumi.String("example.com"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
-// ## Required Fields Per Record Type
-//
-// In addition to the fields listed in the prior section, type specific fields define the data makeup of each Record's data. This section identfies required fields per type.
-//
-// ### A Record
-//
-// The following field is required:
-//
-// * target - One or more IPv4 addresses, for example, 1.2.3.4.
-//
-// ### AAAA Record
-//
-// The following field is required:
-//
-// * target - One or more IPv6 addresses, for example, 2001:0db8::ff00:0042:8329.
-//
-// ### AFSDB Record
-//
-// The following fields are required:
-//
-// * target - The domain name of the host having a server for the cell named by the owner name of the resource record.
-// * subtype- An integer between 0 and 65535, indicating the type of service provided by the host.
-//
-// ### AKAMAICDN Record
-//
-// The following field is required:
-//
-// * target - DNS name representing selected Edge Hostname name+domain.
-//
-// ### AKAMAITLC Record
-//
-// No additional fields are required. The following fields are Computed.
-//
-// * dnsName - valid DNS name.
-// * answerType - answer type.
-//
-// ### CAA Record
-//
-// The following field are required:
-//
-// * target - One or more CA Authorizations. Each authorization contains three attributes: flags, property tag and property value.
-//
-// Example:
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		return nil
-// 	})
-// }
-// ```
-//
-// ### CERT Record
-//
-// The following fields are required:
-//
-// * typeValue - numeric certificate type value
-// * typeMnemonic - mnemonic certificate type value.
-// * keytag - value computed for the key embedded in the certificate
-// * algorithm - identifies the cryptographic algorithm used to create the signature.
-// * certificate - certificate data
-//
-// Note: Type can be configured either a numeric OR menmonic value. If both set, typeMnemonic takes precedent.
-//
-// ### CNAME Record
-//
-// The following field is required:
-//
-// * target - A domain name that specifies the canonical or primary name for the owner. The owner name is an alias.
-//
-// ### DNSKEY Record
-//
-// The following fields are required:
-//
-// * flags
-// * protocol - Must have the value 3. The DNSKEY resource record must be treated as invalid during signature verification if it contains a value other than 3.
-// * algorithm - The public key’s cryptographic algorithm and determine the format of the public key field.
-// * key - Base 64 encoded value representing the public key, the format of which depends on the algorithm being used.
-//
-// ### DS Record
-//
-// The following fields are required:
-//
-// * keytag - The key tag of the DNSKEY resource record referred to by the DS record, in network byte order.
-// * algorithm - The algorithm number of the DNSKEY resource record referred to by the DS record.
-// * digestType - Identifies the algorithm used to construct the digest.
-// * digest - The base 16 encoded DS record refers to a DNSKEY RR by including a digest of that DNSKEY RR. The digest is calculated by concatenating the canonical form of the fully qualified owner name of the DNSKEY RR with the DNSKEY RDATA, and then applying the digest algorithm.
-//
-// ### HINFO Record
-//
-// The following fields are required:
-//
-// * hardware - Type of hardware the host uses. A machine name or CPU type may be up to 40 characters taken from the set of uppercase letters, digits, and the two punctuation characters hyphen and slash. It must start with a letter, and end with a letter.
-// * software - Type of software the host uses. A system name may be up to 40 characters taken from the set of uppercase letters, digits, and the two punctuation characters hyphen and slash. It must start with a letter, and end with a letter or digit.
-//
-// ### LOC Record
-//
-// The following field is required:
-//
-// * target - A geographical location associated with a domain name.
-//
-// ### MX Record
-//
-// The following field is required:
-//
-// * target - One or more domain names that specifies a host willing to act as a mail exchange for the owner name.
-//
-// The following fields are optional depending on configuration type. See [DNS Getting Started Guide](https://www.terraform.io/docs/providers/akamai/g/get_started_dns_zone.html#working-with-mx-records) for more information.
-//
-// * priority - The preference value given to the MX record among MX records. When a mailer needs to send mail to a certain DNS domain, it first contacts a DNS server for that domain and retrieves all the MX records. It then contacts the mailer with the lowest preference value. Ignored if embedded priority specified in target
-// * priorityIncrement - auto priority increment when multiple targets are provided with no embedded priority.
-//
-// ### NAPTR Record
-//
-// The following fields are required:
-//
-// * order - A 16-bit unsigned integer specifying the order in which the NAPTR records MUST be processed to ensure the correct ordering ofrules. Low numbers are processed before high numbers, and once a NAPTR is found whose rule “matches” the target, the client MUST NOT consider any NAPTRs with a higher value for order (except as noted below for the Flags field).
-// * preference - A 16-bit unsigned integer that specifies the order in which NAPTR records with equal order values should be processed, low numbers being processed before high numbers.
-// * flagsnaptr - A <character-string> containing flags to control aspects of the rewriting and interpretation of the fields in the record. Flags are single characters from the set [A-Z0-9]. The case of the alphabetic characters is not significant.
-// * service - Specifies the services available down this rewrite path.
-// * regexp - A String containing a substitution expression that is applied to the original string held by the client in order to construct the next domain name to lookup.
-// * replacement - The next NAME to query for NAPTR, SRV, or address records depending on the value of the flags field. This MUST be a fully qualified domain-name.
-//
-// ### NS Record
-//
-// The following field is required:
-//
-// * target - One or more domain names that specify authoritative hosts for the specified class and domain.
-//
-// ### NSEC3 Record
-//
-// The following fields are required:
-//
-// * algorithm - The cryptographic hash algorithm used to construct the hash-value.
-// * flags - The 8 one-bit flags that can be used to indicate different processing. All undefined flags must be zero.
-// * iterations - The number of additional times the hash function has been performed.
-// * salt - The base 16 encoded salt value, which is appended to the original owner name before hashing in order to defend against pre-calculated dictionary attacks.
-// * nextHashedOwnerName - Base 32 encoded. The next hashed owner name in hash order. This value is in binary format. Given the ordered set of all hashed owner names, the Next Hashed Owner Name field contains the hash of an owner name that immediately follows the owner name of the given NSEC3 RR.
-// * typeBitmaps - The resource record set types that exist at the original owner name of the NSEC3 RR.
-//
-// ### NSEC3PARAM Record
-//
-// The following fields are required:
-//
-// * algorithm - The cryptographic hash algorithm used to construct the hash-value.
-// * flags - The 8 one-bit flags that can be used to indicate different processing. All undefined flags must be zero.
-// * iterations - The number of additional times the hash function has been performed.
-// * salt - The base 16 encoded salt value, which is appended to the original owner name before hashing in order to defend against pre-calculated dictionary attacks.
-//
-// ### PTR Record
-//
-// The following field is required:
-//
-// * target - A domain name that points to some location in the domain name space.
-//
-// ### RP Record
-//
-// The following fields are required:
-//
-// * mailbox - A domain name that specifies the mailbox for the responsible person.
-// * txt - A domain name for which TXT resource records exist.
-//
-// ### RRSIG Record
-//
-// The following fields are required:
-//
-// * typeCovered - The resource record set type covered by this signature.
-// * algorithm - The Algorithm Number field identifies the cryptographic algorithm used to create the signature.
-// * originalTtl - The TTL of the covered record set as it appears in the authoritative zone.
-// * expiration - The end point of this signature’s validity. The signature cannot be used for authentication past this point.
-// * inception - The start point of this signature’s validity. The signature cannot be used for authentication prior to this point.
-// * keytag - The Key Tag field contains the key tag value of the DNSKEY RR that validates this signature, in network byte order.
-// * signer - The owner of the DSNKEY resource record who validates this signature.
-// * signature - The base 64 encoded cryptographic signature that covers the RRSIG RDATA and covered record set. Format depends on the TSIG algorithm in use.
-// * labels - The Labels field specifies the number of labels in the original RRSIG RR owner name. The significance of this field is that a validator uses it to determine whether the answer was synthesized from a wildcard. If so, it can be used to determine what owner name was used in generating the signature.
-//
-// ### SPF Record
-//
-// The following field is required:
-//
-// * target - Indicates which hosts are, and are not, authorized to use a domain name for the “HELO” and “MAIL FROM” identities.
-//
-// ### SRV Record
-//
-// The following fields are required:
-//
-// * target - The domain name of the target host.
-// * priority - A 16-bit integer that specifies the preference given to this resource record among others at the same owner. Lower values are preferred.
-// * weight - A server selection mechanism, specifying a relative weight for entries with the same priority. Larger weights should be given a proportionately higher probability of being selected. The range of this number is 0–65535, a 16-bit unsigned integer in network byte order. Domain administrators should use Weight 0 when there isn’t any server selection to do, to make the RR easier to read for humans. In the presence of records containing weights greater than 0, records with weight 0 should have a very small chance of being selected.
-// * port - The port on this target of this service. The range of this number is 0–65535, a 16-bit unsigned integer in network byte order.
-//
-// ### SSHFP Record
-//
-// The following fields are required:
-//
-// * algorithm - Describes the algorithm of the public key. The following values are assigned: 0 = reserved; 1 = RSA; 2 = DSS, 3 = ECDSA
-// * fingerprintType - Describes the message-digest algorithm used to calculate the fingerprint of the public key. The following values are assigned: 0 = reserved, 1 = SHA-1, 2 = SHA-256
-// * fingerprint - The base 16 encoded fingerprint as calculated over the public key blob. The message-digest algorithm is presumed to produce an opaque octet string output, which is placed as-is in the RDATA fingerprint field.
-//
-// ### SOA Record
-//
-// The following fields are required:
-//
-// * nameServer - The domain name of the name server that was the original or primary source of data for this zone.
-// * emailAddress - A domain name that specifies the mailbox of this person responsible for this zone.
-// * serial - The unsigned version number between 0 and 214748364 of the original copy of the zone.
-// * refresh - A time interval between 0 and 214748364 before the zone should be refreshed.
-// * retry - A time interval between 0 and 214748364 that should elapse before a failed refresh should be retried.
-// * expiry - A time value between 0 and 214748364 that specifies the upper limit on the time interval that can elapse before the zone is no longer authoritative.
-// * nxdomainTtl - The unsigned minimum TTL between 0 and 214748364 that should be exported with any resource record from this zone.
-//
-// ### TLSA Record
-//
-// The following fields are required:
-//
-// * usage - specifies the provided association that will be used to match the certificate presented in the TLS handshake.
-// * selector - specifies which part of the TLS certificate presented by the server will be matched against the association data.
-// * matchType - specifies how the certificate association is presented.
-// * certificate - specifies the "certificate association data" to be matched.
-//
-// ### TXT Record
-//
-// The following field is required:
-//
-// * target - One or more character strings. TXT RRs are used to hold descriptive text. The semantics of the text depends on the domain where it is found.
+// Deprecated: akamai.edgedns.DnsRecord has been deprecated in favor of akamai.DnsRecord
 type DnsRecord struct {
 	pulumi.CustomResourceState
 
-	// — (Ignored, Boolean) Maintained for backward compatibility
-	Active          pulumi.BoolPtrOutput   `pulumi:"active"`
-	Algorithm       pulumi.IntPtrOutput    `pulumi:"algorithm"`
-	AnswerType      pulumi.StringOutput    `pulumi:"answerType"`
-	Certificate     pulumi.StringPtrOutput `pulumi:"certificate"`
-	Digest          pulumi.StringPtrOutput `pulumi:"digest"`
-	DigestType      pulumi.IntPtrOutput    `pulumi:"digestType"`
-	DnsName         pulumi.StringOutput    `pulumi:"dnsName"`
-	EmailAddress    pulumi.StringPtrOutput `pulumi:"emailAddress"`
-	Expiration      pulumi.StringPtrOutput `pulumi:"expiration"`
-	Expiry          pulumi.IntPtrOutput    `pulumi:"expiry"`
-	Fingerprint     pulumi.StringPtrOutput `pulumi:"fingerprint"`
-	FingerprintType pulumi.IntPtrOutput    `pulumi:"fingerprintType"`
-	Flags           pulumi.IntPtrOutput    `pulumi:"flags"`
-	Flagsnaptr      pulumi.StringPtrOutput `pulumi:"flagsnaptr"`
-	Hardware        pulumi.StringPtrOutput `pulumi:"hardware"`
-	Inception       pulumi.StringPtrOutput `pulumi:"inception"`
-	Iterations      pulumi.IntPtrOutput    `pulumi:"iterations"`
-	Key             pulumi.StringPtrOutput `pulumi:"key"`
-	Keytag          pulumi.IntPtrOutput    `pulumi:"keytag"`
-	Labels          pulumi.IntPtrOutput    `pulumi:"labels"`
-	Mailbox         pulumi.StringPtrOutput `pulumi:"mailbox"`
-	MatchType       pulumi.IntPtrOutput    `pulumi:"matchType"`
-	// — (Required) The name of the record. The name is an owner name, that is, the name of the node to which this resource record pertains.
+	Active              pulumi.BoolPtrOutput     `pulumi:"active"`
+	Algorithm           pulumi.IntPtrOutput      `pulumi:"algorithm"`
+	AnswerType          pulumi.StringOutput      `pulumi:"answerType"`
+	Certificate         pulumi.StringPtrOutput   `pulumi:"certificate"`
+	Digest              pulumi.StringPtrOutput   `pulumi:"digest"`
+	DigestType          pulumi.IntPtrOutput      `pulumi:"digestType"`
+	DnsName             pulumi.StringOutput      `pulumi:"dnsName"`
+	EmailAddress        pulumi.StringPtrOutput   `pulumi:"emailAddress"`
+	Expiration          pulumi.StringPtrOutput   `pulumi:"expiration"`
+	Expiry              pulumi.IntPtrOutput      `pulumi:"expiry"`
+	Fingerprint         pulumi.StringPtrOutput   `pulumi:"fingerprint"`
+	FingerprintType     pulumi.IntPtrOutput      `pulumi:"fingerprintType"`
+	Flags               pulumi.IntPtrOutput      `pulumi:"flags"`
+	Flagsnaptr          pulumi.StringPtrOutput   `pulumi:"flagsnaptr"`
+	Hardware            pulumi.StringPtrOutput   `pulumi:"hardware"`
+	Inception           pulumi.StringPtrOutput   `pulumi:"inception"`
+	Iterations          pulumi.IntPtrOutput      `pulumi:"iterations"`
+	Key                 pulumi.StringPtrOutput   `pulumi:"key"`
+	Keytag              pulumi.IntPtrOutput      `pulumi:"keytag"`
+	Labels              pulumi.IntPtrOutput      `pulumi:"labels"`
+	Mailbox             pulumi.StringPtrOutput   `pulumi:"mailbox"`
+	MatchType           pulumi.IntPtrOutput      `pulumi:"matchType"`
 	Name                pulumi.StringOutput      `pulumi:"name"`
 	NameServer          pulumi.StringPtrOutput   `pulumi:"nameServer"`
 	NextHashedOwnerName pulumi.StringPtrOutput   `pulumi:"nextHashedOwnerName"`
@@ -334,33 +63,32 @@ type DnsRecord struct {
 	Software            pulumi.StringPtrOutput   `pulumi:"software"`
 	Subtype             pulumi.IntPtrOutput      `pulumi:"subtype"`
 	Targets             pulumi.StringArrayOutput `pulumi:"targets"`
-	// — (Required,Boolean) The TTL is a 32-bit signed integer that specifies the time interval that the resource record may be cached before the source of the information should be consulted again. Zero values are interpreted to mean that the RR can only be used for the transaction in progress, and should not be cached. Zero values can also be used for extremely volatile data.
-	Ttl          pulumi.IntOutput       `pulumi:"ttl"`
-	Txt          pulumi.StringPtrOutput `pulumi:"txt"`
-	TypeBitmaps  pulumi.StringPtrOutput `pulumi:"typeBitmaps"`
-	TypeCovered  pulumi.StringPtrOutput `pulumi:"typeCovered"`
-	TypeMnemonic pulumi.StringPtrOutput `pulumi:"typeMnemonic"`
-	TypeValue    pulumi.IntPtrOutput    `pulumi:"typeValue"`
-	Usage        pulumi.IntPtrOutput    `pulumi:"usage"`
-	Weight       pulumi.IntPtrOutput    `pulumi:"weight"`
-	// — (Required) Domain zone, encapsulating any nested subdomains.
-	Zone pulumi.StringOutput `pulumi:"zone"`
+	Ttl                 pulumi.IntOutput         `pulumi:"ttl"`
+	Txt                 pulumi.StringPtrOutput   `pulumi:"txt"`
+	TypeBitmaps         pulumi.StringPtrOutput   `pulumi:"typeBitmaps"`
+	TypeCovered         pulumi.StringPtrOutput   `pulumi:"typeCovered"`
+	TypeMnemonic        pulumi.StringPtrOutput   `pulumi:"typeMnemonic"`
+	TypeValue           pulumi.IntPtrOutput      `pulumi:"typeValue"`
+	Usage               pulumi.IntPtrOutput      `pulumi:"usage"`
+	Weight              pulumi.IntPtrOutput      `pulumi:"weight"`
+	Zone                pulumi.StringOutput      `pulumi:"zone"`
 }
 
 // NewDnsRecord registers a new resource with the given unique name, arguments, and options.
 func NewDnsRecord(ctx *pulumi.Context,
 	name string, args *DnsRecordArgs, opts ...pulumi.ResourceOption) (*DnsRecord, error) {
-	if args == nil || args.Recordtype == nil {
-		return nil, errors.New("missing required argument 'Recordtype'")
-	}
-	if args == nil || args.Ttl == nil {
-		return nil, errors.New("missing required argument 'Ttl'")
-	}
-	if args == nil || args.Zone == nil {
-		return nil, errors.New("missing required argument 'Zone'")
-	}
 	if args == nil {
-		args = &DnsRecordArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.Recordtype == nil {
+		return nil, errors.New("invalid value for required argument 'Recordtype'")
+	}
+	if args.Ttl == nil {
+		return nil, errors.New("invalid value for required argument 'Ttl'")
+	}
+	if args.Zone == nil {
+		return nil, errors.New("invalid value for required argument 'Zone'")
 	}
 	var resource DnsRecord
 	err := ctx.RegisterResource("akamai:edgedns/dnsRecord:DnsRecord", name, args, &resource, opts...)
@@ -384,30 +112,28 @@ func GetDnsRecord(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DnsRecord resources.
 type dnsRecordState struct {
-	// — (Ignored, Boolean) Maintained for backward compatibility
-	Active          *bool   `pulumi:"active"`
-	Algorithm       *int    `pulumi:"algorithm"`
-	AnswerType      *string `pulumi:"answerType"`
-	Certificate     *string `pulumi:"certificate"`
-	Digest          *string `pulumi:"digest"`
-	DigestType      *int    `pulumi:"digestType"`
-	DnsName         *string `pulumi:"dnsName"`
-	EmailAddress    *string `pulumi:"emailAddress"`
-	Expiration      *string `pulumi:"expiration"`
-	Expiry          *int    `pulumi:"expiry"`
-	Fingerprint     *string `pulumi:"fingerprint"`
-	FingerprintType *int    `pulumi:"fingerprintType"`
-	Flags           *int    `pulumi:"flags"`
-	Flagsnaptr      *string `pulumi:"flagsnaptr"`
-	Hardware        *string `pulumi:"hardware"`
-	Inception       *string `pulumi:"inception"`
-	Iterations      *int    `pulumi:"iterations"`
-	Key             *string `pulumi:"key"`
-	Keytag          *int    `pulumi:"keytag"`
-	Labels          *int    `pulumi:"labels"`
-	Mailbox         *string `pulumi:"mailbox"`
-	MatchType       *int    `pulumi:"matchType"`
-	// — (Required) The name of the record. The name is an owner name, that is, the name of the node to which this resource record pertains.
+	Active              *bool    `pulumi:"active"`
+	Algorithm           *int     `pulumi:"algorithm"`
+	AnswerType          *string  `pulumi:"answerType"`
+	Certificate         *string  `pulumi:"certificate"`
+	Digest              *string  `pulumi:"digest"`
+	DigestType          *int     `pulumi:"digestType"`
+	DnsName             *string  `pulumi:"dnsName"`
+	EmailAddress        *string  `pulumi:"emailAddress"`
+	Expiration          *string  `pulumi:"expiration"`
+	Expiry              *int     `pulumi:"expiry"`
+	Fingerprint         *string  `pulumi:"fingerprint"`
+	FingerprintType     *int     `pulumi:"fingerprintType"`
+	Flags               *int     `pulumi:"flags"`
+	Flagsnaptr          *string  `pulumi:"flagsnaptr"`
+	Hardware            *string  `pulumi:"hardware"`
+	Inception           *string  `pulumi:"inception"`
+	Iterations          *int     `pulumi:"iterations"`
+	Key                 *string  `pulumi:"key"`
+	Keytag              *int     `pulumi:"keytag"`
+	Labels              *int     `pulumi:"labels"`
+	Mailbox             *string  `pulumi:"mailbox"`
+	MatchType           *int     `pulumi:"matchType"`
 	Name                *string  `pulumi:"name"`
 	NameServer          *string  `pulumi:"nameServer"`
 	NextHashedOwnerName *string  `pulumi:"nextHashedOwnerName"`
@@ -434,44 +160,40 @@ type dnsRecordState struct {
 	Software            *string  `pulumi:"software"`
 	Subtype             *int     `pulumi:"subtype"`
 	Targets             []string `pulumi:"targets"`
-	// — (Required,Boolean) The TTL is a 32-bit signed integer that specifies the time interval that the resource record may be cached before the source of the information should be consulted again. Zero values are interpreted to mean that the RR can only be used for the transaction in progress, and should not be cached. Zero values can also be used for extremely volatile data.
-	Ttl          *int    `pulumi:"ttl"`
-	Txt          *string `pulumi:"txt"`
-	TypeBitmaps  *string `pulumi:"typeBitmaps"`
-	TypeCovered  *string `pulumi:"typeCovered"`
-	TypeMnemonic *string `pulumi:"typeMnemonic"`
-	TypeValue    *int    `pulumi:"typeValue"`
-	Usage        *int    `pulumi:"usage"`
-	Weight       *int    `pulumi:"weight"`
-	// — (Required) Domain zone, encapsulating any nested subdomains.
-	Zone *string `pulumi:"zone"`
+	Ttl                 *int     `pulumi:"ttl"`
+	Txt                 *string  `pulumi:"txt"`
+	TypeBitmaps         *string  `pulumi:"typeBitmaps"`
+	TypeCovered         *string  `pulumi:"typeCovered"`
+	TypeMnemonic        *string  `pulumi:"typeMnemonic"`
+	TypeValue           *int     `pulumi:"typeValue"`
+	Usage               *int     `pulumi:"usage"`
+	Weight              *int     `pulumi:"weight"`
+	Zone                *string  `pulumi:"zone"`
 }
 
 type DnsRecordState struct {
-	// — (Ignored, Boolean) Maintained for backward compatibility
-	Active          pulumi.BoolPtrInput
-	Algorithm       pulumi.IntPtrInput
-	AnswerType      pulumi.StringPtrInput
-	Certificate     pulumi.StringPtrInput
-	Digest          pulumi.StringPtrInput
-	DigestType      pulumi.IntPtrInput
-	DnsName         pulumi.StringPtrInput
-	EmailAddress    pulumi.StringPtrInput
-	Expiration      pulumi.StringPtrInput
-	Expiry          pulumi.IntPtrInput
-	Fingerprint     pulumi.StringPtrInput
-	FingerprintType pulumi.IntPtrInput
-	Flags           pulumi.IntPtrInput
-	Flagsnaptr      pulumi.StringPtrInput
-	Hardware        pulumi.StringPtrInput
-	Inception       pulumi.StringPtrInput
-	Iterations      pulumi.IntPtrInput
-	Key             pulumi.StringPtrInput
-	Keytag          pulumi.IntPtrInput
-	Labels          pulumi.IntPtrInput
-	Mailbox         pulumi.StringPtrInput
-	MatchType       pulumi.IntPtrInput
-	// — (Required) The name of the record. The name is an owner name, that is, the name of the node to which this resource record pertains.
+	Active              pulumi.BoolPtrInput
+	Algorithm           pulumi.IntPtrInput
+	AnswerType          pulumi.StringPtrInput
+	Certificate         pulumi.StringPtrInput
+	Digest              pulumi.StringPtrInput
+	DigestType          pulumi.IntPtrInput
+	DnsName             pulumi.StringPtrInput
+	EmailAddress        pulumi.StringPtrInput
+	Expiration          pulumi.StringPtrInput
+	Expiry              pulumi.IntPtrInput
+	Fingerprint         pulumi.StringPtrInput
+	FingerprintType     pulumi.IntPtrInput
+	Flags               pulumi.IntPtrInput
+	Flagsnaptr          pulumi.StringPtrInput
+	Hardware            pulumi.StringPtrInput
+	Inception           pulumi.StringPtrInput
+	Iterations          pulumi.IntPtrInput
+	Key                 pulumi.StringPtrInput
+	Keytag              pulumi.IntPtrInput
+	Labels              pulumi.IntPtrInput
+	Mailbox             pulumi.StringPtrInput
+	MatchType           pulumi.IntPtrInput
 	Name                pulumi.StringPtrInput
 	NameServer          pulumi.StringPtrInput
 	NextHashedOwnerName pulumi.StringPtrInput
@@ -498,17 +220,15 @@ type DnsRecordState struct {
 	Software            pulumi.StringPtrInput
 	Subtype             pulumi.IntPtrInput
 	Targets             pulumi.StringArrayInput
-	// — (Required,Boolean) The TTL is a 32-bit signed integer that specifies the time interval that the resource record may be cached before the source of the information should be consulted again. Zero values are interpreted to mean that the RR can only be used for the transaction in progress, and should not be cached. Zero values can also be used for extremely volatile data.
-	Ttl          pulumi.IntPtrInput
-	Txt          pulumi.StringPtrInput
-	TypeBitmaps  pulumi.StringPtrInput
-	TypeCovered  pulumi.StringPtrInput
-	TypeMnemonic pulumi.StringPtrInput
-	TypeValue    pulumi.IntPtrInput
-	Usage        pulumi.IntPtrInput
-	Weight       pulumi.IntPtrInput
-	// — (Required) Domain zone, encapsulating any nested subdomains.
-	Zone pulumi.StringPtrInput
+	Ttl                 pulumi.IntPtrInput
+	Txt                 pulumi.StringPtrInput
+	TypeBitmaps         pulumi.StringPtrInput
+	TypeCovered         pulumi.StringPtrInput
+	TypeMnemonic        pulumi.StringPtrInput
+	TypeValue           pulumi.IntPtrInput
+	Usage               pulumi.IntPtrInput
+	Weight              pulumi.IntPtrInput
+	Zone                pulumi.StringPtrInput
 }
 
 func (DnsRecordState) ElementType() reflect.Type {
@@ -516,28 +236,26 @@ func (DnsRecordState) ElementType() reflect.Type {
 }
 
 type dnsRecordArgs struct {
-	// — (Ignored, Boolean) Maintained for backward compatibility
-	Active          *bool   `pulumi:"active"`
-	Algorithm       *int    `pulumi:"algorithm"`
-	Certificate     *string `pulumi:"certificate"`
-	Digest          *string `pulumi:"digest"`
-	DigestType      *int    `pulumi:"digestType"`
-	EmailAddress    *string `pulumi:"emailAddress"`
-	Expiration      *string `pulumi:"expiration"`
-	Expiry          *int    `pulumi:"expiry"`
-	Fingerprint     *string `pulumi:"fingerprint"`
-	FingerprintType *int    `pulumi:"fingerprintType"`
-	Flags           *int    `pulumi:"flags"`
-	Flagsnaptr      *string `pulumi:"flagsnaptr"`
-	Hardware        *string `pulumi:"hardware"`
-	Inception       *string `pulumi:"inception"`
-	Iterations      *int    `pulumi:"iterations"`
-	Key             *string `pulumi:"key"`
-	Keytag          *int    `pulumi:"keytag"`
-	Labels          *int    `pulumi:"labels"`
-	Mailbox         *string `pulumi:"mailbox"`
-	MatchType       *int    `pulumi:"matchType"`
-	// — (Required) The name of the record. The name is an owner name, that is, the name of the node to which this resource record pertains.
+	Active              *bool    `pulumi:"active"`
+	Algorithm           *int     `pulumi:"algorithm"`
+	Certificate         *string  `pulumi:"certificate"`
+	Digest              *string  `pulumi:"digest"`
+	DigestType          *int     `pulumi:"digestType"`
+	EmailAddress        *string  `pulumi:"emailAddress"`
+	Expiration          *string  `pulumi:"expiration"`
+	Expiry              *int     `pulumi:"expiry"`
+	Fingerprint         *string  `pulumi:"fingerprint"`
+	FingerprintType     *int     `pulumi:"fingerprintType"`
+	Flags               *int     `pulumi:"flags"`
+	Flagsnaptr          *string  `pulumi:"flagsnaptr"`
+	Hardware            *string  `pulumi:"hardware"`
+	Inception           *string  `pulumi:"inception"`
+	Iterations          *int     `pulumi:"iterations"`
+	Key                 *string  `pulumi:"key"`
+	Keytag              *int     `pulumi:"keytag"`
+	Labels              *int     `pulumi:"labels"`
+	Mailbox             *string  `pulumi:"mailbox"`
+	MatchType           *int     `pulumi:"matchType"`
 	Name                *string  `pulumi:"name"`
 	NameServer          *string  `pulumi:"nameServer"`
 	NextHashedOwnerName *string  `pulumi:"nextHashedOwnerName"`
@@ -562,43 +280,39 @@ type dnsRecordArgs struct {
 	Software            *string  `pulumi:"software"`
 	Subtype             *int     `pulumi:"subtype"`
 	Targets             []string `pulumi:"targets"`
-	// — (Required,Boolean) The TTL is a 32-bit signed integer that specifies the time interval that the resource record may be cached before the source of the information should be consulted again. Zero values are interpreted to mean that the RR can only be used for the transaction in progress, and should not be cached. Zero values can also be used for extremely volatile data.
-	Ttl          int     `pulumi:"ttl"`
-	Txt          *string `pulumi:"txt"`
-	TypeBitmaps  *string `pulumi:"typeBitmaps"`
-	TypeCovered  *string `pulumi:"typeCovered"`
-	TypeMnemonic *string `pulumi:"typeMnemonic"`
-	TypeValue    *int    `pulumi:"typeValue"`
-	Usage        *int    `pulumi:"usage"`
-	Weight       *int    `pulumi:"weight"`
-	// — (Required) Domain zone, encapsulating any nested subdomains.
-	Zone string `pulumi:"zone"`
+	Ttl                 int      `pulumi:"ttl"`
+	Txt                 *string  `pulumi:"txt"`
+	TypeBitmaps         *string  `pulumi:"typeBitmaps"`
+	TypeCovered         *string  `pulumi:"typeCovered"`
+	TypeMnemonic        *string  `pulumi:"typeMnemonic"`
+	TypeValue           *int     `pulumi:"typeValue"`
+	Usage               *int     `pulumi:"usage"`
+	Weight              *int     `pulumi:"weight"`
+	Zone                string   `pulumi:"zone"`
 }
 
 // The set of arguments for constructing a DnsRecord resource.
 type DnsRecordArgs struct {
-	// — (Ignored, Boolean) Maintained for backward compatibility
-	Active          pulumi.BoolPtrInput
-	Algorithm       pulumi.IntPtrInput
-	Certificate     pulumi.StringPtrInput
-	Digest          pulumi.StringPtrInput
-	DigestType      pulumi.IntPtrInput
-	EmailAddress    pulumi.StringPtrInput
-	Expiration      pulumi.StringPtrInput
-	Expiry          pulumi.IntPtrInput
-	Fingerprint     pulumi.StringPtrInput
-	FingerprintType pulumi.IntPtrInput
-	Flags           pulumi.IntPtrInput
-	Flagsnaptr      pulumi.StringPtrInput
-	Hardware        pulumi.StringPtrInput
-	Inception       pulumi.StringPtrInput
-	Iterations      pulumi.IntPtrInput
-	Key             pulumi.StringPtrInput
-	Keytag          pulumi.IntPtrInput
-	Labels          pulumi.IntPtrInput
-	Mailbox         pulumi.StringPtrInput
-	MatchType       pulumi.IntPtrInput
-	// — (Required) The name of the record. The name is an owner name, that is, the name of the node to which this resource record pertains.
+	Active              pulumi.BoolPtrInput
+	Algorithm           pulumi.IntPtrInput
+	Certificate         pulumi.StringPtrInput
+	Digest              pulumi.StringPtrInput
+	DigestType          pulumi.IntPtrInput
+	EmailAddress        pulumi.StringPtrInput
+	Expiration          pulumi.StringPtrInput
+	Expiry              pulumi.IntPtrInput
+	Fingerprint         pulumi.StringPtrInput
+	FingerprintType     pulumi.IntPtrInput
+	Flags               pulumi.IntPtrInput
+	Flagsnaptr          pulumi.StringPtrInput
+	Hardware            pulumi.StringPtrInput
+	Inception           pulumi.StringPtrInput
+	Iterations          pulumi.IntPtrInput
+	Key                 pulumi.StringPtrInput
+	Keytag              pulumi.IntPtrInput
+	Labels              pulumi.IntPtrInput
+	Mailbox             pulumi.StringPtrInput
+	MatchType           pulumi.IntPtrInput
 	Name                pulumi.StringPtrInput
 	NameServer          pulumi.StringPtrInput
 	NextHashedOwnerName pulumi.StringPtrInput
@@ -623,19 +337,56 @@ type DnsRecordArgs struct {
 	Software            pulumi.StringPtrInput
 	Subtype             pulumi.IntPtrInput
 	Targets             pulumi.StringArrayInput
-	// — (Required,Boolean) The TTL is a 32-bit signed integer that specifies the time interval that the resource record may be cached before the source of the information should be consulted again. Zero values are interpreted to mean that the RR can only be used for the transaction in progress, and should not be cached. Zero values can also be used for extremely volatile data.
-	Ttl          pulumi.IntInput
-	Txt          pulumi.StringPtrInput
-	TypeBitmaps  pulumi.StringPtrInput
-	TypeCovered  pulumi.StringPtrInput
-	TypeMnemonic pulumi.StringPtrInput
-	TypeValue    pulumi.IntPtrInput
-	Usage        pulumi.IntPtrInput
-	Weight       pulumi.IntPtrInput
-	// — (Required) Domain zone, encapsulating any nested subdomains.
-	Zone pulumi.StringInput
+	Ttl                 pulumi.IntInput
+	Txt                 pulumi.StringPtrInput
+	TypeBitmaps         pulumi.StringPtrInput
+	TypeCovered         pulumi.StringPtrInput
+	TypeMnemonic        pulumi.StringPtrInput
+	TypeValue           pulumi.IntPtrInput
+	Usage               pulumi.IntPtrInput
+	Weight              pulumi.IntPtrInput
+	Zone                pulumi.StringInput
 }
 
 func (DnsRecordArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*dnsRecordArgs)(nil)).Elem()
+}
+
+type DnsRecordInput interface {
+	pulumi.Input
+
+	ToDnsRecordOutput() DnsRecordOutput
+	ToDnsRecordOutputWithContext(ctx context.Context) DnsRecordOutput
+}
+
+func (DnsRecord) ElementType() reflect.Type {
+	return reflect.TypeOf((*DnsRecord)(nil)).Elem()
+}
+
+func (i DnsRecord) ToDnsRecordOutput() DnsRecordOutput {
+	return i.ToDnsRecordOutputWithContext(context.Background())
+}
+
+func (i DnsRecord) ToDnsRecordOutputWithContext(ctx context.Context) DnsRecordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DnsRecordOutput)
+}
+
+type DnsRecordOutput struct {
+	*pulumi.OutputState
+}
+
+func (DnsRecordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DnsRecordOutput)(nil)).Elem()
+}
+
+func (o DnsRecordOutput) ToDnsRecordOutput() DnsRecordOutput {
+	return o
+}
+
+func (o DnsRecordOutput) ToDnsRecordOutputWithContext(ctx context.Context) DnsRecordOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(DnsRecordOutput{})
 }

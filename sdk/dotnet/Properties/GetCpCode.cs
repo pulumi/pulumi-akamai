@@ -9,15 +9,9 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Properties
 {
+    [Obsolete(@"akamai.properties.getCpCode has been deprecated in favor of akamai.getCpCode")]
     public static class GetCpCode
     {
-        /// <summary>
-        /// Use `akamai.properties.CpCode` data source to retrieve a group id.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% /examples %}}
-        /// </summary>
         public static Task<GetCpCodeResult> InvokeAsync(GetCpCodeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetCpCodeResult>("akamai:properties/getCpCode:getCpCode", args ?? new GetCpCodeArgs(), options.WithVersion());
     }
@@ -25,21 +19,18 @@ namespace Pulumi.Akamai.Properties
 
     public sealed class GetCpCodeArgs : Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// — (Required) The contract ID
-        /// </summary>
-        [Input("contract", required: true)]
-        public string Contract { get; set; } = null!;
+        [Input("contract")]
+        public string? Contract { get; set; }
 
-        /// <summary>
-        /// — (Required) The group ID
-        /// </summary>
-        [Input("group", required: true)]
-        public string Group { get; set; } = null!;
+        [Input("contractId")]
+        public string? ContractId { get; set; }
 
-        /// <summary>
-        /// — (Required) The CP code name.
-        /// </summary>
+        [Input("group")]
+        public string? Group { get; set; }
+
+        [Input("groupId")]
+        public string? GroupId { get; set; }
+
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
 
@@ -53,27 +44,39 @@ namespace Pulumi.Akamai.Properties
     public sealed class GetCpCodeResult
     {
         public readonly string Contract;
+        public readonly string ContractId;
         public readonly string Group;
+        public readonly string GroupId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
         public readonly string Name;
+        public readonly ImmutableArray<string> ProductIds;
 
         [OutputConstructor]
         private GetCpCodeResult(
             string contract,
 
+            string contractId,
+
             string group,
+
+            string groupId,
 
             string id,
 
-            string name)
+            string name,
+
+            ImmutableArray<string> productIds)
         {
             Contract = contract;
+            ContractId = contractId;
             Group = group;
+            GroupId = groupId;
             Id = id;
             Name = name;
+            ProductIds = productIds;
         }
     }
 }

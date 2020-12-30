@@ -4,93 +4,51 @@
 package edgedns
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// The `edgedns.DnsZone` provides the resource for configuring a dns zone to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
-//
-// ## Example Usage
-// ### Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/edgedns"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := edgedns.NewDnsZone(ctx, "demozone", &edgedns.DnsZoneArgs{
-// 			Comment:  pulumi.String("some comment"),
-// 			Contract: pulumi.String("ctr_XXX"),
-// 			Group:    pulumi.String("100"),
-// 			Masters: pulumi.StringArray{
-// 				pulumi.String("1.2.3.4"),
-// 				pulumi.String("1.2.3.5"),
-// 			},
-// 			SignAndServe: pulumi.Bool(false),
-// 			Type:         pulumi.String("secondary"),
-// 			Zone:         pulumi.String("example.com"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
+// Deprecated: akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone
 type DnsZone struct {
 	pulumi.CustomResourceState
 
-	ActivationState pulumi.StringOutput `pulumi:"activationState"`
-	AliasCount      pulumi.IntOutput    `pulumi:"aliasCount"`
-	// — (Required) A descriptive comment.
-	Comment pulumi.StringPtrOutput `pulumi:"comment"`
-	// — (Required) The contract ID.
-	Contract pulumi.StringOutput `pulumi:"contract"`
-	// — (Optional)
-	EndCustomerId pulumi.StringPtrOutput `pulumi:"endCustomerId"`
-	// — (Required) The currently selected group ID.
-	Group pulumi.StringOutput `pulumi:"group"`
-	// — (Required for Secondary) The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
-	Masters pulumi.StringArrayOutput `pulumi:"masters"`
-	// — (Optional) Whether DNSSEC Sign&Serve is enabled.
-	SignAndServe pulumi.BoolPtrOutput `pulumi:"signAndServe"`
-	// — (Optional) Algorithm used by Sign&Serve.
-	SignAndServeAlgorithm pulumi.StringPtrOutput `pulumi:"signAndServeAlgorithm"`
-	// — (Required for Alias)
-	Target pulumi.StringPtrOutput `pulumi:"target"`
-	// — (Optional) TSIG Key used in secure zone transfers
-	TsigKey DnsZoneTsigKeyPtrOutput `pulumi:"tsigKey"`
-	// — (Required) Whether the zone is primary or secondary.
-	Type      pulumi.StringOutput `pulumi:"type"`
-	VersionId pulumi.StringOutput `pulumi:"versionId"`
-	// — (Required) Domain zone, encapsulating any nested subdomains.
-	Zone pulumi.StringOutput `pulumi:"zone"`
+	ActivationState       pulumi.StringOutput      `pulumi:"activationState"`
+	AliasCount            pulumi.IntOutput         `pulumi:"aliasCount"`
+	Comment               pulumi.StringPtrOutput   `pulumi:"comment"`
+	Contract              pulumi.StringOutput      `pulumi:"contract"`
+	EndCustomerId         pulumi.StringPtrOutput   `pulumi:"endCustomerId"`
+	Group                 pulumi.StringOutput      `pulumi:"group"`
+	Masters               pulumi.StringArrayOutput `pulumi:"masters"`
+	SignAndServe          pulumi.BoolPtrOutput     `pulumi:"signAndServe"`
+	SignAndServeAlgorithm pulumi.StringPtrOutput   `pulumi:"signAndServeAlgorithm"`
+	Target                pulumi.StringPtrOutput   `pulumi:"target"`
+	TsigKey               DnsZoneTsigKeyPtrOutput  `pulumi:"tsigKey"`
+	Type                  pulumi.StringOutput      `pulumi:"type"`
+	VersionId             pulumi.StringOutput      `pulumi:"versionId"`
+	Zone                  pulumi.StringOutput      `pulumi:"zone"`
 }
 
 // NewDnsZone registers a new resource with the given unique name, arguments, and options.
 func NewDnsZone(ctx *pulumi.Context,
 	name string, args *DnsZoneArgs, opts ...pulumi.ResourceOption) (*DnsZone, error) {
-	if args == nil || args.Contract == nil {
-		return nil, errors.New("missing required argument 'Contract'")
-	}
-	if args == nil || args.Group == nil {
-		return nil, errors.New("missing required argument 'Group'")
-	}
-	if args == nil || args.Type == nil {
-		return nil, errors.New("missing required argument 'Type'")
-	}
-	if args == nil || args.Zone == nil {
-		return nil, errors.New("missing required argument 'Zone'")
-	}
 	if args == nil {
-		args = &DnsZoneArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.Contract == nil {
+		return nil, errors.New("invalid value for required argument 'Contract'")
+	}
+	if args.Group == nil {
+		return nil, errors.New("invalid value for required argument 'Group'")
+	}
+	if args.Type == nil {
+		return nil, errors.New("invalid value for required argument 'Type'")
+	}
+	if args.Zone == nil {
+		return nil, errors.New("invalid value for required argument 'Zone'")
 	}
 	var resource DnsZone
 	err := ctx.RegisterResource("akamai:edgedns/dnsZone:DnsZone", name, args, &resource, opts...)
@@ -114,59 +72,37 @@ func GetDnsZone(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DnsZone resources.
 type dnsZoneState struct {
-	ActivationState *string `pulumi:"activationState"`
-	AliasCount      *int    `pulumi:"aliasCount"`
-	// — (Required) A descriptive comment.
-	Comment *string `pulumi:"comment"`
-	// — (Required) The contract ID.
-	Contract *string `pulumi:"contract"`
-	// — (Optional)
-	EndCustomerId *string `pulumi:"endCustomerId"`
-	// — (Required) The currently selected group ID.
-	Group *string `pulumi:"group"`
-	// — (Required for Secondary) The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
-	Masters []string `pulumi:"masters"`
-	// — (Optional) Whether DNSSEC Sign&Serve is enabled.
-	SignAndServe *bool `pulumi:"signAndServe"`
-	// — (Optional) Algorithm used by Sign&Serve.
-	SignAndServeAlgorithm *string `pulumi:"signAndServeAlgorithm"`
-	// — (Required for Alias)
-	Target *string `pulumi:"target"`
-	// — (Optional) TSIG Key used in secure zone transfers
-	TsigKey *DnsZoneTsigKey `pulumi:"tsigKey"`
-	// — (Required) Whether the zone is primary or secondary.
-	Type      *string `pulumi:"type"`
-	VersionId *string `pulumi:"versionId"`
-	// — (Required) Domain zone, encapsulating any nested subdomains.
-	Zone *string `pulumi:"zone"`
+	ActivationState       *string         `pulumi:"activationState"`
+	AliasCount            *int            `pulumi:"aliasCount"`
+	Comment               *string         `pulumi:"comment"`
+	Contract              *string         `pulumi:"contract"`
+	EndCustomerId         *string         `pulumi:"endCustomerId"`
+	Group                 *string         `pulumi:"group"`
+	Masters               []string        `pulumi:"masters"`
+	SignAndServe          *bool           `pulumi:"signAndServe"`
+	SignAndServeAlgorithm *string         `pulumi:"signAndServeAlgorithm"`
+	Target                *string         `pulumi:"target"`
+	TsigKey               *DnsZoneTsigKey `pulumi:"tsigKey"`
+	Type                  *string         `pulumi:"type"`
+	VersionId             *string         `pulumi:"versionId"`
+	Zone                  *string         `pulumi:"zone"`
 }
 
 type DnsZoneState struct {
-	ActivationState pulumi.StringPtrInput
-	AliasCount      pulumi.IntPtrInput
-	// — (Required) A descriptive comment.
-	Comment pulumi.StringPtrInput
-	// — (Required) The contract ID.
-	Contract pulumi.StringPtrInput
-	// — (Optional)
-	EndCustomerId pulumi.StringPtrInput
-	// — (Required) The currently selected group ID.
-	Group pulumi.StringPtrInput
-	// — (Required for Secondary) The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
-	Masters pulumi.StringArrayInput
-	// — (Optional) Whether DNSSEC Sign&Serve is enabled.
-	SignAndServe pulumi.BoolPtrInput
-	// — (Optional) Algorithm used by Sign&Serve.
+	ActivationState       pulumi.StringPtrInput
+	AliasCount            pulumi.IntPtrInput
+	Comment               pulumi.StringPtrInput
+	Contract              pulumi.StringPtrInput
+	EndCustomerId         pulumi.StringPtrInput
+	Group                 pulumi.StringPtrInput
+	Masters               pulumi.StringArrayInput
+	SignAndServe          pulumi.BoolPtrInput
 	SignAndServeAlgorithm pulumi.StringPtrInput
-	// — (Required for Alias)
-	Target pulumi.StringPtrInput
-	// — (Optional) TSIG Key used in secure zone transfers
-	TsigKey DnsZoneTsigKeyPtrInput
-	// — (Required) Whether the zone is primary or secondary.
-	Type      pulumi.StringPtrInput
-	VersionId pulumi.StringPtrInput
-	// — (Required) Domain zone, encapsulating any nested subdomains.
-	Zone pulumi.StringPtrInput
+	Target                pulumi.StringPtrInput
+	TsigKey               DnsZoneTsigKeyPtrInput
+	Type                  pulumi.StringPtrInput
+	VersionId             pulumi.StringPtrInput
+	Zone                  pulumi.StringPtrInput
 }
 
 func (DnsZoneState) ElementType() reflect.Type {
@@ -174,56 +110,73 @@ func (DnsZoneState) ElementType() reflect.Type {
 }
 
 type dnsZoneArgs struct {
-	// — (Required) A descriptive comment.
-	Comment *string `pulumi:"comment"`
-	// — (Required) The contract ID.
-	Contract string `pulumi:"contract"`
-	// — (Optional)
-	EndCustomerId *string `pulumi:"endCustomerId"`
-	// — (Required) The currently selected group ID.
-	Group string `pulumi:"group"`
-	// — (Required for Secondary) The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
-	Masters []string `pulumi:"masters"`
-	// — (Optional) Whether DNSSEC Sign&Serve is enabled.
-	SignAndServe *bool `pulumi:"signAndServe"`
-	// — (Optional) Algorithm used by Sign&Serve.
-	SignAndServeAlgorithm *string `pulumi:"signAndServeAlgorithm"`
-	// — (Required for Alias)
-	Target *string `pulumi:"target"`
-	// — (Optional) TSIG Key used in secure zone transfers
-	TsigKey *DnsZoneTsigKey `pulumi:"tsigKey"`
-	// — (Required) Whether the zone is primary or secondary.
-	Type string `pulumi:"type"`
-	// — (Required) Domain zone, encapsulating any nested subdomains.
-	Zone string `pulumi:"zone"`
+	Comment               *string         `pulumi:"comment"`
+	Contract              string          `pulumi:"contract"`
+	EndCustomerId         *string         `pulumi:"endCustomerId"`
+	Group                 string          `pulumi:"group"`
+	Masters               []string        `pulumi:"masters"`
+	SignAndServe          *bool           `pulumi:"signAndServe"`
+	SignAndServeAlgorithm *string         `pulumi:"signAndServeAlgorithm"`
+	Target                *string         `pulumi:"target"`
+	TsigKey               *DnsZoneTsigKey `pulumi:"tsigKey"`
+	Type                  string          `pulumi:"type"`
+	Zone                  string          `pulumi:"zone"`
 }
 
 // The set of arguments for constructing a DnsZone resource.
 type DnsZoneArgs struct {
-	// — (Required) A descriptive comment.
-	Comment pulumi.StringPtrInput
-	// — (Required) The contract ID.
-	Contract pulumi.StringInput
-	// — (Optional)
-	EndCustomerId pulumi.StringPtrInput
-	// — (Required) The currently selected group ID.
-	Group pulumi.StringInput
-	// — (Required for Secondary) The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
-	Masters pulumi.StringArrayInput
-	// — (Optional) Whether DNSSEC Sign&Serve is enabled.
-	SignAndServe pulumi.BoolPtrInput
-	// — (Optional) Algorithm used by Sign&Serve.
+	Comment               pulumi.StringPtrInput
+	Contract              pulumi.StringInput
+	EndCustomerId         pulumi.StringPtrInput
+	Group                 pulumi.StringInput
+	Masters               pulumi.StringArrayInput
+	SignAndServe          pulumi.BoolPtrInput
 	SignAndServeAlgorithm pulumi.StringPtrInput
-	// — (Required for Alias)
-	Target pulumi.StringPtrInput
-	// — (Optional) TSIG Key used in secure zone transfers
-	TsigKey DnsZoneTsigKeyPtrInput
-	// — (Required) Whether the zone is primary or secondary.
-	Type pulumi.StringInput
-	// — (Required) Domain zone, encapsulating any nested subdomains.
-	Zone pulumi.StringInput
+	Target                pulumi.StringPtrInput
+	TsigKey               DnsZoneTsigKeyPtrInput
+	Type                  pulumi.StringInput
+	Zone                  pulumi.StringInput
 }
 
 func (DnsZoneArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*dnsZoneArgs)(nil)).Elem()
+}
+
+type DnsZoneInput interface {
+	pulumi.Input
+
+	ToDnsZoneOutput() DnsZoneOutput
+	ToDnsZoneOutputWithContext(ctx context.Context) DnsZoneOutput
+}
+
+func (DnsZone) ElementType() reflect.Type {
+	return reflect.TypeOf((*DnsZone)(nil)).Elem()
+}
+
+func (i DnsZone) ToDnsZoneOutput() DnsZoneOutput {
+	return i.ToDnsZoneOutputWithContext(context.Background())
+}
+
+func (i DnsZone) ToDnsZoneOutputWithContext(ctx context.Context) DnsZoneOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DnsZoneOutput)
+}
+
+type DnsZoneOutput struct {
+	*pulumi.OutputState
+}
+
+func (DnsZoneOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DnsZoneOutput)(nil)).Elem()
+}
+
+func (o DnsZoneOutput) ToDnsZoneOutput() DnsZoneOutput {
+	return o
+}
+
+func (o DnsZoneOutput) ToDnsZoneOutputWithContext(ctx context.Context) DnsZoneOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(DnsZoneOutput{})
 }

@@ -2,7 +2,15 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-_(none)_
+* Upgrade to v1.0.0 of the Akamai Terraform Provider  
+  ** PLEASE NOTE:**  
+  There are a number of breaking changes to this provider:
+  * `akamai.PropertyActivation` `activate` has been removed and `version` is now required
+  * `akamai.PropertyRules` has been removed.
+  * `akamai.CpCode` no longer auto-imports on create if an existing code has been found.
+  * `akamai.EdgeHostName` `ipv4` and `ipv6` have been removed. This has been replaced by `ipBehavior`.
+  * `akamai.Property` `cpCode`, `origin` `variables`, `isSecure` and `contact` have been deprecated. 
+  You can find the full migration guide [here](https://github.com/akamai/terraform-provider-akamai/blob/master/docs/guides/1.0_migration.md)
 
 ---
 

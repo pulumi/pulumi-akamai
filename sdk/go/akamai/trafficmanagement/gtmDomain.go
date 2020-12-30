@@ -4,121 +4,62 @@
 package trafficmanagement
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// `trafficmanagement.GtmDomain` provides the resource for creating, configuring and importing a gtm domain to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`
-//
-// ## Example Usage
-// ### Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/trafficmanagement"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := trafficmanagement.NewGtmDomain(ctx, "demodomain", &trafficmanagement.GtmDomainArgs{
-// 			Comment:  pulumi.String("some comment"),
-// 			Contract: pulumi.String("XXX"),
-// 			Group:    pulumi.String("100"),
-// 			Type:     pulumi.String("basic"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
+// Deprecated: akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain
 type GtmDomain struct {
 	pulumi.CustomResourceState
 
-	// — (Boolean)
-	CnameCoalescingEnabled pulumi.BoolPtrOutput `pulumi:"cnameCoalescingEnabled"`
-	// — A descriptive comment
-	Comment pulumi.StringPtrOutput `pulumi:"comment"`
-	// — The contract ID (if creating domain)
-	Contract pulumi.StringPtrOutput `pulumi:"contract"`
-	// — (Default: 75)
-	DefaultErrorPenalty          pulumi.IntPtrOutput    `pulumi:"defaultErrorPenalty"`
-	DefaultHealthMax             pulumi.Float64Output   `pulumi:"defaultHealthMax"`
-	DefaultHealthMultiplier      pulumi.Float64Output   `pulumi:"defaultHealthMultiplier"`
-	DefaultHealthThreshold       pulumi.Float64Output   `pulumi:"defaultHealthThreshold"`
-	DefaultMaxUnreachablePenalty pulumi.IntOutput       `pulumi:"defaultMaxUnreachablePenalty"`
-	DefaultSslClientCertificate  pulumi.StringPtrOutput `pulumi:"defaultSslClientCertificate"`
-	DefaultSslClientPrivateKey   pulumi.StringPtrOutput `pulumi:"defaultSslClientPrivateKey"`
-	// — (Default: 25)
-	// * `loadImbalancePercentage`
-	// * `defaultSslClientPrivateKey`
-	DefaultTimeoutPenalty pulumi.IntPtrOutput `pulumi:"defaultTimeoutPenalty"`
-	// * `minPingableRegionFraction`
-	// * `servermonitorLivenessCount`
-	// * `roundRobinPrefix`
-	// * `servermonitorLoadCount`
-	// * `pingInterval`
-	// * `maxTtl`
-	// * `defaultHealthMax`
-	// * `mapUpdateInterval`
-	// * `maxProperties`
-	// * `maxResources`
-	// * `defaultErrorPenalty`
-	// * `maxTestTimeout`
-	// * `defaultHealthMultiplier`
-	// * `servermonitorPool`
-	// * `minTtl`
-	// * `defaultMaxUnreachablePenalty`
-	// * `defaultHealthThreshold`
-	// * `minTestInterval`
-	// * `pingPacketSize`
-	DefaultUnreachableThreshold pulumi.Float64Output `pulumi:"defaultUnreachableThreshold"`
-	// — (List)
-	EmailNotificationLists pulumi.StringArrayOutput `pulumi:"emailNotificationLists"`
-	// — (Boolean)
-	EndUserMappingEnabled pulumi.BoolPtrOutput `pulumi:"endUserMappingEnabled"`
-	// — The currently selected group ID (if creating domain)
-	Group pulumi.StringPtrOutput `pulumi:"group"`
-	// — (Boolean)
-	// * `defaultSslClientCertificate`
-	LoadFeedback              pulumi.BoolPtrOutput    `pulumi:"loadFeedback"`
-	LoadImbalancePercentage   pulumi.Float64PtrOutput `pulumi:"loadImbalancePercentage"`
-	MapUpdateInterval         pulumi.IntOutput        `pulumi:"mapUpdateInterval"`
-	MaxProperties             pulumi.IntOutput        `pulumi:"maxProperties"`
-	MaxResources              pulumi.IntOutput        `pulumi:"maxResources"`
-	MaxTestTimeout            pulumi.Float64Output    `pulumi:"maxTestTimeout"`
-	MaxTtl                    pulumi.IntOutput        `pulumi:"maxTtl"`
-	MinPingableRegionFraction pulumi.Float64Output    `pulumi:"minPingableRegionFraction"`
-	MinTestInterval           pulumi.IntOutput        `pulumi:"minTestInterval"`
-	MinTtl                    pulumi.IntOutput        `pulumi:"minTtl"`
-	// — Domain name
-	Name                       pulumi.StringOutput `pulumi:"name"`
-	PingInterval               pulumi.IntOutput    `pulumi:"pingInterval"`
-	PingPacketSize             pulumi.IntOutput    `pulumi:"pingPacketSize"`
-	RoundRobinPrefix           pulumi.StringOutput `pulumi:"roundRobinPrefix"`
-	ServermonitorLivenessCount pulumi.IntOutput    `pulumi:"servermonitorLivenessCount"`
-	ServermonitorLoadCount     pulumi.IntOutput    `pulumi:"servermonitorLoadCount"`
-	ServermonitorPool          pulumi.StringOutput `pulumi:"servermonitorPool"`
-	// — Domain type
-	Type pulumi.StringOutput `pulumi:"type"`
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrOutput `pulumi:"waitOnComplete"`
+	CnameCoalescingEnabled       pulumi.BoolPtrOutput     `pulumi:"cnameCoalescingEnabled"`
+	Comment                      pulumi.StringPtrOutput   `pulumi:"comment"`
+	Contract                     pulumi.StringPtrOutput   `pulumi:"contract"`
+	DefaultErrorPenalty          pulumi.IntPtrOutput      `pulumi:"defaultErrorPenalty"`
+	DefaultHealthMax             pulumi.Float64Output     `pulumi:"defaultHealthMax"`
+	DefaultHealthMultiplier      pulumi.Float64Output     `pulumi:"defaultHealthMultiplier"`
+	DefaultHealthThreshold       pulumi.Float64Output     `pulumi:"defaultHealthThreshold"`
+	DefaultMaxUnreachablePenalty pulumi.IntOutput         `pulumi:"defaultMaxUnreachablePenalty"`
+	DefaultSslClientCertificate  pulumi.StringPtrOutput   `pulumi:"defaultSslClientCertificate"`
+	DefaultSslClientPrivateKey   pulumi.StringPtrOutput   `pulumi:"defaultSslClientPrivateKey"`
+	DefaultTimeoutPenalty        pulumi.IntPtrOutput      `pulumi:"defaultTimeoutPenalty"`
+	DefaultUnreachableThreshold  pulumi.Float64Output     `pulumi:"defaultUnreachableThreshold"`
+	EmailNotificationLists       pulumi.StringArrayOutput `pulumi:"emailNotificationLists"`
+	EndUserMappingEnabled        pulumi.BoolPtrOutput     `pulumi:"endUserMappingEnabled"`
+	Group                        pulumi.StringPtrOutput   `pulumi:"group"`
+	LoadFeedback                 pulumi.BoolPtrOutput     `pulumi:"loadFeedback"`
+	LoadImbalancePercentage      pulumi.Float64PtrOutput  `pulumi:"loadImbalancePercentage"`
+	MapUpdateInterval            pulumi.IntOutput         `pulumi:"mapUpdateInterval"`
+	MaxProperties                pulumi.IntOutput         `pulumi:"maxProperties"`
+	MaxResources                 pulumi.IntOutput         `pulumi:"maxResources"`
+	MaxTestTimeout               pulumi.Float64Output     `pulumi:"maxTestTimeout"`
+	MaxTtl                       pulumi.IntOutput         `pulumi:"maxTtl"`
+	MinPingableRegionFraction    pulumi.Float64Output     `pulumi:"minPingableRegionFraction"`
+	MinTestInterval              pulumi.IntOutput         `pulumi:"minTestInterval"`
+	MinTtl                       pulumi.IntOutput         `pulumi:"minTtl"`
+	Name                         pulumi.StringOutput      `pulumi:"name"`
+	PingInterval                 pulumi.IntOutput         `pulumi:"pingInterval"`
+	PingPacketSize               pulumi.IntOutput         `pulumi:"pingPacketSize"`
+	RoundRobinPrefix             pulumi.StringOutput      `pulumi:"roundRobinPrefix"`
+	ServermonitorLivenessCount   pulumi.IntOutput         `pulumi:"servermonitorLivenessCount"`
+	ServermonitorLoadCount       pulumi.IntOutput         `pulumi:"servermonitorLoadCount"`
+	ServermonitorPool            pulumi.StringOutput      `pulumi:"servermonitorPool"`
+	Type                         pulumi.StringOutput      `pulumi:"type"`
+	WaitOnComplete               pulumi.BoolPtrOutput     `pulumi:"waitOnComplete"`
 }
 
 // NewGtmDomain registers a new resource with the given unique name, arguments, and options.
 func NewGtmDomain(ctx *pulumi.Context,
 	name string, args *GtmDomainArgs, opts ...pulumi.ResourceOption) (*GtmDomain, error) {
-	if args == nil || args.Type == nil {
-		return nil, errors.New("missing required argument 'Type'")
-	}
 	if args == nil {
-		args = &GtmDomainArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.Type == nil {
+		return nil, errors.New("invalid value for required argument 'Type'")
 	}
 	var resource GtmDomain
 	err := ctx.RegisterResource("akamai:trafficmanagement/gtmDomain:GtmDomain", name, args, &resource, opts...)
@@ -142,13 +83,9 @@ func GetGtmDomain(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering GtmDomain resources.
 type gtmDomainState struct {
-	// — (Boolean)
-	CnameCoalescingEnabled *bool `pulumi:"cnameCoalescingEnabled"`
-	// — A descriptive comment
-	Comment *string `pulumi:"comment"`
-	// — The contract ID (if creating domain)
-	Contract *string `pulumi:"contract"`
-	// — (Default: 75)
+	CnameCoalescingEnabled       *bool    `pulumi:"cnameCoalescingEnabled"`
+	Comment                      *string  `pulumi:"comment"`
+	Contract                     *string  `pulumi:"contract"`
 	DefaultErrorPenalty          *int     `pulumi:"defaultErrorPenalty"`
 	DefaultHealthMax             *float64 `pulumi:"defaultHealthMax"`
 	DefaultHealthMultiplier      *float64 `pulumi:"defaultHealthMultiplier"`
@@ -156,70 +93,36 @@ type gtmDomainState struct {
 	DefaultMaxUnreachablePenalty *int     `pulumi:"defaultMaxUnreachablePenalty"`
 	DefaultSslClientCertificate  *string  `pulumi:"defaultSslClientCertificate"`
 	DefaultSslClientPrivateKey   *string  `pulumi:"defaultSslClientPrivateKey"`
-	// — (Default: 25)
-	// * `loadImbalancePercentage`
-	// * `defaultSslClientPrivateKey`
-	DefaultTimeoutPenalty *int `pulumi:"defaultTimeoutPenalty"`
-	// * `minPingableRegionFraction`
-	// * `servermonitorLivenessCount`
-	// * `roundRobinPrefix`
-	// * `servermonitorLoadCount`
-	// * `pingInterval`
-	// * `maxTtl`
-	// * `defaultHealthMax`
-	// * `mapUpdateInterval`
-	// * `maxProperties`
-	// * `maxResources`
-	// * `defaultErrorPenalty`
-	// * `maxTestTimeout`
-	// * `defaultHealthMultiplier`
-	// * `servermonitorPool`
-	// * `minTtl`
-	// * `defaultMaxUnreachablePenalty`
-	// * `defaultHealthThreshold`
-	// * `minTestInterval`
-	// * `pingPacketSize`
-	DefaultUnreachableThreshold *float64 `pulumi:"defaultUnreachableThreshold"`
-	// — (List)
-	EmailNotificationLists []string `pulumi:"emailNotificationLists"`
-	// — (Boolean)
-	EndUserMappingEnabled *bool `pulumi:"endUserMappingEnabled"`
-	// — The currently selected group ID (if creating domain)
-	Group *string `pulumi:"group"`
-	// — (Boolean)
-	// * `defaultSslClientCertificate`
-	LoadFeedback              *bool    `pulumi:"loadFeedback"`
-	LoadImbalancePercentage   *float64 `pulumi:"loadImbalancePercentage"`
-	MapUpdateInterval         *int     `pulumi:"mapUpdateInterval"`
-	MaxProperties             *int     `pulumi:"maxProperties"`
-	MaxResources              *int     `pulumi:"maxResources"`
-	MaxTestTimeout            *float64 `pulumi:"maxTestTimeout"`
-	MaxTtl                    *int     `pulumi:"maxTtl"`
-	MinPingableRegionFraction *float64 `pulumi:"minPingableRegionFraction"`
-	MinTestInterval           *int     `pulumi:"minTestInterval"`
-	MinTtl                    *int     `pulumi:"minTtl"`
-	// — Domain name
-	Name                       *string `pulumi:"name"`
-	PingInterval               *int    `pulumi:"pingInterval"`
-	PingPacketSize             *int    `pulumi:"pingPacketSize"`
-	RoundRobinPrefix           *string `pulumi:"roundRobinPrefix"`
-	ServermonitorLivenessCount *int    `pulumi:"servermonitorLivenessCount"`
-	ServermonitorLoadCount     *int    `pulumi:"servermonitorLoadCount"`
-	ServermonitorPool          *string `pulumi:"servermonitorPool"`
-	// — Domain type
-	Type *string `pulumi:"type"`
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	DefaultTimeoutPenalty        *int     `pulumi:"defaultTimeoutPenalty"`
+	DefaultUnreachableThreshold  *float64 `pulumi:"defaultUnreachableThreshold"`
+	EmailNotificationLists       []string `pulumi:"emailNotificationLists"`
+	EndUserMappingEnabled        *bool    `pulumi:"endUserMappingEnabled"`
+	Group                        *string  `pulumi:"group"`
+	LoadFeedback                 *bool    `pulumi:"loadFeedback"`
+	LoadImbalancePercentage      *float64 `pulumi:"loadImbalancePercentage"`
+	MapUpdateInterval            *int     `pulumi:"mapUpdateInterval"`
+	MaxProperties                *int     `pulumi:"maxProperties"`
+	MaxResources                 *int     `pulumi:"maxResources"`
+	MaxTestTimeout               *float64 `pulumi:"maxTestTimeout"`
+	MaxTtl                       *int     `pulumi:"maxTtl"`
+	MinPingableRegionFraction    *float64 `pulumi:"minPingableRegionFraction"`
+	MinTestInterval              *int     `pulumi:"minTestInterval"`
+	MinTtl                       *int     `pulumi:"minTtl"`
+	Name                         *string  `pulumi:"name"`
+	PingInterval                 *int     `pulumi:"pingInterval"`
+	PingPacketSize               *int     `pulumi:"pingPacketSize"`
+	RoundRobinPrefix             *string  `pulumi:"roundRobinPrefix"`
+	ServermonitorLivenessCount   *int     `pulumi:"servermonitorLivenessCount"`
+	ServermonitorLoadCount       *int     `pulumi:"servermonitorLoadCount"`
+	ServermonitorPool            *string  `pulumi:"servermonitorPool"`
+	Type                         *string  `pulumi:"type"`
+	WaitOnComplete               *bool    `pulumi:"waitOnComplete"`
 }
 
 type GtmDomainState struct {
-	// — (Boolean)
-	CnameCoalescingEnabled pulumi.BoolPtrInput
-	// — A descriptive comment
-	Comment pulumi.StringPtrInput
-	// — The contract ID (if creating domain)
-	Contract pulumi.StringPtrInput
-	// — (Default: 75)
+	CnameCoalescingEnabled       pulumi.BoolPtrInput
+	Comment                      pulumi.StringPtrInput
+	Contract                     pulumi.StringPtrInput
 	DefaultErrorPenalty          pulumi.IntPtrInput
 	DefaultHealthMax             pulumi.Float64PtrInput
 	DefaultHealthMultiplier      pulumi.Float64PtrInput
@@ -227,60 +130,30 @@ type GtmDomainState struct {
 	DefaultMaxUnreachablePenalty pulumi.IntPtrInput
 	DefaultSslClientCertificate  pulumi.StringPtrInput
 	DefaultSslClientPrivateKey   pulumi.StringPtrInput
-	// — (Default: 25)
-	// * `loadImbalancePercentage`
-	// * `defaultSslClientPrivateKey`
-	DefaultTimeoutPenalty pulumi.IntPtrInput
-	// * `minPingableRegionFraction`
-	// * `servermonitorLivenessCount`
-	// * `roundRobinPrefix`
-	// * `servermonitorLoadCount`
-	// * `pingInterval`
-	// * `maxTtl`
-	// * `defaultHealthMax`
-	// * `mapUpdateInterval`
-	// * `maxProperties`
-	// * `maxResources`
-	// * `defaultErrorPenalty`
-	// * `maxTestTimeout`
-	// * `defaultHealthMultiplier`
-	// * `servermonitorPool`
-	// * `minTtl`
-	// * `defaultMaxUnreachablePenalty`
-	// * `defaultHealthThreshold`
-	// * `minTestInterval`
-	// * `pingPacketSize`
-	DefaultUnreachableThreshold pulumi.Float64PtrInput
-	// — (List)
-	EmailNotificationLists pulumi.StringArrayInput
-	// — (Boolean)
-	EndUserMappingEnabled pulumi.BoolPtrInput
-	// — The currently selected group ID (if creating domain)
-	Group pulumi.StringPtrInput
-	// — (Boolean)
-	// * `defaultSslClientCertificate`
-	LoadFeedback              pulumi.BoolPtrInput
-	LoadImbalancePercentage   pulumi.Float64PtrInput
-	MapUpdateInterval         pulumi.IntPtrInput
-	MaxProperties             pulumi.IntPtrInput
-	MaxResources              pulumi.IntPtrInput
-	MaxTestTimeout            pulumi.Float64PtrInput
-	MaxTtl                    pulumi.IntPtrInput
-	MinPingableRegionFraction pulumi.Float64PtrInput
-	MinTestInterval           pulumi.IntPtrInput
-	MinTtl                    pulumi.IntPtrInput
-	// — Domain name
-	Name                       pulumi.StringPtrInput
-	PingInterval               pulumi.IntPtrInput
-	PingPacketSize             pulumi.IntPtrInput
-	RoundRobinPrefix           pulumi.StringPtrInput
-	ServermonitorLivenessCount pulumi.IntPtrInput
-	ServermonitorLoadCount     pulumi.IntPtrInput
-	ServermonitorPool          pulumi.StringPtrInput
-	// — Domain type
-	Type pulumi.StringPtrInput
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrInput
+	DefaultTimeoutPenalty        pulumi.IntPtrInput
+	DefaultUnreachableThreshold  pulumi.Float64PtrInput
+	EmailNotificationLists       pulumi.StringArrayInput
+	EndUserMappingEnabled        pulumi.BoolPtrInput
+	Group                        pulumi.StringPtrInput
+	LoadFeedback                 pulumi.BoolPtrInput
+	LoadImbalancePercentage      pulumi.Float64PtrInput
+	MapUpdateInterval            pulumi.IntPtrInput
+	MaxProperties                pulumi.IntPtrInput
+	MaxResources                 pulumi.IntPtrInput
+	MaxTestTimeout               pulumi.Float64PtrInput
+	MaxTtl                       pulumi.IntPtrInput
+	MinPingableRegionFraction    pulumi.Float64PtrInput
+	MinTestInterval              pulumi.IntPtrInput
+	MinTtl                       pulumi.IntPtrInput
+	Name                         pulumi.StringPtrInput
+	PingInterval                 pulumi.IntPtrInput
+	PingPacketSize               pulumi.IntPtrInput
+	RoundRobinPrefix             pulumi.StringPtrInput
+	ServermonitorLivenessCount   pulumi.IntPtrInput
+	ServermonitorLoadCount       pulumi.IntPtrInput
+	ServermonitorPool            pulumi.StringPtrInput
+	Type                         pulumi.StringPtrInput
+	WaitOnComplete               pulumi.BoolPtrInput
 }
 
 func (GtmDomainState) ElementType() reflect.Type {
@@ -288,72 +161,81 @@ func (GtmDomainState) ElementType() reflect.Type {
 }
 
 type gtmDomainArgs struct {
-	// — (Boolean)
-	CnameCoalescingEnabled *bool `pulumi:"cnameCoalescingEnabled"`
-	// — A descriptive comment
-	Comment *string `pulumi:"comment"`
-	// — The contract ID (if creating domain)
-	Contract *string `pulumi:"contract"`
-	// — (Default: 75)
-	DefaultErrorPenalty         *int    `pulumi:"defaultErrorPenalty"`
-	DefaultSslClientCertificate *string `pulumi:"defaultSslClientCertificate"`
-	DefaultSslClientPrivateKey  *string `pulumi:"defaultSslClientPrivateKey"`
-	// — (Default: 25)
-	// * `loadImbalancePercentage`
-	// * `defaultSslClientPrivateKey`
-	DefaultTimeoutPenalty *int `pulumi:"defaultTimeoutPenalty"`
-	// — (List)
-	EmailNotificationLists []string `pulumi:"emailNotificationLists"`
-	// — (Boolean)
-	EndUserMappingEnabled *bool `pulumi:"endUserMappingEnabled"`
-	// — The currently selected group ID (if creating domain)
-	Group *string `pulumi:"group"`
-	// — (Boolean)
-	// * `defaultSslClientCertificate`
-	LoadFeedback            *bool    `pulumi:"loadFeedback"`
-	LoadImbalancePercentage *float64 `pulumi:"loadImbalancePercentage"`
-	// — Domain name
-	Name *string `pulumi:"name"`
-	// — Domain type
-	Type string `pulumi:"type"`
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	CnameCoalescingEnabled      *bool    `pulumi:"cnameCoalescingEnabled"`
+	Comment                     *string  `pulumi:"comment"`
+	Contract                    *string  `pulumi:"contract"`
+	DefaultErrorPenalty         *int     `pulumi:"defaultErrorPenalty"`
+	DefaultSslClientCertificate *string  `pulumi:"defaultSslClientCertificate"`
+	DefaultSslClientPrivateKey  *string  `pulumi:"defaultSslClientPrivateKey"`
+	DefaultTimeoutPenalty       *int     `pulumi:"defaultTimeoutPenalty"`
+	EmailNotificationLists      []string `pulumi:"emailNotificationLists"`
+	EndUserMappingEnabled       *bool    `pulumi:"endUserMappingEnabled"`
+	Group                       *string  `pulumi:"group"`
+	LoadFeedback                *bool    `pulumi:"loadFeedback"`
+	LoadImbalancePercentage     *float64 `pulumi:"loadImbalancePercentage"`
+	Name                        *string  `pulumi:"name"`
+	Type                        string   `pulumi:"type"`
+	WaitOnComplete              *bool    `pulumi:"waitOnComplete"`
 }
 
 // The set of arguments for constructing a GtmDomain resource.
 type GtmDomainArgs struct {
-	// — (Boolean)
-	CnameCoalescingEnabled pulumi.BoolPtrInput
-	// — A descriptive comment
-	Comment pulumi.StringPtrInput
-	// — The contract ID (if creating domain)
-	Contract pulumi.StringPtrInput
-	// — (Default: 75)
+	CnameCoalescingEnabled      pulumi.BoolPtrInput
+	Comment                     pulumi.StringPtrInput
+	Contract                    pulumi.StringPtrInput
 	DefaultErrorPenalty         pulumi.IntPtrInput
 	DefaultSslClientCertificate pulumi.StringPtrInput
 	DefaultSslClientPrivateKey  pulumi.StringPtrInput
-	// — (Default: 25)
-	// * `loadImbalancePercentage`
-	// * `defaultSslClientPrivateKey`
-	DefaultTimeoutPenalty pulumi.IntPtrInput
-	// — (List)
-	EmailNotificationLists pulumi.StringArrayInput
-	// — (Boolean)
-	EndUserMappingEnabled pulumi.BoolPtrInput
-	// — The currently selected group ID (if creating domain)
-	Group pulumi.StringPtrInput
-	// — (Boolean)
-	// * `defaultSslClientCertificate`
-	LoadFeedback            pulumi.BoolPtrInput
-	LoadImbalancePercentage pulumi.Float64PtrInput
-	// — Domain name
-	Name pulumi.StringPtrInput
-	// — Domain type
-	Type pulumi.StringInput
-	// — (Boolean, Default: true) Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrInput
+	DefaultTimeoutPenalty       pulumi.IntPtrInput
+	EmailNotificationLists      pulumi.StringArrayInput
+	EndUserMappingEnabled       pulumi.BoolPtrInput
+	Group                       pulumi.StringPtrInput
+	LoadFeedback                pulumi.BoolPtrInput
+	LoadImbalancePercentage     pulumi.Float64PtrInput
+	Name                        pulumi.StringPtrInput
+	Type                        pulumi.StringInput
+	WaitOnComplete              pulumi.BoolPtrInput
 }
 
 func (GtmDomainArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*gtmDomainArgs)(nil)).Elem()
+}
+
+type GtmDomainInput interface {
+	pulumi.Input
+
+	ToGtmDomainOutput() GtmDomainOutput
+	ToGtmDomainOutputWithContext(ctx context.Context) GtmDomainOutput
+}
+
+func (GtmDomain) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmDomain)(nil)).Elem()
+}
+
+func (i GtmDomain) ToGtmDomainOutput() GtmDomainOutput {
+	return i.ToGtmDomainOutputWithContext(context.Background())
+}
+
+func (i GtmDomain) ToGtmDomainOutputWithContext(ctx context.Context) GtmDomainOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmDomainOutput)
+}
+
+type GtmDomainOutput struct {
+	*pulumi.OutputState
+}
+
+func (GtmDomainOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmDomainOutput)(nil)).Elem()
+}
+
+func (o GtmDomainOutput) ToGtmDomainOutput() GtmDomainOutput {
+	return o
+}
+
+func (o GtmDomainOutput) ToGtmDomainOutputWithContext(ctx context.Context) GtmDomainOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(GtmDomainOutput{})
 }

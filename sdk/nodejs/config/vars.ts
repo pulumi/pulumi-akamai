@@ -2,17 +2,24 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "../types/input";
-import * as outputs from "../types/output";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 let __config = new pulumi.Config("akamai");
 
-export let dns: outputs.config.Dns[] | undefined = __config.getObject<outputs.config.Dns[]>("dns");
+export let appsecSection: string | undefined = __config.get("appsecSection");
+export let appsecs: outputs.config.Appsecs[] | undefined = __config.getObject<outputs.config.Appsecs[]>("appsecs");
+export let cacheEnabled: boolean | undefined = __config.getObject<boolean>("cacheEnabled");
+export let config: outputs.config.Config | undefined = __config.getObject<outputs.config.Config>("config");
+/**
+ * The section of the edgerc file to use for configuration
+ */
+export let configSection: string | undefined = __config.get("configSection");
+export let dns: outputs.config.Dns | undefined = __config.getObject<outputs.config.Dns>("dns");
 export let dnsSection: string | undefined = __config.get("dnsSection");
 export let edgerc: string | undefined = __config.get("edgerc");
+export let gtm: outputs.config.Gtm | undefined = __config.getObject<outputs.config.Gtm>("gtm");
 export let gtmSection: string | undefined = __config.get("gtmSection");
-export let gtms: outputs.config.Gtms[] | undefined = __config.getObject<outputs.config.Gtms[]>("gtms");
 export let papiSection: string | undefined = __config.get("papiSection");
-export let properties: outputs.config.Properties[] | undefined = __config.getObject<outputs.config.Properties[]>("properties");
+export let property: outputs.config.Property | undefined = __config.getObject<outputs.config.Property>("property");
 export let propertySection: string | undefined = __config.get("propertySection");

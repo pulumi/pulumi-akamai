@@ -2,28 +2,11 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "../types/input";
-import * as outputs from "../types/output";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
- * `akamai.trafficmanagement.GtmCidrmap` provides the resource for creating, configuring and importing a gtm Cidr Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingMapName`
- *
- * ## Example Usage
- * ### Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const demoCidrmap = new akamai.trafficmanagement.GtmCidrmap("demo_cidrmap", {
- *     defaultDatacenter: {
- *         datacenterId: 5400,
- *         nickname: "All Other CIDR Blocks",
- *     },
- *     domain: "demo_domain.akadns.net",
- * });
- * ```
+ * @deprecated akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap
  */
 export class GtmCidrmap extends pulumi.CustomResource {
     /**
@@ -36,6 +19,7 @@ export class GtmCidrmap extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: GtmCidrmapState, opts?: pulumi.CustomResourceOptions): GtmCidrmap {
+        pulumi.log.warn("GtmCidrmap is deprecated: akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap")
         return new GtmCidrmap(name, <any>state, { ...opts, id: id });
     }
 
@@ -53,27 +37,10 @@ export class GtmCidrmap extends pulumi.CustomResource {
         return obj['__pulumiType'] === GtmCidrmap.__pulumiType;
     }
 
-    /**
-     * — (multiple allowed)
-     * * `datacenterId`
-     * * `nickname`
-     */
     public readonly assignments!: pulumi.Output<outputs.trafficmanagement.GtmCidrmapAssignment[] | undefined>;
     public readonly defaultDatacenter!: pulumi.Output<outputs.trafficmanagement.GtmCidrmapDefaultDatacenter>;
-    /**
-     * — Domain name
-     */
     public readonly domain!: pulumi.Output<string>;
-    /**
-     * — Resource name
-     * * `defaultDatacenter`
-     * * `datacenterId`
-     * * `nickname`
-     */
     public readonly name!: pulumi.Output<string>;
-    /**
-     * — (Boolean, Default: true) Wait for transaction to complete
-     */
     public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
 
     /**
@@ -83,8 +50,11 @@ export class GtmCidrmap extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
+    /** @deprecated akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap */
     constructor(name: string, args: GtmCidrmapArgs, opts?: pulumi.CustomResourceOptions)
+    /** @deprecated akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap */
     constructor(name: string, argsOrState?: GtmCidrmapArgs | GtmCidrmapState, opts?: pulumi.CustomResourceOptions) {
+        pulumi.log.warn("GtmCidrmap is deprecated: akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap")
         let inputs: pulumi.Inputs = {};
         if (opts && opts.id) {
             const state = argsOrState as GtmCidrmapState | undefined;
@@ -95,10 +65,10 @@ export class GtmCidrmap extends pulumi.CustomResource {
             inputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
         } else {
             const args = argsOrState as GtmCidrmapArgs | undefined;
-            if (!args || args.defaultDatacenter === undefined) {
+            if ((!args || args.defaultDatacenter === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'defaultDatacenter'");
             }
-            if (!args || args.domain === undefined) {
+            if ((!args || args.domain === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'domain'");
             }
             inputs["assignments"] = args ? args.assignments : undefined;
@@ -122,27 +92,10 @@ export class GtmCidrmap extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmCidrmap resources.
  */
 export interface GtmCidrmapState {
-    /**
-     * — (multiple allowed)
-     * * `datacenterId`
-     * * `nickname`
-     */
     readonly assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmCidrmapAssignment>[]>;
     readonly defaultDatacenter?: pulumi.Input<inputs.trafficmanagement.GtmCidrmapDefaultDatacenter>;
-    /**
-     * — Domain name
-     */
     readonly domain?: pulumi.Input<string>;
-    /**
-     * — Resource name
-     * * `defaultDatacenter`
-     * * `datacenterId`
-     * * `nickname`
-     */
     readonly name?: pulumi.Input<string>;
-    /**
-     * — (Boolean, Default: true) Wait for transaction to complete
-     */
     readonly waitOnComplete?: pulumi.Input<boolean>;
 }
 
@@ -150,26 +103,9 @@ export interface GtmCidrmapState {
  * The set of arguments for constructing a GtmCidrmap resource.
  */
 export interface GtmCidrmapArgs {
-    /**
-     * — (multiple allowed)
-     * * `datacenterId`
-     * * `nickname`
-     */
     readonly assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmCidrmapAssignment>[]>;
     readonly defaultDatacenter: pulumi.Input<inputs.trafficmanagement.GtmCidrmapDefaultDatacenter>;
-    /**
-     * — Domain name
-     */
     readonly domain: pulumi.Input<string>;
-    /**
-     * — Resource name
-     * * `defaultDatacenter`
-     * * `datacenterId`
-     * * `nickname`
-     */
     readonly name?: pulumi.Input<string>;
-    /**
-     * — (Boolean, Default: true) Wait for transaction to complete
-     */
     readonly waitOnComplete?: pulumi.Input<boolean>;
 }

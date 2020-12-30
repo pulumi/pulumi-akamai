@@ -14,6 +14,8 @@ __all__ = [
     'get_gtm_default_datacenter',
 ]
 
+warnings.warn("""akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter""", DeprecationWarning)
+
 @pulumi.output_type
 class GetGtmDefaultDatacenterResult:
     """
@@ -82,14 +84,9 @@ def get_gtm_default_datacenter(datacenter: Optional[int] = None,
                                domain: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGtmDefaultDatacenterResult:
     """
-    Use `trafficmanagement.getGtmDefaultDatacenter` data source to retrieve default datacenter id and nickname.
-
-    ## Example Usage
-
-
-    :param int datacenter: — (Optional. Default 5400)
-    :param str domain: — (Required)
+    Use this data source to access information about an existing resource.
     """
+    pulumi.log.warn("get_gtm_default_datacenter is deprecated: akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter")
     __args__ = dict()
     __args__['datacenter'] = datacenter
     __args__['domain'] = domain

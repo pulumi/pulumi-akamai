@@ -3,12 +3,14 @@
 import pulumi
 import pulumi_akamai as akamai
 
-contract_id = pulumi.Output.from_input(akamai.get_contract()).id
-group_id = pulumi.Output.from_input(akamai.get_group()).id
+group_id = "175146"
+product_id = "prd_Fresca"
 
-pydomain = akamai.properties.EdgeHostName("test",
-                                          contract=contract_id,
-                                          group=group_id,
-                                          product="prd_Fresca",
-                                          edge_hostname="test-py.mycompany.io",
-                                          ipv4="true")
+contract_id = pulumi.Output.from_input(akamai.get_contract(group_id = group_id)).id
+
+pydomain = akamai.EdgeHostName("test",
+                                  contract_id=contract_id,
+                                  group_id=group_id,
+                                  product_id="prd_Fresca",
+                                  edge_hostname="test-py.mycompany.io",
+                                  ip_behavior="ipv4")

@@ -7,9 +7,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// Use `properties.CpCode` data source to retrieve a group id.
-//
-// ## Example Usage
+// Deprecated: akamai.properties.getCpCode has been deprecated in favor of akamai.getCpCode
 func LookupCpCode(ctx *pulumi.Context, args *LookupCpCodeArgs, opts ...pulumi.InvokeOption) (*LookupCpCodeResult, error) {
 	var rv LookupCpCodeResult
 	err := ctx.Invoke("akamai:properties/getCpCode:getCpCode", args, &rv, opts...)
@@ -21,19 +19,25 @@ func LookupCpCode(ctx *pulumi.Context, args *LookupCpCodeArgs, opts ...pulumi.In
 
 // A collection of arguments for invoking getCpCode.
 type LookupCpCodeArgs struct {
-	// — (Required) The contract ID
-	Contract string `pulumi:"contract"`
-	// — (Required) The group ID
-	Group string `pulumi:"group"`
-	// — (Required) The CP code name.
-	Name string `pulumi:"name"`
+	// Deprecated: The setting "contract" has been deprecated.
+	Contract   *string `pulumi:"contract"`
+	ContractId *string `pulumi:"contractId"`
+	// Deprecated: The setting "group" has been deprecated.
+	Group   *string `pulumi:"group"`
+	GroupId *string `pulumi:"groupId"`
+	Name    string  `pulumi:"name"`
 }
 
 // A collection of values returned by getCpCode.
 type LookupCpCodeResult struct {
-	Contract string `pulumi:"contract"`
-	Group    string `pulumi:"group"`
+	// Deprecated: The setting "contract" has been deprecated.
+	Contract   string `pulumi:"contract"`
+	ContractId string `pulumi:"contractId"`
+	// Deprecated: The setting "group" has been deprecated.
+	Group   string `pulumi:"group"`
+	GroupId string `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string `pulumi:"id"`
-	Name string `pulumi:"name"`
+	Id         string   `pulumi:"id"`
+	Name       string   `pulumi:"name"`
+	ProductIds []string `pulumi:"productIds"`
 }

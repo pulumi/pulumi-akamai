@@ -9,80 +9,35 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Properties
 {
-    /// <summary>
-    /// The `akamai.properties.EdgeHostName` provides the resource for configuring a secure edge hostname that determines how requests for your site, app, or content are mapped to Akamai edge servers.
-    /// 
-    /// An edge hostname is the CNAME target you use when directing your end user traffic to Akamai. In a typical DNS CNAME, your www.customer.com hostname corresponds to an edge hostname of www.customer.com.edgesuite.net.
-    /// 
-    /// ## Example Usage
-    /// ### Basic usage:
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var terraform_demo = new Akamai.Properties.EdgeHostName("terraform-demo", new Akamai.Properties.EdgeHostNameArgs
-    ///         {
-    ///             Contract = "ctr_####",
-    ///             EdgeHostname = "www.example.org.edgesuite.net",
-    ///             Group = "grp_####",
-    ///             Product = "prd_####",
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// </summary>
+    [Obsolete(@"akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName")]
     public partial class EdgeHostName : Pulumi.CustomResource
     {
-        /// <summary>
-        /// — (Optional) The certificate enrollment ID.
-        /// </summary>
         [Output("certificate")]
         public Output<int?> Certificate { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Required) The contract ID.
-        /// </summary>
         [Output("contract")]
         public Output<string> Contract { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Required) One or more edge hostnames (must be &lt;= to the number of public hostnames).
-        /// </summary>
+        [Output("contractId")]
+        public Output<string> ContractId { get; private set; } = null!;
+
         [Output("edgeHostname")]
         public Output<string> EdgeHostname { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Required) The group ID.
-        /// </summary>
         [Output("group")]
         public Output<string> Group { get; private set; } = null!;
+
+        [Output("groupId")]
+        public Output<string> GroupId { get; private set; } = null!;
 
         [Output("ipBehavior")]
         public Output<string> IpBehavior { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Optional) Whether the property supports IPv4 to origin.  (Default: `true`).
-        /// </summary>
-        [Output("ipv4")]
-        public Output<bool?> Ipv4 { get; private set; } = null!;
-
-        /// <summary>
-        /// —  (Optional) Whether the property supports IPv6 to origin. (Default: `false`).
-        /// </summary>
-        [Output("ipv6")]
-        public Output<bool?> Ipv6 { get; private set; } = null!;
-
-        /// <summary>
-        /// — (Required) The product ID.
-        /// </summary>
         [Output("product")]
         public Output<string> Product { get; private set; } = null!;
+
+        [Output("productId")]
+        public Output<string> ProductId { get; private set; } = null!;
 
 
         /// <summary>
@@ -130,47 +85,32 @@ namespace Pulumi.Akamai.Properties
 
     public sealed class EdgeHostNameArgs : Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// — (Optional) The certificate enrollment ID.
-        /// </summary>
         [Input("certificate")]
         public Input<int>? Certificate { get; set; }
 
-        /// <summary>
-        /// — (Required) The contract ID.
-        /// </summary>
-        [Input("contract", required: true)]
-        public Input<string> Contract { get; set; } = null!;
+        [Input("contract")]
+        public Input<string>? Contract { get; set; }
 
-        /// <summary>
-        /// — (Required) One or more edge hostnames (must be &lt;= to the number of public hostnames).
-        /// </summary>
+        [Input("contractId")]
+        public Input<string>? ContractId { get; set; }
+
         [Input("edgeHostname", required: true)]
         public Input<string> EdgeHostname { get; set; } = null!;
 
-        /// <summary>
-        /// — (Required) The group ID.
-        /// </summary>
-        [Input("group", required: true)]
-        public Input<string> Group { get; set; } = null!;
+        [Input("group")]
+        public Input<string>? Group { get; set; }
 
-        /// <summary>
-        /// — (Optional) Whether the property supports IPv4 to origin.  (Default: `true`).
-        /// </summary>
-        [Input("ipv4")]
-        public Input<bool>? Ipv4 { get; set; }
+        [Input("groupId")]
+        public Input<string>? GroupId { get; set; }
 
-        /// <summary>
-        /// —  (Optional) Whether the property supports IPv6 to origin. (Default: `false`).
-        /// </summary>
-        [Input("ipv6")]
-        public Input<bool>? Ipv6 { get; set; }
+        [Input("ipBehavior", required: true)]
+        public Input<string> IpBehavior { get; set; } = null!;
 
-        /// <summary>
-        /// — (Required) The product ID.
-        /// </summary>
-        [Input("product", required: true)]
-        public Input<string> Product { get; set; } = null!;
+        [Input("product")]
+        public Input<string>? Product { get; set; }
+
+        [Input("productId")]
+        public Input<string>? ProductId { get; set; }
 
         public EdgeHostNameArgs()
         {
@@ -179,50 +119,32 @@ namespace Pulumi.Akamai.Properties
 
     public sealed class EdgeHostNameState : Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// — (Optional) The certificate enrollment ID.
-        /// </summary>
         [Input("certificate")]
         public Input<int>? Certificate { get; set; }
 
-        /// <summary>
-        /// — (Required) The contract ID.
-        /// </summary>
         [Input("contract")]
         public Input<string>? Contract { get; set; }
 
-        /// <summary>
-        /// — (Required) One or more edge hostnames (must be &lt;= to the number of public hostnames).
-        /// </summary>
+        [Input("contractId")]
+        public Input<string>? ContractId { get; set; }
+
         [Input("edgeHostname")]
         public Input<string>? EdgeHostname { get; set; }
 
-        /// <summary>
-        /// — (Required) The group ID.
-        /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
+
+        [Input("groupId")]
+        public Input<string>? GroupId { get; set; }
 
         [Input("ipBehavior")]
         public Input<string>? IpBehavior { get; set; }
 
-        /// <summary>
-        /// — (Optional) Whether the property supports IPv4 to origin.  (Default: `true`).
-        /// </summary>
-        [Input("ipv4")]
-        public Input<bool>? Ipv4 { get; set; }
-
-        /// <summary>
-        /// —  (Optional) Whether the property supports IPv6 to origin. (Default: `false`).
-        /// </summary>
-        [Input("ipv6")]
-        public Input<bool>? Ipv6 { get; set; }
-
-        /// <summary>
-        /// — (Required) The product ID.
-        /// </summary>
         [Input("product")]
         public Input<string>? Product { get; set; }
+
+        [Input("productId")]
+        public Input<string>? ProductId { get; set; }
 
         public EdgeHostNameState()
         {

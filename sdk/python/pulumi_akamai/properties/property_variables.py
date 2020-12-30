@@ -12,8 +12,12 @@ from ._inputs import *
 
 __all__ = ['PropertyVariables']
 
+warnings.warn("""akamai.properties.PropertyVariables has been deprecated in favor of akamai.PropertyVariables""", DeprecationWarning)
+
 
 class PropertyVariables(pulumi.CustomResource):
+    warnings.warn("""akamai.properties.PropertyVariables has been deprecated in favor of akamai.PropertyVariables""", DeprecationWarning)
+
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -22,36 +26,11 @@ class PropertyVariables(pulumi.CustomResource):
                  __name__=None,
                  __opts__=None):
         """
-        The `properties.PropertyVariables` allows you to implement dynamic functionality. You can perform conditional logic based on the variable’s value, and catch any unforeseen errors that execute on the edge at runtime.
-
-        Typical uses for variables include:
-
-        * Simplify configurations by reducing the number of rules and behaviors.
-        * Improve self serviceability by replacing or extending advanced metadata.
-        * Automate redirects, forward path rewrites, HTTP header and cookie manipulation.
-        * Move origin functionality to the edge.
-
-        ## Example Usage
-        ### Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        origin = akamai.properties.PropertyVariables("origin", variables=[akamai.properties.PropertyVariablesVariableArgs(
-            variables=[akamai.properties.PropertyVariablesVariableVariableArgs(
-                description="Origin Hostname",
-                hidden=True,
-                name="PMUSER_ORIGIN",
-                sensitive=True,
-                value="origin.example.org",
-            )],
-        )])
-        ```
-
+        Create a PropertyVariables resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
+        pulumi.log.warn("PropertyVariables is deprecated: akamai.properties.PropertyVariables has been deprecated in favor of akamai.PropertyVariables")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__
@@ -69,6 +48,9 @@ class PropertyVariables(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = dict()
 
+            if variables is not None and not opts.urn:
+                warnings.warn("""resource \"akamai_property_variables\" is no longer supported - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
+                pulumi.log.warn("variables is deprecated: resource \"akamai_property_variables\" is no longer supported - See Akamai Terraform Upgrade Guide")
             __props__['variables'] = variables
             __props__['json'] = None
         super(PropertyVariables, __self__).__init__(

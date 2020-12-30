@@ -9,69 +9,35 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Properties
 {
-    /// <summary>
-    /// The `akamai.properties.PropertyActivation` provides the resource for activating a property in the appropriate environment. Once you are satisfied with any version of a property, an activation deploys it, either to the Akamai staging or production network. You activate a specific version, but the same version can be activated separately more than once.
-    /// 
-    /// ## Example Usage
-    /// ### Basic usage:
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var example = new Akamai.Properties.PropertyActivation("example", new Akamai.Properties.PropertyActivationArgs
-    ///         {
-    ///             Activate = @var.Akamai_property_activate,
-    ///             Contacts = 
-    ///             {
-    ///                 "user@example.org",
-    ///             },
-    ///             Network = "STAGING",
-    ///             Property = akamai_property.Example.Id,
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// </summary>
+    [Obsolete(@"akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation")]
     public partial class PropertyActivation : Pulumi.CustomResource
     {
-        /// <summary>
-        /// — (Optional, boolean) Whether to activate the property on the network. (Default: `true`).
-        /// </summary>
-        [Output("activate")]
-        public Output<bool?> Activate { get; private set; } = null!;
+        [Output("activationId")]
+        public Output<string> ActivationId { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Required) One or more email addresses to inform about activation changes.
-        /// </summary>
         [Output("contacts")]
         public Output<ImmutableArray<string>> Contacts { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Optional) Akamai network to activate on. Allowed values `staging` or `production` (Default: `staging`).
-        /// </summary>
+        [Output("errors")]
+        public Output<string> Errors { get; private set; } = null!;
+
         [Output("network")]
         public Output<string?> Network { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Required) The property ID.
-        /// </summary>
         [Output("property")]
         public Output<string> Property { get; private set; } = null!;
+
+        [Output("propertyId")]
+        public Output<string> PropertyId { get; private set; } = null!;
 
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Optional) The version to activate. When unset it will activate the latest version of the property.
-        /// </summary>
         [Output("version")]
-        public Output<int?> Version { get; private set; } = null!;
+        public Output<int> Version { get; private set; } = null!;
+
+        [Output("warnings")]
+        public Output<string> Warnings { get; private set; } = null!;
 
 
         /// <summary>
@@ -119,41 +85,28 @@ namespace Pulumi.Akamai.Properties
 
     public sealed class PropertyActivationArgs : Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// — (Optional, boolean) Whether to activate the property on the network. (Default: `true`).
-        /// </summary>
-        [Input("activate")]
-        public Input<bool>? Activate { get; set; }
+        [Input("activationId")]
+        public Input<string>? ActivationId { get; set; }
 
         [Input("contacts", required: true)]
         private InputList<string>? _contacts;
-
-        /// <summary>
-        /// — (Required) One or more email addresses to inform about activation changes.
-        /// </summary>
         public InputList<string> Contacts
         {
             get => _contacts ?? (_contacts = new InputList<string>());
             set => _contacts = value;
         }
 
-        /// <summary>
-        /// — (Optional) Akamai network to activate on. Allowed values `staging` or `production` (Default: `staging`).
-        /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
 
-        /// <summary>
-        /// — (Required) The property ID.
-        /// </summary>
-        [Input("property", required: true)]
-        public Input<string> Property { get; set; } = null!;
+        [Input("property")]
+        public Input<string>? Property { get; set; }
 
-        /// <summary>
-        /// — (Optional) The version to activate. When unset it will activate the latest version of the property.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
+        [Input("propertyId")]
+        public Input<string>? PropertyId { get; set; }
+
+        [Input("version", required: true)]
+        public Input<int> Version { get; set; } = null!;
 
         public PropertyActivationArgs()
         {
@@ -162,44 +115,37 @@ namespace Pulumi.Akamai.Properties
 
     public sealed class PropertyActivationState : Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// — (Optional, boolean) Whether to activate the property on the network. (Default: `true`).
-        /// </summary>
-        [Input("activate")]
-        public Input<bool>? Activate { get; set; }
+        [Input("activationId")]
+        public Input<string>? ActivationId { get; set; }
 
         [Input("contacts")]
         private InputList<string>? _contacts;
-
-        /// <summary>
-        /// — (Required) One or more email addresses to inform about activation changes.
-        /// </summary>
         public InputList<string> Contacts
         {
             get => _contacts ?? (_contacts = new InputList<string>());
             set => _contacts = value;
         }
 
-        /// <summary>
-        /// — (Optional) Akamai network to activate on. Allowed values `staging` or `production` (Default: `staging`).
-        /// </summary>
+        [Input("errors")]
+        public Input<string>? Errors { get; set; }
+
         [Input("network")]
         public Input<string>? Network { get; set; }
 
-        /// <summary>
-        /// — (Required) The property ID.
-        /// </summary>
         [Input("property")]
         public Input<string>? Property { get; set; }
+
+        [Input("propertyId")]
+        public Input<string>? PropertyId { get; set; }
 
         [Input("status")]
         public Input<string>? Status { get; set; }
 
-        /// <summary>
-        /// — (Optional) The version to activate. When unset it will activate the latest version of the property.
-        /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }
+
+        [Input("warnings")]
+        public Input<string>? Warnings { get; set; }
 
         public PropertyActivationState()
         {

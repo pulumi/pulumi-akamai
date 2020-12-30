@@ -14,10 +14,6 @@ namespace Pulumi.Akamai.Trafficmanagement.Inputs
     {
         [Input("asNumbers", required: true)]
         private InputList<int>? _asNumbers;
-
-        /// <summary>
-        /// — (List)
-        /// </summary>
         public InputList<int> AsNumbers
         {
             get => _asNumbers ?? (_asNumbers = new InputList<int>());

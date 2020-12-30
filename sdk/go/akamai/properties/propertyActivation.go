@@ -4,69 +4,41 @@
 package properties
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// The `properties.PropertyActivation` provides the resource for activating a property in the appropriate environment. Once you are satisfied with any version of a property, an activation deploys it, either to the Akamai staging or production network. You activate a specific version, but the same version can be activated separately more than once.
-//
-// ## Example Usage
-// ### Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/properties"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := properties.NewPropertyActivation(ctx, "example", &properties.PropertyActivationArgs{
-// 			Activate: pulumi.Any(_var.Akamai_property_activate),
-// 			Contacts: pulumi.StringArray{
-// 				pulumi.String("user@example.org"),
-// 			},
-// 			Network:  pulumi.String("STAGING"),
-// 			Property: pulumi.Any(akamai_property.Example.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
+// Deprecated: akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation
 type PropertyActivation struct {
 	pulumi.CustomResourceState
 
-	// — (Optional, boolean) Whether to activate the property on the network. (Default: `true`).
-	Activate pulumi.BoolPtrOutput `pulumi:"activate"`
-	// — (Required) One or more email addresses to inform about activation changes.
-	Contacts pulumi.StringArrayOutput `pulumi:"contacts"`
-	// — (Optional) Akamai network to activate on. Allowed values `staging` or `production` (Default: `staging`).
-	Network pulumi.StringPtrOutput `pulumi:"network"`
-	// — (Required) The property ID.
-	Property pulumi.StringOutput `pulumi:"property"`
-	Status   pulumi.StringOutput `pulumi:"status"`
-	// — (Optional) The version to activate. When unset it will activate the latest version of the property.
-	Version pulumi.IntPtrOutput `pulumi:"version"`
+	ActivationId pulumi.StringOutput      `pulumi:"activationId"`
+	Contacts     pulumi.StringArrayOutput `pulumi:"contacts"`
+	Errors       pulumi.StringOutput      `pulumi:"errors"`
+	Network      pulumi.StringPtrOutput   `pulumi:"network"`
+	// Deprecated: The setting "property" has been deprecated.
+	Property   pulumi.StringOutput `pulumi:"property"`
+	PropertyId pulumi.StringOutput `pulumi:"propertyId"`
+	Status     pulumi.StringOutput `pulumi:"status"`
+	Version    pulumi.IntOutput    `pulumi:"version"`
+	Warnings   pulumi.StringOutput `pulumi:"warnings"`
 }
 
 // NewPropertyActivation registers a new resource with the given unique name, arguments, and options.
 func NewPropertyActivation(ctx *pulumi.Context,
 	name string, args *PropertyActivationArgs, opts ...pulumi.ResourceOption) (*PropertyActivation, error) {
-	if args == nil || args.Contacts == nil {
-		return nil, errors.New("missing required argument 'Contacts'")
-	}
-	if args == nil || args.Property == nil {
-		return nil, errors.New("missing required argument 'Property'")
-	}
 	if args == nil {
-		args = &PropertyActivationArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.Contacts == nil {
+		return nil, errors.New("invalid value for required argument 'Contacts'")
+	}
+	if args.Version == nil {
+		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource PropertyActivation
 	err := ctx.RegisterResource("akamai:properties/propertyActivation:PropertyActivation", name, args, &resource, opts...)
@@ -90,31 +62,29 @@ func GetPropertyActivation(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering PropertyActivation resources.
 type propertyActivationState struct {
-	// — (Optional, boolean) Whether to activate the property on the network. (Default: `true`).
-	Activate *bool `pulumi:"activate"`
-	// — (Required) One or more email addresses to inform about activation changes.
-	Contacts []string `pulumi:"contacts"`
-	// — (Optional) Akamai network to activate on. Allowed values `staging` or `production` (Default: `staging`).
-	Network *string `pulumi:"network"`
-	// — (Required) The property ID.
-	Property *string `pulumi:"property"`
-	Status   *string `pulumi:"status"`
-	// — (Optional) The version to activate. When unset it will activate the latest version of the property.
-	Version *int `pulumi:"version"`
+	ActivationId *string  `pulumi:"activationId"`
+	Contacts     []string `pulumi:"contacts"`
+	Errors       *string  `pulumi:"errors"`
+	Network      *string  `pulumi:"network"`
+	// Deprecated: The setting "property" has been deprecated.
+	Property   *string `pulumi:"property"`
+	PropertyId *string `pulumi:"propertyId"`
+	Status     *string `pulumi:"status"`
+	Version    *int    `pulumi:"version"`
+	Warnings   *string `pulumi:"warnings"`
 }
 
 type PropertyActivationState struct {
-	// — (Optional, boolean) Whether to activate the property on the network. (Default: `true`).
-	Activate pulumi.BoolPtrInput
-	// — (Required) One or more email addresses to inform about activation changes.
-	Contacts pulumi.StringArrayInput
-	// — (Optional) Akamai network to activate on. Allowed values `staging` or `production` (Default: `staging`).
-	Network pulumi.StringPtrInput
-	// — (Required) The property ID.
-	Property pulumi.StringPtrInput
-	Status   pulumi.StringPtrInput
-	// — (Optional) The version to activate. When unset it will activate the latest version of the property.
-	Version pulumi.IntPtrInput
+	ActivationId pulumi.StringPtrInput
+	Contacts     pulumi.StringArrayInput
+	Errors       pulumi.StringPtrInput
+	Network      pulumi.StringPtrInput
+	// Deprecated: The setting "property" has been deprecated.
+	Property   pulumi.StringPtrInput
+	PropertyId pulumi.StringPtrInput
+	Status     pulumi.StringPtrInput
+	Version    pulumi.IntPtrInput
+	Warnings   pulumi.StringPtrInput
 }
 
 func (PropertyActivationState) ElementType() reflect.Type {
@@ -122,32 +92,65 @@ func (PropertyActivationState) ElementType() reflect.Type {
 }
 
 type propertyActivationArgs struct {
-	// — (Optional, boolean) Whether to activate the property on the network. (Default: `true`).
-	Activate *bool `pulumi:"activate"`
-	// — (Required) One or more email addresses to inform about activation changes.
-	Contacts []string `pulumi:"contacts"`
-	// — (Optional) Akamai network to activate on. Allowed values `staging` or `production` (Default: `staging`).
-	Network *string `pulumi:"network"`
-	// — (Required) The property ID.
-	Property string `pulumi:"property"`
-	// — (Optional) The version to activate. When unset it will activate the latest version of the property.
-	Version *int `pulumi:"version"`
+	ActivationId *string  `pulumi:"activationId"`
+	Contacts     []string `pulumi:"contacts"`
+	Network      *string  `pulumi:"network"`
+	// Deprecated: The setting "property" has been deprecated.
+	Property   *string `pulumi:"property"`
+	PropertyId *string `pulumi:"propertyId"`
+	Version    int     `pulumi:"version"`
 }
 
 // The set of arguments for constructing a PropertyActivation resource.
 type PropertyActivationArgs struct {
-	// — (Optional, boolean) Whether to activate the property on the network. (Default: `true`).
-	Activate pulumi.BoolPtrInput
-	// — (Required) One or more email addresses to inform about activation changes.
-	Contacts pulumi.StringArrayInput
-	// — (Optional) Akamai network to activate on. Allowed values `staging` or `production` (Default: `staging`).
-	Network pulumi.StringPtrInput
-	// — (Required) The property ID.
-	Property pulumi.StringInput
-	// — (Optional) The version to activate. When unset it will activate the latest version of the property.
-	Version pulumi.IntPtrInput
+	ActivationId pulumi.StringPtrInput
+	Contacts     pulumi.StringArrayInput
+	Network      pulumi.StringPtrInput
+	// Deprecated: The setting "property" has been deprecated.
+	Property   pulumi.StringPtrInput
+	PropertyId pulumi.StringPtrInput
+	Version    pulumi.IntInput
 }
 
 func (PropertyActivationArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*propertyActivationArgs)(nil)).Elem()
+}
+
+type PropertyActivationInput interface {
+	pulumi.Input
+
+	ToPropertyActivationOutput() PropertyActivationOutput
+	ToPropertyActivationOutputWithContext(ctx context.Context) PropertyActivationOutput
+}
+
+func (PropertyActivation) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivation)(nil)).Elem()
+}
+
+func (i PropertyActivation) ToPropertyActivationOutput() PropertyActivationOutput {
+	return i.ToPropertyActivationOutputWithContext(context.Background())
+}
+
+func (i PropertyActivation) ToPropertyActivationOutputWithContext(ctx context.Context) PropertyActivationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationOutput)
+}
+
+type PropertyActivationOutput struct {
+	*pulumi.OutputState
+}
+
+func (PropertyActivationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivationOutput)(nil)).Elem()
+}
+
+func (o PropertyActivationOutput) ToPropertyActivationOutput() PropertyActivationOutput {
+	return o
+}
+
+func (o PropertyActivationOutput) ToPropertyActivationOutputWithContext(ctx context.Context) PropertyActivationOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(PropertyActivationOutput{})
 }

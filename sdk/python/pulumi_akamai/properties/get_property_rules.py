@@ -7,8 +7,6 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union
 from .. import _utilities, _tables
-from . import outputs
-from ._inputs import *
 
 __all__ = [
     'GetPropertyRulesResult',
@@ -16,24 +14,50 @@ __all__ = [
     'get_property_rules',
 ]
 
+warnings.warn("""akamai.properties.getPropertyRules has been deprecated in favor of akamai.getPropertyRules""", DeprecationWarning)
+
 @pulumi.output_type
 class GetPropertyRulesResult:
     """
     A collection of values returned by getPropertyRules.
     """
-    def __init__(__self__, id=None, json=None, rules=None, variables=None):
+    def __init__(__self__, contract_id=None, errors=None, group_id=None, id=None, property_id=None, rules=None, version=None):
+        if contract_id and not isinstance(contract_id, str):
+            raise TypeError("Expected argument 'contract_id' to be a str")
+        pulumi.set(__self__, "contract_id", contract_id)
+        if errors and not isinstance(errors, str):
+            raise TypeError("Expected argument 'errors' to be a str")
+        pulumi.set(__self__, "errors", errors)
+        if group_id and not isinstance(group_id, str):
+            raise TypeError("Expected argument 'group_id' to be a str")
+        pulumi.set(__self__, "group_id", group_id)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
-        if json and not isinstance(json, str):
-            raise TypeError("Expected argument 'json' to be a str")
-        pulumi.set(__self__, "json", json)
-        if rules and not isinstance(rules, list):
-            raise TypeError("Expected argument 'rules' to be a list")
+        if property_id and not isinstance(property_id, str):
+            raise TypeError("Expected argument 'property_id' to be a str")
+        pulumi.set(__self__, "property_id", property_id)
+        if rules and not isinstance(rules, str):
+            raise TypeError("Expected argument 'rules' to be a str")
         pulumi.set(__self__, "rules", rules)
-        if variables and not isinstance(variables, str):
-            raise TypeError("Expected argument 'variables' to be a str")
-        pulumi.set(__self__, "variables", variables)
+        if version and not isinstance(version, int):
+            raise TypeError("Expected argument 'version' to be a int")
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> str:
+        return pulumi.get(self, "contract_id")
+
+    @property
+    @pulumi.getter
+    def errors(self) -> str:
+        return pulumi.get(self, "errors")
+
+    @property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> str:
+        return pulumi.get(self, "group_id")
 
     @property
     @pulumi.getter
@@ -44,19 +68,19 @@ class GetPropertyRulesResult:
         return pulumi.get(self, "id")
 
     @property
-    @pulumi.getter
-    def json(self) -> str:
-        return pulumi.get(self, "json")
+    @pulumi.getter(name="propertyId")
+    def property_id(self) -> str:
+        return pulumi.get(self, "property_id")
 
     @property
     @pulumi.getter
-    def rules(self) -> Optional[Sequence['outputs.GetPropertyRulesRuleResult']]:
+    def rules(self) -> str:
         return pulumi.get(self, "rules")
 
     @property
     @pulumi.getter
-    def variables(self) -> Optional[str]:
-        return pulumi.get(self, "variables")
+    def version(self) -> int:
+        return pulumi.get(self, "version")
 
 
 class AwaitableGetPropertyRulesResult(GetPropertyRulesResult):
@@ -65,63 +89,29 @@ class AwaitableGetPropertyRulesResult(GetPropertyRulesResult):
         if False:
             yield self
         return GetPropertyRulesResult(
+            contract_id=self.contract_id,
+            errors=self.errors,
+            group_id=self.group_id,
             id=self.id,
-            json=self.json,
+            property_id=self.property_id,
             rules=self.rules,
-            variables=self.variables)
+            version=self.version)
 
 
-def get_property_rules(rules: Optional[Sequence[pulumi.InputType['GetPropertyRulesRuleArgs']]] = None,
-                       variables: Optional[str] = None,
+def get_property_rules(contract_id: Optional[str] = None,
+                       group_id: Optional[str] = None,
+                       property_id: Optional[str] = None,
+                       version: Optional[int] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyRulesResult:
     """
-    The `properties.PropertyRules` data source allows you to configure a nested block of property rules, criteria, and behaviors. A property’s main functionality is encapsulated in its set of rules and rules are composed of the matches and the behavior that applies under those matches.
-
-    ## Example Usage
-    ### Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    example_property_rules = akamai.properties.get_property_rules(rules=[akamai.properties.GetPropertyRulesRuleArgs(
-        behaviors=[akamai.properties.GetPropertyRulesRuleBehaviorArgs(
-            name="downstreamCache",
-            option=[{
-                "key": "behavior",
-                "value": "TUNNEL_ORIGIN",
-            }],
-        )],
-        rules=[akamai.properties.GetPropertyRulesRuleRuleArgs(
-            name="Performance",
-            rule=[{
-                "behavior": [{
-                    "name": "adaptiveImageCompression",
-                    "option": [
-                        {
-                            "key": "tier1MobileCompressionMethod",
-                            "value": "COMPRESS",
-                        },
-                        {
-                            "key": "tier1MobileCompressionValue",
-                            "value": "80",
-                        },
-                        {
-                            "key": "tier2MobileCompressionMethod",
-                            "value": "COMPRESS",
-                        },
-                    ],
-                }],
-                "name": "JPEG Images",
-            }],
-        )],
-    )])
-    example_property = akamai.properties.Property("exampleProperty", rules=example_property_rules.json)
-    ```
+    Use this data source to access information about an existing resource.
     """
+    pulumi.log.warn("get_property_rules is deprecated: akamai.properties.getPropertyRules has been deprecated in favor of akamai.getPropertyRules")
     __args__ = dict()
-    __args__['rules'] = rules
-    __args__['variables'] = variables
+    __args__['contractId'] = contract_id
+    __args__['groupId'] = group_id
+    __args__['propertyId'] = property_id
+    __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -129,7 +119,10 @@ def get_property_rules(rules: Optional[Sequence[pulumi.InputType['GetPropertyRul
     __ret__ = pulumi.runtime.invoke('akamai:properties/getPropertyRules:getPropertyRules', __args__, opts=opts, typ=GetPropertyRulesResult).value
 
     return AwaitableGetPropertyRulesResult(
+        contract_id=__ret__.contract_id,
+        errors=__ret__.errors,
+        group_id=__ret__.group_id,
         id=__ret__.id,
-        json=__ret__.json,
+        property_id=__ret__.property_id,
         rules=__ret__.rules,
-        variables=__ret__.variables)
+        version=__ret__.version)

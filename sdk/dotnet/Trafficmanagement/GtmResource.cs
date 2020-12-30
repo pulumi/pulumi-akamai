@@ -9,31 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Trafficmanagement
 {
-    /// <summary>
-    /// `akamai.trafficmanagement.GtmResource` provides the resource for creating, configuring and importing a gtm resource to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_resource_name`
-    /// 
-    /// ## Example Usage
-    /// ### Basic usage:
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var demoResource = new Akamai.Trafficmanagement.GtmResource("demoResource", new Akamai.Trafficmanagement.GtmResourceArgs
-    ///         {
-    ///             AggregationType = "latest",
-    ///             Domain = "demo_domain.akadns.net",
-    ///             Type = "XML load object via HTTP",
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// </summary>
+    [Obsolete(@"akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource")]
     public partial class GtmResource : Pulumi.CustomResource
     {
         [Output("aggregationType")]
@@ -48,9 +24,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
 
-        /// <summary>
-        /// — Domain name
-        /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
 
@@ -69,34 +42,18 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Output("maxUMultiplicativeIncrement")]
         public Output<double?> MaxUMultiplicativeIncrement { get; private set; } = null!;
 
-        /// <summary>
-        /// — Resource name
-        /// * `aggregation_type`
-        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
-        /// <summary>
-        /// — (multiple allowed) 
-        /// * `datacenter_id`
-        /// * `load_object`
-        /// * `load_object_port`
-        /// </summary>
         [Output("resourceInstances")]
         public Output<ImmutableArray<Outputs.GtmResourceResourceInstance>> ResourceInstances { get; private set; } = null!;
 
-        /// <summary>
-        /// — Resource type
-        /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
 
         [Output("upperBound")]
         public Output<int?> UpperBound { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Boolean, Default: true) Wait for transaction to complete
-        /// </summary>
         [Output("waitOnComplete")]
         public Output<bool?> WaitOnComplete { get; private set; } = null!;
 
@@ -158,9 +115,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("description")]
         public Input<string>? Description { get; set; }
 
-        /// <summary>
-        /// — Domain name
-        /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
 
@@ -179,40 +133,23 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("maxUMultiplicativeIncrement")]
         public Input<double>? MaxUMultiplicativeIncrement { get; set; }
 
-        /// <summary>
-        /// — Resource name
-        /// * `aggregation_type`
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("resourceInstances")]
         private InputList<Inputs.GtmResourceResourceInstanceArgs>? _resourceInstances;
-
-        /// <summary>
-        /// — (multiple allowed) 
-        /// * `datacenter_id`
-        /// * `load_object`
-        /// * `load_object_port`
-        /// </summary>
         public InputList<Inputs.GtmResourceResourceInstanceArgs> ResourceInstances
         {
             get => _resourceInstances ?? (_resourceInstances = new InputList<Inputs.GtmResourceResourceInstanceArgs>());
             set => _resourceInstances = value;
         }
 
-        /// <summary>
-        /// — Resource type
-        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
         [Input("upperBound")]
         public Input<int>? UpperBound { get; set; }
 
-        /// <summary>
-        /// — (Boolean, Default: true) Wait for transaction to complete
-        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 
@@ -235,9 +172,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("description")]
         public Input<string>? Description { get; set; }
 
-        /// <summary>
-        /// — Domain name
-        /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
@@ -256,40 +190,23 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("maxUMultiplicativeIncrement")]
         public Input<double>? MaxUMultiplicativeIncrement { get; set; }
 
-        /// <summary>
-        /// — Resource name
-        /// * `aggregation_type`
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("resourceInstances")]
         private InputList<Inputs.GtmResourceResourceInstanceGetArgs>? _resourceInstances;
-
-        /// <summary>
-        /// — (multiple allowed) 
-        /// * `datacenter_id`
-        /// * `load_object`
-        /// * `load_object_port`
-        /// </summary>
         public InputList<Inputs.GtmResourceResourceInstanceGetArgs> ResourceInstances
         {
             get => _resourceInstances ?? (_resourceInstances = new InputList<Inputs.GtmResourceResourceInstanceGetArgs>());
             set => _resourceInstances = value;
         }
 
-        /// <summary>
-        /// — Resource type
-        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         [Input("upperBound")]
         public Input<int>? UpperBound { get; set; }
 
-        /// <summary>
-        /// — (Boolean, Default: true) Wait for transaction to complete
-        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 

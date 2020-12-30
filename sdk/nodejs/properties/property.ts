@@ -2,37 +2,11 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "../types/input";
-import * as outputs from "../types/output";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
- * The `akamai.properties.Property` resource represents an Akamai property configuration, allowing you to create,
- * update, and activate properties on the Akamai platform.
- *
- * ## Example Usage
- * ### Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = new akamai.properties.Property("example", {
- *     contacts: ["user@example.org"],
- *     contract: "ctr_####",
- *     cpCode: "cpc_#####",
- *     group: "grp_####",
- *     hostnames: {
- *         "example.org": "example.org.edgesuite.net",
- *         "sub.example.org": "sub.example.org.edgesuite.net",
- *         "www.example.org": "example.org.edgesuite.net",
- *     },
- *     product: "prd_SPM",
- *     ruleFormat: "v2018-02-27",
- *     rules: local_file_terraform_demo.content,
- *     variables: akamai_property_variables_origin.json,
- * });
- * ```
+ * @deprecated akamai.properties.Property has been deprecated in favor of akamai.Property
  */
 export class Property extends pulumi.CustomResource {
     /**
@@ -45,6 +19,7 @@ export class Property extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: PropertyState, opts?: pulumi.CustomResourceOptions): Property {
+        pulumi.log.warn("Property is deprecated: akamai.properties.Property has been deprecated in favor of akamai.Property")
         return new Property(name, <any>state, { ...opts, id: id });
     }
 
@@ -63,74 +38,79 @@ export class Property extends pulumi.CustomResource {
     }
 
     /**
-     * — the Account ID under which the property is created.
+     * @deprecated "contact" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
      */
-    public /*out*/ readonly account!: pulumi.Output<string>;
+    public readonly contacts!: pulumi.Output<string[] | undefined>;
     /**
-     * — (Required) One or more email addresses to inform about activation changes.
+     * @deprecated use "contract_id" attribute instead
      */
-    public readonly contacts!: pulumi.Output<string[]>;
+    public readonly contract!: pulumi.Output<string>;
     /**
-     * — (Optional) The contract ID.
+     * Contract ID to be assigned to the Property
      */
-    public readonly contract!: pulumi.Output<string | undefined>;
+    public readonly contractId!: pulumi.Output<string>;
     /**
-     * — (Optional) The CP Code id or name to use (or create). Required unless a [cpCode behavior](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#cpcode) is present in the default rule.
+     * @deprecated "cp_code" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
      */
     public readonly cpCode!: pulumi.Output<string | undefined>;
     /**
-     * — the final public hostname to edge hostname map
+     * @deprecated use "group_id" attribute instead
      */
-    public /*out*/ readonly edgeHostnames!: pulumi.Output<{[key: string]: string}>;
+    public readonly group!: pulumi.Output<string>;
     /**
-     * — (Optional) The group ID.
+     * Group ID to be assigned to the Property
      */
-    public readonly group!: pulumi.Output<string | undefined>;
+    public readonly groupId!: pulumi.Output<string>;
     /**
-     * — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
+     * Mapping of edge hostname CNAMEs to other CNAMEs
      */
-    public readonly hostnames!: pulumi.Output<{[key: string]: string}>;
+    public readonly hostnames!: pulumi.Output<{[key: string]: string} | undefined>;
     /**
-     * — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
+     * @deprecated "is_secure" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
      */
     public readonly isSecure!: pulumi.Output<boolean | undefined>;
     /**
-     * — (Required) The property name.
+     * Property's current latest version number
+     */
+    public /*out*/ readonly latestVersion!: pulumi.Output<number>;
+    /**
+     * Name to give to the Property (must be unique)
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
+     * @deprecated "origin" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
      */
     public readonly origins!: pulumi.Output<outputs.properties.PropertyOrigin[] | undefined>;
     /**
-     * — (Optional) The product ID. (Default: `prd_SPM` for Ion)
+     * @deprecated use "product_id" attribute instead
      */
-    public readonly product!: pulumi.Output<string | undefined>;
+    public readonly product!: pulumi.Output<string>;
     /**
-     * — the current version of the property active on the production network.
+     * Product ID to be assigned to the Property
+     */
+    public readonly productId!: pulumi.Output<string>;
+    /**
+     * Property's version currently activated in production (zero when not active in production)
      */
     public /*out*/ readonly productionVersion!: pulumi.Output<number>;
+    public /*out*/ readonly ruleErrors!: pulumi.Output<outputs.properties.PropertyRuleError[]>;
     /**
-     * — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
+     * Specify the rule format version (defaults to latest version available when created)
      */
-    public readonly ruleFormat!: pulumi.Output<string | undefined>;
+    public readonly ruleFormat!: pulumi.Output<string>;
+    public /*out*/ readonly ruleWarnings!: pulumi.Output<outputs.properties.PropertyRuleWarning[]>;
     /**
-     * — (Required) A JSON encoded string of property rules (see: [`akamai.properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+     * Property Rules as JSON
      */
-    public readonly rules!: pulumi.Output<string | undefined>;
-    public /*out*/ readonly rulessha!: pulumi.Output<string>;
+    public readonly rules!: pulumi.Output<string>;
     /**
-     * — the current version of the property active on the staging network.
+     * Property's version currently activated in staging (zero when not active in staging)
      */
     public /*out*/ readonly stagingVersion!: pulumi.Output<number>;
     /**
-     * — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+     * @deprecated "variables" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
      */
     public readonly variables!: pulumi.Output<string | undefined>;
-    /**
-     * — the current version of the property config.
-     */
-    public /*out*/ readonly version!: pulumi.Output<number>;
 
     /**
      * Create a Property resource with the given unique name, arguments, and options.
@@ -139,55 +119,56 @@ export class Property extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: PropertyArgs, opts?: pulumi.CustomResourceOptions)
+    /** @deprecated akamai.properties.Property has been deprecated in favor of akamai.Property */
+    constructor(name: string, args?: PropertyArgs, opts?: pulumi.CustomResourceOptions)
+    /** @deprecated akamai.properties.Property has been deprecated in favor of akamai.Property */
     constructor(name: string, argsOrState?: PropertyArgs | PropertyState, opts?: pulumi.CustomResourceOptions) {
+        pulumi.log.warn("Property is deprecated: akamai.properties.Property has been deprecated in favor of akamai.Property")
         let inputs: pulumi.Inputs = {};
         if (opts && opts.id) {
             const state = argsOrState as PropertyState | undefined;
-            inputs["account"] = state ? state.account : undefined;
             inputs["contacts"] = state ? state.contacts : undefined;
             inputs["contract"] = state ? state.contract : undefined;
+            inputs["contractId"] = state ? state.contractId : undefined;
             inputs["cpCode"] = state ? state.cpCode : undefined;
-            inputs["edgeHostnames"] = state ? state.edgeHostnames : undefined;
             inputs["group"] = state ? state.group : undefined;
+            inputs["groupId"] = state ? state.groupId : undefined;
             inputs["hostnames"] = state ? state.hostnames : undefined;
             inputs["isSecure"] = state ? state.isSecure : undefined;
+            inputs["latestVersion"] = state ? state.latestVersion : undefined;
             inputs["name"] = state ? state.name : undefined;
             inputs["origins"] = state ? state.origins : undefined;
             inputs["product"] = state ? state.product : undefined;
+            inputs["productId"] = state ? state.productId : undefined;
             inputs["productionVersion"] = state ? state.productionVersion : undefined;
+            inputs["ruleErrors"] = state ? state.ruleErrors : undefined;
             inputs["ruleFormat"] = state ? state.ruleFormat : undefined;
+            inputs["ruleWarnings"] = state ? state.ruleWarnings : undefined;
             inputs["rules"] = state ? state.rules : undefined;
-            inputs["rulessha"] = state ? state.rulessha : undefined;
             inputs["stagingVersion"] = state ? state.stagingVersion : undefined;
             inputs["variables"] = state ? state.variables : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as PropertyArgs | undefined;
-            if (!args || args.contacts === undefined) {
-                throw new Error("Missing required property 'contacts'");
-            }
-            if (!args || args.hostnames === undefined) {
-                throw new Error("Missing required property 'hostnames'");
-            }
             inputs["contacts"] = args ? args.contacts : undefined;
             inputs["contract"] = args ? args.contract : undefined;
+            inputs["contractId"] = args ? args.contractId : undefined;
             inputs["cpCode"] = args ? args.cpCode : undefined;
             inputs["group"] = args ? args.group : undefined;
+            inputs["groupId"] = args ? args.groupId : undefined;
             inputs["hostnames"] = args ? args.hostnames : undefined;
             inputs["isSecure"] = args ? args.isSecure : undefined;
             inputs["name"] = args ? args.name : undefined;
             inputs["origins"] = args ? args.origins : undefined;
             inputs["product"] = args ? args.product : undefined;
+            inputs["productId"] = args ? args.productId : undefined;
             inputs["ruleFormat"] = args ? args.ruleFormat : undefined;
             inputs["rules"] = args ? args.rules : undefined;
             inputs["variables"] = args ? args.variables : undefined;
-            inputs["account"] = undefined /*out*/;
-            inputs["edgeHostnames"] = undefined /*out*/;
+            inputs["latestVersion"] = undefined /*out*/;
             inputs["productionVersion"] = undefined /*out*/;
-            inputs["rulessha"] = undefined /*out*/;
+            inputs["ruleErrors"] = undefined /*out*/;
+            inputs["ruleWarnings"] = undefined /*out*/;
             inputs["stagingVersion"] = undefined /*out*/;
-            inputs["version"] = undefined /*out*/;
         }
         if (!opts) {
             opts = {}
@@ -205,74 +186,79 @@ export class Property extends pulumi.CustomResource {
  */
 export interface PropertyState {
     /**
-     * — the Account ID under which the property is created.
-     */
-    readonly account?: pulumi.Input<string>;
-    /**
-     * — (Required) One or more email addresses to inform about activation changes.
+     * @deprecated "contact" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
      */
     readonly contacts?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * — (Optional) The contract ID.
+     * @deprecated use "contract_id" attribute instead
      */
     readonly contract?: pulumi.Input<string>;
     /**
-     * — (Optional) The CP Code id or name to use (or create). Required unless a [cpCode behavior](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#cpcode) is present in the default rule.
+     * Contract ID to be assigned to the Property
+     */
+    readonly contractId?: pulumi.Input<string>;
+    /**
+     * @deprecated "cp_code" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
      */
     readonly cpCode?: pulumi.Input<string>;
     /**
-     * — the final public hostname to edge hostname map
-     */
-    readonly edgeHostnames?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    /**
-     * — (Optional) The group ID.
+     * @deprecated use "group_id" attribute instead
      */
     readonly group?: pulumi.Input<string>;
     /**
-     * — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
+     * Group ID to be assigned to the Property
+     */
+    readonly groupId?: pulumi.Input<string>;
+    /**
+     * Mapping of edge hostname CNAMEs to other CNAMEs
      */
     readonly hostnames?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
+     * @deprecated "is_secure" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
      */
     readonly isSecure?: pulumi.Input<boolean>;
     /**
-     * — (Required) The property name.
+     * Property's current latest version number
+     */
+    readonly latestVersion?: pulumi.Input<number>;
+    /**
+     * Name to give to the Property (must be unique)
      */
     readonly name?: pulumi.Input<string>;
     /**
-     * — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
+     * @deprecated "origin" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
      */
     readonly origins?: pulumi.Input<pulumi.Input<inputs.properties.PropertyOrigin>[]>;
     /**
-     * — (Optional) The product ID. (Default: `prd_SPM` for Ion)
+     * @deprecated use "product_id" attribute instead
      */
     readonly product?: pulumi.Input<string>;
     /**
-     * — the current version of the property active on the production network.
+     * Product ID to be assigned to the Property
+     */
+    readonly productId?: pulumi.Input<string>;
+    /**
+     * Property's version currently activated in production (zero when not active in production)
      */
     readonly productionVersion?: pulumi.Input<number>;
+    readonly ruleErrors?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRuleError>[]>;
     /**
-     * — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
+     * Specify the rule format version (defaults to latest version available when created)
      */
     readonly ruleFormat?: pulumi.Input<string>;
+    readonly ruleWarnings?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRuleWarning>[]>;
     /**
-     * — (Required) A JSON encoded string of property rules (see: [`akamai.properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+     * Property Rules as JSON
      */
     readonly rules?: pulumi.Input<string>;
-    readonly rulessha?: pulumi.Input<string>;
     /**
-     * — the current version of the property active on the staging network.
+     * Property's version currently activated in staging (zero when not active in staging)
      */
     readonly stagingVersion?: pulumi.Input<number>;
     /**
-     * — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+     * @deprecated "variables" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
      */
     readonly variables?: pulumi.Input<string>;
-    /**
-     * — the current version of the property config.
-     */
-    readonly version?: pulumi.Input<number>;
 }
 
 /**
@@ -280,51 +266,63 @@ export interface PropertyState {
  */
 export interface PropertyArgs {
     /**
-     * — (Required) One or more email addresses to inform about activation changes.
+     * @deprecated "contact" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
      */
-    readonly contacts: pulumi.Input<pulumi.Input<string>[]>;
+    readonly contacts?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * — (Optional) The contract ID.
+     * @deprecated use "contract_id" attribute instead
      */
     readonly contract?: pulumi.Input<string>;
     /**
-     * — (Optional) The CP Code id or name to use (or create). Required unless a [cpCode behavior](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#cpcode) is present in the default rule.
+     * Contract ID to be assigned to the Property
+     */
+    readonly contractId?: pulumi.Input<string>;
+    /**
+     * @deprecated "cp_code" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
      */
     readonly cpCode?: pulumi.Input<string>;
     /**
-     * — (Optional) The group ID.
+     * @deprecated use "group_id" attribute instead
      */
     readonly group?: pulumi.Input<string>;
     /**
-     * — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
+     * Group ID to be assigned to the Property
      */
-    readonly hostnames: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    readonly groupId?: pulumi.Input<string>;
     /**
-     * — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
+     * Mapping of edge hostname CNAMEs to other CNAMEs
+     */
+    readonly hostnames?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * @deprecated "is_secure" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
      */
     readonly isSecure?: pulumi.Input<boolean>;
     /**
-     * — (Required) The property name.
+     * Name to give to the Property (must be unique)
      */
     readonly name?: pulumi.Input<string>;
     /**
-     * — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
+     * @deprecated "origin" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
      */
     readonly origins?: pulumi.Input<pulumi.Input<inputs.properties.PropertyOrigin>[]>;
     /**
-     * — (Optional) The product ID. (Default: `prd_SPM` for Ion)
+     * @deprecated use "product_id" attribute instead
      */
     readonly product?: pulumi.Input<string>;
     /**
-     * — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
+     * Product ID to be assigned to the Property
+     */
+    readonly productId?: pulumi.Input<string>;
+    /**
+     * Specify the rule format version (defaults to latest version available when created)
      */
     readonly ruleFormat?: pulumi.Input<string>;
     /**
-     * — (Required) A JSON encoded string of property rules (see: [`akamai.properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+     * Property Rules as JSON
      */
     readonly rules?: pulumi.Input<string>;
     /**
-     * — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+     * @deprecated "variables" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
      */
     readonly variables?: pulumi.Input<string>;
 }

@@ -14,22 +14,9 @@ namespace Pulumi.Akamai.Trafficmanagement.Outputs
     public sealed class GtmPropertyTrafficTarget
     {
         public readonly int? DatacenterId;
-        /// <summary>
-        /// — (Boolean)
-        /// * `weight`
-        /// </summary>
         public readonly bool? Enabled;
         public readonly string? HandoutCname;
-        /// <summary>
-        /// — Liveness test name
-        /// * `test_interval`
-        /// * `test_object_protocol`
-        /// * `test_timeout`
-        /// </summary>
         public readonly string? Name;
-        /// <summary>
-        /// — (List)
-        /// </summary>
         public readonly ImmutableArray<string> Servers;
         public readonly double? Weight;
 

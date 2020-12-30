@@ -2,28 +2,11 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "../types/input";
-import * as outputs from "../types/output";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
- * `akamai.trafficmanagement.GtmASmap` provides the resource for creating, configuring and importing a gtm AS Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingMapName`
- *
- * ## Example Usage
- * ### Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const demoAsmap = new akamai.trafficmanagement.GtmASmap("demo_asmap", {
- *     defaultDatacenter: {
- *         datacenterId: 5400,
- *         nickname: "All Other AS numbers",
- *     },
- *     domain: "demo_domain.akadns.net",
- * });
- * ```
+ * @deprecated akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap
  */
 export class GtmASmap extends pulumi.CustomResource {
     /**
@@ -36,6 +19,7 @@ export class GtmASmap extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: GtmASmapState, opts?: pulumi.CustomResourceOptions): GtmASmap {
+        pulumi.log.warn("GtmASmap is deprecated: akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap")
         return new GtmASmap(name, <any>state, { ...opts, id: id });
     }
 
@@ -53,27 +37,10 @@ export class GtmASmap extends pulumi.CustomResource {
         return obj['__pulumiType'] === GtmASmap.__pulumiType;
     }
 
-    /**
-     * — (multiple allowed)
-     * * `datacenterId`
-     * * `nickname`
-     */
     public readonly assignments!: pulumi.Output<outputs.trafficmanagement.GtmASmapAssignment[] | undefined>;
     public readonly defaultDatacenter!: pulumi.Output<outputs.trafficmanagement.GtmASmapDefaultDatacenter>;
-    /**
-     * — Domain name
-     */
     public readonly domain!: pulumi.Output<string>;
-    /**
-     * — Resource name
-     * * `defaultDatacenter`
-     * * `datacenterId`
-     * * `nickname`
-     */
     public readonly name!: pulumi.Output<string>;
-    /**
-     * — (Boolean, Default: true) Wait for transaction to complete
-     */
     public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
 
     /**
@@ -83,8 +50,11 @@ export class GtmASmap extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
+    /** @deprecated akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap */
     constructor(name: string, args: GtmASmapArgs, opts?: pulumi.CustomResourceOptions)
+    /** @deprecated akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap */
     constructor(name: string, argsOrState?: GtmASmapArgs | GtmASmapState, opts?: pulumi.CustomResourceOptions) {
+        pulumi.log.warn("GtmASmap is deprecated: akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap")
         let inputs: pulumi.Inputs = {};
         if (opts && opts.id) {
             const state = argsOrState as GtmASmapState | undefined;
@@ -95,10 +65,10 @@ export class GtmASmap extends pulumi.CustomResource {
             inputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
         } else {
             const args = argsOrState as GtmASmapArgs | undefined;
-            if (!args || args.defaultDatacenter === undefined) {
+            if ((!args || args.defaultDatacenter === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'defaultDatacenter'");
             }
-            if (!args || args.domain === undefined) {
+            if ((!args || args.domain === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'domain'");
             }
             inputs["assignments"] = args ? args.assignments : undefined;
@@ -122,27 +92,10 @@ export class GtmASmap extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmASmap resources.
  */
 export interface GtmASmapState {
-    /**
-     * — (multiple allowed)
-     * * `datacenterId`
-     * * `nickname`
-     */
     readonly assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmASmapAssignment>[]>;
     readonly defaultDatacenter?: pulumi.Input<inputs.trafficmanagement.GtmASmapDefaultDatacenter>;
-    /**
-     * — Domain name
-     */
     readonly domain?: pulumi.Input<string>;
-    /**
-     * — Resource name
-     * * `defaultDatacenter`
-     * * `datacenterId`
-     * * `nickname`
-     */
     readonly name?: pulumi.Input<string>;
-    /**
-     * — (Boolean, Default: true) Wait for transaction to complete
-     */
     readonly waitOnComplete?: pulumi.Input<boolean>;
 }
 
@@ -150,26 +103,9 @@ export interface GtmASmapState {
  * The set of arguments for constructing a GtmASmap resource.
  */
 export interface GtmASmapArgs {
-    /**
-     * — (multiple allowed)
-     * * `datacenterId`
-     * * `nickname`
-     */
     readonly assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmASmapAssignment>[]>;
     readonly defaultDatacenter: pulumi.Input<inputs.trafficmanagement.GtmASmapDefaultDatacenter>;
-    /**
-     * — Domain name
-     */
     readonly domain: pulumi.Input<string>;
-    /**
-     * — Resource name
-     * * `defaultDatacenter`
-     * * `datacenterId`
-     * * `nickname`
-     */
     readonly name?: pulumi.Input<string>;
-    /**
-     * — (Boolean, Default: true) Wait for transaction to complete
-     */
     readonly waitOnComplete?: pulumi.Input<boolean>;
 }

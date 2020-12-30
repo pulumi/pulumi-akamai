@@ -2,62 +2,12 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "../types/input";
-import * as outputs from "../types/output";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
-/**
- * The `akamai.properties.PropertyRules` data source allows you to configure a nested block of property rules, criteria, and behaviors. A property’s main functionality is encapsulated in its set of rules and rules are composed of the matches and the behavior that applies under those matches.
- *
- * ## Example Usage
- * ### Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const examplePropertyRules = pulumi.output(akamai.properties.getPropertyRules({
- *     rules: [{
- *         behaviors: [{
- *             name: "downstreamCache", // Downstream Cache behavior
- *             options: [{
- *                 key: "behavior", // behavior option
- *                 value: "TUNNEL_ORIGIN",
- *             }],
- *         }],
- *         rules: [{
- *             name: "Performance", // "Performance" child rule
- *             rules: [{
- *                 behaviors: [{
- *                     name: "adaptiveImageCompression", // Adaptive Image Compression behavior
- *                     options: [
- *                         // Options
- *                         {
- *                             key: "tier1MobileCompressionMethod",
- *                             value: "COMPRESS",
- *                         },
- *                         {
- *                             key: "tier1MobileCompressionValue",
- *                             value: "80",
- *                         },
- *                         {
- *                             key: "tier2MobileCompressionMethod",
- *                             value: "COMPRESS",
- *                         },
- *                     ],
- *                 }],
- *                 name: "JPEG Images", // "JPEG Images" child rule 
- *             }],
- *         }],
- *     }],
- * }, { async: true }));
- * const exampleProperty = new akamai.properties.Property("example", {
- *     rules: examplePropertyRules.json,
- * });
- * ```
- */
-export function getPropertyRules(args?: GetPropertyRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyRulesResult> {
-    args = args || {};
+/** @deprecated akamai.properties.getPropertyRules has been deprecated in favor of akamai.getPropertyRules */
+export function getPropertyRules(args: GetPropertyRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyRulesResult> {
+    pulumi.log.warn("getPropertyRules is deprecated: akamai.properties.getPropertyRules has been deprecated in favor of akamai.getPropertyRules")
     if (!opts) {
         opts = {}
     }
@@ -66,8 +16,10 @@ export function getPropertyRules(args?: GetPropertyRulesArgs, opts?: pulumi.Invo
         opts.version = utilities.getVersion();
     }
     return pulumi.runtime.invoke("akamai:properties/getPropertyRules:getPropertyRules", {
-        "rules": args.rules,
-        "variables": args.variables,
+        "contractId": args.contractId,
+        "groupId": args.groupId,
+        "propertyId": args.propertyId,
+        "version": args.version,
     }, opts);
 }
 
@@ -75,19 +27,24 @@ export function getPropertyRules(args?: GetPropertyRulesArgs, opts?: pulumi.Invo
  * A collection of arguments for invoking getPropertyRules.
  */
 export interface GetPropertyRulesArgs {
-    readonly rules?: inputs.properties.GetPropertyRulesRule[];
-    readonly variables?: string;
+    readonly contractId?: string;
+    readonly groupId?: string;
+    readonly propertyId: string;
+    readonly version?: number;
 }
 
 /**
  * A collection of values returned by getPropertyRules.
  */
 export interface GetPropertyRulesResult {
+    readonly contractId: string;
+    readonly errors: string;
+    readonly groupId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    readonly json: string;
-    readonly rules?: outputs.properties.GetPropertyRulesRule[];
-    readonly variables?: string;
+    readonly propertyId: string;
+    readonly rules: string;
+    readonly version: number;
 }

@@ -13,15 +13,8 @@ namespace Pulumi.Akamai.Trafficmanagement.Outputs
     [OutputType]
     public sealed class GtmPropertyStaticRrSet
     {
-        /// <summary>
-        /// — (List)
-        /// </summary>
         public readonly ImmutableArray<string> Rdatas;
         public readonly int? Ttl;
-        /// <summary>
-        /// — Property type  
-        /// * `score_aggregation_type`
-        /// </summary>
         public readonly string? Type;
 
         [OutputConstructor]

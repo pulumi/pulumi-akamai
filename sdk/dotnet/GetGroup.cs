@@ -11,13 +11,6 @@ namespace Pulumi.Akamai
 {
     public static class GetGroup
     {
-        /// <summary>
-        /// Use `akamai.getGroup` data source to retrieve a group id.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% /examples %}}
-        /// </summary>
         public static Task<GetGroupResult> InvokeAsync(GetGroupArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetGroupResult>("akamai:index/getGroup:getGroup", args ?? new GetGroupArgs(), options.WithVersion());
     }
@@ -25,15 +18,15 @@ namespace Pulumi.Akamai
 
     public sealed class GetGroupArgs : Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// — (Optional) The contract ID
-        /// </summary>
         [Input("contract")]
         public string? Contract { get; set; }
 
-        /// <summary>
-        /// — (Required) The group name.
-        /// </summary>
+        [Input("contractId")]
+        public string? ContractId { get; set; }
+
+        [Input("groupName")]
+        public string? GroupName { get; set; }
+
         [Input("name")]
         public string? Name { get; set; }
 
@@ -46,22 +39,30 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetGroupResult
     {
-        public readonly string? Contract;
+        public readonly string Contract;
+        public readonly string ContractId;
+        public readonly string GroupName;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        public readonly string? Name;
+        public readonly string Name;
 
         [OutputConstructor]
         private GetGroupResult(
-            string? contract,
+            string contract,
+
+            string contractId,
+
+            string groupName,
 
             string id,
 
-            string? name)
+            string name)
         {
             Contract = contract;
+            ContractId = contractId;
+            GroupName = groupName;
             Id = id;
             Name = name;
         }

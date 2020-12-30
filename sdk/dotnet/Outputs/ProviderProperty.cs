@@ -14,6 +14,7 @@ namespace Pulumi.Akamai.Outputs
     public sealed class ProviderProperty
     {
         public readonly string? AccessToken;
+        public readonly string? AccountKey;
         public readonly string? ClientSecret;
         public readonly string? ClientToken;
         public readonly string? Host;
@@ -22,6 +23,8 @@ namespace Pulumi.Akamai.Outputs
         [OutputConstructor]
         private ProviderProperty(
             string? accessToken,
+
+            string? accountKey,
 
             string? clientSecret,
 
@@ -32,6 +35,7 @@ namespace Pulumi.Akamai.Outputs
             int? maxBody)
         {
             AccessToken = accessToken;
+            AccountKey = accountKey;
             ClientSecret = clientSecret;
             ClientToken = clientToken;
             Host = host;

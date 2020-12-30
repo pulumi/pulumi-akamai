@@ -9,6 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Edgedns
 {
+    [Obsolete(@"akamai.edgedns.getDnsRecordSet has been deprecated in favor of akamai.getDnsRecordSet")]
     public static class GetDnsRecordSet
     {
         public static Task<GetDnsRecordSetResult> InvokeAsync(GetDnsRecordSetArgs args, InvokeOptions? options = null)

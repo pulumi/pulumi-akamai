@@ -11,13 +11,6 @@ namespace Pulumi.Akamai
 {
     public static class GetContract
     {
-        /// <summary>
-        /// Use `akamai.getContract` data source to retrieve a group id.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% /examples %}}
-        /// </summary>
         public static Task<GetContractResult> InvokeAsync(GetContractArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetContractResult>("akamai:index/getContract:getContract", args ?? new GetContractArgs(), options.WithVersion());
     }
@@ -25,11 +18,14 @@ namespace Pulumi.Akamai
 
     public sealed class GetContractArgs : Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// — (Optional) The group within which the contract can be found.
-        /// </summary>
         [Input("group")]
         public string? Group { get; set; }
+
+        [Input("groupId")]
+        public string? GroupId { get; set; }
+
+        [Input("groupName")]
+        public string? GroupName { get; set; }
 
         public GetContractArgs()
         {
@@ -41,6 +37,8 @@ namespace Pulumi.Akamai
     public sealed class GetContractResult
     {
         public readonly string? Group;
+        public readonly string GroupId;
+        public readonly string GroupName;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
@@ -50,9 +48,15 @@ namespace Pulumi.Akamai
         private GetContractResult(
             string? group,
 
+            string groupId,
+
+            string groupName,
+
             string id)
         {
             Group = group;
+            GroupId = groupId;
+            GroupName = groupName;
             Id = id;
         }
     }

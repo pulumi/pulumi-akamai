@@ -13,29 +13,11 @@ namespace Pulumi.Akamai.Properties.Outputs
     [OutputType]
     public sealed class PropertyOrigin
     {
-        /// <summary>
-        /// — (Optional) The hostname uses for the cache key. (default: `ORIGIN_HOSTNAME`).
-        /// </summary>
         public readonly string? CacheKeyHostname;
-        /// <summary>
-        /// — (Optional, boolean) Whether origin supports gzip compression (default: `false`).
-        /// </summary>
         public readonly bool? Compress;
-        /// <summary>
-        /// — (Optional, boolean) Whether the X-True-Client-IP header should be sent to origin (default: `false`).
-        /// </summary>
         public readonly bool? EnableTrueClientIp;
-        /// <summary>
-        /// — (Optional) The value for the Hostname header sent to origin. (default: `ORIGIN_HOSTNAME`).
-        /// </summary>
         public readonly string? ForwardHostname;
-        /// <summary>
-        /// — (Required) The origin hostname.
-        /// </summary>
-        public readonly string Hostname;
-        /// <summary>
-        /// — (Optional) The origin port to connect to (default: 80).
-        /// </summary>
+        public readonly string? Hostname;
         public readonly int? Port;
 
         [OutputConstructor]
@@ -48,7 +30,7 @@ namespace Pulumi.Akamai.Properties.Outputs
 
             string? forwardHostname,
 
-            string hostname,
+            string? hostname,
 
             int? port)
         {

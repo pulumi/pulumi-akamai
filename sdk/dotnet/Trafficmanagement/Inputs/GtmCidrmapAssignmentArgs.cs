@@ -14,10 +14,6 @@ namespace Pulumi.Akamai.Trafficmanagement.Inputs
     {
         [Input("blocks")]
         private InputList<string>? _blocks;
-
-        /// <summary>
-        /// — (List)
-        /// </summary>
         public InputList<string> Blocks
         {
             get => _blocks ?? (_blocks = new InputList<string>());

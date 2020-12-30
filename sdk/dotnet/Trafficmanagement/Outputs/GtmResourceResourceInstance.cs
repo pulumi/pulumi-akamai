@@ -16,22 +16,7 @@ namespace Pulumi.Akamai.Trafficmanagement.Outputs
         public readonly int DatacenterId;
         public readonly string? LoadObject;
         public readonly int? LoadObjectPort;
-        /// <summary>
-        /// — (List)
-        /// </summary>
         public readonly ImmutableArray<string> LoadServers;
-        /// <summary>
-        /// — (Boolean)
-        /// * `host_header`
-        /// * `least_squares_decay`
-        /// * `upper_bound`
-        /// * `description`
-        /// * `leader_string`
-        /// * `constrained_property`
-        /// * `load_imbalance_percent`
-        /// * `max_u_multiplicative_increment`
-        /// * `decay_rate`
-        /// </summary>
         public readonly bool? UseDefaultLoadObject;
 
         [OutputConstructor]

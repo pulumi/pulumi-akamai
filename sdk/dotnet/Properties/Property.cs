@@ -9,152 +9,98 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Properties
 {
-    /// <summary>
-    /// The `akamai.properties.Property` resource represents an Akamai property configuration, allowing you to create,
-    /// update, and activate properties on the Akamai platform.
-    /// 
-    /// ## Example Usage
-    /// ### Basic usage:
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var example = new Akamai.Properties.Property("example", new Akamai.Properties.PropertyArgs
-    ///         {
-    ///             Contacts = 
-    ///             {
-    ///                 "user@example.org",
-    ///             },
-    ///             Contract = "ctr_####",
-    ///             CpCode = "cpc_#####",
-    ///             Group = "grp_####",
-    ///             Hostnames = 
-    ///             {
-    ///                 { "example.org", "example.org.edgesuite.net" },
-    ///                 { "sub.example.org", "sub.example.org.edgesuite.net" },
-    ///                 { "www.example.org", "example.org.edgesuite.net" },
-    ///             },
-    ///             Product = "prd_SPM",
-    ///             RuleFormat = "v2018-02-27",
-    ///             Rules = data.Local_file.Terraform_demo.Content,
-    ///             Variables = akamai_property_variables.Origin.Json,
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// </summary>
+    [Obsolete(@"akamai.properties.Property has been deprecated in favor of akamai.Property")]
     public partial class Property : Pulumi.CustomResource
     {
-        /// <summary>
-        /// — the Account ID under which the property is created.
-        /// </summary>
-        [Output("account")]
-        public Output<string> Account { get; private set; } = null!;
-
-        /// <summary>
-        /// — (Required) One or more email addresses to inform about activation changes.
-        /// </summary>
         [Output("contacts")]
         public Output<ImmutableArray<string>> Contacts { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Optional) The contract ID.
-        /// </summary>
         [Output("contract")]
-        public Output<string?> Contract { get; private set; } = null!;
+        public Output<string> Contract { get; private set; } = null!;
 
         /// <summary>
-        /// — (Optional) The CP Code id or name to use (or create). Required unless a [cpCode behavior](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#cpcode) is present in the default rule.
+        /// Contract ID to be assigned to the Property
         /// </summary>
+        [Output("contractId")]
+        public Output<string> ContractId { get; private set; } = null!;
+
         [Output("cpCode")]
         public Output<string?> CpCode { get; private set; } = null!;
 
-        /// <summary>
-        /// — the final public hostname to edge hostname map
-        /// </summary>
-        [Output("edgeHostnames")]
-        public Output<ImmutableDictionary<string, string>> EdgeHostnames { get; private set; } = null!;
-
-        /// <summary>
-        /// — (Optional) The group ID.
-        /// </summary>
         [Output("group")]
-        public Output<string?> Group { get; private set; } = null!;
+        public Output<string> Group { get; private set; } = null!;
 
         /// <summary>
-        /// — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
+        /// Group ID to be assigned to the Property
+        /// </summary>
+        [Output("groupId")]
+        public Output<string> GroupId { get; private set; } = null!;
+
+        /// <summary>
+        /// Mapping of edge hostname CNAMEs to other CNAMEs
         /// </summary>
         [Output("hostnames")]
-        public Output<ImmutableDictionary<string, string>> Hostnames { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>?> Hostnames { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
-        /// </summary>
         [Output("isSecure")]
         public Output<bool?> IsSecure { get; private set; } = null!;
 
         /// <summary>
-        /// — (Required) The property name.
+        /// Property's current latest version number
+        /// </summary>
+        [Output("latestVersion")]
+        public Output<int> LatestVersion { get; private set; } = null!;
+
+        /// <summary>
+        /// Name to give to the Property (must be unique)
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
-        /// </summary>
         [Output("origins")]
         public Output<ImmutableArray<Outputs.PropertyOrigin>> Origins { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Optional) The product ID. (Default: `prd_SPM` for Ion)
-        /// </summary>
         [Output("product")]
-        public Output<string?> Product { get; private set; } = null!;
+        public Output<string> Product { get; private set; } = null!;
 
         /// <summary>
-        /// — the current version of the property active on the production network.
+        /// Product ID to be assigned to the Property
+        /// </summary>
+        [Output("productId")]
+        public Output<string> ProductId { get; private set; } = null!;
+
+        /// <summary>
+        /// Property's version currently activated in production (zero when not active in production)
         /// </summary>
         [Output("productionVersion")]
         public Output<int> ProductionVersion { get; private set; } = null!;
 
+        [Output("ruleErrors")]
+        public Output<ImmutableArray<Outputs.PropertyRuleError>> RuleErrors { get; private set; } = null!;
+
         /// <summary>
-        /// — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
+        /// Specify the rule format version (defaults to latest version available when created)
         /// </summary>
         [Output("ruleFormat")]
-        public Output<string?> RuleFormat { get; private set; } = null!;
+        public Output<string> RuleFormat { get; private set; } = null!;
+
+        [Output("ruleWarnings")]
+        public Output<ImmutableArray<Outputs.PropertyRuleWarning>> RuleWarnings { get; private set; } = null!;
 
         /// <summary>
-        /// — (Required) A JSON encoded string of property rules (see: [`akamai.properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+        /// Property Rules as JSON
         /// </summary>
         [Output("rules")]
-        public Output<string?> Rules { get; private set; } = null!;
-
-        [Output("rulessha")]
-        public Output<string> Rulessha { get; private set; } = null!;
+        public Output<string> Rules { get; private set; } = null!;
 
         /// <summary>
-        /// — the current version of the property active on the staging network.
+        /// Property's version currently activated in staging (zero when not active in staging)
         /// </summary>
         [Output("stagingVersion")]
         public Output<int> StagingVersion { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
-        /// </summary>
         [Output("variables")]
         public Output<string?> Variables { get; private set; } = null!;
-
-        /// <summary>
-        /// — the current version of the property config.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -164,7 +110,7 @@ namespace Pulumi.Akamai.Properties
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public Property(string name, PropertyArgs args, CustomResourceOptions? options = null)
+        public Property(string name, PropertyArgs? args = null, CustomResourceOptions? options = null)
             : base("akamai:properties/property:Property", name, args ?? new PropertyArgs(), MakeResourceOptions(options, ""))
         {
         }
@@ -202,41 +148,41 @@ namespace Pulumi.Akamai.Properties
 
     public sealed class PropertyArgs : Pulumi.ResourceArgs
     {
-        [Input("contacts", required: true)]
+        [Input("contacts")]
         private InputList<string>? _contacts;
-
-        /// <summary>
-        /// — (Required) One or more email addresses to inform about activation changes.
-        /// </summary>
+        [Obsolete(@"""contact"" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")]
         public InputList<string> Contacts
         {
             get => _contacts ?? (_contacts = new InputList<string>());
             set => _contacts = value;
         }
 
-        /// <summary>
-        /// — (Optional) The contract ID.
-        /// </summary>
         [Input("contract")]
         public Input<string>? Contract { get; set; }
 
         /// <summary>
-        /// — (Optional) The CP Code id or name to use (or create). Required unless a [cpCode behavior](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#cpcode) is present in the default rule.
+        /// Contract ID to be assigned to the Property
         /// </summary>
+        [Input("contractId")]
+        public Input<string>? ContractId { get; set; }
+
         [Input("cpCode")]
         public Input<string>? CpCode { get; set; }
 
-        /// <summary>
-        /// — (Optional) The group ID.
-        /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
 
-        [Input("hostnames", required: true)]
+        /// <summary>
+        /// Group ID to be assigned to the Property
+        /// </summary>
+        [Input("groupId")]
+        public Input<string>? GroupId { get; set; }
+
+        [Input("hostnames")]
         private InputMap<string>? _hostnames;
 
         /// <summary>
-        /// — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
+        /// Mapping of edge hostname CNAMEs to other CNAMEs
         /// </summary>
         public InputMap<string> Hostnames
         {
@@ -244,51 +190,45 @@ namespace Pulumi.Akamai.Properties
             set => _hostnames = value;
         }
 
-        /// <summary>
-        /// — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
-        /// </summary>
         [Input("isSecure")]
         public Input<bool>? IsSecure { get; set; }
 
         /// <summary>
-        /// — (Required) The property name.
+        /// Name to give to the Property (must be unique)
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("origins")]
         private InputList<Inputs.PropertyOriginArgs>? _origins;
-
-        /// <summary>
-        /// — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
-        /// </summary>
+        [Obsolete(@"""origin"" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")]
         public InputList<Inputs.PropertyOriginArgs> Origins
         {
             get => _origins ?? (_origins = new InputList<Inputs.PropertyOriginArgs>());
             set => _origins = value;
         }
 
-        /// <summary>
-        /// — (Optional) The product ID. (Default: `prd_SPM` for Ion)
-        /// </summary>
         [Input("product")]
         public Input<string>? Product { get; set; }
 
         /// <summary>
-        /// — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
+        /// Product ID to be assigned to the Property
+        /// </summary>
+        [Input("productId")]
+        public Input<string>? ProductId { get; set; }
+
+        /// <summary>
+        /// Specify the rule format version (defaults to latest version available when created)
         /// </summary>
         [Input("ruleFormat")]
         public Input<string>? RuleFormat { get; set; }
 
         /// <summary>
-        /// — (Required) A JSON encoded string of property rules (see: [`akamai.properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+        /// Property Rules as JSON
         /// </summary>
         [Input("rules")]
         public Input<string>? Rules { get; set; }
 
-        /// <summary>
-        /// — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
-        /// </summary>
         [Input("variables")]
         public Input<string>? Variables { get; set; }
 
@@ -299,59 +239,41 @@ namespace Pulumi.Akamai.Properties
 
     public sealed class PropertyState : Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// — the Account ID under which the property is created.
-        /// </summary>
-        [Input("account")]
-        public Input<string>? Account { get; set; }
-
         [Input("contacts")]
         private InputList<string>? _contacts;
-
-        /// <summary>
-        /// — (Required) One or more email addresses to inform about activation changes.
-        /// </summary>
+        [Obsolete(@"""contact"" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")]
         public InputList<string> Contacts
         {
             get => _contacts ?? (_contacts = new InputList<string>());
             set => _contacts = value;
         }
 
-        /// <summary>
-        /// — (Optional) The contract ID.
-        /// </summary>
         [Input("contract")]
         public Input<string>? Contract { get; set; }
 
         /// <summary>
-        /// — (Optional) The CP Code id or name to use (or create). Required unless a [cpCode behavior](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#cpcode) is present in the default rule.
+        /// Contract ID to be assigned to the Property
         /// </summary>
+        [Input("contractId")]
+        public Input<string>? ContractId { get; set; }
+
         [Input("cpCode")]
         public Input<string>? CpCode { get; set; }
 
-        [Input("edgeHostnames")]
-        private InputMap<string>? _edgeHostnames;
-
-        /// <summary>
-        /// — the final public hostname to edge hostname map
-        /// </summary>
-        public InputMap<string> EdgeHostnames
-        {
-            get => _edgeHostnames ?? (_edgeHostnames = new InputMap<string>());
-            set => _edgeHostnames = value;
-        }
-
-        /// <summary>
-        /// — (Optional) The group ID.
-        /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
+
+        /// <summary>
+        /// Group ID to be assigned to the Property
+        /// </summary>
+        [Input("groupId")]
+        public Input<string>? GroupId { get; set; }
 
         [Input("hostnames")]
         private InputMap<string>? _hostnames;
 
         /// <summary>
-        /// — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
+        /// Mapping of edge hostname CNAMEs to other CNAMEs
         /// </summary>
         public InputMap<string> Hostnames
         {
@@ -359,74 +281,81 @@ namespace Pulumi.Akamai.Properties
             set => _hostnames = value;
         }
 
-        /// <summary>
-        /// — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
-        /// </summary>
         [Input("isSecure")]
         public Input<bool>? IsSecure { get; set; }
 
         /// <summary>
-        /// — (Required) The property name.
+        /// Property's current latest version number
+        /// </summary>
+        [Input("latestVersion")]
+        public Input<int>? LatestVersion { get; set; }
+
+        /// <summary>
+        /// Name to give to the Property (must be unique)
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("origins")]
         private InputList<Inputs.PropertyOriginGetArgs>? _origins;
-
-        /// <summary>
-        /// — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
-        /// </summary>
+        [Obsolete(@"""origin"" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")]
         public InputList<Inputs.PropertyOriginGetArgs> Origins
         {
             get => _origins ?? (_origins = new InputList<Inputs.PropertyOriginGetArgs>());
             set => _origins = value;
         }
 
-        /// <summary>
-        /// — (Optional) The product ID. (Default: `prd_SPM` for Ion)
-        /// </summary>
         [Input("product")]
         public Input<string>? Product { get; set; }
 
         /// <summary>
-        /// — the current version of the property active on the production network.
+        /// Product ID to be assigned to the Property
+        /// </summary>
+        [Input("productId")]
+        public Input<string>? ProductId { get; set; }
+
+        /// <summary>
+        /// Property's version currently activated in production (zero when not active in production)
         /// </summary>
         [Input("productionVersion")]
         public Input<int>? ProductionVersion { get; set; }
 
+        [Input("ruleErrors")]
+        private InputList<Inputs.PropertyRuleErrorGetArgs>? _ruleErrors;
+        public InputList<Inputs.PropertyRuleErrorGetArgs> RuleErrors
+        {
+            get => _ruleErrors ?? (_ruleErrors = new InputList<Inputs.PropertyRuleErrorGetArgs>());
+            set => _ruleErrors = value;
+        }
+
         /// <summary>
-        /// — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
+        /// Specify the rule format version (defaults to latest version available when created)
         /// </summary>
         [Input("ruleFormat")]
         public Input<string>? RuleFormat { get; set; }
 
+        [Input("ruleWarnings")]
+        private InputList<Inputs.PropertyRuleWarningGetArgs>? _ruleWarnings;
+        public InputList<Inputs.PropertyRuleWarningGetArgs> RuleWarnings
+        {
+            get => _ruleWarnings ?? (_ruleWarnings = new InputList<Inputs.PropertyRuleWarningGetArgs>());
+            set => _ruleWarnings = value;
+        }
+
         /// <summary>
-        /// — (Required) A JSON encoded string of property rules (see: [`akamai.properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
+        /// Property Rules as JSON
         /// </summary>
         [Input("rules")]
         public Input<string>? Rules { get; set; }
 
-        [Input("rulessha")]
-        public Input<string>? Rulessha { get; set; }
-
         /// <summary>
-        /// — the current version of the property active on the staging network.
+        /// Property's version currently activated in staging (zero when not active in staging)
         /// </summary>
         [Input("stagingVersion")]
         public Input<int>? StagingVersion { get; set; }
 
-        /// <summary>
-        /// — (Optional) A JSON encoded string of property manager variable definitions (see: [`akamai.properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
-        /// </summary>
         [Input("variables")]
         public Input<string>? Variables { get; set; }
-
-        /// <summary>
-        /// — the current version of the property config.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public PropertyState()
         {

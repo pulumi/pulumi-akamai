@@ -2,39 +2,11 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "../types/input";
-import * as outputs from "../types/output";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
- * The `akamai.properties.PropertyVariables` allows you to implement dynamic functionality. You can perform conditional logic based on the variable’s value, and catch any unforeseen errors that execute on the edge at runtime.
- *
- * Typical uses for variables include:
- *
- * * Simplify configurations by reducing the number of rules and behaviors.
- * * Improve self serviceability by replacing or extending advanced metadata.
- * * Automate redirects, forward path rewrites, HTTP header and cookie manipulation.
- * * Move origin functionality to the edge.
- *
- * ## Example Usage
- * ### Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const origin = new akamai.properties.PropertyVariables("origin", {
- *     variables: [{
- *         variables: [{
- *             description: "Origin Hostname",
- *             hidden: true,
- *             name: "PMUSER_ORIGIN",
- *             sensitive: true,
- *             value: "origin.example.org",
- *         }],
- *     }],
- * });
- * ```
+ * @deprecated akamai.properties.PropertyVariables has been deprecated in favor of akamai.PropertyVariables
  */
 export class PropertyVariables extends pulumi.CustomResource {
     /**
@@ -47,6 +19,7 @@ export class PropertyVariables extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: PropertyVariablesState, opts?: pulumi.CustomResourceOptions): PropertyVariables {
+        pulumi.log.warn("PropertyVariables is deprecated: akamai.properties.PropertyVariables has been deprecated in favor of akamai.PropertyVariables")
         return new PropertyVariables(name, <any>state, { ...opts, id: id });
     }
 
@@ -68,6 +41,9 @@ export class PropertyVariables extends pulumi.CustomResource {
      * JSON variables representation
      */
     public /*out*/ readonly json!: pulumi.Output<string>;
+    /**
+     * @deprecated resource "akamai_property_variables" is no longer supported - See Akamai Terraform Upgrade Guide
+     */
     public readonly variables!: pulumi.Output<outputs.properties.PropertyVariablesVariable[] | undefined>;
 
     /**
@@ -77,8 +53,11 @@ export class PropertyVariables extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
+    /** @deprecated akamai.properties.PropertyVariables has been deprecated in favor of akamai.PropertyVariables */
     constructor(name: string, args?: PropertyVariablesArgs, opts?: pulumi.CustomResourceOptions)
+    /** @deprecated akamai.properties.PropertyVariables has been deprecated in favor of akamai.PropertyVariables */
     constructor(name: string, argsOrState?: PropertyVariablesArgs | PropertyVariablesState, opts?: pulumi.CustomResourceOptions) {
+        pulumi.log.warn("PropertyVariables is deprecated: akamai.properties.PropertyVariables has been deprecated in favor of akamai.PropertyVariables")
         let inputs: pulumi.Inputs = {};
         if (opts && opts.id) {
             const state = argsOrState as PropertyVariablesState | undefined;
@@ -108,6 +87,9 @@ export interface PropertyVariablesState {
      * JSON variables representation
      */
     readonly json?: pulumi.Input<string>;
+    /**
+     * @deprecated resource "akamai_property_variables" is no longer supported - See Akamai Terraform Upgrade Guide
+     */
     readonly variables?: pulumi.Input<pulumi.Input<inputs.properties.PropertyVariablesVariable>[]>;
 }
 
@@ -115,5 +97,8 @@ export interface PropertyVariablesState {
  * The set of arguments for constructing a PropertyVariables resource.
  */
 export interface PropertyVariablesArgs {
+    /**
+     * @deprecated resource "akamai_property_variables" is no longer supported - See Akamai Terraform Upgrade Guide
+     */
     readonly variables?: pulumi.Input<pulumi.Input<inputs.properties.PropertyVariablesVariable>[]>;
 }

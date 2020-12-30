@@ -5,22 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * The `akamai.properties.PropertyActivation` provides the resource for activating a property in the appropriate environment. Once you are satisfied with any version of a property, an activation deploys it, either to the Akamai staging or production network. You activate a specific version, but the same version can be activated separately more than once.
- *
- * ## Example Usage
- * ### Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = new akamai.properties.PropertyActivation("example", {
- *     activate: (var_akamai_property_activate === "true"),
- *     contacts: ["user@example.org"],
- *     network: "STAGING",
- *     property: akamai_property_example.id,
- * });
- * ```
+ * @deprecated akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation
  */
 export class PropertyActivation extends pulumi.CustomResource {
     /**
@@ -33,6 +18,7 @@ export class PropertyActivation extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: PropertyActivationState, opts?: pulumi.CustomResourceOptions): PropertyActivation {
+        pulumi.log.warn("PropertyActivation is deprecated: akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation")
         return new PropertyActivation(name, <any>state, { ...opts, id: id });
     }
 
@@ -50,27 +36,18 @@ export class PropertyActivation extends pulumi.CustomResource {
         return obj['__pulumiType'] === PropertyActivation.__pulumiType;
     }
 
-    /**
-     * — (Optional, boolean) Whether to activate the property on the network. (Default: `true`).
-     */
-    public readonly activate!: pulumi.Output<boolean | undefined>;
-    /**
-     * — (Required) One or more email addresses to inform about activation changes.
-     */
+    public readonly activationId!: pulumi.Output<string>;
     public readonly contacts!: pulumi.Output<string[]>;
-    /**
-     * — (Optional) Akamai network to activate on. Allowed values `staging` or `production` (Default: `staging`).
-     */
+    public /*out*/ readonly errors!: pulumi.Output<string>;
     public readonly network!: pulumi.Output<string | undefined>;
     /**
-     * — (Required) The property ID.
+     * @deprecated The setting "property" has been deprecated.
      */
     public readonly property!: pulumi.Output<string>;
+    public readonly propertyId!: pulumi.Output<string>;
     public /*out*/ readonly status!: pulumi.Output<string>;
-    /**
-     * — (Optional) The version to activate. When unset it will activate the latest version of the property.
-     */
-    public readonly version!: pulumi.Output<number | undefined>;
+    public readonly version!: pulumi.Output<number>;
+    public /*out*/ readonly warnings!: pulumi.Output<string>;
 
     /**
      * Create a PropertyActivation resource with the given unique name, arguments, and options.
@@ -79,31 +56,40 @@ export class PropertyActivation extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
+    /** @deprecated akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation */
     constructor(name: string, args: PropertyActivationArgs, opts?: pulumi.CustomResourceOptions)
+    /** @deprecated akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation */
     constructor(name: string, argsOrState?: PropertyActivationArgs | PropertyActivationState, opts?: pulumi.CustomResourceOptions) {
+        pulumi.log.warn("PropertyActivation is deprecated: akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation")
         let inputs: pulumi.Inputs = {};
         if (opts && opts.id) {
             const state = argsOrState as PropertyActivationState | undefined;
-            inputs["activate"] = state ? state.activate : undefined;
+            inputs["activationId"] = state ? state.activationId : undefined;
             inputs["contacts"] = state ? state.contacts : undefined;
+            inputs["errors"] = state ? state.errors : undefined;
             inputs["network"] = state ? state.network : undefined;
             inputs["property"] = state ? state.property : undefined;
+            inputs["propertyId"] = state ? state.propertyId : undefined;
             inputs["status"] = state ? state.status : undefined;
             inputs["version"] = state ? state.version : undefined;
+            inputs["warnings"] = state ? state.warnings : undefined;
         } else {
             const args = argsOrState as PropertyActivationArgs | undefined;
-            if (!args || args.contacts === undefined) {
+            if ((!args || args.contacts === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'contacts'");
             }
-            if (!args || args.property === undefined) {
-                throw new Error("Missing required property 'property'");
+            if ((!args || args.version === undefined) && !(opts && opts.urn)) {
+                throw new Error("Missing required property 'version'");
             }
-            inputs["activate"] = args ? args.activate : undefined;
+            inputs["activationId"] = args ? args.activationId : undefined;
             inputs["contacts"] = args ? args.contacts : undefined;
             inputs["network"] = args ? args.network : undefined;
             inputs["property"] = args ? args.property : undefined;
+            inputs["propertyId"] = args ? args.propertyId : undefined;
             inputs["version"] = args ? args.version : undefined;
+            inputs["errors"] = undefined /*out*/;
             inputs["status"] = undefined /*out*/;
+            inputs["warnings"] = undefined /*out*/;
         }
         if (!opts) {
             opts = {}
@@ -120,51 +106,31 @@ export class PropertyActivation extends pulumi.CustomResource {
  * Input properties used for looking up and filtering PropertyActivation resources.
  */
 export interface PropertyActivationState {
-    /**
-     * — (Optional, boolean) Whether to activate the property on the network. (Default: `true`).
-     */
-    readonly activate?: pulumi.Input<boolean>;
-    /**
-     * — (Required) One or more email addresses to inform about activation changes.
-     */
+    readonly activationId?: pulumi.Input<string>;
     readonly contacts?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * — (Optional) Akamai network to activate on. Allowed values `staging` or `production` (Default: `staging`).
-     */
+    readonly errors?: pulumi.Input<string>;
     readonly network?: pulumi.Input<string>;
     /**
-     * — (Required) The property ID.
+     * @deprecated The setting "property" has been deprecated.
      */
     readonly property?: pulumi.Input<string>;
+    readonly propertyId?: pulumi.Input<string>;
     readonly status?: pulumi.Input<string>;
-    /**
-     * — (Optional) The version to activate. When unset it will activate the latest version of the property.
-     */
     readonly version?: pulumi.Input<number>;
+    readonly warnings?: pulumi.Input<string>;
 }
 
 /**
  * The set of arguments for constructing a PropertyActivation resource.
  */
 export interface PropertyActivationArgs {
-    /**
-     * — (Optional, boolean) Whether to activate the property on the network. (Default: `true`).
-     */
-    readonly activate?: pulumi.Input<boolean>;
-    /**
-     * — (Required) One or more email addresses to inform about activation changes.
-     */
+    readonly activationId?: pulumi.Input<string>;
     readonly contacts: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * — (Optional) Akamai network to activate on. Allowed values `staging` or `production` (Default: `staging`).
-     */
     readonly network?: pulumi.Input<string>;
     /**
-     * — (Required) The property ID.
+     * @deprecated The setting "property" has been deprecated.
      */
-    readonly property: pulumi.Input<string>;
-    /**
-     * — (Optional) The version to activate. When unset it will activate the latest version of the property.
-     */
-    readonly version?: pulumi.Input<number>;
+    readonly property?: pulumi.Input<string>;
+    readonly propertyId?: pulumi.Input<string>;
+    readonly version: pulumi.Input<number>;
 }

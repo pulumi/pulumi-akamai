@@ -8,27 +8,61 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi/config"
 )
 
+// Deprecated: The setting "appsec_section" has been deprecated.
+func GetAppsecSection(ctx *pulumi.Context) string {
+	return config.Get(ctx, "akamai:appsecSection")
+}
+
+// Deprecated: The setting "appsec" has been deprecated.
+func GetAppsecs(ctx *pulumi.Context) string {
+	return config.Get(ctx, "akamai:appsecs")
+}
+func GetCacheEnabled(ctx *pulumi.Context) bool {
+	return config.GetBool(ctx, "akamai:cacheEnabled")
+}
+func GetConfig(ctx *pulumi.Context) string {
+	return config.Get(ctx, "akamai:config")
+}
+
+// The section of the edgerc file to use for configuration
+func GetConfigSection(ctx *pulumi.Context) string {
+	return config.Get(ctx, "akamai:configSection")
+}
+
+// Deprecated: The setting "dns" has been deprecated.
 func GetDns(ctx *pulumi.Context) string {
 	return config.Get(ctx, "akamai:dns")
 }
+
+// Deprecated: The setting "dns_section" has been deprecated.
 func GetDnsSection(ctx *pulumi.Context) string {
 	return config.Get(ctx, "akamai:dnsSection")
 }
 func GetEdgerc(ctx *pulumi.Context) string {
 	return config.Get(ctx, "akamai:edgerc")
 }
+
+// Deprecated: The setting "gtm" has been deprecated.
+func GetGtm(ctx *pulumi.Context) string {
+	return config.Get(ctx, "akamai:gtm")
+}
+
+// Deprecated: The setting "gtm_section" has been deprecated.
 func GetGtmSection(ctx *pulumi.Context) string {
 	return config.Get(ctx, "akamai:gtmSection")
 }
-func GetGtms(ctx *pulumi.Context) string {
-	return config.Get(ctx, "akamai:gtms")
-}
+
+// Deprecated: The setting "papi_section" has been deprecated.
 func GetPapiSection(ctx *pulumi.Context) string {
 	return config.Get(ctx, "akamai:papiSection")
 }
-func GetProperties(ctx *pulumi.Context) string {
-	return config.Get(ctx, "akamai:properties")
+
+// Deprecated: The setting "property" has been deprecated.
+func GetProperty(ctx *pulumi.Context) string {
+	return config.Get(ctx, "akamai:property")
 }
+
+// Deprecated: The setting "property_section" has been deprecated.
 func GetPropertySection(ctx *pulumi.Context) string {
 	return config.Get(ctx, "akamai:propertySection")
 }

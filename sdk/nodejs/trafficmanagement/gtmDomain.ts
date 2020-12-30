@@ -5,22 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * `akamai.trafficmanagement.GtmDomain` provides the resource for creating, configuring and importing a gtm domain to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`
- *
- * ## Example Usage
- * ### Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const demodomain = new akamai.trafficmanagement.GtmDomain("demodomain", {
- *     comment: "some comment",
- *     contract: "XXX",
- *     group: "100",
- *     type: "basic",
- * });
- * ```
+ * @deprecated akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain
  */
 export class GtmDomain extends pulumi.CustomResource {
     /**
@@ -33,6 +18,7 @@ export class GtmDomain extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: GtmDomainState, opts?: pulumi.CustomResourceOptions): GtmDomain {
+        pulumi.log.warn("GtmDomain is deprecated: akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain")
         return new GtmDomain(name, <any>state, { ...opts, id: id });
     }
 
@@ -50,21 +36,9 @@ export class GtmDomain extends pulumi.CustomResource {
         return obj['__pulumiType'] === GtmDomain.__pulumiType;
     }
 
-    /**
-     * — (Boolean)
-     */
     public readonly cnameCoalescingEnabled!: pulumi.Output<boolean | undefined>;
-    /**
-     * — A descriptive comment
-     */
     public readonly comment!: pulumi.Output<string | undefined>;
-    /**
-     * — The contract ID (if creating domain)
-     */
     public readonly contract!: pulumi.Output<string | undefined>;
-    /**
-     * — (Default: 75)
-     */
     public readonly defaultErrorPenalty!: pulumi.Output<number | undefined>;
     public /*out*/ readonly defaultHealthMax!: pulumi.Output<number>;
     public /*out*/ readonly defaultHealthMultiplier!: pulumi.Output<number>;
@@ -72,50 +46,11 @@ export class GtmDomain extends pulumi.CustomResource {
     public /*out*/ readonly defaultMaxUnreachablePenalty!: pulumi.Output<number>;
     public readonly defaultSslClientCertificate!: pulumi.Output<string | undefined>;
     public readonly defaultSslClientPrivateKey!: pulumi.Output<string | undefined>;
-    /**
-     * — (Default: 25)
-     * * `loadImbalancePercentage`
-     * * `defaultSslClientPrivateKey`
-     */
     public readonly defaultTimeoutPenalty!: pulumi.Output<number | undefined>;
-    /**
-     * * `minPingableRegionFraction`
-     * * `servermonitorLivenessCount`
-     * * `roundRobinPrefix`
-     * * `servermonitorLoadCount`
-     * * `pingInterval`
-     * * `maxTtl`
-     * * `defaultHealthMax`
-     * * `mapUpdateInterval`
-     * * `maxProperties`
-     * * `maxResources`
-     * * `defaultErrorPenalty`
-     * * `maxTestTimeout`
-     * * `defaultHealthMultiplier`
-     * * `servermonitorPool`
-     * * `minTtl`
-     * * `defaultMaxUnreachablePenalty`
-     * * `defaultHealthThreshold`
-     * * `minTestInterval`
-     * * `pingPacketSize`
-     */
     public /*out*/ readonly defaultUnreachableThreshold!: pulumi.Output<number>;
-    /**
-     * — (List)
-     */
     public readonly emailNotificationLists!: pulumi.Output<string[] | undefined>;
-    /**
-     * — (Boolean)
-     */
     public readonly endUserMappingEnabled!: pulumi.Output<boolean | undefined>;
-    /**
-     * — The currently selected group ID (if creating domain)
-     */
     public readonly group!: pulumi.Output<string | undefined>;
-    /**
-     * — (Boolean)
-     * * `defaultSslClientCertificate`
-     */
     public readonly loadFeedback!: pulumi.Output<boolean | undefined>;
     public readonly loadImbalancePercentage!: pulumi.Output<number | undefined>;
     public /*out*/ readonly mapUpdateInterval!: pulumi.Output<number>;
@@ -126,9 +61,6 @@ export class GtmDomain extends pulumi.CustomResource {
     public /*out*/ readonly minPingableRegionFraction!: pulumi.Output<number>;
     public /*out*/ readonly minTestInterval!: pulumi.Output<number>;
     public /*out*/ readonly minTtl!: pulumi.Output<number>;
-    /**
-     * — Domain name
-     */
     public readonly name!: pulumi.Output<string>;
     public /*out*/ readonly pingInterval!: pulumi.Output<number>;
     public /*out*/ readonly pingPacketSize!: pulumi.Output<number>;
@@ -136,13 +68,7 @@ export class GtmDomain extends pulumi.CustomResource {
     public /*out*/ readonly servermonitorLivenessCount!: pulumi.Output<number>;
     public /*out*/ readonly servermonitorLoadCount!: pulumi.Output<number>;
     public /*out*/ readonly servermonitorPool!: pulumi.Output<string>;
-    /**
-     * — Domain type
-     */
     public readonly type!: pulumi.Output<string>;
-    /**
-     * — (Boolean, Default: true) Wait for transaction to complete
-     */
     public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
 
     /**
@@ -152,8 +78,11 @@ export class GtmDomain extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
+    /** @deprecated akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain */
     constructor(name: string, args: GtmDomainArgs, opts?: pulumi.CustomResourceOptions)
+    /** @deprecated akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain */
     constructor(name: string, argsOrState?: GtmDomainArgs | GtmDomainState, opts?: pulumi.CustomResourceOptions) {
+        pulumi.log.warn("GtmDomain is deprecated: akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain")
         let inputs: pulumi.Inputs = {};
         if (opts && opts.id) {
             const state = argsOrState as GtmDomainState | undefined;
@@ -193,7 +122,7 @@ export class GtmDomain extends pulumi.CustomResource {
             inputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
         } else {
             const args = argsOrState as GtmDomainArgs | undefined;
-            if (!args || args.type === undefined) {
+            if ((!args || args.type === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'type'");
             }
             inputs["cnameCoalescingEnabled"] = args ? args.cnameCoalescingEnabled : undefined;
@@ -246,21 +175,9 @@ export class GtmDomain extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmDomain resources.
  */
 export interface GtmDomainState {
-    /**
-     * — (Boolean)
-     */
     readonly cnameCoalescingEnabled?: pulumi.Input<boolean>;
-    /**
-     * — A descriptive comment
-     */
     readonly comment?: pulumi.Input<string>;
-    /**
-     * — The contract ID (if creating domain)
-     */
     readonly contract?: pulumi.Input<string>;
-    /**
-     * — (Default: 75)
-     */
     readonly defaultErrorPenalty?: pulumi.Input<number>;
     readonly defaultHealthMax?: pulumi.Input<number>;
     readonly defaultHealthMultiplier?: pulumi.Input<number>;
@@ -268,50 +185,11 @@ export interface GtmDomainState {
     readonly defaultMaxUnreachablePenalty?: pulumi.Input<number>;
     readonly defaultSslClientCertificate?: pulumi.Input<string>;
     readonly defaultSslClientPrivateKey?: pulumi.Input<string>;
-    /**
-     * — (Default: 25)
-     * * `loadImbalancePercentage`
-     * * `defaultSslClientPrivateKey`
-     */
     readonly defaultTimeoutPenalty?: pulumi.Input<number>;
-    /**
-     * * `minPingableRegionFraction`
-     * * `servermonitorLivenessCount`
-     * * `roundRobinPrefix`
-     * * `servermonitorLoadCount`
-     * * `pingInterval`
-     * * `maxTtl`
-     * * `defaultHealthMax`
-     * * `mapUpdateInterval`
-     * * `maxProperties`
-     * * `maxResources`
-     * * `defaultErrorPenalty`
-     * * `maxTestTimeout`
-     * * `defaultHealthMultiplier`
-     * * `servermonitorPool`
-     * * `minTtl`
-     * * `defaultMaxUnreachablePenalty`
-     * * `defaultHealthThreshold`
-     * * `minTestInterval`
-     * * `pingPacketSize`
-     */
     readonly defaultUnreachableThreshold?: pulumi.Input<number>;
-    /**
-     * — (List)
-     */
     readonly emailNotificationLists?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * — (Boolean)
-     */
     readonly endUserMappingEnabled?: pulumi.Input<boolean>;
-    /**
-     * — The currently selected group ID (if creating domain)
-     */
     readonly group?: pulumi.Input<string>;
-    /**
-     * — (Boolean)
-     * * `defaultSslClientCertificate`
-     */
     readonly loadFeedback?: pulumi.Input<boolean>;
     readonly loadImbalancePercentage?: pulumi.Input<number>;
     readonly mapUpdateInterval?: pulumi.Input<number>;
@@ -322,9 +200,6 @@ export interface GtmDomainState {
     readonly minPingableRegionFraction?: pulumi.Input<number>;
     readonly minTestInterval?: pulumi.Input<number>;
     readonly minTtl?: pulumi.Input<number>;
-    /**
-     * — Domain name
-     */
     readonly name?: pulumi.Input<string>;
     readonly pingInterval?: pulumi.Input<number>;
     readonly pingPacketSize?: pulumi.Input<number>;
@@ -332,13 +207,7 @@ export interface GtmDomainState {
     readonly servermonitorLivenessCount?: pulumi.Input<number>;
     readonly servermonitorLoadCount?: pulumi.Input<number>;
     readonly servermonitorPool?: pulumi.Input<string>;
-    /**
-     * — Domain type
-     */
     readonly type?: pulumi.Input<string>;
-    /**
-     * — (Boolean, Default: true) Wait for transaction to complete
-     */
     readonly waitOnComplete?: pulumi.Input<boolean>;
 }
 
@@ -346,58 +215,19 @@ export interface GtmDomainState {
  * The set of arguments for constructing a GtmDomain resource.
  */
 export interface GtmDomainArgs {
-    /**
-     * — (Boolean)
-     */
     readonly cnameCoalescingEnabled?: pulumi.Input<boolean>;
-    /**
-     * — A descriptive comment
-     */
     readonly comment?: pulumi.Input<string>;
-    /**
-     * — The contract ID (if creating domain)
-     */
     readonly contract?: pulumi.Input<string>;
-    /**
-     * — (Default: 75)
-     */
     readonly defaultErrorPenalty?: pulumi.Input<number>;
     readonly defaultSslClientCertificate?: pulumi.Input<string>;
     readonly defaultSslClientPrivateKey?: pulumi.Input<string>;
-    /**
-     * — (Default: 25)
-     * * `loadImbalancePercentage`
-     * * `defaultSslClientPrivateKey`
-     */
     readonly defaultTimeoutPenalty?: pulumi.Input<number>;
-    /**
-     * — (List)
-     */
     readonly emailNotificationLists?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * — (Boolean)
-     */
     readonly endUserMappingEnabled?: pulumi.Input<boolean>;
-    /**
-     * — The currently selected group ID (if creating domain)
-     */
     readonly group?: pulumi.Input<string>;
-    /**
-     * — (Boolean)
-     * * `defaultSslClientCertificate`
-     */
     readonly loadFeedback?: pulumi.Input<boolean>;
     readonly loadImbalancePercentage?: pulumi.Input<number>;
-    /**
-     * — Domain name
-     */
     readonly name?: pulumi.Input<string>;
-    /**
-     * — Domain type
-     */
     readonly type: pulumi.Input<string>;
-    /**
-     * — (Boolean, Default: true) Wait for transaction to complete
-     */
     readonly waitOnComplete?: pulumi.Input<boolean>;
 }

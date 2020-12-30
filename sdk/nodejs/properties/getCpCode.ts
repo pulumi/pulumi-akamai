@@ -2,16 +2,12 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "../types/input";
-import * as outputs from "../types/output";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
-/**
- * Use `akamai.properties.CpCode` data source to retrieve a group id.
- *
- * ## Example Usage
- */
+/** @deprecated akamai.properties.getCpCode has been deprecated in favor of akamai.getCpCode */
 export function getCpCode(args: GetCpCodeArgs, opts?: pulumi.InvokeOptions): Promise<GetCpCodeResult> {
+    pulumi.log.warn("getCpCode is deprecated: akamai.properties.getCpCode has been deprecated in favor of akamai.getCpCode")
     if (!opts) {
         opts = {}
     }
@@ -21,7 +17,9 @@ export function getCpCode(args: GetCpCodeArgs, opts?: pulumi.InvokeOptions): Pro
     }
     return pulumi.runtime.invoke("akamai:properties/getCpCode:getCpCode", {
         "contract": args.contract,
+        "contractId": args.contractId,
         "group": args.group,
+        "groupId": args.groupId,
         "name": args.name,
     }, opts);
 }
@@ -31,16 +29,15 @@ export function getCpCode(args: GetCpCodeArgs, opts?: pulumi.InvokeOptions): Pro
  */
 export interface GetCpCodeArgs {
     /**
-     * — (Required) The contract ID
+     * @deprecated The setting "contract" has been deprecated.
      */
-    readonly contract: string;
+    readonly contract?: string;
+    readonly contractId?: string;
     /**
-     * — (Required) The group ID
+     * @deprecated The setting "group" has been deprecated.
      */
-    readonly group: string;
-    /**
-     * — (Required) The CP code name.
-     */
+    readonly group?: string;
+    readonly groupId?: string;
     readonly name: string;
 }
 
@@ -48,11 +45,20 @@ export interface GetCpCodeArgs {
  * A collection of values returned by getCpCode.
  */
 export interface GetCpCodeResult {
+    /**
+     * @deprecated The setting "contract" has been deprecated.
+     */
     readonly contract: string;
+    readonly contractId: string;
+    /**
+     * @deprecated The setting "group" has been deprecated.
+     */
     readonly group: string;
+    readonly groupId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
     readonly name: string;
+    readonly productIds: string[];
 }

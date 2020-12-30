@@ -7,23 +7,990 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union
 from . import _utilities, _tables
+from . import outputs
 
 __all__ = [
-    'ProviderDn',
+    'DnsZoneTsigKey',
+    'GtmAsmapAssignment',
+    'GtmAsmapDefaultDatacenter',
+    'GtmCidrmapAssignment',
+    'GtmCidrmapDefaultDatacenter',
+    'GtmDatacenterDefaultLoadObject',
+    'GtmGeomapAssignment',
+    'GtmGeomapDefaultDatacenter',
+    'GtmPropertyLivenessTest',
+    'GtmPropertyLivenessTestHttpHeader',
+    'GtmPropertyStaticRrSet',
+    'GtmPropertyTrafficTarget',
+    'GtmResourceResourceInstance',
+    'PropertyOrigin',
+    'PropertyRuleError',
+    'PropertyRuleWarning',
+    'PropertyVariablesVariable',
+    'PropertyVariablesVariableVariable',
+    'ProviderAppsec',
+    'ProviderConfig',
+    'ProviderDns',
     'ProviderGtm',
     'ProviderProperty',
+    'GetContractsContractResult',
+    'GetGroupsGroupResult',
+    'GetPropertiesPropertyResult',
+    'GetPropertyProductsProductResult',
+    'GetPropertyRulesTemplateVariableResult',
 ]
 
 @pulumi.output_type
-class ProviderDn(dict):
+class DnsZoneTsigKey(dict):
+    def __init__(__self__, *,
+                 algorithm: str,
+                 name: str,
+                 secret: str):
+        """
+        :param str name: key name
+               * `algorithm`
+               * `secret`
+        """
+        pulumi.set(__self__, "algorithm", algorithm)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "secret", secret)
+
+    @property
+    @pulumi.getter
+    def algorithm(self) -> str:
+        return pulumi.get(self, "algorithm")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        key name
+        * `algorithm`
+        * `secret`
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def secret(self) -> str:
+        return pulumi.get(self, "secret")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class GtmAsmapAssignment(dict):
+    def __init__(__self__, *,
+                 as_numbers: Sequence[int],
+                 datacenter_id: int,
+                 nickname: str):
+        pulumi.set(__self__, "as_numbers", as_numbers)
+        pulumi.set(__self__, "datacenter_id", datacenter_id)
+        pulumi.set(__self__, "nickname", nickname)
+
+    @property
+    @pulumi.getter(name="asNumbers")
+    def as_numbers(self) -> Sequence[int]:
+        return pulumi.get(self, "as_numbers")
+
+    @property
+    @pulumi.getter(name="datacenterId")
+    def datacenter_id(self) -> int:
+        return pulumi.get(self, "datacenter_id")
+
+    @property
+    @pulumi.getter
+    def nickname(self) -> str:
+        return pulumi.get(self, "nickname")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class GtmAsmapDefaultDatacenter(dict):
+    def __init__(__self__, *,
+                 datacenter_id: int,
+                 nickname: Optional[str] = None):
+        pulumi.set(__self__, "datacenter_id", datacenter_id)
+        if nickname is not None:
+            pulumi.set(__self__, "nickname", nickname)
+
+    @property
+    @pulumi.getter(name="datacenterId")
+    def datacenter_id(self) -> int:
+        return pulumi.get(self, "datacenter_id")
+
+    @property
+    @pulumi.getter
+    def nickname(self) -> Optional[str]:
+        return pulumi.get(self, "nickname")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class GtmCidrmapAssignment(dict):
+    def __init__(__self__, *,
+                 datacenter_id: int,
+                 nickname: str,
+                 blocks: Optional[Sequence[str]] = None):
+        pulumi.set(__self__, "datacenter_id", datacenter_id)
+        pulumi.set(__self__, "nickname", nickname)
+        if blocks is not None:
+            pulumi.set(__self__, "blocks", blocks)
+
+    @property
+    @pulumi.getter(name="datacenterId")
+    def datacenter_id(self) -> int:
+        return pulumi.get(self, "datacenter_id")
+
+    @property
+    @pulumi.getter
+    def nickname(self) -> str:
+        return pulumi.get(self, "nickname")
+
+    @property
+    @pulumi.getter
+    def blocks(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "blocks")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class GtmCidrmapDefaultDatacenter(dict):
+    def __init__(__self__, *,
+                 datacenter_id: int,
+                 nickname: Optional[str] = None):
+        pulumi.set(__self__, "datacenter_id", datacenter_id)
+        if nickname is not None:
+            pulumi.set(__self__, "nickname", nickname)
+
+    @property
+    @pulumi.getter(name="datacenterId")
+    def datacenter_id(self) -> int:
+        return pulumi.get(self, "datacenter_id")
+
+    @property
+    @pulumi.getter
+    def nickname(self) -> Optional[str]:
+        return pulumi.get(self, "nickname")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class GtmDatacenterDefaultLoadObject(dict):
+    def __init__(__self__, *,
+                 load_object: Optional[str] = None,
+                 load_object_port: Optional[int] = None,
+                 load_servers: Optional[Sequence[str]] = None):
+        """
+        :param Sequence[str] load_servers: * `city`
+               * `clone_of`
+        """
+        if load_object is not None:
+            pulumi.set(__self__, "load_object", load_object)
+        if load_object_port is not None:
+            pulumi.set(__self__, "load_object_port", load_object_port)
+        if load_servers is not None:
+            pulumi.set(__self__, "load_servers", load_servers)
+
+    @property
+    @pulumi.getter(name="loadObject")
+    def load_object(self) -> Optional[str]:
+        return pulumi.get(self, "load_object")
+
+    @property
+    @pulumi.getter(name="loadObjectPort")
+    def load_object_port(self) -> Optional[int]:
+        return pulumi.get(self, "load_object_port")
+
+    @property
+    @pulumi.getter(name="loadServers")
+    def load_servers(self) -> Optional[Sequence[str]]:
+        """
+        * `city`
+        * `clone_of`
+        """
+        return pulumi.get(self, "load_servers")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class GtmGeomapAssignment(dict):
+    def __init__(__self__, *,
+                 datacenter_id: int,
+                 nickname: str,
+                 countries: Optional[Sequence[str]] = None):
+        pulumi.set(__self__, "datacenter_id", datacenter_id)
+        pulumi.set(__self__, "nickname", nickname)
+        if countries is not None:
+            pulumi.set(__self__, "countries", countries)
+
+    @property
+    @pulumi.getter(name="datacenterId")
+    def datacenter_id(self) -> int:
+        return pulumi.get(self, "datacenter_id")
+
+    @property
+    @pulumi.getter
+    def nickname(self) -> str:
+        return pulumi.get(self, "nickname")
+
+    @property
+    @pulumi.getter
+    def countries(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "countries")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class GtmGeomapDefaultDatacenter(dict):
+    def __init__(__self__, *,
+                 datacenter_id: int,
+                 nickname: Optional[str] = None):
+        pulumi.set(__self__, "datacenter_id", datacenter_id)
+        if nickname is not None:
+            pulumi.set(__self__, "nickname", nickname)
+
+    @property
+    @pulumi.getter(name="datacenterId")
+    def datacenter_id(self) -> int:
+        return pulumi.get(self, "datacenter_id")
+
+    @property
+    @pulumi.getter
+    def nickname(self) -> Optional[str]:
+        return pulumi.get(self, "nickname")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class GtmPropertyLivenessTest(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 test_interval: int,
+                 test_object: str,
+                 test_object_protocol: str,
+                 test_timeout: float,
+                 answers_required: Optional[bool] = None,
+                 disable_nonstandard_port_warning: Optional[bool] = None,
+                 disabled: Optional[bool] = None,
+                 error_penalty: Optional[float] = None,
+                 http_error3xx: Optional[bool] = None,
+                 http_error4xx: Optional[bool] = None,
+                 http_error5xx: Optional[bool] = None,
+                 http_headers: Optional[Sequence['outputs.GtmPropertyLivenessTestHttpHeader']] = None,
+                 peer_certificate_verification: Optional[bool] = None,
+                 recursion_requested: Optional[bool] = None,
+                 request_string: Optional[str] = None,
+                 resource_type: Optional[str] = None,
+                 response_string: Optional[str] = None,
+                 ssl_client_certificate: Optional[str] = None,
+                 ssl_client_private_key: Optional[str] = None,
+                 test_object_password: Optional[str] = None,
+                 test_object_port: Optional[int] = None,
+                 test_object_username: Optional[str] = None,
+                 timeout_penalty: Optional[float] = None):
+        """
+        :param str name: Liveness test name
+               * `test_interval`
+               * `test_object_protocol`
+               * `test_timeout`
+        :param bool disable_nonstandard_port_warning: * `error_penalty`
+        :param Sequence['GtmPropertyLivenessTestHttpHeaderArgs'] http_headers: `name`
+               `value`
+        :param bool recursion_requested: * `request_string`
+               * `resource_type`
+               * `response_string`
+               * `ssl_client_certificate`
+               * `ssl_client_private_key`
+               * `test_object`
+               * `test_object_password`
+               * `test_object_port`
+               * `test_object_username`
+               * `timeout_penalty`
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "test_interval", test_interval)
+        pulumi.set(__self__, "test_object", test_object)
+        pulumi.set(__self__, "test_object_protocol", test_object_protocol)
+        pulumi.set(__self__, "test_timeout", test_timeout)
+        if answers_required is not None:
+            pulumi.set(__self__, "answers_required", answers_required)
+        if disable_nonstandard_port_warning is not None:
+            pulumi.set(__self__, "disable_nonstandard_port_warning", disable_nonstandard_port_warning)
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if error_penalty is not None:
+            pulumi.set(__self__, "error_penalty", error_penalty)
+        if http_error3xx is not None:
+            pulumi.set(__self__, "http_error3xx", http_error3xx)
+        if http_error4xx is not None:
+            pulumi.set(__self__, "http_error4xx", http_error4xx)
+        if http_error5xx is not None:
+            pulumi.set(__self__, "http_error5xx", http_error5xx)
+        if http_headers is not None:
+            pulumi.set(__self__, "http_headers", http_headers)
+        if peer_certificate_verification is not None:
+            pulumi.set(__self__, "peer_certificate_verification", peer_certificate_verification)
+        if recursion_requested is not None:
+            pulumi.set(__self__, "recursion_requested", recursion_requested)
+        if request_string is not None:
+            pulumi.set(__self__, "request_string", request_string)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if response_string is not None:
+            pulumi.set(__self__, "response_string", response_string)
+        if ssl_client_certificate is not None:
+            pulumi.set(__self__, "ssl_client_certificate", ssl_client_certificate)
+        if ssl_client_private_key is not None:
+            pulumi.set(__self__, "ssl_client_private_key", ssl_client_private_key)
+        if test_object_password is not None:
+            pulumi.set(__self__, "test_object_password", test_object_password)
+        if test_object_port is not None:
+            pulumi.set(__self__, "test_object_port", test_object_port)
+        if test_object_username is not None:
+            pulumi.set(__self__, "test_object_username", test_object_username)
+        if timeout_penalty is not None:
+            pulumi.set(__self__, "timeout_penalty", timeout_penalty)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Liveness test name
+        * `test_interval`
+        * `test_object_protocol`
+        * `test_timeout`
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="testInterval")
+    def test_interval(self) -> int:
+        return pulumi.get(self, "test_interval")
+
+    @property
+    @pulumi.getter(name="testObject")
+    def test_object(self) -> str:
+        return pulumi.get(self, "test_object")
+
+    @property
+    @pulumi.getter(name="testObjectProtocol")
+    def test_object_protocol(self) -> str:
+        return pulumi.get(self, "test_object_protocol")
+
+    @property
+    @pulumi.getter(name="testTimeout")
+    def test_timeout(self) -> float:
+        return pulumi.get(self, "test_timeout")
+
+    @property
+    @pulumi.getter(name="answersRequired")
+    def answers_required(self) -> Optional[bool]:
+        return pulumi.get(self, "answers_required")
+
+    @property
+    @pulumi.getter(name="disableNonstandardPortWarning")
+    def disable_nonstandard_port_warning(self) -> Optional[bool]:
+        """
+        * `error_penalty`
+        """
+        return pulumi.get(self, "disable_nonstandard_port_warning")
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> Optional[bool]:
+        return pulumi.get(self, "disabled")
+
+    @property
+    @pulumi.getter(name="errorPenalty")
+    def error_penalty(self) -> Optional[float]:
+        return pulumi.get(self, "error_penalty")
+
+    @property
+    @pulumi.getter(name="httpError3xx")
+    def http_error3xx(self) -> Optional[bool]:
+        return pulumi.get(self, "http_error3xx")
+
+    @property
+    @pulumi.getter(name="httpError4xx")
+    def http_error4xx(self) -> Optional[bool]:
+        return pulumi.get(self, "http_error4xx")
+
+    @property
+    @pulumi.getter(name="httpError5xx")
+    def http_error5xx(self) -> Optional[bool]:
+        return pulumi.get(self, "http_error5xx")
+
+    @property
+    @pulumi.getter(name="httpHeaders")
+    def http_headers(self) -> Optional[Sequence['outputs.GtmPropertyLivenessTestHttpHeader']]:
+        """
+        `name`
+        `value`
+        """
+        return pulumi.get(self, "http_headers")
+
+    @property
+    @pulumi.getter(name="peerCertificateVerification")
+    def peer_certificate_verification(self) -> Optional[bool]:
+        return pulumi.get(self, "peer_certificate_verification")
+
+    @property
+    @pulumi.getter(name="recursionRequested")
+    def recursion_requested(self) -> Optional[bool]:
+        """
+        * `request_string`
+        * `resource_type`
+        * `response_string`
+        * `ssl_client_certificate`
+        * `ssl_client_private_key`
+        * `test_object`
+        * `test_object_password`
+        * `test_object_port`
+        * `test_object_username`
+        * `timeout_penalty`
+        """
+        return pulumi.get(self, "recursion_requested")
+
+    @property
+    @pulumi.getter(name="requestString")
+    def request_string(self) -> Optional[str]:
+        return pulumi.get(self, "request_string")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[str]:
+        return pulumi.get(self, "resource_type")
+
+    @property
+    @pulumi.getter(name="responseString")
+    def response_string(self) -> Optional[str]:
+        return pulumi.get(self, "response_string")
+
+    @property
+    @pulumi.getter(name="sslClientCertificate")
+    def ssl_client_certificate(self) -> Optional[str]:
+        return pulumi.get(self, "ssl_client_certificate")
+
+    @property
+    @pulumi.getter(name="sslClientPrivateKey")
+    def ssl_client_private_key(self) -> Optional[str]:
+        return pulumi.get(self, "ssl_client_private_key")
+
+    @property
+    @pulumi.getter(name="testObjectPassword")
+    def test_object_password(self) -> Optional[str]:
+        return pulumi.get(self, "test_object_password")
+
+    @property
+    @pulumi.getter(name="testObjectPort")
+    def test_object_port(self) -> Optional[int]:
+        return pulumi.get(self, "test_object_port")
+
+    @property
+    @pulumi.getter(name="testObjectUsername")
+    def test_object_username(self) -> Optional[str]:
+        return pulumi.get(self, "test_object_username")
+
+    @property
+    @pulumi.getter(name="timeoutPenalty")
+    def timeout_penalty(self) -> Optional[float]:
+        return pulumi.get(self, "timeout_penalty")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class GtmPropertyLivenessTestHttpHeader(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str name: Liveness test name
+               * `test_interval`
+               * `test_object_protocol`
+               * `test_timeout`
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Liveness test name
+        * `test_interval`
+        * `test_object_protocol`
+        * `test_timeout`
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class GtmPropertyStaticRrSet(dict):
+    def __init__(__self__, *,
+                 rdatas: Optional[Sequence[str]] = None,
+                 ttl: Optional[int] = None,
+                 type: Optional[str] = None):
+        """
+        :param str type: Property type  
+               * `score_aggregation_type`
+        """
+        if rdatas is not None:
+            pulumi.set(__self__, "rdatas", rdatas)
+        if ttl is not None:
+            pulumi.set(__self__, "ttl", ttl)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def rdatas(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "rdatas")
+
+    @property
+    @pulumi.getter
+    def ttl(self) -> Optional[int]:
+        return pulumi.get(self, "ttl")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        Property type  
+        * `score_aggregation_type`
+        """
+        return pulumi.get(self, "type")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class GtmPropertyTrafficTarget(dict):
+    def __init__(__self__, *,
+                 datacenter_id: Optional[int] = None,
+                 enabled: Optional[bool] = None,
+                 handout_cname: Optional[str] = None,
+                 name: Optional[str] = None,
+                 servers: Optional[Sequence[str]] = None,
+                 weight: Optional[float] = None):
+        """
+        :param bool enabled: * `weight`
+        :param str name: Liveness test name
+               * `test_interval`
+               * `test_object_protocol`
+               * `test_timeout`
+        """
+        if datacenter_id is not None:
+            pulumi.set(__self__, "datacenter_id", datacenter_id)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if handout_cname is not None:
+            pulumi.set(__self__, "handout_cname", handout_cname)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if servers is not None:
+            pulumi.set(__self__, "servers", servers)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter(name="datacenterId")
+    def datacenter_id(self) -> Optional[int]:
+        return pulumi.get(self, "datacenter_id")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        * `weight`
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="handoutCname")
+    def handout_cname(self) -> Optional[str]:
+        return pulumi.get(self, "handout_cname")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Liveness test name
+        * `test_interval`
+        * `test_object_protocol`
+        * `test_timeout`
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def servers(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "servers")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> Optional[float]:
+        return pulumi.get(self, "weight")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class GtmResourceResourceInstance(dict):
+    def __init__(__self__, *,
+                 datacenter_id: int,
+                 load_object: Optional[str] = None,
+                 load_object_port: Optional[int] = None,
+                 load_servers: Optional[Sequence[str]] = None,
+                 use_default_load_object: Optional[bool] = None):
+        """
+        :param bool use_default_load_object: * `host_header`
+               * `least_squares_decay`
+               * `upper_bound`
+               * `description`
+               * `leader_string`
+               * `constrained_property`
+               * `load_imbalance_percent`
+               * `max_u_multiplicative_increment`
+               * `decay_rate`
+        """
+        pulumi.set(__self__, "datacenter_id", datacenter_id)
+        if load_object is not None:
+            pulumi.set(__self__, "load_object", load_object)
+        if load_object_port is not None:
+            pulumi.set(__self__, "load_object_port", load_object_port)
+        if load_servers is not None:
+            pulumi.set(__self__, "load_servers", load_servers)
+        if use_default_load_object is not None:
+            pulumi.set(__self__, "use_default_load_object", use_default_load_object)
+
+    @property
+    @pulumi.getter(name="datacenterId")
+    def datacenter_id(self) -> int:
+        return pulumi.get(self, "datacenter_id")
+
+    @property
+    @pulumi.getter(name="loadObject")
+    def load_object(self) -> Optional[str]:
+        return pulumi.get(self, "load_object")
+
+    @property
+    @pulumi.getter(name="loadObjectPort")
+    def load_object_port(self) -> Optional[int]:
+        return pulumi.get(self, "load_object_port")
+
+    @property
+    @pulumi.getter(name="loadServers")
+    def load_servers(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "load_servers")
+
+    @property
+    @pulumi.getter(name="useDefaultLoadObject")
+    def use_default_load_object(self) -> Optional[bool]:
+        """
+        * `host_header`
+        * `least_squares_decay`
+        * `upper_bound`
+        * `description`
+        * `leader_string`
+        * `constrained_property`
+        * `load_imbalance_percent`
+        * `max_u_multiplicative_increment`
+        * `decay_rate`
+        """
+        return pulumi.get(self, "use_default_load_object")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class PropertyOrigin(dict):
+    def __init__(__self__, *,
+                 cache_key_hostname: Optional[str] = None,
+                 compress: Optional[bool] = None,
+                 enable_true_client_ip: Optional[bool] = None,
+                 forward_hostname: Optional[str] = None,
+                 hostname: Optional[str] = None,
+                 port: Optional[int] = None):
+        if cache_key_hostname is not None:
+            pulumi.set(__self__, "cache_key_hostname", cache_key_hostname)
+        if compress is not None:
+            pulumi.set(__self__, "compress", compress)
+        if enable_true_client_ip is not None:
+            pulumi.set(__self__, "enable_true_client_ip", enable_true_client_ip)
+        if forward_hostname is not None:
+            pulumi.set(__self__, "forward_hostname", forward_hostname)
+        if hostname is not None:
+            pulumi.set(__self__, "hostname", hostname)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter(name="cacheKeyHostname")
+    def cache_key_hostname(self) -> Optional[str]:
+        return pulumi.get(self, "cache_key_hostname")
+
+    @property
+    @pulumi.getter
+    def compress(self) -> Optional[bool]:
+        return pulumi.get(self, "compress")
+
+    @property
+    @pulumi.getter(name="enableTrueClientIp")
+    def enable_true_client_ip(self) -> Optional[bool]:
+        return pulumi.get(self, "enable_true_client_ip")
+
+    @property
+    @pulumi.getter(name="forwardHostname")
+    def forward_hostname(self) -> Optional[str]:
+        return pulumi.get(self, "forward_hostname")
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> Optional[str]:
+        return pulumi.get(self, "hostname")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[int]:
+        return pulumi.get(self, "port")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class PropertyRuleError(dict):
+    def __init__(__self__, *,
+                 behavior_name: Optional[str] = None,
+                 detail: Optional[str] = None,
+                 error_location: Optional[str] = None,
+                 instance: Optional[str] = None,
+                 status_code: Optional[int] = None,
+                 title: Optional[str] = None,
+                 type: Optional[str] = None):
+        if behavior_name is not None:
+            pulumi.set(__self__, "behavior_name", behavior_name)
+        if detail is not None:
+            pulumi.set(__self__, "detail", detail)
+        if error_location is not None:
+            pulumi.set(__self__, "error_location", error_location)
+        if instance is not None:
+            pulumi.set(__self__, "instance", instance)
+        if status_code is not None:
+            pulumi.set(__self__, "status_code", status_code)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="behaviorName")
+    def behavior_name(self) -> Optional[str]:
+        return pulumi.get(self, "behavior_name")
+
+    @property
+    @pulumi.getter
+    def detail(self) -> Optional[str]:
+        return pulumi.get(self, "detail")
+
+    @property
+    @pulumi.getter(name="errorLocation")
+    def error_location(self) -> Optional[str]:
+        return pulumi.get(self, "error_location")
+
+    @property
+    @pulumi.getter
+    def instance(self) -> Optional[str]:
+        return pulumi.get(self, "instance")
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> Optional[int]:
+        return pulumi.get(self, "status_code")
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[str]:
+        return pulumi.get(self, "title")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        return pulumi.get(self, "type")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class PropertyRuleWarning(dict):
+    def __init__(__self__, *,
+                 behavior_name: Optional[str] = None,
+                 detail: Optional[str] = None,
+                 error_location: Optional[str] = None,
+                 instance: Optional[str] = None,
+                 status_code: Optional[int] = None,
+                 title: Optional[str] = None,
+                 type: Optional[str] = None):
+        if behavior_name is not None:
+            pulumi.set(__self__, "behavior_name", behavior_name)
+        if detail is not None:
+            pulumi.set(__self__, "detail", detail)
+        if error_location is not None:
+            pulumi.set(__self__, "error_location", error_location)
+        if instance is not None:
+            pulumi.set(__self__, "instance", instance)
+        if status_code is not None:
+            pulumi.set(__self__, "status_code", status_code)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="behaviorName")
+    def behavior_name(self) -> Optional[str]:
+        return pulumi.get(self, "behavior_name")
+
+    @property
+    @pulumi.getter
+    def detail(self) -> Optional[str]:
+        return pulumi.get(self, "detail")
+
+    @property
+    @pulumi.getter(name="errorLocation")
+    def error_location(self) -> Optional[str]:
+        return pulumi.get(self, "error_location")
+
+    @property
+    @pulumi.getter
+    def instance(self) -> Optional[str]:
+        return pulumi.get(self, "instance")
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> Optional[int]:
+        return pulumi.get(self, "status_code")
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[str]:
+        return pulumi.get(self, "title")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        return pulumi.get(self, "type")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class PropertyVariablesVariable(dict):
+    def __init__(__self__, *,
+                 variables: Optional[Sequence['outputs.PropertyVariablesVariableVariable']] = None):
+        if variables is not None:
+            pulumi.set(__self__, "variables", variables)
+
+    @property
+    @pulumi.getter
+    def variables(self) -> Optional[Sequence['outputs.PropertyVariablesVariableVariable']]:
+        return pulumi.get(self, "variables")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class PropertyVariablesVariableVariable(dict):
+    def __init__(__self__, *,
+                 hidden: bool,
+                 name: str,
+                 sensitive: bool,
+                 description: Optional[str] = None,
+                 value: Optional[str] = None):
+        pulumi.set(__self__, "hidden", hidden)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "sensitive", sensitive)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def hidden(self) -> bool:
+        return pulumi.get(self, "hidden")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def sensitive(self) -> bool:
+        return pulumi.get(self, "sensitive")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class ProviderAppsec(dict):
     def __init__(__self__, *,
                  access_token: Optional[str] = None,
+                 account_key: Optional[str] = None,
                  client_secret: Optional[str] = None,
                  client_token: Optional[str] = None,
                  host: Optional[str] = None,
                  max_body: Optional[int] = None):
         if access_token is not None:
             pulumi.set(__self__, "access_token", access_token)
+        if account_key is not None:
+            pulumi.set(__self__, "account_key", account_key)
         if client_secret is not None:
             pulumi.set(__self__, "client_secret", client_secret)
         if client_token is not None:
@@ -37,6 +1004,123 @@ class ProviderDn(dict):
     @pulumi.getter(name="accessToken")
     def access_token(self) -> Optional[str]:
         return pulumi.get(self, "access_token")
+
+    @property
+    @pulumi.getter(name="accountKey")
+    def account_key(self) -> Optional[str]:
+        return pulumi.get(self, "account_key")
+
+    @property
+    @pulumi.getter(name="clientSecret")
+    def client_secret(self) -> Optional[str]:
+        return pulumi.get(self, "client_secret")
+
+    @property
+    @pulumi.getter(name="clientToken")
+    def client_token(self) -> Optional[str]:
+        return pulumi.get(self, "client_token")
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[str]:
+        return pulumi.get(self, "host")
+
+    @property
+    @pulumi.getter(name="maxBody")
+    def max_body(self) -> Optional[int]:
+        return pulumi.get(self, "max_body")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class ProviderConfig(dict):
+    def __init__(__self__, *,
+                 access_token: Optional[str] = None,
+                 account_key: Optional[str] = None,
+                 client_secret: Optional[str] = None,
+                 client_token: Optional[str] = None,
+                 host: Optional[str] = None,
+                 max_body: Optional[int] = None):
+        if access_token is not None:
+            pulumi.set(__self__, "access_token", access_token)
+        if account_key is not None:
+            pulumi.set(__self__, "account_key", account_key)
+        if client_secret is not None:
+            pulumi.set(__self__, "client_secret", client_secret)
+        if client_token is not None:
+            pulumi.set(__self__, "client_token", client_token)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if max_body is not None:
+            pulumi.set(__self__, "max_body", max_body)
+
+    @property
+    @pulumi.getter(name="accessToken")
+    def access_token(self) -> Optional[str]:
+        return pulumi.get(self, "access_token")
+
+    @property
+    @pulumi.getter(name="accountKey")
+    def account_key(self) -> Optional[str]:
+        return pulumi.get(self, "account_key")
+
+    @property
+    @pulumi.getter(name="clientSecret")
+    def client_secret(self) -> Optional[str]:
+        return pulumi.get(self, "client_secret")
+
+    @property
+    @pulumi.getter(name="clientToken")
+    def client_token(self) -> Optional[str]:
+        return pulumi.get(self, "client_token")
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[str]:
+        return pulumi.get(self, "host")
+
+    @property
+    @pulumi.getter(name="maxBody")
+    def max_body(self) -> Optional[int]:
+        return pulumi.get(self, "max_body")
+
+    def _translate_property(self, prop):
+        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class ProviderDns(dict):
+    def __init__(__self__, *,
+                 access_token: Optional[str] = None,
+                 account_key: Optional[str] = None,
+                 client_secret: Optional[str] = None,
+                 client_token: Optional[str] = None,
+                 host: Optional[str] = None,
+                 max_body: Optional[int] = None):
+        if access_token is not None:
+            pulumi.set(__self__, "access_token", access_token)
+        if account_key is not None:
+            pulumi.set(__self__, "account_key", account_key)
+        if client_secret is not None:
+            pulumi.set(__self__, "client_secret", client_secret)
+        if client_token is not None:
+            pulumi.set(__self__, "client_token", client_token)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if max_body is not None:
+            pulumi.set(__self__, "max_body", max_body)
+
+    @property
+    @pulumi.getter(name="accessToken")
+    def access_token(self) -> Optional[str]:
+        return pulumi.get(self, "access_token")
+
+    @property
+    @pulumi.getter(name="accountKey")
+    def account_key(self) -> Optional[str]:
+        return pulumi.get(self, "account_key")
 
     @property
     @pulumi.getter(name="clientSecret")
@@ -66,12 +1150,15 @@ class ProviderDn(dict):
 class ProviderGtm(dict):
     def __init__(__self__, *,
                  access_token: Optional[str] = None,
+                 account_key: Optional[str] = None,
                  client_secret: Optional[str] = None,
                  client_token: Optional[str] = None,
                  host: Optional[str] = None,
                  max_body: Optional[int] = None):
         if access_token is not None:
             pulumi.set(__self__, "access_token", access_token)
+        if account_key is not None:
+            pulumi.set(__self__, "account_key", account_key)
         if client_secret is not None:
             pulumi.set(__self__, "client_secret", client_secret)
         if client_token is not None:
@@ -85,6 +1172,11 @@ class ProviderGtm(dict):
     @pulumi.getter(name="accessToken")
     def access_token(self) -> Optional[str]:
         return pulumi.get(self, "access_token")
+
+    @property
+    @pulumi.getter(name="accountKey")
+    def account_key(self) -> Optional[str]:
+        return pulumi.get(self, "account_key")
 
     @property
     @pulumi.getter(name="clientSecret")
@@ -114,12 +1206,15 @@ class ProviderGtm(dict):
 class ProviderProperty(dict):
     def __init__(__self__, *,
                  access_token: Optional[str] = None,
+                 account_key: Optional[str] = None,
                  client_secret: Optional[str] = None,
                  client_token: Optional[str] = None,
                  host: Optional[str] = None,
                  max_body: Optional[int] = None):
         if access_token is not None:
             pulumi.set(__self__, "access_token", access_token)
+        if account_key is not None:
+            pulumi.set(__self__, "account_key", account_key)
         if client_secret is not None:
             pulumi.set(__self__, "client_secret", client_secret)
         if client_token is not None:
@@ -133,6 +1228,11 @@ class ProviderProperty(dict):
     @pulumi.getter(name="accessToken")
     def access_token(self) -> Optional[str]:
         return pulumi.get(self, "access_token")
+
+    @property
+    @pulumi.getter(name="accountKey")
+    def account_key(self) -> Optional[str]:
+        return pulumi.get(self, "account_key")
 
     @property
     @pulumi.getter(name="clientSecret")
@@ -156,5 +1256,178 @@ class ProviderProperty(dict):
 
     def _translate_property(self, prop):
         return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
+
+
+@pulumi.output_type
+class GetContractsContractResult(dict):
+    def __init__(__self__, *,
+                 contract_id: str,
+                 contract_type_name: str):
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "contract_type_name", contract_type_name)
+
+    @property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> str:
+        return pulumi.get(self, "contract_id")
+
+    @property
+    @pulumi.getter(name="contractTypeName")
+    def contract_type_name(self) -> str:
+        return pulumi.get(self, "contract_type_name")
+
+
+@pulumi.output_type
+class GetGroupsGroupResult(dict):
+    def __init__(__self__, *,
+                 contract_ids: Sequence[str],
+                 group_id: str,
+                 group_name: str,
+                 parent_group_id: str):
+        pulumi.set(__self__, "contract_ids", contract_ids)
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "group_name", group_name)
+        pulumi.set(__self__, "parent_group_id", parent_group_id)
+
+    @property
+    @pulumi.getter(name="contractIds")
+    def contract_ids(self) -> Sequence[str]:
+        return pulumi.get(self, "contract_ids")
+
+    @property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> str:
+        return pulumi.get(self, "group_id")
+
+    @property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> str:
+        return pulumi.get(self, "group_name")
+
+    @property
+    @pulumi.getter(name="parentGroupId")
+    def parent_group_id(self) -> str:
+        return pulumi.get(self, "parent_group_id")
+
+
+@pulumi.output_type
+class GetPropertiesPropertyResult(dict):
+    def __init__(__self__, *,
+                 contract_id: str,
+                 group_id: str,
+                 latest_version: int,
+                 note: str,
+                 product_id: str,
+                 production_version: int,
+                 property_id: str,
+                 property_name: str,
+                 rule_format: str,
+                 staging_version: int):
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "latest_version", latest_version)
+        pulumi.set(__self__, "note", note)
+        pulumi.set(__self__, "product_id", product_id)
+        pulumi.set(__self__, "production_version", production_version)
+        pulumi.set(__self__, "property_id", property_id)
+        pulumi.set(__self__, "property_name", property_name)
+        pulumi.set(__self__, "rule_format", rule_format)
+        pulumi.set(__self__, "staging_version", staging_version)
+
+    @property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> str:
+        return pulumi.get(self, "contract_id")
+
+    @property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> str:
+        return pulumi.get(self, "group_id")
+
+    @property
+    @pulumi.getter(name="latestVersion")
+    def latest_version(self) -> int:
+        return pulumi.get(self, "latest_version")
+
+    @property
+    @pulumi.getter
+    def note(self) -> str:
+        return pulumi.get(self, "note")
+
+    @property
+    @pulumi.getter(name="productId")
+    def product_id(self) -> str:
+        return pulumi.get(self, "product_id")
+
+    @property
+    @pulumi.getter(name="productionVersion")
+    def production_version(self) -> int:
+        return pulumi.get(self, "production_version")
+
+    @property
+    @pulumi.getter(name="propertyId")
+    def property_id(self) -> str:
+        return pulumi.get(self, "property_id")
+
+    @property
+    @pulumi.getter(name="propertyName")
+    def property_name(self) -> str:
+        return pulumi.get(self, "property_name")
+
+    @property
+    @pulumi.getter(name="ruleFormat")
+    def rule_format(self) -> str:
+        return pulumi.get(self, "rule_format")
+
+    @property
+    @pulumi.getter(name="stagingVersion")
+    def staging_version(self) -> int:
+        return pulumi.get(self, "staging_version")
+
+
+@pulumi.output_type
+class GetPropertyProductsProductResult(dict):
+    def __init__(__self__, *,
+                 product_id: str,
+                 product_name: str):
+        pulumi.set(__self__, "product_id", product_id)
+        pulumi.set(__self__, "product_name", product_name)
+
+    @property
+    @pulumi.getter(name="productId")
+    def product_id(self) -> str:
+        return pulumi.get(self, "product_id")
+
+    @property
+    @pulumi.getter(name="productName")
+    def product_name(self) -> str:
+        return pulumi.get(self, "product_name")
+
+
+@pulumi.output_type
+class GetPropertyRulesTemplateVariableResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str,
+                 type: Optional[str] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        return pulumi.get(self, "type")
 
 

@@ -10,126 +10,2995 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-type ProviderDn struct {
+type DnsZoneTsigKey struct {
+	Algorithm string `pulumi:"algorithm"`
+	// key name
+	// * `algorithm`
+	// * `secret`
+	Name   string `pulumi:"name"`
+	Secret string `pulumi:"secret"`
+}
+
+// DnsZoneTsigKeyInput is an input type that accepts DnsZoneTsigKeyArgs and DnsZoneTsigKeyOutput values.
+// You can construct a concrete instance of `DnsZoneTsigKeyInput` via:
+//
+//          DnsZoneTsigKeyArgs{...}
+type DnsZoneTsigKeyInput interface {
+	pulumi.Input
+
+	ToDnsZoneTsigKeyOutput() DnsZoneTsigKeyOutput
+	ToDnsZoneTsigKeyOutputWithContext(context.Context) DnsZoneTsigKeyOutput
+}
+
+type DnsZoneTsigKeyArgs struct {
+	Algorithm pulumi.StringInput `pulumi:"algorithm"`
+	// key name
+	// * `algorithm`
+	// * `secret`
+	Name   pulumi.StringInput `pulumi:"name"`
+	Secret pulumi.StringInput `pulumi:"secret"`
+}
+
+func (DnsZoneTsigKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DnsZoneTsigKey)(nil)).Elem()
+}
+
+func (i DnsZoneTsigKeyArgs) ToDnsZoneTsigKeyOutput() DnsZoneTsigKeyOutput {
+	return i.ToDnsZoneTsigKeyOutputWithContext(context.Background())
+}
+
+func (i DnsZoneTsigKeyArgs) ToDnsZoneTsigKeyOutputWithContext(ctx context.Context) DnsZoneTsigKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DnsZoneTsigKeyOutput)
+}
+
+func (i DnsZoneTsigKeyArgs) ToDnsZoneTsigKeyPtrOutput() DnsZoneTsigKeyPtrOutput {
+	return i.ToDnsZoneTsigKeyPtrOutputWithContext(context.Background())
+}
+
+func (i DnsZoneTsigKeyArgs) ToDnsZoneTsigKeyPtrOutputWithContext(ctx context.Context) DnsZoneTsigKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DnsZoneTsigKeyOutput).ToDnsZoneTsigKeyPtrOutputWithContext(ctx)
+}
+
+// DnsZoneTsigKeyPtrInput is an input type that accepts DnsZoneTsigKeyArgs, DnsZoneTsigKeyPtr and DnsZoneTsigKeyPtrOutput values.
+// You can construct a concrete instance of `DnsZoneTsigKeyPtrInput` via:
+//
+//          DnsZoneTsigKeyArgs{...}
+//
+//  or:
+//
+//          nil
+type DnsZoneTsigKeyPtrInput interface {
+	pulumi.Input
+
+	ToDnsZoneTsigKeyPtrOutput() DnsZoneTsigKeyPtrOutput
+	ToDnsZoneTsigKeyPtrOutputWithContext(context.Context) DnsZoneTsigKeyPtrOutput
+}
+
+type dnsZoneTsigKeyPtrType DnsZoneTsigKeyArgs
+
+func DnsZoneTsigKeyPtr(v *DnsZoneTsigKeyArgs) DnsZoneTsigKeyPtrInput {
+	return (*dnsZoneTsigKeyPtrType)(v)
+}
+
+func (*dnsZoneTsigKeyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DnsZoneTsigKey)(nil)).Elem()
+}
+
+func (i *dnsZoneTsigKeyPtrType) ToDnsZoneTsigKeyPtrOutput() DnsZoneTsigKeyPtrOutput {
+	return i.ToDnsZoneTsigKeyPtrOutputWithContext(context.Background())
+}
+
+func (i *dnsZoneTsigKeyPtrType) ToDnsZoneTsigKeyPtrOutputWithContext(ctx context.Context) DnsZoneTsigKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DnsZoneTsigKeyPtrOutput)
+}
+
+type DnsZoneTsigKeyOutput struct{ *pulumi.OutputState }
+
+func (DnsZoneTsigKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DnsZoneTsigKey)(nil)).Elem()
+}
+
+func (o DnsZoneTsigKeyOutput) ToDnsZoneTsigKeyOutput() DnsZoneTsigKeyOutput {
+	return o
+}
+
+func (o DnsZoneTsigKeyOutput) ToDnsZoneTsigKeyOutputWithContext(ctx context.Context) DnsZoneTsigKeyOutput {
+	return o
+}
+
+func (o DnsZoneTsigKeyOutput) ToDnsZoneTsigKeyPtrOutput() DnsZoneTsigKeyPtrOutput {
+	return o.ToDnsZoneTsigKeyPtrOutputWithContext(context.Background())
+}
+
+func (o DnsZoneTsigKeyOutput) ToDnsZoneTsigKeyPtrOutputWithContext(ctx context.Context) DnsZoneTsigKeyPtrOutput {
+	return o.ApplyT(func(v DnsZoneTsigKey) *DnsZoneTsigKey {
+		return &v
+	}).(DnsZoneTsigKeyPtrOutput)
+}
+func (o DnsZoneTsigKeyOutput) Algorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v DnsZoneTsigKey) string { return v.Algorithm }).(pulumi.StringOutput)
+}
+
+// key name
+// * `algorithm`
+// * `secret`
+func (o DnsZoneTsigKeyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v DnsZoneTsigKey) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o DnsZoneTsigKeyOutput) Secret() pulumi.StringOutput {
+	return o.ApplyT(func(v DnsZoneTsigKey) string { return v.Secret }).(pulumi.StringOutput)
+}
+
+type DnsZoneTsigKeyPtrOutput struct{ *pulumi.OutputState }
+
+func (DnsZoneTsigKeyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DnsZoneTsigKey)(nil)).Elem()
+}
+
+func (o DnsZoneTsigKeyPtrOutput) ToDnsZoneTsigKeyPtrOutput() DnsZoneTsigKeyPtrOutput {
+	return o
+}
+
+func (o DnsZoneTsigKeyPtrOutput) ToDnsZoneTsigKeyPtrOutputWithContext(ctx context.Context) DnsZoneTsigKeyPtrOutput {
+	return o
+}
+
+func (o DnsZoneTsigKeyPtrOutput) Elem() DnsZoneTsigKeyOutput {
+	return o.ApplyT(func(v *DnsZoneTsigKey) DnsZoneTsigKey { return *v }).(DnsZoneTsigKeyOutput)
+}
+
+func (o DnsZoneTsigKeyPtrOutput) Algorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsZoneTsigKey) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Algorithm
+	}).(pulumi.StringPtrOutput)
+}
+
+// key name
+// * `algorithm`
+// * `secret`
+func (o DnsZoneTsigKeyPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsZoneTsigKey) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o DnsZoneTsigKeyPtrOutput) Secret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsZoneTsigKey) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Secret
+	}).(pulumi.StringPtrOutput)
+}
+
+type GtmAsmapAssignment struct {
+	AsNumbers    []int  `pulumi:"asNumbers"`
+	DatacenterId int    `pulumi:"datacenterId"`
+	Nickname     string `pulumi:"nickname"`
+}
+
+// GtmAsmapAssignmentInput is an input type that accepts GtmAsmapAssignmentArgs and GtmAsmapAssignmentOutput values.
+// You can construct a concrete instance of `GtmAsmapAssignmentInput` via:
+//
+//          GtmAsmapAssignmentArgs{...}
+type GtmAsmapAssignmentInput interface {
+	pulumi.Input
+
+	ToGtmAsmapAssignmentOutput() GtmAsmapAssignmentOutput
+	ToGtmAsmapAssignmentOutputWithContext(context.Context) GtmAsmapAssignmentOutput
+}
+
+type GtmAsmapAssignmentArgs struct {
+	AsNumbers    pulumi.IntArrayInput `pulumi:"asNumbers"`
+	DatacenterId pulumi.IntInput      `pulumi:"datacenterId"`
+	Nickname     pulumi.StringInput   `pulumi:"nickname"`
+}
+
+func (GtmAsmapAssignmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmAsmapAssignment)(nil)).Elem()
+}
+
+func (i GtmAsmapAssignmentArgs) ToGtmAsmapAssignmentOutput() GtmAsmapAssignmentOutput {
+	return i.ToGtmAsmapAssignmentOutputWithContext(context.Background())
+}
+
+func (i GtmAsmapAssignmentArgs) ToGtmAsmapAssignmentOutputWithContext(ctx context.Context) GtmAsmapAssignmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmAsmapAssignmentOutput)
+}
+
+// GtmAsmapAssignmentArrayInput is an input type that accepts GtmAsmapAssignmentArray and GtmAsmapAssignmentArrayOutput values.
+// You can construct a concrete instance of `GtmAsmapAssignmentArrayInput` via:
+//
+//          GtmAsmapAssignmentArray{ GtmAsmapAssignmentArgs{...} }
+type GtmAsmapAssignmentArrayInput interface {
+	pulumi.Input
+
+	ToGtmAsmapAssignmentArrayOutput() GtmAsmapAssignmentArrayOutput
+	ToGtmAsmapAssignmentArrayOutputWithContext(context.Context) GtmAsmapAssignmentArrayOutput
+}
+
+type GtmAsmapAssignmentArray []GtmAsmapAssignmentInput
+
+func (GtmAsmapAssignmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmAsmapAssignment)(nil)).Elem()
+}
+
+func (i GtmAsmapAssignmentArray) ToGtmAsmapAssignmentArrayOutput() GtmAsmapAssignmentArrayOutput {
+	return i.ToGtmAsmapAssignmentArrayOutputWithContext(context.Background())
+}
+
+func (i GtmAsmapAssignmentArray) ToGtmAsmapAssignmentArrayOutputWithContext(ctx context.Context) GtmAsmapAssignmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmAsmapAssignmentArrayOutput)
+}
+
+type GtmAsmapAssignmentOutput struct{ *pulumi.OutputState }
+
+func (GtmAsmapAssignmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmAsmapAssignment)(nil)).Elem()
+}
+
+func (o GtmAsmapAssignmentOutput) ToGtmAsmapAssignmentOutput() GtmAsmapAssignmentOutput {
+	return o
+}
+
+func (o GtmAsmapAssignmentOutput) ToGtmAsmapAssignmentOutputWithContext(ctx context.Context) GtmAsmapAssignmentOutput {
+	return o
+}
+
+func (o GtmAsmapAssignmentOutput) AsNumbers() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GtmAsmapAssignment) []int { return v.AsNumbers }).(pulumi.IntArrayOutput)
+}
+
+func (o GtmAsmapAssignmentOutput) DatacenterId() pulumi.IntOutput {
+	return o.ApplyT(func(v GtmAsmapAssignment) int { return v.DatacenterId }).(pulumi.IntOutput)
+}
+
+func (o GtmAsmapAssignmentOutput) Nickname() pulumi.StringOutput {
+	return o.ApplyT(func(v GtmAsmapAssignment) string { return v.Nickname }).(pulumi.StringOutput)
+}
+
+type GtmAsmapAssignmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GtmAsmapAssignmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmAsmapAssignment)(nil)).Elem()
+}
+
+func (o GtmAsmapAssignmentArrayOutput) ToGtmAsmapAssignmentArrayOutput() GtmAsmapAssignmentArrayOutput {
+	return o
+}
+
+func (o GtmAsmapAssignmentArrayOutput) ToGtmAsmapAssignmentArrayOutputWithContext(ctx context.Context) GtmAsmapAssignmentArrayOutput {
+	return o
+}
+
+func (o GtmAsmapAssignmentArrayOutput) Index(i pulumi.IntInput) GtmAsmapAssignmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmAsmapAssignment {
+		return vs[0].([]GtmAsmapAssignment)[vs[1].(int)]
+	}).(GtmAsmapAssignmentOutput)
+}
+
+type GtmAsmapDefaultDatacenter struct {
+	DatacenterId int     `pulumi:"datacenterId"`
+	Nickname     *string `pulumi:"nickname"`
+}
+
+// GtmAsmapDefaultDatacenterInput is an input type that accepts GtmAsmapDefaultDatacenterArgs and GtmAsmapDefaultDatacenterOutput values.
+// You can construct a concrete instance of `GtmAsmapDefaultDatacenterInput` via:
+//
+//          GtmAsmapDefaultDatacenterArgs{...}
+type GtmAsmapDefaultDatacenterInput interface {
+	pulumi.Input
+
+	ToGtmAsmapDefaultDatacenterOutput() GtmAsmapDefaultDatacenterOutput
+	ToGtmAsmapDefaultDatacenterOutputWithContext(context.Context) GtmAsmapDefaultDatacenterOutput
+}
+
+type GtmAsmapDefaultDatacenterArgs struct {
+	DatacenterId pulumi.IntInput       `pulumi:"datacenterId"`
+	Nickname     pulumi.StringPtrInput `pulumi:"nickname"`
+}
+
+func (GtmAsmapDefaultDatacenterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmAsmapDefaultDatacenter)(nil)).Elem()
+}
+
+func (i GtmAsmapDefaultDatacenterArgs) ToGtmAsmapDefaultDatacenterOutput() GtmAsmapDefaultDatacenterOutput {
+	return i.ToGtmAsmapDefaultDatacenterOutputWithContext(context.Background())
+}
+
+func (i GtmAsmapDefaultDatacenterArgs) ToGtmAsmapDefaultDatacenterOutputWithContext(ctx context.Context) GtmAsmapDefaultDatacenterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmAsmapDefaultDatacenterOutput)
+}
+
+func (i GtmAsmapDefaultDatacenterArgs) ToGtmAsmapDefaultDatacenterPtrOutput() GtmAsmapDefaultDatacenterPtrOutput {
+	return i.ToGtmAsmapDefaultDatacenterPtrOutputWithContext(context.Background())
+}
+
+func (i GtmAsmapDefaultDatacenterArgs) ToGtmAsmapDefaultDatacenterPtrOutputWithContext(ctx context.Context) GtmAsmapDefaultDatacenterPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmAsmapDefaultDatacenterOutput).ToGtmAsmapDefaultDatacenterPtrOutputWithContext(ctx)
+}
+
+// GtmAsmapDefaultDatacenterPtrInput is an input type that accepts GtmAsmapDefaultDatacenterArgs, GtmAsmapDefaultDatacenterPtr and GtmAsmapDefaultDatacenterPtrOutput values.
+// You can construct a concrete instance of `GtmAsmapDefaultDatacenterPtrInput` via:
+//
+//          GtmAsmapDefaultDatacenterArgs{...}
+//
+//  or:
+//
+//          nil
+type GtmAsmapDefaultDatacenterPtrInput interface {
+	pulumi.Input
+
+	ToGtmAsmapDefaultDatacenterPtrOutput() GtmAsmapDefaultDatacenterPtrOutput
+	ToGtmAsmapDefaultDatacenterPtrOutputWithContext(context.Context) GtmAsmapDefaultDatacenterPtrOutput
+}
+
+type gtmAsmapDefaultDatacenterPtrType GtmAsmapDefaultDatacenterArgs
+
+func GtmAsmapDefaultDatacenterPtr(v *GtmAsmapDefaultDatacenterArgs) GtmAsmapDefaultDatacenterPtrInput {
+	return (*gtmAsmapDefaultDatacenterPtrType)(v)
+}
+
+func (*gtmAsmapDefaultDatacenterPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmAsmapDefaultDatacenter)(nil)).Elem()
+}
+
+func (i *gtmAsmapDefaultDatacenterPtrType) ToGtmAsmapDefaultDatacenterPtrOutput() GtmAsmapDefaultDatacenterPtrOutput {
+	return i.ToGtmAsmapDefaultDatacenterPtrOutputWithContext(context.Background())
+}
+
+func (i *gtmAsmapDefaultDatacenterPtrType) ToGtmAsmapDefaultDatacenterPtrOutputWithContext(ctx context.Context) GtmAsmapDefaultDatacenterPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmAsmapDefaultDatacenterPtrOutput)
+}
+
+type GtmAsmapDefaultDatacenterOutput struct{ *pulumi.OutputState }
+
+func (GtmAsmapDefaultDatacenterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmAsmapDefaultDatacenter)(nil)).Elem()
+}
+
+func (o GtmAsmapDefaultDatacenterOutput) ToGtmAsmapDefaultDatacenterOutput() GtmAsmapDefaultDatacenterOutput {
+	return o
+}
+
+func (o GtmAsmapDefaultDatacenterOutput) ToGtmAsmapDefaultDatacenterOutputWithContext(ctx context.Context) GtmAsmapDefaultDatacenterOutput {
+	return o
+}
+
+func (o GtmAsmapDefaultDatacenterOutput) ToGtmAsmapDefaultDatacenterPtrOutput() GtmAsmapDefaultDatacenterPtrOutput {
+	return o.ToGtmAsmapDefaultDatacenterPtrOutputWithContext(context.Background())
+}
+
+func (o GtmAsmapDefaultDatacenterOutput) ToGtmAsmapDefaultDatacenterPtrOutputWithContext(ctx context.Context) GtmAsmapDefaultDatacenterPtrOutput {
+	return o.ApplyT(func(v GtmAsmapDefaultDatacenter) *GtmAsmapDefaultDatacenter {
+		return &v
+	}).(GtmAsmapDefaultDatacenterPtrOutput)
+}
+func (o GtmAsmapDefaultDatacenterOutput) DatacenterId() pulumi.IntOutput {
+	return o.ApplyT(func(v GtmAsmapDefaultDatacenter) int { return v.DatacenterId }).(pulumi.IntOutput)
+}
+
+func (o GtmAsmapDefaultDatacenterOutput) Nickname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmAsmapDefaultDatacenter) *string { return v.Nickname }).(pulumi.StringPtrOutput)
+}
+
+type GtmAsmapDefaultDatacenterPtrOutput struct{ *pulumi.OutputState }
+
+func (GtmAsmapDefaultDatacenterPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmAsmapDefaultDatacenter)(nil)).Elem()
+}
+
+func (o GtmAsmapDefaultDatacenterPtrOutput) ToGtmAsmapDefaultDatacenterPtrOutput() GtmAsmapDefaultDatacenterPtrOutput {
+	return o
+}
+
+func (o GtmAsmapDefaultDatacenterPtrOutput) ToGtmAsmapDefaultDatacenterPtrOutputWithContext(ctx context.Context) GtmAsmapDefaultDatacenterPtrOutput {
+	return o
+}
+
+func (o GtmAsmapDefaultDatacenterPtrOutput) Elem() GtmAsmapDefaultDatacenterOutput {
+	return o.ApplyT(func(v *GtmAsmapDefaultDatacenter) GtmAsmapDefaultDatacenter { return *v }).(GtmAsmapDefaultDatacenterOutput)
+}
+
+func (o GtmAsmapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmAsmapDefaultDatacenter) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.DatacenterId
+	}).(pulumi.IntPtrOutput)
+}
+
+func (o GtmAsmapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmAsmapDefaultDatacenter) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Nickname
+	}).(pulumi.StringPtrOutput)
+}
+
+type GtmCidrmapAssignment struct {
+	Blocks       []string `pulumi:"blocks"`
+	DatacenterId int      `pulumi:"datacenterId"`
+	Nickname     string   `pulumi:"nickname"`
+}
+
+// GtmCidrmapAssignmentInput is an input type that accepts GtmCidrmapAssignmentArgs and GtmCidrmapAssignmentOutput values.
+// You can construct a concrete instance of `GtmCidrmapAssignmentInput` via:
+//
+//          GtmCidrmapAssignmentArgs{...}
+type GtmCidrmapAssignmentInput interface {
+	pulumi.Input
+
+	ToGtmCidrmapAssignmentOutput() GtmCidrmapAssignmentOutput
+	ToGtmCidrmapAssignmentOutputWithContext(context.Context) GtmCidrmapAssignmentOutput
+}
+
+type GtmCidrmapAssignmentArgs struct {
+	Blocks       pulumi.StringArrayInput `pulumi:"blocks"`
+	DatacenterId pulumi.IntInput         `pulumi:"datacenterId"`
+	Nickname     pulumi.StringInput      `pulumi:"nickname"`
+}
+
+func (GtmCidrmapAssignmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmCidrmapAssignment)(nil)).Elem()
+}
+
+func (i GtmCidrmapAssignmentArgs) ToGtmCidrmapAssignmentOutput() GtmCidrmapAssignmentOutput {
+	return i.ToGtmCidrmapAssignmentOutputWithContext(context.Background())
+}
+
+func (i GtmCidrmapAssignmentArgs) ToGtmCidrmapAssignmentOutputWithContext(ctx context.Context) GtmCidrmapAssignmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmCidrmapAssignmentOutput)
+}
+
+// GtmCidrmapAssignmentArrayInput is an input type that accepts GtmCidrmapAssignmentArray and GtmCidrmapAssignmentArrayOutput values.
+// You can construct a concrete instance of `GtmCidrmapAssignmentArrayInput` via:
+//
+//          GtmCidrmapAssignmentArray{ GtmCidrmapAssignmentArgs{...} }
+type GtmCidrmapAssignmentArrayInput interface {
+	pulumi.Input
+
+	ToGtmCidrmapAssignmentArrayOutput() GtmCidrmapAssignmentArrayOutput
+	ToGtmCidrmapAssignmentArrayOutputWithContext(context.Context) GtmCidrmapAssignmentArrayOutput
+}
+
+type GtmCidrmapAssignmentArray []GtmCidrmapAssignmentInput
+
+func (GtmCidrmapAssignmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmCidrmapAssignment)(nil)).Elem()
+}
+
+func (i GtmCidrmapAssignmentArray) ToGtmCidrmapAssignmentArrayOutput() GtmCidrmapAssignmentArrayOutput {
+	return i.ToGtmCidrmapAssignmentArrayOutputWithContext(context.Background())
+}
+
+func (i GtmCidrmapAssignmentArray) ToGtmCidrmapAssignmentArrayOutputWithContext(ctx context.Context) GtmCidrmapAssignmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmCidrmapAssignmentArrayOutput)
+}
+
+type GtmCidrmapAssignmentOutput struct{ *pulumi.OutputState }
+
+func (GtmCidrmapAssignmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmCidrmapAssignment)(nil)).Elem()
+}
+
+func (o GtmCidrmapAssignmentOutput) ToGtmCidrmapAssignmentOutput() GtmCidrmapAssignmentOutput {
+	return o
+}
+
+func (o GtmCidrmapAssignmentOutput) ToGtmCidrmapAssignmentOutputWithContext(ctx context.Context) GtmCidrmapAssignmentOutput {
+	return o
+}
+
+func (o GtmCidrmapAssignmentOutput) Blocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GtmCidrmapAssignment) []string { return v.Blocks }).(pulumi.StringArrayOutput)
+}
+
+func (o GtmCidrmapAssignmentOutput) DatacenterId() pulumi.IntOutput {
+	return o.ApplyT(func(v GtmCidrmapAssignment) int { return v.DatacenterId }).(pulumi.IntOutput)
+}
+
+func (o GtmCidrmapAssignmentOutput) Nickname() pulumi.StringOutput {
+	return o.ApplyT(func(v GtmCidrmapAssignment) string { return v.Nickname }).(pulumi.StringOutput)
+}
+
+type GtmCidrmapAssignmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GtmCidrmapAssignmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmCidrmapAssignment)(nil)).Elem()
+}
+
+func (o GtmCidrmapAssignmentArrayOutput) ToGtmCidrmapAssignmentArrayOutput() GtmCidrmapAssignmentArrayOutput {
+	return o
+}
+
+func (o GtmCidrmapAssignmentArrayOutput) ToGtmCidrmapAssignmentArrayOutputWithContext(ctx context.Context) GtmCidrmapAssignmentArrayOutput {
+	return o
+}
+
+func (o GtmCidrmapAssignmentArrayOutput) Index(i pulumi.IntInput) GtmCidrmapAssignmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmCidrmapAssignment {
+		return vs[0].([]GtmCidrmapAssignment)[vs[1].(int)]
+	}).(GtmCidrmapAssignmentOutput)
+}
+
+type GtmCidrmapDefaultDatacenter struct {
+	DatacenterId int     `pulumi:"datacenterId"`
+	Nickname     *string `pulumi:"nickname"`
+}
+
+// GtmCidrmapDefaultDatacenterInput is an input type that accepts GtmCidrmapDefaultDatacenterArgs and GtmCidrmapDefaultDatacenterOutput values.
+// You can construct a concrete instance of `GtmCidrmapDefaultDatacenterInput` via:
+//
+//          GtmCidrmapDefaultDatacenterArgs{...}
+type GtmCidrmapDefaultDatacenterInput interface {
+	pulumi.Input
+
+	ToGtmCidrmapDefaultDatacenterOutput() GtmCidrmapDefaultDatacenterOutput
+	ToGtmCidrmapDefaultDatacenterOutputWithContext(context.Context) GtmCidrmapDefaultDatacenterOutput
+}
+
+type GtmCidrmapDefaultDatacenterArgs struct {
+	DatacenterId pulumi.IntInput       `pulumi:"datacenterId"`
+	Nickname     pulumi.StringPtrInput `pulumi:"nickname"`
+}
+
+func (GtmCidrmapDefaultDatacenterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmCidrmapDefaultDatacenter)(nil)).Elem()
+}
+
+func (i GtmCidrmapDefaultDatacenterArgs) ToGtmCidrmapDefaultDatacenterOutput() GtmCidrmapDefaultDatacenterOutput {
+	return i.ToGtmCidrmapDefaultDatacenterOutputWithContext(context.Background())
+}
+
+func (i GtmCidrmapDefaultDatacenterArgs) ToGtmCidrmapDefaultDatacenterOutputWithContext(ctx context.Context) GtmCidrmapDefaultDatacenterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmCidrmapDefaultDatacenterOutput)
+}
+
+func (i GtmCidrmapDefaultDatacenterArgs) ToGtmCidrmapDefaultDatacenterPtrOutput() GtmCidrmapDefaultDatacenterPtrOutput {
+	return i.ToGtmCidrmapDefaultDatacenterPtrOutputWithContext(context.Background())
+}
+
+func (i GtmCidrmapDefaultDatacenterArgs) ToGtmCidrmapDefaultDatacenterPtrOutputWithContext(ctx context.Context) GtmCidrmapDefaultDatacenterPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmCidrmapDefaultDatacenterOutput).ToGtmCidrmapDefaultDatacenterPtrOutputWithContext(ctx)
+}
+
+// GtmCidrmapDefaultDatacenterPtrInput is an input type that accepts GtmCidrmapDefaultDatacenterArgs, GtmCidrmapDefaultDatacenterPtr and GtmCidrmapDefaultDatacenterPtrOutput values.
+// You can construct a concrete instance of `GtmCidrmapDefaultDatacenterPtrInput` via:
+//
+//          GtmCidrmapDefaultDatacenterArgs{...}
+//
+//  or:
+//
+//          nil
+type GtmCidrmapDefaultDatacenterPtrInput interface {
+	pulumi.Input
+
+	ToGtmCidrmapDefaultDatacenterPtrOutput() GtmCidrmapDefaultDatacenterPtrOutput
+	ToGtmCidrmapDefaultDatacenterPtrOutputWithContext(context.Context) GtmCidrmapDefaultDatacenterPtrOutput
+}
+
+type gtmCidrmapDefaultDatacenterPtrType GtmCidrmapDefaultDatacenterArgs
+
+func GtmCidrmapDefaultDatacenterPtr(v *GtmCidrmapDefaultDatacenterArgs) GtmCidrmapDefaultDatacenterPtrInput {
+	return (*gtmCidrmapDefaultDatacenterPtrType)(v)
+}
+
+func (*gtmCidrmapDefaultDatacenterPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmCidrmapDefaultDatacenter)(nil)).Elem()
+}
+
+func (i *gtmCidrmapDefaultDatacenterPtrType) ToGtmCidrmapDefaultDatacenterPtrOutput() GtmCidrmapDefaultDatacenterPtrOutput {
+	return i.ToGtmCidrmapDefaultDatacenterPtrOutputWithContext(context.Background())
+}
+
+func (i *gtmCidrmapDefaultDatacenterPtrType) ToGtmCidrmapDefaultDatacenterPtrOutputWithContext(ctx context.Context) GtmCidrmapDefaultDatacenterPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmCidrmapDefaultDatacenterPtrOutput)
+}
+
+type GtmCidrmapDefaultDatacenterOutput struct{ *pulumi.OutputState }
+
+func (GtmCidrmapDefaultDatacenterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmCidrmapDefaultDatacenter)(nil)).Elem()
+}
+
+func (o GtmCidrmapDefaultDatacenterOutput) ToGtmCidrmapDefaultDatacenterOutput() GtmCidrmapDefaultDatacenterOutput {
+	return o
+}
+
+func (o GtmCidrmapDefaultDatacenterOutput) ToGtmCidrmapDefaultDatacenterOutputWithContext(ctx context.Context) GtmCidrmapDefaultDatacenterOutput {
+	return o
+}
+
+func (o GtmCidrmapDefaultDatacenterOutput) ToGtmCidrmapDefaultDatacenterPtrOutput() GtmCidrmapDefaultDatacenterPtrOutput {
+	return o.ToGtmCidrmapDefaultDatacenterPtrOutputWithContext(context.Background())
+}
+
+func (o GtmCidrmapDefaultDatacenterOutput) ToGtmCidrmapDefaultDatacenterPtrOutputWithContext(ctx context.Context) GtmCidrmapDefaultDatacenterPtrOutput {
+	return o.ApplyT(func(v GtmCidrmapDefaultDatacenter) *GtmCidrmapDefaultDatacenter {
+		return &v
+	}).(GtmCidrmapDefaultDatacenterPtrOutput)
+}
+func (o GtmCidrmapDefaultDatacenterOutput) DatacenterId() pulumi.IntOutput {
+	return o.ApplyT(func(v GtmCidrmapDefaultDatacenter) int { return v.DatacenterId }).(pulumi.IntOutput)
+}
+
+func (o GtmCidrmapDefaultDatacenterOutput) Nickname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmCidrmapDefaultDatacenter) *string { return v.Nickname }).(pulumi.StringPtrOutput)
+}
+
+type GtmCidrmapDefaultDatacenterPtrOutput struct{ *pulumi.OutputState }
+
+func (GtmCidrmapDefaultDatacenterPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmCidrmapDefaultDatacenter)(nil)).Elem()
+}
+
+func (o GtmCidrmapDefaultDatacenterPtrOutput) ToGtmCidrmapDefaultDatacenterPtrOutput() GtmCidrmapDefaultDatacenterPtrOutput {
+	return o
+}
+
+func (o GtmCidrmapDefaultDatacenterPtrOutput) ToGtmCidrmapDefaultDatacenterPtrOutputWithContext(ctx context.Context) GtmCidrmapDefaultDatacenterPtrOutput {
+	return o
+}
+
+func (o GtmCidrmapDefaultDatacenterPtrOutput) Elem() GtmCidrmapDefaultDatacenterOutput {
+	return o.ApplyT(func(v *GtmCidrmapDefaultDatacenter) GtmCidrmapDefaultDatacenter { return *v }).(GtmCidrmapDefaultDatacenterOutput)
+}
+
+func (o GtmCidrmapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmCidrmapDefaultDatacenter) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.DatacenterId
+	}).(pulumi.IntPtrOutput)
+}
+
+func (o GtmCidrmapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmCidrmapDefaultDatacenter) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Nickname
+	}).(pulumi.StringPtrOutput)
+}
+
+type GtmDatacenterDefaultLoadObject struct {
+	LoadObject     *string `pulumi:"loadObject"`
+	LoadObjectPort *int    `pulumi:"loadObjectPort"`
+	// * `city`
+	// * `cloneOf`
+	LoadServers []string `pulumi:"loadServers"`
+}
+
+// GtmDatacenterDefaultLoadObjectInput is an input type that accepts GtmDatacenterDefaultLoadObjectArgs and GtmDatacenterDefaultLoadObjectOutput values.
+// You can construct a concrete instance of `GtmDatacenterDefaultLoadObjectInput` via:
+//
+//          GtmDatacenterDefaultLoadObjectArgs{...}
+type GtmDatacenterDefaultLoadObjectInput interface {
+	pulumi.Input
+
+	ToGtmDatacenterDefaultLoadObjectOutput() GtmDatacenterDefaultLoadObjectOutput
+	ToGtmDatacenterDefaultLoadObjectOutputWithContext(context.Context) GtmDatacenterDefaultLoadObjectOutput
+}
+
+type GtmDatacenterDefaultLoadObjectArgs struct {
+	LoadObject     pulumi.StringPtrInput `pulumi:"loadObject"`
+	LoadObjectPort pulumi.IntPtrInput    `pulumi:"loadObjectPort"`
+	// * `city`
+	// * `cloneOf`
+	LoadServers pulumi.StringArrayInput `pulumi:"loadServers"`
+}
+
+func (GtmDatacenterDefaultLoadObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmDatacenterDefaultLoadObject)(nil)).Elem()
+}
+
+func (i GtmDatacenterDefaultLoadObjectArgs) ToGtmDatacenterDefaultLoadObjectOutput() GtmDatacenterDefaultLoadObjectOutput {
+	return i.ToGtmDatacenterDefaultLoadObjectOutputWithContext(context.Background())
+}
+
+func (i GtmDatacenterDefaultLoadObjectArgs) ToGtmDatacenterDefaultLoadObjectOutputWithContext(ctx context.Context) GtmDatacenterDefaultLoadObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmDatacenterDefaultLoadObjectOutput)
+}
+
+func (i GtmDatacenterDefaultLoadObjectArgs) ToGtmDatacenterDefaultLoadObjectPtrOutput() GtmDatacenterDefaultLoadObjectPtrOutput {
+	return i.ToGtmDatacenterDefaultLoadObjectPtrOutputWithContext(context.Background())
+}
+
+func (i GtmDatacenterDefaultLoadObjectArgs) ToGtmDatacenterDefaultLoadObjectPtrOutputWithContext(ctx context.Context) GtmDatacenterDefaultLoadObjectPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmDatacenterDefaultLoadObjectOutput).ToGtmDatacenterDefaultLoadObjectPtrOutputWithContext(ctx)
+}
+
+// GtmDatacenterDefaultLoadObjectPtrInput is an input type that accepts GtmDatacenterDefaultLoadObjectArgs, GtmDatacenterDefaultLoadObjectPtr and GtmDatacenterDefaultLoadObjectPtrOutput values.
+// You can construct a concrete instance of `GtmDatacenterDefaultLoadObjectPtrInput` via:
+//
+//          GtmDatacenterDefaultLoadObjectArgs{...}
+//
+//  or:
+//
+//          nil
+type GtmDatacenterDefaultLoadObjectPtrInput interface {
+	pulumi.Input
+
+	ToGtmDatacenterDefaultLoadObjectPtrOutput() GtmDatacenterDefaultLoadObjectPtrOutput
+	ToGtmDatacenterDefaultLoadObjectPtrOutputWithContext(context.Context) GtmDatacenterDefaultLoadObjectPtrOutput
+}
+
+type gtmDatacenterDefaultLoadObjectPtrType GtmDatacenterDefaultLoadObjectArgs
+
+func GtmDatacenterDefaultLoadObjectPtr(v *GtmDatacenterDefaultLoadObjectArgs) GtmDatacenterDefaultLoadObjectPtrInput {
+	return (*gtmDatacenterDefaultLoadObjectPtrType)(v)
+}
+
+func (*gtmDatacenterDefaultLoadObjectPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmDatacenterDefaultLoadObject)(nil)).Elem()
+}
+
+func (i *gtmDatacenterDefaultLoadObjectPtrType) ToGtmDatacenterDefaultLoadObjectPtrOutput() GtmDatacenterDefaultLoadObjectPtrOutput {
+	return i.ToGtmDatacenterDefaultLoadObjectPtrOutputWithContext(context.Background())
+}
+
+func (i *gtmDatacenterDefaultLoadObjectPtrType) ToGtmDatacenterDefaultLoadObjectPtrOutputWithContext(ctx context.Context) GtmDatacenterDefaultLoadObjectPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmDatacenterDefaultLoadObjectPtrOutput)
+}
+
+type GtmDatacenterDefaultLoadObjectOutput struct{ *pulumi.OutputState }
+
+func (GtmDatacenterDefaultLoadObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmDatacenterDefaultLoadObject)(nil)).Elem()
+}
+
+func (o GtmDatacenterDefaultLoadObjectOutput) ToGtmDatacenterDefaultLoadObjectOutput() GtmDatacenterDefaultLoadObjectOutput {
+	return o
+}
+
+func (o GtmDatacenterDefaultLoadObjectOutput) ToGtmDatacenterDefaultLoadObjectOutputWithContext(ctx context.Context) GtmDatacenterDefaultLoadObjectOutput {
+	return o
+}
+
+func (o GtmDatacenterDefaultLoadObjectOutput) ToGtmDatacenterDefaultLoadObjectPtrOutput() GtmDatacenterDefaultLoadObjectPtrOutput {
+	return o.ToGtmDatacenterDefaultLoadObjectPtrOutputWithContext(context.Background())
+}
+
+func (o GtmDatacenterDefaultLoadObjectOutput) ToGtmDatacenterDefaultLoadObjectPtrOutputWithContext(ctx context.Context) GtmDatacenterDefaultLoadObjectPtrOutput {
+	return o.ApplyT(func(v GtmDatacenterDefaultLoadObject) *GtmDatacenterDefaultLoadObject {
+		return &v
+	}).(GtmDatacenterDefaultLoadObjectPtrOutput)
+}
+func (o GtmDatacenterDefaultLoadObjectOutput) LoadObject() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmDatacenterDefaultLoadObject) *string { return v.LoadObject }).(pulumi.StringPtrOutput)
+}
+
+func (o GtmDatacenterDefaultLoadObjectOutput) LoadObjectPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GtmDatacenterDefaultLoadObject) *int { return v.LoadObjectPort }).(pulumi.IntPtrOutput)
+}
+
+// * `city`
+// * `cloneOf`
+func (o GtmDatacenterDefaultLoadObjectOutput) LoadServers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GtmDatacenterDefaultLoadObject) []string { return v.LoadServers }).(pulumi.StringArrayOutput)
+}
+
+type GtmDatacenterDefaultLoadObjectPtrOutput struct{ *pulumi.OutputState }
+
+func (GtmDatacenterDefaultLoadObjectPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmDatacenterDefaultLoadObject)(nil)).Elem()
+}
+
+func (o GtmDatacenterDefaultLoadObjectPtrOutput) ToGtmDatacenterDefaultLoadObjectPtrOutput() GtmDatacenterDefaultLoadObjectPtrOutput {
+	return o
+}
+
+func (o GtmDatacenterDefaultLoadObjectPtrOutput) ToGtmDatacenterDefaultLoadObjectPtrOutputWithContext(ctx context.Context) GtmDatacenterDefaultLoadObjectPtrOutput {
+	return o
+}
+
+func (o GtmDatacenterDefaultLoadObjectPtrOutput) Elem() GtmDatacenterDefaultLoadObjectOutput {
+	return o.ApplyT(func(v *GtmDatacenterDefaultLoadObject) GtmDatacenterDefaultLoadObject { return *v }).(GtmDatacenterDefaultLoadObjectOutput)
+}
+
+func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadObject() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmDatacenterDefaultLoadObject) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LoadObject
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadObjectPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmDatacenterDefaultLoadObject) *int {
+		if v == nil {
+			return nil
+		}
+		return v.LoadObjectPort
+	}).(pulumi.IntPtrOutput)
+}
+
+// * `city`
+// * `cloneOf`
+func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadServers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *GtmDatacenterDefaultLoadObject) []string {
+		if v == nil {
+			return nil
+		}
+		return v.LoadServers
+	}).(pulumi.StringArrayOutput)
+}
+
+type GtmGeomapAssignment struct {
+	Countries    []string `pulumi:"countries"`
+	DatacenterId int      `pulumi:"datacenterId"`
+	Nickname     string   `pulumi:"nickname"`
+}
+
+// GtmGeomapAssignmentInput is an input type that accepts GtmGeomapAssignmentArgs and GtmGeomapAssignmentOutput values.
+// You can construct a concrete instance of `GtmGeomapAssignmentInput` via:
+//
+//          GtmGeomapAssignmentArgs{...}
+type GtmGeomapAssignmentInput interface {
+	pulumi.Input
+
+	ToGtmGeomapAssignmentOutput() GtmGeomapAssignmentOutput
+	ToGtmGeomapAssignmentOutputWithContext(context.Context) GtmGeomapAssignmentOutput
+}
+
+type GtmGeomapAssignmentArgs struct {
+	Countries    pulumi.StringArrayInput `pulumi:"countries"`
+	DatacenterId pulumi.IntInput         `pulumi:"datacenterId"`
+	Nickname     pulumi.StringInput      `pulumi:"nickname"`
+}
+
+func (GtmGeomapAssignmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmGeomapAssignment)(nil)).Elem()
+}
+
+func (i GtmGeomapAssignmentArgs) ToGtmGeomapAssignmentOutput() GtmGeomapAssignmentOutput {
+	return i.ToGtmGeomapAssignmentOutputWithContext(context.Background())
+}
+
+func (i GtmGeomapAssignmentArgs) ToGtmGeomapAssignmentOutputWithContext(ctx context.Context) GtmGeomapAssignmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmGeomapAssignmentOutput)
+}
+
+// GtmGeomapAssignmentArrayInput is an input type that accepts GtmGeomapAssignmentArray and GtmGeomapAssignmentArrayOutput values.
+// You can construct a concrete instance of `GtmGeomapAssignmentArrayInput` via:
+//
+//          GtmGeomapAssignmentArray{ GtmGeomapAssignmentArgs{...} }
+type GtmGeomapAssignmentArrayInput interface {
+	pulumi.Input
+
+	ToGtmGeomapAssignmentArrayOutput() GtmGeomapAssignmentArrayOutput
+	ToGtmGeomapAssignmentArrayOutputWithContext(context.Context) GtmGeomapAssignmentArrayOutput
+}
+
+type GtmGeomapAssignmentArray []GtmGeomapAssignmentInput
+
+func (GtmGeomapAssignmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmGeomapAssignment)(nil)).Elem()
+}
+
+func (i GtmGeomapAssignmentArray) ToGtmGeomapAssignmentArrayOutput() GtmGeomapAssignmentArrayOutput {
+	return i.ToGtmGeomapAssignmentArrayOutputWithContext(context.Background())
+}
+
+func (i GtmGeomapAssignmentArray) ToGtmGeomapAssignmentArrayOutputWithContext(ctx context.Context) GtmGeomapAssignmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmGeomapAssignmentArrayOutput)
+}
+
+type GtmGeomapAssignmentOutput struct{ *pulumi.OutputState }
+
+func (GtmGeomapAssignmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmGeomapAssignment)(nil)).Elem()
+}
+
+func (o GtmGeomapAssignmentOutput) ToGtmGeomapAssignmentOutput() GtmGeomapAssignmentOutput {
+	return o
+}
+
+func (o GtmGeomapAssignmentOutput) ToGtmGeomapAssignmentOutputWithContext(ctx context.Context) GtmGeomapAssignmentOutput {
+	return o
+}
+
+func (o GtmGeomapAssignmentOutput) Countries() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GtmGeomapAssignment) []string { return v.Countries }).(pulumi.StringArrayOutput)
+}
+
+func (o GtmGeomapAssignmentOutput) DatacenterId() pulumi.IntOutput {
+	return o.ApplyT(func(v GtmGeomapAssignment) int { return v.DatacenterId }).(pulumi.IntOutput)
+}
+
+func (o GtmGeomapAssignmentOutput) Nickname() pulumi.StringOutput {
+	return o.ApplyT(func(v GtmGeomapAssignment) string { return v.Nickname }).(pulumi.StringOutput)
+}
+
+type GtmGeomapAssignmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GtmGeomapAssignmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmGeomapAssignment)(nil)).Elem()
+}
+
+func (o GtmGeomapAssignmentArrayOutput) ToGtmGeomapAssignmentArrayOutput() GtmGeomapAssignmentArrayOutput {
+	return o
+}
+
+func (o GtmGeomapAssignmentArrayOutput) ToGtmGeomapAssignmentArrayOutputWithContext(ctx context.Context) GtmGeomapAssignmentArrayOutput {
+	return o
+}
+
+func (o GtmGeomapAssignmentArrayOutput) Index(i pulumi.IntInput) GtmGeomapAssignmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmGeomapAssignment {
+		return vs[0].([]GtmGeomapAssignment)[vs[1].(int)]
+	}).(GtmGeomapAssignmentOutput)
+}
+
+type GtmGeomapDefaultDatacenter struct {
+	DatacenterId int     `pulumi:"datacenterId"`
+	Nickname     *string `pulumi:"nickname"`
+}
+
+// GtmGeomapDefaultDatacenterInput is an input type that accepts GtmGeomapDefaultDatacenterArgs and GtmGeomapDefaultDatacenterOutput values.
+// You can construct a concrete instance of `GtmGeomapDefaultDatacenterInput` via:
+//
+//          GtmGeomapDefaultDatacenterArgs{...}
+type GtmGeomapDefaultDatacenterInput interface {
+	pulumi.Input
+
+	ToGtmGeomapDefaultDatacenterOutput() GtmGeomapDefaultDatacenterOutput
+	ToGtmGeomapDefaultDatacenterOutputWithContext(context.Context) GtmGeomapDefaultDatacenterOutput
+}
+
+type GtmGeomapDefaultDatacenterArgs struct {
+	DatacenterId pulumi.IntInput       `pulumi:"datacenterId"`
+	Nickname     pulumi.StringPtrInput `pulumi:"nickname"`
+}
+
+func (GtmGeomapDefaultDatacenterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmGeomapDefaultDatacenter)(nil)).Elem()
+}
+
+func (i GtmGeomapDefaultDatacenterArgs) ToGtmGeomapDefaultDatacenterOutput() GtmGeomapDefaultDatacenterOutput {
+	return i.ToGtmGeomapDefaultDatacenterOutputWithContext(context.Background())
+}
+
+func (i GtmGeomapDefaultDatacenterArgs) ToGtmGeomapDefaultDatacenterOutputWithContext(ctx context.Context) GtmGeomapDefaultDatacenterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmGeomapDefaultDatacenterOutput)
+}
+
+func (i GtmGeomapDefaultDatacenterArgs) ToGtmGeomapDefaultDatacenterPtrOutput() GtmGeomapDefaultDatacenterPtrOutput {
+	return i.ToGtmGeomapDefaultDatacenterPtrOutputWithContext(context.Background())
+}
+
+func (i GtmGeomapDefaultDatacenterArgs) ToGtmGeomapDefaultDatacenterPtrOutputWithContext(ctx context.Context) GtmGeomapDefaultDatacenterPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmGeomapDefaultDatacenterOutput).ToGtmGeomapDefaultDatacenterPtrOutputWithContext(ctx)
+}
+
+// GtmGeomapDefaultDatacenterPtrInput is an input type that accepts GtmGeomapDefaultDatacenterArgs, GtmGeomapDefaultDatacenterPtr and GtmGeomapDefaultDatacenterPtrOutput values.
+// You can construct a concrete instance of `GtmGeomapDefaultDatacenterPtrInput` via:
+//
+//          GtmGeomapDefaultDatacenterArgs{...}
+//
+//  or:
+//
+//          nil
+type GtmGeomapDefaultDatacenterPtrInput interface {
+	pulumi.Input
+
+	ToGtmGeomapDefaultDatacenterPtrOutput() GtmGeomapDefaultDatacenterPtrOutput
+	ToGtmGeomapDefaultDatacenterPtrOutputWithContext(context.Context) GtmGeomapDefaultDatacenterPtrOutput
+}
+
+type gtmGeomapDefaultDatacenterPtrType GtmGeomapDefaultDatacenterArgs
+
+func GtmGeomapDefaultDatacenterPtr(v *GtmGeomapDefaultDatacenterArgs) GtmGeomapDefaultDatacenterPtrInput {
+	return (*gtmGeomapDefaultDatacenterPtrType)(v)
+}
+
+func (*gtmGeomapDefaultDatacenterPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmGeomapDefaultDatacenter)(nil)).Elem()
+}
+
+func (i *gtmGeomapDefaultDatacenterPtrType) ToGtmGeomapDefaultDatacenterPtrOutput() GtmGeomapDefaultDatacenterPtrOutput {
+	return i.ToGtmGeomapDefaultDatacenterPtrOutputWithContext(context.Background())
+}
+
+func (i *gtmGeomapDefaultDatacenterPtrType) ToGtmGeomapDefaultDatacenterPtrOutputWithContext(ctx context.Context) GtmGeomapDefaultDatacenterPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmGeomapDefaultDatacenterPtrOutput)
+}
+
+type GtmGeomapDefaultDatacenterOutput struct{ *pulumi.OutputState }
+
+func (GtmGeomapDefaultDatacenterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmGeomapDefaultDatacenter)(nil)).Elem()
+}
+
+func (o GtmGeomapDefaultDatacenterOutput) ToGtmGeomapDefaultDatacenterOutput() GtmGeomapDefaultDatacenterOutput {
+	return o
+}
+
+func (o GtmGeomapDefaultDatacenterOutput) ToGtmGeomapDefaultDatacenterOutputWithContext(ctx context.Context) GtmGeomapDefaultDatacenterOutput {
+	return o
+}
+
+func (o GtmGeomapDefaultDatacenterOutput) ToGtmGeomapDefaultDatacenterPtrOutput() GtmGeomapDefaultDatacenterPtrOutput {
+	return o.ToGtmGeomapDefaultDatacenterPtrOutputWithContext(context.Background())
+}
+
+func (o GtmGeomapDefaultDatacenterOutput) ToGtmGeomapDefaultDatacenterPtrOutputWithContext(ctx context.Context) GtmGeomapDefaultDatacenterPtrOutput {
+	return o.ApplyT(func(v GtmGeomapDefaultDatacenter) *GtmGeomapDefaultDatacenter {
+		return &v
+	}).(GtmGeomapDefaultDatacenterPtrOutput)
+}
+func (o GtmGeomapDefaultDatacenterOutput) DatacenterId() pulumi.IntOutput {
+	return o.ApplyT(func(v GtmGeomapDefaultDatacenter) int { return v.DatacenterId }).(pulumi.IntOutput)
+}
+
+func (o GtmGeomapDefaultDatacenterOutput) Nickname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmGeomapDefaultDatacenter) *string { return v.Nickname }).(pulumi.StringPtrOutput)
+}
+
+type GtmGeomapDefaultDatacenterPtrOutput struct{ *pulumi.OutputState }
+
+func (GtmGeomapDefaultDatacenterPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmGeomapDefaultDatacenter)(nil)).Elem()
+}
+
+func (o GtmGeomapDefaultDatacenterPtrOutput) ToGtmGeomapDefaultDatacenterPtrOutput() GtmGeomapDefaultDatacenterPtrOutput {
+	return o
+}
+
+func (o GtmGeomapDefaultDatacenterPtrOutput) ToGtmGeomapDefaultDatacenterPtrOutputWithContext(ctx context.Context) GtmGeomapDefaultDatacenterPtrOutput {
+	return o
+}
+
+func (o GtmGeomapDefaultDatacenterPtrOutput) Elem() GtmGeomapDefaultDatacenterOutput {
+	return o.ApplyT(func(v *GtmGeomapDefaultDatacenter) GtmGeomapDefaultDatacenter { return *v }).(GtmGeomapDefaultDatacenterOutput)
+}
+
+func (o GtmGeomapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmGeomapDefaultDatacenter) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.DatacenterId
+	}).(pulumi.IntPtrOutput)
+}
+
+func (o GtmGeomapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmGeomapDefaultDatacenter) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Nickname
+	}).(pulumi.StringPtrOutput)
+}
+
+type GtmPropertyLivenessTest struct {
+	AnswersRequired *bool `pulumi:"answersRequired"`
+	// * `errorPenalty`
+	DisableNonstandardPortWarning *bool    `pulumi:"disableNonstandardPortWarning"`
+	Disabled                      *bool    `pulumi:"disabled"`
+	ErrorPenalty                  *float64 `pulumi:"errorPenalty"`
+	HttpError3xx                  *bool    `pulumi:"httpError3xx"`
+	HttpError4xx                  *bool    `pulumi:"httpError4xx"`
+	HttpError5xx                  *bool    `pulumi:"httpError5xx"`
+	// `name`
+	// `value`
+	HttpHeaders []GtmPropertyLivenessTestHttpHeader `pulumi:"httpHeaders"`
+	// Liveness test name
+	// * `testInterval`
+	// * `testObjectProtocol`
+	// * `testTimeout`
+	Name                        string `pulumi:"name"`
+	PeerCertificateVerification *bool  `pulumi:"peerCertificateVerification"`
+	// * `requestString`
+	// * `resourceType`
+	// * `responseString`
+	// * `sslClientCertificate`
+	// * `sslClientPrivateKey`
+	// * `testObject`
+	// * `testObjectPassword`
+	// * `testObjectPort`
+	// * `testObjectUsername`
+	// * `timeoutPenalty`
+	RecursionRequested   *bool    `pulumi:"recursionRequested"`
+	RequestString        *string  `pulumi:"requestString"`
+	ResourceType         *string  `pulumi:"resourceType"`
+	ResponseString       *string  `pulumi:"responseString"`
+	SslClientCertificate *string  `pulumi:"sslClientCertificate"`
+	SslClientPrivateKey  *string  `pulumi:"sslClientPrivateKey"`
+	TestInterval         int      `pulumi:"testInterval"`
+	TestObject           string   `pulumi:"testObject"`
+	TestObjectPassword   *string  `pulumi:"testObjectPassword"`
+	TestObjectPort       *int     `pulumi:"testObjectPort"`
+	TestObjectProtocol   string   `pulumi:"testObjectProtocol"`
+	TestObjectUsername   *string  `pulumi:"testObjectUsername"`
+	TestTimeout          float64  `pulumi:"testTimeout"`
+	TimeoutPenalty       *float64 `pulumi:"timeoutPenalty"`
+}
+
+// GtmPropertyLivenessTestInput is an input type that accepts GtmPropertyLivenessTestArgs and GtmPropertyLivenessTestOutput values.
+// You can construct a concrete instance of `GtmPropertyLivenessTestInput` via:
+//
+//          GtmPropertyLivenessTestArgs{...}
+type GtmPropertyLivenessTestInput interface {
+	pulumi.Input
+
+	ToGtmPropertyLivenessTestOutput() GtmPropertyLivenessTestOutput
+	ToGtmPropertyLivenessTestOutputWithContext(context.Context) GtmPropertyLivenessTestOutput
+}
+
+type GtmPropertyLivenessTestArgs struct {
+	AnswersRequired pulumi.BoolPtrInput `pulumi:"answersRequired"`
+	// * `errorPenalty`
+	DisableNonstandardPortWarning pulumi.BoolPtrInput    `pulumi:"disableNonstandardPortWarning"`
+	Disabled                      pulumi.BoolPtrInput    `pulumi:"disabled"`
+	ErrorPenalty                  pulumi.Float64PtrInput `pulumi:"errorPenalty"`
+	HttpError3xx                  pulumi.BoolPtrInput    `pulumi:"httpError3xx"`
+	HttpError4xx                  pulumi.BoolPtrInput    `pulumi:"httpError4xx"`
+	HttpError5xx                  pulumi.BoolPtrInput    `pulumi:"httpError5xx"`
+	// `name`
+	// `value`
+	HttpHeaders GtmPropertyLivenessTestHttpHeaderArrayInput `pulumi:"httpHeaders"`
+	// Liveness test name
+	// * `testInterval`
+	// * `testObjectProtocol`
+	// * `testTimeout`
+	Name                        pulumi.StringInput  `pulumi:"name"`
+	PeerCertificateVerification pulumi.BoolPtrInput `pulumi:"peerCertificateVerification"`
+	// * `requestString`
+	// * `resourceType`
+	// * `responseString`
+	// * `sslClientCertificate`
+	// * `sslClientPrivateKey`
+	// * `testObject`
+	// * `testObjectPassword`
+	// * `testObjectPort`
+	// * `testObjectUsername`
+	// * `timeoutPenalty`
+	RecursionRequested   pulumi.BoolPtrInput    `pulumi:"recursionRequested"`
+	RequestString        pulumi.StringPtrInput  `pulumi:"requestString"`
+	ResourceType         pulumi.StringPtrInput  `pulumi:"resourceType"`
+	ResponseString       pulumi.StringPtrInput  `pulumi:"responseString"`
+	SslClientCertificate pulumi.StringPtrInput  `pulumi:"sslClientCertificate"`
+	SslClientPrivateKey  pulumi.StringPtrInput  `pulumi:"sslClientPrivateKey"`
+	TestInterval         pulumi.IntInput        `pulumi:"testInterval"`
+	TestObject           pulumi.StringInput     `pulumi:"testObject"`
+	TestObjectPassword   pulumi.StringPtrInput  `pulumi:"testObjectPassword"`
+	TestObjectPort       pulumi.IntPtrInput     `pulumi:"testObjectPort"`
+	TestObjectProtocol   pulumi.StringInput     `pulumi:"testObjectProtocol"`
+	TestObjectUsername   pulumi.StringPtrInput  `pulumi:"testObjectUsername"`
+	TestTimeout          pulumi.Float64Input    `pulumi:"testTimeout"`
+	TimeoutPenalty       pulumi.Float64PtrInput `pulumi:"timeoutPenalty"`
+}
+
+func (GtmPropertyLivenessTestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmPropertyLivenessTest)(nil)).Elem()
+}
+
+func (i GtmPropertyLivenessTestArgs) ToGtmPropertyLivenessTestOutput() GtmPropertyLivenessTestOutput {
+	return i.ToGtmPropertyLivenessTestOutputWithContext(context.Background())
+}
+
+func (i GtmPropertyLivenessTestArgs) ToGtmPropertyLivenessTestOutputWithContext(ctx context.Context) GtmPropertyLivenessTestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPropertyLivenessTestOutput)
+}
+
+// GtmPropertyLivenessTestArrayInput is an input type that accepts GtmPropertyLivenessTestArray and GtmPropertyLivenessTestArrayOutput values.
+// You can construct a concrete instance of `GtmPropertyLivenessTestArrayInput` via:
+//
+//          GtmPropertyLivenessTestArray{ GtmPropertyLivenessTestArgs{...} }
+type GtmPropertyLivenessTestArrayInput interface {
+	pulumi.Input
+
+	ToGtmPropertyLivenessTestArrayOutput() GtmPropertyLivenessTestArrayOutput
+	ToGtmPropertyLivenessTestArrayOutputWithContext(context.Context) GtmPropertyLivenessTestArrayOutput
+}
+
+type GtmPropertyLivenessTestArray []GtmPropertyLivenessTestInput
+
+func (GtmPropertyLivenessTestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmPropertyLivenessTest)(nil)).Elem()
+}
+
+func (i GtmPropertyLivenessTestArray) ToGtmPropertyLivenessTestArrayOutput() GtmPropertyLivenessTestArrayOutput {
+	return i.ToGtmPropertyLivenessTestArrayOutputWithContext(context.Background())
+}
+
+func (i GtmPropertyLivenessTestArray) ToGtmPropertyLivenessTestArrayOutputWithContext(ctx context.Context) GtmPropertyLivenessTestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPropertyLivenessTestArrayOutput)
+}
+
+type GtmPropertyLivenessTestOutput struct{ *pulumi.OutputState }
+
+func (GtmPropertyLivenessTestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmPropertyLivenessTest)(nil)).Elem()
+}
+
+func (o GtmPropertyLivenessTestOutput) ToGtmPropertyLivenessTestOutput() GtmPropertyLivenessTestOutput {
+	return o
+}
+
+func (o GtmPropertyLivenessTestOutput) ToGtmPropertyLivenessTestOutputWithContext(ctx context.Context) GtmPropertyLivenessTestOutput {
+	return o
+}
+
+func (o GtmPropertyLivenessTestOutput) AnswersRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.AnswersRequired }).(pulumi.BoolPtrOutput)
+}
+
+// * `errorPenalty`
+func (o GtmPropertyLivenessTestOutput) DisableNonstandardPortWarning() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.DisableNonstandardPortWarning }).(pulumi.BoolPtrOutput)
+}
+
+func (o GtmPropertyLivenessTestOutput) Disabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.Disabled }).(pulumi.BoolPtrOutput)
+}
+
+func (o GtmPropertyLivenessTestOutput) ErrorPenalty() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) *float64 { return v.ErrorPenalty }).(pulumi.Float64PtrOutput)
+}
+
+func (o GtmPropertyLivenessTestOutput) HttpError3xx() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.HttpError3xx }).(pulumi.BoolPtrOutput)
+}
+
+func (o GtmPropertyLivenessTestOutput) HttpError4xx() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.HttpError4xx }).(pulumi.BoolPtrOutput)
+}
+
+func (o GtmPropertyLivenessTestOutput) HttpError5xx() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.HttpError5xx }).(pulumi.BoolPtrOutput)
+}
+
+// `name`
+// `value`
+func (o GtmPropertyLivenessTestOutput) HttpHeaders() GtmPropertyLivenessTestHttpHeaderArrayOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) []GtmPropertyLivenessTestHttpHeader { return v.HttpHeaders }).(GtmPropertyLivenessTestHttpHeaderArrayOutput)
+}
+
+// Liveness test name
+// * `testInterval`
+// * `testObjectProtocol`
+// * `testTimeout`
+func (o GtmPropertyLivenessTestOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GtmPropertyLivenessTestOutput) PeerCertificateVerification() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.PeerCertificateVerification }).(pulumi.BoolPtrOutput)
+}
+
+// * `requestString`
+// * `resourceType`
+// * `responseString`
+// * `sslClientCertificate`
+// * `sslClientPrivateKey`
+// * `testObject`
+// * `testObjectPassword`
+// * `testObjectPort`
+// * `testObjectUsername`
+// * `timeoutPenalty`
+func (o GtmPropertyLivenessTestOutput) RecursionRequested() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.RecursionRequested }).(pulumi.BoolPtrOutput)
+}
+
+func (o GtmPropertyLivenessTestOutput) RequestString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.RequestString }).(pulumi.StringPtrOutput)
+}
+
+func (o GtmPropertyLivenessTestOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
+}
+
+func (o GtmPropertyLivenessTestOutput) ResponseString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.ResponseString }).(pulumi.StringPtrOutput)
+}
+
+func (o GtmPropertyLivenessTestOutput) SslClientCertificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.SslClientCertificate }).(pulumi.StringPtrOutput)
+}
+
+func (o GtmPropertyLivenessTestOutput) SslClientPrivateKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.SslClientPrivateKey }).(pulumi.StringPtrOutput)
+}
+
+func (o GtmPropertyLivenessTestOutput) TestInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) int { return v.TestInterval }).(pulumi.IntOutput)
+}
+
+func (o GtmPropertyLivenessTestOutput) TestObject() pulumi.StringOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) string { return v.TestObject }).(pulumi.StringOutput)
+}
+
+func (o GtmPropertyLivenessTestOutput) TestObjectPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.TestObjectPassword }).(pulumi.StringPtrOutput)
+}
+
+func (o GtmPropertyLivenessTestOutput) TestObjectPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) *int { return v.TestObjectPort }).(pulumi.IntPtrOutput)
+}
+
+func (o GtmPropertyLivenessTestOutput) TestObjectProtocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) string { return v.TestObjectProtocol }).(pulumi.StringOutput)
+}
+
+func (o GtmPropertyLivenessTestOutput) TestObjectUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.TestObjectUsername }).(pulumi.StringPtrOutput)
+}
+
+func (o GtmPropertyLivenessTestOutput) TestTimeout() pulumi.Float64Output {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) float64 { return v.TestTimeout }).(pulumi.Float64Output)
+}
+
+func (o GtmPropertyLivenessTestOutput) TimeoutPenalty() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTest) *float64 { return v.TimeoutPenalty }).(pulumi.Float64PtrOutput)
+}
+
+type GtmPropertyLivenessTestArrayOutput struct{ *pulumi.OutputState }
+
+func (GtmPropertyLivenessTestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmPropertyLivenessTest)(nil)).Elem()
+}
+
+func (o GtmPropertyLivenessTestArrayOutput) ToGtmPropertyLivenessTestArrayOutput() GtmPropertyLivenessTestArrayOutput {
+	return o
+}
+
+func (o GtmPropertyLivenessTestArrayOutput) ToGtmPropertyLivenessTestArrayOutputWithContext(ctx context.Context) GtmPropertyLivenessTestArrayOutput {
+	return o
+}
+
+func (o GtmPropertyLivenessTestArrayOutput) Index(i pulumi.IntInput) GtmPropertyLivenessTestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmPropertyLivenessTest {
+		return vs[0].([]GtmPropertyLivenessTest)[vs[1].(int)]
+	}).(GtmPropertyLivenessTestOutput)
+}
+
+type GtmPropertyLivenessTestHttpHeader struct {
+	// Liveness test name
+	// * `testInterval`
+	// * `testObjectProtocol`
+	// * `testTimeout`
+	Name  *string `pulumi:"name"`
+	Value *string `pulumi:"value"`
+}
+
+// GtmPropertyLivenessTestHttpHeaderInput is an input type that accepts GtmPropertyLivenessTestHttpHeaderArgs and GtmPropertyLivenessTestHttpHeaderOutput values.
+// You can construct a concrete instance of `GtmPropertyLivenessTestHttpHeaderInput` via:
+//
+//          GtmPropertyLivenessTestHttpHeaderArgs{...}
+type GtmPropertyLivenessTestHttpHeaderInput interface {
+	pulumi.Input
+
+	ToGtmPropertyLivenessTestHttpHeaderOutput() GtmPropertyLivenessTestHttpHeaderOutput
+	ToGtmPropertyLivenessTestHttpHeaderOutputWithContext(context.Context) GtmPropertyLivenessTestHttpHeaderOutput
+}
+
+type GtmPropertyLivenessTestHttpHeaderArgs struct {
+	// Liveness test name
+	// * `testInterval`
+	// * `testObjectProtocol`
+	// * `testTimeout`
+	Name  pulumi.StringPtrInput `pulumi:"name"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (GtmPropertyLivenessTestHttpHeaderArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmPropertyLivenessTestHttpHeader)(nil)).Elem()
+}
+
+func (i GtmPropertyLivenessTestHttpHeaderArgs) ToGtmPropertyLivenessTestHttpHeaderOutput() GtmPropertyLivenessTestHttpHeaderOutput {
+	return i.ToGtmPropertyLivenessTestHttpHeaderOutputWithContext(context.Background())
+}
+
+func (i GtmPropertyLivenessTestHttpHeaderArgs) ToGtmPropertyLivenessTestHttpHeaderOutputWithContext(ctx context.Context) GtmPropertyLivenessTestHttpHeaderOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPropertyLivenessTestHttpHeaderOutput)
+}
+
+// GtmPropertyLivenessTestHttpHeaderArrayInput is an input type that accepts GtmPropertyLivenessTestHttpHeaderArray and GtmPropertyLivenessTestHttpHeaderArrayOutput values.
+// You can construct a concrete instance of `GtmPropertyLivenessTestHttpHeaderArrayInput` via:
+//
+//          GtmPropertyLivenessTestHttpHeaderArray{ GtmPropertyLivenessTestHttpHeaderArgs{...} }
+type GtmPropertyLivenessTestHttpHeaderArrayInput interface {
+	pulumi.Input
+
+	ToGtmPropertyLivenessTestHttpHeaderArrayOutput() GtmPropertyLivenessTestHttpHeaderArrayOutput
+	ToGtmPropertyLivenessTestHttpHeaderArrayOutputWithContext(context.Context) GtmPropertyLivenessTestHttpHeaderArrayOutput
+}
+
+type GtmPropertyLivenessTestHttpHeaderArray []GtmPropertyLivenessTestHttpHeaderInput
+
+func (GtmPropertyLivenessTestHttpHeaderArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmPropertyLivenessTestHttpHeader)(nil)).Elem()
+}
+
+func (i GtmPropertyLivenessTestHttpHeaderArray) ToGtmPropertyLivenessTestHttpHeaderArrayOutput() GtmPropertyLivenessTestHttpHeaderArrayOutput {
+	return i.ToGtmPropertyLivenessTestHttpHeaderArrayOutputWithContext(context.Background())
+}
+
+func (i GtmPropertyLivenessTestHttpHeaderArray) ToGtmPropertyLivenessTestHttpHeaderArrayOutputWithContext(ctx context.Context) GtmPropertyLivenessTestHttpHeaderArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPropertyLivenessTestHttpHeaderArrayOutput)
+}
+
+type GtmPropertyLivenessTestHttpHeaderOutput struct{ *pulumi.OutputState }
+
+func (GtmPropertyLivenessTestHttpHeaderOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmPropertyLivenessTestHttpHeader)(nil)).Elem()
+}
+
+func (o GtmPropertyLivenessTestHttpHeaderOutput) ToGtmPropertyLivenessTestHttpHeaderOutput() GtmPropertyLivenessTestHttpHeaderOutput {
+	return o
+}
+
+func (o GtmPropertyLivenessTestHttpHeaderOutput) ToGtmPropertyLivenessTestHttpHeaderOutputWithContext(ctx context.Context) GtmPropertyLivenessTestHttpHeaderOutput {
+	return o
+}
+
+// Liveness test name
+// * `testInterval`
+// * `testObjectProtocol`
+// * `testTimeout`
+func (o GtmPropertyLivenessTestHttpHeaderOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTestHttpHeader) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+func (o GtmPropertyLivenessTestHttpHeaderOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmPropertyLivenessTestHttpHeader) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type GtmPropertyLivenessTestHttpHeaderArrayOutput struct{ *pulumi.OutputState }
+
+func (GtmPropertyLivenessTestHttpHeaderArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmPropertyLivenessTestHttpHeader)(nil)).Elem()
+}
+
+func (o GtmPropertyLivenessTestHttpHeaderArrayOutput) ToGtmPropertyLivenessTestHttpHeaderArrayOutput() GtmPropertyLivenessTestHttpHeaderArrayOutput {
+	return o
+}
+
+func (o GtmPropertyLivenessTestHttpHeaderArrayOutput) ToGtmPropertyLivenessTestHttpHeaderArrayOutputWithContext(ctx context.Context) GtmPropertyLivenessTestHttpHeaderArrayOutput {
+	return o
+}
+
+func (o GtmPropertyLivenessTestHttpHeaderArrayOutput) Index(i pulumi.IntInput) GtmPropertyLivenessTestHttpHeaderOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmPropertyLivenessTestHttpHeader {
+		return vs[0].([]GtmPropertyLivenessTestHttpHeader)[vs[1].(int)]
+	}).(GtmPropertyLivenessTestHttpHeaderOutput)
+}
+
+type GtmPropertyStaticRrSet struct {
+	Rdatas []string `pulumi:"rdatas"`
+	Ttl    *int     `pulumi:"ttl"`
+	// Property type
+	// * `scoreAggregationType`
+	Type *string `pulumi:"type"`
+}
+
+// GtmPropertyStaticRrSetInput is an input type that accepts GtmPropertyStaticRrSetArgs and GtmPropertyStaticRrSetOutput values.
+// You can construct a concrete instance of `GtmPropertyStaticRrSetInput` via:
+//
+//          GtmPropertyStaticRrSetArgs{...}
+type GtmPropertyStaticRrSetInput interface {
+	pulumi.Input
+
+	ToGtmPropertyStaticRrSetOutput() GtmPropertyStaticRrSetOutput
+	ToGtmPropertyStaticRrSetOutputWithContext(context.Context) GtmPropertyStaticRrSetOutput
+}
+
+type GtmPropertyStaticRrSetArgs struct {
+	Rdatas pulumi.StringArrayInput `pulumi:"rdatas"`
+	Ttl    pulumi.IntPtrInput      `pulumi:"ttl"`
+	// Property type
+	// * `scoreAggregationType`
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (GtmPropertyStaticRrSetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmPropertyStaticRrSet)(nil)).Elem()
+}
+
+func (i GtmPropertyStaticRrSetArgs) ToGtmPropertyStaticRrSetOutput() GtmPropertyStaticRrSetOutput {
+	return i.ToGtmPropertyStaticRrSetOutputWithContext(context.Background())
+}
+
+func (i GtmPropertyStaticRrSetArgs) ToGtmPropertyStaticRrSetOutputWithContext(ctx context.Context) GtmPropertyStaticRrSetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPropertyStaticRrSetOutput)
+}
+
+// GtmPropertyStaticRrSetArrayInput is an input type that accepts GtmPropertyStaticRrSetArray and GtmPropertyStaticRrSetArrayOutput values.
+// You can construct a concrete instance of `GtmPropertyStaticRrSetArrayInput` via:
+//
+//          GtmPropertyStaticRrSetArray{ GtmPropertyStaticRrSetArgs{...} }
+type GtmPropertyStaticRrSetArrayInput interface {
+	pulumi.Input
+
+	ToGtmPropertyStaticRrSetArrayOutput() GtmPropertyStaticRrSetArrayOutput
+	ToGtmPropertyStaticRrSetArrayOutputWithContext(context.Context) GtmPropertyStaticRrSetArrayOutput
+}
+
+type GtmPropertyStaticRrSetArray []GtmPropertyStaticRrSetInput
+
+func (GtmPropertyStaticRrSetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmPropertyStaticRrSet)(nil)).Elem()
+}
+
+func (i GtmPropertyStaticRrSetArray) ToGtmPropertyStaticRrSetArrayOutput() GtmPropertyStaticRrSetArrayOutput {
+	return i.ToGtmPropertyStaticRrSetArrayOutputWithContext(context.Background())
+}
+
+func (i GtmPropertyStaticRrSetArray) ToGtmPropertyStaticRrSetArrayOutputWithContext(ctx context.Context) GtmPropertyStaticRrSetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPropertyStaticRrSetArrayOutput)
+}
+
+type GtmPropertyStaticRrSetOutput struct{ *pulumi.OutputState }
+
+func (GtmPropertyStaticRrSetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmPropertyStaticRrSet)(nil)).Elem()
+}
+
+func (o GtmPropertyStaticRrSetOutput) ToGtmPropertyStaticRrSetOutput() GtmPropertyStaticRrSetOutput {
+	return o
+}
+
+func (o GtmPropertyStaticRrSetOutput) ToGtmPropertyStaticRrSetOutputWithContext(ctx context.Context) GtmPropertyStaticRrSetOutput {
+	return o
+}
+
+func (o GtmPropertyStaticRrSetOutput) Rdatas() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GtmPropertyStaticRrSet) []string { return v.Rdatas }).(pulumi.StringArrayOutput)
+}
+
+func (o GtmPropertyStaticRrSetOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GtmPropertyStaticRrSet) *int { return v.Ttl }).(pulumi.IntPtrOutput)
+}
+
+// Property type
+// * `scoreAggregationType`
+func (o GtmPropertyStaticRrSetOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmPropertyStaticRrSet) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type GtmPropertyStaticRrSetArrayOutput struct{ *pulumi.OutputState }
+
+func (GtmPropertyStaticRrSetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmPropertyStaticRrSet)(nil)).Elem()
+}
+
+func (o GtmPropertyStaticRrSetArrayOutput) ToGtmPropertyStaticRrSetArrayOutput() GtmPropertyStaticRrSetArrayOutput {
+	return o
+}
+
+func (o GtmPropertyStaticRrSetArrayOutput) ToGtmPropertyStaticRrSetArrayOutputWithContext(ctx context.Context) GtmPropertyStaticRrSetArrayOutput {
+	return o
+}
+
+func (o GtmPropertyStaticRrSetArrayOutput) Index(i pulumi.IntInput) GtmPropertyStaticRrSetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmPropertyStaticRrSet {
+		return vs[0].([]GtmPropertyStaticRrSet)[vs[1].(int)]
+	}).(GtmPropertyStaticRrSetOutput)
+}
+
+type GtmPropertyTrafficTarget struct {
+	DatacenterId *int `pulumi:"datacenterId"`
+	// * `weight`
+	Enabled      *bool   `pulumi:"enabled"`
+	HandoutCname *string `pulumi:"handoutCname"`
+	// Liveness test name
+	// * `testInterval`
+	// * `testObjectProtocol`
+	// * `testTimeout`
+	Name    *string  `pulumi:"name"`
+	Servers []string `pulumi:"servers"`
+	Weight  *float64 `pulumi:"weight"`
+}
+
+// GtmPropertyTrafficTargetInput is an input type that accepts GtmPropertyTrafficTargetArgs and GtmPropertyTrafficTargetOutput values.
+// You can construct a concrete instance of `GtmPropertyTrafficTargetInput` via:
+//
+//          GtmPropertyTrafficTargetArgs{...}
+type GtmPropertyTrafficTargetInput interface {
+	pulumi.Input
+
+	ToGtmPropertyTrafficTargetOutput() GtmPropertyTrafficTargetOutput
+	ToGtmPropertyTrafficTargetOutputWithContext(context.Context) GtmPropertyTrafficTargetOutput
+}
+
+type GtmPropertyTrafficTargetArgs struct {
+	DatacenterId pulumi.IntPtrInput `pulumi:"datacenterId"`
+	// * `weight`
+	Enabled      pulumi.BoolPtrInput   `pulumi:"enabled"`
+	HandoutCname pulumi.StringPtrInput `pulumi:"handoutCname"`
+	// Liveness test name
+	// * `testInterval`
+	// * `testObjectProtocol`
+	// * `testTimeout`
+	Name    pulumi.StringPtrInput   `pulumi:"name"`
+	Servers pulumi.StringArrayInput `pulumi:"servers"`
+	Weight  pulumi.Float64PtrInput  `pulumi:"weight"`
+}
+
+func (GtmPropertyTrafficTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmPropertyTrafficTarget)(nil)).Elem()
+}
+
+func (i GtmPropertyTrafficTargetArgs) ToGtmPropertyTrafficTargetOutput() GtmPropertyTrafficTargetOutput {
+	return i.ToGtmPropertyTrafficTargetOutputWithContext(context.Background())
+}
+
+func (i GtmPropertyTrafficTargetArgs) ToGtmPropertyTrafficTargetOutputWithContext(ctx context.Context) GtmPropertyTrafficTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPropertyTrafficTargetOutput)
+}
+
+// GtmPropertyTrafficTargetArrayInput is an input type that accepts GtmPropertyTrafficTargetArray and GtmPropertyTrafficTargetArrayOutput values.
+// You can construct a concrete instance of `GtmPropertyTrafficTargetArrayInput` via:
+//
+//          GtmPropertyTrafficTargetArray{ GtmPropertyTrafficTargetArgs{...} }
+type GtmPropertyTrafficTargetArrayInput interface {
+	pulumi.Input
+
+	ToGtmPropertyTrafficTargetArrayOutput() GtmPropertyTrafficTargetArrayOutput
+	ToGtmPropertyTrafficTargetArrayOutputWithContext(context.Context) GtmPropertyTrafficTargetArrayOutput
+}
+
+type GtmPropertyTrafficTargetArray []GtmPropertyTrafficTargetInput
+
+func (GtmPropertyTrafficTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmPropertyTrafficTarget)(nil)).Elem()
+}
+
+func (i GtmPropertyTrafficTargetArray) ToGtmPropertyTrafficTargetArrayOutput() GtmPropertyTrafficTargetArrayOutput {
+	return i.ToGtmPropertyTrafficTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GtmPropertyTrafficTargetArray) ToGtmPropertyTrafficTargetArrayOutputWithContext(ctx context.Context) GtmPropertyTrafficTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPropertyTrafficTargetArrayOutput)
+}
+
+type GtmPropertyTrafficTargetOutput struct{ *pulumi.OutputState }
+
+func (GtmPropertyTrafficTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmPropertyTrafficTarget)(nil)).Elem()
+}
+
+func (o GtmPropertyTrafficTargetOutput) ToGtmPropertyTrafficTargetOutput() GtmPropertyTrafficTargetOutput {
+	return o
+}
+
+func (o GtmPropertyTrafficTargetOutput) ToGtmPropertyTrafficTargetOutputWithContext(ctx context.Context) GtmPropertyTrafficTargetOutput {
+	return o
+}
+
+func (o GtmPropertyTrafficTargetOutput) DatacenterId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GtmPropertyTrafficTarget) *int { return v.DatacenterId }).(pulumi.IntPtrOutput)
+}
+
+// * `weight`
+func (o GtmPropertyTrafficTargetOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GtmPropertyTrafficTarget) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+func (o GtmPropertyTrafficTargetOutput) HandoutCname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmPropertyTrafficTarget) *string { return v.HandoutCname }).(pulumi.StringPtrOutput)
+}
+
+// Liveness test name
+// * `testInterval`
+// * `testObjectProtocol`
+// * `testTimeout`
+func (o GtmPropertyTrafficTargetOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmPropertyTrafficTarget) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+func (o GtmPropertyTrafficTargetOutput) Servers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GtmPropertyTrafficTarget) []string { return v.Servers }).(pulumi.StringArrayOutput)
+}
+
+func (o GtmPropertyTrafficTargetOutput) Weight() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GtmPropertyTrafficTarget) *float64 { return v.Weight }).(pulumi.Float64PtrOutput)
+}
+
+type GtmPropertyTrafficTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GtmPropertyTrafficTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmPropertyTrafficTarget)(nil)).Elem()
+}
+
+func (o GtmPropertyTrafficTargetArrayOutput) ToGtmPropertyTrafficTargetArrayOutput() GtmPropertyTrafficTargetArrayOutput {
+	return o
+}
+
+func (o GtmPropertyTrafficTargetArrayOutput) ToGtmPropertyTrafficTargetArrayOutputWithContext(ctx context.Context) GtmPropertyTrafficTargetArrayOutput {
+	return o
+}
+
+func (o GtmPropertyTrafficTargetArrayOutput) Index(i pulumi.IntInput) GtmPropertyTrafficTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmPropertyTrafficTarget {
+		return vs[0].([]GtmPropertyTrafficTarget)[vs[1].(int)]
+	}).(GtmPropertyTrafficTargetOutput)
+}
+
+type GtmResourceResourceInstance struct {
+	DatacenterId   int      `pulumi:"datacenterId"`
+	LoadObject     *string  `pulumi:"loadObject"`
+	LoadObjectPort *int     `pulumi:"loadObjectPort"`
+	LoadServers    []string `pulumi:"loadServers"`
+	// * `hostHeader`
+	// * `leastSquaresDecay`
+	// * `upperBound`
+	// * `description`
+	// * `leaderString`
+	// * `constrainedProperty`
+	// * `loadImbalancePercent`
+	// * `maxUMultiplicativeIncrement`
+	// * `decayRate`
+	UseDefaultLoadObject *bool `pulumi:"useDefaultLoadObject"`
+}
+
+// GtmResourceResourceInstanceInput is an input type that accepts GtmResourceResourceInstanceArgs and GtmResourceResourceInstanceOutput values.
+// You can construct a concrete instance of `GtmResourceResourceInstanceInput` via:
+//
+//          GtmResourceResourceInstanceArgs{...}
+type GtmResourceResourceInstanceInput interface {
+	pulumi.Input
+
+	ToGtmResourceResourceInstanceOutput() GtmResourceResourceInstanceOutput
+	ToGtmResourceResourceInstanceOutputWithContext(context.Context) GtmResourceResourceInstanceOutput
+}
+
+type GtmResourceResourceInstanceArgs struct {
+	DatacenterId   pulumi.IntInput         `pulumi:"datacenterId"`
+	LoadObject     pulumi.StringPtrInput   `pulumi:"loadObject"`
+	LoadObjectPort pulumi.IntPtrInput      `pulumi:"loadObjectPort"`
+	LoadServers    pulumi.StringArrayInput `pulumi:"loadServers"`
+	// * `hostHeader`
+	// * `leastSquaresDecay`
+	// * `upperBound`
+	// * `description`
+	// * `leaderString`
+	// * `constrainedProperty`
+	// * `loadImbalancePercent`
+	// * `maxUMultiplicativeIncrement`
+	// * `decayRate`
+	UseDefaultLoadObject pulumi.BoolPtrInput `pulumi:"useDefaultLoadObject"`
+}
+
+func (GtmResourceResourceInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmResourceResourceInstance)(nil)).Elem()
+}
+
+func (i GtmResourceResourceInstanceArgs) ToGtmResourceResourceInstanceOutput() GtmResourceResourceInstanceOutput {
+	return i.ToGtmResourceResourceInstanceOutputWithContext(context.Background())
+}
+
+func (i GtmResourceResourceInstanceArgs) ToGtmResourceResourceInstanceOutputWithContext(ctx context.Context) GtmResourceResourceInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmResourceResourceInstanceOutput)
+}
+
+// GtmResourceResourceInstanceArrayInput is an input type that accepts GtmResourceResourceInstanceArray and GtmResourceResourceInstanceArrayOutput values.
+// You can construct a concrete instance of `GtmResourceResourceInstanceArrayInput` via:
+//
+//          GtmResourceResourceInstanceArray{ GtmResourceResourceInstanceArgs{...} }
+type GtmResourceResourceInstanceArrayInput interface {
+	pulumi.Input
+
+	ToGtmResourceResourceInstanceArrayOutput() GtmResourceResourceInstanceArrayOutput
+	ToGtmResourceResourceInstanceArrayOutputWithContext(context.Context) GtmResourceResourceInstanceArrayOutput
+}
+
+type GtmResourceResourceInstanceArray []GtmResourceResourceInstanceInput
+
+func (GtmResourceResourceInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmResourceResourceInstance)(nil)).Elem()
+}
+
+func (i GtmResourceResourceInstanceArray) ToGtmResourceResourceInstanceArrayOutput() GtmResourceResourceInstanceArrayOutput {
+	return i.ToGtmResourceResourceInstanceArrayOutputWithContext(context.Background())
+}
+
+func (i GtmResourceResourceInstanceArray) ToGtmResourceResourceInstanceArrayOutputWithContext(ctx context.Context) GtmResourceResourceInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmResourceResourceInstanceArrayOutput)
+}
+
+type GtmResourceResourceInstanceOutput struct{ *pulumi.OutputState }
+
+func (GtmResourceResourceInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmResourceResourceInstance)(nil)).Elem()
+}
+
+func (o GtmResourceResourceInstanceOutput) ToGtmResourceResourceInstanceOutput() GtmResourceResourceInstanceOutput {
+	return o
+}
+
+func (o GtmResourceResourceInstanceOutput) ToGtmResourceResourceInstanceOutputWithContext(ctx context.Context) GtmResourceResourceInstanceOutput {
+	return o
+}
+
+func (o GtmResourceResourceInstanceOutput) DatacenterId() pulumi.IntOutput {
+	return o.ApplyT(func(v GtmResourceResourceInstance) int { return v.DatacenterId }).(pulumi.IntOutput)
+}
+
+func (o GtmResourceResourceInstanceOutput) LoadObject() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmResourceResourceInstance) *string { return v.LoadObject }).(pulumi.StringPtrOutput)
+}
+
+func (o GtmResourceResourceInstanceOutput) LoadObjectPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GtmResourceResourceInstance) *int { return v.LoadObjectPort }).(pulumi.IntPtrOutput)
+}
+
+func (o GtmResourceResourceInstanceOutput) LoadServers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GtmResourceResourceInstance) []string { return v.LoadServers }).(pulumi.StringArrayOutput)
+}
+
+// * `hostHeader`
+// * `leastSquaresDecay`
+// * `upperBound`
+// * `description`
+// * `leaderString`
+// * `constrainedProperty`
+// * `loadImbalancePercent`
+// * `maxUMultiplicativeIncrement`
+// * `decayRate`
+func (o GtmResourceResourceInstanceOutput) UseDefaultLoadObject() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GtmResourceResourceInstance) *bool { return v.UseDefaultLoadObject }).(pulumi.BoolPtrOutput)
+}
+
+type GtmResourceResourceInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GtmResourceResourceInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmResourceResourceInstance)(nil)).Elem()
+}
+
+func (o GtmResourceResourceInstanceArrayOutput) ToGtmResourceResourceInstanceArrayOutput() GtmResourceResourceInstanceArrayOutput {
+	return o
+}
+
+func (o GtmResourceResourceInstanceArrayOutput) ToGtmResourceResourceInstanceArrayOutputWithContext(ctx context.Context) GtmResourceResourceInstanceArrayOutput {
+	return o
+}
+
+func (o GtmResourceResourceInstanceArrayOutput) Index(i pulumi.IntInput) GtmResourceResourceInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmResourceResourceInstance {
+		return vs[0].([]GtmResourceResourceInstance)[vs[1].(int)]
+	}).(GtmResourceResourceInstanceOutput)
+}
+
+type PropertyOrigin struct {
+	CacheKeyHostname   *string `pulumi:"cacheKeyHostname"`
+	Compress           *bool   `pulumi:"compress"`
+	EnableTrueClientIp *bool   `pulumi:"enableTrueClientIp"`
+	ForwardHostname    *string `pulumi:"forwardHostname"`
+	Hostname           *string `pulumi:"hostname"`
+	Port               *int    `pulumi:"port"`
+}
+
+// PropertyOriginInput is an input type that accepts PropertyOriginArgs and PropertyOriginOutput values.
+// You can construct a concrete instance of `PropertyOriginInput` via:
+//
+//          PropertyOriginArgs{...}
+type PropertyOriginInput interface {
+	pulumi.Input
+
+	ToPropertyOriginOutput() PropertyOriginOutput
+	ToPropertyOriginOutputWithContext(context.Context) PropertyOriginOutput
+}
+
+type PropertyOriginArgs struct {
+	CacheKeyHostname   pulumi.StringPtrInput `pulumi:"cacheKeyHostname"`
+	Compress           pulumi.BoolPtrInput   `pulumi:"compress"`
+	EnableTrueClientIp pulumi.BoolPtrInput   `pulumi:"enableTrueClientIp"`
+	ForwardHostname    pulumi.StringPtrInput `pulumi:"forwardHostname"`
+	Hostname           pulumi.StringPtrInput `pulumi:"hostname"`
+	Port               pulumi.IntPtrInput    `pulumi:"port"`
+}
+
+func (PropertyOriginArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyOrigin)(nil)).Elem()
+}
+
+func (i PropertyOriginArgs) ToPropertyOriginOutput() PropertyOriginOutput {
+	return i.ToPropertyOriginOutputWithContext(context.Background())
+}
+
+func (i PropertyOriginArgs) ToPropertyOriginOutputWithContext(ctx context.Context) PropertyOriginOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyOriginOutput)
+}
+
+// PropertyOriginArrayInput is an input type that accepts PropertyOriginArray and PropertyOriginArrayOutput values.
+// You can construct a concrete instance of `PropertyOriginArrayInput` via:
+//
+//          PropertyOriginArray{ PropertyOriginArgs{...} }
+type PropertyOriginArrayInput interface {
+	pulumi.Input
+
+	ToPropertyOriginArrayOutput() PropertyOriginArrayOutput
+	ToPropertyOriginArrayOutputWithContext(context.Context) PropertyOriginArrayOutput
+}
+
+type PropertyOriginArray []PropertyOriginInput
+
+func (PropertyOriginArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyOrigin)(nil)).Elem()
+}
+
+func (i PropertyOriginArray) ToPropertyOriginArrayOutput() PropertyOriginArrayOutput {
+	return i.ToPropertyOriginArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyOriginArray) ToPropertyOriginArrayOutputWithContext(ctx context.Context) PropertyOriginArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyOriginArrayOutput)
+}
+
+type PropertyOriginOutput struct{ *pulumi.OutputState }
+
+func (PropertyOriginOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyOrigin)(nil)).Elem()
+}
+
+func (o PropertyOriginOutput) ToPropertyOriginOutput() PropertyOriginOutput {
+	return o
+}
+
+func (o PropertyOriginOutput) ToPropertyOriginOutputWithContext(ctx context.Context) PropertyOriginOutput {
+	return o
+}
+
+func (o PropertyOriginOutput) CacheKeyHostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyOrigin) *string { return v.CacheKeyHostname }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyOriginOutput) Compress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v PropertyOrigin) *bool { return v.Compress }).(pulumi.BoolPtrOutput)
+}
+
+func (o PropertyOriginOutput) EnableTrueClientIp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v PropertyOrigin) *bool { return v.EnableTrueClientIp }).(pulumi.BoolPtrOutput)
+}
+
+func (o PropertyOriginOutput) ForwardHostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyOrigin) *string { return v.ForwardHostname }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyOriginOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyOrigin) *string { return v.Hostname }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyOriginOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PropertyOrigin) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+type PropertyOriginArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyOriginArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyOrigin)(nil)).Elem()
+}
+
+func (o PropertyOriginArrayOutput) ToPropertyOriginArrayOutput() PropertyOriginArrayOutput {
+	return o
+}
+
+func (o PropertyOriginArrayOutput) ToPropertyOriginArrayOutputWithContext(ctx context.Context) PropertyOriginArrayOutput {
+	return o
+}
+
+func (o PropertyOriginArrayOutput) Index(i pulumi.IntInput) PropertyOriginOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyOrigin {
+		return vs[0].([]PropertyOrigin)[vs[1].(int)]
+	}).(PropertyOriginOutput)
+}
+
+type PropertyRuleError struct {
+	BehaviorName  *string `pulumi:"behaviorName"`
+	Detail        *string `pulumi:"detail"`
+	ErrorLocation *string `pulumi:"errorLocation"`
+	Instance      *string `pulumi:"instance"`
+	StatusCode    *int    `pulumi:"statusCode"`
+	Title         *string `pulumi:"title"`
+	Type          *string `pulumi:"type"`
+}
+
+// PropertyRuleErrorInput is an input type that accepts PropertyRuleErrorArgs and PropertyRuleErrorOutput values.
+// You can construct a concrete instance of `PropertyRuleErrorInput` via:
+//
+//          PropertyRuleErrorArgs{...}
+type PropertyRuleErrorInput interface {
+	pulumi.Input
+
+	ToPropertyRuleErrorOutput() PropertyRuleErrorOutput
+	ToPropertyRuleErrorOutputWithContext(context.Context) PropertyRuleErrorOutput
+}
+
+type PropertyRuleErrorArgs struct {
+	BehaviorName  pulumi.StringPtrInput `pulumi:"behaviorName"`
+	Detail        pulumi.StringPtrInput `pulumi:"detail"`
+	ErrorLocation pulumi.StringPtrInput `pulumi:"errorLocation"`
+	Instance      pulumi.StringPtrInput `pulumi:"instance"`
+	StatusCode    pulumi.IntPtrInput    `pulumi:"statusCode"`
+	Title         pulumi.StringPtrInput `pulumi:"title"`
+	Type          pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (PropertyRuleErrorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyRuleError)(nil)).Elem()
+}
+
+func (i PropertyRuleErrorArgs) ToPropertyRuleErrorOutput() PropertyRuleErrorOutput {
+	return i.ToPropertyRuleErrorOutputWithContext(context.Background())
+}
+
+func (i PropertyRuleErrorArgs) ToPropertyRuleErrorOutputWithContext(ctx context.Context) PropertyRuleErrorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyRuleErrorOutput)
+}
+
+// PropertyRuleErrorArrayInput is an input type that accepts PropertyRuleErrorArray and PropertyRuleErrorArrayOutput values.
+// You can construct a concrete instance of `PropertyRuleErrorArrayInput` via:
+//
+//          PropertyRuleErrorArray{ PropertyRuleErrorArgs{...} }
+type PropertyRuleErrorArrayInput interface {
+	pulumi.Input
+
+	ToPropertyRuleErrorArrayOutput() PropertyRuleErrorArrayOutput
+	ToPropertyRuleErrorArrayOutputWithContext(context.Context) PropertyRuleErrorArrayOutput
+}
+
+type PropertyRuleErrorArray []PropertyRuleErrorInput
+
+func (PropertyRuleErrorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyRuleError)(nil)).Elem()
+}
+
+func (i PropertyRuleErrorArray) ToPropertyRuleErrorArrayOutput() PropertyRuleErrorArrayOutput {
+	return i.ToPropertyRuleErrorArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyRuleErrorArray) ToPropertyRuleErrorArrayOutputWithContext(ctx context.Context) PropertyRuleErrorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyRuleErrorArrayOutput)
+}
+
+type PropertyRuleErrorOutput struct{ *pulumi.OutputState }
+
+func (PropertyRuleErrorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyRuleError)(nil)).Elem()
+}
+
+func (o PropertyRuleErrorOutput) ToPropertyRuleErrorOutput() PropertyRuleErrorOutput {
+	return o
+}
+
+func (o PropertyRuleErrorOutput) ToPropertyRuleErrorOutputWithContext(ctx context.Context) PropertyRuleErrorOutput {
+	return o
+}
+
+func (o PropertyRuleErrorOutput) BehaviorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyRuleError) *string { return v.BehaviorName }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyRuleErrorOutput) Detail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyRuleError) *string { return v.Detail }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyRuleErrorOutput) ErrorLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyRuleError) *string { return v.ErrorLocation }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyRuleErrorOutput) Instance() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyRuleError) *string { return v.Instance }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyRuleErrorOutput) StatusCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PropertyRuleError) *int { return v.StatusCode }).(pulumi.IntPtrOutput)
+}
+
+func (o PropertyRuleErrorOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyRuleError) *string { return v.Title }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyRuleErrorOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyRuleError) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type PropertyRuleErrorArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyRuleErrorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyRuleError)(nil)).Elem()
+}
+
+func (o PropertyRuleErrorArrayOutput) ToPropertyRuleErrorArrayOutput() PropertyRuleErrorArrayOutput {
+	return o
+}
+
+func (o PropertyRuleErrorArrayOutput) ToPropertyRuleErrorArrayOutputWithContext(ctx context.Context) PropertyRuleErrorArrayOutput {
+	return o
+}
+
+func (o PropertyRuleErrorArrayOutput) Index(i pulumi.IntInput) PropertyRuleErrorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyRuleError {
+		return vs[0].([]PropertyRuleError)[vs[1].(int)]
+	}).(PropertyRuleErrorOutput)
+}
+
+type PropertyRuleWarning struct {
+	BehaviorName  *string `pulumi:"behaviorName"`
+	Detail        *string `pulumi:"detail"`
+	ErrorLocation *string `pulumi:"errorLocation"`
+	Instance      *string `pulumi:"instance"`
+	StatusCode    *int    `pulumi:"statusCode"`
+	Title         *string `pulumi:"title"`
+	Type          *string `pulumi:"type"`
+}
+
+// PropertyRuleWarningInput is an input type that accepts PropertyRuleWarningArgs and PropertyRuleWarningOutput values.
+// You can construct a concrete instance of `PropertyRuleWarningInput` via:
+//
+//          PropertyRuleWarningArgs{...}
+type PropertyRuleWarningInput interface {
+	pulumi.Input
+
+	ToPropertyRuleWarningOutput() PropertyRuleWarningOutput
+	ToPropertyRuleWarningOutputWithContext(context.Context) PropertyRuleWarningOutput
+}
+
+type PropertyRuleWarningArgs struct {
+	BehaviorName  pulumi.StringPtrInput `pulumi:"behaviorName"`
+	Detail        pulumi.StringPtrInput `pulumi:"detail"`
+	ErrorLocation pulumi.StringPtrInput `pulumi:"errorLocation"`
+	Instance      pulumi.StringPtrInput `pulumi:"instance"`
+	StatusCode    pulumi.IntPtrInput    `pulumi:"statusCode"`
+	Title         pulumi.StringPtrInput `pulumi:"title"`
+	Type          pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (PropertyRuleWarningArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyRuleWarning)(nil)).Elem()
+}
+
+func (i PropertyRuleWarningArgs) ToPropertyRuleWarningOutput() PropertyRuleWarningOutput {
+	return i.ToPropertyRuleWarningOutputWithContext(context.Background())
+}
+
+func (i PropertyRuleWarningArgs) ToPropertyRuleWarningOutputWithContext(ctx context.Context) PropertyRuleWarningOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyRuleWarningOutput)
+}
+
+// PropertyRuleWarningArrayInput is an input type that accepts PropertyRuleWarningArray and PropertyRuleWarningArrayOutput values.
+// You can construct a concrete instance of `PropertyRuleWarningArrayInput` via:
+//
+//          PropertyRuleWarningArray{ PropertyRuleWarningArgs{...} }
+type PropertyRuleWarningArrayInput interface {
+	pulumi.Input
+
+	ToPropertyRuleWarningArrayOutput() PropertyRuleWarningArrayOutput
+	ToPropertyRuleWarningArrayOutputWithContext(context.Context) PropertyRuleWarningArrayOutput
+}
+
+type PropertyRuleWarningArray []PropertyRuleWarningInput
+
+func (PropertyRuleWarningArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyRuleWarning)(nil)).Elem()
+}
+
+func (i PropertyRuleWarningArray) ToPropertyRuleWarningArrayOutput() PropertyRuleWarningArrayOutput {
+	return i.ToPropertyRuleWarningArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyRuleWarningArray) ToPropertyRuleWarningArrayOutputWithContext(ctx context.Context) PropertyRuleWarningArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyRuleWarningArrayOutput)
+}
+
+type PropertyRuleWarningOutput struct{ *pulumi.OutputState }
+
+func (PropertyRuleWarningOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyRuleWarning)(nil)).Elem()
+}
+
+func (o PropertyRuleWarningOutput) ToPropertyRuleWarningOutput() PropertyRuleWarningOutput {
+	return o
+}
+
+func (o PropertyRuleWarningOutput) ToPropertyRuleWarningOutputWithContext(ctx context.Context) PropertyRuleWarningOutput {
+	return o
+}
+
+func (o PropertyRuleWarningOutput) BehaviorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyRuleWarning) *string { return v.BehaviorName }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyRuleWarningOutput) Detail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyRuleWarning) *string { return v.Detail }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyRuleWarningOutput) ErrorLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyRuleWarning) *string { return v.ErrorLocation }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyRuleWarningOutput) Instance() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyRuleWarning) *string { return v.Instance }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyRuleWarningOutput) StatusCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PropertyRuleWarning) *int { return v.StatusCode }).(pulumi.IntPtrOutput)
+}
+
+func (o PropertyRuleWarningOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyRuleWarning) *string { return v.Title }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyRuleWarningOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyRuleWarning) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type PropertyRuleWarningArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyRuleWarningArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyRuleWarning)(nil)).Elem()
+}
+
+func (o PropertyRuleWarningArrayOutput) ToPropertyRuleWarningArrayOutput() PropertyRuleWarningArrayOutput {
+	return o
+}
+
+func (o PropertyRuleWarningArrayOutput) ToPropertyRuleWarningArrayOutputWithContext(ctx context.Context) PropertyRuleWarningArrayOutput {
+	return o
+}
+
+func (o PropertyRuleWarningArrayOutput) Index(i pulumi.IntInput) PropertyRuleWarningOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyRuleWarning {
+		return vs[0].([]PropertyRuleWarning)[vs[1].(int)]
+	}).(PropertyRuleWarningOutput)
+}
+
+type PropertyVariablesVariable struct {
+	Variables []PropertyVariablesVariableVariable `pulumi:"variables"`
+}
+
+// PropertyVariablesVariableInput is an input type that accepts PropertyVariablesVariableArgs and PropertyVariablesVariableOutput values.
+// You can construct a concrete instance of `PropertyVariablesVariableInput` via:
+//
+//          PropertyVariablesVariableArgs{...}
+type PropertyVariablesVariableInput interface {
+	pulumi.Input
+
+	ToPropertyVariablesVariableOutput() PropertyVariablesVariableOutput
+	ToPropertyVariablesVariableOutputWithContext(context.Context) PropertyVariablesVariableOutput
+}
+
+type PropertyVariablesVariableArgs struct {
+	Variables PropertyVariablesVariableVariableArrayInput `pulumi:"variables"`
+}
+
+func (PropertyVariablesVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyVariablesVariable)(nil)).Elem()
+}
+
+func (i PropertyVariablesVariableArgs) ToPropertyVariablesVariableOutput() PropertyVariablesVariableOutput {
+	return i.ToPropertyVariablesVariableOutputWithContext(context.Background())
+}
+
+func (i PropertyVariablesVariableArgs) ToPropertyVariablesVariableOutputWithContext(ctx context.Context) PropertyVariablesVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesVariableOutput)
+}
+
+// PropertyVariablesVariableArrayInput is an input type that accepts PropertyVariablesVariableArray and PropertyVariablesVariableArrayOutput values.
+// You can construct a concrete instance of `PropertyVariablesVariableArrayInput` via:
+//
+//          PropertyVariablesVariableArray{ PropertyVariablesVariableArgs{...} }
+type PropertyVariablesVariableArrayInput interface {
+	pulumi.Input
+
+	ToPropertyVariablesVariableArrayOutput() PropertyVariablesVariableArrayOutput
+	ToPropertyVariablesVariableArrayOutputWithContext(context.Context) PropertyVariablesVariableArrayOutput
+}
+
+type PropertyVariablesVariableArray []PropertyVariablesVariableInput
+
+func (PropertyVariablesVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyVariablesVariable)(nil)).Elem()
+}
+
+func (i PropertyVariablesVariableArray) ToPropertyVariablesVariableArrayOutput() PropertyVariablesVariableArrayOutput {
+	return i.ToPropertyVariablesVariableArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyVariablesVariableArray) ToPropertyVariablesVariableArrayOutputWithContext(ctx context.Context) PropertyVariablesVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesVariableArrayOutput)
+}
+
+type PropertyVariablesVariableOutput struct{ *pulumi.OutputState }
+
+func (PropertyVariablesVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyVariablesVariable)(nil)).Elem()
+}
+
+func (o PropertyVariablesVariableOutput) ToPropertyVariablesVariableOutput() PropertyVariablesVariableOutput {
+	return o
+}
+
+func (o PropertyVariablesVariableOutput) ToPropertyVariablesVariableOutputWithContext(ctx context.Context) PropertyVariablesVariableOutput {
+	return o
+}
+
+func (o PropertyVariablesVariableOutput) Variables() PropertyVariablesVariableVariableArrayOutput {
+	return o.ApplyT(func(v PropertyVariablesVariable) []PropertyVariablesVariableVariable { return v.Variables }).(PropertyVariablesVariableVariableArrayOutput)
+}
+
+type PropertyVariablesVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyVariablesVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyVariablesVariable)(nil)).Elem()
+}
+
+func (o PropertyVariablesVariableArrayOutput) ToPropertyVariablesVariableArrayOutput() PropertyVariablesVariableArrayOutput {
+	return o
+}
+
+func (o PropertyVariablesVariableArrayOutput) ToPropertyVariablesVariableArrayOutputWithContext(ctx context.Context) PropertyVariablesVariableArrayOutput {
+	return o
+}
+
+func (o PropertyVariablesVariableArrayOutput) Index(i pulumi.IntInput) PropertyVariablesVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyVariablesVariable {
+		return vs[0].([]PropertyVariablesVariable)[vs[1].(int)]
+	}).(PropertyVariablesVariableOutput)
+}
+
+type PropertyVariablesVariableVariable struct {
+	Description *string `pulumi:"description"`
+	Hidden      bool    `pulumi:"hidden"`
+	Name        string  `pulumi:"name"`
+	Sensitive   bool    `pulumi:"sensitive"`
+	Value       *string `pulumi:"value"`
+}
+
+// PropertyVariablesVariableVariableInput is an input type that accepts PropertyVariablesVariableVariableArgs and PropertyVariablesVariableVariableOutput values.
+// You can construct a concrete instance of `PropertyVariablesVariableVariableInput` via:
+//
+//          PropertyVariablesVariableVariableArgs{...}
+type PropertyVariablesVariableVariableInput interface {
+	pulumi.Input
+
+	ToPropertyVariablesVariableVariableOutput() PropertyVariablesVariableVariableOutput
+	ToPropertyVariablesVariableVariableOutputWithContext(context.Context) PropertyVariablesVariableVariableOutput
+}
+
+type PropertyVariablesVariableVariableArgs struct {
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	Hidden      pulumi.BoolInput      `pulumi:"hidden"`
+	Name        pulumi.StringInput    `pulumi:"name"`
+	Sensitive   pulumi.BoolInput      `pulumi:"sensitive"`
+	Value       pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (PropertyVariablesVariableVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyVariablesVariableVariable)(nil)).Elem()
+}
+
+func (i PropertyVariablesVariableVariableArgs) ToPropertyVariablesVariableVariableOutput() PropertyVariablesVariableVariableOutput {
+	return i.ToPropertyVariablesVariableVariableOutputWithContext(context.Background())
+}
+
+func (i PropertyVariablesVariableVariableArgs) ToPropertyVariablesVariableVariableOutputWithContext(ctx context.Context) PropertyVariablesVariableVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesVariableVariableOutput)
+}
+
+// PropertyVariablesVariableVariableArrayInput is an input type that accepts PropertyVariablesVariableVariableArray and PropertyVariablesVariableVariableArrayOutput values.
+// You can construct a concrete instance of `PropertyVariablesVariableVariableArrayInput` via:
+//
+//          PropertyVariablesVariableVariableArray{ PropertyVariablesVariableVariableArgs{...} }
+type PropertyVariablesVariableVariableArrayInput interface {
+	pulumi.Input
+
+	ToPropertyVariablesVariableVariableArrayOutput() PropertyVariablesVariableVariableArrayOutput
+	ToPropertyVariablesVariableVariableArrayOutputWithContext(context.Context) PropertyVariablesVariableVariableArrayOutput
+}
+
+type PropertyVariablesVariableVariableArray []PropertyVariablesVariableVariableInput
+
+func (PropertyVariablesVariableVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyVariablesVariableVariable)(nil)).Elem()
+}
+
+func (i PropertyVariablesVariableVariableArray) ToPropertyVariablesVariableVariableArrayOutput() PropertyVariablesVariableVariableArrayOutput {
+	return i.ToPropertyVariablesVariableVariableArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyVariablesVariableVariableArray) ToPropertyVariablesVariableVariableArrayOutputWithContext(ctx context.Context) PropertyVariablesVariableVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesVariableVariableArrayOutput)
+}
+
+type PropertyVariablesVariableVariableOutput struct{ *pulumi.OutputState }
+
+func (PropertyVariablesVariableVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyVariablesVariableVariable)(nil)).Elem()
+}
+
+func (o PropertyVariablesVariableVariableOutput) ToPropertyVariablesVariableVariableOutput() PropertyVariablesVariableVariableOutput {
+	return o
+}
+
+func (o PropertyVariablesVariableVariableOutput) ToPropertyVariablesVariableVariableOutputWithContext(ctx context.Context) PropertyVariablesVariableVariableOutput {
+	return o
+}
+
+func (o PropertyVariablesVariableVariableOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyVariablesVariableVariable) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyVariablesVariableVariableOutput) Hidden() pulumi.BoolOutput {
+	return o.ApplyT(func(v PropertyVariablesVariableVariable) bool { return v.Hidden }).(pulumi.BoolOutput)
+}
+
+func (o PropertyVariablesVariableVariableOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v PropertyVariablesVariableVariable) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o PropertyVariablesVariableVariableOutput) Sensitive() pulumi.BoolOutput {
+	return o.ApplyT(func(v PropertyVariablesVariableVariable) bool { return v.Sensitive }).(pulumi.BoolOutput)
+}
+
+func (o PropertyVariablesVariableVariableOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyVariablesVariableVariable) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type PropertyVariablesVariableVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyVariablesVariableVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyVariablesVariableVariable)(nil)).Elem()
+}
+
+func (o PropertyVariablesVariableVariableArrayOutput) ToPropertyVariablesVariableVariableArrayOutput() PropertyVariablesVariableVariableArrayOutput {
+	return o
+}
+
+func (o PropertyVariablesVariableVariableArrayOutput) ToPropertyVariablesVariableVariableArrayOutputWithContext(ctx context.Context) PropertyVariablesVariableVariableArrayOutput {
+	return o
+}
+
+func (o PropertyVariablesVariableVariableArrayOutput) Index(i pulumi.IntInput) PropertyVariablesVariableVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyVariablesVariableVariable {
+		return vs[0].([]PropertyVariablesVariableVariable)[vs[1].(int)]
+	}).(PropertyVariablesVariableVariableOutput)
+}
+
+type ProviderAppsec struct {
 	AccessToken  *string `pulumi:"accessToken"`
+	AccountKey   *string `pulumi:"accountKey"`
 	ClientSecret *string `pulumi:"clientSecret"`
 	ClientToken  *string `pulumi:"clientToken"`
 	Host         *string `pulumi:"host"`
 	MaxBody      *int    `pulumi:"maxBody"`
 }
 
-// ProviderDnInput is an input type that accepts ProviderDnArgs and ProviderDnOutput values.
-// You can construct a concrete instance of `ProviderDnInput` via:
+// ProviderAppsecInput is an input type that accepts ProviderAppsecArgs and ProviderAppsecOutput values.
+// You can construct a concrete instance of `ProviderAppsecInput` via:
 //
-//          ProviderDnArgs{...}
-type ProviderDnInput interface {
+//          ProviderAppsecArgs{...}
+type ProviderAppsecInput interface {
 	pulumi.Input
 
-	ToProviderDnOutput() ProviderDnOutput
-	ToProviderDnOutputWithContext(context.Context) ProviderDnOutput
+	ToProviderAppsecOutput() ProviderAppsecOutput
+	ToProviderAppsecOutputWithContext(context.Context) ProviderAppsecOutput
 }
 
-type ProviderDnArgs struct {
+type ProviderAppsecArgs struct {
 	AccessToken  pulumi.StringPtrInput `pulumi:"accessToken"`
+	AccountKey   pulumi.StringPtrInput `pulumi:"accountKey"`
 	ClientSecret pulumi.StringPtrInput `pulumi:"clientSecret"`
 	ClientToken  pulumi.StringPtrInput `pulumi:"clientToken"`
 	Host         pulumi.StringPtrInput `pulumi:"host"`
 	MaxBody      pulumi.IntPtrInput    `pulumi:"maxBody"`
 }
 
-func (ProviderDnArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProviderDn)(nil)).Elem()
+func (ProviderAppsecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProviderAppsec)(nil)).Elem()
 }
 
-func (i ProviderDnArgs) ToProviderDnOutput() ProviderDnOutput {
-	return i.ToProviderDnOutputWithContext(context.Background())
+func (i ProviderAppsecArgs) ToProviderAppsecOutput() ProviderAppsecOutput {
+	return i.ToProviderAppsecOutputWithContext(context.Background())
 }
 
-func (i ProviderDnArgs) ToProviderDnOutputWithContext(ctx context.Context) ProviderDnOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProviderDnOutput)
+func (i ProviderAppsecArgs) ToProviderAppsecOutputWithContext(ctx context.Context) ProviderAppsecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProviderAppsecOutput)
 }
 
-// ProviderDnArrayInput is an input type that accepts ProviderDnArray and ProviderDnArrayOutput values.
-// You can construct a concrete instance of `ProviderDnArrayInput` via:
+// ProviderAppsecArrayInput is an input type that accepts ProviderAppsecArray and ProviderAppsecArrayOutput values.
+// You can construct a concrete instance of `ProviderAppsecArrayInput` via:
 //
-//          ProviderDnArray{ ProviderDnArgs{...} }
-type ProviderDnArrayInput interface {
+//          ProviderAppsecArray{ ProviderAppsecArgs{...} }
+type ProviderAppsecArrayInput interface {
 	pulumi.Input
 
-	ToProviderDnArrayOutput() ProviderDnArrayOutput
-	ToProviderDnArrayOutputWithContext(context.Context) ProviderDnArrayOutput
+	ToProviderAppsecArrayOutput() ProviderAppsecArrayOutput
+	ToProviderAppsecArrayOutputWithContext(context.Context) ProviderAppsecArrayOutput
 }
 
-type ProviderDnArray []ProviderDnInput
+type ProviderAppsecArray []ProviderAppsecInput
 
-func (ProviderDnArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProviderDn)(nil)).Elem()
+func (ProviderAppsecArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProviderAppsec)(nil)).Elem()
 }
 
-func (i ProviderDnArray) ToProviderDnArrayOutput() ProviderDnArrayOutput {
-	return i.ToProviderDnArrayOutputWithContext(context.Background())
+func (i ProviderAppsecArray) ToProviderAppsecArrayOutput() ProviderAppsecArrayOutput {
+	return i.ToProviderAppsecArrayOutputWithContext(context.Background())
 }
 
-func (i ProviderDnArray) ToProviderDnArrayOutputWithContext(ctx context.Context) ProviderDnArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProviderDnArrayOutput)
+func (i ProviderAppsecArray) ToProviderAppsecArrayOutputWithContext(ctx context.Context) ProviderAppsecArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProviderAppsecArrayOutput)
 }
 
-type ProviderDnOutput struct{ *pulumi.OutputState }
+type ProviderAppsecOutput struct{ *pulumi.OutputState }
 
-func (ProviderDnOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProviderDn)(nil)).Elem()
+func (ProviderAppsecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProviderAppsec)(nil)).Elem()
 }
 
-func (o ProviderDnOutput) ToProviderDnOutput() ProviderDnOutput {
+func (o ProviderAppsecOutput) ToProviderAppsecOutput() ProviderAppsecOutput {
 	return o
 }
 
-func (o ProviderDnOutput) ToProviderDnOutputWithContext(ctx context.Context) ProviderDnOutput {
+func (o ProviderAppsecOutput) ToProviderAppsecOutputWithContext(ctx context.Context) ProviderAppsecOutput {
 	return o
 }
 
-func (o ProviderDnOutput) AccessToken() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProviderDn) *string { return v.AccessToken }).(pulumi.StringPtrOutput)
+func (o ProviderAppsecOutput) AccessToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderAppsec) *string { return v.AccessToken }).(pulumi.StringPtrOutput)
 }
 
-func (o ProviderDnOutput) ClientSecret() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProviderDn) *string { return v.ClientSecret }).(pulumi.StringPtrOutput)
+func (o ProviderAppsecOutput) AccountKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderAppsec) *string { return v.AccountKey }).(pulumi.StringPtrOutput)
 }
 
-func (o ProviderDnOutput) ClientToken() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProviderDn) *string { return v.ClientToken }).(pulumi.StringPtrOutput)
+func (o ProviderAppsecOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderAppsec) *string { return v.ClientSecret }).(pulumi.StringPtrOutput)
 }
 
-func (o ProviderDnOutput) Host() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProviderDn) *string { return v.Host }).(pulumi.StringPtrOutput)
+func (o ProviderAppsecOutput) ClientToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderAppsec) *string { return v.ClientToken }).(pulumi.StringPtrOutput)
 }
 
-func (o ProviderDnOutput) MaxBody() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v ProviderDn) *int { return v.MaxBody }).(pulumi.IntPtrOutput)
+func (o ProviderAppsecOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderAppsec) *string { return v.Host }).(pulumi.StringPtrOutput)
 }
 
-type ProviderDnArrayOutput struct{ *pulumi.OutputState }
-
-func (ProviderDnArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProviderDn)(nil)).Elem()
+func (o ProviderAppsecOutput) MaxBody() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ProviderAppsec) *int { return v.MaxBody }).(pulumi.IntPtrOutput)
 }
 
-func (o ProviderDnArrayOutput) ToProviderDnArrayOutput() ProviderDnArrayOutput {
+type ProviderAppsecArrayOutput struct{ *pulumi.OutputState }
+
+func (ProviderAppsecArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProviderAppsec)(nil)).Elem()
+}
+
+func (o ProviderAppsecArrayOutput) ToProviderAppsecArrayOutput() ProviderAppsecArrayOutput {
 	return o
 }
 
-func (o ProviderDnArrayOutput) ToProviderDnArrayOutputWithContext(ctx context.Context) ProviderDnArrayOutput {
+func (o ProviderAppsecArrayOutput) ToProviderAppsecArrayOutputWithContext(ctx context.Context) ProviderAppsecArrayOutput {
 	return o
 }
 
-func (o ProviderDnArrayOutput) Index(i pulumi.IntInput) ProviderDnOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProviderDn {
-		return vs[0].([]ProviderDn)[vs[1].(int)]
-	}).(ProviderDnOutput)
+func (o ProviderAppsecArrayOutput) Index(i pulumi.IntInput) ProviderAppsecOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProviderAppsec {
+		return vs[0].([]ProviderAppsec)[vs[1].(int)]
+	}).(ProviderAppsecOutput)
+}
+
+type ProviderConfig struct {
+	AccessToken  *string `pulumi:"accessToken"`
+	AccountKey   *string `pulumi:"accountKey"`
+	ClientSecret *string `pulumi:"clientSecret"`
+	ClientToken  *string `pulumi:"clientToken"`
+	Host         *string `pulumi:"host"`
+	MaxBody      *int    `pulumi:"maxBody"`
+}
+
+// ProviderConfigInput is an input type that accepts ProviderConfigArgs and ProviderConfigOutput values.
+// You can construct a concrete instance of `ProviderConfigInput` via:
+//
+//          ProviderConfigArgs{...}
+type ProviderConfigInput interface {
+	pulumi.Input
+
+	ToProviderConfigOutput() ProviderConfigOutput
+	ToProviderConfigOutputWithContext(context.Context) ProviderConfigOutput
+}
+
+type ProviderConfigArgs struct {
+	AccessToken  pulumi.StringPtrInput `pulumi:"accessToken"`
+	AccountKey   pulumi.StringPtrInput `pulumi:"accountKey"`
+	ClientSecret pulumi.StringPtrInput `pulumi:"clientSecret"`
+	ClientToken  pulumi.StringPtrInput `pulumi:"clientToken"`
+	Host         pulumi.StringPtrInput `pulumi:"host"`
+	MaxBody      pulumi.IntPtrInput    `pulumi:"maxBody"`
+}
+
+func (ProviderConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProviderConfig)(nil)).Elem()
+}
+
+func (i ProviderConfigArgs) ToProviderConfigOutput() ProviderConfigOutput {
+	return i.ToProviderConfigOutputWithContext(context.Background())
+}
+
+func (i ProviderConfigArgs) ToProviderConfigOutputWithContext(ctx context.Context) ProviderConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProviderConfigOutput)
+}
+
+func (i ProviderConfigArgs) ToProviderConfigPtrOutput() ProviderConfigPtrOutput {
+	return i.ToProviderConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ProviderConfigArgs) ToProviderConfigPtrOutputWithContext(ctx context.Context) ProviderConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProviderConfigOutput).ToProviderConfigPtrOutputWithContext(ctx)
+}
+
+// ProviderConfigPtrInput is an input type that accepts ProviderConfigArgs, ProviderConfigPtr and ProviderConfigPtrOutput values.
+// You can construct a concrete instance of `ProviderConfigPtrInput` via:
+//
+//          ProviderConfigArgs{...}
+//
+//  or:
+//
+//          nil
+type ProviderConfigPtrInput interface {
+	pulumi.Input
+
+	ToProviderConfigPtrOutput() ProviderConfigPtrOutput
+	ToProviderConfigPtrOutputWithContext(context.Context) ProviderConfigPtrOutput
+}
+
+type providerConfigPtrType ProviderConfigArgs
+
+func ProviderConfigPtr(v *ProviderConfigArgs) ProviderConfigPtrInput {
+	return (*providerConfigPtrType)(v)
+}
+
+func (*providerConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProviderConfig)(nil)).Elem()
+}
+
+func (i *providerConfigPtrType) ToProviderConfigPtrOutput() ProviderConfigPtrOutput {
+	return i.ToProviderConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *providerConfigPtrType) ToProviderConfigPtrOutputWithContext(ctx context.Context) ProviderConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProviderConfigPtrOutput)
+}
+
+type ProviderConfigOutput struct{ *pulumi.OutputState }
+
+func (ProviderConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProviderConfig)(nil)).Elem()
+}
+
+func (o ProviderConfigOutput) ToProviderConfigOutput() ProviderConfigOutput {
+	return o
+}
+
+func (o ProviderConfigOutput) ToProviderConfigOutputWithContext(ctx context.Context) ProviderConfigOutput {
+	return o
+}
+
+func (o ProviderConfigOutput) ToProviderConfigPtrOutput() ProviderConfigPtrOutput {
+	return o.ToProviderConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ProviderConfigOutput) ToProviderConfigPtrOutputWithContext(ctx context.Context) ProviderConfigPtrOutput {
+	return o.ApplyT(func(v ProviderConfig) *ProviderConfig {
+		return &v
+	}).(ProviderConfigPtrOutput)
+}
+func (o ProviderConfigOutput) AccessToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderConfig) *string { return v.AccessToken }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderConfigOutput) AccountKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderConfig) *string { return v.AccountKey }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderConfigOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderConfig) *string { return v.ClientSecret }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderConfigOutput) ClientToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderConfig) *string { return v.ClientToken }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderConfigOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderConfig) *string { return v.Host }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderConfigOutput) MaxBody() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ProviderConfig) *int { return v.MaxBody }).(pulumi.IntPtrOutput)
+}
+
+type ProviderConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ProviderConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProviderConfig)(nil)).Elem()
+}
+
+func (o ProviderConfigPtrOutput) ToProviderConfigPtrOutput() ProviderConfigPtrOutput {
+	return o
+}
+
+func (o ProviderConfigPtrOutput) ToProviderConfigPtrOutputWithContext(ctx context.Context) ProviderConfigPtrOutput {
+	return o
+}
+
+func (o ProviderConfigPtrOutput) Elem() ProviderConfigOutput {
+	return o.ApplyT(func(v *ProviderConfig) ProviderConfig { return *v }).(ProviderConfigOutput)
+}
+
+func (o ProviderConfigPtrOutput) AccessToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AccessToken
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderConfigPtrOutput) AccountKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AccountKey
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderConfigPtrOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientSecret
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderConfigPtrOutput) ClientToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientToken
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderConfigPtrOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Host
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderConfigPtrOutput) MaxBody() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ProviderConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxBody
+	}).(pulumi.IntPtrOutput)
+}
+
+type ProviderDns struct {
+	AccessToken  *string `pulumi:"accessToken"`
+	AccountKey   *string `pulumi:"accountKey"`
+	ClientSecret *string `pulumi:"clientSecret"`
+	ClientToken  *string `pulumi:"clientToken"`
+	Host         *string `pulumi:"host"`
+	MaxBody      *int    `pulumi:"maxBody"`
+}
+
+// ProviderDnsInput is an input type that accepts ProviderDnsArgs and ProviderDnsOutput values.
+// You can construct a concrete instance of `ProviderDnsInput` via:
+//
+//          ProviderDnsArgs{...}
+type ProviderDnsInput interface {
+	pulumi.Input
+
+	ToProviderDnsOutput() ProviderDnsOutput
+	ToProviderDnsOutputWithContext(context.Context) ProviderDnsOutput
+}
+
+type ProviderDnsArgs struct {
+	AccessToken  pulumi.StringPtrInput `pulumi:"accessToken"`
+	AccountKey   pulumi.StringPtrInput `pulumi:"accountKey"`
+	ClientSecret pulumi.StringPtrInput `pulumi:"clientSecret"`
+	ClientToken  pulumi.StringPtrInput `pulumi:"clientToken"`
+	Host         pulumi.StringPtrInput `pulumi:"host"`
+	MaxBody      pulumi.IntPtrInput    `pulumi:"maxBody"`
+}
+
+func (ProviderDnsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProviderDns)(nil)).Elem()
+}
+
+func (i ProviderDnsArgs) ToProviderDnsOutput() ProviderDnsOutput {
+	return i.ToProviderDnsOutputWithContext(context.Background())
+}
+
+func (i ProviderDnsArgs) ToProviderDnsOutputWithContext(ctx context.Context) ProviderDnsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProviderDnsOutput)
+}
+
+func (i ProviderDnsArgs) ToProviderDnsPtrOutput() ProviderDnsPtrOutput {
+	return i.ToProviderDnsPtrOutputWithContext(context.Background())
+}
+
+func (i ProviderDnsArgs) ToProviderDnsPtrOutputWithContext(ctx context.Context) ProviderDnsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProviderDnsOutput).ToProviderDnsPtrOutputWithContext(ctx)
+}
+
+// ProviderDnsPtrInput is an input type that accepts ProviderDnsArgs, ProviderDnsPtr and ProviderDnsPtrOutput values.
+// You can construct a concrete instance of `ProviderDnsPtrInput` via:
+//
+//          ProviderDnsArgs{...}
+//
+//  or:
+//
+//          nil
+type ProviderDnsPtrInput interface {
+	pulumi.Input
+
+	ToProviderDnsPtrOutput() ProviderDnsPtrOutput
+	ToProviderDnsPtrOutputWithContext(context.Context) ProviderDnsPtrOutput
+}
+
+type providerDnsPtrType ProviderDnsArgs
+
+func ProviderDnsPtr(v *ProviderDnsArgs) ProviderDnsPtrInput {
+	return (*providerDnsPtrType)(v)
+}
+
+func (*providerDnsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProviderDns)(nil)).Elem()
+}
+
+func (i *providerDnsPtrType) ToProviderDnsPtrOutput() ProviderDnsPtrOutput {
+	return i.ToProviderDnsPtrOutputWithContext(context.Background())
+}
+
+func (i *providerDnsPtrType) ToProviderDnsPtrOutputWithContext(ctx context.Context) ProviderDnsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProviderDnsPtrOutput)
+}
+
+type ProviderDnsOutput struct{ *pulumi.OutputState }
+
+func (ProviderDnsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProviderDns)(nil)).Elem()
+}
+
+func (o ProviderDnsOutput) ToProviderDnsOutput() ProviderDnsOutput {
+	return o
+}
+
+func (o ProviderDnsOutput) ToProviderDnsOutputWithContext(ctx context.Context) ProviderDnsOutput {
+	return o
+}
+
+func (o ProviderDnsOutput) ToProviderDnsPtrOutput() ProviderDnsPtrOutput {
+	return o.ToProviderDnsPtrOutputWithContext(context.Background())
+}
+
+func (o ProviderDnsOutput) ToProviderDnsPtrOutputWithContext(ctx context.Context) ProviderDnsPtrOutput {
+	return o.ApplyT(func(v ProviderDns) *ProviderDns {
+		return &v
+	}).(ProviderDnsPtrOutput)
+}
+func (o ProviderDnsOutput) AccessToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderDns) *string { return v.AccessToken }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderDnsOutput) AccountKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderDns) *string { return v.AccountKey }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderDnsOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderDns) *string { return v.ClientSecret }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderDnsOutput) ClientToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderDns) *string { return v.ClientToken }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderDnsOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderDns) *string { return v.Host }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderDnsOutput) MaxBody() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ProviderDns) *int { return v.MaxBody }).(pulumi.IntPtrOutput)
+}
+
+type ProviderDnsPtrOutput struct{ *pulumi.OutputState }
+
+func (ProviderDnsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProviderDns)(nil)).Elem()
+}
+
+func (o ProviderDnsPtrOutput) ToProviderDnsPtrOutput() ProviderDnsPtrOutput {
+	return o
+}
+
+func (o ProviderDnsPtrOutput) ToProviderDnsPtrOutputWithContext(ctx context.Context) ProviderDnsPtrOutput {
+	return o
+}
+
+func (o ProviderDnsPtrOutput) Elem() ProviderDnsOutput {
+	return o.ApplyT(func(v *ProviderDns) ProviderDns { return *v }).(ProviderDnsOutput)
+}
+
+func (o ProviderDnsPtrOutput) AccessToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderDns) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AccessToken
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderDnsPtrOutput) AccountKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderDns) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AccountKey
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderDnsPtrOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderDns) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientSecret
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderDnsPtrOutput) ClientToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderDns) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientToken
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderDnsPtrOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderDns) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Host
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderDnsPtrOutput) MaxBody() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ProviderDns) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxBody
+	}).(pulumi.IntPtrOutput)
 }
 
 type ProviderGtm struct {
 	AccessToken  *string `pulumi:"accessToken"`
+	AccountKey   *string `pulumi:"accountKey"`
 	ClientSecret *string `pulumi:"clientSecret"`
 	ClientToken  *string `pulumi:"clientToken"`
 	Host         *string `pulumi:"host"`
@@ -149,6 +3018,7 @@ type ProviderGtmInput interface {
 
 type ProviderGtmArgs struct {
 	AccessToken  pulumi.StringPtrInput `pulumi:"accessToken"`
+	AccountKey   pulumi.StringPtrInput `pulumi:"accountKey"`
 	ClientSecret pulumi.StringPtrInput `pulumi:"clientSecret"`
 	ClientToken  pulumi.StringPtrInput `pulumi:"clientToken"`
 	Host         pulumi.StringPtrInput `pulumi:"host"`
@@ -167,29 +3037,45 @@ func (i ProviderGtmArgs) ToProviderGtmOutputWithContext(ctx context.Context) Pro
 	return pulumi.ToOutputWithContext(ctx, i).(ProviderGtmOutput)
 }
 
-// ProviderGtmArrayInput is an input type that accepts ProviderGtmArray and ProviderGtmArrayOutput values.
-// You can construct a concrete instance of `ProviderGtmArrayInput` via:
+func (i ProviderGtmArgs) ToProviderGtmPtrOutput() ProviderGtmPtrOutput {
+	return i.ToProviderGtmPtrOutputWithContext(context.Background())
+}
+
+func (i ProviderGtmArgs) ToProviderGtmPtrOutputWithContext(ctx context.Context) ProviderGtmPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProviderGtmOutput).ToProviderGtmPtrOutputWithContext(ctx)
+}
+
+// ProviderGtmPtrInput is an input type that accepts ProviderGtmArgs, ProviderGtmPtr and ProviderGtmPtrOutput values.
+// You can construct a concrete instance of `ProviderGtmPtrInput` via:
 //
-//          ProviderGtmArray{ ProviderGtmArgs{...} }
-type ProviderGtmArrayInput interface {
+//          ProviderGtmArgs{...}
+//
+//  or:
+//
+//          nil
+type ProviderGtmPtrInput interface {
 	pulumi.Input
 
-	ToProviderGtmArrayOutput() ProviderGtmArrayOutput
-	ToProviderGtmArrayOutputWithContext(context.Context) ProviderGtmArrayOutput
+	ToProviderGtmPtrOutput() ProviderGtmPtrOutput
+	ToProviderGtmPtrOutputWithContext(context.Context) ProviderGtmPtrOutput
 }
 
-type ProviderGtmArray []ProviderGtmInput
+type providerGtmPtrType ProviderGtmArgs
 
-func (ProviderGtmArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProviderGtm)(nil)).Elem()
+func ProviderGtmPtr(v *ProviderGtmArgs) ProviderGtmPtrInput {
+	return (*providerGtmPtrType)(v)
 }
 
-func (i ProviderGtmArray) ToProviderGtmArrayOutput() ProviderGtmArrayOutput {
-	return i.ToProviderGtmArrayOutputWithContext(context.Background())
+func (*providerGtmPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProviderGtm)(nil)).Elem()
 }
 
-func (i ProviderGtmArray) ToProviderGtmArrayOutputWithContext(ctx context.Context) ProviderGtmArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProviderGtmArrayOutput)
+func (i *providerGtmPtrType) ToProviderGtmPtrOutput() ProviderGtmPtrOutput {
+	return i.ToProviderGtmPtrOutputWithContext(context.Background())
+}
+
+func (i *providerGtmPtrType) ToProviderGtmPtrOutputWithContext(ctx context.Context) ProviderGtmPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProviderGtmPtrOutput)
 }
 
 type ProviderGtmOutput struct{ *pulumi.OutputState }
@@ -206,8 +3092,21 @@ func (o ProviderGtmOutput) ToProviderGtmOutputWithContext(ctx context.Context) P
 	return o
 }
 
+func (o ProviderGtmOutput) ToProviderGtmPtrOutput() ProviderGtmPtrOutput {
+	return o.ToProviderGtmPtrOutputWithContext(context.Background())
+}
+
+func (o ProviderGtmOutput) ToProviderGtmPtrOutputWithContext(ctx context.Context) ProviderGtmPtrOutput {
+	return o.ApplyT(func(v ProviderGtm) *ProviderGtm {
+		return &v
+	}).(ProviderGtmPtrOutput)
+}
 func (o ProviderGtmOutput) AccessToken() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProviderGtm) *string { return v.AccessToken }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderGtmOutput) AccountKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderGtm) *string { return v.AccountKey }).(pulumi.StringPtrOutput)
 }
 
 func (o ProviderGtmOutput) ClientSecret() pulumi.StringPtrOutput {
@@ -226,28 +3125,81 @@ func (o ProviderGtmOutput) MaxBody() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ProviderGtm) *int { return v.MaxBody }).(pulumi.IntPtrOutput)
 }
 
-type ProviderGtmArrayOutput struct{ *pulumi.OutputState }
+type ProviderGtmPtrOutput struct{ *pulumi.OutputState }
 
-func (ProviderGtmArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProviderGtm)(nil)).Elem()
+func (ProviderGtmPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProviderGtm)(nil)).Elem()
 }
 
-func (o ProviderGtmArrayOutput) ToProviderGtmArrayOutput() ProviderGtmArrayOutput {
+func (o ProviderGtmPtrOutput) ToProviderGtmPtrOutput() ProviderGtmPtrOutput {
 	return o
 }
 
-func (o ProviderGtmArrayOutput) ToProviderGtmArrayOutputWithContext(ctx context.Context) ProviderGtmArrayOutput {
+func (o ProviderGtmPtrOutput) ToProviderGtmPtrOutputWithContext(ctx context.Context) ProviderGtmPtrOutput {
 	return o
 }
 
-func (o ProviderGtmArrayOutput) Index(i pulumi.IntInput) ProviderGtmOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProviderGtm {
-		return vs[0].([]ProviderGtm)[vs[1].(int)]
-	}).(ProviderGtmOutput)
+func (o ProviderGtmPtrOutput) Elem() ProviderGtmOutput {
+	return o.ApplyT(func(v *ProviderGtm) ProviderGtm { return *v }).(ProviderGtmOutput)
+}
+
+func (o ProviderGtmPtrOutput) AccessToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderGtm) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AccessToken
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderGtmPtrOutput) AccountKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderGtm) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AccountKey
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderGtmPtrOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderGtm) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientSecret
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderGtmPtrOutput) ClientToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderGtm) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientToken
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderGtmPtrOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderGtm) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Host
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderGtmPtrOutput) MaxBody() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ProviderGtm) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxBody
+	}).(pulumi.IntPtrOutput)
 }
 
 type ProviderProperty struct {
 	AccessToken  *string `pulumi:"accessToken"`
+	AccountKey   *string `pulumi:"accountKey"`
 	ClientSecret *string `pulumi:"clientSecret"`
 	ClientToken  *string `pulumi:"clientToken"`
 	Host         *string `pulumi:"host"`
@@ -267,6 +3219,7 @@ type ProviderPropertyInput interface {
 
 type ProviderPropertyArgs struct {
 	AccessToken  pulumi.StringPtrInput `pulumi:"accessToken"`
+	AccountKey   pulumi.StringPtrInput `pulumi:"accountKey"`
 	ClientSecret pulumi.StringPtrInput `pulumi:"clientSecret"`
 	ClientToken  pulumi.StringPtrInput `pulumi:"clientToken"`
 	Host         pulumi.StringPtrInput `pulumi:"host"`
@@ -285,29 +3238,45 @@ func (i ProviderPropertyArgs) ToProviderPropertyOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(ProviderPropertyOutput)
 }
 
-// ProviderPropertyArrayInput is an input type that accepts ProviderPropertyArray and ProviderPropertyArrayOutput values.
-// You can construct a concrete instance of `ProviderPropertyArrayInput` via:
+func (i ProviderPropertyArgs) ToProviderPropertyPtrOutput() ProviderPropertyPtrOutput {
+	return i.ToProviderPropertyPtrOutputWithContext(context.Background())
+}
+
+func (i ProviderPropertyArgs) ToProviderPropertyPtrOutputWithContext(ctx context.Context) ProviderPropertyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProviderPropertyOutput).ToProviderPropertyPtrOutputWithContext(ctx)
+}
+
+// ProviderPropertyPtrInput is an input type that accepts ProviderPropertyArgs, ProviderPropertyPtr and ProviderPropertyPtrOutput values.
+// You can construct a concrete instance of `ProviderPropertyPtrInput` via:
 //
-//          ProviderPropertyArray{ ProviderPropertyArgs{...} }
-type ProviderPropertyArrayInput interface {
+//          ProviderPropertyArgs{...}
+//
+//  or:
+//
+//          nil
+type ProviderPropertyPtrInput interface {
 	pulumi.Input
 
-	ToProviderPropertyArrayOutput() ProviderPropertyArrayOutput
-	ToProviderPropertyArrayOutputWithContext(context.Context) ProviderPropertyArrayOutput
+	ToProviderPropertyPtrOutput() ProviderPropertyPtrOutput
+	ToProviderPropertyPtrOutputWithContext(context.Context) ProviderPropertyPtrOutput
 }
 
-type ProviderPropertyArray []ProviderPropertyInput
+type providerPropertyPtrType ProviderPropertyArgs
 
-func (ProviderPropertyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProviderProperty)(nil)).Elem()
+func ProviderPropertyPtr(v *ProviderPropertyArgs) ProviderPropertyPtrInput {
+	return (*providerPropertyPtrType)(v)
 }
 
-func (i ProviderPropertyArray) ToProviderPropertyArrayOutput() ProviderPropertyArrayOutput {
-	return i.ToProviderPropertyArrayOutputWithContext(context.Background())
+func (*providerPropertyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProviderProperty)(nil)).Elem()
 }
 
-func (i ProviderPropertyArray) ToProviderPropertyArrayOutputWithContext(ctx context.Context) ProviderPropertyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProviderPropertyArrayOutput)
+func (i *providerPropertyPtrType) ToProviderPropertyPtrOutput() ProviderPropertyPtrOutput {
+	return i.ToProviderPropertyPtrOutputWithContext(context.Background())
+}
+
+func (i *providerPropertyPtrType) ToProviderPropertyPtrOutputWithContext(ctx context.Context) ProviderPropertyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProviderPropertyPtrOutput)
 }
 
 type ProviderPropertyOutput struct{ *pulumi.OutputState }
@@ -324,8 +3293,21 @@ func (o ProviderPropertyOutput) ToProviderPropertyOutputWithContext(ctx context.
 	return o
 }
 
+func (o ProviderPropertyOutput) ToProviderPropertyPtrOutput() ProviderPropertyPtrOutput {
+	return o.ToProviderPropertyPtrOutputWithContext(context.Background())
+}
+
+func (o ProviderPropertyOutput) ToProviderPropertyPtrOutputWithContext(ctx context.Context) ProviderPropertyPtrOutput {
+	return o.ApplyT(func(v ProviderProperty) *ProviderProperty {
+		return &v
+	}).(ProviderPropertyPtrOutput)
+}
 func (o ProviderPropertyOutput) AccessToken() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProviderProperty) *string { return v.AccessToken }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderPropertyOutput) AccountKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderProperty) *string { return v.AccountKey }).(pulumi.StringPtrOutput)
 }
 
 func (o ProviderPropertyOutput) ClientSecret() pulumi.StringPtrOutput {
@@ -344,31 +3326,699 @@ func (o ProviderPropertyOutput) MaxBody() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ProviderProperty) *int { return v.MaxBody }).(pulumi.IntPtrOutput)
 }
 
-type ProviderPropertyArrayOutput struct{ *pulumi.OutputState }
+type ProviderPropertyPtrOutput struct{ *pulumi.OutputState }
 
-func (ProviderPropertyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProviderProperty)(nil)).Elem()
+func (ProviderPropertyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProviderProperty)(nil)).Elem()
 }
 
-func (o ProviderPropertyArrayOutput) ToProviderPropertyArrayOutput() ProviderPropertyArrayOutput {
+func (o ProviderPropertyPtrOutput) ToProviderPropertyPtrOutput() ProviderPropertyPtrOutput {
 	return o
 }
 
-func (o ProviderPropertyArrayOutput) ToProviderPropertyArrayOutputWithContext(ctx context.Context) ProviderPropertyArrayOutput {
+func (o ProviderPropertyPtrOutput) ToProviderPropertyPtrOutputWithContext(ctx context.Context) ProviderPropertyPtrOutput {
 	return o
 }
 
-func (o ProviderPropertyArrayOutput) Index(i pulumi.IntInput) ProviderPropertyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProviderProperty {
-		return vs[0].([]ProviderProperty)[vs[1].(int)]
-	}).(ProviderPropertyOutput)
+func (o ProviderPropertyPtrOutput) Elem() ProviderPropertyOutput {
+	return o.ApplyT(func(v *ProviderProperty) ProviderProperty { return *v }).(ProviderPropertyOutput)
+}
+
+func (o ProviderPropertyPtrOutput) AccessToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderProperty) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AccessToken
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderPropertyPtrOutput) AccountKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderProperty) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AccountKey
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderPropertyPtrOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderProperty) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientSecret
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderPropertyPtrOutput) ClientToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderProperty) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientToken
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderPropertyPtrOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProviderProperty) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Host
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderPropertyPtrOutput) MaxBody() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ProviderProperty) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxBody
+	}).(pulumi.IntPtrOutput)
+}
+
+type GetContractsContract struct {
+	ContractId       string `pulumi:"contractId"`
+	ContractTypeName string `pulumi:"contractTypeName"`
+}
+
+// GetContractsContractInput is an input type that accepts GetContractsContractArgs and GetContractsContractOutput values.
+// You can construct a concrete instance of `GetContractsContractInput` via:
+//
+//          GetContractsContractArgs{...}
+type GetContractsContractInput interface {
+	pulumi.Input
+
+	ToGetContractsContractOutput() GetContractsContractOutput
+	ToGetContractsContractOutputWithContext(context.Context) GetContractsContractOutput
+}
+
+type GetContractsContractArgs struct {
+	ContractId       pulumi.StringInput `pulumi:"contractId"`
+	ContractTypeName pulumi.StringInput `pulumi:"contractTypeName"`
+}
+
+func (GetContractsContractArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContractsContract)(nil)).Elem()
+}
+
+func (i GetContractsContractArgs) ToGetContractsContractOutput() GetContractsContractOutput {
+	return i.ToGetContractsContractOutputWithContext(context.Background())
+}
+
+func (i GetContractsContractArgs) ToGetContractsContractOutputWithContext(ctx context.Context) GetContractsContractOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetContractsContractOutput)
+}
+
+// GetContractsContractArrayInput is an input type that accepts GetContractsContractArray and GetContractsContractArrayOutput values.
+// You can construct a concrete instance of `GetContractsContractArrayInput` via:
+//
+//          GetContractsContractArray{ GetContractsContractArgs{...} }
+type GetContractsContractArrayInput interface {
+	pulumi.Input
+
+	ToGetContractsContractArrayOutput() GetContractsContractArrayOutput
+	ToGetContractsContractArrayOutputWithContext(context.Context) GetContractsContractArrayOutput
+}
+
+type GetContractsContractArray []GetContractsContractInput
+
+func (GetContractsContractArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetContractsContract)(nil)).Elem()
+}
+
+func (i GetContractsContractArray) ToGetContractsContractArrayOutput() GetContractsContractArrayOutput {
+	return i.ToGetContractsContractArrayOutputWithContext(context.Background())
+}
+
+func (i GetContractsContractArray) ToGetContractsContractArrayOutputWithContext(ctx context.Context) GetContractsContractArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetContractsContractArrayOutput)
+}
+
+type GetContractsContractOutput struct{ *pulumi.OutputState }
+
+func (GetContractsContractOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContractsContract)(nil)).Elem()
+}
+
+func (o GetContractsContractOutput) ToGetContractsContractOutput() GetContractsContractOutput {
+	return o
+}
+
+func (o GetContractsContractOutput) ToGetContractsContractOutputWithContext(ctx context.Context) GetContractsContractOutput {
+	return o
+}
+
+func (o GetContractsContractOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContractsContract) string { return v.ContractId }).(pulumi.StringOutput)
+}
+
+func (o GetContractsContractOutput) ContractTypeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContractsContract) string { return v.ContractTypeName }).(pulumi.StringOutput)
+}
+
+type GetContractsContractArrayOutput struct{ *pulumi.OutputState }
+
+func (GetContractsContractArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetContractsContract)(nil)).Elem()
+}
+
+func (o GetContractsContractArrayOutput) ToGetContractsContractArrayOutput() GetContractsContractArrayOutput {
+	return o
+}
+
+func (o GetContractsContractArrayOutput) ToGetContractsContractArrayOutputWithContext(ctx context.Context) GetContractsContractArrayOutput {
+	return o
+}
+
+func (o GetContractsContractArrayOutput) Index(i pulumi.IntInput) GetContractsContractOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContractsContract {
+		return vs[0].([]GetContractsContract)[vs[1].(int)]
+	}).(GetContractsContractOutput)
+}
+
+type GetGroupsGroup struct {
+	ContractIds   []string `pulumi:"contractIds"`
+	GroupId       string   `pulumi:"groupId"`
+	GroupName     string   `pulumi:"groupName"`
+	ParentGroupId string   `pulumi:"parentGroupId"`
+}
+
+// GetGroupsGroupInput is an input type that accepts GetGroupsGroupArgs and GetGroupsGroupOutput values.
+// You can construct a concrete instance of `GetGroupsGroupInput` via:
+//
+//          GetGroupsGroupArgs{...}
+type GetGroupsGroupInput interface {
+	pulumi.Input
+
+	ToGetGroupsGroupOutput() GetGroupsGroupOutput
+	ToGetGroupsGroupOutputWithContext(context.Context) GetGroupsGroupOutput
+}
+
+type GetGroupsGroupArgs struct {
+	ContractIds   pulumi.StringArrayInput `pulumi:"contractIds"`
+	GroupId       pulumi.StringInput      `pulumi:"groupId"`
+	GroupName     pulumi.StringInput      `pulumi:"groupName"`
+	ParentGroupId pulumi.StringInput      `pulumi:"parentGroupId"`
+}
+
+func (GetGroupsGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupsGroup)(nil)).Elem()
+}
+
+func (i GetGroupsGroupArgs) ToGetGroupsGroupOutput() GetGroupsGroupOutput {
+	return i.ToGetGroupsGroupOutputWithContext(context.Background())
+}
+
+func (i GetGroupsGroupArgs) ToGetGroupsGroupOutputWithContext(ctx context.Context) GetGroupsGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupsGroupOutput)
+}
+
+// GetGroupsGroupArrayInput is an input type that accepts GetGroupsGroupArray and GetGroupsGroupArrayOutput values.
+// You can construct a concrete instance of `GetGroupsGroupArrayInput` via:
+//
+//          GetGroupsGroupArray{ GetGroupsGroupArgs{...} }
+type GetGroupsGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetGroupsGroupArrayOutput() GetGroupsGroupArrayOutput
+	ToGetGroupsGroupArrayOutputWithContext(context.Context) GetGroupsGroupArrayOutput
+}
+
+type GetGroupsGroupArray []GetGroupsGroupInput
+
+func (GetGroupsGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGroupsGroup)(nil)).Elem()
+}
+
+func (i GetGroupsGroupArray) ToGetGroupsGroupArrayOutput() GetGroupsGroupArrayOutput {
+	return i.ToGetGroupsGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetGroupsGroupArray) ToGetGroupsGroupArrayOutputWithContext(ctx context.Context) GetGroupsGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupsGroupArrayOutput)
+}
+
+type GetGroupsGroupOutput struct{ *pulumi.OutputState }
+
+func (GetGroupsGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupsGroup)(nil)).Elem()
+}
+
+func (o GetGroupsGroupOutput) ToGetGroupsGroupOutput() GetGroupsGroupOutput {
+	return o
+}
+
+func (o GetGroupsGroupOutput) ToGetGroupsGroupOutputWithContext(ctx context.Context) GetGroupsGroupOutput {
+	return o
+}
+
+func (o GetGroupsGroupOutput) ContractIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGroupsGroup) []string { return v.ContractIds }).(pulumi.StringArrayOutput)
+}
+
+func (o GetGroupsGroupOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupsGroup) string { return v.GroupId }).(pulumi.StringOutput)
+}
+
+func (o GetGroupsGroupOutput) GroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupsGroup) string { return v.GroupName }).(pulumi.StringOutput)
+}
+
+func (o GetGroupsGroupOutput) ParentGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupsGroup) string { return v.ParentGroupId }).(pulumi.StringOutput)
+}
+
+type GetGroupsGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGroupsGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGroupsGroup)(nil)).Elem()
+}
+
+func (o GetGroupsGroupArrayOutput) ToGetGroupsGroupArrayOutput() GetGroupsGroupArrayOutput {
+	return o
+}
+
+func (o GetGroupsGroupArrayOutput) ToGetGroupsGroupArrayOutputWithContext(ctx context.Context) GetGroupsGroupArrayOutput {
+	return o
+}
+
+func (o GetGroupsGroupArrayOutput) Index(i pulumi.IntInput) GetGroupsGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGroupsGroup {
+		return vs[0].([]GetGroupsGroup)[vs[1].(int)]
+	}).(GetGroupsGroupOutput)
+}
+
+type GetPropertiesProperty struct {
+	ContractId        string `pulumi:"contractId"`
+	GroupId           string `pulumi:"groupId"`
+	LatestVersion     int    `pulumi:"latestVersion"`
+	Note              string `pulumi:"note"`
+	ProductId         string `pulumi:"productId"`
+	ProductionVersion int    `pulumi:"productionVersion"`
+	PropertyId        string `pulumi:"propertyId"`
+	PropertyName      string `pulumi:"propertyName"`
+	RuleFormat        string `pulumi:"ruleFormat"`
+	StagingVersion    int    `pulumi:"stagingVersion"`
+}
+
+// GetPropertiesPropertyInput is an input type that accepts GetPropertiesPropertyArgs and GetPropertiesPropertyOutput values.
+// You can construct a concrete instance of `GetPropertiesPropertyInput` via:
+//
+//          GetPropertiesPropertyArgs{...}
+type GetPropertiesPropertyInput interface {
+	pulumi.Input
+
+	ToGetPropertiesPropertyOutput() GetPropertiesPropertyOutput
+	ToGetPropertiesPropertyOutputWithContext(context.Context) GetPropertiesPropertyOutput
+}
+
+type GetPropertiesPropertyArgs struct {
+	ContractId        pulumi.StringInput `pulumi:"contractId"`
+	GroupId           pulumi.StringInput `pulumi:"groupId"`
+	LatestVersion     pulumi.IntInput    `pulumi:"latestVersion"`
+	Note              pulumi.StringInput `pulumi:"note"`
+	ProductId         pulumi.StringInput `pulumi:"productId"`
+	ProductionVersion pulumi.IntInput    `pulumi:"productionVersion"`
+	PropertyId        pulumi.StringInput `pulumi:"propertyId"`
+	PropertyName      pulumi.StringInput `pulumi:"propertyName"`
+	RuleFormat        pulumi.StringInput `pulumi:"ruleFormat"`
+	StagingVersion    pulumi.IntInput    `pulumi:"stagingVersion"`
+}
+
+func (GetPropertiesPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertiesProperty)(nil)).Elem()
+}
+
+func (i GetPropertiesPropertyArgs) ToGetPropertiesPropertyOutput() GetPropertiesPropertyOutput {
+	return i.ToGetPropertiesPropertyOutputWithContext(context.Background())
+}
+
+func (i GetPropertiesPropertyArgs) ToGetPropertiesPropertyOutputWithContext(ctx context.Context) GetPropertiesPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertiesPropertyOutput)
+}
+
+// GetPropertiesPropertyArrayInput is an input type that accepts GetPropertiesPropertyArray and GetPropertiesPropertyArrayOutput values.
+// You can construct a concrete instance of `GetPropertiesPropertyArrayInput` via:
+//
+//          GetPropertiesPropertyArray{ GetPropertiesPropertyArgs{...} }
+type GetPropertiesPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertiesPropertyArrayOutput() GetPropertiesPropertyArrayOutput
+	ToGetPropertiesPropertyArrayOutputWithContext(context.Context) GetPropertiesPropertyArrayOutput
+}
+
+type GetPropertiesPropertyArray []GetPropertiesPropertyInput
+
+func (GetPropertiesPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertiesProperty)(nil)).Elem()
+}
+
+func (i GetPropertiesPropertyArray) ToGetPropertiesPropertyArrayOutput() GetPropertiesPropertyArrayOutput {
+	return i.ToGetPropertiesPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertiesPropertyArray) ToGetPropertiesPropertyArrayOutputWithContext(ctx context.Context) GetPropertiesPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertiesPropertyArrayOutput)
+}
+
+type GetPropertiesPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetPropertiesPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertiesProperty)(nil)).Elem()
+}
+
+func (o GetPropertiesPropertyOutput) ToGetPropertiesPropertyOutput() GetPropertiesPropertyOutput {
+	return o
+}
+
+func (o GetPropertiesPropertyOutput) ToGetPropertiesPropertyOutputWithContext(ctx context.Context) GetPropertiesPropertyOutput {
+	return o
+}
+
+func (o GetPropertiesPropertyOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesProperty) string { return v.ContractId }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesPropertyOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesProperty) string { return v.GroupId }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesPropertyOutput) LatestVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPropertiesProperty) int { return v.LatestVersion }).(pulumi.IntOutput)
+}
+
+func (o GetPropertiesPropertyOutput) Note() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesProperty) string { return v.Note }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesPropertyOutput) ProductId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesProperty) string { return v.ProductId }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesPropertyOutput) ProductionVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPropertiesProperty) int { return v.ProductionVersion }).(pulumi.IntOutput)
+}
+
+func (o GetPropertiesPropertyOutput) PropertyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesProperty) string { return v.PropertyId }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesPropertyOutput) PropertyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesProperty) string { return v.PropertyName }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesPropertyOutput) RuleFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesProperty) string { return v.RuleFormat }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesPropertyOutput) StagingVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPropertiesProperty) int { return v.StagingVersion }).(pulumi.IntOutput)
+}
+
+type GetPropertiesPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertiesPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertiesProperty)(nil)).Elem()
+}
+
+func (o GetPropertiesPropertyArrayOutput) ToGetPropertiesPropertyArrayOutput() GetPropertiesPropertyArrayOutput {
+	return o
+}
+
+func (o GetPropertiesPropertyArrayOutput) ToGetPropertiesPropertyArrayOutputWithContext(ctx context.Context) GetPropertiesPropertyArrayOutput {
+	return o
+}
+
+func (o GetPropertiesPropertyArrayOutput) Index(i pulumi.IntInput) GetPropertiesPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertiesProperty {
+		return vs[0].([]GetPropertiesProperty)[vs[1].(int)]
+	}).(GetPropertiesPropertyOutput)
+}
+
+type GetPropertyProductsProduct struct {
+	ProductId   string `pulumi:"productId"`
+	ProductName string `pulumi:"productName"`
+}
+
+// GetPropertyProductsProductInput is an input type that accepts GetPropertyProductsProductArgs and GetPropertyProductsProductOutput values.
+// You can construct a concrete instance of `GetPropertyProductsProductInput` via:
+//
+//          GetPropertyProductsProductArgs{...}
+type GetPropertyProductsProductInput interface {
+	pulumi.Input
+
+	ToGetPropertyProductsProductOutput() GetPropertyProductsProductOutput
+	ToGetPropertyProductsProductOutputWithContext(context.Context) GetPropertyProductsProductOutput
+}
+
+type GetPropertyProductsProductArgs struct {
+	ProductId   pulumi.StringInput `pulumi:"productId"`
+	ProductName pulumi.StringInput `pulumi:"productName"`
+}
+
+func (GetPropertyProductsProductArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyProductsProduct)(nil)).Elem()
+}
+
+func (i GetPropertyProductsProductArgs) ToGetPropertyProductsProductOutput() GetPropertyProductsProductOutput {
+	return i.ToGetPropertyProductsProductOutputWithContext(context.Background())
+}
+
+func (i GetPropertyProductsProductArgs) ToGetPropertyProductsProductOutputWithContext(ctx context.Context) GetPropertyProductsProductOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyProductsProductOutput)
+}
+
+// GetPropertyProductsProductArrayInput is an input type that accepts GetPropertyProductsProductArray and GetPropertyProductsProductArrayOutput values.
+// You can construct a concrete instance of `GetPropertyProductsProductArrayInput` via:
+//
+//          GetPropertyProductsProductArray{ GetPropertyProductsProductArgs{...} }
+type GetPropertyProductsProductArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyProductsProductArrayOutput() GetPropertyProductsProductArrayOutput
+	ToGetPropertyProductsProductArrayOutputWithContext(context.Context) GetPropertyProductsProductArrayOutput
+}
+
+type GetPropertyProductsProductArray []GetPropertyProductsProductInput
+
+func (GetPropertyProductsProductArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyProductsProduct)(nil)).Elem()
+}
+
+func (i GetPropertyProductsProductArray) ToGetPropertyProductsProductArrayOutput() GetPropertyProductsProductArrayOutput {
+	return i.ToGetPropertyProductsProductArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyProductsProductArray) ToGetPropertyProductsProductArrayOutputWithContext(ctx context.Context) GetPropertyProductsProductArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyProductsProductArrayOutput)
+}
+
+type GetPropertyProductsProductOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyProductsProductOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyProductsProduct)(nil)).Elem()
+}
+
+func (o GetPropertyProductsProductOutput) ToGetPropertyProductsProductOutput() GetPropertyProductsProductOutput {
+	return o
+}
+
+func (o GetPropertyProductsProductOutput) ToGetPropertyProductsProductOutputWithContext(ctx context.Context) GetPropertyProductsProductOutput {
+	return o
+}
+
+func (o GetPropertyProductsProductOutput) ProductId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyProductsProduct) string { return v.ProductId }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyProductsProductOutput) ProductName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyProductsProduct) string { return v.ProductName }).(pulumi.StringOutput)
+}
+
+type GetPropertyProductsProductArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyProductsProductArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyProductsProduct)(nil)).Elem()
+}
+
+func (o GetPropertyProductsProductArrayOutput) ToGetPropertyProductsProductArrayOutput() GetPropertyProductsProductArrayOutput {
+	return o
+}
+
+func (o GetPropertyProductsProductArrayOutput) ToGetPropertyProductsProductArrayOutputWithContext(ctx context.Context) GetPropertyProductsProductArrayOutput {
+	return o
+}
+
+func (o GetPropertyProductsProductArrayOutput) Index(i pulumi.IntInput) GetPropertyProductsProductOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyProductsProduct {
+		return vs[0].([]GetPropertyProductsProduct)[vs[1].(int)]
+	}).(GetPropertyProductsProductOutput)
+}
+
+type GetPropertyRulesTemplateVariable struct {
+	Name  string  `pulumi:"name"`
+	Type  *string `pulumi:"type"`
+	Value string  `pulumi:"value"`
+}
+
+// GetPropertyRulesTemplateVariableInput is an input type that accepts GetPropertyRulesTemplateVariableArgs and GetPropertyRulesTemplateVariableOutput values.
+// You can construct a concrete instance of `GetPropertyRulesTemplateVariableInput` via:
+//
+//          GetPropertyRulesTemplateVariableArgs{...}
+type GetPropertyRulesTemplateVariableInput interface {
+	pulumi.Input
+
+	ToGetPropertyRulesTemplateVariableOutput() GetPropertyRulesTemplateVariableOutput
+	ToGetPropertyRulesTemplateVariableOutputWithContext(context.Context) GetPropertyRulesTemplateVariableOutput
+}
+
+type GetPropertyRulesTemplateVariableArgs struct {
+	Name  pulumi.StringInput    `pulumi:"name"`
+	Type  pulumi.StringPtrInput `pulumi:"type"`
+	Value pulumi.StringInput    `pulumi:"value"`
+}
+
+func (GetPropertyRulesTemplateVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyRulesTemplateVariable)(nil)).Elem()
+}
+
+func (i GetPropertyRulesTemplateVariableArgs) ToGetPropertyRulesTemplateVariableOutput() GetPropertyRulesTemplateVariableOutput {
+	return i.ToGetPropertyRulesTemplateVariableOutputWithContext(context.Background())
+}
+
+func (i GetPropertyRulesTemplateVariableArgs) ToGetPropertyRulesTemplateVariableOutputWithContext(ctx context.Context) GetPropertyRulesTemplateVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyRulesTemplateVariableOutput)
+}
+
+// GetPropertyRulesTemplateVariableArrayInput is an input type that accepts GetPropertyRulesTemplateVariableArray and GetPropertyRulesTemplateVariableArrayOutput values.
+// You can construct a concrete instance of `GetPropertyRulesTemplateVariableArrayInput` via:
+//
+//          GetPropertyRulesTemplateVariableArray{ GetPropertyRulesTemplateVariableArgs{...} }
+type GetPropertyRulesTemplateVariableArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyRulesTemplateVariableArrayOutput() GetPropertyRulesTemplateVariableArrayOutput
+	ToGetPropertyRulesTemplateVariableArrayOutputWithContext(context.Context) GetPropertyRulesTemplateVariableArrayOutput
+}
+
+type GetPropertyRulesTemplateVariableArray []GetPropertyRulesTemplateVariableInput
+
+func (GetPropertyRulesTemplateVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyRulesTemplateVariable)(nil)).Elem()
+}
+
+func (i GetPropertyRulesTemplateVariableArray) ToGetPropertyRulesTemplateVariableArrayOutput() GetPropertyRulesTemplateVariableArrayOutput {
+	return i.ToGetPropertyRulesTemplateVariableArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyRulesTemplateVariableArray) ToGetPropertyRulesTemplateVariableArrayOutputWithContext(ctx context.Context) GetPropertyRulesTemplateVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyRulesTemplateVariableArrayOutput)
+}
+
+type GetPropertyRulesTemplateVariableOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyRulesTemplateVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyRulesTemplateVariable)(nil)).Elem()
+}
+
+func (o GetPropertyRulesTemplateVariableOutput) ToGetPropertyRulesTemplateVariableOutput() GetPropertyRulesTemplateVariableOutput {
+	return o
+}
+
+func (o GetPropertyRulesTemplateVariableOutput) ToGetPropertyRulesTemplateVariableOutputWithContext(ctx context.Context) GetPropertyRulesTemplateVariableOutput {
+	return o
+}
+
+func (o GetPropertyRulesTemplateVariableOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyRulesTemplateVariable) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyRulesTemplateVariableOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPropertyRulesTemplateVariable) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+func (o GetPropertyRulesTemplateVariableOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyRulesTemplateVariable) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetPropertyRulesTemplateVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyRulesTemplateVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyRulesTemplateVariable)(nil)).Elem()
+}
+
+func (o GetPropertyRulesTemplateVariableArrayOutput) ToGetPropertyRulesTemplateVariableArrayOutput() GetPropertyRulesTemplateVariableArrayOutput {
+	return o
+}
+
+func (o GetPropertyRulesTemplateVariableArrayOutput) ToGetPropertyRulesTemplateVariableArrayOutputWithContext(ctx context.Context) GetPropertyRulesTemplateVariableArrayOutput {
+	return o
+}
+
+func (o GetPropertyRulesTemplateVariableArrayOutput) Index(i pulumi.IntInput) GetPropertyRulesTemplateVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyRulesTemplateVariable {
+		return vs[0].([]GetPropertyRulesTemplateVariable)[vs[1].(int)]
+	}).(GetPropertyRulesTemplateVariableOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(ProviderDnOutput{})
-	pulumi.RegisterOutputType(ProviderDnArrayOutput{})
+	pulumi.RegisterOutputType(DnsZoneTsigKeyOutput{})
+	pulumi.RegisterOutputType(DnsZoneTsigKeyPtrOutput{})
+	pulumi.RegisterOutputType(GtmAsmapAssignmentOutput{})
+	pulumi.RegisterOutputType(GtmAsmapAssignmentArrayOutput{})
+	pulumi.RegisterOutputType(GtmAsmapDefaultDatacenterOutput{})
+	pulumi.RegisterOutputType(GtmAsmapDefaultDatacenterPtrOutput{})
+	pulumi.RegisterOutputType(GtmCidrmapAssignmentOutput{})
+	pulumi.RegisterOutputType(GtmCidrmapAssignmentArrayOutput{})
+	pulumi.RegisterOutputType(GtmCidrmapDefaultDatacenterOutput{})
+	pulumi.RegisterOutputType(GtmCidrmapDefaultDatacenterPtrOutput{})
+	pulumi.RegisterOutputType(GtmDatacenterDefaultLoadObjectOutput{})
+	pulumi.RegisterOutputType(GtmDatacenterDefaultLoadObjectPtrOutput{})
+	pulumi.RegisterOutputType(GtmGeomapAssignmentOutput{})
+	pulumi.RegisterOutputType(GtmGeomapAssignmentArrayOutput{})
+	pulumi.RegisterOutputType(GtmGeomapDefaultDatacenterOutput{})
+	pulumi.RegisterOutputType(GtmGeomapDefaultDatacenterPtrOutput{})
+	pulumi.RegisterOutputType(GtmPropertyLivenessTestOutput{})
+	pulumi.RegisterOutputType(GtmPropertyLivenessTestArrayOutput{})
+	pulumi.RegisterOutputType(GtmPropertyLivenessTestHttpHeaderOutput{})
+	pulumi.RegisterOutputType(GtmPropertyLivenessTestHttpHeaderArrayOutput{})
+	pulumi.RegisterOutputType(GtmPropertyStaticRrSetOutput{})
+	pulumi.RegisterOutputType(GtmPropertyStaticRrSetArrayOutput{})
+	pulumi.RegisterOutputType(GtmPropertyTrafficTargetOutput{})
+	pulumi.RegisterOutputType(GtmPropertyTrafficTargetArrayOutput{})
+	pulumi.RegisterOutputType(GtmResourceResourceInstanceOutput{})
+	pulumi.RegisterOutputType(GtmResourceResourceInstanceArrayOutput{})
+	pulumi.RegisterOutputType(PropertyOriginOutput{})
+	pulumi.RegisterOutputType(PropertyOriginArrayOutput{})
+	pulumi.RegisterOutputType(PropertyRuleErrorOutput{})
+	pulumi.RegisterOutputType(PropertyRuleErrorArrayOutput{})
+	pulumi.RegisterOutputType(PropertyRuleWarningOutput{})
+	pulumi.RegisterOutputType(PropertyRuleWarningArrayOutput{})
+	pulumi.RegisterOutputType(PropertyVariablesVariableOutput{})
+	pulumi.RegisterOutputType(PropertyVariablesVariableArrayOutput{})
+	pulumi.RegisterOutputType(PropertyVariablesVariableVariableOutput{})
+	pulumi.RegisterOutputType(PropertyVariablesVariableVariableArrayOutput{})
+	pulumi.RegisterOutputType(ProviderAppsecOutput{})
+	pulumi.RegisterOutputType(ProviderAppsecArrayOutput{})
+	pulumi.RegisterOutputType(ProviderConfigOutput{})
+	pulumi.RegisterOutputType(ProviderConfigPtrOutput{})
+	pulumi.RegisterOutputType(ProviderDnsOutput{})
+	pulumi.RegisterOutputType(ProviderDnsPtrOutput{})
 	pulumi.RegisterOutputType(ProviderGtmOutput{})
-	pulumi.RegisterOutputType(ProviderGtmArrayOutput{})
+	pulumi.RegisterOutputType(ProviderGtmPtrOutput{})
 	pulumi.RegisterOutputType(ProviderPropertyOutput{})
-	pulumi.RegisterOutputType(ProviderPropertyArrayOutput{})
+	pulumi.RegisterOutputType(ProviderPropertyPtrOutput{})
+	pulumi.RegisterOutputType(GetContractsContractOutput{})
+	pulumi.RegisterOutputType(GetContractsContractArrayOutput{})
+	pulumi.RegisterOutputType(GetGroupsGroupOutput{})
+	pulumi.RegisterOutputType(GetGroupsGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertiesPropertyOutput{})
+	pulumi.RegisterOutputType(GetPropertiesPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyProductsProductOutput{})
+	pulumi.RegisterOutputType(GetPropertyProductsProductArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyRulesTemplateVariableOutput{})
+	pulumi.RegisterOutputType(GetPropertyRulesTemplateVariableArrayOutput{})
 }

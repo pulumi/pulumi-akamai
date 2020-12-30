@@ -17,13 +17,14 @@ package akamai
 import (
 	"unicode"
 
-	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+	"github.com/akamai/terraform-provider-akamai/v2/pkg/akamai"
+	appSecProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/appsec"
+	dnsProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/dns"
+	gtmProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/gtm"
+	propertyProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/property"
 	"github.com/pulumi/pulumi-terraform-bridge/v2/pkg/tfbridge"
-	shim "github.com/pulumi/pulumi-terraform-bridge/v2/pkg/tfshim"
-	shimv1 "github.com/pulumi/pulumi-terraform-bridge/v2/pkg/tfshim/sdk-v1"
-	"github.com/pulumi/pulumi/sdk/v2/go/common/resource"
+	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v2/pkg/tfshim/sdk-v2"
 	"github.com/pulumi/pulumi/sdk/v2/go/common/tokens"
-	"github.com/terraform-providers/terraform-provider-akamai/akamai"
 )
 
 // all of the token components used below.
@@ -63,66 +64,65 @@ func makeResource(mod string, res string) tokens.Type {
 	return makeType(mod+"/"+fn, res)
 }
 
-// preConfigureCallback is called before the providerConfigure function of the underlying provider.
-// It should validate that the provider can be configured, and provide actionable errors in the case
-// it cannot be. Configuration variables can be read from `vars` using the `stringValue` function -
-// for example `stringValue(vars, "accessKey")`.
-func preConfigureCallback(vars resource.PropertyMap, c shim.ResourceConfig) error {
-	return nil
-}
-
 // Provider returns additional overlaid schema and metadata associated with the provider..
 func Provider() tfbridge.ProviderInfo {
+
+	providerFunc := akamai.Provider(
+		gtmProvider.Subprovider(),
+		appSecProvider.Subprovider(),
+		dnsProvider.Subprovider(),
+		propertyProvider.Subprovider(),
+	)
+
 	// Instantiate the Terraform provider
-	p := shimv1.NewProvider(akamai.Provider().(*schema.Provider))
+	p := shimv2.NewProvider(providerFunc())
 
 	// Create a Pulumi provider mapping
 	prov := tfbridge.ProviderInfo{
-		P:                    p,
-		Name:                 "akamai",
-		Description:          "A Pulumi package for creating and managing akamai cloud resources.",
-		Keywords:             []string{"pulumi", "akamai"},
-		License:              "Apache-2.0",
-		Homepage:             "https://pulumi.io",
-		Repository:           "https://github.com/pulumi/pulumi-akamai",
-		PreConfigureCallback: preConfigureCallback,
+		P:                       p,
+		Name:                    "akamai",
+		Description:             "A Pulumi package for creating and managing akamai cloud resources.",
+		Keywords:                []string{"pulumi", "akamai"},
+		License:                 "Apache-2.0",
+		Homepage:                "https://pulumi.io",
+		Repository:              "https://github.com/pulumi/pulumi-akamai",
+		GitHubOrg:               "akamai",
+		TFProviderModuleVersion: "v2",
+		Config: map[string]*tfbridge.SchemaInfo{
+			"config": {
+				CSharpName: "ConfigDetails",
+			},
+		},
 		Resources: map[string]*tfbridge.ResourceInfo{
-			// Edge DNS
-			"akamai_dns_record": {Tok: makeResource(edgeDNSMod, "DnsRecord")},
-			"akamai_dns_zone":   {Tok: makeResource(edgeDNSMod, "DnsZone")},
-
-			// Properties
-			"akamai_cp_code":             {Tok: makeResource(propertiesMod, "CpCode")},
-			"akamai_edge_hostname":       {Tok: makeResource(propertiesMod, "EdgeHostName")},
-			"akamai_property":            {Tok: makeResource(propertiesMod, "Property")},
-			"akamai_property_activation": {Tok: makeResource(propertiesMod, "PropertyActivation")},
-			"akamai_property_rules":      {Tok: makeResource(propertiesMod, "PropertyRules")},
-			"akamai_property_variables":  {Tok: makeResource(propertiesMod, "PropertyVariables")},
-
-			// Traffic Management
-			"akamai_gtm_domain":     {Tok: makeResource(trafficManagementMod, "GtmDomain")},
-			"akamai_gtm_datacenter": {Tok: makeResource(trafficManagementMod, "GtmDatacenter")},
-			"akamai_gtm_property":   {Tok: makeResource(trafficManagementMod, "GtmProperty")},
-			"akamai_gtm_resource":   {Tok: makeResource(trafficManagementMod, "GtmResource")},
-			"akamai_gtm_cidrmap":    {Tok: makeResource(trafficManagementMod, "GtmCidrmap")},
-			"akamai_gtm_asmap":      {Tok: makeResource(trafficManagementMod, "GtmASmap")},
-			"akamai_gtm_geomap":     {Tok: makeResource(trafficManagementMod, "GtmGeomap")},
+			"akamai_appsec_activations":                 {Tok: makeResource(mainMod, "AppSecActivations")},
+			"akamai_appsec_configuration_version_clone": {Tok: makeResource(mainMod, "AppSecConfigurationVersionClone")},
+			"akamai_appsec_custom_rule":                 {Tok: makeResource(mainMod, "AppSecCustomRule")},
+			"akamai_appsec_custom_rule_action":          {Tok: makeResource(mainMod, "AppSecCustomRuleAction")},
+			"akamai_appsec_match_target":                {Tok: makeResource(mainMod, "AppSecMatchTarget")},
+			"akamai_appsec_match_target_sequence":       {Tok: makeResource(mainMod, "AppSecMatchTargetSequence")},
+			"akamai_appsec_security_policy_clone":       {Tok: makeResource(mainMod, "AppSecSecurityPolicyClone")},
+			"akamai_appsec_selected_hostnames":          {Tok: makeResource(mainMod, "AppSecSelectedHostnames")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
-			"akamai_contract": {Tok: makeDataSource(mainMod, "getContract")},
-			"akamai_group":    {Tok: makeDataSource(mainMod, "getGroup")},
+			"akamai_contract":  {Tok: makeDataSource(mainMod, "getContract")},
+			"akamai_contracts": {Tok: makeDataSource(mainMod, "getContracts")},
+			"akamai_group":     {Tok: makeDataSource(mainMod, "getGroup")},
+			"akamai_groups":    {Tok: makeDataSource(mainMod, "getGroups")},
 
-			// Edge DNS
-			"akamai_authorities_set": {Tok: makeDataSource(edgeDNSMod, "getAuthoritiesSet")},
-			"akamai_dns_record_set":  {Tok: makeDataSource(edgeDNSMod, "getDnsRecordSet")},
+			"akamai_appsec_configuration":         {Tok: makeDataSource(mainMod, "getAppSecConfiguration")},
+			"akamai_appsec_configuration_version": {Tok: makeDataSource(mainMod, "getAppSecConfigurationVersion")},
+			"akamai_appsec_custom_rule_actions":   {Tok: makeDataSource(mainMod, "getAppSecCustomRuleActions")},
+			"akamai_appsec_custom_rules":          {Tok: makeDataSource(mainMod, "getAppSecCustomRules")},
+			"akamai_appsec_export_configuration":  {Tok: makeDataSource(mainMod, "getAppSecExportConfiguration")},
+			"akamai_appsec_match_targets":         {Tok: makeDataSource(mainMod, "getAppSecMatchTargets")},
+			"akamai_appsec_security_policy":       {Tok: makeDataSource(mainMod, "getAppSecSecurityPolicy")},
+			"akamai_appsec_selectable_hostnames":  {Tok: makeDataSource(mainMod, "getAppSecSelectableHostnames")},
+			"akamai_appsec_selected_hostnames":    {Tok: makeDataSource(mainMod, "getAppSecSelectedHostnames")},
 
-			// Properties
-			"akamai_cp_code":        {Tok: makeDataSource(propertiesMod, "getCpCode")},
-			"akamai_property":       {Tok: makeDataSource(propertiesMod, "getProperty")},
-			"akamai_property_rules": {Tok: makeDataSource(propertiesMod, "getPropertyRules")},
-
-			// Traffic Management
-			"akamai_gtm_default_datacenter": {Tok: makeDataSource(trafficManagementMod, "getGtmDefaultDatacenter")},
+			"akamai_properties":              {Tok: makeDataSource(mainMod, "getProperties")},
+			"akamai_property_products":       {Tok: makeDataSource(mainMod, "getPropertyProducts")},
+			"akamai_property_rule_formats":   {Tok: makeDataSource(mainMod, "getPropertyRuleFormats")},
+			"akamai_property_rules_template": {Tok: makeDataSource(mainMod, "getPropertyRulesTemplate")},
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
 			// List any npm dependencies and their versions
@@ -139,7 +139,6 @@ func Provider() tfbridge.ProviderInfo {
 			Requires: map[string]string{
 				"pulumi": ">=2.9.0,<3.0.0",
 			},
-			UsesIOClasses: true,
 		},
 		CSharp: &tfbridge.CSharpInfo{
 			PackageReferences: map[string]string{
@@ -151,6 +150,52 @@ func Provider() tfbridge.ProviderInfo {
 			},
 		},
 	}
+
+	// edgeDns -> mainMod
+	prov.RenameResourceWithAlias("akamai_dns_record", makeResource(edgeDNSMod, "DnsRecord"),
+		makeResource(mainMod, "DnsRecord"), edgeDNSMod, mainMod, nil)
+	prov.RenameResourceWithAlias("akamai_dns_zone", makeResource(edgeDNSMod, "DnsZone"),
+		makeResource(mainMod, "DnsZone"), edgeDNSMod, mainMod, nil)
+	prov.RenameDataSource("akamai_authorities_set", makeDataSource(edgeDNSMod, "getAuthoritiesSet"),
+		makeDataSource(mainMod, "getAuthoritiesSet"), edgeDNSMod, mainMod, nil)
+	prov.RenameDataSource("akamai_dns_record_set", makeDataSource(edgeDNSMod, "getDnsRecordSet"),
+		makeDataSource(mainMod, "getDnsRecordSet"), edgeDNSMod, mainMod, nil)
+
+	// trafficManagement -> mainMod
+	prov.RenameResourceWithAlias("akamai_gtm_domain", makeResource(trafficManagementMod, "GtmDomain"),
+		makeResource(mainMod, "GtmDomain"), trafficManagementMod, mainMod, nil)
+	prov.RenameResourceWithAlias("akamai_gtm_datacenter", makeResource(trafficManagementMod, "GtmDatacenter"),
+		makeResource(mainMod, "GtmDatacenter"), trafficManagementMod, mainMod, nil)
+	prov.RenameResourceWithAlias("akamai_gtm_property", makeResource(trafficManagementMod, "GtmProperty"),
+		makeResource(mainMod, "GtmProperty"), trafficManagementMod, mainMod, nil)
+	prov.RenameResourceWithAlias("akamai_gtm_resource", makeResource(trafficManagementMod, "GtmResource"),
+		makeResource(mainMod, "GtmResource"), trafficManagementMod, mainMod, nil)
+	prov.RenameResourceWithAlias("akamai_gtm_cidrmap", makeResource(trafficManagementMod, "GtmCidrmap"),
+		makeResource(mainMod, "GtmCidrmap"), trafficManagementMod, mainMod, nil)
+	prov.RenameResourceWithAlias("akamai_gtm_asmap", makeResource(trafficManagementMod, "GtmASmap"),
+		makeResource(mainMod, "GtmAsmap"), trafficManagementMod, mainMod, nil)
+	prov.RenameResourceWithAlias("akamai_gtm_geomap", makeResource(trafficManagementMod, "GtmGeomap"),
+		makeResource(mainMod, "GtmGeomap"), trafficManagementMod, mainMod, nil)
+	prov.RenameDataSource("akamai_gtm_default_datacenter", makeDataSource(trafficManagementMod, "getGtmDefaultDatacenter"),
+		makeDataSource(mainMod, "getGtmDefaultDatacenter"), trafficManagementMod, mainMod, nil)
+
+	// properties -> mainMod
+	prov.RenameResourceWithAlias("akamai_cp_code", makeResource(propertiesMod, "CpCode"),
+		makeResource(mainMod, "CpCode"), propertiesMod, mainMod, nil)
+	prov.RenameResourceWithAlias("akamai_edge_hostname", makeResource(propertiesMod, "EdgeHostName"),
+		makeResource(mainMod, "EdgeHostName"), propertiesMod, mainMod, nil)
+	prov.RenameResourceWithAlias("akamai_property", makeResource(propertiesMod, "Property"),
+		makeResource(mainMod, "Property"), propertiesMod, mainMod, nil)
+	prov.RenameResourceWithAlias("akamai_property_activation", makeResource(propertiesMod, "PropertyActivation"),
+		makeResource(mainMod, "PropertyActivation"), propertiesMod, mainMod, nil)
+	prov.RenameResourceWithAlias("akamai_property_variables", makeResource(propertiesMod, "PropertyVariables"),
+		makeResource(mainMod, "PropertyVariables"), propertiesMod, mainMod, nil)
+	prov.RenameDataSource("akamai_cp_code", makeDataSource(propertiesMod, "getCpCode"),
+		makeDataSource(mainMod, "getCpCode"), propertiesMod, mainMod, nil)
+	prov.RenameDataSource("akamai_property", makeDataSource(propertiesMod, "getProperty"),
+		makeDataSource(mainMod, "getProperty"), propertiesMod, mainMod, nil)
+	prov.RenameDataSource("akamai_property_rules", makeDataSource(propertiesMod, "getPropertyRules"),
+		makeDataSource(mainMod, "getPropertyRules"), propertiesMod, mainMod, nil)
 
 	prov.SetAutonaming(255, "-")
 

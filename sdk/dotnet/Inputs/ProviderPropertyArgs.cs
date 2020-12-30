@@ -15,6 +15,9 @@ namespace Pulumi.Akamai.Inputs
         [Input("accessToken")]
         public Input<string>? AccessToken { get; set; }
 
+        [Input("accountKey")]
+        public Input<string>? AccountKey { get; set; }
+
         [Input("clientSecret")]
         public Input<string>? ClientSecret { get; set; }
 

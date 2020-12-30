@@ -2,8 +2,7 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "./types/input";
-import * as outputs from "./types/output";
+import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -38,13 +37,18 @@ export class Provider extends pulumi.ProviderResource {
     constructor(name: string, args?: ProviderArgs, opts?: pulumi.ResourceOptions) {
         let inputs: pulumi.Inputs = {};
         {
+            inputs["appsecSection"] = args ? args.appsecSection : undefined;
+            inputs["appsecs"] = pulumi.output(args ? args.appsecs : undefined).apply(JSON.stringify);
+            inputs["cacheEnabled"] = pulumi.output(args ? args.cacheEnabled : undefined).apply(JSON.stringify);
+            inputs["config"] = pulumi.output(args ? args.config : undefined).apply(JSON.stringify);
+            inputs["configSection"] = args ? args.configSection : undefined;
             inputs["dns"] = pulumi.output(args ? args.dns : undefined).apply(JSON.stringify);
             inputs["dnsSection"] = args ? args.dnsSection : undefined;
             inputs["edgerc"] = args ? args.edgerc : undefined;
+            inputs["gtm"] = pulumi.output(args ? args.gtm : undefined).apply(JSON.stringify);
             inputs["gtmSection"] = args ? args.gtmSection : undefined;
-            inputs["gtms"] = pulumi.output(args ? args.gtms : undefined).apply(JSON.stringify);
             inputs["papiSection"] = args ? args.papiSection : undefined;
-            inputs["properties"] = pulumi.output(args ? args.properties : undefined).apply(JSON.stringify);
+            inputs["property"] = pulumi.output(args ? args.property : undefined).apply(JSON.stringify);
             inputs["propertySection"] = args ? args.propertySection : undefined;
         }
         if (!opts) {
@@ -62,12 +66,47 @@ export class Provider extends pulumi.ProviderResource {
  * The set of arguments for constructing a Provider resource.
  */
 export interface ProviderArgs {
-    readonly dns?: pulumi.Input<pulumi.Input<inputs.ProviderDn>[]>;
+    /**
+     * @deprecated The setting "appsec_section" has been deprecated.
+     */
+    readonly appsecSection?: pulumi.Input<string>;
+    /**
+     * @deprecated The setting "appsec" has been deprecated.
+     */
+    readonly appsecs?: pulumi.Input<pulumi.Input<inputs.ProviderAppsec>[]>;
+    readonly cacheEnabled?: pulumi.Input<boolean>;
+    readonly config?: pulumi.Input<inputs.ProviderConfig>;
+    /**
+     * The section of the edgerc file to use for configuration
+     */
+    readonly configSection?: pulumi.Input<string>;
+    /**
+     * @deprecated The setting "dns" has been deprecated.
+     */
+    readonly dns?: pulumi.Input<inputs.ProviderDns>;
+    /**
+     * @deprecated The setting "dns_section" has been deprecated.
+     */
     readonly dnsSection?: pulumi.Input<string>;
     readonly edgerc?: pulumi.Input<string>;
+    /**
+     * @deprecated The setting "gtm" has been deprecated.
+     */
+    readonly gtm?: pulumi.Input<inputs.ProviderGtm>;
+    /**
+     * @deprecated The setting "gtm_section" has been deprecated.
+     */
     readonly gtmSection?: pulumi.Input<string>;
-    readonly gtms?: pulumi.Input<pulumi.Input<inputs.ProviderGtm>[]>;
+    /**
+     * @deprecated The setting "papi_section" has been deprecated.
+     */
     readonly papiSection?: pulumi.Input<string>;
-    readonly properties?: pulumi.Input<pulumi.Input<inputs.ProviderProperty>[]>;
+    /**
+     * @deprecated The setting "property" has been deprecated.
+     */
+    readonly property?: pulumi.Input<inputs.ProviderProperty>;
+    /**
+     * @deprecated The setting "property_section" has been deprecated.
+     */
     readonly propertySection?: pulumi.Input<string>;
 }

@@ -29,9 +29,6 @@ class GtmASmapAssignmentArgs:
                  as_numbers: pulumi.Input[Sequence[pulumi.Input[int]]],
                  datacenter_id: pulumi.Input[int],
                  nickname: pulumi.Input[str]):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] as_numbers: — (List)
-        """
         pulumi.set(__self__, "as_numbers", as_numbers)
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         pulumi.set(__self__, "nickname", nickname)
@@ -39,9 +36,6 @@ class GtmASmapAssignmentArgs:
     @property
     @pulumi.getter(name="asNumbers")
     def as_numbers(self) -> pulumi.Input[Sequence[pulumi.Input[int]]]:
-        """
-        — (List)
-        """
         return pulumi.get(self, "as_numbers")
 
     @as_numbers.setter
@@ -101,9 +95,6 @@ class GtmCidrmapAssignmentArgs:
                  datacenter_id: pulumi.Input[int],
                  nickname: pulumi.Input[str],
                  blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] blocks: — (List)
-        """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         pulumi.set(__self__, "nickname", nickname)
         if blocks is not None:
@@ -130,9 +121,6 @@ class GtmCidrmapAssignmentArgs:
     @property
     @pulumi.getter
     def blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        — (List)
-        """
         return pulumi.get(self, "blocks")
 
     @blocks.setter
@@ -174,11 +162,6 @@ class GtmDatacenterDefaultLoadObjectArgs:
                  load_object: Optional[pulumi.Input[str]] = None,
                  load_object_port: Optional[pulumi.Input[int]] = None,
                  load_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] load_servers: — (List)
-               * `city`
-               * `clone_of`
-        """
         if load_object is not None:
             pulumi.set(__self__, "load_object", load_object)
         if load_object_port is not None:
@@ -207,11 +190,6 @@ class GtmDatacenterDefaultLoadObjectArgs:
     @property
     @pulumi.getter(name="loadServers")
     def load_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        — (List)
-        * `city`
-        * `clone_of`
-        """
         return pulumi.get(self, "load_servers")
 
     @load_servers.setter
@@ -225,9 +203,6 @@ class GtmGeomapAssignmentArgs:
                  datacenter_id: pulumi.Input[int],
                  nickname: pulumi.Input[str],
                  countries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] countries: — (List)
-        """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         pulumi.set(__self__, "nickname", nickname)
         if countries is not None:
@@ -254,9 +229,6 @@ class GtmGeomapAssignmentArgs:
     @property
     @pulumi.getter
     def countries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        — (List)
-        """
         return pulumi.get(self, "countries")
 
     @countries.setter
@@ -319,34 +291,6 @@ class GtmPropertyLivenessTestArgs:
                  test_object_port: Optional[pulumi.Input[int]] = None,
                  test_object_username: Optional[pulumi.Input[str]] = None,
                  timeout_penalty: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[str] name: — Liveness test name
-               * `test_interval`
-               * `test_object_protocol`
-               * `test_timeout`
-        :param pulumi.Input[bool] answers_required: — (Boolean)
-        :param pulumi.Input[bool] disable_nonstandard_port_warning: — (Boolean)
-               * `error_penalty`
-        :param pulumi.Input[bool] disabled: — (Boolean)
-        :param pulumi.Input[bool] http_error3xx: — (Boolean)
-        :param pulumi.Input[bool] http_error4xx: — (Boolean)
-        :param pulumi.Input[bool] http_error5xx: — (Boolean)
-        :param pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestHttpHeaderArgs']]] http_headers: — (multiple allowed)
-               `name`
-               `value`
-        :param pulumi.Input[bool] peer_certificate_verification: — (Boolean)
-        :param pulumi.Input[bool] recursion_requested: — (Boolean)
-               * `request_string`
-               * `resource_type`
-               * `response_string`
-               * `ssl_client_certificate`
-               * `ssl_client_private_key`
-               * `test_object`
-               * `test_object_password`
-               * `test_object_port`
-               * `test_object_username`
-               * `timeout_penalty`
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "test_interval", test_interval)
         pulumi.set(__self__, "test_object", test_object)
@@ -394,12 +338,6 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        — Liveness test name
-        * `test_interval`
-        * `test_object_protocol`
-        * `test_timeout`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -445,9 +383,6 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="answersRequired")
     def answers_required(self) -> Optional[pulumi.Input[bool]]:
-        """
-        — (Boolean)
-        """
         return pulumi.get(self, "answers_required")
 
     @answers_required.setter
@@ -457,10 +392,6 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="disableNonstandardPortWarning")
     def disable_nonstandard_port_warning(self) -> Optional[pulumi.Input[bool]]:
-        """
-        — (Boolean)
-        * `error_penalty`
-        """
         return pulumi.get(self, "disable_nonstandard_port_warning")
 
     @disable_nonstandard_port_warning.setter
@@ -470,9 +401,6 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter
     def disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        — (Boolean)
-        """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
@@ -491,9 +419,6 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="httpError3xx")
     def http_error3xx(self) -> Optional[pulumi.Input[bool]]:
-        """
-        — (Boolean)
-        """
         return pulumi.get(self, "http_error3xx")
 
     @http_error3xx.setter
@@ -503,9 +428,6 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="httpError4xx")
     def http_error4xx(self) -> Optional[pulumi.Input[bool]]:
-        """
-        — (Boolean)
-        """
         return pulumi.get(self, "http_error4xx")
 
     @http_error4xx.setter
@@ -515,9 +437,6 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="httpError5xx")
     def http_error5xx(self) -> Optional[pulumi.Input[bool]]:
-        """
-        — (Boolean)
-        """
         return pulumi.get(self, "http_error5xx")
 
     @http_error5xx.setter
@@ -527,11 +446,6 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="httpHeaders")
     def http_headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestHttpHeaderArgs']]]]:
-        """
-        — (multiple allowed)
-        `name`
-        `value`
-        """
         return pulumi.get(self, "http_headers")
 
     @http_headers.setter
@@ -541,9 +455,6 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="peerCertificateVerification")
     def peer_certificate_verification(self) -> Optional[pulumi.Input[bool]]:
-        """
-        — (Boolean)
-        """
         return pulumi.get(self, "peer_certificate_verification")
 
     @peer_certificate_verification.setter
@@ -553,19 +464,6 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="recursionRequested")
     def recursion_requested(self) -> Optional[pulumi.Input[bool]]:
-        """
-        — (Boolean)
-        * `request_string`
-        * `resource_type`
-        * `response_string`
-        * `ssl_client_certificate`
-        * `ssl_client_private_key`
-        * `test_object`
-        * `test_object_password`
-        * `test_object_port`
-        * `test_object_username`
-        * `timeout_penalty`
-        """
         return pulumi.get(self, "recursion_requested")
 
     @recursion_requested.setter
@@ -659,12 +557,6 @@ class GtmPropertyLivenessTestHttpHeaderArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: — Liveness test name
-               * `test_interval`
-               * `test_object_protocol`
-               * `test_timeout`
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if value is not None:
@@ -673,12 +565,6 @@ class GtmPropertyLivenessTestHttpHeaderArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        — Liveness test name
-        * `test_interval`
-        * `test_object_protocol`
-        * `test_timeout`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -701,11 +587,6 @@ class GtmPropertyStaticRrSetArgs:
                  rdatas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ttl: Optional[pulumi.Input[int]] = None,
                  type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] rdatas: — (List)
-        :param pulumi.Input[str] type: — Property type  
-               * `score_aggregation_type`
-        """
         if rdatas is not None:
             pulumi.set(__self__, "rdatas", rdatas)
         if ttl is not None:
@@ -716,9 +597,6 @@ class GtmPropertyStaticRrSetArgs:
     @property
     @pulumi.getter
     def rdatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        — (List)
-        """
         return pulumi.get(self, "rdatas")
 
     @rdatas.setter
@@ -737,10 +615,6 @@ class GtmPropertyStaticRrSetArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        — Property type  
-        * `score_aggregation_type`
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -757,15 +631,6 @@ class GtmPropertyTrafficTargetArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  weight: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[bool] enabled: — (Boolean)
-               * `weight`
-        :param pulumi.Input[str] name: — Liveness test name
-               * `test_interval`
-               * `test_object_protocol`
-               * `test_timeout`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] servers: — (List)
-        """
         if datacenter_id is not None:
             pulumi.set(__self__, "datacenter_id", datacenter_id)
         if enabled is not None:
@@ -791,10 +656,6 @@ class GtmPropertyTrafficTargetArgs:
     @property
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        — (Boolean)
-        * `weight`
-        """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
@@ -813,12 +674,6 @@ class GtmPropertyTrafficTargetArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        — Liveness test name
-        * `test_interval`
-        * `test_object_protocol`
-        * `test_timeout`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -828,9 +683,6 @@ class GtmPropertyTrafficTargetArgs:
     @property
     @pulumi.getter
     def servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        — (List)
-        """
         return pulumi.get(self, "servers")
 
     @servers.setter
@@ -855,19 +707,6 @@ class GtmResourceResourceInstanceArgs:
                  load_object_port: Optional[pulumi.Input[int]] = None,
                  load_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  use_default_load_object: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] load_servers: — (List)
-        :param pulumi.Input[bool] use_default_load_object: — (Boolean)
-               * `host_header`
-               * `least_squares_decay`
-               * `upper_bound`
-               * `description`
-               * `leader_string`
-               * `constrained_property`
-               * `load_imbalance_percent`
-               * `max_u_multiplicative_increment`
-               * `decay_rate`
-        """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         if load_object is not None:
             pulumi.set(__self__, "load_object", load_object)
@@ -908,9 +747,6 @@ class GtmResourceResourceInstanceArgs:
     @property
     @pulumi.getter(name="loadServers")
     def load_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        — (List)
-        """
         return pulumi.get(self, "load_servers")
 
     @load_servers.setter
@@ -920,18 +756,6 @@ class GtmResourceResourceInstanceArgs:
     @property
     @pulumi.getter(name="useDefaultLoadObject")
     def use_default_load_object(self) -> Optional[pulumi.Input[bool]]:
-        """
-        — (Boolean)
-        * `host_header`
-        * `least_squares_decay`
-        * `upper_bound`
-        * `description`
-        * `leader_string`
-        * `constrained_property`
-        * `load_imbalance_percent`
-        * `max_u_multiplicative_increment`
-        * `decay_rate`
-        """
         return pulumi.get(self, "use_default_load_object")
 
     @use_default_load_object.setter

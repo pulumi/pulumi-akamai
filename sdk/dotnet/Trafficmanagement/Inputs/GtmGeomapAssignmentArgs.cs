@@ -14,10 +14,6 @@ namespace Pulumi.Akamai.Trafficmanagement.Inputs
     {
         [Input("countries")]
         private InputList<string>? _countries;
-
-        /// <summary>
-        /// — (List)
-        /// </summary>
         public InputList<string> Countries
         {
             get => _countries ?? (_countries = new InputList<string>());

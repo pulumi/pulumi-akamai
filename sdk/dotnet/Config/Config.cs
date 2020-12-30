@@ -8,46 +8,82 @@ namespace Pulumi.Akamai
     public static class Config
     {
         private static readonly Pulumi.Config __config = new Pulumi.Config("akamai");
-        public static ImmutableArray<Pulumi.Akamai.Config.Types.Dns> Dns { get; set; } = __config.GetObject<ImmutableArray<Pulumi.Akamai.Config.Types.Dns>>("dns");
+        public static string? AppsecSection { get; set; } = __config.Get("appsecSection");
+
+        public static ImmutableArray<Pulumi.Akamai.Config.Types.Appsecs> Appsecs { get; set; } = __config.GetObject<ImmutableArray<Pulumi.Akamai.Config.Types.Appsecs>>("appsecs");
+
+        public static bool? CacheEnabled { get; set; } = __config.GetBoolean("cacheEnabled");
+
+        public static Pulumi.Akamai.Config.Types.Config? ConfigDetails { get; set; } = __config.GetObject<Pulumi.Akamai.Config.Types.Config>("config");
+
+        /// <summary>
+        /// The section of the edgerc file to use for configuration
+        /// </summary>
+        public static string? ConfigSection { get; set; } = __config.Get("configSection");
+
+        public static Pulumi.Akamai.Config.Types.Dns? Dns { get; set; } = __config.GetObject<Pulumi.Akamai.Config.Types.Dns>("dns");
 
         public static string? DnsSection { get; set; } = __config.Get("dnsSection");
 
         public static string? Edgerc { get; set; } = __config.Get("edgerc");
 
-        public static string? GtmSection { get; set; } = __config.Get("gtmSection");
+        public static Pulumi.Akamai.Config.Types.Gtm? Gtm { get; set; } = __config.GetObject<Pulumi.Akamai.Config.Types.Gtm>("gtm");
 
-        public static ImmutableArray<Pulumi.Akamai.Config.Types.Gtms> Gtms { get; set; } = __config.GetObject<ImmutableArray<Pulumi.Akamai.Config.Types.Gtms>>("gtms");
+        public static string? GtmSection { get; set; } = __config.Get("gtmSection");
 
         public static string? PapiSection { get; set; } = __config.Get("papiSection");
 
-        public static ImmutableArray<Pulumi.Akamai.Config.Types.Properties> Properties { get; set; } = __config.GetObject<ImmutableArray<Pulumi.Akamai.Config.Types.Properties>>("properties");
+        public static Pulumi.Akamai.Config.Types.Property? Property { get; set; } = __config.GetObject<Pulumi.Akamai.Config.Types.Property>("property");
 
         public static string? PropertySection { get; set; } = __config.Get("propertySection");
 
         public static class Types
         {
 
+             public class Appsecs
+             {
+                public string? AccessToken { get; set; } = null!;
+                public string? AccountKey { get; set; } = null!;
+                public string? ClientSecret { get; set; } = null!;
+                public string? ClientToken { get; set; } = null!;
+                public string? Host { get; set; } = null!;
+                public int? MaxBody { get; set; }
+            }
+
+             public class Config
+             {
+                public string? AccessToken { get; set; } = null!;
+                public string? AccountKey { get; set; } = null!;
+                public string? ClientSecret { get; set; } = null!;
+                public string? ClientToken { get; set; } = null!;
+                public string? Host { get; set; } = null!;
+                public int? MaxBody { get; set; }
+            }
+
              public class Dns
              {
                 public string? AccessToken { get; set; } = null!;
+                public string? AccountKey { get; set; } = null!;
                 public string? ClientSecret { get; set; } = null!;
                 public string? ClientToken { get; set; } = null!;
                 public string? Host { get; set; } = null!;
                 public int? MaxBody { get; set; }
             }
 
-             public class Gtms
+             public class Gtm
              {
                 public string? AccessToken { get; set; } = null!;
+                public string? AccountKey { get; set; } = null!;
                 public string? ClientSecret { get; set; } = null!;
                 public string? ClientToken { get; set; } = null!;
                 public string? Host { get; set; } = null!;
                 public int? MaxBody { get; set; }
             }
 
-             public class Properties
+             public class Property
              {
                 public string? AccessToken { get; set; } = null!;
+                public string? AccountKey { get; set; } = null!;
                 public string? ClientSecret { get; set; } = null!;
                 public string? ClientToken { get; set; } = null!;
                 public string? Host { get; set; } = null!;

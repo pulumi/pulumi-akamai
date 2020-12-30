@@ -12,20 +12,27 @@ from ._inputs import *
 
 __all__ = ['Property']
 
+warnings.warn("""akamai.properties.Property has been deprecated in favor of akamai.Property""", DeprecationWarning)
+
 
 class Property(pulumi.CustomResource):
+    warnings.warn("""akamai.properties.Property has been deprecated in favor of akamai.Property""", DeprecationWarning)
+
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  contract: Optional[pulumi.Input[str]] = None,
+                 contract_id: Optional[pulumi.Input[str]] = None,
                  cp_code: Optional[pulumi.Input[str]] = None,
                  group: Optional[pulumi.Input[str]] = None,
+                 group_id: Optional[pulumi.Input[str]] = None,
                  hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_secure: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  origins: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]]] = None,
                  product: Optional[pulumi.Input[str]] = None,
+                 product_id: Optional[pulumi.Input[str]] = None,
                  rule_format: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input[str]] = None,
                  variables: Optional[pulumi.Input[str]] = None,
@@ -33,47 +40,18 @@ class Property(pulumi.CustomResource):
                  __name__=None,
                  __opts__=None):
         """
-        The `properties.Property` resource represents an Akamai property configuration, allowing you to create,
-        update, and activate properties on the Akamai platform.
-
-        ## Example Usage
-        ### Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        example = akamai.properties.Property("example",
-            contacts=["user@example.org"],
-            contract="ctr_####",
-            cp_code="cpc_#####",
-            group="grp_####",
-            hostnames={
-                "example.org": "example.org.edgesuite.net",
-                "sub.example.org": "sub.example.org.edgesuite.net",
-                "www.example.org": "example.org.edgesuite.net",
-            },
-            product="prd_SPM",
-            rule_format="v2018-02-27",
-            rules=data["local_file"]["terraform-demo"]["content"],
-            variables=akamai_property_variables["origin"]["json"])
-        ```
-
+        Create a Property resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] contacts: — (Required) One or more email addresses to inform about activation changes.
-        :param pulumi.Input[str] contract: — (Optional) The contract ID.
-        :param pulumi.Input[str] cp_code: — (Optional) The CP Code id or name to use (or create). Required unless a [cpCode behavior](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#cpcode) is present in the default rule.
-        :param pulumi.Input[str] group: — (Optional) The group ID.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] hostnames: — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
-        :param pulumi.Input[bool] is_secure: — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
-        :param pulumi.Input[str] name: — (Required) The property name.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]] origins: — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
-        :param pulumi.Input[str] product: — (Optional) The product ID. (Default: `prd_SPM` for Ion)
-        :param pulumi.Input[str] rule_format: — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
-        :param pulumi.Input[str] rules: — (Required) A JSON encoded string of property rules (see: [`properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
-        :param pulumi.Input[str] variables: — (Optional) A JSON encoded string of property manager variable definitions (see: [`properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
+        :param pulumi.Input[str] contract_id: Contract ID to be assigned to the Property
+        :param pulumi.Input[str] group_id: Group ID to be assigned to the Property
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] hostnames: Mapping of edge hostname CNAMEs to other CNAMEs
+        :param pulumi.Input[str] name: Name to give to the Property (must be unique)
+        :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
+        :param pulumi.Input[str] rule_format: Specify the rule format version (defaults to latest version available when created)
+        :param pulumi.Input[str] rules: Property Rules as JSON
         """
+        pulumi.log.warn("Property is deprecated: akamai.properties.Property has been deprecated in favor of akamai.Property")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__
@@ -91,28 +69,50 @@ class Property(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = dict()
 
-            if contacts is None:
-                raise TypeError("Missing required property 'contacts'")
+            if contacts is not None and not opts.urn:
+                warnings.warn("""\"contact\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
+                pulumi.log.warn("contacts is deprecated: \"contact\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")
             __props__['contacts'] = contacts
+            if contract is not None and not opts.urn:
+                warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
+                pulumi.log.warn("contract is deprecated: use \"contract_id\" attribute instead")
             __props__['contract'] = contract
+            __props__['contract_id'] = contract_id
+            if cp_code is not None and not opts.urn:
+                warnings.warn("""\"cp_code\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
+                pulumi.log.warn("cp_code is deprecated: \"cp_code\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")
             __props__['cp_code'] = cp_code
+            if group is not None and not opts.urn:
+                warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
+                pulumi.log.warn("group is deprecated: use \"group_id\" attribute instead")
             __props__['group'] = group
-            if hostnames is None:
-                raise TypeError("Missing required property 'hostnames'")
+            __props__['group_id'] = group_id
             __props__['hostnames'] = hostnames
+            if is_secure is not None and not opts.urn:
+                warnings.warn("""\"is_secure\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
+                pulumi.log.warn("is_secure is deprecated: \"is_secure\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")
             __props__['is_secure'] = is_secure
             __props__['name'] = name
+            if origins is not None and not opts.urn:
+                warnings.warn("""\"origin\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
+                pulumi.log.warn("origins is deprecated: \"origin\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")
             __props__['origins'] = origins
+            if product is not None and not opts.urn:
+                warnings.warn("""use \"product_id\" attribute instead""", DeprecationWarning)
+                pulumi.log.warn("product is deprecated: use \"product_id\" attribute instead")
             __props__['product'] = product
+            __props__['product_id'] = product_id
             __props__['rule_format'] = rule_format
             __props__['rules'] = rules
+            if variables is not None and not opts.urn:
+                warnings.warn("""\"variables\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
+                pulumi.log.warn("variables is deprecated: \"variables\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")
             __props__['variables'] = variables
-            __props__['account'] = None
-            __props__['edge_hostnames'] = None
+            __props__['latest_version'] = None
             __props__['production_version'] = None
-            __props__['rulessha'] = None
+            __props__['rule_errors'] = None
+            __props__['rule_warnings'] = None
             __props__['staging_version'] = None
-            __props__['version'] = None
         super(Property, __self__).__init__(
             'akamai:properties/property:Property',
             resource_name,
@@ -123,24 +123,26 @@ class Property(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account: Optional[pulumi.Input[str]] = None,
             contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             contract: Optional[pulumi.Input[str]] = None,
+            contract_id: Optional[pulumi.Input[str]] = None,
             cp_code: Optional[pulumi.Input[str]] = None,
-            edge_hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             group: Optional[pulumi.Input[str]] = None,
+            group_id: Optional[pulumi.Input[str]] = None,
             hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             is_secure: Optional[pulumi.Input[bool]] = None,
+            latest_version: Optional[pulumi.Input[int]] = None,
             name: Optional[pulumi.Input[str]] = None,
             origins: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]]] = None,
             product: Optional[pulumi.Input[str]] = None,
+            product_id: Optional[pulumi.Input[str]] = None,
             production_version: Optional[pulumi.Input[int]] = None,
+            rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleErrorArgs']]]]] = None,
             rule_format: Optional[pulumi.Input[str]] = None,
+            rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleWarningArgs']]]]] = None,
             rules: Optional[pulumi.Input[str]] = None,
-            rulessha: Optional[pulumi.Input[str]] = None,
             staging_version: Optional[pulumi.Input[int]] = None,
-            variables: Optional[pulumi.Input[str]] = None,
-            version: Optional[pulumi.Input[int]] = None) -> 'Property':
+            variables: Optional[pulumi.Input[str]] = None) -> 'Property':
         """
         Get an existing Property resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -148,188 +150,172 @@ class Property(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] account: — the Account ID under which the property is created.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] contacts: — (Required) One or more email addresses to inform about activation changes.
-        :param pulumi.Input[str] contract: — (Optional) The contract ID.
-        :param pulumi.Input[str] cp_code: — (Optional) The CP Code id or name to use (or create). Required unless a [cpCode behavior](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#cpcode) is present in the default rule.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] edge_hostnames: — the final public hostname to edge hostname map
-        :param pulumi.Input[str] group: — (Optional) The group ID.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] hostnames: — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
-        :param pulumi.Input[bool] is_secure: — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
-        :param pulumi.Input[str] name: — (Required) The property name.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]] origins: — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
-        :param pulumi.Input[str] product: — (Optional) The product ID. (Default: `prd_SPM` for Ion)
-        :param pulumi.Input[int] production_version: — the current version of the property active on the production network.
-        :param pulumi.Input[str] rule_format: — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
-        :param pulumi.Input[str] rules: — (Required) A JSON encoded string of property rules (see: [`properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
-        :param pulumi.Input[int] staging_version: — the current version of the property active on the staging network.
-        :param pulumi.Input[str] variables: — (Optional) A JSON encoded string of property manager variable definitions (see: [`properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
-        :param pulumi.Input[int] version: — the current version of the property config.
+        :param pulumi.Input[str] contract_id: Contract ID to be assigned to the Property
+        :param pulumi.Input[str] group_id: Group ID to be assigned to the Property
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] hostnames: Mapping of edge hostname CNAMEs to other CNAMEs
+        :param pulumi.Input[int] latest_version: Property's current latest version number
+        :param pulumi.Input[str] name: Name to give to the Property (must be unique)
+        :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
+        :param pulumi.Input[int] production_version: Property's version currently activated in production (zero when not active in production)
+        :param pulumi.Input[str] rule_format: Specify the rule format version (defaults to latest version available when created)
+        :param pulumi.Input[str] rules: Property Rules as JSON
+        :param pulumi.Input[int] staging_version: Property's version currently activated in staging (zero when not active in staging)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = dict()
 
-        __props__["account"] = account
         __props__["contacts"] = contacts
         __props__["contract"] = contract
+        __props__["contract_id"] = contract_id
         __props__["cp_code"] = cp_code
-        __props__["edge_hostnames"] = edge_hostnames
         __props__["group"] = group
+        __props__["group_id"] = group_id
         __props__["hostnames"] = hostnames
         __props__["is_secure"] = is_secure
+        __props__["latest_version"] = latest_version
         __props__["name"] = name
         __props__["origins"] = origins
         __props__["product"] = product
+        __props__["product_id"] = product_id
         __props__["production_version"] = production_version
+        __props__["rule_errors"] = rule_errors
         __props__["rule_format"] = rule_format
+        __props__["rule_warnings"] = rule_warnings
         __props__["rules"] = rules
-        __props__["rulessha"] = rulessha
         __props__["staging_version"] = staging_version
         __props__["variables"] = variables
-        __props__["version"] = version
         return Property(resource_name, opts=opts, __props__=__props__)
 
     @property
     @pulumi.getter
-    def account(self) -> pulumi.Output[str]:
-        """
-        — the Account ID under which the property is created.
-        """
-        return pulumi.get(self, "account")
-
-    @property
-    @pulumi.getter
-    def contacts(self) -> pulumi.Output[Sequence[str]]:
-        """
-        — (Required) One or more email addresses to inform about activation changes.
-        """
+    def contacts(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "contacts")
 
     @property
     @pulumi.getter
-    def contract(self) -> pulumi.Output[Optional[str]]:
-        """
-        — (Optional) The contract ID.
-        """
+    def contract(self) -> pulumi.Output[str]:
         return pulumi.get(self, "contract")
+
+    @property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> pulumi.Output[str]:
+        """
+        Contract ID to be assigned to the Property
+        """
+        return pulumi.get(self, "contract_id")
 
     @property
     @pulumi.getter(name="cpCode")
     def cp_code(self) -> pulumi.Output[Optional[str]]:
-        """
-        — (Optional) The CP Code id or name to use (or create). Required unless a [cpCode behavior](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#cpcode) is present in the default rule.
-        """
         return pulumi.get(self, "cp_code")
 
     @property
-    @pulumi.getter(name="edgeHostnames")
-    def edge_hostnames(self) -> pulumi.Output[Mapping[str, str]]:
-        """
-        — the final public hostname to edge hostname map
-        """
-        return pulumi.get(self, "edge_hostnames")
-
-    @property
     @pulumi.getter
-    def group(self) -> pulumi.Output[Optional[str]]:
-        """
-        — (Optional) The group ID.
-        """
+    def group(self) -> pulumi.Output[str]:
         return pulumi.get(self, "group")
 
     @property
-    @pulumi.getter
-    def hostnames(self) -> pulumi.Output[Mapping[str, str]]:
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> pulumi.Output[str]:
         """
-        — (Required) A map of public hostnames to edge hostnames (e.g. `{"example.org" = "example.org.edgesuite.net"}`)
+        Group ID to be assigned to the Property
+        """
+        return pulumi.get(self, "group_id")
+
+    @property
+    @pulumi.getter
+    def hostnames(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
+        """
+        Mapping of edge hostname CNAMEs to other CNAMEs
         """
         return pulumi.get(self, "hostnames")
 
     @property
     @pulumi.getter(name="isSecure")
     def is_secure(self) -> pulumi.Output[Optional[bool]]:
-        """
-        — (Optional) Whether the property is a secure (Enhanced TLS) property or not.
-        """
         return pulumi.get(self, "is_secure")
+
+    @property
+    @pulumi.getter(name="latestVersion")
+    def latest_version(self) -> pulumi.Output[int]:
+        """
+        Property's current latest version number
+        """
+        return pulumi.get(self, "latest_version")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        — (Required) The property name.
+        Name to give to the Property (must be unique)
         """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def origins(self) -> pulumi.Output[Optional[Sequence['outputs.PropertyOrigin']]]:
-        """
-        — (Optional) The property origin (an origin must be specified to activate a property, but may be defined in your rules block).
-        """
         return pulumi.get(self, "origins")
 
     @property
     @pulumi.getter
-    def product(self) -> pulumi.Output[Optional[str]]:
-        """
-        — (Optional) The product ID. (Default: `prd_SPM` for Ion)
-        """
+    def product(self) -> pulumi.Output[str]:
         return pulumi.get(self, "product")
+
+    @property
+    @pulumi.getter(name="productId")
+    def product_id(self) -> pulumi.Output[str]:
+        """
+        Product ID to be assigned to the Property
+        """
+        return pulumi.get(self, "product_id")
 
     @property
     @pulumi.getter(name="productionVersion")
     def production_version(self) -> pulumi.Output[int]:
         """
-        — the current version of the property active on the production network.
+        Property's version currently activated in production (zero when not active in production)
         """
         return pulumi.get(self, "production_version")
 
     @property
+    @pulumi.getter(name="ruleErrors")
+    def rule_errors(self) -> pulumi.Output[Sequence['outputs.PropertyRuleError']]:
+        return pulumi.get(self, "rule_errors")
+
+    @property
     @pulumi.getter(name="ruleFormat")
-    def rule_format(self) -> pulumi.Output[Optional[str]]:
+    def rule_format(self) -> pulumi.Output[str]:
         """
-        — (Optional) The rule format to use ([more](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats)).
+        Specify the rule format version (defaults to latest version available when created)
         """
         return pulumi.get(self, "rule_format")
 
     @property
-    @pulumi.getter
-    def rules(self) -> pulumi.Output[Optional[str]]:
-        """
-        — (Required) A JSON encoded string of property rules (see: [`properties.PropertyRules`](https://www.terraform.io/docs/providers/akamai/d/property_rules.html))
-        """
-        return pulumi.get(self, "rules")
+    @pulumi.getter(name="ruleWarnings")
+    def rule_warnings(self) -> pulumi.Output[Sequence['outputs.PropertyRuleWarning']]:
+        return pulumi.get(self, "rule_warnings")
 
     @property
     @pulumi.getter
-    def rulessha(self) -> pulumi.Output[str]:
-        return pulumi.get(self, "rulessha")
+    def rules(self) -> pulumi.Output[str]:
+        """
+        Property Rules as JSON
+        """
+        return pulumi.get(self, "rules")
 
     @property
     @pulumi.getter(name="stagingVersion")
     def staging_version(self) -> pulumi.Output[int]:
         """
-        — the current version of the property active on the staging network.
+        Property's version currently activated in staging (zero when not active in staging)
         """
         return pulumi.get(self, "staging_version")
 
     @property
     @pulumi.getter
     def variables(self) -> pulumi.Output[Optional[str]]:
-        """
-        — (Optional) A JSON encoded string of property manager variable definitions (see: [`properties.PropertyVariables`](https://www.terraform.io/docs/providers/akamai/r/property_variables.html))
-        """
         return pulumi.get(self, "variables")
-
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Output[int]:
-        """
-        — the current version of the property config.
-        """
-        return pulumi.get(self, "version")
 
     def translate_output_property(self, prop):
         return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop

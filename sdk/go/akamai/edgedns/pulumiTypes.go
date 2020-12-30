@@ -12,11 +12,8 @@ import (
 
 type DnsZoneTsigKey struct {
 	Algorithm string `pulumi:"algorithm"`
-	// key name
-	// * `algorithm`
-	// * `secret`
-	Name   string `pulumi:"name"`
-	Secret string `pulumi:"secret"`
+	Name      string `pulumi:"name"`
+	Secret    string `pulumi:"secret"`
 }
 
 // DnsZoneTsigKeyInput is an input type that accepts DnsZoneTsigKeyArgs and DnsZoneTsigKeyOutput values.
@@ -32,11 +29,8 @@ type DnsZoneTsigKeyInput interface {
 
 type DnsZoneTsigKeyArgs struct {
 	Algorithm pulumi.StringInput `pulumi:"algorithm"`
-	// key name
-	// * `algorithm`
-	// * `secret`
-	Name   pulumi.StringInput `pulumi:"name"`
-	Secret pulumi.StringInput `pulumi:"secret"`
+	Name      pulumi.StringInput `pulumi:"name"`
+	Secret    pulumi.StringInput `pulumi:"secret"`
 }
 
 func (DnsZoneTsigKeyArgs) ElementType() reflect.Type {
@@ -119,9 +113,6 @@ func (o DnsZoneTsigKeyOutput) Algorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v DnsZoneTsigKey) string { return v.Algorithm }).(pulumi.StringOutput)
 }
 
-// key name
-// * `algorithm`
-// * `secret`
 func (o DnsZoneTsigKeyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v DnsZoneTsigKey) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -157,9 +148,6 @@ func (o DnsZoneTsigKeyPtrOutput) Algorithm() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// key name
-// * `algorithm`
-// * `secret`
 func (o DnsZoneTsigKeyPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DnsZoneTsigKey) *string {
 		if v == nil {

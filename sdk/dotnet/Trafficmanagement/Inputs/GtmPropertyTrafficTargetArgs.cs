@@ -15,31 +15,17 @@ namespace Pulumi.Akamai.Trafficmanagement.Inputs
         [Input("datacenterId")]
         public Input<int>? DatacenterId { get; set; }
 
-        /// <summary>
-        /// — (Boolean)
-        /// * `weight`
-        /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         [Input("handoutCname")]
         public Input<string>? HandoutCname { get; set; }
 
-        /// <summary>
-        /// — Liveness test name
-        /// * `test_interval`
-        /// * `test_object_protocol`
-        /// * `test_timeout`
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("servers")]
         private InputList<string>? _servers;
-
-        /// <summary>
-        /// — (List)
-        /// </summary>
         public InputList<string> Servers
         {
             get => _servers ?? (_servers = new InputList<string>());

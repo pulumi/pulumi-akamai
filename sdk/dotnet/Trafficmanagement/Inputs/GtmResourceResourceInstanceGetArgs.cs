@@ -23,28 +23,12 @@ namespace Pulumi.Akamai.Trafficmanagement.Inputs
 
         [Input("loadServers")]
         private InputList<string>? _loadServers;
-
-        /// <summary>
-        /// — (List)
-        /// </summary>
         public InputList<string> LoadServers
         {
             get => _loadServers ?? (_loadServers = new InputList<string>());
             set => _loadServers = value;
         }
 
-        /// <summary>
-        /// — (Boolean)
-        /// * `host_header`
-        /// * `least_squares_decay`
-        /// * `upper_bound`
-        /// * `description`
-        /// * `leader_string`
-        /// * `constrained_property`
-        /// * `load_imbalance_percent`
-        /// * `max_u_multiplicative_increment`
-        /// * `decay_rate`
-        /// </summary>
         [Input("useDefaultLoadObject")]
         public Input<bool>? UseDefaultLoadObject { get; set; }
 

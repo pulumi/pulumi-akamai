@@ -2,33 +2,11 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "../types/input";
-import * as outputs from "../types/output";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
- * The `akamai.edgedns.DnsZone` provides the resource for configuring a dns zone to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
- *
- * ## Example Usage
- * ### Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const demozone = new akamai.edgedns.DnsZone("demozone", {
- *     comment: "some comment",
- *     contract: "ctr_XXX",
- *     group: "100",
- *     masters: [
- *         "1.2.3.4",
- *         "1.2.3.5",
- *     ],
- *     signAndServe: false,
- *     type: "secondary",
- *     zone: "example.com",
- * });
- * ```
+ * @deprecated akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone
  */
 export class DnsZone extends pulumi.CustomResource {
     /**
@@ -41,6 +19,7 @@ export class DnsZone extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: DnsZoneState, opts?: pulumi.CustomResourceOptions): DnsZone {
+        pulumi.log.warn("DnsZone is deprecated: akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone")
         return new DnsZone(name, <any>state, { ...opts, id: id });
     }
 
@@ -60,50 +39,17 @@ export class DnsZone extends pulumi.CustomResource {
 
     public /*out*/ readonly activationState!: pulumi.Output<string>;
     public /*out*/ readonly aliasCount!: pulumi.Output<number>;
-    /**
-     * — (Required) A descriptive comment.
-     */
     public readonly comment!: pulumi.Output<string | undefined>;
-    /**
-     * — (Required) The contract ID.
-     */
     public readonly contract!: pulumi.Output<string>;
-    /**
-     * — (Optional)
-     */
     public readonly endCustomerId!: pulumi.Output<string | undefined>;
-    /**
-     * — (Required) The currently selected group ID.
-     */
     public readonly group!: pulumi.Output<string>;
-    /**
-     * — (Required for Secondary) The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
-     */
     public readonly masters!: pulumi.Output<string[] | undefined>;
-    /**
-     * — (Optional) Whether DNSSEC Sign&Serve is enabled.
-     */
     public readonly signAndServe!: pulumi.Output<boolean | undefined>;
-    /**
-     * — (Optional) Algorithm used by Sign&Serve.
-     */
     public readonly signAndServeAlgorithm!: pulumi.Output<string | undefined>;
-    /**
-     * — (Required for Alias)
-     */
     public readonly target!: pulumi.Output<string | undefined>;
-    /**
-     * — (Optional) TSIG Key used in secure zone transfers
-     */
     public readonly tsigKey!: pulumi.Output<outputs.edgedns.DnsZoneTsigKey | undefined>;
-    /**
-     * — (Required) Whether the zone is primary or secondary.
-     */
     public readonly type!: pulumi.Output<string>;
     public /*out*/ readonly versionId!: pulumi.Output<string>;
-    /**
-     * — (Required) Domain zone, encapsulating any nested subdomains.
-     */
     public readonly zone!: pulumi.Output<string>;
 
     /**
@@ -113,8 +59,11 @@ export class DnsZone extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
+    /** @deprecated akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone */
     constructor(name: string, args: DnsZoneArgs, opts?: pulumi.CustomResourceOptions)
+    /** @deprecated akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone */
     constructor(name: string, argsOrState?: DnsZoneArgs | DnsZoneState, opts?: pulumi.CustomResourceOptions) {
+        pulumi.log.warn("DnsZone is deprecated: akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone")
         let inputs: pulumi.Inputs = {};
         if (opts && opts.id) {
             const state = argsOrState as DnsZoneState | undefined;
@@ -134,16 +83,16 @@ export class DnsZone extends pulumi.CustomResource {
             inputs["zone"] = state ? state.zone : undefined;
         } else {
             const args = argsOrState as DnsZoneArgs | undefined;
-            if (!args || args.contract === undefined) {
+            if ((!args || args.contract === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'contract'");
             }
-            if (!args || args.group === undefined) {
+            if ((!args || args.group === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'group'");
             }
-            if (!args || args.type === undefined) {
+            if ((!args || args.type === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'type'");
             }
-            if (!args || args.zone === undefined) {
+            if ((!args || args.zone === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'zone'");
             }
             inputs["comment"] = args ? args.comment : undefined;
@@ -178,50 +127,17 @@ export class DnsZone extends pulumi.CustomResource {
 export interface DnsZoneState {
     readonly activationState?: pulumi.Input<string>;
     readonly aliasCount?: pulumi.Input<number>;
-    /**
-     * — (Required) A descriptive comment.
-     */
     readonly comment?: pulumi.Input<string>;
-    /**
-     * — (Required) The contract ID.
-     */
     readonly contract?: pulumi.Input<string>;
-    /**
-     * — (Optional)
-     */
     readonly endCustomerId?: pulumi.Input<string>;
-    /**
-     * — (Required) The currently selected group ID.
-     */
     readonly group?: pulumi.Input<string>;
-    /**
-     * — (Required for Secondary) The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
-     */
     readonly masters?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * — (Optional) Whether DNSSEC Sign&Serve is enabled.
-     */
     readonly signAndServe?: pulumi.Input<boolean>;
-    /**
-     * — (Optional) Algorithm used by Sign&Serve.
-     */
     readonly signAndServeAlgorithm?: pulumi.Input<string>;
-    /**
-     * — (Required for Alias)
-     */
     readonly target?: pulumi.Input<string>;
-    /**
-     * — (Optional) TSIG Key used in secure zone transfers
-     */
     readonly tsigKey?: pulumi.Input<inputs.edgedns.DnsZoneTsigKey>;
-    /**
-     * — (Required) Whether the zone is primary or secondary.
-     */
     readonly type?: pulumi.Input<string>;
     readonly versionId?: pulumi.Input<string>;
-    /**
-     * — (Required) Domain zone, encapsulating any nested subdomains.
-     */
     readonly zone?: pulumi.Input<string>;
 }
 
@@ -229,48 +145,15 @@ export interface DnsZoneState {
  * The set of arguments for constructing a DnsZone resource.
  */
 export interface DnsZoneArgs {
-    /**
-     * — (Required) A descriptive comment.
-     */
     readonly comment?: pulumi.Input<string>;
-    /**
-     * — (Required) The contract ID.
-     */
     readonly contract: pulumi.Input<string>;
-    /**
-     * — (Optional)
-     */
     readonly endCustomerId?: pulumi.Input<string>;
-    /**
-     * — (Required) The currently selected group ID.
-     */
     readonly group: pulumi.Input<string>;
-    /**
-     * — (Required for Secondary) The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
-     */
     readonly masters?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * — (Optional) Whether DNSSEC Sign&Serve is enabled.
-     */
     readonly signAndServe?: pulumi.Input<boolean>;
-    /**
-     * — (Optional) Algorithm used by Sign&Serve.
-     */
     readonly signAndServeAlgorithm?: pulumi.Input<string>;
-    /**
-     * — (Required for Alias)
-     */
     readonly target?: pulumi.Input<string>;
-    /**
-     * — (Optional) TSIG Key used in secure zone transfers
-     */
     readonly tsigKey?: pulumi.Input<inputs.edgedns.DnsZoneTsigKey>;
-    /**
-     * — (Required) Whether the zone is primary or secondary.
-     */
     readonly type: pulumi.Input<string>;
-    /**
-     * — (Required) Domain zone, encapsulating any nested subdomains.
-     */
     readonly zone: pulumi.Input<string>;
 }

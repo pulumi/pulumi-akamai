@@ -9,52 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Properties
 {
-    /// <summary>
-    /// The `akamai.properties.PropertyVariables` allows you to implement dynamic functionality. You can perform conditional logic based on the variable’s value, and catch any unforeseen errors that execute on the edge at runtime.
-    /// 
-    /// Typical uses for variables include:
-    /// 
-    /// * Simplify configurations by reducing the number of rules and behaviors.
-    /// * Improve self serviceability by replacing or extending advanced metadata.
-    /// * Automate redirects, forward path rewrites, HTTP header and cookie manipulation.
-    /// * Move origin functionality to the edge.
-    /// 
-    /// ## Example Usage
-    /// ### Basic usage:
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var origin = new Akamai.Properties.PropertyVariables("origin", new Akamai.Properties.PropertyVariablesArgs
-    ///         {
-    ///             Variables = 
-    ///             {
-    ///                 new Akamai.Properties.Inputs.PropertyVariablesVariableArgs
-    ///                 {
-    ///                     Variables = 
-    ///                     {
-    ///                         new Akamai.Properties.Inputs.PropertyVariablesVariableVariableArgs
-    ///                         {
-    ///                             Description = "Origin Hostname",
-    ///                             Hidden = true,
-    ///                             Name = "PMUSER_ORIGIN",
-    ///                             Sensitive = true,
-    ///                             Value = "origin.example.org",
-    ///                         },
-    ///                     },
-    ///                 },
-    ///             },
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// </summary>
+    [Obsolete(@"akamai.properties.PropertyVariables has been deprecated in favor of akamai.PropertyVariables")]
     public partial class PropertyVariables : Pulumi.CustomResource
     {
         /// <summary>
@@ -114,6 +69,7 @@ namespace Pulumi.Akamai.Properties
     {
         [Input("variables")]
         private InputList<Inputs.PropertyVariablesVariableArgs>? _variables;
+        [Obsolete(@"resource ""akamai_property_variables"" is no longer supported - See Akamai Terraform Upgrade Guide")]
         public InputList<Inputs.PropertyVariablesVariableArgs> Variables
         {
             get => _variables ?? (_variables = new InputList<Inputs.PropertyVariablesVariableArgs>());
@@ -135,6 +91,7 @@ namespace Pulumi.Akamai.Properties
 
         [Input("variables")]
         private InputList<Inputs.PropertyVariablesVariableGetArgs>? _variables;
+        [Obsolete(@"resource ""akamai_property_variables"" is no longer supported - See Akamai Terraform Upgrade Guide")]
         public InputList<Inputs.PropertyVariablesVariableGetArgs> Variables
         {
             get => _variables ?? (_variables = new InputList<Inputs.PropertyVariablesVariableGetArgs>());

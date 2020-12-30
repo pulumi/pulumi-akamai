@@ -19,21 +19,45 @@ class GetGroupResult:
     """
     A collection of values returned by getGroup.
     """
-    def __init__(__self__, contract=None, id=None, name=None):
+    def __init__(__self__, contract=None, contract_id=None, group_name=None, id=None, name=None):
         if contract and not isinstance(contract, str):
             raise TypeError("Expected argument 'contract' to be a str")
+        if contract is not None:
+            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("contract is deprecated: The setting \"contract\" has been deprecated.")
+
         pulumi.set(__self__, "contract", contract)
+        if contract_id and not isinstance(contract_id, str):
+            raise TypeError("Expected argument 'contract_id' to be a str")
+        pulumi.set(__self__, "contract_id", contract_id)
+        if group_name and not isinstance(group_name, str):
+            raise TypeError("Expected argument 'group_name' to be a str")
+        pulumi.set(__self__, "group_name", group_name)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
+        if name is not None:
+            warnings.warn("""The setting \"name\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("name is deprecated: The setting \"name\" has been deprecated.")
+
         pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def contract(self) -> Optional[str]:
+    def contract(self) -> str:
         return pulumi.get(self, "contract")
+
+    @property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> str:
+        return pulumi.get(self, "contract_id")
+
+    @property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> str:
+        return pulumi.get(self, "group_name")
 
     @property
     @pulumi.getter
@@ -45,7 +69,7 @@ class GetGroupResult:
 
     @property
     @pulumi.getter
-    def name(self) -> Optional[str]:
+    def name(self) -> str:
         return pulumi.get(self, "name")
 
 
@@ -56,24 +80,24 @@ class AwaitableGetGroupResult(GetGroupResult):
             yield self
         return GetGroupResult(
             contract=self.contract,
+            contract_id=self.contract_id,
+            group_name=self.group_name,
             id=self.id,
             name=self.name)
 
 
 def get_group(contract: Optional[str] = None,
+              contract_id: Optional[str] = None,
+              group_name: Optional[str] = None,
               name: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGroupResult:
     """
-    Use `getGroup` data source to retrieve a group id.
-
-    ## Example Usage
-
-
-    :param str contract: — (Optional) The contract ID
-    :param str name: — (Required) The group name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['contract'] = contract
+    __args__['contractId'] = contract_id
+    __args__['groupName'] = group_name
     __args__['name'] = name
     if opts is None:
         opts = pulumi.InvokeOptions()
@@ -83,5 +107,7 @@ def get_group(contract: Optional[str] = None,
 
     return AwaitableGetGroupResult(
         contract=__ret__.contract,
+        contract_id=__ret__.contract_id,
+        group_name=__ret__.group_name,
         id=__ret__.id,
         name=__ret__.name)

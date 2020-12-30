@@ -9,39 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Edgedns
 {
-    /// <summary>
-    /// The `akamai.edgedns.DnsZone` provides the resource for configuring a dns zone to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
-    /// 
-    /// ## Example Usage
-    /// ### Basic usage:
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var demozone = new Akamai.Edgedns.DnsZone("demozone", new Akamai.Edgedns.DnsZoneArgs
-    ///         {
-    ///             Comment = "some comment",
-    ///             Contract = "ctr_XXX",
-    ///             Group = "100",
-    ///             Masters = 
-    ///             {
-    ///                 "1.2.3.4",
-    ///                 "1.2.3.5",
-    ///             },
-    ///             SignAndServe = false,
-    ///             Type = "secondary",
-    ///             Zone = "example.com",
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// </summary>
+    [Obsolete(@"akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone")]
     public partial class DnsZone : Pulumi.CustomResource
     {
         [Output("activationState")]
@@ -50,72 +18,39 @@ namespace Pulumi.Akamai.Edgedns
         [Output("aliasCount")]
         public Output<int> AliasCount { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Required) A descriptive comment.
-        /// </summary>
         [Output("comment")]
         public Output<string?> Comment { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Required) The contract ID.
-        /// </summary>
         [Output("contract")]
         public Output<string> Contract { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Optional)
-        /// </summary>
         [Output("endCustomerId")]
         public Output<string?> EndCustomerId { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Required) The currently selected group ID.
-        /// </summary>
         [Output("group")]
         public Output<string> Group { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Required for Secondary) The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
-        /// </summary>
         [Output("masters")]
         public Output<ImmutableArray<string>> Masters { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Optional) Whether DNSSEC Sign&amp;Serve is enabled.
-        /// </summary>
         [Output("signAndServe")]
         public Output<bool?> SignAndServe { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Optional) Algorithm used by Sign&amp;Serve.
-        /// </summary>
         [Output("signAndServeAlgorithm")]
         public Output<string?> SignAndServeAlgorithm { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Required for Alias)
-        /// </summary>
         [Output("target")]
         public Output<string?> Target { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Optional) TSIG Key used in secure zone transfers
-        /// </summary>
         [Output("tsigKey")]
         public Output<Outputs.DnsZoneTsigKey?> TsigKey { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Required) Whether the zone is primary or secondary.
-        /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
 
         [Output("versionId")]
         public Output<string> VersionId { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Required) Domain zone, encapsulating any nested subdomains.
-        /// </summary>
         [Output("zone")]
         public Output<string> Zone { get; private set; } = null!;
 
@@ -165,75 +100,41 @@ namespace Pulumi.Akamai.Edgedns
 
     public sealed class DnsZoneArgs : Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// — (Required) A descriptive comment.
-        /// </summary>
         [Input("comment")]
         public Input<string>? Comment { get; set; }
 
-        /// <summary>
-        /// — (Required) The contract ID.
-        /// </summary>
         [Input("contract", required: true)]
         public Input<string> Contract { get; set; } = null!;
 
-        /// <summary>
-        /// — (Optional)
-        /// </summary>
         [Input("endCustomerId")]
         public Input<string>? EndCustomerId { get; set; }
 
-        /// <summary>
-        /// — (Required) The currently selected group ID.
-        /// </summary>
         [Input("group", required: true)]
         public Input<string> Group { get; set; } = null!;
 
         [Input("masters")]
         private InputList<string>? _masters;
-
-        /// <summary>
-        /// — (Required for Secondary) The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
-        /// </summary>
         public InputList<string> Masters
         {
             get => _masters ?? (_masters = new InputList<string>());
             set => _masters = value;
         }
 
-        /// <summary>
-        /// — (Optional) Whether DNSSEC Sign&amp;Serve is enabled.
-        /// </summary>
         [Input("signAndServe")]
         public Input<bool>? SignAndServe { get; set; }
 
-        /// <summary>
-        /// — (Optional) Algorithm used by Sign&amp;Serve.
-        /// </summary>
         [Input("signAndServeAlgorithm")]
         public Input<string>? SignAndServeAlgorithm { get; set; }
 
-        /// <summary>
-        /// — (Required for Alias)
-        /// </summary>
         [Input("target")]
         public Input<string>? Target { get; set; }
 
-        /// <summary>
-        /// — (Optional) TSIG Key used in secure zone transfers
-        /// </summary>
         [Input("tsigKey")]
         public Input<Inputs.DnsZoneTsigKeyArgs>? TsigKey { get; set; }
 
-        /// <summary>
-        /// — (Required) Whether the zone is primary or secondary.
-        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
-        /// <summary>
-        /// — (Required) Domain zone, encapsulating any nested subdomains.
-        /// </summary>
         [Input("zone", required: true)]
         public Input<string> Zone { get; set; } = null!;
 
@@ -250,78 +151,44 @@ namespace Pulumi.Akamai.Edgedns
         [Input("aliasCount")]
         public Input<int>? AliasCount { get; set; }
 
-        /// <summary>
-        /// — (Required) A descriptive comment.
-        /// </summary>
         [Input("comment")]
         public Input<string>? Comment { get; set; }
 
-        /// <summary>
-        /// — (Required) The contract ID.
-        /// </summary>
         [Input("contract")]
         public Input<string>? Contract { get; set; }
 
-        /// <summary>
-        /// — (Optional)
-        /// </summary>
         [Input("endCustomerId")]
         public Input<string>? EndCustomerId { get; set; }
 
-        /// <summary>
-        /// — (Required) The currently selected group ID.
-        /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
 
         [Input("masters")]
         private InputList<string>? _masters;
-
-        /// <summary>
-        /// — (Required for Secondary) The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
-        /// </summary>
         public InputList<string> Masters
         {
             get => _masters ?? (_masters = new InputList<string>());
             set => _masters = value;
         }
 
-        /// <summary>
-        /// — (Optional) Whether DNSSEC Sign&amp;Serve is enabled.
-        /// </summary>
         [Input("signAndServe")]
         public Input<bool>? SignAndServe { get; set; }
 
-        /// <summary>
-        /// — (Optional) Algorithm used by Sign&amp;Serve.
-        /// </summary>
         [Input("signAndServeAlgorithm")]
         public Input<string>? SignAndServeAlgorithm { get; set; }
 
-        /// <summary>
-        /// — (Required for Alias)
-        /// </summary>
         [Input("target")]
         public Input<string>? Target { get; set; }
 
-        /// <summary>
-        /// — (Optional) TSIG Key used in secure zone transfers
-        /// </summary>
         [Input("tsigKey")]
         public Input<Inputs.DnsZoneTsigKeyGetArgs>? TsigKey { get; set; }
 
-        /// <summary>
-        /// — (Required) Whether the zone is primary or secondary.
-        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         [Input("versionId")]
         public Input<string>? VersionId { get; set; }
 
-        /// <summary>
-        /// — (Required) Domain zone, encapsulating any nested subdomains.
-        /// </summary>
         [Input("zone")]
         public Input<string>? Zone { get; set; }
 

@@ -14,10 +14,6 @@ namespace Pulumi.Akamai.Trafficmanagement.Inputs
     {
         [Input("rdatas")]
         private InputList<string>? _rdatas;
-
-        /// <summary>
-        /// — (List)
-        /// </summary>
         public InputList<string> Rdatas
         {
             get => _rdatas ?? (_rdatas = new InputList<string>());
@@ -27,10 +23,6 @@ namespace Pulumi.Akamai.Trafficmanagement.Inputs
         [Input("ttl")]
         public Input<int>? Ttl { get; set; }
 
-        /// <summary>
-        /// — Property type  
-        /// * `score_aggregation_type`
-        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 

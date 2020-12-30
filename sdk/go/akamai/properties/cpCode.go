@@ -4,68 +4,36 @@
 package properties
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// The `properties.CpCode` resource allows you to create or re-use CP Codes.
-//
-// If the CP Code already exists it will be used instead of creating a new one.
-//
-// ## Example Usage
-// ### Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/properties"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := properties.NewCpCode(ctx, "cpCode", &properties.CpCodeArgs{
-// 			Contract: pulumi.Any(akamai_contract.Contract.Id),
-// 			Group:    pulumi.Any(akamai_group.Group.Id),
-// 			Product:  pulumi.String("prd_xxx"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
+// Deprecated: akamai.properties.CpCode has been deprecated in favor of akamai.CpCode
 type CpCode struct {
 	pulumi.CustomResourceState
 
-	// — (Required) The Contract ID
-	Contract pulumi.StringOutput `pulumi:"contract"`
-	// — (Required) The Group ID
-	Group pulumi.StringOutput `pulumi:"group"`
-	// — (Required) The CP Code name
-	Name pulumi.StringOutput `pulumi:"name"`
-	// — (Required) The Product ID
+	// Deprecated: use "contract_id" attribute instead
+	Contract   pulumi.StringOutput `pulumi:"contract"`
+	ContractId pulumi.StringOutput `pulumi:"contractId"`
+	// Deprecated: use "group_id" attribute instead
+	Group   pulumi.StringOutput `pulumi:"group"`
+	GroupId pulumi.StringOutput `pulumi:"groupId"`
+	Name    pulumi.StringOutput `pulumi:"name"`
 	Product pulumi.StringOutput `pulumi:"product"`
 }
 
 // NewCpCode registers a new resource with the given unique name, arguments, and options.
 func NewCpCode(ctx *pulumi.Context,
 	name string, args *CpCodeArgs, opts ...pulumi.ResourceOption) (*CpCode, error) {
-	if args == nil || args.Contract == nil {
-		return nil, errors.New("missing required argument 'Contract'")
-	}
-	if args == nil || args.Group == nil {
-		return nil, errors.New("missing required argument 'Group'")
-	}
-	if args == nil || args.Product == nil {
-		return nil, errors.New("missing required argument 'Product'")
-	}
 	if args == nil {
-		args = &CpCodeArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.Product == nil {
+		return nil, errors.New("invalid value for required argument 'Product'")
 	}
 	var resource CpCode
 	err := ctx.RegisterResource("akamai:properties/cpCode:CpCode", name, args, &resource, opts...)
@@ -89,24 +57,24 @@ func GetCpCode(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CpCode resources.
 type cpCodeState struct {
-	// — (Required) The Contract ID
-	Contract *string `pulumi:"contract"`
-	// — (Required) The Group ID
-	Group *string `pulumi:"group"`
-	// — (Required) The CP Code name
-	Name *string `pulumi:"name"`
-	// — (Required) The Product ID
+	// Deprecated: use "contract_id" attribute instead
+	Contract   *string `pulumi:"contract"`
+	ContractId *string `pulumi:"contractId"`
+	// Deprecated: use "group_id" attribute instead
+	Group   *string `pulumi:"group"`
+	GroupId *string `pulumi:"groupId"`
+	Name    *string `pulumi:"name"`
 	Product *string `pulumi:"product"`
 }
 
 type CpCodeState struct {
-	// — (Required) The Contract ID
-	Contract pulumi.StringPtrInput
-	// — (Required) The Group ID
-	Group pulumi.StringPtrInput
-	// — (Required) The CP Code name
-	Name pulumi.StringPtrInput
-	// — (Required) The Product ID
+	// Deprecated: use "contract_id" attribute instead
+	Contract   pulumi.StringPtrInput
+	ContractId pulumi.StringPtrInput
+	// Deprecated: use "group_id" attribute instead
+	Group   pulumi.StringPtrInput
+	GroupId pulumi.StringPtrInput
+	Name    pulumi.StringPtrInput
 	Product pulumi.StringPtrInput
 }
 
@@ -115,28 +83,67 @@ func (CpCodeState) ElementType() reflect.Type {
 }
 
 type cpCodeArgs struct {
-	// — (Required) The Contract ID
-	Contract string `pulumi:"contract"`
-	// — (Required) The Group ID
-	Group string `pulumi:"group"`
-	// — (Required) The CP Code name
-	Name *string `pulumi:"name"`
-	// — (Required) The Product ID
-	Product string `pulumi:"product"`
+	// Deprecated: use "contract_id" attribute instead
+	Contract   *string `pulumi:"contract"`
+	ContractId *string `pulumi:"contractId"`
+	// Deprecated: use "group_id" attribute instead
+	Group   *string `pulumi:"group"`
+	GroupId *string `pulumi:"groupId"`
+	Name    *string `pulumi:"name"`
+	Product string  `pulumi:"product"`
 }
 
 // The set of arguments for constructing a CpCode resource.
 type CpCodeArgs struct {
-	// — (Required) The Contract ID
-	Contract pulumi.StringInput
-	// — (Required) The Group ID
-	Group pulumi.StringInput
-	// — (Required) The CP Code name
-	Name pulumi.StringPtrInput
-	// — (Required) The Product ID
+	// Deprecated: use "contract_id" attribute instead
+	Contract   pulumi.StringPtrInput
+	ContractId pulumi.StringPtrInput
+	// Deprecated: use "group_id" attribute instead
+	Group   pulumi.StringPtrInput
+	GroupId pulumi.StringPtrInput
+	Name    pulumi.StringPtrInput
 	Product pulumi.StringInput
 }
 
 func (CpCodeArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*cpCodeArgs)(nil)).Elem()
+}
+
+type CpCodeInput interface {
+	pulumi.Input
+
+	ToCpCodeOutput() CpCodeOutput
+	ToCpCodeOutputWithContext(ctx context.Context) CpCodeOutput
+}
+
+func (CpCode) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpCode)(nil)).Elem()
+}
+
+func (i CpCode) ToCpCodeOutput() CpCodeOutput {
+	return i.ToCpCodeOutputWithContext(context.Background())
+}
+
+func (i CpCode) ToCpCodeOutputWithContext(ctx context.Context) CpCodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpCodeOutput)
+}
+
+type CpCodeOutput struct {
+	*pulumi.OutputState
+}
+
+func (CpCodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpCodeOutput)(nil)).Elem()
+}
+
+func (o CpCodeOutput) ToCpCodeOutput() CpCodeOutput {
+	return o
+}
+
+func (o CpCodeOutput) ToCpCodeOutputWithContext(ctx context.Context) CpCodeOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(CpCodeOutput{})
 }

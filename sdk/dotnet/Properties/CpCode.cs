@@ -9,56 +9,24 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Properties
 {
-    /// <summary>
-    /// The `akamai.properties.CpCode` resource allows you to create or re-use CP Codes.
-    /// 
-    /// If the CP Code already exists it will be used instead of creating a new one.
-    /// 
-    /// ## Example Usage
-    /// ### Basic usage:
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var cpCode = new Akamai.Properties.CpCode("cpCode", new Akamai.Properties.CpCodeArgs
-    ///         {
-    ///             Contract = akamai_contract.Contract.Id,
-    ///             Group = akamai_group.Group.Id,
-    ///             Product = "prd_xxx",
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// </summary>
+    [Obsolete(@"akamai.properties.CpCode has been deprecated in favor of akamai.CpCode")]
     public partial class CpCode : Pulumi.CustomResource
     {
-        /// <summary>
-        /// — (Required) The Contract ID
-        /// </summary>
         [Output("contract")]
         public Output<string> Contract { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Required) The Group ID
-        /// </summary>
+        [Output("contractId")]
+        public Output<string> ContractId { get; private set; } = null!;
+
         [Output("group")]
         public Output<string> Group { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Required) The CP Code name
-        /// </summary>
+        [Output("groupId")]
+        public Output<string> GroupId { get; private set; } = null!;
+
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
-        /// <summary>
-        /// — (Required) The Product ID
-        /// </summary>
         [Output("product")]
         public Output<string> Product { get; private set; } = null!;
 
@@ -108,27 +76,21 @@ namespace Pulumi.Akamai.Properties
 
     public sealed class CpCodeArgs : Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// — (Required) The Contract ID
-        /// </summary>
-        [Input("contract", required: true)]
-        public Input<string> Contract { get; set; } = null!;
+        [Input("contract")]
+        public Input<string>? Contract { get; set; }
 
-        /// <summary>
-        /// — (Required) The Group ID
-        /// </summary>
-        [Input("group", required: true)]
-        public Input<string> Group { get; set; } = null!;
+        [Input("contractId")]
+        public Input<string>? ContractId { get; set; }
 
-        /// <summary>
-        /// — (Required) The CP Code name
-        /// </summary>
+        [Input("group")]
+        public Input<string>? Group { get; set; }
+
+        [Input("groupId")]
+        public Input<string>? GroupId { get; set; }
+
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// — (Required) The Product ID
-        /// </summary>
         [Input("product", required: true)]
         public Input<string> Product { get; set; } = null!;
 
@@ -139,27 +101,21 @@ namespace Pulumi.Akamai.Properties
 
     public sealed class CpCodeState : Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// — (Required) The Contract ID
-        /// </summary>
         [Input("contract")]
         public Input<string>? Contract { get; set; }
 
-        /// <summary>
-        /// — (Required) The Group ID
-        /// </summary>
+        [Input("contractId")]
+        public Input<string>? ContractId { get; set; }
+
         [Input("group")]
         public Input<string>? Group { get; set; }
 
-        /// <summary>
-        /// — (Required) The CP Code name
-        /// </summary>
+        [Input("groupId")]
+        public Input<string>? GroupId { get; set; }
+
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// — (Required) The Product ID
-        /// </summary>
         [Input("product")]
         public Input<string>? Product { get; set; }
 
