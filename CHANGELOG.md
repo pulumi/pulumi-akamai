@@ -2,6 +2,11 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
+_(none)_
+
+---
+
+## 1.0.0 (2020-12-30)
 * Upgrade to v1.0.0 of the Akamai Terraform Provider  
   ** PLEASE NOTE:**  
   There are a number of breaking changes to this provider:
@@ -11,8 +16,6 @@ CHANGELOG
   * `akamai.EdgeHostName` `ipv4` and `ipv6` have been removed. This has been replaced by `ipBehavior`.
   * `akamai.Property` `cpCode`, `origin` `variables`, `isSecure` and `contact` have been deprecated. 
   You can find the full migration guide [here](https://github.com/akamai/terraform-provider-akamai/blob/master/docs/guides/1.0_migration.md)
-
----
 
 ## 0.2.0 (2020-10-26)
 * Upgrade to Pulumi v2.12.0 and pulumi-terraform-bridge v2.11.0
