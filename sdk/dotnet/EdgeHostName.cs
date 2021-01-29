@@ -9,6 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
+    [AkamaiResourceType("akamai:index/edgeHostName:EdgeHostName")]
     public partial class EdgeHostName : Pulumi.CustomResource
     {
         [Output("certificate")]

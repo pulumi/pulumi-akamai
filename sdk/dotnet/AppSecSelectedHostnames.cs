@@ -9,6 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
+    [AkamaiResourceType("akamai:index/appSecSelectedHostnames:AppSecSelectedHostnames")]
     public partial class AppSecSelectedHostnames : Pulumi.CustomResource
     {
         [Output("configId")]

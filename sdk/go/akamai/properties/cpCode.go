@@ -116,15 +116,15 @@ type CpCodeInput interface {
 	ToCpCodeOutputWithContext(ctx context.Context) CpCodeOutput
 }
 
-func (CpCode) ElementType() reflect.Type {
-	return reflect.TypeOf((*CpCode)(nil)).Elem()
+func (*CpCode) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpCode)(nil))
 }
 
-func (i CpCode) ToCpCodeOutput() CpCodeOutput {
+func (i *CpCode) ToCpCodeOutput() CpCodeOutput {
 	return i.ToCpCodeOutputWithContext(context.Background())
 }
 
-func (i CpCode) ToCpCodeOutputWithContext(ctx context.Context) CpCodeOutput {
+func (i *CpCode) ToCpCodeOutputWithContext(ctx context.Context) CpCodeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CpCodeOutput)
 }
 
@@ -133,7 +133,7 @@ type CpCodeOutput struct {
 }
 
 func (CpCodeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*CpCodeOutput)(nil)).Elem()
+	return reflect.TypeOf((*CpCode)(nil))
 }
 
 func (o CpCodeOutput) ToCpCodeOutput() CpCodeOutput {

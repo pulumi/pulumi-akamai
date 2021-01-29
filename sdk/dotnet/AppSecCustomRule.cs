@@ -12,6 +12,7 @@ namespace Pulumi.Akamai
     /// <summary>
     /// The `akamai.AppSecCustomRule` resource allows you to create or modify a custom rule associated with a given security configuration.
     /// </summary>
+    [AkamaiResourceType("akamai:index/appSecCustomRule:AppSecCustomRule")]
     public partial class AppSecCustomRule : Pulumi.CustomResource
     {
         /// <summary>

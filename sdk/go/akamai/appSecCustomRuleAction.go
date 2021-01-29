@@ -22,6 +22,7 @@ import (
 //
 // import (
 // 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -190,15 +191,15 @@ type AppSecCustomRuleActionInput interface {
 	ToAppSecCustomRuleActionOutputWithContext(ctx context.Context) AppSecCustomRuleActionOutput
 }
 
-func (AppSecCustomRuleAction) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecCustomRuleAction)(nil)).Elem()
+func (*AppSecCustomRuleAction) ElementType() reflect.Type {
+	return reflect.TypeOf((*AppSecCustomRuleAction)(nil))
 }
 
-func (i AppSecCustomRuleAction) ToAppSecCustomRuleActionOutput() AppSecCustomRuleActionOutput {
+func (i *AppSecCustomRuleAction) ToAppSecCustomRuleActionOutput() AppSecCustomRuleActionOutput {
 	return i.ToAppSecCustomRuleActionOutputWithContext(context.Background())
 }
 
-func (i AppSecCustomRuleAction) ToAppSecCustomRuleActionOutputWithContext(ctx context.Context) AppSecCustomRuleActionOutput {
+func (i *AppSecCustomRuleAction) ToAppSecCustomRuleActionOutputWithContext(ctx context.Context) AppSecCustomRuleActionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomRuleActionOutput)
 }
 
@@ -207,7 +208,7 @@ type AppSecCustomRuleActionOutput struct {
 }
 
 func (AppSecCustomRuleActionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecCustomRuleActionOutput)(nil)).Elem()
+	return reflect.TypeOf((*AppSecCustomRuleAction)(nil))
 }
 
 func (o AppSecCustomRuleActionOutput) ToAppSecCustomRuleActionOutput() AppSecCustomRuleActionOutput {

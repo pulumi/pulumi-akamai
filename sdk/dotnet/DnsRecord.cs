@@ -251,6 +251,7 @@ namespace Pulumi.Akamai
     /// 
     /// * target - One or more character strings. TXT RRs are used to hold descriptive text. The semantics of the text depends on the domain where it is found.
     /// </summary>
+    [AkamaiResourceType("akamai:index/dnsRecord:DnsRecord")]
     public partial class DnsRecord : Pulumi.CustomResource
     {
         /// <summary>

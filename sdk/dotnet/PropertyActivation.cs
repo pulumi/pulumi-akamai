@@ -97,6 +97,7 @@ namespace Pulumi.Akamai
     /// * `activation_id` - The ID given to the activation event while it's in progress.
     /// * `status` - The property version’s activation status on the selected network.
     /// </summary>
+    [AkamaiResourceType("akamai:index/propertyActivation:PropertyActivation")]
     public partial class PropertyActivation : Pulumi.CustomResource
     {
         [Output("activationId")]

@@ -151,15 +151,15 @@ type PropertyActivationInput interface {
 	ToPropertyActivationOutputWithContext(ctx context.Context) PropertyActivationOutput
 }
 
-func (PropertyActivation) ElementType() reflect.Type {
-	return reflect.TypeOf((*PropertyActivation)(nil)).Elem()
+func (*PropertyActivation) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivation)(nil))
 }
 
-func (i PropertyActivation) ToPropertyActivationOutput() PropertyActivationOutput {
+func (i *PropertyActivation) ToPropertyActivationOutput() PropertyActivationOutput {
 	return i.ToPropertyActivationOutputWithContext(context.Background())
 }
 
-func (i PropertyActivation) ToPropertyActivationOutputWithContext(ctx context.Context) PropertyActivationOutput {
+func (i *PropertyActivation) ToPropertyActivationOutputWithContext(ctx context.Context) PropertyActivationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationOutput)
 }
 
@@ -168,7 +168,7 @@ type PropertyActivationOutput struct {
 }
 
 func (PropertyActivationOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*PropertyActivationOutput)(nil)).Elem()
+	return reflect.TypeOf((*PropertyActivation)(nil))
 }
 
 func (o PropertyActivationOutput) ToPropertyActivationOutput() PropertyActivationOutput {

@@ -10,6 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Trafficmanagement
 {
     [Obsolete(@"akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter")]
+    [AkamaiResourceType("akamai:trafficmanagement/gtmDatacenter:GtmDatacenter")]
     public partial class GtmDatacenter : Pulumi.CustomResource
     {
         [Output("city")]

@@ -38,6 +38,7 @@ namespace Pulumi.Akamai
     /// }
     /// ```
     /// </summary>
+    [AkamaiResourceType("akamai:index/gtmAsmap:GtmAsmap")]
     public partial class GtmAsmap : Pulumi.CustomResource
     {
         /// <summary>

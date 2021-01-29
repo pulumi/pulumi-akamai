@@ -10,6 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Properties
 {
     [Obsolete(@"akamai.properties.PropertyVariables has been deprecated in favor of akamai.PropertyVariables")]
+    [AkamaiResourceType("akamai:properties/propertyVariables:PropertyVariables")]
     public partial class PropertyVariables : Pulumi.CustomResource
     {
         /// <summary>

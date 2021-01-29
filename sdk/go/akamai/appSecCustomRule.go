@@ -105,15 +105,15 @@ type AppSecCustomRuleInput interface {
 	ToAppSecCustomRuleOutputWithContext(ctx context.Context) AppSecCustomRuleOutput
 }
 
-func (AppSecCustomRule) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecCustomRule)(nil)).Elem()
+func (*AppSecCustomRule) ElementType() reflect.Type {
+	return reflect.TypeOf((*AppSecCustomRule)(nil))
 }
 
-func (i AppSecCustomRule) ToAppSecCustomRuleOutput() AppSecCustomRuleOutput {
+func (i *AppSecCustomRule) ToAppSecCustomRuleOutput() AppSecCustomRuleOutput {
 	return i.ToAppSecCustomRuleOutputWithContext(context.Background())
 }
 
-func (i AppSecCustomRule) ToAppSecCustomRuleOutputWithContext(ctx context.Context) AppSecCustomRuleOutput {
+func (i *AppSecCustomRule) ToAppSecCustomRuleOutputWithContext(ctx context.Context) AppSecCustomRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomRuleOutput)
 }
 
@@ -122,7 +122,7 @@ type AppSecCustomRuleOutput struct {
 }
 
 func (AppSecCustomRuleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecCustomRuleOutput)(nil)).Elem()
+	return reflect.TypeOf((*AppSecCustomRule)(nil))
 }
 
 func (o AppSecCustomRuleOutput) ToAppSecCustomRuleOutput() AppSecCustomRuleOutput {

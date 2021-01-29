@@ -22,6 +22,7 @@ import (
 //
 // import (
 // 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -179,15 +180,15 @@ type GtmAsmapInput interface {
 	ToGtmAsmapOutputWithContext(ctx context.Context) GtmAsmapOutput
 }
 
-func (GtmAsmap) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmAsmap)(nil)).Elem()
+func (*GtmAsmap) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmAsmap)(nil))
 }
 
-func (i GtmAsmap) ToGtmAsmapOutput() GtmAsmapOutput {
+func (i *GtmAsmap) ToGtmAsmapOutput() GtmAsmapOutput {
 	return i.ToGtmAsmapOutputWithContext(context.Background())
 }
 
-func (i GtmAsmap) ToGtmAsmapOutputWithContext(ctx context.Context) GtmAsmapOutput {
+func (i *GtmAsmap) ToGtmAsmapOutputWithContext(ctx context.Context) GtmAsmapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GtmAsmapOutput)
 }
 
@@ -196,7 +197,7 @@ type GtmAsmapOutput struct {
 }
 
 func (GtmAsmapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmAsmapOutput)(nil)).Elem()
+	return reflect.TypeOf((*GtmAsmap)(nil))
 }
 
 func (o GtmAsmapOutput) ToGtmAsmapOutput() GtmAsmapOutput {

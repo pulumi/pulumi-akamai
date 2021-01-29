@@ -9,6 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
+    [AkamaiResourceType("akamai:index/propertyVariables:PropertyVariables")]
     public partial class PropertyVariables : Pulumi.CustomResource
     {
         /// <summary>

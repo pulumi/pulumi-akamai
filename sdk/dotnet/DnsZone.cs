@@ -43,6 +43,7 @@ namespace Pulumi.Akamai
     /// }
     /// ```
     /// </summary>
+    [AkamaiResourceType("akamai:index/dnsZone:DnsZone")]
     public partial class DnsZone : Pulumi.CustomResource
     {
         [Output("activationState")]

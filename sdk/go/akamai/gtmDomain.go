@@ -21,7 +21,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -344,15 +344,15 @@ type GtmDomainInput interface {
 	ToGtmDomainOutputWithContext(ctx context.Context) GtmDomainOutput
 }
 
-func (GtmDomain) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmDomain)(nil)).Elem()
+func (*GtmDomain) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmDomain)(nil))
 }
 
-func (i GtmDomain) ToGtmDomainOutput() GtmDomainOutput {
+func (i *GtmDomain) ToGtmDomainOutput() GtmDomainOutput {
 	return i.ToGtmDomainOutputWithContext(context.Background())
 }
 
-func (i GtmDomain) ToGtmDomainOutputWithContext(ctx context.Context) GtmDomainOutput {
+func (i *GtmDomain) ToGtmDomainOutputWithContext(ctx context.Context) GtmDomainOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GtmDomainOutput)
 }
 
@@ -361,7 +361,7 @@ type GtmDomainOutput struct {
 }
 
 func (GtmDomainOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmDomainOutput)(nil)).Elem()
+	return reflect.TypeOf((*GtmDomain)(nil))
 }
 
 func (o GtmDomainOutput) ToGtmDomainOutput() GtmDomainOutput {

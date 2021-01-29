@@ -104,15 +104,15 @@ type AppSecSelectedHostnamesInput interface {
 	ToAppSecSelectedHostnamesOutputWithContext(ctx context.Context) AppSecSelectedHostnamesOutput
 }
 
-func (AppSecSelectedHostnames) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecSelectedHostnames)(nil)).Elem()
+func (*AppSecSelectedHostnames) ElementType() reflect.Type {
+	return reflect.TypeOf((*AppSecSelectedHostnames)(nil))
 }
 
-func (i AppSecSelectedHostnames) ToAppSecSelectedHostnamesOutput() AppSecSelectedHostnamesOutput {
+func (i *AppSecSelectedHostnames) ToAppSecSelectedHostnamesOutput() AppSecSelectedHostnamesOutput {
 	return i.ToAppSecSelectedHostnamesOutputWithContext(context.Background())
 }
 
-func (i AppSecSelectedHostnames) ToAppSecSelectedHostnamesOutputWithContext(ctx context.Context) AppSecSelectedHostnamesOutput {
+func (i *AppSecSelectedHostnames) ToAppSecSelectedHostnamesOutputWithContext(ctx context.Context) AppSecSelectedHostnamesOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSelectedHostnamesOutput)
 }
 
@@ -121,7 +121,7 @@ type AppSecSelectedHostnamesOutput struct {
 }
 
 func (AppSecSelectedHostnamesOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecSelectedHostnamesOutput)(nil)).Elem()
+	return reflect.TypeOf((*AppSecSelectedHostnames)(nil))
 }
 
 func (o AppSecSelectedHostnamesOutput) ToAppSecSelectedHostnamesOutput() AppSecSelectedHostnamesOutput {

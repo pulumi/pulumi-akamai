@@ -56,6 +56,7 @@ namespace Pulumi.Akamai
     /// 
     /// * `activate` - A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
     /// </summary>
+    [AkamaiResourceType("akamai:index/appSecActivations:AppSecActivations")]
     public partial class AppSecActivations : Pulumi.CustomResource
     {
         [Output("activate")]

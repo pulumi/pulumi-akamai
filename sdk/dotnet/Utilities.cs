@@ -77,4 +77,11 @@ namespace Pulumi.Akamai
             }
         }
     }
+
+    internal sealed class AkamaiResourceTypeAttribute : Pulumi.ResourceTypeAttribute
+    {
+        public AkamaiResourceTypeAttribute(string type) : base(type, Utilities.Version)
+        {
+        }
+    }
 }

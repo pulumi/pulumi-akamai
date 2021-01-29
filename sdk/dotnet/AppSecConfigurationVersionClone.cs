@@ -9,6 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
+    [AkamaiResourceType("akamai:index/appSecConfigurationVersionClone:AppSecConfigurationVersionClone")]
     public partial class AppSecConfigurationVersionClone : Pulumi.CustomResource
     {
         [Output("configId")]

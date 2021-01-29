@@ -118,15 +118,15 @@ type AppSecMatchTargetInput interface {
 	ToAppSecMatchTargetOutputWithContext(ctx context.Context) AppSecMatchTargetOutput
 }
 
-func (AppSecMatchTarget) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecMatchTarget)(nil)).Elem()
+func (*AppSecMatchTarget) ElementType() reflect.Type {
+	return reflect.TypeOf((*AppSecMatchTarget)(nil))
 }
 
-func (i AppSecMatchTarget) ToAppSecMatchTargetOutput() AppSecMatchTargetOutput {
+func (i *AppSecMatchTarget) ToAppSecMatchTargetOutput() AppSecMatchTargetOutput {
 	return i.ToAppSecMatchTargetOutputWithContext(context.Background())
 }
 
-func (i AppSecMatchTarget) ToAppSecMatchTargetOutputWithContext(ctx context.Context) AppSecMatchTargetOutput {
+func (i *AppSecMatchTarget) ToAppSecMatchTargetOutputWithContext(ctx context.Context) AppSecMatchTargetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecMatchTargetOutput)
 }
 
@@ -135,7 +135,7 @@ type AppSecMatchTargetOutput struct {
 }
 
 func (AppSecMatchTargetOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecMatchTargetOutput)(nil)).Elem()
+	return reflect.TypeOf((*AppSecMatchTarget)(nil))
 }
 
 func (o AppSecMatchTargetOutput) ToAppSecMatchTargetOutput() AppSecMatchTargetOutput {

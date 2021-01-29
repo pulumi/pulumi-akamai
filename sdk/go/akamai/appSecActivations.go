@@ -22,6 +22,7 @@ import (
 //
 // import (
 // 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -168,15 +169,15 @@ type AppSecActivationsInput interface {
 	ToAppSecActivationsOutputWithContext(ctx context.Context) AppSecActivationsOutput
 }
 
-func (AppSecActivations) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecActivations)(nil)).Elem()
+func (*AppSecActivations) ElementType() reflect.Type {
+	return reflect.TypeOf((*AppSecActivations)(nil))
 }
 
-func (i AppSecActivations) ToAppSecActivationsOutput() AppSecActivationsOutput {
+func (i *AppSecActivations) ToAppSecActivationsOutput() AppSecActivationsOutput {
 	return i.ToAppSecActivationsOutputWithContext(context.Background())
 }
 
-func (i AppSecActivations) ToAppSecActivationsOutputWithContext(ctx context.Context) AppSecActivationsOutput {
+func (i *AppSecActivations) ToAppSecActivationsOutputWithContext(ctx context.Context) AppSecActivationsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecActivationsOutput)
 }
 
@@ -185,7 +186,7 @@ type AppSecActivationsOutput struct {
 }
 
 func (AppSecActivationsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecActivationsOutput)(nil)).Elem()
+	return reflect.TypeOf((*AppSecActivations)(nil))
 }
 
 func (o AppSecActivationsOutput) ToAppSecActivationsOutput() AppSecActivationsOutput {

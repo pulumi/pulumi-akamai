@@ -10,6 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Properties
 {
     [Obsolete(@"akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation")]
+    [AkamaiResourceType("akamai:properties/propertyActivation:PropertyActivation")]
     public partial class PropertyActivation : Pulumi.CustomResource
     {
         [Output("activationId")]

@@ -10,6 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Properties
 {
     [Obsolete(@"akamai.properties.CpCode has been deprecated in favor of akamai.CpCode")]
+    [AkamaiResourceType("akamai:properties/cpCode:CpCode")]
     public partial class CpCode : Pulumi.CustomResource
     {
         [Output("contract")]

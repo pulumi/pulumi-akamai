@@ -88,15 +88,15 @@ type PropertyVariablesInput interface {
 	ToPropertyVariablesOutputWithContext(ctx context.Context) PropertyVariablesOutput
 }
 
-func (PropertyVariables) ElementType() reflect.Type {
-	return reflect.TypeOf((*PropertyVariables)(nil)).Elem()
+func (*PropertyVariables) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyVariables)(nil))
 }
 
-func (i PropertyVariables) ToPropertyVariablesOutput() PropertyVariablesOutput {
+func (i *PropertyVariables) ToPropertyVariablesOutput() PropertyVariablesOutput {
 	return i.ToPropertyVariablesOutputWithContext(context.Background())
 }
 
-func (i PropertyVariables) ToPropertyVariablesOutputWithContext(ctx context.Context) PropertyVariablesOutput {
+func (i *PropertyVariables) ToPropertyVariablesOutputWithContext(ctx context.Context) PropertyVariablesOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesOutput)
 }
 
@@ -105,7 +105,7 @@ type PropertyVariablesOutput struct {
 }
 
 func (PropertyVariablesOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*PropertyVariablesOutput)(nil)).Elem()
+	return reflect.TypeOf((*PropertyVariables)(nil))
 }
 
 func (o PropertyVariablesOutput) ToPropertyVariablesOutput() PropertyVariablesOutput {

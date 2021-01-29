@@ -44,6 +44,7 @@ namespace Pulumi.Akamai
     /// }
     /// ```
     /// </summary>
+    [AkamaiResourceType("akamai:index/appSecSecurityPolicyClone:AppSecSecurityPolicyClone")]
     public partial class AppSecSecurityPolicyClone : Pulumi.CustomResource
     {
         /// <summary>

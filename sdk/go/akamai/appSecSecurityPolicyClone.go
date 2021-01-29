@@ -22,6 +22,7 @@ import (
 //
 // import (
 // 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -170,15 +171,15 @@ type AppSecSecurityPolicyCloneInput interface {
 	ToAppSecSecurityPolicyCloneOutputWithContext(ctx context.Context) AppSecSecurityPolicyCloneOutput
 }
 
-func (AppSecSecurityPolicyClone) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecSecurityPolicyClone)(nil)).Elem()
+func (*AppSecSecurityPolicyClone) ElementType() reflect.Type {
+	return reflect.TypeOf((*AppSecSecurityPolicyClone)(nil))
 }
 
-func (i AppSecSecurityPolicyClone) ToAppSecSecurityPolicyCloneOutput() AppSecSecurityPolicyCloneOutput {
+func (i *AppSecSecurityPolicyClone) ToAppSecSecurityPolicyCloneOutput() AppSecSecurityPolicyCloneOutput {
 	return i.ToAppSecSecurityPolicyCloneOutputWithContext(context.Background())
 }
 
-func (i AppSecSecurityPolicyClone) ToAppSecSecurityPolicyCloneOutputWithContext(ctx context.Context) AppSecSecurityPolicyCloneOutput {
+func (i *AppSecSecurityPolicyClone) ToAppSecSecurityPolicyCloneOutputWithContext(ctx context.Context) AppSecSecurityPolicyCloneOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSecurityPolicyCloneOutput)
 }
 
@@ -187,7 +188,7 @@ type AppSecSecurityPolicyCloneOutput struct {
 }
 
 func (AppSecSecurityPolicyCloneOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecSecurityPolicyCloneOutput)(nil)).Elem()
+	return reflect.TypeOf((*AppSecSecurityPolicyClone)(nil))
 }
 
 func (o AppSecSecurityPolicyCloneOutput) ToAppSecSecurityPolicyCloneOutput() AppSecSecurityPolicyCloneOutput {

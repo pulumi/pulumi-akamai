@@ -104,15 +104,15 @@ type GtmGeomapInput interface {
 	ToGtmGeomapOutputWithContext(ctx context.Context) GtmGeomapOutput
 }
 
-func (GtmGeomap) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmGeomap)(nil)).Elem()
+func (*GtmGeomap) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmGeomap)(nil))
 }
 
-func (i GtmGeomap) ToGtmGeomapOutput() GtmGeomapOutput {
+func (i *GtmGeomap) ToGtmGeomapOutput() GtmGeomapOutput {
 	return i.ToGtmGeomapOutputWithContext(context.Background())
 }
 
-func (i GtmGeomap) ToGtmGeomapOutputWithContext(ctx context.Context) GtmGeomapOutput {
+func (i *GtmGeomap) ToGtmGeomapOutputWithContext(ctx context.Context) GtmGeomapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GtmGeomapOutput)
 }
 
@@ -121,7 +121,7 @@ type GtmGeomapOutput struct {
 }
 
 func (GtmGeomapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmGeomapOutput)(nil)).Elem()
+	return reflect.TypeOf((*GtmGeomap)(nil))
 }
 
 func (o GtmGeomapOutput) ToGtmGeomapOutput() GtmGeomapOutput {

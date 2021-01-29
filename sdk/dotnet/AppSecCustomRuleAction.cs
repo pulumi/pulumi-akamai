@@ -44,6 +44,7 @@ namespace Pulumi.Akamai
     /// }
     /// ```
     /// </summary>
+    [AkamaiResourceType("akamai:index/appSecCustomRuleAction:AppSecCustomRuleAction")]
     public partial class AppSecCustomRuleAction : Pulumi.CustomResource
     {
         /// <summary>

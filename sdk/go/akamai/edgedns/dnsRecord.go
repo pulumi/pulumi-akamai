@@ -359,15 +359,15 @@ type DnsRecordInput interface {
 	ToDnsRecordOutputWithContext(ctx context.Context) DnsRecordOutput
 }
 
-func (DnsRecord) ElementType() reflect.Type {
-	return reflect.TypeOf((*DnsRecord)(nil)).Elem()
+func (*DnsRecord) ElementType() reflect.Type {
+	return reflect.TypeOf((*DnsRecord)(nil))
 }
 
-func (i DnsRecord) ToDnsRecordOutput() DnsRecordOutput {
+func (i *DnsRecord) ToDnsRecordOutput() DnsRecordOutput {
 	return i.ToDnsRecordOutputWithContext(context.Background())
 }
 
-func (i DnsRecord) ToDnsRecordOutputWithContext(ctx context.Context) DnsRecordOutput {
+func (i *DnsRecord) ToDnsRecordOutputWithContext(ctx context.Context) DnsRecordOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DnsRecordOutput)
 }
 
@@ -376,7 +376,7 @@ type DnsRecordOutput struct {
 }
 
 func (DnsRecordOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*DnsRecordOutput)(nil)).Elem()
+	return reflect.TypeOf((*DnsRecord)(nil))
 }
 
 func (o DnsRecordOutput) ToDnsRecordOutput() DnsRecordOutput {

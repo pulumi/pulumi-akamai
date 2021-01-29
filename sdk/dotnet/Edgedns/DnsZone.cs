@@ -10,6 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Edgedns
 {
     [Obsolete(@"akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone")]
+    [AkamaiResourceType("akamai:edgedns/dnsZone:DnsZone")]
     public partial class DnsZone : Pulumi.CustomResource
     {
         [Output("activationState")]
