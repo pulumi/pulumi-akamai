@@ -2,9 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Update to pulumi-terraform-bridge v2.18.1
+_(none)_
 
 ---
+
+## 1.1.0 (2021-02-01)
+* Update to pulumi-terraform-bridge v2.18.1
 
 ## 1.0.0 (2020-12-30)
 * Upgrade to v1.0.0 of the Akamai Terraform Provider  
