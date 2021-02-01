@@ -10,6 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Trafficmanagement
 {
     [Obsolete(@"akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain")]
+    [AkamaiResourceType("akamai:trafficmanagement/gtmDomain:GtmDomain")]
     public partial class GtmDomain : Pulumi.CustomResource
     {
         [Output("cnameCoalescingEnabled")]

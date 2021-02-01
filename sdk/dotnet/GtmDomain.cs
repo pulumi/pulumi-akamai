@@ -36,6 +36,7 @@ namespace Pulumi.Akamai
     /// }
     /// ```
     /// </summary>
+    [AkamaiResourceType("akamai:index/gtmDomain:GtmDomain")]
     public partial class GtmDomain : Pulumi.CustomResource
     {
         [Output("cnameCoalescingEnabled")]

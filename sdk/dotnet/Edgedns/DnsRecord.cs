@@ -10,6 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Edgedns
 {
     [Obsolete(@"akamai.edgedns.DnsRecord has been deprecated in favor of akamai.DnsRecord")]
+    [AkamaiResourceType("akamai:edgedns/dnsRecord:DnsRecord")]
     public partial class DnsRecord : Pulumi.CustomResource
     {
         [Output("active")]

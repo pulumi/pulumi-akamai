@@ -35,6 +35,7 @@ namespace Pulumi.Akamai
     /// }
     /// ```
     /// </summary>
+    [AkamaiResourceType("akamai:index/gtmResource:GtmResource")]
     public partial class GtmResource : Pulumi.CustomResource
     {
         [Output("aggregationType")]

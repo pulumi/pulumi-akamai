@@ -104,6 +104,7 @@ namespace Pulumi.Akamai
     ///  $ pulumi import akamai:index/property:Property example prp_123,ctr_1-AB123,grp_123
     /// ```
     /// </summary>
+    [AkamaiResourceType("akamai:index/property:Property")]
     public partial class Property : Pulumi.CustomResource
     {
         [Output("contacts")]

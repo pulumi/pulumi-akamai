@@ -157,15 +157,15 @@ type GtmResourceInput interface {
 	ToGtmResourceOutputWithContext(ctx context.Context) GtmResourceOutput
 }
 
-func (GtmResource) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmResource)(nil)).Elem()
+func (*GtmResource) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmResource)(nil))
 }
 
-func (i GtmResource) ToGtmResourceOutput() GtmResourceOutput {
+func (i *GtmResource) ToGtmResourceOutput() GtmResourceOutput {
 	return i.ToGtmResourceOutputWithContext(context.Background())
 }
 
-func (i GtmResource) ToGtmResourceOutputWithContext(ctx context.Context) GtmResourceOutput {
+func (i *GtmResource) ToGtmResourceOutputWithContext(ctx context.Context) GtmResourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GtmResourceOutput)
 }
 
@@ -174,7 +174,7 @@ type GtmResourceOutput struct {
 }
 
 func (GtmResourceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmResourceOutput)(nil)).Elem()
+	return reflect.TypeOf((*GtmResource)(nil))
 }
 
 func (o GtmResourceOutput) ToGtmResourceOutput() GtmResourceOutput {

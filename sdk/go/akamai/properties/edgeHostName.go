@@ -139,15 +139,15 @@ type EdgeHostNameInput interface {
 	ToEdgeHostNameOutputWithContext(ctx context.Context) EdgeHostNameOutput
 }
 
-func (EdgeHostName) ElementType() reflect.Type {
-	return reflect.TypeOf((*EdgeHostName)(nil)).Elem()
+func (*EdgeHostName) ElementType() reflect.Type {
+	return reflect.TypeOf((*EdgeHostName)(nil))
 }
 
-func (i EdgeHostName) ToEdgeHostNameOutput() EdgeHostNameOutput {
+func (i *EdgeHostName) ToEdgeHostNameOutput() EdgeHostNameOutput {
 	return i.ToEdgeHostNameOutputWithContext(context.Background())
 }
 
-func (i EdgeHostName) ToEdgeHostNameOutputWithContext(ctx context.Context) EdgeHostNameOutput {
+func (i *EdgeHostName) ToEdgeHostNameOutputWithContext(ctx context.Context) EdgeHostNameOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EdgeHostNameOutput)
 }
 
@@ -156,7 +156,7 @@ type EdgeHostNameOutput struct {
 }
 
 func (EdgeHostNameOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*EdgeHostNameOutput)(nil)).Elem()
+	return reflect.TypeOf((*EdgeHostName)(nil))
 }
 
 func (o EdgeHostNameOutput) ToEdgeHostNameOutput() EdgeHostNameOutput {

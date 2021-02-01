@@ -34,6 +34,7 @@ namespace Pulumi.Akamai
     /// }
     /// ```
     /// </summary>
+    [AkamaiResourceType("akamai:index/gtmDatacenter:GtmDatacenter")]
     public partial class GtmDatacenter : Pulumi.CustomResource
     {
         [Output("city")]

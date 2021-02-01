@@ -10,6 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Properties
 {
     [Obsolete(@"akamai.properties.Property has been deprecated in favor of akamai.Property")]
+    [AkamaiResourceType("akamai:properties/property:Property")]
     public partial class Property : Pulumi.CustomResource
     {
         [Output("contacts")]

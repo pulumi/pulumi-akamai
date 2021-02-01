@@ -104,15 +104,15 @@ type GtmASmapInput interface {
 	ToGtmASmapOutputWithContext(ctx context.Context) GtmASmapOutput
 }
 
-func (GtmASmap) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmASmap)(nil)).Elem()
+func (*GtmASmap) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmASmap)(nil))
 }
 
-func (i GtmASmap) ToGtmASmapOutput() GtmASmapOutput {
+func (i *GtmASmap) ToGtmASmapOutput() GtmASmapOutput {
 	return i.ToGtmASmapOutputWithContext(context.Background())
 }
 
-func (i GtmASmap) ToGtmASmapOutputWithContext(ctx context.Context) GtmASmapOutput {
+func (i *GtmASmap) ToGtmASmapOutputWithContext(ctx context.Context) GtmASmapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GtmASmapOutput)
 }
 
@@ -121,7 +121,7 @@ type GtmASmapOutput struct {
 }
 
 func (GtmASmapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmASmapOutput)(nil)).Elem()
+	return reflect.TypeOf((*GtmASmap)(nil))
 }
 
 func (o GtmASmapOutput) ToGtmASmapOutput() GtmASmapOutput {

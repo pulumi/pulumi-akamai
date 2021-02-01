@@ -10,6 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Trafficmanagement
 {
     [Obsolete(@"akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource")]
+    [AkamaiResourceType("akamai:trafficmanagement/gtmResource:GtmResource")]
     public partial class GtmResource : Pulumi.CustomResource
     {
         [Output("aggregationType")]

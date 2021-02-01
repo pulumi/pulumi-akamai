@@ -44,6 +44,7 @@ namespace Pulumi.Akamai
     /// }
     /// ```
     /// </summary>
+    [AkamaiResourceType("akamai:index/gtmProperty:GtmProperty")]
     public partial class GtmProperty : Pulumi.CustomResource
     {
         [Output("backupCname")]

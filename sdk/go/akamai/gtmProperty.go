@@ -22,6 +22,7 @@ import (
 //
 // import (
 // 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -442,15 +443,15 @@ type GtmPropertyInput interface {
 	ToGtmPropertyOutputWithContext(ctx context.Context) GtmPropertyOutput
 }
 
-func (GtmProperty) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmProperty)(nil)).Elem()
+func (*GtmProperty) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmProperty)(nil))
 }
 
-func (i GtmProperty) ToGtmPropertyOutput() GtmPropertyOutput {
+func (i *GtmProperty) ToGtmPropertyOutput() GtmPropertyOutput {
 	return i.ToGtmPropertyOutputWithContext(context.Background())
 }
 
-func (i GtmProperty) ToGtmPropertyOutputWithContext(ctx context.Context) GtmPropertyOutput {
+func (i *GtmProperty) ToGtmPropertyOutputWithContext(ctx context.Context) GtmPropertyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GtmPropertyOutput)
 }
 
@@ -459,7 +460,7 @@ type GtmPropertyOutput struct {
 }
 
 func (GtmPropertyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmPropertyOutput)(nil)).Elem()
+	return reflect.TypeOf((*GtmProperty)(nil))
 }
 
 func (o GtmPropertyOutput) ToGtmPropertyOutput() GtmPropertyOutput {

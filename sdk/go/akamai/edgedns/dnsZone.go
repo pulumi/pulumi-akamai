@@ -149,15 +149,15 @@ type DnsZoneInput interface {
 	ToDnsZoneOutputWithContext(ctx context.Context) DnsZoneOutput
 }
 
-func (DnsZone) ElementType() reflect.Type {
-	return reflect.TypeOf((*DnsZone)(nil)).Elem()
+func (*DnsZone) ElementType() reflect.Type {
+	return reflect.TypeOf((*DnsZone)(nil))
 }
 
-func (i DnsZone) ToDnsZoneOutput() DnsZoneOutput {
+func (i *DnsZone) ToDnsZoneOutput() DnsZoneOutput {
 	return i.ToDnsZoneOutputWithContext(context.Background())
 }
 
-func (i DnsZone) ToDnsZoneOutputWithContext(ctx context.Context) DnsZoneOutput {
+func (i *DnsZone) ToDnsZoneOutputWithContext(ctx context.Context) DnsZoneOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DnsZoneOutput)
 }
 
@@ -166,7 +166,7 @@ type DnsZoneOutput struct {
 }
 
 func (DnsZoneOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*DnsZoneOutput)(nil)).Elem()
+	return reflect.TypeOf((*DnsZone)(nil))
 }
 
 func (o DnsZoneOutput) ToDnsZoneOutput() DnsZoneOutput {

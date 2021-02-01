@@ -10,6 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Trafficmanagement
 {
     [Obsolete(@"akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap")]
+    [AkamaiResourceType("akamai:trafficmanagement/gtmCidrmap:GtmCidrmap")]
     public partial class GtmCidrmap : Pulumi.CustomResource
     {
         [Output("assignments")]

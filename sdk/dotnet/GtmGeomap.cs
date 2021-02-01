@@ -38,6 +38,7 @@ namespace Pulumi.Akamai
     /// }
     /// ```
     /// </summary>
+    [AkamaiResourceType("akamai:index/gtmGeomap:GtmGeomap")]
     public partial class GtmGeomap : Pulumi.CustomResource
     {
         /// <summary>

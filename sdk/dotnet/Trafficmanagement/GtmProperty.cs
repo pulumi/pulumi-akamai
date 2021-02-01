@@ -10,6 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Trafficmanagement
 {
     [Obsolete(@"akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty")]
+    [AkamaiResourceType("akamai:trafficmanagement/gtmProperty:GtmProperty")]
     public partial class GtmProperty : Pulumi.CustomResource
     {
         [Output("backupCname")]

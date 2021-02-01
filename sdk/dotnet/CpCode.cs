@@ -9,6 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
+    [AkamaiResourceType("akamai:index/cpCode:CpCode")]
     public partial class CpCode : Pulumi.CustomResource
     {
         [Output("contract")]

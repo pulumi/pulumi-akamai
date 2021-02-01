@@ -40,6 +40,7 @@ namespace Pulumi.Akamai
     /// }
     /// ```
     /// </summary>
+    [AkamaiResourceType("akamai:index/appSecMatchTarget:AppSecMatchTarget")]
     public partial class AppSecMatchTarget : Pulumi.CustomResource
     {
         /// <summary>

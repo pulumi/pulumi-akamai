@@ -22,6 +22,7 @@ import (
 //
 // import (
 // 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -179,15 +180,15 @@ type GtmCidrmapInput interface {
 	ToGtmCidrmapOutputWithContext(ctx context.Context) GtmCidrmapOutput
 }
 
-func (GtmCidrmap) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmCidrmap)(nil)).Elem()
+func (*GtmCidrmap) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmCidrmap)(nil))
 }
 
-func (i GtmCidrmap) ToGtmCidrmapOutput() GtmCidrmapOutput {
+func (i *GtmCidrmap) ToGtmCidrmapOutput() GtmCidrmapOutput {
 	return i.ToGtmCidrmapOutputWithContext(context.Background())
 }
 
-func (i GtmCidrmap) ToGtmCidrmapOutputWithContext(ctx context.Context) GtmCidrmapOutput {
+func (i *GtmCidrmap) ToGtmCidrmapOutputWithContext(ctx context.Context) GtmCidrmapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GtmCidrmapOutput)
 }
 
@@ -196,7 +197,7 @@ type GtmCidrmapOutput struct {
 }
 
 func (GtmCidrmapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmCidrmapOutput)(nil)).Elem()
+	return reflect.TypeOf((*GtmCidrmap)(nil))
 }
 
 func (o GtmCidrmapOutput) ToGtmCidrmapOutput() GtmCidrmapOutput {

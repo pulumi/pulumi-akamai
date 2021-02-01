@@ -165,15 +165,15 @@ type GtmDatacenterInput interface {
 	ToGtmDatacenterOutputWithContext(ctx context.Context) GtmDatacenterOutput
 }
 
-func (GtmDatacenter) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmDatacenter)(nil)).Elem()
+func (*GtmDatacenter) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmDatacenter)(nil))
 }
 
-func (i GtmDatacenter) ToGtmDatacenterOutput() GtmDatacenterOutput {
+func (i *GtmDatacenter) ToGtmDatacenterOutput() GtmDatacenterOutput {
 	return i.ToGtmDatacenterOutputWithContext(context.Background())
 }
 
-func (i GtmDatacenter) ToGtmDatacenterOutputWithContext(ctx context.Context) GtmDatacenterOutput {
+func (i *GtmDatacenter) ToGtmDatacenterOutputWithContext(ctx context.Context) GtmDatacenterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GtmDatacenterOutput)
 }
 
@@ -182,7 +182,7 @@ type GtmDatacenterOutput struct {
 }
 
 func (GtmDatacenterOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmDatacenterOutput)(nil)).Elem()
+	return reflect.TypeOf((*GtmDatacenter)(nil))
 }
 
 func (o GtmDatacenterOutput) ToGtmDatacenterOutput() GtmDatacenterOutput {

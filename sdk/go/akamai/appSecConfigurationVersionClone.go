@@ -99,15 +99,15 @@ type AppSecConfigurationVersionCloneInput interface {
 	ToAppSecConfigurationVersionCloneOutputWithContext(ctx context.Context) AppSecConfigurationVersionCloneOutput
 }
 
-func (AppSecConfigurationVersionClone) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecConfigurationVersionClone)(nil)).Elem()
+func (*AppSecConfigurationVersionClone) ElementType() reflect.Type {
+	return reflect.TypeOf((*AppSecConfigurationVersionClone)(nil))
 }
 
-func (i AppSecConfigurationVersionClone) ToAppSecConfigurationVersionCloneOutput() AppSecConfigurationVersionCloneOutput {
+func (i *AppSecConfigurationVersionClone) ToAppSecConfigurationVersionCloneOutput() AppSecConfigurationVersionCloneOutput {
 	return i.ToAppSecConfigurationVersionCloneOutputWithContext(context.Background())
 }
 
-func (i AppSecConfigurationVersionClone) ToAppSecConfigurationVersionCloneOutputWithContext(ctx context.Context) AppSecConfigurationVersionCloneOutput {
+func (i *AppSecConfigurationVersionClone) ToAppSecConfigurationVersionCloneOutputWithContext(ctx context.Context) AppSecConfigurationVersionCloneOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecConfigurationVersionCloneOutput)
 }
 
@@ -116,7 +116,7 @@ type AppSecConfigurationVersionCloneOutput struct {
 }
 
 func (AppSecConfigurationVersionCloneOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecConfigurationVersionCloneOutput)(nil)).Elem()
+	return reflect.TypeOf((*AppSecConfigurationVersionClone)(nil))
 }
 
 func (o AppSecConfigurationVersionCloneOutput) ToAppSecConfigurationVersionCloneOutput() AppSecConfigurationVersionCloneOutput {

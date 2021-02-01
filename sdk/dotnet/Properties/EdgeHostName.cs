@@ -10,6 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Properties
 {
     [Obsolete(@"akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName")]
+    [AkamaiResourceType("akamai:properties/edgeHostName:EdgeHostName")]
     public partial class EdgeHostName : Pulumi.CustomResource
     {
         [Output("certificate")]

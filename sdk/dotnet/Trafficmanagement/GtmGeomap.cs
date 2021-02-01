@@ -10,6 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Trafficmanagement
 {
     [Obsolete(@"akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap")]
+    [AkamaiResourceType("akamai:trafficmanagement/gtmGeomap:GtmGeomap")]
     public partial class GtmGeomap : Pulumi.CustomResource
     {
         [Output("assignments")]

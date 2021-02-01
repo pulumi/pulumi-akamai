@@ -122,15 +122,15 @@ type AppSecMatchTargetSequenceInput interface {
 	ToAppSecMatchTargetSequenceOutputWithContext(ctx context.Context) AppSecMatchTargetSequenceOutput
 }
 
-func (AppSecMatchTargetSequence) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecMatchTargetSequence)(nil)).Elem()
+func (*AppSecMatchTargetSequence) ElementType() reflect.Type {
+	return reflect.TypeOf((*AppSecMatchTargetSequence)(nil))
 }
 
-func (i AppSecMatchTargetSequence) ToAppSecMatchTargetSequenceOutput() AppSecMatchTargetSequenceOutput {
+func (i *AppSecMatchTargetSequence) ToAppSecMatchTargetSequenceOutput() AppSecMatchTargetSequenceOutput {
 	return i.ToAppSecMatchTargetSequenceOutputWithContext(context.Background())
 }
 
-func (i AppSecMatchTargetSequence) ToAppSecMatchTargetSequenceOutputWithContext(ctx context.Context) AppSecMatchTargetSequenceOutput {
+func (i *AppSecMatchTargetSequence) ToAppSecMatchTargetSequenceOutputWithContext(ctx context.Context) AppSecMatchTargetSequenceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecMatchTargetSequenceOutput)
 }
 
@@ -139,7 +139,7 @@ type AppSecMatchTargetSequenceOutput struct {
 }
 
 func (AppSecMatchTargetSequenceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecMatchTargetSequenceOutput)(nil)).Elem()
+	return reflect.TypeOf((*AppSecMatchTargetSequence)(nil))
 }
 
 func (o AppSecMatchTargetSequenceOutput) ToAppSecMatchTargetSequenceOutput() AppSecMatchTargetSequenceOutput {
