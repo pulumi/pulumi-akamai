@@ -119,7 +119,8 @@ export class PropertyActivation extends pulumi.CustomResource {
     constructor(name: string, args: PropertyActivationArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: PropertyActivationArgs | PropertyActivationState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as PropertyActivationState | undefined;
             inputs["activationId"] = state ? state.activationId : undefined;
             inputs["contacts"] = state ? state.contacts : undefined;
@@ -132,10 +133,10 @@ export class PropertyActivation extends pulumi.CustomResource {
             inputs["warnings"] = state ? state.warnings : undefined;
         } else {
             const args = argsOrState as PropertyActivationArgs | undefined;
-            if ((!args || args.contacts === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.contacts === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'contacts'");
             }
-            if ((!args || args.version === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.version === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
             inputs["activationId"] = args ? args.activationId : undefined;
@@ -148,15 +149,11 @@ export class PropertyActivation extends pulumi.CustomResource {
             inputs["status"] = undefined /*out*/;
             inputs["warnings"] = undefined /*out*/;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         const aliasOpts = { aliases: [{ type: "akamai:properties/propertyActivation:PropertyActivation" }] };
-        opts = opts ? pulumi.mergeOptions(opts, aliasOpts) : aliasOpts;
+        opts = pulumi.mergeOptions(opts, aliasOpts);
         super(PropertyActivation.__pulumiType, name, inputs, opts);
     }
 }

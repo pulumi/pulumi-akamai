@@ -47,7 +47,8 @@ export class AppSecSelectedHostnames extends pulumi.CustomResource {
     constructor(name: string, args: AppSecSelectedHostnamesArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecSelectedHostnamesArgs | AppSecSelectedHostnamesState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as AppSecSelectedHostnamesState | undefined;
             inputs["configId"] = state ? state.configId : undefined;
             inputs["hostnames"] = state ? state.hostnames : undefined;
@@ -55,16 +56,16 @@ export class AppSecSelectedHostnames extends pulumi.CustomResource {
             inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecSelectedHostnamesArgs | undefined;
-            if ((!args || args.configId === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.configId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.hostnames === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.hostnames === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'hostnames'");
             }
-            if ((!args || args.mode === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.mode === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'mode'");
             }
-            if ((!args || args.version === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.version === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
             inputs["configId"] = args ? args.configId : undefined;
@@ -72,12 +73,8 @@ export class AppSecSelectedHostnames extends pulumi.CustomResource {
             inputs["mode"] = args ? args.mode : undefined;
             inputs["version"] = args ? args.version : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(AppSecSelectedHostnames.__pulumiType, name, inputs, opts);
     }

@@ -21,7 +21,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -251,6 +251,85 @@ func (i *DnsZone) ToDnsZoneOutputWithContext(ctx context.Context) DnsZoneOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(DnsZoneOutput)
 }
 
+func (i *DnsZone) ToDnsZonePtrOutput() DnsZonePtrOutput {
+	return i.ToDnsZonePtrOutputWithContext(context.Background())
+}
+
+func (i *DnsZone) ToDnsZonePtrOutputWithContext(ctx context.Context) DnsZonePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DnsZonePtrOutput)
+}
+
+type DnsZonePtrInput interface {
+	pulumi.Input
+
+	ToDnsZonePtrOutput() DnsZonePtrOutput
+	ToDnsZonePtrOutputWithContext(ctx context.Context) DnsZonePtrOutput
+}
+
+type dnsZonePtrType DnsZoneArgs
+
+func (*dnsZonePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DnsZone)(nil))
+}
+
+func (i *dnsZonePtrType) ToDnsZonePtrOutput() DnsZonePtrOutput {
+	return i.ToDnsZonePtrOutputWithContext(context.Background())
+}
+
+func (i *dnsZonePtrType) ToDnsZonePtrOutputWithContext(ctx context.Context) DnsZonePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DnsZonePtrOutput)
+}
+
+// DnsZoneArrayInput is an input type that accepts DnsZoneArray and DnsZoneArrayOutput values.
+// You can construct a concrete instance of `DnsZoneArrayInput` via:
+//
+//          DnsZoneArray{ DnsZoneArgs{...} }
+type DnsZoneArrayInput interface {
+	pulumi.Input
+
+	ToDnsZoneArrayOutput() DnsZoneArrayOutput
+	ToDnsZoneArrayOutputWithContext(context.Context) DnsZoneArrayOutput
+}
+
+type DnsZoneArray []DnsZoneInput
+
+func (DnsZoneArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*DnsZone)(nil))
+}
+
+func (i DnsZoneArray) ToDnsZoneArrayOutput() DnsZoneArrayOutput {
+	return i.ToDnsZoneArrayOutputWithContext(context.Background())
+}
+
+func (i DnsZoneArray) ToDnsZoneArrayOutputWithContext(ctx context.Context) DnsZoneArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DnsZoneArrayOutput)
+}
+
+// DnsZoneMapInput is an input type that accepts DnsZoneMap and DnsZoneMapOutput values.
+// You can construct a concrete instance of `DnsZoneMapInput` via:
+//
+//          DnsZoneMap{ "key": DnsZoneArgs{...} }
+type DnsZoneMapInput interface {
+	pulumi.Input
+
+	ToDnsZoneMapOutput() DnsZoneMapOutput
+	ToDnsZoneMapOutputWithContext(context.Context) DnsZoneMapOutput
+}
+
+type DnsZoneMap map[string]DnsZoneInput
+
+func (DnsZoneMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*DnsZone)(nil))
+}
+
+func (i DnsZoneMap) ToDnsZoneMapOutput() DnsZoneMapOutput {
+	return i.ToDnsZoneMapOutputWithContext(context.Background())
+}
+
+func (i DnsZoneMap) ToDnsZoneMapOutputWithContext(ctx context.Context) DnsZoneMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DnsZoneMapOutput)
+}
+
 type DnsZoneOutput struct {
 	*pulumi.OutputState
 }
@@ -267,6 +346,75 @@ func (o DnsZoneOutput) ToDnsZoneOutputWithContext(ctx context.Context) DnsZoneOu
 	return o
 }
 
+func (o DnsZoneOutput) ToDnsZonePtrOutput() DnsZonePtrOutput {
+	return o.ToDnsZonePtrOutputWithContext(context.Background())
+}
+
+func (o DnsZoneOutput) ToDnsZonePtrOutputWithContext(ctx context.Context) DnsZonePtrOutput {
+	return o.ApplyT(func(v DnsZone) *DnsZone {
+		return &v
+	}).(DnsZonePtrOutput)
+}
+
+type DnsZonePtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (DnsZonePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DnsZone)(nil))
+}
+
+func (o DnsZonePtrOutput) ToDnsZonePtrOutput() DnsZonePtrOutput {
+	return o
+}
+
+func (o DnsZonePtrOutput) ToDnsZonePtrOutputWithContext(ctx context.Context) DnsZonePtrOutput {
+	return o
+}
+
+type DnsZoneArrayOutput struct{ *pulumi.OutputState }
+
+func (DnsZoneArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DnsZone)(nil))
+}
+
+func (o DnsZoneArrayOutput) ToDnsZoneArrayOutput() DnsZoneArrayOutput {
+	return o
+}
+
+func (o DnsZoneArrayOutput) ToDnsZoneArrayOutputWithContext(ctx context.Context) DnsZoneArrayOutput {
+	return o
+}
+
+func (o DnsZoneArrayOutput) Index(i pulumi.IntInput) DnsZoneOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DnsZone {
+		return vs[0].([]DnsZone)[vs[1].(int)]
+	}).(DnsZoneOutput)
+}
+
+type DnsZoneMapOutput struct{ *pulumi.OutputState }
+
+func (DnsZoneMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]DnsZone)(nil))
+}
+
+func (o DnsZoneMapOutput) ToDnsZoneMapOutput() DnsZoneMapOutput {
+	return o
+}
+
+func (o DnsZoneMapOutput) ToDnsZoneMapOutputWithContext(ctx context.Context) DnsZoneMapOutput {
+	return o
+}
+
+func (o DnsZoneMapOutput) MapIndex(k pulumi.StringInput) DnsZoneOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) DnsZone {
+		return vs[0].(map[string]DnsZone)[vs[1].(string)]
+	}).(DnsZoneOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(DnsZoneOutput{})
+	pulumi.RegisterOutputType(DnsZonePtrOutput{})
+	pulumi.RegisterOutputType(DnsZoneArrayOutput{})
+	pulumi.RegisterOutputType(DnsZoneMapOutput{})
 }

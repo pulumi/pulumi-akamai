@@ -90,7 +90,8 @@ export class AppSecCustomRuleAction extends pulumi.CustomResource {
     constructor(name: string, args: AppSecCustomRuleActionArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecCustomRuleActionArgs | AppSecCustomRuleActionState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as AppSecCustomRuleActionState | undefined;
             inputs["configId"] = state ? state.configId : undefined;
             inputs["customRuleAction"] = state ? state.customRuleAction : undefined;
@@ -99,19 +100,19 @@ export class AppSecCustomRuleAction extends pulumi.CustomResource {
             inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecCustomRuleActionArgs | undefined;
-            if ((!args || args.configId === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.configId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.customRuleAction === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.customRuleAction === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'customRuleAction'");
             }
-            if ((!args || args.customRuleId === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.customRuleId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'customRuleId'");
             }
-            if ((!args || args.policyId === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.policyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'policyId'");
             }
-            if ((!args || args.version === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.version === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
             inputs["configId"] = args ? args.configId : undefined;
@@ -120,12 +121,8 @@ export class AppSecCustomRuleAction extends pulumi.CustomResource {
             inputs["policyId"] = args ? args.policyId : undefined;
             inputs["version"] = args ? args.version : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(AppSecCustomRuleAction.__pulumiType, name, inputs, opts);
     }

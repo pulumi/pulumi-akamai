@@ -85,7 +85,8 @@ export class GtmProperty extends pulumi.CustomResource {
     constructor(name: string, argsOrState?: GtmPropertyArgs | GtmPropertyState, opts?: pulumi.CustomResourceOptions) {
         pulumi.log.warn("GtmProperty is deprecated: akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty")
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as GtmPropertyState | undefined;
             inputs["backupCname"] = state ? state.backupCname : undefined;
             inputs["backupIp"] = state ? state.backupIp : undefined;
@@ -123,22 +124,22 @@ export class GtmProperty extends pulumi.CustomResource {
             inputs["weightedHashBitsForIpv6"] = state ? state.weightedHashBitsForIpv6 : undefined;
         } else {
             const args = argsOrState as GtmPropertyArgs | undefined;
-            if ((!args || args.domain === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.domain === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'domain'");
             }
-            if ((!args || args.handoutLimit === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.handoutLimit === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'handoutLimit'");
             }
-            if ((!args || args.handoutMode === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.handoutMode === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'handoutMode'");
             }
-            if ((!args || args.scoreAggregationType === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.scoreAggregationType === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'scoreAggregationType'");
             }
-            if ((!args || args.trafficTargets === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.trafficTargets === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'trafficTargets'");
             }
-            if ((!args || args.type === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.type === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
             inputs["backupCname"] = args ? args.backupCname : undefined;
@@ -176,12 +177,8 @@ export class GtmProperty extends pulumi.CustomResource {
             inputs["weightedHashBitsForIpv4"] = undefined /*out*/;
             inputs["weightedHashBitsForIpv6"] = undefined /*out*/;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(GtmProperty.__pulumiType, name, inputs, opts);
     }

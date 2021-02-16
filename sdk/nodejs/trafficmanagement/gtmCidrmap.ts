@@ -56,7 +56,8 @@ export class GtmCidrmap extends pulumi.CustomResource {
     constructor(name: string, argsOrState?: GtmCidrmapArgs | GtmCidrmapState, opts?: pulumi.CustomResourceOptions) {
         pulumi.log.warn("GtmCidrmap is deprecated: akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap")
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as GtmCidrmapState | undefined;
             inputs["assignments"] = state ? state.assignments : undefined;
             inputs["defaultDatacenter"] = state ? state.defaultDatacenter : undefined;
@@ -65,10 +66,10 @@ export class GtmCidrmap extends pulumi.CustomResource {
             inputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
         } else {
             const args = argsOrState as GtmCidrmapArgs | undefined;
-            if ((!args || args.defaultDatacenter === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.defaultDatacenter === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'defaultDatacenter'");
             }
-            if ((!args || args.domain === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.domain === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'domain'");
             }
             inputs["assignments"] = args ? args.assignments : undefined;
@@ -77,12 +78,8 @@ export class GtmCidrmap extends pulumi.CustomResource {
             inputs["name"] = args ? args.name : undefined;
             inputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(GtmCidrmap.__pulumiType, name, inputs, opts);
     }

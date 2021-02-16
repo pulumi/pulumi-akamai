@@ -52,7 +52,8 @@ export class PropertyVariables extends pulumi.CustomResource {
     constructor(name: string, args?: PropertyVariablesArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: PropertyVariablesArgs | PropertyVariablesState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as PropertyVariablesState | undefined;
             inputs["json"] = state ? state.json : undefined;
             inputs["variables"] = state ? state.variables : undefined;
@@ -61,15 +62,11 @@ export class PropertyVariables extends pulumi.CustomResource {
             inputs["variables"] = args ? args.variables : undefined;
             inputs["json"] = undefined /*out*/;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         const aliasOpts = { aliases: [{ type: "akamai:properties/propertyVariables:PropertyVariables" }] };
-        opts = opts ? pulumi.mergeOptions(opts, aliasOpts) : aliasOpts;
+        opts = pulumi.mergeOptions(opts, aliasOpts);
         super(PropertyVariables.__pulumiType, name, inputs, opts);
     }
 }

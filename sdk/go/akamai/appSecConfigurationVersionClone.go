@@ -111,6 +111,85 @@ func (i *AppSecConfigurationVersionClone) ToAppSecConfigurationVersionCloneOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecConfigurationVersionCloneOutput)
 }
 
+func (i *AppSecConfigurationVersionClone) ToAppSecConfigurationVersionClonePtrOutput() AppSecConfigurationVersionClonePtrOutput {
+	return i.ToAppSecConfigurationVersionClonePtrOutputWithContext(context.Background())
+}
+
+func (i *AppSecConfigurationVersionClone) ToAppSecConfigurationVersionClonePtrOutputWithContext(ctx context.Context) AppSecConfigurationVersionClonePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecConfigurationVersionClonePtrOutput)
+}
+
+type AppSecConfigurationVersionClonePtrInput interface {
+	pulumi.Input
+
+	ToAppSecConfigurationVersionClonePtrOutput() AppSecConfigurationVersionClonePtrOutput
+	ToAppSecConfigurationVersionClonePtrOutputWithContext(ctx context.Context) AppSecConfigurationVersionClonePtrOutput
+}
+
+type appSecConfigurationVersionClonePtrType AppSecConfigurationVersionCloneArgs
+
+func (*appSecConfigurationVersionClonePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AppSecConfigurationVersionClone)(nil))
+}
+
+func (i *appSecConfigurationVersionClonePtrType) ToAppSecConfigurationVersionClonePtrOutput() AppSecConfigurationVersionClonePtrOutput {
+	return i.ToAppSecConfigurationVersionClonePtrOutputWithContext(context.Background())
+}
+
+func (i *appSecConfigurationVersionClonePtrType) ToAppSecConfigurationVersionClonePtrOutputWithContext(ctx context.Context) AppSecConfigurationVersionClonePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecConfigurationVersionClonePtrOutput)
+}
+
+// AppSecConfigurationVersionCloneArrayInput is an input type that accepts AppSecConfigurationVersionCloneArray and AppSecConfigurationVersionCloneArrayOutput values.
+// You can construct a concrete instance of `AppSecConfigurationVersionCloneArrayInput` via:
+//
+//          AppSecConfigurationVersionCloneArray{ AppSecConfigurationVersionCloneArgs{...} }
+type AppSecConfigurationVersionCloneArrayInput interface {
+	pulumi.Input
+
+	ToAppSecConfigurationVersionCloneArrayOutput() AppSecConfigurationVersionCloneArrayOutput
+	ToAppSecConfigurationVersionCloneArrayOutputWithContext(context.Context) AppSecConfigurationVersionCloneArrayOutput
+}
+
+type AppSecConfigurationVersionCloneArray []AppSecConfigurationVersionCloneInput
+
+func (AppSecConfigurationVersionCloneArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*AppSecConfigurationVersionClone)(nil))
+}
+
+func (i AppSecConfigurationVersionCloneArray) ToAppSecConfigurationVersionCloneArrayOutput() AppSecConfigurationVersionCloneArrayOutput {
+	return i.ToAppSecConfigurationVersionCloneArrayOutputWithContext(context.Background())
+}
+
+func (i AppSecConfigurationVersionCloneArray) ToAppSecConfigurationVersionCloneArrayOutputWithContext(ctx context.Context) AppSecConfigurationVersionCloneArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecConfigurationVersionCloneArrayOutput)
+}
+
+// AppSecConfigurationVersionCloneMapInput is an input type that accepts AppSecConfigurationVersionCloneMap and AppSecConfigurationVersionCloneMapOutput values.
+// You can construct a concrete instance of `AppSecConfigurationVersionCloneMapInput` via:
+//
+//          AppSecConfigurationVersionCloneMap{ "key": AppSecConfigurationVersionCloneArgs{...} }
+type AppSecConfigurationVersionCloneMapInput interface {
+	pulumi.Input
+
+	ToAppSecConfigurationVersionCloneMapOutput() AppSecConfigurationVersionCloneMapOutput
+	ToAppSecConfigurationVersionCloneMapOutputWithContext(context.Context) AppSecConfigurationVersionCloneMapOutput
+}
+
+type AppSecConfigurationVersionCloneMap map[string]AppSecConfigurationVersionCloneInput
+
+func (AppSecConfigurationVersionCloneMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*AppSecConfigurationVersionClone)(nil))
+}
+
+func (i AppSecConfigurationVersionCloneMap) ToAppSecConfigurationVersionCloneMapOutput() AppSecConfigurationVersionCloneMapOutput {
+	return i.ToAppSecConfigurationVersionCloneMapOutputWithContext(context.Background())
+}
+
+func (i AppSecConfigurationVersionCloneMap) ToAppSecConfigurationVersionCloneMapOutputWithContext(ctx context.Context) AppSecConfigurationVersionCloneMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecConfigurationVersionCloneMapOutput)
+}
+
 type AppSecConfigurationVersionCloneOutput struct {
 	*pulumi.OutputState
 }
@@ -127,6 +206,75 @@ func (o AppSecConfigurationVersionCloneOutput) ToAppSecConfigurationVersionClone
 	return o
 }
 
+func (o AppSecConfigurationVersionCloneOutput) ToAppSecConfigurationVersionClonePtrOutput() AppSecConfigurationVersionClonePtrOutput {
+	return o.ToAppSecConfigurationVersionClonePtrOutputWithContext(context.Background())
+}
+
+func (o AppSecConfigurationVersionCloneOutput) ToAppSecConfigurationVersionClonePtrOutputWithContext(ctx context.Context) AppSecConfigurationVersionClonePtrOutput {
+	return o.ApplyT(func(v AppSecConfigurationVersionClone) *AppSecConfigurationVersionClone {
+		return &v
+	}).(AppSecConfigurationVersionClonePtrOutput)
+}
+
+type AppSecConfigurationVersionClonePtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (AppSecConfigurationVersionClonePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AppSecConfigurationVersionClone)(nil))
+}
+
+func (o AppSecConfigurationVersionClonePtrOutput) ToAppSecConfigurationVersionClonePtrOutput() AppSecConfigurationVersionClonePtrOutput {
+	return o
+}
+
+func (o AppSecConfigurationVersionClonePtrOutput) ToAppSecConfigurationVersionClonePtrOutputWithContext(ctx context.Context) AppSecConfigurationVersionClonePtrOutput {
+	return o
+}
+
+type AppSecConfigurationVersionCloneArrayOutput struct{ *pulumi.OutputState }
+
+func (AppSecConfigurationVersionCloneArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AppSecConfigurationVersionClone)(nil))
+}
+
+func (o AppSecConfigurationVersionCloneArrayOutput) ToAppSecConfigurationVersionCloneArrayOutput() AppSecConfigurationVersionCloneArrayOutput {
+	return o
+}
+
+func (o AppSecConfigurationVersionCloneArrayOutput) ToAppSecConfigurationVersionCloneArrayOutputWithContext(ctx context.Context) AppSecConfigurationVersionCloneArrayOutput {
+	return o
+}
+
+func (o AppSecConfigurationVersionCloneArrayOutput) Index(i pulumi.IntInput) AppSecConfigurationVersionCloneOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecConfigurationVersionClone {
+		return vs[0].([]AppSecConfigurationVersionClone)[vs[1].(int)]
+	}).(AppSecConfigurationVersionCloneOutput)
+}
+
+type AppSecConfigurationVersionCloneMapOutput struct{ *pulumi.OutputState }
+
+func (AppSecConfigurationVersionCloneMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]AppSecConfigurationVersionClone)(nil))
+}
+
+func (o AppSecConfigurationVersionCloneMapOutput) ToAppSecConfigurationVersionCloneMapOutput() AppSecConfigurationVersionCloneMapOutput {
+	return o
+}
+
+func (o AppSecConfigurationVersionCloneMapOutput) ToAppSecConfigurationVersionCloneMapOutputWithContext(ctx context.Context) AppSecConfigurationVersionCloneMapOutput {
+	return o
+}
+
+func (o AppSecConfigurationVersionCloneMapOutput) MapIndex(k pulumi.StringInput) AppSecConfigurationVersionCloneOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecConfigurationVersionClone {
+		return vs[0].(map[string]AppSecConfigurationVersionClone)[vs[1].(string)]
+	}).(AppSecConfigurationVersionCloneOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(AppSecConfigurationVersionCloneOutput{})
+	pulumi.RegisterOutputType(AppSecConfigurationVersionClonePtrOutput{})
+	pulumi.RegisterOutputType(AppSecConfigurationVersionCloneArrayOutput{})
+	pulumi.RegisterOutputType(AppSecConfigurationVersionCloneMapOutput{})
 }

@@ -156,6 +156,85 @@ func (i *EdgeHostName) ToEdgeHostNameOutputWithContext(ctx context.Context) Edge
 	return pulumi.ToOutputWithContext(ctx, i).(EdgeHostNameOutput)
 }
 
+func (i *EdgeHostName) ToEdgeHostNamePtrOutput() EdgeHostNamePtrOutput {
+	return i.ToEdgeHostNamePtrOutputWithContext(context.Background())
+}
+
+func (i *EdgeHostName) ToEdgeHostNamePtrOutputWithContext(ctx context.Context) EdgeHostNamePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EdgeHostNamePtrOutput)
+}
+
+type EdgeHostNamePtrInput interface {
+	pulumi.Input
+
+	ToEdgeHostNamePtrOutput() EdgeHostNamePtrOutput
+	ToEdgeHostNamePtrOutputWithContext(ctx context.Context) EdgeHostNamePtrOutput
+}
+
+type edgeHostNamePtrType EdgeHostNameArgs
+
+func (*edgeHostNamePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**EdgeHostName)(nil))
+}
+
+func (i *edgeHostNamePtrType) ToEdgeHostNamePtrOutput() EdgeHostNamePtrOutput {
+	return i.ToEdgeHostNamePtrOutputWithContext(context.Background())
+}
+
+func (i *edgeHostNamePtrType) ToEdgeHostNamePtrOutputWithContext(ctx context.Context) EdgeHostNamePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EdgeHostNamePtrOutput)
+}
+
+// EdgeHostNameArrayInput is an input type that accepts EdgeHostNameArray and EdgeHostNameArrayOutput values.
+// You can construct a concrete instance of `EdgeHostNameArrayInput` via:
+//
+//          EdgeHostNameArray{ EdgeHostNameArgs{...} }
+type EdgeHostNameArrayInput interface {
+	pulumi.Input
+
+	ToEdgeHostNameArrayOutput() EdgeHostNameArrayOutput
+	ToEdgeHostNameArrayOutputWithContext(context.Context) EdgeHostNameArrayOutput
+}
+
+type EdgeHostNameArray []EdgeHostNameInput
+
+func (EdgeHostNameArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*EdgeHostName)(nil))
+}
+
+func (i EdgeHostNameArray) ToEdgeHostNameArrayOutput() EdgeHostNameArrayOutput {
+	return i.ToEdgeHostNameArrayOutputWithContext(context.Background())
+}
+
+func (i EdgeHostNameArray) ToEdgeHostNameArrayOutputWithContext(ctx context.Context) EdgeHostNameArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EdgeHostNameArrayOutput)
+}
+
+// EdgeHostNameMapInput is an input type that accepts EdgeHostNameMap and EdgeHostNameMapOutput values.
+// You can construct a concrete instance of `EdgeHostNameMapInput` via:
+//
+//          EdgeHostNameMap{ "key": EdgeHostNameArgs{...} }
+type EdgeHostNameMapInput interface {
+	pulumi.Input
+
+	ToEdgeHostNameMapOutput() EdgeHostNameMapOutput
+	ToEdgeHostNameMapOutputWithContext(context.Context) EdgeHostNameMapOutput
+}
+
+type EdgeHostNameMap map[string]EdgeHostNameInput
+
+func (EdgeHostNameMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*EdgeHostName)(nil))
+}
+
+func (i EdgeHostNameMap) ToEdgeHostNameMapOutput() EdgeHostNameMapOutput {
+	return i.ToEdgeHostNameMapOutputWithContext(context.Background())
+}
+
+func (i EdgeHostNameMap) ToEdgeHostNameMapOutputWithContext(ctx context.Context) EdgeHostNameMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EdgeHostNameMapOutput)
+}
+
 type EdgeHostNameOutput struct {
 	*pulumi.OutputState
 }
@@ -172,6 +251,75 @@ func (o EdgeHostNameOutput) ToEdgeHostNameOutputWithContext(ctx context.Context)
 	return o
 }
 
+func (o EdgeHostNameOutput) ToEdgeHostNamePtrOutput() EdgeHostNamePtrOutput {
+	return o.ToEdgeHostNamePtrOutputWithContext(context.Background())
+}
+
+func (o EdgeHostNameOutput) ToEdgeHostNamePtrOutputWithContext(ctx context.Context) EdgeHostNamePtrOutput {
+	return o.ApplyT(func(v EdgeHostName) *EdgeHostName {
+		return &v
+	}).(EdgeHostNamePtrOutput)
+}
+
+type EdgeHostNamePtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (EdgeHostNamePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**EdgeHostName)(nil))
+}
+
+func (o EdgeHostNamePtrOutput) ToEdgeHostNamePtrOutput() EdgeHostNamePtrOutput {
+	return o
+}
+
+func (o EdgeHostNamePtrOutput) ToEdgeHostNamePtrOutputWithContext(ctx context.Context) EdgeHostNamePtrOutput {
+	return o
+}
+
+type EdgeHostNameArrayOutput struct{ *pulumi.OutputState }
+
+func (EdgeHostNameArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EdgeHostName)(nil))
+}
+
+func (o EdgeHostNameArrayOutput) ToEdgeHostNameArrayOutput() EdgeHostNameArrayOutput {
+	return o
+}
+
+func (o EdgeHostNameArrayOutput) ToEdgeHostNameArrayOutputWithContext(ctx context.Context) EdgeHostNameArrayOutput {
+	return o
+}
+
+func (o EdgeHostNameArrayOutput) Index(i pulumi.IntInput) EdgeHostNameOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) EdgeHostName {
+		return vs[0].([]EdgeHostName)[vs[1].(int)]
+	}).(EdgeHostNameOutput)
+}
+
+type EdgeHostNameMapOutput struct{ *pulumi.OutputState }
+
+func (EdgeHostNameMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]EdgeHostName)(nil))
+}
+
+func (o EdgeHostNameMapOutput) ToEdgeHostNameMapOutput() EdgeHostNameMapOutput {
+	return o
+}
+
+func (o EdgeHostNameMapOutput) ToEdgeHostNameMapOutputWithContext(ctx context.Context) EdgeHostNameMapOutput {
+	return o
+}
+
+func (o EdgeHostNameMapOutput) MapIndex(k pulumi.StringInput) EdgeHostNameOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) EdgeHostName {
+		return vs[0].(map[string]EdgeHostName)[vs[1].(string)]
+	}).(EdgeHostNameOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(EdgeHostNameOutput{})
+	pulumi.RegisterOutputType(EdgeHostNamePtrOutput{})
+	pulumi.RegisterOutputType(EdgeHostNameArrayOutput{})
+	pulumi.RegisterOutputType(EdgeHostNameMapOutput{})
 }

@@ -22,7 +22,6 @@ import (
 //
 // import (
 // 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai"
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -181,6 +180,85 @@ func (i *AppSecActivations) ToAppSecActivationsOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecActivationsOutput)
 }
 
+func (i *AppSecActivations) ToAppSecActivationsPtrOutput() AppSecActivationsPtrOutput {
+	return i.ToAppSecActivationsPtrOutputWithContext(context.Background())
+}
+
+func (i *AppSecActivations) ToAppSecActivationsPtrOutputWithContext(ctx context.Context) AppSecActivationsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecActivationsPtrOutput)
+}
+
+type AppSecActivationsPtrInput interface {
+	pulumi.Input
+
+	ToAppSecActivationsPtrOutput() AppSecActivationsPtrOutput
+	ToAppSecActivationsPtrOutputWithContext(ctx context.Context) AppSecActivationsPtrOutput
+}
+
+type appSecActivationsPtrType AppSecActivationsArgs
+
+func (*appSecActivationsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AppSecActivations)(nil))
+}
+
+func (i *appSecActivationsPtrType) ToAppSecActivationsPtrOutput() AppSecActivationsPtrOutput {
+	return i.ToAppSecActivationsPtrOutputWithContext(context.Background())
+}
+
+func (i *appSecActivationsPtrType) ToAppSecActivationsPtrOutputWithContext(ctx context.Context) AppSecActivationsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecActivationsPtrOutput)
+}
+
+// AppSecActivationsArrayInput is an input type that accepts AppSecActivationsArray and AppSecActivationsArrayOutput values.
+// You can construct a concrete instance of `AppSecActivationsArrayInput` via:
+//
+//          AppSecActivationsArray{ AppSecActivationsArgs{...} }
+type AppSecActivationsArrayInput interface {
+	pulumi.Input
+
+	ToAppSecActivationsArrayOutput() AppSecActivationsArrayOutput
+	ToAppSecActivationsArrayOutputWithContext(context.Context) AppSecActivationsArrayOutput
+}
+
+type AppSecActivationsArray []AppSecActivationsInput
+
+func (AppSecActivationsArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*AppSecActivations)(nil))
+}
+
+func (i AppSecActivationsArray) ToAppSecActivationsArrayOutput() AppSecActivationsArrayOutput {
+	return i.ToAppSecActivationsArrayOutputWithContext(context.Background())
+}
+
+func (i AppSecActivationsArray) ToAppSecActivationsArrayOutputWithContext(ctx context.Context) AppSecActivationsArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecActivationsArrayOutput)
+}
+
+// AppSecActivationsMapInput is an input type that accepts AppSecActivationsMap and AppSecActivationsMapOutput values.
+// You can construct a concrete instance of `AppSecActivationsMapInput` via:
+//
+//          AppSecActivationsMap{ "key": AppSecActivationsArgs{...} }
+type AppSecActivationsMapInput interface {
+	pulumi.Input
+
+	ToAppSecActivationsMapOutput() AppSecActivationsMapOutput
+	ToAppSecActivationsMapOutputWithContext(context.Context) AppSecActivationsMapOutput
+}
+
+type AppSecActivationsMap map[string]AppSecActivationsInput
+
+func (AppSecActivationsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*AppSecActivations)(nil))
+}
+
+func (i AppSecActivationsMap) ToAppSecActivationsMapOutput() AppSecActivationsMapOutput {
+	return i.ToAppSecActivationsMapOutputWithContext(context.Background())
+}
+
+func (i AppSecActivationsMap) ToAppSecActivationsMapOutputWithContext(ctx context.Context) AppSecActivationsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecActivationsMapOutput)
+}
+
 type AppSecActivationsOutput struct {
 	*pulumi.OutputState
 }
@@ -197,6 +275,75 @@ func (o AppSecActivationsOutput) ToAppSecActivationsOutputWithContext(ctx contex
 	return o
 }
 
+func (o AppSecActivationsOutput) ToAppSecActivationsPtrOutput() AppSecActivationsPtrOutput {
+	return o.ToAppSecActivationsPtrOutputWithContext(context.Background())
+}
+
+func (o AppSecActivationsOutput) ToAppSecActivationsPtrOutputWithContext(ctx context.Context) AppSecActivationsPtrOutput {
+	return o.ApplyT(func(v AppSecActivations) *AppSecActivations {
+		return &v
+	}).(AppSecActivationsPtrOutput)
+}
+
+type AppSecActivationsPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (AppSecActivationsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AppSecActivations)(nil))
+}
+
+func (o AppSecActivationsPtrOutput) ToAppSecActivationsPtrOutput() AppSecActivationsPtrOutput {
+	return o
+}
+
+func (o AppSecActivationsPtrOutput) ToAppSecActivationsPtrOutputWithContext(ctx context.Context) AppSecActivationsPtrOutput {
+	return o
+}
+
+type AppSecActivationsArrayOutput struct{ *pulumi.OutputState }
+
+func (AppSecActivationsArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AppSecActivations)(nil))
+}
+
+func (o AppSecActivationsArrayOutput) ToAppSecActivationsArrayOutput() AppSecActivationsArrayOutput {
+	return o
+}
+
+func (o AppSecActivationsArrayOutput) ToAppSecActivationsArrayOutputWithContext(ctx context.Context) AppSecActivationsArrayOutput {
+	return o
+}
+
+func (o AppSecActivationsArrayOutput) Index(i pulumi.IntInput) AppSecActivationsOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecActivations {
+		return vs[0].([]AppSecActivations)[vs[1].(int)]
+	}).(AppSecActivationsOutput)
+}
+
+type AppSecActivationsMapOutput struct{ *pulumi.OutputState }
+
+func (AppSecActivationsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]AppSecActivations)(nil))
+}
+
+func (o AppSecActivationsMapOutput) ToAppSecActivationsMapOutput() AppSecActivationsMapOutput {
+	return o
+}
+
+func (o AppSecActivationsMapOutput) ToAppSecActivationsMapOutputWithContext(ctx context.Context) AppSecActivationsMapOutput {
+	return o
+}
+
+func (o AppSecActivationsMapOutput) MapIndex(k pulumi.StringInput) AppSecActivationsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecActivations {
+		return vs[0].(map[string]AppSecActivations)[vs[1].(string)]
+	}).(AppSecActivationsOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(AppSecActivationsOutput{})
+	pulumi.RegisterOutputType(AppSecActivationsPtrOutput{})
+	pulumi.RegisterOutputType(AppSecActivationsArrayOutput{})
+	pulumi.RegisterOutputType(AppSecActivationsMapOutput{})
 }

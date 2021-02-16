@@ -22,7 +22,6 @@ import (
 //
 // import (
 // 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai"
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -183,6 +182,85 @@ func (i *AppSecSecurityPolicyClone) ToAppSecSecurityPolicyCloneOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSecurityPolicyCloneOutput)
 }
 
+func (i *AppSecSecurityPolicyClone) ToAppSecSecurityPolicyClonePtrOutput() AppSecSecurityPolicyClonePtrOutput {
+	return i.ToAppSecSecurityPolicyClonePtrOutputWithContext(context.Background())
+}
+
+func (i *AppSecSecurityPolicyClone) ToAppSecSecurityPolicyClonePtrOutputWithContext(ctx context.Context) AppSecSecurityPolicyClonePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecSecurityPolicyClonePtrOutput)
+}
+
+type AppSecSecurityPolicyClonePtrInput interface {
+	pulumi.Input
+
+	ToAppSecSecurityPolicyClonePtrOutput() AppSecSecurityPolicyClonePtrOutput
+	ToAppSecSecurityPolicyClonePtrOutputWithContext(ctx context.Context) AppSecSecurityPolicyClonePtrOutput
+}
+
+type appSecSecurityPolicyClonePtrType AppSecSecurityPolicyCloneArgs
+
+func (*appSecSecurityPolicyClonePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AppSecSecurityPolicyClone)(nil))
+}
+
+func (i *appSecSecurityPolicyClonePtrType) ToAppSecSecurityPolicyClonePtrOutput() AppSecSecurityPolicyClonePtrOutput {
+	return i.ToAppSecSecurityPolicyClonePtrOutputWithContext(context.Background())
+}
+
+func (i *appSecSecurityPolicyClonePtrType) ToAppSecSecurityPolicyClonePtrOutputWithContext(ctx context.Context) AppSecSecurityPolicyClonePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecSecurityPolicyClonePtrOutput)
+}
+
+// AppSecSecurityPolicyCloneArrayInput is an input type that accepts AppSecSecurityPolicyCloneArray and AppSecSecurityPolicyCloneArrayOutput values.
+// You can construct a concrete instance of `AppSecSecurityPolicyCloneArrayInput` via:
+//
+//          AppSecSecurityPolicyCloneArray{ AppSecSecurityPolicyCloneArgs{...} }
+type AppSecSecurityPolicyCloneArrayInput interface {
+	pulumi.Input
+
+	ToAppSecSecurityPolicyCloneArrayOutput() AppSecSecurityPolicyCloneArrayOutput
+	ToAppSecSecurityPolicyCloneArrayOutputWithContext(context.Context) AppSecSecurityPolicyCloneArrayOutput
+}
+
+type AppSecSecurityPolicyCloneArray []AppSecSecurityPolicyCloneInput
+
+func (AppSecSecurityPolicyCloneArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*AppSecSecurityPolicyClone)(nil))
+}
+
+func (i AppSecSecurityPolicyCloneArray) ToAppSecSecurityPolicyCloneArrayOutput() AppSecSecurityPolicyCloneArrayOutput {
+	return i.ToAppSecSecurityPolicyCloneArrayOutputWithContext(context.Background())
+}
+
+func (i AppSecSecurityPolicyCloneArray) ToAppSecSecurityPolicyCloneArrayOutputWithContext(ctx context.Context) AppSecSecurityPolicyCloneArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecSecurityPolicyCloneArrayOutput)
+}
+
+// AppSecSecurityPolicyCloneMapInput is an input type that accepts AppSecSecurityPolicyCloneMap and AppSecSecurityPolicyCloneMapOutput values.
+// You can construct a concrete instance of `AppSecSecurityPolicyCloneMapInput` via:
+//
+//          AppSecSecurityPolicyCloneMap{ "key": AppSecSecurityPolicyCloneArgs{...} }
+type AppSecSecurityPolicyCloneMapInput interface {
+	pulumi.Input
+
+	ToAppSecSecurityPolicyCloneMapOutput() AppSecSecurityPolicyCloneMapOutput
+	ToAppSecSecurityPolicyCloneMapOutputWithContext(context.Context) AppSecSecurityPolicyCloneMapOutput
+}
+
+type AppSecSecurityPolicyCloneMap map[string]AppSecSecurityPolicyCloneInput
+
+func (AppSecSecurityPolicyCloneMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*AppSecSecurityPolicyClone)(nil))
+}
+
+func (i AppSecSecurityPolicyCloneMap) ToAppSecSecurityPolicyCloneMapOutput() AppSecSecurityPolicyCloneMapOutput {
+	return i.ToAppSecSecurityPolicyCloneMapOutputWithContext(context.Background())
+}
+
+func (i AppSecSecurityPolicyCloneMap) ToAppSecSecurityPolicyCloneMapOutputWithContext(ctx context.Context) AppSecSecurityPolicyCloneMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecSecurityPolicyCloneMapOutput)
+}
+
 type AppSecSecurityPolicyCloneOutput struct {
 	*pulumi.OutputState
 }
@@ -199,6 +277,75 @@ func (o AppSecSecurityPolicyCloneOutput) ToAppSecSecurityPolicyCloneOutputWithCo
 	return o
 }
 
+func (o AppSecSecurityPolicyCloneOutput) ToAppSecSecurityPolicyClonePtrOutput() AppSecSecurityPolicyClonePtrOutput {
+	return o.ToAppSecSecurityPolicyClonePtrOutputWithContext(context.Background())
+}
+
+func (o AppSecSecurityPolicyCloneOutput) ToAppSecSecurityPolicyClonePtrOutputWithContext(ctx context.Context) AppSecSecurityPolicyClonePtrOutput {
+	return o.ApplyT(func(v AppSecSecurityPolicyClone) *AppSecSecurityPolicyClone {
+		return &v
+	}).(AppSecSecurityPolicyClonePtrOutput)
+}
+
+type AppSecSecurityPolicyClonePtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (AppSecSecurityPolicyClonePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AppSecSecurityPolicyClone)(nil))
+}
+
+func (o AppSecSecurityPolicyClonePtrOutput) ToAppSecSecurityPolicyClonePtrOutput() AppSecSecurityPolicyClonePtrOutput {
+	return o
+}
+
+func (o AppSecSecurityPolicyClonePtrOutput) ToAppSecSecurityPolicyClonePtrOutputWithContext(ctx context.Context) AppSecSecurityPolicyClonePtrOutput {
+	return o
+}
+
+type AppSecSecurityPolicyCloneArrayOutput struct{ *pulumi.OutputState }
+
+func (AppSecSecurityPolicyCloneArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AppSecSecurityPolicyClone)(nil))
+}
+
+func (o AppSecSecurityPolicyCloneArrayOutput) ToAppSecSecurityPolicyCloneArrayOutput() AppSecSecurityPolicyCloneArrayOutput {
+	return o
+}
+
+func (o AppSecSecurityPolicyCloneArrayOutput) ToAppSecSecurityPolicyCloneArrayOutputWithContext(ctx context.Context) AppSecSecurityPolicyCloneArrayOutput {
+	return o
+}
+
+func (o AppSecSecurityPolicyCloneArrayOutput) Index(i pulumi.IntInput) AppSecSecurityPolicyCloneOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecSecurityPolicyClone {
+		return vs[0].([]AppSecSecurityPolicyClone)[vs[1].(int)]
+	}).(AppSecSecurityPolicyCloneOutput)
+}
+
+type AppSecSecurityPolicyCloneMapOutput struct{ *pulumi.OutputState }
+
+func (AppSecSecurityPolicyCloneMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]AppSecSecurityPolicyClone)(nil))
+}
+
+func (o AppSecSecurityPolicyCloneMapOutput) ToAppSecSecurityPolicyCloneMapOutput() AppSecSecurityPolicyCloneMapOutput {
+	return o
+}
+
+func (o AppSecSecurityPolicyCloneMapOutput) ToAppSecSecurityPolicyCloneMapOutputWithContext(ctx context.Context) AppSecSecurityPolicyCloneMapOutput {
+	return o
+}
+
+func (o AppSecSecurityPolicyCloneMapOutput) MapIndex(k pulumi.StringInput) AppSecSecurityPolicyCloneOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecSecurityPolicyClone {
+		return vs[0].(map[string]AppSecSecurityPolicyClone)[vs[1].(string)]
+	}).(AppSecSecurityPolicyCloneOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(AppSecSecurityPolicyCloneOutput{})
+	pulumi.RegisterOutputType(AppSecSecurityPolicyClonePtrOutput{})
+	pulumi.RegisterOutputType(AppSecSecurityPolicyCloneArrayOutput{})
+	pulumi.RegisterOutputType(AppSecSecurityPolicyCloneMapOutput{})
 }

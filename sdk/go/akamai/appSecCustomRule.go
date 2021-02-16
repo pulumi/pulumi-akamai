@@ -117,6 +117,85 @@ func (i *AppSecCustomRule) ToAppSecCustomRuleOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomRuleOutput)
 }
 
+func (i *AppSecCustomRule) ToAppSecCustomRulePtrOutput() AppSecCustomRulePtrOutput {
+	return i.ToAppSecCustomRulePtrOutputWithContext(context.Background())
+}
+
+func (i *AppSecCustomRule) ToAppSecCustomRulePtrOutputWithContext(ctx context.Context) AppSecCustomRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomRulePtrOutput)
+}
+
+type AppSecCustomRulePtrInput interface {
+	pulumi.Input
+
+	ToAppSecCustomRulePtrOutput() AppSecCustomRulePtrOutput
+	ToAppSecCustomRulePtrOutputWithContext(ctx context.Context) AppSecCustomRulePtrOutput
+}
+
+type appSecCustomRulePtrType AppSecCustomRuleArgs
+
+func (*appSecCustomRulePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AppSecCustomRule)(nil))
+}
+
+func (i *appSecCustomRulePtrType) ToAppSecCustomRulePtrOutput() AppSecCustomRulePtrOutput {
+	return i.ToAppSecCustomRulePtrOutputWithContext(context.Background())
+}
+
+func (i *appSecCustomRulePtrType) ToAppSecCustomRulePtrOutputWithContext(ctx context.Context) AppSecCustomRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomRulePtrOutput)
+}
+
+// AppSecCustomRuleArrayInput is an input type that accepts AppSecCustomRuleArray and AppSecCustomRuleArrayOutput values.
+// You can construct a concrete instance of `AppSecCustomRuleArrayInput` via:
+//
+//          AppSecCustomRuleArray{ AppSecCustomRuleArgs{...} }
+type AppSecCustomRuleArrayInput interface {
+	pulumi.Input
+
+	ToAppSecCustomRuleArrayOutput() AppSecCustomRuleArrayOutput
+	ToAppSecCustomRuleArrayOutputWithContext(context.Context) AppSecCustomRuleArrayOutput
+}
+
+type AppSecCustomRuleArray []AppSecCustomRuleInput
+
+func (AppSecCustomRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*AppSecCustomRule)(nil))
+}
+
+func (i AppSecCustomRuleArray) ToAppSecCustomRuleArrayOutput() AppSecCustomRuleArrayOutput {
+	return i.ToAppSecCustomRuleArrayOutputWithContext(context.Background())
+}
+
+func (i AppSecCustomRuleArray) ToAppSecCustomRuleArrayOutputWithContext(ctx context.Context) AppSecCustomRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomRuleArrayOutput)
+}
+
+// AppSecCustomRuleMapInput is an input type that accepts AppSecCustomRuleMap and AppSecCustomRuleMapOutput values.
+// You can construct a concrete instance of `AppSecCustomRuleMapInput` via:
+//
+//          AppSecCustomRuleMap{ "key": AppSecCustomRuleArgs{...} }
+type AppSecCustomRuleMapInput interface {
+	pulumi.Input
+
+	ToAppSecCustomRuleMapOutput() AppSecCustomRuleMapOutput
+	ToAppSecCustomRuleMapOutputWithContext(context.Context) AppSecCustomRuleMapOutput
+}
+
+type AppSecCustomRuleMap map[string]AppSecCustomRuleInput
+
+func (AppSecCustomRuleMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*AppSecCustomRule)(nil))
+}
+
+func (i AppSecCustomRuleMap) ToAppSecCustomRuleMapOutput() AppSecCustomRuleMapOutput {
+	return i.ToAppSecCustomRuleMapOutputWithContext(context.Background())
+}
+
+func (i AppSecCustomRuleMap) ToAppSecCustomRuleMapOutputWithContext(ctx context.Context) AppSecCustomRuleMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomRuleMapOutput)
+}
+
 type AppSecCustomRuleOutput struct {
 	*pulumi.OutputState
 }
@@ -133,6 +212,75 @@ func (o AppSecCustomRuleOutput) ToAppSecCustomRuleOutputWithContext(ctx context.
 	return o
 }
 
+func (o AppSecCustomRuleOutput) ToAppSecCustomRulePtrOutput() AppSecCustomRulePtrOutput {
+	return o.ToAppSecCustomRulePtrOutputWithContext(context.Background())
+}
+
+func (o AppSecCustomRuleOutput) ToAppSecCustomRulePtrOutputWithContext(ctx context.Context) AppSecCustomRulePtrOutput {
+	return o.ApplyT(func(v AppSecCustomRule) *AppSecCustomRule {
+		return &v
+	}).(AppSecCustomRulePtrOutput)
+}
+
+type AppSecCustomRulePtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (AppSecCustomRulePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AppSecCustomRule)(nil))
+}
+
+func (o AppSecCustomRulePtrOutput) ToAppSecCustomRulePtrOutput() AppSecCustomRulePtrOutput {
+	return o
+}
+
+func (o AppSecCustomRulePtrOutput) ToAppSecCustomRulePtrOutputWithContext(ctx context.Context) AppSecCustomRulePtrOutput {
+	return o
+}
+
+type AppSecCustomRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (AppSecCustomRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AppSecCustomRule)(nil))
+}
+
+func (o AppSecCustomRuleArrayOutput) ToAppSecCustomRuleArrayOutput() AppSecCustomRuleArrayOutput {
+	return o
+}
+
+func (o AppSecCustomRuleArrayOutput) ToAppSecCustomRuleArrayOutputWithContext(ctx context.Context) AppSecCustomRuleArrayOutput {
+	return o
+}
+
+func (o AppSecCustomRuleArrayOutput) Index(i pulumi.IntInput) AppSecCustomRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecCustomRule {
+		return vs[0].([]AppSecCustomRule)[vs[1].(int)]
+	}).(AppSecCustomRuleOutput)
+}
+
+type AppSecCustomRuleMapOutput struct{ *pulumi.OutputState }
+
+func (AppSecCustomRuleMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]AppSecCustomRule)(nil))
+}
+
+func (o AppSecCustomRuleMapOutput) ToAppSecCustomRuleMapOutput() AppSecCustomRuleMapOutput {
+	return o
+}
+
+func (o AppSecCustomRuleMapOutput) ToAppSecCustomRuleMapOutputWithContext(ctx context.Context) AppSecCustomRuleMapOutput {
+	return o
+}
+
+func (o AppSecCustomRuleMapOutput) MapIndex(k pulumi.StringInput) AppSecCustomRuleOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecCustomRule {
+		return vs[0].(map[string]AppSecCustomRule)[vs[1].(string)]
+	}).(AppSecCustomRuleOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(AppSecCustomRuleOutput{})
+	pulumi.RegisterOutputType(AppSecCustomRulePtrOutput{})
+	pulumi.RegisterOutputType(AppSecCustomRuleArrayOutput{})
+	pulumi.RegisterOutputType(AppSecCustomRuleMapOutput{})
 }

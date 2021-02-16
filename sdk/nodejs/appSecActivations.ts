@@ -88,7 +88,8 @@ export class AppSecActivations extends pulumi.CustomResource {
     constructor(name: string, args: AppSecActivationsArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecActivationsArgs | AppSecActivationsState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as AppSecActivationsState | undefined;
             inputs["activate"] = state ? state.activate : undefined;
             inputs["configId"] = state ? state.configId : undefined;
@@ -99,13 +100,13 @@ export class AppSecActivations extends pulumi.CustomResource {
             inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecActivationsArgs | undefined;
-            if ((!args || args.configId === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.configId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.notificationEmails === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.notificationEmails === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'notificationEmails'");
             }
-            if ((!args || args.version === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.version === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
             inputs["activate"] = args ? args.activate : undefined;
@@ -116,12 +117,8 @@ export class AppSecActivations extends pulumi.CustomResource {
             inputs["version"] = args ? args.version : undefined;
             inputs["status"] = undefined /*out*/;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(AppSecActivations.__pulumiType, name, inputs, opts);
     }

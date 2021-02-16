@@ -85,7 +85,8 @@ export class GtmGeomap extends pulumi.CustomResource {
     constructor(name: string, args: GtmGeomapArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: GtmGeomapArgs | GtmGeomapState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as GtmGeomapState | undefined;
             inputs["assignments"] = state ? state.assignments : undefined;
             inputs["defaultDatacenter"] = state ? state.defaultDatacenter : undefined;
@@ -94,10 +95,10 @@ export class GtmGeomap extends pulumi.CustomResource {
             inputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
         } else {
             const args = argsOrState as GtmGeomapArgs | undefined;
-            if ((!args || args.defaultDatacenter === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.defaultDatacenter === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'defaultDatacenter'");
             }
-            if ((!args || args.domain === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.domain === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'domain'");
             }
             inputs["assignments"] = args ? args.assignments : undefined;
@@ -106,15 +107,11 @@ export class GtmGeomap extends pulumi.CustomResource {
             inputs["name"] = args ? args.name : undefined;
             inputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         const aliasOpts = { aliases: [{ type: "akamai:trafficmanagement/gtmGeomap:GtmGeomap" }] };
-        opts = opts ? pulumi.mergeOptions(opts, aliasOpts) : aliasOpts;
+        opts = pulumi.mergeOptions(opts, aliasOpts);
         super(GtmGeomap.__pulumiType, name, inputs, opts);
     }
 }

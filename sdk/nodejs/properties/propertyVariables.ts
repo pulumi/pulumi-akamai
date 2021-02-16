@@ -59,7 +59,8 @@ export class PropertyVariables extends pulumi.CustomResource {
     constructor(name: string, argsOrState?: PropertyVariablesArgs | PropertyVariablesState, opts?: pulumi.CustomResourceOptions) {
         pulumi.log.warn("PropertyVariables is deprecated: akamai.properties.PropertyVariables has been deprecated in favor of akamai.PropertyVariables")
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as PropertyVariablesState | undefined;
             inputs["json"] = state ? state.json : undefined;
             inputs["variables"] = state ? state.variables : undefined;
@@ -68,12 +69,8 @@ export class PropertyVariables extends pulumi.CustomResource {
             inputs["variables"] = args ? args.variables : undefined;
             inputs["json"] = undefined /*out*/;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(PropertyVariables.__pulumiType, name, inputs, opts);
     }

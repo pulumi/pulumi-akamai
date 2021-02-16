@@ -55,7 +55,8 @@ export class CpCode extends pulumi.CustomResource {
     constructor(name: string, args: CpCodeArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: CpCodeArgs | CpCodeState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as CpCodeState | undefined;
             inputs["contract"] = state ? state.contract : undefined;
             inputs["contractId"] = state ? state.contractId : undefined;
@@ -65,7 +66,7 @@ export class CpCode extends pulumi.CustomResource {
             inputs["product"] = state ? state.product : undefined;
         } else {
             const args = argsOrState as CpCodeArgs | undefined;
-            if ((!args || args.product === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.product === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'product'");
             }
             inputs["contract"] = args ? args.contract : undefined;
@@ -75,15 +76,11 @@ export class CpCode extends pulumi.CustomResource {
             inputs["name"] = args ? args.name : undefined;
             inputs["product"] = args ? args.product : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         const aliasOpts = { aliases: [{ type: "akamai:properties/cpCode:CpCode" }] };
-        opts = opts ? pulumi.mergeOptions(opts, aliasOpts) : aliasOpts;
+        opts = pulumi.mergeOptions(opts, aliasOpts);
         super(CpCode.__pulumiType, name, inputs, opts);
     }
 }

@@ -116,6 +116,85 @@ func (i *AppSecSelectedHostnames) ToAppSecSelectedHostnamesOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSelectedHostnamesOutput)
 }
 
+func (i *AppSecSelectedHostnames) ToAppSecSelectedHostnamesPtrOutput() AppSecSelectedHostnamesPtrOutput {
+	return i.ToAppSecSelectedHostnamesPtrOutputWithContext(context.Background())
+}
+
+func (i *AppSecSelectedHostnames) ToAppSecSelectedHostnamesPtrOutputWithContext(ctx context.Context) AppSecSelectedHostnamesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecSelectedHostnamesPtrOutput)
+}
+
+type AppSecSelectedHostnamesPtrInput interface {
+	pulumi.Input
+
+	ToAppSecSelectedHostnamesPtrOutput() AppSecSelectedHostnamesPtrOutput
+	ToAppSecSelectedHostnamesPtrOutputWithContext(ctx context.Context) AppSecSelectedHostnamesPtrOutput
+}
+
+type appSecSelectedHostnamesPtrType AppSecSelectedHostnamesArgs
+
+func (*appSecSelectedHostnamesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AppSecSelectedHostnames)(nil))
+}
+
+func (i *appSecSelectedHostnamesPtrType) ToAppSecSelectedHostnamesPtrOutput() AppSecSelectedHostnamesPtrOutput {
+	return i.ToAppSecSelectedHostnamesPtrOutputWithContext(context.Background())
+}
+
+func (i *appSecSelectedHostnamesPtrType) ToAppSecSelectedHostnamesPtrOutputWithContext(ctx context.Context) AppSecSelectedHostnamesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecSelectedHostnamesPtrOutput)
+}
+
+// AppSecSelectedHostnamesArrayInput is an input type that accepts AppSecSelectedHostnamesArray and AppSecSelectedHostnamesArrayOutput values.
+// You can construct a concrete instance of `AppSecSelectedHostnamesArrayInput` via:
+//
+//          AppSecSelectedHostnamesArray{ AppSecSelectedHostnamesArgs{...} }
+type AppSecSelectedHostnamesArrayInput interface {
+	pulumi.Input
+
+	ToAppSecSelectedHostnamesArrayOutput() AppSecSelectedHostnamesArrayOutput
+	ToAppSecSelectedHostnamesArrayOutputWithContext(context.Context) AppSecSelectedHostnamesArrayOutput
+}
+
+type AppSecSelectedHostnamesArray []AppSecSelectedHostnamesInput
+
+func (AppSecSelectedHostnamesArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*AppSecSelectedHostnames)(nil))
+}
+
+func (i AppSecSelectedHostnamesArray) ToAppSecSelectedHostnamesArrayOutput() AppSecSelectedHostnamesArrayOutput {
+	return i.ToAppSecSelectedHostnamesArrayOutputWithContext(context.Background())
+}
+
+func (i AppSecSelectedHostnamesArray) ToAppSecSelectedHostnamesArrayOutputWithContext(ctx context.Context) AppSecSelectedHostnamesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecSelectedHostnamesArrayOutput)
+}
+
+// AppSecSelectedHostnamesMapInput is an input type that accepts AppSecSelectedHostnamesMap and AppSecSelectedHostnamesMapOutput values.
+// You can construct a concrete instance of `AppSecSelectedHostnamesMapInput` via:
+//
+//          AppSecSelectedHostnamesMap{ "key": AppSecSelectedHostnamesArgs{...} }
+type AppSecSelectedHostnamesMapInput interface {
+	pulumi.Input
+
+	ToAppSecSelectedHostnamesMapOutput() AppSecSelectedHostnamesMapOutput
+	ToAppSecSelectedHostnamesMapOutputWithContext(context.Context) AppSecSelectedHostnamesMapOutput
+}
+
+type AppSecSelectedHostnamesMap map[string]AppSecSelectedHostnamesInput
+
+func (AppSecSelectedHostnamesMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*AppSecSelectedHostnames)(nil))
+}
+
+func (i AppSecSelectedHostnamesMap) ToAppSecSelectedHostnamesMapOutput() AppSecSelectedHostnamesMapOutput {
+	return i.ToAppSecSelectedHostnamesMapOutputWithContext(context.Background())
+}
+
+func (i AppSecSelectedHostnamesMap) ToAppSecSelectedHostnamesMapOutputWithContext(ctx context.Context) AppSecSelectedHostnamesMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecSelectedHostnamesMapOutput)
+}
+
 type AppSecSelectedHostnamesOutput struct {
 	*pulumi.OutputState
 }
@@ -132,6 +211,75 @@ func (o AppSecSelectedHostnamesOutput) ToAppSecSelectedHostnamesOutputWithContex
 	return o
 }
 
+func (o AppSecSelectedHostnamesOutput) ToAppSecSelectedHostnamesPtrOutput() AppSecSelectedHostnamesPtrOutput {
+	return o.ToAppSecSelectedHostnamesPtrOutputWithContext(context.Background())
+}
+
+func (o AppSecSelectedHostnamesOutput) ToAppSecSelectedHostnamesPtrOutputWithContext(ctx context.Context) AppSecSelectedHostnamesPtrOutput {
+	return o.ApplyT(func(v AppSecSelectedHostnames) *AppSecSelectedHostnames {
+		return &v
+	}).(AppSecSelectedHostnamesPtrOutput)
+}
+
+type AppSecSelectedHostnamesPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (AppSecSelectedHostnamesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AppSecSelectedHostnames)(nil))
+}
+
+func (o AppSecSelectedHostnamesPtrOutput) ToAppSecSelectedHostnamesPtrOutput() AppSecSelectedHostnamesPtrOutput {
+	return o
+}
+
+func (o AppSecSelectedHostnamesPtrOutput) ToAppSecSelectedHostnamesPtrOutputWithContext(ctx context.Context) AppSecSelectedHostnamesPtrOutput {
+	return o
+}
+
+type AppSecSelectedHostnamesArrayOutput struct{ *pulumi.OutputState }
+
+func (AppSecSelectedHostnamesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AppSecSelectedHostnames)(nil))
+}
+
+func (o AppSecSelectedHostnamesArrayOutput) ToAppSecSelectedHostnamesArrayOutput() AppSecSelectedHostnamesArrayOutput {
+	return o
+}
+
+func (o AppSecSelectedHostnamesArrayOutput) ToAppSecSelectedHostnamesArrayOutputWithContext(ctx context.Context) AppSecSelectedHostnamesArrayOutput {
+	return o
+}
+
+func (o AppSecSelectedHostnamesArrayOutput) Index(i pulumi.IntInput) AppSecSelectedHostnamesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecSelectedHostnames {
+		return vs[0].([]AppSecSelectedHostnames)[vs[1].(int)]
+	}).(AppSecSelectedHostnamesOutput)
+}
+
+type AppSecSelectedHostnamesMapOutput struct{ *pulumi.OutputState }
+
+func (AppSecSelectedHostnamesMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]AppSecSelectedHostnames)(nil))
+}
+
+func (o AppSecSelectedHostnamesMapOutput) ToAppSecSelectedHostnamesMapOutput() AppSecSelectedHostnamesMapOutput {
+	return o
+}
+
+func (o AppSecSelectedHostnamesMapOutput) ToAppSecSelectedHostnamesMapOutputWithContext(ctx context.Context) AppSecSelectedHostnamesMapOutput {
+	return o
+}
+
+func (o AppSecSelectedHostnamesMapOutput) MapIndex(k pulumi.StringInput) AppSecSelectedHostnamesOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecSelectedHostnames {
+		return vs[0].(map[string]AppSecSelectedHostnames)[vs[1].(string)]
+	}).(AppSecSelectedHostnamesOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(AppSecSelectedHostnamesOutput{})
+	pulumi.RegisterOutputType(AppSecSelectedHostnamesPtrOutput{})
+	pulumi.RegisterOutputType(AppSecSelectedHostnamesArrayOutput{})
+	pulumi.RegisterOutputType(AppSecSelectedHostnamesMapOutput{})
 }
