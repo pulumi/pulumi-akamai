@@ -269,6 +269,85 @@ func (i *GtmProperty) ToGtmPropertyOutputWithContext(ctx context.Context) GtmPro
 	return pulumi.ToOutputWithContext(ctx, i).(GtmPropertyOutput)
 }
 
+func (i *GtmProperty) ToGtmPropertyPtrOutput() GtmPropertyPtrOutput {
+	return i.ToGtmPropertyPtrOutputWithContext(context.Background())
+}
+
+func (i *GtmProperty) ToGtmPropertyPtrOutputWithContext(ctx context.Context) GtmPropertyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPropertyPtrOutput)
+}
+
+type GtmPropertyPtrInput interface {
+	pulumi.Input
+
+	ToGtmPropertyPtrOutput() GtmPropertyPtrOutput
+	ToGtmPropertyPtrOutputWithContext(ctx context.Context) GtmPropertyPtrOutput
+}
+
+type gtmPropertyPtrType GtmPropertyArgs
+
+func (*gtmPropertyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmProperty)(nil))
+}
+
+func (i *gtmPropertyPtrType) ToGtmPropertyPtrOutput() GtmPropertyPtrOutput {
+	return i.ToGtmPropertyPtrOutputWithContext(context.Background())
+}
+
+func (i *gtmPropertyPtrType) ToGtmPropertyPtrOutputWithContext(ctx context.Context) GtmPropertyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPropertyPtrOutput)
+}
+
+// GtmPropertyArrayInput is an input type that accepts GtmPropertyArray and GtmPropertyArrayOutput values.
+// You can construct a concrete instance of `GtmPropertyArrayInput` via:
+//
+//          GtmPropertyArray{ GtmPropertyArgs{...} }
+type GtmPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGtmPropertyArrayOutput() GtmPropertyArrayOutput
+	ToGtmPropertyArrayOutputWithContext(context.Context) GtmPropertyArrayOutput
+}
+
+type GtmPropertyArray []GtmPropertyInput
+
+func (GtmPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*GtmProperty)(nil))
+}
+
+func (i GtmPropertyArray) ToGtmPropertyArrayOutput() GtmPropertyArrayOutput {
+	return i.ToGtmPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GtmPropertyArray) ToGtmPropertyArrayOutputWithContext(ctx context.Context) GtmPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPropertyArrayOutput)
+}
+
+// GtmPropertyMapInput is an input type that accepts GtmPropertyMap and GtmPropertyMapOutput values.
+// You can construct a concrete instance of `GtmPropertyMapInput` via:
+//
+//          GtmPropertyMap{ "key": GtmPropertyArgs{...} }
+type GtmPropertyMapInput interface {
+	pulumi.Input
+
+	ToGtmPropertyMapOutput() GtmPropertyMapOutput
+	ToGtmPropertyMapOutputWithContext(context.Context) GtmPropertyMapOutput
+}
+
+type GtmPropertyMap map[string]GtmPropertyInput
+
+func (GtmPropertyMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*GtmProperty)(nil))
+}
+
+func (i GtmPropertyMap) ToGtmPropertyMapOutput() GtmPropertyMapOutput {
+	return i.ToGtmPropertyMapOutputWithContext(context.Background())
+}
+
+func (i GtmPropertyMap) ToGtmPropertyMapOutputWithContext(ctx context.Context) GtmPropertyMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPropertyMapOutput)
+}
+
 type GtmPropertyOutput struct {
 	*pulumi.OutputState
 }
@@ -285,6 +364,75 @@ func (o GtmPropertyOutput) ToGtmPropertyOutputWithContext(ctx context.Context) G
 	return o
 }
 
+func (o GtmPropertyOutput) ToGtmPropertyPtrOutput() GtmPropertyPtrOutput {
+	return o.ToGtmPropertyPtrOutputWithContext(context.Background())
+}
+
+func (o GtmPropertyOutput) ToGtmPropertyPtrOutputWithContext(ctx context.Context) GtmPropertyPtrOutput {
+	return o.ApplyT(func(v GtmProperty) *GtmProperty {
+		return &v
+	}).(GtmPropertyPtrOutput)
+}
+
+type GtmPropertyPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (GtmPropertyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmProperty)(nil))
+}
+
+func (o GtmPropertyPtrOutput) ToGtmPropertyPtrOutput() GtmPropertyPtrOutput {
+	return o
+}
+
+func (o GtmPropertyPtrOutput) ToGtmPropertyPtrOutputWithContext(ctx context.Context) GtmPropertyPtrOutput {
+	return o
+}
+
+type GtmPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GtmPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmProperty)(nil))
+}
+
+func (o GtmPropertyArrayOutput) ToGtmPropertyArrayOutput() GtmPropertyArrayOutput {
+	return o
+}
+
+func (o GtmPropertyArrayOutput) ToGtmPropertyArrayOutputWithContext(ctx context.Context) GtmPropertyArrayOutput {
+	return o
+}
+
+func (o GtmPropertyArrayOutput) Index(i pulumi.IntInput) GtmPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmProperty {
+		return vs[0].([]GtmProperty)[vs[1].(int)]
+	}).(GtmPropertyOutput)
+}
+
+type GtmPropertyMapOutput struct{ *pulumi.OutputState }
+
+func (GtmPropertyMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GtmProperty)(nil))
+}
+
+func (o GtmPropertyMapOutput) ToGtmPropertyMapOutput() GtmPropertyMapOutput {
+	return o
+}
+
+func (o GtmPropertyMapOutput) ToGtmPropertyMapOutputWithContext(ctx context.Context) GtmPropertyMapOutput {
+	return o
+}
+
+func (o GtmPropertyMapOutput) MapIndex(k pulumi.StringInput) GtmPropertyOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GtmProperty {
+		return vs[0].(map[string]GtmProperty)[vs[1].(string)]
+	}).(GtmPropertyOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(GtmPropertyOutput{})
+	pulumi.RegisterOutputType(GtmPropertyPtrOutput{})
+	pulumi.RegisterOutputType(GtmPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GtmPropertyMapOutput{})
 }

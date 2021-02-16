@@ -95,7 +95,8 @@ export class GtmResource extends pulumi.CustomResource {
     constructor(name: string, args: GtmResourceArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: GtmResourceArgs | GtmResourceState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as GtmResourceState | undefined;
             inputs["aggregationType"] = state ? state.aggregationType : undefined;
             inputs["constrainedProperty"] = state ? state.constrainedProperty : undefined;
@@ -114,13 +115,13 @@ export class GtmResource extends pulumi.CustomResource {
             inputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
         } else {
             const args = argsOrState as GtmResourceArgs | undefined;
-            if ((!args || args.aggregationType === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.aggregationType === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'aggregationType'");
             }
-            if ((!args || args.domain === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.domain === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'domain'");
             }
-            if ((!args || args.type === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.type === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
             inputs["aggregationType"] = args ? args.aggregationType : undefined;
@@ -139,15 +140,11 @@ export class GtmResource extends pulumi.CustomResource {
             inputs["upperBound"] = args ? args.upperBound : undefined;
             inputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         const aliasOpts = { aliases: [{ type: "akamai:trafficmanagement/gtmResource:GtmResource" }] };
-        opts = opts ? pulumi.mergeOptions(opts, aliasOpts) : aliasOpts;
+        opts = pulumi.mergeOptions(opts, aliasOpts);
         super(GtmResource.__pulumiType, name, inputs, opts);
     }
 }

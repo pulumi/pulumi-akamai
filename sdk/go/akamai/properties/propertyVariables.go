@@ -100,6 +100,85 @@ func (i *PropertyVariables) ToPropertyVariablesOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesOutput)
 }
 
+func (i *PropertyVariables) ToPropertyVariablesPtrOutput() PropertyVariablesPtrOutput {
+	return i.ToPropertyVariablesPtrOutputWithContext(context.Background())
+}
+
+func (i *PropertyVariables) ToPropertyVariablesPtrOutputWithContext(ctx context.Context) PropertyVariablesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesPtrOutput)
+}
+
+type PropertyVariablesPtrInput interface {
+	pulumi.Input
+
+	ToPropertyVariablesPtrOutput() PropertyVariablesPtrOutput
+	ToPropertyVariablesPtrOutputWithContext(ctx context.Context) PropertyVariablesPtrOutput
+}
+
+type propertyVariablesPtrType PropertyVariablesArgs
+
+func (*propertyVariablesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PropertyVariables)(nil))
+}
+
+func (i *propertyVariablesPtrType) ToPropertyVariablesPtrOutput() PropertyVariablesPtrOutput {
+	return i.ToPropertyVariablesPtrOutputWithContext(context.Background())
+}
+
+func (i *propertyVariablesPtrType) ToPropertyVariablesPtrOutputWithContext(ctx context.Context) PropertyVariablesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesPtrOutput)
+}
+
+// PropertyVariablesArrayInput is an input type that accepts PropertyVariablesArray and PropertyVariablesArrayOutput values.
+// You can construct a concrete instance of `PropertyVariablesArrayInput` via:
+//
+//          PropertyVariablesArray{ PropertyVariablesArgs{...} }
+type PropertyVariablesArrayInput interface {
+	pulumi.Input
+
+	ToPropertyVariablesArrayOutput() PropertyVariablesArrayOutput
+	ToPropertyVariablesArrayOutputWithContext(context.Context) PropertyVariablesArrayOutput
+}
+
+type PropertyVariablesArray []PropertyVariablesInput
+
+func (PropertyVariablesArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*PropertyVariables)(nil))
+}
+
+func (i PropertyVariablesArray) ToPropertyVariablesArrayOutput() PropertyVariablesArrayOutput {
+	return i.ToPropertyVariablesArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyVariablesArray) ToPropertyVariablesArrayOutputWithContext(ctx context.Context) PropertyVariablesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesArrayOutput)
+}
+
+// PropertyVariablesMapInput is an input type that accepts PropertyVariablesMap and PropertyVariablesMapOutput values.
+// You can construct a concrete instance of `PropertyVariablesMapInput` via:
+//
+//          PropertyVariablesMap{ "key": PropertyVariablesArgs{...} }
+type PropertyVariablesMapInput interface {
+	pulumi.Input
+
+	ToPropertyVariablesMapOutput() PropertyVariablesMapOutput
+	ToPropertyVariablesMapOutputWithContext(context.Context) PropertyVariablesMapOutput
+}
+
+type PropertyVariablesMap map[string]PropertyVariablesInput
+
+func (PropertyVariablesMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*PropertyVariables)(nil))
+}
+
+func (i PropertyVariablesMap) ToPropertyVariablesMapOutput() PropertyVariablesMapOutput {
+	return i.ToPropertyVariablesMapOutputWithContext(context.Background())
+}
+
+func (i PropertyVariablesMap) ToPropertyVariablesMapOutputWithContext(ctx context.Context) PropertyVariablesMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesMapOutput)
+}
+
 type PropertyVariablesOutput struct {
 	*pulumi.OutputState
 }
@@ -116,6 +195,75 @@ func (o PropertyVariablesOutput) ToPropertyVariablesOutputWithContext(ctx contex
 	return o
 }
 
+func (o PropertyVariablesOutput) ToPropertyVariablesPtrOutput() PropertyVariablesPtrOutput {
+	return o.ToPropertyVariablesPtrOutputWithContext(context.Background())
+}
+
+func (o PropertyVariablesOutput) ToPropertyVariablesPtrOutputWithContext(ctx context.Context) PropertyVariablesPtrOutput {
+	return o.ApplyT(func(v PropertyVariables) *PropertyVariables {
+		return &v
+	}).(PropertyVariablesPtrOutput)
+}
+
+type PropertyVariablesPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (PropertyVariablesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PropertyVariables)(nil))
+}
+
+func (o PropertyVariablesPtrOutput) ToPropertyVariablesPtrOutput() PropertyVariablesPtrOutput {
+	return o
+}
+
+func (o PropertyVariablesPtrOutput) ToPropertyVariablesPtrOutputWithContext(ctx context.Context) PropertyVariablesPtrOutput {
+	return o
+}
+
+type PropertyVariablesArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyVariablesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyVariables)(nil))
+}
+
+func (o PropertyVariablesArrayOutput) ToPropertyVariablesArrayOutput() PropertyVariablesArrayOutput {
+	return o
+}
+
+func (o PropertyVariablesArrayOutput) ToPropertyVariablesArrayOutputWithContext(ctx context.Context) PropertyVariablesArrayOutput {
+	return o
+}
+
+func (o PropertyVariablesArrayOutput) Index(i pulumi.IntInput) PropertyVariablesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyVariables {
+		return vs[0].([]PropertyVariables)[vs[1].(int)]
+	}).(PropertyVariablesOutput)
+}
+
+type PropertyVariablesMapOutput struct{ *pulumi.OutputState }
+
+func (PropertyVariablesMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]PropertyVariables)(nil))
+}
+
+func (o PropertyVariablesMapOutput) ToPropertyVariablesMapOutput() PropertyVariablesMapOutput {
+	return o
+}
+
+func (o PropertyVariablesMapOutput) ToPropertyVariablesMapOutputWithContext(ctx context.Context) PropertyVariablesMapOutput {
+	return o
+}
+
+func (o PropertyVariablesMapOutput) MapIndex(k pulumi.StringInput) PropertyVariablesOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) PropertyVariables {
+		return vs[0].(map[string]PropertyVariables)[vs[1].(string)]
+	}).(PropertyVariablesOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(PropertyVariablesOutput{})
+	pulumi.RegisterOutputType(PropertyVariablesPtrOutput{})
+	pulumi.RegisterOutputType(PropertyVariablesArrayOutput{})
+	pulumi.RegisterOutputType(PropertyVariablesMapOutput{})
 }

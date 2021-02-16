@@ -68,7 +68,8 @@ export class EdgeHostName extends pulumi.CustomResource {
     constructor(name: string, argsOrState?: EdgeHostNameArgs | EdgeHostNameState, opts?: pulumi.CustomResourceOptions) {
         pulumi.log.warn("EdgeHostName is deprecated: akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName")
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as EdgeHostNameState | undefined;
             inputs["certificate"] = state ? state.certificate : undefined;
             inputs["contract"] = state ? state.contract : undefined;
@@ -81,10 +82,10 @@ export class EdgeHostName extends pulumi.CustomResource {
             inputs["productId"] = state ? state.productId : undefined;
         } else {
             const args = argsOrState as EdgeHostNameArgs | undefined;
-            if ((!args || args.edgeHostname === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.edgeHostname === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'edgeHostname'");
             }
-            if ((!args || args.ipBehavior === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.ipBehavior === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'ipBehavior'");
             }
             inputs["certificate"] = args ? args.certificate : undefined;
@@ -97,12 +98,8 @@ export class EdgeHostName extends pulumi.CustomResource {
             inputs["product"] = args ? args.product : undefined;
             inputs["productId"] = args ? args.productId : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(EdgeHostName.__pulumiType, name, inputs, opts);
     }

@@ -346,7 +346,8 @@ export class DnsRecord extends pulumi.CustomResource {
     constructor(name: string, args: DnsRecordArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: DnsRecordArgs | DnsRecordState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as DnsRecordState | undefined;
             inputs["active"] = state ? state.active : undefined;
             inputs["algorithm"] = state ? state.algorithm : undefined;
@@ -407,13 +408,13 @@ export class DnsRecord extends pulumi.CustomResource {
             inputs["zone"] = state ? state.zone : undefined;
         } else {
             const args = argsOrState as DnsRecordArgs | undefined;
-            if ((!args || args.recordtype === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.recordtype === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'recordtype'");
             }
-            if ((!args || args.ttl === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.ttl === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'ttl'");
             }
-            if ((!args || args.zone === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.zone === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'zone'");
             }
             inputs["active"] = args ? args.active : undefined;
@@ -474,15 +475,11 @@ export class DnsRecord extends pulumi.CustomResource {
             inputs["recordSha"] = undefined /*out*/;
             inputs["serial"] = undefined /*out*/;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         const aliasOpts = { aliases: [{ type: "akamai:edgedns/dnsRecord:DnsRecord" }] };
-        opts = opts ? pulumi.mergeOptions(opts, aliasOpts) : aliasOpts;
+        opts = pulumi.mergeOptions(opts, aliasOpts);
         super(DnsRecord.__pulumiType, name, inputs, opts);
     }
 }

@@ -22,7 +22,6 @@ import (
 //
 // import (
 // 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai"
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -192,6 +191,85 @@ func (i *GtmCidrmap) ToGtmCidrmapOutputWithContext(ctx context.Context) GtmCidrm
 	return pulumi.ToOutputWithContext(ctx, i).(GtmCidrmapOutput)
 }
 
+func (i *GtmCidrmap) ToGtmCidrmapPtrOutput() GtmCidrmapPtrOutput {
+	return i.ToGtmCidrmapPtrOutputWithContext(context.Background())
+}
+
+func (i *GtmCidrmap) ToGtmCidrmapPtrOutputWithContext(ctx context.Context) GtmCidrmapPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmCidrmapPtrOutput)
+}
+
+type GtmCidrmapPtrInput interface {
+	pulumi.Input
+
+	ToGtmCidrmapPtrOutput() GtmCidrmapPtrOutput
+	ToGtmCidrmapPtrOutputWithContext(ctx context.Context) GtmCidrmapPtrOutput
+}
+
+type gtmCidrmapPtrType GtmCidrmapArgs
+
+func (*gtmCidrmapPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmCidrmap)(nil))
+}
+
+func (i *gtmCidrmapPtrType) ToGtmCidrmapPtrOutput() GtmCidrmapPtrOutput {
+	return i.ToGtmCidrmapPtrOutputWithContext(context.Background())
+}
+
+func (i *gtmCidrmapPtrType) ToGtmCidrmapPtrOutputWithContext(ctx context.Context) GtmCidrmapPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmCidrmapPtrOutput)
+}
+
+// GtmCidrmapArrayInput is an input type that accepts GtmCidrmapArray and GtmCidrmapArrayOutput values.
+// You can construct a concrete instance of `GtmCidrmapArrayInput` via:
+//
+//          GtmCidrmapArray{ GtmCidrmapArgs{...} }
+type GtmCidrmapArrayInput interface {
+	pulumi.Input
+
+	ToGtmCidrmapArrayOutput() GtmCidrmapArrayOutput
+	ToGtmCidrmapArrayOutputWithContext(context.Context) GtmCidrmapArrayOutput
+}
+
+type GtmCidrmapArray []GtmCidrmapInput
+
+func (GtmCidrmapArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*GtmCidrmap)(nil))
+}
+
+func (i GtmCidrmapArray) ToGtmCidrmapArrayOutput() GtmCidrmapArrayOutput {
+	return i.ToGtmCidrmapArrayOutputWithContext(context.Background())
+}
+
+func (i GtmCidrmapArray) ToGtmCidrmapArrayOutputWithContext(ctx context.Context) GtmCidrmapArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmCidrmapArrayOutput)
+}
+
+// GtmCidrmapMapInput is an input type that accepts GtmCidrmapMap and GtmCidrmapMapOutput values.
+// You can construct a concrete instance of `GtmCidrmapMapInput` via:
+//
+//          GtmCidrmapMap{ "key": GtmCidrmapArgs{...} }
+type GtmCidrmapMapInput interface {
+	pulumi.Input
+
+	ToGtmCidrmapMapOutput() GtmCidrmapMapOutput
+	ToGtmCidrmapMapOutputWithContext(context.Context) GtmCidrmapMapOutput
+}
+
+type GtmCidrmapMap map[string]GtmCidrmapInput
+
+func (GtmCidrmapMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*GtmCidrmap)(nil))
+}
+
+func (i GtmCidrmapMap) ToGtmCidrmapMapOutput() GtmCidrmapMapOutput {
+	return i.ToGtmCidrmapMapOutputWithContext(context.Background())
+}
+
+func (i GtmCidrmapMap) ToGtmCidrmapMapOutputWithContext(ctx context.Context) GtmCidrmapMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmCidrmapMapOutput)
+}
+
 type GtmCidrmapOutput struct {
 	*pulumi.OutputState
 }
@@ -208,6 +286,75 @@ func (o GtmCidrmapOutput) ToGtmCidrmapOutputWithContext(ctx context.Context) Gtm
 	return o
 }
 
+func (o GtmCidrmapOutput) ToGtmCidrmapPtrOutput() GtmCidrmapPtrOutput {
+	return o.ToGtmCidrmapPtrOutputWithContext(context.Background())
+}
+
+func (o GtmCidrmapOutput) ToGtmCidrmapPtrOutputWithContext(ctx context.Context) GtmCidrmapPtrOutput {
+	return o.ApplyT(func(v GtmCidrmap) *GtmCidrmap {
+		return &v
+	}).(GtmCidrmapPtrOutput)
+}
+
+type GtmCidrmapPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (GtmCidrmapPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmCidrmap)(nil))
+}
+
+func (o GtmCidrmapPtrOutput) ToGtmCidrmapPtrOutput() GtmCidrmapPtrOutput {
+	return o
+}
+
+func (o GtmCidrmapPtrOutput) ToGtmCidrmapPtrOutputWithContext(ctx context.Context) GtmCidrmapPtrOutput {
+	return o
+}
+
+type GtmCidrmapArrayOutput struct{ *pulumi.OutputState }
+
+func (GtmCidrmapArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmCidrmap)(nil))
+}
+
+func (o GtmCidrmapArrayOutput) ToGtmCidrmapArrayOutput() GtmCidrmapArrayOutput {
+	return o
+}
+
+func (o GtmCidrmapArrayOutput) ToGtmCidrmapArrayOutputWithContext(ctx context.Context) GtmCidrmapArrayOutput {
+	return o
+}
+
+func (o GtmCidrmapArrayOutput) Index(i pulumi.IntInput) GtmCidrmapOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmCidrmap {
+		return vs[0].([]GtmCidrmap)[vs[1].(int)]
+	}).(GtmCidrmapOutput)
+}
+
+type GtmCidrmapMapOutput struct{ *pulumi.OutputState }
+
+func (GtmCidrmapMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GtmCidrmap)(nil))
+}
+
+func (o GtmCidrmapMapOutput) ToGtmCidrmapMapOutput() GtmCidrmapMapOutput {
+	return o
+}
+
+func (o GtmCidrmapMapOutput) ToGtmCidrmapMapOutputWithContext(ctx context.Context) GtmCidrmapMapOutput {
+	return o
+}
+
+func (o GtmCidrmapMapOutput) MapIndex(k pulumi.StringInput) GtmCidrmapOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GtmCidrmap {
+		return vs[0].(map[string]GtmCidrmap)[vs[1].(string)]
+	}).(GtmCidrmapOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(GtmCidrmapOutput{})
+	pulumi.RegisterOutputType(GtmCidrmapPtrOutput{})
+	pulumi.RegisterOutputType(GtmCidrmapArrayOutput{})
+	pulumi.RegisterOutputType(GtmCidrmapMapOutput{})
 }

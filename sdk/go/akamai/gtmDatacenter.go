@@ -21,7 +21,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -264,6 +264,85 @@ func (i *GtmDatacenter) ToGtmDatacenterOutputWithContext(ctx context.Context) Gt
 	return pulumi.ToOutputWithContext(ctx, i).(GtmDatacenterOutput)
 }
 
+func (i *GtmDatacenter) ToGtmDatacenterPtrOutput() GtmDatacenterPtrOutput {
+	return i.ToGtmDatacenterPtrOutputWithContext(context.Background())
+}
+
+func (i *GtmDatacenter) ToGtmDatacenterPtrOutputWithContext(ctx context.Context) GtmDatacenterPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmDatacenterPtrOutput)
+}
+
+type GtmDatacenterPtrInput interface {
+	pulumi.Input
+
+	ToGtmDatacenterPtrOutput() GtmDatacenterPtrOutput
+	ToGtmDatacenterPtrOutputWithContext(ctx context.Context) GtmDatacenterPtrOutput
+}
+
+type gtmDatacenterPtrType GtmDatacenterArgs
+
+func (*gtmDatacenterPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmDatacenter)(nil))
+}
+
+func (i *gtmDatacenterPtrType) ToGtmDatacenterPtrOutput() GtmDatacenterPtrOutput {
+	return i.ToGtmDatacenterPtrOutputWithContext(context.Background())
+}
+
+func (i *gtmDatacenterPtrType) ToGtmDatacenterPtrOutputWithContext(ctx context.Context) GtmDatacenterPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmDatacenterPtrOutput)
+}
+
+// GtmDatacenterArrayInput is an input type that accepts GtmDatacenterArray and GtmDatacenterArrayOutput values.
+// You can construct a concrete instance of `GtmDatacenterArrayInput` via:
+//
+//          GtmDatacenterArray{ GtmDatacenterArgs{...} }
+type GtmDatacenterArrayInput interface {
+	pulumi.Input
+
+	ToGtmDatacenterArrayOutput() GtmDatacenterArrayOutput
+	ToGtmDatacenterArrayOutputWithContext(context.Context) GtmDatacenterArrayOutput
+}
+
+type GtmDatacenterArray []GtmDatacenterInput
+
+func (GtmDatacenterArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*GtmDatacenter)(nil))
+}
+
+func (i GtmDatacenterArray) ToGtmDatacenterArrayOutput() GtmDatacenterArrayOutput {
+	return i.ToGtmDatacenterArrayOutputWithContext(context.Background())
+}
+
+func (i GtmDatacenterArray) ToGtmDatacenterArrayOutputWithContext(ctx context.Context) GtmDatacenterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmDatacenterArrayOutput)
+}
+
+// GtmDatacenterMapInput is an input type that accepts GtmDatacenterMap and GtmDatacenterMapOutput values.
+// You can construct a concrete instance of `GtmDatacenterMapInput` via:
+//
+//          GtmDatacenterMap{ "key": GtmDatacenterArgs{...} }
+type GtmDatacenterMapInput interface {
+	pulumi.Input
+
+	ToGtmDatacenterMapOutput() GtmDatacenterMapOutput
+	ToGtmDatacenterMapOutputWithContext(context.Context) GtmDatacenterMapOutput
+}
+
+type GtmDatacenterMap map[string]GtmDatacenterInput
+
+func (GtmDatacenterMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*GtmDatacenter)(nil))
+}
+
+func (i GtmDatacenterMap) ToGtmDatacenterMapOutput() GtmDatacenterMapOutput {
+	return i.ToGtmDatacenterMapOutputWithContext(context.Background())
+}
+
+func (i GtmDatacenterMap) ToGtmDatacenterMapOutputWithContext(ctx context.Context) GtmDatacenterMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmDatacenterMapOutput)
+}
+
 type GtmDatacenterOutput struct {
 	*pulumi.OutputState
 }
@@ -280,6 +359,75 @@ func (o GtmDatacenterOutput) ToGtmDatacenterOutputWithContext(ctx context.Contex
 	return o
 }
 
+func (o GtmDatacenterOutput) ToGtmDatacenterPtrOutput() GtmDatacenterPtrOutput {
+	return o.ToGtmDatacenterPtrOutputWithContext(context.Background())
+}
+
+func (o GtmDatacenterOutput) ToGtmDatacenterPtrOutputWithContext(ctx context.Context) GtmDatacenterPtrOutput {
+	return o.ApplyT(func(v GtmDatacenter) *GtmDatacenter {
+		return &v
+	}).(GtmDatacenterPtrOutput)
+}
+
+type GtmDatacenterPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (GtmDatacenterPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmDatacenter)(nil))
+}
+
+func (o GtmDatacenterPtrOutput) ToGtmDatacenterPtrOutput() GtmDatacenterPtrOutput {
+	return o
+}
+
+func (o GtmDatacenterPtrOutput) ToGtmDatacenterPtrOutputWithContext(ctx context.Context) GtmDatacenterPtrOutput {
+	return o
+}
+
+type GtmDatacenterArrayOutput struct{ *pulumi.OutputState }
+
+func (GtmDatacenterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmDatacenter)(nil))
+}
+
+func (o GtmDatacenterArrayOutput) ToGtmDatacenterArrayOutput() GtmDatacenterArrayOutput {
+	return o
+}
+
+func (o GtmDatacenterArrayOutput) ToGtmDatacenterArrayOutputWithContext(ctx context.Context) GtmDatacenterArrayOutput {
+	return o
+}
+
+func (o GtmDatacenterArrayOutput) Index(i pulumi.IntInput) GtmDatacenterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmDatacenter {
+		return vs[0].([]GtmDatacenter)[vs[1].(int)]
+	}).(GtmDatacenterOutput)
+}
+
+type GtmDatacenterMapOutput struct{ *pulumi.OutputState }
+
+func (GtmDatacenterMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GtmDatacenter)(nil))
+}
+
+func (o GtmDatacenterMapOutput) ToGtmDatacenterMapOutput() GtmDatacenterMapOutput {
+	return o
+}
+
+func (o GtmDatacenterMapOutput) ToGtmDatacenterMapOutputWithContext(ctx context.Context) GtmDatacenterMapOutput {
+	return o
+}
+
+func (o GtmDatacenterMapOutput) MapIndex(k pulumi.StringInput) GtmDatacenterOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GtmDatacenter {
+		return vs[0].(map[string]GtmDatacenter)[vs[1].(string)]
+	}).(GtmDatacenterOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(GtmDatacenterOutput{})
+	pulumi.RegisterOutputType(GtmDatacenterPtrOutput{})
+	pulumi.RegisterOutputType(GtmDatacenterArrayOutput{})
+	pulumi.RegisterOutputType(GtmDatacenterMapOutput{})
 }

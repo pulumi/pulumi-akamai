@@ -50,7 +50,8 @@ export class AppSecConfigurationVersionClone extends pulumi.CustomResource {
     constructor(name: string, args: AppSecConfigurationVersionCloneArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecConfigurationVersionCloneArgs | AppSecConfigurationVersionCloneState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as AppSecConfigurationVersionCloneState | undefined;
             inputs["configId"] = state ? state.configId : undefined;
             inputs["createFromVersion"] = state ? state.createFromVersion : undefined;
@@ -58,10 +59,10 @@ export class AppSecConfigurationVersionClone extends pulumi.CustomResource {
             inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecConfigurationVersionCloneArgs | undefined;
-            if ((!args || args.configId === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.configId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.createFromVersion === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.createFromVersion === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'createFromVersion'");
             }
             inputs["configId"] = args ? args.configId : undefined;
@@ -69,12 +70,8 @@ export class AppSecConfigurationVersionClone extends pulumi.CustomResource {
             inputs["ruleUpdate"] = args ? args.ruleUpdate : undefined;
             inputs["version"] = undefined /*out*/;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(AppSecConfigurationVersionClone.__pulumiType, name, inputs, opts);
     }

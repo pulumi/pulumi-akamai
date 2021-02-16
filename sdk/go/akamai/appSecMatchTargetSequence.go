@@ -134,6 +134,85 @@ func (i *AppSecMatchTargetSequence) ToAppSecMatchTargetSequenceOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecMatchTargetSequenceOutput)
 }
 
+func (i *AppSecMatchTargetSequence) ToAppSecMatchTargetSequencePtrOutput() AppSecMatchTargetSequencePtrOutput {
+	return i.ToAppSecMatchTargetSequencePtrOutputWithContext(context.Background())
+}
+
+func (i *AppSecMatchTargetSequence) ToAppSecMatchTargetSequencePtrOutputWithContext(ctx context.Context) AppSecMatchTargetSequencePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecMatchTargetSequencePtrOutput)
+}
+
+type AppSecMatchTargetSequencePtrInput interface {
+	pulumi.Input
+
+	ToAppSecMatchTargetSequencePtrOutput() AppSecMatchTargetSequencePtrOutput
+	ToAppSecMatchTargetSequencePtrOutputWithContext(ctx context.Context) AppSecMatchTargetSequencePtrOutput
+}
+
+type appSecMatchTargetSequencePtrType AppSecMatchTargetSequenceArgs
+
+func (*appSecMatchTargetSequencePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AppSecMatchTargetSequence)(nil))
+}
+
+func (i *appSecMatchTargetSequencePtrType) ToAppSecMatchTargetSequencePtrOutput() AppSecMatchTargetSequencePtrOutput {
+	return i.ToAppSecMatchTargetSequencePtrOutputWithContext(context.Background())
+}
+
+func (i *appSecMatchTargetSequencePtrType) ToAppSecMatchTargetSequencePtrOutputWithContext(ctx context.Context) AppSecMatchTargetSequencePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecMatchTargetSequencePtrOutput)
+}
+
+// AppSecMatchTargetSequenceArrayInput is an input type that accepts AppSecMatchTargetSequenceArray and AppSecMatchTargetSequenceArrayOutput values.
+// You can construct a concrete instance of `AppSecMatchTargetSequenceArrayInput` via:
+//
+//          AppSecMatchTargetSequenceArray{ AppSecMatchTargetSequenceArgs{...} }
+type AppSecMatchTargetSequenceArrayInput interface {
+	pulumi.Input
+
+	ToAppSecMatchTargetSequenceArrayOutput() AppSecMatchTargetSequenceArrayOutput
+	ToAppSecMatchTargetSequenceArrayOutputWithContext(context.Context) AppSecMatchTargetSequenceArrayOutput
+}
+
+type AppSecMatchTargetSequenceArray []AppSecMatchTargetSequenceInput
+
+func (AppSecMatchTargetSequenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*AppSecMatchTargetSequence)(nil))
+}
+
+func (i AppSecMatchTargetSequenceArray) ToAppSecMatchTargetSequenceArrayOutput() AppSecMatchTargetSequenceArrayOutput {
+	return i.ToAppSecMatchTargetSequenceArrayOutputWithContext(context.Background())
+}
+
+func (i AppSecMatchTargetSequenceArray) ToAppSecMatchTargetSequenceArrayOutputWithContext(ctx context.Context) AppSecMatchTargetSequenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecMatchTargetSequenceArrayOutput)
+}
+
+// AppSecMatchTargetSequenceMapInput is an input type that accepts AppSecMatchTargetSequenceMap and AppSecMatchTargetSequenceMapOutput values.
+// You can construct a concrete instance of `AppSecMatchTargetSequenceMapInput` via:
+//
+//          AppSecMatchTargetSequenceMap{ "key": AppSecMatchTargetSequenceArgs{...} }
+type AppSecMatchTargetSequenceMapInput interface {
+	pulumi.Input
+
+	ToAppSecMatchTargetSequenceMapOutput() AppSecMatchTargetSequenceMapOutput
+	ToAppSecMatchTargetSequenceMapOutputWithContext(context.Context) AppSecMatchTargetSequenceMapOutput
+}
+
+type AppSecMatchTargetSequenceMap map[string]AppSecMatchTargetSequenceInput
+
+func (AppSecMatchTargetSequenceMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*AppSecMatchTargetSequence)(nil))
+}
+
+func (i AppSecMatchTargetSequenceMap) ToAppSecMatchTargetSequenceMapOutput() AppSecMatchTargetSequenceMapOutput {
+	return i.ToAppSecMatchTargetSequenceMapOutputWithContext(context.Background())
+}
+
+func (i AppSecMatchTargetSequenceMap) ToAppSecMatchTargetSequenceMapOutputWithContext(ctx context.Context) AppSecMatchTargetSequenceMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppSecMatchTargetSequenceMapOutput)
+}
+
 type AppSecMatchTargetSequenceOutput struct {
 	*pulumi.OutputState
 }
@@ -150,6 +229,75 @@ func (o AppSecMatchTargetSequenceOutput) ToAppSecMatchTargetSequenceOutputWithCo
 	return o
 }
 
+func (o AppSecMatchTargetSequenceOutput) ToAppSecMatchTargetSequencePtrOutput() AppSecMatchTargetSequencePtrOutput {
+	return o.ToAppSecMatchTargetSequencePtrOutputWithContext(context.Background())
+}
+
+func (o AppSecMatchTargetSequenceOutput) ToAppSecMatchTargetSequencePtrOutputWithContext(ctx context.Context) AppSecMatchTargetSequencePtrOutput {
+	return o.ApplyT(func(v AppSecMatchTargetSequence) *AppSecMatchTargetSequence {
+		return &v
+	}).(AppSecMatchTargetSequencePtrOutput)
+}
+
+type AppSecMatchTargetSequencePtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (AppSecMatchTargetSequencePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AppSecMatchTargetSequence)(nil))
+}
+
+func (o AppSecMatchTargetSequencePtrOutput) ToAppSecMatchTargetSequencePtrOutput() AppSecMatchTargetSequencePtrOutput {
+	return o
+}
+
+func (o AppSecMatchTargetSequencePtrOutput) ToAppSecMatchTargetSequencePtrOutputWithContext(ctx context.Context) AppSecMatchTargetSequencePtrOutput {
+	return o
+}
+
+type AppSecMatchTargetSequenceArrayOutput struct{ *pulumi.OutputState }
+
+func (AppSecMatchTargetSequenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AppSecMatchTargetSequence)(nil))
+}
+
+func (o AppSecMatchTargetSequenceArrayOutput) ToAppSecMatchTargetSequenceArrayOutput() AppSecMatchTargetSequenceArrayOutput {
+	return o
+}
+
+func (o AppSecMatchTargetSequenceArrayOutput) ToAppSecMatchTargetSequenceArrayOutputWithContext(ctx context.Context) AppSecMatchTargetSequenceArrayOutput {
+	return o
+}
+
+func (o AppSecMatchTargetSequenceArrayOutput) Index(i pulumi.IntInput) AppSecMatchTargetSequenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecMatchTargetSequence {
+		return vs[0].([]AppSecMatchTargetSequence)[vs[1].(int)]
+	}).(AppSecMatchTargetSequenceOutput)
+}
+
+type AppSecMatchTargetSequenceMapOutput struct{ *pulumi.OutputState }
+
+func (AppSecMatchTargetSequenceMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]AppSecMatchTargetSequence)(nil))
+}
+
+func (o AppSecMatchTargetSequenceMapOutput) ToAppSecMatchTargetSequenceMapOutput() AppSecMatchTargetSequenceMapOutput {
+	return o
+}
+
+func (o AppSecMatchTargetSequenceMapOutput) ToAppSecMatchTargetSequenceMapOutputWithContext(ctx context.Context) AppSecMatchTargetSequenceMapOutput {
+	return o
+}
+
+func (o AppSecMatchTargetSequenceMapOutput) MapIndex(k pulumi.StringInput) AppSecMatchTargetSequenceOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecMatchTargetSequence {
+		return vs[0].(map[string]AppSecMatchTargetSequence)[vs[1].(string)]
+	}).(AppSecMatchTargetSequenceOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(AppSecMatchTargetSequenceOutput{})
+	pulumi.RegisterOutputType(AppSecMatchTargetSequencePtrOutput{})
+	pulumi.RegisterOutputType(AppSecMatchTargetSequenceArrayOutput{})
+	pulumi.RegisterOutputType(AppSecMatchTargetSequenceMapOutput{})
 }

@@ -101,7 +101,8 @@ export class GtmDatacenter extends pulumi.CustomResource {
     constructor(name: string, args: GtmDatacenterArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: GtmDatacenterArgs | GtmDatacenterState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as GtmDatacenterState | undefined;
             inputs["city"] = state ? state.city : undefined;
             inputs["cloneOf"] = state ? state.cloneOf : undefined;
@@ -126,7 +127,7 @@ export class GtmDatacenter extends pulumi.CustomResource {
             inputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
         } else {
             const args = argsOrState as GtmDatacenterArgs | undefined;
-            if ((!args || args.domain === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.domain === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'domain'");
             }
             inputs["city"] = args ? args.city : undefined;
@@ -151,15 +152,11 @@ export class GtmDatacenter extends pulumi.CustomResource {
             inputs["servermonitorPool"] = undefined /*out*/;
             inputs["virtual"] = undefined /*out*/;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         const aliasOpts = { aliases: [{ type: "akamai:trafficmanagement/gtmDatacenter:GtmDatacenter" }] };
-        opts = opts ? pulumi.mergeOptions(opts, aliasOpts) : aliasOpts;
+        opts = pulumi.mergeOptions(opts, aliasOpts);
         super(GtmDatacenter.__pulumiType, name, inputs, opts);
     }
 }

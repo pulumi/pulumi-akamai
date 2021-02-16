@@ -125,7 +125,8 @@ export class Property extends pulumi.CustomResource {
     constructor(name: string, argsOrState?: PropertyArgs | PropertyState, opts?: pulumi.CustomResourceOptions) {
         pulumi.log.warn("Property is deprecated: akamai.properties.Property has been deprecated in favor of akamai.Property")
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as PropertyState | undefined;
             inputs["contacts"] = state ? state.contacts : undefined;
             inputs["contract"] = state ? state.contract : undefined;
@@ -170,12 +171,8 @@ export class Property extends pulumi.CustomResource {
             inputs["ruleWarnings"] = undefined /*out*/;
             inputs["stagingVersion"] = undefined /*out*/;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(Property.__pulumiType, name, inputs, opts);
     }

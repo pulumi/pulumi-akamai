@@ -21,7 +21,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -242,6 +242,85 @@ func (i *GtmResource) ToGtmResourceOutputWithContext(ctx context.Context) GtmRes
 	return pulumi.ToOutputWithContext(ctx, i).(GtmResourceOutput)
 }
 
+func (i *GtmResource) ToGtmResourcePtrOutput() GtmResourcePtrOutput {
+	return i.ToGtmResourcePtrOutputWithContext(context.Background())
+}
+
+func (i *GtmResource) ToGtmResourcePtrOutputWithContext(ctx context.Context) GtmResourcePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmResourcePtrOutput)
+}
+
+type GtmResourcePtrInput interface {
+	pulumi.Input
+
+	ToGtmResourcePtrOutput() GtmResourcePtrOutput
+	ToGtmResourcePtrOutputWithContext(ctx context.Context) GtmResourcePtrOutput
+}
+
+type gtmResourcePtrType GtmResourceArgs
+
+func (*gtmResourcePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmResource)(nil))
+}
+
+func (i *gtmResourcePtrType) ToGtmResourcePtrOutput() GtmResourcePtrOutput {
+	return i.ToGtmResourcePtrOutputWithContext(context.Background())
+}
+
+func (i *gtmResourcePtrType) ToGtmResourcePtrOutputWithContext(ctx context.Context) GtmResourcePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmResourcePtrOutput)
+}
+
+// GtmResourceArrayInput is an input type that accepts GtmResourceArray and GtmResourceArrayOutput values.
+// You can construct a concrete instance of `GtmResourceArrayInput` via:
+//
+//          GtmResourceArray{ GtmResourceArgs{...} }
+type GtmResourceArrayInput interface {
+	pulumi.Input
+
+	ToGtmResourceArrayOutput() GtmResourceArrayOutput
+	ToGtmResourceArrayOutputWithContext(context.Context) GtmResourceArrayOutput
+}
+
+type GtmResourceArray []GtmResourceInput
+
+func (GtmResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*GtmResource)(nil))
+}
+
+func (i GtmResourceArray) ToGtmResourceArrayOutput() GtmResourceArrayOutput {
+	return i.ToGtmResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GtmResourceArray) ToGtmResourceArrayOutputWithContext(ctx context.Context) GtmResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmResourceArrayOutput)
+}
+
+// GtmResourceMapInput is an input type that accepts GtmResourceMap and GtmResourceMapOutput values.
+// You can construct a concrete instance of `GtmResourceMapInput` via:
+//
+//          GtmResourceMap{ "key": GtmResourceArgs{...} }
+type GtmResourceMapInput interface {
+	pulumi.Input
+
+	ToGtmResourceMapOutput() GtmResourceMapOutput
+	ToGtmResourceMapOutputWithContext(context.Context) GtmResourceMapOutput
+}
+
+type GtmResourceMap map[string]GtmResourceInput
+
+func (GtmResourceMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*GtmResource)(nil))
+}
+
+func (i GtmResourceMap) ToGtmResourceMapOutput() GtmResourceMapOutput {
+	return i.ToGtmResourceMapOutputWithContext(context.Background())
+}
+
+func (i GtmResourceMap) ToGtmResourceMapOutputWithContext(ctx context.Context) GtmResourceMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmResourceMapOutput)
+}
+
 type GtmResourceOutput struct {
 	*pulumi.OutputState
 }
@@ -258,6 +337,75 @@ func (o GtmResourceOutput) ToGtmResourceOutputWithContext(ctx context.Context) G
 	return o
 }
 
+func (o GtmResourceOutput) ToGtmResourcePtrOutput() GtmResourcePtrOutput {
+	return o.ToGtmResourcePtrOutputWithContext(context.Background())
+}
+
+func (o GtmResourceOutput) ToGtmResourcePtrOutputWithContext(ctx context.Context) GtmResourcePtrOutput {
+	return o.ApplyT(func(v GtmResource) *GtmResource {
+		return &v
+	}).(GtmResourcePtrOutput)
+}
+
+type GtmResourcePtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (GtmResourcePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmResource)(nil))
+}
+
+func (o GtmResourcePtrOutput) ToGtmResourcePtrOutput() GtmResourcePtrOutput {
+	return o
+}
+
+func (o GtmResourcePtrOutput) ToGtmResourcePtrOutputWithContext(ctx context.Context) GtmResourcePtrOutput {
+	return o
+}
+
+type GtmResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GtmResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmResource)(nil))
+}
+
+func (o GtmResourceArrayOutput) ToGtmResourceArrayOutput() GtmResourceArrayOutput {
+	return o
+}
+
+func (o GtmResourceArrayOutput) ToGtmResourceArrayOutputWithContext(ctx context.Context) GtmResourceArrayOutput {
+	return o
+}
+
+func (o GtmResourceArrayOutput) Index(i pulumi.IntInput) GtmResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmResource {
+		return vs[0].([]GtmResource)[vs[1].(int)]
+	}).(GtmResourceOutput)
+}
+
+type GtmResourceMapOutput struct{ *pulumi.OutputState }
+
+func (GtmResourceMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GtmResource)(nil))
+}
+
+func (o GtmResourceMapOutput) ToGtmResourceMapOutput() GtmResourceMapOutput {
+	return o
+}
+
+func (o GtmResourceMapOutput) ToGtmResourceMapOutputWithContext(ctx context.Context) GtmResourceMapOutput {
+	return o
+}
+
+func (o GtmResourceMapOutput) MapIndex(k pulumi.StringInput) GtmResourceOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GtmResource {
+		return vs[0].(map[string]GtmResource)[vs[1].(string)]
+	}).(GtmResourceOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(GtmResourceOutput{})
+	pulumi.RegisterOutputType(GtmResourcePtrOutput{})
+	pulumi.RegisterOutputType(GtmResourceArrayOutput{})
+	pulumi.RegisterOutputType(GtmResourceMapOutput{})
 }

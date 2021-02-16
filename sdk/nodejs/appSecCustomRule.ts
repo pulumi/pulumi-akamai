@@ -58,29 +58,26 @@ export class AppSecCustomRule extends pulumi.CustomResource {
     constructor(name: string, args: AppSecCustomRuleArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecCustomRuleArgs | AppSecCustomRuleState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as AppSecCustomRuleState | undefined;
             inputs["configId"] = state ? state.configId : undefined;
             inputs["customRuleId"] = state ? state.customRuleId : undefined;
             inputs["rules"] = state ? state.rules : undefined;
         } else {
             const args = argsOrState as AppSecCustomRuleArgs | undefined;
-            if ((!args || args.configId === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.configId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.rules === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.rules === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'rules'");
             }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["rules"] = args ? args.rules : undefined;
             inputs["customRuleId"] = undefined /*out*/;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(AppSecCustomRule.__pulumiType, name, inputs, opts);
     }

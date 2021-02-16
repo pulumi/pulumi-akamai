@@ -88,7 +88,8 @@ export class AppSecSecurityPolicyClone extends pulumi.CustomResource {
     constructor(name: string, args: AppSecSecurityPolicyCloneArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecSecurityPolicyCloneArgs | AppSecSecurityPolicyCloneState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as AppSecSecurityPolicyCloneState | undefined;
             inputs["configId"] = state ? state.configId : undefined;
             inputs["createFromSecurityPolicy"] = state ? state.createFromSecurityPolicy : undefined;
@@ -98,13 +99,13 @@ export class AppSecSecurityPolicyClone extends pulumi.CustomResource {
             inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecSecurityPolicyCloneArgs | undefined;
-            if ((!args || args.configId === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.configId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.createFromSecurityPolicy === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.createFromSecurityPolicy === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'createFromSecurityPolicy'");
             }
-            if ((!args || args.version === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.version === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
             inputs["configId"] = args ? args.configId : undefined;
@@ -114,12 +115,8 @@ export class AppSecSecurityPolicyClone extends pulumi.CustomResource {
             inputs["version"] = args ? args.version : undefined;
             inputs["policyId"] = undefined /*out*/;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(AppSecSecurityPolicyClone.__pulumiType, name, inputs, opts);
     }

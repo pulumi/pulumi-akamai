@@ -21,7 +21,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/"
+// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -356,6 +356,85 @@ func (i *GtmDomain) ToGtmDomainOutputWithContext(ctx context.Context) GtmDomainO
 	return pulumi.ToOutputWithContext(ctx, i).(GtmDomainOutput)
 }
 
+func (i *GtmDomain) ToGtmDomainPtrOutput() GtmDomainPtrOutput {
+	return i.ToGtmDomainPtrOutputWithContext(context.Background())
+}
+
+func (i *GtmDomain) ToGtmDomainPtrOutputWithContext(ctx context.Context) GtmDomainPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmDomainPtrOutput)
+}
+
+type GtmDomainPtrInput interface {
+	pulumi.Input
+
+	ToGtmDomainPtrOutput() GtmDomainPtrOutput
+	ToGtmDomainPtrOutputWithContext(ctx context.Context) GtmDomainPtrOutput
+}
+
+type gtmDomainPtrType GtmDomainArgs
+
+func (*gtmDomainPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmDomain)(nil))
+}
+
+func (i *gtmDomainPtrType) ToGtmDomainPtrOutput() GtmDomainPtrOutput {
+	return i.ToGtmDomainPtrOutputWithContext(context.Background())
+}
+
+func (i *gtmDomainPtrType) ToGtmDomainPtrOutputWithContext(ctx context.Context) GtmDomainPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmDomainPtrOutput)
+}
+
+// GtmDomainArrayInput is an input type that accepts GtmDomainArray and GtmDomainArrayOutput values.
+// You can construct a concrete instance of `GtmDomainArrayInput` via:
+//
+//          GtmDomainArray{ GtmDomainArgs{...} }
+type GtmDomainArrayInput interface {
+	pulumi.Input
+
+	ToGtmDomainArrayOutput() GtmDomainArrayOutput
+	ToGtmDomainArrayOutputWithContext(context.Context) GtmDomainArrayOutput
+}
+
+type GtmDomainArray []GtmDomainInput
+
+func (GtmDomainArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*GtmDomain)(nil))
+}
+
+func (i GtmDomainArray) ToGtmDomainArrayOutput() GtmDomainArrayOutput {
+	return i.ToGtmDomainArrayOutputWithContext(context.Background())
+}
+
+func (i GtmDomainArray) ToGtmDomainArrayOutputWithContext(ctx context.Context) GtmDomainArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmDomainArrayOutput)
+}
+
+// GtmDomainMapInput is an input type that accepts GtmDomainMap and GtmDomainMapOutput values.
+// You can construct a concrete instance of `GtmDomainMapInput` via:
+//
+//          GtmDomainMap{ "key": GtmDomainArgs{...} }
+type GtmDomainMapInput interface {
+	pulumi.Input
+
+	ToGtmDomainMapOutput() GtmDomainMapOutput
+	ToGtmDomainMapOutputWithContext(context.Context) GtmDomainMapOutput
+}
+
+type GtmDomainMap map[string]GtmDomainInput
+
+func (GtmDomainMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*GtmDomain)(nil))
+}
+
+func (i GtmDomainMap) ToGtmDomainMapOutput() GtmDomainMapOutput {
+	return i.ToGtmDomainMapOutputWithContext(context.Background())
+}
+
+func (i GtmDomainMap) ToGtmDomainMapOutputWithContext(ctx context.Context) GtmDomainMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmDomainMapOutput)
+}
+
 type GtmDomainOutput struct {
 	*pulumi.OutputState
 }
@@ -372,6 +451,75 @@ func (o GtmDomainOutput) ToGtmDomainOutputWithContext(ctx context.Context) GtmDo
 	return o
 }
 
+func (o GtmDomainOutput) ToGtmDomainPtrOutput() GtmDomainPtrOutput {
+	return o.ToGtmDomainPtrOutputWithContext(context.Background())
+}
+
+func (o GtmDomainOutput) ToGtmDomainPtrOutputWithContext(ctx context.Context) GtmDomainPtrOutput {
+	return o.ApplyT(func(v GtmDomain) *GtmDomain {
+		return &v
+	}).(GtmDomainPtrOutput)
+}
+
+type GtmDomainPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (GtmDomainPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmDomain)(nil))
+}
+
+func (o GtmDomainPtrOutput) ToGtmDomainPtrOutput() GtmDomainPtrOutput {
+	return o
+}
+
+func (o GtmDomainPtrOutput) ToGtmDomainPtrOutputWithContext(ctx context.Context) GtmDomainPtrOutput {
+	return o
+}
+
+type GtmDomainArrayOutput struct{ *pulumi.OutputState }
+
+func (GtmDomainArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmDomain)(nil))
+}
+
+func (o GtmDomainArrayOutput) ToGtmDomainArrayOutput() GtmDomainArrayOutput {
+	return o
+}
+
+func (o GtmDomainArrayOutput) ToGtmDomainArrayOutputWithContext(ctx context.Context) GtmDomainArrayOutput {
+	return o
+}
+
+func (o GtmDomainArrayOutput) Index(i pulumi.IntInput) GtmDomainOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmDomain {
+		return vs[0].([]GtmDomain)[vs[1].(int)]
+	}).(GtmDomainOutput)
+}
+
+type GtmDomainMapOutput struct{ *pulumi.OutputState }
+
+func (GtmDomainMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GtmDomain)(nil))
+}
+
+func (o GtmDomainMapOutput) ToGtmDomainMapOutput() GtmDomainMapOutput {
+	return o
+}
+
+func (o GtmDomainMapOutput) ToGtmDomainMapOutputWithContext(ctx context.Context) GtmDomainMapOutput {
+	return o
+}
+
+func (o GtmDomainMapOutput) MapIndex(k pulumi.StringInput) GtmDomainOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GtmDomain {
+		return vs[0].(map[string]GtmDomain)[vs[1].(string)]
+	}).(GtmDomainOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(GtmDomainOutput{})
+	pulumi.RegisterOutputType(GtmDomainPtrOutput{})
+	pulumi.RegisterOutputType(GtmDomainArrayOutput{})
+	pulumi.RegisterOutputType(GtmDomainMapOutput{})
 }

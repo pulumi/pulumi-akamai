@@ -22,7 +22,6 @@ import (
 //
 // import (
 // 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai"
-// 	"github.com/pulumi/pulumi-akamai/sdk/go/akamai/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -192,6 +191,85 @@ func (i *GtmAsmap) ToGtmAsmapOutputWithContext(ctx context.Context) GtmAsmapOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GtmAsmapOutput)
 }
 
+func (i *GtmAsmap) ToGtmAsmapPtrOutput() GtmAsmapPtrOutput {
+	return i.ToGtmAsmapPtrOutputWithContext(context.Background())
+}
+
+func (i *GtmAsmap) ToGtmAsmapPtrOutputWithContext(ctx context.Context) GtmAsmapPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmAsmapPtrOutput)
+}
+
+type GtmAsmapPtrInput interface {
+	pulumi.Input
+
+	ToGtmAsmapPtrOutput() GtmAsmapPtrOutput
+	ToGtmAsmapPtrOutputWithContext(ctx context.Context) GtmAsmapPtrOutput
+}
+
+type gtmAsmapPtrType GtmAsmapArgs
+
+func (*gtmAsmapPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmAsmap)(nil))
+}
+
+func (i *gtmAsmapPtrType) ToGtmAsmapPtrOutput() GtmAsmapPtrOutput {
+	return i.ToGtmAsmapPtrOutputWithContext(context.Background())
+}
+
+func (i *gtmAsmapPtrType) ToGtmAsmapPtrOutputWithContext(ctx context.Context) GtmAsmapPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmAsmapPtrOutput)
+}
+
+// GtmAsmapArrayInput is an input type that accepts GtmAsmapArray and GtmAsmapArrayOutput values.
+// You can construct a concrete instance of `GtmAsmapArrayInput` via:
+//
+//          GtmAsmapArray{ GtmAsmapArgs{...} }
+type GtmAsmapArrayInput interface {
+	pulumi.Input
+
+	ToGtmAsmapArrayOutput() GtmAsmapArrayOutput
+	ToGtmAsmapArrayOutputWithContext(context.Context) GtmAsmapArrayOutput
+}
+
+type GtmAsmapArray []GtmAsmapInput
+
+func (GtmAsmapArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*GtmAsmap)(nil))
+}
+
+func (i GtmAsmapArray) ToGtmAsmapArrayOutput() GtmAsmapArrayOutput {
+	return i.ToGtmAsmapArrayOutputWithContext(context.Background())
+}
+
+func (i GtmAsmapArray) ToGtmAsmapArrayOutputWithContext(ctx context.Context) GtmAsmapArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmAsmapArrayOutput)
+}
+
+// GtmAsmapMapInput is an input type that accepts GtmAsmapMap and GtmAsmapMapOutput values.
+// You can construct a concrete instance of `GtmAsmapMapInput` via:
+//
+//          GtmAsmapMap{ "key": GtmAsmapArgs{...} }
+type GtmAsmapMapInput interface {
+	pulumi.Input
+
+	ToGtmAsmapMapOutput() GtmAsmapMapOutput
+	ToGtmAsmapMapOutputWithContext(context.Context) GtmAsmapMapOutput
+}
+
+type GtmAsmapMap map[string]GtmAsmapInput
+
+func (GtmAsmapMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*GtmAsmap)(nil))
+}
+
+func (i GtmAsmapMap) ToGtmAsmapMapOutput() GtmAsmapMapOutput {
+	return i.ToGtmAsmapMapOutputWithContext(context.Background())
+}
+
+func (i GtmAsmapMap) ToGtmAsmapMapOutputWithContext(ctx context.Context) GtmAsmapMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmAsmapMapOutput)
+}
+
 type GtmAsmapOutput struct {
 	*pulumi.OutputState
 }
@@ -208,6 +286,75 @@ func (o GtmAsmapOutput) ToGtmAsmapOutputWithContext(ctx context.Context) GtmAsma
 	return o
 }
 
+func (o GtmAsmapOutput) ToGtmAsmapPtrOutput() GtmAsmapPtrOutput {
+	return o.ToGtmAsmapPtrOutputWithContext(context.Background())
+}
+
+func (o GtmAsmapOutput) ToGtmAsmapPtrOutputWithContext(ctx context.Context) GtmAsmapPtrOutput {
+	return o.ApplyT(func(v GtmAsmap) *GtmAsmap {
+		return &v
+	}).(GtmAsmapPtrOutput)
+}
+
+type GtmAsmapPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (GtmAsmapPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmAsmap)(nil))
+}
+
+func (o GtmAsmapPtrOutput) ToGtmAsmapPtrOutput() GtmAsmapPtrOutput {
+	return o
+}
+
+func (o GtmAsmapPtrOutput) ToGtmAsmapPtrOutputWithContext(ctx context.Context) GtmAsmapPtrOutput {
+	return o
+}
+
+type GtmAsmapArrayOutput struct{ *pulumi.OutputState }
+
+func (GtmAsmapArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmAsmap)(nil))
+}
+
+func (o GtmAsmapArrayOutput) ToGtmAsmapArrayOutput() GtmAsmapArrayOutput {
+	return o
+}
+
+func (o GtmAsmapArrayOutput) ToGtmAsmapArrayOutputWithContext(ctx context.Context) GtmAsmapArrayOutput {
+	return o
+}
+
+func (o GtmAsmapArrayOutput) Index(i pulumi.IntInput) GtmAsmapOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmAsmap {
+		return vs[0].([]GtmAsmap)[vs[1].(int)]
+	}).(GtmAsmapOutput)
+}
+
+type GtmAsmapMapOutput struct{ *pulumi.OutputState }
+
+func (GtmAsmapMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GtmAsmap)(nil))
+}
+
+func (o GtmAsmapMapOutput) ToGtmAsmapMapOutput() GtmAsmapMapOutput {
+	return o
+}
+
+func (o GtmAsmapMapOutput) ToGtmAsmapMapOutputWithContext(ctx context.Context) GtmAsmapMapOutput {
+	return o
+}
+
+func (o GtmAsmapMapOutput) MapIndex(k pulumi.StringInput) GtmAsmapOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GtmAsmap {
+		return vs[0].(map[string]GtmAsmap)[vs[1].(string)]
+	}).(GtmAsmapOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(GtmAsmapOutput{})
+	pulumi.RegisterOutputType(GtmAsmapPtrOutput{})
+	pulumi.RegisterOutputType(GtmAsmapArrayOutput{})
+	pulumi.RegisterOutputType(GtmAsmapMapOutput{})
 }

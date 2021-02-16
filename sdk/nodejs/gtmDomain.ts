@@ -142,7 +142,8 @@ export class GtmDomain extends pulumi.CustomResource {
     constructor(name: string, args: GtmDomainArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: GtmDomainArgs | GtmDomainState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as GtmDomainState | undefined;
             inputs["cnameCoalescingEnabled"] = state ? state.cnameCoalescingEnabled : undefined;
             inputs["comment"] = state ? state.comment : undefined;
@@ -180,7 +181,7 @@ export class GtmDomain extends pulumi.CustomResource {
             inputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
         } else {
             const args = argsOrState as GtmDomainArgs | undefined;
-            if ((!args || args.type === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.type === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
             inputs["cnameCoalescingEnabled"] = args ? args.cnameCoalescingEnabled : undefined;
@@ -218,15 +219,11 @@ export class GtmDomain extends pulumi.CustomResource {
             inputs["servermonitorLoadCount"] = undefined /*out*/;
             inputs["servermonitorPool"] = undefined /*out*/;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         const aliasOpts = { aliases: [{ type: "akamai:trafficmanagement/gtmDomain:GtmDomain" }] };
-        opts = opts ? pulumi.mergeOptions(opts, aliasOpts) : aliasOpts;
+        opts = pulumi.mergeOptions(opts, aliasOpts);
         super(GtmDomain.__pulumiType, name, inputs, opts);
     }
 }

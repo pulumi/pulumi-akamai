@@ -135,6 +135,85 @@ func (i *PropertyActivation) ToPropertyActivationOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationOutput)
 }
 
+func (i *PropertyActivation) ToPropertyActivationPtrOutput() PropertyActivationPtrOutput {
+	return i.ToPropertyActivationPtrOutputWithContext(context.Background())
+}
+
+func (i *PropertyActivation) ToPropertyActivationPtrOutputWithContext(ctx context.Context) PropertyActivationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationPtrOutput)
+}
+
+type PropertyActivationPtrInput interface {
+	pulumi.Input
+
+	ToPropertyActivationPtrOutput() PropertyActivationPtrOutput
+	ToPropertyActivationPtrOutputWithContext(ctx context.Context) PropertyActivationPtrOutput
+}
+
+type propertyActivationPtrType PropertyActivationArgs
+
+func (*propertyActivationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PropertyActivation)(nil))
+}
+
+func (i *propertyActivationPtrType) ToPropertyActivationPtrOutput() PropertyActivationPtrOutput {
+	return i.ToPropertyActivationPtrOutputWithContext(context.Background())
+}
+
+func (i *propertyActivationPtrType) ToPropertyActivationPtrOutputWithContext(ctx context.Context) PropertyActivationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationPtrOutput)
+}
+
+// PropertyActivationArrayInput is an input type that accepts PropertyActivationArray and PropertyActivationArrayOutput values.
+// You can construct a concrete instance of `PropertyActivationArrayInput` via:
+//
+//          PropertyActivationArray{ PropertyActivationArgs{...} }
+type PropertyActivationArrayInput interface {
+	pulumi.Input
+
+	ToPropertyActivationArrayOutput() PropertyActivationArrayOutput
+	ToPropertyActivationArrayOutputWithContext(context.Context) PropertyActivationArrayOutput
+}
+
+type PropertyActivationArray []PropertyActivationInput
+
+func (PropertyActivationArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*PropertyActivation)(nil))
+}
+
+func (i PropertyActivationArray) ToPropertyActivationArrayOutput() PropertyActivationArrayOutput {
+	return i.ToPropertyActivationArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationArray) ToPropertyActivationArrayOutputWithContext(ctx context.Context) PropertyActivationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationArrayOutput)
+}
+
+// PropertyActivationMapInput is an input type that accepts PropertyActivationMap and PropertyActivationMapOutput values.
+// You can construct a concrete instance of `PropertyActivationMapInput` via:
+//
+//          PropertyActivationMap{ "key": PropertyActivationArgs{...} }
+type PropertyActivationMapInput interface {
+	pulumi.Input
+
+	ToPropertyActivationMapOutput() PropertyActivationMapOutput
+	ToPropertyActivationMapOutputWithContext(context.Context) PropertyActivationMapOutput
+}
+
+type PropertyActivationMap map[string]PropertyActivationInput
+
+func (PropertyActivationMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*PropertyActivation)(nil))
+}
+
+func (i PropertyActivationMap) ToPropertyActivationMapOutput() PropertyActivationMapOutput {
+	return i.ToPropertyActivationMapOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationMap) ToPropertyActivationMapOutputWithContext(ctx context.Context) PropertyActivationMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationMapOutput)
+}
+
 type PropertyActivationOutput struct {
 	*pulumi.OutputState
 }
@@ -151,6 +230,75 @@ func (o PropertyActivationOutput) ToPropertyActivationOutputWithContext(ctx cont
 	return o
 }
 
+func (o PropertyActivationOutput) ToPropertyActivationPtrOutput() PropertyActivationPtrOutput {
+	return o.ToPropertyActivationPtrOutputWithContext(context.Background())
+}
+
+func (o PropertyActivationOutput) ToPropertyActivationPtrOutputWithContext(ctx context.Context) PropertyActivationPtrOutput {
+	return o.ApplyT(func(v PropertyActivation) *PropertyActivation {
+		return &v
+	}).(PropertyActivationPtrOutput)
+}
+
+type PropertyActivationPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (PropertyActivationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PropertyActivation)(nil))
+}
+
+func (o PropertyActivationPtrOutput) ToPropertyActivationPtrOutput() PropertyActivationPtrOutput {
+	return o
+}
+
+func (o PropertyActivationPtrOutput) ToPropertyActivationPtrOutputWithContext(ctx context.Context) PropertyActivationPtrOutput {
+	return o
+}
+
+type PropertyActivationArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyActivation)(nil))
+}
+
+func (o PropertyActivationArrayOutput) ToPropertyActivationArrayOutput() PropertyActivationArrayOutput {
+	return o
+}
+
+func (o PropertyActivationArrayOutput) ToPropertyActivationArrayOutputWithContext(ctx context.Context) PropertyActivationArrayOutput {
+	return o
+}
+
+func (o PropertyActivationArrayOutput) Index(i pulumi.IntInput) PropertyActivationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyActivation {
+		return vs[0].([]PropertyActivation)[vs[1].(int)]
+	}).(PropertyActivationOutput)
+}
+
+type PropertyActivationMapOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]PropertyActivation)(nil))
+}
+
+func (o PropertyActivationMapOutput) ToPropertyActivationMapOutput() PropertyActivationMapOutput {
+	return o
+}
+
+func (o PropertyActivationMapOutput) ToPropertyActivationMapOutputWithContext(ctx context.Context) PropertyActivationMapOutput {
+	return o
+}
+
+func (o PropertyActivationMapOutput) MapIndex(k pulumi.StringInput) PropertyActivationOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) PropertyActivation {
+		return vs[0].(map[string]PropertyActivation)[vs[1].(string)]
+	}).(PropertyActivationOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(PropertyActivationOutput{})
+	pulumi.RegisterOutputType(PropertyActivationPtrOutput{})
+	pulumi.RegisterOutputType(PropertyActivationArrayOutput{})
+	pulumi.RegisterOutputType(PropertyActivationMapOutput{})
 }

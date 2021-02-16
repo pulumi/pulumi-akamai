@@ -65,7 +65,8 @@ export class DnsZone extends pulumi.CustomResource {
     constructor(name: string, argsOrState?: DnsZoneArgs | DnsZoneState, opts?: pulumi.CustomResourceOptions) {
         pulumi.log.warn("DnsZone is deprecated: akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone")
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as DnsZoneState | undefined;
             inputs["activationState"] = state ? state.activationState : undefined;
             inputs["aliasCount"] = state ? state.aliasCount : undefined;
@@ -83,16 +84,16 @@ export class DnsZone extends pulumi.CustomResource {
             inputs["zone"] = state ? state.zone : undefined;
         } else {
             const args = argsOrState as DnsZoneArgs | undefined;
-            if ((!args || args.contract === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.contract === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'contract'");
             }
-            if ((!args || args.group === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.group === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'group'");
             }
-            if ((!args || args.type === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.type === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            if ((!args || args.zone === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.zone === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'zone'");
             }
             inputs["comment"] = args ? args.comment : undefined;
@@ -110,12 +111,8 @@ export class DnsZone extends pulumi.CustomResource {
             inputs["aliasCount"] = undefined /*out*/;
             inputs["versionId"] = undefined /*out*/;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(DnsZone.__pulumiType, name, inputs, opts);
     }

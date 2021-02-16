@@ -133,6 +133,85 @@ func (i *CpCode) ToCpCodeOutputWithContext(ctx context.Context) CpCodeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CpCodeOutput)
 }
 
+func (i *CpCode) ToCpCodePtrOutput() CpCodePtrOutput {
+	return i.ToCpCodePtrOutputWithContext(context.Background())
+}
+
+func (i *CpCode) ToCpCodePtrOutputWithContext(ctx context.Context) CpCodePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpCodePtrOutput)
+}
+
+type CpCodePtrInput interface {
+	pulumi.Input
+
+	ToCpCodePtrOutput() CpCodePtrOutput
+	ToCpCodePtrOutputWithContext(ctx context.Context) CpCodePtrOutput
+}
+
+type cpCodePtrType CpCodeArgs
+
+func (*cpCodePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpCode)(nil))
+}
+
+func (i *cpCodePtrType) ToCpCodePtrOutput() CpCodePtrOutput {
+	return i.ToCpCodePtrOutputWithContext(context.Background())
+}
+
+func (i *cpCodePtrType) ToCpCodePtrOutputWithContext(ctx context.Context) CpCodePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpCodePtrOutput)
+}
+
+// CpCodeArrayInput is an input type that accepts CpCodeArray and CpCodeArrayOutput values.
+// You can construct a concrete instance of `CpCodeArrayInput` via:
+//
+//          CpCodeArray{ CpCodeArgs{...} }
+type CpCodeArrayInput interface {
+	pulumi.Input
+
+	ToCpCodeArrayOutput() CpCodeArrayOutput
+	ToCpCodeArrayOutputWithContext(context.Context) CpCodeArrayOutput
+}
+
+type CpCodeArray []CpCodeInput
+
+func (CpCodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*CpCode)(nil))
+}
+
+func (i CpCodeArray) ToCpCodeArrayOutput() CpCodeArrayOutput {
+	return i.ToCpCodeArrayOutputWithContext(context.Background())
+}
+
+func (i CpCodeArray) ToCpCodeArrayOutputWithContext(ctx context.Context) CpCodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpCodeArrayOutput)
+}
+
+// CpCodeMapInput is an input type that accepts CpCodeMap and CpCodeMapOutput values.
+// You can construct a concrete instance of `CpCodeMapInput` via:
+//
+//          CpCodeMap{ "key": CpCodeArgs{...} }
+type CpCodeMapInput interface {
+	pulumi.Input
+
+	ToCpCodeMapOutput() CpCodeMapOutput
+	ToCpCodeMapOutputWithContext(context.Context) CpCodeMapOutput
+}
+
+type CpCodeMap map[string]CpCodeInput
+
+func (CpCodeMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*CpCode)(nil))
+}
+
+func (i CpCodeMap) ToCpCodeMapOutput() CpCodeMapOutput {
+	return i.ToCpCodeMapOutputWithContext(context.Background())
+}
+
+func (i CpCodeMap) ToCpCodeMapOutputWithContext(ctx context.Context) CpCodeMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpCodeMapOutput)
+}
+
 type CpCodeOutput struct {
 	*pulumi.OutputState
 }
@@ -149,6 +228,75 @@ func (o CpCodeOutput) ToCpCodeOutputWithContext(ctx context.Context) CpCodeOutpu
 	return o
 }
 
+func (o CpCodeOutput) ToCpCodePtrOutput() CpCodePtrOutput {
+	return o.ToCpCodePtrOutputWithContext(context.Background())
+}
+
+func (o CpCodeOutput) ToCpCodePtrOutputWithContext(ctx context.Context) CpCodePtrOutput {
+	return o.ApplyT(func(v CpCode) *CpCode {
+		return &v
+	}).(CpCodePtrOutput)
+}
+
+type CpCodePtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (CpCodePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpCode)(nil))
+}
+
+func (o CpCodePtrOutput) ToCpCodePtrOutput() CpCodePtrOutput {
+	return o
+}
+
+func (o CpCodePtrOutput) ToCpCodePtrOutputWithContext(ctx context.Context) CpCodePtrOutput {
+	return o
+}
+
+type CpCodeArrayOutput struct{ *pulumi.OutputState }
+
+func (CpCodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CpCode)(nil))
+}
+
+func (o CpCodeArrayOutput) ToCpCodeArrayOutput() CpCodeArrayOutput {
+	return o
+}
+
+func (o CpCodeArrayOutput) ToCpCodeArrayOutputWithContext(ctx context.Context) CpCodeArrayOutput {
+	return o
+}
+
+func (o CpCodeArrayOutput) Index(i pulumi.IntInput) CpCodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CpCode {
+		return vs[0].([]CpCode)[vs[1].(int)]
+	}).(CpCodeOutput)
+}
+
+type CpCodeMapOutput struct{ *pulumi.OutputState }
+
+func (CpCodeMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CpCode)(nil))
+}
+
+func (o CpCodeMapOutput) ToCpCodeMapOutput() CpCodeMapOutput {
+	return o
+}
+
+func (o CpCodeMapOutput) ToCpCodeMapOutputWithContext(ctx context.Context) CpCodeMapOutput {
+	return o
+}
+
+func (o CpCodeMapOutput) MapIndex(k pulumi.StringInput) CpCodeOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CpCode {
+		return vs[0].(map[string]CpCode)[vs[1].(string)]
+	}).(CpCodeOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(CpCodeOutput{})
+	pulumi.RegisterOutputType(CpCodePtrOutput{})
+	pulumi.RegisterOutputType(CpCodeArrayOutput{})
+	pulumi.RegisterOutputType(CpCodeMapOutput{})
 }
