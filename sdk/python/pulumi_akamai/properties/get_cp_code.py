@@ -26,7 +26,7 @@ class GetCpCodeResult:
             raise TypeError("Expected argument 'contract' to be a str")
         if contract is not None:
             warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("contract is deprecated: The setting \"contract\" has been deprecated.")
+            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
 
         pulumi.set(__self__, "contract", contract)
         if contract_id and not isinstance(contract_id, str):
@@ -36,7 +36,7 @@ class GetCpCodeResult:
             raise TypeError("Expected argument 'group' to be a str")
         if group is not None:
             warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("group is deprecated: The setting \"group\" has been deprecated.")
+            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
 
         pulumi.set(__self__, "group", group)
         if group_id and not isinstance(group_id, str):
@@ -115,7 +115,7 @@ def get_cp_code(contract: Optional[str] = None,
     """
     Use this data source to access information about an existing resource.
     """
-    pulumi.log.warn("get_cp_code is deprecated: akamai.properties.getCpCode has been deprecated in favor of akamai.getCpCode")
+    pulumi.log.warn("""get_cp_code is deprecated: akamai.properties.getCpCode has been deprecated in favor of akamai.getCpCode""")
     __args__ = dict()
     __args__['contract'] = contract
     __args__['contractId'] = contract_id

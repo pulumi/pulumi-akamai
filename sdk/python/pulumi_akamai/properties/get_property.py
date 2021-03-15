@@ -77,7 +77,7 @@ def get_property(name: Optional[str] = None,
     """
     Use this data source to access information about an existing resource.
     """
-    pulumi.log.warn("get_property is deprecated: akamai.properties.getProperty has been deprecated in favor of akamai.getProperty")
+    pulumi.log.warn("""get_property is deprecated: akamai.properties.getProperty has been deprecated in favor of akamai.getProperty""")
     __args__ = dict()
     __args__['name'] = name
     __args__['version'] = version

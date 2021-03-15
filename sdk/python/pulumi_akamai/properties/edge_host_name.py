@@ -36,7 +36,7 @@ class EdgeHostName(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
-        pulumi.log.warn("EdgeHostName is deprecated: akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName")
+        pulumi.log.warn("""EdgeHostName is deprecated: akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName""")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__
@@ -57,7 +57,7 @@ class EdgeHostName(pulumi.CustomResource):
             __props__['certificate'] = certificate
             if contract is not None and not opts.urn:
                 warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("contract is deprecated: use \"contract_id\" attribute instead")
+                pulumi.log.warn("""contract is deprecated: use \"contract_id\" attribute instead""")
             __props__['contract'] = contract
             __props__['contract_id'] = contract_id
             if edge_hostname is None and not opts.urn:
@@ -65,7 +65,7 @@ class EdgeHostName(pulumi.CustomResource):
             __props__['edge_hostname'] = edge_hostname
             if group is not None and not opts.urn:
                 warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("group is deprecated: use \"group_id\" attribute instead")
+                pulumi.log.warn("""group is deprecated: use \"group_id\" attribute instead""")
             __props__['group'] = group
             __props__['group_id'] = group_id
             if ip_behavior is None and not opts.urn:
@@ -73,7 +73,7 @@ class EdgeHostName(pulumi.CustomResource):
             __props__['ip_behavior'] = ip_behavior
             if product is not None and not opts.urn:
                 warnings.warn("""use \"product_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("product is deprecated: use \"product_id\" attribute instead")
+                pulumi.log.warn("""product is deprecated: use \"product_id\" attribute instead""")
             __props__['product'] = product
             __props__['product_id'] = product_id
         super(EdgeHostName, __self__).__init__(

@@ -146,42 +146,42 @@ class Property(pulumi.CustomResource):
 
             if contacts is not None and not opts.urn:
                 warnings.warn("""\"contact\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-                pulumi.log.warn("contacts is deprecated: \"contact\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")
+                pulumi.log.warn("""contacts is deprecated: \"contact\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
             __props__['contacts'] = contacts
             if contract is not None and not opts.urn:
                 warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("contract is deprecated: use \"contract_id\" attribute instead")
+                pulumi.log.warn("""contract is deprecated: use \"contract_id\" attribute instead""")
             __props__['contract'] = contract
             __props__['contract_id'] = contract_id
             if cp_code is not None and not opts.urn:
                 warnings.warn("""\"cp_code\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-                pulumi.log.warn("cp_code is deprecated: \"cp_code\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")
+                pulumi.log.warn("""cp_code is deprecated: \"cp_code\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
             __props__['cp_code'] = cp_code
             if group is not None and not opts.urn:
                 warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("group is deprecated: use \"group_id\" attribute instead")
+                pulumi.log.warn("""group is deprecated: use \"group_id\" attribute instead""")
             __props__['group'] = group
             __props__['group_id'] = group_id
             __props__['hostnames'] = hostnames
             if is_secure is not None and not opts.urn:
                 warnings.warn("""\"is_secure\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-                pulumi.log.warn("is_secure is deprecated: \"is_secure\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")
+                pulumi.log.warn("""is_secure is deprecated: \"is_secure\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
             __props__['is_secure'] = is_secure
             __props__['name'] = name
             if origins is not None and not opts.urn:
                 warnings.warn("""\"origin\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-                pulumi.log.warn("origins is deprecated: \"origin\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")
+                pulumi.log.warn("""origins is deprecated: \"origin\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
             __props__['origins'] = origins
             if product is not None and not opts.urn:
                 warnings.warn("""use \"product_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("product is deprecated: use \"product_id\" attribute instead")
+                pulumi.log.warn("""product is deprecated: use \"product_id\" attribute instead""")
             __props__['product'] = product
             __props__['product_id'] = product_id
             __props__['rule_format'] = rule_format
             __props__['rules'] = rules
             if variables is not None and not opts.urn:
                 warnings.warn("""\"variables\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-                pulumi.log.warn("variables is deprecated: \"variables\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")
+                pulumi.log.warn("""variables is deprecated: \"variables\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
             __props__['variables'] = variables
             __props__['latest_version'] = None
             __props__['production_version'] = None

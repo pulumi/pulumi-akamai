@@ -42,7 +42,7 @@ class GtmDatacenter(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
-        pulumi.log.warn("GtmDatacenter is deprecated: akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter")
+        pulumi.log.warn("""GtmDatacenter is deprecated: akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter""")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__

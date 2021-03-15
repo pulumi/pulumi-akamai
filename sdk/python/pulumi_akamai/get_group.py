@@ -24,7 +24,7 @@ class GetGroupResult:
             raise TypeError("Expected argument 'contract' to be a str")
         if contract is not None:
             warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("contract is deprecated: The setting \"contract\" has been deprecated.")
+            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
 
         pulumi.set(__self__, "contract", contract)
         if contract_id and not isinstance(contract_id, str):
@@ -40,7 +40,7 @@ class GetGroupResult:
             raise TypeError("Expected argument 'name' to be a str")
         if name is not None:
             warnings.warn("""The setting \"name\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("name is deprecated: The setting \"name\" has been deprecated.")
+            pulumi.log.warn("""name is deprecated: The setting \"name\" has been deprecated.""")
 
         pulumi.set(__self__, "name", name)
 

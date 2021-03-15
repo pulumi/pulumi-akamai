@@ -48,12 +48,12 @@ class CpCode(pulumi.CustomResource):
 
             if contract is not None and not opts.urn:
                 warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("contract is deprecated: use \"contract_id\" attribute instead")
+                pulumi.log.warn("""contract is deprecated: use \"contract_id\" attribute instead""")
             __props__['contract'] = contract
             __props__['contract_id'] = contract_id
             if group is not None and not opts.urn:
                 warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("group is deprecated: use \"group_id\" attribute instead")
+                pulumi.log.warn("""group is deprecated: use \"group_id\" attribute instead""")
             __props__['group'] = group
             __props__['group_id'] = group_id
             __props__['name'] = name

@@ -52,7 +52,7 @@ class EdgeHostName(pulumi.CustomResource):
             __props__['certificate'] = certificate
             if contract is not None and not opts.urn:
                 warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("contract is deprecated: use \"contract_id\" attribute instead")
+                pulumi.log.warn("""contract is deprecated: use \"contract_id\" attribute instead""")
             __props__['contract'] = contract
             __props__['contract_id'] = contract_id
             if edge_hostname is None and not opts.urn:
@@ -60,7 +60,7 @@ class EdgeHostName(pulumi.CustomResource):
             __props__['edge_hostname'] = edge_hostname
             if group is not None and not opts.urn:
                 warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("group is deprecated: use \"group_id\" attribute instead")
+                pulumi.log.warn("""group is deprecated: use \"group_id\" attribute instead""")
             __props__['group'] = group
             __props__['group_id'] = group_id
             if ip_behavior is None and not opts.urn:
@@ -68,7 +68,7 @@ class EdgeHostName(pulumi.CustomResource):
             __props__['ip_behavior'] = ip_behavior
             if product is not None and not opts.urn:
                 warnings.warn("""use \"product_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("product is deprecated: use \"product_id\" attribute instead")
+                pulumi.log.warn("""product is deprecated: use \"product_id\" attribute instead""")
             __props__['product'] = product
             __props__['product_id'] = product_id
         alias_opts = pulumi.ResourceOptions(aliases=[pulumi.Alias(type_="akamai:properties/edgeHostName:EdgeHostName")])

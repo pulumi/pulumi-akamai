@@ -33,7 +33,7 @@ class PropertyActivation(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
-        pulumi.log.warn("PropertyActivation is deprecated: akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation")
+        pulumi.log.warn("""PropertyActivation is deprecated: akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation""")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__
@@ -58,7 +58,7 @@ class PropertyActivation(pulumi.CustomResource):
             __props__['network'] = network
             if property is not None and not opts.urn:
                 warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("property is deprecated: The setting \"property\" has been deprecated.")
+                pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
             __props__['property'] = property
             __props__['property_id'] = property_id
             if version is None and not opts.urn:
