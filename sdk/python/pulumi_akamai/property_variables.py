@@ -45,7 +45,7 @@ class PropertyVariables(pulumi.CustomResource):
 
             if variables is not None and not opts.urn:
                 warnings.warn("""resource \"akamai_property_variables\" is no longer supported - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-                pulumi.log.warn("variables is deprecated: resource \"akamai_property_variables\" is no longer supported - See Akamai Terraform Upgrade Guide")
+                pulumi.log.warn("""variables is deprecated: resource \"akamai_property_variables\" is no longer supported - See Akamai Terraform Upgrade Guide""")
             __props__['variables'] = variables
             __props__['json'] = None
         alias_opts = pulumi.ResourceOptions(aliases=[pulumi.Alias(type_="akamai:properties/propertyVariables:PropertyVariables")])

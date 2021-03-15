@@ -106,7 +106,7 @@ def get_property_rules(contract_id: Optional[str] = None,
     """
     Use this data source to access information about an existing resource.
     """
-    pulumi.log.warn("get_property_rules is deprecated: akamai.properties.getPropertyRules has been deprecated in favor of akamai.getPropertyRules")
+    pulumi.log.warn("""get_property_rules is deprecated: akamai.properties.getPropertyRules has been deprecated in favor of akamai.getPropertyRules""")
     __args__ = dict()
     __args__['contractId'] = contract_id
     __args__['groupId'] = group_id

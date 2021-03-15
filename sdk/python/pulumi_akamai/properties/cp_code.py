@@ -33,7 +33,7 @@ class CpCode(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
-        pulumi.log.warn("CpCode is deprecated: akamai.properties.CpCode has been deprecated in favor of akamai.CpCode")
+        pulumi.log.warn("""CpCode is deprecated: akamai.properties.CpCode has been deprecated in favor of akamai.CpCode""")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__
@@ -53,12 +53,12 @@ class CpCode(pulumi.CustomResource):
 
             if contract is not None and not opts.urn:
                 warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("contract is deprecated: use \"contract_id\" attribute instead")
+                pulumi.log.warn("""contract is deprecated: use \"contract_id\" attribute instead""")
             __props__['contract'] = contract
             __props__['contract_id'] = contract_id
             if group is not None and not opts.urn:
                 warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("group is deprecated: use \"group_id\" attribute instead")
+                pulumi.log.warn("""group is deprecated: use \"group_id\" attribute instead""")
             __props__['group'] = group
             __props__['group_id'] = group_id
             __props__['name'] = name

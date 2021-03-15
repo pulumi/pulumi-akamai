@@ -34,7 +34,7 @@ class GtmASmap(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
-        pulumi.log.warn("GtmASmap is deprecated: akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap")
+        pulumi.log.warn("""GtmASmap is deprecated: akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap""")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__

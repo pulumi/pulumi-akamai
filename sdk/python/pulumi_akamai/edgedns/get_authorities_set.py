@@ -67,7 +67,7 @@ def get_authorities_set(contract: Optional[str] = None,
     """
     Use this data source to access information about an existing resource.
     """
-    pulumi.log.warn("get_authorities_set is deprecated: akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet")
+    pulumi.log.warn("""get_authorities_set is deprecated: akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet""")
     __args__ = dict()
     __args__['contract'] = contract
     if opts is None:

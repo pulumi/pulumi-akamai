@@ -61,43 +61,43 @@ class Provider(pulumi.ProviderResource):
 
             if appsec_section is not None and not opts.urn:
                 warnings.warn("""The setting \"appsec_section\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("appsec_section is deprecated: The setting \"appsec_section\" has been deprecated.")
+                pulumi.log.warn("""appsec_section is deprecated: The setting \"appsec_section\" has been deprecated.""")
             __props__['appsec_section'] = appsec_section
             if appsecs is not None and not opts.urn:
                 warnings.warn("""The setting \"appsec\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("appsecs is deprecated: The setting \"appsec\" has been deprecated.")
+                pulumi.log.warn("""appsecs is deprecated: The setting \"appsec\" has been deprecated.""")
             __props__['appsecs'] = pulumi.Output.from_input(appsecs).apply(pulumi.runtime.to_json) if appsecs is not None else None
             __props__['cache_enabled'] = pulumi.Output.from_input(cache_enabled).apply(pulumi.runtime.to_json) if cache_enabled is not None else None
             __props__['config'] = pulumi.Output.from_input(config).apply(pulumi.runtime.to_json) if config is not None else None
             __props__['config_section'] = config_section
             if dns is not None and not opts.urn:
                 warnings.warn("""The setting \"dns\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("dns is deprecated: The setting \"dns\" has been deprecated.")
+                pulumi.log.warn("""dns is deprecated: The setting \"dns\" has been deprecated.""")
             __props__['dns'] = pulumi.Output.from_input(dns).apply(pulumi.runtime.to_json) if dns is not None else None
             if dns_section is not None and not opts.urn:
                 warnings.warn("""The setting \"dns_section\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("dns_section is deprecated: The setting \"dns_section\" has been deprecated.")
+                pulumi.log.warn("""dns_section is deprecated: The setting \"dns_section\" has been deprecated.""")
             __props__['dns_section'] = dns_section
             __props__['edgerc'] = edgerc
             if gtm is not None and not opts.urn:
                 warnings.warn("""The setting \"gtm\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("gtm is deprecated: The setting \"gtm\" has been deprecated.")
+                pulumi.log.warn("""gtm is deprecated: The setting \"gtm\" has been deprecated.""")
             __props__['gtm'] = pulumi.Output.from_input(gtm).apply(pulumi.runtime.to_json) if gtm is not None else None
             if gtm_section is not None and not opts.urn:
                 warnings.warn("""The setting \"gtm_section\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("gtm_section is deprecated: The setting \"gtm_section\" has been deprecated.")
+                pulumi.log.warn("""gtm_section is deprecated: The setting \"gtm_section\" has been deprecated.""")
             __props__['gtm_section'] = gtm_section
             if papi_section is not None and not opts.urn:
                 warnings.warn("""The setting \"papi_section\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("papi_section is deprecated: The setting \"papi_section\" has been deprecated.")
+                pulumi.log.warn("""papi_section is deprecated: The setting \"papi_section\" has been deprecated.""")
             __props__['papi_section'] = papi_section
             if property is not None and not opts.urn:
                 warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("property is deprecated: The setting \"property\" has been deprecated.")
+                pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
             __props__['property'] = pulumi.Output.from_input(property).apply(pulumi.runtime.to_json) if property is not None else None
             if property_section is not None and not opts.urn:
                 warnings.warn("""The setting \"property_section\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("property_section is deprecated: The setting \"property_section\" has been deprecated.")
+                pulumi.log.warn("""property_section is deprecated: The setting \"property_section\" has been deprecated.""")
             __props__['property_section'] = property_section
         super(Provider, __self__).__init__(
             'akamai',

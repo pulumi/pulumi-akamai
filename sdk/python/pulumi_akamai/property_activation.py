@@ -110,7 +110,7 @@ class PropertyActivation(pulumi.CustomResource):
             __props__['network'] = network
             if property is not None and not opts.urn:
                 warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("property is deprecated: The setting \"property\" has been deprecated.")
+                pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
             __props__['property'] = property
             __props__['property_id'] = property_id
             if version is None and not opts.urn:

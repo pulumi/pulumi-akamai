@@ -40,7 +40,7 @@ class DnsZone(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
-        pulumi.log.warn("DnsZone is deprecated: akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone")
+        pulumi.log.warn("""DnsZone is deprecated: akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone""")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__

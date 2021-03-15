@@ -30,7 +30,7 @@ class PropertyVariables(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
-        pulumi.log.warn("PropertyVariables is deprecated: akamai.properties.PropertyVariables has been deprecated in favor of akamai.PropertyVariables")
+        pulumi.log.warn("""PropertyVariables is deprecated: akamai.properties.PropertyVariables has been deprecated in favor of akamai.PropertyVariables""")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__
@@ -50,7 +50,7 @@ class PropertyVariables(pulumi.CustomResource):
 
             if variables is not None and not opts.urn:
                 warnings.warn("""resource \"akamai_property_variables\" is no longer supported - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-                pulumi.log.warn("variables is deprecated: resource \"akamai_property_variables\" is no longer supported - See Akamai Terraform Upgrade Guide")
+                pulumi.log.warn("""variables is deprecated: resource \"akamai_property_variables\" is no longer supported - See Akamai Terraform Upgrade Guide""")
             __props__['variables'] = variables
             __props__['json'] = None
         super(PropertyVariables, __self__).__init__(

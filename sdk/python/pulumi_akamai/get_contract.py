@@ -24,7 +24,7 @@ class GetContractResult:
             raise TypeError("Expected argument 'group' to be a str")
         if group is not None:
             warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("group is deprecated: The setting \"group\" has been deprecated.")
+            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
 
         pulumi.set(__self__, "group", group)
         if group_id and not isinstance(group_id, str):
