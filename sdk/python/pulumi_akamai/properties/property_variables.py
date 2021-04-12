@@ -5,12 +5,35 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities, _tables
 from . import outputs
 from ._inputs import *
 
-__all__ = ['PropertyVariables']
+__all__ = ['PropertyVariablesArgs', 'PropertyVariables']
+
+@pulumi.input_type
+class PropertyVariablesArgs:
+    def __init__(__self__, *,
+                 variables: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyVariablesVariableArgs']]]] = None):
+        """
+        The set of arguments for constructing a PropertyVariables resource.
+        """
+        if variables is not None:
+            warnings.warn("""resource \"akamai_property_variables\" is no longer supported - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
+            pulumi.log.warn("""variables is deprecated: resource \"akamai_property_variables\" is no longer supported - See Akamai Terraform Upgrade Guide""")
+        if variables is not None:
+            pulumi.set(__self__, "variables", variables)
+
+    @property
+    @pulumi.getter
+    def variables(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyVariablesVariableArgs']]]]:
+        return pulumi.get(self, "variables")
+
+    @variables.setter
+    def variables(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyVariablesVariableArgs']]]]):
+        pulumi.set(self, "variables", value)
+
 
 warnings.warn("""akamai.properties.PropertyVariables has been deprecated in favor of akamai.PropertyVariables""", DeprecationWarning)
 
@@ -18,6 +41,7 @@ warnings.warn("""akamai.properties.PropertyVariables has been deprecated in favo
 class PropertyVariables(pulumi.CustomResource):
     warnings.warn("""akamai.properties.PropertyVariables has been deprecated in favor of akamai.PropertyVariables""", DeprecationWarning)
 
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -30,6 +54,33 @@ class PropertyVariables(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: Optional[PropertyVariablesArgs] = None,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        Create a PropertyVariables resource with the given unique name, props, and options.
+        :param str resource_name: The name of the resource.
+        :param PropertyVariablesArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(PropertyVariablesArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 variables: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyVariablesVariableArgs']]]]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         pulumi.log.warn("""PropertyVariables is deprecated: akamai.properties.PropertyVariables has been deprecated in favor of akamai.PropertyVariables""")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)

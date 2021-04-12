@@ -5,13 +5,90 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 
-__all__ = ['AppSecActivations']
+__all__ = ['AppSecActivationsArgs', 'AppSecActivations']
+
+@pulumi.input_type
+class AppSecActivationsArgs:
+    def __init__(__self__, *,
+                 config_id: pulumi.Input[int],
+                 notification_emails: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 version: pulumi.Input[int],
+                 activate: Optional[pulumi.Input[bool]] = None,
+                 network: Optional[pulumi.Input[str]] = None,
+                 notes: Optional[pulumi.Input[str]] = None):
+        """
+        The set of arguments for constructing a AppSecActivations resource.
+        """
+        pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "notification_emails", notification_emails)
+        pulumi.set(__self__, "version", version)
+        if activate is not None:
+            pulumi.set(__self__, "activate", activate)
+        if network is not None:
+            pulumi.set(__self__, "network", network)
+        if notes is not None:
+            pulumi.set(__self__, "notes", notes)
+
+    @property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "config_id")
+
+    @config_id.setter
+    def config_id(self, value: pulumi.Input[int]):
+        pulumi.set(self, "config_id", value)
+
+    @property
+    @pulumi.getter(name="notificationEmails")
+    def notification_emails(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        return pulumi.get(self, "notification_emails")
+
+    @notification_emails.setter
+    def notification_emails(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "notification_emails", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: pulumi.Input[int]):
+        pulumi.set(self, "version", value)
+
+    @property
+    @pulumi.getter
+    def activate(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "activate")
+
+    @activate.setter
+    def activate(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "activate", value)
+
+    @property
+    @pulumi.getter
+    def network(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "network")
+
+    @network.setter
+    def network(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "network", value)
+
+    @property
+    @pulumi.getter
+    def notes(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "notes")
+
+    @notes.setter
+    def notes(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "notes", value)
 
 
 class AppSecActivations(pulumi.CustomResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -59,6 +136,68 @@ class AppSecActivations(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: AppSecActivationsArgs,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        The `AppSecActivations` resource allows you to activate or deactivate a given security configuration version.
+
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
+        activation = akamai.AppSecActivations("activation",
+            config_id=configuration.config_id,
+            version=configuration.latest_version,
+            network="STAGING",
+            notes="TEST Notes",
+            notification_emails=["user@example.com"])
+        ```
+
+        * `config_id` - (Required) The ID of the security configuration to use.
+
+        * `version` - (Required) The version number of the security configuration to use.
+
+        * `notification_emails` - (Required) A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+
+        * `network` - The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+
+        * `notes` - An optional text note describing this operation.
+
+        * `activate` - A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+
+        :param str resource_name: The name of the resource.
+        :param AppSecActivationsArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(AppSecActivationsArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 activate: Optional[pulumi.Input[bool]] = None,
+                 config_id: Optional[pulumi.Input[int]] = None,
+                 network: Optional[pulumi.Input[str]] = None,
+                 notes: Optional[pulumi.Input[str]] = None,
+                 notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 version: Optional[pulumi.Input[int]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__

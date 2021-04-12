@@ -5,13 +5,90 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 
-__all__ = ['AppSecMatchTargetSequence']
+__all__ = ['AppSecMatchTargetSequenceArgs', 'AppSecMatchTargetSequence']
+
+@pulumi.input_type
+class AppSecMatchTargetSequenceArgs:
+    def __init__(__self__, *,
+                 config_id: pulumi.Input[int],
+                 type: pulumi.Input[str],
+                 version: pulumi.Input[int],
+                 json: Optional[pulumi.Input[str]] = None,
+                 sequence_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
+        """
+        The set of arguments for constructing a AppSecMatchTargetSequence resource.
+        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
+        :param pulumi.Input[int] version: The version number of the security configuration to use.
+        :param pulumi.Input[str] json: The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
+        """
+        pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "version", version)
+        if json is not None:
+            pulumi.set(__self__, "json", json)
+        if sequence_map is not None:
+            pulumi.set(__self__, "sequence_map", sequence_map)
+
+    @property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> pulumi.Input[int]:
+        """
+        The ID of the security configuration to use.
+        """
+        return pulumi.get(self, "config_id")
+
+    @config_id.setter
+    def config_id(self, value: pulumi.Input[int]):
+        pulumi.set(self, "config_id", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> pulumi.Input[int]:
+        """
+        The version number of the security configuration to use.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: pulumi.Input[int]):
+        pulumi.set(self, "version", value)
+
+    @property
+    @pulumi.getter
+    def json(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
+        """
+        return pulumi.get(self, "json")
+
+    @json.setter
+    def json(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "json", value)
+
+    @property
+    @pulumi.getter(name="sequenceMap")
+    def sequence_map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        return pulumi.get(self, "sequence_map")
+
+    @sequence_map.setter
+    def sequence_map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "sequence_map", value)
 
 
 class AppSecMatchTargetSequence(pulumi.CustomResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -48,6 +125,54 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
         :param pulumi.Input[str] json: The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
         :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: AppSecMatchTargetSequenceArgs,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        The `AppSecMatchTargetSequence` resource allows you to specify the order in which match targets are applied within a given security configuration version.
+
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
+        match_target_sequence = akamai.AppSecMatchTargetSequence("matchTargetSequence",
+            config_id=configuration.config_id,
+            version=configuration.latest_version,
+            type="website",
+            json=(lambda path: open(path).read())(f"{path['module']}/match_targets.json"))
+        ```
+
+        :param str resource_name: The name of the resource.
+        :param AppSecMatchTargetSequenceArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(AppSecMatchTargetSequenceArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 config_id: Optional[pulumi.Input[int]] = None,
+                 json: Optional[pulumi.Input[str]] = None,
+                 sequence_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[int]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__

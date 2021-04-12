@@ -5,13 +5,65 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 
-__all__ = ['AppSecSelectedHostnames']
+__all__ = ['AppSecSelectedHostnamesArgs', 'AppSecSelectedHostnames']
+
+@pulumi.input_type
+class AppSecSelectedHostnamesArgs:
+    def __init__(__self__, *,
+                 config_id: pulumi.Input[int],
+                 hostnames: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 mode: pulumi.Input[str],
+                 version: pulumi.Input[int]):
+        """
+        The set of arguments for constructing a AppSecSelectedHostnames resource.
+        """
+        pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "hostnames", hostnames)
+        pulumi.set(__self__, "mode", mode)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "config_id")
+
+    @config_id.setter
+    def config_id(self, value: pulumi.Input[int]):
+        pulumi.set(self, "config_id", value)
+
+    @property
+    @pulumi.getter
+    def hostnames(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        return pulumi.get(self, "hostnames")
+
+    @hostnames.setter
+    def hostnames(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "hostnames", value)
+
+    @property
+    @pulumi.getter
+    def mode(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "mode")
+
+    @mode.setter
+    def mode(self, value: pulumi.Input[str]):
+        pulumi.set(self, "mode", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: pulumi.Input[int]):
+        pulumi.set(self, "version", value)
 
 
 class AppSecSelectedHostnames(pulumi.CustomResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -27,6 +79,36 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: AppSecSelectedHostnamesArgs,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        Create a AppSecSelectedHostnames resource with the given unique name, props, and options.
+        :param str resource_name: The name of the resource.
+        :param AppSecSelectedHostnamesArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(AppSecSelectedHostnamesArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 config_id: Optional[pulumi.Input[int]] = None,
+                 hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 mode: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[int]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__

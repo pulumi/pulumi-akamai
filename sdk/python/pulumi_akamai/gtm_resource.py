@@ -5,15 +5,226 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 from . import outputs
 from ._inputs import *
 
-__all__ = ['GtmResource']
+__all__ = ['GtmResourceArgs', 'GtmResource']
+
+@pulumi.input_type
+class GtmResourceArgs:
+    def __init__(__self__, *,
+                 aggregation_type: pulumi.Input[str],
+                 domain: pulumi.Input[str],
+                 type: pulumi.Input[str],
+                 constrained_property: Optional[pulumi.Input[str]] = None,
+                 decay_rate: Optional[pulumi.Input[float]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 host_header: Optional[pulumi.Input[str]] = None,
+                 leader_string: Optional[pulumi.Input[str]] = None,
+                 least_squares_decay: Optional[pulumi.Input[float]] = None,
+                 load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
+                 max_u_multiplicative_increment: Optional[pulumi.Input[float]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 resource_instances: Optional[pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]] = None,
+                 upper_bound: Optional[pulumi.Input[int]] = None,
+                 wait_on_complete: Optional[pulumi.Input[bool]] = None):
+        """
+        The set of arguments for constructing a GtmResource resource.
+        :param pulumi.Input[str] domain: Domain name
+        :param pulumi.Input[str] type: Resource type
+        :param pulumi.Input[str] name: Resource name
+               * `aggregation_type`
+        :param pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]] resource_instances: * `datacenter_id`
+               * `load_object`
+               * `load_object_port`
+        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
+        """
+        pulumi.set(__self__, "aggregation_type", aggregation_type)
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "type", type)
+        if constrained_property is not None:
+            pulumi.set(__self__, "constrained_property", constrained_property)
+        if decay_rate is not None:
+            pulumi.set(__self__, "decay_rate", decay_rate)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if host_header is not None:
+            pulumi.set(__self__, "host_header", host_header)
+        if leader_string is not None:
+            pulumi.set(__self__, "leader_string", leader_string)
+        if least_squares_decay is not None:
+            pulumi.set(__self__, "least_squares_decay", least_squares_decay)
+        if load_imbalance_percentage is not None:
+            pulumi.set(__self__, "load_imbalance_percentage", load_imbalance_percentage)
+        if max_u_multiplicative_increment is not None:
+            pulumi.set(__self__, "max_u_multiplicative_increment", max_u_multiplicative_increment)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if resource_instances is not None:
+            pulumi.set(__self__, "resource_instances", resource_instances)
+        if upper_bound is not None:
+            pulumi.set(__self__, "upper_bound", upper_bound)
+        if wait_on_complete is not None:
+            pulumi.set(__self__, "wait_on_complete", wait_on_complete)
+
+    @property
+    @pulumi.getter(name="aggregationType")
+    def aggregation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "aggregation_type")
+
+    @aggregation_type.setter
+    def aggregation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "aggregation_type", value)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> pulumi.Input[str]:
+        """
+        Domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: pulumi.Input[str]):
+        pulumi.set(self, "domain", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Resource type
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="constrainedProperty")
+    def constrained_property(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "constrained_property")
+
+    @constrained_property.setter
+    def constrained_property(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "constrained_property", value)
+
+    @property
+    @pulumi.getter(name="decayRate")
+    def decay_rate(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "decay_rate")
+
+    @decay_rate.setter
+    def decay_rate(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "decay_rate", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="hostHeader")
+    def host_header(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "host_header")
+
+    @host_header.setter
+    def host_header(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host_header", value)
+
+    @property
+    @pulumi.getter(name="leaderString")
+    def leader_string(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "leader_string")
+
+    @leader_string.setter
+    def leader_string(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "leader_string", value)
+
+    @property
+    @pulumi.getter(name="leastSquaresDecay")
+    def least_squares_decay(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "least_squares_decay")
+
+    @least_squares_decay.setter
+    def least_squares_decay(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "least_squares_decay", value)
+
+    @property
+    @pulumi.getter(name="loadImbalancePercentage")
+    def load_imbalance_percentage(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "load_imbalance_percentage")
+
+    @load_imbalance_percentage.setter
+    def load_imbalance_percentage(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "load_imbalance_percentage", value)
+
+    @property
+    @pulumi.getter(name="maxUMultiplicativeIncrement")
+    def max_u_multiplicative_increment(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "max_u_multiplicative_increment")
+
+    @max_u_multiplicative_increment.setter
+    def max_u_multiplicative_increment(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "max_u_multiplicative_increment", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Resource name
+        * `aggregation_type`
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="resourceInstances")
+    def resource_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]]:
+        """
+        * `datacenter_id`
+        * `load_object`
+        * `load_object_port`
+        """
+        return pulumi.get(self, "resource_instances")
+
+    @resource_instances.setter
+    def resource_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]]):
+        pulumi.set(self, "resource_instances", value)
+
+    @property
+    @pulumi.getter(name="upperBound")
+    def upper_bound(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "upper_bound")
+
+    @upper_bound.setter
+    def upper_bound(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "upper_bound", value)
+
+    @property
+    @pulumi.getter(name="waitOnComplete")
+    def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Wait for transaction to complete
+        """
+        return pulumi.get(self, "wait_on_complete")
+
+    @wait_on_complete.setter
+    def wait_on_complete(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "wait_on_complete", value)
 
 
 class GtmResource(pulumi.CustomResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -63,6 +274,62 @@ class GtmResource(pulumi.CustomResource):
         :param pulumi.Input[str] type: Resource type
         :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: GtmResourceArgs,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        `GtmResource` provides the resource for creating, configuring and importing a gtm resource to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_resource_name`
+
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        demo_resource = akamai.GtmResource("demoResource",
+            aggregation_type="latest",
+            domain="demo_domain.akadns.net",
+            type="XML load object via HTTP")
+        ```
+
+        :param str resource_name: The name of the resource.
+        :param GtmResourceArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(GtmResourceArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 aggregation_type: Optional[pulumi.Input[str]] = None,
+                 constrained_property: Optional[pulumi.Input[str]] = None,
+                 decay_rate: Optional[pulumi.Input[float]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 domain: Optional[pulumi.Input[str]] = None,
+                 host_header: Optional[pulumi.Input[str]] = None,
+                 leader_string: Optional[pulumi.Input[str]] = None,
+                 least_squares_decay: Optional[pulumi.Input[float]] = None,
+                 load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
+                 max_u_multiplicative_increment: Optional[pulumi.Input[float]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 resource_instances: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmResourceResourceInstanceArgs']]]]] = None,
+                 type: Optional[pulumi.Input[str]] = None,
+                 upper_bound: Optional[pulumi.Input[int]] = None,
+                 wait_on_complete: Optional[pulumi.Input[bool]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__

@@ -22,19 +22,20 @@ func (m *module) Version() semver.Version {
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
 	case "akamai:properties/cpCode:CpCode":
-		r, err = NewCpCode(ctx, name, nil, pulumi.URN_(urn))
+		r = &CpCode{}
 	case "akamai:properties/edgeHostName:EdgeHostName":
-		r, err = NewEdgeHostName(ctx, name, nil, pulumi.URN_(urn))
+		r = &EdgeHostName{}
 	case "akamai:properties/property:Property":
-		r, err = NewProperty(ctx, name, nil, pulumi.URN_(urn))
+		r = &Property{}
 	case "akamai:properties/propertyActivation:PropertyActivation":
-		r, err = NewPropertyActivation(ctx, name, nil, pulumi.URN_(urn))
+		r = &PropertyActivation{}
 	case "akamai:properties/propertyVariables:PropertyVariables":
-		r, err = NewPropertyVariables(ctx, name, nil, pulumi.URN_(urn))
+		r = &PropertyVariables{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
 
+	err = ctx.RegisterResource(typ, name, nil, r, pulumi.URN_(urn))
 	return
 }
 

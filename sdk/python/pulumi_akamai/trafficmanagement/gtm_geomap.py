@@ -5,12 +5,78 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities, _tables
 from . import outputs
 from ._inputs import *
 
-__all__ = ['GtmGeomap']
+__all__ = ['GtmGeomapArgs', 'GtmGeomap']
+
+@pulumi.input_type
+class GtmGeomapArgs:
+    def __init__(__self__, *,
+                 default_datacenter: pulumi.Input['GtmGeomapDefaultDatacenterArgs'],
+                 domain: pulumi.Input[str],
+                 assignments: Optional[pulumi.Input[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 wait_on_complete: Optional[pulumi.Input[bool]] = None):
+        """
+        The set of arguments for constructing a GtmGeomap resource.
+        """
+        pulumi.set(__self__, "default_datacenter", default_datacenter)
+        pulumi.set(__self__, "domain", domain)
+        if assignments is not None:
+            pulumi.set(__self__, "assignments", assignments)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if wait_on_complete is not None:
+            pulumi.set(__self__, "wait_on_complete", wait_on_complete)
+
+    @property
+    @pulumi.getter(name="defaultDatacenter")
+    def default_datacenter(self) -> pulumi.Input['GtmGeomapDefaultDatacenterArgs']:
+        return pulumi.get(self, "default_datacenter")
+
+    @default_datacenter.setter
+    def default_datacenter(self, value: pulumi.Input['GtmGeomapDefaultDatacenterArgs']):
+        pulumi.set(self, "default_datacenter", value)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: pulumi.Input[str]):
+        pulumi.set(self, "domain", value)
+
+    @property
+    @pulumi.getter
+    def assignments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]]]:
+        return pulumi.get(self, "assignments")
+
+    @assignments.setter
+    def assignments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]]]):
+        pulumi.set(self, "assignments", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="waitOnComplete")
+    def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "wait_on_complete")
+
+    @wait_on_complete.setter
+    def wait_on_complete(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "wait_on_complete", value)
+
 
 warnings.warn("""akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap""", DeprecationWarning)
 
@@ -18,6 +84,7 @@ warnings.warn("""akamai.trafficmanagement.GtmGeomap has been deprecated in favor
 class GtmGeomap(pulumi.CustomResource):
     warnings.warn("""akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap""", DeprecationWarning)
 
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -34,6 +101,37 @@ class GtmGeomap(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: GtmGeomapArgs,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        Create a GtmGeomap resource with the given unique name, props, and options.
+        :param str resource_name: The name of the resource.
+        :param GtmGeomapArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(GtmGeomapArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 assignments: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmGeomapAssignmentArgs']]]]] = None,
+                 default_datacenter: Optional[pulumi.Input[pulumi.InputType['GtmGeomapDefaultDatacenterArgs']]] = None,
+                 domain: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 wait_on_complete: Optional[pulumi.Input[bool]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         pulumi.log.warn("""GtmGeomap is deprecated: akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap""")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)

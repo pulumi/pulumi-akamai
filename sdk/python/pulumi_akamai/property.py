@@ -5,15 +5,255 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 from . import outputs
 from ._inputs import *
 
-__all__ = ['Property']
+__all__ = ['PropertyArgs', 'Property']
+
+@pulumi.input_type
+class PropertyArgs:
+    def __init__(__self__, *,
+                 contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 contract: Optional[pulumi.Input[str]] = None,
+                 contract_id: Optional[pulumi.Input[str]] = None,
+                 cp_code: Optional[pulumi.Input[str]] = None,
+                 group: Optional[pulumi.Input[str]] = None,
+                 group_id: Optional[pulumi.Input[str]] = None,
+                 hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_secure: Optional[pulumi.Input[bool]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 origins: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyOriginArgs']]]] = None,
+                 product: Optional[pulumi.Input[str]] = None,
+                 product_id: Optional[pulumi.Input[str]] = None,
+                 rule_format: Optional[pulumi.Input[str]] = None,
+                 rules: Optional[pulumi.Input[str]] = None,
+                 variables: Optional[pulumi.Input[str]] = None):
+        """
+        The set of arguments for constructing a Property resource.
+        :param pulumi.Input[str] contract_id: Contract ID to be assigned to the Property
+        :param pulumi.Input[str] group_id: Group ID to be assigned to the Property
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] hostnames: Mapping of edge hostname CNAMEs to other CNAMEs
+        :param pulumi.Input[str] name: Name to give to the Property (must be unique)
+        :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
+        :param pulumi.Input[str] rule_format: Specify the rule format version (defaults to latest version available when created)
+        :param pulumi.Input[str] rules: Property Rules as JSON
+        """
+        if contacts is not None:
+            warnings.warn("""\"contact\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
+            pulumi.log.warn("""contacts is deprecated: \"contact\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+        if contacts is not None:
+            pulumi.set(__self__, "contacts", contacts)
+        if contract is not None:
+            warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
+            pulumi.log.warn("""contract is deprecated: use \"contract_id\" attribute instead""")
+        if contract is not None:
+            pulumi.set(__self__, "contract", contract)
+        if contract_id is not None:
+            pulumi.set(__self__, "contract_id", contract_id)
+        if cp_code is not None:
+            warnings.warn("""\"cp_code\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
+            pulumi.log.warn("""cp_code is deprecated: \"cp_code\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+        if cp_code is not None:
+            pulumi.set(__self__, "cp_code", cp_code)
+        if group is not None:
+            warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
+            pulumi.log.warn("""group is deprecated: use \"group_id\" attribute instead""")
+        if group is not None:
+            pulumi.set(__self__, "group", group)
+        if group_id is not None:
+            pulumi.set(__self__, "group_id", group_id)
+        if hostnames is not None:
+            pulumi.set(__self__, "hostnames", hostnames)
+        if is_secure is not None:
+            warnings.warn("""\"is_secure\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
+            pulumi.log.warn("""is_secure is deprecated: \"is_secure\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+        if is_secure is not None:
+            pulumi.set(__self__, "is_secure", is_secure)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if origins is not None:
+            warnings.warn("""\"origin\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
+            pulumi.log.warn("""origins is deprecated: \"origin\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+        if origins is not None:
+            pulumi.set(__self__, "origins", origins)
+        if product is not None:
+            warnings.warn("""use \"product_id\" attribute instead""", DeprecationWarning)
+            pulumi.log.warn("""product is deprecated: use \"product_id\" attribute instead""")
+        if product is not None:
+            pulumi.set(__self__, "product", product)
+        if product_id is not None:
+            pulumi.set(__self__, "product_id", product_id)
+        if rule_format is not None:
+            pulumi.set(__self__, "rule_format", rule_format)
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
+        if variables is not None:
+            warnings.warn("""\"variables\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
+            pulumi.log.warn("""variables is deprecated: \"variables\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+        if variables is not None:
+            pulumi.set(__self__, "variables", variables)
+
+    @property
+    @pulumi.getter
+    def contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "contacts")
+
+    @contacts.setter
+    def contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "contacts", value)
+
+    @property
+    @pulumi.getter
+    def contract(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "contract")
+
+    @contract.setter
+    def contract(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "contract", value)
+
+    @property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Contract ID to be assigned to the Property
+        """
+        return pulumi.get(self, "contract_id")
+
+    @contract_id.setter
+    def contract_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "contract_id", value)
+
+    @property
+    @pulumi.getter(name="cpCode")
+    def cp_code(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "cp_code")
+
+    @cp_code.setter
+    def cp_code(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cp_code", value)
+
+    @property
+    @pulumi.getter
+    def group(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "group")
+
+    @group.setter
+    def group(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "group", value)
+
+    @property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Group ID to be assigned to the Property
+        """
+        return pulumi.get(self, "group_id")
+
+    @group_id.setter
+    def group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "group_id", value)
+
+    @property
+    @pulumi.getter
+    def hostnames(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        Mapping of edge hostname CNAMEs to other CNAMEs
+        """
+        return pulumi.get(self, "hostnames")
+
+    @hostnames.setter
+    def hostnames(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "hostnames", value)
+
+    @property
+    @pulumi.getter(name="isSecure")
+    def is_secure(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_secure")
+
+    @is_secure.setter
+    def is_secure(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_secure", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name to give to the Property (must be unique)
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def origins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyOriginArgs']]]]:
+        return pulumi.get(self, "origins")
+
+    @origins.setter
+    def origins(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyOriginArgs']]]]):
+        pulumi.set(self, "origins", value)
+
+    @property
+    @pulumi.getter
+    def product(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "product")
+
+    @product.setter
+    def product(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "product", value)
+
+    @property
+    @pulumi.getter(name="productId")
+    def product_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Product ID to be assigned to the Property
+        """
+        return pulumi.get(self, "product_id")
+
+    @product_id.setter
+    def product_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "product_id", value)
+
+    @property
+    @pulumi.getter(name="ruleFormat")
+    def rule_format(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specify the rule format version (defaults to latest version available when created)
+        """
+        return pulumi.get(self, "rule_format")
+
+    @rule_format.setter
+    def rule_format(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "rule_format", value)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Optional[pulumi.Input[str]]:
+        """
+        Property Rules as JSON
+        """
+        return pulumi.get(self, "rules")
+
+    @rules.setter
+    def rules(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "rules", value)
+
+    @property
+    @pulumi.getter
+    def variables(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "variables")
+
+    @variables.setter
+    def variables(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "variables", value)
 
 
 class Property(pulumi.CustomResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -127,6 +367,127 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[str] rule_format: Specify the rule format version (defaults to latest version available when created)
         :param pulumi.Input[str] rules: Property Rules as JSON
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: Optional[PropertyArgs] = None,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        The `Property` resource represents an Akamai property configuration.
+        This resource lets you to create, update, and activate properties on the
+        Akamai platform.
+
+        Akamai’s edge network caches your web assets near to servers that request them.
+        A property provides the main way to control how edge servers respond to various
+        kinds of requests for those assets. Properties apply rules to a set of hostnames,
+        and you can only apply one property at a time to any given hostname. Each property
+        is assigned to a product, which determines which behaviors you can use. Each
+        property’s default rule needs a valid content provider (CP) code assigned to bill
+        and report for the service.
+
+        > __NOTE:__ In version 0.10 and earlier of this resource, it also controlled content provider (CP) codes, origin settings, rules, and hostname associations. Starting with version 1.0.0, this logic is broken out into individual resources.
+
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        example = akamai.Property("example",
+            contacts=["user@example.org"],
+            product_id="prd_SPM",
+            contract_id=var["contractid"],
+            group_id=var["groupid"],
+            hostnames={
+                "example.org": "example.org.edgesuite.net",
+                "www.example.org": "example.org.edgesuite.net",
+                "sub.example.org": "sub.example.org.edgesuite.net",
+            },
+            rule_format="v2020-03-04",
+            rules=data["akamai_property_rules_template"]["example"]["json"])
+        ```
+        ## Argument reference
+
+        This resource supports these arguments:
+
+        * `name` - (Required) The property name.
+        * `contact` - (Required) One or more email addresses to send activation status changes to.
+        * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
+        * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
+        * `product_id` - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+        * `hostnames` - (Required) A mapping of public hostnames to edge hostnames. For example: `{"example.org" = "example.org.edgesuite.net"}`
+        * `rules` - (Required) A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `getPropertyRules` data source.
+        * `rule_format` - (Optional) The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
+        * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
+        * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
+        * `product` - (Deprecated) Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
+
+        ## Attribute reference
+
+        The resource returns these attributes:
+
+        * `warnings` - The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        * `errors` - The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        * `latest_version` - The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
+        * `production_version` - The current version of the property active on the Akamai production network.
+        * `staging_version` - The current version of the property active on the Akamai staging network.
+
+        ## Import
+
+        Basic Usagehcl resource "akamai_property" "example" {
+
+        # (resource arguments)
+
+         } You can import Akamai properties using either the `property_id` or a comma-delimited
+
+        string of the property, contract, and group IDs. You'll need to enter the string of IDs if the property belongs to multiple groups or contracts. If using the string of IDs, you need to enter them in this order`property_id,contract_id,group_id` Here are some examples
+
+        ```sh
+         $ pulumi import akamai:index/property:Property example prp_123
+        ```
+
+         Or
+
+        ```sh
+         $ pulumi import akamai:index/property:Property example prp_123,ctr_1-AB123,grp_123
+        ```
+
+        :param str resource_name: The name of the resource.
+        :param PropertyArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(PropertyArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 contract: Optional[pulumi.Input[str]] = None,
+                 contract_id: Optional[pulumi.Input[str]] = None,
+                 cp_code: Optional[pulumi.Input[str]] = None,
+                 group: Optional[pulumi.Input[str]] = None,
+                 group_id: Optional[pulumi.Input[str]] = None,
+                 hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_secure: Optional[pulumi.Input[bool]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 origins: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]]] = None,
+                 product: Optional[pulumi.Input[str]] = None,
+                 product_id: Optional[pulumi.Input[str]] = None,
+                 rule_format: Optional[pulumi.Input[str]] = None,
+                 rules: Optional[pulumi.Input[str]] = None,
+                 variables: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__

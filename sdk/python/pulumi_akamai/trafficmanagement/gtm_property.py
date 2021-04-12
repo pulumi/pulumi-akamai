@@ -5,12 +5,398 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities, _tables
 from . import outputs
 from ._inputs import *
 
-__all__ = ['GtmProperty']
+__all__ = ['GtmPropertyArgs', 'GtmProperty']
+
+@pulumi.input_type
+class GtmPropertyArgs:
+    def __init__(__self__, *,
+                 domain: pulumi.Input[str],
+                 handout_limit: pulumi.Input[int],
+                 handout_mode: pulumi.Input[str],
+                 score_aggregation_type: pulumi.Input[str],
+                 traffic_targets: pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]],
+                 type: pulumi.Input[str],
+                 backup_cname: Optional[pulumi.Input[str]] = None,
+                 backup_ip: Optional[pulumi.Input[str]] = None,
+                 balance_by_download_score: Optional[pulumi.Input[bool]] = None,
+                 cname: Optional[pulumi.Input[str]] = None,
+                 comments: Optional[pulumi.Input[str]] = None,
+                 dynamic_ttl: Optional[pulumi.Input[int]] = None,
+                 failback_delay: Optional[pulumi.Input[int]] = None,
+                 failover_delay: Optional[pulumi.Input[int]] = None,
+                 ghost_demand_reporting: Optional[pulumi.Input[bool]] = None,
+                 health_max: Optional[pulumi.Input[float]] = None,
+                 health_multiplier: Optional[pulumi.Input[float]] = None,
+                 health_threshold: Optional[pulumi.Input[float]] = None,
+                 ipv6: Optional[pulumi.Input[bool]] = None,
+                 liveness_tests: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]] = None,
+                 load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
+                 map_name: Optional[pulumi.Input[str]] = None,
+                 max_unreachable_penalty: Optional[pulumi.Input[int]] = None,
+                 min_live_fraction: Optional[pulumi.Input[float]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]] = None,
+                 static_ttl: Optional[pulumi.Input[int]] = None,
+                 stickiness_bonus_constant: Optional[pulumi.Input[int]] = None,
+                 stickiness_bonus_percentage: Optional[pulumi.Input[int]] = None,
+                 unreachable_threshold: Optional[pulumi.Input[float]] = None,
+                 use_computed_targets: Optional[pulumi.Input[bool]] = None,
+                 wait_on_complete: Optional[pulumi.Input[bool]] = None):
+        """
+        The set of arguments for constructing a GtmProperty resource.
+        """
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "handout_limit", handout_limit)
+        pulumi.set(__self__, "handout_mode", handout_mode)
+        pulumi.set(__self__, "score_aggregation_type", score_aggregation_type)
+        pulumi.set(__self__, "traffic_targets", traffic_targets)
+        pulumi.set(__self__, "type", type)
+        if backup_cname is not None:
+            pulumi.set(__self__, "backup_cname", backup_cname)
+        if backup_ip is not None:
+            pulumi.set(__self__, "backup_ip", backup_ip)
+        if balance_by_download_score is not None:
+            pulumi.set(__self__, "balance_by_download_score", balance_by_download_score)
+        if cname is not None:
+            pulumi.set(__self__, "cname", cname)
+        if comments is not None:
+            pulumi.set(__self__, "comments", comments)
+        if dynamic_ttl is not None:
+            pulumi.set(__self__, "dynamic_ttl", dynamic_ttl)
+        if failback_delay is not None:
+            pulumi.set(__self__, "failback_delay", failback_delay)
+        if failover_delay is not None:
+            pulumi.set(__self__, "failover_delay", failover_delay)
+        if ghost_demand_reporting is not None:
+            pulumi.set(__self__, "ghost_demand_reporting", ghost_demand_reporting)
+        if health_max is not None:
+            pulumi.set(__self__, "health_max", health_max)
+        if health_multiplier is not None:
+            pulumi.set(__self__, "health_multiplier", health_multiplier)
+        if health_threshold is not None:
+            pulumi.set(__self__, "health_threshold", health_threshold)
+        if ipv6 is not None:
+            pulumi.set(__self__, "ipv6", ipv6)
+        if liveness_tests is not None:
+            pulumi.set(__self__, "liveness_tests", liveness_tests)
+        if load_imbalance_percentage is not None:
+            pulumi.set(__self__, "load_imbalance_percentage", load_imbalance_percentage)
+        if map_name is not None:
+            pulumi.set(__self__, "map_name", map_name)
+        if max_unreachable_penalty is not None:
+            pulumi.set(__self__, "max_unreachable_penalty", max_unreachable_penalty)
+        if min_live_fraction is not None:
+            pulumi.set(__self__, "min_live_fraction", min_live_fraction)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if static_rr_sets is not None:
+            pulumi.set(__self__, "static_rr_sets", static_rr_sets)
+        if static_ttl is not None:
+            pulumi.set(__self__, "static_ttl", static_ttl)
+        if stickiness_bonus_constant is not None:
+            pulumi.set(__self__, "stickiness_bonus_constant", stickiness_bonus_constant)
+        if stickiness_bonus_percentage is not None:
+            pulumi.set(__self__, "stickiness_bonus_percentage", stickiness_bonus_percentage)
+        if unreachable_threshold is not None:
+            pulumi.set(__self__, "unreachable_threshold", unreachable_threshold)
+        if use_computed_targets is not None:
+            pulumi.set(__self__, "use_computed_targets", use_computed_targets)
+        if wait_on_complete is not None:
+            pulumi.set(__self__, "wait_on_complete", wait_on_complete)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: pulumi.Input[str]):
+        pulumi.set(self, "domain", value)
+
+    @property
+    @pulumi.getter(name="handoutLimit")
+    def handout_limit(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "handout_limit")
+
+    @handout_limit.setter
+    def handout_limit(self, value: pulumi.Input[int]):
+        pulumi.set(self, "handout_limit", value)
+
+    @property
+    @pulumi.getter(name="handoutMode")
+    def handout_mode(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "handout_mode")
+
+    @handout_mode.setter
+    def handout_mode(self, value: pulumi.Input[str]):
+        pulumi.set(self, "handout_mode", value)
+
+    @property
+    @pulumi.getter(name="scoreAggregationType")
+    def score_aggregation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "score_aggregation_type")
+
+    @score_aggregation_type.setter
+    def score_aggregation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "score_aggregation_type", value)
+
+    @property
+    @pulumi.getter(name="trafficTargets")
+    def traffic_targets(self) -> pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]:
+        return pulumi.get(self, "traffic_targets")
+
+    @traffic_targets.setter
+    def traffic_targets(self, value: pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]):
+        pulumi.set(self, "traffic_targets", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="backupCname")
+    def backup_cname(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "backup_cname")
+
+    @backup_cname.setter
+    def backup_cname(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "backup_cname", value)
+
+    @property
+    @pulumi.getter(name="backupIp")
+    def backup_ip(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "backup_ip")
+
+    @backup_ip.setter
+    def backup_ip(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "backup_ip", value)
+
+    @property
+    @pulumi.getter(name="balanceByDownloadScore")
+    def balance_by_download_score(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "balance_by_download_score")
+
+    @balance_by_download_score.setter
+    def balance_by_download_score(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "balance_by_download_score", value)
+
+    @property
+    @pulumi.getter
+    def cname(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "cname")
+
+    @cname.setter
+    def cname(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cname", value)
+
+    @property
+    @pulumi.getter
+    def comments(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "comments")
+
+    @comments.setter
+    def comments(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "comments", value)
+
+    @property
+    @pulumi.getter(name="dynamicTtl")
+    def dynamic_ttl(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "dynamic_ttl")
+
+    @dynamic_ttl.setter
+    def dynamic_ttl(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "dynamic_ttl", value)
+
+    @property
+    @pulumi.getter(name="failbackDelay")
+    def failback_delay(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "failback_delay")
+
+    @failback_delay.setter
+    def failback_delay(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "failback_delay", value)
+
+    @property
+    @pulumi.getter(name="failoverDelay")
+    def failover_delay(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "failover_delay")
+
+    @failover_delay.setter
+    def failover_delay(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "failover_delay", value)
+
+    @property
+    @pulumi.getter(name="ghostDemandReporting")
+    def ghost_demand_reporting(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "ghost_demand_reporting")
+
+    @ghost_demand_reporting.setter
+    def ghost_demand_reporting(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "ghost_demand_reporting", value)
+
+    @property
+    @pulumi.getter(name="healthMax")
+    def health_max(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "health_max")
+
+    @health_max.setter
+    def health_max(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "health_max", value)
+
+    @property
+    @pulumi.getter(name="healthMultiplier")
+    def health_multiplier(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "health_multiplier")
+
+    @health_multiplier.setter
+    def health_multiplier(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "health_multiplier", value)
+
+    @property
+    @pulumi.getter(name="healthThreshold")
+    def health_threshold(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "health_threshold")
+
+    @health_threshold.setter
+    def health_threshold(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "health_threshold", value)
+
+    @property
+    @pulumi.getter
+    def ipv6(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "ipv6")
+
+    @ipv6.setter
+    def ipv6(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "ipv6", value)
+
+    @property
+    @pulumi.getter(name="livenessTests")
+    def liveness_tests(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]]:
+        return pulumi.get(self, "liveness_tests")
+
+    @liveness_tests.setter
+    def liveness_tests(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]]):
+        pulumi.set(self, "liveness_tests", value)
+
+    @property
+    @pulumi.getter(name="loadImbalancePercentage")
+    def load_imbalance_percentage(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "load_imbalance_percentage")
+
+    @load_imbalance_percentage.setter
+    def load_imbalance_percentage(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "load_imbalance_percentage", value)
+
+    @property
+    @pulumi.getter(name="mapName")
+    def map_name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "map_name")
+
+    @map_name.setter
+    def map_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "map_name", value)
+
+    @property
+    @pulumi.getter(name="maxUnreachablePenalty")
+    def max_unreachable_penalty(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "max_unreachable_penalty")
+
+    @max_unreachable_penalty.setter
+    def max_unreachable_penalty(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_unreachable_penalty", value)
+
+    @property
+    @pulumi.getter(name="minLiveFraction")
+    def min_live_fraction(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "min_live_fraction")
+
+    @min_live_fraction.setter
+    def min_live_fraction(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "min_live_fraction", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="staticRrSets")
+    def static_rr_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]]:
+        return pulumi.get(self, "static_rr_sets")
+
+    @static_rr_sets.setter
+    def static_rr_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]]):
+        pulumi.set(self, "static_rr_sets", value)
+
+    @property
+    @pulumi.getter(name="staticTtl")
+    def static_ttl(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "static_ttl")
+
+    @static_ttl.setter
+    def static_ttl(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "static_ttl", value)
+
+    @property
+    @pulumi.getter(name="stickinessBonusConstant")
+    def stickiness_bonus_constant(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "stickiness_bonus_constant")
+
+    @stickiness_bonus_constant.setter
+    def stickiness_bonus_constant(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "stickiness_bonus_constant", value)
+
+    @property
+    @pulumi.getter(name="stickinessBonusPercentage")
+    def stickiness_bonus_percentage(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "stickiness_bonus_percentage")
+
+    @stickiness_bonus_percentage.setter
+    def stickiness_bonus_percentage(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "stickiness_bonus_percentage", value)
+
+    @property
+    @pulumi.getter(name="unreachableThreshold")
+    def unreachable_threshold(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "unreachable_threshold")
+
+    @unreachable_threshold.setter
+    def unreachable_threshold(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "unreachable_threshold", value)
+
+    @property
+    @pulumi.getter(name="useComputedTargets")
+    def use_computed_targets(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "use_computed_targets")
+
+    @use_computed_targets.setter
+    def use_computed_targets(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "use_computed_targets", value)
+
+    @property
+    @pulumi.getter(name="waitOnComplete")
+    def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "wait_on_complete")
+
+    @wait_on_complete.setter
+    def wait_on_complete(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "wait_on_complete", value)
+
 
 warnings.warn("""akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty""", DeprecationWarning)
 
@@ -18,6 +404,7 @@ warnings.warn("""akamai.trafficmanagement.GtmProperty has been deprecated in fav
 class GtmProperty(pulumi.CustomResource):
     warnings.warn("""akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty""", DeprecationWarning)
 
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -61,6 +448,64 @@ class GtmProperty(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: GtmPropertyArgs,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        Create a GtmProperty resource with the given unique name, props, and options.
+        :param str resource_name: The name of the resource.
+        :param GtmPropertyArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(GtmPropertyArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 backup_cname: Optional[pulumi.Input[str]] = None,
+                 backup_ip: Optional[pulumi.Input[str]] = None,
+                 balance_by_download_score: Optional[pulumi.Input[bool]] = None,
+                 cname: Optional[pulumi.Input[str]] = None,
+                 comments: Optional[pulumi.Input[str]] = None,
+                 domain: Optional[pulumi.Input[str]] = None,
+                 dynamic_ttl: Optional[pulumi.Input[int]] = None,
+                 failback_delay: Optional[pulumi.Input[int]] = None,
+                 failover_delay: Optional[pulumi.Input[int]] = None,
+                 ghost_demand_reporting: Optional[pulumi.Input[bool]] = None,
+                 handout_limit: Optional[pulumi.Input[int]] = None,
+                 handout_mode: Optional[pulumi.Input[str]] = None,
+                 health_max: Optional[pulumi.Input[float]] = None,
+                 health_multiplier: Optional[pulumi.Input[float]] = None,
+                 health_threshold: Optional[pulumi.Input[float]] = None,
+                 ipv6: Optional[pulumi.Input[bool]] = None,
+                 liveness_tests: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyLivenessTestArgs']]]]] = None,
+                 load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
+                 map_name: Optional[pulumi.Input[str]] = None,
+                 max_unreachable_penalty: Optional[pulumi.Input[int]] = None,
+                 min_live_fraction: Optional[pulumi.Input[float]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 score_aggregation_type: Optional[pulumi.Input[str]] = None,
+                 static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyStaticRrSetArgs']]]]] = None,
+                 static_ttl: Optional[pulumi.Input[int]] = None,
+                 stickiness_bonus_constant: Optional[pulumi.Input[int]] = None,
+                 stickiness_bonus_percentage: Optional[pulumi.Input[int]] = None,
+                 traffic_targets: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyTrafficTargetArgs']]]]] = None,
+                 type: Optional[pulumi.Input[str]] = None,
+                 unreachable_threshold: Optional[pulumi.Input[float]] = None,
+                 use_computed_targets: Optional[pulumi.Input[bool]] = None,
+                 wait_on_complete: Optional[pulumi.Input[bool]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         pulumi.log.warn("""GtmProperty is deprecated: akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty""")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)

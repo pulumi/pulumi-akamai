@@ -5,13 +5,136 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 
-__all__ = ['EdgeHostName']
+__all__ = ['EdgeHostNameArgs', 'EdgeHostName']
+
+@pulumi.input_type
+class EdgeHostNameArgs:
+    def __init__(__self__, *,
+                 edge_hostname: pulumi.Input[str],
+                 ip_behavior: pulumi.Input[str],
+                 certificate: Optional[pulumi.Input[int]] = None,
+                 contract: Optional[pulumi.Input[str]] = None,
+                 contract_id: Optional[pulumi.Input[str]] = None,
+                 group: Optional[pulumi.Input[str]] = None,
+                 group_id: Optional[pulumi.Input[str]] = None,
+                 product: Optional[pulumi.Input[str]] = None,
+                 product_id: Optional[pulumi.Input[str]] = None):
+        """
+        The set of arguments for constructing a EdgeHostName resource.
+        """
+        pulumi.set(__self__, "edge_hostname", edge_hostname)
+        pulumi.set(__self__, "ip_behavior", ip_behavior)
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if contract is not None:
+            warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
+            pulumi.log.warn("""contract is deprecated: use \"contract_id\" attribute instead""")
+        if contract is not None:
+            pulumi.set(__self__, "contract", contract)
+        if contract_id is not None:
+            pulumi.set(__self__, "contract_id", contract_id)
+        if group is not None:
+            warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
+            pulumi.log.warn("""group is deprecated: use \"group_id\" attribute instead""")
+        if group is not None:
+            pulumi.set(__self__, "group", group)
+        if group_id is not None:
+            pulumi.set(__self__, "group_id", group_id)
+        if product is not None:
+            warnings.warn("""use \"product_id\" attribute instead""", DeprecationWarning)
+            pulumi.log.warn("""product is deprecated: use \"product_id\" attribute instead""")
+        if product is not None:
+            pulumi.set(__self__, "product", product)
+        if product_id is not None:
+            pulumi.set(__self__, "product_id", product_id)
+
+    @property
+    @pulumi.getter(name="edgeHostname")
+    def edge_hostname(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "edge_hostname")
+
+    @edge_hostname.setter
+    def edge_hostname(self, value: pulumi.Input[str]):
+        pulumi.set(self, "edge_hostname", value)
+
+    @property
+    @pulumi.getter(name="ipBehavior")
+    def ip_behavior(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "ip_behavior")
+
+    @ip_behavior.setter
+    def ip_behavior(self, value: pulumi.Input[str]):
+        pulumi.set(self, "ip_behavior", value)
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "certificate")
+
+    @certificate.setter
+    def certificate(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "certificate", value)
+
+    @property
+    @pulumi.getter
+    def contract(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "contract")
+
+    @contract.setter
+    def contract(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "contract", value)
+
+    @property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "contract_id")
+
+    @contract_id.setter
+    def contract_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "contract_id", value)
+
+    @property
+    @pulumi.getter
+    def group(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "group")
+
+    @group.setter
+    def group(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "group", value)
+
+    @property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "group_id")
+
+    @group_id.setter
+    def group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "group_id", value)
+
+    @property
+    @pulumi.getter
+    def product(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "product")
+
+    @product.setter
+    def product(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "product", value)
+
+    @property
+    @pulumi.getter(name="productId")
+    def product_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "product_id")
+
+    @product_id.setter
+    def product_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "product_id", value)
 
 
 class EdgeHostName(pulumi.CustomResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -32,6 +155,41 @@ class EdgeHostName(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: EdgeHostNameArgs,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        Create a EdgeHostName resource with the given unique name, props, and options.
+        :param str resource_name: The name of the resource.
+        :param EdgeHostNameArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(EdgeHostNameArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 certificate: Optional[pulumi.Input[int]] = None,
+                 contract: Optional[pulumi.Input[str]] = None,
+                 contract_id: Optional[pulumi.Input[str]] = None,
+                 edge_hostname: Optional[pulumi.Input[str]] = None,
+                 group: Optional[pulumi.Input[str]] = None,
+                 group_id: Optional[pulumi.Input[str]] = None,
+                 ip_behavior: Optional[pulumi.Input[str]] = None,
+                 product: Optional[pulumi.Input[str]] = None,
+                 product_id: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__

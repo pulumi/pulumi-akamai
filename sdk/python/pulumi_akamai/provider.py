@@ -5,14 +5,209 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 from ._inputs import *
 
-__all__ = ['Provider']
+__all__ = ['ProviderArgs', 'Provider']
+
+@pulumi.input_type
+class ProviderArgs:
+    def __init__(__self__, *,
+                 appsec_section: Optional[pulumi.Input[str]] = None,
+                 appsecs: Optional[pulumi.Input[Sequence[pulumi.Input['ProviderAppsecArgs']]]] = None,
+                 cache_enabled: Optional[pulumi.Input[bool]] = None,
+                 config: Optional[pulumi.Input['ProviderConfigArgs']] = None,
+                 config_section: Optional[pulumi.Input[str]] = None,
+                 dns: Optional[pulumi.Input['ProviderDnsArgs']] = None,
+                 dns_section: Optional[pulumi.Input[str]] = None,
+                 edgerc: Optional[pulumi.Input[str]] = None,
+                 gtm: Optional[pulumi.Input['ProviderGtmArgs']] = None,
+                 gtm_section: Optional[pulumi.Input[str]] = None,
+                 papi_section: Optional[pulumi.Input[str]] = None,
+                 property: Optional[pulumi.Input['ProviderPropertyArgs']] = None,
+                 property_section: Optional[pulumi.Input[str]] = None):
+        """
+        The set of arguments for constructing a Provider resource.
+        :param pulumi.Input[str] config_section: The section of the edgerc file to use for configuration
+        """
+        if appsec_section is not None:
+            warnings.warn("""The setting \"appsec_section\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""appsec_section is deprecated: The setting \"appsec_section\" has been deprecated.""")
+        if appsec_section is not None:
+            pulumi.set(__self__, "appsec_section", appsec_section)
+        if appsecs is not None:
+            warnings.warn("""The setting \"appsec\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""appsecs is deprecated: The setting \"appsec\" has been deprecated.""")
+        if appsecs is not None:
+            pulumi.set(__self__, "appsecs", appsecs)
+        if cache_enabled is not None:
+            pulumi.set(__self__, "cache_enabled", cache_enabled)
+        if config is not None:
+            pulumi.set(__self__, "config", config)
+        if config_section is not None:
+            pulumi.set(__self__, "config_section", config_section)
+        if dns is not None:
+            warnings.warn("""The setting \"dns\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""dns is deprecated: The setting \"dns\" has been deprecated.""")
+        if dns is not None:
+            pulumi.set(__self__, "dns", dns)
+        if dns_section is not None:
+            warnings.warn("""The setting \"dns_section\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""dns_section is deprecated: The setting \"dns_section\" has been deprecated.""")
+        if dns_section is not None:
+            pulumi.set(__self__, "dns_section", dns_section)
+        if edgerc is not None:
+            pulumi.set(__self__, "edgerc", edgerc)
+        if gtm is not None:
+            warnings.warn("""The setting \"gtm\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""gtm is deprecated: The setting \"gtm\" has been deprecated.""")
+        if gtm is not None:
+            pulumi.set(__self__, "gtm", gtm)
+        if gtm_section is not None:
+            warnings.warn("""The setting \"gtm_section\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""gtm_section is deprecated: The setting \"gtm_section\" has been deprecated.""")
+        if gtm_section is not None:
+            pulumi.set(__self__, "gtm_section", gtm_section)
+        if papi_section is not None:
+            warnings.warn("""The setting \"papi_section\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""papi_section is deprecated: The setting \"papi_section\" has been deprecated.""")
+        if papi_section is not None:
+            pulumi.set(__self__, "papi_section", papi_section)
+        if property is not None:
+            warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
+        if property is not None:
+            pulumi.set(__self__, "property", property)
+        if property_section is not None:
+            warnings.warn("""The setting \"property_section\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""property_section is deprecated: The setting \"property_section\" has been deprecated.""")
+        if property_section is not None:
+            pulumi.set(__self__, "property_section", property_section)
+
+    @property
+    @pulumi.getter(name="appsecSection")
+    def appsec_section(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "appsec_section")
+
+    @appsec_section.setter
+    def appsec_section(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "appsec_section", value)
+
+    @property
+    @pulumi.getter
+    def appsecs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProviderAppsecArgs']]]]:
+        return pulumi.get(self, "appsecs")
+
+    @appsecs.setter
+    def appsecs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProviderAppsecArgs']]]]):
+        pulumi.set(self, "appsecs", value)
+
+    @property
+    @pulumi.getter(name="cacheEnabled")
+    def cache_enabled(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "cache_enabled")
+
+    @cache_enabled.setter
+    def cache_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "cache_enabled", value)
+
+    @property
+    @pulumi.getter
+    def config(self) -> Optional[pulumi.Input['ProviderConfigArgs']]:
+        return pulumi.get(self, "config")
+
+    @config.setter
+    def config(self, value: Optional[pulumi.Input['ProviderConfigArgs']]):
+        pulumi.set(self, "config", value)
+
+    @property
+    @pulumi.getter(name="configSection")
+    def config_section(self) -> Optional[pulumi.Input[str]]:
+        """
+        The section of the edgerc file to use for configuration
+        """
+        return pulumi.get(self, "config_section")
+
+    @config_section.setter
+    def config_section(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "config_section", value)
+
+    @property
+    @pulumi.getter
+    def dns(self) -> Optional[pulumi.Input['ProviderDnsArgs']]:
+        return pulumi.get(self, "dns")
+
+    @dns.setter
+    def dns(self, value: Optional[pulumi.Input['ProviderDnsArgs']]):
+        pulumi.set(self, "dns", value)
+
+    @property
+    @pulumi.getter(name="dnsSection")
+    def dns_section(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "dns_section")
+
+    @dns_section.setter
+    def dns_section(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dns_section", value)
+
+    @property
+    @pulumi.getter
+    def edgerc(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "edgerc")
+
+    @edgerc.setter
+    def edgerc(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "edgerc", value)
+
+    @property
+    @pulumi.getter
+    def gtm(self) -> Optional[pulumi.Input['ProviderGtmArgs']]:
+        return pulumi.get(self, "gtm")
+
+    @gtm.setter
+    def gtm(self, value: Optional[pulumi.Input['ProviderGtmArgs']]):
+        pulumi.set(self, "gtm", value)
+
+    @property
+    @pulumi.getter(name="gtmSection")
+    def gtm_section(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "gtm_section")
+
+    @gtm_section.setter
+    def gtm_section(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "gtm_section", value)
+
+    @property
+    @pulumi.getter(name="papiSection")
+    def papi_section(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "papi_section")
+
+    @papi_section.setter
+    def papi_section(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "papi_section", value)
+
+    @property
+    @pulumi.getter(name="propertySection")
+    def property_section(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "property_section")
+
+    @property_section.setter
+    def property_section(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "property_section", value)
+
+    @property
+    @pulumi.getter
+    def property(self) -> Optional[pulumi.Input['ProviderPropertyArgs']]:
+        return pulumi.get(self, "property")
+
+    @property.setter
+    def property(self, value: Optional[pulumi.Input['ProviderPropertyArgs']]):
+        pulumi.set(self, "property", value)
 
 
 class Provider(pulumi.ProviderResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -42,6 +237,49 @@ class Provider(pulumi.ProviderResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] config_section: The section of the edgerc file to use for configuration
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: Optional[ProviderArgs] = None,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        The provider type for the akamai package. By default, resources use package-wide configuration
+        settings, however an explicit `Provider` instance may be created and passed during resource
+        construction to achieve fine-grained programmatic control over provider settings. See the
+        [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
+
+        :param str resource_name: The name of the resource.
+        :param ProviderArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(ProviderArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 appsec_section: Optional[pulumi.Input[str]] = None,
+                 appsecs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProviderAppsecArgs']]]]] = None,
+                 cache_enabled: Optional[pulumi.Input[bool]] = None,
+                 config: Optional[pulumi.Input[pulumi.InputType['ProviderConfigArgs']]] = None,
+                 config_section: Optional[pulumi.Input[str]] = None,
+                 dns: Optional[pulumi.Input[pulumi.InputType['ProviderDnsArgs']]] = None,
+                 dns_section: Optional[pulumi.Input[str]] = None,
+                 edgerc: Optional[pulumi.Input[str]] = None,
+                 gtm: Optional[pulumi.Input[pulumi.InputType['ProviderGtmArgs']]] = None,
+                 gtm_section: Optional[pulumi.Input[str]] = None,
+                 papi_section: Optional[pulumi.Input[str]] = None,
+                 property: Optional[pulumi.Input[pulumi.InputType['ProviderPropertyArgs']]] = None,
+                 property_section: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__
