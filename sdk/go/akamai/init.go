@@ -21,53 +21,54 @@ func (m *module) Version() semver.Version {
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
 	case "akamai:index/appSecActivations:AppSecActivations":
-		r, err = NewAppSecActivations(ctx, name, nil, pulumi.URN_(urn))
+		r = &AppSecActivations{}
 	case "akamai:index/appSecConfigurationVersionClone:AppSecConfigurationVersionClone":
-		r, err = NewAppSecConfigurationVersionClone(ctx, name, nil, pulumi.URN_(urn))
+		r = &AppSecConfigurationVersionClone{}
 	case "akamai:index/appSecCustomRule:AppSecCustomRule":
-		r, err = NewAppSecCustomRule(ctx, name, nil, pulumi.URN_(urn))
+		r = &AppSecCustomRule{}
 	case "akamai:index/appSecCustomRuleAction:AppSecCustomRuleAction":
-		r, err = NewAppSecCustomRuleAction(ctx, name, nil, pulumi.URN_(urn))
+		r = &AppSecCustomRuleAction{}
 	case "akamai:index/appSecMatchTarget:AppSecMatchTarget":
-		r, err = NewAppSecMatchTarget(ctx, name, nil, pulumi.URN_(urn))
+		r = &AppSecMatchTarget{}
 	case "akamai:index/appSecMatchTargetSequence:AppSecMatchTargetSequence":
-		r, err = NewAppSecMatchTargetSequence(ctx, name, nil, pulumi.URN_(urn))
+		r = &AppSecMatchTargetSequence{}
 	case "akamai:index/appSecSecurityPolicyClone:AppSecSecurityPolicyClone":
-		r, err = NewAppSecSecurityPolicyClone(ctx, name, nil, pulumi.URN_(urn))
+		r = &AppSecSecurityPolicyClone{}
 	case "akamai:index/appSecSelectedHostnames:AppSecSelectedHostnames":
-		r, err = NewAppSecSelectedHostnames(ctx, name, nil, pulumi.URN_(urn))
+		r = &AppSecSelectedHostnames{}
 	case "akamai:index/cpCode:CpCode":
-		r, err = NewCpCode(ctx, name, nil, pulumi.URN_(urn))
+		r = &CpCode{}
 	case "akamai:index/dnsRecord:DnsRecord":
-		r, err = NewDnsRecord(ctx, name, nil, pulumi.URN_(urn))
+		r = &DnsRecord{}
 	case "akamai:index/dnsZone:DnsZone":
-		r, err = NewDnsZone(ctx, name, nil, pulumi.URN_(urn))
+		r = &DnsZone{}
 	case "akamai:index/edgeHostName:EdgeHostName":
-		r, err = NewEdgeHostName(ctx, name, nil, pulumi.URN_(urn))
+		r = &EdgeHostName{}
 	case "akamai:index/gtmAsmap:GtmAsmap":
-		r, err = NewGtmAsmap(ctx, name, nil, pulumi.URN_(urn))
+		r = &GtmAsmap{}
 	case "akamai:index/gtmCidrmap:GtmCidrmap":
-		r, err = NewGtmCidrmap(ctx, name, nil, pulumi.URN_(urn))
+		r = &GtmCidrmap{}
 	case "akamai:index/gtmDatacenter:GtmDatacenter":
-		r, err = NewGtmDatacenter(ctx, name, nil, pulumi.URN_(urn))
+		r = &GtmDatacenter{}
 	case "akamai:index/gtmDomain:GtmDomain":
-		r, err = NewGtmDomain(ctx, name, nil, pulumi.URN_(urn))
+		r = &GtmDomain{}
 	case "akamai:index/gtmGeomap:GtmGeomap":
-		r, err = NewGtmGeomap(ctx, name, nil, pulumi.URN_(urn))
+		r = &GtmGeomap{}
 	case "akamai:index/gtmProperty:GtmProperty":
-		r, err = NewGtmProperty(ctx, name, nil, pulumi.URN_(urn))
+		r = &GtmProperty{}
 	case "akamai:index/gtmResource:GtmResource":
-		r, err = NewGtmResource(ctx, name, nil, pulumi.URN_(urn))
+		r = &GtmResource{}
 	case "akamai:index/property:Property":
-		r, err = NewProperty(ctx, name, nil, pulumi.URN_(urn))
+		r = &Property{}
 	case "akamai:index/propertyActivation:PropertyActivation":
-		r, err = NewPropertyActivation(ctx, name, nil, pulumi.URN_(urn))
+		r = &PropertyActivation{}
 	case "akamai:index/propertyVariables:PropertyVariables":
-		r, err = NewPropertyVariables(ctx, name, nil, pulumi.URN_(urn))
+		r = &PropertyVariables{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
 
+	err = ctx.RegisterResource(typ, name, nil, r, pulumi.URN_(urn))
 	return
 }
 
@@ -84,7 +85,9 @@ func (p *pkg) ConstructProvider(ctx *pulumi.Context, name, typ, urn string) (pul
 		return nil, fmt.Errorf("unknown provider type: %s", typ)
 	}
 
-	return NewProvider(ctx, name, nil, pulumi.URN_(urn))
+	r := &Provider{}
+	err := ctx.RegisterResource(typ, name, nil, r, pulumi.URN_(urn))
+	return r, err
 }
 
 func init() {

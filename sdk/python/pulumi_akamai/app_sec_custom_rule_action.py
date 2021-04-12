@@ -5,13 +5,102 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 
-__all__ = ['AppSecCustomRuleAction']
+__all__ = ['AppSecCustomRuleActionArgs', 'AppSecCustomRuleAction']
+
+@pulumi.input_type
+class AppSecCustomRuleActionArgs:
+    def __init__(__self__, *,
+                 config_id: pulumi.Input[int],
+                 custom_rule_action: pulumi.Input[str],
+                 custom_rule_id: pulumi.Input[int],
+                 policy_id: pulumi.Input[str],
+                 version: pulumi.Input[int]):
+        """
+        The set of arguments for constructing a AppSecCustomRuleAction resource.
+        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
+        :param pulumi.Input[str] custom_rule_action: The action to be taken when the custom rule is invoked. Must be one of the following:
+               * alert
+               * deny
+               * none
+        :param pulumi.Input[int] custom_rule_id: The ID of the custom rule.
+        :param pulumi.Input[str] policy_id: The
+        :param pulumi.Input[int] version: The version number of the security configuration to use.
+        """
+        pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "custom_rule_action", custom_rule_action)
+        pulumi.set(__self__, "custom_rule_id", custom_rule_id)
+        pulumi.set(__self__, "policy_id", policy_id)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> pulumi.Input[int]:
+        """
+        The ID of the security configuration to use.
+        """
+        return pulumi.get(self, "config_id")
+
+    @config_id.setter
+    def config_id(self, value: pulumi.Input[int]):
+        pulumi.set(self, "config_id", value)
+
+    @property
+    @pulumi.getter(name="customRuleAction")
+    def custom_rule_action(self) -> pulumi.Input[str]:
+        """
+        The action to be taken when the custom rule is invoked. Must be one of the following:
+        * alert
+        * deny
+        * none
+        """
+        return pulumi.get(self, "custom_rule_action")
+
+    @custom_rule_action.setter
+    def custom_rule_action(self, value: pulumi.Input[str]):
+        pulumi.set(self, "custom_rule_action", value)
+
+    @property
+    @pulumi.getter(name="customRuleId")
+    def custom_rule_id(self) -> pulumi.Input[int]:
+        """
+        The ID of the custom rule.
+        """
+        return pulumi.get(self, "custom_rule_id")
+
+    @custom_rule_id.setter
+    def custom_rule_id(self, value: pulumi.Input[int]):
+        pulumi.set(self, "custom_rule_id", value)
+
+    @property
+    @pulumi.getter(name="policyId")
+    def policy_id(self) -> pulumi.Input[str]:
+        """
+        The
+        """
+        return pulumi.get(self, "policy_id")
+
+    @policy_id.setter
+    def policy_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "policy_id", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> pulumi.Input[int]:
+        """
+        The version number of the security configuration to use.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: pulumi.Input[int]):
+        pulumi.set(self, "version", value)
 
 
 class AppSecCustomRuleAction(pulumi.CustomResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -55,6 +144,56 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
         :param pulumi.Input[str] policy_id: The
         :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: AppSecCustomRuleActionArgs,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        The `AppSecCustomRuleAction` resource allows you to associate an action to a custom rule.
+
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
+        create_custom_rule_action = akamai.AppSecCustomRuleAction("createCustomRuleAction",
+            config_id=configuration.config_id,
+            version=configuration.latest_version,
+            policy_id="crAP_75829",
+            custom_rule_id=12345,
+            custom_rule_action="alert")
+        pulumi.export("customRuleId", create_custom_rule_action.custom_rule_id)
+        ```
+
+        :param str resource_name: The name of the resource.
+        :param AppSecCustomRuleActionArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(AppSecCustomRuleActionArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 config_id: Optional[pulumi.Input[int]] = None,
+                 custom_rule_action: Optional[pulumi.Input[str]] = None,
+                 custom_rule_id: Optional[pulumi.Input[int]] = None,
+                 policy_id: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[int]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__

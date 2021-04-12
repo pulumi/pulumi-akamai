@@ -5,10 +5,197 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities, _tables
 
-__all__ = ['GtmDomain']
+__all__ = ['GtmDomainArgs', 'GtmDomain']
+
+@pulumi.input_type
+class GtmDomainArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 cname_coalescing_enabled: Optional[pulumi.Input[bool]] = None,
+                 comment: Optional[pulumi.Input[str]] = None,
+                 contract: Optional[pulumi.Input[str]] = None,
+                 default_error_penalty: Optional[pulumi.Input[int]] = None,
+                 default_ssl_client_certificate: Optional[pulumi.Input[str]] = None,
+                 default_ssl_client_private_key: Optional[pulumi.Input[str]] = None,
+                 default_timeout_penalty: Optional[pulumi.Input[int]] = None,
+                 email_notification_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 end_user_mapping_enabled: Optional[pulumi.Input[bool]] = None,
+                 group: Optional[pulumi.Input[str]] = None,
+                 load_feedback: Optional[pulumi.Input[bool]] = None,
+                 load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 wait_on_complete: Optional[pulumi.Input[bool]] = None):
+        """
+        The set of arguments for constructing a GtmDomain resource.
+        """
+        pulumi.set(__self__, "type", type)
+        if cname_coalescing_enabled is not None:
+            pulumi.set(__self__, "cname_coalescing_enabled", cname_coalescing_enabled)
+        if comment is not None:
+            pulumi.set(__self__, "comment", comment)
+        if contract is not None:
+            pulumi.set(__self__, "contract", contract)
+        if default_error_penalty is not None:
+            pulumi.set(__self__, "default_error_penalty", default_error_penalty)
+        if default_ssl_client_certificate is not None:
+            pulumi.set(__self__, "default_ssl_client_certificate", default_ssl_client_certificate)
+        if default_ssl_client_private_key is not None:
+            pulumi.set(__self__, "default_ssl_client_private_key", default_ssl_client_private_key)
+        if default_timeout_penalty is not None:
+            pulumi.set(__self__, "default_timeout_penalty", default_timeout_penalty)
+        if email_notification_lists is not None:
+            pulumi.set(__self__, "email_notification_lists", email_notification_lists)
+        if end_user_mapping_enabled is not None:
+            pulumi.set(__self__, "end_user_mapping_enabled", end_user_mapping_enabled)
+        if group is not None:
+            pulumi.set(__self__, "group", group)
+        if load_feedback is not None:
+            pulumi.set(__self__, "load_feedback", load_feedback)
+        if load_imbalance_percentage is not None:
+            pulumi.set(__self__, "load_imbalance_percentage", load_imbalance_percentage)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if wait_on_complete is not None:
+            pulumi.set(__self__, "wait_on_complete", wait_on_complete)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="cnameCoalescingEnabled")
+    def cname_coalescing_enabled(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "cname_coalescing_enabled")
+
+    @cname_coalescing_enabled.setter
+    def cname_coalescing_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "cname_coalescing_enabled", value)
+
+    @property
+    @pulumi.getter
+    def comment(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "comment")
+
+    @comment.setter
+    def comment(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "comment", value)
+
+    @property
+    @pulumi.getter
+    def contract(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "contract")
+
+    @contract.setter
+    def contract(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "contract", value)
+
+    @property
+    @pulumi.getter(name="defaultErrorPenalty")
+    def default_error_penalty(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "default_error_penalty")
+
+    @default_error_penalty.setter
+    def default_error_penalty(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "default_error_penalty", value)
+
+    @property
+    @pulumi.getter(name="defaultSslClientCertificate")
+    def default_ssl_client_certificate(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "default_ssl_client_certificate")
+
+    @default_ssl_client_certificate.setter
+    def default_ssl_client_certificate(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "default_ssl_client_certificate", value)
+
+    @property
+    @pulumi.getter(name="defaultSslClientPrivateKey")
+    def default_ssl_client_private_key(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "default_ssl_client_private_key")
+
+    @default_ssl_client_private_key.setter
+    def default_ssl_client_private_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "default_ssl_client_private_key", value)
+
+    @property
+    @pulumi.getter(name="defaultTimeoutPenalty")
+    def default_timeout_penalty(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "default_timeout_penalty")
+
+    @default_timeout_penalty.setter
+    def default_timeout_penalty(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "default_timeout_penalty", value)
+
+    @property
+    @pulumi.getter(name="emailNotificationLists")
+    def email_notification_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "email_notification_lists")
+
+    @email_notification_lists.setter
+    def email_notification_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "email_notification_lists", value)
+
+    @property
+    @pulumi.getter(name="endUserMappingEnabled")
+    def end_user_mapping_enabled(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "end_user_mapping_enabled")
+
+    @end_user_mapping_enabled.setter
+    def end_user_mapping_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "end_user_mapping_enabled", value)
+
+    @property
+    @pulumi.getter
+    def group(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "group")
+
+    @group.setter
+    def group(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "group", value)
+
+    @property
+    @pulumi.getter(name="loadFeedback")
+    def load_feedback(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "load_feedback")
+
+    @load_feedback.setter
+    def load_feedback(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "load_feedback", value)
+
+    @property
+    @pulumi.getter(name="loadImbalancePercentage")
+    def load_imbalance_percentage(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "load_imbalance_percentage")
+
+    @load_imbalance_percentage.setter
+    def load_imbalance_percentage(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "load_imbalance_percentage", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="waitOnComplete")
+    def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "wait_on_complete")
+
+    @wait_on_complete.setter
+    def wait_on_complete(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "wait_on_complete", value)
+
 
 warnings.warn("""akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain""", DeprecationWarning)
 
@@ -16,6 +203,7 @@ warnings.warn("""akamai.trafficmanagement.GtmDomain has been deprecated in favor
 class GtmDomain(pulumi.CustomResource):
     warnings.warn("""akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain""", DeprecationWarning)
 
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -42,6 +230,47 @@ class GtmDomain(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: GtmDomainArgs,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        Create a GtmDomain resource with the given unique name, props, and options.
+        :param str resource_name: The name of the resource.
+        :param GtmDomainArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(GtmDomainArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 cname_coalescing_enabled: Optional[pulumi.Input[bool]] = None,
+                 comment: Optional[pulumi.Input[str]] = None,
+                 contract: Optional[pulumi.Input[str]] = None,
+                 default_error_penalty: Optional[pulumi.Input[int]] = None,
+                 default_ssl_client_certificate: Optional[pulumi.Input[str]] = None,
+                 default_ssl_client_private_key: Optional[pulumi.Input[str]] = None,
+                 default_timeout_penalty: Optional[pulumi.Input[int]] = None,
+                 email_notification_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 end_user_mapping_enabled: Optional[pulumi.Input[bool]] = None,
+                 group: Optional[pulumi.Input[str]] = None,
+                 load_feedback: Optional[pulumi.Input[bool]] = None,
+                 load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None,
+                 wait_on_complete: Optional[pulumi.Input[bool]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         pulumi.log.warn("""GtmDomain is deprecated: akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain""")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)

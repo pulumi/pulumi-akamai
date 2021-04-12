@@ -5,13 +5,51 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 
-__all__ = ['AppSecCustomRule']
+__all__ = ['AppSecCustomRuleArgs', 'AppSecCustomRule']
+
+@pulumi.input_type
+class AppSecCustomRuleArgs:
+    def __init__(__self__, *,
+                 config_id: pulumi.Input[int],
+                 rules: pulumi.Input[str]):
+        """
+        The set of arguments for constructing a AppSecCustomRule resource.
+        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
+        :param pulumi.Input[str] rules: The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
+        """
+        pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> pulumi.Input[int]:
+        """
+        The ID of the security configuration to use.
+        """
+        return pulumi.get(self, "config_id")
+
+    @config_id.setter
+    def config_id(self, value: pulumi.Input[int]):
+        pulumi.set(self, "config_id", value)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> pulumi.Input[str]:
+        """
+        The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
+        """
+        return pulumi.get(self, "rules")
+
+    @rules.setter
+    def rules(self, value: pulumi.Input[str]):
+        pulumi.set(self, "rules", value)
 
 
 class AppSecCustomRule(pulumi.CustomResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -28,6 +66,35 @@ class AppSecCustomRule(pulumi.CustomResource):
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] rules: The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: AppSecCustomRuleArgs,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        The `AppSecCustomRule` resource allows you to create or modify a custom rule associated with a given security configuration.
+
+        :param str resource_name: The name of the resource.
+        :param AppSecCustomRuleArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(AppSecCustomRuleArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 config_id: Optional[pulumi.Input[int]] = None,
+                 rules: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__

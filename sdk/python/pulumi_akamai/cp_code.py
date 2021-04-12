@@ -5,13 +5,98 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 
-__all__ = ['CpCode']
+__all__ = ['CpCodeArgs', 'CpCode']
+
+@pulumi.input_type
+class CpCodeArgs:
+    def __init__(__self__, *,
+                 product: pulumi.Input[str],
+                 contract: Optional[pulumi.Input[str]] = None,
+                 contract_id: Optional[pulumi.Input[str]] = None,
+                 group: Optional[pulumi.Input[str]] = None,
+                 group_id: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None):
+        """
+        The set of arguments for constructing a CpCode resource.
+        """
+        pulumi.set(__self__, "product", product)
+        if contract is not None:
+            warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
+            pulumi.log.warn("""contract is deprecated: use \"contract_id\" attribute instead""")
+        if contract is not None:
+            pulumi.set(__self__, "contract", contract)
+        if contract_id is not None:
+            pulumi.set(__self__, "contract_id", contract_id)
+        if group is not None:
+            warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
+            pulumi.log.warn("""group is deprecated: use \"group_id\" attribute instead""")
+        if group is not None:
+            pulumi.set(__self__, "group", group)
+        if group_id is not None:
+            pulumi.set(__self__, "group_id", group_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def product(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "product")
+
+    @product.setter
+    def product(self, value: pulumi.Input[str]):
+        pulumi.set(self, "product", value)
+
+    @property
+    @pulumi.getter
+    def contract(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "contract")
+
+    @contract.setter
+    def contract(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "contract", value)
+
+    @property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "contract_id")
+
+    @contract_id.setter
+    def contract_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "contract_id", value)
+
+    @property
+    @pulumi.getter
+    def group(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "group")
+
+    @group.setter
+    def group(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "group", value)
+
+    @property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "group_id")
+
+    @group_id.setter
+    def group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "group_id", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
 
 class CpCode(pulumi.CustomResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -29,6 +114,38 @@ class CpCode(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: CpCodeArgs,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        Create a CpCode resource with the given unique name, props, and options.
+        :param str resource_name: The name of the resource.
+        :param CpCodeArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(CpCodeArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 contract: Optional[pulumi.Input[str]] = None,
+                 contract_id: Optional[pulumi.Input[str]] = None,
+                 group: Optional[pulumi.Input[str]] = None,
+                 group_id: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 product: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__

@@ -5,10 +5,91 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities, _tables
 
-__all__ = ['PropertyActivation']
+__all__ = ['PropertyActivationArgs', 'PropertyActivation']
+
+@pulumi.input_type
+class PropertyActivationArgs:
+    def __init__(__self__, *,
+                 contacts: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 version: pulumi.Input[int],
+                 activation_id: Optional[pulumi.Input[str]] = None,
+                 network: Optional[pulumi.Input[str]] = None,
+                 property: Optional[pulumi.Input[str]] = None,
+                 property_id: Optional[pulumi.Input[str]] = None):
+        """
+        The set of arguments for constructing a PropertyActivation resource.
+        """
+        pulumi.set(__self__, "contacts", contacts)
+        pulumi.set(__self__, "version", version)
+        if activation_id is not None:
+            pulumi.set(__self__, "activation_id", activation_id)
+        if network is not None:
+            pulumi.set(__self__, "network", network)
+        if property is not None:
+            warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
+        if property is not None:
+            pulumi.set(__self__, "property", property)
+        if property_id is not None:
+            pulumi.set(__self__, "property_id", property_id)
+
+    @property
+    @pulumi.getter
+    def contacts(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        return pulumi.get(self, "contacts")
+
+    @contacts.setter
+    def contacts(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "contacts", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: pulumi.Input[int]):
+        pulumi.set(self, "version", value)
+
+    @property
+    @pulumi.getter(name="activationId")
+    def activation_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "activation_id")
+
+    @activation_id.setter
+    def activation_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "activation_id", value)
+
+    @property
+    @pulumi.getter
+    def network(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "network")
+
+    @network.setter
+    def network(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "network", value)
+
+    @property
+    @pulumi.getter(name="propertyId")
+    def property_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "property_id")
+
+    @property_id.setter
+    def property_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "property_id", value)
+
+    @property
+    @pulumi.getter
+    def property(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "property")
+
+    @property.setter
+    def property(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "property", value)
+
 
 warnings.warn("""akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation""", DeprecationWarning)
 
@@ -16,6 +97,7 @@ warnings.warn("""akamai.properties.PropertyActivation has been deprecated in fav
 class PropertyActivation(pulumi.CustomResource):
     warnings.warn("""akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation""", DeprecationWarning)
 
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -33,6 +115,38 @@ class PropertyActivation(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: PropertyActivationArgs,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        Create a PropertyActivation resource with the given unique name, props, and options.
+        :param str resource_name: The name of the resource.
+        :param PropertyActivationArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(PropertyActivationArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 activation_id: Optional[pulumi.Input[str]] = None,
+                 contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 network: Optional[pulumi.Input[str]] = None,
+                 property: Optional[pulumi.Input[str]] = None,
+                 property_id: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[int]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         pulumi.log.warn("""PropertyActivation is deprecated: akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation""")
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)

@@ -11,6 +11,6 @@ replace (
 
 require (
 	github.com/akamai/terraform-provider-akamai/v2 v2.0.0-20201210190102-1d221ddd12c3
-	github.com/pulumi/pulumi-terraform-bridge/v2 v2.22.1
-	github.com/pulumi/pulumi/sdk/v2 v2.22.1-0.20210310211618-1f16423ede4c
+	github.com/pulumi/pulumi-terraform-bridge/v2 v2.23.0
+	github.com/pulumi/pulumi/sdk/v2 v2.24.1
 )

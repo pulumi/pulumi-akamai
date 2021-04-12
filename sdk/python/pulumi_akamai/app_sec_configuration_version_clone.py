@@ -5,13 +5,55 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 
-__all__ = ['AppSecConfigurationVersionClone']
+__all__ = ['AppSecConfigurationVersionCloneArgs', 'AppSecConfigurationVersionClone']
+
+@pulumi.input_type
+class AppSecConfigurationVersionCloneArgs:
+    def __init__(__self__, *,
+                 config_id: pulumi.Input[int],
+                 create_from_version: pulumi.Input[int],
+                 rule_update: Optional[pulumi.Input[bool]] = None):
+        """
+        The set of arguments for constructing a AppSecConfigurationVersionClone resource.
+        """
+        pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "create_from_version", create_from_version)
+        if rule_update is not None:
+            pulumi.set(__self__, "rule_update", rule_update)
+
+    @property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "config_id")
+
+    @config_id.setter
+    def config_id(self, value: pulumi.Input[int]):
+        pulumi.set(self, "config_id", value)
+
+    @property
+    @pulumi.getter(name="createFromVersion")
+    def create_from_version(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "create_from_version")
+
+    @create_from_version.setter
+    def create_from_version(self, value: pulumi.Input[int]):
+        pulumi.set(self, "create_from_version", value)
+
+    @property
+    @pulumi.getter(name="ruleUpdate")
+    def rule_update(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "rule_update")
+
+    @rule_update.setter
+    def rule_update(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "rule_update", value)
 
 
 class AppSecConfigurationVersionClone(pulumi.CustomResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -26,6 +68,35 @@ class AppSecConfigurationVersionClone(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: AppSecConfigurationVersionCloneArgs,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        Create a AppSecConfigurationVersionClone resource with the given unique name, props, and options.
+        :param str resource_name: The name of the resource.
+        :param AppSecConfigurationVersionCloneArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(AppSecConfigurationVersionCloneArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 config_id: Optional[pulumi.Input[int]] = None,
+                 create_from_version: Optional[pulumi.Input[int]] = None,
+                 rule_update: Optional[pulumi.Input[bool]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__

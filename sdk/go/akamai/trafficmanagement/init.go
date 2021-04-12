@@ -22,23 +22,24 @@ func (m *module) Version() semver.Version {
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
 	case "akamai:trafficmanagement/gtmASmap:GtmASmap":
-		r, err = NewGtmASmap(ctx, name, nil, pulumi.URN_(urn))
+		r = &GtmASmap{}
 	case "akamai:trafficmanagement/gtmCidrmap:GtmCidrmap":
-		r, err = NewGtmCidrmap(ctx, name, nil, pulumi.URN_(urn))
+		r = &GtmCidrmap{}
 	case "akamai:trafficmanagement/gtmDatacenter:GtmDatacenter":
-		r, err = NewGtmDatacenter(ctx, name, nil, pulumi.URN_(urn))
+		r = &GtmDatacenter{}
 	case "akamai:trafficmanagement/gtmDomain:GtmDomain":
-		r, err = NewGtmDomain(ctx, name, nil, pulumi.URN_(urn))
+		r = &GtmDomain{}
 	case "akamai:trafficmanagement/gtmGeomap:GtmGeomap":
-		r, err = NewGtmGeomap(ctx, name, nil, pulumi.URN_(urn))
+		r = &GtmGeomap{}
 	case "akamai:trafficmanagement/gtmProperty:GtmProperty":
-		r, err = NewGtmProperty(ctx, name, nil, pulumi.URN_(urn))
+		r = &GtmProperty{}
 	case "akamai:trafficmanagement/gtmResource:GtmResource":
-		r, err = NewGtmResource(ctx, name, nil, pulumi.URN_(urn))
+		r = &GtmResource{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
 
+	err = ctx.RegisterResource(typ, name, nil, r, pulumi.URN_(urn))
 	return
 }
 
