@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 from . import outputs
 from ._inputs import *
 
@@ -73,6 +73,98 @@ class GtmAsmapArgs:
     @assignments.setter
     def assignments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmAsmapAssignmentArgs']]]]):
         pulumi.set(self, "assignments", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Resource name
+        * `default_datacenter`
+        * `datacenter_id`
+        * `nickname`
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="waitOnComplete")
+    def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Wait for transaction to complete
+        """
+        return pulumi.get(self, "wait_on_complete")
+
+    @wait_on_complete.setter
+    def wait_on_complete(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "wait_on_complete", value)
+
+
+@pulumi.input_type
+class _GtmAsmapState:
+    def __init__(__self__, *,
+                 assignments: Optional[pulumi.Input[Sequence[pulumi.Input['GtmAsmapAssignmentArgs']]]] = None,
+                 default_datacenter: Optional[pulumi.Input['GtmAsmapDefaultDatacenterArgs']] = None,
+                 domain: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 wait_on_complete: Optional[pulumi.Input[bool]] = None):
+        """
+        Input properties used for looking up and filtering GtmAsmap resources.
+        :param pulumi.Input[Sequence[pulumi.Input['GtmAsmapAssignmentArgs']]] assignments: * `datacenter_id`
+               * `nickname`
+        :param pulumi.Input[str] domain: Domain name
+        :param pulumi.Input[str] name: Resource name
+               * `default_datacenter`
+               * `datacenter_id`
+               * `nickname`
+        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
+        """
+        if assignments is not None:
+            pulumi.set(__self__, "assignments", assignments)
+        if default_datacenter is not None:
+            pulumi.set(__self__, "default_datacenter", default_datacenter)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if wait_on_complete is not None:
+            pulumi.set(__self__, "wait_on_complete", wait_on_complete)
+
+    @property
+    @pulumi.getter
+    def assignments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmAsmapAssignmentArgs']]]]:
+        """
+        * `datacenter_id`
+        * `nickname`
+        """
+        return pulumi.get(self, "assignments")
+
+    @assignments.setter
+    def assignments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmAsmapAssignmentArgs']]]]):
+        pulumi.set(self, "assignments", value)
+
+    @property
+    @pulumi.getter(name="defaultDatacenter")
+    def default_datacenter(self) -> Optional[pulumi.Input['GtmAsmapDefaultDatacenterArgs']]:
+        return pulumi.get(self, "default_datacenter")
+
+    @default_datacenter.setter
+    def default_datacenter(self, value: Optional[pulumi.Input['GtmAsmapDefaultDatacenterArgs']]):
+        pulumi.set(self, "default_datacenter", value)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        Domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain", value)
 
     @property
     @pulumi.getter
@@ -208,17 +300,17 @@ class GtmAsmap(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = GtmAsmapArgs.__new__(GtmAsmapArgs)
 
-            __props__['assignments'] = assignments
+            __props__.__dict__["assignments"] = assignments
             if default_datacenter is None and not opts.urn:
                 raise TypeError("Missing required property 'default_datacenter'")
-            __props__['default_datacenter'] = default_datacenter
+            __props__.__dict__["default_datacenter"] = default_datacenter
             if domain is None and not opts.urn:
                 raise TypeError("Missing required property 'domain'")
-            __props__['domain'] = domain
-            __props__['name'] = name
-            __props__['wait_on_complete'] = wait_on_complete
+            __props__.__dict__["domain"] = domain
+            __props__.__dict__["name"] = name
+            __props__.__dict__["wait_on_complete"] = wait_on_complete
         alias_opts = pulumi.ResourceOptions(aliases=[pulumi.Alias(type_="akamai:trafficmanagement/gtmASmap:GtmASmap")])
         opts = pulumi.ResourceOptions.merge(opts, alias_opts)
         super(GtmAsmap, __self__).__init__(
@@ -254,13 +346,13 @@ class GtmAsmap(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _GtmAsmapState.__new__(_GtmAsmapState)
 
-        __props__["assignments"] = assignments
-        __props__["default_datacenter"] = default_datacenter
-        __props__["domain"] = domain
-        __props__["name"] = name
-        __props__["wait_on_complete"] = wait_on_complete
+        __props__.__dict__["assignments"] = assignments
+        __props__.__dict__["default_datacenter"] = default_datacenter
+        __props__.__dict__["domain"] = domain
+        __props__.__dict__["name"] = name
+        __props__.__dict__["wait_on_complete"] = wait_on_complete
         return GtmAsmap(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -303,10 +395,4 @@ class GtmAsmap(pulumi.CustomResource):
         Wait for transaction to complete
         """
         return pulumi.get(self, "wait_on_complete")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

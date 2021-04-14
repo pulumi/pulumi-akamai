@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 
 __all__ = ['AppSecConfigurationVersionCloneArgs', 'AppSecConfigurationVersionClone']
 
@@ -50,6 +50,66 @@ class AppSecConfigurationVersionCloneArgs:
     @rule_update.setter
     def rule_update(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "rule_update", value)
+
+
+@pulumi.input_type
+class _AppSecConfigurationVersionCloneState:
+    def __init__(__self__, *,
+                 config_id: Optional[pulumi.Input[int]] = None,
+                 create_from_version: Optional[pulumi.Input[int]] = None,
+                 rule_update: Optional[pulumi.Input[bool]] = None,
+                 version: Optional[pulumi.Input[int]] = None):
+        """
+        Input properties used for looking up and filtering AppSecConfigurationVersionClone resources.
+        :param pulumi.Input[int] version: Version of cloned configuration
+        """
+        if config_id is not None:
+            pulumi.set(__self__, "config_id", config_id)
+        if create_from_version is not None:
+            pulumi.set(__self__, "create_from_version", create_from_version)
+        if rule_update is not None:
+            pulumi.set(__self__, "rule_update", rule_update)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "config_id")
+
+    @config_id.setter
+    def config_id(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "config_id", value)
+
+    @property
+    @pulumi.getter(name="createFromVersion")
+    def create_from_version(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "create_from_version")
+
+    @create_from_version.setter
+    def create_from_version(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "create_from_version", value)
+
+    @property
+    @pulumi.getter(name="ruleUpdate")
+    def rule_update(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "rule_update")
+
+    @rule_update.setter
+    def rule_update(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "rule_update", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[int]]:
+        """
+        Version of cloned configuration
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "version", value)
 
 
 class AppSecConfigurationVersionClone(pulumi.CustomResource):
@@ -112,16 +172,16 @@ class AppSecConfigurationVersionClone(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = AppSecConfigurationVersionCloneArgs.__new__(AppSecConfigurationVersionCloneArgs)
 
             if config_id is None and not opts.urn:
                 raise TypeError("Missing required property 'config_id'")
-            __props__['config_id'] = config_id
+            __props__.__dict__["config_id"] = config_id
             if create_from_version is None and not opts.urn:
                 raise TypeError("Missing required property 'create_from_version'")
-            __props__['create_from_version'] = create_from_version
-            __props__['rule_update'] = rule_update
-            __props__['version'] = None
+            __props__.__dict__["create_from_version"] = create_from_version
+            __props__.__dict__["rule_update"] = rule_update
+            __props__.__dict__["version"] = None
         super(AppSecConfigurationVersionClone, __self__).__init__(
             'akamai:index/appSecConfigurationVersionClone:AppSecConfigurationVersionClone',
             resource_name,
@@ -147,12 +207,12 @@ class AppSecConfigurationVersionClone(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _AppSecConfigurationVersionCloneState.__new__(_AppSecConfigurationVersionCloneState)
 
-        __props__["config_id"] = config_id
-        __props__["create_from_version"] = create_from_version
-        __props__["rule_update"] = rule_update
-        __props__["version"] = version
+        __props__.__dict__["config_id"] = config_id
+        __props__.__dict__["create_from_version"] = create_from_version
+        __props__.__dict__["rule_update"] = rule_update
+        __props__.__dict__["version"] = version
         return AppSecConfigurationVersionClone(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -177,10 +237,4 @@ class AppSecConfigurationVersionClone(pulumi.CustomResource):
         Version of cloned configuration
         """
         return pulumi.get(self, "version")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

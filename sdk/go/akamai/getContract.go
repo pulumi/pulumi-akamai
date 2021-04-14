@@ -4,7 +4,7 @@
 package akamai
 
 import (
-	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetContract(ctx *pulumi.Context, args *GetContractArgs, opts ...pulumi.InvokeOption) (*GetContractResult, error) {

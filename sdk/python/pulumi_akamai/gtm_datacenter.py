@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 from . import outputs
 from ._inputs import *
 
@@ -205,6 +205,296 @@ class GtmDatacenterArgs:
         pulumi.set(self, "wait_on_complete", value)
 
 
+@pulumi.input_type
+class _GtmDatacenterState:
+    def __init__(__self__, *,
+                 city: Optional[pulumi.Input[str]] = None,
+                 clone_of: Optional[pulumi.Input[int]] = None,
+                 cloud_server_host_header_override: Optional[pulumi.Input[bool]] = None,
+                 cloud_server_targeting: Optional[pulumi.Input[bool]] = None,
+                 continent: Optional[pulumi.Input[str]] = None,
+                 country: Optional[pulumi.Input[str]] = None,
+                 datacenter_id: Optional[pulumi.Input[int]] = None,
+                 default_load_object: Optional[pulumi.Input['GtmDatacenterDefaultLoadObjectArgs']] = None,
+                 domain: Optional[pulumi.Input[str]] = None,
+                 latitude: Optional[pulumi.Input[float]] = None,
+                 longitude: Optional[pulumi.Input[float]] = None,
+                 nickname: Optional[pulumi.Input[str]] = None,
+                 ping_interval: Optional[pulumi.Input[int]] = None,
+                 ping_packet_size: Optional[pulumi.Input[int]] = None,
+                 score_penalty: Optional[pulumi.Input[int]] = None,
+                 servermonitor_liveness_count: Optional[pulumi.Input[int]] = None,
+                 servermonitor_load_count: Optional[pulumi.Input[int]] = None,
+                 servermonitor_pool: Optional[pulumi.Input[str]] = None,
+                 state_or_province: Optional[pulumi.Input[str]] = None,
+                 virtual: Optional[pulumi.Input[bool]] = None,
+                 wait_on_complete: Optional[pulumi.Input[bool]] = None):
+        """
+        Input properties used for looking up and filtering GtmDatacenter resources.
+        :param pulumi.Input[bool] cloud_server_host_header_override: * `continent`
+               * `country`
+               * `latitude`
+               * `longitude`
+               * `state_or_province`
+        :param pulumi.Input[str] domain: Domain name
+        :param pulumi.Input[str] nickname: datacenter nickname
+               * `default_load_object`
+               * `load_object`
+               * `load_object_port`
+        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
+        """
+        if city is not None:
+            pulumi.set(__self__, "city", city)
+        if clone_of is not None:
+            pulumi.set(__self__, "clone_of", clone_of)
+        if cloud_server_host_header_override is not None:
+            pulumi.set(__self__, "cloud_server_host_header_override", cloud_server_host_header_override)
+        if cloud_server_targeting is not None:
+            pulumi.set(__self__, "cloud_server_targeting", cloud_server_targeting)
+        if continent is not None:
+            pulumi.set(__self__, "continent", continent)
+        if country is not None:
+            pulumi.set(__self__, "country", country)
+        if datacenter_id is not None:
+            pulumi.set(__self__, "datacenter_id", datacenter_id)
+        if default_load_object is not None:
+            pulumi.set(__self__, "default_load_object", default_load_object)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if latitude is not None:
+            pulumi.set(__self__, "latitude", latitude)
+        if longitude is not None:
+            pulumi.set(__self__, "longitude", longitude)
+        if nickname is not None:
+            pulumi.set(__self__, "nickname", nickname)
+        if ping_interval is not None:
+            pulumi.set(__self__, "ping_interval", ping_interval)
+        if ping_packet_size is not None:
+            pulumi.set(__self__, "ping_packet_size", ping_packet_size)
+        if score_penalty is not None:
+            pulumi.set(__self__, "score_penalty", score_penalty)
+        if servermonitor_liveness_count is not None:
+            pulumi.set(__self__, "servermonitor_liveness_count", servermonitor_liveness_count)
+        if servermonitor_load_count is not None:
+            pulumi.set(__self__, "servermonitor_load_count", servermonitor_load_count)
+        if servermonitor_pool is not None:
+            pulumi.set(__self__, "servermonitor_pool", servermonitor_pool)
+        if state_or_province is not None:
+            pulumi.set(__self__, "state_or_province", state_or_province)
+        if virtual is not None:
+            pulumi.set(__self__, "virtual", virtual)
+        if wait_on_complete is not None:
+            pulumi.set(__self__, "wait_on_complete", wait_on_complete)
+
+    @property
+    @pulumi.getter
+    def city(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "city")
+
+    @city.setter
+    def city(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "city", value)
+
+    @property
+    @pulumi.getter(name="cloneOf")
+    def clone_of(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "clone_of")
+
+    @clone_of.setter
+    def clone_of(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "clone_of", value)
+
+    @property
+    @pulumi.getter(name="cloudServerHostHeaderOverride")
+    def cloud_server_host_header_override(self) -> Optional[pulumi.Input[bool]]:
+        """
+        * `continent`
+        * `country`
+        * `latitude`
+        * `longitude`
+        * `state_or_province`
+        """
+        return pulumi.get(self, "cloud_server_host_header_override")
+
+    @cloud_server_host_header_override.setter
+    def cloud_server_host_header_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "cloud_server_host_header_override", value)
+
+    @property
+    @pulumi.getter(name="cloudServerTargeting")
+    def cloud_server_targeting(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "cloud_server_targeting")
+
+    @cloud_server_targeting.setter
+    def cloud_server_targeting(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "cloud_server_targeting", value)
+
+    @property
+    @pulumi.getter
+    def continent(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "continent")
+
+    @continent.setter
+    def continent(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "continent", value)
+
+    @property
+    @pulumi.getter
+    def country(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "country")
+
+    @country.setter
+    def country(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "country", value)
+
+    @property
+    @pulumi.getter(name="datacenterId")
+    def datacenter_id(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "datacenter_id")
+
+    @datacenter_id.setter
+    def datacenter_id(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "datacenter_id", value)
+
+    @property
+    @pulumi.getter(name="defaultLoadObject")
+    def default_load_object(self) -> Optional[pulumi.Input['GtmDatacenterDefaultLoadObjectArgs']]:
+        return pulumi.get(self, "default_load_object")
+
+    @default_load_object.setter
+    def default_load_object(self, value: Optional[pulumi.Input['GtmDatacenterDefaultLoadObjectArgs']]):
+        pulumi.set(self, "default_load_object", value)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        Domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain", value)
+
+    @property
+    @pulumi.getter
+    def latitude(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "latitude")
+
+    @latitude.setter
+    def latitude(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "latitude", value)
+
+    @property
+    @pulumi.getter
+    def longitude(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "longitude")
+
+    @longitude.setter
+    def longitude(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "longitude", value)
+
+    @property
+    @pulumi.getter
+    def nickname(self) -> Optional[pulumi.Input[str]]:
+        """
+        datacenter nickname
+        * `default_load_object`
+        * `load_object`
+        * `load_object_port`
+        """
+        return pulumi.get(self, "nickname")
+
+    @nickname.setter
+    def nickname(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "nickname", value)
+
+    @property
+    @pulumi.getter(name="pingInterval")
+    def ping_interval(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "ping_interval")
+
+    @ping_interval.setter
+    def ping_interval(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "ping_interval", value)
+
+    @property
+    @pulumi.getter(name="pingPacketSize")
+    def ping_packet_size(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "ping_packet_size")
+
+    @ping_packet_size.setter
+    def ping_packet_size(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "ping_packet_size", value)
+
+    @property
+    @pulumi.getter(name="scorePenalty")
+    def score_penalty(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "score_penalty")
+
+    @score_penalty.setter
+    def score_penalty(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "score_penalty", value)
+
+    @property
+    @pulumi.getter(name="servermonitorLivenessCount")
+    def servermonitor_liveness_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "servermonitor_liveness_count")
+
+    @servermonitor_liveness_count.setter
+    def servermonitor_liveness_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "servermonitor_liveness_count", value)
+
+    @property
+    @pulumi.getter(name="servermonitorLoadCount")
+    def servermonitor_load_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "servermonitor_load_count")
+
+    @servermonitor_load_count.setter
+    def servermonitor_load_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "servermonitor_load_count", value)
+
+    @property
+    @pulumi.getter(name="servermonitorPool")
+    def servermonitor_pool(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "servermonitor_pool")
+
+    @servermonitor_pool.setter
+    def servermonitor_pool(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "servermonitor_pool", value)
+
+    @property
+    @pulumi.getter(name="stateOrProvince")
+    def state_or_province(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "state_or_province")
+
+    @state_or_province.setter
+    def state_or_province(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state_or_province", value)
+
+    @property
+    @pulumi.getter
+    def virtual(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "virtual")
+
+    @virtual.setter
+    def virtual(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "virtual", value)
+
+    @property
+    @pulumi.getter(name="waitOnComplete")
+    def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Wait for transaction to complete
+        """
+        return pulumi.get(self, "wait_on_complete")
+
+    @wait_on_complete.setter
+    def wait_on_complete(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "wait_on_complete", value)
+
+
 class GtmDatacenter(pulumi.CustomResource):
     @overload
     def __init__(__self__,
@@ -324,31 +614,31 @@ class GtmDatacenter(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = GtmDatacenterArgs.__new__(GtmDatacenterArgs)
 
-            __props__['city'] = city
-            __props__['clone_of'] = clone_of
-            __props__['cloud_server_host_header_override'] = cloud_server_host_header_override
-            __props__['cloud_server_targeting'] = cloud_server_targeting
-            __props__['continent'] = continent
-            __props__['country'] = country
-            __props__['default_load_object'] = default_load_object
+            __props__.__dict__["city"] = city
+            __props__.__dict__["clone_of"] = clone_of
+            __props__.__dict__["cloud_server_host_header_override"] = cloud_server_host_header_override
+            __props__.__dict__["cloud_server_targeting"] = cloud_server_targeting
+            __props__.__dict__["continent"] = continent
+            __props__.__dict__["country"] = country
+            __props__.__dict__["default_load_object"] = default_load_object
             if domain is None and not opts.urn:
                 raise TypeError("Missing required property 'domain'")
-            __props__['domain'] = domain
-            __props__['latitude'] = latitude
-            __props__['longitude'] = longitude
-            __props__['nickname'] = nickname
-            __props__['state_or_province'] = state_or_province
-            __props__['wait_on_complete'] = wait_on_complete
-            __props__['datacenter_id'] = None
-            __props__['ping_interval'] = None
-            __props__['ping_packet_size'] = None
-            __props__['score_penalty'] = None
-            __props__['servermonitor_liveness_count'] = None
-            __props__['servermonitor_load_count'] = None
-            __props__['servermonitor_pool'] = None
-            __props__['virtual'] = None
+            __props__.__dict__["domain"] = domain
+            __props__.__dict__["latitude"] = latitude
+            __props__.__dict__["longitude"] = longitude
+            __props__.__dict__["nickname"] = nickname
+            __props__.__dict__["state_or_province"] = state_or_province
+            __props__.__dict__["wait_on_complete"] = wait_on_complete
+            __props__.__dict__["datacenter_id"] = None
+            __props__.__dict__["ping_interval"] = None
+            __props__.__dict__["ping_packet_size"] = None
+            __props__.__dict__["score_penalty"] = None
+            __props__.__dict__["servermonitor_liveness_count"] = None
+            __props__.__dict__["servermonitor_load_count"] = None
+            __props__.__dict__["servermonitor_pool"] = None
+            __props__.__dict__["virtual"] = None
         alias_opts = pulumi.ResourceOptions(aliases=[pulumi.Alias(type_="akamai:trafficmanagement/gtmDatacenter:GtmDatacenter")])
         opts = pulumi.ResourceOptions.merge(opts, alias_opts)
         super(GtmDatacenter, __self__).__init__(
@@ -403,29 +693,29 @@ class GtmDatacenter(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _GtmDatacenterState.__new__(_GtmDatacenterState)
 
-        __props__["city"] = city
-        __props__["clone_of"] = clone_of
-        __props__["cloud_server_host_header_override"] = cloud_server_host_header_override
-        __props__["cloud_server_targeting"] = cloud_server_targeting
-        __props__["continent"] = continent
-        __props__["country"] = country
-        __props__["datacenter_id"] = datacenter_id
-        __props__["default_load_object"] = default_load_object
-        __props__["domain"] = domain
-        __props__["latitude"] = latitude
-        __props__["longitude"] = longitude
-        __props__["nickname"] = nickname
-        __props__["ping_interval"] = ping_interval
-        __props__["ping_packet_size"] = ping_packet_size
-        __props__["score_penalty"] = score_penalty
-        __props__["servermonitor_liveness_count"] = servermonitor_liveness_count
-        __props__["servermonitor_load_count"] = servermonitor_load_count
-        __props__["servermonitor_pool"] = servermonitor_pool
-        __props__["state_or_province"] = state_or_province
-        __props__["virtual"] = virtual
-        __props__["wait_on_complete"] = wait_on_complete
+        __props__.__dict__["city"] = city
+        __props__.__dict__["clone_of"] = clone_of
+        __props__.__dict__["cloud_server_host_header_override"] = cloud_server_host_header_override
+        __props__.__dict__["cloud_server_targeting"] = cloud_server_targeting
+        __props__.__dict__["continent"] = continent
+        __props__.__dict__["country"] = country
+        __props__.__dict__["datacenter_id"] = datacenter_id
+        __props__.__dict__["default_load_object"] = default_load_object
+        __props__.__dict__["domain"] = domain
+        __props__.__dict__["latitude"] = latitude
+        __props__.__dict__["longitude"] = longitude
+        __props__.__dict__["nickname"] = nickname
+        __props__.__dict__["ping_interval"] = ping_interval
+        __props__.__dict__["ping_packet_size"] = ping_packet_size
+        __props__.__dict__["score_penalty"] = score_penalty
+        __props__.__dict__["servermonitor_liveness_count"] = servermonitor_liveness_count
+        __props__.__dict__["servermonitor_load_count"] = servermonitor_load_count
+        __props__.__dict__["servermonitor_pool"] = servermonitor_pool
+        __props__.__dict__["state_or_province"] = state_or_province
+        __props__.__dict__["virtual"] = virtual
+        __props__.__dict__["wait_on_complete"] = wait_on_complete
         return GtmDatacenter(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -551,10 +841,4 @@ class GtmDatacenter(pulumi.CustomResource):
         Wait for transaction to complete
         """
         return pulumi.get(self, "wait_on_complete")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from .. import _utilities, _tables
+from .. import _utilities
 from . import outputs
 
 __all__ = [
@@ -19,6 +19,27 @@ __all__ = [
 
 @pulumi.output_type
 class PropertyOrigin(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cacheKeyHostname":
+            suggest = "cache_key_hostname"
+        elif key == "enableTrueClientIp":
+            suggest = "enable_true_client_ip"
+        elif key == "forwardHostname":
+            suggest = "forward_hostname"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PropertyOrigin. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PropertyOrigin.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PropertyOrigin.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  cache_key_hostname: Optional[str] = None,
                  compress: Optional[bool] = None,
@@ -69,12 +90,30 @@ class PropertyOrigin(dict):
     def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
 
 @pulumi.output_type
 class PropertyRuleError(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "behaviorName":
+            suggest = "behavior_name"
+        elif key == "errorLocation":
+            suggest = "error_location"
+        elif key == "statusCode":
+            suggest = "status_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PropertyRuleError. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PropertyRuleError.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PropertyRuleError.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  behavior_name: Optional[str] = None,
                  detail: Optional[str] = None,
@@ -132,13 +171,31 @@ class PropertyRuleError(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
 class PropertyRuleWarning(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "behaviorName":
+            suggest = "behavior_name"
+        elif key == "errorLocation":
+            suggest = "error_location"
+        elif key == "statusCode":
+            suggest = "status_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PropertyRuleWarning. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PropertyRuleWarning.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PropertyRuleWarning.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  behavior_name: Optional[str] = None,
                  detail: Optional[str] = None,
@@ -196,9 +253,6 @@ class PropertyRuleWarning(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
@@ -212,9 +266,6 @@ class PropertyVariablesVariable(dict):
     @pulumi.getter
     def variables(self) -> Optional[Sequence['outputs.PropertyVariablesVariableVariable']]:
         return pulumi.get(self, "variables")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
@@ -257,8 +308,5 @@ class PropertyVariablesVariableVariable(dict):
     @pulumi.getter
     def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 

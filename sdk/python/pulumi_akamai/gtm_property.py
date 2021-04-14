@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 from . import outputs
 from ._inputs import *
 
@@ -474,6 +474,498 @@ class GtmPropertyArgs:
         pulumi.set(self, "wait_on_complete", value)
 
 
+@pulumi.input_type
+class _GtmPropertyState:
+    def __init__(__self__, *,
+                 backup_cname: Optional[pulumi.Input[str]] = None,
+                 backup_ip: Optional[pulumi.Input[str]] = None,
+                 balance_by_download_score: Optional[pulumi.Input[bool]] = None,
+                 cname: Optional[pulumi.Input[str]] = None,
+                 comments: Optional[pulumi.Input[str]] = None,
+                 domain: Optional[pulumi.Input[str]] = None,
+                 dynamic_ttl: Optional[pulumi.Input[int]] = None,
+                 failback_delay: Optional[pulumi.Input[int]] = None,
+                 failover_delay: Optional[pulumi.Input[int]] = None,
+                 ghost_demand_reporting: Optional[pulumi.Input[bool]] = None,
+                 handout_limit: Optional[pulumi.Input[int]] = None,
+                 handout_mode: Optional[pulumi.Input[str]] = None,
+                 health_max: Optional[pulumi.Input[float]] = None,
+                 health_multiplier: Optional[pulumi.Input[float]] = None,
+                 health_threshold: Optional[pulumi.Input[float]] = None,
+                 ipv6: Optional[pulumi.Input[bool]] = None,
+                 liveness_tests: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]] = None,
+                 load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
+                 map_name: Optional[pulumi.Input[str]] = None,
+                 max_unreachable_penalty: Optional[pulumi.Input[int]] = None,
+                 min_live_fraction: Optional[pulumi.Input[float]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 score_aggregation_type: Optional[pulumi.Input[str]] = None,
+                 static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]] = None,
+                 static_ttl: Optional[pulumi.Input[int]] = None,
+                 stickiness_bonus_constant: Optional[pulumi.Input[int]] = None,
+                 stickiness_bonus_percentage: Optional[pulumi.Input[int]] = None,
+                 traffic_targets: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]] = None,
+                 type: Optional[pulumi.Input[str]] = None,
+                 unreachable_threshold: Optional[pulumi.Input[float]] = None,
+                 use_computed_targets: Optional[pulumi.Input[bool]] = None,
+                 wait_on_complete: Optional[pulumi.Input[bool]] = None,
+                 weighted_hash_bits_for_ipv4: Optional[pulumi.Input[int]] = None,
+                 weighted_hash_bits_for_ipv6: Optional[pulumi.Input[int]] = None):
+        """
+        Input properties used for looking up and filtering GtmProperty resources.
+        :param pulumi.Input[bool] balance_by_download_score: * `static_ttl`
+               * `unreachable_threshold`
+               * `health_multiplier`
+               * `dynamic_ttl`
+               * `max_unreachable_penalty`
+               * `map_name`
+               * `load_imbalance_percentage`
+               * `health_max`
+               * `cname`
+               * `comments`
+               * `ghost_demand_reporting`
+               * `min_live_fraction`
+        :param pulumi.Input[str] domain: Domain name
+        :param pulumi.Input[bool] ipv6: * `stickiness_bonus_percentage`
+               * `stickiness_bonus_constant`
+               * `health_threshold`
+        :param pulumi.Input[str] name: Liveness test name
+               * `test_interval`
+               * `test_object_protocol`
+               * `test_timeout`
+        :param pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]] static_rr_sets: * `type`
+               * `ttl`
+        :param pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]] traffic_targets: * `datacenter_id`
+        :param pulumi.Input[str] type: Property type  
+               * `score_aggregation_type`
+        :param pulumi.Input[bool] use_computed_targets: * `backup_ip`
+        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
+               * `failover_delay`
+               * `failback_delay`
+        """
+        if backup_cname is not None:
+            pulumi.set(__self__, "backup_cname", backup_cname)
+        if backup_ip is not None:
+            pulumi.set(__self__, "backup_ip", backup_ip)
+        if balance_by_download_score is not None:
+            pulumi.set(__self__, "balance_by_download_score", balance_by_download_score)
+        if cname is not None:
+            pulumi.set(__self__, "cname", cname)
+        if comments is not None:
+            pulumi.set(__self__, "comments", comments)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if dynamic_ttl is not None:
+            pulumi.set(__self__, "dynamic_ttl", dynamic_ttl)
+        if failback_delay is not None:
+            pulumi.set(__self__, "failback_delay", failback_delay)
+        if failover_delay is not None:
+            pulumi.set(__self__, "failover_delay", failover_delay)
+        if ghost_demand_reporting is not None:
+            pulumi.set(__self__, "ghost_demand_reporting", ghost_demand_reporting)
+        if handout_limit is not None:
+            pulumi.set(__self__, "handout_limit", handout_limit)
+        if handout_mode is not None:
+            pulumi.set(__self__, "handout_mode", handout_mode)
+        if health_max is not None:
+            pulumi.set(__self__, "health_max", health_max)
+        if health_multiplier is not None:
+            pulumi.set(__self__, "health_multiplier", health_multiplier)
+        if health_threshold is not None:
+            pulumi.set(__self__, "health_threshold", health_threshold)
+        if ipv6 is not None:
+            pulumi.set(__self__, "ipv6", ipv6)
+        if liveness_tests is not None:
+            pulumi.set(__self__, "liveness_tests", liveness_tests)
+        if load_imbalance_percentage is not None:
+            pulumi.set(__self__, "load_imbalance_percentage", load_imbalance_percentage)
+        if map_name is not None:
+            pulumi.set(__self__, "map_name", map_name)
+        if max_unreachable_penalty is not None:
+            pulumi.set(__self__, "max_unreachable_penalty", max_unreachable_penalty)
+        if min_live_fraction is not None:
+            pulumi.set(__self__, "min_live_fraction", min_live_fraction)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if score_aggregation_type is not None:
+            pulumi.set(__self__, "score_aggregation_type", score_aggregation_type)
+        if static_rr_sets is not None:
+            pulumi.set(__self__, "static_rr_sets", static_rr_sets)
+        if static_ttl is not None:
+            pulumi.set(__self__, "static_ttl", static_ttl)
+        if stickiness_bonus_constant is not None:
+            pulumi.set(__self__, "stickiness_bonus_constant", stickiness_bonus_constant)
+        if stickiness_bonus_percentage is not None:
+            pulumi.set(__self__, "stickiness_bonus_percentage", stickiness_bonus_percentage)
+        if traffic_targets is not None:
+            pulumi.set(__self__, "traffic_targets", traffic_targets)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if unreachable_threshold is not None:
+            pulumi.set(__self__, "unreachable_threshold", unreachable_threshold)
+        if use_computed_targets is not None:
+            pulumi.set(__self__, "use_computed_targets", use_computed_targets)
+        if wait_on_complete is not None:
+            pulumi.set(__self__, "wait_on_complete", wait_on_complete)
+        if weighted_hash_bits_for_ipv4 is not None:
+            pulumi.set(__self__, "weighted_hash_bits_for_ipv4", weighted_hash_bits_for_ipv4)
+        if weighted_hash_bits_for_ipv6 is not None:
+            pulumi.set(__self__, "weighted_hash_bits_for_ipv6", weighted_hash_bits_for_ipv6)
+
+    @property
+    @pulumi.getter(name="backupCname")
+    def backup_cname(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "backup_cname")
+
+    @backup_cname.setter
+    def backup_cname(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "backup_cname", value)
+
+    @property
+    @pulumi.getter(name="backupIp")
+    def backup_ip(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "backup_ip")
+
+    @backup_ip.setter
+    def backup_ip(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "backup_ip", value)
+
+    @property
+    @pulumi.getter(name="balanceByDownloadScore")
+    def balance_by_download_score(self) -> Optional[pulumi.Input[bool]]:
+        """
+        * `static_ttl`
+        * `unreachable_threshold`
+        * `health_multiplier`
+        * `dynamic_ttl`
+        * `max_unreachable_penalty`
+        * `map_name`
+        * `load_imbalance_percentage`
+        * `health_max`
+        * `cname`
+        * `comments`
+        * `ghost_demand_reporting`
+        * `min_live_fraction`
+        """
+        return pulumi.get(self, "balance_by_download_score")
+
+    @balance_by_download_score.setter
+    def balance_by_download_score(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "balance_by_download_score", value)
+
+    @property
+    @pulumi.getter
+    def cname(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "cname")
+
+    @cname.setter
+    def cname(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cname", value)
+
+    @property
+    @pulumi.getter
+    def comments(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "comments")
+
+    @comments.setter
+    def comments(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "comments", value)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        Domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain", value)
+
+    @property
+    @pulumi.getter(name="dynamicTtl")
+    def dynamic_ttl(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "dynamic_ttl")
+
+    @dynamic_ttl.setter
+    def dynamic_ttl(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "dynamic_ttl", value)
+
+    @property
+    @pulumi.getter(name="failbackDelay")
+    def failback_delay(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "failback_delay")
+
+    @failback_delay.setter
+    def failback_delay(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "failback_delay", value)
+
+    @property
+    @pulumi.getter(name="failoverDelay")
+    def failover_delay(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "failover_delay")
+
+    @failover_delay.setter
+    def failover_delay(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "failover_delay", value)
+
+    @property
+    @pulumi.getter(name="ghostDemandReporting")
+    def ghost_demand_reporting(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "ghost_demand_reporting")
+
+    @ghost_demand_reporting.setter
+    def ghost_demand_reporting(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "ghost_demand_reporting", value)
+
+    @property
+    @pulumi.getter(name="handoutLimit")
+    def handout_limit(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "handout_limit")
+
+    @handout_limit.setter
+    def handout_limit(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "handout_limit", value)
+
+    @property
+    @pulumi.getter(name="handoutMode")
+    def handout_mode(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "handout_mode")
+
+    @handout_mode.setter
+    def handout_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "handout_mode", value)
+
+    @property
+    @pulumi.getter(name="healthMax")
+    def health_max(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "health_max")
+
+    @health_max.setter
+    def health_max(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "health_max", value)
+
+    @property
+    @pulumi.getter(name="healthMultiplier")
+    def health_multiplier(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "health_multiplier")
+
+    @health_multiplier.setter
+    def health_multiplier(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "health_multiplier", value)
+
+    @property
+    @pulumi.getter(name="healthThreshold")
+    def health_threshold(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "health_threshold")
+
+    @health_threshold.setter
+    def health_threshold(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "health_threshold", value)
+
+    @property
+    @pulumi.getter
+    def ipv6(self) -> Optional[pulumi.Input[bool]]:
+        """
+        * `stickiness_bonus_percentage`
+        * `stickiness_bonus_constant`
+        * `health_threshold`
+        """
+        return pulumi.get(self, "ipv6")
+
+    @ipv6.setter
+    def ipv6(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "ipv6", value)
+
+    @property
+    @pulumi.getter(name="livenessTests")
+    def liveness_tests(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]]:
+        return pulumi.get(self, "liveness_tests")
+
+    @liveness_tests.setter
+    def liveness_tests(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]]):
+        pulumi.set(self, "liveness_tests", value)
+
+    @property
+    @pulumi.getter(name="loadImbalancePercentage")
+    def load_imbalance_percentage(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "load_imbalance_percentage")
+
+    @load_imbalance_percentage.setter
+    def load_imbalance_percentage(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "load_imbalance_percentage", value)
+
+    @property
+    @pulumi.getter(name="mapName")
+    def map_name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "map_name")
+
+    @map_name.setter
+    def map_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "map_name", value)
+
+    @property
+    @pulumi.getter(name="maxUnreachablePenalty")
+    def max_unreachable_penalty(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "max_unreachable_penalty")
+
+    @max_unreachable_penalty.setter
+    def max_unreachable_penalty(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_unreachable_penalty", value)
+
+    @property
+    @pulumi.getter(name="minLiveFraction")
+    def min_live_fraction(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "min_live_fraction")
+
+    @min_live_fraction.setter
+    def min_live_fraction(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "min_live_fraction", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Liveness test name
+        * `test_interval`
+        * `test_object_protocol`
+        * `test_timeout`
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="scoreAggregationType")
+    def score_aggregation_type(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "score_aggregation_type")
+
+    @score_aggregation_type.setter
+    def score_aggregation_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "score_aggregation_type", value)
+
+    @property
+    @pulumi.getter(name="staticRrSets")
+    def static_rr_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]]:
+        """
+        * `type`
+        * `ttl`
+        """
+        return pulumi.get(self, "static_rr_sets")
+
+    @static_rr_sets.setter
+    def static_rr_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]]):
+        pulumi.set(self, "static_rr_sets", value)
+
+    @property
+    @pulumi.getter(name="staticTtl")
+    def static_ttl(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "static_ttl")
+
+    @static_ttl.setter
+    def static_ttl(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "static_ttl", value)
+
+    @property
+    @pulumi.getter(name="stickinessBonusConstant")
+    def stickiness_bonus_constant(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "stickiness_bonus_constant")
+
+    @stickiness_bonus_constant.setter
+    def stickiness_bonus_constant(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "stickiness_bonus_constant", value)
+
+    @property
+    @pulumi.getter(name="stickinessBonusPercentage")
+    def stickiness_bonus_percentage(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "stickiness_bonus_percentage")
+
+    @stickiness_bonus_percentage.setter
+    def stickiness_bonus_percentage(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "stickiness_bonus_percentage", value)
+
+    @property
+    @pulumi.getter(name="trafficTargets")
+    def traffic_targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]]:
+        """
+        * `datacenter_id`
+        """
+        return pulumi.get(self, "traffic_targets")
+
+    @traffic_targets.setter
+    def traffic_targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]]):
+        pulumi.set(self, "traffic_targets", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Property type  
+        * `score_aggregation_type`
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="unreachableThreshold")
+    def unreachable_threshold(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "unreachable_threshold")
+
+    @unreachable_threshold.setter
+    def unreachable_threshold(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "unreachable_threshold", value)
+
+    @property
+    @pulumi.getter(name="useComputedTargets")
+    def use_computed_targets(self) -> Optional[pulumi.Input[bool]]:
+        """
+        * `backup_ip`
+        """
+        return pulumi.get(self, "use_computed_targets")
+
+    @use_computed_targets.setter
+    def use_computed_targets(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "use_computed_targets", value)
+
+    @property
+    @pulumi.getter(name="waitOnComplete")
+    def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Wait for transaction to complete
+        * `failover_delay`
+        * `failback_delay`
+        """
+        return pulumi.get(self, "wait_on_complete")
+
+    @wait_on_complete.setter
+    def wait_on_complete(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "wait_on_complete", value)
+
+    @property
+    @pulumi.getter(name="weightedHashBitsForIpv4")
+    def weighted_hash_bits_for_ipv4(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "weighted_hash_bits_for_ipv4")
+
+    @weighted_hash_bits_for_ipv4.setter
+    def weighted_hash_bits_for_ipv4(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "weighted_hash_bits_for_ipv4", value)
+
+    @property
+    @pulumi.getter(name="weightedHashBitsForIpv6")
+    def weighted_hash_bits_for_ipv6(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "weighted_hash_bits_for_ipv6")
+
+    @weighted_hash_bits_for_ipv6.setter
+    def weighted_hash_bits_for_ipv6(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "weighted_hash_bits_for_ipv6", value)
+
+
 class GtmProperty(pulumi.CustomResource):
     @overload
     def __init__(__self__,
@@ -661,54 +1153,54 @@ class GtmProperty(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = GtmPropertyArgs.__new__(GtmPropertyArgs)
 
-            __props__['backup_cname'] = backup_cname
-            __props__['backup_ip'] = backup_ip
-            __props__['balance_by_download_score'] = balance_by_download_score
-            __props__['cname'] = cname
-            __props__['comments'] = comments
+            __props__.__dict__["backup_cname"] = backup_cname
+            __props__.__dict__["backup_ip"] = backup_ip
+            __props__.__dict__["balance_by_download_score"] = balance_by_download_score
+            __props__.__dict__["cname"] = cname
+            __props__.__dict__["comments"] = comments
             if domain is None and not opts.urn:
                 raise TypeError("Missing required property 'domain'")
-            __props__['domain'] = domain
-            __props__['dynamic_ttl'] = dynamic_ttl
-            __props__['failback_delay'] = failback_delay
-            __props__['failover_delay'] = failover_delay
-            __props__['ghost_demand_reporting'] = ghost_demand_reporting
+            __props__.__dict__["domain"] = domain
+            __props__.__dict__["dynamic_ttl"] = dynamic_ttl
+            __props__.__dict__["failback_delay"] = failback_delay
+            __props__.__dict__["failover_delay"] = failover_delay
+            __props__.__dict__["ghost_demand_reporting"] = ghost_demand_reporting
             if handout_limit is None and not opts.urn:
                 raise TypeError("Missing required property 'handout_limit'")
-            __props__['handout_limit'] = handout_limit
+            __props__.__dict__["handout_limit"] = handout_limit
             if handout_mode is None and not opts.urn:
                 raise TypeError("Missing required property 'handout_mode'")
-            __props__['handout_mode'] = handout_mode
-            __props__['health_max'] = health_max
-            __props__['health_multiplier'] = health_multiplier
-            __props__['health_threshold'] = health_threshold
-            __props__['ipv6'] = ipv6
-            __props__['liveness_tests'] = liveness_tests
-            __props__['load_imbalance_percentage'] = load_imbalance_percentage
-            __props__['map_name'] = map_name
-            __props__['max_unreachable_penalty'] = max_unreachable_penalty
-            __props__['min_live_fraction'] = min_live_fraction
-            __props__['name'] = name
+            __props__.__dict__["handout_mode"] = handout_mode
+            __props__.__dict__["health_max"] = health_max
+            __props__.__dict__["health_multiplier"] = health_multiplier
+            __props__.__dict__["health_threshold"] = health_threshold
+            __props__.__dict__["ipv6"] = ipv6
+            __props__.__dict__["liveness_tests"] = liveness_tests
+            __props__.__dict__["load_imbalance_percentage"] = load_imbalance_percentage
+            __props__.__dict__["map_name"] = map_name
+            __props__.__dict__["max_unreachable_penalty"] = max_unreachable_penalty
+            __props__.__dict__["min_live_fraction"] = min_live_fraction
+            __props__.__dict__["name"] = name
             if score_aggregation_type is None and not opts.urn:
                 raise TypeError("Missing required property 'score_aggregation_type'")
-            __props__['score_aggregation_type'] = score_aggregation_type
-            __props__['static_rr_sets'] = static_rr_sets
-            __props__['static_ttl'] = static_ttl
-            __props__['stickiness_bonus_constant'] = stickiness_bonus_constant
-            __props__['stickiness_bonus_percentage'] = stickiness_bonus_percentage
+            __props__.__dict__["score_aggregation_type"] = score_aggregation_type
+            __props__.__dict__["static_rr_sets"] = static_rr_sets
+            __props__.__dict__["static_ttl"] = static_ttl
+            __props__.__dict__["stickiness_bonus_constant"] = stickiness_bonus_constant
+            __props__.__dict__["stickiness_bonus_percentage"] = stickiness_bonus_percentage
             if traffic_targets is None and not opts.urn:
                 raise TypeError("Missing required property 'traffic_targets'")
-            __props__['traffic_targets'] = traffic_targets
+            __props__.__dict__["traffic_targets"] = traffic_targets
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
-            __props__['type'] = type
-            __props__['unreachable_threshold'] = unreachable_threshold
-            __props__['use_computed_targets'] = use_computed_targets
-            __props__['wait_on_complete'] = wait_on_complete
-            __props__['weighted_hash_bits_for_ipv4'] = None
-            __props__['weighted_hash_bits_for_ipv6'] = None
+            __props__.__dict__["type"] = type
+            __props__.__dict__["unreachable_threshold"] = unreachable_threshold
+            __props__.__dict__["use_computed_targets"] = use_computed_targets
+            __props__.__dict__["wait_on_complete"] = wait_on_complete
+            __props__.__dict__["weighted_hash_bits_for_ipv4"] = None
+            __props__.__dict__["weighted_hash_bits_for_ipv6"] = None
         alias_opts = pulumi.ResourceOptions(aliases=[pulumi.Alias(type_="akamai:trafficmanagement/gtmProperty:GtmProperty")])
         opts = pulumi.ResourceOptions.merge(opts, alias_opts)
         super(GtmProperty, __self__).__init__(
@@ -794,42 +1286,42 @@ class GtmProperty(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _GtmPropertyState.__new__(_GtmPropertyState)
 
-        __props__["backup_cname"] = backup_cname
-        __props__["backup_ip"] = backup_ip
-        __props__["balance_by_download_score"] = balance_by_download_score
-        __props__["cname"] = cname
-        __props__["comments"] = comments
-        __props__["domain"] = domain
-        __props__["dynamic_ttl"] = dynamic_ttl
-        __props__["failback_delay"] = failback_delay
-        __props__["failover_delay"] = failover_delay
-        __props__["ghost_demand_reporting"] = ghost_demand_reporting
-        __props__["handout_limit"] = handout_limit
-        __props__["handout_mode"] = handout_mode
-        __props__["health_max"] = health_max
-        __props__["health_multiplier"] = health_multiplier
-        __props__["health_threshold"] = health_threshold
-        __props__["ipv6"] = ipv6
-        __props__["liveness_tests"] = liveness_tests
-        __props__["load_imbalance_percentage"] = load_imbalance_percentage
-        __props__["map_name"] = map_name
-        __props__["max_unreachable_penalty"] = max_unreachable_penalty
-        __props__["min_live_fraction"] = min_live_fraction
-        __props__["name"] = name
-        __props__["score_aggregation_type"] = score_aggregation_type
-        __props__["static_rr_sets"] = static_rr_sets
-        __props__["static_ttl"] = static_ttl
-        __props__["stickiness_bonus_constant"] = stickiness_bonus_constant
-        __props__["stickiness_bonus_percentage"] = stickiness_bonus_percentage
-        __props__["traffic_targets"] = traffic_targets
-        __props__["type"] = type
-        __props__["unreachable_threshold"] = unreachable_threshold
-        __props__["use_computed_targets"] = use_computed_targets
-        __props__["wait_on_complete"] = wait_on_complete
-        __props__["weighted_hash_bits_for_ipv4"] = weighted_hash_bits_for_ipv4
-        __props__["weighted_hash_bits_for_ipv6"] = weighted_hash_bits_for_ipv6
+        __props__.__dict__["backup_cname"] = backup_cname
+        __props__.__dict__["backup_ip"] = backup_ip
+        __props__.__dict__["balance_by_download_score"] = balance_by_download_score
+        __props__.__dict__["cname"] = cname
+        __props__.__dict__["comments"] = comments
+        __props__.__dict__["domain"] = domain
+        __props__.__dict__["dynamic_ttl"] = dynamic_ttl
+        __props__.__dict__["failback_delay"] = failback_delay
+        __props__.__dict__["failover_delay"] = failover_delay
+        __props__.__dict__["ghost_demand_reporting"] = ghost_demand_reporting
+        __props__.__dict__["handout_limit"] = handout_limit
+        __props__.__dict__["handout_mode"] = handout_mode
+        __props__.__dict__["health_max"] = health_max
+        __props__.__dict__["health_multiplier"] = health_multiplier
+        __props__.__dict__["health_threshold"] = health_threshold
+        __props__.__dict__["ipv6"] = ipv6
+        __props__.__dict__["liveness_tests"] = liveness_tests
+        __props__.__dict__["load_imbalance_percentage"] = load_imbalance_percentage
+        __props__.__dict__["map_name"] = map_name
+        __props__.__dict__["max_unreachable_penalty"] = max_unreachable_penalty
+        __props__.__dict__["min_live_fraction"] = min_live_fraction
+        __props__.__dict__["name"] = name
+        __props__.__dict__["score_aggregation_type"] = score_aggregation_type
+        __props__.__dict__["static_rr_sets"] = static_rr_sets
+        __props__.__dict__["static_ttl"] = static_ttl
+        __props__.__dict__["stickiness_bonus_constant"] = stickiness_bonus_constant
+        __props__.__dict__["stickiness_bonus_percentage"] = stickiness_bonus_percentage
+        __props__.__dict__["traffic_targets"] = traffic_targets
+        __props__.__dict__["type"] = type
+        __props__.__dict__["unreachable_threshold"] = unreachable_threshold
+        __props__.__dict__["use_computed_targets"] = use_computed_targets
+        __props__.__dict__["wait_on_complete"] = wait_on_complete
+        __props__.__dict__["weighted_hash_bits_for_ipv4"] = weighted_hash_bits_for_ipv4
+        __props__.__dict__["weighted_hash_bits_for_ipv6"] = weighted_hash_bits_for_ipv6
         return GtmProperty(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -1048,10 +1540,4 @@ class GtmProperty(pulumi.CustomResource):
     @pulumi.getter(name="weightedHashBitsForIpv6")
     def weighted_hash_bits_for_ipv6(self) -> pulumi.Output[int]:
         return pulumi.get(self, "weighted_hash_bits_for_ipv6")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

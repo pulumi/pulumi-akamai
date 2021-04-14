@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 
 __all__ = ['AppSecMatchTargetArgs', 'AppSecMatchTarget']
 
@@ -60,6 +60,78 @@ class AppSecMatchTargetArgs:
 
     @version.setter
     def version(self, value: pulumi.Input[int]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class _AppSecMatchTargetState:
+    def __init__(__self__, *,
+                 config_id: Optional[pulumi.Input[int]] = None,
+                 json: Optional[pulumi.Input[str]] = None,
+                 match_target_id: Optional[pulumi.Input[int]] = None,
+                 version: Optional[pulumi.Input[int]] = None):
+        """
+        Input properties used for looking up and filtering AppSecMatchTarget resources.
+        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
+        :param pulumi.Input[str] json: The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
+        :param pulumi.Input[int] match_target_id: The ID of the match target.
+        :param pulumi.Input[int] version: The version number of the security configuration to use.
+        """
+        if config_id is not None:
+            pulumi.set(__self__, "config_id", config_id)
+        if json is not None:
+            pulumi.set(__self__, "json", json)
+        if match_target_id is not None:
+            pulumi.set(__self__, "match_target_id", match_target_id)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> Optional[pulumi.Input[int]]:
+        """
+        The ID of the security configuration to use.
+        """
+        return pulumi.get(self, "config_id")
+
+    @config_id.setter
+    def config_id(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "config_id", value)
+
+    @property
+    @pulumi.getter
+    def json(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
+        """
+        return pulumi.get(self, "json")
+
+    @json.setter
+    def json(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "json", value)
+
+    @property
+    @pulumi.getter(name="matchTargetId")
+    def match_target_id(self) -> Optional[pulumi.Input[int]]:
+        """
+        The ID of the match target.
+        """
+        return pulumi.get(self, "match_target_id")
+
+    @match_target_id.setter
+    def match_target_id(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "match_target_id", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[int]]:
+        """
+        The version number of the security configuration to use.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "version", value)
 
 
@@ -158,18 +230,18 @@ class AppSecMatchTarget(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = AppSecMatchTargetArgs.__new__(AppSecMatchTargetArgs)
 
             if config_id is None and not opts.urn:
                 raise TypeError("Missing required property 'config_id'")
-            __props__['config_id'] = config_id
+            __props__.__dict__["config_id"] = config_id
             if json is None and not opts.urn:
                 raise TypeError("Missing required property 'json'")
-            __props__['json'] = json
+            __props__.__dict__["json"] = json
             if version is None and not opts.urn:
                 raise TypeError("Missing required property 'version'")
-            __props__['version'] = version
-            __props__['match_target_id'] = None
+            __props__.__dict__["version"] = version
+            __props__.__dict__["match_target_id"] = None
         super(AppSecMatchTarget, __self__).__init__(
             'akamai:index/appSecMatchTarget:AppSecMatchTarget',
             resource_name,
@@ -198,12 +270,12 @@ class AppSecMatchTarget(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _AppSecMatchTargetState.__new__(_AppSecMatchTargetState)
 
-        __props__["config_id"] = config_id
-        __props__["json"] = json
-        __props__["match_target_id"] = match_target_id
-        __props__["version"] = version
+        __props__.__dict__["config_id"] = config_id
+        __props__.__dict__["json"] = json
+        __props__.__dict__["match_target_id"] = match_target_id
+        __props__.__dict__["version"] = version
         return AppSecMatchTarget(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -237,10 +309,4 @@ class AppSecMatchTarget(pulumi.CustomResource):
         The version number of the security configuration to use.
         """
         return pulumi.get(self, "version")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

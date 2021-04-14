@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 
 __all__ = ['AppSecSelectedHostnamesArgs', 'AppSecSelectedHostnames']
 
@@ -59,6 +59,62 @@ class AppSecSelectedHostnamesArgs:
 
     @version.setter
     def version(self, value: pulumi.Input[int]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class _AppSecSelectedHostnamesState:
+    def __init__(__self__, *,
+                 config_id: Optional[pulumi.Input[int]] = None,
+                 hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 mode: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[int]] = None):
+        """
+        Input properties used for looking up and filtering AppSecSelectedHostnames resources.
+        """
+        if config_id is not None:
+            pulumi.set(__self__, "config_id", config_id)
+        if hostnames is not None:
+            pulumi.set(__self__, "hostnames", hostnames)
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "config_id")
+
+    @config_id.setter
+    def config_id(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "config_id", value)
+
+    @property
+    @pulumi.getter
+    def hostnames(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "hostnames")
+
+    @hostnames.setter
+    def hostnames(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "hostnames", value)
+
+    @property
+    @pulumi.getter
+    def mode(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "mode")
+
+    @mode.setter
+    def mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mode", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "version", value)
 
 
@@ -124,20 +180,20 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = AppSecSelectedHostnamesArgs.__new__(AppSecSelectedHostnamesArgs)
 
             if config_id is None and not opts.urn:
                 raise TypeError("Missing required property 'config_id'")
-            __props__['config_id'] = config_id
+            __props__.__dict__["config_id"] = config_id
             if hostnames is None and not opts.urn:
                 raise TypeError("Missing required property 'hostnames'")
-            __props__['hostnames'] = hostnames
+            __props__.__dict__["hostnames"] = hostnames
             if mode is None and not opts.urn:
                 raise TypeError("Missing required property 'mode'")
-            __props__['mode'] = mode
+            __props__.__dict__["mode"] = mode
             if version is None and not opts.urn:
                 raise TypeError("Missing required property 'version'")
-            __props__['version'] = version
+            __props__.__dict__["version"] = version
         super(AppSecSelectedHostnames, __self__).__init__(
             'akamai:index/appSecSelectedHostnames:AppSecSelectedHostnames',
             resource_name,
@@ -162,12 +218,12 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _AppSecSelectedHostnamesState.__new__(_AppSecSelectedHostnamesState)
 
-        __props__["config_id"] = config_id
-        __props__["hostnames"] = hostnames
-        __props__["mode"] = mode
-        __props__["version"] = version
+        __props__.__dict__["config_id"] = config_id
+        __props__.__dict__["hostnames"] = hostnames
+        __props__.__dict__["mode"] = mode
+        __props__.__dict__["version"] = version
         return AppSecSelectedHostnames(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -189,10 +245,4 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
     @pulumi.getter
     def version(self) -> pulumi.Output[int]:
         return pulumi.get(self, "version")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

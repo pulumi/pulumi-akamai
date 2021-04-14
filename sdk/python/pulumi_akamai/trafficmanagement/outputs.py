@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from .. import _utilities, _tables
+from .. import _utilities
 from . import outputs
 
 __all__ = [
@@ -26,6 +26,25 @@ __all__ = [
 
 @pulumi.output_type
 class GtmASmapAssignment(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "asNumbers":
+            suggest = "as_numbers"
+        elif key == "datacenterId":
+            suggest = "datacenter_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GtmASmapAssignment. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GtmASmapAssignment.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GtmASmapAssignment.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  as_numbers: Sequence[int],
                  datacenter_id: int,
@@ -49,12 +68,26 @@ class GtmASmapAssignment(dict):
     def nickname(self) -> str:
         return pulumi.get(self, "nickname")
 
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
 
 @pulumi.output_type
 class GtmASmapDefaultDatacenter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "datacenterId":
+            suggest = "datacenter_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GtmASmapDefaultDatacenter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GtmASmapDefaultDatacenter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GtmASmapDefaultDatacenter.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  datacenter_id: int,
                  nickname: Optional[str] = None):
@@ -72,12 +105,26 @@ class GtmASmapDefaultDatacenter(dict):
     def nickname(self) -> Optional[str]:
         return pulumi.get(self, "nickname")
 
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
 
 @pulumi.output_type
 class GtmCidrmapAssignment(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "datacenterId":
+            suggest = "datacenter_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GtmCidrmapAssignment. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GtmCidrmapAssignment.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GtmCidrmapAssignment.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  datacenter_id: int,
                  nickname: str,
@@ -102,12 +149,26 @@ class GtmCidrmapAssignment(dict):
     def blocks(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "blocks")
 
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
 
 @pulumi.output_type
 class GtmCidrmapDefaultDatacenter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "datacenterId":
+            suggest = "datacenter_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GtmCidrmapDefaultDatacenter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GtmCidrmapDefaultDatacenter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GtmCidrmapDefaultDatacenter.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  datacenter_id: int,
                  nickname: Optional[str] = None):
@@ -125,12 +186,30 @@ class GtmCidrmapDefaultDatacenter(dict):
     def nickname(self) -> Optional[str]:
         return pulumi.get(self, "nickname")
 
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
 
 @pulumi.output_type
 class GtmDatacenterDefaultLoadObject(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "loadObject":
+            suggest = "load_object"
+        elif key == "loadObjectPort":
+            suggest = "load_object_port"
+        elif key == "loadServers":
+            suggest = "load_servers"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GtmDatacenterDefaultLoadObject. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GtmDatacenterDefaultLoadObject.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GtmDatacenterDefaultLoadObject.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  load_object: Optional[str] = None,
                  load_object_port: Optional[int] = None,
@@ -157,12 +236,26 @@ class GtmDatacenterDefaultLoadObject(dict):
     def load_servers(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "load_servers")
 
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
 
 @pulumi.output_type
 class GtmGeomapAssignment(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "datacenterId":
+            suggest = "datacenter_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GtmGeomapAssignment. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GtmGeomapAssignment.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GtmGeomapAssignment.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  datacenter_id: int,
                  nickname: str,
@@ -187,12 +280,26 @@ class GtmGeomapAssignment(dict):
     def countries(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "countries")
 
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
 
 @pulumi.output_type
 class GtmGeomapDefaultDatacenter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "datacenterId":
+            suggest = "datacenter_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GtmGeomapDefaultDatacenter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GtmGeomapDefaultDatacenter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GtmGeomapDefaultDatacenter.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  datacenter_id: int,
                  nickname: Optional[str] = None):
@@ -210,12 +317,68 @@ class GtmGeomapDefaultDatacenter(dict):
     def nickname(self) -> Optional[str]:
         return pulumi.get(self, "nickname")
 
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
 
 @pulumi.output_type
 class GtmPropertyLivenessTest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "testInterval":
+            suggest = "test_interval"
+        elif key == "testObject":
+            suggest = "test_object"
+        elif key == "testObjectProtocol":
+            suggest = "test_object_protocol"
+        elif key == "testTimeout":
+            suggest = "test_timeout"
+        elif key == "answersRequired":
+            suggest = "answers_required"
+        elif key == "disableNonstandardPortWarning":
+            suggest = "disable_nonstandard_port_warning"
+        elif key == "errorPenalty":
+            suggest = "error_penalty"
+        elif key == "httpError3xx":
+            suggest = "http_error3xx"
+        elif key == "httpError4xx":
+            suggest = "http_error4xx"
+        elif key == "httpError5xx":
+            suggest = "http_error5xx"
+        elif key == "httpHeaders":
+            suggest = "http_headers"
+        elif key == "peerCertificateVerification":
+            suggest = "peer_certificate_verification"
+        elif key == "recursionRequested":
+            suggest = "recursion_requested"
+        elif key == "requestString":
+            suggest = "request_string"
+        elif key == "resourceType":
+            suggest = "resource_type"
+        elif key == "responseString":
+            suggest = "response_string"
+        elif key == "sslClientCertificate":
+            suggest = "ssl_client_certificate"
+        elif key == "sslClientPrivateKey":
+            suggest = "ssl_client_private_key"
+        elif key == "testObjectPassword":
+            suggest = "test_object_password"
+        elif key == "testObjectPort":
+            suggest = "test_object_port"
+        elif key == "testObjectUsername":
+            suggest = "test_object_username"
+        elif key == "timeoutPenalty":
+            suggest = "timeout_penalty"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GtmPropertyLivenessTest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GtmPropertyLivenessTest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GtmPropertyLivenessTest.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  name: str,
                  test_interval: int,
@@ -405,9 +568,6 @@ class GtmPropertyLivenessTest(dict):
     def timeout_penalty(self) -> Optional[float]:
         return pulumi.get(self, "timeout_penalty")
 
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
 
 @pulumi.output_type
 class GtmPropertyLivenessTestHttpHeader(dict):
@@ -428,9 +588,6 @@ class GtmPropertyLivenessTestHttpHeader(dict):
     @pulumi.getter
     def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
@@ -461,12 +618,28 @@ class GtmPropertyStaticRrSet(dict):
     def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
 
 @pulumi.output_type
 class GtmPropertyTrafficTarget(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "datacenterId":
+            suggest = "datacenter_id"
+        elif key == "handoutCname":
+            suggest = "handout_cname"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GtmPropertyTrafficTarget. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GtmPropertyTrafficTarget.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GtmPropertyTrafficTarget.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  datacenter_id: Optional[int] = None,
                  enabled: Optional[bool] = None,
@@ -517,12 +690,34 @@ class GtmPropertyTrafficTarget(dict):
     def weight(self) -> Optional[float]:
         return pulumi.get(self, "weight")
 
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
 
 @pulumi.output_type
 class GtmResourceResourceInstance(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "datacenterId":
+            suggest = "datacenter_id"
+        elif key == "loadObject":
+            suggest = "load_object"
+        elif key == "loadObjectPort":
+            suggest = "load_object_port"
+        elif key == "loadServers":
+            suggest = "load_servers"
+        elif key == "useDefaultLoadObject":
+            suggest = "use_default_load_object"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GtmResourceResourceInstance. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GtmResourceResourceInstance.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GtmResourceResourceInstance.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  datacenter_id: int,
                  load_object: Optional[str] = None,
@@ -563,8 +758,5 @@ class GtmResourceResourceInstance(dict):
     @pulumi.getter(name="useDefaultLoadObject")
     def use_default_load_object(self) -> Optional[bool]:
         return pulumi.get(self, "use_default_load_object")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 

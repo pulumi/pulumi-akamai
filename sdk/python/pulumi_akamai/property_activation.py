@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 
 __all__ = ['PropertyActivationArgs', 'PropertyActivation']
 
@@ -80,6 +80,125 @@ class PropertyActivationArgs:
     @property_id.setter
     def property_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "property_id", value)
+
+    @property
+    @pulumi.getter
+    def property(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "property")
+
+    @property.setter
+    def property(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "property", value)
+
+
+@pulumi.input_type
+class _PropertyActivationState:
+    def __init__(__self__, *,
+                 activation_id: Optional[pulumi.Input[str]] = None,
+                 contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 errors: Optional[pulumi.Input[str]] = None,
+                 network: Optional[pulumi.Input[str]] = None,
+                 property: Optional[pulumi.Input[str]] = None,
+                 property_id: Optional[pulumi.Input[str]] = None,
+                 status: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[int]] = None,
+                 warnings: Optional[pulumi.Input[str]] = None):
+        """
+        Input properties used for looking up and filtering PropertyActivation resources.
+        """
+        if activation_id is not None:
+            pulumi.set(__self__, "activation_id", activation_id)
+        if contacts is not None:
+            pulumi.set(__self__, "contacts", contacts)
+        if errors is not None:
+            pulumi.set(__self__, "errors", errors)
+        if network is not None:
+            pulumi.set(__self__, "network", network)
+        if property is not None:
+            warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
+        if property is not None:
+            pulumi.set(__self__, "property", property)
+        if property_id is not None:
+            pulumi.set(__self__, "property_id", property_id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+        if warnings is not None:
+            pulumi.set(__self__, "warnings", warnings)
+
+    @property
+    @pulumi.getter(name="activationId")
+    def activation_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "activation_id")
+
+    @activation_id.setter
+    def activation_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "activation_id", value)
+
+    @property
+    @pulumi.getter
+    def contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "contacts")
+
+    @contacts.setter
+    def contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "contacts", value)
+
+    @property
+    @pulumi.getter
+    def errors(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "errors")
+
+    @errors.setter
+    def errors(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "errors", value)
+
+    @property
+    @pulumi.getter
+    def network(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "network")
+
+    @network.setter
+    def network(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "network", value)
+
+    @property
+    @pulumi.getter(name="propertyId")
+    def property_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "property_id")
+
+    @property_id.setter
+    def property_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "property_id", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "version", value)
+
+    @property
+    @pulumi.getter
+    def warnings(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "warnings")
+
+    @warnings.setter
+    def warnings(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "warnings", value)
 
     @property
     @pulumi.getter
@@ -271,24 +390,24 @@ class PropertyActivation(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = PropertyActivationArgs.__new__(PropertyActivationArgs)
 
-            __props__['activation_id'] = activation_id
+            __props__.__dict__["activation_id"] = activation_id
             if contacts is None and not opts.urn:
                 raise TypeError("Missing required property 'contacts'")
-            __props__['contacts'] = contacts
-            __props__['network'] = network
+            __props__.__dict__["contacts"] = contacts
+            __props__.__dict__["network"] = network
             if property is not None and not opts.urn:
                 warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
                 pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
-            __props__['property'] = property
-            __props__['property_id'] = property_id
+            __props__.__dict__["property"] = property
+            __props__.__dict__["property_id"] = property_id
             if version is None and not opts.urn:
                 raise TypeError("Missing required property 'version'")
-            __props__['version'] = version
-            __props__['errors'] = None
-            __props__['status'] = None
-            __props__['warnings'] = None
+            __props__.__dict__["version"] = version
+            __props__.__dict__["errors"] = None
+            __props__.__dict__["status"] = None
+            __props__.__dict__["warnings"] = None
         alias_opts = pulumi.ResourceOptions(aliases=[pulumi.Alias(type_="akamai:properties/propertyActivation:PropertyActivation")])
         opts = pulumi.ResourceOptions.merge(opts, alias_opts)
         super(PropertyActivation, __self__).__init__(
@@ -320,17 +439,17 @@ class PropertyActivation(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _PropertyActivationState.__new__(_PropertyActivationState)
 
-        __props__["activation_id"] = activation_id
-        __props__["contacts"] = contacts
-        __props__["errors"] = errors
-        __props__["network"] = network
-        __props__["property"] = property
-        __props__["property_id"] = property_id
-        __props__["status"] = status
-        __props__["version"] = version
-        __props__["warnings"] = warnings
+        __props__.__dict__["activation_id"] = activation_id
+        __props__.__dict__["contacts"] = contacts
+        __props__.__dict__["errors"] = errors
+        __props__.__dict__["network"] = network
+        __props__.__dict__["property"] = property
+        __props__.__dict__["property_id"] = property_id
+        __props__.__dict__["status"] = status
+        __props__.__dict__["version"] = version
+        __props__.__dict__["warnings"] = warnings
         return PropertyActivation(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -377,10 +496,4 @@ class PropertyActivation(pulumi.CustomResource):
     @pulumi.getter
     def property(self) -> pulumi.Output[str]:
         return pulumi.get(self, "property")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 
