@@ -4,7 +4,7 @@
 package akamai
 
 import (
-	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupCpCode(ctx *pulumi.Context, args *LookupCpCodeArgs, opts ...pulumi.InvokeOption) (*LookupCpCodeResult, error) {

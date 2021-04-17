@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 
 __all__ = ['AppSecMatchTargetSequenceArgs', 'AppSecMatchTargetSequence']
 
@@ -85,6 +85,86 @@ class AppSecMatchTargetSequenceArgs:
     @sequence_map.setter
     def sequence_map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "sequence_map", value)
+
+
+@pulumi.input_type
+class _AppSecMatchTargetSequenceState:
+    def __init__(__self__, *,
+                 config_id: Optional[pulumi.Input[int]] = None,
+                 json: Optional[pulumi.Input[str]] = None,
+                 sequence_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 type: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[int]] = None):
+        """
+        Input properties used for looking up and filtering AppSecMatchTargetSequence resources.
+        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
+        :param pulumi.Input[str] json: The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
+        :param pulumi.Input[int] version: The version number of the security configuration to use.
+        """
+        if config_id is not None:
+            pulumi.set(__self__, "config_id", config_id)
+        if json is not None:
+            pulumi.set(__self__, "json", json)
+        if sequence_map is not None:
+            pulumi.set(__self__, "sequence_map", sequence_map)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> Optional[pulumi.Input[int]]:
+        """
+        The ID of the security configuration to use.
+        """
+        return pulumi.get(self, "config_id")
+
+    @config_id.setter
+    def config_id(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "config_id", value)
+
+    @property
+    @pulumi.getter
+    def json(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
+        """
+        return pulumi.get(self, "json")
+
+    @json.setter
+    def json(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "json", value)
+
+    @property
+    @pulumi.getter(name="sequenceMap")
+    def sequence_map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        return pulumi.get(self, "sequence_map")
+
+    @sequence_map.setter
+    def sequence_map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "sequence_map", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[int]]:
+        """
+        The version number of the security configuration to use.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "version", value)
 
 
 class AppSecMatchTargetSequence(pulumi.CustomResource):
@@ -188,19 +268,19 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = AppSecMatchTargetSequenceArgs.__new__(AppSecMatchTargetSequenceArgs)
 
             if config_id is None and not opts.urn:
                 raise TypeError("Missing required property 'config_id'")
-            __props__['config_id'] = config_id
-            __props__['json'] = json
-            __props__['sequence_map'] = sequence_map
+            __props__.__dict__["config_id"] = config_id
+            __props__.__dict__["json"] = json
+            __props__.__dict__["sequence_map"] = sequence_map
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
-            __props__['type'] = type
+            __props__.__dict__["type"] = type
             if version is None and not opts.urn:
                 raise TypeError("Missing required property 'version'")
-            __props__['version'] = version
+            __props__.__dict__["version"] = version
         super(AppSecMatchTargetSequence, __self__).__init__(
             'akamai:index/appSecMatchTargetSequence:AppSecMatchTargetSequence',
             resource_name,
@@ -229,13 +309,13 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _AppSecMatchTargetSequenceState.__new__(_AppSecMatchTargetSequenceState)
 
-        __props__["config_id"] = config_id
-        __props__["json"] = json
-        __props__["sequence_map"] = sequence_map
-        __props__["type"] = type
-        __props__["version"] = version
+        __props__.__dict__["config_id"] = config_id
+        __props__.__dict__["json"] = json
+        __props__.__dict__["sequence_map"] = sequence_map
+        __props__.__dict__["type"] = type
+        __props__.__dict__["version"] = version
         return AppSecMatchTargetSequence(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -271,10 +351,4 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
         The version number of the security configuration to use.
         """
         return pulumi.get(self, "version")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

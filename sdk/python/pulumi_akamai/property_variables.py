@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 from . import outputs
 from ._inputs import *
 
@@ -24,6 +24,45 @@ class PropertyVariablesArgs:
             pulumi.log.warn("""variables is deprecated: resource \"akamai_property_variables\" is no longer supported - See Akamai Terraform Upgrade Guide""")
         if variables is not None:
             pulumi.set(__self__, "variables", variables)
+
+    @property
+    @pulumi.getter
+    def variables(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyVariablesVariableArgs']]]]:
+        return pulumi.get(self, "variables")
+
+    @variables.setter
+    def variables(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyVariablesVariableArgs']]]]):
+        pulumi.set(self, "variables", value)
+
+
+@pulumi.input_type
+class _PropertyVariablesState:
+    def __init__(__self__, *,
+                 json: Optional[pulumi.Input[str]] = None,
+                 variables: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyVariablesVariableArgs']]]] = None):
+        """
+        Input properties used for looking up and filtering PropertyVariables resources.
+        :param pulumi.Input[str] json: JSON variables representation
+        """
+        if json is not None:
+            pulumi.set(__self__, "json", json)
+        if variables is not None:
+            warnings.warn("""resource \"akamai_property_variables\" is no longer supported - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
+            pulumi.log.warn("""variables is deprecated: resource \"akamai_property_variables\" is no longer supported - See Akamai Terraform Upgrade Guide""")
+        if variables is not None:
+            pulumi.set(__self__, "variables", variables)
+
+    @property
+    @pulumi.getter
+    def json(self) -> Optional[pulumi.Input[str]]:
+        """
+        JSON variables representation
+        """
+        return pulumi.get(self, "json")
+
+    @json.setter
+    def json(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "json", value)
 
     @property
     @pulumi.getter
@@ -91,13 +130,13 @@ class PropertyVariables(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = PropertyVariablesArgs.__new__(PropertyVariablesArgs)
 
             if variables is not None and not opts.urn:
                 warnings.warn("""resource \"akamai_property_variables\" is no longer supported - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
                 pulumi.log.warn("""variables is deprecated: resource \"akamai_property_variables\" is no longer supported - See Akamai Terraform Upgrade Guide""")
-            __props__['variables'] = variables
-            __props__['json'] = None
+            __props__.__dict__["variables"] = variables
+            __props__.__dict__["json"] = None
         alias_opts = pulumi.ResourceOptions(aliases=[pulumi.Alias(type_="akamai:properties/propertyVariables:PropertyVariables")])
         opts = pulumi.ResourceOptions.merge(opts, alias_opts)
         super(PropertyVariables, __self__).__init__(
@@ -123,10 +162,10 @@ class PropertyVariables(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _PropertyVariablesState.__new__(_PropertyVariablesState)
 
-        __props__["json"] = json
-        __props__["variables"] = variables
+        __props__.__dict__["json"] = json
+        __props__.__dict__["variables"] = variables
         return PropertyVariables(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -141,10 +180,4 @@ class PropertyVariables(pulumi.CustomResource):
     @pulumi.getter
     def variables(self) -> pulumi.Output[Optional[Sequence['outputs.PropertyVariablesVariable']]]:
         return pulumi.get(self, "variables")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

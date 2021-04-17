@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from .. import _utilities, _tables
+from .. import _utilities
 
 __all__ = ['CpCodeArgs', 'CpCode']
 
@@ -95,6 +95,92 @@ class CpCodeArgs:
         pulumi.set(self, "name", value)
 
 
+@pulumi.input_type
+class _CpCodeState:
+    def __init__(__self__, *,
+                 contract: Optional[pulumi.Input[str]] = None,
+                 contract_id: Optional[pulumi.Input[str]] = None,
+                 group: Optional[pulumi.Input[str]] = None,
+                 group_id: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 product: Optional[pulumi.Input[str]] = None):
+        """
+        Input properties used for looking up and filtering CpCode resources.
+        """
+        if contract is not None:
+            warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
+            pulumi.log.warn("""contract is deprecated: use \"contract_id\" attribute instead""")
+        if contract is not None:
+            pulumi.set(__self__, "contract", contract)
+        if contract_id is not None:
+            pulumi.set(__self__, "contract_id", contract_id)
+        if group is not None:
+            warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
+            pulumi.log.warn("""group is deprecated: use \"group_id\" attribute instead""")
+        if group is not None:
+            pulumi.set(__self__, "group", group)
+        if group_id is not None:
+            pulumi.set(__self__, "group_id", group_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if product is not None:
+            pulumi.set(__self__, "product", product)
+
+    @property
+    @pulumi.getter
+    def contract(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "contract")
+
+    @contract.setter
+    def contract(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "contract", value)
+
+    @property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "contract_id")
+
+    @contract_id.setter
+    def contract_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "contract_id", value)
+
+    @property
+    @pulumi.getter
+    def group(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "group")
+
+    @group.setter
+    def group(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "group", value)
+
+    @property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "group_id")
+
+    @group_id.setter
+    def group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "group_id", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def product(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "product")
+
+    @product.setter
+    def product(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "product", value)
+
+
 warnings.warn("""akamai.properties.CpCode has been deprecated in favor of akamai.CpCode""", DeprecationWarning)
 
 
@@ -167,22 +253,22 @@ class CpCode(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = CpCodeArgs.__new__(CpCodeArgs)
 
             if contract is not None and not opts.urn:
                 warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
                 pulumi.log.warn("""contract is deprecated: use \"contract_id\" attribute instead""")
-            __props__['contract'] = contract
-            __props__['contract_id'] = contract_id
+            __props__.__dict__["contract"] = contract
+            __props__.__dict__["contract_id"] = contract_id
             if group is not None and not opts.urn:
                 warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
                 pulumi.log.warn("""group is deprecated: use \"group_id\" attribute instead""")
-            __props__['group'] = group
-            __props__['group_id'] = group_id
-            __props__['name'] = name
+            __props__.__dict__["group"] = group
+            __props__.__dict__["group_id"] = group_id
+            __props__.__dict__["name"] = name
             if product is None and not opts.urn:
                 raise TypeError("Missing required property 'product'")
-            __props__['product'] = product
+            __props__.__dict__["product"] = product
         super(CpCode, __self__).__init__(
             'akamai:properties/cpCode:CpCode',
             resource_name,
@@ -209,14 +295,14 @@ class CpCode(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _CpCodeState.__new__(_CpCodeState)
 
-        __props__["contract"] = contract
-        __props__["contract_id"] = contract_id
-        __props__["group"] = group
-        __props__["group_id"] = group_id
-        __props__["name"] = name
-        __props__["product"] = product
+        __props__.__dict__["contract"] = contract
+        __props__.__dict__["contract_id"] = contract_id
+        __props__.__dict__["group"] = group
+        __props__.__dict__["group_id"] = group_id
+        __props__.__dict__["name"] = name
+        __props__.__dict__["product"] = product
         return CpCode(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -248,10 +334,4 @@ class CpCode(pulumi.CustomResource):
     @pulumi.getter
     def product(self) -> pulumi.Output[str]:
         return pulumi.get(self, "product")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

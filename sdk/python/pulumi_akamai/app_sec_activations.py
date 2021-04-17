@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 
 __all__ = ['AppSecActivationsArgs', 'AppSecActivations']
 
@@ -85,6 +85,102 @@ class AppSecActivationsArgs:
     @notes.setter
     def notes(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "notes", value)
+
+
+@pulumi.input_type
+class _AppSecActivationsState:
+    def __init__(__self__, *,
+                 activate: Optional[pulumi.Input[bool]] = None,
+                 config_id: Optional[pulumi.Input[int]] = None,
+                 network: Optional[pulumi.Input[str]] = None,
+                 notes: Optional[pulumi.Input[str]] = None,
+                 notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 status: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[int]] = None):
+        """
+        Input properties used for looking up and filtering AppSecActivations resources.
+        :param pulumi.Input[str] status: The status of the operation. The following values are may be returned:
+        """
+        if activate is not None:
+            pulumi.set(__self__, "activate", activate)
+        if config_id is not None:
+            pulumi.set(__self__, "config_id", config_id)
+        if network is not None:
+            pulumi.set(__self__, "network", network)
+        if notes is not None:
+            pulumi.set(__self__, "notes", notes)
+        if notification_emails is not None:
+            pulumi.set(__self__, "notification_emails", notification_emails)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def activate(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "activate")
+
+    @activate.setter
+    def activate(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "activate", value)
+
+    @property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "config_id")
+
+    @config_id.setter
+    def config_id(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "config_id", value)
+
+    @property
+    @pulumi.getter
+    def network(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "network")
+
+    @network.setter
+    def network(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "network", value)
+
+    @property
+    @pulumi.getter
+    def notes(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "notes")
+
+    @notes.setter
+    def notes(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "notes", value)
+
+    @property
+    @pulumi.getter(name="notificationEmails")
+    def notification_emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "notification_emails")
+
+    @notification_emails.setter
+    def notification_emails(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "notification_emails", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The status of the operation. The following values are may be returned:
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "version", value)
 
 
 class AppSecActivations(pulumi.CustomResource):
@@ -213,21 +309,21 @@ class AppSecActivations(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = AppSecActivationsArgs.__new__(AppSecActivationsArgs)
 
-            __props__['activate'] = activate
+            __props__.__dict__["activate"] = activate
             if config_id is None and not opts.urn:
                 raise TypeError("Missing required property 'config_id'")
-            __props__['config_id'] = config_id
-            __props__['network'] = network
-            __props__['notes'] = notes
+            __props__.__dict__["config_id"] = config_id
+            __props__.__dict__["network"] = network
+            __props__.__dict__["notes"] = notes
             if notification_emails is None and not opts.urn:
                 raise TypeError("Missing required property 'notification_emails'")
-            __props__['notification_emails'] = notification_emails
+            __props__.__dict__["notification_emails"] = notification_emails
             if version is None and not opts.urn:
                 raise TypeError("Missing required property 'version'")
-            __props__['version'] = version
-            __props__['status'] = None
+            __props__.__dict__["version"] = version
+            __props__.__dict__["status"] = None
         super(AppSecActivations, __self__).__init__(
             'akamai:index/appSecActivations:AppSecActivations',
             resource_name,
@@ -256,15 +352,15 @@ class AppSecActivations(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _AppSecActivationsState.__new__(_AppSecActivationsState)
 
-        __props__["activate"] = activate
-        __props__["config_id"] = config_id
-        __props__["network"] = network
-        __props__["notes"] = notes
-        __props__["notification_emails"] = notification_emails
-        __props__["status"] = status
-        __props__["version"] = version
+        __props__.__dict__["activate"] = activate
+        __props__.__dict__["config_id"] = config_id
+        __props__.__dict__["network"] = network
+        __props__.__dict__["notes"] = notes
+        __props__.__dict__["notification_emails"] = notification_emails
+        __props__.__dict__["status"] = status
+        __props__.__dict__["version"] = version
         return AppSecActivations(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -304,10 +400,4 @@ class AppSecActivations(pulumi.CustomResource):
     @pulumi.getter
     def version(self) -> pulumi.Output[int]:
         return pulumi.get(self, "version")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

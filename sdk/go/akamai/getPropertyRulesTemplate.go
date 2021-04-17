@@ -4,7 +4,7 @@
 package akamai
 
 import (
-	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // The `getPropertyRulesTemplate` data source lets you configure a rule tree through the use of JSON template files. A rule tree is a nested block of property
