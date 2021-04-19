@@ -9933,6 +9933,7 @@
     },
     "language": {
         "csharp": {
+            "compatibility": "tfbridge20",
             "namespaces": {
                 "akamai": "Akamai"
             },
@@ -9946,6 +9947,7 @@
             "importBasePath": "github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
         },
         "nodejs": {
+            "compatibility": "tfbridge20",
             "dependencies": {
                 "@pulumi/pulumi": "^3.0.0-alpha.0"
             },
@@ -9960,6 +9962,7 @@
             "typescriptVersion": ""
         },
         "python": {
+            "compatibility": "tfbridge20",
             "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/akamai/terraform-provider-akamai)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi/pulumi-akamai` repo](https://github.com/pulumi/pulumi-akamai/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`akamai/terraform-provider-akamai` repo](https://github.com/akamai/terraform-provider-akamai/issues).",
             "requires": {
                 "pulumi": "\u003e=3.0.0a1,\u003c4.0.0"

@@ -221,9 +221,7 @@ class PropertyActivation(pulumi.CustomResource):
                  property: Optional[pulumi.Input[str]] = None,
                  property_id: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[int]] = None,
-                 __props__=None,
-                 __name__=None,
-                 __opts__=None):
+                 __props__=None):
         """
         The `PropertyActivation` resource lets you activate a property version. An activation deploys the version to either the Akamai staging or production network. You can activate a specific version multiple times if you need to.
 
@@ -372,15 +370,7 @@ class PropertyActivation(pulumi.CustomResource):
                  property: Optional[pulumi.Input[str]] = None,
                  property_id: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[int]] = None,
-                 __props__=None,
-                 __name__=None,
-                 __opts__=None):
-        if __name__ is not None:
-            warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
-            resource_name = __name__
-        if __opts__ is not None:
-            warnings.warn("explicit use of __opts__ is deprecated, use 'opts' instead", DeprecationWarning)
-            opts = __opts__
+                 __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
         if not isinstance(opts, pulumi.ResourceOptions):

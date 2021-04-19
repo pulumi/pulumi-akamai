@@ -589,9 +589,7 @@ class Property(pulumi.CustomResource):
                  rule_format: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input[str]] = None,
                  variables: Optional[pulumi.Input[str]] = None,
-                 __props__=None,
-                 __name__=None,
-                 __opts__=None):
+                 __props__=None):
         """
         Create a Property resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
@@ -642,16 +640,8 @@ class Property(pulumi.CustomResource):
                  rule_format: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input[str]] = None,
                  variables: Optional[pulumi.Input[str]] = None,
-                 __props__=None,
-                 __name__=None,
-                 __opts__=None):
+                 __props__=None):
         pulumi.log.warn("""Property is deprecated: akamai.properties.Property has been deprecated in favor of akamai.Property""")
-        if __name__ is not None:
-            warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
-            resource_name = __name__
-        if __opts__ is not None:
-            warnings.warn("explicit use of __opts__ is deprecated, use 'opts' instead", DeprecationWarning)
-            opts = __opts__
         if opts is None:
             opts = pulumi.ResourceOptions()
         if not isinstance(opts, pulumi.ResourceOptions):
