@@ -6,6 +6,9 @@ _(none)_
 
 ---
 
+## 2.0.1 (2021-04-20)
+* Fix ldflags problem when building in release pipeline
+
 ## 2.0.0 (2021-04-19)
 * Depend on Pulumi 3.0, which includes improvements to Python resource arguments and key translation, Go SDK performance,
   Node SDK performance, general availability of Automation API, and more.
