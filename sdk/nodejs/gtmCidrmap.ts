@@ -6,7 +6,11 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * `akamai.GtmCidrmap` provides the resource for creating, configuring and importing a gtm Cidr Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingMapName`
+ * Use the `akamai.GtmCidrmap` resource to create, configure, and import a GTM Classless Inter-Domain Routing (CIDR) map. CIDR mapping uses the IP addresses of the requesting name server to provide IP-specific CNAME entries. CNAMEs let you direct internal users to a specific environment or direct them to the origin. This lets you provide different responses to an internal corporate DNS infrastructure, such as internal test environments and another answer for all other name servers (`defaultDatacenter`).
+ *
+ *  CIDR maps split the Internet into multiple CIDR block zones. Properties that use a map can specify a handout CNAME for each zone on the property’s editing page. To configure a property for CIDR mapping, your domain needs at least one CIDR map defined.
+ *
+ * > **Note** Import requires an ID with this format: `existingDomainName`:`existingMapName`.
  *
  * ## Example Usage
  *
@@ -24,6 +28,24 @@ import * as utilities from "./utilities";
  *     domain: "demo_domain.akadns.net",
  * });
  * ```
+ * ## Argument reference
+ *
+ * This resource supports these arguments:
+ *
+ * * `domain` - (Required) GTM Domain name for the AS Map.
+ * * `name` - (Required) A descriptive label for the CIDR map, up to 255 characters.
+ * * `defaultDatacenter` - (Required) A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+ *   * `datacenterId` - (Required) For each property, an identifier for all other CIDR zones.
+ *   * `nickname` - (Required) A descriptive label for the all other CIDR blocks.
+ * * `waitOnComplete` - (Optional) A boolean that, if set to `true`, waits for transaction to complete.
+ * * `assignment` - (Optional) Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+ *   * `datacenterId` - (Optional) A unique identifier for an existing data center in the domain.
+ *   * `nickname` - (Optional) A descriptive label for the CIDR zone group, up to 256 characters.
+ *   * `blocks` - (Optional, list) Specifies an array of CIDR blocks.
+ *
+ * ## Schema reference
+ *
+ * You can download the GTM CIDR Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#cidrmap) page.
  */
 export class GtmCidrmap extends pulumi.CustomResource {
     /**
@@ -53,26 +75,10 @@ export class GtmCidrmap extends pulumi.CustomResource {
         return obj['__pulumiType'] === GtmCidrmap.__pulumiType;
     }
 
-    /**
-     * * `datacenterId`
-     * * `nickname`
-     */
     public readonly assignments!: pulumi.Output<outputs.GtmCidrmapAssignment[] | undefined>;
     public readonly defaultDatacenter!: pulumi.Output<outputs.GtmCidrmapDefaultDatacenter>;
-    /**
-     * Domain name
-     */
     public readonly domain!: pulumi.Output<string>;
-    /**
-     * Resource name
-     * * `defaultDatacenter`
-     * * `datacenterId`
-     * * `nickname`
-     */
     public readonly name!: pulumi.Output<string>;
-    /**
-     * Wait for transaction to complete
-     */
     public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
 
     /**
@@ -120,26 +126,10 @@ export class GtmCidrmap extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmCidrmap resources.
  */
 export interface GtmCidrmapState {
-    /**
-     * * `datacenterId`
-     * * `nickname`
-     */
     readonly assignments?: pulumi.Input<pulumi.Input<inputs.GtmCidrmapAssignment>[]>;
     readonly defaultDatacenter?: pulumi.Input<inputs.GtmCidrmapDefaultDatacenter>;
-    /**
-     * Domain name
-     */
     readonly domain?: pulumi.Input<string>;
-    /**
-     * Resource name
-     * * `defaultDatacenter`
-     * * `datacenterId`
-     * * `nickname`
-     */
     readonly name?: pulumi.Input<string>;
-    /**
-     * Wait for transaction to complete
-     */
     readonly waitOnComplete?: pulumi.Input<boolean>;
 }
 
@@ -147,25 +137,9 @@ export interface GtmCidrmapState {
  * The set of arguments for constructing a GtmCidrmap resource.
  */
 export interface GtmCidrmapArgs {
-    /**
-     * * `datacenterId`
-     * * `nickname`
-     */
     readonly assignments?: pulumi.Input<pulumi.Input<inputs.GtmCidrmapAssignment>[]>;
     readonly defaultDatacenter: pulumi.Input<inputs.GtmCidrmapDefaultDatacenter>;
-    /**
-     * Domain name
-     */
     readonly domain: pulumi.Input<string>;
-    /**
-     * Resource name
-     * * `defaultDatacenter`
-     * * `datacenterId`
-     * * `nickname`
-     */
     readonly name?: pulumi.Input<string>;
-    /**
-     * Wait for transaction to complete
-     */
     readonly waitOnComplete?: pulumi.Input<boolean>;
 }

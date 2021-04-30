@@ -21,6 +21,12 @@ class AppSecActivationsArgs:
                  notes: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AppSecActivations resource.
+        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+        :param pulumi.Input[int] version: The version number of the security configuration to use.
+        :param pulumi.Input[bool] activate: A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+        :param pulumi.Input[str] network: The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+        :param pulumi.Input[str] notes: An optional text note describing this operation.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "notification_emails", notification_emails)
@@ -35,6 +41,9 @@ class AppSecActivationsArgs:
     @property
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
+        """
+        The ID of the security configuration to use.
+        """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
@@ -44,6 +53,9 @@ class AppSecActivationsArgs:
     @property
     @pulumi.getter(name="notificationEmails")
     def notification_emails(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        """
+        A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+        """
         return pulumi.get(self, "notification_emails")
 
     @notification_emails.setter
@@ -53,6 +65,9 @@ class AppSecActivationsArgs:
     @property
     @pulumi.getter
     def version(self) -> pulumi.Input[int]:
+        """
+        The version number of the security configuration to use.
+        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -62,6 +77,9 @@ class AppSecActivationsArgs:
     @property
     @pulumi.getter
     def activate(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+        """
         return pulumi.get(self, "activate")
 
     @activate.setter
@@ -71,6 +89,9 @@ class AppSecActivationsArgs:
     @property
     @pulumi.getter
     def network(self) -> Optional[pulumi.Input[str]]:
+        """
+        The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+        """
         return pulumi.get(self, "network")
 
     @network.setter
@@ -80,6 +101,9 @@ class AppSecActivationsArgs:
     @property
     @pulumi.getter
     def notes(self) -> Optional[pulumi.Input[str]]:
+        """
+        An optional text note describing this operation.
+        """
         return pulumi.get(self, "notes")
 
     @notes.setter
@@ -99,7 +123,13 @@ class _AppSecActivationsState:
                  version: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering AppSecActivations resources.
+        :param pulumi.Input[bool] activate: A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
+        :param pulumi.Input[str] network: The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+        :param pulumi.Input[str] notes: An optional text note describing this operation.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
         :param pulumi.Input[str] status: The status of the operation. The following values are may be returned:
+        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         if activate is not None:
             pulumi.set(__self__, "activate", activate)
@@ -119,6 +149,9 @@ class _AppSecActivationsState:
     @property
     @pulumi.getter
     def activate(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+        """
         return pulumi.get(self, "activate")
 
     @activate.setter
@@ -128,6 +161,9 @@ class _AppSecActivationsState:
     @property
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
+        """
+        The ID of the security configuration to use.
+        """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
@@ -137,6 +173,9 @@ class _AppSecActivationsState:
     @property
     @pulumi.getter
     def network(self) -> Optional[pulumi.Input[str]]:
+        """
+        The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+        """
         return pulumi.get(self, "network")
 
     @network.setter
@@ -146,6 +185,9 @@ class _AppSecActivationsState:
     @property
     @pulumi.getter
     def notes(self) -> Optional[pulumi.Input[str]]:
+        """
+        An optional text note describing this operation.
+        """
         return pulumi.get(self, "notes")
 
     @notes.setter
@@ -155,6 +197,9 @@ class _AppSecActivationsState:
     @property
     @pulumi.getter(name="notificationEmails")
     def notification_emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+        """
         return pulumi.get(self, "notification_emails")
 
     @notification_emails.setter
@@ -176,6 +221,9 @@ class _AppSecActivationsState:
     @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[int]]:
+        """
+        The version number of the security configuration to use.
+        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -215,20 +263,14 @@ class AppSecActivations(pulumi.CustomResource):
             notification_emails=["user@example.com"])
         ```
 
-        * `config_id` - (Required) The ID of the security configuration to use.
-
-        * `version` - (Required) The version number of the security configuration to use.
-
-        * `notification_emails` - (Required) A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
-
-        * `network` - The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
-
-        * `notes` - An optional text note describing this operation.
-
-        * `activate` - A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] activate: A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
+        :param pulumi.Input[str] network: The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+        :param pulumi.Input[str] notes: An optional text note describing this operation.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         ...
     @overload
@@ -255,18 +297,6 @@ class AppSecActivations(pulumi.CustomResource):
             notes="TEST Notes",
             notification_emails=["user@example.com"])
         ```
-
-        * `config_id` - (Required) The ID of the security configuration to use.
-
-        * `version` - (Required) The version number of the security configuration to use.
-
-        * `notification_emails` - (Required) A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
-
-        * `network` - The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
-
-        * `notes` - An optional text note describing this operation.
-
-        * `activate` - A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
 
         :param str resource_name: The name of the resource.
         :param AppSecActivationsArgs args: The arguments to use to populate this resource's properties.
@@ -338,7 +368,13 @@ class AppSecActivations(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] activate: A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
+        :param pulumi.Input[str] network: The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+        :param pulumi.Input[str] notes: An optional text note describing this operation.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
         :param pulumi.Input[str] status: The status of the operation. The following values are may be returned:
+        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -356,26 +392,41 @@ class AppSecActivations(pulumi.CustomResource):
     @property
     @pulumi.getter
     def activate(self) -> pulumi.Output[Optional[bool]]:
+        """
+        A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+        """
         return pulumi.get(self, "activate")
 
     @property
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
+        """
+        The ID of the security configuration to use.
+        """
         return pulumi.get(self, "config_id")
 
     @property
     @pulumi.getter
     def network(self) -> pulumi.Output[Optional[str]]:
+        """
+        The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+        """
         return pulumi.get(self, "network")
 
     @property
     @pulumi.getter
     def notes(self) -> pulumi.Output[Optional[str]]:
+        """
+        An optional text note describing this operation.
+        """
         return pulumi.get(self, "notes")
 
     @property
     @pulumi.getter(name="notificationEmails")
     def notification_emails(self) -> pulumi.Output[Sequence[str]]:
+        """
+        A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+        """
         return pulumi.get(self, "notification_emails")
 
     @property
@@ -389,5 +440,8 @@ class AppSecActivations(pulumi.CustomResource):
     @property
     @pulumi.getter
     def version(self) -> pulumi.Output[int]:
+        """
+        The version number of the security configuration to use.
+        """
         return pulumi.get(self, "version")
 

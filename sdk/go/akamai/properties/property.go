@@ -14,29 +14,28 @@ import (
 type Property struct {
 	pulumi.CustomResourceState
 
-	// Deprecated: "contact" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "contact" has been deprecated.
 	Contacts pulumi.StringArrayOutput `pulumi:"contacts"`
-	// Deprecated: use "contract_id" attribute instead
+	// Deprecated: The setting "contract" has been deprecated.
 	Contract pulumi.StringOutput `pulumi:"contract"`
 	// Contract ID to be assigned to the Property
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
-	// Deprecated: "cp_code" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "cp_code" has been deprecated.
 	CpCode pulumi.StringPtrOutput `pulumi:"cpCode"`
-	// Deprecated: use "group_id" attribute instead
+	// Deprecated: The setting "group" has been deprecated.
 	Group pulumi.StringOutput `pulumi:"group"`
 	// Group ID to be assigned to the Property
-	GroupId pulumi.StringOutput `pulumi:"groupId"`
-	// Mapping of edge hostname CNAMEs to other CNAMEs
-	Hostnames pulumi.StringMapOutput `pulumi:"hostnames"`
-	// Deprecated: "is_secure" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	GroupId   pulumi.StringOutput         `pulumi:"groupId"`
+	Hostnames PropertyHostnameArrayOutput `pulumi:"hostnames"`
+	// Deprecated: The setting "is_secure" has been deprecated.
 	IsSecure pulumi.BoolPtrOutput `pulumi:"isSecure"`
 	// Property's current latest version number
 	LatestVersion pulumi.IntOutput `pulumi:"latestVersion"`
 	// Name to give to the Property (must be unique)
 	Name pulumi.StringOutput `pulumi:"name"`
-	// Deprecated: "origin" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "origin" has been deprecated.
 	Origins PropertyOriginArrayOutput `pulumi:"origins"`
-	// Deprecated: use "product_id" attribute instead
+	// Deprecated: The setting "product" has been deprecated.
 	Product pulumi.StringOutput `pulumi:"product"`
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringOutput `pulumi:"productId"`
@@ -44,13 +43,14 @@ type Property struct {
 	ProductionVersion pulumi.IntOutput             `pulumi:"productionVersion"`
 	RuleErrors        PropertyRuleErrorArrayOutput `pulumi:"ruleErrors"`
 	// Specify the rule format version (defaults to latest version available when created)
-	RuleFormat   pulumi.StringOutput            `pulumi:"ruleFormat"`
+	RuleFormat pulumi.StringOutput `pulumi:"ruleFormat"`
+	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings PropertyRuleWarningArrayOutput `pulumi:"ruleWarnings"`
 	// Property Rules as JSON
 	Rules pulumi.StringOutput `pulumi:"rules"`
 	// Property's version currently activated in staging (zero when not active in staging)
 	StagingVersion pulumi.IntOutput `pulumi:"stagingVersion"`
-	// Deprecated: "variables" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "variables" has been deprecated.
 	Variables pulumi.StringPtrOutput `pulumi:"variables"`
 }
 
@@ -83,29 +83,28 @@ func GetProperty(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Property resources.
 type propertyState struct {
-	// Deprecated: "contact" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "contact" has been deprecated.
 	Contacts []string `pulumi:"contacts"`
-	// Deprecated: use "contract_id" attribute instead
+	// Deprecated: The setting "contract" has been deprecated.
 	Contract *string `pulumi:"contract"`
 	// Contract ID to be assigned to the Property
 	ContractId *string `pulumi:"contractId"`
-	// Deprecated: "cp_code" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "cp_code" has been deprecated.
 	CpCode *string `pulumi:"cpCode"`
-	// Deprecated: use "group_id" attribute instead
+	// Deprecated: The setting "group" has been deprecated.
 	Group *string `pulumi:"group"`
 	// Group ID to be assigned to the Property
-	GroupId *string `pulumi:"groupId"`
-	// Mapping of edge hostname CNAMEs to other CNAMEs
-	Hostnames map[string]string `pulumi:"hostnames"`
-	// Deprecated: "is_secure" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	GroupId   *string            `pulumi:"groupId"`
+	Hostnames []PropertyHostname `pulumi:"hostnames"`
+	// Deprecated: The setting "is_secure" has been deprecated.
 	IsSecure *bool `pulumi:"isSecure"`
 	// Property's current latest version number
 	LatestVersion *int `pulumi:"latestVersion"`
 	// Name to give to the Property (must be unique)
 	Name *string `pulumi:"name"`
-	// Deprecated: "origin" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "origin" has been deprecated.
 	Origins []PropertyOrigin `pulumi:"origins"`
-	// Deprecated: use "product_id" attribute instead
+	// Deprecated: The setting "product" has been deprecated.
 	Product *string `pulumi:"product"`
 	// Product ID to be assigned to the Property
 	ProductId *string `pulumi:"productId"`
@@ -113,40 +112,40 @@ type propertyState struct {
 	ProductionVersion *int                `pulumi:"productionVersion"`
 	RuleErrors        []PropertyRuleError `pulumi:"ruleErrors"`
 	// Specify the rule format version (defaults to latest version available when created)
-	RuleFormat   *string               `pulumi:"ruleFormat"`
+	RuleFormat *string `pulumi:"ruleFormat"`
+	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings []PropertyRuleWarning `pulumi:"ruleWarnings"`
 	// Property Rules as JSON
 	Rules *string `pulumi:"rules"`
 	// Property's version currently activated in staging (zero when not active in staging)
 	StagingVersion *int `pulumi:"stagingVersion"`
-	// Deprecated: "variables" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "variables" has been deprecated.
 	Variables *string `pulumi:"variables"`
 }
 
 type PropertyState struct {
-	// Deprecated: "contact" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "contact" has been deprecated.
 	Contacts pulumi.StringArrayInput
-	// Deprecated: use "contract_id" attribute instead
+	// Deprecated: The setting "contract" has been deprecated.
 	Contract pulumi.StringPtrInput
 	// Contract ID to be assigned to the Property
 	ContractId pulumi.StringPtrInput
-	// Deprecated: "cp_code" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "cp_code" has been deprecated.
 	CpCode pulumi.StringPtrInput
-	// Deprecated: use "group_id" attribute instead
+	// Deprecated: The setting "group" has been deprecated.
 	Group pulumi.StringPtrInput
 	// Group ID to be assigned to the Property
-	GroupId pulumi.StringPtrInput
-	// Mapping of edge hostname CNAMEs to other CNAMEs
-	Hostnames pulumi.StringMapInput
-	// Deprecated: "is_secure" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	GroupId   pulumi.StringPtrInput
+	Hostnames PropertyHostnameArrayInput
+	// Deprecated: The setting "is_secure" has been deprecated.
 	IsSecure pulumi.BoolPtrInput
 	// Property's current latest version number
 	LatestVersion pulumi.IntPtrInput
 	// Name to give to the Property (must be unique)
 	Name pulumi.StringPtrInput
-	// Deprecated: "origin" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "origin" has been deprecated.
 	Origins PropertyOriginArrayInput
-	// Deprecated: use "product_id" attribute instead
+	// Deprecated: The setting "product" has been deprecated.
 	Product pulumi.StringPtrInput
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringPtrInput
@@ -154,13 +153,14 @@ type PropertyState struct {
 	ProductionVersion pulumi.IntPtrInput
 	RuleErrors        PropertyRuleErrorArrayInput
 	// Specify the rule format version (defaults to latest version available when created)
-	RuleFormat   pulumi.StringPtrInput
+	RuleFormat pulumi.StringPtrInput
+	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings PropertyRuleWarningArrayInput
 	// Property Rules as JSON
 	Rules pulumi.StringPtrInput
 	// Property's version currently activated in staging (zero when not active in staging)
 	StagingVersion pulumi.IntPtrInput
-	// Deprecated: "variables" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "variables" has been deprecated.
 	Variables pulumi.StringPtrInput
 }
 
@@ -169,69 +169,71 @@ func (PropertyState) ElementType() reflect.Type {
 }
 
 type propertyArgs struct {
-	// Deprecated: "contact" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "contact" has been deprecated.
 	Contacts []string `pulumi:"contacts"`
-	// Deprecated: use "contract_id" attribute instead
+	// Deprecated: The setting "contract" has been deprecated.
 	Contract *string `pulumi:"contract"`
 	// Contract ID to be assigned to the Property
 	ContractId *string `pulumi:"contractId"`
-	// Deprecated: "cp_code" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "cp_code" has been deprecated.
 	CpCode *string `pulumi:"cpCode"`
-	// Deprecated: use "group_id" attribute instead
+	// Deprecated: The setting "group" has been deprecated.
 	Group *string `pulumi:"group"`
 	// Group ID to be assigned to the Property
-	GroupId *string `pulumi:"groupId"`
-	// Mapping of edge hostname CNAMEs to other CNAMEs
-	Hostnames map[string]string `pulumi:"hostnames"`
-	// Deprecated: "is_secure" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	GroupId   *string            `pulumi:"groupId"`
+	Hostnames []PropertyHostname `pulumi:"hostnames"`
+	// Deprecated: The setting "is_secure" has been deprecated.
 	IsSecure *bool `pulumi:"isSecure"`
 	// Name to give to the Property (must be unique)
 	Name *string `pulumi:"name"`
-	// Deprecated: "origin" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "origin" has been deprecated.
 	Origins []PropertyOrigin `pulumi:"origins"`
-	// Deprecated: use "product_id" attribute instead
+	// Deprecated: The setting "product" has been deprecated.
 	Product *string `pulumi:"product"`
 	// Product ID to be assigned to the Property
 	ProductId *string `pulumi:"productId"`
 	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat *string `pulumi:"ruleFormat"`
+	// Deprecated: Rule warnings will not be set in state anymore
+	RuleWarnings []PropertyRuleWarning `pulumi:"ruleWarnings"`
 	// Property Rules as JSON
 	Rules *string `pulumi:"rules"`
-	// Deprecated: "variables" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "variables" has been deprecated.
 	Variables *string `pulumi:"variables"`
 }
 
 // The set of arguments for constructing a Property resource.
 type PropertyArgs struct {
-	// Deprecated: "contact" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "contact" has been deprecated.
 	Contacts pulumi.StringArrayInput
-	// Deprecated: use "contract_id" attribute instead
+	// Deprecated: The setting "contract" has been deprecated.
 	Contract pulumi.StringPtrInput
 	// Contract ID to be assigned to the Property
 	ContractId pulumi.StringPtrInput
-	// Deprecated: "cp_code" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "cp_code" has been deprecated.
 	CpCode pulumi.StringPtrInput
-	// Deprecated: use "group_id" attribute instead
+	// Deprecated: The setting "group" has been deprecated.
 	Group pulumi.StringPtrInput
 	// Group ID to be assigned to the Property
-	GroupId pulumi.StringPtrInput
-	// Mapping of edge hostname CNAMEs to other CNAMEs
-	Hostnames pulumi.StringMapInput
-	// Deprecated: "is_secure" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	GroupId   pulumi.StringPtrInput
+	Hostnames PropertyHostnameArrayInput
+	// Deprecated: The setting "is_secure" has been deprecated.
 	IsSecure pulumi.BoolPtrInput
 	// Name to give to the Property (must be unique)
 	Name pulumi.StringPtrInput
-	// Deprecated: "origin" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "origin" has been deprecated.
 	Origins PropertyOriginArrayInput
-	// Deprecated: use "product_id" attribute instead
+	// Deprecated: The setting "product" has been deprecated.
 	Product pulumi.StringPtrInput
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringPtrInput
 	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat pulumi.StringPtrInput
+	// Deprecated: Rule warnings will not be set in state anymore
+	RuleWarnings PropertyRuleWarningArrayInput
 	// Property Rules as JSON
 	Rules pulumi.StringPtrInput
-	// Deprecated: "variables" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "variables" has been deprecated.
 	Variables pulumi.StringPtrInput
 }
 

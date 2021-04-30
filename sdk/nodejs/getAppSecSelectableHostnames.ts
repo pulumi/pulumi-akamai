@@ -6,7 +6,7 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecSelectableHostnames` data source to retrieve the list of hostnames that may be protected under a given security configuration version.
+ * Use the `akamai.getAppSecSelectableHostnames` data source to retrieve the list of hostnames that may be protected under a given security configuration version. You can specify the list to be retrieved either by supplying the name and version of a security configuration, or by supplying a group ID and contract ID.
  *
  * ## Example Usage
  *
@@ -17,7 +17,7 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: "Akamai Tools",
+ *     name: _var.security_configuration,
  * });
  * const selectableHostnamesAppSecSelectableHostnames = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecSelectableHostnames({
  *     configId: configuration.configId,
@@ -26,9 +26,17 @@ import * as utilities from "./utilities";
  * export const selectableHostnames = selectableHostnamesAppSecSelectableHostnames.then(selectableHostnamesAppSecSelectableHostnames => selectableHostnamesAppSecSelectableHostnames.hostnames);
  * export const selectableHostnamesJson = selectableHostnamesAppSecSelectableHostnames.then(selectableHostnamesAppSecSelectableHostnames => selectableHostnamesAppSecSelectableHostnames.hostnamesJson);
  * export const selectableHostnamesOutputText = selectableHostnamesAppSecSelectableHostnames.then(selectableHostnamesAppSecSelectableHostnames => selectableHostnamesAppSecSelectableHostnames.outputText);
+ * const selectableHostnamesForCreateConfigurationAppSecSelectableHostnames = akamai.getAppSecSelectableHostnames({
+ *     contractid: _var.contractid,
+ *     groupid: _var.groupid,
+ * });
+ * export const selectableHostnamesForCreateConfiguration = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.then(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames => selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.hostnames);
+ * export const selectableHostnamesForCreateConfigurationJson = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.then(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames => selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.hostnamesJson);
+ * export const selectableHostnamesForCreateConfigurationOutputText = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.then(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames => selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.outputText);
  * ```
  */
-export function getAppSecSelectableHostnames(args: GetAppSecSelectableHostnamesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecSelectableHostnamesResult> {
+export function getAppSecSelectableHostnames(args?: GetAppSecSelectableHostnamesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecSelectableHostnamesResult> {
+    args = args || {};
     if (!opts) {
         opts = {}
     }
@@ -40,6 +48,8 @@ export function getAppSecSelectableHostnames(args: GetAppSecSelectableHostnamesA
         "activeInProduction": args.activeInProduction,
         "activeInStaging": args.activeInStaging,
         "configId": args.configId,
+        "contractid": args.contractid,
+        "groupid": args.groupid,
         "version": args.version,
     }, opts);
 }
@@ -53,11 +63,19 @@ export interface GetAppSecSelectableHostnamesArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: number;
+    readonly configId?: number;
+    /**
+     * The ID of the contract to use.
+     */
+    readonly contractid?: string;
+    /**
+     * The ID of the group to use.
+     */
+    readonly groupid?: number;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: number;
+    readonly version?: number;
 }
 
 /**
@@ -66,7 +84,9 @@ export interface GetAppSecSelectableHostnamesArgs {
 export interface GetAppSecSelectableHostnamesResult {
     readonly activeInProduction?: boolean;
     readonly activeInStaging?: boolean;
-    readonly configId: number;
+    readonly configId?: number;
+    readonly contractid?: string;
+    readonly groupid?: number;
     /**
      * The list of selectable hostnames.
      */
@@ -83,5 +103,5 @@ export interface GetAppSecSelectableHostnamesResult {
      * A tabular display of the selectable hostnames showing the name and configId of the security configuration under which the host is protected in production, or '-' if the host is not protected in production.
      */
     readonly outputText: string;
-    readonly version: number;
+    readonly version?: number;
 }

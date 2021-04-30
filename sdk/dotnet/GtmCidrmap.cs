@@ -10,7 +10,11 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// `akamai.GtmCidrmap` provides the resource for creating, configuring and importing a gtm Cidr Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_map_name`
+    /// Use the `akamai.GtmCidrmap` resource to create, configure, and import a GTM Classless Inter-Domain Routing (CIDR) map. CIDR mapping uses the IP addresses of the requesting name server to provide IP-specific CNAME entries. CNAMEs let you direct internal users to a specific environment or direct them to the origin. This lets you provide different responses to an internal corporate DNS infrastructure, such as internal test environments and another answer for all other name servers (`default_datacenter`).
+    /// 
+    ///  CIDR maps split the Internet into multiple CIDR block zones. Properties that use a map can specify a handout CNAME for each zone on the property’s editing page. To configure a property for CIDR mapping, your domain needs at least one CIDR map defined.
+    /// 
+    /// &gt; **Note** Import requires an ID with this format: `existing_domain_name`:`existing_map_name`.
     /// 
     /// ## Example Usage
     /// 
@@ -37,38 +41,40 @@ namespace Pulumi.Akamai
     /// 
     /// }
     /// ```
+    /// ## Argument reference
+    /// 
+    /// This resource supports these arguments:
+    /// 
+    /// * `domain` - (Required) GTM Domain name for the AS Map.
+    /// * `name` - (Required) A descriptive label for the CIDR map, up to 255 characters.
+    /// * `default_datacenter` - (Required) A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+    ///   * `datacenter_id` - (Required) For each property, an identifier for all other CIDR zones.
+    ///   * `nickname` - (Required) A descriptive label for the all other CIDR blocks.
+    /// * `wait_on_complete` - (Optional) A boolean that, if set to `true`, waits for transaction to complete.
+    /// * `assignment` - (Optional) Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+    ///   * `datacenter_id` - (Optional) A unique identifier for an existing data center in the domain.
+    ///   * `nickname` - (Optional) A descriptive label for the CIDR zone group, up to 256 characters.
+    ///   * `blocks` - (Optional, list) Specifies an array of CIDR blocks.
+    /// 
+    /// ## Schema reference
+    /// 
+    /// You can download the GTM CIDR Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#cidrmap) page.
     /// </summary>
     [AkamaiResourceType("akamai:index/gtmCidrmap:GtmCidrmap")]
     public partial class GtmCidrmap : Pulumi.CustomResource
     {
-        /// <summary>
-        /// * `datacenter_id`
-        /// * `nickname`
-        /// </summary>
         [Output("assignments")]
         public Output<ImmutableArray<Outputs.GtmCidrmapAssignment>> Assignments { get; private set; } = null!;
 
         [Output("defaultDatacenter")]
         public Output<Outputs.GtmCidrmapDefaultDatacenter> DefaultDatacenter { get; private set; } = null!;
 
-        /// <summary>
-        /// Domain name
-        /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
 
-        /// <summary>
-        /// Resource name
-        /// * `default_datacenter`
-        /// * `datacenter_id`
-        /// * `nickname`
-        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
-        /// <summary>
-        /// Wait for transaction to complete
-        /// </summary>
         [Output("waitOnComplete")]
         public Output<bool?> WaitOnComplete { get; private set; } = null!;
 
@@ -124,11 +130,6 @@ namespace Pulumi.Akamai
     {
         [Input("assignments")]
         private InputList<Inputs.GtmCidrmapAssignmentArgs>? _assignments;
-
-        /// <summary>
-        /// * `datacenter_id`
-        /// * `nickname`
-        /// </summary>
         public InputList<Inputs.GtmCidrmapAssignmentArgs> Assignments
         {
             get => _assignments ?? (_assignments = new InputList<Inputs.GtmCidrmapAssignmentArgs>());
@@ -138,24 +139,12 @@ namespace Pulumi.Akamai
         [Input("defaultDatacenter", required: true)]
         public Input<Inputs.GtmCidrmapDefaultDatacenterArgs> DefaultDatacenter { get; set; } = null!;
 
-        /// <summary>
-        /// Domain name
-        /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
 
-        /// <summary>
-        /// Resource name
-        /// * `default_datacenter`
-        /// * `datacenter_id`
-        /// * `nickname`
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// Wait for transaction to complete
-        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 
@@ -168,11 +157,6 @@ namespace Pulumi.Akamai
     {
         [Input("assignments")]
         private InputList<Inputs.GtmCidrmapAssignmentGetArgs>? _assignments;
-
-        /// <summary>
-        /// * `datacenter_id`
-        /// * `nickname`
-        /// </summary>
         public InputList<Inputs.GtmCidrmapAssignmentGetArgs> Assignments
         {
             get => _assignments ?? (_assignments = new InputList<Inputs.GtmCidrmapAssignmentGetArgs>());
@@ -182,24 +166,12 @@ namespace Pulumi.Akamai
         [Input("defaultDatacenter")]
         public Input<Inputs.GtmCidrmapDefaultDatacenterGetArgs>? DefaultDatacenter { get; set; }
 
-        /// <summary>
-        /// Domain name
-        /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
-        /// <summary>
-        /// Resource name
-        /// * `default_datacenter`
-        /// * `datacenter_id`
-        /// * `nickname`
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// Wait for transaction to complete
-        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 

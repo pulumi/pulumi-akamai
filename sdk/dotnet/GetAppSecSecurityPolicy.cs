@@ -12,7 +12,7 @@ namespace Pulumi.Akamai
     public static class GetAppSecSecurityPolicy
     {
         /// <summary>
-        /// Use the `akamai.getAppSecSecurityPolicy` data source to retrieve information about the security policies associated with a specific security configuration version, or about a specific security policy.
+        /// Use the `akamai.AppSecSecurityPolicy` data source to retrieve information about the security policies associated with a specific security configuration version, or about a specific security policy.
         /// 
         /// {{% examples %}}
         /// ## Example Usage

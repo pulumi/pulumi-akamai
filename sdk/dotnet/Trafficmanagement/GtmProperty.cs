@@ -252,7 +252,7 @@ namespace Pulumi.Akamai.Trafficmanagement
         [Input("stickinessBonusPercentage")]
         public Input<int>? StickinessBonusPercentage { get; set; }
 
-        [Input("trafficTargets", required: true)]
+        [Input("trafficTargets")]
         private InputList<Inputs.GtmPropertyTrafficTargetArgs>? _trafficTargets;
         public InputList<Inputs.GtmPropertyTrafficTargetArgs> TrafficTargets
         {

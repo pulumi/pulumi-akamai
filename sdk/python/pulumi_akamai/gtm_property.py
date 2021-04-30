@@ -19,7 +19,6 @@ class GtmPropertyArgs:
                  handout_limit: pulumi.Input[int],
                  handout_mode: pulumi.Input[str],
                  score_aggregation_type: pulumi.Input[str],
-                 traffic_targets: pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]],
                  type: pulumi.Input[str],
                  backup_cname: Optional[pulumi.Input[str]] = None,
                  backup_ip: Optional[pulumi.Input[str]] = None,
@@ -44,46 +43,17 @@ class GtmPropertyArgs:
                  static_ttl: Optional[pulumi.Input[int]] = None,
                  stickiness_bonus_constant: Optional[pulumi.Input[int]] = None,
                  stickiness_bonus_percentage: Optional[pulumi.Input[int]] = None,
+                 traffic_targets: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]] = None,
                  unreachable_threshold: Optional[pulumi.Input[float]] = None,
                  use_computed_targets: Optional[pulumi.Input[bool]] = None,
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a GtmProperty resource.
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]] traffic_targets: * `datacenter_id`
-        :param pulumi.Input[str] type: Property type  
-               * `score_aggregation_type`
-        :param pulumi.Input[bool] balance_by_download_score: * `static_ttl`
-               * `unreachable_threshold`
-               * `health_multiplier`
-               * `dynamic_ttl`
-               * `max_unreachable_penalty`
-               * `map_name`
-               * `load_imbalance_percentage`
-               * `health_max`
-               * `cname`
-               * `comments`
-               * `ghost_demand_reporting`
-               * `min_live_fraction`
-        :param pulumi.Input[bool] ipv6: * `stickiness_bonus_percentage`
-               * `stickiness_bonus_constant`
-               * `health_threshold`
-        :param pulumi.Input[str] name: Liveness test name
-               * `test_interval`
-               * `test_object_protocol`
-               * `test_timeout`
-        :param pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]] static_rr_sets: * `type`
-               * `ttl`
-        :param pulumi.Input[bool] use_computed_targets: * `backup_ip`
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
-               * `failover_delay`
-               * `failback_delay`
         """
         pulumi.set(__self__, "domain", domain)
         pulumi.set(__self__, "handout_limit", handout_limit)
         pulumi.set(__self__, "handout_mode", handout_mode)
         pulumi.set(__self__, "score_aggregation_type", score_aggregation_type)
-        pulumi.set(__self__, "traffic_targets", traffic_targets)
         pulumi.set(__self__, "type", type)
         if backup_cname is not None:
             pulumi.set(__self__, "backup_cname", backup_cname)
@@ -131,6 +101,8 @@ class GtmPropertyArgs:
             pulumi.set(__self__, "stickiness_bonus_constant", stickiness_bonus_constant)
         if stickiness_bonus_percentage is not None:
             pulumi.set(__self__, "stickiness_bonus_percentage", stickiness_bonus_percentage)
+        if traffic_targets is not None:
+            pulumi.set(__self__, "traffic_targets", traffic_targets)
         if unreachable_threshold is not None:
             pulumi.set(__self__, "unreachable_threshold", unreachable_threshold)
         if use_computed_targets is not None:
@@ -141,9 +113,6 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Input[str]:
-        """
-        Domain name
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -178,24 +147,8 @@ class GtmPropertyArgs:
         pulumi.set(self, "score_aggregation_type", value)
 
     @property
-    @pulumi.getter(name="trafficTargets")
-    def traffic_targets(self) -> pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]:
-        """
-        * `datacenter_id`
-        """
-        return pulumi.get(self, "traffic_targets")
-
-    @traffic_targets.setter
-    def traffic_targets(self, value: pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]):
-        pulumi.set(self, "traffic_targets", value)
-
-    @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        Property type  
-        * `score_aggregation_type`
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -223,20 +176,6 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="balanceByDownloadScore")
     def balance_by_download_score(self) -> Optional[pulumi.Input[bool]]:
-        """
-        * `static_ttl`
-        * `unreachable_threshold`
-        * `health_multiplier`
-        * `dynamic_ttl`
-        * `max_unreachable_penalty`
-        * `map_name`
-        * `load_imbalance_percentage`
-        * `health_max`
-        * `cname`
-        * `comments`
-        * `ghost_demand_reporting`
-        * `min_live_fraction`
-        """
         return pulumi.get(self, "balance_by_download_score")
 
     @balance_by_download_score.setter
@@ -327,11 +266,6 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter
     def ipv6(self) -> Optional[pulumi.Input[bool]]:
-        """
-        * `stickiness_bonus_percentage`
-        * `stickiness_bonus_constant`
-        * `health_threshold`
-        """
         return pulumi.get(self, "ipv6")
 
     @ipv6.setter
@@ -386,12 +320,6 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Liveness test name
-        * `test_interval`
-        * `test_object_protocol`
-        * `test_timeout`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -401,10 +329,6 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="staticRrSets")
     def static_rr_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]]:
-        """
-        * `type`
-        * `ttl`
-        """
         return pulumi.get(self, "static_rr_sets")
 
     @static_rr_sets.setter
@@ -439,6 +363,15 @@ class GtmPropertyArgs:
         pulumi.set(self, "stickiness_bonus_percentage", value)
 
     @property
+    @pulumi.getter(name="trafficTargets")
+    def traffic_targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]]:
+        return pulumi.get(self, "traffic_targets")
+
+    @traffic_targets.setter
+    def traffic_targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]]):
+        pulumi.set(self, "traffic_targets", value)
+
+    @property
     @pulumi.getter(name="unreachableThreshold")
     def unreachable_threshold(self) -> Optional[pulumi.Input[float]]:
         return pulumi.get(self, "unreachable_threshold")
@@ -450,9 +383,6 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="useComputedTargets")
     def use_computed_targets(self) -> Optional[pulumi.Input[bool]]:
-        """
-        * `backup_ip`
-        """
         return pulumi.get(self, "use_computed_targets")
 
     @use_computed_targets.setter
@@ -462,11 +392,6 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Wait for transaction to complete
-        * `failover_delay`
-        * `failback_delay`
-        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -513,35 +438,6 @@ class _GtmPropertyState:
                  weighted_hash_bits_for_ipv6: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering GtmProperty resources.
-        :param pulumi.Input[bool] balance_by_download_score: * `static_ttl`
-               * `unreachable_threshold`
-               * `health_multiplier`
-               * `dynamic_ttl`
-               * `max_unreachable_penalty`
-               * `map_name`
-               * `load_imbalance_percentage`
-               * `health_max`
-               * `cname`
-               * `comments`
-               * `ghost_demand_reporting`
-               * `min_live_fraction`
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[bool] ipv6: * `stickiness_bonus_percentage`
-               * `stickiness_bonus_constant`
-               * `health_threshold`
-        :param pulumi.Input[str] name: Liveness test name
-               * `test_interval`
-               * `test_object_protocol`
-               * `test_timeout`
-        :param pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]] static_rr_sets: * `type`
-               * `ttl`
-        :param pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]] traffic_targets: * `datacenter_id`
-        :param pulumi.Input[str] type: Property type  
-               * `score_aggregation_type`
-        :param pulumi.Input[bool] use_computed_targets: * `backup_ip`
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
-               * `failover_delay`
-               * `failback_delay`
         """
         if backup_cname is not None:
             pulumi.set(__self__, "backup_cname", backup_cname)
@@ -633,20 +529,6 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="balanceByDownloadScore")
     def balance_by_download_score(self) -> Optional[pulumi.Input[bool]]:
-        """
-        * `static_ttl`
-        * `unreachable_threshold`
-        * `health_multiplier`
-        * `dynamic_ttl`
-        * `max_unreachable_penalty`
-        * `map_name`
-        * `load_imbalance_percentage`
-        * `health_max`
-        * `cname`
-        * `comments`
-        * `ghost_demand_reporting`
-        * `min_live_fraction`
-        """
         return pulumi.get(self, "balance_by_download_score")
 
     @balance_by_download_score.setter
@@ -674,9 +556,6 @@ class _GtmPropertyState:
     @property
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        Domain name
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -767,11 +646,6 @@ class _GtmPropertyState:
     @property
     @pulumi.getter
     def ipv6(self) -> Optional[pulumi.Input[bool]]:
-        """
-        * `stickiness_bonus_percentage`
-        * `stickiness_bonus_constant`
-        * `health_threshold`
-        """
         return pulumi.get(self, "ipv6")
 
     @ipv6.setter
@@ -826,12 +700,6 @@ class _GtmPropertyState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Liveness test name
-        * `test_interval`
-        * `test_object_protocol`
-        * `test_timeout`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -850,10 +718,6 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="staticRrSets")
     def static_rr_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]]:
-        """
-        * `type`
-        * `ttl`
-        """
         return pulumi.get(self, "static_rr_sets")
 
     @static_rr_sets.setter
@@ -890,9 +754,6 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="trafficTargets")
     def traffic_targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]]:
-        """
-        * `datacenter_id`
-        """
         return pulumi.get(self, "traffic_targets")
 
     @traffic_targets.setter
@@ -902,10 +763,6 @@ class _GtmPropertyState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Property type  
-        * `score_aggregation_type`
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -924,9 +781,6 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="useComputedTargets")
     def use_computed_targets(self) -> Optional[pulumi.Input[bool]]:
-        """
-        * `backup_ip`
-        """
         return pulumi.get(self, "use_computed_targets")
 
     @use_computed_targets.setter
@@ -936,11 +790,6 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Wait for transaction to complete
-        * `failover_delay`
-        * `failback_delay`
-        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -1005,7 +854,9 @@ class GtmProperty(pulumi.CustomResource):
                  wait_on_complete: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        `GtmProperty` provides the resource for creating, configuring and importing a gtm property to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_property_name`
+        Use the `GtmProperty` resource provides the resource for creating, configuring and importing a GTM property, a set of IP addresses or CNAMEs that GTM provides in response to DNS queries based on a set of rules.
+
+        > **Note** Import requires an ID with this format: `existing_domain_name`:`existing_property_name`.
 
         ## Example Usage
 
@@ -1025,38 +876,89 @@ class GtmProperty(pulumi.CustomResource):
             )],
             type="weighted-round-robin")
         ```
+        ## Argument reference
+
+        This resource supports these arguments:
+
+        * `domain` - (Required) DNS name for the GTM Domain set that includes this Property.
+        * `name` - (Required) DNS name for a collection of IP address or CNAME responses. The value, together with the GTM domainName, forms the Property’s hostname.
+        * `type` - (Required) Specifies the load balancing behavior for the property. Either failover, geographic, cidrmapping, weighted-round-robin, weighted-hashed, weighted-round-robin-load-feedback, qtr, or performance.
+        * `score_aggregation_type` - (Required) Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
+        * `handout_limit` - (Required) Indicates the limit for the number of live IPs handed out to a DNS request.
+        * `handout_mode` - (Required) Specifies how IPs are returned when more than one IP is alive and available.
+        * `traffic_target` - (Required) Contains information about where to direct data center traffic. You can have multiple `traffic_target` arguments. If used, requires these arguments:
+          * `datacenter_id` - (Required) A unique identifier for an existing data center in the domain.
+          * `enabled` - (Required) A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
+          * `weight` - (Required) Specifies the traffic weight for the target.
+          * `servers` - (Required) (List) Identifies the IP address or the hostnames of the servers.
+          * `name` - (Required) An alternative label for the traffic target.
+          * `handout_cname` - (Required) Specifies an optional data center for the property. Used when there are no servers configured for the property.
+        * `liveness_test` - (Optional) Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `liveness_test` arguments. If used, requires these arguments:
+          * `name` - (Optional) A descriptive name for the liveness test.
+          * `test_interval` - (Optional) Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
+          * `test_object_protocol` - (Optional) Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
+          * `test_timeout` - (Optional) Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
+          * `answers_required` - (Optional) If `test_object_protocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
+          * `disabled` - (Optional) A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
+          * `disable_nonstandard_port_warning` - (Optional) A boolean that if set to `true`, disables warnings when non-standard ports are used.
+          * `error_penalty` - (Optional) Specifies the score that’s reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
+          * `http_header` - (Optional) Contains HTTP headers to send if the `test_object_protocol` is `http` or `https`. You can have multiple `http_header` entries. Requires these arguments:
+            * `name` - Name of HTTP header.
+            * `value` - Value of HTTP header.
+          * `http_error3xx` - (Optional) A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+          * `http_error4xx` - (Optional) A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+          * `http_error5xx` - (Optional) A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+          * `peer_certificate_verification` - (Optional) A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `test_object_protocol` of https.
+          * `recursion_requested` - (Optional) A boolean indicating whether the `test_object_protocol` is DNS. The DNS query is recursive.
+          * `request_string` - (Optional) Specifies a request string.
+          * `resource_type` - (Optional) Specifies the query type, if `test_object_protocol` is DNS.
+          * `response_string` - (Optional) Specifies a response string.
+          * `ssl_client_certificate` - (Optional) Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
+          * `ssl_client_private_key` - (Optional) Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can’t have a passphrase nor be used for any other purpose.
+          * `test_object` - (Optional) Specifies the static text that acts as a stand-in for the data that you’re sending on the network.
+          * `test_object_password` - (Optional) Specifies the test object’s password. It is required if testObjectProtocol is ftp.
+          * `test_object_port` - (Optional) Specifies the port number for the testObject.
+          * `test_object_username` - (Optional) A descriptive name for the testObject.
+          * `timeout_penalty`- (Optional) Specifies the score to be reported if the liveness test times out.
+        * `wait_on_complete` - (Optional) A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+        * `failover_delay` - (Optional) Specifies the failover delay in seconds.
+        * `failback_delay` - (Optional) Specifies the failback delay in seconds.
+        * `ipv6` - (Optional) A boolean that indicates the type of IP address handed out by a GTM property.
+        * `stickiness_bonus_percentage` - (Optional) Specifies a percentage used to configure data center affinity.
+        * `stickiness_bonus_constant` - (Optional) Specifies a constant used to configure data center affinity.
+        * `health_threshold` - (Optional) Configures a cutoff value that is computed from the median scores.
+        * `use_computed_targets` - (Optional) For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
+        * `backup_ip` - Specifies a backup IP. When GTM declares that all of the targets are down, the backupIP is handed out.
+        * `balance_by_download_score` - (Optional) A boolean that indicates whether download score based load balancing is enabled.
+        * `unreachable_threshold` - (Optional) For performance domains, this specifies a penalty value that’s added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
+        * `health_multiplier` - (Optional) Configures a cutoff value that is computed from the median scores.
+        * `dynamic_ttl` - (Optional) Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing such as A and AAAA records, and CNAMEs.
+        * `max_unreachable_penalty` - (Optional) For performance domains, this specifies a penalty value that’s added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
+        * `map_name` - (Optional) A descriptive label for a GeographicMap or a CidrMap that’s required if the property is either geographic or cidrmapping, in which case mapName needs to reference either an existing GeographicMap or CidrMap in the same domain.
+        * `load_imbalance_percentage` - (Optional) Indicates the percent of load imbalance factor (LIF) for the property.
+        * `health_max` - (Optional) Defines the absolute limit beyond which IPs are declared unhealthy.
+        * `cname` - (Optional) Indicates the fully qualified name aliased to a particular property.
+        * `comments` - (Optional) A descriptive note about changes to the domain. The maximum is 4000 characters.
+        * `ghost_demand_reporting` - (Optional) Use load estimates from Akamai Ghost utilization messages.
+        * `min_live_fraction` - (Optional) Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
+        * `static_rr_set` - (Optional) Contains static record sets. You can have multiple `static_rr_set` entries. Requires these arguments:
+          * `type` - (Optional) The record type.
+          * `ttl` - (Optional) The number of seconds that this record should live in a resolver’s cache before being refetched.
+          * `rdata` - (Optional) (List) An array of data strings, representing multiple records within a set.
+
+        ## Attribute reference
+
+        This resource returns these computed attributes in the state file:
+
+        * `weighted_hash_bits_for_ipv4`
+        * `weighted_hash_bits_for_ipv6`
+
+        ## Schema reference
+
+        You can download the GTM Property backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#property) page.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] balance_by_download_score: * `static_ttl`
-               * `unreachable_threshold`
-               * `health_multiplier`
-               * `dynamic_ttl`
-               * `max_unreachable_penalty`
-               * `map_name`
-               * `load_imbalance_percentage`
-               * `health_max`
-               * `cname`
-               * `comments`
-               * `ghost_demand_reporting`
-               * `min_live_fraction`
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[bool] ipv6: * `stickiness_bonus_percentage`
-               * `stickiness_bonus_constant`
-               * `health_threshold`
-        :param pulumi.Input[str] name: Liveness test name
-               * `test_interval`
-               * `test_object_protocol`
-               * `test_timeout`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyStaticRrSetArgs']]]] static_rr_sets: * `type`
-               * `ttl`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyTrafficTargetArgs']]]] traffic_targets: * `datacenter_id`
-        :param pulumi.Input[str] type: Property type  
-               * `score_aggregation_type`
-        :param pulumi.Input[bool] use_computed_targets: * `backup_ip`
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
-               * `failover_delay`
-               * `failback_delay`
         """
         ...
     @overload
@@ -1065,7 +967,9 @@ class GtmProperty(pulumi.CustomResource):
                  args: GtmPropertyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        `GtmProperty` provides the resource for creating, configuring and importing a gtm property to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_property_name`
+        Use the `GtmProperty` resource provides the resource for creating, configuring and importing a GTM property, a set of IP addresses or CNAMEs that GTM provides in response to DNS queries based on a set of rules.
+
+        > **Note** Import requires an ID with this format: `existing_domain_name`:`existing_property_name`.
 
         ## Example Usage
 
@@ -1085,6 +989,86 @@ class GtmProperty(pulumi.CustomResource):
             )],
             type="weighted-round-robin")
         ```
+        ## Argument reference
+
+        This resource supports these arguments:
+
+        * `domain` - (Required) DNS name for the GTM Domain set that includes this Property.
+        * `name` - (Required) DNS name for a collection of IP address or CNAME responses. The value, together with the GTM domainName, forms the Property’s hostname.
+        * `type` - (Required) Specifies the load balancing behavior for the property. Either failover, geographic, cidrmapping, weighted-round-robin, weighted-hashed, weighted-round-robin-load-feedback, qtr, or performance.
+        * `score_aggregation_type` - (Required) Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
+        * `handout_limit` - (Required) Indicates the limit for the number of live IPs handed out to a DNS request.
+        * `handout_mode` - (Required) Specifies how IPs are returned when more than one IP is alive and available.
+        * `traffic_target` - (Required) Contains information about where to direct data center traffic. You can have multiple `traffic_target` arguments. If used, requires these arguments:
+          * `datacenter_id` - (Required) A unique identifier for an existing data center in the domain.
+          * `enabled` - (Required) A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
+          * `weight` - (Required) Specifies the traffic weight for the target.
+          * `servers` - (Required) (List) Identifies the IP address or the hostnames of the servers.
+          * `name` - (Required) An alternative label for the traffic target.
+          * `handout_cname` - (Required) Specifies an optional data center for the property. Used when there are no servers configured for the property.
+        * `liveness_test` - (Optional) Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `liveness_test` arguments. If used, requires these arguments:
+          * `name` - (Optional) A descriptive name for the liveness test.
+          * `test_interval` - (Optional) Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
+          * `test_object_protocol` - (Optional) Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
+          * `test_timeout` - (Optional) Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
+          * `answers_required` - (Optional) If `test_object_protocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
+          * `disabled` - (Optional) A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
+          * `disable_nonstandard_port_warning` - (Optional) A boolean that if set to `true`, disables warnings when non-standard ports are used.
+          * `error_penalty` - (Optional) Specifies the score that’s reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
+          * `http_header` - (Optional) Contains HTTP headers to send if the `test_object_protocol` is `http` or `https`. You can have multiple `http_header` entries. Requires these arguments:
+            * `name` - Name of HTTP header.
+            * `value` - Value of HTTP header.
+          * `http_error3xx` - (Optional) A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+          * `http_error4xx` - (Optional) A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+          * `http_error5xx` - (Optional) A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+          * `peer_certificate_verification` - (Optional) A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `test_object_protocol` of https.
+          * `recursion_requested` - (Optional) A boolean indicating whether the `test_object_protocol` is DNS. The DNS query is recursive.
+          * `request_string` - (Optional) Specifies a request string.
+          * `resource_type` - (Optional) Specifies the query type, if `test_object_protocol` is DNS.
+          * `response_string` - (Optional) Specifies a response string.
+          * `ssl_client_certificate` - (Optional) Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
+          * `ssl_client_private_key` - (Optional) Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can’t have a passphrase nor be used for any other purpose.
+          * `test_object` - (Optional) Specifies the static text that acts as a stand-in for the data that you’re sending on the network.
+          * `test_object_password` - (Optional) Specifies the test object’s password. It is required if testObjectProtocol is ftp.
+          * `test_object_port` - (Optional) Specifies the port number for the testObject.
+          * `test_object_username` - (Optional) A descriptive name for the testObject.
+          * `timeout_penalty`- (Optional) Specifies the score to be reported if the liveness test times out.
+        * `wait_on_complete` - (Optional) A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+        * `failover_delay` - (Optional) Specifies the failover delay in seconds.
+        * `failback_delay` - (Optional) Specifies the failback delay in seconds.
+        * `ipv6` - (Optional) A boolean that indicates the type of IP address handed out by a GTM property.
+        * `stickiness_bonus_percentage` - (Optional) Specifies a percentage used to configure data center affinity.
+        * `stickiness_bonus_constant` - (Optional) Specifies a constant used to configure data center affinity.
+        * `health_threshold` - (Optional) Configures a cutoff value that is computed from the median scores.
+        * `use_computed_targets` - (Optional) For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
+        * `backup_ip` - Specifies a backup IP. When GTM declares that all of the targets are down, the backupIP is handed out.
+        * `balance_by_download_score` - (Optional) A boolean that indicates whether download score based load balancing is enabled.
+        * `unreachable_threshold` - (Optional) For performance domains, this specifies a penalty value that’s added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
+        * `health_multiplier` - (Optional) Configures a cutoff value that is computed from the median scores.
+        * `dynamic_ttl` - (Optional) Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing such as A and AAAA records, and CNAMEs.
+        * `max_unreachable_penalty` - (Optional) For performance domains, this specifies a penalty value that’s added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
+        * `map_name` - (Optional) A descriptive label for a GeographicMap or a CidrMap that’s required if the property is either geographic or cidrmapping, in which case mapName needs to reference either an existing GeographicMap or CidrMap in the same domain.
+        * `load_imbalance_percentage` - (Optional) Indicates the percent of load imbalance factor (LIF) for the property.
+        * `health_max` - (Optional) Defines the absolute limit beyond which IPs are declared unhealthy.
+        * `cname` - (Optional) Indicates the fully qualified name aliased to a particular property.
+        * `comments` - (Optional) A descriptive note about changes to the domain. The maximum is 4000 characters.
+        * `ghost_demand_reporting` - (Optional) Use load estimates from Akamai Ghost utilization messages.
+        * `min_live_fraction` - (Optional) Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
+        * `static_rr_set` - (Optional) Contains static record sets. You can have multiple `static_rr_set` entries. Requires these arguments:
+          * `type` - (Optional) The record type.
+          * `ttl` - (Optional) The number of seconds that this record should live in a resolver’s cache before being refetched.
+          * `rdata` - (Optional) (List) An array of data strings, representing multiple records within a set.
+
+        ## Attribute reference
+
+        This resource returns these computed attributes in the state file:
+
+        * `weighted_hash_bits_for_ipv4`
+        * `weighted_hash_bits_for_ipv6`
+
+        ## Schema reference
+
+        You can download the GTM Property backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#property) page.
 
         :param str resource_name: The name of the resource.
         :param GtmPropertyArgs args: The arguments to use to populate this resource's properties.
@@ -1180,8 +1164,6 @@ class GtmProperty(pulumi.CustomResource):
             __props__.__dict__["static_ttl"] = static_ttl
             __props__.__dict__["stickiness_bonus_constant"] = stickiness_bonus_constant
             __props__.__dict__["stickiness_bonus_percentage"] = stickiness_bonus_percentage
-            if traffic_targets is None and not opts.urn:
-                raise TypeError("Missing required property 'traffic_targets'")
             __props__.__dict__["traffic_targets"] = traffic_targets
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
@@ -1244,35 +1226,6 @@ class GtmProperty(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] balance_by_download_score: * `static_ttl`
-               * `unreachable_threshold`
-               * `health_multiplier`
-               * `dynamic_ttl`
-               * `max_unreachable_penalty`
-               * `map_name`
-               * `load_imbalance_percentage`
-               * `health_max`
-               * `cname`
-               * `comments`
-               * `ghost_demand_reporting`
-               * `min_live_fraction`
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[bool] ipv6: * `stickiness_bonus_percentage`
-               * `stickiness_bonus_constant`
-               * `health_threshold`
-        :param pulumi.Input[str] name: Liveness test name
-               * `test_interval`
-               * `test_object_protocol`
-               * `test_timeout`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyStaticRrSetArgs']]]] static_rr_sets: * `type`
-               * `ttl`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyTrafficTargetArgs']]]] traffic_targets: * `datacenter_id`
-        :param pulumi.Input[str] type: Property type  
-               * `score_aggregation_type`
-        :param pulumi.Input[bool] use_computed_targets: * `backup_ip`
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
-               * `failover_delay`
-               * `failback_delay`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1327,20 +1280,6 @@ class GtmProperty(pulumi.CustomResource):
     @property
     @pulumi.getter(name="balanceByDownloadScore")
     def balance_by_download_score(self) -> pulumi.Output[Optional[bool]]:
-        """
-        * `static_ttl`
-        * `unreachable_threshold`
-        * `health_multiplier`
-        * `dynamic_ttl`
-        * `max_unreachable_penalty`
-        * `map_name`
-        * `load_imbalance_percentage`
-        * `health_max`
-        * `cname`
-        * `comments`
-        * `ghost_demand_reporting`
-        * `min_live_fraction`
-        """
         return pulumi.get(self, "balance_by_download_score")
 
     @property
@@ -1356,9 +1295,6 @@ class GtmProperty(pulumi.CustomResource):
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Output[str]:
-        """
-        Domain name
-        """
         return pulumi.get(self, "domain")
 
     @property
@@ -1409,11 +1345,6 @@ class GtmProperty(pulumi.CustomResource):
     @property
     @pulumi.getter
     def ipv6(self) -> pulumi.Output[Optional[bool]]:
-        """
-        * `stickiness_bonus_percentage`
-        * `stickiness_bonus_constant`
-        * `health_threshold`
-        """
         return pulumi.get(self, "ipv6")
 
     @property
@@ -1444,12 +1375,6 @@ class GtmProperty(pulumi.CustomResource):
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        Liveness test name
-        * `test_interval`
-        * `test_object_protocol`
-        * `test_timeout`
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -1460,10 +1385,6 @@ class GtmProperty(pulumi.CustomResource):
     @property
     @pulumi.getter(name="staticRrSets")
     def static_rr_sets(self) -> pulumi.Output[Optional[Sequence['outputs.GtmPropertyStaticRrSet']]]:
-        """
-        * `type`
-        * `ttl`
-        """
         return pulumi.get(self, "static_rr_sets")
 
     @property
@@ -1483,19 +1404,12 @@ class GtmProperty(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="trafficTargets")
-    def traffic_targets(self) -> pulumi.Output[Sequence['outputs.GtmPropertyTrafficTarget']]:
-        """
-        * `datacenter_id`
-        """
+    def traffic_targets(self) -> pulumi.Output[Optional[Sequence['outputs.GtmPropertyTrafficTarget']]]:
         return pulumi.get(self, "traffic_targets")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
-        """
-        Property type  
-        * `score_aggregation_type`
-        """
         return pulumi.get(self, "type")
 
     @property
@@ -1506,19 +1420,11 @@ class GtmProperty(pulumi.CustomResource):
     @property
     @pulumi.getter(name="useComputedTargets")
     def use_computed_targets(self) -> pulumi.Output[Optional[bool]]:
-        """
-        * `backup_ip`
-        """
         return pulumi.get(self, "use_computed_targets")
 
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> pulumi.Output[Optional[bool]]:
-        """
-        Wait for transaction to complete
-        * `failover_delay`
-        * `failback_delay`
-        """
         return pulumi.get(self, "wait_on_complete")
 
     @property

@@ -14,14 +14,14 @@ __all__ = ['AppSecCustomRuleArgs', 'AppSecCustomRule']
 class AppSecCustomRuleArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[int],
-                 rules: pulumi.Input[str]):
+                 custom_rule: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecCustomRule resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] rules: The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
+        :param pulumi.Input[str] custom_rule: The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
         """
         pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "rules", rules)
+        pulumi.set(__self__, "custom_rule", custom_rule)
 
     @property
     @pulumi.getter(name="configId")
@@ -36,36 +36,36 @@ class AppSecCustomRuleArgs:
         pulumi.set(self, "config_id", value)
 
     @property
-    @pulumi.getter
-    def rules(self) -> pulumi.Input[str]:
+    @pulumi.getter(name="customRule")
+    def custom_rule(self) -> pulumi.Input[str]:
         """
         The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
         """
-        return pulumi.get(self, "rules")
+        return pulumi.get(self, "custom_rule")
 
-    @rules.setter
-    def rules(self, value: pulumi.Input[str]):
-        pulumi.set(self, "rules", value)
+    @custom_rule.setter
+    def custom_rule(self, value: pulumi.Input[str]):
+        pulumi.set(self, "custom_rule", value)
 
 
 @pulumi.input_type
 class _AppSecCustomRuleState:
     def __init__(__self__, *,
                  config_id: Optional[pulumi.Input[int]] = None,
-                 custom_rule_id: Optional[pulumi.Input[int]] = None,
-                 rules: Optional[pulumi.Input[str]] = None):
+                 custom_rule: Optional[pulumi.Input[str]] = None,
+                 custom_rule_id: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering AppSecCustomRule resources.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
+        :param pulumi.Input[str] custom_rule: The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
         :param pulumi.Input[int] custom_rule_id: The ID of the custom rule.
-        :param pulumi.Input[str] rules: The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
+        if custom_rule is not None:
+            pulumi.set(__self__, "custom_rule", custom_rule)
         if custom_rule_id is not None:
             pulumi.set(__self__, "custom_rule_id", custom_rule_id)
-        if rules is not None:
-            pulumi.set(__self__, "rules", rules)
 
     @property
     @pulumi.getter(name="configId")
@@ -80,6 +80,18 @@ class _AppSecCustomRuleState:
         pulumi.set(self, "config_id", value)
 
     @property
+    @pulumi.getter(name="customRule")
+    def custom_rule(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
+        """
+        return pulumi.get(self, "custom_rule")
+
+    @custom_rule.setter
+    def custom_rule(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "custom_rule", value)
+
+    @property
     @pulumi.getter(name="customRuleId")
     def custom_rule_id(self) -> Optional[pulumi.Input[int]]:
         """
@@ -91,18 +103,6 @@ class _AppSecCustomRuleState:
     def custom_rule_id(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "custom_rule_id", value)
 
-    @property
-    @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
-        """
-        return pulumi.get(self, "rules")
-
-    @rules.setter
-    def rules(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "rules", value)
-
 
 class AppSecCustomRule(pulumi.CustomResource):
     @overload
@@ -110,7 +110,7 @@ class AppSecCustomRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
-                 rules: Optional[pulumi.Input[str]] = None,
+                 custom_rule: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         The `AppSecCustomRule` resource allows you to create or modify a custom rule associated with a given security configuration.
@@ -118,7 +118,7 @@ class AppSecCustomRule(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] rules: The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
+        :param pulumi.Input[str] custom_rule: The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
         """
         ...
     @overload
@@ -145,7 +145,7 @@ class AppSecCustomRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
-                 rules: Optional[pulumi.Input[str]] = None,
+                 custom_rule: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
@@ -161,9 +161,9 @@ class AppSecCustomRule(pulumi.CustomResource):
             if config_id is None and not opts.urn:
                 raise TypeError("Missing required property 'config_id'")
             __props__.__dict__["config_id"] = config_id
-            if rules is None and not opts.urn:
-                raise TypeError("Missing required property 'rules'")
-            __props__.__dict__["rules"] = rules
+            if custom_rule is None and not opts.urn:
+                raise TypeError("Missing required property 'custom_rule'")
+            __props__.__dict__["custom_rule"] = custom_rule
             __props__.__dict__["custom_rule_id"] = None
         super(AppSecCustomRule, __self__).__init__(
             'akamai:index/appSecCustomRule:AppSecCustomRule',
@@ -176,8 +176,8 @@ class AppSecCustomRule(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             config_id: Optional[pulumi.Input[int]] = None,
-            custom_rule_id: Optional[pulumi.Input[int]] = None,
-            rules: Optional[pulumi.Input[str]] = None) -> 'AppSecCustomRule':
+            custom_rule: Optional[pulumi.Input[str]] = None,
+            custom_rule_id: Optional[pulumi.Input[int]] = None) -> 'AppSecCustomRule':
         """
         Get an existing AppSecCustomRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -186,16 +186,16 @@ class AppSecCustomRule(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
+        :param pulumi.Input[str] custom_rule: The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
         :param pulumi.Input[int] custom_rule_id: The ID of the custom rule.
-        :param pulumi.Input[str] rules: The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _AppSecCustomRuleState.__new__(_AppSecCustomRuleState)
 
         __props__.__dict__["config_id"] = config_id
+        __props__.__dict__["custom_rule"] = custom_rule
         __props__.__dict__["custom_rule_id"] = custom_rule_id
-        __props__.__dict__["rules"] = rules
         return AppSecCustomRule(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -207,18 +207,18 @@ class AppSecCustomRule(pulumi.CustomResource):
         return pulumi.get(self, "config_id")
 
     @property
+    @pulumi.getter(name="customRule")
+    def custom_rule(self) -> pulumi.Output[str]:
+        """
+        The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
+        """
+        return pulumi.get(self, "custom_rule")
+
+    @property
     @pulumi.getter(name="customRuleId")
     def custom_rule_id(self) -> pulumi.Output[int]:
         """
         The ID of the custom rule.
         """
         return pulumi.get(self, "custom_rule_id")
-
-    @property
-    @pulumi.getter
-    def rules(self) -> pulumi.Output[str]:
-        """
-        The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
-        """
-        return pulumi.get(self, "rules")
 

@@ -15,10 +15,6 @@ namespace Pulumi.Akamai.Outputs
     {
         public readonly string? LoadObject;
         public readonly int? LoadObjectPort;
-        /// <summary>
-        /// * `city`
-        /// * `clone_of`
-        /// </summary>
         public readonly ImmutableArray<string> LoadServers;
 
         [OutputConstructor]

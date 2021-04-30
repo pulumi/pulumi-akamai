@@ -4,26 +4,95 @@
 
 # Export this package's modules as members:
 from .app_sec_activations import *
+from .app_sec_advanced_settings_logging import *
+from .app_sec_advanced_settings_prefetch import *
+from .app_sec_api_request_constraints import *
+from .app_sec_attack_group_action import *
+from .app_sec_attack_group_action_condition_exception import *
+from .app_sec_by_pass_network_list import *
+from .app_sec_configuration import *
+from .app_sec_configuration_clone import *
+from .app_sec_configuration_rename import *
 from .app_sec_configuration_version_clone import *
+from .app_sec_custom_deny import *
 from .app_sec_custom_rule import *
 from .app_sec_custom_rule_action import *
+from .app_sec_eval import *
+from .app_sec_eval_hostnames import *
+from .app_sec_eval_protect_host import *
+from .app_sec_eval_rule_action import *
+from .app_sec_eval_rule_condition_exception import *
+from .app_sec_ip_geo import *
 from .app_sec_match_target import *
 from .app_sec_match_target_sequence import *
+from .app_sec_penalty_box import *
+from .app_sec_rate_policy import *
+from .app_sec_rate_policy_action import *
+from .app_sec_rate_protection import *
+from .app_sec_reputation_profile import *
+from .app_sec_reputation_profile_action import *
+from .app_sec_reputation_profile_analysis import *
+from .app_sec_reputation_protection import *
+from .app_sec_rule_action import *
+from .app_sec_rule_condition_exception import *
+from .app_sec_rule_upgrade import *
+from .app_sec_security_policy import *
 from .app_sec_security_policy_clone import *
+from .app_sec_security_policy_protections import *
+from .app_sec_security_policy_rename import *
 from .app_sec_selected_hostnames import *
+from .app_sec_siem_settings import *
+from .app_sec_slow_post import *
+from .app_sec_slow_post_protection import *
+from .app_sec_version_nodes import *
+from .app_sec_waf_mode import *
+from .app_sec_waf_protection import *
 from .cp_code import *
 from .dns_record import *
 from .dns_zone import *
 from .edge_host_name import *
+from .get_app_sec_advanced_settings_logging import *
+from .get_app_sec_advanced_settings_prefetch import *
+from .get_app_sec_api_endpoints import *
+from .get_app_sec_api_request_constraints import *
+from .get_app_sec_attack_group_actions import *
+from .get_app_sec_attack_group_condition_exception import *
+from .get_app_sec_bypass_network_lists import *
 from .get_app_sec_configuration import *
 from .get_app_sec_configuration_version import *
+from .get_app_sec_contracts_groups import *
+from .get_app_sec_custom_deny import *
 from .get_app_sec_custom_rule_actions import *
 from .get_app_sec_custom_rules import *
+from .get_app_sec_eval import *
+from .get_app_sec_eval_hostnames import *
+from .get_app_sec_eval_rule_actions import *
+from .get_app_sec_eval_rule_condition_exception import *
 from .get_app_sec_export_configuration import *
+from .get_app_sec_failover_hostnames import *
+from .get_app_sec_hostname_coverage import *
+from .get_app_sec_hostname_coverage_match_targets import *
+from .get_app_sec_hostname_coverage_overlapping import *
+from .get_app_sec_ip_geo import *
 from .get_app_sec_match_targets import *
+from .get_app_sec_penalty_box import *
+from .get_app_sec_rate_policies import *
+from .get_app_sec_rate_policy_actions import *
+from .get_app_sec_reputation_profile_actions import *
+from .get_app_sec_reputation_profile_analysis import *
+from .get_app_sec_reputation_profiles import *
+from .get_app_sec_rule_actions import *
+from .get_app_sec_rule_condition_exception import *
+from .get_app_sec_rule_upgrade_details import *
 from .get_app_sec_security_policy import *
+from .get_app_sec_security_policy_protections import *
 from .get_app_sec_selectable_hostnames import *
 from .get_app_sec_selected_hostnames import *
+from .get_app_sec_siem_definitions import *
+from .get_app_sec_siem_settings import *
+from .get_app_sec_slow_post import *
+from .get_app_sec_version_notes import *
+from .get_app_sec_waf_mode import *
 from .get_authorities_set import *
 from .get_contract import *
 from .get_contracts import *
@@ -34,6 +103,7 @@ from .get_groups import *
 from .get_gtm_default_datacenter import *
 from .get_properties import *
 from .get_property import *
+from .get_property_hostnames import *
 from .get_property_products import *
 from .get_property_rule_formats import *
 from .get_property_rules import *
@@ -74,20 +144,92 @@ def _register_module():
         def construct(self, name: str, typ: str, urn: str) -> pulumi.Resource:
             if typ == "akamai:index/appSecActivations:AppSecActivations":
                 return AppSecActivations(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecAdvancedSettingsLogging:AppSecAdvancedSettingsLogging":
+                return AppSecAdvancedSettingsLogging(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecAdvancedSettingsPrefetch:AppSecAdvancedSettingsPrefetch":
+                return AppSecAdvancedSettingsPrefetch(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecApiRequestConstraints:AppSecApiRequestConstraints":
+                return AppSecApiRequestConstraints(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecAttackGroupAction:AppSecAttackGroupAction":
+                return AppSecAttackGroupAction(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecAttackGroupActionConditionException:AppSecAttackGroupActionConditionException":
+                return AppSecAttackGroupActionConditionException(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecByPassNetworkList:AppSecByPassNetworkList":
+                return AppSecByPassNetworkList(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecConfiguration:AppSecConfiguration":
+                return AppSecConfiguration(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecConfigurationClone:AppSecConfigurationClone":
+                return AppSecConfigurationClone(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecConfigurationRename:AppSecConfigurationRename":
+                return AppSecConfigurationRename(name, pulumi.ResourceOptions(urn=urn))
             elif typ == "akamai:index/appSecConfigurationVersionClone:AppSecConfigurationVersionClone":
                 return AppSecConfigurationVersionClone(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecCustomDeny:AppSecCustomDeny":
+                return AppSecCustomDeny(name, pulumi.ResourceOptions(urn=urn))
             elif typ == "akamai:index/appSecCustomRule:AppSecCustomRule":
                 return AppSecCustomRule(name, pulumi.ResourceOptions(urn=urn))
             elif typ == "akamai:index/appSecCustomRuleAction:AppSecCustomRuleAction":
                 return AppSecCustomRuleAction(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecEval:AppSecEval":
+                return AppSecEval(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecEvalHostnames:AppSecEvalHostnames":
+                return AppSecEvalHostnames(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecEvalProtectHost:AppSecEvalProtectHost":
+                return AppSecEvalProtectHost(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecEvalRuleAction:AppSecEvalRuleAction":
+                return AppSecEvalRuleAction(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecEvalRuleConditionException:AppSecEvalRuleConditionException":
+                return AppSecEvalRuleConditionException(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecIPGeo:AppSecIPGeo":
+                return AppSecIPGeo(name, pulumi.ResourceOptions(urn=urn))
             elif typ == "akamai:index/appSecMatchTarget:AppSecMatchTarget":
                 return AppSecMatchTarget(name, pulumi.ResourceOptions(urn=urn))
             elif typ == "akamai:index/appSecMatchTargetSequence:AppSecMatchTargetSequence":
                 return AppSecMatchTargetSequence(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecPenaltyBox:AppSecPenaltyBox":
+                return AppSecPenaltyBox(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecRatePolicy:AppSecRatePolicy":
+                return AppSecRatePolicy(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecRatePolicyAction:AppSecRatePolicyAction":
+                return AppSecRatePolicyAction(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecRateProtection:AppSecRateProtection":
+                return AppSecRateProtection(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecReputationProfile:AppSecReputationProfile":
+                return AppSecReputationProfile(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecReputationProfileAction:AppSecReputationProfileAction":
+                return AppSecReputationProfileAction(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecReputationProfileAnalysis:AppSecReputationProfileAnalysis":
+                return AppSecReputationProfileAnalysis(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecReputationProtection:AppSecReputationProtection":
+                return AppSecReputationProtection(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecRuleAction:AppSecRuleAction":
+                return AppSecRuleAction(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecRuleConditionException:AppSecRuleConditionException":
+                return AppSecRuleConditionException(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecRuleUpgrade:AppSecRuleUpgrade":
+                return AppSecRuleUpgrade(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecSecurityPolicy:AppSecSecurityPolicy":
+                return AppSecSecurityPolicy(name, pulumi.ResourceOptions(urn=urn))
             elif typ == "akamai:index/appSecSecurityPolicyClone:AppSecSecurityPolicyClone":
                 return AppSecSecurityPolicyClone(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecSecurityPolicyProtections:AppSecSecurityPolicyProtections":
+                return AppSecSecurityPolicyProtections(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecSecurityPolicyRename:AppSecSecurityPolicyRename":
+                return AppSecSecurityPolicyRename(name, pulumi.ResourceOptions(urn=urn))
             elif typ == "akamai:index/appSecSelectedHostnames:AppSecSelectedHostnames":
                 return AppSecSelectedHostnames(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecSiemSettings:AppSecSiemSettings":
+                return AppSecSiemSettings(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecSlowPost:AppSecSlowPost":
+                return AppSecSlowPost(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecSlowPostProtection:AppSecSlowPostProtection":
+                return AppSecSlowPostProtection(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecVersionNodes:AppSecVersionNodes":
+                return AppSecVersionNodes(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecWafMode:AppSecWafMode":
+                return AppSecWafMode(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "akamai:index/appSecWafProtection:AppSecWafProtection":
+                return AppSecWafProtection(name, pulumi.ResourceOptions(urn=urn))
             elif typ == "akamai:index/cpCode:CpCode":
                 return CpCode(name, pulumi.ResourceOptions(urn=urn))
             elif typ == "akamai:index/dnsRecord:DnsRecord":
@@ -122,13 +264,49 @@ def _register_module():
 
     _module_instance = Module()
     pulumi.runtime.register_resource_module("akamai", "index/appSecActivations", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecAdvancedSettingsLogging", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecAdvancedSettingsPrefetch", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecApiRequestConstraints", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecAttackGroupAction", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecAttackGroupActionConditionException", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecByPassNetworkList", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecConfiguration", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecConfigurationClone", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecConfigurationRename", _module_instance)
     pulumi.runtime.register_resource_module("akamai", "index/appSecConfigurationVersionClone", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecCustomDeny", _module_instance)
     pulumi.runtime.register_resource_module("akamai", "index/appSecCustomRule", _module_instance)
     pulumi.runtime.register_resource_module("akamai", "index/appSecCustomRuleAction", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecEval", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecEvalHostnames", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecEvalProtectHost", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecEvalRuleAction", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecEvalRuleConditionException", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecIPGeo", _module_instance)
     pulumi.runtime.register_resource_module("akamai", "index/appSecMatchTarget", _module_instance)
     pulumi.runtime.register_resource_module("akamai", "index/appSecMatchTargetSequence", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecPenaltyBox", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecRatePolicy", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecRatePolicyAction", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecRateProtection", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecReputationProfile", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecReputationProfileAction", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecReputationProfileAnalysis", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecReputationProtection", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecRuleAction", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecRuleConditionException", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecRuleUpgrade", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecSecurityPolicy", _module_instance)
     pulumi.runtime.register_resource_module("akamai", "index/appSecSecurityPolicyClone", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecSecurityPolicyProtections", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecSecurityPolicyRename", _module_instance)
     pulumi.runtime.register_resource_module("akamai", "index/appSecSelectedHostnames", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecSiemSettings", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecSlowPost", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecSlowPostProtection", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecVersionNodes", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecWafMode", _module_instance)
+    pulumi.runtime.register_resource_module("akamai", "index/appSecWafProtection", _module_instance)
     pulumi.runtime.register_resource_module("akamai", "index/cpCode", _module_instance)
     pulumi.runtime.register_resource_module("akamai", "index/dnsRecord", _module_instance)
     pulumi.runtime.register_resource_module("akamai", "index/dnsZone", _module_instance)

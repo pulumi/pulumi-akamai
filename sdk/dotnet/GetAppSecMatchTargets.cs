@@ -12,7 +12,7 @@ namespace Pulumi.Akamai
     public static class GetAppSecMatchTargets
     {
         /// <summary>
-        /// Use the `akamai.getAppSecMatchTargets` data source to retrieve information about the match targets associated with a given configuration version.
+        /// Use the `akamai.getAppSecMatchTargets` data source to retrieve information about the match targets associated with a given configuration version, or about a specific match target.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -30,7 +30,7 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = "Akamai Tools",
+        ///             Name = @var.Security_configuration,
         ///         }));
         ///         var matchTargetsAppSecMatchTargets = Output.Tuple(configuration, configuration).Apply(values =&gt;
         ///         {
@@ -43,10 +43,24 @@ namespace Pulumi.Akamai
         ///             }));
         ///         });
         ///         this.MatchTargets = matchTargetsAppSecMatchTargets.Apply(matchTargetsAppSecMatchTargets =&gt; matchTargetsAppSecMatchTargets.OutputText);
+        ///         var matchTarget = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         {
+        ///             var configuration = values.Item1;
+        ///             var configuration1 = values.Item2;
+        ///             return Output.Create(Akamai.GetAppSecMatchTargets.InvokeAsync(new Akamai.GetAppSecMatchTargetsArgs
+        ///             {
+        ///                 ConfigId = configuration.ConfigId,
+        ///                 Version = configuration1.LatestVersion,
+        ///                 MatchTargetId = @var.Match_target_id,
+        ///             }));
+        ///         });
+        ///         this.MatchTargetOutput = matchTarget.Apply(matchTarget =&gt; matchTarget.OutputText);
         ///     }
         /// 
         ///     [Output("matchTargets")]
         ///     public Output&lt;string&gt; MatchTargets { get; set; }
+        ///     [Output("matchTargetOutput")]
+        ///     public Output&lt;string&gt; MatchTargetOutput { get; set; }
         /// }
         /// ```
         /// {{% /example %}}
@@ -64,6 +78,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
+
+        /// <summary>
+        /// The ID of the match target to use. If not supplied, information about all match targets is returned.
+        /// </summary>
+        [Input("matchTargetId")]
+        public int? MatchTargetId { get; set; }
 
         /// <summary>
         /// The version number of the security configuration to use.
@@ -86,7 +106,12 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A tabular display showing the ID and Policy ID of all match targets associated with the specified security configuration and version.
+        /// A JSON-formatted list of the match target information.
+        /// </summary>
+        public readonly string Json;
+        public readonly int? MatchTargetId;
+        /// <summary>
+        /// A tabular display showing the ID and Policy ID of all match targets associated with the specified security configuration and version, or of the specific match target if `match_target_id` was supplied.
         /// </summary>
         public readonly string OutputText;
         public readonly int Version;
@@ -97,12 +122,18 @@ namespace Pulumi.Akamai
 
             string id,
 
+            string json,
+
+            int? matchTargetId,
+
             string outputText,
 
             int version)
         {
             ConfigId = configId;
             Id = id;
+            Json = json;
+            MatchTargetId = matchTargetId;
             OutputText = outputText;
             Version = version;
         }

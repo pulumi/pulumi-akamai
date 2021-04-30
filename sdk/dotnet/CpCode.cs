@@ -9,6 +9,99 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
+    /// <summary>
+    /// The `akamai.CpCode` resource lets you create or reuse content provider (CP) codes.  CP codes track web traffic handled by Akamai servers. Akamai gives you a CP code when you purchase a product. You need this code when you activate associated properties.
+    /// 
+    /// You can create additional CP codes to support more detailed billing and reporting functions.
+    /// 
+    /// By default, the Akamai Provider uses your existing CP code instead of creating a new one.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// Basic usage:
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var cpCode = new Akamai.CpCode("cpCode", new Akamai.CpCodeArgs
+    ///         {
+    ///             ContractId = akamai_contract.Contract.Id,
+    ///             GroupId = akamai_group.Group.Id,
+    ///             ProductId = "prd_Object_Delivery",
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
+    /// 
+    /// Here's a real-life example that includes other data sources as dependencies:
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var groupName = "example group name";
+    ///         var cpcodeName = "My CP Code";
+    ///         var exampleContract = Output.Create(Akamai.GetContract.InvokeAsync(new Akamai.GetContractArgs
+    ///         {
+    ///             GroupName = groupName,
+    ///         }));
+    ///         var exampleGroup = exampleContract.Apply(exampleContract =&gt; Output.Create(Akamai.GetGroup.InvokeAsync(new Akamai.GetGroupArgs
+    ///         {
+    ///             Name = groupName,
+    ///             ContractId = exampleContract.Id,
+    ///         })));
+    ///         var exampleCp = new Akamai.CpCode("exampleCp", new Akamai.CpCodeArgs
+    ///         {
+    ///             GroupId = exampleGroup.Apply(exampleGroup =&gt; exampleGroup.Id),
+    ///             ContractId = exampleContract.Apply(exampleContract =&gt; exampleContract.Id),
+    ///             ProductId = "prd_Object_Delivery",
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
+    /// ## Argument reference
+    /// 
+    /// The following arguments are supported:
+    /// 
+    /// * `name` - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can’t include commas, underscores, quotes, or any of these special characters: ^ # %.
+    /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
+    /// * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
+    /// * `product_id` - (Required) A product's unique ID, including the `prd_` prefix.
+    /// * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
+    /// * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
+    /// * `product` - (Deprecated) Replaced by `product_id`. Maintained for legacy purposes.
+    /// 
+    /// ## Attributes reference
+    /// 
+    /// * `id` - The ID of the CP code.
+    /// 
+    /// ## Import
+    /// 
+    /// Basic Usagehcl resource "akamai_cp_code" "example" {
+    /// 
+    /// # (resource arguments)
+    /// 
+    ///  } You can import your Akamai CP codes using a comma-delimited string of the CP code,
+    /// 
+    /// contract, and group IDs. You have to enter the IDs in this order:
+    /// 
+    /// `cpcode_id,contract_id,group_id` For example
+    /// 
+    /// ```sh
+    ///  $ pulumi import akamai:index/cpCode:CpCode example cpc_123,ctr_1-AB123,grp_123
+    /// ```
+    /// </summary>
     [AkamaiResourceType("akamai:index/cpCode:CpCode")]
     public partial class CpCode : Pulumi.CustomResource
     {
@@ -30,6 +123,9 @@ namespace Pulumi.Akamai
         [Output("product")]
         public Output<string> Product { get; private set; } = null!;
 
+        [Output("productId")]
+        public Output<string> ProductId { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a CpCode resource with the given unique name, arguments, and options.
@@ -38,7 +134,7 @@ namespace Pulumi.Akamai
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public CpCode(string name, CpCodeArgs args, CustomResourceOptions? options = null)
+        public CpCode(string name, CpCodeArgs? args = null, CustomResourceOptions? options = null)
             : base("akamai:index/cpCode:CpCode", name, args ?? new CpCodeArgs(), MakeResourceOptions(options, ""))
         {
         }
@@ -95,8 +191,11 @@ namespace Pulumi.Akamai
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        [Input("product", required: true)]
-        public Input<string> Product { get; set; } = null!;
+        [Input("product")]
+        public Input<string>? Product { get; set; }
+
+        [Input("productId")]
+        public Input<string>? ProductId { get; set; }
 
         public CpCodeArgs()
         {
@@ -122,6 +221,9 @@ namespace Pulumi.Akamai
 
         [Input("product")]
         public Input<string>? Product { get; set; }
+
+        [Input("productId")]
+        public Input<string>? ProductId { get; set; }
 
         public CpCodeState()
         {

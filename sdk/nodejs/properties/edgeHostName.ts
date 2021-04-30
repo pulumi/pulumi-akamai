@@ -38,19 +38,19 @@ export class EdgeHostName extends pulumi.CustomResource {
 
     public readonly certificate!: pulumi.Output<number | undefined>;
     /**
-     * @deprecated use "contract_id" attribute instead
+     * @deprecated The setting "contract" has been deprecated.
      */
     public readonly contract!: pulumi.Output<string>;
     public readonly contractId!: pulumi.Output<string>;
     public readonly edgeHostname!: pulumi.Output<string>;
     /**
-     * @deprecated use "group_id" attribute instead
+     * @deprecated The setting "group" has been deprecated.
      */
     public readonly group!: pulumi.Output<string>;
     public readonly groupId!: pulumi.Output<string>;
     public readonly ipBehavior!: pulumi.Output<string>;
     /**
-     * @deprecated use "product_id" attribute instead
+     * @deprecated The setting "product" has been deprecated.
      */
     public readonly product!: pulumi.Output<string>;
     public readonly productId!: pulumi.Output<string>;
@@ -111,19 +111,19 @@ export class EdgeHostName extends pulumi.CustomResource {
 export interface EdgeHostNameState {
     readonly certificate?: pulumi.Input<number>;
     /**
-     * @deprecated use "contract_id" attribute instead
+     * @deprecated The setting "contract" has been deprecated.
      */
     readonly contract?: pulumi.Input<string>;
     readonly contractId?: pulumi.Input<string>;
     readonly edgeHostname?: pulumi.Input<string>;
     /**
-     * @deprecated use "group_id" attribute instead
+     * @deprecated The setting "group" has been deprecated.
      */
     readonly group?: pulumi.Input<string>;
     readonly groupId?: pulumi.Input<string>;
     readonly ipBehavior?: pulumi.Input<string>;
     /**
-     * @deprecated use "product_id" attribute instead
+     * @deprecated The setting "product" has been deprecated.
      */
     readonly product?: pulumi.Input<string>;
     readonly productId?: pulumi.Input<string>;
@@ -135,19 +135,19 @@ export interface EdgeHostNameState {
 export interface EdgeHostNameArgs {
     readonly certificate?: pulumi.Input<number>;
     /**
-     * @deprecated use "contract_id" attribute instead
+     * @deprecated The setting "contract" has been deprecated.
      */
     readonly contract?: pulumi.Input<string>;
     readonly contractId?: pulumi.Input<string>;
     readonly edgeHostname: pulumi.Input<string>;
     /**
-     * @deprecated use "group_id" attribute instead
+     * @deprecated The setting "group" has been deprecated.
      */
     readonly group?: pulumi.Input<string>;
     readonly groupId?: pulumi.Input<string>;
     readonly ipBehavior: pulumi.Input<string>;
     /**
-     * @deprecated use "product_id" attribute instead
+     * @deprecated The setting "product" has been deprecated.
      */
     readonly product?: pulumi.Input<string>;
     readonly productId?: pulumi.Input<string>;

@@ -7,6 +7,43 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Use the `getAuthoritiesSet` data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
+//
+// ## Example Usage
+//
+// Basic usage:
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		_, err := akamai.GetAuthoritiesSet(ctx, &akamai.GetAuthoritiesSetArgs{
+// 			Contract: "ctr_1-AB123",
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
+// ## Argument reference
+//
+// This data source supports this argument:
+//
+// * `contract` - (Required) The contract ID.
+//
+// ## Attributes reference
+//
+// This data source supports this attribute:
+//
+// * `authorities` - A list of authorities.
 func GetAuthoritiesSet(ctx *pulumi.Context, args *GetAuthoritiesSetArgs, opts ...pulumi.InvokeOption) (*GetAuthoritiesSetResult, error) {
 	var rv GetAuthoritiesSetResult
 	err := ctx.Invoke("akamai:index/getAuthoritiesSet:getAuthoritiesSet", args, &rv, opts...)

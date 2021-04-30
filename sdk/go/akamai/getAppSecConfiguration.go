@@ -7,7 +7,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecConfiguration` data source to retrieve the list of security configurations, or information about a specific security configuration.
+// Use the `AppSecConfiguration` data source to retrieve the list of security configurations, or information about a specific security configuration.
 //
 // ## Example Usage
 //
@@ -23,13 +23,13 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configurations, err := akamai.GetAppSecConfiguration(ctx, nil, nil)
+// 		configurations, err := akamai.LookupAppSecConfiguration(ctx, nil, nil)
 // 		if err != nil {
 // 			return err
 // 		}
 // 		ctx.Export("configurationList", configurations.OutputText)
 // 		opt0 := "Akamai Tools"
-// 		specificConfiguration, err := akamai.GetAppSecConfiguration(ctx, &akamai.GetAppSecConfigurationArgs{
+// 		specificConfiguration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
@@ -43,8 +43,8 @@ import (
 // 	})
 // }
 // ```
-func GetAppSecConfiguration(ctx *pulumi.Context, args *GetAppSecConfigurationArgs, opts ...pulumi.InvokeOption) (*GetAppSecConfigurationResult, error) {
-	var rv GetAppSecConfigurationResult
+func LookupAppSecConfiguration(ctx *pulumi.Context, args *LookupAppSecConfigurationArgs, opts ...pulumi.InvokeOption) (*LookupAppSecConfigurationResult, error) {
+	var rv LookupAppSecConfigurationResult
 	err := ctx.Invoke("akamai:index/getAppSecConfiguration:getAppSecConfiguration", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -53,14 +53,13 @@ func GetAppSecConfiguration(ctx *pulumi.Context, args *GetAppSecConfigurationArg
 }
 
 // A collection of arguments for invoking getAppSecConfiguration.
-type GetAppSecConfigurationArgs struct {
+type LookupAppSecConfigurationArgs struct {
 	// The name of a specific security configuration. If not supplied, information about all security configurations is returned.
-	Name    *string `pulumi:"name"`
-	Version *int    `pulumi:"version"`
+	Name *string `pulumi:"name"`
 }
 
 // A collection of values returned by getAppSecConfiguration.
-type GetAppSecConfigurationResult struct {
+type LookupAppSecConfigurationResult struct {
 	// The ID of the specified security configuration. Returned only if `name` was specified.
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
@@ -73,6 +72,5 @@ type GetAppSecConfigurationResult struct {
 	// The version of the specified security configuration currently active in production. Returned only if `name` was specified.
 	ProductionVersion int `pulumi:"productionVersion"`
 	// The version of the specified security configuration currently active in staging. Returned only if `name` was specified.
-	StagingVersion int  `pulumi:"stagingVersion"`
-	Version        *int `pulumi:"version"`
+	StagingVersion int `pulumi:"stagingVersion"`
 }

@@ -9,4 +9,32 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Properties.Inputs
 {
+
+    public sealed class PropertyRuleWarningArgs : Pulumi.ResourceArgs
+    {
+        [Input("behaviorName")]
+        public Input<string>? BehaviorName { get; set; }
+
+        [Input("detail")]
+        public Input<string>? Detail { get; set; }
+
+        [Input("errorLocation")]
+        public Input<string>? ErrorLocation { get; set; }
+
+        [Input("instance")]
+        public Input<string>? Instance { get; set; }
+
+        [Input("statusCode")]
+        public Input<int>? StatusCode { get; set; }
+
+        [Input("title")]
+        public Input<string>? Title { get; set; }
+
+        [Input("type")]
+        public Input<string>? Type { get; set; }
+
+        public PropertyRuleWarningArgs()
+        {
+        }
+    }
 }

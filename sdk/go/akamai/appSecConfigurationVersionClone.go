@@ -11,13 +11,52 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// The `AppSecConfigurationVersionClone` resource allows you to create a new version of a security configuration by cloning an existing version.
+//
+// ## Example Usage
+//
+// Basic usage:
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		opt0 := "Akamai Tools"
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 			Name: &opt0,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		clone, err := akamai.NewAppSecConfigurationVersionClone(ctx, "clone", &akamai.AppSecConfigurationVersionCloneArgs{
+// 			ConfigId:          pulumi.Int(configuration.ConfigId),
+// 			CreateFromVersion: pulumi.Int(configuration.LatestVersion),
+// 			RuleUpdate:        pulumi.Bool(false),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		ctx.Export("cloneVersion", clone.Version)
+// 		return nil
+// 	})
+// }
+// ```
 type AppSecConfigurationVersionClone struct {
 	pulumi.CustomResourceState
 
-	ConfigId          pulumi.IntOutput     `pulumi:"configId"`
-	CreateFromVersion pulumi.IntOutput     `pulumi:"createFromVersion"`
-	RuleUpdate        pulumi.BoolPtrOutput `pulumi:"ruleUpdate"`
-	// Version of cloned configuration
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntOutput `pulumi:"configId"`
+	// The version number of the security configuration to clone.
+	CreateFromVersion pulumi.IntOutput `pulumi:"createFromVersion"`
+	// A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
+	RuleUpdate pulumi.BoolPtrOutput `pulumi:"ruleUpdate"`
+	// The number of the cloned version.
 	Version pulumi.IntOutput `pulumi:"version"`
 }
 
@@ -56,18 +95,24 @@ func GetAppSecConfigurationVersionClone(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecConfigurationVersionClone resources.
 type appSecConfigurationVersionCloneState struct {
-	ConfigId          *int  `pulumi:"configId"`
-	CreateFromVersion *int  `pulumi:"createFromVersion"`
-	RuleUpdate        *bool `pulumi:"ruleUpdate"`
-	// Version of cloned configuration
+	// The ID of the security configuration to use.
+	ConfigId *int `pulumi:"configId"`
+	// The version number of the security configuration to clone.
+	CreateFromVersion *int `pulumi:"createFromVersion"`
+	// A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
+	RuleUpdate *bool `pulumi:"ruleUpdate"`
+	// The number of the cloned version.
 	Version *int `pulumi:"version"`
 }
 
 type AppSecConfigurationVersionCloneState struct {
-	ConfigId          pulumi.IntPtrInput
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntPtrInput
+	// The version number of the security configuration to clone.
 	CreateFromVersion pulumi.IntPtrInput
-	RuleUpdate        pulumi.BoolPtrInput
-	// Version of cloned configuration
+	// A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
+	RuleUpdate pulumi.BoolPtrInput
+	// The number of the cloned version.
 	Version pulumi.IntPtrInput
 }
 
@@ -76,16 +121,22 @@ func (AppSecConfigurationVersionCloneState) ElementType() reflect.Type {
 }
 
 type appSecConfigurationVersionCloneArgs struct {
-	ConfigId          int   `pulumi:"configId"`
-	CreateFromVersion int   `pulumi:"createFromVersion"`
-	RuleUpdate        *bool `pulumi:"ruleUpdate"`
+	// The ID of the security configuration to use.
+	ConfigId int `pulumi:"configId"`
+	// The version number of the security configuration to clone.
+	CreateFromVersion int `pulumi:"createFromVersion"`
+	// A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
+	RuleUpdate *bool `pulumi:"ruleUpdate"`
 }
 
 // The set of arguments for constructing a AppSecConfigurationVersionClone resource.
 type AppSecConfigurationVersionCloneArgs struct {
-	ConfigId          pulumi.IntInput
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput
+	// The version number of the security configuration to clone.
 	CreateFromVersion pulumi.IntInput
-	RuleUpdate        pulumi.BoolPtrInput
+	// A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
+	RuleUpdate pulumi.BoolPtrInput
 }
 
 func (AppSecConfigurationVersionCloneArgs) ElementType() reflect.Type {

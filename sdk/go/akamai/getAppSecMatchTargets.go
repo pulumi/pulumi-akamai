@@ -7,7 +7,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecMatchTargets` data source to retrieve information about the match targets associated with a given configuration version.
+// Use the `getAppSecMatchTargets` data source to retrieve information about the match targets associated with a given configuration version, or about a specific match target.
 //
 // ## Example Usage
 //
@@ -23,8 +23,8 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Akamai Tools"
-// 		configuration, err := akamai.GetAppSecConfiguration(ctx, &akamai.GetAppSecConfigurationArgs{
+// 		opt0 := _var.Security_configuration
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
@@ -38,6 +38,16 @@ import (
 // 			return err
 // 		}
 // 		ctx.Export("matchTargets", matchTargetsAppSecMatchTargets.OutputText)
+// 		opt1 := _var.Match_target_id
+// 		matchTarget, err := akamai.GetAppSecMatchTargets(ctx, &akamai.GetAppSecMatchTargetsArgs{
+// 			ConfigId:      configuration.ConfigId,
+// 			Version:       configuration.LatestVersion,
+// 			MatchTargetId: &opt1,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		ctx.Export("matchTargetOutput", matchTarget.OutputText)
 // 		return nil
 // 	})
 // }
@@ -55,6 +65,8 @@ func GetAppSecMatchTargets(ctx *pulumi.Context, args *GetAppSecMatchTargetsArgs,
 type GetAppSecMatchTargetsArgs struct {
 	// The ID of the security configuration to use.
 	ConfigId int `pulumi:"configId"`
+	// The ID of the match target to use. If not supplied, information about all match targets is returned.
+	MatchTargetId *int `pulumi:"matchTargetId"`
 	// The version number of the security configuration to use.
 	Version int `pulumi:"version"`
 }
@@ -64,7 +76,10 @@ type GetAppSecMatchTargetsResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// A tabular display showing the ID and Policy ID of all match targets associated with the specified security configuration and version.
+	// A JSON-formatted list of the match target information.
+	Json          string `pulumi:"json"`
+	MatchTargetId *int   `pulumi:"matchTargetId"`
+	// A tabular display showing the ID and Policy ID of all match targets associated with the specified security configuration and version, or of the specific match target if `matchTargetId` was supplied.
 	OutputText string `pulumi:"outputText"`
 	Version    int    `pulumi:"version"`
 }

@@ -30,22 +30,22 @@ class EdgeHostNameArgs:
         if certificate is not None:
             pulumi.set(__self__, "certificate", certificate)
         if contract is not None:
-            warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: use \"contract_id\" attribute instead""")
+            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
         if contract is not None:
             pulumi.set(__self__, "contract", contract)
         if contract_id is not None:
             pulumi.set(__self__, "contract_id", contract_id)
         if group is not None:
-            warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: use \"group_id\" attribute instead""")
+            warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
         if group is not None:
             pulumi.set(__self__, "group", group)
         if group_id is not None:
             pulumi.set(__self__, "group_id", group_id)
         if product is not None:
-            warnings.warn("""use \"product_id\" attribute instead""", DeprecationWarning)
-            pulumi.log.warn("""product is deprecated: use \"product_id\" attribute instead""")
+            warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
         if product is not None:
             pulumi.set(__self__, "product", product)
         if product_id is not None:
@@ -151,8 +151,8 @@ class _EdgeHostNameState:
         if certificate is not None:
             pulumi.set(__self__, "certificate", certificate)
         if contract is not None:
-            warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: use \"contract_id\" attribute instead""")
+            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
         if contract is not None:
             pulumi.set(__self__, "contract", contract)
         if contract_id is not None:
@@ -160,8 +160,8 @@ class _EdgeHostNameState:
         if edge_hostname is not None:
             pulumi.set(__self__, "edge_hostname", edge_hostname)
         if group is not None:
-            warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: use \"group_id\" attribute instead""")
+            warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
         if group is not None:
             pulumi.set(__self__, "group", group)
         if group_id is not None:
@@ -169,8 +169,8 @@ class _EdgeHostNameState:
         if ip_behavior is not None:
             pulumi.set(__self__, "ip_behavior", ip_behavior)
         if product is not None:
-            warnings.warn("""use \"product_id\" attribute instead""", DeprecationWarning)
-            pulumi.log.warn("""product is deprecated: use \"product_id\" attribute instead""")
+            warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
         if product is not None:
             pulumi.set(__self__, "product", product)
         if product_id is not None:
@@ -274,7 +274,79 @@ class EdgeHostName(pulumi.CustomResource):
                  product_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Create a EdgeHostName resource with the given unique name, props, and options.
+        The `EdgeHostName` resource lets you configure a secure edge hostname. Your
+        edge hostname determines how requests for your site, app, or content are mapped to
+        Akamai edge servers.
+
+        An edge hostname is the CNAME target you use when directing your end user traffic to
+        Akamai. Each hostname assigned to a property has a corresponding edge hostname.
+
+        Akamai supports three types of edge hostnames, depending on the level of security
+        you need for your traffic: Standard TLS, Enhanced TLS, and Shared Certificate. When
+        entering the `edge_hostname` attribute, you need to include a specific domain suffix
+        for your edge hostname type:
+
+        | Edge hostname type | Domain suffix |
+        |------|-------|
+        | Enhanced TLS | edgekey.net |
+        | Standard TLS | edgesuite.net |
+        | Shared Cert | akamaized.net |
+
+        For example, if you use Standard TLS and have `www.example.com` as a hostname, your edge hostname would be `www.example.com.edgesuite.net`. If you wanted to use Enhanced TLS with the same hostname, your edge hostname would be `www.example.com.edgekey.net`. See the [Property Manager API (PAPI)](https://developer.akamai.com/api/core_features/property_manager/v1.html#createedgehostnames) for more information.
+
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        provider_demo = akamai.EdgeHostName("provider-demo",
+            contract_id="ctr_1-AB123",
+            edge_hostname="www.example.org.edgesuite.net",
+            group_id="grp_123",
+            product_id="prd_Object_Delivery")
+        ```
+        ## Argument reference
+
+        This resource supports these arguments:
+
+        * `name` - (Required) The name of the edge hostname.
+        * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
+        * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
+        * `product_id` - (Required) A product's unique ID, including the `prd_` prefix.
+        * `edge_hostname` - (Required) One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
+        * `certificate` - (Optional) Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
+        * `ip_behavior` - (Required) Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6. The default value is `IPV4`.
+        * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
+        * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
+        * `product` - (Deprecated) Replaced by `product_id`. Maintained for legacy purposes.
+
+        ## Attributes reference
+
+        This resource returns this attribute:
+
+        * `ip_behavior` - Returns the IP protocol the hostname will use, either `IPV4` for version 4, IPV6_PERFORMANCE`for version 6, or`IPV6_COMPLIANCE` for both.
+
+        ## Import
+
+        Basic Usagehcl resource "akamai_edge_hostname" "example" {
+
+        # (resource arguments)
+
+         } You can import Akamai edge hostnames using a comma-delimited string of edge
+
+        hostname, contract ID, and group ID. You have to enter the values in this order:
+
+         `edge_hostname, contract_id, group_id`
+
+        For example
+
+        ```sh
+         $ pulumi import akamai:index/edgeHostName:EdgeHostName example ehn_123,ctr_1-AB123,grp_123
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
@@ -285,7 +357,79 @@ class EdgeHostName(pulumi.CustomResource):
                  args: EdgeHostNameArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a EdgeHostName resource with the given unique name, props, and options.
+        The `EdgeHostName` resource lets you configure a secure edge hostname. Your
+        edge hostname determines how requests for your site, app, or content are mapped to
+        Akamai edge servers.
+
+        An edge hostname is the CNAME target you use when directing your end user traffic to
+        Akamai. Each hostname assigned to a property has a corresponding edge hostname.
+
+        Akamai supports three types of edge hostnames, depending on the level of security
+        you need for your traffic: Standard TLS, Enhanced TLS, and Shared Certificate. When
+        entering the `edge_hostname` attribute, you need to include a specific domain suffix
+        for your edge hostname type:
+
+        | Edge hostname type | Domain suffix |
+        |------|-------|
+        | Enhanced TLS | edgekey.net |
+        | Standard TLS | edgesuite.net |
+        | Shared Cert | akamaized.net |
+
+        For example, if you use Standard TLS and have `www.example.com` as a hostname, your edge hostname would be `www.example.com.edgesuite.net`. If you wanted to use Enhanced TLS with the same hostname, your edge hostname would be `www.example.com.edgekey.net`. See the [Property Manager API (PAPI)](https://developer.akamai.com/api/core_features/property_manager/v1.html#createedgehostnames) for more information.
+
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        provider_demo = akamai.EdgeHostName("provider-demo",
+            contract_id="ctr_1-AB123",
+            edge_hostname="www.example.org.edgesuite.net",
+            group_id="grp_123",
+            product_id="prd_Object_Delivery")
+        ```
+        ## Argument reference
+
+        This resource supports these arguments:
+
+        * `name` - (Required) The name of the edge hostname.
+        * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
+        * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
+        * `product_id` - (Required) A product's unique ID, including the `prd_` prefix.
+        * `edge_hostname` - (Required) One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
+        * `certificate` - (Optional) Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
+        * `ip_behavior` - (Required) Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6. The default value is `IPV4`.
+        * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
+        * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
+        * `product` - (Deprecated) Replaced by `product_id`. Maintained for legacy purposes.
+
+        ## Attributes reference
+
+        This resource returns this attribute:
+
+        * `ip_behavior` - Returns the IP protocol the hostname will use, either `IPV4` for version 4, IPV6_PERFORMANCE`for version 6, or`IPV6_COMPLIANCE` for both.
+
+        ## Import
+
+        Basic Usagehcl resource "akamai_edge_hostname" "example" {
+
+        # (resource arguments)
+
+         } You can import Akamai edge hostnames using a comma-delimited string of edge
+
+        hostname, contract ID, and group ID. You have to enter the values in this order:
+
+         `edge_hostname, contract_id, group_id`
+
+        For example
+
+        ```sh
+         $ pulumi import akamai:index/edgeHostName:EdgeHostName example ehn_123,ctr_1-AB123,grp_123
+        ```
+
         :param str resource_name: The name of the resource.
         :param EdgeHostNameArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -324,24 +468,24 @@ class EdgeHostName(pulumi.CustomResource):
 
             __props__.__dict__["certificate"] = certificate
             if contract is not None and not opts.urn:
-                warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("""contract is deprecated: use \"contract_id\" attribute instead""")
+                warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
             __props__.__dict__["contract"] = contract
             __props__.__dict__["contract_id"] = contract_id
             if edge_hostname is None and not opts.urn:
                 raise TypeError("Missing required property 'edge_hostname'")
             __props__.__dict__["edge_hostname"] = edge_hostname
             if group is not None and not opts.urn:
-                warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("""group is deprecated: use \"group_id\" attribute instead""")
+                warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
             __props__.__dict__["group"] = group
             __props__.__dict__["group_id"] = group_id
             if ip_behavior is None and not opts.urn:
                 raise TypeError("Missing required property 'ip_behavior'")
             __props__.__dict__["ip_behavior"] = ip_behavior
             if product is not None and not opts.urn:
-                warnings.warn("""use \"product_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("""product is deprecated: use \"product_id\" attribute instead""")
+                warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
             __props__.__dict__["product"] = product
             __props__.__dict__["product_id"] = product_id
         alias_opts = pulumi.ResourceOptions(aliases=[pulumi.Alias(type_="akamai:properties/edgeHostName:EdgeHostName")])

@@ -33,7 +33,7 @@ namespace Pulumi.Akamai
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
     ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
-    ///             Json = File.ReadAllText($"{path.Module}/match_targets.json"),
+    ///             MatchTarget = File.ReadAllText($"{path.Module}/match_targets.json"),
     ///         });
     ///     }
     /// 
@@ -52,8 +52,8 @@ namespace Pulumi.Akamai
         /// <summary>
         /// The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
         /// </summary>
-        [Output("json")]
-        public Output<string> Json { get; private set; } = null!;
+        [Output("matchTarget")]
+        public Output<string> MatchTarget { get; private set; } = null!;
 
         /// <summary>
         /// The ID of the match target.
@@ -122,8 +122,8 @@ namespace Pulumi.Akamai
         /// <summary>
         /// The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
         /// </summary>
-        [Input("json", required: true)]
-        public Input<string> Json { get; set; } = null!;
+        [Input("matchTarget", required: true)]
+        public Input<string> MatchTarget { get; set; } = null!;
 
         /// <summary>
         /// The version number of the security configuration to use.
@@ -147,8 +147,8 @@ namespace Pulumi.Akamai
         /// <summary>
         /// The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
         /// </summary>
-        [Input("json")]
-        public Input<string>? Json { get; set; }
+        [Input("matchTarget")]
+        public Input<string>? MatchTarget { get; set; }
 
         /// <summary>
         /// The ID of the match target.

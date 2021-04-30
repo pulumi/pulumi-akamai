@@ -9,18 +9,64 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
+    /// <summary>
+    /// The `akamai.AppSecSelectedHostnames` resource allows you to set the list of hostnames protected under a given security configuration version.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// Basic usage:
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+    ///         {
+    ///             Name = "Akamai Tools",
+    ///         }));
+    ///         var appsecselectedhostnames = new Akamai.AppSecSelectedHostnames("appsecselectedhostnames", new Akamai.AppSecSelectedHostnamesArgs
+    ///         {
+    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
+    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
+    ///             Hostnames = 
+    ///             {
+    ///                 "example.com",
+    ///             },
+    ///             Mode = "APPEND",
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
+    /// </summary>
     [AkamaiResourceType("akamai:index/appSecSelectedHostnames:AppSecSelectedHostnames")]
     public partial class AppSecSelectedHostnames : Pulumi.CustomResource
     {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
+        /// <summary>
+        /// The list of hostnames to be applied, added or removed.
+        /// </summary>
         [Output("hostnames")]
         public Output<ImmutableArray<string>> Hostnames { get; private set; } = null!;
 
+        /// <summary>
+        /// A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
+        /// </summary>
         [Output("mode")]
         public Output<string> Mode { get; private set; } = null!;
 
+        /// <summary>
+        /// The version number of the security configuration to use.
+        /// </summary>
         [Output("version")]
         public Output<int> Version { get; private set; } = null!;
 
@@ -70,20 +116,33 @@ namespace Pulumi.Akamai
 
     public sealed class AppSecSelectedHostnamesArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         [Input("hostnames", required: true)]
         private InputList<string>? _hostnames;
+
+        /// <summary>
+        /// The list of hostnames to be applied, added or removed.
+        /// </summary>
         public InputList<string> Hostnames
         {
             get => _hostnames ?? (_hostnames = new InputList<string>());
             set => _hostnames = value;
         }
 
+        /// <summary>
+        /// A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
+        /// </summary>
         [Input("mode", required: true)]
         public Input<string> Mode { get; set; } = null!;
 
+        /// <summary>
+        /// The version number of the security configuration to use.
+        /// </summary>
         [Input("version", required: true)]
         public Input<int> Version { get; set; } = null!;
 
@@ -94,20 +153,33 @@ namespace Pulumi.Akamai
 
     public sealed class AppSecSelectedHostnamesState : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         [Input("hostnames")]
         private InputList<string>? _hostnames;
+
+        /// <summary>
+        /// The list of hostnames to be applied, added or removed.
+        /// </summary>
         public InputList<string> Hostnames
         {
             get => _hostnames ?? (_hostnames = new InputList<string>());
             set => _hostnames = value;
         }
 
+        /// <summary>
+        /// A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
+        /// </summary>
         [Input("mode")]
         public Input<string>? Mode { get; set; }
 
+        /// <summary>
+        /// The version number of the security configuration to use.
+        /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }
 

@@ -31,10 +31,6 @@ namespace Pulumi.Akamai
     ///         var ruleFormat = "v2020-03-04";
     ///         var example = new Akamai.Property("example", new Akamai.PropertyArgs
     ///         {
-    ///             Contacts = 
-    ///             {
-    ///                 "user@example.org",
-    ///             },
     ///             ProductId = "prd_SPM",
     ///             ContractId = @var.Contractid,
     ///             GroupId = @var.Groupid,
@@ -81,11 +77,15 @@ namespace Pulumi.Akamai
     /// 
     /// The following arguments are supported:
     /// 
-    /// * `property_id` - (Required) The property’s unique identifier, including the `prp_` prefix.
+    /// * `property_id` - (Required) The property’s unique identifier, including the `prp_` prefix.
     /// * `contact` - (Required) One or more email addresses to send activation status changes to.
     /// * `version` - (Required) The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `akamai.Property` resource labeled `example`.
     /// * `network` - (Optional) Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-    /// * `property` - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+    /// * `auto_acknowledge_rule_warnings` - (Optional) Whether the activation should proceed despite any warnings. By default set to `true`.
+    /// 
+    /// ### Deprecated arguments
+    /// 
+    /// * `property` - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
     /// 
     /// ## Attribute reference
     /// 
@@ -96,12 +96,22 @@ namespace Pulumi.Akamai
     /// * `errors` - The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
     /// * `activation_id` - The ID given to the activation event while it's in progress.
     /// * `status` - The property version’s activation status on the selected network.
+    /// 
+    /// ### Deprecated attributes
+    /// 
+    /// * `rule_warnings` - (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
     /// </summary>
     [AkamaiResourceType("akamai:index/propertyActivation:PropertyActivation")]
     public partial class PropertyActivation : Pulumi.CustomResource
     {
         [Output("activationId")]
         public Output<string> ActivationId { get; private set; } = null!;
+
+        /// <summary>
+        /// automatically acknowledge all rule warnings for activation to continue. default is true
+        /// </summary>
+        [Output("autoAcknowledgeRuleWarnings")]
+        public Output<bool?> AutoAcknowledgeRuleWarnings { get; private set; } = null!;
 
         [Output("contacts")]
         public Output<ImmutableArray<string>> Contacts { get; private set; } = null!;
@@ -117,6 +127,12 @@ namespace Pulumi.Akamai
 
         [Output("propertyId")]
         public Output<string> PropertyId { get; private set; } = null!;
+
+        [Output("ruleErrors")]
+        public Output<ImmutableArray<Outputs.PropertyActivationRuleError>> RuleErrors { get; private set; } = null!;
+
+        [Output("ruleWarnings")]
+        public Output<ImmutableArray<Outputs.PropertyActivationRuleWarning>> RuleWarnings { get; private set; } = null!;
 
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -180,6 +196,12 @@ namespace Pulumi.Akamai
         [Input("activationId")]
         public Input<string>? ActivationId { get; set; }
 
+        /// <summary>
+        /// automatically acknowledge all rule warnings for activation to continue. default is true
+        /// </summary>
+        [Input("autoAcknowledgeRuleWarnings")]
+        public Input<bool>? AutoAcknowledgeRuleWarnings { get; set; }
+
         [Input("contacts", required: true)]
         private InputList<string>? _contacts;
         public InputList<string> Contacts
@@ -197,6 +219,23 @@ namespace Pulumi.Akamai
         [Input("propertyId")]
         public Input<string>? PropertyId { get; set; }
 
+        [Input("ruleErrors")]
+        private InputList<Inputs.PropertyActivationRuleErrorArgs>? _ruleErrors;
+        public InputList<Inputs.PropertyActivationRuleErrorArgs> RuleErrors
+        {
+            get => _ruleErrors ?? (_ruleErrors = new InputList<Inputs.PropertyActivationRuleErrorArgs>());
+            set => _ruleErrors = value;
+        }
+
+        [Input("ruleWarnings")]
+        private InputList<Inputs.PropertyActivationRuleWarningArgs>? _ruleWarnings;
+        [Obsolete(@"Rule warnings will not be set in state anymore")]
+        public InputList<Inputs.PropertyActivationRuleWarningArgs> RuleWarnings
+        {
+            get => _ruleWarnings ?? (_ruleWarnings = new InputList<Inputs.PropertyActivationRuleWarningArgs>());
+            set => _ruleWarnings = value;
+        }
+
         [Input("version", required: true)]
         public Input<int> Version { get; set; } = null!;
 
@@ -209,6 +248,12 @@ namespace Pulumi.Akamai
     {
         [Input("activationId")]
         public Input<string>? ActivationId { get; set; }
+
+        /// <summary>
+        /// automatically acknowledge all rule warnings for activation to continue. default is true
+        /// </summary>
+        [Input("autoAcknowledgeRuleWarnings")]
+        public Input<bool>? AutoAcknowledgeRuleWarnings { get; set; }
 
         [Input("contacts")]
         private InputList<string>? _contacts;
@@ -229,6 +274,23 @@ namespace Pulumi.Akamai
 
         [Input("propertyId")]
         public Input<string>? PropertyId { get; set; }
+
+        [Input("ruleErrors")]
+        private InputList<Inputs.PropertyActivationRuleErrorGetArgs>? _ruleErrors;
+        public InputList<Inputs.PropertyActivationRuleErrorGetArgs> RuleErrors
+        {
+            get => _ruleErrors ?? (_ruleErrors = new InputList<Inputs.PropertyActivationRuleErrorGetArgs>());
+            set => _ruleErrors = value;
+        }
+
+        [Input("ruleWarnings")]
+        private InputList<Inputs.PropertyActivationRuleWarningGetArgs>? _ruleWarnings;
+        [Obsolete(@"Rule warnings will not be set in state anymore")]
+        public InputList<Inputs.PropertyActivationRuleWarningGetArgs> RuleWarnings
+        {
+            get => _ruleWarnings ?? (_ruleWarnings = new InputList<Inputs.PropertyActivationRuleWarningGetArgs>());
+            set => _ruleWarnings = value;
+        }
 
         [Input("status")]
         public Input<string>? Status { get; set; }

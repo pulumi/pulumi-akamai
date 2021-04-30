@@ -11,7 +11,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// `GtmGeomap` provides the resource for creating, configuring and importing a gtm Geographic map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingMapName`
+// Use the `GtmGeomap` resource to create, configure, and import a GTM Geographic map. Geographic mapping lets you configure a property that returns a CNAME based on the geographic location of the request.
+//
+// You can reuse maps for multiple properties or create new ones. To configure a property for geographic mapping, you need to define at least one geographic map for your domain. Each map needs at least two definitions. For example, you can have one definition that maps a set of countries to a specific data center, and a second definition that routes all other traffic.
+//
+// > **Note** Import requires an ID with this format: `existingDomainName`:`existingMapName`.
 //
 // ## Example Usage
 //
@@ -41,22 +45,32 @@ import (
 // 	})
 // }
 // ```
+// ## Argument reference
+//
+// This resource supports these arguments:
+//
+// * `domain` - (Required) GTM Domain name for the Geographic Map.
+// * `name` - (Required) A descriptive label for the Geographic map.
+// * `defaultDatacenter` - (Required) A placeholder for all other geographic zones. Requires these additional arguments:
+//   * `datacenterId` - (Required) For each property, an identifier for all other geographic zones.
+//   * `nickname` - (Required) A descriptive label for all other geographic zones.
+// * `waitOnComplete` - (Optional) A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+// * `assignment` - (Optional) Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
+//   * `datacenterId` - (Optional) A unique identifier for an existing data center in the domain.
+//   * `nickname` - (Optional) A descriptive label for the group.
+//   * `countries` - (Optional) Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
+//
+// ## Schema reference
+//
+// You can download the GTM Geographic Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#geographicmap) page.
 type GtmGeomap struct {
 	pulumi.CustomResourceState
 
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       GtmGeomapAssignmentArrayOutput   `pulumi:"assignments"`
 	DefaultDatacenter GtmGeomapDefaultDatacenterOutput `pulumi:"defaultDatacenter"`
-	// Domain name
-	Domain pulumi.StringOutput `pulumi:"domain"`
-	// Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name pulumi.StringOutput `pulumi:"name"`
-	// Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrOutput `pulumi:"waitOnComplete"`
+	Domain            pulumi.StringOutput              `pulumi:"domain"`
+	Name              pulumi.StringOutput              `pulumi:"name"`
+	WaitOnComplete    pulumi.BoolPtrOutput             `pulumi:"waitOnComplete"`
 }
 
 // NewGtmGeomap registers a new resource with the given unique name, arguments, and options.
@@ -100,35 +114,19 @@ func GetGtmGeomap(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering GtmGeomap resources.
 type gtmGeomapState struct {
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       []GtmGeomapAssignment       `pulumi:"assignments"`
 	DefaultDatacenter *GtmGeomapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	// Domain name
-	Domain *string `pulumi:"domain"`
-	// Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name *string `pulumi:"name"`
-	// Wait for transaction to complete
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	Domain            *string                     `pulumi:"domain"`
+	Name              *string                     `pulumi:"name"`
+	WaitOnComplete    *bool                       `pulumi:"waitOnComplete"`
 }
 
 type GtmGeomapState struct {
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       GtmGeomapAssignmentArrayInput
 	DefaultDatacenter GtmGeomapDefaultDatacenterPtrInput
-	// Domain name
-	Domain pulumi.StringPtrInput
-	// Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name pulumi.StringPtrInput
-	// Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrInput
+	Domain            pulumi.StringPtrInput
+	Name              pulumi.StringPtrInput
+	WaitOnComplete    pulumi.BoolPtrInput
 }
 
 func (GtmGeomapState) ElementType() reflect.Type {
@@ -136,36 +134,20 @@ func (GtmGeomapState) ElementType() reflect.Type {
 }
 
 type gtmGeomapArgs struct {
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       []GtmGeomapAssignment      `pulumi:"assignments"`
 	DefaultDatacenter GtmGeomapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	// Domain name
-	Domain string `pulumi:"domain"`
-	// Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name *string `pulumi:"name"`
-	// Wait for transaction to complete
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	Domain            string                     `pulumi:"domain"`
+	Name              *string                    `pulumi:"name"`
+	WaitOnComplete    *bool                      `pulumi:"waitOnComplete"`
 }
 
 // The set of arguments for constructing a GtmGeomap resource.
 type GtmGeomapArgs struct {
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       GtmGeomapAssignmentArrayInput
 	DefaultDatacenter GtmGeomapDefaultDatacenterInput
-	// Domain name
-	Domain pulumi.StringInput
-	// Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name pulumi.StringPtrInput
-	// Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrInput
+	Domain            pulumi.StringInput
+	Name              pulumi.StringPtrInput
+	WaitOnComplete    pulumi.BoolPtrInput
 }
 
 func (GtmGeomapArgs) ElementType() reflect.Type {

@@ -4,6 +4,28 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * The `akamai.AppSecConfigurationVersionClone` resource allows you to create a new version of a security configuration by cloning an existing version.
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Akamai Tools",
+ * });
+ * const clone = new akamai.AppSecConfigurationVersionClone("clone", {
+ *     configId: configuration.then(configuration => configuration.configId),
+ *     createFromVersion: configuration.then(configuration => configuration.latestVersion),
+ *     ruleUpdate: false,
+ * });
+ * export const cloneVersion = clone.version;
+ * ```
+ */
 export class AppSecConfigurationVersionClone extends pulumi.CustomResource {
     /**
      * Get an existing AppSecConfigurationVersionClone resource's state with the given name, ID, and optional extra
@@ -32,11 +54,20 @@ export class AppSecConfigurationVersionClone extends pulumi.CustomResource {
         return obj['__pulumiType'] === AppSecConfigurationVersionClone.__pulumiType;
     }
 
+    /**
+     * The ID of the security configuration to use.
+     */
     public readonly configId!: pulumi.Output<number>;
+    /**
+     * The version number of the security configuration to clone.
+     */
     public readonly createFromVersion!: pulumi.Output<number>;
+    /**
+     * A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
+     */
     public readonly ruleUpdate!: pulumi.Output<boolean | undefined>;
     /**
-     * Version of cloned configuration
+     * The number of the cloned version.
      */
     public /*out*/ readonly version!: pulumi.Output<number>;
 
@@ -81,11 +112,20 @@ export class AppSecConfigurationVersionClone extends pulumi.CustomResource {
  * Input properties used for looking up and filtering AppSecConfigurationVersionClone resources.
  */
 export interface AppSecConfigurationVersionCloneState {
+    /**
+     * The ID of the security configuration to use.
+     */
     readonly configId?: pulumi.Input<number>;
+    /**
+     * The version number of the security configuration to clone.
+     */
     readonly createFromVersion?: pulumi.Input<number>;
+    /**
+     * A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
+     */
     readonly ruleUpdate?: pulumi.Input<boolean>;
     /**
-     * Version of cloned configuration
+     * The number of the cloned version.
      */
     readonly version?: pulumi.Input<number>;
 }
@@ -94,7 +134,16 @@ export interface AppSecConfigurationVersionCloneState {
  * The set of arguments for constructing a AppSecConfigurationVersionClone resource.
  */
 export interface AppSecConfigurationVersionCloneArgs {
+    /**
+     * The ID of the security configuration to use.
+     */
     readonly configId: pulumi.Input<number>;
+    /**
+     * The version number of the security configuration to clone.
+     */
     readonly createFromVersion: pulumi.Input<number>;
+    /**
+     * A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
+     */
     readonly ruleUpdate?: pulumi.Input<boolean>;
 }

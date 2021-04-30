@@ -19,7 +19,7 @@ class GetAppSecConfigurationResult:
     """
     A collection of values returned by getAppSecConfiguration.
     """
-    def __init__(__self__, config_id=None, id=None, latest_version=None, name=None, output_text=None, production_version=None, staging_version=None, version=None):
+    def __init__(__self__, config_id=None, id=None, latest_version=None, name=None, output_text=None, production_version=None, staging_version=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -41,9 +41,6 @@ class GetAppSecConfigurationResult:
         if staging_version and not isinstance(staging_version, int):
             raise TypeError("Expected argument 'staging_version' to be a int")
         pulumi.set(__self__, "staging_version", staging_version)
-        if version and not isinstance(version, int):
-            raise TypeError("Expected argument 'version' to be a int")
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -98,11 +95,6 @@ class GetAppSecConfigurationResult:
         """
         return pulumi.get(self, "staging_version")
 
-    @property
-    @pulumi.getter
-    def version(self) -> Optional[int]:
-        return pulumi.get(self, "version")
-
 
 class AwaitableGetAppSecConfigurationResult(GetAppSecConfigurationResult):
     # pylint: disable=using-constant-test
@@ -116,15 +108,13 @@ class AwaitableGetAppSecConfigurationResult(GetAppSecConfigurationResult):
             name=self.name,
             output_text=self.output_text,
             production_version=self.production_version,
-            staging_version=self.staging_version,
-            version=self.version)
+            staging_version=self.staging_version)
 
 
 def get_app_sec_configuration(name: Optional[str] = None,
-                              version: Optional[int] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecConfigurationResult:
     """
-    Use the `getAppSecConfiguration` data source to retrieve the list of security configurations, or information about a specific security configuration.
+    Use the `AppSecConfiguration` data source to retrieve the list of security configurations, or information about a specific security configuration.
 
     ## Example Usage
 
@@ -148,7 +138,6 @@ def get_app_sec_configuration(name: Optional[str] = None,
     """
     __args__ = dict()
     __args__['name'] = name
-    __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -162,5 +151,4 @@ def get_app_sec_configuration(name: Optional[str] = None,
         name=__ret__.name,
         output_text=__ret__.output_text,
         production_version=__ret__.production_version,
-        staging_version=__ret__.staging_version,
-        version=__ret__.version)
+        staging_version=__ret__.staging_version)

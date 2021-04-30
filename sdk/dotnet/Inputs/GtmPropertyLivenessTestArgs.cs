@@ -15,9 +15,6 @@ namespace Pulumi.Akamai.Inputs
         [Input("answersRequired")]
         public Input<bool>? AnswersRequired { get; set; }
 
-        /// <summary>
-        /// * `error_penalty`
-        /// </summary>
         [Input("disableNonstandardPortWarning")]
         public Input<bool>? DisableNonstandardPortWarning { get; set; }
 
@@ -38,41 +35,18 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("httpHeaders")]
         private InputList<Inputs.GtmPropertyLivenessTestHttpHeaderArgs>? _httpHeaders;
-
-        /// <summary>
-        /// `name`
-        /// `value`
-        /// </summary>
         public InputList<Inputs.GtmPropertyLivenessTestHttpHeaderArgs> HttpHeaders
         {
             get => _httpHeaders ?? (_httpHeaders = new InputList<Inputs.GtmPropertyLivenessTestHttpHeaderArgs>());
             set => _httpHeaders = value;
         }
 
-        /// <summary>
-        /// Liveness test name
-        /// * `test_interval`
-        /// * `test_object_protocol`
-        /// * `test_timeout`
-        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         [Input("peerCertificateVerification")]
         public Input<bool>? PeerCertificateVerification { get; set; }
 
-        /// <summary>
-        /// * `request_string`
-        /// * `resource_type`
-        /// * `response_string`
-        /// * `ssl_client_certificate`
-        /// * `ssl_client_private_key`
-        /// * `test_object`
-        /// * `test_object_password`
-        /// * `test_object_port`
-        /// * `test_object_username`
-        /// * `timeout_penalty`
-        /// </summary>
         [Input("recursionRequested")]
         public Input<bool>? RecursionRequested { get; set; }
 

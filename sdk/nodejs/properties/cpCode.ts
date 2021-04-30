@@ -37,17 +37,21 @@ export class CpCode extends pulumi.CustomResource {
     }
 
     /**
-     * @deprecated use "contract_id" attribute instead
+     * @deprecated The setting "contract" has been deprecated.
      */
     public readonly contract!: pulumi.Output<string>;
     public readonly contractId!: pulumi.Output<string>;
     /**
-     * @deprecated use "group_id" attribute instead
+     * @deprecated The setting "group" has been deprecated.
      */
     public readonly group!: pulumi.Output<string>;
     public readonly groupId!: pulumi.Output<string>;
     public readonly name!: pulumi.Output<string>;
+    /**
+     * @deprecated The setting "product" has been deprecated.
+     */
     public readonly product!: pulumi.Output<string>;
+    public readonly productId!: pulumi.Output<string>;
 
     /**
      * Create a CpCode resource with the given unique name, arguments, and options.
@@ -57,7 +61,7 @@ export class CpCode extends pulumi.CustomResource {
      * @param opts A bag of options that control this resource's behavior.
      */
     /** @deprecated akamai.properties.CpCode has been deprecated in favor of akamai.CpCode */
-    constructor(name: string, args: CpCodeArgs, opts?: pulumi.CustomResourceOptions)
+    constructor(name: string, args?: CpCodeArgs, opts?: pulumi.CustomResourceOptions)
     /** @deprecated akamai.properties.CpCode has been deprecated in favor of akamai.CpCode */
     constructor(name: string, argsOrState?: CpCodeArgs | CpCodeState, opts?: pulumi.CustomResourceOptions) {
         pulumi.log.warn("CpCode is deprecated: akamai.properties.CpCode has been deprecated in favor of akamai.CpCode")
@@ -71,17 +75,16 @@ export class CpCode extends pulumi.CustomResource {
             inputs["groupId"] = state ? state.groupId : undefined;
             inputs["name"] = state ? state.name : undefined;
             inputs["product"] = state ? state.product : undefined;
+            inputs["productId"] = state ? state.productId : undefined;
         } else {
             const args = argsOrState as CpCodeArgs | undefined;
-            if ((!args || args.product === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'product'");
-            }
             inputs["contract"] = args ? args.contract : undefined;
             inputs["contractId"] = args ? args.contractId : undefined;
             inputs["group"] = args ? args.group : undefined;
             inputs["groupId"] = args ? args.groupId : undefined;
             inputs["name"] = args ? args.name : undefined;
             inputs["product"] = args ? args.product : undefined;
+            inputs["productId"] = args ? args.productId : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -95,17 +98,21 @@ export class CpCode extends pulumi.CustomResource {
  */
 export interface CpCodeState {
     /**
-     * @deprecated use "contract_id" attribute instead
+     * @deprecated The setting "contract" has been deprecated.
      */
     readonly contract?: pulumi.Input<string>;
     readonly contractId?: pulumi.Input<string>;
     /**
-     * @deprecated use "group_id" attribute instead
+     * @deprecated The setting "group" has been deprecated.
      */
     readonly group?: pulumi.Input<string>;
     readonly groupId?: pulumi.Input<string>;
     readonly name?: pulumi.Input<string>;
+    /**
+     * @deprecated The setting "product" has been deprecated.
+     */
     readonly product?: pulumi.Input<string>;
+    readonly productId?: pulumi.Input<string>;
 }
 
 /**
@@ -113,15 +120,19 @@ export interface CpCodeState {
  */
 export interface CpCodeArgs {
     /**
-     * @deprecated use "contract_id" attribute instead
+     * @deprecated The setting "contract" has been deprecated.
      */
     readonly contract?: pulumi.Input<string>;
     readonly contractId?: pulumi.Input<string>;
     /**
-     * @deprecated use "group_id" attribute instead
+     * @deprecated The setting "group" has been deprecated.
      */
     readonly group?: pulumi.Input<string>;
     readonly groupId?: pulumi.Input<string>;
     readonly name?: pulumi.Input<string>;
-    readonly product: pulumi.Input<string>;
+    /**
+     * @deprecated The setting "product" has been deprecated.
+     */
+    readonly product?: pulumi.Input<string>;
+    readonly productId?: pulumi.Input<string>;
 }

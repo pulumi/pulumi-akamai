@@ -12,11 +12,8 @@ import (
 
 type DnsZoneTsigKey struct {
 	Algorithm string `pulumi:"algorithm"`
-	// key name
-	// * `algorithm`
-	// * `secret`
-	Name   string `pulumi:"name"`
-	Secret string `pulumi:"secret"`
+	Name      string `pulumi:"name"`
+	Secret    string `pulumi:"secret"`
 }
 
 // DnsZoneTsigKeyInput is an input type that accepts DnsZoneTsigKeyArgs and DnsZoneTsigKeyOutput values.
@@ -32,11 +29,8 @@ type DnsZoneTsigKeyInput interface {
 
 type DnsZoneTsigKeyArgs struct {
 	Algorithm pulumi.StringInput `pulumi:"algorithm"`
-	// key name
-	// * `algorithm`
-	// * `secret`
-	Name   pulumi.StringInput `pulumi:"name"`
-	Secret pulumi.StringInput `pulumi:"secret"`
+	Name      pulumi.StringInput `pulumi:"name"`
+	Secret    pulumi.StringInput `pulumi:"secret"`
 }
 
 func (DnsZoneTsigKeyArgs) ElementType() reflect.Type {
@@ -119,9 +113,6 @@ func (o DnsZoneTsigKeyOutput) Algorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v DnsZoneTsigKey) string { return v.Algorithm }).(pulumi.StringOutput)
 }
 
-// key name
-// * `algorithm`
-// * `secret`
 func (o DnsZoneTsigKeyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v DnsZoneTsigKey) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -157,9 +148,6 @@ func (o DnsZoneTsigKeyPtrOutput) Algorithm() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// key name
-// * `algorithm`
-// * `secret`
 func (o DnsZoneTsigKeyPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DnsZoneTsigKey) *string {
 		if v == nil {
@@ -673,11 +661,9 @@ func (o GtmCidrmapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput 
 }
 
 type GtmDatacenterDefaultLoadObject struct {
-	LoadObject     *string `pulumi:"loadObject"`
-	LoadObjectPort *int    `pulumi:"loadObjectPort"`
-	// * `city`
-	// * `cloneOf`
-	LoadServers []string `pulumi:"loadServers"`
+	LoadObject     *string  `pulumi:"loadObject"`
+	LoadObjectPort *int     `pulumi:"loadObjectPort"`
+	LoadServers    []string `pulumi:"loadServers"`
 }
 
 // GtmDatacenterDefaultLoadObjectInput is an input type that accepts GtmDatacenterDefaultLoadObjectArgs and GtmDatacenterDefaultLoadObjectOutput values.
@@ -692,11 +678,9 @@ type GtmDatacenterDefaultLoadObjectInput interface {
 }
 
 type GtmDatacenterDefaultLoadObjectArgs struct {
-	LoadObject     pulumi.StringPtrInput `pulumi:"loadObject"`
-	LoadObjectPort pulumi.IntPtrInput    `pulumi:"loadObjectPort"`
-	// * `city`
-	// * `cloneOf`
-	LoadServers pulumi.StringArrayInput `pulumi:"loadServers"`
+	LoadObject     pulumi.StringPtrInput   `pulumi:"loadObject"`
+	LoadObjectPort pulumi.IntPtrInput      `pulumi:"loadObjectPort"`
+	LoadServers    pulumi.StringArrayInput `pulumi:"loadServers"`
 }
 
 func (GtmDatacenterDefaultLoadObjectArgs) ElementType() reflect.Type {
@@ -783,8 +767,6 @@ func (o GtmDatacenterDefaultLoadObjectOutput) LoadObjectPort() pulumi.IntPtrOutp
 	return o.ApplyT(func(v GtmDatacenterDefaultLoadObject) *int { return v.LoadObjectPort }).(pulumi.IntPtrOutput)
 }
 
-// * `city`
-// * `cloneOf`
 func (o GtmDatacenterDefaultLoadObjectOutput) LoadServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GtmDatacenterDefaultLoadObject) []string { return v.LoadServers }).(pulumi.StringArrayOutput)
 }
@@ -825,8 +807,6 @@ func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadObjectPort() pulumi.IntPtrO
 	}).(pulumi.IntPtrOutput)
 }
 
-// * `city`
-// * `cloneOf`
 func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *GtmDatacenterDefaultLoadObject) []string {
 		if v == nil {
@@ -1084,47 +1064,30 @@ func (o GtmGeomapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput {
 }
 
 type GtmPropertyLivenessTest struct {
-	AnswersRequired *bool `pulumi:"answersRequired"`
-	// * `errorPenalty`
-	DisableNonstandardPortWarning *bool    `pulumi:"disableNonstandardPortWarning"`
-	Disabled                      *bool    `pulumi:"disabled"`
-	ErrorPenalty                  *float64 `pulumi:"errorPenalty"`
-	HttpError3xx                  *bool    `pulumi:"httpError3xx"`
-	HttpError4xx                  *bool    `pulumi:"httpError4xx"`
-	HttpError5xx                  *bool    `pulumi:"httpError5xx"`
-	// `name`
-	// `value`
-	HttpHeaders []GtmPropertyLivenessTestHttpHeader `pulumi:"httpHeaders"`
-	// Liveness test name
-	// * `testInterval`
-	// * `testObjectProtocol`
-	// * `testTimeout`
-	Name                        string `pulumi:"name"`
-	PeerCertificateVerification *bool  `pulumi:"peerCertificateVerification"`
-	// * `requestString`
-	// * `resourceType`
-	// * `responseString`
-	// * `sslClientCertificate`
-	// * `sslClientPrivateKey`
-	// * `testObject`
-	// * `testObjectPassword`
-	// * `testObjectPort`
-	// * `testObjectUsername`
-	// * `timeoutPenalty`
-	RecursionRequested   *bool    `pulumi:"recursionRequested"`
-	RequestString        *string  `pulumi:"requestString"`
-	ResourceType         *string  `pulumi:"resourceType"`
-	ResponseString       *string  `pulumi:"responseString"`
-	SslClientCertificate *string  `pulumi:"sslClientCertificate"`
-	SslClientPrivateKey  *string  `pulumi:"sslClientPrivateKey"`
-	TestInterval         int      `pulumi:"testInterval"`
-	TestObject           string   `pulumi:"testObject"`
-	TestObjectPassword   *string  `pulumi:"testObjectPassword"`
-	TestObjectPort       *int     `pulumi:"testObjectPort"`
-	TestObjectProtocol   string   `pulumi:"testObjectProtocol"`
-	TestObjectUsername   *string  `pulumi:"testObjectUsername"`
-	TestTimeout          float64  `pulumi:"testTimeout"`
-	TimeoutPenalty       *float64 `pulumi:"timeoutPenalty"`
+	AnswersRequired               *bool                               `pulumi:"answersRequired"`
+	DisableNonstandardPortWarning *bool                               `pulumi:"disableNonstandardPortWarning"`
+	Disabled                      *bool                               `pulumi:"disabled"`
+	ErrorPenalty                  *float64                            `pulumi:"errorPenalty"`
+	HttpError3xx                  *bool                               `pulumi:"httpError3xx"`
+	HttpError4xx                  *bool                               `pulumi:"httpError4xx"`
+	HttpError5xx                  *bool                               `pulumi:"httpError5xx"`
+	HttpHeaders                   []GtmPropertyLivenessTestHttpHeader `pulumi:"httpHeaders"`
+	Name                          string                              `pulumi:"name"`
+	PeerCertificateVerification   *bool                               `pulumi:"peerCertificateVerification"`
+	RecursionRequested            *bool                               `pulumi:"recursionRequested"`
+	RequestString                 *string                             `pulumi:"requestString"`
+	ResourceType                  *string                             `pulumi:"resourceType"`
+	ResponseString                *string                             `pulumi:"responseString"`
+	SslClientCertificate          *string                             `pulumi:"sslClientCertificate"`
+	SslClientPrivateKey           *string                             `pulumi:"sslClientPrivateKey"`
+	TestInterval                  int                                 `pulumi:"testInterval"`
+	TestObject                    string                              `pulumi:"testObject"`
+	TestObjectPassword            *string                             `pulumi:"testObjectPassword"`
+	TestObjectPort                *int                                `pulumi:"testObjectPort"`
+	TestObjectProtocol            string                              `pulumi:"testObjectProtocol"`
+	TestObjectUsername            *string                             `pulumi:"testObjectUsername"`
+	TestTimeout                   float64                             `pulumi:"testTimeout"`
+	TimeoutPenalty                *float64                            `pulumi:"timeoutPenalty"`
 }
 
 // GtmPropertyLivenessTestInput is an input type that accepts GtmPropertyLivenessTestArgs and GtmPropertyLivenessTestOutput values.
@@ -1139,47 +1102,30 @@ type GtmPropertyLivenessTestInput interface {
 }
 
 type GtmPropertyLivenessTestArgs struct {
-	AnswersRequired pulumi.BoolPtrInput `pulumi:"answersRequired"`
-	// * `errorPenalty`
-	DisableNonstandardPortWarning pulumi.BoolPtrInput    `pulumi:"disableNonstandardPortWarning"`
-	Disabled                      pulumi.BoolPtrInput    `pulumi:"disabled"`
-	ErrorPenalty                  pulumi.Float64PtrInput `pulumi:"errorPenalty"`
-	HttpError3xx                  pulumi.BoolPtrInput    `pulumi:"httpError3xx"`
-	HttpError4xx                  pulumi.BoolPtrInput    `pulumi:"httpError4xx"`
-	HttpError5xx                  pulumi.BoolPtrInput    `pulumi:"httpError5xx"`
-	// `name`
-	// `value`
-	HttpHeaders GtmPropertyLivenessTestHttpHeaderArrayInput `pulumi:"httpHeaders"`
-	// Liveness test name
-	// * `testInterval`
-	// * `testObjectProtocol`
-	// * `testTimeout`
-	Name                        pulumi.StringInput  `pulumi:"name"`
-	PeerCertificateVerification pulumi.BoolPtrInput `pulumi:"peerCertificateVerification"`
-	// * `requestString`
-	// * `resourceType`
-	// * `responseString`
-	// * `sslClientCertificate`
-	// * `sslClientPrivateKey`
-	// * `testObject`
-	// * `testObjectPassword`
-	// * `testObjectPort`
-	// * `testObjectUsername`
-	// * `timeoutPenalty`
-	RecursionRequested   pulumi.BoolPtrInput    `pulumi:"recursionRequested"`
-	RequestString        pulumi.StringPtrInput  `pulumi:"requestString"`
-	ResourceType         pulumi.StringPtrInput  `pulumi:"resourceType"`
-	ResponseString       pulumi.StringPtrInput  `pulumi:"responseString"`
-	SslClientCertificate pulumi.StringPtrInput  `pulumi:"sslClientCertificate"`
-	SslClientPrivateKey  pulumi.StringPtrInput  `pulumi:"sslClientPrivateKey"`
-	TestInterval         pulumi.IntInput        `pulumi:"testInterval"`
-	TestObject           pulumi.StringInput     `pulumi:"testObject"`
-	TestObjectPassword   pulumi.StringPtrInput  `pulumi:"testObjectPassword"`
-	TestObjectPort       pulumi.IntPtrInput     `pulumi:"testObjectPort"`
-	TestObjectProtocol   pulumi.StringInput     `pulumi:"testObjectProtocol"`
-	TestObjectUsername   pulumi.StringPtrInput  `pulumi:"testObjectUsername"`
-	TestTimeout          pulumi.Float64Input    `pulumi:"testTimeout"`
-	TimeoutPenalty       pulumi.Float64PtrInput `pulumi:"timeoutPenalty"`
+	AnswersRequired               pulumi.BoolPtrInput                         `pulumi:"answersRequired"`
+	DisableNonstandardPortWarning pulumi.BoolPtrInput                         `pulumi:"disableNonstandardPortWarning"`
+	Disabled                      pulumi.BoolPtrInput                         `pulumi:"disabled"`
+	ErrorPenalty                  pulumi.Float64PtrInput                      `pulumi:"errorPenalty"`
+	HttpError3xx                  pulumi.BoolPtrInput                         `pulumi:"httpError3xx"`
+	HttpError4xx                  pulumi.BoolPtrInput                         `pulumi:"httpError4xx"`
+	HttpError5xx                  pulumi.BoolPtrInput                         `pulumi:"httpError5xx"`
+	HttpHeaders                   GtmPropertyLivenessTestHttpHeaderArrayInput `pulumi:"httpHeaders"`
+	Name                          pulumi.StringInput                          `pulumi:"name"`
+	PeerCertificateVerification   pulumi.BoolPtrInput                         `pulumi:"peerCertificateVerification"`
+	RecursionRequested            pulumi.BoolPtrInput                         `pulumi:"recursionRequested"`
+	RequestString                 pulumi.StringPtrInput                       `pulumi:"requestString"`
+	ResourceType                  pulumi.StringPtrInput                       `pulumi:"resourceType"`
+	ResponseString                pulumi.StringPtrInput                       `pulumi:"responseString"`
+	SslClientCertificate          pulumi.StringPtrInput                       `pulumi:"sslClientCertificate"`
+	SslClientPrivateKey           pulumi.StringPtrInput                       `pulumi:"sslClientPrivateKey"`
+	TestInterval                  pulumi.IntInput                             `pulumi:"testInterval"`
+	TestObject                    pulumi.StringInput                          `pulumi:"testObject"`
+	TestObjectPassword            pulumi.StringPtrInput                       `pulumi:"testObjectPassword"`
+	TestObjectPort                pulumi.IntPtrInput                          `pulumi:"testObjectPort"`
+	TestObjectProtocol            pulumi.StringInput                          `pulumi:"testObjectProtocol"`
+	TestObjectUsername            pulumi.StringPtrInput                       `pulumi:"testObjectUsername"`
+	TestTimeout                   pulumi.Float64Input                         `pulumi:"testTimeout"`
+	TimeoutPenalty                pulumi.Float64PtrInput                      `pulumi:"timeoutPenalty"`
 }
 
 func (GtmPropertyLivenessTestArgs) ElementType() reflect.Type {
@@ -1237,7 +1183,6 @@ func (o GtmPropertyLivenessTestOutput) AnswersRequired() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.AnswersRequired }).(pulumi.BoolPtrOutput)
 }
 
-// * `errorPenalty`
 func (o GtmPropertyLivenessTestOutput) DisableNonstandardPortWarning() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.DisableNonstandardPortWarning }).(pulumi.BoolPtrOutput)
 }
@@ -1262,16 +1207,10 @@ func (o GtmPropertyLivenessTestOutput) HttpError5xx() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.HttpError5xx }).(pulumi.BoolPtrOutput)
 }
 
-// `name`
-// `value`
 func (o GtmPropertyLivenessTestOutput) HttpHeaders() GtmPropertyLivenessTestHttpHeaderArrayOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) []GtmPropertyLivenessTestHttpHeader { return v.HttpHeaders }).(GtmPropertyLivenessTestHttpHeaderArrayOutput)
 }
 
-// Liveness test name
-// * `testInterval`
-// * `testObjectProtocol`
-// * `testTimeout`
 func (o GtmPropertyLivenessTestOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -1280,16 +1219,6 @@ func (o GtmPropertyLivenessTestOutput) PeerCertificateVerification() pulumi.Bool
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.PeerCertificateVerification }).(pulumi.BoolPtrOutput)
 }
 
-// * `requestString`
-// * `resourceType`
-// * `responseString`
-// * `sslClientCertificate`
-// * `sslClientPrivateKey`
-// * `testObject`
-// * `testObjectPassword`
-// * `testObjectPort`
-// * `testObjectUsername`
-// * `timeoutPenalty`
 func (o GtmPropertyLivenessTestOutput) RecursionRequested() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.RecursionRequested }).(pulumi.BoolPtrOutput)
 }
@@ -1367,10 +1296,6 @@ func (o GtmPropertyLivenessTestArrayOutput) Index(i pulumi.IntInput) GtmProperty
 }
 
 type GtmPropertyLivenessTestHttpHeader struct {
-	// Liveness test name
-	// * `testInterval`
-	// * `testObjectProtocol`
-	// * `testTimeout`
 	Name  *string `pulumi:"name"`
 	Value *string `pulumi:"value"`
 }
@@ -1387,10 +1312,6 @@ type GtmPropertyLivenessTestHttpHeaderInput interface {
 }
 
 type GtmPropertyLivenessTestHttpHeaderArgs struct {
-	// Liveness test name
-	// * `testInterval`
-	// * `testObjectProtocol`
-	// * `testTimeout`
 	Name  pulumi.StringPtrInput `pulumi:"name"`
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
@@ -1446,10 +1367,6 @@ func (o GtmPropertyLivenessTestHttpHeaderOutput) ToGtmPropertyLivenessTestHttpHe
 	return o
 }
 
-// Liveness test name
-// * `testInterval`
-// * `testObjectProtocol`
-// * `testTimeout`
 func (o GtmPropertyLivenessTestHttpHeaderOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTestHttpHeader) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -1481,9 +1398,7 @@ func (o GtmPropertyLivenessTestHttpHeaderArrayOutput) Index(i pulumi.IntInput) G
 type GtmPropertyStaticRrSet struct {
 	Rdatas []string `pulumi:"rdatas"`
 	Ttl    *int     `pulumi:"ttl"`
-	// Property type
-	// * `scoreAggregationType`
-	Type *string `pulumi:"type"`
+	Type   *string  `pulumi:"type"`
 }
 
 // GtmPropertyStaticRrSetInput is an input type that accepts GtmPropertyStaticRrSetArgs and GtmPropertyStaticRrSetOutput values.
@@ -1500,9 +1415,7 @@ type GtmPropertyStaticRrSetInput interface {
 type GtmPropertyStaticRrSetArgs struct {
 	Rdatas pulumi.StringArrayInput `pulumi:"rdatas"`
 	Ttl    pulumi.IntPtrInput      `pulumi:"ttl"`
-	// Property type
-	// * `scoreAggregationType`
-	Type pulumi.StringPtrInput `pulumi:"type"`
+	Type   pulumi.StringPtrInput   `pulumi:"type"`
 }
 
 func (GtmPropertyStaticRrSetArgs) ElementType() reflect.Type {
@@ -1564,8 +1477,6 @@ func (o GtmPropertyStaticRrSetOutput) Ttl() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GtmPropertyStaticRrSet) *int { return v.Ttl }).(pulumi.IntPtrOutput)
 }
 
-// Property type
-// * `scoreAggregationType`
 func (o GtmPropertyStaticRrSetOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyStaticRrSet) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -1591,17 +1502,12 @@ func (o GtmPropertyStaticRrSetArrayOutput) Index(i pulumi.IntInput) GtmPropertyS
 }
 
 type GtmPropertyTrafficTarget struct {
-	DatacenterId *int `pulumi:"datacenterId"`
-	// * `weight`
-	Enabled      *bool   `pulumi:"enabled"`
-	HandoutCname *string `pulumi:"handoutCname"`
-	// Liveness test name
-	// * `testInterval`
-	// * `testObjectProtocol`
-	// * `testTimeout`
-	Name    *string  `pulumi:"name"`
-	Servers []string `pulumi:"servers"`
-	Weight  *float64 `pulumi:"weight"`
+	DatacenterId *int     `pulumi:"datacenterId"`
+	Enabled      *bool    `pulumi:"enabled"`
+	HandoutCname *string  `pulumi:"handoutCname"`
+	Name         *string  `pulumi:"name"`
+	Servers      []string `pulumi:"servers"`
+	Weight       *float64 `pulumi:"weight"`
 }
 
 // GtmPropertyTrafficTargetInput is an input type that accepts GtmPropertyTrafficTargetArgs and GtmPropertyTrafficTargetOutput values.
@@ -1616,17 +1522,12 @@ type GtmPropertyTrafficTargetInput interface {
 }
 
 type GtmPropertyTrafficTargetArgs struct {
-	DatacenterId pulumi.IntPtrInput `pulumi:"datacenterId"`
-	// * `weight`
-	Enabled      pulumi.BoolPtrInput   `pulumi:"enabled"`
-	HandoutCname pulumi.StringPtrInput `pulumi:"handoutCname"`
-	// Liveness test name
-	// * `testInterval`
-	// * `testObjectProtocol`
-	// * `testTimeout`
-	Name    pulumi.StringPtrInput   `pulumi:"name"`
-	Servers pulumi.StringArrayInput `pulumi:"servers"`
-	Weight  pulumi.Float64PtrInput  `pulumi:"weight"`
+	DatacenterId pulumi.IntPtrInput      `pulumi:"datacenterId"`
+	Enabled      pulumi.BoolPtrInput     `pulumi:"enabled"`
+	HandoutCname pulumi.StringPtrInput   `pulumi:"handoutCname"`
+	Name         pulumi.StringPtrInput   `pulumi:"name"`
+	Servers      pulumi.StringArrayInput `pulumi:"servers"`
+	Weight       pulumi.Float64PtrInput  `pulumi:"weight"`
 }
 
 func (GtmPropertyTrafficTargetArgs) ElementType() reflect.Type {
@@ -1684,7 +1585,6 @@ func (o GtmPropertyTrafficTargetOutput) DatacenterId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *int { return v.DatacenterId }).(pulumi.IntPtrOutput)
 }
 
-// * `weight`
 func (o GtmPropertyTrafficTargetOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
@@ -1693,10 +1593,6 @@ func (o GtmPropertyTrafficTargetOutput) HandoutCname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *string { return v.HandoutCname }).(pulumi.StringPtrOutput)
 }
 
-// Liveness test name
-// * `testInterval`
-// * `testObjectProtocol`
-// * `testTimeout`
 func (o GtmPropertyTrafficTargetOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -1730,20 +1626,11 @@ func (o GtmPropertyTrafficTargetArrayOutput) Index(i pulumi.IntInput) GtmPropert
 }
 
 type GtmResourceResourceInstance struct {
-	DatacenterId   int      `pulumi:"datacenterId"`
-	LoadObject     *string  `pulumi:"loadObject"`
-	LoadObjectPort *int     `pulumi:"loadObjectPort"`
-	LoadServers    []string `pulumi:"loadServers"`
-	// * `hostHeader`
-	// * `leastSquaresDecay`
-	// * `upperBound`
-	// * `description`
-	// * `leaderString`
-	// * `constrainedProperty`
-	// * `loadImbalancePercent`
-	// * `maxUMultiplicativeIncrement`
-	// * `decayRate`
-	UseDefaultLoadObject *bool `pulumi:"useDefaultLoadObject"`
+	DatacenterId         int      `pulumi:"datacenterId"`
+	LoadObject           *string  `pulumi:"loadObject"`
+	LoadObjectPort       *int     `pulumi:"loadObjectPort"`
+	LoadServers          []string `pulumi:"loadServers"`
+	UseDefaultLoadObject *bool    `pulumi:"useDefaultLoadObject"`
 }
 
 // GtmResourceResourceInstanceInput is an input type that accepts GtmResourceResourceInstanceArgs and GtmResourceResourceInstanceOutput values.
@@ -1758,20 +1645,11 @@ type GtmResourceResourceInstanceInput interface {
 }
 
 type GtmResourceResourceInstanceArgs struct {
-	DatacenterId   pulumi.IntInput         `pulumi:"datacenterId"`
-	LoadObject     pulumi.StringPtrInput   `pulumi:"loadObject"`
-	LoadObjectPort pulumi.IntPtrInput      `pulumi:"loadObjectPort"`
-	LoadServers    pulumi.StringArrayInput `pulumi:"loadServers"`
-	// * `hostHeader`
-	// * `leastSquaresDecay`
-	// * `upperBound`
-	// * `description`
-	// * `leaderString`
-	// * `constrainedProperty`
-	// * `loadImbalancePercent`
-	// * `maxUMultiplicativeIncrement`
-	// * `decayRate`
-	UseDefaultLoadObject pulumi.BoolPtrInput `pulumi:"useDefaultLoadObject"`
+	DatacenterId         pulumi.IntInput         `pulumi:"datacenterId"`
+	LoadObject           pulumi.StringPtrInput   `pulumi:"loadObject"`
+	LoadObjectPort       pulumi.IntPtrInput      `pulumi:"loadObjectPort"`
+	LoadServers          pulumi.StringArrayInput `pulumi:"loadServers"`
+	UseDefaultLoadObject pulumi.BoolPtrInput     `pulumi:"useDefaultLoadObject"`
 }
 
 func (GtmResourceResourceInstanceArgs) ElementType() reflect.Type {
@@ -1841,15 +1719,6 @@ func (o GtmResourceResourceInstanceOutput) LoadServers() pulumi.StringArrayOutpu
 	return o.ApplyT(func(v GtmResourceResourceInstance) []string { return v.LoadServers }).(pulumi.StringArrayOutput)
 }
 
-// * `hostHeader`
-// * `leastSquaresDecay`
-// * `upperBound`
-// * `description`
-// * `leaderString`
-// * `constrainedProperty`
-// * `loadImbalancePercent`
-// * `maxUMultiplicativeIncrement`
-// * `decayRate`
 func (o GtmResourceResourceInstanceOutput) UseDefaultLoadObject() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmResourceResourceInstance) *bool { return v.UseDefaultLoadObject }).(pulumi.BoolPtrOutput)
 }
@@ -1872,6 +1741,502 @@ func (o GtmResourceResourceInstanceArrayOutput) Index(i pulumi.IntInput) GtmReso
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmResourceResourceInstance {
 		return vs[0].([]GtmResourceResourceInstance)[vs[1].(int)]
 	}).(GtmResourceResourceInstanceOutput)
+}
+
+type PropertyActivationRuleError struct {
+	BehaviorName  *string `pulumi:"behaviorName"`
+	Detail        *string `pulumi:"detail"`
+	ErrorLocation *string `pulumi:"errorLocation"`
+	Instance      *string `pulumi:"instance"`
+	StatusCode    *int    `pulumi:"statusCode"`
+	Title         *string `pulumi:"title"`
+	Type          *string `pulumi:"type"`
+}
+
+// PropertyActivationRuleErrorInput is an input type that accepts PropertyActivationRuleErrorArgs and PropertyActivationRuleErrorOutput values.
+// You can construct a concrete instance of `PropertyActivationRuleErrorInput` via:
+//
+//          PropertyActivationRuleErrorArgs{...}
+type PropertyActivationRuleErrorInput interface {
+	pulumi.Input
+
+	ToPropertyActivationRuleErrorOutput() PropertyActivationRuleErrorOutput
+	ToPropertyActivationRuleErrorOutputWithContext(context.Context) PropertyActivationRuleErrorOutput
+}
+
+type PropertyActivationRuleErrorArgs struct {
+	BehaviorName  pulumi.StringPtrInput `pulumi:"behaviorName"`
+	Detail        pulumi.StringPtrInput `pulumi:"detail"`
+	ErrorLocation pulumi.StringPtrInput `pulumi:"errorLocation"`
+	Instance      pulumi.StringPtrInput `pulumi:"instance"`
+	StatusCode    pulumi.IntPtrInput    `pulumi:"statusCode"`
+	Title         pulumi.StringPtrInput `pulumi:"title"`
+	Type          pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (PropertyActivationRuleErrorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivationRuleError)(nil)).Elem()
+}
+
+func (i PropertyActivationRuleErrorArgs) ToPropertyActivationRuleErrorOutput() PropertyActivationRuleErrorOutput {
+	return i.ToPropertyActivationRuleErrorOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationRuleErrorArgs) ToPropertyActivationRuleErrorOutputWithContext(ctx context.Context) PropertyActivationRuleErrorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationRuleErrorOutput)
+}
+
+// PropertyActivationRuleErrorArrayInput is an input type that accepts PropertyActivationRuleErrorArray and PropertyActivationRuleErrorArrayOutput values.
+// You can construct a concrete instance of `PropertyActivationRuleErrorArrayInput` via:
+//
+//          PropertyActivationRuleErrorArray{ PropertyActivationRuleErrorArgs{...} }
+type PropertyActivationRuleErrorArrayInput interface {
+	pulumi.Input
+
+	ToPropertyActivationRuleErrorArrayOutput() PropertyActivationRuleErrorArrayOutput
+	ToPropertyActivationRuleErrorArrayOutputWithContext(context.Context) PropertyActivationRuleErrorArrayOutput
+}
+
+type PropertyActivationRuleErrorArray []PropertyActivationRuleErrorInput
+
+func (PropertyActivationRuleErrorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyActivationRuleError)(nil)).Elem()
+}
+
+func (i PropertyActivationRuleErrorArray) ToPropertyActivationRuleErrorArrayOutput() PropertyActivationRuleErrorArrayOutput {
+	return i.ToPropertyActivationRuleErrorArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationRuleErrorArray) ToPropertyActivationRuleErrorArrayOutputWithContext(ctx context.Context) PropertyActivationRuleErrorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationRuleErrorArrayOutput)
+}
+
+type PropertyActivationRuleErrorOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationRuleErrorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivationRuleError)(nil)).Elem()
+}
+
+func (o PropertyActivationRuleErrorOutput) ToPropertyActivationRuleErrorOutput() PropertyActivationRuleErrorOutput {
+	return o
+}
+
+func (o PropertyActivationRuleErrorOutput) ToPropertyActivationRuleErrorOutputWithContext(ctx context.Context) PropertyActivationRuleErrorOutput {
+	return o
+}
+
+func (o PropertyActivationRuleErrorOutput) BehaviorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleError) *string { return v.BehaviorName }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleErrorOutput) Detail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleError) *string { return v.Detail }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleErrorOutput) ErrorLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleError) *string { return v.ErrorLocation }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleErrorOutput) Instance() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleError) *string { return v.Instance }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleErrorOutput) StatusCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleError) *int { return v.StatusCode }).(pulumi.IntPtrOutput)
+}
+
+func (o PropertyActivationRuleErrorOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleError) *string { return v.Title }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleErrorOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleError) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type PropertyActivationRuleErrorArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationRuleErrorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyActivationRuleError)(nil)).Elem()
+}
+
+func (o PropertyActivationRuleErrorArrayOutput) ToPropertyActivationRuleErrorArrayOutput() PropertyActivationRuleErrorArrayOutput {
+	return o
+}
+
+func (o PropertyActivationRuleErrorArrayOutput) ToPropertyActivationRuleErrorArrayOutputWithContext(ctx context.Context) PropertyActivationRuleErrorArrayOutput {
+	return o
+}
+
+func (o PropertyActivationRuleErrorArrayOutput) Index(i pulumi.IntInput) PropertyActivationRuleErrorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyActivationRuleError {
+		return vs[0].([]PropertyActivationRuleError)[vs[1].(int)]
+	}).(PropertyActivationRuleErrorOutput)
+}
+
+type PropertyActivationRuleWarning struct {
+	BehaviorName  *string `pulumi:"behaviorName"`
+	Detail        *string `pulumi:"detail"`
+	ErrorLocation *string `pulumi:"errorLocation"`
+	Instance      *string `pulumi:"instance"`
+	StatusCode    *int    `pulumi:"statusCode"`
+	Title         *string `pulumi:"title"`
+	Type          *string `pulumi:"type"`
+}
+
+// PropertyActivationRuleWarningInput is an input type that accepts PropertyActivationRuleWarningArgs and PropertyActivationRuleWarningOutput values.
+// You can construct a concrete instance of `PropertyActivationRuleWarningInput` via:
+//
+//          PropertyActivationRuleWarningArgs{...}
+type PropertyActivationRuleWarningInput interface {
+	pulumi.Input
+
+	ToPropertyActivationRuleWarningOutput() PropertyActivationRuleWarningOutput
+	ToPropertyActivationRuleWarningOutputWithContext(context.Context) PropertyActivationRuleWarningOutput
+}
+
+type PropertyActivationRuleWarningArgs struct {
+	BehaviorName  pulumi.StringPtrInput `pulumi:"behaviorName"`
+	Detail        pulumi.StringPtrInput `pulumi:"detail"`
+	ErrorLocation pulumi.StringPtrInput `pulumi:"errorLocation"`
+	Instance      pulumi.StringPtrInput `pulumi:"instance"`
+	StatusCode    pulumi.IntPtrInput    `pulumi:"statusCode"`
+	Title         pulumi.StringPtrInput `pulumi:"title"`
+	Type          pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (PropertyActivationRuleWarningArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivationRuleWarning)(nil)).Elem()
+}
+
+func (i PropertyActivationRuleWarningArgs) ToPropertyActivationRuleWarningOutput() PropertyActivationRuleWarningOutput {
+	return i.ToPropertyActivationRuleWarningOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationRuleWarningArgs) ToPropertyActivationRuleWarningOutputWithContext(ctx context.Context) PropertyActivationRuleWarningOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationRuleWarningOutput)
+}
+
+// PropertyActivationRuleWarningArrayInput is an input type that accepts PropertyActivationRuleWarningArray and PropertyActivationRuleWarningArrayOutput values.
+// You can construct a concrete instance of `PropertyActivationRuleWarningArrayInput` via:
+//
+//          PropertyActivationRuleWarningArray{ PropertyActivationRuleWarningArgs{...} }
+type PropertyActivationRuleWarningArrayInput interface {
+	pulumi.Input
+
+	ToPropertyActivationRuleWarningArrayOutput() PropertyActivationRuleWarningArrayOutput
+	ToPropertyActivationRuleWarningArrayOutputWithContext(context.Context) PropertyActivationRuleWarningArrayOutput
+}
+
+type PropertyActivationRuleWarningArray []PropertyActivationRuleWarningInput
+
+func (PropertyActivationRuleWarningArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyActivationRuleWarning)(nil)).Elem()
+}
+
+func (i PropertyActivationRuleWarningArray) ToPropertyActivationRuleWarningArrayOutput() PropertyActivationRuleWarningArrayOutput {
+	return i.ToPropertyActivationRuleWarningArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationRuleWarningArray) ToPropertyActivationRuleWarningArrayOutputWithContext(ctx context.Context) PropertyActivationRuleWarningArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationRuleWarningArrayOutput)
+}
+
+type PropertyActivationRuleWarningOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationRuleWarningOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivationRuleWarning)(nil)).Elem()
+}
+
+func (o PropertyActivationRuleWarningOutput) ToPropertyActivationRuleWarningOutput() PropertyActivationRuleWarningOutput {
+	return o
+}
+
+func (o PropertyActivationRuleWarningOutput) ToPropertyActivationRuleWarningOutputWithContext(ctx context.Context) PropertyActivationRuleWarningOutput {
+	return o
+}
+
+func (o PropertyActivationRuleWarningOutput) BehaviorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleWarning) *string { return v.BehaviorName }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleWarningOutput) Detail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleWarning) *string { return v.Detail }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleWarningOutput) ErrorLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleWarning) *string { return v.ErrorLocation }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleWarningOutput) Instance() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleWarning) *string { return v.Instance }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleWarningOutput) StatusCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleWarning) *int { return v.StatusCode }).(pulumi.IntPtrOutput)
+}
+
+func (o PropertyActivationRuleWarningOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleWarning) *string { return v.Title }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleWarningOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleWarning) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type PropertyActivationRuleWarningArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationRuleWarningArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyActivationRuleWarning)(nil)).Elem()
+}
+
+func (o PropertyActivationRuleWarningArrayOutput) ToPropertyActivationRuleWarningArrayOutput() PropertyActivationRuleWarningArrayOutput {
+	return o
+}
+
+func (o PropertyActivationRuleWarningArrayOutput) ToPropertyActivationRuleWarningArrayOutputWithContext(ctx context.Context) PropertyActivationRuleWarningArrayOutput {
+	return o
+}
+
+func (o PropertyActivationRuleWarningArrayOutput) Index(i pulumi.IntInput) PropertyActivationRuleWarningOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyActivationRuleWarning {
+		return vs[0].([]PropertyActivationRuleWarning)[vs[1].(int)]
+	}).(PropertyActivationRuleWarningOutput)
+}
+
+type PropertyHostname struct {
+	CertProvisioningType string                       `pulumi:"certProvisioningType"`
+	CertStatuses         []PropertyHostnameCertStatus `pulumi:"certStatuses"`
+	CnameFrom            string                       `pulumi:"cnameFrom"`
+	CnameTo              string                       `pulumi:"cnameTo"`
+	CnameType            *string                      `pulumi:"cnameType"`
+	EdgeHostnameId       *string                      `pulumi:"edgeHostnameId"`
+}
+
+// PropertyHostnameInput is an input type that accepts PropertyHostnameArgs and PropertyHostnameOutput values.
+// You can construct a concrete instance of `PropertyHostnameInput` via:
+//
+//          PropertyHostnameArgs{...}
+type PropertyHostnameInput interface {
+	pulumi.Input
+
+	ToPropertyHostnameOutput() PropertyHostnameOutput
+	ToPropertyHostnameOutputWithContext(context.Context) PropertyHostnameOutput
+}
+
+type PropertyHostnameArgs struct {
+	CertProvisioningType pulumi.StringInput                   `pulumi:"certProvisioningType"`
+	CertStatuses         PropertyHostnameCertStatusArrayInput `pulumi:"certStatuses"`
+	CnameFrom            pulumi.StringInput                   `pulumi:"cnameFrom"`
+	CnameTo              pulumi.StringInput                   `pulumi:"cnameTo"`
+	CnameType            pulumi.StringPtrInput                `pulumi:"cnameType"`
+	EdgeHostnameId       pulumi.StringPtrInput                `pulumi:"edgeHostnameId"`
+}
+
+func (PropertyHostnameArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyHostname)(nil)).Elem()
+}
+
+func (i PropertyHostnameArgs) ToPropertyHostnameOutput() PropertyHostnameOutput {
+	return i.ToPropertyHostnameOutputWithContext(context.Background())
+}
+
+func (i PropertyHostnameArgs) ToPropertyHostnameOutputWithContext(ctx context.Context) PropertyHostnameOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyHostnameOutput)
+}
+
+// PropertyHostnameArrayInput is an input type that accepts PropertyHostnameArray and PropertyHostnameArrayOutput values.
+// You can construct a concrete instance of `PropertyHostnameArrayInput` via:
+//
+//          PropertyHostnameArray{ PropertyHostnameArgs{...} }
+type PropertyHostnameArrayInput interface {
+	pulumi.Input
+
+	ToPropertyHostnameArrayOutput() PropertyHostnameArrayOutput
+	ToPropertyHostnameArrayOutputWithContext(context.Context) PropertyHostnameArrayOutput
+}
+
+type PropertyHostnameArray []PropertyHostnameInput
+
+func (PropertyHostnameArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyHostname)(nil)).Elem()
+}
+
+func (i PropertyHostnameArray) ToPropertyHostnameArrayOutput() PropertyHostnameArrayOutput {
+	return i.ToPropertyHostnameArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyHostnameArray) ToPropertyHostnameArrayOutputWithContext(ctx context.Context) PropertyHostnameArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyHostnameArrayOutput)
+}
+
+type PropertyHostnameOutput struct{ *pulumi.OutputState }
+
+func (PropertyHostnameOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyHostname)(nil)).Elem()
+}
+
+func (o PropertyHostnameOutput) ToPropertyHostnameOutput() PropertyHostnameOutput {
+	return o
+}
+
+func (o PropertyHostnameOutput) ToPropertyHostnameOutputWithContext(ctx context.Context) PropertyHostnameOutput {
+	return o
+}
+
+func (o PropertyHostnameOutput) CertProvisioningType() pulumi.StringOutput {
+	return o.ApplyT(func(v PropertyHostname) string { return v.CertProvisioningType }).(pulumi.StringOutput)
+}
+
+func (o PropertyHostnameOutput) CertStatuses() PropertyHostnameCertStatusArrayOutput {
+	return o.ApplyT(func(v PropertyHostname) []PropertyHostnameCertStatus { return v.CertStatuses }).(PropertyHostnameCertStatusArrayOutput)
+}
+
+func (o PropertyHostnameOutput) CnameFrom() pulumi.StringOutput {
+	return o.ApplyT(func(v PropertyHostname) string { return v.CnameFrom }).(pulumi.StringOutput)
+}
+
+func (o PropertyHostnameOutput) CnameTo() pulumi.StringOutput {
+	return o.ApplyT(func(v PropertyHostname) string { return v.CnameTo }).(pulumi.StringOutput)
+}
+
+func (o PropertyHostnameOutput) CnameType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostname) *string { return v.CnameType }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyHostnameOutput) EdgeHostnameId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostname) *string { return v.EdgeHostnameId }).(pulumi.StringPtrOutput)
+}
+
+type PropertyHostnameArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyHostnameArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyHostname)(nil)).Elem()
+}
+
+func (o PropertyHostnameArrayOutput) ToPropertyHostnameArrayOutput() PropertyHostnameArrayOutput {
+	return o
+}
+
+func (o PropertyHostnameArrayOutput) ToPropertyHostnameArrayOutputWithContext(ctx context.Context) PropertyHostnameArrayOutput {
+	return o
+}
+
+func (o PropertyHostnameArrayOutput) Index(i pulumi.IntInput) PropertyHostnameOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyHostname {
+		return vs[0].([]PropertyHostname)[vs[1].(int)]
+	}).(PropertyHostnameOutput)
+}
+
+type PropertyHostnameCertStatus struct {
+	Hostname         *string `pulumi:"hostname"`
+	ProductionStatus *string `pulumi:"productionStatus"`
+	StagingStatus    *string `pulumi:"stagingStatus"`
+	Target           *string `pulumi:"target"`
+}
+
+// PropertyHostnameCertStatusInput is an input type that accepts PropertyHostnameCertStatusArgs and PropertyHostnameCertStatusOutput values.
+// You can construct a concrete instance of `PropertyHostnameCertStatusInput` via:
+//
+//          PropertyHostnameCertStatusArgs{...}
+type PropertyHostnameCertStatusInput interface {
+	pulumi.Input
+
+	ToPropertyHostnameCertStatusOutput() PropertyHostnameCertStatusOutput
+	ToPropertyHostnameCertStatusOutputWithContext(context.Context) PropertyHostnameCertStatusOutput
+}
+
+type PropertyHostnameCertStatusArgs struct {
+	Hostname         pulumi.StringPtrInput `pulumi:"hostname"`
+	ProductionStatus pulumi.StringPtrInput `pulumi:"productionStatus"`
+	StagingStatus    pulumi.StringPtrInput `pulumi:"stagingStatus"`
+	Target           pulumi.StringPtrInput `pulumi:"target"`
+}
+
+func (PropertyHostnameCertStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyHostnameCertStatus)(nil)).Elem()
+}
+
+func (i PropertyHostnameCertStatusArgs) ToPropertyHostnameCertStatusOutput() PropertyHostnameCertStatusOutput {
+	return i.ToPropertyHostnameCertStatusOutputWithContext(context.Background())
+}
+
+func (i PropertyHostnameCertStatusArgs) ToPropertyHostnameCertStatusOutputWithContext(ctx context.Context) PropertyHostnameCertStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyHostnameCertStatusOutput)
+}
+
+// PropertyHostnameCertStatusArrayInput is an input type that accepts PropertyHostnameCertStatusArray and PropertyHostnameCertStatusArrayOutput values.
+// You can construct a concrete instance of `PropertyHostnameCertStatusArrayInput` via:
+//
+//          PropertyHostnameCertStatusArray{ PropertyHostnameCertStatusArgs{...} }
+type PropertyHostnameCertStatusArrayInput interface {
+	pulumi.Input
+
+	ToPropertyHostnameCertStatusArrayOutput() PropertyHostnameCertStatusArrayOutput
+	ToPropertyHostnameCertStatusArrayOutputWithContext(context.Context) PropertyHostnameCertStatusArrayOutput
+}
+
+type PropertyHostnameCertStatusArray []PropertyHostnameCertStatusInput
+
+func (PropertyHostnameCertStatusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyHostnameCertStatus)(nil)).Elem()
+}
+
+func (i PropertyHostnameCertStatusArray) ToPropertyHostnameCertStatusArrayOutput() PropertyHostnameCertStatusArrayOutput {
+	return i.ToPropertyHostnameCertStatusArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyHostnameCertStatusArray) ToPropertyHostnameCertStatusArrayOutputWithContext(ctx context.Context) PropertyHostnameCertStatusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyHostnameCertStatusArrayOutput)
+}
+
+type PropertyHostnameCertStatusOutput struct{ *pulumi.OutputState }
+
+func (PropertyHostnameCertStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyHostnameCertStatus)(nil)).Elem()
+}
+
+func (o PropertyHostnameCertStatusOutput) ToPropertyHostnameCertStatusOutput() PropertyHostnameCertStatusOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusOutput) ToPropertyHostnameCertStatusOutputWithContext(ctx context.Context) PropertyHostnameCertStatusOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatus) *string { return v.Hostname }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyHostnameCertStatusOutput) ProductionStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatus) *string { return v.ProductionStatus }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyHostnameCertStatusOutput) StagingStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatus) *string { return v.StagingStatus }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyHostnameCertStatusOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatus) *string { return v.Target }).(pulumi.StringPtrOutput)
+}
+
+type PropertyHostnameCertStatusArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyHostnameCertStatusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyHostnameCertStatus)(nil)).Elem()
+}
+
+func (o PropertyHostnameCertStatusArrayOutput) ToPropertyHostnameCertStatusArrayOutput() PropertyHostnameCertStatusArrayOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusArrayOutput) ToPropertyHostnameCertStatusArrayOutputWithContext(ctx context.Context) PropertyHostnameCertStatusArrayOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusArrayOutput) Index(i pulumi.IntInput) PropertyHostnameCertStatusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyHostnameCertStatus {
+		return vs[0].([]PropertyHostnameCertStatus)[vs[1].(int)]
+	}).(PropertyHostnameCertStatusOutput)
 }
 
 type PropertyOrigin struct {
@@ -3758,6 +4123,242 @@ func (o GetPropertiesPropertyArrayOutput) Index(i pulumi.IntInput) GetProperties
 	}).(GetPropertiesPropertyOutput)
 }
 
+type GetPropertyHostnamesHostname struct {
+	CertProvisioningType string                                   `pulumi:"certProvisioningType"`
+	CertStatuses         []GetPropertyHostnamesHostnameCertStatus `pulumi:"certStatuses"`
+	CnameFrom            string                                   `pulumi:"cnameFrom"`
+	CnameTo              string                                   `pulumi:"cnameTo"`
+	CnameType            string                                   `pulumi:"cnameType"`
+	EdgeHostnameId       string                                   `pulumi:"edgeHostnameId"`
+}
+
+// GetPropertyHostnamesHostnameInput is an input type that accepts GetPropertyHostnamesHostnameArgs and GetPropertyHostnamesHostnameOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameInput` via:
+//
+//          GetPropertyHostnamesHostnameArgs{...}
+type GetPropertyHostnamesHostnameInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameOutput() GetPropertyHostnamesHostnameOutput
+	ToGetPropertyHostnamesHostnameOutputWithContext(context.Context) GetPropertyHostnamesHostnameOutput
+}
+
+type GetPropertyHostnamesHostnameArgs struct {
+	CertProvisioningType pulumi.StringInput                               `pulumi:"certProvisioningType"`
+	CertStatuses         GetPropertyHostnamesHostnameCertStatusArrayInput `pulumi:"certStatuses"`
+	CnameFrom            pulumi.StringInput                               `pulumi:"cnameFrom"`
+	CnameTo              pulumi.StringInput                               `pulumi:"cnameTo"`
+	CnameType            pulumi.StringInput                               `pulumi:"cnameType"`
+	EdgeHostnameId       pulumi.StringInput                               `pulumi:"edgeHostnameId"`
+}
+
+func (GetPropertyHostnamesHostnameArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostname)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameArgs) ToGetPropertyHostnamesHostnameOutput() GetPropertyHostnamesHostnameOutput {
+	return i.ToGetPropertyHostnamesHostnameOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameArgs) ToGetPropertyHostnamesHostnameOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameOutput)
+}
+
+// GetPropertyHostnamesHostnameArrayInput is an input type that accepts GetPropertyHostnamesHostnameArray and GetPropertyHostnamesHostnameArrayOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameArrayInput` via:
+//
+//          GetPropertyHostnamesHostnameArray{ GetPropertyHostnamesHostnameArgs{...} }
+type GetPropertyHostnamesHostnameArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameArrayOutput() GetPropertyHostnamesHostnameArrayOutput
+	ToGetPropertyHostnamesHostnameArrayOutputWithContext(context.Context) GetPropertyHostnamesHostnameArrayOutput
+}
+
+type GetPropertyHostnamesHostnameArray []GetPropertyHostnamesHostnameInput
+
+func (GetPropertyHostnamesHostnameArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostname)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameArray) ToGetPropertyHostnamesHostnameArrayOutput() GetPropertyHostnamesHostnameArrayOutput {
+	return i.ToGetPropertyHostnamesHostnameArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameArray) ToGetPropertyHostnamesHostnameArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameArrayOutput)
+}
+
+type GetPropertyHostnamesHostnameOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostname)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameOutput) ToGetPropertyHostnamesHostnameOutput() GetPropertyHostnamesHostnameOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameOutput) ToGetPropertyHostnamesHostnameOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameOutput) CertProvisioningType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostname) string { return v.CertProvisioningType }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyHostnamesHostnameOutput) CertStatuses() GetPropertyHostnamesHostnameCertStatusArrayOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostname) []GetPropertyHostnamesHostnameCertStatus { return v.CertStatuses }).(GetPropertyHostnamesHostnameCertStatusArrayOutput)
+}
+
+func (o GetPropertyHostnamesHostnameOutput) CnameFrom() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostname) string { return v.CnameFrom }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyHostnamesHostnameOutput) CnameTo() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostname) string { return v.CnameTo }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyHostnamesHostnameOutput) CnameType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostname) string { return v.CnameType }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyHostnamesHostnameOutput) EdgeHostnameId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostname) string { return v.EdgeHostnameId }).(pulumi.StringOutput)
+}
+
+type GetPropertyHostnamesHostnameArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostname)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameArrayOutput) ToGetPropertyHostnamesHostnameArrayOutput() GetPropertyHostnamesHostnameArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameArrayOutput) ToGetPropertyHostnamesHostnameArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameArrayOutput) Index(i pulumi.IntInput) GetPropertyHostnamesHostnameOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyHostnamesHostname {
+		return vs[0].([]GetPropertyHostnamesHostname)[vs[1].(int)]
+	}).(GetPropertyHostnamesHostnameOutput)
+}
+
+type GetPropertyHostnamesHostnameCertStatus struct {
+	Hostname         string `pulumi:"hostname"`
+	ProductionStatus string `pulumi:"productionStatus"`
+	StagingStatus    string `pulumi:"stagingStatus"`
+	Target           string `pulumi:"target"`
+}
+
+// GetPropertyHostnamesHostnameCertStatusInput is an input type that accepts GetPropertyHostnamesHostnameCertStatusArgs and GetPropertyHostnamesHostnameCertStatusOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameCertStatusInput` via:
+//
+//          GetPropertyHostnamesHostnameCertStatusArgs{...}
+type GetPropertyHostnamesHostnameCertStatusInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameCertStatusOutput() GetPropertyHostnamesHostnameCertStatusOutput
+	ToGetPropertyHostnamesHostnameCertStatusOutputWithContext(context.Context) GetPropertyHostnamesHostnameCertStatusOutput
+}
+
+type GetPropertyHostnamesHostnameCertStatusArgs struct {
+	Hostname         pulumi.StringInput `pulumi:"hostname"`
+	ProductionStatus pulumi.StringInput `pulumi:"productionStatus"`
+	StagingStatus    pulumi.StringInput `pulumi:"stagingStatus"`
+	Target           pulumi.StringInput `pulumi:"target"`
+}
+
+func (GetPropertyHostnamesHostnameCertStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatus)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusArgs) ToGetPropertyHostnamesHostnameCertStatusOutput() GetPropertyHostnamesHostnameCertStatusOutput {
+	return i.ToGetPropertyHostnamesHostnameCertStatusOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusArgs) ToGetPropertyHostnamesHostnameCertStatusOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameCertStatusOutput)
+}
+
+// GetPropertyHostnamesHostnameCertStatusArrayInput is an input type that accepts GetPropertyHostnamesHostnameCertStatusArray and GetPropertyHostnamesHostnameCertStatusArrayOutput values.
+// You can construct a concrete instance of `GetPropertyHostnamesHostnameCertStatusArrayInput` via:
+//
+//          GetPropertyHostnamesHostnameCertStatusArray{ GetPropertyHostnamesHostnameCertStatusArgs{...} }
+type GetPropertyHostnamesHostnameCertStatusArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyHostnamesHostnameCertStatusArrayOutput() GetPropertyHostnamesHostnameCertStatusArrayOutput
+	ToGetPropertyHostnamesHostnameCertStatusArrayOutputWithContext(context.Context) GetPropertyHostnamesHostnameCertStatusArrayOutput
+}
+
+type GetPropertyHostnamesHostnameCertStatusArray []GetPropertyHostnamesHostnameCertStatusInput
+
+func (GetPropertyHostnamesHostnameCertStatusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameCertStatus)(nil)).Elem()
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusArray) ToGetPropertyHostnamesHostnameCertStatusArrayOutput() GetPropertyHostnamesHostnameCertStatusArrayOutput {
+	return i.ToGetPropertyHostnamesHostnameCertStatusArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyHostnamesHostnameCertStatusArray) ToGetPropertyHostnamesHostnameCertStatusArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyHostnamesHostnameCertStatusArrayOutput)
+}
+
+type GetPropertyHostnamesHostnameCertStatusOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameCertStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatus)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusOutput) ToGetPropertyHostnamesHostnameCertStatusOutput() GetPropertyHostnamesHostnameCertStatusOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusOutput) ToGetPropertyHostnamesHostnameCertStatusOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatus) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusOutput) ProductionStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatus) string { return v.ProductionStatus }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusOutput) StagingStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatus) string { return v.StagingStatus }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusOutput) Target() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyHostnamesHostnameCertStatus) string { return v.Target }).(pulumi.StringOutput)
+}
+
+type GetPropertyHostnamesHostnameCertStatusArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyHostnamesHostnameCertStatusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyHostnamesHostnameCertStatus)(nil)).Elem()
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusArrayOutput) ToGetPropertyHostnamesHostnameCertStatusArrayOutput() GetPropertyHostnamesHostnameCertStatusArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusArrayOutput) ToGetPropertyHostnamesHostnameCertStatusArrayOutputWithContext(ctx context.Context) GetPropertyHostnamesHostnameCertStatusArrayOutput {
+	return o
+}
+
+func (o GetPropertyHostnamesHostnameCertStatusArrayOutput) Index(i pulumi.IntInput) GetPropertyHostnamesHostnameCertStatusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyHostnamesHostnameCertStatus {
+		return vs[0].([]GetPropertyHostnamesHostnameCertStatus)[vs[1].(int)]
+	}).(GetPropertyHostnamesHostnameCertStatusOutput)
+}
+
 type GetPropertyProductsProduct struct {
 	ProductId   string `pulumi:"productId"`
 	ProductName string `pulumi:"productName"`
@@ -3991,6 +4592,14 @@ func init() {
 	pulumi.RegisterOutputType(GtmPropertyTrafficTargetArrayOutput{})
 	pulumi.RegisterOutputType(GtmResourceResourceInstanceOutput{})
 	pulumi.RegisterOutputType(GtmResourceResourceInstanceArrayOutput{})
+	pulumi.RegisterOutputType(PropertyActivationRuleErrorOutput{})
+	pulumi.RegisterOutputType(PropertyActivationRuleErrorArrayOutput{})
+	pulumi.RegisterOutputType(PropertyActivationRuleWarningOutput{})
+	pulumi.RegisterOutputType(PropertyActivationRuleWarningArrayOutput{})
+	pulumi.RegisterOutputType(PropertyHostnameOutput{})
+	pulumi.RegisterOutputType(PropertyHostnameArrayOutput{})
+	pulumi.RegisterOutputType(PropertyHostnameCertStatusOutput{})
+	pulumi.RegisterOutputType(PropertyHostnameCertStatusArrayOutput{})
 	pulumi.RegisterOutputType(PropertyOriginOutput{})
 	pulumi.RegisterOutputType(PropertyOriginArrayOutput{})
 	pulumi.RegisterOutputType(PropertyRuleErrorOutput{})
@@ -4017,6 +4626,10 @@ func init() {
 	pulumi.RegisterOutputType(GetGroupsGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertiesPropertyOutput{})
 	pulumi.RegisterOutputType(GetPropertiesPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCertStatusOutput{})
+	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCertStatusArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertyProductsProductOutput{})
 	pulumi.RegisterOutputType(GetPropertyProductsProductArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertyRulesTemplateVariableOutput{})

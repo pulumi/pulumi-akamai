@@ -18,7 +18,7 @@ type AppSecMatchTarget struct {
 	// The ID of the security configuration to use.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
-	Json pulumi.StringOutput `pulumi:"json"`
+	MatchTarget pulumi.StringOutput `pulumi:"matchTarget"`
 	// The ID of the match target.
 	MatchTargetId pulumi.IntOutput `pulumi:"matchTargetId"`
 	// The version number of the security configuration to use.
@@ -35,8 +35,8 @@ func NewAppSecMatchTarget(ctx *pulumi.Context,
 	if args.ConfigId == nil {
 		return nil, errors.New("invalid value for required argument 'ConfigId'")
 	}
-	if args.Json == nil {
-		return nil, errors.New("invalid value for required argument 'Json'")
+	if args.MatchTarget == nil {
+		return nil, errors.New("invalid value for required argument 'MatchTarget'")
 	}
 	if args.Version == nil {
 		return nil, errors.New("invalid value for required argument 'Version'")
@@ -66,7 +66,7 @@ type appSecMatchTargetState struct {
 	// The ID of the security configuration to use.
 	ConfigId *int `pulumi:"configId"`
 	// The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
-	Json *string `pulumi:"json"`
+	MatchTarget *string `pulumi:"matchTarget"`
 	// The ID of the match target.
 	MatchTargetId *int `pulumi:"matchTargetId"`
 	// The version number of the security configuration to use.
@@ -77,7 +77,7 @@ type AppSecMatchTargetState struct {
 	// The ID of the security configuration to use.
 	ConfigId pulumi.IntPtrInput
 	// The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
-	Json pulumi.StringPtrInput
+	MatchTarget pulumi.StringPtrInput
 	// The ID of the match target.
 	MatchTargetId pulumi.IntPtrInput
 	// The version number of the security configuration to use.
@@ -92,7 +92,7 @@ type appSecMatchTargetArgs struct {
 	// The ID of the security configuration to use.
 	ConfigId int `pulumi:"configId"`
 	// The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
-	Json string `pulumi:"json"`
+	MatchTarget string `pulumi:"matchTarget"`
 	// The version number of the security configuration to use.
 	Version int `pulumi:"version"`
 }
@@ -102,7 +102,7 @@ type AppSecMatchTargetArgs struct {
 	// The ID of the security configuration to use.
 	ConfigId pulumi.IntInput
 	// The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
-	Json pulumi.StringInput
+	MatchTarget pulumi.StringInput
 	// The version number of the security configuration to use.
 	Version pulumi.IntInput
 }

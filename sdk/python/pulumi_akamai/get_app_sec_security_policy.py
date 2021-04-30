@@ -110,7 +110,7 @@ def get_app_sec_security_policy(config_id: Optional[int] = None,
                                 version: Optional[int] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecSecurityPolicyResult:
     """
-    Use the `getAppSecSecurityPolicy` data source to retrieve information about the security policies associated with a specific security configuration version, or about a specific security policy.
+    Use the `AppSecSecurityPolicy` data source to retrieve information about the security policies associated with a specific security configuration version, or about a specific security policy.
 
     ## Example Usage
 

@@ -111,7 +111,54 @@ def get_cp_code(contract: Optional[str] = None,
                 name: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCpCodeResult:
     """
-    Use this data source to access information about an existing resource.
+    Use the `CpCode` data source to retrieve the ID for a content provider (CP) code.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    example = akamai.get_cp_code(contract_id="ctr_1-AB123",
+        group_id="grp_123",
+        name="my cpcode name")
+    ```
+
+    Here's a real-world example that includes other data sources as dependencies:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    group_name = "example group name"
+    cpcode_name = "My CP code Name"
+    example_contract = akamai.get_contract(group_name=group_name)
+    example_group = akamai.get_group(group_name=group_name,
+        contract_id=example_contract.id)
+    example_cp_code = akamai.get_cp_code(name=cpcode_name,
+        group_id=example_group.id,
+        contract_id=example_contract.id)
+    ```
+    ## Argument reference
+
+    This data source supports these arguments:
+
+    * `name` - (Required) The name of the CP code.
+    * `group_id` - (Required) The group's unique ID, including the `grp_` prefix.
+    * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
+
+    ### Deprecated arguments
+    * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
+    * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
+
+    ## Attributes reference
+
+    This data source returns these attributes:
+
+    * `id` - The ID of the CP code, including the `cpc_` prefix.
+    * `product_ids` - An array of product IDs associated with this CP code. Each ID returned includes the `prd_` prefix.
     """
     __args__ = dict()
     __args__['contract'] = contract

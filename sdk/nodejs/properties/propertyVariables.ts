@@ -42,7 +42,7 @@ export class PropertyVariables extends pulumi.CustomResource {
      */
     public /*out*/ readonly json!: pulumi.Output<string>;
     /**
-     * @deprecated resource "akamai_property_variables" is no longer supported - See Akamai Terraform Upgrade Guide
+     * @deprecated The setting "akamai_property_variables" has been deprecated.
      */
     public readonly variables!: pulumi.Output<outputs.properties.PropertyVariablesVariable[] | undefined>;
 
@@ -85,7 +85,7 @@ export interface PropertyVariablesState {
      */
     readonly json?: pulumi.Input<string>;
     /**
-     * @deprecated resource "akamai_property_variables" is no longer supported - See Akamai Terraform Upgrade Guide
+     * @deprecated The setting "akamai_property_variables" has been deprecated.
      */
     readonly variables?: pulumi.Input<pulumi.Input<inputs.properties.PropertyVariablesVariable>[]>;
 }
@@ -95,7 +95,7 @@ export interface PropertyVariablesState {
  */
 export interface PropertyVariablesArgs {
     /**
-     * @deprecated resource "akamai_property_variables" is no longer supported - See Akamai Terraform Upgrade Guide
+     * @deprecated The setting "akamai_property_variables" has been deprecated.
      */
     readonly variables?: pulumi.Input<pulumi.Input<inputs.properties.PropertyVariablesVariable>[]>;
 }

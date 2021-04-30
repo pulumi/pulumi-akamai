@@ -10,6 +10,502 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type PropertyActivationRuleError struct {
+	BehaviorName  *string `pulumi:"behaviorName"`
+	Detail        *string `pulumi:"detail"`
+	ErrorLocation *string `pulumi:"errorLocation"`
+	Instance      *string `pulumi:"instance"`
+	StatusCode    *int    `pulumi:"statusCode"`
+	Title         *string `pulumi:"title"`
+	Type          *string `pulumi:"type"`
+}
+
+// PropertyActivationRuleErrorInput is an input type that accepts PropertyActivationRuleErrorArgs and PropertyActivationRuleErrorOutput values.
+// You can construct a concrete instance of `PropertyActivationRuleErrorInput` via:
+//
+//          PropertyActivationRuleErrorArgs{...}
+type PropertyActivationRuleErrorInput interface {
+	pulumi.Input
+
+	ToPropertyActivationRuleErrorOutput() PropertyActivationRuleErrorOutput
+	ToPropertyActivationRuleErrorOutputWithContext(context.Context) PropertyActivationRuleErrorOutput
+}
+
+type PropertyActivationRuleErrorArgs struct {
+	BehaviorName  pulumi.StringPtrInput `pulumi:"behaviorName"`
+	Detail        pulumi.StringPtrInput `pulumi:"detail"`
+	ErrorLocation pulumi.StringPtrInput `pulumi:"errorLocation"`
+	Instance      pulumi.StringPtrInput `pulumi:"instance"`
+	StatusCode    pulumi.IntPtrInput    `pulumi:"statusCode"`
+	Title         pulumi.StringPtrInput `pulumi:"title"`
+	Type          pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (PropertyActivationRuleErrorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivationRuleError)(nil)).Elem()
+}
+
+func (i PropertyActivationRuleErrorArgs) ToPropertyActivationRuleErrorOutput() PropertyActivationRuleErrorOutput {
+	return i.ToPropertyActivationRuleErrorOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationRuleErrorArgs) ToPropertyActivationRuleErrorOutputWithContext(ctx context.Context) PropertyActivationRuleErrorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationRuleErrorOutput)
+}
+
+// PropertyActivationRuleErrorArrayInput is an input type that accepts PropertyActivationRuleErrorArray and PropertyActivationRuleErrorArrayOutput values.
+// You can construct a concrete instance of `PropertyActivationRuleErrorArrayInput` via:
+//
+//          PropertyActivationRuleErrorArray{ PropertyActivationRuleErrorArgs{...} }
+type PropertyActivationRuleErrorArrayInput interface {
+	pulumi.Input
+
+	ToPropertyActivationRuleErrorArrayOutput() PropertyActivationRuleErrorArrayOutput
+	ToPropertyActivationRuleErrorArrayOutputWithContext(context.Context) PropertyActivationRuleErrorArrayOutput
+}
+
+type PropertyActivationRuleErrorArray []PropertyActivationRuleErrorInput
+
+func (PropertyActivationRuleErrorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyActivationRuleError)(nil)).Elem()
+}
+
+func (i PropertyActivationRuleErrorArray) ToPropertyActivationRuleErrorArrayOutput() PropertyActivationRuleErrorArrayOutput {
+	return i.ToPropertyActivationRuleErrorArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationRuleErrorArray) ToPropertyActivationRuleErrorArrayOutputWithContext(ctx context.Context) PropertyActivationRuleErrorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationRuleErrorArrayOutput)
+}
+
+type PropertyActivationRuleErrorOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationRuleErrorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivationRuleError)(nil)).Elem()
+}
+
+func (o PropertyActivationRuleErrorOutput) ToPropertyActivationRuleErrorOutput() PropertyActivationRuleErrorOutput {
+	return o
+}
+
+func (o PropertyActivationRuleErrorOutput) ToPropertyActivationRuleErrorOutputWithContext(ctx context.Context) PropertyActivationRuleErrorOutput {
+	return o
+}
+
+func (o PropertyActivationRuleErrorOutput) BehaviorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleError) *string { return v.BehaviorName }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleErrorOutput) Detail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleError) *string { return v.Detail }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleErrorOutput) ErrorLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleError) *string { return v.ErrorLocation }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleErrorOutput) Instance() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleError) *string { return v.Instance }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleErrorOutput) StatusCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleError) *int { return v.StatusCode }).(pulumi.IntPtrOutput)
+}
+
+func (o PropertyActivationRuleErrorOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleError) *string { return v.Title }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleErrorOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleError) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type PropertyActivationRuleErrorArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationRuleErrorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyActivationRuleError)(nil)).Elem()
+}
+
+func (o PropertyActivationRuleErrorArrayOutput) ToPropertyActivationRuleErrorArrayOutput() PropertyActivationRuleErrorArrayOutput {
+	return o
+}
+
+func (o PropertyActivationRuleErrorArrayOutput) ToPropertyActivationRuleErrorArrayOutputWithContext(ctx context.Context) PropertyActivationRuleErrorArrayOutput {
+	return o
+}
+
+func (o PropertyActivationRuleErrorArrayOutput) Index(i pulumi.IntInput) PropertyActivationRuleErrorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyActivationRuleError {
+		return vs[0].([]PropertyActivationRuleError)[vs[1].(int)]
+	}).(PropertyActivationRuleErrorOutput)
+}
+
+type PropertyActivationRuleWarning struct {
+	BehaviorName  *string `pulumi:"behaviorName"`
+	Detail        *string `pulumi:"detail"`
+	ErrorLocation *string `pulumi:"errorLocation"`
+	Instance      *string `pulumi:"instance"`
+	StatusCode    *int    `pulumi:"statusCode"`
+	Title         *string `pulumi:"title"`
+	Type          *string `pulumi:"type"`
+}
+
+// PropertyActivationRuleWarningInput is an input type that accepts PropertyActivationRuleWarningArgs and PropertyActivationRuleWarningOutput values.
+// You can construct a concrete instance of `PropertyActivationRuleWarningInput` via:
+//
+//          PropertyActivationRuleWarningArgs{...}
+type PropertyActivationRuleWarningInput interface {
+	pulumi.Input
+
+	ToPropertyActivationRuleWarningOutput() PropertyActivationRuleWarningOutput
+	ToPropertyActivationRuleWarningOutputWithContext(context.Context) PropertyActivationRuleWarningOutput
+}
+
+type PropertyActivationRuleWarningArgs struct {
+	BehaviorName  pulumi.StringPtrInput `pulumi:"behaviorName"`
+	Detail        pulumi.StringPtrInput `pulumi:"detail"`
+	ErrorLocation pulumi.StringPtrInput `pulumi:"errorLocation"`
+	Instance      pulumi.StringPtrInput `pulumi:"instance"`
+	StatusCode    pulumi.IntPtrInput    `pulumi:"statusCode"`
+	Title         pulumi.StringPtrInput `pulumi:"title"`
+	Type          pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (PropertyActivationRuleWarningArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivationRuleWarning)(nil)).Elem()
+}
+
+func (i PropertyActivationRuleWarningArgs) ToPropertyActivationRuleWarningOutput() PropertyActivationRuleWarningOutput {
+	return i.ToPropertyActivationRuleWarningOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationRuleWarningArgs) ToPropertyActivationRuleWarningOutputWithContext(ctx context.Context) PropertyActivationRuleWarningOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationRuleWarningOutput)
+}
+
+// PropertyActivationRuleWarningArrayInput is an input type that accepts PropertyActivationRuleWarningArray and PropertyActivationRuleWarningArrayOutput values.
+// You can construct a concrete instance of `PropertyActivationRuleWarningArrayInput` via:
+//
+//          PropertyActivationRuleWarningArray{ PropertyActivationRuleWarningArgs{...} }
+type PropertyActivationRuleWarningArrayInput interface {
+	pulumi.Input
+
+	ToPropertyActivationRuleWarningArrayOutput() PropertyActivationRuleWarningArrayOutput
+	ToPropertyActivationRuleWarningArrayOutputWithContext(context.Context) PropertyActivationRuleWarningArrayOutput
+}
+
+type PropertyActivationRuleWarningArray []PropertyActivationRuleWarningInput
+
+func (PropertyActivationRuleWarningArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyActivationRuleWarning)(nil)).Elem()
+}
+
+func (i PropertyActivationRuleWarningArray) ToPropertyActivationRuleWarningArrayOutput() PropertyActivationRuleWarningArrayOutput {
+	return i.ToPropertyActivationRuleWarningArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationRuleWarningArray) ToPropertyActivationRuleWarningArrayOutputWithContext(ctx context.Context) PropertyActivationRuleWarningArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationRuleWarningArrayOutput)
+}
+
+type PropertyActivationRuleWarningOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationRuleWarningOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivationRuleWarning)(nil)).Elem()
+}
+
+func (o PropertyActivationRuleWarningOutput) ToPropertyActivationRuleWarningOutput() PropertyActivationRuleWarningOutput {
+	return o
+}
+
+func (o PropertyActivationRuleWarningOutput) ToPropertyActivationRuleWarningOutputWithContext(ctx context.Context) PropertyActivationRuleWarningOutput {
+	return o
+}
+
+func (o PropertyActivationRuleWarningOutput) BehaviorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleWarning) *string { return v.BehaviorName }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleWarningOutput) Detail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleWarning) *string { return v.Detail }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleWarningOutput) ErrorLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleWarning) *string { return v.ErrorLocation }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleWarningOutput) Instance() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleWarning) *string { return v.Instance }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleWarningOutput) StatusCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleWarning) *int { return v.StatusCode }).(pulumi.IntPtrOutput)
+}
+
+func (o PropertyActivationRuleWarningOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleWarning) *string { return v.Title }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationRuleWarningOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationRuleWarning) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type PropertyActivationRuleWarningArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationRuleWarningArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyActivationRuleWarning)(nil)).Elem()
+}
+
+func (o PropertyActivationRuleWarningArrayOutput) ToPropertyActivationRuleWarningArrayOutput() PropertyActivationRuleWarningArrayOutput {
+	return o
+}
+
+func (o PropertyActivationRuleWarningArrayOutput) ToPropertyActivationRuleWarningArrayOutputWithContext(ctx context.Context) PropertyActivationRuleWarningArrayOutput {
+	return o
+}
+
+func (o PropertyActivationRuleWarningArrayOutput) Index(i pulumi.IntInput) PropertyActivationRuleWarningOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyActivationRuleWarning {
+		return vs[0].([]PropertyActivationRuleWarning)[vs[1].(int)]
+	}).(PropertyActivationRuleWarningOutput)
+}
+
+type PropertyHostname struct {
+	CertProvisioningType string                       `pulumi:"certProvisioningType"`
+	CertStatuses         []PropertyHostnameCertStatus `pulumi:"certStatuses"`
+	CnameFrom            string                       `pulumi:"cnameFrom"`
+	CnameTo              string                       `pulumi:"cnameTo"`
+	CnameType            *string                      `pulumi:"cnameType"`
+	EdgeHostnameId       *string                      `pulumi:"edgeHostnameId"`
+}
+
+// PropertyHostnameInput is an input type that accepts PropertyHostnameArgs and PropertyHostnameOutput values.
+// You can construct a concrete instance of `PropertyHostnameInput` via:
+//
+//          PropertyHostnameArgs{...}
+type PropertyHostnameInput interface {
+	pulumi.Input
+
+	ToPropertyHostnameOutput() PropertyHostnameOutput
+	ToPropertyHostnameOutputWithContext(context.Context) PropertyHostnameOutput
+}
+
+type PropertyHostnameArgs struct {
+	CertProvisioningType pulumi.StringInput                   `pulumi:"certProvisioningType"`
+	CertStatuses         PropertyHostnameCertStatusArrayInput `pulumi:"certStatuses"`
+	CnameFrom            pulumi.StringInput                   `pulumi:"cnameFrom"`
+	CnameTo              pulumi.StringInput                   `pulumi:"cnameTo"`
+	CnameType            pulumi.StringPtrInput                `pulumi:"cnameType"`
+	EdgeHostnameId       pulumi.StringPtrInput                `pulumi:"edgeHostnameId"`
+}
+
+func (PropertyHostnameArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyHostname)(nil)).Elem()
+}
+
+func (i PropertyHostnameArgs) ToPropertyHostnameOutput() PropertyHostnameOutput {
+	return i.ToPropertyHostnameOutputWithContext(context.Background())
+}
+
+func (i PropertyHostnameArgs) ToPropertyHostnameOutputWithContext(ctx context.Context) PropertyHostnameOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyHostnameOutput)
+}
+
+// PropertyHostnameArrayInput is an input type that accepts PropertyHostnameArray and PropertyHostnameArrayOutput values.
+// You can construct a concrete instance of `PropertyHostnameArrayInput` via:
+//
+//          PropertyHostnameArray{ PropertyHostnameArgs{...} }
+type PropertyHostnameArrayInput interface {
+	pulumi.Input
+
+	ToPropertyHostnameArrayOutput() PropertyHostnameArrayOutput
+	ToPropertyHostnameArrayOutputWithContext(context.Context) PropertyHostnameArrayOutput
+}
+
+type PropertyHostnameArray []PropertyHostnameInput
+
+func (PropertyHostnameArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyHostname)(nil)).Elem()
+}
+
+func (i PropertyHostnameArray) ToPropertyHostnameArrayOutput() PropertyHostnameArrayOutput {
+	return i.ToPropertyHostnameArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyHostnameArray) ToPropertyHostnameArrayOutputWithContext(ctx context.Context) PropertyHostnameArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyHostnameArrayOutput)
+}
+
+type PropertyHostnameOutput struct{ *pulumi.OutputState }
+
+func (PropertyHostnameOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyHostname)(nil)).Elem()
+}
+
+func (o PropertyHostnameOutput) ToPropertyHostnameOutput() PropertyHostnameOutput {
+	return o
+}
+
+func (o PropertyHostnameOutput) ToPropertyHostnameOutputWithContext(ctx context.Context) PropertyHostnameOutput {
+	return o
+}
+
+func (o PropertyHostnameOutput) CertProvisioningType() pulumi.StringOutput {
+	return o.ApplyT(func(v PropertyHostname) string { return v.CertProvisioningType }).(pulumi.StringOutput)
+}
+
+func (o PropertyHostnameOutput) CertStatuses() PropertyHostnameCertStatusArrayOutput {
+	return o.ApplyT(func(v PropertyHostname) []PropertyHostnameCertStatus { return v.CertStatuses }).(PropertyHostnameCertStatusArrayOutput)
+}
+
+func (o PropertyHostnameOutput) CnameFrom() pulumi.StringOutput {
+	return o.ApplyT(func(v PropertyHostname) string { return v.CnameFrom }).(pulumi.StringOutput)
+}
+
+func (o PropertyHostnameOutput) CnameTo() pulumi.StringOutput {
+	return o.ApplyT(func(v PropertyHostname) string { return v.CnameTo }).(pulumi.StringOutput)
+}
+
+func (o PropertyHostnameOutput) CnameType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostname) *string { return v.CnameType }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyHostnameOutput) EdgeHostnameId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostname) *string { return v.EdgeHostnameId }).(pulumi.StringPtrOutput)
+}
+
+type PropertyHostnameArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyHostnameArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyHostname)(nil)).Elem()
+}
+
+func (o PropertyHostnameArrayOutput) ToPropertyHostnameArrayOutput() PropertyHostnameArrayOutput {
+	return o
+}
+
+func (o PropertyHostnameArrayOutput) ToPropertyHostnameArrayOutputWithContext(ctx context.Context) PropertyHostnameArrayOutput {
+	return o
+}
+
+func (o PropertyHostnameArrayOutput) Index(i pulumi.IntInput) PropertyHostnameOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyHostname {
+		return vs[0].([]PropertyHostname)[vs[1].(int)]
+	}).(PropertyHostnameOutput)
+}
+
+type PropertyHostnameCertStatus struct {
+	Hostname         *string `pulumi:"hostname"`
+	ProductionStatus *string `pulumi:"productionStatus"`
+	StagingStatus    *string `pulumi:"stagingStatus"`
+	Target           *string `pulumi:"target"`
+}
+
+// PropertyHostnameCertStatusInput is an input type that accepts PropertyHostnameCertStatusArgs and PropertyHostnameCertStatusOutput values.
+// You can construct a concrete instance of `PropertyHostnameCertStatusInput` via:
+//
+//          PropertyHostnameCertStatusArgs{...}
+type PropertyHostnameCertStatusInput interface {
+	pulumi.Input
+
+	ToPropertyHostnameCertStatusOutput() PropertyHostnameCertStatusOutput
+	ToPropertyHostnameCertStatusOutputWithContext(context.Context) PropertyHostnameCertStatusOutput
+}
+
+type PropertyHostnameCertStatusArgs struct {
+	Hostname         pulumi.StringPtrInput `pulumi:"hostname"`
+	ProductionStatus pulumi.StringPtrInput `pulumi:"productionStatus"`
+	StagingStatus    pulumi.StringPtrInput `pulumi:"stagingStatus"`
+	Target           pulumi.StringPtrInput `pulumi:"target"`
+}
+
+func (PropertyHostnameCertStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyHostnameCertStatus)(nil)).Elem()
+}
+
+func (i PropertyHostnameCertStatusArgs) ToPropertyHostnameCertStatusOutput() PropertyHostnameCertStatusOutput {
+	return i.ToPropertyHostnameCertStatusOutputWithContext(context.Background())
+}
+
+func (i PropertyHostnameCertStatusArgs) ToPropertyHostnameCertStatusOutputWithContext(ctx context.Context) PropertyHostnameCertStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyHostnameCertStatusOutput)
+}
+
+// PropertyHostnameCertStatusArrayInput is an input type that accepts PropertyHostnameCertStatusArray and PropertyHostnameCertStatusArrayOutput values.
+// You can construct a concrete instance of `PropertyHostnameCertStatusArrayInput` via:
+//
+//          PropertyHostnameCertStatusArray{ PropertyHostnameCertStatusArgs{...} }
+type PropertyHostnameCertStatusArrayInput interface {
+	pulumi.Input
+
+	ToPropertyHostnameCertStatusArrayOutput() PropertyHostnameCertStatusArrayOutput
+	ToPropertyHostnameCertStatusArrayOutputWithContext(context.Context) PropertyHostnameCertStatusArrayOutput
+}
+
+type PropertyHostnameCertStatusArray []PropertyHostnameCertStatusInput
+
+func (PropertyHostnameCertStatusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyHostnameCertStatus)(nil)).Elem()
+}
+
+func (i PropertyHostnameCertStatusArray) ToPropertyHostnameCertStatusArrayOutput() PropertyHostnameCertStatusArrayOutput {
+	return i.ToPropertyHostnameCertStatusArrayOutputWithContext(context.Background())
+}
+
+func (i PropertyHostnameCertStatusArray) ToPropertyHostnameCertStatusArrayOutputWithContext(ctx context.Context) PropertyHostnameCertStatusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyHostnameCertStatusArrayOutput)
+}
+
+type PropertyHostnameCertStatusOutput struct{ *pulumi.OutputState }
+
+func (PropertyHostnameCertStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyHostnameCertStatus)(nil)).Elem()
+}
+
+func (o PropertyHostnameCertStatusOutput) ToPropertyHostnameCertStatusOutput() PropertyHostnameCertStatusOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusOutput) ToPropertyHostnameCertStatusOutputWithContext(ctx context.Context) PropertyHostnameCertStatusOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatus) *string { return v.Hostname }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyHostnameCertStatusOutput) ProductionStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatus) *string { return v.ProductionStatus }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyHostnameCertStatusOutput) StagingStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatus) *string { return v.StagingStatus }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyHostnameCertStatusOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCertStatus) *string { return v.Target }).(pulumi.StringPtrOutput)
+}
+
+type PropertyHostnameCertStatusArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertyHostnameCertStatusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertyHostnameCertStatus)(nil)).Elem()
+}
+
+func (o PropertyHostnameCertStatusArrayOutput) ToPropertyHostnameCertStatusArrayOutput() PropertyHostnameCertStatusArrayOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusArrayOutput) ToPropertyHostnameCertStatusArrayOutputWithContext(ctx context.Context) PropertyHostnameCertStatusArrayOutput {
+	return o
+}
+
+func (o PropertyHostnameCertStatusArrayOutput) Index(i pulumi.IntInput) PropertyHostnameCertStatusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyHostnameCertStatus {
+		return vs[0].([]PropertyHostnameCertStatus)[vs[1].(int)]
+	}).(PropertyHostnameCertStatusOutput)
+}
+
 type PropertyOrigin struct {
 	CacheKeyHostname   *string `pulumi:"cacheKeyHostname"`
 	Compress           *bool   `pulumi:"compress"`
@@ -607,6 +1103,14 @@ func (o PropertyVariablesVariableVariableArrayOutput) Index(i pulumi.IntInput) P
 }
 
 func init() {
+	pulumi.RegisterOutputType(PropertyActivationRuleErrorOutput{})
+	pulumi.RegisterOutputType(PropertyActivationRuleErrorArrayOutput{})
+	pulumi.RegisterOutputType(PropertyActivationRuleWarningOutput{})
+	pulumi.RegisterOutputType(PropertyActivationRuleWarningArrayOutput{})
+	pulumi.RegisterOutputType(PropertyHostnameOutput{})
+	pulumi.RegisterOutputType(PropertyHostnameArrayOutput{})
+	pulumi.RegisterOutputType(PropertyHostnameCertStatusOutput{})
+	pulumi.RegisterOutputType(PropertyHostnameCertStatusArrayOutput{})
 	pulumi.RegisterOutputType(PropertyOriginOutput{})
 	pulumi.RegisterOutputType(PropertyOriginArrayOutput{})
 	pulumi.RegisterOutputType(PropertyRuleErrorOutput{})

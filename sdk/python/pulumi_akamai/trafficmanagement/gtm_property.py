@@ -19,7 +19,6 @@ class GtmPropertyArgs:
                  handout_limit: pulumi.Input[int],
                  handout_mode: pulumi.Input[str],
                  score_aggregation_type: pulumi.Input[str],
-                 traffic_targets: pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]],
                  type: pulumi.Input[str],
                  backup_cname: Optional[pulumi.Input[str]] = None,
                  backup_ip: Optional[pulumi.Input[str]] = None,
@@ -44,6 +43,7 @@ class GtmPropertyArgs:
                  static_ttl: Optional[pulumi.Input[int]] = None,
                  stickiness_bonus_constant: Optional[pulumi.Input[int]] = None,
                  stickiness_bonus_percentage: Optional[pulumi.Input[int]] = None,
+                 traffic_targets: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]] = None,
                  unreachable_threshold: Optional[pulumi.Input[float]] = None,
                  use_computed_targets: Optional[pulumi.Input[bool]] = None,
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
@@ -54,7 +54,6 @@ class GtmPropertyArgs:
         pulumi.set(__self__, "handout_limit", handout_limit)
         pulumi.set(__self__, "handout_mode", handout_mode)
         pulumi.set(__self__, "score_aggregation_type", score_aggregation_type)
-        pulumi.set(__self__, "traffic_targets", traffic_targets)
         pulumi.set(__self__, "type", type)
         if backup_cname is not None:
             pulumi.set(__self__, "backup_cname", backup_cname)
@@ -102,6 +101,8 @@ class GtmPropertyArgs:
             pulumi.set(__self__, "stickiness_bonus_constant", stickiness_bonus_constant)
         if stickiness_bonus_percentage is not None:
             pulumi.set(__self__, "stickiness_bonus_percentage", stickiness_bonus_percentage)
+        if traffic_targets is not None:
+            pulumi.set(__self__, "traffic_targets", traffic_targets)
         if unreachable_threshold is not None:
             pulumi.set(__self__, "unreachable_threshold", unreachable_threshold)
         if use_computed_targets is not None:
@@ -144,15 +145,6 @@ class GtmPropertyArgs:
     @score_aggregation_type.setter
     def score_aggregation_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "score_aggregation_type", value)
-
-    @property
-    @pulumi.getter(name="trafficTargets")
-    def traffic_targets(self) -> pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]:
-        return pulumi.get(self, "traffic_targets")
-
-    @traffic_targets.setter
-    def traffic_targets(self, value: pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]):
-        pulumi.set(self, "traffic_targets", value)
 
     @property
     @pulumi.getter
@@ -369,6 +361,15 @@ class GtmPropertyArgs:
     @stickiness_bonus_percentage.setter
     def stickiness_bonus_percentage(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "stickiness_bonus_percentage", value)
+
+    @property
+    @pulumi.getter(name="trafficTargets")
+    def traffic_targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]]:
+        return pulumi.get(self, "traffic_targets")
+
+    @traffic_targets.setter
+    def traffic_targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]]):
+        pulumi.set(self, "traffic_targets", value)
 
     @property
     @pulumi.getter(name="unreachableThreshold")
@@ -965,8 +966,6 @@ class GtmProperty(pulumi.CustomResource):
             __props__.__dict__["static_ttl"] = static_ttl
             __props__.__dict__["stickiness_bonus_constant"] = stickiness_bonus_constant
             __props__.__dict__["stickiness_bonus_percentage"] = stickiness_bonus_percentage
-            if traffic_targets is None and not opts.urn:
-                raise TypeError("Missing required property 'traffic_targets'")
             __props__.__dict__["traffic_targets"] = traffic_targets
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
@@ -1205,7 +1204,7 @@ class GtmProperty(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="trafficTargets")
-    def traffic_targets(self) -> pulumi.Output[Sequence['outputs.GtmPropertyTrafficTarget']]:
+    def traffic_targets(self) -> pulumi.Output[Optional[Sequence['outputs.GtmPropertyTrafficTarget']]]:
         return pulumi.get(self, "traffic_targets")
 
     @property

@@ -30,17 +30,31 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = "Akamai Tools",
+        ///             Name = @var.Security_configuration,
         ///         }));
         ///         var customRules = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecCustomRules.InvokeAsync(new Akamai.GetAppSecCustomRulesArgs
         ///         {
         ///             ConfigId = configuration.ConfigId,
         ///         })));
-        ///         this.CustomRulesList = customRules.Apply(customRules =&gt; customRules.OutputText);
+        ///         this.CustomRulesOutputText = customRules.Apply(customRules =&gt; customRules.OutputText);
+        ///         this.CustomRulesJson = customRules.Apply(customRules =&gt; customRules.Json);
+        ///         this.CustomRulesConfigId = customRules.Apply(customRules =&gt; customRules.ConfigId);
+        ///         var specificCustomRule = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecCustomRules.InvokeAsync(new Akamai.GetAppSecCustomRulesArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///             CustomRuleId = @var.Custom_rule_id,
+        ///         })));
+        ///         this.SpecificCustomRuleJson = specificCustomRule.Apply(specificCustomRule =&gt; specificCustomRule.Json);
         ///     }
         /// 
-        ///     [Output("customRulesList")]
-        ///     public Output&lt;string&gt; CustomRulesList { get; set; }
+        ///     [Output("customRulesOutputText")]
+        ///     public Output&lt;string&gt; CustomRulesOutputText { get; set; }
+        ///     [Output("customRulesJson")]
+        ///     public Output&lt;string&gt; CustomRulesJson { get; set; }
+        ///     [Output("customRulesConfigId")]
+        ///     public Output&lt;string&gt; CustomRulesConfigId { get; set; }
+        ///     [Output("specificCustomRuleJson")]
+        ///     public Output&lt;string&gt; SpecificCustomRuleJson { get; set; }
         /// }
         /// ```
         /// {{% /example %}}
@@ -59,6 +73,12 @@ namespace Pulumi.Akamai
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
+        /// <summary>
+        /// The ID of a specific custom rule to use. If not supplied, information about all custom rules associated with the given security configuration will be returned.
+        /// </summary>
+        [Input("customRuleId")]
+        public int? CustomRuleId { get; set; }
+
         public GetAppSecCustomRulesArgs()
         {
         }
@@ -69,12 +89,17 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecCustomRulesResult
     {
         public readonly int ConfigId;
+        public readonly int? CustomRuleId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A tabular display showing the ID and name of the custom rules defined for the security configuration.
+        /// A JSON-formatted display of the custom rule information.
+        /// </summary>
+        public readonly string Json;
+        /// <summary>
+        /// A tabular display showing the ID and name of the custom rule(s).
         /// </summary>
         public readonly string OutputText;
 
@@ -82,12 +107,18 @@ namespace Pulumi.Akamai
         private GetAppSecCustomRulesResult(
             int configId,
 
+            int? customRuleId,
+
             string id,
+
+            string json,
 
             string outputText)
         {
             ConfigId = configId;
+            CustomRuleId = customRuleId;
             Id = id;
+            Json = json;
             OutputText = outputText;
         }
     }

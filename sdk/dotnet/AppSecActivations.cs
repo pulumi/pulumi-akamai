@@ -43,34 +43,37 @@ namespace Pulumi.Akamai
     /// 
     /// }
     /// ```
-    /// 
-    /// * `config_id` - (Required) The ID of the security configuration to use.
-    /// 
-    /// * `version` - (Required) The version number of the security configuration to use.
-    /// 
-    /// * `notification_emails` - (Required) A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
-    /// 
-    /// * `network` - The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
-    /// 
-    /// * `notes` - An optional text note describing this operation.
-    /// 
-    /// * `activate` - A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecActivations:AppSecActivations")]
     public partial class AppSecActivations : Pulumi.CustomResource
     {
+        /// <summary>
+        /// A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+        /// </summary>
         [Output("activate")]
         public Output<bool?> Activate { get; private set; } = null!;
 
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
+        /// <summary>
+        /// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+        /// </summary>
         [Output("network")]
         public Output<string?> Network { get; private set; } = null!;
 
+        /// <summary>
+        /// An optional text note describing this operation.
+        /// </summary>
         [Output("notes")]
         public Output<string?> Notes { get; private set; } = null!;
 
+        /// <summary>
+        /// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+        /// </summary>
         [Output("notificationEmails")]
         public Output<ImmutableArray<string>> NotificationEmails { get; private set; } = null!;
 
@@ -80,6 +83,9 @@ namespace Pulumi.Akamai
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
+        /// <summary>
+        /// The version number of the security configuration to use.
+        /// </summary>
         [Output("version")]
         public Output<int> Version { get; private set; } = null!;
 
@@ -129,26 +135,45 @@ namespace Pulumi.Akamai
 
     public sealed class AppSecActivationsArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+        /// </summary>
         [Input("activate")]
         public Input<bool>? Activate { get; set; }
 
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
+        /// <summary>
+        /// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+        /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
 
+        /// <summary>
+        /// An optional text note describing this operation.
+        /// </summary>
         [Input("notes")]
         public Input<string>? Notes { get; set; }
 
         [Input("notificationEmails", required: true)]
         private InputList<string>? _notificationEmails;
+
+        /// <summary>
+        /// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+        /// </summary>
         public InputList<string> NotificationEmails
         {
             get => _notificationEmails ?? (_notificationEmails = new InputList<string>());
             set => _notificationEmails = value;
         }
 
+        /// <summary>
+        /// The version number of the security configuration to use.
+        /// </summary>
         [Input("version", required: true)]
         public Input<int> Version { get; set; } = null!;
 
@@ -159,20 +184,36 @@ namespace Pulumi.Akamai
 
     public sealed class AppSecActivationsState : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+        /// </summary>
         [Input("activate")]
         public Input<bool>? Activate { get; set; }
 
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
+        /// <summary>
+        /// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+        /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
 
+        /// <summary>
+        /// An optional text note describing this operation.
+        /// </summary>
         [Input("notes")]
         public Input<string>? Notes { get; set; }
 
         [Input("notificationEmails")]
         private InputList<string>? _notificationEmails;
+
+        /// <summary>
+        /// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+        /// </summary>
         public InputList<string> NotificationEmails
         {
             get => _notificationEmails ?? (_notificationEmails = new InputList<string>());
@@ -185,6 +226,9 @@ namespace Pulumi.Akamai
         [Input("status")]
         public Input<string>? Status { get; set; }
 
+        /// <summary>
+        /// The version number of the security configuration to use.
+        /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }
 

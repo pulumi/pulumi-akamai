@@ -32,14 +32,6 @@ class GtmResourceArgs:
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a GtmResource resource.
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[str] type: Resource type
-        :param pulumi.Input[str] name: Resource name
-               * `aggregation_type`
-        :param pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]] resource_instances: * `datacenter_id`
-               * `load_object`
-               * `load_object_port`
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
         """
         pulumi.set(__self__, "aggregation_type", aggregation_type)
         pulumi.set(__self__, "domain", domain)
@@ -81,9 +73,6 @@ class GtmResourceArgs:
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Input[str]:
-        """
-        Domain name
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -93,9 +82,6 @@ class GtmResourceArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        Resource type
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -177,10 +163,6 @@ class GtmResourceArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Resource name
-        * `aggregation_type`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -190,11 +172,6 @@ class GtmResourceArgs:
     @property
     @pulumi.getter(name="resourceInstances")
     def resource_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]]:
-        """
-        * `datacenter_id`
-        * `load_object`
-        * `load_object_port`
-        """
         return pulumi.get(self, "resource_instances")
 
     @resource_instances.setter
@@ -213,9 +190,6 @@ class GtmResourceArgs:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Wait for transaction to complete
-        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -243,14 +217,6 @@ class _GtmResourceState:
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering GtmResource resources.
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[str] name: Resource name
-               * `aggregation_type`
-        :param pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]] resource_instances: * `datacenter_id`
-               * `load_object`
-               * `load_object_port`
-        :param pulumi.Input[str] type: Resource type
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
         """
         if aggregation_type is not None:
             pulumi.set(__self__, "aggregation_type", aggregation_type)
@@ -322,9 +288,6 @@ class _GtmResourceState:
     @property
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        Domain name
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -379,10 +342,6 @@ class _GtmResourceState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Resource name
-        * `aggregation_type`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -392,11 +351,6 @@ class _GtmResourceState:
     @property
     @pulumi.getter(name="resourceInstances")
     def resource_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]]:
-        """
-        * `datacenter_id`
-        * `load_object`
-        * `load_object_port`
-        """
         return pulumi.get(self, "resource_instances")
 
     @resource_instances.setter
@@ -406,9 +360,6 @@ class _GtmResourceState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Resource type
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -427,9 +378,6 @@ class _GtmResourceState:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Wait for transaction to complete
-        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -459,7 +407,10 @@ class GtmResource(pulumi.CustomResource):
                  wait_on_complete: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        `GtmResource` provides the resource for creating, configuring and importing a gtm resource to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_resource_name`
+        The `GtmResource` lets you create, configure, and import a GTM resource. In GTM, a resource is anything you can measure whose scarcity affects load balancing. Examples of resources include bandwidth, CPU load average, database queries per second, or disk operations per second.
+
+        > **Note** Import requires an ID with this format: `existing_domain_name`:
+        `existing_resource_name`.
 
         ## Example Usage
 
@@ -474,17 +425,37 @@ class GtmResource(pulumi.CustomResource):
             domain="demo_domain.akadns.net",
             type="XML load object via HTTP")
         ```
+        ## Argument reference
+
+        This resource supports these arguments:
+
+        * `domain` - (Required) DNS name for the GTM Domain set that includes this property.
+        * `name` - (Required) A descriptive label for the GTM resource.
+        * `aggregation_type` - (Required) Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+        * `type` - (Required) Indicates the kind of `load_object` format used to determine the load on the resource.
+        * `wait_on_complete` - (Optional) A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+        * `resource_instance`  - (Optional) (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resource_instance` entries. Requires these arguments:
+          * `datacenter_id` - (Optional) A unique identifier for an existing data center in the domain.
+          * `load_object` - (Optional) Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
+          * `load_object_port` - (Optional) Specifies the TCP port of the `load_object`.
+          * `load_servers` - (Optional) (List) Specifies a list of servers from which to request the load object.
+          * `use_default_load_object` - (Optional) A boolean that indicates whether a default `load_object` is used for the resources.
+        * `host_header` - (Optional) Optionally specifies the host header used when fetching the load object.
+        * `least_squares_decay` - (Optional) For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
+        * `upper_bound` - (Optional) An optional sanity check that specifies the maximum allowed value for any component of the load object.
+        * `description` - (Optional) A descriptive note to help you track what the resource constrains.
+        * `leader_string` - (Optional) Specifies the text that comes before the `load_object`.
+        * `constrained_property` - (Optional) Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
+        * `load_imbalance_percent` - (Optional) Indicates the percent of load imbalance factor (LIF) for the property.
+        * `max_u_multiplicative_increment` - (Optional) For Akamai internal use only. You can omit the value or set it to `null`.
+        * `decay_rate` - (Optional) For Akamai internal use only. You can omit the value or set it to `null`.
+
+        ## Schema reference
+
+        You can download the GTM Resource backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#resource) page.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[str] name: Resource name
-               * `aggregation_type`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmResourceResourceInstanceArgs']]]] resource_instances: * `datacenter_id`
-               * `load_object`
-               * `load_object_port`
-        :param pulumi.Input[str] type: Resource type
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
         """
         ...
     @overload
@@ -493,7 +464,10 @@ class GtmResource(pulumi.CustomResource):
                  args: GtmResourceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        `GtmResource` provides the resource for creating, configuring and importing a gtm resource to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_resource_name`
+        The `GtmResource` lets you create, configure, and import a GTM resource. In GTM, a resource is anything you can measure whose scarcity affects load balancing. Examples of resources include bandwidth, CPU load average, database queries per second, or disk operations per second.
+
+        > **Note** Import requires an ID with this format: `existing_domain_name`:
+        `existing_resource_name`.
 
         ## Example Usage
 
@@ -508,6 +482,34 @@ class GtmResource(pulumi.CustomResource):
             domain="demo_domain.akadns.net",
             type="XML load object via HTTP")
         ```
+        ## Argument reference
+
+        This resource supports these arguments:
+
+        * `domain` - (Required) DNS name for the GTM Domain set that includes this property.
+        * `name` - (Required) A descriptive label for the GTM resource.
+        * `aggregation_type` - (Required) Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+        * `type` - (Required) Indicates the kind of `load_object` format used to determine the load on the resource.
+        * `wait_on_complete` - (Optional) A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+        * `resource_instance`  - (Optional) (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resource_instance` entries. Requires these arguments:
+          * `datacenter_id` - (Optional) A unique identifier for an existing data center in the domain.
+          * `load_object` - (Optional) Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
+          * `load_object_port` - (Optional) Specifies the TCP port of the `load_object`.
+          * `load_servers` - (Optional) (List) Specifies a list of servers from which to request the load object.
+          * `use_default_load_object` - (Optional) A boolean that indicates whether a default `load_object` is used for the resources.
+        * `host_header` - (Optional) Optionally specifies the host header used when fetching the load object.
+        * `least_squares_decay` - (Optional) For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
+        * `upper_bound` - (Optional) An optional sanity check that specifies the maximum allowed value for any component of the load object.
+        * `description` - (Optional) A descriptive note to help you track what the resource constrains.
+        * `leader_string` - (Optional) Specifies the text that comes before the `load_object`.
+        * `constrained_property` - (Optional) Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
+        * `load_imbalance_percent` - (Optional) Indicates the percent of load imbalance factor (LIF) for the property.
+        * `max_u_multiplicative_increment` - (Optional) For Akamai internal use only. You can omit the value or set it to `null`.
+        * `decay_rate` - (Optional) For Akamai internal use only. You can omit the value or set it to `null`.
+
+        ## Schema reference
+
+        You can download the GTM Resource backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#resource) page.
 
         :param str resource_name: The name of the resource.
         :param GtmResourceArgs args: The arguments to use to populate this resource's properties.
@@ -606,14 +608,6 @@ class GtmResource(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[str] name: Resource name
-               * `aggregation_type`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmResourceResourceInstanceArgs']]]] resource_instances: * `datacenter_id`
-               * `load_object`
-               * `load_object_port`
-        :param pulumi.Input[str] type: Resource type
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -659,9 +653,6 @@ class GtmResource(pulumi.CustomResource):
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Output[str]:
-        """
-        Domain name
-        """
         return pulumi.get(self, "domain")
 
     @property
@@ -692,28 +683,16 @@ class GtmResource(pulumi.CustomResource):
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        Resource name
-        * `aggregation_type`
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="resourceInstances")
     def resource_instances(self) -> pulumi.Output[Optional[Sequence['outputs.GtmResourceResourceInstance']]]:
-        """
-        * `datacenter_id`
-        * `load_object`
-        * `load_object_port`
-        """
         return pulumi.get(self, "resource_instances")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
-        """
-        Resource type
-        """
         return pulumi.get(self, "type")
 
     @property
@@ -724,8 +703,5 @@ class GtmResource(pulumi.CustomResource):
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> pulumi.Output[Optional[bool]]:
-        """
-        Wait for transaction to complete
-        """
         return pulumi.get(self, "wait_on_complete")
 

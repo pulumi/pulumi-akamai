@@ -63,7 +63,29 @@ class AwaitableGetAuthoritiesSetResult(GetAuthoritiesSetResult):
 def get_authorities_set(contract: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuthoritiesSetResult:
     """
-    Use this data source to access information about an existing resource.
+    Use the `getAuthoritiesSet` data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    example = akamai.get_authorities_set(contract="ctr_1-AB123")
+    ```
+    ## Argument reference
+
+    This data source supports this argument:
+
+    * `contract` - (Required) The contract ID.
+
+    ## Attributes reference
+
+    This data source supports this attribute:
+
+    * `authorities` - A list of authorities.
     """
     __args__ = dict()
     __args__['contract'] = contract

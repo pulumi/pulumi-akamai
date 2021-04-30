@@ -4,6 +4,81 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * The `akamai.EdgeHostName` resource lets you configure a secure edge hostname. Your
+ * edge hostname determines how requests for your site, app, or content are mapped to
+ * Akamai edge servers.
+ *
+ * An edge hostname is the CNAME target you use when directing your end user traffic to
+ * Akamai. Each hostname assigned to a property has a corresponding edge hostname.
+ *
+ * Akamai supports three types of edge hostnames, depending on the level of security
+ * you need for your traffic: Standard TLS, Enhanced TLS, and Shared Certificate. When
+ * entering the `edgeHostname` attribute, you need to include a specific domain suffix
+ * for your edge hostname type:
+ *
+ * | Edge hostname type | Domain suffix |
+ * |------|-------|
+ * | Enhanced TLS | edgekey.net |
+ * | Standard TLS | edgesuite.net |
+ * | Shared Cert | akamaized.net |
+ *
+ * For example, if you use Standard TLS and have `www.example.com` as a hostname, your edge hostname would be `www.example.com.edgesuite.net`. If you wanted to use Enhanced TLS with the same hostname, your edge hostname would be `www.example.com.edgekey.net`. See the [Property Manager API (PAPI)](https://developer.akamai.com/api/core_features/property_manager/v1.html#createedgehostnames) for more information.
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const provider_demo = new akamai.EdgeHostName("provider-demo", {
+ *     contractId: "ctr_1-AB123",
+ *     edgeHostname: "www.example.org.edgesuite.net",
+ *     groupId: "grp_123",
+ *     productId: "prd_Object_Delivery",
+ * });
+ * ```
+ * ## Argument reference
+ *
+ * This resource supports these arguments:
+ *
+ * * `name` - (Required) The name of the edge hostname.
+ * * `contractId` - (Required) A contract's unique ID, including the `ctr_` prefix.
+ * * `groupId` - (Required) A group's unique ID, including the `grp_` prefix.
+ * * `productId` - (Required) A product's unique ID, including the `prd_` prefix.
+ * * `edgeHostname` - (Required) One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
+ * * `certificate` - (Optional) Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
+ * * `ipBehavior` - (Required) Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6. The default value is `IPV4`.
+ * * `contract` - (Deprecated) Replaced by `contractId`. Maintained for legacy purposes.
+ * * `group` - (Deprecated) Replaced by `groupId`. Maintained for legacy purposes.
+ * * `product` - (Deprecated) Replaced by `productId`. Maintained for legacy purposes.
+ *
+ * ## Attributes reference
+ *
+ * This resource returns this attribute:
+ *
+ * * `ipBehavior` - Returns the IP protocol the hostname will use, either `IPV4` for version 4, IPV6_PERFORMANCE`for version 6, or`IPV6_COMPLIANCE` for both.
+ *
+ * ## Import
+ *
+ * Basic Usagehcl resource "akamai_edge_hostname" "example" {
+ *
+ * # (resource arguments)
+ *
+ *  } You can import Akamai edge hostnames using a comma-delimited string of edge
+ *
+ * hostname, contract ID, and group ID. You have to enter the values in this order:
+ *
+ *  `edge_hostname, contract_id, group_id`
+ *
+ * For example
+ *
+ * ```sh
+ *  $ pulumi import akamai:index/edgeHostName:EdgeHostName example ehn_123,ctr_1-AB123,grp_123
+ * ```
+ */
 export class EdgeHostName extends pulumi.CustomResource {
     /**
      * Get an existing EdgeHostName resource's state with the given name, ID, and optional extra
@@ -34,19 +109,19 @@ export class EdgeHostName extends pulumi.CustomResource {
 
     public readonly certificate!: pulumi.Output<number | undefined>;
     /**
-     * @deprecated use "contract_id" attribute instead
+     * @deprecated The setting "contract" has been deprecated.
      */
     public readonly contract!: pulumi.Output<string>;
     public readonly contractId!: pulumi.Output<string>;
     public readonly edgeHostname!: pulumi.Output<string>;
     /**
-     * @deprecated use "group_id" attribute instead
+     * @deprecated The setting "group" has been deprecated.
      */
     public readonly group!: pulumi.Output<string>;
     public readonly groupId!: pulumi.Output<string>;
     public readonly ipBehavior!: pulumi.Output<string>;
     /**
-     * @deprecated use "product_id" attribute instead
+     * @deprecated The setting "product" has been deprecated.
      */
     public readonly product!: pulumi.Output<string>;
     public readonly productId!: pulumi.Output<string>;
@@ -106,19 +181,19 @@ export class EdgeHostName extends pulumi.CustomResource {
 export interface EdgeHostNameState {
     readonly certificate?: pulumi.Input<number>;
     /**
-     * @deprecated use "contract_id" attribute instead
+     * @deprecated The setting "contract" has been deprecated.
      */
     readonly contract?: pulumi.Input<string>;
     readonly contractId?: pulumi.Input<string>;
     readonly edgeHostname?: pulumi.Input<string>;
     /**
-     * @deprecated use "group_id" attribute instead
+     * @deprecated The setting "group" has been deprecated.
      */
     readonly group?: pulumi.Input<string>;
     readonly groupId?: pulumi.Input<string>;
     readonly ipBehavior?: pulumi.Input<string>;
     /**
-     * @deprecated use "product_id" attribute instead
+     * @deprecated The setting "product" has been deprecated.
      */
     readonly product?: pulumi.Input<string>;
     readonly productId?: pulumi.Input<string>;
@@ -130,19 +205,19 @@ export interface EdgeHostNameState {
 export interface EdgeHostNameArgs {
     readonly certificate?: pulumi.Input<number>;
     /**
-     * @deprecated use "contract_id" attribute instead
+     * @deprecated The setting "contract" has been deprecated.
      */
     readonly contract?: pulumi.Input<string>;
     readonly contractId?: pulumi.Input<string>;
     readonly edgeHostname: pulumi.Input<string>;
     /**
-     * @deprecated use "group_id" attribute instead
+     * @deprecated The setting "group" has been deprecated.
      */
     readonly group?: pulumi.Input<string>;
     readonly groupId?: pulumi.Input<string>;
     readonly ipBehavior: pulumi.Input<string>;
     /**
-     * @deprecated use "product_id" attribute instead
+     * @deprecated The setting "product" has been deprecated.
      */
     readonly product?: pulumi.Input<string>;
     readonly productId?: pulumi.Input<string>;

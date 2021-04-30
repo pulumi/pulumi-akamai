@@ -29,17 +29,6 @@ namespace Pulumi.Akamai.Inputs
             set => _loadServers = value;
         }
 
-        /// <summary>
-        /// * `host_header`
-        /// * `least_squares_decay`
-        /// * `upper_bound`
-        /// * `description`
-        /// * `leader_string`
-        /// * `constrained_property`
-        /// * `load_imbalance_percent`
-        /// * `max_u_multiplicative_increment`
-        /// * `decay_rate`
-        /// </summary>
         [Input("useDefaultLoadObject")]
         public Input<bool>? UseDefaultLoadObject { get; set; }
 

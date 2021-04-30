@@ -18,9 +18,7 @@ type AppSecMatchTargetSequence struct {
 	// The ID of the security configuration to use.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
-	Json        pulumi.StringPtrOutput `pulumi:"json"`
-	SequenceMap pulumi.StringMapOutput `pulumi:"sequenceMap"`
-	Type        pulumi.StringOutput    `pulumi:"type"`
+	MatchTargetSequence pulumi.StringPtrOutput `pulumi:"matchTargetSequence"`
 	// The version number of the security configuration to use.
 	Version pulumi.IntOutput `pulumi:"version"`
 }
@@ -34,9 +32,6 @@ func NewAppSecMatchTargetSequence(ctx *pulumi.Context,
 
 	if args.ConfigId == nil {
 		return nil, errors.New("invalid value for required argument 'ConfigId'")
-	}
-	if args.Type == nil {
-		return nil, errors.New("invalid value for required argument 'Type'")
 	}
 	if args.Version == nil {
 		return nil, errors.New("invalid value for required argument 'Version'")
@@ -66,9 +61,7 @@ type appSecMatchTargetSequenceState struct {
 	// The ID of the security configuration to use.
 	ConfigId *int `pulumi:"configId"`
 	// The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
-	Json        *string           `pulumi:"json"`
-	SequenceMap map[string]string `pulumi:"sequenceMap"`
-	Type        *string           `pulumi:"type"`
+	MatchTargetSequence *string `pulumi:"matchTargetSequence"`
 	// The version number of the security configuration to use.
 	Version *int `pulumi:"version"`
 }
@@ -77,9 +70,7 @@ type AppSecMatchTargetSequenceState struct {
 	// The ID of the security configuration to use.
 	ConfigId pulumi.IntPtrInput
 	// The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
-	Json        pulumi.StringPtrInput
-	SequenceMap pulumi.StringMapInput
-	Type        pulumi.StringPtrInput
+	MatchTargetSequence pulumi.StringPtrInput
 	// The version number of the security configuration to use.
 	Version pulumi.IntPtrInput
 }
@@ -92,9 +83,7 @@ type appSecMatchTargetSequenceArgs struct {
 	// The ID of the security configuration to use.
 	ConfigId int `pulumi:"configId"`
 	// The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
-	Json        *string           `pulumi:"json"`
-	SequenceMap map[string]string `pulumi:"sequenceMap"`
-	Type        string            `pulumi:"type"`
+	MatchTargetSequence *string `pulumi:"matchTargetSequence"`
 	// The version number of the security configuration to use.
 	Version int `pulumi:"version"`
 }
@@ -104,9 +93,7 @@ type AppSecMatchTargetSequenceArgs struct {
 	// The ID of the security configuration to use.
 	ConfigId pulumi.IntInput
 	// The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
-	Json        pulumi.StringPtrInput
-	SequenceMap pulumi.StringMapInput
-	Type        pulumi.StringInput
+	MatchTargetSequence pulumi.StringPtrInput
 	// The version number of the security configuration to use.
 	Version pulumi.IntInput
 }

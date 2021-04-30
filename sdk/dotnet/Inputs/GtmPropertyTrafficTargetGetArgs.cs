@@ -15,21 +15,12 @@ namespace Pulumi.Akamai.Inputs
         [Input("datacenterId")]
         public Input<int>? DatacenterId { get; set; }
 
-        /// <summary>
-        /// * `weight`
-        /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         [Input("handoutCname")]
         public Input<string>? HandoutCname { get; set; }
 
-        /// <summary>
-        /// Liveness test name
-        /// * `test_interval`
-        /// * `test_object_protocol`
-        /// * `test_timeout`
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 

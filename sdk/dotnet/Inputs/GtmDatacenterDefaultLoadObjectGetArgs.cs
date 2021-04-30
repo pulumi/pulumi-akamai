@@ -20,11 +20,6 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("loadServers")]
         private InputList<string>? _loadServers;
-
-        /// <summary>
-        /// * `city`
-        /// * `clone_of`
-        /// </summary>
         public InputList<string> LoadServers
         {
             get => _loadServers ?? (_loadServers = new InputList<string>());

@@ -12,12 +12,6 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GtmPropertyLivenessTestHttpHeaderGetArgs : Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// Liveness test name
-        /// * `test_interval`
-        /// * `test_object_protocol`
-        /// * `test_timeout`
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 

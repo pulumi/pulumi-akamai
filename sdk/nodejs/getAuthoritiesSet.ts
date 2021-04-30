@@ -5,6 +5,33 @@ import * as pulumi from "@pulumi/pulumi";
 import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
+/**
+ * Use the `akamai.getAuthoritiesSet` data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const example = pulumi.output(akamai.getAuthoritiesSet({
+ *     contract: "ctr_1-AB123",
+ * }, { async: true }));
+ * ```
+ * ## Argument reference
+ *
+ * This data source supports this argument:
+ *
+ * * `contract` - (Required) The contract ID.
+ *
+ * ## Attributes reference
+ *
+ * This data source supports this attribute:
+ *
+ * * `authorities` - A list of authorities.
+ */
 export function getAuthoritiesSet(args: GetAuthoritiesSetArgs, opts?: pulumi.InvokeOptions): Promise<GetAuthoritiesSetResult> {
     if (!opts) {
         opts = {}

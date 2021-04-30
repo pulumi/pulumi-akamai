@@ -12,7 +12,7 @@ namespace Pulumi.Akamai
     public static class GetAppSecCustomRuleActions
     {
         /// <summary>
-        /// Use the `akamai.getAppSecCustomRuleActions` data source to retrieve information about the actions defined for the custom rules associated with a specific security configuration, version and security policy.
+        /// Use the `akamai.getAppSecCustomRuleActions` data source to retrieve information about the actions defined for the custom rules, or a specific custom rule, associated with a specific security configuration version and security policy.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -40,7 +40,7 @@ namespace Pulumi.Akamai
         ///             {
         ///                 ConfigId = configuration.ConfigId,
         ///                 Version = configuration1.LatestVersion,
-        ///                 PolicyId = "crAP_75829",
+        ///                 SecurityPolicyId = "crAP_75829",
         ///             }));
         ///         });
         ///         this.CustomRuleActions = customRuleActionsAppSecCustomRuleActions.Apply(customRuleActionsAppSecCustomRuleActions =&gt; customRuleActionsAppSecCustomRuleActions.OutputText);
@@ -67,10 +67,16 @@ namespace Pulumi.Akamai
         public int ConfigId { get; set; }
 
         /// <summary>
+        /// A specific custom rule for which to retrieve information. If not supplied, information about all custom rules will be returned.
+        /// </summary>
+        [Input("customRuleId")]
+        public int? CustomRuleId { get; set; }
+
+        /// <summary>
         /// The ID of the security policy to use
         /// </summary>
-        [Input("policyId", required: true)]
-        public string PolicyId { get; set; } = null!;
+        [Input("securityPolicyId", required: true)]
+        public string SecurityPolicyId { get; set; } = null!;
 
         /// <summary>
         /// The version number of the security configuration to use.
@@ -88,33 +94,37 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecCustomRuleActionsResult
     {
         public readonly int ConfigId;
+        public readonly int? CustomRuleId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A tabular display showing the ID, name, and action of all custom rules associated with the specified security configuration, version and security policy.
+        /// A tabular display showing the ID, name, and action of all custom rules, or of the specific custom rule, associated with the specified security configuration, version and security policy.
         /// </summary>
         public readonly string OutputText;
-        public readonly string PolicyId;
+        public readonly string SecurityPolicyId;
         public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecCustomRuleActionsResult(
             int configId,
 
+            int? customRuleId,
+
             string id,
 
             string outputText,
 
-            string policyId,
+            string securityPolicyId,
 
             int version)
         {
             ConfigId = configId;
+            CustomRuleId = customRuleId;
             Id = id;
             OutputText = outputText;
-            PolicyId = policyId;
+            SecurityPolicyId = securityPolicyId;
             Version = version;
         }
     }

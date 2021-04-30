@@ -70,9 +70,6 @@ func NewGtmProperty(ctx *pulumi.Context,
 	if args.ScoreAggregationType == nil {
 		return nil, errors.New("invalid value for required argument 'ScoreAggregationType'")
 	}
-	if args.TrafficTargets == nil {
-		return nil, errors.New("invalid value for required argument 'TrafficTargets'")
-	}
 	if args.Type == nil {
 		return nil, errors.New("invalid value for required argument 'Type'")
 	}

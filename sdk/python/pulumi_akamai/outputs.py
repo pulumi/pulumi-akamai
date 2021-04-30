@@ -23,6 +23,10 @@ __all__ = [
     'GtmPropertyStaticRrSet',
     'GtmPropertyTrafficTarget',
     'GtmResourceResourceInstance',
+    'PropertyActivationRuleError',
+    'PropertyActivationRuleWarning',
+    'PropertyHostname',
+    'PropertyHostnameCertStatus',
     'PropertyOrigin',
     'PropertyRuleError',
     'PropertyRuleWarning',
@@ -36,6 +40,8 @@ __all__ = [
     'GetContractsContractResult',
     'GetGroupsGroupResult',
     'GetPropertiesPropertyResult',
+    'GetPropertyHostnamesHostnameResult',
+    'GetPropertyHostnamesHostnameCertStatusResult',
     'GetPropertyProductsProductResult',
     'GetPropertyRulesTemplateVariableResult',
 ]
@@ -46,11 +52,6 @@ class DnsZoneTsigKey(dict):
                  algorithm: str,
                  name: str,
                  secret: str):
-        """
-        :param str name: key name
-               * `algorithm`
-               * `secret`
-        """
         pulumi.set(__self__, "algorithm", algorithm)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "secret", secret)
@@ -63,11 +64,6 @@ class DnsZoneTsigKey(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        key name
-        * `algorithm`
-        * `secret`
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -266,10 +262,6 @@ class GtmDatacenterDefaultLoadObject(dict):
                  load_object: Optional[str] = None,
                  load_object_port: Optional[int] = None,
                  load_servers: Optional[Sequence[str]] = None):
-        """
-        :param Sequence[str] load_servers: * `city`
-               * `clone_of`
-        """
         if load_object is not None:
             pulumi.set(__self__, "load_object", load_object)
         if load_object_port is not None:
@@ -290,10 +282,6 @@ class GtmDatacenterDefaultLoadObject(dict):
     @property
     @pulumi.getter(name="loadServers")
     def load_servers(self) -> Optional[Sequence[str]]:
-        """
-        * `city`
-        * `clone_of`
-        """
         return pulumi.get(self, "load_servers")
 
 
@@ -464,25 +452,6 @@ class GtmPropertyLivenessTest(dict):
                  test_object_port: Optional[int] = None,
                  test_object_username: Optional[str] = None,
                  timeout_penalty: Optional[float] = None):
-        """
-        :param str name: Liveness test name
-               * `test_interval`
-               * `test_object_protocol`
-               * `test_timeout`
-        :param bool disable_nonstandard_port_warning: * `error_penalty`
-        :param Sequence['GtmPropertyLivenessTestHttpHeaderArgs'] http_headers: `name`
-               `value`
-        :param bool recursion_requested: * `request_string`
-               * `resource_type`
-               * `response_string`
-               * `ssl_client_certificate`
-               * `ssl_client_private_key`
-               * `test_object`
-               * `test_object_password`
-               * `test_object_port`
-               * `test_object_username`
-               * `timeout_penalty`
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "test_interval", test_interval)
         pulumi.set(__self__, "test_object", test_object)
@@ -530,12 +499,6 @@ class GtmPropertyLivenessTest(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Liveness test name
-        * `test_interval`
-        * `test_object_protocol`
-        * `test_timeout`
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -566,9 +529,6 @@ class GtmPropertyLivenessTest(dict):
     @property
     @pulumi.getter(name="disableNonstandardPortWarning")
     def disable_nonstandard_port_warning(self) -> Optional[bool]:
-        """
-        * `error_penalty`
-        """
         return pulumi.get(self, "disable_nonstandard_port_warning")
 
     @property
@@ -599,10 +559,6 @@ class GtmPropertyLivenessTest(dict):
     @property
     @pulumi.getter(name="httpHeaders")
     def http_headers(self) -> Optional[Sequence['outputs.GtmPropertyLivenessTestHttpHeader']]:
-        """
-        `name`
-        `value`
-        """
         return pulumi.get(self, "http_headers")
 
     @property
@@ -613,18 +569,6 @@ class GtmPropertyLivenessTest(dict):
     @property
     @pulumi.getter(name="recursionRequested")
     def recursion_requested(self) -> Optional[bool]:
-        """
-        * `request_string`
-        * `resource_type`
-        * `response_string`
-        * `ssl_client_certificate`
-        * `ssl_client_private_key`
-        * `test_object`
-        * `test_object_password`
-        * `test_object_port`
-        * `test_object_username`
-        * `timeout_penalty`
-        """
         return pulumi.get(self, "recursion_requested")
 
     @property
@@ -678,12 +622,6 @@ class GtmPropertyLivenessTestHttpHeader(dict):
     def __init__(__self__, *,
                  name: Optional[str] = None,
                  value: Optional[str] = None):
-        """
-        :param str name: Liveness test name
-               * `test_interval`
-               * `test_object_protocol`
-               * `test_timeout`
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if value is not None:
@@ -692,12 +630,6 @@ class GtmPropertyLivenessTestHttpHeader(dict):
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Liveness test name
-        * `test_interval`
-        * `test_object_protocol`
-        * `test_timeout`
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -712,10 +644,6 @@ class GtmPropertyStaticRrSet(dict):
                  rdatas: Optional[Sequence[str]] = None,
                  ttl: Optional[int] = None,
                  type: Optional[str] = None):
-        """
-        :param str type: Property type  
-               * `score_aggregation_type`
-        """
         if rdatas is not None:
             pulumi.set(__self__, "rdatas", rdatas)
         if ttl is not None:
@@ -736,10 +664,6 @@ class GtmPropertyStaticRrSet(dict):
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        Property type  
-        * `score_aggregation_type`
-        """
         return pulumi.get(self, "type")
 
 
@@ -771,13 +695,6 @@ class GtmPropertyTrafficTarget(dict):
                  name: Optional[str] = None,
                  servers: Optional[Sequence[str]] = None,
                  weight: Optional[float] = None):
-        """
-        :param bool enabled: * `weight`
-        :param str name: Liveness test name
-               * `test_interval`
-               * `test_object_protocol`
-               * `test_timeout`
-        """
         if datacenter_id is not None:
             pulumi.set(__self__, "datacenter_id", datacenter_id)
         if enabled is not None:
@@ -799,9 +716,6 @@ class GtmPropertyTrafficTarget(dict):
     @property
     @pulumi.getter
     def enabled(self) -> Optional[bool]:
-        """
-        * `weight`
-        """
         return pulumi.get(self, "enabled")
 
     @property
@@ -812,12 +726,6 @@ class GtmPropertyTrafficTarget(dict):
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Liveness test name
-        * `test_interval`
-        * `test_object_protocol`
-        * `test_timeout`
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -864,17 +772,6 @@ class GtmResourceResourceInstance(dict):
                  load_object_port: Optional[int] = None,
                  load_servers: Optional[Sequence[str]] = None,
                  use_default_load_object: Optional[bool] = None):
-        """
-        :param bool use_default_load_object: * `host_header`
-               * `least_squares_decay`
-               * `upper_bound`
-               * `description`
-               * `leader_string`
-               * `constrained_property`
-               * `load_imbalance_percent`
-               * `max_u_multiplicative_increment`
-               * `decay_rate`
-        """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         if load_object is not None:
             pulumi.set(__self__, "load_object", load_object)
@@ -908,18 +805,304 @@ class GtmResourceResourceInstance(dict):
     @property
     @pulumi.getter(name="useDefaultLoadObject")
     def use_default_load_object(self) -> Optional[bool]:
-        """
-        * `host_header`
-        * `least_squares_decay`
-        * `upper_bound`
-        * `description`
-        * `leader_string`
-        * `constrained_property`
-        * `load_imbalance_percent`
-        * `max_u_multiplicative_increment`
-        * `decay_rate`
-        """
         return pulumi.get(self, "use_default_load_object")
+
+
+@pulumi.output_type
+class PropertyActivationRuleError(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "behaviorName":
+            suggest = "behavior_name"
+        elif key == "errorLocation":
+            suggest = "error_location"
+        elif key == "statusCode":
+            suggest = "status_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PropertyActivationRuleError. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PropertyActivationRuleError.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PropertyActivationRuleError.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 behavior_name: Optional[str] = None,
+                 detail: Optional[str] = None,
+                 error_location: Optional[str] = None,
+                 instance: Optional[str] = None,
+                 status_code: Optional[int] = None,
+                 title: Optional[str] = None,
+                 type: Optional[str] = None):
+        if behavior_name is not None:
+            pulumi.set(__self__, "behavior_name", behavior_name)
+        if detail is not None:
+            pulumi.set(__self__, "detail", detail)
+        if error_location is not None:
+            pulumi.set(__self__, "error_location", error_location)
+        if instance is not None:
+            pulumi.set(__self__, "instance", instance)
+        if status_code is not None:
+            pulumi.set(__self__, "status_code", status_code)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="behaviorName")
+    def behavior_name(self) -> Optional[str]:
+        return pulumi.get(self, "behavior_name")
+
+    @property
+    @pulumi.getter
+    def detail(self) -> Optional[str]:
+        return pulumi.get(self, "detail")
+
+    @property
+    @pulumi.getter(name="errorLocation")
+    def error_location(self) -> Optional[str]:
+        return pulumi.get(self, "error_location")
+
+    @property
+    @pulumi.getter
+    def instance(self) -> Optional[str]:
+        return pulumi.get(self, "instance")
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> Optional[int]:
+        return pulumi.get(self, "status_code")
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[str]:
+        return pulumi.get(self, "title")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class PropertyActivationRuleWarning(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "behaviorName":
+            suggest = "behavior_name"
+        elif key == "errorLocation":
+            suggest = "error_location"
+        elif key == "statusCode":
+            suggest = "status_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PropertyActivationRuleWarning. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PropertyActivationRuleWarning.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PropertyActivationRuleWarning.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 behavior_name: Optional[str] = None,
+                 detail: Optional[str] = None,
+                 error_location: Optional[str] = None,
+                 instance: Optional[str] = None,
+                 status_code: Optional[int] = None,
+                 title: Optional[str] = None,
+                 type: Optional[str] = None):
+        if behavior_name is not None:
+            pulumi.set(__self__, "behavior_name", behavior_name)
+        if detail is not None:
+            pulumi.set(__self__, "detail", detail)
+        if error_location is not None:
+            pulumi.set(__self__, "error_location", error_location)
+        if instance is not None:
+            pulumi.set(__self__, "instance", instance)
+        if status_code is not None:
+            pulumi.set(__self__, "status_code", status_code)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="behaviorName")
+    def behavior_name(self) -> Optional[str]:
+        return pulumi.get(self, "behavior_name")
+
+    @property
+    @pulumi.getter
+    def detail(self) -> Optional[str]:
+        return pulumi.get(self, "detail")
+
+    @property
+    @pulumi.getter(name="errorLocation")
+    def error_location(self) -> Optional[str]:
+        return pulumi.get(self, "error_location")
+
+    @property
+    @pulumi.getter
+    def instance(self) -> Optional[str]:
+        return pulumi.get(self, "instance")
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> Optional[int]:
+        return pulumi.get(self, "status_code")
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[str]:
+        return pulumi.get(self, "title")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class PropertyHostname(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "certProvisioningType":
+            suggest = "cert_provisioning_type"
+        elif key == "cnameFrom":
+            suggest = "cname_from"
+        elif key == "cnameTo":
+            suggest = "cname_to"
+        elif key == "certStatuses":
+            suggest = "cert_statuses"
+        elif key == "cnameType":
+            suggest = "cname_type"
+        elif key == "edgeHostnameId":
+            suggest = "edge_hostname_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PropertyHostname. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PropertyHostname.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PropertyHostname.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cert_provisioning_type: str,
+                 cname_from: str,
+                 cname_to: str,
+                 cert_statuses: Optional[Sequence['outputs.PropertyHostnameCertStatus']] = None,
+                 cname_type: Optional[str] = None,
+                 edge_hostname_id: Optional[str] = None):
+        pulumi.set(__self__, "cert_provisioning_type", cert_provisioning_type)
+        pulumi.set(__self__, "cname_from", cname_from)
+        pulumi.set(__self__, "cname_to", cname_to)
+        if cert_statuses is not None:
+            pulumi.set(__self__, "cert_statuses", cert_statuses)
+        if cname_type is not None:
+            pulumi.set(__self__, "cname_type", cname_type)
+        if edge_hostname_id is not None:
+            pulumi.set(__self__, "edge_hostname_id", edge_hostname_id)
+
+    @property
+    @pulumi.getter(name="certProvisioningType")
+    def cert_provisioning_type(self) -> str:
+        return pulumi.get(self, "cert_provisioning_type")
+
+    @property
+    @pulumi.getter(name="cnameFrom")
+    def cname_from(self) -> str:
+        return pulumi.get(self, "cname_from")
+
+    @property
+    @pulumi.getter(name="cnameTo")
+    def cname_to(self) -> str:
+        return pulumi.get(self, "cname_to")
+
+    @property
+    @pulumi.getter(name="certStatuses")
+    def cert_statuses(self) -> Optional[Sequence['outputs.PropertyHostnameCertStatus']]:
+        return pulumi.get(self, "cert_statuses")
+
+    @property
+    @pulumi.getter(name="cnameType")
+    def cname_type(self) -> Optional[str]:
+        return pulumi.get(self, "cname_type")
+
+    @property
+    @pulumi.getter(name="edgeHostnameId")
+    def edge_hostname_id(self) -> Optional[str]:
+        return pulumi.get(self, "edge_hostname_id")
+
+
+@pulumi.output_type
+class PropertyHostnameCertStatus(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "productionStatus":
+            suggest = "production_status"
+        elif key == "stagingStatus":
+            suggest = "staging_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PropertyHostnameCertStatus. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PropertyHostnameCertStatus.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PropertyHostnameCertStatus.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 hostname: Optional[str] = None,
+                 production_status: Optional[str] = None,
+                 staging_status: Optional[str] = None,
+                 target: Optional[str] = None):
+        if hostname is not None:
+            pulumi.set(__self__, "hostname", hostname)
+        if production_status is not None:
+            pulumi.set(__self__, "production_status", production_status)
+        if staging_status is not None:
+            pulumi.set(__self__, "staging_status", staging_status)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> Optional[str]:
+        return pulumi.get(self, "hostname")
+
+    @property
+    @pulumi.getter(name="productionStatus")
+    def production_status(self) -> Optional[str]:
+        return pulumi.get(self, "production_status")
+
+    @property
+    @pulumi.getter(name="stagingStatus")
+    def staging_status(self) -> Optional[str]:
+        return pulumi.get(self, "staging_status")
+
+    @property
+    @pulumi.getter
+    def target(self) -> Optional[str]:
+        return pulumi.get(self, "target")
 
 
 @pulumi.output_type
@@ -1730,6 +1913,86 @@ class GetPropertiesPropertyResult(dict):
     @pulumi.getter(name="stagingVersion")
     def staging_version(self) -> int:
         return pulumi.get(self, "staging_version")
+
+
+@pulumi.output_type
+class GetPropertyHostnamesHostnameResult(dict):
+    def __init__(__self__, *,
+                 cert_provisioning_type: str,
+                 cert_statuses: Sequence['outputs.GetPropertyHostnamesHostnameCertStatusResult'],
+                 cname_from: str,
+                 cname_to: str,
+                 cname_type: str,
+                 edge_hostname_id: str):
+        pulumi.set(__self__, "cert_provisioning_type", cert_provisioning_type)
+        pulumi.set(__self__, "cert_statuses", cert_statuses)
+        pulumi.set(__self__, "cname_from", cname_from)
+        pulumi.set(__self__, "cname_to", cname_to)
+        pulumi.set(__self__, "cname_type", cname_type)
+        pulumi.set(__self__, "edge_hostname_id", edge_hostname_id)
+
+    @property
+    @pulumi.getter(name="certProvisioningType")
+    def cert_provisioning_type(self) -> str:
+        return pulumi.get(self, "cert_provisioning_type")
+
+    @property
+    @pulumi.getter(name="certStatuses")
+    def cert_statuses(self) -> Sequence['outputs.GetPropertyHostnamesHostnameCertStatusResult']:
+        return pulumi.get(self, "cert_statuses")
+
+    @property
+    @pulumi.getter(name="cnameFrom")
+    def cname_from(self) -> str:
+        return pulumi.get(self, "cname_from")
+
+    @property
+    @pulumi.getter(name="cnameTo")
+    def cname_to(self) -> str:
+        return pulumi.get(self, "cname_to")
+
+    @property
+    @pulumi.getter(name="cnameType")
+    def cname_type(self) -> str:
+        return pulumi.get(self, "cname_type")
+
+    @property
+    @pulumi.getter(name="edgeHostnameId")
+    def edge_hostname_id(self) -> str:
+        return pulumi.get(self, "edge_hostname_id")
+
+
+@pulumi.output_type
+class GetPropertyHostnamesHostnameCertStatusResult(dict):
+    def __init__(__self__, *,
+                 hostname: str,
+                 production_status: str,
+                 staging_status: str,
+                 target: str):
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "production_status", production_status)
+        pulumi.set(__self__, "staging_status", staging_status)
+        pulumi.set(__self__, "target", target)
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> str:
+        return pulumi.get(self, "hostname")
+
+    @property
+    @pulumi.getter(name="productionStatus")
+    def production_status(self) -> str:
+        return pulumi.get(self, "production_status")
+
+    @property
+    @pulumi.getter(name="stagingStatus")
+    def staging_status(self) -> str:
+        return pulumi.get(self, "staging_status")
+
+    @property
+    @pulumi.getter
+    def target(self) -> str:
+        return pulumi.get(self, "target")
 
 
 @pulumi.output_type

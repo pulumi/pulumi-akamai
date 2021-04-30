@@ -6,7 +6,7 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * The `akamai.DnsZone` provides the resource for configuring a DNS zone to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
+ * Use the `akamai.DnsZone` resource to configure a DNS zone that integrates with your existing DNS infrastructure.
  *
  * ## Example Usage
  *
@@ -29,6 +29,24 @@ import * as utilities from "./utilities";
  *     zone: "example.com",
  * });
  * ```
+ * ## Argument reference
+ *
+ * This resource supports these arguments:
+ *
+ * * `comment` - (Required) A descriptive comment.
+ * * `contract` - (Required) The contract ID.
+ * * `group` - (Required) The currently selected group ID.
+ * * `zone` - (Required) The domain zone, encapsulating any nested subdomains.
+ * * `type` - (Required) Whether the zone is `primary`, `secondary`, or `alias`.
+ * * `masters` - (Required for `secondary` zones) The names or IP addresses of the nameservers that the zone data should be retrieved from.
+ * * `target` - (Required for `alias` zones) The name of the zone whose configuration this zone will copy.
+ * * `signAndServe` - (Optional) Whether DNSSEC Sign and Serve is enabled.
+ * * `signAndServeAlgorithm` - (Optional) The algorithm used by Sign and Serve.
+ * * `tsigKey` - (Optional) The TSIG Key used in secure zone transfers. If used, requires these arguments:
+ *     * `name` - The key name.
+ *     * `algorithm` - The hashing algorithm.
+ *     * `secret` - String known between transfer endpoints.
+ * * `endCustomerId` - (Optional) A free form identifier for the zone.
  */
 export class DnsZone extends pulumi.CustomResource {
     /**
@@ -60,47 +78,17 @@ export class DnsZone extends pulumi.CustomResource {
 
     public /*out*/ readonly activationState!: pulumi.Output<string>;
     public /*out*/ readonly aliasCount!: pulumi.Output<number>;
-    /**
-     * A descriptive comment.
-     */
     public readonly comment!: pulumi.Output<string | undefined>;
-    /**
-     * The contract ID.
-     */
     public readonly contract!: pulumi.Output<string>;
     public readonly endCustomerId!: pulumi.Output<string | undefined>;
-    /**
-     * The currently selected group ID.
-     */
     public readonly group!: pulumi.Output<string>;
-    /**
-     * The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
-     */
     public readonly masters!: pulumi.Output<string[] | undefined>;
-    /**
-     * Whether DNSSEC Sign&Serve is enabled.
-     */
     public readonly signAndServe!: pulumi.Output<boolean | undefined>;
-    /**
-     * Algorithm used by Sign&Serve.
-     */
     public readonly signAndServeAlgorithm!: pulumi.Output<string | undefined>;
-    /**
-     * The name of the zone whose configuration this zone will copy.
-     */
     public readonly target!: pulumi.Output<string | undefined>;
-    /**
-     * TSIG Key used in secure zone transfers
-     */
     public readonly tsigKey!: pulumi.Output<outputs.DnsZoneTsigKey | undefined>;
-    /**
-     * Whether the zone is `primary` or `secondary`.
-     */
     public readonly type!: pulumi.Output<string>;
     public /*out*/ readonly versionId!: pulumi.Output<string>;
-    /**
-     * Domain zone, encapsulating any nested subdomains.
-     */
     public readonly zone!: pulumi.Output<string>;
 
     /**
@@ -174,47 +162,17 @@ export class DnsZone extends pulumi.CustomResource {
 export interface DnsZoneState {
     readonly activationState?: pulumi.Input<string>;
     readonly aliasCount?: pulumi.Input<number>;
-    /**
-     * A descriptive comment.
-     */
     readonly comment?: pulumi.Input<string>;
-    /**
-     * The contract ID.
-     */
     readonly contract?: pulumi.Input<string>;
     readonly endCustomerId?: pulumi.Input<string>;
-    /**
-     * The currently selected group ID.
-     */
     readonly group?: pulumi.Input<string>;
-    /**
-     * The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
-     */
     readonly masters?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * Whether DNSSEC Sign&Serve is enabled.
-     */
     readonly signAndServe?: pulumi.Input<boolean>;
-    /**
-     * Algorithm used by Sign&Serve.
-     */
     readonly signAndServeAlgorithm?: pulumi.Input<string>;
-    /**
-     * The name of the zone whose configuration this zone will copy.
-     */
     readonly target?: pulumi.Input<string>;
-    /**
-     * TSIG Key used in secure zone transfers
-     */
     readonly tsigKey?: pulumi.Input<inputs.DnsZoneTsigKey>;
-    /**
-     * Whether the zone is `primary` or `secondary`.
-     */
     readonly type?: pulumi.Input<string>;
     readonly versionId?: pulumi.Input<string>;
-    /**
-     * Domain zone, encapsulating any nested subdomains.
-     */
     readonly zone?: pulumi.Input<string>;
 }
 
@@ -222,45 +180,15 @@ export interface DnsZoneState {
  * The set of arguments for constructing a DnsZone resource.
  */
 export interface DnsZoneArgs {
-    /**
-     * A descriptive comment.
-     */
     readonly comment?: pulumi.Input<string>;
-    /**
-     * The contract ID.
-     */
     readonly contract: pulumi.Input<string>;
     readonly endCustomerId?: pulumi.Input<string>;
-    /**
-     * The currently selected group ID.
-     */
     readonly group: pulumi.Input<string>;
-    /**
-     * The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
-     */
     readonly masters?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * Whether DNSSEC Sign&Serve is enabled.
-     */
     readonly signAndServe?: pulumi.Input<boolean>;
-    /**
-     * Algorithm used by Sign&Serve.
-     */
     readonly signAndServeAlgorithm?: pulumi.Input<string>;
-    /**
-     * The name of the zone whose configuration this zone will copy.
-     */
     readonly target?: pulumi.Input<string>;
-    /**
-     * TSIG Key used in secure zone transfers
-     */
     readonly tsigKey?: pulumi.Input<inputs.DnsZoneTsigKey>;
-    /**
-     * Whether the zone is `primary` or `secondary`.
-     */
     readonly type: pulumi.Input<string>;
-    /**
-     * Domain zone, encapsulating any nested subdomains.
-     */
     readonly zone: pulumi.Input<string>;
 }

@@ -7,7 +7,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecSelectableHostnames` data source to retrieve the list of hostnames that may be protected under a given security configuration version.
+// Use the `getAppSecSelectableHostnames` data source to retrieve the list of hostnames that may be protected under a given security configuration version. You can specify the list to be retrieved either by supplying the name and version of a security configuration, or by supplying a group ID and contract ID.
 //
 // ## Example Usage
 //
@@ -23,16 +23,18 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Akamai Tools"
-// 		configuration, err := akamai.GetAppSecConfiguration(ctx, &akamai.GetAppSecConfigurationArgs{
+// 		opt0 := _var.Security_configuration
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
+// 		opt1 := configuration.ConfigId
+// 		opt2 := configuration.LatestVersion
 // 		selectableHostnamesAppSecSelectableHostnames, err := akamai.GetAppSecSelectableHostnames(ctx, &akamai.GetAppSecSelectableHostnamesArgs{
-// 			ConfigId: configuration.ConfigId,
-// 			Version:  configuration.LatestVersion,
+// 			ConfigId: &opt1,
+// 			Version:  &opt2,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -40,6 +42,18 @@ import (
 // 		ctx.Export("selectableHostnames", selectableHostnamesAppSecSelectableHostnames.Hostnames)
 // 		ctx.Export("selectableHostnamesJson", selectableHostnamesAppSecSelectableHostnames.HostnamesJson)
 // 		ctx.Export("selectableHostnamesOutputText", selectableHostnamesAppSecSelectableHostnames.OutputText)
+// 		opt3 := _var.Contractid
+// 		opt4 := _var.Groupid
+// 		selectableHostnamesForCreateConfigurationAppSecSelectableHostnames, err := akamai.GetAppSecSelectableHostnames(ctx, &akamai.GetAppSecSelectableHostnamesArgs{
+// 			Contractid: &opt3,
+// 			Groupid:    &opt4,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		ctx.Export("selectableHostnamesForCreateConfiguration", selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Hostnames)
+// 		ctx.Export("selectableHostnamesForCreateConfigurationJson", selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.HostnamesJson)
+// 		ctx.Export("selectableHostnamesForCreateConfigurationOutputText", selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.OutputText)
 // 		return nil
 // 	})
 // }
@@ -58,16 +72,22 @@ type GetAppSecSelectableHostnamesArgs struct {
 	ActiveInProduction *bool `pulumi:"activeInProduction"`
 	ActiveInStaging    *bool `pulumi:"activeInStaging"`
 	// The ID of the security configuration to use.
-	ConfigId int `pulumi:"configId"`
+	ConfigId *int `pulumi:"configId"`
+	// The ID of the contract to use.
+	Contractid *string `pulumi:"contractid"`
+	// The ID of the group to use.
+	Groupid *int `pulumi:"groupid"`
 	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
+	Version *int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecSelectableHostnames.
 type GetAppSecSelectableHostnamesResult struct {
-	ActiveInProduction *bool `pulumi:"activeInProduction"`
-	ActiveInStaging    *bool `pulumi:"activeInStaging"`
-	ConfigId           int   `pulumi:"configId"`
+	ActiveInProduction *bool   `pulumi:"activeInProduction"`
+	ActiveInStaging    *bool   `pulumi:"activeInStaging"`
+	ConfigId           *int    `pulumi:"configId"`
+	Contractid         *string `pulumi:"contractid"`
+	Groupid            *int    `pulumi:"groupid"`
 	// The list of selectable hostnames.
 	Hostnames []string `pulumi:"hostnames"`
 	// The list of selectable hostnames in json format.
@@ -76,5 +96,5 @@ type GetAppSecSelectableHostnamesResult struct {
 	Id string `pulumi:"id"`
 	// A tabular display of the selectable hostnames showing the name and configId of the security configuration under which the host is protected in production, or '-' if the host is not protected in production.
 	OutputText string `pulumi:"outputText"`
-	Version    int    `pulumi:"version"`
+	Version    *int   `pulumi:"version"`
 }

@@ -22,7 +22,7 @@ namespace Pulumi.Akamai
     /// property’s default rule needs a valid content provider (CP) code assigned to bill
     /// and report for the service.
     /// 
-    /// &gt; __NOTE:__ In version 0.10 and earlier of this resource, it also controlled content provider (CP) codes, origin settings, rules, and hostname associations. Starting with version 1.0.0, this logic is broken out into individual resources.
+    /// &gt; **Note** In version 0.10 and earlier of this resource, it also controlled content provider (CP) codes, origin settings, rules, and hostname associations. Starting with version 1.0.0, this logic is broken out into individual resources.
     /// 
     /// ## Example Usage
     /// 
@@ -38,18 +38,23 @@ namespace Pulumi.Akamai
     ///     {
     ///         var example = new Akamai.Property("example", new Akamai.PropertyArgs
     ///         {
-    ///             Contacts = 
-    ///             {
-    ///                 "user@example.org",
-    ///             },
     ///             ProductId = "prd_SPM",
     ///             ContractId = @var.Contractid,
     ///             GroupId = @var.Groupid,
     ///             Hostnames = 
     ///             {
-    ///                 { "example.org", "example.org.edgesuite.net" },
-    ///                 { "www.example.org", "example.org.edgesuite.net" },
-    ///                 { "sub.example.org", "sub.example.org.edgesuite.net" },
+    ///                 new Akamai.Inputs.PropertyHostnameArgs
+    ///                 {
+    ///                     CnameFrom = "example.com",
+    ///                     CnameTo = "example.com.edgekey.net",
+    ///                     CertProvisioningType = "DEFAULT",
+    ///                 },
+    ///                 new Akamai.Inputs.PropertyHostnameArgs
+    ///                 {
+    ///                     CnameFrom = "www.example.com",
+    ///                     CnameTo = "example.com.edgesuite.net",
+    ///                     CertProvisioningType = "CPS_MANAGED",
+    ///                 },
     ///             },
     ///             RuleFormat = "v2020-03-04",
     ///             Rules = data.Akamai_property_rules_template.Example.Json,
@@ -63,12 +68,19 @@ namespace Pulumi.Akamai
     /// This resource supports these arguments:
     /// 
     /// * `name` - (Required) The property name.
-    /// * `contact` - (Required) One or more email addresses to send activation status changes to.
-    /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-    /// * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
-    /// * `product_id` - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
-    /// * `hostnames` - (Required) A mapping of public hostnames to edge hostnames. For example: `{"example.org" = "example.org.edgesuite.net"}`
-    /// * `rules` - (Required) A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `akamai.getPropertyRules` data source.
+    /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
+    /// * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
+    /// * `product_id` - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+    /// * `hostnames` - (Optional) A mapping of public hostnames to edge hostnames. See the `akamai.getPropertyHostnames` data source for details on the necessary DNS configuration.
+    ///   
+    ///     &gt; **Note** Starting from version 1.5.0, the `hostnames` argument supports a new block type. If you created your code and state in version 1.4 or earlier, you need to manually update your configuration and replace the previous input for `hostnames` with the new syntax. This error indicates that the state is outdated: `Error: missing expected [`. To fix it, remove `akamai.Property` from the state and import it again.
+    ///   
+    ///   Requires these additional arguments:
+    ///   
+    ///       * `cname_from` - (Required) A string containing the original origin's hostname. For example, `"example.org"`.
+    ///       * `cname_to` - (Required) A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
+    ///       * `cert_provisioning_type` - (Required) The certificate’s provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+    /// * `rules` - (Optional) A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `akamai.getPropertyRules` data source.
     /// * `rule_format` - (Optional) The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
     /// * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
     /// * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
@@ -78,11 +90,14 @@ namespace Pulumi.Akamai
     /// 
     /// The resource returns these attributes:
     /// 
-    /// * `warnings` - The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
-    /// * `errors` - The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+    /// * `rule_errors` - The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
     /// * `latest_version` - The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
     /// * `production_version` - The current version of the property active on the Akamai production network.
     /// * `staging_version` - The current version of the property active on the Akamai staging network.
+    /// 
+    /// ### Deprecated attributes
+    /// 
+    /// * `rule_warnings` - (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
     /// 
     /// ## Import
     /// 
@@ -90,9 +105,7 @@ namespace Pulumi.Akamai
     /// 
     /// # (resource arguments)
     /// 
-    ///  } You can import Akamai properties using either the `property_id` or a comma-delimited
-    /// 
-    /// string of the property, contract, and group IDs. You'll need to enter the string of IDs if the property belongs to multiple groups or contracts. If using the string of IDs, you need to enter them in this order`property_id,contract_id,group_id` Here are some examples
+    ///  } You can import Akamai properties by using either the `property_id` or a comma-delimited string of the property, contract, and group IDs. You'll need to enter the string of IDs if the property belongs to multiple groups or contracts. If using the string of IDs, you need to enter them in this order`property_id,contract_id,group_id` Here are some examples
     /// 
     /// ```sh
     ///  $ pulumi import akamai:index/property:Property example prp_123
@@ -131,11 +144,8 @@ namespace Pulumi.Akamai
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
 
-        /// <summary>
-        /// Mapping of edge hostname CNAMEs to other CNAMEs
-        /// </summary>
         [Output("hostnames")]
-        public Output<ImmutableDictionary<string, string>?> Hostnames { get; private set; } = null!;
+        public Output<ImmutableArray<Outputs.PropertyHostname>> Hostnames { get; private set; } = null!;
 
         [Output("isSecure")]
         public Output<bool?> IsSecure { get; private set; } = null!;
@@ -249,7 +259,7 @@ namespace Pulumi.Akamai
     {
         [Input("contacts")]
         private InputList<string>? _contacts;
-        [Obsolete(@"""contact"" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")]
+        [Obsolete(@"The setting ""contact"" has been deprecated.")]
         public InputList<string> Contacts
         {
             get => _contacts ?? (_contacts = new InputList<string>());
@@ -278,14 +288,10 @@ namespace Pulumi.Akamai
         public Input<string>? GroupId { get; set; }
 
         [Input("hostnames")]
-        private InputMap<string>? _hostnames;
-
-        /// <summary>
-        /// Mapping of edge hostname CNAMEs to other CNAMEs
-        /// </summary>
-        public InputMap<string> Hostnames
+        private InputList<Inputs.PropertyHostnameArgs>? _hostnames;
+        public InputList<Inputs.PropertyHostnameArgs> Hostnames
         {
-            get => _hostnames ?? (_hostnames = new InputMap<string>());
+            get => _hostnames ?? (_hostnames = new InputList<Inputs.PropertyHostnameArgs>());
             set => _hostnames = value;
         }
 
@@ -300,7 +306,7 @@ namespace Pulumi.Akamai
 
         [Input("origins")]
         private InputList<Inputs.PropertyOriginArgs>? _origins;
-        [Obsolete(@"""origin"" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")]
+        [Obsolete(@"The setting ""origin"" has been deprecated.")]
         public InputList<Inputs.PropertyOriginArgs> Origins
         {
             get => _origins ?? (_origins = new InputList<Inputs.PropertyOriginArgs>());
@@ -322,6 +328,15 @@ namespace Pulumi.Akamai
         [Input("ruleFormat")]
         public Input<string>? RuleFormat { get; set; }
 
+        [Input("ruleWarnings")]
+        private InputList<Inputs.PropertyRuleWarningArgs>? _ruleWarnings;
+        [Obsolete(@"Rule warnings will not be set in state anymore")]
+        public InputList<Inputs.PropertyRuleWarningArgs> RuleWarnings
+        {
+            get => _ruleWarnings ?? (_ruleWarnings = new InputList<Inputs.PropertyRuleWarningArgs>());
+            set => _ruleWarnings = value;
+        }
+
         /// <summary>
         /// Property Rules as JSON
         /// </summary>
@@ -340,7 +355,7 @@ namespace Pulumi.Akamai
     {
         [Input("contacts")]
         private InputList<string>? _contacts;
-        [Obsolete(@"""contact"" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")]
+        [Obsolete(@"The setting ""contact"" has been deprecated.")]
         public InputList<string> Contacts
         {
             get => _contacts ?? (_contacts = new InputList<string>());
@@ -369,14 +384,10 @@ namespace Pulumi.Akamai
         public Input<string>? GroupId { get; set; }
 
         [Input("hostnames")]
-        private InputMap<string>? _hostnames;
-
-        /// <summary>
-        /// Mapping of edge hostname CNAMEs to other CNAMEs
-        /// </summary>
-        public InputMap<string> Hostnames
+        private InputList<Inputs.PropertyHostnameGetArgs>? _hostnames;
+        public InputList<Inputs.PropertyHostnameGetArgs> Hostnames
         {
-            get => _hostnames ?? (_hostnames = new InputMap<string>());
+            get => _hostnames ?? (_hostnames = new InputList<Inputs.PropertyHostnameGetArgs>());
             set => _hostnames = value;
         }
 
@@ -397,7 +408,7 @@ namespace Pulumi.Akamai
 
         [Input("origins")]
         private InputList<Inputs.PropertyOriginGetArgs>? _origins;
-        [Obsolete(@"""origin"" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")]
+        [Obsolete(@"The setting ""origin"" has been deprecated.")]
         public InputList<Inputs.PropertyOriginGetArgs> Origins
         {
             get => _origins ?? (_origins = new InputList<Inputs.PropertyOriginGetArgs>());
@@ -435,6 +446,7 @@ namespace Pulumi.Akamai
 
         [Input("ruleWarnings")]
         private InputList<Inputs.PropertyRuleWarningGetArgs>? _ruleWarnings;
+        [Obsolete(@"Rule warnings will not be set in state anymore")]
         public InputList<Inputs.PropertyRuleWarningGetArgs> RuleWarnings
         {
             get => _ruleWarnings ?? (_ruleWarnings = new InputList<Inputs.PropertyRuleWarningGetArgs>());

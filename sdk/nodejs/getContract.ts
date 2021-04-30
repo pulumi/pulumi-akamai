@@ -5,6 +5,36 @@ import * as pulumi from "@pulumi/pulumi";
 import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
+/**
+ * Use the `akamai.getContract` data source to find a contract ID.
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const exampleContract = pulumi.output(akamai.getContract({
+ *     groupName: "example group name",
+ * }, { async: true }));
+ * const exampleProperty = new akamai.Property("example", {
+ *     contractId: "",
+ *     "data.akamai_contract.example.id": [{}],
+ * });
+ * ```
+ * ## Argument reference
+ *
+ * This data source requires one of these group arguments to return contract information:
+ *   * `groupName` - The name of the group containing the contract.
+ *   * `groupId` - The unique ID of the group containing the contract, including the  `grp_` prefix.
+ *   * `group` - (Deprecated) Either the group ID or the group name that includes the contract. You can't use this argument with `groupId` and `groupName`.
+ *
+ * ## Attributes reference
+ *
+ * * `id` - The contract's unique ID, including the `ctr_` prefix.
+ */
 export function getContract(args?: GetContractArgs, opts?: pulumi.InvokeOptions): Promise<GetContractResult> {
     args = args || {};
     if (!opts) {

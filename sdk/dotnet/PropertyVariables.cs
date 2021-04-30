@@ -73,7 +73,7 @@ namespace Pulumi.Akamai
     {
         [Input("variables")]
         private InputList<Inputs.PropertyVariablesVariableArgs>? _variables;
-        [Obsolete(@"resource ""akamai_property_variables"" is no longer supported - See Akamai Terraform Upgrade Guide")]
+        [Obsolete(@"The setting ""akamai_property_variables"" has been deprecated.")]
         public InputList<Inputs.PropertyVariablesVariableArgs> Variables
         {
             get => _variables ?? (_variables = new InputList<Inputs.PropertyVariablesVariableArgs>());
@@ -95,7 +95,7 @@ namespace Pulumi.Akamai
 
         [Input("variables")]
         private InputList<Inputs.PropertyVariablesVariableGetArgs>? _variables;
-        [Obsolete(@"resource ""akamai_property_variables"" is no longer supported - See Akamai Terraform Upgrade Guide")]
+        [Obsolete(@"The setting ""akamai_property_variables"" has been deprecated.")]
         public InputList<Inputs.PropertyVariablesVariableGetArgs> Variables
         {
             get => _variables ?? (_variables = new InputList<Inputs.PropertyVariablesVariableGetArgs>());

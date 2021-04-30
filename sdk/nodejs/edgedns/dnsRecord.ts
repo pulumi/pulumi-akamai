@@ -83,6 +83,9 @@ export class DnsRecord extends pulumi.CustomResource {
     public readonly signer!: pulumi.Output<string | undefined>;
     public readonly software!: pulumi.Output<string | undefined>;
     public readonly subtype!: pulumi.Output<number | undefined>;
+    public readonly svcParams!: pulumi.Output<string | undefined>;
+    public readonly svcPriority!: pulumi.Output<number | undefined>;
+    public readonly targetName!: pulumi.Output<string | undefined>;
     public readonly targets!: pulumi.Output<string[] | undefined>;
     public readonly ttl!: pulumi.Output<number>;
     public readonly txt!: pulumi.Output<string | undefined>;
@@ -157,6 +160,9 @@ export class DnsRecord extends pulumi.CustomResource {
             inputs["signer"] = state ? state.signer : undefined;
             inputs["software"] = state ? state.software : undefined;
             inputs["subtype"] = state ? state.subtype : undefined;
+            inputs["svcParams"] = state ? state.svcParams : undefined;
+            inputs["svcPriority"] = state ? state.svcPriority : undefined;
+            inputs["targetName"] = state ? state.targetName : undefined;
             inputs["targets"] = state ? state.targets : undefined;
             inputs["ttl"] = state ? state.ttl : undefined;
             inputs["txt"] = state ? state.txt : undefined;
@@ -221,6 +227,9 @@ export class DnsRecord extends pulumi.CustomResource {
             inputs["signer"] = args ? args.signer : undefined;
             inputs["software"] = args ? args.software : undefined;
             inputs["subtype"] = args ? args.subtype : undefined;
+            inputs["svcParams"] = args ? args.svcParams : undefined;
+            inputs["svcPriority"] = args ? args.svcPriority : undefined;
+            inputs["targetName"] = args ? args.targetName : undefined;
             inputs["targets"] = args ? args.targets : undefined;
             inputs["ttl"] = args ? args.ttl : undefined;
             inputs["txt"] = args ? args.txt : undefined;
@@ -294,6 +303,9 @@ export interface DnsRecordState {
     readonly signer?: pulumi.Input<string>;
     readonly software?: pulumi.Input<string>;
     readonly subtype?: pulumi.Input<number>;
+    readonly svcParams?: pulumi.Input<string>;
+    readonly svcPriority?: pulumi.Input<number>;
+    readonly targetName?: pulumi.Input<string>;
     readonly targets?: pulumi.Input<pulumi.Input<string>[]>;
     readonly ttl?: pulumi.Input<number>;
     readonly txt?: pulumi.Input<string>;
@@ -353,6 +365,9 @@ export interface DnsRecordArgs {
     readonly signer?: pulumi.Input<string>;
     readonly software?: pulumi.Input<string>;
     readonly subtype?: pulumi.Input<number>;
+    readonly svcParams?: pulumi.Input<string>;
+    readonly svcPriority?: pulumi.Input<number>;
+    readonly targetName?: pulumi.Input<string>;
     readonly targets?: pulumi.Input<pulumi.Input<string>[]>;
     readonly ttl: pulumi.Input<number>;
     readonly txt?: pulumi.Input<string>;
