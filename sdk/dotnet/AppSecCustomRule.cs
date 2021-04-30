@@ -22,16 +22,16 @@ namespace Pulumi.Akamai
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
+        /// The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
+        /// </summary>
+        [Output("customRule")]
+        public Output<string> CustomRule { get; private set; } = null!;
+
+        /// <summary>
         /// The ID of the custom rule.
         /// </summary>
         [Output("customRuleId")]
         public Output<int> CustomRuleId { get; private set; } = null!;
-
-        /// <summary>
-        /// The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
-        /// </summary>
-        [Output("rules")]
-        public Output<string> Rules { get; private set; } = null!;
 
 
         /// <summary>
@@ -88,8 +88,8 @@ namespace Pulumi.Akamai
         /// <summary>
         /// The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
         /// </summary>
-        [Input("rules", required: true)]
-        public Input<string> Rules { get; set; } = null!;
+        [Input("customRule", required: true)]
+        public Input<string> CustomRule { get; set; } = null!;
 
         public AppSecCustomRuleArgs()
         {
@@ -105,16 +105,16 @@ namespace Pulumi.Akamai
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
+        /// The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
+        /// </summary>
+        [Input("customRule")]
+        public Input<string>? CustomRule { get; set; }
+
+        /// <summary>
         /// The ID of the custom rule.
         /// </summary>
         [Input("customRuleId")]
         public Input<int>? CustomRuleId { get; set; }
-
-        /// <summary>
-        /// The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
-        /// </summary>
-        [Input("rules")]
-        public Input<string>? Rules { get; set; }
 
         public AppSecCustomRuleState()
         {

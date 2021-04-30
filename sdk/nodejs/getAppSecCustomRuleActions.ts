@@ -6,7 +6,7 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecCustomRuleActions` data source to retrieve information about the actions defined for the custom rules associated with a specific security configuration, version and security policy.
+ * Use the `akamai.getAppSecCustomRuleActions` data source to retrieve information about the actions defined for the custom rules, or a specific custom rule, associated with a specific security configuration version and security policy.
  *
  * ## Example Usage
  *
@@ -22,7 +22,7 @@ import * as utilities from "./utilities";
  * const customRuleActionsAppSecCustomRuleActions = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecCustomRuleActions({
  *     configId: configuration.configId,
  *     version: configuration1.latestVersion,
- *     policyId: "crAP_75829",
+ *     securityPolicyId: "crAP_75829",
  * }));
  * export const customRuleActions = customRuleActionsAppSecCustomRuleActions.then(customRuleActionsAppSecCustomRuleActions => customRuleActionsAppSecCustomRuleActions.outputText);
  * ```
@@ -37,7 +37,8 @@ export function getAppSecCustomRuleActions(args: GetAppSecCustomRuleActionsArgs,
     }
     return pulumi.runtime.invoke("akamai:index/getAppSecCustomRuleActions:getAppSecCustomRuleActions", {
         "configId": args.configId,
-        "policyId": args.policyId,
+        "customRuleId": args.customRuleId,
+        "securityPolicyId": args.securityPolicyId,
         "version": args.version,
     }, opts);
 }
@@ -51,9 +52,13 @@ export interface GetAppSecCustomRuleActionsArgs {
      */
     readonly configId: number;
     /**
+     * A specific custom rule for which to retrieve information. If not supplied, information about all custom rules will be returned.
+     */
+    readonly customRuleId?: number;
+    /**
      * The ID of the security policy to use
      */
-    readonly policyId: string;
+    readonly securityPolicyId: string;
     /**
      * The version number of the security configuration to use.
      */
@@ -65,14 +70,15 @@ export interface GetAppSecCustomRuleActionsArgs {
  */
 export interface GetAppSecCustomRuleActionsResult {
     readonly configId: number;
+    readonly customRuleId?: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
     /**
-     * A tabular display showing the ID, name, and action of all custom rules associated with the specified security configuration, version and security policy.
+     * A tabular display showing the ID, name, and action of all custom rules, or of the specific custom rule, associated with the specified security configuration, version and security policy.
      */
     readonly outputText: string;
-    readonly policyId: string;
+    readonly securityPolicyId: string;
     readonly version: number;
 }

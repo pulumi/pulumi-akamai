@@ -16,15 +16,15 @@ type EdgeHostName struct {
 	pulumi.CustomResourceState
 
 	Certificate pulumi.IntPtrOutput `pulumi:"certificate"`
-	// Deprecated: use "contract_id" attribute instead
+	// Deprecated: The setting "contract" has been deprecated.
 	Contract     pulumi.StringOutput `pulumi:"contract"`
 	ContractId   pulumi.StringOutput `pulumi:"contractId"`
 	EdgeHostname pulumi.StringOutput `pulumi:"edgeHostname"`
-	// Deprecated: use "group_id" attribute instead
+	// Deprecated: The setting "group" has been deprecated.
 	Group      pulumi.StringOutput `pulumi:"group"`
 	GroupId    pulumi.StringOutput `pulumi:"groupId"`
 	IpBehavior pulumi.StringOutput `pulumi:"ipBehavior"`
-	// Deprecated: use "product_id" attribute instead
+	// Deprecated: The setting "product" has been deprecated.
 	Product   pulumi.StringOutput `pulumi:"product"`
 	ProductId pulumi.StringOutput `pulumi:"productId"`
 }
@@ -65,30 +65,30 @@ func GetEdgeHostName(ctx *pulumi.Context,
 // Input properties used for looking up and filtering EdgeHostName resources.
 type edgeHostNameState struct {
 	Certificate *int `pulumi:"certificate"`
-	// Deprecated: use "contract_id" attribute instead
+	// Deprecated: The setting "contract" has been deprecated.
 	Contract     *string `pulumi:"contract"`
 	ContractId   *string `pulumi:"contractId"`
 	EdgeHostname *string `pulumi:"edgeHostname"`
-	// Deprecated: use "group_id" attribute instead
+	// Deprecated: The setting "group" has been deprecated.
 	Group      *string `pulumi:"group"`
 	GroupId    *string `pulumi:"groupId"`
 	IpBehavior *string `pulumi:"ipBehavior"`
-	// Deprecated: use "product_id" attribute instead
+	// Deprecated: The setting "product" has been deprecated.
 	Product   *string `pulumi:"product"`
 	ProductId *string `pulumi:"productId"`
 }
 
 type EdgeHostNameState struct {
 	Certificate pulumi.IntPtrInput
-	// Deprecated: use "contract_id" attribute instead
+	// Deprecated: The setting "contract" has been deprecated.
 	Contract     pulumi.StringPtrInput
 	ContractId   pulumi.StringPtrInput
 	EdgeHostname pulumi.StringPtrInput
-	// Deprecated: use "group_id" attribute instead
+	// Deprecated: The setting "group" has been deprecated.
 	Group      pulumi.StringPtrInput
 	GroupId    pulumi.StringPtrInput
 	IpBehavior pulumi.StringPtrInput
-	// Deprecated: use "product_id" attribute instead
+	// Deprecated: The setting "product" has been deprecated.
 	Product   pulumi.StringPtrInput
 	ProductId pulumi.StringPtrInput
 }
@@ -99,15 +99,15 @@ func (EdgeHostNameState) ElementType() reflect.Type {
 
 type edgeHostNameArgs struct {
 	Certificate *int `pulumi:"certificate"`
-	// Deprecated: use "contract_id" attribute instead
+	// Deprecated: The setting "contract" has been deprecated.
 	Contract     *string `pulumi:"contract"`
 	ContractId   *string `pulumi:"contractId"`
 	EdgeHostname string  `pulumi:"edgeHostname"`
-	// Deprecated: use "group_id" attribute instead
+	// Deprecated: The setting "group" has been deprecated.
 	Group      *string `pulumi:"group"`
 	GroupId    *string `pulumi:"groupId"`
 	IpBehavior string  `pulumi:"ipBehavior"`
-	// Deprecated: use "product_id" attribute instead
+	// Deprecated: The setting "product" has been deprecated.
 	Product   *string `pulumi:"product"`
 	ProductId *string `pulumi:"productId"`
 }
@@ -115,15 +115,15 @@ type edgeHostNameArgs struct {
 // The set of arguments for constructing a EdgeHostName resource.
 type EdgeHostNameArgs struct {
 	Certificate pulumi.IntPtrInput
-	// Deprecated: use "contract_id" attribute instead
+	// Deprecated: The setting "contract" has been deprecated.
 	Contract     pulumi.StringPtrInput
 	ContractId   pulumi.StringPtrInput
 	EdgeHostname pulumi.StringInput
-	// Deprecated: use "group_id" attribute instead
+	// Deprecated: The setting "group" has been deprecated.
 	Group      pulumi.StringPtrInput
 	GroupId    pulumi.StringPtrInput
 	IpBehavior pulumi.StringInput
-	// Deprecated: use "product_id" attribute instead
+	// Deprecated: The setting "product" has been deprecated.
 	Product   pulumi.StringPtrInput
 	ProductId pulumi.StringPtrInput
 }

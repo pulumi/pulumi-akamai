@@ -6,11 +6,6 @@ import { input as inputs, output as outputs } from "../types";
 
 export interface DnsZoneTsigKey {
     algorithm: pulumi.Input<string>;
-    /**
-     * key name
-     * * `algorithm`
-     * * `secret`
-     */
     name: pulumi.Input<string>;
     secret: pulumi.Input<string>;
 }
@@ -46,10 +41,6 @@ export interface GtmCidrmapDefaultDatacenter {
 export interface GtmDatacenterDefaultLoadObject {
     loadObject?: pulumi.Input<string>;
     loadObjectPort?: pulumi.Input<number>;
-    /**
-     * * `city`
-     * * `cloneOf`
-     */
     loadServers?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -66,40 +57,15 @@ export interface GtmGeomapDefaultDatacenter {
 
 export interface GtmPropertyLivenessTest {
     answersRequired?: pulumi.Input<boolean>;
-    /**
-     * * `errorPenalty`
-     */
     disableNonstandardPortWarning?: pulumi.Input<boolean>;
     disabled?: pulumi.Input<boolean>;
     errorPenalty?: pulumi.Input<number>;
     httpError3xx?: pulumi.Input<boolean>;
     httpError4xx?: pulumi.Input<boolean>;
     httpError5xx?: pulumi.Input<boolean>;
-    /**
-     * `name`
-     * `value`
-     */
     httpHeaders?: pulumi.Input<pulumi.Input<inputs.GtmPropertyLivenessTestHttpHeader>[]>;
-    /**
-     * Liveness test name
-     * * `testInterval`
-     * * `testObjectProtocol`
-     * * `testTimeout`
-     */
     name: pulumi.Input<string>;
     peerCertificateVerification?: pulumi.Input<boolean>;
-    /**
-     * * `requestString`
-     * * `resourceType`
-     * * `responseString`
-     * * `sslClientCertificate`
-     * * `sslClientPrivateKey`
-     * * `testObject`
-     * * `testObjectPassword`
-     * * `testObjectPort`
-     * * `testObjectUsername`
-     * * `timeoutPenalty`
-     */
     recursionRequested?: pulumi.Input<boolean>;
     requestString?: pulumi.Input<string>;
     resourceType?: pulumi.Input<string>;
@@ -117,12 +83,6 @@ export interface GtmPropertyLivenessTest {
 }
 
 export interface GtmPropertyLivenessTestHttpHeader {
-    /**
-     * Liveness test name
-     * * `testInterval`
-     * * `testObjectProtocol`
-     * * `testTimeout`
-     */
     name?: pulumi.Input<string>;
     value?: pulumi.Input<string>;
 }
@@ -130,26 +90,13 @@ export interface GtmPropertyLivenessTestHttpHeader {
 export interface GtmPropertyStaticRrSet {
     rdatas?: pulumi.Input<pulumi.Input<string>[]>;
     ttl?: pulumi.Input<number>;
-    /**
-     * Property type  
-     * * `scoreAggregationType`
-     */
     type?: pulumi.Input<string>;
 }
 
 export interface GtmPropertyTrafficTarget {
     datacenterId?: pulumi.Input<number>;
-    /**
-     * * `weight`
-     */
     enabled?: pulumi.Input<boolean>;
     handoutCname?: pulumi.Input<string>;
-    /**
-     * Liveness test name
-     * * `testInterval`
-     * * `testObjectProtocol`
-     * * `testTimeout`
-     */
     name?: pulumi.Input<string>;
     servers?: pulumi.Input<pulumi.Input<string>[]>;
     weight?: pulumi.Input<number>;
@@ -160,18 +107,43 @@ export interface GtmResourceResourceInstance {
     loadObject?: pulumi.Input<string>;
     loadObjectPort?: pulumi.Input<number>;
     loadServers?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * * `hostHeader`
-     * * `leastSquaresDecay`
-     * * `upperBound`
-     * * `description`
-     * * `leaderString`
-     * * `constrainedProperty`
-     * * `loadImbalancePercent`
-     * * `maxUMultiplicativeIncrement`
-     * * `decayRate`
-     */
     useDefaultLoadObject?: pulumi.Input<boolean>;
+}
+
+export interface PropertyActivationRuleError {
+    behaviorName?: pulumi.Input<string>;
+    detail?: pulumi.Input<string>;
+    errorLocation?: pulumi.Input<string>;
+    instance?: pulumi.Input<string>;
+    statusCode?: pulumi.Input<number>;
+    title?: pulumi.Input<string>;
+    type?: pulumi.Input<string>;
+}
+
+export interface PropertyActivationRuleWarning {
+    behaviorName?: pulumi.Input<string>;
+    detail?: pulumi.Input<string>;
+    errorLocation?: pulumi.Input<string>;
+    instance?: pulumi.Input<string>;
+    statusCode?: pulumi.Input<number>;
+    title?: pulumi.Input<string>;
+    type?: pulumi.Input<string>;
+}
+
+export interface PropertyHostname {
+    certProvisioningType: pulumi.Input<string>;
+    certStatuses?: pulumi.Input<pulumi.Input<inputs.PropertyHostnameCertStatus>[]>;
+    cnameFrom: pulumi.Input<string>;
+    cnameTo: pulumi.Input<string>;
+    cnameType?: pulumi.Input<string>;
+    edgeHostnameId?: pulumi.Input<string>;
+}
+
+export interface PropertyHostnameCertStatus {
+    hostname?: pulumi.Input<string>;
+    productionStatus?: pulumi.Input<string>;
+    stagingStatus?: pulumi.Input<string>;
+    target?: pulumi.Input<string>;
 }
 
 export interface PropertyOrigin {
@@ -271,6 +243,42 @@ export namespace edgedns {
 }
 
 export namespace properties {
+    export interface PropertyActivationRuleError {
+        behaviorName?: pulumi.Input<string>;
+        detail?: pulumi.Input<string>;
+        errorLocation?: pulumi.Input<string>;
+        instance?: pulumi.Input<string>;
+        statusCode?: pulumi.Input<number>;
+        title?: pulumi.Input<string>;
+        type?: pulumi.Input<string>;
+    }
+
+    export interface PropertyActivationRuleWarning {
+        behaviorName?: pulumi.Input<string>;
+        detail?: pulumi.Input<string>;
+        errorLocation?: pulumi.Input<string>;
+        instance?: pulumi.Input<string>;
+        statusCode?: pulumi.Input<number>;
+        title?: pulumi.Input<string>;
+        type?: pulumi.Input<string>;
+    }
+
+    export interface PropertyHostname {
+        certProvisioningType: pulumi.Input<string>;
+        certStatuses?: pulumi.Input<pulumi.Input<inputs.properties.PropertyHostnameCertStatus>[]>;
+        cnameFrom: pulumi.Input<string>;
+        cnameTo: pulumi.Input<string>;
+        cnameType?: pulumi.Input<string>;
+        edgeHostnameId?: pulumi.Input<string>;
+    }
+
+    export interface PropertyHostnameCertStatus {
+        hostname?: pulumi.Input<string>;
+        productionStatus?: pulumi.Input<string>;
+        stagingStatus?: pulumi.Input<string>;
+        target?: pulumi.Input<string>;
+    }
+
     export interface PropertyOrigin {
         cacheKeyHostname?: pulumi.Input<string>;
         compress?: pulumi.Input<boolean>;

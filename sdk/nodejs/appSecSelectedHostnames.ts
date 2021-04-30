@@ -4,6 +4,28 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * The `akamai.AppSecSelectedHostnames` resource allows you to set the list of hostnames protected under a given security configuration version.
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Akamai Tools",
+ * });
+ * const appsecselectedhostnames = new akamai.AppSecSelectedHostnames("appsecselectedhostnames", {
+ *     configId: configuration.then(configuration => configuration.configId),
+ *     version: configuration.then(configuration => configuration.latestVersion),
+ *     hostnames: ["example.com"],
+ *     mode: "APPEND",
+ * });
+ * ```
+ */
 export class AppSecSelectedHostnames extends pulumi.CustomResource {
     /**
      * Get an existing AppSecSelectedHostnames resource's state with the given name, ID, and optional extra
@@ -32,9 +54,21 @@ export class AppSecSelectedHostnames extends pulumi.CustomResource {
         return obj['__pulumiType'] === AppSecSelectedHostnames.__pulumiType;
     }
 
+    /**
+     * The ID of the security configuration to use.
+     */
     public readonly configId!: pulumi.Output<number>;
+    /**
+     * The list of hostnames to be applied, added or removed.
+     */
     public readonly hostnames!: pulumi.Output<string[]>;
+    /**
+     * A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
+     */
     public readonly mode!: pulumi.Output<string>;
+    /**
+     * The version number of the security configuration to use.
+     */
     public readonly version!: pulumi.Output<number>;
 
     /**
@@ -84,9 +118,21 @@ export class AppSecSelectedHostnames extends pulumi.CustomResource {
  * Input properties used for looking up and filtering AppSecSelectedHostnames resources.
  */
 export interface AppSecSelectedHostnamesState {
+    /**
+     * The ID of the security configuration to use.
+     */
     readonly configId?: pulumi.Input<number>;
+    /**
+     * The list of hostnames to be applied, added or removed.
+     */
     readonly hostnames?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
+     */
     readonly mode?: pulumi.Input<string>;
+    /**
+     * The version number of the security configuration to use.
+     */
     readonly version?: pulumi.Input<number>;
 }
 
@@ -94,8 +140,20 @@ export interface AppSecSelectedHostnamesState {
  * The set of arguments for constructing a AppSecSelectedHostnames resource.
  */
 export interface AppSecSelectedHostnamesArgs {
+    /**
+     * The ID of the security configuration to use.
+     */
     readonly configId: pulumi.Input<number>;
+    /**
+     * The list of hostnames to be applied, added or removed.
+     */
     readonly hostnames: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
+     */
     readonly mode: pulumi.Input<string>;
+    /**
+     * The version number of the security configuration to use.
+     */
     readonly version: pulumi.Input<number>;
 }

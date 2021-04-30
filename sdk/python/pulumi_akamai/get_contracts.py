@@ -54,7 +54,28 @@ class AwaitableGetContractsResult(GetContractsResult):
 
 def get_contracts(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetContractsResult:
     """
-    Use this data source to access information about an existing resource.
+    Use the `getContracts` data source to list contracts associated with the [EdgeGrid API client token](https://developer.akamai.com/getting-started/edgegrid) you're using.
+
+    ## Example Usage
+
+    Return contracts associated with the EdgeGrid API client token currently used for authentication:
+
+    ```python
+    import pulumi
+
+    pulumi.export("propertyMatch", data["akamai_contracts"]["my-example"])
+    ```
+    ## Argument reference
+
+    There are no arguments available for this data source.
+
+    ## Attributes reference
+
+    This data source returns these attributes:
+
+    * `contracts` - A list of supported contracts, with the following properties:
+      * `contract_id` - The contract's unique ID, including the `ctr_` prefix.
+      * `contract_type_name` - The type of contract, either `DIRECT_CUSTOMER`, `INDIRECT_CUSTOMER`, `PARENT_CUSTOMER`, `REFERRAL_PARTNER`, `TIER_1_RESELLER`, `VAR_CUSTOMER`, `VALUE_ADDED_RESELLER`, `PARTNER`, `PORTAL_PARTNER`, `STREAMING_RESELLER`, `AKAMAI_INTERNAL`, or `UNKNOWN`.
     """
     __args__ = dict()
     if opts is None:

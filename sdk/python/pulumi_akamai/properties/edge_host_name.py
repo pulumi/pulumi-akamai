@@ -30,22 +30,22 @@ class EdgeHostNameArgs:
         if certificate is not None:
             pulumi.set(__self__, "certificate", certificate)
         if contract is not None:
-            warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: use \"contract_id\" attribute instead""")
+            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
         if contract is not None:
             pulumi.set(__self__, "contract", contract)
         if contract_id is not None:
             pulumi.set(__self__, "contract_id", contract_id)
         if group is not None:
-            warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: use \"group_id\" attribute instead""")
+            warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
         if group is not None:
             pulumi.set(__self__, "group", group)
         if group_id is not None:
             pulumi.set(__self__, "group_id", group_id)
         if product is not None:
-            warnings.warn("""use \"product_id\" attribute instead""", DeprecationWarning)
-            pulumi.log.warn("""product is deprecated: use \"product_id\" attribute instead""")
+            warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
         if product is not None:
             pulumi.set(__self__, "product", product)
         if product_id is not None:
@@ -151,8 +151,8 @@ class _EdgeHostNameState:
         if certificate is not None:
             pulumi.set(__self__, "certificate", certificate)
         if contract is not None:
-            warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: use \"contract_id\" attribute instead""")
+            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
         if contract is not None:
             pulumi.set(__self__, "contract", contract)
         if contract_id is not None:
@@ -160,8 +160,8 @@ class _EdgeHostNameState:
         if edge_hostname is not None:
             pulumi.set(__self__, "edge_hostname", edge_hostname)
         if group is not None:
-            warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: use \"group_id\" attribute instead""")
+            warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
         if group is not None:
             pulumi.set(__self__, "group", group)
         if group_id is not None:
@@ -169,8 +169,8 @@ class _EdgeHostNameState:
         if ip_behavior is not None:
             pulumi.set(__self__, "ip_behavior", ip_behavior)
         if product is not None:
-            warnings.warn("""use \"product_id\" attribute instead""", DeprecationWarning)
-            pulumi.log.warn("""product is deprecated: use \"product_id\" attribute instead""")
+            warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
         if product is not None:
             pulumi.set(__self__, "product", product)
         if product_id is not None:
@@ -330,24 +330,24 @@ class EdgeHostName(pulumi.CustomResource):
 
             __props__.__dict__["certificate"] = certificate
             if contract is not None and not opts.urn:
-                warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("""contract is deprecated: use \"contract_id\" attribute instead""")
+                warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
             __props__.__dict__["contract"] = contract
             __props__.__dict__["contract_id"] = contract_id
             if edge_hostname is None and not opts.urn:
                 raise TypeError("Missing required property 'edge_hostname'")
             __props__.__dict__["edge_hostname"] = edge_hostname
             if group is not None and not opts.urn:
-                warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("""group is deprecated: use \"group_id\" attribute instead""")
+                warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
             __props__.__dict__["group"] = group
             __props__.__dict__["group_id"] = group_id
             if ip_behavior is None and not opts.urn:
                 raise TypeError("Missing required property 'ip_behavior'")
             __props__.__dict__["ip_behavior"] = ip_behavior
             if product is not None and not opts.urn:
-                warnings.warn("""use \"product_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("""product is deprecated: use \"product_id\" attribute instead""")
+                warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
             __props__.__dict__["product"] = product
             __props__.__dict__["product_id"] = product_id
         super(EdgeHostName, __self__).__init__(

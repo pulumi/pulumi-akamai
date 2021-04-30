@@ -14,16 +14,16 @@ __all__ = ['AppSecMatchTargetArgs', 'AppSecMatchTarget']
 class AppSecMatchTargetArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[int],
-                 json: pulumi.Input[str],
+                 match_target: pulumi.Input[str],
                  version: pulumi.Input[int]):
         """
         The set of arguments for constructing a AppSecMatchTarget resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] json: The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
+        :param pulumi.Input[str] match_target: The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
         :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "json", json)
+        pulumi.set(__self__, "match_target", match_target)
         pulumi.set(__self__, "version", version)
 
     @property
@@ -39,16 +39,16 @@ class AppSecMatchTargetArgs:
         pulumi.set(self, "config_id", value)
 
     @property
-    @pulumi.getter
-    def json(self) -> pulumi.Input[str]:
+    @pulumi.getter(name="matchTarget")
+    def match_target(self) -> pulumi.Input[str]:
         """
         The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
         """
-        return pulumi.get(self, "json")
+        return pulumi.get(self, "match_target")
 
-    @json.setter
-    def json(self, value: pulumi.Input[str]):
-        pulumi.set(self, "json", value)
+    @match_target.setter
+    def match_target(self, value: pulumi.Input[str]):
+        pulumi.set(self, "match_target", value)
 
     @property
     @pulumi.getter
@@ -67,20 +67,20 @@ class AppSecMatchTargetArgs:
 class _AppSecMatchTargetState:
     def __init__(__self__, *,
                  config_id: Optional[pulumi.Input[int]] = None,
-                 json: Optional[pulumi.Input[str]] = None,
+                 match_target: Optional[pulumi.Input[str]] = None,
                  match_target_id: Optional[pulumi.Input[int]] = None,
                  version: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering AppSecMatchTarget resources.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] json: The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
+        :param pulumi.Input[str] match_target: The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
         :param pulumi.Input[int] match_target_id: The ID of the match target.
         :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
-        if json is not None:
-            pulumi.set(__self__, "json", json)
+        if match_target is not None:
+            pulumi.set(__self__, "match_target", match_target)
         if match_target_id is not None:
             pulumi.set(__self__, "match_target_id", match_target_id)
         if version is not None:
@@ -99,16 +99,16 @@ class _AppSecMatchTargetState:
         pulumi.set(self, "config_id", value)
 
     @property
-    @pulumi.getter
-    def json(self) -> Optional[pulumi.Input[str]]:
+    @pulumi.getter(name="matchTarget")
+    def match_target(self) -> Optional[pulumi.Input[str]]:
         """
         The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
         """
-        return pulumi.get(self, "json")
+        return pulumi.get(self, "match_target")
 
-    @json.setter
-    def json(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "json", value)
+    @match_target.setter
+    def match_target(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "match_target", value)
 
     @property
     @pulumi.getter(name="matchTargetId")
@@ -141,7 +141,7 @@ class AppSecMatchTarget(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
-                 json: Optional[pulumi.Input[str]] = None,
+                 match_target: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
@@ -159,13 +159,13 @@ class AppSecMatchTarget(pulumi.CustomResource):
         match_target = akamai.AppSecMatchTarget("matchTarget",
             config_id=configuration.config_id,
             version=configuration.latest_version,
-            json=(lambda path: open(path).read())(f"{path['module']}/match_targets.json"))
+            match_target=(lambda path: open(path).read())(f"{path['module']}/match_targets.json"))
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] json: The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
+        :param pulumi.Input[str] match_target: The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
         :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         ...
@@ -189,7 +189,7 @@ class AppSecMatchTarget(pulumi.CustomResource):
         match_target = akamai.AppSecMatchTarget("matchTarget",
             config_id=configuration.config_id,
             version=configuration.latest_version,
-            json=(lambda path: open(path).read())(f"{path['module']}/match_targets.json"))
+            match_target=(lambda path: open(path).read())(f"{path['module']}/match_targets.json"))
         ```
 
         :param str resource_name: The name of the resource.
@@ -208,7 +208,7 @@ class AppSecMatchTarget(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
-                 json: Optional[pulumi.Input[str]] = None,
+                 match_target: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         if opts is None:
@@ -225,9 +225,9 @@ class AppSecMatchTarget(pulumi.CustomResource):
             if config_id is None and not opts.urn:
                 raise TypeError("Missing required property 'config_id'")
             __props__.__dict__["config_id"] = config_id
-            if json is None and not opts.urn:
-                raise TypeError("Missing required property 'json'")
-            __props__.__dict__["json"] = json
+            if match_target is None and not opts.urn:
+                raise TypeError("Missing required property 'match_target'")
+            __props__.__dict__["match_target"] = match_target
             if version is None and not opts.urn:
                 raise TypeError("Missing required property 'version'")
             __props__.__dict__["version"] = version
@@ -243,7 +243,7 @@ class AppSecMatchTarget(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             config_id: Optional[pulumi.Input[int]] = None,
-            json: Optional[pulumi.Input[str]] = None,
+            match_target: Optional[pulumi.Input[str]] = None,
             match_target_id: Optional[pulumi.Input[int]] = None,
             version: Optional[pulumi.Input[int]] = None) -> 'AppSecMatchTarget':
         """
@@ -254,7 +254,7 @@ class AppSecMatchTarget(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] json: The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
+        :param pulumi.Input[str] match_target: The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
         :param pulumi.Input[int] match_target_id: The ID of the match target.
         :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
@@ -263,7 +263,7 @@ class AppSecMatchTarget(pulumi.CustomResource):
         __props__ = _AppSecMatchTargetState.__new__(_AppSecMatchTargetState)
 
         __props__.__dict__["config_id"] = config_id
-        __props__.__dict__["json"] = json
+        __props__.__dict__["match_target"] = match_target
         __props__.__dict__["match_target_id"] = match_target_id
         __props__.__dict__["version"] = version
         return AppSecMatchTarget(resource_name, opts=opts, __props__=__props__)
@@ -277,12 +277,12 @@ class AppSecMatchTarget(pulumi.CustomResource):
         return pulumi.get(self, "config_id")
 
     @property
-    @pulumi.getter
-    def json(self) -> pulumi.Output[str]:
+    @pulumi.getter(name="matchTarget")
+    def match_target(self) -> pulumi.Output[str]:
         """
         The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
         """
-        return pulumi.get(self, "json")
+        return pulumi.get(self, "match_target")
 
     @property
     @pulumi.getter(name="matchTargetId")

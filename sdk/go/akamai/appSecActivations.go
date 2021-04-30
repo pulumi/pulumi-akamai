@@ -28,7 +28,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := "Akamai Tools"
-// 		configuration, err := akamai.GetAppSecConfiguration(ctx, &akamai.GetAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
@@ -50,29 +50,23 @@ import (
 // 	})
 // }
 // ```
-//
-// * `configId` - (Required) The ID of the security configuration to use.
-//
-// * `version` - (Required) The version number of the security configuration to use.
-//
-// * `notificationEmails` - (Required) A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
-//
-// * `network` - The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
-//
-// * `notes` - An optional text note describing this operation.
-//
-// * `activate` - A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
 type AppSecActivations struct {
 	pulumi.CustomResourceState
 
-	Activate           pulumi.BoolPtrOutput     `pulumi:"activate"`
-	ConfigId           pulumi.IntOutput         `pulumi:"configId"`
-	Network            pulumi.StringPtrOutput   `pulumi:"network"`
-	Notes              pulumi.StringPtrOutput   `pulumi:"notes"`
+	// A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+	Activate pulumi.BoolPtrOutput `pulumi:"activate"`
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntOutput `pulumi:"configId"`
+	// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+	Network pulumi.StringPtrOutput `pulumi:"network"`
+	// An optional text note describing this operation.
+	Notes pulumi.StringPtrOutput `pulumi:"notes"`
+	// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
 	NotificationEmails pulumi.StringArrayOutput `pulumi:"notificationEmails"`
 	// The status of the operation. The following values are may be returned:
-	Status  pulumi.StringOutput `pulumi:"status"`
-	Version pulumi.IntOutput    `pulumi:"version"`
+	Status pulumi.StringOutput `pulumi:"status"`
+	// The version number of the security configuration to use.
+	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecActivations registers a new resource with the given unique name, arguments, and options.
@@ -113,24 +107,36 @@ func GetAppSecActivations(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecActivations resources.
 type appSecActivationsState struct {
-	Activate           *bool    `pulumi:"activate"`
-	ConfigId           *int     `pulumi:"configId"`
-	Network            *string  `pulumi:"network"`
-	Notes              *string  `pulumi:"notes"`
+	// A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+	Activate *bool `pulumi:"activate"`
+	// The ID of the security configuration to use.
+	ConfigId *int `pulumi:"configId"`
+	// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+	Network *string `pulumi:"network"`
+	// An optional text note describing this operation.
+	Notes *string `pulumi:"notes"`
+	// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
 	NotificationEmails []string `pulumi:"notificationEmails"`
 	// The status of the operation. The following values are may be returned:
-	Status  *string `pulumi:"status"`
-	Version *int    `pulumi:"version"`
+	Status *string `pulumi:"status"`
+	// The version number of the security configuration to use.
+	Version *int `pulumi:"version"`
 }
 
 type AppSecActivationsState struct {
-	Activate           pulumi.BoolPtrInput
-	ConfigId           pulumi.IntPtrInput
-	Network            pulumi.StringPtrInput
-	Notes              pulumi.StringPtrInput
+	// A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+	Activate pulumi.BoolPtrInput
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntPtrInput
+	// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+	Network pulumi.StringPtrInput
+	// An optional text note describing this operation.
+	Notes pulumi.StringPtrInput
+	// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
 	NotificationEmails pulumi.StringArrayInput
 	// The status of the operation. The following values are may be returned:
-	Status  pulumi.StringPtrInput
+	Status pulumi.StringPtrInput
+	// The version number of the security configuration to use.
 	Version pulumi.IntPtrInput
 }
 
@@ -139,22 +145,34 @@ func (AppSecActivationsState) ElementType() reflect.Type {
 }
 
 type appSecActivationsArgs struct {
-	Activate           *bool    `pulumi:"activate"`
-	ConfigId           int      `pulumi:"configId"`
-	Network            *string  `pulumi:"network"`
-	Notes              *string  `pulumi:"notes"`
+	// A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+	Activate *bool `pulumi:"activate"`
+	// The ID of the security configuration to use.
+	ConfigId int `pulumi:"configId"`
+	// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+	Network *string `pulumi:"network"`
+	// An optional text note describing this operation.
+	Notes *string `pulumi:"notes"`
+	// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
 	NotificationEmails []string `pulumi:"notificationEmails"`
-	Version            int      `pulumi:"version"`
+	// The version number of the security configuration to use.
+	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecActivations resource.
 type AppSecActivationsArgs struct {
-	Activate           pulumi.BoolPtrInput
-	ConfigId           pulumi.IntInput
-	Network            pulumi.StringPtrInput
-	Notes              pulumi.StringPtrInput
+	// A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+	Activate pulumi.BoolPtrInput
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput
+	// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+	Network pulumi.StringPtrInput
+	// An optional text note describing this operation.
+	Notes pulumi.StringPtrInput
+	// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
 	NotificationEmails pulumi.StringArrayInput
-	Version            pulumi.IntInput
+	// The version number of the security configuration to use.
+	Version pulumi.IntInput
 }
 
 func (AppSecActivationsArgs) ElementType() reflect.Type {

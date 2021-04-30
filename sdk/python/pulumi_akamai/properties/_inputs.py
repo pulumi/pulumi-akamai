@@ -9,12 +9,321 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
+    'PropertyActivationRuleErrorArgs',
+    'PropertyActivationRuleWarningArgs',
+    'PropertyHostnameArgs',
+    'PropertyHostnameCertStatusArgs',
     'PropertyOriginArgs',
     'PropertyRuleErrorArgs',
     'PropertyRuleWarningArgs',
     'PropertyVariablesVariableArgs',
     'PropertyVariablesVariableVariableArgs',
 ]
+
+@pulumi.input_type
+class PropertyActivationRuleErrorArgs:
+    def __init__(__self__, *,
+                 behavior_name: Optional[pulumi.Input[str]] = None,
+                 detail: Optional[pulumi.Input[str]] = None,
+                 error_location: Optional[pulumi.Input[str]] = None,
+                 instance: Optional[pulumi.Input[str]] = None,
+                 status_code: Optional[pulumi.Input[int]] = None,
+                 title: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        if behavior_name is not None:
+            pulumi.set(__self__, "behavior_name", behavior_name)
+        if detail is not None:
+            pulumi.set(__self__, "detail", detail)
+        if error_location is not None:
+            pulumi.set(__self__, "error_location", error_location)
+        if instance is not None:
+            pulumi.set(__self__, "instance", instance)
+        if status_code is not None:
+            pulumi.set(__self__, "status_code", status_code)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="behaviorName")
+    def behavior_name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "behavior_name")
+
+    @behavior_name.setter
+    def behavior_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "behavior_name", value)
+
+    @property
+    @pulumi.getter
+    def detail(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "detail")
+
+    @detail.setter
+    def detail(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detail", value)
+
+    @property
+    @pulumi.getter(name="errorLocation")
+    def error_location(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "error_location")
+
+    @error_location.setter
+    def error_location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "error_location", value)
+
+    @property
+    @pulumi.getter
+    def instance(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "instance")
+
+    @instance.setter
+    def instance(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance", value)
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "status_code")
+
+    @status_code.setter
+    def status_code(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "status_code", value)
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "title")
+
+    @title.setter
+    def title(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "title", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class PropertyActivationRuleWarningArgs:
+    def __init__(__self__, *,
+                 behavior_name: Optional[pulumi.Input[str]] = None,
+                 detail: Optional[pulumi.Input[str]] = None,
+                 error_location: Optional[pulumi.Input[str]] = None,
+                 instance: Optional[pulumi.Input[str]] = None,
+                 status_code: Optional[pulumi.Input[int]] = None,
+                 title: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        if behavior_name is not None:
+            pulumi.set(__self__, "behavior_name", behavior_name)
+        if detail is not None:
+            pulumi.set(__self__, "detail", detail)
+        if error_location is not None:
+            pulumi.set(__self__, "error_location", error_location)
+        if instance is not None:
+            pulumi.set(__self__, "instance", instance)
+        if status_code is not None:
+            pulumi.set(__self__, "status_code", status_code)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="behaviorName")
+    def behavior_name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "behavior_name")
+
+    @behavior_name.setter
+    def behavior_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "behavior_name", value)
+
+    @property
+    @pulumi.getter
+    def detail(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "detail")
+
+    @detail.setter
+    def detail(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detail", value)
+
+    @property
+    @pulumi.getter(name="errorLocation")
+    def error_location(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "error_location")
+
+    @error_location.setter
+    def error_location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "error_location", value)
+
+    @property
+    @pulumi.getter
+    def instance(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "instance")
+
+    @instance.setter
+    def instance(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance", value)
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "status_code")
+
+    @status_code.setter
+    def status_code(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "status_code", value)
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "title")
+
+    @title.setter
+    def title(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "title", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class PropertyHostnameArgs:
+    def __init__(__self__, *,
+                 cert_provisioning_type: pulumi.Input[str],
+                 cname_from: pulumi.Input[str],
+                 cname_to: pulumi.Input[str],
+                 cert_statuses: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusArgs']]]] = None,
+                 cname_type: Optional[pulumi.Input[str]] = None,
+                 edge_hostname_id: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "cert_provisioning_type", cert_provisioning_type)
+        pulumi.set(__self__, "cname_from", cname_from)
+        pulumi.set(__self__, "cname_to", cname_to)
+        if cert_statuses is not None:
+            pulumi.set(__self__, "cert_statuses", cert_statuses)
+        if cname_type is not None:
+            pulumi.set(__self__, "cname_type", cname_type)
+        if edge_hostname_id is not None:
+            pulumi.set(__self__, "edge_hostname_id", edge_hostname_id)
+
+    @property
+    @pulumi.getter(name="certProvisioningType")
+    def cert_provisioning_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "cert_provisioning_type")
+
+    @cert_provisioning_type.setter
+    def cert_provisioning_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "cert_provisioning_type", value)
+
+    @property
+    @pulumi.getter(name="cnameFrom")
+    def cname_from(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "cname_from")
+
+    @cname_from.setter
+    def cname_from(self, value: pulumi.Input[str]):
+        pulumi.set(self, "cname_from", value)
+
+    @property
+    @pulumi.getter(name="cnameTo")
+    def cname_to(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "cname_to")
+
+    @cname_to.setter
+    def cname_to(self, value: pulumi.Input[str]):
+        pulumi.set(self, "cname_to", value)
+
+    @property
+    @pulumi.getter(name="certStatuses")
+    def cert_statuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusArgs']]]]:
+        return pulumi.get(self, "cert_statuses")
+
+    @cert_statuses.setter
+    def cert_statuses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusArgs']]]]):
+        pulumi.set(self, "cert_statuses", value)
+
+    @property
+    @pulumi.getter(name="cnameType")
+    def cname_type(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "cname_type")
+
+    @cname_type.setter
+    def cname_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cname_type", value)
+
+    @property
+    @pulumi.getter(name="edgeHostnameId")
+    def edge_hostname_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "edge_hostname_id")
+
+    @edge_hostname_id.setter
+    def edge_hostname_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "edge_hostname_id", value)
+
+
+@pulumi.input_type
+class PropertyHostnameCertStatusArgs:
+    def __init__(__self__, *,
+                 hostname: Optional[pulumi.Input[str]] = None,
+                 production_status: Optional[pulumi.Input[str]] = None,
+                 staging_status: Optional[pulumi.Input[str]] = None,
+                 target: Optional[pulumi.Input[str]] = None):
+        if hostname is not None:
+            pulumi.set(__self__, "hostname", hostname)
+        if production_status is not None:
+            pulumi.set(__self__, "production_status", production_status)
+        if staging_status is not None:
+            pulumi.set(__self__, "staging_status", staging_status)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "hostname")
+
+    @hostname.setter
+    def hostname(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "hostname", value)
+
+    @property
+    @pulumi.getter(name="productionStatus")
+    def production_status(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "production_status")
+
+    @production_status.setter
+    def production_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "production_status", value)
+
+    @property
+    @pulumi.getter(name="stagingStatus")
+    def staging_status(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "staging_status")
+
+    @staging_status.setter
+    def staging_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "staging_status", value)
+
+    @property
+    @pulumi.getter
+    def target(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "target")
+
+    @target.setter
+    def target(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "target", value)
+
 
 @pulumi.input_type
 class PropertyOriginArgs:

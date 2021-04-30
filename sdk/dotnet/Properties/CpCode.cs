@@ -31,6 +31,9 @@ namespace Pulumi.Akamai.Properties
         [Output("product")]
         public Output<string> Product { get; private set; } = null!;
 
+        [Output("productId")]
+        public Output<string> ProductId { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a CpCode resource with the given unique name, arguments, and options.
@@ -39,7 +42,7 @@ namespace Pulumi.Akamai.Properties
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public CpCode(string name, CpCodeArgs args, CustomResourceOptions? options = null)
+        public CpCode(string name, CpCodeArgs? args = null, CustomResourceOptions? options = null)
             : base("akamai:properties/cpCode:CpCode", name, args ?? new CpCodeArgs(), MakeResourceOptions(options, ""))
         {
         }
@@ -92,8 +95,11 @@ namespace Pulumi.Akamai.Properties
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        [Input("product", required: true)]
-        public Input<string> Product { get; set; } = null!;
+        [Input("product")]
+        public Input<string>? Product { get; set; }
+
+        [Input("productId")]
+        public Input<string>? ProductId { get; set; }
 
         public CpCodeArgs()
         {
@@ -119,6 +125,9 @@ namespace Pulumi.Akamai.Properties
 
         [Input("product")]
         public Input<string>? Product { get; set; }
+
+        [Input("productId")]
+        public Input<string>? ProductId { get; set; }
 
         public CpCodeState()
         {

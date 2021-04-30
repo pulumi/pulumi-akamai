@@ -7,6 +7,18 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Use the `getContract` data source to find a contract ID.
+//
+// ## Argument reference
+//
+// This data source requires one of these group arguments to return contract information:
+//   * `groupName` - The name of the group containing the contract.
+//   * `groupId` - The unique ID of the group containing the contract, including the  `grp_` prefix.
+//   * `group` - (Deprecated) Either the group ID or the group name that includes the contract. You can't use this argument with `groupId` and `groupName`.
+//
+// ## Attributes reference
+//
+// * `id` - The contract's unique ID, including the `ctr_` prefix.
 func GetContract(ctx *pulumi.Context, args *GetContractArgs, opts ...pulumi.InvokeOption) (*GetContractResult, error) {
 	var rv GetContractResult
 	err := ctx.Invoke("akamai:index/getContract:getContract", args, &rv, opts...)

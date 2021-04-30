@@ -62,6 +62,9 @@ type DnsRecord struct {
 	Signer              pulumi.StringPtrOutput   `pulumi:"signer"`
 	Software            pulumi.StringPtrOutput   `pulumi:"software"`
 	Subtype             pulumi.IntPtrOutput      `pulumi:"subtype"`
+	SvcParams           pulumi.StringPtrOutput   `pulumi:"svcParams"`
+	SvcPriority         pulumi.IntPtrOutput      `pulumi:"svcPriority"`
+	TargetName          pulumi.StringPtrOutput   `pulumi:"targetName"`
 	Targets             pulumi.StringArrayOutput `pulumi:"targets"`
 	Ttl                 pulumi.IntOutput         `pulumi:"ttl"`
 	Txt                 pulumi.StringPtrOutput   `pulumi:"txt"`
@@ -159,6 +162,9 @@ type dnsRecordState struct {
 	Signer              *string  `pulumi:"signer"`
 	Software            *string  `pulumi:"software"`
 	Subtype             *int     `pulumi:"subtype"`
+	SvcParams           *string  `pulumi:"svcParams"`
+	SvcPriority         *int     `pulumi:"svcPriority"`
+	TargetName          *string  `pulumi:"targetName"`
 	Targets             []string `pulumi:"targets"`
 	Ttl                 *int     `pulumi:"ttl"`
 	Txt                 *string  `pulumi:"txt"`
@@ -219,6 +225,9 @@ type DnsRecordState struct {
 	Signer              pulumi.StringPtrInput
 	Software            pulumi.StringPtrInput
 	Subtype             pulumi.IntPtrInput
+	SvcParams           pulumi.StringPtrInput
+	SvcPriority         pulumi.IntPtrInput
+	TargetName          pulumi.StringPtrInput
 	Targets             pulumi.StringArrayInput
 	Ttl                 pulumi.IntPtrInput
 	Txt                 pulumi.StringPtrInput
@@ -279,6 +288,9 @@ type dnsRecordArgs struct {
 	Signer              *string  `pulumi:"signer"`
 	Software            *string  `pulumi:"software"`
 	Subtype             *int     `pulumi:"subtype"`
+	SvcParams           *string  `pulumi:"svcParams"`
+	SvcPriority         *int     `pulumi:"svcPriority"`
+	TargetName          *string  `pulumi:"targetName"`
 	Targets             []string `pulumi:"targets"`
 	Ttl                 int      `pulumi:"ttl"`
 	Txt                 *string  `pulumi:"txt"`
@@ -336,6 +348,9 @@ type DnsRecordArgs struct {
 	Signer              pulumi.StringPtrInput
 	Software            pulumi.StringPtrInput
 	Subtype             pulumi.IntPtrInput
+	SvcParams           pulumi.StringPtrInput
+	SvcPriority         pulumi.IntPtrInput
+	TargetName          pulumi.StringPtrInput
 	Targets             pulumi.StringArrayInput
 	Ttl                 pulumi.IntInput
 	Txt                 pulumi.StringPtrInput

@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The `DnsZone` provides the resource for configuring a DNS zone to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
+// Use the `DnsZone` resource to configure a DNS zone that integrates with your existing DNS infrastructure.
 //
 // ## Example Usage
 //
@@ -46,33 +46,41 @@ import (
 // 	})
 // }
 // ```
+// ## Argument reference
+//
+// This resource supports these arguments:
+//
+// * `comment` - (Required) A descriptive comment.
+// * `contract` - (Required) The contract ID.
+// * `group` - (Required) The currently selected group ID.
+// * `zone` - (Required) The domain zone, encapsulating any nested subdomains.
+// * `type` - (Required) Whether the zone is `primary`, `secondary`, or `alias`.
+// * `masters` - (Required for `secondary` zones) The names or IP addresses of the nameservers that the zone data should be retrieved from.
+// * `target` - (Required for `alias` zones) The name of the zone whose configuration this zone will copy.
+// * `signAndServe` - (Optional) Whether DNSSEC Sign and Serve is enabled.
+// * `signAndServeAlgorithm` - (Optional) The algorithm used by Sign and Serve.
+// * `tsigKey` - (Optional) The TSIG Key used in secure zone transfers. If used, requires these arguments:
+//     * `name` - The key name.
+//     * `algorithm` - The hashing algorithm.
+//     * `secret` - String known between transfer endpoints.
+// * `endCustomerId` - (Optional) A free form identifier for the zone.
 type DnsZone struct {
 	pulumi.CustomResourceState
 
-	ActivationState pulumi.StringOutput `pulumi:"activationState"`
-	AliasCount      pulumi.IntOutput    `pulumi:"aliasCount"`
-	// A descriptive comment.
-	Comment pulumi.StringPtrOutput `pulumi:"comment"`
-	// The contract ID.
-	Contract      pulumi.StringOutput    `pulumi:"contract"`
-	EndCustomerId pulumi.StringPtrOutput `pulumi:"endCustomerId"`
-	// The currently selected group ID.
-	Group pulumi.StringOutput `pulumi:"group"`
-	// The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
-	Masters pulumi.StringArrayOutput `pulumi:"masters"`
-	// Whether DNSSEC Sign&Serve is enabled.
-	SignAndServe pulumi.BoolPtrOutput `pulumi:"signAndServe"`
-	// Algorithm used by Sign&Serve.
-	SignAndServeAlgorithm pulumi.StringPtrOutput `pulumi:"signAndServeAlgorithm"`
-	// The name of the zone whose configuration this zone will copy.
-	Target pulumi.StringPtrOutput `pulumi:"target"`
-	// TSIG Key used in secure zone transfers
-	TsigKey DnsZoneTsigKeyPtrOutput `pulumi:"tsigKey"`
-	// Whether the zone is `primary` or `secondary`.
-	Type      pulumi.StringOutput `pulumi:"type"`
-	VersionId pulumi.StringOutput `pulumi:"versionId"`
-	// Domain zone, encapsulating any nested subdomains.
-	Zone pulumi.StringOutput `pulumi:"zone"`
+	ActivationState       pulumi.StringOutput      `pulumi:"activationState"`
+	AliasCount            pulumi.IntOutput         `pulumi:"aliasCount"`
+	Comment               pulumi.StringPtrOutput   `pulumi:"comment"`
+	Contract              pulumi.StringOutput      `pulumi:"contract"`
+	EndCustomerId         pulumi.StringPtrOutput   `pulumi:"endCustomerId"`
+	Group                 pulumi.StringOutput      `pulumi:"group"`
+	Masters               pulumi.StringArrayOutput `pulumi:"masters"`
+	SignAndServe          pulumi.BoolPtrOutput     `pulumi:"signAndServe"`
+	SignAndServeAlgorithm pulumi.StringPtrOutput   `pulumi:"signAndServeAlgorithm"`
+	Target                pulumi.StringPtrOutput   `pulumi:"target"`
+	TsigKey               DnsZoneTsigKeyPtrOutput  `pulumi:"tsigKey"`
+	Type                  pulumi.StringOutput      `pulumi:"type"`
+	VersionId             pulumi.StringOutput      `pulumi:"versionId"`
+	Zone                  pulumi.StringOutput      `pulumi:"zone"`
 }
 
 // NewDnsZone registers a new resource with the given unique name, arguments, and options.
@@ -122,57 +130,37 @@ func GetDnsZone(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DnsZone resources.
 type dnsZoneState struct {
-	ActivationState *string `pulumi:"activationState"`
-	AliasCount      *int    `pulumi:"aliasCount"`
-	// A descriptive comment.
-	Comment *string `pulumi:"comment"`
-	// The contract ID.
-	Contract      *string `pulumi:"contract"`
-	EndCustomerId *string `pulumi:"endCustomerId"`
-	// The currently selected group ID.
-	Group *string `pulumi:"group"`
-	// The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
-	Masters []string `pulumi:"masters"`
-	// Whether DNSSEC Sign&Serve is enabled.
-	SignAndServe *bool `pulumi:"signAndServe"`
-	// Algorithm used by Sign&Serve.
-	SignAndServeAlgorithm *string `pulumi:"signAndServeAlgorithm"`
-	// The name of the zone whose configuration this zone will copy.
-	Target *string `pulumi:"target"`
-	// TSIG Key used in secure zone transfers
-	TsigKey *DnsZoneTsigKey `pulumi:"tsigKey"`
-	// Whether the zone is `primary` or `secondary`.
-	Type      *string `pulumi:"type"`
-	VersionId *string `pulumi:"versionId"`
-	// Domain zone, encapsulating any nested subdomains.
-	Zone *string `pulumi:"zone"`
+	ActivationState       *string         `pulumi:"activationState"`
+	AliasCount            *int            `pulumi:"aliasCount"`
+	Comment               *string         `pulumi:"comment"`
+	Contract              *string         `pulumi:"contract"`
+	EndCustomerId         *string         `pulumi:"endCustomerId"`
+	Group                 *string         `pulumi:"group"`
+	Masters               []string        `pulumi:"masters"`
+	SignAndServe          *bool           `pulumi:"signAndServe"`
+	SignAndServeAlgorithm *string         `pulumi:"signAndServeAlgorithm"`
+	Target                *string         `pulumi:"target"`
+	TsigKey               *DnsZoneTsigKey `pulumi:"tsigKey"`
+	Type                  *string         `pulumi:"type"`
+	VersionId             *string         `pulumi:"versionId"`
+	Zone                  *string         `pulumi:"zone"`
 }
 
 type DnsZoneState struct {
-	ActivationState pulumi.StringPtrInput
-	AliasCount      pulumi.IntPtrInput
-	// A descriptive comment.
-	Comment pulumi.StringPtrInput
-	// The contract ID.
-	Contract      pulumi.StringPtrInput
-	EndCustomerId pulumi.StringPtrInput
-	// The currently selected group ID.
-	Group pulumi.StringPtrInput
-	// The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
-	Masters pulumi.StringArrayInput
-	// Whether DNSSEC Sign&Serve is enabled.
-	SignAndServe pulumi.BoolPtrInput
-	// Algorithm used by Sign&Serve.
+	ActivationState       pulumi.StringPtrInput
+	AliasCount            pulumi.IntPtrInput
+	Comment               pulumi.StringPtrInput
+	Contract              pulumi.StringPtrInput
+	EndCustomerId         pulumi.StringPtrInput
+	Group                 pulumi.StringPtrInput
+	Masters               pulumi.StringArrayInput
+	SignAndServe          pulumi.BoolPtrInput
 	SignAndServeAlgorithm pulumi.StringPtrInput
-	// The name of the zone whose configuration this zone will copy.
-	Target pulumi.StringPtrInput
-	// TSIG Key used in secure zone transfers
-	TsigKey DnsZoneTsigKeyPtrInput
-	// Whether the zone is `primary` or `secondary`.
-	Type      pulumi.StringPtrInput
-	VersionId pulumi.StringPtrInput
-	// Domain zone, encapsulating any nested subdomains.
-	Zone pulumi.StringPtrInput
+	Target                pulumi.StringPtrInput
+	TsigKey               DnsZoneTsigKeyPtrInput
+	Type                  pulumi.StringPtrInput
+	VersionId             pulumi.StringPtrInput
+	Zone                  pulumi.StringPtrInput
 }
 
 func (DnsZoneState) ElementType() reflect.Type {
@@ -180,52 +168,32 @@ func (DnsZoneState) ElementType() reflect.Type {
 }
 
 type dnsZoneArgs struct {
-	// A descriptive comment.
-	Comment *string `pulumi:"comment"`
-	// The contract ID.
-	Contract      string  `pulumi:"contract"`
-	EndCustomerId *string `pulumi:"endCustomerId"`
-	// The currently selected group ID.
-	Group string `pulumi:"group"`
-	// The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
-	Masters []string `pulumi:"masters"`
-	// Whether DNSSEC Sign&Serve is enabled.
-	SignAndServe *bool `pulumi:"signAndServe"`
-	// Algorithm used by Sign&Serve.
-	SignAndServeAlgorithm *string `pulumi:"signAndServeAlgorithm"`
-	// The name of the zone whose configuration this zone will copy.
-	Target *string `pulumi:"target"`
-	// TSIG Key used in secure zone transfers
-	TsigKey *DnsZoneTsigKey `pulumi:"tsigKey"`
-	// Whether the zone is `primary` or `secondary`.
-	Type string `pulumi:"type"`
-	// Domain zone, encapsulating any nested subdomains.
-	Zone string `pulumi:"zone"`
+	Comment               *string         `pulumi:"comment"`
+	Contract              string          `pulumi:"contract"`
+	EndCustomerId         *string         `pulumi:"endCustomerId"`
+	Group                 string          `pulumi:"group"`
+	Masters               []string        `pulumi:"masters"`
+	SignAndServe          *bool           `pulumi:"signAndServe"`
+	SignAndServeAlgorithm *string         `pulumi:"signAndServeAlgorithm"`
+	Target                *string         `pulumi:"target"`
+	TsigKey               *DnsZoneTsigKey `pulumi:"tsigKey"`
+	Type                  string          `pulumi:"type"`
+	Zone                  string          `pulumi:"zone"`
 }
 
 // The set of arguments for constructing a DnsZone resource.
 type DnsZoneArgs struct {
-	// A descriptive comment.
-	Comment pulumi.StringPtrInput
-	// The contract ID.
-	Contract      pulumi.StringInput
-	EndCustomerId pulumi.StringPtrInput
-	// The currently selected group ID.
-	Group pulumi.StringInput
-	// The names or addresses of the customer’s nameservers from which the zone data should be retrieved.
-	Masters pulumi.StringArrayInput
-	// Whether DNSSEC Sign&Serve is enabled.
-	SignAndServe pulumi.BoolPtrInput
-	// Algorithm used by Sign&Serve.
+	Comment               pulumi.StringPtrInput
+	Contract              pulumi.StringInput
+	EndCustomerId         pulumi.StringPtrInput
+	Group                 pulumi.StringInput
+	Masters               pulumi.StringArrayInput
+	SignAndServe          pulumi.BoolPtrInput
 	SignAndServeAlgorithm pulumi.StringPtrInput
-	// The name of the zone whose configuration this zone will copy.
-	Target pulumi.StringPtrInput
-	// TSIG Key used in secure zone transfers
-	TsigKey DnsZoneTsigKeyPtrInput
-	// Whether the zone is `primary` or `secondary`.
-	Type pulumi.StringInput
-	// Domain zone, encapsulating any nested subdomains.
-	Zone pulumi.StringInput
+	Target                pulumi.StringPtrInput
+	TsigKey               DnsZoneTsigKeyPtrInput
+	Type                  pulumi.StringInput
+	Zone                  pulumi.StringInput
 }
 
 func (DnsZoneArgs) ElementType() reflect.Type {

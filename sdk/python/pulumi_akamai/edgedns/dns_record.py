@@ -58,6 +58,9 @@ class DnsRecordArgs:
                  signer: Optional[pulumi.Input[str]] = None,
                  software: Optional[pulumi.Input[str]] = None,
                  subtype: Optional[pulumi.Input[int]] = None,
+                 svc_params: Optional[pulumi.Input[str]] = None,
+                 svc_priority: Optional[pulumi.Input[int]] = None,
+                 target_name: Optional[pulumi.Input[str]] = None,
                  targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  txt: Optional[pulumi.Input[str]] = None,
                  type_bitmaps: Optional[pulumi.Input[str]] = None,
@@ -156,6 +159,12 @@ class DnsRecordArgs:
             pulumi.set(__self__, "software", software)
         if subtype is not None:
             pulumi.set(__self__, "subtype", subtype)
+        if svc_params is not None:
+            pulumi.set(__self__, "svc_params", svc_params)
+        if svc_priority is not None:
+            pulumi.set(__self__, "svc_priority", svc_priority)
+        if target_name is not None:
+            pulumi.set(__self__, "target_name", target_name)
         if targets is not None:
             pulumi.set(__self__, "targets", targets)
         if txt is not None:
@@ -579,6 +588,33 @@ class DnsRecordArgs:
         pulumi.set(self, "subtype", value)
 
     @property
+    @pulumi.getter(name="svcParams")
+    def svc_params(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "svc_params")
+
+    @svc_params.setter
+    def svc_params(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "svc_params", value)
+
+    @property
+    @pulumi.getter(name="svcPriority")
+    def svc_priority(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "svc_priority")
+
+    @svc_priority.setter
+    def svc_priority(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "svc_priority", value)
+
+    @property
+    @pulumi.getter(name="targetName")
+    def target_name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "target_name")
+
+    @target_name.setter
+    def target_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "target_name", value)
+
+    @property
     @pulumi.getter
     def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         return pulumi.get(self, "targets")
@@ -701,6 +737,9 @@ class _DnsRecordState:
                  signer: Optional[pulumi.Input[str]] = None,
                  software: Optional[pulumi.Input[str]] = None,
                  subtype: Optional[pulumi.Input[int]] = None,
+                 svc_params: Optional[pulumi.Input[str]] = None,
+                 svc_priority: Optional[pulumi.Input[int]] = None,
+                 target_name: Optional[pulumi.Input[str]] = None,
                  targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ttl: Optional[pulumi.Input[int]] = None,
                  txt: Optional[pulumi.Input[str]] = None,
@@ -808,6 +847,12 @@ class _DnsRecordState:
             pulumi.set(__self__, "software", software)
         if subtype is not None:
             pulumi.set(__self__, "subtype", subtype)
+        if svc_params is not None:
+            pulumi.set(__self__, "svc_params", svc_params)
+        if svc_priority is not None:
+            pulumi.set(__self__, "svc_priority", svc_priority)
+        if target_name is not None:
+            pulumi.set(__self__, "target_name", target_name)
         if targets is not None:
             pulumi.set(__self__, "targets", targets)
         if ttl is not None:
@@ -1253,6 +1298,33 @@ class _DnsRecordState:
         pulumi.set(self, "subtype", value)
 
     @property
+    @pulumi.getter(name="svcParams")
+    def svc_params(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "svc_params")
+
+    @svc_params.setter
+    def svc_params(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "svc_params", value)
+
+    @property
+    @pulumi.getter(name="svcPriority")
+    def svc_priority(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "svc_priority")
+
+    @svc_priority.setter
+    def svc_priority(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "svc_priority", value)
+
+    @property
+    @pulumi.getter(name="targetName")
+    def target_name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "target_name")
+
+    @target_name.setter
+    def target_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "target_name", value)
+
+    @property
     @pulumi.getter
     def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         return pulumi.get(self, "targets")
@@ -1396,6 +1468,9 @@ class DnsRecord(pulumi.CustomResource):
                  signer: Optional[pulumi.Input[str]] = None,
                  software: Optional[pulumi.Input[str]] = None,
                  subtype: Optional[pulumi.Input[int]] = None,
+                 svc_params: Optional[pulumi.Input[str]] = None,
+                 svc_priority: Optional[pulumi.Input[int]] = None,
+                 target_name: Optional[pulumi.Input[str]] = None,
                  targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ttl: Optional[pulumi.Input[int]] = None,
                  txt: Optional[pulumi.Input[str]] = None,
@@ -1478,6 +1553,9 @@ class DnsRecord(pulumi.CustomResource):
                  signer: Optional[pulumi.Input[str]] = None,
                  software: Optional[pulumi.Input[str]] = None,
                  subtype: Optional[pulumi.Input[int]] = None,
+                 svc_params: Optional[pulumi.Input[str]] = None,
+                 svc_priority: Optional[pulumi.Input[int]] = None,
+                 target_name: Optional[pulumi.Input[str]] = None,
                  targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ttl: Optional[pulumi.Input[int]] = None,
                  txt: Optional[pulumi.Input[str]] = None,
@@ -1546,6 +1624,9 @@ class DnsRecord(pulumi.CustomResource):
             __props__.__dict__["signer"] = signer
             __props__.__dict__["software"] = software
             __props__.__dict__["subtype"] = subtype
+            __props__.__dict__["svc_params"] = svc_params
+            __props__.__dict__["svc_priority"] = svc_priority
+            __props__.__dict__["target_name"] = target_name
             __props__.__dict__["targets"] = targets
             if ttl is None and not opts.urn:
                 raise TypeError("Missing required property 'ttl'")
@@ -1621,6 +1702,9 @@ class DnsRecord(pulumi.CustomResource):
             signer: Optional[pulumi.Input[str]] = None,
             software: Optional[pulumi.Input[str]] = None,
             subtype: Optional[pulumi.Input[int]] = None,
+            svc_params: Optional[pulumi.Input[str]] = None,
+            svc_priority: Optional[pulumi.Input[int]] = None,
+            target_name: Optional[pulumi.Input[str]] = None,
             targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             ttl: Optional[pulumi.Input[int]] = None,
             txt: Optional[pulumi.Input[str]] = None,
@@ -1690,6 +1774,9 @@ class DnsRecord(pulumi.CustomResource):
         __props__.__dict__["signer"] = signer
         __props__.__dict__["software"] = software
         __props__.__dict__["subtype"] = subtype
+        __props__.__dict__["svc_params"] = svc_params
+        __props__.__dict__["svc_priority"] = svc_priority
+        __props__.__dict__["target_name"] = target_name
         __props__.__dict__["targets"] = targets
         __props__.__dict__["ttl"] = ttl
         __props__.__dict__["txt"] = txt
@@ -1936,6 +2023,21 @@ class DnsRecord(pulumi.CustomResource):
     @pulumi.getter
     def subtype(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "subtype")
+
+    @property
+    @pulumi.getter(name="svcParams")
+    def svc_params(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "svc_params")
+
+    @property
+    @pulumi.getter(name="svcPriority")
+    def svc_priority(self) -> pulumi.Output[Optional[int]]:
+        return pulumi.get(self, "svc_priority")
+
+    @property
+    @pulumi.getter(name="targetName")
+    def target_name(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "target_name")
 
     @property
     @pulumi.getter

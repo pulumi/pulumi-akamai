@@ -21,45 +21,45 @@ class PropertyArgs:
                  cp_code: Optional[pulumi.Input[str]] = None,
                  group: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
-                 hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 hostnames: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]] = None,
                  is_secure: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  origins: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyOriginArgs']]]] = None,
                  product: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  rule_format: Optional[pulumi.Input[str]] = None,
+                 rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]] = None,
                  rules: Optional[pulumi.Input[str]] = None,
                  variables: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Property resource.
         :param pulumi.Input[str] contract_id: Contract ID to be assigned to the Property
         :param pulumi.Input[str] group_id: Group ID to be assigned to the Property
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] hostnames: Mapping of edge hostname CNAMEs to other CNAMEs
         :param pulumi.Input[str] name: Name to give to the Property (must be unique)
         :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
         :param pulumi.Input[str] rule_format: Specify the rule format version (defaults to latest version available when created)
         :param pulumi.Input[str] rules: Property Rules as JSON
         """
         if contacts is not None:
-            warnings.warn("""\"contact\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-            pulumi.log.warn("""contacts is deprecated: \"contact\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+            warnings.warn("""The setting \"contact\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated.""")
         if contacts is not None:
             pulumi.set(__self__, "contacts", contacts)
         if contract is not None:
-            warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: use \"contract_id\" attribute instead""")
+            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
         if contract is not None:
             pulumi.set(__self__, "contract", contract)
         if contract_id is not None:
             pulumi.set(__self__, "contract_id", contract_id)
         if cp_code is not None:
-            warnings.warn("""\"cp_code\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-            pulumi.log.warn("""cp_code is deprecated: \"cp_code\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+            warnings.warn("""The setting \"cp_code\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated.""")
         if cp_code is not None:
             pulumi.set(__self__, "cp_code", cp_code)
         if group is not None:
-            warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: use \"group_id\" attribute instead""")
+            warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
         if group is not None:
             pulumi.set(__self__, "group", group)
         if group_id is not None:
@@ -67,31 +67,36 @@ class PropertyArgs:
         if hostnames is not None:
             pulumi.set(__self__, "hostnames", hostnames)
         if is_secure is not None:
-            warnings.warn("""\"is_secure\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-            pulumi.log.warn("""is_secure is deprecated: \"is_secure\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+            warnings.warn("""The setting \"is_secure\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated.""")
         if is_secure is not None:
             pulumi.set(__self__, "is_secure", is_secure)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if origins is not None:
-            warnings.warn("""\"origin\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-            pulumi.log.warn("""origins is deprecated: \"origin\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+            warnings.warn("""The setting \"origin\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated.""")
         if origins is not None:
             pulumi.set(__self__, "origins", origins)
         if product is not None:
-            warnings.warn("""use \"product_id\" attribute instead""", DeprecationWarning)
-            pulumi.log.warn("""product is deprecated: use \"product_id\" attribute instead""")
+            warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
         if product is not None:
             pulumi.set(__self__, "product", product)
         if product_id is not None:
             pulumi.set(__self__, "product_id", product_id)
         if rule_format is not None:
             pulumi.set(__self__, "rule_format", rule_format)
+        if rule_warnings is not None:
+            warnings.warn("""Rule warnings will not be set in state anymore""", DeprecationWarning)
+            pulumi.log.warn("""rule_warnings is deprecated: Rule warnings will not be set in state anymore""")
+        if rule_warnings is not None:
+            pulumi.set(__self__, "rule_warnings", rule_warnings)
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
         if variables is not None:
-            warnings.warn("""\"variables\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-            pulumi.log.warn("""variables is deprecated: \"variables\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+            warnings.warn("""The setting \"variables\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated.""")
         if variables is not None:
             pulumi.set(__self__, "variables", variables)
 
@@ -157,14 +162,11 @@ class PropertyArgs:
 
     @property
     @pulumi.getter
-    def hostnames(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
-        """
-        Mapping of edge hostname CNAMEs to other CNAMEs
-        """
+    def hostnames(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]]:
         return pulumi.get(self, "hostnames")
 
     @hostnames.setter
-    def hostnames(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+    def hostnames(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]]):
         pulumi.set(self, "hostnames", value)
 
     @property
@@ -231,6 +233,15 @@ class PropertyArgs:
         pulumi.set(self, "rule_format", value)
 
     @property
+    @pulumi.getter(name="ruleWarnings")
+    def rule_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]]:
+        return pulumi.get(self, "rule_warnings")
+
+    @rule_warnings.setter
+    def rule_warnings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]]):
+        pulumi.set(self, "rule_warnings", value)
+
+    @property
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[str]]:
         """
@@ -261,7 +272,7 @@ class _PropertyState:
                  cp_code: Optional[pulumi.Input[str]] = None,
                  group: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
-                 hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 hostnames: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]] = None,
                  is_secure: Optional[pulumi.Input[bool]] = None,
                  latest_version: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -279,7 +290,6 @@ class _PropertyState:
         Input properties used for looking up and filtering Property resources.
         :param pulumi.Input[str] contract_id: Contract ID to be assigned to the Property
         :param pulumi.Input[str] group_id: Group ID to be assigned to the Property
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] hostnames: Mapping of edge hostname CNAMEs to other CNAMEs
         :param pulumi.Input[int] latest_version: Property's current latest version number
         :param pulumi.Input[str] name: Name to give to the Property (must be unique)
         :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
@@ -289,25 +299,25 @@ class _PropertyState:
         :param pulumi.Input[int] staging_version: Property's version currently activated in staging (zero when not active in staging)
         """
         if contacts is not None:
-            warnings.warn("""\"contact\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-            pulumi.log.warn("""contacts is deprecated: \"contact\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+            warnings.warn("""The setting \"contact\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated.""")
         if contacts is not None:
             pulumi.set(__self__, "contacts", contacts)
         if contract is not None:
-            warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: use \"contract_id\" attribute instead""")
+            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
         if contract is not None:
             pulumi.set(__self__, "contract", contract)
         if contract_id is not None:
             pulumi.set(__self__, "contract_id", contract_id)
         if cp_code is not None:
-            warnings.warn("""\"cp_code\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-            pulumi.log.warn("""cp_code is deprecated: \"cp_code\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+            warnings.warn("""The setting \"cp_code\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated.""")
         if cp_code is not None:
             pulumi.set(__self__, "cp_code", cp_code)
         if group is not None:
-            warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: use \"group_id\" attribute instead""")
+            warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
         if group is not None:
             pulumi.set(__self__, "group", group)
         if group_id is not None:
@@ -315,8 +325,8 @@ class _PropertyState:
         if hostnames is not None:
             pulumi.set(__self__, "hostnames", hostnames)
         if is_secure is not None:
-            warnings.warn("""\"is_secure\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-            pulumi.log.warn("""is_secure is deprecated: \"is_secure\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+            warnings.warn("""The setting \"is_secure\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated.""")
         if is_secure is not None:
             pulumi.set(__self__, "is_secure", is_secure)
         if latest_version is not None:
@@ -324,13 +334,13 @@ class _PropertyState:
         if name is not None:
             pulumi.set(__self__, "name", name)
         if origins is not None:
-            warnings.warn("""\"origin\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-            pulumi.log.warn("""origins is deprecated: \"origin\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+            warnings.warn("""The setting \"origin\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated.""")
         if origins is not None:
             pulumi.set(__self__, "origins", origins)
         if product is not None:
-            warnings.warn("""use \"product_id\" attribute instead""", DeprecationWarning)
-            pulumi.log.warn("""product is deprecated: use \"product_id\" attribute instead""")
+            warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
         if product is not None:
             pulumi.set(__self__, "product", product)
         if product_id is not None:
@@ -342,14 +352,17 @@ class _PropertyState:
         if rule_format is not None:
             pulumi.set(__self__, "rule_format", rule_format)
         if rule_warnings is not None:
+            warnings.warn("""Rule warnings will not be set in state anymore""", DeprecationWarning)
+            pulumi.log.warn("""rule_warnings is deprecated: Rule warnings will not be set in state anymore""")
+        if rule_warnings is not None:
             pulumi.set(__self__, "rule_warnings", rule_warnings)
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
         if staging_version is not None:
             pulumi.set(__self__, "staging_version", staging_version)
         if variables is not None:
-            warnings.warn("""\"variables\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-            pulumi.log.warn("""variables is deprecated: \"variables\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+            warnings.warn("""The setting \"variables\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated.""")
         if variables is not None:
             pulumi.set(__self__, "variables", variables)
 
@@ -415,14 +428,11 @@ class _PropertyState:
 
     @property
     @pulumi.getter
-    def hostnames(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
-        """
-        Mapping of edge hostname CNAMEs to other CNAMEs
-        """
+    def hostnames(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]]:
         return pulumi.get(self, "hostnames")
 
     @hostnames.setter
-    def hostnames(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+    def hostnames(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]]):
         pulumi.set(self, "hostnames", value)
 
     @property
@@ -575,13 +585,14 @@ class Property(pulumi.CustomResource):
                  cp_code: Optional[pulumi.Input[str]] = None,
                  group: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
-                 hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]]] = None,
                  is_secure: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  origins: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]]] = None,
                  product: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  rule_format: Optional[pulumi.Input[str]] = None,
+                 rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleWarningArgs']]]]] = None,
                  rules: Optional[pulumi.Input[str]] = None,
                  variables: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -598,7 +609,7 @@ class Property(pulumi.CustomResource):
         property’s default rule needs a valid content provider (CP) code assigned to bill
         and report for the service.
 
-        > __NOTE:__ In version 0.10 and earlier of this resource, it also controlled content provider (CP) codes, origin settings, rules, and hostname associations. Starting with version 1.0.0, this logic is broken out into individual resources.
+        > **Note** In version 0.10 and earlier of this resource, it also controlled content provider (CP) codes, origin settings, rules, and hostname associations. Starting with version 1.0.0, this logic is broken out into individual resources.
 
         ## Example Usage
 
@@ -609,15 +620,21 @@ class Property(pulumi.CustomResource):
         import pulumi_akamai as akamai
 
         example = akamai.Property("example",
-            contacts=["user@example.org"],
             product_id="prd_SPM",
             contract_id=var["contractid"],
             group_id=var["groupid"],
-            hostnames={
-                "example.org": "example.org.edgesuite.net",
-                "www.example.org": "example.org.edgesuite.net",
-                "sub.example.org": "sub.example.org.edgesuite.net",
-            },
+            hostnames=[
+                akamai.PropertyHostnameArgs(
+                    cname_from="example.com",
+                    cname_to="example.com.edgekey.net",
+                    cert_provisioning_type="DEFAULT",
+                ),
+                akamai.PropertyHostnameArgs(
+                    cname_from="www.example.com",
+                    cname_to="example.com.edgesuite.net",
+                    cert_provisioning_type="CPS_MANAGED",
+                ),
+            ],
             rule_format="v2020-03-04",
             rules=data["akamai_property_rules_template"]["example"]["json"])
         ```
@@ -626,12 +643,19 @@ class Property(pulumi.CustomResource):
         This resource supports these arguments:
 
         * `name` - (Required) The property name.
-        * `contact` - (Required) One or more email addresses to send activation status changes to.
-        * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-        * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
-        * `product_id` - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
-        * `hostnames` - (Required) A mapping of public hostnames to edge hostnames. For example: `{"example.org" = "example.org.edgesuite.net"}`
-        * `rules` - (Required) A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `getPropertyRules` data source.
+        * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
+        * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
+        * `product_id` - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+        * `hostnames` - (Optional) A mapping of public hostnames to edge hostnames. See the `getPropertyHostnames` data source for details on the necessary DNS configuration.
+          
+            > **Note** Starting from version 1.5.0, the `hostnames` argument supports a new block type. If you created your code and state in version 1.4 or earlier, you need to manually update your configuration and replace the previous input for `hostnames` with the new syntax. This error indicates that the state is outdated: `Error: missing expected [`. To fix it, remove `Property` from the state and import it again.
+          
+          Requires these additional arguments:
+          
+              * `cname_from` - (Required) A string containing the original origin's hostname. For example, `"example.org"`.
+              * `cname_to` - (Required) A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
+              * `cert_provisioning_type` - (Required) The certificate’s provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+        * `rules` - (Optional) A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `getPropertyRules` data source.
         * `rule_format` - (Optional) The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
         * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
         * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
@@ -641,11 +665,14 @@ class Property(pulumi.CustomResource):
 
         The resource returns these attributes:
 
-        * `warnings` - The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
-        * `errors` - The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        * `rule_errors` - The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
         * `latest_version` - The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
         * `production_version` - The current version of the property active on the Akamai production network.
         * `staging_version` - The current version of the property active on the Akamai staging network.
+
+        ### Deprecated attributes
+
+        * `rule_warnings` - (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
 
         ## Import
 
@@ -653,9 +680,7 @@ class Property(pulumi.CustomResource):
 
         # (resource arguments)
 
-         } You can import Akamai properties using either the `property_id` or a comma-delimited
-
-        string of the property, contract, and group IDs. You'll need to enter the string of IDs if the property belongs to multiple groups or contracts. If using the string of IDs, you need to enter them in this order`property_id,contract_id,group_id` Here are some examples
+         } You can import Akamai properties by using either the `property_id` or a comma-delimited string of the property, contract, and group IDs. You'll need to enter the string of IDs if the property belongs to multiple groups or contracts. If using the string of IDs, you need to enter them in this order`property_id,contract_id,group_id` Here are some examples
 
         ```sh
          $ pulumi import akamai:index/property:Property example prp_123
@@ -671,7 +696,6 @@ class Property(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] contract_id: Contract ID to be assigned to the Property
         :param pulumi.Input[str] group_id: Group ID to be assigned to the Property
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] hostnames: Mapping of edge hostname CNAMEs to other CNAMEs
         :param pulumi.Input[str] name: Name to give to the Property (must be unique)
         :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
         :param pulumi.Input[str] rule_format: Specify the rule format version (defaults to latest version available when created)
@@ -696,7 +720,7 @@ class Property(pulumi.CustomResource):
         property’s default rule needs a valid content provider (CP) code assigned to bill
         and report for the service.
 
-        > __NOTE:__ In version 0.10 and earlier of this resource, it also controlled content provider (CP) codes, origin settings, rules, and hostname associations. Starting with version 1.0.0, this logic is broken out into individual resources.
+        > **Note** In version 0.10 and earlier of this resource, it also controlled content provider (CP) codes, origin settings, rules, and hostname associations. Starting with version 1.0.0, this logic is broken out into individual resources.
 
         ## Example Usage
 
@@ -707,15 +731,21 @@ class Property(pulumi.CustomResource):
         import pulumi_akamai as akamai
 
         example = akamai.Property("example",
-            contacts=["user@example.org"],
             product_id="prd_SPM",
             contract_id=var["contractid"],
             group_id=var["groupid"],
-            hostnames={
-                "example.org": "example.org.edgesuite.net",
-                "www.example.org": "example.org.edgesuite.net",
-                "sub.example.org": "sub.example.org.edgesuite.net",
-            },
+            hostnames=[
+                akamai.PropertyHostnameArgs(
+                    cname_from="example.com",
+                    cname_to="example.com.edgekey.net",
+                    cert_provisioning_type="DEFAULT",
+                ),
+                akamai.PropertyHostnameArgs(
+                    cname_from="www.example.com",
+                    cname_to="example.com.edgesuite.net",
+                    cert_provisioning_type="CPS_MANAGED",
+                ),
+            ],
             rule_format="v2020-03-04",
             rules=data["akamai_property_rules_template"]["example"]["json"])
         ```
@@ -724,12 +754,19 @@ class Property(pulumi.CustomResource):
         This resource supports these arguments:
 
         * `name` - (Required) The property name.
-        * `contact` - (Required) One or more email addresses to send activation status changes to.
-        * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-        * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
-        * `product_id` - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
-        * `hostnames` - (Required) A mapping of public hostnames to edge hostnames. For example: `{"example.org" = "example.org.edgesuite.net"}`
-        * `rules` - (Required) A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `getPropertyRules` data source.
+        * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
+        * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
+        * `product_id` - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+        * `hostnames` - (Optional) A mapping of public hostnames to edge hostnames. See the `getPropertyHostnames` data source for details on the necessary DNS configuration.
+          
+            > **Note** Starting from version 1.5.0, the `hostnames` argument supports a new block type. If you created your code and state in version 1.4 or earlier, you need to manually update your configuration and replace the previous input for `hostnames` with the new syntax. This error indicates that the state is outdated: `Error: missing expected [`. To fix it, remove `Property` from the state and import it again.
+          
+          Requires these additional arguments:
+          
+              * `cname_from` - (Required) A string containing the original origin's hostname. For example, `"example.org"`.
+              * `cname_to` - (Required) A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
+              * `cert_provisioning_type` - (Required) The certificate’s provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+        * `rules` - (Optional) A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `getPropertyRules` data source.
         * `rule_format` - (Optional) The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
         * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
         * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
@@ -739,11 +776,14 @@ class Property(pulumi.CustomResource):
 
         The resource returns these attributes:
 
-        * `warnings` - The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
-        * `errors` - The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        * `rule_errors` - The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
         * `latest_version` - The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
         * `production_version` - The current version of the property active on the Akamai production network.
         * `staging_version` - The current version of the property active on the Akamai staging network.
+
+        ### Deprecated attributes
+
+        * `rule_warnings` - (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
 
         ## Import
 
@@ -751,9 +791,7 @@ class Property(pulumi.CustomResource):
 
         # (resource arguments)
 
-         } You can import Akamai properties using either the `property_id` or a comma-delimited
-
-        string of the property, contract, and group IDs. You'll need to enter the string of IDs if the property belongs to multiple groups or contracts. If using the string of IDs, you need to enter them in this order`property_id,contract_id,group_id` Here are some examples
+         } You can import Akamai properties by using either the `property_id` or a comma-delimited string of the property, contract, and group IDs. You'll need to enter the string of IDs if the property belongs to multiple groups or contracts. If using the string of IDs, you need to enter them in this order`property_id,contract_id,group_id` Here are some examples
 
         ```sh
          $ pulumi import akamai:index/property:Property example prp_123
@@ -786,13 +824,14 @@ class Property(pulumi.CustomResource):
                  cp_code: Optional[pulumi.Input[str]] = None,
                  group: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
-                 hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]]] = None,
                  is_secure: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  origins: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]]] = None,
                  product: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  rule_format: Optional[pulumi.Input[str]] = None,
+                 rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleWarningArgs']]]]] = None,
                  rules: Optional[pulumi.Input[str]] = None,
                  variables: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -808,48 +847,51 @@ class Property(pulumi.CustomResource):
             __props__ = PropertyArgs.__new__(PropertyArgs)
 
             if contacts is not None and not opts.urn:
-                warnings.warn("""\"contact\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-                pulumi.log.warn("""contacts is deprecated: \"contact\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+                warnings.warn("""The setting \"contact\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated.""")
             __props__.__dict__["contacts"] = contacts
             if contract is not None and not opts.urn:
-                warnings.warn("""use \"contract_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("""contract is deprecated: use \"contract_id\" attribute instead""")
+                warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
             __props__.__dict__["contract"] = contract
             __props__.__dict__["contract_id"] = contract_id
             if cp_code is not None and not opts.urn:
-                warnings.warn("""\"cp_code\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-                pulumi.log.warn("""cp_code is deprecated: \"cp_code\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+                warnings.warn("""The setting \"cp_code\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated.""")
             __props__.__dict__["cp_code"] = cp_code
             if group is not None and not opts.urn:
-                warnings.warn("""use \"group_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("""group is deprecated: use \"group_id\" attribute instead""")
+                warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
             __props__.__dict__["group"] = group
             __props__.__dict__["group_id"] = group_id
             __props__.__dict__["hostnames"] = hostnames
             if is_secure is not None and not opts.urn:
-                warnings.warn("""\"is_secure\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-                pulumi.log.warn("""is_secure is deprecated: \"is_secure\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+                warnings.warn("""The setting \"is_secure\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated.""")
             __props__.__dict__["is_secure"] = is_secure
             __props__.__dict__["name"] = name
             if origins is not None and not opts.urn:
-                warnings.warn("""\"origin\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-                pulumi.log.warn("""origins is deprecated: \"origin\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+                warnings.warn("""The setting \"origin\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated.""")
             __props__.__dict__["origins"] = origins
             if product is not None and not opts.urn:
-                warnings.warn("""use \"product_id\" attribute instead""", DeprecationWarning)
-                pulumi.log.warn("""product is deprecated: use \"product_id\" attribute instead""")
+                warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
             __props__.__dict__["product"] = product
             __props__.__dict__["product_id"] = product_id
             __props__.__dict__["rule_format"] = rule_format
+            if rule_warnings is not None and not opts.urn:
+                warnings.warn("""Rule warnings will not be set in state anymore""", DeprecationWarning)
+                pulumi.log.warn("""rule_warnings is deprecated: Rule warnings will not be set in state anymore""")
+            __props__.__dict__["rule_warnings"] = rule_warnings
             __props__.__dict__["rules"] = rules
             if variables is not None and not opts.urn:
-                warnings.warn("""\"variables\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""", DeprecationWarning)
-                pulumi.log.warn("""variables is deprecated: \"variables\" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide""")
+                warnings.warn("""The setting \"variables\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated.""")
             __props__.__dict__["variables"] = variables
             __props__.__dict__["latest_version"] = None
             __props__.__dict__["production_version"] = None
             __props__.__dict__["rule_errors"] = None
-            __props__.__dict__["rule_warnings"] = None
             __props__.__dict__["staging_version"] = None
         alias_opts = pulumi.ResourceOptions(aliases=[pulumi.Alias(type_="akamai:properties/property:Property")])
         opts = pulumi.ResourceOptions.merge(opts, alias_opts)
@@ -869,7 +911,7 @@ class Property(pulumi.CustomResource):
             cp_code: Optional[pulumi.Input[str]] = None,
             group: Optional[pulumi.Input[str]] = None,
             group_id: Optional[pulumi.Input[str]] = None,
-            hostnames: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]]] = None,
             is_secure: Optional[pulumi.Input[bool]] = None,
             latest_version: Optional[pulumi.Input[int]] = None,
             name: Optional[pulumi.Input[str]] = None,
@@ -892,7 +934,6 @@ class Property(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] contract_id: Contract ID to be assigned to the Property
         :param pulumi.Input[str] group_id: Group ID to be assigned to the Property
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] hostnames: Mapping of edge hostname CNAMEs to other CNAMEs
         :param pulumi.Input[int] latest_version: Property's current latest version number
         :param pulumi.Input[str] name: Name to give to the Property (must be unique)
         :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
@@ -965,10 +1006,7 @@ class Property(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def hostnames(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
-        """
-        Mapping of edge hostname CNAMEs to other CNAMEs
-        """
+    def hostnames(self) -> pulumi.Output[Optional[Sequence['outputs.PropertyHostname']]]:
         return pulumi.get(self, "hostnames")
 
     @property

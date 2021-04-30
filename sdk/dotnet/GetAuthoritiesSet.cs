@@ -11,6 +11,45 @@ namespace Pulumi.Akamai
 {
     public static class GetAuthoritiesSet
     {
+        /// <summary>
+        /// Use the `akamai.getAuthoritiesSet` data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var example = Output.Create(Akamai.GetAuthoritiesSet.InvokeAsync(new Akamai.GetAuthoritiesSetArgs
+        ///         {
+        ///             Contract = "ctr_1-AB123",
+        ///         }));
+        ///     }
+        /// 
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// ## Argument reference
+        /// 
+        /// This data source supports this argument:
+        /// 
+        /// * `contract` - (Required) The contract ID.
+        /// 
+        /// ## Attributes reference
+        /// 
+        /// This data source supports this attribute:
+        /// 
+        /// * `authorities` - A list of authorities.
+        /// </summary>
         public static Task<GetAuthoritiesSetResult> InvokeAsync(GetAuthoritiesSetArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAuthoritiesSetResult>("akamai:index/getAuthoritiesSet:getAuthoritiesSet", args ?? new GetAuthoritiesSetArgs(), options.WithVersion());
     }

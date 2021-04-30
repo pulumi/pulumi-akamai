@@ -16,7 +16,7 @@ type PropertyVariables struct {
 
 	// JSON variables representation
 	Json pulumi.StringOutput `pulumi:"json"`
-	// Deprecated: resource "akamai_property_variables" is no longer supported - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "akamai_property_variables" has been deprecated.
 	Variables PropertyVariablesVariableArrayOutput `pulumi:"variables"`
 }
 
@@ -51,14 +51,14 @@ func GetPropertyVariables(ctx *pulumi.Context,
 type propertyVariablesState struct {
 	// JSON variables representation
 	Json *string `pulumi:"json"`
-	// Deprecated: resource "akamai_property_variables" is no longer supported - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "akamai_property_variables" has been deprecated.
 	Variables []PropertyVariablesVariable `pulumi:"variables"`
 }
 
 type PropertyVariablesState struct {
 	// JSON variables representation
 	Json pulumi.StringPtrInput
-	// Deprecated: resource "akamai_property_variables" is no longer supported - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "akamai_property_variables" has been deprecated.
 	Variables PropertyVariablesVariableArrayInput
 }
 
@@ -67,13 +67,13 @@ func (PropertyVariablesState) ElementType() reflect.Type {
 }
 
 type propertyVariablesArgs struct {
-	// Deprecated: resource "akamai_property_variables" is no longer supported - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "akamai_property_variables" has been deprecated.
 	Variables []PropertyVariablesVariable `pulumi:"variables"`
 }
 
 // The set of arguments for constructing a PropertyVariables resource.
 type PropertyVariablesArgs struct {
-	// Deprecated: resource "akamai_property_variables" is no longer supported - See Akamai Terraform Upgrade Guide
+	// Deprecated: The setting "akamai_property_variables" has been deprecated.
 	Variables PropertyVariablesVariableArrayInput
 }
 

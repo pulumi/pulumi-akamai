@@ -4,6 +4,81 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * The `akamai.CpCode` resource lets you create or reuse content provider (CP) codes.  CP codes track web traffic handled by Akamai servers. Akamai gives you a CP code when you purchase a product. You need this code when you activate associated properties.
+ *
+ * You can create additional CP codes to support more detailed billing and reporting functions.
+ *
+ * By default, the Akamai Provider uses your existing CP code instead of creating a new one.
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const cpCode = new akamai.CpCode("cpCode", {
+ *     contractId: akamai_contract.contract.id,
+ *     groupId: akamai_group.group.id,
+ *     productId: "prd_Object_Delivery",
+ * });
+ * ```
+ *
+ * Here's a real-life example that includes other data sources as dependencies:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const groupName = "example group name";
+ * const cpcodeName = "My CP Code";
+ * const exampleContract = akamai.getContract({
+ *     groupName: groupName,
+ * });
+ * const exampleGroup = exampleContract.then(exampleContract => akamai.getGroup({
+ *     name: groupName,
+ *     contractId: exampleContract.id,
+ * }));
+ * const exampleCp = new akamai.CpCode("exampleCp", {
+ *     groupId: exampleGroup.then(exampleGroup => exampleGroup.id),
+ *     contractId: exampleContract.then(exampleContract => exampleContract.id),
+ *     productId: "prd_Object_Delivery",
+ * });
+ * ```
+ * ## Argument reference
+ *
+ * The following arguments are supported:
+ *
+ * * `name` - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can’t include commas, underscores, quotes, or any of these special characters: ^ # %.
+ * * `contractId` - (Required) A contract's unique ID, including the `ctr_` prefix.
+ * * `groupId` - (Required) A group's unique ID, including the `grp_` prefix.
+ * * `productId` - (Required) A product's unique ID, including the `prd_` prefix.
+ * * `contract` - (Deprecated) Replaced by `contractId`. Maintained for legacy purposes.
+ * * `group` - (Deprecated) Replaced by `groupId`. Maintained for legacy purposes.
+ * * `product` - (Deprecated) Replaced by `productId`. Maintained for legacy purposes.
+ *
+ * ## Attributes reference
+ *
+ * * `id` - The ID of the CP code.
+ *
+ * ## Import
+ *
+ * Basic Usagehcl resource "akamai_cp_code" "example" {
+ *
+ * # (resource arguments)
+ *
+ *  } You can import your Akamai CP codes using a comma-delimited string of the CP code,
+ *
+ * contract, and group IDs. You have to enter the IDs in this order:
+ *
+ * `cpcode_id,contract_id,group_id` For example
+ *
+ * ```sh
+ *  $ pulumi import akamai:index/cpCode:CpCode example cpc_123,ctr_1-AB123,grp_123
+ * ```
+ */
 export class CpCode extends pulumi.CustomResource {
     /**
      * Get an existing CpCode resource's state with the given name, ID, and optional extra
@@ -33,17 +108,21 @@ export class CpCode extends pulumi.CustomResource {
     }
 
     /**
-     * @deprecated use "contract_id" attribute instead
+     * @deprecated The setting "contract" has been deprecated.
      */
     public readonly contract!: pulumi.Output<string>;
     public readonly contractId!: pulumi.Output<string>;
     /**
-     * @deprecated use "group_id" attribute instead
+     * @deprecated The setting "group" has been deprecated.
      */
     public readonly group!: pulumi.Output<string>;
     public readonly groupId!: pulumi.Output<string>;
     public readonly name!: pulumi.Output<string>;
+    /**
+     * @deprecated The setting "product" has been deprecated.
+     */
     public readonly product!: pulumi.Output<string>;
+    public readonly productId!: pulumi.Output<string>;
 
     /**
      * Create a CpCode resource with the given unique name, arguments, and options.
@@ -52,7 +131,7 @@ export class CpCode extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: CpCodeArgs, opts?: pulumi.CustomResourceOptions)
+    constructor(name: string, args?: CpCodeArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: CpCodeArgs | CpCodeState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
         opts = opts || {};
@@ -64,17 +143,16 @@ export class CpCode extends pulumi.CustomResource {
             inputs["groupId"] = state ? state.groupId : undefined;
             inputs["name"] = state ? state.name : undefined;
             inputs["product"] = state ? state.product : undefined;
+            inputs["productId"] = state ? state.productId : undefined;
         } else {
             const args = argsOrState as CpCodeArgs | undefined;
-            if ((!args || args.product === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'product'");
-            }
             inputs["contract"] = args ? args.contract : undefined;
             inputs["contractId"] = args ? args.contractId : undefined;
             inputs["group"] = args ? args.group : undefined;
             inputs["groupId"] = args ? args.groupId : undefined;
             inputs["name"] = args ? args.name : undefined;
             inputs["product"] = args ? args.product : undefined;
+            inputs["productId"] = args ? args.productId : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -90,17 +168,21 @@ export class CpCode extends pulumi.CustomResource {
  */
 export interface CpCodeState {
     /**
-     * @deprecated use "contract_id" attribute instead
+     * @deprecated The setting "contract" has been deprecated.
      */
     readonly contract?: pulumi.Input<string>;
     readonly contractId?: pulumi.Input<string>;
     /**
-     * @deprecated use "group_id" attribute instead
+     * @deprecated The setting "group" has been deprecated.
      */
     readonly group?: pulumi.Input<string>;
     readonly groupId?: pulumi.Input<string>;
     readonly name?: pulumi.Input<string>;
+    /**
+     * @deprecated The setting "product" has been deprecated.
+     */
     readonly product?: pulumi.Input<string>;
+    readonly productId?: pulumi.Input<string>;
 }
 
 /**
@@ -108,15 +190,19 @@ export interface CpCodeState {
  */
 export interface CpCodeArgs {
     /**
-     * @deprecated use "contract_id" attribute instead
+     * @deprecated The setting "contract" has been deprecated.
      */
     readonly contract?: pulumi.Input<string>;
     readonly contractId?: pulumi.Input<string>;
     /**
-     * @deprecated use "group_id" attribute instead
+     * @deprecated The setting "group" has been deprecated.
      */
     readonly group?: pulumi.Input<string>;
     readonly groupId?: pulumi.Input<string>;
     readonly name?: pulumi.Input<string>;
-    readonly product: pulumi.Input<string>;
+    /**
+     * @deprecated The setting "product" has been deprecated.
+     */
+    readonly product?: pulumi.Input<string>;
+    readonly productId?: pulumi.Input<string>;
 }

@@ -7,6 +7,31 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Use the `getGroup` data source to get a group by name.
+//
+// Each account features a hierarchy of groups, which control access to your
+// Akamai configurations and help consolidate reporting functions, typically
+// mapping to an organizational hierarchy. Using either Control Center or the
+// [Identity Management: User Administration API](https://developer.akamai.com/en-us/api/core_features/identity_management_user_admin/v2.html),
+// account administrators can assign properties to specific groups, each with
+// its own set of users and accompanying roles.
+//
+// ## Argument reference
+//
+// This data source supports these arguments:
+//
+// * `groupName` - (Required) The group name.
+// * `contractId` - (Required) A contract's unique ID, including the `ctr_` prefix.
+//
+// ### Deprecated arguments
+// * `contract` - (Deprecated) Replaced by `contractId`. Maintained for legacy purposes.
+// * `name` -  (Deprecated) Replaced by `groupName`. Maintained for legacy purposes.
+//
+// ## Attributes reference
+//
+// This data source returns this attribute:
+//
+// * `id` - The group's unique ID, including the `grp_` prefix.
 func GetGroup(ctx *pulumi.Context, args *GetGroupArgs, opts ...pulumi.InvokeOption) (*GetGroupResult, error) {
 	var rv GetGroupResult
 	err := ctx.Invoke("akamai:index/getGroup:getGroup", args, &rv, opts...)

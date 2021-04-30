@@ -6,7 +6,7 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecMatchTargets` data source to retrieve information about the match targets associated with a given configuration version.
+ * Use the `akamai.getAppSecMatchTargets` data source to retrieve information about the match targets associated with a given configuration version, or about a specific match target.
  *
  * ## Example Usage
  *
@@ -17,13 +17,19 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: "Akamai Tools",
+ *     name: _var.security_configuration,
  * });
  * const matchTargetsAppSecMatchTargets = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecMatchTargets({
  *     configId: configuration.configId,
  *     version: configuration1.latestVersion,
  * }));
  * export const matchTargets = matchTargetsAppSecMatchTargets.then(matchTargetsAppSecMatchTargets => matchTargetsAppSecMatchTargets.outputText);
+ * const matchTarget = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecMatchTargets({
+ *     configId: configuration.configId,
+ *     version: configuration1.latestVersion,
+ *     matchTargetId: _var.match_target_id,
+ * }));
+ * export const matchTargetOutput = matchTarget.then(matchTarget => matchTarget.outputText);
  * ```
  */
 export function getAppSecMatchTargets(args: GetAppSecMatchTargetsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecMatchTargetsResult> {
@@ -36,6 +42,7 @@ export function getAppSecMatchTargets(args: GetAppSecMatchTargetsArgs, opts?: pu
     }
     return pulumi.runtime.invoke("akamai:index/getAppSecMatchTargets:getAppSecMatchTargets", {
         "configId": args.configId,
+        "matchTargetId": args.matchTargetId,
         "version": args.version,
     }, opts);
 }
@@ -48,6 +55,10 @@ export interface GetAppSecMatchTargetsArgs {
      * The ID of the security configuration to use.
      */
     readonly configId: number;
+    /**
+     * The ID of the match target to use. If not supplied, information about all match targets is returned.
+     */
+    readonly matchTargetId?: number;
     /**
      * The version number of the security configuration to use.
      */
@@ -64,7 +75,12 @@ export interface GetAppSecMatchTargetsResult {
      */
     readonly id: string;
     /**
-     * A tabular display showing the ID and Policy ID of all match targets associated with the specified security configuration and version.
+     * A JSON-formatted list of the match target information.
+     */
+    readonly json: string;
+    readonly matchTargetId?: number;
+    /**
+     * A tabular display showing the ID and Policy ID of all match targets associated with the specified security configuration and version, or of the specific match target if `matchTargetId` was supplied.
      */
     readonly outputText: string;
     readonly version: number;

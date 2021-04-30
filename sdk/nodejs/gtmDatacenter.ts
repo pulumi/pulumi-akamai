@@ -6,7 +6,11 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * `akamai.GtmDatacenter` provides the resource for creating, configuring and importing a gtm datacenter to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingDatacenterId`
+ * Use the `akamai.GtmDatacenter` resource to create, configure, and import a GTM data center. A GTM data center represents a customer data center and is also known as a traffic target, a location containing many servers GTM can direct traffic to.
+ *
+ * GTM uses data centers to scale load balancing. For example, you might have data centers in both New York and Amsterdam and want to balance load between them. You can configure GTM to send US users to the New York data center and European users to the data center in Amsterdam.
+ *
+ * > **Note** Import requires an ID with this format: `existingDomainName`:`existingDatacenterId`.
  *
  * ## Example Usage
  *
@@ -21,6 +25,43 @@ import * as utilities from "./utilities";
  *     nickname: "demo_datacenter",
  * });
  * ```
+ * ## Argument reference
+ *
+ * This resource supports these arguments:
+ *
+ * * `domain` - (Required) The GTM domain name for the data center.
+ * * `waitOnComplete` - (Optional) A boolean, that if set to `true`, waits for transaction to complete.
+ * * `nickname` - (Optional) A descriptive label for the data center.
+ * * `defaultLoadObject` - (Optional) Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
+ *   * `loadObject` - A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
+ *   * `loadObjectPort` - Specifies the TCP port to connect to when requesting the load object.
+ *   * `loadServers` - Specifies a list of servers to request the load object from.
+ * * `city` - (Optional) The name of the city where the data center is located.
+ * * `cloneOf` - (Optional) Identifies the data center’s `datacenterId` of which this data center is a clone.
+ * * `cloudServerTargeting` - (Optional) A boolean indicating whether to balance load between two or more servers in a cloud environment.
+ * * `cloudServerHostHeaderOverride` - (Optional) A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
+ * * `continent` - (Optional) A two-letter code that specifies the continent where the data center maps to.
+ * * `country` - (Optional) A two-letter ISO 3166 country code that specifies the country where the data center maps to.
+ * * `latitude` - (Optional) Specifies the geographical latitude of the data center’s position. See also longitude within this object.
+ * * `longitude` - (Optional) Specifies the geographic longitude of the data center’s position. See also latitude within this object.
+ * * `stateOrProvince` - (Optional) Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
+ *
+ * ## Attribute reference
+ *
+ * This resource returns these computed attributes in the state file:
+ *
+ * * `datacenterId` - A unique identifier for an existing data center in the domain.
+ * * `pingInterval`
+ * * `pingPacketSize`
+ * * `scorePenalty`
+ * * `servermonitorLivenessCount`
+ * * `servermonitorLoadCount`
+ * * `servermonitorPool`
+ * * `virtual` - A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
+ *
+ * ## Schema reference
+ *
+ * You can download the GTM Data Center backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#datacenter) page.
  */
 export class GtmDatacenter extends pulumi.CustomResource {
     /**
@@ -52,31 +93,15 @@ export class GtmDatacenter extends pulumi.CustomResource {
 
     public readonly city!: pulumi.Output<string | undefined>;
     public readonly cloneOf!: pulumi.Output<number | undefined>;
-    /**
-     * * `continent`
-     * * `country`
-     * * `latitude`
-     * * `longitude`
-     * * `stateOrProvince`
-     */
     public readonly cloudServerHostHeaderOverride!: pulumi.Output<boolean | undefined>;
     public readonly cloudServerTargeting!: pulumi.Output<boolean | undefined>;
     public readonly continent!: pulumi.Output<string | undefined>;
     public readonly country!: pulumi.Output<string | undefined>;
     public /*out*/ readonly datacenterId!: pulumi.Output<number>;
     public readonly defaultLoadObject!: pulumi.Output<outputs.GtmDatacenterDefaultLoadObject | undefined>;
-    /**
-     * Domain name
-     */
     public readonly domain!: pulumi.Output<string>;
     public readonly latitude!: pulumi.Output<number | undefined>;
     public readonly longitude!: pulumi.Output<number | undefined>;
-    /**
-     * datacenter nickname
-     * * `defaultLoadObject`
-     * * `loadObject`
-     * * `loadObjectPort`
-     */
     public readonly nickname!: pulumi.Output<string | undefined>;
     public /*out*/ readonly pingInterval!: pulumi.Output<number>;
     public /*out*/ readonly pingPacketSize!: pulumi.Output<number>;
@@ -86,9 +111,6 @@ export class GtmDatacenter extends pulumi.CustomResource {
     public /*out*/ readonly servermonitorPool!: pulumi.Output<string>;
     public readonly stateOrProvince!: pulumi.Output<string | undefined>;
     public /*out*/ readonly virtual!: pulumi.Output<boolean>;
-    /**
-     * Wait for transaction to complete
-     */
     public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
 
     /**
@@ -167,31 +189,15 @@ export class GtmDatacenter extends pulumi.CustomResource {
 export interface GtmDatacenterState {
     readonly city?: pulumi.Input<string>;
     readonly cloneOf?: pulumi.Input<number>;
-    /**
-     * * `continent`
-     * * `country`
-     * * `latitude`
-     * * `longitude`
-     * * `stateOrProvince`
-     */
     readonly cloudServerHostHeaderOverride?: pulumi.Input<boolean>;
     readonly cloudServerTargeting?: pulumi.Input<boolean>;
     readonly continent?: pulumi.Input<string>;
     readonly country?: pulumi.Input<string>;
     readonly datacenterId?: pulumi.Input<number>;
     readonly defaultLoadObject?: pulumi.Input<inputs.GtmDatacenterDefaultLoadObject>;
-    /**
-     * Domain name
-     */
     readonly domain?: pulumi.Input<string>;
     readonly latitude?: pulumi.Input<number>;
     readonly longitude?: pulumi.Input<number>;
-    /**
-     * datacenter nickname
-     * * `defaultLoadObject`
-     * * `loadObject`
-     * * `loadObjectPort`
-     */
     readonly nickname?: pulumi.Input<string>;
     readonly pingInterval?: pulumi.Input<number>;
     readonly pingPacketSize?: pulumi.Input<number>;
@@ -201,9 +207,6 @@ export interface GtmDatacenterState {
     readonly servermonitorPool?: pulumi.Input<string>;
     readonly stateOrProvince?: pulumi.Input<string>;
     readonly virtual?: pulumi.Input<boolean>;
-    /**
-     * Wait for transaction to complete
-     */
     readonly waitOnComplete?: pulumi.Input<boolean>;
 }
 
@@ -213,34 +216,15 @@ export interface GtmDatacenterState {
 export interface GtmDatacenterArgs {
     readonly city?: pulumi.Input<string>;
     readonly cloneOf?: pulumi.Input<number>;
-    /**
-     * * `continent`
-     * * `country`
-     * * `latitude`
-     * * `longitude`
-     * * `stateOrProvince`
-     */
     readonly cloudServerHostHeaderOverride?: pulumi.Input<boolean>;
     readonly cloudServerTargeting?: pulumi.Input<boolean>;
     readonly continent?: pulumi.Input<string>;
     readonly country?: pulumi.Input<string>;
     readonly defaultLoadObject?: pulumi.Input<inputs.GtmDatacenterDefaultLoadObject>;
-    /**
-     * Domain name
-     */
     readonly domain: pulumi.Input<string>;
     readonly latitude?: pulumi.Input<number>;
     readonly longitude?: pulumi.Input<number>;
-    /**
-     * datacenter nickname
-     * * `defaultLoadObject`
-     * * `loadObject`
-     * * `loadObjectPort`
-     */
     readonly nickname?: pulumi.Input<string>;
     readonly stateOrProvince?: pulumi.Input<string>;
-    /**
-     * Wait for transaction to complete
-     */
     readonly waitOnComplete?: pulumi.Input<boolean>;
 }

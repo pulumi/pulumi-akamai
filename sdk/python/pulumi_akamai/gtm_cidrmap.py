@@ -22,14 +22,6 @@ class GtmCidrmapArgs:
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a GtmCidrmap resource.
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[Sequence[pulumi.Input['GtmCidrmapAssignmentArgs']]] assignments: * `datacenter_id`
-               * `nickname`
-        :param pulumi.Input[str] name: Resource name
-               * `default_datacenter`
-               * `datacenter_id`
-               * `nickname`
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
         """
         pulumi.set(__self__, "default_datacenter", default_datacenter)
         pulumi.set(__self__, "domain", domain)
@@ -52,9 +44,6 @@ class GtmCidrmapArgs:
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Input[str]:
-        """
-        Domain name
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -64,10 +53,6 @@ class GtmCidrmapArgs:
     @property
     @pulumi.getter
     def assignments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmCidrmapAssignmentArgs']]]]:
-        """
-        * `datacenter_id`
-        * `nickname`
-        """
         return pulumi.get(self, "assignments")
 
     @assignments.setter
@@ -77,12 +62,6 @@ class GtmCidrmapArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Resource name
-        * `default_datacenter`
-        * `datacenter_id`
-        * `nickname`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -92,9 +71,6 @@ class GtmCidrmapArgs:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Wait for transaction to complete
-        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -112,14 +88,6 @@ class _GtmCidrmapState:
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering GtmCidrmap resources.
-        :param pulumi.Input[Sequence[pulumi.Input['GtmCidrmapAssignmentArgs']]] assignments: * `datacenter_id`
-               * `nickname`
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[str] name: Resource name
-               * `default_datacenter`
-               * `datacenter_id`
-               * `nickname`
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
         """
         if assignments is not None:
             pulumi.set(__self__, "assignments", assignments)
@@ -135,10 +103,6 @@ class _GtmCidrmapState:
     @property
     @pulumi.getter
     def assignments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmCidrmapAssignmentArgs']]]]:
-        """
-        * `datacenter_id`
-        * `nickname`
-        """
         return pulumi.get(self, "assignments")
 
     @assignments.setter
@@ -157,9 +121,6 @@ class _GtmCidrmapState:
     @property
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        Domain name
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -169,12 +130,6 @@ class _GtmCidrmapState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Resource name
-        * `default_datacenter`
-        * `datacenter_id`
-        * `nickname`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -184,9 +139,6 @@ class _GtmCidrmapState:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Wait for transaction to complete
-        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -206,7 +158,11 @@ class GtmCidrmap(pulumi.CustomResource):
                  wait_on_complete: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        `GtmCidrmap` provides the resource for creating, configuring and importing a gtm Cidr Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_map_name`
+        Use the `GtmCidrmap` resource to create, configure, and import a GTM Classless Inter-Domain Routing (CIDR) map. CIDR mapping uses the IP addresses of the requesting name server to provide IP-specific CNAME entries. CNAMEs let you direct internal users to a specific environment or direct them to the origin. This lets you provide different responses to an internal corporate DNS infrastructure, such as internal test environments and another answer for all other name servers (`default_datacenter`).
+
+         CIDR maps split the Internet into multiple CIDR block zones. Properties that use a map can specify a handout CNAME for each zone on the property’s editing page. To configure a property for CIDR mapping, your domain needs at least one CIDR map defined.
+
+        > **Note** Import requires an ID with this format: `existing_domain_name`:`existing_map_name`.
 
         ## Example Usage
 
@@ -223,17 +179,27 @@ class GtmCidrmap(pulumi.CustomResource):
             ),
             domain="demo_domain.akadns.net")
         ```
+        ## Argument reference
+
+        This resource supports these arguments:
+
+        * `domain` - (Required) GTM Domain name for the AS Map.
+        * `name` - (Required) A descriptive label for the CIDR map, up to 255 characters.
+        * `default_datacenter` - (Required) A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+          * `datacenter_id` - (Required) For each property, an identifier for all other CIDR zones.
+          * `nickname` - (Required) A descriptive label for the all other CIDR blocks.
+        * `wait_on_complete` - (Optional) A boolean that, if set to `true`, waits for transaction to complete.
+        * `assignment` - (Optional) Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+          * `datacenter_id` - (Optional) A unique identifier for an existing data center in the domain.
+          * `nickname` - (Optional) A descriptive label for the CIDR zone group, up to 256 characters.
+          * `blocks` - (Optional, list) Specifies an array of CIDR blocks.
+
+        ## Schema reference
+
+        You can download the GTM CIDR Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#cidrmap) page.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmCidrmapAssignmentArgs']]]] assignments: * `datacenter_id`
-               * `nickname`
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[str] name: Resource name
-               * `default_datacenter`
-               * `datacenter_id`
-               * `nickname`
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
         """
         ...
     @overload
@@ -242,7 +208,11 @@ class GtmCidrmap(pulumi.CustomResource):
                  args: GtmCidrmapArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        `GtmCidrmap` provides the resource for creating, configuring and importing a gtm Cidr Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_map_name`
+        Use the `GtmCidrmap` resource to create, configure, and import a GTM Classless Inter-Domain Routing (CIDR) map. CIDR mapping uses the IP addresses of the requesting name server to provide IP-specific CNAME entries. CNAMEs let you direct internal users to a specific environment or direct them to the origin. This lets you provide different responses to an internal corporate DNS infrastructure, such as internal test environments and another answer for all other name servers (`default_datacenter`).
+
+         CIDR maps split the Internet into multiple CIDR block zones. Properties that use a map can specify a handout CNAME for each zone on the property’s editing page. To configure a property for CIDR mapping, your domain needs at least one CIDR map defined.
+
+        > **Note** Import requires an ID with this format: `existing_domain_name`:`existing_map_name`.
 
         ## Example Usage
 
@@ -259,6 +229,24 @@ class GtmCidrmap(pulumi.CustomResource):
             ),
             domain="demo_domain.akadns.net")
         ```
+        ## Argument reference
+
+        This resource supports these arguments:
+
+        * `domain` - (Required) GTM Domain name for the AS Map.
+        * `name` - (Required) A descriptive label for the CIDR map, up to 255 characters.
+        * `default_datacenter` - (Required) A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+          * `datacenter_id` - (Required) For each property, an identifier for all other CIDR zones.
+          * `nickname` - (Required) A descriptive label for the all other CIDR blocks.
+        * `wait_on_complete` - (Optional) A boolean that, if set to `true`, waits for transaction to complete.
+        * `assignment` - (Optional) Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+          * `datacenter_id` - (Optional) A unique identifier for an existing data center in the domain.
+          * `nickname` - (Optional) A descriptive label for the CIDR zone group, up to 256 characters.
+          * `blocks` - (Optional, list) Specifies an array of CIDR blocks.
+
+        ## Schema reference
+
+        You can download the GTM CIDR Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#cidrmap) page.
 
         :param str resource_name: The name of the resource.
         :param GtmCidrmapArgs args: The arguments to use to populate this resource's properties.
@@ -325,14 +313,6 @@ class GtmCidrmap(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmCidrmapAssignmentArgs']]]] assignments: * `datacenter_id`
-               * `nickname`
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[str] name: Resource name
-               * `default_datacenter`
-               * `datacenter_id`
-               * `nickname`
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -348,10 +328,6 @@ class GtmCidrmap(pulumi.CustomResource):
     @property
     @pulumi.getter
     def assignments(self) -> pulumi.Output[Optional[Sequence['outputs.GtmCidrmapAssignment']]]:
-        """
-        * `datacenter_id`
-        * `nickname`
-        """
         return pulumi.get(self, "assignments")
 
     @property
@@ -362,27 +338,15 @@ class GtmCidrmap(pulumi.CustomResource):
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Output[str]:
-        """
-        Domain name
-        """
         return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        Resource name
-        * `default_datacenter`
-        * `datacenter_id`
-        * `nickname`
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> pulumi.Output[Optional[bool]]:
-        """
-        Wait for transaction to complete
-        """
         return pulumi.get(self, "wait_on_complete")
 

@@ -32,7 +32,7 @@ namespace Pulumi.Akamai
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
     ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
-    ///             PolicyId = "crAP_75829",
+    ///             SecurityPolicyId = "crAP_75829",
     ///             CustomRuleId = 12345,
     ///             CustomRuleAction = "alert",
     ///         });
@@ -54,25 +54,22 @@ namespace Pulumi.Akamai
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// The action to be taken when the custom rule is invoked. Must be one of the following:
-        /// * alert
-        /// * deny
-        /// * none
+        /// The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
         /// </summary>
         [Output("customRuleAction")]
         public Output<string> CustomRuleAction { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the custom rule.
+        /// The custom rule for which to apply the action.
         /// </summary>
         [Output("customRuleId")]
         public Output<int> CustomRuleId { get; private set; } = null!;
 
         /// <summary>
-        /// The
+        /// The security policy to use.
         /// </summary>
-        [Output("policyId")]
-        public Output<string> PolicyId { get; private set; } = null!;
+        [Output("securityPolicyId")]
+        public Output<string> SecurityPolicyId { get; private set; } = null!;
 
         /// <summary>
         /// The version number of the security configuration to use.
@@ -133,25 +130,22 @@ namespace Pulumi.Akamai
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The action to be taken when the custom rule is invoked. Must be one of the following:
-        /// * alert
-        /// * deny
-        /// * none
+        /// The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
         /// </summary>
         [Input("customRuleAction", required: true)]
         public Input<string> CustomRuleAction { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the custom rule.
+        /// The custom rule for which to apply the action.
         /// </summary>
         [Input("customRuleId", required: true)]
         public Input<int> CustomRuleId { get; set; } = null!;
 
         /// <summary>
-        /// The
+        /// The security policy to use.
         /// </summary>
-        [Input("policyId", required: true)]
-        public Input<string> PolicyId { get; set; } = null!;
+        [Input("securityPolicyId", required: true)]
+        public Input<string> SecurityPolicyId { get; set; } = null!;
 
         /// <summary>
         /// The version number of the security configuration to use.
@@ -173,25 +167,22 @@ namespace Pulumi.Akamai
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// The action to be taken when the custom rule is invoked. Must be one of the following:
-        /// * alert
-        /// * deny
-        /// * none
+        /// The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
         /// </summary>
         [Input("customRuleAction")]
         public Input<string>? CustomRuleAction { get; set; }
 
         /// <summary>
-        /// The ID of the custom rule.
+        /// The custom rule for which to apply the action.
         /// </summary>
         [Input("customRuleId")]
         public Input<int>? CustomRuleId { get; set; }
 
         /// <summary>
-        /// The
+        /// The security policy to use.
         /// </summary>
-        [Input("policyId")]
-        public Input<string>? PolicyId { get; set; }
+        [Input("securityPolicyId")]
+        public Input<string>? SecurityPolicyId { get; set; }
 
         /// <summary>
         /// The version number of the security configuration to use.

@@ -11,7 +11,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// `GtmCidrmap` provides the resource for creating, configuring and importing a gtm Cidr Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingMapName`
+// Use the `GtmCidrmap` resource to create, configure, and import a GTM Classless Inter-Domain Routing (CIDR) map. CIDR mapping uses the IP addresses of the requesting name server to provide IP-specific CNAME entries. CNAMEs let you direct internal users to a specific environment or direct them to the origin. This lets you provide different responses to an internal corporate DNS infrastructure, such as internal test environments and another answer for all other name servers (`defaultDatacenter`).
+//
+//  CIDR maps split the Internet into multiple CIDR block zones. Properties that use a map can specify a handout CNAME for each zone on the property’s editing page. To configure a property for CIDR mapping, your domain needs at least one CIDR map defined.
+//
+// > **Note** Import requires an ID with this format: `existingDomainName`:`existingMapName`.
 //
 // ## Example Usage
 //
@@ -41,22 +45,32 @@ import (
 // 	})
 // }
 // ```
+// ## Argument reference
+//
+// This resource supports these arguments:
+//
+// * `domain` - (Required) GTM Domain name for the AS Map.
+// * `name` - (Required) A descriptive label for the CIDR map, up to 255 characters.
+// * `defaultDatacenter` - (Required) A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+//   * `datacenterId` - (Required) For each property, an identifier for all other CIDR zones.
+//   * `nickname` - (Required) A descriptive label for the all other CIDR blocks.
+// * `waitOnComplete` - (Optional) A boolean that, if set to `true`, waits for transaction to complete.
+// * `assignment` - (Optional) Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+//   * `datacenterId` - (Optional) A unique identifier for an existing data center in the domain.
+//   * `nickname` - (Optional) A descriptive label for the CIDR zone group, up to 256 characters.
+//   * `blocks` - (Optional, list) Specifies an array of CIDR blocks.
+//
+// ## Schema reference
+//
+// You can download the GTM CIDR Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#cidrmap) page.
 type GtmCidrmap struct {
 	pulumi.CustomResourceState
 
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       GtmCidrmapAssignmentArrayOutput   `pulumi:"assignments"`
 	DefaultDatacenter GtmCidrmapDefaultDatacenterOutput `pulumi:"defaultDatacenter"`
-	// Domain name
-	Domain pulumi.StringOutput `pulumi:"domain"`
-	// Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name pulumi.StringOutput `pulumi:"name"`
-	// Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrOutput `pulumi:"waitOnComplete"`
+	Domain            pulumi.StringOutput               `pulumi:"domain"`
+	Name              pulumi.StringOutput               `pulumi:"name"`
+	WaitOnComplete    pulumi.BoolPtrOutput              `pulumi:"waitOnComplete"`
 }
 
 // NewGtmCidrmap registers a new resource with the given unique name, arguments, and options.
@@ -100,35 +114,19 @@ func GetGtmCidrmap(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering GtmCidrmap resources.
 type gtmCidrmapState struct {
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       []GtmCidrmapAssignment       `pulumi:"assignments"`
 	DefaultDatacenter *GtmCidrmapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	// Domain name
-	Domain *string `pulumi:"domain"`
-	// Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name *string `pulumi:"name"`
-	// Wait for transaction to complete
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	Domain            *string                      `pulumi:"domain"`
+	Name              *string                      `pulumi:"name"`
+	WaitOnComplete    *bool                        `pulumi:"waitOnComplete"`
 }
 
 type GtmCidrmapState struct {
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       GtmCidrmapAssignmentArrayInput
 	DefaultDatacenter GtmCidrmapDefaultDatacenterPtrInput
-	// Domain name
-	Domain pulumi.StringPtrInput
-	// Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name pulumi.StringPtrInput
-	// Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrInput
+	Domain            pulumi.StringPtrInput
+	Name              pulumi.StringPtrInput
+	WaitOnComplete    pulumi.BoolPtrInput
 }
 
 func (GtmCidrmapState) ElementType() reflect.Type {
@@ -136,36 +134,20 @@ func (GtmCidrmapState) ElementType() reflect.Type {
 }
 
 type gtmCidrmapArgs struct {
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       []GtmCidrmapAssignment      `pulumi:"assignments"`
 	DefaultDatacenter GtmCidrmapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	// Domain name
-	Domain string `pulumi:"domain"`
-	// Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name *string `pulumi:"name"`
-	// Wait for transaction to complete
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	Domain            string                      `pulumi:"domain"`
+	Name              *string                     `pulumi:"name"`
+	WaitOnComplete    *bool                       `pulumi:"waitOnComplete"`
 }
 
 // The set of arguments for constructing a GtmCidrmap resource.
 type GtmCidrmapArgs struct {
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       GtmCidrmapAssignmentArrayInput
 	DefaultDatacenter GtmCidrmapDefaultDatacenterInput
-	// Domain name
-	Domain pulumi.StringInput
-	// Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name pulumi.StringPtrInput
-	// Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrInput
+	Domain            pulumi.StringInput
+	Name              pulumi.StringPtrInput
+	WaitOnComplete    pulumi.BoolPtrInput
 }
 
 func (GtmCidrmapArgs) ElementType() reflect.Type {

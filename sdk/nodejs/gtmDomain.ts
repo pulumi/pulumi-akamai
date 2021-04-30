@@ -5,7 +5,9 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * `akamai.GtmDomain` provides the resource for creating, configuring and importing a gtm domain to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`
+ * Use the `akamai.GtmDomain` resource to create, configure, and import a GTM Domain, which is a basic building block of a traffic management configuration.
+ *
+ * > **Note** Import requires an ID with this format: `existingDomainName`.
  *
  * ## Example Usage
  *
@@ -22,6 +24,54 @@ import * as utilities from "./utilities";
  *     type: "basic",
  * });
  * ```
+ * ## Argument reference
+ *
+ * This resource supports these arguments:
+ *
+ * * `contract` - (Required) If creating a domain, the contract ID.
+ * * `group` - (Required) If creating a domain, the currently selected group ID.
+ * * `name` - (Required) The DNS name for a collection of GTM Properties.
+ * * `type` - (Required) Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
+ * * `waitOnComplete` - (Optional) A boolean that, if set to `true`, waits for transaction to complete.
+ * * `comment` - (Optional) A descriptive note about changes to the domain. The maximum is 4000 characters.
+ * * `emailNotificationList` - (Optional) A list of email addresses to notify when a change is made to the domain.
+ * * `defaultTimeoutPenalty` - (Optional) Specifies the timeout penalty score. Default is `25`.
+ * * `loadImbalancePercentage` - (Optional) Indicates the percentage of load imbalance factor (LIF) for the domain.
+ * * `defaultSslClientPrivateKey` - (Optional) Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
+ * * `defaultErrorPenalty` - (Optional) Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
+ * * `cnameCoalescingEnabled` - (Optional) A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
+ * * `loadFeedback` - (Optional) A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
+ * * `defaultSslClientCertificate` - (Optional) Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
+ * * `endUserMappingEnabled` - (Optional) A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
+ *
+ * ## Attribute reference
+ *
+ * This resource returns these computed attributes in the state file:
+ *
+ * * `defaultUnreachableThreshold`
+ * * `minPingableRegionFraction`
+ * * `servermonitorLivenessCount`
+ * * `roundRobinPrefix`
+ * * `servermonitorLoadCount`
+ * * `pingInterval`
+ * * `maxTtl`
+ * * `defaultHealthMax`
+ * * `mapUpdateInterval`
+ * * `maxProperties`
+ * * `maxResources`
+ * * `defaultErrorPenalty`
+ * * `maxTestTimeout`
+ * * `defaultHealthMultiplier`
+ * * `servermonitorPool`
+ * * `minTtl`
+ * * `defaultMaxUnreachablePenalty`
+ * * `defaultHealthThreshold`
+ * * `minTestInterval`
+ * * `pingPacketSize`
+ *
+ * ## Schema reference
+ *
+ * You can download the GTM Domain backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#domain) page.
  */
 export class GtmDomain extends pulumi.CustomResource {
     /**
@@ -52,13 +102,7 @@ export class GtmDomain extends pulumi.CustomResource {
     }
 
     public readonly cnameCoalescingEnabled!: pulumi.Output<boolean | undefined>;
-    /**
-     * A descriptive comment
-     */
     public readonly comment!: pulumi.Output<string | undefined>;
-    /**
-     * The contract ID (if creating domain)
-     */
     public readonly contract!: pulumi.Output<string | undefined>;
     public readonly defaultErrorPenalty!: pulumi.Output<number | undefined>;
     public /*out*/ readonly defaultHealthMax!: pulumi.Output<number>;
@@ -67,42 +111,11 @@ export class GtmDomain extends pulumi.CustomResource {
     public /*out*/ readonly defaultMaxUnreachablePenalty!: pulumi.Output<number>;
     public readonly defaultSslClientCertificate!: pulumi.Output<string | undefined>;
     public readonly defaultSslClientPrivateKey!: pulumi.Output<string | undefined>;
-    /**
-     * * `loadImbalancePercentage`
-     * * `defaultSslClientPrivateKey`
-     */
     public readonly defaultTimeoutPenalty!: pulumi.Output<number | undefined>;
-    /**
-     * * `minPingableRegionFraction`
-     * * `servermonitorLivenessCount`
-     * * `roundRobinPrefix`
-     * * `servermonitorLoadCount`
-     * * `pingInterval`
-     * * `maxTtl`
-     * * `defaultHealthMax`
-     * * `mapUpdateInterval`
-     * * `maxProperties`
-     * * `maxResources`
-     * * `defaultErrorPenalty`
-     * * `maxTestTimeout`
-     * * `defaultHealthMultiplier`
-     * * `servermonitorPool`
-     * * `minTtl`
-     * * `defaultMaxUnreachablePenalty`
-     * * `defaultHealthThreshold`
-     * * `minTestInterval`
-     * * `pingPacketSize`
-     */
     public /*out*/ readonly defaultUnreachableThreshold!: pulumi.Output<number>;
     public readonly emailNotificationLists!: pulumi.Output<string[] | undefined>;
     public readonly endUserMappingEnabled!: pulumi.Output<boolean | undefined>;
-    /**
-     * The currently selected group ID (if creating domain)
-     */
     public readonly group!: pulumi.Output<string | undefined>;
-    /**
-     * * `defaultSslClientCertificate`
-     */
     public readonly loadFeedback!: pulumi.Output<boolean | undefined>;
     public readonly loadImbalancePercentage!: pulumi.Output<number | undefined>;
     public /*out*/ readonly mapUpdateInterval!: pulumi.Output<number>;
@@ -113,9 +126,6 @@ export class GtmDomain extends pulumi.CustomResource {
     public /*out*/ readonly minPingableRegionFraction!: pulumi.Output<number>;
     public /*out*/ readonly minTestInterval!: pulumi.Output<number>;
     public /*out*/ readonly minTtl!: pulumi.Output<number>;
-    /**
-     * Domain name
-     */
     public readonly name!: pulumi.Output<string>;
     public /*out*/ readonly pingInterval!: pulumi.Output<number>;
     public /*out*/ readonly pingPacketSize!: pulumi.Output<number>;
@@ -123,13 +133,7 @@ export class GtmDomain extends pulumi.CustomResource {
     public /*out*/ readonly servermonitorLivenessCount!: pulumi.Output<number>;
     public /*out*/ readonly servermonitorLoadCount!: pulumi.Output<number>;
     public /*out*/ readonly servermonitorPool!: pulumi.Output<string>;
-    /**
-     * Domain type
-     */
     public readonly type!: pulumi.Output<string>;
-    /**
-     * Wait for transaction to complete
-     */
     public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
 
     /**
@@ -233,13 +237,7 @@ export class GtmDomain extends pulumi.CustomResource {
  */
 export interface GtmDomainState {
     readonly cnameCoalescingEnabled?: pulumi.Input<boolean>;
-    /**
-     * A descriptive comment
-     */
     readonly comment?: pulumi.Input<string>;
-    /**
-     * The contract ID (if creating domain)
-     */
     readonly contract?: pulumi.Input<string>;
     readonly defaultErrorPenalty?: pulumi.Input<number>;
     readonly defaultHealthMax?: pulumi.Input<number>;
@@ -248,42 +246,11 @@ export interface GtmDomainState {
     readonly defaultMaxUnreachablePenalty?: pulumi.Input<number>;
     readonly defaultSslClientCertificate?: pulumi.Input<string>;
     readonly defaultSslClientPrivateKey?: pulumi.Input<string>;
-    /**
-     * * `loadImbalancePercentage`
-     * * `defaultSslClientPrivateKey`
-     */
     readonly defaultTimeoutPenalty?: pulumi.Input<number>;
-    /**
-     * * `minPingableRegionFraction`
-     * * `servermonitorLivenessCount`
-     * * `roundRobinPrefix`
-     * * `servermonitorLoadCount`
-     * * `pingInterval`
-     * * `maxTtl`
-     * * `defaultHealthMax`
-     * * `mapUpdateInterval`
-     * * `maxProperties`
-     * * `maxResources`
-     * * `defaultErrorPenalty`
-     * * `maxTestTimeout`
-     * * `defaultHealthMultiplier`
-     * * `servermonitorPool`
-     * * `minTtl`
-     * * `defaultMaxUnreachablePenalty`
-     * * `defaultHealthThreshold`
-     * * `minTestInterval`
-     * * `pingPacketSize`
-     */
     readonly defaultUnreachableThreshold?: pulumi.Input<number>;
     readonly emailNotificationLists?: pulumi.Input<pulumi.Input<string>[]>;
     readonly endUserMappingEnabled?: pulumi.Input<boolean>;
-    /**
-     * The currently selected group ID (if creating domain)
-     */
     readonly group?: pulumi.Input<string>;
-    /**
-     * * `defaultSslClientCertificate`
-     */
     readonly loadFeedback?: pulumi.Input<boolean>;
     readonly loadImbalancePercentage?: pulumi.Input<number>;
     readonly mapUpdateInterval?: pulumi.Input<number>;
@@ -294,9 +261,6 @@ export interface GtmDomainState {
     readonly minPingableRegionFraction?: pulumi.Input<number>;
     readonly minTestInterval?: pulumi.Input<number>;
     readonly minTtl?: pulumi.Input<number>;
-    /**
-     * Domain name
-     */
     readonly name?: pulumi.Input<string>;
     readonly pingInterval?: pulumi.Input<number>;
     readonly pingPacketSize?: pulumi.Input<number>;
@@ -304,13 +268,7 @@ export interface GtmDomainState {
     readonly servermonitorLivenessCount?: pulumi.Input<number>;
     readonly servermonitorLoadCount?: pulumi.Input<number>;
     readonly servermonitorPool?: pulumi.Input<string>;
-    /**
-     * Domain type
-     */
     readonly type?: pulumi.Input<string>;
-    /**
-     * Wait for transaction to complete
-     */
     readonly waitOnComplete?: pulumi.Input<boolean>;
 }
 
@@ -319,43 +277,18 @@ export interface GtmDomainState {
  */
 export interface GtmDomainArgs {
     readonly cnameCoalescingEnabled?: pulumi.Input<boolean>;
-    /**
-     * A descriptive comment
-     */
     readonly comment?: pulumi.Input<string>;
-    /**
-     * The contract ID (if creating domain)
-     */
     readonly contract?: pulumi.Input<string>;
     readonly defaultErrorPenalty?: pulumi.Input<number>;
     readonly defaultSslClientCertificate?: pulumi.Input<string>;
     readonly defaultSslClientPrivateKey?: pulumi.Input<string>;
-    /**
-     * * `loadImbalancePercentage`
-     * * `defaultSslClientPrivateKey`
-     */
     readonly defaultTimeoutPenalty?: pulumi.Input<number>;
     readonly emailNotificationLists?: pulumi.Input<pulumi.Input<string>[]>;
     readonly endUserMappingEnabled?: pulumi.Input<boolean>;
-    /**
-     * The currently selected group ID (if creating domain)
-     */
     readonly group?: pulumi.Input<string>;
-    /**
-     * * `defaultSslClientCertificate`
-     */
     readonly loadFeedback?: pulumi.Input<boolean>;
     readonly loadImbalancePercentage?: pulumi.Input<number>;
-    /**
-     * Domain name
-     */
     readonly name?: pulumi.Input<string>;
-    /**
-     * Domain type
-     */
     readonly type: pulumi.Input<string>;
-    /**
-     * Wait for transaction to complete
-     */
     readonly waitOnComplete?: pulumi.Input<boolean>;
 }

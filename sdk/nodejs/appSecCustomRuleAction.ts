@@ -21,7 +21,7 @@ import * as utilities from "./utilities";
  * const createCustomRuleAction = new akamai.AppSecCustomRuleAction("createCustomRuleAction", {
  *     configId: configuration.then(configuration => configuration.configId),
  *     version: configuration.then(configuration => configuration.latestVersion),
- *     policyId: "crAP_75829",
+ *     securityPolicyId: "crAP_75829",
  *     customRuleId: 12345,
  *     customRuleAction: "alert",
  * });
@@ -61,20 +61,17 @@ export class AppSecCustomRuleAction extends pulumi.CustomResource {
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * The action to be taken when the custom rule is invoked. Must be one of the following:
-     * * alert
-     * * deny
-     * * none
+     * The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
      */
     public readonly customRuleAction!: pulumi.Output<string>;
     /**
-     * The ID of the custom rule.
+     * The custom rule for which to apply the action.
      */
     public readonly customRuleId!: pulumi.Output<number>;
     /**
-     * The
+     * The security policy to use.
      */
-    public readonly policyId!: pulumi.Output<string>;
+    public readonly securityPolicyId!: pulumi.Output<string>;
     /**
      * The version number of the security configuration to use.
      */
@@ -96,7 +93,7 @@ export class AppSecCustomRuleAction extends pulumi.CustomResource {
             inputs["configId"] = state ? state.configId : undefined;
             inputs["customRuleAction"] = state ? state.customRuleAction : undefined;
             inputs["customRuleId"] = state ? state.customRuleId : undefined;
-            inputs["policyId"] = state ? state.policyId : undefined;
+            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
             inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecCustomRuleActionArgs | undefined;
@@ -109,8 +106,8 @@ export class AppSecCustomRuleAction extends pulumi.CustomResource {
             if ((!args || args.customRuleId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'customRuleId'");
             }
-            if ((!args || args.policyId === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'policyId'");
+            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'securityPolicyId'");
             }
             if ((!args || args.version === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'version'");
@@ -118,7 +115,7 @@ export class AppSecCustomRuleAction extends pulumi.CustomResource {
             inputs["configId"] = args ? args.configId : undefined;
             inputs["customRuleAction"] = args ? args.customRuleAction : undefined;
             inputs["customRuleId"] = args ? args.customRuleId : undefined;
-            inputs["policyId"] = args ? args.policyId : undefined;
+            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
             inputs["version"] = args ? args.version : undefined;
         }
         if (!opts.version) {
@@ -137,20 +134,17 @@ export interface AppSecCustomRuleActionState {
      */
     readonly configId?: pulumi.Input<number>;
     /**
-     * The action to be taken when the custom rule is invoked. Must be one of the following:
-     * * alert
-     * * deny
-     * * none
+     * The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
      */
     readonly customRuleAction?: pulumi.Input<string>;
     /**
-     * The ID of the custom rule.
+     * The custom rule for which to apply the action.
      */
     readonly customRuleId?: pulumi.Input<number>;
     /**
-     * The
+     * The security policy to use.
      */
-    readonly policyId?: pulumi.Input<string>;
+    readonly securityPolicyId?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
@@ -166,20 +160,17 @@ export interface AppSecCustomRuleActionArgs {
      */
     readonly configId: pulumi.Input<number>;
     /**
-     * The action to be taken when the custom rule is invoked. Must be one of the following:
-     * * alert
-     * * deny
-     * * none
+     * The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
      */
     readonly customRuleAction: pulumi.Input<string>;
     /**
-     * The ID of the custom rule.
+     * The custom rule for which to apply the action.
      */
     readonly customRuleId: pulumi.Input<number>;
     /**
-     * The
+     * The security policy to use.
      */
-    readonly policyId: pulumi.Input<string>;
+    readonly securityPolicyId: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */

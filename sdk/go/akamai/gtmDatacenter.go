@@ -11,7 +11,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// `GtmDatacenter` provides the resource for creating, configuring and importing a gtm datacenter to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingDatacenterId`
+// Use the `GtmDatacenter` resource to create, configure, and import a GTM data center. A GTM data center represents a customer data center and is also known as a traffic target, a location containing many servers GTM can direct traffic to.
+//
+// GTM uses data centers to scale load balancing. For example, you might have data centers in both New York and Amsterdam and want to balance load between them. You can configure GTM to send US users to the New York data center and European users to the data center in Amsterdam.
+//
+// > **Note** Import requires an ID with this format: `existingDomainName`:`existingDatacenterId`.
 //
 // ## Example Usage
 //
@@ -38,41 +42,67 @@ import (
 // 	})
 // }
 // ```
+// ## Argument reference
+//
+// This resource supports these arguments:
+//
+// * `domain` - (Required) The GTM domain name for the data center.
+// * `waitOnComplete` - (Optional) A boolean, that if set to `true`, waits for transaction to complete.
+// * `nickname` - (Optional) A descriptive label for the data center.
+// * `defaultLoadObject` - (Optional) Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
+//   * `loadObject` - A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
+//   * `loadObjectPort` - Specifies the TCP port to connect to when requesting the load object.
+//   * `loadServers` - Specifies a list of servers to request the load object from.
+// * `city` - (Optional) The name of the city where the data center is located.
+// * `cloneOf` - (Optional) Identifies the data center’s `datacenterId` of which this data center is a clone.
+// * `cloudServerTargeting` - (Optional) A boolean indicating whether to balance load between two or more servers in a cloud environment.
+// * `cloudServerHostHeaderOverride` - (Optional) A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
+// * `continent` - (Optional) A two-letter code that specifies the continent where the data center maps to.
+// * `country` - (Optional) A two-letter ISO 3166 country code that specifies the country where the data center maps to.
+// * `latitude` - (Optional) Specifies the geographical latitude of the data center’s position. See also longitude within this object.
+// * `longitude` - (Optional) Specifies the geographic longitude of the data center’s position. See also latitude within this object.
+// * `stateOrProvince` - (Optional) Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
+//
+// ## Attribute reference
+//
+// This resource returns these computed attributes in the state file:
+//
+// * `datacenterId` - A unique identifier for an existing data center in the domain.
+// * `pingInterval`
+// * `pingPacketSize`
+// * `scorePenalty`
+// * `servermonitorLivenessCount`
+// * `servermonitorLoadCount`
+// * `servermonitorPool`
+// * `virtual` - A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
+//
+// ## Schema reference
+//
+// You can download the GTM Data Center backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#datacenter) page.
 type GtmDatacenter struct {
 	pulumi.CustomResourceState
 
-	City    pulumi.StringPtrOutput `pulumi:"city"`
-	CloneOf pulumi.IntPtrOutput    `pulumi:"cloneOf"`
-	// * `continent`
-	// * `country`
-	// * `latitude`
-	// * `longitude`
-	// * `stateOrProvince`
+	City                          pulumi.StringPtrOutput                  `pulumi:"city"`
+	CloneOf                       pulumi.IntPtrOutput                     `pulumi:"cloneOf"`
 	CloudServerHostHeaderOverride pulumi.BoolPtrOutput                    `pulumi:"cloudServerHostHeaderOverride"`
 	CloudServerTargeting          pulumi.BoolPtrOutput                    `pulumi:"cloudServerTargeting"`
 	Continent                     pulumi.StringPtrOutput                  `pulumi:"continent"`
 	Country                       pulumi.StringPtrOutput                  `pulumi:"country"`
 	DatacenterId                  pulumi.IntOutput                        `pulumi:"datacenterId"`
 	DefaultLoadObject             GtmDatacenterDefaultLoadObjectPtrOutput `pulumi:"defaultLoadObject"`
-	// Domain name
-	Domain    pulumi.StringOutput     `pulumi:"domain"`
-	Latitude  pulumi.Float64PtrOutput `pulumi:"latitude"`
-	Longitude pulumi.Float64PtrOutput `pulumi:"longitude"`
-	// datacenter nickname
-	// * `defaultLoadObject`
-	// * `loadObject`
-	// * `loadObjectPort`
-	Nickname                   pulumi.StringPtrOutput `pulumi:"nickname"`
-	PingInterval               pulumi.IntOutput       `pulumi:"pingInterval"`
-	PingPacketSize             pulumi.IntOutput       `pulumi:"pingPacketSize"`
-	ScorePenalty               pulumi.IntOutput       `pulumi:"scorePenalty"`
-	ServermonitorLivenessCount pulumi.IntOutput       `pulumi:"servermonitorLivenessCount"`
-	ServermonitorLoadCount     pulumi.IntOutput       `pulumi:"servermonitorLoadCount"`
-	ServermonitorPool          pulumi.StringOutput    `pulumi:"servermonitorPool"`
-	StateOrProvince            pulumi.StringPtrOutput `pulumi:"stateOrProvince"`
-	Virtual                    pulumi.BoolOutput      `pulumi:"virtual"`
-	// Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrOutput `pulumi:"waitOnComplete"`
+	Domain                        pulumi.StringOutput                     `pulumi:"domain"`
+	Latitude                      pulumi.Float64PtrOutput                 `pulumi:"latitude"`
+	Longitude                     pulumi.Float64PtrOutput                 `pulumi:"longitude"`
+	Nickname                      pulumi.StringPtrOutput                  `pulumi:"nickname"`
+	PingInterval                  pulumi.IntOutput                        `pulumi:"pingInterval"`
+	PingPacketSize                pulumi.IntOutput                        `pulumi:"pingPacketSize"`
+	ScorePenalty                  pulumi.IntOutput                        `pulumi:"scorePenalty"`
+	ServermonitorLivenessCount    pulumi.IntOutput                        `pulumi:"servermonitorLivenessCount"`
+	ServermonitorLoadCount        pulumi.IntOutput                        `pulumi:"servermonitorLoadCount"`
+	ServermonitorPool             pulumi.StringOutput                     `pulumi:"servermonitorPool"`
+	StateOrProvince               pulumi.StringPtrOutput                  `pulumi:"stateOrProvince"`
+	Virtual                       pulumi.BoolOutput                       `pulumi:"virtual"`
+	WaitOnComplete                pulumi.BoolPtrOutput                    `pulumi:"waitOnComplete"`
 }
 
 // NewGtmDatacenter registers a new resource with the given unique name, arguments, and options.
@@ -113,73 +143,51 @@ func GetGtmDatacenter(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering GtmDatacenter resources.
 type gtmDatacenterState struct {
-	City    *string `pulumi:"city"`
-	CloneOf *int    `pulumi:"cloneOf"`
-	// * `continent`
-	// * `country`
-	// * `latitude`
-	// * `longitude`
-	// * `stateOrProvince`
+	City                          *string                         `pulumi:"city"`
+	CloneOf                       *int                            `pulumi:"cloneOf"`
 	CloudServerHostHeaderOverride *bool                           `pulumi:"cloudServerHostHeaderOverride"`
 	CloudServerTargeting          *bool                           `pulumi:"cloudServerTargeting"`
 	Continent                     *string                         `pulumi:"continent"`
 	Country                       *string                         `pulumi:"country"`
 	DatacenterId                  *int                            `pulumi:"datacenterId"`
 	DefaultLoadObject             *GtmDatacenterDefaultLoadObject `pulumi:"defaultLoadObject"`
-	// Domain name
-	Domain    *string  `pulumi:"domain"`
-	Latitude  *float64 `pulumi:"latitude"`
-	Longitude *float64 `pulumi:"longitude"`
-	// datacenter nickname
-	// * `defaultLoadObject`
-	// * `loadObject`
-	// * `loadObjectPort`
-	Nickname                   *string `pulumi:"nickname"`
-	PingInterval               *int    `pulumi:"pingInterval"`
-	PingPacketSize             *int    `pulumi:"pingPacketSize"`
-	ScorePenalty               *int    `pulumi:"scorePenalty"`
-	ServermonitorLivenessCount *int    `pulumi:"servermonitorLivenessCount"`
-	ServermonitorLoadCount     *int    `pulumi:"servermonitorLoadCount"`
-	ServermonitorPool          *string `pulumi:"servermonitorPool"`
-	StateOrProvince            *string `pulumi:"stateOrProvince"`
-	Virtual                    *bool   `pulumi:"virtual"`
-	// Wait for transaction to complete
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	Domain                        *string                         `pulumi:"domain"`
+	Latitude                      *float64                        `pulumi:"latitude"`
+	Longitude                     *float64                        `pulumi:"longitude"`
+	Nickname                      *string                         `pulumi:"nickname"`
+	PingInterval                  *int                            `pulumi:"pingInterval"`
+	PingPacketSize                *int                            `pulumi:"pingPacketSize"`
+	ScorePenalty                  *int                            `pulumi:"scorePenalty"`
+	ServermonitorLivenessCount    *int                            `pulumi:"servermonitorLivenessCount"`
+	ServermonitorLoadCount        *int                            `pulumi:"servermonitorLoadCount"`
+	ServermonitorPool             *string                         `pulumi:"servermonitorPool"`
+	StateOrProvince               *string                         `pulumi:"stateOrProvince"`
+	Virtual                       *bool                           `pulumi:"virtual"`
+	WaitOnComplete                *bool                           `pulumi:"waitOnComplete"`
 }
 
 type GtmDatacenterState struct {
-	City    pulumi.StringPtrInput
-	CloneOf pulumi.IntPtrInput
-	// * `continent`
-	// * `country`
-	// * `latitude`
-	// * `longitude`
-	// * `stateOrProvince`
+	City                          pulumi.StringPtrInput
+	CloneOf                       pulumi.IntPtrInput
 	CloudServerHostHeaderOverride pulumi.BoolPtrInput
 	CloudServerTargeting          pulumi.BoolPtrInput
 	Continent                     pulumi.StringPtrInput
 	Country                       pulumi.StringPtrInput
 	DatacenterId                  pulumi.IntPtrInput
 	DefaultLoadObject             GtmDatacenterDefaultLoadObjectPtrInput
-	// Domain name
-	Domain    pulumi.StringPtrInput
-	Latitude  pulumi.Float64PtrInput
-	Longitude pulumi.Float64PtrInput
-	// datacenter nickname
-	// * `defaultLoadObject`
-	// * `loadObject`
-	// * `loadObjectPort`
-	Nickname                   pulumi.StringPtrInput
-	PingInterval               pulumi.IntPtrInput
-	PingPacketSize             pulumi.IntPtrInput
-	ScorePenalty               pulumi.IntPtrInput
-	ServermonitorLivenessCount pulumi.IntPtrInput
-	ServermonitorLoadCount     pulumi.IntPtrInput
-	ServermonitorPool          pulumi.StringPtrInput
-	StateOrProvince            pulumi.StringPtrInput
-	Virtual                    pulumi.BoolPtrInput
-	// Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrInput
+	Domain                        pulumi.StringPtrInput
+	Latitude                      pulumi.Float64PtrInput
+	Longitude                     pulumi.Float64PtrInput
+	Nickname                      pulumi.StringPtrInput
+	PingInterval                  pulumi.IntPtrInput
+	PingPacketSize                pulumi.IntPtrInput
+	ScorePenalty                  pulumi.IntPtrInput
+	ServermonitorLivenessCount    pulumi.IntPtrInput
+	ServermonitorLoadCount        pulumi.IntPtrInput
+	ServermonitorPool             pulumi.StringPtrInput
+	StateOrProvince               pulumi.StringPtrInput
+	Virtual                       pulumi.BoolPtrInput
+	WaitOnComplete                pulumi.BoolPtrInput
 }
 
 func (GtmDatacenterState) ElementType() reflect.Type {
@@ -187,58 +195,36 @@ func (GtmDatacenterState) ElementType() reflect.Type {
 }
 
 type gtmDatacenterArgs struct {
-	City    *string `pulumi:"city"`
-	CloneOf *int    `pulumi:"cloneOf"`
-	// * `continent`
-	// * `country`
-	// * `latitude`
-	// * `longitude`
-	// * `stateOrProvince`
+	City                          *string                         `pulumi:"city"`
+	CloneOf                       *int                            `pulumi:"cloneOf"`
 	CloudServerHostHeaderOverride *bool                           `pulumi:"cloudServerHostHeaderOverride"`
 	CloudServerTargeting          *bool                           `pulumi:"cloudServerTargeting"`
 	Continent                     *string                         `pulumi:"continent"`
 	Country                       *string                         `pulumi:"country"`
 	DefaultLoadObject             *GtmDatacenterDefaultLoadObject `pulumi:"defaultLoadObject"`
-	// Domain name
-	Domain    string   `pulumi:"domain"`
-	Latitude  *float64 `pulumi:"latitude"`
-	Longitude *float64 `pulumi:"longitude"`
-	// datacenter nickname
-	// * `defaultLoadObject`
-	// * `loadObject`
-	// * `loadObjectPort`
-	Nickname        *string `pulumi:"nickname"`
-	StateOrProvince *string `pulumi:"stateOrProvince"`
-	// Wait for transaction to complete
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	Domain                        string                          `pulumi:"domain"`
+	Latitude                      *float64                        `pulumi:"latitude"`
+	Longitude                     *float64                        `pulumi:"longitude"`
+	Nickname                      *string                         `pulumi:"nickname"`
+	StateOrProvince               *string                         `pulumi:"stateOrProvince"`
+	WaitOnComplete                *bool                           `pulumi:"waitOnComplete"`
 }
 
 // The set of arguments for constructing a GtmDatacenter resource.
 type GtmDatacenterArgs struct {
-	City    pulumi.StringPtrInput
-	CloneOf pulumi.IntPtrInput
-	// * `continent`
-	// * `country`
-	// * `latitude`
-	// * `longitude`
-	// * `stateOrProvince`
+	City                          pulumi.StringPtrInput
+	CloneOf                       pulumi.IntPtrInput
 	CloudServerHostHeaderOverride pulumi.BoolPtrInput
 	CloudServerTargeting          pulumi.BoolPtrInput
 	Continent                     pulumi.StringPtrInput
 	Country                       pulumi.StringPtrInput
 	DefaultLoadObject             GtmDatacenterDefaultLoadObjectPtrInput
-	// Domain name
-	Domain    pulumi.StringInput
-	Latitude  pulumi.Float64PtrInput
-	Longitude pulumi.Float64PtrInput
-	// datacenter nickname
-	// * `defaultLoadObject`
-	// * `loadObject`
-	// * `loadObjectPort`
-	Nickname        pulumi.StringPtrInput
-	StateOrProvince pulumi.StringPtrInput
-	// Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrInput
+	Domain                        pulumi.StringInput
+	Latitude                      pulumi.Float64PtrInput
+	Longitude                     pulumi.Float64PtrInput
+	Nickname                      pulumi.StringPtrInput
+	StateOrProvince               pulumi.StringPtrInput
+	WaitOnComplete                pulumi.BoolPtrInput
 }
 
 func (GtmDatacenterArgs) ElementType() reflect.Type {

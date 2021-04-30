@@ -33,8 +33,7 @@ namespace Pulumi.Akamai
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
     ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
-    ///             Type = "website",
-    ///             Json = File.ReadAllText($"{path.Module}/match_targets.json"),
+    ///             MatchTargetSequence = File.ReadAllText($"{path.Module}/match_targets.json"),
     ///         });
     ///     }
     /// 
@@ -53,14 +52,8 @@ namespace Pulumi.Akamai
         /// <summary>
         /// The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
         /// </summary>
-        [Output("json")]
-        public Output<string?> Json { get; private set; } = null!;
-
-        [Output("sequenceMap")]
-        public Output<ImmutableDictionary<string, string>?> SequenceMap { get; private set; } = null!;
-
-        [Output("type")]
-        public Output<string> Type { get; private set; } = null!;
+        [Output("matchTargetSequence")]
+        public Output<string?> MatchTargetSequence { get; private set; } = null!;
 
         /// <summary>
         /// The version number of the security configuration to use.
@@ -123,19 +116,8 @@ namespace Pulumi.Akamai
         /// <summary>
         /// The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
         /// </summary>
-        [Input("json")]
-        public Input<string>? Json { get; set; }
-
-        [Input("sequenceMap")]
-        private InputMap<string>? _sequenceMap;
-        public InputMap<string> SequenceMap
-        {
-            get => _sequenceMap ?? (_sequenceMap = new InputMap<string>());
-            set => _sequenceMap = value;
-        }
-
-        [Input("type", required: true)]
-        public Input<string> Type { get; set; } = null!;
+        [Input("matchTargetSequence")]
+        public Input<string>? MatchTargetSequence { get; set; }
 
         /// <summary>
         /// The version number of the security configuration to use.
@@ -159,19 +141,8 @@ namespace Pulumi.Akamai
         /// <summary>
         /// The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
         /// </summary>
-        [Input("json")]
-        public Input<string>? Json { get; set; }
-
-        [Input("sequenceMap")]
-        private InputMap<string>? _sequenceMap;
-        public InputMap<string> SequenceMap
-        {
-            get => _sequenceMap ?? (_sequenceMap = new InputMap<string>());
-            set => _sequenceMap = value;
-        }
-
-        [Input("type")]
-        public Input<string>? Type { get; set; }
+        [Input("matchTargetSequence")]
+        public Input<string>? MatchTargetSequence { get; set; }
 
         /// <summary>
         /// The version number of the security configuration to use.

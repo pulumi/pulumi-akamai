@@ -18,6 +18,9 @@ class AppSecConfigurationVersionCloneArgs:
                  rule_update: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a AppSecConfigurationVersionClone resource.
+        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
+        :param pulumi.Input[int] create_from_version: The version number of the security configuration to clone.
+        :param pulumi.Input[bool] rule_update: A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "create_from_version", create_from_version)
@@ -27,6 +30,9 @@ class AppSecConfigurationVersionCloneArgs:
     @property
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
+        """
+        The ID of the security configuration to use.
+        """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
@@ -36,6 +42,9 @@ class AppSecConfigurationVersionCloneArgs:
     @property
     @pulumi.getter(name="createFromVersion")
     def create_from_version(self) -> pulumi.Input[int]:
+        """
+        The version number of the security configuration to clone.
+        """
         return pulumi.get(self, "create_from_version")
 
     @create_from_version.setter
@@ -45,6 +54,9 @@ class AppSecConfigurationVersionCloneArgs:
     @property
     @pulumi.getter(name="ruleUpdate")
     def rule_update(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
+        """
         return pulumi.get(self, "rule_update")
 
     @rule_update.setter
@@ -61,7 +73,10 @@ class _AppSecConfigurationVersionCloneState:
                  version: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering AppSecConfigurationVersionClone resources.
-        :param pulumi.Input[int] version: Version of cloned configuration
+        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
+        :param pulumi.Input[int] create_from_version: The version number of the security configuration to clone.
+        :param pulumi.Input[bool] rule_update: A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
+        :param pulumi.Input[int] version: The number of the cloned version.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -75,6 +90,9 @@ class _AppSecConfigurationVersionCloneState:
     @property
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
+        """
+        The ID of the security configuration to use.
+        """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
@@ -84,6 +102,9 @@ class _AppSecConfigurationVersionCloneState:
     @property
     @pulumi.getter(name="createFromVersion")
     def create_from_version(self) -> Optional[pulumi.Input[int]]:
+        """
+        The version number of the security configuration to clone.
+        """
         return pulumi.get(self, "create_from_version")
 
     @create_from_version.setter
@@ -93,6 +114,9 @@ class _AppSecConfigurationVersionCloneState:
     @property
     @pulumi.getter(name="ruleUpdate")
     def rule_update(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
+        """
         return pulumi.get(self, "rule_update")
 
     @rule_update.setter
@@ -103,7 +127,7 @@ class _AppSecConfigurationVersionCloneState:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[int]]:
         """
-        Version of cloned configuration
+        The number of the cloned version.
         """
         return pulumi.get(self, "version")
 
@@ -122,9 +146,29 @@ class AppSecConfigurationVersionClone(pulumi.CustomResource):
                  rule_update: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        Create a AppSecConfigurationVersionClone resource with the given unique name, props, and options.
+        The `AppSecConfigurationVersionClone` resource allows you to create a new version of a security configuration by cloning an existing version.
+
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
+        clone = akamai.AppSecConfigurationVersionClone("clone",
+            config_id=configuration.config_id,
+            create_from_version=configuration.latest_version,
+            rule_update=False)
+        pulumi.export("cloneVersion", clone.version)
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
+        :param pulumi.Input[int] create_from_version: The version number of the security configuration to clone.
+        :param pulumi.Input[bool] rule_update: A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
         """
         ...
     @overload
@@ -133,7 +177,24 @@ class AppSecConfigurationVersionClone(pulumi.CustomResource):
                  args: AppSecConfigurationVersionCloneArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AppSecConfigurationVersionClone resource with the given unique name, props, and options.
+        The `AppSecConfigurationVersionClone` resource allows you to create a new version of a security configuration by cloning an existing version.
+
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
+        clone = akamai.AppSecConfigurationVersionClone("clone",
+            config_id=configuration.config_id,
+            create_from_version=configuration.latest_version,
+            rule_update=False)
+        pulumi.export("cloneVersion", clone.version)
+        ```
+
         :param str resource_name: The name of the resource.
         :param AppSecConfigurationVersionCloneArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -193,7 +254,10 @@ class AppSecConfigurationVersionClone(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] version: Version of cloned configuration
+        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
+        :param pulumi.Input[int] create_from_version: The version number of the security configuration to clone.
+        :param pulumi.Input[bool] rule_update: A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
+        :param pulumi.Input[int] version: The number of the cloned version.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -208,23 +272,32 @@ class AppSecConfigurationVersionClone(pulumi.CustomResource):
     @property
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
+        """
+        The ID of the security configuration to use.
+        """
         return pulumi.get(self, "config_id")
 
     @property
     @pulumi.getter(name="createFromVersion")
     def create_from_version(self) -> pulumi.Output[int]:
+        """
+        The version number of the security configuration to clone.
+        """
         return pulumi.get(self, "create_from_version")
 
     @property
     @pulumi.getter(name="ruleUpdate")
     def rule_update(self) -> pulumi.Output[Optional[bool]]:
+        """
+        A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
+        """
         return pulumi.get(self, "rule_update")
 
     @property
     @pulumi.getter
     def version(self) -> pulumi.Output[int]:
         """
-        Version of cloned configuration
+        The number of the cloned version.
         """
         return pulumi.get(self, "version")
 

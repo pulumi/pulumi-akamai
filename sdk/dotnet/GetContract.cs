@@ -11,6 +11,20 @@ namespace Pulumi.Akamai
 {
     public static class GetContract
     {
+        /// <summary>
+        /// Use the `akamai.getContract` data source to find a contract ID.
+        /// 
+        /// ## Argument reference
+        /// 
+        /// This data source requires one of these group arguments to return contract information: 
+        ///   * `group_name` - The name of the group containing the contract. 
+        ///   * `group_id` - The unique ID of the group containing the contract, including the  `grp_` prefix.
+        ///   * `group` - (Deprecated) Either the group ID or the group name that includes the contract. You can't use this argument with `group_id` and `group_name`.
+        /// 
+        /// ## Attributes reference
+        /// 
+        /// * `id` - The contract's unique ID, including the `ctr_` prefix.
+        /// </summary>
         public static Task<GetContractResult> InvokeAsync(GetContractArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetContractResult>("akamai:index/getContract:getContract", args ?? new GetContractArgs(), options.WithVersion());
     }

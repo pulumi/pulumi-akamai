@@ -5,238 +5,284 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * The `akamai.DnsRecord` provides the resource for configuring a dns record to integrate easily with your existing DNS infrastructure to provide a secure, high performance, highly available and scalable solution for DNS hosting.
+ * Use the `akamai.DnsRecord` resource to configure a DNS record that can integrate with your existing DNS infrastructure.
  *
  * ## Example Usage
- * ### A Record Example
- * resource "akamai_dns_record" "origin" {
- *     zone = "origin.org"
- *     name = "origin.example.org"
- *     recordtype =  "A"
- *     active = true
- *     ttl =  30
- *     target = ["192.0.2.42"]
- * }
- * ## Required Fields Per Record Type
  *
- * In addition to the fields listed in the prior section, type specific fields define the data makeup of each Record's data. This section identfies required fields per type.
+ * Here are examples of an A record and a CNAME record.
+ * ### An A record example
  *
- * ### A Record
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
  *
- * The following field is required:
+ * const origin = new akamai.DnsRecord("origin", {
+ *     active: true,
+ *     recordtype: "A",
+ *     targets: ["192.0.2.42"],
+ *     ttl: 30,
+ *     zone: "origin.org",
+ * });
+ * ```
+ * ### CNAME Record Example
  *
- * * target - One or more IPv4 addresses, for example, 1.2.3.4.
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
  *
- * ### AAAA Record
+ * const www = new akamai.DnsRecord("www", {
+ *     active: true,
+ *     recordtype: "CNAME",
+ *     targets: "origin.example.org.edgesuite.net",
+ *     ttl: 600,
+ *     zone: "example.com",
+ * });
+ * ```
+ * ## Argument reference [argument-reference]
  *
- * The following field is required:
+ * This resource supports these arguments for all record types:
  *
- * * target - One or more IPv6 addresses, for example, 2001:0db8::ff00:0042:8329.
+ * * `name` - (Required) The DNS record name. This is the node this DNS record is associated with. Also known as an owner name.
+ * * `zone` - (Required) The domain zone, including any nested subdomains.
+ * * `recordType` - (Required) The DNS record type.
+ * * `ttl` - (Required) The time to live (TTL) is a 32-bit signed integer for the time the resource record is cached. <br /> A value of `0` means that the resource record is not cached. It's only used for the transaction in progress and may be useful for extremely volatile data.
  *
- * ### AFSDB Record
+ * ## Additional arguments by record type
  *
- * The following fields are required:
+ * This section lists additional required and optional arguments for specific record types.
  *
- * * target - The domain name of the host having a server for the cell named by the owner name of the resource record.
- * * subtype- An integer between 0 and 65535, indicating the type of service provided by the host.
+ * ### A record
  *
- * ### AKAMAICDN Record
+ * An A record requires this argument:
  *
- * The following field is required:
+ * * `target` - One or more IPv4 addresses, for example, 192.0.2.0.
  *
- * * target - DNS name representing selected Edge Hostname name+domain.
+ * ### AAAA record
  *
- * ### AKAMAITLC Record
+ * An AAAA record requires this argument:
  *
- * No additional fields are required. The following fields are Computed.
+ * * `target` - One or more IPv6 addresses, for example, 2001:0db8::ff00:0042:8329.
  *
- * * dnsName - valid DNS name.
- * * answerType - answer type.
+ * ### AFSDB record
  *
- * ### CAA Record
+ * An AFSDB record requires these arguments:
  *
- * The following field are required:
+ * * `target` - The domain name of the host having a server for the cell named by the owner name of the resource record.
+ * * `subtype` - An integer between `0` and `65535` that indicates the type of service provided by the host.
  *
- * * target - One or more CA Authorizations. Each authorization contains three attributes: flags, property tag and property value.
+ * ### AKAMAICDN record
+ *
+ * An AKAMAICDN record requires this argument:
+ *
+ * * `target` - A DNS name representing the selected edge hostname and domain.
+ *
+ * ### AKAMAITLC record
+ *
+ * No additional arguments are needed for AKAMAITLC records. This resource returns these computed attributes for this record type:
+ *
+ * * `dnsName` - A valid DNS name.
+ * * `answerType` - The answer type.
+ *
+ * ### CAA record
+ *
+ * A certificate authority authorization (CAA) record requires this argument:
+ *
+ * * `target` - One or more certificate authority authorizations. Each authorization contains three attributes: flags, property tag, and property value.
  *
  * Example:
+ *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * ```
  *
- * ### CERT Record
+ * ### CERT record
+ *
+ * A CERT record requires these arguments:
+ *
+ * * `typeValue` - A numeric certificate type value.
+ * * `typeMnemonic` - A mnemonic certificate type value.
+ * * `keytag` - A value computed for the key embedded in the certificate.
+ * * `algorithm` - The cryptographic algorithm used to create the signature.
+ * * `certificate` - Certificate data.
+ *
+ * > **Note:** When entering the certificate type, you can enter `typeValue`, `typeMnemonic`, or  both arguments. If you use both, `typeMnemonic` takes precedence.
+ *
+ * ### CNAME record
+ *
+ * A CNAME record requires this argument:
+ *
+ * * ` target  `- A domain name that specifies the canonical or primary name for the owner. The owner name is an alias.
+ *
+ * ### DNSKEY record
+ *
+ * A DNSKEY record requires these arguments:
+ *
+ * * `flags`
+ * * `protocol` - Set to `3`. If the value isn't `3`, the DNSKEY resource record is treated as invalid during signature verification.
+ * * `algorithm` - The public key’s cryptographic algorithm. This algorithm determines the format of the public key field.
+ * * `key` - A Base64 encoded value representing the public key. The format used depends on the `algorithm`.
+ *
+ * ### DS record
+ *
+ * A DS record requires these arguments:
+ *
+ * * `keytag` - The key tag of the DNSKEY record that the DS record refers to, in network byte order.
+ * * `algorithm` - The algorithm number of the DNSKEY resource record referred to by the DS record.
+ * * `digestType` - Identifies the algorithm used to construct the digest.
+ * * `digest` - A base 16 encoded DS record includes a digest of the DNSKEY record it refers to. The digest is conifgured the canonical form of the DNSKEY record's fully qualified owner name with the DNSKEY RDATA, and then applying the digest algorithm.
+ *
+ * ### HINFO record
+ *
+ * A HINFO record requires these arguments:
+ *
+ * * `hardware` - The type of hardware the host uses. A machine name or CPU type may be up to 40 characters long and include uppercase letters, digits, hyphens, and slashes. The entry needs to start and to end with an uppercase letter.
+ * * `software` - The type of software the host uses. A system name may be up to 40 characters long and include uppercase letters, digits, hyphens, and slashes. The entry needs to start with an uppercase letter and end with an uppercase letter or a digit.
+ *
+ * ### HTTPS Record
  *
  * The following fields are required:
  *
- * * typeValue - numeric certificate type value
- * * typeMnemonic - mnemonic certificate type value.
- * * keytag - value computed for the key embedded in the certificate
- * * algorithm - identifies the cryptographic algorithm used to create the signature.
- * * certificate - certificate data
+ * * `svcPriority` - Service priority associated with endpoint. Value mist be between 0 and 65535. A piority of 0 enables alias mode.
+ * * `svcParams` - Space separated list of endpoint parameters. Not allowed if service priority is 0.
+ * * `targetName` - Domain name of the service endpoint.
  *
- * Note: Type can be configured either a numeric OR menmonic value. If both set, typeMnemonic takes precedent.
+ * ### LOC record
  *
- * ### CNAME Record
+ * A LOC record requires this argument:
  *
- * The following field is required:
+ * * `target` - A geographical location associated with a domain name.
  *
- * * target - A domain name that specifies the canonical or primary name for the owner. The owner name is an alias.
+ * ### MX record
  *
- * ### DNSKEY Record
+ * An MX record supports these arguments:
  *
- * The following fields are required:
+ * * `target` - (Required) One or more domain names that specify a host willing to act as a mail exchange for the owner name.
+ * * `priority` - (Optional) The preference value given to this MX record in relation to all other MX records. When a mailer needs to send mail to a certain DNS domain, it first contacts a DNS server for that domain and retrieves all the MX records. It then contacts the mailer with the lowest preference value. This value is ignored if an embedded priority exists in the target.
+ * * `priorityIncrement` - (Optional) An auto priority increment when multiple targets are provided with no embedded priority.
  *
- * * flags
- * * protocol - Must have the value 3. The DNSKEY resource record must be treated as invalid during signature verification if it contains a value other than 3.
- * * algorithm - The public key’s cryptographic algorithm and determine the format of the public key field.
- * * key - Base 64 encoded value representing the public key, the format of which depends on the algorithm being used.
+ * See Working with MX records in the DNS Getting Started Guide for more information.
  *
- * ### DS Record
+ * ### NAPTR record
  *
- * The following fields are required:
+ * An NAPTR record requires these arguments:
  *
- * * keytag - The key tag of the DNSKEY resource record referred to by the DS record, in network byte order.
- * * algorithm - The algorithm number of the DNSKEY resource record referred to by the DS record.
- * * digestType - Identifies the algorithm used to construct the digest.
- * * digest - The base 16 encoded DS record refers to a DNSKEY RR by including a digest of that DNSKEY RR. The digest is calculated by concatenating the canonical form of the fully qualified owner name of the DNSKEY RR with the DNSKEY RDATA, and then applying the digest algorithm.
+ * * `order` - A 16-bit unsigned integer specifying the order in which the NAPTR records need to be processed to ensure the correct ordering of rules. Low numbers are processed before high numbers. Once a NAPTR is found whose rule matches the target, the client shouldn't consider any NAPTRs with a higher value for order (except as noted below for the flagsnapter field).
+ * * `preference` - A 16-bit unsigned integer that specifies the order in which NAPTR records with equal order values are processed. Low numbers are processed before high numbers.
+ * * `flagsnaptr` - A character string containing flags that control how fields in the record are rewritten and interpreted. Flags are single alphanumeric characters.
+ * * `service` - Specifies the services available down this rewrite path.
+ * * `regexp` - A regular expression string containing a substitution expression. This substitution expression is applied to the original client string in order to construct the next domain name to lookup.
+ * * `replacement` - Depending on the value of the `flags` attribute, the next NAME to query for NAPTR, SRV, or address records. Enter a fully qualified domain name as the value.
  *
- * ### HINFO Record
+ * ### NS record
  *
- * The following fields are required:
+ * An NS record requires these arguments:
  *
- * * hardware - Type of hardware the host uses. A machine name or CPU type may be up to 40 characters taken from the set of uppercase letters, digits, and the two punctuation characters hyphen and slash. It must start with a letter, and end with a letter.
- * * software - Type of software the host uses. A system name may be up to 40 characters taken from the set of uppercase letters, digits, and the two punctuation characters hyphen and slash. It must start with a letter, and end with a letter or digit.
+ * * `target` - One or more domain names that specify authoritative hosts for the specified class and domain.
  *
- * ### LOC Record
+ * ### NSEC3 record
  *
- * The following field is required:
+ * An NSEC3 record requires these arguments:
  *
- * * target - A geographical location associated with a domain name.
+ * * `algorithm` - The cryptographic hash algorithm used to construct the hash-value.
+ * * `flags` - Eight one-bit flags you can use to indicate different processing. All undefined flags must be zero.
+ * * `iterations` - The number of additional times the hash function has been performed.
+ * * `salt` - The base 16 encoded salt value, which is appended to the original owner name before hashing. Used to defend against pre-calculated dictionary attacks.
+ * * `nextHashedOwnerName` - Base 32 encoded. The next hashed owner name in hash order. This value is in binary format. Given the ordered set of all hashed owner names, the Next Hashed Owner Name field contains the hash of an owner name that immediately follows the owner name of the given NSEC3 RR.
+ * * `typeBitmaps` - The resource record set types that exist at the original owner name of the NSEC3 RR.
  *
- * ### MX Record
+ * ### NSEC3PARAM record
  *
- * The following field is required:
+ * An NSEC3PARAM record requires these arguments:
  *
- * * target - One or more domain names that specifies a host willing to act as a mail exchange for the owner name.
+ * * `algorithm` - The cryptographic hash algorithm used to construct the hash-value.
+ * * `flags` - Eight one-bit flags that can be used to indicate different processing. All undefined flags must be zero.
+ * * `iterations` - The number of additional times the hash function has been performed.
+ * * `salt` - The base 16 encoded salt value, which is appended to the original owner name before hashing in order to defend against pre-calculated dictionary attacks.
  *
- * The following fields are optional depending on configuration type. See DNS Getting Started Guide for more information.
+ * ### PTR record
  *
- * * priority - The preference value given to the MX record among MX records. When a mailer needs to send mail to a certain DNS domain, it first contacts a DNS server for that domain and retrieves all the MX records. It then contacts the mailer with the lowest preference value. Ignored if embedded priority specified in target
- * * priorityIncrement - auto priority increment when multiple targets are provided with no embedded priority.
+ * A PTR record requires this argument:
  *
- * ### NAPTR Record
+ * * `target` - A domain name that points to some location in the domain name space.
  *
- * The following fields are required:
+ * ### RP record
  *
- * * order - A 16-bit unsigned integer specifying the order in which the NAPTR records MUST be processed to ensure the correct ordering ofrules. Low numbers are processed before high numbers, and once a NAPTR is found whose rule “matches” the target, the client MUST NOT consider any NAPTRs with a higher value for order (except as noted below for the Flags field).
- * * preference - A 16-bit unsigned integer that specifies the order in which NAPTR records with equal order values should be processed, low numbers being processed before high numbers.
- * * flagsnaptr - A <character-string> containing flags to control aspects of the rewriting and interpretation of the fields in the record. Flags are single characters from the set [A-Z0-9]. The case of the alphabetic characters is not significant.
- * * service - Specifies the services available down this rewrite path.
- * * regexp - A String containing a substitution expression that is applied to the original string held by the client in order to construct the next domain name to lookup.
- * * replacement - The next NAME to query for NAPTR, SRV, or address records depending on the value of the flags field. This MUST be a fully qualified domain-name.
+ * An RP record requires these arguments:
  *
- * ### NS Record
+ * * `mailbox` - A domain name that specifies the mailbox for the responsible person.
+ * * `txt` - A domain name for which TXT resource records exist.
  *
- * The following field is required:
+ * ### RRSIG record
  *
- * * target - One or more domain names that specify authoritative hosts for the specified class and domain.
+ * An RRSIG record requires these arguments:
  *
- * ### NSEC3 Record
+ * * `typeCovered` - The resource record set type covered by this signature.
+ * * `algorithm` - Identifies the cryptographic algorithm used to create the signature.
+ * * `originalTtl` - The TTL of the covered record set as it appears in the authoritative zone.
+ * * `expiration` - The end point of this signature’s validity. The signature can`t be used for authentication past this point in time.
+ * * `inception` - The start point of this signature’s validity. The signature can`t be used for authentication prior to this point in time.
+ * * `keytag` - The Key Tag field contains the key tag value of the DNSKEY RR that validates this signature, in network byte order.
+ * * `signer` - The owner of the DNSKEY resource record who validates this signature.
+ * * `signature` - The base 64 encoded cryptographic signature that covers the RRSIG RDATA and covered record set. Format depends on the TSIG algorithm in use.
+ * * `labels` - The Labels field specifies the number of labels in the original RRSIG RR owner name. The significance of this field is that a validator uses it to determine whether the answer was synthesized from a wildcard. If so, it can be used to determine what owner name was used in generating the signature.
  *
- * The following fields are required:
+ * ### SPF record
  *
- * * algorithm - The cryptographic hash algorithm used to construct the hash-value.
- * * flags - The 8 one-bit flags that can be used to indicate different processing. All undefined flags must be zero.
- * * iterations - The number of additional times the hash function has been performed.
- * * salt - The base 16 encoded salt value, which is appended to the original owner name before hashing in order to defend against pre-calculated dictionary attacks.
- * * nextHashedOwnerName - Base 32 encoded. The next hashed owner name in hash order. This value is in binary format. Given the ordered set of all hashed owner names, the Next Hashed Owner Name field contains the hash of an owner name that immediately follows the owner name of the given NSEC3 RR.
- * * typeBitmaps - The resource record set types that exist at the original owner name of the NSEC3 RR.
+ * An SPF record requires this argument:
  *
- * ### NSEC3PARAM Record
+ * * `target` - Indicates which hosts are, and are not, authorized to use a domain name for the “HELO” and “MAIL FROM” identities.
  *
- * The following fields are required:
+ * ### SRV record
  *
- * * algorithm - The cryptographic hash algorithm used to construct the hash-value.
- * * flags - The 8 one-bit flags that can be used to indicate different processing. All undefined flags must be zero.
- * * iterations - The number of additional times the hash function has been performed.
- * * salt - The base 16 encoded salt value, which is appended to the original owner name before hashing in order to defend against pre-calculated dictionary attacks.
+ * An SRV record requires these arguments:
  *
- * ### PTR Record
+ * * `target` - The domain name of the target host.
+ * * `priority` - A 16-bit integer that specifies the preference given to this resource record among others at the same owner. Lower values are preferred.
+ * * `weight` - A server selection mechanism that specifies a relative weight for entries with the same priority. Larger weights are given a proportionately higher probability of being selected. The range of this number is 0–65535, a 16-bit unsigned integer in network byte order. Domain administrators should use Weight 0 when there isn’t any server selection to do, to make the RR easier to read for humans. In the presence of records containing weights greater than 0, records with weight 0 should have a very small chance of being selected.
+ * * `port` - The port on this target of this service. The range of this number is 0–65535, a 16-bit unsigned integer in network byte order.
  *
- * The following field is required:
+ * ### SSHFP record
  *
- * * target - A domain name that points to some location in the domain name space.
+ * An SSHFP record requires these arguments:
  *
- * ### RP Record
+ * * `algorithm` - Describes the algorithm of the public key. The following values are assigned: `0` is reserved, `1` is for RSA, `2` is for DSS, and `3` is for ECDSA.
+ * * `fingerprintType` - Describes the message-digest algorithm used to calculate the fingerprint of the public key. The following values are assigned: 0 = reserved, 1 = SHA-1, 2 = SHA-256.
+ * * `fingerprint` - The base 16 encoded fingerprint as calculated over the public key blob. The message-digest algorithm is presumed to produce an opaque octet string output, which is placed as-is in the RDATA fingerprint field.
  *
- * The following fields are required:
+ * ### SOA record
  *
- * * mailbox - A domain name that specifies the mailbox for the responsible person.
- * * txt - A domain name for which TXT resource records exist.
+ * An SOA record requires these arguments:
  *
- * ### RRSIG Record
+ * * `nameServer` - The domain name of the name server that was the original or primary source of data for this zone.
+ * * `emailAddress` - A domain name that specifies the mailbox of this person responsible for this zone.
+ * * `serial` - The unsigned version number between 0 and 214748364 of the original copy of the zone.
+ * * `refresh` - A time interval between 0 and 214748364 before the zone should be refreshed.
+ * * `retry` - A time interval between 0 and 214748364 that should elapse before a failed refresh should be retried.
+ * * `expiry` - A time value between 0 and 214748364 that specifies the upper limit on the time interval that can elapse before the zone is no longer authoritative.
+ * * `nxdomainTtl` - The unsigned minimum TTL between 0 and 214748364 that should be exported with any resource record from this zone.
  *
- * The following fields are required:
+ * ### SVCB record
  *
- * * typeCovered - The resource record set type covered by this signature.
- * * algorithm - The Algorithm Number field identifies the cryptographic algorithm used to create the signature.
- * * originalTtl - The TTL of the covered record set as it appears in the authoritative zone.
- * * expiration - The end point of this signature’s validity. The signature cannot be used for authentication past this point.
- * * inception - The start point of this signature’s validity. The signature cannot be used for authentication prior to this point.
- * * keytag - The Key Tag field contains the key tag value of the DNSKEY RR that validates this signature, in network byte order.
- * * signer - The owner of the DSNKEY resource record who validates this signature.
- * * signature - The base 64 encoded cryptographic signature that covers the RRSIG RDATA and covered record set. Format depends on the TSIG algorithm in use.
- * * labels - The Labels field specifies the number of labels in the original RRSIG RR owner name. The significance of this field is that a validator uses it to determine whether the answer was synthesized from a wildcard. If so, it can be used to determine what owner name was used in generating the signature.
+ * An SVCB record requires these arguments:
  *
- * ### SPF Record
+ * * `svcPriority` - Service priority associated with endpoint. Value mist be between 0 and 65535. A piority of 0 enables alias mode.
+ * * `svcParams` - Space separated list of endpoint parameters. Not allowed if service priority is 0.
+ * * `targetName` - Domain name of the service endpoint.
  *
- * The following field is required:
+ * ### TLSA record
  *
- * * target - Indicates which hosts are, and are not, authorized to use a domain name for the “HELO” and “MAIL FROM” identities.
+ * A TLSA record requires these arguments:
  *
- * ### SRV Record
+ * * `usage` - Specifies the association used to match the certificate presented in the TLS handshake.
+ * * `selector` - Specifies the part of the TLS certificate presented by the server that is matched against the association data.
+ * * `matchType` - Specifies how the certificate association is presented.
+ * * `certificate` - Specifies the certificate association data to be matched.
  *
- * The following fields are required:
+ * ### TXT record
  *
- * * target - The domain name of the target host.
- * * priority - A 16-bit integer that specifies the preference given to this resource record among others at the same owner. Lower values are preferred.
- * * weight - A server selection mechanism, specifying a relative weight for entries with the same priority. Larger weights should be given a proportionately higher probability of being selected. The range of this number is 0–65535, a 16-bit unsigned integer in network byte order. Domain administrators should use Weight 0 when there isn’t any server selection to do, to make the RR easier to read for humans. In the presence of records containing weights greater than 0, records with weight 0 should have a very small chance of being selected.
- * * port - The port on this target of this service. The range of this number is 0–65535, a 16-bit unsigned integer in network byte order.
+ * A TXT record requires this argument:
  *
- * ### SSHFP Record
- *
- * The following fields are required:
- *
- * * algorithm - Describes the algorithm of the public key. The following values are assigned: 0 = reserved; 1 = RSA; 2 = DSS, 3 = ECDSA
- * * fingerprintType - Describes the message-digest algorithm used to calculate the fingerprint of the public key. The following values are assigned: 0 = reserved, 1 = SHA-1, 2 = SHA-256
- * * fingerprint - The base 16 encoded fingerprint as calculated over the public key blob. The message-digest algorithm is presumed to produce an opaque octet string output, which is placed as-is in the RDATA fingerprint field.
- *
- * ### SOA Record
- *
- * The following fields are required:
- *
- * * nameServer - The domain name of the name server that was the original or primary source of data for this zone.
- * * emailAddress - A domain name that specifies the mailbox of this person responsible for this zone.
- * * serial - The unsigned version number between 0 and 214748364 of the original copy of the zone.
- * * refresh - A time interval between 0 and 214748364 before the zone should be refreshed.
- * * retry - A time interval between 0 and 214748364 that should elapse before a failed refresh should be retried.
- * * expiry - A time value between 0 and 214748364 that specifies the upper limit on the time interval that can elapse before the zone is no longer authoritative.
- * * nxdomainTtl - The unsigned minimum TTL between 0 and 214748364 that should be exported with any resource record from this zone.
- *
- * ### TLSA Record
- *
- * The following fields are required:
- *
- * * usage - specifies the provided association that will be used to match the certificate presented in the TLS handshake.
- * * selector - specifies which part of the TLS certificate presented by the server will be matched against the association data.
- * * matchType - specifies how the certificate association is presented.
- * * certificate - specifies the "certificate association data" to be matched.
- *
- * ### TXT Record
- *
- * The following field is required:
- *
- * * target - One or more character strings. TXT RRs are used to hold descriptive text. The semantics of the text depends on the domain where it is found.
+ * * `target` - One or more character strings. TXT resource records hold descriptive text. The semantics of the text depends on the domain where it is found.
  */
 export class DnsRecord extends pulumi.CustomResource {
     /**
@@ -266,9 +312,6 @@ export class DnsRecord extends pulumi.CustomResource {
         return obj['__pulumiType'] === DnsRecord.__pulumiType;
     }
 
-    /**
-     * Maintained for backward compatibility
-     */
     public readonly active!: pulumi.Output<boolean | undefined>;
     public readonly algorithm!: pulumi.Output<number | undefined>;
     public /*out*/ readonly answerType!: pulumi.Output<string>;
@@ -291,9 +334,6 @@ export class DnsRecord extends pulumi.CustomResource {
     public readonly labels!: pulumi.Output<number | undefined>;
     public readonly mailbox!: pulumi.Output<string | undefined>;
     public readonly matchType!: pulumi.Output<number | undefined>;
-    /**
-     * The name of the record. The name is an owner name, that is, the name of the node to which this resource record pertains.
-     */
     public readonly name!: pulumi.Output<string>;
     public readonly nameServer!: pulumi.Output<string | undefined>;
     public readonly nextHashedOwnerName!: pulumi.Output<string | undefined>;
@@ -319,10 +359,10 @@ export class DnsRecord extends pulumi.CustomResource {
     public readonly signer!: pulumi.Output<string | undefined>;
     public readonly software!: pulumi.Output<string | undefined>;
     public readonly subtype!: pulumi.Output<number | undefined>;
+    public readonly svcParams!: pulumi.Output<string | undefined>;
+    public readonly svcPriority!: pulumi.Output<number | undefined>;
+    public readonly targetName!: pulumi.Output<string | undefined>;
     public readonly targets!: pulumi.Output<string[] | undefined>;
-    /**
-     * The TTL is a 32-bit signed integer that specifies the time interval that the resource record may be cached before the source of the information should be consulted again. A value of zero means that the RR can only be used for the transaction in progress, and should not be cached. Zero values can also be used for extremely volatile data.
-     */
     public readonly ttl!: pulumi.Output<number>;
     public readonly txt!: pulumi.Output<string | undefined>;
     public readonly typeBitmaps!: pulumi.Output<string | undefined>;
@@ -331,9 +371,6 @@ export class DnsRecord extends pulumi.CustomResource {
     public readonly typeValue!: pulumi.Output<number | undefined>;
     public readonly usage!: pulumi.Output<number | undefined>;
     public readonly weight!: pulumi.Output<number | undefined>;
-    /**
-     * Domain zone, encapsulating any nested subdomains.
-     */
     public readonly zone!: pulumi.Output<string>;
 
     /**
@@ -396,6 +433,9 @@ export class DnsRecord extends pulumi.CustomResource {
             inputs["signer"] = state ? state.signer : undefined;
             inputs["software"] = state ? state.software : undefined;
             inputs["subtype"] = state ? state.subtype : undefined;
+            inputs["svcParams"] = state ? state.svcParams : undefined;
+            inputs["svcPriority"] = state ? state.svcPriority : undefined;
+            inputs["targetName"] = state ? state.targetName : undefined;
             inputs["targets"] = state ? state.targets : undefined;
             inputs["ttl"] = state ? state.ttl : undefined;
             inputs["txt"] = state ? state.txt : undefined;
@@ -460,6 +500,9 @@ export class DnsRecord extends pulumi.CustomResource {
             inputs["signer"] = args ? args.signer : undefined;
             inputs["software"] = args ? args.software : undefined;
             inputs["subtype"] = args ? args.subtype : undefined;
+            inputs["svcParams"] = args ? args.svcParams : undefined;
+            inputs["svcPriority"] = args ? args.svcPriority : undefined;
+            inputs["targetName"] = args ? args.targetName : undefined;
             inputs["targets"] = args ? args.targets : undefined;
             inputs["ttl"] = args ? args.ttl : undefined;
             inputs["txt"] = args ? args.txt : undefined;
@@ -488,9 +531,6 @@ export class DnsRecord extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DnsRecord resources.
  */
 export interface DnsRecordState {
-    /**
-     * Maintained for backward compatibility
-     */
     readonly active?: pulumi.Input<boolean>;
     readonly algorithm?: pulumi.Input<number>;
     readonly answerType?: pulumi.Input<string>;
@@ -513,9 +553,6 @@ export interface DnsRecordState {
     readonly labels?: pulumi.Input<number>;
     readonly mailbox?: pulumi.Input<string>;
     readonly matchType?: pulumi.Input<number>;
-    /**
-     * The name of the record. The name is an owner name, that is, the name of the node to which this resource record pertains.
-     */
     readonly name?: pulumi.Input<string>;
     readonly nameServer?: pulumi.Input<string>;
     readonly nextHashedOwnerName?: pulumi.Input<string>;
@@ -541,10 +578,10 @@ export interface DnsRecordState {
     readonly signer?: pulumi.Input<string>;
     readonly software?: pulumi.Input<string>;
     readonly subtype?: pulumi.Input<number>;
+    readonly svcParams?: pulumi.Input<string>;
+    readonly svcPriority?: pulumi.Input<number>;
+    readonly targetName?: pulumi.Input<string>;
     readonly targets?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * The TTL is a 32-bit signed integer that specifies the time interval that the resource record may be cached before the source of the information should be consulted again. A value of zero means that the RR can only be used for the transaction in progress, and should not be cached. Zero values can also be used for extremely volatile data.
-     */
     readonly ttl?: pulumi.Input<number>;
     readonly txt?: pulumi.Input<string>;
     readonly typeBitmaps?: pulumi.Input<string>;
@@ -553,9 +590,6 @@ export interface DnsRecordState {
     readonly typeValue?: pulumi.Input<number>;
     readonly usage?: pulumi.Input<number>;
     readonly weight?: pulumi.Input<number>;
-    /**
-     * Domain zone, encapsulating any nested subdomains.
-     */
     readonly zone?: pulumi.Input<string>;
 }
 
@@ -563,9 +597,6 @@ export interface DnsRecordState {
  * The set of arguments for constructing a DnsRecord resource.
  */
 export interface DnsRecordArgs {
-    /**
-     * Maintained for backward compatibility
-     */
     readonly active?: pulumi.Input<boolean>;
     readonly algorithm?: pulumi.Input<number>;
     readonly certificate?: pulumi.Input<string>;
@@ -586,9 +617,6 @@ export interface DnsRecordArgs {
     readonly labels?: pulumi.Input<number>;
     readonly mailbox?: pulumi.Input<string>;
     readonly matchType?: pulumi.Input<number>;
-    /**
-     * The name of the record. The name is an owner name, that is, the name of the node to which this resource record pertains.
-     */
     readonly name?: pulumi.Input<string>;
     readonly nameServer?: pulumi.Input<string>;
     readonly nextHashedOwnerName?: pulumi.Input<string>;
@@ -612,10 +640,10 @@ export interface DnsRecordArgs {
     readonly signer?: pulumi.Input<string>;
     readonly software?: pulumi.Input<string>;
     readonly subtype?: pulumi.Input<number>;
+    readonly svcParams?: pulumi.Input<string>;
+    readonly svcPriority?: pulumi.Input<number>;
+    readonly targetName?: pulumi.Input<string>;
     readonly targets?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * The TTL is a 32-bit signed integer that specifies the time interval that the resource record may be cached before the source of the information should be consulted again. A value of zero means that the RR can only be used for the transaction in progress, and should not be cached. Zero values can also be used for extremely volatile data.
-     */
     readonly ttl: pulumi.Input<number>;
     readonly txt?: pulumi.Input<string>;
     readonly typeBitmaps?: pulumi.Input<string>;
@@ -624,8 +652,5 @@ export interface DnsRecordArgs {
     readonly typeValue?: pulumi.Input<number>;
     readonly usage?: pulumi.Input<number>;
     readonly weight?: pulumi.Input<number>;
-    /**
-     * Domain zone, encapsulating any nested subdomains.
-     */
     readonly zone: pulumi.Input<string>;
 }

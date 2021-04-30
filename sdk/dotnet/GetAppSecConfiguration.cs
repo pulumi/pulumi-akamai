@@ -12,7 +12,7 @@ namespace Pulumi.Akamai
     public static class GetAppSecConfiguration
     {
         /// <summary>
-        /// Use the `akamai.getAppSecConfiguration` data source to retrieve the list of security configurations, or information about a specific security configuration.
+        /// Use the `akamai.AppSecConfiguration` data source to retrieve the list of security configurations, or information about a specific security configuration.
         /// 
         /// 
         /// {{% examples %}}
@@ -69,9 +69,6 @@ namespace Pulumi.Akamai
         [Input("name")]
         public string? Name { get; set; }
 
-        [Input("version")]
-        public int? Version { get; set; }
-
         public GetAppSecConfigurationArgs()
         {
         }
@@ -106,7 +103,6 @@ namespace Pulumi.Akamai
         /// The version of the specified security configuration currently active in staging. Returned only if `name` was specified.
         /// </summary>
         public readonly int StagingVersion;
-        public readonly int? Version;
 
         [OutputConstructor]
         private GetAppSecConfigurationResult(
@@ -122,9 +118,7 @@ namespace Pulumi.Akamai
 
             int productionVersion,
 
-            int stagingVersion,
-
-            int? version)
+            int stagingVersion)
         {
             ConfigId = configId;
             Id = id;
@@ -133,7 +127,6 @@ namespace Pulumi.Akamai
             OutputText = outputText;
             ProductionVersion = productionVersion;
             StagingVersion = stagingVersion;
-            Version = version;
         }
     }
 }

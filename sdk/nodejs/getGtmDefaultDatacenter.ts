@@ -6,7 +6,22 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * Use `akamai.getGtmDefaultDatacenter` data source to retrieve default datacenter id and nickname.
+ * Use the `akamai.getGtmDefaultDatacenter` data source to retrieve the default data center, ID, and nickname.
+ *
+ * ## Argument reference
+ *
+ * This data source supports these arguments:
+ *
+ * * `domain` - (Required)
+ * * `datacenter` - (Optional) The default is `5400`.
+ *
+ * ## Attributes reference
+ *
+ * This data source supports these attributes:
+ *
+ * * `id` - The data resource ID. Enter in this format: `<domain>:default_datacenter:<datacenter_id>`.
+ * * `datacenterId` - The default data center ID.
+ * * `nickname` - The default data center nickname.
  */
 export function getGtmDefaultDatacenter(args: GetGtmDefaultDatacenterArgs, opts?: pulumi.InvokeOptions): Promise<GetGtmDefaultDatacenterResult> {
     if (!opts) {
@@ -35,17 +50,11 @@ export interface GetGtmDefaultDatacenterArgs {
  */
 export interface GetGtmDefaultDatacenterResult {
     readonly datacenter?: number;
-    /**
-     * The default datacenter ID
-     */
     readonly datacenterId: number;
     readonly domain: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * The default datacenter nickname
-     */
     readonly nickname: string;
 }

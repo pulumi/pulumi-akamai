@@ -12,7 +12,22 @@ namespace Pulumi.Akamai
     public static class GetGtmDefaultDatacenter
     {
         /// <summary>
-        /// Use `akamai.getGtmDefaultDatacenter` data source to retrieve default datacenter id and nickname.
+        /// Use the `akamai.getGtmDefaultDatacenter` data source to retrieve the default data center, ID, and nickname.
+        /// 
+        /// ## Argument reference
+        /// 
+        /// This data source supports these arguments:
+        /// 
+        /// * `domain` - (Required)
+        /// * `datacenter` - (Optional) The default is `5400`.
+        /// 
+        /// ## Attributes reference
+        /// 
+        /// This data source supports these attributes:
+        /// 
+        /// * `id` - The data resource ID. Enter in this format: `&lt;domain&gt;:default_datacenter:&lt;datacenter_id&gt;`.
+        /// * `datacenter_id` - The default data center ID.
+        /// * `nickname` - The default data center nickname.
         /// </summary>
         public static Task<GetGtmDefaultDatacenterResult> InvokeAsync(GetGtmDefaultDatacenterArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetGtmDefaultDatacenterResult>("akamai:index/getGtmDefaultDatacenter:getGtmDefaultDatacenter", args ?? new GetGtmDefaultDatacenterArgs(), options.WithVersion());
@@ -37,18 +52,12 @@ namespace Pulumi.Akamai
     public sealed class GetGtmDefaultDatacenterResult
     {
         public readonly int? Datacenter;
-        /// <summary>
-        /// The default datacenter ID
-        /// </summary>
         public readonly int DatacenterId;
         public readonly string Domain;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// The default datacenter nickname
-        /// </summary>
         public readonly string Nickname;
 
         [OutputConstructor]

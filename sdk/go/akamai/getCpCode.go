@@ -7,6 +7,99 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Use the `CpCode` data source to retrieve the ID for a content provider (CP) code.
+//
+// ## Example Usage
+//
+// Basic usage:
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		opt0 := "ctr_1-AB123"
+// 		opt1 := "grp_123"
+// 		_, err := akamai.LookupCpCode(ctx, &akamai.LookupCpCodeArgs{
+// 			ContractId: &opt0,
+// 			GroupId:    &opt1,
+// 			Name:       "my cpcode name",
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
+//
+// Here's a real-world example that includes other data sources as dependencies:
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		groupName := "example group name"
+// 		cpcodeName := "My CP code Name"
+// 		opt0 := groupName
+// 		exampleContract, err := akamai.GetContract(ctx, &akamai.GetContractArgs{
+// 			GroupName: &opt0,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		opt1 := groupName
+// 		opt2 := exampleContract.Id
+// 		exampleGroup, err := akamai.GetGroup(ctx, &akamai.GetGroupArgs{
+// 			GroupName:  &opt1,
+// 			ContractId: &opt2,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		opt3 := exampleGroup.Id
+// 		opt4 := exampleContract.Id
+// 		_, err = akamai.LookupCpCode(ctx, &akamai.LookupCpCodeArgs{
+// 			Name:       cpcodeName,
+// 			GroupId:    &opt3,
+// 			ContractId: &opt4,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
+// ## Argument reference
+//
+// This data source supports these arguments:
+//
+// * `name` - (Required) The name of the CP code.
+// * `groupId` - (Required) The group's unique ID, including the `grp_` prefix.
+// * `contractId` - (Required) A contract's unique ID, including the `ctr_` prefix.
+//
+// ### Deprecated arguments
+// * `contract` - (Deprecated) Replaced by `contractId`. Maintained for legacy purposes.
+// * `group` - (Deprecated) Replaced by `groupId`. Maintained for legacy purposes.
+//
+// ## Attributes reference
+//
+// This data source returns these attributes:
+//
+// * `id` - The ID of the CP code, including the `cpc_` prefix.
+// * `productIds` - An array of product IDs associated with this CP code. Each ID returned includes the `prd_` prefix.
 func LookupCpCode(ctx *pulumi.Context, args *LookupCpCodeArgs, opts ...pulumi.InvokeOption) (*LookupCpCodeResult, error) {
 	var rv LookupCpCodeResult
 	err := ctx.Invoke("akamai:index/getCpCode:getCpCode", args, &rv, opts...)

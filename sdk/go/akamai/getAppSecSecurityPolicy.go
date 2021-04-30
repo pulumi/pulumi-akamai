@@ -7,7 +7,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecSecurityPolicy` data source to retrieve information about the security policies associated with a specific security configuration version, or about a specific security policy.
+// Use the `AppSecSecurityPolicy` data source to retrieve information about the security policies associated with a specific security configuration version, or about a specific security policy.
 //
 // ## Example Usage
 //
@@ -24,13 +24,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := "Akamai Tools"
-// 		configuration, err := akamai.GetAppSecConfiguration(ctx, &akamai.GetAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		securityPolicies, err := akamai.GetAppSecSecurityPolicy(ctx, &akamai.GetAppSecSecurityPolicyArgs{
+// 		securityPolicies, err := akamai.LookupAppSecSecurityPolicy(ctx, &akamai.LookupAppSecSecurityPolicyArgs{
 // 			ConfigId: configuration.ConfigId,
 // 			Version:  configuration.LatestVersion,
 // 		}, nil)
@@ -40,7 +40,7 @@ import (
 // 		ctx.Export("securityPoliciesList", securityPolicies.PolicyLists)
 // 		ctx.Export("securityPoliciesText", securityPolicies.OutputText)
 // 		opt1 := "APIs"
-// 		specificSecurityPolicy, err := akamai.GetAppSecSecurityPolicy(ctx, &akamai.GetAppSecSecurityPolicyArgs{
+// 		specificSecurityPolicy, err := akamai.LookupAppSecSecurityPolicy(ctx, &akamai.LookupAppSecSecurityPolicyArgs{
 // 			ConfigId: configuration.ConfigId,
 // 			Version:  configuration.LatestVersion,
 // 			Name:     &opt1,
@@ -53,8 +53,8 @@ import (
 // 	})
 // }
 // ```
-func GetAppSecSecurityPolicy(ctx *pulumi.Context, args *GetAppSecSecurityPolicyArgs, opts ...pulumi.InvokeOption) (*GetAppSecSecurityPolicyResult, error) {
-	var rv GetAppSecSecurityPolicyResult
+func LookupAppSecSecurityPolicy(ctx *pulumi.Context, args *LookupAppSecSecurityPolicyArgs, opts ...pulumi.InvokeOption) (*LookupAppSecSecurityPolicyResult, error) {
+	var rv LookupAppSecSecurityPolicyResult
 	err := ctx.Invoke("akamai:index/getAppSecSecurityPolicy:getAppSecSecurityPolicy", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -63,7 +63,7 @@ func GetAppSecSecurityPolicy(ctx *pulumi.Context, args *GetAppSecSecurityPolicyA
 }
 
 // A collection of arguments for invoking getAppSecSecurityPolicy.
-type GetAppSecSecurityPolicyArgs struct {
+type LookupAppSecSecurityPolicyArgs struct {
 	// The ID of the security configuration to use.
 	ConfigId int `pulumi:"configId"`
 	// The name of the security policy to use. If not supplied, information about all security policies is returned.
@@ -73,7 +73,7 @@ type GetAppSecSecurityPolicyArgs struct {
 }
 
 // A collection of values returned by getAppSecSecurityPolicy.
-type GetAppSecSecurityPolicyResult struct {
+type LookupAppSecSecurityPolicyResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id   string  `pulumi:"id"`

@@ -22,14 +22,6 @@ class GtmGeomapArgs:
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a GtmGeomap resource.
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]] assignments: * `datacenter_id`
-               * `nickname`
-        :param pulumi.Input[str] name: Resource name
-               * `default_datacenter`
-               * `datacenter_id`
-               * `nickname`
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
         """
         pulumi.set(__self__, "default_datacenter", default_datacenter)
         pulumi.set(__self__, "domain", domain)
@@ -52,9 +44,6 @@ class GtmGeomapArgs:
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Input[str]:
-        """
-        Domain name
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -64,10 +53,6 @@ class GtmGeomapArgs:
     @property
     @pulumi.getter
     def assignments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]]]:
-        """
-        * `datacenter_id`
-        * `nickname`
-        """
         return pulumi.get(self, "assignments")
 
     @assignments.setter
@@ -77,12 +62,6 @@ class GtmGeomapArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Resource name
-        * `default_datacenter`
-        * `datacenter_id`
-        * `nickname`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -92,9 +71,6 @@ class GtmGeomapArgs:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Wait for transaction to complete
-        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -112,14 +88,6 @@ class _GtmGeomapState:
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering GtmGeomap resources.
-        :param pulumi.Input[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]] assignments: * `datacenter_id`
-               * `nickname`
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[str] name: Resource name
-               * `default_datacenter`
-               * `datacenter_id`
-               * `nickname`
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
         """
         if assignments is not None:
             pulumi.set(__self__, "assignments", assignments)
@@ -135,10 +103,6 @@ class _GtmGeomapState:
     @property
     @pulumi.getter
     def assignments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]]]:
-        """
-        * `datacenter_id`
-        * `nickname`
-        """
         return pulumi.get(self, "assignments")
 
     @assignments.setter
@@ -157,9 +121,6 @@ class _GtmGeomapState:
     @property
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        Domain name
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -169,12 +130,6 @@ class _GtmGeomapState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Resource name
-        * `default_datacenter`
-        * `datacenter_id`
-        * `nickname`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -184,9 +139,6 @@ class _GtmGeomapState:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Wait for transaction to complete
-        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -206,7 +158,11 @@ class GtmGeomap(pulumi.CustomResource):
                  wait_on_complete: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        `GtmGeomap` provides the resource for creating, configuring and importing a gtm Geographic map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_map_name`
+        Use the `GtmGeomap` resource to create, configure, and import a GTM Geographic map. Geographic mapping lets you configure a property that returns a CNAME based on the geographic location of the request.
+
+        You can reuse maps for multiple properties or create new ones. To configure a property for geographic mapping, you need to define at least one geographic map for your domain. Each map needs at least two definitions. For example, you can have one definition that maps a set of countries to a specific data center, and a second definition that routes all other traffic.
+
+        > **Note** Import requires an ID with this format: `existing_domain_name`:`existing_map_name`.
 
         ## Example Usage
 
@@ -223,17 +179,27 @@ class GtmGeomap(pulumi.CustomResource):
             ),
             domain="demo_domain.akadns.net")
         ```
+        ## Argument reference
+
+        This resource supports these arguments:
+
+        * `domain` - (Required) GTM Domain name for the Geographic Map.
+        * `name` - (Required) A descriptive label for the Geographic map.
+        * `default_datacenter` - (Required) A placeholder for all other geographic zones. Requires these additional arguments:
+          * `datacenter_id` - (Required) For each property, an identifier for all other geographic zones.
+          * `nickname` - (Required) A descriptive label for all other geographic zones.
+        * `wait_on_complete` - (Optional) A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+        * `assignment` - (Optional) Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
+          * `datacenter_id` - (Optional) A unique identifier for an existing data center in the domain.
+          * `nickname` - (Optional) A descriptive label for the group.
+          * `countries` - (Optional) Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
+
+        ## Schema reference
+
+        You can download the GTM Geographic Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#geographicmap) page.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmGeomapAssignmentArgs']]]] assignments: * `datacenter_id`
-               * `nickname`
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[str] name: Resource name
-               * `default_datacenter`
-               * `datacenter_id`
-               * `nickname`
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
         """
         ...
     @overload
@@ -242,7 +208,11 @@ class GtmGeomap(pulumi.CustomResource):
                  args: GtmGeomapArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        `GtmGeomap` provides the resource for creating, configuring and importing a gtm Geographic map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_map_name`
+        Use the `GtmGeomap` resource to create, configure, and import a GTM Geographic map. Geographic mapping lets you configure a property that returns a CNAME based on the geographic location of the request.
+
+        You can reuse maps for multiple properties or create new ones. To configure a property for geographic mapping, you need to define at least one geographic map for your domain. Each map needs at least two definitions. For example, you can have one definition that maps a set of countries to a specific data center, and a second definition that routes all other traffic.
+
+        > **Note** Import requires an ID with this format: `existing_domain_name`:`existing_map_name`.
 
         ## Example Usage
 
@@ -259,6 +229,24 @@ class GtmGeomap(pulumi.CustomResource):
             ),
             domain="demo_domain.akadns.net")
         ```
+        ## Argument reference
+
+        This resource supports these arguments:
+
+        * `domain` - (Required) GTM Domain name for the Geographic Map.
+        * `name` - (Required) A descriptive label for the Geographic map.
+        * `default_datacenter` - (Required) A placeholder for all other geographic zones. Requires these additional arguments:
+          * `datacenter_id` - (Required) For each property, an identifier for all other geographic zones.
+          * `nickname` - (Required) A descriptive label for all other geographic zones.
+        * `wait_on_complete` - (Optional) A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+        * `assignment` - (Optional) Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
+          * `datacenter_id` - (Optional) A unique identifier for an existing data center in the domain.
+          * `nickname` - (Optional) A descriptive label for the group.
+          * `countries` - (Optional) Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
+
+        ## Schema reference
+
+        You can download the GTM Geographic Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#geographicmap) page.
 
         :param str resource_name: The name of the resource.
         :param GtmGeomapArgs args: The arguments to use to populate this resource's properties.
@@ -325,14 +313,6 @@ class GtmGeomap(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmGeomapAssignmentArgs']]]] assignments: * `datacenter_id`
-               * `nickname`
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[str] name: Resource name
-               * `default_datacenter`
-               * `datacenter_id`
-               * `nickname`
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -348,10 +328,6 @@ class GtmGeomap(pulumi.CustomResource):
     @property
     @pulumi.getter
     def assignments(self) -> pulumi.Output[Optional[Sequence['outputs.GtmGeomapAssignment']]]:
-        """
-        * `datacenter_id`
-        * `nickname`
-        """
         return pulumi.get(self, "assignments")
 
     @property
@@ -362,27 +338,15 @@ class GtmGeomap(pulumi.CustomResource):
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Output[str]:
-        """
-        Domain name
-        """
         return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        Resource name
-        * `default_datacenter`
-        * `datacenter_id`
-        * `nickname`
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> pulumi.Output[Optional[bool]]:
-        """
-        Wait for transaction to complete
-        """
         return pulumi.get(self, "wait_on_complete")
 

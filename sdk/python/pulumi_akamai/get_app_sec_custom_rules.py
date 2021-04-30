@@ -19,13 +19,19 @@ class GetAppSecCustomRulesResult:
     """
     A collection of values returned by getAppSecCustomRules.
     """
-    def __init__(__self__, config_id=None, id=None, output_text=None):
+    def __init__(__self__, config_id=None, custom_rule_id=None, id=None, json=None, output_text=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
+        if custom_rule_id and not isinstance(custom_rule_id, int):
+            raise TypeError("Expected argument 'custom_rule_id' to be a int")
+        pulumi.set(__self__, "custom_rule_id", custom_rule_id)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if json and not isinstance(json, str):
+            raise TypeError("Expected argument 'json' to be a str")
+        pulumi.set(__self__, "json", json)
         if output_text and not isinstance(output_text, str):
             raise TypeError("Expected argument 'output_text' to be a str")
         pulumi.set(__self__, "output_text", output_text)
@@ -36,6 +42,11 @@ class GetAppSecCustomRulesResult:
         return pulumi.get(self, "config_id")
 
     @property
+    @pulumi.getter(name="customRuleId")
+    def custom_rule_id(self) -> Optional[int]:
+        return pulumi.get(self, "custom_rule_id")
+
+    @property
     @pulumi.getter
     def id(self) -> str:
         """
@@ -44,10 +55,18 @@ class GetAppSecCustomRulesResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter
+    def json(self) -> str:
+        """
+        A JSON-formatted display of the custom rule information.
+        """
+        return pulumi.get(self, "json")
+
+    @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
         """
-        A tabular display showing the ID and name of the custom rules defined for the security configuration.
+        A tabular display showing the ID and name of the custom rule(s).
         """
         return pulumi.get(self, "output_text")
 
@@ -59,11 +78,14 @@ class AwaitableGetAppSecCustomRulesResult(GetAppSecCustomRulesResult):
             yield self
         return GetAppSecCustomRulesResult(
             config_id=self.config_id,
+            custom_rule_id=self.custom_rule_id,
             id=self.id,
+            json=self.json,
             output_text=self.output_text)
 
 
 def get_app_sec_custom_rules(config_id: Optional[int] = None,
+                             custom_rule_id: Optional[int] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecCustomRulesResult:
     """
     Use the `getAppSecCustomRules` data source to retrieve a list of the custom rules defined for a security configuration.
@@ -76,16 +98,23 @@ def get_app_sec_custom_rules(config_id: Optional[int] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
     custom_rules = akamai.get_app_sec_custom_rules(config_id=configuration.config_id)
-    pulumi.export("customRulesList", custom_rules.output_text)
+    pulumi.export("customRulesOutputText", custom_rules.output_text)
+    pulumi.export("customRulesJson", custom_rules.json)
+    pulumi.export("customRulesConfigId", custom_rules.config_id)
+    specific_custom_rule = akamai.get_app_sec_custom_rules(config_id=configuration.config_id,
+        custom_rule_id=var["custom_rule_id"])
+    pulumi.export("specificCustomRuleJson", specific_custom_rule.json)
     ```
 
 
     :param int config_id: The ID of the security configuration to use.
+    :param int custom_rule_id: The ID of a specific custom rule to use. If not supplied, information about all custom rules associated with the given security configuration will be returned.
     """
     __args__ = dict()
     __args__['configId'] = config_id
+    __args__['customRuleId'] = custom_rule_id
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -94,5 +123,7 @@ def get_app_sec_custom_rules(config_id: Optional[int] = None,
 
     return AwaitableGetAppSecCustomRulesResult(
         config_id=__ret__.config_id,
+        custom_rule_id=__ret__.custom_rule_id,
         id=__ret__.id,
+        json=__ret__.json,
         output_text=__ret__.output_text)

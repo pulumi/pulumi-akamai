@@ -40,13 +40,13 @@ export class AppSecCustomRule extends pulumi.CustomResource {
      */
     public readonly configId!: pulumi.Output<number>;
     /**
+     * The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
+     */
+    public readonly customRule!: pulumi.Output<string>;
+    /**
      * The ID of the custom rule.
      */
     public /*out*/ readonly customRuleId!: pulumi.Output<number>;
-    /**
-     * The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
-     */
-    public readonly rules!: pulumi.Output<string>;
 
     /**
      * Create a AppSecCustomRule resource with the given unique name, arguments, and options.
@@ -62,18 +62,18 @@ export class AppSecCustomRule extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as AppSecCustomRuleState | undefined;
             inputs["configId"] = state ? state.configId : undefined;
+            inputs["customRule"] = state ? state.customRule : undefined;
             inputs["customRuleId"] = state ? state.customRuleId : undefined;
-            inputs["rules"] = state ? state.rules : undefined;
         } else {
             const args = argsOrState as AppSecCustomRuleArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.rules === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'rules'");
+            if ((!args || args.customRule === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'customRule'");
             }
             inputs["configId"] = args ? args.configId : undefined;
-            inputs["rules"] = args ? args.rules : undefined;
+            inputs["customRule"] = args ? args.customRule : undefined;
             inputs["customRuleId"] = undefined /*out*/;
         }
         if (!opts.version) {
@@ -92,13 +92,13 @@ export interface AppSecCustomRuleState {
      */
     readonly configId?: pulumi.Input<number>;
     /**
+     * The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
+     */
+    readonly customRule?: pulumi.Input<string>;
+    /**
      * The ID of the custom rule.
      */
     readonly customRuleId?: pulumi.Input<number>;
-    /**
-     * The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
-     */
-    readonly rules?: pulumi.Input<string>;
 }
 
 /**
@@ -112,5 +112,5 @@ export interface AppSecCustomRuleArgs {
     /**
      * The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
      */
-    readonly rules: pulumi.Input<string>;
+    readonly customRule: pulumi.Input<string>;
 }

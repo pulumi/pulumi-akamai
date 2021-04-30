@@ -13,12 +13,6 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GtmPropertyLivenessTestHttpHeader
     {
-        /// <summary>
-        /// Liveness test name
-        /// * `test_interval`
-        /// * `test_object_protocol`
-        /// * `test_timeout`
-        /// </summary>
         public readonly string? Name;
         public readonly string? Value;
 

@@ -15,10 +15,6 @@ namespace Pulumi.Akamai.Outputs
     {
         public readonly ImmutableArray<string> Rdatas;
         public readonly int? Ttl;
-        /// <summary>
-        /// Property type  
-        /// * `score_aggregation_type`
-        /// </summary>
         public readonly string? Type;
 
         [OutputConstructor]

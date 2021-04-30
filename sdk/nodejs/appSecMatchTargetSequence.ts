@@ -22,8 +22,7 @@ import * as utilities from "./utilities";
  * const matchTargetSequence = new akamai.AppSecMatchTargetSequence("matchTargetSequence", {
  *     configId: configuration.then(configuration => configuration.configId),
  *     version: configuration.then(configuration => configuration.latestVersion),
- *     type: "website",
- *     json: fs.readFileSync(`${path.module}/match_targets.json`),
+ *     matchTargetSequence: fs.readFileSync(`${path.module}/match_targets.json`),
  * });
  * ```
  */
@@ -62,9 +61,7 @@ export class AppSecMatchTargetSequence extends pulumi.CustomResource {
     /**
      * The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
      */
-    public readonly json!: pulumi.Output<string | undefined>;
-    public readonly sequenceMap!: pulumi.Output<{[key: string]: string} | undefined>;
-    public readonly type!: pulumi.Output<string>;
+    public readonly matchTargetSequence!: pulumi.Output<string | undefined>;
     /**
      * The version number of the security configuration to use.
      */
@@ -84,25 +81,18 @@ export class AppSecMatchTargetSequence extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as AppSecMatchTargetSequenceState | undefined;
             inputs["configId"] = state ? state.configId : undefined;
-            inputs["json"] = state ? state.json : undefined;
-            inputs["sequenceMap"] = state ? state.sequenceMap : undefined;
-            inputs["type"] = state ? state.type : undefined;
+            inputs["matchTargetSequence"] = state ? state.matchTargetSequence : undefined;
             inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecMatchTargetSequenceArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'type'");
-            }
             if ((!args || args.version === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
             inputs["configId"] = args ? args.configId : undefined;
-            inputs["json"] = args ? args.json : undefined;
-            inputs["sequenceMap"] = args ? args.sequenceMap : undefined;
-            inputs["type"] = args ? args.type : undefined;
+            inputs["matchTargetSequence"] = args ? args.matchTargetSequence : undefined;
             inputs["version"] = args ? args.version : undefined;
         }
         if (!opts.version) {
@@ -123,9 +113,7 @@ export interface AppSecMatchTargetSequenceState {
     /**
      * The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
      */
-    readonly json?: pulumi.Input<string>;
-    readonly sequenceMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    readonly type?: pulumi.Input<string>;
+    readonly matchTargetSequence?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
@@ -143,9 +131,7 @@ export interface AppSecMatchTargetSequenceArgs {
     /**
      * The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
      */
-    readonly json?: pulumi.Input<string>;
-    readonly sequenceMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    readonly type: pulumi.Input<string>;
+    readonly matchTargetSequence?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */

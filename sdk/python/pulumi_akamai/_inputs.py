@@ -22,6 +22,10 @@ __all__ = [
     'GtmPropertyStaticRrSetArgs',
     'GtmPropertyTrafficTargetArgs',
     'GtmResourceResourceInstanceArgs',
+    'PropertyActivationRuleErrorArgs',
+    'PropertyActivationRuleWarningArgs',
+    'PropertyHostnameArgs',
+    'PropertyHostnameCertStatusArgs',
     'PropertyOriginArgs',
     'PropertyRuleErrorArgs',
     'PropertyRuleWarningArgs',
@@ -41,11 +45,6 @@ class DnsZoneTsigKeyArgs:
                  algorithm: pulumi.Input[str],
                  name: pulumi.Input[str],
                  secret: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: key name
-               * `algorithm`
-               * `secret`
-        """
         pulumi.set(__self__, "algorithm", algorithm)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "secret", secret)
@@ -62,11 +61,6 @@ class DnsZoneTsigKeyArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        key name
-        * `algorithm`
-        * `secret`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -222,10 +216,6 @@ class GtmDatacenterDefaultLoadObjectArgs:
                  load_object: Optional[pulumi.Input[str]] = None,
                  load_object_port: Optional[pulumi.Input[int]] = None,
                  load_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] load_servers: * `city`
-               * `clone_of`
-        """
         if load_object is not None:
             pulumi.set(__self__, "load_object", load_object)
         if load_object_port is not None:
@@ -254,10 +244,6 @@ class GtmDatacenterDefaultLoadObjectArgs:
     @property
     @pulumi.getter(name="loadServers")
     def load_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        * `city`
-        * `clone_of`
-        """
         return pulumi.get(self, "load_servers")
 
     @load_servers.setter
@@ -359,25 +345,6 @@ class GtmPropertyLivenessTestArgs:
                  test_object_port: Optional[pulumi.Input[int]] = None,
                  test_object_username: Optional[pulumi.Input[str]] = None,
                  timeout_penalty: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[str] name: Liveness test name
-               * `test_interval`
-               * `test_object_protocol`
-               * `test_timeout`
-        :param pulumi.Input[bool] disable_nonstandard_port_warning: * `error_penalty`
-        :param pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestHttpHeaderArgs']]] http_headers: `name`
-               `value`
-        :param pulumi.Input[bool] recursion_requested: * `request_string`
-               * `resource_type`
-               * `response_string`
-               * `ssl_client_certificate`
-               * `ssl_client_private_key`
-               * `test_object`
-               * `test_object_password`
-               * `test_object_port`
-               * `test_object_username`
-               * `timeout_penalty`
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "test_interval", test_interval)
         pulumi.set(__self__, "test_object", test_object)
@@ -425,12 +392,6 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        Liveness test name
-        * `test_interval`
-        * `test_object_protocol`
-        * `test_timeout`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -485,9 +446,6 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="disableNonstandardPortWarning")
     def disable_nonstandard_port_warning(self) -> Optional[pulumi.Input[bool]]:
-        """
-        * `error_penalty`
-        """
         return pulumi.get(self, "disable_nonstandard_port_warning")
 
     @disable_nonstandard_port_warning.setter
@@ -542,10 +500,6 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="httpHeaders")
     def http_headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestHttpHeaderArgs']]]]:
-        """
-        `name`
-        `value`
-        """
         return pulumi.get(self, "http_headers")
 
     @http_headers.setter
@@ -564,18 +518,6 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="recursionRequested")
     def recursion_requested(self) -> Optional[pulumi.Input[bool]]:
-        """
-        * `request_string`
-        * `resource_type`
-        * `response_string`
-        * `ssl_client_certificate`
-        * `ssl_client_private_key`
-        * `test_object`
-        * `test_object_password`
-        * `test_object_port`
-        * `test_object_username`
-        * `timeout_penalty`
-        """
         return pulumi.get(self, "recursion_requested")
 
     @recursion_requested.setter
@@ -669,12 +611,6 @@ class GtmPropertyLivenessTestHttpHeaderArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: Liveness test name
-               * `test_interval`
-               * `test_object_protocol`
-               * `test_timeout`
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if value is not None:
@@ -683,12 +619,6 @@ class GtmPropertyLivenessTestHttpHeaderArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Liveness test name
-        * `test_interval`
-        * `test_object_protocol`
-        * `test_timeout`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -711,10 +641,6 @@ class GtmPropertyStaticRrSetArgs:
                  rdatas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ttl: Optional[pulumi.Input[int]] = None,
                  type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: Property type  
-               * `score_aggregation_type`
-        """
         if rdatas is not None:
             pulumi.set(__self__, "rdatas", rdatas)
         if ttl is not None:
@@ -743,10 +669,6 @@ class GtmPropertyStaticRrSetArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Property type  
-        * `score_aggregation_type`
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -763,13 +685,6 @@ class GtmPropertyTrafficTargetArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  weight: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[bool] enabled: * `weight`
-        :param pulumi.Input[str] name: Liveness test name
-               * `test_interval`
-               * `test_object_protocol`
-               * `test_timeout`
-        """
         if datacenter_id is not None:
             pulumi.set(__self__, "datacenter_id", datacenter_id)
         if enabled is not None:
@@ -795,9 +710,6 @@ class GtmPropertyTrafficTargetArgs:
     @property
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        * `weight`
-        """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
@@ -816,12 +728,6 @@ class GtmPropertyTrafficTargetArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Liveness test name
-        * `test_interval`
-        * `test_object_protocol`
-        * `test_timeout`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -855,17 +761,6 @@ class GtmResourceResourceInstanceArgs:
                  load_object_port: Optional[pulumi.Input[int]] = None,
                  load_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  use_default_load_object: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] use_default_load_object: * `host_header`
-               * `least_squares_decay`
-               * `upper_bound`
-               * `description`
-               * `leader_string`
-               * `constrained_property`
-               * `load_imbalance_percent`
-               * `max_u_multiplicative_increment`
-               * `decay_rate`
-        """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         if load_object is not None:
             pulumi.set(__self__, "load_object", load_object)
@@ -915,22 +810,316 @@ class GtmResourceResourceInstanceArgs:
     @property
     @pulumi.getter(name="useDefaultLoadObject")
     def use_default_load_object(self) -> Optional[pulumi.Input[bool]]:
-        """
-        * `host_header`
-        * `least_squares_decay`
-        * `upper_bound`
-        * `description`
-        * `leader_string`
-        * `constrained_property`
-        * `load_imbalance_percent`
-        * `max_u_multiplicative_increment`
-        * `decay_rate`
-        """
         return pulumi.get(self, "use_default_load_object")
 
     @use_default_load_object.setter
     def use_default_load_object(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "use_default_load_object", value)
+
+
+@pulumi.input_type
+class PropertyActivationRuleErrorArgs:
+    def __init__(__self__, *,
+                 behavior_name: Optional[pulumi.Input[str]] = None,
+                 detail: Optional[pulumi.Input[str]] = None,
+                 error_location: Optional[pulumi.Input[str]] = None,
+                 instance: Optional[pulumi.Input[str]] = None,
+                 status_code: Optional[pulumi.Input[int]] = None,
+                 title: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        if behavior_name is not None:
+            pulumi.set(__self__, "behavior_name", behavior_name)
+        if detail is not None:
+            pulumi.set(__self__, "detail", detail)
+        if error_location is not None:
+            pulumi.set(__self__, "error_location", error_location)
+        if instance is not None:
+            pulumi.set(__self__, "instance", instance)
+        if status_code is not None:
+            pulumi.set(__self__, "status_code", status_code)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="behaviorName")
+    def behavior_name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "behavior_name")
+
+    @behavior_name.setter
+    def behavior_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "behavior_name", value)
+
+    @property
+    @pulumi.getter
+    def detail(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "detail")
+
+    @detail.setter
+    def detail(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detail", value)
+
+    @property
+    @pulumi.getter(name="errorLocation")
+    def error_location(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "error_location")
+
+    @error_location.setter
+    def error_location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "error_location", value)
+
+    @property
+    @pulumi.getter
+    def instance(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "instance")
+
+    @instance.setter
+    def instance(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance", value)
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "status_code")
+
+    @status_code.setter
+    def status_code(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "status_code", value)
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "title")
+
+    @title.setter
+    def title(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "title", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class PropertyActivationRuleWarningArgs:
+    def __init__(__self__, *,
+                 behavior_name: Optional[pulumi.Input[str]] = None,
+                 detail: Optional[pulumi.Input[str]] = None,
+                 error_location: Optional[pulumi.Input[str]] = None,
+                 instance: Optional[pulumi.Input[str]] = None,
+                 status_code: Optional[pulumi.Input[int]] = None,
+                 title: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        if behavior_name is not None:
+            pulumi.set(__self__, "behavior_name", behavior_name)
+        if detail is not None:
+            pulumi.set(__self__, "detail", detail)
+        if error_location is not None:
+            pulumi.set(__self__, "error_location", error_location)
+        if instance is not None:
+            pulumi.set(__self__, "instance", instance)
+        if status_code is not None:
+            pulumi.set(__self__, "status_code", status_code)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="behaviorName")
+    def behavior_name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "behavior_name")
+
+    @behavior_name.setter
+    def behavior_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "behavior_name", value)
+
+    @property
+    @pulumi.getter
+    def detail(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "detail")
+
+    @detail.setter
+    def detail(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detail", value)
+
+    @property
+    @pulumi.getter(name="errorLocation")
+    def error_location(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "error_location")
+
+    @error_location.setter
+    def error_location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "error_location", value)
+
+    @property
+    @pulumi.getter
+    def instance(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "instance")
+
+    @instance.setter
+    def instance(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance", value)
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "status_code")
+
+    @status_code.setter
+    def status_code(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "status_code", value)
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "title")
+
+    @title.setter
+    def title(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "title", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class PropertyHostnameArgs:
+    def __init__(__self__, *,
+                 cert_provisioning_type: pulumi.Input[str],
+                 cname_from: pulumi.Input[str],
+                 cname_to: pulumi.Input[str],
+                 cert_statuses: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusArgs']]]] = None,
+                 cname_type: Optional[pulumi.Input[str]] = None,
+                 edge_hostname_id: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "cert_provisioning_type", cert_provisioning_type)
+        pulumi.set(__self__, "cname_from", cname_from)
+        pulumi.set(__self__, "cname_to", cname_to)
+        if cert_statuses is not None:
+            pulumi.set(__self__, "cert_statuses", cert_statuses)
+        if cname_type is not None:
+            pulumi.set(__self__, "cname_type", cname_type)
+        if edge_hostname_id is not None:
+            pulumi.set(__self__, "edge_hostname_id", edge_hostname_id)
+
+    @property
+    @pulumi.getter(name="certProvisioningType")
+    def cert_provisioning_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "cert_provisioning_type")
+
+    @cert_provisioning_type.setter
+    def cert_provisioning_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "cert_provisioning_type", value)
+
+    @property
+    @pulumi.getter(name="cnameFrom")
+    def cname_from(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "cname_from")
+
+    @cname_from.setter
+    def cname_from(self, value: pulumi.Input[str]):
+        pulumi.set(self, "cname_from", value)
+
+    @property
+    @pulumi.getter(name="cnameTo")
+    def cname_to(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "cname_to")
+
+    @cname_to.setter
+    def cname_to(self, value: pulumi.Input[str]):
+        pulumi.set(self, "cname_to", value)
+
+    @property
+    @pulumi.getter(name="certStatuses")
+    def cert_statuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusArgs']]]]:
+        return pulumi.get(self, "cert_statuses")
+
+    @cert_statuses.setter
+    def cert_statuses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusArgs']]]]):
+        pulumi.set(self, "cert_statuses", value)
+
+    @property
+    @pulumi.getter(name="cnameType")
+    def cname_type(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "cname_type")
+
+    @cname_type.setter
+    def cname_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cname_type", value)
+
+    @property
+    @pulumi.getter(name="edgeHostnameId")
+    def edge_hostname_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "edge_hostname_id")
+
+    @edge_hostname_id.setter
+    def edge_hostname_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "edge_hostname_id", value)
+
+
+@pulumi.input_type
+class PropertyHostnameCertStatusArgs:
+    def __init__(__self__, *,
+                 hostname: Optional[pulumi.Input[str]] = None,
+                 production_status: Optional[pulumi.Input[str]] = None,
+                 staging_status: Optional[pulumi.Input[str]] = None,
+                 target: Optional[pulumi.Input[str]] = None):
+        if hostname is not None:
+            pulumi.set(__self__, "hostname", hostname)
+        if production_status is not None:
+            pulumi.set(__self__, "production_status", production_status)
+        if staging_status is not None:
+            pulumi.set(__self__, "staging_status", staging_status)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "hostname")
+
+    @hostname.setter
+    def hostname(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "hostname", value)
+
+    @property
+    @pulumi.getter(name="productionStatus")
+    def production_status(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "production_status")
+
+    @production_status.setter
+    def production_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "production_status", value)
+
+    @property
+    @pulumi.getter(name="stagingStatus")
+    def staging_status(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "staging_status")
+
+    @staging_status.setter
+    def staging_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "staging_status", value)
+
+    @property
+    @pulumi.getter
+    def target(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "target")
+
+    @target.setter
+    def target(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "target", value)
 
 
 @pulumi.input_type

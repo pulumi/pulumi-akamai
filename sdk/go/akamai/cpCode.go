@@ -7,33 +7,137 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// The `CpCode` resource lets you create or reuse content provider (CP) codes.  CP codes track web traffic handled by Akamai servers. Akamai gives you a CP code when you purchase a product. You need this code when you activate associated properties.
+//
+// You can create additional CP codes to support more detailed billing and reporting functions.
+//
+// By default, the Akamai Provider uses your existing CP code instead of creating a new one.
+//
+// ## Example Usage
+//
+// Basic usage:
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		_, err := akamai.NewCpCode(ctx, "cpCode", &akamai.CpCodeArgs{
+// 			ContractId: pulumi.Any(akamai_contract.Contract.Id),
+// 			GroupId:    pulumi.Any(akamai_group.Group.Id),
+// 			ProductId:  pulumi.String("prd_Object_Delivery"),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
+//
+// Here's a real-life example that includes other data sources as dependencies:
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		groupName := "example group name"
+// 		_ := "My CP Code"
+// 		opt0 := groupName
+// 		exampleContract, err := akamai.GetContract(ctx, &akamai.GetContractArgs{
+// 			GroupName: &opt0,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		opt1 := groupName
+// 		opt2 := exampleContract.Id
+// 		exampleGroup, err := akamai.GetGroup(ctx, &akamai.GetGroupArgs{
+// 			Name:       &opt1,
+// 			ContractId: &opt2,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		_, err = akamai.NewCpCode(ctx, "exampleCp", &akamai.CpCodeArgs{
+// 			GroupId:    pulumi.String(exampleGroup.Id),
+// 			ContractId: pulumi.String(exampleContract.Id),
+// 			ProductId:  pulumi.String("prd_Object_Delivery"),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
+// ## Argument reference
+//
+// The following arguments are supported:
+//
+// * `name` - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can’t include commas, underscores, quotes, or any of these special characters: ^ # %.
+// * `contractId` - (Required) A contract's unique ID, including the `ctr_` prefix.
+// * `groupId` - (Required) A group's unique ID, including the `grp_` prefix.
+// * `productId` - (Required) A product's unique ID, including the `prd_` prefix.
+// * `contract` - (Deprecated) Replaced by `contractId`. Maintained for legacy purposes.
+// * `group` - (Deprecated) Replaced by `groupId`. Maintained for legacy purposes.
+// * `product` - (Deprecated) Replaced by `productId`. Maintained for legacy purposes.
+//
+// ## Attributes reference
+//
+// * `id` - The ID of the CP code.
+//
+// ## Import
+//
+// Basic Usagehcl resource "akamai_cp_code" "example" {
+//
+// # (resource arguments)
+//
+//  } You can import your Akamai CP codes using a comma-delimited string of the CP code,
+//
+// contract, and group IDs. You have to enter the IDs in this order:
+//
+// `cpcode_id,contract_id,group_id` For example
+//
+// ```sh
+//  $ pulumi import akamai:index/cpCode:CpCode example cpc_123,ctr_1-AB123,grp_123
+// ```
 type CpCode struct {
 	pulumi.CustomResourceState
 
-	// Deprecated: use "contract_id" attribute instead
+	// Deprecated: The setting "contract" has been deprecated.
 	Contract   pulumi.StringOutput `pulumi:"contract"`
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
-	// Deprecated: use "group_id" attribute instead
+	// Deprecated: The setting "group" has been deprecated.
 	Group   pulumi.StringOutput `pulumi:"group"`
 	GroupId pulumi.StringOutput `pulumi:"groupId"`
 	Name    pulumi.StringOutput `pulumi:"name"`
-	Product pulumi.StringOutput `pulumi:"product"`
+	// Deprecated: The setting "product" has been deprecated.
+	Product   pulumi.StringOutput `pulumi:"product"`
+	ProductId pulumi.StringOutput `pulumi:"productId"`
 }
 
 // NewCpCode registers a new resource with the given unique name, arguments, and options.
 func NewCpCode(ctx *pulumi.Context,
 	name string, args *CpCodeArgs, opts ...pulumi.ResourceOption) (*CpCode, error) {
 	if args == nil {
-		return nil, errors.New("missing one or more required arguments")
+		args = &CpCodeArgs{}
 	}
 
-	if args.Product == nil {
-		return nil, errors.New("invalid value for required argument 'Product'")
-	}
 	aliases := pulumi.Aliases([]pulumi.Alias{
 		{
 			Type: pulumi.String("akamai:properties/cpCode:CpCode"),
@@ -62,25 +166,29 @@ func GetCpCode(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CpCode resources.
 type cpCodeState struct {
-	// Deprecated: use "contract_id" attribute instead
+	// Deprecated: The setting "contract" has been deprecated.
 	Contract   *string `pulumi:"contract"`
 	ContractId *string `pulumi:"contractId"`
-	// Deprecated: use "group_id" attribute instead
+	// Deprecated: The setting "group" has been deprecated.
 	Group   *string `pulumi:"group"`
 	GroupId *string `pulumi:"groupId"`
 	Name    *string `pulumi:"name"`
-	Product *string `pulumi:"product"`
+	// Deprecated: The setting "product" has been deprecated.
+	Product   *string `pulumi:"product"`
+	ProductId *string `pulumi:"productId"`
 }
 
 type CpCodeState struct {
-	// Deprecated: use "contract_id" attribute instead
+	// Deprecated: The setting "contract" has been deprecated.
 	Contract   pulumi.StringPtrInput
 	ContractId pulumi.StringPtrInput
-	// Deprecated: use "group_id" attribute instead
+	// Deprecated: The setting "group" has been deprecated.
 	Group   pulumi.StringPtrInput
 	GroupId pulumi.StringPtrInput
 	Name    pulumi.StringPtrInput
-	Product pulumi.StringPtrInput
+	// Deprecated: The setting "product" has been deprecated.
+	Product   pulumi.StringPtrInput
+	ProductId pulumi.StringPtrInput
 }
 
 func (CpCodeState) ElementType() reflect.Type {
@@ -88,26 +196,30 @@ func (CpCodeState) ElementType() reflect.Type {
 }
 
 type cpCodeArgs struct {
-	// Deprecated: use "contract_id" attribute instead
+	// Deprecated: The setting "contract" has been deprecated.
 	Contract   *string `pulumi:"contract"`
 	ContractId *string `pulumi:"contractId"`
-	// Deprecated: use "group_id" attribute instead
+	// Deprecated: The setting "group" has been deprecated.
 	Group   *string `pulumi:"group"`
 	GroupId *string `pulumi:"groupId"`
 	Name    *string `pulumi:"name"`
-	Product string  `pulumi:"product"`
+	// Deprecated: The setting "product" has been deprecated.
+	Product   *string `pulumi:"product"`
+	ProductId *string `pulumi:"productId"`
 }
 
 // The set of arguments for constructing a CpCode resource.
 type CpCodeArgs struct {
-	// Deprecated: use "contract_id" attribute instead
+	// Deprecated: The setting "contract" has been deprecated.
 	Contract   pulumi.StringPtrInput
 	ContractId pulumi.StringPtrInput
-	// Deprecated: use "group_id" attribute instead
+	// Deprecated: The setting "group" has been deprecated.
 	Group   pulumi.StringPtrInput
 	GroupId pulumi.StringPtrInput
 	Name    pulumi.StringPtrInput
-	Product pulumi.StringInput
+	// Deprecated: The setting "product" has been deprecated.
+	Product   pulumi.StringPtrInput
+	ProductId pulumi.StringPtrInput
 }
 
 func (CpCodeArgs) ElementType() reflect.Type {

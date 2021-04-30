@@ -37,11 +37,8 @@ namespace Pulumi.Akamai.Properties
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
 
-        /// <summary>
-        /// Mapping of edge hostname CNAMEs to other CNAMEs
-        /// </summary>
         [Output("hostnames")]
-        public Output<ImmutableDictionary<string, string>?> Hostnames { get; private set; } = null!;
+        public Output<ImmutableArray<Outputs.PropertyHostname>> Hostnames { get; private set; } = null!;
 
         [Output("isSecure")]
         public Output<bool?> IsSecure { get; private set; } = null!;
@@ -151,7 +148,7 @@ namespace Pulumi.Akamai.Properties
     {
         [Input("contacts")]
         private InputList<string>? _contacts;
-        [Obsolete(@"""contact"" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")]
+        [Obsolete(@"The setting ""contact"" has been deprecated.")]
         public InputList<string> Contacts
         {
             get => _contacts ?? (_contacts = new InputList<string>());
@@ -180,14 +177,10 @@ namespace Pulumi.Akamai.Properties
         public Input<string>? GroupId { get; set; }
 
         [Input("hostnames")]
-        private InputMap<string>? _hostnames;
-
-        /// <summary>
-        /// Mapping of edge hostname CNAMEs to other CNAMEs
-        /// </summary>
-        public InputMap<string> Hostnames
+        private InputList<Inputs.PropertyHostnameArgs>? _hostnames;
+        public InputList<Inputs.PropertyHostnameArgs> Hostnames
         {
-            get => _hostnames ?? (_hostnames = new InputMap<string>());
+            get => _hostnames ?? (_hostnames = new InputList<Inputs.PropertyHostnameArgs>());
             set => _hostnames = value;
         }
 
@@ -202,7 +195,7 @@ namespace Pulumi.Akamai.Properties
 
         [Input("origins")]
         private InputList<Inputs.PropertyOriginArgs>? _origins;
-        [Obsolete(@"""origin"" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")]
+        [Obsolete(@"The setting ""origin"" has been deprecated.")]
         public InputList<Inputs.PropertyOriginArgs> Origins
         {
             get => _origins ?? (_origins = new InputList<Inputs.PropertyOriginArgs>());
@@ -224,6 +217,15 @@ namespace Pulumi.Akamai.Properties
         [Input("ruleFormat")]
         public Input<string>? RuleFormat { get; set; }
 
+        [Input("ruleWarnings")]
+        private InputList<Inputs.PropertyRuleWarningArgs>? _ruleWarnings;
+        [Obsolete(@"Rule warnings will not be set in state anymore")]
+        public InputList<Inputs.PropertyRuleWarningArgs> RuleWarnings
+        {
+            get => _ruleWarnings ?? (_ruleWarnings = new InputList<Inputs.PropertyRuleWarningArgs>());
+            set => _ruleWarnings = value;
+        }
+
         /// <summary>
         /// Property Rules as JSON
         /// </summary>
@@ -242,7 +244,7 @@ namespace Pulumi.Akamai.Properties
     {
         [Input("contacts")]
         private InputList<string>? _contacts;
-        [Obsolete(@"""contact"" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")]
+        [Obsolete(@"The setting ""contact"" has been deprecated.")]
         public InputList<string> Contacts
         {
             get => _contacts ?? (_contacts = new InputList<string>());
@@ -271,14 +273,10 @@ namespace Pulumi.Akamai.Properties
         public Input<string>? GroupId { get; set; }
 
         [Input("hostnames")]
-        private InputMap<string>? _hostnames;
-
-        /// <summary>
-        /// Mapping of edge hostname CNAMEs to other CNAMEs
-        /// </summary>
-        public InputMap<string> Hostnames
+        private InputList<Inputs.PropertyHostnameGetArgs>? _hostnames;
+        public InputList<Inputs.PropertyHostnameGetArgs> Hostnames
         {
-            get => _hostnames ?? (_hostnames = new InputMap<string>());
+            get => _hostnames ?? (_hostnames = new InputList<Inputs.PropertyHostnameGetArgs>());
             set => _hostnames = value;
         }
 
@@ -299,7 +297,7 @@ namespace Pulumi.Akamai.Properties
 
         [Input("origins")]
         private InputList<Inputs.PropertyOriginGetArgs>? _origins;
-        [Obsolete(@"""origin"" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide")]
+        [Obsolete(@"The setting ""origin"" has been deprecated.")]
         public InputList<Inputs.PropertyOriginGetArgs> Origins
         {
             get => _origins ?? (_origins = new InputList<Inputs.PropertyOriginGetArgs>());
@@ -337,6 +335,7 @@ namespace Pulumi.Akamai.Properties
 
         [Input("ruleWarnings")]
         private InputList<Inputs.PropertyRuleWarningGetArgs>? _ruleWarnings;
+        [Obsolete(@"Rule warnings will not be set in state anymore")]
         public InputList<Inputs.PropertyRuleWarningGetArgs> RuleWarnings
         {
             get => _ruleWarnings ?? (_ruleWarnings = new InputList<Inputs.PropertyRuleWarningGetArgs>());

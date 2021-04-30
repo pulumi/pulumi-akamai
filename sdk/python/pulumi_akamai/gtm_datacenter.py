@@ -30,17 +30,6 @@ class GtmDatacenterArgs:
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a GtmDatacenter resource.
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[bool] cloud_server_host_header_override: * `continent`
-               * `country`
-               * `latitude`
-               * `longitude`
-               * `state_or_province`
-        :param pulumi.Input[str] nickname: datacenter nickname
-               * `default_load_object`
-               * `load_object`
-               * `load_object_port`
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
         """
         pulumi.set(__self__, "domain", domain)
         if city is not None:
@@ -71,9 +60,6 @@ class GtmDatacenterArgs:
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Input[str]:
-        """
-        Domain name
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -101,13 +87,6 @@ class GtmDatacenterArgs:
     @property
     @pulumi.getter(name="cloudServerHostHeaderOverride")
     def cloud_server_host_header_override(self) -> Optional[pulumi.Input[bool]]:
-        """
-        * `continent`
-        * `country`
-        * `latitude`
-        * `longitude`
-        * `state_or_province`
-        """
         return pulumi.get(self, "cloud_server_host_header_override")
 
     @cloud_server_host_header_override.setter
@@ -171,12 +150,6 @@ class GtmDatacenterArgs:
     @property
     @pulumi.getter
     def nickname(self) -> Optional[pulumi.Input[str]]:
-        """
-        datacenter nickname
-        * `default_load_object`
-        * `load_object`
-        * `load_object_port`
-        """
         return pulumi.get(self, "nickname")
 
     @nickname.setter
@@ -195,9 +168,6 @@ class GtmDatacenterArgs:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Wait for transaction to complete
-        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -231,17 +201,6 @@ class _GtmDatacenterState:
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering GtmDatacenter resources.
-        :param pulumi.Input[bool] cloud_server_host_header_override: * `continent`
-               * `country`
-               * `latitude`
-               * `longitude`
-               * `state_or_province`
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[str] nickname: datacenter nickname
-               * `default_load_object`
-               * `load_object`
-               * `load_object_port`
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
         """
         if city is not None:
             pulumi.set(__self__, "city", city)
@@ -307,13 +266,6 @@ class _GtmDatacenterState:
     @property
     @pulumi.getter(name="cloudServerHostHeaderOverride")
     def cloud_server_host_header_override(self) -> Optional[pulumi.Input[bool]]:
-        """
-        * `continent`
-        * `country`
-        * `latitude`
-        * `longitude`
-        * `state_or_province`
-        """
         return pulumi.get(self, "cloud_server_host_header_override")
 
     @cloud_server_host_header_override.setter
@@ -368,9 +320,6 @@ class _GtmDatacenterState:
     @property
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        Domain name
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -398,12 +347,6 @@ class _GtmDatacenterState:
     @property
     @pulumi.getter
     def nickname(self) -> Optional[pulumi.Input[str]]:
-        """
-        datacenter nickname
-        * `default_load_object`
-        * `load_object`
-        * `load_object_port`
-        """
         return pulumi.get(self, "nickname")
 
     @nickname.setter
@@ -485,9 +428,6 @@ class _GtmDatacenterState:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Wait for transaction to complete
-        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -515,7 +455,11 @@ class GtmDatacenter(pulumi.CustomResource):
                  wait_on_complete: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        `GtmDatacenter` provides the resource for creating, configuring and importing a gtm datacenter to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_datacenter_id`
+        Use the `GtmDatacenter` resource to create, configure, and import a GTM data center. A GTM data center represents a customer data center and is also known as a traffic target, a location containing many servers GTM can direct traffic to.
+
+        GTM uses data centers to scale load balancing. For example, you might have data centers in both New York and Amsterdam and want to balance load between them. You can configure GTM to send US users to the New York data center and European users to the data center in Amsterdam.
+
+        > **Note** Import requires an ID with this format: `existing_domain_name`:`existing_datacenter_id`.
 
         ## Example Usage
 
@@ -529,20 +473,46 @@ class GtmDatacenter(pulumi.CustomResource):
             domain="demo_domain.akadns.net",
             nickname="demo_datacenter")
         ```
+        ## Argument reference
+
+        This resource supports these arguments:
+
+        * `domain` - (Required) The GTM domain name for the data center.
+        * `wait_on_complete` - (Optional) A boolean, that if set to `true`, waits for transaction to complete.
+        * `nickname` - (Optional) A descriptive label for the data center.
+        * `default_load_object` - (Optional) Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
+          * `load_object` - A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
+          * `load_object_port` - Specifies the TCP port to connect to when requesting the load object.
+          * `load_servers` - Specifies a list of servers to request the load object from.
+        * `city` - (Optional) The name of the city where the data center is located.
+        * `clone_of` - (Optional) Identifies the data center’s `datacenter_id` of which this data center is a clone.
+        * `cloud_server_targeting` - (Optional) A boolean indicating whether to balance load between two or more servers in a cloud environment.
+        * `cloud_server_host_header_override` - (Optional) A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
+        * `continent` - (Optional) A two-letter code that specifies the continent where the data center maps to.
+        * `country` - (Optional) A two-letter ISO 3166 country code that specifies the country where the data center maps to.
+        * `latitude` - (Optional) Specifies the geographical latitude of the data center’s position. See also longitude within this object.
+        * `longitude` - (Optional) Specifies the geographic longitude of the data center’s position. See also latitude within this object.
+        * `state_or_province` - (Optional) Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
+
+        ## Attribute reference
+
+        This resource returns these computed attributes in the state file:
+
+        * `datacenter_id` - A unique identifier for an existing data center in the domain.
+        * `ping_interval`
+        * `ping_packet_size`
+        * `score_penalty`
+        * `servermonitor_liveness_count`
+        * `servermonitor_load_count`
+        * `servermonitor_pool`
+        * `virtual` - A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
+
+        ## Schema reference
+
+        You can download the GTM Data Center backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#datacenter) page.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] cloud_server_host_header_override: * `continent`
-               * `country`
-               * `latitude`
-               * `longitude`
-               * `state_or_province`
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[str] nickname: datacenter nickname
-               * `default_load_object`
-               * `load_object`
-               * `load_object_port`
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
         """
         ...
     @overload
@@ -551,7 +521,11 @@ class GtmDatacenter(pulumi.CustomResource):
                  args: GtmDatacenterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        `GtmDatacenter` provides the resource for creating, configuring and importing a gtm datacenter to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existing_domain_name`:`existing_datacenter_id`
+        Use the `GtmDatacenter` resource to create, configure, and import a GTM data center. A GTM data center represents a customer data center and is also known as a traffic target, a location containing many servers GTM can direct traffic to.
+
+        GTM uses data centers to scale load balancing. For example, you might have data centers in both New York and Amsterdam and want to balance load between them. You can configure GTM to send US users to the New York data center and European users to the data center in Amsterdam.
+
+        > **Note** Import requires an ID with this format: `existing_domain_name`:`existing_datacenter_id`.
 
         ## Example Usage
 
@@ -565,6 +539,43 @@ class GtmDatacenter(pulumi.CustomResource):
             domain="demo_domain.akadns.net",
             nickname="demo_datacenter")
         ```
+        ## Argument reference
+
+        This resource supports these arguments:
+
+        * `domain` - (Required) The GTM domain name for the data center.
+        * `wait_on_complete` - (Optional) A boolean, that if set to `true`, waits for transaction to complete.
+        * `nickname` - (Optional) A descriptive label for the data center.
+        * `default_load_object` - (Optional) Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
+          * `load_object` - A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
+          * `load_object_port` - Specifies the TCP port to connect to when requesting the load object.
+          * `load_servers` - Specifies a list of servers to request the load object from.
+        * `city` - (Optional) The name of the city where the data center is located.
+        * `clone_of` - (Optional) Identifies the data center’s `datacenter_id` of which this data center is a clone.
+        * `cloud_server_targeting` - (Optional) A boolean indicating whether to balance load between two or more servers in a cloud environment.
+        * `cloud_server_host_header_override` - (Optional) A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
+        * `continent` - (Optional) A two-letter code that specifies the continent where the data center maps to.
+        * `country` - (Optional) A two-letter ISO 3166 country code that specifies the country where the data center maps to.
+        * `latitude` - (Optional) Specifies the geographical latitude of the data center’s position. See also longitude within this object.
+        * `longitude` - (Optional) Specifies the geographic longitude of the data center’s position. See also latitude within this object.
+        * `state_or_province` - (Optional) Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
+
+        ## Attribute reference
+
+        This resource returns these computed attributes in the state file:
+
+        * `datacenter_id` - A unique identifier for an existing data center in the domain.
+        * `ping_interval`
+        * `ping_packet_size`
+        * `score_penalty`
+        * `servermonitor_liveness_count`
+        * `servermonitor_load_count`
+        * `servermonitor_pool`
+        * `virtual` - A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
+
+        ## Schema reference
+
+        You can download the GTM Data Center backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#datacenter) page.
 
         :param str resource_name: The name of the resource.
         :param GtmDatacenterArgs args: The arguments to use to populate this resource's properties.
@@ -669,17 +680,6 @@ class GtmDatacenter(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] cloud_server_host_header_override: * `continent`
-               * `country`
-               * `latitude`
-               * `longitude`
-               * `state_or_province`
-        :param pulumi.Input[str] domain: Domain name
-        :param pulumi.Input[str] nickname: datacenter nickname
-               * `default_load_object`
-               * `load_object`
-               * `load_object_port`
-        :param pulumi.Input[bool] wait_on_complete: Wait for transaction to complete
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -721,13 +721,6 @@ class GtmDatacenter(pulumi.CustomResource):
     @property
     @pulumi.getter(name="cloudServerHostHeaderOverride")
     def cloud_server_host_header_override(self) -> pulumi.Output[Optional[bool]]:
-        """
-        * `continent`
-        * `country`
-        * `latitude`
-        * `longitude`
-        * `state_or_province`
-        """
         return pulumi.get(self, "cloud_server_host_header_override")
 
     @property
@@ -758,9 +751,6 @@ class GtmDatacenter(pulumi.CustomResource):
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Output[str]:
-        """
-        Domain name
-        """
         return pulumi.get(self, "domain")
 
     @property
@@ -776,12 +766,6 @@ class GtmDatacenter(pulumi.CustomResource):
     @property
     @pulumi.getter
     def nickname(self) -> pulumi.Output[Optional[str]]:
-        """
-        datacenter nickname
-        * `default_load_object`
-        * `load_object`
-        * `load_object_port`
-        """
         return pulumi.get(self, "nickname")
 
     @property
@@ -827,8 +811,5 @@ class GtmDatacenter(pulumi.CustomResource):
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> pulumi.Output[Optional[bool]]:
-        """
-        Wait for transaction to complete
-        """
         return pulumi.get(self, "wait_on_complete")
 

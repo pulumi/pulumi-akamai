@@ -22,7 +22,7 @@ import * as utilities from "./utilities";
  * const matchTarget = new akamai.AppSecMatchTarget("matchTarget", {
  *     configId: configuration.then(configuration => configuration.configId),
  *     version: configuration.then(configuration => configuration.latestVersion),
- *     json: fs.readFileSync(`${path.module}/match_targets.json`),
+ *     matchTarget: fs.readFileSync(`${path.module}/match_targets.json`),
  * });
  * ```
  */
@@ -61,7 +61,7 @@ export class AppSecMatchTarget extends pulumi.CustomResource {
     /**
      * The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
      */
-    public readonly json!: pulumi.Output<string>;
+    public readonly matchTarget!: pulumi.Output<string>;
     /**
      * The ID of the match target.
      */
@@ -85,7 +85,7 @@ export class AppSecMatchTarget extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as AppSecMatchTargetState | undefined;
             inputs["configId"] = state ? state.configId : undefined;
-            inputs["json"] = state ? state.json : undefined;
+            inputs["matchTarget"] = state ? state.matchTarget : undefined;
             inputs["matchTargetId"] = state ? state.matchTargetId : undefined;
             inputs["version"] = state ? state.version : undefined;
         } else {
@@ -93,14 +93,14 @@ export class AppSecMatchTarget extends pulumi.CustomResource {
             if ((!args || args.configId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.json === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'json'");
+            if ((!args || args.matchTarget === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'matchTarget'");
             }
             if ((!args || args.version === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
             inputs["configId"] = args ? args.configId : undefined;
-            inputs["json"] = args ? args.json : undefined;
+            inputs["matchTarget"] = args ? args.matchTarget : undefined;
             inputs["version"] = args ? args.version : undefined;
             inputs["matchTargetId"] = undefined /*out*/;
         }
@@ -122,7 +122,7 @@ export interface AppSecMatchTargetState {
     /**
      * The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
      */
-    readonly json?: pulumi.Input<string>;
+    readonly matchTarget?: pulumi.Input<string>;
     /**
      * The ID of the match target.
      */
@@ -144,7 +144,7 @@ export interface AppSecMatchTargetArgs {
     /**
      * The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
      */
-    readonly json: pulumi.Input<string>;
+    readonly matchTarget: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */

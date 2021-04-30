@@ -19,13 +19,19 @@ class GetAppSecMatchTargetsResult:
     """
     A collection of values returned by getAppSecMatchTargets.
     """
-    def __init__(__self__, config_id=None, id=None, output_text=None, version=None):
+    def __init__(__self__, config_id=None, id=None, json=None, match_target_id=None, output_text=None, version=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if json and not isinstance(json, str):
+            raise TypeError("Expected argument 'json' to be a str")
+        pulumi.set(__self__, "json", json)
+        if match_target_id and not isinstance(match_target_id, int):
+            raise TypeError("Expected argument 'match_target_id' to be a int")
+        pulumi.set(__self__, "match_target_id", match_target_id)
         if output_text and not isinstance(output_text, str):
             raise TypeError("Expected argument 'output_text' to be a str")
         pulumi.set(__self__, "output_text", output_text)
@@ -47,10 +53,23 @@ class GetAppSecMatchTargetsResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter
+    def json(self) -> str:
+        """
+        A JSON-formatted list of the match target information.
+        """
+        return pulumi.get(self, "json")
+
+    @property
+    @pulumi.getter(name="matchTargetId")
+    def match_target_id(self) -> Optional[int]:
+        return pulumi.get(self, "match_target_id")
+
+    @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
         """
-        A tabular display showing the ID and Policy ID of all match targets associated with the specified security configuration and version.
+        A tabular display showing the ID and Policy ID of all match targets associated with the specified security configuration and version, or of the specific match target if `match_target_id` was supplied.
         """
         return pulumi.get(self, "output_text")
 
@@ -68,15 +87,18 @@ class AwaitableGetAppSecMatchTargetsResult(GetAppSecMatchTargetsResult):
         return GetAppSecMatchTargetsResult(
             config_id=self.config_id,
             id=self.id,
+            json=self.json,
+            match_target_id=self.match_target_id,
             output_text=self.output_text,
             version=self.version)
 
 
 def get_app_sec_match_targets(config_id: Optional[int] = None,
+                              match_target_id: Optional[int] = None,
                               version: Optional[int] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecMatchTargetsResult:
     """
-    Use the `getAppSecMatchTargets` data source to retrieve information about the match targets associated with a given configuration version.
+    Use the `getAppSecMatchTargets` data source to retrieve information about the match targets associated with a given configuration version, or about a specific match target.
 
     ## Example Usage
 
@@ -86,18 +108,24 @@ def get_app_sec_match_targets(config_id: Optional[int] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
     match_targets_app_sec_match_targets = akamai.get_app_sec_match_targets(config_id=configuration.config_id,
         version=configuration.latest_version)
     pulumi.export("matchTargets", match_targets_app_sec_match_targets.output_text)
+    match_target = akamai.get_app_sec_match_targets(config_id=configuration.config_id,
+        version=configuration.latest_version,
+        match_target_id=var["match_target_id"])
+    pulumi.export("matchTargetOutput", match_target.output_text)
     ```
 
 
     :param int config_id: The ID of the security configuration to use.
+    :param int match_target_id: The ID of the match target to use. If not supplied, information about all match targets is returned.
     :param int version: The version number of the security configuration to use.
     """
     __args__ = dict()
     __args__['configId'] = config_id
+    __args__['matchTargetId'] = match_target_id
     __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
@@ -108,5 +136,7 @@ def get_app_sec_match_targets(config_id: Optional[int] = None,
     return AwaitableGetAppSecMatchTargetsResult(
         config_id=__ret__.config_id,
         id=__ret__.id,
+        json=__ret__.json,
+        match_target_id=__ret__.match_target_id,
         output_text=__ret__.output_text,
         version=__ret__.version)

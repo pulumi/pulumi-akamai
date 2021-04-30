@@ -15,11 +15,6 @@ namespace Pulumi.Akamai.Inputs
         [Input("algorithm", required: true)]
         public Input<string> Algorithm { get; set; } = null!;
 
-        /// <summary>
-        /// key name
-        /// * `algorithm`
-        /// * `secret`
-        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 

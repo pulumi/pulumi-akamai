@@ -23,10 +23,6 @@ namespace Pulumi.Akamai.Inputs
         [Input("ttl")]
         public Input<int>? Ttl { get; set; }
 
-        /// <summary>
-        /// Property type  
-        /// * `score_aggregation_type`
-        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 

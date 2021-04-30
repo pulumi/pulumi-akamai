@@ -5,6 +5,54 @@ import * as pulumi from "@pulumi/pulumi";
 import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
+/**
+ * Use the `akamai.getGroup` data source to get a group by name.
+ *
+ * Each account features a hierarchy of groups, which control access to your
+ * Akamai configurations and help consolidate reporting functions, typically
+ * mapping to an organizational hierarchy. Using either Control Center or the
+ * [Identity Management: User Administration API](https://developer.akamai.com/en-us/api/core_features/identity_management_user_admin/v2.html),
+ * account administrators can assign properties to specific groups, each with
+ * its own set of users and accompanying roles.
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const exampleGroup = pulumi.output(akamai.getGroup({
+ *     contractId: "",
+ *     "data.akamai_contract.example.id": [{}],
+ *     groupName: "example group name",
+ * }, { async: true }));
+ * const exampleContract = pulumi.output(akamai.getContract({
+ *     groupName: "example group name",
+ * }, { async: true }));
+ * const exampleProperty = new akamai.Property("example", {
+ *     "data.akamai_group.example.id": [{}],
+ *     groupId: "",
+ * });
+ * ```
+ * ## Argument reference
+ *
+ * This data source supports these arguments:
+ *
+ * * `groupName` - (Required) The group name.
+ * * `contractId` - (Required) A contract's unique ID, including the `ctr_` prefix.
+ *
+ * ### Deprecated arguments
+ * * `contract` - (Deprecated) Replaced by `contractId`. Maintained for legacy purposes.
+ * * `name` -  (Deprecated) Replaced by `groupName`. Maintained for legacy purposes.
+ *
+ * ## Attributes reference
+ *
+ * This data source returns this attribute:
+ *
+ * * `id` - The group's unique ID, including the `grp_` prefix.
+ */
 export function getGroup(args?: GetGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetGroupResult> {
     args = args || {};
     if (!opts) {

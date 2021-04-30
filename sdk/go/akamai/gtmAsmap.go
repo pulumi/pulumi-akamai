@@ -11,7 +11,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// `GtmAsmap` provides the resource for creating, configuring and importing a gtm AS Map to integrate easily with your existing GTM infrastructure to provide a secure, high performance, highly available and scalable solution for Global Traffic Management. Note: Import requires an ID of the format: `existingDomainName`:`existingMapName`
+// Use the `GtmAsmap` resource to create, configure, and import a GTM Autonomous System (AS) map. AS mapping lets you configure a GTM property that returns a CNAME based on the AS number associated with the requester's IP address.
+//
+// You can reuse maps for multiple properties or create new ones. AS maps split the Internet into multiple AS block zones. Properties that use AS maps can specify handout integers for each zone. AS mapping lets you configure a property that directs users to a specific environment or to the origin.
+//
+// > **Note** Import requires an ID with this format: `existingDomainName`:`existingMapName`.
 //
 // ## Example Usage
 //
@@ -41,22 +45,32 @@ import (
 // 	})
 // }
 // ```
+// ## Argument reference
+//
+// This resource supports these arguments:
+//
+// * `domain` - (Required) The GTM Domain name for the AS map.
+// * `name` - (Required) A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+// * `defaultDatacenter` - (Required) A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+//   * `datacenterId` - (Required) A unique identifier for an existing data center in the domain.
+//   * `nickname` - (Required) A descriptive label for all other AS zones, up to 128 characters.
+// * `waitOnComplete` - (Optional) A boolean that, if `true`, waits for transaction to complete.
+// * `assignment` - (Optional) Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+//   * `datacenterId` - A unique identifier for an existing data center in the domain.
+//   * `nickname` - A descriptive label for the group.
+//   * `asNumbers` - Specifies an array of AS numbers.
+//
+// ## Schema reference
+//
+// You can download the GTM AS Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#asmap) page.
 type GtmAsmap struct {
 	pulumi.CustomResourceState
 
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       GtmAsmapAssignmentArrayOutput   `pulumi:"assignments"`
 	DefaultDatacenter GtmAsmapDefaultDatacenterOutput `pulumi:"defaultDatacenter"`
-	// Domain name
-	Domain pulumi.StringOutput `pulumi:"domain"`
-	// Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name pulumi.StringOutput `pulumi:"name"`
-	// Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrOutput `pulumi:"waitOnComplete"`
+	Domain            pulumi.StringOutput             `pulumi:"domain"`
+	Name              pulumi.StringOutput             `pulumi:"name"`
+	WaitOnComplete    pulumi.BoolPtrOutput            `pulumi:"waitOnComplete"`
 }
 
 // NewGtmAsmap registers a new resource with the given unique name, arguments, and options.
@@ -100,35 +114,19 @@ func GetGtmAsmap(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering GtmAsmap resources.
 type gtmAsmapState struct {
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       []GtmAsmapAssignment       `pulumi:"assignments"`
 	DefaultDatacenter *GtmAsmapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	// Domain name
-	Domain *string `pulumi:"domain"`
-	// Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name *string `pulumi:"name"`
-	// Wait for transaction to complete
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	Domain            *string                    `pulumi:"domain"`
+	Name              *string                    `pulumi:"name"`
+	WaitOnComplete    *bool                      `pulumi:"waitOnComplete"`
 }
 
 type GtmAsmapState struct {
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       GtmAsmapAssignmentArrayInput
 	DefaultDatacenter GtmAsmapDefaultDatacenterPtrInput
-	// Domain name
-	Domain pulumi.StringPtrInput
-	// Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name pulumi.StringPtrInput
-	// Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrInput
+	Domain            pulumi.StringPtrInput
+	Name              pulumi.StringPtrInput
+	WaitOnComplete    pulumi.BoolPtrInput
 }
 
 func (GtmAsmapState) ElementType() reflect.Type {
@@ -136,36 +134,20 @@ func (GtmAsmapState) ElementType() reflect.Type {
 }
 
 type gtmAsmapArgs struct {
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       []GtmAsmapAssignment      `pulumi:"assignments"`
 	DefaultDatacenter GtmAsmapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	// Domain name
-	Domain string `pulumi:"domain"`
-	// Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name *string `pulumi:"name"`
-	// Wait for transaction to complete
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	Domain            string                    `pulumi:"domain"`
+	Name              *string                   `pulumi:"name"`
+	WaitOnComplete    *bool                     `pulumi:"waitOnComplete"`
 }
 
 // The set of arguments for constructing a GtmAsmap resource.
 type GtmAsmapArgs struct {
-	// * `datacenterId`
-	// * `nickname`
 	Assignments       GtmAsmapAssignmentArrayInput
 	DefaultDatacenter GtmAsmapDefaultDatacenterInput
-	// Domain name
-	Domain pulumi.StringInput
-	// Resource name
-	// * `defaultDatacenter`
-	// * `datacenterId`
-	// * `nickname`
-	Name pulumi.StringPtrInput
-	// Wait for transaction to complete
-	WaitOnComplete pulumi.BoolPtrInput
+	Domain            pulumi.StringInput
+	Name              pulumi.StringPtrInput
+	WaitOnComplete    pulumi.BoolPtrInput
 }
 
 func (GtmAsmapArgs) ElementType() reflect.Type {

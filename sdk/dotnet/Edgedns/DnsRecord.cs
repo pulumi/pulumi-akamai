@@ -154,6 +154,15 @@ namespace Pulumi.Akamai.Edgedns
         [Output("subtype")]
         public Output<int?> Subtype { get; private set; } = null!;
 
+        [Output("svcParams")]
+        public Output<string?> SvcParams { get; private set; } = null!;
+
+        [Output("svcPriority")]
+        public Output<int?> SvcPriority { get; private set; } = null!;
+
+        [Output("targetName")]
+        public Output<string?> TargetName { get; private set; } = null!;
+
         [Output("targets")]
         public Output<ImmutableArray<string>> Targets { get; private set; } = null!;
 
@@ -359,6 +368,15 @@ namespace Pulumi.Akamai.Edgedns
         [Input("subtype")]
         public Input<int>? Subtype { get; set; }
 
+        [Input("svcParams")]
+        public Input<string>? SvcParams { get; set; }
+
+        [Input("svcPriority")]
+        public Input<int>? SvcPriority { get; set; }
+
+        [Input("targetName")]
+        public Input<string>? TargetName { get; set; }
+
         [Input("targets")]
         private InputList<string>? _targets;
         public InputList<string> Targets
@@ -541,6 +559,15 @@ namespace Pulumi.Akamai.Edgedns
 
         [Input("subtype")]
         public Input<int>? Subtype { get; set; }
+
+        [Input("svcParams")]
+        public Input<string>? SvcParams { get; set; }
+
+        [Input("svcPriority")]
+        public Input<int>? SvcPriority { get; set; }
+
+        [Input("targetName")]
+        public Input<string>? TargetName { get; set; }
 
         [Input("targets")]
         private InputList<string>? _targets;

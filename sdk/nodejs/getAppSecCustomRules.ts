@@ -17,12 +17,19 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: "Akamai Tools",
+ *     name: _var.security_configuration,
  * });
  * const customRules = configuration.then(configuration => akamai.getAppSecCustomRules({
  *     configId: configuration.configId,
  * }));
- * export const customRulesList = customRules.then(customRules => customRules.outputText);
+ * export const customRulesOutputText = customRules.then(customRules => customRules.outputText);
+ * export const customRulesJson = customRules.then(customRules => customRules.json);
+ * export const customRulesConfigId = customRules.then(customRules => customRules.configId);
+ * const specificCustomRule = configuration.then(configuration => akamai.getAppSecCustomRules({
+ *     configId: configuration.configId,
+ *     customRuleId: _var.custom_rule_id,
+ * }));
+ * export const specificCustomRuleJson = specificCustomRule.then(specificCustomRule => specificCustomRule.json);
  * ```
  */
 export function getAppSecCustomRules(args: GetAppSecCustomRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecCustomRulesResult> {
@@ -35,6 +42,7 @@ export function getAppSecCustomRules(args: GetAppSecCustomRulesArgs, opts?: pulu
     }
     return pulumi.runtime.invoke("akamai:index/getAppSecCustomRules:getAppSecCustomRules", {
         "configId": args.configId,
+        "customRuleId": args.customRuleId,
     }, opts);
 }
 
@@ -46,6 +54,10 @@ export interface GetAppSecCustomRulesArgs {
      * The ID of the security configuration to use.
      */
     readonly configId: number;
+    /**
+     * The ID of a specific custom rule to use. If not supplied, information about all custom rules associated with the given security configuration will be returned.
+     */
+    readonly customRuleId?: number;
 }
 
 /**
@@ -53,12 +65,17 @@ export interface GetAppSecCustomRulesArgs {
  */
 export interface GetAppSecCustomRulesResult {
     readonly configId: number;
+    readonly customRuleId?: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
     /**
-     * A tabular display showing the ID and name of the custom rules defined for the security configuration.
+     * A JSON-formatted display of the custom rule information.
+     */
+    readonly json: string;
+    /**
+     * A tabular display showing the ID and name of the custom rule(s).
      */
     readonly outputText: string;
 }

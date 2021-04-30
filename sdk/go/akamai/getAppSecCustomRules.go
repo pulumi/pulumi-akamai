@@ -23,8 +23,8 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Akamai Tools"
-// 		configuration, err := akamai.GetAppSecConfiguration(ctx, &akamai.GetAppSecConfigurationArgs{
+// 		opt0 := _var.Security_configuration
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
@@ -36,7 +36,18 @@ import (
 // 		if err != nil {
 // 			return err
 // 		}
-// 		ctx.Export("customRulesList", customRules.OutputText)
+// 		ctx.Export("customRulesOutputText", customRules.OutputText)
+// 		ctx.Export("customRulesJson", customRules.Json)
+// 		ctx.Export("customRulesConfigId", customRules.ConfigId)
+// 		opt1 := _var.Custom_rule_id
+// 		specificCustomRule, err := akamai.GetAppSecCustomRules(ctx, &akamai.GetAppSecCustomRulesArgs{
+// 			ConfigId:     configuration.ConfigId,
+// 			CustomRuleId: &opt1,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		ctx.Export("specificCustomRuleJson", specificCustomRule.Json)
 // 		return nil
 // 	})
 // }
@@ -54,13 +65,18 @@ func GetAppSecCustomRules(ctx *pulumi.Context, args *GetAppSecCustomRulesArgs, o
 type GetAppSecCustomRulesArgs struct {
 	// The ID of the security configuration to use.
 	ConfigId int `pulumi:"configId"`
+	// The ID of a specific custom rule to use. If not supplied, information about all custom rules associated with the given security configuration will be returned.
+	CustomRuleId *int `pulumi:"customRuleId"`
 }
 
 // A collection of values returned by getAppSecCustomRules.
 type GetAppSecCustomRulesResult struct {
-	ConfigId int `pulumi:"configId"`
+	ConfigId     int  `pulumi:"configId"`
+	CustomRuleId *int `pulumi:"customRuleId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// A tabular display showing the ID and name of the custom rules defined for the security configuration.
+	// A JSON-formatted display of the custom rule information.
+	Json string `pulumi:"json"`
+	// A tabular display showing the ID and name of the custom rule(s).
 	OutputText string `pulumi:"outputText"`
 }

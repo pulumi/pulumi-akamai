@@ -64,7 +64,7 @@ export class GtmProperty extends pulumi.CustomResource {
     public readonly staticTtl!: pulumi.Output<number | undefined>;
     public readonly stickinessBonusConstant!: pulumi.Output<number | undefined>;
     public readonly stickinessBonusPercentage!: pulumi.Output<number | undefined>;
-    public readonly trafficTargets!: pulumi.Output<outputs.trafficmanagement.GtmPropertyTrafficTarget[]>;
+    public readonly trafficTargets!: pulumi.Output<outputs.trafficmanagement.GtmPropertyTrafficTarget[] | undefined>;
     public readonly type!: pulumi.Output<string>;
     public readonly unreachableThreshold!: pulumi.Output<number | undefined>;
     public readonly useComputedTargets!: pulumi.Output<boolean | undefined>;
@@ -135,9 +135,6 @@ export class GtmProperty extends pulumi.CustomResource {
             }
             if ((!args || args.scoreAggregationType === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'scoreAggregationType'");
-            }
-            if ((!args || args.trafficTargets === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'trafficTargets'");
             }
             if ((!args || args.type === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'type'");
@@ -255,7 +252,7 @@ export interface GtmPropertyArgs {
     readonly staticTtl?: pulumi.Input<number>;
     readonly stickinessBonusConstant?: pulumi.Input<number>;
     readonly stickinessBonusPercentage?: pulumi.Input<number>;
-    readonly trafficTargets: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmPropertyTrafficTarget>[]>;
+    readonly trafficTargets?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmPropertyTrafficTarget>[]>;
     readonly type: pulumi.Input<string>;
     readonly unreachableThreshold?: pulumi.Input<number>;
     readonly useComputedTargets?: pulumi.Input<boolean>;

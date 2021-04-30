@@ -44,9 +44,6 @@ class GetGtmDefaultDatacenterResult:
     @property
     @pulumi.getter(name="datacenterId")
     def datacenter_id(self) -> int:
-        """
-        The default datacenter ID
-        """
         return pulumi.get(self, "datacenter_id")
 
     @property
@@ -65,9 +62,6 @@ class GetGtmDefaultDatacenterResult:
     @property
     @pulumi.getter
     def nickname(self) -> str:
-        """
-        The default datacenter nickname
-        """
         return pulumi.get(self, "nickname")
 
 
@@ -88,7 +82,22 @@ def get_gtm_default_datacenter(datacenter: Optional[int] = None,
                                domain: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGtmDefaultDatacenterResult:
     """
-    Use `getGtmDefaultDatacenter` data source to retrieve default datacenter id and nickname.
+    Use the `getGtmDefaultDatacenter` data source to retrieve the default data center, ID, and nickname.
+
+    ## Argument reference
+
+    This data source supports these arguments:
+
+    * `domain` - (Required)
+    * `datacenter` - (Optional) The default is `5400`.
+
+    ## Attributes reference
+
+    This data source supports these attributes:
+
+    * `id` - The data resource ID. Enter in this format: `<domain>:default_datacenter:<datacenter_id>`.
+    * `datacenter_id` - The default data center ID.
+    * `nickname` - The default data center nickname.
     """
     __args__ = dict()
     __args__['datacenter'] = datacenter

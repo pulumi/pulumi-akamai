@@ -9,20 +9,62 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
+    /// <summary>
+    /// The `akamai.AppSecConfigurationVersionClone` resource allows you to create a new version of a security configuration by cloning an existing version.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// Basic usage:
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+    ///         {
+    ///             Name = "Akamai Tools",
+    ///         }));
+    ///         var clone = new Akamai.AppSecConfigurationVersionClone("clone", new Akamai.AppSecConfigurationVersionCloneArgs
+    ///         {
+    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
+    ///             CreateFromVersion = configuration.Apply(configuration =&gt; configuration.LatestVersion),
+    ///             RuleUpdate = false,
+    ///         });
+    ///         this.CloneVersion = clone.Version;
+    ///     }
+    /// 
+    ///     [Output("cloneVersion")]
+    ///     public Output&lt;string&gt; CloneVersion { get; set; }
+    /// }
+    /// ```
+    /// </summary>
     [AkamaiResourceType("akamai:index/appSecConfigurationVersionClone:AppSecConfigurationVersionClone")]
     public partial class AppSecConfigurationVersionClone : Pulumi.CustomResource
     {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
+        /// <summary>
+        /// The version number of the security configuration to clone.
+        /// </summary>
         [Output("createFromVersion")]
         public Output<int> CreateFromVersion { get; private set; } = null!;
 
+        /// <summary>
+        /// A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
+        /// </summary>
         [Output("ruleUpdate")]
         public Output<bool?> RuleUpdate { get; private set; } = null!;
 
         /// <summary>
-        /// Version of cloned configuration
+        /// The number of the cloned version.
         /// </summary>
         [Output("version")]
         public Output<int> Version { get; private set; } = null!;
@@ -73,12 +115,21 @@ namespace Pulumi.Akamai
 
     public sealed class AppSecConfigurationVersionCloneArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
+        /// <summary>
+        /// The version number of the security configuration to clone.
+        /// </summary>
         [Input("createFromVersion", required: true)]
         public Input<int> CreateFromVersion { get; set; } = null!;
 
+        /// <summary>
+        /// A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
+        /// </summary>
         [Input("ruleUpdate")]
         public Input<bool>? RuleUpdate { get; set; }
 
@@ -89,17 +140,26 @@ namespace Pulumi.Akamai
 
     public sealed class AppSecConfigurationVersionCloneState : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
+        /// <summary>
+        /// The version number of the security configuration to clone.
+        /// </summary>
         [Input("createFromVersion")]
         public Input<int>? CreateFromVersion { get; set; }
 
+        /// <summary>
+        /// A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
+        /// </summary>
         [Input("ruleUpdate")]
         public Input<bool>? RuleUpdate { get; set; }
 
         /// <summary>
-        /// Version of cloned configuration
+        /// The number of the cloned version.
         /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }

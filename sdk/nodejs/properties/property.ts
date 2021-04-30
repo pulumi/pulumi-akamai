@@ -38,11 +38,11 @@ export class Property extends pulumi.CustomResource {
     }
 
     /**
-     * @deprecated "contact" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+     * @deprecated The setting "contact" has been deprecated.
      */
     public readonly contacts!: pulumi.Output<string[] | undefined>;
     /**
-     * @deprecated use "contract_id" attribute instead
+     * @deprecated The setting "contract" has been deprecated.
      */
     public readonly contract!: pulumi.Output<string>;
     /**
@@ -50,23 +50,20 @@ export class Property extends pulumi.CustomResource {
      */
     public readonly contractId!: pulumi.Output<string>;
     /**
-     * @deprecated "cp_code" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+     * @deprecated The setting "cp_code" has been deprecated.
      */
     public readonly cpCode!: pulumi.Output<string | undefined>;
     /**
-     * @deprecated use "group_id" attribute instead
+     * @deprecated The setting "group" has been deprecated.
      */
     public readonly group!: pulumi.Output<string>;
     /**
      * Group ID to be assigned to the Property
      */
     public readonly groupId!: pulumi.Output<string>;
+    public readonly hostnames!: pulumi.Output<outputs.properties.PropertyHostname[] | undefined>;
     /**
-     * Mapping of edge hostname CNAMEs to other CNAMEs
-     */
-    public readonly hostnames!: pulumi.Output<{[key: string]: string} | undefined>;
-    /**
-     * @deprecated "is_secure" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+     * @deprecated The setting "is_secure" has been deprecated.
      */
     public readonly isSecure!: pulumi.Output<boolean | undefined>;
     /**
@@ -78,11 +75,11 @@ export class Property extends pulumi.CustomResource {
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * @deprecated "origin" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+     * @deprecated The setting "origin" has been deprecated.
      */
     public readonly origins!: pulumi.Output<outputs.properties.PropertyOrigin[] | undefined>;
     /**
-     * @deprecated use "product_id" attribute instead
+     * @deprecated The setting "product" has been deprecated.
      */
     public readonly product!: pulumi.Output<string>;
     /**
@@ -98,7 +95,10 @@ export class Property extends pulumi.CustomResource {
      * Specify the rule format version (defaults to latest version available when created)
      */
     public readonly ruleFormat!: pulumi.Output<string>;
-    public /*out*/ readonly ruleWarnings!: pulumi.Output<outputs.properties.PropertyRuleWarning[]>;
+    /**
+     * @deprecated Rule warnings will not be set in state anymore
+     */
+    public readonly ruleWarnings!: pulumi.Output<outputs.properties.PropertyRuleWarning[]>;
     /**
      * Property Rules as JSON
      */
@@ -108,7 +108,7 @@ export class Property extends pulumi.CustomResource {
      */
     public /*out*/ readonly stagingVersion!: pulumi.Output<number>;
     /**
-     * @deprecated "variables" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+     * @deprecated The setting "variables" has been deprecated.
      */
     public readonly variables!: pulumi.Output<string | undefined>;
 
@@ -163,12 +163,12 @@ export class Property extends pulumi.CustomResource {
             inputs["product"] = args ? args.product : undefined;
             inputs["productId"] = args ? args.productId : undefined;
             inputs["ruleFormat"] = args ? args.ruleFormat : undefined;
+            inputs["ruleWarnings"] = args ? args.ruleWarnings : undefined;
             inputs["rules"] = args ? args.rules : undefined;
             inputs["variables"] = args ? args.variables : undefined;
             inputs["latestVersion"] = undefined /*out*/;
             inputs["productionVersion"] = undefined /*out*/;
             inputs["ruleErrors"] = undefined /*out*/;
-            inputs["ruleWarnings"] = undefined /*out*/;
             inputs["stagingVersion"] = undefined /*out*/;
         }
         if (!opts.version) {
@@ -183,11 +183,11 @@ export class Property extends pulumi.CustomResource {
  */
 export interface PropertyState {
     /**
-     * @deprecated "contact" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+     * @deprecated The setting "contact" has been deprecated.
      */
     readonly contacts?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * @deprecated use "contract_id" attribute instead
+     * @deprecated The setting "contract" has been deprecated.
      */
     readonly contract?: pulumi.Input<string>;
     /**
@@ -195,23 +195,20 @@ export interface PropertyState {
      */
     readonly contractId?: pulumi.Input<string>;
     /**
-     * @deprecated "cp_code" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+     * @deprecated The setting "cp_code" has been deprecated.
      */
     readonly cpCode?: pulumi.Input<string>;
     /**
-     * @deprecated use "group_id" attribute instead
+     * @deprecated The setting "group" has been deprecated.
      */
     readonly group?: pulumi.Input<string>;
     /**
      * Group ID to be assigned to the Property
      */
     readonly groupId?: pulumi.Input<string>;
+    readonly hostnames?: pulumi.Input<pulumi.Input<inputs.properties.PropertyHostname>[]>;
     /**
-     * Mapping of edge hostname CNAMEs to other CNAMEs
-     */
-    readonly hostnames?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    /**
-     * @deprecated "is_secure" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+     * @deprecated The setting "is_secure" has been deprecated.
      */
     readonly isSecure?: pulumi.Input<boolean>;
     /**
@@ -223,11 +220,11 @@ export interface PropertyState {
      */
     readonly name?: pulumi.Input<string>;
     /**
-     * @deprecated "origin" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+     * @deprecated The setting "origin" has been deprecated.
      */
     readonly origins?: pulumi.Input<pulumi.Input<inputs.properties.PropertyOrigin>[]>;
     /**
-     * @deprecated use "product_id" attribute instead
+     * @deprecated The setting "product" has been deprecated.
      */
     readonly product?: pulumi.Input<string>;
     /**
@@ -243,6 +240,9 @@ export interface PropertyState {
      * Specify the rule format version (defaults to latest version available when created)
      */
     readonly ruleFormat?: pulumi.Input<string>;
+    /**
+     * @deprecated Rule warnings will not be set in state anymore
+     */
     readonly ruleWarnings?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRuleWarning>[]>;
     /**
      * Property Rules as JSON
@@ -253,7 +253,7 @@ export interface PropertyState {
      */
     readonly stagingVersion?: pulumi.Input<number>;
     /**
-     * @deprecated "variables" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+     * @deprecated The setting "variables" has been deprecated.
      */
     readonly variables?: pulumi.Input<string>;
 }
@@ -263,11 +263,11 @@ export interface PropertyState {
  */
 export interface PropertyArgs {
     /**
-     * @deprecated "contact" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+     * @deprecated The setting "contact" has been deprecated.
      */
     readonly contacts?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * @deprecated use "contract_id" attribute instead
+     * @deprecated The setting "contract" has been deprecated.
      */
     readonly contract?: pulumi.Input<string>;
     /**
@@ -275,23 +275,20 @@ export interface PropertyArgs {
      */
     readonly contractId?: pulumi.Input<string>;
     /**
-     * @deprecated "cp_code" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+     * @deprecated The setting "cp_code" has been deprecated.
      */
     readonly cpCode?: pulumi.Input<string>;
     /**
-     * @deprecated use "group_id" attribute instead
+     * @deprecated The setting "group" has been deprecated.
      */
     readonly group?: pulumi.Input<string>;
     /**
      * Group ID to be assigned to the Property
      */
     readonly groupId?: pulumi.Input<string>;
+    readonly hostnames?: pulumi.Input<pulumi.Input<inputs.properties.PropertyHostname>[]>;
     /**
-     * Mapping of edge hostname CNAMEs to other CNAMEs
-     */
-    readonly hostnames?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    /**
-     * @deprecated "is_secure" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+     * @deprecated The setting "is_secure" has been deprecated.
      */
     readonly isSecure?: pulumi.Input<boolean>;
     /**
@@ -299,11 +296,11 @@ export interface PropertyArgs {
      */
     readonly name?: pulumi.Input<string>;
     /**
-     * @deprecated "origin" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+     * @deprecated The setting "origin" has been deprecated.
      */
     readonly origins?: pulumi.Input<pulumi.Input<inputs.properties.PropertyOrigin>[]>;
     /**
-     * @deprecated use "product_id" attribute instead
+     * @deprecated The setting "product" has been deprecated.
      */
     readonly product?: pulumi.Input<string>;
     /**
@@ -315,11 +312,15 @@ export interface PropertyArgs {
      */
     readonly ruleFormat?: pulumi.Input<string>;
     /**
+     * @deprecated Rule warnings will not be set in state anymore
+     */
+    readonly ruleWarnings?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRuleWarning>[]>;
+    /**
      * Property Rules as JSON
      */
     readonly rules?: pulumi.Input<string>;
     /**
-     * @deprecated "variables" is no longer supported by this resource type - See Akamai Terraform Upgrade Guide
+     * @deprecated The setting "variables" has been deprecated.
      */
     readonly variables?: pulumi.Input<string>;
 }

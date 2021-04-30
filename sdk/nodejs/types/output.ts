@@ -6,11 +6,6 @@ import { input as inputs, output as outputs } from "../types";
 
 export interface DnsZoneTsigKey {
     algorithm: string;
-    /**
-     * key name
-     * * `algorithm`
-     * * `secret`
-     */
     name: string;
     secret: string;
 }
@@ -38,6 +33,22 @@ export interface GetPropertiesProperty {
     propertyName: string;
     ruleFormat: string;
     stagingVersion: number;
+}
+
+export interface GetPropertyHostnamesHostname {
+    certProvisioningType: string;
+    certStatuses: outputs.GetPropertyHostnamesHostnameCertStatus[];
+    cnameFrom: string;
+    cnameTo: string;
+    cnameType: string;
+    edgeHostnameId: string;
+}
+
+export interface GetPropertyHostnamesHostnameCertStatus {
+    hostname: string;
+    productionStatus: string;
+    stagingStatus: string;
+    target: string;
 }
 
 export interface GetPropertyProductsProduct {
@@ -76,10 +87,6 @@ export interface GtmCidrmapDefaultDatacenter {
 export interface GtmDatacenterDefaultLoadObject {
     loadObject?: string;
     loadObjectPort?: number;
-    /**
-     * * `city`
-     * * `cloneOf`
-     */
     loadServers?: string[];
 }
 
@@ -96,40 +103,15 @@ export interface GtmGeomapDefaultDatacenter {
 
 export interface GtmPropertyLivenessTest {
     answersRequired?: boolean;
-    /**
-     * * `errorPenalty`
-     */
     disableNonstandardPortWarning?: boolean;
     disabled?: boolean;
     errorPenalty?: number;
     httpError3xx?: boolean;
     httpError4xx?: boolean;
     httpError5xx?: boolean;
-    /**
-     * `name`
-     * `value`
-     */
     httpHeaders?: outputs.GtmPropertyLivenessTestHttpHeader[];
-    /**
-     * Liveness test name
-     * * `testInterval`
-     * * `testObjectProtocol`
-     * * `testTimeout`
-     */
     name: string;
     peerCertificateVerification?: boolean;
-    /**
-     * * `requestString`
-     * * `resourceType`
-     * * `responseString`
-     * * `sslClientCertificate`
-     * * `sslClientPrivateKey`
-     * * `testObject`
-     * * `testObjectPassword`
-     * * `testObjectPort`
-     * * `testObjectUsername`
-     * * `timeoutPenalty`
-     */
     recursionRequested?: boolean;
     requestString?: string;
     resourceType?: string;
@@ -147,12 +129,6 @@ export interface GtmPropertyLivenessTest {
 }
 
 export interface GtmPropertyLivenessTestHttpHeader {
-    /**
-     * Liveness test name
-     * * `testInterval`
-     * * `testObjectProtocol`
-     * * `testTimeout`
-     */
     name?: string;
     value?: string;
 }
@@ -160,26 +136,13 @@ export interface GtmPropertyLivenessTestHttpHeader {
 export interface GtmPropertyStaticRrSet {
     rdatas?: string[];
     ttl?: number;
-    /**
-     * Property type  
-     * * `scoreAggregationType`
-     */
     type?: string;
 }
 
 export interface GtmPropertyTrafficTarget {
     datacenterId?: number;
-    /**
-     * * `weight`
-     */
     enabled?: boolean;
     handoutCname?: string;
-    /**
-     * Liveness test name
-     * * `testInterval`
-     * * `testObjectProtocol`
-     * * `testTimeout`
-     */
     name?: string;
     servers?: string[];
     weight?: number;
@@ -190,18 +153,43 @@ export interface GtmResourceResourceInstance {
     loadObject?: string;
     loadObjectPort?: number;
     loadServers?: string[];
-    /**
-     * * `hostHeader`
-     * * `leastSquaresDecay`
-     * * `upperBound`
-     * * `description`
-     * * `leaderString`
-     * * `constrainedProperty`
-     * * `loadImbalancePercent`
-     * * `maxUMultiplicativeIncrement`
-     * * `decayRate`
-     */
     useDefaultLoadObject?: boolean;
+}
+
+export interface PropertyActivationRuleError {
+    behaviorName?: string;
+    detail?: string;
+    errorLocation?: string;
+    instance?: string;
+    statusCode?: number;
+    title?: string;
+    type?: string;
+}
+
+export interface PropertyActivationRuleWarning {
+    behaviorName?: string;
+    detail?: string;
+    errorLocation?: string;
+    instance?: string;
+    statusCode?: number;
+    title?: string;
+    type?: string;
+}
+
+export interface PropertyHostname {
+    certProvisioningType: string;
+    certStatuses: outputs.PropertyHostnameCertStatus[];
+    cnameFrom: string;
+    cnameTo: string;
+    cnameType: string;
+    edgeHostnameId: string;
+}
+
+export interface PropertyHostnameCertStatus {
+    hostname: string;
+    productionStatus: string;
+    stagingStatus: string;
+    target: string;
 }
 
 export interface PropertyOrigin {
@@ -345,6 +333,42 @@ export namespace edgedns {
 }
 
 export namespace properties {
+    export interface PropertyActivationRuleError {
+        behaviorName?: string;
+        detail?: string;
+        errorLocation?: string;
+        instance?: string;
+        statusCode?: number;
+        title?: string;
+        type?: string;
+    }
+
+    export interface PropertyActivationRuleWarning {
+        behaviorName?: string;
+        detail?: string;
+        errorLocation?: string;
+        instance?: string;
+        statusCode?: number;
+        title?: string;
+        type?: string;
+    }
+
+    export interface PropertyHostname {
+        certProvisioningType: string;
+        certStatuses: outputs.properties.PropertyHostnameCertStatus[];
+        cnameFrom: string;
+        cnameTo: string;
+        cnameType: string;
+        edgeHostnameId: string;
+    }
+
+    export interface PropertyHostnameCertStatus {
+        hostname: string;
+        productionStatus: string;
+        stagingStatus: string;
+        target: string;
+    }
+
     export interface PropertyOrigin {
         cacheKeyHostname?: string;
         compress?: boolean;

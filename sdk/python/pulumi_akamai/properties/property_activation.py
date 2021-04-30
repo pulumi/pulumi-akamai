@@ -7,6 +7,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['PropertyActivationArgs', 'PropertyActivation']
 
@@ -16,16 +18,22 @@ class PropertyActivationArgs:
                  contacts: pulumi.Input[Sequence[pulumi.Input[str]]],
                  version: pulumi.Input[int],
                  activation_id: Optional[pulumi.Input[str]] = None,
+                 auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  property: Optional[pulumi.Input[str]] = None,
-                 property_id: Optional[pulumi.Input[str]] = None):
+                 property_id: Optional[pulumi.Input[str]] = None,
+                 rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleErrorArgs']]]] = None,
+                 rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleWarningArgs']]]] = None):
         """
         The set of arguments for constructing a PropertyActivation resource.
+        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: automatically acknowledge all rule warnings for activation to continue. default is true
         """
         pulumi.set(__self__, "contacts", contacts)
         pulumi.set(__self__, "version", version)
         if activation_id is not None:
             pulumi.set(__self__, "activation_id", activation_id)
+        if auto_acknowledge_rule_warnings is not None:
+            pulumi.set(__self__, "auto_acknowledge_rule_warnings", auto_acknowledge_rule_warnings)
         if network is not None:
             pulumi.set(__self__, "network", network)
         if property is not None:
@@ -35,6 +43,13 @@ class PropertyActivationArgs:
             pulumi.set(__self__, "property", property)
         if property_id is not None:
             pulumi.set(__self__, "property_id", property_id)
+        if rule_errors is not None:
+            pulumi.set(__self__, "rule_errors", rule_errors)
+        if rule_warnings is not None:
+            warnings.warn("""Rule warnings will not be set in state anymore""", DeprecationWarning)
+            pulumi.log.warn("""rule_warnings is deprecated: Rule warnings will not be set in state anymore""")
+        if rule_warnings is not None:
+            pulumi.set(__self__, "rule_warnings", rule_warnings)
 
     @property
     @pulumi.getter
@@ -64,6 +79,18 @@ class PropertyActivationArgs:
         pulumi.set(self, "activation_id", value)
 
     @property
+    @pulumi.getter(name="autoAcknowledgeRuleWarnings")
+    def auto_acknowledge_rule_warnings(self) -> Optional[pulumi.Input[bool]]:
+        """
+        automatically acknowledge all rule warnings for activation to continue. default is true
+        """
+        return pulumi.get(self, "auto_acknowledge_rule_warnings")
+
+    @auto_acknowledge_rule_warnings.setter
+    def auto_acknowledge_rule_warnings(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "auto_acknowledge_rule_warnings", value)
+
+    @property
     @pulumi.getter
     def network(self) -> Optional[pulumi.Input[str]]:
         return pulumi.get(self, "network")
@@ -82,6 +109,24 @@ class PropertyActivationArgs:
         pulumi.set(self, "property_id", value)
 
     @property
+    @pulumi.getter(name="ruleErrors")
+    def rule_errors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleErrorArgs']]]]:
+        return pulumi.get(self, "rule_errors")
+
+    @rule_errors.setter
+    def rule_errors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleErrorArgs']]]]):
+        pulumi.set(self, "rule_errors", value)
+
+    @property
+    @pulumi.getter(name="ruleWarnings")
+    def rule_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleWarningArgs']]]]:
+        return pulumi.get(self, "rule_warnings")
+
+    @rule_warnings.setter
+    def rule_warnings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleWarningArgs']]]]):
+        pulumi.set(self, "rule_warnings", value)
+
+    @property
     @pulumi.getter
     def property(self) -> Optional[pulumi.Input[str]]:
         return pulumi.get(self, "property")
@@ -95,19 +140,25 @@ class PropertyActivationArgs:
 class _PropertyActivationState:
     def __init__(__self__, *,
                  activation_id: Optional[pulumi.Input[str]] = None,
+                 auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
                  contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  errors: Optional[pulumi.Input[str]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  property: Optional[pulumi.Input[str]] = None,
                  property_id: Optional[pulumi.Input[str]] = None,
+                 rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleErrorArgs']]]] = None,
+                 rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleWarningArgs']]]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  warnings: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering PropertyActivation resources.
+        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: automatically acknowledge all rule warnings for activation to continue. default is true
         """
         if activation_id is not None:
             pulumi.set(__self__, "activation_id", activation_id)
+        if auto_acknowledge_rule_warnings is not None:
+            pulumi.set(__self__, "auto_acknowledge_rule_warnings", auto_acknowledge_rule_warnings)
         if contacts is not None:
             pulumi.set(__self__, "contacts", contacts)
         if errors is not None:
@@ -121,6 +172,13 @@ class _PropertyActivationState:
             pulumi.set(__self__, "property", property)
         if property_id is not None:
             pulumi.set(__self__, "property_id", property_id)
+        if rule_errors is not None:
+            pulumi.set(__self__, "rule_errors", rule_errors)
+        if rule_warnings is not None:
+            warnings.warn("""Rule warnings will not be set in state anymore""", DeprecationWarning)
+            pulumi.log.warn("""rule_warnings is deprecated: Rule warnings will not be set in state anymore""")
+        if rule_warnings is not None:
+            pulumi.set(__self__, "rule_warnings", rule_warnings)
         if status is not None:
             pulumi.set(__self__, "status", status)
         if version is not None:
@@ -136,6 +194,18 @@ class _PropertyActivationState:
     @activation_id.setter
     def activation_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "activation_id", value)
+
+    @property
+    @pulumi.getter(name="autoAcknowledgeRuleWarnings")
+    def auto_acknowledge_rule_warnings(self) -> Optional[pulumi.Input[bool]]:
+        """
+        automatically acknowledge all rule warnings for activation to continue. default is true
+        """
+        return pulumi.get(self, "auto_acknowledge_rule_warnings")
+
+    @auto_acknowledge_rule_warnings.setter
+    def auto_acknowledge_rule_warnings(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "auto_acknowledge_rule_warnings", value)
 
     @property
     @pulumi.getter
@@ -172,6 +242,24 @@ class _PropertyActivationState:
     @property_id.setter
     def property_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "property_id", value)
+
+    @property
+    @pulumi.getter(name="ruleErrors")
+    def rule_errors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleErrorArgs']]]]:
+        return pulumi.get(self, "rule_errors")
+
+    @rule_errors.setter
+    def rule_errors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleErrorArgs']]]]):
+        pulumi.set(self, "rule_errors", value)
+
+    @property
+    @pulumi.getter(name="ruleWarnings")
+    def rule_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleWarningArgs']]]]:
+        return pulumi.get(self, "rule_warnings")
+
+    @rule_warnings.setter
+    def rule_warnings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleWarningArgs']]]]):
+        pulumi.set(self, "rule_warnings", value)
 
     @property
     @pulumi.getter
@@ -221,16 +309,20 @@ class PropertyActivation(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  activation_id: Optional[pulumi.Input[str]] = None,
+                 auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
                  contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  property: Optional[pulumi.Input[str]] = None,
                  property_id: Optional[pulumi.Input[str]] = None,
+                 rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyActivationRuleErrorArgs']]]]] = None,
+                 rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyActivationRuleWarningArgs']]]]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         Create a PropertyActivation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: automatically acknowledge all rule warnings for activation to continue. default is true
         """
         ...
     @overload
@@ -256,10 +348,13 @@ class PropertyActivation(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  activation_id: Optional[pulumi.Input[str]] = None,
+                 auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
                  contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  property: Optional[pulumi.Input[str]] = None,
                  property_id: Optional[pulumi.Input[str]] = None,
+                 rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyActivationRuleErrorArgs']]]]] = None,
+                 rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyActivationRuleWarningArgs']]]]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         pulumi.log.warn("""PropertyActivation is deprecated: akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation""")
@@ -275,6 +370,7 @@ class PropertyActivation(pulumi.CustomResource):
             __props__ = PropertyActivationArgs.__new__(PropertyActivationArgs)
 
             __props__.__dict__["activation_id"] = activation_id
+            __props__.__dict__["auto_acknowledge_rule_warnings"] = auto_acknowledge_rule_warnings
             if contacts is None and not opts.urn:
                 raise TypeError("Missing required property 'contacts'")
             __props__.__dict__["contacts"] = contacts
@@ -284,6 +380,11 @@ class PropertyActivation(pulumi.CustomResource):
                 pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
             __props__.__dict__["property"] = property
             __props__.__dict__["property_id"] = property_id
+            __props__.__dict__["rule_errors"] = rule_errors
+            if rule_warnings is not None and not opts.urn:
+                warnings.warn("""Rule warnings will not be set in state anymore""", DeprecationWarning)
+                pulumi.log.warn("""rule_warnings is deprecated: Rule warnings will not be set in state anymore""")
+            __props__.__dict__["rule_warnings"] = rule_warnings
             if version is None and not opts.urn:
                 raise TypeError("Missing required property 'version'")
             __props__.__dict__["version"] = version
@@ -301,11 +402,14 @@ class PropertyActivation(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             activation_id: Optional[pulumi.Input[str]] = None,
+            auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
             contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             errors: Optional[pulumi.Input[str]] = None,
             network: Optional[pulumi.Input[str]] = None,
             property: Optional[pulumi.Input[str]] = None,
             property_id: Optional[pulumi.Input[str]] = None,
+            rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyActivationRuleErrorArgs']]]]] = None,
+            rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyActivationRuleWarningArgs']]]]] = None,
             status: Optional[pulumi.Input[str]] = None,
             version: Optional[pulumi.Input[int]] = None,
             warnings: Optional[pulumi.Input[str]] = None) -> 'PropertyActivation':
@@ -316,17 +420,21 @@ class PropertyActivation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: automatically acknowledge all rule warnings for activation to continue. default is true
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _PropertyActivationState.__new__(_PropertyActivationState)
 
         __props__.__dict__["activation_id"] = activation_id
+        __props__.__dict__["auto_acknowledge_rule_warnings"] = auto_acknowledge_rule_warnings
         __props__.__dict__["contacts"] = contacts
         __props__.__dict__["errors"] = errors
         __props__.__dict__["network"] = network
         __props__.__dict__["property"] = property
         __props__.__dict__["property_id"] = property_id
+        __props__.__dict__["rule_errors"] = rule_errors
+        __props__.__dict__["rule_warnings"] = rule_warnings
         __props__.__dict__["status"] = status
         __props__.__dict__["version"] = version
         __props__.__dict__["warnings"] = warnings
@@ -336,6 +444,14 @@ class PropertyActivation(pulumi.CustomResource):
     @pulumi.getter(name="activationId")
     def activation_id(self) -> pulumi.Output[str]:
         return pulumi.get(self, "activation_id")
+
+    @property
+    @pulumi.getter(name="autoAcknowledgeRuleWarnings")
+    def auto_acknowledge_rule_warnings(self) -> pulumi.Output[Optional[bool]]:
+        """
+        automatically acknowledge all rule warnings for activation to continue. default is true
+        """
+        return pulumi.get(self, "auto_acknowledge_rule_warnings")
 
     @property
     @pulumi.getter
@@ -356,6 +472,16 @@ class PropertyActivation(pulumi.CustomResource):
     @pulumi.getter(name="propertyId")
     def property_id(self) -> pulumi.Output[str]:
         return pulumi.get(self, "property_id")
+
+    @property
+    @pulumi.getter(name="ruleErrors")
+    def rule_errors(self) -> pulumi.Output[Sequence['outputs.PropertyActivationRuleError']]:
+        return pulumi.get(self, "rule_errors")
+
+    @property
+    @pulumi.getter(name="ruleWarnings")
+    def rule_warnings(self) -> pulumi.Output[Sequence['outputs.PropertyActivationRuleWarning']]:
+        return pulumi.get(self, "rule_warnings")
 
     @property
     @pulumi.getter

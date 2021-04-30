@@ -6,7 +6,7 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecConfiguration` data source to retrieve the list of security configurations, or information about a specific security configuration.
+ * Use the `akamai.AppSecConfiguration` data source to retrieve the list of security configurations, or information about a specific security configuration.
  *
  * ## Example Usage
  *
@@ -38,7 +38,6 @@ export function getAppSecConfiguration(args?: GetAppSecConfigurationArgs, opts?:
     }
     return pulumi.runtime.invoke("akamai:index/getAppSecConfiguration:getAppSecConfiguration", {
         "name": args.name,
-        "version": args.version,
     }, opts);
 }
 
@@ -50,7 +49,6 @@ export interface GetAppSecConfigurationArgs {
      * The name of a specific security configuration. If not supplied, information about all security configurations is returned.
      */
     readonly name?: string;
-    readonly version?: number;
 }
 
 /**
@@ -82,5 +80,4 @@ export interface GetAppSecConfigurationResult {
      * The version of the specified security configuration currently active in staging. Returned only if `name` was specified.
      */
     readonly stagingVersion: number;
-    readonly version?: number;
 }

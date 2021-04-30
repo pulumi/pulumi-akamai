@@ -17,17 +17,6 @@ namespace Pulumi.Akamai.Outputs
         public readonly string? LoadObject;
         public readonly int? LoadObjectPort;
         public readonly ImmutableArray<string> LoadServers;
-        /// <summary>
-        /// * `host_header`
-        /// * `least_squares_decay`
-        /// * `upper_bound`
-        /// * `description`
-        /// * `leader_string`
-        /// * `constrained_property`
-        /// * `load_imbalance_percent`
-        /// * `max_u_multiplicative_increment`
-        /// * `decay_rate`
-        /// </summary>
         public readonly bool? UseDefaultLoadObject;
 
         [OutputConstructor]
