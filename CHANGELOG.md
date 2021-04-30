@@ -2,9 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Upgrade to v1.5.1 of the Akamai Terraform Provider
+_(none)_
 
 ---
+
+## 2.1.0 (2021-04-30)
+* Upgrade to v1.5.1 of the Akamai Terraform Provider
 
 ## 2.0.1 (2021-04-20)
 * Fix ldflags problem when building in release pipeline
