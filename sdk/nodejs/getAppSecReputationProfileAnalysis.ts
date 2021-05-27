@@ -50,15 +50,15 @@ export interface GetAppSecReputationProfileAnalysisArgs {
     /**
      * The configuration ID to use.
      */
-    readonly configId: number;
+    configId: number;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId: string;
+    securityPolicyId: string;
     /**
      * The version number of the configuration to use.
      */
-    readonly version: number;
+    version: number;
 }
 
 /**

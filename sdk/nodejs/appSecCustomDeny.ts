@@ -119,19 +119,19 @@ export interface AppSecCustomDenyState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The JSON-formatted definition of the custom deny action ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3)).
      */
-    readonly customDeny?: pulumi.Input<string>;
+    customDeny?: pulumi.Input<string>;
     /**
      * custom_deny_id
      */
-    readonly customDenyId?: pulumi.Input<string>;
+    customDenyId?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -141,13 +141,13 @@ export interface AppSecCustomDenyArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The JSON-formatted definition of the custom deny action ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3)).
      */
-    readonly customDeny: pulumi.Input<string>;
+    customDeny: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

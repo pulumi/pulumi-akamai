@@ -1400,31 +1400,6 @@ class PropertyVariablesVariableVariable(dict):
 
 @pulumi.output_type
 class ProviderAppsec(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "accessToken":
-            suggest = "access_token"
-        elif key == "accountKey":
-            suggest = "account_key"
-        elif key == "clientSecret":
-            suggest = "client_secret"
-        elif key == "clientToken":
-            suggest = "client_token"
-        elif key == "maxBody":
-            suggest = "max_body"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in ProviderAppsec. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        ProviderAppsec.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        ProviderAppsec.__key_warning(key)
-        return super().get(key, default)
-
     def __init__(__self__, *,
                  access_token: Optional[str] = None,
                  account_key: Optional[str] = None,
@@ -1478,31 +1453,6 @@ class ProviderAppsec(dict):
 
 @pulumi.output_type
 class ProviderConfig(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "accessToken":
-            suggest = "access_token"
-        elif key == "accountKey":
-            suggest = "account_key"
-        elif key == "clientSecret":
-            suggest = "client_secret"
-        elif key == "clientToken":
-            suggest = "client_token"
-        elif key == "maxBody":
-            suggest = "max_body"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in ProviderConfig. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        ProviderConfig.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        ProviderConfig.__key_warning(key)
-        return super().get(key, default)
-
     def __init__(__self__, *,
                  access_token: Optional[str] = None,
                  account_key: Optional[str] = None,
@@ -1556,31 +1506,6 @@ class ProviderConfig(dict):
 
 @pulumi.output_type
 class ProviderDns(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "accessToken":
-            suggest = "access_token"
-        elif key == "accountKey":
-            suggest = "account_key"
-        elif key == "clientSecret":
-            suggest = "client_secret"
-        elif key == "clientToken":
-            suggest = "client_token"
-        elif key == "maxBody":
-            suggest = "max_body"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in ProviderDns. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        ProviderDns.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        ProviderDns.__key_warning(key)
-        return super().get(key, default)
-
     def __init__(__self__, *,
                  access_token: Optional[str] = None,
                  account_key: Optional[str] = None,
@@ -1634,31 +1559,6 @@ class ProviderDns(dict):
 
 @pulumi.output_type
 class ProviderGtm(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "accessToken":
-            suggest = "access_token"
-        elif key == "accountKey":
-            suggest = "account_key"
-        elif key == "clientSecret":
-            suggest = "client_secret"
-        elif key == "clientToken":
-            suggest = "client_token"
-        elif key == "maxBody":
-            suggest = "max_body"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in ProviderGtm. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        ProviderGtm.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        ProviderGtm.__key_warning(key)
-        return super().get(key, default)
-
     def __init__(__self__, *,
                  access_token: Optional[str] = None,
                  account_key: Optional[str] = None,
@@ -1712,31 +1612,6 @@ class ProviderGtm(dict):
 
 @pulumi.output_type
 class ProviderProperty(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "accessToken":
-            suggest = "access_token"
-        elif key == "accountKey":
-            suggest = "account_key"
-        elif key == "clientSecret":
-            suggest = "client_secret"
-        elif key == "clientToken":
-            suggest = "client_token"
-        elif key == "maxBody":
-            suggest = "max_body"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in ProviderProperty. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        ProviderProperty.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        ProviderProperty.__key_warning(key)
-        return super().get(key, default)
-
     def __init__(__self__, *,
                  access_token: Optional[str] = None,
                  account_key: Optional[str] = None,

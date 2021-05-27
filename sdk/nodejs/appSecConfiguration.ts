@@ -120,31 +120,31 @@ export interface AppSecConfigurationState {
     /**
      * (Required) The ID of the security configuration.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The contract ID of the configuration.
      */
-    readonly contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string>;
     /**
      * A description of the configuration.
      */
-    readonly description?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
     /**
      * The group ID of the configuration>
      */
-    readonly groupId?: pulumi.Input<number>;
+    groupId?: pulumi.Input<number>;
     /**
      * The list of hostnames protected by this security configuration.
      */
-    readonly hostNames?: pulumi.Input<pulumi.Input<string>[]>;
+    hostNames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The name to be assigned to the configuration.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * (Required) The latest version of the security configuration.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -154,21 +154,21 @@ export interface AppSecConfigurationArgs {
     /**
      * The contract ID of the configuration.
      */
-    readonly contractId: pulumi.Input<string>;
+    contractId: pulumi.Input<string>;
     /**
      * A description of the configuration.
      */
-    readonly description: pulumi.Input<string>;
+    description: pulumi.Input<string>;
     /**
      * The group ID of the configuration>
      */
-    readonly groupId: pulumi.Input<number>;
+    groupId: pulumi.Input<number>;
     /**
      * The list of hostnames protected by this security configuration.
      */
-    readonly hostNames: pulumi.Input<pulumi.Input<string>[]>;
+    hostNames: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The name to be assigned to the configuration.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }

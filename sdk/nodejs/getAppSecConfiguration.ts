@@ -48,7 +48,7 @@ export interface GetAppSecConfigurationArgs {
     /**
      * The name of a specific security configuration. If not supplied, information about all security configurations is returned.
      */
-    readonly name?: string;
+    name?: string;
 }
 
 /**

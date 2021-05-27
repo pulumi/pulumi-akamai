@@ -16,6 +16,20 @@ import (
 // [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
 type Provider struct {
 	pulumi.ProviderResourceState
+
+	// Deprecated: The setting "appsec_section" has been deprecated.
+	AppsecSection pulumi.StringPtrOutput `pulumi:"appsecSection"`
+	// The section of the edgerc file to use for configuration
+	ConfigSection pulumi.StringPtrOutput `pulumi:"configSection"`
+	// Deprecated: The setting "dns_section" has been deprecated.
+	DnsSection pulumi.StringPtrOutput `pulumi:"dnsSection"`
+	Edgerc     pulumi.StringPtrOutput `pulumi:"edgerc"`
+	// Deprecated: The setting "gtm_section" has been deprecated.
+	GtmSection pulumi.StringPtrOutput `pulumi:"gtmSection"`
+	// Deprecated: The setting "papi_section" has been deprecated.
+	PapiSection pulumi.StringPtrOutput `pulumi:"papiSection"`
+	// Deprecated: The setting "property_section" has been deprecated.
+	PropertySection pulumi.StringPtrOutput `pulumi:"propertySection"`
 }
 
 // NewProvider registers a new resource with the given unique name, arguments, and options.

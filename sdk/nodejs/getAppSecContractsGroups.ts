@@ -48,11 +48,11 @@ export interface GetAppSecContractsGroupsArgs {
     /**
      * (Optional) The ID of a contract for which to retrieve information.
      */
-    readonly contractid?: string;
+    contractid?: string;
     /**
      * (Optional) The ID of a group for which to retrieve information.
      */
-    readonly groupid?: number;
+    groupid?: number;
 }
 
 /**

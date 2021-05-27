@@ -50,19 +50,19 @@ export interface GetAppSecCustomRuleActionsArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: number;
+    configId: number;
     /**
      * A specific custom rule for which to retrieve information. If not supplied, information about all custom rules will be returned.
      */
-    readonly customRuleId?: number;
+    customRuleId?: number;
     /**
      * The ID of the security policy to use
      */
-    readonly securityPolicyId: string;
+    securityPolicyId: string;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: number;
+    version: number;
 }
 
 /**

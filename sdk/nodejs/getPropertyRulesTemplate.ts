@@ -69,10 +69,10 @@ export function getPropertyRulesTemplate(args: GetPropertyRulesTemplateArgs, opt
  * A collection of arguments for invoking getPropertyRulesTemplate.
  */
 export interface GetPropertyRulesTemplateArgs {
-    readonly templateFile: string;
-    readonly varDefinitionFile?: string;
-    readonly varValuesFile?: string;
-    readonly variables?: inputs.GetPropertyRulesTemplateVariable[];
+    templateFile: string;
+    varDefinitionFile?: string;
+    varValuesFile?: string;
+    variables?: inputs.GetPropertyRulesTemplateVariable[];
 }
 
 /**

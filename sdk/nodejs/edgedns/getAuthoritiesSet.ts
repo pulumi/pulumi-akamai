@@ -24,7 +24,7 @@ export function getAuthoritiesSet(args: GetAuthoritiesSetArgs, opts?: pulumi.Inv
  * A collection of arguments for invoking getAuthoritiesSet.
  */
 export interface GetAuthoritiesSetArgs {
-    readonly contract: string;
+    contract: string;
 }
 
 /**

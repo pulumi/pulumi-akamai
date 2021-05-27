@@ -277,77 +277,77 @@ export interface PropertyState {
     /**
      * @deprecated The setting "contact" has been deprecated.
      */
-    readonly contacts?: pulumi.Input<pulumi.Input<string>[]>;
+    contacts?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * @deprecated The setting "contract" has been deprecated.
      */
-    readonly contract?: pulumi.Input<string>;
+    contract?: pulumi.Input<string>;
     /**
      * Contract ID to be assigned to the Property
      */
-    readonly contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string>;
     /**
      * @deprecated The setting "cp_code" has been deprecated.
      */
-    readonly cpCode?: pulumi.Input<string>;
+    cpCode?: pulumi.Input<string>;
     /**
      * @deprecated The setting "group" has been deprecated.
      */
-    readonly group?: pulumi.Input<string>;
+    group?: pulumi.Input<string>;
     /**
      * Group ID to be assigned to the Property
      */
-    readonly groupId?: pulumi.Input<string>;
-    readonly hostnames?: pulumi.Input<pulumi.Input<inputs.PropertyHostname>[]>;
+    groupId?: pulumi.Input<string>;
+    hostnames?: pulumi.Input<pulumi.Input<inputs.PropertyHostname>[]>;
     /**
      * @deprecated The setting "is_secure" has been deprecated.
      */
-    readonly isSecure?: pulumi.Input<boolean>;
+    isSecure?: pulumi.Input<boolean>;
     /**
      * Property's current latest version number
      */
-    readonly latestVersion?: pulumi.Input<number>;
+    latestVersion?: pulumi.Input<number>;
     /**
      * Name to give to the Property (must be unique)
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * @deprecated The setting "origin" has been deprecated.
      */
-    readonly origins?: pulumi.Input<pulumi.Input<inputs.PropertyOrigin>[]>;
+    origins?: pulumi.Input<pulumi.Input<inputs.PropertyOrigin>[]>;
     /**
      * @deprecated The setting "product" has been deprecated.
      */
-    readonly product?: pulumi.Input<string>;
+    product?: pulumi.Input<string>;
     /**
      * Product ID to be assigned to the Property
      */
-    readonly productId?: pulumi.Input<string>;
+    productId?: pulumi.Input<string>;
     /**
      * Property's version currently activated in production (zero when not active in production)
      */
-    readonly productionVersion?: pulumi.Input<number>;
-    readonly ruleErrors?: pulumi.Input<pulumi.Input<inputs.PropertyRuleError>[]>;
+    productionVersion?: pulumi.Input<number>;
+    ruleErrors?: pulumi.Input<pulumi.Input<inputs.PropertyRuleError>[]>;
     /**
      * Specify the rule format version (defaults to latest version available when created)
      */
-    readonly ruleFormat?: pulumi.Input<string>;
+    ruleFormat?: pulumi.Input<string>;
     /**
      * @deprecated Rule warnings will not be set in state anymore
      */
-    readonly ruleWarnings?: pulumi.Input<pulumi.Input<inputs.PropertyRuleWarning>[]>;
+    ruleWarnings?: pulumi.Input<pulumi.Input<inputs.PropertyRuleWarning>[]>;
     /**
      * Property Rules as JSON
      */
-    readonly rules?: pulumi.Input<string>;
+    rules?: pulumi.Input<string>;
     /**
      * Property's version currently activated in staging (zero when not active in staging)
      */
-    readonly stagingVersion?: pulumi.Input<number>;
+    stagingVersion?: pulumi.Input<number>;
     /**
      * @deprecated The setting "variables" has been deprecated.
      */
-    readonly variables?: pulumi.Input<string>;
+    variables?: pulumi.Input<string>;
 }
 
 /**
@@ -357,62 +357,62 @@ export interface PropertyArgs {
     /**
      * @deprecated The setting "contact" has been deprecated.
      */
-    readonly contacts?: pulumi.Input<pulumi.Input<string>[]>;
+    contacts?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * @deprecated The setting "contract" has been deprecated.
      */
-    readonly contract?: pulumi.Input<string>;
+    contract?: pulumi.Input<string>;
     /**
      * Contract ID to be assigned to the Property
      */
-    readonly contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string>;
     /**
      * @deprecated The setting "cp_code" has been deprecated.
      */
-    readonly cpCode?: pulumi.Input<string>;
+    cpCode?: pulumi.Input<string>;
     /**
      * @deprecated The setting "group" has been deprecated.
      */
-    readonly group?: pulumi.Input<string>;
+    group?: pulumi.Input<string>;
     /**
      * Group ID to be assigned to the Property
      */
-    readonly groupId?: pulumi.Input<string>;
-    readonly hostnames?: pulumi.Input<pulumi.Input<inputs.PropertyHostname>[]>;
+    groupId?: pulumi.Input<string>;
+    hostnames?: pulumi.Input<pulumi.Input<inputs.PropertyHostname>[]>;
     /**
      * @deprecated The setting "is_secure" has been deprecated.
      */
-    readonly isSecure?: pulumi.Input<boolean>;
+    isSecure?: pulumi.Input<boolean>;
     /**
      * Name to give to the Property (must be unique)
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * @deprecated The setting "origin" has been deprecated.
      */
-    readonly origins?: pulumi.Input<pulumi.Input<inputs.PropertyOrigin>[]>;
+    origins?: pulumi.Input<pulumi.Input<inputs.PropertyOrigin>[]>;
     /**
      * @deprecated The setting "product" has been deprecated.
      */
-    readonly product?: pulumi.Input<string>;
+    product?: pulumi.Input<string>;
     /**
      * Product ID to be assigned to the Property
      */
-    readonly productId?: pulumi.Input<string>;
+    productId?: pulumi.Input<string>;
     /**
      * Specify the rule format version (defaults to latest version available when created)
      */
-    readonly ruleFormat?: pulumi.Input<string>;
+    ruleFormat?: pulumi.Input<string>;
     /**
      * @deprecated Rule warnings will not be set in state anymore
      */
-    readonly ruleWarnings?: pulumi.Input<pulumi.Input<inputs.PropertyRuleWarning>[]>;
+    ruleWarnings?: pulumi.Input<pulumi.Input<inputs.PropertyRuleWarning>[]>;
     /**
      * Property Rules as JSON
      */
-    readonly rules?: pulumi.Input<string>;
+    rules?: pulumi.Input<string>;
     /**
      * @deprecated The setting "variables" has been deprecated.
      */
-    readonly variables?: pulumi.Input<string>;
+    variables?: pulumi.Input<string>;
 }

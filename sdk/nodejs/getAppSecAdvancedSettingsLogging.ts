@@ -56,15 +56,15 @@ export interface GetAppSecAdvancedSettingsLoggingArgs {
     /**
      * The configuration ID.
      */
-    readonly configId: number;
+    configId: number;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId?: string;
+    securityPolicyId?: string;
     /**
      * The version number of the configuration.
      */
-    readonly version: number;
+    version: number;
 }
 
 /**

@@ -58,24 +58,24 @@ export function getAppSecSelectableHostnames(args?: GetAppSecSelectableHostnames
  * A collection of arguments for invoking getAppSecSelectableHostnames.
  */
 export interface GetAppSecSelectableHostnamesArgs {
-    readonly activeInProduction?: boolean;
-    readonly activeInStaging?: boolean;
+    activeInProduction?: boolean;
+    activeInStaging?: boolean;
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: number;
+    configId?: number;
     /**
      * The ID of the contract to use.
      */
-    readonly contractid?: string;
+    contractid?: string;
     /**
      * The ID of the group to use.
      */
-    readonly groupid?: number;
+    groupid?: number;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: number;
+    version?: number;
 }
 
 /**

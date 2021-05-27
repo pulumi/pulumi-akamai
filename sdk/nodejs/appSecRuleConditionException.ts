@@ -132,23 +132,23 @@ export interface AppSecRuleConditionExceptionState {
     /**
      * The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putconditionexception))
      */
-    readonly conditionException?: pulumi.Input<string>;
+    conditionException?: pulumi.Input<string>;
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The ID of the rule to use.
      */
-    readonly ruleId?: pulumi.Input<number>;
+    ruleId?: pulumi.Input<number>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -158,21 +158,21 @@ export interface AppSecRuleConditionExceptionArgs {
     /**
      * The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putconditionexception))
      */
-    readonly conditionException: pulumi.Input<string>;
+    conditionException: pulumi.Input<string>;
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The ID of the rule to use.
      */
-    readonly ruleId: pulumi.Input<number>;
+    ruleId: pulumi.Input<number>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId: pulumi.Input<string>;
+    securityPolicyId: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

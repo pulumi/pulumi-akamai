@@ -18,7 +18,7 @@ import * as utilities from "./utilities";
  *
  * const exampleContract = pulumi.output(akamai.getContract({
  *     groupName: "example group name",
- * }, { async: true }));
+ * }));
  * const exampleProperty = new akamai.Property("example", {
  *     contractId: "",
  *     "data.akamai_contract.example.id": [{}],
@@ -58,9 +58,9 @@ export interface GetContractArgs {
     /**
      * @deprecated The setting "group" has been deprecated.
      */
-    readonly group?: string;
-    readonly groupId?: string;
-    readonly groupName?: string;
+    group?: string;
+    groupId?: string;
+    groupName?: string;
 }
 
 /**

@@ -26,9 +26,9 @@ export function getDnsRecordSet(args: GetDnsRecordSetArgs, opts?: pulumi.InvokeO
  * A collection of arguments for invoking getDnsRecordSet.
  */
 export interface GetDnsRecordSetArgs {
-    readonly host: string;
-    readonly recordType: string;
-    readonly zone: string;
+    host: string;
+    recordType: string;
+    zone: string;
 }
 
 /**

@@ -236,59 +236,59 @@ export class GtmDomain extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmDomain resources.
  */
 export interface GtmDomainState {
-    readonly cnameCoalescingEnabled?: pulumi.Input<boolean>;
-    readonly comment?: pulumi.Input<string>;
-    readonly contract?: pulumi.Input<string>;
-    readonly defaultErrorPenalty?: pulumi.Input<number>;
-    readonly defaultHealthMax?: pulumi.Input<number>;
-    readonly defaultHealthMultiplier?: pulumi.Input<number>;
-    readonly defaultHealthThreshold?: pulumi.Input<number>;
-    readonly defaultMaxUnreachablePenalty?: pulumi.Input<number>;
-    readonly defaultSslClientCertificate?: pulumi.Input<string>;
-    readonly defaultSslClientPrivateKey?: pulumi.Input<string>;
-    readonly defaultTimeoutPenalty?: pulumi.Input<number>;
-    readonly defaultUnreachableThreshold?: pulumi.Input<number>;
-    readonly emailNotificationLists?: pulumi.Input<pulumi.Input<string>[]>;
-    readonly endUserMappingEnabled?: pulumi.Input<boolean>;
-    readonly group?: pulumi.Input<string>;
-    readonly loadFeedback?: pulumi.Input<boolean>;
-    readonly loadImbalancePercentage?: pulumi.Input<number>;
-    readonly mapUpdateInterval?: pulumi.Input<number>;
-    readonly maxProperties?: pulumi.Input<number>;
-    readonly maxResources?: pulumi.Input<number>;
-    readonly maxTestTimeout?: pulumi.Input<number>;
-    readonly maxTtl?: pulumi.Input<number>;
-    readonly minPingableRegionFraction?: pulumi.Input<number>;
-    readonly minTestInterval?: pulumi.Input<number>;
-    readonly minTtl?: pulumi.Input<number>;
-    readonly name?: pulumi.Input<string>;
-    readonly pingInterval?: pulumi.Input<number>;
-    readonly pingPacketSize?: pulumi.Input<number>;
-    readonly roundRobinPrefix?: pulumi.Input<string>;
-    readonly servermonitorLivenessCount?: pulumi.Input<number>;
-    readonly servermonitorLoadCount?: pulumi.Input<number>;
-    readonly servermonitorPool?: pulumi.Input<string>;
-    readonly type?: pulumi.Input<string>;
-    readonly waitOnComplete?: pulumi.Input<boolean>;
+    cnameCoalescingEnabled?: pulumi.Input<boolean>;
+    comment?: pulumi.Input<string>;
+    contract?: pulumi.Input<string>;
+    defaultErrorPenalty?: pulumi.Input<number>;
+    defaultHealthMax?: pulumi.Input<number>;
+    defaultHealthMultiplier?: pulumi.Input<number>;
+    defaultHealthThreshold?: pulumi.Input<number>;
+    defaultMaxUnreachablePenalty?: pulumi.Input<number>;
+    defaultSslClientCertificate?: pulumi.Input<string>;
+    defaultSslClientPrivateKey?: pulumi.Input<string>;
+    defaultTimeoutPenalty?: pulumi.Input<number>;
+    defaultUnreachableThreshold?: pulumi.Input<number>;
+    emailNotificationLists?: pulumi.Input<pulumi.Input<string>[]>;
+    endUserMappingEnabled?: pulumi.Input<boolean>;
+    group?: pulumi.Input<string>;
+    loadFeedback?: pulumi.Input<boolean>;
+    loadImbalancePercentage?: pulumi.Input<number>;
+    mapUpdateInterval?: pulumi.Input<number>;
+    maxProperties?: pulumi.Input<number>;
+    maxResources?: pulumi.Input<number>;
+    maxTestTimeout?: pulumi.Input<number>;
+    maxTtl?: pulumi.Input<number>;
+    minPingableRegionFraction?: pulumi.Input<number>;
+    minTestInterval?: pulumi.Input<number>;
+    minTtl?: pulumi.Input<number>;
+    name?: pulumi.Input<string>;
+    pingInterval?: pulumi.Input<number>;
+    pingPacketSize?: pulumi.Input<number>;
+    roundRobinPrefix?: pulumi.Input<string>;
+    servermonitorLivenessCount?: pulumi.Input<number>;
+    servermonitorLoadCount?: pulumi.Input<number>;
+    servermonitorPool?: pulumi.Input<string>;
+    type?: pulumi.Input<string>;
+    waitOnComplete?: pulumi.Input<boolean>;
 }
 
 /**
  * The set of arguments for constructing a GtmDomain resource.
  */
 export interface GtmDomainArgs {
-    readonly cnameCoalescingEnabled?: pulumi.Input<boolean>;
-    readonly comment?: pulumi.Input<string>;
-    readonly contract?: pulumi.Input<string>;
-    readonly defaultErrorPenalty?: pulumi.Input<number>;
-    readonly defaultSslClientCertificate?: pulumi.Input<string>;
-    readonly defaultSslClientPrivateKey?: pulumi.Input<string>;
-    readonly defaultTimeoutPenalty?: pulumi.Input<number>;
-    readonly emailNotificationLists?: pulumi.Input<pulumi.Input<string>[]>;
-    readonly endUserMappingEnabled?: pulumi.Input<boolean>;
-    readonly group?: pulumi.Input<string>;
-    readonly loadFeedback?: pulumi.Input<boolean>;
-    readonly loadImbalancePercentage?: pulumi.Input<number>;
-    readonly name?: pulumi.Input<string>;
-    readonly type: pulumi.Input<string>;
-    readonly waitOnComplete?: pulumi.Input<boolean>;
+    cnameCoalescingEnabled?: pulumi.Input<boolean>;
+    comment?: pulumi.Input<string>;
+    contract?: pulumi.Input<string>;
+    defaultErrorPenalty?: pulumi.Input<number>;
+    defaultSslClientCertificate?: pulumi.Input<string>;
+    defaultSslClientPrivateKey?: pulumi.Input<string>;
+    defaultTimeoutPenalty?: pulumi.Input<number>;
+    emailNotificationLists?: pulumi.Input<pulumi.Input<string>[]>;
+    endUserMappingEnabled?: pulumi.Input<boolean>;
+    group?: pulumi.Input<string>;
+    loadFeedback?: pulumi.Input<boolean>;
+    loadImbalancePercentage?: pulumi.Input<number>;
+    name?: pulumi.Input<string>;
+    type: pulumi.Input<string>;
+    waitOnComplete?: pulumi.Input<boolean>;
 }

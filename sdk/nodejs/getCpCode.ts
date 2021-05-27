@@ -20,7 +20,7 @@ import * as utilities from "./utilities";
  *     contractId: "ctr_1-AB123",
  *     groupId: "grp_123",
  *     name: "my cpcode name",
- * }, { async: true }));
+ * }));
  * ```
  *
  * Here's a real-world example that includes other data sources as dependencies:
@@ -87,14 +87,14 @@ export interface GetCpCodeArgs {
     /**
      * @deprecated The setting "contract" has been deprecated.
      */
-    readonly contract?: string;
-    readonly contractId?: string;
+    contract?: string;
+    contractId?: string;
     /**
      * @deprecated The setting "group" has been deprecated.
      */
-    readonly group?: string;
-    readonly groupId?: string;
-    readonly name: string;
+    group?: string;
+    groupId?: string;
+    name: string;
 }
 
 /**

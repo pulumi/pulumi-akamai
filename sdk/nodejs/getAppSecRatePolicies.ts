@@ -56,15 +56,15 @@ export interface GetAppSecRatePoliciesArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: number;
+    configId: number;
     /**
      * The ID of the rate policy to use. If this parameter is not supplied, information about all rate policies will be returned.
      */
-    readonly ratePolicyId?: number;
+    ratePolicyId?: number;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: number;
+    version: number;
 }
 
 /**

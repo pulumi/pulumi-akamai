@@ -31,14 +31,14 @@ export interface GetCpCodeArgs {
     /**
      * @deprecated The setting "contract" has been deprecated.
      */
-    readonly contract?: string;
-    readonly contractId?: string;
+    contract?: string;
+    contractId?: string;
     /**
      * @deprecated The setting "group" has been deprecated.
      */
-    readonly group?: string;
-    readonly groupId?: string;
-    readonly name: string;
+    group?: string;
+    groupId?: string;
+    name: string;
 }
 
 /**

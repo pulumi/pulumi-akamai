@@ -49,8 +49,8 @@ export function getProperties(args: GetPropertiesArgs, opts?: pulumi.InvokeOptio
  * A collection of arguments for invoking getProperties.
  */
 export interface GetPropertiesArgs {
-    readonly contractId: string;
-    readonly groupId: string;
+    contractId: string;
+    groupId: string;
 }
 
 /**

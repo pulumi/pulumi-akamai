@@ -148,31 +148,31 @@ export interface AppSecSlowPostState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The time in seconds before the first eight kilobytes of the POST body must be received to avoid triggering the specified `action`.
      */
-    readonly durationThresholdTimeout?: pulumi.Input<number>;
+    durationThresholdTimeout?: pulumi.Input<number>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The action that the rule should trigger (either `alert` or `abort`).
      */
-    readonly slowRateAction?: pulumi.Input<string>;
+    slowRateAction?: pulumi.Input<string>;
     /**
      * The slow rate period value: the amount of time in seconds that the server should accept a request to determine whether a POST request is too slow.
      */
-    readonly slowRateThresholdPeriod?: pulumi.Input<number>;
+    slowRateThresholdPeriod?: pulumi.Input<number>;
     /**
      * The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
      */
-    readonly slowRateThresholdRate?: pulumi.Input<number>;
+    slowRateThresholdRate?: pulumi.Input<number>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -182,29 +182,29 @@ export interface AppSecSlowPostArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The time in seconds before the first eight kilobytes of the POST body must be received to avoid triggering the specified `action`.
      */
-    readonly durationThresholdTimeout?: pulumi.Input<number>;
+    durationThresholdTimeout?: pulumi.Input<number>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId: pulumi.Input<string>;
+    securityPolicyId: pulumi.Input<string>;
     /**
      * The action that the rule should trigger (either `alert` or `abort`).
      */
-    readonly slowRateAction: pulumi.Input<string>;
+    slowRateAction: pulumi.Input<string>;
     /**
      * The slow rate period value: the amount of time in seconds that the server should accept a request to determine whether a POST request is too slow.
      */
-    readonly slowRateThresholdPeriod: pulumi.Input<number>;
+    slowRateThresholdPeriod: pulumi.Input<number>;
     /**
      * The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
      */
-    readonly slowRateThresholdRate: pulumi.Input<number>;
+    slowRateThresholdRate: pulumi.Input<number>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

@@ -27,10 +27,10 @@ export function getPropertyRules(args: GetPropertyRulesArgs, opts?: pulumi.Invok
  * A collection of arguments for invoking getPropertyRules.
  */
 export interface GetPropertyRulesArgs {
-    readonly contractId?: string;
-    readonly groupId?: string;
-    readonly propertyId: string;
-    readonly version?: number;
+    contractId?: string;
+    groupId?: string;
+    propertyId: string;
+    version?: number;
 }
 
 /**

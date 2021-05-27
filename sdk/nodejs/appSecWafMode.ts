@@ -156,39 +156,39 @@ export interface AppSecWafModeState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The current rule set.
      */
-    readonly currentRuleset?: pulumi.Input<string>;
+    currentRuleset?: pulumi.Input<string>;
     /**
      * The date on which the evaluation period ends.
      */
-    readonly evalExpirationDate?: pulumi.Input<string>;
+    evalExpirationDate?: pulumi.Input<string>;
     /**
      * The rule set being evaluated if any.
      */
-    readonly evalRuleset?: pulumi.Input<string>;
+    evalRuleset?: pulumi.Input<string>;
     /**
      * Either `enabled` if an evaluation is currently in progress, or `disabled` otherwise.
      */
-    readonly evalStatus?: pulumi.Input<string>;
+    evalStatus?: pulumi.Input<string>;
     /**
      * "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
      */
-    readonly mode?: pulumi.Input<string>;
+    mode?: pulumi.Input<string>;
     /**
      * A tabular display showing the current rule set, WAF mode and evaluation status (`enabled` if a rule set is currently being evaluated, `disabled` otherwise).
      */
-    readonly outputText?: pulumi.Input<string>;
+    outputText?: pulumi.Input<string>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -198,17 +198,17 @@ export interface AppSecWafModeArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
      */
-    readonly mode: pulumi.Input<string>;
+    mode: pulumi.Input<string>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId: pulumi.Input<string>;
+    securityPolicyId: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

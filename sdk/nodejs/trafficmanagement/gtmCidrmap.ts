@@ -89,20 +89,20 @@ export class GtmCidrmap extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmCidrmap resources.
  */
 export interface GtmCidrmapState {
-    readonly assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmCidrmapAssignment>[]>;
-    readonly defaultDatacenter?: pulumi.Input<inputs.trafficmanagement.GtmCidrmapDefaultDatacenter>;
-    readonly domain?: pulumi.Input<string>;
-    readonly name?: pulumi.Input<string>;
-    readonly waitOnComplete?: pulumi.Input<boolean>;
+    assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmCidrmapAssignment>[]>;
+    defaultDatacenter?: pulumi.Input<inputs.trafficmanagement.GtmCidrmapDefaultDatacenter>;
+    domain?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
+    waitOnComplete?: pulumi.Input<boolean>;
 }
 
 /**
  * The set of arguments for constructing a GtmCidrmap resource.
  */
 export interface GtmCidrmapArgs {
-    readonly assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmCidrmapAssignment>[]>;
-    readonly defaultDatacenter: pulumi.Input<inputs.trafficmanagement.GtmCidrmapDefaultDatacenter>;
-    readonly domain: pulumi.Input<string>;
-    readonly name?: pulumi.Input<string>;
-    readonly waitOnComplete?: pulumi.Input<boolean>;
+    assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmCidrmapAssignment>[]>;
+    defaultDatacenter: pulumi.Input<inputs.trafficmanagement.GtmCidrmapDefaultDatacenter>;
+    domain: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
+    waitOnComplete?: pulumi.Input<boolean>;
 }

@@ -169,39 +169,39 @@ export interface AppSecConfigurationCloneState {
     /**
      * The ID of the newly created configuration.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The contract id to use.
      */
-    readonly contractId?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string>;
     /**
      * The ID of the configuration to be cloned.
      */
-    readonly createFromConfigId?: pulumi.Input<number>;
+    createFromConfigId?: pulumi.Input<number>;
     /**
      * The version number of the configuration to be cloned.
      */
-    readonly createFromVersion?: pulumi.Input<number>;
+    createFromVersion?: pulumi.Input<number>;
     /**
      * A description of the new configuration.
      */
-    readonly description?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
     /**
      * The group id to use.
      */
-    readonly groupId?: pulumi.Input<number>;
+    groupId?: pulumi.Input<number>;
     /**
      * The hostnames to be protected under the new configuration.
      */
-    readonly hostNames?: pulumi.Input<pulumi.Input<string>[]>;
+    hostNames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The name to be applied to the new configuration.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * The version number of the newly created configuration.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -211,29 +211,29 @@ export interface AppSecConfigurationCloneArgs {
     /**
      * The contract id to use.
      */
-    readonly contractId: pulumi.Input<string>;
+    contractId: pulumi.Input<string>;
     /**
      * The ID of the configuration to be cloned.
      */
-    readonly createFromConfigId: pulumi.Input<number>;
+    createFromConfigId: pulumi.Input<number>;
     /**
      * The version number of the configuration to be cloned.
      */
-    readonly createFromVersion: pulumi.Input<number>;
+    createFromVersion: pulumi.Input<number>;
     /**
      * A description of the new configuration.
      */
-    readonly description: pulumi.Input<string>;
+    description: pulumi.Input<string>;
     /**
      * The group id to use.
      */
-    readonly groupId: pulumi.Input<number>;
+    groupId: pulumi.Input<number>;
     /**
      * The hostnames to be protected under the new configuration.
      */
-    readonly hostNames: pulumi.Input<pulumi.Input<string>[]>;
+    hostNames: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The name to be applied to the new configuration.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }

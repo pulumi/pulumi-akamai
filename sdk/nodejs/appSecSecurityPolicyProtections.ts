@@ -160,43 +160,43 @@ export interface AppSecSecurityPolicyProtectionsState {
     /**
      * Whether to enable api constraints: either `true` or `false`.
      */
-    readonly applyApiConstraints?: pulumi.Input<boolean>;
+    applyApiConstraints?: pulumi.Input<boolean>;
     /**
      * Whether to enable application layer controls: either `true` or `false`.
      */
-    readonly applyApplicationLayerControls?: pulumi.Input<boolean>;
+    applyApplicationLayerControls?: pulumi.Input<boolean>;
     /**
      * Whether to enable botman controls: either `true` or `false`.
      */
-    readonly applyBotmanControls?: pulumi.Input<boolean>;
+    applyBotmanControls?: pulumi.Input<boolean>;
     /**
      * Whether to enable network layer controls: either `true` or `false`.
      */
-    readonly applyNetworkLayerControls?: pulumi.Input<boolean>;
+    applyNetworkLayerControls?: pulumi.Input<boolean>;
     /**
      * Whether to enable rate controls: either `true` or `false`.
      */
-    readonly applyRateControls?: pulumi.Input<boolean>;
+    applyRateControls?: pulumi.Input<boolean>;
     /**
      * Whether to enable reputation controls: either `true` or `false`.
      */
-    readonly applyReputationControls?: pulumi.Input<boolean>;
+    applyReputationControls?: pulumi.Input<boolean>;
     /**
      * Whether to enable slow post controls: either `true` or `false`.
      */
-    readonly applySlowPostControls?: pulumi.Input<boolean>;
+    applySlowPostControls?: pulumi.Input<boolean>;
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -206,41 +206,41 @@ export interface AppSecSecurityPolicyProtectionsArgs {
     /**
      * Whether to enable api constraints: either `true` or `false`.
      */
-    readonly applyApiConstraints?: pulumi.Input<boolean>;
+    applyApiConstraints?: pulumi.Input<boolean>;
     /**
      * Whether to enable application layer controls: either `true` or `false`.
      */
-    readonly applyApplicationLayerControls?: pulumi.Input<boolean>;
+    applyApplicationLayerControls?: pulumi.Input<boolean>;
     /**
      * Whether to enable botman controls: either `true` or `false`.
      */
-    readonly applyBotmanControls?: pulumi.Input<boolean>;
+    applyBotmanControls?: pulumi.Input<boolean>;
     /**
      * Whether to enable network layer controls: either `true` or `false`.
      */
-    readonly applyNetworkLayerControls?: pulumi.Input<boolean>;
+    applyNetworkLayerControls?: pulumi.Input<boolean>;
     /**
      * Whether to enable rate controls: either `true` or `false`.
      */
-    readonly applyRateControls?: pulumi.Input<boolean>;
+    applyRateControls?: pulumi.Input<boolean>;
     /**
      * Whether to enable reputation controls: either `true` or `false`.
      */
-    readonly applyReputationControls?: pulumi.Input<boolean>;
+    applyReputationControls?: pulumi.Input<boolean>;
     /**
      * Whether to enable slow post controls: either `true` or `false`.
      */
-    readonly applySlowPostControls?: pulumi.Input<boolean>;
+    applySlowPostControls?: pulumi.Input<boolean>;
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId: pulumi.Input<string>;
+    securityPolicyId: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

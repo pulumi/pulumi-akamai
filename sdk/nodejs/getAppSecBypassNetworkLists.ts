@@ -52,11 +52,11 @@ export interface GetAppSecBypassNetworkListsArgs {
     /**
      * The configuration ID to use.
      */
-    readonly configId: number;
+    configId: number;
     /**
      * The version number of the configuration to use.
      */
-    readonly version: number;
+    version: number;
 }
 
 /**

@@ -131,23 +131,23 @@ export interface AppSecAttackGroupActionState {
     /**
      * The ID of the attack group to use.
      */
-    readonly attackGroup?: pulumi.Input<string>;
+    attackGroup?: pulumi.Input<string>;
     /**
      * The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
      */
-    readonly attackGroupAction?: pulumi.Input<string>;
+    attackGroupAction?: pulumi.Input<string>;
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -157,21 +157,21 @@ export interface AppSecAttackGroupActionArgs {
     /**
      * The ID of the attack group to use.
      */
-    readonly attackGroup: pulumi.Input<string>;
+    attackGroup: pulumi.Input<string>;
     /**
      * The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
      */
-    readonly attackGroupAction: pulumi.Input<string>;
+    attackGroupAction: pulumi.Input<string>;
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId: pulumi.Input<string>;
+    securityPolicyId: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

@@ -115,19 +115,19 @@ export interface AppSecConfigurationVersionCloneState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The version number of the security configuration to clone.
      */
-    readonly createFromVersion?: pulumi.Input<number>;
+    createFromVersion?: pulumi.Input<number>;
     /**
      * A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
      */
-    readonly ruleUpdate?: pulumi.Input<boolean>;
+    ruleUpdate?: pulumi.Input<boolean>;
     /**
      * The number of the cloned version.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -137,13 +137,13 @@ export interface AppSecConfigurationVersionCloneArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The version number of the security configuration to clone.
      */
-    readonly createFromVersion: pulumi.Input<number>;
+    createFromVersion: pulumi.Input<number>;
     /**
      * A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed.
      */
-    readonly ruleUpdate?: pulumi.Input<boolean>;
+    ruleUpdate?: pulumi.Input<boolean>;
 }

@@ -100,19 +100,19 @@ export interface CpCodeState {
     /**
      * @deprecated The setting "contract" has been deprecated.
      */
-    readonly contract?: pulumi.Input<string>;
-    readonly contractId?: pulumi.Input<string>;
+    contract?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string>;
     /**
      * @deprecated The setting "group" has been deprecated.
      */
-    readonly group?: pulumi.Input<string>;
-    readonly groupId?: pulumi.Input<string>;
-    readonly name?: pulumi.Input<string>;
+    group?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * @deprecated The setting "product" has been deprecated.
      */
-    readonly product?: pulumi.Input<string>;
-    readonly productId?: pulumi.Input<string>;
+    product?: pulumi.Input<string>;
+    productId?: pulumi.Input<string>;
 }
 
 /**
@@ -122,17 +122,17 @@ export interface CpCodeArgs {
     /**
      * @deprecated The setting "contract" has been deprecated.
      */
-    readonly contract?: pulumi.Input<string>;
-    readonly contractId?: pulumi.Input<string>;
+    contract?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string>;
     /**
      * @deprecated The setting "group" has been deprecated.
      */
-    readonly group?: pulumi.Input<string>;
-    readonly groupId?: pulumi.Input<string>;
-    readonly name?: pulumi.Input<string>;
+    group?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * @deprecated The setting "product" has been deprecated.
      */
-    readonly product?: pulumi.Input<string>;
-    readonly productId?: pulumi.Input<string>;
+    product?: pulumi.Input<string>;
+    productId?: pulumi.Input<string>;
 }

@@ -89,20 +89,20 @@ export class GtmGeomap extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmGeomap resources.
  */
 export interface GtmGeomapState {
-    readonly assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmGeomapAssignment>[]>;
-    readonly defaultDatacenter?: pulumi.Input<inputs.trafficmanagement.GtmGeomapDefaultDatacenter>;
-    readonly domain?: pulumi.Input<string>;
-    readonly name?: pulumi.Input<string>;
-    readonly waitOnComplete?: pulumi.Input<boolean>;
+    assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmGeomapAssignment>[]>;
+    defaultDatacenter?: pulumi.Input<inputs.trafficmanagement.GtmGeomapDefaultDatacenter>;
+    domain?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
+    waitOnComplete?: pulumi.Input<boolean>;
 }
 
 /**
  * The set of arguments for constructing a GtmGeomap resource.
  */
 export interface GtmGeomapArgs {
-    readonly assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmGeomapAssignment>[]>;
-    readonly defaultDatacenter: pulumi.Input<inputs.trafficmanagement.GtmGeomapDefaultDatacenter>;
-    readonly domain: pulumi.Input<string>;
-    readonly name?: pulumi.Input<string>;
-    readonly waitOnComplete?: pulumi.Input<boolean>;
+    assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmGeomapAssignment>[]>;
+    defaultDatacenter: pulumi.Input<inputs.trafficmanagement.GtmGeomapDefaultDatacenter>;
+    domain: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
+    waitOnComplete?: pulumi.Input<boolean>;
 }

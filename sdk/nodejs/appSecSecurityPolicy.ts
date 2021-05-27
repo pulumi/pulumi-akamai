@@ -132,24 +132,24 @@ export interface AppSecSecurityPolicyState {
     /**
      * The configuration ID to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * Whether the new policy should use the default settings. If not supplied, defaults to true.
      */
-    readonly defaultSettings?: pulumi.Input<boolean>;
+    defaultSettings?: pulumi.Input<boolean>;
     /**
      * The ID of the newly created security policy.
      */
-    readonly securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The name of the new security policy.
      */
-    readonly securityPolicyName?: pulumi.Input<string>;
-    readonly securityPolicyPrefix?: pulumi.Input<string>;
+    securityPolicyName?: pulumi.Input<string>;
+    securityPolicyPrefix?: pulumi.Input<string>;
     /**
      * The version number of the configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -159,18 +159,18 @@ export interface AppSecSecurityPolicyArgs {
     /**
      * The configuration ID to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * Whether the new policy should use the default settings. If not supplied, defaults to true.
      */
-    readonly defaultSettings?: pulumi.Input<boolean>;
+    defaultSettings?: pulumi.Input<boolean>;
     /**
      * The name of the new security policy.
      */
-    readonly securityPolicyName: pulumi.Input<string>;
-    readonly securityPolicyPrefix: pulumi.Input<string>;
+    securityPolicyName: pulumi.Input<string>;
+    securityPolicyPrefix: pulumi.Input<string>;
     /**
      * The version number of the configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

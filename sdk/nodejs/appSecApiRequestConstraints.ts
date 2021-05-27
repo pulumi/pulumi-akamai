@@ -108,23 +108,23 @@ export interface AppSecApiRequestConstraintsState {
     /**
      * The action to assign to API request constraints: either `alert`, `deny`, or `none`.
      */
-    readonly action?: pulumi.Input<string>;
+    action?: pulumi.Input<string>;
     /**
      * The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
      */
-    readonly apiEndpointId?: pulumi.Input<number>;
+    apiEndpointId?: pulumi.Input<number>;
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -134,21 +134,21 @@ export interface AppSecApiRequestConstraintsArgs {
     /**
      * The action to assign to API request constraints: either `alert`, `deny`, or `none`.
      */
-    readonly action: pulumi.Input<string>;
+    action: pulumi.Input<string>;
     /**
      * The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
      */
-    readonly apiEndpointId?: pulumi.Input<number>;
+    apiEndpointId?: pulumi.Input<number>;
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId: pulumi.Input<string>;
+    securityPolicyId: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

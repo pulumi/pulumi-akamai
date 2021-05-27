@@ -24,9 +24,9 @@ export function getAppSecEval(args: GetAppSecEvalArgs, opts?: pulumi.InvokeOptio
  * A collection of arguments for invoking getAppSecEval.
  */
 export interface GetAppSecEvalArgs {
-    readonly configId: number;
-    readonly securityPolicyId: string;
-    readonly version: number;
+    configId: number;
+    securityPolicyId: string;
+    version: number;
 }
 
 /**

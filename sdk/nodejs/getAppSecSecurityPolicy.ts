@@ -55,15 +55,15 @@ export interface GetAppSecSecurityPolicyArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: number;
+    configId: number;
     /**
      * The name of the security policy to use. If not supplied, information about all security policies is returned.
      */
-    readonly name?: string;
+    name?: string;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: number;
+    version: number;
 }
 
 /**

@@ -333,3 +333,41 @@ class Provider(pulumi.ProviderResource):
             __props__,
             opts)
 
+    @property
+    @pulumi.getter(name="appsecSection")
+    def appsec_section(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "appsec_section")
+
+    @property
+    @pulumi.getter(name="configSection")
+    def config_section(self) -> pulumi.Output[Optional[str]]:
+        """
+        The section of the edgerc file to use for configuration
+        """
+        return pulumi.get(self, "config_section")
+
+    @property
+    @pulumi.getter(name="dnsSection")
+    def dns_section(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "dns_section")
+
+    @property
+    @pulumi.getter
+    def edgerc(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "edgerc")
+
+    @property
+    @pulumi.getter(name="gtmSection")
+    def gtm_section(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "gtm_section")
+
+    @property
+    @pulumi.getter(name="papiSection")
+    def papi_section(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "papi_section")
+
+    @property
+    @pulumi.getter(name="propertySection")
+    def property_section(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "property_section")
+
