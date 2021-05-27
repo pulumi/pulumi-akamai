@@ -24,9 +24,9 @@ export function getPropertyHostnames(args: GetPropertyHostnamesArgs, opts?: pulu
  * A collection of arguments for invoking getPropertyHostnames.
  */
 export interface GetPropertyHostnamesArgs {
-    readonly contractId: string;
-    readonly groupId: string;
-    readonly propertyId: string;
+    contractId: string;
+    groupId: string;
+    propertyId: string;
 }
 
 /**

@@ -25,8 +25,8 @@ export function getGtmDefaultDatacenter(args: GetGtmDefaultDatacenterArgs, opts?
  * A collection of arguments for invoking getGtmDefaultDatacenter.
  */
 export interface GetGtmDefaultDatacenterArgs {
-    readonly datacenter?: number;
-    readonly domain: string;
+    datacenter?: number;
+    domain: string;
 }
 
 /**

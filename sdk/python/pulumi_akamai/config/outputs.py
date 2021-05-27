@@ -18,31 +18,6 @@ __all__ = [
 
 @pulumi.output_type
 class Appsecs(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "accessToken":
-            suggest = "access_token"
-        elif key == "accountKey":
-            suggest = "account_key"
-        elif key == "clientSecret":
-            suggest = "client_secret"
-        elif key == "clientToken":
-            suggest = "client_token"
-        elif key == "maxBody":
-            suggest = "max_body"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Appsecs. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        Appsecs.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        Appsecs.__key_warning(key)
-        return super().get(key, default)
-
     def __init__(__self__, *,
                  access_token: Optional[str] = None,
                  account_key: Optional[str] = None,
@@ -96,31 +71,6 @@ class Appsecs(dict):
 
 @pulumi.output_type
 class Config(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "accessToken":
-            suggest = "access_token"
-        elif key == "accountKey":
-            suggest = "account_key"
-        elif key == "clientSecret":
-            suggest = "client_secret"
-        elif key == "clientToken":
-            suggest = "client_token"
-        elif key == "maxBody":
-            suggest = "max_body"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Config. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        Config.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        Config.__key_warning(key)
-        return super().get(key, default)
-
     def __init__(__self__, *,
                  access_token: Optional[str] = None,
                  account_key: Optional[str] = None,
@@ -174,31 +124,6 @@ class Config(dict):
 
 @pulumi.output_type
 class Dns(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "accessToken":
-            suggest = "access_token"
-        elif key == "accountKey":
-            suggest = "account_key"
-        elif key == "clientSecret":
-            suggest = "client_secret"
-        elif key == "clientToken":
-            suggest = "client_token"
-        elif key == "maxBody":
-            suggest = "max_body"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Dns. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        Dns.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        Dns.__key_warning(key)
-        return super().get(key, default)
-
     def __init__(__self__, *,
                  access_token: Optional[str] = None,
                  account_key: Optional[str] = None,
@@ -252,31 +177,6 @@ class Dns(dict):
 
 @pulumi.output_type
 class Gtm(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "accessToken":
-            suggest = "access_token"
-        elif key == "accountKey":
-            suggest = "account_key"
-        elif key == "clientSecret":
-            suggest = "client_secret"
-        elif key == "clientToken":
-            suggest = "client_token"
-        elif key == "maxBody":
-            suggest = "max_body"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Gtm. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        Gtm.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        Gtm.__key_warning(key)
-        return super().get(key, default)
-
     def __init__(__self__, *,
                  access_token: Optional[str] = None,
                  account_key: Optional[str] = None,
@@ -330,31 +230,6 @@ class Gtm(dict):
 
 @pulumi.output_type
 class Property(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "accessToken":
-            suggest = "access_token"
-        elif key == "accountKey":
-            suggest = "account_key"
-        elif key == "clientSecret":
-            suggest = "client_secret"
-        elif key == "clientToken":
-            suggest = "client_token"
-        elif key == "maxBody":
-            suggest = "max_body"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Property. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        Property.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        Property.__key_warning(key)
-        return super().get(key, default)
-
     def __init__(__self__, *,
                  access_token: Optional[str] = None,
                  account_key: Optional[str] = None,

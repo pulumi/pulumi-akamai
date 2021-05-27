@@ -109,15 +109,15 @@ export interface AppSecMatchTargetSequenceState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
      */
-    readonly matchTargetSequence?: pulumi.Input<string>;
+    matchTargetSequence?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -127,13 +127,13 @@ export interface AppSecMatchTargetSequenceArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
      */
-    readonly matchTargetSequence?: pulumi.Input<string>;
+    matchTargetSequence?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

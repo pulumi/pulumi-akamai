@@ -141,27 +141,27 @@ export interface AppSecAdvancedSettingsPrefetchState {
     /**
      * Whether to enable prefetch requests for all extensions.
      */
-    readonly allExtensions?: pulumi.Input<boolean>;
+    allExtensions?: pulumi.Input<boolean>;
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * Whether to enable prefetch requests.
      */
-    readonly enableAppLayer?: pulumi.Input<boolean>;
+    enableAppLayer?: pulumi.Input<boolean>;
     /**
      * Whether to enable prefetch requests for rate controls.
      */
-    readonly enableRateControls?: pulumi.Input<boolean>;
+    enableRateControls?: pulumi.Input<boolean>;
     /**
      * The specific extensions for which to enable prefetch requests. If `allExtensions` is True, `extensions` must be an empty list.
      */
-    readonly extensions?: pulumi.Input<pulumi.Input<string>[]>;
+    extensions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -171,25 +171,25 @@ export interface AppSecAdvancedSettingsPrefetchArgs {
     /**
      * Whether to enable prefetch requests for all extensions.
      */
-    readonly allExtensions: pulumi.Input<boolean>;
+    allExtensions: pulumi.Input<boolean>;
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * Whether to enable prefetch requests.
      */
-    readonly enableAppLayer: pulumi.Input<boolean>;
+    enableAppLayer: pulumi.Input<boolean>;
     /**
      * Whether to enable prefetch requests for rate controls.
      */
-    readonly enableRateControls: pulumi.Input<boolean>;
+    enableRateControls: pulumi.Input<boolean>;
     /**
      * The specific extensions for which to enable prefetch requests. If `allExtensions` is True, `extensions` must be an empty list.
      */
-    readonly extensions: pulumi.Input<pulumi.Input<string>[]>;
+    extensions: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

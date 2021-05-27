@@ -157,31 +157,31 @@ export interface AppSecIPGeoState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The network lists to be allowed regardless of `mode`, `geoNetworkLists`, and `ipNetworkLists` parameters.
      */
-    readonly exceptionIpNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+    exceptionIpNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The network lists to be blocked or allowed geographically.
      */
-    readonly geoNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+    geoNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The network lists to be blocked or allowd by IP address.
      */
-    readonly ipNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+    ipNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The mode to use for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
      */
-    readonly mode?: pulumi.Input<string>;
+    mode?: pulumi.Input<string>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -191,29 +191,29 @@ export interface AppSecIPGeoArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The network lists to be allowed regardless of `mode`, `geoNetworkLists`, and `ipNetworkLists` parameters.
      */
-    readonly exceptionIpNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+    exceptionIpNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The network lists to be blocked or allowed geographically.
      */
-    readonly geoNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+    geoNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The network lists to be blocked or allowd by IP address.
      */
-    readonly ipNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+    ipNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The mode to use for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
      */
-    readonly mode: pulumi.Input<string>;
+    mode: pulumi.Input<string>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId: pulumi.Input<string>;
+    securityPolicyId: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

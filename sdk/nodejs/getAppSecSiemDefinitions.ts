@@ -49,7 +49,7 @@ export interface GetAppSecSiemDefinitionsArgs {
     /**
      * The name of a specific SIEM definition for which to retrieve information.
      */
-    readonly siemDefinitionName?: string;
+    siemDefinitionName?: string;
 }
 
 /**

@@ -144,24 +144,24 @@ export interface AppSecRatePolicyActionState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The ipv4 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
      */
-    readonly ipv4Action?: pulumi.Input<string>;
+    ipv4Action?: pulumi.Input<string>;
     /**
      * The ipv6 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
      */
-    readonly ipv6Action?: pulumi.Input<string>;
+    ipv6Action?: pulumi.Input<string>;
     /**
      * The ID of the rate policy to use.
      */
-    readonly ratePolicyId?: pulumi.Input<number>;
-    readonly securityPolicyId?: pulumi.Input<string>;
+    ratePolicyId?: pulumi.Input<number>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -171,22 +171,22 @@ export interface AppSecRatePolicyActionArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The ipv4 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
      */
-    readonly ipv4Action: pulumi.Input<string>;
+    ipv4Action: pulumi.Input<string>;
     /**
      * The ipv6 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
      */
-    readonly ipv6Action: pulumi.Input<string>;
+    ipv6Action: pulumi.Input<string>;
     /**
      * The ID of the rate policy to use.
      */
-    readonly ratePolicyId: pulumi.Input<number>;
-    readonly securityPolicyId: pulumi.Input<string>;
+    ratePolicyId: pulumi.Input<number>;
+    securityPolicyId: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

@@ -56,15 +56,15 @@ export interface GetAppSecCustomDenyArgs {
     /**
      * The configuration ID to use.
      */
-    readonly configId: number;
+    configId: number;
     /**
      * The ID of a specific custom deny action.
      */
-    readonly customDenyId?: string;
+    customDenyId?: string;
     /**
      * The version number of the configuration to use.
      */
-    readonly version: number;
+    version: number;
 }
 
 /**

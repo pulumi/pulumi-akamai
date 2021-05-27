@@ -48,7 +48,7 @@ export function getPropertyProducts(args: GetPropertyProductsArgs, opts?: pulumi
  * A collection of arguments for invoking getPropertyProducts.
  */
 export interface GetPropertyProductsArgs {
-    readonly contractId: string;
+    contractId: string;
 }
 
 /**

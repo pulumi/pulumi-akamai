@@ -121,19 +121,19 @@ export interface AppSecSelectedHostnamesState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The list of hostnames to be applied, added or removed.
      */
-    readonly hostnames?: pulumi.Input<pulumi.Input<string>[]>;
+    hostnames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
      */
-    readonly mode?: pulumi.Input<string>;
+    mode?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -143,17 +143,17 @@ export interface AppSecSelectedHostnamesArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The list of hostnames to be applied, added or removed.
      */
-    readonly hostnames: pulumi.Input<pulumi.Input<string>[]>;
+    hostnames: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
      */
-    readonly mode: pulumi.Input<string>;
+    mode: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

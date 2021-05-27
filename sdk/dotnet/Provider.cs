@@ -18,6 +18,31 @@ namespace Pulumi.Akamai
     [AkamaiResourceType("pulumi:providers:akamai")]
     public partial class Provider : Pulumi.ProviderResource
     {
+        [Output("appsecSection")]
+        public Output<string?> AppsecSection { get; private set; } = null!;
+
+        /// <summary>
+        /// The section of the edgerc file to use for configuration
+        /// </summary>
+        [Output("configSection")]
+        public Output<string?> ConfigSection { get; private set; } = null!;
+
+        [Output("dnsSection")]
+        public Output<string?> DnsSection { get; private set; } = null!;
+
+        [Output("edgerc")]
+        public Output<string?> Edgerc { get; private set; } = null!;
+
+        [Output("gtmSection")]
+        public Output<string?> GtmSection { get; private set; } = null!;
+
+        [Output("papiSection")]
+        public Output<string?> PapiSection { get; private set; } = null!;
+
+        [Output("propertySection")]
+        public Output<string?> PropertySection { get; private set; } = null!;
+
+
         /// <summary>
         /// Create a Provider resource with the given unique name, arguments, and options.
         /// </summary>

@@ -127,23 +127,23 @@ export interface AppSecReputationProtectionState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * Whether to enable reputation controls: either `true` or `false`.
      */
-    readonly enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean>;
     /**
      * A tabular display showing the current protection settings.
      */
-    readonly outputText?: pulumi.Input<string>;
+    outputText?: pulumi.Input<string>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -153,17 +153,17 @@ export interface AppSecReputationProtectionArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * Whether to enable reputation controls: either `true` or `false`.
      */
-    readonly enabled: pulumi.Input<boolean>;
+    enabled: pulumi.Input<boolean>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId: pulumi.Input<string>;
+    securityPolicyId: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

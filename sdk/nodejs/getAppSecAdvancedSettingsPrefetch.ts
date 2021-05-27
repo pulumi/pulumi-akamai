@@ -48,11 +48,11 @@ export interface GetAppSecAdvancedSettingsPrefetchArgs {
     /**
      * The configuration ID.
      */
-    readonly configId: number;
+    configId: number;
     /**
      * The version number of the configuration.
      */
-    readonly version: number;
+    version: number;
 }
 
 /**

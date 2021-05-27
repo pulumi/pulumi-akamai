@@ -49,11 +49,11 @@ export interface GetAppSecSelectedHostnamesArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: number;
+    configId: number;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: number;
+    version: number;
 }
 
 /**

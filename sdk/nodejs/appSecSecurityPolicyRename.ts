@@ -121,19 +121,19 @@ export interface AppSecSecurityPolicyRenameState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The ID of the security policy to be renamed.
      */
-    readonly securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The new name to be given to the security policy.
      */
-    readonly securityPolicyName?: pulumi.Input<string>;
+    securityPolicyName?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -143,17 +143,17 @@ export interface AppSecSecurityPolicyRenameArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The ID of the security policy to be renamed.
      */
-    readonly securityPolicyId: pulumi.Input<string>;
+    securityPolicyId: pulumi.Input<string>;
     /**
      * The new name to be given to the security policy.
      */
-    readonly securityPolicyName: pulumi.Input<string>;
+    securityPolicyName: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

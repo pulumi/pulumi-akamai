@@ -90,15 +90,15 @@ export interface AppSecCustomRuleState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
      */
-    readonly customRule?: pulumi.Input<string>;
+    customRule?: pulumi.Input<string>;
     /**
      * The ID of the custom rule.
      */
-    readonly customRuleId?: pulumi.Input<number>;
+    customRuleId?: pulumi.Input<number>;
 }
 
 /**
@@ -108,9 +108,9 @@ export interface AppSecCustomRuleArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
      */
-    readonly customRule: pulumi.Input<string>;
+    customRule: pulumi.Input<string>;
 }

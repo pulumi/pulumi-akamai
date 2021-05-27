@@ -56,15 +56,15 @@ export interface GetAppSecReputationProfilesArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: number;
+    configId: number;
     /**
      * The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
      */
-    readonly reputationProfileId?: number;
+    reputationProfileId?: number;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: number;
+    version: number;
 }
 
 /**

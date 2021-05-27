@@ -137,31 +137,31 @@ export interface AppSecActivationsState {
     /**
      * A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
      */
-    readonly activate?: pulumi.Input<boolean>;
+    activate?: pulumi.Input<boolean>;
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
      */
-    readonly network?: pulumi.Input<string>;
+    network?: pulumi.Input<string>;
     /**
      * An optional text note describing this operation.
      */
-    readonly notes?: pulumi.Input<string>;
+    notes?: pulumi.Input<string>;
     /**
      * A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
      */
-    readonly notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The status of the operation. The following values are may be returned:
      */
-    readonly status?: pulumi.Input<string>;
+    status?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -171,25 +171,25 @@ export interface AppSecActivationsArgs {
     /**
      * A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
      */
-    readonly activate?: pulumi.Input<boolean>;
+    activate?: pulumi.Input<boolean>;
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
      */
-    readonly network?: pulumi.Input<string>;
+    network?: pulumi.Input<string>;
     /**
      * An optional text note describing this operation.
      */
-    readonly notes?: pulumi.Input<string>;
+    notes?: pulumi.Input<string>;
     /**
      * A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
      */
-    readonly notificationEmails: pulumi.Input<pulumi.Input<string>[]>;
+    notificationEmails: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

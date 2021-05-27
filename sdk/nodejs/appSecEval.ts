@@ -155,39 +155,39 @@ export interface AppSecEvalState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The set of rules currently in effect.
      */
-    readonly currentRuleset?: pulumi.Input<string>;
+    currentRuleset?: pulumi.Input<string>;
     /**
      * The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
      */
-    readonly evalOperation?: pulumi.Input<string>;
+    evalOperation?: pulumi.Input<string>;
     /**
      * Either `enabled` if an evaluation is currently in progress (that is, if the `evalOperation` parameter was `START`, `RESTART`, or `COMPLETE`) or `disabled` otherwise (that is, if the `evalOperation` parameter was `STOP` or `UPDATE`).
      */
-    readonly evalStatus?: pulumi.Input<string>;
+    evalStatus?: pulumi.Input<string>;
     /**
      * The set of rules being evaluated.
      */
-    readonly evaluatingRuleset?: pulumi.Input<string>;
+    evaluatingRuleset?: pulumi.Input<string>;
     /**
      * The date on which the evaluation period ends.
      */
-    readonly expirationDate?: pulumi.Input<string>;
+    expirationDate?: pulumi.Input<string>;
     /**
      * Text Export representation
      */
-    readonly outputText?: pulumi.Input<string>;
+    outputText?: pulumi.Input<string>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -197,17 +197,17 @@ export interface AppSecEvalArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
      */
-    readonly evalOperation: pulumi.Input<string>;
+    evalOperation: pulumi.Input<string>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId: pulumi.Input<string>;
+    securityPolicyId: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

@@ -131,23 +131,23 @@ export interface AppSecPenaltyBoxState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The action to take when penalty box protection is triggered: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. Ignored if `penaltyBoxProtection` is set to `false`.
      */
-    readonly penaltyBoxAction?: pulumi.Input<string>;
+    penaltyBoxAction?: pulumi.Input<string>;
     /**
      * A boolean value indicating whether to enable penalty box protection.
      */
-    readonly penaltyBoxProtection?: pulumi.Input<boolean>;
+    penaltyBoxProtection?: pulumi.Input<boolean>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -157,21 +157,21 @@ export interface AppSecPenaltyBoxArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The action to take when penalty box protection is triggered: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. Ignored if `penaltyBoxProtection` is set to `false`.
      */
-    readonly penaltyBoxAction: pulumi.Input<string>;
+    penaltyBoxAction: pulumi.Input<string>;
     /**
      * A boolean value indicating whether to enable penalty box protection.
      */
-    readonly penaltyBoxProtection: pulumi.Input<boolean>;
+    penaltyBoxProtection: pulumi.Input<boolean>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId: pulumi.Input<string>;
+    securityPolicyId: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

@@ -78,11 +78,11 @@ export interface PropertyVariablesState {
     /**
      * JSON variables representation
      */
-    readonly json?: pulumi.Input<string>;
+    json?: pulumi.Input<string>;
     /**
      * @deprecated The setting "akamai_property_variables" has been deprecated.
      */
-    readonly variables?: pulumi.Input<pulumi.Input<inputs.PropertyVariablesVariable>[]>;
+    variables?: pulumi.Input<pulumi.Input<inputs.PropertyVariablesVariable>[]>;
 }
 
 /**
@@ -92,5 +92,5 @@ export interface PropertyVariablesArgs {
     /**
      * @deprecated The setting "akamai_property_variables" has been deprecated.
      */
-    readonly variables?: pulumi.Input<pulumi.Input<inputs.PropertyVariablesVariable>[]>;
+    variables?: pulumi.Input<pulumi.Input<inputs.PropertyVariablesVariable>[]>;
 }

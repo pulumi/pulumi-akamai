@@ -20,7 +20,7 @@ import * as utilities from "./utilities";
  *     configId: 43253,
  *     hostname: "example.com",
  *     version: 7,
- * }, { async: true }));
+ * }));
  * ```
  */
 export function getAppSecHostnameCoverageMatchTargets(args: GetAppSecHostnameCoverageMatchTargetsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecHostnameCoverageMatchTargetsResult> {
@@ -45,15 +45,15 @@ export interface GetAppSecHostnameCoverageMatchTargetsArgs {
     /**
      * The configuration ID.
      */
-    readonly configId: number;
+    configId: number;
     /**
      * The hostname for which to retrieve information.
      */
-    readonly hostname: string;
+    hostname: string;
     /**
      * The version number of the configuration.
      */
-    readonly version: number;
+    version: number;
 }
 
 /**

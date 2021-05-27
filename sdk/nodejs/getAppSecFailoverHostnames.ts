@@ -47,7 +47,7 @@ export interface GetAppSecFailoverHostnamesArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: number;
+    configId: number;
 }
 
 /**

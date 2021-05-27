@@ -23,8 +23,8 @@ export function getProperty(args: GetPropertyArgs, opts?: pulumi.InvokeOptions):
  * A collection of arguments for invoking getProperty.
  */
 export interface GetPropertyArgs {
-    readonly name: string;
-    readonly version?: number;
+    name: string;
+    version?: number;
 }
 
 /**

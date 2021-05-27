@@ -119,49 +119,49 @@ export class PropertyActivation extends pulumi.CustomResource {
  * Input properties used for looking up and filtering PropertyActivation resources.
  */
 export interface PropertyActivationState {
-    readonly activationId?: pulumi.Input<string>;
+    activationId?: pulumi.Input<string>;
     /**
      * automatically acknowledge all rule warnings for activation to continue. default is true
      */
-    readonly autoAcknowledgeRuleWarnings?: pulumi.Input<boolean>;
-    readonly contacts?: pulumi.Input<pulumi.Input<string>[]>;
-    readonly errors?: pulumi.Input<string>;
-    readonly network?: pulumi.Input<string>;
+    autoAcknowledgeRuleWarnings?: pulumi.Input<boolean>;
+    contacts?: pulumi.Input<pulumi.Input<string>[]>;
+    errors?: pulumi.Input<string>;
+    network?: pulumi.Input<string>;
     /**
      * @deprecated The setting "property" has been deprecated.
      */
-    readonly property?: pulumi.Input<string>;
-    readonly propertyId?: pulumi.Input<string>;
-    readonly ruleErrors?: pulumi.Input<pulumi.Input<inputs.properties.PropertyActivationRuleError>[]>;
+    property?: pulumi.Input<string>;
+    propertyId?: pulumi.Input<string>;
+    ruleErrors?: pulumi.Input<pulumi.Input<inputs.properties.PropertyActivationRuleError>[]>;
     /**
      * @deprecated Rule warnings will not be set in state anymore
      */
-    readonly ruleWarnings?: pulumi.Input<pulumi.Input<inputs.properties.PropertyActivationRuleWarning>[]>;
-    readonly status?: pulumi.Input<string>;
-    readonly version?: pulumi.Input<number>;
-    readonly warnings?: pulumi.Input<string>;
+    ruleWarnings?: pulumi.Input<pulumi.Input<inputs.properties.PropertyActivationRuleWarning>[]>;
+    status?: pulumi.Input<string>;
+    version?: pulumi.Input<number>;
+    warnings?: pulumi.Input<string>;
 }
 
 /**
  * The set of arguments for constructing a PropertyActivation resource.
  */
 export interface PropertyActivationArgs {
-    readonly activationId?: pulumi.Input<string>;
+    activationId?: pulumi.Input<string>;
     /**
      * automatically acknowledge all rule warnings for activation to continue. default is true
      */
-    readonly autoAcknowledgeRuleWarnings?: pulumi.Input<boolean>;
-    readonly contacts: pulumi.Input<pulumi.Input<string>[]>;
-    readonly network?: pulumi.Input<string>;
+    autoAcknowledgeRuleWarnings?: pulumi.Input<boolean>;
+    contacts: pulumi.Input<pulumi.Input<string>[]>;
+    network?: pulumi.Input<string>;
     /**
      * @deprecated The setting "property" has been deprecated.
      */
-    readonly property?: pulumi.Input<string>;
-    readonly propertyId?: pulumi.Input<string>;
-    readonly ruleErrors?: pulumi.Input<pulumi.Input<inputs.properties.PropertyActivationRuleError>[]>;
+    property?: pulumi.Input<string>;
+    propertyId?: pulumi.Input<string>;
+    ruleErrors?: pulumi.Input<pulumi.Input<inputs.properties.PropertyActivationRuleError>[]>;
     /**
      * @deprecated Rule warnings will not be set in state anymore
      */
-    readonly ruleWarnings?: pulumi.Input<pulumi.Input<inputs.properties.PropertyActivationRuleWarning>[]>;
-    readonly version: pulumi.Input<number>;
+    ruleWarnings?: pulumi.Input<pulumi.Input<inputs.properties.PropertyActivationRuleWarning>[]>;
+    version: pulumi.Input<number>;
 }

@@ -20,7 +20,7 @@ import * as utilities from "./utilities";
  *     configId: 43253,
  *     hostname: "example.com",
  *     version: 7,
- * }, { async: true }));
+ * }));
  * ```
  */
 export function getAppSecHostnameCoverageOverlapping(args: GetAppSecHostnameCoverageOverlappingArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecHostnameCoverageOverlappingResult> {
@@ -45,15 +45,15 @@ export interface GetAppSecHostnameCoverageOverlappingArgs {
     /**
      * The configuration ID.
      */
-    readonly configId: number;
+    configId: number;
     /**
      * The hostname for which to retrieve information.
      */
-    readonly hostname: string;
+    hostname: string;
     /**
      * The version number of the configuration.
      */
-    readonly version: number;
+    version: number;
 }
 
 /**

@@ -26,6 +26,31 @@ export class Provider extends pulumi.ProviderResource {
         return obj['__pulumiType'] === Provider.__pulumiType;
     }
 
+    /**
+     * @deprecated The setting "appsec_section" has been deprecated.
+     */
+    public readonly appsecSection!: pulumi.Output<string | undefined>;
+    /**
+     * The section of the edgerc file to use for configuration
+     */
+    public readonly configSection!: pulumi.Output<string | undefined>;
+    /**
+     * @deprecated The setting "dns_section" has been deprecated.
+     */
+    public readonly dnsSection!: pulumi.Output<string | undefined>;
+    public readonly edgerc!: pulumi.Output<string | undefined>;
+    /**
+     * @deprecated The setting "gtm_section" has been deprecated.
+     */
+    public readonly gtmSection!: pulumi.Output<string | undefined>;
+    /**
+     * @deprecated The setting "papi_section" has been deprecated.
+     */
+    public readonly papiSection!: pulumi.Output<string | undefined>;
+    /**
+     * @deprecated The setting "property_section" has been deprecated.
+     */
+    public readonly propertySection!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
@@ -66,44 +91,44 @@ export interface ProviderArgs {
     /**
      * @deprecated The setting "appsec_section" has been deprecated.
      */
-    readonly appsecSection?: pulumi.Input<string>;
+    appsecSection?: pulumi.Input<string>;
     /**
      * @deprecated The setting "appsec" has been deprecated.
      */
-    readonly appsecs?: pulumi.Input<pulumi.Input<inputs.ProviderAppsec>[]>;
-    readonly cacheEnabled?: pulumi.Input<boolean>;
-    readonly config?: pulumi.Input<inputs.ProviderConfig>;
+    appsecs?: pulumi.Input<pulumi.Input<inputs.ProviderAppsec>[]>;
+    cacheEnabled?: pulumi.Input<boolean>;
+    config?: pulumi.Input<inputs.ProviderConfig>;
     /**
      * The section of the edgerc file to use for configuration
      */
-    readonly configSection?: pulumi.Input<string>;
+    configSection?: pulumi.Input<string>;
     /**
      * @deprecated The setting "dns" has been deprecated.
      */
-    readonly dns?: pulumi.Input<inputs.ProviderDns>;
+    dns?: pulumi.Input<inputs.ProviderDns>;
     /**
      * @deprecated The setting "dns_section" has been deprecated.
      */
-    readonly dnsSection?: pulumi.Input<string>;
-    readonly edgerc?: pulumi.Input<string>;
+    dnsSection?: pulumi.Input<string>;
+    edgerc?: pulumi.Input<string>;
     /**
      * @deprecated The setting "gtm" has been deprecated.
      */
-    readonly gtm?: pulumi.Input<inputs.ProviderGtm>;
+    gtm?: pulumi.Input<inputs.ProviderGtm>;
     /**
      * @deprecated The setting "gtm_section" has been deprecated.
      */
-    readonly gtmSection?: pulumi.Input<string>;
+    gtmSection?: pulumi.Input<string>;
     /**
      * @deprecated The setting "papi_section" has been deprecated.
      */
-    readonly papiSection?: pulumi.Input<string>;
+    papiSection?: pulumi.Input<string>;
     /**
      * @deprecated The setting "property" has been deprecated.
      */
-    readonly property?: pulumi.Input<inputs.ProviderProperty>;
+    property?: pulumi.Input<inputs.ProviderProperty>;
     /**
      * @deprecated The setting "property_section" has been deprecated.
      */
-    readonly propertySection?: pulumi.Input<string>;
+    propertySection?: pulumi.Input<string>;
 }

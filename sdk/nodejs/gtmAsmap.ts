@@ -126,20 +126,20 @@ export class GtmAsmap extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmAsmap resources.
  */
 export interface GtmAsmapState {
-    readonly assignments?: pulumi.Input<pulumi.Input<inputs.GtmAsmapAssignment>[]>;
-    readonly defaultDatacenter?: pulumi.Input<inputs.GtmAsmapDefaultDatacenter>;
-    readonly domain?: pulumi.Input<string>;
-    readonly name?: pulumi.Input<string>;
-    readonly waitOnComplete?: pulumi.Input<boolean>;
+    assignments?: pulumi.Input<pulumi.Input<inputs.GtmAsmapAssignment>[]>;
+    defaultDatacenter?: pulumi.Input<inputs.GtmAsmapDefaultDatacenter>;
+    domain?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
+    waitOnComplete?: pulumi.Input<boolean>;
 }
 
 /**
  * The set of arguments for constructing a GtmAsmap resource.
  */
 export interface GtmAsmapArgs {
-    readonly assignments?: pulumi.Input<pulumi.Input<inputs.GtmAsmapAssignment>[]>;
-    readonly defaultDatacenter: pulumi.Input<inputs.GtmAsmapDefaultDatacenter>;
-    readonly domain: pulumi.Input<string>;
-    readonly name?: pulumi.Input<string>;
-    readonly waitOnComplete?: pulumi.Input<boolean>;
+    assignments?: pulumi.Input<pulumi.Input<inputs.GtmAsmapAssignment>[]>;
+    defaultDatacenter: pulumi.Input<inputs.GtmAsmapDefaultDatacenter>;
+    domain: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
+    waitOnComplete?: pulumi.Input<boolean>;
 }

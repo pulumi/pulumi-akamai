@@ -109,46 +109,46 @@ export class EdgeHostName extends pulumi.CustomResource {
  * Input properties used for looking up and filtering EdgeHostName resources.
  */
 export interface EdgeHostNameState {
-    readonly certificate?: pulumi.Input<number>;
+    certificate?: pulumi.Input<number>;
     /**
      * @deprecated The setting "contract" has been deprecated.
      */
-    readonly contract?: pulumi.Input<string>;
-    readonly contractId?: pulumi.Input<string>;
-    readonly edgeHostname?: pulumi.Input<string>;
+    contract?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string>;
+    edgeHostname?: pulumi.Input<string>;
     /**
      * @deprecated The setting "group" has been deprecated.
      */
-    readonly group?: pulumi.Input<string>;
-    readonly groupId?: pulumi.Input<string>;
-    readonly ipBehavior?: pulumi.Input<string>;
+    group?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string>;
+    ipBehavior?: pulumi.Input<string>;
     /**
      * @deprecated The setting "product" has been deprecated.
      */
-    readonly product?: pulumi.Input<string>;
-    readonly productId?: pulumi.Input<string>;
+    product?: pulumi.Input<string>;
+    productId?: pulumi.Input<string>;
 }
 
 /**
  * The set of arguments for constructing a EdgeHostName resource.
  */
 export interface EdgeHostNameArgs {
-    readonly certificate?: pulumi.Input<number>;
+    certificate?: pulumi.Input<number>;
     /**
      * @deprecated The setting "contract" has been deprecated.
      */
-    readonly contract?: pulumi.Input<string>;
-    readonly contractId?: pulumi.Input<string>;
-    readonly edgeHostname: pulumi.Input<string>;
+    contract?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string>;
+    edgeHostname: pulumi.Input<string>;
     /**
      * @deprecated The setting "group" has been deprecated.
      */
-    readonly group?: pulumi.Input<string>;
-    readonly groupId?: pulumi.Input<string>;
-    readonly ipBehavior: pulumi.Input<string>;
+    group?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string>;
+    ipBehavior: pulumi.Input<string>;
     /**
      * @deprecated The setting "product" has been deprecated.
      */
-    readonly product?: pulumi.Input<string>;
-    readonly productId?: pulumi.Input<string>;
+    product?: pulumi.Input<string>;
+    productId?: pulumi.Input<string>;
 }

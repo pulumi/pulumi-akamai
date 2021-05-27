@@ -132,23 +132,23 @@ export interface AppSecCustomRuleActionState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
      */
-    readonly customRuleAction?: pulumi.Input<string>;
+    customRuleAction?: pulumi.Input<string>;
     /**
      * The custom rule for which to apply the action.
      */
-    readonly customRuleId?: pulumi.Input<number>;
+    customRuleId?: pulumi.Input<number>;
     /**
      * The security policy to use.
      */
-    readonly securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -158,21 +158,21 @@ export interface AppSecCustomRuleActionArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
      */
-    readonly customRuleAction: pulumi.Input<string>;
+    customRuleAction: pulumi.Input<string>;
     /**
      * The custom rule for which to apply the action.
      */
-    readonly customRuleId: pulumi.Input<number>;
+    customRuleId: pulumi.Input<number>;
     /**
      * The security policy to use.
      */
-    readonly securityPolicyId: pulumi.Input<string>;
+    securityPolicyId: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

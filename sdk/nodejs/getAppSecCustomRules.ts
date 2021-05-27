@@ -53,11 +53,11 @@ export interface GetAppSecCustomRulesArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: number;
+    configId: number;
     /**
      * The ID of a specific custom rule to use. If not supplied, information about all custom rules associated with the given security configuration will be returned.
      */
-    readonly customRuleId?: number;
+    customRuleId?: number;
 }
 
 /**

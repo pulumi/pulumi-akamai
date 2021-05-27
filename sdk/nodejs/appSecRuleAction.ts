@@ -128,20 +128,20 @@ export interface AppSecRuleActionState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
-    readonly ruleAction?: pulumi.Input<string>;
+    configId?: pulumi.Input<number>;
+    ruleAction?: pulumi.Input<string>;
     /**
      * The ID of the rule to use.
      */
-    readonly ruleId?: pulumi.Input<number>;
+    ruleId?: pulumi.Input<number>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -151,18 +151,18 @@ export interface AppSecRuleActionArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
-    readonly ruleAction: pulumi.Input<string>;
+    configId: pulumi.Input<number>;
+    ruleAction: pulumi.Input<string>;
     /**
      * The ID of the rule to use.
      */
-    readonly ruleId: pulumi.Input<number>;
+    ruleId: pulumi.Input<number>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId: pulumi.Input<string>;
+    securityPolicyId: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

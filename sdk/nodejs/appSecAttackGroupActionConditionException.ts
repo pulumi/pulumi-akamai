@@ -132,23 +132,23 @@ export interface AppSecAttackGroupActionConditionExceptionState {
     /**
      * The attack group to use.
      */
-    readonly attackGroup?: pulumi.Input<string>;
+    attackGroup?: pulumi.Input<string>;
     /**
      * The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception)).
      */
-    readonly conditionException?: pulumi.Input<string>;
+    conditionException?: pulumi.Input<string>;
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -158,21 +158,21 @@ export interface AppSecAttackGroupActionConditionExceptionArgs {
     /**
      * The attack group to use.
      */
-    readonly attackGroup: pulumi.Input<string>;
+    attackGroup: pulumi.Input<string>;
     /**
      * The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception)).
      */
-    readonly conditionException: pulumi.Input<string>;
+    conditionException: pulumi.Input<string>;
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId: pulumi.Input<string>;
+    securityPolicyId: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

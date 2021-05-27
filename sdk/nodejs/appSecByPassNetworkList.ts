@@ -116,15 +116,15 @@ export interface AppSecByPassNetworkListState {
     /**
      * A list containing the IDs of the network lists to use.
      */
-    readonly bypassNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
+    bypassNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The configuration ID to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The version number of the configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -134,13 +134,13 @@ export interface AppSecByPassNetworkListArgs {
     /**
      * A list containing the IDs of the network lists to use.
      */
-    readonly bypassNetworkLists: pulumi.Input<pulumi.Input<string>[]>;
+    bypassNetworkLists: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The configuration ID to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The version number of the configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

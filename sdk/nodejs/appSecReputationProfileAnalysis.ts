@@ -132,23 +132,23 @@ export interface AppSecReputationProfileAnalysisState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * Whether to add value indicating that shared IPs are included in HTTP header and SIEM integration.
      */
-    readonly forwardSharedIpToHttpHeaderSiem?: pulumi.Input<boolean>;
+    forwardSharedIpToHttpHeaderSiem?: pulumi.Input<boolean>;
     /**
      * Whether to add client reputation details to requests forwarded to origin in an HTTP header.
      */
-    readonly forwardToHttpHeader?: pulumi.Input<boolean>;
+    forwardToHttpHeader?: pulumi.Input<boolean>;
     /**
      * The ID of the securityPolicyId to which the settings should be applied.
      */
-    readonly securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -158,21 +158,21 @@ export interface AppSecReputationProfileAnalysisArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * Whether to add value indicating that shared IPs are included in HTTP header and SIEM integration.
      */
-    readonly forwardSharedIpToHttpHeaderSiem: pulumi.Input<boolean>;
+    forwardSharedIpToHttpHeaderSiem: pulumi.Input<boolean>;
     /**
      * Whether to add client reputation details to requests forwarded to origin in an HTTP header.
      */
-    readonly forwardToHttpHeader: pulumi.Input<boolean>;
+    forwardToHttpHeader: pulumi.Input<boolean>;
     /**
      * The ID of the securityPolicyId to which the settings should be applied.
      */
-    readonly securityPolicyId: pulumi.Input<string>;
+    securityPolicyId: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

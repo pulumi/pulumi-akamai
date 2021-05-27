@@ -119,19 +119,19 @@ export interface AppSecVersionNodesState {
     /**
      * The configuration ID to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * A tabular display showing the updated version notes.
      */
-    readonly outputText?: pulumi.Input<string>;
+    outputText?: pulumi.Input<string>;
     /**
      * The version number of the configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
     /**
      * A string containing the version notes to be used.
      */
-    readonly versionNotes?: pulumi.Input<string>;
+    versionNotes?: pulumi.Input<string>;
 }
 
 /**
@@ -141,13 +141,13 @@ export interface AppSecVersionNodesArgs {
     /**
      * The configuration ID to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The version number of the configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
     /**
      * A string containing the version notes to be used.
      */
-    readonly versionNotes: pulumi.Input<string>;
+    versionNotes: pulumi.Input<string>;
 }

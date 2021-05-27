@@ -115,15 +115,15 @@ export interface AppSecEvalProtectHostState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The evaluation hostnames to be moved to active protection.
      */
-    readonly hostnames?: pulumi.Input<pulumi.Input<string>[]>;
+    hostnames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -133,13 +133,13 @@ export interface AppSecEvalProtectHostArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The evaluation hostnames to be moved to active protection.
      */
-    readonly hostnames: pulumi.Input<pulumi.Input<string>[]>;
+    hostnames: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

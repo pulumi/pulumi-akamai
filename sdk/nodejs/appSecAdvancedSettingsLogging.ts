@@ -125,19 +125,19 @@ export interface AppSecAdvancedSettingsLoggingState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The logging settings to apply ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#puthttpheaderloggingforaconfiguration)).
      */
-    readonly logging?: pulumi.Input<string>;
+    logging?: pulumi.Input<string>;
     /**
      * The ID of a specific security policy to which the logging settings should be applied. If not supplied, the indicated settings will be applied to all policies within the configuration.
      */
-    readonly securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -147,17 +147,17 @@ export interface AppSecAdvancedSettingsLoggingArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The logging settings to apply ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#puthttpheaderloggingforaconfiguration)).
      */
-    readonly logging: pulumi.Input<string>;
+    logging: pulumi.Input<string>;
     /**
      * The ID of a specific security policy to which the logging settings should be applied. If not supplied, the indicated settings will be applied to all policies within the configuration.
      */
-    readonly securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

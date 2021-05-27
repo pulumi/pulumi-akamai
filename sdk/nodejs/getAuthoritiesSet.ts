@@ -18,7 +18,7 @@ import * as utilities from "./utilities";
  *
  * const example = pulumi.output(akamai.getAuthoritiesSet({
  *     contract: "ctr_1-AB123",
- * }, { async: true }));
+ * }));
  * ```
  * ## Argument reference
  *
@@ -49,7 +49,7 @@ export function getAuthoritiesSet(args: GetAuthoritiesSetArgs, opts?: pulumi.Inv
  * A collection of arguments for invoking getAuthoritiesSet.
  */
 export interface GetAuthoritiesSetArgs {
-    readonly contract: string;
+    contract: string;
 }
 
 /**

@@ -53,7 +53,7 @@ export interface GetAppSecExportConfigurationArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: number;
+    configId: number;
     /**
      * A bracket-delimited list of quoted strings specifying the types of information to be retrieved and made available for display in the `outputText` format. The following types are available:
      * * customRules
@@ -65,11 +65,11 @@ export interface GetAppSecExportConfigurationArgs {
      * * selectableHosts
      * * selectedHosts
      */
-    readonly searches?: string[];
+    searches?: string[];
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: number;
+    version: number;
 }
 
 /**

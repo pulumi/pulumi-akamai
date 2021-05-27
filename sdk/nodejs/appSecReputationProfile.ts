@@ -120,19 +120,19 @@ export interface AppSecReputationProfileState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The name of a file containing a JSON-formatted definition of the reputation profile. ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles))
      */
-    readonly reputationProfile?: pulumi.Input<string>;
+    reputationProfile?: pulumi.Input<string>;
     /**
      * The ID of the newly created or modified reputation profile.
      */
-    readonly reputationProfileId?: pulumi.Input<number>;
+    reputationProfileId?: pulumi.Input<number>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -142,13 +142,13 @@ export interface AppSecReputationProfileArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The name of a file containing a JSON-formatted definition of the reputation profile. ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles))
      */
-    readonly reputationProfile: pulumi.Input<string>;
+    reputationProfile: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

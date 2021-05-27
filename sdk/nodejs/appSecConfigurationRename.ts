@@ -107,15 +107,15 @@ export interface AppSecConfigurationRenameState {
     /**
      * The ID of the security configuration to be renamed.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The description to be applied to the configuration.
      */
-    readonly description?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
     /**
      * The new name to be given to the configuration.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }
 
 /**
@@ -125,13 +125,13 @@ export interface AppSecConfigurationRenameArgs {
     /**
      * The ID of the security configuration to be renamed.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The description to be applied to the configuration.
      */
-    readonly description: pulumi.Input<string>;
+    description: pulumi.Input<string>;
     /**
      * The new name to be given to the configuration.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }

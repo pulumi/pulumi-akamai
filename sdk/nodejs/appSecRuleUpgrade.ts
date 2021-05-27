@@ -133,27 +133,27 @@ export interface AppSecRuleUpgradeState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * A string indicating the version number and release date of the current KRS rule set.
      */
-    readonly currentRuleset?: pulumi.Input<string>;
+    currentRuleset?: pulumi.Input<string>;
     /**
      * TBD
      */
-    readonly evalStatus?: pulumi.Input<string>;
+    evalStatus?: pulumi.Input<string>;
     /**
      * A string indicating the current mode, either "KRS" or "AAG".
      */
-    readonly mode?: pulumi.Input<string>;
+    mode?: pulumi.Input<string>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -163,13 +163,13 @@ export interface AppSecRuleUpgradeArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId: pulumi.Input<string>;
+    securityPolicyId: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

@@ -119,19 +119,19 @@ export interface AppSecRatePolicyState {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * The name of a file containing a JSON-formatted rate policy definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#57c65cbd)).
      */
-    readonly ratePolicy?: pulumi.Input<string>;
+    ratePolicy?: pulumi.Input<string>;
     /**
      * The ID of an existing rate policy to be modified.
      */
-    readonly ratePolicyId?: pulumi.Input<number>;
+    ratePolicyId?: pulumi.Input<number>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -141,13 +141,13 @@ export interface AppSecRatePolicyArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * The name of a file containing a JSON-formatted rate policy definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#57c65cbd)).
      */
-    readonly ratePolicy: pulumi.Input<string>;
+    ratePolicy: pulumi.Input<string>;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

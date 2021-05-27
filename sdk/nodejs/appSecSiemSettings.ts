@@ -161,35 +161,35 @@ export interface AppSecSiemSettingsState {
     /**
      * The configuration ID to use.
      */
-    readonly configId?: pulumi.Input<number>;
+    configId?: pulumi.Input<number>;
     /**
      * Whether you enabled SIEM for the Bot Manager events.
      */
-    readonly enableBotmanSiem?: pulumi.Input<boolean>;
+    enableBotmanSiem?: pulumi.Input<boolean>;
     /**
      * Whether you enabled SIEM for all the security policies in the configuration version.
      */
-    readonly enableForAllPolicies?: pulumi.Input<boolean>;
+    enableForAllPolicies?: pulumi.Input<boolean>;
     /**
      * Whether you enabled SIEM in a security configuration version.
      */
-    readonly enableSiem?: pulumi.Input<boolean>;
+    enableSiem?: pulumi.Input<boolean>;
     /**
      * A tabular display showing the updated SIEM integration settings.
      */
-    readonly outputText?: pulumi.Input<string>;
+    outputText?: pulumi.Input<string>;
     /**
      * The list of security policy identifiers for which to enable the SIEM integration.
      */
-    readonly securityPolicyIds?: pulumi.Input<pulumi.Input<string>[]>;
+    securityPolicyIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * An integer that uniquely identifies the SIEM settings.
      */
-    readonly siemId?: pulumi.Input<number>;
+    siemId?: pulumi.Input<number>;
     /**
      * The version number of the configuration to use.
      */
-    readonly version?: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -199,29 +199,29 @@ export interface AppSecSiemSettingsArgs {
     /**
      * The configuration ID to use.
      */
-    readonly configId: pulumi.Input<number>;
+    configId: pulumi.Input<number>;
     /**
      * Whether you enabled SIEM for the Bot Manager events.
      */
-    readonly enableBotmanSiem?: pulumi.Input<boolean>;
+    enableBotmanSiem?: pulumi.Input<boolean>;
     /**
      * Whether you enabled SIEM for all the security policies in the configuration version.
      */
-    readonly enableForAllPolicies: pulumi.Input<boolean>;
+    enableForAllPolicies: pulumi.Input<boolean>;
     /**
      * Whether you enabled SIEM in a security configuration version.
      */
-    readonly enableSiem: pulumi.Input<boolean>;
+    enableSiem: pulumi.Input<boolean>;
     /**
      * The list of security policy identifiers for which to enable the SIEM integration.
      */
-    readonly securityPolicyIds: pulumi.Input<pulumi.Input<string>[]>;
+    securityPolicyIds: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * An integer that uniquely identifies the SIEM settings.
      */
-    readonly siemId: pulumi.Input<number>;
+    siemId: pulumi.Input<number>;
     /**
      * The version number of the configuration to use.
      */
-    readonly version: pulumi.Input<number>;
+    version: pulumi.Input<number>;
 }

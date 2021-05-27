@@ -20,7 +20,7 @@ import * as utilities from "./utilities";
  *     apiName: "TestEndpoint",
  *     configId: 43253,
  *     version: 7,
- * }, { async: true }));
+ * }));
  * ```
  */
 export function getAppSecApiEndpoints(args: GetAppSecApiEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecApiEndpointsResult> {
@@ -46,19 +46,19 @@ export interface GetAppSecApiEndpointsArgs {
     /**
      * The name of a specific endpoint.
      */
-    readonly apiName?: string;
+    apiName?: string;
     /**
      * The configuration ID.
      */
-    readonly configId: number;
+    configId: number;
     /**
      * The ID of the security policy to use.
      */
-    readonly securityPolicyId?: string;
+    securityPolicyId?: string;
     /**
      * The version number of the configuration.
      */
-    readonly version: number;
+    version: number;
 }
 
 /**

@@ -122,35 +122,35 @@ export class DnsZone extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DnsZone resources.
  */
 export interface DnsZoneState {
-    readonly activationState?: pulumi.Input<string>;
-    readonly aliasCount?: pulumi.Input<number>;
-    readonly comment?: pulumi.Input<string>;
-    readonly contract?: pulumi.Input<string>;
-    readonly endCustomerId?: pulumi.Input<string>;
-    readonly group?: pulumi.Input<string>;
-    readonly masters?: pulumi.Input<pulumi.Input<string>[]>;
-    readonly signAndServe?: pulumi.Input<boolean>;
-    readonly signAndServeAlgorithm?: pulumi.Input<string>;
-    readonly target?: pulumi.Input<string>;
-    readonly tsigKey?: pulumi.Input<inputs.edgedns.DnsZoneTsigKey>;
-    readonly type?: pulumi.Input<string>;
-    readonly versionId?: pulumi.Input<string>;
-    readonly zone?: pulumi.Input<string>;
+    activationState?: pulumi.Input<string>;
+    aliasCount?: pulumi.Input<number>;
+    comment?: pulumi.Input<string>;
+    contract?: pulumi.Input<string>;
+    endCustomerId?: pulumi.Input<string>;
+    group?: pulumi.Input<string>;
+    masters?: pulumi.Input<pulumi.Input<string>[]>;
+    signAndServe?: pulumi.Input<boolean>;
+    signAndServeAlgorithm?: pulumi.Input<string>;
+    target?: pulumi.Input<string>;
+    tsigKey?: pulumi.Input<inputs.edgedns.DnsZoneTsigKey>;
+    type?: pulumi.Input<string>;
+    versionId?: pulumi.Input<string>;
+    zone?: pulumi.Input<string>;
 }
 
 /**
  * The set of arguments for constructing a DnsZone resource.
  */
 export interface DnsZoneArgs {
-    readonly comment?: pulumi.Input<string>;
-    readonly contract: pulumi.Input<string>;
-    readonly endCustomerId?: pulumi.Input<string>;
-    readonly group: pulumi.Input<string>;
-    readonly masters?: pulumi.Input<pulumi.Input<string>[]>;
-    readonly signAndServe?: pulumi.Input<boolean>;
-    readonly signAndServeAlgorithm?: pulumi.Input<string>;
-    readonly target?: pulumi.Input<string>;
-    readonly tsigKey?: pulumi.Input<inputs.edgedns.DnsZoneTsigKey>;
-    readonly type: pulumi.Input<string>;
-    readonly zone: pulumi.Input<string>;
+    comment?: pulumi.Input<string>;
+    contract: pulumi.Input<string>;
+    endCustomerId?: pulumi.Input<string>;
+    group: pulumi.Input<string>;
+    masters?: pulumi.Input<pulumi.Input<string>[]>;
+    signAndServe?: pulumi.Input<boolean>;
+    signAndServeAlgorithm?: pulumi.Input<string>;
+    target?: pulumi.Input<string>;
+    tsigKey?: pulumi.Input<inputs.edgedns.DnsZoneTsigKey>;
+    type: pulumi.Input<string>;
+    zone: pulumi.Input<string>;
 }

@@ -54,15 +54,15 @@ export interface GetAppSecMatchTargetsArgs {
     /**
      * The ID of the security configuration to use.
      */
-    readonly configId: number;
+    configId: number;
     /**
      * The ID of the match target to use. If not supplied, information about all match targets is returned.
      */
-    readonly matchTargetId?: number;
+    matchTargetId?: number;
     /**
      * The version number of the security configuration to use.
      */
-    readonly version: number;
+    version: number;
 }
 
 /**
