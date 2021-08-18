@@ -32,7 +32,6 @@ import (
 // 		}
 // 		prefetch, err := akamai.LookupAppSecAdvancedSettingsPrefetch(ctx, &akamai.LookupAppSecAdvancedSettingsPrefetchArgs{
 // 			ConfigId: configuration.ConfigId,
-// 			Version:  configuration.LatestVersion,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -56,8 +55,6 @@ func LookupAppSecAdvancedSettingsPrefetch(ctx *pulumi.Context, args *LookupAppSe
 type LookupAppSecAdvancedSettingsPrefetchArgs struct {
 	// The configuration ID.
 	ConfigId int `pulumi:"configId"`
-	// The version number of the configuration.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecAdvancedSettingsPrefetch.
@@ -69,5 +66,4 @@ type LookupAppSecAdvancedSettingsPrefetchResult struct {
 	Json string `pulumi:"json"`
 	// A tabular display showing the prefetch request settings.
 	OutputText string `pulumi:"outputText"`
-	Version    int    `pulumi:"version"`
 }

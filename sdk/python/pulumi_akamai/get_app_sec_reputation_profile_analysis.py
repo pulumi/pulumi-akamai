@@ -19,7 +19,7 @@ class GetAppSecReputationProfileAnalysisResult:
     """
     A collection of values returned by getAppSecReputationProfileAnalysis.
     """
-    def __init__(__self__, config_id=None, id=None, json=None, output_text=None, security_policy_id=None, version=None):
+    def __init__(__self__, config_id=None, id=None, json=None, output_text=None, security_policy_id=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -35,9 +35,6 @@ class GetAppSecReputationProfileAnalysisResult:
         if security_policy_id and not isinstance(security_policy_id, str):
             raise TypeError("Expected argument 'security_policy_id' to be a str")
         pulumi.set(__self__, "security_policy_id", security_policy_id)
-        if version and not isinstance(version, int):
-            raise TypeError("Expected argument 'version' to be a int")
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -73,11 +70,6 @@ class GetAppSecReputationProfileAnalysisResult:
     def security_policy_id(self) -> str:
         return pulumi.get(self, "security_policy_id")
 
-    @property
-    @pulumi.getter
-    def version(self) -> int:
-        return pulumi.get(self, "version")
-
 
 class AwaitableGetAppSecReputationProfileAnalysisResult(GetAppSecReputationProfileAnalysisResult):
     # pylint: disable=using-constant-test
@@ -89,13 +81,11 @@ class AwaitableGetAppSecReputationProfileAnalysisResult(GetAppSecReputationProfi
             id=self.id,
             json=self.json,
             output_text=self.output_text,
-            security_policy_id=self.security_policy_id,
-            version=self.version)
+            security_policy_id=self.security_policy_id)
 
 
 def get_app_sec_reputation_profile_analysis(config_id: Optional[int] = None,
                                             security_policy_id: Optional[str] = None,
-                                            version: Optional[int] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecReputationProfileAnalysisResult:
     """
     Use the `AppSecReputationProfileAnalysis` data source to retrieve information about the current reputation analysis settings. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getreputationanalysis).
@@ -110,7 +100,6 @@ def get_app_sec_reputation_profile_analysis(config_id: Optional[int] = None,
 
     configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
     reputation_analysis = akamai.get_app_sec_reputation_profile_analysis(config_id=configuration.config_id,
-        version=configuration.latest_version,
         security_policy_id=var["security_policy_id"])
     pulumi.export("reputationAnalysisText", reputation_analysis.output_text)
     pulumi.export("reputationAnalysisJson", reputation_analysis.json)
@@ -119,12 +108,10 @@ def get_app_sec_reputation_profile_analysis(config_id: Optional[int] = None,
 
     :param int config_id: The configuration ID to use.
     :param str security_policy_id: The ID of the security policy to use.
-    :param int version: The version number of the configuration to use.
     """
     __args__ = dict()
     __args__['configId'] = config_id
     __args__['securityPolicyId'] = security_policy_id
-    __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -136,5 +123,4 @@ def get_app_sec_reputation_profile_analysis(config_id: Optional[int] = None,
         id=__ret__.id,
         json=__ret__.json,
         output_text=__ret__.output_text,
-        security_policy_id=__ret__.security_policy_id,
-        version=__ret__.version)
+        security_policy_id=__ret__.security_policy_id)

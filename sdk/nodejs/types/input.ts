@@ -4,6 +4,84 @@
 import * as pulumi from "@pulumi/pulumi";
 import { input as inputs, output as outputs } from "../types";
 
+export interface CpsDvEnrollmentAdminContact {
+    addressLineOne: pulumi.Input<string>;
+    addressLineTwo?: pulumi.Input<string>;
+    city: pulumi.Input<string>;
+    countryCode: pulumi.Input<string>;
+    email: pulumi.Input<string>;
+    firstName: pulumi.Input<string>;
+    lastName: pulumi.Input<string>;
+    organization: pulumi.Input<string>;
+    phone: pulumi.Input<string>;
+    postalCode: pulumi.Input<string>;
+    region: pulumi.Input<string>;
+    title?: pulumi.Input<string>;
+}
+
+export interface CpsDvEnrollmentCsr {
+    city: pulumi.Input<string>;
+    countryCode: pulumi.Input<string>;
+    organization: pulumi.Input<string>;
+    organizationalUnit: pulumi.Input<string>;
+    state: pulumi.Input<string>;
+}
+
+export interface CpsDvEnrollmentDnsChallenge {
+    domain?: pulumi.Input<string>;
+    fullPath?: pulumi.Input<string>;
+    responseBody?: pulumi.Input<string>;
+}
+
+export interface CpsDvEnrollmentHttpChallenge {
+    domain?: pulumi.Input<string>;
+    fullPath?: pulumi.Input<string>;
+    responseBody?: pulumi.Input<string>;
+}
+
+export interface CpsDvEnrollmentNetworkConfiguration {
+    clientMutualAuthentication?: pulumi.Input<inputs.CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication>;
+    cloneDnsNames?: pulumi.Input<boolean>;
+    disallowedTlsVersions?: pulumi.Input<pulumi.Input<string>[]>;
+    geography: pulumi.Input<string>;
+    mustHaveCiphers?: pulumi.Input<string>;
+    ocspStapling?: pulumi.Input<string>;
+    preferredCiphers?: pulumi.Input<string>;
+    quicEnabled?: pulumi.Input<boolean>;
+}
+
+export interface CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication {
+    ocspEnabled?: pulumi.Input<boolean>;
+    sendCaListToClient?: pulumi.Input<boolean>;
+    setId?: pulumi.Input<string>;
+}
+
+export interface CpsDvEnrollmentOrganization {
+    addressLineOne: pulumi.Input<string>;
+    addressLineTwo?: pulumi.Input<string>;
+    city: pulumi.Input<string>;
+    countryCode: pulumi.Input<string>;
+    name: pulumi.Input<string>;
+    phone: pulumi.Input<string>;
+    postalCode: pulumi.Input<string>;
+    region: pulumi.Input<string>;
+}
+
+export interface CpsDvEnrollmentTechContact {
+    addressLineOne: pulumi.Input<string>;
+    addressLineTwo?: pulumi.Input<string>;
+    city: pulumi.Input<string>;
+    countryCode: pulumi.Input<string>;
+    email: pulumi.Input<string>;
+    firstName: pulumi.Input<string>;
+    lastName: pulumi.Input<string>;
+    organization: pulumi.Input<string>;
+    phone: pulumi.Input<string>;
+    postalCode: pulumi.Input<string>;
+    region: pulumi.Input<string>;
+    title?: pulumi.Input<string>;
+}
+
 export interface DnsZoneTsigKey {
     algorithm: pulumi.Input<string>;
     name: pulumi.Input<string>;
@@ -215,6 +293,15 @@ export interface ProviderDns {
 }
 
 export interface ProviderGtm {
+    accessToken?: pulumi.Input<string>;
+    accountKey?: pulumi.Input<string>;
+    clientSecret?: pulumi.Input<string>;
+    clientToken?: pulumi.Input<string>;
+    host?: pulumi.Input<string>;
+    maxBody?: pulumi.Input<number>;
+}
+
+export interface ProviderNetwork {
     accessToken?: pulumi.Input<string>;
     accountKey?: pulumi.Input<string>;
     clientSecret?: pulumi.Input<string>;

@@ -20,6 +20,8 @@ __all__ = [
     'edgerc',
     'gtm',
     'gtm_section',
+    'networklist_section',
+    'networks',
     'papi_section',
     'property',
     'property_section',
@@ -49,6 +51,10 @@ edgerc = __config__.get('edgerc')
 gtm = __config__.get('gtm')
 
 gtm_section = __config__.get('gtmSection')
+
+networklist_section = __config__.get('networklistSection')
+
+networks = __config__.get('networks')
 
 papi_section = __config__.get('papiSection')
 

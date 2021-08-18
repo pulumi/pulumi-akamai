@@ -19,9 +19,8 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: _var.security_configuration,
  * });
- * const versionNotes = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecVersionNotes({
+ * const versionNotes = configuration.then(configuration => akamai.getAppSecVersionNotes({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  * }));
  * export const versionNotesText = versionNotes.then(versionNotes => versionNotes.outputText);
  * export const versionNotesJson = versionNotes.then(versionNotes => versionNotes.json);
@@ -37,7 +36,6 @@ export function getAppSecVersionNotes(args: GetAppSecVersionNotesArgs, opts?: pu
     }
     return pulumi.runtime.invoke("akamai:index/getAppSecVersionNotes:getAppSecVersionNotes", {
         "configId": args.configId,
-        "version": args.version,
     }, opts);
 }
 
@@ -49,10 +47,6 @@ export interface GetAppSecVersionNotesArgs {
      * The configuration ID to use.
      */
     configId: number;
-    /**
-     * The version number of the configuration to use.
-     */
-    version: number;
 }
 
 /**
@@ -72,5 +66,4 @@ export interface GetAppSecVersionNotesResult {
      * A tabular display showing the version notes.
      */
     readonly outputText: string;
-    readonly version: number;
 }

@@ -19,7 +19,7 @@ class GetAppSecBypassNetworkListsResult:
     """
     A collection of values returned by getAppSecBypassNetworkLists.
     """
-    def __init__(__self__, bypass_network_lists=None, config_id=None, id=None, json=None, output_text=None, version=None):
+    def __init__(__self__, bypass_network_lists=None, config_id=None, id=None, json=None, output_text=None):
         if bypass_network_lists and not isinstance(bypass_network_lists, list):
             raise TypeError("Expected argument 'bypass_network_lists' to be a list")
         pulumi.set(__self__, "bypass_network_lists", bypass_network_lists)
@@ -35,9 +35,6 @@ class GetAppSecBypassNetworkListsResult:
         if output_text and not isinstance(output_text, str):
             raise TypeError("Expected argument 'output_text' to be a str")
         pulumi.set(__self__, "output_text", output_text)
-        if version and not isinstance(version, int):
-            raise TypeError("Expected argument 'version' to be a int")
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="bypassNetworkLists")
@@ -76,11 +73,6 @@ class GetAppSecBypassNetworkListsResult:
         """
         return pulumi.get(self, "output_text")
 
-    @property
-    @pulumi.getter
-    def version(self) -> int:
-        return pulumi.get(self, "version")
-
 
 class AwaitableGetAppSecBypassNetworkListsResult(GetAppSecBypassNetworkListsResult):
     # pylint: disable=using-constant-test
@@ -92,12 +84,10 @@ class AwaitableGetAppSecBypassNetworkListsResult(GetAppSecBypassNetworkListsResu
             config_id=self.config_id,
             id=self.id,
             json=self.json,
-            output_text=self.output_text,
-            version=self.version)
+            output_text=self.output_text)
 
 
 def get_app_sec_bypass_network_lists(config_id: Optional[int] = None,
-                                     version: Optional[int] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecBypassNetworkListsResult:
     """
     Use the `AppSecByPassNetworkList` data source to retrieve information about which network
@@ -114,8 +104,7 @@ def get_app_sec_bypass_network_lists(config_id: Optional[int] = None,
     import pulumi_akamai as akamai
 
     configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-    bypass_network_lists = akamai.get_app_sec_bypass_network_lists(config_id=configuration.config_id,
-        version=configuration.latest_version)
+    bypass_network_lists = akamai.get_app_sec_bypass_network_lists(config_id=configuration.config_id)
     pulumi.export("bypassNetworkListsOutput", bypass_network_lists.output_text)
     pulumi.export("bypassNetworkListsJson", bypass_network_lists.json)
     pulumi.export("bypassNetworkListsIdList", bypass_network_lists.bypass_network_lists)
@@ -123,11 +112,9 @@ def get_app_sec_bypass_network_lists(config_id: Optional[int] = None,
 
 
     :param int config_id: The configuration ID to use.
-    :param int version: The version number of the configuration to use.
     """
     __args__ = dict()
     __args__['configId'] = config_id
-    __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -139,5 +126,4 @@ def get_app_sec_bypass_network_lists(config_id: Optional[int] = None,
         config_id=__ret__.config_id,
         id=__ret__.id,
         json=__ret__.json,
-        output_text=__ret__.output_text,
-        version=__ret__.version)
+        output_text=__ret__.output_text)

@@ -44,6 +44,10 @@ export class Provider extends pulumi.ProviderResource {
      */
     public readonly gtmSection!: pulumi.Output<string | undefined>;
     /**
+     * @deprecated The setting "networklist_section" has been deprecated.
+     */
+    public readonly networklistSection!: pulumi.Output<string | undefined>;
+    /**
      * @deprecated The setting "papi_section" has been deprecated.
      */
     public readonly papiSection!: pulumi.Output<string | undefined>;
@@ -73,6 +77,8 @@ export class Provider extends pulumi.ProviderResource {
             inputs["edgerc"] = args ? args.edgerc : undefined;
             inputs["gtm"] = pulumi.output(args ? args.gtm : undefined).apply(JSON.stringify);
             inputs["gtmSection"] = args ? args.gtmSection : undefined;
+            inputs["networklistSection"] = args ? args.networklistSection : undefined;
+            inputs["networks"] = pulumi.output(args ? args.networks : undefined).apply(JSON.stringify);
             inputs["papiSection"] = args ? args.papiSection : undefined;
             inputs["property"] = pulumi.output(args ? args.property : undefined).apply(JSON.stringify);
             inputs["propertySection"] = args ? args.propertySection : undefined;
@@ -119,6 +125,11 @@ export interface ProviderArgs {
      * @deprecated The setting "gtm_section" has been deprecated.
      */
     gtmSection?: pulumi.Input<string>;
+    /**
+     * @deprecated The setting "networklist_section" has been deprecated.
+     */
+    networklistSection?: pulumi.Input<string>;
+    networks?: pulumi.Input<pulumi.Input<inputs.ProviderNetwork>[]>;
     /**
      * @deprecated The setting "papi_section" has been deprecated.
      */

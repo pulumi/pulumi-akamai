@@ -4,6 +4,84 @@
 import * as pulumi from "@pulumi/pulumi";
 import { input as inputs, output as outputs } from "../types";
 
+export interface CpsDvEnrollmentAdminContact {
+    addressLineOne: string;
+    addressLineTwo?: string;
+    city: string;
+    countryCode: string;
+    email: string;
+    firstName: string;
+    lastName: string;
+    organization: string;
+    phone: string;
+    postalCode: string;
+    region: string;
+    title?: string;
+}
+
+export interface CpsDvEnrollmentCsr {
+    city: string;
+    countryCode: string;
+    organization: string;
+    organizationalUnit: string;
+    state: string;
+}
+
+export interface CpsDvEnrollmentDnsChallenge {
+    domain: string;
+    fullPath: string;
+    responseBody: string;
+}
+
+export interface CpsDvEnrollmentHttpChallenge {
+    domain: string;
+    fullPath: string;
+    responseBody: string;
+}
+
+export interface CpsDvEnrollmentNetworkConfiguration {
+    clientMutualAuthentication?: outputs.CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication;
+    cloneDnsNames?: boolean;
+    disallowedTlsVersions?: string[];
+    geography: string;
+    mustHaveCiphers?: string;
+    ocspStapling?: string;
+    preferredCiphers?: string;
+    quicEnabled?: boolean;
+}
+
+export interface CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication {
+    ocspEnabled?: boolean;
+    sendCaListToClient?: boolean;
+    setId?: string;
+}
+
+export interface CpsDvEnrollmentOrganization {
+    addressLineOne: string;
+    addressLineTwo?: string;
+    city: string;
+    countryCode: string;
+    name: string;
+    phone: string;
+    postalCode: string;
+    region: string;
+}
+
+export interface CpsDvEnrollmentTechContact {
+    addressLineOne: string;
+    addressLineTwo?: string;
+    city: string;
+    countryCode: string;
+    email: string;
+    firstName: string;
+    lastName: string;
+    organization: string;
+    phone: string;
+    postalCode: string;
+    region: string;
+    title?: string;
+}
+
 export interface DnsZoneTsigKey {
     algorithm: string;
     name: string;
@@ -269,6 +347,15 @@ export interface ProviderGtm {
     maxBody?: number;
 }
 
+export interface ProviderNetwork {
+    accessToken?: string;
+    accountKey?: string;
+    clientSecret?: string;
+    clientToken?: string;
+    host?: string;
+    maxBody?: number;
+}
+
 export interface ProviderProperty {
     accessToken?: string;
     accountKey?: string;
@@ -306,6 +393,15 @@ export namespace config {
     }
 
     export interface Gtm {
+        accessToken?: string;
+        accountKey?: string;
+        clientSecret?: string;
+        clientToken?: string;
+        host?: string;
+        maxBody?: number;
+    }
+
+    export interface Networks {
         accessToken?: string;
         accountKey?: string;
         clientSecret?: string;

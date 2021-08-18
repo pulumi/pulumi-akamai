@@ -12,7 +12,7 @@ namespace Pulumi.Akamai
     public static class GetAppSecWafMode
     {
         /// <summary>
-        /// Use the `akamai.AppSecWafMode` data source to retrieve the mode that indicates how the WAF rules of the given security configuration version and security policy will be updated.
+        /// Use the `akamai.AppSecWafMode` data source to retrieve the mode that indicates how the WAF rules of the given security configuration and security policy will be updated.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -32,17 +32,11 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = @var.Security_configuration,
         ///         }));
-        ///         var wafMode = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var wafMode = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecWafMode.InvokeAsync(new Akamai.GetAppSecWafModeArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecWafMode.InvokeAsync(new Akamai.GetAppSecWafModeArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///                 SecurityPolicyId = @var.Policy_id,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = @var.Policy_id,
+        ///         })));
         ///         this.WafModeMode = wafMode.Apply(wafMode =&gt; wafMode.Mode);
         ///         this.WafModeCurrentRuleset = wafMode.Apply(wafMode =&gt; wafMode.CurrentRuleset);
         ///         this.WafModeEvalStatus = wafMode.Apply(wafMode =&gt; wafMode.EvalStatus);
@@ -90,12 +84,6 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecWafModeArgs()
         {
         }
@@ -139,7 +127,6 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string OutputText;
         public readonly string SecurityPolicyId;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecWafModeResult(
@@ -161,9 +148,7 @@ namespace Pulumi.Akamai
 
             string outputText,
 
-            string securityPolicyId,
-
-            int version)
+            string securityPolicyId)
         {
             ConfigId = configId;
             CurrentRuleset = currentRuleset;
@@ -175,7 +160,6 @@ namespace Pulumi.Akamai
             Mode = mode;
             OutputText = outputText;
             SecurityPolicyId = securityPolicyId;
-            Version = version;
         }
     }
 }

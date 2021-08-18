@@ -26,7 +26,6 @@ import (
 // 		_, err := akamai.GetAppSecHostnameCoverageOverlapping(ctx, &akamai.GetAppSecHostnameCoverageOverlappingArgs{
 // 			ConfigId: 43253,
 // 			Hostname: "example.com",
-// 			Version:  7,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -50,8 +49,6 @@ type GetAppSecHostnameCoverageOverlappingArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// The hostname for which to retrieve information.
 	Hostname string `pulumi:"hostname"`
-	// The version number of the configuration.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecHostnameCoverageOverlapping.
@@ -64,5 +61,4 @@ type GetAppSecHostnameCoverageOverlappingResult struct {
 	Json string `pulumi:"json"`
 	// A tabular display of the overlap information.
 	OutputText string `pulumi:"outputText"`
-	Version    int    `pulumi:"version"`
 }

@@ -19,7 +19,6 @@ import * as utilities from "./utilities";
  * const test = pulumi.output(akamai.getAppSecHostnameCoverageOverlapping({
  *     configId: 43253,
  *     hostname: "example.com",
- *     version: 7,
  * }));
  * ```
  */
@@ -34,7 +33,6 @@ export function getAppSecHostnameCoverageOverlapping(args: GetAppSecHostnameCove
     return pulumi.runtime.invoke("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", {
         "configId": args.configId,
         "hostname": args.hostname,
-        "version": args.version,
     }, opts);
 }
 
@@ -50,10 +48,6 @@ export interface GetAppSecHostnameCoverageOverlappingArgs {
      * The hostname for which to retrieve information.
      */
     hostname: string;
-    /**
-     * The version number of the configuration.
-     */
-    version: number;
 }
 
 /**
@@ -74,5 +68,4 @@ export interface GetAppSecHostnameCoverageOverlappingResult {
      * A tabular display of the overlap information.
      */
     readonly outputText: string;
-    readonly version: number;
 }

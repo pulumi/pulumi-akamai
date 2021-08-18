@@ -33,7 +33,6 @@ namespace Pulumi.Akamai
     ///         var bypassNetworkLists = new Akamai.AppSecByPassNetworkList("bypassNetworkLists", new Akamai.AppSecByPassNetworkListArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
     ///             BypassNetworkLists = 
     ///             {
     ///                 "id1",
@@ -59,12 +58,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
-
-        /// <summary>
-        /// The version number of the configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -130,12 +123,6 @@ namespace Pulumi.Akamai
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
-
         public AppSecByPassNetworkListArgs()
         {
         }
@@ -160,12 +147,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
-
-        /// <summary>
-        /// The version number of the configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecByPassNetworkListState()
         {

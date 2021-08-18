@@ -6,7 +6,7 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecCustomRuleActions` data source to retrieve information about the actions defined for the custom rules, or a specific custom rule, associated with a specific security configuration version and security policy.
+ * Use the `akamai.getAppSecCustomRuleActions` data source to retrieve information about the actions defined for the custom rules, or a specific custom rule, associated with a specific security configuration and security policy.
  *
  * ## Example Usage
  *
@@ -19,9 +19,8 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: "Akamai Tools",
  * });
- * const customRuleActionsAppSecCustomRuleActions = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecCustomRuleActions({
+ * const customRuleActionsAppSecCustomRuleActions = configuration.then(configuration => akamai.getAppSecCustomRuleActions({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  *     securityPolicyId: "crAP_75829",
  * }));
  * export const customRuleActions = customRuleActionsAppSecCustomRuleActions.then(customRuleActionsAppSecCustomRuleActions => customRuleActionsAppSecCustomRuleActions.outputText);
@@ -39,7 +38,6 @@ export function getAppSecCustomRuleActions(args: GetAppSecCustomRuleActionsArgs,
         "configId": args.configId,
         "customRuleId": args.customRuleId,
         "securityPolicyId": args.securityPolicyId,
-        "version": args.version,
     }, opts);
 }
 
@@ -59,10 +57,6 @@ export interface GetAppSecCustomRuleActionsArgs {
      * The ID of the security policy to use
      */
     securityPolicyId: string;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: number;
 }
 
 /**
@@ -80,5 +74,4 @@ export interface GetAppSecCustomRuleActionsResult {
      */
     readonly outputText: string;
     readonly securityPolicyId: string;
-    readonly version: number;
 }

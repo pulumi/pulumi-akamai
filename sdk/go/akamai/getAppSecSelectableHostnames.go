@@ -7,7 +7,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecSelectableHostnames` data source to retrieve the list of hostnames that may be protected under a given security configuration version. You can specify the list to be retrieved either by supplying the name and version of a security configuration, or by supplying a group ID and contract ID.
+// Use the `getAppSecSelectableHostnames` data source to retrieve the list of hostnames that may be protected under a given security configuration. You can specify the list to be retrieved either by supplying the name of a security configuration, or by supplying a group ID and contract ID.
 //
 // ## Example Usage
 //
@@ -31,10 +31,8 @@ import (
 // 			return err
 // 		}
 // 		opt1 := configuration.ConfigId
-// 		opt2 := configuration.LatestVersion
 // 		selectableHostnamesAppSecSelectableHostnames, err := akamai.GetAppSecSelectableHostnames(ctx, &akamai.GetAppSecSelectableHostnamesArgs{
 // 			ConfigId: &opt1,
-// 			Version:  &opt2,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -42,11 +40,11 @@ import (
 // 		ctx.Export("selectableHostnames", selectableHostnamesAppSecSelectableHostnames.Hostnames)
 // 		ctx.Export("selectableHostnamesJson", selectableHostnamesAppSecSelectableHostnames.HostnamesJson)
 // 		ctx.Export("selectableHostnamesOutputText", selectableHostnamesAppSecSelectableHostnames.OutputText)
-// 		opt3 := _var.Contractid
-// 		opt4 := _var.Groupid
+// 		opt2 := _var.Contractid
+// 		opt3 := _var.Groupid
 // 		selectableHostnamesForCreateConfigurationAppSecSelectableHostnames, err := akamai.GetAppSecSelectableHostnames(ctx, &akamai.GetAppSecSelectableHostnamesArgs{
-// 			Contractid: &opt3,
-// 			Groupid:    &opt4,
+// 			Contractid: &opt2,
+// 			Groupid:    &opt3,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -77,8 +75,6 @@ type GetAppSecSelectableHostnamesArgs struct {
 	Contractid *string `pulumi:"contractid"`
 	// The ID of the group to use.
 	Groupid *int `pulumi:"groupid"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecSelectableHostnames.
@@ -96,5 +92,4 @@ type GetAppSecSelectableHostnamesResult struct {
 	Id string `pulumi:"id"`
 	// A tabular display of the selectable hostnames showing the name and configId of the security configuration under which the host is protected in production, or '-' if the host is not protected in production.
 	OutputText string `pulumi:"outputText"`
-	Version    *int   `pulumi:"version"`
 }

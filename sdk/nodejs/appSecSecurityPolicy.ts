@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  * });
  * const securityPolicyCreateAppSecSecurityPolicy = new akamai.AppSecSecurityPolicy("securityPolicyCreateAppSecSecurityPolicy", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     defaultSettings: _var.default_settings,
  *     securityPolicyName: _var.policy_name,
  *     securityPolicyPrefix: _var.policy_prefix,
@@ -61,6 +60,10 @@ export class AppSecSecurityPolicy extends pulumi.CustomResource {
      */
     public readonly configId!: pulumi.Output<number>;
     /**
+     * The ID of the security policy to clone from.
+     */
+    public readonly createFromSecurityPolicyId!: pulumi.Output<string | undefined>;
+    /**
      * Whether the new policy should use the default settings. If not supplied, defaults to true.
      */
     public readonly defaultSettings!: pulumi.Output<boolean | undefined>;
@@ -72,11 +75,10 @@ export class AppSecSecurityPolicy extends pulumi.CustomResource {
      * The name of the new security policy.
      */
     public readonly securityPolicyName!: pulumi.Output<string>;
-    public readonly securityPolicyPrefix!: pulumi.Output<string>;
     /**
-     * The version number of the configuration to use.
+     * The four-character alphanumeric string prefix for the policy ID.
      */
-    public readonly version!: pulumi.Output<number>;
+    public readonly securityPolicyPrefix!: pulumi.Output<string>;
 
     /**
      * Create a AppSecSecurityPolicy resource with the given unique name, arguments, and options.
@@ -92,11 +94,11 @@ export class AppSecSecurityPolicy extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as AppSecSecurityPolicyState | undefined;
             inputs["configId"] = state ? state.configId : undefined;
+            inputs["createFromSecurityPolicyId"] = state ? state.createFromSecurityPolicyId : undefined;
             inputs["defaultSettings"] = state ? state.defaultSettings : undefined;
             inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
             inputs["securityPolicyName"] = state ? state.securityPolicyName : undefined;
             inputs["securityPolicyPrefix"] = state ? state.securityPolicyPrefix : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecSecurityPolicyArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -108,14 +110,11 @@ export class AppSecSecurityPolicy extends pulumi.CustomResource {
             if ((!args || args.securityPolicyPrefix === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyPrefix'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["configId"] = args ? args.configId : undefined;
+            inputs["createFromSecurityPolicyId"] = args ? args.createFromSecurityPolicyId : undefined;
             inputs["defaultSettings"] = args ? args.defaultSettings : undefined;
             inputs["securityPolicyName"] = args ? args.securityPolicyName : undefined;
             inputs["securityPolicyPrefix"] = args ? args.securityPolicyPrefix : undefined;
-            inputs["version"] = args ? args.version : undefined;
             inputs["securityPolicyId"] = undefined /*out*/;
         }
         if (!opts.version) {
@@ -134,6 +133,10 @@ export interface AppSecSecurityPolicyState {
      */
     configId?: pulumi.Input<number>;
     /**
+     * The ID of the security policy to clone from.
+     */
+    createFromSecurityPolicyId?: pulumi.Input<string>;
+    /**
      * Whether the new policy should use the default settings. If not supplied, defaults to true.
      */
     defaultSettings?: pulumi.Input<boolean>;
@@ -145,11 +148,10 @@ export interface AppSecSecurityPolicyState {
      * The name of the new security policy.
      */
     securityPolicyName?: pulumi.Input<string>;
-    securityPolicyPrefix?: pulumi.Input<string>;
     /**
-     * The version number of the configuration to use.
+     * The four-character alphanumeric string prefix for the policy ID.
      */
-    version?: pulumi.Input<number>;
+    securityPolicyPrefix?: pulumi.Input<string>;
 }
 
 /**
@@ -161,6 +163,10 @@ export interface AppSecSecurityPolicyArgs {
      */
     configId: pulumi.Input<number>;
     /**
+     * The ID of the security policy to clone from.
+     */
+    createFromSecurityPolicyId?: pulumi.Input<string>;
+    /**
      * Whether the new policy should use the default settings. If not supplied, defaults to true.
      */
     defaultSettings?: pulumi.Input<boolean>;
@@ -168,9 +174,8 @@ export interface AppSecSecurityPolicyArgs {
      * The name of the new security policy.
      */
     securityPolicyName: pulumi.Input<string>;
-    securityPolicyPrefix: pulumi.Input<string>;
     /**
-     * The version number of the configuration to use.
+     * The four-character alphanumeric string prefix for the policy ID.
      */
-    version: pulumi.Input<number>;
+    securityPolicyPrefix: pulumi.Input<string>;
 }

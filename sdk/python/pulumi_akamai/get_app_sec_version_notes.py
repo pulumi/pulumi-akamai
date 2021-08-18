@@ -19,7 +19,7 @@ class GetAppSecVersionNotesResult:
     """
     A collection of values returned by getAppSecVersionNotes.
     """
-    def __init__(__self__, config_id=None, id=None, json=None, output_text=None, version=None):
+    def __init__(__self__, config_id=None, id=None, json=None, output_text=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -32,9 +32,6 @@ class GetAppSecVersionNotesResult:
         if output_text and not isinstance(output_text, str):
             raise TypeError("Expected argument 'output_text' to be a str")
         pulumi.set(__self__, "output_text", output_text)
-        if version and not isinstance(version, int):
-            raise TypeError("Expected argument 'version' to be a int")
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -65,11 +62,6 @@ class GetAppSecVersionNotesResult:
         """
         return pulumi.get(self, "output_text")
 
-    @property
-    @pulumi.getter
-    def version(self) -> int:
-        return pulumi.get(self, "version")
-
 
 class AwaitableGetAppSecVersionNotesResult(GetAppSecVersionNotesResult):
     # pylint: disable=using-constant-test
@@ -80,12 +72,10 @@ class AwaitableGetAppSecVersionNotesResult(GetAppSecVersionNotesResult):
             config_id=self.config_id,
             id=self.id,
             json=self.json,
-            output_text=self.output_text,
-            version=self.version)
+            output_text=self.output_text)
 
 
 def get_app_sec_version_notes(config_id: Optional[int] = None,
-                              version: Optional[int] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecVersionNotesResult:
     """
     Use the `AppSecVersionNodes` data source to retrieve the most recent version notes for a configuration.
@@ -99,19 +89,16 @@ def get_app_sec_version_notes(config_id: Optional[int] = None,
     import pulumi_akamai as akamai
 
     configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-    version_notes = akamai.get_app_sec_version_notes(config_id=configuration.config_id,
-        version=configuration.latest_version)
+    version_notes = akamai.get_app_sec_version_notes(config_id=configuration.config_id)
     pulumi.export("versionNotesText", version_notes.output_text)
     pulumi.export("versionNotesJson", version_notes.json)
     ```
 
 
     :param int config_id: The configuration ID to use.
-    :param int version: The version number of the configuration to use.
     """
     __args__ = dict()
     __args__['configId'] = config_id
-    __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -122,5 +109,4 @@ def get_app_sec_version_notes(config_id: Optional[int] = None,
         config_id=__ret__.config_id,
         id=__ret__.id,
         json=__ret__.json,
-        output_text=__ret__.output_text,
-        version=__ret__.version)
+        output_text=__ret__.output_text)

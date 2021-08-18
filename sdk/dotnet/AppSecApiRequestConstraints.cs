@@ -22,7 +22,7 @@ namespace Pulumi.Akamai
         public Output<string> Action { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
+        /// The ID of the API endpoint to use.
         /// </summary>
         [Output("apiEndpointId")]
         public Output<int?> ApiEndpointId { get; private set; } = null!;
@@ -38,12 +38,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -98,7 +92,7 @@ namespace Pulumi.Akamai
         public Input<string> Action { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
+        /// The ID of the API endpoint to use.
         /// </summary>
         [Input("apiEndpointId")]
         public Input<int>? ApiEndpointId { get; set; }
@@ -115,12 +109,6 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
-
         public AppSecApiRequestConstraintsArgs()
         {
         }
@@ -135,7 +123,7 @@ namespace Pulumi.Akamai
         public Input<string>? Action { get; set; }
 
         /// <summary>
-        /// The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
+        /// The ID of the API endpoint to use.
         /// </summary>
         [Input("apiEndpointId")]
         public Input<int>? ApiEndpointId { get; set; }
@@ -151,12 +139,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecApiRequestConstraintsState()
         {

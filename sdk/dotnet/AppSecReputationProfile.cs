@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// Use the `akamai.AppSecReputationProfile` resource to create or modify a reputation profile for a specific security configuration version.
+    /// Use the `akamai.AppSecReputationProfile` resource to create or modify a reputation profile for a specific security configuration.
     /// 
     /// ## Example Usage
     /// 
@@ -33,7 +33,6 @@ namespace Pulumi.Akamai
     ///         var reputationProfile = new Akamai.AppSecReputationProfile("reputationProfile", new Akamai.AppSecReputationProfileArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
     ///             ReputationProfile = File.ReadAllText($"{path.Module}/reputation_profile.json"),
     ///         });
     ///         this.ReputationProfileId = akamai_appsec_reputation_profile.Reputation_profile_id;
@@ -64,12 +63,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("reputationProfileId")]
         public Output<int> ReputationProfileId { get; private set; } = null!;
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -129,12 +122,6 @@ namespace Pulumi.Akamai
         [Input("reputationProfile", required: true)]
         public Input<string> ReputationProfile { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
-
         public AppSecReputationProfileArgs()
         {
         }
@@ -159,12 +146,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("reputationProfileId")]
         public Input<int>? ReputationProfileId { get; set; }
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecReputationProfileState()
         {

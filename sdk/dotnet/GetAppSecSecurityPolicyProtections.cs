@@ -12,7 +12,7 @@ namespace Pulumi.Akamai
     public static class GetAppSecSecurityPolicyProtections
     {
         /// <summary>
-        /// Use the `akamai.AppSecSecurityPolicyProtections` data source to retrieve the protections in effect for a given security policy.
+        /// Use the `akamai.getAppSecSecurityPolicyProtections` data source to retrieve the protections in effect for a given security policy.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -32,17 +32,11 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = @var.Security_configuration,
         ///         }));
-        ///         var protections = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var protections = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSecurityPolicyProtections.InvokeAsync(new Akamai.GetAppSecSecurityPolicyProtectionsArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecSecurityPolicyProtections.InvokeAsync(new Akamai.GetAppSecSecurityPolicyProtectionsArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///                 SecurityPolicyId = @var.Security_policy_id,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///         })));
         ///         this.ProtectionsJson = protections.Apply(protections =&gt; protections.Json);
         ///         this.ProtectionsApplyApiConstraints = protections.Apply(protections =&gt; protections.ApplyApiConstraints);
         ///         this.ProtectionsApplyApplicationLayerControls = protections.Apply(protections =&gt; protections.ApplyApplicationLayerControls);
@@ -92,12 +86,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
 
         public GetAppSecSecurityPolicyProtectionsArgs()
         {
@@ -150,7 +138,6 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string OutputText;
         public readonly string SecurityPolicyId;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecSecurityPolicyProtectionsResult(
@@ -176,9 +163,7 @@ namespace Pulumi.Akamai
 
             string outputText,
 
-            string securityPolicyId,
-
-            int version)
+            string securityPolicyId)
         {
             ApplyApiConstraints = applyApiConstraints;
             ApplyApplicationLayerControls = applyApplicationLayerControls;
@@ -192,7 +177,6 @@ namespace Pulumi.Akamai
             Json = json;
             OutputText = outputText;
             SecurityPolicyId = securityPolicyId;
-            Version = version;
         }
     }
 }

@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * The `akamai.AppSecMatchTargetSequence` resource allows you to specify the order in which match targets are applied within a given security configuration version.
+ * The `akamai.AppSecMatchTargetSequence` resource allows you to specify the order in which match targets are applied within a given security configuration.
  *
  * ## Example Usage
  *
@@ -21,7 +21,6 @@ import * as utilities from "./utilities";
  * });
  * const matchTargetSequence = new akamai.AppSecMatchTargetSequence("matchTargetSequence", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     matchTargetSequence: fs.readFileSync(`${path.module}/match_targets.json`),
  * });
  * ```
@@ -59,13 +58,9 @@ export class AppSecMatchTargetSequence extends pulumi.CustomResource {
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
+     * The name of a JSON file containing the sequence of all match targets defined for the specified security configuration ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
      */
     public readonly matchTargetSequence!: pulumi.Output<string | undefined>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecMatchTargetSequence resource with the given unique name, arguments, and options.
@@ -82,18 +77,13 @@ export class AppSecMatchTargetSequence extends pulumi.CustomResource {
             const state = argsOrState as AppSecMatchTargetSequenceState | undefined;
             inputs["configId"] = state ? state.configId : undefined;
             inputs["matchTargetSequence"] = state ? state.matchTargetSequence : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecMatchTargetSequenceArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["matchTargetSequence"] = args ? args.matchTargetSequence : undefined;
-            inputs["version"] = args ? args.version : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -111,13 +101,9 @@ export interface AppSecMatchTargetSequenceState {
      */
     configId?: pulumi.Input<number>;
     /**
-     * The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
+     * The name of a JSON file containing the sequence of all match targets defined for the specified security configuration ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
      */
     matchTargetSequence?: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -129,11 +115,7 @@ export interface AppSecMatchTargetSequenceArgs {
      */
     configId: pulumi.Input<number>;
     /**
-     * The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
+     * The name of a JSON file containing the sequence of all match targets defined for the specified security configuration ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
      */
     matchTargetSequence?: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

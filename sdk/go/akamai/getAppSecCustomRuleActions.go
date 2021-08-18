@@ -7,7 +7,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecCustomRuleActions` data source to retrieve information about the actions defined for the custom rules, or a specific custom rule, associated with a specific security configuration version and security policy.
+// Use the `getAppSecCustomRuleActions` data source to retrieve information about the actions defined for the custom rules, or a specific custom rule, associated with a specific security configuration and security policy.
 //
 // ## Example Usage
 //
@@ -32,7 +32,6 @@ import (
 // 		}
 // 		customRuleActionsAppSecCustomRuleActions, err := akamai.GetAppSecCustomRuleActions(ctx, &akamai.GetAppSecCustomRuleActionsArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			Version:          configuration.LatestVersion,
 // 			SecurityPolicyId: "crAP_75829",
 // 		}, nil)
 // 		if err != nil {
@@ -60,8 +59,6 @@ type GetAppSecCustomRuleActionsArgs struct {
 	CustomRuleId *int `pulumi:"customRuleId"`
 	// The ID of the security policy to use
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecCustomRuleActions.
@@ -73,5 +70,4 @@ type GetAppSecCustomRuleActionsResult struct {
 	// A tabular display showing the ID, name, and action of all custom rules, or of the specific custom rule, associated with the specified security configuration, version and security policy.
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	Version          int    `pulumi:"version"`
 }

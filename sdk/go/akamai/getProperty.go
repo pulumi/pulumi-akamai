@@ -7,6 +7,48 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Use the `Property` data source to query and list the property ID and rule tree based on the property name.
+//
+// ## Example Usage
+//
+// This example returns the property ID and rule tree based on the property name and optional version argument:
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		opt0 := 1
+// 		example, err := akamai.LookupProperty(ctx, &akamai.LookupPropertyArgs{
+// 			Name:    "terraform-demo",
+// 			Version: &opt0,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		ctx.Export("myPropertyID", example)
+// 		return nil
+// 	})
+// }
+// ```
+// ## Argument reference
+//
+// This data source supports these arguments:
+//
+// * `name` - (Required) The property name.
+// * `version` - (Optional) The version of the property whose ID you want to list.
+//
+// ## Attributes reference
+//
+// This data source returns these attributes:
+//
+// * `property_ID` - A property's unique identifier, including the `prp_` prefix.
+// * `rules` - A JSON-encoded rule tree for a given property.
 func LookupProperty(ctx *pulumi.Context, args *LookupPropertyArgs, opts ...pulumi.InvokeOption) (*LookupPropertyResult, error) {
 	var rv LookupPropertyResult
 	err := ctx.Invoke("akamai:index/getProperty:getProperty", args, &rv, opts...)

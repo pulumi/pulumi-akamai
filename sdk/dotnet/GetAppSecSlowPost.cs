@@ -12,7 +12,7 @@ namespace Pulumi.Akamai
     public static class GetAppSecSlowPost
     {
         /// <summary>
-        /// Use the `akamai.AppSecSlowPost` data source to retrieve the slow post protection settings for a given security configuration version and policy.
+        /// Use the `akamai.AppSecSlowPost` data source to retrieve the slow post protection settings for a given security configuration and policy.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -32,17 +32,11 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = @var.Security_configuration,
         ///         }));
-        ///         var slowPost = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var slowPost = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSlowPost.InvokeAsync(new Akamai.GetAppSecSlowPostArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecSlowPost.InvokeAsync(new Akamai.GetAppSecSlowPostArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///                 SecurityPolicyId = @var.Security_policy_id,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///         })));
         ///         this.SlowPostOutputText = slowPost.Apply(slowPost =&gt; slowPost.OutputText);
         ///     }
         /// 
@@ -72,12 +66,6 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecSlowPostArgs()
         {
         }
@@ -92,12 +80,12 @@ namespace Pulumi.Akamai
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string Json;
         /// <summary>
         /// A tabular display including the following columns:
         /// </summary>
         public readonly string OutputText;
         public readonly string SecurityPolicyId;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecSlowPostResult(
@@ -105,17 +93,17 @@ namespace Pulumi.Akamai
 
             string id,
 
+            string json,
+
             string outputText,
 
-            string securityPolicyId,
-
-            int version)
+            string securityPolicyId)
         {
             ConfigId = configId;
             Id = id;
+            Json = json;
             OutputText = outputText;
             SecurityPolicyId = securityPolicyId;
-            Version = version;
         }
     }
 }

@@ -14,17 +14,14 @@ __all__ = ['AppSecByPassNetworkListArgs', 'AppSecByPassNetworkList']
 class AppSecByPassNetworkListArgs:
     def __init__(__self__, *,
                  bypass_network_lists: pulumi.Input[Sequence[pulumi.Input[str]]],
-                 config_id: pulumi.Input[int],
-                 version: pulumi.Input[int]):
+                 config_id: pulumi.Input[int]):
         """
         The set of arguments for constructing a AppSecByPassNetworkList resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] bypass_network_lists: A list containing the IDs of the network lists to use.
         :param pulumi.Input[int] config_id: The configuration ID to use.
-        :param pulumi.Input[int] version: The version number of the configuration to use.
         """
         pulumi.set(__self__, "bypass_network_lists", bypass_network_lists)
         pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="bypassNetworkLists")
@@ -50,37 +47,21 @@ class AppSecByPassNetworkListArgs:
     def config_id(self, value: pulumi.Input[int]):
         pulumi.set(self, "config_id", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Input[int]:
-        """
-        The version number of the configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: pulumi.Input[int]):
-        pulumi.set(self, "version", value)
-
 
 @pulumi.input_type
 class _AppSecByPassNetworkListState:
     def __init__(__self__, *,
                  bypass_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 config_id: Optional[pulumi.Input[int]] = None,
-                 version: Optional[pulumi.Input[int]] = None):
+                 config_id: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering AppSecByPassNetworkList resources.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] bypass_network_lists: A list containing the IDs of the network lists to use.
         :param pulumi.Input[int] config_id: The configuration ID to use.
-        :param pulumi.Input[int] version: The version number of the configuration to use.
         """
         if bypass_network_lists is not None:
             pulumi.set(__self__, "bypass_network_lists", bypass_network_lists)
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
-        if version is not None:
-            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="bypassNetworkLists")
@@ -106,18 +87,6 @@ class _AppSecByPassNetworkListState:
     def config_id(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "config_id", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The version number of the configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "version", value)
-
 
 class AppSecByPassNetworkList(pulumi.CustomResource):
     @overload
@@ -126,7 +95,6 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bypass_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         Use the `AppSecByPassNetworkList` resource to update which network lists to use in the
@@ -144,7 +112,6 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
         bypass_network_lists = akamai.AppSecByPassNetworkList("bypassNetworkLists",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             bypass_network_lists=[
                 "id1",
                 "id2",
@@ -155,7 +122,6 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] bypass_network_lists: A list containing the IDs of the network lists to use.
         :param pulumi.Input[int] config_id: The configuration ID to use.
-        :param pulumi.Input[int] version: The version number of the configuration to use.
         """
         ...
     @overload
@@ -179,7 +145,6 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
         bypass_network_lists = akamai.AppSecByPassNetworkList("bypassNetworkLists",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             bypass_network_lists=[
                 "id1",
                 "id2",
@@ -203,7 +168,6 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bypass_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
@@ -222,9 +186,6 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
             if config_id is None and not opts.urn:
                 raise TypeError("Missing required property 'config_id'")
             __props__.__dict__["config_id"] = config_id
-            if version is None and not opts.urn:
-                raise TypeError("Missing required property 'version'")
-            __props__.__dict__["version"] = version
         super(AppSecByPassNetworkList, __self__).__init__(
             'akamai:index/appSecByPassNetworkList:AppSecByPassNetworkList',
             resource_name,
@@ -236,8 +197,7 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             bypass_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            config_id: Optional[pulumi.Input[int]] = None,
-            version: Optional[pulumi.Input[int]] = None) -> 'AppSecByPassNetworkList':
+            config_id: Optional[pulumi.Input[int]] = None) -> 'AppSecByPassNetworkList':
         """
         Get an existing AppSecByPassNetworkList resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -247,7 +207,6 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] bypass_network_lists: A list containing the IDs of the network lists to use.
         :param pulumi.Input[int] config_id: The configuration ID to use.
-        :param pulumi.Input[int] version: The version number of the configuration to use.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -255,7 +214,6 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
 
         __props__.__dict__["bypass_network_lists"] = bypass_network_lists
         __props__.__dict__["config_id"] = config_id
-        __props__.__dict__["version"] = version
         return AppSecByPassNetworkList(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -273,12 +231,4 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
         The configuration ID to use.
         """
         return pulumi.get(self, "config_id")
-
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Output[int]:
-        """
-        The version number of the configuration to use.
-        """
-        return pulumi.get(self, "version")
 

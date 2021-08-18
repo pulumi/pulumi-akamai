@@ -19,7 +19,7 @@ class GetAppSecSelectedHostnamesResult:
     """
     A collection of values returned by getAppSecSelectedHostnames.
     """
-    def __init__(__self__, config_id=None, hostnames=None, hostnames_json=None, id=None, output_text=None, version=None):
+    def __init__(__self__, config_id=None, hostnames=None, hostnames_json=None, id=None, output_text=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -35,9 +35,6 @@ class GetAppSecSelectedHostnamesResult:
         if output_text and not isinstance(output_text, str):
             raise TypeError("Expected argument 'output_text' to be a str")
         pulumi.set(__self__, "output_text", output_text)
-        if version and not isinstance(version, int):
-            raise TypeError("Expected argument 'version' to be a int")
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -76,11 +73,6 @@ class GetAppSecSelectedHostnamesResult:
         """
         return pulumi.get(self, "output_text")
 
-    @property
-    @pulumi.getter
-    def version(self) -> int:
-        return pulumi.get(self, "version")
-
 
 class AwaitableGetAppSecSelectedHostnamesResult(GetAppSecSelectedHostnamesResult):
     # pylint: disable=using-constant-test
@@ -92,15 +84,13 @@ class AwaitableGetAppSecSelectedHostnamesResult(GetAppSecSelectedHostnamesResult
             hostnames=self.hostnames,
             hostnames_json=self.hostnames_json,
             id=self.id,
-            output_text=self.output_text,
-            version=self.version)
+            output_text=self.output_text)
 
 
 def get_app_sec_selected_hostnames(config_id: Optional[int] = None,
-                                   version: Optional[int] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecSelectedHostnamesResult:
     """
-    Use the `AppSecSelectedHostnames` data source to retrieve a list of the hostnames that are currently protected under a given security configuration version.
+    Use the `AppSecSelectedHostnames` data source to retrieve a list of the hostnames that are currently protected under a given security configuration.
 
     ## Example Usage
 
@@ -111,8 +101,7 @@ def get_app_sec_selected_hostnames(config_id: Optional[int] = None,
     import pulumi_akamai as akamai
 
     configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
-    selected_hostnames_app_sec_selected_hostnames = akamai.get_app_sec_selected_hostnames(config_id=configuration.config_id,
-        version=configuration.latest_version)
+    selected_hostnames_app_sec_selected_hostnames = akamai.get_app_sec_selected_hostnames(config_id=configuration.config_id)
     pulumi.export("selectedHostnames", selected_hostnames_app_sec_selected_hostnames.hostnames)
     pulumi.export("selectedHostnamesJson", selected_hostnames_app_sec_selected_hostnames.hostnames_json)
     pulumi.export("selectedHostnamesOutputText", selected_hostnames_app_sec_selected_hostnames.output_text)
@@ -120,11 +109,9 @@ def get_app_sec_selected_hostnames(config_id: Optional[int] = None,
 
 
     :param int config_id: The ID of the security configuration to use.
-    :param int version: The version number of the security configuration to use.
     """
     __args__ = dict()
     __args__['configId'] = config_id
-    __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -136,5 +123,4 @@ def get_app_sec_selected_hostnames(config_id: Optional[int] = None,
         hostnames=__ret__.hostnames,
         hostnames_json=__ret__.hostnames_json,
         id=__ret__.id,
-        output_text=__ret__.output_text,
-        version=__ret__.version)
+        output_text=__ret__.output_text)

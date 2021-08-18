@@ -12,7 +12,7 @@ namespace Pulumi.Akamai
     public static class GetAppSecSelectableHostnames
     {
         /// <summary>
-        /// Use the `akamai.getAppSecSelectableHostnames` data source to retrieve the list of hostnames that may be protected under a given security configuration version. You can specify the list to be retrieved either by supplying the name and version of a security configuration, or by supplying a group ID and contract ID.
+        /// Use the `akamai.getAppSecSelectableHostnames` data source to retrieve the list of hostnames that may be protected under a given security configuration. You can specify the list to be retrieved either by supplying the name of a security configuration, or by supplying a group ID and contract ID.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -32,16 +32,10 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = @var.Security_configuration,
         ///         }));
-        ///         var selectableHostnamesAppSecSelectableHostnames = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var selectableHostnamesAppSecSelectableHostnames = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSelectableHostnames.InvokeAsync(new Akamai.GetAppSecSelectableHostnamesArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecSelectableHostnames.InvokeAsync(new Akamai.GetAppSecSelectableHostnamesArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///         })));
         ///         this.SelectableHostnames = selectableHostnamesAppSecSelectableHostnames.Apply(selectableHostnamesAppSecSelectableHostnames =&gt; selectableHostnamesAppSecSelectableHostnames.Hostnames);
         ///         this.SelectableHostnamesJson = selectableHostnamesAppSecSelectableHostnames.Apply(selectableHostnamesAppSecSelectableHostnames =&gt; selectableHostnamesAppSecSelectableHostnames.HostnamesJson);
         ///         this.SelectableHostnamesOutputText = selectableHostnamesAppSecSelectableHostnames.Apply(selectableHostnamesAppSecSelectableHostnames =&gt; selectableHostnamesAppSecSelectableHostnames.OutputText);
@@ -103,12 +97,6 @@ namespace Pulumi.Akamai
         [Input("groupid")]
         public int? Groupid { get; set; }
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version")]
-        public int? Version { get; set; }
-
         public GetAppSecSelectableHostnamesArgs()
         {
         }
@@ -139,7 +127,6 @@ namespace Pulumi.Akamai
         /// A tabular display of the selectable hostnames showing the name and config_id of the security configuration under which the host is protected in production, or '-' if the host is not protected in production.
         /// </summary>
         public readonly string OutputText;
-        public readonly int? Version;
 
         [OutputConstructor]
         private GetAppSecSelectableHostnamesResult(
@@ -159,9 +146,7 @@ namespace Pulumi.Akamai
 
             string id,
 
-            string outputText,
-
-            int? version)
+            string outputText)
         {
             ActiveInProduction = activeInProduction;
             ActiveInStaging = activeInStaging;
@@ -172,7 +157,6 @@ namespace Pulumi.Akamai
             HostnamesJson = hostnamesJson;
             Id = id;
             OutputText = outputText;
-            Version = version;
         }
     }
 }

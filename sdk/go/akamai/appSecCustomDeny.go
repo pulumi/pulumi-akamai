@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The `resourceAkamaiAppsecCustomDeny` resource allows you to create a new custom deny action for a specific configuration version.
+// The `resourceAkamaiAppsecCustomDeny` resource allows you to create a new custom deny action for a specific configuration.
 type AppSecCustomDeny struct {
 	pulumi.CustomResourceState
 
@@ -21,8 +21,6 @@ type AppSecCustomDeny struct {
 	CustomDeny pulumi.StringOutput `pulumi:"customDeny"`
 	// custom_deny_id
 	CustomDenyId pulumi.StringOutput `pulumi:"customDenyId"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecCustomDeny registers a new resource with the given unique name, arguments, and options.
@@ -37,9 +35,6 @@ func NewAppSecCustomDeny(ctx *pulumi.Context,
 	}
 	if args.CustomDeny == nil {
 		return nil, errors.New("invalid value for required argument 'CustomDeny'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecCustomDeny
 	err := ctx.RegisterResource("akamai:index/appSecCustomDeny:AppSecCustomDeny", name, args, &resource, opts...)
@@ -69,8 +64,6 @@ type appSecCustomDenyState struct {
 	CustomDeny *string `pulumi:"customDeny"`
 	// custom_deny_id
 	CustomDenyId *string `pulumi:"customDenyId"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecCustomDenyState struct {
@@ -80,8 +73,6 @@ type AppSecCustomDenyState struct {
 	CustomDeny pulumi.StringPtrInput
 	// custom_deny_id
 	CustomDenyId pulumi.StringPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecCustomDenyState) ElementType() reflect.Type {
@@ -93,8 +84,6 @@ type appSecCustomDenyArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// The JSON-formatted definition of the custom deny action ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3)).
 	CustomDeny string `pulumi:"customDeny"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecCustomDeny resource.
@@ -103,8 +92,6 @@ type AppSecCustomDenyArgs struct {
 	ConfigId pulumi.IntInput
 	// The JSON-formatted definition of the custom deny action ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3)).
 	CustomDeny pulumi.StringInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecCustomDenyArgs) ElementType() reflect.Type {

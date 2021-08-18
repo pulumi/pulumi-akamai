@@ -73,6 +73,12 @@ namespace Pulumi.Akamai.Properties
         [Output("productionVersion")]
         public Output<int> ProductionVersion { get; private set; } = null!;
 
+        /// <summary>
+        /// Required property's version to be read
+        /// </summary>
+        [Output("readVersion")]
+        public Output<int> ReadVersion { get; private set; } = null!;
+
         [Output("ruleErrors")]
         public Output<ImmutableArray<Outputs.PropertyRuleError>> RuleErrors { get; private set; } = null!;
 
@@ -318,6 +324,12 @@ namespace Pulumi.Akamai.Properties
         /// </summary>
         [Input("productionVersion")]
         public Input<int>? ProductionVersion { get; set; }
+
+        /// <summary>
+        /// Required property's version to be read
+        /// </summary>
+        [Input("readVersion")]
+        public Input<int>? ReadVersion { get; set; }
 
         [Input("ruleErrors")]
         private InputList<Inputs.PropertyRuleErrorGetArgs>? _ruleErrors;

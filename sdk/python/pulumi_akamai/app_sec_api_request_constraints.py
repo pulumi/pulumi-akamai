@@ -16,20 +16,17 @@ class AppSecApiRequestConstraintsArgs:
                  action: pulumi.Input[str],
                  config_id: pulumi.Input[int],
                  security_policy_id: pulumi.Input[str],
-                 version: pulumi.Input[int],
                  api_endpoint_id: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a AppSecApiRequestConstraints resource.
         :param pulumi.Input[str] action: The action to assign to API request constraints: either `alert`, `deny`, or `none`.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
-        :param pulumi.Input[int] api_endpoint_id: The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
+        :param pulumi.Input[int] api_endpoint_id: The ID of the API endpoint to use.
         """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "security_policy_id", security_policy_id)
-        pulumi.set(__self__, "version", version)
         if api_endpoint_id is not None:
             pulumi.set(__self__, "api_endpoint_id", api_endpoint_id)
 
@@ -70,22 +67,10 @@ class AppSecApiRequestConstraintsArgs:
         pulumi.set(self, "security_policy_id", value)
 
     @property
-    @pulumi.getter
-    def version(self) -> pulumi.Input[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: pulumi.Input[int]):
-        pulumi.set(self, "version", value)
-
-    @property
     @pulumi.getter(name="apiEndpointId")
     def api_endpoint_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
+        The ID of the API endpoint to use.
         """
         return pulumi.get(self, "api_endpoint_id")
 
@@ -100,15 +85,13 @@ class _AppSecApiRequestConstraintsState:
                  action: Optional[pulumi.Input[str]] = None,
                  api_endpoint_id: Optional[pulumi.Input[int]] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
-                 security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None):
+                 security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecApiRequestConstraints resources.
         :param pulumi.Input[str] action: The action to assign to API request constraints: either `alert`, `deny`, or `none`.
-        :param pulumi.Input[int] api_endpoint_id: The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
+        :param pulumi.Input[int] api_endpoint_id: The ID of the API endpoint to use.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -118,8 +101,6 @@ class _AppSecApiRequestConstraintsState:
             pulumi.set(__self__, "config_id", config_id)
         if security_policy_id is not None:
             pulumi.set(__self__, "security_policy_id", security_policy_id)
-        if version is not None:
-            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter
@@ -137,7 +118,7 @@ class _AppSecApiRequestConstraintsState:
     @pulumi.getter(name="apiEndpointId")
     def api_endpoint_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
+        The ID of the API endpoint to use.
         """
         return pulumi.get(self, "api_endpoint_id")
 
@@ -169,18 +150,6 @@ class _AppSecApiRequestConstraintsState:
     def security_policy_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "security_policy_id", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "version", value)
-
 
 class AppSecApiRequestConstraints(pulumi.CustomResource):
     @overload
@@ -191,7 +160,6 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
                  api_endpoint_id: Optional[pulumi.Input[int]] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         The `resource_akamai_appsec_api_request_constraints` resource allows you to update what action to take when the API request constraint triggers. This operation modifies an individual API constraint action. To use this operation, use the `getAppSecApiEndpoints` data source to list one or all API endpoints, and use the ID of the selected endpoint. Use the `action` paameter to specify how the alert should be handled.
@@ -199,10 +167,9 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] action: The action to assign to API request constraints: either `alert`, `deny`, or `none`.
-        :param pulumi.Input[int] api_endpoint_id: The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
+        :param pulumi.Input[int] api_endpoint_id: The ID of the API endpoint to use.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         ...
     @overload
@@ -232,7 +199,6 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
                  api_endpoint_id: Optional[pulumi.Input[int]] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
@@ -255,9 +221,6 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
             if security_policy_id is None and not opts.urn:
                 raise TypeError("Missing required property 'security_policy_id'")
             __props__.__dict__["security_policy_id"] = security_policy_id
-            if version is None and not opts.urn:
-                raise TypeError("Missing required property 'version'")
-            __props__.__dict__["version"] = version
         super(AppSecApiRequestConstraints, __self__).__init__(
             'akamai:index/appSecApiRequestConstraints:AppSecApiRequestConstraints',
             resource_name,
@@ -271,8 +234,7 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
             action: Optional[pulumi.Input[str]] = None,
             api_endpoint_id: Optional[pulumi.Input[int]] = None,
             config_id: Optional[pulumi.Input[int]] = None,
-            security_policy_id: Optional[pulumi.Input[str]] = None,
-            version: Optional[pulumi.Input[int]] = None) -> 'AppSecApiRequestConstraints':
+            security_policy_id: Optional[pulumi.Input[str]] = None) -> 'AppSecApiRequestConstraints':
         """
         Get an existing AppSecApiRequestConstraints resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -281,10 +243,9 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] action: The action to assign to API request constraints: either `alert`, `deny`, or `none`.
-        :param pulumi.Input[int] api_endpoint_id: The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
+        :param pulumi.Input[int] api_endpoint_id: The ID of the API endpoint to use.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -294,7 +255,6 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
         __props__.__dict__["api_endpoint_id"] = api_endpoint_id
         __props__.__dict__["config_id"] = config_id
         __props__.__dict__["security_policy_id"] = security_policy_id
-        __props__.__dict__["version"] = version
         return AppSecApiRequestConstraints(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -309,7 +269,7 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
     @pulumi.getter(name="apiEndpointId")
     def api_endpoint_id(self) -> pulumi.Output[Optional[int]]:
         """
-        The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
+        The ID of the API endpoint to use.
         """
         return pulumi.get(self, "api_endpoint_id")
 
@@ -328,12 +288,4 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
         The ID of the security policy to use.
         """
         return pulumi.get(self, "security_policy_id")
-
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Output[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
 

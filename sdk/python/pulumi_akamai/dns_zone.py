@@ -16,11 +16,11 @@ __all__ = ['DnsZoneArgs', 'DnsZone']
 class DnsZoneArgs:
     def __init__(__self__, *,
                  contract: pulumi.Input[str],
-                 group: pulumi.Input[str],
                  type: pulumi.Input[str],
                  zone: pulumi.Input[str],
                  comment: Optional[pulumi.Input[str]] = None,
                  end_customer_id: Optional[pulumi.Input[str]] = None,
+                 group: Optional[pulumi.Input[str]] = None,
                  masters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  sign_and_serve: Optional[pulumi.Input[bool]] = None,
                  sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
@@ -30,13 +30,14 @@ class DnsZoneArgs:
         The set of arguments for constructing a DnsZone resource.
         """
         pulumi.set(__self__, "contract", contract)
-        pulumi.set(__self__, "group", group)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "zone", zone)
         if comment is not None:
             pulumi.set(__self__, "comment", comment)
         if end_customer_id is not None:
             pulumi.set(__self__, "end_customer_id", end_customer_id)
+        if group is not None:
+            pulumi.set(__self__, "group", group)
         if masters is not None:
             pulumi.set(__self__, "masters", masters)
         if sign_and_serve is not None:
@@ -56,15 +57,6 @@ class DnsZoneArgs:
     @contract.setter
     def contract(self, value: pulumi.Input[str]):
         pulumi.set(self, "contract", value)
-
-    @property
-    @pulumi.getter
-    def group(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "group")
-
-    @group.setter
-    def group(self, value: pulumi.Input[str]):
-        pulumi.set(self, "group", value)
 
     @property
     @pulumi.getter
@@ -101,6 +93,15 @@ class DnsZoneArgs:
     @end_customer_id.setter
     def end_customer_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "end_customer_id", value)
+
+    @property
+    @pulumi.getter
+    def group(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "group")
+
+    @group.setter
+    def group(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "group", value)
 
     @property
     @pulumi.getter
@@ -342,47 +343,7 @@ class DnsZone(pulumi.CustomResource):
                  zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Use the `DnsZone` resource to configure a DNS zone that integrates with your existing DNS infrastructure.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        demozone = akamai.DnsZone("demozone",
-            comment="some comment",
-            contract="ctr_1-AB123",
-            group="100",
-            masters=[
-                "1.2.3.4",
-                "1.2.3.5",
-            ],
-            sign_and_serve=False,
-            type="secondary",
-            zone="example.com")
-        ```
-        ## Argument reference
-
-        This resource supports these arguments:
-
-        * `comment` - (Required) A descriptive comment.
-        * `contract` - (Required) The contract ID.
-        * `group` - (Required) The currently selected group ID.
-        * `zone` - (Required) The domain zone, encapsulating any nested subdomains.
-        * `type` - (Required) Whether the zone is `primary`, `secondary`, or `alias`.
-        * `masters` - (Required for `secondary` zones) The names or IP addresses of the nameservers that the zone data should be retrieved from.
-        * `target` - (Required for `alias` zones) The name of the zone whose configuration this zone will copy.
-        * `sign_and_serve` - (Optional) Whether DNSSEC Sign and Serve is enabled.
-        * `sign_and_serve_algorithm` - (Optional) The algorithm used by Sign and Serve.
-        * `tsig_key` - (Optional) The TSIG Key used in secure zone transfers. If used, requires these arguments:
-            * `name` - The key name.
-            * `algorithm` - The hashing algorithm.
-            * `secret` - String known between transfer endpoints.
-        * `end_customer_id` - (Optional) A free form identifier for the zone.
-
+        Create a DnsZone resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
@@ -393,47 +354,7 @@ class DnsZone(pulumi.CustomResource):
                  args: DnsZoneArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `DnsZone` resource to configure a DNS zone that integrates with your existing DNS infrastructure.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        demozone = akamai.DnsZone("demozone",
-            comment="some comment",
-            contract="ctr_1-AB123",
-            group="100",
-            masters=[
-                "1.2.3.4",
-                "1.2.3.5",
-            ],
-            sign_and_serve=False,
-            type="secondary",
-            zone="example.com")
-        ```
-        ## Argument reference
-
-        This resource supports these arguments:
-
-        * `comment` - (Required) A descriptive comment.
-        * `contract` - (Required) The contract ID.
-        * `group` - (Required) The currently selected group ID.
-        * `zone` - (Required) The domain zone, encapsulating any nested subdomains.
-        * `type` - (Required) Whether the zone is `primary`, `secondary`, or `alias`.
-        * `masters` - (Required for `secondary` zones) The names or IP addresses of the nameservers that the zone data should be retrieved from.
-        * `target` - (Required for `alias` zones) The name of the zone whose configuration this zone will copy.
-        * `sign_and_serve` - (Optional) Whether DNSSEC Sign and Serve is enabled.
-        * `sign_and_serve_algorithm` - (Optional) The algorithm used by Sign and Serve.
-        * `tsig_key` - (Optional) The TSIG Key used in secure zone transfers. If used, requires these arguments:
-            * `name` - The key name.
-            * `algorithm` - The hashing algorithm.
-            * `secret` - String known between transfer endpoints.
-        * `end_customer_id` - (Optional) A free form identifier for the zone.
-
+        Create a DnsZone resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DnsZoneArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -477,8 +398,6 @@ class DnsZone(pulumi.CustomResource):
                 raise TypeError("Missing required property 'contract'")
             __props__.__dict__["contract"] = contract
             __props__.__dict__["end_customer_id"] = end_customer_id
-            if group is None and not opts.urn:
-                raise TypeError("Missing required property 'group'")
             __props__.__dict__["group"] = group
             __props__.__dict__["masters"] = masters
             __props__.__dict__["sign_and_serve"] = sign_and_serve
@@ -575,7 +494,7 @@ class DnsZone(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def group(self) -> pulumi.Output[str]:
+    def group(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "group")
 
     @property

@@ -19,7 +19,7 @@ class GetAppSecApiRequestConstraintsResult:
     """
     A collection of values returned by getAppSecApiRequestConstraints.
     """
-    def __init__(__self__, api_id=None, config_id=None, id=None, json=None, output_text=None, security_policy_id=None, version=None):
+    def __init__(__self__, api_id=None, config_id=None, id=None, json=None, output_text=None, security_policy_id=None):
         if api_id and not isinstance(api_id, int):
             raise TypeError("Expected argument 'api_id' to be a int")
         pulumi.set(__self__, "api_id", api_id)
@@ -38,9 +38,6 @@ class GetAppSecApiRequestConstraintsResult:
         if security_policy_id and not isinstance(security_policy_id, str):
             raise TypeError("Expected argument 'security_policy_id' to be a str")
         pulumi.set(__self__, "security_policy_id", security_policy_id)
-        if version and not isinstance(version, int):
-            raise TypeError("Expected argument 'version' to be a int")
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="apiId")
@@ -81,11 +78,6 @@ class GetAppSecApiRequestConstraintsResult:
     def security_policy_id(self) -> str:
         return pulumi.get(self, "security_policy_id")
 
-    @property
-    @pulumi.getter
-    def version(self) -> int:
-        return pulumi.get(self, "version")
-
 
 class AwaitableGetAppSecApiRequestConstraintsResult(GetAppSecApiRequestConstraintsResult):
     # pylint: disable=using-constant-test
@@ -98,14 +90,12 @@ class AwaitableGetAppSecApiRequestConstraintsResult(GetAppSecApiRequestConstrain
             id=self.id,
             json=self.json,
             output_text=self.output_text,
-            security_policy_id=self.security_policy_id,
-            version=self.version)
+            security_policy_id=self.security_policy_id)
 
 
 def get_app_sec_api_request_constraints(api_id: Optional[int] = None,
                                         config_id: Optional[int] = None,
                                         security_policy_id: Optional[str] = None,
-                                        version: Optional[int] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecApiRequestConstraintsResult:
     """
     Use the `AppSecApiRequestConstraints` data source to retrieve a list of APIs with their constraints and associated actions, or the constraints and actions for a particular API. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapirequestconstraints).
@@ -120,12 +110,10 @@ def get_app_sec_api_request_constraints(api_id: Optional[int] = None,
 
     configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
     apis_request_constraints = akamai.get_app_sec_api_request_constraints(config_id=configuration.config_id,
-        version=configuration.latest_version,
         security_policy_id=var["security_policy_id"])
     pulumi.export("apisConstraintsText", apis_request_constraints.output_text)
     pulumi.export("apisConstraintsJson", apis_request_constraints.json)
     api_request_constraints = akamai.get_app_sec_api_request_constraints(config_id=configuration.config_id,
-        version=configuration.latest_version,
         security_policy_id=var["security_policy_id"],
         api_id=var["api_id"])
     pulumi.export("apiConstraintsText", api_request_constraints.output_text)
@@ -136,13 +124,11 @@ def get_app_sec_api_request_constraints(api_id: Optional[int] = None,
     :param int api_id: The ID of a specific API for which to retrieve constraint information.
     :param int config_id: The configuration ID to use.
     :param str security_policy_id: The ID of the security policy to use.
-    :param int version: The version number of the configuration to use.
     """
     __args__ = dict()
     __args__['apiId'] = api_id
     __args__['configId'] = config_id
     __args__['securityPolicyId'] = security_policy_id
-    __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -155,5 +141,4 @@ def get_app_sec_api_request_constraints(api_id: Optional[int] = None,
         id=__ret__.id,
         json=__ret__.json,
         output_text=__ret__.output_text,
-        security_policy_id=__ret__.security_policy_id,
-        version=__ret__.version)
+        security_policy_id=__ret__.security_policy_id)

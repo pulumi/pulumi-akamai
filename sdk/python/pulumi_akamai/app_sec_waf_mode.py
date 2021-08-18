@@ -15,19 +15,16 @@ class AppSecWafModeArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[int],
                  mode: pulumi.Input[str],
-                 security_policy_id: pulumi.Input[str],
-                 version: pulumi.Input[int]):
+                 security_policy_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecWafMode resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] mode: "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "mode", mode)
         pulumi.set(__self__, "security_policy_id", security_policy_id)
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -65,18 +62,6 @@ class AppSecWafModeArgs:
     def security_policy_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "security_policy_id", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Input[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: pulumi.Input[int]):
-        pulumi.set(self, "version", value)
-
 
 @pulumi.input_type
 class _AppSecWafModeState:
@@ -88,8 +73,7 @@ class _AppSecWafModeState:
                  eval_status: Optional[pulumi.Input[str]] = None,
                  mode: Optional[pulumi.Input[str]] = None,
                  output_text: Optional[pulumi.Input[str]] = None,
-                 security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None):
+                 security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecWafMode resources.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
@@ -100,7 +84,6 @@ class _AppSecWafModeState:
         :param pulumi.Input[str] mode: "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
         :param pulumi.Input[str] output_text: A tabular display showing the current rule set, WAF mode and evaluation status (`enabled` if a rule set is currently being evaluated, `disabled` otherwise).
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -118,8 +101,6 @@ class _AppSecWafModeState:
             pulumi.set(__self__, "output_text", output_text)
         if security_policy_id is not None:
             pulumi.set(__self__, "security_policy_id", security_policy_id)
-        if version is not None:
-            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -217,18 +198,6 @@ class _AppSecWafModeState:
     def security_policy_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "security_policy_id", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "version", value)
-
 
 class AppSecWafMode(pulumi.CustomResource):
     @overload
@@ -238,7 +207,6 @@ class AppSecWafMode(pulumi.CustomResource):
                  config_id: Optional[pulumi.Input[int]] = None,
                  mode: Optional[pulumi.Input[str]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         Use the `AppSecWafMode` resource to specify how your rule sets are updated. Use KRS mode to update the rule sets manually, or AAG to have them update automatically.
@@ -254,7 +222,6 @@ class AppSecWafMode(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
         waf_mode = akamai.AppSecWafMode("wafMode",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             security_policy_id=var["policy_id"],
             mode=var["mode"])
         pulumi.export("wafModeMode", waf_mode.mode)
@@ -269,7 +236,6 @@ class AppSecWafMode(pulumi.CustomResource):
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] mode: "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         ...
     @overload
@@ -291,7 +257,6 @@ class AppSecWafMode(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
         waf_mode = akamai.AppSecWafMode("wafMode",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             security_policy_id=var["policy_id"],
             mode=var["mode"])
         pulumi.export("wafModeMode", waf_mode.mode)
@@ -319,7 +284,6 @@ class AppSecWafMode(pulumi.CustomResource):
                  config_id: Optional[pulumi.Input[int]] = None,
                  mode: Optional[pulumi.Input[str]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
@@ -341,9 +305,6 @@ class AppSecWafMode(pulumi.CustomResource):
             if security_policy_id is None and not opts.urn:
                 raise TypeError("Missing required property 'security_policy_id'")
             __props__.__dict__["security_policy_id"] = security_policy_id
-            if version is None and not opts.urn:
-                raise TypeError("Missing required property 'version'")
-            __props__.__dict__["version"] = version
             __props__.__dict__["current_ruleset"] = None
             __props__.__dict__["eval_expiration_date"] = None
             __props__.__dict__["eval_ruleset"] = None
@@ -366,8 +327,7 @@ class AppSecWafMode(pulumi.CustomResource):
             eval_status: Optional[pulumi.Input[str]] = None,
             mode: Optional[pulumi.Input[str]] = None,
             output_text: Optional[pulumi.Input[str]] = None,
-            security_policy_id: Optional[pulumi.Input[str]] = None,
-            version: Optional[pulumi.Input[int]] = None) -> 'AppSecWafMode':
+            security_policy_id: Optional[pulumi.Input[str]] = None) -> 'AppSecWafMode':
         """
         Get an existing AppSecWafMode resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -383,7 +343,6 @@ class AppSecWafMode(pulumi.CustomResource):
         :param pulumi.Input[str] mode: "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
         :param pulumi.Input[str] output_text: A tabular display showing the current rule set, WAF mode and evaluation status (`enabled` if a rule set is currently being evaluated, `disabled` otherwise).
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -397,7 +356,6 @@ class AppSecWafMode(pulumi.CustomResource):
         __props__.__dict__["mode"] = mode
         __props__.__dict__["output_text"] = output_text
         __props__.__dict__["security_policy_id"] = security_policy_id
-        __props__.__dict__["version"] = version
         return AppSecWafMode(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -463,12 +421,4 @@ class AppSecWafMode(pulumi.CustomResource):
         The ID of the security policy to use.
         """
         return pulumi.get(self, "security_policy_id")
-
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Output[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
 

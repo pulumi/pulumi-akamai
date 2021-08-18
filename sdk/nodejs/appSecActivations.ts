@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  * });
  * const activation = new akamai.AppSecActivations("activation", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     network: "STAGING",
  *     notes: "TEST Notes",
  *     notificationEmails: ["user@example.com"],
@@ -79,10 +78,6 @@ export class AppSecActivations extends pulumi.CustomResource {
      * The status of the operation. The following values are may be returned:
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecActivations resource with the given unique name, arguments, and options.
@@ -103,7 +98,6 @@ export class AppSecActivations extends pulumi.CustomResource {
             inputs["notes"] = state ? state.notes : undefined;
             inputs["notificationEmails"] = state ? state.notificationEmails : undefined;
             inputs["status"] = state ? state.status : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecActivationsArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -112,15 +106,11 @@ export class AppSecActivations extends pulumi.CustomResource {
             if ((!args || args.notificationEmails === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'notificationEmails'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["activate"] = args ? args.activate : undefined;
             inputs["configId"] = args ? args.configId : undefined;
             inputs["network"] = args ? args.network : undefined;
             inputs["notes"] = args ? args.notes : undefined;
             inputs["notificationEmails"] = args ? args.notificationEmails : undefined;
-            inputs["version"] = args ? args.version : undefined;
             inputs["status"] = undefined /*out*/;
         }
         if (!opts.version) {
@@ -158,10 +148,6 @@ export interface AppSecActivationsState {
      * The status of the operation. The following values are may be returned:
      */
     status?: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -188,8 +174,4 @@ export interface AppSecActivationsArgs {
      * A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
      */
     notificationEmails: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

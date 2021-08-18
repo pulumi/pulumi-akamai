@@ -6,7 +6,7 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecSecurityPolicy` data source to retrieve information about the security policies associated with a specific security configuration version, or about a specific security policy.
+ * Use the `akamai.AppSecSecurityPolicy` data source to retrieve information about the security policies associated with a specific security configuration, or about a specific security policy.
  *
  * ## Example Usage
  *
@@ -19,18 +19,16 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: "Akamai Tools",
  * });
- * const securityPolicies = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecSecurityPolicy({
+ * const securityPolicies = configuration.then(configuration => akamai.getAppSecSecurityPolicy({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  * }));
- * export const securityPoliciesList = securityPolicies.then(securityPolicies => securityPolicies.policyLists);
+ * export const securityPoliciesList = securityPolicies.then(securityPolicies => securityPolicies.securityPolicyIdLists);
  * export const securityPoliciesText = securityPolicies.then(securityPolicies => securityPolicies.outputText);
- * const specificSecurityPolicy = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecSecurityPolicy({
+ * const specificSecurityPolicy = configuration.then(configuration => akamai.getAppSecSecurityPolicy({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
- *     name: "APIs",
+ *     securityPolicyName: "APIs",
  * }));
- * export const specificSecurityPolicyId = specificSecurityPolicy.then(specificSecurityPolicy => specificSecurityPolicy.policyId);
+ * export const specificSecurityPolicyId = specificSecurityPolicy.then(specificSecurityPolicy => specificSecurityPolicy.securityPolicyId);
  * ```
  */
 export function getAppSecSecurityPolicy(args: GetAppSecSecurityPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecSecurityPolicyResult> {
@@ -43,8 +41,7 @@ export function getAppSecSecurityPolicy(args: GetAppSecSecurityPolicyArgs, opts?
     }
     return pulumi.runtime.invoke("akamai:index/getAppSecSecurityPolicy:getAppSecSecurityPolicy", {
         "configId": args.configId,
-        "name": args.name,
-        "version": args.version,
+        "securityPolicyName": args.securityPolicyName,
     }, opts);
 }
 
@@ -59,11 +56,7 @@ export interface GetAppSecSecurityPolicyArgs {
     /**
      * The name of the security policy to use. If not supplied, information about all security policies is returned.
      */
-    name?: string;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: number;
+    securityPolicyName?: string;
 }
 
 /**
@@ -75,18 +68,17 @@ export interface GetAppSecSecurityPolicyResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    readonly name?: string;
     /**
      * A tabular display showing the ID and name of all security policies.
      */
     readonly outputText: string;
     /**
-     * The ID of the security policy. Included only if `name` was specified.
+     * The ID of the security policy. Included only if `securityPolicyName` was specified.
      */
-    readonly policyId: string;
+    readonly securityPolicyId: string;
     /**
      * A list of the IDs of all security policies.
      */
-    readonly policyLists: string[];
-    readonly version: number;
+    readonly securityPolicyIdLists: string[];
+    readonly securityPolicyName?: string;
 }

@@ -32,7 +32,6 @@ import (
 // 		}
 // 		upgradeDetails, err := akamai.GetAppSecRuleUpgradeDetails(ctx, &akamai.GetAppSecRuleUpgradeDetailsArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			Version:          configuration.LatestVersion,
 // 			SecurityPolicyId: _var.Security_policy_id,
 // 		}, nil)
 // 		if err != nil {
@@ -59,8 +58,6 @@ type GetAppSecRuleUpgradeDetailsArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// The ID of the security policy to use.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecRuleUpgradeDetails.
@@ -73,5 +70,4 @@ type GetAppSecRuleUpgradeDetailsResult struct {
 	// A tabular display showing changes (additions and deletions) to the rules for the specified security policy.
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	Version          int    `pulumi:"version"`
 }

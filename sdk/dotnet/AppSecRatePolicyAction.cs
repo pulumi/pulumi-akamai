@@ -32,13 +32,11 @@ namespace Pulumi.Akamai
     ///         var appsecRatePolicy = new Akamai.AppSecRatePolicy("appsecRatePolicy", new Akamai.AppSecRatePolicyArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
     ///             RatePolicy = File.ReadAllText($"{path.Module}/rate_policy.json"),
     ///         });
     ///         var appsecRatePolicyAction = new Akamai.AppSecRatePolicyAction("appsecRatePolicyAction", new Akamai.AppSecRatePolicyActionArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
     ///             SecurityPolicyId = @var.Security_policy_id,
     ///             RatePolicyId = appsecRatePolicy.RatePolicyId,
     ///             Ipv4Action = "deny",
@@ -78,12 +76,6 @@ namespace Pulumi.Akamai
 
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -158,12 +150,6 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
-
         public AppSecRatePolicyActionArgs()
         {
         }
@@ -197,12 +183,6 @@ namespace Pulumi.Akamai
 
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecRatePolicyActionState()
         {

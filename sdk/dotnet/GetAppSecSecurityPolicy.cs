@@ -12,7 +12,7 @@ namespace Pulumi.Akamai
     public static class GetAppSecSecurityPolicy
     {
         /// <summary>
-        /// Use the `akamai.AppSecSecurityPolicy` data source to retrieve information about the security policies associated with a specific security configuration version, or about a specific security policy.
+        /// Use the `akamai.AppSecSecurityPolicy` data source to retrieve information about the security policies associated with a specific security configuration, or about a specific security policy.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -32,30 +32,18 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = "Akamai Tools",
         ///         }));
-        ///         var securityPolicies = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var securityPolicies = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSecurityPolicy.InvokeAsync(new Akamai.GetAppSecSecurityPolicyArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecSecurityPolicy.InvokeAsync(new Akamai.GetAppSecSecurityPolicyArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///             }));
-        ///         });
-        ///         this.SecurityPoliciesList = securityPolicies.Apply(securityPolicies =&gt; securityPolicies.PolicyLists);
+        ///             ConfigId = configuration.ConfigId,
+        ///         })));
+        ///         this.SecurityPoliciesList = securityPolicies.Apply(securityPolicies =&gt; securityPolicies.SecurityPolicyIdLists);
         ///         this.SecurityPoliciesText = securityPolicies.Apply(securityPolicies =&gt; securityPolicies.OutputText);
-        ///         var specificSecurityPolicy = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var specificSecurityPolicy = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSecurityPolicy.InvokeAsync(new Akamai.GetAppSecSecurityPolicyArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecSecurityPolicy.InvokeAsync(new Akamai.GetAppSecSecurityPolicyArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///                 Name = "APIs",
-        ///             }));
-        ///         });
-        ///         this.SpecificSecurityPolicyId = specificSecurityPolicy.Apply(specificSecurityPolicy =&gt; specificSecurityPolicy.PolicyId);
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyName = "APIs",
+        ///         })));
+        ///         this.SpecificSecurityPolicyId = specificSecurityPolicy.Apply(specificSecurityPolicy =&gt; specificSecurityPolicy.SecurityPolicyId);
         ///     }
         /// 
         ///     [Output("securityPoliciesList")]
@@ -85,14 +73,8 @@ namespace Pulumi.Akamai
         /// <summary>
         /// The name of the security policy to use. If not supplied, information about all security policies is returned.
         /// </summary>
-        [Input("name")]
-        public string? Name { get; set; }
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
+        [Input("securityPolicyName")]
+        public string? SecurityPolicyName { get; set; }
 
         public GetAppSecSecurityPolicyArgs()
         {
@@ -108,20 +90,19 @@ namespace Pulumi.Akamai
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        public readonly string? Name;
         /// <summary>
         /// A tabular display showing the ID and name of all security policies.
         /// </summary>
         public readonly string OutputText;
         /// <summary>
-        /// The ID of the security policy. Included only if `name` was specified.
+        /// The ID of the security policy. Included only if `security_policy_name` was specified.
         /// </summary>
-        public readonly string PolicyId;
+        public readonly string SecurityPolicyId;
         /// <summary>
         /// A list of the IDs of all security policies.
         /// </summary>
-        public readonly ImmutableArray<string> PolicyLists;
-        public readonly int Version;
+        public readonly ImmutableArray<string> SecurityPolicyIdLists;
+        public readonly string? SecurityPolicyName;
 
         [OutputConstructor]
         private GetAppSecSecurityPolicyResult(
@@ -129,23 +110,20 @@ namespace Pulumi.Akamai
 
             string id,
 
-            string? name,
-
             string outputText,
 
-            string policyId,
+            string securityPolicyId,
 
-            ImmutableArray<string> policyLists,
+            ImmutableArray<string> securityPolicyIdLists,
 
-            int version)
+            string? securityPolicyName)
         {
             ConfigId = configId;
             Id = id;
-            Name = name;
             OutputText = outputText;
-            PolicyId = policyId;
-            PolicyLists = policyLists;
-            Version = version;
+            SecurityPolicyId = securityPolicyId;
+            SecurityPolicyIdLists = securityPolicyIdLists;
+            SecurityPolicyName = securityPolicyName;
         }
     }
 }

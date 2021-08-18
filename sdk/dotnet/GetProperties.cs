@@ -12,8 +12,8 @@ namespace Pulumi.Akamai
     public static class GetProperties
     {
         /// <summary>
-        /// Use the `akamai.getProperties` data source to query and retrieve the list of properties for a group and contract 
-        /// based on the [EdgeGrid API client token](https://developer.akamai.com/getting-started/edgegrid) you're using. 
+        /// Use the `akamai.getProperties` data source to query and retrieve the list of properties for a group and contract
+        /// based on the [EdgeGrid API client token](https://developer.akamai.com/getting-started/edgegrid) you're using.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -42,7 +42,7 @@ namespace Pulumi.Akamai
         /// 
         /// This data source supports these arguments:
         /// 
-        /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix. 
+        /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
         /// * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
         /// 
         /// ## Attributes reference

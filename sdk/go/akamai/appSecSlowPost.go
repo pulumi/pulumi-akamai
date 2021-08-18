@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecSlowPost` data source to update the slow post protection settings for a given security configuration version and policy.
+// Use the `AppSecSlowPost` data source to update the slow post protection settings for a given security configuration and policy.
 //
 // ## Example Usage
 //
@@ -36,7 +36,6 @@ import (
 // 		}
 // 		_, err = akamai.NewAppSecSlowPost(ctx, "slowPost", &akamai.AppSecSlowPostArgs{
 // 			ConfigId:                 pulumi.Int(configuration.ConfigId),
-// 			Version:                  pulumi.Int(configuration.LatestVersion),
 // 			SecurityPolicyId:         pulumi.Any(_var.Security_policy_id),
 // 			SlowRateAction:           pulumi.String("alert"),
 // 			SlowRateThresholdRate:    pulumi.Int(10),
@@ -62,11 +61,9 @@ type AppSecSlowPost struct {
 	// The action that the rule should trigger (either `alert` or `abort`).
 	SlowRateAction pulumi.StringOutput `pulumi:"slowRateAction"`
 	// The slow rate period value: the amount of time in seconds that the server should accept a request to determine whether a POST request is too slow.
-	SlowRateThresholdPeriod pulumi.IntOutput `pulumi:"slowRateThresholdPeriod"`
+	SlowRateThresholdPeriod pulumi.IntPtrOutput `pulumi:"slowRateThresholdPeriod"`
 	// The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
-	SlowRateThresholdRate pulumi.IntOutput `pulumi:"slowRateThresholdRate"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
+	SlowRateThresholdRate pulumi.IntPtrOutput `pulumi:"slowRateThresholdRate"`
 }
 
 // NewAppSecSlowPost registers a new resource with the given unique name, arguments, and options.
@@ -84,15 +81,6 @@ func NewAppSecSlowPost(ctx *pulumi.Context,
 	}
 	if args.SlowRateAction == nil {
 		return nil, errors.New("invalid value for required argument 'SlowRateAction'")
-	}
-	if args.SlowRateThresholdPeriod == nil {
-		return nil, errors.New("invalid value for required argument 'SlowRateThresholdPeriod'")
-	}
-	if args.SlowRateThresholdRate == nil {
-		return nil, errors.New("invalid value for required argument 'SlowRateThresholdRate'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecSlowPost
 	err := ctx.RegisterResource("akamai:index/appSecSlowPost:AppSecSlowPost", name, args, &resource, opts...)
@@ -128,8 +116,6 @@ type appSecSlowPostState struct {
 	SlowRateThresholdPeriod *int `pulumi:"slowRateThresholdPeriod"`
 	// The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
 	SlowRateThresholdRate *int `pulumi:"slowRateThresholdRate"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecSlowPostState struct {
@@ -145,8 +131,6 @@ type AppSecSlowPostState struct {
 	SlowRateThresholdPeriod pulumi.IntPtrInput
 	// The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
 	SlowRateThresholdRate pulumi.IntPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecSlowPostState) ElementType() reflect.Type {
@@ -163,11 +147,9 @@ type appSecSlowPostArgs struct {
 	// The action that the rule should trigger (either `alert` or `abort`).
 	SlowRateAction string `pulumi:"slowRateAction"`
 	// The slow rate period value: the amount of time in seconds that the server should accept a request to determine whether a POST request is too slow.
-	SlowRateThresholdPeriod int `pulumi:"slowRateThresholdPeriod"`
+	SlowRateThresholdPeriod *int `pulumi:"slowRateThresholdPeriod"`
 	// The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
-	SlowRateThresholdRate int `pulumi:"slowRateThresholdRate"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
+	SlowRateThresholdRate *int `pulumi:"slowRateThresholdRate"`
 }
 
 // The set of arguments for constructing a AppSecSlowPost resource.
@@ -181,11 +163,9 @@ type AppSecSlowPostArgs struct {
 	// The action that the rule should trigger (either `alert` or `abort`).
 	SlowRateAction pulumi.StringInput
 	// The slow rate period value: the amount of time in seconds that the server should accept a request to determine whether a POST request is too slow.
-	SlowRateThresholdPeriod pulumi.IntInput
+	SlowRateThresholdPeriod pulumi.IntPtrInput
 	// The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
-	SlowRateThresholdRate pulumi.IntInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
+	SlowRateThresholdRate pulumi.IntPtrInput
 }
 
 func (AppSecSlowPostArgs) ElementType() reflect.Type {

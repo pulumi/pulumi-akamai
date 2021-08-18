@@ -12,7 +12,7 @@ namespace Pulumi.Akamai
     public static class GetAppSecEvalHostnames
     {
         /// <summary>
-        /// Use the `akamai.AppSecEvalHostnames` data source to retrieve the evaluation hostnames for a configuration version. Evaluation mode for hostnames is only available for Web Application Protector. Run hostnames in evaluation mode to see how your configuration settings protect traffic for that hostname before adding a hostname directly to a live configuration. An evaluation period lasts four weeks unless you stop the evaluation. Once you begin, the hostnames you evaluate start responding to traffic as if they are your current hostnames. However, instead of taking an action the evaluation hostnames log which action they would have taken if they were your actively-protected hostnames and not a test.
+        /// Use the `akamai.AppSecEvalHostnames` data source to retrieve the evaluation hostnames for a configuration. Evaluation mode for hostnames is only available for Web Application Protector. Run hostnames in evaluation mode to see how your configuration settings protect traffic for that hostname before adding a hostname directly to a live configuration. An evaluation period lasts four weeks unless you stop the evaluation. Once you begin, the hostnames you evaluate start responding to traffic as if they are your current hostnames. However, instead of taking an action the evaluation hostnames log which action they would have taken if they were your actively-protected hostnames and not a test.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -32,16 +32,10 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = @var.Security_configuration,
         ///         }));
-        ///         var evalHostnamesAppSecEvalHostnames = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var evalHostnamesAppSecEvalHostnames = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecEvalHostnames.InvokeAsync(new Akamai.GetAppSecEvalHostnamesArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecEvalHostnames.InvokeAsync(new Akamai.GetAppSecEvalHostnamesArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///         })));
         ///         this.EvalHostnames = evalHostnamesAppSecEvalHostnames.Apply(evalHostnamesAppSecEvalHostnames =&gt; evalHostnamesAppSecEvalHostnames.Hostnames);
         ///         this.EvalHostnamesOutput = evalHostnamesAppSecEvalHostnames.Apply(evalHostnamesAppSecEvalHostnames =&gt; evalHostnamesAppSecEvalHostnames.OutputText);
         ///         this.EvalHostnamesJson = evalHostnamesAppSecEvalHostnames.Apply(evalHostnamesAppSecEvalHostnames =&gt; evalHostnamesAppSecEvalHostnames.Json);
@@ -71,12 +65,6 @@ namespace Pulumi.Akamai
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecEvalHostnamesArgs()
         {
         }
@@ -103,7 +91,6 @@ namespace Pulumi.Akamai
         /// A tabular display showing the evaluation hostnames.
         /// </summary>
         public readonly string OutputText;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecEvalHostnamesResult(
@@ -115,16 +102,13 @@ namespace Pulumi.Akamai
 
             string json,
 
-            string outputText,
-
-            int version)
+            string outputText)
         {
             ConfigId = configId;
             Hostnames = hostnames;
             Id = id;
             Json = json;
             OutputText = outputText;
-            Version = version;
         }
     }
 }

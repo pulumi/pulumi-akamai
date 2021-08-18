@@ -21,13 +21,11 @@ import * as utilities from "./utilities";
  * });
  * const logging = new akamai.AppSecAdvancedSettingsLogging("logging", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     logging: fs.readFileSync(`${path.module}/logging.json`),
  * });
  * // USE CASE: user wants to override the logging settings for a security policy
  * const policyLogging = new akamai.AppSecAdvancedSettingsLogging("policyLogging", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     securityPolicyId: _var.security_policy_id,
  *     logging: fs.readFileSync(`${path.module}/logging.json`),
  * });
@@ -73,10 +71,6 @@ export class AppSecAdvancedSettingsLogging extends pulumi.CustomResource {
      * The ID of a specific security policy to which the logging settings should be applied. If not supplied, the indicated settings will be applied to all policies within the configuration.
      */
     public readonly securityPolicyId!: pulumi.Output<string | undefined>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecAdvancedSettingsLogging resource with the given unique name, arguments, and options.
@@ -94,7 +88,6 @@ export class AppSecAdvancedSettingsLogging extends pulumi.CustomResource {
             inputs["configId"] = state ? state.configId : undefined;
             inputs["logging"] = state ? state.logging : undefined;
             inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecAdvancedSettingsLoggingArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -103,13 +96,9 @@ export class AppSecAdvancedSettingsLogging extends pulumi.CustomResource {
             if ((!args || args.logging === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'logging'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["logging"] = args ? args.logging : undefined;
             inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            inputs["version"] = args ? args.version : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -134,10 +123,6 @@ export interface AppSecAdvancedSettingsLoggingState {
      * The ID of a specific security policy to which the logging settings should be applied. If not supplied, the indicated settings will be applied to all policies within the configuration.
      */
     securityPolicyId?: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -156,8 +141,4 @@ export interface AppSecAdvancedSettingsLoggingArgs {
      * The ID of a specific security policy to which the logging settings should be applied. If not supplied, the indicated settings will be applied to all policies within the configuration.
      */
     securityPolicyId?: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

@@ -11,59 +11,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `DnsZone` resource to configure a DNS zone that integrates with your existing DNS infrastructure.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewDnsZone(ctx, "demozone", &akamai.DnsZoneArgs{
-// 			Comment:  pulumi.String("some comment"),
-// 			Contract: pulumi.String("ctr_1-AB123"),
-// 			Group:    pulumi.String("100"),
-// 			Masters: pulumi.StringArray{
-// 				pulumi.String("1.2.3.4"),
-// 				pulumi.String("1.2.3.5"),
-// 			},
-// 			SignAndServe: pulumi.Bool(false),
-// 			Type:         pulumi.String("secondary"),
-// 			Zone:         pulumi.String("example.com"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
-// ## Argument reference
-//
-// This resource supports these arguments:
-//
-// * `comment` - (Required) A descriptive comment.
-// * `contract` - (Required) The contract ID.
-// * `group` - (Required) The currently selected group ID.
-// * `zone` - (Required) The domain zone, encapsulating any nested subdomains.
-// * `type` - (Required) Whether the zone is `primary`, `secondary`, or `alias`.
-// * `masters` - (Required for `secondary` zones) The names or IP addresses of the nameservers that the zone data should be retrieved from.
-// * `target` - (Required for `alias` zones) The name of the zone whose configuration this zone will copy.
-// * `signAndServe` - (Optional) Whether DNSSEC Sign and Serve is enabled.
-// * `signAndServeAlgorithm` - (Optional) The algorithm used by Sign and Serve.
-// * `tsigKey` - (Optional) The TSIG Key used in secure zone transfers. If used, requires these arguments:
-//     * `name` - The key name.
-//     * `algorithm` - The hashing algorithm.
-//     * `secret` - String known between transfer endpoints.
-// * `endCustomerId` - (Optional) A free form identifier for the zone.
 type DnsZone struct {
 	pulumi.CustomResourceState
 
@@ -72,7 +19,7 @@ type DnsZone struct {
 	Comment               pulumi.StringPtrOutput   `pulumi:"comment"`
 	Contract              pulumi.StringOutput      `pulumi:"contract"`
 	EndCustomerId         pulumi.StringPtrOutput   `pulumi:"endCustomerId"`
-	Group                 pulumi.StringOutput      `pulumi:"group"`
+	Group                 pulumi.StringPtrOutput   `pulumi:"group"`
 	Masters               pulumi.StringArrayOutput `pulumi:"masters"`
 	SignAndServe          pulumi.BoolPtrOutput     `pulumi:"signAndServe"`
 	SignAndServeAlgorithm pulumi.StringPtrOutput   `pulumi:"signAndServeAlgorithm"`
@@ -92,9 +39,6 @@ func NewDnsZone(ctx *pulumi.Context,
 
 	if args.Contract == nil {
 		return nil, errors.New("invalid value for required argument 'Contract'")
-	}
-	if args.Group == nil {
-		return nil, errors.New("invalid value for required argument 'Group'")
 	}
 	if args.Type == nil {
 		return nil, errors.New("invalid value for required argument 'Type'")
@@ -171,7 +115,7 @@ type dnsZoneArgs struct {
 	Comment               *string         `pulumi:"comment"`
 	Contract              string          `pulumi:"contract"`
 	EndCustomerId         *string         `pulumi:"endCustomerId"`
-	Group                 string          `pulumi:"group"`
+	Group                 *string         `pulumi:"group"`
 	Masters               []string        `pulumi:"masters"`
 	SignAndServe          *bool           `pulumi:"signAndServe"`
 	SignAndServeAlgorithm *string         `pulumi:"signAndServeAlgorithm"`
@@ -186,7 +130,7 @@ type DnsZoneArgs struct {
 	Comment               pulumi.StringPtrInput
 	Contract              pulumi.StringInput
 	EndCustomerId         pulumi.StringPtrInput
-	Group                 pulumi.StringInput
+	Group                 pulumi.StringPtrInput
 	Masters               pulumi.StringArrayInput
 	SignAndServe          pulumi.BoolPtrInput
 	SignAndServeAlgorithm pulumi.StringPtrInput

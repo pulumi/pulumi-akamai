@@ -20,7 +20,7 @@ type DnsZone struct {
 	Comment               pulumi.StringPtrOutput   `pulumi:"comment"`
 	Contract              pulumi.StringOutput      `pulumi:"contract"`
 	EndCustomerId         pulumi.StringPtrOutput   `pulumi:"endCustomerId"`
-	Group                 pulumi.StringOutput      `pulumi:"group"`
+	Group                 pulumi.StringPtrOutput   `pulumi:"group"`
 	Masters               pulumi.StringArrayOutput `pulumi:"masters"`
 	SignAndServe          pulumi.BoolPtrOutput     `pulumi:"signAndServe"`
 	SignAndServeAlgorithm pulumi.StringPtrOutput   `pulumi:"signAndServeAlgorithm"`
@@ -40,9 +40,6 @@ func NewDnsZone(ctx *pulumi.Context,
 
 	if args.Contract == nil {
 		return nil, errors.New("invalid value for required argument 'Contract'")
-	}
-	if args.Group == nil {
-		return nil, errors.New("invalid value for required argument 'Group'")
 	}
 	if args.Type == nil {
 		return nil, errors.New("invalid value for required argument 'Type'")
@@ -113,7 +110,7 @@ type dnsZoneArgs struct {
 	Comment               *string         `pulumi:"comment"`
 	Contract              string          `pulumi:"contract"`
 	EndCustomerId         *string         `pulumi:"endCustomerId"`
-	Group                 string          `pulumi:"group"`
+	Group                 *string         `pulumi:"group"`
 	Masters               []string        `pulumi:"masters"`
 	SignAndServe          *bool           `pulumi:"signAndServe"`
 	SignAndServeAlgorithm *string         `pulumi:"signAndServeAlgorithm"`
@@ -128,7 +125,7 @@ type DnsZoneArgs struct {
 	Comment               pulumi.StringPtrInput
 	Contract              pulumi.StringInput
 	EndCustomerId         pulumi.StringPtrInput
-	Group                 pulumi.StringInput
+	Group                 pulumi.StringPtrInput
 	Masters               pulumi.StringArrayInput
 	SignAndServe          pulumi.BoolPtrInput
 	SignAndServeAlgorithm pulumi.StringPtrInput

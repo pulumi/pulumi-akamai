@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// The `resource_akamai_appsec_eval_hostnames` resource allows you to update the list of hostnames you want to evaluate for a configuration version.
+    /// The `resource_akamai_appsec_eval_hostnames` resource allows you to update the list of hostnames you want to evaluate for a configuration.
     /// 
     /// ## Example Usage
     /// 
@@ -32,7 +32,6 @@ namespace Pulumi.Akamai
     ///         var evalHostnames = new Akamai.AppSecEvalHostnames("evalHostnames", new Akamai.AppSecEvalHostnamesArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
     ///             Hostnames = @var.Hostnames,
     ///         });
     ///     }
@@ -54,12 +53,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("hostnames")]
         public Output<ImmutableArray<string>> Hostnames { get; private set; } = null!;
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -125,12 +118,6 @@ namespace Pulumi.Akamai
             set => _hostnames = value;
         }
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
-
         public AppSecEvalHostnamesArgs()
         {
         }
@@ -155,12 +142,6 @@ namespace Pulumi.Akamai
             get => _hostnames ?? (_hostnames = new InputList<string>());
             set => _hostnames = value;
         }
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecEvalHostnamesState()
         {

@@ -6,7 +6,7 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecRatePolicies` data source to retrieve the rate policies for a specific security configuration version, or a single rate policy.
+ * Use the `akamai.getAppSecRatePolicies` data source to retrieve the rate policies for a specific security configuration, or a single rate policy.
  *
  * ## Example Usage
  *
@@ -19,15 +19,13 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: _var.security_configuration,
  * });
- * const ratePolicies = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecRatePolicies({
+ * const ratePolicies = configuration.then(configuration => akamai.getAppSecRatePolicies({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  * }));
  * export const ratePoliciesOutput = ratePolicies.then(ratePolicies => ratePolicies.outputText);
  * export const ratePoliciesJson = ratePolicies.then(ratePolicies => ratePolicies.json);
- * const ratePolicy = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecRatePolicies({
+ * const ratePolicy = configuration.then(configuration => akamai.getAppSecRatePolicies({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  *     ratePolicyId: _var.rate_policy_id,
  * }));
  * export const ratePolicyJson = ratePolicy.then(ratePolicy => ratePolicy.json);
@@ -45,7 +43,6 @@ export function getAppSecRatePolicies(args: GetAppSecRatePoliciesArgs, opts?: pu
     return pulumi.runtime.invoke("akamai:index/getAppSecRatePolicies:getAppSecRatePolicies", {
         "configId": args.configId,
         "ratePolicyId": args.ratePolicyId,
-        "version": args.version,
     }, opts);
 }
 
@@ -61,10 +58,6 @@ export interface GetAppSecRatePoliciesArgs {
      * The ID of the rate policy to use. If this parameter is not supplied, information about all rate policies will be returned.
      */
     ratePolicyId?: number;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: number;
 }
 
 /**
@@ -81,9 +74,8 @@ export interface GetAppSecRatePoliciesResult {
      */
     readonly json: string;
     /**
-     * A tabular display showing the ID and name of all rate policies associated with the specified security configuration version.
+     * A tabular display showing the ID and name of all rate policies associated with the specified security configuration.
      */
     readonly outputText: string;
     readonly ratePolicyId?: number;
-    readonly version: number;
 }

@@ -12,7 +12,7 @@ namespace Pulumi.Akamai
     public static class GetAppSecMatchTargets
     {
         /// <summary>
-        /// Use the `akamai.getAppSecMatchTargets` data source to retrieve information about the match targets associated with a given configuration version, or about a specific match target.
+        /// Use the `akamai.getAppSecMatchTargets` data source to retrieve information about the match targets associated with a given configuration, or about a specific match target.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -32,28 +32,16 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = @var.Security_configuration,
         ///         }));
-        ///         var matchTargetsAppSecMatchTargets = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var matchTargetsAppSecMatchTargets = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecMatchTargets.InvokeAsync(new Akamai.GetAppSecMatchTargetsArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecMatchTargets.InvokeAsync(new Akamai.GetAppSecMatchTargetsArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///         })));
         ///         this.MatchTargets = matchTargetsAppSecMatchTargets.Apply(matchTargetsAppSecMatchTargets =&gt; matchTargetsAppSecMatchTargets.OutputText);
-        ///         var matchTarget = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var matchTarget = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecMatchTargets.InvokeAsync(new Akamai.GetAppSecMatchTargetsArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecMatchTargets.InvokeAsync(new Akamai.GetAppSecMatchTargetsArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///                 MatchTargetId = @var.Match_target_id,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///             MatchTargetId = @var.Match_target_id,
+        ///         })));
         ///         this.MatchTargetOutput = matchTarget.Apply(matchTarget =&gt; matchTarget.OutputText);
         ///     }
         /// 
@@ -85,12 +73,6 @@ namespace Pulumi.Akamai
         [Input("matchTargetId")]
         public int? MatchTargetId { get; set; }
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecMatchTargetsArgs()
         {
         }
@@ -111,10 +93,9 @@ namespace Pulumi.Akamai
         public readonly string Json;
         public readonly int? MatchTargetId;
         /// <summary>
-        /// A tabular display showing the ID and Policy ID of all match targets associated with the specified security configuration and version, or of the specific match target if `match_target_id` was supplied.
+        /// A tabular display showing the ID and Policy ID of all match targets associated with the specified security configuration, or of the specific match target if `match_target_id` was supplied.
         /// </summary>
         public readonly string OutputText;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecMatchTargetsResult(
@@ -126,16 +107,13 @@ namespace Pulumi.Akamai
 
             int? matchTargetId,
 
-            string outputText,
-
-            int version)
+            string outputText)
         {
             ConfigId = configId;
             Id = id;
             Json = json;
             MatchTargetId = matchTargetId;
             OutputText = outputText;
-            Version = version;
         }
     }
 }

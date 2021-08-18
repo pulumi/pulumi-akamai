@@ -19,7 +19,7 @@ class GetAppSecAdvancedSettingsPrefetchResult:
     """
     A collection of values returned by getAppSecAdvancedSettingsPrefetch.
     """
-    def __init__(__self__, config_id=None, id=None, json=None, output_text=None, version=None):
+    def __init__(__self__, config_id=None, id=None, json=None, output_text=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -32,9 +32,6 @@ class GetAppSecAdvancedSettingsPrefetchResult:
         if output_text and not isinstance(output_text, str):
             raise TypeError("Expected argument 'output_text' to be a str")
         pulumi.set(__self__, "output_text", output_text)
-        if version and not isinstance(version, int):
-            raise TypeError("Expected argument 'version' to be a int")
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -65,11 +62,6 @@ class GetAppSecAdvancedSettingsPrefetchResult:
         """
         return pulumi.get(self, "output_text")
 
-    @property
-    @pulumi.getter
-    def version(self) -> int:
-        return pulumi.get(self, "version")
-
 
 class AwaitableGetAppSecAdvancedSettingsPrefetchResult(GetAppSecAdvancedSettingsPrefetchResult):
     # pylint: disable=using-constant-test
@@ -80,12 +72,10 @@ class AwaitableGetAppSecAdvancedSettingsPrefetchResult(GetAppSecAdvancedSettings
             config_id=self.config_id,
             id=self.id,
             json=self.json,
-            output_text=self.output_text,
-            version=self.version)
+            output_text=self.output_text)
 
 
 def get_app_sec_advanced_settings_prefetch(config_id: Optional[int] = None,
-                                           version: Optional[int] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecAdvancedSettingsPrefetchResult:
     """
     Use the `AppSecAdvancedSettingsPrefetch` data source to retrieve information the prefetch request settings for a security configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprefetchrequestsforaconfiguration).
@@ -99,19 +89,16 @@ def get_app_sec_advanced_settings_prefetch(config_id: Optional[int] = None,
     import pulumi_akamai as akamai
 
     configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-    prefetch = akamai.get_app_sec_advanced_settings_prefetch(config_id=configuration.config_id,
-        version=configuration.latest_version)
+    prefetch = akamai.get_app_sec_advanced_settings_prefetch(config_id=configuration.config_id)
     pulumi.export("advancedSettingsPrefetchOutput", prefetch.output_text)
     pulumi.export("advancedSettingsPrefetchJson", prefetch.json)
     ```
 
 
     :param int config_id: The configuration ID.
-    :param int version: The version number of the configuration.
     """
     __args__ = dict()
     __args__['configId'] = config_id
-    __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -122,5 +109,4 @@ def get_app_sec_advanced_settings_prefetch(config_id: Optional[int] = None,
         config_id=__ret__.config_id,
         id=__ret__.id,
         json=__ret__.json,
-        output_text=__ret__.output_text,
-        version=__ret__.version)
+        output_text=__ret__.output_text)

@@ -16,7 +16,6 @@ export function getAppSecEval(args: GetAppSecEvalArgs, opts?: pulumi.InvokeOptio
     return pulumi.runtime.invoke("akamai:index/getAppSecEval:getAppSecEval", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
-        "version": args.version,
     }, opts);
 }
 
@@ -26,7 +25,6 @@ export function getAppSecEval(args: GetAppSecEvalArgs, opts?: pulumi.InvokeOptio
 export interface GetAppSecEvalArgs {
     configId: number;
     securityPolicyId: string;
-    version: number;
 }
 
 /**
@@ -40,5 +38,4 @@ export interface GetAppSecEvalResult {
     readonly id: string;
     readonly outputText: string;
     readonly securityPolicyId: string;
-    readonly version: number;
 }

@@ -28,13 +28,25 @@ namespace Pulumi.Akamai
         public Output<string> ContractId { get; private set; } = null!;
 
         /// <summary>
+        /// The config ID of the security configuration to clone from.
+        /// </summary>
+        [Output("createFromConfigId")]
+        public Output<int?> CreateFromConfigId { get; private set; } = null!;
+
+        /// <summary>
+        /// The version number of the security configuration to clone from.
+        /// </summary>
+        [Output("createFromVersion")]
+        public Output<int?> CreateFromVersion { get; private set; } = null!;
+
+        /// <summary>
         /// A description of the configuration.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// The group ID of the configuration&gt;
+        /// The group ID of the configuration.
         /// </summary>
         [Output("groupId")]
         public Output<int> GroupId { get; private set; } = null!;
@@ -50,12 +62,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
-
-        /// <summary>
-        /// (Required) The latest version of the security configuration.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -110,13 +116,25 @@ namespace Pulumi.Akamai
         public Input<string> ContractId { get; set; } = null!;
 
         /// <summary>
+        /// The config ID of the security configuration to clone from.
+        /// </summary>
+        [Input("createFromConfigId")]
+        public Input<int>? CreateFromConfigId { get; set; }
+
+        /// <summary>
+        /// The version number of the security configuration to clone from.
+        /// </summary>
+        [Input("createFromVersion")]
+        public Input<int>? CreateFromVersion { get; set; }
+
+        /// <summary>
         /// A description of the configuration.
         /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
 
         /// <summary>
-        /// The group ID of the configuration&gt;
+        /// The group ID of the configuration.
         /// </summary>
         [Input("groupId", required: true)]
         public Input<int> GroupId { get; set; } = null!;
@@ -159,13 +177,25 @@ namespace Pulumi.Akamai
         public Input<string>? ContractId { get; set; }
 
         /// <summary>
+        /// The config ID of the security configuration to clone from.
+        /// </summary>
+        [Input("createFromConfigId")]
+        public Input<int>? CreateFromConfigId { get; set; }
+
+        /// <summary>
+        /// The version number of the security configuration to clone from.
+        /// </summary>
+        [Input("createFromVersion")]
+        public Input<int>? CreateFromVersion { get; set; }
+
+        /// <summary>
         /// A description of the configuration.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The group ID of the configuration&gt;
+        /// The group ID of the configuration.
         /// </summary>
         [Input("groupId")]
         public Input<int>? GroupId { get; set; }
@@ -187,12 +217,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
-
-        /// <summary>
-        /// (Required) The latest version of the security configuration.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecConfigurationState()
         {

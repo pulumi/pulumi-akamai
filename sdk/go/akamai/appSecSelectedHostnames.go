@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The `AppSecSelectedHostnames` resource allows you to set the list of hostnames protected under a given security configuration version.
+// The `AppSecSelectedHostnames` resource allows you to set the list of hostnames protected under a given security configuration.
 //
 // ## Example Usage
 //
@@ -36,7 +36,6 @@ import (
 // 		}
 // 		_, err = akamai.NewAppSecSelectedHostnames(ctx, "appsecselectedhostnames", &akamai.AppSecSelectedHostnamesArgs{
 // 			ConfigId: pulumi.Int(configuration.ConfigId),
-// 			Version:  pulumi.Int(configuration.LatestVersion),
 // 			Hostnames: pulumi.StringArray{
 // 				pulumi.String("example.com"),
 // 			},
@@ -58,8 +57,6 @@ type AppSecSelectedHostnames struct {
 	Hostnames pulumi.StringArrayOutput `pulumi:"hostnames"`
 	// A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
 	Mode pulumi.StringOutput `pulumi:"mode"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecSelectedHostnames registers a new resource with the given unique name, arguments, and options.
@@ -77,9 +74,6 @@ func NewAppSecSelectedHostnames(ctx *pulumi.Context,
 	}
 	if args.Mode == nil {
 		return nil, errors.New("invalid value for required argument 'Mode'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecSelectedHostnames
 	err := ctx.RegisterResource("akamai:index/appSecSelectedHostnames:AppSecSelectedHostnames", name, args, &resource, opts...)
@@ -109,8 +103,6 @@ type appSecSelectedHostnamesState struct {
 	Hostnames []string `pulumi:"hostnames"`
 	// A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
 	Mode *string `pulumi:"mode"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecSelectedHostnamesState struct {
@@ -120,8 +112,6 @@ type AppSecSelectedHostnamesState struct {
 	Hostnames pulumi.StringArrayInput
 	// A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
 	Mode pulumi.StringPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecSelectedHostnamesState) ElementType() reflect.Type {
@@ -135,8 +125,6 @@ type appSecSelectedHostnamesArgs struct {
 	Hostnames []string `pulumi:"hostnames"`
 	// A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
 	Mode string `pulumi:"mode"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecSelectedHostnames resource.
@@ -147,8 +135,6 @@ type AppSecSelectedHostnamesArgs struct {
 	Hostnames pulumi.StringArrayInput
 	// A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
 	Mode pulumi.StringInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecSelectedHostnamesArgs) ElementType() reflect.Type {

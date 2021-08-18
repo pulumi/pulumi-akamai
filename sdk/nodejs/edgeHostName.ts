@@ -67,13 +67,9 @@ import * as utilities from "./utilities";
  *
  * # (resource arguments)
  *
- *  } You can import Akamai edge hostnames using a comma-delimited string of edge
+ *  } You can import Akamai edge hostnames using a comma-delimited string of edge hostname, contract ID, and group ID. You have to enter the values in this order:
  *
- * hostname, contract ID, and group ID. You have to enter the values in this order:
- *
- *  `edge_hostname, contract_id, group_id`
- *
- * For example
+ * `edge_hostname, contract_id, group_id` For example
  *
  * ```sh
  *  $ pulumi import akamai:index/edgeHostName:EdgeHostName example ehn_123,ctr_1-AB123,grp_123

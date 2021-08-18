@@ -19,7 +19,7 @@ class GetAppSecApiEndpointsResult:
     """
     A collection of values returned by getAppSecApiEndpoints.
     """
-    def __init__(__self__, api_name=None, config_id=None, id=None, id_lists=None, json=None, output_text=None, security_policy_id=None, version=None):
+    def __init__(__self__, api_name=None, config_id=None, id=None, id_lists=None, json=None, output_text=None, security_policy_id=None):
         if api_name and not isinstance(api_name, str):
             raise TypeError("Expected argument 'api_name' to be a str")
         pulumi.set(__self__, "api_name", api_name)
@@ -41,9 +41,6 @@ class GetAppSecApiEndpointsResult:
         if security_policy_id and not isinstance(security_policy_id, str):
             raise TypeError("Expected argument 'security_policy_id' to be a str")
         pulumi.set(__self__, "security_policy_id", security_policy_id)
-        if version and not isinstance(version, int):
-            raise TypeError("Expected argument 'version' to be a int")
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="apiName")
@@ -92,11 +89,6 @@ class GetAppSecApiEndpointsResult:
     def security_policy_id(self) -> Optional[str]:
         return pulumi.get(self, "security_policy_id")
 
-    @property
-    @pulumi.getter
-    def version(self) -> int:
-        return pulumi.get(self, "version")
-
 
 class AwaitableGetAppSecApiEndpointsResult(GetAppSecApiEndpointsResult):
     # pylint: disable=using-constant-test
@@ -110,17 +102,15 @@ class AwaitableGetAppSecApiEndpointsResult(GetAppSecApiEndpointsResult):
             id_lists=self.id_lists,
             json=self.json,
             output_text=self.output_text,
-            security_policy_id=self.security_policy_id,
-            version=self.version)
+            security_policy_id=self.security_policy_id)
 
 
 def get_app_sec_api_endpoints(api_name: Optional[str] = None,
                               config_id: Optional[int] = None,
                               security_policy_id: Optional[str] = None,
-                              version: Optional[int] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecApiEndpointsResult:
     """
-    Use the `getAppSecApiEndpoints` data source to retrieve information about the API Endpoints associated with a security policy or configuration version. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapiendpoints).
+    Use the `getAppSecApiEndpoints` data source to retrieve information about the API Endpoints associated with a security policy or configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapiendpoints).
 
     ## Example Usage
 
@@ -131,21 +121,18 @@ def get_app_sec_api_endpoints(api_name: Optional[str] = None,
     import pulumi_akamai as akamai
 
     api_endpoints = akamai.get_app_sec_api_endpoints(api_name="TestEndpoint",
-        config_id=43253,
-        version=7)
+        config_id=43253)
     ```
 
 
     :param str api_name: The name of a specific endpoint.
     :param int config_id: The configuration ID.
     :param str security_policy_id: The ID of the security policy to use.
-    :param int version: The version number of the configuration.
     """
     __args__ = dict()
     __args__['apiName'] = api_name
     __args__['configId'] = config_id
     __args__['securityPolicyId'] = security_policy_id
-    __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -159,5 +146,4 @@ def get_app_sec_api_endpoints(api_name: Optional[str] = None,
         id_lists=__ret__.id_lists,
         json=__ret__.json,
         output_text=__ret__.output_text,
-        security_policy_id=__ret__.security_policy_id,
-        version=__ret__.version)
+        security_policy_id=__ret__.security_policy_id)

@@ -36,16 +36,10 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = @var.Security_configuration,
         ///         }));
-        ///         var bypassNetworkLists = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var bypassNetworkLists = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecBypassNetworkLists.InvokeAsync(new Akamai.GetAppSecBypassNetworkListsArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecBypassNetworkLists.InvokeAsync(new Akamai.GetAppSecBypassNetworkListsArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///         })));
         ///         this.BypassNetworkListsOutput = bypassNetworkLists.Apply(bypassNetworkLists =&gt; bypassNetworkLists.OutputText);
         ///         this.BypassNetworkListsJson = bypassNetworkLists.Apply(bypassNetworkLists =&gt; bypassNetworkLists.Json);
         ///         this.BypassNetworkListsIdList = bypassNetworkLists.Apply(bypassNetworkLists =&gt; bypassNetworkLists.BypassNetworkLists);
@@ -75,12 +69,6 @@ namespace Pulumi.Akamai
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// The version number of the configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecBypassNetworkListsArgs()
         {
         }
@@ -107,7 +95,6 @@ namespace Pulumi.Akamai
         /// A tabular display showing the bypass network list information.
         /// </summary>
         public readonly string OutputText;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecBypassNetworkListsResult(
@@ -119,16 +106,13 @@ namespace Pulumi.Akamai
 
             string json,
 
-            string outputText,
-
-            int version)
+            string outputText)
         {
             BypassNetworkLists = bypassNetworkLists;
             ConfigId = configId;
             Id = id;
             Json = json;
             OutputText = outputText;
-            Version = version;
         }
     }
 }

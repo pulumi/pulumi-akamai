@@ -7,7 +7,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecMatchTargets` data source to retrieve information about the match targets associated with a given configuration version, or about a specific match target.
+// Use the `getAppSecMatchTargets` data source to retrieve information about the match targets associated with a given configuration, or about a specific match target.
 //
 // ## Example Usage
 //
@@ -32,7 +32,6 @@ import (
 // 		}
 // 		matchTargetsAppSecMatchTargets, err := akamai.GetAppSecMatchTargets(ctx, &akamai.GetAppSecMatchTargetsArgs{
 // 			ConfigId: configuration.ConfigId,
-// 			Version:  configuration.LatestVersion,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -41,7 +40,6 @@ import (
 // 		opt1 := _var.Match_target_id
 // 		matchTarget, err := akamai.GetAppSecMatchTargets(ctx, &akamai.GetAppSecMatchTargetsArgs{
 // 			ConfigId:      configuration.ConfigId,
-// 			Version:       configuration.LatestVersion,
 // 			MatchTargetId: &opt1,
 // 		}, nil)
 // 		if err != nil {
@@ -67,8 +65,6 @@ type GetAppSecMatchTargetsArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// The ID of the match target to use. If not supplied, information about all match targets is returned.
 	MatchTargetId *int `pulumi:"matchTargetId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecMatchTargets.
@@ -79,7 +75,6 @@ type GetAppSecMatchTargetsResult struct {
 	// A JSON-formatted list of the match target information.
 	Json          string `pulumi:"json"`
 	MatchTargetId *int   `pulumi:"matchTargetId"`
-	// A tabular display showing the ID and Policy ID of all match targets associated with the specified security configuration and version, or of the specific match target if `matchTargetId` was supplied.
+	// A tabular display showing the ID and Policy ID of all match targets associated with the specified security configuration, or of the specific match target if `matchTargetId` was supplied.
 	OutputText string `pulumi:"outputText"`
-	Version    int    `pulumi:"version"`
 }

@@ -7,7 +7,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecSlowPost` data source to retrieve the slow post protection settings for a given security configuration version and policy.
+// Use the `AppSecSlowPost` data source to retrieve the slow post protection settings for a given security configuration and policy.
 //
 // ## Example Usage
 //
@@ -32,7 +32,6 @@ import (
 // 		}
 // 		slowPost, err := akamai.LookupAppSecSlowPost(ctx, &akamai.LookupAppSecSlowPostArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			Version:          configuration.LatestVersion,
 // 			SecurityPolicyId: _var.Security_policy_id,
 // 		}, nil)
 // 		if err != nil {
@@ -58,17 +57,15 @@ type LookupAppSecSlowPostArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// The ID of the security policy to use
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecSlowPost.
 type LookupAppSecSlowPostResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id   string `pulumi:"id"`
+	Json string `pulumi:"json"`
 	// A tabular display including the following columns:
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	Version          int    `pulumi:"version"`
 }

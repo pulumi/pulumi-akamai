@@ -12,8 +12,8 @@ namespace Pulumi.Akamai
     public static class GetPropertyRules
     {
         /// <summary>
-        /// Use the `akamai.getPropertyRules` data source to query and retrieve the rule tree of 
-        /// an existing property version. This data source lets you search across the contracts 
+        /// Use the `akamai.getPropertyRules` data source to query and retrieve the rule tree of
+        /// an existing property version. This data source lets you search across the contracts
         /// and groups you have access to.
         /// 
         /// ## Basic usage
@@ -39,9 +39,9 @@ namespace Pulumi.Akamai
         /// 
         /// This data source supports these arguments:
         /// 
-        /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix. 
+        /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
         /// * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
-        /// * `property_id` - (Required) A property's unique ID, including the `prp_` prefix. 
+        /// * `property_id` - (Required) A property's unique ID, including the `prp_` prefix.
         /// * `version` - (Optional) The version to return. Returns the latest version by default.
         /// 
         /// ## Attributes reference

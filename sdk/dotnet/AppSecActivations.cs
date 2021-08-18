@@ -31,7 +31,6 @@ namespace Pulumi.Akamai
     ///         var activation = new Akamai.AppSecActivations("activation", new Akamai.AppSecActivationsArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
     ///             Network = "STAGING",
     ///             Notes = "TEST Notes",
     ///             NotificationEmails = 
@@ -82,12 +81,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -171,12 +164,6 @@ namespace Pulumi.Akamai
             set => _notificationEmails = value;
         }
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
-
         public AppSecActivationsArgs()
         {
         }
@@ -225,12 +212,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecActivationsState()
         {

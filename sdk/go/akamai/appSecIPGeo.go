@@ -36,7 +36,6 @@ import (
 // 		}
 // 		ipGeoBlock, err := akamai.NewAppSecIPGeo(ctx, "ipGeoBlock", &akamai.AppSecIPGeoArgs{
 // 			ConfigId:                pulumi.Int(configuration.ConfigId),
-// 			Version:                 pulumi.Int(configuration.LatestVersion),
 // 			SecurityPolicyId:        pulumi.Any(_var.Security_policy_id1),
 // 			Mode:                    pulumi.Any(_var.Block),
 // 			GeoNetworkLists:         _var.Geo_network_lists,
@@ -48,7 +47,6 @@ import (
 // 		}
 // 		ipGeoAllow, err := akamai.NewAppSecIPGeo(ctx, "ipGeoAllow", &akamai.AppSecIPGeoArgs{
 // 			ConfigId:                pulumi.Int(configuration.ConfigId),
-// 			Version:                 pulumi.Int(configuration.LatestVersion),
 // 			SecurityPolicyId:        pulumi.Any(_var.Security_policy_id2),
 // 			Mode:                    pulumi.Any(_var.Allow),
 // 			ExceptionIpNetworkLists: _var.Exception_ip_network_lists,
@@ -81,8 +79,6 @@ type AppSecIPGeo struct {
 	Mode pulumi.StringOutput `pulumi:"mode"`
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecIPGeo registers a new resource with the given unique name, arguments, and options.
@@ -100,9 +96,6 @@ func NewAppSecIPGeo(ctx *pulumi.Context,
 	}
 	if args.SecurityPolicyId == nil {
 		return nil, errors.New("invalid value for required argument 'SecurityPolicyId'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecIPGeo
 	err := ctx.RegisterResource("akamai:index/appSecIPGeo:AppSecIPGeo", name, args, &resource, opts...)
@@ -138,8 +131,6 @@ type appSecIPGeoState struct {
 	Mode *string `pulumi:"mode"`
 	// The ID of the security policy to use.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecIPGeoState struct {
@@ -155,8 +146,6 @@ type AppSecIPGeoState struct {
 	Mode pulumi.StringPtrInput
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecIPGeoState) ElementType() reflect.Type {
@@ -176,8 +165,6 @@ type appSecIPGeoArgs struct {
 	Mode string `pulumi:"mode"`
 	// The ID of the security policy to use.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecIPGeo resource.
@@ -194,8 +181,6 @@ type AppSecIPGeoArgs struct {
 	Mode pulumi.StringInput
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecIPGeoArgs) ElementType() reflect.Type {

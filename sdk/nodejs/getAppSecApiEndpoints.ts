@@ -6,7 +6,7 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecApiEndpoints` data source to retrieve information about the API Endpoints associated with a security policy or configuration version. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapiendpoints).
+ * Use the `akamai.getAppSecApiEndpoints` data source to retrieve information about the API Endpoints associated with a security policy or configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapiendpoints).
  *
  * ## Example Usage
  *
@@ -19,7 +19,6 @@ import * as utilities from "./utilities";
  * const apiEndpoints = pulumi.output(akamai.getAppSecApiEndpoints({
  *     apiName: "TestEndpoint",
  *     configId: 43253,
- *     version: 7,
  * }));
  * ```
  */
@@ -35,7 +34,6 @@ export function getAppSecApiEndpoints(args: GetAppSecApiEndpointsArgs, opts?: pu
         "apiName": args.apiName,
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
-        "version": args.version,
     }, opts);
 }
 
@@ -55,10 +53,6 @@ export interface GetAppSecApiEndpointsArgs {
      * The ID of the security policy to use.
      */
     securityPolicyId?: string;
-    /**
-     * The version number of the configuration.
-     */
-    version: number;
 }
 
 /**
@@ -84,5 +78,4 @@ export interface GetAppSecApiEndpointsResult {
      */
     readonly outputText: string;
     readonly securityPolicyId?: string;
-    readonly version: number;
 }

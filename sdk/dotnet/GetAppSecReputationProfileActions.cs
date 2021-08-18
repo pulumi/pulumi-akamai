@@ -39,12 +39,6 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecReputationProfileActionsArgs()
         {
         }
@@ -73,7 +67,6 @@ namespace Pulumi.Akamai
         public readonly string OutputText;
         public readonly int? ReputationProfileId;
         public readonly string SecurityPolicyId;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecReputationProfileActionsResult(
@@ -89,9 +82,7 @@ namespace Pulumi.Akamai
 
             int? reputationProfileId,
 
-            string securityPolicyId,
-
-            int version)
+            string securityPolicyId)
         {
             Action = action;
             ConfigId = configId;
@@ -100,7 +91,6 @@ namespace Pulumi.Akamai
             OutputText = outputText;
             ReputationProfileId = reputationProfileId;
             SecurityPolicyId = securityPolicyId;
-            Version = version;
         }
     }
 }

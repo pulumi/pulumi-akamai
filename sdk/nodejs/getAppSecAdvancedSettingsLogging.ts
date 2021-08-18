@@ -19,15 +19,13 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: _var.security_configuration,
  * });
- * const logging = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecAdvancedSettingsLogging({
+ * const logging = configuration.then(configuration => akamai.getAppSecAdvancedSettingsLogging({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  * }));
  * export const advancedSettingsLoggingOutput = logging.then(logging => logging.outputText);
  * export const advancedSettingsLoggingJson = logging.then(logging => logging.json);
- * const policyOverride = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecAdvancedSettingsLogging({
+ * const policyOverride = configuration.then(configuration => akamai.getAppSecAdvancedSettingsLogging({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  *     securityPolicyId: _var.security_policy_id,
  * }));
  * export const advancedSettingsPolicyLoggingOutput = policyOverride.then(policyOverride => policyOverride.outputText);
@@ -45,7 +43,6 @@ export function getAppSecAdvancedSettingsLogging(args: GetAppSecAdvancedSettings
     return pulumi.runtime.invoke("akamai:index/getAppSecAdvancedSettingsLogging:getAppSecAdvancedSettingsLogging", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
-        "version": args.version,
     }, opts);
 }
 
@@ -61,10 +58,6 @@ export interface GetAppSecAdvancedSettingsLoggingArgs {
      * The ID of the security policy to use.
      */
     securityPolicyId?: string;
-    /**
-     * The version number of the configuration.
-     */
-    version: number;
 }
 
 /**
@@ -85,5 +78,4 @@ export interface GetAppSecAdvancedSettingsLoggingResult {
      */
     readonly outputText: string;
     readonly securityPolicyId?: string;
-    readonly version: number;
 }

@@ -12,7 +12,7 @@ namespace Pulumi.Akamai
     public static class GetPropertyProducts
     {
         /// <summary>
-        /// Use the `akamai.getPropertyProducts` data source to list the products included on a contract. 
+        /// Use the `akamai.getPropertyProducts` data source to list the products included on a contract.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -40,7 +40,7 @@ namespace Pulumi.Akamai
         /// 
         /// This data source supports this argument:
         /// 
-        /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix. 
+        /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
         /// 
         /// ## Attributes reference
         /// 

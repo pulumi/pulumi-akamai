@@ -10,6 +10,14 @@ from . import _utilities
 from . import outputs
 
 __all__ = [
+    'CpsDvEnrollmentAdminContact',
+    'CpsDvEnrollmentCsr',
+    'CpsDvEnrollmentDnsChallenge',
+    'CpsDvEnrollmentHttpChallenge',
+    'CpsDvEnrollmentNetworkConfiguration',
+    'CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication',
+    'CpsDvEnrollmentOrganization',
+    'CpsDvEnrollmentTechContact',
     'DnsZoneTsigKey',
     'GtmAsmapAssignment',
     'GtmAsmapDefaultDatacenter',
@@ -36,6 +44,7 @@ __all__ = [
     'ProviderConfig',
     'ProviderDns',
     'ProviderGtm',
+    'ProviderNetwork',
     'ProviderProperty',
     'GetContractsContractResult',
     'GetGroupsGroupResult',
@@ -45,6 +54,629 @@ __all__ = [
     'GetPropertyProductsProductResult',
     'GetPropertyRulesTemplateVariableResult',
 ]
+
+@pulumi.output_type
+class CpsDvEnrollmentAdminContact(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "addressLineOne":
+            suggest = "address_line_one"
+        elif key == "countryCode":
+            suggest = "country_code"
+        elif key == "firstName":
+            suggest = "first_name"
+        elif key == "lastName":
+            suggest = "last_name"
+        elif key == "postalCode":
+            suggest = "postal_code"
+        elif key == "addressLineTwo":
+            suggest = "address_line_two"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CpsDvEnrollmentAdminContact. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CpsDvEnrollmentAdminContact.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CpsDvEnrollmentAdminContact.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 address_line_one: str,
+                 city: str,
+                 country_code: str,
+                 email: str,
+                 first_name: str,
+                 last_name: str,
+                 organization: str,
+                 phone: str,
+                 postal_code: str,
+                 region: str,
+                 address_line_two: Optional[str] = None,
+                 title: Optional[str] = None):
+        pulumi.set(__self__, "address_line_one", address_line_one)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "organization", organization)
+        pulumi.set(__self__, "phone", phone)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "region", region)
+        if address_line_two is not None:
+            pulumi.set(__self__, "address_line_two", address_line_two)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="addressLineOne")
+    def address_line_one(self) -> str:
+        return pulumi.get(self, "address_line_one")
+
+    @property
+    @pulumi.getter
+    def city(self) -> str:
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> str:
+        return pulumi.get(self, "country_code")
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> str:
+        return pulumi.get(self, "first_name")
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> str:
+        return pulumi.get(self, "last_name")
+
+    @property
+    @pulumi.getter
+    def organization(self) -> str:
+        return pulumi.get(self, "organization")
+
+    @property
+    @pulumi.getter
+    def phone(self) -> str:
+        return pulumi.get(self, "phone")
+
+    @property
+    @pulumi.getter(name="postalCode")
+    def postal_code(self) -> str:
+        return pulumi.get(self, "postal_code")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="addressLineTwo")
+    def address_line_two(self) -> Optional[str]:
+        return pulumi.get(self, "address_line_two")
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[str]:
+        return pulumi.get(self, "title")
+
+
+@pulumi.output_type
+class CpsDvEnrollmentCsr(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "countryCode":
+            suggest = "country_code"
+        elif key == "organizationalUnit":
+            suggest = "organizational_unit"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CpsDvEnrollmentCsr. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CpsDvEnrollmentCsr.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CpsDvEnrollmentCsr.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 city: str,
+                 country_code: str,
+                 organization: str,
+                 organizational_unit: str,
+                 state: str):
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "organization", organization)
+        pulumi.set(__self__, "organizational_unit", organizational_unit)
+        pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter
+    def city(self) -> str:
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> str:
+        return pulumi.get(self, "country_code")
+
+    @property
+    @pulumi.getter
+    def organization(self) -> str:
+        return pulumi.get(self, "organization")
+
+    @property
+    @pulumi.getter(name="organizationalUnit")
+    def organizational_unit(self) -> str:
+        return pulumi.get(self, "organizational_unit")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class CpsDvEnrollmentDnsChallenge(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "fullPath":
+            suggest = "full_path"
+        elif key == "responseBody":
+            suggest = "response_body"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CpsDvEnrollmentDnsChallenge. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CpsDvEnrollmentDnsChallenge.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CpsDvEnrollmentDnsChallenge.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 domain: Optional[str] = None,
+                 full_path: Optional[str] = None,
+                 response_body: Optional[str] = None):
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if full_path is not None:
+            pulumi.set(__self__, "full_path", full_path)
+        if response_body is not None:
+            pulumi.set(__self__, "response_body", response_body)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[str]:
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="fullPath")
+    def full_path(self) -> Optional[str]:
+        return pulumi.get(self, "full_path")
+
+    @property
+    @pulumi.getter(name="responseBody")
+    def response_body(self) -> Optional[str]:
+        return pulumi.get(self, "response_body")
+
+
+@pulumi.output_type
+class CpsDvEnrollmentHttpChallenge(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "fullPath":
+            suggest = "full_path"
+        elif key == "responseBody":
+            suggest = "response_body"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CpsDvEnrollmentHttpChallenge. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CpsDvEnrollmentHttpChallenge.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CpsDvEnrollmentHttpChallenge.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 domain: Optional[str] = None,
+                 full_path: Optional[str] = None,
+                 response_body: Optional[str] = None):
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if full_path is not None:
+            pulumi.set(__self__, "full_path", full_path)
+        if response_body is not None:
+            pulumi.set(__self__, "response_body", response_body)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[str]:
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="fullPath")
+    def full_path(self) -> Optional[str]:
+        return pulumi.get(self, "full_path")
+
+    @property
+    @pulumi.getter(name="responseBody")
+    def response_body(self) -> Optional[str]:
+        return pulumi.get(self, "response_body")
+
+
+@pulumi.output_type
+class CpsDvEnrollmentNetworkConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "clientMutualAuthentication":
+            suggest = "client_mutual_authentication"
+        elif key == "cloneDnsNames":
+            suggest = "clone_dns_names"
+        elif key == "disallowedTlsVersions":
+            suggest = "disallowed_tls_versions"
+        elif key == "mustHaveCiphers":
+            suggest = "must_have_ciphers"
+        elif key == "ocspStapling":
+            suggest = "ocsp_stapling"
+        elif key == "preferredCiphers":
+            suggest = "preferred_ciphers"
+        elif key == "quicEnabled":
+            suggest = "quic_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CpsDvEnrollmentNetworkConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CpsDvEnrollmentNetworkConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CpsDvEnrollmentNetworkConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 geography: str,
+                 client_mutual_authentication: Optional['outputs.CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication'] = None,
+                 clone_dns_names: Optional[bool] = None,
+                 disallowed_tls_versions: Optional[Sequence[str]] = None,
+                 must_have_ciphers: Optional[str] = None,
+                 ocsp_stapling: Optional[str] = None,
+                 preferred_ciphers: Optional[str] = None,
+                 quic_enabled: Optional[bool] = None):
+        pulumi.set(__self__, "geography", geography)
+        if client_mutual_authentication is not None:
+            pulumi.set(__self__, "client_mutual_authentication", client_mutual_authentication)
+        if clone_dns_names is not None:
+            pulumi.set(__self__, "clone_dns_names", clone_dns_names)
+        if disallowed_tls_versions is not None:
+            pulumi.set(__self__, "disallowed_tls_versions", disallowed_tls_versions)
+        if must_have_ciphers is not None:
+            pulumi.set(__self__, "must_have_ciphers", must_have_ciphers)
+        if ocsp_stapling is not None:
+            pulumi.set(__self__, "ocsp_stapling", ocsp_stapling)
+        if preferred_ciphers is not None:
+            pulumi.set(__self__, "preferred_ciphers", preferred_ciphers)
+        if quic_enabled is not None:
+            pulumi.set(__self__, "quic_enabled", quic_enabled)
+
+    @property
+    @pulumi.getter
+    def geography(self) -> str:
+        return pulumi.get(self, "geography")
+
+    @property
+    @pulumi.getter(name="clientMutualAuthentication")
+    def client_mutual_authentication(self) -> Optional['outputs.CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication']:
+        return pulumi.get(self, "client_mutual_authentication")
+
+    @property
+    @pulumi.getter(name="cloneDnsNames")
+    def clone_dns_names(self) -> Optional[bool]:
+        return pulumi.get(self, "clone_dns_names")
+
+    @property
+    @pulumi.getter(name="disallowedTlsVersions")
+    def disallowed_tls_versions(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "disallowed_tls_versions")
+
+    @property
+    @pulumi.getter(name="mustHaveCiphers")
+    def must_have_ciphers(self) -> Optional[str]:
+        return pulumi.get(self, "must_have_ciphers")
+
+    @property
+    @pulumi.getter(name="ocspStapling")
+    def ocsp_stapling(self) -> Optional[str]:
+        return pulumi.get(self, "ocsp_stapling")
+
+    @property
+    @pulumi.getter(name="preferredCiphers")
+    def preferred_ciphers(self) -> Optional[str]:
+        return pulumi.get(self, "preferred_ciphers")
+
+    @property
+    @pulumi.getter(name="quicEnabled")
+    def quic_enabled(self) -> Optional[bool]:
+        return pulumi.get(self, "quic_enabled")
+
+
+@pulumi.output_type
+class CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ocspEnabled":
+            suggest = "ocsp_enabled"
+        elif key == "sendCaListToClient":
+            suggest = "send_ca_list_to_client"
+        elif key == "setId":
+            suggest = "set_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ocsp_enabled: Optional[bool] = None,
+                 send_ca_list_to_client: Optional[bool] = None,
+                 set_id: Optional[str] = None):
+        if ocsp_enabled is not None:
+            pulumi.set(__self__, "ocsp_enabled", ocsp_enabled)
+        if send_ca_list_to_client is not None:
+            pulumi.set(__self__, "send_ca_list_to_client", send_ca_list_to_client)
+        if set_id is not None:
+            pulumi.set(__self__, "set_id", set_id)
+
+    @property
+    @pulumi.getter(name="ocspEnabled")
+    def ocsp_enabled(self) -> Optional[bool]:
+        return pulumi.get(self, "ocsp_enabled")
+
+    @property
+    @pulumi.getter(name="sendCaListToClient")
+    def send_ca_list_to_client(self) -> Optional[bool]:
+        return pulumi.get(self, "send_ca_list_to_client")
+
+    @property
+    @pulumi.getter(name="setId")
+    def set_id(self) -> Optional[str]:
+        return pulumi.get(self, "set_id")
+
+
+@pulumi.output_type
+class CpsDvEnrollmentOrganization(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "addressLineOne":
+            suggest = "address_line_one"
+        elif key == "countryCode":
+            suggest = "country_code"
+        elif key == "postalCode":
+            suggest = "postal_code"
+        elif key == "addressLineTwo":
+            suggest = "address_line_two"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CpsDvEnrollmentOrganization. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CpsDvEnrollmentOrganization.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CpsDvEnrollmentOrganization.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 address_line_one: str,
+                 city: str,
+                 country_code: str,
+                 name: str,
+                 phone: str,
+                 postal_code: str,
+                 region: str,
+                 address_line_two: Optional[str] = None):
+        pulumi.set(__self__, "address_line_one", address_line_one)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "phone", phone)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "region", region)
+        if address_line_two is not None:
+            pulumi.set(__self__, "address_line_two", address_line_two)
+
+    @property
+    @pulumi.getter(name="addressLineOne")
+    def address_line_one(self) -> str:
+        return pulumi.get(self, "address_line_one")
+
+    @property
+    @pulumi.getter
+    def city(self) -> str:
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> str:
+        return pulumi.get(self, "country_code")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def phone(self) -> str:
+        return pulumi.get(self, "phone")
+
+    @property
+    @pulumi.getter(name="postalCode")
+    def postal_code(self) -> str:
+        return pulumi.get(self, "postal_code")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="addressLineTwo")
+    def address_line_two(self) -> Optional[str]:
+        return pulumi.get(self, "address_line_two")
+
+
+@pulumi.output_type
+class CpsDvEnrollmentTechContact(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "addressLineOne":
+            suggest = "address_line_one"
+        elif key == "countryCode":
+            suggest = "country_code"
+        elif key == "firstName":
+            suggest = "first_name"
+        elif key == "lastName":
+            suggest = "last_name"
+        elif key == "postalCode":
+            suggest = "postal_code"
+        elif key == "addressLineTwo":
+            suggest = "address_line_two"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CpsDvEnrollmentTechContact. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CpsDvEnrollmentTechContact.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CpsDvEnrollmentTechContact.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 address_line_one: str,
+                 city: str,
+                 country_code: str,
+                 email: str,
+                 first_name: str,
+                 last_name: str,
+                 organization: str,
+                 phone: str,
+                 postal_code: str,
+                 region: str,
+                 address_line_two: Optional[str] = None,
+                 title: Optional[str] = None):
+        pulumi.set(__self__, "address_line_one", address_line_one)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "organization", organization)
+        pulumi.set(__self__, "phone", phone)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "region", region)
+        if address_line_two is not None:
+            pulumi.set(__self__, "address_line_two", address_line_two)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="addressLineOne")
+    def address_line_one(self) -> str:
+        return pulumi.get(self, "address_line_one")
+
+    @property
+    @pulumi.getter
+    def city(self) -> str:
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> str:
+        return pulumi.get(self, "country_code")
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> str:
+        return pulumi.get(self, "first_name")
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> str:
+        return pulumi.get(self, "last_name")
+
+    @property
+    @pulumi.getter
+    def organization(self) -> str:
+        return pulumi.get(self, "organization")
+
+    @property
+    @pulumi.getter
+    def phone(self) -> str:
+        return pulumi.get(self, "phone")
+
+    @property
+    @pulumi.getter(name="postalCode")
+    def postal_code(self) -> str:
+        return pulumi.get(self, "postal_code")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="addressLineTwo")
+    def address_line_two(self) -> Optional[str]:
+        return pulumi.get(self, "address_line_two")
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[str]:
+        return pulumi.get(self, "title")
+
 
 @pulumi.output_type
 class DnsZoneTsigKey(dict):
@@ -1559,6 +2191,59 @@ class ProviderDns(dict):
 
 @pulumi.output_type
 class ProviderGtm(dict):
+    def __init__(__self__, *,
+                 access_token: Optional[str] = None,
+                 account_key: Optional[str] = None,
+                 client_secret: Optional[str] = None,
+                 client_token: Optional[str] = None,
+                 host: Optional[str] = None,
+                 max_body: Optional[int] = None):
+        if access_token is not None:
+            pulumi.set(__self__, "access_token", access_token)
+        if account_key is not None:
+            pulumi.set(__self__, "account_key", account_key)
+        if client_secret is not None:
+            pulumi.set(__self__, "client_secret", client_secret)
+        if client_token is not None:
+            pulumi.set(__self__, "client_token", client_token)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if max_body is not None:
+            pulumi.set(__self__, "max_body", max_body)
+
+    @property
+    @pulumi.getter(name="accessToken")
+    def access_token(self) -> Optional[str]:
+        return pulumi.get(self, "access_token")
+
+    @property
+    @pulumi.getter(name="accountKey")
+    def account_key(self) -> Optional[str]:
+        return pulumi.get(self, "account_key")
+
+    @property
+    @pulumi.getter(name="clientSecret")
+    def client_secret(self) -> Optional[str]:
+        return pulumi.get(self, "client_secret")
+
+    @property
+    @pulumi.getter(name="clientToken")
+    def client_token(self) -> Optional[str]:
+        return pulumi.get(self, "client_token")
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[str]:
+        return pulumi.get(self, "host")
+
+    @property
+    @pulumi.getter(name="maxBody")
+    def max_body(self) -> Optional[int]:
+        return pulumi.get(self, "max_body")
+
+
+@pulumi.output_type
+class ProviderNetwork(dict):
     def __init__(__self__, *,
                  access_token: Optional[str] = None,
                  account_key: Optional[str] = None,

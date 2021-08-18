@@ -19,7 +19,7 @@ class GetAppSecSecurityPolicyProtectionsResult:
     """
     A collection of values returned by getAppSecSecurityPolicyProtections.
     """
-    def __init__(__self__, apply_api_constraints=None, apply_application_layer_controls=None, apply_botman_controls=None, apply_network_layer_controls=None, apply_rate_controls=None, apply_reputation_controls=None, apply_slow_post_controls=None, config_id=None, id=None, json=None, output_text=None, security_policy_id=None, version=None):
+    def __init__(__self__, apply_api_constraints=None, apply_application_layer_controls=None, apply_botman_controls=None, apply_network_layer_controls=None, apply_rate_controls=None, apply_reputation_controls=None, apply_slow_post_controls=None, config_id=None, id=None, json=None, output_text=None, security_policy_id=None):
         if apply_api_constraints and not isinstance(apply_api_constraints, bool):
             raise TypeError("Expected argument 'apply_api_constraints' to be a bool")
         pulumi.set(__self__, "apply_api_constraints", apply_api_constraints)
@@ -56,9 +56,6 @@ class GetAppSecSecurityPolicyProtectionsResult:
         if security_policy_id and not isinstance(security_policy_id, str):
             raise TypeError("Expected argument 'security_policy_id' to be a str")
         pulumi.set(__self__, "security_policy_id", security_policy_id)
-        if version and not isinstance(version, int):
-            raise TypeError("Expected argument 'version' to be a int")
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="applyApiConstraints")
@@ -150,11 +147,6 @@ class GetAppSecSecurityPolicyProtectionsResult:
     def security_policy_id(self) -> str:
         return pulumi.get(self, "security_policy_id")
 
-    @property
-    @pulumi.getter
-    def version(self) -> int:
-        return pulumi.get(self, "version")
-
 
 class AwaitableGetAppSecSecurityPolicyProtectionsResult(GetAppSecSecurityPolicyProtectionsResult):
     # pylint: disable=using-constant-test
@@ -173,16 +165,14 @@ class AwaitableGetAppSecSecurityPolicyProtectionsResult(GetAppSecSecurityPolicyP
             id=self.id,
             json=self.json,
             output_text=self.output_text,
-            security_policy_id=self.security_policy_id,
-            version=self.version)
+            security_policy_id=self.security_policy_id)
 
 
 def get_app_sec_security_policy_protections(config_id: Optional[int] = None,
                                             security_policy_id: Optional[str] = None,
-                                            version: Optional[int] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecSecurityPolicyProtectionsResult:
     """
-    Use the `AppSecSecurityPolicyProtections` data source to retrieve the protections in effect for a given security policy.
+    Use the `getAppSecSecurityPolicyProtections` data source to retrieve the protections in effect for a given security policy.
 
     ## Example Usage
 
@@ -194,7 +184,6 @@ def get_app_sec_security_policy_protections(config_id: Optional[int] = None,
 
     configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
     protections = akamai.get_app_sec_security_policy_protections(config_id=configuration.config_id,
-        version=configuration.latest_version,
         security_policy_id=var["security_policy_id"])
     pulumi.export("protectionsJson", protections.json)
     pulumi.export("protectionsApplyApiConstraints", protections.apply_api_constraints)
@@ -209,12 +198,10 @@ def get_app_sec_security_policy_protections(config_id: Optional[int] = None,
 
     :param int config_id: The ID of the security configuration to use.
     :param str security_policy_id: The ID of the security policy to use.
-    :param int version: The version number of the security configuration to use.
     """
     __args__ = dict()
     __args__['configId'] = config_id
     __args__['securityPolicyId'] = security_policy_id
-    __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -233,5 +220,4 @@ def get_app_sec_security_policy_protections(config_id: Optional[int] = None,
         id=__ret__.id,
         json=__ret__.json,
         output_text=__ret__.output_text,
-        security_policy_id=__ret__.security_policy_id,
-        version=__ret__.version)
+        security_policy_id=__ret__.security_policy_id)

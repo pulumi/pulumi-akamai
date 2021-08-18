@@ -32,7 +32,6 @@ import (
 // 		}
 // 		reputationProfiles, err := akamai.GetAppSecReputationProfiles(ctx, &akamai.GetAppSecReputationProfilesArgs{
 // 			ConfigId: configuration.ConfigId,
-// 			Version:  configuration.LatestVersion,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -42,7 +41,6 @@ import (
 // 		opt1 := _var.Reputation_profile_id
 // 		reputationProfile, err := akamai.GetAppSecReputationProfiles(ctx, &akamai.GetAppSecReputationProfilesArgs{
 // 			ConfigId:            configuration.ConfigId,
-// 			Version:             configuration.LatestVersion,
 // 			ReputationProfileId: &opt1,
 // 		}, nil)
 // 		if err != nil {
@@ -69,8 +67,6 @@ type GetAppSecReputationProfilesArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
 	ReputationProfileId *int `pulumi:"reputationProfileId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecReputationProfiles.
@@ -83,5 +79,4 @@ type GetAppSecReputationProfilesResult struct {
 	// A tabular display of the details about the indicated reputation profile or profiles.
 	OutputText          string `pulumi:"outputText"`
 	ReputationProfileId *int   `pulumi:"reputationProfileId"`
-	Version             int    `pulumi:"version"`
 }

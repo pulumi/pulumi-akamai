@@ -36,7 +36,6 @@ import (
 // 		}
 // 		createCustomRuleAction, err := akamai.NewAppSecCustomRuleAction(ctx, "createCustomRuleAction", &akamai.AppSecCustomRuleActionArgs{
 // 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			Version:          pulumi.Int(configuration.LatestVersion),
 // 			SecurityPolicyId: pulumi.String("crAP_75829"),
 // 			CustomRuleId:     pulumi.Int(12345),
 // 			CustomRuleAction: pulumi.String("alert"),
@@ -60,8 +59,6 @@ type AppSecCustomRuleAction struct {
 	CustomRuleId pulumi.IntOutput `pulumi:"customRuleId"`
 	// The security policy to use.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecCustomRuleAction registers a new resource with the given unique name, arguments, and options.
@@ -82,9 +79,6 @@ func NewAppSecCustomRuleAction(ctx *pulumi.Context,
 	}
 	if args.SecurityPolicyId == nil {
 		return nil, errors.New("invalid value for required argument 'SecurityPolicyId'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecCustomRuleAction
 	err := ctx.RegisterResource("akamai:index/appSecCustomRuleAction:AppSecCustomRuleAction", name, args, &resource, opts...)
@@ -116,8 +110,6 @@ type appSecCustomRuleActionState struct {
 	CustomRuleId *int `pulumi:"customRuleId"`
 	// The security policy to use.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecCustomRuleActionState struct {
@@ -129,8 +121,6 @@ type AppSecCustomRuleActionState struct {
 	CustomRuleId pulumi.IntPtrInput
 	// The security policy to use.
 	SecurityPolicyId pulumi.StringPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecCustomRuleActionState) ElementType() reflect.Type {
@@ -146,8 +136,6 @@ type appSecCustomRuleActionArgs struct {
 	CustomRuleId int `pulumi:"customRuleId"`
 	// The security policy to use.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecCustomRuleAction resource.
@@ -160,8 +148,6 @@ type AppSecCustomRuleActionArgs struct {
 	CustomRuleId pulumi.IntInput
 	// The security policy to use.
 	SecurityPolicyId pulumi.StringInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecCustomRuleActionArgs) ElementType() reflect.Type {

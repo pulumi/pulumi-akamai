@@ -7,7 +7,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecApiEndpoints` data source to retrieve information about the API Endpoints associated with a security policy or configuration version. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapiendpoints).
+// Use the `getAppSecApiEndpoints` data source to retrieve information about the API Endpoints associated with a security policy or configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapiendpoints).
 //
 // ## Example Usage
 //
@@ -27,7 +27,6 @@ import (
 // 		_, err := akamai.GetAppSecApiEndpoints(ctx, &akamai.GetAppSecApiEndpointsArgs{
 // 			ApiName:  &opt0,
 // 			ConfigId: 43253,
-// 			Version:  7,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -53,8 +52,6 @@ type GetAppSecApiEndpointsArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// The ID of the security policy to use.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// The version number of the configuration.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecApiEndpoints.
@@ -70,5 +67,4 @@ type GetAppSecApiEndpointsResult struct {
 	// A tabular display showing the ID and name of the API endpoints.
 	OutputText       string  `pulumi:"outputText"`
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	Version          int     `pulumi:"version"`
 }

@@ -19,9 +19,8 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: _var.security_configuration,
  * });
- * const penaltyBox = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecPenaltyBox({
+ * const penaltyBox = configuration.then(configuration => akamai.getAppSecPenaltyBox({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  *     securityPolicyId: _var.security_policy_id,
  * }));
  * export const penaltyBoxAction = penaltyBox.then(penaltyBox => penaltyBox.action);
@@ -40,7 +39,6 @@ export function getAppSecPenaltyBox(args: GetAppSecPenaltyBoxArgs, opts?: pulumi
     return pulumi.runtime.invoke("akamai:index/getAppSecPenaltyBox:getAppSecPenaltyBox", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
-        "version": args.version,
     }, opts);
 }
 
@@ -56,10 +54,6 @@ export interface GetAppSecPenaltyBoxArgs {
      * The ID of the security policy to use.
      */
     securityPolicyId: string;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: number;
 }
 
 /**
@@ -84,5 +78,4 @@ export interface GetAppSecPenaltyBoxResult {
      */
     readonly outputText: string;
     readonly securityPolicyId: string;
-    readonly version: number;
 }

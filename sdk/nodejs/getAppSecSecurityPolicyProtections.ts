@@ -6,7 +6,7 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecSecurityPolicyProtections` data source to retrieve the protections in effect for a given security policy.
+ * Use the `akamai.getAppSecSecurityPolicyProtections` data source to retrieve the protections in effect for a given security policy.
  *
  * ## Example Usage
  *
@@ -19,9 +19,8 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: _var.security_configuration,
  * });
- * const protections = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecSecurityPolicyProtections({
+ * const protections = configuration.then(configuration => akamai.getAppSecSecurityPolicyProtections({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  *     securityPolicyId: _var.security_policy_id,
  * }));
  * export const protectionsJson = protections.then(protections => protections.json);
@@ -45,7 +44,6 @@ export function getAppSecSecurityPolicyProtections(args: GetAppSecSecurityPolicy
     return pulumi.runtime.invoke("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
-        "version": args.version,
     }, opts);
 }
 
@@ -61,10 +59,6 @@ export interface GetAppSecSecurityPolicyProtectionsArgs {
      * The ID of the security policy to use.
      */
     securityPolicyId: string;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: number;
 }
 
 /**
@@ -113,5 +107,4 @@ export interface GetAppSecSecurityPolicyProtectionsResult {
      */
     readonly outputText: string;
     readonly securityPolicyId: string;
-    readonly version: number;
 }

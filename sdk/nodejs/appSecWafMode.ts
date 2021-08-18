@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  * });
  * const wafMode = new akamai.AppSecWafMode("wafMode", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     securityPolicyId: _var.policy_id,
  *     mode: _var.mode,
  * });
@@ -91,10 +90,6 @@ export class AppSecWafMode extends pulumi.CustomResource {
      * The ID of the security policy to use.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecWafMode resource with the given unique name, arguments, and options.
@@ -117,7 +112,6 @@ export class AppSecWafMode extends pulumi.CustomResource {
             inputs["mode"] = state ? state.mode : undefined;
             inputs["outputText"] = state ? state.outputText : undefined;
             inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecWafModeArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -129,13 +123,9 @@ export class AppSecWafMode extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["mode"] = args ? args.mode : undefined;
             inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            inputs["version"] = args ? args.version : undefined;
             inputs["currentRuleset"] = undefined /*out*/;
             inputs["evalExpirationDate"] = undefined /*out*/;
             inputs["evalRuleset"] = undefined /*out*/;
@@ -185,10 +175,6 @@ export interface AppSecWafModeState {
      * The ID of the security policy to use.
      */
     securityPolicyId?: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -207,8 +193,4 @@ export interface AppSecWafModeArgs {
      * The ID of the security policy to use.
      */
     securityPolicyId: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

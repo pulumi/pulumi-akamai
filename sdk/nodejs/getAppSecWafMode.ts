@@ -6,7 +6,7 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecWafMode` data source to retrieve the mode that indicates how the WAF rules of the given security configuration version and security policy will be updated.
+ * Use the `akamai.AppSecWafMode` data source to retrieve the mode that indicates how the WAF rules of the given security configuration and security policy will be updated.
  *
  * ## Example Usage
  *
@@ -19,9 +19,8 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: _var.security_configuration,
  * });
- * const wafMode = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecWafMode({
+ * const wafMode = configuration.then(configuration => akamai.getAppSecWafMode({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  *     securityPolicyId: _var.policy_id,
  * }));
  * export const wafModeMode = wafMode.then(wafMode => wafMode.mode);
@@ -44,7 +43,6 @@ export function getAppSecWafMode(args: GetAppSecWafModeArgs, opts?: pulumi.Invok
     return pulumi.runtime.invoke("akamai:index/getAppSecWafMode:getAppSecWafMode", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
-        "version": args.version,
     }, opts);
 }
 
@@ -60,10 +58,6 @@ export interface GetAppSecWafModeArgs {
      * The ID of the security policy to use.
      */
     securityPolicyId: string;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: number;
 }
 
 /**
@@ -104,5 +98,4 @@ export interface GetAppSecWafModeResult {
      */
     readonly outputText: string;
     readonly securityPolicyId: string;
-    readonly version: number;
 }

@@ -19,7 +19,7 @@ class GetAppSecIPGeoResult:
     """
     A collection of values returned by getAppSecIPGeo.
     """
-    def __init__(__self__, config_id=None, exception_ip_network_lists=None, geo_network_lists=None, id=None, ip_network_lists=None, mode=None, output_text=None, security_policy_id=None, version=None):
+    def __init__(__self__, config_id=None, exception_ip_network_lists=None, geo_network_lists=None, id=None, ip_network_lists=None, mode=None, output_text=None, security_policy_id=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -44,9 +44,6 @@ class GetAppSecIPGeoResult:
         if security_policy_id and not isinstance(security_policy_id, str):
             raise TypeError("Expected argument 'security_policy_id' to be a str")
         pulumi.set(__self__, "security_policy_id", security_policy_id)
-        if version and not isinstance(version, int):
-            raise TypeError("Expected argument 'version' to be a int")
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -106,11 +103,6 @@ class GetAppSecIPGeoResult:
     def security_policy_id(self) -> str:
         return pulumi.get(self, "security_policy_id")
 
-    @property
-    @pulumi.getter
-    def version(self) -> int:
-        return pulumi.get(self, "version")
-
 
 class AwaitableGetAppSecIPGeoResult(GetAppSecIPGeoResult):
     # pylint: disable=using-constant-test
@@ -125,13 +117,11 @@ class AwaitableGetAppSecIPGeoResult(GetAppSecIPGeoResult):
             ip_network_lists=self.ip_network_lists,
             mode=self.mode,
             output_text=self.output_text,
-            security_policy_id=self.security_policy_id,
-            version=self.version)
+            security_policy_id=self.security_policy_id)
 
 
 def get_app_sec_ip_geo(config_id: Optional[int] = None,
                        security_policy_id: Optional[str] = None,
-                       version: Optional[int] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecIPGeoResult:
     """
     Use the `AppSecIPGeo` data source to retrieve information about which network lists are used in the IP/Geo Firewall settings.
@@ -146,7 +136,6 @@ def get_app_sec_ip_geo(config_id: Optional[int] = None,
 
     configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
     ip_geo = akamai.get_app_sec_ip_geo(config_id=configuration.config_id,
-        version=configuration.latest_version,
         security_policy_id=var["security_policy_id"])
     pulumi.export("ipGeoMode", ip_geo.mode)
     pulumi.export("geoNetworkLists", ip_geo.geo_network_lists)
@@ -157,12 +146,10 @@ def get_app_sec_ip_geo(config_id: Optional[int] = None,
 
     :param int config_id: The ID of the security configuration to use.
     :param str security_policy_id: The ID of the security policy to use.
-    :param int version: The version number of the security configuration to use.
     """
     __args__ = dict()
     __args__['configId'] = config_id
     __args__['securityPolicyId'] = security_policy_id
-    __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -177,5 +164,4 @@ def get_app_sec_ip_geo(config_id: Optional[int] = None,
         ip_network_lists=__ret__.ip_network_lists,
         mode=__ret__.mode,
         output_text=__ret__.output_text,
-        security_policy_id=__ret__.security_policy_id,
-        version=__ret__.version)
+        security_policy_id=__ret__.security_policy_id)

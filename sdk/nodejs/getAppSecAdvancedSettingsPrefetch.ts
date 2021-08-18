@@ -19,9 +19,8 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: _var.security_configuration,
  * });
- * const prefetch = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecAdvancedSettingsPrefetch({
+ * const prefetch = configuration.then(configuration => akamai.getAppSecAdvancedSettingsPrefetch({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  * }));
  * export const advancedSettingsPrefetchOutput = prefetch.then(prefetch => prefetch.outputText);
  * export const advancedSettingsPrefetchJson = prefetch.then(prefetch => prefetch.json);
@@ -37,7 +36,6 @@ export function getAppSecAdvancedSettingsPrefetch(args: GetAppSecAdvancedSetting
     }
     return pulumi.runtime.invoke("akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch", {
         "configId": args.configId,
-        "version": args.version,
     }, opts);
 }
 
@@ -49,10 +47,6 @@ export interface GetAppSecAdvancedSettingsPrefetchArgs {
      * The configuration ID.
      */
     configId: number;
-    /**
-     * The version number of the configuration.
-     */
-    version: number;
 }
 
 /**
@@ -72,5 +66,4 @@ export interface GetAppSecAdvancedSettingsPrefetchResult {
      * A tabular display showing the prefetch request settings.
      */
     readonly outputText: string;
-    readonly version: number;
 }

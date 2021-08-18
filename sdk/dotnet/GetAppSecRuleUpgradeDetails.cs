@@ -32,17 +32,11 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = @var.Security_configuration,
         ///         }));
-        ///         var upgradeDetails = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var upgradeDetails = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecRuleUpgradeDetails.InvokeAsync(new Akamai.GetAppSecRuleUpgradeDetailsArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecRuleUpgradeDetails.InvokeAsync(new Akamai.GetAppSecRuleUpgradeDetailsArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///                 SecurityPolicyId = @var.Security_policy_id,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///         })));
         ///         this.UpgradeDetailsText = upgradeDetails.Apply(upgradeDetails =&gt; upgradeDetails.OutputText);
         ///         this.UpgradeDetailsJson = upgradeDetails.Apply(upgradeDetails =&gt; upgradeDetails.Json);
         ///     }
@@ -75,12 +69,6 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecRuleUpgradeDetailsArgs()
         {
         }
@@ -104,7 +92,6 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string OutputText;
         public readonly string SecurityPolicyId;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecRuleUpgradeDetailsResult(
@@ -116,16 +103,13 @@ namespace Pulumi.Akamai
 
             string outputText,
 
-            string securityPolicyId,
-
-            int version)
+            string securityPolicyId)
         {
             ConfigId = configId;
             Id = id;
             Json = json;
             OutputText = outputText;
             SecurityPolicyId = securityPolicyId;
-            Version = version;
         }
     }
 }

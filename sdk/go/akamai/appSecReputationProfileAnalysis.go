@@ -36,7 +36,6 @@ import (
 // 		}
 // 		_, err = akamai.NewAppSecReputationProfileAnalysis(ctx, "reputationAnalysis", &akamai.AppSecReputationProfileAnalysisArgs{
 // 			ConfigId:                        pulumi.Int(configuration.ConfigId),
-// 			Version:                         pulumi.Int(configuration.LatestVersion),
 // 			SecurityPolicyId:                pulumi.Any(_var.Security_policy_id),
 // 			ForwardToHttpHeader:             pulumi.Bool(true),
 // 			ForwardSharedIpToHttpHeaderSiem: pulumi.Bool(true),
@@ -59,8 +58,6 @@ type AppSecReputationProfileAnalysis struct {
 	ForwardToHttpHeader pulumi.BoolOutput `pulumi:"forwardToHttpHeader"`
 	// The ID of the securityPolicyId to which the settings should be applied.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecReputationProfileAnalysis registers a new resource with the given unique name, arguments, and options.
@@ -81,9 +78,6 @@ func NewAppSecReputationProfileAnalysis(ctx *pulumi.Context,
 	}
 	if args.SecurityPolicyId == nil {
 		return nil, errors.New("invalid value for required argument 'SecurityPolicyId'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecReputationProfileAnalysis
 	err := ctx.RegisterResource("akamai:index/appSecReputationProfileAnalysis:AppSecReputationProfileAnalysis", name, args, &resource, opts...)
@@ -115,8 +109,6 @@ type appSecReputationProfileAnalysisState struct {
 	ForwardToHttpHeader *bool `pulumi:"forwardToHttpHeader"`
 	// The ID of the securityPolicyId to which the settings should be applied.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecReputationProfileAnalysisState struct {
@@ -128,8 +120,6 @@ type AppSecReputationProfileAnalysisState struct {
 	ForwardToHttpHeader pulumi.BoolPtrInput
 	// The ID of the securityPolicyId to which the settings should be applied.
 	SecurityPolicyId pulumi.StringPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecReputationProfileAnalysisState) ElementType() reflect.Type {
@@ -145,8 +135,6 @@ type appSecReputationProfileAnalysisArgs struct {
 	ForwardToHttpHeader bool `pulumi:"forwardToHttpHeader"`
 	// The ID of the securityPolicyId to which the settings should be applied.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecReputationProfileAnalysis resource.
@@ -159,8 +147,6 @@ type AppSecReputationProfileAnalysisArgs struct {
 	ForwardToHttpHeader pulumi.BoolInput
 	// The ID of the securityPolicyId to which the settings should be applied.
 	SecurityPolicyId pulumi.StringInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecReputationProfileAnalysisArgs) ElementType() reflect.Type {

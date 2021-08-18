@@ -32,7 +32,6 @@ import (
 // 		}
 // 		versionNotes, err := akamai.GetAppSecVersionNotes(ctx, &akamai.GetAppSecVersionNotesArgs{
 // 			ConfigId: configuration.ConfigId,
-// 			Version:  configuration.LatestVersion,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -56,8 +55,6 @@ func GetAppSecVersionNotes(ctx *pulumi.Context, args *GetAppSecVersionNotesArgs,
 type GetAppSecVersionNotesArgs struct {
 	// The configuration ID to use.
 	ConfigId int `pulumi:"configId"`
-	// The version number of the configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecVersionNotes.
@@ -69,5 +66,4 @@ type GetAppSecVersionNotesResult struct {
 	Json string `pulumi:"json"`
 	// A tabular display showing the version notes.
 	OutputText string `pulumi:"outputText"`
-	Version    int    `pulumi:"version"`
 }

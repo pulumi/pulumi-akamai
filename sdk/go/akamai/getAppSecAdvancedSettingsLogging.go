@@ -32,7 +32,6 @@ import (
 // 		}
 // 		logging, err := akamai.LookupAppSecAdvancedSettingsLogging(ctx, &akamai.LookupAppSecAdvancedSettingsLoggingArgs{
 // 			ConfigId: configuration.ConfigId,
-// 			Version:  configuration.LatestVersion,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -42,7 +41,6 @@ import (
 // 		opt1 := _var.Security_policy_id
 // 		policyOverride, err := akamai.LookupAppSecAdvancedSettingsLogging(ctx, &akamai.LookupAppSecAdvancedSettingsLoggingArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			Version:          configuration.LatestVersion,
 // 			SecurityPolicyId: &opt1,
 // 		}, nil)
 // 		if err != nil {
@@ -69,8 +67,6 @@ type LookupAppSecAdvancedSettingsLoggingArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// The ID of the security policy to use.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// The version number of the configuration.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecAdvancedSettingsLogging.
@@ -83,5 +79,4 @@ type LookupAppSecAdvancedSettingsLoggingResult struct {
 	// A tabular display showing the logging settings.
 	OutputText       string  `pulumi:"outputText"`
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	Version          int     `pulumi:"version"`
 }

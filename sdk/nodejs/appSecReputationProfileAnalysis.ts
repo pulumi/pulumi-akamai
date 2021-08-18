@@ -21,7 +21,6 @@ import * as utilities from "./utilities";
  * // USE CASE: user wants to set reputation analysis settings
  * const reputationAnalysis = new akamai.AppSecReputationProfileAnalysis("reputationAnalysis", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     securityPolicyId: _var.security_policy_id,
  *     forwardToHttpHeader: true,
  *     forwardSharedIpToHttpHeaderSiem: true,
@@ -72,10 +71,6 @@ export class AppSecReputationProfileAnalysis extends pulumi.CustomResource {
      * The ID of the securityPolicyId to which the settings should be applied.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecReputationProfileAnalysis resource with the given unique name, arguments, and options.
@@ -94,7 +89,6 @@ export class AppSecReputationProfileAnalysis extends pulumi.CustomResource {
             inputs["forwardSharedIpToHttpHeaderSiem"] = state ? state.forwardSharedIpToHttpHeaderSiem : undefined;
             inputs["forwardToHttpHeader"] = state ? state.forwardToHttpHeader : undefined;
             inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecReputationProfileAnalysisArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -109,14 +103,10 @@ export class AppSecReputationProfileAnalysis extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["forwardSharedIpToHttpHeaderSiem"] = args ? args.forwardSharedIpToHttpHeaderSiem : undefined;
             inputs["forwardToHttpHeader"] = args ? args.forwardToHttpHeader : undefined;
             inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            inputs["version"] = args ? args.version : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -145,10 +135,6 @@ export interface AppSecReputationProfileAnalysisState {
      * The ID of the securityPolicyId to which the settings should be applied.
      */
     securityPolicyId?: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -171,8 +157,4 @@ export interface AppSecReputationProfileAnalysisArgs {
      * The ID of the securityPolicyId to which the settings should be applied.
      */
     securityPolicyId: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

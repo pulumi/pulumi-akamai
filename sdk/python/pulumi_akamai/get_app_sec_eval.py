@@ -19,7 +19,7 @@ class GetAppSecEvalResult:
     """
     A collection of values returned by getAppSecEval.
     """
-    def __init__(__self__, config_id=None, id=None, output_text=None, security_policy_id=None, version=None):
+    def __init__(__self__, config_id=None, id=None, output_text=None, security_policy_id=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -32,9 +32,6 @@ class GetAppSecEvalResult:
         if security_policy_id and not isinstance(security_policy_id, str):
             raise TypeError("Expected argument 'security_policy_id' to be a str")
         pulumi.set(__self__, "security_policy_id", security_policy_id)
-        if version and not isinstance(version, int):
-            raise TypeError("Expected argument 'version' to be a int")
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -59,11 +56,6 @@ class GetAppSecEvalResult:
     def security_policy_id(self) -> str:
         return pulumi.get(self, "security_policy_id")
 
-    @property
-    @pulumi.getter
-    def version(self) -> int:
-        return pulumi.get(self, "version")
-
 
 class AwaitableGetAppSecEvalResult(GetAppSecEvalResult):
     # pylint: disable=using-constant-test
@@ -74,13 +66,11 @@ class AwaitableGetAppSecEvalResult(GetAppSecEvalResult):
             config_id=self.config_id,
             id=self.id,
             output_text=self.output_text,
-            security_policy_id=self.security_policy_id,
-            version=self.version)
+            security_policy_id=self.security_policy_id)
 
 
 def get_app_sec_eval(config_id: Optional[int] = None,
                      security_policy_id: Optional[str] = None,
-                     version: Optional[int] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecEvalResult:
     """
     Use this data source to access information about an existing resource.
@@ -88,7 +78,6 @@ def get_app_sec_eval(config_id: Optional[int] = None,
     __args__ = dict()
     __args__['configId'] = config_id
     __args__['securityPolicyId'] = security_policy_id
-    __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -99,5 +88,4 @@ def get_app_sec_eval(config_id: Optional[int] = None,
         config_id=__ret__.config_id,
         id=__ret__.id,
         output_text=__ret__.output_text,
-        security_policy_id=__ret__.security_policy_id,
-        version=__ret__.version)
+        security_policy_id=__ret__.security_policy_id)

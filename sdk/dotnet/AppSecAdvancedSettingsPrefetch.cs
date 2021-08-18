@@ -31,7 +31,6 @@ namespace Pulumi.Akamai
     ///         var prefetch = new Akamai.AppSecAdvancedSettingsPrefetch("prefetch", new Akamai.AppSecAdvancedSettingsPrefetchArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
     ///             EnableAppLayer = false,
     ///             AllExtensions = true,
     ///             EnableRateControls = false,
@@ -74,12 +73,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("extensions")]
         public Output<ImmutableArray<string>> Extensions { get; private set; } = null!;
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -163,12 +156,6 @@ namespace Pulumi.Akamai
             set => _extensions = value;
         }
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
-
         public AppSecAdvancedSettingsPrefetchArgs()
         {
         }
@@ -211,12 +198,6 @@ namespace Pulumi.Akamai
             get => _extensions ?? (_extensions = new InputList<string>());
             set => _extensions = value;
         }
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecAdvancedSettingsPrefetchState()
         {

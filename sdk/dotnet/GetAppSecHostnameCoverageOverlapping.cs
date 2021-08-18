@@ -32,7 +32,6 @@ namespace Pulumi.Akamai
         ///         {
         ///             ConfigId = 43253,
         ///             Hostname = "example.com",
-        ///             Version = 7,
         ///         }));
         ///     }
         /// 
@@ -60,12 +59,6 @@ namespace Pulumi.Akamai
         [Input("hostname", required: true)]
         public string Hostname { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the configuration.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecHostnameCoverageOverlappingArgs()
         {
         }
@@ -89,7 +82,6 @@ namespace Pulumi.Akamai
         /// A tabular display of the overlap information.
         /// </summary>
         public readonly string OutputText;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecHostnameCoverageOverlappingResult(
@@ -101,16 +93,13 @@ namespace Pulumi.Akamai
 
             string json,
 
-            string outputText,
-
-            int version)
+            string outputText)
         {
             ConfigId = configId;
             Hostname = hostname;
             Id = id;
             Json = json;
             OutputText = outputText;
-            Version = version;
         }
     }
 }

@@ -32,7 +32,6 @@ import (
 // 		}
 // 		apisRequestConstraints, err := akamai.LookupAppSecApiRequestConstraints(ctx, &akamai.LookupAppSecApiRequestConstraintsArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			Version:          configuration.LatestVersion,
 // 			SecurityPolicyId: _var.Security_policy_id,
 // 		}, nil)
 // 		if err != nil {
@@ -43,7 +42,6 @@ import (
 // 		opt1 := _var.Api_id
 // 		apiRequestConstraints, err := akamai.LookupAppSecApiRequestConstraints(ctx, &akamai.LookupAppSecApiRequestConstraintsArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			Version:          configuration.LatestVersion,
 // 			SecurityPolicyId: _var.Security_policy_id,
 // 			ApiId:            &opt1,
 // 		}, nil)
@@ -73,8 +71,6 @@ type LookupAppSecApiRequestConstraintsArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// The ID of the security policy to use.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecApiRequestConstraints.
@@ -88,5 +84,4 @@ type LookupAppSecApiRequestConstraintsResult struct {
 	// A tabular display showing the APIs and their constraints and actions.
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	Version          int    `pulumi:"version"`
 }

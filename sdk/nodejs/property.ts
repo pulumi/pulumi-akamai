@@ -90,7 +90,7 @@ import * as utilities from "./utilities";
  *
  * # (resource arguments)
  *
- *  } You can import Akamai properties by using either the `property_id` or a comma-delimited string of the property, contract, and group IDs. You'll need to enter the string of IDs if the property belongs to multiple groups or contracts. If using the string of IDs, you need to enter them in this order`property_id,contract_id,group_id` Here are some examples
+ *  } You can import the latest Akamai property version by using either the `property_id` or a comma-delimited string of the property, contract, and group IDs. You'll need to enter the string of IDs if the property belongs to multiple groups or contracts. If using the string of IDs, you need to enter them in this order`property_id,contract_id,group_id` To import a specific property version, pass additional parameters, either* `LATEST` to import the latest version of the property, regardless of whether it's active or not. This works the same as providing just the `property_id` or a string of the property, contract, and group IDs, which is the default behavior. * `PRODUCTION`, `PROD`, or `P` to import the latest version activated on the production environment. * `STAGING`, `STAGE`, `STAG`, or `S` to import the latest version activated on the staging environment. * Version number or version number with the `ver_` prefix to import a specific property version. For example `3` and `ver_3` correspond to the same version number. Here are some examples for the latest property version
  *
  * ```sh
  *  $ pulumi import akamai:index/property:Property example prp_123
@@ -100,6 +100,30 @@ import * as utilities from "./utilities";
  *
  * ```sh
  *  $ pulumi import akamai:index/property:Property example prp_123,ctr_1-AB123,grp_123
+ * ```
+ *
+ *  Here are some examples for the latest active property version on the production network
+ *
+ * ```sh
+ *  $ pulumi import akamai:index/property:Property example prp_123,P
+ * ```
+ *
+ *  Or
+ *
+ * ```sh
+ *  $ pulumi import akamai:index/property:Property example prp_123,ctr_1-AB123,grp_123,PROD
+ * ```
+ *
+ *  Here are some examples for the specific property version
+ *
+ * ```sh
+ *  $ pulumi import akamai:index/property:Property example prp_123,3
+ * ```
+ *
+ *  Or
+ *
+ * ```sh
+ *  $ pulumi import akamai:index/property:Property example prp_123,ctr_1-AB123,grp_123,ver_3
  * ```
  */
 export class Property extends pulumi.CustomResource {
@@ -183,6 +207,10 @@ export class Property extends pulumi.CustomResource {
      * Property's version currently activated in production (zero when not active in production)
      */
     public /*out*/ readonly productionVersion!: pulumi.Output<number>;
+    /**
+     * Required property's version to be read
+     */
+    public /*out*/ readonly readVersion!: pulumi.Output<number>;
     public /*out*/ readonly ruleErrors!: pulumi.Output<outputs.PropertyRuleError[]>;
     /**
      * Specify the rule format version (defaults to latest version available when created)
@@ -232,6 +260,7 @@ export class Property extends pulumi.CustomResource {
             inputs["product"] = state ? state.product : undefined;
             inputs["productId"] = state ? state.productId : undefined;
             inputs["productionVersion"] = state ? state.productionVersion : undefined;
+            inputs["readVersion"] = state ? state.readVersion : undefined;
             inputs["ruleErrors"] = state ? state.ruleErrors : undefined;
             inputs["ruleFormat"] = state ? state.ruleFormat : undefined;
             inputs["ruleWarnings"] = state ? state.ruleWarnings : undefined;
@@ -258,6 +287,7 @@ export class Property extends pulumi.CustomResource {
             inputs["variables"] = args ? args.variables : undefined;
             inputs["latestVersion"] = undefined /*out*/;
             inputs["productionVersion"] = undefined /*out*/;
+            inputs["readVersion"] = undefined /*out*/;
             inputs["ruleErrors"] = undefined /*out*/;
             inputs["stagingVersion"] = undefined /*out*/;
         }
@@ -327,6 +357,10 @@ export interface PropertyState {
      * Property's version currently activated in production (zero when not active in production)
      */
     productionVersion?: pulumi.Input<number>;
+    /**
+     * Required property's version to be read
+     */
+    readVersion?: pulumi.Input<number>;
     ruleErrors?: pulumi.Input<pulumi.Input<inputs.PropertyRuleError>[]>;
     /**
      * Specify the rule format version (defaults to latest version available when created)

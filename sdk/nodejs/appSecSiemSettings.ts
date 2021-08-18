@@ -6,35 +6,6 @@ import * as utilities from "./utilities";
 
 /**
  * Use the `akamai.AppSecSiemSettings` resource to mpdate the SIEM integration settings for a specific configuration.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
- * });
- * const siemDefinition = akamai.getAppSecSiemDefinitions({
- *     siemDefinitionName: _var.siem_definition_name,
- * });
- * const securityPolicies = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecSecurityPolicy({
- *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
- * }));
- * const siem = new akamai.AppSecSiemSettings("siem", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
- *     enableSiem: true,
- *     enableForAllPolicies: false,
- *     enableBotmanSiem: true,
- *     siemId: siemDefinition.then(siemDefinition => siemDefinition.id),
- *     securityPolicyIds: securityPolicies.then(securityPolicies => securityPolicies.policyLists),
- * });
- * ```
  */
 export class AppSecSiemSettings extends pulumi.CustomResource {
     /**
@@ -71,9 +42,9 @@ export class AppSecSiemSettings extends pulumi.CustomResource {
     /**
      * Whether you enabled SIEM for the Bot Manager events.
      */
-    public readonly enableBotmanSiem!: pulumi.Output<boolean | undefined>;
+    public readonly enableBotmanSiem!: pulumi.Output<boolean>;
     /**
-     * Whether you enabled SIEM for all the security policies in the configuration version.
+     * Whether you enabled SIEM for all the security policies in the configuration.
      */
     public readonly enableForAllPolicies!: pulumi.Output<boolean>;
     /**
@@ -81,21 +52,13 @@ export class AppSecSiemSettings extends pulumi.CustomResource {
      */
     public readonly enableSiem!: pulumi.Output<boolean>;
     /**
-     * A tabular display showing the updated SIEM integration settings.
-     */
-    public /*out*/ readonly outputText!: pulumi.Output<string>;
-    /**
      * The list of security policy identifiers for which to enable the SIEM integration.
      */
-    public readonly securityPolicyIds!: pulumi.Output<string[]>;
+    public readonly securityPolicyIds!: pulumi.Output<string[] | undefined>;
     /**
      * An integer that uniquely identifies the SIEM settings.
      */
     public readonly siemId!: pulumi.Output<number>;
-    /**
-     * The version number of the configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecSiemSettings resource with the given unique name, arguments, and options.
@@ -114,14 +77,15 @@ export class AppSecSiemSettings extends pulumi.CustomResource {
             inputs["enableBotmanSiem"] = state ? state.enableBotmanSiem : undefined;
             inputs["enableForAllPolicies"] = state ? state.enableForAllPolicies : undefined;
             inputs["enableSiem"] = state ? state.enableSiem : undefined;
-            inputs["outputText"] = state ? state.outputText : undefined;
             inputs["securityPolicyIds"] = state ? state.securityPolicyIds : undefined;
             inputs["siemId"] = state ? state.siemId : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecSiemSettingsArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
+            }
+            if ((!args || args.enableBotmanSiem === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'enableBotmanSiem'");
             }
             if ((!args || args.enableForAllPolicies === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'enableForAllPolicies'");
@@ -129,14 +93,8 @@ export class AppSecSiemSettings extends pulumi.CustomResource {
             if ((!args || args.enableSiem === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'enableSiem'");
             }
-            if ((!args || args.securityPolicyIds === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'securityPolicyIds'");
-            }
             if ((!args || args.siemId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'siemId'");
-            }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
             }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["enableBotmanSiem"] = args ? args.enableBotmanSiem : undefined;
@@ -144,8 +102,6 @@ export class AppSecSiemSettings extends pulumi.CustomResource {
             inputs["enableSiem"] = args ? args.enableSiem : undefined;
             inputs["securityPolicyIds"] = args ? args.securityPolicyIds : undefined;
             inputs["siemId"] = args ? args.siemId : undefined;
-            inputs["version"] = args ? args.version : undefined;
-            inputs["outputText"] = undefined /*out*/;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -167,17 +123,13 @@ export interface AppSecSiemSettingsState {
      */
     enableBotmanSiem?: pulumi.Input<boolean>;
     /**
-     * Whether you enabled SIEM for all the security policies in the configuration version.
+     * Whether you enabled SIEM for all the security policies in the configuration.
      */
     enableForAllPolicies?: pulumi.Input<boolean>;
     /**
      * Whether you enabled SIEM in a security configuration version.
      */
     enableSiem?: pulumi.Input<boolean>;
-    /**
-     * A tabular display showing the updated SIEM integration settings.
-     */
-    outputText?: pulumi.Input<string>;
     /**
      * The list of security policy identifiers for which to enable the SIEM integration.
      */
@@ -186,10 +138,6 @@ export interface AppSecSiemSettingsState {
      * An integer that uniquely identifies the SIEM settings.
      */
     siemId?: pulumi.Input<number>;
-    /**
-     * The version number of the configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -203,9 +151,9 @@ export interface AppSecSiemSettingsArgs {
     /**
      * Whether you enabled SIEM for the Bot Manager events.
      */
-    enableBotmanSiem?: pulumi.Input<boolean>;
+    enableBotmanSiem: pulumi.Input<boolean>;
     /**
-     * Whether you enabled SIEM for all the security policies in the configuration version.
+     * Whether you enabled SIEM for all the security policies in the configuration.
      */
     enableForAllPolicies: pulumi.Input<boolean>;
     /**
@@ -215,13 +163,9 @@ export interface AppSecSiemSettingsArgs {
     /**
      * The list of security policy identifiers for which to enable the SIEM integration.
      */
-    securityPolicyIds: pulumi.Input<pulumi.Input<string>[]>;
+    securityPolicyIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * An integer that uniquely identifies the SIEM settings.
      */
     siemId: pulumi.Input<number>;
-    /**
-     * The version number of the configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

@@ -15,18 +15,15 @@ class AppSecAdvancedSettingsLoggingArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[int],
                  logging: pulumi.Input[str],
-                 version: pulumi.Input[int],
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AppSecAdvancedSettingsLogging resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] logging: The logging settings to apply ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#puthttpheaderloggingforaconfiguration)).
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         :param pulumi.Input[str] security_policy_id: The ID of a specific security policy to which the logging settings should be applied. If not supplied, the indicated settings will be applied to all policies within the configuration.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "logging", logging)
-        pulumi.set(__self__, "version", version)
         if security_policy_id is not None:
             pulumi.set(__self__, "security_policy_id", security_policy_id)
 
@@ -55,18 +52,6 @@ class AppSecAdvancedSettingsLoggingArgs:
         pulumi.set(self, "logging", value)
 
     @property
-    @pulumi.getter
-    def version(self) -> pulumi.Input[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: pulumi.Input[int]):
-        pulumi.set(self, "version", value)
-
-    @property
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -84,14 +69,12 @@ class _AppSecAdvancedSettingsLoggingState:
     def __init__(__self__, *,
                  config_id: Optional[pulumi.Input[int]] = None,
                  logging: Optional[pulumi.Input[str]] = None,
-                 security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None):
+                 security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecAdvancedSettingsLogging resources.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] logging: The logging settings to apply ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#puthttpheaderloggingforaconfiguration)).
         :param pulumi.Input[str] security_policy_id: The ID of a specific security policy to which the logging settings should be applied. If not supplied, the indicated settings will be applied to all policies within the configuration.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -99,8 +82,6 @@ class _AppSecAdvancedSettingsLoggingState:
             pulumi.set(__self__, "logging", logging)
         if security_policy_id is not None:
             pulumi.set(__self__, "security_policy_id", security_policy_id)
-        if version is not None:
-            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -138,18 +119,6 @@ class _AppSecAdvancedSettingsLoggingState:
     def security_policy_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "security_policy_id", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "version", value)
-
 
 class AppSecAdvancedSettingsLogging(pulumi.CustomResource):
     @overload
@@ -159,7 +128,6 @@ class AppSecAdvancedSettingsLogging(pulumi.CustomResource):
                  config_id: Optional[pulumi.Input[int]] = None,
                  logging: Optional[pulumi.Input[str]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         The `resource_akamai_appsec_advanced_settings_logging` resource allows you to enable, disable, or update HTTP header logging settings for a configuration. This operation applies at the configuration level, and therefore applies to all policies within a configuration. You may override these settings for a particular policy by specifying the policy using the security_policy_id parameter.
@@ -175,12 +143,10 @@ class AppSecAdvancedSettingsLogging(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
         logging = akamai.AppSecAdvancedSettingsLogging("logging",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             logging=(lambda path: open(path).read())(f"{path['module']}/logging.json"))
         # USE CASE: user wants to override the logging settings for a security policy
         policy_logging = akamai.AppSecAdvancedSettingsLogging("policyLogging",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             security_policy_id=var["security_policy_id"],
             logging=(lambda path: open(path).read())(f"{path['module']}/logging.json"))
         ```
@@ -190,7 +156,6 @@ class AppSecAdvancedSettingsLogging(pulumi.CustomResource):
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] logging: The logging settings to apply ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#puthttpheaderloggingforaconfiguration)).
         :param pulumi.Input[str] security_policy_id: The ID of a specific security policy to which the logging settings should be applied. If not supplied, the indicated settings will be applied to all policies within the configuration.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         ...
     @overload
@@ -212,12 +177,10 @@ class AppSecAdvancedSettingsLogging(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
         logging = akamai.AppSecAdvancedSettingsLogging("logging",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             logging=(lambda path: open(path).read())(f"{path['module']}/logging.json"))
         # USE CASE: user wants to override the logging settings for a security policy
         policy_logging = akamai.AppSecAdvancedSettingsLogging("policyLogging",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             security_policy_id=var["security_policy_id"],
             logging=(lambda path: open(path).read())(f"{path['module']}/logging.json"))
         ```
@@ -240,7 +203,6 @@ class AppSecAdvancedSettingsLogging(pulumi.CustomResource):
                  config_id: Optional[pulumi.Input[int]] = None,
                  logging: Optional[pulumi.Input[str]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
@@ -260,9 +222,6 @@ class AppSecAdvancedSettingsLogging(pulumi.CustomResource):
                 raise TypeError("Missing required property 'logging'")
             __props__.__dict__["logging"] = logging
             __props__.__dict__["security_policy_id"] = security_policy_id
-            if version is None and not opts.urn:
-                raise TypeError("Missing required property 'version'")
-            __props__.__dict__["version"] = version
         super(AppSecAdvancedSettingsLogging, __self__).__init__(
             'akamai:index/appSecAdvancedSettingsLogging:AppSecAdvancedSettingsLogging',
             resource_name,
@@ -275,8 +234,7 @@ class AppSecAdvancedSettingsLogging(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             config_id: Optional[pulumi.Input[int]] = None,
             logging: Optional[pulumi.Input[str]] = None,
-            security_policy_id: Optional[pulumi.Input[str]] = None,
-            version: Optional[pulumi.Input[int]] = None) -> 'AppSecAdvancedSettingsLogging':
+            security_policy_id: Optional[pulumi.Input[str]] = None) -> 'AppSecAdvancedSettingsLogging':
         """
         Get an existing AppSecAdvancedSettingsLogging resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -287,7 +245,6 @@ class AppSecAdvancedSettingsLogging(pulumi.CustomResource):
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] logging: The logging settings to apply ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#puthttpheaderloggingforaconfiguration)).
         :param pulumi.Input[str] security_policy_id: The ID of a specific security policy to which the logging settings should be applied. If not supplied, the indicated settings will be applied to all policies within the configuration.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -296,7 +253,6 @@ class AppSecAdvancedSettingsLogging(pulumi.CustomResource):
         __props__.__dict__["config_id"] = config_id
         __props__.__dict__["logging"] = logging
         __props__.__dict__["security_policy_id"] = security_policy_id
-        __props__.__dict__["version"] = version
         return AppSecAdvancedSettingsLogging(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -322,12 +278,4 @@ class AppSecAdvancedSettingsLogging(pulumi.CustomResource):
         The ID of a specific security policy to which the logging settings should be applied. If not supplied, the indicated settings will be applied to all policies within the configuration.
         """
         return pulumi.get(self, "security_policy_id")
-
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Output[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
 

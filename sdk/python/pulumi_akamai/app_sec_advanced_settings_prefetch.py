@@ -17,8 +17,7 @@ class AppSecAdvancedSettingsPrefetchArgs:
                  config_id: pulumi.Input[int],
                  enable_app_layer: pulumi.Input[bool],
                  enable_rate_controls: pulumi.Input[bool],
-                 extensions: pulumi.Input[Sequence[pulumi.Input[str]]],
-                 version: pulumi.Input[int]):
+                 extensions: pulumi.Input[Sequence[pulumi.Input[str]]]):
         """
         The set of arguments for constructing a AppSecAdvancedSettingsPrefetch resource.
         :param pulumi.Input[bool] all_extensions: Whether to enable prefetch requests for all extensions.
@@ -26,14 +25,12 @@ class AppSecAdvancedSettingsPrefetchArgs:
         :param pulumi.Input[bool] enable_app_layer: Whether to enable prefetch requests.
         :param pulumi.Input[bool] enable_rate_controls: Whether to enable prefetch requests for rate controls.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] extensions: The specific extensions for which to enable prefetch requests. If `all_extensions` is True, `extensions` must be an empty list.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         pulumi.set(__self__, "all_extensions", all_extensions)
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "enable_app_layer", enable_app_layer)
         pulumi.set(__self__, "enable_rate_controls", enable_rate_controls)
         pulumi.set(__self__, "extensions", extensions)
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="allExtensions")
@@ -95,18 +92,6 @@ class AppSecAdvancedSettingsPrefetchArgs:
     def extensions(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
         pulumi.set(self, "extensions", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Input[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: pulumi.Input[int]):
-        pulumi.set(self, "version", value)
-
 
 @pulumi.input_type
 class _AppSecAdvancedSettingsPrefetchState:
@@ -115,8 +100,7 @@ class _AppSecAdvancedSettingsPrefetchState:
                  config_id: Optional[pulumi.Input[int]] = None,
                  enable_app_layer: Optional[pulumi.Input[bool]] = None,
                  enable_rate_controls: Optional[pulumi.Input[bool]] = None,
-                 extensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 version: Optional[pulumi.Input[int]] = None):
+                 extensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering AppSecAdvancedSettingsPrefetch resources.
         :param pulumi.Input[bool] all_extensions: Whether to enable prefetch requests for all extensions.
@@ -124,7 +108,6 @@ class _AppSecAdvancedSettingsPrefetchState:
         :param pulumi.Input[bool] enable_app_layer: Whether to enable prefetch requests.
         :param pulumi.Input[bool] enable_rate_controls: Whether to enable prefetch requests for rate controls.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] extensions: The specific extensions for which to enable prefetch requests. If `all_extensions` is True, `extensions` must be an empty list.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         if all_extensions is not None:
             pulumi.set(__self__, "all_extensions", all_extensions)
@@ -136,8 +119,6 @@ class _AppSecAdvancedSettingsPrefetchState:
             pulumi.set(__self__, "enable_rate_controls", enable_rate_controls)
         if extensions is not None:
             pulumi.set(__self__, "extensions", extensions)
-        if version is not None:
-            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="allExtensions")
@@ -199,18 +180,6 @@ class _AppSecAdvancedSettingsPrefetchState:
     def extensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "extensions", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "version", value)
-
 
 class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
     @overload
@@ -222,7 +191,6 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
                  enable_app_layer: Optional[pulumi.Input[bool]] = None,
                  enable_rate_controls: Optional[pulumi.Input[bool]] = None,
                  extensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         The `resource_akamai_appsec_advanced_settings_prefetch` resource allows you to enable inspection of internal requests (those between your origin and Akamai’s servers) for file types that you specify. You can also apply rate controls to prefetch requests. This operation applies at the configuration level.
@@ -238,7 +206,6 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
         prefetch = akamai.AppSecAdvancedSettingsPrefetch("prefetch",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             enable_app_layer=False,
             all_extensions=True,
             enable_rate_controls=False,
@@ -252,7 +219,6 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
         :param pulumi.Input[bool] enable_app_layer: Whether to enable prefetch requests.
         :param pulumi.Input[bool] enable_rate_controls: Whether to enable prefetch requests for rate controls.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] extensions: The specific extensions for which to enable prefetch requests. If `all_extensions` is True, `extensions` must be an empty list.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         ...
     @overload
@@ -274,7 +240,6 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
         prefetch = akamai.AppSecAdvancedSettingsPrefetch("prefetch",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             enable_app_layer=False,
             all_extensions=True,
             enable_rate_controls=False,
@@ -301,7 +266,6 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
                  enable_app_layer: Optional[pulumi.Input[bool]] = None,
                  enable_rate_controls: Optional[pulumi.Input[bool]] = None,
                  extensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
@@ -329,9 +293,6 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
             if extensions is None and not opts.urn:
                 raise TypeError("Missing required property 'extensions'")
             __props__.__dict__["extensions"] = extensions
-            if version is None and not opts.urn:
-                raise TypeError("Missing required property 'version'")
-            __props__.__dict__["version"] = version
         super(AppSecAdvancedSettingsPrefetch, __self__).__init__(
             'akamai:index/appSecAdvancedSettingsPrefetch:AppSecAdvancedSettingsPrefetch',
             resource_name,
@@ -346,8 +307,7 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
             config_id: Optional[pulumi.Input[int]] = None,
             enable_app_layer: Optional[pulumi.Input[bool]] = None,
             enable_rate_controls: Optional[pulumi.Input[bool]] = None,
-            extensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            version: Optional[pulumi.Input[int]] = None) -> 'AppSecAdvancedSettingsPrefetch':
+            extensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None) -> 'AppSecAdvancedSettingsPrefetch':
         """
         Get an existing AppSecAdvancedSettingsPrefetch resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -360,7 +320,6 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
         :param pulumi.Input[bool] enable_app_layer: Whether to enable prefetch requests.
         :param pulumi.Input[bool] enable_rate_controls: Whether to enable prefetch requests for rate controls.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] extensions: The specific extensions for which to enable prefetch requests. If `all_extensions` is True, `extensions` must be an empty list.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -371,7 +330,6 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
         __props__.__dict__["enable_app_layer"] = enable_app_layer
         __props__.__dict__["enable_rate_controls"] = enable_rate_controls
         __props__.__dict__["extensions"] = extensions
-        __props__.__dict__["version"] = version
         return AppSecAdvancedSettingsPrefetch(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -413,12 +371,4 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
         The specific extensions for which to enable prefetch requests. If `all_extensions` is True, `extensions` must be an empty list.
         """
         return pulumi.get(self, "extensions")
-
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Output[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
 

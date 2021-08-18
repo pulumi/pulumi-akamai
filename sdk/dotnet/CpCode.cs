@@ -74,10 +74,20 @@ namespace Pulumi.Akamai
     /// 
     /// The following arguments are supported:
     /// 
+    /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
     /// * `name` - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can’t include commas, underscores, quotes, or any of these special characters: ^ # %.
     /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
     /// * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
     /// * `product_id` - (Required) A product's unique ID, including the `prd_` prefix.
+    ///   =======
+    /// * `name` - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can’t include commas, underscores, quotes, or any of these special characters: ^ # %.
+    /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
+    /// * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
+    /// * `product_id` - (Required) A product's unique ID, including the `prd_` prefix.
+    /// 
+    /// ### Deprecated arguments
+    /// 
+    /// &gt; &gt; &gt; &gt; &gt; &gt; &gt; v1.6.1
     /// * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
     /// * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
     /// * `product` - (Deprecated) Replaced by `product_id`. Maintained for legacy purposes.
@@ -92,11 +102,7 @@ namespace Pulumi.Akamai
     /// 
     /// # (resource arguments)
     /// 
-    ///  } You can import your Akamai CP codes using a comma-delimited string of the CP code,
-    /// 
-    /// contract, and group IDs. You have to enter the IDs in this order:
-    /// 
-    /// `cpcode_id,contract_id,group_id` For example
+    ///  } You can import your Akamai CP codes using a comma-delimited string of the CP code, contract, and group IDs. You have to enter the IDs in this order`cpcode_id,contract_id,group_id` For example
     /// 
     /// ```sh
     ///  $ pulumi import akamai:index/cpCode:CpCode example cpc_123,ctr_1-AB123,grp_123

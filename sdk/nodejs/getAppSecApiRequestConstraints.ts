@@ -19,16 +19,14 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: _var.security_configuration,
  * });
- * const apisRequestConstraints = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecApiRequestConstraints({
+ * const apisRequestConstraints = configuration.then(configuration => akamai.getAppSecApiRequestConstraints({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  *     securityPolicyId: _var.security_policy_id,
  * }));
  * export const apisConstraintsText = apisRequestConstraints.then(apisRequestConstraints => apisRequestConstraints.outputText);
  * export const apisConstraintsJson = apisRequestConstraints.then(apisRequestConstraints => apisRequestConstraints.json);
- * const apiRequestConstraints = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecApiRequestConstraints({
+ * const apiRequestConstraints = configuration.then(configuration => akamai.getAppSecApiRequestConstraints({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  *     securityPolicyId: _var.security_policy_id,
  *     apiId: _var.api_id,
  * }));
@@ -48,7 +46,6 @@ export function getAppSecApiRequestConstraints(args: GetAppSecApiRequestConstrai
         "apiId": args.apiId,
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
-        "version": args.version,
     }, opts);
 }
 
@@ -68,10 +65,6 @@ export interface GetAppSecApiRequestConstraintsArgs {
      * The ID of the security policy to use.
      */
     securityPolicyId: string;
-    /**
-     * The version number of the configuration to use.
-     */
-    version: number;
 }
 
 /**
@@ -93,5 +86,4 @@ export interface GetAppSecApiRequestConstraintsResult {
      */
     readonly outputText: string;
     readonly securityPolicyId: string;
-    readonly version: number;
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// The `akamai.AppSecMatchTarget` resource allows you to create or modify a match target associated with a given security configuration version.
+    /// The `akamai.AppSecMatchTarget` resource allows you to create or modify a match target associated with a given security configuration.
     /// 
     /// ## Example Usage
     /// 
@@ -32,7 +32,6 @@ namespace Pulumi.Akamai
     ///         var matchTarget = new Akamai.AppSecMatchTarget("matchTarget", new Akamai.AppSecMatchTargetArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
     ///             MatchTarget = File.ReadAllText($"{path.Module}/match_targets.json"),
     ///         });
     ///     }
@@ -60,12 +59,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("matchTargetId")]
         public Output<int> MatchTargetId { get; private set; } = null!;
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -125,12 +118,6 @@ namespace Pulumi.Akamai
         [Input("matchTarget", required: true)]
         public Input<string> MatchTarget { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
-
         public AppSecMatchTargetArgs()
         {
         }
@@ -155,12 +142,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("matchTargetId")]
         public Input<int>? MatchTargetId { get; set; }
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecMatchTargetState()
         {

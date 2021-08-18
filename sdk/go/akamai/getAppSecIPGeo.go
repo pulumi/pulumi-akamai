@@ -32,7 +32,6 @@ import (
 // 		}
 // 		ipGeo, err := akamai.LookupAppSecIPGeo(ctx, &akamai.LookupAppSecIPGeoArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			Version:          configuration.LatestVersion,
 // 			SecurityPolicyId: _var.Security_policy_id,
 // 		}, nil)
 // 		if err != nil {
@@ -61,8 +60,6 @@ type LookupAppSecIPGeoArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// The ID of the security policy to use.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecIPGeo.
@@ -81,5 +78,4 @@ type LookupAppSecIPGeoResult struct {
 	// A tabular display of the IP/Geo firewall settings.
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	Version          int    `pulumi:"version"`
 }

@@ -19,9 +19,8 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: _var.security_configuration,
  * });
- * const upgradeDetails = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecRuleUpgradeDetails({
+ * const upgradeDetails = configuration.then(configuration => akamai.getAppSecRuleUpgradeDetails({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  *     securityPolicyId: _var.security_policy_id,
  * }));
  * export const upgradeDetailsText = upgradeDetails.then(upgradeDetails => upgradeDetails.outputText);
@@ -39,7 +38,6 @@ export function getAppSecRuleUpgradeDetails(args: GetAppSecRuleUpgradeDetailsArg
     return pulumi.runtime.invoke("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
-        "version": args.version,
     }, opts);
 }
 
@@ -55,10 +53,6 @@ export interface GetAppSecRuleUpgradeDetailsArgs {
      * The ID of the security policy to use.
      */
     securityPolicyId: string;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: number;
 }
 
 /**
@@ -79,5 +73,4 @@ export interface GetAppSecRuleUpgradeDetailsResult {
      */
     readonly outputText: string;
     readonly securityPolicyId: string;
-    readonly version: number;
 }

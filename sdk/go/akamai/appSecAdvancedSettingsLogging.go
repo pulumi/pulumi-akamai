@@ -21,8 +21,6 @@ type AppSecAdvancedSettingsLogging struct {
 	Logging pulumi.StringOutput `pulumi:"logging"`
 	// The ID of a specific security policy to which the logging settings should be applied. If not supplied, the indicated settings will be applied to all policies within the configuration.
 	SecurityPolicyId pulumi.StringPtrOutput `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecAdvancedSettingsLogging registers a new resource with the given unique name, arguments, and options.
@@ -37,9 +35,6 @@ func NewAppSecAdvancedSettingsLogging(ctx *pulumi.Context,
 	}
 	if args.Logging == nil {
 		return nil, errors.New("invalid value for required argument 'Logging'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecAdvancedSettingsLogging
 	err := ctx.RegisterResource("akamai:index/appSecAdvancedSettingsLogging:AppSecAdvancedSettingsLogging", name, args, &resource, opts...)
@@ -69,8 +64,6 @@ type appSecAdvancedSettingsLoggingState struct {
 	Logging *string `pulumi:"logging"`
 	// The ID of a specific security policy to which the logging settings should be applied. If not supplied, the indicated settings will be applied to all policies within the configuration.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecAdvancedSettingsLoggingState struct {
@@ -80,8 +73,6 @@ type AppSecAdvancedSettingsLoggingState struct {
 	Logging pulumi.StringPtrInput
 	// The ID of a specific security policy to which the logging settings should be applied. If not supplied, the indicated settings will be applied to all policies within the configuration.
 	SecurityPolicyId pulumi.StringPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecAdvancedSettingsLoggingState) ElementType() reflect.Type {
@@ -95,8 +86,6 @@ type appSecAdvancedSettingsLoggingArgs struct {
 	Logging string `pulumi:"logging"`
 	// The ID of a specific security policy to which the logging settings should be applied. If not supplied, the indicated settings will be applied to all policies within the configuration.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecAdvancedSettingsLogging resource.
@@ -107,8 +96,6 @@ type AppSecAdvancedSettingsLoggingArgs struct {
 	Logging pulumi.StringInput
 	// The ID of a specific security policy to which the logging settings should be applied. If not supplied, the indicated settings will be applied to all policies within the configuration.
 	SecurityPolicyId pulumi.StringPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecAdvancedSettingsLoggingArgs) ElementType() reflect.Type {

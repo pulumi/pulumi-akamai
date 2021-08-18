@@ -9,6 +9,14 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
+    'CpsDvEnrollmentAdminContactArgs',
+    'CpsDvEnrollmentCsrArgs',
+    'CpsDvEnrollmentDnsChallengeArgs',
+    'CpsDvEnrollmentHttpChallengeArgs',
+    'CpsDvEnrollmentNetworkConfigurationArgs',
+    'CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs',
+    'CpsDvEnrollmentOrganizationArgs',
+    'CpsDvEnrollmentTechContactArgs',
     'DnsZoneTsigKeyArgs',
     'GtmAsmapAssignmentArgs',
     'GtmAsmapDefaultDatacenterArgs',
@@ -35,9 +43,665 @@ __all__ = [
     'ProviderConfigArgs',
     'ProviderDnsArgs',
     'ProviderGtmArgs',
+    'ProviderNetworkArgs',
     'ProviderPropertyArgs',
     'GetPropertyRulesTemplateVariableArgs',
 ]
+
+@pulumi.input_type
+class CpsDvEnrollmentAdminContactArgs:
+    def __init__(__self__, *,
+                 address_line_one: pulumi.Input[str],
+                 city: pulumi.Input[str],
+                 country_code: pulumi.Input[str],
+                 email: pulumi.Input[str],
+                 first_name: pulumi.Input[str],
+                 last_name: pulumi.Input[str],
+                 organization: pulumi.Input[str],
+                 phone: pulumi.Input[str],
+                 postal_code: pulumi.Input[str],
+                 region: pulumi.Input[str],
+                 address_line_two: Optional[pulumi.Input[str]] = None,
+                 title: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "address_line_one", address_line_one)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "organization", organization)
+        pulumi.set(__self__, "phone", phone)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "region", region)
+        if address_line_two is not None:
+            pulumi.set(__self__, "address_line_two", address_line_two)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="addressLineOne")
+    def address_line_one(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "address_line_one")
+
+    @address_line_one.setter
+    def address_line_one(self, value: pulumi.Input[str]):
+        pulumi.set(self, "address_line_one", value)
+
+    @property
+    @pulumi.getter
+    def city(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "city")
+
+    @city.setter
+    def city(self, value: pulumi.Input[str]):
+        pulumi.set(self, "city", value)
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "country_code")
+
+    @country_code.setter
+    def country_code(self, value: pulumi.Input[str]):
+        pulumi.set(self, "country_code", value)
+
+    @property
+    @pulumi.getter
+    def email(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "email")
+
+    @email.setter
+    def email(self, value: pulumi.Input[str]):
+        pulumi.set(self, "email", value)
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "first_name")
+
+    @first_name.setter
+    def first_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "first_name", value)
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "last_name")
+
+    @last_name.setter
+    def last_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "last_name", value)
+
+    @property
+    @pulumi.getter
+    def organization(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "organization")
+
+    @organization.setter
+    def organization(self, value: pulumi.Input[str]):
+        pulumi.set(self, "organization", value)
+
+    @property
+    @pulumi.getter
+    def phone(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "phone")
+
+    @phone.setter
+    def phone(self, value: pulumi.Input[str]):
+        pulumi.set(self, "phone", value)
+
+    @property
+    @pulumi.getter(name="postalCode")
+    def postal_code(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "postal_code")
+
+    @postal_code.setter
+    def postal_code(self, value: pulumi.Input[str]):
+        pulumi.set(self, "postal_code", value)
+
+    @property
+    @pulumi.getter
+    def region(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: pulumi.Input[str]):
+        pulumi.set(self, "region", value)
+
+    @property
+    @pulumi.getter(name="addressLineTwo")
+    def address_line_two(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "address_line_two")
+
+    @address_line_two.setter
+    def address_line_two(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "address_line_two", value)
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "title")
+
+    @title.setter
+    def title(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "title", value)
+
+
+@pulumi.input_type
+class CpsDvEnrollmentCsrArgs:
+    def __init__(__self__, *,
+                 city: pulumi.Input[str],
+                 country_code: pulumi.Input[str],
+                 organization: pulumi.Input[str],
+                 organizational_unit: pulumi.Input[str],
+                 state: pulumi.Input[str]):
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "organization", organization)
+        pulumi.set(__self__, "organizational_unit", organizational_unit)
+        pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter
+    def city(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "city")
+
+    @city.setter
+    def city(self, value: pulumi.Input[str]):
+        pulumi.set(self, "city", value)
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "country_code")
+
+    @country_code.setter
+    def country_code(self, value: pulumi.Input[str]):
+        pulumi.set(self, "country_code", value)
+
+    @property
+    @pulumi.getter
+    def organization(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "organization")
+
+    @organization.setter
+    def organization(self, value: pulumi.Input[str]):
+        pulumi.set(self, "organization", value)
+
+    @property
+    @pulumi.getter(name="organizationalUnit")
+    def organizational_unit(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "organizational_unit")
+
+    @organizational_unit.setter
+    def organizational_unit(self, value: pulumi.Input[str]):
+        pulumi.set(self, "organizational_unit", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: pulumi.Input[str]):
+        pulumi.set(self, "state", value)
+
+
+@pulumi.input_type
+class CpsDvEnrollmentDnsChallengeArgs:
+    def __init__(__self__, *,
+                 domain: Optional[pulumi.Input[str]] = None,
+                 full_path: Optional[pulumi.Input[str]] = None,
+                 response_body: Optional[pulumi.Input[str]] = None):
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if full_path is not None:
+            pulumi.set(__self__, "full_path", full_path)
+        if response_body is not None:
+            pulumi.set(__self__, "response_body", response_body)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain", value)
+
+    @property
+    @pulumi.getter(name="fullPath")
+    def full_path(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "full_path")
+
+    @full_path.setter
+    def full_path(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "full_path", value)
+
+    @property
+    @pulumi.getter(name="responseBody")
+    def response_body(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "response_body")
+
+    @response_body.setter
+    def response_body(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "response_body", value)
+
+
+@pulumi.input_type
+class CpsDvEnrollmentHttpChallengeArgs:
+    def __init__(__self__, *,
+                 domain: Optional[pulumi.Input[str]] = None,
+                 full_path: Optional[pulumi.Input[str]] = None,
+                 response_body: Optional[pulumi.Input[str]] = None):
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if full_path is not None:
+            pulumi.set(__self__, "full_path", full_path)
+        if response_body is not None:
+            pulumi.set(__self__, "response_body", response_body)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain", value)
+
+    @property
+    @pulumi.getter(name="fullPath")
+    def full_path(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "full_path")
+
+    @full_path.setter
+    def full_path(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "full_path", value)
+
+    @property
+    @pulumi.getter(name="responseBody")
+    def response_body(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "response_body")
+
+    @response_body.setter
+    def response_body(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "response_body", value)
+
+
+@pulumi.input_type
+class CpsDvEnrollmentNetworkConfigurationArgs:
+    def __init__(__self__, *,
+                 geography: pulumi.Input[str],
+                 client_mutual_authentication: Optional[pulumi.Input['CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs']] = None,
+                 clone_dns_names: Optional[pulumi.Input[bool]] = None,
+                 disallowed_tls_versions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 must_have_ciphers: Optional[pulumi.Input[str]] = None,
+                 ocsp_stapling: Optional[pulumi.Input[str]] = None,
+                 preferred_ciphers: Optional[pulumi.Input[str]] = None,
+                 quic_enabled: Optional[pulumi.Input[bool]] = None):
+        pulumi.set(__self__, "geography", geography)
+        if client_mutual_authentication is not None:
+            pulumi.set(__self__, "client_mutual_authentication", client_mutual_authentication)
+        if clone_dns_names is not None:
+            pulumi.set(__self__, "clone_dns_names", clone_dns_names)
+        if disallowed_tls_versions is not None:
+            pulumi.set(__self__, "disallowed_tls_versions", disallowed_tls_versions)
+        if must_have_ciphers is not None:
+            pulumi.set(__self__, "must_have_ciphers", must_have_ciphers)
+        if ocsp_stapling is not None:
+            pulumi.set(__self__, "ocsp_stapling", ocsp_stapling)
+        if preferred_ciphers is not None:
+            pulumi.set(__self__, "preferred_ciphers", preferred_ciphers)
+        if quic_enabled is not None:
+            pulumi.set(__self__, "quic_enabled", quic_enabled)
+
+    @property
+    @pulumi.getter
+    def geography(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "geography")
+
+    @geography.setter
+    def geography(self, value: pulumi.Input[str]):
+        pulumi.set(self, "geography", value)
+
+    @property
+    @pulumi.getter(name="clientMutualAuthentication")
+    def client_mutual_authentication(self) -> Optional[pulumi.Input['CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs']]:
+        return pulumi.get(self, "client_mutual_authentication")
+
+    @client_mutual_authentication.setter
+    def client_mutual_authentication(self, value: Optional[pulumi.Input['CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs']]):
+        pulumi.set(self, "client_mutual_authentication", value)
+
+    @property
+    @pulumi.getter(name="cloneDnsNames")
+    def clone_dns_names(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "clone_dns_names")
+
+    @clone_dns_names.setter
+    def clone_dns_names(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "clone_dns_names", value)
+
+    @property
+    @pulumi.getter(name="disallowedTlsVersions")
+    def disallowed_tls_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "disallowed_tls_versions")
+
+    @disallowed_tls_versions.setter
+    def disallowed_tls_versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "disallowed_tls_versions", value)
+
+    @property
+    @pulumi.getter(name="mustHaveCiphers")
+    def must_have_ciphers(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "must_have_ciphers")
+
+    @must_have_ciphers.setter
+    def must_have_ciphers(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "must_have_ciphers", value)
+
+    @property
+    @pulumi.getter(name="ocspStapling")
+    def ocsp_stapling(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ocsp_stapling")
+
+    @ocsp_stapling.setter
+    def ocsp_stapling(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ocsp_stapling", value)
+
+    @property
+    @pulumi.getter(name="preferredCiphers")
+    def preferred_ciphers(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "preferred_ciphers")
+
+    @preferred_ciphers.setter
+    def preferred_ciphers(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "preferred_ciphers", value)
+
+    @property
+    @pulumi.getter(name="quicEnabled")
+    def quic_enabled(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "quic_enabled")
+
+    @quic_enabled.setter
+    def quic_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "quic_enabled", value)
+
+
+@pulumi.input_type
+class CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs:
+    def __init__(__self__, *,
+                 ocsp_enabled: Optional[pulumi.Input[bool]] = None,
+                 send_ca_list_to_client: Optional[pulumi.Input[bool]] = None,
+                 set_id: Optional[pulumi.Input[str]] = None):
+        if ocsp_enabled is not None:
+            pulumi.set(__self__, "ocsp_enabled", ocsp_enabled)
+        if send_ca_list_to_client is not None:
+            pulumi.set(__self__, "send_ca_list_to_client", send_ca_list_to_client)
+        if set_id is not None:
+            pulumi.set(__self__, "set_id", set_id)
+
+    @property
+    @pulumi.getter(name="ocspEnabled")
+    def ocsp_enabled(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "ocsp_enabled")
+
+    @ocsp_enabled.setter
+    def ocsp_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "ocsp_enabled", value)
+
+    @property
+    @pulumi.getter(name="sendCaListToClient")
+    def send_ca_list_to_client(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "send_ca_list_to_client")
+
+    @send_ca_list_to_client.setter
+    def send_ca_list_to_client(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "send_ca_list_to_client", value)
+
+    @property
+    @pulumi.getter(name="setId")
+    def set_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "set_id")
+
+    @set_id.setter
+    def set_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "set_id", value)
+
+
+@pulumi.input_type
+class CpsDvEnrollmentOrganizationArgs:
+    def __init__(__self__, *,
+                 address_line_one: pulumi.Input[str],
+                 city: pulumi.Input[str],
+                 country_code: pulumi.Input[str],
+                 name: pulumi.Input[str],
+                 phone: pulumi.Input[str],
+                 postal_code: pulumi.Input[str],
+                 region: pulumi.Input[str],
+                 address_line_two: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "address_line_one", address_line_one)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "phone", phone)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "region", region)
+        if address_line_two is not None:
+            pulumi.set(__self__, "address_line_two", address_line_two)
+
+    @property
+    @pulumi.getter(name="addressLineOne")
+    def address_line_one(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "address_line_one")
+
+    @address_line_one.setter
+    def address_line_one(self, value: pulumi.Input[str]):
+        pulumi.set(self, "address_line_one", value)
+
+    @property
+    @pulumi.getter
+    def city(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "city")
+
+    @city.setter
+    def city(self, value: pulumi.Input[str]):
+        pulumi.set(self, "city", value)
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "country_code")
+
+    @country_code.setter
+    def country_code(self, value: pulumi.Input[str]):
+        pulumi.set(self, "country_code", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def phone(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "phone")
+
+    @phone.setter
+    def phone(self, value: pulumi.Input[str]):
+        pulumi.set(self, "phone", value)
+
+    @property
+    @pulumi.getter(name="postalCode")
+    def postal_code(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "postal_code")
+
+    @postal_code.setter
+    def postal_code(self, value: pulumi.Input[str]):
+        pulumi.set(self, "postal_code", value)
+
+    @property
+    @pulumi.getter
+    def region(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: pulumi.Input[str]):
+        pulumi.set(self, "region", value)
+
+    @property
+    @pulumi.getter(name="addressLineTwo")
+    def address_line_two(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "address_line_two")
+
+    @address_line_two.setter
+    def address_line_two(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "address_line_two", value)
+
+
+@pulumi.input_type
+class CpsDvEnrollmentTechContactArgs:
+    def __init__(__self__, *,
+                 address_line_one: pulumi.Input[str],
+                 city: pulumi.Input[str],
+                 country_code: pulumi.Input[str],
+                 email: pulumi.Input[str],
+                 first_name: pulumi.Input[str],
+                 last_name: pulumi.Input[str],
+                 organization: pulumi.Input[str],
+                 phone: pulumi.Input[str],
+                 postal_code: pulumi.Input[str],
+                 region: pulumi.Input[str],
+                 address_line_two: Optional[pulumi.Input[str]] = None,
+                 title: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "address_line_one", address_line_one)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "organization", organization)
+        pulumi.set(__self__, "phone", phone)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "region", region)
+        if address_line_two is not None:
+            pulumi.set(__self__, "address_line_two", address_line_two)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="addressLineOne")
+    def address_line_one(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "address_line_one")
+
+    @address_line_one.setter
+    def address_line_one(self, value: pulumi.Input[str]):
+        pulumi.set(self, "address_line_one", value)
+
+    @property
+    @pulumi.getter
+    def city(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "city")
+
+    @city.setter
+    def city(self, value: pulumi.Input[str]):
+        pulumi.set(self, "city", value)
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "country_code")
+
+    @country_code.setter
+    def country_code(self, value: pulumi.Input[str]):
+        pulumi.set(self, "country_code", value)
+
+    @property
+    @pulumi.getter
+    def email(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "email")
+
+    @email.setter
+    def email(self, value: pulumi.Input[str]):
+        pulumi.set(self, "email", value)
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "first_name")
+
+    @first_name.setter
+    def first_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "first_name", value)
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "last_name")
+
+    @last_name.setter
+    def last_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "last_name", value)
+
+    @property
+    @pulumi.getter
+    def organization(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "organization")
+
+    @organization.setter
+    def organization(self, value: pulumi.Input[str]):
+        pulumi.set(self, "organization", value)
+
+    @property
+    @pulumi.getter
+    def phone(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "phone")
+
+    @phone.setter
+    def phone(self, value: pulumi.Input[str]):
+        pulumi.set(self, "phone", value)
+
+    @property
+    @pulumi.getter(name="postalCode")
+    def postal_code(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "postal_code")
+
+    @postal_code.setter
+    def postal_code(self, value: pulumi.Input[str]):
+        pulumi.set(self, "postal_code", value)
+
+    @property
+    @pulumi.getter
+    def region(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: pulumi.Input[str]):
+        pulumi.set(self, "region", value)
+
+    @property
+    @pulumi.getter(name="addressLineTwo")
+    def address_line_two(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "address_line_two")
+
+    @address_line_two.setter
+    def address_line_two(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "address_line_two", value)
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "title")
+
+    @title.setter
+    def title(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "title", value)
+
 
 @pulumi.input_type
 class DnsZoneTsigKeyArgs:
@@ -1689,6 +2353,83 @@ class ProviderDnsArgs:
 
 @pulumi.input_type
 class ProviderGtmArgs:
+    def __init__(__self__, *,
+                 access_token: Optional[pulumi.Input[str]] = None,
+                 account_key: Optional[pulumi.Input[str]] = None,
+                 client_secret: Optional[pulumi.Input[str]] = None,
+                 client_token: Optional[pulumi.Input[str]] = None,
+                 host: Optional[pulumi.Input[str]] = None,
+                 max_body: Optional[pulumi.Input[int]] = None):
+        if access_token is not None:
+            pulumi.set(__self__, "access_token", access_token)
+        if account_key is not None:
+            pulumi.set(__self__, "account_key", account_key)
+        if client_secret is not None:
+            pulumi.set(__self__, "client_secret", client_secret)
+        if client_token is not None:
+            pulumi.set(__self__, "client_token", client_token)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if max_body is not None:
+            pulumi.set(__self__, "max_body", max_body)
+
+    @property
+    @pulumi.getter(name="accessToken")
+    def access_token(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "access_token")
+
+    @access_token.setter
+    def access_token(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "access_token", value)
+
+    @property
+    @pulumi.getter(name="accountKey")
+    def account_key(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "account_key")
+
+    @account_key.setter
+    def account_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "account_key", value)
+
+    @property
+    @pulumi.getter(name="clientSecret")
+    def client_secret(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "client_secret")
+
+    @client_secret.setter
+    def client_secret(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "client_secret", value)
+
+    @property
+    @pulumi.getter(name="clientToken")
+    def client_token(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "client_token")
+
+    @client_token.setter
+    def client_token(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "client_token", value)
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "host")
+
+    @host.setter
+    def host(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host", value)
+
+    @property
+    @pulumi.getter(name="maxBody")
+    def max_body(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "max_body")
+
+    @max_body.setter
+    def max_body(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_body", value)
+
+
+@pulumi.input_type
+class ProviderNetworkArgs:
     def __init__(__self__, *,
                  access_token: Optional[pulumi.Input[str]] = None,
                  account_key: Optional[pulumi.Input[str]] = None,

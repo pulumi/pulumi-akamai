@@ -19,9 +19,8 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: _var.security_configuration,
  * });
- * const siemSettings = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecSiemSettings({
+ * const siemSettings = configuration.then(configuration => akamai.getAppSecSiemSettings({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  * }));
  * export const siemSettingsJson = siemSettings.then(siemSettings => siemSettings.json);
  * export const siemSettingsOutput = siemSettings.then(siemSettings => siemSettings.outputText);
@@ -37,7 +36,6 @@ export function getAppSecSiemSettings(args: GetAppSecSiemSettingsArgs, opts?: pu
     }
     return pulumi.runtime.invoke("akamai:index/getAppSecSiemSettings:getAppSecSiemSettings", {
         "configId": args.configId,
-        "version": args.version,
     }, opts);
 }
 
@@ -49,10 +47,6 @@ export interface GetAppSecSiemSettingsArgs {
      * The ID of the security configuration to use.
      */
     configId: number;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: number;
 }
 
 /**
@@ -72,5 +66,4 @@ export interface GetAppSecSiemSettingsResult {
      * A tabular display showing the SIEM setting information.
      */
     readonly outputText: string;
-    readonly version: number;
 }

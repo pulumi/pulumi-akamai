@@ -12,12 +12,12 @@ namespace Pulumi.Akamai
     public static class GetPropertyRuleFormats
     {
         /// <summary>
-        /// Use the `akamai.getPropertyRuleFormats` data source to query the list of 
-        /// known rule formats. 
-        /// You use rule formats to [freeze](https://developer.akamai.com/api/core_features/property_manager/v1.html#freezerf) or 
+        /// Use the `akamai.getPropertyRuleFormats` data source to query the list of
+        /// known rule formats.
+        /// You use rule formats to [freeze](https://developer.akamai.com/api/core_features/property_manager/v1.html#freezerf) or
         /// [update](https://developer.akamai.com/api/core_features/property_manager/v1.html#updaterf) the versioned set of behaviors
-        /// and criteria a rule tree invokes. Without this mechanism, behaviors and criteria 
-        /// would update automatically and generate unexpected errors. 
+        /// and criteria a rule tree invokes. Without this mechanism, behaviors and criteria
+        /// would update automatically and generate unexpected errors.
         /// 
         /// {{% examples %}}
         /// ## Example Usage

@@ -32,17 +32,11 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = @var.Security_configuration,
         ///         }));
-        ///         var penaltyBox = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var penaltyBox = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecPenaltyBox.InvokeAsync(new Akamai.GetAppSecPenaltyBoxArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecPenaltyBox.InvokeAsync(new Akamai.GetAppSecPenaltyBoxArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///                 SecurityPolicyId = @var.Security_policy_id,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///         })));
         ///         this.PenaltyBoxAction = penaltyBox.Apply(penaltyBox =&gt; penaltyBox.Action);
         ///         this.PenaltyBoxEnabled = penaltyBox.Apply(penaltyBox =&gt; penaltyBox.Enabled);
         ///         this.PenaltyBoxText = penaltyBox.Apply(penaltyBox =&gt; penaltyBox.OutputText);
@@ -78,12 +72,6 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecPenaltyBoxArgs()
         {
         }
@@ -111,7 +99,6 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string OutputText;
         public readonly string SecurityPolicyId;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecPenaltyBoxResult(
@@ -125,9 +112,7 @@ namespace Pulumi.Akamai
 
             string outputText,
 
-            string securityPolicyId,
-
-            int version)
+            string securityPolicyId)
         {
             Action = action;
             ConfigId = configId;
@@ -135,7 +120,6 @@ namespace Pulumi.Akamai
             Id = id;
             OutputText = outputText;
             SecurityPolicyId = securityPolicyId;
-            Version = version;
         }
     }
 }

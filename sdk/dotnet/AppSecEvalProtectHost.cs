@@ -28,20 +28,13 @@ namespace Pulumi.Akamai
     ///         {
     ///             Name = @var.Security_configuration,
     ///         }));
-    ///         var evalHostnames = Output.Tuple(configuration, configuration).Apply(values =&gt;
+    ///         var evalHostnames = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecEvalHostnames.InvokeAsync(new Akamai.GetAppSecEvalHostnamesArgs
     ///         {
-    ///             var configuration = values.Item1;
-    ///             var configuration1 = values.Item2;
-    ///             return Output.Create(Akamai.GetAppSecEvalHostnames.InvokeAsync(new Akamai.GetAppSecEvalHostnamesArgs
-    ///             {
-    ///                 ConfigId = configuration.ConfigId,
-    ///                 Version = configuration1.LatestVersion,
-    ///             }));
-    ///         });
+    ///             ConfigId = configuration.ConfigId,
+    ///         })));
     ///         var protectHost = new Akamai.AppSecEvalProtectHost("protectHost", new Akamai.AppSecEvalProtectHostArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
     ///             Hostnames = evalHostnames.Apply(evalHostnames =&gt; evalHostnames.Hostnames),
     ///         });
     ///     }
@@ -63,12 +56,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("hostnames")]
         public Output<ImmutableArray<string>> Hostnames { get; private set; } = null!;
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -134,12 +121,6 @@ namespace Pulumi.Akamai
             set => _hostnames = value;
         }
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
-
         public AppSecEvalProtectHostArgs()
         {
         }
@@ -164,12 +145,6 @@ namespace Pulumi.Akamai
             get => _hostnames ?? (_hostnames = new InputList<string>());
             set => _hostnames = value;
         }
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecEvalProtectHostState()
         {

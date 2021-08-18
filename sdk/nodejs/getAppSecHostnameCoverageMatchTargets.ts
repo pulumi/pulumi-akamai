@@ -19,7 +19,6 @@ import * as utilities from "./utilities";
  * const matchTargets = pulumi.output(akamai.getAppSecHostnameCoverageMatchTargets({
  *     configId: 43253,
  *     hostname: "example.com",
- *     version: 7,
  * }));
  * ```
  */
@@ -34,7 +33,6 @@ export function getAppSecHostnameCoverageMatchTargets(args: GetAppSecHostnameCov
     return pulumi.runtime.invoke("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", {
         "configId": args.configId,
         "hostname": args.hostname,
-        "version": args.version,
     }, opts);
 }
 
@@ -50,10 +48,6 @@ export interface GetAppSecHostnameCoverageMatchTargetsArgs {
      * The hostname for which to retrieve information.
      */
     hostname: string;
-    /**
-     * The version number of the configuration.
-     */
-    version: number;
 }
 
 /**
@@ -74,5 +68,4 @@ export interface GetAppSecHostnameCoverageMatchTargetsResult {
      * A tabular display of the coverage information.
      */
     readonly outputText: string;
-    readonly version: number;
 }

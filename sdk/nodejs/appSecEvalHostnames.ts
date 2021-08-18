@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * The `resourceAkamaiAppsecEvalHostnames` resource allows you to update the list of hostnames you want to evaluate for a configuration version.
+ * The `resourceAkamaiAppsecEvalHostnames` resource allows you to update the list of hostnames you want to evaluate for a configuration.
  *
  * ## Example Usage
  *
@@ -21,7 +21,6 @@ import * as utilities from "./utilities";
  * // USE CASE: user wants to specify the hostnames to evaluate
  * const evalHostnames = new akamai.AppSecEvalHostnames("evalHostnames", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     hostnames: _var.hostnames,
  * });
  * ```
@@ -62,10 +61,6 @@ export class AppSecEvalHostnames extends pulumi.CustomResource {
      * A list of evaluation hostnames to be used for the specified configuration version.
      */
     public readonly hostnames!: pulumi.Output<string[]>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecEvalHostnames resource with the given unique name, arguments, and options.
@@ -82,7 +77,6 @@ export class AppSecEvalHostnames extends pulumi.CustomResource {
             const state = argsOrState as AppSecEvalHostnamesState | undefined;
             inputs["configId"] = state ? state.configId : undefined;
             inputs["hostnames"] = state ? state.hostnames : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecEvalHostnamesArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -91,12 +85,8 @@ export class AppSecEvalHostnames extends pulumi.CustomResource {
             if ((!args || args.hostnames === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'hostnames'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["hostnames"] = args ? args.hostnames : undefined;
-            inputs["version"] = args ? args.version : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -117,10 +107,6 @@ export interface AppSecEvalHostnamesState {
      * A list of evaluation hostnames to be used for the specified configuration version.
      */
     hostnames?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -135,8 +121,4 @@ export interface AppSecEvalHostnamesArgs {
      * A list of evaluation hostnames to be used for the specified configuration version.
      */
     hostnames: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

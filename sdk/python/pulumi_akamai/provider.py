@@ -24,6 +24,8 @@ class ProviderArgs:
                  edgerc: Optional[pulumi.Input[str]] = None,
                  gtm: Optional[pulumi.Input['ProviderGtmArgs']] = None,
                  gtm_section: Optional[pulumi.Input[str]] = None,
+                 networklist_section: Optional[pulumi.Input[str]] = None,
+                 networks: Optional[pulumi.Input[Sequence[pulumi.Input['ProviderNetworkArgs']]]] = None,
                  papi_section: Optional[pulumi.Input[str]] = None,
                  property: Optional[pulumi.Input['ProviderPropertyArgs']] = None,
                  property_section: Optional[pulumi.Input[str]] = None):
@@ -69,6 +71,13 @@ class ProviderArgs:
             pulumi.log.warn("""gtm_section is deprecated: The setting \"gtm_section\" has been deprecated.""")
         if gtm_section is not None:
             pulumi.set(__self__, "gtm_section", gtm_section)
+        if networklist_section is not None:
+            warnings.warn("""The setting \"networklist_section\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""networklist_section is deprecated: The setting \"networklist_section\" has been deprecated.""")
+        if networklist_section is not None:
+            pulumi.set(__self__, "networklist_section", networklist_section)
+        if networks is not None:
+            pulumi.set(__self__, "networks", networks)
         if papi_section is not None:
             warnings.warn("""The setting \"papi_section\" has been deprecated.""", DeprecationWarning)
             pulumi.log.warn("""papi_section is deprecated: The setting \"papi_section\" has been deprecated.""")
@@ -179,6 +188,24 @@ class ProviderArgs:
         pulumi.set(self, "gtm_section", value)
 
     @property
+    @pulumi.getter(name="networklistSection")
+    def networklist_section(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "networklist_section")
+
+    @networklist_section.setter
+    def networklist_section(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "networklist_section", value)
+
+    @property
+    @pulumi.getter
+    def networks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProviderNetworkArgs']]]]:
+        return pulumi.get(self, "networks")
+
+    @networks.setter
+    def networks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProviderNetworkArgs']]]]):
+        pulumi.set(self, "networks", value)
+
+    @property
     @pulumi.getter(name="papiSection")
     def papi_section(self) -> Optional[pulumi.Input[str]]:
         return pulumi.get(self, "papi_section")
@@ -221,6 +248,8 @@ class Provider(pulumi.ProviderResource):
                  edgerc: Optional[pulumi.Input[str]] = None,
                  gtm: Optional[pulumi.Input[pulumi.InputType['ProviderGtmArgs']]] = None,
                  gtm_section: Optional[pulumi.Input[str]] = None,
+                 networklist_section: Optional[pulumi.Input[str]] = None,
+                 networks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProviderNetworkArgs']]]]] = None,
                  papi_section: Optional[pulumi.Input[str]] = None,
                  property: Optional[pulumi.Input[pulumi.InputType['ProviderPropertyArgs']]] = None,
                  property_section: Optional[pulumi.Input[str]] = None,
@@ -272,6 +301,8 @@ class Provider(pulumi.ProviderResource):
                  edgerc: Optional[pulumi.Input[str]] = None,
                  gtm: Optional[pulumi.Input[pulumi.InputType['ProviderGtmArgs']]] = None,
                  gtm_section: Optional[pulumi.Input[str]] = None,
+                 networklist_section: Optional[pulumi.Input[str]] = None,
+                 networks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProviderNetworkArgs']]]]] = None,
                  papi_section: Optional[pulumi.Input[str]] = None,
                  property: Optional[pulumi.Input[pulumi.InputType['ProviderPropertyArgs']]] = None,
                  property_section: Optional[pulumi.Input[str]] = None,
@@ -315,6 +346,11 @@ class Provider(pulumi.ProviderResource):
                 warnings.warn("""The setting \"gtm_section\" has been deprecated.""", DeprecationWarning)
                 pulumi.log.warn("""gtm_section is deprecated: The setting \"gtm_section\" has been deprecated.""")
             __props__.__dict__["gtm_section"] = gtm_section
+            if networklist_section is not None and not opts.urn:
+                warnings.warn("""The setting \"networklist_section\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""networklist_section is deprecated: The setting \"networklist_section\" has been deprecated.""")
+            __props__.__dict__["networklist_section"] = networklist_section
+            __props__.__dict__["networks"] = pulumi.Output.from_input(networks).apply(pulumi.runtime.to_json) if networks is not None else None
             if papi_section is not None and not opts.urn:
                 warnings.warn("""The setting \"papi_section\" has been deprecated.""", DeprecationWarning)
                 pulumi.log.warn("""papi_section is deprecated: The setting \"papi_section\" has been deprecated.""")
@@ -360,6 +396,11 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter(name="gtmSection")
     def gtm_section(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "gtm_section")
+
+    @property
+    @pulumi.getter(name="networklistSection")
+    def networklist_section(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "networklist_section")
 
     @property
     @pulumi.getter(name="papiSection")

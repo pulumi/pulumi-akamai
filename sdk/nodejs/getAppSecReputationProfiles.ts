@@ -19,15 +19,13 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: _var.security_configuration,
  * });
- * const reputationProfiles = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecReputationProfiles({
+ * const reputationProfiles = configuration.then(configuration => akamai.getAppSecReputationProfiles({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  * }));
  * export const reputationProfilesOutput = reputationProfiles.then(reputationProfiles => reputationProfiles.outputText);
  * export const reputationProfilesJson = reputationProfiles.then(reputationProfiles => reputationProfiles.json);
- * const reputationProfile = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecReputationProfiles({
+ * const reputationProfile = configuration.then(configuration => akamai.getAppSecReputationProfiles({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  *     reputationProfileId: _var.reputation_profile_id,
  * }));
  * export const reputationProfileJson = reputationProfile.then(reputationProfile => reputationProfile.json);
@@ -45,7 +43,6 @@ export function getAppSecReputationProfiles(args: GetAppSecReputationProfilesArg
     return pulumi.runtime.invoke("akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles", {
         "configId": args.configId,
         "reputationProfileId": args.reputationProfileId,
-        "version": args.version,
     }, opts);
 }
 
@@ -61,10 +58,6 @@ export interface GetAppSecReputationProfilesArgs {
      * The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
      */
     reputationProfileId?: number;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: number;
 }
 
 /**
@@ -85,5 +78,4 @@ export interface GetAppSecReputationProfilesResult {
      */
     readonly outputText: string;
     readonly reputationProfileId?: number;
-    readonly version: number;
 }

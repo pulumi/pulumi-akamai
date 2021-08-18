@@ -52,6 +52,14 @@ func GetGtmSection(ctx *pulumi.Context) string {
 	return config.Get(ctx, "akamai:gtmSection")
 }
 
+// Deprecated: The setting "networklist_section" has been deprecated.
+func GetNetworklistSection(ctx *pulumi.Context) string {
+	return config.Get(ctx, "akamai:networklistSection")
+}
+func GetNetworks(ctx *pulumi.Context) string {
+	return config.Get(ctx, "akamai:networks")
+}
+
 // Deprecated: The setting "papi_section" has been deprecated.
 func GetPapiSection(ctx *pulumi.Context) string {
 	return config.Get(ctx, "akamai:papiSection")

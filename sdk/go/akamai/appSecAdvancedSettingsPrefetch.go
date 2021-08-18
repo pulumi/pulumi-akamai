@@ -36,7 +36,6 @@ import (
 // 		}
 // 		_, err = akamai.NewAppSecAdvancedSettingsPrefetch(ctx, "prefetch", &akamai.AppSecAdvancedSettingsPrefetchArgs{
 // 			ConfigId:           pulumi.Int(configuration.ConfigId),
-// 			Version:            pulumi.Int(configuration.LatestVersion),
 // 			EnableAppLayer:     pulumi.Bool(false),
 // 			AllExtensions:      pulumi.Bool(true),
 // 			EnableRateControls: pulumi.Bool(false),
@@ -62,8 +61,6 @@ type AppSecAdvancedSettingsPrefetch struct {
 	EnableRateControls pulumi.BoolOutput `pulumi:"enableRateControls"`
 	// The specific extensions for which to enable prefetch requests. If `allExtensions` is True, `extensions` must be an empty list.
 	Extensions pulumi.StringArrayOutput `pulumi:"extensions"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecAdvancedSettingsPrefetch registers a new resource with the given unique name, arguments, and options.
@@ -87,9 +84,6 @@ func NewAppSecAdvancedSettingsPrefetch(ctx *pulumi.Context,
 	}
 	if args.Extensions == nil {
 		return nil, errors.New("invalid value for required argument 'Extensions'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecAdvancedSettingsPrefetch
 	err := ctx.RegisterResource("akamai:index/appSecAdvancedSettingsPrefetch:AppSecAdvancedSettingsPrefetch", name, args, &resource, opts...)
@@ -123,8 +117,6 @@ type appSecAdvancedSettingsPrefetchState struct {
 	EnableRateControls *bool `pulumi:"enableRateControls"`
 	// The specific extensions for which to enable prefetch requests. If `allExtensions` is True, `extensions` must be an empty list.
 	Extensions []string `pulumi:"extensions"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecAdvancedSettingsPrefetchState struct {
@@ -138,8 +130,6 @@ type AppSecAdvancedSettingsPrefetchState struct {
 	EnableRateControls pulumi.BoolPtrInput
 	// The specific extensions for which to enable prefetch requests. If `allExtensions` is True, `extensions` must be an empty list.
 	Extensions pulumi.StringArrayInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecAdvancedSettingsPrefetchState) ElementType() reflect.Type {
@@ -157,8 +147,6 @@ type appSecAdvancedSettingsPrefetchArgs struct {
 	EnableRateControls bool `pulumi:"enableRateControls"`
 	// The specific extensions for which to enable prefetch requests. If `allExtensions` is True, `extensions` must be an empty list.
 	Extensions []string `pulumi:"extensions"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecAdvancedSettingsPrefetch resource.
@@ -173,8 +161,6 @@ type AppSecAdvancedSettingsPrefetchArgs struct {
 	EnableRateControls pulumi.BoolInput
 	// The specific extensions for which to enable prefetch requests. If `allExtensions` is True, `extensions` must be an empty list.
 	Extensions pulumi.StringArrayInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecAdvancedSettingsPrefetchArgs) ElementType() reflect.Type {

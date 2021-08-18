@@ -14,17 +14,14 @@ __all__ = ['AppSecEvalProtectHostArgs', 'AppSecEvalProtectHost']
 class AppSecEvalProtectHostArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[int],
-                 hostnames: pulumi.Input[Sequence[pulumi.Input[str]]],
-                 version: pulumi.Input[int]):
+                 hostnames: pulumi.Input[Sequence[pulumi.Input[str]]]):
         """
         The set of arguments for constructing a AppSecEvalProtectHost resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: The evaluation hostnames to be moved to active protection.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "hostnames", hostnames)
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -50,37 +47,21 @@ class AppSecEvalProtectHostArgs:
     def hostnames(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
         pulumi.set(self, "hostnames", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Input[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: pulumi.Input[int]):
-        pulumi.set(self, "version", value)
-
 
 @pulumi.input_type
 class _AppSecEvalProtectHostState:
     def __init__(__self__, *,
                  config_id: Optional[pulumi.Input[int]] = None,
-                 hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 version: Optional[pulumi.Input[int]] = None):
+                 hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering AppSecEvalProtectHost resources.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: The evaluation hostnames to be moved to active protection.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
         if hostnames is not None:
             pulumi.set(__self__, "hostnames", hostnames)
-        if version is not None:
-            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -106,18 +87,6 @@ class _AppSecEvalProtectHostState:
     def hostnames(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "hostnames", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "version", value)
-
 
 class AppSecEvalProtectHost(pulumi.CustomResource):
     @overload
@@ -126,7 +95,6 @@ class AppSecEvalProtectHost(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
                  hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         The `resource_akamai_appsec_eval_protect_host` resource allows you to move hostnames that you are evaluating to active protection. When you move a hostname from the evaluation hostnames list, it’s added to your security policy as a protected hostname.
@@ -140,11 +108,9 @@ class AppSecEvalProtectHost(pulumi.CustomResource):
         import pulumi_akamai as akamai
 
         configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-        eval_hostnames = akamai.get_app_sec_eval_hostnames(config_id=configuration.config_id,
-            version=configuration.latest_version)
+        eval_hostnames = akamai.get_app_sec_eval_hostnames(config_id=configuration.config_id)
         protect_host = akamai.AppSecEvalProtectHost("protectHost",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             hostnames=eval_hostnames.hostnames)
         ```
 
@@ -152,7 +118,6 @@ class AppSecEvalProtectHost(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: The evaluation hostnames to be moved to active protection.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         ...
     @overload
@@ -172,11 +137,9 @@ class AppSecEvalProtectHost(pulumi.CustomResource):
         import pulumi_akamai as akamai
 
         configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-        eval_hostnames = akamai.get_app_sec_eval_hostnames(config_id=configuration.config_id,
-            version=configuration.latest_version)
+        eval_hostnames = akamai.get_app_sec_eval_hostnames(config_id=configuration.config_id)
         protect_host = akamai.AppSecEvalProtectHost("protectHost",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             hostnames=eval_hostnames.hostnames)
         ```
 
@@ -197,7 +160,6 @@ class AppSecEvalProtectHost(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
                  hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
@@ -216,9 +178,6 @@ class AppSecEvalProtectHost(pulumi.CustomResource):
             if hostnames is None and not opts.urn:
                 raise TypeError("Missing required property 'hostnames'")
             __props__.__dict__["hostnames"] = hostnames
-            if version is None and not opts.urn:
-                raise TypeError("Missing required property 'version'")
-            __props__.__dict__["version"] = version
         super(AppSecEvalProtectHost, __self__).__init__(
             'akamai:index/appSecEvalProtectHost:AppSecEvalProtectHost',
             resource_name,
@@ -230,8 +189,7 @@ class AppSecEvalProtectHost(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             config_id: Optional[pulumi.Input[int]] = None,
-            hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            version: Optional[pulumi.Input[int]] = None) -> 'AppSecEvalProtectHost':
+            hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None) -> 'AppSecEvalProtectHost':
         """
         Get an existing AppSecEvalProtectHost resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -241,7 +199,6 @@ class AppSecEvalProtectHost(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: The evaluation hostnames to be moved to active protection.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -249,7 +206,6 @@ class AppSecEvalProtectHost(pulumi.CustomResource):
 
         __props__.__dict__["config_id"] = config_id
         __props__.__dict__["hostnames"] = hostnames
-        __props__.__dict__["version"] = version
         return AppSecEvalProtectHost(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -267,12 +223,4 @@ class AppSecEvalProtectHost(pulumi.CustomResource):
         The evaluation hostnames to be moved to active protection.
         """
         return pulumi.get(self, "hostnames")
-
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Output[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
 

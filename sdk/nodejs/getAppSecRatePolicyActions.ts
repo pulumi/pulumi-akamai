@@ -6,7 +6,7 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecRatePolicyActions` data source to retrieve a list of all rate policies associated with a given configuration version and security policy, or the actions associated with a specific rate policy.
+ * Use the `akamai.getAppSecRatePolicyActions` data source to retrieve a list of all rate policies associated with a given configuration and security policy, or the actions associated with a specific rate policy.
  *
  * ## Example Usage
  *
@@ -19,9 +19,8 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: _var.security_configuration,
  * });
- * const ratePolicyActionsAppSecRatePolicyActions = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecRatePolicyActions({
+ * const ratePolicyActionsAppSecRatePolicyActions = configuration.then(configuration => akamai.getAppSecRatePolicyActions({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  *     securityPolicyId: _var.security_policy_id,
  * }));
  * export const ratePolicyActions = ratePolicyActionsAppSecRatePolicyActions.then(ratePolicyActionsAppSecRatePolicyActions => ratePolicyActionsAppSecRatePolicyActions.outputText);
@@ -39,7 +38,6 @@ export function getAppSecRatePolicyActions(args: GetAppSecRatePolicyActionsArgs,
         "configId": args.configId,
         "ratePolicyId": args.ratePolicyId,
         "securityPolicyId": args.securityPolicyId,
-        "version": args.version,
     }, opts);
 }
 
@@ -59,10 +57,6 @@ export interface GetAppSecRatePolicyActionsArgs {
      * The ID of the security policy to use.
      */
     securityPolicyId: string;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: number;
 }
 
 /**
@@ -80,5 +74,4 @@ export interface GetAppSecRatePolicyActionsResult {
     readonly outputText: string;
     readonly ratePolicyId?: number;
     readonly securityPolicyId: string;
-    readonly version: number;
 }

@@ -32,29 +32,17 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = @var.Security_configuration,
         ///         }));
-        ///         var logging = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var logging = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAdvancedSettingsLogging.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsLoggingArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecAdvancedSettingsLogging.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsLoggingArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///         })));
         ///         this.AdvancedSettingsLoggingOutput = logging.Apply(logging =&gt; logging.OutputText);
         ///         this.AdvancedSettingsLoggingJson = logging.Apply(logging =&gt; logging.Json);
-        ///         var policyOverride = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var policyOverride = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAdvancedSettingsLogging.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsLoggingArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecAdvancedSettingsLogging.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsLoggingArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///                 SecurityPolicyId = @var.Security_policy_id,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///         })));
         ///         this.AdvancedSettingsPolicyLoggingOutput = policyOverride.Apply(policyOverride =&gt; policyOverride.OutputText);
         ///         this.AdvancedSettingsPolicyLoggingJson = policyOverride.Apply(policyOverride =&gt; policyOverride.Json);
         ///     }
@@ -91,12 +79,6 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId")]
         public string? SecurityPolicyId { get; set; }
 
-        /// <summary>
-        /// The version number of the configuration.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecAdvancedSettingsLoggingArgs()
         {
         }
@@ -120,7 +102,6 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string OutputText;
         public readonly string? SecurityPolicyId;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecAdvancedSettingsLoggingResult(
@@ -132,16 +113,13 @@ namespace Pulumi.Akamai
 
             string outputText,
 
-            string? securityPolicyId,
-
-            int version)
+            string? securityPolicyId)
         {
             ConfigId = configId;
             Id = id;
             Json = json;
             OutputText = outputText;
             SecurityPolicyId = securityPolicyId;
-            Version = version;
         }
     }
 }

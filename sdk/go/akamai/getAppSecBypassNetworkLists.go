@@ -35,7 +35,6 @@ import (
 // 		}
 // 		bypassNetworkLists, err := akamai.GetAppSecBypassNetworkLists(ctx, &akamai.GetAppSecBypassNetworkListsArgs{
 // 			ConfigId: configuration.ConfigId,
-// 			Version:  configuration.LatestVersion,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -60,8 +59,6 @@ func GetAppSecBypassNetworkLists(ctx *pulumi.Context, args *GetAppSecBypassNetwo
 type GetAppSecBypassNetworkListsArgs struct {
 	// The configuration ID to use.
 	ConfigId int `pulumi:"configId"`
-	// The version number of the configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecBypassNetworkLists.
@@ -75,5 +72,4 @@ type GetAppSecBypassNetworkListsResult struct {
 	Json string `pulumi:"json"`
 	// A tabular display showing the bypass network list information.
 	OutputText string `pulumi:"outputText"`
-	Version    int    `pulumi:"version"`
 }

@@ -32,31 +32,19 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = @var.Security_configuration,
         ///         }));
-        ///         var apisRequestConstraints = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var apisRequestConstraints = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecApiRequestConstraints.InvokeAsync(new Akamai.GetAppSecApiRequestConstraintsArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecApiRequestConstraints.InvokeAsync(new Akamai.GetAppSecApiRequestConstraintsArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///                 SecurityPolicyId = @var.Security_policy_id,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///         })));
         ///         this.ApisConstraintsText = apisRequestConstraints.Apply(apisRequestConstraints =&gt; apisRequestConstraints.OutputText);
         ///         this.ApisConstraintsJson = apisRequestConstraints.Apply(apisRequestConstraints =&gt; apisRequestConstraints.Json);
-        ///         var apiRequestConstraints = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var apiRequestConstraints = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecApiRequestConstraints.InvokeAsync(new Akamai.GetAppSecApiRequestConstraintsArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecApiRequestConstraints.InvokeAsync(new Akamai.GetAppSecApiRequestConstraintsArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///                 SecurityPolicyId = @var.Security_policy_id,
-        ///                 ApiId = @var.Api_id,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///             ApiId = @var.Api_id,
+        ///         })));
         ///         this.ApiConstraintsText = apiRequestConstraints.Apply(apiRequestConstraints =&gt; apiRequestConstraints.OutputText);
         ///         this.ApiConstraintsJson = apiRequestConstraints.Apply(apiRequestConstraints =&gt; apiRequestConstraints.Json);
         ///     }
@@ -99,12 +87,6 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecApiRequestConstraintsArgs()
         {
         }
@@ -129,7 +111,6 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string OutputText;
         public readonly string SecurityPolicyId;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecApiRequestConstraintsResult(
@@ -143,9 +124,7 @@ namespace Pulumi.Akamai
 
             string outputText,
 
-            string securityPolicyId,
-
-            int version)
+            string securityPolicyId)
         {
             ApiId = apiId;
             ConfigId = configId;
@@ -153,7 +132,6 @@ namespace Pulumi.Akamai
             Json = json;
             OutputText = outputText;
             SecurityPolicyId = securityPolicyId;
-            Version = version;
         }
     }
 }

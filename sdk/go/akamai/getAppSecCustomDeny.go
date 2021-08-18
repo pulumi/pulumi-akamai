@@ -7,7 +7,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecCustomDeny` data source to retrieve information about custom deny actions for a specific security configuration version, or about a particular custom deny action. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcustomdeny).
+// Use the `AppSecCustomDeny` data source to retrieve information about custom deny actions for a specific security configuration, or about a particular custom deny action. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcustomdeny).
 //
 // ## Example Usage
 //
@@ -32,7 +32,6 @@ import (
 // 		}
 // 		customDenyList, err := akamai.LookupAppSecCustomDeny(ctx, &akamai.LookupAppSecCustomDenyArgs{
 // 			ConfigId: configuration.ConfigId,
-// 			Version:  configuration.LatestVersion,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -42,7 +41,6 @@ import (
 // 		opt1 := _var.Custom_deny_id
 // 		customDeny, err := akamai.LookupAppSecCustomDeny(ctx, &akamai.LookupAppSecCustomDenyArgs{
 // 			ConfigId:     configuration.ConfigId,
-// 			Version:      configuration.LatestVersion,
 // 			CustomDenyId: &opt1,
 // 		}, nil)
 // 		if err != nil {
@@ -69,8 +67,6 @@ type LookupAppSecCustomDenyArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// The ID of a specific custom deny action.
 	CustomDenyId *string `pulumi:"customDenyId"`
-	// The version number of the configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecCustomDeny.
@@ -83,5 +79,4 @@ type LookupAppSecCustomDenyResult struct {
 	Json string `pulumi:"json"`
 	// A tabular display showing the custom deny action information.
 	OutputText string `pulumi:"outputText"`
-	Version    int    `pulumi:"version"`
 }

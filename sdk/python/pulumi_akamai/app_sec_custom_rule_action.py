@@ -16,21 +16,18 @@ class AppSecCustomRuleActionArgs:
                  config_id: pulumi.Input[int],
                  custom_rule_action: pulumi.Input[str],
                  custom_rule_id: pulumi.Input[int],
-                 security_policy_id: pulumi.Input[str],
-                 version: pulumi.Input[int]):
+                 security_policy_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecCustomRuleAction resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] custom_rule_action: The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
         :param pulumi.Input[int] custom_rule_id: The custom rule for which to apply the action.
         :param pulumi.Input[str] security_policy_id: The security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "custom_rule_action", custom_rule_action)
         pulumi.set(__self__, "custom_rule_id", custom_rule_id)
         pulumi.set(__self__, "security_policy_id", security_policy_id)
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -80,18 +77,6 @@ class AppSecCustomRuleActionArgs:
     def security_policy_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "security_policy_id", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Input[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: pulumi.Input[int]):
-        pulumi.set(self, "version", value)
-
 
 @pulumi.input_type
 class _AppSecCustomRuleActionState:
@@ -99,15 +84,13 @@ class _AppSecCustomRuleActionState:
                  config_id: Optional[pulumi.Input[int]] = None,
                  custom_rule_action: Optional[pulumi.Input[str]] = None,
                  custom_rule_id: Optional[pulumi.Input[int]] = None,
-                 security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None):
+                 security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecCustomRuleAction resources.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] custom_rule_action: The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
         :param pulumi.Input[int] custom_rule_id: The custom rule for which to apply the action.
         :param pulumi.Input[str] security_policy_id: The security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -117,8 +100,6 @@ class _AppSecCustomRuleActionState:
             pulumi.set(__self__, "custom_rule_id", custom_rule_id)
         if security_policy_id is not None:
             pulumi.set(__self__, "security_policy_id", security_policy_id)
-        if version is not None:
-            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -168,18 +149,6 @@ class _AppSecCustomRuleActionState:
     def security_policy_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "security_policy_id", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "version", value)
-
 
 class AppSecCustomRuleAction(pulumi.CustomResource):
     @overload
@@ -190,7 +159,6 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
                  custom_rule_action: Optional[pulumi.Input[str]] = None,
                  custom_rule_id: Optional[pulumi.Input[int]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         The `AppSecCustomRuleAction` resource allows you to associate an action to a custom rule.
@@ -206,7 +174,6 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
         create_custom_rule_action = akamai.AppSecCustomRuleAction("createCustomRuleAction",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             security_policy_id="crAP_75829",
             custom_rule_id=12345,
             custom_rule_action="alert")
@@ -219,7 +186,6 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
         :param pulumi.Input[str] custom_rule_action: The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
         :param pulumi.Input[int] custom_rule_id: The custom rule for which to apply the action.
         :param pulumi.Input[str] security_policy_id: The security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         ...
     @overload
@@ -241,7 +207,6 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
         create_custom_rule_action = akamai.AppSecCustomRuleAction("createCustomRuleAction",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             security_policy_id="crAP_75829",
             custom_rule_id=12345,
             custom_rule_action="alert")
@@ -267,7 +232,6 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
                  custom_rule_action: Optional[pulumi.Input[str]] = None,
                  custom_rule_id: Optional[pulumi.Input[int]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
@@ -292,9 +256,6 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
             if security_policy_id is None and not opts.urn:
                 raise TypeError("Missing required property 'security_policy_id'")
             __props__.__dict__["security_policy_id"] = security_policy_id
-            if version is None and not opts.urn:
-                raise TypeError("Missing required property 'version'")
-            __props__.__dict__["version"] = version
         super(AppSecCustomRuleAction, __self__).__init__(
             'akamai:index/appSecCustomRuleAction:AppSecCustomRuleAction',
             resource_name,
@@ -308,8 +269,7 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
             config_id: Optional[pulumi.Input[int]] = None,
             custom_rule_action: Optional[pulumi.Input[str]] = None,
             custom_rule_id: Optional[pulumi.Input[int]] = None,
-            security_policy_id: Optional[pulumi.Input[str]] = None,
-            version: Optional[pulumi.Input[int]] = None) -> 'AppSecCustomRuleAction':
+            security_policy_id: Optional[pulumi.Input[str]] = None) -> 'AppSecCustomRuleAction':
         """
         Get an existing AppSecCustomRuleAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -321,7 +281,6 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
         :param pulumi.Input[str] custom_rule_action: The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
         :param pulumi.Input[int] custom_rule_id: The custom rule for which to apply the action.
         :param pulumi.Input[str] security_policy_id: The security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -331,7 +290,6 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
         __props__.__dict__["custom_rule_action"] = custom_rule_action
         __props__.__dict__["custom_rule_id"] = custom_rule_id
         __props__.__dict__["security_policy_id"] = security_policy_id
-        __props__.__dict__["version"] = version
         return AppSecCustomRuleAction(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -365,12 +323,4 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
         The security policy to use.
         """
         return pulumi.get(self, "security_policy_id")
-
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Output[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
 

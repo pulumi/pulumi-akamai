@@ -21,7 +21,6 @@ import * as utilities from "./utilities";
  * // USE CASE: user wants to update the IP/GEO firewall mode to "block specific IPs/Subnets and Geos" and update the IP list, GEO list & Exception list
  * const ipGeoBlock = new akamai.AppSecIPGeo("ipGeoBlock", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     securityPolicyId: _var.security_policy_id1,
  *     mode: _var.block,
  *     geoNetworkLists: _var.geo_network_lists,
@@ -31,7 +30,6 @@ import * as utilities from "./utilities";
  * // USE CASE: user wants to update the IP/GEO firewall mode to "block all traffic except IPs/Subnets in block exceptions" and update the Exception list
  * const ipGeoAllow = new akamai.AppSecIPGeo("ipGeoAllow", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     securityPolicyId: _var.security_policy_id2,
  *     mode: _var.allow,
  *     exceptionIpNetworkLists: _var.exception_ip_network_lists,
@@ -96,10 +94,6 @@ export class AppSecIPGeo extends pulumi.CustomResource {
      * The ID of the security policy to use.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecIPGeo resource with the given unique name, arguments, and options.
@@ -120,7 +114,6 @@ export class AppSecIPGeo extends pulumi.CustomResource {
             inputs["ipNetworkLists"] = state ? state.ipNetworkLists : undefined;
             inputs["mode"] = state ? state.mode : undefined;
             inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecIPGeoArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -132,16 +125,12 @@ export class AppSecIPGeo extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["exceptionIpNetworkLists"] = args ? args.exceptionIpNetworkLists : undefined;
             inputs["geoNetworkLists"] = args ? args.geoNetworkLists : undefined;
             inputs["ipNetworkLists"] = args ? args.ipNetworkLists : undefined;
             inputs["mode"] = args ? args.mode : undefined;
             inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            inputs["version"] = args ? args.version : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -178,10 +167,6 @@ export interface AppSecIPGeoState {
      * The ID of the security policy to use.
      */
     securityPolicyId?: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -212,8 +197,4 @@ export interface AppSecIPGeoArgs {
      * The ID of the security policy to use.
      */
     securityPolicyId: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

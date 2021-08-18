@@ -32,7 +32,6 @@ import (
 // 		}
 // 		siemSettings, err := akamai.LookupAppSecSiemSettings(ctx, &akamai.LookupAppSecSiemSettingsArgs{
 // 			ConfigId: configuration.ConfigId,
-// 			Version:  configuration.LatestVersion,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -56,8 +55,6 @@ func LookupAppSecSiemSettings(ctx *pulumi.Context, args *LookupAppSecSiemSetting
 type LookupAppSecSiemSettingsArgs struct {
 	// The ID of the security configuration to use.
 	ConfigId int `pulumi:"configId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecSiemSettings.
@@ -69,5 +66,4 @@ type LookupAppSecSiemSettingsResult struct {
 	Json string `pulumi:"json"`
 	// A tabular display showing the SIEM setting information.
 	OutputText string `pulumi:"outputText"`
-	Version    int    `pulumi:"version"`
 }

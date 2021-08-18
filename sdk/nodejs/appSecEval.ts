@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  * });
  * const evalOperation = new akamai.AppSecEval("evalOperation", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     securityPolicyId: _var.security_policy_id,
  *     evalOperation: _var.eval_operation,
  * });
@@ -83,17 +82,9 @@ export class AppSecEval extends pulumi.CustomResource {
      */
     public /*out*/ readonly expirationDate!: pulumi.Output<string>;
     /**
-     * Text Export representation
-     */
-    public /*out*/ readonly outputText!: pulumi.Output<string>;
-    /**
      * The ID of the security policy to use.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecEval resource with the given unique name, arguments, and options.
@@ -114,9 +105,7 @@ export class AppSecEval extends pulumi.CustomResource {
             inputs["evalStatus"] = state ? state.evalStatus : undefined;
             inputs["evaluatingRuleset"] = state ? state.evaluatingRuleset : undefined;
             inputs["expirationDate"] = state ? state.expirationDate : undefined;
-            inputs["outputText"] = state ? state.outputText : undefined;
             inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecEvalArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -128,18 +117,13 @@ export class AppSecEval extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["evalOperation"] = args ? args.evalOperation : undefined;
             inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            inputs["version"] = args ? args.version : undefined;
             inputs["currentRuleset"] = undefined /*out*/;
             inputs["evalStatus"] = undefined /*out*/;
             inputs["evaluatingRuleset"] = undefined /*out*/;
             inputs["expirationDate"] = undefined /*out*/;
-            inputs["outputText"] = undefined /*out*/;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -177,17 +161,9 @@ export interface AppSecEvalState {
      */
     expirationDate?: pulumi.Input<string>;
     /**
-     * Text Export representation
-     */
-    outputText?: pulumi.Input<string>;
-    /**
      * The ID of the security policy to use.
      */
     securityPolicyId?: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -206,8 +182,4 @@ export interface AppSecEvalArgs {
      * The ID of the security policy to use.
      */
     securityPolicyId: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

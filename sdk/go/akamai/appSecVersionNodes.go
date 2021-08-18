@@ -36,7 +36,6 @@ import (
 // 		}
 // 		versionNotesAppSecVersionNodes, err := akamai.NewAppSecVersionNodes(ctx, "versionNotesAppSecVersionNodes", &akamai.AppSecVersionNodesArgs{
 // 			ConfigId:     pulumi.Int(configuration.ConfigId),
-// 			Version:      pulumi.Int(configuration.LatestVersion),
 // 			VersionNotes: pulumi.Any(_var.Version_notes),
 // 		})
 // 		if err != nil {
@@ -54,8 +53,6 @@ type AppSecVersionNodes struct {
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// A tabular display showing the updated version notes.
 	OutputText pulumi.StringOutput `pulumi:"outputText"`
-	// The version number of the configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 	// A string containing the version notes to be used.
 	VersionNotes pulumi.StringOutput `pulumi:"versionNotes"`
 }
@@ -69,9 +66,6 @@ func NewAppSecVersionNodes(ctx *pulumi.Context,
 
 	if args.ConfigId == nil {
 		return nil, errors.New("invalid value for required argument 'ConfigId'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	if args.VersionNotes == nil {
 		return nil, errors.New("invalid value for required argument 'VersionNotes'")
@@ -102,8 +96,6 @@ type appSecVersionNodesState struct {
 	ConfigId *int `pulumi:"configId"`
 	// A tabular display showing the updated version notes.
 	OutputText *string `pulumi:"outputText"`
-	// The version number of the configuration to use.
-	Version *int `pulumi:"version"`
 	// A string containing the version notes to be used.
 	VersionNotes *string `pulumi:"versionNotes"`
 }
@@ -113,8 +105,6 @@ type AppSecVersionNodesState struct {
 	ConfigId pulumi.IntPtrInput
 	// A tabular display showing the updated version notes.
 	OutputText pulumi.StringPtrInput
-	// The version number of the configuration to use.
-	Version pulumi.IntPtrInput
 	// A string containing the version notes to be used.
 	VersionNotes pulumi.StringPtrInput
 }
@@ -126,8 +116,6 @@ func (AppSecVersionNodesState) ElementType() reflect.Type {
 type appSecVersionNodesArgs struct {
 	// The configuration ID to use.
 	ConfigId int `pulumi:"configId"`
-	// The version number of the configuration to use.
-	Version int `pulumi:"version"`
 	// A string containing the version notes to be used.
 	VersionNotes string `pulumi:"versionNotes"`
 }
@@ -136,8 +124,6 @@ type appSecVersionNodesArgs struct {
 type AppSecVersionNodesArgs struct {
 	// The configuration ID to use.
 	ConfigId pulumi.IntInput
-	// The version number of the configuration to use.
-	Version pulumi.IntInput
 	// A string containing the version notes to be used.
 	VersionNotes pulumi.StringInput
 }
