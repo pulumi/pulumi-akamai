@@ -2,6 +2,11 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
+_(none)_
+
+---
+
+## 2.3.0 (2021-08-19)
 * Upgrade to v1.6.1 of the Akamai Terraform Provider
   ** PLEASE NOTE:**  
   There are a number of breaking changes to this provider due to removal of the following services upstream:
@@ -22,8 +27,6 @@ CHANGELOG
   * `akamai.getAppSecRuleActions`
   * `akamai.getAppSecRuleConditionException`
   * Configuration version numbers are no longer supported for most data sources and resources
-
----
 
 ## 2.2.0 (2021-05-27)
 * Upgrade to v3.2.1 of the pulumi-terraform-bridge
