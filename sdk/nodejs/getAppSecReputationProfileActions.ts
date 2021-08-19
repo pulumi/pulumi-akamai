@@ -20,7 +20,6 @@ export function getAppSecReputationProfileActions(args: GetAppSecReputationProfi
         "configId": args.configId,
         "reputationProfileId": args.reputationProfileId,
         "securityPolicyId": args.securityPolicyId,
-        "version": args.version,
     }, opts);
 }
 
@@ -40,10 +39,6 @@ export interface GetAppSecReputationProfileActionsArgs {
      * THe ID of the security policy to use.
      */
     securityPolicyId: string;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: number;
 }
 
 /**
@@ -69,5 +64,4 @@ export interface GetAppSecReputationProfileActionsResult {
     readonly outputText: string;
     readonly reputationProfileId?: number;
     readonly securityPolicyId: string;
-    readonly version: number;
 }

@@ -36,7 +36,6 @@ import (
 // 		}
 // 		_, err = akamai.NewAppSecPenaltyBox(ctx, "penaltyBox", &akamai.AppSecPenaltyBoxArgs{
 // 			ConfigId:             pulumi.Int(configuration.ConfigId),
-// 			Version:              pulumi.Int(configuration.LatestVersion),
 // 			SecurityPolicyId:     pulumi.Any(_var.Security_policy_id),
 // 			PenaltyBoxProtection: pulumi.Bool(true),
 // 			PenaltyBoxAction:     pulumi.Any(_var.Action),
@@ -59,8 +58,6 @@ type AppSecPenaltyBox struct {
 	PenaltyBoxProtection pulumi.BoolOutput `pulumi:"penaltyBoxProtection"`
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecPenaltyBox registers a new resource with the given unique name, arguments, and options.
@@ -81,9 +78,6 @@ func NewAppSecPenaltyBox(ctx *pulumi.Context,
 	}
 	if args.SecurityPolicyId == nil {
 		return nil, errors.New("invalid value for required argument 'SecurityPolicyId'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecPenaltyBox
 	err := ctx.RegisterResource("akamai:index/appSecPenaltyBox:AppSecPenaltyBox", name, args, &resource, opts...)
@@ -115,8 +109,6 @@ type appSecPenaltyBoxState struct {
 	PenaltyBoxProtection *bool `pulumi:"penaltyBoxProtection"`
 	// The ID of the security policy to use.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecPenaltyBoxState struct {
@@ -128,8 +120,6 @@ type AppSecPenaltyBoxState struct {
 	PenaltyBoxProtection pulumi.BoolPtrInput
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecPenaltyBoxState) ElementType() reflect.Type {
@@ -145,8 +135,6 @@ type appSecPenaltyBoxArgs struct {
 	PenaltyBoxProtection bool `pulumi:"penaltyBoxProtection"`
 	// The ID of the security policy to use.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecPenaltyBox resource.
@@ -159,8 +147,6 @@ type AppSecPenaltyBoxArgs struct {
 	PenaltyBoxProtection pulumi.BoolInput
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecPenaltyBoxArgs) ElementType() reflect.Type {

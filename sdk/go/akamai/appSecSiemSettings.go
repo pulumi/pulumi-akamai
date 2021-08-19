@@ -12,84 +12,21 @@ import (
 )
 
 // Use the `AppSecSiemSettings` resource to mpdate the SIEM integration settings for a specific configuration.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-// 			Name: &opt0,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		opt1 := _var.Siem_definition_name
-// 		siemDefinition, err := akamai.GetAppSecSiemDefinitions(ctx, &akamai.GetAppSecSiemDefinitionsArgs{
-// 			SiemDefinitionName: &opt1,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		securityPolicies, err := akamai.LookupAppSecSecurityPolicy(ctx, &akamai.LookupAppSecSecurityPolicyArgs{
-// 			ConfigId: configuration.ConfigId,
-// 			Version:  configuration.LatestVersion,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecSiemSettings(ctx, "siem", &akamai.AppSecSiemSettingsArgs{
-// 			ConfigId:             pulumi.Int(configuration.ConfigId),
-// 			Version:              pulumi.Int(configuration.LatestVersion),
-// 			EnableSiem:           pulumi.Bool(true),
-// 			EnableForAllPolicies: pulumi.Bool(false),
-// 			EnableBotmanSiem:     pulumi.Bool(true),
-// 			SiemId:               pulumi.String(siemDefinition.Id),
-// 			SecurityPolicyIds:    toPulumiStringArray(securityPolicies.PolicyLists),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// func toPulumiStringArray(arr []string) pulumi.StringArray {
-// 	var pulumiArr pulumi.StringArray
-// 	for _, v := range arr {
-// 		pulumiArr = append(pulumiArr, pulumi.String(v))
-// 	}
-// 	return pulumiArr
-// }
-// ```
 type AppSecSiemSettings struct {
 	pulumi.CustomResourceState
 
 	// The configuration ID to use.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// Whether you enabled SIEM for the Bot Manager events.
-	EnableBotmanSiem pulumi.BoolPtrOutput `pulumi:"enableBotmanSiem"`
-	// Whether you enabled SIEM for all the security policies in the configuration version.
+	EnableBotmanSiem pulumi.BoolOutput `pulumi:"enableBotmanSiem"`
+	// Whether you enabled SIEM for all the security policies in the configuration.
 	EnableForAllPolicies pulumi.BoolOutput `pulumi:"enableForAllPolicies"`
 	// Whether you enabled SIEM in a security configuration version.
 	EnableSiem pulumi.BoolOutput `pulumi:"enableSiem"`
-	// A tabular display showing the updated SIEM integration settings.
-	OutputText pulumi.StringOutput `pulumi:"outputText"`
 	// The list of security policy identifiers for which to enable the SIEM integration.
 	SecurityPolicyIds pulumi.StringArrayOutput `pulumi:"securityPolicyIds"`
 	// An integer that uniquely identifies the SIEM settings.
 	SiemId pulumi.IntOutput `pulumi:"siemId"`
-	// The version number of the configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecSiemSettings registers a new resource with the given unique name, arguments, and options.
@@ -102,20 +39,17 @@ func NewAppSecSiemSettings(ctx *pulumi.Context,
 	if args.ConfigId == nil {
 		return nil, errors.New("invalid value for required argument 'ConfigId'")
 	}
+	if args.EnableBotmanSiem == nil {
+		return nil, errors.New("invalid value for required argument 'EnableBotmanSiem'")
+	}
 	if args.EnableForAllPolicies == nil {
 		return nil, errors.New("invalid value for required argument 'EnableForAllPolicies'")
 	}
 	if args.EnableSiem == nil {
 		return nil, errors.New("invalid value for required argument 'EnableSiem'")
 	}
-	if args.SecurityPolicyIds == nil {
-		return nil, errors.New("invalid value for required argument 'SecurityPolicyIds'")
-	}
 	if args.SiemId == nil {
 		return nil, errors.New("invalid value for required argument 'SiemId'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecSiemSettings
 	err := ctx.RegisterResource("akamai:index/appSecSiemSettings:AppSecSiemSettings", name, args, &resource, opts...)
@@ -143,18 +77,14 @@ type appSecSiemSettingsState struct {
 	ConfigId *int `pulumi:"configId"`
 	// Whether you enabled SIEM for the Bot Manager events.
 	EnableBotmanSiem *bool `pulumi:"enableBotmanSiem"`
-	// Whether you enabled SIEM for all the security policies in the configuration version.
+	// Whether you enabled SIEM for all the security policies in the configuration.
 	EnableForAllPolicies *bool `pulumi:"enableForAllPolicies"`
 	// Whether you enabled SIEM in a security configuration version.
 	EnableSiem *bool `pulumi:"enableSiem"`
-	// A tabular display showing the updated SIEM integration settings.
-	OutputText *string `pulumi:"outputText"`
 	// The list of security policy identifiers for which to enable the SIEM integration.
 	SecurityPolicyIds []string `pulumi:"securityPolicyIds"`
 	// An integer that uniquely identifies the SIEM settings.
 	SiemId *int `pulumi:"siemId"`
-	// The version number of the configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecSiemSettingsState struct {
@@ -162,18 +92,14 @@ type AppSecSiemSettingsState struct {
 	ConfigId pulumi.IntPtrInput
 	// Whether you enabled SIEM for the Bot Manager events.
 	EnableBotmanSiem pulumi.BoolPtrInput
-	// Whether you enabled SIEM for all the security policies in the configuration version.
+	// Whether you enabled SIEM for all the security policies in the configuration.
 	EnableForAllPolicies pulumi.BoolPtrInput
 	// Whether you enabled SIEM in a security configuration version.
 	EnableSiem pulumi.BoolPtrInput
-	// A tabular display showing the updated SIEM integration settings.
-	OutputText pulumi.StringPtrInput
 	// The list of security policy identifiers for which to enable the SIEM integration.
 	SecurityPolicyIds pulumi.StringArrayInput
 	// An integer that uniquely identifies the SIEM settings.
 	SiemId pulumi.IntPtrInput
-	// The version number of the configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecSiemSettingsState) ElementType() reflect.Type {
@@ -184,8 +110,8 @@ type appSecSiemSettingsArgs struct {
 	// The configuration ID to use.
 	ConfigId int `pulumi:"configId"`
 	// Whether you enabled SIEM for the Bot Manager events.
-	EnableBotmanSiem *bool `pulumi:"enableBotmanSiem"`
-	// Whether you enabled SIEM for all the security policies in the configuration version.
+	EnableBotmanSiem bool `pulumi:"enableBotmanSiem"`
+	// Whether you enabled SIEM for all the security policies in the configuration.
 	EnableForAllPolicies bool `pulumi:"enableForAllPolicies"`
 	// Whether you enabled SIEM in a security configuration version.
 	EnableSiem bool `pulumi:"enableSiem"`
@@ -193,8 +119,6 @@ type appSecSiemSettingsArgs struct {
 	SecurityPolicyIds []string `pulumi:"securityPolicyIds"`
 	// An integer that uniquely identifies the SIEM settings.
 	SiemId int `pulumi:"siemId"`
-	// The version number of the configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecSiemSettings resource.
@@ -202,8 +126,8 @@ type AppSecSiemSettingsArgs struct {
 	// The configuration ID to use.
 	ConfigId pulumi.IntInput
 	// Whether you enabled SIEM for the Bot Manager events.
-	EnableBotmanSiem pulumi.BoolPtrInput
-	// Whether you enabled SIEM for all the security policies in the configuration version.
+	EnableBotmanSiem pulumi.BoolInput
+	// Whether you enabled SIEM for all the security policies in the configuration.
 	EnableForAllPolicies pulumi.BoolInput
 	// Whether you enabled SIEM in a security configuration version.
 	EnableSiem pulumi.BoolInput
@@ -211,8 +135,6 @@ type AppSecSiemSettingsArgs struct {
 	SecurityPolicyIds pulumi.StringArrayInput
 	// An integer that uniquely identifies the SIEM settings.
 	SiemId pulumi.IntInput
-	// The version number of the configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecSiemSettingsArgs) ElementType() reflect.Type {

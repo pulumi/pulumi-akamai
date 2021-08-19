@@ -7,7 +7,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecSelectedHostnames` data source to retrieve a list of the hostnames that are currently protected under a given security configuration version.
+// Use the `AppSecSelectedHostnames` data source to retrieve a list of the hostnames that are currently protected under a given security configuration.
 //
 // ## Example Usage
 //
@@ -32,7 +32,6 @@ import (
 // 		}
 // 		selectedHostnamesAppSecSelectedHostnames, err := akamai.LookupAppSecSelectedHostnames(ctx, &akamai.LookupAppSecSelectedHostnamesArgs{
 // 			ConfigId: configuration.ConfigId,
-// 			Version:  configuration.LatestVersion,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -57,8 +56,6 @@ func LookupAppSecSelectedHostnames(ctx *pulumi.Context, args *LookupAppSecSelect
 type LookupAppSecSelectedHostnamesArgs struct {
 	// The ID of the security configuration to use.
 	ConfigId int `pulumi:"configId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecSelectedHostnames.
@@ -72,5 +69,4 @@ type LookupAppSecSelectedHostnamesResult struct {
 	Id string `pulumi:"id"`
 	// A tabular display of the selected hostnames.
 	OutputText string `pulumi:"outputText"`
-	Version    int    `pulumi:"version"`
 }

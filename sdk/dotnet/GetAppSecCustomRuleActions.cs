@@ -12,7 +12,7 @@ namespace Pulumi.Akamai
     public static class GetAppSecCustomRuleActions
     {
         /// <summary>
-        /// Use the `akamai.getAppSecCustomRuleActions` data source to retrieve information about the actions defined for the custom rules, or a specific custom rule, associated with a specific security configuration version and security policy.
+        /// Use the `akamai.getAppSecCustomRuleActions` data source to retrieve information about the actions defined for the custom rules, or a specific custom rule, associated with a specific security configuration and security policy.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -32,17 +32,11 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = "Akamai Tools",
         ///         }));
-        ///         var customRuleActionsAppSecCustomRuleActions = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var customRuleActionsAppSecCustomRuleActions = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecCustomRuleActions.InvokeAsync(new Akamai.GetAppSecCustomRuleActionsArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecCustomRuleActions.InvokeAsync(new Akamai.GetAppSecCustomRuleActionsArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///                 SecurityPolicyId = "crAP_75829",
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = "crAP_75829",
+        ///         })));
         ///         this.CustomRuleActions = customRuleActionsAppSecCustomRuleActions.Apply(customRuleActionsAppSecCustomRuleActions =&gt; customRuleActionsAppSecCustomRuleActions.OutputText);
         ///     }
         /// 
@@ -78,12 +72,6 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecCustomRuleActionsArgs()
         {
         }
@@ -104,7 +92,6 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string OutputText;
         public readonly string SecurityPolicyId;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecCustomRuleActionsResult(
@@ -116,16 +103,13 @@ namespace Pulumi.Akamai
 
             string outputText,
 
-            string securityPolicyId,
-
-            int version)
+            string securityPolicyId)
         {
             ConfigId = configId;
             CustomRuleId = customRuleId;
             Id = id;
             OutputText = outputText;
             SecurityPolicyId = securityPolicyId;
-            Version = version;
         }
     }
 }

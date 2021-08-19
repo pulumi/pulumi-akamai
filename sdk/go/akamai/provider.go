@@ -26,6 +26,8 @@ type Provider struct {
 	Edgerc     pulumi.StringPtrOutput `pulumi:"edgerc"`
 	// Deprecated: The setting "gtm_section" has been deprecated.
 	GtmSection pulumi.StringPtrOutput `pulumi:"gtmSection"`
+	// Deprecated: The setting "networklist_section" has been deprecated.
+	NetworklistSection pulumi.StringPtrOutput `pulumi:"networklistSection"`
 	// Deprecated: The setting "papi_section" has been deprecated.
 	PapiSection pulumi.StringPtrOutput `pulumi:"papiSection"`
 	// Deprecated: The setting "property_section" has been deprecated.
@@ -65,6 +67,9 @@ type providerArgs struct {
 	Gtm *ProviderGtm `pulumi:"gtm"`
 	// Deprecated: The setting "gtm_section" has been deprecated.
 	GtmSection *string `pulumi:"gtmSection"`
+	// Deprecated: The setting "networklist_section" has been deprecated.
+	NetworklistSection *string           `pulumi:"networklistSection"`
+	Networks           []ProviderNetwork `pulumi:"networks"`
 	// Deprecated: The setting "papi_section" has been deprecated.
 	PapiSection *string `pulumi:"papiSection"`
 	// Deprecated: The setting "property" has been deprecated.
@@ -92,6 +97,9 @@ type ProviderArgs struct {
 	Gtm ProviderGtmPtrInput
 	// Deprecated: The setting "gtm_section" has been deprecated.
 	GtmSection pulumi.StringPtrInput
+	// Deprecated: The setting "networklist_section" has been deprecated.
+	NetworklistSection pulumi.StringPtrInput
+	Networks           ProviderNetworkArrayInput
 	// Deprecated: The setting "papi_section" has been deprecated.
 	PapiSection pulumi.StringPtrInput
 	// Deprecated: The setting "property" has been deprecated.

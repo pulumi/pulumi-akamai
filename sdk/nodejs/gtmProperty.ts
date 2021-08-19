@@ -6,7 +6,7 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.GtmProperty` resource provides the resource for creating, configuring and importing a GTM property, a set of IP addresses or CNAMEs that GTM provides in response to DNS queries based on a set of rules.
+ * Use the `akamai.GtmProperty` resource to create, configure and import a GTM property, a set of IP addresses or CNAMEs that GTM provides in response to DNS queries based on a set of rules.
  *
  * > **Note** Import requires an ID with this format: `existingDomainName`:`existingPropertyName`.
  *
@@ -39,25 +39,25 @@ import * as utilities from "./utilities";
  * * `scoreAggregationType` - (Required) Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
  * * `handoutLimit` - (Required) Indicates the limit for the number of live IPs handed out to a DNS request.
  * * `handoutMode` - (Required) Specifies how IPs are returned when more than one IP is alive and available.
- * * `trafficTarget` - (Required) Contains information about where to direct data center traffic. You can have multiple `trafficTarget` arguments. If used, requires these arguments:
- *   * `datacenterId` - (Required) A unique identifier for an existing data center in the domain.
- *   * `enabled` - (Required) A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
- *   * `weight` - (Required) Specifies the traffic weight for the target.
- *   * `servers` - (Required) (List) Identifies the IP address or the hostnames of the servers.
- *   * `name` - (Required) An alternative label for the traffic target.
- *   * `handoutCname` - (Required) Specifies an optional data center for the property. Used when there are no servers configured for the property.
+ * * `trafficTarget` - (Optional) Contains information about where to direct data center traffic. You can have multiple `trafficTarget` arguments. If used, includes these arguments:
+ *   * `datacenterId` - (Optional) A unique identifier for an existing data center in the domain.
+ *   * `enabled` - (Optional) A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
+ *   * `weight` - (Optional) Specifies the traffic weight for the target.
+ *   * `servers` - (Optional) (List) Identifies the IP address or the hostnames of the servers.
+ *   * `name` - (Optional) An alternative label for the traffic target.
+ *   * `handoutCname` - (Optional) Specifies an optional data center for the property. Used when there are no servers configured for the property.
  * * `livenessTest` - (Optional) Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `livenessTest` arguments. If used, requires these arguments:
- *   * `name` - (Optional) A descriptive name for the liveness test.
- *   * `testInterval` - (Optional) Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
- *   * `testObjectProtocol` - (Optional) Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
- *   * `testTimeout` - (Optional) Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
+ *   * `name` - (Required) A descriptive name for the liveness test.
+ *   * `testInterval` - (Required) Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
+ *   * `testObjectProtocol` - (Required) Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
+ *   * `testTimeout` - (Required) Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
  *   * `answersRequired` - (Optional) If `testObjectProtocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
  *   * `disabled` - (Optional) A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
  *   * `disableNonstandardPortWarning` - (Optional) A boolean that if set to `true`, disables warnings when non-standard ports are used.
  *   * `errorPenalty` - (Optional) Specifies the score that’s reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
  *   * `httpHeader` - (Optional) Contains HTTP headers to send if the `testObjectProtocol` is `http` or `https`. You can have multiple `httpHeader` entries. Requires these arguments:
- *     * `name` - Name of HTTP header.
- *     * `value` - Value of HTTP header.
+ *     * `name` - (Optional) Name of HTTP header.
+ *     * `value` - (Optional) Value of HTTP header.
  *   * `httpError3xx` - (Optional) A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
  *   * `httpError4xx` - (Optional) A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
  *   * `httpError5xx` - (Optional) A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
@@ -68,9 +68,9 @@ import * as utilities from "./utilities";
  *   * `responseString` - (Optional) Specifies a response string.
  *   * `sslClientCertificate` - (Optional) Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
  *   * `sslClientPrivateKey` - (Optional) Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can’t have a passphrase nor be used for any other purpose.
- *   * `testObject` - (Optional) Specifies the static text that acts as a stand-in for the data that you’re sending on the network.
+ *   * `testObject` - (Required) Specifies the static text that acts as a stand-in for the data that you’re sending on the network.
  *   * `testObjectPassword` - (Optional) Specifies the test object’s password. It is required if testObjectProtocol is ftp.
- *   * `testObjectPort` - (Optional) Specifies the port number for the testObject.
+ *   * `testObjectPort` - (Required) Specifies the port number for the testObject.
  *   * `testObjectUsername` - (Optional) A descriptive name for the testObject.
  *   * `timeoutPenalty`- (Optional) Specifies the score to be reported if the liveness test times out.
  * * `waitOnComplete` - (Optional) A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
@@ -81,7 +81,8 @@ import * as utilities from "./utilities";
  * * `stickinessBonusConstant` - (Optional) Specifies a constant used to configure data center affinity.
  * * `healthThreshold` - (Optional) Configures a cutoff value that is computed from the median scores.
  * * `useComputedTargets` - (Optional) For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
- * * `backupIp` - Specifies a backup IP. When GTM declares that all of the targets are down, the backupIP is handed out.
+ * * `backupIp` - (Optional) Specifies a backup IP. When GTM declares that all of the targets are down, the backup IP is handed out. If a backup IP is set, do not set a backup CNAME.
+ * * `backupCname` - (Optional) Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
  * * `balanceByDownloadScore` - (Optional) A boolean that indicates whether download score based load balancing is enabled.
  * * `unreachableThreshold` - (Optional) For performance domains, this specifies a penalty value that’s added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
  * * `healthMultiplier` - (Optional) Configures a cutoff value that is computed from the median scores.

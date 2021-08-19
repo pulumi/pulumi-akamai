@@ -6,7 +6,7 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecSelectedHostnames` data source to retrieve a list of the hostnames that are currently protected under a given security configuration version.
+ * Use the `akamai.AppSecSelectedHostnames` data source to retrieve a list of the hostnames that are currently protected under a given security configuration.
  *
  * ## Example Usage
  *
@@ -19,9 +19,8 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: "Akamai Tools",
  * });
- * const selectedHostnamesAppSecSelectedHostnames = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecSelectedHostnames({
+ * const selectedHostnamesAppSecSelectedHostnames = configuration.then(configuration => akamai.getAppSecSelectedHostnames({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  * }));
  * export const selectedHostnames = selectedHostnamesAppSecSelectedHostnames.then(selectedHostnamesAppSecSelectedHostnames => selectedHostnamesAppSecSelectedHostnames.hostnames);
  * export const selectedHostnamesJson = selectedHostnamesAppSecSelectedHostnames.then(selectedHostnamesAppSecSelectedHostnames => selectedHostnamesAppSecSelectedHostnames.hostnamesJson);
@@ -38,7 +37,6 @@ export function getAppSecSelectedHostnames(args: GetAppSecSelectedHostnamesArgs,
     }
     return pulumi.runtime.invoke("akamai:index/getAppSecSelectedHostnames:getAppSecSelectedHostnames", {
         "configId": args.configId,
-        "version": args.version,
     }, opts);
 }
 
@@ -50,10 +48,6 @@ export interface GetAppSecSelectedHostnamesArgs {
      * The ID of the security configuration to use.
      */
     configId: number;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: number;
 }
 
 /**
@@ -77,5 +71,4 @@ export interface GetAppSecSelectedHostnamesResult {
      * A tabular display of the selected hostnames.
      */
     readonly outputText: string;
-    readonly version: number;
 }

@@ -9,58 +9,6 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// Use the `akamai.DnsZone` resource to configure a DNS zone that integrates with your existing DNS infrastructure.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var demozone = new Akamai.DnsZone("demozone", new Akamai.DnsZoneArgs
-    ///         {
-    ///             Comment = "some comment",
-    ///             Contract = "ctr_1-AB123",
-    ///             Group = "100",
-    ///             Masters = 
-    ///             {
-    ///                 "1.2.3.4",
-    ///                 "1.2.3.5",
-    ///             },
-    ///             SignAndServe = false,
-    ///             Type = "secondary",
-    ///             Zone = "example.com",
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// ## Argument reference
-    /// 
-    /// This resource supports these arguments:
-    /// 
-    /// * `comment` - (Required) A descriptive comment.
-    /// * `contract` - (Required) The contract ID.
-    /// * `group` - (Required) The currently selected group ID.
-    /// * `zone` - (Required) The domain zone, encapsulating any nested subdomains.
-    /// * `type` - (Required) Whether the zone is `primary`, `secondary`, or `alias`.
-    /// * `masters` - (Required for `secondary` zones) The names or IP addresses of the nameservers that the zone data should be retrieved from.
-    /// * `target` - (Required for `alias` zones) The name of the zone whose configuration this zone will copy.
-    /// * `sign_and_serve` - (Optional) Whether DNSSEC Sign and Serve is enabled.
-    /// * `sign_and_serve_algorithm` - (Optional) The algorithm used by Sign and Serve.
-    /// * `tsig_key` - (Optional) The TSIG Key used in secure zone transfers. If used, requires these arguments:
-    ///     * `name` - The key name.
-    ///     * `algorithm` - The hashing algorithm.
-    ///     * `secret` - String known between transfer endpoints.
-    /// * `end_customer_id` - (Optional) A free form identifier for the zone.
-    /// </summary>
     [AkamaiResourceType("akamai:index/dnsZone:DnsZone")]
     public partial class DnsZone : Pulumi.CustomResource
     {
@@ -80,7 +28,7 @@ namespace Pulumi.Akamai
         public Output<string?> EndCustomerId { get; private set; } = null!;
 
         [Output("group")]
-        public Output<string> Group { get; private set; } = null!;
+        public Output<string?> Group { get; private set; } = null!;
 
         [Output("masters")]
         public Output<ImmutableArray<string>> Masters { get; private set; } = null!;
@@ -165,8 +113,8 @@ namespace Pulumi.Akamai
         [Input("endCustomerId")]
         public Input<string>? EndCustomerId { get; set; }
 
-        [Input("group", required: true)]
-        public Input<string> Group { get; set; } = null!;
+        [Input("group")]
+        public Input<string>? Group { get; set; }
 
         [Input("masters")]
         private InputList<string>? _masters;

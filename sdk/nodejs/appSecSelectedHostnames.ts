@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * The `akamai.AppSecSelectedHostnames` resource allows you to set the list of hostnames protected under a given security configuration version.
+ * The `akamai.AppSecSelectedHostnames` resource allows you to set the list of hostnames protected under a given security configuration.
  *
  * ## Example Usage
  *
@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  * });
  * const appsecselectedhostnames = new akamai.AppSecSelectedHostnames("appsecselectedhostnames", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     hostnames: ["example.com"],
  *     mode: "APPEND",
  * });
@@ -66,10 +65,6 @@ export class AppSecSelectedHostnames extends pulumi.CustomResource {
      * A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
      */
     public readonly mode!: pulumi.Output<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecSelectedHostnames resource with the given unique name, arguments, and options.
@@ -87,7 +82,6 @@ export class AppSecSelectedHostnames extends pulumi.CustomResource {
             inputs["configId"] = state ? state.configId : undefined;
             inputs["hostnames"] = state ? state.hostnames : undefined;
             inputs["mode"] = state ? state.mode : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecSelectedHostnamesArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -99,13 +93,9 @@ export class AppSecSelectedHostnames extends pulumi.CustomResource {
             if ((!args || args.mode === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'mode'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["hostnames"] = args ? args.hostnames : undefined;
             inputs["mode"] = args ? args.mode : undefined;
-            inputs["version"] = args ? args.version : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -130,10 +120,6 @@ export interface AppSecSelectedHostnamesState {
      * A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
      */
     mode?: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -152,8 +138,4 @@ export interface AppSecSelectedHostnamesArgs {
      * A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
      */
     mode: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

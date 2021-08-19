@@ -40,7 +40,7 @@ export class AppSecApiRequestConstraints extends pulumi.CustomResource {
      */
     public readonly action!: pulumi.Output<string>;
     /**
-     * The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
+     * The ID of the API endpoint to use.
      */
     public readonly apiEndpointId!: pulumi.Output<number | undefined>;
     /**
@@ -51,10 +51,6 @@ export class AppSecApiRequestConstraints extends pulumi.CustomResource {
      * The ID of the security policy to use.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecApiRequestConstraints resource with the given unique name, arguments, and options.
@@ -73,7 +69,6 @@ export class AppSecApiRequestConstraints extends pulumi.CustomResource {
             inputs["apiEndpointId"] = state ? state.apiEndpointId : undefined;
             inputs["configId"] = state ? state.configId : undefined;
             inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecApiRequestConstraintsArgs | undefined;
             if ((!args || args.action === undefined) && !opts.urn) {
@@ -85,14 +80,10 @@ export class AppSecApiRequestConstraints extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["action"] = args ? args.action : undefined;
             inputs["apiEndpointId"] = args ? args.apiEndpointId : undefined;
             inputs["configId"] = args ? args.configId : undefined;
             inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            inputs["version"] = args ? args.version : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -110,7 +101,7 @@ export interface AppSecApiRequestConstraintsState {
      */
     action?: pulumi.Input<string>;
     /**
-     * The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
+     * The ID of the API endpoint to use.
      */
     apiEndpointId?: pulumi.Input<number>;
     /**
@@ -121,10 +112,6 @@ export interface AppSecApiRequestConstraintsState {
      * The ID of the security policy to use.
      */
     securityPolicyId?: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -136,7 +123,7 @@ export interface AppSecApiRequestConstraintsArgs {
      */
     action: pulumi.Input<string>;
     /**
-     * The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
+     * The ID of the API endpoint to use.
      */
     apiEndpointId?: pulumi.Input<number>;
     /**
@@ -147,8 +134,4 @@ export interface AppSecApiRequestConstraintsArgs {
      * The ID of the security policy to use.
      */
     securityPolicyId: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

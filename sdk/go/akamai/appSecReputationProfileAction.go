@@ -36,7 +36,6 @@ import (
 // 		}
 // 		appsecReputationProfileAction, err := akamai.NewAppSecReputationProfileAction(ctx, "appsecReputationProfileAction", &akamai.AppSecReputationProfileActionArgs{
 // 			ConfigId:            pulumi.Int(configuration.ConfigId),
-// 			Version:             pulumi.Int(configuration.LatestVersion),
 // 			SecurityPolicyId:    pulumi.Any(_var.Security_policy_id),
 // 			ReputationProfileId: pulumi.Any(akamai_appsec_reputation_profile.Reputation_profile.Id),
 // 			Action:              pulumi.String("alert"),
@@ -61,8 +60,6 @@ type AppSecReputationProfileAction struct {
 	ReputationProfileId pulumi.IntOutput `pulumi:"reputationProfileId"`
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecReputationProfileAction registers a new resource with the given unique name, arguments, and options.
@@ -83,9 +80,6 @@ func NewAppSecReputationProfileAction(ctx *pulumi.Context,
 	}
 	if args.SecurityPolicyId == nil {
 		return nil, errors.New("invalid value for required argument 'SecurityPolicyId'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecReputationProfileAction
 	err := ctx.RegisterResource("akamai:index/appSecReputationProfileAction:AppSecReputationProfileAction", name, args, &resource, opts...)
@@ -117,8 +111,6 @@ type appSecReputationProfileActionState struct {
 	ReputationProfileId *int `pulumi:"reputationProfileId"`
 	// The ID of the security policy to use.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecReputationProfileActionState struct {
@@ -130,8 +122,6 @@ type AppSecReputationProfileActionState struct {
 	ReputationProfileId pulumi.IntPtrInput
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecReputationProfileActionState) ElementType() reflect.Type {
@@ -147,8 +137,6 @@ type appSecReputationProfileActionArgs struct {
 	ReputationProfileId int `pulumi:"reputationProfileId"`
 	// The ID of the security policy to use.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecReputationProfileAction resource.
@@ -161,8 +149,6 @@ type AppSecReputationProfileActionArgs struct {
 	ReputationProfileId pulumi.IntInput
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecReputationProfileActionArgs) ElementType() reflect.Type {

@@ -17,22 +17,19 @@ class AppSecRatePolicyActionArgs:
                  ipv4_action: pulumi.Input[str],
                  ipv6_action: pulumi.Input[str],
                  rate_policy_id: pulumi.Input[int],
-                 security_policy_id: pulumi.Input[str],
-                 version: pulumi.Input[int]):
+                 security_policy_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecRatePolicyAction resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] ipv4_action: The ipv4 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
         :param pulumi.Input[str] ipv6_action: The ipv6 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
         :param pulumi.Input[int] rate_policy_id: The ID of the rate policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "ipv4_action", ipv4_action)
         pulumi.set(__self__, "ipv6_action", ipv6_action)
         pulumi.set(__self__, "rate_policy_id", rate_policy_id)
         pulumi.set(__self__, "security_policy_id", security_policy_id)
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -91,18 +88,6 @@ class AppSecRatePolicyActionArgs:
     def security_policy_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "security_policy_id", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Input[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: pulumi.Input[int]):
-        pulumi.set(self, "version", value)
-
 
 @pulumi.input_type
 class _AppSecRatePolicyActionState:
@@ -111,15 +96,13 @@ class _AppSecRatePolicyActionState:
                  ipv4_action: Optional[pulumi.Input[str]] = None,
                  ipv6_action: Optional[pulumi.Input[str]] = None,
                  rate_policy_id: Optional[pulumi.Input[int]] = None,
-                 security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None):
+                 security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecRatePolicyAction resources.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] ipv4_action: The ipv4 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
         :param pulumi.Input[str] ipv6_action: The ipv6 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
         :param pulumi.Input[int] rate_policy_id: The ID of the rate policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -131,8 +114,6 @@ class _AppSecRatePolicyActionState:
             pulumi.set(__self__, "rate_policy_id", rate_policy_id)
         if security_policy_id is not None:
             pulumi.set(__self__, "security_policy_id", security_policy_id)
-        if version is not None:
-            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -191,18 +172,6 @@ class _AppSecRatePolicyActionState:
     def security_policy_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "security_policy_id", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "version", value)
-
 
 class AppSecRatePolicyAction(pulumi.CustomResource):
     @overload
@@ -214,7 +183,6 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
                  ipv6_action: Optional[pulumi.Input[str]] = None,
                  rate_policy_id: Optional[pulumi.Input[int]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         The `resource_akamai_appsec_rate_policy_action` resource allows you to create, modify or delete the actions in a rate policy.
@@ -230,11 +198,9 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
         appsec_rate_policy = akamai.AppSecRatePolicy("appsecRatePolicy",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             rate_policy=(lambda path: open(path).read())(f"{path['module']}/rate_policy.json"))
         appsec_rate_policy_action = akamai.AppSecRatePolicyAction("appsecRatePolicyAction",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             security_policy_id=var["security_policy_id"],
             rate_policy_id=appsec_rate_policy.rate_policy_id,
             ipv4_action="deny",
@@ -247,7 +213,6 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
         :param pulumi.Input[str] ipv4_action: The ipv4 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
         :param pulumi.Input[str] ipv6_action: The ipv6 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
         :param pulumi.Input[int] rate_policy_id: The ID of the rate policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         ...
     @overload
@@ -269,11 +234,9 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
         appsec_rate_policy = akamai.AppSecRatePolicy("appsecRatePolicy",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             rate_policy=(lambda path: open(path).read())(f"{path['module']}/rate_policy.json"))
         appsec_rate_policy_action = akamai.AppSecRatePolicyAction("appsecRatePolicyAction",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             security_policy_id=var["security_policy_id"],
             rate_policy_id=appsec_rate_policy.rate_policy_id,
             ipv4_action="deny",
@@ -300,7 +263,6 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
                  ipv6_action: Optional[pulumi.Input[str]] = None,
                  rate_policy_id: Optional[pulumi.Input[int]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
@@ -328,9 +290,6 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
             if security_policy_id is None and not opts.urn:
                 raise TypeError("Missing required property 'security_policy_id'")
             __props__.__dict__["security_policy_id"] = security_policy_id
-            if version is None and not opts.urn:
-                raise TypeError("Missing required property 'version'")
-            __props__.__dict__["version"] = version
         super(AppSecRatePolicyAction, __self__).__init__(
             'akamai:index/appSecRatePolicyAction:AppSecRatePolicyAction',
             resource_name,
@@ -345,8 +304,7 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
             ipv4_action: Optional[pulumi.Input[str]] = None,
             ipv6_action: Optional[pulumi.Input[str]] = None,
             rate_policy_id: Optional[pulumi.Input[int]] = None,
-            security_policy_id: Optional[pulumi.Input[str]] = None,
-            version: Optional[pulumi.Input[int]] = None) -> 'AppSecRatePolicyAction':
+            security_policy_id: Optional[pulumi.Input[str]] = None) -> 'AppSecRatePolicyAction':
         """
         Get an existing AppSecRatePolicyAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -358,7 +316,6 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
         :param pulumi.Input[str] ipv4_action: The ipv4 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
         :param pulumi.Input[str] ipv6_action: The ipv6 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
         :param pulumi.Input[int] rate_policy_id: The ID of the rate policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -369,7 +326,6 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
         __props__.__dict__["ipv6_action"] = ipv6_action
         __props__.__dict__["rate_policy_id"] = rate_policy_id
         __props__.__dict__["security_policy_id"] = security_policy_id
-        __props__.__dict__["version"] = version
         return AppSecRatePolicyAction(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -408,12 +364,4 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         return pulumi.get(self, "security_policy_id")
-
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Output[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
 

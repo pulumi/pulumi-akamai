@@ -36,14 +36,12 @@ import (
 // 		}
 // 		evalHostnames, err := akamai.LookupAppSecEvalHostnames(ctx, &akamai.LookupAppSecEvalHostnamesArgs{
 // 			ConfigId: configuration.ConfigId,
-// 			Version:  configuration.LatestVersion,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
 // 		_, err = akamai.NewAppSecEvalProtectHost(ctx, "protectHost", &akamai.AppSecEvalProtectHostArgs{
 // 			ConfigId:  pulumi.Int(configuration.ConfigId),
-// 			Version:   pulumi.Int(configuration.LatestVersion),
 // 			Hostnames: toPulumiStringArray(evalHostnames.Hostnames),
 // 		})
 // 		if err != nil {
@@ -67,8 +65,6 @@ type AppSecEvalProtectHost struct {
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// The evaluation hostnames to be moved to active protection.
 	Hostnames pulumi.StringArrayOutput `pulumi:"hostnames"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecEvalProtectHost registers a new resource with the given unique name, arguments, and options.
@@ -83,9 +79,6 @@ func NewAppSecEvalProtectHost(ctx *pulumi.Context,
 	}
 	if args.Hostnames == nil {
 		return nil, errors.New("invalid value for required argument 'Hostnames'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecEvalProtectHost
 	err := ctx.RegisterResource("akamai:index/appSecEvalProtectHost:AppSecEvalProtectHost", name, args, &resource, opts...)
@@ -113,8 +106,6 @@ type appSecEvalProtectHostState struct {
 	ConfigId *int `pulumi:"configId"`
 	// The evaluation hostnames to be moved to active protection.
 	Hostnames []string `pulumi:"hostnames"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecEvalProtectHostState struct {
@@ -122,8 +113,6 @@ type AppSecEvalProtectHostState struct {
 	ConfigId pulumi.IntPtrInput
 	// The evaluation hostnames to be moved to active protection.
 	Hostnames pulumi.StringArrayInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecEvalProtectHostState) ElementType() reflect.Type {
@@ -135,8 +124,6 @@ type appSecEvalProtectHostArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// The evaluation hostnames to be moved to active protection.
 	Hostnames []string `pulumi:"hostnames"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecEvalProtectHost resource.
@@ -145,8 +132,6 @@ type AppSecEvalProtectHostArgs struct {
 	ConfigId pulumi.IntInput
 	// The evaluation hostnames to be moved to active protection.
 	Hostnames pulumi.StringArrayInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecEvalProtectHostArgs) ElementType() reflect.Type {

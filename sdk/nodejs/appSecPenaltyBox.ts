@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  * });
  * const penaltyBox = new akamai.AppSecPenaltyBox("penaltyBox", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     securityPolicyId: _var.security_policy_id,
  *     penaltyBoxProtection: true,
  *     penaltyBoxAction: _var.action,
@@ -71,10 +70,6 @@ export class AppSecPenaltyBox extends pulumi.CustomResource {
      * The ID of the security policy to use.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecPenaltyBox resource with the given unique name, arguments, and options.
@@ -93,7 +88,6 @@ export class AppSecPenaltyBox extends pulumi.CustomResource {
             inputs["penaltyBoxAction"] = state ? state.penaltyBoxAction : undefined;
             inputs["penaltyBoxProtection"] = state ? state.penaltyBoxProtection : undefined;
             inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecPenaltyBoxArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -108,14 +102,10 @@ export class AppSecPenaltyBox extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["penaltyBoxAction"] = args ? args.penaltyBoxAction : undefined;
             inputs["penaltyBoxProtection"] = args ? args.penaltyBoxProtection : undefined;
             inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            inputs["version"] = args ? args.version : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -144,10 +134,6 @@ export interface AppSecPenaltyBoxState {
      * The ID of the security policy to use.
      */
     securityPolicyId?: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -170,8 +156,4 @@ export interface AppSecPenaltyBoxArgs {
      * The ID of the security policy to use.
      */
     securityPolicyId: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

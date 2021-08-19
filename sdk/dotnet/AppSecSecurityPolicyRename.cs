@@ -33,12 +33,6 @@ namespace Pulumi.Akamai
         [Output("securityPolicyName")]
         public Output<string> SecurityPolicyName { get; private set; } = null!;
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
-
 
         /// <summary>
         /// Create a AppSecSecurityPolicyRename resource with the given unique name, arguments, and options.
@@ -103,12 +97,6 @@ namespace Pulumi.Akamai
         [Input("securityPolicyName", required: true)]
         public Input<string> SecurityPolicyName { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
-
         public AppSecSecurityPolicyRenameArgs()
         {
         }
@@ -133,12 +121,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("securityPolicyName")]
         public Input<string>? SecurityPolicyName { get; set; }
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecSecurityPolicyRenameState()
         {

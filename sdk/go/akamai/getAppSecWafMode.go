@@ -7,7 +7,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecWafMode` data source to retrieve the mode that indicates how the WAF rules of the given security configuration version and security policy will be updated.
+// Use the `AppSecWafMode` data source to retrieve the mode that indicates how the WAF rules of the given security configuration and security policy will be updated.
 //
 // ## Example Usage
 //
@@ -32,7 +32,6 @@ import (
 // 		}
 // 		wafMode, err := akamai.LookupAppSecWafMode(ctx, &akamai.LookupAppSecWafModeArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			Version:          configuration.LatestVersion,
 // 			SecurityPolicyId: _var.Policy_id,
 // 		}, nil)
 // 		if err != nil {
@@ -64,8 +63,6 @@ type LookupAppSecWafModeArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// The ID of the security policy to use.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecWafMode.
@@ -88,5 +85,4 @@ type LookupAppSecWafModeResult struct {
 	// A tabular display of the mode information.
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	Version          int    `pulumi:"version"`
 }

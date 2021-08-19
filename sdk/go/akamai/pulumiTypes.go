@@ -10,6 +10,1610 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type CpsDvEnrollmentAdminContact struct {
+	AddressLineOne string  `pulumi:"addressLineOne"`
+	AddressLineTwo *string `pulumi:"addressLineTwo"`
+	City           string  `pulumi:"city"`
+	CountryCode    string  `pulumi:"countryCode"`
+	Email          string  `pulumi:"email"`
+	FirstName      string  `pulumi:"firstName"`
+	LastName       string  `pulumi:"lastName"`
+	Organization   string  `pulumi:"organization"`
+	Phone          string  `pulumi:"phone"`
+	PostalCode     string  `pulumi:"postalCode"`
+	Region         string  `pulumi:"region"`
+	Title          *string `pulumi:"title"`
+}
+
+// CpsDvEnrollmentAdminContactInput is an input type that accepts CpsDvEnrollmentAdminContactArgs and CpsDvEnrollmentAdminContactOutput values.
+// You can construct a concrete instance of `CpsDvEnrollmentAdminContactInput` via:
+//
+//          CpsDvEnrollmentAdminContactArgs{...}
+type CpsDvEnrollmentAdminContactInput interface {
+	pulumi.Input
+
+	ToCpsDvEnrollmentAdminContactOutput() CpsDvEnrollmentAdminContactOutput
+	ToCpsDvEnrollmentAdminContactOutputWithContext(context.Context) CpsDvEnrollmentAdminContactOutput
+}
+
+type CpsDvEnrollmentAdminContactArgs struct {
+	AddressLineOne pulumi.StringInput    `pulumi:"addressLineOne"`
+	AddressLineTwo pulumi.StringPtrInput `pulumi:"addressLineTwo"`
+	City           pulumi.StringInput    `pulumi:"city"`
+	CountryCode    pulumi.StringInput    `pulumi:"countryCode"`
+	Email          pulumi.StringInput    `pulumi:"email"`
+	FirstName      pulumi.StringInput    `pulumi:"firstName"`
+	LastName       pulumi.StringInput    `pulumi:"lastName"`
+	Organization   pulumi.StringInput    `pulumi:"organization"`
+	Phone          pulumi.StringInput    `pulumi:"phone"`
+	PostalCode     pulumi.StringInput    `pulumi:"postalCode"`
+	Region         pulumi.StringInput    `pulumi:"region"`
+	Title          pulumi.StringPtrInput `pulumi:"title"`
+}
+
+func (CpsDvEnrollmentAdminContactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsDvEnrollmentAdminContact)(nil)).Elem()
+}
+
+func (i CpsDvEnrollmentAdminContactArgs) ToCpsDvEnrollmentAdminContactOutput() CpsDvEnrollmentAdminContactOutput {
+	return i.ToCpsDvEnrollmentAdminContactOutputWithContext(context.Background())
+}
+
+func (i CpsDvEnrollmentAdminContactArgs) ToCpsDvEnrollmentAdminContactOutputWithContext(ctx context.Context) CpsDvEnrollmentAdminContactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentAdminContactOutput)
+}
+
+func (i CpsDvEnrollmentAdminContactArgs) ToCpsDvEnrollmentAdminContactPtrOutput() CpsDvEnrollmentAdminContactPtrOutput {
+	return i.ToCpsDvEnrollmentAdminContactPtrOutputWithContext(context.Background())
+}
+
+func (i CpsDvEnrollmentAdminContactArgs) ToCpsDvEnrollmentAdminContactPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentAdminContactPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentAdminContactOutput).ToCpsDvEnrollmentAdminContactPtrOutputWithContext(ctx)
+}
+
+// CpsDvEnrollmentAdminContactPtrInput is an input type that accepts CpsDvEnrollmentAdminContactArgs, CpsDvEnrollmentAdminContactPtr and CpsDvEnrollmentAdminContactPtrOutput values.
+// You can construct a concrete instance of `CpsDvEnrollmentAdminContactPtrInput` via:
+//
+//          CpsDvEnrollmentAdminContactArgs{...}
+//
+//  or:
+//
+//          nil
+type CpsDvEnrollmentAdminContactPtrInput interface {
+	pulumi.Input
+
+	ToCpsDvEnrollmentAdminContactPtrOutput() CpsDvEnrollmentAdminContactPtrOutput
+	ToCpsDvEnrollmentAdminContactPtrOutputWithContext(context.Context) CpsDvEnrollmentAdminContactPtrOutput
+}
+
+type cpsDvEnrollmentAdminContactPtrType CpsDvEnrollmentAdminContactArgs
+
+func CpsDvEnrollmentAdminContactPtr(v *CpsDvEnrollmentAdminContactArgs) CpsDvEnrollmentAdminContactPtrInput {
+	return (*cpsDvEnrollmentAdminContactPtrType)(v)
+}
+
+func (*cpsDvEnrollmentAdminContactPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsDvEnrollmentAdminContact)(nil)).Elem()
+}
+
+func (i *cpsDvEnrollmentAdminContactPtrType) ToCpsDvEnrollmentAdminContactPtrOutput() CpsDvEnrollmentAdminContactPtrOutput {
+	return i.ToCpsDvEnrollmentAdminContactPtrOutputWithContext(context.Background())
+}
+
+func (i *cpsDvEnrollmentAdminContactPtrType) ToCpsDvEnrollmentAdminContactPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentAdminContactPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentAdminContactPtrOutput)
+}
+
+type CpsDvEnrollmentAdminContactOutput struct{ *pulumi.OutputState }
+
+func (CpsDvEnrollmentAdminContactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsDvEnrollmentAdminContact)(nil)).Elem()
+}
+
+func (o CpsDvEnrollmentAdminContactOutput) ToCpsDvEnrollmentAdminContactOutput() CpsDvEnrollmentAdminContactOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentAdminContactOutput) ToCpsDvEnrollmentAdminContactOutputWithContext(ctx context.Context) CpsDvEnrollmentAdminContactOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentAdminContactOutput) ToCpsDvEnrollmentAdminContactPtrOutput() CpsDvEnrollmentAdminContactPtrOutput {
+	return o.ToCpsDvEnrollmentAdminContactPtrOutputWithContext(context.Background())
+}
+
+func (o CpsDvEnrollmentAdminContactOutput) ToCpsDvEnrollmentAdminContactPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentAdminContactPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) *CpsDvEnrollmentAdminContact {
+		return &v
+	}).(CpsDvEnrollmentAdminContactPtrOutput)
+}
+func (o CpsDvEnrollmentAdminContactOutput) AddressLineOne() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.AddressLineOne }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactOutput) AddressLineTwo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) *string { return v.AddressLineTwo }).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactOutput) City() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.City }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactOutput) CountryCode() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.CountryCode }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.Email }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.FirstName }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.LastName }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactOutput) Organization() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.Organization }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactOutput) Phone() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.Phone }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactOutput) PostalCode() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.PostalCode }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.Region }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) *string { return v.Title }).(pulumi.StringPtrOutput)
+}
+
+type CpsDvEnrollmentAdminContactPtrOutput struct{ *pulumi.OutputState }
+
+func (CpsDvEnrollmentAdminContactPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsDvEnrollmentAdminContact)(nil)).Elem()
+}
+
+func (o CpsDvEnrollmentAdminContactPtrOutput) ToCpsDvEnrollmentAdminContactPtrOutput() CpsDvEnrollmentAdminContactPtrOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentAdminContactPtrOutput) ToCpsDvEnrollmentAdminContactPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentAdminContactPtrOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentAdminContactPtrOutput) Elem() CpsDvEnrollmentAdminContactOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) CpsDvEnrollmentAdminContact { return *v }).(CpsDvEnrollmentAdminContactOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactPtrOutput) AddressLineOne() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.AddressLineOne
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactPtrOutput) AddressLineTwo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AddressLineTwo
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactPtrOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.City
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactPtrOutput) CountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CountryCode
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactPtrOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Email
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactPtrOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.FirstName
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactPtrOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LastName
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactPtrOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Organization
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactPtrOutput) Phone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Phone
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactPtrOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.PostalCode
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactPtrOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Region
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentAdminContactPtrOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Title
+	}).(pulumi.StringPtrOutput)
+}
+
+type CpsDvEnrollmentCsr struct {
+	City               string `pulumi:"city"`
+	CountryCode        string `pulumi:"countryCode"`
+	Organization       string `pulumi:"organization"`
+	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	State              string `pulumi:"state"`
+}
+
+// CpsDvEnrollmentCsrInput is an input type that accepts CpsDvEnrollmentCsrArgs and CpsDvEnrollmentCsrOutput values.
+// You can construct a concrete instance of `CpsDvEnrollmentCsrInput` via:
+//
+//          CpsDvEnrollmentCsrArgs{...}
+type CpsDvEnrollmentCsrInput interface {
+	pulumi.Input
+
+	ToCpsDvEnrollmentCsrOutput() CpsDvEnrollmentCsrOutput
+	ToCpsDvEnrollmentCsrOutputWithContext(context.Context) CpsDvEnrollmentCsrOutput
+}
+
+type CpsDvEnrollmentCsrArgs struct {
+	City               pulumi.StringInput `pulumi:"city"`
+	CountryCode        pulumi.StringInput `pulumi:"countryCode"`
+	Organization       pulumi.StringInput `pulumi:"organization"`
+	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	State              pulumi.StringInput `pulumi:"state"`
+}
+
+func (CpsDvEnrollmentCsrArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsDvEnrollmentCsr)(nil)).Elem()
+}
+
+func (i CpsDvEnrollmentCsrArgs) ToCpsDvEnrollmentCsrOutput() CpsDvEnrollmentCsrOutput {
+	return i.ToCpsDvEnrollmentCsrOutputWithContext(context.Background())
+}
+
+func (i CpsDvEnrollmentCsrArgs) ToCpsDvEnrollmentCsrOutputWithContext(ctx context.Context) CpsDvEnrollmentCsrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentCsrOutput)
+}
+
+func (i CpsDvEnrollmentCsrArgs) ToCpsDvEnrollmentCsrPtrOutput() CpsDvEnrollmentCsrPtrOutput {
+	return i.ToCpsDvEnrollmentCsrPtrOutputWithContext(context.Background())
+}
+
+func (i CpsDvEnrollmentCsrArgs) ToCpsDvEnrollmentCsrPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentCsrPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentCsrOutput).ToCpsDvEnrollmentCsrPtrOutputWithContext(ctx)
+}
+
+// CpsDvEnrollmentCsrPtrInput is an input type that accepts CpsDvEnrollmentCsrArgs, CpsDvEnrollmentCsrPtr and CpsDvEnrollmentCsrPtrOutput values.
+// You can construct a concrete instance of `CpsDvEnrollmentCsrPtrInput` via:
+//
+//          CpsDvEnrollmentCsrArgs{...}
+//
+//  or:
+//
+//          nil
+type CpsDvEnrollmentCsrPtrInput interface {
+	pulumi.Input
+
+	ToCpsDvEnrollmentCsrPtrOutput() CpsDvEnrollmentCsrPtrOutput
+	ToCpsDvEnrollmentCsrPtrOutputWithContext(context.Context) CpsDvEnrollmentCsrPtrOutput
+}
+
+type cpsDvEnrollmentCsrPtrType CpsDvEnrollmentCsrArgs
+
+func CpsDvEnrollmentCsrPtr(v *CpsDvEnrollmentCsrArgs) CpsDvEnrollmentCsrPtrInput {
+	return (*cpsDvEnrollmentCsrPtrType)(v)
+}
+
+func (*cpsDvEnrollmentCsrPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsDvEnrollmentCsr)(nil)).Elem()
+}
+
+func (i *cpsDvEnrollmentCsrPtrType) ToCpsDvEnrollmentCsrPtrOutput() CpsDvEnrollmentCsrPtrOutput {
+	return i.ToCpsDvEnrollmentCsrPtrOutputWithContext(context.Background())
+}
+
+func (i *cpsDvEnrollmentCsrPtrType) ToCpsDvEnrollmentCsrPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentCsrPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentCsrPtrOutput)
+}
+
+type CpsDvEnrollmentCsrOutput struct{ *pulumi.OutputState }
+
+func (CpsDvEnrollmentCsrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsDvEnrollmentCsr)(nil)).Elem()
+}
+
+func (o CpsDvEnrollmentCsrOutput) ToCpsDvEnrollmentCsrOutput() CpsDvEnrollmentCsrOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentCsrOutput) ToCpsDvEnrollmentCsrOutputWithContext(ctx context.Context) CpsDvEnrollmentCsrOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentCsrOutput) ToCpsDvEnrollmentCsrPtrOutput() CpsDvEnrollmentCsrPtrOutput {
+	return o.ToCpsDvEnrollmentCsrPtrOutputWithContext(context.Background())
+}
+
+func (o CpsDvEnrollmentCsrOutput) ToCpsDvEnrollmentCsrPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentCsrPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentCsr) *CpsDvEnrollmentCsr {
+		return &v
+	}).(CpsDvEnrollmentCsrPtrOutput)
+}
+func (o CpsDvEnrollmentCsrOutput) City() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentCsr) string { return v.City }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentCsrOutput) CountryCode() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentCsr) string { return v.CountryCode }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentCsrOutput) Organization() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentCsr) string { return v.Organization }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentCsrOutput) OrganizationalUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentCsr) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentCsrOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentCsr) string { return v.State }).(pulumi.StringOutput)
+}
+
+type CpsDvEnrollmentCsrPtrOutput struct{ *pulumi.OutputState }
+
+func (CpsDvEnrollmentCsrPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsDvEnrollmentCsr)(nil)).Elem()
+}
+
+func (o CpsDvEnrollmentCsrPtrOutput) ToCpsDvEnrollmentCsrPtrOutput() CpsDvEnrollmentCsrPtrOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentCsrPtrOutput) ToCpsDvEnrollmentCsrPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentCsrPtrOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentCsrPtrOutput) Elem() CpsDvEnrollmentCsrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentCsr) CpsDvEnrollmentCsr { return *v }).(CpsDvEnrollmentCsrOutput)
+}
+
+func (o CpsDvEnrollmentCsrPtrOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentCsr) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.City
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentCsrPtrOutput) CountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentCsr) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CountryCode
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentCsrPtrOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentCsr) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Organization
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentCsrPtrOutput) OrganizationalUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentCsr) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.OrganizationalUnit
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentCsrPtrOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentCsr) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.State
+	}).(pulumi.StringPtrOutput)
+}
+
+type CpsDvEnrollmentDnsChallenge struct {
+	Domain       *string `pulumi:"domain"`
+	FullPath     *string `pulumi:"fullPath"`
+	ResponseBody *string `pulumi:"responseBody"`
+}
+
+// CpsDvEnrollmentDnsChallengeInput is an input type that accepts CpsDvEnrollmentDnsChallengeArgs and CpsDvEnrollmentDnsChallengeOutput values.
+// You can construct a concrete instance of `CpsDvEnrollmentDnsChallengeInput` via:
+//
+//          CpsDvEnrollmentDnsChallengeArgs{...}
+type CpsDvEnrollmentDnsChallengeInput interface {
+	pulumi.Input
+
+	ToCpsDvEnrollmentDnsChallengeOutput() CpsDvEnrollmentDnsChallengeOutput
+	ToCpsDvEnrollmentDnsChallengeOutputWithContext(context.Context) CpsDvEnrollmentDnsChallengeOutput
+}
+
+type CpsDvEnrollmentDnsChallengeArgs struct {
+	Domain       pulumi.StringPtrInput `pulumi:"domain"`
+	FullPath     pulumi.StringPtrInput `pulumi:"fullPath"`
+	ResponseBody pulumi.StringPtrInput `pulumi:"responseBody"`
+}
+
+func (CpsDvEnrollmentDnsChallengeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsDvEnrollmentDnsChallenge)(nil)).Elem()
+}
+
+func (i CpsDvEnrollmentDnsChallengeArgs) ToCpsDvEnrollmentDnsChallengeOutput() CpsDvEnrollmentDnsChallengeOutput {
+	return i.ToCpsDvEnrollmentDnsChallengeOutputWithContext(context.Background())
+}
+
+func (i CpsDvEnrollmentDnsChallengeArgs) ToCpsDvEnrollmentDnsChallengeOutputWithContext(ctx context.Context) CpsDvEnrollmentDnsChallengeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentDnsChallengeOutput)
+}
+
+// CpsDvEnrollmentDnsChallengeArrayInput is an input type that accepts CpsDvEnrollmentDnsChallengeArray and CpsDvEnrollmentDnsChallengeArrayOutput values.
+// You can construct a concrete instance of `CpsDvEnrollmentDnsChallengeArrayInput` via:
+//
+//          CpsDvEnrollmentDnsChallengeArray{ CpsDvEnrollmentDnsChallengeArgs{...} }
+type CpsDvEnrollmentDnsChallengeArrayInput interface {
+	pulumi.Input
+
+	ToCpsDvEnrollmentDnsChallengeArrayOutput() CpsDvEnrollmentDnsChallengeArrayOutput
+	ToCpsDvEnrollmentDnsChallengeArrayOutputWithContext(context.Context) CpsDvEnrollmentDnsChallengeArrayOutput
+}
+
+type CpsDvEnrollmentDnsChallengeArray []CpsDvEnrollmentDnsChallengeInput
+
+func (CpsDvEnrollmentDnsChallengeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CpsDvEnrollmentDnsChallenge)(nil)).Elem()
+}
+
+func (i CpsDvEnrollmentDnsChallengeArray) ToCpsDvEnrollmentDnsChallengeArrayOutput() CpsDvEnrollmentDnsChallengeArrayOutput {
+	return i.ToCpsDvEnrollmentDnsChallengeArrayOutputWithContext(context.Background())
+}
+
+func (i CpsDvEnrollmentDnsChallengeArray) ToCpsDvEnrollmentDnsChallengeArrayOutputWithContext(ctx context.Context) CpsDvEnrollmentDnsChallengeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentDnsChallengeArrayOutput)
+}
+
+type CpsDvEnrollmentDnsChallengeOutput struct{ *pulumi.OutputState }
+
+func (CpsDvEnrollmentDnsChallengeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsDvEnrollmentDnsChallenge)(nil)).Elem()
+}
+
+func (o CpsDvEnrollmentDnsChallengeOutput) ToCpsDvEnrollmentDnsChallengeOutput() CpsDvEnrollmentDnsChallengeOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentDnsChallengeOutput) ToCpsDvEnrollmentDnsChallengeOutputWithContext(ctx context.Context) CpsDvEnrollmentDnsChallengeOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentDnsChallengeOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentDnsChallenge) *string { return v.Domain }).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentDnsChallengeOutput) FullPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentDnsChallenge) *string { return v.FullPath }).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentDnsChallengeOutput) ResponseBody() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentDnsChallenge) *string { return v.ResponseBody }).(pulumi.StringPtrOutput)
+}
+
+type CpsDvEnrollmentDnsChallengeArrayOutput struct{ *pulumi.OutputState }
+
+func (CpsDvEnrollmentDnsChallengeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CpsDvEnrollmentDnsChallenge)(nil)).Elem()
+}
+
+func (o CpsDvEnrollmentDnsChallengeArrayOutput) ToCpsDvEnrollmentDnsChallengeArrayOutput() CpsDvEnrollmentDnsChallengeArrayOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentDnsChallengeArrayOutput) ToCpsDvEnrollmentDnsChallengeArrayOutputWithContext(ctx context.Context) CpsDvEnrollmentDnsChallengeArrayOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentDnsChallengeArrayOutput) Index(i pulumi.IntInput) CpsDvEnrollmentDnsChallengeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CpsDvEnrollmentDnsChallenge {
+		return vs[0].([]CpsDvEnrollmentDnsChallenge)[vs[1].(int)]
+	}).(CpsDvEnrollmentDnsChallengeOutput)
+}
+
+type CpsDvEnrollmentHttpChallenge struct {
+	Domain       *string `pulumi:"domain"`
+	FullPath     *string `pulumi:"fullPath"`
+	ResponseBody *string `pulumi:"responseBody"`
+}
+
+// CpsDvEnrollmentHttpChallengeInput is an input type that accepts CpsDvEnrollmentHttpChallengeArgs and CpsDvEnrollmentHttpChallengeOutput values.
+// You can construct a concrete instance of `CpsDvEnrollmentHttpChallengeInput` via:
+//
+//          CpsDvEnrollmentHttpChallengeArgs{...}
+type CpsDvEnrollmentHttpChallengeInput interface {
+	pulumi.Input
+
+	ToCpsDvEnrollmentHttpChallengeOutput() CpsDvEnrollmentHttpChallengeOutput
+	ToCpsDvEnrollmentHttpChallengeOutputWithContext(context.Context) CpsDvEnrollmentHttpChallengeOutput
+}
+
+type CpsDvEnrollmentHttpChallengeArgs struct {
+	Domain       pulumi.StringPtrInput `pulumi:"domain"`
+	FullPath     pulumi.StringPtrInput `pulumi:"fullPath"`
+	ResponseBody pulumi.StringPtrInput `pulumi:"responseBody"`
+}
+
+func (CpsDvEnrollmentHttpChallengeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsDvEnrollmentHttpChallenge)(nil)).Elem()
+}
+
+func (i CpsDvEnrollmentHttpChallengeArgs) ToCpsDvEnrollmentHttpChallengeOutput() CpsDvEnrollmentHttpChallengeOutput {
+	return i.ToCpsDvEnrollmentHttpChallengeOutputWithContext(context.Background())
+}
+
+func (i CpsDvEnrollmentHttpChallengeArgs) ToCpsDvEnrollmentHttpChallengeOutputWithContext(ctx context.Context) CpsDvEnrollmentHttpChallengeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentHttpChallengeOutput)
+}
+
+// CpsDvEnrollmentHttpChallengeArrayInput is an input type that accepts CpsDvEnrollmentHttpChallengeArray and CpsDvEnrollmentHttpChallengeArrayOutput values.
+// You can construct a concrete instance of `CpsDvEnrollmentHttpChallengeArrayInput` via:
+//
+//          CpsDvEnrollmentHttpChallengeArray{ CpsDvEnrollmentHttpChallengeArgs{...} }
+type CpsDvEnrollmentHttpChallengeArrayInput interface {
+	pulumi.Input
+
+	ToCpsDvEnrollmentHttpChallengeArrayOutput() CpsDvEnrollmentHttpChallengeArrayOutput
+	ToCpsDvEnrollmentHttpChallengeArrayOutputWithContext(context.Context) CpsDvEnrollmentHttpChallengeArrayOutput
+}
+
+type CpsDvEnrollmentHttpChallengeArray []CpsDvEnrollmentHttpChallengeInput
+
+func (CpsDvEnrollmentHttpChallengeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CpsDvEnrollmentHttpChallenge)(nil)).Elem()
+}
+
+func (i CpsDvEnrollmentHttpChallengeArray) ToCpsDvEnrollmentHttpChallengeArrayOutput() CpsDvEnrollmentHttpChallengeArrayOutput {
+	return i.ToCpsDvEnrollmentHttpChallengeArrayOutputWithContext(context.Background())
+}
+
+func (i CpsDvEnrollmentHttpChallengeArray) ToCpsDvEnrollmentHttpChallengeArrayOutputWithContext(ctx context.Context) CpsDvEnrollmentHttpChallengeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentHttpChallengeArrayOutput)
+}
+
+type CpsDvEnrollmentHttpChallengeOutput struct{ *pulumi.OutputState }
+
+func (CpsDvEnrollmentHttpChallengeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsDvEnrollmentHttpChallenge)(nil)).Elem()
+}
+
+func (o CpsDvEnrollmentHttpChallengeOutput) ToCpsDvEnrollmentHttpChallengeOutput() CpsDvEnrollmentHttpChallengeOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentHttpChallengeOutput) ToCpsDvEnrollmentHttpChallengeOutputWithContext(ctx context.Context) CpsDvEnrollmentHttpChallengeOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentHttpChallengeOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentHttpChallenge) *string { return v.Domain }).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentHttpChallengeOutput) FullPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentHttpChallenge) *string { return v.FullPath }).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentHttpChallengeOutput) ResponseBody() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentHttpChallenge) *string { return v.ResponseBody }).(pulumi.StringPtrOutput)
+}
+
+type CpsDvEnrollmentHttpChallengeArrayOutput struct{ *pulumi.OutputState }
+
+func (CpsDvEnrollmentHttpChallengeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CpsDvEnrollmentHttpChallenge)(nil)).Elem()
+}
+
+func (o CpsDvEnrollmentHttpChallengeArrayOutput) ToCpsDvEnrollmentHttpChallengeArrayOutput() CpsDvEnrollmentHttpChallengeArrayOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentHttpChallengeArrayOutput) ToCpsDvEnrollmentHttpChallengeArrayOutputWithContext(ctx context.Context) CpsDvEnrollmentHttpChallengeArrayOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentHttpChallengeArrayOutput) Index(i pulumi.IntInput) CpsDvEnrollmentHttpChallengeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CpsDvEnrollmentHttpChallenge {
+		return vs[0].([]CpsDvEnrollmentHttpChallenge)[vs[1].(int)]
+	}).(CpsDvEnrollmentHttpChallengeOutput)
+}
+
+type CpsDvEnrollmentNetworkConfiguration struct {
+	ClientMutualAuthentication *CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication `pulumi:"clientMutualAuthentication"`
+	CloneDnsNames              *bool                                                          `pulumi:"cloneDnsNames"`
+	DisallowedTlsVersions      []string                                                       `pulumi:"disallowedTlsVersions"`
+	Geography                  string                                                         `pulumi:"geography"`
+	MustHaveCiphers            *string                                                        `pulumi:"mustHaveCiphers"`
+	OcspStapling               *string                                                        `pulumi:"ocspStapling"`
+	PreferredCiphers           *string                                                        `pulumi:"preferredCiphers"`
+	QuicEnabled                *bool                                                          `pulumi:"quicEnabled"`
+}
+
+// CpsDvEnrollmentNetworkConfigurationInput is an input type that accepts CpsDvEnrollmentNetworkConfigurationArgs and CpsDvEnrollmentNetworkConfigurationOutput values.
+// You can construct a concrete instance of `CpsDvEnrollmentNetworkConfigurationInput` via:
+//
+//          CpsDvEnrollmentNetworkConfigurationArgs{...}
+type CpsDvEnrollmentNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToCpsDvEnrollmentNetworkConfigurationOutput() CpsDvEnrollmentNetworkConfigurationOutput
+	ToCpsDvEnrollmentNetworkConfigurationOutputWithContext(context.Context) CpsDvEnrollmentNetworkConfigurationOutput
+}
+
+type CpsDvEnrollmentNetworkConfigurationArgs struct {
+	ClientMutualAuthentication CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrInput `pulumi:"clientMutualAuthentication"`
+	CloneDnsNames              pulumi.BoolPtrInput                                                   `pulumi:"cloneDnsNames"`
+	DisallowedTlsVersions      pulumi.StringArrayInput                                               `pulumi:"disallowedTlsVersions"`
+	Geography                  pulumi.StringInput                                                    `pulumi:"geography"`
+	MustHaveCiphers            pulumi.StringPtrInput                                                 `pulumi:"mustHaveCiphers"`
+	OcspStapling               pulumi.StringPtrInput                                                 `pulumi:"ocspStapling"`
+	PreferredCiphers           pulumi.StringPtrInput                                                 `pulumi:"preferredCiphers"`
+	QuicEnabled                pulumi.BoolPtrInput                                                   `pulumi:"quicEnabled"`
+}
+
+func (CpsDvEnrollmentNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsDvEnrollmentNetworkConfiguration)(nil)).Elem()
+}
+
+func (i CpsDvEnrollmentNetworkConfigurationArgs) ToCpsDvEnrollmentNetworkConfigurationOutput() CpsDvEnrollmentNetworkConfigurationOutput {
+	return i.ToCpsDvEnrollmentNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i CpsDvEnrollmentNetworkConfigurationArgs) ToCpsDvEnrollmentNetworkConfigurationOutputWithContext(ctx context.Context) CpsDvEnrollmentNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentNetworkConfigurationOutput)
+}
+
+func (i CpsDvEnrollmentNetworkConfigurationArgs) ToCpsDvEnrollmentNetworkConfigurationPtrOutput() CpsDvEnrollmentNetworkConfigurationPtrOutput {
+	return i.ToCpsDvEnrollmentNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i CpsDvEnrollmentNetworkConfigurationArgs) ToCpsDvEnrollmentNetworkConfigurationPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentNetworkConfigurationOutput).ToCpsDvEnrollmentNetworkConfigurationPtrOutputWithContext(ctx)
+}
+
+// CpsDvEnrollmentNetworkConfigurationPtrInput is an input type that accepts CpsDvEnrollmentNetworkConfigurationArgs, CpsDvEnrollmentNetworkConfigurationPtr and CpsDvEnrollmentNetworkConfigurationPtrOutput values.
+// You can construct a concrete instance of `CpsDvEnrollmentNetworkConfigurationPtrInput` via:
+//
+//          CpsDvEnrollmentNetworkConfigurationArgs{...}
+//
+//  or:
+//
+//          nil
+type CpsDvEnrollmentNetworkConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToCpsDvEnrollmentNetworkConfigurationPtrOutput() CpsDvEnrollmentNetworkConfigurationPtrOutput
+	ToCpsDvEnrollmentNetworkConfigurationPtrOutputWithContext(context.Context) CpsDvEnrollmentNetworkConfigurationPtrOutput
+}
+
+type cpsDvEnrollmentNetworkConfigurationPtrType CpsDvEnrollmentNetworkConfigurationArgs
+
+func CpsDvEnrollmentNetworkConfigurationPtr(v *CpsDvEnrollmentNetworkConfigurationArgs) CpsDvEnrollmentNetworkConfigurationPtrInput {
+	return (*cpsDvEnrollmentNetworkConfigurationPtrType)(v)
+}
+
+func (*cpsDvEnrollmentNetworkConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsDvEnrollmentNetworkConfiguration)(nil)).Elem()
+}
+
+func (i *cpsDvEnrollmentNetworkConfigurationPtrType) ToCpsDvEnrollmentNetworkConfigurationPtrOutput() CpsDvEnrollmentNetworkConfigurationPtrOutput {
+	return i.ToCpsDvEnrollmentNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *cpsDvEnrollmentNetworkConfigurationPtrType) ToCpsDvEnrollmentNetworkConfigurationPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentNetworkConfigurationPtrOutput)
+}
+
+type CpsDvEnrollmentNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (CpsDvEnrollmentNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsDvEnrollmentNetworkConfiguration)(nil)).Elem()
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationOutput) ToCpsDvEnrollmentNetworkConfigurationOutput() CpsDvEnrollmentNetworkConfigurationOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationOutput) ToCpsDvEnrollmentNetworkConfigurationOutputWithContext(ctx context.Context) CpsDvEnrollmentNetworkConfigurationOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationOutput) ToCpsDvEnrollmentNetworkConfigurationPtrOutput() CpsDvEnrollmentNetworkConfigurationPtrOutput {
+	return o.ToCpsDvEnrollmentNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationOutput) ToCpsDvEnrollmentNetworkConfigurationPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentNetworkConfigurationPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *CpsDvEnrollmentNetworkConfiguration {
+		return &v
+	}).(CpsDvEnrollmentNetworkConfigurationPtrOutput)
+}
+func (o CpsDvEnrollmentNetworkConfigurationOutput) ClientMutualAuthentication() CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication {
+		return v.ClientMutualAuthentication
+	}).(CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationOutput) CloneDnsNames() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *bool { return v.CloneDnsNames }).(pulumi.BoolPtrOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationOutput) DisallowedTlsVersions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) []string { return v.DisallowedTlsVersions }).(pulumi.StringArrayOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationOutput) Geography() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) string { return v.Geography }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationOutput) MustHaveCiphers() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *string { return v.MustHaveCiphers }).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationOutput) OcspStapling() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *string { return v.OcspStapling }).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationOutput) PreferredCiphers() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *string { return v.PreferredCiphers }).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationOutput) QuicEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *bool { return v.QuicEnabled }).(pulumi.BoolPtrOutput)
+}
+
+type CpsDvEnrollmentNetworkConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (CpsDvEnrollmentNetworkConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsDvEnrollmentNetworkConfiguration)(nil)).Elem()
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) ToCpsDvEnrollmentNetworkConfigurationPtrOutput() CpsDvEnrollmentNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) ToCpsDvEnrollmentNetworkConfigurationPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) Elem() CpsDvEnrollmentNetworkConfigurationOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) CpsDvEnrollmentNetworkConfiguration { return *v }).(CpsDvEnrollmentNetworkConfigurationOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) ClientMutualAuthentication() CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) *CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication {
+		if v == nil {
+			return nil
+		}
+		return v.ClientMutualAuthentication
+	}).(CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) CloneDnsNames() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CloneDnsNames
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) DisallowedTlsVersions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.DisallowedTlsVersions
+	}).(pulumi.StringArrayOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) Geography() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Geography
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) MustHaveCiphers() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MustHaveCiphers
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) OcspStapling() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OcspStapling
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) PreferredCiphers() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PreferredCiphers
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) QuicEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.QuicEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+type CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication struct {
+	OcspEnabled        *bool   `pulumi:"ocspEnabled"`
+	SendCaListToClient *bool   `pulumi:"sendCaListToClient"`
+	SetId              *string `pulumi:"setId"`
+}
+
+// CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationInput is an input type that accepts CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs and CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput values.
+// You can construct a concrete instance of `CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationInput` via:
+//
+//          CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs{...}
+type CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationInput interface {
+	pulumi.Input
+
+	ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput() CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput
+	ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutputWithContext(context.Context) CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput
+}
+
+type CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs struct {
+	OcspEnabled        pulumi.BoolPtrInput   `pulumi:"ocspEnabled"`
+	SendCaListToClient pulumi.BoolPtrInput   `pulumi:"sendCaListToClient"`
+	SetId              pulumi.StringPtrInput `pulumi:"setId"`
+}
+
+func (CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication)(nil)).Elem()
+}
+
+func (i CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput() CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return i.ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutputWithContext(context.Background())
+}
+
+func (i CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutputWithContext(ctx context.Context) CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput)
+}
+
+func (i CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput() CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return i.ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutputWithContext(context.Background())
+}
+
+func (i CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput).ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutputWithContext(ctx)
+}
+
+// CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrInput is an input type that accepts CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs, CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtr and CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput values.
+// You can construct a concrete instance of `CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrInput` via:
+//
+//          CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs{...}
+//
+//  or:
+//
+//          nil
+type CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrInput interface {
+	pulumi.Input
+
+	ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput() CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput
+	ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutputWithContext(context.Context) CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput
+}
+
+type cpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrType CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs
+
+func CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtr(v *CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrInput {
+	return (*cpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrType)(v)
+}
+
+func (*cpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication)(nil)).Elem()
+}
+
+func (i *cpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrType) ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput() CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return i.ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutputWithContext(context.Background())
+}
+
+func (i *cpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrType) ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput)
+}
+
+type CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput struct{ *pulumi.OutputState }
+
+func (CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication)(nil)).Elem()
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput() CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutputWithContext(ctx context.Context) CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput() CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return o.ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutputWithContext(context.Background())
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication) *CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication {
+		return &v
+	}).(CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput)
+}
+func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) OcspEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication) *bool { return v.OcspEnabled }).(pulumi.BoolPtrOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) SendCaListToClient() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication) *bool {
+		return v.SendCaListToClient
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) SetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication) *string { return v.SetId }).(pulumi.StringPtrOutput)
+}
+
+type CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput struct{ *pulumi.OutputState }
+
+func (CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication)(nil)).Elem()
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput() CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) Elem() CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication) CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication {
+		return *v
+	}).(CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) OcspEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.OcspEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) SendCaListToClient() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.SendCaListToClient
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) SetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type CpsDvEnrollmentOrganization struct {
+	AddressLineOne string  `pulumi:"addressLineOne"`
+	AddressLineTwo *string `pulumi:"addressLineTwo"`
+	City           string  `pulumi:"city"`
+	CountryCode    string  `pulumi:"countryCode"`
+	Name           string  `pulumi:"name"`
+	Phone          string  `pulumi:"phone"`
+	PostalCode     string  `pulumi:"postalCode"`
+	Region         string  `pulumi:"region"`
+}
+
+// CpsDvEnrollmentOrganizationInput is an input type that accepts CpsDvEnrollmentOrganizationArgs and CpsDvEnrollmentOrganizationOutput values.
+// You can construct a concrete instance of `CpsDvEnrollmentOrganizationInput` via:
+//
+//          CpsDvEnrollmentOrganizationArgs{...}
+type CpsDvEnrollmentOrganizationInput interface {
+	pulumi.Input
+
+	ToCpsDvEnrollmentOrganizationOutput() CpsDvEnrollmentOrganizationOutput
+	ToCpsDvEnrollmentOrganizationOutputWithContext(context.Context) CpsDvEnrollmentOrganizationOutput
+}
+
+type CpsDvEnrollmentOrganizationArgs struct {
+	AddressLineOne pulumi.StringInput    `pulumi:"addressLineOne"`
+	AddressLineTwo pulumi.StringPtrInput `pulumi:"addressLineTwo"`
+	City           pulumi.StringInput    `pulumi:"city"`
+	CountryCode    pulumi.StringInput    `pulumi:"countryCode"`
+	Name           pulumi.StringInput    `pulumi:"name"`
+	Phone          pulumi.StringInput    `pulumi:"phone"`
+	PostalCode     pulumi.StringInput    `pulumi:"postalCode"`
+	Region         pulumi.StringInput    `pulumi:"region"`
+}
+
+func (CpsDvEnrollmentOrganizationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsDvEnrollmentOrganization)(nil)).Elem()
+}
+
+func (i CpsDvEnrollmentOrganizationArgs) ToCpsDvEnrollmentOrganizationOutput() CpsDvEnrollmentOrganizationOutput {
+	return i.ToCpsDvEnrollmentOrganizationOutputWithContext(context.Background())
+}
+
+func (i CpsDvEnrollmentOrganizationArgs) ToCpsDvEnrollmentOrganizationOutputWithContext(ctx context.Context) CpsDvEnrollmentOrganizationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentOrganizationOutput)
+}
+
+func (i CpsDvEnrollmentOrganizationArgs) ToCpsDvEnrollmentOrganizationPtrOutput() CpsDvEnrollmentOrganizationPtrOutput {
+	return i.ToCpsDvEnrollmentOrganizationPtrOutputWithContext(context.Background())
+}
+
+func (i CpsDvEnrollmentOrganizationArgs) ToCpsDvEnrollmentOrganizationPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentOrganizationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentOrganizationOutput).ToCpsDvEnrollmentOrganizationPtrOutputWithContext(ctx)
+}
+
+// CpsDvEnrollmentOrganizationPtrInput is an input type that accepts CpsDvEnrollmentOrganizationArgs, CpsDvEnrollmentOrganizationPtr and CpsDvEnrollmentOrganizationPtrOutput values.
+// You can construct a concrete instance of `CpsDvEnrollmentOrganizationPtrInput` via:
+//
+//          CpsDvEnrollmentOrganizationArgs{...}
+//
+//  or:
+//
+//          nil
+type CpsDvEnrollmentOrganizationPtrInput interface {
+	pulumi.Input
+
+	ToCpsDvEnrollmentOrganizationPtrOutput() CpsDvEnrollmentOrganizationPtrOutput
+	ToCpsDvEnrollmentOrganizationPtrOutputWithContext(context.Context) CpsDvEnrollmentOrganizationPtrOutput
+}
+
+type cpsDvEnrollmentOrganizationPtrType CpsDvEnrollmentOrganizationArgs
+
+func CpsDvEnrollmentOrganizationPtr(v *CpsDvEnrollmentOrganizationArgs) CpsDvEnrollmentOrganizationPtrInput {
+	return (*cpsDvEnrollmentOrganizationPtrType)(v)
+}
+
+func (*cpsDvEnrollmentOrganizationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsDvEnrollmentOrganization)(nil)).Elem()
+}
+
+func (i *cpsDvEnrollmentOrganizationPtrType) ToCpsDvEnrollmentOrganizationPtrOutput() CpsDvEnrollmentOrganizationPtrOutput {
+	return i.ToCpsDvEnrollmentOrganizationPtrOutputWithContext(context.Background())
+}
+
+func (i *cpsDvEnrollmentOrganizationPtrType) ToCpsDvEnrollmentOrganizationPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentOrganizationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentOrganizationPtrOutput)
+}
+
+type CpsDvEnrollmentOrganizationOutput struct{ *pulumi.OutputState }
+
+func (CpsDvEnrollmentOrganizationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsDvEnrollmentOrganization)(nil)).Elem()
+}
+
+func (o CpsDvEnrollmentOrganizationOutput) ToCpsDvEnrollmentOrganizationOutput() CpsDvEnrollmentOrganizationOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentOrganizationOutput) ToCpsDvEnrollmentOrganizationOutputWithContext(ctx context.Context) CpsDvEnrollmentOrganizationOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentOrganizationOutput) ToCpsDvEnrollmentOrganizationPtrOutput() CpsDvEnrollmentOrganizationPtrOutput {
+	return o.ToCpsDvEnrollmentOrganizationPtrOutputWithContext(context.Background())
+}
+
+func (o CpsDvEnrollmentOrganizationOutput) ToCpsDvEnrollmentOrganizationPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentOrganizationPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentOrganization) *CpsDvEnrollmentOrganization {
+		return &v
+	}).(CpsDvEnrollmentOrganizationPtrOutput)
+}
+func (o CpsDvEnrollmentOrganizationOutput) AddressLineOne() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentOrganization) string { return v.AddressLineOne }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentOrganizationOutput) AddressLineTwo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentOrganization) *string { return v.AddressLineTwo }).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentOrganizationOutput) City() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentOrganization) string { return v.City }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentOrganizationOutput) CountryCode() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentOrganization) string { return v.CountryCode }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentOrganizationOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentOrganization) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentOrganizationOutput) Phone() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentOrganization) string { return v.Phone }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentOrganizationOutput) PostalCode() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentOrganization) string { return v.PostalCode }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentOrganizationOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentOrganization) string { return v.Region }).(pulumi.StringOutput)
+}
+
+type CpsDvEnrollmentOrganizationPtrOutput struct{ *pulumi.OutputState }
+
+func (CpsDvEnrollmentOrganizationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsDvEnrollmentOrganization)(nil)).Elem()
+}
+
+func (o CpsDvEnrollmentOrganizationPtrOutput) ToCpsDvEnrollmentOrganizationPtrOutput() CpsDvEnrollmentOrganizationPtrOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentOrganizationPtrOutput) ToCpsDvEnrollmentOrganizationPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentOrganizationPtrOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentOrganizationPtrOutput) Elem() CpsDvEnrollmentOrganizationOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentOrganization) CpsDvEnrollmentOrganization { return *v }).(CpsDvEnrollmentOrganizationOutput)
+}
+
+func (o CpsDvEnrollmentOrganizationPtrOutput) AddressLineOne() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.AddressLineOne
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentOrganizationPtrOutput) AddressLineTwo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AddressLineTwo
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentOrganizationPtrOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.City
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentOrganizationPtrOutput) CountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CountryCode
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentOrganizationPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentOrganizationPtrOutput) Phone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Phone
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentOrganizationPtrOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.PostalCode
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentOrganizationPtrOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Region
+	}).(pulumi.StringPtrOutput)
+}
+
+type CpsDvEnrollmentTechContact struct {
+	AddressLineOne string  `pulumi:"addressLineOne"`
+	AddressLineTwo *string `pulumi:"addressLineTwo"`
+	City           string  `pulumi:"city"`
+	CountryCode    string  `pulumi:"countryCode"`
+	Email          string  `pulumi:"email"`
+	FirstName      string  `pulumi:"firstName"`
+	LastName       string  `pulumi:"lastName"`
+	Organization   string  `pulumi:"organization"`
+	Phone          string  `pulumi:"phone"`
+	PostalCode     string  `pulumi:"postalCode"`
+	Region         string  `pulumi:"region"`
+	Title          *string `pulumi:"title"`
+}
+
+// CpsDvEnrollmentTechContactInput is an input type that accepts CpsDvEnrollmentTechContactArgs and CpsDvEnrollmentTechContactOutput values.
+// You can construct a concrete instance of `CpsDvEnrollmentTechContactInput` via:
+//
+//          CpsDvEnrollmentTechContactArgs{...}
+type CpsDvEnrollmentTechContactInput interface {
+	pulumi.Input
+
+	ToCpsDvEnrollmentTechContactOutput() CpsDvEnrollmentTechContactOutput
+	ToCpsDvEnrollmentTechContactOutputWithContext(context.Context) CpsDvEnrollmentTechContactOutput
+}
+
+type CpsDvEnrollmentTechContactArgs struct {
+	AddressLineOne pulumi.StringInput    `pulumi:"addressLineOne"`
+	AddressLineTwo pulumi.StringPtrInput `pulumi:"addressLineTwo"`
+	City           pulumi.StringInput    `pulumi:"city"`
+	CountryCode    pulumi.StringInput    `pulumi:"countryCode"`
+	Email          pulumi.StringInput    `pulumi:"email"`
+	FirstName      pulumi.StringInput    `pulumi:"firstName"`
+	LastName       pulumi.StringInput    `pulumi:"lastName"`
+	Organization   pulumi.StringInput    `pulumi:"organization"`
+	Phone          pulumi.StringInput    `pulumi:"phone"`
+	PostalCode     pulumi.StringInput    `pulumi:"postalCode"`
+	Region         pulumi.StringInput    `pulumi:"region"`
+	Title          pulumi.StringPtrInput `pulumi:"title"`
+}
+
+func (CpsDvEnrollmentTechContactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsDvEnrollmentTechContact)(nil)).Elem()
+}
+
+func (i CpsDvEnrollmentTechContactArgs) ToCpsDvEnrollmentTechContactOutput() CpsDvEnrollmentTechContactOutput {
+	return i.ToCpsDvEnrollmentTechContactOutputWithContext(context.Background())
+}
+
+func (i CpsDvEnrollmentTechContactArgs) ToCpsDvEnrollmentTechContactOutputWithContext(ctx context.Context) CpsDvEnrollmentTechContactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentTechContactOutput)
+}
+
+func (i CpsDvEnrollmentTechContactArgs) ToCpsDvEnrollmentTechContactPtrOutput() CpsDvEnrollmentTechContactPtrOutput {
+	return i.ToCpsDvEnrollmentTechContactPtrOutputWithContext(context.Background())
+}
+
+func (i CpsDvEnrollmentTechContactArgs) ToCpsDvEnrollmentTechContactPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentTechContactPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentTechContactOutput).ToCpsDvEnrollmentTechContactPtrOutputWithContext(ctx)
+}
+
+// CpsDvEnrollmentTechContactPtrInput is an input type that accepts CpsDvEnrollmentTechContactArgs, CpsDvEnrollmentTechContactPtr and CpsDvEnrollmentTechContactPtrOutput values.
+// You can construct a concrete instance of `CpsDvEnrollmentTechContactPtrInput` via:
+//
+//          CpsDvEnrollmentTechContactArgs{...}
+//
+//  or:
+//
+//          nil
+type CpsDvEnrollmentTechContactPtrInput interface {
+	pulumi.Input
+
+	ToCpsDvEnrollmentTechContactPtrOutput() CpsDvEnrollmentTechContactPtrOutput
+	ToCpsDvEnrollmentTechContactPtrOutputWithContext(context.Context) CpsDvEnrollmentTechContactPtrOutput
+}
+
+type cpsDvEnrollmentTechContactPtrType CpsDvEnrollmentTechContactArgs
+
+func CpsDvEnrollmentTechContactPtr(v *CpsDvEnrollmentTechContactArgs) CpsDvEnrollmentTechContactPtrInput {
+	return (*cpsDvEnrollmentTechContactPtrType)(v)
+}
+
+func (*cpsDvEnrollmentTechContactPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsDvEnrollmentTechContact)(nil)).Elem()
+}
+
+func (i *cpsDvEnrollmentTechContactPtrType) ToCpsDvEnrollmentTechContactPtrOutput() CpsDvEnrollmentTechContactPtrOutput {
+	return i.ToCpsDvEnrollmentTechContactPtrOutputWithContext(context.Background())
+}
+
+func (i *cpsDvEnrollmentTechContactPtrType) ToCpsDvEnrollmentTechContactPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentTechContactPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentTechContactPtrOutput)
+}
+
+type CpsDvEnrollmentTechContactOutput struct{ *pulumi.OutputState }
+
+func (CpsDvEnrollmentTechContactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsDvEnrollmentTechContact)(nil)).Elem()
+}
+
+func (o CpsDvEnrollmentTechContactOutput) ToCpsDvEnrollmentTechContactOutput() CpsDvEnrollmentTechContactOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentTechContactOutput) ToCpsDvEnrollmentTechContactOutputWithContext(ctx context.Context) CpsDvEnrollmentTechContactOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentTechContactOutput) ToCpsDvEnrollmentTechContactPtrOutput() CpsDvEnrollmentTechContactPtrOutput {
+	return o.ToCpsDvEnrollmentTechContactPtrOutputWithContext(context.Background())
+}
+
+func (o CpsDvEnrollmentTechContactOutput) ToCpsDvEnrollmentTechContactPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentTechContactPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentTechContact) *CpsDvEnrollmentTechContact {
+		return &v
+	}).(CpsDvEnrollmentTechContactPtrOutput)
+}
+func (o CpsDvEnrollmentTechContactOutput) AddressLineOne() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.AddressLineOne }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentTechContactOutput) AddressLineTwo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentTechContact) *string { return v.AddressLineTwo }).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentTechContactOutput) City() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.City }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentTechContactOutput) CountryCode() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.CountryCode }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentTechContactOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.Email }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentTechContactOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.FirstName }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentTechContactOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.LastName }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentTechContactOutput) Organization() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.Organization }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentTechContactOutput) Phone() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.Phone }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentTechContactOutput) PostalCode() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.PostalCode }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentTechContactOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.Region }).(pulumi.StringOutput)
+}
+
+func (o CpsDvEnrollmentTechContactOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentTechContact) *string { return v.Title }).(pulumi.StringPtrOutput)
+}
+
+type CpsDvEnrollmentTechContactPtrOutput struct{ *pulumi.OutputState }
+
+func (CpsDvEnrollmentTechContactPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsDvEnrollmentTechContact)(nil)).Elem()
+}
+
+func (o CpsDvEnrollmentTechContactPtrOutput) ToCpsDvEnrollmentTechContactPtrOutput() CpsDvEnrollmentTechContactPtrOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentTechContactPtrOutput) ToCpsDvEnrollmentTechContactPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentTechContactPtrOutput {
+	return o
+}
+
+func (o CpsDvEnrollmentTechContactPtrOutput) Elem() CpsDvEnrollmentTechContactOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) CpsDvEnrollmentTechContact { return *v }).(CpsDvEnrollmentTechContactOutput)
+}
+
+func (o CpsDvEnrollmentTechContactPtrOutput) AddressLineOne() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.AddressLineOne
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentTechContactPtrOutput) AddressLineTwo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AddressLineTwo
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentTechContactPtrOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.City
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentTechContactPtrOutput) CountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CountryCode
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentTechContactPtrOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Email
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentTechContactPtrOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.FirstName
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentTechContactPtrOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LastName
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentTechContactPtrOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Organization
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentTechContactPtrOutput) Phone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Phone
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentTechContactPtrOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.PostalCode
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentTechContactPtrOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Region
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentTechContactPtrOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Title
+	}).(pulumi.StringPtrOutput)
+}
+
 type DnsZoneTsigKey struct {
 	Algorithm string `pulumi:"algorithm"`
 	Name      string `pulumi:"name"`
@@ -3562,6 +5166,130 @@ func (o ProviderGtmPtrOutput) MaxBody() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
+type ProviderNetwork struct {
+	AccessToken  *string `pulumi:"accessToken"`
+	AccountKey   *string `pulumi:"accountKey"`
+	ClientSecret *string `pulumi:"clientSecret"`
+	ClientToken  *string `pulumi:"clientToken"`
+	Host         *string `pulumi:"host"`
+	MaxBody      *int    `pulumi:"maxBody"`
+}
+
+// ProviderNetworkInput is an input type that accepts ProviderNetworkArgs and ProviderNetworkOutput values.
+// You can construct a concrete instance of `ProviderNetworkInput` via:
+//
+//          ProviderNetworkArgs{...}
+type ProviderNetworkInput interface {
+	pulumi.Input
+
+	ToProviderNetworkOutput() ProviderNetworkOutput
+	ToProviderNetworkOutputWithContext(context.Context) ProviderNetworkOutput
+}
+
+type ProviderNetworkArgs struct {
+	AccessToken  pulumi.StringPtrInput `pulumi:"accessToken"`
+	AccountKey   pulumi.StringPtrInput `pulumi:"accountKey"`
+	ClientSecret pulumi.StringPtrInput `pulumi:"clientSecret"`
+	ClientToken  pulumi.StringPtrInput `pulumi:"clientToken"`
+	Host         pulumi.StringPtrInput `pulumi:"host"`
+	MaxBody      pulumi.IntPtrInput    `pulumi:"maxBody"`
+}
+
+func (ProviderNetworkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProviderNetwork)(nil)).Elem()
+}
+
+func (i ProviderNetworkArgs) ToProviderNetworkOutput() ProviderNetworkOutput {
+	return i.ToProviderNetworkOutputWithContext(context.Background())
+}
+
+func (i ProviderNetworkArgs) ToProviderNetworkOutputWithContext(ctx context.Context) ProviderNetworkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProviderNetworkOutput)
+}
+
+// ProviderNetworkArrayInput is an input type that accepts ProviderNetworkArray and ProviderNetworkArrayOutput values.
+// You can construct a concrete instance of `ProviderNetworkArrayInput` via:
+//
+//          ProviderNetworkArray{ ProviderNetworkArgs{...} }
+type ProviderNetworkArrayInput interface {
+	pulumi.Input
+
+	ToProviderNetworkArrayOutput() ProviderNetworkArrayOutput
+	ToProviderNetworkArrayOutputWithContext(context.Context) ProviderNetworkArrayOutput
+}
+
+type ProviderNetworkArray []ProviderNetworkInput
+
+func (ProviderNetworkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProviderNetwork)(nil)).Elem()
+}
+
+func (i ProviderNetworkArray) ToProviderNetworkArrayOutput() ProviderNetworkArrayOutput {
+	return i.ToProviderNetworkArrayOutputWithContext(context.Background())
+}
+
+func (i ProviderNetworkArray) ToProviderNetworkArrayOutputWithContext(ctx context.Context) ProviderNetworkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProviderNetworkArrayOutput)
+}
+
+type ProviderNetworkOutput struct{ *pulumi.OutputState }
+
+func (ProviderNetworkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProviderNetwork)(nil)).Elem()
+}
+
+func (o ProviderNetworkOutput) ToProviderNetworkOutput() ProviderNetworkOutput {
+	return o
+}
+
+func (o ProviderNetworkOutput) ToProviderNetworkOutputWithContext(ctx context.Context) ProviderNetworkOutput {
+	return o
+}
+
+func (o ProviderNetworkOutput) AccessToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderNetwork) *string { return v.AccessToken }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderNetworkOutput) AccountKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderNetwork) *string { return v.AccountKey }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderNetworkOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderNetwork) *string { return v.ClientSecret }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderNetworkOutput) ClientToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderNetwork) *string { return v.ClientToken }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderNetworkOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderNetwork) *string { return v.Host }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderNetworkOutput) MaxBody() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ProviderNetwork) *int { return v.MaxBody }).(pulumi.IntPtrOutput)
+}
+
+type ProviderNetworkArrayOutput struct{ *pulumi.OutputState }
+
+func (ProviderNetworkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProviderNetwork)(nil)).Elem()
+}
+
+func (o ProviderNetworkArrayOutput) ToProviderNetworkArrayOutput() ProviderNetworkArrayOutput {
+	return o
+}
+
+func (o ProviderNetworkArrayOutput) ToProviderNetworkArrayOutputWithContext(ctx context.Context) ProviderNetworkArrayOutput {
+	return o
+}
+
+func (o ProviderNetworkArrayOutput) Index(i pulumi.IntInput) ProviderNetworkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProviderNetwork {
+		return vs[0].([]ProviderNetwork)[vs[1].(int)]
+	}).(ProviderNetworkOutput)
+}
+
 type ProviderProperty struct {
 	AccessToken  *string `pulumi:"accessToken"`
 	AccountKey   *string `pulumi:"accountKey"`
@@ -4566,6 +6294,22 @@ func (o GetPropertyRulesTemplateVariableArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 func init() {
+	pulumi.RegisterOutputType(CpsDvEnrollmentAdminContactOutput{})
+	pulumi.RegisterOutputType(CpsDvEnrollmentAdminContactPtrOutput{})
+	pulumi.RegisterOutputType(CpsDvEnrollmentCsrOutput{})
+	pulumi.RegisterOutputType(CpsDvEnrollmentCsrPtrOutput{})
+	pulumi.RegisterOutputType(CpsDvEnrollmentDnsChallengeOutput{})
+	pulumi.RegisterOutputType(CpsDvEnrollmentDnsChallengeArrayOutput{})
+	pulumi.RegisterOutputType(CpsDvEnrollmentHttpChallengeOutput{})
+	pulumi.RegisterOutputType(CpsDvEnrollmentHttpChallengeArrayOutput{})
+	pulumi.RegisterOutputType(CpsDvEnrollmentNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(CpsDvEnrollmentNetworkConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput{})
+	pulumi.RegisterOutputType(CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput{})
+	pulumi.RegisterOutputType(CpsDvEnrollmentOrganizationOutput{})
+	pulumi.RegisterOutputType(CpsDvEnrollmentOrganizationPtrOutput{})
+	pulumi.RegisterOutputType(CpsDvEnrollmentTechContactOutput{})
+	pulumi.RegisterOutputType(CpsDvEnrollmentTechContactPtrOutput{})
 	pulumi.RegisterOutputType(DnsZoneTsigKeyOutput{})
 	pulumi.RegisterOutputType(DnsZoneTsigKeyPtrOutput{})
 	pulumi.RegisterOutputType(GtmAsmapAssignmentOutput{})
@@ -4618,6 +6362,8 @@ func init() {
 	pulumi.RegisterOutputType(ProviderDnsPtrOutput{})
 	pulumi.RegisterOutputType(ProviderGtmOutput{})
 	pulumi.RegisterOutputType(ProviderGtmPtrOutput{})
+	pulumi.RegisterOutputType(ProviderNetworkOutput{})
+	pulumi.RegisterOutputType(ProviderNetworkArrayOutput{})
 	pulumi.RegisterOutputType(ProviderPropertyOutput{})
 	pulumi.RegisterOutputType(ProviderPropertyPtrOutput{})
 	pulumi.RegisterOutputType(GetContractsContractOutput{})

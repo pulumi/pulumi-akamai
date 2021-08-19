@@ -21,12 +21,10 @@ import * as utilities from "./utilities";
  * });
  * const appsecRatePolicy = new akamai.AppSecRatePolicy("appsecRatePolicy", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     ratePolicy: fs.readFileSync(`${path.module}/rate_policy.json`),
  * });
  * const appsecRatePolicyAction = new akamai.AppSecRatePolicyAction("appsecRatePolicyAction", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     securityPolicyId: _var.security_policy_id,
  *     ratePolicyId: appsecRatePolicy.ratePolicyId,
  *     ipv4Action: "deny",
@@ -79,10 +77,6 @@ export class AppSecRatePolicyAction extends pulumi.CustomResource {
      */
     public readonly ratePolicyId!: pulumi.Output<number>;
     public readonly securityPolicyId!: pulumi.Output<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecRatePolicyAction resource with the given unique name, arguments, and options.
@@ -102,7 +96,6 @@ export class AppSecRatePolicyAction extends pulumi.CustomResource {
             inputs["ipv6Action"] = state ? state.ipv6Action : undefined;
             inputs["ratePolicyId"] = state ? state.ratePolicyId : undefined;
             inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecRatePolicyActionArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -120,15 +113,11 @@ export class AppSecRatePolicyAction extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["ipv4Action"] = args ? args.ipv4Action : undefined;
             inputs["ipv6Action"] = args ? args.ipv6Action : undefined;
             inputs["ratePolicyId"] = args ? args.ratePolicyId : undefined;
             inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            inputs["version"] = args ? args.version : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -158,10 +147,6 @@ export interface AppSecRatePolicyActionState {
      */
     ratePolicyId?: pulumi.Input<number>;
     securityPolicyId?: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -185,8 +170,4 @@ export interface AppSecRatePolicyActionArgs {
      */
     ratePolicyId: pulumi.Input<number>;
     securityPolicyId: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

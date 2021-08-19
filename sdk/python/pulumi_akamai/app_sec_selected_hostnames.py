@@ -15,19 +15,16 @@ class AppSecSelectedHostnamesArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[int],
                  hostnames: pulumi.Input[Sequence[pulumi.Input[str]]],
-                 mode: pulumi.Input[str],
-                 version: pulumi.Input[int]):
+                 mode: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecSelectedHostnames resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: The list of hostnames to be applied, added or removed.
         :param pulumi.Input[str] mode: A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "hostnames", hostnames)
         pulumi.set(__self__, "mode", mode)
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -65,32 +62,18 @@ class AppSecSelectedHostnamesArgs:
     def mode(self, value: pulumi.Input[str]):
         pulumi.set(self, "mode", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Input[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: pulumi.Input[int]):
-        pulumi.set(self, "version", value)
-
 
 @pulumi.input_type
 class _AppSecSelectedHostnamesState:
     def __init__(__self__, *,
                  config_id: Optional[pulumi.Input[int]] = None,
                  hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 mode: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None):
+                 mode: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecSelectedHostnames resources.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: The list of hostnames to be applied, added or removed.
         :param pulumi.Input[str] mode: A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -98,8 +81,6 @@ class _AppSecSelectedHostnamesState:
             pulumi.set(__self__, "hostnames", hostnames)
         if mode is not None:
             pulumi.set(__self__, "mode", mode)
-        if version is not None:
-            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -137,18 +118,6 @@ class _AppSecSelectedHostnamesState:
     def mode(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "mode", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "version", value)
-
 
 class AppSecSelectedHostnames(pulumi.CustomResource):
     @overload
@@ -158,10 +127,9 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
                  config_id: Optional[pulumi.Input[int]] = None,
                  hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  mode: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        The `AppSecSelectedHostnames` resource allows you to set the list of hostnames protected under a given security configuration version.
+        The `AppSecSelectedHostnames` resource allows you to set the list of hostnames protected under a given security configuration.
 
         ## Example Usage
 
@@ -174,7 +142,6 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
         appsecselectedhostnames = akamai.AppSecSelectedHostnames("appsecselectedhostnames",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             hostnames=["example.com"],
             mode="APPEND")
         ```
@@ -184,7 +151,6 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: The list of hostnames to be applied, added or removed.
         :param pulumi.Input[str] mode: A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         ...
     @overload
@@ -193,7 +159,7 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
                  args: AppSecSelectedHostnamesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        The `AppSecSelectedHostnames` resource allows you to set the list of hostnames protected under a given security configuration version.
+        The `AppSecSelectedHostnames` resource allows you to set the list of hostnames protected under a given security configuration.
 
         ## Example Usage
 
@@ -206,7 +172,6 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
         appsecselectedhostnames = akamai.AppSecSelectedHostnames("appsecselectedhostnames",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             hostnames=["example.com"],
             mode="APPEND")
         ```
@@ -229,7 +194,6 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
                  config_id: Optional[pulumi.Input[int]] = None,
                  hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  mode: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
@@ -251,9 +215,6 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
             if mode is None and not opts.urn:
                 raise TypeError("Missing required property 'mode'")
             __props__.__dict__["mode"] = mode
-            if version is None and not opts.urn:
-                raise TypeError("Missing required property 'version'")
-            __props__.__dict__["version"] = version
         super(AppSecSelectedHostnames, __self__).__init__(
             'akamai:index/appSecSelectedHostnames:AppSecSelectedHostnames',
             resource_name,
@@ -266,8 +227,7 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             config_id: Optional[pulumi.Input[int]] = None,
             hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            mode: Optional[pulumi.Input[str]] = None,
-            version: Optional[pulumi.Input[int]] = None) -> 'AppSecSelectedHostnames':
+            mode: Optional[pulumi.Input[str]] = None) -> 'AppSecSelectedHostnames':
         """
         Get an existing AppSecSelectedHostnames resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -278,7 +238,6 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: The list of hostnames to be applied, added or removed.
         :param pulumi.Input[str] mode: A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -287,7 +246,6 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
         __props__.__dict__["config_id"] = config_id
         __props__.__dict__["hostnames"] = hostnames
         __props__.__dict__["mode"] = mode
-        __props__.__dict__["version"] = version
         return AppSecSelectedHostnames(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -313,12 +271,4 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
         A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
         """
         return pulumi.get(self, "mode")
-
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Output[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
 

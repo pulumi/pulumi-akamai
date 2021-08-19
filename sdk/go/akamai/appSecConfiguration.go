@@ -19,16 +19,18 @@ type AppSecConfiguration struct {
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// The contract ID of the configuration.
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
+	// The config ID of the security configuration to clone from.
+	CreateFromConfigId pulumi.IntPtrOutput `pulumi:"createFromConfigId"`
+	// The version number of the security configuration to clone from.
+	CreateFromVersion pulumi.IntPtrOutput `pulumi:"createFromVersion"`
 	// A description of the configuration.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// The group ID of the configuration>
+	// The group ID of the configuration.
 	GroupId pulumi.IntOutput `pulumi:"groupId"`
 	// The list of hostnames protected by this security configuration.
 	HostNames pulumi.StringArrayOutput `pulumi:"hostNames"`
 	// The name to be assigned to the configuration.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// (Required) The latest version of the security configuration.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecConfiguration registers a new resource with the given unique name, arguments, and options.
@@ -76,16 +78,18 @@ type appSecConfigurationState struct {
 	ConfigId *int `pulumi:"configId"`
 	// The contract ID of the configuration.
 	ContractId *string `pulumi:"contractId"`
+	// The config ID of the security configuration to clone from.
+	CreateFromConfigId *int `pulumi:"createFromConfigId"`
+	// The version number of the security configuration to clone from.
+	CreateFromVersion *int `pulumi:"createFromVersion"`
 	// A description of the configuration.
 	Description *string `pulumi:"description"`
-	// The group ID of the configuration>
+	// The group ID of the configuration.
 	GroupId *int `pulumi:"groupId"`
 	// The list of hostnames protected by this security configuration.
 	HostNames []string `pulumi:"hostNames"`
 	// The name to be assigned to the configuration.
 	Name *string `pulumi:"name"`
-	// (Required) The latest version of the security configuration.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecConfigurationState struct {
@@ -93,16 +97,18 @@ type AppSecConfigurationState struct {
 	ConfigId pulumi.IntPtrInput
 	// The contract ID of the configuration.
 	ContractId pulumi.StringPtrInput
+	// The config ID of the security configuration to clone from.
+	CreateFromConfigId pulumi.IntPtrInput
+	// The version number of the security configuration to clone from.
+	CreateFromVersion pulumi.IntPtrInput
 	// A description of the configuration.
 	Description pulumi.StringPtrInput
-	// The group ID of the configuration>
+	// The group ID of the configuration.
 	GroupId pulumi.IntPtrInput
 	// The list of hostnames protected by this security configuration.
 	HostNames pulumi.StringArrayInput
 	// The name to be assigned to the configuration.
 	Name pulumi.StringPtrInput
-	// (Required) The latest version of the security configuration.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecConfigurationState) ElementType() reflect.Type {
@@ -112,9 +118,13 @@ func (AppSecConfigurationState) ElementType() reflect.Type {
 type appSecConfigurationArgs struct {
 	// The contract ID of the configuration.
 	ContractId string `pulumi:"contractId"`
+	// The config ID of the security configuration to clone from.
+	CreateFromConfigId *int `pulumi:"createFromConfigId"`
+	// The version number of the security configuration to clone from.
+	CreateFromVersion *int `pulumi:"createFromVersion"`
 	// A description of the configuration.
 	Description string `pulumi:"description"`
-	// The group ID of the configuration>
+	// The group ID of the configuration.
 	GroupId int `pulumi:"groupId"`
 	// The list of hostnames protected by this security configuration.
 	HostNames []string `pulumi:"hostNames"`
@@ -126,9 +136,13 @@ type appSecConfigurationArgs struct {
 type AppSecConfigurationArgs struct {
 	// The contract ID of the configuration.
 	ContractId pulumi.StringInput
+	// The config ID of the security configuration to clone from.
+	CreateFromConfigId pulumi.IntPtrInput
+	// The version number of the security configuration to clone from.
+	CreateFromVersion pulumi.IntPtrInput
 	// A description of the configuration.
 	Description pulumi.StringInput
-	// The group ID of the configuration>
+	// The group ID of the configuration.
 	GroupId pulumi.IntInput
 	// The list of hostnames protected by this security configuration.
 	HostNames pulumi.StringArrayInput

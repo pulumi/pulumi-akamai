@@ -36,7 +36,6 @@ import (
 // 		}
 // 		wafMode, err := akamai.NewAppSecWafMode(ctx, "wafMode", &akamai.AppSecWafModeArgs{
 // 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			Version:          pulumi.Int(configuration.LatestVersion),
 // 			SecurityPolicyId: pulumi.Any(_var.Policy_id),
 // 			Mode:             pulumi.Any(_var.Mode),
 // 		})
@@ -71,8 +70,6 @@ type AppSecWafMode struct {
 	OutputText pulumi.StringOutput `pulumi:"outputText"`
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecWafMode registers a new resource with the given unique name, arguments, and options.
@@ -90,9 +87,6 @@ func NewAppSecWafMode(ctx *pulumi.Context,
 	}
 	if args.SecurityPolicyId == nil {
 		return nil, errors.New("invalid value for required argument 'SecurityPolicyId'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecWafMode
 	err := ctx.RegisterResource("akamai:index/appSecWafMode:AppSecWafMode", name, args, &resource, opts...)
@@ -132,8 +126,6 @@ type appSecWafModeState struct {
 	OutputText *string `pulumi:"outputText"`
 	// The ID of the security policy to use.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecWafModeState struct {
@@ -153,8 +145,6 @@ type AppSecWafModeState struct {
 	OutputText pulumi.StringPtrInput
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecWafModeState) ElementType() reflect.Type {
@@ -168,8 +158,6 @@ type appSecWafModeArgs struct {
 	Mode string `pulumi:"mode"`
 	// The ID of the security policy to use.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecWafMode resource.
@@ -180,8 +168,6 @@ type AppSecWafModeArgs struct {
 	Mode pulumi.StringInput
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecWafModeArgs) ElementType() reflect.Type {

@@ -15,19 +15,16 @@ class AppSecEvalArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[int],
                  eval_operation: pulumi.Input[str],
-                 security_policy_id: pulumi.Input[str],
-                 version: pulumi.Input[int]):
+                 security_policy_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecEval resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] eval_operation: The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "eval_operation", eval_operation)
         pulumi.set(__self__, "security_policy_id", security_policy_id)
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -65,18 +62,6 @@ class AppSecEvalArgs:
     def security_policy_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "security_policy_id", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Input[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: pulumi.Input[int]):
-        pulumi.set(self, "version", value)
-
 
 @pulumi.input_type
 class _AppSecEvalState:
@@ -87,9 +72,7 @@ class _AppSecEvalState:
                  eval_status: Optional[pulumi.Input[str]] = None,
                  evaluating_ruleset: Optional[pulumi.Input[str]] = None,
                  expiration_date: Optional[pulumi.Input[str]] = None,
-                 output_text: Optional[pulumi.Input[str]] = None,
-                 security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None):
+                 security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecEval resources.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
@@ -98,9 +81,7 @@ class _AppSecEvalState:
         :param pulumi.Input[str] eval_status: Either `enabled` if an evaluation is currently in progress (that is, if the `eval_operation` parameter was `START`, `RESTART`, or `COMPLETE`) or `disabled` otherwise (that is, if the `eval_operation` parameter was `STOP` or `UPDATE`).
         :param pulumi.Input[str] evaluating_ruleset: The set of rules being evaluated.
         :param pulumi.Input[str] expiration_date: The date on which the evaluation period ends.
-        :param pulumi.Input[str] output_text: Text Export representation
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -114,12 +95,8 @@ class _AppSecEvalState:
             pulumi.set(__self__, "evaluating_ruleset", evaluating_ruleset)
         if expiration_date is not None:
             pulumi.set(__self__, "expiration_date", expiration_date)
-        if output_text is not None:
-            pulumi.set(__self__, "output_text", output_text)
         if security_policy_id is not None:
             pulumi.set(__self__, "security_policy_id", security_policy_id)
-        if version is not None:
-            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -194,18 +171,6 @@ class _AppSecEvalState:
         pulumi.set(self, "expiration_date", value)
 
     @property
-    @pulumi.getter(name="outputText")
-    def output_text(self) -> Optional[pulumi.Input[str]]:
-        """
-        Text Export representation
-        """
-        return pulumi.get(self, "output_text")
-
-    @output_text.setter
-    def output_text(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "output_text", value)
-
-    @property
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -217,18 +182,6 @@ class _AppSecEvalState:
     def security_policy_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "security_policy_id", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "version", value)
-
 
 class AppSecEval(pulumi.CustomResource):
     @overload
@@ -238,7 +191,6 @@ class AppSecEval(pulumi.CustomResource):
                  config_id: Optional[pulumi.Input[int]] = None,
                  eval_operation: Optional[pulumi.Input[str]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         Use the `AppSecEval` resource to perform evaluation mode operations such as Start, Stop, Restart, Update, or Complete.
@@ -254,7 +206,6 @@ class AppSecEval(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
         eval_operation = akamai.AppSecEval("evalOperation",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             security_policy_id=var["security_policy_id"],
             eval_operation=var["eval_operation"])
         pulumi.export("evalModeEvaluatingRuleset", eval_operation.evaluating_ruleset)
@@ -268,7 +219,6 @@ class AppSecEval(pulumi.CustomResource):
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] eval_operation: The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         ...
     @overload
@@ -290,7 +240,6 @@ class AppSecEval(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
         eval_operation = akamai.AppSecEval("evalOperation",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             security_policy_id=var["security_policy_id"],
             eval_operation=var["eval_operation"])
         pulumi.export("evalModeEvaluatingRuleset", eval_operation.evaluating_ruleset)
@@ -317,7 +266,6 @@ class AppSecEval(pulumi.CustomResource):
                  config_id: Optional[pulumi.Input[int]] = None,
                  eval_operation: Optional[pulumi.Input[str]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
@@ -339,14 +287,10 @@ class AppSecEval(pulumi.CustomResource):
             if security_policy_id is None and not opts.urn:
                 raise TypeError("Missing required property 'security_policy_id'")
             __props__.__dict__["security_policy_id"] = security_policy_id
-            if version is None and not opts.urn:
-                raise TypeError("Missing required property 'version'")
-            __props__.__dict__["version"] = version
             __props__.__dict__["current_ruleset"] = None
             __props__.__dict__["eval_status"] = None
             __props__.__dict__["evaluating_ruleset"] = None
             __props__.__dict__["expiration_date"] = None
-            __props__.__dict__["output_text"] = None
         super(AppSecEval, __self__).__init__(
             'akamai:index/appSecEval:AppSecEval',
             resource_name,
@@ -363,9 +307,7 @@ class AppSecEval(pulumi.CustomResource):
             eval_status: Optional[pulumi.Input[str]] = None,
             evaluating_ruleset: Optional[pulumi.Input[str]] = None,
             expiration_date: Optional[pulumi.Input[str]] = None,
-            output_text: Optional[pulumi.Input[str]] = None,
-            security_policy_id: Optional[pulumi.Input[str]] = None,
-            version: Optional[pulumi.Input[int]] = None) -> 'AppSecEval':
+            security_policy_id: Optional[pulumi.Input[str]] = None) -> 'AppSecEval':
         """
         Get an existing AppSecEval resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -379,9 +321,7 @@ class AppSecEval(pulumi.CustomResource):
         :param pulumi.Input[str] eval_status: Either `enabled` if an evaluation is currently in progress (that is, if the `eval_operation` parameter was `START`, `RESTART`, or `COMPLETE`) or `disabled` otherwise (that is, if the `eval_operation` parameter was `STOP` or `UPDATE`).
         :param pulumi.Input[str] evaluating_ruleset: The set of rules being evaluated.
         :param pulumi.Input[str] expiration_date: The date on which the evaluation period ends.
-        :param pulumi.Input[str] output_text: Text Export representation
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -393,9 +333,7 @@ class AppSecEval(pulumi.CustomResource):
         __props__.__dict__["eval_status"] = eval_status
         __props__.__dict__["evaluating_ruleset"] = evaluating_ruleset
         __props__.__dict__["expiration_date"] = expiration_date
-        __props__.__dict__["output_text"] = output_text
         __props__.__dict__["security_policy_id"] = security_policy_id
-        __props__.__dict__["version"] = version
         return AppSecEval(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -447,26 +385,10 @@ class AppSecEval(pulumi.CustomResource):
         return pulumi.get(self, "expiration_date")
 
     @property
-    @pulumi.getter(name="outputText")
-    def output_text(self) -> pulumi.Output[str]:
-        """
-        Text Export representation
-        """
-        return pulumi.get(self, "output_text")
-
-    @property
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
         The ID of the security policy to use.
         """
         return pulumi.get(self, "security_policy_id")
-
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Output[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
 

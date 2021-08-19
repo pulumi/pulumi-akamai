@@ -24,9 +24,6 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecEvalArgs()
         {
         }
@@ -43,7 +40,6 @@ namespace Pulumi.Akamai
         public readonly string Id;
         public readonly string OutputText;
         public readonly string SecurityPolicyId;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecEvalResult(
@@ -53,15 +49,12 @@ namespace Pulumi.Akamai
 
             string outputText,
 
-            string securityPolicyId,
-
-            int version)
+            string securityPolicyId)
         {
             ConfigId = configId;
             Id = id;
             OutputText = outputText;
             SecurityPolicyId = securityPolicyId;
-            Version = version;
         }
     }
 }

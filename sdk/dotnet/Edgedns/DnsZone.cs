@@ -29,7 +29,7 @@ namespace Pulumi.Akamai.Edgedns
         public Output<string?> EndCustomerId { get; private set; } = null!;
 
         [Output("group")]
-        public Output<string> Group { get; private set; } = null!;
+        public Output<string?> Group { get; private set; } = null!;
 
         [Output("masters")]
         public Output<ImmutableArray<string>> Masters { get; private set; } = null!;
@@ -110,8 +110,8 @@ namespace Pulumi.Akamai.Edgedns
         [Input("endCustomerId")]
         public Input<string>? EndCustomerId { get; set; }
 
-        [Input("group", required: true)]
-        public Input<string> Group { get; set; } = null!;
+        [Input("group")]
+        public Input<string>? Group { get; set; }
 
         [Input("masters")]
         private InputList<string>? _masters;

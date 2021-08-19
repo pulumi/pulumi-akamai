@@ -42,7 +42,7 @@ export class DnsZone extends pulumi.CustomResource {
     public readonly comment!: pulumi.Output<string | undefined>;
     public readonly contract!: pulumi.Output<string>;
     public readonly endCustomerId!: pulumi.Output<string | undefined>;
-    public readonly group!: pulumi.Output<string>;
+    public readonly group!: pulumi.Output<string | undefined>;
     public readonly masters!: pulumi.Output<string[] | undefined>;
     public readonly signAndServe!: pulumi.Output<boolean | undefined>;
     public readonly signAndServeAlgorithm!: pulumi.Output<string | undefined>;
@@ -86,9 +86,6 @@ export class DnsZone extends pulumi.CustomResource {
             const args = argsOrState as DnsZoneArgs | undefined;
             if ((!args || args.contract === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'contract'");
-            }
-            if ((!args || args.group === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'group'");
             }
             if ((!args || args.type === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'type'");
@@ -145,7 +142,7 @@ export interface DnsZoneArgs {
     comment?: pulumi.Input<string>;
     contract: pulumi.Input<string>;
     endCustomerId?: pulumi.Input<string>;
-    group: pulumi.Input<string>;
+    group?: pulumi.Input<string>;
     masters?: pulumi.Input<pulumi.Input<string>[]>;
     signAndServe?: pulumi.Input<boolean>;
     signAndServeAlgorithm?: pulumi.Input<string>;

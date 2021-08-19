@@ -31,6 +31,10 @@ namespace Pulumi.Akamai
 
         public static string? GtmSection { get; set; } = __config.Get("gtmSection");
 
+        public static string? NetworklistSection { get; set; } = __config.Get("networklistSection");
+
+        public static ImmutableArray<Pulumi.Akamai.Config.Types.Networks> Networks { get; set; } = __config.GetObject<ImmutableArray<Pulumi.Akamai.Config.Types.Networks>>("networks");
+
         public static string? PapiSection { get; set; } = __config.Get("papiSection");
 
         public static Pulumi.Akamai.Config.Types.Property? Property { get; set; } = __config.GetObject<Pulumi.Akamai.Config.Types.Property>("property");
@@ -71,6 +75,16 @@ namespace Pulumi.Akamai
             }
 
              public class Gtm
+             {
+                public string? AccessToken { get; set; } = null!;
+                public string? AccountKey { get; set; } = null!;
+                public string? ClientSecret { get; set; } = null!;
+                public string? ClientToken { get; set; } = null!;
+                public string? Host { get; set; } = null!;
+                public int? MaxBody { get; set; }
+            }
+
+             public class Networks
              {
                 public string? AccessToken { get; set; } = null!;
                 public string? AccountKey { get; set; } = null!;

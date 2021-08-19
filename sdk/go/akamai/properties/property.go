@@ -40,8 +40,10 @@ type Property struct {
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringOutput `pulumi:"productId"`
 	// Property's version currently activated in production (zero when not active in production)
-	ProductionVersion pulumi.IntOutput             `pulumi:"productionVersion"`
-	RuleErrors        PropertyRuleErrorArrayOutput `pulumi:"ruleErrors"`
+	ProductionVersion pulumi.IntOutput `pulumi:"productionVersion"`
+	// Required property's version to be read
+	ReadVersion pulumi.IntOutput             `pulumi:"readVersion"`
+	RuleErrors  PropertyRuleErrorArrayOutput `pulumi:"ruleErrors"`
 	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat pulumi.StringOutput `pulumi:"ruleFormat"`
 	// Deprecated: Rule warnings will not be set in state anymore
@@ -109,8 +111,10 @@ type propertyState struct {
 	// Product ID to be assigned to the Property
 	ProductId *string `pulumi:"productId"`
 	// Property's version currently activated in production (zero when not active in production)
-	ProductionVersion *int                `pulumi:"productionVersion"`
-	RuleErrors        []PropertyRuleError `pulumi:"ruleErrors"`
+	ProductionVersion *int `pulumi:"productionVersion"`
+	// Required property's version to be read
+	ReadVersion *int                `pulumi:"readVersion"`
+	RuleErrors  []PropertyRuleError `pulumi:"ruleErrors"`
 	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat *string `pulumi:"ruleFormat"`
 	// Deprecated: Rule warnings will not be set in state anymore
@@ -151,7 +155,9 @@ type PropertyState struct {
 	ProductId pulumi.StringPtrInput
 	// Property's version currently activated in production (zero when not active in production)
 	ProductionVersion pulumi.IntPtrInput
-	RuleErrors        PropertyRuleErrorArrayInput
+	// Required property's version to be read
+	ReadVersion pulumi.IntPtrInput
+	RuleErrors  PropertyRuleErrorArrayInput
 	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat pulumi.StringPtrInput
 	// Deprecated: Rule warnings will not be set in state anymore

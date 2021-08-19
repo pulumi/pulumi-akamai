@@ -2,7 +2,26 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-_(none)_
+* Upgrade to v1.6.1 of the Akamai Terraform Provider
+  ** PLEASE NOTE:**  
+  There are a number of breaking changes to this provider due to removal of the following services upstream:
+  * `akamai.AppSecAttackGroupAction`
+  * `akamai.AppSecAttackGroupConditionException`
+  * `akamai.AppSecConfigurationClone`
+  * `akamai.AppSecConfigurationVersionClone`
+  * `akamai.AppSecEvalRuleAction`
+  * `akamai.AppSecEvalRuleConditionException`
+  * `akamai.AppSecRuleAction`
+  * `akamai.AppSecRuleConditionException`
+  * `akamai.AppSecSecurityPolicyClone`
+  * `akamai.AppSecSecurityPolicyProtections`
+  * `akamai.getAppSecAttackGroupActions`
+  * `akamai.getAppSecAttackGroupConditionException`
+  * `akamai.getAppSecEvalRuleActions`
+  * `akamai.getAppSecEvalRuleConditionException`
+  * `akamai.getAppSecRuleActions`
+  * `akamai.getAppSecRuleConditionException`
+  * Configuration version numbers are no longer supported for most data sources and resources
 
 ---
 

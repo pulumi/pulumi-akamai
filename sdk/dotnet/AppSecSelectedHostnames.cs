@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// The `akamai.AppSecSelectedHostnames` resource allows you to set the list of hostnames protected under a given security configuration version.
+    /// The `akamai.AppSecSelectedHostnames` resource allows you to set the list of hostnames protected under a given security configuration.
     /// 
     /// ## Example Usage
     /// 
@@ -31,7 +31,6 @@ namespace Pulumi.Akamai
     ///         var appsecselectedhostnames = new Akamai.AppSecSelectedHostnames("appsecselectedhostnames", new Akamai.AppSecSelectedHostnamesArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
     ///             Hostnames = 
     ///             {
     ///                 "example.com",
@@ -63,12 +62,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("mode")]
         public Output<string> Mode { get; private set; } = null!;
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -140,12 +133,6 @@ namespace Pulumi.Akamai
         [Input("mode", required: true)]
         public Input<string> Mode { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
-
         public AppSecSelectedHostnamesArgs()
         {
         }
@@ -176,12 +163,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("mode")]
         public Input<string>? Mode { get; set; }
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecSelectedHostnamesState()
         {

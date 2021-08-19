@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  * });
  * const appsecReputationProfileAction = new akamai.AppSecReputationProfileAction("appsecReputationProfileAction", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     securityPolicyId: _var.security_policy_id,
  *     reputationProfileId: akamai_appsec_reputation_profile.reputation_profile.id,
  *     action: "alert",
@@ -73,10 +72,6 @@ export class AppSecReputationProfileAction extends pulumi.CustomResource {
      * The ID of the security policy to use.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecReputationProfileAction resource with the given unique name, arguments, and options.
@@ -95,7 +90,6 @@ export class AppSecReputationProfileAction extends pulumi.CustomResource {
             inputs["configId"] = state ? state.configId : undefined;
             inputs["reputationProfileId"] = state ? state.reputationProfileId : undefined;
             inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecReputationProfileActionArgs | undefined;
             if ((!args || args.action === undefined) && !opts.urn) {
@@ -110,14 +104,10 @@ export class AppSecReputationProfileAction extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["action"] = args ? args.action : undefined;
             inputs["configId"] = args ? args.configId : undefined;
             inputs["reputationProfileId"] = args ? args.reputationProfileId : undefined;
             inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            inputs["version"] = args ? args.version : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -146,10 +136,6 @@ export interface AppSecReputationProfileActionState {
      * The ID of the security policy to use.
      */
     securityPolicyId?: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -172,8 +158,4 @@ export interface AppSecReputationProfileActionArgs {
      * The ID of the security policy to use.
      */
     securityPolicyId: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

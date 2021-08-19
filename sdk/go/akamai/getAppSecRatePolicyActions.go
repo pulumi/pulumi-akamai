@@ -7,7 +7,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecRatePolicyActions` data source to retrieve a list of all rate policies associated with a given configuration version and security policy, or the actions associated with a specific rate policy.
+// Use the `getAppSecRatePolicyActions` data source to retrieve a list of all rate policies associated with a given configuration and security policy, or the actions associated with a specific rate policy.
 //
 // ## Example Usage
 //
@@ -32,7 +32,6 @@ import (
 // 		}
 // 		ratePolicyActionsAppSecRatePolicyActions, err := akamai.GetAppSecRatePolicyActions(ctx, &akamai.GetAppSecRatePolicyActionsArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			Version:          configuration.LatestVersion,
 // 			SecurityPolicyId: _var.Security_policy_id,
 // 		}, nil)
 // 		if err != nil {
@@ -60,8 +59,6 @@ type GetAppSecRatePolicyActionsArgs struct {
 	RatePolicyId *int `pulumi:"ratePolicyId"`
 	// The ID of the security policy to use.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecRatePolicyActions.
@@ -73,5 +70,4 @@ type GetAppSecRatePolicyActionsResult struct {
 	OutputText       string `pulumi:"outputText"`
 	RatePolicyId     *int   `pulumi:"ratePolicyId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	Version          int    `pulumi:"version"`
 }

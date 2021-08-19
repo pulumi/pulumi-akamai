@@ -12,7 +12,7 @@ namespace Pulumi.Akamai
     public static class GetAppSecRatePolicies
     {
         /// <summary>
-        /// Use the `akamai.getAppSecRatePolicies` data source to retrieve the rate policies for a specific security configuration version, or a single rate policy.
+        /// Use the `akamai.getAppSecRatePolicies` data source to retrieve the rate policies for a specific security configuration, or a single rate policy.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -32,29 +32,17 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = @var.Security_configuration,
         ///         }));
-        ///         var ratePolicies = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var ratePolicies = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecRatePolicies.InvokeAsync(new Akamai.GetAppSecRatePoliciesArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecRatePolicies.InvokeAsync(new Akamai.GetAppSecRatePoliciesArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///         })));
         ///         this.RatePoliciesOutput = ratePolicies.Apply(ratePolicies =&gt; ratePolicies.OutputText);
         ///         this.RatePoliciesJson = ratePolicies.Apply(ratePolicies =&gt; ratePolicies.Json);
-        ///         var ratePolicy = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var ratePolicy = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecRatePolicies.InvokeAsync(new Akamai.GetAppSecRatePoliciesArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecRatePolicies.InvokeAsync(new Akamai.GetAppSecRatePoliciesArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///                 RatePolicyId = @var.Rate_policy_id,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///             RatePolicyId = @var.Rate_policy_id,
+        ///         })));
         ///         this.RatePolicyJson = ratePolicy.Apply(ratePolicy =&gt; ratePolicy.Json);
         ///         this.RatePolicyOutput = ratePolicy.Apply(ratePolicy =&gt; ratePolicy.OutputText);
         ///     }
@@ -91,12 +79,6 @@ namespace Pulumi.Akamai
         [Input("ratePolicyId")]
         public int? RatePolicyId { get; set; }
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecRatePoliciesArgs()
         {
         }
@@ -116,11 +98,10 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string Json;
         /// <summary>
-        /// A tabular display showing the ID and name of all rate policies associated with the specified security configuration version.
+        /// A tabular display showing the ID and name of all rate policies associated with the specified security configuration.
         /// </summary>
         public readonly string OutputText;
         public readonly int? RatePolicyId;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecRatePoliciesResult(
@@ -132,16 +113,13 @@ namespace Pulumi.Akamai
 
             string outputText,
 
-            int? ratePolicyId,
-
-            int version)
+            int? ratePolicyId)
         {
             ConfigId = configId;
             Id = id;
             Json = json;
             OutputText = outputText;
             RatePolicyId = ratePolicyId;
-            Version = version;
         }
     }
 }

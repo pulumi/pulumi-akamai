@@ -7,7 +7,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecSecurityPolicyProtections` data source to retrieve the protections in effect for a given security policy.
+// Use the `getAppSecSecurityPolicyProtections` data source to retrieve the protections in effect for a given security policy.
 //
 // ## Example Usage
 //
@@ -30,9 +30,8 @@ import (
 // 		if err != nil {
 // 			return err
 // 		}
-// 		protections, err := akamai.LookupAppSecSecurityPolicyProtections(ctx, &akamai.LookupAppSecSecurityPolicyProtectionsArgs{
+// 		protections, err := akamai.GetAppSecSecurityPolicyProtections(ctx, &akamai.GetAppSecSecurityPolicyProtectionsArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			Version:          configuration.LatestVersion,
 // 			SecurityPolicyId: _var.Security_policy_id,
 // 		}, nil)
 // 		if err != nil {
@@ -50,8 +49,8 @@ import (
 // 	})
 // }
 // ```
-func LookupAppSecSecurityPolicyProtections(ctx *pulumi.Context, args *LookupAppSecSecurityPolicyProtectionsArgs, opts ...pulumi.InvokeOption) (*LookupAppSecSecurityPolicyProtectionsResult, error) {
-	var rv LookupAppSecSecurityPolicyProtectionsResult
+func GetAppSecSecurityPolicyProtections(ctx *pulumi.Context, args *GetAppSecSecurityPolicyProtectionsArgs, opts ...pulumi.InvokeOption) (*GetAppSecSecurityPolicyProtectionsResult, error) {
+	var rv GetAppSecSecurityPolicyProtectionsResult
 	err := ctx.Invoke("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -60,17 +59,15 @@ func LookupAppSecSecurityPolicyProtections(ctx *pulumi.Context, args *LookupAppS
 }
 
 // A collection of arguments for invoking getAppSecSecurityPolicyProtections.
-type LookupAppSecSecurityPolicyProtectionsArgs struct {
+type GetAppSecSecurityPolicyProtectionsArgs struct {
 	// The ID of the security configuration to use.
 	ConfigId int `pulumi:"configId"`
 	// The ID of the security policy to use.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecSecurityPolicyProtections.
-type LookupAppSecSecurityPolicyProtectionsResult struct {
+type GetAppSecSecurityPolicyProtectionsResult struct {
 	// `true` or `false`, indicating whether API constraints are in effect.
 	ApplyApiConstraints bool `pulumi:"applyApiConstraints"`
 	// `true` or `false`, indicating whether application layer controls are in effect.
@@ -93,5 +90,4 @@ type LookupAppSecSecurityPolicyProtectionsResult struct {
 	// a tabular display showing the status of the protection settings
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	Version          int    `pulumi:"version"`
 }

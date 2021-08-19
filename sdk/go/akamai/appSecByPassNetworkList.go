@@ -38,7 +38,6 @@ import (
 // 		}
 // 		_, err = akamai.NewAppSecByPassNetworkList(ctx, "bypassNetworkLists", &akamai.AppSecByPassNetworkListArgs{
 // 			ConfigId: pulumi.Int(configuration.ConfigId),
-// 			Version:  pulumi.Int(configuration.LatestVersion),
 // 			BypassNetworkLists: pulumi.StringArray{
 // 				pulumi.String("id1"),
 // 				pulumi.String("id2"),
@@ -58,8 +57,6 @@ type AppSecByPassNetworkList struct {
 	BypassNetworkLists pulumi.StringArrayOutput `pulumi:"bypassNetworkLists"`
 	// The configuration ID to use.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// The version number of the configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecByPassNetworkList registers a new resource with the given unique name, arguments, and options.
@@ -74,9 +71,6 @@ func NewAppSecByPassNetworkList(ctx *pulumi.Context,
 	}
 	if args.ConfigId == nil {
 		return nil, errors.New("invalid value for required argument 'ConfigId'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecByPassNetworkList
 	err := ctx.RegisterResource("akamai:index/appSecByPassNetworkList:AppSecByPassNetworkList", name, args, &resource, opts...)
@@ -104,8 +98,6 @@ type appSecByPassNetworkListState struct {
 	BypassNetworkLists []string `pulumi:"bypassNetworkLists"`
 	// The configuration ID to use.
 	ConfigId *int `pulumi:"configId"`
-	// The version number of the configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecByPassNetworkListState struct {
@@ -113,8 +105,6 @@ type AppSecByPassNetworkListState struct {
 	BypassNetworkLists pulumi.StringArrayInput
 	// The configuration ID to use.
 	ConfigId pulumi.IntPtrInput
-	// The version number of the configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecByPassNetworkListState) ElementType() reflect.Type {
@@ -126,8 +116,6 @@ type appSecByPassNetworkListArgs struct {
 	BypassNetworkLists []string `pulumi:"bypassNetworkLists"`
 	// The configuration ID to use.
 	ConfigId int `pulumi:"configId"`
-	// The version number of the configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecByPassNetworkList resource.
@@ -136,8 +124,6 @@ type AppSecByPassNetworkListArgs struct {
 	BypassNetworkLists pulumi.StringArrayInput
 	// The configuration ID to use.
 	ConfigId pulumi.IntInput
-	// The version number of the configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecByPassNetworkListArgs) ElementType() reflect.Type {

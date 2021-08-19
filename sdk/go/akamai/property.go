@@ -106,7 +106,7 @@ import (
 //
 // # (resource arguments)
 //
-//  } You can import Akamai properties by using either the `property_id` or a comma-delimited string of the property, contract, and group IDs. You'll need to enter the string of IDs if the property belongs to multiple groups or contracts. If using the string of IDs, you need to enter them in this order`property_id,contract_id,group_id` Here are some examples
+//  } You can import the latest Akamai property version by using either the `property_id` or a comma-delimited string of the property, contract, and group IDs. You'll need to enter the string of IDs if the property belongs to multiple groups or contracts. If using the string of IDs, you need to enter them in this order`property_id,contract_id,group_id` To import a specific property version, pass additional parameters, either* `LATEST` to import the latest version of the property, regardless of whether it's active or not. This works the same as providing just the `property_id` or a string of the property, contract, and group IDs, which is the default behavior. * `PRODUCTION`, `PROD`, or `P` to import the latest version activated on the production environment. * `STAGING`, `STAGE`, `STAG`, or `S` to import the latest version activated on the staging environment. * Version number or version number with the `ver_` prefix to import a specific property version. For example `3` and `ver_3` correspond to the same version number. Here are some examples for the latest property version
 //
 // ```sh
 //  $ pulumi import akamai:index/property:Property example prp_123
@@ -116,6 +116,30 @@ import (
 //
 // ```sh
 //  $ pulumi import akamai:index/property:Property example prp_123,ctr_1-AB123,grp_123
+// ```
+//
+//  Here are some examples for the latest active property version on the production network
+//
+// ```sh
+//  $ pulumi import akamai:index/property:Property example prp_123,P
+// ```
+//
+//  Or
+//
+// ```sh
+//  $ pulumi import akamai:index/property:Property example prp_123,ctr_1-AB123,grp_123,PROD
+// ```
+//
+//  Here are some examples for the specific property version
+//
+// ```sh
+//  $ pulumi import akamai:index/property:Property example prp_123,3
+// ```
+//
+//  Or
+//
+// ```sh
+//  $ pulumi import akamai:index/property:Property example prp_123,ctr_1-AB123,grp_123,ver_3
 // ```
 type Property struct {
 	pulumi.CustomResourceState
@@ -146,8 +170,10 @@ type Property struct {
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringOutput `pulumi:"productId"`
 	// Property's version currently activated in production (zero when not active in production)
-	ProductionVersion pulumi.IntOutput             `pulumi:"productionVersion"`
-	RuleErrors        PropertyRuleErrorArrayOutput `pulumi:"ruleErrors"`
+	ProductionVersion pulumi.IntOutput `pulumi:"productionVersion"`
+	// Required property's version to be read
+	ReadVersion pulumi.IntOutput             `pulumi:"readVersion"`
+	RuleErrors  PropertyRuleErrorArrayOutput `pulumi:"ruleErrors"`
 	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat pulumi.StringOutput `pulumi:"ruleFormat"`
 	// Deprecated: Rule warnings will not be set in state anymore
@@ -221,8 +247,10 @@ type propertyState struct {
 	// Product ID to be assigned to the Property
 	ProductId *string `pulumi:"productId"`
 	// Property's version currently activated in production (zero when not active in production)
-	ProductionVersion *int                `pulumi:"productionVersion"`
-	RuleErrors        []PropertyRuleError `pulumi:"ruleErrors"`
+	ProductionVersion *int `pulumi:"productionVersion"`
+	// Required property's version to be read
+	ReadVersion *int                `pulumi:"readVersion"`
+	RuleErrors  []PropertyRuleError `pulumi:"ruleErrors"`
 	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat *string `pulumi:"ruleFormat"`
 	// Deprecated: Rule warnings will not be set in state anymore
@@ -263,7 +291,9 @@ type PropertyState struct {
 	ProductId pulumi.StringPtrInput
 	// Property's version currently activated in production (zero when not active in production)
 	ProductionVersion pulumi.IntPtrInput
-	RuleErrors        PropertyRuleErrorArrayInput
+	// Required property's version to be read
+	ReadVersion pulumi.IntPtrInput
+	RuleErrors  PropertyRuleErrorArrayInput
 	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat pulumi.StringPtrInput
 	// Deprecated: Rule warnings will not be set in state anymore

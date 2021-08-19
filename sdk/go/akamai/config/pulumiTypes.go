@@ -371,6 +371,130 @@ func (o GtmOutput) MaxBody() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v Gtm) *int { return v.MaxBody }).(pulumi.IntPtrOutput)
 }
 
+type Networks struct {
+	AccessToken  *string `pulumi:"accessToken"`
+	AccountKey   *string `pulumi:"accountKey"`
+	ClientSecret *string `pulumi:"clientSecret"`
+	ClientToken  *string `pulumi:"clientToken"`
+	Host         *string `pulumi:"host"`
+	MaxBody      *int    `pulumi:"maxBody"`
+}
+
+// NetworksInput is an input type that accepts NetworksArgs and NetworksOutput values.
+// You can construct a concrete instance of `NetworksInput` via:
+//
+//          NetworksArgs{...}
+type NetworksInput interface {
+	pulumi.Input
+
+	ToNetworksOutput() NetworksOutput
+	ToNetworksOutputWithContext(context.Context) NetworksOutput
+}
+
+type NetworksArgs struct {
+	AccessToken  pulumi.StringPtrInput `pulumi:"accessToken"`
+	AccountKey   pulumi.StringPtrInput `pulumi:"accountKey"`
+	ClientSecret pulumi.StringPtrInput `pulumi:"clientSecret"`
+	ClientToken  pulumi.StringPtrInput `pulumi:"clientToken"`
+	Host         pulumi.StringPtrInput `pulumi:"host"`
+	MaxBody      pulumi.IntPtrInput    `pulumi:"maxBody"`
+}
+
+func (NetworksArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*Networks)(nil)).Elem()
+}
+
+func (i NetworksArgs) ToNetworksOutput() NetworksOutput {
+	return i.ToNetworksOutputWithContext(context.Background())
+}
+
+func (i NetworksArgs) ToNetworksOutputWithContext(ctx context.Context) NetworksOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworksOutput)
+}
+
+// NetworksArrayInput is an input type that accepts NetworksArray and NetworksArrayOutput values.
+// You can construct a concrete instance of `NetworksArrayInput` via:
+//
+//          NetworksArray{ NetworksArgs{...} }
+type NetworksArrayInput interface {
+	pulumi.Input
+
+	ToNetworksArrayOutput() NetworksArrayOutput
+	ToNetworksArrayOutputWithContext(context.Context) NetworksArrayOutput
+}
+
+type NetworksArray []NetworksInput
+
+func (NetworksArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]Networks)(nil)).Elem()
+}
+
+func (i NetworksArray) ToNetworksArrayOutput() NetworksArrayOutput {
+	return i.ToNetworksArrayOutputWithContext(context.Background())
+}
+
+func (i NetworksArray) ToNetworksArrayOutputWithContext(ctx context.Context) NetworksArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworksArrayOutput)
+}
+
+type NetworksOutput struct{ *pulumi.OutputState }
+
+func (NetworksOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*Networks)(nil)).Elem()
+}
+
+func (o NetworksOutput) ToNetworksOutput() NetworksOutput {
+	return o
+}
+
+func (o NetworksOutput) ToNetworksOutputWithContext(ctx context.Context) NetworksOutput {
+	return o
+}
+
+func (o NetworksOutput) AccessToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v Networks) *string { return v.AccessToken }).(pulumi.StringPtrOutput)
+}
+
+func (o NetworksOutput) AccountKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v Networks) *string { return v.AccountKey }).(pulumi.StringPtrOutput)
+}
+
+func (o NetworksOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v Networks) *string { return v.ClientSecret }).(pulumi.StringPtrOutput)
+}
+
+func (o NetworksOutput) ClientToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v Networks) *string { return v.ClientToken }).(pulumi.StringPtrOutput)
+}
+
+func (o NetworksOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v Networks) *string { return v.Host }).(pulumi.StringPtrOutput)
+}
+
+func (o NetworksOutput) MaxBody() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v Networks) *int { return v.MaxBody }).(pulumi.IntPtrOutput)
+}
+
+type NetworksArrayOutput struct{ *pulumi.OutputState }
+
+func (NetworksArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]Networks)(nil)).Elem()
+}
+
+func (o NetworksArrayOutput) ToNetworksArrayOutput() NetworksArrayOutput {
+	return o
+}
+
+func (o NetworksArrayOutput) ToNetworksArrayOutputWithContext(ctx context.Context) NetworksArrayOutput {
+	return o
+}
+
+func (o NetworksArrayOutput) Index(i pulumi.IntInput) NetworksOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) Networks {
+		return vs[0].([]Networks)[vs[1].(int)]
+	}).(NetworksOutput)
+}
+
 type Property struct {
 	AccessToken  *string `pulumi:"accessToken"`
 	AccountKey   *string `pulumi:"accountKey"`
@@ -456,5 +580,7 @@ func init() {
 	pulumi.RegisterOutputType(ConfigOutput{})
 	pulumi.RegisterOutputType(DnsOutput{})
 	pulumi.RegisterOutputType(GtmOutput{})
+	pulumi.RegisterOutputType(NetworksOutput{})
+	pulumi.RegisterOutputType(NetworksArrayOutput{})
 	pulumi.RegisterOutputType(PropertyOutput{})
 }

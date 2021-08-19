@@ -19,7 +19,7 @@ class GetAppSecSelectableHostnamesResult:
     """
     A collection of values returned by getAppSecSelectableHostnames.
     """
-    def __init__(__self__, active_in_production=None, active_in_staging=None, config_id=None, contractid=None, groupid=None, hostnames=None, hostnames_json=None, id=None, output_text=None, version=None):
+    def __init__(__self__, active_in_production=None, active_in_staging=None, config_id=None, contractid=None, groupid=None, hostnames=None, hostnames_json=None, id=None, output_text=None):
         if active_in_production and not isinstance(active_in_production, bool):
             raise TypeError("Expected argument 'active_in_production' to be a bool")
         pulumi.set(__self__, "active_in_production", active_in_production)
@@ -47,9 +47,6 @@ class GetAppSecSelectableHostnamesResult:
         if output_text and not isinstance(output_text, str):
             raise TypeError("Expected argument 'output_text' to be a str")
         pulumi.set(__self__, "output_text", output_text)
-        if version and not isinstance(version, int):
-            raise TypeError("Expected argument 'version' to be a int")
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="activeInProduction")
@@ -108,11 +105,6 @@ class GetAppSecSelectableHostnamesResult:
         """
         return pulumi.get(self, "output_text")
 
-    @property
-    @pulumi.getter
-    def version(self) -> Optional[int]:
-        return pulumi.get(self, "version")
-
 
 class AwaitableGetAppSecSelectableHostnamesResult(GetAppSecSelectableHostnamesResult):
     # pylint: disable=using-constant-test
@@ -128,8 +120,7 @@ class AwaitableGetAppSecSelectableHostnamesResult(GetAppSecSelectableHostnamesRe
             hostnames=self.hostnames,
             hostnames_json=self.hostnames_json,
             id=self.id,
-            output_text=self.output_text,
-            version=self.version)
+            output_text=self.output_text)
 
 
 def get_app_sec_selectable_hostnames(active_in_production: Optional[bool] = None,
@@ -137,10 +128,9 @@ def get_app_sec_selectable_hostnames(active_in_production: Optional[bool] = None
                                      config_id: Optional[int] = None,
                                      contractid: Optional[str] = None,
                                      groupid: Optional[int] = None,
-                                     version: Optional[int] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecSelectableHostnamesResult:
     """
-    Use the `getAppSecSelectableHostnames` data source to retrieve the list of hostnames that may be protected under a given security configuration version. You can specify the list to be retrieved either by supplying the name and version of a security configuration, or by supplying a group ID and contract ID.
+    Use the `getAppSecSelectableHostnames` data source to retrieve the list of hostnames that may be protected under a given security configuration. You can specify the list to be retrieved either by supplying the name of a security configuration, or by supplying a group ID and contract ID.
 
     ## Example Usage
 
@@ -151,8 +141,7 @@ def get_app_sec_selectable_hostnames(active_in_production: Optional[bool] = None
     import pulumi_akamai as akamai
 
     configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-    selectable_hostnames_app_sec_selectable_hostnames = akamai.get_app_sec_selectable_hostnames(config_id=configuration.config_id,
-        version=configuration.latest_version)
+    selectable_hostnames_app_sec_selectable_hostnames = akamai.get_app_sec_selectable_hostnames(config_id=configuration.config_id)
     pulumi.export("selectableHostnames", selectable_hostnames_app_sec_selectable_hostnames.hostnames)
     pulumi.export("selectableHostnamesJson", selectable_hostnames_app_sec_selectable_hostnames.hostnames_json)
     pulumi.export("selectableHostnamesOutputText", selectable_hostnames_app_sec_selectable_hostnames.output_text)
@@ -167,7 +156,6 @@ def get_app_sec_selectable_hostnames(active_in_production: Optional[bool] = None
     :param int config_id: The ID of the security configuration to use.
     :param str contractid: The ID of the contract to use.
     :param int groupid: The ID of the group to use.
-    :param int version: The version number of the security configuration to use.
     """
     __args__ = dict()
     __args__['activeInProduction'] = active_in_production
@@ -175,7 +163,6 @@ def get_app_sec_selectable_hostnames(active_in_production: Optional[bool] = None
     __args__['configId'] = config_id
     __args__['contractid'] = contractid
     __args__['groupid'] = groupid
-    __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -191,5 +178,4 @@ def get_app_sec_selectable_hostnames(active_in_production: Optional[bool] = None
         hostnames=__ret__.hostnames,
         hostnames_json=__ret__.hostnames_json,
         id=__ret__.id,
-        output_text=__ret__.output_text,
-        version=__ret__.version)
+        output_text=__ret__.output_text)

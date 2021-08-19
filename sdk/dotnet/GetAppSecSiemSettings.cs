@@ -32,16 +32,10 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = @var.Security_configuration,
         ///         }));
-        ///         var siemSettings = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var siemSettings = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSiemSettings.InvokeAsync(new Akamai.GetAppSecSiemSettingsArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecSiemSettings.InvokeAsync(new Akamai.GetAppSecSiemSettingsArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///         })));
         ///         this.SiemSettingsJson = siemSettings.Apply(siemSettings =&gt; siemSettings.Json);
         ///         this.SiemSettingsOutput = siemSettings.Apply(siemSettings =&gt; siemSettings.OutputText);
         ///     }
@@ -68,12 +62,6 @@ namespace Pulumi.Akamai
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecSiemSettingsArgs()
         {
         }
@@ -96,7 +84,6 @@ namespace Pulumi.Akamai
         /// A tabular display showing the SIEM setting information.
         /// </summary>
         public readonly string OutputText;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecSiemSettingsResult(
@@ -106,15 +93,12 @@ namespace Pulumi.Akamai
 
             string json,
 
-            string outputText,
-
-            int version)
+            string outputText)
         {
             ConfigId = configId;
             Id = id;
             Json = json;
             OutputText = outputText;
-            Version = version;
         }
     }
 }

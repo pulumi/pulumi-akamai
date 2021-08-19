@@ -44,11 +44,19 @@ export class AppSecConfiguration extends pulumi.CustomResource {
      */
     public readonly contractId!: pulumi.Output<string>;
     /**
+     * The config ID of the security configuration to clone from.
+     */
+    public readonly createFromConfigId!: pulumi.Output<number | undefined>;
+    /**
+     * The version number of the security configuration to clone from.
+     */
+    public readonly createFromVersion!: pulumi.Output<number | undefined>;
+    /**
      * A description of the configuration.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * The group ID of the configuration>
+     * The group ID of the configuration.
      */
     public readonly groupId!: pulumi.Output<number>;
     /**
@@ -59,10 +67,6 @@ export class AppSecConfiguration extends pulumi.CustomResource {
      * The name to be assigned to the configuration.
      */
     public readonly name!: pulumi.Output<string>;
-    /**
-     * (Required) The latest version of the security configuration.
-     */
-    public /*out*/ readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecConfiguration resource with the given unique name, arguments, and options.
@@ -79,11 +83,12 @@ export class AppSecConfiguration extends pulumi.CustomResource {
             const state = argsOrState as AppSecConfigurationState | undefined;
             inputs["configId"] = state ? state.configId : undefined;
             inputs["contractId"] = state ? state.contractId : undefined;
+            inputs["createFromConfigId"] = state ? state.createFromConfigId : undefined;
+            inputs["createFromVersion"] = state ? state.createFromVersion : undefined;
             inputs["description"] = state ? state.description : undefined;
             inputs["groupId"] = state ? state.groupId : undefined;
             inputs["hostNames"] = state ? state.hostNames : undefined;
             inputs["name"] = state ? state.name : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecConfigurationArgs | undefined;
             if ((!args || args.contractId === undefined) && !opts.urn) {
@@ -99,12 +104,13 @@ export class AppSecConfiguration extends pulumi.CustomResource {
                 throw new Error("Missing required property 'hostNames'");
             }
             inputs["contractId"] = args ? args.contractId : undefined;
+            inputs["createFromConfigId"] = args ? args.createFromConfigId : undefined;
+            inputs["createFromVersion"] = args ? args.createFromVersion : undefined;
             inputs["description"] = args ? args.description : undefined;
             inputs["groupId"] = args ? args.groupId : undefined;
             inputs["hostNames"] = args ? args.hostNames : undefined;
             inputs["name"] = args ? args.name : undefined;
             inputs["configId"] = undefined /*out*/;
-            inputs["version"] = undefined /*out*/;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -126,11 +132,19 @@ export interface AppSecConfigurationState {
      */
     contractId?: pulumi.Input<string>;
     /**
+     * The config ID of the security configuration to clone from.
+     */
+    createFromConfigId?: pulumi.Input<number>;
+    /**
+     * The version number of the security configuration to clone from.
+     */
+    createFromVersion?: pulumi.Input<number>;
+    /**
      * A description of the configuration.
      */
     description?: pulumi.Input<string>;
     /**
-     * The group ID of the configuration>
+     * The group ID of the configuration.
      */
     groupId?: pulumi.Input<number>;
     /**
@@ -141,10 +155,6 @@ export interface AppSecConfigurationState {
      * The name to be assigned to the configuration.
      */
     name?: pulumi.Input<string>;
-    /**
-     * (Required) The latest version of the security configuration.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -156,11 +166,19 @@ export interface AppSecConfigurationArgs {
      */
     contractId: pulumi.Input<string>;
     /**
+     * The config ID of the security configuration to clone from.
+     */
+    createFromConfigId?: pulumi.Input<number>;
+    /**
+     * The version number of the security configuration to clone from.
+     */
+    createFromVersion?: pulumi.Input<number>;
+    /**
      * A description of the configuration.
      */
     description: pulumi.Input<string>;
     /**
-     * The group ID of the configuration>
+     * The group ID of the configuration.
      */
     groupId: pulumi.Input<number>;
     /**

@@ -7,24 +7,23 @@ import typing
 # Export this package's modules as members:
 from .app_sec_activations import *
 from .app_sec_advanced_settings_logging import *
+from .app_sec_advanced_settings_pragma_header import *
 from .app_sec_advanced_settings_prefetch import *
+from .app_sec_api_constraints_protection import *
 from .app_sec_api_request_constraints import *
-from .app_sec_attack_group_action import *
-from .app_sec_attack_group_action_condition_exception import *
+from .app_sec_attack_group import *
 from .app_sec_by_pass_network_list import *
 from .app_sec_configuration import *
-from .app_sec_configuration_clone import *
 from .app_sec_configuration_rename import *
-from .app_sec_configuration_version_clone import *
 from .app_sec_custom_deny import *
 from .app_sec_custom_rule import *
 from .app_sec_custom_rule_action import *
 from .app_sec_eval import *
 from .app_sec_eval_hostnames import *
 from .app_sec_eval_protect_host import *
-from .app_sec_eval_rule_action import *
-from .app_sec_eval_rule_condition_exception import *
+from .app_sec_eval_rule import *
 from .app_sec_ip_geo import *
+from .app_sec_ip_geo_protection import *
 from .app_sec_match_target import *
 from .app_sec_match_target_sequence import *
 from .app_sec_penalty_box import *
@@ -35,12 +34,9 @@ from .app_sec_reputation_profile import *
 from .app_sec_reputation_profile_action import *
 from .app_sec_reputation_profile_analysis import *
 from .app_sec_reputation_protection import *
-from .app_sec_rule_action import *
-from .app_sec_rule_condition_exception import *
+from .app_sec_rule import *
 from .app_sec_rule_upgrade import *
 from .app_sec_security_policy import *
-from .app_sec_security_policy_clone import *
-from .app_sec_security_policy_protections import *
 from .app_sec_security_policy_rename import *
 from .app_sec_selected_hostnames import *
 from .app_sec_siem_settings import *
@@ -50,15 +46,17 @@ from .app_sec_version_nodes import *
 from .app_sec_waf_mode import *
 from .app_sec_waf_protection import *
 from .cp_code import *
+from .cps_dv_enrollment import *
+from .cps_dv_validation import *
 from .dns_record import *
 from .dns_zone import *
 from .edge_host_name import *
 from .get_app_sec_advanced_settings_logging import *
+from .get_app_sec_advanced_settings_pragma_header import *
 from .get_app_sec_advanced_settings_prefetch import *
 from .get_app_sec_api_endpoints import *
 from .get_app_sec_api_request_constraints import *
-from .get_app_sec_attack_group_actions import *
-from .get_app_sec_attack_group_condition_exception import *
+from .get_app_sec_attack_groups import *
 from .get_app_sec_bypass_network_lists import *
 from .get_app_sec_configuration import *
 from .get_app_sec_configuration_version import *
@@ -68,8 +66,7 @@ from .get_app_sec_custom_rule_actions import *
 from .get_app_sec_custom_rules import *
 from .get_app_sec_eval import *
 from .get_app_sec_eval_hostnames import *
-from .get_app_sec_eval_rule_actions import *
-from .get_app_sec_eval_rule_condition_exception import *
+from .get_app_sec_eval_rules import *
 from .get_app_sec_export_configuration import *
 from .get_app_sec_failover_hostnames import *
 from .get_app_sec_hostname_coverage import *
@@ -83,9 +80,8 @@ from .get_app_sec_rate_policy_actions import *
 from .get_app_sec_reputation_profile_actions import *
 from .get_app_sec_reputation_profile_analysis import *
 from .get_app_sec_reputation_profiles import *
-from .get_app_sec_rule_actions import *
-from .get_app_sec_rule_condition_exception import *
 from .get_app_sec_rule_upgrade_details import *
+from .get_app_sec_rules import *
 from .get_app_sec_security_policy import *
 from .get_app_sec_security_policy_protections import *
 from .get_app_sec_selectable_hostnames import *
@@ -103,6 +99,7 @@ from .get_dns_record_set import *
 from .get_group import *
 from .get_groups import *
 from .get_gtm_default_datacenter import *
+from .get_network_lists import *
 from .get_properties import *
 from .get_property import *
 from .get_property_hostnames import *
@@ -117,6 +114,10 @@ from .gtm_domain import *
 from .gtm_geomap import *
 from .gtm_property import *
 from .gtm_resource import *
+from .network_list import *
+from .network_list_activations import *
+from .network_list_description import *
+from .network_list_subscription import *
 from .property import *
 from .property_activation import *
 from .property_variables import *
@@ -173,10 +174,26 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
+  "mod": "index/appSecAdvancedSettingsPragmaHeader",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appSecAdvancedSettingsPragmaHeader:AppSecAdvancedSettingsPragmaHeader": "AppSecAdvancedSettingsPragmaHeader"
+  }
+ },
+ {
+  "pkg": "akamai",
   "mod": "index/appSecAdvancedSettingsPrefetch",
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/appSecAdvancedSettingsPrefetch:AppSecAdvancedSettingsPrefetch": "AppSecAdvancedSettingsPrefetch"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appSecApiConstraintsProtection",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appSecApiConstraintsProtection:AppSecApiConstraintsProtection": "AppSecApiConstraintsProtection"
   }
  },
  {
@@ -189,18 +206,10 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
-  "mod": "index/appSecAttackGroupAction",
+  "mod": "index/appSecAttackGroup",
   "fqn": "pulumi_akamai",
   "classes": {
-   "akamai:index/appSecAttackGroupAction:AppSecAttackGroupAction": "AppSecAttackGroupAction"
-  }
- },
- {
-  "pkg": "akamai",
-  "mod": "index/appSecAttackGroupActionConditionException",
-  "fqn": "pulumi_akamai",
-  "classes": {
-   "akamai:index/appSecAttackGroupActionConditionException:AppSecAttackGroupActionConditionException": "AppSecAttackGroupActionConditionException"
+   "akamai:index/appSecAttackGroup:AppSecAttackGroup": "AppSecAttackGroup"
   }
  },
  {
@@ -221,26 +230,10 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
-  "mod": "index/appSecConfigurationClone",
-  "fqn": "pulumi_akamai",
-  "classes": {
-   "akamai:index/appSecConfigurationClone:AppSecConfigurationClone": "AppSecConfigurationClone"
-  }
- },
- {
-  "pkg": "akamai",
   "mod": "index/appSecConfigurationRename",
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/appSecConfigurationRename:AppSecConfigurationRename": "AppSecConfigurationRename"
-  }
- },
- {
-  "pkg": "akamai",
-  "mod": "index/appSecConfigurationVersionClone",
-  "fqn": "pulumi_akamai",
-  "classes": {
-   "akamai:index/appSecConfigurationVersionClone:AppSecConfigurationVersionClone": "AppSecConfigurationVersionClone"
   }
  },
  {
@@ -293,18 +286,10 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
-  "mod": "index/appSecEvalRuleAction",
+  "mod": "index/appSecEvalRule",
   "fqn": "pulumi_akamai",
   "classes": {
-   "akamai:index/appSecEvalRuleAction:AppSecEvalRuleAction": "AppSecEvalRuleAction"
-  }
- },
- {
-  "pkg": "akamai",
-  "mod": "index/appSecEvalRuleConditionException",
-  "fqn": "pulumi_akamai",
-  "classes": {
-   "akamai:index/appSecEvalRuleConditionException:AppSecEvalRuleConditionException": "AppSecEvalRuleConditionException"
+   "akamai:index/appSecEvalRule:AppSecEvalRule": "AppSecEvalRule"
   }
  },
  {
@@ -313,6 +298,14 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/appSecIPGeo:AppSecIPGeo": "AppSecIPGeo"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appSecIPGeoProtection",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appSecIPGeoProtection:AppSecIPGeoProtection": "AppSecIPGeoProtection"
   }
  },
  {
@@ -397,18 +390,10 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
-  "mod": "index/appSecRuleAction",
+  "mod": "index/appSecRule",
   "fqn": "pulumi_akamai",
   "classes": {
-   "akamai:index/appSecRuleAction:AppSecRuleAction": "AppSecRuleAction"
-  }
- },
- {
-  "pkg": "akamai",
-  "mod": "index/appSecRuleConditionException",
-  "fqn": "pulumi_akamai",
-  "classes": {
-   "akamai:index/appSecRuleConditionException:AppSecRuleConditionException": "AppSecRuleConditionException"
+   "akamai:index/appSecRule:AppSecRule": "AppSecRule"
   }
  },
  {
@@ -425,22 +410,6 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/appSecSecurityPolicy:AppSecSecurityPolicy": "AppSecSecurityPolicy"
-  }
- },
- {
-  "pkg": "akamai",
-  "mod": "index/appSecSecurityPolicyClone",
-  "fqn": "pulumi_akamai",
-  "classes": {
-   "akamai:index/appSecSecurityPolicyClone:AppSecSecurityPolicyClone": "AppSecSecurityPolicyClone"
-  }
- },
- {
-  "pkg": "akamai",
-  "mod": "index/appSecSecurityPolicyProtections",
-  "fqn": "pulumi_akamai",
-  "classes": {
-   "akamai:index/appSecSecurityPolicyProtections:AppSecSecurityPolicyProtections": "AppSecSecurityPolicyProtections"
   }
  },
  {
@@ -513,6 +482,22 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/cpCode:CpCode": "CpCode"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/cpsDvEnrollment",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/cpsDvEnrollment:CpsDvEnrollment": "CpsDvEnrollment"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/cpsDvValidation",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/cpsDvValidation:CpsDvValidation": "CpsDvValidation"
   }
  },
  {
@@ -593,6 +578,38 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/gtmResource:GtmResource": "GtmResource"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/networkList",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/networkList:NetworkList": "NetworkList"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/networkListActivations",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/networkListActivations:NetworkListActivations": "NetworkListActivations"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/networkListDescription",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/networkListDescription:NetworkListDescription": "NetworkListDescription"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/networkListSubscription",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/networkListSubscription:NetworkListSubscription": "NetworkListSubscription"
   }
  },
  {

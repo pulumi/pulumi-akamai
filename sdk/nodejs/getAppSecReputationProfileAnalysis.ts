@@ -19,9 +19,8 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: _var.security_configuration,
  * });
- * const reputationAnalysis = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecReputationProfileAnalysis({
+ * const reputationAnalysis = configuration.then(configuration => akamai.getAppSecReputationProfileAnalysis({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  *     securityPolicyId: _var.security_policy_id,
  * }));
  * export const reputationAnalysisText = reputationAnalysis.then(reputationAnalysis => reputationAnalysis.outputText);
@@ -39,7 +38,6 @@ export function getAppSecReputationProfileAnalysis(args: GetAppSecReputationProf
     return pulumi.runtime.invoke("akamai:index/getAppSecReputationProfileAnalysis:getAppSecReputationProfileAnalysis", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
-        "version": args.version,
     }, opts);
 }
 
@@ -55,10 +53,6 @@ export interface GetAppSecReputationProfileAnalysisArgs {
      * The ID of the security policy to use.
      */
     securityPolicyId: string;
-    /**
-     * The version number of the configuration to use.
-     */
-    version: number;
 }
 
 /**
@@ -79,5 +73,4 @@ export interface GetAppSecReputationProfileAnalysisResult {
      */
     readonly outputText: string;
     readonly securityPolicyId: string;
-    readonly version: number;
 }

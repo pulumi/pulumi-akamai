@@ -32,29 +32,17 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = @var.Security_configuration,
         ///         }));
-        ///         var reputationProfiles = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var reputationProfiles = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfiles.InvokeAsync(new Akamai.GetAppSecReputationProfilesArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecReputationProfiles.InvokeAsync(new Akamai.GetAppSecReputationProfilesArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///         })));
         ///         this.ReputationProfilesOutput = reputationProfiles.Apply(reputationProfiles =&gt; reputationProfiles.OutputText);
         ///         this.ReputationProfilesJson = reputationProfiles.Apply(reputationProfiles =&gt; reputationProfiles.Json);
-        ///         var reputationProfile = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var reputationProfile = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfiles.InvokeAsync(new Akamai.GetAppSecReputationProfilesArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecReputationProfiles.InvokeAsync(new Akamai.GetAppSecReputationProfilesArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///                 ReputationProfileId = @var.Reputation_profile_id,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///             ReputationProfileId = @var.Reputation_profile_id,
+        ///         })));
         ///         this.ReputationProfileJson = reputationProfile.Apply(reputationProfile =&gt; reputationProfile.Json);
         ///         this.ReputationProfileOutput = reputationProfile.Apply(reputationProfile =&gt; reputationProfile.OutputText);
         ///     }
@@ -91,12 +79,6 @@ namespace Pulumi.Akamai
         [Input("reputationProfileId")]
         public int? ReputationProfileId { get; set; }
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecReputationProfilesArgs()
         {
         }
@@ -120,7 +102,6 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string OutputText;
         public readonly int? ReputationProfileId;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecReputationProfilesResult(
@@ -132,16 +113,13 @@ namespace Pulumi.Akamai
 
             string outputText,
 
-            int? reputationProfileId,
-
-            int version)
+            int? reputationProfileId)
         {
             ConfigId = configId;
             Id = id;
             Json = json;
             OutputText = outputText;
             ReputationProfileId = reputationProfileId;
-            Version = version;
         }
     }
 }

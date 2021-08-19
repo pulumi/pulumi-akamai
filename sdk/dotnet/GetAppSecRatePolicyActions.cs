@@ -12,7 +12,7 @@ namespace Pulumi.Akamai
     public static class GetAppSecRatePolicyActions
     {
         /// <summary>
-        /// Use the `akamai.getAppSecRatePolicyActions` data source to retrieve a list of all rate policies associated with a given configuration version and security policy, or the actions associated with a specific rate policy.
+        /// Use the `akamai.getAppSecRatePolicyActions` data source to retrieve a list of all rate policies associated with a given configuration and security policy, or the actions associated with a specific rate policy.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -32,17 +32,11 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = @var.Security_configuration,
         ///         }));
-        ///         var ratePolicyActionsAppSecRatePolicyActions = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var ratePolicyActionsAppSecRatePolicyActions = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecRatePolicyActions.InvokeAsync(new Akamai.GetAppSecRatePolicyActionsArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecRatePolicyActions.InvokeAsync(new Akamai.GetAppSecRatePolicyActionsArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///                 SecurityPolicyId = @var.Security_policy_id,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///         })));
         ///         this.RatePolicyActions = ratePolicyActionsAppSecRatePolicyActions.Apply(ratePolicyActionsAppSecRatePolicyActions =&gt; ratePolicyActionsAppSecRatePolicyActions.OutputText);
         ///     }
         /// 
@@ -78,12 +72,6 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecRatePolicyActionsArgs()
         {
         }
@@ -104,7 +92,6 @@ namespace Pulumi.Akamai
         public readonly string OutputText;
         public readonly int? RatePolicyId;
         public readonly string SecurityPolicyId;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecRatePolicyActionsResult(
@@ -116,16 +103,13 @@ namespace Pulumi.Akamai
 
             int? ratePolicyId,
 
-            string securityPolicyId,
-
-            int version)
+            string securityPolicyId)
         {
             ConfigId = configId;
             Id = id;
             OutputText = outputText;
             RatePolicyId = ratePolicyId;
             SecurityPolicyId = securityPolicyId;
-            Version = version;
         }
     }
 }

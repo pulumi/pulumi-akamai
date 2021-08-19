@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The `resourceAkamaiAppsecRatePolicy` resource allows you to create, modify or delete rate policies for a specific security configuration version.
+// The `resourceAkamaiAppsecRatePolicy` resource allows you to create, modify or delete rate policies for a specific security configuration.
 type AppSecRatePolicy struct {
 	pulumi.CustomResourceState
 
@@ -21,8 +21,6 @@ type AppSecRatePolicy struct {
 	RatePolicy pulumi.StringOutput `pulumi:"ratePolicy"`
 	// The ID of an existing rate policy to be modified.
 	RatePolicyId pulumi.IntOutput `pulumi:"ratePolicyId"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecRatePolicy registers a new resource with the given unique name, arguments, and options.
@@ -37,9 +35,6 @@ func NewAppSecRatePolicy(ctx *pulumi.Context,
 	}
 	if args.RatePolicy == nil {
 		return nil, errors.New("invalid value for required argument 'RatePolicy'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecRatePolicy
 	err := ctx.RegisterResource("akamai:index/appSecRatePolicy:AppSecRatePolicy", name, args, &resource, opts...)
@@ -69,8 +64,6 @@ type appSecRatePolicyState struct {
 	RatePolicy *string `pulumi:"ratePolicy"`
 	// The ID of an existing rate policy to be modified.
 	RatePolicyId *int `pulumi:"ratePolicyId"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecRatePolicyState struct {
@@ -80,8 +73,6 @@ type AppSecRatePolicyState struct {
 	RatePolicy pulumi.StringPtrInput
 	// The ID of an existing rate policy to be modified.
 	RatePolicyId pulumi.IntPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecRatePolicyState) ElementType() reflect.Type {
@@ -93,8 +84,6 @@ type appSecRatePolicyArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// The name of a file containing a JSON-formatted rate policy definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#57c65cbd)).
 	RatePolicy string `pulumi:"ratePolicy"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecRatePolicy resource.
@@ -103,8 +92,6 @@ type AppSecRatePolicyArgs struct {
 	ConfigId pulumi.IntInput
 	// The name of a file containing a JSON-formatted rate policy definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#57c65cbd)).
 	RatePolicy pulumi.StringInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecRatePolicyArgs) ElementType() reflect.Type {

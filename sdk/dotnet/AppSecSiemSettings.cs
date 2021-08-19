@@ -11,51 +11,6 @@ namespace Pulumi.Akamai
 {
     /// <summary>
     /// Use the `akamai.AppSecSiemSettings` resource to mpdate the SIEM integration settings for a specific configuration.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = @var.Security_configuration,
-    ///         }));
-    ///         var siemDefinition = Output.Create(Akamai.GetAppSecSiemDefinitions.InvokeAsync(new Akamai.GetAppSecSiemDefinitionsArgs
-    ///         {
-    ///             SiemDefinitionName = @var.Siem_definition_name,
-    ///         }));
-    ///         var securityPolicies = Output.Tuple(configuration, configuration).Apply(values =&gt;
-    ///         {
-    ///             var configuration = values.Item1;
-    ///             var configuration1 = values.Item2;
-    ///             return Output.Create(Akamai.GetAppSecSecurityPolicy.InvokeAsync(new Akamai.GetAppSecSecurityPolicyArgs
-    ///             {
-    ///                 ConfigId = configuration.ConfigId,
-    ///                 Version = configuration1.LatestVersion,
-    ///             }));
-    ///         });
-    ///         var siem = new Akamai.AppSecSiemSettings("siem", new Akamai.AppSecSiemSettingsArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
-    ///             EnableSiem = true,
-    ///             EnableForAllPolicies = false,
-    ///             EnableBotmanSiem = true,
-    ///             SiemId = siemDefinition.Apply(siemDefinition =&gt; siemDefinition.Id),
-    ///             SecurityPolicyIds = securityPolicies.Apply(securityPolicies =&gt; securityPolicies.PolicyLists),
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecSiemSettings:AppSecSiemSettings")]
     public partial class AppSecSiemSettings : Pulumi.CustomResource
@@ -70,10 +25,10 @@ namespace Pulumi.Akamai
         /// Whether you enabled SIEM for the Bot Manager events.
         /// </summary>
         [Output("enableBotmanSiem")]
-        public Output<bool?> EnableBotmanSiem { get; private set; } = null!;
+        public Output<bool> EnableBotmanSiem { get; private set; } = null!;
 
         /// <summary>
-        /// Whether you enabled SIEM for all the security policies in the configuration version.
+        /// Whether you enabled SIEM for all the security policies in the configuration.
         /// </summary>
         [Output("enableForAllPolicies")]
         public Output<bool> EnableForAllPolicies { get; private set; } = null!;
@@ -83,12 +38,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("enableSiem")]
         public Output<bool> EnableSiem { get; private set; } = null!;
-
-        /// <summary>
-        /// A tabular display showing the updated SIEM integration settings.
-        /// </summary>
-        [Output("outputText")]
-        public Output<string> OutputText { get; private set; } = null!;
 
         /// <summary>
         /// The list of security policy identifiers for which to enable the SIEM integration.
@@ -101,12 +50,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("siemId")]
         public Output<int> SiemId { get; private set; } = null!;
-
-        /// <summary>
-        /// The version number of the configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -163,11 +106,11 @@ namespace Pulumi.Akamai
         /// <summary>
         /// Whether you enabled SIEM for the Bot Manager events.
         /// </summary>
-        [Input("enableBotmanSiem")]
-        public Input<bool>? EnableBotmanSiem { get; set; }
+        [Input("enableBotmanSiem", required: true)]
+        public Input<bool> EnableBotmanSiem { get; set; } = null!;
 
         /// <summary>
-        /// Whether you enabled SIEM for all the security policies in the configuration version.
+        /// Whether you enabled SIEM for all the security policies in the configuration.
         /// </summary>
         [Input("enableForAllPolicies", required: true)]
         public Input<bool> EnableForAllPolicies { get; set; } = null!;
@@ -178,7 +121,7 @@ namespace Pulumi.Akamai
         [Input("enableSiem", required: true)]
         public Input<bool> EnableSiem { get; set; } = null!;
 
-        [Input("securityPolicyIds", required: true)]
+        [Input("securityPolicyIds")]
         private InputList<string>? _securityPolicyIds;
 
         /// <summary>
@@ -195,12 +138,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("siemId", required: true)]
         public Input<int> SiemId { get; set; } = null!;
-
-        /// <summary>
-        /// The version number of the configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
 
         public AppSecSiemSettingsArgs()
         {
@@ -222,7 +159,7 @@ namespace Pulumi.Akamai
         public Input<bool>? EnableBotmanSiem { get; set; }
 
         /// <summary>
-        /// Whether you enabled SIEM for all the security policies in the configuration version.
+        /// Whether you enabled SIEM for all the security policies in the configuration.
         /// </summary>
         [Input("enableForAllPolicies")]
         public Input<bool>? EnableForAllPolicies { get; set; }
@@ -232,12 +169,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("enableSiem")]
         public Input<bool>? EnableSiem { get; set; }
-
-        /// <summary>
-        /// A tabular display showing the updated SIEM integration settings.
-        /// </summary>
-        [Input("outputText")]
-        public Input<string>? OutputText { get; set; }
 
         [Input("securityPolicyIds")]
         private InputList<string>? _securityPolicyIds;
@@ -256,12 +187,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("siemId")]
         public Input<int>? SiemId { get; set; }
-
-        /// <summary>
-        /// The version number of the configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecSiemSettingsState()
         {

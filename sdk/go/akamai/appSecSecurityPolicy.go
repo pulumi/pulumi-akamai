@@ -36,7 +36,6 @@ import (
 // 		}
 // 		securityPolicyCreateAppSecSecurityPolicy, err := akamai.NewAppSecSecurityPolicy(ctx, "securityPolicyCreateAppSecSecurityPolicy", &akamai.AppSecSecurityPolicyArgs{
 // 			ConfigId:             pulumi.Int(configuration.ConfigId),
-// 			Version:              pulumi.Int(configuration.LatestVersion),
 // 			DefaultSettings:      pulumi.Any(_var.Default_settings),
 // 			SecurityPolicyName:   pulumi.Any(_var.Policy_name),
 // 			SecurityPolicyPrefix: pulumi.Any(_var.Policy_prefix),
@@ -54,15 +53,16 @@ type AppSecSecurityPolicy struct {
 
 	// The configuration ID to use.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
+	// The ID of the security policy to clone from.
+	CreateFromSecurityPolicyId pulumi.StringPtrOutput `pulumi:"createFromSecurityPolicyId"`
 	// Whether the new policy should use the default settings. If not supplied, defaults to true.
 	DefaultSettings pulumi.BoolPtrOutput `pulumi:"defaultSettings"`
 	// The ID of the newly created security policy.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 	// The name of the new security policy.
-	SecurityPolicyName   pulumi.StringOutput `pulumi:"securityPolicyName"`
+	SecurityPolicyName pulumi.StringOutput `pulumi:"securityPolicyName"`
+	// The four-character alphanumeric string prefix for the policy ID.
 	SecurityPolicyPrefix pulumi.StringOutput `pulumi:"securityPolicyPrefix"`
-	// The version number of the configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecSecurityPolicy registers a new resource with the given unique name, arguments, and options.
@@ -80,9 +80,6 @@ func NewAppSecSecurityPolicy(ctx *pulumi.Context,
 	}
 	if args.SecurityPolicyPrefix == nil {
 		return nil, errors.New("invalid value for required argument 'SecurityPolicyPrefix'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecSecurityPolicy
 	err := ctx.RegisterResource("akamai:index/appSecSecurityPolicy:AppSecSecurityPolicy", name, args, &resource, opts...)
@@ -108,29 +105,31 @@ func GetAppSecSecurityPolicy(ctx *pulumi.Context,
 type appSecSecurityPolicyState struct {
 	// The configuration ID to use.
 	ConfigId *int `pulumi:"configId"`
+	// The ID of the security policy to clone from.
+	CreateFromSecurityPolicyId *string `pulumi:"createFromSecurityPolicyId"`
 	// Whether the new policy should use the default settings. If not supplied, defaults to true.
 	DefaultSettings *bool `pulumi:"defaultSettings"`
 	// The ID of the newly created security policy.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 	// The name of the new security policy.
-	SecurityPolicyName   *string `pulumi:"securityPolicyName"`
+	SecurityPolicyName *string `pulumi:"securityPolicyName"`
+	// The four-character alphanumeric string prefix for the policy ID.
 	SecurityPolicyPrefix *string `pulumi:"securityPolicyPrefix"`
-	// The version number of the configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecSecurityPolicyState struct {
 	// The configuration ID to use.
 	ConfigId pulumi.IntPtrInput
+	// The ID of the security policy to clone from.
+	CreateFromSecurityPolicyId pulumi.StringPtrInput
 	// Whether the new policy should use the default settings. If not supplied, defaults to true.
 	DefaultSettings pulumi.BoolPtrInput
 	// The ID of the newly created security policy.
 	SecurityPolicyId pulumi.StringPtrInput
 	// The name of the new security policy.
-	SecurityPolicyName   pulumi.StringPtrInput
+	SecurityPolicyName pulumi.StringPtrInput
+	// The four-character alphanumeric string prefix for the policy ID.
 	SecurityPolicyPrefix pulumi.StringPtrInput
-	// The version number of the configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecSecurityPolicyState) ElementType() reflect.Type {
@@ -140,26 +139,28 @@ func (AppSecSecurityPolicyState) ElementType() reflect.Type {
 type appSecSecurityPolicyArgs struct {
 	// The configuration ID to use.
 	ConfigId int `pulumi:"configId"`
+	// The ID of the security policy to clone from.
+	CreateFromSecurityPolicyId *string `pulumi:"createFromSecurityPolicyId"`
 	// Whether the new policy should use the default settings. If not supplied, defaults to true.
 	DefaultSettings *bool `pulumi:"defaultSettings"`
 	// The name of the new security policy.
-	SecurityPolicyName   string `pulumi:"securityPolicyName"`
+	SecurityPolicyName string `pulumi:"securityPolicyName"`
+	// The four-character alphanumeric string prefix for the policy ID.
 	SecurityPolicyPrefix string `pulumi:"securityPolicyPrefix"`
-	// The version number of the configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecSecurityPolicy resource.
 type AppSecSecurityPolicyArgs struct {
 	// The configuration ID to use.
 	ConfigId pulumi.IntInput
+	// The ID of the security policy to clone from.
+	CreateFromSecurityPolicyId pulumi.StringPtrInput
 	// Whether the new policy should use the default settings. If not supplied, defaults to true.
 	DefaultSettings pulumi.BoolPtrInput
 	// The name of the new security policy.
-	SecurityPolicyName   pulumi.StringInput
+	SecurityPolicyName pulumi.StringInput
+	// The four-character alphanumeric string prefix for the policy ID.
 	SecurityPolicyPrefix pulumi.StringInput
-	// The version number of the configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecSecurityPolicyArgs) ElementType() reflect.Type {

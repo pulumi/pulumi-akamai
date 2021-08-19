@@ -22,7 +22,6 @@ import * as utilities from "./utilities";
  * });
  * const bypassNetworkLists = new akamai.AppSecByPassNetworkList("bypassNetworkLists", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     bypassNetworkLists: [
  *         "id1",
  *         "id2",
@@ -66,10 +65,6 @@ export class AppSecByPassNetworkList extends pulumi.CustomResource {
      * The configuration ID to use.
      */
     public readonly configId!: pulumi.Output<number>;
-    /**
-     * The version number of the configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecByPassNetworkList resource with the given unique name, arguments, and options.
@@ -86,7 +81,6 @@ export class AppSecByPassNetworkList extends pulumi.CustomResource {
             const state = argsOrState as AppSecByPassNetworkListState | undefined;
             inputs["bypassNetworkLists"] = state ? state.bypassNetworkLists : undefined;
             inputs["configId"] = state ? state.configId : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecByPassNetworkListArgs | undefined;
             if ((!args || args.bypassNetworkLists === undefined) && !opts.urn) {
@@ -95,12 +89,8 @@ export class AppSecByPassNetworkList extends pulumi.CustomResource {
             if ((!args || args.configId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["bypassNetworkLists"] = args ? args.bypassNetworkLists : undefined;
             inputs["configId"] = args ? args.configId : undefined;
-            inputs["version"] = args ? args.version : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -121,10 +111,6 @@ export interface AppSecByPassNetworkListState {
      * The configuration ID to use.
      */
     configId?: pulumi.Input<number>;
-    /**
-     * The version number of the configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -139,8 +125,4 @@ export interface AppSecByPassNetworkListArgs {
      * The configuration ID to use.
      */
     configId: pulumi.Input<number>;
-    /**
-     * The version number of the configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

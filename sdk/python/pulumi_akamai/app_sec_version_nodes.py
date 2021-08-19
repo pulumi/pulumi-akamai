@@ -14,16 +14,13 @@ __all__ = ['AppSecVersionNodesArgs', 'AppSecVersionNodes']
 class AppSecVersionNodesArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[int],
-                 version: pulumi.Input[int],
                  version_notes: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecVersionNodes resource.
         :param pulumi.Input[int] config_id: The configuration ID to use.
-        :param pulumi.Input[int] version: The version number of the configuration to use.
         :param pulumi.Input[str] version_notes: A string containing the version notes to be used.
         """
         pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "version", version)
         pulumi.set(__self__, "version_notes", version_notes)
 
     @property
@@ -37,18 +34,6 @@ class AppSecVersionNodesArgs:
     @config_id.setter
     def config_id(self, value: pulumi.Input[int]):
         pulumi.set(self, "config_id", value)
-
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Input[int]:
-        """
-        The version number of the configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: pulumi.Input[int]):
-        pulumi.set(self, "version", value)
 
     @property
     @pulumi.getter(name="versionNotes")
@@ -68,21 +53,17 @@ class _AppSecVersionNodesState:
     def __init__(__self__, *,
                  config_id: Optional[pulumi.Input[int]] = None,
                  output_text: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  version_notes: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecVersionNodes resources.
         :param pulumi.Input[int] config_id: The configuration ID to use.
         :param pulumi.Input[str] output_text: A tabular display showing the updated version notes.
-        :param pulumi.Input[int] version: The version number of the configuration to use.
         :param pulumi.Input[str] version_notes: A string containing the version notes to be used.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
         if output_text is not None:
             pulumi.set(__self__, "output_text", output_text)
-        if version is not None:
-            pulumi.set(__self__, "version", version)
         if version_notes is not None:
             pulumi.set(__self__, "version_notes", version_notes)
 
@@ -111,18 +92,6 @@ class _AppSecVersionNodesState:
         pulumi.set(self, "output_text", value)
 
     @property
-    @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The version number of the configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "version", value)
-
-    @property
     @pulumi.getter(name="versionNotes")
     def version_notes(self) -> Optional[pulumi.Input[str]]:
         """
@@ -141,7 +110,6 @@ class AppSecVersionNodes(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  version_notes: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -159,7 +127,6 @@ class AppSecVersionNodes(pulumi.CustomResource):
         # USE CASE: user wants to update the version notes of the latest version
         version_notes_app_sec_version_nodes = akamai.AppSecVersionNodes("versionNotesAppSecVersionNodes",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             version_notes=var["version_notes"])
         pulumi.export("versionNotes", version_notes_app_sec_version_nodes.output_text)
         ```
@@ -167,7 +134,6 @@ class AppSecVersionNodes(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: The configuration ID to use.
-        :param pulumi.Input[int] version: The version number of the configuration to use.
         :param pulumi.Input[str] version_notes: A string containing the version notes to be used.
         """
         ...
@@ -191,7 +157,6 @@ class AppSecVersionNodes(pulumi.CustomResource):
         # USE CASE: user wants to update the version notes of the latest version
         version_notes_app_sec_version_nodes = akamai.AppSecVersionNodes("versionNotesAppSecVersionNodes",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             version_notes=var["version_notes"])
         pulumi.export("versionNotes", version_notes_app_sec_version_nodes.output_text)
         ```
@@ -212,7 +177,6 @@ class AppSecVersionNodes(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  version_notes: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         if opts is None:
@@ -229,9 +193,6 @@ class AppSecVersionNodes(pulumi.CustomResource):
             if config_id is None and not opts.urn:
                 raise TypeError("Missing required property 'config_id'")
             __props__.__dict__["config_id"] = config_id
-            if version is None and not opts.urn:
-                raise TypeError("Missing required property 'version'")
-            __props__.__dict__["version"] = version
             if version_notes is None and not opts.urn:
                 raise TypeError("Missing required property 'version_notes'")
             __props__.__dict__["version_notes"] = version_notes
@@ -248,7 +209,6 @@ class AppSecVersionNodes(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             config_id: Optional[pulumi.Input[int]] = None,
             output_text: Optional[pulumi.Input[str]] = None,
-            version: Optional[pulumi.Input[int]] = None,
             version_notes: Optional[pulumi.Input[str]] = None) -> 'AppSecVersionNodes':
         """
         Get an existing AppSecVersionNodes resource's state with the given name, id, and optional extra
@@ -259,7 +219,6 @@ class AppSecVersionNodes(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: The configuration ID to use.
         :param pulumi.Input[str] output_text: A tabular display showing the updated version notes.
-        :param pulumi.Input[int] version: The version number of the configuration to use.
         :param pulumi.Input[str] version_notes: A string containing the version notes to be used.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -268,7 +227,6 @@ class AppSecVersionNodes(pulumi.CustomResource):
 
         __props__.__dict__["config_id"] = config_id
         __props__.__dict__["output_text"] = output_text
-        __props__.__dict__["version"] = version
         __props__.__dict__["version_notes"] = version_notes
         return AppSecVersionNodes(resource_name, opts=opts, __props__=__props__)
 
@@ -287,14 +245,6 @@ class AppSecVersionNodes(pulumi.CustomResource):
         A tabular display showing the updated version notes.
         """
         return pulumi.get(self, "output_text")
-
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Output[int]:
-        """
-        The version number of the configuration to use.
-        """
-        return pulumi.get(self, "version")
 
     @property
     @pulumi.getter(name="versionNotes")

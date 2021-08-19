@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// The `akamai.AppSecMatchTargetSequence` resource allows you to specify the order in which match targets are applied within a given security configuration version.
+    /// The `akamai.AppSecMatchTargetSequence` resource allows you to specify the order in which match targets are applied within a given security configuration.
     /// 
     /// ## Example Usage
     /// 
@@ -32,7 +32,6 @@ namespace Pulumi.Akamai
     ///         var matchTargetSequence = new Akamai.AppSecMatchTargetSequence("matchTargetSequence", new Akamai.AppSecMatchTargetSequenceArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
     ///             MatchTargetSequence = File.ReadAllText($"{path.Module}/match_targets.json"),
     ///         });
     ///     }
@@ -50,16 +49,10 @@ namespace Pulumi.Akamai
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
+        /// The name of a JSON file containing the sequence of all match targets defined for the specified security configuration ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
         /// </summary>
         [Output("matchTargetSequence")]
         public Output<string?> MatchTargetSequence { get; private set; } = null!;
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -114,16 +107,10 @@ namespace Pulumi.Akamai
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
+        /// The name of a JSON file containing the sequence of all match targets defined for the specified security configuration ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
         /// </summary>
         [Input("matchTargetSequence")]
         public Input<string>? MatchTargetSequence { get; set; }
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
 
         public AppSecMatchTargetSequenceArgs()
         {
@@ -139,16 +126,10 @@ namespace Pulumi.Akamai
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
+        /// The name of a JSON file containing the sequence of all match targets defined for the specified security configuration ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
         /// </summary>
         [Input("matchTargetSequence")]
         public Input<string>? MatchTargetSequence { get; set; }
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecMatchTargetSequenceState()
         {

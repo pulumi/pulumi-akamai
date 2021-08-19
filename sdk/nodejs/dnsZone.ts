@@ -5,49 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.DnsZone` resource to configure a DNS zone that integrates with your existing DNS infrastructure.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const demozone = new akamai.DnsZone("demozone", {
- *     comment: "some comment",
- *     contract: "ctr_1-AB123",
- *     group: "100",
- *     masters: [
- *         "1.2.3.4",
- *         "1.2.3.5",
- *     ],
- *     signAndServe: false,
- *     type: "secondary",
- *     zone: "example.com",
- * });
- * ```
- * ## Argument reference
- *
- * This resource supports these arguments:
- *
- * * `comment` - (Required) A descriptive comment.
- * * `contract` - (Required) The contract ID.
- * * `group` - (Required) The currently selected group ID.
- * * `zone` - (Required) The domain zone, encapsulating any nested subdomains.
- * * `type` - (Required) Whether the zone is `primary`, `secondary`, or `alias`.
- * * `masters` - (Required for `secondary` zones) The names or IP addresses of the nameservers that the zone data should be retrieved from.
- * * `target` - (Required for `alias` zones) The name of the zone whose configuration this zone will copy.
- * * `signAndServe` - (Optional) Whether DNSSEC Sign and Serve is enabled.
- * * `signAndServeAlgorithm` - (Optional) The algorithm used by Sign and Serve.
- * * `tsigKey` - (Optional) The TSIG Key used in secure zone transfers. If used, requires these arguments:
- *     * `name` - The key name.
- *     * `algorithm` - The hashing algorithm.
- *     * `secret` - String known between transfer endpoints.
- * * `endCustomerId` - (Optional) A free form identifier for the zone.
- */
 export class DnsZone extends pulumi.CustomResource {
     /**
      * Get an existing DnsZone resource's state with the given name, ID, and optional extra
@@ -81,7 +38,7 @@ export class DnsZone extends pulumi.CustomResource {
     public readonly comment!: pulumi.Output<string | undefined>;
     public readonly contract!: pulumi.Output<string>;
     public readonly endCustomerId!: pulumi.Output<string | undefined>;
-    public readonly group!: pulumi.Output<string>;
+    public readonly group!: pulumi.Output<string | undefined>;
     public readonly masters!: pulumi.Output<string[] | undefined>;
     public readonly signAndServe!: pulumi.Output<boolean | undefined>;
     public readonly signAndServeAlgorithm!: pulumi.Output<string | undefined>;
@@ -122,9 +79,6 @@ export class DnsZone extends pulumi.CustomResource {
             const args = argsOrState as DnsZoneArgs | undefined;
             if ((!args || args.contract === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'contract'");
-            }
-            if ((!args || args.group === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'group'");
             }
             if ((!args || args.type === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'type'");
@@ -183,7 +137,7 @@ export interface DnsZoneArgs {
     comment?: pulumi.Input<string>;
     contract: pulumi.Input<string>;
     endCustomerId?: pulumi.Input<string>;
-    group: pulumi.Input<string>;
+    group?: pulumi.Input<string>;
     masters?: pulumi.Input<pulumi.Input<string>[]>;
     signAndServe?: pulumi.Input<boolean>;
     signAndServeAlgorithm?: pulumi.Input<string>;

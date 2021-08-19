@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * The `resourceAkamaiAppsecRatePolicy` resource allows you to create, modify or delete rate policies for a specific security configuration version.
+ * The `resourceAkamaiAppsecRatePolicy` resource allows you to create, modify or delete rate policies for a specific security configuration.
  *
  * ## Example Usage
  *
@@ -21,7 +21,6 @@ import * as utilities from "./utilities";
  * });
  * const ratePolicy = new akamai.AppSecRatePolicy("ratePolicy", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     ratePolicy: fs.readFileSync(`${path.module}/rate_policy.json`),
  * });
  * export const ratePolicyId = ratePolicy.ratePolicyId;
@@ -67,10 +66,6 @@ export class AppSecRatePolicy extends pulumi.CustomResource {
      * The ID of an existing rate policy to be modified.
      */
     public /*out*/ readonly ratePolicyId!: pulumi.Output<number>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecRatePolicy resource with the given unique name, arguments, and options.
@@ -88,7 +83,6 @@ export class AppSecRatePolicy extends pulumi.CustomResource {
             inputs["configId"] = state ? state.configId : undefined;
             inputs["ratePolicy"] = state ? state.ratePolicy : undefined;
             inputs["ratePolicyId"] = state ? state.ratePolicyId : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecRatePolicyArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -97,12 +91,8 @@ export class AppSecRatePolicy extends pulumi.CustomResource {
             if ((!args || args.ratePolicy === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'ratePolicy'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["ratePolicy"] = args ? args.ratePolicy : undefined;
-            inputs["version"] = args ? args.version : undefined;
             inputs["ratePolicyId"] = undefined /*out*/;
         }
         if (!opts.version) {
@@ -128,10 +118,6 @@ export interface AppSecRatePolicyState {
      * The ID of an existing rate policy to be modified.
      */
     ratePolicyId?: pulumi.Input<number>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -146,8 +132,4 @@ export interface AppSecRatePolicyArgs {
      * The name of a file containing a JSON-formatted rate policy definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#57c65cbd)).
      */
     ratePolicy: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

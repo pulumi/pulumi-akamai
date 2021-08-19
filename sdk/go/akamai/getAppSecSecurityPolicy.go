@@ -7,7 +7,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecSecurityPolicy` data source to retrieve information about the security policies associated with a specific security configuration version, or about a specific security policy.
+// Use the `AppSecSecurityPolicy` data source to retrieve information about the security policies associated with a specific security configuration, or about a specific security policy.
 //
 // ## Example Usage
 //
@@ -32,23 +32,21 @@ import (
 // 		}
 // 		securityPolicies, err := akamai.LookupAppSecSecurityPolicy(ctx, &akamai.LookupAppSecSecurityPolicyArgs{
 // 			ConfigId: configuration.ConfigId,
-// 			Version:  configuration.LatestVersion,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		ctx.Export("securityPoliciesList", securityPolicies.PolicyLists)
+// 		ctx.Export("securityPoliciesList", securityPolicies.SecurityPolicyIdLists)
 // 		ctx.Export("securityPoliciesText", securityPolicies.OutputText)
 // 		opt1 := "APIs"
 // 		specificSecurityPolicy, err := akamai.LookupAppSecSecurityPolicy(ctx, &akamai.LookupAppSecSecurityPolicyArgs{
-// 			ConfigId: configuration.ConfigId,
-// 			Version:  configuration.LatestVersion,
-// 			Name:     &opt1,
+// 			ConfigId:           configuration.ConfigId,
+// 			SecurityPolicyName: &opt1,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		ctx.Export("specificSecurityPolicyId", specificSecurityPolicy.PolicyId)
+// 		ctx.Export("specificSecurityPolicyId", specificSecurityPolicy.SecurityPolicyId)
 // 		return nil
 // 	})
 // }
@@ -67,22 +65,19 @@ type LookupAppSecSecurityPolicyArgs struct {
 	// The ID of the security configuration to use.
 	ConfigId int `pulumi:"configId"`
 	// The name of the security policy to use. If not supplied, information about all security policies is returned.
-	Name *string `pulumi:"name"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
+	SecurityPolicyName *string `pulumi:"securityPolicyName"`
 }
 
 // A collection of values returned by getAppSecSecurityPolicy.
 type LookupAppSecSecurityPolicyResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string  `pulumi:"id"`
-	Name *string `pulumi:"name"`
+	Id string `pulumi:"id"`
 	// A tabular display showing the ID and name of all security policies.
 	OutputText string `pulumi:"outputText"`
-	// The ID of the security policy. Included only if `name` was specified.
-	PolicyId string `pulumi:"policyId"`
+	// The ID of the security policy. Included only if `securityPolicyName` was specified.
+	SecurityPolicyId string `pulumi:"securityPolicyId"`
 	// A list of the IDs of all security policies.
-	PolicyLists []string `pulumi:"policyLists"`
-	Version     int      `pulumi:"version"`
+	SecurityPolicyIdLists []string `pulumi:"securityPolicyIdLists"`
+	SecurityPolicyName    *string  `pulumi:"securityPolicyName"`
 }

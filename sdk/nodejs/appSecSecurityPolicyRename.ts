@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  * });
  * const securityPolicyRename = new akamai.AppSecSecurityPolicy("securityPolicyRename", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     securityPolicyId: _var.security_policy_id,
  *     securityPolicyName: _var.name,
  * });
@@ -66,10 +65,6 @@ export class AppSecSecurityPolicyRename extends pulumi.CustomResource {
      * The new name to be given to the security policy.
      */
     public readonly securityPolicyName!: pulumi.Output<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecSecurityPolicyRename resource with the given unique name, arguments, and options.
@@ -87,7 +82,6 @@ export class AppSecSecurityPolicyRename extends pulumi.CustomResource {
             inputs["configId"] = state ? state.configId : undefined;
             inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
             inputs["securityPolicyName"] = state ? state.securityPolicyName : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecSecurityPolicyRenameArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -99,13 +93,9 @@ export class AppSecSecurityPolicyRename extends pulumi.CustomResource {
             if ((!args || args.securityPolicyName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyName'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
             inputs["securityPolicyName"] = args ? args.securityPolicyName : undefined;
-            inputs["version"] = args ? args.version : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -130,10 +120,6 @@ export interface AppSecSecurityPolicyRenameState {
      * The new name to be given to the security policy.
      */
     securityPolicyName?: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -152,8 +138,4 @@ export interface AppSecSecurityPolicyRenameArgs {
      * The new name to be given to the security policy.
      */
     securityPolicyName: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

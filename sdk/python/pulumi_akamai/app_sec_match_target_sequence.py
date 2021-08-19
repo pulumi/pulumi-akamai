@@ -14,16 +14,13 @@ __all__ = ['AppSecMatchTargetSequenceArgs', 'AppSecMatchTargetSequence']
 class AppSecMatchTargetSequenceArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[int],
-                 version: pulumi.Input[int],
                  match_target_sequence: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AppSecMatchTargetSequence resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
-        :param pulumi.Input[str] match_target_sequence: The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
+        :param pulumi.Input[str] match_target_sequence: The name of a JSON file containing the sequence of all match targets defined for the specified security configuration ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
         """
         pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "version", version)
         if match_target_sequence is not None:
             pulumi.set(__self__, "match_target_sequence", match_target_sequence)
 
@@ -40,22 +37,10 @@ class AppSecMatchTargetSequenceArgs:
         pulumi.set(self, "config_id", value)
 
     @property
-    @pulumi.getter
-    def version(self) -> pulumi.Input[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: pulumi.Input[int]):
-        pulumi.set(self, "version", value)
-
-    @property
     @pulumi.getter(name="matchTargetSequence")
     def match_target_sequence(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
+        The name of a JSON file containing the sequence of all match targets defined for the specified security configuration ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
         """
         return pulumi.get(self, "match_target_sequence")
 
@@ -68,20 +53,16 @@ class AppSecMatchTargetSequenceArgs:
 class _AppSecMatchTargetSequenceState:
     def __init__(__self__, *,
                  config_id: Optional[pulumi.Input[int]] = None,
-                 match_target_sequence: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None):
+                 match_target_sequence: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecMatchTargetSequence resources.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] match_target_sequence: The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
+        :param pulumi.Input[str] match_target_sequence: The name of a JSON file containing the sequence of all match targets defined for the specified security configuration ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
         if match_target_sequence is not None:
             pulumi.set(__self__, "match_target_sequence", match_target_sequence)
-        if version is not None:
-            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -99,25 +80,13 @@ class _AppSecMatchTargetSequenceState:
     @pulumi.getter(name="matchTargetSequence")
     def match_target_sequence(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
+        The name of a JSON file containing the sequence of all match targets defined for the specified security configuration ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
         """
         return pulumi.get(self, "match_target_sequence")
 
     @match_target_sequence.setter
     def match_target_sequence(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "match_target_sequence", value)
-
-    @property
-    @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "version", value)
 
 
 class AppSecMatchTargetSequence(pulumi.CustomResource):
@@ -127,10 +96,9 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
                  match_target_sequence: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        The `AppSecMatchTargetSequence` resource allows you to specify the order in which match targets are applied within a given security configuration version.
+        The `AppSecMatchTargetSequence` resource allows you to specify the order in which match targets are applied within a given security configuration.
 
         ## Example Usage
 
@@ -143,15 +111,13 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
         match_target_sequence = akamai.AppSecMatchTargetSequence("matchTargetSequence",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             match_target_sequence=(lambda path: open(path).read())(f"{path['module']}/match_targets.json"))
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] match_target_sequence: The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
+        :param pulumi.Input[str] match_target_sequence: The name of a JSON file containing the sequence of all match targets defined for the specified security configuration ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
         """
         ...
     @overload
@@ -160,7 +126,7 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
                  args: AppSecMatchTargetSequenceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        The `AppSecMatchTargetSequence` resource allows you to specify the order in which match targets are applied within a given security configuration version.
+        The `AppSecMatchTargetSequence` resource allows you to specify the order in which match targets are applied within a given security configuration.
 
         ## Example Usage
 
@@ -173,7 +139,6 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
         match_target_sequence = akamai.AppSecMatchTargetSequence("matchTargetSequence",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             match_target_sequence=(lambda path: open(path).read())(f"{path['module']}/match_targets.json"))
         ```
 
@@ -194,7 +159,6 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
                  match_target_sequence: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
@@ -211,9 +175,6 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
                 raise TypeError("Missing required property 'config_id'")
             __props__.__dict__["config_id"] = config_id
             __props__.__dict__["match_target_sequence"] = match_target_sequence
-            if version is None and not opts.urn:
-                raise TypeError("Missing required property 'version'")
-            __props__.__dict__["version"] = version
         super(AppSecMatchTargetSequence, __self__).__init__(
             'akamai:index/appSecMatchTargetSequence:AppSecMatchTargetSequence',
             resource_name,
@@ -225,8 +186,7 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             config_id: Optional[pulumi.Input[int]] = None,
-            match_target_sequence: Optional[pulumi.Input[str]] = None,
-            version: Optional[pulumi.Input[int]] = None) -> 'AppSecMatchTargetSequence':
+            match_target_sequence: Optional[pulumi.Input[str]] = None) -> 'AppSecMatchTargetSequence':
         """
         Get an existing AppSecMatchTargetSequence resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -235,8 +195,7 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] match_target_sequence: The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
+        :param pulumi.Input[str] match_target_sequence: The name of a JSON file containing the sequence of all match targets defined for the specified security configuration ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -244,7 +203,6 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
 
         __props__.__dict__["config_id"] = config_id
         __props__.__dict__["match_target_sequence"] = match_target_sequence
-        __props__.__dict__["version"] = version
         return AppSecMatchTargetSequence(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -259,15 +217,7 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
     @pulumi.getter(name="matchTargetSequence")
     def match_target_sequence(self) -> pulumi.Output[Optional[str]]:
         """
-        The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
+        The name of a JSON file containing the sequence of all match targets defined for the specified security configuration ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)).
         """
         return pulumi.get(self, "match_target_sequence")
-
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Output[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
 

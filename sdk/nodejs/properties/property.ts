@@ -90,6 +90,10 @@ export class Property extends pulumi.CustomResource {
      * Property's version currently activated in production (zero when not active in production)
      */
     public /*out*/ readonly productionVersion!: pulumi.Output<number>;
+    /**
+     * Required property's version to be read
+     */
+    public /*out*/ readonly readVersion!: pulumi.Output<number>;
     public /*out*/ readonly ruleErrors!: pulumi.Output<outputs.properties.PropertyRuleError[]>;
     /**
      * Specify the rule format version (defaults to latest version available when created)
@@ -142,6 +146,7 @@ export class Property extends pulumi.CustomResource {
             inputs["product"] = state ? state.product : undefined;
             inputs["productId"] = state ? state.productId : undefined;
             inputs["productionVersion"] = state ? state.productionVersion : undefined;
+            inputs["readVersion"] = state ? state.readVersion : undefined;
             inputs["ruleErrors"] = state ? state.ruleErrors : undefined;
             inputs["ruleFormat"] = state ? state.ruleFormat : undefined;
             inputs["ruleWarnings"] = state ? state.ruleWarnings : undefined;
@@ -168,6 +173,7 @@ export class Property extends pulumi.CustomResource {
             inputs["variables"] = args ? args.variables : undefined;
             inputs["latestVersion"] = undefined /*out*/;
             inputs["productionVersion"] = undefined /*out*/;
+            inputs["readVersion"] = undefined /*out*/;
             inputs["ruleErrors"] = undefined /*out*/;
             inputs["stagingVersion"] = undefined /*out*/;
         }
@@ -235,6 +241,10 @@ export interface PropertyState {
      * Property's version currently activated in production (zero when not active in production)
      */
     productionVersion?: pulumi.Input<number>;
+    /**
+     * Required property's version to be read
+     */
+    readVersion?: pulumi.Input<number>;
     ruleErrors?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRuleError>[]>;
     /**
      * Specify the rule format version (defaults to latest version available when created)

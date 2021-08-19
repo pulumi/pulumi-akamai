@@ -19,7 +19,7 @@ class GetAppSecCustomRuleActionsResult:
     """
     A collection of values returned by getAppSecCustomRuleActions.
     """
-    def __init__(__self__, config_id=None, custom_rule_id=None, id=None, output_text=None, security_policy_id=None, version=None):
+    def __init__(__self__, config_id=None, custom_rule_id=None, id=None, output_text=None, security_policy_id=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -35,9 +35,6 @@ class GetAppSecCustomRuleActionsResult:
         if security_policy_id and not isinstance(security_policy_id, str):
             raise TypeError("Expected argument 'security_policy_id' to be a str")
         pulumi.set(__self__, "security_policy_id", security_policy_id)
-        if version and not isinstance(version, int):
-            raise TypeError("Expected argument 'version' to be a int")
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -70,11 +67,6 @@ class GetAppSecCustomRuleActionsResult:
     def security_policy_id(self) -> str:
         return pulumi.get(self, "security_policy_id")
 
-    @property
-    @pulumi.getter
-    def version(self) -> int:
-        return pulumi.get(self, "version")
-
 
 class AwaitableGetAppSecCustomRuleActionsResult(GetAppSecCustomRuleActionsResult):
     # pylint: disable=using-constant-test
@@ -86,17 +78,15 @@ class AwaitableGetAppSecCustomRuleActionsResult(GetAppSecCustomRuleActionsResult
             custom_rule_id=self.custom_rule_id,
             id=self.id,
             output_text=self.output_text,
-            security_policy_id=self.security_policy_id,
-            version=self.version)
+            security_policy_id=self.security_policy_id)
 
 
 def get_app_sec_custom_rule_actions(config_id: Optional[int] = None,
                                     custom_rule_id: Optional[int] = None,
                                     security_policy_id: Optional[str] = None,
-                                    version: Optional[int] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecCustomRuleActionsResult:
     """
-    Use the `getAppSecCustomRuleActions` data source to retrieve information about the actions defined for the custom rules, or a specific custom rule, associated with a specific security configuration version and security policy.
+    Use the `getAppSecCustomRuleActions` data source to retrieve information about the actions defined for the custom rules, or a specific custom rule, associated with a specific security configuration and security policy.
 
     ## Example Usage
 
@@ -108,7 +98,6 @@ def get_app_sec_custom_rule_actions(config_id: Optional[int] = None,
 
     configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
     custom_rule_actions_app_sec_custom_rule_actions = akamai.get_app_sec_custom_rule_actions(config_id=configuration.config_id,
-        version=configuration.latest_version,
         security_policy_id="crAP_75829")
     pulumi.export("customRuleActions", custom_rule_actions_app_sec_custom_rule_actions.output_text)
     ```
@@ -117,13 +106,11 @@ def get_app_sec_custom_rule_actions(config_id: Optional[int] = None,
     :param int config_id: The ID of the security configuration to use.
     :param int custom_rule_id: A specific custom rule for which to retrieve information. If not supplied, information about all custom rules will be returned.
     :param str security_policy_id: The ID of the security policy to use
-    :param int version: The version number of the security configuration to use.
     """
     __args__ = dict()
     __args__['configId'] = config_id
     __args__['customRuleId'] = custom_rule_id
     __args__['securityPolicyId'] = security_policy_id
-    __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -135,5 +122,4 @@ def get_app_sec_custom_rule_actions(config_id: Optional[int] = None,
         custom_rule_id=__ret__.custom_rule_id,
         id=__ret__.id,
         output_text=__ret__.output_text,
-        security_policy_id=__ret__.security_policy_id,
-        version=__ret__.version)
+        security_policy_id=__ret__.security_policy_id)

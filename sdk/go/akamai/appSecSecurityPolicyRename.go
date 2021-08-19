@@ -21,8 +21,6 @@ type AppSecSecurityPolicyRename struct {
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 	// The new name to be given to the security policy.
 	SecurityPolicyName pulumi.StringOutput `pulumi:"securityPolicyName"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecSecurityPolicyRename registers a new resource with the given unique name, arguments, and options.
@@ -40,9 +38,6 @@ func NewAppSecSecurityPolicyRename(ctx *pulumi.Context,
 	}
 	if args.SecurityPolicyName == nil {
 		return nil, errors.New("invalid value for required argument 'SecurityPolicyName'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecSecurityPolicyRename
 	err := ctx.RegisterResource("akamai:index/appSecSecurityPolicyRename:AppSecSecurityPolicyRename", name, args, &resource, opts...)
@@ -72,8 +67,6 @@ type appSecSecurityPolicyRenameState struct {
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 	// The new name to be given to the security policy.
 	SecurityPolicyName *string `pulumi:"securityPolicyName"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecSecurityPolicyRenameState struct {
@@ -83,8 +76,6 @@ type AppSecSecurityPolicyRenameState struct {
 	SecurityPolicyId pulumi.StringPtrInput
 	// The new name to be given to the security policy.
 	SecurityPolicyName pulumi.StringPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecSecurityPolicyRenameState) ElementType() reflect.Type {
@@ -98,8 +89,6 @@ type appSecSecurityPolicyRenameArgs struct {
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 	// The new name to be given to the security policy.
 	SecurityPolicyName string `pulumi:"securityPolicyName"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecSecurityPolicyRename resource.
@@ -110,8 +99,6 @@ type AppSecSecurityPolicyRenameArgs struct {
 	SecurityPolicyId pulumi.StringInput
 	// The new name to be given to the security policy.
 	SecurityPolicyName pulumi.StringInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecSecurityPolicyRenameArgs) ElementType() reflect.Type {

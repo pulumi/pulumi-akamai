@@ -280,6 +280,7 @@ class _PropertyState:
                  product: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  production_version: Optional[pulumi.Input[int]] = None,
+                 read_version: Optional[pulumi.Input[int]] = None,
                  rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleErrorArgs']]]] = None,
                  rule_format: Optional[pulumi.Input[str]] = None,
                  rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]] = None,
@@ -294,6 +295,7 @@ class _PropertyState:
         :param pulumi.Input[str] name: Name to give to the Property (must be unique)
         :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
         :param pulumi.Input[int] production_version: Property's version currently activated in production (zero when not active in production)
+        :param pulumi.Input[int] read_version: Required property's version to be read
         :param pulumi.Input[str] rule_format: Specify the rule format version (defaults to latest version available when created)
         :param pulumi.Input[str] rules: Property Rules as JSON
         :param pulumi.Input[int] staging_version: Property's version currently activated in staging (zero when not active in staging)
@@ -347,6 +349,8 @@ class _PropertyState:
             pulumi.set(__self__, "product_id", product_id)
         if production_version is not None:
             pulumi.set(__self__, "production_version", production_version)
+        if read_version is not None:
+            pulumi.set(__self__, "read_version", read_version)
         if rule_errors is not None:
             pulumi.set(__self__, "rule_errors", rule_errors)
         if rule_format is not None:
@@ -509,6 +513,18 @@ class _PropertyState:
     @production_version.setter
     def production_version(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "production_version", value)
+
+    @property
+    @pulumi.getter(name="readVersion")
+    def read_version(self) -> Optional[pulumi.Input[int]]:
+        """
+        Required property's version to be read
+        """
+        return pulumi.get(self, "read_version")
+
+    @read_version.setter
+    def read_version(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "read_version", value)
 
     @property
     @pulumi.getter(name="ruleErrors")
@@ -709,6 +725,7 @@ class Property(pulumi.CustomResource):
             __props__.__dict__["variables"] = variables
             __props__.__dict__["latest_version"] = None
             __props__.__dict__["production_version"] = None
+            __props__.__dict__["read_version"] = None
             __props__.__dict__["rule_errors"] = None
             __props__.__dict__["staging_version"] = None
         super(Property, __self__).__init__(
@@ -735,6 +752,7 @@ class Property(pulumi.CustomResource):
             product: Optional[pulumi.Input[str]] = None,
             product_id: Optional[pulumi.Input[str]] = None,
             production_version: Optional[pulumi.Input[int]] = None,
+            read_version: Optional[pulumi.Input[int]] = None,
             rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleErrorArgs']]]]] = None,
             rule_format: Optional[pulumi.Input[str]] = None,
             rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleWarningArgs']]]]] = None,
@@ -754,6 +772,7 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[str] name: Name to give to the Property (must be unique)
         :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
         :param pulumi.Input[int] production_version: Property's version currently activated in production (zero when not active in production)
+        :param pulumi.Input[int] read_version: Required property's version to be read
         :param pulumi.Input[str] rule_format: Specify the rule format version (defaults to latest version available when created)
         :param pulumi.Input[str] rules: Property Rules as JSON
         :param pulumi.Input[int] staging_version: Property's version currently activated in staging (zero when not active in staging)
@@ -776,6 +795,7 @@ class Property(pulumi.CustomResource):
         __props__.__dict__["product"] = product
         __props__.__dict__["product_id"] = product_id
         __props__.__dict__["production_version"] = production_version
+        __props__.__dict__["read_version"] = read_version
         __props__.__dict__["rule_errors"] = rule_errors
         __props__.__dict__["rule_format"] = rule_format
         __props__.__dict__["rule_warnings"] = rule_warnings
@@ -871,6 +891,14 @@ class Property(pulumi.CustomResource):
         Property's version currently activated in production (zero when not active in production)
         """
         return pulumi.get(self, "production_version")
+
+    @property
+    @pulumi.getter(name="readVersion")
+    def read_version(self) -> pulumi.Output[int]:
+        """
+        Required property's version to be read
+        """
+        return pulumi.get(self, "read_version")
 
     @property
     @pulumi.getter(name="ruleErrors")

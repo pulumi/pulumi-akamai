@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecRateProtection` resource to enable or disable rate protection for a given configuration version and security policy.
+// Use the `AppSecRateProtection` resource to enable or disable rate protection for a given configuration and security policy.
 //
 // ## Example Usage
 //
@@ -36,7 +36,6 @@ import (
 // 		}
 // 		_, err = akamai.NewAppSecRateProtection(ctx, "protection", &akamai.AppSecRateProtectionArgs{
 // 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			Version:          pulumi.Int(configuration.LatestVersion),
 // 			SecurityPolicyId: pulumi.Any(_var.Security_policy_id),
 // 			Enabled:          pulumi.Any(_var.Enabled),
 // 		})
@@ -58,8 +57,6 @@ type AppSecRateProtection struct {
 	OutputText pulumi.StringOutput `pulumi:"outputText"`
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecRateProtection registers a new resource with the given unique name, arguments, and options.
@@ -77,9 +74,6 @@ func NewAppSecRateProtection(ctx *pulumi.Context,
 	}
 	if args.SecurityPolicyId == nil {
 		return nil, errors.New("invalid value for required argument 'SecurityPolicyId'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecRateProtection
 	err := ctx.RegisterResource("akamai:index/appSecRateProtection:AppSecRateProtection", name, args, &resource, opts...)
@@ -111,8 +105,6 @@ type appSecRateProtectionState struct {
 	OutputText *string `pulumi:"outputText"`
 	// The ID of the security policy to use.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecRateProtectionState struct {
@@ -124,8 +116,6 @@ type AppSecRateProtectionState struct {
 	OutputText pulumi.StringPtrInput
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecRateProtectionState) ElementType() reflect.Type {
@@ -139,8 +129,6 @@ type appSecRateProtectionArgs struct {
 	Enabled bool `pulumi:"enabled"`
 	// The ID of the security policy to use.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecRateProtection resource.
@@ -151,8 +139,6 @@ type AppSecRateProtectionArgs struct {
 	Enabled pulumi.BoolInput
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecRateProtectionArgs) ElementType() reflect.Type {

@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecReputationProfile` resource to create or modify a reputation profile for a specific security configuration version.
+// Use the `AppSecReputationProfile` resource to create or modify a reputation profile for a specific security configuration.
 type AppSecReputationProfile struct {
 	pulumi.CustomResourceState
 
@@ -21,8 +21,6 @@ type AppSecReputationProfile struct {
 	ReputationProfile pulumi.StringOutput `pulumi:"reputationProfile"`
 	// The ID of the newly created or modified reputation profile.
 	ReputationProfileId pulumi.IntOutput `pulumi:"reputationProfileId"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecReputationProfile registers a new resource with the given unique name, arguments, and options.
@@ -37,9 +35,6 @@ func NewAppSecReputationProfile(ctx *pulumi.Context,
 	}
 	if args.ReputationProfile == nil {
 		return nil, errors.New("invalid value for required argument 'ReputationProfile'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecReputationProfile
 	err := ctx.RegisterResource("akamai:index/appSecReputationProfile:AppSecReputationProfile", name, args, &resource, opts...)
@@ -69,8 +64,6 @@ type appSecReputationProfileState struct {
 	ReputationProfile *string `pulumi:"reputationProfile"`
 	// The ID of the newly created or modified reputation profile.
 	ReputationProfileId *int `pulumi:"reputationProfileId"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecReputationProfileState struct {
@@ -80,8 +73,6 @@ type AppSecReputationProfileState struct {
 	ReputationProfile pulumi.StringPtrInput
 	// The ID of the newly created or modified reputation profile.
 	ReputationProfileId pulumi.IntPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecReputationProfileState) ElementType() reflect.Type {
@@ -93,8 +84,6 @@ type appSecReputationProfileArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// The name of a file containing a JSON-formatted definition of the reputation profile. ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles))
 	ReputationProfile string `pulumi:"reputationProfile"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecReputationProfile resource.
@@ -103,8 +92,6 @@ type AppSecReputationProfileArgs struct {
 	ConfigId pulumi.IntInput
 	// The name of a file containing a JSON-formatted definition of the reputation profile. ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles))
 	ReputationProfile pulumi.StringInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecReputationProfileArgs) ElementType() reflect.Type {

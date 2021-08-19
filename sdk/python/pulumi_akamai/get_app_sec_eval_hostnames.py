@@ -19,7 +19,7 @@ class GetAppSecEvalHostnamesResult:
     """
     A collection of values returned by getAppSecEvalHostnames.
     """
-    def __init__(__self__, config_id=None, hostnames=None, id=None, json=None, output_text=None, version=None):
+    def __init__(__self__, config_id=None, hostnames=None, id=None, json=None, output_text=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -35,9 +35,6 @@ class GetAppSecEvalHostnamesResult:
         if output_text and not isinstance(output_text, str):
             raise TypeError("Expected argument 'output_text' to be a str")
         pulumi.set(__self__, "output_text", output_text)
-        if version and not isinstance(version, int):
-            raise TypeError("Expected argument 'version' to be a int")
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -76,11 +73,6 @@ class GetAppSecEvalHostnamesResult:
         """
         return pulumi.get(self, "output_text")
 
-    @property
-    @pulumi.getter
-    def version(self) -> int:
-        return pulumi.get(self, "version")
-
 
 class AwaitableGetAppSecEvalHostnamesResult(GetAppSecEvalHostnamesResult):
     # pylint: disable=using-constant-test
@@ -92,15 +84,13 @@ class AwaitableGetAppSecEvalHostnamesResult(GetAppSecEvalHostnamesResult):
             hostnames=self.hostnames,
             id=self.id,
             json=self.json,
-            output_text=self.output_text,
-            version=self.version)
+            output_text=self.output_text)
 
 
 def get_app_sec_eval_hostnames(config_id: Optional[int] = None,
-                               version: Optional[int] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecEvalHostnamesResult:
     """
-    Use the `AppSecEvalHostnames` data source to retrieve the evaluation hostnames for a configuration version. Evaluation mode for hostnames is only available for Web Application Protector. Run hostnames in evaluation mode to see how your configuration settings protect traffic for that hostname before adding a hostname directly to a live configuration. An evaluation period lasts four weeks unless you stop the evaluation. Once you begin, the hostnames you evaluate start responding to traffic as if they are your current hostnames. However, instead of taking an action the evaluation hostnames log which action they would have taken if they were your actively-protected hostnames and not a test.
+    Use the `AppSecEvalHostnames` data source to retrieve the evaluation hostnames for a configuration. Evaluation mode for hostnames is only available for Web Application Protector. Run hostnames in evaluation mode to see how your configuration settings protect traffic for that hostname before adding a hostname directly to a live configuration. An evaluation period lasts four weeks unless you stop the evaluation. Once you begin, the hostnames you evaluate start responding to traffic as if they are your current hostnames. However, instead of taking an action the evaluation hostnames log which action they would have taken if they were your actively-protected hostnames and not a test.
 
     ## Example Usage
 
@@ -111,8 +101,7 @@ def get_app_sec_eval_hostnames(config_id: Optional[int] = None,
     import pulumi_akamai as akamai
 
     configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-    eval_hostnames_app_sec_eval_hostnames = akamai.get_app_sec_eval_hostnames(config_id=configuration.config_id,
-        version=configuration.latest_version)
+    eval_hostnames_app_sec_eval_hostnames = akamai.get_app_sec_eval_hostnames(config_id=configuration.config_id)
     pulumi.export("evalHostnames", eval_hostnames_app_sec_eval_hostnames.hostnames)
     pulumi.export("evalHostnamesOutput", eval_hostnames_app_sec_eval_hostnames.output_text)
     pulumi.export("evalHostnamesJson", eval_hostnames_app_sec_eval_hostnames.json)
@@ -120,11 +109,9 @@ def get_app_sec_eval_hostnames(config_id: Optional[int] = None,
 
 
     :param int config_id: The ID of the security configuration to use.
-    :param int version: The version number of the security configuration to use.
     """
     __args__ = dict()
     __args__['configId'] = config_id
-    __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -136,5 +123,4 @@ def get_app_sec_eval_hostnames(config_id: Optional[int] = None,
         hostnames=__ret__.hostnames,
         id=__ret__.id,
         json=__ret__.json,
-        output_text=__ret__.output_text,
-        version=__ret__.version)
+        output_text=__ret__.output_text)

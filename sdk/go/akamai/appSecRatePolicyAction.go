@@ -24,8 +24,6 @@ type AppSecRatePolicyAction struct {
 	// The ID of the rate policy to use.
 	RatePolicyId     pulumi.IntOutput    `pulumi:"ratePolicyId"`
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecRatePolicyAction registers a new resource with the given unique name, arguments, and options.
@@ -49,9 +47,6 @@ func NewAppSecRatePolicyAction(ctx *pulumi.Context,
 	}
 	if args.SecurityPolicyId == nil {
 		return nil, errors.New("invalid value for required argument 'SecurityPolicyId'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecRatePolicyAction
 	err := ctx.RegisterResource("akamai:index/appSecRatePolicyAction:AppSecRatePolicyAction", name, args, &resource, opts...)
@@ -84,8 +79,6 @@ type appSecRatePolicyActionState struct {
 	// The ID of the rate policy to use.
 	RatePolicyId     *int    `pulumi:"ratePolicyId"`
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecRatePolicyActionState struct {
@@ -98,8 +91,6 @@ type AppSecRatePolicyActionState struct {
 	// The ID of the rate policy to use.
 	RatePolicyId     pulumi.IntPtrInput
 	SecurityPolicyId pulumi.StringPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecRatePolicyActionState) ElementType() reflect.Type {
@@ -116,8 +107,6 @@ type appSecRatePolicyActionArgs struct {
 	// The ID of the rate policy to use.
 	RatePolicyId     int    `pulumi:"ratePolicyId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecRatePolicyAction resource.
@@ -131,8 +120,6 @@ type AppSecRatePolicyActionArgs struct {
 	// The ID of the rate policy to use.
 	RatePolicyId     pulumi.IntInput
 	SecurityPolicyId pulumi.StringInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecRatePolicyActionArgs) ElementType() reflect.Type {

@@ -36,7 +36,6 @@ import (
 // 		}
 // 		evalOperation, err := akamai.NewAppSecEval(ctx, "evalOperation", &akamai.AppSecEvalArgs{
 // 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			Version:          pulumi.Int(configuration.LatestVersion),
 // 			SecurityPolicyId: pulumi.Any(_var.Security_policy_id),
 // 			EvalOperation:    pulumi.Any(_var.Eval_operation),
 // 		})
@@ -66,12 +65,8 @@ type AppSecEval struct {
 	EvaluatingRuleset pulumi.StringOutput `pulumi:"evaluatingRuleset"`
 	// The date on which the evaluation period ends.
 	ExpirationDate pulumi.StringOutput `pulumi:"expirationDate"`
-	// Text Export representation
-	OutputText pulumi.StringOutput `pulumi:"outputText"`
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecEval registers a new resource with the given unique name, arguments, and options.
@@ -89,9 +84,6 @@ func NewAppSecEval(ctx *pulumi.Context,
 	}
 	if args.SecurityPolicyId == nil {
 		return nil, errors.New("invalid value for required argument 'SecurityPolicyId'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecEval
 	err := ctx.RegisterResource("akamai:index/appSecEval:AppSecEval", name, args, &resource, opts...)
@@ -127,12 +119,8 @@ type appSecEvalState struct {
 	EvaluatingRuleset *string `pulumi:"evaluatingRuleset"`
 	// The date on which the evaluation period ends.
 	ExpirationDate *string `pulumi:"expirationDate"`
-	// Text Export representation
-	OutputText *string `pulumi:"outputText"`
 	// The ID of the security policy to use.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecEvalState struct {
@@ -148,12 +136,8 @@ type AppSecEvalState struct {
 	EvaluatingRuleset pulumi.StringPtrInput
 	// The date on which the evaluation period ends.
 	ExpirationDate pulumi.StringPtrInput
-	// Text Export representation
-	OutputText pulumi.StringPtrInput
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecEvalState) ElementType() reflect.Type {
@@ -167,8 +151,6 @@ type appSecEvalArgs struct {
 	EvalOperation string `pulumi:"evalOperation"`
 	// The ID of the security policy to use.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecEval resource.
@@ -179,8 +161,6 @@ type AppSecEvalArgs struct {
 	EvalOperation pulumi.StringInput
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecEvalArgs) ElementType() reflect.Type {

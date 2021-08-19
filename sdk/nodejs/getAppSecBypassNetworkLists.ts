@@ -22,9 +22,8 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: _var.security_configuration,
  * });
- * const bypassNetworkLists = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecBypassNetworkLists({
+ * const bypassNetworkLists = configuration.then(configuration => akamai.getAppSecBypassNetworkLists({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  * }));
  * export const bypassNetworkListsOutput = bypassNetworkLists.then(bypassNetworkLists => bypassNetworkLists.outputText);
  * export const bypassNetworkListsJson = bypassNetworkLists.then(bypassNetworkLists => bypassNetworkLists.json);
@@ -41,7 +40,6 @@ export function getAppSecBypassNetworkLists(args: GetAppSecBypassNetworkListsArg
     }
     return pulumi.runtime.invoke("akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists", {
         "configId": args.configId,
-        "version": args.version,
     }, opts);
 }
 
@@ -53,10 +51,6 @@ export interface GetAppSecBypassNetworkListsArgs {
      * The configuration ID to use.
      */
     configId: number;
-    /**
-     * The version number of the configuration to use.
-     */
-    version: number;
 }
 
 /**
@@ -80,5 +74,4 @@ export interface GetAppSecBypassNetworkListsResult {
      * A tabular display showing the bypass network list information.
      */
     readonly outputText: string;
-    readonly version: number;
 }

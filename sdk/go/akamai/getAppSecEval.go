@@ -20,7 +20,6 @@ func LookupAppSecEval(ctx *pulumi.Context, args *LookupAppSecEvalArgs, opts ...p
 type LookupAppSecEvalArgs struct {
 	ConfigId         int    `pulumi:"configId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	Version          int    `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecEval.
@@ -30,5 +29,4 @@ type LookupAppSecEvalResult struct {
 	Id               string `pulumi:"id"`
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	Version          int    `pulumi:"version"`
 }

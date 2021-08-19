@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// The `resource_akamai_appsec_custom_deny` resource allows you to create a new custom deny action for a specific configuration version.
+    /// The `resource_akamai_appsec_custom_deny` resource allows you to create a new custom deny action for a specific configuration.
     /// 
     /// ## Example Usage
     /// 
@@ -32,7 +32,6 @@ namespace Pulumi.Akamai
     ///         var customDeny = new Akamai.AppSecCustomDeny("customDeny", new Akamai.AppSecCustomDenyArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
     ///             CustomDeny = File.ReadAllText($"{path.Module}/custom_deny.json"),
     ///         });
     ///         this.CustomDenyId = customDeny.CustomDenyId;
@@ -63,12 +62,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("customDenyId")]
         public Output<string> CustomDenyId { get; private set; } = null!;
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -128,12 +121,6 @@ namespace Pulumi.Akamai
         [Input("customDeny", required: true)]
         public Input<string> CustomDeny { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
-
         public AppSecCustomDenyArgs()
         {
         }
@@ -158,12 +145,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("customDenyId")]
         public Input<string>? CustomDenyId { get; set; }
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecCustomDenyState()
         {

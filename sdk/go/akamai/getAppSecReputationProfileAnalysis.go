@@ -32,7 +32,6 @@ import (
 // 		}
 // 		reputationAnalysis, err := akamai.LookupAppSecReputationProfileAnalysis(ctx, &akamai.LookupAppSecReputationProfileAnalysisArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			Version:          configuration.LatestVersion,
 // 			SecurityPolicyId: _var.Security_policy_id,
 // 		}, nil)
 // 		if err != nil {
@@ -59,8 +58,6 @@ type LookupAppSecReputationProfileAnalysisArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// The ID of the security policy to use.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecReputationProfileAnalysis.
@@ -73,5 +70,4 @@ type LookupAppSecReputationProfileAnalysisResult struct {
 	// A tabular display showing the reputation analysis settings.
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	Version          int    `pulumi:"version"`
 }

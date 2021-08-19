@@ -16,7 +16,6 @@ class AppSecIPGeoArgs:
                  config_id: pulumi.Input[int],
                  mode: pulumi.Input[str],
                  security_policy_id: pulumi.Input[str],
-                 version: pulumi.Input[int],
                  exception_ip_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  geo_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ip_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
@@ -25,7 +24,6 @@ class AppSecIPGeoArgs:
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] mode: The mode to use for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] exception_ip_network_lists: The network lists to be allowed regardless of `mode`, `geo_network_lists`, and `ip_network_lists` parameters.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] geo_network_lists: The network lists to be blocked or allowed geographically.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_network_lists: The network lists to be blocked or allowd by IP address.
@@ -33,7 +31,6 @@ class AppSecIPGeoArgs:
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "mode", mode)
         pulumi.set(__self__, "security_policy_id", security_policy_id)
-        pulumi.set(__self__, "version", version)
         if exception_ip_network_lists is not None:
             pulumi.set(__self__, "exception_ip_network_lists", exception_ip_network_lists)
         if geo_network_lists is not None:
@@ -76,18 +73,6 @@ class AppSecIPGeoArgs:
     @security_policy_id.setter
     def security_policy_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "security_policy_id", value)
-
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Input[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: pulumi.Input[int]):
-        pulumi.set(self, "version", value)
 
     @property
     @pulumi.getter(name="exceptionIpNetworkLists")
@@ -134,8 +119,7 @@ class _AppSecIPGeoState:
                  geo_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ip_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  mode: Optional[pulumi.Input[str]] = None,
-                 security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None):
+                 security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecIPGeo resources.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
@@ -144,7 +128,6 @@ class _AppSecIPGeoState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_network_lists: The network lists to be blocked or allowd by IP address.
         :param pulumi.Input[str] mode: The mode to use for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -158,8 +141,6 @@ class _AppSecIPGeoState:
             pulumi.set(__self__, "mode", mode)
         if security_policy_id is not None:
             pulumi.set(__self__, "security_policy_id", security_policy_id)
-        if version is not None:
-            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -233,18 +214,6 @@ class _AppSecIPGeoState:
     def security_policy_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "security_policy_id", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "version", value)
-
 
 class AppSecIPGeo(pulumi.CustomResource):
     @overload
@@ -257,7 +226,6 @@ class AppSecIPGeo(pulumi.CustomResource):
                  ip_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  mode: Optional[pulumi.Input[str]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         Use the `AppSecIPGeo` resource to update the method and which network lists to use for IP/Geo firewall blocking.
@@ -274,7 +242,6 @@ class AppSecIPGeo(pulumi.CustomResource):
         # USE CASE: user wants to update the IP/GEO firewall mode to "block specific IPs/Subnets and Geos" and update the IP list, GEO list & Exception list
         ip_geo_block = akamai.AppSecIPGeo("ipGeoBlock",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             security_policy_id=var["security_policy_id1"],
             mode=var["block"],
             geo_network_lists=var["geo_network_lists"],
@@ -283,7 +250,6 @@ class AppSecIPGeo(pulumi.CustomResource):
         # USE CASE: user wants to update the IP/GEO firewall mode to "block all traffic except IPs/Subnets in block exceptions" and update the Exception list
         ip_geo_allow = akamai.AppSecIPGeo("ipGeoAllow",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             security_policy_id=var["security_policy_id2"],
             mode=var["allow"],
             exception_ip_network_lists=var["exception_ip_network_lists"])
@@ -303,7 +269,6 @@ class AppSecIPGeo(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_network_lists: The network lists to be blocked or allowd by IP address.
         :param pulumi.Input[str] mode: The mode to use for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         ...
     @overload
@@ -326,7 +291,6 @@ class AppSecIPGeo(pulumi.CustomResource):
         # USE CASE: user wants to update the IP/GEO firewall mode to "block specific IPs/Subnets and Geos" and update the IP list, GEO list & Exception list
         ip_geo_block = akamai.AppSecIPGeo("ipGeoBlock",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             security_policy_id=var["security_policy_id1"],
             mode=var["block"],
             geo_network_lists=var["geo_network_lists"],
@@ -335,7 +299,6 @@ class AppSecIPGeo(pulumi.CustomResource):
         # USE CASE: user wants to update the IP/GEO firewall mode to "block all traffic except IPs/Subnets in block exceptions" and update the Exception list
         ip_geo_allow = akamai.AppSecIPGeo("ipGeoAllow",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             security_policy_id=var["security_policy_id2"],
             mode=var["allow"],
             exception_ip_network_lists=var["exception_ip_network_lists"])
@@ -368,7 +331,6 @@ class AppSecIPGeo(pulumi.CustomResource):
                  ip_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  mode: Optional[pulumi.Input[str]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
@@ -393,9 +355,6 @@ class AppSecIPGeo(pulumi.CustomResource):
             if security_policy_id is None and not opts.urn:
                 raise TypeError("Missing required property 'security_policy_id'")
             __props__.__dict__["security_policy_id"] = security_policy_id
-            if version is None and not opts.urn:
-                raise TypeError("Missing required property 'version'")
-            __props__.__dict__["version"] = version
         super(AppSecIPGeo, __self__).__init__(
             'akamai:index/appSecIPGeo:AppSecIPGeo',
             resource_name,
@@ -411,8 +370,7 @@ class AppSecIPGeo(pulumi.CustomResource):
             geo_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             ip_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             mode: Optional[pulumi.Input[str]] = None,
-            security_policy_id: Optional[pulumi.Input[str]] = None,
-            version: Optional[pulumi.Input[int]] = None) -> 'AppSecIPGeo':
+            security_policy_id: Optional[pulumi.Input[str]] = None) -> 'AppSecIPGeo':
         """
         Get an existing AppSecIPGeo resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -426,7 +384,6 @@ class AppSecIPGeo(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_network_lists: The network lists to be blocked or allowd by IP address.
         :param pulumi.Input[str] mode: The mode to use for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -438,7 +395,6 @@ class AppSecIPGeo(pulumi.CustomResource):
         __props__.__dict__["ip_network_lists"] = ip_network_lists
         __props__.__dict__["mode"] = mode
         __props__.__dict__["security_policy_id"] = security_policy_id
-        __props__.__dict__["version"] = version
         return AppSecIPGeo(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -488,12 +444,4 @@ class AppSecIPGeo(pulumi.CustomResource):
         The ID of the security policy to use.
         """
         return pulumi.get(self, "security_policy_id")
-
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Output[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
 

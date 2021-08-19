@@ -32,7 +32,6 @@ namespace Pulumi.Akamai
     ///         var ipGeoBlock = new Akamai.AppSecIPGeo("ipGeoBlock", new Akamai.AppSecIPGeoArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
     ///             SecurityPolicyId = @var.Security_policy_id1,
     ///             Mode = @var.Block,
     ///             GeoNetworkLists = @var.Geo_network_lists,
@@ -43,7 +42,6 @@ namespace Pulumi.Akamai
     ///         var ipGeoAllow = new Akamai.AppSecIPGeo("ipGeoAllow", new Akamai.AppSecIPGeoArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
     ///             SecurityPolicyId = @var.Security_policy_id2,
     ///             Mode = @var.Allow,
     ///             ExceptionIpNetworkLists = @var.Exception_ip_network_lists,
@@ -109,12 +107,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -216,12 +208,6 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
-
         public AppSecIPGeoArgs()
         {
         }
@@ -282,12 +268,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecIPGeoState()
         {

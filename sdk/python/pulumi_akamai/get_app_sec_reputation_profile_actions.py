@@ -19,7 +19,7 @@ class GetAppSecReputationProfileActionsResult:
     """
     A collection of values returned by getAppSecReputationProfileActions.
     """
-    def __init__(__self__, action=None, config_id=None, id=None, json=None, output_text=None, reputation_profile_id=None, security_policy_id=None, version=None):
+    def __init__(__self__, action=None, config_id=None, id=None, json=None, output_text=None, reputation_profile_id=None, security_policy_id=None):
         if action and not isinstance(action, str):
             raise TypeError("Expected argument 'action' to be a str")
         pulumi.set(__self__, "action", action)
@@ -41,9 +41,6 @@ class GetAppSecReputationProfileActionsResult:
         if security_policy_id and not isinstance(security_policy_id, str):
             raise TypeError("Expected argument 'security_policy_id' to be a str")
         pulumi.set(__self__, "security_policy_id", security_policy_id)
-        if version and not isinstance(version, int):
-            raise TypeError("Expected argument 'version' to be a int")
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter
@@ -92,11 +89,6 @@ class GetAppSecReputationProfileActionsResult:
     def security_policy_id(self) -> str:
         return pulumi.get(self, "security_policy_id")
 
-    @property
-    @pulumi.getter
-    def version(self) -> int:
-        return pulumi.get(self, "version")
-
 
 class AwaitableGetAppSecReputationProfileActionsResult(GetAppSecReputationProfileActionsResult):
     # pylint: disable=using-constant-test
@@ -110,14 +102,12 @@ class AwaitableGetAppSecReputationProfileActionsResult(GetAppSecReputationProfil
             json=self.json,
             output_text=self.output_text,
             reputation_profile_id=self.reputation_profile_id,
-            security_policy_id=self.security_policy_id,
-            version=self.version)
+            security_policy_id=self.security_policy_id)
 
 
 def get_app_sec_reputation_profile_actions(config_id: Optional[int] = None,
                                            reputation_profile_id: Optional[int] = None,
                                            security_policy_id: Optional[str] = None,
-                                           version: Optional[int] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecReputationProfileActionsResult:
     """
     Use the `getAppSecReputationProfileActions` data source to retrieve details about reputation profiles and their associated actions, or about the actions associated with a specific reputation profile.
@@ -126,13 +116,11 @@ def get_app_sec_reputation_profile_actions(config_id: Optional[int] = None,
     :param int config_id: The ID of the security configuration to use.
     :param int reputation_profile_id: The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
     :param str security_policy_id: THe ID of the security policy to use.
-    :param int version: The version number of the security configuration to use.
     """
     __args__ = dict()
     __args__['configId'] = config_id
     __args__['reputationProfileId'] = reputation_profile_id
     __args__['securityPolicyId'] = security_policy_id
-    __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -146,5 +134,4 @@ def get_app_sec_reputation_profile_actions(config_id: Optional[int] = None,
         json=__ret__.json,
         output_text=__ret__.output_text,
         reputation_profile_id=__ret__.reputation_profile_id,
-        security_policy_id=__ret__.security_policy_id,
-        version=__ret__.version)
+        security_policy_id=__ret__.security_policy_id)

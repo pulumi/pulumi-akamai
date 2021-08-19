@@ -19,7 +19,7 @@ class GetAppSecReputationProfilesResult:
     """
     A collection of values returned by getAppSecReputationProfiles.
     """
-    def __init__(__self__, config_id=None, id=None, json=None, output_text=None, reputation_profile_id=None, version=None):
+    def __init__(__self__, config_id=None, id=None, json=None, output_text=None, reputation_profile_id=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -35,9 +35,6 @@ class GetAppSecReputationProfilesResult:
         if reputation_profile_id and not isinstance(reputation_profile_id, int):
             raise TypeError("Expected argument 'reputation_profile_id' to be a int")
         pulumi.set(__self__, "reputation_profile_id", reputation_profile_id)
-        if version and not isinstance(version, int):
-            raise TypeError("Expected argument 'version' to be a int")
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -73,11 +70,6 @@ class GetAppSecReputationProfilesResult:
     def reputation_profile_id(self) -> Optional[int]:
         return pulumi.get(self, "reputation_profile_id")
 
-    @property
-    @pulumi.getter
-    def version(self) -> int:
-        return pulumi.get(self, "version")
-
 
 class AwaitableGetAppSecReputationProfilesResult(GetAppSecReputationProfilesResult):
     # pylint: disable=using-constant-test
@@ -89,13 +81,11 @@ class AwaitableGetAppSecReputationProfilesResult(GetAppSecReputationProfilesResu
             id=self.id,
             json=self.json,
             output_text=self.output_text,
-            reputation_profile_id=self.reputation_profile_id,
-            version=self.version)
+            reputation_profile_id=self.reputation_profile_id)
 
 
 def get_app_sec_reputation_profiles(config_id: Optional[int] = None,
                                     reputation_profile_id: Optional[int] = None,
-                                    version: Optional[int] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecReputationProfilesResult:
     """
     Use the `getAppSecReputationProfiles` data source to retrieve details about all reputation profiles, or a specific reputation profiles.
@@ -109,12 +99,10 @@ def get_app_sec_reputation_profiles(config_id: Optional[int] = None,
     import pulumi_akamai as akamai
 
     configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-    reputation_profiles = akamai.get_app_sec_reputation_profiles(config_id=configuration.config_id,
-        version=configuration.latest_version)
+    reputation_profiles = akamai.get_app_sec_reputation_profiles(config_id=configuration.config_id)
     pulumi.export("reputationProfilesOutput", reputation_profiles.output_text)
     pulumi.export("reputationProfilesJson", reputation_profiles.json)
     reputation_profile = akamai.get_app_sec_reputation_profiles(config_id=configuration.config_id,
-        version=configuration.latest_version,
         reputation_profile_id=var["reputation_profile_id"])
     pulumi.export("reputationProfileJson", reputation_profile.json)
     pulumi.export("reputationProfileOutput", reputation_profile.output_text)
@@ -123,12 +111,10 @@ def get_app_sec_reputation_profiles(config_id: Optional[int] = None,
 
     :param int config_id: The ID of the security configuration to use.
     :param int reputation_profile_id: The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
-    :param int version: The version number of the security configuration to use.
     """
     __args__ = dict()
     __args__['configId'] = config_id
     __args__['reputationProfileId'] = reputation_profile_id
-    __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -140,5 +126,4 @@ def get_app_sec_reputation_profiles(config_id: Optional[int] = None,
         id=__ret__.id,
         json=__ret__.json,
         output_text=__ret__.output_text,
-        reputation_profile_id=__ret__.reputation_profile_id,
-        version=__ret__.version)
+        reputation_profile_id=__ret__.reputation_profile_id)

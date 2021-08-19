@@ -12,7 +12,7 @@ namespace Pulumi.Akamai
     public static class GetAppSecCustomDeny
     {
         /// <summary>
-        /// Use the `akamai.AppSecCustomDeny` data source to retrieve information about custom deny actions for a specific security configuration version, or about a particular custom deny action. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcustomdeny).
+        /// Use the `akamai.AppSecCustomDeny` data source to retrieve information about custom deny actions for a specific security configuration, or about a particular custom deny action. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcustomdeny).
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -32,29 +32,17 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = @var.Security_configuration,
         ///         }));
-        ///         var customDenyList = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var customDenyList = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecCustomDeny.InvokeAsync(new Akamai.GetAppSecCustomDenyArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecCustomDeny.InvokeAsync(new Akamai.GetAppSecCustomDenyArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///         })));
         ///         this.CustomDenyListOutput = customDenyList.Apply(customDenyList =&gt; customDenyList.OutputText);
         ///         this.CustomDenyListJson = customDenyList.Apply(customDenyList =&gt; customDenyList.Json);
-        ///         var customDeny = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var customDeny = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecCustomDeny.InvokeAsync(new Akamai.GetAppSecCustomDenyArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecCustomDeny.InvokeAsync(new Akamai.GetAppSecCustomDenyArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///                 CustomDenyId = @var.Custom_deny_id,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///             CustomDenyId = @var.Custom_deny_id,
+        ///         })));
         ///         this.CustomDenyJson = customDeny.Apply(customDeny =&gt; customDeny.Json);
         ///         this.CustomDenyOutput = customDeny.Apply(customDeny =&gt; customDeny.OutputText);
         ///     }
@@ -91,12 +79,6 @@ namespace Pulumi.Akamai
         [Input("customDenyId")]
         public string? CustomDenyId { get; set; }
 
-        /// <summary>
-        /// The version number of the configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecCustomDenyArgs()
         {
         }
@@ -120,7 +102,6 @@ namespace Pulumi.Akamai
         /// A tabular display showing the custom deny action information.
         /// </summary>
         public readonly string OutputText;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecCustomDenyResult(
@@ -132,16 +113,13 @@ namespace Pulumi.Akamai
 
             string json,
 
-            string outputText,
-
-            int version)
+            string outputText)
         {
             ConfigId = configId;
             CustomDenyId = customDenyId;
             Id = id;
             Json = json;
             OutputText = outputText;
-            Version = version;
         }
     }
 }

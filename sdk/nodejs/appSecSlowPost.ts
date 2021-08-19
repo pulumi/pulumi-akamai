@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecSlowPost` data source to update the slow post protection settings for a given security configuration version and policy.
+ * Use the `akamai.AppSecSlowPost` data source to update the slow post protection settings for a given security configuration and policy.
  *
  * ## Example Usage
  *
@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  * });
  * const slowPost = new akamai.AppSecSlowPost("slowPost", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     securityPolicyId: _var.security_policy_id,
  *     slowRateAction: "alert",
  *     slowRateThresholdRate: 10,
@@ -76,15 +75,11 @@ export class AppSecSlowPost extends pulumi.CustomResource {
     /**
      * The slow rate period value: the amount of time in seconds that the server should accept a request to determine whether a POST request is too slow.
      */
-    public readonly slowRateThresholdPeriod!: pulumi.Output<number>;
+    public readonly slowRateThresholdPeriod!: pulumi.Output<number | undefined>;
     /**
      * The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
      */
-    public readonly slowRateThresholdRate!: pulumi.Output<number>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
+    public readonly slowRateThresholdRate!: pulumi.Output<number | undefined>;
 
     /**
      * Create a AppSecSlowPost resource with the given unique name, arguments, and options.
@@ -105,7 +100,6 @@ export class AppSecSlowPost extends pulumi.CustomResource {
             inputs["slowRateAction"] = state ? state.slowRateAction : undefined;
             inputs["slowRateThresholdPeriod"] = state ? state.slowRateThresholdPeriod : undefined;
             inputs["slowRateThresholdRate"] = state ? state.slowRateThresholdRate : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecSlowPostArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -117,22 +111,12 @@ export class AppSecSlowPost extends pulumi.CustomResource {
             if ((!args || args.slowRateAction === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'slowRateAction'");
             }
-            if ((!args || args.slowRateThresholdPeriod === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'slowRateThresholdPeriod'");
-            }
-            if ((!args || args.slowRateThresholdRate === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'slowRateThresholdRate'");
-            }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["durationThresholdTimeout"] = args ? args.durationThresholdTimeout : undefined;
             inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
             inputs["slowRateAction"] = args ? args.slowRateAction : undefined;
             inputs["slowRateThresholdPeriod"] = args ? args.slowRateThresholdPeriod : undefined;
             inputs["slowRateThresholdRate"] = args ? args.slowRateThresholdRate : undefined;
-            inputs["version"] = args ? args.version : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -169,10 +153,6 @@ export interface AppSecSlowPostState {
      * The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
      */
     slowRateThresholdRate?: pulumi.Input<number>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -198,13 +178,9 @@ export interface AppSecSlowPostArgs {
     /**
      * The slow rate period value: the amount of time in seconds that the server should accept a request to determine whether a POST request is too slow.
      */
-    slowRateThresholdPeriod: pulumi.Input<number>;
+    slowRateThresholdPeriod?: pulumi.Input<number>;
     /**
      * The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
      */
-    slowRateThresholdRate: pulumi.Input<number>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
+    slowRateThresholdRate?: pulumi.Input<number>;
 }

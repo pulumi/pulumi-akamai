@@ -19,7 +19,7 @@ class GetAppSecWafModeResult:
     """
     A collection of values returned by getAppSecWafMode.
     """
-    def __init__(__self__, config_id=None, current_ruleset=None, eval_expiration_date=None, eval_ruleset=None, eval_status=None, id=None, json=None, mode=None, output_text=None, security_policy_id=None, version=None):
+    def __init__(__self__, config_id=None, current_ruleset=None, eval_expiration_date=None, eval_ruleset=None, eval_status=None, id=None, json=None, mode=None, output_text=None, security_policy_id=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -50,9 +50,6 @@ class GetAppSecWafModeResult:
         if security_policy_id and not isinstance(security_policy_id, str):
             raise TypeError("Expected argument 'security_policy_id' to be a str")
         pulumi.set(__self__, "security_policy_id", security_policy_id)
-        if version and not isinstance(version, int):
-            raise TypeError("Expected argument 'version' to be a int")
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -128,11 +125,6 @@ class GetAppSecWafModeResult:
     def security_policy_id(self) -> str:
         return pulumi.get(self, "security_policy_id")
 
-    @property
-    @pulumi.getter
-    def version(self) -> int:
-        return pulumi.get(self, "version")
-
 
 class AwaitableGetAppSecWafModeResult(GetAppSecWafModeResult):
     # pylint: disable=using-constant-test
@@ -149,16 +141,14 @@ class AwaitableGetAppSecWafModeResult(GetAppSecWafModeResult):
             json=self.json,
             mode=self.mode,
             output_text=self.output_text,
-            security_policy_id=self.security_policy_id,
-            version=self.version)
+            security_policy_id=self.security_policy_id)
 
 
 def get_app_sec_waf_mode(config_id: Optional[int] = None,
                          security_policy_id: Optional[str] = None,
-                         version: Optional[int] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecWafModeResult:
     """
-    Use the `AppSecWafMode` data source to retrieve the mode that indicates how the WAF rules of the given security configuration version and security policy will be updated.
+    Use the `AppSecWafMode` data source to retrieve the mode that indicates how the WAF rules of the given security configuration and security policy will be updated.
 
     ## Example Usage
 
@@ -170,7 +160,6 @@ def get_app_sec_waf_mode(config_id: Optional[int] = None,
 
     configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
     waf_mode = akamai.get_app_sec_waf_mode(config_id=configuration.config_id,
-        version=configuration.latest_version,
         security_policy_id=var["policy_id"])
     pulumi.export("wafModeMode", waf_mode.mode)
     pulumi.export("wafModeCurrentRuleset", waf_mode.current_ruleset)
@@ -184,12 +173,10 @@ def get_app_sec_waf_mode(config_id: Optional[int] = None,
 
     :param int config_id: The ID of the security configuration to use.
     :param str security_policy_id: The ID of the security policy to use.
-    :param int version: The version number of the security configuration to use.
     """
     __args__ = dict()
     __args__['configId'] = config_id
     __args__['securityPolicyId'] = security_policy_id
-    __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -206,5 +193,4 @@ def get_app_sec_waf_mode(config_id: Optional[int] = None,
         json=__ret__.json,
         mode=__ret__.mode,
         output_text=__ret__.output_text,
-        security_policy_id=__ret__.security_policy_id,
-        version=__ret__.version)
+        security_policy_id=__ret__.security_policy_id)

@@ -24,24 +24,22 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppSecActivations{}
 	case "akamai:index/appSecAdvancedSettingsLogging:AppSecAdvancedSettingsLogging":
 		r = &AppSecAdvancedSettingsLogging{}
+	case "akamai:index/appSecAdvancedSettingsPragmaHeader:AppSecAdvancedSettingsPragmaHeader":
+		r = &AppSecAdvancedSettingsPragmaHeader{}
 	case "akamai:index/appSecAdvancedSettingsPrefetch:AppSecAdvancedSettingsPrefetch":
 		r = &AppSecAdvancedSettingsPrefetch{}
+	case "akamai:index/appSecApiConstraintsProtection:AppSecApiConstraintsProtection":
+		r = &AppSecApiConstraintsProtection{}
 	case "akamai:index/appSecApiRequestConstraints:AppSecApiRequestConstraints":
 		r = &AppSecApiRequestConstraints{}
-	case "akamai:index/appSecAttackGroupAction:AppSecAttackGroupAction":
-		r = &AppSecAttackGroupAction{}
-	case "akamai:index/appSecAttackGroupActionConditionException:AppSecAttackGroupActionConditionException":
-		r = &AppSecAttackGroupActionConditionException{}
+	case "akamai:index/appSecAttackGroup:AppSecAttackGroup":
+		r = &AppSecAttackGroup{}
 	case "akamai:index/appSecByPassNetworkList:AppSecByPassNetworkList":
 		r = &AppSecByPassNetworkList{}
 	case "akamai:index/appSecConfiguration:AppSecConfiguration":
 		r = &AppSecConfiguration{}
-	case "akamai:index/appSecConfigurationClone:AppSecConfigurationClone":
-		r = &AppSecConfigurationClone{}
 	case "akamai:index/appSecConfigurationRename:AppSecConfigurationRename":
 		r = &AppSecConfigurationRename{}
-	case "akamai:index/appSecConfigurationVersionClone:AppSecConfigurationVersionClone":
-		r = &AppSecConfigurationVersionClone{}
 	case "akamai:index/appSecCustomDeny:AppSecCustomDeny":
 		r = &AppSecCustomDeny{}
 	case "akamai:index/appSecCustomRule:AppSecCustomRule":
@@ -54,12 +52,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppSecEvalHostnames{}
 	case "akamai:index/appSecEvalProtectHost:AppSecEvalProtectHost":
 		r = &AppSecEvalProtectHost{}
-	case "akamai:index/appSecEvalRuleAction:AppSecEvalRuleAction":
-		r = &AppSecEvalRuleAction{}
-	case "akamai:index/appSecEvalRuleConditionException:AppSecEvalRuleConditionException":
-		r = &AppSecEvalRuleConditionException{}
+	case "akamai:index/appSecEvalRule:AppSecEvalRule":
+		r = &AppSecEvalRule{}
 	case "akamai:index/appSecIPGeo:AppSecIPGeo":
 		r = &AppSecIPGeo{}
+	case "akamai:index/appSecIPGeoProtection:AppSecIPGeoProtection":
+		r = &AppSecIPGeoProtection{}
 	case "akamai:index/appSecMatchTarget:AppSecMatchTarget":
 		r = &AppSecMatchTarget{}
 	case "akamai:index/appSecMatchTargetSequence:AppSecMatchTargetSequence":
@@ -80,18 +78,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppSecReputationProfileAnalysis{}
 	case "akamai:index/appSecReputationProtection:AppSecReputationProtection":
 		r = &AppSecReputationProtection{}
-	case "akamai:index/appSecRuleAction:AppSecRuleAction":
-		r = &AppSecRuleAction{}
-	case "akamai:index/appSecRuleConditionException:AppSecRuleConditionException":
-		r = &AppSecRuleConditionException{}
+	case "akamai:index/appSecRule:AppSecRule":
+		r = &AppSecRule{}
 	case "akamai:index/appSecRuleUpgrade:AppSecRuleUpgrade":
 		r = &AppSecRuleUpgrade{}
 	case "akamai:index/appSecSecurityPolicy:AppSecSecurityPolicy":
 		r = &AppSecSecurityPolicy{}
-	case "akamai:index/appSecSecurityPolicyClone:AppSecSecurityPolicyClone":
-		r = &AppSecSecurityPolicyClone{}
-	case "akamai:index/appSecSecurityPolicyProtections:AppSecSecurityPolicyProtections":
-		r = &AppSecSecurityPolicyProtections{}
 	case "akamai:index/appSecSecurityPolicyRename:AppSecSecurityPolicyRename":
 		r = &AppSecSecurityPolicyRename{}
 	case "akamai:index/appSecSelectedHostnames:AppSecSelectedHostnames":
@@ -110,6 +102,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppSecWafProtection{}
 	case "akamai:index/cpCode:CpCode":
 		r = &CpCode{}
+	case "akamai:index/cpsDvEnrollment:CpsDvEnrollment":
+		r = &CpsDvEnrollment{}
+	case "akamai:index/cpsDvValidation:CpsDvValidation":
+		r = &CpsDvValidation{}
 	case "akamai:index/dnsRecord:DnsRecord":
 		r = &DnsRecord{}
 	case "akamai:index/dnsZone:DnsZone":
@@ -130,6 +126,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &GtmProperty{}
 	case "akamai:index/gtmResource:GtmResource":
 		r = &GtmResource{}
+	case "akamai:index/networkList:NetworkList":
+		r = &NetworkList{}
+	case "akamai:index/networkListActivations:NetworkListActivations":
+		r = &NetworkListActivations{}
+	case "akamai:index/networkListDescription:NetworkListDescription":
+		r = &NetworkListDescription{}
+	case "akamai:index/networkListSubscription:NetworkListSubscription":
+		r = &NetworkListSubscription{}
 	case "akamai:index/property:Property":
 		r = &Property{}
 	case "akamai:index/propertyActivation:PropertyActivation":
@@ -179,7 +183,17 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
+		"index/appSecAdvancedSettingsPragmaHeader",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
 		"index/appSecAdvancedSettingsPrefetch",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/appSecApiConstraintsProtection",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -189,12 +203,7 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
-		"index/appSecAttackGroupAction",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"akamai",
-		"index/appSecAttackGroupActionConditionException",
+		"index/appSecAttackGroup",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -209,17 +218,7 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
-		"index/appSecConfigurationClone",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"akamai",
 		"index/appSecConfigurationRename",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"akamai",
-		"index/appSecConfigurationVersionClone",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -254,17 +253,17 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
-		"index/appSecEvalRuleAction",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"akamai",
-		"index/appSecEvalRuleConditionException",
+		"index/appSecEvalRule",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/appSecIPGeo",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/appSecIPGeoProtection",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -319,12 +318,7 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
-		"index/appSecRuleAction",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"akamai",
-		"index/appSecRuleConditionException",
+		"index/appSecRule",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -335,16 +329,6 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/appSecSecurityPolicy",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"akamai",
-		"index/appSecSecurityPolicyClone",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"akamai",
-		"index/appSecSecurityPolicyProtections",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -390,6 +374,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/cpCode",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/cpsDvEnrollment",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/cpsDvValidation",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -440,6 +434,26 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/gtmResource",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/networkList",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/networkListActivations",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/networkListDescription",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/networkListSubscription",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -36,6 +36,9 @@ namespace Pulumi.Akamai
         [Output("gtmSection")]
         public Output<string?> GtmSection { get; private set; } = null!;
 
+        [Output("networklistSection")]
+        public Output<string?> NetworklistSection { get; private set; } = null!;
+
         [Output("papiSection")]
         public Output<string?> PapiSection { get; private set; } = null!;
 
@@ -108,6 +111,17 @@ namespace Pulumi.Akamai
 
         [Input("gtmSection")]
         public Input<string>? GtmSection { get; set; }
+
+        [Input("networklistSection")]
+        public Input<string>? NetworklistSection { get; set; }
+
+        [Input("networks", json: true)]
+        private InputList<Inputs.ProviderNetworkArgs>? _networks;
+        public InputList<Inputs.ProviderNetworkArgs> Networks
+        {
+            get => _networks ?? (_networks = new InputList<Inputs.ProviderNetworkArgs>());
+            set => _networks = value;
+        }
 
         [Input("papiSection")]
         public Input<string>? PapiSection { get; set; }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// Use the `akamai.AppSecSlowPost` data source to update the slow post protection settings for a given security configuration version and policy.
+    /// Use the `akamai.AppSecSlowPost` data source to update the slow post protection settings for a given security configuration and policy.
     /// 
     /// ## Example Usage
     /// 
@@ -31,7 +31,6 @@ namespace Pulumi.Akamai
     ///         var slowPost = new Akamai.AppSecSlowPost("slowPost", new Akamai.AppSecSlowPostArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
     ///             SecurityPolicyId = @var.Security_policy_id,
     ///             SlowRateAction = "alert",
     ///             SlowRateThresholdRate = 10,
@@ -74,19 +73,13 @@ namespace Pulumi.Akamai
         /// The slow rate period value: the amount of time in seconds that the server should accept a request to determine whether a POST request is too slow.
         /// </summary>
         [Output("slowRateThresholdPeriod")]
-        public Output<int> SlowRateThresholdPeriod { get; private set; } = null!;
+        public Output<int?> SlowRateThresholdPeriod { get; private set; } = null!;
 
         /// <summary>
         /// The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
         /// </summary>
         [Output("slowRateThresholdRate")]
-        public Output<int> SlowRateThresholdRate { get; private set; } = null!;
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
+        public Output<int?> SlowRateThresholdRate { get; private set; } = null!;
 
 
         /// <summary>
@@ -161,20 +154,14 @@ namespace Pulumi.Akamai
         /// <summary>
         /// The slow rate period value: the amount of time in seconds that the server should accept a request to determine whether a POST request is too slow.
         /// </summary>
-        [Input("slowRateThresholdPeriod", required: true)]
-        public Input<int> SlowRateThresholdPeriod { get; set; } = null!;
+        [Input("slowRateThresholdPeriod")]
+        public Input<int>? SlowRateThresholdPeriod { get; set; }
 
         /// <summary>
         /// The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
         /// </summary>
-        [Input("slowRateThresholdRate", required: true)]
-        public Input<int> SlowRateThresholdRate { get; set; } = null!;
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
+        [Input("slowRateThresholdRate")]
+        public Input<int>? SlowRateThresholdRate { get; set; }
 
         public AppSecSlowPostArgs()
         {
@@ -218,12 +205,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("slowRateThresholdRate")]
         public Input<int>? SlowRateThresholdRate { get; set; }
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecSlowPostState()
         {

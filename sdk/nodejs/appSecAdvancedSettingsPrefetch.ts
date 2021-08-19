@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  * });
  * const prefetch = new akamai.AppSecAdvancedSettingsPrefetch("prefetch", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     enableAppLayer: false,
  *     allExtensions: true,
  *     enableRateControls: false,
@@ -76,10 +75,6 @@ export class AppSecAdvancedSettingsPrefetch extends pulumi.CustomResource {
      * The specific extensions for which to enable prefetch requests. If `allExtensions` is True, `extensions` must be an empty list.
      */
     public readonly extensions!: pulumi.Output<string[]>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecAdvancedSettingsPrefetch resource with the given unique name, arguments, and options.
@@ -99,7 +94,6 @@ export class AppSecAdvancedSettingsPrefetch extends pulumi.CustomResource {
             inputs["enableAppLayer"] = state ? state.enableAppLayer : undefined;
             inputs["enableRateControls"] = state ? state.enableRateControls : undefined;
             inputs["extensions"] = state ? state.extensions : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecAdvancedSettingsPrefetchArgs | undefined;
             if ((!args || args.allExtensions === undefined) && !opts.urn) {
@@ -117,15 +111,11 @@ export class AppSecAdvancedSettingsPrefetch extends pulumi.CustomResource {
             if ((!args || args.extensions === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'extensions'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["allExtensions"] = args ? args.allExtensions : undefined;
             inputs["configId"] = args ? args.configId : undefined;
             inputs["enableAppLayer"] = args ? args.enableAppLayer : undefined;
             inputs["enableRateControls"] = args ? args.enableRateControls : undefined;
             inputs["extensions"] = args ? args.extensions : undefined;
-            inputs["version"] = args ? args.version : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -158,10 +148,6 @@ export interface AppSecAdvancedSettingsPrefetchState {
      * The specific extensions for which to enable prefetch requests. If `allExtensions` is True, `extensions` must be an empty list.
      */
     extensions?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -188,8 +174,4 @@ export interface AppSecAdvancedSettingsPrefetchArgs {
      * The specific extensions for which to enable prefetch requests. If `allExtensions` is True, `extensions` must be an empty list.
      */
     extensions: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

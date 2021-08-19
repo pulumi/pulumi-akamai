@@ -15,19 +15,16 @@ class AppSecReputationProtectionArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[int],
                  enabled: pulumi.Input[bool],
-                 security_policy_id: pulumi.Input[str],
-                 version: pulumi.Input[int]):
+                 security_policy_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecReputationProtection resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[bool] enabled: Whether to enable reputation controls: either `true` or `false`.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "security_policy_id", security_policy_id)
-        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -65,18 +62,6 @@ class AppSecReputationProtectionArgs:
     def security_policy_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "security_policy_id", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Input[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: pulumi.Input[int]):
-        pulumi.set(self, "version", value)
-
 
 @pulumi.input_type
 class _AppSecReputationProtectionState:
@@ -84,15 +69,13 @@ class _AppSecReputationProtectionState:
                  config_id: Optional[pulumi.Input[int]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  output_text: Optional[pulumi.Input[str]] = None,
-                 security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None):
+                 security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecReputationProtection resources.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[bool] enabled: Whether to enable reputation controls: either `true` or `false`.
         :param pulumi.Input[str] output_text: A tabular display showing the current protection settings.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -102,8 +85,6 @@ class _AppSecReputationProtectionState:
             pulumi.set(__self__, "output_text", output_text)
         if security_policy_id is not None:
             pulumi.set(__self__, "security_policy_id", security_policy_id)
-        if version is not None:
-            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -153,18 +134,6 @@ class _AppSecReputationProtectionState:
     def security_policy_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "security_policy_id", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "version", value)
-
 
 class AppSecReputationProtection(pulumi.CustomResource):
     @overload
@@ -174,10 +143,9 @@ class AppSecReputationProtection(pulumi.CustomResource):
                  config_id: Optional[pulumi.Input[int]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        Use the `AppSecReputationProtection` resource to enable or disable reputation protection for a given configuration version and security policy.
+        Use the `AppSecReputationProtection` resource to enable or disable reputation protection for a given configuration and security policy.
 
         ## Example Usage
 
@@ -190,7 +158,6 @@ class AppSecReputationProtection(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
         protection = akamai.AppSecReputationProtection("protection",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             security_policy_id=var["security_policy_id"],
             enabled=var["enabled"])
         ```
@@ -200,7 +167,6 @@ class AppSecReputationProtection(pulumi.CustomResource):
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[bool] enabled: Whether to enable reputation controls: either `true` or `false`.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         ...
     @overload
@@ -209,7 +175,7 @@ class AppSecReputationProtection(pulumi.CustomResource):
                  args: AppSecReputationProtectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `AppSecReputationProtection` resource to enable or disable reputation protection for a given configuration version and security policy.
+        Use the `AppSecReputationProtection` resource to enable or disable reputation protection for a given configuration and security policy.
 
         ## Example Usage
 
@@ -222,7 +188,6 @@ class AppSecReputationProtection(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
         protection = akamai.AppSecReputationProtection("protection",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             security_policy_id=var["security_policy_id"],
             enabled=var["enabled"])
         ```
@@ -245,7 +210,6 @@ class AppSecReputationProtection(pulumi.CustomResource):
                  config_id: Optional[pulumi.Input[int]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
@@ -267,9 +231,6 @@ class AppSecReputationProtection(pulumi.CustomResource):
             if security_policy_id is None and not opts.urn:
                 raise TypeError("Missing required property 'security_policy_id'")
             __props__.__dict__["security_policy_id"] = security_policy_id
-            if version is None and not opts.urn:
-                raise TypeError("Missing required property 'version'")
-            __props__.__dict__["version"] = version
             __props__.__dict__["output_text"] = None
         super(AppSecReputationProtection, __self__).__init__(
             'akamai:index/appSecReputationProtection:AppSecReputationProtection',
@@ -284,8 +245,7 @@ class AppSecReputationProtection(pulumi.CustomResource):
             config_id: Optional[pulumi.Input[int]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             output_text: Optional[pulumi.Input[str]] = None,
-            security_policy_id: Optional[pulumi.Input[str]] = None,
-            version: Optional[pulumi.Input[int]] = None) -> 'AppSecReputationProtection':
+            security_policy_id: Optional[pulumi.Input[str]] = None) -> 'AppSecReputationProtection':
         """
         Get an existing AppSecReputationProtection resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -297,7 +257,6 @@ class AppSecReputationProtection(pulumi.CustomResource):
         :param pulumi.Input[bool] enabled: Whether to enable reputation controls: either `true` or `false`.
         :param pulumi.Input[str] output_text: A tabular display showing the current protection settings.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -307,7 +266,6 @@ class AppSecReputationProtection(pulumi.CustomResource):
         __props__.__dict__["enabled"] = enabled
         __props__.__dict__["output_text"] = output_text
         __props__.__dict__["security_policy_id"] = security_policy_id
-        __props__.__dict__["version"] = version
         return AppSecReputationProtection(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -341,12 +299,4 @@ class AppSecReputationProtection(pulumi.CustomResource):
         The ID of the security policy to use.
         """
         return pulumi.get(self, "security_policy_id")
-
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Output[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
 

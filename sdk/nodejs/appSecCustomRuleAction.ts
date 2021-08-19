@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  * });
  * const createCustomRuleAction = new akamai.AppSecCustomRuleAction("createCustomRuleAction", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     securityPolicyId: "crAP_75829",
  *     customRuleId: 12345,
  *     customRuleAction: "alert",
@@ -72,10 +71,6 @@ export class AppSecCustomRuleAction extends pulumi.CustomResource {
      * The security policy to use.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecCustomRuleAction resource with the given unique name, arguments, and options.
@@ -94,7 +89,6 @@ export class AppSecCustomRuleAction extends pulumi.CustomResource {
             inputs["customRuleAction"] = state ? state.customRuleAction : undefined;
             inputs["customRuleId"] = state ? state.customRuleId : undefined;
             inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecCustomRuleActionArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -109,14 +103,10 @@ export class AppSecCustomRuleAction extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["customRuleAction"] = args ? args.customRuleAction : undefined;
             inputs["customRuleId"] = args ? args.customRuleId : undefined;
             inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            inputs["version"] = args ? args.version : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -145,10 +135,6 @@ export interface AppSecCustomRuleActionState {
      * The security policy to use.
      */
     securityPolicyId?: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -171,8 +157,4 @@ export interface AppSecCustomRuleActionArgs {
      * The security policy to use.
      */
     securityPolicyId: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

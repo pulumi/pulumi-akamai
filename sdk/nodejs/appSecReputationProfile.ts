@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecReputationProfile` resource to create or modify a reputation profile for a specific security configuration version.
+ * Use the `akamai.AppSecReputationProfile` resource to create or modify a reputation profile for a specific security configuration.
  *
  * ## Example Usage
  *
@@ -22,7 +22,6 @@ import * as utilities from "./utilities";
  * // USE CASE: user wants to create a reputation profile for a given configuration and version, using a JSON definition
  * const reputationProfile = new akamai.AppSecReputationProfile("reputationProfile", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     reputationProfile: fs.readFileSync(`${path.module}/reputation_profile.json`),
  * });
  * export const reputationProfileId = akamai_appsec_reputation_profile.reputation_profile_id;
@@ -68,10 +67,6 @@ export class AppSecReputationProfile extends pulumi.CustomResource {
      * The ID of the newly created or modified reputation profile.
      */
     public /*out*/ readonly reputationProfileId!: pulumi.Output<number>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecReputationProfile resource with the given unique name, arguments, and options.
@@ -89,7 +84,6 @@ export class AppSecReputationProfile extends pulumi.CustomResource {
             inputs["configId"] = state ? state.configId : undefined;
             inputs["reputationProfile"] = state ? state.reputationProfile : undefined;
             inputs["reputationProfileId"] = state ? state.reputationProfileId : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecReputationProfileArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -98,12 +92,8 @@ export class AppSecReputationProfile extends pulumi.CustomResource {
             if ((!args || args.reputationProfile === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'reputationProfile'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["reputationProfile"] = args ? args.reputationProfile : undefined;
-            inputs["version"] = args ? args.version : undefined;
             inputs["reputationProfileId"] = undefined /*out*/;
         }
         if (!opts.version) {
@@ -129,10 +119,6 @@ export interface AppSecReputationProfileState {
      * The ID of the newly created or modified reputation profile.
      */
     reputationProfileId?: pulumi.Input<number>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -147,8 +133,4 @@ export interface AppSecReputationProfileArgs {
      * The name of a file containing a JSON-formatted definition of the reputation profile. ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles))
      */
     reputationProfile: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

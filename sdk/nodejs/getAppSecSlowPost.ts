@@ -6,7 +6,7 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecSlowPost` data source to retrieve the slow post protection settings for a given security configuration version and policy.
+ * Use the `akamai.AppSecSlowPost` data source to retrieve the slow post protection settings for a given security configuration and policy.
  *
  * ## Example Usage
  *
@@ -19,9 +19,8 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: _var.security_configuration,
  * });
- * const slowPost = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecSlowPost({
+ * const slowPost = configuration.then(configuration => akamai.getAppSecSlowPost({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  *     securityPolicyId: _var.security_policy_id,
  * }));
  * export const slowPostOutputText = slowPost.then(slowPost => slowPost.outputText);
@@ -38,7 +37,6 @@ export function getAppSecSlowPost(args: GetAppSecSlowPostArgs, opts?: pulumi.Inv
     return pulumi.runtime.invoke("akamai:index/getAppSecSlowPost:getAppSecSlowPost", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
-        "version": args.version,
     }, opts);
 }
 
@@ -54,10 +52,6 @@ export interface GetAppSecSlowPostArgs {
      * The ID of the security policy to use
      */
     securityPolicyId: string;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: number;
 }
 
 /**
@@ -69,10 +63,10 @@ export interface GetAppSecSlowPostResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly json: string;
     /**
      * A tabular display including the following columns:
      */
     readonly outputText: string;
     readonly securityPolicyId: string;
-    readonly version: number;
 }

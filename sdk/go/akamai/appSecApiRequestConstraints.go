@@ -17,14 +17,12 @@ type AppSecApiRequestConstraints struct {
 
 	// The action to assign to API request constraints: either `alert`, `deny`, or `none`.
 	Action pulumi.StringOutput `pulumi:"action"`
-	// The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
+	// The ID of the API endpoint to use.
 	ApiEndpointId pulumi.IntPtrOutput `pulumi:"apiEndpointId"`
 	// The ID of the security configuration to use.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecApiRequestConstraints registers a new resource with the given unique name, arguments, and options.
@@ -42,9 +40,6 @@ func NewAppSecApiRequestConstraints(ctx *pulumi.Context,
 	}
 	if args.SecurityPolicyId == nil {
 		return nil, errors.New("invalid value for required argument 'SecurityPolicyId'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecApiRequestConstraints
 	err := ctx.RegisterResource("akamai:index/appSecApiRequestConstraints:AppSecApiRequestConstraints", name, args, &resource, opts...)
@@ -70,27 +65,23 @@ func GetAppSecApiRequestConstraints(ctx *pulumi.Context,
 type appSecApiRequestConstraintsState struct {
 	// The action to assign to API request constraints: either `alert`, `deny`, or `none`.
 	Action *string `pulumi:"action"`
-	// The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
+	// The ID of the API endpoint to use.
 	ApiEndpointId *int `pulumi:"apiEndpointId"`
 	// The ID of the security configuration to use.
 	ConfigId *int `pulumi:"configId"`
 	// The ID of the security policy to use.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecApiRequestConstraintsState struct {
 	// The action to assign to API request constraints: either `alert`, `deny`, or `none`.
 	Action pulumi.StringPtrInput
-	// The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
+	// The ID of the API endpoint to use.
 	ApiEndpointId pulumi.IntPtrInput
 	// The ID of the security configuration to use.
 	ConfigId pulumi.IntPtrInput
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecApiRequestConstraintsState) ElementType() reflect.Type {
@@ -100,28 +91,24 @@ func (AppSecApiRequestConstraintsState) ElementType() reflect.Type {
 type appSecApiRequestConstraintsArgs struct {
 	// The action to assign to API request constraints: either `alert`, `deny`, or `none`.
 	Action string `pulumi:"action"`
-	// The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
+	// The ID of the API endpoint to use.
 	ApiEndpointId *int `pulumi:"apiEndpointId"`
 	// The ID of the security configuration to use.
 	ConfigId int `pulumi:"configId"`
 	// The ID of the security policy to use.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecApiRequestConstraints resource.
 type AppSecApiRequestConstraintsArgs struct {
 	// The action to assign to API request constraints: either `alert`, `deny`, or `none`.
 	Action pulumi.StringInput
-	// The ID of the API endpoint to use. If not supplied, the request constraint action will be updated for all APIs.
+	// The ID of the API endpoint to use.
 	ApiEndpointId pulumi.IntPtrInput
 	// The ID of the security configuration to use.
 	ConfigId pulumi.IntInput
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecApiRequestConstraintsArgs) ElementType() reflect.Type {

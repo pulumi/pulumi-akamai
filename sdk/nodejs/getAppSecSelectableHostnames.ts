@@ -6,7 +6,7 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecSelectableHostnames` data source to retrieve the list of hostnames that may be protected under a given security configuration version. You can specify the list to be retrieved either by supplying the name and version of a security configuration, or by supplying a group ID and contract ID.
+ * Use the `akamai.getAppSecSelectableHostnames` data source to retrieve the list of hostnames that may be protected under a given security configuration. You can specify the list to be retrieved either by supplying the name of a security configuration, or by supplying a group ID and contract ID.
  *
  * ## Example Usage
  *
@@ -19,9 +19,8 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: _var.security_configuration,
  * });
- * const selectableHostnamesAppSecSelectableHostnames = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecSelectableHostnames({
+ * const selectableHostnamesAppSecSelectableHostnames = configuration.then(configuration => akamai.getAppSecSelectableHostnames({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  * }));
  * export const selectableHostnames = selectableHostnamesAppSecSelectableHostnames.then(selectableHostnamesAppSecSelectableHostnames => selectableHostnamesAppSecSelectableHostnames.hostnames);
  * export const selectableHostnamesJson = selectableHostnamesAppSecSelectableHostnames.then(selectableHostnamesAppSecSelectableHostnames => selectableHostnamesAppSecSelectableHostnames.hostnamesJson);
@@ -50,7 +49,6 @@ export function getAppSecSelectableHostnames(args?: GetAppSecSelectableHostnames
         "configId": args.configId,
         "contractid": args.contractid,
         "groupid": args.groupid,
-        "version": args.version,
     }, opts);
 }
 
@@ -72,10 +70,6 @@ export interface GetAppSecSelectableHostnamesArgs {
      * The ID of the group to use.
      */
     groupid?: number;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: number;
 }
 
 /**
@@ -103,5 +97,4 @@ export interface GetAppSecSelectableHostnamesResult {
      * A tabular display of the selectable hostnames showing the name and configId of the security configuration under which the host is protected in production, or '-' if the host is not protected in production.
      */
     readonly outputText: string;
-    readonly version?: number;
 }

@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * The `resourceAkamaiAppsecCustomDeny` resource allows you to create a new custom deny action for a specific configuration version.
+ * The `resourceAkamaiAppsecCustomDeny` resource allows you to create a new custom deny action for a specific configuration.
  *
  * ## Example Usage
  *
@@ -21,7 +21,6 @@ import * as utilities from "./utilities";
  * });
  * const customDeny = new akamai.AppSecCustomDeny("customDeny", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     customDeny: fs.readFileSync(`${path.module}/custom_deny.json`),
  * });
  * export const customDenyId = customDeny.customDenyId;
@@ -67,10 +66,6 @@ export class AppSecCustomDeny extends pulumi.CustomResource {
      * custom_deny_id
      */
     public /*out*/ readonly customDenyId!: pulumi.Output<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecCustomDeny resource with the given unique name, arguments, and options.
@@ -88,7 +83,6 @@ export class AppSecCustomDeny extends pulumi.CustomResource {
             inputs["configId"] = state ? state.configId : undefined;
             inputs["customDeny"] = state ? state.customDeny : undefined;
             inputs["customDenyId"] = state ? state.customDenyId : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecCustomDenyArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -97,12 +91,8 @@ export class AppSecCustomDeny extends pulumi.CustomResource {
             if ((!args || args.customDeny === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'customDeny'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["customDeny"] = args ? args.customDeny : undefined;
-            inputs["version"] = args ? args.version : undefined;
             inputs["customDenyId"] = undefined /*out*/;
         }
         if (!opts.version) {
@@ -128,10 +118,6 @@ export interface AppSecCustomDenyState {
      * custom_deny_id
      */
     customDenyId?: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -146,8 +132,4 @@ export interface AppSecCustomDenyArgs {
      * The JSON-formatted definition of the custom deny action ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3)).
      */
     customDeny: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

@@ -6,7 +6,7 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecCustomDeny` data source to retrieve information about custom deny actions for a specific security configuration version, or about a particular custom deny action. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcustomdeny).
+ * Use the `akamai.AppSecCustomDeny` data source to retrieve information about custom deny actions for a specific security configuration, or about a particular custom deny action. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcustomdeny).
  *
  * ## Example Usage
  *
@@ -19,15 +19,13 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: _var.security_configuration,
  * });
- * const customDenyList = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecCustomDeny({
+ * const customDenyList = configuration.then(configuration => akamai.getAppSecCustomDeny({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  * }));
  * export const customDenyListOutput = customDenyList.then(customDenyList => customDenyList.outputText);
  * export const customDenyListJson = customDenyList.then(customDenyList => customDenyList.json);
- * const customDeny = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecCustomDeny({
+ * const customDeny = configuration.then(configuration => akamai.getAppSecCustomDeny({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  *     customDenyId: _var.custom_deny_id,
  * }));
  * export const customDenyJson = customDeny.then(customDeny => customDeny.json);
@@ -45,7 +43,6 @@ export function getAppSecCustomDeny(args: GetAppSecCustomDenyArgs, opts?: pulumi
     return pulumi.runtime.invoke("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", {
         "configId": args.configId,
         "customDenyId": args.customDenyId,
-        "version": args.version,
     }, opts);
 }
 
@@ -61,10 +58,6 @@ export interface GetAppSecCustomDenyArgs {
      * The ID of a specific custom deny action.
      */
     customDenyId?: string;
-    /**
-     * The version number of the configuration to use.
-     */
-    version: number;
 }
 
 /**
@@ -85,5 +78,4 @@ export interface GetAppSecCustomDenyResult {
      * A tabular display showing the custom deny action information.
      */
     readonly outputText: string;
-    readonly version: number;
 }

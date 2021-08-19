@@ -31,7 +31,6 @@ namespace Pulumi.Akamai
     ///         var securityPolicyCreateAppSecSecurityPolicy = new Akamai.AppSecSecurityPolicy("securityPolicyCreateAppSecSecurityPolicy", new Akamai.AppSecSecurityPolicyArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
     ///             DefaultSettings = @var.Default_settings,
     ///             SecurityPolicyName = @var.Policy_name,
     ///             SecurityPolicyPrefix = @var.Policy_prefix,
@@ -54,6 +53,12 @@ namespace Pulumi.Akamai
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
+        /// The ID of the security policy to clone from.
+        /// </summary>
+        [Output("createFromSecurityPolicyId")]
+        public Output<string?> CreateFromSecurityPolicyId { get; private set; } = null!;
+
+        /// <summary>
         /// Whether the new policy should use the default settings. If not supplied, defaults to true.
         /// </summary>
         [Output("defaultSettings")]
@@ -71,14 +76,11 @@ namespace Pulumi.Akamai
         [Output("securityPolicyName")]
         public Output<string> SecurityPolicyName { get; private set; } = null!;
 
+        /// <summary>
+        /// The four-character alphanumeric string prefix for the policy ID.
+        /// </summary>
         [Output("securityPolicyPrefix")]
         public Output<string> SecurityPolicyPrefix { get; private set; } = null!;
-
-        /// <summary>
-        /// The version number of the configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -133,6 +135,12 @@ namespace Pulumi.Akamai
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
+        /// The ID of the security policy to clone from.
+        /// </summary>
+        [Input("createFromSecurityPolicyId")]
+        public Input<string>? CreateFromSecurityPolicyId { get; set; }
+
+        /// <summary>
         /// Whether the new policy should use the default settings. If not supplied, defaults to true.
         /// </summary>
         [Input("defaultSettings")]
@@ -144,14 +152,11 @@ namespace Pulumi.Akamai
         [Input("securityPolicyName", required: true)]
         public Input<string> SecurityPolicyName { get; set; } = null!;
 
+        /// <summary>
+        /// The four-character alphanumeric string prefix for the policy ID.
+        /// </summary>
         [Input("securityPolicyPrefix", required: true)]
         public Input<string> SecurityPolicyPrefix { get; set; } = null!;
-
-        /// <summary>
-        /// The version number of the configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
 
         public AppSecSecurityPolicyArgs()
         {
@@ -165,6 +170,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
+
+        /// <summary>
+        /// The ID of the security policy to clone from.
+        /// </summary>
+        [Input("createFromSecurityPolicyId")]
+        public Input<string>? CreateFromSecurityPolicyId { get; set; }
 
         /// <summary>
         /// Whether the new policy should use the default settings. If not supplied, defaults to true.
@@ -184,14 +195,11 @@ namespace Pulumi.Akamai
         [Input("securityPolicyName")]
         public Input<string>? SecurityPolicyName { get; set; }
 
+        /// <summary>
+        /// The four-character alphanumeric string prefix for the policy ID.
+        /// </summary>
         [Input("securityPolicyPrefix")]
         public Input<string>? SecurityPolicyPrefix { get; set; }
-
-        /// <summary>
-        /// The version number of the configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecSecurityPolicyState()
         {

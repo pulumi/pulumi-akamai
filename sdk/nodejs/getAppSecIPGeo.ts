@@ -19,9 +19,8 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: _var.security_configuration,
  * });
- * const ipGeo = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecIPGeo({
+ * const ipGeo = configuration.then(configuration => akamai.getAppSecIPGeo({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  *     securityPolicyId: _var.security_policy_id,
  * }));
  * export const ipGeoMode = ipGeo.then(ipGeo => ipGeo.mode);
@@ -41,7 +40,6 @@ export function getAppSecIPGeo(args: GetAppSecIPGeoArgs, opts?: pulumi.InvokeOpt
     return pulumi.runtime.invoke("akamai:index/getAppSecIPGeo:getAppSecIPGeo", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
-        "version": args.version,
     }, opts);
 }
 
@@ -57,10 +55,6 @@ export interface GetAppSecIPGeoArgs {
      * The ID of the security policy to use.
      */
     securityPolicyId: string;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: number;
 }
 
 /**
@@ -93,5 +87,4 @@ export interface GetAppSecIPGeoResult {
      */
     readonly outputText: string;
     readonly securityPolicyId: string;
-    readonly version: number;
 }

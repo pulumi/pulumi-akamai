@@ -31,7 +31,6 @@ namespace Pulumi.Akamai
     ///         var evalOperation = new Akamai.AppSecEval("evalOperation", new Akamai.AppSecEvalArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
     ///             SecurityPolicyId = @var.Security_policy_id,
     ///             EvalOperation = @var.Eval_operation,
     ///         });
@@ -92,22 +91,10 @@ namespace Pulumi.Akamai
         public Output<string> ExpirationDate { get; private set; } = null!;
 
         /// <summary>
-        /// Text Export representation
-        /// </summary>
-        [Output("outputText")]
-        public Output<string> OutputText { get; private set; } = null!;
-
-        /// <summary>
         /// The ID of the security policy to use.
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -173,12 +160,6 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
-
         public AppSecEvalArgs()
         {
         }
@@ -223,22 +204,10 @@ namespace Pulumi.Akamai
         public Input<string>? ExpirationDate { get; set; }
 
         /// <summary>
-        /// Text Export representation
-        /// </summary>
-        [Input("outputText")]
-        public Input<string>? OutputText { get; set; }
-
-        /// <summary>
         /// The ID of the security policy to use.
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecEvalState()
         {

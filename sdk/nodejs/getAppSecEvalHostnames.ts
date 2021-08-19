@@ -6,7 +6,7 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecEvalHostnames` data source to retrieve the evaluation hostnames for a configuration version. Evaluation mode for hostnames is only available for Web Application Protector. Run hostnames in evaluation mode to see how your configuration settings protect traffic for that hostname before adding a hostname directly to a live configuration. An evaluation period lasts four weeks unless you stop the evaluation. Once you begin, the hostnames you evaluate start responding to traffic as if they are your current hostnames. However, instead of taking an action the evaluation hostnames log which action they would have taken if they were your actively-protected hostnames and not a test.
+ * Use the `akamai.AppSecEvalHostnames` data source to retrieve the evaluation hostnames for a configuration. Evaluation mode for hostnames is only available for Web Application Protector. Run hostnames in evaluation mode to see how your configuration settings protect traffic for that hostname before adding a hostname directly to a live configuration. An evaluation period lasts four weeks unless you stop the evaluation. Once you begin, the hostnames you evaluate start responding to traffic as if they are your current hostnames. However, instead of taking an action the evaluation hostnames log which action they would have taken if they were your actively-protected hostnames and not a test.
  *
  * ## Example Usage
  *
@@ -19,9 +19,8 @@ import * as utilities from "./utilities";
  * const configuration = akamai.getAppSecConfiguration({
  *     name: _var.security_configuration,
  * });
- * const evalHostnamesAppSecEvalHostnames = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecEvalHostnames({
+ * const evalHostnamesAppSecEvalHostnames = configuration.then(configuration => akamai.getAppSecEvalHostnames({
  *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
  * }));
  * export const evalHostnames = evalHostnamesAppSecEvalHostnames.then(evalHostnamesAppSecEvalHostnames => evalHostnamesAppSecEvalHostnames.hostnames);
  * export const evalHostnamesOutput = evalHostnamesAppSecEvalHostnames.then(evalHostnamesAppSecEvalHostnames => evalHostnamesAppSecEvalHostnames.outputText);
@@ -38,7 +37,6 @@ export function getAppSecEvalHostnames(args: GetAppSecEvalHostnamesArgs, opts?: 
     }
     return pulumi.runtime.invoke("akamai:index/getAppSecEvalHostnames:getAppSecEvalHostnames", {
         "configId": args.configId,
-        "version": args.version,
     }, opts);
 }
 
@@ -50,10 +48,6 @@ export interface GetAppSecEvalHostnamesArgs {
      * The ID of the security configuration to use.
      */
     configId: number;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: number;
 }
 
 /**
@@ -77,5 +71,4 @@ export interface GetAppSecEvalHostnamesResult {
      * A tabular display showing the evaluation hostnames.
      */
     readonly outputText: string;
-    readonly version: number;
 }

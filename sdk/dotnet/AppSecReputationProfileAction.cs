@@ -31,7 +31,6 @@ namespace Pulumi.Akamai
     ///         var appsecReputationProfileAction = new Akamai.AppSecReputationProfileAction("appsecReputationProfileAction", new Akamai.AppSecReputationProfileActionArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
     ///             SecurityPolicyId = @var.Security_policy_id,
     ///             ReputationProfileId = akamai_appsec_reputation_profile.Reputation_profile.Id,
     ///             Action = "alert",
@@ -73,12 +72,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -150,12 +143,6 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
-
         public AppSecReputationProfileActionArgs()
         {
         }
@@ -186,12 +173,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecReputationProfileActionState()
         {

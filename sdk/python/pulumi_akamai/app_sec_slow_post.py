@@ -16,28 +16,27 @@ class AppSecSlowPostArgs:
                  config_id: pulumi.Input[int],
                  security_policy_id: pulumi.Input[str],
                  slow_rate_action: pulumi.Input[str],
-                 slow_rate_threshold_period: pulumi.Input[int],
-                 slow_rate_threshold_rate: pulumi.Input[int],
-                 version: pulumi.Input[int],
-                 duration_threshold_timeout: Optional[pulumi.Input[int]] = None):
+                 duration_threshold_timeout: Optional[pulumi.Input[int]] = None,
+                 slow_rate_threshold_period: Optional[pulumi.Input[int]] = None,
+                 slow_rate_threshold_rate: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a AppSecSlowPost resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
         :param pulumi.Input[str] slow_rate_action: The action that the rule should trigger (either `alert` or `abort`).
+        :param pulumi.Input[int] duration_threshold_timeout: The time in seconds before the first eight kilobytes of the POST body must be received to avoid triggering the specified `action`.
         :param pulumi.Input[int] slow_rate_threshold_period: The slow rate period value: the amount of time in seconds that the server should accept a request to determine whether a POST request is too slow.
         :param pulumi.Input[int] slow_rate_threshold_rate: The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
-        :param pulumi.Input[int] duration_threshold_timeout: The time in seconds before the first eight kilobytes of the POST body must be received to avoid triggering the specified `action`.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "security_policy_id", security_policy_id)
         pulumi.set(__self__, "slow_rate_action", slow_rate_action)
-        pulumi.set(__self__, "slow_rate_threshold_period", slow_rate_threshold_period)
-        pulumi.set(__self__, "slow_rate_threshold_rate", slow_rate_threshold_rate)
-        pulumi.set(__self__, "version", version)
         if duration_threshold_timeout is not None:
             pulumi.set(__self__, "duration_threshold_timeout", duration_threshold_timeout)
+        if slow_rate_threshold_period is not None:
+            pulumi.set(__self__, "slow_rate_threshold_period", slow_rate_threshold_period)
+        if slow_rate_threshold_rate is not None:
+            pulumi.set(__self__, "slow_rate_threshold_rate", slow_rate_threshold_rate)
 
     @property
     @pulumi.getter(name="configId")
@@ -76,42 +75,6 @@ class AppSecSlowPostArgs:
         pulumi.set(self, "slow_rate_action", value)
 
     @property
-    @pulumi.getter(name="slowRateThresholdPeriod")
-    def slow_rate_threshold_period(self) -> pulumi.Input[int]:
-        """
-        The slow rate period value: the amount of time in seconds that the server should accept a request to determine whether a POST request is too slow.
-        """
-        return pulumi.get(self, "slow_rate_threshold_period")
-
-    @slow_rate_threshold_period.setter
-    def slow_rate_threshold_period(self, value: pulumi.Input[int]):
-        pulumi.set(self, "slow_rate_threshold_period", value)
-
-    @property
-    @pulumi.getter(name="slowRateThresholdRate")
-    def slow_rate_threshold_rate(self) -> pulumi.Input[int]:
-        """
-        The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
-        """
-        return pulumi.get(self, "slow_rate_threshold_rate")
-
-    @slow_rate_threshold_rate.setter
-    def slow_rate_threshold_rate(self, value: pulumi.Input[int]):
-        pulumi.set(self, "slow_rate_threshold_rate", value)
-
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Input[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: pulumi.Input[int]):
-        pulumi.set(self, "version", value)
-
-    @property
     @pulumi.getter(name="durationThresholdTimeout")
     def duration_threshold_timeout(self) -> Optional[pulumi.Input[int]]:
         """
@@ -123,6 +86,30 @@ class AppSecSlowPostArgs:
     def duration_threshold_timeout(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "duration_threshold_timeout", value)
 
+    @property
+    @pulumi.getter(name="slowRateThresholdPeriod")
+    def slow_rate_threshold_period(self) -> Optional[pulumi.Input[int]]:
+        """
+        The slow rate period value: the amount of time in seconds that the server should accept a request to determine whether a POST request is too slow.
+        """
+        return pulumi.get(self, "slow_rate_threshold_period")
+
+    @slow_rate_threshold_period.setter
+    def slow_rate_threshold_period(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "slow_rate_threshold_period", value)
+
+    @property
+    @pulumi.getter(name="slowRateThresholdRate")
+    def slow_rate_threshold_rate(self) -> Optional[pulumi.Input[int]]:
+        """
+        The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
+        """
+        return pulumi.get(self, "slow_rate_threshold_rate")
+
+    @slow_rate_threshold_rate.setter
+    def slow_rate_threshold_rate(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "slow_rate_threshold_rate", value)
+
 
 @pulumi.input_type
 class _AppSecSlowPostState:
@@ -132,8 +119,7 @@ class _AppSecSlowPostState:
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  slow_rate_action: Optional[pulumi.Input[str]] = None,
                  slow_rate_threshold_period: Optional[pulumi.Input[int]] = None,
-                 slow_rate_threshold_rate: Optional[pulumi.Input[int]] = None,
-                 version: Optional[pulumi.Input[int]] = None):
+                 slow_rate_threshold_rate: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering AppSecSlowPost resources.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
@@ -142,7 +128,6 @@ class _AppSecSlowPostState:
         :param pulumi.Input[str] slow_rate_action: The action that the rule should trigger (either `alert` or `abort`).
         :param pulumi.Input[int] slow_rate_threshold_period: The slow rate period value: the amount of time in seconds that the server should accept a request to determine whether a POST request is too slow.
         :param pulumi.Input[int] slow_rate_threshold_rate: The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -156,8 +141,6 @@ class _AppSecSlowPostState:
             pulumi.set(__self__, "slow_rate_threshold_period", slow_rate_threshold_period)
         if slow_rate_threshold_rate is not None:
             pulumi.set(__self__, "slow_rate_threshold_rate", slow_rate_threshold_rate)
-        if version is not None:
-            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -231,18 +214,6 @@ class _AppSecSlowPostState:
     def slow_rate_threshold_rate(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "slow_rate_threshold_rate", value)
 
-    @property
-    @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "version", value)
-
 
 class AppSecSlowPost(pulumi.CustomResource):
     @overload
@@ -255,10 +226,9 @@ class AppSecSlowPost(pulumi.CustomResource):
                  slow_rate_action: Optional[pulumi.Input[str]] = None,
                  slow_rate_threshold_period: Optional[pulumi.Input[int]] = None,
                  slow_rate_threshold_rate: Optional[pulumi.Input[int]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        Use the `AppSecSlowPost` data source to update the slow post protection settings for a given security configuration version and policy.
+        Use the `AppSecSlowPost` data source to update the slow post protection settings for a given security configuration and policy.
 
         ## Example Usage
 
@@ -271,7 +241,6 @@ class AppSecSlowPost(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
         slow_post = akamai.AppSecSlowPost("slowPost",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             security_policy_id=var["security_policy_id"],
             slow_rate_action="alert",
             slow_rate_threshold_rate=10,
@@ -287,7 +256,6 @@ class AppSecSlowPost(pulumi.CustomResource):
         :param pulumi.Input[str] slow_rate_action: The action that the rule should trigger (either `alert` or `abort`).
         :param pulumi.Input[int] slow_rate_threshold_period: The slow rate period value: the amount of time in seconds that the server should accept a request to determine whether a POST request is too slow.
         :param pulumi.Input[int] slow_rate_threshold_rate: The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         ...
     @overload
@@ -296,7 +264,7 @@ class AppSecSlowPost(pulumi.CustomResource):
                  args: AppSecSlowPostArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `AppSecSlowPost` data source to update the slow post protection settings for a given security configuration version and policy.
+        Use the `AppSecSlowPost` data source to update the slow post protection settings for a given security configuration and policy.
 
         ## Example Usage
 
@@ -309,7 +277,6 @@ class AppSecSlowPost(pulumi.CustomResource):
         configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
         slow_post = akamai.AppSecSlowPost("slowPost",
             config_id=configuration.config_id,
-            version=configuration.latest_version,
             security_policy_id=var["security_policy_id"],
             slow_rate_action="alert",
             slow_rate_threshold_rate=10,
@@ -338,7 +305,6 @@ class AppSecSlowPost(pulumi.CustomResource):
                  slow_rate_action: Optional[pulumi.Input[str]] = None,
                  slow_rate_threshold_period: Optional[pulumi.Input[int]] = None,
                  slow_rate_threshold_rate: Optional[pulumi.Input[int]] = None,
-                 version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
@@ -361,15 +327,8 @@ class AppSecSlowPost(pulumi.CustomResource):
             if slow_rate_action is None and not opts.urn:
                 raise TypeError("Missing required property 'slow_rate_action'")
             __props__.__dict__["slow_rate_action"] = slow_rate_action
-            if slow_rate_threshold_period is None and not opts.urn:
-                raise TypeError("Missing required property 'slow_rate_threshold_period'")
             __props__.__dict__["slow_rate_threshold_period"] = slow_rate_threshold_period
-            if slow_rate_threshold_rate is None and not opts.urn:
-                raise TypeError("Missing required property 'slow_rate_threshold_rate'")
             __props__.__dict__["slow_rate_threshold_rate"] = slow_rate_threshold_rate
-            if version is None and not opts.urn:
-                raise TypeError("Missing required property 'version'")
-            __props__.__dict__["version"] = version
         super(AppSecSlowPost, __self__).__init__(
             'akamai:index/appSecSlowPost:AppSecSlowPost',
             resource_name,
@@ -385,8 +344,7 @@ class AppSecSlowPost(pulumi.CustomResource):
             security_policy_id: Optional[pulumi.Input[str]] = None,
             slow_rate_action: Optional[pulumi.Input[str]] = None,
             slow_rate_threshold_period: Optional[pulumi.Input[int]] = None,
-            slow_rate_threshold_rate: Optional[pulumi.Input[int]] = None,
-            version: Optional[pulumi.Input[int]] = None) -> 'AppSecSlowPost':
+            slow_rate_threshold_rate: Optional[pulumi.Input[int]] = None) -> 'AppSecSlowPost':
         """
         Get an existing AppSecSlowPost resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -400,7 +358,6 @@ class AppSecSlowPost(pulumi.CustomResource):
         :param pulumi.Input[str] slow_rate_action: The action that the rule should trigger (either `alert` or `abort`).
         :param pulumi.Input[int] slow_rate_threshold_period: The slow rate period value: the amount of time in seconds that the server should accept a request to determine whether a POST request is too slow.
         :param pulumi.Input[int] slow_rate_threshold_rate: The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
-        :param pulumi.Input[int] version: The version number of the security configuration to use.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -412,7 +369,6 @@ class AppSecSlowPost(pulumi.CustomResource):
         __props__.__dict__["slow_rate_action"] = slow_rate_action
         __props__.__dict__["slow_rate_threshold_period"] = slow_rate_threshold_period
         __props__.__dict__["slow_rate_threshold_rate"] = slow_rate_threshold_rate
-        __props__.__dict__["version"] = version
         return AppSecSlowPost(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -449,7 +405,7 @@ class AppSecSlowPost(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="slowRateThresholdPeriod")
-    def slow_rate_threshold_period(self) -> pulumi.Output[int]:
+    def slow_rate_threshold_period(self) -> pulumi.Output[Optional[int]]:
         """
         The slow rate period value: the amount of time in seconds that the server should accept a request to determine whether a POST request is too slow.
         """
@@ -457,17 +413,9 @@ class AppSecSlowPost(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="slowRateThresholdRate")
-    def slow_rate_threshold_rate(self) -> pulumi.Output[int]:
+    def slow_rate_threshold_rate(self) -> pulumi.Output[Optional[int]]:
         """
         The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
         """
         return pulumi.get(self, "slow_rate_threshold_rate")
-
-    @property
-    @pulumi.getter
-    def version(self) -> pulumi.Output[int]:
-        """
-        The version number of the security configuration to use.
-        """
-        return pulumi.get(self, "version")
 

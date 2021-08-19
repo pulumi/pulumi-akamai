@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The `AppSecMatchTarget` resource allows you to create or modify a match target associated with a given security configuration version.
+// The `AppSecMatchTarget` resource allows you to create or modify a match target associated with a given security configuration.
 type AppSecMatchTarget struct {
 	pulumi.CustomResourceState
 
@@ -21,8 +21,6 @@ type AppSecMatchTarget struct {
 	MatchTarget pulumi.StringOutput `pulumi:"matchTarget"`
 	// The ID of the match target.
 	MatchTargetId pulumi.IntOutput `pulumi:"matchTargetId"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecMatchTarget registers a new resource with the given unique name, arguments, and options.
@@ -37,9 +35,6 @@ func NewAppSecMatchTarget(ctx *pulumi.Context,
 	}
 	if args.MatchTarget == nil {
 		return nil, errors.New("invalid value for required argument 'MatchTarget'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecMatchTarget
 	err := ctx.RegisterResource("akamai:index/appSecMatchTarget:AppSecMatchTarget", name, args, &resource, opts...)
@@ -69,8 +64,6 @@ type appSecMatchTargetState struct {
 	MatchTarget *string `pulumi:"matchTarget"`
 	// The ID of the match target.
 	MatchTargetId *int `pulumi:"matchTargetId"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecMatchTargetState struct {
@@ -80,8 +73,6 @@ type AppSecMatchTargetState struct {
 	MatchTarget pulumi.StringPtrInput
 	// The ID of the match target.
 	MatchTargetId pulumi.IntPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecMatchTargetState) ElementType() reflect.Type {
@@ -93,8 +84,6 @@ type appSecMatchTargetArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
 	MatchTarget string `pulumi:"matchTarget"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecMatchTarget resource.
@@ -103,8 +92,6 @@ type AppSecMatchTargetArgs struct {
 	ConfigId pulumi.IntInput
 	// The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
 	MatchTarget pulumi.StringInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecMatchTargetArgs) ElementType() reflect.Type {

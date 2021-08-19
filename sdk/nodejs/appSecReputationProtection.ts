@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecReputationProtection` resource to enable or disable reputation protection for a given configuration version and security policy.
+ * Use the `akamai.AppSecReputationProtection` resource to enable or disable reputation protection for a given configuration and security policy.
  *
  * ## Example Usage
  *
@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  * });
  * const protection = new akamai.AppSecReputationProtection("protection", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     securityPolicyId: _var.security_policy_id,
  *     enabled: _var.enabled,
  * });
@@ -70,10 +69,6 @@ export class AppSecReputationProtection extends pulumi.CustomResource {
      * The ID of the security policy to use.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecReputationProtection resource with the given unique name, arguments, and options.
@@ -92,7 +87,6 @@ export class AppSecReputationProtection extends pulumi.CustomResource {
             inputs["enabled"] = state ? state.enabled : undefined;
             inputs["outputText"] = state ? state.outputText : undefined;
             inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            inputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecReputationProtectionArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -104,13 +98,9 @@ export class AppSecReputationProtection extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["enabled"] = args ? args.enabled : undefined;
             inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            inputs["version"] = args ? args.version : undefined;
             inputs["outputText"] = undefined /*out*/;
         }
         if (!opts.version) {
@@ -140,10 +130,6 @@ export interface AppSecReputationProtectionState {
      * The ID of the security policy to use.
      */
     securityPolicyId?: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version?: pulumi.Input<number>;
 }
 
 /**
@@ -162,8 +148,4 @@ export interface AppSecReputationProtectionArgs {
      * The ID of the security policy to use.
      */
     securityPolicyId: pulumi.Input<string>;
-    /**
-     * The version number of the security configuration to use.
-     */
-    version: pulumi.Input<number>;
 }

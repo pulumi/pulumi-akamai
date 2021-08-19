@@ -32,17 +32,11 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = @var.Security_configuration,
         ///         }));
-        ///         var reputationAnalysis = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var reputationAnalysis = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfileAnalysis.InvokeAsync(new Akamai.GetAppSecReputationProfileAnalysisArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecReputationProfileAnalysis.InvokeAsync(new Akamai.GetAppSecReputationProfileAnalysisArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///                 SecurityPolicyId = @var.Security_policy_id,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///         })));
         ///         this.ReputationAnalysisText = reputationAnalysis.Apply(reputationAnalysis =&gt; reputationAnalysis.OutputText);
         ///         this.ReputationAnalysisJson = reputationAnalysis.Apply(reputationAnalysis =&gt; reputationAnalysis.Json);
         ///     }
@@ -75,12 +69,6 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecReputationProfileAnalysisArgs()
         {
         }
@@ -104,7 +92,6 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string OutputText;
         public readonly string SecurityPolicyId;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecReputationProfileAnalysisResult(
@@ -116,16 +103,13 @@ namespace Pulumi.Akamai
 
             string outputText,
 
-            string securityPolicyId,
-
-            int version)
+            string securityPolicyId)
         {
             ConfigId = configId;
             Id = id;
             Json = json;
             OutputText = outputText;
             SecurityPolicyId = securityPolicyId;
-            Version = version;
         }
     }
 }

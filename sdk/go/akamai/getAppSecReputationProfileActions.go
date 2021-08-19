@@ -25,8 +25,6 @@ type GetAppSecReputationProfileActionsArgs struct {
 	ReputationProfileId *int `pulumi:"reputationProfileId"`
 	// THe ID of the security policy to use.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecReputationProfileActions.
@@ -42,5 +40,4 @@ type GetAppSecReputationProfileActionsResult struct {
 	OutputText          string `pulumi:"outputText"`
 	ReputationProfileId *int   `pulumi:"reputationProfileId"`
 	SecurityPolicyId    string `pulumi:"securityPolicyId"`
-	Version             int    `pulumi:"version"`
 }

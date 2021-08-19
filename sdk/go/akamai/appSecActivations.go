@@ -36,7 +36,6 @@ import (
 // 		}
 // 		_, err = akamai.NewAppSecActivations(ctx, "activation", &akamai.AppSecActivationsArgs{
 // 			ConfigId: pulumi.Int(configuration.ConfigId),
-// 			Version:  pulumi.Int(configuration.LatestVersion),
 // 			Network:  pulumi.String("STAGING"),
 // 			Notes:    pulumi.String("TEST Notes"),
 // 			NotificationEmails: pulumi.StringArray{
@@ -65,8 +64,6 @@ type AppSecActivations struct {
 	NotificationEmails pulumi.StringArrayOutput `pulumi:"notificationEmails"`
 	// The status of the operation. The following values are may be returned:
 	Status pulumi.StringOutput `pulumi:"status"`
-	// The version number of the security configuration to use.
-	Version pulumi.IntOutput `pulumi:"version"`
 }
 
 // NewAppSecActivations registers a new resource with the given unique name, arguments, and options.
@@ -81,9 +78,6 @@ func NewAppSecActivations(ctx *pulumi.Context,
 	}
 	if args.NotificationEmails == nil {
 		return nil, errors.New("invalid value for required argument 'NotificationEmails'")
-	}
-	if args.Version == nil {
-		return nil, errors.New("invalid value for required argument 'Version'")
 	}
 	var resource AppSecActivations
 	err := ctx.RegisterResource("akamai:index/appSecActivations:AppSecActivations", name, args, &resource, opts...)
@@ -119,8 +113,6 @@ type appSecActivationsState struct {
 	NotificationEmails []string `pulumi:"notificationEmails"`
 	// The status of the operation. The following values are may be returned:
 	Status *string `pulumi:"status"`
-	// The version number of the security configuration to use.
-	Version *int `pulumi:"version"`
 }
 
 type AppSecActivationsState struct {
@@ -136,8 +128,6 @@ type AppSecActivationsState struct {
 	NotificationEmails pulumi.StringArrayInput
 	// The status of the operation. The following values are may be returned:
 	Status pulumi.StringPtrInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntPtrInput
 }
 
 func (AppSecActivationsState) ElementType() reflect.Type {
@@ -155,8 +145,6 @@ type appSecActivationsArgs struct {
 	Notes *string `pulumi:"notes"`
 	// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
 	NotificationEmails []string `pulumi:"notificationEmails"`
-	// The version number of the security configuration to use.
-	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a AppSecActivations resource.
@@ -171,8 +159,6 @@ type AppSecActivationsArgs struct {
 	Notes pulumi.StringPtrInput
 	// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
 	NotificationEmails pulumi.StringArrayInput
-	// The version number of the security configuration to use.
-	Version pulumi.IntInput
 }
 
 func (AppSecActivationsArgs) ElementType() reflect.Type {

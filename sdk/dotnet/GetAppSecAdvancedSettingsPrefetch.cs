@@ -32,16 +32,10 @@ namespace Pulumi.Akamai
         ///         {
         ///             Name = @var.Security_configuration,
         ///         }));
-        ///         var prefetch = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         var prefetch = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAdvancedSettingsPrefetch.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsPrefetchArgs
         ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecAdvancedSettingsPrefetch.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsPrefetchArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///             }));
-        ///         });
+        ///             ConfigId = configuration.ConfigId,
+        ///         })));
         ///         this.AdvancedSettingsPrefetchOutput = prefetch.Apply(prefetch =&gt; prefetch.OutputText);
         ///         this.AdvancedSettingsPrefetchJson = prefetch.Apply(prefetch =&gt; prefetch.Json);
         ///     }
@@ -68,12 +62,6 @@ namespace Pulumi.Akamai
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// The version number of the configuration.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecAdvancedSettingsPrefetchArgs()
         {
         }
@@ -96,7 +84,6 @@ namespace Pulumi.Akamai
         /// A tabular display showing the prefetch request settings.
         /// </summary>
         public readonly string OutputText;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecAdvancedSettingsPrefetchResult(
@@ -106,15 +93,12 @@ namespace Pulumi.Akamai
 
             string json,
 
-            string outputText,
-
-            int version)
+            string outputText)
         {
             ConfigId = configId;
             Id = id;
             Json = json;
             OutputText = outputText;
-            Version = version;
         }
     }
 }

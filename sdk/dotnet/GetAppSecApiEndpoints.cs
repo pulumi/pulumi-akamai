@@ -12,7 +12,7 @@ namespace Pulumi.Akamai
     public static class GetAppSecApiEndpoints
     {
         /// <summary>
-        /// Use the `akamai.getAppSecApiEndpoints` data source to retrieve information about the API Endpoints associated with a security policy or configuration version. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapiendpoints).
+        /// Use the `akamai.getAppSecApiEndpoints` data source to retrieve information about the API Endpoints associated with a security policy or configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapiendpoints).
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -32,7 +32,6 @@ namespace Pulumi.Akamai
         ///         {
         ///             ApiName = "TestEndpoint",
         ///             ConfigId = 43253,
-        ///             Version = 7,
         ///         }));
         ///     }
         /// 
@@ -66,12 +65,6 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId")]
         public string? SecurityPolicyId { get; set; }
 
-        /// <summary>
-        /// The version number of the configuration.
-        /// </summary>
-        [Input("version", required: true)]
-        public int Version { get; set; }
-
         public GetAppSecApiEndpointsArgs()
         {
         }
@@ -100,7 +93,6 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string OutputText;
         public readonly string? SecurityPolicyId;
-        public readonly int Version;
 
         [OutputConstructor]
         private GetAppSecApiEndpointsResult(
@@ -116,9 +108,7 @@ namespace Pulumi.Akamai
 
             string outputText,
 
-            string? securityPolicyId,
-
-            int version)
+            string? securityPolicyId)
         {
             ApiName = apiName;
             ConfigId = configId;
@@ -127,7 +117,6 @@ namespace Pulumi.Akamai
             Json = json;
             OutputText = outputText;
             SecurityPolicyId = securityPolicyId;
-            Version = version;
         }
     }
 }

@@ -21,7 +21,6 @@ import * as utilities from "./utilities";
  * // USE CASE: user wants to update the version notes of the latest version
  * const versionNotesAppSecVersionNodes = new akamai.AppSecVersionNodes("versionNotesAppSecVersionNodes", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     version: configuration.then(configuration => configuration.latestVersion),
  *     versionNotes: _var.version_notes,
  * });
  * export const versionNotes = versionNotesAppSecVersionNodes.outputText;
@@ -64,10 +63,6 @@ export class AppSecVersionNodes extends pulumi.CustomResource {
      */
     public /*out*/ readonly outputText!: pulumi.Output<string>;
     /**
-     * The version number of the configuration to use.
-     */
-    public readonly version!: pulumi.Output<number>;
-    /**
      * A string containing the version notes to be used.
      */
     public readonly versionNotes!: pulumi.Output<string>;
@@ -87,21 +82,16 @@ export class AppSecVersionNodes extends pulumi.CustomResource {
             const state = argsOrState as AppSecVersionNodesState | undefined;
             inputs["configId"] = state ? state.configId : undefined;
             inputs["outputText"] = state ? state.outputText : undefined;
-            inputs["version"] = state ? state.version : undefined;
             inputs["versionNotes"] = state ? state.versionNotes : undefined;
         } else {
             const args = argsOrState as AppSecVersionNodesArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'version'");
-            }
             if ((!args || args.versionNotes === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'versionNotes'");
             }
             inputs["configId"] = args ? args.configId : undefined;
-            inputs["version"] = args ? args.version : undefined;
             inputs["versionNotes"] = args ? args.versionNotes : undefined;
             inputs["outputText"] = undefined /*out*/;
         }
@@ -125,10 +115,6 @@ export interface AppSecVersionNodesState {
      */
     outputText?: pulumi.Input<string>;
     /**
-     * The version number of the configuration to use.
-     */
-    version?: pulumi.Input<number>;
-    /**
      * A string containing the version notes to be used.
      */
     versionNotes?: pulumi.Input<string>;
@@ -142,10 +128,6 @@ export interface AppSecVersionNodesArgs {
      * The configuration ID to use.
      */
     configId: pulumi.Input<number>;
-    /**
-     * The version number of the configuration to use.
-     */
-    version: pulumi.Input<number>;
     /**
      * A string containing the version notes to be used.
      */

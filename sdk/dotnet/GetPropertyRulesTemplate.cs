@@ -12,26 +12,26 @@ namespace Pulumi.Akamai
     public static class GetPropertyRulesTemplate
     {
         /// <summary>
-        /// The `akamai.getPropertyRulesTemplate` data source lets you configure a rule tree through the use of JSON template files. A rule tree is a nested block of property 
-        /// rules in JSON format that include match criteria and behaviors. 
+        /// The `akamai.getPropertyRulesTemplate` data source lets you configure a rule tree through the use of JSON template files. A rule tree is a nested block of property
+        /// rules in JSON format that include match criteria and behaviors.
         /// 
         /// With this data source you define the location of the JSON template files and provide information about any user-defined variables included within the templates.
         /// 
         /// The template format used in this data source matches those used in the [Property Manager CLI](https://learn.akamai.com/en-us/learn_akamai/getting_started_with_akamai_developers/developer_tools/getstartedpmcli.html#addanewsnippet).
         /// 
-        /// You can pass user-defined variables by supplying either: 
+        /// You can pass user-defined variables by supplying either:
         /// 
-        /// * paths to `variableDefinitions.json` and `variables.json` with syntax used in Property Manager CLI, or 
+        /// * paths to `variableDefinitions.json` and `variables.json` with syntax used in Property Manager CLI, or
         /// * a set of provider variables.
         /// 
         /// ## Referencing sub-files from a template
         /// 
-        /// You can split each template out into a series of smaller template files. To add 
-        /// them to this data source, you need to include them in the currently loaded file, 
-        /// which corresponds to the value in the `template_file` argument.  For example, to 
-        /// include `example-file.json` from the `property-snippets` directory, use this syntax 
+        /// You can split each template out into a series of smaller template files. To add
+        /// them to this data source, you need to include them in the currently loaded file,
+        /// which corresponds to the value in the `template_file` argument.  For example, to
+        /// include `example-file.json` from the `property-snippets` directory, use this syntax
         /// including the quotes: `"#include:example-file.json"`.  Make sure the `property-snippets` folder contains only `.json` files.
-        /// All files are resolved in relation to the directory that contains the starting template file. 
+        /// All files are resolved in relation to the directory that contains the starting template file.
         /// 
         /// ## Inserting variables in a template
         /// 

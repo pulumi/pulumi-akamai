@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// Use the `akamai.AppSecRateProtection` resource to enable or disable rate protection for a given configuration version and security policy.
+    /// Use the `akamai.AppSecRateProtection` resource to enable or disable rate protection for a given configuration and security policy.
     /// 
     /// ## Example Usage
     /// 
@@ -31,7 +31,6 @@ namespace Pulumi.Akamai
     ///         var protection = new Akamai.AppSecRateProtection("protection", new Akamai.AppSecRateProtectionArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Version = configuration.Apply(configuration =&gt; configuration.LatestVersion),
     ///             SecurityPolicyId = @var.Security_policy_id,
     ///             Enabled = @var.Enabled,
     ///         });
@@ -66,12 +65,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -137,12 +130,6 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
-
         public AppSecRateProtectionArgs()
         {
         }
@@ -173,12 +160,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
-
-        /// <summary>
-        /// The version number of the security configuration to use.
-        /// </summary>
-        [Input("version")]
-        public Input<int>? Version { get; set; }
 
         public AppSecRateProtectionState()
         {
