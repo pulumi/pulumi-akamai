@@ -19,7 +19,7 @@ class AppSecWafModeArgs:
         """
         The set of arguments for constructing a AppSecWafMode resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] mode: "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
+        :param pulumi.Input[str] mode: "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
         """
         pulumi.set(__self__, "config_id", config_id)
@@ -42,7 +42,7 @@ class AppSecWafModeArgs:
     @pulumi.getter
     def mode(self) -> pulumi.Input[str]:
         """
-        "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
+        "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
         """
         return pulumi.get(self, "mode")
 
@@ -81,7 +81,7 @@ class _AppSecWafModeState:
         :param pulumi.Input[str] eval_expiration_date: The date on which the evaluation period ends.
         :param pulumi.Input[str] eval_ruleset: The rule set being evaluated if any.
         :param pulumi.Input[str] eval_status: Either `enabled` if an evaluation is currently in progress, or `disabled` otherwise.
-        :param pulumi.Input[str] mode: "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
+        :param pulumi.Input[str] mode: "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
         :param pulumi.Input[str] output_text: A tabular display showing the current rule set, WAF mode and evaluation status (`enabled` if a rule set is currently being evaluated, `disabled` otherwise).
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
         """
@@ -166,7 +166,7 @@ class _AppSecWafModeState:
     @pulumi.getter
     def mode(self) -> Optional[pulumi.Input[str]]:
         """
-        "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
+        "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
         """
         return pulumi.get(self, "mode")
 
@@ -234,7 +234,7 @@ class AppSecWafMode(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] mode: "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
+        :param pulumi.Input[str] mode: "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
         """
         ...
@@ -340,7 +340,7 @@ class AppSecWafMode(pulumi.CustomResource):
         :param pulumi.Input[str] eval_expiration_date: The date on which the evaluation period ends.
         :param pulumi.Input[str] eval_ruleset: The rule set being evaluated if any.
         :param pulumi.Input[str] eval_status: Either `enabled` if an evaluation is currently in progress, or `disabled` otherwise.
-        :param pulumi.Input[str] mode: "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
+        :param pulumi.Input[str] mode: "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
         :param pulumi.Input[str] output_text: A tabular display showing the current rule set, WAF mode and evaluation status (`enabled` if a rule set is currently being evaluated, `disabled` otherwise).
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
         """
@@ -402,7 +402,7 @@ class AppSecWafMode(pulumi.CustomResource):
     @pulumi.getter
     def mode(self) -> pulumi.Output[str]:
         """
-        "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
+        "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
         """
         return pulumi.get(self, "mode")
 

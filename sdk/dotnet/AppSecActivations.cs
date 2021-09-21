@@ -65,10 +65,12 @@ namespace Pulumi.Akamai
         public Output<string?> Network { get; private set; } = null!;
 
         /// <summary>
-        /// An optional text note describing this operation.
+        /// A text note describing this operation. If no attributes were changed since the last time a security
+        /// configuration was updated using the akamai.AppSecActivations resource, an activation will not occur. To ensure an activation
+        /// is called, please update one of the attributes, e.g. the notes attribute.
         /// </summary>
         [Output("notes")]
-        public Output<string?> Notes { get; private set; } = null!;
+        public Output<string> Notes { get; private set; } = null!;
 
         /// <summary>
         /// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
@@ -147,10 +149,12 @@ namespace Pulumi.Akamai
         public Input<string>? Network { get; set; }
 
         /// <summary>
-        /// An optional text note describing this operation.
+        /// A text note describing this operation. If no attributes were changed since the last time a security
+        /// configuration was updated using the akamai.AppSecActivations resource, an activation will not occur. To ensure an activation
+        /// is called, please update one of the attributes, e.g. the notes attribute.
         /// </summary>
-        [Input("notes")]
-        public Input<string>? Notes { get; set; }
+        [Input("notes", required: true)]
+        public Input<string> Notes { get; set; } = null!;
 
         [Input("notificationEmails", required: true)]
         private InputList<string>? _notificationEmails;
@@ -190,7 +194,9 @@ namespace Pulumi.Akamai
         public Input<string>? Network { get; set; }
 
         /// <summary>
-        /// An optional text note describing this operation.
+        /// A text note describing this operation. If no attributes were changed since the last time a security
+        /// configuration was updated using the akamai.AppSecActivations resource, an activation will not occur. To ensure an activation
+        /// is called, please update one of the attributes, e.g. the notes attribute.
         /// </summary>
         [Input("notes")]
         public Input<string>? Notes { get; set; }

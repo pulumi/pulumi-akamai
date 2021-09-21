@@ -67,6 +67,12 @@ namespace Pulumi.Akamai
         public Output<string> CurrentRuleset { get; private set; } = null!;
 
         /// <summary>
+        /// __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
+        /// </summary>
+        [Output("evalMode")]
+        public Output<string?> EvalMode { get; private set; } = null!;
+
+        /// <summary>
         /// The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
         /// </summary>
         [Output("evalOperation")]
@@ -149,6 +155,12 @@ namespace Pulumi.Akamai
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
+        /// __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
+        /// </summary>
+        [Input("evalMode")]
+        public Input<string>? EvalMode { get; set; }
+
+        /// <summary>
         /// The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
         /// </summary>
         [Input("evalOperation", required: true)]
@@ -178,6 +190,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("currentRuleset")]
         public Input<string>? CurrentRuleset { get; set; }
+
+        /// <summary>
+        /// __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
+        /// </summary>
+        [Input("evalMode")]
+        public Input<string>? EvalMode { get; set; }
 
         /// <summary>
         /// The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.

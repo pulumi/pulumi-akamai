@@ -23,6 +23,7 @@ import (
 // * `contact` - (Required) One or more email addresses to send activation status changes to.
 // * `version` - (Required) The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latestVersion` attribute in the `Property` resource labeled `example`.
 // * `network` - (Optional) Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+// * `note` - (Optional) A log message you can assign to the activation request.
 // * `autoAcknowledgeRuleWarnings` - (Optional) Whether the activation should proceed despite any warnings. By default set to `true`.
 //
 // ### Deprecated arguments
@@ -51,6 +52,8 @@ type PropertyActivation struct {
 	Contacts                    pulumi.StringArrayOutput `pulumi:"contacts"`
 	Errors                      pulumi.StringOutput      `pulumi:"errors"`
 	Network                     pulumi.StringPtrOutput   `pulumi:"network"`
+	// assigns a log message to the activation request
+	Note pulumi.StringPtrOutput `pulumi:"note"`
 	// Deprecated: The setting "property" has been deprecated.
 	Property   pulumi.StringOutput                    `pulumi:"property"`
 	PropertyId pulumi.StringOutput                    `pulumi:"propertyId"`
@@ -109,6 +112,8 @@ type propertyActivationState struct {
 	Contacts                    []string `pulumi:"contacts"`
 	Errors                      *string  `pulumi:"errors"`
 	Network                     *string  `pulumi:"network"`
+	// assigns a log message to the activation request
+	Note *string `pulumi:"note"`
 	// Deprecated: The setting "property" has been deprecated.
 	Property   *string                       `pulumi:"property"`
 	PropertyId *string                       `pulumi:"propertyId"`
@@ -127,6 +132,8 @@ type PropertyActivationState struct {
 	Contacts                    pulumi.StringArrayInput
 	Errors                      pulumi.StringPtrInput
 	Network                     pulumi.StringPtrInput
+	// assigns a log message to the activation request
+	Note pulumi.StringPtrInput
 	// Deprecated: The setting "property" has been deprecated.
 	Property   pulumi.StringPtrInput
 	PropertyId pulumi.StringPtrInput
@@ -148,6 +155,8 @@ type propertyActivationArgs struct {
 	AutoAcknowledgeRuleWarnings *bool    `pulumi:"autoAcknowledgeRuleWarnings"`
 	Contacts                    []string `pulumi:"contacts"`
 	Network                     *string  `pulumi:"network"`
+	// assigns a log message to the activation request
+	Note *string `pulumi:"note"`
 	// Deprecated: The setting "property" has been deprecated.
 	Property   *string                       `pulumi:"property"`
 	PropertyId *string                       `pulumi:"propertyId"`
@@ -164,6 +173,8 @@ type PropertyActivationArgs struct {
 	AutoAcknowledgeRuleWarnings pulumi.BoolPtrInput
 	Contacts                    pulumi.StringArrayInput
 	Network                     pulumi.StringPtrInput
+	// assigns a log message to the activation request
+	Note pulumi.StringPtrInput
 	// Deprecated: The setting "property" has been deprecated.
 	Property   pulumi.StringPtrInput
 	PropertyId pulumi.StringPtrInput

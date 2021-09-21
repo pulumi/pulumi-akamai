@@ -12,6 +12,63 @@ import (
 )
 
 // Use the `AppSecSiemSettings` resource to mpdate the SIEM integration settings for a specific configuration.
+//
+// ## Example Usage
+//
+// Basic usage:
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		opt0 := _var.Security_configuration
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 			Name: &opt0,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		opt1 := _var.Siem_definition_name
+// 		siemDefinition, err := akamai.GetAppSecSiemDefinitions(ctx, &akamai.GetAppSecSiemDefinitionsArgs{
+// 			SiemDefinitionName: &opt1,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		securityPolicies, err := akamai.LookupAppSecSecurityPolicy(ctx, &akamai.LookupAppSecSecurityPolicyArgs{
+// 			ConfigId: configuration.ConfigId,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		_, err = akamai.NewAppSecSiemSettings(ctx, "siem", &akamai.AppSecSiemSettingsArgs{
+// 			ConfigId:             pulumi.Int(configuration.ConfigId),
+// 			EnableSiem:           pulumi.Bool(true),
+// 			EnableForAllPolicies: pulumi.Bool(false),
+// 			EnableBotmanSiem:     pulumi.Bool(true),
+// 			SiemId:               pulumi.String(siemDefinition.Id),
+// 			SecurityPolicyIds:    toPulumiStringArray(securityPolicies.SecurityPolicyIdLists),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// func toPulumiStringArray(arr []string) pulumi.StringArray {
+// 	var pulumiArr pulumi.StringArray
+// 	for _, v := range arr {
+// 		pulumiArr = append(pulumiArr, pulumi.String(v))
+// 	}
+// 	return pulumiArr
+// }
+// ```
 type AppSecSiemSettings struct {
 	pulumi.CustomResourceState
 

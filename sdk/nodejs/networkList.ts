@@ -20,6 +20,8 @@ import * as utilities from "./utilities";
  *     description: "network list description",
  *     lists: _var.list,
  *     mode: "APPEND",
+ *     contractId: "ABC-123",
+ *     groupId: 12345,
  * });
  * ```
  */
@@ -52,9 +54,19 @@ export class NetworkList extends pulumi.CustomResource {
     }
 
     /**
+     * The contract ID of the network list. If supplied, groupId must also be supplied. The
+     * contractId value of an existing network list may not be modified.
+     */
+    public readonly contractId!: pulumi.Output<string | undefined>;
+    /**
      * The description to be assigned to the network list.
      */
     public readonly description!: pulumi.Output<string>;
+    /**
+     * The group ID of the network list. If supplied, contractId must also be supplied. The
+     * groupId value of an existing network list may not be modified.
+     */
+    public readonly groupId!: pulumi.Output<number | undefined>;
     /**
      * : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
      * removed from an existing list.
@@ -99,7 +111,9 @@ export class NetworkList extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkListState | undefined;
+            inputs["contractId"] = state ? state.contractId : undefined;
             inputs["description"] = state ? state.description : undefined;
+            inputs["groupId"] = state ? state.groupId : undefined;
             inputs["lists"] = state ? state.lists : undefined;
             inputs["mode"] = state ? state.mode : undefined;
             inputs["name"] = state ? state.name : undefined;
@@ -118,7 +132,9 @@ export class NetworkList extends pulumi.CustomResource {
             if ((!args || args.type === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
+            inputs["contractId"] = args ? args.contractId : undefined;
             inputs["description"] = args ? args.description : undefined;
+            inputs["groupId"] = args ? args.groupId : undefined;
             inputs["lists"] = args ? args.lists : undefined;
             inputs["mode"] = args ? args.mode : undefined;
             inputs["name"] = args ? args.name : undefined;
@@ -139,9 +155,19 @@ export class NetworkList extends pulumi.CustomResource {
  */
 export interface NetworkListState {
     /**
+     * The contract ID of the network list. If supplied, groupId must also be supplied. The
+     * contractId value of an existing network list may not be modified.
+     */
+    contractId?: pulumi.Input<string>;
+    /**
      * The description to be assigned to the network list.
      */
     description?: pulumi.Input<string>;
+    /**
+     * The group ID of the network list. If supplied, contractId must also be supplied. The
+     * groupId value of an existing network list may not be modified.
+     */
+    groupId?: pulumi.Input<number>;
     /**
      * : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
      * removed from an existing list.
@@ -179,9 +205,19 @@ export interface NetworkListState {
  */
 export interface NetworkListArgs {
     /**
+     * The contract ID of the network list. If supplied, groupId must also be supplied. The
+     * contractId value of an existing network list may not be modified.
+     */
+    contractId?: pulumi.Input<string>;
+    /**
      * The description to be assigned to the network list.
      */
     description: pulumi.Input<string>;
+    /**
+     * The group ID of the network list. If supplied, contractId must also be supplied. The
+     * groupId value of an existing network list may not be modified.
+     */
+    groupId?: pulumi.Input<number>;
     /**
      * : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
      * removed from an existing list.

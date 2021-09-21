@@ -67,9 +67,11 @@ export class AppSecActivations extends pulumi.CustomResource {
      */
     public readonly network!: pulumi.Output<string | undefined>;
     /**
-     * An optional text note describing this operation.
+     * A text note describing this operation. If no attributes were changed since the last time a security
+     * configuration was updated using the akamai.AppSecActivations resource, an activation will not occur. To ensure an activation
+     * is called, please update one of the attributes, e.g. the notes attribute.
      */
-    public readonly notes!: pulumi.Output<string | undefined>;
+    public readonly notes!: pulumi.Output<string>;
     /**
      * A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
      */
@@ -102,6 +104,9 @@ export class AppSecActivations extends pulumi.CustomResource {
             const args = argsOrState as AppSecActivationsArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
+            }
+            if ((!args || args.notes === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'notes'");
             }
             if ((!args || args.notificationEmails === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'notificationEmails'");
@@ -137,7 +142,9 @@ export interface AppSecActivationsState {
      */
     network?: pulumi.Input<string>;
     /**
-     * An optional text note describing this operation.
+     * A text note describing this operation. If no attributes were changed since the last time a security
+     * configuration was updated using the akamai.AppSecActivations resource, an activation will not occur. To ensure an activation
+     * is called, please update one of the attributes, e.g. the notes attribute.
      */
     notes?: pulumi.Input<string>;
     /**
@@ -167,9 +174,11 @@ export interface AppSecActivationsArgs {
      */
     network?: pulumi.Input<string>;
     /**
-     * An optional text note describing this operation.
+     * A text note describing this operation. If no attributes were changed since the last time a security
+     * configuration was updated using the akamai.AppSecActivations resource, an activation will not occur. To ensure an activation
+     * is called, please update one of the attributes, e.g. the notes attribute.
      */
-    notes?: pulumi.Input<string>;
+    notes: pulumi.Input<string>;
     /**
      * A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
      */

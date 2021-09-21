@@ -31,6 +31,12 @@ namespace Pulumi.Akamai.Properties
         [Output("network")]
         public Output<string?> Network { get; private set; } = null!;
 
+        /// <summary>
+        /// assigns a log message to the activation request
+        /// </summary>
+        [Output("note")]
+        public Output<string?> Note { get; private set; } = null!;
+
         [Output("property")]
         public Output<string> Property { get; private set; } = null!;
 
@@ -118,6 +124,12 @@ namespace Pulumi.Akamai.Properties
         [Input("network")]
         public Input<string>? Network { get; set; }
 
+        /// <summary>
+        /// assigns a log message to the activation request
+        /// </summary>
+        [Input("note")]
+        public Input<string>? Note { get; set; }
+
         [Input("property")]
         public Input<string>? Property { get; set; }
 
@@ -173,6 +185,12 @@ namespace Pulumi.Akamai.Properties
 
         [Input("network")]
         public Input<string>? Network { get; set; }
+
+        /// <summary>
+        /// assigns a log message to the activation request
+        /// </summary>
+        [Input("note")]
+        public Input<string>? Note { get; set; }
 
         [Input("property")]
         public Input<string>? Property { get; set; }

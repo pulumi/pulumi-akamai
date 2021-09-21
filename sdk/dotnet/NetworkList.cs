@@ -30,6 +30,8 @@ namespace Pulumi.Akamai
     ///             Description = "network list description",
     ///             Lists = @var.List,
     ///             Mode = "APPEND",
+    ///             ContractId = "ABC-123",
+    ///             GroupId = 12345,
     ///         });
     ///     }
     /// 
@@ -40,10 +42,24 @@ namespace Pulumi.Akamai
     public partial class NetworkList : Pulumi.CustomResource
     {
         /// <summary>
+        /// The contract ID of the network list. If supplied, group_id must also be supplied. The
+        /// contract_id value of an existing network list may not be modified.
+        /// </summary>
+        [Output("contractId")]
+        public Output<string?> ContractId { get; private set; } = null!;
+
+        /// <summary>
         /// The description to be assigned to the network list.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
+
+        /// <summary>
+        /// The group ID of the network list. If supplied, contract_id must also be supplied. The
+        /// group_id value of an existing network list may not be modified.
+        /// </summary>
+        [Output("groupId")]
+        public Output<int?> GroupId { get; private set; } = null!;
 
         /// <summary>
         /// : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
@@ -136,10 +152,24 @@ namespace Pulumi.Akamai
     public sealed class NetworkListArgs : Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The contract ID of the network list. If supplied, group_id must also be supplied. The
+        /// contract_id value of an existing network list may not be modified.
+        /// </summary>
+        [Input("contractId")]
+        public Input<string>? ContractId { get; set; }
+
+        /// <summary>
         /// The description to be assigned to the network list.
         /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
+
+        /// <summary>
+        /// The group ID of the network list. If supplied, contract_id must also be supplied. The
+        /// group_id value of an existing network list may not be modified.
+        /// </summary>
+        [Input("groupId")]
+        public Input<int>? GroupId { get; set; }
 
         [Input("lists")]
         private InputList<string>? _lists;
@@ -180,10 +210,24 @@ namespace Pulumi.Akamai
     public sealed class NetworkListState : Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The contract ID of the network list. If supplied, group_id must also be supplied. The
+        /// contract_id value of an existing network list may not be modified.
+        /// </summary>
+        [Input("contractId")]
+        public Input<string>? ContractId { get; set; }
+
+        /// <summary>
         /// The description to be assigned to the network list.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        /// <summary>
+        /// The group ID of the network list. If supplied, contract_id must also be supplied. The
+        /// group_id value of an existing network list may not be modified.
+        /// </summary>
+        [Input("groupId")]
+        public Input<int>? GroupId { get; set; }
 
         [Input("lists")]
         private InputList<string>? _lists;

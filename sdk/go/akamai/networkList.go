@@ -32,6 +32,8 @@ import (
 // 			Description: pulumi.String("network list description"),
 // 			Lists:       _var.List,
 // 			Mode:        pulumi.String("APPEND"),
+// 			ContractId:  pulumi.String("ABC-123"),
+// 			GroupId:     pulumi.Int(12345),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -43,8 +45,14 @@ import (
 type NetworkList struct {
 	pulumi.CustomResourceState
 
+	// The contract ID of the network list. If supplied, groupId must also be supplied. The
+	// contractId value of an existing network list may not be modified.
+	ContractId pulumi.StringPtrOutput `pulumi:"contractId"`
 	// The description to be assigned to the network list.
 	Description pulumi.StringOutput `pulumi:"description"`
+	// The group ID of the network list. If supplied, contractId must also be supplied. The
+	// groupId value of an existing network list may not be modified.
+	GroupId pulumi.IntPtrOutput `pulumi:"groupId"`
 	// : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
 	// removed from an existing list.
 	Lists pulumi.StringArrayOutput `pulumi:"lists"`
@@ -101,8 +109,14 @@ func GetNetworkList(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NetworkList resources.
 type networkListState struct {
+	// The contract ID of the network list. If supplied, groupId must also be supplied. The
+	// contractId value of an existing network list may not be modified.
+	ContractId *string `pulumi:"contractId"`
 	// The description to be assigned to the network list.
 	Description *string `pulumi:"description"`
+	// The group ID of the network list. If supplied, contractId must also be supplied. The
+	// groupId value of an existing network list may not be modified.
+	GroupId *int `pulumi:"groupId"`
 	// : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
 	// removed from an existing list.
 	Lists []string `pulumi:"lists"`
@@ -122,8 +136,14 @@ type networkListState struct {
 }
 
 type NetworkListState struct {
+	// The contract ID of the network list. If supplied, groupId must also be supplied. The
+	// contractId value of an existing network list may not be modified.
+	ContractId pulumi.StringPtrInput
 	// The description to be assigned to the network list.
 	Description pulumi.StringPtrInput
+	// The group ID of the network list. If supplied, contractId must also be supplied. The
+	// groupId value of an existing network list may not be modified.
+	GroupId pulumi.IntPtrInput
 	// : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
 	// removed from an existing list.
 	Lists pulumi.StringArrayInput
@@ -147,8 +167,14 @@ func (NetworkListState) ElementType() reflect.Type {
 }
 
 type networkListArgs struct {
+	// The contract ID of the network list. If supplied, groupId must also be supplied. The
+	// contractId value of an existing network list may not be modified.
+	ContractId *string `pulumi:"contractId"`
 	// The description to be assigned to the network list.
 	Description string `pulumi:"description"`
+	// The group ID of the network list. If supplied, contractId must also be supplied. The
+	// groupId value of an existing network list may not be modified.
+	GroupId *int `pulumi:"groupId"`
 	// : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
 	// removed from an existing list.
 	Lists []string `pulumi:"lists"`
@@ -162,8 +188,14 @@ type networkListArgs struct {
 
 // The set of arguments for constructing a NetworkList resource.
 type NetworkListArgs struct {
+	// The contract ID of the network list. If supplied, groupId must also be supplied. The
+	// contractId value of an existing network list may not be modified.
+	ContractId pulumi.StringPtrInput
 	// The description to be assigned to the network list.
 	Description pulumi.StringInput
+	// The group ID of the network list. If supplied, contractId must also be supplied. The
+	// groupId value of an existing network list may not be modified.
+	GroupId pulumi.IntPtrInput
 	// : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
 	// removed from an existing list.
 	Lists pulumi.StringArrayInput

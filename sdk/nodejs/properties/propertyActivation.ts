@@ -46,6 +46,10 @@ export class PropertyActivation extends pulumi.CustomResource {
     public /*out*/ readonly errors!: pulumi.Output<string>;
     public readonly network!: pulumi.Output<string | undefined>;
     /**
+     * assigns a log message to the activation request
+     */
+    public readonly note!: pulumi.Output<string | undefined>;
+    /**
      * @deprecated The setting "property" has been deprecated.
      */
     public readonly property!: pulumi.Output<string>;
@@ -80,6 +84,7 @@ export class PropertyActivation extends pulumi.CustomResource {
             inputs["contacts"] = state ? state.contacts : undefined;
             inputs["errors"] = state ? state.errors : undefined;
             inputs["network"] = state ? state.network : undefined;
+            inputs["note"] = state ? state.note : undefined;
             inputs["property"] = state ? state.property : undefined;
             inputs["propertyId"] = state ? state.propertyId : undefined;
             inputs["ruleErrors"] = state ? state.ruleErrors : undefined;
@@ -99,6 +104,7 @@ export class PropertyActivation extends pulumi.CustomResource {
             inputs["autoAcknowledgeRuleWarnings"] = args ? args.autoAcknowledgeRuleWarnings : undefined;
             inputs["contacts"] = args ? args.contacts : undefined;
             inputs["network"] = args ? args.network : undefined;
+            inputs["note"] = args ? args.note : undefined;
             inputs["property"] = args ? args.property : undefined;
             inputs["propertyId"] = args ? args.propertyId : undefined;
             inputs["ruleErrors"] = args ? args.ruleErrors : undefined;
@@ -128,6 +134,10 @@ export interface PropertyActivationState {
     errors?: pulumi.Input<string>;
     network?: pulumi.Input<string>;
     /**
+     * assigns a log message to the activation request
+     */
+    note?: pulumi.Input<string>;
+    /**
      * @deprecated The setting "property" has been deprecated.
      */
     property?: pulumi.Input<string>;
@@ -153,6 +163,10 @@ export interface PropertyActivationArgs {
     autoAcknowledgeRuleWarnings?: pulumi.Input<boolean>;
     contacts: pulumi.Input<pulumi.Input<string>[]>;
     network?: pulumi.Input<string>;
+    /**
+     * assigns a log message to the activation request
+     */
+    note?: pulumi.Input<string>;
     /**
      * @deprecated The setting "property" has been deprecated.
      */

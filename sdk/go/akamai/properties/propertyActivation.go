@@ -21,6 +21,8 @@ type PropertyActivation struct {
 	Contacts                    pulumi.StringArrayOutput `pulumi:"contacts"`
 	Errors                      pulumi.StringOutput      `pulumi:"errors"`
 	Network                     pulumi.StringPtrOutput   `pulumi:"network"`
+	// assigns a log message to the activation request
+	Note pulumi.StringPtrOutput `pulumi:"note"`
 	// Deprecated: The setting "property" has been deprecated.
 	Property   pulumi.StringOutput                    `pulumi:"property"`
 	PropertyId pulumi.StringOutput                    `pulumi:"propertyId"`
@@ -73,6 +75,8 @@ type propertyActivationState struct {
 	Contacts                    []string `pulumi:"contacts"`
 	Errors                      *string  `pulumi:"errors"`
 	Network                     *string  `pulumi:"network"`
+	// assigns a log message to the activation request
+	Note *string `pulumi:"note"`
 	// Deprecated: The setting "property" has been deprecated.
 	Property   *string                       `pulumi:"property"`
 	PropertyId *string                       `pulumi:"propertyId"`
@@ -91,6 +95,8 @@ type PropertyActivationState struct {
 	Contacts                    pulumi.StringArrayInput
 	Errors                      pulumi.StringPtrInput
 	Network                     pulumi.StringPtrInput
+	// assigns a log message to the activation request
+	Note pulumi.StringPtrInput
 	// Deprecated: The setting "property" has been deprecated.
 	Property   pulumi.StringPtrInput
 	PropertyId pulumi.StringPtrInput
@@ -112,6 +118,8 @@ type propertyActivationArgs struct {
 	AutoAcknowledgeRuleWarnings *bool    `pulumi:"autoAcknowledgeRuleWarnings"`
 	Contacts                    []string `pulumi:"contacts"`
 	Network                     *string  `pulumi:"network"`
+	// assigns a log message to the activation request
+	Note *string `pulumi:"note"`
 	// Deprecated: The setting "property" has been deprecated.
 	Property   *string                       `pulumi:"property"`
 	PropertyId *string                       `pulumi:"propertyId"`
@@ -128,6 +136,8 @@ type PropertyActivationArgs struct {
 	AutoAcknowledgeRuleWarnings pulumi.BoolPtrInput
 	Contacts                    pulumi.StringArrayInput
 	Network                     pulumi.StringPtrInput
+	// assigns a log message to the activation request
+	Note pulumi.StringPtrInput
 	// Deprecated: The setting "property" has been deprecated.
 	Property   pulumi.StringPtrInput
 	PropertyId pulumi.StringPtrInput

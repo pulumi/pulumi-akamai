@@ -51,8 +51,8 @@ namespace Pulumi.Akamai
     ///                 email,
     ///             },
     ///             Version = example.LatestVersion,
+    ///             Note = "Sample activation",
     ///         });
-    ///         // not specifying network will target STAGING
     ///         var exampleProd = new Akamai.PropertyActivation("exampleProd", new Akamai.PropertyActivationArgs
     ///         {
     ///             PropertyId = example.Id,
@@ -81,6 +81,7 @@ namespace Pulumi.Akamai
     /// * `contact` - (Required) One or more email addresses to send activation status changes to.
     /// * `version` - (Required) The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `akamai.Property` resource labeled `example`.
     /// * `network` - (Optional) Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+    /// * `note` - (Optional) A log message you can assign to the activation request.
     /// * `auto_acknowledge_rule_warnings` - (Optional) Whether the activation should proceed despite any warnings. By default set to `true`.
     /// 
     /// ### Deprecated arguments
@@ -121,6 +122,12 @@ namespace Pulumi.Akamai
 
         [Output("network")]
         public Output<string?> Network { get; private set; } = null!;
+
+        /// <summary>
+        /// assigns a log message to the activation request
+        /// </summary>
+        [Output("note")]
+        public Output<string?> Note { get; private set; } = null!;
 
         [Output("property")]
         public Output<string> Property { get; private set; } = null!;
@@ -213,6 +220,12 @@ namespace Pulumi.Akamai
         [Input("network")]
         public Input<string>? Network { get; set; }
 
+        /// <summary>
+        /// assigns a log message to the activation request
+        /// </summary>
+        [Input("note")]
+        public Input<string>? Note { get; set; }
+
         [Input("property")]
         public Input<string>? Property { get; set; }
 
@@ -268,6 +281,12 @@ namespace Pulumi.Akamai
 
         [Input("network")]
         public Input<string>? Network { get; set; }
+
+        /// <summary>
+        /// assigns a log message to the activation request
+        /// </summary>
+        [Input("note")]
+        public Input<string>? Note { get; set; }
 
         [Input("property")]
         public Input<string>? Property { get; set; }

@@ -14,24 +14,25 @@ __all__ = ['AppSecRuleArgs', 'AppSecRule']
 class AppSecRuleArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[int],
-                 rule_action: pulumi.Input[str],
                  rule_id: pulumi.Input[int],
                  security_policy_id: pulumi.Input[str],
-                 condition_exception: Optional[pulumi.Input[str]] = None):
+                 condition_exception: Optional[pulumi.Input[str]] = None,
+                 rule_action: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AppSecRule resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] rule_action: The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
         :param pulumi.Input[int] rule_id: The ID of the rule to use.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
         :param pulumi.Input[str] condition_exception: The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putconditionexception))
+        :param pulumi.Input[str] rule_action: The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only condition_exception can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
         """
         pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "rule_action", rule_action)
         pulumi.set(__self__, "rule_id", rule_id)
         pulumi.set(__self__, "security_policy_id", security_policy_id)
         if condition_exception is not None:
             pulumi.set(__self__, "condition_exception", condition_exception)
+        if rule_action is not None:
+            pulumi.set(__self__, "rule_action", rule_action)
 
     @property
     @pulumi.getter(name="configId")
@@ -44,18 +45,6 @@ class AppSecRuleArgs:
     @config_id.setter
     def config_id(self, value: pulumi.Input[int]):
         pulumi.set(self, "config_id", value)
-
-    @property
-    @pulumi.getter(name="ruleAction")
-    def rule_action(self) -> pulumi.Input[str]:
-        """
-        The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
-        """
-        return pulumi.get(self, "rule_action")
-
-    @rule_action.setter
-    def rule_action(self, value: pulumi.Input[str]):
-        pulumi.set(self, "rule_action", value)
 
     @property
     @pulumi.getter(name="ruleId")
@@ -93,6 +82,18 @@ class AppSecRuleArgs:
     def condition_exception(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "condition_exception", value)
 
+    @property
+    @pulumi.getter(name="ruleAction")
+    def rule_action(self) -> Optional[pulumi.Input[str]]:
+        """
+        The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only condition_exception can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
+        """
+        return pulumi.get(self, "rule_action")
+
+    @rule_action.setter
+    def rule_action(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "rule_action", value)
+
 
 @pulumi.input_type
 class _AppSecRuleState:
@@ -106,7 +107,7 @@ class _AppSecRuleState:
         Input properties used for looking up and filtering AppSecRule resources.
         :param pulumi.Input[str] condition_exception: The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putconditionexception))
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] rule_action: The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        :param pulumi.Input[str] rule_action: The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only condition_exception can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
         :param pulumi.Input[int] rule_id: The ID of the rule to use.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
         """
@@ -149,7 +150,7 @@ class _AppSecRuleState:
     @pulumi.getter(name="ruleAction")
     def rule_action(self) -> Optional[pulumi.Input[str]]:
         """
-        The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only condition_exception can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
         """
         return pulumi.get(self, "rule_action")
 
@@ -217,7 +218,7 @@ class AppSecRule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] condition_exception: The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putconditionexception))
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] rule_action: The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        :param pulumi.Input[str] rule_action: The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only condition_exception can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
         :param pulumi.Input[int] rule_id: The ID of the rule to use.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
         """
@@ -283,8 +284,6 @@ class AppSecRule(pulumi.CustomResource):
             if config_id is None and not opts.urn:
                 raise TypeError("Missing required property 'config_id'")
             __props__.__dict__["config_id"] = config_id
-            if rule_action is None and not opts.urn:
-                raise TypeError("Missing required property 'rule_action'")
             __props__.__dict__["rule_action"] = rule_action
             if rule_id is None and not opts.urn:
                 raise TypeError("Missing required property 'rule_id'")
@@ -316,7 +315,7 @@ class AppSecRule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] condition_exception: The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putconditionexception))
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] rule_action: The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        :param pulumi.Input[str] rule_action: The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only condition_exception can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
         :param pulumi.Input[int] rule_id: The ID of the rule to use.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
         """
@@ -349,9 +348,9 @@ class AppSecRule(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="ruleAction")
-    def rule_action(self) -> pulumi.Output[str]:
+    def rule_action(self) -> pulumi.Output[Optional[str]]:
         """
-        The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only condition_exception can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
         """
         return pulumi.get(self, "rule_action")
 

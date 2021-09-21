@@ -119,7 +119,7 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string Json;
         /// <summary>
-        /// The security policy mode, either `KRS` (update manually) or `AAG` (update automatically),
+        /// The security policy mode, either `KRS` (update manually) or `AAG` (update automatically), For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE.
         /// </summary>
         public readonly string Mode;
         /// <summary>

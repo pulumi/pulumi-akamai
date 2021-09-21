@@ -65,9 +65,9 @@ export class AppSecRule extends pulumi.CustomResource {
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+     * The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only conditionException can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
      */
-    public readonly ruleAction!: pulumi.Output<string>;
+    public readonly ruleAction!: pulumi.Output<string | undefined>;
     /**
      * The ID of the rule to use.
      */
@@ -99,9 +99,6 @@ export class AppSecRule extends pulumi.CustomResource {
             const args = argsOrState as AppSecRuleArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
-            }
-            if ((!args || args.ruleAction === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'ruleAction'");
             }
             if ((!args || args.ruleId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'ruleId'");
@@ -135,7 +132,7 @@ export interface AppSecRuleState {
      */
     configId?: pulumi.Input<number>;
     /**
-     * The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+     * The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only conditionException can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
      */
     ruleAction?: pulumi.Input<string>;
     /**
@@ -161,9 +158,9 @@ export interface AppSecRuleArgs {
      */
     configId: pulumi.Input<number>;
     /**
-     * The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+     * The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only conditionException can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
      */
-    ruleAction: pulumi.Input<string>;
+    ruleAction?: pulumi.Input<string>;
     /**
      * The ID of the rule to use.
      */

@@ -14,26 +14,27 @@ __all__ = ['AppSecActivationsArgs', 'AppSecActivations']
 class AppSecActivationsArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[int],
+                 notes: pulumi.Input[str],
                  notification_emails: pulumi.Input[Sequence[pulumi.Input[str]]],
                  activate: Optional[pulumi.Input[bool]] = None,
-                 network: Optional[pulumi.Input[str]] = None,
-                 notes: Optional[pulumi.Input[str]] = None):
+                 network: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AppSecActivations resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
+        :param pulumi.Input[str] notes: A text note describing this operation. If no attributes were changed since the last time a security
+               configuration was updated using the AppSecActivations resource, an activation will not occur. To ensure an activation
+               is called, please update one of the attributes, e.g. the notes attribute.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
         :param pulumi.Input[bool] activate: A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
         :param pulumi.Input[str] network: The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
-        :param pulumi.Input[str] notes: An optional text note describing this operation.
         """
         pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "notes", notes)
         pulumi.set(__self__, "notification_emails", notification_emails)
         if activate is not None:
             pulumi.set(__self__, "activate", activate)
         if network is not None:
             pulumi.set(__self__, "network", network)
-        if notes is not None:
-            pulumi.set(__self__, "notes", notes)
 
     @property
     @pulumi.getter(name="configId")
@@ -46,6 +47,20 @@ class AppSecActivationsArgs:
     @config_id.setter
     def config_id(self, value: pulumi.Input[int]):
         pulumi.set(self, "config_id", value)
+
+    @property
+    @pulumi.getter
+    def notes(self) -> pulumi.Input[str]:
+        """
+        A text note describing this operation. If no attributes were changed since the last time a security
+        configuration was updated using the AppSecActivations resource, an activation will not occur. To ensure an activation
+        is called, please update one of the attributes, e.g. the notes attribute.
+        """
+        return pulumi.get(self, "notes")
+
+    @notes.setter
+    def notes(self, value: pulumi.Input[str]):
+        pulumi.set(self, "notes", value)
 
     @property
     @pulumi.getter(name="notificationEmails")
@@ -83,18 +98,6 @@ class AppSecActivationsArgs:
     def network(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "network", value)
 
-    @property
-    @pulumi.getter
-    def notes(self) -> Optional[pulumi.Input[str]]:
-        """
-        An optional text note describing this operation.
-        """
-        return pulumi.get(self, "notes")
-
-    @notes.setter
-    def notes(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "notes", value)
-
 
 @pulumi.input_type
 class _AppSecActivationsState:
@@ -110,7 +113,9 @@ class _AppSecActivationsState:
         :param pulumi.Input[bool] activate: A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] network: The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
-        :param pulumi.Input[str] notes: An optional text note describing this operation.
+        :param pulumi.Input[str] notes: A text note describing this operation. If no attributes were changed since the last time a security
+               configuration was updated using the AppSecActivations resource, an activation will not occur. To ensure an activation
+               is called, please update one of the attributes, e.g. the notes attribute.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
         :param pulumi.Input[str] status: The status of the operation. The following values are may be returned:
         """
@@ -167,7 +172,9 @@ class _AppSecActivationsState:
     @pulumi.getter
     def notes(self) -> Optional[pulumi.Input[str]]:
         """
-        An optional text note describing this operation.
+        A text note describing this operation. If no attributes were changed since the last time a security
+        configuration was updated using the AppSecActivations resource, an activation will not occur. To ensure an activation
+        is called, please update one of the attributes, e.g. the notes attribute.
         """
         return pulumi.get(self, "notes")
 
@@ -235,7 +242,9 @@ class AppSecActivations(pulumi.CustomResource):
         :param pulumi.Input[bool] activate: A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] network: The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
-        :param pulumi.Input[str] notes: An optional text note describing this operation.
+        :param pulumi.Input[str] notes: A text note describing this operation. If no attributes were changed since the last time a security
+               configuration was updated using the AppSecActivations resource, an activation will not occur. To ensure an activation
+               is called, please update one of the attributes, e.g. the notes attribute.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
         """
         ...
@@ -300,6 +309,8 @@ class AppSecActivations(pulumi.CustomResource):
                 raise TypeError("Missing required property 'config_id'")
             __props__.__dict__["config_id"] = config_id
             __props__.__dict__["network"] = network
+            if notes is None and not opts.urn:
+                raise TypeError("Missing required property 'notes'")
             __props__.__dict__["notes"] = notes
             if notification_emails is None and not opts.urn:
                 raise TypeError("Missing required property 'notification_emails'")
@@ -331,7 +342,9 @@ class AppSecActivations(pulumi.CustomResource):
         :param pulumi.Input[bool] activate: A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] network: The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
-        :param pulumi.Input[str] notes: An optional text note describing this operation.
+        :param pulumi.Input[str] notes: A text note describing this operation. If no attributes were changed since the last time a security
+               configuration was updated using the AppSecActivations resource, an activation will not occur. To ensure an activation
+               is called, please update one of the attributes, e.g. the notes attribute.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
         :param pulumi.Input[str] status: The status of the operation. The following values are may be returned:
         """
@@ -373,9 +386,11 @@ class AppSecActivations(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def notes(self) -> pulumi.Output[Optional[str]]:
+    def notes(self) -> pulumi.Output[str]:
         """
-        An optional text note describing this operation.
+        A text note describing this operation. If no attributes were changed since the last time a security
+        configuration was updated using the AppSecActivations resource, an activation will not occur. To ensure an activation
+        is called, please update one of the attributes, e.g. the notes attribute.
         """
         return pulumi.get(self, "notes")
 

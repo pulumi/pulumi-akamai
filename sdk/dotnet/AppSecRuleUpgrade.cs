@@ -70,7 +70,7 @@ namespace Pulumi.Akamai
         public Output<string> EvalStatus { get; private set; } = null!;
 
         /// <summary>
-        /// A string indicating the current mode, either "KRS" or "AAG".
+        /// A string indicating the current mode, either KRS,AAG,ASE_AUTO,ASE_MANUAL
         /// </summary>
         [Output("mode")]
         public Output<string> Mode { get; private set; } = null!;
@@ -80,6 +80,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
+
+        /// <summary>
+        /// __ASE Beta__. (Optional) ASE_AUTO or ASE_MANUAL.  ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
+        /// </summary>
+        [Output("upgradeMode")]
+        public Output<string?> UpgradeMode { get; private set; } = null!;
 
 
         /// <summary>
@@ -139,6 +145,12 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 
+        /// <summary>
+        /// __ASE Beta__. (Optional) ASE_AUTO or ASE_MANUAL.  ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
+        /// </summary>
+        [Input("upgradeMode")]
+        public Input<string>? UpgradeMode { get; set; }
+
         public AppSecRuleUpgradeArgs()
         {
         }
@@ -165,7 +177,7 @@ namespace Pulumi.Akamai
         public Input<string>? EvalStatus { get; set; }
 
         /// <summary>
-        /// A string indicating the current mode, either "KRS" or "AAG".
+        /// A string indicating the current mode, either KRS,AAG,ASE_AUTO,ASE_MANUAL
         /// </summary>
         [Input("mode")]
         public Input<string>? Mode { get; set; }
@@ -175,6 +187,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
+
+        /// <summary>
+        /// __ASE Beta__. (Optional) ASE_AUTO or ASE_MANUAL.  ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
+        /// </summary>
+        [Input("upgradeMode")]
+        public Input<string>? UpgradeMode { get; set; }
 
         public AppSecRuleUpgradeState()
         {

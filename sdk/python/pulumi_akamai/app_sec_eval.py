@@ -15,16 +15,20 @@ class AppSecEvalArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[int],
                  eval_operation: pulumi.Input[str],
-                 security_policy_id: pulumi.Input[str]):
+                 security_policy_id: pulumi.Input[str],
+                 eval_mode: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AppSecEval resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] eval_operation: The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[str] eval_mode: __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "eval_operation", eval_operation)
         pulumi.set(__self__, "security_policy_id", security_policy_id)
+        if eval_mode is not None:
+            pulumi.set(__self__, "eval_mode", eval_mode)
 
     @property
     @pulumi.getter(name="configId")
@@ -62,12 +66,25 @@ class AppSecEvalArgs:
     def security_policy_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "security_policy_id", value)
 
+    @property
+    @pulumi.getter(name="evalMode")
+    def eval_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
+        """
+        return pulumi.get(self, "eval_mode")
+
+    @eval_mode.setter
+    def eval_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "eval_mode", value)
+
 
 @pulumi.input_type
 class _AppSecEvalState:
     def __init__(__self__, *,
                  config_id: Optional[pulumi.Input[int]] = None,
                  current_ruleset: Optional[pulumi.Input[str]] = None,
+                 eval_mode: Optional[pulumi.Input[str]] = None,
                  eval_operation: Optional[pulumi.Input[str]] = None,
                  eval_status: Optional[pulumi.Input[str]] = None,
                  evaluating_ruleset: Optional[pulumi.Input[str]] = None,
@@ -77,6 +94,7 @@ class _AppSecEvalState:
         Input properties used for looking up and filtering AppSecEval resources.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] current_ruleset: The set of rules currently in effect.
+        :param pulumi.Input[str] eval_mode: __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
         :param pulumi.Input[str] eval_operation: The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
         :param pulumi.Input[str] eval_status: Either `enabled` if an evaluation is currently in progress (that is, if the `eval_operation` parameter was `START`, `RESTART`, or `COMPLETE`) or `disabled` otherwise (that is, if the `eval_operation` parameter was `STOP` or `UPDATE`).
         :param pulumi.Input[str] evaluating_ruleset: The set of rules being evaluated.
@@ -87,6 +105,8 @@ class _AppSecEvalState:
             pulumi.set(__self__, "config_id", config_id)
         if current_ruleset is not None:
             pulumi.set(__self__, "current_ruleset", current_ruleset)
+        if eval_mode is not None:
+            pulumi.set(__self__, "eval_mode", eval_mode)
         if eval_operation is not None:
             pulumi.set(__self__, "eval_operation", eval_operation)
         if eval_status is not None:
@@ -121,6 +141,18 @@ class _AppSecEvalState:
     @current_ruleset.setter
     def current_ruleset(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "current_ruleset", value)
+
+    @property
+    @pulumi.getter(name="evalMode")
+    def eval_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
+        """
+        return pulumi.get(self, "eval_mode")
+
+    @eval_mode.setter
+    def eval_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "eval_mode", value)
 
     @property
     @pulumi.getter(name="evalOperation")
@@ -189,6 +221,7 @@ class AppSecEval(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
+                 eval_mode: Optional[pulumi.Input[str]] = None,
                  eval_operation: Optional[pulumi.Input[str]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -217,6 +250,7 @@ class AppSecEval(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
+        :param pulumi.Input[str] eval_mode: __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
         :param pulumi.Input[str] eval_operation: The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
         :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
         """
@@ -264,6 +298,7 @@ class AppSecEval(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
+                 eval_mode: Optional[pulumi.Input[str]] = None,
                  eval_operation: Optional[pulumi.Input[str]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -281,6 +316,7 @@ class AppSecEval(pulumi.CustomResource):
             if config_id is None and not opts.urn:
                 raise TypeError("Missing required property 'config_id'")
             __props__.__dict__["config_id"] = config_id
+            __props__.__dict__["eval_mode"] = eval_mode
             if eval_operation is None and not opts.urn:
                 raise TypeError("Missing required property 'eval_operation'")
             __props__.__dict__["eval_operation"] = eval_operation
@@ -303,6 +339,7 @@ class AppSecEval(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             config_id: Optional[pulumi.Input[int]] = None,
             current_ruleset: Optional[pulumi.Input[str]] = None,
+            eval_mode: Optional[pulumi.Input[str]] = None,
             eval_operation: Optional[pulumi.Input[str]] = None,
             eval_status: Optional[pulumi.Input[str]] = None,
             evaluating_ruleset: Optional[pulumi.Input[str]] = None,
@@ -317,6 +354,7 @@ class AppSecEval(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: The ID of the security configuration to use.
         :param pulumi.Input[str] current_ruleset: The set of rules currently in effect.
+        :param pulumi.Input[str] eval_mode: __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
         :param pulumi.Input[str] eval_operation: The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
         :param pulumi.Input[str] eval_status: Either `enabled` if an evaluation is currently in progress (that is, if the `eval_operation` parameter was `START`, `RESTART`, or `COMPLETE`) or `disabled` otherwise (that is, if the `eval_operation` parameter was `STOP` or `UPDATE`).
         :param pulumi.Input[str] evaluating_ruleset: The set of rules being evaluated.
@@ -329,6 +367,7 @@ class AppSecEval(pulumi.CustomResource):
 
         __props__.__dict__["config_id"] = config_id
         __props__.__dict__["current_ruleset"] = current_ruleset
+        __props__.__dict__["eval_mode"] = eval_mode
         __props__.__dict__["eval_operation"] = eval_operation
         __props__.__dict__["eval_status"] = eval_status
         __props__.__dict__["evaluating_ruleset"] = evaluating_ruleset
@@ -351,6 +390,14 @@ class AppSecEval(pulumi.CustomResource):
         The set of rules currently in effect.
         """
         return pulumi.get(self, "current_ruleset")
+
+    @property
+    @pulumi.getter(name="evalMode")
+    def eval_mode(self) -> pulumi.Output[Optional[str]]:
+        """
+        __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
+        """
+        return pulumi.get(self, "eval_mode")
 
     @property
     @pulumi.getter(name="evalOperation")

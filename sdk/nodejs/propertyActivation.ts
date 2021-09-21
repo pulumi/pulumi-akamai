@@ -37,8 +37,8 @@ import * as utilities from "./utilities";
  *     propertyId: example.id,
  *     contacts: [email],
  *     version: example.latestVersion,
+ *     note: "Sample activation",
  * });
- * // not specifying network will target STAGING
  * const exampleProd = new akamai.PropertyActivation("exampleProd", {
  *     propertyId: example.id,
  *     network: "PRODUCTION",
@@ -56,6 +56,7 @@ import * as utilities from "./utilities";
  * * `contact` - (Required) One or more email addresses to send activation status changes to.
  * * `version` - (Required) The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latestVersion` attribute in the `akamai.Property` resource labeled `example`.
  * * `network` - (Optional) Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+ * * `note` - (Optional) A log message you can assign to the activation request.
  * * `autoAcknowledgeRuleWarnings` - (Optional) Whether the activation should proceed despite any warnings. By default set to `true`.
  *
  * ### Deprecated arguments
@@ -113,6 +114,10 @@ export class PropertyActivation extends pulumi.CustomResource {
     public /*out*/ readonly errors!: pulumi.Output<string>;
     public readonly network!: pulumi.Output<string | undefined>;
     /**
+     * assigns a log message to the activation request
+     */
+    public readonly note!: pulumi.Output<string | undefined>;
+    /**
      * @deprecated The setting "property" has been deprecated.
      */
     public readonly property!: pulumi.Output<string>;
@@ -144,6 +149,7 @@ export class PropertyActivation extends pulumi.CustomResource {
             inputs["contacts"] = state ? state.contacts : undefined;
             inputs["errors"] = state ? state.errors : undefined;
             inputs["network"] = state ? state.network : undefined;
+            inputs["note"] = state ? state.note : undefined;
             inputs["property"] = state ? state.property : undefined;
             inputs["propertyId"] = state ? state.propertyId : undefined;
             inputs["ruleErrors"] = state ? state.ruleErrors : undefined;
@@ -163,6 +169,7 @@ export class PropertyActivation extends pulumi.CustomResource {
             inputs["autoAcknowledgeRuleWarnings"] = args ? args.autoAcknowledgeRuleWarnings : undefined;
             inputs["contacts"] = args ? args.contacts : undefined;
             inputs["network"] = args ? args.network : undefined;
+            inputs["note"] = args ? args.note : undefined;
             inputs["property"] = args ? args.property : undefined;
             inputs["propertyId"] = args ? args.propertyId : undefined;
             inputs["ruleErrors"] = args ? args.ruleErrors : undefined;
@@ -194,6 +201,10 @@ export interface PropertyActivationState {
     errors?: pulumi.Input<string>;
     network?: pulumi.Input<string>;
     /**
+     * assigns a log message to the activation request
+     */
+    note?: pulumi.Input<string>;
+    /**
      * @deprecated The setting "property" has been deprecated.
      */
     property?: pulumi.Input<string>;
@@ -219,6 +230,10 @@ export interface PropertyActivationArgs {
     autoAcknowledgeRuleWarnings?: pulumi.Input<boolean>;
     contacts: pulumi.Input<pulumi.Input<string>[]>;
     network?: pulumi.Input<string>;
+    /**
+     * assigns a log message to the activation request
+     */
+    note?: pulumi.Input<string>;
     /**
      * @deprecated The setting "property" has been deprecated.
      */

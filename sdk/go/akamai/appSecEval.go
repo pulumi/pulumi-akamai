@@ -57,6 +57,8 @@ type AppSecEval struct {
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// The set of rules currently in effect.
 	CurrentRuleset pulumi.StringOutput `pulumi:"currentRuleset"`
+	// __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
+	EvalMode pulumi.StringPtrOutput `pulumi:"evalMode"`
 	// The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
 	EvalOperation pulumi.StringOutput `pulumi:"evalOperation"`
 	// Either `enabled` if an evaluation is currently in progress (that is, if the `evalOperation` parameter was `START`, `RESTART`, or `COMPLETE`) or `disabled` otherwise (that is, if the `evalOperation` parameter was `STOP` or `UPDATE`).
@@ -111,6 +113,8 @@ type appSecEvalState struct {
 	ConfigId *int `pulumi:"configId"`
 	// The set of rules currently in effect.
 	CurrentRuleset *string `pulumi:"currentRuleset"`
+	// __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
+	EvalMode *string `pulumi:"evalMode"`
 	// The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
 	EvalOperation *string `pulumi:"evalOperation"`
 	// Either `enabled` if an evaluation is currently in progress (that is, if the `evalOperation` parameter was `START`, `RESTART`, or `COMPLETE`) or `disabled` otherwise (that is, if the `evalOperation` parameter was `STOP` or `UPDATE`).
@@ -128,6 +132,8 @@ type AppSecEvalState struct {
 	ConfigId pulumi.IntPtrInput
 	// The set of rules currently in effect.
 	CurrentRuleset pulumi.StringPtrInput
+	// __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
+	EvalMode pulumi.StringPtrInput
 	// The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
 	EvalOperation pulumi.StringPtrInput
 	// Either `enabled` if an evaluation is currently in progress (that is, if the `evalOperation` parameter was `START`, `RESTART`, or `COMPLETE`) or `disabled` otherwise (that is, if the `evalOperation` parameter was `STOP` or `UPDATE`).
@@ -147,6 +153,8 @@ func (AppSecEvalState) ElementType() reflect.Type {
 type appSecEvalArgs struct {
 	// The ID of the security configuration to use.
 	ConfigId int `pulumi:"configId"`
+	// __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
+	EvalMode *string `pulumi:"evalMode"`
 	// The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
 	EvalOperation string `pulumi:"evalOperation"`
 	// The ID of the security policy to use.
@@ -157,6 +165,8 @@ type appSecEvalArgs struct {
 type AppSecEvalArgs struct {
 	// The ID of the security configuration to use.
 	ConfigId pulumi.IntInput
+	// __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
+	EvalMode pulumi.StringPtrInput
 	// The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
 	EvalOperation pulumi.StringInput
 	// The ID of the security policy to use.

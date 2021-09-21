@@ -66,6 +66,10 @@ export class AppSecEval extends pulumi.CustomResource {
      */
     public /*out*/ readonly currentRuleset!: pulumi.Output<string>;
     /**
+     * __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
+     */
+    public readonly evalMode!: pulumi.Output<string | undefined>;
+    /**
      * The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
      */
     public readonly evalOperation!: pulumi.Output<string>;
@@ -101,6 +105,7 @@ export class AppSecEval extends pulumi.CustomResource {
             const state = argsOrState as AppSecEvalState | undefined;
             inputs["configId"] = state ? state.configId : undefined;
             inputs["currentRuleset"] = state ? state.currentRuleset : undefined;
+            inputs["evalMode"] = state ? state.evalMode : undefined;
             inputs["evalOperation"] = state ? state.evalOperation : undefined;
             inputs["evalStatus"] = state ? state.evalStatus : undefined;
             inputs["evaluatingRuleset"] = state ? state.evaluatingRuleset : undefined;
@@ -118,6 +123,7 @@ export class AppSecEval extends pulumi.CustomResource {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
             inputs["configId"] = args ? args.configId : undefined;
+            inputs["evalMode"] = args ? args.evalMode : undefined;
             inputs["evalOperation"] = args ? args.evalOperation : undefined;
             inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
             inputs["currentRuleset"] = undefined /*out*/;
@@ -144,6 +150,10 @@ export interface AppSecEvalState {
      * The set of rules currently in effect.
      */
     currentRuleset?: pulumi.Input<string>;
+    /**
+     * __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
+     */
+    evalMode?: pulumi.Input<string>;
     /**
      * The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
      */
@@ -174,6 +184,10 @@ export interface AppSecEvalArgs {
      * The ID of the security configuration to use.
      */
     configId: pulumi.Input<number>;
+    /**
+     * __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
+     */
+    evalMode?: pulumi.Input<string>;
     /**
      * The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
      */

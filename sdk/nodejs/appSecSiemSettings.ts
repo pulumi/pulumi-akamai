@@ -6,6 +6,33 @@ import * as utilities from "./utilities";
 
 /**
  * Use the `akamai.AppSecSiemSettings` resource to mpdate the SIEM integration settings for a specific configuration.
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: _var.security_configuration,
+ * });
+ * const siemDefinition = akamai.getAppSecSiemDefinitions({
+ *     siemDefinitionName: _var.siem_definition_name,
+ * });
+ * const securityPolicies = configuration.then(configuration => akamai.getAppSecSecurityPolicy({
+ *     configId: configuration.configId,
+ * }));
+ * const siem = new akamai.AppSecSiemSettings("siem", {
+ *     configId: configuration.then(configuration => configuration.configId),
+ *     enableSiem: true,
+ *     enableForAllPolicies: false,
+ *     enableBotmanSiem: true,
+ *     siemId: siemDefinition.then(siemDefinition => siemDefinition.id),
+ *     securityPolicyIds: securityPolicies.then(securityPolicies => securityPolicies.securityPolicyIdLists),
+ * });
+ * ```
  */
 export class AppSecSiemSettings extends pulumi.CustomResource {
     /**

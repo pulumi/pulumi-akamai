@@ -228,6 +228,26 @@ class AppSecSiemSettings(pulumi.CustomResource):
         """
         Use the `AppSecSiemSettings` resource to mpdate the SIEM integration settings for a specific configuration.
 
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        siem_definition = akamai.get_app_sec_siem_definitions(siem_definition_name=var["siem_definition_name"])
+        security_policies = akamai.get_app_sec_security_policy(config_id=configuration.config_id)
+        siem = akamai.AppSecSiemSettings("siem",
+            config_id=configuration.config_id,
+            enable_siem=True,
+            enable_for_all_policies=False,
+            enable_botman_siem=True,
+            siem_id=siem_definition.id,
+            security_policy_ids=security_policies.security_policy_id_lists)
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: The configuration ID to use.
@@ -245,6 +265,26 @@ class AppSecSiemSettings(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Use the `AppSecSiemSettings` resource to mpdate the SIEM integration settings for a specific configuration.
+
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        siem_definition = akamai.get_app_sec_siem_definitions(siem_definition_name=var["siem_definition_name"])
+        security_policies = akamai.get_app_sec_security_policy(config_id=configuration.config_id)
+        siem = akamai.AppSecSiemSettings("siem",
+            config_id=configuration.config_id,
+            enable_siem=True,
+            enable_for_all_policies=False,
+            enable_botman_siem=True,
+            siem_id=siem_definition.id,
+            security_policy_ids=security_policies.security_policy_id_lists)
+        ```
 
         :param str resource_name: The name of the resource.
         :param AppSecSiemSettingsArgs args: The arguments to use to populate this resource's properties.

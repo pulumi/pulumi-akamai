@@ -58,10 +58,10 @@ namespace Pulumi.Akamai
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        /// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only condition_exception can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
         /// </summary>
         [Output("ruleAction")]
-        public Output<string> RuleAction { get; private set; } = null!;
+        public Output<string?> RuleAction { get; private set; } = null!;
 
         /// <summary>
         /// The ID of the rule to use.
@@ -134,10 +134,10 @@ namespace Pulumi.Akamai
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        /// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only condition_exception can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
         /// </summary>
-        [Input("ruleAction", required: true)]
-        public Input<string> RuleAction { get; set; } = null!;
+        [Input("ruleAction")]
+        public Input<string>? RuleAction { get; set; }
 
         /// <summary>
         /// The ID of the rule to use.
@@ -171,7 +171,7 @@ namespace Pulumi.Akamai
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        /// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only condition_exception can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
         /// </summary>
         [Input("ruleAction")]
         public Input<string>? RuleAction { get; set; }

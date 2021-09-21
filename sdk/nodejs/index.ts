@@ -19,6 +19,7 @@ export * from "./appSecCustomDeny";
 export * from "./appSecCustomRule";
 export * from "./appSecCustomRuleAction";
 export * from "./appSecEval";
+export * from "./appSecEvalGroup";
 export * from "./appSecEvalHostnames";
 export * from "./appSecEvalProtectHost";
 export * from "./appSecEvalRule";
@@ -42,9 +43,11 @@ export * from "./appSecSelectedHostnames";
 export * from "./appSecSiemSettings";
 export * from "./appSecSlowPost";
 export * from "./appSecSlowPostProtection";
+export * from "./appSecThreatIntel";
 export * from "./appSecVersionNodes";
 export * from "./appSecWafMode";
 export * from "./appSecWafProtection";
+export * from "./appSecWapSelectedHostnames";
 export * from "./cpCode";
 export * from "./cpsDvEnrollment";
 export * from "./cpsDvValidation";
@@ -65,6 +68,7 @@ export * from "./getAppSecCustomDeny";
 export * from "./getAppSecCustomRuleActions";
 export * from "./getAppSecCustomRules";
 export * from "./getAppSecEval";
+export * from "./getAppSecEvalGroups";
 export * from "./getAppSecEvalHostnames";
 export * from "./getAppSecEvalRules";
 export * from "./getAppSecExportConfiguration";
@@ -89,8 +93,10 @@ export * from "./getAppSecSelectedHostnames";
 export * from "./getAppSecSiemDefinitions";
 export * from "./getAppSecSiemSettings";
 export * from "./getAppSecSlowPost";
+export * from "./getAppSecThreatIntel";
 export * from "./getAppSecVersionNotes";
 export * from "./getAppSecWafMode";
+export * from "./getAppSecWapSelectedHostnames";
 export * from "./getAuthoritiesSet";
 export * from "./getContract";
 export * from "./getContracts";
@@ -153,6 +159,7 @@ import { AppSecCustomDeny } from "./appSecCustomDeny";
 import { AppSecCustomRule } from "./appSecCustomRule";
 import { AppSecCustomRuleAction } from "./appSecCustomRuleAction";
 import { AppSecEval } from "./appSecEval";
+import { AppSecEvalGroup } from "./appSecEvalGroup";
 import { AppSecEvalHostnames } from "./appSecEvalHostnames";
 import { AppSecEvalProtectHost } from "./appSecEvalProtectHost";
 import { AppSecEvalRule } from "./appSecEvalRule";
@@ -176,9 +183,11 @@ import { AppSecSelectedHostnames } from "./appSecSelectedHostnames";
 import { AppSecSiemSettings } from "./appSecSiemSettings";
 import { AppSecSlowPost } from "./appSecSlowPost";
 import { AppSecSlowPostProtection } from "./appSecSlowPostProtection";
+import { AppSecThreatIntel } from "./appSecThreatIntel";
 import { AppSecVersionNodes } from "./appSecVersionNodes";
 import { AppSecWafMode } from "./appSecWafMode";
 import { AppSecWafProtection } from "./appSecWafProtection";
+import { AppSecWapSelectedHostnames } from "./appSecWapSelectedHostnames";
 import { CpCode } from "./cpCode";
 import { CpsDvEnrollment } from "./cpsDvEnrollment";
 import { CpsDvValidation } from "./cpsDvValidation";
@@ -232,6 +241,8 @@ const _module = {
                 return new AppSecCustomRuleAction(name, <any>undefined, { urn })
             case "akamai:index/appSecEval:AppSecEval":
                 return new AppSecEval(name, <any>undefined, { urn })
+            case "akamai:index/appSecEvalGroup:AppSecEvalGroup":
+                return new AppSecEvalGroup(name, <any>undefined, { urn })
             case "akamai:index/appSecEvalHostnames:AppSecEvalHostnames":
                 return new AppSecEvalHostnames(name, <any>undefined, { urn })
             case "akamai:index/appSecEvalProtectHost:AppSecEvalProtectHost":
@@ -278,12 +289,16 @@ const _module = {
                 return new AppSecSlowPost(name, <any>undefined, { urn })
             case "akamai:index/appSecSlowPostProtection:AppSecSlowPostProtection":
                 return new AppSecSlowPostProtection(name, <any>undefined, { urn })
+            case "akamai:index/appSecThreatIntel:AppSecThreatIntel":
+                return new AppSecThreatIntel(name, <any>undefined, { urn })
             case "akamai:index/appSecVersionNodes:AppSecVersionNodes":
                 return new AppSecVersionNodes(name, <any>undefined, { urn })
             case "akamai:index/appSecWafMode:AppSecWafMode":
                 return new AppSecWafMode(name, <any>undefined, { urn })
             case "akamai:index/appSecWafProtection:AppSecWafProtection":
                 return new AppSecWafProtection(name, <any>undefined, { urn })
+            case "akamai:index/appSecWapSelectedHostnames:AppSecWapSelectedHostnames":
+                return new AppSecWapSelectedHostnames(name, <any>undefined, { urn })
             case "akamai:index/cpCode:CpCode":
                 return new CpCode(name, <any>undefined, { urn })
             case "akamai:index/cpsDvEnrollment:CpsDvEnrollment":
@@ -343,6 +358,7 @@ pulumi.runtime.registerResourceModule("akamai", "index/appSecCustomDeny", _modul
 pulumi.runtime.registerResourceModule("akamai", "index/appSecCustomRule", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecCustomRuleAction", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecEval", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appSecEvalGroup", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecEvalHostnames", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecEvalProtectHost", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecEvalRule", _module)
@@ -366,9 +382,11 @@ pulumi.runtime.registerResourceModule("akamai", "index/appSecSelectedHostnames",
 pulumi.runtime.registerResourceModule("akamai", "index/appSecSiemSettings", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecSlowPost", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecSlowPostProtection", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appSecThreatIntel", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecVersionNodes", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecWafMode", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecWafProtection", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appSecWapSelectedHostnames", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cpCode", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cpsDvEnrollment", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cpsDvValidation", _module)

@@ -139,8 +139,11 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_appsec_api_constraints_protection":      {Tok: makeResource(mainMod, "AppSecApiConstraintsProtection")},
 			"akamai_appsec_attack_group":                    {Tok: makeResource(mainMod, "AppSecAttackGroup")},
 			"akamai_appsec_eval_rule":                       {Tok: makeResource(mainMod, "AppSecEvalRule")},
+			"akamai_appsec_eval_group":                      {Tok: makeResource(mainMod, "AppSecEvalGroup")},
 			"akamai_appsec_ip_geo_protection":               {Tok: makeResource(mainMod, "AppSecIPGeoProtection")},
 			"akamai_appsec_rule":                            {Tok: makeResource(mainMod, "AppSecRule")},
+			"akamai_appsec_threat_intel":                    {Tok: makeResource(mainMod, "AppSecThreatIntel")},
+			"akamai_appsec_wap_selected_hostnames":          {Tok: makeResource(mainMod, "AppSecWapSelectedHostnames")},
 
 			"akamai_cps_dv_enrollment": {Tok: makeResource(mainMod, "CpsDvEnrollment")},
 			"akamai_cps_dv_validation": {Tok: makeResource(mainMod, "CpsDvValidation")},
@@ -196,6 +199,9 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_appsec_attack_groups":                   {Tok: makeDataSource(mainMod, "getAppSecAttackGroups")},
 			"akamai_appsec_eval_rules":                      {Tok: makeDataSource(mainMod, "getAppSecEvalRules")},
 			"akamai_appsec_rules":                           {Tok: makeDataSource(mainMod, "getAppSecRules")},
+			"akamai_appsec_eval_groups":                     {Tok: makeDataSource(mainMod, "getAppSecEvalGroups")},
+			"akamai_appsec_threat_intel":                    {Tok: makeDataSource(mainMod, "getAppSecThreatIntel")},
+			"akamai_appsec_wap_selected_hostnames":          {Tok: makeDataSource(mainMod, "getAppSecWapSelectedHostnames")},
 
 			"akamai_properties":              {Tok: makeDataSource(mainMod, "getProperties")},
 			"akamai_property_products":       {Tok: makeDataSource(mainMod, "getPropertyProducts")},
