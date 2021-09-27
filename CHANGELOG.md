@@ -2,9 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Upgrade to v1.7.0 of the Akamai Terraform Provider
+_(none)_
 
 ---
+
+## 2.4.0 (2021-09-27)
+* Upgrade to v1.7.0 of the Akamai Terraform Provider
 
 ## 2.3.0 (2021-08-19)
 * Upgrade to v1.6.1 of the Akamai Terraform Provider
