@@ -19,6 +19,7 @@ from .app_sec_custom_deny import *
 from .app_sec_custom_rule import *
 from .app_sec_custom_rule_action import *
 from .app_sec_eval import *
+from .app_sec_eval_group import *
 from .app_sec_eval_hostnames import *
 from .app_sec_eval_protect_host import *
 from .app_sec_eval_rule import *
@@ -42,9 +43,11 @@ from .app_sec_selected_hostnames import *
 from .app_sec_siem_settings import *
 from .app_sec_slow_post import *
 from .app_sec_slow_post_protection import *
+from .app_sec_threat_intel import *
 from .app_sec_version_nodes import *
 from .app_sec_waf_mode import *
 from .app_sec_waf_protection import *
+from .app_sec_wap_selected_hostnames import *
 from .cp_code import *
 from .cps_dv_enrollment import *
 from .cps_dv_validation import *
@@ -65,6 +68,7 @@ from .get_app_sec_custom_deny import *
 from .get_app_sec_custom_rule_actions import *
 from .get_app_sec_custom_rules import *
 from .get_app_sec_eval import *
+from .get_app_sec_eval_groups import *
 from .get_app_sec_eval_hostnames import *
 from .get_app_sec_eval_rules import *
 from .get_app_sec_export_configuration import *
@@ -89,8 +93,10 @@ from .get_app_sec_selected_hostnames import *
 from .get_app_sec_siem_definitions import *
 from .get_app_sec_siem_settings import *
 from .get_app_sec_slow_post import *
+from .get_app_sec_threat_intel import *
 from .get_app_sec_version_notes import *
 from .get_app_sec_waf_mode import *
+from .get_app_sec_wap_selected_hostnames import *
 from .get_authorities_set import *
 from .get_contract import *
 from .get_contracts import *
@@ -266,6 +272,14 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/appSecEval:AppSecEval": "AppSecEval"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appSecEvalGroup",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appSecEvalGroup:AppSecEvalGroup": "AppSecEvalGroup"
   }
  },
  {
@@ -454,6 +468,14 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
+  "mod": "index/appSecThreatIntel",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appSecThreatIntel:AppSecThreatIntel": "AppSecThreatIntel"
+  }
+ },
+ {
+  "pkg": "akamai",
   "mod": "index/appSecVersionNodes",
   "fqn": "pulumi_akamai",
   "classes": {
@@ -474,6 +496,14 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/appSecWafProtection:AppSecWafProtection": "AppSecWafProtection"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appSecWapSelectedHostnames",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appSecWapSelectedHostnames:AppSecWapSelectedHostnames": "AppSecWapSelectedHostnames"
   }
  },
  {

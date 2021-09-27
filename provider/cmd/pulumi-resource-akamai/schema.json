@@ -4510,7 +4510,7 @@
                 },
                 "notes": {
                     "type": "string",
-                    "description": "An optional text note describing this operation.\n"
+                    "description": "A text note describing this operation. If no attributes were changed since the last time a security\nconfiguration was updated using the akamai.AppSecActivations resource, an activation will not occur. To ensure an activation\nis called, please update one of the attributes, e.g. the notes attribute.\n"
                 },
                 "notificationEmails": {
                     "type": "array",
@@ -4526,6 +4526,7 @@
             },
             "required": [
                 "configId",
+                "notes",
                 "notificationEmails",
                 "status"
             ],
@@ -4544,7 +4545,7 @@
                 },
                 "notes": {
                     "type": "string",
-                    "description": "An optional text note describing this operation.\n"
+                    "description": "A text note describing this operation. If no attributes were changed since the last time a security\nconfiguration was updated using the akamai.AppSecActivations resource, an activation will not occur. To ensure an activation\nis called, please update one of the attributes, e.g. the notes attribute.\n"
                 },
                 "notificationEmails": {
                     "type": "array",
@@ -4556,6 +4557,7 @@
             },
             "requiredInputs": [
                 "configId",
+                "notes",
                 "notificationEmails"
             ],
             "stateInputs": {
@@ -4575,7 +4577,7 @@
                     },
                     "notes": {
                         "type": "string",
-                        "description": "An optional text note describing this operation.\n"
+                        "description": "A text note describing this operation. If no attributes were changed since the last time a security\nconfiguration was updated using the akamai.AppSecActivations resource, an activation will not occur. To ensure an activation\nis called, please update one of the attributes, e.g. the notes attribute.\n"
                     },
                     "notificationEmails": {
                         "type": "array",
@@ -5448,6 +5450,10 @@
                     "type": "string",
                     "description": "The set of rules currently in effect.\n"
                 },
+                "evalMode": {
+                    "type": "string",
+                    "description": "__ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. \"ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode\n"
+                },
                 "evalOperation": {
                     "type": "string",
                     "description": "The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.\n"
@@ -5483,6 +5489,10 @@
                     "type": "integer",
                     "description": "The ID of the security configuration to use.\n"
                 },
+                "evalMode": {
+                    "type": "string",
+                    "description": "__ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. \"ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode\n"
+                },
                 "evalOperation": {
                     "type": "string",
                     "description": "The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.\n"
@@ -5508,6 +5518,10 @@
                         "type": "string",
                         "description": "The set of rules currently in effect.\n"
                     },
+                    "evalMode": {
+                        "type": "string",
+                        "description": "__ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. \"ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode\n"
+                    },
                     "evalOperation": {
                         "type": "string",
                         "description": "The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.\n"
@@ -5523,6 +5537,91 @@
                     "expirationDate": {
                         "type": "string",
                         "description": "The date on which the evaluation period ends.\n"
+                    },
+                    "securityPolicyId": {
+                        "type": "string",
+                        "description": "The ID of the security policy to use.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/appSecEvalGroup:AppSecEvalGroup": {
+            "description": "Use the `akamai.AppSecEvalGroup` resource to create or modify an evaluation attack group's action, conditions and exceptions. When the conditions are met, the rule’s actions are ignored and not applied to that specific traffic.\n__BETA__ This is Adaptive Security Engine(ASE) related data resource. Please contact your akamai representative if you want to learn more\n\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\nimport * from \"fs\";\n\nconst configuration = akamai.getAppSecConfiguration({\n    name: _var.security_configuration,\n});\nconst evalAttackGroup = new akamai.AppSecEvalGroup(\"evalAttackGroup\", {\n    configId: configuration.then(configuration =\u003e configuration.configId),\n    securityPolicyId: _var.security_policy_id,\n    attackGroup: _var.attack_group,\n    attackGroupAction: _var.attack_group_action,\n    conditionException: fs.readFileSync(`${path.module}/condition_exception.json`),\n});\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nconfiguration = akamai.get_app_sec_configuration(name=var[\"security_configuration\"])\neval_attack_group = akamai.AppSecEvalGroup(\"evalAttackGroup\",\n    config_id=configuration.config_id,\n    security_policy_id=var[\"security_policy_id\"],\n    attack_group=var[\"attack_group\"],\n    attack_group_action=var[\"attack_group_action\"],\n    condition_exception=(lambda path: open(path).read())(f\"{path['module']}/condition_exception.json\"))\n```\n```csharp\nusing System.IO;\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs\n        {\n            Name = @var.Security_configuration,\n        }));\n        var evalAttackGroup = new Akamai.AppSecEvalGroup(\"evalAttackGroup\", new Akamai.AppSecEvalGroupArgs\n        {\n            ConfigId = configuration.Apply(configuration =\u003e configuration.ConfigId),\n            SecurityPolicyId = @var.Security_policy_id,\n            AttackGroup = @var.Attack_group,\n            AttackGroupAction = @var.Attack_group_action,\n            ConditionException = File.ReadAllText($\"{path.Module}/condition_exception.json\"),\n        });\n    }\n\n}\n```\n{{% /example %}}\n{{% /examples %}}",
+            "properties": {
+                "attackGroup": {
+                    "type": "string",
+                    "description": "The eval attack group to use.\n"
+                },
+                "attackGroupAction": {
+                    "type": "string",
+                    "description": "The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.\n"
+                },
+                "conditionException": {
+                    "type": "string",
+                    "description": "The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception)).\n"
+                },
+                "configId": {
+                    "type": "integer",
+                    "description": "The ID of the security configuration to use.\n"
+                },
+                "securityPolicyId": {
+                    "type": "string",
+                    "description": "The ID of the security policy to use.\n"
+                }
+            },
+            "required": [
+                "attackGroup",
+                "attackGroupAction",
+                "configId",
+                "securityPolicyId"
+            ],
+            "inputProperties": {
+                "attackGroup": {
+                    "type": "string",
+                    "description": "The eval attack group to use.\n"
+                },
+                "attackGroupAction": {
+                    "type": "string",
+                    "description": "The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.\n"
+                },
+                "conditionException": {
+                    "type": "string",
+                    "description": "The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception)).\n"
+                },
+                "configId": {
+                    "type": "integer",
+                    "description": "The ID of the security configuration to use.\n"
+                },
+                "securityPolicyId": {
+                    "type": "string",
+                    "description": "The ID of the security policy to use.\n"
+                }
+            },
+            "requiredInputs": [
+                "attackGroup",
+                "attackGroupAction",
+                "configId",
+                "securityPolicyId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering AppSecEvalGroup resources.\n",
+                "properties": {
+                    "attackGroup": {
+                        "type": "string",
+                        "description": "The eval attack group to use.\n"
+                    },
+                    "attackGroupAction": {
+                        "type": "string",
+                        "description": "The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.\n"
+                    },
+                    "conditionException": {
+                        "type": "string",
+                        "description": "The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception)).\n"
+                    },
+                    "configId": {
+                        "type": "integer",
+                        "description": "The ID of the security configuration to use.\n"
                     },
                     "securityPolicyId": {
                         "type": "string",
@@ -6572,7 +6671,7 @@
                 },
                 "ruleAction": {
                     "type": "string",
-                    "description": "The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.\n"
+                    "description": "The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only condition_exception can be modified, \"ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.\n"
                 },
                 "ruleId": {
                     "type": "integer",
@@ -6585,7 +6684,6 @@
             },
             "required": [
                 "configId",
-                "ruleAction",
                 "ruleId",
                 "securityPolicyId"
             ],
@@ -6600,7 +6698,7 @@
                 },
                 "ruleAction": {
                     "type": "string",
-                    "description": "The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.\n"
+                    "description": "The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only condition_exception can be modified, \"ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.\n"
                 },
                 "ruleId": {
                     "type": "integer",
@@ -6613,7 +6711,6 @@
             },
             "requiredInputs": [
                 "configId",
-                "ruleAction",
                 "ruleId",
                 "securityPolicyId"
             ],
@@ -6630,7 +6727,7 @@
                     },
                     "ruleAction": {
                         "type": "string",
-                        "description": "The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.\n"
+                        "description": "The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only condition_exception can be modified, \"ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.\n"
                     },
                     "ruleId": {
                         "type": "integer",
@@ -6661,11 +6758,15 @@
                 },
                 "mode": {
                     "type": "string",
-                    "description": "A string indicating the current mode, either \"KRS\" or \"AAG\".\n"
+                    "description": "A string indicating the current mode, either KRS,AAG,ASE_AUTO,ASE_MANUAL\n"
                 },
                 "securityPolicyId": {
                     "type": "string",
                     "description": "The ID of the security policy to use.\n"
+                },
+                "upgradeMode": {
+                    "type": "string",
+                    "description": "__ASE Beta__. (Optional) ASE_AUTO or ASE_MANUAL.  ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode\n"
                 }
             },
             "required": [
@@ -6683,6 +6784,10 @@
                 "securityPolicyId": {
                     "type": "string",
                     "description": "The ID of the security policy to use.\n"
+                },
+                "upgradeMode": {
+                    "type": "string",
+                    "description": "__ASE Beta__. (Optional) ASE_AUTO or ASE_MANUAL.  ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode\n"
                 }
             },
             "requiredInputs": [
@@ -6706,11 +6811,15 @@
                     },
                     "mode": {
                         "type": "string",
-                        "description": "A string indicating the current mode, either \"KRS\" or \"AAG\".\n"
+                        "description": "A string indicating the current mode, either KRS,AAG,ASE_AUTO,ASE_MANUAL\n"
                     },
                     "securityPolicyId": {
                         "type": "string",
                         "description": "The ID of the security policy to use.\n"
+                    },
+                    "upgradeMode": {
+                        "type": "string",
+                        "description": "__ASE Beta__. (Optional) ASE_AUTO or ASE_MANUAL.  ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode\n"
                     }
                 },
                 "type": "object"
@@ -6936,7 +7045,7 @@
             }
         },
         "akamai:index/appSecSiemSettings:AppSecSiemSettings": {
-            "description": "Use the `akamai.AppSecSiemSettings` resource to mpdate the SIEM integration settings for a specific configuration.\n",
+            "description": "Use the `akamai.AppSecSiemSettings` resource to mpdate the SIEM integration settings for a specific configuration.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst configuration = akamai.getAppSecConfiguration({\n    name: _var.security_configuration,\n});\nconst siemDefinition = akamai.getAppSecSiemDefinitions({\n    siemDefinitionName: _var.siem_definition_name,\n});\nconst securityPolicies = configuration.then(configuration =\u003e akamai.getAppSecSecurityPolicy({\n    configId: configuration.configId,\n}));\nconst siem = new akamai.AppSecSiemSettings(\"siem\", {\n    configId: configuration.then(configuration =\u003e configuration.configId),\n    enableSiem: true,\n    enableForAllPolicies: false,\n    enableBotmanSiem: true,\n    siemId: siemDefinition.then(siemDefinition =\u003e siemDefinition.id),\n    securityPolicyIds: securityPolicies.then(securityPolicies =\u003e securityPolicies.securityPolicyIdLists),\n});\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nconfiguration = akamai.get_app_sec_configuration(name=var[\"security_configuration\"])\nsiem_definition = akamai.get_app_sec_siem_definitions(siem_definition_name=var[\"siem_definition_name\"])\nsecurity_policies = akamai.get_app_sec_security_policy(config_id=configuration.config_id)\nsiem = akamai.AppSecSiemSettings(\"siem\",\n    config_id=configuration.config_id,\n    enable_siem=True,\n    enable_for_all_policies=False,\n    enable_botman_siem=True,\n    siem_id=siem_definition.id,\n    security_policy_ids=security_policies.security_policy_id_lists)\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs\n        {\n            Name = @var.Security_configuration,\n        }));\n        var siemDefinition = Output.Create(Akamai.GetAppSecSiemDefinitions.InvokeAsync(new Akamai.GetAppSecSiemDefinitionsArgs\n        {\n            SiemDefinitionName = @var.Siem_definition_name,\n        }));\n        var securityPolicies = configuration.Apply(configuration =\u003e Output.Create(Akamai.GetAppSecSecurityPolicy.InvokeAsync(new Akamai.GetAppSecSecurityPolicyArgs\n        {\n            ConfigId = configuration.ConfigId,\n        })));\n        var siem = new Akamai.AppSecSiemSettings(\"siem\", new Akamai.AppSecSiemSettingsArgs\n        {\n            ConfigId = configuration.Apply(configuration =\u003e configuration.ConfigId),\n            EnableSiem = true,\n            EnableForAllPolicies = false,\n            EnableBotmanSiem = true,\n            SiemId = siemDefinition.Apply(siemDefinition =\u003e siemDefinition.Id),\n            SecurityPolicyIds = securityPolicies.Apply(securityPolicies =\u003e securityPolicies.SecurityPolicyIdLists),\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\topt0 := _var.Security_configuration\n\t\tconfiguration, err := akamai.LookupAppSecConfiguration(ctx, \u0026akamai.LookupAppSecConfigurationArgs{\n\t\t\tName: \u0026opt0,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\topt1 := _var.Siem_definition_name\n\t\tsiemDefinition, err := akamai.GetAppSecSiemDefinitions(ctx, \u0026akamai.GetAppSecSiemDefinitionsArgs{\n\t\t\tSiemDefinitionName: \u0026opt1,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tsecurityPolicies, err := akamai.LookupAppSecSecurityPolicy(ctx, \u0026akamai.LookupAppSecSecurityPolicyArgs{\n\t\t\tConfigId: configuration.ConfigId,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = akamai.NewAppSecSiemSettings(ctx, \"siem\", \u0026akamai.AppSecSiemSettingsArgs{\n\t\t\tConfigId:             pulumi.Int(configuration.ConfigId),\n\t\t\tEnableSiem:           pulumi.Bool(true),\n\t\t\tEnableForAllPolicies: pulumi.Bool(false),\n\t\t\tEnableBotmanSiem:     pulumi.Bool(true),\n\t\t\tSiemId:               pulumi.String(siemDefinition.Id),\n\t\t\tSecurityPolicyIds:    toPulumiStringArray(securityPolicies.SecurityPolicyIdLists),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\nfunc toPulumiStringArray(arr []string) pulumi.StringArray {\n\tvar pulumiArr pulumi.StringArray\n\tfor _, v := range arr {\n\t\tpulumiArr = append(pulumiArr, pulumi.String(v))\n\t}\n\treturn pulumiArr\n}\n```\n{{% /example %}}\n{{% /examples %}}",
             "properties": {
                 "configId": {
                     "type": "integer",
@@ -7206,6 +7315,65 @@
                 "type": "object"
             }
         },
+        "akamai:index/appSecThreatIntel:AppSecThreatIntel": {
+            "description": "Use `akamai.AppSecThreatIntel` resource to update threat intelligence setting for a policy. Only applies to ASE Manual rulesets. Allowed values are on and off\n__BETA__ This is Adaptive Security Engine(ASE) related data resource. Please contact your akamai representative if you want to learn more\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst configuration = akamai.getAppSecConfiguration({\n    name: _var.security_configuration,\n});\nconst threatIntel = new akamai.AppSecThreatIntel(\"threatIntel\", {\n    configId: configuration.then(configuration =\u003e configuration.configId),\n    securityPolicyId: _var.security_policy_id,\n    threatIntel: _var.threat_intel,\n});\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nconfiguration = akamai.get_app_sec_configuration(name=var[\"security_configuration\"])\nthreat_intel = akamai.AppSecThreatIntel(\"threatIntel\",\n    config_id=configuration.config_id,\n    security_policy_id=var[\"security_policy_id\"],\n    threat_intel=var[\"threat_intel\"])\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs\n        {\n            Name = @var.Security_configuration,\n        }));\n        var threatIntel = new Akamai.AppSecThreatIntel(\"threatIntel\", new Akamai.AppSecThreatIntelArgs\n        {\n            ConfigId = configuration.Apply(configuration =\u003e configuration.ConfigId),\n            SecurityPolicyId = @var.Security_policy_id,\n            ThreatIntel = @var.Threat_intel,\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\topt0 := _var.Security_configuration\n\t\tconfiguration, err := akamai.LookupAppSecConfiguration(ctx, \u0026akamai.LookupAppSecConfigurationArgs{\n\t\t\tName: \u0026opt0,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = akamai.NewAppSecThreatIntel(ctx, \"threatIntel\", \u0026akamai.AppSecThreatIntelArgs{\n\t\t\tConfigId:         pulumi.Int(configuration.ConfigId),\n\t\t\tSecurityPolicyId: pulumi.Any(_var.Security_policy_id),\n\t\t\tThreatIntel:      pulumi.Any(_var.Threat_intel),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
+            "properties": {
+                "configId": {
+                    "type": "integer",
+                    "description": "The ID of the security configuration to use.\n"
+                },
+                "securityPolicyId": {
+                    "type": "string",
+                    "description": "The ID of the security policy to use.\n"
+                },
+                "threatIntel": {
+                    "type": "string",
+                    "description": "threat_intel - \"on\" or \"off\"\n"
+                }
+            },
+            "required": [
+                "configId",
+                "securityPolicyId",
+                "threatIntel"
+            ],
+            "inputProperties": {
+                "configId": {
+                    "type": "integer",
+                    "description": "The ID of the security configuration to use.\n"
+                },
+                "securityPolicyId": {
+                    "type": "string",
+                    "description": "The ID of the security policy to use.\n"
+                },
+                "threatIntel": {
+                    "type": "string",
+                    "description": "threat_intel - \"on\" or \"off\"\n"
+                }
+            },
+            "requiredInputs": [
+                "configId",
+                "securityPolicyId",
+                "threatIntel"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering AppSecThreatIntel resources.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer",
+                        "description": "The ID of the security configuration to use.\n"
+                    },
+                    "securityPolicyId": {
+                        "type": "string",
+                        "description": "The ID of the security policy to use.\n"
+                    },
+                    "threatIntel": {
+                        "type": "string",
+                        "description": "threat_intel - \"on\" or \"off\"\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "akamai:index/appSecVersionNodes:AppSecVersionNodes": {
             "description": "Use the `akamai.AppSecVersionNodes` resource to update the version notes for a configuration.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst configuration = akamai.getAppSecConfiguration({\n    name: _var.security_configuration,\n});\n// USE CASE: user wants to update the version notes of the latest version\nconst versionNotesAppSecVersionNodes = new akamai.AppSecVersionNodes(\"versionNotesAppSecVersionNodes\", {\n    configId: configuration.then(configuration =\u003e configuration.configId),\n    versionNotes: _var.version_notes,\n});\nexport const versionNotes = versionNotesAppSecVersionNodes.outputText;\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nconfiguration = akamai.get_app_sec_configuration(name=var[\"security_configuration\"])\n# USE CASE: user wants to update the version notes of the latest version\nversion_notes_app_sec_version_nodes = akamai.AppSecVersionNodes(\"versionNotesAppSecVersionNodes\",\n    config_id=configuration.config_id,\n    version_notes=var[\"version_notes\"])\npulumi.export(\"versionNotes\", version_notes_app_sec_version_nodes.output_text)\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs\n        {\n            Name = @var.Security_configuration,\n        }));\n        // USE CASE: user wants to update the version notes of the latest version\n        var versionNotesAppSecVersionNodes = new Akamai.AppSecVersionNodes(\"versionNotesAppSecVersionNodes\", new Akamai.AppSecVersionNodesArgs\n        {\n            ConfigId = configuration.Apply(configuration =\u003e configuration.ConfigId),\n            VersionNotes = @var.Version_notes,\n        });\n        this.VersionNotes = versionNotesAppSecVersionNodes.OutputText;\n    }\n\n    [Output(\"versionNotes\")]\n    public Output\u003cstring\u003e VersionNotes { get; set; }\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\topt0 := _var.Security_configuration\n\t\tconfiguration, err := akamai.LookupAppSecConfiguration(ctx, \u0026akamai.LookupAppSecConfigurationArgs{\n\t\t\tName: \u0026opt0,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tversionNotesAppSecVersionNodes, err := akamai.NewAppSecVersionNodes(ctx, \"versionNotesAppSecVersionNodes\", \u0026akamai.AppSecVersionNodesArgs{\n\t\t\tConfigId:     pulumi.Int(configuration.ConfigId),\n\t\t\tVersionNotes: pulumi.Any(_var.Version_notes),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tctx.Export(\"versionNotes\", versionNotesAppSecVersionNodes.OutputText)\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
             "properties": {
@@ -7285,7 +7453,7 @@
                 },
                 "mode": {
                     "type": "string",
-                    "description": "\"KRS\" to update the rule sets manually, or \"AAG\" to have them update automatically.\n"
+                    "description": "\"KRS\" to update the rule sets manually, or \"AAG\" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode\n"
                 },
                 "outputText": {
                     "type": "string",
@@ -7313,7 +7481,7 @@
                 },
                 "mode": {
                     "type": "string",
-                    "description": "\"KRS\" to update the rule sets manually, or \"AAG\" to have them update automatically.\n"
+                    "description": "\"KRS\" to update the rule sets manually, or \"AAG\" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode\n"
                 },
                 "securityPolicyId": {
                     "type": "string",
@@ -7350,7 +7518,7 @@
                     },
                     "mode": {
                         "type": "string",
-                        "description": "\"KRS\" to update the rule sets manually, or \"AAG\" to have them update automatically.\n"
+                        "description": "\"KRS\" to update the rule sets manually, or \"AAG\" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode\n"
                     },
                     "outputText": {
                         "type": "string",
@@ -7423,6 +7591,87 @@
                     "outputText": {
                         "type": "string",
                         "description": "A tabular display showing the current protection settings.\n"
+                    },
+                    "securityPolicyId": {
+                        "type": "string",
+                        "description": "The ID of the security policy to use.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/appSecWapSelectedHostnames:AppSecWapSelectedHostnames": {
+            "description": "The `akamai.AppSecWapSelectedHostnames` resource allows you to set the lists of hostnames to be protected and to be evaluated\nunder a given security configuration and policy. This resource is available only for WAP accounts. Either of the lists of hostnames\nmay be omitted or specified as an empty list, but at least one of the two lists must be present and non-empty. (WAP selected hostnames\nis currently in beta. Please contact your Akamai representative for more information about this feature.)\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst configuration = akamai.getAppSecConfiguration({\n    name: \"Akamai Tools\",\n});\nconst appsecwapSelectedhostnames = new akamai.AppSecWapSelectedHostnames(\"appsecwapSelectedhostnames\", {\n    configId: configuration.then(configuration =\u003e configuration.configId),\n    securityPolicyId: _var.security_policy_id,\n    protectedHostnames: [\"example.com\"],\n    evaluatedHostnames: [\"example2.com\"],\n});\n```\n{{% /example %}}\n{{% /examples %}}",
+            "properties": {
+                "configId": {
+                    "type": "integer",
+                    "description": "The ID of the security configuration to use.\n"
+                },
+                "evaluatedHosts": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "protectedHosts": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "securityPolicyId": {
+                    "type": "string",
+                    "description": "The ID of the security policy to use.\n"
+                }
+            },
+            "required": [
+                "configId",
+                "securityPolicyId"
+            ],
+            "inputProperties": {
+                "configId": {
+                    "type": "integer",
+                    "description": "The ID of the security configuration to use.\n"
+                },
+                "evaluatedHosts": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "protectedHosts": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "securityPolicyId": {
+                    "type": "string",
+                    "description": "The ID of the security policy to use.\n"
+                }
+            },
+            "requiredInputs": [
+                "configId",
+                "securityPolicyId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering AppSecWapSelectedHostnames resources.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer",
+                        "description": "The ID of the security configuration to use.\n"
+                    },
+                    "evaluatedHosts": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "protectedHosts": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "securityPolicyId": {
                         "type": "string",
@@ -9929,11 +10178,19 @@
             ]
         },
         "akamai:index/networkList:NetworkList": {
-            "description": "Use the `akamai.NetworkList` resource to create a network list, or to modify an existing list.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst networkList = new akamai.NetworkList(\"networkList\", {\n    type: \"IP\",\n    description: \"network list description\",\n    lists: _var.list,\n    mode: \"APPEND\",\n});\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nnetwork_list = akamai.NetworkList(\"networkList\",\n    type=\"IP\",\n    description=\"network list description\",\n    lists=var[\"list\"],\n    mode=\"APPEND\")\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var networkList = new Akamai.NetworkList(\"networkList\", new Akamai.NetworkListArgs\n        {\n            Type = \"IP\",\n            Description = \"network list description\",\n            Lists = @var.List,\n            Mode = \"APPEND\",\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := akamai.NewNetworkList(ctx, \"networkList\", \u0026akamai.NetworkListArgs{\n\t\t\tType:        pulumi.String(\"IP\"),\n\t\t\tDescription: pulumi.String(\"network list description\"),\n\t\t\tLists:       _var.List,\n\t\t\tMode:        pulumi.String(\"APPEND\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
+            "description": "Use the `akamai.NetworkList` resource to create a network list, or to modify an existing list.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst networkList = new akamai.NetworkList(\"networkList\", {\n    type: \"IP\",\n    description: \"network list description\",\n    lists: _var.list,\n    mode: \"APPEND\",\n    contractId: \"ABC-123\",\n    groupId: 12345,\n});\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nnetwork_list = akamai.NetworkList(\"networkList\",\n    type=\"IP\",\n    description=\"network list description\",\n    lists=var[\"list\"],\n    mode=\"APPEND\",\n    contract_id=\"ABC-123\",\n    group_id=12345)\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var networkList = new Akamai.NetworkList(\"networkList\", new Akamai.NetworkListArgs\n        {\n            Type = \"IP\",\n            Description = \"network list description\",\n            Lists = @var.List,\n            Mode = \"APPEND\",\n            ContractId = \"ABC-123\",\n            GroupId = 12345,\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := akamai.NewNetworkList(ctx, \"networkList\", \u0026akamai.NetworkListArgs{\n\t\t\tType:        pulumi.String(\"IP\"),\n\t\t\tDescription: pulumi.String(\"network list description\"),\n\t\t\tLists:       _var.List,\n\t\t\tMode:        pulumi.String(\"APPEND\"),\n\t\t\tContractId:  pulumi.String(\"ABC-123\"),\n\t\t\tGroupId:     pulumi.Int(12345),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
             "properties": {
+                "contractId": {
+                    "type": "string",
+                    "description": "The contract ID of the network list. If supplied, group_id must also be supplied. The\ncontract_id value of an existing network list may not be modified.\n"
+                },
                 "description": {
                     "type": "string",
                     "description": "The description to be assigned to the network list.\n"
+                },
+                "groupId": {
+                    "type": "integer",
+                    "description": "The group ID of the network list. If supplied, contract_id must also be supplied. The\ngroup_id value of an existing network list may not be modified.\n"
                 },
                 "lists": {
                     "type": "array",
@@ -9977,9 +10234,17 @@
                 "uniqueid"
             ],
             "inputProperties": {
+                "contractId": {
+                    "type": "string",
+                    "description": "The contract ID of the network list. If supplied, group_id must also be supplied. The\ncontract_id value of an existing network list may not be modified.\n"
+                },
                 "description": {
                     "type": "string",
                     "description": "The description to be assigned to the network list.\n"
+                },
+                "groupId": {
+                    "type": "integer",
+                    "description": "The group ID of the network list. If supplied, contract_id must also be supplied. The\ngroup_id value of an existing network list may not be modified.\n"
                 },
                 "lists": {
                     "type": "array",
@@ -10009,9 +10274,17 @@
             "stateInputs": {
                 "description": "Input properties used for looking up and filtering NetworkList resources.\n",
                 "properties": {
+                    "contractId": {
+                        "type": "string",
+                        "description": "The contract ID of the network list. If supplied, group_id must also be supplied. The\ncontract_id value of an existing network list may not be modified.\n"
+                    },
                     "description": {
                         "type": "string",
                         "description": "The description to be assigned to the network list.\n"
+                    },
+                    "groupId": {
+                        "type": "integer",
+                        "description": "The group ID of the network list. If supplied, contract_id must also be supplied. The\ngroup_id value of an existing network list may not be modified.\n"
                     },
                     "lists": {
                         "type": "array",
@@ -10570,7 +10843,7 @@
             ]
         },
         "akamai:index/propertyActivation:PropertyActivation": {
-            "description": "The `akamai.PropertyActivation` resource lets you activate a property version. An activation deploys the version to either the Akamai staging or production network. You can activate a specific version multiple times if you need to.  \n\nBefore activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.\n\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\nimport * from \"fs\";\n\nconst email = \"user@example.org\";\nconst ruleFormat = \"v2020-03-04\";\nconst example = new akamai.Property(\"example\", {\n    productId: \"prd_SPM\",\n    contractId: _var.contractid,\n    groupId: _var.groupid,\n    hostnames: {\n        \"example.org\": \"example.org.edgesuite.net\",\n        \"www.example.org\": \"example.org.edgesuite.net\",\n        \"sub.example.org\": \"sub.example.org.edgesuite.net\",\n    },\n    ruleFormat: ruleFormat,\n    rules: fs.readFileSync(`${path.module}/main.json`),\n});\nconst exampleStaging = new akamai.PropertyActivation(\"exampleStaging\", {\n    propertyId: example.id,\n    contacts: [email],\n    version: example.latestVersion,\n});\n// not specifying network will target STAGING\nconst exampleProd = new akamai.PropertyActivation(\"exampleProd\", {\n    propertyId: example.id,\n    network: \"PRODUCTION\",\n    version: 3,\n    contacts: [email],\n}, {\n    dependsOn: [exampleStaging],\n});\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nemail = \"user@example.org\"\nrule_format = \"v2020-03-04\"\nexample = akamai.Property(\"example\",\n    product_id=\"prd_SPM\",\n    contract_id=var[\"contractid\"],\n    group_id=var[\"groupid\"],\n    hostnames={\n        \"example.org\": \"example.org.edgesuite.net\",\n        \"www.example.org\": \"example.org.edgesuite.net\",\n        \"sub.example.org\": \"sub.example.org.edgesuite.net\",\n    },\n    rule_format=rule_format,\n    rules=(lambda path: open(path).read())(f\"{path['module']}/main.json\"))\nexample_staging = akamai.PropertyActivation(\"exampleStaging\",\n    property_id=example.id,\n    contacts=[email],\n    version=example.latest_version)\n# not specifying network will target STAGING\nexample_prod = akamai.PropertyActivation(\"exampleProd\",\n    property_id=example.id,\n    network=\"PRODUCTION\",\n    version=3,\n    contacts=[email],\n    opts=pulumi.ResourceOptions(depends_on=[example_staging]))\n```\n```csharp\nusing System.IO;\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var email = \"user@example.org\";\n        var ruleFormat = \"v2020-03-04\";\n        var example = new Akamai.Property(\"example\", new Akamai.PropertyArgs\n        {\n            ProductId = \"prd_SPM\",\n            ContractId = @var.Contractid,\n            GroupId = @var.Groupid,\n            Hostnames = \n            {\n                { \"example.org\", \"example.org.edgesuite.net\" },\n                { \"www.example.org\", \"example.org.edgesuite.net\" },\n                { \"sub.example.org\", \"sub.example.org.edgesuite.net\" },\n            },\n            RuleFormat = ruleFormat,\n            Rules = File.ReadAllText($\"{path.Module}/main.json\"),\n        });\n        var exampleStaging = new Akamai.PropertyActivation(\"exampleStaging\", new Akamai.PropertyActivationArgs\n        {\n            PropertyId = example.Id,\n            Contacts = \n            {\n                email,\n            },\n            Version = example.LatestVersion,\n        });\n        // not specifying network will target STAGING\n        var exampleProd = new Akamai.PropertyActivation(\"exampleProd\", new Akamai.PropertyActivationArgs\n        {\n            PropertyId = example.Id,\n            Network = \"PRODUCTION\",\n            Version = 3,\n            Contacts = \n            {\n                email,\n            },\n        }, new CustomResourceOptions\n        {\n            DependsOn = \n            {\n                exampleStaging,\n            },\n        });\n    }\n\n}\n```\n{{% /example %}}\n{{% /examples %}}\n## Argument reference\n\nThe following arguments are supported:\n\n* `property_id` - (Required) The property’s unique identifier, including the `prp_` prefix.\n* `contact` - (Required) One or more email addresses to send activation status changes to.\n* `version` - (Required) The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `akamai.Property` resource labeled `example`.\n* `network` - (Optional) Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.\n* `auto_acknowledge_rule_warnings` - (Optional) Whether the activation should proceed despite any warnings. By default set to `true`.\n\n### Deprecated arguments\n\n* `property` - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.\n\n## Attribute reference\n\nThe following attributes are returned:\n\n* `id` - The unique identifier for this activation.\n* `warnings` - The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.\n* `errors` - The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.\n* `activation_id` - The ID given to the activation event while it's in progress.\n* `status` - The property version’s activation status on the selected network.\n\n### Deprecated attributes\n\n* `rule_warnings` - (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.\n",
+            "description": "The `akamai.PropertyActivation` resource lets you activate a property version. An activation deploys the version to either the Akamai staging or production network. You can activate a specific version multiple times if you need to.  \n\nBefore activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.\n\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\nimport * from \"fs\";\n\nconst email = \"user@example.org\";\nconst ruleFormat = \"v2020-03-04\";\nconst example = new akamai.Property(\"example\", {\n    productId: \"prd_SPM\",\n    contractId: _var.contractid,\n    groupId: _var.groupid,\n    hostnames: {\n        \"example.org\": \"example.org.edgesuite.net\",\n        \"www.example.org\": \"example.org.edgesuite.net\",\n        \"sub.example.org\": \"sub.example.org.edgesuite.net\",\n    },\n    ruleFormat: ruleFormat,\n    rules: fs.readFileSync(`${path.module}/main.json`),\n});\nconst exampleStaging = new akamai.PropertyActivation(\"exampleStaging\", {\n    propertyId: example.id,\n    contacts: [email],\n    version: example.latestVersion,\n    note: \"Sample activation\",\n});\nconst exampleProd = new akamai.PropertyActivation(\"exampleProd\", {\n    propertyId: example.id,\n    network: \"PRODUCTION\",\n    version: 3,\n    contacts: [email],\n}, {\n    dependsOn: [exampleStaging],\n});\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nemail = \"user@example.org\"\nrule_format = \"v2020-03-04\"\nexample = akamai.Property(\"example\",\n    product_id=\"prd_SPM\",\n    contract_id=var[\"contractid\"],\n    group_id=var[\"groupid\"],\n    hostnames={\n        \"example.org\": \"example.org.edgesuite.net\",\n        \"www.example.org\": \"example.org.edgesuite.net\",\n        \"sub.example.org\": \"sub.example.org.edgesuite.net\",\n    },\n    rule_format=rule_format,\n    rules=(lambda path: open(path).read())(f\"{path['module']}/main.json\"))\nexample_staging = akamai.PropertyActivation(\"exampleStaging\",\n    property_id=example.id,\n    contacts=[email],\n    version=example.latest_version,\n    note=\"Sample activation\")\nexample_prod = akamai.PropertyActivation(\"exampleProd\",\n    property_id=example.id,\n    network=\"PRODUCTION\",\n    version=3,\n    contacts=[email],\n    opts=pulumi.ResourceOptions(depends_on=[example_staging]))\n```\n```csharp\nusing System.IO;\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var email = \"user@example.org\";\n        var ruleFormat = \"v2020-03-04\";\n        var example = new Akamai.Property(\"example\", new Akamai.PropertyArgs\n        {\n            ProductId = \"prd_SPM\",\n            ContractId = @var.Contractid,\n            GroupId = @var.Groupid,\n            Hostnames = \n            {\n                { \"example.org\", \"example.org.edgesuite.net\" },\n                { \"www.example.org\", \"example.org.edgesuite.net\" },\n                { \"sub.example.org\", \"sub.example.org.edgesuite.net\" },\n            },\n            RuleFormat = ruleFormat,\n            Rules = File.ReadAllText($\"{path.Module}/main.json\"),\n        });\n        var exampleStaging = new Akamai.PropertyActivation(\"exampleStaging\", new Akamai.PropertyActivationArgs\n        {\n            PropertyId = example.Id,\n            Contacts = \n            {\n                email,\n            },\n            Version = example.LatestVersion,\n            Note = \"Sample activation\",\n        });\n        var exampleProd = new Akamai.PropertyActivation(\"exampleProd\", new Akamai.PropertyActivationArgs\n        {\n            PropertyId = example.Id,\n            Network = \"PRODUCTION\",\n            Version = 3,\n            Contacts = \n            {\n                email,\n            },\n        }, new CustomResourceOptions\n        {\n            DependsOn = \n            {\n                exampleStaging,\n            },\n        });\n    }\n\n}\n```\n{{% /example %}}\n{{% /examples %}}\n## Argument reference\n\nThe following arguments are supported:\n\n* `property_id` - (Required) The property’s unique identifier, including the `prp_` prefix.\n* `contact` - (Required) One or more email addresses to send activation status changes to.\n* `version` - (Required) The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `akamai.Property` resource labeled `example`.\n* `network` - (Optional) Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.\n* `note` - (Optional) A log message you can assign to the activation request.\n* `auto_acknowledge_rule_warnings` - (Optional) Whether the activation should proceed despite any warnings. By default set to `true`.\n\n### Deprecated arguments\n\n* `property` - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.\n\n## Attribute reference\n\nThe following attributes are returned:\n\n* `id` - The unique identifier for this activation.\n* `warnings` - The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.\n* `errors` - The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.\n* `activation_id` - The ID given to the activation event while it's in progress.\n* `status` - The property version’s activation status on the selected network.\n\n### Deprecated attributes\n\n* `rule_warnings` - (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.\n",
             "properties": {
                 "activationId": {
                     "type": "string"
@@ -10590,6 +10863,10 @@
                 },
                 "network": {
                     "type": "string"
+                },
+                "note": {
+                    "type": "string",
+                    "description": "assigns a log message to the activation request\n"
                 },
                 "property": {
                     "type": "string",
@@ -10650,6 +10927,10 @@
                 "network": {
                     "type": "string"
                 },
+                "note": {
+                    "type": "string",
+                    "description": "assigns a log message to the activation request\n"
+                },
                 "property": {
                     "type": "string",
                     "deprecationMessage": "The setting \"property\" has been deprecated."
@@ -10699,6 +10980,10 @@
                     },
                     "network": {
                         "type": "string"
+                    },
+                    "note": {
+                        "type": "string",
+                        "description": "assigns a log message to the activation request\n"
                     },
                     "property": {
                         "type": "string",
@@ -11318,6 +11603,10 @@
                 "network": {
                     "type": "string"
                 },
+                "note": {
+                    "type": "string",
+                    "description": "assigns a log message to the activation request\n"
+                },
                 "property": {
                     "type": "string",
                     "deprecationMessage": "The setting \"property\" has been deprecated."
@@ -11377,6 +11666,10 @@
                 "network": {
                     "type": "string"
                 },
+                "note": {
+                    "type": "string",
+                    "description": "assigns a log message to the activation request\n"
+                },
                 "property": {
                     "type": "string",
                     "deprecationMessage": "The setting \"property\" has been deprecated."
@@ -11426,6 +11719,10 @@
                     },
                     "network": {
                         "type": "string"
+                    },
+                    "note": {
+                        "type": "string",
+                        "description": "assigns a log message to the activation request\n"
                     },
                     "property": {
                         "type": "string",
@@ -13600,6 +13897,75 @@
                 ]
             }
         },
+        "akamai:index/getAppSecEvalGroups:getAppSecEvalGroups": {
+            "description": "Use the `akamai.getAppSecEvalGroups` data source to list the action and condition-exception information for an evaluation attack\ngroup or groups.\n__BETA__ This is Adaptive Security Engine(ASE) related data source. Please contact your akamai representative if you want to learn more\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst configuration = akamai.getAppSecConfiguration({\n    name: _var.security_configuration,\n});\nconst evalAttackGroup = configuration.then(configuration =\u003e akamai.getAppSecEvalGroups({\n    configId: configuration.configId,\n    securityPolicyId: _var.security_policy_id,\n    attackGroup: _var.attack_group,\n}));\nexport const evalAttackGroupAction = evalAttackGroup.then(evalAttackGroup =\u003e evalAttackGroup.attackGroupAction);\nexport const conditionException = evalAttackGroup.then(evalAttackGroup =\u003e evalAttackGroup.conditionException);\nexport const json = evalAttackGroup.then(evalAttackGroup =\u003e evalAttackGroup.json);\nexport const outputText = evalAttackGroup.then(evalAttackGroup =\u003e evalAttackGroup.outputText);\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nconfiguration = akamai.get_app_sec_configuration(name=var[\"security_configuration\"])\neval_attack_group = akamai.get_app_sec_eval_groups(config_id=configuration.config_id,\n    security_policy_id=var[\"security_policy_id\"],\n    attack_group=var[\"attack_group\"])\npulumi.export(\"evalAttackGroupAction\", eval_attack_group.attack_group_action)\npulumi.export(\"conditionException\", eval_attack_group.condition_exception)\npulumi.export(\"json\", eval_attack_group.json)\npulumi.export(\"outputText\", eval_attack_group.output_text)\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs\n        {\n            Name = @var.Security_configuration,\n        }));\n        var evalAttackGroup = configuration.Apply(configuration =\u003e Output.Create(Akamai.GetAppSecEvalGroups.InvokeAsync(new Akamai.GetAppSecEvalGroupsArgs\n        {\n            ConfigId = configuration.ConfigId,\n            SecurityPolicyId = @var.Security_policy_id,\n            AttackGroup = @var.Attack_group,\n        })));\n        this.EvalAttackGroupAction = evalAttackGroup.Apply(evalAttackGroup =\u003e evalAttackGroup.AttackGroupAction);\n        this.ConditionException = evalAttackGroup.Apply(evalAttackGroup =\u003e evalAttackGroup.ConditionException);\n        this.Json = evalAttackGroup.Apply(evalAttackGroup =\u003e evalAttackGroup.Json);\n        this.OutputText = evalAttackGroup.Apply(evalAttackGroup =\u003e evalAttackGroup.OutputText);\n    }\n\n    [Output(\"evalAttackGroupAction\")]\n    public Output\u003cstring\u003e EvalAttackGroupAction { get; set; }\n    [Output(\"conditionException\")]\n    public Output\u003cstring\u003e ConditionException { get; set; }\n    [Output(\"json\")]\n    public Output\u003cstring\u003e Json { get; set; }\n    [Output(\"outputText\")]\n    public Output\u003cstring\u003e OutputText { get; set; }\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\topt0 := _var.Security_configuration\n\t\tconfiguration, err := akamai.LookupAppSecConfiguration(ctx, \u0026akamai.LookupAppSecConfigurationArgs{\n\t\t\tName: \u0026opt0,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\topt1 := _var.Attack_group\n\t\tevalAttackGroup, err := akamai.GetAppSecEvalGroups(ctx, \u0026akamai.GetAppSecEvalGroupsArgs{\n\t\t\tConfigId:         configuration.ConfigId,\n\t\t\tSecurityPolicyId: _var.Security_policy_id,\n\t\t\tAttackGroup:      \u0026opt1,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tctx.Export(\"evalAttackGroupAction\", evalAttackGroup.AttackGroupAction)\n\t\tctx.Export(\"conditionException\", evalAttackGroup.ConditionException)\n\t\tctx.Export(\"json\", evalAttackGroup.Json)\n\t\tctx.Export(\"outputText\", evalAttackGroup.OutputText)\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
+            "inputs": {
+                "description": "A collection of arguments for invoking getAppSecEvalGroups.\n",
+                "properties": {
+                    "attackGroup": {
+                        "type": "string",
+                        "description": "The ID of the eval attack group to use.\n"
+                    },
+                    "configId": {
+                        "type": "integer",
+                        "description": "The ID of the security configuration to use.\n"
+                    },
+                    "securityPolicyId": {
+                        "type": "string",
+                        "description": "The ID of the security policy to use.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "configId",
+                    "securityPolicyId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAppSecEvalGroups.\n",
+                "properties": {
+                    "attackGroup": {
+                        "type": "string"
+                    },
+                    "attackGroupAction": {
+                        "type": "string",
+                        "description": "The eval attack group's action, either `alert`, `d\n"
+                    },
+                    "conditionException": {
+                        "type": "string",
+                        "description": "The eval attack group's conditions and exceptions.\n"
+                    },
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "json": {
+                        "type": "string",
+                        "description": "A JSON-formatted list of the action and condition-exception information for the specified eval attack\ngroup. This output is only generated if an attack group is specified.\n"
+                    },
+                    "outputText": {
+                        "type": "string",
+                        "description": "A tabular display showing, for the specified eval attack group or groups, the eval attack group's action and\nboolean values indicating whether conditions and exceptions are present.\n"
+                    },
+                    "securityPolicyId": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "attackGroupAction",
+                    "conditionException",
+                    "configId",
+                    "json",
+                    "outputText",
+                    "securityPolicyId",
+                    "id"
+                ]
+            }
+        },
         "akamai:index/getAppSecEvalHostnames:getAppSecEvalHostnames": {
             "description": "Use the `akamai.AppSecEvalHostnames` data source to retrieve the evaluation hostnames for a configuration. Evaluation mode for hostnames is only available for Web Application Protector. Run hostnames in evaluation mode to see how your configuration settings protect traffic for that hostname before adding a hostname directly to a live configuration. An evaluation period lasts four weeks unless you stop the evaluation. Once you begin, the hostnames you evaluate start responding to traffic as if they are your current hostnames. However, instead of taking an action the evaluation hostnames log which action they would have taken if they were your actively-protected hostnames and not a test.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst configuration = akamai.getAppSecConfiguration({\n    name: _var.security_configuration,\n});\nconst evalHostnamesAppSecEvalHostnames = configuration.then(configuration =\u003e akamai.getAppSecEvalHostnames({\n    configId: configuration.configId,\n}));\nexport const evalHostnames = evalHostnamesAppSecEvalHostnames.then(evalHostnamesAppSecEvalHostnames =\u003e evalHostnamesAppSecEvalHostnames.hostnames);\nexport const evalHostnamesOutput = evalHostnamesAppSecEvalHostnames.then(evalHostnamesAppSecEvalHostnames =\u003e evalHostnamesAppSecEvalHostnames.outputText);\nexport const evalHostnamesJson = evalHostnamesAppSecEvalHostnames.then(evalHostnamesAppSecEvalHostnames =\u003e evalHostnamesAppSecEvalHostnames.json);\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nconfiguration = akamai.get_app_sec_configuration(name=var[\"security_configuration\"])\neval_hostnames_app_sec_eval_hostnames = akamai.get_app_sec_eval_hostnames(config_id=configuration.config_id)\npulumi.export(\"evalHostnames\", eval_hostnames_app_sec_eval_hostnames.hostnames)\npulumi.export(\"evalHostnamesOutput\", eval_hostnames_app_sec_eval_hostnames.output_text)\npulumi.export(\"evalHostnamesJson\", eval_hostnames_app_sec_eval_hostnames.json)\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs\n        {\n            Name = @var.Security_configuration,\n        }));\n        var evalHostnamesAppSecEvalHostnames = configuration.Apply(configuration =\u003e Output.Create(Akamai.GetAppSecEvalHostnames.InvokeAsync(new Akamai.GetAppSecEvalHostnamesArgs\n        {\n            ConfigId = configuration.ConfigId,\n        })));\n        this.EvalHostnames = evalHostnamesAppSecEvalHostnames.Apply(evalHostnamesAppSecEvalHostnames =\u003e evalHostnamesAppSecEvalHostnames.Hostnames);\n        this.EvalHostnamesOutput = evalHostnamesAppSecEvalHostnames.Apply(evalHostnamesAppSecEvalHostnames =\u003e evalHostnamesAppSecEvalHostnames.OutputText);\n        this.EvalHostnamesJson = evalHostnamesAppSecEvalHostnames.Apply(evalHostnamesAppSecEvalHostnames =\u003e evalHostnamesAppSecEvalHostnames.Json);\n    }\n\n    [Output(\"evalHostnames\")]\n    public Output\u003cstring\u003e EvalHostnames { get; set; }\n    [Output(\"evalHostnamesOutput\")]\n    public Output\u003cstring\u003e EvalHostnamesOutput { get; set; }\n    [Output(\"evalHostnamesJson\")]\n    public Output\u003cstring\u003e EvalHostnamesJson { get; set; }\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\topt0 := _var.Security_configuration\n\t\tconfiguration, err := akamai.LookupAppSecConfiguration(ctx, \u0026akamai.LookupAppSecConfigurationArgs{\n\t\t\tName: \u0026opt0,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tevalHostnamesAppSecEvalHostnames, err := akamai.LookupAppSecEvalHostnames(ctx, \u0026akamai.LookupAppSecEvalHostnamesArgs{\n\t\t\tConfigId: configuration.ConfigId,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tctx.Export(\"evalHostnames\", evalHostnamesAppSecEvalHostnames.Hostnames)\n\t\tctx.Export(\"evalHostnamesOutput\", evalHostnamesAppSecEvalHostnames.OutputText)\n\t\tctx.Export(\"evalHostnamesJson\", evalHostnamesAppSecEvalHostnames.Json)\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
             "inputs": {
@@ -14942,6 +15308,63 @@
                 ]
             }
         },
+        "akamai:index/getAppSecThreatIntel:getAppSecThreatIntel": {
+            "description": "Use the `akamai.AppSecThreatIntel` data source to view threat intelligence setting for a policy\n__BETA__ This is Adaptive Security Engine(ASE) related data source. Please contact your akamai representative if you want to learn more\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst configuration = akamai.getAppSecConfiguration({\n    name: _var.security_configuration,\n});\nconst threatIntelAppSecThreatIntel = configuration.then(configuration =\u003e akamai.getAppSecThreatIntel({\n    configId: configuration.configId,\n    securityPolicyId: _var.security_policy_id,\n}));\nexport const threatIntel = threatIntelAppSecThreatIntel.then(threatIntelAppSecThreatIntel =\u003e threatIntelAppSecThreatIntel.threatIntel);\nexport const json = threatIntelAppSecThreatIntel.then(threatIntelAppSecThreatIntel =\u003e threatIntelAppSecThreatIntel.json);\nexport const outputText = threatIntelAppSecThreatIntel.then(threatIntelAppSecThreatIntel =\u003e threatIntelAppSecThreatIntel.outputText);\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nconfiguration = akamai.get_app_sec_configuration(name=var[\"security_configuration\"])\nthreat_intel_app_sec_threat_intel = akamai.get_app_sec_threat_intel(config_id=configuration.config_id,\n    security_policy_id=var[\"security_policy_id\"])\npulumi.export(\"threatIntel\", threat_intel_app_sec_threat_intel.threat_intel)\npulumi.export(\"json\", threat_intel_app_sec_threat_intel.json)\npulumi.export(\"outputText\", threat_intel_app_sec_threat_intel.output_text)\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs\n        {\n            Name = @var.Security_configuration,\n        }));\n        var threatIntelAppSecThreatIntel = configuration.Apply(configuration =\u003e Output.Create(Akamai.GetAppSecThreatIntel.InvokeAsync(new Akamai.GetAppSecThreatIntelArgs\n        {\n            ConfigId = configuration.ConfigId,\n            SecurityPolicyId = @var.Security_policy_id,\n        })));\n        this.ThreatIntel = threatIntelAppSecThreatIntel.Apply(threatIntelAppSecThreatIntel =\u003e threatIntelAppSecThreatIntel.ThreatIntel);\n        this.Json = threatIntelAppSecThreatIntel.Apply(threatIntelAppSecThreatIntel =\u003e threatIntelAppSecThreatIntel.Json);\n        this.OutputText = threatIntelAppSecThreatIntel.Apply(threatIntelAppSecThreatIntel =\u003e threatIntelAppSecThreatIntel.OutputText);\n    }\n\n    [Output(\"threatIntel\")]\n    public Output\u003cstring\u003e ThreatIntel { get; set; }\n    [Output(\"json\")]\n    public Output\u003cstring\u003e Json { get; set; }\n    [Output(\"outputText\")]\n    public Output\u003cstring\u003e OutputText { get; set; }\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\topt0 := _var.Security_configuration\n\t\tconfiguration, err := akamai.LookupAppSecConfiguration(ctx, \u0026akamai.LookupAppSecConfigurationArgs{\n\t\t\tName: \u0026opt0,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tthreatIntelAppSecThreatIntel, err := akamai.LookupAppSecThreatIntel(ctx, \u0026akamai.LookupAppSecThreatIntelArgs{\n\t\t\tConfigId:         configuration.ConfigId,\n\t\t\tSecurityPolicyId: _var.Security_policy_id,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tctx.Export(\"threatIntel\", threatIntelAppSecThreatIntel.ThreatIntel)\n\t\tctx.Export(\"json\", threatIntelAppSecThreatIntel.Json)\n\t\tctx.Export(\"outputText\", threatIntelAppSecThreatIntel.OutputText)\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
+            "inputs": {
+                "description": "A collection of arguments for invoking getAppSecThreatIntel.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer",
+                        "description": "The ID of the security configuration to use.\n"
+                    },
+                    "securityPolicyId": {
+                        "type": "string",
+                        "description": "The ID of the security policy to use.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "configId",
+                    "securityPolicyId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAppSecThreatIntel.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "json": {
+                        "type": "string",
+                        "description": "A JSON-formatted threat intelligence object\n"
+                    },
+                    "outputText": {
+                        "type": "string",
+                        "description": "A tabular display of the threat intel information.\n"
+                    },
+                    "securityPolicyId": {
+                        "type": "string"
+                    },
+                    "threatIntel": {
+                        "type": "string",
+                        "description": "Threat Intelligence setting, either `on` or `off`.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "configId",
+                    "json",
+                    "outputText",
+                    "securityPolicyId",
+                    "threatIntel",
+                    "id"
+                ]
+            }
+        },
         "akamai:index/getAppSecVersionNotes:getAppSecVersionNotes": {
             "description": "Use the `akamai.AppSecVersionNodes` data source to retrieve the most recent version notes for a configuration.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst configuration = akamai.getAppSecConfiguration({\n    name: _var.security_configuration,\n});\nconst versionNotes = configuration.then(configuration =\u003e akamai.getAppSecVersionNotes({\n    configId: configuration.configId,\n}));\nexport const versionNotesText = versionNotes.then(versionNotes =\u003e versionNotes.outputText);\nexport const versionNotesJson = versionNotes.then(versionNotes =\u003e versionNotes.json);\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nconfiguration = akamai.get_app_sec_configuration(name=var[\"security_configuration\"])\nversion_notes = akamai.get_app_sec_version_notes(config_id=configuration.config_id)\npulumi.export(\"versionNotesText\", version_notes.output_text)\npulumi.export(\"versionNotesJson\", version_notes.json)\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs\n        {\n            Name = @var.Security_configuration,\n        }));\n        var versionNotes = configuration.Apply(configuration =\u003e Output.Create(Akamai.GetAppSecVersionNotes.InvokeAsync(new Akamai.GetAppSecVersionNotesArgs\n        {\n            ConfigId = configuration.ConfigId,\n        })));\n        this.VersionNotesText = versionNotes.Apply(versionNotes =\u003e versionNotes.OutputText);\n        this.VersionNotesJson = versionNotes.Apply(versionNotes =\u003e versionNotes.Json);\n    }\n\n    [Output(\"versionNotesText\")]\n    public Output\u003cstring\u003e VersionNotesText { get; set; }\n    [Output(\"versionNotesJson\")]\n    public Output\u003cstring\u003e VersionNotesJson { get; set; }\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\topt0 := _var.Security_configuration\n\t\tconfiguration, err := akamai.LookupAppSecConfiguration(ctx, \u0026akamai.LookupAppSecConfigurationArgs{\n\t\t\tName: \u0026opt0,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tversionNotes, err := akamai.GetAppSecVersionNotes(ctx, \u0026akamai.GetAppSecVersionNotesArgs{\n\t\t\tConfigId: configuration.ConfigId,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tctx.Export(\"versionNotesText\", versionNotes.OutputText)\n\t\tctx.Export(\"versionNotesJson\", versionNotes.Json)\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
             "inputs": {
@@ -15037,7 +15460,7 @@
                     },
                     "mode": {
                         "type": "string",
-                        "description": "The security policy mode, either `KRS` (update manually) or `AAG` (update automatically),\n"
+                        "description": "The security policy mode, either `KRS` (update manually) or `AAG` (update automatically), For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE.\n"
                     },
                     "outputText": {
                         "type": "string",
@@ -15058,6 +15481,82 @@
                     "mode",
                     "outputText",
                     "securityPolicyId",
+                    "id"
+                ]
+            }
+        },
+        "akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames": {
+            "description": "Use the `akamai.AppSecWapSelectedHostnames` data source to retrieve lists of the hostnames that are currently\nprotected and currently being evaluated under a given security configuration and policy. This resource is available\nonly for WAP accounts. (WAP selected hostnames is currently in beta. Please contact your Akamai representative for\nmore information about this feature.)\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getAppSecWapSelectedHostnames.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer",
+                        "description": "The ID of the security configuration to use.\n"
+                    },
+                    "securityPolicyId": {
+                        "type": "string",
+                        "description": "The ID of the security policy to use.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "configId",
+                    "securityPolicyId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAppSecWapSelectedHostnames.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "evaluatedHosts": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "json": {
+                        "type": "string"
+                    },
+                    "matchTargets": {
+                        "type": "string"
+                    },
+                    "outputText": {
+                        "type": "string",
+                        "description": "A tabular display of the protected and evaluated hostnames.\n"
+                    },
+                    "protectedHosts": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "securityPolicyId": {
+                        "type": "string"
+                    },
+                    "selectedHosts": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "configId",
+                    "evaluatedHosts",
+                    "json",
+                    "matchTargets",
+                    "outputText",
+                    "protectedHosts",
+                    "securityPolicyId",
+                    "selectedHosts",
                     "id"
                 ]
             }

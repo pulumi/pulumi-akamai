@@ -11,6 +11,44 @@ namespace Pulumi.Akamai
 {
     /// <summary>
     /// Use the `akamai.AppSecSiemSettings` resource to mpdate the SIEM integration settings for a specific configuration.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// Basic usage:
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+    ///         {
+    ///             Name = @var.Security_configuration,
+    ///         }));
+    ///         var siemDefinition = Output.Create(Akamai.GetAppSecSiemDefinitions.InvokeAsync(new Akamai.GetAppSecSiemDefinitionsArgs
+    ///         {
+    ///             SiemDefinitionName = @var.Siem_definition_name,
+    ///         }));
+    ///         var securityPolicies = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSecurityPolicy.InvokeAsync(new Akamai.GetAppSecSecurityPolicyArgs
+    ///         {
+    ///             ConfigId = configuration.ConfigId,
+    ///         })));
+    ///         var siem = new Akamai.AppSecSiemSettings("siem", new Akamai.AppSecSiemSettingsArgs
+    ///         {
+    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
+    ///             EnableSiem = true,
+    ///             EnableForAllPolicies = false,
+    ///             EnableBotmanSiem = true,
+    ///             SiemId = siemDefinition.Apply(siemDefinition =&gt; siemDefinition.Id),
+    ///             SecurityPolicyIds = securityPolicies.Apply(securityPolicies =&gt; securityPolicies.SecurityPolicyIdLists),
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecSiemSettings:AppSecSiemSettings")]
     public partial class AppSecSiemSettings : Pulumi.CustomResource

@@ -58,8 +58,10 @@ type AppSecActivations struct {
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
 	Network pulumi.StringPtrOutput `pulumi:"network"`
-	// An optional text note describing this operation.
-	Notes pulumi.StringPtrOutput `pulumi:"notes"`
+	// A text note describing this operation. If no attributes were changed since the last time a security
+	// configuration was updated using the AppSecActivations resource, an activation will not occur. To ensure an activation
+	// is called, please update one of the attributes, e.g. the notes attribute.
+	Notes pulumi.StringOutput `pulumi:"notes"`
 	// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
 	NotificationEmails pulumi.StringArrayOutput `pulumi:"notificationEmails"`
 	// The status of the operation. The following values are may be returned:
@@ -75,6 +77,9 @@ func NewAppSecActivations(ctx *pulumi.Context,
 
 	if args.ConfigId == nil {
 		return nil, errors.New("invalid value for required argument 'ConfigId'")
+	}
+	if args.Notes == nil {
+		return nil, errors.New("invalid value for required argument 'Notes'")
 	}
 	if args.NotificationEmails == nil {
 		return nil, errors.New("invalid value for required argument 'NotificationEmails'")
@@ -107,7 +112,9 @@ type appSecActivationsState struct {
 	ConfigId *int `pulumi:"configId"`
 	// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
 	Network *string `pulumi:"network"`
-	// An optional text note describing this operation.
+	// A text note describing this operation. If no attributes were changed since the last time a security
+	// configuration was updated using the AppSecActivations resource, an activation will not occur. To ensure an activation
+	// is called, please update one of the attributes, e.g. the notes attribute.
 	Notes *string `pulumi:"notes"`
 	// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
 	NotificationEmails []string `pulumi:"notificationEmails"`
@@ -122,7 +129,9 @@ type AppSecActivationsState struct {
 	ConfigId pulumi.IntPtrInput
 	// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
 	Network pulumi.StringPtrInput
-	// An optional text note describing this operation.
+	// A text note describing this operation. If no attributes were changed since the last time a security
+	// configuration was updated using the AppSecActivations resource, an activation will not occur. To ensure an activation
+	// is called, please update one of the attributes, e.g. the notes attribute.
 	Notes pulumi.StringPtrInput
 	// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
 	NotificationEmails pulumi.StringArrayInput
@@ -141,8 +150,10 @@ type appSecActivationsArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
 	Network *string `pulumi:"network"`
-	// An optional text note describing this operation.
-	Notes *string `pulumi:"notes"`
+	// A text note describing this operation. If no attributes were changed since the last time a security
+	// configuration was updated using the AppSecActivations resource, an activation will not occur. To ensure an activation
+	// is called, please update one of the attributes, e.g. the notes attribute.
+	Notes string `pulumi:"notes"`
 	// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
 	NotificationEmails []string `pulumi:"notificationEmails"`
 }
@@ -155,8 +166,10 @@ type AppSecActivationsArgs struct {
 	ConfigId pulumi.IntInput
 	// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
 	Network pulumi.StringPtrInput
-	// An optional text note describing this operation.
-	Notes pulumi.StringPtrInput
+	// A text note describing this operation. If no attributes were changed since the last time a security
+	// configuration was updated using the AppSecActivations resource, an activation will not occur. To ensure an activation
+	// is called, please update one of the attributes, e.g. the notes attribute.
+	Notes pulumi.StringInput
 	// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
 	NotificationEmails pulumi.StringArrayInput
 }

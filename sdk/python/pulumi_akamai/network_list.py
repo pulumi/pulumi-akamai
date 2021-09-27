@@ -16,6 +16,8 @@ class NetworkListArgs:
                  description: pulumi.Input[str],
                  mode: pulumi.Input[str],
                  type: pulumi.Input[str],
+                 contract_id: Optional[pulumi.Input[str]] = None,
+                 group_id: Optional[pulumi.Input[int]] = None,
                  lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
@@ -23,6 +25,10 @@ class NetworkListArgs:
         :param pulumi.Input[str] description: The description to be assigned to the network list.
         :param pulumi.Input[str] mode: A string specifying the interpretation of the `list` parameter. Must be one of the following:
         :param pulumi.Input[str] type: The type of the network list; must be either "IP" or "GEO".
+        :param pulumi.Input[str] contract_id: The contract ID of the network list. If supplied, group_id must also be supplied. The
+               contract_id value of an existing network list may not be modified.
+        :param pulumi.Input[int] group_id: The group ID of the network list. If supplied, contract_id must also be supplied. The
+               group_id value of an existing network list may not be modified.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] lists: : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
                removed from an existing list.
         :param pulumi.Input[str] name: The name to be assigned to the network list.
@@ -30,6 +36,10 @@ class NetworkListArgs:
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "mode", mode)
         pulumi.set(__self__, "type", type)
+        if contract_id is not None:
+            pulumi.set(__self__, "contract_id", contract_id)
+        if group_id is not None:
+            pulumi.set(__self__, "group_id", group_id)
         if lists is not None:
             pulumi.set(__self__, "lists", lists)
         if name is not None:
@@ -72,6 +82,32 @@ class NetworkListArgs:
         pulumi.set(self, "type", value)
 
     @property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The contract ID of the network list. If supplied, group_id must also be supplied. The
+        contract_id value of an existing network list may not be modified.
+        """
+        return pulumi.get(self, "contract_id")
+
+    @contract_id.setter
+    def contract_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "contract_id", value)
+
+    @property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> Optional[pulumi.Input[int]]:
+        """
+        The group ID of the network list. If supplied, contract_id must also be supplied. The
+        group_id value of an existing network list may not be modified.
+        """
+        return pulumi.get(self, "group_id")
+
+    @group_id.setter
+    def group_id(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "group_id", value)
+
+    @property
     @pulumi.getter
     def lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -100,7 +136,9 @@ class NetworkListArgs:
 @pulumi.input_type
 class _NetworkListState:
     def __init__(__self__, *,
+                 contract_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 group_id: Optional[pulumi.Input[int]] = None,
                  lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  mode: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -110,7 +148,11 @@ class _NetworkListState:
                  uniqueid: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering NetworkList resources.
+        :param pulumi.Input[str] contract_id: The contract ID of the network list. If supplied, group_id must also be supplied. The
+               contract_id value of an existing network list may not be modified.
         :param pulumi.Input[str] description: The description to be assigned to the network list.
+        :param pulumi.Input[int] group_id: The group ID of the network list. If supplied, contract_id must also be supplied. The
+               group_id value of an existing network list may not be modified.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] lists: : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
                removed from an existing list.
         :param pulumi.Input[str] mode: A string specifying the interpretation of the `list` parameter. Must be one of the following:
@@ -121,8 +163,12 @@ class _NetworkListState:
         :param pulumi.Input[str] type: The type of the network list; must be either "IP" or "GEO".
         :param pulumi.Input[str] uniqueid: uniqueId
         """
+        if contract_id is not None:
+            pulumi.set(__self__, "contract_id", contract_id)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if group_id is not None:
+            pulumi.set(__self__, "group_id", group_id)
         if lists is not None:
             pulumi.set(__self__, "lists", lists)
         if mode is not None:
@@ -139,6 +185,19 @@ class _NetworkListState:
             pulumi.set(__self__, "uniqueid", uniqueid)
 
     @property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The contract ID of the network list. If supplied, group_id must also be supplied. The
+        contract_id value of an existing network list may not be modified.
+        """
+        return pulumi.get(self, "contract_id")
+
+    @contract_id.setter
+    def contract_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "contract_id", value)
+
+    @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
@@ -149,6 +208,19 @@ class _NetworkListState:
     @description.setter
     def description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> Optional[pulumi.Input[int]]:
+        """
+        The group ID of the network list. If supplied, contract_id must also be supplied. The
+        group_id value of an existing network list may not be modified.
+        """
+        return pulumi.get(self, "group_id")
+
+    @group_id.setter
+    def group_id(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "group_id", value)
 
     @property
     @pulumi.getter
@@ -242,7 +314,9 @@ class NetworkList(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 contract_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 group_id: Optional[pulumi.Input[int]] = None,
                  lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  mode: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -263,12 +337,18 @@ class NetworkList(pulumi.CustomResource):
             type="IP",
             description="network list description",
             lists=var["list"],
-            mode="APPEND")
+            mode="APPEND",
+            contract_id="ABC-123",
+            group_id=12345)
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] contract_id: The contract ID of the network list. If supplied, group_id must also be supplied. The
+               contract_id value of an existing network list may not be modified.
         :param pulumi.Input[str] description: The description to be assigned to the network list.
+        :param pulumi.Input[int] group_id: The group ID of the network list. If supplied, contract_id must also be supplied. The
+               group_id value of an existing network list may not be modified.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] lists: : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
                removed from an existing list.
         :param pulumi.Input[str] mode: A string specifying the interpretation of the `list` parameter. Must be one of the following:
@@ -296,7 +376,9 @@ class NetworkList(pulumi.CustomResource):
             type="IP",
             description="network list description",
             lists=var["list"],
-            mode="APPEND")
+            mode="APPEND",
+            contract_id="ABC-123",
+            group_id=12345)
         ```
 
         :param str resource_name: The name of the resource.
@@ -314,7 +396,9 @@ class NetworkList(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 contract_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 group_id: Optional[pulumi.Input[int]] = None,
                  lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  mode: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -331,9 +415,11 @@ class NetworkList(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = NetworkListArgs.__new__(NetworkListArgs)
 
+            __props__.__dict__["contract_id"] = contract_id
             if description is None and not opts.urn:
                 raise TypeError("Missing required property 'description'")
             __props__.__dict__["description"] = description
+            __props__.__dict__["group_id"] = group_id
             __props__.__dict__["lists"] = lists
             if mode is None and not opts.urn:
                 raise TypeError("Missing required property 'mode'")
@@ -355,7 +441,9 @@ class NetworkList(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            contract_id: Optional[pulumi.Input[str]] = None,
             description: Optional[pulumi.Input[str]] = None,
+            group_id: Optional[pulumi.Input[int]] = None,
             lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             mode: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
@@ -370,7 +458,11 @@ class NetworkList(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] contract_id: The contract ID of the network list. If supplied, group_id must also be supplied. The
+               contract_id value of an existing network list may not be modified.
         :param pulumi.Input[str] description: The description to be assigned to the network list.
+        :param pulumi.Input[int] group_id: The group ID of the network list. If supplied, contract_id must also be supplied. The
+               group_id value of an existing network list may not be modified.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] lists: : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
                removed from an existing list.
         :param pulumi.Input[str] mode: A string specifying the interpretation of the `list` parameter. Must be one of the following:
@@ -385,7 +477,9 @@ class NetworkList(pulumi.CustomResource):
 
         __props__ = _NetworkListState.__new__(_NetworkListState)
 
+        __props__.__dict__["contract_id"] = contract_id
         __props__.__dict__["description"] = description
+        __props__.__dict__["group_id"] = group_id
         __props__.__dict__["lists"] = lists
         __props__.__dict__["mode"] = mode
         __props__.__dict__["name"] = name
@@ -396,12 +490,30 @@ class NetworkList(pulumi.CustomResource):
         return NetworkList(resource_name, opts=opts, __props__=__props__)
 
     @property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> pulumi.Output[Optional[str]]:
+        """
+        The contract ID of the network list. If supplied, group_id must also be supplied. The
+        contract_id value of an existing network list may not be modified.
+        """
+        return pulumi.get(self, "contract_id")
+
+    @property
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
         The description to be assigned to the network list.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> pulumi.Output[Optional[int]]:
+        """
+        The group ID of the network list. If supplied, contract_id must also be supplied. The
+        group_id value of an existing network list may not be modified.
+        """
+        return pulumi.get(self, "group_id")
 
     @property
     @pulumi.getter

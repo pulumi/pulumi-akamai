@@ -80,7 +80,7 @@ type LookupAppSecWafModeResult struct {
 	Id string `pulumi:"id"`
 	// A JSON-formatted list of the mode information.
 	Json string `pulumi:"json"`
-	// The security policy mode, either `KRS` (update manually) or `AAG` (update automatically),
+	// The security policy mode, either `KRS` (update manually) or `AAG` (update automatically), For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE.
 	Mode string `pulumi:"mode"`
 	// A tabular display of the mode information.
 	OutputText       string `pulumi:"outputText"`

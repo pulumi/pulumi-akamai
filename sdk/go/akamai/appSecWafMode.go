@@ -64,7 +64,7 @@ type AppSecWafMode struct {
 	EvalRuleset pulumi.StringOutput `pulumi:"evalRuleset"`
 	// Either `enabled` if an evaluation is currently in progress, or `disabled` otherwise.
 	EvalStatus pulumi.StringOutput `pulumi:"evalStatus"`
-	// "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
+	// "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
 	Mode pulumi.StringOutput `pulumi:"mode"`
 	// A tabular display showing the current rule set, WAF mode and evaluation status (`enabled` if a rule set is currently being evaluated, `disabled` otherwise).
 	OutputText pulumi.StringOutput `pulumi:"outputText"`
@@ -120,7 +120,7 @@ type appSecWafModeState struct {
 	EvalRuleset *string `pulumi:"evalRuleset"`
 	// Either `enabled` if an evaluation is currently in progress, or `disabled` otherwise.
 	EvalStatus *string `pulumi:"evalStatus"`
-	// "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
+	// "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
 	Mode *string `pulumi:"mode"`
 	// A tabular display showing the current rule set, WAF mode and evaluation status (`enabled` if a rule set is currently being evaluated, `disabled` otherwise).
 	OutputText *string `pulumi:"outputText"`
@@ -139,7 +139,7 @@ type AppSecWafModeState struct {
 	EvalRuleset pulumi.StringPtrInput
 	// Either `enabled` if an evaluation is currently in progress, or `disabled` otherwise.
 	EvalStatus pulumi.StringPtrInput
-	// "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
+	// "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
 	Mode pulumi.StringPtrInput
 	// A tabular display showing the current rule set, WAF mode and evaluation status (`enabled` if a rule set is currently being evaluated, `disabled` otherwise).
 	OutputText pulumi.StringPtrInput
@@ -154,7 +154,7 @@ func (AppSecWafModeState) ElementType() reflect.Type {
 type appSecWafModeArgs struct {
 	// The ID of the security configuration to use.
 	ConfigId int `pulumi:"configId"`
-	// "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
+	// "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
 	Mode string `pulumi:"mode"`
 	// The ID of the security policy to use.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
@@ -164,7 +164,7 @@ type appSecWafModeArgs struct {
 type AppSecWafModeArgs struct {
 	// The ID of the security configuration to use.
 	ConfigId pulumi.IntInput
-	// "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
+	// "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
 	Mode pulumi.StringInput
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringInput

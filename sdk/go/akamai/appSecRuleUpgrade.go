@@ -58,10 +58,12 @@ type AppSecRuleUpgrade struct {
 	CurrentRuleset pulumi.StringOutput `pulumi:"currentRuleset"`
 	// TBD
 	EvalStatus pulumi.StringOutput `pulumi:"evalStatus"`
-	// A string indicating the current mode, either "KRS" or "AAG".
+	// A string indicating the current mode, either KRS,AAG,ASE_AUTO,ASE_MANUAL
 	Mode pulumi.StringOutput `pulumi:"mode"`
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
+	// __ASE Beta__. (Optional) ASE_AUTO or ASE_MANUAL.  ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
+	UpgradeMode pulumi.StringPtrOutput `pulumi:"upgradeMode"`
 }
 
 // NewAppSecRuleUpgrade registers a new resource with the given unique name, arguments, and options.
@@ -105,10 +107,12 @@ type appSecRuleUpgradeState struct {
 	CurrentRuleset *string `pulumi:"currentRuleset"`
 	// TBD
 	EvalStatus *string `pulumi:"evalStatus"`
-	// A string indicating the current mode, either "KRS" or "AAG".
+	// A string indicating the current mode, either KRS,AAG,ASE_AUTO,ASE_MANUAL
 	Mode *string `pulumi:"mode"`
 	// The ID of the security policy to use.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
+	// __ASE Beta__. (Optional) ASE_AUTO or ASE_MANUAL.  ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
+	UpgradeMode *string `pulumi:"upgradeMode"`
 }
 
 type AppSecRuleUpgradeState struct {
@@ -118,10 +122,12 @@ type AppSecRuleUpgradeState struct {
 	CurrentRuleset pulumi.StringPtrInput
 	// TBD
 	EvalStatus pulumi.StringPtrInput
-	// A string indicating the current mode, either "KRS" or "AAG".
+	// A string indicating the current mode, either KRS,AAG,ASE_AUTO,ASE_MANUAL
 	Mode pulumi.StringPtrInput
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringPtrInput
+	// __ASE Beta__. (Optional) ASE_AUTO or ASE_MANUAL.  ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
+	UpgradeMode pulumi.StringPtrInput
 }
 
 func (AppSecRuleUpgradeState) ElementType() reflect.Type {
@@ -133,6 +139,8 @@ type appSecRuleUpgradeArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// The ID of the security policy to use.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	// __ASE Beta__. (Optional) ASE_AUTO or ASE_MANUAL.  ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
+	UpgradeMode *string `pulumi:"upgradeMode"`
 }
 
 // The set of arguments for constructing a AppSecRuleUpgrade resource.
@@ -141,6 +149,8 @@ type AppSecRuleUpgradeArgs struct {
 	ConfigId pulumi.IntInput
 	// The ID of the security policy to use.
 	SecurityPolicyId pulumi.StringInput
+	// __ASE Beta__. (Optional) ASE_AUTO or ASE_MANUAL.  ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
+	UpgradeMode pulumi.StringPtrInput
 }
 
 func (AppSecRuleUpgradeArgs) ElementType() reflect.Type {

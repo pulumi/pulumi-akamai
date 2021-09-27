@@ -79,7 +79,7 @@ export class AppSecWafMode extends pulumi.CustomResource {
      */
     public /*out*/ readonly evalStatus!: pulumi.Output<string>;
     /**
-     * "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
+     * "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
      */
     public readonly mode!: pulumi.Output<string>;
     /**
@@ -164,7 +164,7 @@ export interface AppSecWafModeState {
      */
     evalStatus?: pulumi.Input<string>;
     /**
-     * "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
+     * "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
      */
     mode?: pulumi.Input<string>;
     /**
@@ -186,7 +186,7 @@ export interface AppSecWafModeArgs {
      */
     configId: pulumi.Input<number>;
     /**
-     * "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
+     * "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
      */
     mode: pulumi.Input<string>;
     /**

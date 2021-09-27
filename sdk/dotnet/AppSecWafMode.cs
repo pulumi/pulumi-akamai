@@ -88,7 +88,7 @@ namespace Pulumi.Akamai
         public Output<string> EvalStatus { get; private set; } = null!;
 
         /// <summary>
-        /// "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
+        /// "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
         /// </summary>
         [Output("mode")]
         public Output<string> Mode { get; private set; } = null!;
@@ -158,7 +158,7 @@ namespace Pulumi.Akamai
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
+        /// "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
         /// </summary>
         [Input("mode", required: true)]
         public Input<string> Mode { get; set; } = null!;
@@ -207,7 +207,7 @@ namespace Pulumi.Akamai
         public Input<string>? EvalStatus { get; set; }
 
         /// <summary>
-        /// "KRS" to update the rule sets manually, or "AAG" to have them update automatically.
+        /// "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
         /// </summary>
         [Input("mode")]
         public Input<string>? Mode { get; set; }

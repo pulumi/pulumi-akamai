@@ -69,13 +69,17 @@ export class AppSecRuleUpgrade extends pulumi.CustomResource {
      */
     public /*out*/ readonly evalStatus!: pulumi.Output<string>;
     /**
-     * A string indicating the current mode, either "KRS" or "AAG".
+     * A string indicating the current mode, either KRS,AAG,ASE_AUTO,ASE_MANUAL
      */
     public /*out*/ readonly mode!: pulumi.Output<string>;
     /**
      * The ID of the security policy to use.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
+    /**
+     * __ASE Beta__. (Optional) ASE_AUTO or ASE_MANUAL.  ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
+     */
+    public readonly upgradeMode!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AppSecRuleUpgrade resource with the given unique name, arguments, and options.
@@ -95,6 +99,7 @@ export class AppSecRuleUpgrade extends pulumi.CustomResource {
             inputs["evalStatus"] = state ? state.evalStatus : undefined;
             inputs["mode"] = state ? state.mode : undefined;
             inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            inputs["upgradeMode"] = state ? state.upgradeMode : undefined;
         } else {
             const args = argsOrState as AppSecRuleUpgradeArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -105,6 +110,7 @@ export class AppSecRuleUpgrade extends pulumi.CustomResource {
             }
             inputs["configId"] = args ? args.configId : undefined;
             inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            inputs["upgradeMode"] = args ? args.upgradeMode : undefined;
             inputs["currentRuleset"] = undefined /*out*/;
             inputs["evalStatus"] = undefined /*out*/;
             inputs["mode"] = undefined /*out*/;
@@ -133,13 +139,17 @@ export interface AppSecRuleUpgradeState {
      */
     evalStatus?: pulumi.Input<string>;
     /**
-     * A string indicating the current mode, either "KRS" or "AAG".
+     * A string indicating the current mode, either KRS,AAG,ASE_AUTO,ASE_MANUAL
      */
     mode?: pulumi.Input<string>;
     /**
      * The ID of the security policy to use.
      */
     securityPolicyId?: pulumi.Input<string>;
+    /**
+     * __ASE Beta__. (Optional) ASE_AUTO or ASE_MANUAL.  ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
+     */
+    upgradeMode?: pulumi.Input<string>;
 }
 
 /**
@@ -154,4 +164,8 @@ export interface AppSecRuleUpgradeArgs {
      * The ID of the security policy to use.
      */
     securityPolicyId: pulumi.Input<string>;
+    /**
+     * __ASE Beta__. (Optional) ASE_AUTO or ASE_MANUAL.  ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
+     */
+    upgradeMode?: pulumi.Input<string>;
 }

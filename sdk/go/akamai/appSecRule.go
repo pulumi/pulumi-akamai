@@ -19,8 +19,8 @@ type AppSecRule struct {
 	ConditionException pulumi.StringPtrOutput `pulumi:"conditionException"`
 	// The ID of the security configuration to use.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
-	RuleAction pulumi.StringOutput `pulumi:"ruleAction"`
+	// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only conditionException can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
+	RuleAction pulumi.StringPtrOutput `pulumi:"ruleAction"`
 	// The ID of the rule to use.
 	RuleId pulumi.IntOutput `pulumi:"ruleId"`
 	// The ID of the security policy to use.
@@ -36,9 +36,6 @@ func NewAppSecRule(ctx *pulumi.Context,
 
 	if args.ConfigId == nil {
 		return nil, errors.New("invalid value for required argument 'ConfigId'")
-	}
-	if args.RuleAction == nil {
-		return nil, errors.New("invalid value for required argument 'RuleAction'")
 	}
 	if args.RuleId == nil {
 		return nil, errors.New("invalid value for required argument 'RuleId'")
@@ -72,7 +69,7 @@ type appSecRuleState struct {
 	ConditionException *string `pulumi:"conditionException"`
 	// The ID of the security configuration to use.
 	ConfigId *int `pulumi:"configId"`
-	// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+	// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only conditionException can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
 	RuleAction *string `pulumi:"ruleAction"`
 	// The ID of the rule to use.
 	RuleId *int `pulumi:"ruleId"`
@@ -85,7 +82,7 @@ type AppSecRuleState struct {
 	ConditionException pulumi.StringPtrInput
 	// The ID of the security configuration to use.
 	ConfigId pulumi.IntPtrInput
-	// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+	// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only conditionException can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
 	RuleAction pulumi.StringPtrInput
 	// The ID of the rule to use.
 	RuleId pulumi.IntPtrInput
@@ -102,8 +99,8 @@ type appSecRuleArgs struct {
 	ConditionException *string `pulumi:"conditionException"`
 	// The ID of the security configuration to use.
 	ConfigId int `pulumi:"configId"`
-	// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
-	RuleAction string `pulumi:"ruleAction"`
+	// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only conditionException can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
+	RuleAction *string `pulumi:"ruleAction"`
 	// The ID of the rule to use.
 	RuleId int `pulumi:"ruleId"`
 	// The ID of the security policy to use.
@@ -116,8 +113,8 @@ type AppSecRuleArgs struct {
 	ConditionException pulumi.StringPtrInput
 	// The ID of the security configuration to use.
 	ConfigId pulumi.IntInput
-	// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
-	RuleAction pulumi.StringInput
+	// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only conditionException can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
+	RuleAction pulumi.StringPtrInput
 	// The ID of the rule to use.
 	RuleId pulumi.IntInput
 	// The ID of the security policy to use.

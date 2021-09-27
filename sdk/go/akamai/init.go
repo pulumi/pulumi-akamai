@@ -48,6 +48,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppSecCustomRuleAction{}
 	case "akamai:index/appSecEval:AppSecEval":
 		r = &AppSecEval{}
+	case "akamai:index/appSecEvalGroup:AppSecEvalGroup":
+		r = &AppSecEvalGroup{}
 	case "akamai:index/appSecEvalHostnames:AppSecEvalHostnames":
 		r = &AppSecEvalHostnames{}
 	case "akamai:index/appSecEvalProtectHost:AppSecEvalProtectHost":
@@ -94,12 +96,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppSecSlowPost{}
 	case "akamai:index/appSecSlowPostProtection:AppSecSlowPostProtection":
 		r = &AppSecSlowPostProtection{}
+	case "akamai:index/appSecThreatIntel:AppSecThreatIntel":
+		r = &AppSecThreatIntel{}
 	case "akamai:index/appSecVersionNodes:AppSecVersionNodes":
 		r = &AppSecVersionNodes{}
 	case "akamai:index/appSecWafMode:AppSecWafMode":
 		r = &AppSecWafMode{}
 	case "akamai:index/appSecWafProtection:AppSecWafProtection":
 		r = &AppSecWafProtection{}
+	case "akamai:index/appSecWapSelectedHostnames:AppSecWapSelectedHostnames":
+		r = &AppSecWapSelectedHostnames{}
 	case "akamai:index/cpCode:CpCode":
 		r = &CpCode{}
 	case "akamai:index/cpsDvEnrollment:CpsDvEnrollment":
@@ -243,6 +249,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
+		"index/appSecEvalGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
 		"index/appSecEvalHostnames",
 		&module{version},
 	)
@@ -358,6 +369,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
+		"index/appSecThreatIntel",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
 		"index/appSecVersionNodes",
 		&module{version},
 	)
@@ -369,6 +385,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/appSecWafProtection",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/appSecWapSelectedHostnames",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
