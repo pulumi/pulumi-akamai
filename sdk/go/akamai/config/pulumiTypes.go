@@ -575,6 +575,14 @@ func (o PropertyOutput) MaxBody() pulumi.IntPtrOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppsecsInput)(nil)).Elem(), AppsecsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppsecsArrayInput)(nil)).Elem(), AppsecsArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigInput)(nil)).Elem(), ConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DnsInput)(nil)).Elem(), DnsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmInput)(nil)).Elem(), GtmArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworksInput)(nil)).Elem(), NetworksArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworksArrayInput)(nil)).Elem(), NetworksArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyInput)(nil)).Elem(), PropertyArgs{})
 	pulumi.RegisterOutputType(AppsecsOutput{})
 	pulumi.RegisterOutputType(AppsecsArrayOutput{})
 	pulumi.RegisterOutputType(ConfigOutput{})

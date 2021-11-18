@@ -177,7 +177,7 @@ type AppSecApiRequestConstraintsArrayInput interface {
 type AppSecApiRequestConstraintsArray []AppSecApiRequestConstraintsInput
 
 func (AppSecApiRequestConstraintsArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecApiRequestConstraints)(nil))
+	return reflect.TypeOf((*[]*AppSecApiRequestConstraints)(nil)).Elem()
 }
 
 func (i AppSecApiRequestConstraintsArray) ToAppSecApiRequestConstraintsArrayOutput() AppSecApiRequestConstraintsArrayOutput {
@@ -202,7 +202,7 @@ type AppSecApiRequestConstraintsMapInput interface {
 type AppSecApiRequestConstraintsMap map[string]AppSecApiRequestConstraintsInput
 
 func (AppSecApiRequestConstraintsMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecApiRequestConstraints)(nil))
+	return reflect.TypeOf((*map[string]*AppSecApiRequestConstraints)(nil)).Elem()
 }
 
 func (i AppSecApiRequestConstraintsMap) ToAppSecApiRequestConstraintsMapOutput() AppSecApiRequestConstraintsMapOutput {
@@ -213,9 +213,7 @@ func (i AppSecApiRequestConstraintsMap) ToAppSecApiRequestConstraintsMapOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecApiRequestConstraintsMapOutput)
 }
 
-type AppSecApiRequestConstraintsOutput struct {
-	*pulumi.OutputState
-}
+type AppSecApiRequestConstraintsOutput struct{ *pulumi.OutputState }
 
 func (AppSecApiRequestConstraintsOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecApiRequestConstraints)(nil))
@@ -234,14 +232,12 @@ func (o AppSecApiRequestConstraintsOutput) ToAppSecApiRequestConstraintsPtrOutpu
 }
 
 func (o AppSecApiRequestConstraintsOutput) ToAppSecApiRequestConstraintsPtrOutputWithContext(ctx context.Context) AppSecApiRequestConstraintsPtrOutput {
-	return o.ApplyT(func(v AppSecApiRequestConstraints) *AppSecApiRequestConstraints {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecApiRequestConstraints) *AppSecApiRequestConstraints {
 		return &v
 	}).(AppSecApiRequestConstraintsPtrOutput)
 }
 
-type AppSecApiRequestConstraintsPtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecApiRequestConstraintsPtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecApiRequestConstraintsPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecApiRequestConstraints)(nil))
@@ -253,6 +249,16 @@ func (o AppSecApiRequestConstraintsPtrOutput) ToAppSecApiRequestConstraintsPtrOu
 
 func (o AppSecApiRequestConstraintsPtrOutput) ToAppSecApiRequestConstraintsPtrOutputWithContext(ctx context.Context) AppSecApiRequestConstraintsPtrOutput {
 	return o
+}
+
+func (o AppSecApiRequestConstraintsPtrOutput) Elem() AppSecApiRequestConstraintsOutput {
+	return o.ApplyT(func(v *AppSecApiRequestConstraints) AppSecApiRequestConstraints {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecApiRequestConstraints
+		return ret
+	}).(AppSecApiRequestConstraintsOutput)
 }
 
 type AppSecApiRequestConstraintsArrayOutput struct{ *pulumi.OutputState }
@@ -296,6 +302,10 @@ func (o AppSecApiRequestConstraintsMapOutput) MapIndex(k pulumi.StringInput) App
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecApiRequestConstraintsInput)(nil)).Elem(), &AppSecApiRequestConstraints{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecApiRequestConstraintsPtrInput)(nil)).Elem(), &AppSecApiRequestConstraints{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecApiRequestConstraintsArrayInput)(nil)).Elem(), AppSecApiRequestConstraintsArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecApiRequestConstraintsMapInput)(nil)).Elem(), AppSecApiRequestConstraintsMap{})
 	pulumi.RegisterOutputType(AppSecApiRequestConstraintsOutput{})
 	pulumi.RegisterOutputType(AppSecApiRequestConstraintsPtrOutput{})
 	pulumi.RegisterOutputType(AppSecApiRequestConstraintsArrayOutput{})

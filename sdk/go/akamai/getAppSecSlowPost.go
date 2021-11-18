@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,13 +27,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		slowPost, err := akamai.LookupAppSecSlowPost(ctx, &akamai.LookupAppSecSlowPostArgs{
+// 		slowPost, err := akamai.LookupAppSecSlowPost(ctx, &GetAppSecSlowPostArgs{
 // 			ConfigId:         configuration.ConfigId,
 // 			SecurityPolicyId: _var.Security_policy_id,
 // 		}, nil)
@@ -68,4 +71,66 @@ type LookupAppSecSlowPostResult struct {
 	// A tabular display including the following columns:
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
+}
+
+func LookupAppSecSlowPostOutput(ctx *pulumi.Context, args LookupAppSecSlowPostOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecSlowPostResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (LookupAppSecSlowPostResult, error) {
+			args := v.(LookupAppSecSlowPostArgs)
+			r, err := LookupAppSecSlowPost(ctx, &args, opts...)
+			return *r, err
+		}).(LookupAppSecSlowPostResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecSlowPost.
+type LookupAppSecSlowPostOutputArgs struct {
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The ID of the security policy to use
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+}
+
+func (LookupAppSecSlowPostOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecSlowPostArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecSlowPost.
+type LookupAppSecSlowPostResultOutput struct{ *pulumi.OutputState }
+
+func (LookupAppSecSlowPostResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecSlowPostResult)(nil)).Elem()
+}
+
+func (o LookupAppSecSlowPostResultOutput) ToLookupAppSecSlowPostResultOutput() LookupAppSecSlowPostResultOutput {
+	return o
+}
+
+func (o LookupAppSecSlowPostResultOutput) ToLookupAppSecSlowPostResultOutputWithContext(ctx context.Context) LookupAppSecSlowPostResultOutput {
+	return o
+}
+
+func (o LookupAppSecSlowPostResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAppSecSlowPostResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o LookupAppSecSlowPostResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecSlowPostResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecSlowPostResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecSlowPostResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display including the following columns:
+func (o LookupAppSecSlowPostResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecSlowPostResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecSlowPostResultOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecSlowPostResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(LookupAppSecSlowPostResultOutput{})
 }

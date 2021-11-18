@@ -148,7 +148,7 @@ type AppSecAdvancedSettingsPragmaHeaderArrayInput interface {
 type AppSecAdvancedSettingsPragmaHeaderArray []AppSecAdvancedSettingsPragmaHeaderInput
 
 func (AppSecAdvancedSettingsPragmaHeaderArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecAdvancedSettingsPragmaHeader)(nil))
+	return reflect.TypeOf((*[]*AppSecAdvancedSettingsPragmaHeader)(nil)).Elem()
 }
 
 func (i AppSecAdvancedSettingsPragmaHeaderArray) ToAppSecAdvancedSettingsPragmaHeaderArrayOutput() AppSecAdvancedSettingsPragmaHeaderArrayOutput {
@@ -173,7 +173,7 @@ type AppSecAdvancedSettingsPragmaHeaderMapInput interface {
 type AppSecAdvancedSettingsPragmaHeaderMap map[string]AppSecAdvancedSettingsPragmaHeaderInput
 
 func (AppSecAdvancedSettingsPragmaHeaderMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecAdvancedSettingsPragmaHeader)(nil))
+	return reflect.TypeOf((*map[string]*AppSecAdvancedSettingsPragmaHeader)(nil)).Elem()
 }
 
 func (i AppSecAdvancedSettingsPragmaHeaderMap) ToAppSecAdvancedSettingsPragmaHeaderMapOutput() AppSecAdvancedSettingsPragmaHeaderMapOutput {
@@ -184,9 +184,7 @@ func (i AppSecAdvancedSettingsPragmaHeaderMap) ToAppSecAdvancedSettingsPragmaHea
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsPragmaHeaderMapOutput)
 }
 
-type AppSecAdvancedSettingsPragmaHeaderOutput struct {
-	*pulumi.OutputState
-}
+type AppSecAdvancedSettingsPragmaHeaderOutput struct{ *pulumi.OutputState }
 
 func (AppSecAdvancedSettingsPragmaHeaderOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecAdvancedSettingsPragmaHeader)(nil))
@@ -205,14 +203,12 @@ func (o AppSecAdvancedSettingsPragmaHeaderOutput) ToAppSecAdvancedSettingsPragma
 }
 
 func (o AppSecAdvancedSettingsPragmaHeaderOutput) ToAppSecAdvancedSettingsPragmaHeaderPtrOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPragmaHeaderPtrOutput {
-	return o.ApplyT(func(v AppSecAdvancedSettingsPragmaHeader) *AppSecAdvancedSettingsPragmaHeader {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecAdvancedSettingsPragmaHeader) *AppSecAdvancedSettingsPragmaHeader {
 		return &v
 	}).(AppSecAdvancedSettingsPragmaHeaderPtrOutput)
 }
 
-type AppSecAdvancedSettingsPragmaHeaderPtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecAdvancedSettingsPragmaHeaderPtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecAdvancedSettingsPragmaHeaderPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecAdvancedSettingsPragmaHeader)(nil))
@@ -224,6 +220,16 @@ func (o AppSecAdvancedSettingsPragmaHeaderPtrOutput) ToAppSecAdvancedSettingsPra
 
 func (o AppSecAdvancedSettingsPragmaHeaderPtrOutput) ToAppSecAdvancedSettingsPragmaHeaderPtrOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPragmaHeaderPtrOutput {
 	return o
+}
+
+func (o AppSecAdvancedSettingsPragmaHeaderPtrOutput) Elem() AppSecAdvancedSettingsPragmaHeaderOutput {
+	return o.ApplyT(func(v *AppSecAdvancedSettingsPragmaHeader) AppSecAdvancedSettingsPragmaHeader {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecAdvancedSettingsPragmaHeader
+		return ret
+	}).(AppSecAdvancedSettingsPragmaHeaderOutput)
 }
 
 type AppSecAdvancedSettingsPragmaHeaderArrayOutput struct{ *pulumi.OutputState }
@@ -267,6 +273,10 @@ func (o AppSecAdvancedSettingsPragmaHeaderMapOutput) MapIndex(k pulumi.StringInp
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAdvancedSettingsPragmaHeaderInput)(nil)).Elem(), &AppSecAdvancedSettingsPragmaHeader{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAdvancedSettingsPragmaHeaderPtrInput)(nil)).Elem(), &AppSecAdvancedSettingsPragmaHeader{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAdvancedSettingsPragmaHeaderArrayInput)(nil)).Elem(), AppSecAdvancedSettingsPragmaHeaderArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAdvancedSettingsPragmaHeaderMapInput)(nil)).Elem(), AppSecAdvancedSettingsPragmaHeaderMap{})
 	pulumi.RegisterOutputType(AppSecAdvancedSettingsPragmaHeaderOutput{})
 	pulumi.RegisterOutputType(AppSecAdvancedSettingsPragmaHeaderPtrOutput{})
 	pulumi.RegisterOutputType(AppSecAdvancedSettingsPragmaHeaderArrayOutput{})

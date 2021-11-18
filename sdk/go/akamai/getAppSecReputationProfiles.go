@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,13 +27,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		reputationProfiles, err := akamai.GetAppSecReputationProfiles(ctx, &akamai.GetAppSecReputationProfilesArgs{
+// 		reputationProfiles, err := akamai.GetAppSecReputationProfiles(ctx, &GetAppSecReputationProfilesArgs{
 // 			ConfigId: configuration.ConfigId,
 // 		}, nil)
 // 		if err != nil {
@@ -39,7 +42,7 @@ import (
 // 		ctx.Export("reputationProfilesOutput", reputationProfiles.OutputText)
 // 		ctx.Export("reputationProfilesJson", reputationProfiles.Json)
 // 		opt1 := _var.Reputation_profile_id
-// 		reputationProfile, err := akamai.GetAppSecReputationProfiles(ctx, &akamai.GetAppSecReputationProfilesArgs{
+// 		reputationProfile, err := akamai.GetAppSecReputationProfiles(ctx, &GetAppSecReputationProfilesArgs{
 // 			ConfigId:            configuration.ConfigId,
 // 			ReputationProfileId: &opt1,
 // 		}, nil)
@@ -79,4 +82,67 @@ type GetAppSecReputationProfilesResult struct {
 	// A tabular display of the details about the indicated reputation profile or profiles.
 	OutputText          string `pulumi:"outputText"`
 	ReputationProfileId *int   `pulumi:"reputationProfileId"`
+}
+
+func GetAppSecReputationProfilesOutput(ctx *pulumi.Context, args GetAppSecReputationProfilesOutputArgs, opts ...pulumi.InvokeOption) GetAppSecReputationProfilesResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetAppSecReputationProfilesResult, error) {
+			args := v.(GetAppSecReputationProfilesArgs)
+			r, err := GetAppSecReputationProfiles(ctx, &args, opts...)
+			return *r, err
+		}).(GetAppSecReputationProfilesResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecReputationProfiles.
+type GetAppSecReputationProfilesOutputArgs struct {
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
+	ReputationProfileId pulumi.IntPtrInput `pulumi:"reputationProfileId"`
+}
+
+func (GetAppSecReputationProfilesOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecReputationProfilesArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecReputationProfiles.
+type GetAppSecReputationProfilesResultOutput struct{ *pulumi.OutputState }
+
+func (GetAppSecReputationProfilesResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecReputationProfilesResult)(nil)).Elem()
+}
+
+func (o GetAppSecReputationProfilesResultOutput) ToGetAppSecReputationProfilesResultOutput() GetAppSecReputationProfilesResultOutput {
+	return o
+}
+
+func (o GetAppSecReputationProfilesResultOutput) ToGetAppSecReputationProfilesResultOutputWithContext(ctx context.Context) GetAppSecReputationProfilesResultOutput {
+	return o
+}
+
+func (o GetAppSecReputationProfilesResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAppSecReputationProfilesResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetAppSecReputationProfilesResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecReputationProfilesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted display of the details about the indicated reputation profile or profiles.
+func (o GetAppSecReputationProfilesResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecReputationProfilesResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display of the details about the indicated reputation profile or profiles.
+func (o GetAppSecReputationProfilesResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecReputationProfilesResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecReputationProfilesResultOutput) ReputationProfileId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAppSecReputationProfilesResult) *int { return v.ReputationProfileId }).(pulumi.IntPtrOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetAppSecReputationProfilesResultOutput{})
 }

@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /** @deprecated akamai.properties.getProperty has been deprecated in favor of akamai.getProperty */
@@ -40,4 +39,16 @@ export interface GetPropertyResult {
     readonly name: string;
     readonly rules: string;
     readonly version?: number;
+}
+
+export function getPropertyOutput(args: GetPropertyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyResult> {
+    return pulumi.output(args).apply(a => getProperty(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getProperty.
+ */
+export interface GetPropertyOutputArgs {
+    name: pulumi.Input<string>;
+    version?: pulumi.Input<number>;
 }

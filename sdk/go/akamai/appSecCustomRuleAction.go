@@ -28,7 +28,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := "Akamai Tools"
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
@@ -216,7 +216,7 @@ type AppSecCustomRuleActionArrayInput interface {
 type AppSecCustomRuleActionArray []AppSecCustomRuleActionInput
 
 func (AppSecCustomRuleActionArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecCustomRuleAction)(nil))
+	return reflect.TypeOf((*[]*AppSecCustomRuleAction)(nil)).Elem()
 }
 
 func (i AppSecCustomRuleActionArray) ToAppSecCustomRuleActionArrayOutput() AppSecCustomRuleActionArrayOutput {
@@ -241,7 +241,7 @@ type AppSecCustomRuleActionMapInput interface {
 type AppSecCustomRuleActionMap map[string]AppSecCustomRuleActionInput
 
 func (AppSecCustomRuleActionMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecCustomRuleAction)(nil))
+	return reflect.TypeOf((*map[string]*AppSecCustomRuleAction)(nil)).Elem()
 }
 
 func (i AppSecCustomRuleActionMap) ToAppSecCustomRuleActionMapOutput() AppSecCustomRuleActionMapOutput {
@@ -252,9 +252,7 @@ func (i AppSecCustomRuleActionMap) ToAppSecCustomRuleActionMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomRuleActionMapOutput)
 }
 
-type AppSecCustomRuleActionOutput struct {
-	*pulumi.OutputState
-}
+type AppSecCustomRuleActionOutput struct{ *pulumi.OutputState }
 
 func (AppSecCustomRuleActionOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecCustomRuleAction)(nil))
@@ -273,14 +271,12 @@ func (o AppSecCustomRuleActionOutput) ToAppSecCustomRuleActionPtrOutput() AppSec
 }
 
 func (o AppSecCustomRuleActionOutput) ToAppSecCustomRuleActionPtrOutputWithContext(ctx context.Context) AppSecCustomRuleActionPtrOutput {
-	return o.ApplyT(func(v AppSecCustomRuleAction) *AppSecCustomRuleAction {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecCustomRuleAction) *AppSecCustomRuleAction {
 		return &v
 	}).(AppSecCustomRuleActionPtrOutput)
 }
 
-type AppSecCustomRuleActionPtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecCustomRuleActionPtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecCustomRuleActionPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecCustomRuleAction)(nil))
@@ -292,6 +288,16 @@ func (o AppSecCustomRuleActionPtrOutput) ToAppSecCustomRuleActionPtrOutput() App
 
 func (o AppSecCustomRuleActionPtrOutput) ToAppSecCustomRuleActionPtrOutputWithContext(ctx context.Context) AppSecCustomRuleActionPtrOutput {
 	return o
+}
+
+func (o AppSecCustomRuleActionPtrOutput) Elem() AppSecCustomRuleActionOutput {
+	return o.ApplyT(func(v *AppSecCustomRuleAction) AppSecCustomRuleAction {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecCustomRuleAction
+		return ret
+	}).(AppSecCustomRuleActionOutput)
 }
 
 type AppSecCustomRuleActionArrayOutput struct{ *pulumi.OutputState }
@@ -335,6 +341,10 @@ func (o AppSecCustomRuleActionMapOutput) MapIndex(k pulumi.StringInput) AppSecCu
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecCustomRuleActionInput)(nil)).Elem(), &AppSecCustomRuleAction{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecCustomRuleActionPtrInput)(nil)).Elem(), &AppSecCustomRuleAction{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecCustomRuleActionArrayInput)(nil)).Elem(), AppSecCustomRuleActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecCustomRuleActionMapInput)(nil)).Elem(), AppSecCustomRuleActionMap{})
 	pulumi.RegisterOutputType(AppSecCustomRuleActionOutput{})
 	pulumi.RegisterOutputType(AppSecCustomRuleActionPtrOutput{})
 	pulumi.RegisterOutputType(AppSecCustomRuleActionArrayOutput{})

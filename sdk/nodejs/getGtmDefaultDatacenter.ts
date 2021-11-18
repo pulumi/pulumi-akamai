@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -57,4 +56,16 @@ export interface GetGtmDefaultDatacenterResult {
      */
     readonly id: string;
     readonly nickname: string;
+}
+
+export function getGtmDefaultDatacenterOutput(args: GetGtmDefaultDatacenterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGtmDefaultDatacenterResult> {
+    return pulumi.output(args).apply(a => getGtmDefaultDatacenter(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getGtmDefaultDatacenter.
+ */
+export interface GetGtmDefaultDatacenterOutputArgs {
+    datacenter?: pulumi.Input<number>;
+    domain: pulumi.Input<string>;
 }

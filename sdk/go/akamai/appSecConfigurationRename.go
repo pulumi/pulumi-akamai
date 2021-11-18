@@ -28,7 +28,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configurationAppSecConfiguration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configurationAppSecConfiguration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
@@ -197,7 +197,7 @@ type AppSecConfigurationRenameArrayInput interface {
 type AppSecConfigurationRenameArray []AppSecConfigurationRenameInput
 
 func (AppSecConfigurationRenameArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecConfigurationRename)(nil))
+	return reflect.TypeOf((*[]*AppSecConfigurationRename)(nil)).Elem()
 }
 
 func (i AppSecConfigurationRenameArray) ToAppSecConfigurationRenameArrayOutput() AppSecConfigurationRenameArrayOutput {
@@ -222,7 +222,7 @@ type AppSecConfigurationRenameMapInput interface {
 type AppSecConfigurationRenameMap map[string]AppSecConfigurationRenameInput
 
 func (AppSecConfigurationRenameMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecConfigurationRename)(nil))
+	return reflect.TypeOf((*map[string]*AppSecConfigurationRename)(nil)).Elem()
 }
 
 func (i AppSecConfigurationRenameMap) ToAppSecConfigurationRenameMapOutput() AppSecConfigurationRenameMapOutput {
@@ -233,9 +233,7 @@ func (i AppSecConfigurationRenameMap) ToAppSecConfigurationRenameMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecConfigurationRenameMapOutput)
 }
 
-type AppSecConfigurationRenameOutput struct {
-	*pulumi.OutputState
-}
+type AppSecConfigurationRenameOutput struct{ *pulumi.OutputState }
 
 func (AppSecConfigurationRenameOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecConfigurationRename)(nil))
@@ -254,14 +252,12 @@ func (o AppSecConfigurationRenameOutput) ToAppSecConfigurationRenamePtrOutput() 
 }
 
 func (o AppSecConfigurationRenameOutput) ToAppSecConfigurationRenamePtrOutputWithContext(ctx context.Context) AppSecConfigurationRenamePtrOutput {
-	return o.ApplyT(func(v AppSecConfigurationRename) *AppSecConfigurationRename {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecConfigurationRename) *AppSecConfigurationRename {
 		return &v
 	}).(AppSecConfigurationRenamePtrOutput)
 }
 
-type AppSecConfigurationRenamePtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecConfigurationRenamePtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecConfigurationRenamePtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecConfigurationRename)(nil))
@@ -273,6 +269,16 @@ func (o AppSecConfigurationRenamePtrOutput) ToAppSecConfigurationRenamePtrOutput
 
 func (o AppSecConfigurationRenamePtrOutput) ToAppSecConfigurationRenamePtrOutputWithContext(ctx context.Context) AppSecConfigurationRenamePtrOutput {
 	return o
+}
+
+func (o AppSecConfigurationRenamePtrOutput) Elem() AppSecConfigurationRenameOutput {
+	return o.ApplyT(func(v *AppSecConfigurationRename) AppSecConfigurationRename {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecConfigurationRename
+		return ret
+	}).(AppSecConfigurationRenameOutput)
 }
 
 type AppSecConfigurationRenameArrayOutput struct{ *pulumi.OutputState }
@@ -316,6 +322,10 @@ func (o AppSecConfigurationRenameMapOutput) MapIndex(k pulumi.StringInput) AppSe
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecConfigurationRenameInput)(nil)).Elem(), &AppSecConfigurationRename{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecConfigurationRenamePtrInput)(nil)).Elem(), &AppSecConfigurationRename{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecConfigurationRenameArrayInput)(nil)).Elem(), AppSecConfigurationRenameArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecConfigurationRenameMapInput)(nil)).Elem(), AppSecConfigurationRenameMap{})
 	pulumi.RegisterOutputType(AppSecConfigurationRenameOutput{})
 	pulumi.RegisterOutputType(AppSecConfigurationRenamePtrOutput{})
 	pulumi.RegisterOutputType(AppSecConfigurationRenameArrayOutput{})

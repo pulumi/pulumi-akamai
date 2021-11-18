@@ -54,7 +54,7 @@ class AwaitableGetContractsResult(GetContractsResult):
 
 def get_contracts(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetContractsResult:
     """
-    Use the `getContracts` data source to list contracts associated with the [EdgeGrid API client token](https://developer.akamai.com/getting-started/edgegrid) you're using.
+    Use the `get_contracts` data source to list contracts associated with the [EdgeGrid API client token](https://developer.akamai.com/getting-started/edgegrid) you're using.
 
     ## Example Usage
 

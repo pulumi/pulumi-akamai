@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 export function getAppSecEval(args: GetAppSecEvalArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecEvalResult> {
@@ -38,4 +37,16 @@ export interface GetAppSecEvalResult {
     readonly id: string;
     readonly outputText: string;
     readonly securityPolicyId: string;
+}
+
+export function getAppSecEvalOutput(args: GetAppSecEvalOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecEvalResult> {
+    return pulumi.output(args).apply(a => getAppSecEval(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecEval.
+ */
+export interface GetAppSecEvalOutputArgs {
+    configId: pulumi.Input<number>;
+    securityPolicyId: pulumi.Input<string>;
 }

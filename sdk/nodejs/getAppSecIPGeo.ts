@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -87,4 +86,22 @@ export interface GetAppSecIPGeoResult {
      */
     readonly outputText: string;
     readonly securityPolicyId: string;
+}
+
+export function getAppSecIPGeoOutput(args: GetAppSecIPGeoOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecIPGeoResult> {
+    return pulumi.output(args).apply(a => getAppSecIPGeo(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecIPGeo.
+ */
+export interface GetAppSecIPGeoOutputArgs {
+    /**
+     * The ID of the security configuration to use.
+     */
+    configId: pulumi.Input<number>;
+    /**
+     * The ID of the security policy to use.
+     */
+    securityPolicyId: pulumi.Input<string>;
 }

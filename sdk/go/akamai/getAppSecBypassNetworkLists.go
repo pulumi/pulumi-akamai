@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -27,13 +30,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		bypassNetworkLists, err := akamai.GetAppSecBypassNetworkLists(ctx, &akamai.GetAppSecBypassNetworkListsArgs{
+// 		bypassNetworkLists, err := akamai.GetAppSecBypassNetworkLists(ctx, &GetAppSecBypassNetworkListsArgs{
 // 			ConfigId: configuration.ConfigId,
 // 		}, nil)
 // 		if err != nil {
@@ -72,4 +75,66 @@ type GetAppSecBypassNetworkListsResult struct {
 	Json string `pulumi:"json"`
 	// A tabular display showing the bypass network list information.
 	OutputText string `pulumi:"outputText"`
+}
+
+func GetAppSecBypassNetworkListsOutput(ctx *pulumi.Context, args GetAppSecBypassNetworkListsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecBypassNetworkListsResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetAppSecBypassNetworkListsResult, error) {
+			args := v.(GetAppSecBypassNetworkListsArgs)
+			r, err := GetAppSecBypassNetworkLists(ctx, &args, opts...)
+			return *r, err
+		}).(GetAppSecBypassNetworkListsResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecBypassNetworkLists.
+type GetAppSecBypassNetworkListsOutputArgs struct {
+	// The configuration ID to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+}
+
+func (GetAppSecBypassNetworkListsOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecBypassNetworkListsArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecBypassNetworkLists.
+type GetAppSecBypassNetworkListsResultOutput struct{ *pulumi.OutputState }
+
+func (GetAppSecBypassNetworkListsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecBypassNetworkListsResult)(nil)).Elem()
+}
+
+func (o GetAppSecBypassNetworkListsResultOutput) ToGetAppSecBypassNetworkListsResultOutput() GetAppSecBypassNetworkListsResultOutput {
+	return o
+}
+
+func (o GetAppSecBypassNetworkListsResultOutput) ToGetAppSecBypassNetworkListsResultOutputWithContext(ctx context.Context) GetAppSecBypassNetworkListsResultOutput {
+	return o
+}
+
+// A list of strings containing the network list IDs.
+func (o GetAppSecBypassNetworkListsResultOutput) BypassNetworkLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAppSecBypassNetworkListsResult) []string { return v.BypassNetworkLists }).(pulumi.StringArrayOutput)
+}
+
+func (o GetAppSecBypassNetworkListsResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAppSecBypassNetworkListsResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetAppSecBypassNetworkListsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecBypassNetworkListsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted list of information about the bypass network lists.
+func (o GetAppSecBypassNetworkListsResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecBypassNetworkListsResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display showing the bypass network list information.
+func (o GetAppSecBypassNetworkListsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecBypassNetworkListsResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetAppSecBypassNetworkListsResultOutput{})
 }

@@ -213,7 +213,7 @@ type PropertyActivationArrayInput interface {
 type PropertyActivationArray []PropertyActivationInput
 
 func (PropertyActivationArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*PropertyActivation)(nil))
+	return reflect.TypeOf((*[]*PropertyActivation)(nil)).Elem()
 }
 
 func (i PropertyActivationArray) ToPropertyActivationArrayOutput() PropertyActivationArrayOutput {
@@ -238,7 +238,7 @@ type PropertyActivationMapInput interface {
 type PropertyActivationMap map[string]PropertyActivationInput
 
 func (PropertyActivationMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*PropertyActivation)(nil))
+	return reflect.TypeOf((*map[string]*PropertyActivation)(nil)).Elem()
 }
 
 func (i PropertyActivationMap) ToPropertyActivationMapOutput() PropertyActivationMapOutput {
@@ -249,9 +249,7 @@ func (i PropertyActivationMap) ToPropertyActivationMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationMapOutput)
 }
 
-type PropertyActivationOutput struct {
-	*pulumi.OutputState
-}
+type PropertyActivationOutput struct{ *pulumi.OutputState }
 
 func (PropertyActivationOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*PropertyActivation)(nil))
@@ -270,14 +268,12 @@ func (o PropertyActivationOutput) ToPropertyActivationPtrOutput() PropertyActiva
 }
 
 func (o PropertyActivationOutput) ToPropertyActivationPtrOutputWithContext(ctx context.Context) PropertyActivationPtrOutput {
-	return o.ApplyT(func(v PropertyActivation) *PropertyActivation {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PropertyActivation) *PropertyActivation {
 		return &v
 	}).(PropertyActivationPtrOutput)
 }
 
-type PropertyActivationPtrOutput struct {
-	*pulumi.OutputState
-}
+type PropertyActivationPtrOutput struct{ *pulumi.OutputState }
 
 func (PropertyActivationPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**PropertyActivation)(nil))
@@ -289,6 +285,16 @@ func (o PropertyActivationPtrOutput) ToPropertyActivationPtrOutput() PropertyAct
 
 func (o PropertyActivationPtrOutput) ToPropertyActivationPtrOutputWithContext(ctx context.Context) PropertyActivationPtrOutput {
 	return o
+}
+
+func (o PropertyActivationPtrOutput) Elem() PropertyActivationOutput {
+	return o.ApplyT(func(v *PropertyActivation) PropertyActivation {
+		if v != nil {
+			return *v
+		}
+		var ret PropertyActivation
+		return ret
+	}).(PropertyActivationOutput)
 }
 
 type PropertyActivationArrayOutput struct{ *pulumi.OutputState }
@@ -332,6 +338,10 @@ func (o PropertyActivationMapOutput) MapIndex(k pulumi.StringInput) PropertyActi
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationInput)(nil)).Elem(), &PropertyActivation{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationPtrInput)(nil)).Elem(), &PropertyActivation{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationArrayInput)(nil)).Elem(), PropertyActivationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationMapInput)(nil)).Elem(), PropertyActivationMap{})
 	pulumi.RegisterOutputType(PropertyActivationOutput{})
 	pulumi.RegisterOutputType(PropertyActivationPtrOutput{})
 	pulumi.RegisterOutputType(PropertyActivationArrayOutput{})

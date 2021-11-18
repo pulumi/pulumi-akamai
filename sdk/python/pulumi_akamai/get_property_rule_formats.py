@@ -53,7 +53,7 @@ class AwaitableGetPropertyRuleFormatsResult(GetPropertyRuleFormatsResult):
 
 def get_property_rule_formats(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyRuleFormatsResult:
     """
-    Use the `getPropertyRuleFormats` data source to query the list of
+    Use the `get_property_rule_formats` data source to query the list of
     known rule formats.
     You use rule formats to [freeze](https://developer.akamai.com/api/core_features/property_manager/v1.html#freezerf) or
     [update](https://developer.akamai.com/api/core_features/property_manager/v1.html#updaterf) the versioned set of behaviors

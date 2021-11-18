@@ -9,56 +9,72 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
-__all__ = [
-    'appsec_section',
-    'appsecs',
-    'cache_enabled',
-    'config',
-    'config_section',
-    'dns',
-    'dns_section',
-    'edgerc',
-    'gtm',
-    'gtm_section',
-    'networklist_section',
-    'networks',
-    'papi_section',
-    'property',
-    'property_section',
-]
+import types
 
 __config__ = pulumi.Config('akamai')
 
-appsec_section = __config__.get('appsecSection')
 
-appsecs = __config__.get('appsecs')
+class _ExportableConfig(types.ModuleType):
+    @property
+    def appsec_section(self) -> Optional[str]:
+        return __config__.get('appsecSection')
 
-cache_enabled = __config__.get('cacheEnabled')
+    @property
+    def appsecs(self) -> Optional[str]:
+        return __config__.get('appsecs')
 
-config = __config__.get('config')
+    @property
+    def cache_enabled(self) -> Optional[bool]:
+        return __config__.get_bool('cacheEnabled')
 
-config_section = __config__.get('configSection')
-"""
-The section of the edgerc file to use for configuration
-"""
+    @property
+    def config(self) -> Optional[str]:
+        return __config__.get('config')
 
-dns = __config__.get('dns')
+    @property
+    def config_section(self) -> Optional[str]:
+        """
+        The section of the edgerc file to use for configuration
+        """
+        return __config__.get('configSection')
 
-dns_section = __config__.get('dnsSection')
+    @property
+    def dns(self) -> Optional[str]:
+        return __config__.get('dns')
 
-edgerc = __config__.get('edgerc')
+    @property
+    def dns_section(self) -> Optional[str]:
+        return __config__.get('dnsSection')
 
-gtm = __config__.get('gtm')
+    @property
+    def edgerc(self) -> Optional[str]:
+        return __config__.get('edgerc')
 
-gtm_section = __config__.get('gtmSection')
+    @property
+    def gtm(self) -> Optional[str]:
+        return __config__.get('gtm')
 
-networklist_section = __config__.get('networklistSection')
+    @property
+    def gtm_section(self) -> Optional[str]:
+        return __config__.get('gtmSection')
 
-networks = __config__.get('networks')
+    @property
+    def networklist_section(self) -> Optional[str]:
+        return __config__.get('networklistSection')
 
-papi_section = __config__.get('papiSection')
+    @property
+    def networks(self) -> Optional[str]:
+        return __config__.get('networks')
 
-property = __config__.get('property')
+    @property
+    def papi_section(self) -> Optional[str]:
+        return __config__.get('papiSection')
 
-property_section = __config__.get('propertySection')
+    @property
+    def property(self) -> Optional[str]:
+        return __config__.get('property')
+
+    @property
+    def property_section(self) -> Optional[str]:
+        return __config__.get('propertySection')
 

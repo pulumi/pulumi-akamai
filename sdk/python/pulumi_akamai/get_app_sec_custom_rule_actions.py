@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecCustomRuleActionsResult',
     'AwaitableGetAppSecCustomRuleActionsResult',
     'get_app_sec_custom_rule_actions',
+    'get_app_sec_custom_rule_actions_output',
 ]
 
 @pulumi.output_type
@@ -86,7 +87,7 @@ def get_app_sec_custom_rule_actions(config_id: Optional[int] = None,
                                     security_policy_id: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecCustomRuleActionsResult:
     """
-    Use the `getAppSecCustomRuleActions` data source to retrieve information about the actions defined for the custom rules, or a specific custom rule, associated with a specific security configuration and security policy.
+    Use the `get_app_sec_custom_rule_actions` data source to retrieve information about the actions defined for the custom rules, or a specific custom rule, associated with a specific security configuration and security policy.
 
     ## Example Usage
 
@@ -123,3 +124,33 @@ def get_app_sec_custom_rule_actions(config_id: Optional[int] = None,
         id=__ret__.id,
         output_text=__ret__.output_text,
         security_policy_id=__ret__.security_policy_id)
+
+
+@_utilities.lift_output_func(get_app_sec_custom_rule_actions)
+def get_app_sec_custom_rule_actions_output(config_id: Optional[pulumi.Input[int]] = None,
+                                           custom_rule_id: Optional[pulumi.Input[Optional[int]]] = None,
+                                           security_policy_id: Optional[pulumi.Input[str]] = None,
+                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecCustomRuleActionsResult]:
+    """
+    Use the `get_app_sec_custom_rule_actions` data source to retrieve information about the actions defined for the custom rules, or a specific custom rule, associated with a specific security configuration and security policy.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
+    custom_rule_actions_app_sec_custom_rule_actions = akamai.get_app_sec_custom_rule_actions(config_id=configuration.config_id,
+        security_policy_id="crAP_75829")
+    pulumi.export("customRuleActions", custom_rule_actions_app_sec_custom_rule_actions.output_text)
+    ```
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param int custom_rule_id: A specific custom rule for which to retrieve information. If not supplied, information about all custom rules will be returned.
+    :param str security_policy_id: The ID of the security policy to use
+    """
+    ...

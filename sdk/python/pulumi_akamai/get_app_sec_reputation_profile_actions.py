@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecReputationProfileActionsResult',
     'AwaitableGetAppSecReputationProfileActionsResult',
     'get_app_sec_reputation_profile_actions',
+    'get_app_sec_reputation_profile_actions_output',
 ]
 
 @pulumi.output_type
@@ -110,7 +111,7 @@ def get_app_sec_reputation_profile_actions(config_id: Optional[int] = None,
                                            security_policy_id: Optional[str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecReputationProfileActionsResult:
     """
-    Use the `getAppSecReputationProfileActions` data source to retrieve details about reputation profiles and their associated actions, or about the actions associated with a specific reputation profile.
+    Use the `get_app_sec_reputation_profile_actions` data source to retrieve details about reputation profiles and their associated actions, or about the actions associated with a specific reputation profile.
 
 
     :param int config_id: The ID of the security configuration to use.
@@ -135,3 +136,19 @@ def get_app_sec_reputation_profile_actions(config_id: Optional[int] = None,
         output_text=__ret__.output_text,
         reputation_profile_id=__ret__.reputation_profile_id,
         security_policy_id=__ret__.security_policy_id)
+
+
+@_utilities.lift_output_func(get_app_sec_reputation_profile_actions)
+def get_app_sec_reputation_profile_actions_output(config_id: Optional[pulumi.Input[int]] = None,
+                                                  reputation_profile_id: Optional[pulumi.Input[Optional[int]]] = None,
+                                                  security_policy_id: Optional[pulumi.Input[str]] = None,
+                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecReputationProfileActionsResult]:
+    """
+    Use the `get_app_sec_reputation_profile_actions` data source to retrieve details about reputation profiles and their associated actions, or about the actions associated with a specific reputation profile.
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param int reputation_profile_id: The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
+    :param str security_policy_id: THe ID of the security policy to use.
+    """
+    ...

@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecConfigurationResult',
     'AwaitableGetAppSecConfigurationResult',
     'get_app_sec_configuration',
+    'get_app_sec_configuration_output',
 ]
 
 @pulumi.output_type
@@ -152,3 +153,32 @@ def get_app_sec_configuration(name: Optional[str] = None,
         output_text=__ret__.output_text,
         production_version=__ret__.production_version,
         staging_version=__ret__.staging_version)
+
+
+@_utilities.lift_output_func(get_app_sec_configuration)
+def get_app_sec_configuration_output(name: Optional[pulumi.Input[Optional[str]]] = None,
+                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecConfigurationResult]:
+    """
+    Use the `AppSecConfiguration` data source to retrieve the list of security configurations, or information about a specific security configuration.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configurations = akamai.get_app_sec_configuration()
+    pulumi.export("configurationList", configurations.output_text)
+    specific_configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
+    pulumi.export("latest", specific_configuration.latest_version)
+    pulumi.export("staging", specific_configuration.staging_version)
+    pulumi.export("production", specific_configuration.production_version)
+    pulumi.export("id", specific_configuration.config_id)
+    ```
+
+
+    :param str name: The name of a specific security configuration. If not supplied, information about all security configurations is returned.
+    """
+    ...

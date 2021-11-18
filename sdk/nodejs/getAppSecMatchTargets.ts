@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -76,4 +75,22 @@ export interface GetAppSecMatchTargetsResult {
      * A tabular display showing the ID and Policy ID of all match targets associated with the specified security configuration, or of the specific match target if `matchTargetId` was supplied.
      */
     readonly outputText: string;
+}
+
+export function getAppSecMatchTargetsOutput(args: GetAppSecMatchTargetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecMatchTargetsResult> {
+    return pulumi.output(args).apply(a => getAppSecMatchTargets(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecMatchTargets.
+ */
+export interface GetAppSecMatchTargetsOutputArgs {
+    /**
+     * The ID of the security configuration to use.
+     */
+    configId: pulumi.Input<number>;
+    /**
+     * The ID of the match target to use. If not supplied, information about all match targets is returned.
+     */
+    matchTargetId?: pulumi.Input<number>;
 }

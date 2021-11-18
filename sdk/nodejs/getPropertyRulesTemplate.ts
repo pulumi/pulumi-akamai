@@ -89,3 +89,17 @@ export interface GetPropertyRulesTemplateResult {
     readonly varValuesFile?: string;
     readonly variables?: outputs.GetPropertyRulesTemplateVariable[];
 }
+
+export function getPropertyRulesTemplateOutput(args: GetPropertyRulesTemplateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyRulesTemplateResult> {
+    return pulumi.output(args).apply(a => getPropertyRulesTemplate(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getPropertyRulesTemplate.
+ */
+export interface GetPropertyRulesTemplateOutputArgs {
+    templateFile: pulumi.Input<string>;
+    varDefinitionFile?: pulumi.Input<string>;
+    varValuesFile?: pulumi.Input<string>;
+    variables?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesTemplateVariableArgs>[]>;
+}

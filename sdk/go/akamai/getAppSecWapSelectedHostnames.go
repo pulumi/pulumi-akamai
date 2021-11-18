@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,4 +44,82 @@ type LookupAppSecWapSelectedHostnamesResult struct {
 	ProtectedHosts   []string `pulumi:"protectedHosts"`
 	SecurityPolicyId string   `pulumi:"securityPolicyId"`
 	SelectedHosts    []string `pulumi:"selectedHosts"`
+}
+
+func LookupAppSecWapSelectedHostnamesOutput(ctx *pulumi.Context, args LookupAppSecWapSelectedHostnamesOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecWapSelectedHostnamesResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (LookupAppSecWapSelectedHostnamesResult, error) {
+			args := v.(LookupAppSecWapSelectedHostnamesArgs)
+			r, err := LookupAppSecWapSelectedHostnames(ctx, &args, opts...)
+			return *r, err
+		}).(LookupAppSecWapSelectedHostnamesResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecWapSelectedHostnames.
+type LookupAppSecWapSelectedHostnamesOutputArgs struct {
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The ID of the security policy to use.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+}
+
+func (LookupAppSecWapSelectedHostnamesOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecWapSelectedHostnamesArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecWapSelectedHostnames.
+type LookupAppSecWapSelectedHostnamesResultOutput struct{ *pulumi.OutputState }
+
+func (LookupAppSecWapSelectedHostnamesResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecWapSelectedHostnamesResult)(nil)).Elem()
+}
+
+func (o LookupAppSecWapSelectedHostnamesResultOutput) ToLookupAppSecWapSelectedHostnamesResultOutput() LookupAppSecWapSelectedHostnamesResultOutput {
+	return o
+}
+
+func (o LookupAppSecWapSelectedHostnamesResultOutput) ToLookupAppSecWapSelectedHostnamesResultOutputWithContext(ctx context.Context) LookupAppSecWapSelectedHostnamesResultOutput {
+	return o
+}
+
+func (o LookupAppSecWapSelectedHostnamesResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAppSecWapSelectedHostnamesResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+func (o LookupAppSecWapSelectedHostnamesResultOutput) EvaluatedHosts() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupAppSecWapSelectedHostnamesResult) []string { return v.EvaluatedHosts }).(pulumi.StringArrayOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o LookupAppSecWapSelectedHostnamesResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecWapSelectedHostnamesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecWapSelectedHostnamesResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecWapSelectedHostnamesResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecWapSelectedHostnamesResultOutput) MatchTargets() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecWapSelectedHostnamesResult) string { return v.MatchTargets }).(pulumi.StringOutput)
+}
+
+// A tabular display of the protected and evaluated hostnames.
+func (o LookupAppSecWapSelectedHostnamesResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecWapSelectedHostnamesResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecWapSelectedHostnamesResultOutput) ProtectedHosts() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupAppSecWapSelectedHostnamesResult) []string { return v.ProtectedHosts }).(pulumi.StringArrayOutput)
+}
+
+func (o LookupAppSecWapSelectedHostnamesResultOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecWapSelectedHostnamesResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecWapSelectedHostnamesResultOutput) SelectedHosts() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupAppSecWapSelectedHostnamesResult) []string { return v.SelectedHosts }).(pulumi.StringArrayOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(LookupAppSecWapSelectedHostnamesResultOutput{})
 }

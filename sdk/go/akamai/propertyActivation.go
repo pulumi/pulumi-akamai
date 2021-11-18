@@ -15,6 +15,76 @@ import (
 //
 // Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
 //
+// ## Example Usage
+//
+// Basic usage:
+//
+// ```go
+// package main
+//
+// import (
+// 	"fmt"
+// 	"io/ioutil"
+//
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func readFileOrPanic(path string) pulumi.StringPtrInput {
+// 	data, err := ioutil.ReadFile(path)
+// 	if err != nil {
+// 		panic(err.Error())
+// 	}
+// 	return pulumi.String(string(data))
+// }
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		email := "user@example.org"
+// 		ruleFormat := "v2020-03-04"
+// 		example, err := akamai.NewProperty(ctx, "example", &akamai.PropertyArgs{
+// 			ProductId:  pulumi.String("prd_SPM"),
+// 			ContractId: pulumi.Any(_var.Contractid),
+// 			GroupId:    pulumi.Any(_var.Groupid),
+// 			Hostnames: PropertyHostnameArray{
+// 				Example.org:     "example.org.edgesuite.net",
+// 				Www.example.org: "example.org.edgesuite.net",
+// 				Sub.example.org: "sub.example.org.edgesuite.net",
+// 			},
+// 			RuleFormat: pulumi.String(ruleFormat),
+// 			Rules:      readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/main.json")),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		exampleStaging, err := akamai.NewPropertyActivation(ctx, "exampleStaging", &akamai.PropertyActivationArgs{
+// 			PropertyId: example.ID(),
+// 			Contacts: pulumi.StringArray{
+// 				pulumi.String(email),
+// 			},
+// 			Version: example.LatestVersion,
+// 			Note:    pulumi.String("Sample activation"),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		_, err = akamai.NewPropertyActivation(ctx, "exampleProd", &akamai.PropertyActivationArgs{
+// 			PropertyId: example.ID(),
+// 			Network:    pulumi.String("PRODUCTION"),
+// 			Version:    pulumi.Int(3),
+// 			Contacts: pulumi.StringArray{
+// 				pulumi.String(email),
+// 			},
+// 		}, pulumi.DependsOn([]pulumi.Resource{
+// 			exampleStaging,
+// 		}))
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
 // ## Argument reference
 //
 // The following arguments are supported:
@@ -250,7 +320,7 @@ type PropertyActivationArrayInput interface {
 type PropertyActivationArray []PropertyActivationInput
 
 func (PropertyActivationArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*PropertyActivation)(nil))
+	return reflect.TypeOf((*[]*PropertyActivation)(nil)).Elem()
 }
 
 func (i PropertyActivationArray) ToPropertyActivationArrayOutput() PropertyActivationArrayOutput {
@@ -275,7 +345,7 @@ type PropertyActivationMapInput interface {
 type PropertyActivationMap map[string]PropertyActivationInput
 
 func (PropertyActivationMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*PropertyActivation)(nil))
+	return reflect.TypeOf((*map[string]*PropertyActivation)(nil)).Elem()
 }
 
 func (i PropertyActivationMap) ToPropertyActivationMapOutput() PropertyActivationMapOutput {
@@ -286,9 +356,7 @@ func (i PropertyActivationMap) ToPropertyActivationMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationMapOutput)
 }
 
-type PropertyActivationOutput struct {
-	*pulumi.OutputState
-}
+type PropertyActivationOutput struct{ *pulumi.OutputState }
 
 func (PropertyActivationOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*PropertyActivation)(nil))
@@ -307,14 +375,12 @@ func (o PropertyActivationOutput) ToPropertyActivationPtrOutput() PropertyActiva
 }
 
 func (o PropertyActivationOutput) ToPropertyActivationPtrOutputWithContext(ctx context.Context) PropertyActivationPtrOutput {
-	return o.ApplyT(func(v PropertyActivation) *PropertyActivation {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PropertyActivation) *PropertyActivation {
 		return &v
 	}).(PropertyActivationPtrOutput)
 }
 
-type PropertyActivationPtrOutput struct {
-	*pulumi.OutputState
-}
+type PropertyActivationPtrOutput struct{ *pulumi.OutputState }
 
 func (PropertyActivationPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**PropertyActivation)(nil))
@@ -326,6 +392,16 @@ func (o PropertyActivationPtrOutput) ToPropertyActivationPtrOutput() PropertyAct
 
 func (o PropertyActivationPtrOutput) ToPropertyActivationPtrOutputWithContext(ctx context.Context) PropertyActivationPtrOutput {
 	return o
+}
+
+func (o PropertyActivationPtrOutput) Elem() PropertyActivationOutput {
+	return o.ApplyT(func(v *PropertyActivation) PropertyActivation {
+		if v != nil {
+			return *v
+		}
+		var ret PropertyActivation
+		return ret
+	}).(PropertyActivationOutput)
 }
 
 type PropertyActivationArrayOutput struct{ *pulumi.OutputState }
@@ -369,6 +445,10 @@ func (o PropertyActivationMapOutput) MapIndex(k pulumi.StringInput) PropertyActi
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationInput)(nil)).Elem(), &PropertyActivation{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationPtrInput)(nil)).Elem(), &PropertyActivation{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationArrayInput)(nil)).Elem(), PropertyActivationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationMapInput)(nil)).Elem(), PropertyActivationMap{})
 	pulumi.RegisterOutputType(PropertyActivationOutput{})
 	pulumi.RegisterOutputType(PropertyActivationPtrOutput{})
 	pulumi.RegisterOutputType(PropertyActivationArrayOutput{})

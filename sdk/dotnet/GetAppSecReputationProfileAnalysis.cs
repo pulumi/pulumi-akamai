@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -52,6 +53,48 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecReputationProfileAnalysisResult> InvokeAsync(GetAppSecReputationProfileAnalysisArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecReputationProfileAnalysisResult>("akamai:index/getAppSecReputationProfileAnalysis:getAppSecReputationProfileAnalysis", args ?? new GetAppSecReputationProfileAnalysisArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.AppSecReputationProfileAnalysis` data source to retrieve information about the current reputation analysis settings. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getreputationanalysis).
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = @var.Security_configuration,
+        ///         }));
+        ///         var reputationAnalysis = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfileAnalysis.InvokeAsync(new Akamai.GetAppSecReputationProfileAnalysisArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///         })));
+        ///         this.ReputationAnalysisText = reputationAnalysis.Apply(reputationAnalysis =&gt; reputationAnalysis.OutputText);
+        ///         this.ReputationAnalysisJson = reputationAnalysis.Apply(reputationAnalysis =&gt; reputationAnalysis.Json);
+        ///     }
+        /// 
+        ///     [Output("reputationAnalysisText")]
+        ///     public Output&lt;string&gt; ReputationAnalysisText { get; set; }
+        ///     [Output("reputationAnalysisJson")]
+        ///     public Output&lt;string&gt; ReputationAnalysisJson { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecReputationProfileAnalysisResult> Invoke(GetAppSecReputationProfileAnalysisInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfileAnalysisResult>("akamai:index/getAppSecReputationProfileAnalysis:getAppSecReputationProfileAnalysis", args ?? new GetAppSecReputationProfileAnalysisInvokeArgs(), options.WithVersion());
     }
 
 
@@ -70,6 +113,25 @@ namespace Pulumi.Akamai
         public string SecurityPolicyId { get; set; } = null!;
 
         public GetAppSecReputationProfileAnalysisArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecReputationProfileAnalysisInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The configuration ID to use.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        /// <summary>
+        /// The ID of the security policy to use.
+        /// </summary>
+        [Input("securityPolicyId", required: true)]
+        public Input<string> SecurityPolicyId { get; set; } = null!;
+
+        public GetAppSecReputationProfileAnalysisInvokeArgs()
         {
         }
     }

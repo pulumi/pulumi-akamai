@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -69,4 +68,18 @@ export interface GetAppSecSiemDefinitionsResult {
      */
     readonly outputText: string;
     readonly siemDefinitionName?: string;
+}
+
+export function getAppSecSiemDefinitionsOutput(args?: GetAppSecSiemDefinitionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecSiemDefinitionsResult> {
+    return pulumi.output(args).apply(a => getAppSecSiemDefinitions(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecSiemDefinitions.
+ */
+export interface GetAppSecSiemDefinitionsOutputArgs {
+    /**
+     * The name of a specific SIEM definition for which to retrieve information.
+     */
+    siemDefinitionName?: pulumi.Input<string>;
 }

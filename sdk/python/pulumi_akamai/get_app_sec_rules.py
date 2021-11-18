@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecRulesResult',
     'AwaitableGetAppSecRulesResult',
     'get_app_sec_rules',
+    'get_app_sec_rules_output',
 ]
 
 @pulumi.output_type
@@ -124,7 +125,7 @@ def get_app_sec_rules(config_id: Optional[int] = None,
                       security_policy_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecRulesResult:
     """
-    Use the `getAppSecRules` data source to list the action and condition-exception information for a rule or rules.
+    Use the `get_app_sec_rules` data source to list the action and condition-exception information for a rule or rules.
 
     ## Example Usage
 
@@ -168,3 +169,37 @@ def get_app_sec_rules(config_id: Optional[int] = None,
         rule_action=__ret__.rule_action,
         rule_id=__ret__.rule_id,
         security_policy_id=__ret__.security_policy_id)
+
+
+@_utilities.lift_output_func(get_app_sec_rules)
+def get_app_sec_rules_output(config_id: Optional[pulumi.Input[int]] = None,
+                             rule_id: Optional[pulumi.Input[Optional[int]]] = None,
+                             security_policy_id: Optional[pulumi.Input[str]] = None,
+                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecRulesResult]:
+    """
+    Use the `get_app_sec_rules` data source to list the action and condition-exception information for a rule or rules.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    rule = akamai.get_app_sec_rules(config_id=configuration.config_id,
+        security_policy_id=var["security_policy_id"],
+        rule_id=var["rule_id"])
+    pulumi.export("ruleAction", akamai_appsec_rules["rule"]["rule_action"])
+    pulumi.export("conditionException", akamai_appsec_rules["rule"]["condition_exception"])
+    pulumi.export("json", akamai_appsec_rules["rule"]["json"])
+    pulumi.export("outputText", akamai_appsec_rules["rule"]["output_text"])
+    ```
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param int rule_id: The ID of the rule to use. If not specified, information about all rules will be returned.
+    :param str security_policy_id: The ID of the security policy to use.
+    """
+    ...

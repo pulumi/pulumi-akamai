@@ -190,7 +190,7 @@ type NetworkListDescriptionArrayInput interface {
 type NetworkListDescriptionArray []NetworkListDescriptionInput
 
 func (NetworkListDescriptionArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*NetworkListDescription)(nil))
+	return reflect.TypeOf((*[]*NetworkListDescription)(nil)).Elem()
 }
 
 func (i NetworkListDescriptionArray) ToNetworkListDescriptionArrayOutput() NetworkListDescriptionArrayOutput {
@@ -215,7 +215,7 @@ type NetworkListDescriptionMapInput interface {
 type NetworkListDescriptionMap map[string]NetworkListDescriptionInput
 
 func (NetworkListDescriptionMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*NetworkListDescription)(nil))
+	return reflect.TypeOf((*map[string]*NetworkListDescription)(nil)).Elem()
 }
 
 func (i NetworkListDescriptionMap) ToNetworkListDescriptionMapOutput() NetworkListDescriptionMapOutput {
@@ -226,9 +226,7 @@ func (i NetworkListDescriptionMap) ToNetworkListDescriptionMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkListDescriptionMapOutput)
 }
 
-type NetworkListDescriptionOutput struct {
-	*pulumi.OutputState
-}
+type NetworkListDescriptionOutput struct{ *pulumi.OutputState }
 
 func (NetworkListDescriptionOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*NetworkListDescription)(nil))
@@ -247,14 +245,12 @@ func (o NetworkListDescriptionOutput) ToNetworkListDescriptionPtrOutput() Networ
 }
 
 func (o NetworkListDescriptionOutput) ToNetworkListDescriptionPtrOutputWithContext(ctx context.Context) NetworkListDescriptionPtrOutput {
-	return o.ApplyT(func(v NetworkListDescription) *NetworkListDescription {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NetworkListDescription) *NetworkListDescription {
 		return &v
 	}).(NetworkListDescriptionPtrOutput)
 }
 
-type NetworkListDescriptionPtrOutput struct {
-	*pulumi.OutputState
-}
+type NetworkListDescriptionPtrOutput struct{ *pulumi.OutputState }
 
 func (NetworkListDescriptionPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**NetworkListDescription)(nil))
@@ -266,6 +262,16 @@ func (o NetworkListDescriptionPtrOutput) ToNetworkListDescriptionPtrOutput() Net
 
 func (o NetworkListDescriptionPtrOutput) ToNetworkListDescriptionPtrOutputWithContext(ctx context.Context) NetworkListDescriptionPtrOutput {
 	return o
+}
+
+func (o NetworkListDescriptionPtrOutput) Elem() NetworkListDescriptionOutput {
+	return o.ApplyT(func(v *NetworkListDescription) NetworkListDescription {
+		if v != nil {
+			return *v
+		}
+		var ret NetworkListDescription
+		return ret
+	}).(NetworkListDescriptionOutput)
 }
 
 type NetworkListDescriptionArrayOutput struct{ *pulumi.OutputState }
@@ -309,6 +315,10 @@ func (o NetworkListDescriptionMapOutput) MapIndex(k pulumi.StringInput) NetworkL
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkListDescriptionInput)(nil)).Elem(), &NetworkListDescription{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkListDescriptionPtrInput)(nil)).Elem(), &NetworkListDescription{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkListDescriptionArrayInput)(nil)).Elem(), NetworkListDescriptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkListDescriptionMapInput)(nil)).Elem(), NetworkListDescriptionMap{})
 	pulumi.RegisterOutputType(NetworkListDescriptionOutput{})
 	pulumi.RegisterOutputType(NetworkListDescriptionPtrOutput{})
 	pulumi.RegisterOutputType(NetworkListDescriptionArrayOutput{})

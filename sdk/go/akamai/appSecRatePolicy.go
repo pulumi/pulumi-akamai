@@ -12,6 +12,51 @@ import (
 )
 
 // The `resourceAkamaiAppsecRatePolicy` resource allows you to create, modify or delete rate policies for a specific security configuration.
+//
+// ## Example Usage
+//
+// Basic usage:
+//
+// ```go
+// package main
+//
+// import (
+// 	"fmt"
+// 	"io/ioutil"
+//
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func readFileOrPanic(path string) pulumi.StringPtrInput {
+// 	data, err := ioutil.ReadFile(path)
+// 	if err != nil {
+// 		panic(err.Error())
+// 	}
+// 	return pulumi.String(string(data))
+// }
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		opt0 := _var.Security_configuration
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+// 			Name: &opt0,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		ratePolicy, err := akamai.NewAppSecRatePolicy(ctx, "ratePolicy", &akamai.AppSecRatePolicyArgs{
+// 			ConfigId:   pulumi.Int(configuration.ConfigId),
+// 			RatePolicy: readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/rate_policy.json")),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		ctx.Export("ratePolicyId", ratePolicy.RatePolicyId)
+// 		return nil
+// 	})
+// }
+// ```
 type AppSecRatePolicy struct {
 	pulumi.CustomResourceState
 
@@ -160,7 +205,7 @@ type AppSecRatePolicyArrayInput interface {
 type AppSecRatePolicyArray []AppSecRatePolicyInput
 
 func (AppSecRatePolicyArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecRatePolicy)(nil))
+	return reflect.TypeOf((*[]*AppSecRatePolicy)(nil)).Elem()
 }
 
 func (i AppSecRatePolicyArray) ToAppSecRatePolicyArrayOutput() AppSecRatePolicyArrayOutput {
@@ -185,7 +230,7 @@ type AppSecRatePolicyMapInput interface {
 type AppSecRatePolicyMap map[string]AppSecRatePolicyInput
 
 func (AppSecRatePolicyMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecRatePolicy)(nil))
+	return reflect.TypeOf((*map[string]*AppSecRatePolicy)(nil)).Elem()
 }
 
 func (i AppSecRatePolicyMap) ToAppSecRatePolicyMapOutput() AppSecRatePolicyMapOutput {
@@ -196,9 +241,7 @@ func (i AppSecRatePolicyMap) ToAppSecRatePolicyMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecRatePolicyMapOutput)
 }
 
-type AppSecRatePolicyOutput struct {
-	*pulumi.OutputState
-}
+type AppSecRatePolicyOutput struct{ *pulumi.OutputState }
 
 func (AppSecRatePolicyOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecRatePolicy)(nil))
@@ -217,14 +260,12 @@ func (o AppSecRatePolicyOutput) ToAppSecRatePolicyPtrOutput() AppSecRatePolicyPt
 }
 
 func (o AppSecRatePolicyOutput) ToAppSecRatePolicyPtrOutputWithContext(ctx context.Context) AppSecRatePolicyPtrOutput {
-	return o.ApplyT(func(v AppSecRatePolicy) *AppSecRatePolicy {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecRatePolicy) *AppSecRatePolicy {
 		return &v
 	}).(AppSecRatePolicyPtrOutput)
 }
 
-type AppSecRatePolicyPtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecRatePolicyPtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecRatePolicyPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecRatePolicy)(nil))
@@ -236,6 +277,16 @@ func (o AppSecRatePolicyPtrOutput) ToAppSecRatePolicyPtrOutput() AppSecRatePolic
 
 func (o AppSecRatePolicyPtrOutput) ToAppSecRatePolicyPtrOutputWithContext(ctx context.Context) AppSecRatePolicyPtrOutput {
 	return o
+}
+
+func (o AppSecRatePolicyPtrOutput) Elem() AppSecRatePolicyOutput {
+	return o.ApplyT(func(v *AppSecRatePolicy) AppSecRatePolicy {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecRatePolicy
+		return ret
+	}).(AppSecRatePolicyOutput)
 }
 
 type AppSecRatePolicyArrayOutput struct{ *pulumi.OutputState }
@@ -279,6 +330,10 @@ func (o AppSecRatePolicyMapOutput) MapIndex(k pulumi.StringInput) AppSecRatePoli
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRatePolicyInput)(nil)).Elem(), &AppSecRatePolicy{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRatePolicyPtrInput)(nil)).Elem(), &AppSecRatePolicy{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRatePolicyArrayInput)(nil)).Elem(), AppSecRatePolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRatePolicyMapInput)(nil)).Elem(), AppSecRatePolicyMap{})
 	pulumi.RegisterOutputType(AppSecRatePolicyOutput{})
 	pulumi.RegisterOutputType(AppSecRatePolicyPtrOutput{})
 	pulumi.RegisterOutputType(AppSecRatePolicyArrayOutput{})

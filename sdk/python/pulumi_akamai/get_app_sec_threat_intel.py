@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecThreatIntelResult',
     'AwaitableGetAppSecThreatIntelResult',
     'get_app_sec_threat_intel',
+    'get_app_sec_threat_intel_output',
 ]
 
 @pulumi.output_type
@@ -139,3 +140,34 @@ def get_app_sec_threat_intel(config_id: Optional[int] = None,
         output_text=__ret__.output_text,
         security_policy_id=__ret__.security_policy_id,
         threat_intel=__ret__.threat_intel)
+
+
+@_utilities.lift_output_func(get_app_sec_threat_intel)
+def get_app_sec_threat_intel_output(config_id: Optional[pulumi.Input[int]] = None,
+                                    security_policy_id: Optional[pulumi.Input[str]] = None,
+                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecThreatIntelResult]:
+    """
+    Use the `AppSecThreatIntel` data source to view threat intelligence setting for a policy
+    __BETA__ This is Adaptive Security Engine(ASE) related data source. Please contact your akamai representative if you want to learn more
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    threat_intel_app_sec_threat_intel = akamai.get_app_sec_threat_intel(config_id=configuration.config_id,
+        security_policy_id=var["security_policy_id"])
+    pulumi.export("threatIntel", threat_intel_app_sec_threat_intel.threat_intel)
+    pulumi.export("json", threat_intel_app_sec_threat_intel.json)
+    pulumi.export("outputText", threat_intel_app_sec_threat_intel.output_text)
+    ```
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param str security_policy_id: The ID of the security policy to use.
+    """
+    ...

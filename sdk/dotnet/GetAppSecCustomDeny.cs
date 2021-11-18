@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -62,6 +63,58 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecCustomDenyResult> InvokeAsync(GetAppSecCustomDenyArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecCustomDenyResult>("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", args ?? new GetAppSecCustomDenyArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.AppSecCustomDeny` data source to retrieve information about custom deny actions for a specific security configuration, or about a particular custom deny action. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcustomdeny).
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = @var.Security_configuration,
+        ///         }));
+        ///         var customDenyList = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecCustomDeny.InvokeAsync(new Akamai.GetAppSecCustomDenyArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///         })));
+        ///         this.CustomDenyListOutput = customDenyList.Apply(customDenyList =&gt; customDenyList.OutputText);
+        ///         this.CustomDenyListJson = customDenyList.Apply(customDenyList =&gt; customDenyList.Json);
+        ///         var customDeny = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecCustomDeny.InvokeAsync(new Akamai.GetAppSecCustomDenyArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///             CustomDenyId = @var.Custom_deny_id,
+        ///         })));
+        ///         this.CustomDenyJson = customDeny.Apply(customDeny =&gt; customDeny.Json);
+        ///         this.CustomDenyOutput = customDeny.Apply(customDeny =&gt; customDeny.OutputText);
+        ///     }
+        /// 
+        ///     [Output("customDenyListOutput")]
+        ///     public Output&lt;string&gt; CustomDenyListOutput { get; set; }
+        ///     [Output("customDenyListJson")]
+        ///     public Output&lt;string&gt; CustomDenyListJson { get; set; }
+        ///     [Output("customDenyJson")]
+        ///     public Output&lt;string&gt; CustomDenyJson { get; set; }
+        ///     [Output("customDenyOutput")]
+        ///     public Output&lt;string&gt; CustomDenyOutput { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecCustomDenyResult> Invoke(GetAppSecCustomDenyInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecCustomDenyResult>("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", args ?? new GetAppSecCustomDenyInvokeArgs(), options.WithVersion());
     }
 
 
@@ -80,6 +133,25 @@ namespace Pulumi.Akamai
         public string? CustomDenyId { get; set; }
 
         public GetAppSecCustomDenyArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecCustomDenyInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The configuration ID to use.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        /// <summary>
+        /// The ID of a specific custom deny action.
+        /// </summary>
+        [Input("customDenyId")]
+        public Input<string>? CustomDenyId { get; set; }
+
+        public GetAppSecCustomDenyInvokeArgs()
         {
         }
     }

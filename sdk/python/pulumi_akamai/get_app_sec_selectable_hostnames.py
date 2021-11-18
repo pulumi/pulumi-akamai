@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecSelectableHostnamesResult',
     'AwaitableGetAppSecSelectableHostnamesResult',
     'get_app_sec_selectable_hostnames',
+    'get_app_sec_selectable_hostnames_output',
 ]
 
 @pulumi.output_type
@@ -130,7 +131,7 @@ def get_app_sec_selectable_hostnames(active_in_production: Optional[bool] = None
                                      groupid: Optional[int] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecSelectableHostnamesResult:
     """
-    Use the `getAppSecSelectableHostnames` data source to retrieve the list of hostnames that may be protected under a given security configuration. You can specify the list to be retrieved either by supplying the name of a security configuration, or by supplying a group ID and contract ID.
+    Use the `get_app_sec_selectable_hostnames` data source to retrieve the list of hostnames that may be protected under a given security configuration. You can specify the list to be retrieved either by supplying the name of a security configuration, or by supplying a group ID and contract ID.
 
     ## Example Usage
 
@@ -179,3 +180,41 @@ def get_app_sec_selectable_hostnames(active_in_production: Optional[bool] = None
         hostnames_json=__ret__.hostnames_json,
         id=__ret__.id,
         output_text=__ret__.output_text)
+
+
+@_utilities.lift_output_func(get_app_sec_selectable_hostnames)
+def get_app_sec_selectable_hostnames_output(active_in_production: Optional[pulumi.Input[Optional[bool]]] = None,
+                                            active_in_staging: Optional[pulumi.Input[Optional[bool]]] = None,
+                                            config_id: Optional[pulumi.Input[Optional[int]]] = None,
+                                            contractid: Optional[pulumi.Input[Optional[str]]] = None,
+                                            groupid: Optional[pulumi.Input[Optional[int]]] = None,
+                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecSelectableHostnamesResult]:
+    """
+    Use the `get_app_sec_selectable_hostnames` data source to retrieve the list of hostnames that may be protected under a given security configuration. You can specify the list to be retrieved either by supplying the name of a security configuration, or by supplying a group ID and contract ID.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    selectable_hostnames_app_sec_selectable_hostnames = akamai.get_app_sec_selectable_hostnames(config_id=configuration.config_id)
+    pulumi.export("selectableHostnames", selectable_hostnames_app_sec_selectable_hostnames.hostnames)
+    pulumi.export("selectableHostnamesJson", selectable_hostnames_app_sec_selectable_hostnames.hostnames_json)
+    pulumi.export("selectableHostnamesOutputText", selectable_hostnames_app_sec_selectable_hostnames.output_text)
+    selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames = akamai.get_app_sec_selectable_hostnames(contractid=var["contractid"],
+        groupid=var["groupid"])
+    pulumi.export("selectableHostnamesForCreateConfiguration", selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames.hostnames)
+    pulumi.export("selectableHostnamesForCreateConfigurationJson", selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames.hostnames_json)
+    pulumi.export("selectableHostnamesForCreateConfigurationOutputText", selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames.output_text)
+    ```
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param str contractid: The ID of the contract to use.
+    :param int groupid: The ID of the group to use.
+    """
+    ...

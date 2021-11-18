@@ -29,14 +29,14 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Network_list
-// 		networkListsFilter, err := akamai.GetNetworkLists(ctx, &akamai.GetNetworkListsArgs{
+// 		networkListsFilter, err := akamai.GetNetworkLists(ctx, &GetNetworkListsArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
 // 		_, err = akamai.NewNetworkListSubscription(ctx, "subscribe", &akamai.NetworkListSubscriptionArgs{
-// 			NetworkLists: toPulumiStringArray(networkListsFilter.Lists),
+// 			NetworkLists: interface{}(networkListsFilter.Lists),
 // 			Recipients: pulumi.StringArray{
 // 				pulumi.String("user@example.com"),
 // 			},
@@ -46,13 +46,6 @@ import (
 // 		}
 // 		return nil
 // 	})
-// }
-// func toPulumiStringArray(arr []string) pulumi.StringArray {
-// 	var pulumiArr pulumi.StringArray
-// 	for _, v := range arr {
-// 		pulumiArr = append(pulumiArr, pulumi.String(v))
-// 	}
-// 	return pulumiArr
 // }
 // ```
 type NetworkListSubscription struct {
@@ -207,7 +200,7 @@ type NetworkListSubscriptionArrayInput interface {
 type NetworkListSubscriptionArray []NetworkListSubscriptionInput
 
 func (NetworkListSubscriptionArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*NetworkListSubscription)(nil))
+	return reflect.TypeOf((*[]*NetworkListSubscription)(nil)).Elem()
 }
 
 func (i NetworkListSubscriptionArray) ToNetworkListSubscriptionArrayOutput() NetworkListSubscriptionArrayOutput {
@@ -232,7 +225,7 @@ type NetworkListSubscriptionMapInput interface {
 type NetworkListSubscriptionMap map[string]NetworkListSubscriptionInput
 
 func (NetworkListSubscriptionMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*NetworkListSubscription)(nil))
+	return reflect.TypeOf((*map[string]*NetworkListSubscription)(nil)).Elem()
 }
 
 func (i NetworkListSubscriptionMap) ToNetworkListSubscriptionMapOutput() NetworkListSubscriptionMapOutput {
@@ -243,9 +236,7 @@ func (i NetworkListSubscriptionMap) ToNetworkListSubscriptionMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkListSubscriptionMapOutput)
 }
 
-type NetworkListSubscriptionOutput struct {
-	*pulumi.OutputState
-}
+type NetworkListSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (NetworkListSubscriptionOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*NetworkListSubscription)(nil))
@@ -264,14 +255,12 @@ func (o NetworkListSubscriptionOutput) ToNetworkListSubscriptionPtrOutput() Netw
 }
 
 func (o NetworkListSubscriptionOutput) ToNetworkListSubscriptionPtrOutputWithContext(ctx context.Context) NetworkListSubscriptionPtrOutput {
-	return o.ApplyT(func(v NetworkListSubscription) *NetworkListSubscription {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NetworkListSubscription) *NetworkListSubscription {
 		return &v
 	}).(NetworkListSubscriptionPtrOutput)
 }
 
-type NetworkListSubscriptionPtrOutput struct {
-	*pulumi.OutputState
-}
+type NetworkListSubscriptionPtrOutput struct{ *pulumi.OutputState }
 
 func (NetworkListSubscriptionPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**NetworkListSubscription)(nil))
@@ -283,6 +272,16 @@ func (o NetworkListSubscriptionPtrOutput) ToNetworkListSubscriptionPtrOutput() N
 
 func (o NetworkListSubscriptionPtrOutput) ToNetworkListSubscriptionPtrOutputWithContext(ctx context.Context) NetworkListSubscriptionPtrOutput {
 	return o
+}
+
+func (o NetworkListSubscriptionPtrOutput) Elem() NetworkListSubscriptionOutput {
+	return o.ApplyT(func(v *NetworkListSubscription) NetworkListSubscription {
+		if v != nil {
+			return *v
+		}
+		var ret NetworkListSubscription
+		return ret
+	}).(NetworkListSubscriptionOutput)
 }
 
 type NetworkListSubscriptionArrayOutput struct{ *pulumi.OutputState }
@@ -326,6 +325,10 @@ func (o NetworkListSubscriptionMapOutput) MapIndex(k pulumi.StringInput) Network
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkListSubscriptionInput)(nil)).Elem(), &NetworkListSubscription{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkListSubscriptionPtrInput)(nil)).Elem(), &NetworkListSubscription{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkListSubscriptionArrayInput)(nil)).Elem(), NetworkListSubscriptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkListSubscriptionMapInput)(nil)).Elem(), NetworkListSubscriptionMap{})
 	pulumi.RegisterOutputType(NetworkListSubscriptionOutput{})
 	pulumi.RegisterOutputType(NetworkListSubscriptionPtrOutput{})
 	pulumi.RegisterOutputType(NetworkListSubscriptionArrayOutput{})

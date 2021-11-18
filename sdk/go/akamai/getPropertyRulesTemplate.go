@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -75,4 +78,69 @@ type GetPropertyRulesTemplateResult struct {
 	VarDefinitionFile *string                            `pulumi:"varDefinitionFile"`
 	VarValuesFile     *string                            `pulumi:"varValuesFile"`
 	Variables         []GetPropertyRulesTemplateVariable `pulumi:"variables"`
+}
+
+func GetPropertyRulesTemplateOutput(ctx *pulumi.Context, args GetPropertyRulesTemplateOutputArgs, opts ...pulumi.InvokeOption) GetPropertyRulesTemplateResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetPropertyRulesTemplateResult, error) {
+			args := v.(GetPropertyRulesTemplateArgs)
+			r, err := GetPropertyRulesTemplate(ctx, &args, opts...)
+			return *r, err
+		}).(GetPropertyRulesTemplateResultOutput)
+}
+
+// A collection of arguments for invoking getPropertyRulesTemplate.
+type GetPropertyRulesTemplateOutputArgs struct {
+	TemplateFile      pulumi.StringInput                         `pulumi:"templateFile"`
+	VarDefinitionFile pulumi.StringPtrInput                      `pulumi:"varDefinitionFile"`
+	VarValuesFile     pulumi.StringPtrInput                      `pulumi:"varValuesFile"`
+	Variables         GetPropertyRulesTemplateVariableArrayInput `pulumi:"variables"`
+}
+
+func (GetPropertyRulesTemplateOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyRulesTemplateArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getPropertyRulesTemplate.
+type GetPropertyRulesTemplateResultOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyRulesTemplateResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyRulesTemplateResult)(nil)).Elem()
+}
+
+func (o GetPropertyRulesTemplateResultOutput) ToGetPropertyRulesTemplateResultOutput() GetPropertyRulesTemplateResultOutput {
+	return o
+}
+
+func (o GetPropertyRulesTemplateResultOutput) ToGetPropertyRulesTemplateResultOutputWithContext(ctx context.Context) GetPropertyRulesTemplateResultOutput {
+	return o
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetPropertyRulesTemplateResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyRulesTemplateResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyRulesTemplateResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyRulesTemplateResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyRulesTemplateResultOutput) TemplateFile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyRulesTemplateResult) string { return v.TemplateFile }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyRulesTemplateResultOutput) VarDefinitionFile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPropertyRulesTemplateResult) *string { return v.VarDefinitionFile }).(pulumi.StringPtrOutput)
+}
+
+func (o GetPropertyRulesTemplateResultOutput) VarValuesFile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPropertyRulesTemplateResult) *string { return v.VarValuesFile }).(pulumi.StringPtrOutput)
+}
+
+func (o GetPropertyRulesTemplateResultOutput) Variables() GetPropertyRulesTemplateVariableArrayOutput {
+	return o.ApplyT(func(v GetPropertyRulesTemplateResult) []GetPropertyRulesTemplateVariable { return v.Variables }).(GetPropertyRulesTemplateVariableArrayOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetPropertyRulesTemplateResultOutput{})
 }

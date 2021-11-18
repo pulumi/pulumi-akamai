@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -66,4 +65,18 @@ export interface GetAppSecSiemSettingsResult {
      * A tabular display showing the SIEM setting information.
      */
     readonly outputText: string;
+}
+
+export function getAppSecSiemSettingsOutput(args: GetAppSecSiemSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecSiemSettingsResult> {
+    return pulumi.output(args).apply(a => getAppSecSiemSettings(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecSiemSettings.
+ */
+export interface GetAppSecSiemSettingsOutputArgs {
+    /**
+     * The ID of the security configuration to use.
+     */
+    configId: pulumi.Input<number>;
 }

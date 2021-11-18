@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -42,6 +43,38 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecHostnameCoverageMatchTargetsResult> InvokeAsync(GetAppSecHostnameCoverageMatchTargetsArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecHostnameCoverageMatchTargetsResult>("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", args ?? new GetAppSecHostnameCoverageMatchTargetsArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.getAppSecHostnameCoverageMatchTargets` data source to retrieve information about the API and website match targets that protect a hostname. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoveragematchtargets).
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var matchTargets = Output.Create(Akamai.GetAppSecHostnameCoverageMatchTargets.InvokeAsync(new Akamai.GetAppSecHostnameCoverageMatchTargetsArgs
+        ///         {
+        ///             ConfigId = 43253,
+        ///             Hostname = "example.com",
+        ///         }));
+        ///     }
+        /// 
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecHostnameCoverageMatchTargetsResult> Invoke(GetAppSecHostnameCoverageMatchTargetsInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecHostnameCoverageMatchTargetsResult>("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", args ?? new GetAppSecHostnameCoverageMatchTargetsInvokeArgs(), options.WithVersion());
     }
 
 
@@ -60,6 +93,25 @@ namespace Pulumi.Akamai
         public string Hostname { get; set; } = null!;
 
         public GetAppSecHostnameCoverageMatchTargetsArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecHostnameCoverageMatchTargetsInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The configuration ID.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        /// <summary>
+        /// The hostname for which to retrieve information.
+        /// </summary>
+        [Input("hostname", required: true)]
+        public Input<string> Hostname { get; set; } = null!;
+
+        public GetAppSecHostnameCoverageMatchTargetsInvokeArgs()
         {
         }
     }

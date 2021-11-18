@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -19,6 +20,15 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecWapSelectedHostnamesResult> InvokeAsync(GetAppSecWapSelectedHostnamesArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecWapSelectedHostnamesResult>("akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames", args ?? new GetAppSecWapSelectedHostnamesArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.AppSecWapSelectedHostnames` data source to retrieve lists of the hostnames that are currently
+        /// protected and currently being evaluated under a given security configuration and policy. This resource is available
+        /// only for WAP accounts. (WAP selected hostnames is currently in beta. Please contact your Akamai representative for
+        /// more information about this feature.)
+        /// </summary>
+        public static Output<GetAppSecWapSelectedHostnamesResult> Invoke(GetAppSecWapSelectedHostnamesInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecWapSelectedHostnamesResult>("akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames", args ?? new GetAppSecWapSelectedHostnamesInvokeArgs(), options.WithVersion());
     }
 
 
@@ -37,6 +47,25 @@ namespace Pulumi.Akamai
         public string SecurityPolicyId { get; set; } = null!;
 
         public GetAppSecWapSelectedHostnamesArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecWapSelectedHostnamesInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        /// <summary>
+        /// The ID of the security policy to use.
+        /// </summary>
+        [Input("securityPolicyId", required: true)]
+        public Input<string> SecurityPolicyId { get; set; } = null!;
+
+        public GetAppSecWapSelectedHostnamesInvokeArgs()
         {
         }
     }

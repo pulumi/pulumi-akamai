@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecSlowPostResult',
     'AwaitableGetAppSecSlowPostResult',
     'get_app_sec_slow_post',
+    'get_app_sec_slow_post_output',
 ]
 
 @pulumi.output_type
@@ -120,3 +121,31 @@ def get_app_sec_slow_post(config_id: Optional[int] = None,
         json=__ret__.json,
         output_text=__ret__.output_text,
         security_policy_id=__ret__.security_policy_id)
+
+
+@_utilities.lift_output_func(get_app_sec_slow_post)
+def get_app_sec_slow_post_output(config_id: Optional[pulumi.Input[int]] = None,
+                                 security_policy_id: Optional[pulumi.Input[str]] = None,
+                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecSlowPostResult]:
+    """
+    Use the `AppSecSlowPost` data source to retrieve the slow post protection settings for a given security configuration and policy.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    slow_post = akamai.get_app_sec_slow_post(config_id=configuration.config_id,
+        security_policy_id=var["security_policy_id"])
+    pulumi.export("slowPostOutputText", slow_post.output_text)
+    ```
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param str security_policy_id: The ID of the security policy to use
+    """
+    ...

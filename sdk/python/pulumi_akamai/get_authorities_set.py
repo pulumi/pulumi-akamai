@@ -12,6 +12,7 @@ __all__ = [
     'GetAuthoritiesSetResult',
     'AwaitableGetAuthoritiesSetResult',
     'get_authorities_set',
+    'get_authorities_set_output',
 ]
 
 @pulumi.output_type
@@ -63,7 +64,7 @@ class AwaitableGetAuthoritiesSetResult(GetAuthoritiesSetResult):
 def get_authorities_set(contract: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuthoritiesSetResult:
     """
-    Use the `getAuthoritiesSet` data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
+    Use the `get_authorities_set` data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
 
     ## Example Usage
 
@@ -99,3 +100,34 @@ def get_authorities_set(contract: Optional[str] = None,
         authorities=__ret__.authorities,
         contract=__ret__.contract,
         id=__ret__.id)
+
+
+@_utilities.lift_output_func(get_authorities_set)
+def get_authorities_set_output(contract: Optional[pulumi.Input[str]] = None,
+                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuthoritiesSetResult]:
+    """
+    Use the `get_authorities_set` data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    example = akamai.get_authorities_set(contract="ctr_1-AB123")
+    ```
+    ## Argument reference
+
+    This data source supports this argument:
+
+    * `contract` - (Required) The contract ID.
+
+    ## Attributes reference
+
+    This data source supports this attribute:
+
+    * `authorities` - A list of authorities.
+    """
+    ...

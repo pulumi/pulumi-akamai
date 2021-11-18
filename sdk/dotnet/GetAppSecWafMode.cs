@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -67,6 +68,63 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecWafModeResult> InvokeAsync(GetAppSecWafModeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecWafModeResult>("akamai:index/getAppSecWafMode:getAppSecWafMode", args ?? new GetAppSecWafModeArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.AppSecWafMode` data source to retrieve the mode that indicates how the WAF rules of the given security configuration and security policy will be updated.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = @var.Security_configuration,
+        ///         }));
+        ///         var wafMode = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecWafMode.InvokeAsync(new Akamai.GetAppSecWafModeArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = @var.Policy_id,
+        ///         })));
+        ///         this.WafModeMode = wafMode.Apply(wafMode =&gt; wafMode.Mode);
+        ///         this.WafModeCurrentRuleset = wafMode.Apply(wafMode =&gt; wafMode.CurrentRuleset);
+        ///         this.WafModeEvalStatus = wafMode.Apply(wafMode =&gt; wafMode.EvalStatus);
+        ///         this.WafModeEvalRuleset = wafMode.Apply(wafMode =&gt; wafMode.EvalRuleset);
+        ///         this.WafModeEvalExpirationDate = wafMode.Apply(wafMode =&gt; wafMode.EvalExpirationDate);
+        ///         this.WafModeText = wafMode.Apply(wafMode =&gt; wafMode.OutputText);
+        ///         this.WafModeJson = wafMode.Apply(wafMode =&gt; wafMode.Json);
+        ///     }
+        /// 
+        ///     [Output("wafModeMode")]
+        ///     public Output&lt;string&gt; WafModeMode { get; set; }
+        ///     [Output("wafModeCurrentRuleset")]
+        ///     public Output&lt;string&gt; WafModeCurrentRuleset { get; set; }
+        ///     [Output("wafModeEvalStatus")]
+        ///     public Output&lt;string&gt; WafModeEvalStatus { get; set; }
+        ///     [Output("wafModeEvalRuleset")]
+        ///     public Output&lt;string&gt; WafModeEvalRuleset { get; set; }
+        ///     [Output("wafModeEvalExpirationDate")]
+        ///     public Output&lt;string&gt; WafModeEvalExpirationDate { get; set; }
+        ///     [Output("wafModeText")]
+        ///     public Output&lt;string&gt; WafModeText { get; set; }
+        ///     [Output("wafModeJson")]
+        ///     public Output&lt;string&gt; WafModeJson { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecWafModeResult> Invoke(GetAppSecWafModeInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecWafModeResult>("akamai:index/getAppSecWafMode:getAppSecWafMode", args ?? new GetAppSecWafModeInvokeArgs(), options.WithVersion());
     }
 
 
@@ -85,6 +143,25 @@ namespace Pulumi.Akamai
         public string SecurityPolicyId { get; set; } = null!;
 
         public GetAppSecWafModeArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecWafModeInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        /// <summary>
+        /// The ID of the security policy to use.
+        /// </summary>
+        [Input("securityPolicyId", required: true)]
+        public Input<string> SecurityPolicyId { get; set; } = null!;
+
+        public GetAppSecWafModeInvokeArgs()
         {
         }
     }

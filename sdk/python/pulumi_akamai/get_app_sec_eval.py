@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecEvalResult',
     'AwaitableGetAppSecEvalResult',
     'get_app_sec_eval',
+    'get_app_sec_eval_output',
 ]
 
 @pulumi.output_type
@@ -89,3 +90,13 @@ def get_app_sec_eval(config_id: Optional[int] = None,
         id=__ret__.id,
         output_text=__ret__.output_text,
         security_policy_id=__ret__.security_policy_id)
+
+
+@_utilities.lift_output_func(get_app_sec_eval)
+def get_app_sec_eval_output(config_id: Optional[pulumi.Input[int]] = None,
+                            security_policy_id: Optional[pulumi.Input[str]] = None,
+                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecEvalResult]:
+    """
+    Use this data source to access information about an existing resource.
+    """
+    ...

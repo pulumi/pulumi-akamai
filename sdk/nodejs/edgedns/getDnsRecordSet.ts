@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /** @deprecated akamai.edgedns.getDnsRecordSet has been deprecated in favor of akamai.getDnsRecordSet */
@@ -43,4 +42,17 @@ export interface GetDnsRecordSetResult {
     readonly rdatas: string[];
     readonly recordType: string;
     readonly zone: string;
+}
+
+export function getDnsRecordSetOutput(args: GetDnsRecordSetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDnsRecordSetResult> {
+    return pulumi.output(args).apply(a => getDnsRecordSet(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getDnsRecordSet.
+ */
+export interface GetDnsRecordSetOutputArgs {
+    host: pulumi.Input<string>;
+    recordType: pulumi.Input<string>;
+    zone: pulumi.Input<string>;
 }

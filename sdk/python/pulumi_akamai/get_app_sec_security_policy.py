@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecSecurityPolicyResult',
     'AwaitableGetAppSecSecurityPolicyResult',
     'get_app_sec_security_policy',
+    'get_app_sec_security_policy_output',
 ]
 
 @pulumi.output_type
@@ -139,3 +140,34 @@ def get_app_sec_security_policy(config_id: Optional[int] = None,
         security_policy_id=__ret__.security_policy_id,
         security_policy_id_lists=__ret__.security_policy_id_lists,
         security_policy_name=__ret__.security_policy_name)
+
+
+@_utilities.lift_output_func(get_app_sec_security_policy)
+def get_app_sec_security_policy_output(config_id: Optional[pulumi.Input[int]] = None,
+                                       security_policy_name: Optional[pulumi.Input[Optional[str]]] = None,
+                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecSecurityPolicyResult]:
+    """
+    Use the `AppSecSecurityPolicy` data source to retrieve information about the security policies associated with a specific security configuration, or about a specific security policy.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
+    security_policies = akamai.get_app_sec_security_policy(config_id=configuration.config_id)
+    pulumi.export("securityPoliciesList", security_policies.security_policy_id_lists)
+    pulumi.export("securityPoliciesText", security_policies.output_text)
+    specific_security_policy = akamai.get_app_sec_security_policy(config_id=configuration.config_id,
+        security_policy_name="APIs")
+    pulumi.export("specificSecurityPolicyId", specific_security_policy.security_policy_id)
+    ```
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param str security_policy_name: The name of the security policy to use. If not supplied, information about all security policies is returned.
+    """
+    ...

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -54,6 +55,50 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecEvalHostnamesResult> InvokeAsync(GetAppSecEvalHostnamesArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalHostnamesResult>("akamai:index/getAppSecEvalHostnames:getAppSecEvalHostnames", args ?? new GetAppSecEvalHostnamesArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.AppSecEvalHostnames` data source to retrieve the evaluation hostnames for a configuration. Evaluation mode for hostnames is only available for Web Application Protector. Run hostnames in evaluation mode to see how your configuration settings protect traffic for that hostname before adding a hostname directly to a live configuration. An evaluation period lasts four weeks unless you stop the evaluation. Once you begin, the hostnames you evaluate start responding to traffic as if they are your current hostnames. However, instead of taking an action the evaluation hostnames log which action they would have taken if they were your actively-protected hostnames and not a test.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = @var.Security_configuration,
+        ///         }));
+        ///         var evalHostnamesAppSecEvalHostnames = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecEvalHostnames.InvokeAsync(new Akamai.GetAppSecEvalHostnamesArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///         })));
+        ///         this.EvalHostnames = evalHostnamesAppSecEvalHostnames.Apply(evalHostnamesAppSecEvalHostnames =&gt; evalHostnamesAppSecEvalHostnames.Hostnames);
+        ///         this.EvalHostnamesOutput = evalHostnamesAppSecEvalHostnames.Apply(evalHostnamesAppSecEvalHostnames =&gt; evalHostnamesAppSecEvalHostnames.OutputText);
+        ///         this.EvalHostnamesJson = evalHostnamesAppSecEvalHostnames.Apply(evalHostnamesAppSecEvalHostnames =&gt; evalHostnamesAppSecEvalHostnames.Json);
+        ///     }
+        /// 
+        ///     [Output("evalHostnames")]
+        ///     public Output&lt;string&gt; EvalHostnames { get; set; }
+        ///     [Output("evalHostnamesOutput")]
+        ///     public Output&lt;string&gt; EvalHostnamesOutput { get; set; }
+        ///     [Output("evalHostnamesJson")]
+        ///     public Output&lt;string&gt; EvalHostnamesJson { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecEvalHostnamesResult> Invoke(GetAppSecEvalHostnamesInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecEvalHostnamesResult>("akamai:index/getAppSecEvalHostnames:getAppSecEvalHostnames", args ?? new GetAppSecEvalHostnamesInvokeArgs(), options.WithVersion());
     }
 
 
@@ -66,6 +111,19 @@ namespace Pulumi.Akamai
         public int ConfigId { get; set; }
 
         public GetAppSecEvalHostnamesArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecEvalHostnamesInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        public GetAppSecEvalHostnamesInvokeArgs()
         {
         }
     }

@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecMatchTargetsResult',
     'AwaitableGetAppSecMatchTargetsResult',
     'get_app_sec_match_targets',
+    'get_app_sec_match_targets_output',
 ]
 
 @pulumi.output_type
@@ -88,7 +89,7 @@ def get_app_sec_match_targets(config_id: Optional[int] = None,
                               match_target_id: Optional[int] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecMatchTargetsResult:
     """
-    Use the `getAppSecMatchTargets` data source to retrieve information about the match targets associated with a given configuration, or about a specific match target.
+    Use the `get_app_sec_match_targets` data source to retrieve information about the match targets associated with a given configuration, or about a specific match target.
 
     ## Example Usage
 
@@ -125,3 +126,33 @@ def get_app_sec_match_targets(config_id: Optional[int] = None,
         json=__ret__.json,
         match_target_id=__ret__.match_target_id,
         output_text=__ret__.output_text)
+
+
+@_utilities.lift_output_func(get_app_sec_match_targets)
+def get_app_sec_match_targets_output(config_id: Optional[pulumi.Input[int]] = None,
+                                     match_target_id: Optional[pulumi.Input[Optional[int]]] = None,
+                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecMatchTargetsResult]:
+    """
+    Use the `get_app_sec_match_targets` data source to retrieve information about the match targets associated with a given configuration, or about a specific match target.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    match_targets_app_sec_match_targets = akamai.get_app_sec_match_targets(config_id=configuration.config_id)
+    pulumi.export("matchTargets", match_targets_app_sec_match_targets.output_text)
+    match_target = akamai.get_app_sec_match_targets(config_id=configuration.config_id,
+        match_target_id=var["match_target_id"])
+    pulumi.export("matchTargetOutput", match_target.output_text)
+    ```
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param int match_target_id: The ID of the match target to use. If not supplied, information about all match targets is returned.
+    """
+    ...

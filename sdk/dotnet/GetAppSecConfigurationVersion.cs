@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -66,6 +67,62 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecConfigurationVersionResult> InvokeAsync(GetAppSecConfigurationVersionArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecConfigurationVersionResult>("akamai:index/getAppSecConfigurationVersion:getAppSecConfigurationVersion", args ?? new GetAppSecConfigurationVersionArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.getAppSecConfigurationVersion` data source to retrieve information about the versions of a security configuration, or about a specific version.
+        /// 
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var specificConfiguration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = "Akamai Tools",
+        ///         }));
+        ///         var versions = specificConfiguration.Apply(specificConfiguration =&gt; Output.Create(Akamai.GetAppSecConfigurationVersion.InvokeAsync(new Akamai.GetAppSecConfigurationVersionArgs
+        ///         {
+        ///             ConfigId = specificConfiguration.ConfigId,
+        ///         })));
+        ///         this.VersionsOutputText = versions.Apply(versions =&gt; versions.OutputText);
+        ///         this.VersionsLatest = versions.Apply(versions =&gt; versions.LatestVersion);
+        ///         var specificVersion = specificConfiguration.Apply(specificConfiguration =&gt; Output.Create(Akamai.GetAppSecConfigurationVersion.InvokeAsync(new Akamai.GetAppSecConfigurationVersionArgs
+        ///         {
+        ///             ConfigId = specificConfiguration.ConfigId,
+        ///             Version = 42,
+        ///         })));
+        ///         this.SpecificVersionVersion = specificVersion.Apply(specificVersion =&gt; specificVersion.Version);
+        ///         this.SpecificVersionStaging = specificVersion.Apply(specificVersion =&gt; specificVersion.StagingStatus);
+        ///         this.SpecificVersionProduction = specificVersion.Apply(specificVersion =&gt; specificVersion.ProductionStatus);
+        ///     }
+        /// 
+        ///     [Output("versionsOutputText")]
+        ///     public Output&lt;string&gt; VersionsOutputText { get; set; }
+        ///     [Output("versionsLatest")]
+        ///     public Output&lt;string&gt; VersionsLatest { get; set; }
+        ///     [Output("specificVersionVersion")]
+        ///     public Output&lt;string&gt; SpecificVersionVersion { get; set; }
+        ///     [Output("specificVersionStaging")]
+        ///     public Output&lt;string&gt; SpecificVersionStaging { get; set; }
+        ///     [Output("specificVersionProduction")]
+        ///     public Output&lt;string&gt; SpecificVersionProduction { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecConfigurationVersionResult> Invoke(GetAppSecConfigurationVersionInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecConfigurationVersionResult>("akamai:index/getAppSecConfigurationVersion:getAppSecConfigurationVersion", args ?? new GetAppSecConfigurationVersionInvokeArgs(), options.WithVersion());
     }
 
 
@@ -84,6 +141,25 @@ namespace Pulumi.Akamai
         public int? Version { get; set; }
 
         public GetAppSecConfigurationVersionArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecConfigurationVersionInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        /// <summary>
+        /// The version number of the security configuration to use. If not supplied, information about all versions of the specified security configuration is returned.
+        /// </summary>
+        [Input("version")]
+        public Input<int>? Version { get; set; }
+
+        public GetAppSecConfigurationVersionInvokeArgs()
         {
         }
     }

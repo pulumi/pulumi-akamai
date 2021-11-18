@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,4 +47,62 @@ type GetContractResult struct {
 	GroupName string  `pulumi:"groupName"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+}
+
+func GetContractOutput(ctx *pulumi.Context, args GetContractOutputArgs, opts ...pulumi.InvokeOption) GetContractResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetContractResult, error) {
+			args := v.(GetContractArgs)
+			r, err := GetContract(ctx, &args, opts...)
+			return *r, err
+		}).(GetContractResultOutput)
+}
+
+// A collection of arguments for invoking getContract.
+type GetContractOutputArgs struct {
+	// Deprecated: The setting "group" has been deprecated.
+	Group     pulumi.StringPtrInput `pulumi:"group"`
+	GroupId   pulumi.StringPtrInput `pulumi:"groupId"`
+	GroupName pulumi.StringPtrInput `pulumi:"groupName"`
+}
+
+func (GetContractOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContractArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getContract.
+type GetContractResultOutput struct{ *pulumi.OutputState }
+
+func (GetContractResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContractResult)(nil)).Elem()
+}
+
+func (o GetContractResultOutput) ToGetContractResultOutput() GetContractResultOutput {
+	return o
+}
+
+func (o GetContractResultOutput) ToGetContractResultOutputWithContext(ctx context.Context) GetContractResultOutput {
+	return o
+}
+
+// Deprecated: The setting "group" has been deprecated.
+func (o GetContractResultOutput) Group() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContractResult) *string { return v.Group }).(pulumi.StringPtrOutput)
+}
+
+func (o GetContractResultOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContractResult) string { return v.GroupId }).(pulumi.StringOutput)
+}
+
+func (o GetContractResultOutput) GroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContractResult) string { return v.GroupName }).(pulumi.StringOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetContractResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContractResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetContractResultOutput{})
 }

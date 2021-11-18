@@ -12,6 +12,51 @@ import (
 )
 
 // The `resourceAkamaiAppsecCustomDeny` resource allows you to create a new custom deny action for a specific configuration.
+//
+// ## Example Usage
+//
+// Basic usage:
+//
+// ```go
+// package main
+//
+// import (
+// 	"fmt"
+// 	"io/ioutil"
+//
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func readFileOrPanic(path string) pulumi.StringPtrInput {
+// 	data, err := ioutil.ReadFile(path)
+// 	if err != nil {
+// 		panic(err.Error())
+// 	}
+// 	return pulumi.String(string(data))
+// }
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		opt0 := _var.Security_configuration
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+// 			Name: &opt0,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		customDeny, err := akamai.NewAppSecCustomDeny(ctx, "customDeny", &akamai.AppSecCustomDenyArgs{
+// 			ConfigId:   pulumi.Int(configuration.ConfigId),
+// 			CustomDeny: readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/custom_deny.json")),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		ctx.Export("customDenyId", customDeny.CustomDenyId)
+// 		return nil
+// 	})
+// }
+// ```
 type AppSecCustomDeny struct {
 	pulumi.CustomResourceState
 
@@ -160,7 +205,7 @@ type AppSecCustomDenyArrayInput interface {
 type AppSecCustomDenyArray []AppSecCustomDenyInput
 
 func (AppSecCustomDenyArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecCustomDeny)(nil))
+	return reflect.TypeOf((*[]*AppSecCustomDeny)(nil)).Elem()
 }
 
 func (i AppSecCustomDenyArray) ToAppSecCustomDenyArrayOutput() AppSecCustomDenyArrayOutput {
@@ -185,7 +230,7 @@ type AppSecCustomDenyMapInput interface {
 type AppSecCustomDenyMap map[string]AppSecCustomDenyInput
 
 func (AppSecCustomDenyMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecCustomDeny)(nil))
+	return reflect.TypeOf((*map[string]*AppSecCustomDeny)(nil)).Elem()
 }
 
 func (i AppSecCustomDenyMap) ToAppSecCustomDenyMapOutput() AppSecCustomDenyMapOutput {
@@ -196,9 +241,7 @@ func (i AppSecCustomDenyMap) ToAppSecCustomDenyMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomDenyMapOutput)
 }
 
-type AppSecCustomDenyOutput struct {
-	*pulumi.OutputState
-}
+type AppSecCustomDenyOutput struct{ *pulumi.OutputState }
 
 func (AppSecCustomDenyOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecCustomDeny)(nil))
@@ -217,14 +260,12 @@ func (o AppSecCustomDenyOutput) ToAppSecCustomDenyPtrOutput() AppSecCustomDenyPt
 }
 
 func (o AppSecCustomDenyOutput) ToAppSecCustomDenyPtrOutputWithContext(ctx context.Context) AppSecCustomDenyPtrOutput {
-	return o.ApplyT(func(v AppSecCustomDeny) *AppSecCustomDeny {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecCustomDeny) *AppSecCustomDeny {
 		return &v
 	}).(AppSecCustomDenyPtrOutput)
 }
 
-type AppSecCustomDenyPtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecCustomDenyPtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecCustomDenyPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecCustomDeny)(nil))
@@ -236,6 +277,16 @@ func (o AppSecCustomDenyPtrOutput) ToAppSecCustomDenyPtrOutput() AppSecCustomDen
 
 func (o AppSecCustomDenyPtrOutput) ToAppSecCustomDenyPtrOutputWithContext(ctx context.Context) AppSecCustomDenyPtrOutput {
 	return o
+}
+
+func (o AppSecCustomDenyPtrOutput) Elem() AppSecCustomDenyOutput {
+	return o.ApplyT(func(v *AppSecCustomDeny) AppSecCustomDeny {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecCustomDeny
+		return ret
+	}).(AppSecCustomDenyOutput)
 }
 
 type AppSecCustomDenyArrayOutput struct{ *pulumi.OutputState }
@@ -279,6 +330,10 @@ func (o AppSecCustomDenyMapOutput) MapIndex(k pulumi.StringInput) AppSecCustomDe
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecCustomDenyInput)(nil)).Elem(), &AppSecCustomDeny{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecCustomDenyPtrInput)(nil)).Elem(), &AppSecCustomDeny{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecCustomDenyArrayInput)(nil)).Elem(), AppSecCustomDenyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecCustomDenyMapInput)(nil)).Elem(), AppSecCustomDenyMap{})
 	pulumi.RegisterOutputType(AppSecCustomDenyOutput{})
 	pulumi.RegisterOutputType(AppSecCustomDenyPtrOutput{})
 	pulumi.RegisterOutputType(AppSecCustomDenyArrayOutput{})

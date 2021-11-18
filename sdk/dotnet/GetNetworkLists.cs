@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -63,6 +64,59 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetNetworkListsResult> InvokeAsync(GetNetworkListsArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetNetworkListsResult>("akamai:index/getNetworkLists:getNetworkLists", args ?? new GetNetworkListsArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.getNetworkLists` data source to retrieve information about the available network lists,
+        /// optionally filtered by list type or based on a search string. The information available is described
+        /// [here](https://developer.akamai.com/api/cloud_security/network_lists/v2.html#getlists). 
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var networkLists = Output.Create(Akamai.GetNetworkLists.InvokeAsync());
+        ///         this.NetworkListsText = networkLists.Apply(networkLists =&gt; networkLists.OutputText);
+        ///         this.NetworkListsJson = networkLists.Apply(networkLists =&gt; networkLists.Json);
+        ///         this.NetworkListsList = networkLists.Apply(networkLists =&gt; networkLists.Lists);
+        ///         var networkListsFilter = Output.Create(Akamai.GetNetworkLists.InvokeAsync(new Akamai.GetNetworkListsArgs
+        ///         {
+        ///             Name = "Test Whitelist",
+        ///             Type = "IP",
+        ///         }));
+        ///         this.NetworkListsFilterText = networkListsFilter.Apply(networkListsFilter =&gt; networkListsFilter.OutputText);
+        ///         this.NetworkListsFilterJson = networkListsFilter.Apply(networkListsFilter =&gt; networkListsFilter.Json);
+        ///         this.NetworkListsFilterList = networkListsFilter.Apply(networkListsFilter =&gt; networkListsFilter.Lists);
+        ///     }
+        /// 
+        ///     [Output("networkListsText")]
+        ///     public Output&lt;string&gt; NetworkListsText { get; set; }
+        ///     [Output("networkListsJson")]
+        ///     public Output&lt;string&gt; NetworkListsJson { get; set; }
+        ///     [Output("networkListsList")]
+        ///     public Output&lt;string&gt; NetworkListsList { get; set; }
+        ///     [Output("networkListsFilterText")]
+        ///     public Output&lt;string&gt; NetworkListsFilterText { get; set; }
+        ///     [Output("networkListsFilterJson")]
+        ///     public Output&lt;string&gt; NetworkListsFilterJson { get; set; }
+        ///     [Output("networkListsFilterList")]
+        ///     public Output&lt;string&gt; NetworkListsFilterList { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetNetworkListsResult> Invoke(GetNetworkListsInvokeArgs? args = null, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetNetworkListsResult>("akamai:index/getNetworkLists:getNetworkLists", args ?? new GetNetworkListsInvokeArgs(), options.WithVersion());
     }
 
 
@@ -83,6 +137,27 @@ namespace Pulumi.Akamai
         public string? Type { get; set; }
 
         public GetNetworkListsArgs()
+        {
+        }
+    }
+
+    public sealed class GetNetworkListsInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The name of a specific network list to retrieve. If not supplied, information about all network
+        /// lists will be returned.
+        /// </summary>
+        [Input("name")]
+        public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// The type of network lists to be retrieved; must be either "IP" or "GEO". If not supplied,
+        /// information about both types will be returned.
+        /// </summary>
+        [Input("type")]
+        public Input<string>? Type { get; set; }
+
+        public GetNetworkListsInvokeArgs()
         {
         }
     }

@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -78,4 +77,22 @@ export interface GetAppSecRatePoliciesResult {
      */
     readonly outputText: string;
     readonly ratePolicyId?: number;
+}
+
+export function getAppSecRatePoliciesOutput(args: GetAppSecRatePoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecRatePoliciesResult> {
+    return pulumi.output(args).apply(a => getAppSecRatePolicies(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecRatePolicies.
+ */
+export interface GetAppSecRatePoliciesOutputArgs {
+    /**
+     * The ID of the security configuration to use.
+     */
+    configId: pulumi.Input<number>;
+    /**
+     * The ID of the rate policy to use. If this parameter is not supplied, information about all rate policies will be returned.
+     */
+    ratePolicyId?: pulumi.Input<number>;
 }

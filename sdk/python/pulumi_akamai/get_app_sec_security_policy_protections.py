@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecSecurityPolicyProtectionsResult',
     'AwaitableGetAppSecSecurityPolicyProtectionsResult',
     'get_app_sec_security_policy_protections',
+    'get_app_sec_security_policy_protections_output',
 ]
 
 @pulumi.output_type
@@ -172,7 +173,7 @@ def get_app_sec_security_policy_protections(config_id: Optional[int] = None,
                                             security_policy_id: Optional[str] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecSecurityPolicyProtectionsResult:
     """
-    Use the `getAppSecSecurityPolicyProtections` data source to retrieve the protections in effect for a given security policy.
+    Use the `get_app_sec_security_policy_protections` data source to retrieve the protections in effect for a given security policy.
 
     ## Example Usage
 
@@ -221,3 +222,38 @@ def get_app_sec_security_policy_protections(config_id: Optional[int] = None,
         json=__ret__.json,
         output_text=__ret__.output_text,
         security_policy_id=__ret__.security_policy_id)
+
+
+@_utilities.lift_output_func(get_app_sec_security_policy_protections)
+def get_app_sec_security_policy_protections_output(config_id: Optional[pulumi.Input[int]] = None,
+                                                   security_policy_id: Optional[pulumi.Input[str]] = None,
+                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecSecurityPolicyProtectionsResult]:
+    """
+    Use the `get_app_sec_security_policy_protections` data source to retrieve the protections in effect for a given security policy.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    protections = akamai.get_app_sec_security_policy_protections(config_id=configuration.config_id,
+        security_policy_id=var["security_policy_id"])
+    pulumi.export("protectionsJson", protections.json)
+    pulumi.export("protectionsApplyApiConstraints", protections.apply_api_constraints)
+    pulumi.export("protectionsApplyApplicationLayerControls", protections.apply_application_layer_controls)
+    pulumi.export("protectionsApplyBotmanControls", protections.apply_botman_controls)
+    pulumi.export("protectionsApplyNetworkLayerControls", protections.apply_network_layer_controls)
+    pulumi.export("protectionsApplyRateControls", protections.apply_rate_controls)
+    pulumi.export("protectionsApplyReputationControls", protections.apply_reputation_controls)
+    pulumi.export("protectionsApplySlowPostControls", protections.apply_slow_post_controls)
+    ```
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param str security_policy_id: The ID of the security policy to use.
+    """
+    ...

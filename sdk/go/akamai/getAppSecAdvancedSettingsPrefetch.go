@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,13 +27,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		prefetch, err := akamai.LookupAppSecAdvancedSettingsPrefetch(ctx, &akamai.LookupAppSecAdvancedSettingsPrefetchArgs{
+// 		prefetch, err := akamai.LookupAppSecAdvancedSettingsPrefetch(ctx, &GetAppSecAdvancedSettingsPrefetchArgs{
 // 			ConfigId: configuration.ConfigId,
 // 		}, nil)
 // 		if err != nil {
@@ -66,4 +69,61 @@ type LookupAppSecAdvancedSettingsPrefetchResult struct {
 	Json string `pulumi:"json"`
 	// A tabular display showing the prefetch request settings.
 	OutputText string `pulumi:"outputText"`
+}
+
+func LookupAppSecAdvancedSettingsPrefetchOutput(ctx *pulumi.Context, args LookupAppSecAdvancedSettingsPrefetchOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecAdvancedSettingsPrefetchResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (LookupAppSecAdvancedSettingsPrefetchResult, error) {
+			args := v.(LookupAppSecAdvancedSettingsPrefetchArgs)
+			r, err := LookupAppSecAdvancedSettingsPrefetch(ctx, &args, opts...)
+			return *r, err
+		}).(LookupAppSecAdvancedSettingsPrefetchResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecAdvancedSettingsPrefetch.
+type LookupAppSecAdvancedSettingsPrefetchOutputArgs struct {
+	// The configuration ID.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+}
+
+func (LookupAppSecAdvancedSettingsPrefetchOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecAdvancedSettingsPrefetchArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecAdvancedSettingsPrefetch.
+type LookupAppSecAdvancedSettingsPrefetchResultOutput struct{ *pulumi.OutputState }
+
+func (LookupAppSecAdvancedSettingsPrefetchResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecAdvancedSettingsPrefetchResult)(nil)).Elem()
+}
+
+func (o LookupAppSecAdvancedSettingsPrefetchResultOutput) ToLookupAppSecAdvancedSettingsPrefetchResultOutput() LookupAppSecAdvancedSettingsPrefetchResultOutput {
+	return o
+}
+
+func (o LookupAppSecAdvancedSettingsPrefetchResultOutput) ToLookupAppSecAdvancedSettingsPrefetchResultOutputWithContext(ctx context.Context) LookupAppSecAdvancedSettingsPrefetchResultOutput {
+	return o
+}
+
+func (o LookupAppSecAdvancedSettingsPrefetchResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAppSecAdvancedSettingsPrefetchResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o LookupAppSecAdvancedSettingsPrefetchResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecAdvancedSettingsPrefetchResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted list of information about the prefetch request settings.
+func (o LookupAppSecAdvancedSettingsPrefetchResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecAdvancedSettingsPrefetchResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display showing the prefetch request settings.
+func (o LookupAppSecAdvancedSettingsPrefetchResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecAdvancedSettingsPrefetchResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(LookupAppSecAdvancedSettingsPrefetchResultOutput{})
 }

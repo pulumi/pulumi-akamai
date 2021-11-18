@@ -32,7 +32,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		_, err := akamai.NewGtmAsmap(ctx, "demoAsmap", &akamai.GtmAsmapArgs{
-// 			DefaultDatacenter: &akamai.GtmAsmapDefaultDatacenterArgs{
+// 			DefaultDatacenter: &GtmAsmapDefaultDatacenterArgs{
 // 				DatacenterId: pulumi.Int(5400),
 // 				Nickname:     pulumi.String("All Other AS numbers"),
 // 			},
@@ -216,7 +216,7 @@ type GtmAsmapArrayInput interface {
 type GtmAsmapArray []GtmAsmapInput
 
 func (GtmAsmapArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*GtmAsmap)(nil))
+	return reflect.TypeOf((*[]*GtmAsmap)(nil)).Elem()
 }
 
 func (i GtmAsmapArray) ToGtmAsmapArrayOutput() GtmAsmapArrayOutput {
@@ -241,7 +241,7 @@ type GtmAsmapMapInput interface {
 type GtmAsmapMap map[string]GtmAsmapInput
 
 func (GtmAsmapMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*GtmAsmap)(nil))
+	return reflect.TypeOf((*map[string]*GtmAsmap)(nil)).Elem()
 }
 
 func (i GtmAsmapMap) ToGtmAsmapMapOutput() GtmAsmapMapOutput {
@@ -252,9 +252,7 @@ func (i GtmAsmapMap) ToGtmAsmapMapOutputWithContext(ctx context.Context) GtmAsma
 	return pulumi.ToOutputWithContext(ctx, i).(GtmAsmapMapOutput)
 }
 
-type GtmAsmapOutput struct {
-	*pulumi.OutputState
-}
+type GtmAsmapOutput struct{ *pulumi.OutputState }
 
 func (GtmAsmapOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*GtmAsmap)(nil))
@@ -273,14 +271,12 @@ func (o GtmAsmapOutput) ToGtmAsmapPtrOutput() GtmAsmapPtrOutput {
 }
 
 func (o GtmAsmapOutput) ToGtmAsmapPtrOutputWithContext(ctx context.Context) GtmAsmapPtrOutput {
-	return o.ApplyT(func(v GtmAsmap) *GtmAsmap {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmAsmap) *GtmAsmap {
 		return &v
 	}).(GtmAsmapPtrOutput)
 }
 
-type GtmAsmapPtrOutput struct {
-	*pulumi.OutputState
-}
+type GtmAsmapPtrOutput struct{ *pulumi.OutputState }
 
 func (GtmAsmapPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**GtmAsmap)(nil))
@@ -292,6 +288,16 @@ func (o GtmAsmapPtrOutput) ToGtmAsmapPtrOutput() GtmAsmapPtrOutput {
 
 func (o GtmAsmapPtrOutput) ToGtmAsmapPtrOutputWithContext(ctx context.Context) GtmAsmapPtrOutput {
 	return o
+}
+
+func (o GtmAsmapPtrOutput) Elem() GtmAsmapOutput {
+	return o.ApplyT(func(v *GtmAsmap) GtmAsmap {
+		if v != nil {
+			return *v
+		}
+		var ret GtmAsmap
+		return ret
+	}).(GtmAsmapOutput)
 }
 
 type GtmAsmapArrayOutput struct{ *pulumi.OutputState }
@@ -335,6 +341,10 @@ func (o GtmAsmapMapOutput) MapIndex(k pulumi.StringInput) GtmAsmapOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmAsmapInput)(nil)).Elem(), &GtmAsmap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmAsmapPtrInput)(nil)).Elem(), &GtmAsmap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmAsmapArrayInput)(nil)).Elem(), GtmAsmapArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmAsmapMapInput)(nil)).Elem(), GtmAsmapMap{})
 	pulumi.RegisterOutputType(GtmAsmapOutput{})
 	pulumi.RegisterOutputType(GtmAsmapPtrOutput{})
 	pulumi.RegisterOutputType(GtmAsmapArrayOutput{})

@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -66,4 +65,18 @@ export interface GetAppSecVersionNotesResult {
      * A tabular display showing the version notes.
      */
     readonly outputText: string;
+}
+
+export function getAppSecVersionNotesOutput(args: GetAppSecVersionNotesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecVersionNotesResult> {
+    return pulumi.output(args).apply(a => getAppSecVersionNotes(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecVersionNotes.
+ */
+export interface GetAppSecVersionNotesOutputArgs {
+    /**
+     * The configuration ID to use.
+     */
+    configId: pulumi.Input<number>;
 }

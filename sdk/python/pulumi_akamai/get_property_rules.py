@@ -12,6 +12,7 @@ __all__ = [
     'GetPropertyRulesResult',
     'AwaitableGetPropertyRulesResult',
     'get_property_rules',
+    'get_property_rules_output',
 ]
 
 @pulumi.output_type
@@ -102,7 +103,7 @@ def get_property_rules(contract_id: Optional[str] = None,
                        version: Optional[int] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyRulesResult:
     """
-    Use the `getPropertyRules` data source to query and retrieve the rule tree of
+    Use the `get_property_rules` data source to query and retrieve the rule tree of
     an existing property version. This data source lets you search across the contracts
     and groups you have access to.
 
@@ -151,3 +152,43 @@ def get_property_rules(contract_id: Optional[str] = None,
         property_id=__ret__.property_id,
         rules=__ret__.rules,
         version=__ret__.version)
+
+
+@_utilities.lift_output_func(get_property_rules)
+def get_property_rules_output(contract_id: Optional[pulumi.Input[Optional[str]]] = None,
+                              group_id: Optional[pulumi.Input[Optional[str]]] = None,
+                              property_id: Optional[pulumi.Input[str]] = None,
+                              version: Optional[pulumi.Input[Optional[int]]] = None,
+                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyRulesResult]:
+    """
+    Use the `get_property_rules` data source to query and retrieve the rule tree of
+    an existing property version. This data source lets you search across the contracts
+    and groups you have access to.
+
+    ## Basic usage
+
+    This example returns the rule tree for version 3 of a property based on the selected contract and group:
+
+    ```python
+    import pulumi
+
+    pulumi.export("propertyMatch", data["akamai_property_rules"]["my-example"])
+    ```
+
+    ## Argument reference
+
+    This data source supports these arguments:
+
+    * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
+    * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
+    * `property_id` - (Required) A property's unique ID, including the `prp_` prefix.
+    * `version` - (Optional) The version to return. Returns the latest version by default.
+
+    ## Attributes reference
+
+    This data source returns these attributes:
+
+    * `rules` - A JSON-encoded rule tree for the property.
+    * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the Property Manager API documentation.
+    """
+    ...

@@ -276,7 +276,7 @@ type GtmResourceArrayInput interface {
 type GtmResourceArray []GtmResourceInput
 
 func (GtmResourceArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*GtmResource)(nil))
+	return reflect.TypeOf((*[]*GtmResource)(nil)).Elem()
 }
 
 func (i GtmResourceArray) ToGtmResourceArrayOutput() GtmResourceArrayOutput {
@@ -301,7 +301,7 @@ type GtmResourceMapInput interface {
 type GtmResourceMap map[string]GtmResourceInput
 
 func (GtmResourceMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*GtmResource)(nil))
+	return reflect.TypeOf((*map[string]*GtmResource)(nil)).Elem()
 }
 
 func (i GtmResourceMap) ToGtmResourceMapOutput() GtmResourceMapOutput {
@@ -312,9 +312,7 @@ func (i GtmResourceMap) ToGtmResourceMapOutputWithContext(ctx context.Context) G
 	return pulumi.ToOutputWithContext(ctx, i).(GtmResourceMapOutput)
 }
 
-type GtmResourceOutput struct {
-	*pulumi.OutputState
-}
+type GtmResourceOutput struct{ *pulumi.OutputState }
 
 func (GtmResourceOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*GtmResource)(nil))
@@ -333,14 +331,12 @@ func (o GtmResourceOutput) ToGtmResourcePtrOutput() GtmResourcePtrOutput {
 }
 
 func (o GtmResourceOutput) ToGtmResourcePtrOutputWithContext(ctx context.Context) GtmResourcePtrOutput {
-	return o.ApplyT(func(v GtmResource) *GtmResource {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmResource) *GtmResource {
 		return &v
 	}).(GtmResourcePtrOutput)
 }
 
-type GtmResourcePtrOutput struct {
-	*pulumi.OutputState
-}
+type GtmResourcePtrOutput struct{ *pulumi.OutputState }
 
 func (GtmResourcePtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**GtmResource)(nil))
@@ -352,6 +348,16 @@ func (o GtmResourcePtrOutput) ToGtmResourcePtrOutput() GtmResourcePtrOutput {
 
 func (o GtmResourcePtrOutput) ToGtmResourcePtrOutputWithContext(ctx context.Context) GtmResourcePtrOutput {
 	return o
+}
+
+func (o GtmResourcePtrOutput) Elem() GtmResourceOutput {
+	return o.ApplyT(func(v *GtmResource) GtmResource {
+		if v != nil {
+			return *v
+		}
+		var ret GtmResource
+		return ret
+	}).(GtmResourceOutput)
 }
 
 type GtmResourceArrayOutput struct{ *pulumi.OutputState }
@@ -395,6 +401,10 @@ func (o GtmResourceMapOutput) MapIndex(k pulumi.StringInput) GtmResourceOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmResourceInput)(nil)).Elem(), &GtmResource{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmResourcePtrInput)(nil)).Elem(), &GtmResource{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmResourceArrayInput)(nil)).Elem(), GtmResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmResourceMapInput)(nil)).Elem(), GtmResourceMap{})
 	pulumi.RegisterOutputType(GtmResourceOutput{})
 	pulumi.RegisterOutputType(GtmResourcePtrOutput{})
 	pulumi.RegisterOutputType(GtmResourceArrayOutput{})

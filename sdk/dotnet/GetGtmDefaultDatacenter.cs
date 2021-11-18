@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -31,6 +32,27 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetGtmDefaultDatacenterResult> InvokeAsync(GetGtmDefaultDatacenterArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetGtmDefaultDatacenterResult>("akamai:index/getGtmDefaultDatacenter:getGtmDefaultDatacenter", args ?? new GetGtmDefaultDatacenterArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.getGtmDefaultDatacenter` data source to retrieve the default data center, ID, and nickname.
+        /// 
+        /// ## Argument reference
+        /// 
+        /// This data source supports these arguments:
+        /// 
+        /// * `domain` - (Required)
+        /// * `datacenter` - (Optional) The default is `5400`.
+        /// 
+        /// ## Attributes reference
+        /// 
+        /// This data source supports these attributes:
+        /// 
+        /// * `id` - The data resource ID. Enter in this format: `&lt;domain&gt;:default_datacenter:&lt;datacenter_id&gt;`.
+        /// * `datacenter_id` - The default data center ID.
+        /// * `nickname` - The default data center nickname.
+        /// </summary>
+        public static Output<GetGtmDefaultDatacenterResult> Invoke(GetGtmDefaultDatacenterInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetGtmDefaultDatacenterResult>("akamai:index/getGtmDefaultDatacenter:getGtmDefaultDatacenter", args ?? new GetGtmDefaultDatacenterInvokeArgs(), options.WithVersion());
     }
 
 
@@ -43,6 +65,19 @@ namespace Pulumi.Akamai
         public string Domain { get; set; } = null!;
 
         public GetGtmDefaultDatacenterArgs()
+        {
+        }
+    }
+
+    public sealed class GetGtmDefaultDatacenterInvokeArgs : Pulumi.InvokeArgs
+    {
+        [Input("datacenter")]
+        public Input<int>? Datacenter { get; set; }
+
+        [Input("domain", required: true)]
+        public Input<string> Domain { get; set; } = null!;
+
+        public GetGtmDefaultDatacenterInvokeArgs()
         {
         }
     }

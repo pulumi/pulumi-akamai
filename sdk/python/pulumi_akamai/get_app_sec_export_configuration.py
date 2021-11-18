@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecExportConfigurationResult',
     'AwaitableGetAppSecExportConfigurationResult',
     'get_app_sec_export_configuration',
+    'get_app_sec_export_configuration_output',
 ]
 
 @pulumi.output_type
@@ -98,7 +99,7 @@ def get_app_sec_export_configuration(config_id: Optional[int] = None,
                                      version: Optional[int] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecExportConfigurationResult:
     """
-    Use the `getAppSecExportConfiguration` data source to retrieve comprehensive details about a security configuration version, including rate and security policies, rules, hostnames, and other settings. You can retrieve the entire set of information in JSON format, or a subset of the information in tabular format.
+    Use the `get_app_sec_export_configuration` data source to retrieve comprehensive details about a security configuration version, including rate and security policies, rules, hostnames, and other settings. You can retrieve the entire set of information in JSON format, or a subset of the information in tabular format.
 
     ## Example Usage
 
@@ -149,3 +150,46 @@ def get_app_sec_export_configuration(config_id: Optional[int] = None,
         output_text=__ret__.output_text,
         searches=__ret__.searches,
         version=__ret__.version)
+
+
+@_utilities.lift_output_func(get_app_sec_export_configuration)
+def get_app_sec_export_configuration_output(config_id: Optional[pulumi.Input[int]] = None,
+                                            searches: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
+                                            version: Optional[pulumi.Input[int]] = None,
+                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecExportConfigurationResult]:
+    """
+    Use the `get_app_sec_export_configuration` data source to retrieve comprehensive details about a security configuration version, including rate and security policies, rules, hostnames, and other settings. You can retrieve the entire set of information in JSON format, or a subset of the information in tabular format.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
+    export = akamai.get_app_sec_export_configuration(config_id=configuration.config_id,
+        version=configuration.latest_version,
+        searches=[
+            "securityPolicies",
+            "selectedHosts",
+        ])
+    pulumi.export("json", export.json)
+    pulumi.export("text", export.output_text)
+    ```
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param Sequence[str] searches: A bracket-delimited list of quoted strings specifying the types of information to be retrieved and made available for display in the `output_text` format. The following types are available:
+           * customRules
+           * matchTargets
+           * ratePolicies
+           * reputationProfiles
+           * rulesets
+           * securityPolicies
+           * selectableHosts
+           * selectedHosts
+    :param int version: The version number of the security configuration to use.
+    """
+    ...

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -62,6 +63,58 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecReputationProfilesResult> InvokeAsync(GetAppSecReputationProfilesArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecReputationProfilesResult>("akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles", args ?? new GetAppSecReputationProfilesArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.getAppSecReputationProfiles` data source to retrieve details about all reputation profiles, or a specific reputation profiles.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = @var.Security_configuration,
+        ///         }));
+        ///         var reputationProfiles = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfiles.InvokeAsync(new Akamai.GetAppSecReputationProfilesArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///         })));
+        ///         this.ReputationProfilesOutput = reputationProfiles.Apply(reputationProfiles =&gt; reputationProfiles.OutputText);
+        ///         this.ReputationProfilesJson = reputationProfiles.Apply(reputationProfiles =&gt; reputationProfiles.Json);
+        ///         var reputationProfile = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfiles.InvokeAsync(new Akamai.GetAppSecReputationProfilesArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///             ReputationProfileId = @var.Reputation_profile_id,
+        ///         })));
+        ///         this.ReputationProfileJson = reputationProfile.Apply(reputationProfile =&gt; reputationProfile.Json);
+        ///         this.ReputationProfileOutput = reputationProfile.Apply(reputationProfile =&gt; reputationProfile.OutputText);
+        ///     }
+        /// 
+        ///     [Output("reputationProfilesOutput")]
+        ///     public Output&lt;string&gt; ReputationProfilesOutput { get; set; }
+        ///     [Output("reputationProfilesJson")]
+        ///     public Output&lt;string&gt; ReputationProfilesJson { get; set; }
+        ///     [Output("reputationProfileJson")]
+        ///     public Output&lt;string&gt; ReputationProfileJson { get; set; }
+        ///     [Output("reputationProfileOutput")]
+        ///     public Output&lt;string&gt; ReputationProfileOutput { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecReputationProfilesResult> Invoke(GetAppSecReputationProfilesInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfilesResult>("akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles", args ?? new GetAppSecReputationProfilesInvokeArgs(), options.WithVersion());
     }
 
 
@@ -80,6 +133,25 @@ namespace Pulumi.Akamai
         public int? ReputationProfileId { get; set; }
 
         public GetAppSecReputationProfilesArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecReputationProfilesInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        /// <summary>
+        /// The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
+        /// </summary>
+        [Input("reputationProfileId")]
+        public Input<int>? ReputationProfileId { get; set; }
+
+        public GetAppSecReputationProfilesInvokeArgs()
         {
         }
     }

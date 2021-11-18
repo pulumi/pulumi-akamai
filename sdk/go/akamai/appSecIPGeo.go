@@ -28,7 +28,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
@@ -38,9 +38,9 @@ import (
 // 			ConfigId:                pulumi.Int(configuration.ConfigId),
 // 			SecurityPolicyId:        pulumi.Any(_var.Security_policy_id1),
 // 			Mode:                    pulumi.Any(_var.Block),
-// 			GeoNetworkLists:         _var.Geo_network_lists,
-// 			IpNetworkLists:          _var.Ip_network_lists,
-// 			ExceptionIpNetworkLists: _var.Exception_ip_network_lists,
+// 			GeoNetworkLists:         pulumi.Any(_var.Geo_network_lists),
+// 			IpNetworkLists:          pulumi.Any(_var.Ip_network_lists),
+// 			ExceptionIpNetworkLists: pulumi.Any(_var.Exception_ip_network_lists),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -49,7 +49,7 @@ import (
 // 			ConfigId:                pulumi.Int(configuration.ConfigId),
 // 			SecurityPolicyId:        pulumi.Any(_var.Security_policy_id2),
 // 			Mode:                    pulumi.Any(_var.Allow),
-// 			ExceptionIpNetworkLists: _var.Exception_ip_network_lists,
+// 			ExceptionIpNetworkLists: pulumi.Any(_var.Exception_ip_network_lists),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -249,7 +249,7 @@ type AppSecIPGeoArrayInput interface {
 type AppSecIPGeoArray []AppSecIPGeoInput
 
 func (AppSecIPGeoArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecIPGeo)(nil))
+	return reflect.TypeOf((*[]*AppSecIPGeo)(nil)).Elem()
 }
 
 func (i AppSecIPGeoArray) ToAppSecIPGeoArrayOutput() AppSecIPGeoArrayOutput {
@@ -274,7 +274,7 @@ type AppSecIPGeoMapInput interface {
 type AppSecIPGeoMap map[string]AppSecIPGeoInput
 
 func (AppSecIPGeoMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecIPGeo)(nil))
+	return reflect.TypeOf((*map[string]*AppSecIPGeo)(nil)).Elem()
 }
 
 func (i AppSecIPGeoMap) ToAppSecIPGeoMapOutput() AppSecIPGeoMapOutput {
@@ -285,9 +285,7 @@ func (i AppSecIPGeoMap) ToAppSecIPGeoMapOutputWithContext(ctx context.Context) A
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecIPGeoMapOutput)
 }
 
-type AppSecIPGeoOutput struct {
-	*pulumi.OutputState
-}
+type AppSecIPGeoOutput struct{ *pulumi.OutputState }
 
 func (AppSecIPGeoOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecIPGeo)(nil))
@@ -306,14 +304,12 @@ func (o AppSecIPGeoOutput) ToAppSecIPGeoPtrOutput() AppSecIPGeoPtrOutput {
 }
 
 func (o AppSecIPGeoOutput) ToAppSecIPGeoPtrOutputWithContext(ctx context.Context) AppSecIPGeoPtrOutput {
-	return o.ApplyT(func(v AppSecIPGeo) *AppSecIPGeo {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecIPGeo) *AppSecIPGeo {
 		return &v
 	}).(AppSecIPGeoPtrOutput)
 }
 
-type AppSecIPGeoPtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecIPGeoPtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecIPGeoPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecIPGeo)(nil))
@@ -325,6 +321,16 @@ func (o AppSecIPGeoPtrOutput) ToAppSecIPGeoPtrOutput() AppSecIPGeoPtrOutput {
 
 func (o AppSecIPGeoPtrOutput) ToAppSecIPGeoPtrOutputWithContext(ctx context.Context) AppSecIPGeoPtrOutput {
 	return o
+}
+
+func (o AppSecIPGeoPtrOutput) Elem() AppSecIPGeoOutput {
+	return o.ApplyT(func(v *AppSecIPGeo) AppSecIPGeo {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecIPGeo
+		return ret
+	}).(AppSecIPGeoOutput)
 }
 
 type AppSecIPGeoArrayOutput struct{ *pulumi.OutputState }
@@ -368,6 +374,10 @@ func (o AppSecIPGeoMapOutput) MapIndex(k pulumi.StringInput) AppSecIPGeoOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecIPGeoInput)(nil)).Elem(), &AppSecIPGeo{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecIPGeoPtrInput)(nil)).Elem(), &AppSecIPGeo{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecIPGeoArrayInput)(nil)).Elem(), AppSecIPGeoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecIPGeoMapInput)(nil)).Elem(), AppSecIPGeoMap{})
 	pulumi.RegisterOutputType(AppSecIPGeoOutput{})
 	pulumi.RegisterOutputType(AppSecIPGeoPtrOutput{})
 	pulumi.RegisterOutputType(AppSecIPGeoArrayOutput{})

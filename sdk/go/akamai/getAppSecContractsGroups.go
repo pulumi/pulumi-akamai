@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -25,7 +28,7 @@ import (
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Contractid
 // 		opt1 := _var.Groupid
-// 		contractsGroups, err := akamai.GetAppSecContractsGroups(ctx, &akamai.GetAppSecContractsGroupsArgs{
+// 		contractsGroups, err := akamai.GetAppSecContractsGroups(ctx, &GetAppSecContractsGroupsArgs{
 // 			Contractid: &opt0,
 // 			Groupid:    &opt1,
 // 		}, nil)
@@ -73,4 +76,79 @@ type GetAppSecContractsGroupsResult struct {
 	Json string `pulumi:"json"`
 	// A tabular display showing the contract and group information.
 	OutputText string `pulumi:"outputText"`
+}
+
+func GetAppSecContractsGroupsOutput(ctx *pulumi.Context, args GetAppSecContractsGroupsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecContractsGroupsResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetAppSecContractsGroupsResult, error) {
+			args := v.(GetAppSecContractsGroupsArgs)
+			r, err := GetAppSecContractsGroups(ctx, &args, opts...)
+			return *r, err
+		}).(GetAppSecContractsGroupsResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecContractsGroups.
+type GetAppSecContractsGroupsOutputArgs struct {
+	// (Optional) The ID of a contract for which to retrieve information.
+	Contractid pulumi.StringPtrInput `pulumi:"contractid"`
+	// (Optional) The ID of a group for which to retrieve information.
+	Groupid pulumi.IntPtrInput `pulumi:"groupid"`
+}
+
+func (GetAppSecContractsGroupsOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecContractsGroupsArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecContractsGroups.
+type GetAppSecContractsGroupsResultOutput struct{ *pulumi.OutputState }
+
+func (GetAppSecContractsGroupsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecContractsGroupsResult)(nil)).Elem()
+}
+
+func (o GetAppSecContractsGroupsResultOutput) ToGetAppSecContractsGroupsResultOutput() GetAppSecContractsGroupsResultOutput {
+	return o
+}
+
+func (o GetAppSecContractsGroupsResultOutput) ToGetAppSecContractsGroupsResultOutputWithContext(ctx context.Context) GetAppSecContractsGroupsResultOutput {
+	return o
+}
+
+// (Optional) The ID of a contract for which to retrieve information.
+func (o GetAppSecContractsGroupsResultOutput) Contractid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppSecContractsGroupsResult) *string { return v.Contractid }).(pulumi.StringPtrOutput)
+}
+
+// The default contract ID for the specified contract and group.
+func (o GetAppSecContractsGroupsResultOutput) DefaultContractid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecContractsGroupsResult) string { return v.DefaultContractid }).(pulumi.StringOutput)
+}
+
+// The default group ID for the specified contract and group.
+func (o GetAppSecContractsGroupsResultOutput) DefaultGroupid() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAppSecContractsGroupsResult) int { return v.DefaultGroupid }).(pulumi.IntOutput)
+}
+
+// (Optional) The ID of a group for which to retrieve information.
+func (o GetAppSecContractsGroupsResultOutput) Groupid() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAppSecContractsGroupsResult) *int { return v.Groupid }).(pulumi.IntPtrOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetAppSecContractsGroupsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecContractsGroupsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted list of the contract and group information.
+func (o GetAppSecContractsGroupsResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecContractsGroupsResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display showing the contract and group information.
+func (o GetAppSecContractsGroupsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecContractsGroupsResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetAppSecContractsGroupsResultOutput{})
 }

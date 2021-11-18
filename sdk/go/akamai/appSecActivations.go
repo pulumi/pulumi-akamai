@@ -28,7 +28,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := "Akamai Tools"
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
@@ -240,7 +240,7 @@ type AppSecActivationsArrayInput interface {
 type AppSecActivationsArray []AppSecActivationsInput
 
 func (AppSecActivationsArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecActivations)(nil))
+	return reflect.TypeOf((*[]*AppSecActivations)(nil)).Elem()
 }
 
 func (i AppSecActivationsArray) ToAppSecActivationsArrayOutput() AppSecActivationsArrayOutput {
@@ -265,7 +265,7 @@ type AppSecActivationsMapInput interface {
 type AppSecActivationsMap map[string]AppSecActivationsInput
 
 func (AppSecActivationsMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecActivations)(nil))
+	return reflect.TypeOf((*map[string]*AppSecActivations)(nil)).Elem()
 }
 
 func (i AppSecActivationsMap) ToAppSecActivationsMapOutput() AppSecActivationsMapOutput {
@@ -276,9 +276,7 @@ func (i AppSecActivationsMap) ToAppSecActivationsMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecActivationsMapOutput)
 }
 
-type AppSecActivationsOutput struct {
-	*pulumi.OutputState
-}
+type AppSecActivationsOutput struct{ *pulumi.OutputState }
 
 func (AppSecActivationsOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecActivations)(nil))
@@ -297,14 +295,12 @@ func (o AppSecActivationsOutput) ToAppSecActivationsPtrOutput() AppSecActivation
 }
 
 func (o AppSecActivationsOutput) ToAppSecActivationsPtrOutputWithContext(ctx context.Context) AppSecActivationsPtrOutput {
-	return o.ApplyT(func(v AppSecActivations) *AppSecActivations {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecActivations) *AppSecActivations {
 		return &v
 	}).(AppSecActivationsPtrOutput)
 }
 
-type AppSecActivationsPtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecActivationsPtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecActivationsPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecActivations)(nil))
@@ -316,6 +312,16 @@ func (o AppSecActivationsPtrOutput) ToAppSecActivationsPtrOutput() AppSecActivat
 
 func (o AppSecActivationsPtrOutput) ToAppSecActivationsPtrOutputWithContext(ctx context.Context) AppSecActivationsPtrOutput {
 	return o
+}
+
+func (o AppSecActivationsPtrOutput) Elem() AppSecActivationsOutput {
+	return o.ApplyT(func(v *AppSecActivations) AppSecActivations {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecActivations
+		return ret
+	}).(AppSecActivationsOutput)
 }
 
 type AppSecActivationsArrayOutput struct{ *pulumi.OutputState }
@@ -359,6 +365,10 @@ func (o AppSecActivationsMapOutput) MapIndex(k pulumi.StringInput) AppSecActivat
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecActivationsInput)(nil)).Elem(), &AppSecActivations{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecActivationsPtrInput)(nil)).Elem(), &AppSecActivations{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecActivationsArrayInput)(nil)).Elem(), AppSecActivationsArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecActivationsMapInput)(nil)).Elem(), AppSecActivationsMap{})
 	pulumi.RegisterOutputType(AppSecActivationsOutput{})
 	pulumi.RegisterOutputType(AppSecActivationsPtrOutput{})
 	pulumi.RegisterOutputType(AppSecActivationsArrayOutput{})

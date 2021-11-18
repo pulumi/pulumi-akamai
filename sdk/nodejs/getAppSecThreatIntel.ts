@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -79,4 +78,22 @@ export interface GetAppSecThreatIntelResult {
      * Threat Intelligence setting, either `on` or `off`.
      */
     readonly threatIntel: string;
+}
+
+export function getAppSecThreatIntelOutput(args: GetAppSecThreatIntelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecThreatIntelResult> {
+    return pulumi.output(args).apply(a => getAppSecThreatIntel(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecThreatIntel.
+ */
+export interface GetAppSecThreatIntelOutputArgs {
+    /**
+     * The ID of the security configuration to use.
+     */
+    configId: pulumi.Input<number>;
+    /**
+     * The ID of the security policy to use.
+     */
+    securityPolicyId: pulumi.Input<string>;
 }

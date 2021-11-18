@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -77,4 +76,20 @@ export interface GetContractResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+}
+
+export function getContractOutput(args?: GetContractOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContractResult> {
+    return pulumi.output(args).apply(a => getContract(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getContract.
+ */
+export interface GetContractOutputArgs {
+    /**
+     * @deprecated The setting "group" has been deprecated.
+     */
+    group?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string>;
+    groupName?: pulumi.Input<string>;
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -13,6 +14,9 @@ namespace Pulumi.Akamai
     {
         public static Task<GetDnsRecordSetResult> InvokeAsync(GetDnsRecordSetArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetDnsRecordSetResult>("akamai:index/getDnsRecordSet:getDnsRecordSet", args ?? new GetDnsRecordSetArgs(), options.WithVersion());
+
+        public static Output<GetDnsRecordSetResult> Invoke(GetDnsRecordSetInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetDnsRecordSetResult>("akamai:index/getDnsRecordSet:getDnsRecordSet", args ?? new GetDnsRecordSetInvokeArgs(), options.WithVersion());
     }
 
 
@@ -28,6 +32,22 @@ namespace Pulumi.Akamai
         public string Zone { get; set; } = null!;
 
         public GetDnsRecordSetArgs()
+        {
+        }
+    }
+
+    public sealed class GetDnsRecordSetInvokeArgs : Pulumi.InvokeArgs
+    {
+        [Input("host", required: true)]
+        public Input<string> Host { get; set; } = null!;
+
+        [Input("recordType", required: true)]
+        public Input<string> RecordType { get; set; } = null!;
+
+        [Input("zone", required: true)]
+        public Input<string> Zone { get; set; } = null!;
+
+        public GetDnsRecordSetInvokeArgs()
         {
         }
     }

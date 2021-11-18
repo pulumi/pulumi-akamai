@@ -28,7 +28,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
@@ -236,7 +236,7 @@ type AppSecWafModeArrayInput interface {
 type AppSecWafModeArray []AppSecWafModeInput
 
 func (AppSecWafModeArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecWafMode)(nil))
+	return reflect.TypeOf((*[]*AppSecWafMode)(nil)).Elem()
 }
 
 func (i AppSecWafModeArray) ToAppSecWafModeArrayOutput() AppSecWafModeArrayOutput {
@@ -261,7 +261,7 @@ type AppSecWafModeMapInput interface {
 type AppSecWafModeMap map[string]AppSecWafModeInput
 
 func (AppSecWafModeMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecWafMode)(nil))
+	return reflect.TypeOf((*map[string]*AppSecWafMode)(nil)).Elem()
 }
 
 func (i AppSecWafModeMap) ToAppSecWafModeMapOutput() AppSecWafModeMapOutput {
@@ -272,9 +272,7 @@ func (i AppSecWafModeMap) ToAppSecWafModeMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecWafModeMapOutput)
 }
 
-type AppSecWafModeOutput struct {
-	*pulumi.OutputState
-}
+type AppSecWafModeOutput struct{ *pulumi.OutputState }
 
 func (AppSecWafModeOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecWafMode)(nil))
@@ -293,14 +291,12 @@ func (o AppSecWafModeOutput) ToAppSecWafModePtrOutput() AppSecWafModePtrOutput {
 }
 
 func (o AppSecWafModeOutput) ToAppSecWafModePtrOutputWithContext(ctx context.Context) AppSecWafModePtrOutput {
-	return o.ApplyT(func(v AppSecWafMode) *AppSecWafMode {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecWafMode) *AppSecWafMode {
 		return &v
 	}).(AppSecWafModePtrOutput)
 }
 
-type AppSecWafModePtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecWafModePtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecWafModePtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecWafMode)(nil))
@@ -312,6 +308,16 @@ func (o AppSecWafModePtrOutput) ToAppSecWafModePtrOutput() AppSecWafModePtrOutpu
 
 func (o AppSecWafModePtrOutput) ToAppSecWafModePtrOutputWithContext(ctx context.Context) AppSecWafModePtrOutput {
 	return o
+}
+
+func (o AppSecWafModePtrOutput) Elem() AppSecWafModeOutput {
+	return o.ApplyT(func(v *AppSecWafMode) AppSecWafMode {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecWafMode
+		return ret
+	}).(AppSecWafModeOutput)
 }
 
 type AppSecWafModeArrayOutput struct{ *pulumi.OutputState }
@@ -355,6 +361,10 @@ func (o AppSecWafModeMapOutput) MapIndex(k pulumi.StringInput) AppSecWafModeOutp
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecWafModeInput)(nil)).Elem(), &AppSecWafMode{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecWafModePtrInput)(nil)).Elem(), &AppSecWafMode{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecWafModeArrayInput)(nil)).Elem(), AppSecWafModeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecWafModeMapInput)(nil)).Elem(), AppSecWafModeMap{})
 	pulumi.RegisterOutputType(AppSecWafModeOutput{})
 	pulumi.RegisterOutputType(AppSecWafModePtrOutput{})
 	pulumi.RegisterOutputType(AppSecWafModeArrayOutput{})

@@ -123,10 +123,11 @@ func (o CpsDvEnrollmentAdminContactOutput) ToCpsDvEnrollmentAdminContactPtrOutpu
 }
 
 func (o CpsDvEnrollmentAdminContactOutput) ToCpsDvEnrollmentAdminContactPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentAdminContactPtrOutput {
-	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) *CpsDvEnrollmentAdminContact {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CpsDvEnrollmentAdminContact) *CpsDvEnrollmentAdminContact {
 		return &v
 	}).(CpsDvEnrollmentAdminContactPtrOutput)
 }
+
 func (o CpsDvEnrollmentAdminContactOutput) AddressLineOne() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.AddressLineOne }).(pulumi.StringOutput)
 }
@@ -190,7 +191,13 @@ func (o CpsDvEnrollmentAdminContactPtrOutput) ToCpsDvEnrollmentAdminContactPtrOu
 }
 
 func (o CpsDvEnrollmentAdminContactPtrOutput) Elem() CpsDvEnrollmentAdminContactOutput {
-	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) CpsDvEnrollmentAdminContact { return *v }).(CpsDvEnrollmentAdminContactOutput)
+	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) CpsDvEnrollmentAdminContact {
+		if v != nil {
+			return *v
+		}
+		var ret CpsDvEnrollmentAdminContact
+		return ret
+	}).(CpsDvEnrollmentAdminContactOutput)
 }
 
 func (o CpsDvEnrollmentAdminContactPtrOutput) AddressLineOne() pulumi.StringPtrOutput {
@@ -400,10 +407,11 @@ func (o CpsDvEnrollmentCsrOutput) ToCpsDvEnrollmentCsrPtrOutput() CpsDvEnrollmen
 }
 
 func (o CpsDvEnrollmentCsrOutput) ToCpsDvEnrollmentCsrPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentCsrPtrOutput {
-	return o.ApplyT(func(v CpsDvEnrollmentCsr) *CpsDvEnrollmentCsr {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CpsDvEnrollmentCsr) *CpsDvEnrollmentCsr {
 		return &v
 	}).(CpsDvEnrollmentCsrPtrOutput)
 }
+
 func (o CpsDvEnrollmentCsrOutput) City() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentCsr) string { return v.City }).(pulumi.StringOutput)
 }
@@ -439,7 +447,13 @@ func (o CpsDvEnrollmentCsrPtrOutput) ToCpsDvEnrollmentCsrPtrOutputWithContext(ct
 }
 
 func (o CpsDvEnrollmentCsrPtrOutput) Elem() CpsDvEnrollmentCsrOutput {
-	return o.ApplyT(func(v *CpsDvEnrollmentCsr) CpsDvEnrollmentCsr { return *v }).(CpsDvEnrollmentCsrOutput)
+	return o.ApplyT(func(v *CpsDvEnrollmentCsr) CpsDvEnrollmentCsr {
+		if v != nil {
+			return *v
+		}
+		var ret CpsDvEnrollmentCsr
+		return ret
+	}).(CpsDvEnrollmentCsrOutput)
 }
 
 func (o CpsDvEnrollmentCsrPtrOutput) City() pulumi.StringPtrOutput {
@@ -804,10 +818,11 @@ func (o CpsDvEnrollmentNetworkConfigurationOutput) ToCpsDvEnrollmentNetworkConfi
 }
 
 func (o CpsDvEnrollmentNetworkConfigurationOutput) ToCpsDvEnrollmentNetworkConfigurationPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentNetworkConfigurationPtrOutput {
-	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *CpsDvEnrollmentNetworkConfiguration {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CpsDvEnrollmentNetworkConfiguration) *CpsDvEnrollmentNetworkConfiguration {
 		return &v
 	}).(CpsDvEnrollmentNetworkConfigurationPtrOutput)
 }
+
 func (o CpsDvEnrollmentNetworkConfigurationOutput) ClientMutualAuthentication() CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication {
 		return v.ClientMutualAuthentication
@@ -857,7 +872,13 @@ func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) ToCpsDvEnrollmentNetworkCo
 }
 
 func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) Elem() CpsDvEnrollmentNetworkConfigurationOutput {
-	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) CpsDvEnrollmentNetworkConfiguration { return *v }).(CpsDvEnrollmentNetworkConfigurationOutput)
+	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) CpsDvEnrollmentNetworkConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret CpsDvEnrollmentNetworkConfiguration
+		return ret
+	}).(CpsDvEnrollmentNetworkConfigurationOutput)
 }
 
 func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) ClientMutualAuthentication() CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
@@ -1027,10 +1048,11 @@ func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) ToC
 }
 
 func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) ToCpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
-	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication) *CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication) *CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication {
 		return &v
 	}).(CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput)
 }
+
 func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) OcspEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication) *bool { return v.OcspEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -1061,7 +1083,11 @@ func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) 
 
 func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) Elem() CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication) CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication {
-		return *v
+		if v != nil {
+			return *v
+		}
+		var ret CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication
+		return ret
 	}).(CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput)
 }
 
@@ -1197,10 +1223,11 @@ func (o CpsDvEnrollmentOrganizationOutput) ToCpsDvEnrollmentOrganizationPtrOutpu
 }
 
 func (o CpsDvEnrollmentOrganizationOutput) ToCpsDvEnrollmentOrganizationPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentOrganizationPtrOutput {
-	return o.ApplyT(func(v CpsDvEnrollmentOrganization) *CpsDvEnrollmentOrganization {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CpsDvEnrollmentOrganization) *CpsDvEnrollmentOrganization {
 		return &v
 	}).(CpsDvEnrollmentOrganizationPtrOutput)
 }
+
 func (o CpsDvEnrollmentOrganizationOutput) AddressLineOne() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentOrganization) string { return v.AddressLineOne }).(pulumi.StringOutput)
 }
@@ -1248,7 +1275,13 @@ func (o CpsDvEnrollmentOrganizationPtrOutput) ToCpsDvEnrollmentOrganizationPtrOu
 }
 
 func (o CpsDvEnrollmentOrganizationPtrOutput) Elem() CpsDvEnrollmentOrganizationOutput {
-	return o.ApplyT(func(v *CpsDvEnrollmentOrganization) CpsDvEnrollmentOrganization { return *v }).(CpsDvEnrollmentOrganizationOutput)
+	return o.ApplyT(func(v *CpsDvEnrollmentOrganization) CpsDvEnrollmentOrganization {
+		if v != nil {
+			return *v
+		}
+		var ret CpsDvEnrollmentOrganization
+		return ret
+	}).(CpsDvEnrollmentOrganizationOutput)
 }
 
 func (o CpsDvEnrollmentOrganizationPtrOutput) AddressLineOne() pulumi.StringPtrOutput {
@@ -1436,10 +1469,11 @@ func (o CpsDvEnrollmentTechContactOutput) ToCpsDvEnrollmentTechContactPtrOutput(
 }
 
 func (o CpsDvEnrollmentTechContactOutput) ToCpsDvEnrollmentTechContactPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentTechContactPtrOutput {
-	return o.ApplyT(func(v CpsDvEnrollmentTechContact) *CpsDvEnrollmentTechContact {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CpsDvEnrollmentTechContact) *CpsDvEnrollmentTechContact {
 		return &v
 	}).(CpsDvEnrollmentTechContactPtrOutput)
 }
+
 func (o CpsDvEnrollmentTechContactOutput) AddressLineOne() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.AddressLineOne }).(pulumi.StringOutput)
 }
@@ -1503,7 +1537,13 @@ func (o CpsDvEnrollmentTechContactPtrOutput) ToCpsDvEnrollmentTechContactPtrOutp
 }
 
 func (o CpsDvEnrollmentTechContactPtrOutput) Elem() CpsDvEnrollmentTechContactOutput {
-	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) CpsDvEnrollmentTechContact { return *v }).(CpsDvEnrollmentTechContactOutput)
+	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) CpsDvEnrollmentTechContact {
+		if v != nil {
+			return *v
+		}
+		var ret CpsDvEnrollmentTechContact
+		return ret
+	}).(CpsDvEnrollmentTechContactOutput)
 }
 
 func (o CpsDvEnrollmentTechContactPtrOutput) AddressLineOne() pulumi.StringPtrOutput {
@@ -1709,10 +1749,11 @@ func (o DnsZoneTsigKeyOutput) ToDnsZoneTsigKeyPtrOutput() DnsZoneTsigKeyPtrOutpu
 }
 
 func (o DnsZoneTsigKeyOutput) ToDnsZoneTsigKeyPtrOutputWithContext(ctx context.Context) DnsZoneTsigKeyPtrOutput {
-	return o.ApplyT(func(v DnsZoneTsigKey) *DnsZoneTsigKey {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DnsZoneTsigKey) *DnsZoneTsigKey {
 		return &v
 	}).(DnsZoneTsigKeyPtrOutput)
 }
+
 func (o DnsZoneTsigKeyOutput) Algorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v DnsZoneTsigKey) string { return v.Algorithm }).(pulumi.StringOutput)
 }
@@ -1740,7 +1781,13 @@ func (o DnsZoneTsigKeyPtrOutput) ToDnsZoneTsigKeyPtrOutputWithContext(ctx contex
 }
 
 func (o DnsZoneTsigKeyPtrOutput) Elem() DnsZoneTsigKeyOutput {
-	return o.ApplyT(func(v *DnsZoneTsigKey) DnsZoneTsigKey { return *v }).(DnsZoneTsigKeyOutput)
+	return o.ApplyT(func(v *DnsZoneTsigKey) DnsZoneTsigKey {
+		if v != nil {
+			return *v
+		}
+		var ret DnsZoneTsigKey
+		return ret
+	}).(DnsZoneTsigKeyOutput)
 }
 
 func (o DnsZoneTsigKeyPtrOutput) Algorithm() pulumi.StringPtrOutput {
@@ -1969,10 +2016,11 @@ func (o GtmAsmapDefaultDatacenterOutput) ToGtmAsmapDefaultDatacenterPtrOutput() 
 }
 
 func (o GtmAsmapDefaultDatacenterOutput) ToGtmAsmapDefaultDatacenterPtrOutputWithContext(ctx context.Context) GtmAsmapDefaultDatacenterPtrOutput {
-	return o.ApplyT(func(v GtmAsmapDefaultDatacenter) *GtmAsmapDefaultDatacenter {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmAsmapDefaultDatacenter) *GtmAsmapDefaultDatacenter {
 		return &v
 	}).(GtmAsmapDefaultDatacenterPtrOutput)
 }
+
 func (o GtmAsmapDefaultDatacenterOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmAsmapDefaultDatacenter) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
@@ -1996,7 +2044,13 @@ func (o GtmAsmapDefaultDatacenterPtrOutput) ToGtmAsmapDefaultDatacenterPtrOutput
 }
 
 func (o GtmAsmapDefaultDatacenterPtrOutput) Elem() GtmAsmapDefaultDatacenterOutput {
-	return o.ApplyT(func(v *GtmAsmapDefaultDatacenter) GtmAsmapDefaultDatacenter { return *v }).(GtmAsmapDefaultDatacenterOutput)
+	return o.ApplyT(func(v *GtmAsmapDefaultDatacenter) GtmAsmapDefaultDatacenter {
+		if v != nil {
+			return *v
+		}
+		var ret GtmAsmapDefaultDatacenter
+		return ret
+	}).(GtmAsmapDefaultDatacenterOutput)
 }
 
 func (o GtmAsmapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput {
@@ -2216,10 +2270,11 @@ func (o GtmCidrmapDefaultDatacenterOutput) ToGtmCidrmapDefaultDatacenterPtrOutpu
 }
 
 func (o GtmCidrmapDefaultDatacenterOutput) ToGtmCidrmapDefaultDatacenterPtrOutputWithContext(ctx context.Context) GtmCidrmapDefaultDatacenterPtrOutput {
-	return o.ApplyT(func(v GtmCidrmapDefaultDatacenter) *GtmCidrmapDefaultDatacenter {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmCidrmapDefaultDatacenter) *GtmCidrmapDefaultDatacenter {
 		return &v
 	}).(GtmCidrmapDefaultDatacenterPtrOutput)
 }
+
 func (o GtmCidrmapDefaultDatacenterOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmCidrmapDefaultDatacenter) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
@@ -2243,7 +2298,13 @@ func (o GtmCidrmapDefaultDatacenterPtrOutput) ToGtmCidrmapDefaultDatacenterPtrOu
 }
 
 func (o GtmCidrmapDefaultDatacenterPtrOutput) Elem() GtmCidrmapDefaultDatacenterOutput {
-	return o.ApplyT(func(v *GtmCidrmapDefaultDatacenter) GtmCidrmapDefaultDatacenter { return *v }).(GtmCidrmapDefaultDatacenterOutput)
+	return o.ApplyT(func(v *GtmCidrmapDefaultDatacenter) GtmCidrmapDefaultDatacenter {
+		if v != nil {
+			return *v
+		}
+		var ret GtmCidrmapDefaultDatacenter
+		return ret
+	}).(GtmCidrmapDefaultDatacenterOutput)
 }
 
 func (o GtmCidrmapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput {
@@ -2359,10 +2420,11 @@ func (o GtmDatacenterDefaultLoadObjectOutput) ToGtmDatacenterDefaultLoadObjectPt
 }
 
 func (o GtmDatacenterDefaultLoadObjectOutput) ToGtmDatacenterDefaultLoadObjectPtrOutputWithContext(ctx context.Context) GtmDatacenterDefaultLoadObjectPtrOutput {
-	return o.ApplyT(func(v GtmDatacenterDefaultLoadObject) *GtmDatacenterDefaultLoadObject {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmDatacenterDefaultLoadObject) *GtmDatacenterDefaultLoadObject {
 		return &v
 	}).(GtmDatacenterDefaultLoadObjectPtrOutput)
 }
+
 func (o GtmDatacenterDefaultLoadObjectOutput) LoadObject() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmDatacenterDefaultLoadObject) *string { return v.LoadObject }).(pulumi.StringPtrOutput)
 }
@@ -2390,7 +2452,13 @@ func (o GtmDatacenterDefaultLoadObjectPtrOutput) ToGtmDatacenterDefaultLoadObjec
 }
 
 func (o GtmDatacenterDefaultLoadObjectPtrOutput) Elem() GtmDatacenterDefaultLoadObjectOutput {
-	return o.ApplyT(func(v *GtmDatacenterDefaultLoadObject) GtmDatacenterDefaultLoadObject { return *v }).(GtmDatacenterDefaultLoadObjectOutput)
+	return o.ApplyT(func(v *GtmDatacenterDefaultLoadObject) GtmDatacenterDefaultLoadObject {
+		if v != nil {
+			return *v
+		}
+		var ret GtmDatacenterDefaultLoadObject
+		return ret
+	}).(GtmDatacenterDefaultLoadObjectOutput)
 }
 
 func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadObject() pulumi.StringPtrOutput {
@@ -2619,10 +2687,11 @@ func (o GtmGeomapDefaultDatacenterOutput) ToGtmGeomapDefaultDatacenterPtrOutput(
 }
 
 func (o GtmGeomapDefaultDatacenterOutput) ToGtmGeomapDefaultDatacenterPtrOutputWithContext(ctx context.Context) GtmGeomapDefaultDatacenterPtrOutput {
-	return o.ApplyT(func(v GtmGeomapDefaultDatacenter) *GtmGeomapDefaultDatacenter {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmGeomapDefaultDatacenter) *GtmGeomapDefaultDatacenter {
 		return &v
 	}).(GtmGeomapDefaultDatacenterPtrOutput)
 }
+
 func (o GtmGeomapDefaultDatacenterOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmGeomapDefaultDatacenter) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
@@ -2646,7 +2715,13 @@ func (o GtmGeomapDefaultDatacenterPtrOutput) ToGtmGeomapDefaultDatacenterPtrOutp
 }
 
 func (o GtmGeomapDefaultDatacenterPtrOutput) Elem() GtmGeomapDefaultDatacenterOutput {
-	return o.ApplyT(func(v *GtmGeomapDefaultDatacenter) GtmGeomapDefaultDatacenter { return *v }).(GtmGeomapDefaultDatacenterOutput)
+	return o.ApplyT(func(v *GtmGeomapDefaultDatacenter) GtmGeomapDefaultDatacenter {
+		if v != nil {
+			return *v
+		}
+		var ret GtmGeomapDefaultDatacenter
+		return ret
+	}).(GtmGeomapDefaultDatacenterOutput)
 }
 
 func (o GtmGeomapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput {
@@ -4664,10 +4739,11 @@ func (o ProviderConfigOutput) ToProviderConfigPtrOutput() ProviderConfigPtrOutpu
 }
 
 func (o ProviderConfigOutput) ToProviderConfigPtrOutputWithContext(ctx context.Context) ProviderConfigPtrOutput {
-	return o.ApplyT(func(v ProviderConfig) *ProviderConfig {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProviderConfig) *ProviderConfig {
 		return &v
 	}).(ProviderConfigPtrOutput)
 }
+
 func (o ProviderConfigOutput) AccessToken() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProviderConfig) *string { return v.AccessToken }).(pulumi.StringPtrOutput)
 }
@@ -4707,7 +4783,13 @@ func (o ProviderConfigPtrOutput) ToProviderConfigPtrOutputWithContext(ctx contex
 }
 
 func (o ProviderConfigPtrOutput) Elem() ProviderConfigOutput {
-	return o.ApplyT(func(v *ProviderConfig) ProviderConfig { return *v }).(ProviderConfigOutput)
+	return o.ApplyT(func(v *ProviderConfig) ProviderConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ProviderConfig
+		return ret
+	}).(ProviderConfigOutput)
 }
 
 func (o ProviderConfigPtrOutput) AccessToken() pulumi.StringPtrOutput {
@@ -4865,10 +4947,11 @@ func (o ProviderDnsOutput) ToProviderDnsPtrOutput() ProviderDnsPtrOutput {
 }
 
 func (o ProviderDnsOutput) ToProviderDnsPtrOutputWithContext(ctx context.Context) ProviderDnsPtrOutput {
-	return o.ApplyT(func(v ProviderDns) *ProviderDns {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProviderDns) *ProviderDns {
 		return &v
 	}).(ProviderDnsPtrOutput)
 }
+
 func (o ProviderDnsOutput) AccessToken() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProviderDns) *string { return v.AccessToken }).(pulumi.StringPtrOutput)
 }
@@ -4908,7 +4991,13 @@ func (o ProviderDnsPtrOutput) ToProviderDnsPtrOutputWithContext(ctx context.Cont
 }
 
 func (o ProviderDnsPtrOutput) Elem() ProviderDnsOutput {
-	return o.ApplyT(func(v *ProviderDns) ProviderDns { return *v }).(ProviderDnsOutput)
+	return o.ApplyT(func(v *ProviderDns) ProviderDns {
+		if v != nil {
+			return *v
+		}
+		var ret ProviderDns
+		return ret
+	}).(ProviderDnsOutput)
 }
 
 func (o ProviderDnsPtrOutput) AccessToken() pulumi.StringPtrOutput {
@@ -5066,10 +5155,11 @@ func (o ProviderGtmOutput) ToProviderGtmPtrOutput() ProviderGtmPtrOutput {
 }
 
 func (o ProviderGtmOutput) ToProviderGtmPtrOutputWithContext(ctx context.Context) ProviderGtmPtrOutput {
-	return o.ApplyT(func(v ProviderGtm) *ProviderGtm {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProviderGtm) *ProviderGtm {
 		return &v
 	}).(ProviderGtmPtrOutput)
 }
+
 func (o ProviderGtmOutput) AccessToken() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProviderGtm) *string { return v.AccessToken }).(pulumi.StringPtrOutput)
 }
@@ -5109,7 +5199,13 @@ func (o ProviderGtmPtrOutput) ToProviderGtmPtrOutputWithContext(ctx context.Cont
 }
 
 func (o ProviderGtmPtrOutput) Elem() ProviderGtmOutput {
-	return o.ApplyT(func(v *ProviderGtm) ProviderGtm { return *v }).(ProviderGtmOutput)
+	return o.ApplyT(func(v *ProviderGtm) ProviderGtm {
+		if v != nil {
+			return *v
+		}
+		var ret ProviderGtm
+		return ret
+	}).(ProviderGtmOutput)
 }
 
 func (o ProviderGtmPtrOutput) AccessToken() pulumi.StringPtrOutput {
@@ -5391,10 +5487,11 @@ func (o ProviderPropertyOutput) ToProviderPropertyPtrOutput() ProviderPropertyPt
 }
 
 func (o ProviderPropertyOutput) ToProviderPropertyPtrOutputWithContext(ctx context.Context) ProviderPropertyPtrOutput {
-	return o.ApplyT(func(v ProviderProperty) *ProviderProperty {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProviderProperty) *ProviderProperty {
 		return &v
 	}).(ProviderPropertyPtrOutput)
 }
+
 func (o ProviderPropertyOutput) AccessToken() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProviderProperty) *string { return v.AccessToken }).(pulumi.StringPtrOutput)
 }
@@ -5434,7 +5531,13 @@ func (o ProviderPropertyPtrOutput) ToProviderPropertyPtrOutputWithContext(ctx co
 }
 
 func (o ProviderPropertyPtrOutput) Elem() ProviderPropertyOutput {
-	return o.ApplyT(func(v *ProviderProperty) ProviderProperty { return *v }).(ProviderPropertyOutput)
+	return o.ApplyT(func(v *ProviderProperty) ProviderProperty {
+		if v != nil {
+			return *v
+		}
+		var ret ProviderProperty
+		return ret
+	}).(ProviderPropertyOutput)
 }
 
 func (o ProviderPropertyPtrOutput) AccessToken() pulumi.StringPtrOutput {
@@ -6294,6 +6397,92 @@ func (o GetPropertyRulesTemplateVariableArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentAdminContactInput)(nil)).Elem(), CpsDvEnrollmentAdminContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentAdminContactPtrInput)(nil)).Elem(), CpsDvEnrollmentAdminContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentCsrInput)(nil)).Elem(), CpsDvEnrollmentCsrArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentCsrPtrInput)(nil)).Elem(), CpsDvEnrollmentCsrArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentDnsChallengeInput)(nil)).Elem(), CpsDvEnrollmentDnsChallengeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentDnsChallengeArrayInput)(nil)).Elem(), CpsDvEnrollmentDnsChallengeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentHttpChallengeInput)(nil)).Elem(), CpsDvEnrollmentHttpChallengeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentHttpChallengeArrayInput)(nil)).Elem(), CpsDvEnrollmentHttpChallengeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentNetworkConfigurationInput)(nil)).Elem(), CpsDvEnrollmentNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentNetworkConfigurationPtrInput)(nil)).Elem(), CpsDvEnrollmentNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationInput)(nil)).Elem(), CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrInput)(nil)).Elem(), CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentOrganizationInput)(nil)).Elem(), CpsDvEnrollmentOrganizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentOrganizationPtrInput)(nil)).Elem(), CpsDvEnrollmentOrganizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentTechContactInput)(nil)).Elem(), CpsDvEnrollmentTechContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentTechContactPtrInput)(nil)).Elem(), CpsDvEnrollmentTechContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DnsZoneTsigKeyInput)(nil)).Elem(), DnsZoneTsigKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DnsZoneTsigKeyPtrInput)(nil)).Elem(), DnsZoneTsigKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmAsmapAssignmentInput)(nil)).Elem(), GtmAsmapAssignmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmAsmapAssignmentArrayInput)(nil)).Elem(), GtmAsmapAssignmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmAsmapDefaultDatacenterInput)(nil)).Elem(), GtmAsmapDefaultDatacenterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmAsmapDefaultDatacenterPtrInput)(nil)).Elem(), GtmAsmapDefaultDatacenterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmCidrmapAssignmentInput)(nil)).Elem(), GtmCidrmapAssignmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmCidrmapAssignmentArrayInput)(nil)).Elem(), GtmCidrmapAssignmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmCidrmapDefaultDatacenterInput)(nil)).Elem(), GtmCidrmapDefaultDatacenterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmCidrmapDefaultDatacenterPtrInput)(nil)).Elem(), GtmCidrmapDefaultDatacenterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmDatacenterDefaultLoadObjectInput)(nil)).Elem(), GtmDatacenterDefaultLoadObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmDatacenterDefaultLoadObjectPtrInput)(nil)).Elem(), GtmDatacenterDefaultLoadObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmGeomapAssignmentInput)(nil)).Elem(), GtmGeomapAssignmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmGeomapAssignmentArrayInput)(nil)).Elem(), GtmGeomapAssignmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmGeomapDefaultDatacenterInput)(nil)).Elem(), GtmGeomapDefaultDatacenterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmGeomapDefaultDatacenterPtrInput)(nil)).Elem(), GtmGeomapDefaultDatacenterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyLivenessTestInput)(nil)).Elem(), GtmPropertyLivenessTestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyLivenessTestArrayInput)(nil)).Elem(), GtmPropertyLivenessTestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyLivenessTestHttpHeaderInput)(nil)).Elem(), GtmPropertyLivenessTestHttpHeaderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyLivenessTestHttpHeaderArrayInput)(nil)).Elem(), GtmPropertyLivenessTestHttpHeaderArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyStaticRrSetInput)(nil)).Elem(), GtmPropertyStaticRrSetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyStaticRrSetArrayInput)(nil)).Elem(), GtmPropertyStaticRrSetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyTrafficTargetInput)(nil)).Elem(), GtmPropertyTrafficTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyTrafficTargetArrayInput)(nil)).Elem(), GtmPropertyTrafficTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmResourceResourceInstanceInput)(nil)).Elem(), GtmResourceResourceInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmResourceResourceInstanceArrayInput)(nil)).Elem(), GtmResourceResourceInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationRuleErrorInput)(nil)).Elem(), PropertyActivationRuleErrorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationRuleErrorArrayInput)(nil)).Elem(), PropertyActivationRuleErrorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationRuleWarningInput)(nil)).Elem(), PropertyActivationRuleWarningArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationRuleWarningArrayInput)(nil)).Elem(), PropertyActivationRuleWarningArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameInput)(nil)).Elem(), PropertyHostnameArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameArrayInput)(nil)).Elem(), PropertyHostnameArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameCertStatusInput)(nil)).Elem(), PropertyHostnameCertStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameCertStatusArrayInput)(nil)).Elem(), PropertyHostnameCertStatusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyOriginInput)(nil)).Elem(), PropertyOriginArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyOriginArrayInput)(nil)).Elem(), PropertyOriginArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyRuleErrorInput)(nil)).Elem(), PropertyRuleErrorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyRuleErrorArrayInput)(nil)).Elem(), PropertyRuleErrorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyRuleWarningInput)(nil)).Elem(), PropertyRuleWarningArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyRuleWarningArrayInput)(nil)).Elem(), PropertyRuleWarningArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyVariablesVariableInput)(nil)).Elem(), PropertyVariablesVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyVariablesVariableArrayInput)(nil)).Elem(), PropertyVariablesVariableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyVariablesVariableVariableInput)(nil)).Elem(), PropertyVariablesVariableVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyVariablesVariableVariableArrayInput)(nil)).Elem(), PropertyVariablesVariableVariableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProviderAppsecInput)(nil)).Elem(), ProviderAppsecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProviderAppsecArrayInput)(nil)).Elem(), ProviderAppsecArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProviderConfigInput)(nil)).Elem(), ProviderConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProviderConfigPtrInput)(nil)).Elem(), ProviderConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProviderDnsInput)(nil)).Elem(), ProviderDnsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProviderDnsPtrInput)(nil)).Elem(), ProviderDnsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProviderGtmInput)(nil)).Elem(), ProviderGtmArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProviderGtmPtrInput)(nil)).Elem(), ProviderGtmArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProviderNetworkInput)(nil)).Elem(), ProviderNetworkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProviderNetworkArrayInput)(nil)).Elem(), ProviderNetworkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProviderPropertyInput)(nil)).Elem(), ProviderPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProviderPropertyPtrInput)(nil)).Elem(), ProviderPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetContractsContractInput)(nil)).Elem(), GetContractsContractArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetContractsContractArrayInput)(nil)).Elem(), GetContractsContractArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupsGroupInput)(nil)).Elem(), GetGroupsGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupsGroupArrayInput)(nil)).Elem(), GetGroupsGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertiesPropertyInput)(nil)).Elem(), GetPropertiesPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertiesPropertyArrayInput)(nil)).Elem(), GetPropertiesPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameInput)(nil)).Elem(), GetPropertyHostnamesHostnameArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusInput)(nil)).Elem(), GetPropertyHostnamesHostnameCertStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameCertStatusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyProductsProductInput)(nil)).Elem(), GetPropertyProductsProductArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyProductsProductArrayInput)(nil)).Elem(), GetPropertyProductsProductArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyRulesTemplateVariableInput)(nil)).Elem(), GetPropertyRulesTemplateVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyRulesTemplateVariableArrayInput)(nil)).Elem(), GetPropertyRulesTemplateVariableArray{})
 	pulumi.RegisterOutputType(CpsDvEnrollmentAdminContactOutput{})
 	pulumi.RegisterOutputType(CpsDvEnrollmentAdminContactPtrOutput{})
 	pulumi.RegisterOutputType(CpsDvEnrollmentCsrOutput{})

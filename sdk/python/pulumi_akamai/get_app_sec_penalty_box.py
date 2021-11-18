@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecPenaltyBoxResult',
     'AwaitableGetAppSecPenaltyBoxResult',
     'get_app_sec_penalty_box',
+    'get_app_sec_penalty_box_output',
 ]
 
 @pulumi.output_type
@@ -138,3 +139,33 @@ def get_app_sec_penalty_box(config_id: Optional[int] = None,
         id=__ret__.id,
         output_text=__ret__.output_text,
         security_policy_id=__ret__.security_policy_id)
+
+
+@_utilities.lift_output_func(get_app_sec_penalty_box)
+def get_app_sec_penalty_box_output(config_id: Optional[pulumi.Input[int]] = None,
+                                   security_policy_id: Optional[pulumi.Input[str]] = None,
+                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecPenaltyBoxResult]:
+    """
+    Use the `AppSecPenaltyBox` data source to retrieve the penalty box settings for a specified security policy.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    penalty_box = akamai.get_app_sec_penalty_box(config_id=configuration.config_id,
+        security_policy_id=var["security_policy_id"])
+    pulumi.export("penaltyBoxAction", penalty_box.action)
+    pulumi.export("penaltyBoxEnabled", penalty_box.enabled)
+    pulumi.export("penaltyBoxText", penalty_box.output_text)
+    ```
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param str security_policy_id: The ID of the security policy to use.
+    """
+    ...

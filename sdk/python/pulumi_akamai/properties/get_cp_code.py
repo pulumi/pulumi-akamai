@@ -12,6 +12,7 @@ __all__ = [
     'GetCpCodeResult',
     'AwaitableGetCpCodeResult',
     'get_cp_code',
+    'get_cp_code_output',
 ]
 
 warnings.warn("""akamai.properties.getCpCode has been deprecated in favor of akamai.getCpCode""", DeprecationWarning)
@@ -136,3 +137,17 @@ def get_cp_code(contract: Optional[str] = None,
         id=__ret__.id,
         name=__ret__.name,
         product_ids=__ret__.product_ids)
+
+
+@_utilities.lift_output_func(get_cp_code)
+def get_cp_code_output(contract: Optional[pulumi.Input[Optional[str]]] = None,
+                       contract_id: Optional[pulumi.Input[Optional[str]]] = None,
+                       group: Optional[pulumi.Input[Optional[str]]] = None,
+                       group_id: Optional[pulumi.Input[Optional[str]]] = None,
+                       name: Optional[pulumi.Input[str]] = None,
+                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpCodeResult]:
+    """
+    Use this data source to access information about an existing resource.
+    """
+    pulumi.log.warn("""get_cp_code is deprecated: akamai.properties.getCpCode has been deprecated in favor of akamai.getCpCode""")
+    ...

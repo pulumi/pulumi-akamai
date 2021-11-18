@@ -12,6 +12,7 @@ __all__ = [
     'GetGtmDefaultDatacenterResult',
     'AwaitableGetGtmDefaultDatacenterResult',
     'get_gtm_default_datacenter',
+    'get_gtm_default_datacenter_output',
 ]
 
 warnings.warn("""akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter""", DeprecationWarning)
@@ -102,3 +103,14 @@ def get_gtm_default_datacenter(datacenter: Optional[int] = None,
         domain=__ret__.domain,
         id=__ret__.id,
         nickname=__ret__.nickname)
+
+
+@_utilities.lift_output_func(get_gtm_default_datacenter)
+def get_gtm_default_datacenter_output(datacenter: Optional[pulumi.Input[Optional[int]]] = None,
+                                      domain: Optional[pulumi.Input[str]] = None,
+                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGtmDefaultDatacenterResult]:
+    """
+    Use this data source to access information about an existing resource.
+    """
+    pulumi.log.warn("""get_gtm_default_datacenter is deprecated: akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter""")
+    ...

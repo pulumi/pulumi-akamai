@@ -105,10 +105,11 @@ func (o DnsZoneTsigKeyOutput) ToDnsZoneTsigKeyPtrOutput() DnsZoneTsigKeyPtrOutpu
 }
 
 func (o DnsZoneTsigKeyOutput) ToDnsZoneTsigKeyPtrOutputWithContext(ctx context.Context) DnsZoneTsigKeyPtrOutput {
-	return o.ApplyT(func(v DnsZoneTsigKey) *DnsZoneTsigKey {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DnsZoneTsigKey) *DnsZoneTsigKey {
 		return &v
 	}).(DnsZoneTsigKeyPtrOutput)
 }
+
 func (o DnsZoneTsigKeyOutput) Algorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v DnsZoneTsigKey) string { return v.Algorithm }).(pulumi.StringOutput)
 }
@@ -136,7 +137,13 @@ func (o DnsZoneTsigKeyPtrOutput) ToDnsZoneTsigKeyPtrOutputWithContext(ctx contex
 }
 
 func (o DnsZoneTsigKeyPtrOutput) Elem() DnsZoneTsigKeyOutput {
-	return o.ApplyT(func(v *DnsZoneTsigKey) DnsZoneTsigKey { return *v }).(DnsZoneTsigKeyOutput)
+	return o.ApplyT(func(v *DnsZoneTsigKey) DnsZoneTsigKey {
+		if v != nil {
+			return *v
+		}
+		var ret DnsZoneTsigKey
+		return ret
+	}).(DnsZoneTsigKeyOutput)
 }
 
 func (o DnsZoneTsigKeyPtrOutput) Algorithm() pulumi.StringPtrOutput {
@@ -167,6 +174,8 @@ func (o DnsZoneTsigKeyPtrOutput) Secret() pulumi.StringPtrOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*DnsZoneTsigKeyInput)(nil)).Elem(), DnsZoneTsigKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DnsZoneTsigKeyPtrInput)(nil)).Elem(), DnsZoneTsigKeyArgs{})
 	pulumi.RegisterOutputType(DnsZoneTsigKeyOutput{})
 	pulumi.RegisterOutputType(DnsZoneTsigKeyPtrOutput{})
 }

@@ -10,18 +10,18 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class GetPropertyRulesTemplateVariableArgs : Pulumi.InvokeArgs
+    public sealed class GetPropertyRulesTemplateVariableInputArgs : Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
-        public string Name { get; set; } = null!;
+        public Input<string> Name { get; set; } = null!;
 
         [Input("type")]
-        public string? Type { get; set; }
+        public Input<string>? Type { get; set; }
 
         [Input("value", required: true)]
-        public string Value { get; set; } = null!;
+        public Input<string> Value { get; set; } = null!;
 
-        public GetPropertyRulesTemplateVariableArgs()
+        public GetPropertyRulesTemplateVariableInputArgs()
         {
         }
     }

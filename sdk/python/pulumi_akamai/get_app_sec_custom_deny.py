@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecCustomDenyResult',
     'AwaitableGetAppSecCustomDenyResult',
     'get_app_sec_custom_deny',
+    'get_app_sec_custom_deny_output',
 ]
 
 @pulumi.output_type
@@ -127,3 +128,35 @@ def get_app_sec_custom_deny(config_id: Optional[int] = None,
         id=__ret__.id,
         json=__ret__.json,
         output_text=__ret__.output_text)
+
+
+@_utilities.lift_output_func(get_app_sec_custom_deny)
+def get_app_sec_custom_deny_output(config_id: Optional[pulumi.Input[int]] = None,
+                                   custom_deny_id: Optional[pulumi.Input[Optional[str]]] = None,
+                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecCustomDenyResult]:
+    """
+    Use the `AppSecCustomDeny` data source to retrieve information about custom deny actions for a specific security configuration, or about a particular custom deny action. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcustomdeny).
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    custom_deny_list = akamai.get_app_sec_custom_deny(config_id=configuration.config_id)
+    pulumi.export("customDenyListOutput", custom_deny_list.output_text)
+    pulumi.export("customDenyListJson", custom_deny_list.json)
+    custom_deny = akamai.get_app_sec_custom_deny(config_id=configuration.config_id,
+        custom_deny_id=var["custom_deny_id"])
+    pulumi.export("customDenyJson", custom_deny.json)
+    pulumi.export("customDenyOutput", custom_deny.output_text)
+    ```
+
+
+    :param int config_id: The configuration ID to use.
+    :param str custom_deny_id: The ID of a specific custom deny action.
+    """
+    ...

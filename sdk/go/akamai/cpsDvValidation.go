@@ -29,7 +29,7 @@ import (
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		_, err := akamai.NewCpsDvValidation(ctx, "example", &akamai.CpsDvValidationArgs{
 // 			EnrollmentId: pulumi.Any(akamai_cps_dv_enrollment.Example.Id),
-// 			Sans:         akamai_cps_dv_enrollment.Example.Sans,
+// 			Sans:         pulumi.Any(akamai_cps_dv_enrollment.Example.Sans),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -180,7 +180,7 @@ type CpsDvValidationArrayInput interface {
 type CpsDvValidationArray []CpsDvValidationInput
 
 func (CpsDvValidationArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*CpsDvValidation)(nil))
+	return reflect.TypeOf((*[]*CpsDvValidation)(nil)).Elem()
 }
 
 func (i CpsDvValidationArray) ToCpsDvValidationArrayOutput() CpsDvValidationArrayOutput {
@@ -205,7 +205,7 @@ type CpsDvValidationMapInput interface {
 type CpsDvValidationMap map[string]CpsDvValidationInput
 
 func (CpsDvValidationMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*CpsDvValidation)(nil))
+	return reflect.TypeOf((*map[string]*CpsDvValidation)(nil)).Elem()
 }
 
 func (i CpsDvValidationMap) ToCpsDvValidationMapOutput() CpsDvValidationMapOutput {
@@ -216,9 +216,7 @@ func (i CpsDvValidationMap) ToCpsDvValidationMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(CpsDvValidationMapOutput)
 }
 
-type CpsDvValidationOutput struct {
-	*pulumi.OutputState
-}
+type CpsDvValidationOutput struct{ *pulumi.OutputState }
 
 func (CpsDvValidationOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*CpsDvValidation)(nil))
@@ -237,14 +235,12 @@ func (o CpsDvValidationOutput) ToCpsDvValidationPtrOutput() CpsDvValidationPtrOu
 }
 
 func (o CpsDvValidationOutput) ToCpsDvValidationPtrOutputWithContext(ctx context.Context) CpsDvValidationPtrOutput {
-	return o.ApplyT(func(v CpsDvValidation) *CpsDvValidation {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CpsDvValidation) *CpsDvValidation {
 		return &v
 	}).(CpsDvValidationPtrOutput)
 }
 
-type CpsDvValidationPtrOutput struct {
-	*pulumi.OutputState
-}
+type CpsDvValidationPtrOutput struct{ *pulumi.OutputState }
 
 func (CpsDvValidationPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**CpsDvValidation)(nil))
@@ -256,6 +252,16 @@ func (o CpsDvValidationPtrOutput) ToCpsDvValidationPtrOutput() CpsDvValidationPt
 
 func (o CpsDvValidationPtrOutput) ToCpsDvValidationPtrOutputWithContext(ctx context.Context) CpsDvValidationPtrOutput {
 	return o
+}
+
+func (o CpsDvValidationPtrOutput) Elem() CpsDvValidationOutput {
+	return o.ApplyT(func(v *CpsDvValidation) CpsDvValidation {
+		if v != nil {
+			return *v
+		}
+		var ret CpsDvValidation
+		return ret
+	}).(CpsDvValidationOutput)
 }
 
 type CpsDvValidationArrayOutput struct{ *pulumi.OutputState }
@@ -299,6 +305,10 @@ func (o CpsDvValidationMapOutput) MapIndex(k pulumi.StringInput) CpsDvValidation
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvValidationInput)(nil)).Elem(), &CpsDvValidation{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvValidationPtrInput)(nil)).Elem(), &CpsDvValidation{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvValidationArrayInput)(nil)).Elem(), CpsDvValidationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvValidationMapInput)(nil)).Elem(), CpsDvValidationMap{})
 	pulumi.RegisterOutputType(CpsDvValidationOutput{})
 	pulumi.RegisterOutputType(CpsDvValidationPtrOutput{})
 	pulumi.RegisterOutputType(CpsDvValidationArrayOutput{})

@@ -13,6 +13,53 @@ import (
 
 // Use the `AppSecEvalGroup` resource to create or modify an evaluation attack group's action, conditions and exceptions. When the conditions are met, the rule’s actions are ignored and not applied to that specific traffic.
 // __BETA__ This is Adaptive Security Engine(ASE) related data resource. Please contact your akamai representative if you want to learn more
+//
+// ## Example Usage
+//
+// Basic usage:
+//
+// ```go
+// package main
+//
+// import (
+// 	"fmt"
+// 	"io/ioutil"
+//
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func readFileOrPanic(path string) pulumi.StringPtrInput {
+// 	data, err := ioutil.ReadFile(path)
+// 	if err != nil {
+// 		panic(err.Error())
+// 	}
+// 	return pulumi.String(string(data))
+// }
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		opt0 := _var.Security_configuration
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+// 			Name: &opt0,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		_, err = akamai.NewAppSecEvalGroup(ctx, "evalAttackGroup", &akamai.AppSecEvalGroupArgs{
+// 			ConfigId:           pulumi.Int(configuration.ConfigId),
+// 			SecurityPolicyId:   pulumi.Any(_var.Security_policy_id),
+// 			AttackGroup:        pulumi.Any(_var.Attack_group),
+// 			AttackGroupAction:  pulumi.Any(_var.Attack_group_action),
+// 			ConditionException: readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/condition_exception.json")),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
 type AppSecEvalGroup struct {
 	pulumi.CustomResourceState
 
@@ -191,7 +238,7 @@ type AppSecEvalGroupArrayInput interface {
 type AppSecEvalGroupArray []AppSecEvalGroupInput
 
 func (AppSecEvalGroupArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecEvalGroup)(nil))
+	return reflect.TypeOf((*[]*AppSecEvalGroup)(nil)).Elem()
 }
 
 func (i AppSecEvalGroupArray) ToAppSecEvalGroupArrayOutput() AppSecEvalGroupArrayOutput {
@@ -216,7 +263,7 @@ type AppSecEvalGroupMapInput interface {
 type AppSecEvalGroupMap map[string]AppSecEvalGroupInput
 
 func (AppSecEvalGroupMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecEvalGroup)(nil))
+	return reflect.TypeOf((*map[string]*AppSecEvalGroup)(nil)).Elem()
 }
 
 func (i AppSecEvalGroupMap) ToAppSecEvalGroupMapOutput() AppSecEvalGroupMapOutput {
@@ -227,9 +274,7 @@ func (i AppSecEvalGroupMap) ToAppSecEvalGroupMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecEvalGroupMapOutput)
 }
 
-type AppSecEvalGroupOutput struct {
-	*pulumi.OutputState
-}
+type AppSecEvalGroupOutput struct{ *pulumi.OutputState }
 
 func (AppSecEvalGroupOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecEvalGroup)(nil))
@@ -248,14 +293,12 @@ func (o AppSecEvalGroupOutput) ToAppSecEvalGroupPtrOutput() AppSecEvalGroupPtrOu
 }
 
 func (o AppSecEvalGroupOutput) ToAppSecEvalGroupPtrOutputWithContext(ctx context.Context) AppSecEvalGroupPtrOutput {
-	return o.ApplyT(func(v AppSecEvalGroup) *AppSecEvalGroup {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecEvalGroup) *AppSecEvalGroup {
 		return &v
 	}).(AppSecEvalGroupPtrOutput)
 }
 
-type AppSecEvalGroupPtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecEvalGroupPtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecEvalGroupPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecEvalGroup)(nil))
@@ -267,6 +310,16 @@ func (o AppSecEvalGroupPtrOutput) ToAppSecEvalGroupPtrOutput() AppSecEvalGroupPt
 
 func (o AppSecEvalGroupPtrOutput) ToAppSecEvalGroupPtrOutputWithContext(ctx context.Context) AppSecEvalGroupPtrOutput {
 	return o
+}
+
+func (o AppSecEvalGroupPtrOutput) Elem() AppSecEvalGroupOutput {
+	return o.ApplyT(func(v *AppSecEvalGroup) AppSecEvalGroup {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecEvalGroup
+		return ret
+	}).(AppSecEvalGroupOutput)
 }
 
 type AppSecEvalGroupArrayOutput struct{ *pulumi.OutputState }
@@ -310,6 +363,10 @@ func (o AppSecEvalGroupMapOutput) MapIndex(k pulumi.StringInput) AppSecEvalGroup
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecEvalGroupInput)(nil)).Elem(), &AppSecEvalGroup{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecEvalGroupPtrInput)(nil)).Elem(), &AppSecEvalGroup{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecEvalGroupArrayInput)(nil)).Elem(), AppSecEvalGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecEvalGroupMapInput)(nil)).Elem(), AppSecEvalGroupMap{})
 	pulumi.RegisterOutputType(AppSecEvalGroupOutput{})
 	pulumi.RegisterOutputType(AppSecEvalGroupPtrOutput{})
 	pulumi.RegisterOutputType(AppSecEvalGroupArrayOutput{})

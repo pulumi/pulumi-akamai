@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,13 +27,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		evalHostnamesAppSecEvalHostnames, err := akamai.LookupAppSecEvalHostnames(ctx, &akamai.LookupAppSecEvalHostnamesArgs{
+// 		evalHostnamesAppSecEvalHostnames, err := akamai.LookupAppSecEvalHostnames(ctx, &GetAppSecEvalHostnamesArgs{
 // 			ConfigId: configuration.ConfigId,
 // 		}, nil)
 // 		if err != nil {
@@ -69,4 +72,66 @@ type LookupAppSecEvalHostnamesResult struct {
 	Json string `pulumi:"json"`
 	// A tabular display showing the evaluation hostnames.
 	OutputText string `pulumi:"outputText"`
+}
+
+func LookupAppSecEvalHostnamesOutput(ctx *pulumi.Context, args LookupAppSecEvalHostnamesOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecEvalHostnamesResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (LookupAppSecEvalHostnamesResult, error) {
+			args := v.(LookupAppSecEvalHostnamesArgs)
+			r, err := LookupAppSecEvalHostnames(ctx, &args, opts...)
+			return *r, err
+		}).(LookupAppSecEvalHostnamesResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecEvalHostnames.
+type LookupAppSecEvalHostnamesOutputArgs struct {
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+}
+
+func (LookupAppSecEvalHostnamesOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecEvalHostnamesArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecEvalHostnames.
+type LookupAppSecEvalHostnamesResultOutput struct{ *pulumi.OutputState }
+
+func (LookupAppSecEvalHostnamesResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecEvalHostnamesResult)(nil)).Elem()
+}
+
+func (o LookupAppSecEvalHostnamesResultOutput) ToLookupAppSecEvalHostnamesResultOutput() LookupAppSecEvalHostnamesResultOutput {
+	return o
+}
+
+func (o LookupAppSecEvalHostnamesResultOutput) ToLookupAppSecEvalHostnamesResultOutputWithContext(ctx context.Context) LookupAppSecEvalHostnamesResultOutput {
+	return o
+}
+
+func (o LookupAppSecEvalHostnamesResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAppSecEvalHostnamesResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// A list of the evaluation hostnames.
+func (o LookupAppSecEvalHostnamesResultOutput) Hostnames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupAppSecEvalHostnamesResult) []string { return v.Hostnames }).(pulumi.StringArrayOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o LookupAppSecEvalHostnamesResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecEvalHostnamesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted list of the evaluation hostnames.
+func (o LookupAppSecEvalHostnamesResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecEvalHostnamesResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display showing the evaluation hostnames.
+func (o LookupAppSecEvalHostnamesResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecEvalHostnamesResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(LookupAppSecEvalHostnamesResultOutput{})
 }

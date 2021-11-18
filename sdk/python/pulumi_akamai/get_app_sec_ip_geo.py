@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecIPGeoResult',
     'AwaitableGetAppSecIPGeoResult',
     'get_app_sec_ip_geo',
+    'get_app_sec_ip_geo_output',
 ]
 
 @pulumi.output_type
@@ -165,3 +166,34 @@ def get_app_sec_ip_geo(config_id: Optional[int] = None,
         mode=__ret__.mode,
         output_text=__ret__.output_text,
         security_policy_id=__ret__.security_policy_id)
+
+
+@_utilities.lift_output_func(get_app_sec_ip_geo)
+def get_app_sec_ip_geo_output(config_id: Optional[pulumi.Input[int]] = None,
+                              security_policy_id: Optional[pulumi.Input[str]] = None,
+                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecIPGeoResult]:
+    """
+    Use the `AppSecIPGeo` data source to retrieve information about which network lists are used in the IP/Geo Firewall settings.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    ip_geo = akamai.get_app_sec_ip_geo(config_id=configuration.config_id,
+        security_policy_id=var["security_policy_id"])
+    pulumi.export("ipGeoMode", ip_geo.mode)
+    pulumi.export("geoNetworkLists", ip_geo.geo_network_lists)
+    pulumi.export("ipNetworkLists", ip_geo.ip_network_lists)
+    pulumi.export("exceptionIpNetworkLists", ip_geo.exception_ip_network_lists)
+    ```
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param str security_policy_id: The ID of the security policy to use.
+    """
+    ...

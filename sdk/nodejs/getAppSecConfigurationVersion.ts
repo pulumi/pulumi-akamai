@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -87,4 +86,22 @@ export interface GetAppSecConfigurationVersionResult {
      */
     readonly stagingStatus: string;
     readonly version?: number;
+}
+
+export function getAppSecConfigurationVersionOutput(args: GetAppSecConfigurationVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecConfigurationVersionResult> {
+    return pulumi.output(args).apply(a => getAppSecConfigurationVersion(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecConfigurationVersion.
+ */
+export interface GetAppSecConfigurationVersionOutputArgs {
+    /**
+     * The ID of the security configuration to use.
+     */
+    configId: pulumi.Input<number>;
+    /**
+     * The version number of the security configuration to use. If not supplied, information about all versions of the specified security configuration is returned.
+     */
+    version?: pulumi.Input<number>;
 }

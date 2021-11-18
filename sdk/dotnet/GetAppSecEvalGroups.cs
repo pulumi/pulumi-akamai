@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -61,6 +62,57 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecEvalGroupsResult> InvokeAsync(GetAppSecEvalGroupsArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalGroupsResult>("akamai:index/getAppSecEvalGroups:getAppSecEvalGroups", args ?? new GetAppSecEvalGroupsArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.getAppSecEvalGroups` data source to list the action and condition-exception information for an evaluation attack
+        /// group or groups.
+        /// __BETA__ This is Adaptive Security Engine(ASE) related data source. Please contact your akamai representative if you want to learn more
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = @var.Security_configuration,
+        ///         }));
+        ///         var evalAttackGroup = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecEvalGroups.InvokeAsync(new Akamai.GetAppSecEvalGroupsArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///             AttackGroup = @var.Attack_group,
+        ///         })));
+        ///         this.EvalAttackGroupAction = evalAttackGroup.Apply(evalAttackGroup =&gt; evalAttackGroup.AttackGroupAction);
+        ///         this.ConditionException = evalAttackGroup.Apply(evalAttackGroup =&gt; evalAttackGroup.ConditionException);
+        ///         this.Json = evalAttackGroup.Apply(evalAttackGroup =&gt; evalAttackGroup.Json);
+        ///         this.OutputText = evalAttackGroup.Apply(evalAttackGroup =&gt; evalAttackGroup.OutputText);
+        ///     }
+        /// 
+        ///     [Output("evalAttackGroupAction")]
+        ///     public Output&lt;string&gt; EvalAttackGroupAction { get; set; }
+        ///     [Output("conditionException")]
+        ///     public Output&lt;string&gt; ConditionException { get; set; }
+        ///     [Output("json")]
+        ///     public Output&lt;string&gt; Json { get; set; }
+        ///     [Output("outputText")]
+        ///     public Output&lt;string&gt; OutputText { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecEvalGroupsResult> Invoke(GetAppSecEvalGroupsInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecEvalGroupsResult>("akamai:index/getAppSecEvalGroups:getAppSecEvalGroups", args ?? new GetAppSecEvalGroupsInvokeArgs(), options.WithVersion());
     }
 
 
@@ -85,6 +137,31 @@ namespace Pulumi.Akamai
         public string SecurityPolicyId { get; set; } = null!;
 
         public GetAppSecEvalGroupsArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecEvalGroupsInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The ID of the eval attack group to use.
+        /// </summary>
+        [Input("attackGroup")]
+        public Input<string>? AttackGroup { get; set; }
+
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        /// <summary>
+        /// The ID of the security policy to use.
+        /// </summary>
+        [Input("securityPolicyId", required: true)]
+        public Input<string> SecurityPolicyId { get; set; } = null!;
+
+        public GetAppSecEvalGroupsInvokeArgs()
         {
         }
     }

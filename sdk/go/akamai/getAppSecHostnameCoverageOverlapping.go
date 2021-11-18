@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,7 +26,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.GetAppSecHostnameCoverageOverlapping(ctx, &akamai.GetAppSecHostnameCoverageOverlappingArgs{
+// 		_, err := akamai.GetAppSecHostnameCoverageOverlapping(ctx, &GetAppSecHostnameCoverageOverlappingArgs{
 // 			ConfigId: 43253,
 // 			Hostname: "example.com",
 // 		}, nil)
@@ -61,4 +64,67 @@ type GetAppSecHostnameCoverageOverlappingResult struct {
 	Json string `pulumi:"json"`
 	// A tabular display of the overlap information.
 	OutputText string `pulumi:"outputText"`
+}
+
+func GetAppSecHostnameCoverageOverlappingOutput(ctx *pulumi.Context, args GetAppSecHostnameCoverageOverlappingOutputArgs, opts ...pulumi.InvokeOption) GetAppSecHostnameCoverageOverlappingResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetAppSecHostnameCoverageOverlappingResult, error) {
+			args := v.(GetAppSecHostnameCoverageOverlappingArgs)
+			r, err := GetAppSecHostnameCoverageOverlapping(ctx, &args, opts...)
+			return *r, err
+		}).(GetAppSecHostnameCoverageOverlappingResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecHostnameCoverageOverlapping.
+type GetAppSecHostnameCoverageOverlappingOutputArgs struct {
+	// The configuration ID.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The hostname for which to retrieve information.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+}
+
+func (GetAppSecHostnameCoverageOverlappingOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecHostnameCoverageOverlappingArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecHostnameCoverageOverlapping.
+type GetAppSecHostnameCoverageOverlappingResultOutput struct{ *pulumi.OutputState }
+
+func (GetAppSecHostnameCoverageOverlappingResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecHostnameCoverageOverlappingResult)(nil)).Elem()
+}
+
+func (o GetAppSecHostnameCoverageOverlappingResultOutput) ToGetAppSecHostnameCoverageOverlappingResultOutput() GetAppSecHostnameCoverageOverlappingResultOutput {
+	return o
+}
+
+func (o GetAppSecHostnameCoverageOverlappingResultOutput) ToGetAppSecHostnameCoverageOverlappingResultOutputWithContext(ctx context.Context) GetAppSecHostnameCoverageOverlappingResultOutput {
+	return o
+}
+
+func (o GetAppSecHostnameCoverageOverlappingResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAppSecHostnameCoverageOverlappingResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+func (o GetAppSecHostnameCoverageOverlappingResultOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecHostnameCoverageOverlappingResult) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetAppSecHostnameCoverageOverlappingResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecHostnameCoverageOverlappingResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted list of the overlap information.
+func (o GetAppSecHostnameCoverageOverlappingResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecHostnameCoverageOverlappingResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display of the overlap information.
+func (o GetAppSecHostnameCoverageOverlappingResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecHostnameCoverageOverlappingResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetAppSecHostnameCoverageOverlappingResultOutput{})
 }

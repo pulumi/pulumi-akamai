@@ -12,6 +12,7 @@ __all__ = [
     'GetContractResult',
     'AwaitableGetContractResult',
     'get_contract',
+    'get_contract_output',
 ]
 
 @pulumi.output_type
@@ -78,7 +79,7 @@ def get_contract(group: Optional[str] = None,
                  group_name: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetContractResult:
     """
-    Use the `getContract` data source to find a contract ID.
+    Use the `get_contract` data source to find a contract ID.
 
     ## Argument reference
 
@@ -106,3 +107,25 @@ def get_contract(group: Optional[str] = None,
         group_id=__ret__.group_id,
         group_name=__ret__.group_name,
         id=__ret__.id)
+
+
+@_utilities.lift_output_func(get_contract)
+def get_contract_output(group: Optional[pulumi.Input[Optional[str]]] = None,
+                        group_id: Optional[pulumi.Input[Optional[str]]] = None,
+                        group_name: Optional[pulumi.Input[Optional[str]]] = None,
+                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetContractResult]:
+    """
+    Use the `get_contract` data source to find a contract ID.
+
+    ## Argument reference
+
+    This data source requires one of these group arguments to return contract information:
+      * `group_name` - The name of the group containing the contract.
+      * `group_id` - The unique ID of the group containing the contract, including the  `grp_` prefix.
+      * `group` - (Deprecated) Either the group ID or the group name that includes the contract. You can't use this argument with `group_id` and `group_name`.
+
+    ## Attributes reference
+
+    * `id` - The contract's unique ID, including the `ctr_` prefix.
+    """
+    ...

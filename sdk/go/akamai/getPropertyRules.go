@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -72,4 +75,73 @@ type GetPropertyRulesResult struct {
 	PropertyId string `pulumi:"propertyId"`
 	Rules      string `pulumi:"rules"`
 	Version    int    `pulumi:"version"`
+}
+
+func GetPropertyRulesOutput(ctx *pulumi.Context, args GetPropertyRulesOutputArgs, opts ...pulumi.InvokeOption) GetPropertyRulesResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetPropertyRulesResult, error) {
+			args := v.(GetPropertyRulesArgs)
+			r, err := GetPropertyRules(ctx, &args, opts...)
+			return *r, err
+		}).(GetPropertyRulesResultOutput)
+}
+
+// A collection of arguments for invoking getPropertyRules.
+type GetPropertyRulesOutputArgs struct {
+	ContractId pulumi.StringPtrInput `pulumi:"contractId"`
+	GroupId    pulumi.StringPtrInput `pulumi:"groupId"`
+	PropertyId pulumi.StringInput    `pulumi:"propertyId"`
+	Version    pulumi.IntPtrInput    `pulumi:"version"`
+}
+
+func (GetPropertyRulesOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyRulesArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getPropertyRules.
+type GetPropertyRulesResultOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyRulesResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyRulesResult)(nil)).Elem()
+}
+
+func (o GetPropertyRulesResultOutput) ToGetPropertyRulesResultOutput() GetPropertyRulesResultOutput {
+	return o
+}
+
+func (o GetPropertyRulesResultOutput) ToGetPropertyRulesResultOutputWithContext(ctx context.Context) GetPropertyRulesResultOutput {
+	return o
+}
+
+func (o GetPropertyRulesResultOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyRulesResult) string { return v.ContractId }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyRulesResultOutput) Errors() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyRulesResult) string { return v.Errors }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyRulesResultOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyRulesResult) string { return v.GroupId }).(pulumi.StringOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetPropertyRulesResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyRulesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyRulesResultOutput) PropertyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyRulesResult) string { return v.PropertyId }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyRulesResultOutput) Rules() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyRulesResult) string { return v.Rules }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyRulesResultOutput) Version() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPropertyRulesResult) int { return v.Version }).(pulumi.IntOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetPropertyRulesResultOutput{})
 }

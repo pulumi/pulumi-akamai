@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecWafModeResult',
     'AwaitableGetAppSecWafModeResult',
     'get_app_sec_waf_mode',
+    'get_app_sec_waf_mode_output',
 ]
 
 @pulumi.output_type
@@ -194,3 +195,37 @@ def get_app_sec_waf_mode(config_id: Optional[int] = None,
         mode=__ret__.mode,
         output_text=__ret__.output_text,
         security_policy_id=__ret__.security_policy_id)
+
+
+@_utilities.lift_output_func(get_app_sec_waf_mode)
+def get_app_sec_waf_mode_output(config_id: Optional[pulumi.Input[int]] = None,
+                                security_policy_id: Optional[pulumi.Input[str]] = None,
+                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecWafModeResult]:
+    """
+    Use the `AppSecWafMode` data source to retrieve the mode that indicates how the WAF rules of the given security configuration and security policy will be updated.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    waf_mode = akamai.get_app_sec_waf_mode(config_id=configuration.config_id,
+        security_policy_id=var["policy_id"])
+    pulumi.export("wafModeMode", waf_mode.mode)
+    pulumi.export("wafModeCurrentRuleset", waf_mode.current_ruleset)
+    pulumi.export("wafModeEvalStatus", waf_mode.eval_status)
+    pulumi.export("wafModeEvalRuleset", waf_mode.eval_ruleset)
+    pulumi.export("wafModeEvalExpirationDate", waf_mode.eval_expiration_date)
+    pulumi.export("wafModeText", waf_mode.output_text)
+    pulumi.export("wafModeJson", waf_mode.json)
+    ```
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param str security_policy_id: The ID of the security policy to use.
+    """
+    ...

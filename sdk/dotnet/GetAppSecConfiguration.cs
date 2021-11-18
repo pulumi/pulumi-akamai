@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -58,6 +59,54 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecConfigurationResult> InvokeAsync(GetAppSecConfigurationArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecConfigurationResult>("akamai:index/getAppSecConfiguration:getAppSecConfiguration", args ?? new GetAppSecConfigurationArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.AppSecConfiguration` data source to retrieve the list of security configurations, or information about a specific security configuration.
+        /// 
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configurations = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync());
+        ///         this.ConfigurationList = configurations.Apply(configurations =&gt; configurations.OutputText);
+        ///         var specificConfiguration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = "Akamai Tools",
+        ///         }));
+        ///         this.Latest = specificConfiguration.Apply(specificConfiguration =&gt; specificConfiguration.LatestVersion);
+        ///         this.Staging = specificConfiguration.Apply(specificConfiguration =&gt; specificConfiguration.StagingVersion);
+        ///         this.Production = specificConfiguration.Apply(specificConfiguration =&gt; specificConfiguration.ProductionVersion);
+        ///         this.Id = specificConfiguration.Apply(specificConfiguration =&gt; specificConfiguration.ConfigId);
+        ///     }
+        /// 
+        ///     [Output("configurationList")]
+        ///     public Output&lt;string&gt; ConfigurationList { get; set; }
+        ///     [Output("latest")]
+        ///     public Output&lt;string&gt; Latest { get; set; }
+        ///     [Output("staging")]
+        ///     public Output&lt;string&gt; Staging { get; set; }
+        ///     [Output("production")]
+        ///     public Output&lt;string&gt; Production { get; set; }
+        ///     [Output("id")]
+        ///     public Output&lt;string&gt; Id { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecConfigurationResult> Invoke(GetAppSecConfigurationInvokeArgs? args = null, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecConfigurationResult>("akamai:index/getAppSecConfiguration:getAppSecConfiguration", args ?? new GetAppSecConfigurationInvokeArgs(), options.WithVersion());
     }
 
 
@@ -70,6 +119,19 @@ namespace Pulumi.Akamai
         public string? Name { get; set; }
 
         public GetAppSecConfigurationArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecConfigurationInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The name of a specific security configuration. If not supplied, information about all security configurations is returned.
+        /// </summary>
+        [Input("name")]
+        public Input<string>? Name { get; set; }
+
+        public GetAppSecConfigurationInvokeArgs()
         {
         }
     }

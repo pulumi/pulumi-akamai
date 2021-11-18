@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecCustomRulesResult',
     'AwaitableGetAppSecCustomRulesResult',
     'get_app_sec_custom_rules',
+    'get_app_sec_custom_rules_output',
 ]
 
 @pulumi.output_type
@@ -88,7 +89,7 @@ def get_app_sec_custom_rules(config_id: Optional[int] = None,
                              custom_rule_id: Optional[int] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecCustomRulesResult:
     """
-    Use the `getAppSecCustomRules` data source to retrieve a list of the custom rules defined for a security configuration.
+    Use the `get_app_sec_custom_rules` data source to retrieve a list of the custom rules defined for a security configuration.
 
     ## Example Usage
 
@@ -127,3 +128,35 @@ def get_app_sec_custom_rules(config_id: Optional[int] = None,
         id=__ret__.id,
         json=__ret__.json,
         output_text=__ret__.output_text)
+
+
+@_utilities.lift_output_func(get_app_sec_custom_rules)
+def get_app_sec_custom_rules_output(config_id: Optional[pulumi.Input[int]] = None,
+                                    custom_rule_id: Optional[pulumi.Input[Optional[int]]] = None,
+                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecCustomRulesResult]:
+    """
+    Use the `get_app_sec_custom_rules` data source to retrieve a list of the custom rules defined for a security configuration.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    custom_rules = akamai.get_app_sec_custom_rules(config_id=configuration.config_id)
+    pulumi.export("customRulesOutputText", custom_rules.output_text)
+    pulumi.export("customRulesJson", custom_rules.json)
+    pulumi.export("customRulesConfigId", custom_rules.config_id)
+    specific_custom_rule = akamai.get_app_sec_custom_rules(config_id=configuration.config_id,
+        custom_rule_id=var["custom_rule_id"])
+    pulumi.export("specificCustomRuleJson", specific_custom_rule.json)
+    ```
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param int custom_rule_id: The ID of a specific custom rule to use. If not supplied, information about all custom rules associated with the given security configuration will be returned.
+    """
+    ...

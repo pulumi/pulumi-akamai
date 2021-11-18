@@ -28,7 +28,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
@@ -194,7 +194,7 @@ type AppSecVersionNodesArrayInput interface {
 type AppSecVersionNodesArray []AppSecVersionNodesInput
 
 func (AppSecVersionNodesArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecVersionNodes)(nil))
+	return reflect.TypeOf((*[]*AppSecVersionNodes)(nil)).Elem()
 }
 
 func (i AppSecVersionNodesArray) ToAppSecVersionNodesArrayOutput() AppSecVersionNodesArrayOutput {
@@ -219,7 +219,7 @@ type AppSecVersionNodesMapInput interface {
 type AppSecVersionNodesMap map[string]AppSecVersionNodesInput
 
 func (AppSecVersionNodesMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecVersionNodes)(nil))
+	return reflect.TypeOf((*map[string]*AppSecVersionNodes)(nil)).Elem()
 }
 
 func (i AppSecVersionNodesMap) ToAppSecVersionNodesMapOutput() AppSecVersionNodesMapOutput {
@@ -230,9 +230,7 @@ func (i AppSecVersionNodesMap) ToAppSecVersionNodesMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecVersionNodesMapOutput)
 }
 
-type AppSecVersionNodesOutput struct {
-	*pulumi.OutputState
-}
+type AppSecVersionNodesOutput struct{ *pulumi.OutputState }
 
 func (AppSecVersionNodesOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecVersionNodes)(nil))
@@ -251,14 +249,12 @@ func (o AppSecVersionNodesOutput) ToAppSecVersionNodesPtrOutput() AppSecVersionN
 }
 
 func (o AppSecVersionNodesOutput) ToAppSecVersionNodesPtrOutputWithContext(ctx context.Context) AppSecVersionNodesPtrOutput {
-	return o.ApplyT(func(v AppSecVersionNodes) *AppSecVersionNodes {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecVersionNodes) *AppSecVersionNodes {
 		return &v
 	}).(AppSecVersionNodesPtrOutput)
 }
 
-type AppSecVersionNodesPtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecVersionNodesPtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecVersionNodesPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecVersionNodes)(nil))
@@ -270,6 +266,16 @@ func (o AppSecVersionNodesPtrOutput) ToAppSecVersionNodesPtrOutput() AppSecVersi
 
 func (o AppSecVersionNodesPtrOutput) ToAppSecVersionNodesPtrOutputWithContext(ctx context.Context) AppSecVersionNodesPtrOutput {
 	return o
+}
+
+func (o AppSecVersionNodesPtrOutput) Elem() AppSecVersionNodesOutput {
+	return o.ApplyT(func(v *AppSecVersionNodes) AppSecVersionNodes {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecVersionNodes
+		return ret
+	}).(AppSecVersionNodesOutput)
 }
 
 type AppSecVersionNodesArrayOutput struct{ *pulumi.OutputState }
@@ -313,6 +319,10 @@ func (o AppSecVersionNodesMapOutput) MapIndex(k pulumi.StringInput) AppSecVersio
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecVersionNodesInput)(nil)).Elem(), &AppSecVersionNodes{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecVersionNodesPtrInput)(nil)).Elem(), &AppSecVersionNodes{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecVersionNodesArrayInput)(nil)).Elem(), AppSecVersionNodesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecVersionNodesMapInput)(nil)).Elem(), AppSecVersionNodesMap{})
 	pulumi.RegisterOutputType(AppSecVersionNodesOutput{})
 	pulumi.RegisterOutputType(AppSecVersionNodesPtrOutput{})
 	pulumi.RegisterOutputType(AppSecVersionNodesArrayOutput{})

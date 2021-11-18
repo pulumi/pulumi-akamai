@@ -347,7 +347,7 @@ type GtmDomainArrayInput interface {
 type GtmDomainArray []GtmDomainInput
 
 func (GtmDomainArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*GtmDomain)(nil))
+	return reflect.TypeOf((*[]*GtmDomain)(nil)).Elem()
 }
 
 func (i GtmDomainArray) ToGtmDomainArrayOutput() GtmDomainArrayOutput {
@@ -372,7 +372,7 @@ type GtmDomainMapInput interface {
 type GtmDomainMap map[string]GtmDomainInput
 
 func (GtmDomainMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*GtmDomain)(nil))
+	return reflect.TypeOf((*map[string]*GtmDomain)(nil)).Elem()
 }
 
 func (i GtmDomainMap) ToGtmDomainMapOutput() GtmDomainMapOutput {
@@ -383,9 +383,7 @@ func (i GtmDomainMap) ToGtmDomainMapOutputWithContext(ctx context.Context) GtmDo
 	return pulumi.ToOutputWithContext(ctx, i).(GtmDomainMapOutput)
 }
 
-type GtmDomainOutput struct {
-	*pulumi.OutputState
-}
+type GtmDomainOutput struct{ *pulumi.OutputState }
 
 func (GtmDomainOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*GtmDomain)(nil))
@@ -404,14 +402,12 @@ func (o GtmDomainOutput) ToGtmDomainPtrOutput() GtmDomainPtrOutput {
 }
 
 func (o GtmDomainOutput) ToGtmDomainPtrOutputWithContext(ctx context.Context) GtmDomainPtrOutput {
-	return o.ApplyT(func(v GtmDomain) *GtmDomain {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmDomain) *GtmDomain {
 		return &v
 	}).(GtmDomainPtrOutput)
 }
 
-type GtmDomainPtrOutput struct {
-	*pulumi.OutputState
-}
+type GtmDomainPtrOutput struct{ *pulumi.OutputState }
 
 func (GtmDomainPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**GtmDomain)(nil))
@@ -423,6 +419,16 @@ func (o GtmDomainPtrOutput) ToGtmDomainPtrOutput() GtmDomainPtrOutput {
 
 func (o GtmDomainPtrOutput) ToGtmDomainPtrOutputWithContext(ctx context.Context) GtmDomainPtrOutput {
 	return o
+}
+
+func (o GtmDomainPtrOutput) Elem() GtmDomainOutput {
+	return o.ApplyT(func(v *GtmDomain) GtmDomain {
+		if v != nil {
+			return *v
+		}
+		var ret GtmDomain
+		return ret
+	}).(GtmDomainOutput)
 }
 
 type GtmDomainArrayOutput struct{ *pulumi.OutputState }
@@ -466,6 +472,10 @@ func (o GtmDomainMapOutput) MapIndex(k pulumi.StringInput) GtmDomainOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmDomainInput)(nil)).Elem(), &GtmDomain{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmDomainPtrInput)(nil)).Elem(), &GtmDomain{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmDomainArrayInput)(nil)).Elem(), GtmDomainArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmDomainMapInput)(nil)).Elem(), GtmDomainMap{})
 	pulumi.RegisterOutputType(GtmDomainOutput{})
 	pulumi.RegisterOutputType(GtmDomainPtrOutput{})
 	pulumi.RegisterOutputType(GtmDomainArrayOutput{})

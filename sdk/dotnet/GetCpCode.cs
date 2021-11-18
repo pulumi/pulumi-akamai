@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -98,6 +99,94 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetCpCodeResult> InvokeAsync(GetCpCodeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetCpCodeResult>("akamai:index/getCpCode:getCpCode", args ?? new GetCpCodeArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.CpCode` data source to retrieve the ID for a content provider (CP) code.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var example = Output.Create(Akamai.GetCpCode.InvokeAsync(new Akamai.GetCpCodeArgs
+        ///         {
+        ///             ContractId = "ctr_1-AB123",
+        ///             GroupId = "grp_123",
+        ///             Name = "my cpcode name",
+        ///         }));
+        ///     }
+        /// 
+        /// }
+        /// ```
+        /// 
+        /// Here's a real-world example that includes other data sources as dependencies:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var groupName = "example group name";
+        ///         var cpcodeName = "My CP code Name";
+        ///         var exampleContract = Output.Create(Akamai.GetContract.InvokeAsync(new Akamai.GetContractArgs
+        ///         {
+        ///             GroupName = groupName,
+        ///         }));
+        ///         var exampleGroup = exampleContract.Apply(exampleContract =&gt; Output.Create(Akamai.GetGroup.InvokeAsync(new Akamai.GetGroupArgs
+        ///         {
+        ///             GroupName = groupName,
+        ///             ContractId = exampleContract.Id,
+        ///         })));
+        ///         var exampleCpCode = Output.Tuple(exampleGroup, exampleContract).Apply(values =&gt;
+        ///         {
+        ///             var exampleGroup = values.Item1;
+        ///             var exampleContract = values.Item2;
+        ///             return Output.Create(Akamai.GetCpCode.InvokeAsync(new Akamai.GetCpCodeArgs
+        ///             {
+        ///                 Name = cpcodeName,
+        ///                 GroupId = exampleGroup.Id,
+        ///                 ContractId = exampleContract.Id,
+        ///             }));
+        ///         });
+        ///     }
+        /// 
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// ## Argument reference
+        /// 
+        /// This data source supports these arguments:
+        /// 
+        /// * `name` - (Required) The name of the CP code.
+        /// * `group_id` - (Required) The group's unique ID, including the `grp_` prefix.
+        /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// 
+        /// ### Deprecated arguments
+        /// * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
+        /// * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
+        /// 
+        /// ## Attributes reference
+        /// 
+        /// This data source returns these attributes:
+        /// 
+        /// * `id` - The ID of the CP code, including the `cpc_` prefix.
+        /// * `product_ids` - An array of product IDs associated with this CP code. Each ID returned includes the `prd_` prefix.
+        /// </summary>
+        public static Output<GetCpCodeResult> Invoke(GetCpCodeInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetCpCodeResult>("akamai:index/getCpCode:getCpCode", args ?? new GetCpCodeInvokeArgs(), options.WithVersion());
     }
 
 
@@ -119,6 +208,28 @@ namespace Pulumi.Akamai
         public string Name { get; set; } = null!;
 
         public GetCpCodeArgs()
+        {
+        }
+    }
+
+    public sealed class GetCpCodeInvokeArgs : Pulumi.InvokeArgs
+    {
+        [Input("contract")]
+        public Input<string>? Contract { get; set; }
+
+        [Input("contractId")]
+        public Input<string>? ContractId { get; set; }
+
+        [Input("group")]
+        public Input<string>? Group { get; set; }
+
+        [Input("groupId")]
+        public Input<string>? GroupId { get; set; }
+
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
+
+        public GetCpCodeInvokeArgs()
         {
         }
     }

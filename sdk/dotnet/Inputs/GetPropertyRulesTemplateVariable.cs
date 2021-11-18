@@ -10,18 +10,18 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class CpsDvEnrollmentDnsChallengeArgs : Pulumi.ResourceArgs
+    public sealed class GetPropertyRulesTemplateVariableArgs : Pulumi.InvokeArgs
     {
-        [Input("domain")]
-        public Input<string>? Domain { get; set; }
+        [Input("name", required: true)]
+        public string Name { get; set; } = null!;
 
-        [Input("fullPath")]
-        public Input<string>? FullPath { get; set; }
+        [Input("type")]
+        public string? Type { get; set; }
 
-        [Input("responseBody")]
-        public Input<string>? ResponseBody { get; set; }
+        [Input("value", required: true)]
+        public string Value { get; set; } = null!;
 
-        public CpsDvEnrollmentDnsChallengeArgs()
+        public GetPropertyRulesTemplateVariableArgs()
         {
         }
     }

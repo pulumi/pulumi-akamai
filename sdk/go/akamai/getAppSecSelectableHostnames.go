@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,14 +27,14 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
 // 		opt1 := configuration.ConfigId
-// 		selectableHostnamesAppSecSelectableHostnames, err := akamai.GetAppSecSelectableHostnames(ctx, &akamai.GetAppSecSelectableHostnamesArgs{
+// 		selectableHostnamesAppSecSelectableHostnames, err := akamai.GetAppSecSelectableHostnames(ctx, &GetAppSecSelectableHostnamesArgs{
 // 			ConfigId: &opt1,
 // 		}, nil)
 // 		if err != nil {
@@ -42,7 +45,7 @@ import (
 // 		ctx.Export("selectableHostnamesOutputText", selectableHostnamesAppSecSelectableHostnames.OutputText)
 // 		opt2 := _var.Contractid
 // 		opt3 := _var.Groupid
-// 		selectableHostnamesForCreateConfigurationAppSecSelectableHostnames, err := akamai.GetAppSecSelectableHostnames(ctx, &akamai.GetAppSecSelectableHostnamesArgs{
+// 		selectableHostnamesForCreateConfigurationAppSecSelectableHostnames, err := akamai.GetAppSecSelectableHostnames(ctx, &GetAppSecSelectableHostnamesArgs{
 // 			Contractid: &opt2,
 // 			Groupid:    &opt3,
 // 		}, nil)
@@ -92,4 +95,88 @@ type GetAppSecSelectableHostnamesResult struct {
 	Id string `pulumi:"id"`
 	// A tabular display of the selectable hostnames showing the name and configId of the security configuration under which the host is protected in production, or '-' if the host is not protected in production.
 	OutputText string `pulumi:"outputText"`
+}
+
+func GetAppSecSelectableHostnamesOutput(ctx *pulumi.Context, args GetAppSecSelectableHostnamesOutputArgs, opts ...pulumi.InvokeOption) GetAppSecSelectableHostnamesResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetAppSecSelectableHostnamesResult, error) {
+			args := v.(GetAppSecSelectableHostnamesArgs)
+			r, err := GetAppSecSelectableHostnames(ctx, &args, opts...)
+			return *r, err
+		}).(GetAppSecSelectableHostnamesResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecSelectableHostnames.
+type GetAppSecSelectableHostnamesOutputArgs struct {
+	ActiveInProduction pulumi.BoolPtrInput `pulumi:"activeInProduction"`
+	ActiveInStaging    pulumi.BoolPtrInput `pulumi:"activeInStaging"`
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntPtrInput `pulumi:"configId"`
+	// The ID of the contract to use.
+	Contractid pulumi.StringPtrInput `pulumi:"contractid"`
+	// The ID of the group to use.
+	Groupid pulumi.IntPtrInput `pulumi:"groupid"`
+}
+
+func (GetAppSecSelectableHostnamesOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecSelectableHostnamesArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecSelectableHostnames.
+type GetAppSecSelectableHostnamesResultOutput struct{ *pulumi.OutputState }
+
+func (GetAppSecSelectableHostnamesResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecSelectableHostnamesResult)(nil)).Elem()
+}
+
+func (o GetAppSecSelectableHostnamesResultOutput) ToGetAppSecSelectableHostnamesResultOutput() GetAppSecSelectableHostnamesResultOutput {
+	return o
+}
+
+func (o GetAppSecSelectableHostnamesResultOutput) ToGetAppSecSelectableHostnamesResultOutputWithContext(ctx context.Context) GetAppSecSelectableHostnamesResultOutput {
+	return o
+}
+
+func (o GetAppSecSelectableHostnamesResultOutput) ActiveInProduction() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAppSecSelectableHostnamesResult) *bool { return v.ActiveInProduction }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAppSecSelectableHostnamesResultOutput) ActiveInStaging() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAppSecSelectableHostnamesResult) *bool { return v.ActiveInStaging }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAppSecSelectableHostnamesResultOutput) ConfigId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAppSecSelectableHostnamesResult) *int { return v.ConfigId }).(pulumi.IntPtrOutput)
+}
+
+func (o GetAppSecSelectableHostnamesResultOutput) Contractid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppSecSelectableHostnamesResult) *string { return v.Contractid }).(pulumi.StringPtrOutput)
+}
+
+func (o GetAppSecSelectableHostnamesResultOutput) Groupid() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAppSecSelectableHostnamesResult) *int { return v.Groupid }).(pulumi.IntPtrOutput)
+}
+
+// The list of selectable hostnames.
+func (o GetAppSecSelectableHostnamesResultOutput) Hostnames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAppSecSelectableHostnamesResult) []string { return v.Hostnames }).(pulumi.StringArrayOutput)
+}
+
+// The list of selectable hostnames in json format.
+func (o GetAppSecSelectableHostnamesResultOutput) HostnamesJson() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecSelectableHostnamesResult) string { return v.HostnamesJson }).(pulumi.StringOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetAppSecSelectableHostnamesResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecSelectableHostnamesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A tabular display of the selectable hostnames showing the name and configId of the security configuration under which the host is protected in production, or '-' if the host is not protected in production.
+func (o GetAppSecSelectableHostnamesResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecSelectableHostnamesResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetAppSecSelectableHostnamesResultOutput{})
 }

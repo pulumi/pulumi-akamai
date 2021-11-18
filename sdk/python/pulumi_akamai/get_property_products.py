@@ -13,6 +13,7 @@ __all__ = [
     'GetPropertyProductsResult',
     'AwaitableGetPropertyProductsResult',
     'get_property_products',
+    'get_property_products_output',
 ]
 
 @pulumi.output_type
@@ -64,7 +65,7 @@ class AwaitableGetPropertyProductsResult(GetPropertyProductsResult):
 def get_property_products(contract_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyProductsResult:
     """
-    Use the `getPropertyProducts` data source to list the products included on a contract.
+    Use the `get_property_products` data source to list the products included on a contract.
 
     ## Example Usage
 
@@ -101,3 +102,35 @@ def get_property_products(contract_id: Optional[str] = None,
         contract_id=__ret__.contract_id,
         id=__ret__.id,
         products=__ret__.products)
+
+
+@_utilities.lift_output_func(get_property_products)
+def get_property_products_output(contract_id: Optional[pulumi.Input[str]] = None,
+                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyProductsResult]:
+    """
+    Use the `get_property_products` data source to list the products included on a contract.
+
+    ## Example Usage
+
+    This example returns products associated with the [EdgeGrid client token](https://developer.akamai.com/getting-started/edgegrid) for a given contract:
+
+    ```python
+    import pulumi
+
+    pulumi.export("propertyMatch", data["akamai_property_products"]["my-example"])
+    ```
+    ## Argument reference
+
+    This data source supports this argument:
+
+    * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
+
+    ## Attributes reference
+
+    This data source returns these attributes:
+
+    * `products` - A list of supported products for the contract, including:
+      * `product_id` - The product's unique ID, including the `prd_` prefix.
+      * `product_name` - A string containing the product name.
+    """
+    ...

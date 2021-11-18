@@ -12,6 +12,7 @@ __all__ = [
     'GetGroupResult',
     'AwaitableGetGroupResult',
     'get_group',
+    'get_group_output',
 ]
 
 @pulumi.output_type
@@ -92,7 +93,7 @@ def get_group(contract: Optional[str] = None,
               name: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGroupResult:
     """
-    Use the `getGroup` data source to get a group by name.
+    Use the `get_group` data source to get a group by name.
 
     Each account features a hierarchy of groups, which control access to your
     Akamai configurations and help consolidate reporting functions, typically
@@ -135,3 +136,39 @@ def get_group(contract: Optional[str] = None,
         group_name=__ret__.group_name,
         id=__ret__.id,
         name=__ret__.name)
+
+
+@_utilities.lift_output_func(get_group)
+def get_group_output(contract: Optional[pulumi.Input[Optional[str]]] = None,
+                     contract_id: Optional[pulumi.Input[Optional[str]]] = None,
+                     group_name: Optional[pulumi.Input[Optional[str]]] = None,
+                     name: Optional[pulumi.Input[Optional[str]]] = None,
+                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGroupResult]:
+    """
+    Use the `get_group` data source to get a group by name.
+
+    Each account features a hierarchy of groups, which control access to your
+    Akamai configurations and help consolidate reporting functions, typically
+    mapping to an organizational hierarchy. Using either Control Center or the
+    [Identity Management: User Administration API](https://developer.akamai.com/en-us/api/core_features/identity_management_user_admin/v2.html),
+    account administrators can assign properties to specific groups, each with
+    its own set of users and accompanying roles.
+
+    ## Argument reference
+
+    This data source supports these arguments:
+
+    * `group_name` - (Required) The group name.
+    * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
+
+    ### Deprecated arguments
+    * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
+    * `name` -  (Deprecated) Replaced by `group_name`. Maintained for legacy purposes.
+
+    ## Attributes reference
+
+    This data source returns this attribute:
+
+    * `id` - The group's unique ID, including the `grp_` prefix.
+    """
+    ...

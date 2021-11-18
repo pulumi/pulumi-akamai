@@ -28,7 +28,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
@@ -207,7 +207,7 @@ type AppSecWafProtectionArrayInput interface {
 type AppSecWafProtectionArray []AppSecWafProtectionInput
 
 func (AppSecWafProtectionArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecWafProtection)(nil))
+	return reflect.TypeOf((*[]*AppSecWafProtection)(nil)).Elem()
 }
 
 func (i AppSecWafProtectionArray) ToAppSecWafProtectionArrayOutput() AppSecWafProtectionArrayOutput {
@@ -232,7 +232,7 @@ type AppSecWafProtectionMapInput interface {
 type AppSecWafProtectionMap map[string]AppSecWafProtectionInput
 
 func (AppSecWafProtectionMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecWafProtection)(nil))
+	return reflect.TypeOf((*map[string]*AppSecWafProtection)(nil)).Elem()
 }
 
 func (i AppSecWafProtectionMap) ToAppSecWafProtectionMapOutput() AppSecWafProtectionMapOutput {
@@ -243,9 +243,7 @@ func (i AppSecWafProtectionMap) ToAppSecWafProtectionMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecWafProtectionMapOutput)
 }
 
-type AppSecWafProtectionOutput struct {
-	*pulumi.OutputState
-}
+type AppSecWafProtectionOutput struct{ *pulumi.OutputState }
 
 func (AppSecWafProtectionOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecWafProtection)(nil))
@@ -264,14 +262,12 @@ func (o AppSecWafProtectionOutput) ToAppSecWafProtectionPtrOutput() AppSecWafPro
 }
 
 func (o AppSecWafProtectionOutput) ToAppSecWafProtectionPtrOutputWithContext(ctx context.Context) AppSecWafProtectionPtrOutput {
-	return o.ApplyT(func(v AppSecWafProtection) *AppSecWafProtection {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecWafProtection) *AppSecWafProtection {
 		return &v
 	}).(AppSecWafProtectionPtrOutput)
 }
 
-type AppSecWafProtectionPtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecWafProtectionPtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecWafProtectionPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecWafProtection)(nil))
@@ -283,6 +279,16 @@ func (o AppSecWafProtectionPtrOutput) ToAppSecWafProtectionPtrOutput() AppSecWaf
 
 func (o AppSecWafProtectionPtrOutput) ToAppSecWafProtectionPtrOutputWithContext(ctx context.Context) AppSecWafProtectionPtrOutput {
 	return o
+}
+
+func (o AppSecWafProtectionPtrOutput) Elem() AppSecWafProtectionOutput {
+	return o.ApplyT(func(v *AppSecWafProtection) AppSecWafProtection {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecWafProtection
+		return ret
+	}).(AppSecWafProtectionOutput)
 }
 
 type AppSecWafProtectionArrayOutput struct{ *pulumi.OutputState }
@@ -326,6 +332,10 @@ func (o AppSecWafProtectionMapOutput) MapIndex(k pulumi.StringInput) AppSecWafPr
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecWafProtectionInput)(nil)).Elem(), &AppSecWafProtection{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecWafProtectionPtrInput)(nil)).Elem(), &AppSecWafProtection{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecWafProtectionArrayInput)(nil)).Elem(), AppSecWafProtectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecWafProtectionMapInput)(nil)).Elem(), AppSecWafProtectionMap{})
 	pulumi.RegisterOutputType(AppSecWafProtectionOutput{})
 	pulumi.RegisterOutputType(AppSecWafProtectionPtrOutput{})
 	pulumi.RegisterOutputType(AppSecWafProtectionArrayOutput{})

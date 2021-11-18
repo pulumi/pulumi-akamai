@@ -4,6 +4,9 @@
 package properties
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -30,4 +33,59 @@ type LookupPropertyResult struct {
 	Name    string `pulumi:"name"`
 	Rules   string `pulumi:"rules"`
 	Version *int   `pulumi:"version"`
+}
+
+func LookupPropertyOutput(ctx *pulumi.Context, args LookupPropertyOutputArgs, opts ...pulumi.InvokeOption) LookupPropertyResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (LookupPropertyResult, error) {
+			args := v.(LookupPropertyArgs)
+			r, err := LookupProperty(ctx, &args, opts...)
+			return *r, err
+		}).(LookupPropertyResultOutput)
+}
+
+// A collection of arguments for invoking getProperty.
+type LookupPropertyOutputArgs struct {
+	Name    pulumi.StringInput `pulumi:"name"`
+	Version pulumi.IntPtrInput `pulumi:"version"`
+}
+
+func (LookupPropertyOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupPropertyArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getProperty.
+type LookupPropertyResultOutput struct{ *pulumi.OutputState }
+
+func (LookupPropertyResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupPropertyResult)(nil)).Elem()
+}
+
+func (o LookupPropertyResultOutput) ToLookupPropertyResultOutput() LookupPropertyResultOutput {
+	return o
+}
+
+func (o LookupPropertyResultOutput) ToLookupPropertyResultOutputWithContext(ctx context.Context) LookupPropertyResultOutput {
+	return o
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o LookupPropertyResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPropertyResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupPropertyResultOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPropertyResult) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o LookupPropertyResultOutput) Rules() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPropertyResult) string { return v.Rules }).(pulumi.StringOutput)
+}
+
+func (o LookupPropertyResultOutput) Version() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupPropertyResult) *int { return v.Version }).(pulumi.IntPtrOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(LookupPropertyResultOutput{})
 }

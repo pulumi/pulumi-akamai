@@ -12,6 +12,7 @@ __all__ = [
     'GetGtmDefaultDatacenterResult',
     'AwaitableGetGtmDefaultDatacenterResult',
     'get_gtm_default_datacenter',
+    'get_gtm_default_datacenter_output',
 ]
 
 @pulumi.output_type
@@ -82,7 +83,7 @@ def get_gtm_default_datacenter(datacenter: Optional[int] = None,
                                domain: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGtmDefaultDatacenterResult:
     """
-    Use the `getGtmDefaultDatacenter` data source to retrieve the default data center, ID, and nickname.
+    Use the `get_gtm_default_datacenter` data source to retrieve the default data center, ID, and nickname.
 
     ## Argument reference
 
@@ -114,3 +115,28 @@ def get_gtm_default_datacenter(datacenter: Optional[int] = None,
         domain=__ret__.domain,
         id=__ret__.id,
         nickname=__ret__.nickname)
+
+
+@_utilities.lift_output_func(get_gtm_default_datacenter)
+def get_gtm_default_datacenter_output(datacenter: Optional[pulumi.Input[Optional[int]]] = None,
+                                      domain: Optional[pulumi.Input[str]] = None,
+                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGtmDefaultDatacenterResult]:
+    """
+    Use the `get_gtm_default_datacenter` data source to retrieve the default data center, ID, and nickname.
+
+    ## Argument reference
+
+    This data source supports these arguments:
+
+    * `domain` - (Required)
+    * `datacenter` - (Optional) The default is `5400`.
+
+    ## Attributes reference
+
+    This data source supports these attributes:
+
+    * `id` - The data resource ID. Enter in this format: `<domain>:default_datacenter:<datacenter_id>`.
+    * `datacenter_id` - The default data center ID.
+    * `nickname` - The default data center nickname.
+    """
+    ...

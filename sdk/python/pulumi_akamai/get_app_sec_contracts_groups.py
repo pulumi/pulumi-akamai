@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecContractsGroupsResult',
     'AwaitableGetAppSecContractsGroupsResult',
     'get_app_sec_contracts_groups',
+    'get_app_sec_contracts_groups_output',
 ]
 
 @pulumi.output_type
@@ -118,7 +119,7 @@ def get_app_sec_contracts_groups(contractid: Optional[str] = None,
                                  groupid: Optional[int] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecContractsGroupsResult:
     """
-    Use the `getAppSecContractsGroups` data source to retrieve information about the contracts and groups for your account. Each object contains the contract, groups associated with the contract, and whether Kona Site Defender or Web Application Protector is the product for that contract. You’ll need this information when you create a new security configuration or when you want to get a list of hostnames still available for use in a security policy. The information available via this data source is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf).
+    Use the `get_app_sec_contracts_groups` data source to retrieve information about the contracts and groups for your account. Each object contains the contract, groups associated with the contract, and whether Kona Site Defender or Web Application Protector is the product for that contract. You’ll need this information when you create a new security configuration or when you want to get a list of hostnames still available for use in a security policy. The information available via this data source is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf).
 
     ## Example Usage
 
@@ -157,3 +158,33 @@ def get_app_sec_contracts_groups(contractid: Optional[str] = None,
         id=__ret__.id,
         json=__ret__.json,
         output_text=__ret__.output_text)
+
+
+@_utilities.lift_output_func(get_app_sec_contracts_groups)
+def get_app_sec_contracts_groups_output(contractid: Optional[pulumi.Input[Optional[str]]] = None,
+                                        groupid: Optional[pulumi.Input[Optional[int]]] = None,
+                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecContractsGroupsResult]:
+    """
+    Use the `get_app_sec_contracts_groups` data source to retrieve information about the contracts and groups for your account. Each object contains the contract, groups associated with the contract, and whether Kona Site Defender or Web Application Protector is the product for that contract. You’ll need this information when you create a new security configuration or when you want to get a list of hostnames still available for use in a security policy. The information available via this data source is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf).
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    contracts_groups = akamai.get_app_sec_contracts_groups(contractid=var["contractid"],
+        groupid=var["groupid"])
+    pulumi.export("contractsGroupsList", contracts_groups.output_text)
+    pulumi.export("contractsGroupsJson", contracts_groups.json)
+    pulumi.export("contractGroupsDefaultContractid", contracts_groups.default_contractid)
+    pulumi.export("contractGroupsDefaultGroupid", contracts_groups.default_groupid)
+    ```
+
+
+    :param str contractid: (Optional) The ID of a contract for which to retrieve information.
+    :param int groupid: (Optional) The ID of a group for which to retrieve information.
+    """
+    ...

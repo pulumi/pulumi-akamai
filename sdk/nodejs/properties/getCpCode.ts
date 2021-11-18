@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /** @deprecated akamai.properties.getCpCode has been deprecated in favor of akamai.getCpCode */
@@ -61,4 +60,25 @@ export interface GetCpCodeResult {
     readonly id: string;
     readonly name: string;
     readonly productIds: string[];
+}
+
+export function getCpCodeOutput(args: GetCpCodeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpCodeResult> {
+    return pulumi.output(args).apply(a => getCpCode(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getCpCode.
+ */
+export interface GetCpCodeOutputArgs {
+    /**
+     * @deprecated The setting "contract" has been deprecated.
+     */
+    contract?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string>;
+    /**
+     * @deprecated The setting "group" has been deprecated.
+     */
+    group?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string>;
+    name: pulumi.Input<string>;
 }

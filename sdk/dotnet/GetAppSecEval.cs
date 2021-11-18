@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -13,6 +14,9 @@ namespace Pulumi.Akamai
     {
         public static Task<GetAppSecEvalResult> InvokeAsync(GetAppSecEvalArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalResult>("akamai:index/getAppSecEval:getAppSecEval", args ?? new GetAppSecEvalArgs(), options.WithVersion());
+
+        public static Output<GetAppSecEvalResult> Invoke(GetAppSecEvalInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecEvalResult>("akamai:index/getAppSecEval:getAppSecEval", args ?? new GetAppSecEvalInvokeArgs(), options.WithVersion());
     }
 
 
@@ -25,6 +29,19 @@ namespace Pulumi.Akamai
         public string SecurityPolicyId { get; set; } = null!;
 
         public GetAppSecEvalArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecEvalInvokeArgs : Pulumi.InvokeArgs
+    {
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        [Input("securityPolicyId", required: true)]
+        public Input<string> SecurityPolicyId { get; set; } = null!;
+
+        public GetAppSecEvalInvokeArgs()
         {
         }
     }

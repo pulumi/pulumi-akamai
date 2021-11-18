@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecRatePolicyActionsResult',
     'AwaitableGetAppSecRatePolicyActionsResult',
     'get_app_sec_rate_policy_actions',
+    'get_app_sec_rate_policy_actions_output',
 ]
 
 @pulumi.output_type
@@ -86,7 +87,7 @@ def get_app_sec_rate_policy_actions(config_id: Optional[int] = None,
                                     security_policy_id: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecRatePolicyActionsResult:
     """
-    Use the `getAppSecRatePolicyActions` data source to retrieve a list of all rate policies associated with a given configuration and security policy, or the actions associated with a specific rate policy.
+    Use the `get_app_sec_rate_policy_actions` data source to retrieve a list of all rate policies associated with a given configuration and security policy, or the actions associated with a specific rate policy.
 
     ## Example Usage
 
@@ -123,3 +124,33 @@ def get_app_sec_rate_policy_actions(config_id: Optional[int] = None,
         output_text=__ret__.output_text,
         rate_policy_id=__ret__.rate_policy_id,
         security_policy_id=__ret__.security_policy_id)
+
+
+@_utilities.lift_output_func(get_app_sec_rate_policy_actions)
+def get_app_sec_rate_policy_actions_output(config_id: Optional[pulumi.Input[int]] = None,
+                                           rate_policy_id: Optional[pulumi.Input[Optional[int]]] = None,
+                                           security_policy_id: Optional[pulumi.Input[str]] = None,
+                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecRatePolicyActionsResult]:
+    """
+    Use the `get_app_sec_rate_policy_actions` data source to retrieve a list of all rate policies associated with a given configuration and security policy, or the actions associated with a specific rate policy.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    rate_policy_actions_app_sec_rate_policy_actions = akamai.get_app_sec_rate_policy_actions(config_id=configuration.config_id,
+        security_policy_id=var["security_policy_id"])
+    pulumi.export("ratePolicyActions", rate_policy_actions_app_sec_rate_policy_actions.output_text)
+    ```
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param int rate_policy_id: The ID of the rate policy to use. If not supplied, information about all rate policies will be returned.
+    :param str security_policy_id: The ID of the security policy to use.
+    """
+    ...

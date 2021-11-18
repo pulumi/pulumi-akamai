@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,13 +27,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		protections, err := akamai.GetAppSecSecurityPolicyProtections(ctx, &akamai.GetAppSecSecurityPolicyProtectionsArgs{
+// 		protections, err := akamai.GetAppSecSecurityPolicyProtections(ctx, &GetAppSecSecurityPolicyProtectionsArgs{
 // 			ConfigId:         configuration.ConfigId,
 // 			SecurityPolicyId: _var.Security_policy_id,
 // 		}, nil)
@@ -90,4 +93,102 @@ type GetAppSecSecurityPolicyProtectionsResult struct {
 	// a tabular display showing the status of the protection settings
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
+}
+
+func GetAppSecSecurityPolicyProtectionsOutput(ctx *pulumi.Context, args GetAppSecSecurityPolicyProtectionsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecSecurityPolicyProtectionsResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetAppSecSecurityPolicyProtectionsResult, error) {
+			args := v.(GetAppSecSecurityPolicyProtectionsArgs)
+			r, err := GetAppSecSecurityPolicyProtections(ctx, &args, opts...)
+			return *r, err
+		}).(GetAppSecSecurityPolicyProtectionsResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecSecurityPolicyProtections.
+type GetAppSecSecurityPolicyProtectionsOutputArgs struct {
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The ID of the security policy to use.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+}
+
+func (GetAppSecSecurityPolicyProtectionsOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecSecurityPolicyProtectionsArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecSecurityPolicyProtections.
+type GetAppSecSecurityPolicyProtectionsResultOutput struct{ *pulumi.OutputState }
+
+func (GetAppSecSecurityPolicyProtectionsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecSecurityPolicyProtectionsResult)(nil)).Elem()
+}
+
+func (o GetAppSecSecurityPolicyProtectionsResultOutput) ToGetAppSecSecurityPolicyProtectionsResultOutput() GetAppSecSecurityPolicyProtectionsResultOutput {
+	return o
+}
+
+func (o GetAppSecSecurityPolicyProtectionsResultOutput) ToGetAppSecSecurityPolicyProtectionsResultOutputWithContext(ctx context.Context) GetAppSecSecurityPolicyProtectionsResultOutput {
+	return o
+}
+
+// `true` or `false`, indicating whether API constraints are in effect.
+func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplyApiConstraints() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) bool { return v.ApplyApiConstraints }).(pulumi.BoolOutput)
+}
+
+// `true` or `false`, indicating whether application layer controls are in effect.
+func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplyApplicationLayerControls() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) bool { return v.ApplyApplicationLayerControls }).(pulumi.BoolOutput)
+}
+
+// `true` or `false`, indicating whether botman controls are in effect.
+func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplyBotmanControls() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) bool { return v.ApplyBotmanControls }).(pulumi.BoolOutput)
+}
+
+// `true` or `false`, indicating whether network layer controls are in effect.
+func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplyNetworkLayerControls() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) bool { return v.ApplyNetworkLayerControls }).(pulumi.BoolOutput)
+}
+
+// `true` or `false`, indicating whether rate controls are in effect.
+func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplyRateControls() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) bool { return v.ApplyRateControls }).(pulumi.BoolOutput)
+}
+
+// `true` or `false`, indicating whether reputation controls are in effect.
+func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplyReputationControls() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) bool { return v.ApplyReputationControls }).(pulumi.BoolOutput)
+}
+
+// `true` or `false`, indicating whether slow post controls are in effect.
+func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplySlowPostControls() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) bool { return v.ApplySlowPostControls }).(pulumi.BoolOutput)
+}
+
+func (o GetAppSecSecurityPolicyProtectionsResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetAppSecSecurityPolicyProtectionsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// a JSON-formatted list showing the status of the protection settings
+func (o GetAppSecSecurityPolicyProtectionsResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// a tabular display showing the status of the protection settings
+func (o GetAppSecSecurityPolicyProtectionsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecSecurityPolicyProtectionsResultOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetAppSecSecurityPolicyProtectionsResultOutput{})
 }

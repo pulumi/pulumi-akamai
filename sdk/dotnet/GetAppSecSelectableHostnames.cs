@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -68,6 +69,64 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecSelectableHostnamesResult> InvokeAsync(GetAppSecSelectableHostnamesArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSelectableHostnamesResult>("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", args ?? new GetAppSecSelectableHostnamesArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.getAppSecSelectableHostnames` data source to retrieve the list of hostnames that may be protected under a given security configuration. You can specify the list to be retrieved either by supplying the name of a security configuration, or by supplying a group ID and contract ID.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = @var.Security_configuration,
+        ///         }));
+        ///         var selectableHostnamesAppSecSelectableHostnames = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSelectableHostnames.InvokeAsync(new Akamai.GetAppSecSelectableHostnamesArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///         })));
+        ///         this.SelectableHostnames = selectableHostnamesAppSecSelectableHostnames.Apply(selectableHostnamesAppSecSelectableHostnames =&gt; selectableHostnamesAppSecSelectableHostnames.Hostnames);
+        ///         this.SelectableHostnamesJson = selectableHostnamesAppSecSelectableHostnames.Apply(selectableHostnamesAppSecSelectableHostnames =&gt; selectableHostnamesAppSecSelectableHostnames.HostnamesJson);
+        ///         this.SelectableHostnamesOutputText = selectableHostnamesAppSecSelectableHostnames.Apply(selectableHostnamesAppSecSelectableHostnames =&gt; selectableHostnamesAppSecSelectableHostnames.OutputText);
+        ///         var selectableHostnamesForCreateConfigurationAppSecSelectableHostnames = Output.Create(Akamai.GetAppSecSelectableHostnames.InvokeAsync(new Akamai.GetAppSecSelectableHostnamesArgs
+        ///         {
+        ///             Contractid = @var.Contractid,
+        ///             Groupid = @var.Groupid,
+        ///         }));
+        ///         this.SelectableHostnamesForCreateConfiguration = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Apply(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames =&gt; selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Hostnames);
+        ///         this.SelectableHostnamesForCreateConfigurationJson = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Apply(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames =&gt; selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.HostnamesJson);
+        ///         this.SelectableHostnamesForCreateConfigurationOutputText = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Apply(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames =&gt; selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.OutputText);
+        ///     }
+        /// 
+        ///     [Output("selectableHostnames")]
+        ///     public Output&lt;string&gt; SelectableHostnames { get; set; }
+        ///     [Output("selectableHostnamesJson")]
+        ///     public Output&lt;string&gt; SelectableHostnamesJson { get; set; }
+        ///     [Output("selectableHostnamesOutputText")]
+        ///     public Output&lt;string&gt; SelectableHostnamesOutputText { get; set; }
+        ///     [Output("selectableHostnamesForCreateConfiguration")]
+        ///     public Output&lt;string&gt; SelectableHostnamesForCreateConfiguration { get; set; }
+        ///     [Output("selectableHostnamesForCreateConfigurationJson")]
+        ///     public Output&lt;string&gt; SelectableHostnamesForCreateConfigurationJson { get; set; }
+        ///     [Output("selectableHostnamesForCreateConfigurationOutputText")]
+        ///     public Output&lt;string&gt; SelectableHostnamesForCreateConfigurationOutputText { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecSelectableHostnamesResult> Invoke(GetAppSecSelectableHostnamesInvokeArgs? args = null, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecSelectableHostnamesResult>("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", args ?? new GetAppSecSelectableHostnamesInvokeArgs(), options.WithVersion());
     }
 
 
@@ -98,6 +157,37 @@ namespace Pulumi.Akamai
         public int? Groupid { get; set; }
 
         public GetAppSecSelectableHostnamesArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecSelectableHostnamesInvokeArgs : Pulumi.InvokeArgs
+    {
+        [Input("activeInProduction")]
+        public Input<bool>? ActiveInProduction { get; set; }
+
+        [Input("activeInStaging")]
+        public Input<bool>? ActiveInStaging { get; set; }
+
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
+        [Input("configId")]
+        public Input<int>? ConfigId { get; set; }
+
+        /// <summary>
+        /// The ID of the contract to use.
+        /// </summary>
+        [Input("contractid")]
+        public Input<string>? Contractid { get; set; }
+
+        /// <summary>
+        /// The ID of the group to use.
+        /// </summary>
+        [Input("groupid")]
+        public Input<int>? Groupid { get; set; }
+
+        public GetAppSecSelectableHostnamesInvokeArgs()
         {
         }
     }

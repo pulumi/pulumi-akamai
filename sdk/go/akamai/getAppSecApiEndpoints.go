@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,7 +27,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := "TestEndpoint"
-// 		_, err := akamai.GetAppSecApiEndpoints(ctx, &akamai.GetAppSecApiEndpointsArgs{
+// 		_, err := akamai.GetAppSecApiEndpoints(ctx, &GetAppSecApiEndpointsArgs{
 // 			ApiName:  &opt0,
 // 			ConfigId: 43253,
 // 		}, nil)
@@ -67,4 +70,78 @@ type GetAppSecApiEndpointsResult struct {
 	// A tabular display showing the ID and name of the API endpoints.
 	OutputText       string  `pulumi:"outputText"`
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
+}
+
+func GetAppSecApiEndpointsOutput(ctx *pulumi.Context, args GetAppSecApiEndpointsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecApiEndpointsResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetAppSecApiEndpointsResult, error) {
+			args := v.(GetAppSecApiEndpointsArgs)
+			r, err := GetAppSecApiEndpoints(ctx, &args, opts...)
+			return *r, err
+		}).(GetAppSecApiEndpointsResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecApiEndpoints.
+type GetAppSecApiEndpointsOutputArgs struct {
+	// The name of a specific endpoint.
+	ApiName pulumi.StringPtrInput `pulumi:"apiName"`
+	// The configuration ID.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The ID of the security policy to use.
+	SecurityPolicyId pulumi.StringPtrInput `pulumi:"securityPolicyId"`
+}
+
+func (GetAppSecApiEndpointsOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecApiEndpointsArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecApiEndpoints.
+type GetAppSecApiEndpointsResultOutput struct{ *pulumi.OutputState }
+
+func (GetAppSecApiEndpointsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecApiEndpointsResult)(nil)).Elem()
+}
+
+func (o GetAppSecApiEndpointsResultOutput) ToGetAppSecApiEndpointsResultOutput() GetAppSecApiEndpointsResultOutput {
+	return o
+}
+
+func (o GetAppSecApiEndpointsResultOutput) ToGetAppSecApiEndpointsResultOutputWithContext(ctx context.Context) GetAppSecApiEndpointsResultOutput {
+	return o
+}
+
+func (o GetAppSecApiEndpointsResultOutput) ApiName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppSecApiEndpointsResult) *string { return v.ApiName }).(pulumi.StringPtrOutput)
+}
+
+func (o GetAppSecApiEndpointsResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAppSecApiEndpointsResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetAppSecApiEndpointsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecApiEndpointsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A list of IDs of the API endpoints.
+func (o GetAppSecApiEndpointsResultOutput) IdLists() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetAppSecApiEndpointsResult) []int { return v.IdLists }).(pulumi.IntArrayOutput)
+}
+
+// A JSON-formatted list of information about the API endpoints.
+func (o GetAppSecApiEndpointsResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecApiEndpointsResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display showing the ID and name of the API endpoints.
+func (o GetAppSecApiEndpointsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecApiEndpointsResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecApiEndpointsResultOutput) SecurityPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppSecApiEndpointsResult) *string { return v.SecurityPolicyId }).(pulumi.StringPtrOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetAppSecApiEndpointsResultOutput{})
 }

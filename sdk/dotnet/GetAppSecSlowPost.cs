@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -49,6 +50,45 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecSlowPostResult> InvokeAsync(GetAppSecSlowPostArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSlowPostResult>("akamai:index/getAppSecSlowPost:getAppSecSlowPost", args ?? new GetAppSecSlowPostArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.AppSecSlowPost` data source to retrieve the slow post protection settings for a given security configuration and policy.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = @var.Security_configuration,
+        ///         }));
+        ///         var slowPost = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSlowPost.InvokeAsync(new Akamai.GetAppSecSlowPostArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///         })));
+        ///         this.SlowPostOutputText = slowPost.Apply(slowPost =&gt; slowPost.OutputText);
+        ///     }
+        /// 
+        ///     [Output("slowPostOutputText")]
+        ///     public Output&lt;string&gt; SlowPostOutputText { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecSlowPostResult> Invoke(GetAppSecSlowPostInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecSlowPostResult>("akamai:index/getAppSecSlowPost:getAppSecSlowPost", args ?? new GetAppSecSlowPostInvokeArgs(), options.WithVersion());
     }
 
 
@@ -67,6 +107,25 @@ namespace Pulumi.Akamai
         public string SecurityPolicyId { get; set; } = null!;
 
         public GetAppSecSlowPostArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecSlowPostInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        /// <summary>
+        /// The ID of the security policy to use
+        /// </summary>
+        [Input("securityPolicyId", required: true)]
+        public Input<string> SecurityPolicyId { get; set; } = null!;
+
+        public GetAppSecSlowPostInvokeArgs()
         {
         }
     }

@@ -31,7 +31,7 @@ namespace Pulumi.Akamai
     ///         }));
     ///         var activation = new Akamai.NetworkListActivations("activation", new Akamai.NetworkListActivationsArgs
     ///         {
-    ///             NetworkListId = networkListsFilter.Apply(networkListsFilter =&gt; networkListsFilter.Lists[0]),
+    ///             NetworkListId = networkListsFilter.Apply(networkListsFilter =&gt; networkListsFilter.Lists?[0]),
     ///             Network = "STAGING",
     ///             Notes = "TEST Notes",
     ///             NotificationEmails = 

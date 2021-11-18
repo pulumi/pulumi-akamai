@@ -143,7 +143,7 @@ type PropertyVariablesArrayInput interface {
 type PropertyVariablesArray []PropertyVariablesInput
 
 func (PropertyVariablesArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*PropertyVariables)(nil))
+	return reflect.TypeOf((*[]*PropertyVariables)(nil)).Elem()
 }
 
 func (i PropertyVariablesArray) ToPropertyVariablesArrayOutput() PropertyVariablesArrayOutput {
@@ -168,7 +168,7 @@ type PropertyVariablesMapInput interface {
 type PropertyVariablesMap map[string]PropertyVariablesInput
 
 func (PropertyVariablesMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*PropertyVariables)(nil))
+	return reflect.TypeOf((*map[string]*PropertyVariables)(nil)).Elem()
 }
 
 func (i PropertyVariablesMap) ToPropertyVariablesMapOutput() PropertyVariablesMapOutput {
@@ -179,9 +179,7 @@ func (i PropertyVariablesMap) ToPropertyVariablesMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesMapOutput)
 }
 
-type PropertyVariablesOutput struct {
-	*pulumi.OutputState
-}
+type PropertyVariablesOutput struct{ *pulumi.OutputState }
 
 func (PropertyVariablesOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*PropertyVariables)(nil))
@@ -200,14 +198,12 @@ func (o PropertyVariablesOutput) ToPropertyVariablesPtrOutput() PropertyVariable
 }
 
 func (o PropertyVariablesOutput) ToPropertyVariablesPtrOutputWithContext(ctx context.Context) PropertyVariablesPtrOutput {
-	return o.ApplyT(func(v PropertyVariables) *PropertyVariables {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PropertyVariables) *PropertyVariables {
 		return &v
 	}).(PropertyVariablesPtrOutput)
 }
 
-type PropertyVariablesPtrOutput struct {
-	*pulumi.OutputState
-}
+type PropertyVariablesPtrOutput struct{ *pulumi.OutputState }
 
 func (PropertyVariablesPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**PropertyVariables)(nil))
@@ -219,6 +215,16 @@ func (o PropertyVariablesPtrOutput) ToPropertyVariablesPtrOutput() PropertyVaria
 
 func (o PropertyVariablesPtrOutput) ToPropertyVariablesPtrOutputWithContext(ctx context.Context) PropertyVariablesPtrOutput {
 	return o
+}
+
+func (o PropertyVariablesPtrOutput) Elem() PropertyVariablesOutput {
+	return o.ApplyT(func(v *PropertyVariables) PropertyVariables {
+		if v != nil {
+			return *v
+		}
+		var ret PropertyVariables
+		return ret
+	}).(PropertyVariablesOutput)
 }
 
 type PropertyVariablesArrayOutput struct{ *pulumi.OutputState }
@@ -262,6 +268,10 @@ func (o PropertyVariablesMapOutput) MapIndex(k pulumi.StringInput) PropertyVaria
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyVariablesInput)(nil)).Elem(), &PropertyVariables{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyVariablesPtrInput)(nil)).Elem(), &PropertyVariables{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyVariablesArrayInput)(nil)).Elem(), PropertyVariablesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyVariablesMapInput)(nil)).Elem(), PropertyVariablesMap{})
 	pulumi.RegisterOutputType(PropertyVariablesOutput{})
 	pulumi.RegisterOutputType(PropertyVariablesPtrOutput{})
 	pulumi.RegisterOutputType(PropertyVariablesArrayOutput{})

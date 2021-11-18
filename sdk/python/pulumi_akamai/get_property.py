@@ -12,6 +12,7 @@ __all__ = [
     'GetPropertyResult',
     'AwaitableGetPropertyResult',
     'get_property',
+    'get_property_output',
 ]
 
 @pulumi.output_type
@@ -115,3 +116,39 @@ def get_property(name: Optional[str] = None,
         name=__ret__.name,
         rules=__ret__.rules,
         version=__ret__.version)
+
+
+@_utilities.lift_output_func(get_property)
+def get_property_output(name: Optional[pulumi.Input[str]] = None,
+                        version: Optional[pulumi.Input[Optional[int]]] = None,
+                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyResult]:
+    """
+    Use the `Property` data source to query and list the property ID and rule tree based on the property name.
+
+    ## Example Usage
+
+    This example returns the property ID and rule tree based on the property name and optional version argument:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    example = akamai.get_property(name="terraform-demo",
+        version=1)
+    pulumi.export("myPropertyID", example)
+    ```
+    ## Argument reference
+
+    This data source supports these arguments:
+
+    * `name` - (Required) The property name.
+    * `version` - (Optional) The version of the property whose ID you want to list.
+
+    ## Attributes reference
+
+    This data source returns these attributes:
+
+    * `property_ID` - A property's unique identifier, including the `prp_` prefix.
+    * `rules` - A JSON-encoded rule tree for a given property.
+    """
+    ...

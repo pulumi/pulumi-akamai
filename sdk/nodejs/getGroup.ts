@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -104,4 +103,24 @@ export interface GetGroupResult {
      * @deprecated The setting "name" has been deprecated.
      */
     readonly name: string;
+}
+
+export function getGroupOutput(args?: GetGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGroupResult> {
+    return pulumi.output(args).apply(a => getGroup(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getGroup.
+ */
+export interface GetGroupOutputArgs {
+    /**
+     * @deprecated The setting "contract" has been deprecated.
+     */
+    contract?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string>;
+    groupName?: pulumi.Input<string>;
+    /**
+     * @deprecated The setting "name" has been deprecated.
+     */
+    name?: pulumi.Input<string>;
 }

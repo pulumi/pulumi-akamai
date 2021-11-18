@@ -94,6 +94,12 @@ export interface GetPropertyRulesTemplateVariable {
     value: string;
 }
 
+export interface GetPropertyRulesTemplateVariableArgs {
+    name: pulumi.Input<string>;
+    type?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
+}
+
 export interface GtmAsmapAssignment {
     asNumbers: pulumi.Input<pulumi.Input<number>[]>;
     datacenterId: pulumi.Input<number>;
@@ -318,6 +324,7 @@ export interface ProviderProperty {
     host?: pulumi.Input<string>;
     maxBody?: pulumi.Input<number>;
 }
+
 export namespace config {
 }
 

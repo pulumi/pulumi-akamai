@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai.Properties
 {
@@ -14,6 +15,9 @@ namespace Pulumi.Akamai.Properties
     {
         public static Task<GetPropertyRulesResult> InvokeAsync(GetPropertyRulesArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRulesResult>("akamai:properties/getPropertyRules:getPropertyRules", args ?? new GetPropertyRulesArgs(), options.WithVersion());
+
+        public static Output<GetPropertyRulesResult> Invoke(GetPropertyRulesInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetPropertyRulesResult>("akamai:properties/getPropertyRules:getPropertyRules", args ?? new GetPropertyRulesInvokeArgs(), options.WithVersion());
     }
 
 
@@ -32,6 +36,25 @@ namespace Pulumi.Akamai.Properties
         public int? Version { get; set; }
 
         public GetPropertyRulesArgs()
+        {
+        }
+    }
+
+    public sealed class GetPropertyRulesInvokeArgs : Pulumi.InvokeArgs
+    {
+        [Input("contractId")]
+        public Input<string>? ContractId { get; set; }
+
+        [Input("groupId")]
+        public Input<string>? GroupId { get; set; }
+
+        [Input("propertyId", required: true)]
+        public Input<string> PropertyId { get; set; } = null!;
+
+        [Input("version")]
+        public Input<int>? Version { get; set; }
+
+        public GetPropertyRulesInvokeArgs()
         {
         }
     }

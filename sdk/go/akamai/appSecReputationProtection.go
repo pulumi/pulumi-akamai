@@ -28,7 +28,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
@@ -207,7 +207,7 @@ type AppSecReputationProtectionArrayInput interface {
 type AppSecReputationProtectionArray []AppSecReputationProtectionInput
 
 func (AppSecReputationProtectionArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecReputationProtection)(nil))
+	return reflect.TypeOf((*[]*AppSecReputationProtection)(nil)).Elem()
 }
 
 func (i AppSecReputationProtectionArray) ToAppSecReputationProtectionArrayOutput() AppSecReputationProtectionArrayOutput {
@@ -232,7 +232,7 @@ type AppSecReputationProtectionMapInput interface {
 type AppSecReputationProtectionMap map[string]AppSecReputationProtectionInput
 
 func (AppSecReputationProtectionMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecReputationProtection)(nil))
+	return reflect.TypeOf((*map[string]*AppSecReputationProtection)(nil)).Elem()
 }
 
 func (i AppSecReputationProtectionMap) ToAppSecReputationProtectionMapOutput() AppSecReputationProtectionMapOutput {
@@ -243,9 +243,7 @@ func (i AppSecReputationProtectionMap) ToAppSecReputationProtectionMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecReputationProtectionMapOutput)
 }
 
-type AppSecReputationProtectionOutput struct {
-	*pulumi.OutputState
-}
+type AppSecReputationProtectionOutput struct{ *pulumi.OutputState }
 
 func (AppSecReputationProtectionOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecReputationProtection)(nil))
@@ -264,14 +262,12 @@ func (o AppSecReputationProtectionOutput) ToAppSecReputationProtectionPtrOutput(
 }
 
 func (o AppSecReputationProtectionOutput) ToAppSecReputationProtectionPtrOutputWithContext(ctx context.Context) AppSecReputationProtectionPtrOutput {
-	return o.ApplyT(func(v AppSecReputationProtection) *AppSecReputationProtection {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecReputationProtection) *AppSecReputationProtection {
 		return &v
 	}).(AppSecReputationProtectionPtrOutput)
 }
 
-type AppSecReputationProtectionPtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecReputationProtectionPtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecReputationProtectionPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecReputationProtection)(nil))
@@ -283,6 +279,16 @@ func (o AppSecReputationProtectionPtrOutput) ToAppSecReputationProtectionPtrOutp
 
 func (o AppSecReputationProtectionPtrOutput) ToAppSecReputationProtectionPtrOutputWithContext(ctx context.Context) AppSecReputationProtectionPtrOutput {
 	return o
+}
+
+func (o AppSecReputationProtectionPtrOutput) Elem() AppSecReputationProtectionOutput {
+	return o.ApplyT(func(v *AppSecReputationProtection) AppSecReputationProtection {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecReputationProtection
+		return ret
+	}).(AppSecReputationProtectionOutput)
 }
 
 type AppSecReputationProtectionArrayOutput struct{ *pulumi.OutputState }
@@ -326,6 +332,10 @@ func (o AppSecReputationProtectionMapOutput) MapIndex(k pulumi.StringInput) AppS
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecReputationProtectionInput)(nil)).Elem(), &AppSecReputationProtection{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecReputationProtectionPtrInput)(nil)).Elem(), &AppSecReputationProtection{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecReputationProtectionArrayInput)(nil)).Elem(), AppSecReputationProtectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecReputationProtectionMapInput)(nil)).Elem(), AppSecReputationProtectionMap{})
 	pulumi.RegisterOutputType(AppSecReputationProtectionOutput{})
 	pulumi.RegisterOutputType(AppSecReputationProtectionPtrOutput{})
 	pulumi.RegisterOutputType(AppSecReputationProtectionArrayOutput{})
