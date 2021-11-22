@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -58,6 +59,54 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecIPGeoResult> InvokeAsync(GetAppSecIPGeoArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecIPGeoResult>("akamai:index/getAppSecIPGeo:getAppSecIPGeo", args ?? new GetAppSecIPGeoArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.AppSecIPGeo` data source to retrieve information about which network lists are used in the IP/Geo Firewall settings.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = @var.Security_configuration,
+        ///         }));
+        ///         var ipGeo = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecIPGeo.InvokeAsync(new Akamai.GetAppSecIPGeoArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///         })));
+        ///         this.IpGeoMode = ipGeo.Apply(ipGeo =&gt; ipGeo.Mode);
+        ///         this.GeoNetworkLists = ipGeo.Apply(ipGeo =&gt; ipGeo.GeoNetworkLists);
+        ///         this.IpNetworkLists = ipGeo.Apply(ipGeo =&gt; ipGeo.IpNetworkLists);
+        ///         this.ExceptionIpNetworkLists = ipGeo.Apply(ipGeo =&gt; ipGeo.ExceptionIpNetworkLists);
+        ///     }
+        /// 
+        ///     [Output("ipGeoMode")]
+        ///     public Output&lt;string&gt; IpGeoMode { get; set; }
+        ///     [Output("geoNetworkLists")]
+        ///     public Output&lt;string&gt; GeoNetworkLists { get; set; }
+        ///     [Output("ipNetworkLists")]
+        ///     public Output&lt;string&gt; IpNetworkLists { get; set; }
+        ///     [Output("exceptionIpNetworkLists")]
+        ///     public Output&lt;string&gt; ExceptionIpNetworkLists { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecIPGeoResult> Invoke(GetAppSecIPGeoInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecIPGeoResult>("akamai:index/getAppSecIPGeo:getAppSecIPGeo", args ?? new GetAppSecIPGeoInvokeArgs(), options.WithVersion());
     }
 
 
@@ -76,6 +125,25 @@ namespace Pulumi.Akamai
         public string SecurityPolicyId { get; set; } = null!;
 
         public GetAppSecIPGeoArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecIPGeoInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        /// <summary>
+        /// The ID of the security policy to use.
+        /// </summary>
+        [Input("securityPolicyId", required: true)]
+        public Input<string> SecurityPolicyId { get; set; } = null!;
+
+        public GetAppSecIPGeoInvokeArgs()
         {
         }
     }

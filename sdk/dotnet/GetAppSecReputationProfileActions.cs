@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -16,6 +17,12 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecReputationProfileActionsResult> InvokeAsync(GetAppSecReputationProfileActionsArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecReputationProfileActionsResult>("akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions", args ?? new GetAppSecReputationProfileActionsArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.getAppSecReputationProfileActions` data source to retrieve details about reputation profiles and their associated actions, or about the actions associated with a specific reputation profile.
+        /// </summary>
+        public static Output<GetAppSecReputationProfileActionsResult> Invoke(GetAppSecReputationProfileActionsInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfileActionsResult>("akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions", args ?? new GetAppSecReputationProfileActionsInvokeArgs(), options.WithVersion());
     }
 
 
@@ -40,6 +47,31 @@ namespace Pulumi.Akamai
         public string SecurityPolicyId { get; set; } = null!;
 
         public GetAppSecReputationProfileActionsArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecReputationProfileActionsInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        /// <summary>
+        /// The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
+        /// </summary>
+        [Input("reputationProfileId")]
+        public Input<int>? ReputationProfileId { get; set; }
+
+        /// <summary>
+        /// THe ID of the security policy to use.
+        /// </summary>
+        [Input("securityPolicyId", required: true)]
+        public Input<string> SecurityPolicyId { get; set; } = null!;
+
+        public GetAppSecReputationProfileActionsInvokeArgs()
         {
         }
     }

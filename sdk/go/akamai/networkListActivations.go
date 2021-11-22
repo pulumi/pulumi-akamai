@@ -29,7 +29,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Network_list
-// 		networkListsFilter, err := akamai.GetNetworkLists(ctx, &akamai.GetNetworkListsArgs{
+// 		networkListsFilter, err := akamai.GetNetworkLists(ctx, &GetNetworkListsArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
@@ -236,7 +236,7 @@ type NetworkListActivationsArrayInput interface {
 type NetworkListActivationsArray []NetworkListActivationsInput
 
 func (NetworkListActivationsArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*NetworkListActivations)(nil))
+	return reflect.TypeOf((*[]*NetworkListActivations)(nil)).Elem()
 }
 
 func (i NetworkListActivationsArray) ToNetworkListActivationsArrayOutput() NetworkListActivationsArrayOutput {
@@ -261,7 +261,7 @@ type NetworkListActivationsMapInput interface {
 type NetworkListActivationsMap map[string]NetworkListActivationsInput
 
 func (NetworkListActivationsMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*NetworkListActivations)(nil))
+	return reflect.TypeOf((*map[string]*NetworkListActivations)(nil)).Elem()
 }
 
 func (i NetworkListActivationsMap) ToNetworkListActivationsMapOutput() NetworkListActivationsMapOutput {
@@ -272,9 +272,7 @@ func (i NetworkListActivationsMap) ToNetworkListActivationsMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkListActivationsMapOutput)
 }
 
-type NetworkListActivationsOutput struct {
-	*pulumi.OutputState
-}
+type NetworkListActivationsOutput struct{ *pulumi.OutputState }
 
 func (NetworkListActivationsOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*NetworkListActivations)(nil))
@@ -293,14 +291,12 @@ func (o NetworkListActivationsOutput) ToNetworkListActivationsPtrOutput() Networ
 }
 
 func (o NetworkListActivationsOutput) ToNetworkListActivationsPtrOutputWithContext(ctx context.Context) NetworkListActivationsPtrOutput {
-	return o.ApplyT(func(v NetworkListActivations) *NetworkListActivations {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NetworkListActivations) *NetworkListActivations {
 		return &v
 	}).(NetworkListActivationsPtrOutput)
 }
 
-type NetworkListActivationsPtrOutput struct {
-	*pulumi.OutputState
-}
+type NetworkListActivationsPtrOutput struct{ *pulumi.OutputState }
 
 func (NetworkListActivationsPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**NetworkListActivations)(nil))
@@ -312,6 +308,16 @@ func (o NetworkListActivationsPtrOutput) ToNetworkListActivationsPtrOutput() Net
 
 func (o NetworkListActivationsPtrOutput) ToNetworkListActivationsPtrOutputWithContext(ctx context.Context) NetworkListActivationsPtrOutput {
 	return o
+}
+
+func (o NetworkListActivationsPtrOutput) Elem() NetworkListActivationsOutput {
+	return o.ApplyT(func(v *NetworkListActivations) NetworkListActivations {
+		if v != nil {
+			return *v
+		}
+		var ret NetworkListActivations
+		return ret
+	}).(NetworkListActivationsOutput)
 }
 
 type NetworkListActivationsArrayOutput struct{ *pulumi.OutputState }
@@ -355,6 +361,10 @@ func (o NetworkListActivationsMapOutput) MapIndex(k pulumi.StringInput) NetworkL
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkListActivationsInput)(nil)).Elem(), &NetworkListActivations{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkListActivationsPtrInput)(nil)).Elem(), &NetworkListActivations{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkListActivationsArrayInput)(nil)).Elem(), NetworkListActivationsArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkListActivationsMapInput)(nil)).Elem(), NetworkListActivationsMap{})
 	pulumi.RegisterOutputType(NetworkListActivationsOutput{})
 	pulumi.RegisterOutputType(NetworkListActivationsPtrOutput{})
 	pulumi.RegisterOutputType(NetworkListActivationsArrayOutput{})

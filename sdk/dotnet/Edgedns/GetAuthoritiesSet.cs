@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai.Edgedns
 {
@@ -14,6 +15,9 @@ namespace Pulumi.Akamai.Edgedns
     {
         public static Task<GetAuthoritiesSetResult> InvokeAsync(GetAuthoritiesSetArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAuthoritiesSetResult>("akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet", args ?? new GetAuthoritiesSetArgs(), options.WithVersion());
+
+        public static Output<GetAuthoritiesSetResult> Invoke(GetAuthoritiesSetInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAuthoritiesSetResult>("akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet", args ?? new GetAuthoritiesSetInvokeArgs(), options.WithVersion());
     }
 
 
@@ -23,6 +27,16 @@ namespace Pulumi.Akamai.Edgedns
         public string Contract { get; set; } = null!;
 
         public GetAuthoritiesSetArgs()
+        {
+        }
+    }
+
+    public sealed class GetAuthoritiesSetInvokeArgs : Pulumi.InvokeArgs
+    {
+        [Input("contract", required: true)]
+        public Input<string> Contract { get; set; } = null!;
+
+        public GetAuthoritiesSetInvokeArgs()
         {
         }
     }

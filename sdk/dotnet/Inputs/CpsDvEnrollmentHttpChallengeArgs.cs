@@ -9,4 +9,20 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Inputs
 {
+
+    public sealed class CpsDvEnrollmentHttpChallengeArgs : Pulumi.ResourceArgs
+    {
+        [Input("domain")]
+        public Input<string>? Domain { get; set; }
+
+        [Input("fullPath")]
+        public Input<string>? FullPath { get; set; }
+
+        [Input("responseBody")]
+        public Input<string>? ResponseBody { get; set; }
+
+        public CpsDvEnrollmentHttpChallengeArgs()
+        {
+        }
+    }
 }

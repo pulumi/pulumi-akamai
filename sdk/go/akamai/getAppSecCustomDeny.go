@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,13 +27,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		customDenyList, err := akamai.LookupAppSecCustomDeny(ctx, &akamai.LookupAppSecCustomDenyArgs{
+// 		customDenyList, err := akamai.LookupAppSecCustomDeny(ctx, &GetAppSecCustomDenyArgs{
 // 			ConfigId: configuration.ConfigId,
 // 		}, nil)
 // 		if err != nil {
@@ -39,7 +42,7 @@ import (
 // 		ctx.Export("customDenyListOutput", customDenyList.OutputText)
 // 		ctx.Export("customDenyListJson", customDenyList.Json)
 // 		opt1 := _var.Custom_deny_id
-// 		customDeny, err := akamai.LookupAppSecCustomDeny(ctx, &akamai.LookupAppSecCustomDenyArgs{
+// 		customDeny, err := akamai.LookupAppSecCustomDeny(ctx, &GetAppSecCustomDenyArgs{
 // 			ConfigId:     configuration.ConfigId,
 // 			CustomDenyId: &opt1,
 // 		}, nil)
@@ -79,4 +82,67 @@ type LookupAppSecCustomDenyResult struct {
 	Json string `pulumi:"json"`
 	// A tabular display showing the custom deny action information.
 	OutputText string `pulumi:"outputText"`
+}
+
+func LookupAppSecCustomDenyOutput(ctx *pulumi.Context, args LookupAppSecCustomDenyOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecCustomDenyResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (LookupAppSecCustomDenyResult, error) {
+			args := v.(LookupAppSecCustomDenyArgs)
+			r, err := LookupAppSecCustomDeny(ctx, &args, opts...)
+			return *r, err
+		}).(LookupAppSecCustomDenyResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecCustomDeny.
+type LookupAppSecCustomDenyOutputArgs struct {
+	// The configuration ID to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The ID of a specific custom deny action.
+	CustomDenyId pulumi.StringPtrInput `pulumi:"customDenyId"`
+}
+
+func (LookupAppSecCustomDenyOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecCustomDenyArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecCustomDeny.
+type LookupAppSecCustomDenyResultOutput struct{ *pulumi.OutputState }
+
+func (LookupAppSecCustomDenyResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecCustomDenyResult)(nil)).Elem()
+}
+
+func (o LookupAppSecCustomDenyResultOutput) ToLookupAppSecCustomDenyResultOutput() LookupAppSecCustomDenyResultOutput {
+	return o
+}
+
+func (o LookupAppSecCustomDenyResultOutput) ToLookupAppSecCustomDenyResultOutputWithContext(ctx context.Context) LookupAppSecCustomDenyResultOutput {
+	return o
+}
+
+func (o LookupAppSecCustomDenyResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAppSecCustomDenyResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+func (o LookupAppSecCustomDenyResultOutput) CustomDenyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppSecCustomDenyResult) *string { return v.CustomDenyId }).(pulumi.StringPtrOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o LookupAppSecCustomDenyResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecCustomDenyResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted list of the custom deny action information.
+func (o LookupAppSecCustomDenyResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecCustomDenyResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display showing the custom deny action information.
+func (o LookupAppSecCustomDenyResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecCustomDenyResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(LookupAppSecCustomDenyResultOutput{})
 }

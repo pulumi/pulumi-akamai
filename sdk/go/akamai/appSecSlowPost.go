@@ -28,7 +28,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
@@ -234,7 +234,7 @@ type AppSecSlowPostArrayInput interface {
 type AppSecSlowPostArray []AppSecSlowPostInput
 
 func (AppSecSlowPostArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecSlowPost)(nil))
+	return reflect.TypeOf((*[]*AppSecSlowPost)(nil)).Elem()
 }
 
 func (i AppSecSlowPostArray) ToAppSecSlowPostArrayOutput() AppSecSlowPostArrayOutput {
@@ -259,7 +259,7 @@ type AppSecSlowPostMapInput interface {
 type AppSecSlowPostMap map[string]AppSecSlowPostInput
 
 func (AppSecSlowPostMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecSlowPost)(nil))
+	return reflect.TypeOf((*map[string]*AppSecSlowPost)(nil)).Elem()
 }
 
 func (i AppSecSlowPostMap) ToAppSecSlowPostMapOutput() AppSecSlowPostMapOutput {
@@ -270,9 +270,7 @@ func (i AppSecSlowPostMap) ToAppSecSlowPostMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSlowPostMapOutput)
 }
 
-type AppSecSlowPostOutput struct {
-	*pulumi.OutputState
-}
+type AppSecSlowPostOutput struct{ *pulumi.OutputState }
 
 func (AppSecSlowPostOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecSlowPost)(nil))
@@ -291,14 +289,12 @@ func (o AppSecSlowPostOutput) ToAppSecSlowPostPtrOutput() AppSecSlowPostPtrOutpu
 }
 
 func (o AppSecSlowPostOutput) ToAppSecSlowPostPtrOutputWithContext(ctx context.Context) AppSecSlowPostPtrOutput {
-	return o.ApplyT(func(v AppSecSlowPost) *AppSecSlowPost {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecSlowPost) *AppSecSlowPost {
 		return &v
 	}).(AppSecSlowPostPtrOutput)
 }
 
-type AppSecSlowPostPtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecSlowPostPtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecSlowPostPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecSlowPost)(nil))
@@ -310,6 +306,16 @@ func (o AppSecSlowPostPtrOutput) ToAppSecSlowPostPtrOutput() AppSecSlowPostPtrOu
 
 func (o AppSecSlowPostPtrOutput) ToAppSecSlowPostPtrOutputWithContext(ctx context.Context) AppSecSlowPostPtrOutput {
 	return o
+}
+
+func (o AppSecSlowPostPtrOutput) Elem() AppSecSlowPostOutput {
+	return o.ApplyT(func(v *AppSecSlowPost) AppSecSlowPost {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecSlowPost
+		return ret
+	}).(AppSecSlowPostOutput)
 }
 
 type AppSecSlowPostArrayOutput struct{ *pulumi.OutputState }
@@ -353,6 +359,10 @@ func (o AppSecSlowPostMapOutput) MapIndex(k pulumi.StringInput) AppSecSlowPostOu
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSlowPostInput)(nil)).Elem(), &AppSecSlowPost{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSlowPostPtrInput)(nil)).Elem(), &AppSecSlowPost{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSlowPostArrayInput)(nil)).Elem(), AppSecSlowPostArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSlowPostMapInput)(nil)).Elem(), AppSecSlowPostMap{})
 	pulumi.RegisterOutputType(AppSecSlowPostOutput{})
 	pulumi.RegisterOutputType(AppSecSlowPostPtrOutput{})
 	pulumi.RegisterOutputType(AppSecSlowPostArrayOutput{})

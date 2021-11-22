@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -40,6 +41,36 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetGroupResult> InvokeAsync(GetGroupArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetGroupResult>("akamai:index/getGroup:getGroup", args ?? new GetGroupArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.getGroup` data source to get a group by name.
+        /// 
+        /// Each account features a hierarchy of groups, which control access to your
+        /// Akamai configurations and help consolidate reporting functions, typically
+        /// mapping to an organizational hierarchy. Using either Control Center or the
+        /// [Identity Management: User Administration API](https://developer.akamai.com/en-us/api/core_features/identity_management_user_admin/v2.html),
+        /// account administrators can assign properties to specific groups, each with
+        /// its own set of users and accompanying roles.
+        /// 
+        /// ## Argument reference
+        /// 
+        /// This data source supports these arguments:
+        /// 
+        /// * `group_name` - (Required) The group name.
+        /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// 
+        /// ### Deprecated arguments
+        /// * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
+        /// * `name` -  (Deprecated) Replaced by `group_name`. Maintained for legacy purposes.
+        /// 
+        /// ## Attributes reference
+        /// 
+        /// This data source returns this attribute:
+        /// 
+        /// * `id` - The group's unique ID, including the `grp_` prefix.
+        /// </summary>
+        public static Output<GetGroupResult> Invoke(GetGroupInvokeArgs? args = null, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetGroupResult>("akamai:index/getGroup:getGroup", args ?? new GetGroupInvokeArgs(), options.WithVersion());
     }
 
 
@@ -58,6 +89,25 @@ namespace Pulumi.Akamai
         public string? Name { get; set; }
 
         public GetGroupArgs()
+        {
+        }
+    }
+
+    public sealed class GetGroupInvokeArgs : Pulumi.InvokeArgs
+    {
+        [Input("contract")]
+        public Input<string>? Contract { get; set; }
+
+        [Input("contractId")]
+        public Input<string>? ContractId { get; set; }
+
+        [Input("groupName")]
+        public Input<string>? GroupName { get; set; }
+
+        [Input("name")]
+        public Input<string>? Name { get; set; }
+
+        public GetGroupInvokeArgs()
         {
         }
     }

@@ -65,3 +65,15 @@ export interface GetPropertiesResult {
     readonly id: string;
     readonly properties: outputs.GetPropertiesProperty[];
 }
+
+export function getPropertiesOutput(args: GetPropertiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertiesResult> {
+    return pulumi.output(args).apply(a => getProperties(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getProperties.
+ */
+export interface GetPropertiesOutputArgs {
+    contractId: pulumi.Input<string>;
+    groupId: pulumi.Input<string>;
+}

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -55,6 +56,51 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecPenaltyBoxResult> InvokeAsync(GetAppSecPenaltyBoxArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecPenaltyBoxResult>("akamai:index/getAppSecPenaltyBox:getAppSecPenaltyBox", args ?? new GetAppSecPenaltyBoxArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.AppSecPenaltyBox` data source to retrieve the penalty box settings for a specified security policy.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = @var.Security_configuration,
+        ///         }));
+        ///         var penaltyBox = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecPenaltyBox.InvokeAsync(new Akamai.GetAppSecPenaltyBoxArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///         })));
+        ///         this.PenaltyBoxAction = penaltyBox.Apply(penaltyBox =&gt; penaltyBox.Action);
+        ///         this.PenaltyBoxEnabled = penaltyBox.Apply(penaltyBox =&gt; penaltyBox.Enabled);
+        ///         this.PenaltyBoxText = penaltyBox.Apply(penaltyBox =&gt; penaltyBox.OutputText);
+        ///     }
+        /// 
+        ///     [Output("penaltyBoxAction")]
+        ///     public Output&lt;string&gt; PenaltyBoxAction { get; set; }
+        ///     [Output("penaltyBoxEnabled")]
+        ///     public Output&lt;string&gt; PenaltyBoxEnabled { get; set; }
+        ///     [Output("penaltyBoxText")]
+        ///     public Output&lt;string&gt; PenaltyBoxText { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecPenaltyBoxResult> Invoke(GetAppSecPenaltyBoxInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecPenaltyBoxResult>("akamai:index/getAppSecPenaltyBox:getAppSecPenaltyBox", args ?? new GetAppSecPenaltyBoxInvokeArgs(), options.WithVersion());
     }
 
 
@@ -73,6 +119,25 @@ namespace Pulumi.Akamai
         public string SecurityPolicyId { get; set; } = null!;
 
         public GetAppSecPenaltyBoxArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecPenaltyBoxInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        /// <summary>
+        /// The ID of the security policy to use.
+        /// </summary>
+        [Input("securityPolicyId", required: true)]
+        public Input<string> SecurityPolicyId { get; set; } = null!;
+
+        public GetAppSecPenaltyBoxInvokeArgs()
         {
         }
     }

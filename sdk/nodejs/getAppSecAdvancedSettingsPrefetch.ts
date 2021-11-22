@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -66,4 +65,18 @@ export interface GetAppSecAdvancedSettingsPrefetchResult {
      * A tabular display showing the prefetch request settings.
      */
     readonly outputText: string;
+}
+
+export function getAppSecAdvancedSettingsPrefetchOutput(args: GetAppSecAdvancedSettingsPrefetchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecAdvancedSettingsPrefetchResult> {
+    return pulumi.output(args).apply(a => getAppSecAdvancedSettingsPrefetch(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecAdvancedSettingsPrefetch.
+ */
+export interface GetAppSecAdvancedSettingsPrefetchOutputArgs {
+    /**
+     * The configuration ID.
+     */
+    configId: pulumi.Input<number>;
 }

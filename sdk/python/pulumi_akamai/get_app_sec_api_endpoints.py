@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecApiEndpointsResult',
     'AwaitableGetAppSecApiEndpointsResult',
     'get_app_sec_api_endpoints',
+    'get_app_sec_api_endpoints_output',
 ]
 
 @pulumi.output_type
@@ -110,7 +111,7 @@ def get_app_sec_api_endpoints(api_name: Optional[str] = None,
                               security_policy_id: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecApiEndpointsResult:
     """
-    Use the `getAppSecApiEndpoints` data source to retrieve information about the API Endpoints associated with a security policy or configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapiendpoints).
+    Use the `get_app_sec_api_endpoints` data source to retrieve information about the API Endpoints associated with a security policy or configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapiendpoints).
 
     ## Example Usage
 
@@ -147,3 +148,31 @@ def get_app_sec_api_endpoints(api_name: Optional[str] = None,
         json=__ret__.json,
         output_text=__ret__.output_text,
         security_policy_id=__ret__.security_policy_id)
+
+
+@_utilities.lift_output_func(get_app_sec_api_endpoints)
+def get_app_sec_api_endpoints_output(api_name: Optional[pulumi.Input[Optional[str]]] = None,
+                                     config_id: Optional[pulumi.Input[int]] = None,
+                                     security_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
+                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecApiEndpointsResult]:
+    """
+    Use the `get_app_sec_api_endpoints` data source to retrieve information about the API Endpoints associated with a security policy or configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapiendpoints).
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    api_endpoints = akamai.get_app_sec_api_endpoints(api_name="TestEndpoint",
+        config_id=43253)
+    ```
+
+
+    :param str api_name: The name of a specific endpoint.
+    :param int config_id: The configuration ID.
+    :param str security_policy_id: The ID of the security policy to use.
+    """
+    ...

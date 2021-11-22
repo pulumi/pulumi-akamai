@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecAdvancedSettingsPrefetchResult',
     'AwaitableGetAppSecAdvancedSettingsPrefetchResult',
     'get_app_sec_advanced_settings_prefetch',
+    'get_app_sec_advanced_settings_prefetch_output',
 ]
 
 @pulumi.output_type
@@ -110,3 +111,29 @@ def get_app_sec_advanced_settings_prefetch(config_id: Optional[int] = None,
         id=__ret__.id,
         json=__ret__.json,
         output_text=__ret__.output_text)
+
+
+@_utilities.lift_output_func(get_app_sec_advanced_settings_prefetch)
+def get_app_sec_advanced_settings_prefetch_output(config_id: Optional[pulumi.Input[int]] = None,
+                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecAdvancedSettingsPrefetchResult]:
+    """
+    Use the `AppSecAdvancedSettingsPrefetch` data source to retrieve information the prefetch request settings for a security configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprefetchrequestsforaconfiguration).
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    prefetch = akamai.get_app_sec_advanced_settings_prefetch(config_id=configuration.config_id)
+    pulumi.export("advancedSettingsPrefetchOutput", prefetch.output_text)
+    pulumi.export("advancedSettingsPrefetchJson", prefetch.json)
+    ```
+
+
+    :param int config_id: The configuration ID.
+    """
+    ...

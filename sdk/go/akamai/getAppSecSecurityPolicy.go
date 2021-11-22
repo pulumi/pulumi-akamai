@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,13 +27,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := "Akamai Tools"
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		securityPolicies, err := akamai.LookupAppSecSecurityPolicy(ctx, &akamai.LookupAppSecSecurityPolicyArgs{
+// 		securityPolicies, err := akamai.LookupAppSecSecurityPolicy(ctx, &GetAppSecSecurityPolicyArgs{
 // 			ConfigId: configuration.ConfigId,
 // 		}, nil)
 // 		if err != nil {
@@ -39,7 +42,7 @@ import (
 // 		ctx.Export("securityPoliciesList", securityPolicies.SecurityPolicyIdLists)
 // 		ctx.Export("securityPoliciesText", securityPolicies.OutputText)
 // 		opt1 := "APIs"
-// 		specificSecurityPolicy, err := akamai.LookupAppSecSecurityPolicy(ctx, &akamai.LookupAppSecSecurityPolicyArgs{
+// 		specificSecurityPolicy, err := akamai.LookupAppSecSecurityPolicy(ctx, &GetAppSecSecurityPolicyArgs{
 // 			ConfigId:           configuration.ConfigId,
 // 			SecurityPolicyName: &opt1,
 // 		}, nil)
@@ -80,4 +83,72 @@ type LookupAppSecSecurityPolicyResult struct {
 	// A list of the IDs of all security policies.
 	SecurityPolicyIdLists []string `pulumi:"securityPolicyIdLists"`
 	SecurityPolicyName    *string  `pulumi:"securityPolicyName"`
+}
+
+func LookupAppSecSecurityPolicyOutput(ctx *pulumi.Context, args LookupAppSecSecurityPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecSecurityPolicyResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (LookupAppSecSecurityPolicyResult, error) {
+			args := v.(LookupAppSecSecurityPolicyArgs)
+			r, err := LookupAppSecSecurityPolicy(ctx, &args, opts...)
+			return *r, err
+		}).(LookupAppSecSecurityPolicyResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecSecurityPolicy.
+type LookupAppSecSecurityPolicyOutputArgs struct {
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The name of the security policy to use. If not supplied, information about all security policies is returned.
+	SecurityPolicyName pulumi.StringPtrInput `pulumi:"securityPolicyName"`
+}
+
+func (LookupAppSecSecurityPolicyOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecSecurityPolicyArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecSecurityPolicy.
+type LookupAppSecSecurityPolicyResultOutput struct{ *pulumi.OutputState }
+
+func (LookupAppSecSecurityPolicyResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecSecurityPolicyResult)(nil)).Elem()
+}
+
+func (o LookupAppSecSecurityPolicyResultOutput) ToLookupAppSecSecurityPolicyResultOutput() LookupAppSecSecurityPolicyResultOutput {
+	return o
+}
+
+func (o LookupAppSecSecurityPolicyResultOutput) ToLookupAppSecSecurityPolicyResultOutputWithContext(ctx context.Context) LookupAppSecSecurityPolicyResultOutput {
+	return o
+}
+
+func (o LookupAppSecSecurityPolicyResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAppSecSecurityPolicyResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o LookupAppSecSecurityPolicyResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecSecurityPolicyResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A tabular display showing the ID and name of all security policies.
+func (o LookupAppSecSecurityPolicyResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecSecurityPolicyResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+// The ID of the security policy. Included only if `securityPolicyName` was specified.
+func (o LookupAppSecSecurityPolicyResultOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecSecurityPolicyResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+// A list of the IDs of all security policies.
+func (o LookupAppSecSecurityPolicyResultOutput) SecurityPolicyIdLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupAppSecSecurityPolicyResult) []string { return v.SecurityPolicyIdLists }).(pulumi.StringArrayOutput)
+}
+
+func (o LookupAppSecSecurityPolicyResultOutput) SecurityPolicyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppSecSecurityPolicyResult) *string { return v.SecurityPolicyName }).(pulumi.StringPtrOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(LookupAppSecSecurityPolicyResultOutput{})
 }

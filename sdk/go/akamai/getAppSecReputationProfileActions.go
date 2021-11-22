@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,4 +43,78 @@ type GetAppSecReputationProfileActionsResult struct {
 	OutputText          string `pulumi:"outputText"`
 	ReputationProfileId *int   `pulumi:"reputationProfileId"`
 	SecurityPolicyId    string `pulumi:"securityPolicyId"`
+}
+
+func GetAppSecReputationProfileActionsOutput(ctx *pulumi.Context, args GetAppSecReputationProfileActionsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecReputationProfileActionsResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetAppSecReputationProfileActionsResult, error) {
+			args := v.(GetAppSecReputationProfileActionsArgs)
+			r, err := GetAppSecReputationProfileActions(ctx, &args, opts...)
+			return *r, err
+		}).(GetAppSecReputationProfileActionsResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecReputationProfileActions.
+type GetAppSecReputationProfileActionsOutputArgs struct {
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
+	ReputationProfileId pulumi.IntPtrInput `pulumi:"reputationProfileId"`
+	// THe ID of the security policy to use.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+}
+
+func (GetAppSecReputationProfileActionsOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecReputationProfileActionsArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecReputationProfileActions.
+type GetAppSecReputationProfileActionsResultOutput struct{ *pulumi.OutputState }
+
+func (GetAppSecReputationProfileActionsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecReputationProfileActionsResult)(nil)).Elem()
+}
+
+func (o GetAppSecReputationProfileActionsResultOutput) ToGetAppSecReputationProfileActionsResultOutput() GetAppSecReputationProfileActionsResultOutput {
+	return o
+}
+
+func (o GetAppSecReputationProfileActionsResultOutput) ToGetAppSecReputationProfileActionsResultOutputWithContext(ctx context.Context) GetAppSecReputationProfileActionsResultOutput {
+	return o
+}
+
+// The action that the specified reputation profile or profiles take when triggered.
+func (o GetAppSecReputationProfileActionsResultOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecReputationProfileActionsResult) string { return v.Action }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecReputationProfileActionsResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAppSecReputationProfileActionsResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetAppSecReputationProfileActionsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecReputationProfileActionsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted display of the specified reputation profile action information.
+func (o GetAppSecReputationProfileActionsResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecReputationProfileActionsResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display of the specified reputation profile action information.
+func (o GetAppSecReputationProfileActionsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecReputationProfileActionsResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecReputationProfileActionsResultOutput) ReputationProfileId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAppSecReputationProfileActionsResult) *int { return v.ReputationProfileId }).(pulumi.IntPtrOutput)
+}
+
+func (o GetAppSecReputationProfileActionsResultOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecReputationProfileActionsResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetAppSecReputationProfileActionsResultOutput{})
 }

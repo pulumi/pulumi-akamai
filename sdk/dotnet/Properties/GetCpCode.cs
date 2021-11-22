@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai.Properties
 {
@@ -14,6 +15,9 @@ namespace Pulumi.Akamai.Properties
     {
         public static Task<GetCpCodeResult> InvokeAsync(GetCpCodeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetCpCodeResult>("akamai:properties/getCpCode:getCpCode", args ?? new GetCpCodeArgs(), options.WithVersion());
+
+        public static Output<GetCpCodeResult> Invoke(GetCpCodeInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetCpCodeResult>("akamai:properties/getCpCode:getCpCode", args ?? new GetCpCodeInvokeArgs(), options.WithVersion());
     }
 
 
@@ -35,6 +39,28 @@ namespace Pulumi.Akamai.Properties
         public string Name { get; set; } = null!;
 
         public GetCpCodeArgs()
+        {
+        }
+    }
+
+    public sealed class GetCpCodeInvokeArgs : Pulumi.InvokeArgs
+    {
+        [Input("contract")]
+        public Input<string>? Contract { get; set; }
+
+        [Input("contractId")]
+        public Input<string>? ContractId { get; set; }
+
+        [Input("group")]
+        public Input<string>? Group { get; set; }
+
+        [Input("groupId")]
+        public Input<string>? GroupId { get; set; }
+
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
+
+        public GetCpCodeInvokeArgs()
         {
         }
     }

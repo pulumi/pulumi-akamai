@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -53,6 +54,49 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetPropertiesResult> InvokeAsync(GetPropertiesArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetPropertiesResult>("akamai:index/getProperties:getProperties", args ?? new GetPropertiesArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.getProperties` data source to query and retrieve the list of properties for a group and contract
+        /// based on the [EdgeGrid API client token](https://developer.akamai.com/getting-started/edgegrid) you're using.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Return properties associated with the EdgeGrid API client token currently used for authentication:
+        /// 
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         this.MyPropertyList = data.Akamai_properties.Example;
+        ///     }
+        /// 
+        ///     [Output("myPropertyList")]
+        ///     public Output&lt;string&gt; MyPropertyList { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// ## Argument reference
+        /// 
+        /// This data source supports these arguments:
+        /// 
+        /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
+        /// 
+        /// ## Attributes reference
+        /// 
+        /// This data source returns this attribute:
+        /// 
+        /// * `properties` - A list of properties available for the contract and group IDs provided.
+        /// </summary>
+        public static Output<GetPropertiesResult> Invoke(GetPropertiesInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetPropertiesResult>("akamai:index/getProperties:getProperties", args ?? new GetPropertiesInvokeArgs(), options.WithVersion());
     }
 
 
@@ -65,6 +109,19 @@ namespace Pulumi.Akamai
         public string GroupId { get; set; } = null!;
 
         public GetPropertiesArgs()
+        {
+        }
+    }
+
+    public sealed class GetPropertiesInvokeArgs : Pulumi.InvokeArgs
+    {
+        [Input("contractId", required: true)]
+        public Input<string> ContractId { get; set; } = null!;
+
+        [Input("groupId", required: true)]
+        public Input<string> GroupId { get; set; } = null!;
+
+        public GetPropertiesInvokeArgs()
         {
         }
     }

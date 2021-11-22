@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -42,6 +43,38 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecHostnameCoverageOverlappingResult> InvokeAsync(GetAppSecHostnameCoverageOverlappingArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecHostnameCoverageOverlappingResult>("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", args ?? new GetAppSecHostnameCoverageOverlappingArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.getAppSecHostnameCoverageOverlapping` data source to retrieve information about the configuration versions that contain a hostname also included in the current configuration version. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoverageoverlapping).
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var test = Output.Create(Akamai.GetAppSecHostnameCoverageOverlapping.InvokeAsync(new Akamai.GetAppSecHostnameCoverageOverlappingArgs
+        ///         {
+        ///             ConfigId = 43253,
+        ///             Hostname = "example.com",
+        ///         }));
+        ///     }
+        /// 
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecHostnameCoverageOverlappingResult> Invoke(GetAppSecHostnameCoverageOverlappingInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecHostnameCoverageOverlappingResult>("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", args ?? new GetAppSecHostnameCoverageOverlappingInvokeArgs(), options.WithVersion());
     }
 
 
@@ -60,6 +93,25 @@ namespace Pulumi.Akamai
         public string Hostname { get; set; } = null!;
 
         public GetAppSecHostnameCoverageOverlappingArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecHostnameCoverageOverlappingInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The configuration ID.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        /// <summary>
+        /// The hostname for which to retrieve information.
+        /// </summary>
+        [Input("hostname", required: true)]
+        public Input<string> Hostname { get; set; } = null!;
+
+        public GetAppSecHostnameCoverageOverlappingInvokeArgs()
         {
         }
     }

@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecReputationProfilesResult',
     'AwaitableGetAppSecReputationProfilesResult',
     'get_app_sec_reputation_profiles',
+    'get_app_sec_reputation_profiles_output',
 ]
 
 @pulumi.output_type
@@ -88,7 +89,7 @@ def get_app_sec_reputation_profiles(config_id: Optional[int] = None,
                                     reputation_profile_id: Optional[int] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecReputationProfilesResult:
     """
-    Use the `getAppSecReputationProfiles` data source to retrieve details about all reputation profiles, or a specific reputation profiles.
+    Use the `get_app_sec_reputation_profiles` data source to retrieve details about all reputation profiles, or a specific reputation profiles.
 
     ## Example Usage
 
@@ -127,3 +128,35 @@ def get_app_sec_reputation_profiles(config_id: Optional[int] = None,
         json=__ret__.json,
         output_text=__ret__.output_text,
         reputation_profile_id=__ret__.reputation_profile_id)
+
+
+@_utilities.lift_output_func(get_app_sec_reputation_profiles)
+def get_app_sec_reputation_profiles_output(config_id: Optional[pulumi.Input[int]] = None,
+                                           reputation_profile_id: Optional[pulumi.Input[Optional[int]]] = None,
+                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecReputationProfilesResult]:
+    """
+    Use the `get_app_sec_reputation_profiles` data source to retrieve details about all reputation profiles, or a specific reputation profiles.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    reputation_profiles = akamai.get_app_sec_reputation_profiles(config_id=configuration.config_id)
+    pulumi.export("reputationProfilesOutput", reputation_profiles.output_text)
+    pulumi.export("reputationProfilesJson", reputation_profiles.json)
+    reputation_profile = akamai.get_app_sec_reputation_profiles(config_id=configuration.config_id,
+        reputation_profile_id=var["reputation_profile_id"])
+    pulumi.export("reputationProfileJson", reputation_profile.json)
+    pulumi.export("reputationProfileOutput", reputation_profile.output_text)
+    ```
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param int reputation_profile_id: The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
+    """
+    ...

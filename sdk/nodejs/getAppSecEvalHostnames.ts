@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -71,4 +70,18 @@ export interface GetAppSecEvalHostnamesResult {
      * A tabular display showing the evaluation hostnames.
      */
     readonly outputText: string;
+}
+
+export function getAppSecEvalHostnamesOutput(args: GetAppSecEvalHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecEvalHostnamesResult> {
+    return pulumi.output(args).apply(a => getAppSecEvalHostnames(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecEvalHostnames.
+ */
+export interface GetAppSecEvalHostnamesOutputArgs {
+    /**
+     * The ID of the security configuration to use.
+     */
+    configId: pulumi.Input<number>;
 }

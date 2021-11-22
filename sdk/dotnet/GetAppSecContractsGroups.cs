@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -54,6 +55,50 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecContractsGroupsResult> InvokeAsync(GetAppSecContractsGroupsArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecContractsGroupsResult>("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", args ?? new GetAppSecContractsGroupsArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.getAppSecContractsGroups` data source to retrieve information about the contracts and groups for your account. Each object contains the contract, groups associated with the contract, and whether Kona Site Defender or Web Application Protector is the product for that contract. You’ll need this information when you create a new security configuration or when you want to get a list of hostnames still available for use in a security policy. The information available via this data source is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf).
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var contractsGroups = Output.Create(Akamai.GetAppSecContractsGroups.InvokeAsync(new Akamai.GetAppSecContractsGroupsArgs
+        ///         {
+        ///             Contractid = @var.Contractid,
+        ///             Groupid = @var.Groupid,
+        ///         }));
+        ///         this.ContractsGroupsList = contractsGroups.Apply(contractsGroups =&gt; contractsGroups.OutputText);
+        ///         this.ContractsGroupsJson = contractsGroups.Apply(contractsGroups =&gt; contractsGroups.Json);
+        ///         this.ContractGroupsDefaultContractid = contractsGroups.Apply(contractsGroups =&gt; contractsGroups.DefaultContractid);
+        ///         this.ContractGroupsDefaultGroupid = contractsGroups.Apply(contractsGroups =&gt; contractsGroups.DefaultGroupid);
+        ///     }
+        /// 
+        ///     [Output("contractsGroupsList")]
+        ///     public Output&lt;string&gt; ContractsGroupsList { get; set; }
+        ///     [Output("contractsGroupsJson")]
+        ///     public Output&lt;string&gt; ContractsGroupsJson { get; set; }
+        ///     [Output("contractGroupsDefaultContractid")]
+        ///     public Output&lt;string&gt; ContractGroupsDefaultContractid { get; set; }
+        ///     [Output("contractGroupsDefaultGroupid")]
+        ///     public Output&lt;string&gt; ContractGroupsDefaultGroupid { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecContractsGroupsResult> Invoke(GetAppSecContractsGroupsInvokeArgs? args = null, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecContractsGroupsResult>("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", args ?? new GetAppSecContractsGroupsInvokeArgs(), options.WithVersion());
     }
 
 
@@ -72,6 +117,25 @@ namespace Pulumi.Akamai
         public int? Groupid { get; set; }
 
         public GetAppSecContractsGroupsArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecContractsGroupsInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// (Optional) The ID of a contract for which to retrieve information.
+        /// </summary>
+        [Input("contractid")]
+        public Input<string>? Contractid { get; set; }
+
+        /// <summary>
+        /// (Optional) The ID of a group for which to retrieve information.
+        /// </summary>
+        [Input("groupid")]
+        public Input<int>? Groupid { get; set; }
+
+        public GetAppSecContractsGroupsInvokeArgs()
         {
         }
     }

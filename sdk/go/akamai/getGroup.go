@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -61,4 +64,69 @@ type GetGroupResult struct {
 	Id string `pulumi:"id"`
 	// Deprecated: The setting "name" has been deprecated.
 	Name string `pulumi:"name"`
+}
+
+func GetGroupOutput(ctx *pulumi.Context, args GetGroupOutputArgs, opts ...pulumi.InvokeOption) GetGroupResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetGroupResult, error) {
+			args := v.(GetGroupArgs)
+			r, err := GetGroup(ctx, &args, opts...)
+			return *r, err
+		}).(GetGroupResultOutput)
+}
+
+// A collection of arguments for invoking getGroup.
+type GetGroupOutputArgs struct {
+	// Deprecated: The setting "contract" has been deprecated.
+	Contract   pulumi.StringPtrInput `pulumi:"contract"`
+	ContractId pulumi.StringPtrInput `pulumi:"contractId"`
+	GroupName  pulumi.StringPtrInput `pulumi:"groupName"`
+	// Deprecated: The setting "name" has been deprecated.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+}
+
+func (GetGroupOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getGroup.
+type GetGroupResultOutput struct{ *pulumi.OutputState }
+
+func (GetGroupResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupResult)(nil)).Elem()
+}
+
+func (o GetGroupResultOutput) ToGetGroupResultOutput() GetGroupResultOutput {
+	return o
+}
+
+func (o GetGroupResultOutput) ToGetGroupResultOutputWithContext(ctx context.Context) GetGroupResultOutput {
+	return o
+}
+
+// Deprecated: The setting "contract" has been deprecated.
+func (o GetGroupResultOutput) Contract() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupResult) string { return v.Contract }).(pulumi.StringOutput)
+}
+
+func (o GetGroupResultOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupResult) string { return v.ContractId }).(pulumi.StringOutput)
+}
+
+func (o GetGroupResultOutput) GroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupResult) string { return v.GroupName }).(pulumi.StringOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetGroupResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Deprecated: The setting "name" has been deprecated.
+func (o GetGroupResultOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupResult) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetGroupResultOutput{})
 }

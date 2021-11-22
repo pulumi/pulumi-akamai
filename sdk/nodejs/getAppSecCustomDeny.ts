@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -78,4 +77,22 @@ export interface GetAppSecCustomDenyResult {
      * A tabular display showing the custom deny action information.
      */
     readonly outputText: string;
+}
+
+export function getAppSecCustomDenyOutput(args: GetAppSecCustomDenyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecCustomDenyResult> {
+    return pulumi.output(args).apply(a => getAppSecCustomDeny(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecCustomDeny.
+ */
+export interface GetAppSecCustomDenyOutputArgs {
+    /**
+     * The configuration ID to use.
+     */
+    configId: pulumi.Input<number>;
+    /**
+     * The ID of a specific custom deny action.
+     */
+    customDenyId?: pulumi.Input<string>;
 }

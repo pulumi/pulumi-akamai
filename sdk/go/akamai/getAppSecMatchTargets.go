@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,13 +27,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		matchTargetsAppSecMatchTargets, err := akamai.GetAppSecMatchTargets(ctx, &akamai.GetAppSecMatchTargetsArgs{
+// 		matchTargetsAppSecMatchTargets, err := akamai.GetAppSecMatchTargets(ctx, &GetAppSecMatchTargetsArgs{
 // 			ConfigId: configuration.ConfigId,
 // 		}, nil)
 // 		if err != nil {
@@ -38,7 +41,7 @@ import (
 // 		}
 // 		ctx.Export("matchTargets", matchTargetsAppSecMatchTargets.OutputText)
 // 		opt1 := _var.Match_target_id
-// 		matchTarget, err := akamai.GetAppSecMatchTargets(ctx, &akamai.GetAppSecMatchTargetsArgs{
+// 		matchTarget, err := akamai.GetAppSecMatchTargets(ctx, &GetAppSecMatchTargetsArgs{
 // 			ConfigId:      configuration.ConfigId,
 // 			MatchTargetId: &opt1,
 // 		}, nil)
@@ -77,4 +80,67 @@ type GetAppSecMatchTargetsResult struct {
 	MatchTargetId *int   `pulumi:"matchTargetId"`
 	// A tabular display showing the ID and Policy ID of all match targets associated with the specified security configuration, or of the specific match target if `matchTargetId` was supplied.
 	OutputText string `pulumi:"outputText"`
+}
+
+func GetAppSecMatchTargetsOutput(ctx *pulumi.Context, args GetAppSecMatchTargetsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecMatchTargetsResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetAppSecMatchTargetsResult, error) {
+			args := v.(GetAppSecMatchTargetsArgs)
+			r, err := GetAppSecMatchTargets(ctx, &args, opts...)
+			return *r, err
+		}).(GetAppSecMatchTargetsResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecMatchTargets.
+type GetAppSecMatchTargetsOutputArgs struct {
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The ID of the match target to use. If not supplied, information about all match targets is returned.
+	MatchTargetId pulumi.IntPtrInput `pulumi:"matchTargetId"`
+}
+
+func (GetAppSecMatchTargetsOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecMatchTargetsArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecMatchTargets.
+type GetAppSecMatchTargetsResultOutput struct{ *pulumi.OutputState }
+
+func (GetAppSecMatchTargetsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecMatchTargetsResult)(nil)).Elem()
+}
+
+func (o GetAppSecMatchTargetsResultOutput) ToGetAppSecMatchTargetsResultOutput() GetAppSecMatchTargetsResultOutput {
+	return o
+}
+
+func (o GetAppSecMatchTargetsResultOutput) ToGetAppSecMatchTargetsResultOutputWithContext(ctx context.Context) GetAppSecMatchTargetsResultOutput {
+	return o
+}
+
+func (o GetAppSecMatchTargetsResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAppSecMatchTargetsResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetAppSecMatchTargetsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecMatchTargetsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted list of the match target information.
+func (o GetAppSecMatchTargetsResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecMatchTargetsResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecMatchTargetsResultOutput) MatchTargetId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAppSecMatchTargetsResult) *int { return v.MatchTargetId }).(pulumi.IntPtrOutput)
+}
+
+// A tabular display showing the ID and Policy ID of all match targets associated with the specified security configuration, or of the specific match target if `matchTargetId` was supplied.
+func (o GetAppSecMatchTargetsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecMatchTargetsResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetAppSecMatchTargetsResultOutput{})
 }

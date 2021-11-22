@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,7 +26,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.GetAppSecHostnameCoverageMatchTargets(ctx, &akamai.GetAppSecHostnameCoverageMatchTargetsArgs{
+// 		_, err := akamai.GetAppSecHostnameCoverageMatchTargets(ctx, &GetAppSecHostnameCoverageMatchTargetsArgs{
 // 			ConfigId: 43253,
 // 			Hostname: "example.com",
 // 		}, nil)
@@ -61,4 +64,67 @@ type GetAppSecHostnameCoverageMatchTargetsResult struct {
 	Json string `pulumi:"json"`
 	// A tabular display of the coverage information.
 	OutputText string `pulumi:"outputText"`
+}
+
+func GetAppSecHostnameCoverageMatchTargetsOutput(ctx *pulumi.Context, args GetAppSecHostnameCoverageMatchTargetsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecHostnameCoverageMatchTargetsResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetAppSecHostnameCoverageMatchTargetsResult, error) {
+			args := v.(GetAppSecHostnameCoverageMatchTargetsArgs)
+			r, err := GetAppSecHostnameCoverageMatchTargets(ctx, &args, opts...)
+			return *r, err
+		}).(GetAppSecHostnameCoverageMatchTargetsResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecHostnameCoverageMatchTargets.
+type GetAppSecHostnameCoverageMatchTargetsOutputArgs struct {
+	// The configuration ID.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The hostname for which to retrieve information.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+}
+
+func (GetAppSecHostnameCoverageMatchTargetsOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecHostnameCoverageMatchTargetsArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecHostnameCoverageMatchTargets.
+type GetAppSecHostnameCoverageMatchTargetsResultOutput struct{ *pulumi.OutputState }
+
+func (GetAppSecHostnameCoverageMatchTargetsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecHostnameCoverageMatchTargetsResult)(nil)).Elem()
+}
+
+func (o GetAppSecHostnameCoverageMatchTargetsResultOutput) ToGetAppSecHostnameCoverageMatchTargetsResultOutput() GetAppSecHostnameCoverageMatchTargetsResultOutput {
+	return o
+}
+
+func (o GetAppSecHostnameCoverageMatchTargetsResultOutput) ToGetAppSecHostnameCoverageMatchTargetsResultOutputWithContext(ctx context.Context) GetAppSecHostnameCoverageMatchTargetsResultOutput {
+	return o
+}
+
+func (o GetAppSecHostnameCoverageMatchTargetsResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAppSecHostnameCoverageMatchTargetsResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+func (o GetAppSecHostnameCoverageMatchTargetsResultOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecHostnameCoverageMatchTargetsResult) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetAppSecHostnameCoverageMatchTargetsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecHostnameCoverageMatchTargetsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted list of the coverage information.
+func (o GetAppSecHostnameCoverageMatchTargetsResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecHostnameCoverageMatchTargetsResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display of the coverage information.
+func (o GetAppSecHostnameCoverageMatchTargetsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecHostnameCoverageMatchTargetsResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetAppSecHostnameCoverageMatchTargetsResultOutput{})
 }

@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecApiRequestConstraintsResult',
     'AwaitableGetAppSecApiRequestConstraintsResult',
     'get_app_sec_api_request_constraints',
+    'get_app_sec_api_request_constraints_output',
 ]
 
 @pulumi.output_type
@@ -142,3 +143,39 @@ def get_app_sec_api_request_constraints(api_id: Optional[int] = None,
         json=__ret__.json,
         output_text=__ret__.output_text,
         security_policy_id=__ret__.security_policy_id)
+
+
+@_utilities.lift_output_func(get_app_sec_api_request_constraints)
+def get_app_sec_api_request_constraints_output(api_id: Optional[pulumi.Input[Optional[int]]] = None,
+                                               config_id: Optional[pulumi.Input[int]] = None,
+                                               security_policy_id: Optional[pulumi.Input[str]] = None,
+                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecApiRequestConstraintsResult]:
+    """
+    Use the `AppSecApiRequestConstraints` data source to retrieve a list of APIs with their constraints and associated actions, or the constraints and actions for a particular API. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapirequestconstraints).
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    apis_request_constraints = akamai.get_app_sec_api_request_constraints(config_id=configuration.config_id,
+        security_policy_id=var["security_policy_id"])
+    pulumi.export("apisConstraintsText", apis_request_constraints.output_text)
+    pulumi.export("apisConstraintsJson", apis_request_constraints.json)
+    api_request_constraints = akamai.get_app_sec_api_request_constraints(config_id=configuration.config_id,
+        security_policy_id=var["security_policy_id"],
+        api_id=var["api_id"])
+    pulumi.export("apiConstraintsText", api_request_constraints.output_text)
+    pulumi.export("apiConstraintsJson", api_request_constraints.json)
+    ```
+
+
+    :param int api_id: The ID of a specific API for which to retrieve constraint information.
+    :param int config_id: The configuration ID to use.
+    :param str security_policy_id: The ID of the security policy to use.
+    """
+    ...

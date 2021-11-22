@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -51,6 +52,47 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecSiemSettingsResult> InvokeAsync(GetAppSecSiemSettingsArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSiemSettingsResult>("akamai:index/getAppSecSiemSettings:getAppSecSiemSettings", args ?? new GetAppSecSiemSettingsArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.AppSecSiemSettings` data source to retrieve the SIEM settings for a specific configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemsettings).
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = @var.Security_configuration,
+        ///         }));
+        ///         var siemSettings = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSiemSettings.InvokeAsync(new Akamai.GetAppSecSiemSettingsArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///         })));
+        ///         this.SiemSettingsJson = siemSettings.Apply(siemSettings =&gt; siemSettings.Json);
+        ///         this.SiemSettingsOutput = siemSettings.Apply(siemSettings =&gt; siemSettings.OutputText);
+        ///     }
+        /// 
+        ///     [Output("siemSettingsJson")]
+        ///     public Output&lt;string&gt; SiemSettingsJson { get; set; }
+        ///     [Output("siemSettingsOutput")]
+        ///     public Output&lt;string&gt; SiemSettingsOutput { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecSiemSettingsResult> Invoke(GetAppSecSiemSettingsInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecSiemSettingsResult>("akamai:index/getAppSecSiemSettings:getAppSecSiemSettings", args ?? new GetAppSecSiemSettingsInvokeArgs(), options.WithVersion());
     }
 
 
@@ -63,6 +105,19 @@ namespace Pulumi.Akamai
         public int ConfigId { get; set; }
 
         public GetAppSecSiemSettingsArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecSiemSettingsInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        public GetAppSecSiemSettingsInvokeArgs()
         {
         }
     }

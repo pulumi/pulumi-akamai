@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -52,6 +53,48 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAuthoritiesSetResult> InvokeAsync(GetAuthoritiesSetArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAuthoritiesSetResult>("akamai:index/getAuthoritiesSet:getAuthoritiesSet", args ?? new GetAuthoritiesSetArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.getAuthoritiesSet` data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var example = Output.Create(Akamai.GetAuthoritiesSet.InvokeAsync(new Akamai.GetAuthoritiesSetArgs
+        ///         {
+        ///             Contract = "ctr_1-AB123",
+        ///         }));
+        ///     }
+        /// 
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// ## Argument reference
+        /// 
+        /// This data source supports this argument:
+        /// 
+        /// * `contract` - (Required) The contract ID.
+        /// 
+        /// ## Attributes reference
+        /// 
+        /// This data source supports this attribute:
+        /// 
+        /// * `authorities` - A list of authorities.
+        /// </summary>
+        public static Output<GetAuthoritiesSetResult> Invoke(GetAuthoritiesSetInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAuthoritiesSetResult>("akamai:index/getAuthoritiesSet:getAuthoritiesSet", args ?? new GetAuthoritiesSetInvokeArgs(), options.WithVersion());
     }
 
 
@@ -61,6 +104,16 @@ namespace Pulumi.Akamai
         public string Contract { get; set; } = null!;
 
         public GetAuthoritiesSetArgs()
+        {
+        }
+    }
+
+    public sealed class GetAuthoritiesSetInvokeArgs : Pulumi.InvokeArgs
+    {
+        [Input("contract", required: true)]
+        public Input<string> Contract { get; set; } = null!;
+
+        public GetAuthoritiesSetInvokeArgs()
         {
         }
     }

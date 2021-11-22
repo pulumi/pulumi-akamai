@@ -133,10 +133,14 @@ from . import outputs
 
 # Make subpackages available:
 if typing.TYPE_CHECKING:
-    import pulumi_akamai.config as config
-    import pulumi_akamai.edgedns as edgedns
-    import pulumi_akamai.properties as properties
-    import pulumi_akamai.trafficmanagement as trafficmanagement
+    import pulumi_akamai.config as __config
+    config = __config
+    import pulumi_akamai.edgedns as __edgedns
+    edgedns = __edgedns
+    import pulumi_akamai.properties as __properties
+    properties = __properties
+    import pulumi_akamai.trafficmanagement as __trafficmanagement
+    trafficmanagement = __trafficmanagement
 else:
     config = _utilities.lazy_import('pulumi_akamai.config')
     edgedns = _utilities.lazy_import('pulumi_akamai.edgedns')

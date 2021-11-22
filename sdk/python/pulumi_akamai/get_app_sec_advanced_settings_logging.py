@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecAdvancedSettingsLoggingResult',
     'AwaitableGetAppSecAdvancedSettingsLoggingResult',
     'get_app_sec_advanced_settings_logging',
+    'get_app_sec_advanced_settings_logging_output',
 ]
 
 @pulumi.output_type
@@ -127,3 +128,35 @@ def get_app_sec_advanced_settings_logging(config_id: Optional[int] = None,
         json=__ret__.json,
         output_text=__ret__.output_text,
         security_policy_id=__ret__.security_policy_id)
+
+
+@_utilities.lift_output_func(get_app_sec_advanced_settings_logging)
+def get_app_sec_advanced_settings_logging_output(config_id: Optional[pulumi.Input[int]] = None,
+                                                 security_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
+                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecAdvancedSettingsLoggingResult]:
+    """
+    Use the `AppSecAdvancedSettingsLogging` data source to retrieve information about the HTTP header logging controls for a configuration. This operation applies at the configuration level, and therefore applies to all policies within a configuration. You may retrieve these settings for a particular policy by specifying the policy using the security_policy_id parameter. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethttpheaderloggingforaconfiguration).
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    logging = akamai.get_app_sec_advanced_settings_logging(config_id=configuration.config_id)
+    pulumi.export("advancedSettingsLoggingOutput", logging.output_text)
+    pulumi.export("advancedSettingsLoggingJson", logging.json)
+    policy_override = akamai.get_app_sec_advanced_settings_logging(config_id=configuration.config_id,
+        security_policy_id=var["security_policy_id"])
+    pulumi.export("advancedSettingsPolicyLoggingOutput", policy_override.output_text)
+    pulumi.export("advancedSettingsPolicyLoggingJson", policy_override.json)
+    ```
+
+
+    :param int config_id: The configuration ID.
+    :param str security_policy_id: The ID of the security policy to use.
+    """
+    ...

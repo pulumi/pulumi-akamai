@@ -39,7 +39,7 @@ import (
 // 			},
 // 			SecureNetwork: pulumi.String("enhanced-tls"),
 // 			SniOnly:       pulumi.Bool(true),
-// 			AdminContact: &akamai.CpsDvEnrollmentAdminContactArgs{
+// 			AdminContact: &CpsDvEnrollmentAdminContactArgs{
 // 				FirstName:      pulumi.String("x1"),
 // 				LastName:       pulumi.String("x2"),
 // 				Phone:          pulumi.String("123123123"),
@@ -52,7 +52,7 @@ import (
 // 				Region:         pulumi.String("MA"),
 // 				Title:          pulumi.String("Administrator"),
 // 			},
-// 			TechContact: &akamai.CpsDvEnrollmentTechContactArgs{
+// 			TechContact: &CpsDvEnrollmentTechContactArgs{
 // 				FirstName:      pulumi.String("x3"),
 // 				LastName:       pulumi.String("x4"),
 // 				Phone:          pulumi.String("123123123"),
@@ -66,7 +66,7 @@ import (
 // 				Title:          pulumi.String("Administrator"),
 // 			},
 // 			CertificateChainType: pulumi.String("default"),
-// 			Csr: &akamai.CpsDvEnrollmentCsrArgs{
+// 			Csr: &CpsDvEnrollmentCsrArgs{
 // 				CountryCode:        pulumi.String("US"),
 // 				City:               pulumi.String("cambridge"),
 // 				Organization:       pulumi.String("Akamai"),
@@ -74,7 +74,7 @@ import (
 // 				State:              pulumi.String("MA"),
 // 			},
 // 			EnableMultiStackedCertificates: pulumi.Bool(false),
-// 			NetworkConfiguration: &akamai.CpsDvEnrollmentNetworkConfigurationArgs{
+// 			NetworkConfiguration: &CpsDvEnrollmentNetworkConfigurationArgs{
 // 				DisallowedTlsVersions: pulumi.StringArray{
 // 					pulumi.String("TLSv1"),
 // 					pulumi.String("TLSv1_1"),
@@ -87,7 +87,7 @@ import (
 // 				QuicEnabled:      pulumi.Bool(false),
 // 			},
 // 			SignatureAlgorithm: pulumi.String("SHA-256"),
-// 			Organization: &akamai.CpsDvEnrollmentOrganizationArgs{
+// 			Organization: &CpsDvEnrollmentOrganizationArgs{
 // 				Name:           pulumi.String("Akamai"),
 // 				Phone:          pulumi.String("123123123"),
 // 				AddressLineOne: pulumi.String("150 Broadway"),
@@ -455,7 +455,7 @@ type CpsDvEnrollmentArrayInput interface {
 type CpsDvEnrollmentArray []CpsDvEnrollmentInput
 
 func (CpsDvEnrollmentArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*CpsDvEnrollment)(nil))
+	return reflect.TypeOf((*[]*CpsDvEnrollment)(nil)).Elem()
 }
 
 func (i CpsDvEnrollmentArray) ToCpsDvEnrollmentArrayOutput() CpsDvEnrollmentArrayOutput {
@@ -480,7 +480,7 @@ type CpsDvEnrollmentMapInput interface {
 type CpsDvEnrollmentMap map[string]CpsDvEnrollmentInput
 
 func (CpsDvEnrollmentMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*CpsDvEnrollment)(nil))
+	return reflect.TypeOf((*map[string]*CpsDvEnrollment)(nil)).Elem()
 }
 
 func (i CpsDvEnrollmentMap) ToCpsDvEnrollmentMapOutput() CpsDvEnrollmentMapOutput {
@@ -491,9 +491,7 @@ func (i CpsDvEnrollmentMap) ToCpsDvEnrollmentMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentMapOutput)
 }
 
-type CpsDvEnrollmentOutput struct {
-	*pulumi.OutputState
-}
+type CpsDvEnrollmentOutput struct{ *pulumi.OutputState }
 
 func (CpsDvEnrollmentOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*CpsDvEnrollment)(nil))
@@ -512,14 +510,12 @@ func (o CpsDvEnrollmentOutput) ToCpsDvEnrollmentPtrOutput() CpsDvEnrollmentPtrOu
 }
 
 func (o CpsDvEnrollmentOutput) ToCpsDvEnrollmentPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentPtrOutput {
-	return o.ApplyT(func(v CpsDvEnrollment) *CpsDvEnrollment {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CpsDvEnrollment) *CpsDvEnrollment {
 		return &v
 	}).(CpsDvEnrollmentPtrOutput)
 }
 
-type CpsDvEnrollmentPtrOutput struct {
-	*pulumi.OutputState
-}
+type CpsDvEnrollmentPtrOutput struct{ *pulumi.OutputState }
 
 func (CpsDvEnrollmentPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**CpsDvEnrollment)(nil))
@@ -531,6 +527,16 @@ func (o CpsDvEnrollmentPtrOutput) ToCpsDvEnrollmentPtrOutput() CpsDvEnrollmentPt
 
 func (o CpsDvEnrollmentPtrOutput) ToCpsDvEnrollmentPtrOutputWithContext(ctx context.Context) CpsDvEnrollmentPtrOutput {
 	return o
+}
+
+func (o CpsDvEnrollmentPtrOutput) Elem() CpsDvEnrollmentOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollment {
+		if v != nil {
+			return *v
+		}
+		var ret CpsDvEnrollment
+		return ret
+	}).(CpsDvEnrollmentOutput)
 }
 
 type CpsDvEnrollmentArrayOutput struct{ *pulumi.OutputState }
@@ -574,6 +580,10 @@ func (o CpsDvEnrollmentMapOutput) MapIndex(k pulumi.StringInput) CpsDvEnrollment
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentInput)(nil)).Elem(), &CpsDvEnrollment{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentPtrInput)(nil)).Elem(), &CpsDvEnrollment{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentArrayInput)(nil)).Elem(), CpsDvEnrollmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentMapInput)(nil)).Elem(), CpsDvEnrollmentMap{})
 	pulumi.RegisterOutputType(CpsDvEnrollmentOutput{})
 	pulumi.RegisterOutputType(CpsDvEnrollmentPtrOutput{})
 	pulumi.RegisterOutputType(CpsDvEnrollmentArrayOutput{})

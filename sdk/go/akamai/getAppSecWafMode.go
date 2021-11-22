@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,13 +27,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		wafMode, err := akamai.LookupAppSecWafMode(ctx, &akamai.LookupAppSecWafModeArgs{
+// 		wafMode, err := akamai.LookupAppSecWafMode(ctx, &GetAppSecWafModeArgs{
 // 			ConfigId:         configuration.ConfigId,
 // 			SecurityPolicyId: _var.Policy_id,
 // 		}, nil)
@@ -85,4 +88,92 @@ type LookupAppSecWafModeResult struct {
 	// A tabular display of the mode information.
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
+}
+
+func LookupAppSecWafModeOutput(ctx *pulumi.Context, args LookupAppSecWafModeOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecWafModeResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (LookupAppSecWafModeResult, error) {
+			args := v.(LookupAppSecWafModeArgs)
+			r, err := LookupAppSecWafMode(ctx, &args, opts...)
+			return *r, err
+		}).(LookupAppSecWafModeResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecWafMode.
+type LookupAppSecWafModeOutputArgs struct {
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The ID of the security policy to use.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+}
+
+func (LookupAppSecWafModeOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecWafModeArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecWafMode.
+type LookupAppSecWafModeResultOutput struct{ *pulumi.OutputState }
+
+func (LookupAppSecWafModeResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecWafModeResult)(nil)).Elem()
+}
+
+func (o LookupAppSecWafModeResultOutput) ToLookupAppSecWafModeResultOutput() LookupAppSecWafModeResultOutput {
+	return o
+}
+
+func (o LookupAppSecWafModeResultOutput) ToLookupAppSecWafModeResultOutputWithContext(ctx context.Context) LookupAppSecWafModeResultOutput {
+	return o
+}
+
+func (o LookupAppSecWafModeResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAppSecWafModeResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The current rule set version and the ISO 8601 date the rule set version was introduced; this date acts like a version number.
+func (o LookupAppSecWafModeResultOutput) CurrentRuleset() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecWafModeResult) string { return v.CurrentRuleset }).(pulumi.StringOutput)
+}
+
+// The ISO 8601 time stamp when the evaluation is expiring. This value only appears when `eval` is set to "enabled".
+func (o LookupAppSecWafModeResultOutput) EvalExpirationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecWafModeResult) string { return v.EvalExpirationDate }).(pulumi.StringOutput)
+}
+
+// The evaluation rule set version and the ISO 8601 date the evaluation starts.
+func (o LookupAppSecWafModeResultOutput) EvalRuleset() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecWafModeResult) string { return v.EvalRuleset }).(pulumi.StringOutput)
+}
+
+// Whether the evaluation mode is enabled or disabled."
+func (o LookupAppSecWafModeResultOutput) EvalStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecWafModeResult) string { return v.EvalStatus }).(pulumi.StringOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o LookupAppSecWafModeResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecWafModeResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted list of the mode information.
+func (o LookupAppSecWafModeResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecWafModeResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// The security policy mode, either `KRS` (update manually) or `AAG` (update automatically), For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE.
+func (o LookupAppSecWafModeResultOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecWafModeResult) string { return v.Mode }).(pulumi.StringOutput)
+}
+
+// A tabular display of the mode information.
+func (o LookupAppSecWafModeResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecWafModeResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecWafModeResultOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecWafModeResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(LookupAppSecWafModeResultOutput{})
 }

@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecWapSelectedHostnamesResult',
     'AwaitableGetAppSecWapSelectedHostnamesResult',
     'get_app_sec_wap_selected_hostnames',
+    'get_app_sec_wap_selected_hostnames_output',
 ]
 
 @pulumi.output_type
@@ -149,3 +150,20 @@ def get_app_sec_wap_selected_hostnames(config_id: Optional[int] = None,
         protected_hosts=__ret__.protected_hosts,
         security_policy_id=__ret__.security_policy_id,
         selected_hosts=__ret__.selected_hosts)
+
+
+@_utilities.lift_output_func(get_app_sec_wap_selected_hostnames)
+def get_app_sec_wap_selected_hostnames_output(config_id: Optional[pulumi.Input[int]] = None,
+                                              security_policy_id: Optional[pulumi.Input[str]] = None,
+                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecWapSelectedHostnamesResult]:
+    """
+    Use the `AppSecWapSelectedHostnames` data source to retrieve lists of the hostnames that are currently
+    protected and currently being evaluated under a given security configuration and policy. This resource is available
+    only for WAP accounts. (WAP selected hostnames is currently in beta. Please contact your Akamai representative for
+    more information about this feature.)
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param str security_policy_id: The ID of the security policy to use.
+    """
+    ...

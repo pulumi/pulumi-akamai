@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,13 +27,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		upgradeDetails, err := akamai.GetAppSecRuleUpgradeDetails(ctx, &akamai.GetAppSecRuleUpgradeDetailsArgs{
+// 		upgradeDetails, err := akamai.GetAppSecRuleUpgradeDetails(ctx, &GetAppSecRuleUpgradeDetailsArgs{
 // 			ConfigId:         configuration.ConfigId,
 // 			SecurityPolicyId: _var.Security_policy_id,
 // 		}, nil)
@@ -70,4 +73,67 @@ type GetAppSecRuleUpgradeDetailsResult struct {
 	// A tabular display showing changes (additions and deletions) to the rules for the specified security policy.
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
+}
+
+func GetAppSecRuleUpgradeDetailsOutput(ctx *pulumi.Context, args GetAppSecRuleUpgradeDetailsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecRuleUpgradeDetailsResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetAppSecRuleUpgradeDetailsResult, error) {
+			args := v.(GetAppSecRuleUpgradeDetailsArgs)
+			r, err := GetAppSecRuleUpgradeDetails(ctx, &args, opts...)
+			return *r, err
+		}).(GetAppSecRuleUpgradeDetailsResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecRuleUpgradeDetails.
+type GetAppSecRuleUpgradeDetailsOutputArgs struct {
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The ID of the security policy to use.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+}
+
+func (GetAppSecRuleUpgradeDetailsOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecRuleUpgradeDetailsArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecRuleUpgradeDetails.
+type GetAppSecRuleUpgradeDetailsResultOutput struct{ *pulumi.OutputState }
+
+func (GetAppSecRuleUpgradeDetailsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecRuleUpgradeDetailsResult)(nil)).Elem()
+}
+
+func (o GetAppSecRuleUpgradeDetailsResultOutput) ToGetAppSecRuleUpgradeDetailsResultOutput() GetAppSecRuleUpgradeDetailsResultOutput {
+	return o
+}
+
+func (o GetAppSecRuleUpgradeDetailsResultOutput) ToGetAppSecRuleUpgradeDetailsResultOutputWithContext(ctx context.Context) GetAppSecRuleUpgradeDetailsResultOutput {
+	return o
+}
+
+func (o GetAppSecRuleUpgradeDetailsResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAppSecRuleUpgradeDetailsResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetAppSecRuleUpgradeDetailsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecRuleUpgradeDetailsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted list of the changes (additions and deletions) to the rules for the specified security policy.
+func (o GetAppSecRuleUpgradeDetailsResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecRuleUpgradeDetailsResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display showing changes (additions and deletions) to the rules for the specified security policy.
+func (o GetAppSecRuleUpgradeDetailsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecRuleUpgradeDetailsResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecRuleUpgradeDetailsResultOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecRuleUpgradeDetailsResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetAppSecRuleUpgradeDetailsResultOutput{})
 }

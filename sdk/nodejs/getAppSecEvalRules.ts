@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -93,4 +92,26 @@ export interface GetAppSecEvalRulesResult {
     readonly outputText: string;
     readonly ruleId?: number;
     readonly securityPolicyId: string;
+}
+
+export function getAppSecEvalRulesOutput(args: GetAppSecEvalRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecEvalRulesResult> {
+    return pulumi.output(args).apply(a => getAppSecEvalRules(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecEvalRules.
+ */
+export interface GetAppSecEvalRulesOutputArgs {
+    /**
+     * The ID of the security configuration to use.
+     */
+    configId: pulumi.Input<number>;
+    /**
+     * The ID of the rule to use. If not specified, information about all rules will be returned.
+     */
+    ruleId?: pulumi.Input<number>;
+    /**
+     * The ID of the security policy to use.
+     */
+    securityPolicyId: pulumi.Input<string>;
 }

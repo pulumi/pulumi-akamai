@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,13 +27,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		reputationAnalysis, err := akamai.LookupAppSecReputationProfileAnalysis(ctx, &akamai.LookupAppSecReputationProfileAnalysisArgs{
+// 		reputationAnalysis, err := akamai.LookupAppSecReputationProfileAnalysis(ctx, &GetAppSecReputationProfileAnalysisArgs{
 // 			ConfigId:         configuration.ConfigId,
 // 			SecurityPolicyId: _var.Security_policy_id,
 // 		}, nil)
@@ -70,4 +73,67 @@ type LookupAppSecReputationProfileAnalysisResult struct {
 	// A tabular display showing the reputation analysis settings.
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
+}
+
+func LookupAppSecReputationProfileAnalysisOutput(ctx *pulumi.Context, args LookupAppSecReputationProfileAnalysisOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecReputationProfileAnalysisResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (LookupAppSecReputationProfileAnalysisResult, error) {
+			args := v.(LookupAppSecReputationProfileAnalysisArgs)
+			r, err := LookupAppSecReputationProfileAnalysis(ctx, &args, opts...)
+			return *r, err
+		}).(LookupAppSecReputationProfileAnalysisResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecReputationProfileAnalysis.
+type LookupAppSecReputationProfileAnalysisOutputArgs struct {
+	// The configuration ID to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The ID of the security policy to use.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+}
+
+func (LookupAppSecReputationProfileAnalysisOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecReputationProfileAnalysisArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecReputationProfileAnalysis.
+type LookupAppSecReputationProfileAnalysisResultOutput struct{ *pulumi.OutputState }
+
+func (LookupAppSecReputationProfileAnalysisResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecReputationProfileAnalysisResult)(nil)).Elem()
+}
+
+func (o LookupAppSecReputationProfileAnalysisResultOutput) ToLookupAppSecReputationProfileAnalysisResultOutput() LookupAppSecReputationProfileAnalysisResultOutput {
+	return o
+}
+
+func (o LookupAppSecReputationProfileAnalysisResultOutput) ToLookupAppSecReputationProfileAnalysisResultOutputWithContext(ctx context.Context) LookupAppSecReputationProfileAnalysisResultOutput {
+	return o
+}
+
+func (o LookupAppSecReputationProfileAnalysisResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAppSecReputationProfileAnalysisResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o LookupAppSecReputationProfileAnalysisResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecReputationProfileAnalysisResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted list of the reputation analysis settings.
+func (o LookupAppSecReputationProfileAnalysisResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecReputationProfileAnalysisResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display showing the reputation analysis settings.
+func (o LookupAppSecReputationProfileAnalysisResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecReputationProfileAnalysisResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecReputationProfileAnalysisResultOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecReputationProfileAnalysisResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(LookupAppSecReputationProfileAnalysisResultOutput{})
 }

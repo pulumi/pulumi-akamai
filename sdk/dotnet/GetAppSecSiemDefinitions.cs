@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -55,6 +56,51 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecSiemDefinitionsResult> InvokeAsync(GetAppSecSiemDefinitionsArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSiemDefinitionsResult>("akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions", args ?? new GetAppSecSiemDefinitionsArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.getAppSecSiemDefinitions` data source to retrieve information about the available SIEM versions, or about a specific SIEM version. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemversions).
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = @var.Security_configuration,
+        ///         }));
+        ///         var siemDefinitions = Output.Create(Akamai.GetAppSecSiemDefinitions.InvokeAsync());
+        ///         this.SiemDefinitionsJson = siemDefinitions.Apply(siemDefinitions =&gt; siemDefinitions.Json);
+        ///         this.SiemDefinitionsOutput = siemDefinitions.Apply(siemDefinitions =&gt; siemDefinitions.OutputText);
+        ///         var siemDefinition = Output.Create(Akamai.GetAppSecSiemDefinitions.InvokeAsync(new Akamai.GetAppSecSiemDefinitionsArgs
+        ///         {
+        ///             SiemDefinitionName = @var.Siem_definition_name,
+        ///         }));
+        ///         this.SiemDefinitionId = siemDefinition.Apply(siemDefinition =&gt; siemDefinition.Id);
+        ///     }
+        /// 
+        ///     [Output("siemDefinitionsJson")]
+        ///     public Output&lt;string&gt; SiemDefinitionsJson { get; set; }
+        ///     [Output("siemDefinitionsOutput")]
+        ///     public Output&lt;string&gt; SiemDefinitionsOutput { get; set; }
+        ///     [Output("siemDefinitionId")]
+        ///     public Output&lt;string&gt; SiemDefinitionId { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecSiemDefinitionsResult> Invoke(GetAppSecSiemDefinitionsInvokeArgs? args = null, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecSiemDefinitionsResult>("akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions", args ?? new GetAppSecSiemDefinitionsInvokeArgs(), options.WithVersion());
     }
 
 
@@ -67,6 +113,19 @@ namespace Pulumi.Akamai
         public string? SiemDefinitionName { get; set; }
 
         public GetAppSecSiemDefinitionsArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecSiemDefinitionsInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The name of a specific SIEM definition for which to retrieve information.
+        /// </summary>
+        [Input("siemDefinitionName")]
+        public Input<string>? SiemDefinitionName { get; set; }
+
+        public GetAppSecSiemDefinitionsInvokeArgs()
         {
         }
     }

@@ -311,59 +311,6 @@ export interface PropertyVariablesVariableVariable {
     value?: string;
 }
 
-export interface ProviderAppsec {
-    accessToken?: string;
-    accountKey?: string;
-    clientSecret?: string;
-    clientToken?: string;
-    host?: string;
-    maxBody?: number;
-}
-
-export interface ProviderConfig {
-    accessToken?: string;
-    accountKey?: string;
-    clientSecret?: string;
-    clientToken?: string;
-    host?: string;
-    maxBody?: number;
-}
-
-export interface ProviderDns {
-    accessToken?: string;
-    accountKey?: string;
-    clientSecret?: string;
-    clientToken?: string;
-    host?: string;
-    maxBody?: number;
-}
-
-export interface ProviderGtm {
-    accessToken?: string;
-    accountKey?: string;
-    clientSecret?: string;
-    clientToken?: string;
-    host?: string;
-    maxBody?: number;
-}
-
-export interface ProviderNetwork {
-    accessToken?: string;
-    accountKey?: string;
-    clientSecret?: string;
-    clientToken?: string;
-    host?: string;
-    maxBody?: number;
-}
-
-export interface ProviderProperty {
-    accessToken?: string;
-    accountKey?: string;
-    clientSecret?: string;
-    clientToken?: string;
-    host?: string;
-    maxBody?: number;
-}
 export namespace config {
     export interface Appsecs {
         accessToken?: string;
@@ -418,6 +365,7 @@ export namespace config {
         host?: string;
         maxBody?: number;
     }
+
 }
 
 export namespace edgedns {
@@ -426,6 +374,7 @@ export namespace edgedns {
         name: string;
         secret: string;
     }
+
 }
 
 export namespace properties {
@@ -505,6 +454,7 @@ export namespace properties {
         sensitive: boolean;
         value?: string;
     }
+
 }
 
 export namespace trafficmanagement {
@@ -601,4 +551,5 @@ export namespace trafficmanagement {
         loadServers?: string[];
         useDefaultLoadObject?: boolean;
     }
+
 }

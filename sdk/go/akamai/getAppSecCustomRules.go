@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,13 +27,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		customRules, err := akamai.GetAppSecCustomRules(ctx, &akamai.GetAppSecCustomRulesArgs{
+// 		customRules, err := akamai.GetAppSecCustomRules(ctx, &GetAppSecCustomRulesArgs{
 // 			ConfigId: configuration.ConfigId,
 // 		}, nil)
 // 		if err != nil {
@@ -40,7 +43,7 @@ import (
 // 		ctx.Export("customRulesJson", customRules.Json)
 // 		ctx.Export("customRulesConfigId", customRules.ConfigId)
 // 		opt1 := _var.Custom_rule_id
-// 		specificCustomRule, err := akamai.GetAppSecCustomRules(ctx, &akamai.GetAppSecCustomRulesArgs{
+// 		specificCustomRule, err := akamai.GetAppSecCustomRules(ctx, &GetAppSecCustomRulesArgs{
 // 			ConfigId:     configuration.ConfigId,
 // 			CustomRuleId: &opt1,
 // 		}, nil)
@@ -79,4 +82,67 @@ type GetAppSecCustomRulesResult struct {
 	Json string `pulumi:"json"`
 	// A tabular display showing the ID and name of the custom rule(s).
 	OutputText string `pulumi:"outputText"`
+}
+
+func GetAppSecCustomRulesOutput(ctx *pulumi.Context, args GetAppSecCustomRulesOutputArgs, opts ...pulumi.InvokeOption) GetAppSecCustomRulesResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetAppSecCustomRulesResult, error) {
+			args := v.(GetAppSecCustomRulesArgs)
+			r, err := GetAppSecCustomRules(ctx, &args, opts...)
+			return *r, err
+		}).(GetAppSecCustomRulesResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecCustomRules.
+type GetAppSecCustomRulesOutputArgs struct {
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The ID of a specific custom rule to use. If not supplied, information about all custom rules associated with the given security configuration will be returned.
+	CustomRuleId pulumi.IntPtrInput `pulumi:"customRuleId"`
+}
+
+func (GetAppSecCustomRulesOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecCustomRulesArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecCustomRules.
+type GetAppSecCustomRulesResultOutput struct{ *pulumi.OutputState }
+
+func (GetAppSecCustomRulesResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecCustomRulesResult)(nil)).Elem()
+}
+
+func (o GetAppSecCustomRulesResultOutput) ToGetAppSecCustomRulesResultOutput() GetAppSecCustomRulesResultOutput {
+	return o
+}
+
+func (o GetAppSecCustomRulesResultOutput) ToGetAppSecCustomRulesResultOutputWithContext(ctx context.Context) GetAppSecCustomRulesResultOutput {
+	return o
+}
+
+func (o GetAppSecCustomRulesResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAppSecCustomRulesResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+func (o GetAppSecCustomRulesResultOutput) CustomRuleId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAppSecCustomRulesResult) *int { return v.CustomRuleId }).(pulumi.IntPtrOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetAppSecCustomRulesResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecCustomRulesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted display of the custom rule information.
+func (o GetAppSecCustomRulesResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecCustomRulesResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display showing the ID and name of the custom rule(s).
+func (o GetAppSecCustomRulesResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecCustomRulesResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetAppSecCustomRulesResultOutput{})
 }

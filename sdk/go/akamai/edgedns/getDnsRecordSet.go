@@ -4,6 +4,9 @@
 package edgedns
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -32,4 +35,64 @@ type GetDnsRecordSetResult struct {
 	Rdatas     []string `pulumi:"rdatas"`
 	RecordType string   `pulumi:"recordType"`
 	Zone       string   `pulumi:"zone"`
+}
+
+func GetDnsRecordSetOutput(ctx *pulumi.Context, args GetDnsRecordSetOutputArgs, opts ...pulumi.InvokeOption) GetDnsRecordSetResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetDnsRecordSetResult, error) {
+			args := v.(GetDnsRecordSetArgs)
+			r, err := GetDnsRecordSet(ctx, &args, opts...)
+			return *r, err
+		}).(GetDnsRecordSetResultOutput)
+}
+
+// A collection of arguments for invoking getDnsRecordSet.
+type GetDnsRecordSetOutputArgs struct {
+	Host       pulumi.StringInput `pulumi:"host"`
+	RecordType pulumi.StringInput `pulumi:"recordType"`
+	Zone       pulumi.StringInput `pulumi:"zone"`
+}
+
+func (GetDnsRecordSetOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDnsRecordSetArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getDnsRecordSet.
+type GetDnsRecordSetResultOutput struct{ *pulumi.OutputState }
+
+func (GetDnsRecordSetResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDnsRecordSetResult)(nil)).Elem()
+}
+
+func (o GetDnsRecordSetResultOutput) ToGetDnsRecordSetResultOutput() GetDnsRecordSetResultOutput {
+	return o
+}
+
+func (o GetDnsRecordSetResultOutput) ToGetDnsRecordSetResultOutputWithContext(ctx context.Context) GetDnsRecordSetResultOutput {
+	return o
+}
+
+func (o GetDnsRecordSetResultOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDnsRecordSetResult) string { return v.Host }).(pulumi.StringOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetDnsRecordSetResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDnsRecordSetResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetDnsRecordSetResultOutput) Rdatas() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDnsRecordSetResult) []string { return v.Rdatas }).(pulumi.StringArrayOutput)
+}
+
+func (o GetDnsRecordSetResultOutput) RecordType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDnsRecordSetResult) string { return v.RecordType }).(pulumi.StringOutput)
+}
+
+func (o GetDnsRecordSetResultOutput) Zone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDnsRecordSetResult) string { return v.Zone }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetDnsRecordSetResultOutput{})
 }

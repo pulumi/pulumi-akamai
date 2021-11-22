@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -78,4 +77,22 @@ export interface GetAppSecAdvancedSettingsPragmaHeaderResult {
      */
     readonly outputText: string;
     readonly securityPolicyId?: string;
+}
+
+export function getAppSecAdvancedSettingsPragmaHeaderOutput(args: GetAppSecAdvancedSettingsPragmaHeaderOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecAdvancedSettingsPragmaHeaderResult> {
+    return pulumi.output(args).apply(a => getAppSecAdvancedSettingsPragmaHeader(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecAdvancedSettingsPragmaHeader.
+ */
+export interface GetAppSecAdvancedSettingsPragmaHeaderOutputArgs {
+    /**
+     * The configuration ID.
+     */
+    configId: pulumi.Input<number>;
+    /**
+     * The ID of the security policy to use.
+     */
+    securityPolicyId?: pulumi.Input<string>;
 }

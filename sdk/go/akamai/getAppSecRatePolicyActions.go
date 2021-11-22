@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,13 +27,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		ratePolicyActionsAppSecRatePolicyActions, err := akamai.GetAppSecRatePolicyActions(ctx, &akamai.GetAppSecRatePolicyActionsArgs{
+// 		ratePolicyActionsAppSecRatePolicyActions, err := akamai.GetAppSecRatePolicyActions(ctx, &GetAppSecRatePolicyActionsArgs{
 // 			ConfigId:         configuration.ConfigId,
 // 			SecurityPolicyId: _var.Security_policy_id,
 // 		}, nil)
@@ -70,4 +73,68 @@ type GetAppSecRatePolicyActionsResult struct {
 	OutputText       string `pulumi:"outputText"`
 	RatePolicyId     *int   `pulumi:"ratePolicyId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
+}
+
+func GetAppSecRatePolicyActionsOutput(ctx *pulumi.Context, args GetAppSecRatePolicyActionsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecRatePolicyActionsResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetAppSecRatePolicyActionsResult, error) {
+			args := v.(GetAppSecRatePolicyActionsArgs)
+			r, err := GetAppSecRatePolicyActions(ctx, &args, opts...)
+			return *r, err
+		}).(GetAppSecRatePolicyActionsResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecRatePolicyActions.
+type GetAppSecRatePolicyActionsOutputArgs struct {
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The ID of the rate policy to use. If not supplied, information about all rate policies will be returned.
+	RatePolicyId pulumi.IntPtrInput `pulumi:"ratePolicyId"`
+	// The ID of the security policy to use.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+}
+
+func (GetAppSecRatePolicyActionsOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecRatePolicyActionsArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecRatePolicyActions.
+type GetAppSecRatePolicyActionsResultOutput struct{ *pulumi.OutputState }
+
+func (GetAppSecRatePolicyActionsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecRatePolicyActionsResult)(nil)).Elem()
+}
+
+func (o GetAppSecRatePolicyActionsResultOutput) ToGetAppSecRatePolicyActionsResultOutput() GetAppSecRatePolicyActionsResultOutput {
+	return o
+}
+
+func (o GetAppSecRatePolicyActionsResultOutput) ToGetAppSecRatePolicyActionsResultOutputWithContext(ctx context.Context) GetAppSecRatePolicyActionsResultOutput {
+	return o
+}
+
+func (o GetAppSecRatePolicyActionsResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAppSecRatePolicyActionsResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetAppSecRatePolicyActionsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecRatePolicyActionsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A tabular display showing the ID IPv4Action and IPv6Action of the indicated security policy.
+func (o GetAppSecRatePolicyActionsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecRatePolicyActionsResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecRatePolicyActionsResultOutput) RatePolicyId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAppSecRatePolicyActionsResult) *int { return v.RatePolicyId }).(pulumi.IntPtrOutput)
+}
+
+func (o GetAppSecRatePolicyActionsResultOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecRatePolicyActionsResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetAppSecRatePolicyActionsResultOutput{})
 }

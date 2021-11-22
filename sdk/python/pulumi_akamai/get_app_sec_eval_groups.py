@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecEvalGroupsResult',
     'AwaitableGetAppSecEvalGroupsResult',
     'get_app_sec_eval_groups',
+    'get_app_sec_eval_groups_output',
 ]
 
 @pulumi.output_type
@@ -124,7 +125,7 @@ def get_app_sec_eval_groups(attack_group: Optional[str] = None,
                             security_policy_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecEvalGroupsResult:
     """
-    Use the `getAppSecEvalGroups` data source to list the action and condition-exception information for an evaluation attack
+    Use the `get_app_sec_eval_groups` data source to list the action and condition-exception information for an evaluation attack
     group or groups.
     __BETA__ This is Adaptive Security Engine(ASE) related data source. Please contact your akamai representative if you want to learn more
 
@@ -170,3 +171,39 @@ def get_app_sec_eval_groups(attack_group: Optional[str] = None,
         json=__ret__.json,
         output_text=__ret__.output_text,
         security_policy_id=__ret__.security_policy_id)
+
+
+@_utilities.lift_output_func(get_app_sec_eval_groups)
+def get_app_sec_eval_groups_output(attack_group: Optional[pulumi.Input[Optional[str]]] = None,
+                                   config_id: Optional[pulumi.Input[int]] = None,
+                                   security_policy_id: Optional[pulumi.Input[str]] = None,
+                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecEvalGroupsResult]:
+    """
+    Use the `get_app_sec_eval_groups` data source to list the action and condition-exception information for an evaluation attack
+    group or groups.
+    __BETA__ This is Adaptive Security Engine(ASE) related data source. Please contact your akamai representative if you want to learn more
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    eval_attack_group = akamai.get_app_sec_eval_groups(config_id=configuration.config_id,
+        security_policy_id=var["security_policy_id"],
+        attack_group=var["attack_group"])
+    pulumi.export("evalAttackGroupAction", eval_attack_group.attack_group_action)
+    pulumi.export("conditionException", eval_attack_group.condition_exception)
+    pulumi.export("json", eval_attack_group.json)
+    pulumi.export("outputText", eval_attack_group.output_text)
+    ```
+
+
+    :param str attack_group: The ID of the eval attack group to use.
+    :param int config_id: The ID of the security configuration to use.
+    :param str security_policy_id: The ID of the security policy to use.
+    """
+    ...

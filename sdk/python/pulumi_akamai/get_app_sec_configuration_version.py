@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecConfigurationVersionResult',
     'AwaitableGetAppSecConfigurationVersionResult',
     'get_app_sec_configuration_version',
+    'get_app_sec_configuration_version_output',
 ]
 
 @pulumi.output_type
@@ -112,7 +113,7 @@ def get_app_sec_configuration_version(config_id: Optional[int] = None,
                                       version: Optional[int] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecConfigurationVersionResult:
     """
-    Use the `getAppSecConfigurationVersion` data source to retrieve information about the versions of a security configuration, or about a specific version.
+    Use the `get_app_sec_configuration_version` data source to retrieve information about the versions of a security configuration, or about a specific version.
 
     ## Example Usage
 
@@ -154,3 +155,36 @@ def get_app_sec_configuration_version(config_id: Optional[int] = None,
         production_status=__ret__.production_status,
         staging_status=__ret__.staging_status,
         version=__ret__.version)
+
+
+@_utilities.lift_output_func(get_app_sec_configuration_version)
+def get_app_sec_configuration_version_output(config_id: Optional[pulumi.Input[int]] = None,
+                                             version: Optional[pulumi.Input[Optional[int]]] = None,
+                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecConfigurationVersionResult]:
+    """
+    Use the `get_app_sec_configuration_version` data source to retrieve information about the versions of a security configuration, or about a specific version.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    specific_configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
+    versions = akamai.get_app_sec_configuration_version(config_id=specific_configuration.config_id)
+    pulumi.export("versionsOutputText", versions.output_text)
+    pulumi.export("versionsLatest", versions.latest_version)
+    specific_version = akamai.get_app_sec_configuration_version(config_id=specific_configuration.config_id,
+        version=42)
+    pulumi.export("specificVersionVersion", specific_version.version)
+    pulumi.export("specificVersionStaging", specific_version.staging_status)
+    pulumi.export("specificVersionProduction", specific_version.production_status)
+    ```
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param int version: The version number of the security configuration to use. If not supplied, information about all versions of the specified security configuration is returned.
+    """
+    ...

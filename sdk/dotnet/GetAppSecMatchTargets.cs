@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -56,6 +57,52 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecMatchTargetsResult> InvokeAsync(GetAppSecMatchTargetsArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecMatchTargetsResult>("akamai:index/getAppSecMatchTargets:getAppSecMatchTargets", args ?? new GetAppSecMatchTargetsArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.getAppSecMatchTargets` data source to retrieve information about the match targets associated with a given configuration, or about a specific match target.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = @var.Security_configuration,
+        ///         }));
+        ///         var matchTargetsAppSecMatchTargets = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecMatchTargets.InvokeAsync(new Akamai.GetAppSecMatchTargetsArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///         })));
+        ///         this.MatchTargets = matchTargetsAppSecMatchTargets.Apply(matchTargetsAppSecMatchTargets =&gt; matchTargetsAppSecMatchTargets.OutputText);
+        ///         var matchTarget = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecMatchTargets.InvokeAsync(new Akamai.GetAppSecMatchTargetsArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///             MatchTargetId = @var.Match_target_id,
+        ///         })));
+        ///         this.MatchTargetOutput = matchTarget.Apply(matchTarget =&gt; matchTarget.OutputText);
+        ///     }
+        /// 
+        ///     [Output("matchTargets")]
+        ///     public Output&lt;string&gt; MatchTargets { get; set; }
+        ///     [Output("matchTargetOutput")]
+        ///     public Output&lt;string&gt; MatchTargetOutput { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecMatchTargetsResult> Invoke(GetAppSecMatchTargetsInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecMatchTargetsResult>("akamai:index/getAppSecMatchTargets:getAppSecMatchTargets", args ?? new GetAppSecMatchTargetsInvokeArgs(), options.WithVersion());
     }
 
 
@@ -74,6 +121,25 @@ namespace Pulumi.Akamai
         public int? MatchTargetId { get; set; }
 
         public GetAppSecMatchTargetsArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecMatchTargetsInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        /// <summary>
+        /// The ID of the match target to use. If not supplied, information about all match targets is returned.
+        /// </summary>
+        [Input("matchTargetId")]
+        public Input<int>? MatchTargetId { get; set; }
+
+        public GetAppSecMatchTargetsInvokeArgs()
         {
         }
     }

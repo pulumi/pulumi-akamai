@@ -28,7 +28,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
@@ -229,7 +229,7 @@ type AppSecSecurityPolicyArrayInput interface {
 type AppSecSecurityPolicyArray []AppSecSecurityPolicyInput
 
 func (AppSecSecurityPolicyArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecSecurityPolicy)(nil))
+	return reflect.TypeOf((*[]*AppSecSecurityPolicy)(nil)).Elem()
 }
 
 func (i AppSecSecurityPolicyArray) ToAppSecSecurityPolicyArrayOutput() AppSecSecurityPolicyArrayOutput {
@@ -254,7 +254,7 @@ type AppSecSecurityPolicyMapInput interface {
 type AppSecSecurityPolicyMap map[string]AppSecSecurityPolicyInput
 
 func (AppSecSecurityPolicyMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecSecurityPolicy)(nil))
+	return reflect.TypeOf((*map[string]*AppSecSecurityPolicy)(nil)).Elem()
 }
 
 func (i AppSecSecurityPolicyMap) ToAppSecSecurityPolicyMapOutput() AppSecSecurityPolicyMapOutput {
@@ -265,9 +265,7 @@ func (i AppSecSecurityPolicyMap) ToAppSecSecurityPolicyMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSecurityPolicyMapOutput)
 }
 
-type AppSecSecurityPolicyOutput struct {
-	*pulumi.OutputState
-}
+type AppSecSecurityPolicyOutput struct{ *pulumi.OutputState }
 
 func (AppSecSecurityPolicyOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecSecurityPolicy)(nil))
@@ -286,14 +284,12 @@ func (o AppSecSecurityPolicyOutput) ToAppSecSecurityPolicyPtrOutput() AppSecSecu
 }
 
 func (o AppSecSecurityPolicyOutput) ToAppSecSecurityPolicyPtrOutputWithContext(ctx context.Context) AppSecSecurityPolicyPtrOutput {
-	return o.ApplyT(func(v AppSecSecurityPolicy) *AppSecSecurityPolicy {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecSecurityPolicy) *AppSecSecurityPolicy {
 		return &v
 	}).(AppSecSecurityPolicyPtrOutput)
 }
 
-type AppSecSecurityPolicyPtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecSecurityPolicyPtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecSecurityPolicyPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecSecurityPolicy)(nil))
@@ -305,6 +301,16 @@ func (o AppSecSecurityPolicyPtrOutput) ToAppSecSecurityPolicyPtrOutput() AppSecS
 
 func (o AppSecSecurityPolicyPtrOutput) ToAppSecSecurityPolicyPtrOutputWithContext(ctx context.Context) AppSecSecurityPolicyPtrOutput {
 	return o
+}
+
+func (o AppSecSecurityPolicyPtrOutput) Elem() AppSecSecurityPolicyOutput {
+	return o.ApplyT(func(v *AppSecSecurityPolicy) AppSecSecurityPolicy {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecSecurityPolicy
+		return ret
+	}).(AppSecSecurityPolicyOutput)
 }
 
 type AppSecSecurityPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -348,6 +354,10 @@ func (o AppSecSecurityPolicyMapOutput) MapIndex(k pulumi.StringInput) AppSecSecu
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSecurityPolicyInput)(nil)).Elem(), &AppSecSecurityPolicy{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSecurityPolicyPtrInput)(nil)).Elem(), &AppSecSecurityPolicy{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSecurityPolicyArrayInput)(nil)).Elem(), AppSecSecurityPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSecurityPolicyMapInput)(nil)).Elem(), AppSecSecurityPolicyMap{})
 	pulumi.RegisterOutputType(AppSecSecurityPolicyOutput{})
 	pulumi.RegisterOutputType(AppSecSecurityPolicyPtrOutput{})
 	pulumi.RegisterOutputType(AppSecSecurityPolicyArrayOutput{})

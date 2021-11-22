@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,13 +27,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		apisRequestConstraints, err := akamai.LookupAppSecApiRequestConstraints(ctx, &akamai.LookupAppSecApiRequestConstraintsArgs{
+// 		apisRequestConstraints, err := akamai.LookupAppSecApiRequestConstraints(ctx, &GetAppSecApiRequestConstraintsArgs{
 // 			ConfigId:         configuration.ConfigId,
 // 			SecurityPolicyId: _var.Security_policy_id,
 // 		}, nil)
@@ -40,7 +43,7 @@ import (
 // 		ctx.Export("apisConstraintsText", apisRequestConstraints.OutputText)
 // 		ctx.Export("apisConstraintsJson", apisRequestConstraints.Json)
 // 		opt1 := _var.Api_id
-// 		apiRequestConstraints, err := akamai.LookupAppSecApiRequestConstraints(ctx, &akamai.LookupAppSecApiRequestConstraintsArgs{
+// 		apiRequestConstraints, err := akamai.LookupAppSecApiRequestConstraints(ctx, &GetAppSecApiRequestConstraintsArgs{
 // 			ConfigId:         configuration.ConfigId,
 // 			SecurityPolicyId: _var.Security_policy_id,
 // 			ApiId:            &opt1,
@@ -84,4 +87,73 @@ type LookupAppSecApiRequestConstraintsResult struct {
 	// A tabular display showing the APIs and their constraints and actions.
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
+}
+
+func LookupAppSecApiRequestConstraintsOutput(ctx *pulumi.Context, args LookupAppSecApiRequestConstraintsOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecApiRequestConstraintsResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (LookupAppSecApiRequestConstraintsResult, error) {
+			args := v.(LookupAppSecApiRequestConstraintsArgs)
+			r, err := LookupAppSecApiRequestConstraints(ctx, &args, opts...)
+			return *r, err
+		}).(LookupAppSecApiRequestConstraintsResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecApiRequestConstraints.
+type LookupAppSecApiRequestConstraintsOutputArgs struct {
+	// The ID of a specific API for which to retrieve constraint information.
+	ApiId pulumi.IntPtrInput `pulumi:"apiId"`
+	// The configuration ID to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The ID of the security policy to use.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+}
+
+func (LookupAppSecApiRequestConstraintsOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecApiRequestConstraintsArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecApiRequestConstraints.
+type LookupAppSecApiRequestConstraintsResultOutput struct{ *pulumi.OutputState }
+
+func (LookupAppSecApiRequestConstraintsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecApiRequestConstraintsResult)(nil)).Elem()
+}
+
+func (o LookupAppSecApiRequestConstraintsResultOutput) ToLookupAppSecApiRequestConstraintsResultOutput() LookupAppSecApiRequestConstraintsResultOutput {
+	return o
+}
+
+func (o LookupAppSecApiRequestConstraintsResultOutput) ToLookupAppSecApiRequestConstraintsResultOutputWithContext(ctx context.Context) LookupAppSecApiRequestConstraintsResultOutput {
+	return o
+}
+
+func (o LookupAppSecApiRequestConstraintsResultOutput) ApiId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAppSecApiRequestConstraintsResult) *int { return v.ApiId }).(pulumi.IntPtrOutput)
+}
+
+func (o LookupAppSecApiRequestConstraintsResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAppSecApiRequestConstraintsResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o LookupAppSecApiRequestConstraintsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecApiRequestConstraintsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted list of information about the APIs and their constraints and actions.
+func (o LookupAppSecApiRequestConstraintsResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecApiRequestConstraintsResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display showing the APIs and their constraints and actions.
+func (o LookupAppSecApiRequestConstraintsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecApiRequestConstraintsResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecApiRequestConstraintsResultOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecApiRequestConstraintsResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(LookupAppSecApiRequestConstraintsResultOutput{})
 }

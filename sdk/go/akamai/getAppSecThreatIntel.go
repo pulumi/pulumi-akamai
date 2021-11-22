@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -25,13 +28,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		threatIntelAppSecThreatIntel, err := akamai.LookupAppSecThreatIntel(ctx, &akamai.LookupAppSecThreatIntelArgs{
+// 		threatIntelAppSecThreatIntel, err := akamai.LookupAppSecThreatIntel(ctx, &GetAppSecThreatIntelArgs{
 // 			ConfigId:         configuration.ConfigId,
 // 			SecurityPolicyId: _var.Security_policy_id,
 // 		}, nil)
@@ -74,4 +77,72 @@ type LookupAppSecThreatIntelResult struct {
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 	// Threat Intelligence setting, either `on` or `off`.
 	ThreatIntel string `pulumi:"threatIntel"`
+}
+
+func LookupAppSecThreatIntelOutput(ctx *pulumi.Context, args LookupAppSecThreatIntelOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecThreatIntelResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (LookupAppSecThreatIntelResult, error) {
+			args := v.(LookupAppSecThreatIntelArgs)
+			r, err := LookupAppSecThreatIntel(ctx, &args, opts...)
+			return *r, err
+		}).(LookupAppSecThreatIntelResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecThreatIntel.
+type LookupAppSecThreatIntelOutputArgs struct {
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The ID of the security policy to use.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+}
+
+func (LookupAppSecThreatIntelOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecThreatIntelArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecThreatIntel.
+type LookupAppSecThreatIntelResultOutput struct{ *pulumi.OutputState }
+
+func (LookupAppSecThreatIntelResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecThreatIntelResult)(nil)).Elem()
+}
+
+func (o LookupAppSecThreatIntelResultOutput) ToLookupAppSecThreatIntelResultOutput() LookupAppSecThreatIntelResultOutput {
+	return o
+}
+
+func (o LookupAppSecThreatIntelResultOutput) ToLookupAppSecThreatIntelResultOutputWithContext(ctx context.Context) LookupAppSecThreatIntelResultOutput {
+	return o
+}
+
+func (o LookupAppSecThreatIntelResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAppSecThreatIntelResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o LookupAppSecThreatIntelResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecThreatIntelResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted threat intelligence object
+func (o LookupAppSecThreatIntelResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecThreatIntelResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display of the threat intel information.
+func (o LookupAppSecThreatIntelResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecThreatIntelResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecThreatIntelResultOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecThreatIntelResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+// Threat Intelligence setting, either `on` or `off`.
+func (o LookupAppSecThreatIntelResultOutput) ThreatIntel() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecThreatIntelResult) string { return v.ThreatIntel }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(LookupAppSecThreatIntelResultOutput{})
 }

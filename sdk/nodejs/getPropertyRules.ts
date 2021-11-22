@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -76,4 +75,18 @@ export interface GetPropertyRulesResult {
     readonly propertyId: string;
     readonly rules: string;
     readonly version: number;
+}
+
+export function getPropertyRulesOutput(args: GetPropertyRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyRulesResult> {
+    return pulumi.output(args).apply(a => getPropertyRules(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getPropertyRules.
+ */
+export interface GetPropertyRulesOutputArgs {
+    contractId?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string>;
+    propertyId: pulumi.Input<string>;
+    version?: pulumi.Input<number>;
 }

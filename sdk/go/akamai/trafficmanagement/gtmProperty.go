@@ -309,7 +309,7 @@ type GtmPropertyArrayInput interface {
 type GtmPropertyArray []GtmPropertyInput
 
 func (GtmPropertyArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*GtmProperty)(nil))
+	return reflect.TypeOf((*[]*GtmProperty)(nil)).Elem()
 }
 
 func (i GtmPropertyArray) ToGtmPropertyArrayOutput() GtmPropertyArrayOutput {
@@ -334,7 +334,7 @@ type GtmPropertyMapInput interface {
 type GtmPropertyMap map[string]GtmPropertyInput
 
 func (GtmPropertyMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*GtmProperty)(nil))
+	return reflect.TypeOf((*map[string]*GtmProperty)(nil)).Elem()
 }
 
 func (i GtmPropertyMap) ToGtmPropertyMapOutput() GtmPropertyMapOutput {
@@ -345,9 +345,7 @@ func (i GtmPropertyMap) ToGtmPropertyMapOutputWithContext(ctx context.Context) G
 	return pulumi.ToOutputWithContext(ctx, i).(GtmPropertyMapOutput)
 }
 
-type GtmPropertyOutput struct {
-	*pulumi.OutputState
-}
+type GtmPropertyOutput struct{ *pulumi.OutputState }
 
 func (GtmPropertyOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*GtmProperty)(nil))
@@ -366,14 +364,12 @@ func (o GtmPropertyOutput) ToGtmPropertyPtrOutput() GtmPropertyPtrOutput {
 }
 
 func (o GtmPropertyOutput) ToGtmPropertyPtrOutputWithContext(ctx context.Context) GtmPropertyPtrOutput {
-	return o.ApplyT(func(v GtmProperty) *GtmProperty {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmProperty) *GtmProperty {
 		return &v
 	}).(GtmPropertyPtrOutput)
 }
 
-type GtmPropertyPtrOutput struct {
-	*pulumi.OutputState
-}
+type GtmPropertyPtrOutput struct{ *pulumi.OutputState }
 
 func (GtmPropertyPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**GtmProperty)(nil))
@@ -385,6 +381,16 @@ func (o GtmPropertyPtrOutput) ToGtmPropertyPtrOutput() GtmPropertyPtrOutput {
 
 func (o GtmPropertyPtrOutput) ToGtmPropertyPtrOutputWithContext(ctx context.Context) GtmPropertyPtrOutput {
 	return o
+}
+
+func (o GtmPropertyPtrOutput) Elem() GtmPropertyOutput {
+	return o.ApplyT(func(v *GtmProperty) GtmProperty {
+		if v != nil {
+			return *v
+		}
+		var ret GtmProperty
+		return ret
+	}).(GtmPropertyOutput)
 }
 
 type GtmPropertyArrayOutput struct{ *pulumi.OutputState }
@@ -428,6 +434,10 @@ func (o GtmPropertyMapOutput) MapIndex(k pulumi.StringInput) GtmPropertyOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyInput)(nil)).Elem(), &GtmProperty{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyPtrInput)(nil)).Elem(), &GtmProperty{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyArrayInput)(nil)).Elem(), GtmPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyMapInput)(nil)).Elem(), GtmPropertyMap{})
 	pulumi.RegisterOutputType(GtmPropertyOutput{})
 	pulumi.RegisterOutputType(GtmPropertyPtrOutput{})
 	pulumi.RegisterOutputType(GtmPropertyArrayOutput{})

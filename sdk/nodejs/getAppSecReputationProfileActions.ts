@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -64,4 +63,26 @@ export interface GetAppSecReputationProfileActionsResult {
     readonly outputText: string;
     readonly reputationProfileId?: number;
     readonly securityPolicyId: string;
+}
+
+export function getAppSecReputationProfileActionsOutput(args: GetAppSecReputationProfileActionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecReputationProfileActionsResult> {
+    return pulumi.output(args).apply(a => getAppSecReputationProfileActions(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecReputationProfileActions.
+ */
+export interface GetAppSecReputationProfileActionsOutputArgs {
+    /**
+     * The ID of the security configuration to use.
+     */
+    configId: pulumi.Input<number>;
+    /**
+     * The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
+     */
+    reputationProfileId?: pulumi.Input<number>;
+    /**
+     * THe ID of the security policy to use.
+     */
+    securityPolicyId: pulumi.Input<string>;
 }

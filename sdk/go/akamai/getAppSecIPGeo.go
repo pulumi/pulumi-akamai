@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,13 +27,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		ipGeo, err := akamai.LookupAppSecIPGeo(ctx, &akamai.LookupAppSecIPGeoArgs{
+// 		ipGeo, err := akamai.LookupAppSecIPGeo(ctx, &GetAppSecIPGeoArgs{
 // 			ConfigId:         configuration.ConfigId,
 // 			SecurityPolicyId: _var.Security_policy_id,
 // 		}, nil)
@@ -78,4 +81,82 @@ type LookupAppSecIPGeoResult struct {
 	// A tabular display of the IP/Geo firewall settings.
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
+}
+
+func LookupAppSecIPGeoOutput(ctx *pulumi.Context, args LookupAppSecIPGeoOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecIPGeoResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (LookupAppSecIPGeoResult, error) {
+			args := v.(LookupAppSecIPGeoArgs)
+			r, err := LookupAppSecIPGeo(ctx, &args, opts...)
+			return *r, err
+		}).(LookupAppSecIPGeoResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecIPGeo.
+type LookupAppSecIPGeoOutputArgs struct {
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The ID of the security policy to use.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+}
+
+func (LookupAppSecIPGeoOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecIPGeoArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecIPGeo.
+type LookupAppSecIPGeoResultOutput struct{ *pulumi.OutputState }
+
+func (LookupAppSecIPGeoResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecIPGeoResult)(nil)).Elem()
+}
+
+func (o LookupAppSecIPGeoResultOutput) ToLookupAppSecIPGeoResultOutput() LookupAppSecIPGeoResultOutput {
+	return o
+}
+
+func (o LookupAppSecIPGeoResultOutput) ToLookupAppSecIPGeoResultOutputWithContext(ctx context.Context) LookupAppSecIPGeoResultOutput {
+	return o
+}
+
+func (o LookupAppSecIPGeoResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAppSecIPGeoResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The network lists to be allowed regardless of `mode`, `geoNetworkLists`, and `ipNetworkLists` parameters.
+func (o LookupAppSecIPGeoResultOutput) ExceptionIpNetworkLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupAppSecIPGeoResult) []string { return v.ExceptionIpNetworkLists }).(pulumi.StringArrayOutput)
+}
+
+// The network lists to be blocked or allowed geographically.
+func (o LookupAppSecIPGeoResultOutput) GeoNetworkLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupAppSecIPGeoResult) []string { return v.GeoNetworkLists }).(pulumi.StringArrayOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o LookupAppSecIPGeoResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecIPGeoResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The network lists to be blocked or allowd by IP address.
+func (o LookupAppSecIPGeoResultOutput) IpNetworkLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupAppSecIPGeoResult) []string { return v.IpNetworkLists }).(pulumi.StringArrayOutput)
+}
+
+// The mode used for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
+func (o LookupAppSecIPGeoResultOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecIPGeoResult) string { return v.Mode }).(pulumi.StringOutput)
+}
+
+// A tabular display of the IP/Geo firewall settings.
+func (o LookupAppSecIPGeoResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecIPGeoResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecIPGeoResultOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecIPGeoResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(LookupAppSecIPGeoResultOutput{})
 }

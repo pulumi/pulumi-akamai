@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecHostnameCoverageOverlappingResult',
     'AwaitableGetAppSecHostnameCoverageOverlappingResult',
     'get_app_sec_hostname_coverage_overlapping',
+    'get_app_sec_hostname_coverage_overlapping_output',
 ]
 
 @pulumi.output_type
@@ -88,7 +89,7 @@ def get_app_sec_hostname_coverage_overlapping(config_id: Optional[int] = None,
                                               hostname: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecHostnameCoverageOverlappingResult:
     """
-    Use the `getAppSecHostnameCoverageOverlapping` data source to retrieve information about the configuration versions that contain a hostname also included in the current configuration version. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoverageoverlapping).
+    Use the `get_app_sec_hostname_coverage_overlapping` data source to retrieve information about the configuration versions that contain a hostname also included in the current configuration version. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoverageoverlapping).
 
     ## Example Usage
 
@@ -121,3 +122,29 @@ def get_app_sec_hostname_coverage_overlapping(config_id: Optional[int] = None,
         id=__ret__.id,
         json=__ret__.json,
         output_text=__ret__.output_text)
+
+
+@_utilities.lift_output_func(get_app_sec_hostname_coverage_overlapping)
+def get_app_sec_hostname_coverage_overlapping_output(config_id: Optional[pulumi.Input[int]] = None,
+                                                     hostname: Optional[pulumi.Input[str]] = None,
+                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecHostnameCoverageOverlappingResult]:
+    """
+    Use the `get_app_sec_hostname_coverage_overlapping` data source to retrieve information about the configuration versions that contain a hostname also included in the current configuration version. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoverageoverlapping).
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    test = akamai.get_app_sec_hostname_coverage_overlapping(config_id=43253,
+        hostname="example.com")
+    ```
+
+
+    :param int config_id: The configuration ID.
+    :param str hostname: The hostname for which to retrieve information.
+    """
+    ...

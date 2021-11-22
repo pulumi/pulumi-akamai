@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecSiemDefinitionsResult',
     'AwaitableGetAppSecSiemDefinitionsResult',
     'get_app_sec_siem_definitions',
+    'get_app_sec_siem_definitions_output',
 ]
 
 @pulumi.output_type
@@ -78,7 +79,7 @@ class AwaitableGetAppSecSiemDefinitionsResult(GetAppSecSiemDefinitionsResult):
 def get_app_sec_siem_definitions(siem_definition_name: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecSiemDefinitionsResult:
     """
-    Use the `getAppSecSiemDefinitions` data source to retrieve information about the available SIEM versions, or about a specific SIEM version. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemversions).
+    Use the `get_app_sec_siem_definitions` data source to retrieve information about the available SIEM versions, or about a specific SIEM version. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemversions).
 
     ## Example Usage
 
@@ -112,3 +113,31 @@ def get_app_sec_siem_definitions(siem_definition_name: Optional[str] = None,
         json=__ret__.json,
         output_text=__ret__.output_text,
         siem_definition_name=__ret__.siem_definition_name)
+
+
+@_utilities.lift_output_func(get_app_sec_siem_definitions)
+def get_app_sec_siem_definitions_output(siem_definition_name: Optional[pulumi.Input[Optional[str]]] = None,
+                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecSiemDefinitionsResult]:
+    """
+    Use the `get_app_sec_siem_definitions` data source to retrieve information about the available SIEM versions, or about a specific SIEM version. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemversions).
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    siem_definitions = akamai.get_app_sec_siem_definitions()
+    pulumi.export("siemDefinitionsJson", siem_definitions.json)
+    pulumi.export("siemDefinitionsOutput", siem_definitions.output_text)
+    siem_definition = akamai.get_app_sec_siem_definitions(siem_definition_name=var["siem_definition_name"])
+    pulumi.export("siemDefinitionId", siem_definition.id)
+    ```
+
+
+    :param str siem_definition_name: The name of a specific SIEM definition for which to retrieve information.
+    """
+    ...

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai.Properties
 {
@@ -14,6 +15,9 @@ namespace Pulumi.Akamai.Properties
     {
         public static Task<GetPropertyResult> InvokeAsync(GetPropertyArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyResult>("akamai:properties/getProperty:getProperty", args ?? new GetPropertyArgs(), options.WithVersion());
+
+        public static Output<GetPropertyResult> Invoke(GetPropertyInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetPropertyResult>("akamai:properties/getProperty:getProperty", args ?? new GetPropertyInvokeArgs(), options.WithVersion());
     }
 
 
@@ -26,6 +30,19 @@ namespace Pulumi.Akamai.Properties
         public int? Version { get; set; }
 
         public GetPropertyArgs()
+        {
+        }
+    }
+
+    public sealed class GetPropertyInvokeArgs : Pulumi.InvokeArgs
+    {
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
+
+        [Input("version")]
+        public Input<int>? Version { get; set; }
+
+        public GetPropertyInvokeArgs()
         {
         }
     }

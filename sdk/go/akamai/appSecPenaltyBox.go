@@ -28,7 +28,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
@@ -215,7 +215,7 @@ type AppSecPenaltyBoxArrayInput interface {
 type AppSecPenaltyBoxArray []AppSecPenaltyBoxInput
 
 func (AppSecPenaltyBoxArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecPenaltyBox)(nil))
+	return reflect.TypeOf((*[]*AppSecPenaltyBox)(nil)).Elem()
 }
 
 func (i AppSecPenaltyBoxArray) ToAppSecPenaltyBoxArrayOutput() AppSecPenaltyBoxArrayOutput {
@@ -240,7 +240,7 @@ type AppSecPenaltyBoxMapInput interface {
 type AppSecPenaltyBoxMap map[string]AppSecPenaltyBoxInput
 
 func (AppSecPenaltyBoxMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecPenaltyBox)(nil))
+	return reflect.TypeOf((*map[string]*AppSecPenaltyBox)(nil)).Elem()
 }
 
 func (i AppSecPenaltyBoxMap) ToAppSecPenaltyBoxMapOutput() AppSecPenaltyBoxMapOutput {
@@ -251,9 +251,7 @@ func (i AppSecPenaltyBoxMap) ToAppSecPenaltyBoxMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecPenaltyBoxMapOutput)
 }
 
-type AppSecPenaltyBoxOutput struct {
-	*pulumi.OutputState
-}
+type AppSecPenaltyBoxOutput struct{ *pulumi.OutputState }
 
 func (AppSecPenaltyBoxOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecPenaltyBox)(nil))
@@ -272,14 +270,12 @@ func (o AppSecPenaltyBoxOutput) ToAppSecPenaltyBoxPtrOutput() AppSecPenaltyBoxPt
 }
 
 func (o AppSecPenaltyBoxOutput) ToAppSecPenaltyBoxPtrOutputWithContext(ctx context.Context) AppSecPenaltyBoxPtrOutput {
-	return o.ApplyT(func(v AppSecPenaltyBox) *AppSecPenaltyBox {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecPenaltyBox) *AppSecPenaltyBox {
 		return &v
 	}).(AppSecPenaltyBoxPtrOutput)
 }
 
-type AppSecPenaltyBoxPtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecPenaltyBoxPtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecPenaltyBoxPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecPenaltyBox)(nil))
@@ -291,6 +287,16 @@ func (o AppSecPenaltyBoxPtrOutput) ToAppSecPenaltyBoxPtrOutput() AppSecPenaltyBo
 
 func (o AppSecPenaltyBoxPtrOutput) ToAppSecPenaltyBoxPtrOutputWithContext(ctx context.Context) AppSecPenaltyBoxPtrOutput {
 	return o
+}
+
+func (o AppSecPenaltyBoxPtrOutput) Elem() AppSecPenaltyBoxOutput {
+	return o.ApplyT(func(v *AppSecPenaltyBox) AppSecPenaltyBox {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecPenaltyBox
+		return ret
+	}).(AppSecPenaltyBoxOutput)
 }
 
 type AppSecPenaltyBoxArrayOutput struct{ *pulumi.OutputState }
@@ -334,6 +340,10 @@ func (o AppSecPenaltyBoxMapOutput) MapIndex(k pulumi.StringInput) AppSecPenaltyB
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecPenaltyBoxInput)(nil)).Elem(), &AppSecPenaltyBox{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecPenaltyBoxPtrInput)(nil)).Elem(), &AppSecPenaltyBox{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecPenaltyBoxArrayInput)(nil)).Elem(), AppSecPenaltyBoxArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecPenaltyBoxMapInput)(nil)).Elem(), AppSecPenaltyBoxMap{})
 	pulumi.RegisterOutputType(AppSecPenaltyBoxOutput{})
 	pulumi.RegisterOutputType(AppSecPenaltyBoxPtrOutput{})
 	pulumi.RegisterOutputType(AppSecPenaltyBoxArrayOutput{})

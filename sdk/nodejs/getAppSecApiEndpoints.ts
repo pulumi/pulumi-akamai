@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -78,4 +77,26 @@ export interface GetAppSecApiEndpointsResult {
      */
     readonly outputText: string;
     readonly securityPolicyId?: string;
+}
+
+export function getAppSecApiEndpointsOutput(args: GetAppSecApiEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecApiEndpointsResult> {
+    return pulumi.output(args).apply(a => getAppSecApiEndpoints(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecApiEndpoints.
+ */
+export interface GetAppSecApiEndpointsOutputArgs {
+    /**
+     * The name of a specific endpoint.
+     */
+    apiName?: pulumi.Input<string>;
+    /**
+     * The configuration ID.
+     */
+    configId: pulumi.Input<number>;
+    /**
+     * The ID of the security policy to use.
+     */
+    securityPolicyId?: pulumi.Input<string>;
 }

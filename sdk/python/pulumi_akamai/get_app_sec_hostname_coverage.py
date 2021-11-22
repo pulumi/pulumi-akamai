@@ -68,7 +68,7 @@ class AwaitableGetAppSecHostnameCoverageResult(GetAppSecHostnameCoverageResult):
 
 def get_app_sec_hostname_coverage(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecHostnameCoverageResult:
     """
-    Use the `getAppSecHostnameCoverage` data source to retrieve a list of hostnames in the account with their current protections, activation statuses, and other summary information. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#8eb23096).
+    Use the `get_app_sec_hostname_coverage` data source to retrieve a list of hostnames in the account with their current protections, activation statuses, and other summary information. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#8eb23096).
 
     ## Example Usage
 

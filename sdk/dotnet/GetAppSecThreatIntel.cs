@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -56,6 +57,52 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecThreatIntelResult> InvokeAsync(GetAppSecThreatIntelArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecThreatIntelResult>("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", args ?? new GetAppSecThreatIntelArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.AppSecThreatIntel` data source to view threat intelligence setting for a policy
+        /// __BETA__ This is Adaptive Security Engine(ASE) related data source. Please contact your akamai representative if you want to learn more
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = @var.Security_configuration,
+        ///         }));
+        ///         var threatIntelAppSecThreatIntel = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecThreatIntel.InvokeAsync(new Akamai.GetAppSecThreatIntelArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///         })));
+        ///         this.ThreatIntel = threatIntelAppSecThreatIntel.Apply(threatIntelAppSecThreatIntel =&gt; threatIntelAppSecThreatIntel.ThreatIntel);
+        ///         this.Json = threatIntelAppSecThreatIntel.Apply(threatIntelAppSecThreatIntel =&gt; threatIntelAppSecThreatIntel.Json);
+        ///         this.OutputText = threatIntelAppSecThreatIntel.Apply(threatIntelAppSecThreatIntel =&gt; threatIntelAppSecThreatIntel.OutputText);
+        ///     }
+        /// 
+        ///     [Output("threatIntel")]
+        ///     public Output&lt;string&gt; ThreatIntel { get; set; }
+        ///     [Output("json")]
+        ///     public Output&lt;string&gt; Json { get; set; }
+        ///     [Output("outputText")]
+        ///     public Output&lt;string&gt; OutputText { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecThreatIntelResult> Invoke(GetAppSecThreatIntelInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecThreatIntelResult>("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", args ?? new GetAppSecThreatIntelInvokeArgs(), options.WithVersion());
     }
 
 
@@ -74,6 +121,25 @@ namespace Pulumi.Akamai
         public string SecurityPolicyId { get; set; } = null!;
 
         public GetAppSecThreatIntelArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecThreatIntelInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        /// <summary>
+        /// The ID of the security policy to use.
+        /// </summary>
+        [Input("securityPolicyId", required: true)]
+        public Input<string> SecurityPolicyId { get; set; } = null!;
+
+        public GetAppSecThreatIntelInvokeArgs()
         {
         }
     }

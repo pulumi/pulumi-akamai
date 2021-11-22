@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -29,7 +32,7 @@ import (
 // 		}
 // 		ctx.Export("configurationList", configurations.OutputText)
 // 		opt0 := "Akamai Tools"
-// 		specificConfiguration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		specificConfiguration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
@@ -73,4 +76,76 @@ type LookupAppSecConfigurationResult struct {
 	ProductionVersion int `pulumi:"productionVersion"`
 	// The version of the specified security configuration currently active in staging. Returned only if `name` was specified.
 	StagingVersion int `pulumi:"stagingVersion"`
+}
+
+func LookupAppSecConfigurationOutput(ctx *pulumi.Context, args LookupAppSecConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecConfigurationResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (LookupAppSecConfigurationResult, error) {
+			args := v.(LookupAppSecConfigurationArgs)
+			r, err := LookupAppSecConfiguration(ctx, &args, opts...)
+			return *r, err
+		}).(LookupAppSecConfigurationResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecConfiguration.
+type LookupAppSecConfigurationOutputArgs struct {
+	// The name of a specific security configuration. If not supplied, information about all security configurations is returned.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+}
+
+func (LookupAppSecConfigurationOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecConfigurationArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecConfiguration.
+type LookupAppSecConfigurationResultOutput struct{ *pulumi.OutputState }
+
+func (LookupAppSecConfigurationResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecConfigurationResult)(nil)).Elem()
+}
+
+func (o LookupAppSecConfigurationResultOutput) ToLookupAppSecConfigurationResultOutput() LookupAppSecConfigurationResultOutput {
+	return o
+}
+
+func (o LookupAppSecConfigurationResultOutput) ToLookupAppSecConfigurationResultOutputWithContext(ctx context.Context) LookupAppSecConfigurationResultOutput {
+	return o
+}
+
+// The ID of the specified security configuration. Returned only if `name` was specified.
+func (o LookupAppSecConfigurationResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAppSecConfigurationResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o LookupAppSecConfigurationResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The last version of the specified security configuration created. Returned only if `name` was specified.
+func (o LookupAppSecConfigurationResultOutput) LatestVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAppSecConfigurationResult) int { return v.LatestVersion }).(pulumi.IntOutput)
+}
+
+func (o LookupAppSecConfigurationResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppSecConfigurationResult) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// A tabular display showing the following information about all available security configurations: config_id, name, latest_version, version_active_in_staging, and version_active_in_production.
+func (o LookupAppSecConfigurationResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecConfigurationResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+// The version of the specified security configuration currently active in production. Returned only if `name` was specified.
+func (o LookupAppSecConfigurationResultOutput) ProductionVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAppSecConfigurationResult) int { return v.ProductionVersion }).(pulumi.IntOutput)
+}
+
+// The version of the specified security configuration currently active in staging. Returned only if `name` was specified.
+func (o LookupAppSecConfigurationResultOutput) StagingVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAppSecConfigurationResult) int { return v.StagingVersion }).(pulumi.IntOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(LookupAppSecConfigurationResultOutput{})
 }

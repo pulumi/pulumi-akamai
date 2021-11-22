@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -93,4 +92,26 @@ export interface GetAppSecAttackGroupsResult {
      */
     readonly outputText: string;
     readonly securityPolicyId: string;
+}
+
+export function getAppSecAttackGroupsOutput(args: GetAppSecAttackGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecAttackGroupsResult> {
+    return pulumi.output(args).apply(a => getAppSecAttackGroups(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecAttackGroups.
+ */
+export interface GetAppSecAttackGroupsOutputArgs {
+    /**
+     * The ID of the attack group to use.
+     */
+    attackGroup?: pulumi.Input<string>;
+    /**
+     * The ID of the security configuration to use.
+     */
+    configId: pulumi.Input<number>;
+    /**
+     * The ID of the security policy to use.
+     */
+    securityPolicyId: pulumi.Input<string>;
 }

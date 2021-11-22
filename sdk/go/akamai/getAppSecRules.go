@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,14 +27,14 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
 // 		opt1 := _var.Rule_id
-// 		_, err = akamai.GetAppSecRules(ctx, &akamai.GetAppSecRulesArgs{
+// 		_, err = akamai.GetAppSecRules(ctx, &GetAppSecRulesArgs{
 // 			ConfigId:         configuration.ConfigId,
 // 			SecurityPolicyId: _var.Security_policy_id,
 // 			RuleId:           &opt1,
@@ -83,4 +86,85 @@ type GetAppSecRulesResult struct {
 	RuleAction       string `pulumi:"ruleAction"`
 	RuleId           *int   `pulumi:"ruleId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
+}
+
+func GetAppSecRulesOutput(ctx *pulumi.Context, args GetAppSecRulesOutputArgs, opts ...pulumi.InvokeOption) GetAppSecRulesResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetAppSecRulesResult, error) {
+			args := v.(GetAppSecRulesArgs)
+			r, err := GetAppSecRules(ctx, &args, opts...)
+			return *r, err
+		}).(GetAppSecRulesResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecRules.
+type GetAppSecRulesOutputArgs struct {
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The ID of the rule to use. If not specified, information about all rules will be returned.
+	RuleId pulumi.IntPtrInput `pulumi:"ruleId"`
+	// The ID of the security policy to use.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+}
+
+func (GetAppSecRulesOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecRulesArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecRules.
+type GetAppSecRulesResultOutput struct{ *pulumi.OutputState }
+
+func (GetAppSecRulesResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecRulesResult)(nil)).Elem()
+}
+
+func (o GetAppSecRulesResultOutput) ToGetAppSecRulesResultOutput() GetAppSecRulesResultOutput {
+	return o
+}
+
+func (o GetAppSecRulesResultOutput) ToGetAppSecRulesResultOutputWithContext(ctx context.Context) GetAppSecRulesResultOutput {
+	return o
+}
+
+// The rule's conditions and exceptions.
+func (o GetAppSecRulesResultOutput) ConditionException() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecRulesResult) string { return v.ConditionException }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecRulesResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAppSecRulesResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetAppSecRulesResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecRulesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted list of the action and condition-exception information for the specified rule.
+// This output is only generated if a rule is specified.
+func (o GetAppSecRulesResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecRulesResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display showing, for the specified rule or rules, the rule action and boolean values
+// indicating whether conditions and exceptions are present.
+func (o GetAppSecRulesResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecRulesResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+// The rule's action, either `alert`, `deny`, or `none`.
+func (o GetAppSecRulesResultOutput) RuleAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecRulesResult) string { return v.RuleAction }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecRulesResultOutput) RuleId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAppSecRulesResult) *int { return v.RuleId }).(pulumi.IntPtrOutput)
+}
+
+func (o GetAppSecRulesResultOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecRulesResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetAppSecRulesResultOutput{})
 }

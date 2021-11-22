@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -62,4 +65,59 @@ type GetPropertiesResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id         string                  `pulumi:"id"`
 	Properties []GetPropertiesProperty `pulumi:"properties"`
+}
+
+func GetPropertiesOutput(ctx *pulumi.Context, args GetPropertiesOutputArgs, opts ...pulumi.InvokeOption) GetPropertiesResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetPropertiesResult, error) {
+			args := v.(GetPropertiesArgs)
+			r, err := GetProperties(ctx, &args, opts...)
+			return *r, err
+		}).(GetPropertiesResultOutput)
+}
+
+// A collection of arguments for invoking getProperties.
+type GetPropertiesOutputArgs struct {
+	ContractId pulumi.StringInput `pulumi:"contractId"`
+	GroupId    pulumi.StringInput `pulumi:"groupId"`
+}
+
+func (GetPropertiesOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertiesArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getProperties.
+type GetPropertiesResultOutput struct{ *pulumi.OutputState }
+
+func (GetPropertiesResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertiesResult)(nil)).Elem()
+}
+
+func (o GetPropertiesResultOutput) ToGetPropertiesResultOutput() GetPropertiesResultOutput {
+	return o
+}
+
+func (o GetPropertiesResultOutput) ToGetPropertiesResultOutputWithContext(ctx context.Context) GetPropertiesResultOutput {
+	return o
+}
+
+func (o GetPropertiesResultOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesResult) string { return v.ContractId }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesResultOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesResult) string { return v.GroupId }).(pulumi.StringOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetPropertiesResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesResultOutput) Properties() GetPropertiesPropertyArrayOutput {
+	return o.ApplyT(func(v GetPropertiesResult) []GetPropertiesProperty { return v.Properties }).(GetPropertiesPropertyArrayOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetPropertiesResultOutput{})
 }

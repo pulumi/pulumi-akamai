@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -87,4 +86,22 @@ export interface GetAppSecContractsGroupsResult {
      * A tabular display showing the contract and group information.
      */
     readonly outputText: string;
+}
+
+export function getAppSecContractsGroupsOutput(args?: GetAppSecContractsGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecContractsGroupsResult> {
+    return pulumi.output(args).apply(a => getAppSecContractsGroups(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecContractsGroups.
+ */
+export interface GetAppSecContractsGroupsOutputArgs {
+    /**
+     * (Optional) The ID of a contract for which to retrieve information.
+     */
+    contractid?: pulumi.Input<string>;
+    /**
+     * (Optional) The ID of a group for which to retrieve information.
+     */
+    groupid?: pulumi.Input<number>;
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai.Trafficmanagement
 {
@@ -14,6 +15,9 @@ namespace Pulumi.Akamai.Trafficmanagement
     {
         public static Task<GetGtmDefaultDatacenterResult> InvokeAsync(GetGtmDefaultDatacenterArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetGtmDefaultDatacenterResult>("akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter", args ?? new GetGtmDefaultDatacenterArgs(), options.WithVersion());
+
+        public static Output<GetGtmDefaultDatacenterResult> Invoke(GetGtmDefaultDatacenterInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetGtmDefaultDatacenterResult>("akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter", args ?? new GetGtmDefaultDatacenterInvokeArgs(), options.WithVersion());
     }
 
 
@@ -26,6 +30,19 @@ namespace Pulumi.Akamai.Trafficmanagement
         public string Domain { get; set; } = null!;
 
         public GetGtmDefaultDatacenterArgs()
+        {
+        }
+    }
+
+    public sealed class GetGtmDefaultDatacenterInvokeArgs : Pulumi.InvokeArgs
+    {
+        [Input("datacenter")]
+        public Input<int>? Datacenter { get; set; }
+
+        [Input("domain", required: true)]
+        public Input<string> Domain { get; set; } = null!;
+
+        public GetGtmDefaultDatacenterInvokeArgs()
         {
         }
     }

@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,7 +27,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		_, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		_, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
@@ -37,7 +40,7 @@ import (
 // 		ctx.Export("siemDefinitionsJson", siemDefinitions.Json)
 // 		ctx.Export("siemDefinitionsOutput", siemDefinitions.OutputText)
 // 		opt1 := _var.Siem_definition_name
-// 		siemDefinition, err := akamai.GetAppSecSiemDefinitions(ctx, &akamai.GetAppSecSiemDefinitionsArgs{
+// 		siemDefinition, err := akamai.GetAppSecSiemDefinitions(ctx, &GetAppSecSiemDefinitionsArgs{
 // 			SiemDefinitionName: &opt1,
 // 		}, nil)
 // 		if err != nil {
@@ -72,4 +75,61 @@ type GetAppSecSiemDefinitionsResult struct {
 	// A tabular display showing the ID and name of each SIEM version.
 	OutputText         string  `pulumi:"outputText"`
 	SiemDefinitionName *string `pulumi:"siemDefinitionName"`
+}
+
+func GetAppSecSiemDefinitionsOutput(ctx *pulumi.Context, args GetAppSecSiemDefinitionsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecSiemDefinitionsResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetAppSecSiemDefinitionsResult, error) {
+			args := v.(GetAppSecSiemDefinitionsArgs)
+			r, err := GetAppSecSiemDefinitions(ctx, &args, opts...)
+			return *r, err
+		}).(GetAppSecSiemDefinitionsResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecSiemDefinitions.
+type GetAppSecSiemDefinitionsOutputArgs struct {
+	// The name of a specific SIEM definition for which to retrieve information.
+	SiemDefinitionName pulumi.StringPtrInput `pulumi:"siemDefinitionName"`
+}
+
+func (GetAppSecSiemDefinitionsOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecSiemDefinitionsArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecSiemDefinitions.
+type GetAppSecSiemDefinitionsResultOutput struct{ *pulumi.OutputState }
+
+func (GetAppSecSiemDefinitionsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecSiemDefinitionsResult)(nil)).Elem()
+}
+
+func (o GetAppSecSiemDefinitionsResultOutput) ToGetAppSecSiemDefinitionsResultOutput() GetAppSecSiemDefinitionsResultOutput {
+	return o
+}
+
+func (o GetAppSecSiemDefinitionsResultOutput) ToGetAppSecSiemDefinitionsResultOutputWithContext(ctx context.Context) GetAppSecSiemDefinitionsResultOutput {
+	return o
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetAppSecSiemDefinitionsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecSiemDefinitionsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted list of the SIEM version information.
+func (o GetAppSecSiemDefinitionsResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecSiemDefinitionsResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display showing the ID and name of each SIEM version.
+func (o GetAppSecSiemDefinitionsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecSiemDefinitionsResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecSiemDefinitionsResultOutput) SiemDefinitionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppSecSiemDefinitionsResult) *string { return v.SiemDefinitionName }).(pulumi.StringPtrOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetAppSecSiemDefinitionsResultOutput{})
 }

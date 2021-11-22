@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -68,4 +67,22 @@ export interface GetAppSecHostnameCoverageMatchTargetsResult {
      * A tabular display of the coverage information.
      */
     readonly outputText: string;
+}
+
+export function getAppSecHostnameCoverageMatchTargetsOutput(args: GetAppSecHostnameCoverageMatchTargetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecHostnameCoverageMatchTargetsResult> {
+    return pulumi.output(args).apply(a => getAppSecHostnameCoverageMatchTargets(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecHostnameCoverageMatchTargets.
+ */
+export interface GetAppSecHostnameCoverageMatchTargetsOutputArgs {
+    /**
+     * The configuration ID.
+     */
+    configId: pulumi.Input<number>;
+    /**
+     * The hostname for which to retrieve information.
+     */
+    hostname: pulumi.Input<string>;
 }

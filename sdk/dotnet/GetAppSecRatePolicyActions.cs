@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -49,6 +50,45 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecRatePolicyActionsResult> InvokeAsync(GetAppSecRatePolicyActionsArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecRatePolicyActionsResult>("akamai:index/getAppSecRatePolicyActions:getAppSecRatePolicyActions", args ?? new GetAppSecRatePolicyActionsArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.getAppSecRatePolicyActions` data source to retrieve a list of all rate policies associated with a given configuration and security policy, or the actions associated with a specific rate policy.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = @var.Security_configuration,
+        ///         }));
+        ///         var ratePolicyActionsAppSecRatePolicyActions = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecRatePolicyActions.InvokeAsync(new Akamai.GetAppSecRatePolicyActionsArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///         })));
+        ///         this.RatePolicyActions = ratePolicyActionsAppSecRatePolicyActions.Apply(ratePolicyActionsAppSecRatePolicyActions =&gt; ratePolicyActionsAppSecRatePolicyActions.OutputText);
+        ///     }
+        /// 
+        ///     [Output("ratePolicyActions")]
+        ///     public Output&lt;string&gt; RatePolicyActions { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecRatePolicyActionsResult> Invoke(GetAppSecRatePolicyActionsInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecRatePolicyActionsResult>("akamai:index/getAppSecRatePolicyActions:getAppSecRatePolicyActions", args ?? new GetAppSecRatePolicyActionsInvokeArgs(), options.WithVersion());
     }
 
 
@@ -73,6 +113,31 @@ namespace Pulumi.Akamai
         public string SecurityPolicyId { get; set; } = null!;
 
         public GetAppSecRatePolicyActionsArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecRatePolicyActionsInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        /// <summary>
+        /// The ID of the rate policy to use. If not supplied, information about all rate policies will be returned.
+        /// </summary>
+        [Input("ratePolicyId")]
+        public Input<int>? RatePolicyId { get; set; }
+
+        /// <summary>
+        /// The ID of the security policy to use.
+        /// </summary>
+        [Input("securityPolicyId", required: true)]
+        public Input<string> SecurityPolicyId { get; set; } = null!;
+
+        public GetAppSecRatePolicyActionsInvokeArgs()
         {
         }
     }

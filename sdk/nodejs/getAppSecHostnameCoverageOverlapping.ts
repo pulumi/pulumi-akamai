@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -68,4 +67,22 @@ export interface GetAppSecHostnameCoverageOverlappingResult {
      * A tabular display of the overlap information.
      */
     readonly outputText: string;
+}
+
+export function getAppSecHostnameCoverageOverlappingOutput(args: GetAppSecHostnameCoverageOverlappingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecHostnameCoverageOverlappingResult> {
+    return pulumi.output(args).apply(a => getAppSecHostnameCoverageOverlapping(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecHostnameCoverageOverlapping.
+ */
+export interface GetAppSecHostnameCoverageOverlappingOutputArgs {
+    /**
+     * The configuration ID.
+     */
+    configId: pulumi.Input<number>;
+    /**
+     * The hostname for which to retrieve information.
+     */
+    hostname: pulumi.Input<string>;
 }

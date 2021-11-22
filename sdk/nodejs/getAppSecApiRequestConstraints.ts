@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -86,4 +85,26 @@ export interface GetAppSecApiRequestConstraintsResult {
      */
     readonly outputText: string;
     readonly securityPolicyId: string;
+}
+
+export function getAppSecApiRequestConstraintsOutput(args: GetAppSecApiRequestConstraintsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecApiRequestConstraintsResult> {
+    return pulumi.output(args).apply(a => getAppSecApiRequestConstraints(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecApiRequestConstraints.
+ */
+export interface GetAppSecApiRequestConstraintsOutputArgs {
+    /**
+     * The ID of a specific API for which to retrieve constraint information.
+     */
+    apiId?: pulumi.Input<number>;
+    /**
+     * The configuration ID to use.
+     */
+    configId: pulumi.Input<number>;
+    /**
+     * The ID of the security policy to use.
+     */
+    securityPolicyId: pulumi.Input<string>;
 }

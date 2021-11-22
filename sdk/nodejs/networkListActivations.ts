@@ -20,7 +20,7 @@ import * as utilities from "./utilities";
  *     name: _var.network_list,
  * });
  * const activation = new akamai.NetworkListActivations("activation", {
- *     networkListId: networkListsFilter.then(networkListsFilter => networkListsFilter.lists[0]),
+ *     networkListId: networkListsFilter.then(networkListsFilter => networkListsFilter.lists?[0]),
  *     network: "STAGING",
  *     notes: "TEST Notes",
  *     notificationEmails: ["user@example.com"],

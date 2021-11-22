@@ -12,6 +12,7 @@ __all__ = [
     'GetPropertyResult',
     'AwaitableGetPropertyResult',
     'get_property',
+    'get_property_output',
 ]
 
 warnings.warn("""akamai.properties.getProperty has been deprecated in favor of akamai.getProperty""", DeprecationWarning)
@@ -92,3 +93,14 @@ def get_property(name: Optional[str] = None,
         name=__ret__.name,
         rules=__ret__.rules,
         version=__ret__.version)
+
+
+@_utilities.lift_output_func(get_property)
+def get_property_output(name: Optional[pulumi.Input[str]] = None,
+                        version: Optional[pulumi.Input[Optional[int]]] = None,
+                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyResult]:
+    """
+    Use this data source to access information about an existing resource.
+    """
+    pulumi.log.warn("""get_property is deprecated: akamai.properties.getProperty has been deprecated in favor of akamai.getProperty""")
+    ...

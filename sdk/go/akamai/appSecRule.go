@@ -12,6 +12,53 @@ import (
 )
 
 // Use the `AppSecRule` resource to create or modify a rule's action, conditions and exceptions. When the conditions are met, the rule’s actions are ignored and not applied to that specific traffic.
+//
+// ## Example Usage
+//
+// Basic usage:
+//
+// ```go
+// package main
+//
+// import (
+// 	"fmt"
+// 	"io/ioutil"
+//
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func readFileOrPanic(path string) pulumi.StringPtrInput {
+// 	data, err := ioutil.ReadFile(path)
+// 	if err != nil {
+// 		panic(err.Error())
+// 	}
+// 	return pulumi.String(string(data))
+// }
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		opt0 := _var.Security_configuration
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+// 			Name: &opt0,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		_, err = akamai.NewAppSecRule(ctx, "rule", &akamai.AppSecRuleArgs{
+// 			ConfigId:           pulumi.Int(configuration.ConfigId),
+// 			SecurityPolicyId:   pulumi.Any(_var.Security_policy_id),
+// 			RuleId:             pulumi.Any(_var.Rule_id),
+// 			RuleAction:         pulumi.Any(_var.Action),
+// 			ConditionException: readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/condition_exception.json")),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
 type AppSecRule struct {
 	pulumi.CustomResourceState
 
@@ -187,7 +234,7 @@ type AppSecRuleArrayInput interface {
 type AppSecRuleArray []AppSecRuleInput
 
 func (AppSecRuleArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecRule)(nil))
+	return reflect.TypeOf((*[]*AppSecRule)(nil)).Elem()
 }
 
 func (i AppSecRuleArray) ToAppSecRuleArrayOutput() AppSecRuleArrayOutput {
@@ -212,7 +259,7 @@ type AppSecRuleMapInput interface {
 type AppSecRuleMap map[string]AppSecRuleInput
 
 func (AppSecRuleMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecRule)(nil))
+	return reflect.TypeOf((*map[string]*AppSecRule)(nil)).Elem()
 }
 
 func (i AppSecRuleMap) ToAppSecRuleMapOutput() AppSecRuleMapOutput {
@@ -223,9 +270,7 @@ func (i AppSecRuleMap) ToAppSecRuleMapOutputWithContext(ctx context.Context) App
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecRuleMapOutput)
 }
 
-type AppSecRuleOutput struct {
-	*pulumi.OutputState
-}
+type AppSecRuleOutput struct{ *pulumi.OutputState }
 
 func (AppSecRuleOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecRule)(nil))
@@ -244,14 +289,12 @@ func (o AppSecRuleOutput) ToAppSecRulePtrOutput() AppSecRulePtrOutput {
 }
 
 func (o AppSecRuleOutput) ToAppSecRulePtrOutputWithContext(ctx context.Context) AppSecRulePtrOutput {
-	return o.ApplyT(func(v AppSecRule) *AppSecRule {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecRule) *AppSecRule {
 		return &v
 	}).(AppSecRulePtrOutput)
 }
 
-type AppSecRulePtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecRulePtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecRulePtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecRule)(nil))
@@ -263,6 +306,16 @@ func (o AppSecRulePtrOutput) ToAppSecRulePtrOutput() AppSecRulePtrOutput {
 
 func (o AppSecRulePtrOutput) ToAppSecRulePtrOutputWithContext(ctx context.Context) AppSecRulePtrOutput {
 	return o
+}
+
+func (o AppSecRulePtrOutput) Elem() AppSecRuleOutput {
+	return o.ApplyT(func(v *AppSecRule) AppSecRule {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecRule
+		return ret
+	}).(AppSecRuleOutput)
 }
 
 type AppSecRuleArrayOutput struct{ *pulumi.OutputState }
@@ -306,6 +359,10 @@ func (o AppSecRuleMapOutput) MapIndex(k pulumi.StringInput) AppSecRuleOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRuleInput)(nil)).Elem(), &AppSecRule{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRulePtrInput)(nil)).Elem(), &AppSecRule{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRuleArrayInput)(nil)).Elem(), AppSecRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRuleMapInput)(nil)).Elem(), AppSecRuleMap{})
 	pulumi.RegisterOutputType(AppSecRuleOutput{})
 	pulumi.RegisterOutputType(AppSecRulePtrOutput{})
 	pulumi.RegisterOutputType(AppSecRuleArrayOutput{})

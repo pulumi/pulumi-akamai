@@ -13,6 +13,7 @@ __all__ = [
     'GetPropertiesResult',
     'AwaitableGetPropertiesResult',
     'get_properties',
+    'get_properties_output',
 ]
 
 @pulumi.output_type
@@ -74,7 +75,7 @@ def get_properties(contract_id: Optional[str] = None,
                    group_id: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertiesResult:
     """
-    Use the `getProperties` data source to query and retrieve the list of properties for a group and contract
+    Use the `get_properties` data source to query and retrieve the list of properties for a group and contract
     based on the [EdgeGrid API client token](https://developer.akamai.com/getting-started/edgegrid) you're using.
 
     ## Example Usage
@@ -113,3 +114,36 @@ def get_properties(contract_id: Optional[str] = None,
         group_id=__ret__.group_id,
         id=__ret__.id,
         properties=__ret__.properties)
+
+
+@_utilities.lift_output_func(get_properties)
+def get_properties_output(contract_id: Optional[pulumi.Input[str]] = None,
+                          group_id: Optional[pulumi.Input[str]] = None,
+                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertiesResult]:
+    """
+    Use the `get_properties` data source to query and retrieve the list of properties for a group and contract
+    based on the [EdgeGrid API client token](https://developer.akamai.com/getting-started/edgegrid) you're using.
+
+    ## Example Usage
+
+    Return properties associated with the EdgeGrid API client token currently used for authentication:
+
+    ```python
+    import pulumi
+
+    pulumi.export("myPropertyList", data["akamai_properties"]["example"])
+    ```
+    ## Argument reference
+
+    This data source supports these arguments:
+
+    * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
+    * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
+
+    ## Attributes reference
+
+    This data source returns this attribute:
+
+    * `properties` - A list of properties available for the contract and group IDs provided.
+    """
+    ...

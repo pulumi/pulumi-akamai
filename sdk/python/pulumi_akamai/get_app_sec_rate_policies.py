@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecRatePoliciesResult',
     'AwaitableGetAppSecRatePoliciesResult',
     'get_app_sec_rate_policies',
+    'get_app_sec_rate_policies_output',
 ]
 
 @pulumi.output_type
@@ -88,7 +89,7 @@ def get_app_sec_rate_policies(config_id: Optional[int] = None,
                               rate_policy_id: Optional[int] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecRatePoliciesResult:
     """
-    Use the `getAppSecRatePolicies` data source to retrieve the rate policies for a specific security configuration, or a single rate policy.
+    Use the `get_app_sec_rate_policies` data source to retrieve the rate policies for a specific security configuration, or a single rate policy.
 
     ## Example Usage
 
@@ -127,3 +128,35 @@ def get_app_sec_rate_policies(config_id: Optional[int] = None,
         json=__ret__.json,
         output_text=__ret__.output_text,
         rate_policy_id=__ret__.rate_policy_id)
+
+
+@_utilities.lift_output_func(get_app_sec_rate_policies)
+def get_app_sec_rate_policies_output(config_id: Optional[pulumi.Input[int]] = None,
+                                     rate_policy_id: Optional[pulumi.Input[Optional[int]]] = None,
+                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecRatePoliciesResult]:
+    """
+    Use the `get_app_sec_rate_policies` data source to retrieve the rate policies for a specific security configuration, or a single rate policy.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    rate_policies = akamai.get_app_sec_rate_policies(config_id=configuration.config_id)
+    pulumi.export("ratePoliciesOutput", rate_policies.output_text)
+    pulumi.export("ratePoliciesJson", rate_policies.json)
+    rate_policy = akamai.get_app_sec_rate_policies(config_id=configuration.config_id,
+        rate_policy_id=var["rate_policy_id"])
+    pulumi.export("ratePolicyJson", rate_policy.json)
+    pulumi.export("ratePolicyOutput", rate_policy.output_text)
+    ```
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param int rate_policy_id: The ID of the rate policy to use. If this parameter is not supplied, information about all rate policies will be returned.
+    """
+    ...

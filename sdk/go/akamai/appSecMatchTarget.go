@@ -12,6 +12,50 @@ import (
 )
 
 // The `AppSecMatchTarget` resource allows you to create or modify a match target associated with a given security configuration.
+//
+// ## Example Usage
+//
+// Basic usage:
+//
+// ```go
+// package main
+//
+// import (
+// 	"fmt"
+// 	"io/ioutil"
+//
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func readFileOrPanic(path string) pulumi.StringPtrInput {
+// 	data, err := ioutil.ReadFile(path)
+// 	if err != nil {
+// 		panic(err.Error())
+// 	}
+// 	return pulumi.String(string(data))
+// }
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		opt0 := "Akamai Tools"
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+// 			Name: &opt0,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		_, err = akamai.NewAppSecMatchTarget(ctx, "matchTarget", &akamai.AppSecMatchTargetArgs{
+// 			ConfigId:    pulumi.Int(configuration.ConfigId),
+// 			MatchTarget: readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/match_targets.json")),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
 type AppSecMatchTarget struct {
 	pulumi.CustomResourceState
 
@@ -160,7 +204,7 @@ type AppSecMatchTargetArrayInput interface {
 type AppSecMatchTargetArray []AppSecMatchTargetInput
 
 func (AppSecMatchTargetArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecMatchTarget)(nil))
+	return reflect.TypeOf((*[]*AppSecMatchTarget)(nil)).Elem()
 }
 
 func (i AppSecMatchTargetArray) ToAppSecMatchTargetArrayOutput() AppSecMatchTargetArrayOutput {
@@ -185,7 +229,7 @@ type AppSecMatchTargetMapInput interface {
 type AppSecMatchTargetMap map[string]AppSecMatchTargetInput
 
 func (AppSecMatchTargetMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecMatchTarget)(nil))
+	return reflect.TypeOf((*map[string]*AppSecMatchTarget)(nil)).Elem()
 }
 
 func (i AppSecMatchTargetMap) ToAppSecMatchTargetMapOutput() AppSecMatchTargetMapOutput {
@@ -196,9 +240,7 @@ func (i AppSecMatchTargetMap) ToAppSecMatchTargetMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecMatchTargetMapOutput)
 }
 
-type AppSecMatchTargetOutput struct {
-	*pulumi.OutputState
-}
+type AppSecMatchTargetOutput struct{ *pulumi.OutputState }
 
 func (AppSecMatchTargetOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecMatchTarget)(nil))
@@ -217,14 +259,12 @@ func (o AppSecMatchTargetOutput) ToAppSecMatchTargetPtrOutput() AppSecMatchTarge
 }
 
 func (o AppSecMatchTargetOutput) ToAppSecMatchTargetPtrOutputWithContext(ctx context.Context) AppSecMatchTargetPtrOutput {
-	return o.ApplyT(func(v AppSecMatchTarget) *AppSecMatchTarget {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecMatchTarget) *AppSecMatchTarget {
 		return &v
 	}).(AppSecMatchTargetPtrOutput)
 }
 
-type AppSecMatchTargetPtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecMatchTargetPtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecMatchTargetPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecMatchTarget)(nil))
@@ -236,6 +276,16 @@ func (o AppSecMatchTargetPtrOutput) ToAppSecMatchTargetPtrOutput() AppSecMatchTa
 
 func (o AppSecMatchTargetPtrOutput) ToAppSecMatchTargetPtrOutputWithContext(ctx context.Context) AppSecMatchTargetPtrOutput {
 	return o
+}
+
+func (o AppSecMatchTargetPtrOutput) Elem() AppSecMatchTargetOutput {
+	return o.ApplyT(func(v *AppSecMatchTarget) AppSecMatchTarget {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecMatchTarget
+		return ret
+	}).(AppSecMatchTargetOutput)
 }
 
 type AppSecMatchTargetArrayOutput struct{ *pulumi.OutputState }
@@ -279,6 +329,10 @@ func (o AppSecMatchTargetMapOutput) MapIndex(k pulumi.StringInput) AppSecMatchTa
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecMatchTargetInput)(nil)).Elem(), &AppSecMatchTarget{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecMatchTargetPtrInput)(nil)).Elem(), &AppSecMatchTarget{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecMatchTargetArrayInput)(nil)).Elem(), AppSecMatchTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecMatchTargetMapInput)(nil)).Elem(), AppSecMatchTargetMap{})
 	pulumi.RegisterOutputType(AppSecMatchTargetOutput{})
 	pulumi.RegisterOutputType(AppSecMatchTargetPtrOutput{})
 	pulumi.RegisterOutputType(AppSecMatchTargetArrayOutput{})

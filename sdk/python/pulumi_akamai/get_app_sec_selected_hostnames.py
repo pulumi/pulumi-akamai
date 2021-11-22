@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecSelectedHostnamesResult',
     'AwaitableGetAppSecSelectedHostnamesResult',
     'get_app_sec_selected_hostnames',
+    'get_app_sec_selected_hostnames_output',
 ]
 
 @pulumi.output_type
@@ -124,3 +125,30 @@ def get_app_sec_selected_hostnames(config_id: Optional[int] = None,
         hostnames_json=__ret__.hostnames_json,
         id=__ret__.id,
         output_text=__ret__.output_text)
+
+
+@_utilities.lift_output_func(get_app_sec_selected_hostnames)
+def get_app_sec_selected_hostnames_output(config_id: Optional[pulumi.Input[int]] = None,
+                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecSelectedHostnamesResult]:
+    """
+    Use the `AppSecSelectedHostnames` data source to retrieve a list of the hostnames that are currently protected under a given security configuration.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
+    selected_hostnames_app_sec_selected_hostnames = akamai.get_app_sec_selected_hostnames(config_id=configuration.config_id)
+    pulumi.export("selectedHostnames", selected_hostnames_app_sec_selected_hostnames.hostnames)
+    pulumi.export("selectedHostnamesJson", selected_hostnames_app_sec_selected_hostnames.hostnames_json)
+    pulumi.export("selectedHostnamesOutputText", selected_hostnames_app_sec_selected_hostnames.output_text)
+    ```
+
+
+    :param int config_id: The ID of the security configuration to use.
+    """
+    ...

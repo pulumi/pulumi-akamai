@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,7 +26,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.GetAuthoritiesSet(ctx, &akamai.GetAuthoritiesSetArgs{
+// 		_, err := akamai.GetAuthoritiesSet(ctx, &GetAuthoritiesSetArgs{
 // 			Contract: "ctr_1-AB123",
 // 		}, nil)
 // 		if err != nil {
@@ -64,4 +67,54 @@ type GetAuthoritiesSetResult struct {
 	Contract    string   `pulumi:"contract"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+}
+
+func GetAuthoritiesSetOutput(ctx *pulumi.Context, args GetAuthoritiesSetOutputArgs, opts ...pulumi.InvokeOption) GetAuthoritiesSetResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetAuthoritiesSetResult, error) {
+			args := v.(GetAuthoritiesSetArgs)
+			r, err := GetAuthoritiesSet(ctx, &args, opts...)
+			return *r, err
+		}).(GetAuthoritiesSetResultOutput)
+}
+
+// A collection of arguments for invoking getAuthoritiesSet.
+type GetAuthoritiesSetOutputArgs struct {
+	Contract pulumi.StringInput `pulumi:"contract"`
+}
+
+func (GetAuthoritiesSetOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAuthoritiesSetArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAuthoritiesSet.
+type GetAuthoritiesSetResultOutput struct{ *pulumi.OutputState }
+
+func (GetAuthoritiesSetResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAuthoritiesSetResult)(nil)).Elem()
+}
+
+func (o GetAuthoritiesSetResultOutput) ToGetAuthoritiesSetResultOutput() GetAuthoritiesSetResultOutput {
+	return o
+}
+
+func (o GetAuthoritiesSetResultOutput) ToGetAuthoritiesSetResultOutputWithContext(ctx context.Context) GetAuthoritiesSetResultOutput {
+	return o
+}
+
+func (o GetAuthoritiesSetResultOutput) Authorities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAuthoritiesSetResult) []string { return v.Authorities }).(pulumi.StringArrayOutput)
+}
+
+func (o GetAuthoritiesSetResultOutput) Contract() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuthoritiesSetResult) string { return v.Contract }).(pulumi.StringOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetAuthoritiesSetResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuthoritiesSetResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetAuthoritiesSetResultOutput{})
 }

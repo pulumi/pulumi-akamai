@@ -167,7 +167,7 @@ type AppSecSecurityPolicyRenameArrayInput interface {
 type AppSecSecurityPolicyRenameArray []AppSecSecurityPolicyRenameInput
 
 func (AppSecSecurityPolicyRenameArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecSecurityPolicyRename)(nil))
+	return reflect.TypeOf((*[]*AppSecSecurityPolicyRename)(nil)).Elem()
 }
 
 func (i AppSecSecurityPolicyRenameArray) ToAppSecSecurityPolicyRenameArrayOutput() AppSecSecurityPolicyRenameArrayOutput {
@@ -192,7 +192,7 @@ type AppSecSecurityPolicyRenameMapInput interface {
 type AppSecSecurityPolicyRenameMap map[string]AppSecSecurityPolicyRenameInput
 
 func (AppSecSecurityPolicyRenameMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecSecurityPolicyRename)(nil))
+	return reflect.TypeOf((*map[string]*AppSecSecurityPolicyRename)(nil)).Elem()
 }
 
 func (i AppSecSecurityPolicyRenameMap) ToAppSecSecurityPolicyRenameMapOutput() AppSecSecurityPolicyRenameMapOutput {
@@ -203,9 +203,7 @@ func (i AppSecSecurityPolicyRenameMap) ToAppSecSecurityPolicyRenameMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSecurityPolicyRenameMapOutput)
 }
 
-type AppSecSecurityPolicyRenameOutput struct {
-	*pulumi.OutputState
-}
+type AppSecSecurityPolicyRenameOutput struct{ *pulumi.OutputState }
 
 func (AppSecSecurityPolicyRenameOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecSecurityPolicyRename)(nil))
@@ -224,14 +222,12 @@ func (o AppSecSecurityPolicyRenameOutput) ToAppSecSecurityPolicyRenamePtrOutput(
 }
 
 func (o AppSecSecurityPolicyRenameOutput) ToAppSecSecurityPolicyRenamePtrOutputWithContext(ctx context.Context) AppSecSecurityPolicyRenamePtrOutput {
-	return o.ApplyT(func(v AppSecSecurityPolicyRename) *AppSecSecurityPolicyRename {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecSecurityPolicyRename) *AppSecSecurityPolicyRename {
 		return &v
 	}).(AppSecSecurityPolicyRenamePtrOutput)
 }
 
-type AppSecSecurityPolicyRenamePtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecSecurityPolicyRenamePtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecSecurityPolicyRenamePtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecSecurityPolicyRename)(nil))
@@ -243,6 +239,16 @@ func (o AppSecSecurityPolicyRenamePtrOutput) ToAppSecSecurityPolicyRenamePtrOutp
 
 func (o AppSecSecurityPolicyRenamePtrOutput) ToAppSecSecurityPolicyRenamePtrOutputWithContext(ctx context.Context) AppSecSecurityPolicyRenamePtrOutput {
 	return o
+}
+
+func (o AppSecSecurityPolicyRenamePtrOutput) Elem() AppSecSecurityPolicyRenameOutput {
+	return o.ApplyT(func(v *AppSecSecurityPolicyRename) AppSecSecurityPolicyRename {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecSecurityPolicyRename
+		return ret
+	}).(AppSecSecurityPolicyRenameOutput)
 }
 
 type AppSecSecurityPolicyRenameArrayOutput struct{ *pulumi.OutputState }
@@ -286,6 +292,10 @@ func (o AppSecSecurityPolicyRenameMapOutput) MapIndex(k pulumi.StringInput) AppS
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSecurityPolicyRenameInput)(nil)).Elem(), &AppSecSecurityPolicyRename{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSecurityPolicyRenamePtrInput)(nil)).Elem(), &AppSecSecurityPolicyRename{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSecurityPolicyRenameArrayInput)(nil)).Elem(), AppSecSecurityPolicyRenameArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSecurityPolicyRenameMapInput)(nil)).Elem(), AppSecSecurityPolicyRenameMap{})
 	pulumi.RegisterOutputType(AppSecSecurityPolicyRenameOutput{})
 	pulumi.RegisterOutputType(AppSecSecurityPolicyRenamePtrOutput{})
 	pulumi.RegisterOutputType(AppSecSecurityPolicyRenameArrayOutput{})

@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecRuleUpgradeDetailsResult',
     'AwaitableGetAppSecRuleUpgradeDetailsResult',
     'get_app_sec_rule_upgrade_details',
+    'get_app_sec_rule_upgrade_details_output',
 ]
 
 @pulumi.output_type
@@ -88,7 +89,7 @@ def get_app_sec_rule_upgrade_details(config_id: Optional[int] = None,
                                      security_policy_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecRuleUpgradeDetailsResult:
     """
-    Use the `getAppSecRuleUpgradeDetails` data source to retrieve information on changes to the KRS rule sets.
+    Use the `get_app_sec_rule_upgrade_details` data source to retrieve information on changes to the KRS rule sets.
 
     ## Example Usage
 
@@ -124,3 +125,32 @@ def get_app_sec_rule_upgrade_details(config_id: Optional[int] = None,
         json=__ret__.json,
         output_text=__ret__.output_text,
         security_policy_id=__ret__.security_policy_id)
+
+
+@_utilities.lift_output_func(get_app_sec_rule_upgrade_details)
+def get_app_sec_rule_upgrade_details_output(config_id: Optional[pulumi.Input[int]] = None,
+                                            security_policy_id: Optional[pulumi.Input[str]] = None,
+                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecRuleUpgradeDetailsResult]:
+    """
+    Use the `get_app_sec_rule_upgrade_details` data source to retrieve information on changes to the KRS rule sets.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    upgrade_details = akamai.get_app_sec_rule_upgrade_details(config_id=configuration.config_id,
+        security_policy_id=var["security_policy_id"])
+    pulumi.export("upgradeDetailsText", upgrade_details.output_text)
+    pulumi.export("upgradeDetailsJson", upgrade_details.json)
+    ```
+
+
+    :param int config_id: The ID of the security configuration to use.
+    :param str security_policy_id: The ID of the security policy to use.
+    """
+    ...

@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -78,4 +77,22 @@ export interface GetAppSecCustomRulesResult {
      * A tabular display showing the ID and name of the custom rule(s).
      */
     readonly outputText: string;
+}
+
+export function getAppSecCustomRulesOutput(args: GetAppSecCustomRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecCustomRulesResult> {
+    return pulumi.output(args).apply(a => getAppSecCustomRules(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecCustomRules.
+ */
+export interface GetAppSecCustomRulesOutputArgs {
+    /**
+     * The ID of the security configuration to use.
+     */
+    configId: pulumi.Input<number>;
+    /**
+     * The ID of a specific custom rule to use. If not supplied, information about all custom rules associated with the given security configuration will be returned.
+     */
+    customRuleId?: pulumi.Input<number>;
 }

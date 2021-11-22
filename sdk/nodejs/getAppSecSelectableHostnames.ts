@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -97,4 +96,28 @@ export interface GetAppSecSelectableHostnamesResult {
      * A tabular display of the selectable hostnames showing the name and configId of the security configuration under which the host is protected in production, or '-' if the host is not protected in production.
      */
     readonly outputText: string;
+}
+
+export function getAppSecSelectableHostnamesOutput(args?: GetAppSecSelectableHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecSelectableHostnamesResult> {
+    return pulumi.output(args).apply(a => getAppSecSelectableHostnames(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecSelectableHostnames.
+ */
+export interface GetAppSecSelectableHostnamesOutputArgs {
+    activeInProduction?: pulumi.Input<boolean>;
+    activeInStaging?: pulumi.Input<boolean>;
+    /**
+     * The ID of the security configuration to use.
+     */
+    configId?: pulumi.Input<number>;
+    /**
+     * The ID of the contract to use.
+     */
+    contractid?: pulumi.Input<string>;
+    /**
+     * The ID of the group to use.
+     */
+    groupid?: pulumi.Input<number>;
 }

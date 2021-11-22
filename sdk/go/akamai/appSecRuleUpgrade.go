@@ -29,7 +29,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
@@ -219,7 +219,7 @@ type AppSecRuleUpgradeArrayInput interface {
 type AppSecRuleUpgradeArray []AppSecRuleUpgradeInput
 
 func (AppSecRuleUpgradeArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecRuleUpgrade)(nil))
+	return reflect.TypeOf((*[]*AppSecRuleUpgrade)(nil)).Elem()
 }
 
 func (i AppSecRuleUpgradeArray) ToAppSecRuleUpgradeArrayOutput() AppSecRuleUpgradeArrayOutput {
@@ -244,7 +244,7 @@ type AppSecRuleUpgradeMapInput interface {
 type AppSecRuleUpgradeMap map[string]AppSecRuleUpgradeInput
 
 func (AppSecRuleUpgradeMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecRuleUpgrade)(nil))
+	return reflect.TypeOf((*map[string]*AppSecRuleUpgrade)(nil)).Elem()
 }
 
 func (i AppSecRuleUpgradeMap) ToAppSecRuleUpgradeMapOutput() AppSecRuleUpgradeMapOutput {
@@ -255,9 +255,7 @@ func (i AppSecRuleUpgradeMap) ToAppSecRuleUpgradeMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecRuleUpgradeMapOutput)
 }
 
-type AppSecRuleUpgradeOutput struct {
-	*pulumi.OutputState
-}
+type AppSecRuleUpgradeOutput struct{ *pulumi.OutputState }
 
 func (AppSecRuleUpgradeOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecRuleUpgrade)(nil))
@@ -276,14 +274,12 @@ func (o AppSecRuleUpgradeOutput) ToAppSecRuleUpgradePtrOutput() AppSecRuleUpgrad
 }
 
 func (o AppSecRuleUpgradeOutput) ToAppSecRuleUpgradePtrOutputWithContext(ctx context.Context) AppSecRuleUpgradePtrOutput {
-	return o.ApplyT(func(v AppSecRuleUpgrade) *AppSecRuleUpgrade {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecRuleUpgrade) *AppSecRuleUpgrade {
 		return &v
 	}).(AppSecRuleUpgradePtrOutput)
 }
 
-type AppSecRuleUpgradePtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecRuleUpgradePtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecRuleUpgradePtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecRuleUpgrade)(nil))
@@ -295,6 +291,16 @@ func (o AppSecRuleUpgradePtrOutput) ToAppSecRuleUpgradePtrOutput() AppSecRuleUpg
 
 func (o AppSecRuleUpgradePtrOutput) ToAppSecRuleUpgradePtrOutputWithContext(ctx context.Context) AppSecRuleUpgradePtrOutput {
 	return o
+}
+
+func (o AppSecRuleUpgradePtrOutput) Elem() AppSecRuleUpgradeOutput {
+	return o.ApplyT(func(v *AppSecRuleUpgrade) AppSecRuleUpgrade {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecRuleUpgrade
+		return ret
+	}).(AppSecRuleUpgradeOutput)
 }
 
 type AppSecRuleUpgradeArrayOutput struct{ *pulumi.OutputState }
@@ -338,6 +344,10 @@ func (o AppSecRuleUpgradeMapOutput) MapIndex(k pulumi.StringInput) AppSecRuleUpg
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRuleUpgradeInput)(nil)).Elem(), &AppSecRuleUpgrade{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRuleUpgradePtrInput)(nil)).Elem(), &AppSecRuleUpgrade{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRuleUpgradeArrayInput)(nil)).Elem(), AppSecRuleUpgradeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRuleUpgradeMapInput)(nil)).Elem(), AppSecRuleUpgradeMap{})
 	pulumi.RegisterOutputType(AppSecRuleUpgradeOutput{})
 	pulumi.RegisterOutputType(AppSecRuleUpgradePtrOutput{})
 	pulumi.RegisterOutputType(AppSecRuleUpgradeArrayOutput{})

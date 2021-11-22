@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecVersionNotesResult',
     'AwaitableGetAppSecVersionNotesResult',
     'get_app_sec_version_notes',
+    'get_app_sec_version_notes_output',
 ]
 
 @pulumi.output_type
@@ -110,3 +111,29 @@ def get_app_sec_version_notes(config_id: Optional[int] = None,
         id=__ret__.id,
         json=__ret__.json,
         output_text=__ret__.output_text)
+
+
+@_utilities.lift_output_func(get_app_sec_version_notes)
+def get_app_sec_version_notes_output(config_id: Optional[pulumi.Input[int]] = None,
+                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecVersionNotesResult]:
+    """
+    Use the `AppSecVersionNodes` data source to retrieve the most recent version notes for a configuration.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    version_notes = akamai.get_app_sec_version_notes(config_id=configuration.config_id)
+    pulumi.export("versionNotesText", version_notes.output_text)
+    pulumi.export("versionNotesJson", version_notes.json)
+    ```
+
+
+    :param int config_id: The configuration ID to use.
+    """
+    ...

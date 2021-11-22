@@ -12,6 +12,53 @@ import (
 )
 
 // Use the `AppSecAttackGroup` resource to create or modify an attack group's action, conditions and exceptions. When the conditions are met, the rule’s actions are ignored and not applied to that specific traffic.
+//
+// ## Example Usage
+//
+// Basic usage:
+//
+// ```go
+// package main
+//
+// import (
+// 	"fmt"
+// 	"io/ioutil"
+//
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func readFileOrPanic(path string) pulumi.StringPtrInput {
+// 	data, err := ioutil.ReadFile(path)
+// 	if err != nil {
+// 		panic(err.Error())
+// 	}
+// 	return pulumi.String(string(data))
+// }
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		opt0 := _var.Security_configuration
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+// 			Name: &opt0,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		_, err = akamai.NewAppSecAttackGroup(ctx, "attackGroup", &akamai.AppSecAttackGroupArgs{
+// 			ConfigId:           pulumi.Int(configuration.ConfigId),
+// 			SecurityPolicyId:   pulumi.Any(_var.Security_policy_id),
+// 			AttackGroup:        pulumi.Any(_var.Attack_group),
+// 			AttackGroupAction:  pulumi.Any(_var.Attack_group_action),
+// 			ConditionException: readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/condition_exception.json")),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
 type AppSecAttackGroup struct {
 	pulumi.CustomResourceState
 
@@ -190,7 +237,7 @@ type AppSecAttackGroupArrayInput interface {
 type AppSecAttackGroupArray []AppSecAttackGroupInput
 
 func (AppSecAttackGroupArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AppSecAttackGroup)(nil))
+	return reflect.TypeOf((*[]*AppSecAttackGroup)(nil)).Elem()
 }
 
 func (i AppSecAttackGroupArray) ToAppSecAttackGroupArrayOutput() AppSecAttackGroupArrayOutput {
@@ -215,7 +262,7 @@ type AppSecAttackGroupMapInput interface {
 type AppSecAttackGroupMap map[string]AppSecAttackGroupInput
 
 func (AppSecAttackGroupMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AppSecAttackGroup)(nil))
+	return reflect.TypeOf((*map[string]*AppSecAttackGroup)(nil)).Elem()
 }
 
 func (i AppSecAttackGroupMap) ToAppSecAttackGroupMapOutput() AppSecAttackGroupMapOutput {
@@ -226,9 +273,7 @@ func (i AppSecAttackGroupMap) ToAppSecAttackGroupMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecAttackGroupMapOutput)
 }
 
-type AppSecAttackGroupOutput struct {
-	*pulumi.OutputState
-}
+type AppSecAttackGroupOutput struct{ *pulumi.OutputState }
 
 func (AppSecAttackGroupOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AppSecAttackGroup)(nil))
@@ -247,14 +292,12 @@ func (o AppSecAttackGroupOutput) ToAppSecAttackGroupPtrOutput() AppSecAttackGrou
 }
 
 func (o AppSecAttackGroupOutput) ToAppSecAttackGroupPtrOutputWithContext(ctx context.Context) AppSecAttackGroupPtrOutput {
-	return o.ApplyT(func(v AppSecAttackGroup) *AppSecAttackGroup {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecAttackGroup) *AppSecAttackGroup {
 		return &v
 	}).(AppSecAttackGroupPtrOutput)
 }
 
-type AppSecAttackGroupPtrOutput struct {
-	*pulumi.OutputState
-}
+type AppSecAttackGroupPtrOutput struct{ *pulumi.OutputState }
 
 func (AppSecAttackGroupPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AppSecAttackGroup)(nil))
@@ -266,6 +309,16 @@ func (o AppSecAttackGroupPtrOutput) ToAppSecAttackGroupPtrOutput() AppSecAttackG
 
 func (o AppSecAttackGroupPtrOutput) ToAppSecAttackGroupPtrOutputWithContext(ctx context.Context) AppSecAttackGroupPtrOutput {
 	return o
+}
+
+func (o AppSecAttackGroupPtrOutput) Elem() AppSecAttackGroupOutput {
+	return o.ApplyT(func(v *AppSecAttackGroup) AppSecAttackGroup {
+		if v != nil {
+			return *v
+		}
+		var ret AppSecAttackGroup
+		return ret
+	}).(AppSecAttackGroupOutput)
 }
 
 type AppSecAttackGroupArrayOutput struct{ *pulumi.OutputState }
@@ -309,6 +362,10 @@ func (o AppSecAttackGroupMapOutput) MapIndex(k pulumi.StringInput) AppSecAttackG
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAttackGroupInput)(nil)).Elem(), &AppSecAttackGroup{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAttackGroupPtrInput)(nil)).Elem(), &AppSecAttackGroup{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAttackGroupArrayInput)(nil)).Elem(), AppSecAttackGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAttackGroupMapInput)(nil)).Elem(), AppSecAttackGroupMap{})
 	pulumi.RegisterOutputType(AppSecAttackGroupOutput{})
 	pulumi.RegisterOutputType(AppSecAttackGroupPtrOutput{})
 	pulumi.RegisterOutputType(AppSecAttackGroupArrayOutput{})

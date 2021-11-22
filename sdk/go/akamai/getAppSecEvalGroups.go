@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,14 +29,14 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
 // 		opt1 := _var.Attack_group
-// 		evalAttackGroup, err := akamai.GetAppSecEvalGroups(ctx, &akamai.GetAppSecEvalGroupsArgs{
+// 		evalAttackGroup, err := akamai.GetAppSecEvalGroups(ctx, &GetAppSecEvalGroupsArgs{
 // 			ConfigId:         configuration.ConfigId,
 // 			SecurityPolicyId: _var.Security_policy_id,
 // 			AttackGroup:      &opt1,
@@ -85,4 +88,85 @@ type GetAppSecEvalGroupsResult struct {
 	// boolean values indicating whether conditions and exceptions are present.
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
+}
+
+func GetAppSecEvalGroupsOutput(ctx *pulumi.Context, args GetAppSecEvalGroupsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecEvalGroupsResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetAppSecEvalGroupsResult, error) {
+			args := v.(GetAppSecEvalGroupsArgs)
+			r, err := GetAppSecEvalGroups(ctx, &args, opts...)
+			return *r, err
+		}).(GetAppSecEvalGroupsResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecEvalGroups.
+type GetAppSecEvalGroupsOutputArgs struct {
+	// The ID of the eval attack group to use.
+	AttackGroup pulumi.StringPtrInput `pulumi:"attackGroup"`
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// The ID of the security policy to use.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+}
+
+func (GetAppSecEvalGroupsOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecEvalGroupsArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecEvalGroups.
+type GetAppSecEvalGroupsResultOutput struct{ *pulumi.OutputState }
+
+func (GetAppSecEvalGroupsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecEvalGroupsResult)(nil)).Elem()
+}
+
+func (o GetAppSecEvalGroupsResultOutput) ToGetAppSecEvalGroupsResultOutput() GetAppSecEvalGroupsResultOutput {
+	return o
+}
+
+func (o GetAppSecEvalGroupsResultOutput) ToGetAppSecEvalGroupsResultOutputWithContext(ctx context.Context) GetAppSecEvalGroupsResultOutput {
+	return o
+}
+
+func (o GetAppSecEvalGroupsResultOutput) AttackGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppSecEvalGroupsResult) *string { return v.AttackGroup }).(pulumi.StringPtrOutput)
+}
+
+// The eval attack group's action, either `alert`, `d
+func (o GetAppSecEvalGroupsResultOutput) AttackGroupAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecEvalGroupsResult) string { return v.AttackGroupAction }).(pulumi.StringOutput)
+}
+
+// The eval attack group's conditions and exceptions.
+func (o GetAppSecEvalGroupsResultOutput) ConditionException() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecEvalGroupsResult) string { return v.ConditionException }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecEvalGroupsResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAppSecEvalGroupsResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetAppSecEvalGroupsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecEvalGroupsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted list of the action and condition-exception information for the specified eval attack
+// group. This output is only generated if an attack group is specified.
+func (o GetAppSecEvalGroupsResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecEvalGroupsResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display showing, for the specified eval attack group or groups, the eval attack group's action and
+// boolean values indicating whether conditions and exceptions are present.
+func (o GetAppSecEvalGroupsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecEvalGroupsResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecEvalGroupsResultOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecEvalGroupsResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetAppSecEvalGroupsResultOutput{})
 }

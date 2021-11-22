@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -62,6 +63,58 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecExportConfigurationResult> InvokeAsync(GetAppSecExportConfigurationArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecExportConfigurationResult>("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", args ?? new GetAppSecExportConfigurationArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.getAppSecExportConfiguration` data source to retrieve comprehensive details about a security configuration version, including rate and security policies, rules, hostnames, and other settings. You can retrieve the entire set of information in JSON format, or a subset of the information in tabular format.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = "Akamai Tools",
+        ///         }));
+        ///         var export = Output.Tuple(configuration, configuration).Apply(values =&gt;
+        ///         {
+        ///             var configuration = values.Item1;
+        ///             var configuration1 = values.Item2;
+        ///             return Output.Create(Akamai.GetAppSecExportConfiguration.InvokeAsync(new Akamai.GetAppSecExportConfigurationArgs
+        ///             {
+        ///                 ConfigId = configuration.ConfigId,
+        ///                 Version = configuration1.LatestVersion,
+        ///                 Searches = 
+        ///                 {
+        ///                     "securityPolicies",
+        ///                     "selectedHosts",
+        ///                 },
+        ///             }));
+        ///         });
+        ///         this.Json = export.Apply(export =&gt; export.Json);
+        ///         this.Text = export.Apply(export =&gt; export.OutputText);
+        ///     }
+        /// 
+        ///     [Output("json")]
+        ///     public Output&lt;string&gt; Json { get; set; }
+        ///     [Output("text")]
+        ///     public Output&lt;string&gt; Text { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecExportConfigurationResult> Invoke(GetAppSecExportConfigurationInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecExportConfigurationResult>("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", args ?? new GetAppSecExportConfigurationInvokeArgs(), options.WithVersion());
     }
 
 
@@ -100,6 +153,45 @@ namespace Pulumi.Akamai
         public int Version { get; set; }
 
         public GetAppSecExportConfigurationArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecExportConfigurationInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        [Input("searches")]
+        private InputList<string>? _searches;
+
+        /// <summary>
+        /// A bracket-delimited list of quoted strings specifying the types of information to be retrieved and made available for display in the `output_text` format. The following types are available:
+        /// * customRules
+        /// * matchTargets
+        /// * ratePolicies
+        /// * reputationProfiles
+        /// * rulesets
+        /// * securityPolicies
+        /// * selectableHosts
+        /// * selectedHosts
+        /// </summary>
+        public InputList<string> Searches
+        {
+            get => _searches ?? (_searches = new InputList<string>());
+            set => _searches = value;
+        }
+
+        /// <summary>
+        /// The version number of the security configuration to use.
+        /// </summary>
+        [Input("version", required: true)]
+        public Input<int> Version { get; set; } = null!;
+
+        public GetAppSecExportConfigurationInvokeArgs()
         {
         }
     }

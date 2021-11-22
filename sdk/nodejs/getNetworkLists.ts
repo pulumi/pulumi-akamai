@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -88,4 +87,24 @@ export interface GetNetworkListsResult {
      * The ID of the indicated list (if the `name` argument was supplied).
      */
     readonly uniqueid: string;
+}
+
+export function getNetworkListsOutput(args?: GetNetworkListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkListsResult> {
+    return pulumi.output(args).apply(a => getNetworkLists(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getNetworkLists.
+ */
+export interface GetNetworkListsOutputArgs {
+    /**
+     * The name of a specific network list to retrieve. If not supplied, information about all network
+     * lists will be returned.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * The type of network lists to be retrieved; must be either "IP" or "GEO". If not supplied,
+     * information about both types will be returned.
+     */
+    type?: pulumi.Input<string>;
 }

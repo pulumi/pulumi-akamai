@@ -209,10 +209,11 @@ func (o GtmASmapDefaultDatacenterOutput) ToGtmASmapDefaultDatacenterPtrOutput() 
 }
 
 func (o GtmASmapDefaultDatacenterOutput) ToGtmASmapDefaultDatacenterPtrOutputWithContext(ctx context.Context) GtmASmapDefaultDatacenterPtrOutput {
-	return o.ApplyT(func(v GtmASmapDefaultDatacenter) *GtmASmapDefaultDatacenter {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmASmapDefaultDatacenter) *GtmASmapDefaultDatacenter {
 		return &v
 	}).(GtmASmapDefaultDatacenterPtrOutput)
 }
+
 func (o GtmASmapDefaultDatacenterOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmASmapDefaultDatacenter) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
@@ -236,7 +237,13 @@ func (o GtmASmapDefaultDatacenterPtrOutput) ToGtmASmapDefaultDatacenterPtrOutput
 }
 
 func (o GtmASmapDefaultDatacenterPtrOutput) Elem() GtmASmapDefaultDatacenterOutput {
-	return o.ApplyT(func(v *GtmASmapDefaultDatacenter) GtmASmapDefaultDatacenter { return *v }).(GtmASmapDefaultDatacenterOutput)
+	return o.ApplyT(func(v *GtmASmapDefaultDatacenter) GtmASmapDefaultDatacenter {
+		if v != nil {
+			return *v
+		}
+		var ret GtmASmapDefaultDatacenter
+		return ret
+	}).(GtmASmapDefaultDatacenterOutput)
 }
 
 func (o GtmASmapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput {
@@ -456,10 +463,11 @@ func (o GtmCidrmapDefaultDatacenterOutput) ToGtmCidrmapDefaultDatacenterPtrOutpu
 }
 
 func (o GtmCidrmapDefaultDatacenterOutput) ToGtmCidrmapDefaultDatacenterPtrOutputWithContext(ctx context.Context) GtmCidrmapDefaultDatacenterPtrOutput {
-	return o.ApplyT(func(v GtmCidrmapDefaultDatacenter) *GtmCidrmapDefaultDatacenter {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmCidrmapDefaultDatacenter) *GtmCidrmapDefaultDatacenter {
 		return &v
 	}).(GtmCidrmapDefaultDatacenterPtrOutput)
 }
+
 func (o GtmCidrmapDefaultDatacenterOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmCidrmapDefaultDatacenter) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
@@ -483,7 +491,13 @@ func (o GtmCidrmapDefaultDatacenterPtrOutput) ToGtmCidrmapDefaultDatacenterPtrOu
 }
 
 func (o GtmCidrmapDefaultDatacenterPtrOutput) Elem() GtmCidrmapDefaultDatacenterOutput {
-	return o.ApplyT(func(v *GtmCidrmapDefaultDatacenter) GtmCidrmapDefaultDatacenter { return *v }).(GtmCidrmapDefaultDatacenterOutput)
+	return o.ApplyT(func(v *GtmCidrmapDefaultDatacenter) GtmCidrmapDefaultDatacenter {
+		if v != nil {
+			return *v
+		}
+		var ret GtmCidrmapDefaultDatacenter
+		return ret
+	}).(GtmCidrmapDefaultDatacenterOutput)
 }
 
 func (o GtmCidrmapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput {
@@ -599,10 +613,11 @@ func (o GtmDatacenterDefaultLoadObjectOutput) ToGtmDatacenterDefaultLoadObjectPt
 }
 
 func (o GtmDatacenterDefaultLoadObjectOutput) ToGtmDatacenterDefaultLoadObjectPtrOutputWithContext(ctx context.Context) GtmDatacenterDefaultLoadObjectPtrOutput {
-	return o.ApplyT(func(v GtmDatacenterDefaultLoadObject) *GtmDatacenterDefaultLoadObject {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmDatacenterDefaultLoadObject) *GtmDatacenterDefaultLoadObject {
 		return &v
 	}).(GtmDatacenterDefaultLoadObjectPtrOutput)
 }
+
 func (o GtmDatacenterDefaultLoadObjectOutput) LoadObject() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmDatacenterDefaultLoadObject) *string { return v.LoadObject }).(pulumi.StringPtrOutput)
 }
@@ -630,7 +645,13 @@ func (o GtmDatacenterDefaultLoadObjectPtrOutput) ToGtmDatacenterDefaultLoadObjec
 }
 
 func (o GtmDatacenterDefaultLoadObjectPtrOutput) Elem() GtmDatacenterDefaultLoadObjectOutput {
-	return o.ApplyT(func(v *GtmDatacenterDefaultLoadObject) GtmDatacenterDefaultLoadObject { return *v }).(GtmDatacenterDefaultLoadObjectOutput)
+	return o.ApplyT(func(v *GtmDatacenterDefaultLoadObject) GtmDatacenterDefaultLoadObject {
+		if v != nil {
+			return *v
+		}
+		var ret GtmDatacenterDefaultLoadObject
+		return ret
+	}).(GtmDatacenterDefaultLoadObjectOutput)
 }
 
 func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadObject() pulumi.StringPtrOutput {
@@ -859,10 +880,11 @@ func (o GtmGeomapDefaultDatacenterOutput) ToGtmGeomapDefaultDatacenterPtrOutput(
 }
 
 func (o GtmGeomapDefaultDatacenterOutput) ToGtmGeomapDefaultDatacenterPtrOutputWithContext(ctx context.Context) GtmGeomapDefaultDatacenterPtrOutput {
-	return o.ApplyT(func(v GtmGeomapDefaultDatacenter) *GtmGeomapDefaultDatacenter {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmGeomapDefaultDatacenter) *GtmGeomapDefaultDatacenter {
 		return &v
 	}).(GtmGeomapDefaultDatacenterPtrOutput)
 }
+
 func (o GtmGeomapDefaultDatacenterOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmGeomapDefaultDatacenter) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
@@ -886,7 +908,13 @@ func (o GtmGeomapDefaultDatacenterPtrOutput) ToGtmGeomapDefaultDatacenterPtrOutp
 }
 
 func (o GtmGeomapDefaultDatacenterPtrOutput) Elem() GtmGeomapDefaultDatacenterOutput {
-	return o.ApplyT(func(v *GtmGeomapDefaultDatacenter) GtmGeomapDefaultDatacenter { return *v }).(GtmGeomapDefaultDatacenterOutput)
+	return o.ApplyT(func(v *GtmGeomapDefaultDatacenter) GtmGeomapDefaultDatacenter {
+		if v != nil {
+			return *v
+		}
+		var ret GtmGeomapDefaultDatacenter
+		return ret
+	}).(GtmGeomapDefaultDatacenterOutput)
 }
 
 func (o GtmGeomapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput {
@@ -1588,6 +1616,30 @@ func (o GtmResourceResourceInstanceArrayOutput) Index(i pulumi.IntInput) GtmReso
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmASmapAssignmentInput)(nil)).Elem(), GtmASmapAssignmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmASmapAssignmentArrayInput)(nil)).Elem(), GtmASmapAssignmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmASmapDefaultDatacenterInput)(nil)).Elem(), GtmASmapDefaultDatacenterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmASmapDefaultDatacenterPtrInput)(nil)).Elem(), GtmASmapDefaultDatacenterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmCidrmapAssignmentInput)(nil)).Elem(), GtmCidrmapAssignmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmCidrmapAssignmentArrayInput)(nil)).Elem(), GtmCidrmapAssignmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmCidrmapDefaultDatacenterInput)(nil)).Elem(), GtmCidrmapDefaultDatacenterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmCidrmapDefaultDatacenterPtrInput)(nil)).Elem(), GtmCidrmapDefaultDatacenterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmDatacenterDefaultLoadObjectInput)(nil)).Elem(), GtmDatacenterDefaultLoadObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmDatacenterDefaultLoadObjectPtrInput)(nil)).Elem(), GtmDatacenterDefaultLoadObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmGeomapAssignmentInput)(nil)).Elem(), GtmGeomapAssignmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmGeomapAssignmentArrayInput)(nil)).Elem(), GtmGeomapAssignmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmGeomapDefaultDatacenterInput)(nil)).Elem(), GtmGeomapDefaultDatacenterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmGeomapDefaultDatacenterPtrInput)(nil)).Elem(), GtmGeomapDefaultDatacenterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyLivenessTestInput)(nil)).Elem(), GtmPropertyLivenessTestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyLivenessTestArrayInput)(nil)).Elem(), GtmPropertyLivenessTestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyLivenessTestHttpHeaderInput)(nil)).Elem(), GtmPropertyLivenessTestHttpHeaderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyLivenessTestHttpHeaderArrayInput)(nil)).Elem(), GtmPropertyLivenessTestHttpHeaderArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyStaticRrSetInput)(nil)).Elem(), GtmPropertyStaticRrSetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyStaticRrSetArrayInput)(nil)).Elem(), GtmPropertyStaticRrSetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyTrafficTargetInput)(nil)).Elem(), GtmPropertyTrafficTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPropertyTrafficTargetArrayInput)(nil)).Elem(), GtmPropertyTrafficTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmResourceResourceInstanceInput)(nil)).Elem(), GtmResourceResourceInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmResourceResourceInstanceArrayInput)(nil)).Elem(), GtmResourceResourceInstanceArray{})
 	pulumi.RegisterOutputType(GtmASmapAssignmentOutput{})
 	pulumi.RegisterOutputType(GtmASmapAssignmentArrayOutput{})
 	pulumi.RegisterOutputType(GtmASmapDefaultDatacenterOutput{})

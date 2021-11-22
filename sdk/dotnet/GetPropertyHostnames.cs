@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -13,6 +14,9 @@ namespace Pulumi.Akamai
     {
         public static Task<GetPropertyHostnamesResult> InvokeAsync(GetPropertyHostnamesArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyHostnamesResult>("akamai:index/getPropertyHostnames:getPropertyHostnames", args ?? new GetPropertyHostnamesArgs(), options.WithVersion());
+
+        public static Output<GetPropertyHostnamesResult> Invoke(GetPropertyHostnamesInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetPropertyHostnamesResult>("akamai:index/getPropertyHostnames:getPropertyHostnames", args ?? new GetPropertyHostnamesInvokeArgs(), options.WithVersion());
     }
 
 
@@ -28,6 +32,22 @@ namespace Pulumi.Akamai
         public string PropertyId { get; set; } = null!;
 
         public GetPropertyHostnamesArgs()
+        {
+        }
+    }
+
+    public sealed class GetPropertyHostnamesInvokeArgs : Pulumi.InvokeArgs
+    {
+        [Input("contractId", required: true)]
+        public Input<string> ContractId { get; set; } = null!;
+
+        [Input("groupId", required: true)]
+        public Input<string> GroupId { get; set; } = null!;
+
+        [Input("propertyId", required: true)]
+        public Input<string> PropertyId { get; set; } = null!;
+
+        public GetPropertyHostnamesInvokeArgs()
         {
         }
     }

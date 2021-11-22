@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -91,4 +90,34 @@ export interface GetAppSecExportConfigurationResult {
     readonly outputText: string;
     readonly searches?: string[];
     readonly version: number;
+}
+
+export function getAppSecExportConfigurationOutput(args: GetAppSecExportConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecExportConfigurationResult> {
+    return pulumi.output(args).apply(a => getAppSecExportConfiguration(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecExportConfiguration.
+ */
+export interface GetAppSecExportConfigurationOutputArgs {
+    /**
+     * The ID of the security configuration to use.
+     */
+    configId: pulumi.Input<number>;
+    /**
+     * A bracket-delimited list of quoted strings specifying the types of information to be retrieved and made available for display in the `outputText` format. The following types are available:
+     * * customRules
+     * * matchTargets
+     * * ratePolicies
+     * * reputationProfiles
+     * * rulesets
+     * * securityPolicies
+     * * selectableHosts
+     * * selectedHosts
+     */
+    searches?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The version number of the security configuration to use.
+     */
+    version: pulumi.Input<number>;
 }

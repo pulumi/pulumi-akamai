@@ -12,6 +12,7 @@ __all__ = [
     'GetNetworkListsResult',
     'AwaitableGetNetworkListsResult',
     'get_network_lists',
+    'get_network_lists_output',
 ]
 
 @pulumi.output_type
@@ -112,7 +113,7 @@ def get_network_lists(name: Optional[str] = None,
                       type: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkListsResult:
     """
-    Use the `getNetworkLists` data source to retrieve information about the available network lists,
+    Use the `get_network_lists` data source to retrieve information about the available network lists,
     optionally filtered by list type or based on a search string. The information available is described
     [here](https://developer.akamai.com/api/cloud_security/network_lists/v2.html#getlists).
 
@@ -158,3 +159,40 @@ def get_network_lists(name: Optional[str] = None,
         output_text=__ret__.output_text,
         type=__ret__.type,
         uniqueid=__ret__.uniqueid)
+
+
+@_utilities.lift_output_func(get_network_lists)
+def get_network_lists_output(name: Optional[pulumi.Input[Optional[str]]] = None,
+                             type: Optional[pulumi.Input[Optional[str]]] = None,
+                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkListsResult]:
+    """
+    Use the `get_network_lists` data source to retrieve information about the available network lists,
+    optionally filtered by list type or based on a search string. The information available is described
+    [here](https://developer.akamai.com/api/cloud_security/network_lists/v2.html#getlists).
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    network_lists = akamai.get_network_lists()
+    pulumi.export("networkListsText", network_lists.output_text)
+    pulumi.export("networkListsJson", network_lists.json)
+    pulumi.export("networkListsList", network_lists.lists)
+    network_lists_filter = akamai.get_network_lists(name="Test Whitelist",
+        type="IP")
+    pulumi.export("networkListsFilterText", network_lists_filter.output_text)
+    pulumi.export("networkListsFilterJson", network_lists_filter.json)
+    pulumi.export("networkListsFilterList", network_lists_filter.lists)
+    ```
+
+
+    :param str name: The name of a specific network list to retrieve. If not supplied, information about all network
+           lists will be returned.
+    :param str type: The type of network lists to be retrieved; must be either "IP" or "GEO". If not supplied,
+           information about both types will be returned.
+    """
+    ...

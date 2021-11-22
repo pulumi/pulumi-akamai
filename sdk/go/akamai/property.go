@@ -42,13 +42,13 @@ import (
 // 			ProductId:  pulumi.String("prd_SPM"),
 // 			ContractId: pulumi.Any(_var.Contractid),
 // 			GroupId:    pulumi.Any(_var.Groupid),
-// 			Hostnames: akamai.PropertyHostnameArray{
-// 				&akamai.PropertyHostnameArgs{
+// 			Hostnames: PropertyHostnameArray{
+// 				&PropertyHostnameArgs{
 // 					CnameFrom:            pulumi.String("example.com"),
 // 					CnameTo:              pulumi.String("example.com.edgekey.net"),
 // 					CertProvisioningType: pulumi.String("DEFAULT"),
 // 				},
-// 				&akamai.PropertyHostnameArgs{
+// 				&PropertyHostnameArgs{
 // 					CnameFrom:            pulumi.String("www.example.com"),
 // 					CnameTo:              pulumi.String("example.com.edgesuite.net"),
 // 					CertProvisioningType: pulumi.String("CPS_MANAGED"),
@@ -445,7 +445,7 @@ type PropertyArrayInput interface {
 type PropertyArray []PropertyInput
 
 func (PropertyArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*Property)(nil))
+	return reflect.TypeOf((*[]*Property)(nil)).Elem()
 }
 
 func (i PropertyArray) ToPropertyArrayOutput() PropertyArrayOutput {
@@ -470,7 +470,7 @@ type PropertyMapInput interface {
 type PropertyMap map[string]PropertyInput
 
 func (PropertyMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*Property)(nil))
+	return reflect.TypeOf((*map[string]*Property)(nil)).Elem()
 }
 
 func (i PropertyMap) ToPropertyMapOutput() PropertyMapOutput {
@@ -481,9 +481,7 @@ func (i PropertyMap) ToPropertyMapOutputWithContext(ctx context.Context) Propert
 	return pulumi.ToOutputWithContext(ctx, i).(PropertyMapOutput)
 }
 
-type PropertyOutput struct {
-	*pulumi.OutputState
-}
+type PropertyOutput struct{ *pulumi.OutputState }
 
 func (PropertyOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*Property)(nil))
@@ -502,14 +500,12 @@ func (o PropertyOutput) ToPropertyPtrOutput() PropertyPtrOutput {
 }
 
 func (o PropertyOutput) ToPropertyPtrOutputWithContext(ctx context.Context) PropertyPtrOutput {
-	return o.ApplyT(func(v Property) *Property {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v Property) *Property {
 		return &v
 	}).(PropertyPtrOutput)
 }
 
-type PropertyPtrOutput struct {
-	*pulumi.OutputState
-}
+type PropertyPtrOutput struct{ *pulumi.OutputState }
 
 func (PropertyPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**Property)(nil))
@@ -521,6 +517,16 @@ func (o PropertyPtrOutput) ToPropertyPtrOutput() PropertyPtrOutput {
 
 func (o PropertyPtrOutput) ToPropertyPtrOutputWithContext(ctx context.Context) PropertyPtrOutput {
 	return o
+}
+
+func (o PropertyPtrOutput) Elem() PropertyOutput {
+	return o.ApplyT(func(v *Property) Property {
+		if v != nil {
+			return *v
+		}
+		var ret Property
+		return ret
+	}).(PropertyOutput)
 }
 
 type PropertyArrayOutput struct{ *pulumi.OutputState }
@@ -564,6 +570,10 @@ func (o PropertyMapOutput) MapIndex(k pulumi.StringInput) PropertyOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyInput)(nil)).Elem(), &Property{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyPtrInput)(nil)).Elem(), &Property{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyArrayInput)(nil)).Elem(), PropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyMapInput)(nil)).Elem(), PropertyMap{})
 	pulumi.RegisterOutputType(PropertyOutput{})
 	pulumi.RegisterOutputType(PropertyPtrOutput{})
 	pulumi.RegisterOutputType(PropertyArrayOutput{})

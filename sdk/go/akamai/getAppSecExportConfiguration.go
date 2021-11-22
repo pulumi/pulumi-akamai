@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,13 +27,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := "Akamai Tools"
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		export, err := akamai.GetAppSecExportConfiguration(ctx, &akamai.GetAppSecExportConfigurationArgs{
+// 		export, err := akamai.GetAppSecExportConfiguration(ctx, &GetAppSecExportConfigurationArgs{
 // 			ConfigId: configuration.ConfigId,
 // 			Version:  configuration.LatestVersion,
 // 			Searches: []string{
@@ -85,4 +88,81 @@ type GetAppSecExportConfigurationResult struct {
 	OutputText string   `pulumi:"outputText"`
 	Searches   []string `pulumi:"searches"`
 	Version    int      `pulumi:"version"`
+}
+
+func GetAppSecExportConfigurationOutput(ctx *pulumi.Context, args GetAppSecExportConfigurationOutputArgs, opts ...pulumi.InvokeOption) GetAppSecExportConfigurationResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetAppSecExportConfigurationResult, error) {
+			args := v.(GetAppSecExportConfigurationArgs)
+			r, err := GetAppSecExportConfiguration(ctx, &args, opts...)
+			return *r, err
+		}).(GetAppSecExportConfigurationResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecExportConfiguration.
+type GetAppSecExportConfigurationOutputArgs struct {
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// A bracket-delimited list of quoted strings specifying the types of information to be retrieved and made available for display in the `outputText` format. The following types are available:
+	// * customRules
+	// * matchTargets
+	// * ratePolicies
+	// * reputationProfiles
+	// * rulesets
+	// * securityPolicies
+	// * selectableHosts
+	// * selectedHosts
+	Searches pulumi.StringArrayInput `pulumi:"searches"`
+	// The version number of the security configuration to use.
+	Version pulumi.IntInput `pulumi:"version"`
+}
+
+func (GetAppSecExportConfigurationOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecExportConfigurationArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecExportConfiguration.
+type GetAppSecExportConfigurationResultOutput struct{ *pulumi.OutputState }
+
+func (GetAppSecExportConfigurationResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAppSecExportConfigurationResult)(nil)).Elem()
+}
+
+func (o GetAppSecExportConfigurationResultOutput) ToGetAppSecExportConfigurationResultOutput() GetAppSecExportConfigurationResultOutput {
+	return o
+}
+
+func (o GetAppSecExportConfigurationResultOutput) ToGetAppSecExportConfigurationResultOutputWithContext(ctx context.Context) GetAppSecExportConfigurationResultOutput {
+	return o
+}
+
+func (o GetAppSecExportConfigurationResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAppSecExportConfigurationResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetAppSecExportConfigurationResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecExportConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The complete set of information about the specified security configuration version, in JSON format. This includes the types available for the `search` parameter, plus several additional fields such as createDate and createdBy.
+func (o GetAppSecExportConfigurationResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecExportConfigurationResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display showing the types of data specified in the `search` parameter. Included only if the `search` parameter specifies at least one type.
+func (o GetAppSecExportConfigurationResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAppSecExportConfigurationResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecExportConfigurationResultOutput) Searches() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAppSecExportConfigurationResult) []string { return v.Searches }).(pulumi.StringArrayOutput)
+}
+
+func (o GetAppSecExportConfigurationResultOutput) Version() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAppSecExportConfigurationResult) int { return v.Version }).(pulumi.IntOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetAppSecExportConfigurationResultOutput{})
 }

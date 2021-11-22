@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecAdvancedSettingsPragmaHeaderResult',
     'AwaitableGetAppSecAdvancedSettingsPragmaHeaderResult',
     'get_app_sec_advanced_settings_pragma_header',
+    'get_app_sec_advanced_settings_pragma_header_output',
 ]
 
 @pulumi.output_type
@@ -127,3 +128,35 @@ def get_app_sec_advanced_settings_pragma_header(config_id: Optional[int] = None,
         json=__ret__.json,
         output_text=__ret__.output_text,
         security_policy_id=__ret__.security_policy_id)
+
+
+@_utilities.lift_output_func(get_app_sec_advanced_settings_pragma_header)
+def get_app_sec_advanced_settings_pragma_header_output(config_id: Optional[pulumi.Input[int]] = None,
+                                                       security_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
+                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecAdvancedSettingsPragmaHeaderResult]:
+    """
+    Use the `AppSecAdvancedSettingsPragmaHeader` data source to retrieve pragma header settings for a configuration or a security policy. Additional information is available [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getpragmaheaderconfiguration).
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    pragma_header = akamai.get_app_sec_advanced_settings_pragma_header(config_id=configuration.config_id)
+    pulumi.export("advancedSettingsPragmaHeaderOutput", pragma_header.output_text)
+    pulumi.export("advancedSettingsPragmaHeaderJson", pragma_header.json)
+    policy_pragma_header = akamai.get_app_sec_advanced_settings_pragma_header(config_id=configuration.config_id,
+        security_policy_id=var["security_policy_id"])
+    pulumi.export("advancedSettingsPolicyPragmaHeaderOutput", policy_pragma_header.output_text)
+    pulumi.export("advancedSettingsPolicyPragmaHeaderJson", policy_pragma_header.json)
+    ```
+
+
+    :param int config_id: The configuration ID.
+    :param str security_policy_id: The ID of the security policy to use.
+    """
+    ...

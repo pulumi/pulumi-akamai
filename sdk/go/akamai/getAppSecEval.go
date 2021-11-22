@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -29,4 +32,59 @@ type LookupAppSecEvalResult struct {
 	Id               string `pulumi:"id"`
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
+}
+
+func LookupAppSecEvalOutput(ctx *pulumi.Context, args LookupAppSecEvalOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecEvalResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (LookupAppSecEvalResult, error) {
+			args := v.(LookupAppSecEvalArgs)
+			r, err := LookupAppSecEval(ctx, &args, opts...)
+			return *r, err
+		}).(LookupAppSecEvalResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecEval.
+type LookupAppSecEvalOutputArgs struct {
+	ConfigId         pulumi.IntInput    `pulumi:"configId"`
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+}
+
+func (LookupAppSecEvalOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecEvalArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecEval.
+type LookupAppSecEvalResultOutput struct{ *pulumi.OutputState }
+
+func (LookupAppSecEvalResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecEvalResult)(nil)).Elem()
+}
+
+func (o LookupAppSecEvalResultOutput) ToLookupAppSecEvalResultOutput() LookupAppSecEvalResultOutput {
+	return o
+}
+
+func (o LookupAppSecEvalResultOutput) ToLookupAppSecEvalResultOutputWithContext(ctx context.Context) LookupAppSecEvalResultOutput {
+	return o
+}
+
+func (o LookupAppSecEvalResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAppSecEvalResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o LookupAppSecEvalResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecEvalResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecEvalResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecEvalResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecEvalResultOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecEvalResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(LookupAppSecEvalResultOutput{})
 }

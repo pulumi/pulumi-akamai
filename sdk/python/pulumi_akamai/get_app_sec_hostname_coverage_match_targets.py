@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecHostnameCoverageMatchTargetsResult',
     'AwaitableGetAppSecHostnameCoverageMatchTargetsResult',
     'get_app_sec_hostname_coverage_match_targets',
+    'get_app_sec_hostname_coverage_match_targets_output',
 ]
 
 @pulumi.output_type
@@ -88,7 +89,7 @@ def get_app_sec_hostname_coverage_match_targets(config_id: Optional[int] = None,
                                                 hostname: Optional[str] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecHostnameCoverageMatchTargetsResult:
     """
-    Use the `getAppSecHostnameCoverageMatchTargets` data source to retrieve information about the API and website match targets that protect a hostname. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoveragematchtargets).
+    Use the `get_app_sec_hostname_coverage_match_targets` data source to retrieve information about the API and website match targets that protect a hostname. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoveragematchtargets).
 
     ## Example Usage
 
@@ -121,3 +122,29 @@ def get_app_sec_hostname_coverage_match_targets(config_id: Optional[int] = None,
         id=__ret__.id,
         json=__ret__.json,
         output_text=__ret__.output_text)
+
+
+@_utilities.lift_output_func(get_app_sec_hostname_coverage_match_targets)
+def get_app_sec_hostname_coverage_match_targets_output(config_id: Optional[pulumi.Input[int]] = None,
+                                                       hostname: Optional[pulumi.Input[str]] = None,
+                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecHostnameCoverageMatchTargetsResult]:
+    """
+    Use the `get_app_sec_hostname_coverage_match_targets` data source to retrieve information about the API and website match targets that protect a hostname. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoveragematchtargets).
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    match_targets = akamai.get_app_sec_hostname_coverage_match_targets(config_id=43253,
+        hostname="example.com")
+    ```
+
+
+    :param int config_id: The configuration ID.
+    :param str hostname: The hostname for which to retrieve information.
+    """
+    ...

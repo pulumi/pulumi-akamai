@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -62,4 +61,15 @@ export interface GetAuthoritiesSetResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+}
+
+export function getAuthoritiesSetOutput(args: GetAuthoritiesSetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuthoritiesSetResult> {
+    return pulumi.output(args).apply(a => getAuthoritiesSet(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAuthoritiesSet.
+ */
+export interface GetAuthoritiesSetOutputArgs {
+    contract: pulumi.Input<string>;
 }

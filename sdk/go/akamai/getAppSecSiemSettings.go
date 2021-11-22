@@ -4,6 +4,9 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,13 +27,13 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		siemSettings, err := akamai.LookupAppSecSiemSettings(ctx, &akamai.LookupAppSecSiemSettingsArgs{
+// 		siemSettings, err := akamai.LookupAppSecSiemSettings(ctx, &GetAppSecSiemSettingsArgs{
 // 			ConfigId: configuration.ConfigId,
 // 		}, nil)
 // 		if err != nil {
@@ -66,4 +69,61 @@ type LookupAppSecSiemSettingsResult struct {
 	Json string `pulumi:"json"`
 	// A tabular display showing the SIEM setting information.
 	OutputText string `pulumi:"outputText"`
+}
+
+func LookupAppSecSiemSettingsOutput(ctx *pulumi.Context, args LookupAppSecSiemSettingsOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecSiemSettingsResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (LookupAppSecSiemSettingsResult, error) {
+			args := v.(LookupAppSecSiemSettingsArgs)
+			r, err := LookupAppSecSiemSettings(ctx, &args, opts...)
+			return *r, err
+		}).(LookupAppSecSiemSettingsResultOutput)
+}
+
+// A collection of arguments for invoking getAppSecSiemSettings.
+type LookupAppSecSiemSettingsOutputArgs struct {
+	// The ID of the security configuration to use.
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+}
+
+func (LookupAppSecSiemSettingsOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecSiemSettingsArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getAppSecSiemSettings.
+type LookupAppSecSiemSettingsResultOutput struct{ *pulumi.OutputState }
+
+func (LookupAppSecSiemSettingsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAppSecSiemSettingsResult)(nil)).Elem()
+}
+
+func (o LookupAppSecSiemSettingsResultOutput) ToLookupAppSecSiemSettingsResultOutput() LookupAppSecSiemSettingsResultOutput {
+	return o
+}
+
+func (o LookupAppSecSiemSettingsResultOutput) ToLookupAppSecSiemSettingsResultOutputWithContext(ctx context.Context) LookupAppSecSiemSettingsResultOutput {
+	return o
+}
+
+func (o LookupAppSecSiemSettingsResultOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAppSecSiemSettingsResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o LookupAppSecSiemSettingsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecSiemSettingsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A JSON-formatted list of the SIEM setting information.
+func (o LookupAppSecSiemSettingsResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecSiemSettingsResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+// A tabular display showing the SIEM setting information.
+func (o LookupAppSecSiemSettingsResultOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecSiemSettingsResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(LookupAppSecSiemSettingsResultOutput{})
 }

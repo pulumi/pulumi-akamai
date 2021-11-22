@@ -4,6 +4,9 @@
 package trafficmanagement
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -31,4 +34,63 @@ type GetGtmDefaultDatacenterResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id       string `pulumi:"id"`
 	Nickname string `pulumi:"nickname"`
+}
+
+func GetGtmDefaultDatacenterOutput(ctx *pulumi.Context, args GetGtmDefaultDatacenterOutputArgs, opts ...pulumi.InvokeOption) GetGtmDefaultDatacenterResultOutput {
+	return pulumi.ToOutputWithContext(context.Background(), args).
+		ApplyT(func(v interface{}) (GetGtmDefaultDatacenterResult, error) {
+			args := v.(GetGtmDefaultDatacenterArgs)
+			r, err := GetGtmDefaultDatacenter(ctx, &args, opts...)
+			return *r, err
+		}).(GetGtmDefaultDatacenterResultOutput)
+}
+
+// A collection of arguments for invoking getGtmDefaultDatacenter.
+type GetGtmDefaultDatacenterOutputArgs struct {
+	Datacenter pulumi.IntPtrInput `pulumi:"datacenter"`
+	Domain     pulumi.StringInput `pulumi:"domain"`
+}
+
+func (GetGtmDefaultDatacenterOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGtmDefaultDatacenterArgs)(nil)).Elem()
+}
+
+// A collection of values returned by getGtmDefaultDatacenter.
+type GetGtmDefaultDatacenterResultOutput struct{ *pulumi.OutputState }
+
+func (GetGtmDefaultDatacenterResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGtmDefaultDatacenterResult)(nil)).Elem()
+}
+
+func (o GetGtmDefaultDatacenterResultOutput) ToGetGtmDefaultDatacenterResultOutput() GetGtmDefaultDatacenterResultOutput {
+	return o
+}
+
+func (o GetGtmDefaultDatacenterResultOutput) ToGetGtmDefaultDatacenterResultOutputWithContext(ctx context.Context) GetGtmDefaultDatacenterResultOutput {
+	return o
+}
+
+func (o GetGtmDefaultDatacenterResultOutput) Datacenter() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetGtmDefaultDatacenterResult) *int { return v.Datacenter }).(pulumi.IntPtrOutput)
+}
+
+func (o GetGtmDefaultDatacenterResultOutput) DatacenterId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGtmDefaultDatacenterResult) int { return v.DatacenterId }).(pulumi.IntOutput)
+}
+
+func (o GetGtmDefaultDatacenterResultOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGtmDefaultDatacenterResult) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetGtmDefaultDatacenterResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGtmDefaultDatacenterResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetGtmDefaultDatacenterResultOutput) Nickname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGtmDefaultDatacenterResult) string { return v.Nickname }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetGtmDefaultDatacenterResultOutput{})
 }

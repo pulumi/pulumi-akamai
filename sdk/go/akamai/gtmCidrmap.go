@@ -32,7 +32,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		_, err := akamai.NewGtmCidrmap(ctx, "demoCidrmap", &akamai.GtmCidrmapArgs{
-// 			DefaultDatacenter: &akamai.GtmCidrmapDefaultDatacenterArgs{
+// 			DefaultDatacenter: &GtmCidrmapDefaultDatacenterArgs{
 // 				DatacenterId: pulumi.Int(5400),
 // 				Nickname:     pulumi.String("All Other CIDR Blocks"),
 // 			},
@@ -216,7 +216,7 @@ type GtmCidrmapArrayInput interface {
 type GtmCidrmapArray []GtmCidrmapInput
 
 func (GtmCidrmapArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*GtmCidrmap)(nil))
+	return reflect.TypeOf((*[]*GtmCidrmap)(nil)).Elem()
 }
 
 func (i GtmCidrmapArray) ToGtmCidrmapArrayOutput() GtmCidrmapArrayOutput {
@@ -241,7 +241,7 @@ type GtmCidrmapMapInput interface {
 type GtmCidrmapMap map[string]GtmCidrmapInput
 
 func (GtmCidrmapMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*GtmCidrmap)(nil))
+	return reflect.TypeOf((*map[string]*GtmCidrmap)(nil)).Elem()
 }
 
 func (i GtmCidrmapMap) ToGtmCidrmapMapOutput() GtmCidrmapMapOutput {
@@ -252,9 +252,7 @@ func (i GtmCidrmapMap) ToGtmCidrmapMapOutputWithContext(ctx context.Context) Gtm
 	return pulumi.ToOutputWithContext(ctx, i).(GtmCidrmapMapOutput)
 }
 
-type GtmCidrmapOutput struct {
-	*pulumi.OutputState
-}
+type GtmCidrmapOutput struct{ *pulumi.OutputState }
 
 func (GtmCidrmapOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*GtmCidrmap)(nil))
@@ -273,14 +271,12 @@ func (o GtmCidrmapOutput) ToGtmCidrmapPtrOutput() GtmCidrmapPtrOutput {
 }
 
 func (o GtmCidrmapOutput) ToGtmCidrmapPtrOutputWithContext(ctx context.Context) GtmCidrmapPtrOutput {
-	return o.ApplyT(func(v GtmCidrmap) *GtmCidrmap {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmCidrmap) *GtmCidrmap {
 		return &v
 	}).(GtmCidrmapPtrOutput)
 }
 
-type GtmCidrmapPtrOutput struct {
-	*pulumi.OutputState
-}
+type GtmCidrmapPtrOutput struct{ *pulumi.OutputState }
 
 func (GtmCidrmapPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**GtmCidrmap)(nil))
@@ -292,6 +288,16 @@ func (o GtmCidrmapPtrOutput) ToGtmCidrmapPtrOutput() GtmCidrmapPtrOutput {
 
 func (o GtmCidrmapPtrOutput) ToGtmCidrmapPtrOutputWithContext(ctx context.Context) GtmCidrmapPtrOutput {
 	return o
+}
+
+func (o GtmCidrmapPtrOutput) Elem() GtmCidrmapOutput {
+	return o.ApplyT(func(v *GtmCidrmap) GtmCidrmap {
+		if v != nil {
+			return *v
+		}
+		var ret GtmCidrmap
+		return ret
+	}).(GtmCidrmapOutput)
 }
 
 type GtmCidrmapArrayOutput struct{ *pulumi.OutputState }
@@ -335,6 +341,10 @@ func (o GtmCidrmapMapOutput) MapIndex(k pulumi.StringInput) GtmCidrmapOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmCidrmapInput)(nil)).Elem(), &GtmCidrmap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmCidrmapPtrInput)(nil)).Elem(), &GtmCidrmap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmCidrmapArrayInput)(nil)).Elem(), GtmCidrmapArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmCidrmapMapInput)(nil)).Elem(), GtmCidrmapMap{})
 	pulumi.RegisterOutputType(GtmCidrmapOutput{})
 	pulumi.RegisterOutputType(GtmCidrmapPtrOutput{})
 	pulumi.RegisterOutputType(GtmCidrmapArrayOutput{})

@@ -177,7 +177,7 @@ type CpCodeArrayInput interface {
 type CpCodeArray []CpCodeInput
 
 func (CpCodeArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*CpCode)(nil))
+	return reflect.TypeOf((*[]*CpCode)(nil)).Elem()
 }
 
 func (i CpCodeArray) ToCpCodeArrayOutput() CpCodeArrayOutput {
@@ -202,7 +202,7 @@ type CpCodeMapInput interface {
 type CpCodeMap map[string]CpCodeInput
 
 func (CpCodeMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*CpCode)(nil))
+	return reflect.TypeOf((*map[string]*CpCode)(nil)).Elem()
 }
 
 func (i CpCodeMap) ToCpCodeMapOutput() CpCodeMapOutput {
@@ -213,9 +213,7 @@ func (i CpCodeMap) ToCpCodeMapOutputWithContext(ctx context.Context) CpCodeMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(CpCodeMapOutput)
 }
 
-type CpCodeOutput struct {
-	*pulumi.OutputState
-}
+type CpCodeOutput struct{ *pulumi.OutputState }
 
 func (CpCodeOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*CpCode)(nil))
@@ -234,14 +232,12 @@ func (o CpCodeOutput) ToCpCodePtrOutput() CpCodePtrOutput {
 }
 
 func (o CpCodeOutput) ToCpCodePtrOutputWithContext(ctx context.Context) CpCodePtrOutput {
-	return o.ApplyT(func(v CpCode) *CpCode {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CpCode) *CpCode {
 		return &v
 	}).(CpCodePtrOutput)
 }
 
-type CpCodePtrOutput struct {
-	*pulumi.OutputState
-}
+type CpCodePtrOutput struct{ *pulumi.OutputState }
 
 func (CpCodePtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**CpCode)(nil))
@@ -253,6 +249,16 @@ func (o CpCodePtrOutput) ToCpCodePtrOutput() CpCodePtrOutput {
 
 func (o CpCodePtrOutput) ToCpCodePtrOutputWithContext(ctx context.Context) CpCodePtrOutput {
 	return o
+}
+
+func (o CpCodePtrOutput) Elem() CpCodeOutput {
+	return o.ApplyT(func(v *CpCode) CpCode {
+		if v != nil {
+			return *v
+		}
+		var ret CpCode
+		return ret
+	}).(CpCodeOutput)
 }
 
 type CpCodeArrayOutput struct{ *pulumi.OutputState }
@@ -296,6 +302,10 @@ func (o CpCodeMapOutput) MapIndex(k pulumi.StringInput) CpCodeOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*CpCodeInput)(nil)).Elem(), &CpCode{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpCodePtrInput)(nil)).Elem(), &CpCode{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpCodeArrayInput)(nil)).Elem(), CpCodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpCodeMapInput)(nil)).Elem(), CpCodeMap{})
 	pulumi.RegisterOutputType(CpCodeOutput{})
 	pulumi.RegisterOutputType(CpCodePtrOutput{})
 	pulumi.RegisterOutputType(CpCodeArrayOutput{})

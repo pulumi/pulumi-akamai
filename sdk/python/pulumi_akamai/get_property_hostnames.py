@@ -13,6 +13,7 @@ __all__ = [
     'GetPropertyHostnamesResult',
     'AwaitableGetPropertyHostnamesResult',
     'get_property_hostnames',
+    'get_property_hostnames_output',
 ]
 
 @pulumi.output_type
@@ -112,3 +113,14 @@ def get_property_hostnames(contract_id: Optional[str] = None,
         id=__ret__.id,
         property_id=__ret__.property_id,
         version=__ret__.version)
+
+
+@_utilities.lift_output_func(get_property_hostnames)
+def get_property_hostnames_output(contract_id: Optional[pulumi.Input[str]] = None,
+                                  group_id: Optional[pulumi.Input[str]] = None,
+                                  property_id: Optional[pulumi.Input[str]] = None,
+                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyHostnamesResult]:
+    """
+    Use this data source to access information about an existing resource.
+    """
+    ...

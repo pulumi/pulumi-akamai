@@ -12,6 +12,7 @@ __all__ = [
     'GetAuthoritiesSetResult',
     'AwaitableGetAuthoritiesSetResult',
     'get_authorities_set',
+    'get_authorities_set_output',
 ]
 
 warnings.warn("""akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet""", DeprecationWarning)
@@ -80,3 +81,13 @@ def get_authorities_set(contract: Optional[str] = None,
         authorities=__ret__.authorities,
         contract=__ret__.contract,
         id=__ret__.id)
+
+
+@_utilities.lift_output_func(get_authorities_set)
+def get_authorities_set_output(contract: Optional[pulumi.Input[str]] = None,
+                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuthoritiesSetResult]:
+    """
+    Use this data source to access information about an existing resource.
+    """
+    pulumi.log.warn("""get_authorities_set is deprecated: akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet""")
+    ...

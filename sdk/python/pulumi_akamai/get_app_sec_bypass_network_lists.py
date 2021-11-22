@@ -12,6 +12,7 @@ __all__ = [
     'GetAppSecBypassNetworkListsResult',
     'AwaitableGetAppSecBypassNetworkListsResult',
     'get_app_sec_bypass_network_lists',
+    'get_app_sec_bypass_network_lists_output',
 ]
 
 @pulumi.output_type
@@ -127,3 +128,33 @@ def get_app_sec_bypass_network_lists(config_id: Optional[int] = None,
         id=__ret__.id,
         json=__ret__.json,
         output_text=__ret__.output_text)
+
+
+@_utilities.lift_output_func(get_app_sec_bypass_network_lists)
+def get_app_sec_bypass_network_lists_output(config_id: Optional[pulumi.Input[int]] = None,
+                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecBypassNetworkListsResult]:
+    """
+    Use the `AppSecByPassNetworkList` data source to retrieve information about which network
+    lists are used in the bypass network lists settings.  The information available is described
+    [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getbypassnetworklistsforawapconfigversion).
+    Note: this data source is only applicable to WAP (Web Application Protector) configurations.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    bypass_network_lists = akamai.get_app_sec_bypass_network_lists(config_id=configuration.config_id)
+    pulumi.export("bypassNetworkListsOutput", bypass_network_lists.output_text)
+    pulumi.export("bypassNetworkListsJson", bypass_network_lists.json)
+    pulumi.export("bypassNetworkListsIdList", bypass_network_lists.bypass_network_lists)
+    ```
+
+
+    :param int config_id: The configuration ID to use.
+    """
+    ...

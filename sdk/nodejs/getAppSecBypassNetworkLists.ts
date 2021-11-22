@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -74,4 +73,18 @@ export interface GetAppSecBypassNetworkListsResult {
      * A tabular display showing the bypass network list information.
      */
     readonly outputText: string;
+}
+
+export function getAppSecBypassNetworkListsOutput(args: GetAppSecBypassNetworkListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecBypassNetworkListsResult> {
+    return pulumi.output(args).apply(a => getAppSecBypassNetworkLists(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecBypassNetworkLists.
+ */
+export interface GetAppSecBypassNetworkListsOutputArgs {
+    /**
+     * The configuration ID to use.
+     */
+    configId: pulumi.Input<number>;
 }

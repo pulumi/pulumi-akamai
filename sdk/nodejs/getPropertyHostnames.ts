@@ -43,3 +43,16 @@ export interface GetPropertyHostnamesResult {
     readonly propertyId: string;
     readonly version: number;
 }
+
+export function getPropertyHostnamesOutput(args: GetPropertyHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyHostnamesResult> {
+    return pulumi.output(args).apply(a => getPropertyHostnames(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getPropertyHostnames.
+ */
+export interface GetPropertyHostnamesOutputArgs {
+    contractId: pulumi.Input<string>;
+    groupId: pulumi.Input<string>;
+    propertyId: pulumi.Input<string>;
+}

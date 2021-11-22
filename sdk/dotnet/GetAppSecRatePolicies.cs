@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -62,6 +63,58 @@ namespace Pulumi.Akamai
         /// </summary>
         public static Task<GetAppSecRatePoliciesResult> InvokeAsync(GetAppSecRatePoliciesArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecRatePoliciesResult>("akamai:index/getAppSecRatePolicies:getAppSecRatePolicies", args ?? new GetAppSecRatePoliciesArgs(), options.WithVersion());
+
+        /// <summary>
+        /// Use the `akamai.getAppSecRatePolicies` data source to retrieve the rate policies for a specific security configuration, or a single rate policy.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = @var.Security_configuration,
+        ///         }));
+        ///         var ratePolicies = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecRatePolicies.InvokeAsync(new Akamai.GetAppSecRatePoliciesArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///         })));
+        ///         this.RatePoliciesOutput = ratePolicies.Apply(ratePolicies =&gt; ratePolicies.OutputText);
+        ///         this.RatePoliciesJson = ratePolicies.Apply(ratePolicies =&gt; ratePolicies.Json);
+        ///         var ratePolicy = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecRatePolicies.InvokeAsync(new Akamai.GetAppSecRatePoliciesArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///             RatePolicyId = @var.Rate_policy_id,
+        ///         })));
+        ///         this.RatePolicyJson = ratePolicy.Apply(ratePolicy =&gt; ratePolicy.Json);
+        ///         this.RatePolicyOutput = ratePolicy.Apply(ratePolicy =&gt; ratePolicy.OutputText);
+        ///     }
+        /// 
+        ///     [Output("ratePoliciesOutput")]
+        ///     public Output&lt;string&gt; RatePoliciesOutput { get; set; }
+        ///     [Output("ratePoliciesJson")]
+        ///     public Output&lt;string&gt; RatePoliciesJson { get; set; }
+        ///     [Output("ratePolicyJson")]
+        ///     public Output&lt;string&gt; RatePolicyJson { get; set; }
+        ///     [Output("ratePolicyOutput")]
+        ///     public Output&lt;string&gt; RatePolicyOutput { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAppSecRatePoliciesResult> Invoke(GetAppSecRatePoliciesInvokeArgs args, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecRatePoliciesResult>("akamai:index/getAppSecRatePolicies:getAppSecRatePolicies", args ?? new GetAppSecRatePoliciesInvokeArgs(), options.WithVersion());
     }
 
 
@@ -80,6 +133,25 @@ namespace Pulumi.Akamai
         public int? RatePolicyId { get; set; }
 
         public GetAppSecRatePoliciesArgs()
+        {
+        }
+    }
+
+    public sealed class GetAppSecRatePoliciesInvokeArgs : Pulumi.InvokeArgs
+    {
+        /// <summary>
+        /// The ID of the security configuration to use.
+        /// </summary>
+        [Input("configId", required: true)]
+        public Input<int> ConfigId { get; set; } = null!;
+
+        /// <summary>
+        /// The ID of the rate policy to use. If this parameter is not supplied, information about all rate policies will be returned.
+        /// </summary>
+        [Input("ratePolicyId")]
+        public Input<int>? RatePolicyId { get; set; }
+
+        public GetAppSecRatePoliciesInvokeArgs()
         {
         }
     }

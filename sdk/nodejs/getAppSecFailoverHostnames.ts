@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -71,4 +70,18 @@ export interface GetAppSecFailoverHostnamesResult {
      * A tabular display showing the failover hostnames.
      */
     readonly outputText: string;
+}
+
+export function getAppSecFailoverHostnamesOutput(args: GetAppSecFailoverHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecFailoverHostnamesResult> {
+    return pulumi.output(args).apply(a => getAppSecFailoverHostnames(a, opts))
+}
+
+/**
+ * A collection of arguments for invoking getAppSecFailoverHostnames.
+ */
+export interface GetAppSecFailoverHostnamesOutputArgs {
+    /**
+     * The ID of the security configuration to use.
+     */
+    configId: pulumi.Input<number>;
 }
