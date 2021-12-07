@@ -10,7 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecSiemSettings` data source to retrieve the SIEM settings for a specific configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemsettings).
+// **Scopes**: Security configuration
+//
+// Returns the SIEM (Security Event and Information Management) settings for a security configuration. The returned information is described in the [SIEM members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#d8470aff) section of the Application Security API.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/siem](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemsettings)
 //
 // ## Example Usage
 //
@@ -26,7 +30,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -45,6 +49,12 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `json`. JSON-formatted list of the SIEM setting information.
+// - `outputText`. Tabular report showing the SIEM setting information.
 func LookupAppSecSiemSettings(ctx *pulumi.Context, args *LookupAppSecSiemSettingsArgs, opts ...pulumi.InvokeOption) (*LookupAppSecSiemSettingsResult, error) {
 	var rv LookupAppSecSiemSettingsResult
 	err := ctx.Invoke("akamai:index/getAppSecSiemSettings:getAppSecSiemSettings", args, &rv, opts...)
@@ -56,7 +66,7 @@ func LookupAppSecSiemSettings(ctx *pulumi.Context, args *LookupAppSecSiemSetting
 
 // A collection of arguments for invoking getAppSecSiemSettings.
 type LookupAppSecSiemSettingsArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration you want to return information for.
 	ConfigId int `pulumi:"configId"`
 }
 
@@ -64,10 +74,8 @@ type LookupAppSecSiemSettingsArgs struct {
 type LookupAppSecSiemSettingsResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted list of the SIEM setting information.
-	Json string `pulumi:"json"`
-	// A tabular display showing the SIEM setting information.
+	Id         string `pulumi:"id"`
+	Json       string `pulumi:"json"`
 	OutputText string `pulumi:"outputText"`
 }
 
@@ -82,7 +90,7 @@ func LookupAppSecSiemSettingsOutput(ctx *pulumi.Context, args LookupAppSecSiemSe
 
 // A collection of arguments for invoking getAppSecSiemSettings.
 type LookupAppSecSiemSettingsOutputArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration you want to return information for.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
 }
 
@@ -114,12 +122,10 @@ func (o LookupAppSecSiemSettingsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecSiemSettingsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted list of the SIEM setting information.
 func (o LookupAppSecSiemSettingsResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecSiemSettingsResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display showing the SIEM setting information.
 func (o LookupAppSecSiemSettingsResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecSiemSettingsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

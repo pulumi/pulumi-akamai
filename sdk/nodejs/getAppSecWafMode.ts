@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecWafMode` data source to retrieve the mode that indicates how the WAF rules of the given security configuration and security policy will be updated.
+ * **Scopes**: Security policy
+ *
+ * Returns information about how the Kona Rule Set rules associated with a security configuration and security policy are updated. The WAF (Web Application Firewall) mode determines whether Kona Rule Sets are automatically updated as part of automated attack groups (`mode = AAG`) or whether you must periodically check for new rules and then manually update those rules yourself (`mode = KRS`).
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/mode](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getmode)
  *
  * ## Example Usage
  *
@@ -16,11 +20,11 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const wafMode = configuration.then(configuration => akamai.getAppSecWafMode({
  *     configId: configuration.configId,
- *     securityPolicyId: _var.policy_id,
+ *     securityPolicyId: "gms1_134637",
  * }));
  * export const wafModeMode = wafMode.then(wafMode => wafMode.mode);
  * export const wafModeCurrentRuleset = wafMode.then(wafMode => wafMode.currentRuleset);
@@ -30,6 +34,17 @@ import * as utilities from "./utilities";
  * export const wafModeText = wafMode.then(wafMode => wafMode.outputText);
  * export const wafModeJson = wafMode.then(wafMode => wafMode.json);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `mode`. Security policy mode, either **KRS** (update manually) or **AAG** (update automatically), For organizations running the Adaptive Security Engine (ASE) beta, you'll get back **ASE_AUTO** for automatic updates or **ASE_MANUAL** for manual updates. Please contact your Akamai representative to learn more about ASE.
+ * - `currentRuleset`. Current ruleset version and the ISO 8601 date the version was introduced.
+ * - `evalStatus`. Specifies whether evaluation mode is enabled or disabled.
+ * - `evalRuleset`. Evaluation ruleset version and the ISO 8601 date the evaluation began.
+ * - `evalExpirationDate`. ISO 8601 timestamp indicating when evaluation mode expires. Valid only if `evalStatus` is set to **enabled**.
+ * - `outputText`. Tabular report of the mode information.
+ * - `json`. JSON-formatted list of the mode information.
  */
 export function getAppSecWafMode(args: GetAppSecWafModeArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecWafModeResult> {
     if (!opts) {
@@ -50,11 +65,11 @@ export function getAppSecWafMode(args: GetAppSecWafModeArgs, opts?: pulumi.Invok
  */
 export interface GetAppSecWafModeArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the Kona Rule Set rules.
      */
     configId: number;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the Kona Rule Set rules.
      */
     securityPolicyId: string;
 }
@@ -64,37 +79,16 @@ export interface GetAppSecWafModeArgs {
  */
 export interface GetAppSecWafModeResult {
     readonly configId: number;
-    /**
-     * The current rule set version and the ISO 8601 date the rule set version was introduced; this date acts like a version number.
-     */
     readonly currentRuleset: string;
-    /**
-     * The ISO 8601 time stamp when the evaluation is expiring. This value only appears when `eval` is set to "enabled".
-     */
     readonly evalExpirationDate: string;
-    /**
-     * The evaluation rule set version and the ISO 8601 date the evaluation starts.
-     */
     readonly evalRuleset: string;
-    /**
-     * Whether the evaluation mode is enabled or disabled."
-     */
     readonly evalStatus: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted list of the mode information.
-     */
     readonly json: string;
-    /**
-     * The security policy mode, either `KRS` (update manually) or `AAG` (update automatically), For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE.
-     */
     readonly mode: string;
-    /**
-     * A tabular display of the mode information.
-     */
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
@@ -108,11 +102,11 @@ export function getAppSecWafModeOutput(args: GetAppSecWafModeOutputArgs, opts?: 
  */
 export interface GetAppSecWafModeOutputArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the Kona Rule Set rules.
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the Kona Rule Set rules.
      */
     securityPolicyId: pulumi.Input<string>;
 }

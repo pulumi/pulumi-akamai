@@ -49,9 +49,6 @@ class GetAppSecRulesResult:
     @property
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> str:
-        """
-        The rule's conditions and exceptions.
-        """
         return pulumi.get(self, "condition_exception")
 
     @property
@@ -70,27 +67,16 @@ class GetAppSecRulesResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        A JSON-formatted list of the action and condition-exception information for the specified rule.
-        This output is only generated if a rule is specified.
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display showing, for the specified rule or rules, the rule action and boolean values
-        indicating whether conditions and exceptions are present.
-        """
         return pulumi.get(self, "output_text")
 
     @property
     @pulumi.getter(name="ruleAction")
     def rule_action(self) -> str:
-        """
-        The rule's action, either `alert`, `deny`, or `none`.
-        """
         return pulumi.get(self, "rule_action")
 
     @property
@@ -125,30 +111,11 @@ def get_app_sec_rules(config_id: Optional[int] = None,
                       security_policy_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecRulesResult:
     """
-    Use the `get_app_sec_rules` data source to list the action and condition-exception information for a rule or rules.
+    Use this data source to access information about an existing resource.
 
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-    rule = akamai.get_app_sec_rules(config_id=configuration.config_id,
-        security_policy_id=var["security_policy_id"],
-        rule_id=var["rule_id"])
-    pulumi.export("ruleAction", akamai_appsec_rules["rule"]["rule_action"])
-    pulumi.export("conditionException", akamai_appsec_rules["rule"]["condition_exception"])
-    pulumi.export("json", akamai_appsec_rules["rule"]["json"])
-    pulumi.export("outputText", akamai_appsec_rules["rule"]["output_text"])
-    ```
-
-
-    :param int config_id: The ID of the security configuration to use.
-    :param int rule_id: The ID of the rule to use. If not specified, information about all rules will be returned.
-    :param str security_policy_id: The ID of the security policy to use.
+    :param int config_id: . Unique identifier of the security configuration associated with the rules.
+    :param int rule_id: . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
+    :param str security_policy_id: . Unique identifier of the security policy associated with the rules.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -177,29 +144,10 @@ def get_app_sec_rules_output(config_id: Optional[pulumi.Input[int]] = None,
                              security_policy_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecRulesResult]:
     """
-    Use the `get_app_sec_rules` data source to list the action and condition-exception information for a rule or rules.
+    Use this data source to access information about an existing resource.
 
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-    rule = akamai.get_app_sec_rules(config_id=configuration.config_id,
-        security_policy_id=var["security_policy_id"],
-        rule_id=var["rule_id"])
-    pulumi.export("ruleAction", akamai_appsec_rules["rule"]["rule_action"])
-    pulumi.export("conditionException", akamai_appsec_rules["rule"]["condition_exception"])
-    pulumi.export("json", akamai_appsec_rules["rule"]["json"])
-    pulumi.export("outputText", akamai_appsec_rules["rule"]["output_text"])
-    ```
-
-
-    :param int config_id: The ID of the security configuration to use.
-    :param int rule_id: The ID of the rule to use. If not specified, information about all rules will be returned.
-    :param str security_policy_id: The ID of the security policy to use.
+    :param int config_id: . Unique identifier of the security configuration associated with the rules.
+    :param int rule_id: . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
+    :param str security_policy_id: . Unique identifier of the security policy associated with the rules.
     """
     ...

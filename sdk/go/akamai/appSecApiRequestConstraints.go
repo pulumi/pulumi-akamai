@@ -11,17 +11,20 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The `resourceAkamaiAppsecApiRequestConstraints` resource allows you to update what action to take when the API request constraint triggers. This operation modifies an individual API constraint action. To use this operation, use the `getAppSecApiEndpoints` data source to list one or all API endpoints, and use the ID of the selected endpoint. Use the `action` paameter to specify how the alert should be handled.
 type AppSecApiRequestConstraints struct {
 	pulumi.CustomResourceState
 
-	// The action to assign to API request constraints: either `alert`, `deny`, or `none`.
+	// . Action to assign to the API request constraint. Allowed values are:
+	// - **alert**, Record the event.
+	// - **deny**. Block the request.
+	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+	// - **none**. Take no action.
 	Action pulumi.StringOutput `pulumi:"action"`
-	// The ID of the API endpoint to use.
+	// . ID of the API endpoint the constraint will be assigned to.
 	ApiEndpointId pulumi.IntPtrOutput `pulumi:"apiEndpointId"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the API request constraint settings being modified.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the API request constraint settings being modified.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
 
@@ -63,24 +66,32 @@ func GetAppSecApiRequestConstraints(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecApiRequestConstraints resources.
 type appSecApiRequestConstraintsState struct {
-	// The action to assign to API request constraints: either `alert`, `deny`, or `none`.
+	// . Action to assign to the API request constraint. Allowed values are:
+	// - **alert**, Record the event.
+	// - **deny**. Block the request.
+	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+	// - **none**. Take no action.
 	Action *string `pulumi:"action"`
-	// The ID of the API endpoint to use.
+	// . ID of the API endpoint the constraint will be assigned to.
 	ApiEndpointId *int `pulumi:"apiEndpointId"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the API request constraint settings being modified.
 	ConfigId *int `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the API request constraint settings being modified.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppSecApiRequestConstraintsState struct {
-	// The action to assign to API request constraints: either `alert`, `deny`, or `none`.
+	// . Action to assign to the API request constraint. Allowed values are:
+	// - **alert**, Record the event.
+	// - **deny**. Block the request.
+	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+	// - **none**. Take no action.
 	Action pulumi.StringPtrInput
-	// The ID of the API endpoint to use.
+	// . ID of the API endpoint the constraint will be assigned to.
 	ApiEndpointId pulumi.IntPtrInput
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the API request constraint settings being modified.
 	ConfigId pulumi.IntPtrInput
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the API request constraint settings being modified.
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -89,25 +100,33 @@ func (AppSecApiRequestConstraintsState) ElementType() reflect.Type {
 }
 
 type appSecApiRequestConstraintsArgs struct {
-	// The action to assign to API request constraints: either `alert`, `deny`, or `none`.
+	// . Action to assign to the API request constraint. Allowed values are:
+	// - **alert**, Record the event.
+	// - **deny**. Block the request.
+	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+	// - **none**. Take no action.
 	Action string `pulumi:"action"`
-	// The ID of the API endpoint to use.
+	// . ID of the API endpoint the constraint will be assigned to.
 	ApiEndpointId *int `pulumi:"apiEndpointId"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the API request constraint settings being modified.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the API request constraint settings being modified.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // The set of arguments for constructing a AppSecApiRequestConstraints resource.
 type AppSecApiRequestConstraintsArgs struct {
-	// The action to assign to API request constraints: either `alert`, `deny`, or `none`.
+	// . Action to assign to the API request constraint. Allowed values are:
+	// - **alert**, Record the event.
+	// - **deny**. Block the request.
+	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+	// - **none**. Take no action.
 	Action pulumi.StringInput
-	// The ID of the API endpoint to use.
+	// . ID of the API endpoint the constraint will be assigned to.
 	ApiEndpointId pulumi.IntPtrInput
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the API request constraint settings being modified.
 	ConfigId pulumi.IntInput
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the API request constraint settings being modified.
 	SecurityPolicyId pulumi.StringInput
 }
 

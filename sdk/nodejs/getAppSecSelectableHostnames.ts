@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecSelectableHostnames` data source to retrieve the list of hostnames that may be protected under a given security configuration. You can specify the list to be retrieved either by supplying the name of a security configuration, or by supplying a group ID and contract ID.
+ * **Scopes**: Security configuration; contract; group
+ *
+ * Returns the list of hostnames that can be (but aren't yet) protected by a security configuration. You can specify the set of hostnames to be retrieved either by supplying the name of a security configuration or by supplying an Akamai group ID and contract ID.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selectable-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getavailablehostnames)
  *
  * ## Example Usage
  *
@@ -16,7 +20,7 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const selectableHostnamesAppSecSelectableHostnames = configuration.then(configuration => akamai.getAppSecSelectableHostnames({
  *     configId: configuration.configId,
@@ -25,13 +29,20 @@ import * as utilities from "./utilities";
  * export const selectableHostnamesJson = selectableHostnamesAppSecSelectableHostnames.then(selectableHostnamesAppSecSelectableHostnames => selectableHostnamesAppSecSelectableHostnames.hostnamesJson);
  * export const selectableHostnamesOutputText = selectableHostnamesAppSecSelectableHostnames.then(selectableHostnamesAppSecSelectableHostnames => selectableHostnamesAppSecSelectableHostnames.outputText);
  * const selectableHostnamesForCreateConfigurationAppSecSelectableHostnames = akamai.getAppSecSelectableHostnames({
- *     contractid: _var.contractid,
- *     groupid: _var.groupid,
+ *     contractId: "5-2WA382",
+ *     groupId: 12198,
  * });
  * export const selectableHostnamesForCreateConfiguration = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.then(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames => selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.hostnames);
  * export const selectableHostnamesForCreateConfigurationJson = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.then(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames => selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.hostnamesJson);
  * export const selectableHostnamesForCreateConfigurationOutputText = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.then(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames => selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.outputText);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `hostnames`. List of selectable hostnames.
+ * - `hostnamesJson`. JSON-formatted list of selectable hostnames.
+ * - `outputText`. Tabular report of the selectable hostnames showing the name and configId of the security configuration under which the host is protected in production.
  */
 export function getAppSecSelectableHostnames(args?: GetAppSecSelectableHostnamesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecSelectableHostnamesResult> {
     args = args || {};
@@ -58,15 +69,15 @@ export interface GetAppSecSelectableHostnamesArgs {
     activeInProduction?: boolean;
     activeInStaging?: boolean;
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration you want to return hostname information for. If not included, information is returned for all your security configurations. Note that argument can't be used with either the `contractid` or the `groupid` arguments.
      */
     configId?: number;
     /**
-     * The ID of the contract to use.
+     * . Unique identifier of the Akamai contract you want to return hostname information for. If not included, information is returned for all the Akamai contracts associated with your account. Note that this argument can't be used with the `configId` argument.
      */
     contractid?: string;
     /**
-     * The ID of the group to use.
+     * . Unique identifier of the contract group you want to return hostname information for. If not included, information is returned for all your contract groups. (Or, if you include the `contractid` argument, all the groups associated with the specified contract.) Note that this argument can't be used with the `configId` argument.
      */
     groupid?: number;
 }
@@ -80,21 +91,12 @@ export interface GetAppSecSelectableHostnamesResult {
     readonly configId?: number;
     readonly contractid?: string;
     readonly groupid?: number;
-    /**
-     * The list of selectable hostnames.
-     */
     readonly hostnames: string[];
-    /**
-     * The list of selectable hostnames in json format.
-     */
     readonly hostnamesJson: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A tabular display of the selectable hostnames showing the name and configId of the security configuration under which the host is protected in production, or '-' if the host is not protected in production.
-     */
     readonly outputText: string;
 }
 
@@ -109,15 +111,15 @@ export interface GetAppSecSelectableHostnamesOutputArgs {
     activeInProduction?: pulumi.Input<boolean>;
     activeInStaging?: pulumi.Input<boolean>;
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration you want to return hostname information for. If not included, information is returned for all your security configurations. Note that argument can't be used with either the `contractid` or the `groupid` arguments.
      */
     configId?: pulumi.Input<number>;
     /**
-     * The ID of the contract to use.
+     * . Unique identifier of the Akamai contract you want to return hostname information for. If not included, information is returned for all the Akamai contracts associated with your account. Note that this argument can't be used with the `configId` argument.
      */
     contractid?: pulumi.Input<string>;
     /**
-     * The ID of the group to use.
+     * . Unique identifier of the contract group you want to return hostname information for. If not included, information is returned for all your contract groups. (Or, if you include the `contractid` argument, all the groups associated with the specified contract.) Note that this argument can't be used with the `configId` argument.
      */
     groupid?: pulumi.Input<number>;
 }

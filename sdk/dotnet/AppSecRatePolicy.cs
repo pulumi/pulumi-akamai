@@ -10,7 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// The `resource_akamai_appsec_rate_policy` resource allows you to create, modify or delete rate policies for a specific security configuration.
+    /// **Scopes**: Security configuration; rate policy
+    /// 
+    /// Creates, modifies or deletes rate policies.
+    /// Rate polices help you monitor and moderate the number and  rate of all the requests you receive.
+    /// In turn, this helps you prevent your website from being overwhelmed by a dramatic and unexpected surge in traffic.
+    /// 
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postratepolicies)
     /// 
     /// ## Example Usage
     /// 
@@ -27,7 +33,7 @@ namespace Pulumi.Akamai
     ///     {
     ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
     ///         {
-    ///             Name = @var.Security_configuration,
+    ///             Name = "Documentation",
     ///         }));
     ///         var ratePolicy = new Akamai.AppSecRatePolicy("ratePolicy", new Akamai.AppSecRatePolicyArgs
     ///         {
@@ -41,24 +47,29 @@ namespace Pulumi.Akamai
     ///     public Output&lt;string&gt; RatePolicyId { get; set; }
     /// }
     /// ```
+    /// ## Output Options
+    /// 
+    /// The following options can be used to determine the information returned, and how that returned information is formatted:
+    /// 
+    /// - `rate_policy_id`. ID of the modified or newly-created rate policy.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecRatePolicy:AppSecRatePolicy")]
     public partial class AppSecRatePolicy : Pulumi.CustomResource
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the rate policy being modified.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// The name of a file containing a JSON-formatted rate policy definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#57c65cbd)).
+        /// . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
         /// </summary>
         [Output("ratePolicy")]
         public Output<string> RatePolicy { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of an existing rate policy to be modified.
+        /// . Unique identifier of an existing rate policy.
         /// </summary>
         [Output("ratePolicyId")]
         public Output<int> RatePolicyId { get; private set; } = null!;
@@ -110,13 +121,13 @@ namespace Pulumi.Akamai
     public sealed class AppSecRatePolicyArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the rate policy being modified.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The name of a file containing a JSON-formatted rate policy definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#57c65cbd)).
+        /// . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
         /// </summary>
         [Input("ratePolicy", required: true)]
         public Input<string> RatePolicy { get; set; } = null!;
@@ -129,19 +140,19 @@ namespace Pulumi.Akamai
     public sealed class AppSecRatePolicyState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the rate policy being modified.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// The name of a file containing a JSON-formatted rate policy definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#57c65cbd)).
+        /// . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
         /// </summary>
         [Input("ratePolicy")]
         public Input<string>? RatePolicy { get; set; }
 
         /// <summary>
-        /// The ID of an existing rate policy to be modified.
+        /// . Unique identifier of an existing rate policy.
         /// </summary>
         [Input("ratePolicyId")]
         public Input<int>? RatePolicyId { get; set; }

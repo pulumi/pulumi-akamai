@@ -10,7 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecSecurityPolicyProtections` data source to retrieve the protections in effect for a given security policy.
+// **Scopes**: Security policy
+//
+// Returns information about the protections in effect for the specified security policy.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprotections)
 //
 // ## Example Usage
 //
@@ -26,7 +30,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -35,7 +39,7 @@ import (
 // 		}
 // 		protections, err := akamai.GetAppSecSecurityPolicyProtections(ctx, &GetAppSecSecurityPolicyProtectionsArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: _var.Security_policy_id,
+// 			SecurityPolicyId: "gms1_134637",
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -52,6 +56,19 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned and how that returned information is formatted:
+//
+// - `applyApplicationLayerControls`. Returns **true** if application layer controls are enabled; returns **false** if they are not.
+// - `applyNetworkLayerControls`. Returns **true** if network layer controls are enabled; returns **false** if they are not.
+// - `applyRateControls`. Returns **true** if rate controls are enabled; returns **false** if they are not.
+// - `applyReputationControls`. Returns **true** if reputation controls are enabled; returns **false** if they are not.
+// - `applyBotmanControls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
+// - `applyApiConstraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
+// - `applySlowPostControls`. Returns **true** if slow POST controls are enabled; returns **false** if they are not.
+// - `json`. JSON-formatted list showing the status of the protection settings.
+// - `outputText`. Tabular report showing the status of the protection settings
 func GetAppSecSecurityPolicyProtections(ctx *pulumi.Context, args *GetAppSecSecurityPolicyProtectionsArgs, opts ...pulumi.InvokeOption) (*GetAppSecSecurityPolicyProtectionsResult, error) {
 	var rv GetAppSecSecurityPolicyProtectionsResult
 	err := ctx.Invoke("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", args, &rv, opts...)
@@ -63,34 +80,25 @@ func GetAppSecSecurityPolicyProtections(ctx *pulumi.Context, args *GetAppSecSecu
 
 // A collection of arguments for invoking getAppSecSecurityPolicyProtections.
 type GetAppSecSecurityPolicyProtectionsArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the security policy protections.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy you want to return protections information for.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // A collection of values returned by getAppSecSecurityPolicyProtections.
 type GetAppSecSecurityPolicyProtectionsResult struct {
-	// `true` or `false`, indicating whether API constraints are in effect.
-	ApplyApiConstraints bool `pulumi:"applyApiConstraints"`
-	// `true` or `false`, indicating whether application layer controls are in effect.
+	ApplyApiConstraints           bool `pulumi:"applyApiConstraints"`
 	ApplyApplicationLayerControls bool `pulumi:"applyApplicationLayerControls"`
-	// `true` or `false`, indicating whether botman controls are in effect.
-	ApplyBotmanControls bool `pulumi:"applyBotmanControls"`
-	// `true` or `false`, indicating whether network layer controls are in effect.
-	ApplyNetworkLayerControls bool `pulumi:"applyNetworkLayerControls"`
-	// `true` or `false`, indicating whether rate controls are in effect.
-	ApplyRateControls bool `pulumi:"applyRateControls"`
-	// `true` or `false`, indicating whether reputation controls are in effect.
-	ApplyReputationControls bool `pulumi:"applyReputationControls"`
-	// `true` or `false`, indicating whether slow post controls are in effect.
-	ApplySlowPostControls bool `pulumi:"applySlowPostControls"`
-	ConfigId              int  `pulumi:"configId"`
+	ApplyBotmanControls           bool `pulumi:"applyBotmanControls"`
+	ApplyNetworkLayerControls     bool `pulumi:"applyNetworkLayerControls"`
+	ApplyRateControls             bool `pulumi:"applyRateControls"`
+	ApplyReputationControls       bool `pulumi:"applyReputationControls"`
+	ApplySlowPostControls         bool `pulumi:"applySlowPostControls"`
+	ConfigId                      int  `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// a JSON-formatted list showing the status of the protection settings
-	Json string `pulumi:"json"`
-	// a tabular display showing the status of the protection settings
+	Id               string `pulumi:"id"`
+	Json             string `pulumi:"json"`
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
@@ -106,9 +114,9 @@ func GetAppSecSecurityPolicyProtectionsOutput(ctx *pulumi.Context, args GetAppSe
 
 // A collection of arguments for invoking getAppSecSecurityPolicyProtections.
 type GetAppSecSecurityPolicyProtectionsOutputArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the security policy protections.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy you want to return protections information for.
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 
@@ -131,37 +139,30 @@ func (o GetAppSecSecurityPolicyProtectionsResultOutput) ToGetAppSecSecurityPolic
 	return o
 }
 
-// `true` or `false`, indicating whether API constraints are in effect.
 func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplyApiConstraints() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) bool { return v.ApplyApiConstraints }).(pulumi.BoolOutput)
 }
 
-// `true` or `false`, indicating whether application layer controls are in effect.
 func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplyApplicationLayerControls() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) bool { return v.ApplyApplicationLayerControls }).(pulumi.BoolOutput)
 }
 
-// `true` or `false`, indicating whether botman controls are in effect.
 func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplyBotmanControls() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) bool { return v.ApplyBotmanControls }).(pulumi.BoolOutput)
 }
 
-// `true` or `false`, indicating whether network layer controls are in effect.
 func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplyNetworkLayerControls() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) bool { return v.ApplyNetworkLayerControls }).(pulumi.BoolOutput)
 }
 
-// `true` or `false`, indicating whether rate controls are in effect.
 func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplyRateControls() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) bool { return v.ApplyRateControls }).(pulumi.BoolOutput)
 }
 
-// `true` or `false`, indicating whether reputation controls are in effect.
 func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplyReputationControls() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) bool { return v.ApplyReputationControls }).(pulumi.BoolOutput)
 }
 
-// `true` or `false`, indicating whether slow post controls are in effect.
 func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplySlowPostControls() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) bool { return v.ApplySlowPostControls }).(pulumi.BoolOutput)
 }
@@ -175,12 +176,10 @@ func (o GetAppSecSecurityPolicyProtectionsResultOutput) Id() pulumi.StringOutput
 	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// a JSON-formatted list showing the status of the protection settings
 func (o GetAppSecSecurityPolicyProtectionsResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// a tabular display showing the status of the protection settings
 func (o GetAppSecSecurityPolicyProtectionsResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

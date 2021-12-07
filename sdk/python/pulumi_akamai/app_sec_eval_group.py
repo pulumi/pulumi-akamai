@@ -20,11 +20,15 @@ class AppSecEvalGroupArgs:
                  condition_exception: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AppSecEvalGroup resource.
-        :param pulumi.Input[str] attack_group: The eval attack group to use.
-        :param pulumi.Input[str] attack_group_action: The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[str] condition_exception: The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception)).
+        :param pulumi.Input[str] attack_group: . Unique identifier of the evaluation attack group being modified.
+        :param pulumi.Input[str] attack_group_action: . Action to be taken any time the attack group is triggered. Allowed values are:
+               - **alert**. Record the event.
+               - **deny**. Block the request
+               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+               - **none**. Take no action.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration where evaluation is taking place.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the evaluation process.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing properties and property values for the attack group. For more information, the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
         """
         pulumi.set(__self__, "attack_group", attack_group)
         pulumi.set(__self__, "attack_group_action", attack_group_action)
@@ -37,7 +41,7 @@ class AppSecEvalGroupArgs:
     @pulumi.getter(name="attackGroup")
     def attack_group(self) -> pulumi.Input[str]:
         """
-        The eval attack group to use.
+        . Unique identifier of the evaluation attack group being modified.
         """
         return pulumi.get(self, "attack_group")
 
@@ -49,7 +53,11 @@ class AppSecEvalGroupArgs:
     @pulumi.getter(name="attackGroupAction")
     def attack_group_action(self) -> pulumi.Input[str]:
         """
-        The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        . Action to be taken any time the attack group is triggered. Allowed values are:
+        - **alert**. Record the event.
+        - **deny**. Block the request
+        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        - **none**. Take no action.
         """
         return pulumi.get(self, "attack_group_action")
 
@@ -61,7 +69,7 @@ class AppSecEvalGroupArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration where evaluation is taking place.
         """
         return pulumi.get(self, "config_id")
 
@@ -73,7 +81,7 @@ class AppSecEvalGroupArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the evaluation process.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -85,7 +93,7 @@ class AppSecEvalGroupArgs:
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception)).
+        . Path to a JSON file containing properties and property values for the attack group. For more information, the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
         """
         return pulumi.get(self, "condition_exception")
 
@@ -104,11 +112,15 @@ class _AppSecEvalGroupState:
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecEvalGroup resources.
-        :param pulumi.Input[str] attack_group: The eval attack group to use.
-        :param pulumi.Input[str] attack_group_action: The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
-        :param pulumi.Input[str] condition_exception: The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception)).
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[str] attack_group: . Unique identifier of the evaluation attack group being modified.
+        :param pulumi.Input[str] attack_group_action: . Action to be taken any time the attack group is triggered. Allowed values are:
+               - **alert**. Record the event.
+               - **deny**. Block the request
+               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+               - **none**. Take no action.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing properties and property values for the attack group. For more information, the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration where evaluation is taking place.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the evaluation process.
         """
         if attack_group is not None:
             pulumi.set(__self__, "attack_group", attack_group)
@@ -125,7 +137,7 @@ class _AppSecEvalGroupState:
     @pulumi.getter(name="attackGroup")
     def attack_group(self) -> Optional[pulumi.Input[str]]:
         """
-        The eval attack group to use.
+        . Unique identifier of the evaluation attack group being modified.
         """
         return pulumi.get(self, "attack_group")
 
@@ -137,7 +149,11 @@ class _AppSecEvalGroupState:
     @pulumi.getter(name="attackGroupAction")
     def attack_group_action(self) -> Optional[pulumi.Input[str]]:
         """
-        The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        . Action to be taken any time the attack group is triggered. Allowed values are:
+        - **alert**. Record the event.
+        - **deny**. Block the request
+        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        - **none**. Take no action.
         """
         return pulumi.get(self, "attack_group_action")
 
@@ -149,7 +165,7 @@ class _AppSecEvalGroupState:
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception)).
+        . Path to a JSON file containing properties and property values for the attack group. For more information, the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
         """
         return pulumi.get(self, "condition_exception")
 
@@ -161,7 +177,7 @@ class _AppSecEvalGroupState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration where evaluation is taking place.
         """
         return pulumi.get(self, "config_id")
 
@@ -173,7 +189,7 @@ class _AppSecEvalGroupState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the evaluation process.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -194,8 +210,11 @@ class AppSecEvalGroup(pulumi.CustomResource):
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Use the `AppSecEvalGroup` resource to create or modify an evaluation attack group's action, conditions and exceptions. When the conditions are met, the rule’s actions are ignored and not applied to that specific traffic.
-        __BETA__ This is Adaptive Security Engine(ASE) related data resource. Please contact your akamai representative if you want to learn more
+        **Scopes**: Evaluation attack group
+
+        Modifies the action and the conditions and exceptions for an evaluation mode attack group.
+
+        Note that this resource is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information about ASE, please contact your Akamai representative.
 
         ## Example Usage
 
@@ -205,22 +224,26 @@ class AppSecEvalGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         eval_attack_group = akamai.AppSecEvalGroup("evalAttackGroup",
             config_id=configuration.config_id,
-            security_policy_id=var["security_policy_id"],
-            attack_group=var["attack_group"],
-            attack_group_action=var["attack_group_action"],
+            security_policy_id="gms1_134637",
+            attack_group="SQL",
+            attack_group_action="deny",
             condition_exception=(lambda path: open(path).read())(f"{path['module']}/condition_exception.json"))
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] attack_group: The eval attack group to use.
-        :param pulumi.Input[str] attack_group_action: The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
-        :param pulumi.Input[str] condition_exception: The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception)).
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[str] attack_group: . Unique identifier of the evaluation attack group being modified.
+        :param pulumi.Input[str] attack_group_action: . Action to be taken any time the attack group is triggered. Allowed values are:
+               - **alert**. Record the event.
+               - **deny**. Block the request
+               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+               - **none**. Take no action.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing properties and property values for the attack group. For more information, the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration where evaluation is taking place.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the evaluation process.
         """
         ...
     @overload
@@ -229,8 +252,11 @@ class AppSecEvalGroup(pulumi.CustomResource):
                  args: AppSecEvalGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `AppSecEvalGroup` resource to create or modify an evaluation attack group's action, conditions and exceptions. When the conditions are met, the rule’s actions are ignored and not applied to that specific traffic.
-        __BETA__ This is Adaptive Security Engine(ASE) related data resource. Please contact your akamai representative if you want to learn more
+        **Scopes**: Evaluation attack group
+
+        Modifies the action and the conditions and exceptions for an evaluation mode attack group.
+
+        Note that this resource is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information about ASE, please contact your Akamai representative.
 
         ## Example Usage
 
@@ -240,12 +266,12 @@ class AppSecEvalGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         eval_attack_group = akamai.AppSecEvalGroup("evalAttackGroup",
             config_id=configuration.config_id,
-            security_policy_id=var["security_policy_id"],
-            attack_group=var["attack_group"],
-            attack_group_action=var["attack_group_action"],
+            security_policy_id="gms1_134637",
+            attack_group="SQL",
+            attack_group_action="deny",
             condition_exception=(lambda path: open(path).read())(f"{path['module']}/condition_exception.json"))
         ```
 
@@ -316,11 +342,15 @@ class AppSecEvalGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] attack_group: The eval attack group to use.
-        :param pulumi.Input[str] attack_group_action: The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
-        :param pulumi.Input[str] condition_exception: The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception)).
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[str] attack_group: . Unique identifier of the evaluation attack group being modified.
+        :param pulumi.Input[str] attack_group_action: . Action to be taken any time the attack group is triggered. Allowed values are:
+               - **alert**. Record the event.
+               - **deny**. Block the request
+               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+               - **none**. Take no action.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing properties and property values for the attack group. For more information, the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration where evaluation is taking place.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the evaluation process.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -337,7 +367,7 @@ class AppSecEvalGroup(pulumi.CustomResource):
     @pulumi.getter(name="attackGroup")
     def attack_group(self) -> pulumi.Output[str]:
         """
-        The eval attack group to use.
+        . Unique identifier of the evaluation attack group being modified.
         """
         return pulumi.get(self, "attack_group")
 
@@ -345,7 +375,11 @@ class AppSecEvalGroup(pulumi.CustomResource):
     @pulumi.getter(name="attackGroupAction")
     def attack_group_action(self) -> pulumi.Output[str]:
         """
-        The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        . Action to be taken any time the attack group is triggered. Allowed values are:
+        - **alert**. Record the event.
+        - **deny**. Block the request
+        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        - **none**. Take no action.
         """
         return pulumi.get(self, "attack_group_action")
 
@@ -353,7 +387,7 @@ class AppSecEvalGroup(pulumi.CustomResource):
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> pulumi.Output[Optional[str]]:
         """
-        The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception)).
+        . Path to a JSON file containing properties and property values for the attack group. For more information, the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
         """
         return pulumi.get(self, "condition_exception")
 
@@ -361,7 +395,7 @@ class AppSecEvalGroup(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration where evaluation is taking place.
         """
         return pulumi.get(self, "config_id")
 
@@ -369,7 +403,7 @@ class AppSecEvalGroup(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the evaluation process.
         """
         return pulumi.get(self, "security_policy_id")
 

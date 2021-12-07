@@ -10,8 +10,11 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// Use `akamai.AppSecThreatIntel` resource to update threat intelligence setting for a policy. Only applies to ASE Manual rulesets. Allowed values are on and off
-    /// __BETA__ This is Adaptive Security Engine(ASE) related data resource. Please contact your akamai representative if you want to learn more
+    /// **Scopes**: Security policy
+    /// 
+    /// Enables or disables threat intelligence for a security policy. This resource is only available to organizations running the Adaptive Security Engine (ASE) beta Please contact your Akamai representative for more information.
+    /// 
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/threat-intel](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putthreatintelligence)
     /// 
     /// ## Example Usage
     /// 
@@ -27,13 +30,13 @@ namespace Pulumi.Akamai
     ///     {
     ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
     ///         {
-    ///             Name = @var.Security_configuration,
+    ///             Name = "Documentation",
     ///         }));
     ///         var threatIntel = new Akamai.AppSecThreatIntel("threatIntel", new Akamai.AppSecThreatIntelArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = @var.Security_policy_id,
-    ///             ThreatIntel = @var.Threat_intel,
+    ///             SecurityPolicyId = "gms1_134637",
+    ///             ThreatIntel = "on",
     ///         });
     ///     }
     /// 
@@ -44,19 +47,19 @@ namespace Pulumi.Akamai
     public partial class AppSecThreatIntel : Pulumi.CustomResource
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
 
         /// <summary>
-        /// threat_intel - "on" or "off"
+        /// . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
         /// </summary>
         [Output("threatIntel")]
         public Output<string> ThreatIntel { get; private set; } = null!;
@@ -108,19 +111,19 @@ namespace Pulumi.Akamai
     public sealed class AppSecThreatIntelArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 
         /// <summary>
-        /// threat_intel - "on" or "off"
+        /// . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
         /// </summary>
         [Input("threatIntel", required: true)]
         public Input<string> ThreatIntel { get; set; } = null!;
@@ -133,19 +136,19 @@ namespace Pulumi.Akamai
     public sealed class AppSecThreatIntelState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
 
         /// <summary>
-        /// threat_intel - "on" or "off"
+        /// . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
         /// </summary>
         [Input("threatIntel")]
         public Input<string>? ThreatIntel { get; set; }

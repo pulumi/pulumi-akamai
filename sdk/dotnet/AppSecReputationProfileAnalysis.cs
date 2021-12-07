@@ -10,7 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// The `resource_akamai_appsec_reputation_profile_analysis` resource allows you to toggle the reputation analysis settings for a given security policy. The `forward_to_http_header` parameter indicates whether to add client reputation details to requests forwarded to origin in an HTTP header. The `forward_shared_ip_to_http_header_siem` parameter indicates whether to add value indicating that shared IPs are included in HTTP header and SIEM integration.
+    /// **Scopes**: Security policy
+    /// 
+    /// Modifies the reputation analysis settings for a security policy. These settings include the following:
+    /// 
+    /// - The `forward_to_http_header` parameter, which indicates whether client reputation details are added to requests forwarded to origin in an HTTP header.
+    /// - The `forward_shared_ip_to_http_header_siem` parameter, which specifies whether a value is added indicating that shared IPs addresses are included in HTTP headers and in SIEM integration events.
+    /// 
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putreputationanalysis)
     /// 
     /// ## Example Usage
     /// 
@@ -26,18 +33,22 @@ namespace Pulumi.Akamai
     ///     {
     ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
     ///         {
-    ///             Name = @var.Security_configuration,
+    ///             Name = "Documentation",
     ///         }));
-    ///         // USE CASE: user wants to set reputation analysis settings
-    ///         var reputationAnalysis = new Akamai.AppSecReputationProfileAnalysis("reputationAnalysis", new Akamai.AppSecReputationProfileAnalysisArgs
+    ///         var reputationAnalysis = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfileAnalysis.InvokeAsync(new Akamai.GetAppSecReputationProfileAnalysisArgs
     ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = @var.Security_policy_id,
+    ///             ConfigId = configuration.ConfigId,
+    ///             SecurityPolicyId = "gms1_134637",
     ///             ForwardToHttpHeader = true,
-    ///             ForwardSharedIpToHttpHeaderSiem = true,
-    ///         });
+    ///         })));
+    ///         this.ReputationAnalysisText = reputationAnalysis.Apply(reputationAnalysis =&gt; reputationAnalysis.OutputText);
+    ///         this.ReputationAnalysisJson = reputationAnalysis.Apply(reputationAnalysis =&gt; reputationAnalysis.Json);
     ///     }
     /// 
+    ///     [Output("reputationAnalysisText")]
+    ///     public Output&lt;string&gt; ReputationAnalysisText { get; set; }
+    ///     [Output("reputationAnalysisJson")]
+    ///     public Output&lt;string&gt; ReputationAnalysisJson { get; set; }
     /// }
     /// ```
     /// </summary>
@@ -45,25 +56,25 @@ namespace Pulumi.Akamai
     public partial class AppSecReputationProfileAnalysis : Pulumi.CustomResource
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// Whether to add value indicating that shared IPs are included in HTTP header and SIEM integration.
+        /// . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
         /// </summary>
         [Output("forwardSharedIpToHttpHeaderSiem")]
         public Output<bool> ForwardSharedIpToHttpHeaderSiem { get; private set; } = null!;
 
         /// <summary>
-        /// Whether to add client reputation details to requests forwarded to origin in an HTTP header.
+        /// . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
         /// </summary>
         [Output("forwardToHttpHeader")]
         public Output<bool> ForwardToHttpHeader { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the security_policy_id to which the settings should be applied.
+        /// . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -115,25 +126,25 @@ namespace Pulumi.Akamai
     public sealed class AppSecReputationProfileAnalysisArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// Whether to add value indicating that shared IPs are included in HTTP header and SIEM integration.
+        /// . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
         /// </summary>
         [Input("forwardSharedIpToHttpHeaderSiem", required: true)]
         public Input<bool> ForwardSharedIpToHttpHeaderSiem { get; set; } = null!;
 
         /// <summary>
-        /// Whether to add client reputation details to requests forwarded to origin in an HTTP header.
+        /// . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
         /// </summary>
         [Input("forwardToHttpHeader", required: true)]
         public Input<bool> ForwardToHttpHeader { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the security_policy_id to which the settings should be applied.
+        /// . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -146,25 +157,25 @@ namespace Pulumi.Akamai
     public sealed class AppSecReputationProfileAnalysisState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// Whether to add value indicating that shared IPs are included in HTTP header and SIEM integration.
+        /// . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
         /// </summary>
         [Input("forwardSharedIpToHttpHeaderSiem")]
         public Input<bool>? ForwardSharedIpToHttpHeaderSiem { get; set; }
 
         /// <summary>
-        /// Whether to add client reputation details to requests forwarded to origin in an HTTP header.
+        /// . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
         /// </summary>
         [Input("forwardToHttpHeader")]
         public Input<bool>? ForwardToHttpHeader { get; set; }
 
         /// <summary>
-        /// The ID of the security_policy_id to which the settings should be applied.
+        /// . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

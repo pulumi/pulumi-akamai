@@ -13,7 +13,11 @@ namespace Pulumi.Akamai
     public static class GetAppSecSiemDefinitions
     {
         /// <summary>
-        /// Use the `akamai.getAppSecSiemDefinitions` data source to retrieve information about the available SIEM versions, or about a specific SIEM version. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemversions).
+        /// **Scopes**: SIEM definition
+        /// 
+        /// Returns information about your SIEM (Security Information and Event Management) versions. The returned information is described in the [Get SIEM versions](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemversions) section of the Application Security API.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/siem-definitions](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemversions)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -29,16 +33,12 @@ namespace Pulumi.Akamai
         /// {
         ///     public MyStack()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = @var.Security_configuration,
-        ///         }));
         ///         var siemDefinitions = Output.Create(Akamai.GetAppSecSiemDefinitions.InvokeAsync());
         ///         this.SiemDefinitionsJson = siemDefinitions.Apply(siemDefinitions =&gt; siemDefinitions.Json);
         ///         this.SiemDefinitionsOutput = siemDefinitions.Apply(siemDefinitions =&gt; siemDefinitions.OutputText);
         ///         var siemDefinition = Output.Create(Akamai.GetAppSecSiemDefinitions.InvokeAsync(new Akamai.GetAppSecSiemDefinitionsArgs
         ///         {
-        ///             SiemDefinitionName = @var.Siem_definition_name,
+        ///             SiemDefinitionName = "SIEM Version 01",
         ///         }));
         ///         this.SiemDefinitionId = siemDefinition.Apply(siemDefinition =&gt; siemDefinition.Id);
         ///     }
@@ -53,12 +53,22 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `json`. JSON-formatted list of the SIEM version information.
+        /// - `output_text`. Tabular report showing the ID and name of each SIEM version.
         /// </summary>
         public static Task<GetAppSecSiemDefinitionsResult> InvokeAsync(GetAppSecSiemDefinitionsArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSiemDefinitionsResult>("akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions", args ?? new GetAppSecSiemDefinitionsArgs(), options.WithVersion());
 
         /// <summary>
-        /// Use the `akamai.getAppSecSiemDefinitions` data source to retrieve information about the available SIEM versions, or about a specific SIEM version. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemversions).
+        /// **Scopes**: SIEM definition
+        /// 
+        /// Returns information about your SIEM (Security Information and Event Management) versions. The returned information is described in the [Get SIEM versions](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemversions) section of the Application Security API.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/siem-definitions](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemversions)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -74,16 +84,12 @@ namespace Pulumi.Akamai
         /// {
         ///     public MyStack()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = @var.Security_configuration,
-        ///         }));
         ///         var siemDefinitions = Output.Create(Akamai.GetAppSecSiemDefinitions.InvokeAsync());
         ///         this.SiemDefinitionsJson = siemDefinitions.Apply(siemDefinitions =&gt; siemDefinitions.Json);
         ///         this.SiemDefinitionsOutput = siemDefinitions.Apply(siemDefinitions =&gt; siemDefinitions.OutputText);
         ///         var siemDefinition = Output.Create(Akamai.GetAppSecSiemDefinitions.InvokeAsync(new Akamai.GetAppSecSiemDefinitionsArgs
         ///         {
-        ///             SiemDefinitionName = @var.Siem_definition_name,
+        ///             SiemDefinitionName = "SIEM Version 01",
         ///         }));
         ///         this.SiemDefinitionId = siemDefinition.Apply(siemDefinition =&gt; siemDefinition.Id);
         ///     }
@@ -98,6 +104,12 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `json`. JSON-formatted list of the SIEM version information.
+        /// - `output_text`. Tabular report showing the ID and name of each SIEM version.
         /// </summary>
         public static Output<GetAppSecSiemDefinitionsResult> Invoke(GetAppSecSiemDefinitionsInvokeArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecSiemDefinitionsResult>("akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions", args ?? new GetAppSecSiemDefinitionsInvokeArgs(), options.WithVersion());
@@ -107,7 +119,7 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecSiemDefinitionsArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name of a specific SIEM definition for which to retrieve information.
+        /// . Name of the SIEM definition you want to return information for. If not included, information is returned for all your SIEM definitions.
         /// </summary>
         [Input("siemDefinitionName")]
         public string? SiemDefinitionName { get; set; }
@@ -120,7 +132,7 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecSiemDefinitionsInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name of a specific SIEM definition for which to retrieve information.
+        /// . Name of the SIEM definition you want to return information for. If not included, information is returned for all your SIEM definitions.
         /// </summary>
         [Input("siemDefinitionName")]
         public Input<string>? SiemDefinitionName { get; set; }
@@ -138,13 +150,7 @@ namespace Pulumi.Akamai
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A JSON-formatted list of the SIEM version information.
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// A tabular display showing the ID and name of each SIEM version.
-        /// </summary>
         public readonly string OutputText;
         public readonly string? SiemDefinitionName;
 

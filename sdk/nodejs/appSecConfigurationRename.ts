@@ -5,7 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * The `akamai.AppSecConfigurationRename` resource allows you to rename an existing security configuration.
+ * **Scopes**: Security configuration
+ *
+ * Renames an existing security configuration.
+ * Note that you can only change the configuration name.
+ * The ID assigned to a security configuration can not be modified.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putrenameconfiguration)
  *
  * ## Example Usage
  *
@@ -16,11 +22,11 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configurationAppSecConfiguration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const configurationAppSecConfigurationRename = new akamai.AppSecConfigurationRename("configurationAppSecConfigurationRename", {
  *     configId: configurationAppSecConfiguration.then(configurationAppSecConfiguration => configurationAppSecConfiguration.configId),
- *     description: _var.description,
+ *     description: "This configuration is by both the documentation team and the training team.",
  * });
  * ```
  */
@@ -53,15 +59,15 @@ export class AppSecConfigurationRename extends pulumi.CustomResource {
     }
 
     /**
-     * The ID of the security configuration to be renamed.
+     * . Unique identifier of the security configurating being renamed.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * The description to be applied to the configuration.
+     * . Brief description of the security configuration.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * The new name to be given to the configuration.
+     * . New name for the security configuration.
      */
     public readonly name!: pulumi.Output<string>;
 
@@ -105,15 +111,15 @@ export class AppSecConfigurationRename extends pulumi.CustomResource {
  */
 export interface AppSecConfigurationRenameState {
     /**
-     * The ID of the security configuration to be renamed.
+     * . Unique identifier of the security configurating being renamed.
      */
     configId?: pulumi.Input<number>;
     /**
-     * The description to be applied to the configuration.
+     * . Brief description of the security configuration.
      */
     description?: pulumi.Input<string>;
     /**
-     * The new name to be given to the configuration.
+     * . New name for the security configuration.
      */
     name?: pulumi.Input<string>;
 }
@@ -123,15 +129,15 @@ export interface AppSecConfigurationRenameState {
  */
 export interface AppSecConfigurationRenameArgs {
     /**
-     * The ID of the security configuration to be renamed.
+     * . Unique identifier of the security configurating being renamed.
      */
     configId: pulumi.Input<number>;
     /**
-     * The description to be applied to the configuration.
+     * . Brief description of the security configuration.
      */
     description: pulumi.Input<string>;
     /**
-     * The new name to be given to the configuration.
+     * . New name for the security configuration.
      */
     name?: pulumi.Input<string>;
 }

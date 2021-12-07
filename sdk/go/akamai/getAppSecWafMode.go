@@ -10,7 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecWafMode` data source to retrieve the mode that indicates how the WAF rules of the given security configuration and security policy will be updated.
+// **Scopes**: Security policy
+//
+// Returns information about how the Kona Rule Set rules associated with a security configuration and security policy are updated. The WAF (Web Application Firewall) mode determines whether Kona Rule Sets are automatically updated as part of automated attack groups (`mode = AAG`) or whether you must periodically check for new rules and then manually update those rules yourself (`mode = KRS`).
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/mode](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getmode)
 //
 // ## Example Usage
 //
@@ -26,7 +30,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -35,7 +39,7 @@ import (
 // 		}
 // 		wafMode, err := akamai.LookupAppSecWafMode(ctx, &GetAppSecWafModeArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: _var.Policy_id,
+// 			SecurityPolicyId: "gms1_134637",
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -51,6 +55,17 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `mode`. Security policy mode, either **KRS** (update manually) or **AAG** (update automatically), For organizations running the Adaptive Security Engine (ASE) beta, you'll get back **ASE_AUTO** for automatic updates or **ASE_MANUAL** for manual updates. Please contact your Akamai representative to learn more about ASE.
+// - `currentRuleset`. Current ruleset version and the ISO 8601 date the version was introduced.
+// - `evalStatus`. Specifies whether evaluation mode is enabled or disabled.
+// - `evalRuleset`. Evaluation ruleset version and the ISO 8601 date the evaluation began.
+// - `evalExpirationDate`. ISO 8601 timestamp indicating when evaluation mode expires. Valid only if `evalStatus` is set to **enabled**.
+// - `outputText`. Tabular report of the mode information.
+// - `json`. JSON-formatted list of the mode information.
 func LookupAppSecWafMode(ctx *pulumi.Context, args *LookupAppSecWafModeArgs, opts ...pulumi.InvokeOption) (*LookupAppSecWafModeResult, error) {
 	var rv LookupAppSecWafModeResult
 	err := ctx.Invoke("akamai:index/getAppSecWafMode:getAppSecWafMode", args, &rv, opts...)
@@ -62,30 +77,23 @@ func LookupAppSecWafMode(ctx *pulumi.Context, args *LookupAppSecWafModeArgs, opt
 
 // A collection of arguments for invoking getAppSecWafMode.
 type LookupAppSecWafModeArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the Kona Rule Set rules.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the Kona Rule Set rules.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // A collection of values returned by getAppSecWafMode.
 type LookupAppSecWafModeResult struct {
-	ConfigId int `pulumi:"configId"`
-	// The current rule set version and the ISO 8601 date the rule set version was introduced; this date acts like a version number.
-	CurrentRuleset string `pulumi:"currentRuleset"`
-	// The ISO 8601 time stamp when the evaluation is expiring. This value only appears when `eval` is set to "enabled".
+	ConfigId           int    `pulumi:"configId"`
+	CurrentRuleset     string `pulumi:"currentRuleset"`
 	EvalExpirationDate string `pulumi:"evalExpirationDate"`
-	// The evaluation rule set version and the ISO 8601 date the evaluation starts.
-	EvalRuleset string `pulumi:"evalRuleset"`
-	// Whether the evaluation mode is enabled or disabled."
-	EvalStatus string `pulumi:"evalStatus"`
+	EvalRuleset        string `pulumi:"evalRuleset"`
+	EvalStatus         string `pulumi:"evalStatus"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted list of the mode information.
-	Json string `pulumi:"json"`
-	// The security policy mode, either `KRS` (update manually) or `AAG` (update automatically), For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE.
-	Mode string `pulumi:"mode"`
-	// A tabular display of the mode information.
+	Id               string `pulumi:"id"`
+	Json             string `pulumi:"json"`
+	Mode             string `pulumi:"mode"`
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
@@ -101,9 +109,9 @@ func LookupAppSecWafModeOutput(ctx *pulumi.Context, args LookupAppSecWafModeOutp
 
 // A collection of arguments for invoking getAppSecWafMode.
 type LookupAppSecWafModeOutputArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the Kona Rule Set rules.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the Kona Rule Set rules.
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 
@@ -130,22 +138,18 @@ func (o LookupAppSecWafModeResultOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAppSecWafModeResult) int { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// The current rule set version and the ISO 8601 date the rule set version was introduced; this date acts like a version number.
 func (o LookupAppSecWafModeResultOutput) CurrentRuleset() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecWafModeResult) string { return v.CurrentRuleset }).(pulumi.StringOutput)
 }
 
-// The ISO 8601 time stamp when the evaluation is expiring. This value only appears when `eval` is set to "enabled".
 func (o LookupAppSecWafModeResultOutput) EvalExpirationDate() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecWafModeResult) string { return v.EvalExpirationDate }).(pulumi.StringOutput)
 }
 
-// The evaluation rule set version and the ISO 8601 date the evaluation starts.
 func (o LookupAppSecWafModeResultOutput) EvalRuleset() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecWafModeResult) string { return v.EvalRuleset }).(pulumi.StringOutput)
 }
 
-// Whether the evaluation mode is enabled or disabled."
 func (o LookupAppSecWafModeResultOutput) EvalStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecWafModeResult) string { return v.EvalStatus }).(pulumi.StringOutput)
 }
@@ -155,17 +159,14 @@ func (o LookupAppSecWafModeResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecWafModeResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted list of the mode information.
 func (o LookupAppSecWafModeResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecWafModeResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// The security policy mode, either `KRS` (update manually) or `AAG` (update automatically), For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE.
 func (o LookupAppSecWafModeResultOutput) Mode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecWafModeResult) string { return v.Mode }).(pulumi.StringOutput)
 }
 
-// A tabular display of the mode information.
 func (o LookupAppSecWafModeResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecWafModeResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

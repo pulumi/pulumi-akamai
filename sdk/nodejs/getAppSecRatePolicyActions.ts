@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecRatePolicyActions` data source to retrieve a list of all rate policies associated with a given configuration and security policy, or the actions associated with a specific rate policy.
+ * **Scopes**: Security policy; rate policy
+ *
+ * Returns information about your rate policy actions, Actions specify what happens any time a rate policy is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.
+ *
+ * **Related API Endpoint:** [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rate-policies](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getratepolicyactions)
  *
  * ## Example Usage
  *
@@ -16,14 +20,19 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const ratePolicyActionsAppSecRatePolicyActions = configuration.then(configuration => akamai.getAppSecRatePolicyActions({
  *     configId: configuration.configId,
- *     securityPolicyId: _var.security_policy_id,
+ *     securityPolicyId: "gms1_134637",
  * }));
  * export const ratePolicyActions = ratePolicyActionsAppSecRatePolicyActions.then(ratePolicyActionsAppSecRatePolicyActions => ratePolicyActionsAppSecRatePolicyActions.outputText);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `outputText`. Tabular report showing the ID, IPv4 action, and IPv6 action of the rate policies.
  */
 export function getAppSecRatePolicyActions(args: GetAppSecRatePolicyActionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecRatePolicyActionsResult> {
     if (!opts) {
@@ -45,15 +54,15 @@ export function getAppSecRatePolicyActions(args: GetAppSecRatePolicyActionsArgs,
  */
 export interface GetAppSecRatePolicyActionsArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the rate policies and rate policy actions.
      */
     configId: number;
     /**
-     * The ID of the rate policy to use. If not supplied, information about all rate policies will be returned.
+     * . Unique identifier of the rate policy you want to return action information for. If not included, action information is returned for all your rate policies.
      */
     ratePolicyId?: number;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the rate policies and rate policy actions.
      */
     securityPolicyId: string;
 }
@@ -67,9 +76,6 @@ export interface GetAppSecRatePolicyActionsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A tabular display showing the ID IPv4Action and IPv6Action of the indicated security policy.
-     */
     readonly outputText: string;
     readonly ratePolicyId?: number;
     readonly securityPolicyId: string;
@@ -84,15 +90,15 @@ export function getAppSecRatePolicyActionsOutput(args: GetAppSecRatePolicyAction
  */
 export interface GetAppSecRatePolicyActionsOutputArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the rate policies and rate policy actions.
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of the rate policy to use. If not supplied, information about all rate policies will be returned.
+     * . Unique identifier of the rate policy you want to return action information for. If not included, action information is returned for all your rate policies.
      */
     ratePolicyId?: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the rate policies and rate policy actions.
      */
     securityPolicyId: pulumi.Input<string>;
 }

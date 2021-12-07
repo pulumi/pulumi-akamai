@@ -13,7 +13,11 @@ namespace Pulumi.Akamai
     public static class GetAppSecSlowPost
     {
         /// <summary>
-        /// Use the `akamai.AppSecSlowPost` data source to retrieve the slow post protection settings for a given security configuration and policy.
+        /// **Scopes**: Security policy
+        /// 
+        /// Returns the slow POST protection settings for the specified security configuration and policy. Slow POST protections help defend a site against attacks that try to tie up the site by using extremely slow requests and responses: the idea is to keep the site occupied waiting for these requests and responses to finish instead of being occupied with new (and legitimate) transactions.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/slow-post](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getslowpostprotectionsettings)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -31,12 +35,12 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var slowPost = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSlowPost.InvokeAsync(new Akamai.GetAppSecSlowPostArgs
         ///         {
         ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///             SecurityPolicyId = "gms1_134637",
         ///         })));
         ///         this.SlowPostOutputText = slowPost.Apply(slowPost =&gt; slowPost.OutputText);
         ///     }
@@ -47,12 +51,27 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `output_text`. Tabular report including the following:
+        ///   - **ACTION**. Action taken any time slow POST protection is triggered. Valid values are:
+        ///     - **alert**. Record the event.
+        ///     - **abort**. Block the request.
+        ///   - **SLOW_RATE_THRESHOLD RATE**. Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
+        ///   - **SLOW_RATE_THRESHOLD PERIOD**. Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
+        ///   - **DURATION_THRESHOLD TIMEOUT**. Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in order to avoid triggering the specified action.
         /// </summary>
         public static Task<GetAppSecSlowPostResult> InvokeAsync(GetAppSecSlowPostArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSlowPostResult>("akamai:index/getAppSecSlowPost:getAppSecSlowPost", args ?? new GetAppSecSlowPostArgs(), options.WithVersion());
 
         /// <summary>
-        /// Use the `akamai.AppSecSlowPost` data source to retrieve the slow post protection settings for a given security configuration and policy.
+        /// **Scopes**: Security policy
+        /// 
+        /// Returns the slow POST protection settings for the specified security configuration and policy. Slow POST protections help defend a site against attacks that try to tie up the site by using extremely slow requests and responses: the idea is to keep the site occupied waiting for these requests and responses to finish instead of being occupied with new (and legitimate) transactions.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/slow-post](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getslowpostprotectionsettings)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -70,12 +89,12 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var slowPost = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSlowPost.InvokeAsync(new Akamai.GetAppSecSlowPostArgs
         ///         {
         ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///             SecurityPolicyId = "gms1_134637",
         ///         })));
         ///         this.SlowPostOutputText = slowPost.Apply(slowPost =&gt; slowPost.OutputText);
         ///     }
@@ -86,6 +105,17 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `output_text`. Tabular report including the following:
+        ///   - **ACTION**. Action taken any time slow POST protection is triggered. Valid values are:
+        ///     - **alert**. Record the event.
+        ///     - **abort**. Block the request.
+        ///   - **SLOW_RATE_THRESHOLD RATE**. Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
+        ///   - **SLOW_RATE_THRESHOLD PERIOD**. Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
+        ///   - **DURATION_THRESHOLD TIMEOUT**. Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in order to avoid triggering the specified action.
         /// </summary>
         public static Output<GetAppSecSlowPostResult> Invoke(GetAppSecSlowPostInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecSlowPostResult>("akamai:index/getAppSecSlowPost:getAppSecSlowPost", args ?? new GetAppSecSlowPostInvokeArgs(), options.WithVersion());
@@ -95,13 +125,13 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecSlowPostArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the slow POST settings.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to use
+        /// . Unique identifier of the security policy associated with the slow POST settings.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
@@ -114,13 +144,13 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecSlowPostInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the slow POST settings.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use
+        /// . Unique identifier of the security policy associated with the slow POST settings.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -140,9 +170,6 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string Id;
         public readonly string Json;
-        /// <summary>
-        /// A tabular display including the following columns:
-        /// </summary>
         public readonly string OutputText;
         public readonly string SecurityPolicyId;
 

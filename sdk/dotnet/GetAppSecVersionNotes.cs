@@ -13,7 +13,11 @@ namespace Pulumi.Akamai
     public static class GetAppSecVersionNotes
     {
         /// <summary>
-        /// Use the `akamai.AppSecVersionNodes` data source to retrieve the most recent version notes for a configuration.
+        /// **Scopes**: Security configuration
+        /// 
+        /// Returns the most recent version notes for a security configuration.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getversionnotes)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -31,7 +35,7 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var versionNotes = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecVersionNotes.InvokeAsync(new Akamai.GetAppSecVersionNotesArgs
         ///         {
@@ -49,12 +53,22 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `json`. JSON-formatted list showing the version notes.
+        /// - `output_text`. Tabular report showing the version notes.
         /// </summary>
         public static Task<GetAppSecVersionNotesResult> InvokeAsync(GetAppSecVersionNotesArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecVersionNotesResult>("akamai:index/getAppSecVersionNotes:getAppSecVersionNotes", args ?? new GetAppSecVersionNotesArgs(), options.WithVersion());
 
         /// <summary>
-        /// Use the `akamai.AppSecVersionNodes` data source to retrieve the most recent version notes for a configuration.
+        /// **Scopes**: Security configuration
+        /// 
+        /// Returns the most recent version notes for a security configuration.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getversionnotes)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -72,7 +86,7 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var versionNotes = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecVersionNotes.InvokeAsync(new Akamai.GetAppSecVersionNotesArgs
         ///         {
@@ -90,6 +104,12 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `json`. JSON-formatted list showing the version notes.
+        /// - `output_text`. Tabular report showing the version notes.
         /// </summary>
         public static Output<GetAppSecVersionNotesResult> Invoke(GetAppSecVersionNotesInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecVersionNotesResult>("akamai:index/getAppSecVersionNotes:getAppSecVersionNotes", args ?? new GetAppSecVersionNotesInvokeArgs(), options.WithVersion());
@@ -99,7 +119,7 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecVersionNotesArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The configuration ID to use.
+        /// . Unique identifier of the security configuration you want to return information for.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
@@ -112,7 +132,7 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecVersionNotesInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The configuration ID to use.
+        /// . Unique identifier of the security configuration you want to return information for.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
@@ -131,13 +151,7 @@ namespace Pulumi.Akamai
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A JSON-formatted list showing the version notes.
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// A tabular display showing the version notes.
-        /// </summary>
         public readonly string OutputText;
 
         [OutputConstructor]

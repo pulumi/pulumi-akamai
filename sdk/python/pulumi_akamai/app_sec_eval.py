@@ -19,10 +19,15 @@ class AppSecEvalArgs:
                  eval_mode: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AppSecEval resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] eval_operation: The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[str] eval_mode: __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration where evaluation mode will take place (or is currently taking place).
+        :param pulumi.Input[str] eval_operation: . Evaluation mode operation. Allowed values are:
+               - **START**. Starts evaluation mode. By default, evaluation mode runs for four weeks.
+               - **STOP**, Pauses evaluation mode without upgrading the Kona Rule Set on your production network.
+               - **RESTART**. Resumes an evaluation trial that was paused by using the **STOP** command.
+               - **UPDATE**. Upgrades the Kona Rule Set rules in the evaluation ruleset to their latest versions.
+               - **COMPLETE**. Concludes the evaluation period (even if the four-week trial mode is not over) and automatically upgrades the Kona Rule Set on your production network to the same rule set you just finished evaluating.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the evaluation process.
+        :param pulumi.Input[str] eval_mode: . Set to **ASE_AUTO** to have your Kona Rule Set rules automatically updated during the evaluation period; set to **ASE_MANUAL** if you want to manually update your evaluation rules. Note that this option is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information about ASE, please contact your Akamai representative.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "eval_operation", eval_operation)
@@ -34,7 +39,7 @@ class AppSecEvalArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration where evaluation mode will take place (or is currently taking place).
         """
         return pulumi.get(self, "config_id")
 
@@ -46,7 +51,12 @@ class AppSecEvalArgs:
     @pulumi.getter(name="evalOperation")
     def eval_operation(self) -> pulumi.Input[str]:
         """
-        The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
+        . Evaluation mode operation. Allowed values are:
+        - **START**. Starts evaluation mode. By default, evaluation mode runs for four weeks.
+        - **STOP**, Pauses evaluation mode without upgrading the Kona Rule Set on your production network.
+        - **RESTART**. Resumes an evaluation trial that was paused by using the **STOP** command.
+        - **UPDATE**. Upgrades the Kona Rule Set rules in the evaluation ruleset to their latest versions.
+        - **COMPLETE**. Concludes the evaluation period (even if the four-week trial mode is not over) and automatically upgrades the Kona Rule Set on your production network to the same rule set you just finished evaluating.
         """
         return pulumi.get(self, "eval_operation")
 
@@ -58,7 +68,7 @@ class AppSecEvalArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the evaluation process.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -70,7 +80,7 @@ class AppSecEvalArgs:
     @pulumi.getter(name="evalMode")
     def eval_mode(self) -> Optional[pulumi.Input[str]]:
         """
-        __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
+        . Set to **ASE_AUTO** to have your Kona Rule Set rules automatically updated during the evaluation period; set to **ASE_MANUAL** if you want to manually update your evaluation rules. Note that this option is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information about ASE, please contact your Akamai representative.
         """
         return pulumi.get(self, "eval_mode")
 
@@ -92,14 +102,15 @@ class _AppSecEvalState:
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecEval resources.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] current_ruleset: The set of rules currently in effect.
-        :param pulumi.Input[str] eval_mode: __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
-        :param pulumi.Input[str] eval_operation: The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
-        :param pulumi.Input[str] eval_status: Either `enabled` if an evaluation is currently in progress (that is, if the `eval_operation` parameter was `START`, `RESTART`, or `COMPLETE`) or `disabled` otherwise (that is, if the `eval_operation` parameter was `STOP` or `UPDATE`).
-        :param pulumi.Input[str] evaluating_ruleset: The set of rules being evaluated.
-        :param pulumi.Input[str] expiration_date: The date on which the evaluation period ends.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration where evaluation mode will take place (or is currently taking place).
+        :param pulumi.Input[str] eval_mode: . Set to **ASE_AUTO** to have your Kona Rule Set rules automatically updated during the evaluation period; set to **ASE_MANUAL** if you want to manually update your evaluation rules. Note that this option is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information about ASE, please contact your Akamai representative.
+        :param pulumi.Input[str] eval_operation: . Evaluation mode operation. Allowed values are:
+               - **START**. Starts evaluation mode. By default, evaluation mode runs for four weeks.
+               - **STOP**, Pauses evaluation mode without upgrading the Kona Rule Set on your production network.
+               - **RESTART**. Resumes an evaluation trial that was paused by using the **STOP** command.
+               - **UPDATE**. Upgrades the Kona Rule Set rules in the evaluation ruleset to their latest versions.
+               - **COMPLETE**. Concludes the evaluation period (even if the four-week trial mode is not over) and automatically upgrades the Kona Rule Set on your production network to the same rule set you just finished evaluating.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the evaluation process.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -122,7 +133,7 @@ class _AppSecEvalState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration where evaluation mode will take place (or is currently taking place).
         """
         return pulumi.get(self, "config_id")
 
@@ -133,9 +144,6 @@ class _AppSecEvalState:
     @property
     @pulumi.getter(name="currentRuleset")
     def current_ruleset(self) -> Optional[pulumi.Input[str]]:
-        """
-        The set of rules currently in effect.
-        """
         return pulumi.get(self, "current_ruleset")
 
     @current_ruleset.setter
@@ -146,7 +154,7 @@ class _AppSecEvalState:
     @pulumi.getter(name="evalMode")
     def eval_mode(self) -> Optional[pulumi.Input[str]]:
         """
-        __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
+        . Set to **ASE_AUTO** to have your Kona Rule Set rules automatically updated during the evaluation period; set to **ASE_MANUAL** if you want to manually update your evaluation rules. Note that this option is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information about ASE, please contact your Akamai representative.
         """
         return pulumi.get(self, "eval_mode")
 
@@ -158,7 +166,12 @@ class _AppSecEvalState:
     @pulumi.getter(name="evalOperation")
     def eval_operation(self) -> Optional[pulumi.Input[str]]:
         """
-        The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
+        . Evaluation mode operation. Allowed values are:
+        - **START**. Starts evaluation mode. By default, evaluation mode runs for four weeks.
+        - **STOP**, Pauses evaluation mode without upgrading the Kona Rule Set on your production network.
+        - **RESTART**. Resumes an evaluation trial that was paused by using the **STOP** command.
+        - **UPDATE**. Upgrades the Kona Rule Set rules in the evaluation ruleset to their latest versions.
+        - **COMPLETE**. Concludes the evaluation period (even if the four-week trial mode is not over) and automatically upgrades the Kona Rule Set on your production network to the same rule set you just finished evaluating.
         """
         return pulumi.get(self, "eval_operation")
 
@@ -169,9 +182,6 @@ class _AppSecEvalState:
     @property
     @pulumi.getter(name="evalStatus")
     def eval_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        Either `enabled` if an evaluation is currently in progress (that is, if the `eval_operation` parameter was `START`, `RESTART`, or `COMPLETE`) or `disabled` otherwise (that is, if the `eval_operation` parameter was `STOP` or `UPDATE`).
-        """
         return pulumi.get(self, "eval_status")
 
     @eval_status.setter
@@ -181,9 +191,6 @@ class _AppSecEvalState:
     @property
     @pulumi.getter(name="evaluatingRuleset")
     def evaluating_ruleset(self) -> Optional[pulumi.Input[str]]:
-        """
-        The set of rules being evaluated.
-        """
         return pulumi.get(self, "evaluating_ruleset")
 
     @evaluating_ruleset.setter
@@ -193,9 +200,6 @@ class _AppSecEvalState:
     @property
     @pulumi.getter(name="expirationDate")
     def expiration_date(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date on which the evaluation period ends.
-        """
         return pulumi.get(self, "expiration_date")
 
     @expiration_date.setter
@@ -206,7 +210,7 @@ class _AppSecEvalState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the evaluation process.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -226,7 +230,13 @@ class AppSecEval(pulumi.CustomResource):
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Use the `AppSecEval` resource to perform evaluation mode operations such as Start, Stop, Restart, Update, or Complete.
+        **Scopes**: Security policy
+
+        Issues an evaluation mode command (`Start`, `Stop`, `Restart`, `Update`, or `Complete`) to a security configuration.
+        Evaluation mode is used for testing and fine-tuning your Kona Rule Set rules and configuration settings.
+        In evaluation mode rules are triggered by events, but the only thing those rules do is record the actions they *would* have taken had the event occurred on the production network.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postevaluationmode)
 
         ## Example Usage
 
@@ -236,23 +246,36 @@ class AppSecEval(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         eval_operation = akamai.AppSecEval("evalOperation",
             config_id=configuration.config_id,
-            security_policy_id=var["security_policy_id"],
-            eval_operation=var["eval_operation"])
+            security_policy_id="gms1_134637",
+            eval_operation="START")
         pulumi.export("evalModeEvaluatingRuleset", eval_operation.evaluating_ruleset)
         pulumi.export("evalModeExpirationDate", eval_operation.expiration_date)
         pulumi.export("evalModeCurrentRuleset", eval_operation.current_ruleset)
         pulumi.export("evalModeStatus", eval_operation.eval_status)
         ```
+        ## Output Options
+
+        The following options can be used to determine the information returned, and how that returned information is formatted:
+
+        - `evaluation_ruleset`. Versioning information for the Kona Rule Set being evaluated.
+        - `expiration_date`. Date when the evaluation period ends.
+        - `current_ruleset`. Versioning information for the Kona Rule Set currently in use on the production network.
+        - `eval_status`. If **true**, an evaluation is currently in progress; if **false**, evaluation is either paused or is not running.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] eval_mode: __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
-        :param pulumi.Input[str] eval_operation: The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration where evaluation mode will take place (or is currently taking place).
+        :param pulumi.Input[str] eval_mode: . Set to **ASE_AUTO** to have your Kona Rule Set rules automatically updated during the evaluation period; set to **ASE_MANUAL** if you want to manually update your evaluation rules. Note that this option is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information about ASE, please contact your Akamai representative.
+        :param pulumi.Input[str] eval_operation: . Evaluation mode operation. Allowed values are:
+               - **START**. Starts evaluation mode. By default, evaluation mode runs for four weeks.
+               - **STOP**, Pauses evaluation mode without upgrading the Kona Rule Set on your production network.
+               - **RESTART**. Resumes an evaluation trial that was paused by using the **STOP** command.
+               - **UPDATE**. Upgrades the Kona Rule Set rules in the evaluation ruleset to their latest versions.
+               - **COMPLETE**. Concludes the evaluation period (even if the four-week trial mode is not over) and automatically upgrades the Kona Rule Set on your production network to the same rule set you just finished evaluating.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the evaluation process.
         """
         ...
     @overload
@@ -261,7 +284,13 @@ class AppSecEval(pulumi.CustomResource):
                  args: AppSecEvalArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `AppSecEval` resource to perform evaluation mode operations such as Start, Stop, Restart, Update, or Complete.
+        **Scopes**: Security policy
+
+        Issues an evaluation mode command (`Start`, `Stop`, `Restart`, `Update`, or `Complete`) to a security configuration.
+        Evaluation mode is used for testing and fine-tuning your Kona Rule Set rules and configuration settings.
+        In evaluation mode rules are triggered by events, but the only thing those rules do is record the actions they *would* have taken had the event occurred on the production network.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postevaluationmode)
 
         ## Example Usage
 
@@ -271,16 +300,24 @@ class AppSecEval(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         eval_operation = akamai.AppSecEval("evalOperation",
             config_id=configuration.config_id,
-            security_policy_id=var["security_policy_id"],
-            eval_operation=var["eval_operation"])
+            security_policy_id="gms1_134637",
+            eval_operation="START")
         pulumi.export("evalModeEvaluatingRuleset", eval_operation.evaluating_ruleset)
         pulumi.export("evalModeExpirationDate", eval_operation.expiration_date)
         pulumi.export("evalModeCurrentRuleset", eval_operation.current_ruleset)
         pulumi.export("evalModeStatus", eval_operation.eval_status)
         ```
+        ## Output Options
+
+        The following options can be used to determine the information returned, and how that returned information is formatted:
+
+        - `evaluation_ruleset`. Versioning information for the Kona Rule Set being evaluated.
+        - `expiration_date`. Date when the evaluation period ends.
+        - `current_ruleset`. Versioning information for the Kona Rule Set currently in use on the production network.
+        - `eval_status`. If **true**, an evaluation is currently in progress; if **false**, evaluation is either paused or is not running.
 
         :param str resource_name: The name of the resource.
         :param AppSecEvalArgs args: The arguments to use to populate this resource's properties.
@@ -352,14 +389,15 @@ class AppSecEval(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] current_ruleset: The set of rules currently in effect.
-        :param pulumi.Input[str] eval_mode: __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
-        :param pulumi.Input[str] eval_operation: The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
-        :param pulumi.Input[str] eval_status: Either `enabled` if an evaluation is currently in progress (that is, if the `eval_operation` parameter was `START`, `RESTART`, or `COMPLETE`) or `disabled` otherwise (that is, if the `eval_operation` parameter was `STOP` or `UPDATE`).
-        :param pulumi.Input[str] evaluating_ruleset: The set of rules being evaluated.
-        :param pulumi.Input[str] expiration_date: The date on which the evaluation period ends.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration where evaluation mode will take place (or is currently taking place).
+        :param pulumi.Input[str] eval_mode: . Set to **ASE_AUTO** to have your Kona Rule Set rules automatically updated during the evaluation period; set to **ASE_MANUAL** if you want to manually update your evaluation rules. Note that this option is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information about ASE, please contact your Akamai representative.
+        :param pulumi.Input[str] eval_operation: . Evaluation mode operation. Allowed values are:
+               - **START**. Starts evaluation mode. By default, evaluation mode runs for four weeks.
+               - **STOP**, Pauses evaluation mode without upgrading the Kona Rule Set on your production network.
+               - **RESTART**. Resumes an evaluation trial that was paused by using the **STOP** command.
+               - **UPDATE**. Upgrades the Kona Rule Set rules in the evaluation ruleset to their latest versions.
+               - **COMPLETE**. Concludes the evaluation period (even if the four-week trial mode is not over) and automatically upgrades the Kona Rule Set on your production network to the same rule set you just finished evaluating.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the evaluation process.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -379,23 +417,20 @@ class AppSecEval(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration where evaluation mode will take place (or is currently taking place).
         """
         return pulumi.get(self, "config_id")
 
     @property
     @pulumi.getter(name="currentRuleset")
     def current_ruleset(self) -> pulumi.Output[str]:
-        """
-        The set of rules currently in effect.
-        """
         return pulumi.get(self, "current_ruleset")
 
     @property
     @pulumi.getter(name="evalMode")
     def eval_mode(self) -> pulumi.Output[Optional[str]]:
         """
-        __ASE Beta__. (Optional) Used for ASE Rulesets: ASE_MANUAL or ASE_AUTO - default. "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more. Policy Evaluation Rule Actions and Threat Intelligence setting are read only in ASE_AUTO evaluation mode
+        . Set to **ASE_AUTO** to have your Kona Rule Set rules automatically updated during the evaluation period; set to **ASE_MANUAL** if you want to manually update your evaluation rules. Note that this option is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information about ASE, please contact your Akamai representative.
         """
         return pulumi.get(self, "eval_mode")
 
@@ -403,39 +438,35 @@ class AppSecEval(pulumi.CustomResource):
     @pulumi.getter(name="evalOperation")
     def eval_operation(self) -> pulumi.Output[str]:
         """
-        The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE.
+        . Evaluation mode operation. Allowed values are:
+        - **START**. Starts evaluation mode. By default, evaluation mode runs for four weeks.
+        - **STOP**, Pauses evaluation mode without upgrading the Kona Rule Set on your production network.
+        - **RESTART**. Resumes an evaluation trial that was paused by using the **STOP** command.
+        - **UPDATE**. Upgrades the Kona Rule Set rules in the evaluation ruleset to their latest versions.
+        - **COMPLETE**. Concludes the evaluation period (even if the four-week trial mode is not over) and automatically upgrades the Kona Rule Set on your production network to the same rule set you just finished evaluating.
         """
         return pulumi.get(self, "eval_operation")
 
     @property
     @pulumi.getter(name="evalStatus")
     def eval_status(self) -> pulumi.Output[str]:
-        """
-        Either `enabled` if an evaluation is currently in progress (that is, if the `eval_operation` parameter was `START`, `RESTART`, or `COMPLETE`) or `disabled` otherwise (that is, if the `eval_operation` parameter was `STOP` or `UPDATE`).
-        """
         return pulumi.get(self, "eval_status")
 
     @property
     @pulumi.getter(name="evaluatingRuleset")
     def evaluating_ruleset(self) -> pulumi.Output[str]:
-        """
-        The set of rules being evaluated.
-        """
         return pulumi.get(self, "evaluating_ruleset")
 
     @property
     @pulumi.getter(name="expirationDate")
     def expiration_date(self) -> pulumi.Output[str]:
-        """
-        The date on which the evaluation period ends.
-        """
         return pulumi.get(self, "expiration_date")
 
     @property
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the evaluation process.
         """
         return pulumi.get(self, "security_policy_id")
 

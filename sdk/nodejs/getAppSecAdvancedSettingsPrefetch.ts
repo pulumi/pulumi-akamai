@@ -5,10 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecAdvancedSettingsPrefetch` data source to retrieve information the prefetch request settings for a security configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprefetchrequestsforaconfiguration).
+ * **Scopes**: Security configuration
  *
- * ## Example Usage
+ * Returns information about your prefetch request settings. By default, the Web Application Firewall only inspects external requests: requests originating outside of your firewall or Akamai's edge servers. When prefetch is enabled, however, internal requests – that is, requests between your origin servers and Akamai's edge servers – can also be inspected by the firewall. The returned information is described in the [PrefetchRequest members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#deb7220d) section of the Application Security API.
  *
+ * **Related** **API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/prefetch](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprefetchrequestsforaconfiguration)
+ *
+ * Example Usage
  * Basic usage:
  *
  * ```typescript
@@ -16,7 +19,7 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const prefetch = configuration.then(configuration => akamai.getAppSecAdvancedSettingsPrefetch({
  *     configId: configuration.configId,
@@ -24,6 +27,13 @@ import * as utilities from "./utilities";
  * export const advancedSettingsPrefetchOutput = prefetch.then(prefetch => prefetch.outputText);
  * export const advancedSettingsPrefetchJson = prefetch.then(prefetch => prefetch.json);
  * ```
+ *
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. JSON-formatted list of information about the prefetch request settings.
+ * - `outputText`. Tabular report showing the prefetch request settings.
  */
 export function getAppSecAdvancedSettingsPrefetch(args: GetAppSecAdvancedSettingsPrefetchArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecAdvancedSettingsPrefetchResult> {
     if (!opts) {
@@ -43,7 +53,7 @@ export function getAppSecAdvancedSettingsPrefetch(args: GetAppSecAdvancedSetting
  */
 export interface GetAppSecAdvancedSettingsPrefetchArgs {
     /**
-     * The configuration ID.
+     * . Unique identifier of the security configuration associated with the prefetch settings.
      */
     configId: number;
 }
@@ -57,13 +67,7 @@ export interface GetAppSecAdvancedSettingsPrefetchResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted list of information about the prefetch request settings.
-     */
     readonly json: string;
-    /**
-     * A tabular display showing the prefetch request settings.
-     */
     readonly outputText: string;
 }
 
@@ -76,7 +80,7 @@ export function getAppSecAdvancedSettingsPrefetchOutput(args: GetAppSecAdvancedS
  */
 export interface GetAppSecAdvancedSettingsPrefetchOutputArgs {
     /**
-     * The configuration ID.
+     * . Unique identifier of the security configuration associated with the prefetch settings.
      */
     configId: pulumi.Input<number>;
 }

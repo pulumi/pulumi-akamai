@@ -13,8 +13,11 @@ namespace Pulumi.Akamai
     public static class GetAppSecThreatIntel
     {
         /// <summary>
-        /// Use the `akamai.AppSecThreatIntel` data source to view threat intelligence setting for a policy
-        /// __BETA__ This is Adaptive Security Engine(ASE) related data source. Please contact your akamai representative if you want to learn more
+        /// **Scopes**: Security policy
+        /// 
+        /// Returns threat intelligence settings for a security policy Note that this data source is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information on ASE, please contact your Akamai representative.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/threat-intel](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getthreatintelligence)l
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -32,12 +35,12 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var threatIntelAppSecThreatIntel = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecThreatIntel.InvokeAsync(new Akamai.GetAppSecThreatIntelArgs
         ///         {
         ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///             SecurityPolicyId = "gms1_134637",
         ///         })));
         ///         this.ThreatIntel = threatIntelAppSecThreatIntel.Apply(threatIntelAppSecThreatIntel =&gt; threatIntelAppSecThreatIntel.ThreatIntel);
         ///         this.Json = threatIntelAppSecThreatIntel.Apply(threatIntelAppSecThreatIntel =&gt; threatIntelAppSecThreatIntel.Json);
@@ -54,13 +57,23 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `threat_intel`. Reports the threat Intelligence setting, either **on** or **off**.
+        /// - `json`. JSON-formatted threat intelligence report
+        /// - `output_text`. Tabular report of the threat intelligence information.
         /// </summary>
         public static Task<GetAppSecThreatIntelResult> InvokeAsync(GetAppSecThreatIntelArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecThreatIntelResult>("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", args ?? new GetAppSecThreatIntelArgs(), options.WithVersion());
 
         /// <summary>
-        /// Use the `akamai.AppSecThreatIntel` data source to view threat intelligence setting for a policy
-        /// __BETA__ This is Adaptive Security Engine(ASE) related data source. Please contact your akamai representative if you want to learn more
+        /// **Scopes**: Security policy
+        /// 
+        /// Returns threat intelligence settings for a security policy Note that this data source is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information on ASE, please contact your Akamai representative.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/threat-intel](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getthreatintelligence)l
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -78,12 +91,12 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var threatIntelAppSecThreatIntel = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecThreatIntel.InvokeAsync(new Akamai.GetAppSecThreatIntelArgs
         ///         {
         ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///             SecurityPolicyId = "gms1_134637",
         ///         })));
         ///         this.ThreatIntel = threatIntelAppSecThreatIntel.Apply(threatIntelAppSecThreatIntel =&gt; threatIntelAppSecThreatIntel.ThreatIntel);
         ///         this.Json = threatIntelAppSecThreatIntel.Apply(threatIntelAppSecThreatIntel =&gt; threatIntelAppSecThreatIntel.Json);
@@ -100,6 +113,13 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `threat_intel`. Reports the threat Intelligence setting, either **on** or **off**.
+        /// - `json`. JSON-formatted threat intelligence report
+        /// - `output_text`. Tabular report of the threat intelligence information.
         /// </summary>
         public static Output<GetAppSecThreatIntelResult> Invoke(GetAppSecThreatIntelInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecThreatIntelResult>("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", args ?? new GetAppSecThreatIntelInvokeArgs(), options.WithVersion());
@@ -109,13 +129,13 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecThreatIntelArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the threat intelligence settings.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the threat intelligence settings.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
@@ -128,13 +148,13 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecThreatIntelInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the threat intelligence settings.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the threat intelligence settings.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -153,18 +173,9 @@ namespace Pulumi.Akamai
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A JSON-formatted threat intelligence object
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// A tabular display of the threat intel information.
-        /// </summary>
         public readonly string OutputText;
         public readonly string SecurityPolicyId;
-        /// <summary>
-        /// Threat Intelligence setting, either `on` or `off`.
-        /// </summary>
         public readonly string ThreatIntel;
 
         [OutputConstructor]

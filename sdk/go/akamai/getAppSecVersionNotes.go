@@ -10,7 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecVersionNodes` data source to retrieve the most recent version notes for a configuration.
+// **Scopes**: Security configuration
+//
+// Returns the most recent version notes for a security configuration.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getversionnotes)
 //
 // ## Example Usage
 //
@@ -26,7 +30,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -45,6 +49,12 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `json`. JSON-formatted list showing the version notes.
+// - `outputText`. Tabular report showing the version notes.
 func GetAppSecVersionNotes(ctx *pulumi.Context, args *GetAppSecVersionNotesArgs, opts ...pulumi.InvokeOption) (*GetAppSecVersionNotesResult, error) {
 	var rv GetAppSecVersionNotesResult
 	err := ctx.Invoke("akamai:index/getAppSecVersionNotes:getAppSecVersionNotes", args, &rv, opts...)
@@ -56,7 +66,7 @@ func GetAppSecVersionNotes(ctx *pulumi.Context, args *GetAppSecVersionNotesArgs,
 
 // A collection of arguments for invoking getAppSecVersionNotes.
 type GetAppSecVersionNotesArgs struct {
-	// The configuration ID to use.
+	// . Unique identifier of the security configuration you want to return information for.
 	ConfigId int `pulumi:"configId"`
 }
 
@@ -64,10 +74,8 @@ type GetAppSecVersionNotesArgs struct {
 type GetAppSecVersionNotesResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted list showing the version notes.
-	Json string `pulumi:"json"`
-	// A tabular display showing the version notes.
+	Id         string `pulumi:"id"`
+	Json       string `pulumi:"json"`
 	OutputText string `pulumi:"outputText"`
 }
 
@@ -82,7 +90,7 @@ func GetAppSecVersionNotesOutput(ctx *pulumi.Context, args GetAppSecVersionNotes
 
 // A collection of arguments for invoking getAppSecVersionNotes.
 type GetAppSecVersionNotesOutputArgs struct {
-	// The configuration ID to use.
+	// . Unique identifier of the security configuration you want to return information for.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
 }
 
@@ -114,12 +122,10 @@ func (o GetAppSecVersionNotesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecVersionNotesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted list showing the version notes.
 func (o GetAppSecVersionNotesResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecVersionNotesResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display showing the version notes.
 func (o GetAppSecVersionNotesResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecVersionNotesResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

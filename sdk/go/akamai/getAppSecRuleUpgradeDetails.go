@@ -10,7 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecRuleUpgradeDetails` data source to retrieve information on changes to the KRS rule sets.
+// **Scopes**: Security policy
+//
+// Returns information indicating which of your Kona Rule Sets (if any) need to be updated. A value of **false** indicates that no updates are required.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/upgrade-details](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getupgradedetails)
 //
 // ## Example Usage
 //
@@ -26,7 +30,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -35,7 +39,7 @@ import (
 // 		}
 // 		upgradeDetails, err := akamai.GetAppSecRuleUpgradeDetails(ctx, &GetAppSecRuleUpgradeDetailsArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: _var.Security_policy_id,
+// 			SecurityPolicyId: "gms1_134637",
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -46,6 +50,12 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `outputText`. Tabular report showing changes (additions and deletions) to the rules for the specified security policy.
+// - `json`. JSON-formatted list of the changes (additions and deletions) to the rules for the specified security policy.
 func GetAppSecRuleUpgradeDetails(ctx *pulumi.Context, args *GetAppSecRuleUpgradeDetailsArgs, opts ...pulumi.InvokeOption) (*GetAppSecRuleUpgradeDetailsResult, error) {
 	var rv GetAppSecRuleUpgradeDetailsResult
 	err := ctx.Invoke("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", args, &rv, opts...)
@@ -57,9 +67,9 @@ func GetAppSecRuleUpgradeDetails(ctx *pulumi.Context, args *GetAppSecRuleUpgrade
 
 // A collection of arguments for invoking getAppSecRuleUpgradeDetails.
 type GetAppSecRuleUpgradeDetailsArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the Kona Rule Sets.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the Kona Rule Sets.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -67,10 +77,8 @@ type GetAppSecRuleUpgradeDetailsArgs struct {
 type GetAppSecRuleUpgradeDetailsResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted list of the changes (additions and deletions) to the rules for the specified security policy.
-	Json string `pulumi:"json"`
-	// A tabular display showing changes (additions and deletions) to the rules for the specified security policy.
+	Id               string `pulumi:"id"`
+	Json             string `pulumi:"json"`
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
@@ -86,9 +94,9 @@ func GetAppSecRuleUpgradeDetailsOutput(ctx *pulumi.Context, args GetAppSecRuleUp
 
 // A collection of arguments for invoking getAppSecRuleUpgradeDetails.
 type GetAppSecRuleUpgradeDetailsOutputArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the Kona Rule Sets.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the Kona Rule Sets.
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 
@@ -120,12 +128,10 @@ func (o GetAppSecRuleUpgradeDetailsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecRuleUpgradeDetailsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted list of the changes (additions and deletions) to the rules for the specified security policy.
 func (o GetAppSecRuleUpgradeDetailsResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecRuleUpgradeDetailsResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display showing changes (additions and deletions) to the rules for the specified security policy.
 func (o GetAppSecRuleUpgradeDetailsResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecRuleUpgradeDetailsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

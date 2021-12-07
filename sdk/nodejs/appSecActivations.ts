@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * The `akamai.AppSecActivations` resource allows you to activate or deactivate a given security configuration version.
+ * **Scopes**: Security configuration
+ *
+ * Activates or deactivates a security configuration. Security configurations activated on the staging network can be used for testing and fine-tuning; security configurations activated on the production network are used to protect your actual websites.
+ *
+ * **Related API Endpoint**: [/appsec/v1/activations](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postactivations)
  *
  * ## Example Usage
  *
@@ -16,15 +20,24 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: "Akamai Tools",
+ *     name: "Documentation",
  * });
  * const activation = new akamai.AppSecActivations("activation", {
  *     configId: configuration.then(configuration => configuration.configId),
  *     network: "STAGING",
- *     notes: "TEST Notes",
+ *     notes: "This configuration was activated for testing purposes only.",
  *     notificationEmails: ["user@example.com"],
  * });
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `status`. Status of the operation. Valid values are:
+ *   
+ *   *   **ACTIVATED**
+ *   *   **DEACTIVATED**
+ *   *   **FAILED**
  */
 export class AppSecActivations extends pulumi.CustomResource {
     /**
@@ -55,30 +68,25 @@ export class AppSecActivations extends pulumi.CustomResource {
     }
 
     /**
-     * A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+     * . Set to **true** to activate the specified security configuration; set to **false** to deactivate the configuration. If not included, the security configuration will be activated.
      */
     public readonly activate!: pulumi.Output<boolean | undefined>;
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration being activated.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+     * . Network on which activation will occur; allowed values are:
      */
     public readonly network!: pulumi.Output<string | undefined>;
     /**
-     * A text note describing this operation. If no attributes were changed since the last time a security
-     * configuration was updated using the akamai.AppSecActivations resource, an activation will not occur. To ensure an activation
-     * is called, please update one of the attributes, e.g. the notes attribute.
+     * . Brief description of the activation/deactivation process. Note that, if no attributes have changed since the last time you called the akamai.AppSecActivations resource, neither activation nor deactivation takes place: that's because *something* must be different in order to trigger the activation/deactivation process. With that in mind, it's recommended that you always update the `notes` argument. That ensures that the resource will be called and that activation or deactivation will occur.
      */
     public readonly notes!: pulumi.Output<string>;
     /**
-     * A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+     * . JSON array containing the email addresses of the people to be notified when activation is complete.
      */
     public readonly notificationEmails!: pulumi.Output<string[]>;
-    /**
-     * The status of the operation. The following values are may be returned:
-     */
     public /*out*/ readonly status!: pulumi.Output<string>;
 
     /**
@@ -130,30 +138,25 @@ export class AppSecActivations extends pulumi.CustomResource {
  */
 export interface AppSecActivationsState {
     /**
-     * A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+     * . Set to **true** to activate the specified security configuration; set to **false** to deactivate the configuration. If not included, the security configuration will be activated.
      */
     activate?: pulumi.Input<boolean>;
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration being activated.
      */
     configId?: pulumi.Input<number>;
     /**
-     * The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+     * . Network on which activation will occur; allowed values are:
      */
     network?: pulumi.Input<string>;
     /**
-     * A text note describing this operation. If no attributes were changed since the last time a security
-     * configuration was updated using the akamai.AppSecActivations resource, an activation will not occur. To ensure an activation
-     * is called, please update one of the attributes, e.g. the notes attribute.
+     * . Brief description of the activation/deactivation process. Note that, if no attributes have changed since the last time you called the akamai.AppSecActivations resource, neither activation nor deactivation takes place: that's because *something* must be different in order to trigger the activation/deactivation process. With that in mind, it's recommended that you always update the `notes` argument. That ensures that the resource will be called and that activation or deactivation will occur.
      */
     notes?: pulumi.Input<string>;
     /**
-     * A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+     * . JSON array containing the email addresses of the people to be notified when activation is complete.
      */
     notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * The status of the operation. The following values are may be returned:
-     */
     status?: pulumi.Input<string>;
 }
 
@@ -162,25 +165,23 @@ export interface AppSecActivationsState {
  */
 export interface AppSecActivationsArgs {
     /**
-     * A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+     * . Set to **true** to activate the specified security configuration; set to **false** to deactivate the configuration. If not included, the security configuration will be activated.
      */
     activate?: pulumi.Input<boolean>;
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration being activated.
      */
     configId: pulumi.Input<number>;
     /**
-     * The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+     * . Network on which activation will occur; allowed values are:
      */
     network?: pulumi.Input<string>;
     /**
-     * A text note describing this operation. If no attributes were changed since the last time a security
-     * configuration was updated using the akamai.AppSecActivations resource, an activation will not occur. To ensure an activation
-     * is called, please update one of the attributes, e.g. the notes attribute.
+     * . Brief description of the activation/deactivation process. Note that, if no attributes have changed since the last time you called the akamai.AppSecActivations resource, neither activation nor deactivation takes place: that's because *something* must be different in order to trigger the activation/deactivation process. With that in mind, it's recommended that you always update the `notes` argument. That ensures that the resource will be called and that activation or deactivation will occur.
      */
     notes: pulumi.Input<string>;
     /**
-     * A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+     * . JSON array containing the email addresses of the people to be notified when activation is complete.
      */
     notificationEmails: pulumi.Input<pulumi.Input<string>[]>;
 }

@@ -22,12 +22,14 @@ namespace Pulumi.Akamai
         /// 
         /// ```csharp
         /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
         /// 
         /// class MyStack : Stack
         /// {
         ///     public MyStack()
         ///     {
-        ///         this.PropertyMatch = data.Akamai_contracts.My_example;
+        ///         var my_example = Output.Create(Akamai.GetContracts.InvokeAsync());
+        ///         this.PropertyMatch = my_example;
         ///     }
         /// 
         ///     [Output("propertyMatch")]

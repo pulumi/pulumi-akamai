@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecIPGeo` resource to update the method and which network lists to use for IP/Geo firewall blocking.
+ * **Scopes**: Security policy
+ *
+ * Modifies the method used for firewall blocking, and manages the network lists used for IP/Geo firewall blocking.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putipgeofirewall)
  *
  * ## Example Usage
  *
@@ -16,23 +20,22 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
- * // USE CASE: user wants to update the IP/GEO firewall mode to "block specific IPs/Subnets and Geos" and update the IP list, GEO list & Exception list
  * const ipGeoBlock = new akamai.AppSecIPGeo("ipGeoBlock", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: _var.security_policy_id1,
- *     mode: _var.block,
- *     geoNetworkLists: _var.geo_network_lists,
- *     ipNetworkLists: _var.ip_network_lists,
- *     exceptionIpNetworkLists: _var.exception_ip_network_lists,
+ *     securityPolicyId: "gms1_134637",
+ *     mode: "block",
+ *     geoNetworkLists: ["06038_GEO_TEST"],
+ *     ipNetworkLists: ["56921_TEST"],
+ *     exceptionIpNetworkLists: ["07126_EXCEPTION_TEST"],
  * });
- * // USE CASE: user wants to update the IP/GEO firewall mode to "block all traffic except IPs/Subnets in block exceptions" and update the Exception list
+ * // USE CASE: User wants to update the IP/Geo firewall mode and update the exception list.
  * const ipGeoAllow = new akamai.AppSecIPGeo("ipGeoAllow", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: _var.security_policy_id2,
- *     mode: _var.allow,
- *     exceptionIpNetworkLists: _var.exception_ip_network_lists,
+ *     securityPolicyId: "gms1-090334",
+ *     mode: "allow",
+ *     exceptionIpNetworkLists: ["07126_EXCEPTION_TEST"],
  * });
  * export const ipGeoModeBlock = ipGeoBlock.mode;
  * export const blockGeoNetworkLists = ipGeoBlock.geoNetworkLists;
@@ -71,27 +74,27 @@ export class AppSecIPGeo extends pulumi.CustomResource {
     }
 
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * The network lists to be allowed regardless of `mode`, `geoNetworkLists`, and `ipNetworkLists` parameters.
+     * . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
      */
     public readonly exceptionIpNetworkLists!: pulumi.Output<string[] | undefined>;
     /**
-     * The network lists to be blocked or allowed geographically.
+     * . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
      */
     public readonly geoNetworkLists!: pulumi.Output<string[] | undefined>;
     /**
-     * The network lists to be blocked or allowd by IP address.
+     * . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
      */
     public readonly ipNetworkLists!: pulumi.Output<string[] | undefined>;
     /**
-     * The mode to use for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
+     * . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
      */
     public readonly mode!: pulumi.Output<string>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the IP/Geo lists being modified.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
@@ -144,27 +147,27 @@ export class AppSecIPGeo extends pulumi.CustomResource {
  */
 export interface AppSecIPGeoState {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
      */
     configId?: pulumi.Input<number>;
     /**
-     * The network lists to be allowed regardless of `mode`, `geoNetworkLists`, and `ipNetworkLists` parameters.
+     * . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
      */
     exceptionIpNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The network lists to be blocked or allowed geographically.
+     * . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
      */
     geoNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The network lists to be blocked or allowd by IP address.
+     * . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
      */
     ipNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The mode to use for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
+     * . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
      */
     mode?: pulumi.Input<string>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the IP/Geo lists being modified.
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -174,27 +177,27 @@ export interface AppSecIPGeoState {
  */
 export interface AppSecIPGeoArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
      */
     configId: pulumi.Input<number>;
     /**
-     * The network lists to be allowed regardless of `mode`, `geoNetworkLists`, and `ipNetworkLists` parameters.
+     * . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
      */
     exceptionIpNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The network lists to be blocked or allowed geographically.
+     * . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
      */
     geoNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The network lists to be blocked or allowd by IP address.
+     * . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
      */
     ipNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The mode to use for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
+     * . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
      */
     mode: pulumi.Input<string>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the IP/Geo lists being modified.
      */
     securityPolicyId: pulumi.Input<string>;
 }

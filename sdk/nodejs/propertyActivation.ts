@@ -52,7 +52,7 @@ import * as utilities from "./utilities";
  *
  * The following arguments are supported:
  *
- * * `propertyId` - (Required) The property’s unique identifier, including the `prp_` prefix.
+ * * `propertyId` - (Required) The property's unique identifier, including the `prp_` prefix.
  * * `contact` - (Required) One or more email addresses to send activation status changes to.
  * * `version` - (Required) The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latestVersion` attribute in the `akamai.Property` resource labeled `example`.
  * * `network` - (Optional) Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
@@ -71,7 +71,7 @@ import * as utilities from "./utilities";
  * * `warnings` - The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
  * * `errors` - The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
  * * `activationId` - The ID given to the activation event while it's in progress.
- * * `status` - The property version’s activation status on the selected network.
+ * * `status` - The property version's activation status on the selected network.
  *
  * ### Deprecated attributes
  *

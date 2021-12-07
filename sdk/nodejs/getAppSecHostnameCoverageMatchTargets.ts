@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecHostnameCoverageMatchTargets` data source to retrieve information about the API and website match targets that protect a hostname. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoveragematchtargets).
+ * **Scopes**: Hostname
+ *
+ * Returns information about the API and website match targets used to protect a hostname. The returned information is described in the [Get the hostname coverage match targets](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames) section of the Application Security API.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/hostname-coverage/match-targets?hostname={host}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoveragematchtargets)
  *
  * ## Example Usage
  *
@@ -15,11 +19,20 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const matchTargets = pulumi.output(akamai.getAppSecHostnameCoverageMatchTargets({
- *     configId: 43253,
- *     hostname: "example.com",
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const matchTargets = configuration.then(configuration => akamai.getAppSecHostnameCoverageMatchTargets({
+ *     configId: configuration.configId,
+ *     hostname: "documentation.akamai.com",
  * }));
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. JSON-formatted list of the coverage information.
+ * - `outputText`. Tabular report of the coverage information.
  */
 export function getAppSecHostnameCoverageMatchTargets(args: GetAppSecHostnameCoverageMatchTargetsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecHostnameCoverageMatchTargetsResult> {
     if (!opts) {
@@ -39,12 +52,9 @@ export function getAppSecHostnameCoverageMatchTargets(args: GetAppSecHostnameCov
  * A collection of arguments for invoking getAppSecHostnameCoverageMatchTargets.
  */
 export interface GetAppSecHostnameCoverageMatchTargetsArgs {
-    /**
-     * The configuration ID.
-     */
     configId: number;
     /**
-     * The hostname for which to retrieve information.
+     * . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
      */
     hostname: string;
 }
@@ -59,13 +69,7 @@ export interface GetAppSecHostnameCoverageMatchTargetsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted list of the coverage information.
-     */
     readonly json: string;
-    /**
-     * A tabular display of the coverage information.
-     */
     readonly outputText: string;
 }
 
@@ -77,12 +81,9 @@ export function getAppSecHostnameCoverageMatchTargetsOutput(args: GetAppSecHostn
  * A collection of arguments for invoking getAppSecHostnameCoverageMatchTargets.
  */
 export interface GetAppSecHostnameCoverageMatchTargetsOutputArgs {
-    /**
-     * The configuration ID.
-     */
     configId: pulumi.Input<number>;
     /**
-     * The hostname for which to retrieve information.
+     * . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
      */
     hostname: pulumi.Input<string>;
 }

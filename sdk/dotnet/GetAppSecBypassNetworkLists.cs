@@ -13,11 +13,13 @@ namespace Pulumi.Akamai
     public static class GetAppSecBypassNetworkLists
     {
         /// <summary>
-        /// Use the `akamai.AppSecByPassNetworkList` data source to retrieve information about which network
-        /// lists are used in the bypass network lists settings.  The information available is described
-        /// [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getbypassnetworklistsforawapconfigversion).
-        /// Note: this data source is only applicable to WAP (Web Application Protector) configurations.
+        /// **Scopes**: Security configuration
         /// 
+        /// Returns information about the network lists assigned to the bypass network list; networks on this list are not subject to firewall checking. The returned information is described in the [BypassNetworkList members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#bypassnetworklist) section of the Application Security API.
+        /// 
+        /// Note that this data source is only applicable to WAP (Web Application Protector) configurations.
+        /// 
+        /// **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/bypass-network-lists](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getbypassnetworklistsforawapconfigversion)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -35,7 +37,7 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var bypassNetworkLists = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecBypassNetworkLists.InvokeAsync(new Akamai.GetAppSecBypassNetworkListsArgs
         ///         {
@@ -56,16 +58,25 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `bypass_network_list`. List of network IDs.
+        /// - `json`. JSON-formatted list of information about the bypass networks.
+        /// - `output_text`. Tabular report showing the bypass network list information.
         /// </summary>
         public static Task<GetAppSecBypassNetworkListsResult> InvokeAsync(GetAppSecBypassNetworkListsArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecBypassNetworkListsResult>("akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists", args ?? new GetAppSecBypassNetworkListsArgs(), options.WithVersion());
 
         /// <summary>
-        /// Use the `akamai.AppSecByPassNetworkList` data source to retrieve information about which network
-        /// lists are used in the bypass network lists settings.  The information available is described
-        /// [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getbypassnetworklistsforawapconfigversion).
-        /// Note: this data source is only applicable to WAP (Web Application Protector) configurations.
+        /// **Scopes**: Security configuration
         /// 
+        /// Returns information about the network lists assigned to the bypass network list; networks on this list are not subject to firewall checking. The returned information is described in the [BypassNetworkList members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#bypassnetworklist) section of the Application Security API.
+        /// 
+        /// Note that this data source is only applicable to WAP (Web Application Protector) configurations.
+        /// 
+        /// **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/bypass-network-lists](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getbypassnetworklistsforawapconfigversion)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -83,7 +94,7 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var bypassNetworkLists = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecBypassNetworkLists.InvokeAsync(new Akamai.GetAppSecBypassNetworkListsArgs
         ///         {
@@ -104,6 +115,13 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `bypass_network_list`. List of network IDs.
+        /// - `json`. JSON-formatted list of information about the bypass networks.
+        /// - `output_text`. Tabular report showing the bypass network list information.
         /// </summary>
         public static Output<GetAppSecBypassNetworkListsResult> Invoke(GetAppSecBypassNetworkListsInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecBypassNetworkListsResult>("akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists", args ?? new GetAppSecBypassNetworkListsInvokeArgs(), options.WithVersion());
@@ -113,7 +131,7 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecBypassNetworkListsArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The configuration ID to use.
+        /// . Unique identifier of the security configuration associated with the bypass network list.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
@@ -126,7 +144,7 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecBypassNetworkListsInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The configuration ID to use.
+        /// . Unique identifier of the security configuration associated with the bypass network list.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
@@ -140,22 +158,13 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetAppSecBypassNetworkListsResult
     {
-        /// <summary>
-        /// A list of strings containing the network list IDs.
-        /// </summary>
         public readonly ImmutableArray<string> BypassNetworkLists;
         public readonly int ConfigId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A JSON-formatted list of information about the bypass network lists.
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// A tabular display showing the bypass network list information.
-        /// </summary>
         public readonly string OutputText;
 
         [OutputConstructor]

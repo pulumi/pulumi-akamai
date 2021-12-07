@@ -11,7 +11,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecRule` resource to create or modify a rule's action, conditions and exceptions. When the conditions are met, the rule’s actions are ignored and not applied to that specific traffic.
+// **Scopes**: Rule
+//
+// Modifies a Kona Rule Set rule's action, conditions, and exceptions.
+//
+// **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/{ruleId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleaction) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/{ruleId}/condition-exception](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception)
 //
 // ## Example Usage
 //
@@ -38,7 +42,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -47,9 +51,9 @@ import (
 // 		}
 // 		_, err = akamai.NewAppSecRule(ctx, "rule", &akamai.AppSecRuleArgs{
 // 			ConfigId:           pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId:   pulumi.Any(_var.Security_policy_id),
-// 			RuleId:             pulumi.Any(_var.Rule_id),
-// 			RuleAction:         pulumi.Any(_var.Action),
+// 			SecurityPolicyId:   pulumi.String("gms1_134637"),
+// 			RuleId:             pulumi.Int(60029316),
+// 			RuleAction:         pulumi.String("deny"),
 // 			ConditionException: readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/condition_exception.json")),
 // 		})
 // 		if err != nil {
@@ -62,15 +66,15 @@ import (
 type AppSecRule struct {
 	pulumi.CustomResourceState
 
-	// The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putconditionexception))
+	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
 	ConditionException pulumi.StringPtrOutput `pulumi:"conditionException"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only conditionException can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
+	// . Action to be taken anytime the rule is triggered. Allowed values are:
 	RuleAction pulumi.StringPtrOutput `pulumi:"ruleAction"`
-	// The ID of the rule to use.
+	// . Unique identifier of the rule being modified.
 	RuleId pulumi.IntOutput `pulumi:"ruleId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
 
@@ -112,28 +116,28 @@ func GetAppSecRule(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecRule resources.
 type appSecRuleState struct {
-	// The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putconditionexception))
+	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
 	ConditionException *string `pulumi:"conditionException"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
 	ConfigId *int `pulumi:"configId"`
-	// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only conditionException can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
+	// . Action to be taken anytime the rule is triggered. Allowed values are:
 	RuleAction *string `pulumi:"ruleAction"`
-	// The ID of the rule to use.
+	// . Unique identifier of the rule being modified.
 	RuleId *int `pulumi:"ruleId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppSecRuleState struct {
-	// The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putconditionexception))
+	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
 	ConditionException pulumi.StringPtrInput
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
 	ConfigId pulumi.IntPtrInput
-	// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only conditionException can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
+	// . Action to be taken anytime the rule is triggered. Allowed values are:
 	RuleAction pulumi.StringPtrInput
-	// The ID of the rule to use.
+	// . Unique identifier of the rule being modified.
 	RuleId pulumi.IntPtrInput
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -142,29 +146,29 @@ func (AppSecRuleState) ElementType() reflect.Type {
 }
 
 type appSecRuleArgs struct {
-	// The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putconditionexception))
+	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
 	ConditionException *string `pulumi:"conditionException"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
 	ConfigId int `pulumi:"configId"`
-	// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only conditionException can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
+	// . Action to be taken anytime the rule is triggered. Allowed values are:
 	RuleAction *string `pulumi:"ruleAction"`
-	// The ID of the rule to use.
+	// . Unique identifier of the rule being modified.
 	RuleId int `pulumi:"ruleId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // The set of arguments for constructing a AppSecRule resource.
 type AppSecRuleArgs struct {
-	// The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putconditionexception))
+	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
 	ConditionException pulumi.StringPtrInput
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
 	ConfigId pulumi.IntInput
-	// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only conditionException can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
+	// . Action to be taken anytime the rule is triggered. Allowed values are:
 	RuleAction pulumi.StringPtrInput
-	// The ID of the rule to use.
+	// . Unique identifier of the rule being modified.
 	RuleId pulumi.IntInput
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
 	SecurityPolicyId pulumi.StringInput
 }
 

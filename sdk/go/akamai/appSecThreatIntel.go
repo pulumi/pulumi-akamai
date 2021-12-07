@@ -11,8 +11,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use `AppSecThreatIntel` resource to update threat intelligence setting for a policy. Only applies to ASE Manual rulesets. Allowed values are on and off
-// __BETA__ This is Adaptive Security Engine(ASE) related data resource. Please contact your akamai representative if you want to learn more
+// **Scopes**: Security policy
+//
+// Enables or disables threat intelligence for a security policy. This resource is only available to organizations running the Adaptive Security Engine (ASE) beta Please contact your Akamai representative for more information.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/threat-intel](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putthreatintelligence)
 //
 // ## Example Usage
 //
@@ -28,7 +31,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -37,8 +40,8 @@ import (
 // 		}
 // 		_, err = akamai.NewAppSecThreatIntel(ctx, "threatIntel", &akamai.AppSecThreatIntelArgs{
 // 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.Any(_var.Security_policy_id),
-// 			ThreatIntel:      pulumi.Any(_var.Threat_intel),
+// 			SecurityPolicyId: pulumi.String("gms1_134637"),
+// 			ThreatIntel:      pulumi.String("on"),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -50,11 +53,11 @@ import (
 type AppSecThreatIntel struct {
 	pulumi.CustomResourceState
 
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
-	// threat_intel - "on" or "off"
+	// . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
 	ThreatIntel pulumi.StringOutput `pulumi:"threatIntel"`
 }
 
@@ -96,20 +99,20 @@ func GetAppSecThreatIntel(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecThreatIntel resources.
 type appSecThreatIntelState struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
 	ConfigId *int `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// threat_intel - "on" or "off"
+	// . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
 	ThreatIntel *string `pulumi:"threatIntel"`
 }
 
 type AppSecThreatIntelState struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
 	ConfigId pulumi.IntPtrInput
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
 	SecurityPolicyId pulumi.StringPtrInput
-	// threat_intel - "on" or "off"
+	// . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
 	ThreatIntel pulumi.StringPtrInput
 }
 
@@ -118,21 +121,21 @@ func (AppSecThreatIntelState) ElementType() reflect.Type {
 }
 
 type appSecThreatIntelArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// threat_intel - "on" or "off"
+	// . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
 	ThreatIntel string `pulumi:"threatIntel"`
 }
 
 // The set of arguments for constructing a AppSecThreatIntel resource.
 type AppSecThreatIntelArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
 	ConfigId pulumi.IntInput
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
 	SecurityPolicyId pulumi.StringInput
-	// threat_intel - "on" or "off"
+	// . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
 	ThreatIntel pulumi.StringInput
 }
 

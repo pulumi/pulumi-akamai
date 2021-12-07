@@ -13,7 +13,11 @@ namespace Pulumi.Akamai
     public static class GetAppSecApiEndpoints
     {
         /// <summary>
-        /// Use the `akamai.getAppSecApiEndpoints` data source to retrieve information about the API Endpoints associated with a security policy or configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapiendpoints).
+        /// **Scopes**: Security configuration; security policy
+        /// 
+        /// Returns information about the API endpoints associated with a security policy or configuration. The returned information is described in the [Endpoint members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#apiendpoint) section of the Application Security API documentation.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/api-endpoints](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapiendpoints)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -31,8 +35,8 @@ namespace Pulumi.Akamai
         ///     {
         ///         var apiEndpoints = Output.Create(Akamai.GetAppSecApiEndpoints.InvokeAsync(new Akamai.GetAppSecApiEndpointsArgs
         ///         {
-        ///             ApiName = "TestEndpoint",
-        ///             ConfigId = 43253,
+        ///             ApiName = "Contracts",
+        ///             ConfigId = 58843,
         ///         }));
         ///     }
         /// 
@@ -40,12 +44,23 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `id_list`. List of API endpoint IDs.
+        /// - `json`. JSON-formatted list of information about the API endpoints.
+        /// - `output_text`. Tabular report showing the ID and name of the API endpoints.
         /// </summary>
         public static Task<GetAppSecApiEndpointsResult> InvokeAsync(GetAppSecApiEndpointsArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecApiEndpointsResult>("akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints", args ?? new GetAppSecApiEndpointsArgs(), options.WithVersion());
 
         /// <summary>
-        /// Use the `akamai.getAppSecApiEndpoints` data source to retrieve information about the API Endpoints associated with a security policy or configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapiendpoints).
+        /// **Scopes**: Security configuration; security policy
+        /// 
+        /// Returns information about the API endpoints associated with a security policy or configuration. The returned information is described in the [Endpoint members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#apiendpoint) section of the Application Security API documentation.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/api-endpoints](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapiendpoints)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -63,8 +78,8 @@ namespace Pulumi.Akamai
         ///     {
         ///         var apiEndpoints = Output.Create(Akamai.GetAppSecApiEndpoints.InvokeAsync(new Akamai.GetAppSecApiEndpointsArgs
         ///         {
-        ///             ApiName = "TestEndpoint",
-        ///             ConfigId = 43253,
+        ///             ApiName = "Contracts",
+        ///             ConfigId = 58843,
         ///         }));
         ///     }
         /// 
@@ -72,6 +87,13 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `id_list`. List of API endpoint IDs.
+        /// - `json`. JSON-formatted list of information about the API endpoints.
+        /// - `output_text`. Tabular report showing the ID and name of the API endpoints.
         /// </summary>
         public static Output<GetAppSecApiEndpointsResult> Invoke(GetAppSecApiEndpointsInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecApiEndpointsResult>("akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints", args ?? new GetAppSecApiEndpointsInvokeArgs(), options.WithVersion());
@@ -81,19 +103,19 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecApiEndpointsArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name of a specific endpoint.
+        /// . Name of the API endpoint you want to return information for. If not included, information is returned for all your API endpoints.
         /// </summary>
         [Input("apiName")]
         public string? ApiName { get; set; }
 
         /// <summary>
-        /// The configuration ID.
+        /// . Unique identifier of the security configuration associated with the API endpoints.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the API endpoints. If not included, information is returned for all your security policies.
         /// </summary>
         [Input("securityPolicyId")]
         public string? SecurityPolicyId { get; set; }
@@ -106,19 +128,19 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecApiEndpointsInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name of a specific endpoint.
+        /// . Name of the API endpoint you want to return information for. If not included, information is returned for all your API endpoints.
         /// </summary>
         [Input("apiName")]
         public Input<string>? ApiName { get; set; }
 
         /// <summary>
-        /// The configuration ID.
+        /// . Unique identifier of the security configuration associated with the API endpoints.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the API endpoints. If not included, information is returned for all your security policies.
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
@@ -138,17 +160,8 @@ namespace Pulumi.Akamai
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A list of IDs of the API endpoints.
-        /// </summary>
         public readonly ImmutableArray<int> IdLists;
-        /// <summary>
-        /// A JSON-formatted list of information about the API endpoints.
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// A tabular display showing the ID and name of the API endpoints.
-        /// </summary>
         public readonly string OutputText;
         public readonly string? SecurityPolicyId;
 

@@ -53,9 +53,6 @@ class GetAppSecRatePolicyActionsResult:
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display showing the ID IPv4Action and IPv6Action of the indicated security policy.
-        """
         return pulumi.get(self, "output_text")
 
     @property
@@ -87,7 +84,11 @@ def get_app_sec_rate_policy_actions(config_id: Optional[int] = None,
                                     security_policy_id: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecRatePolicyActionsResult:
     """
-    Use the `get_app_sec_rate_policy_actions` data source to retrieve a list of all rate policies associated with a given configuration and security policy, or the actions associated with a specific rate policy.
+    **Scopes**: Security policy; rate policy
+
+    Returns information about your rate policy actions, Actions specify what happens any time a rate policy is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.
+
+    **Related API Endpoint:** [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rate-policies](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getratepolicyactions)
 
     ## Example Usage
 
@@ -97,16 +98,21 @@ def get_app_sec_rate_policy_actions(config_id: Optional[int] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     rate_policy_actions_app_sec_rate_policy_actions = akamai.get_app_sec_rate_policy_actions(config_id=configuration.config_id,
-        security_policy_id=var["security_policy_id"])
+        security_policy_id="gms1_134637")
     pulumi.export("ratePolicyActions", rate_policy_actions_app_sec_rate_policy_actions.output_text)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `output_text`. Tabular report showing the ID, IPv4 action, and IPv6 action of the rate policies.
 
 
-    :param int config_id: The ID of the security configuration to use.
-    :param int rate_policy_id: The ID of the rate policy to use. If not supplied, information about all rate policies will be returned.
-    :param str security_policy_id: The ID of the security policy to use.
+    :param int config_id: . Unique identifier of the security configuration associated with the rate policies and rate policy actions.
+    :param int rate_policy_id: . Unique identifier of the rate policy you want to return action information for. If not included, action information is returned for all your rate policies.
+    :param str security_policy_id: . Unique identifier of the security policy associated with the rate policies and rate policy actions.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -132,7 +138,11 @@ def get_app_sec_rate_policy_actions_output(config_id: Optional[pulumi.Input[int]
                                            security_policy_id: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecRatePolicyActionsResult]:
     """
-    Use the `get_app_sec_rate_policy_actions` data source to retrieve a list of all rate policies associated with a given configuration and security policy, or the actions associated with a specific rate policy.
+    **Scopes**: Security policy; rate policy
+
+    Returns information about your rate policy actions, Actions specify what happens any time a rate policy is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.
+
+    **Related API Endpoint:** [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rate-policies](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getratepolicyactions)
 
     ## Example Usage
 
@@ -142,15 +152,20 @@ def get_app_sec_rate_policy_actions_output(config_id: Optional[pulumi.Input[int]
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     rate_policy_actions_app_sec_rate_policy_actions = akamai.get_app_sec_rate_policy_actions(config_id=configuration.config_id,
-        security_policy_id=var["security_policy_id"])
+        security_policy_id="gms1_134637")
     pulumi.export("ratePolicyActions", rate_policy_actions_app_sec_rate_policy_actions.output_text)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `output_text`. Tabular report showing the ID, IPv4 action, and IPv6 action of the rate policies.
 
 
-    :param int config_id: The ID of the security configuration to use.
-    :param int rate_policy_id: The ID of the rate policy to use. If not supplied, information about all rate policies will be returned.
-    :param str security_policy_id: The ID of the security policy to use.
+    :param int config_id: . Unique identifier of the security configuration associated with the rate policies and rate policy actions.
+    :param int rate_policy_id: . Unique identifier of the rate policy you want to return action information for. If not included, action information is returned for all your rate policies.
+    :param str security_policy_id: . Unique identifier of the security policy associated with the rate policies and rate policy actions.
     """
     ...

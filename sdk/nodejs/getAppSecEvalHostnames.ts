@@ -5,7 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecEvalHostnames` data source to retrieve the evaluation hostnames for a configuration. Evaluation mode for hostnames is only available for Web Application Protector. Run hostnames in evaluation mode to see how your configuration settings protect traffic for that hostname before adding a hostname directly to a live configuration. An evaluation period lasts four weeks unless you stop the evaluation. Once you begin, the hostnames you evaluate start responding to traffic as if they are your current hostnames. However, instead of taking an action the evaluation hostnames log which action they would have taken if they were your actively-protected hostnames and not a test.
+ * **Scopes**: Security configuration
+ *
+ * Returns the evaluation hostnames for a configuration. In evaluation mode, you use evaluation hosts to monitor how well your configuration settings protects host traffic. (Note that the evaluation host isn't actually protected, and the host takes no action other than recording the actions it would have taken had it been on the production network).
+ *
+ * Evaluation mode for hostnames is only available for organizations running Web Application Protector.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames/eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getevaluationhostnames)
  *
  * ## Example Usage
  *
@@ -16,7 +22,7 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const evalHostnamesAppSecEvalHostnames = configuration.then(configuration => akamai.getAppSecEvalHostnames({
  *     configId: configuration.configId,
@@ -25,6 +31,13 @@ import * as utilities from "./utilities";
  * export const evalHostnamesOutput = evalHostnamesAppSecEvalHostnames.then(evalHostnamesAppSecEvalHostnames => evalHostnamesAppSecEvalHostnames.outputText);
  * export const evalHostnamesJson = evalHostnamesAppSecEvalHostnames.then(evalHostnamesAppSecEvalHostnames => evalHostnamesAppSecEvalHostnames.json);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `hostnames`. List of evaluation hostnames.
+ * - `json`. JSON-formatted list of evaluation hostnames.
+ * - `outputText`. Tabular report showing evaluation hostnames.
  */
 export function getAppSecEvalHostnames(args: GetAppSecEvalHostnamesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecEvalHostnamesResult> {
     if (!opts) {
@@ -44,7 +57,7 @@ export function getAppSecEvalHostnames(args: GetAppSecEvalHostnamesArgs, opts?: 
  */
 export interface GetAppSecEvalHostnamesArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration running in evaluation mode.
      */
     configId: number;
 }
@@ -54,21 +67,12 @@ export interface GetAppSecEvalHostnamesArgs {
  */
 export interface GetAppSecEvalHostnamesResult {
     readonly configId: number;
-    /**
-     * A list of the evaluation hostnames.
-     */
     readonly hostnames: string[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted list of the evaluation hostnames.
-     */
     readonly json: string;
-    /**
-     * A tabular display showing the evaluation hostnames.
-     */
     readonly outputText: string;
 }
 
@@ -81,7 +85,7 @@ export function getAppSecEvalHostnamesOutput(args: GetAppSecEvalHostnamesOutputA
  */
 export interface GetAppSecEvalHostnamesOutputArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration running in evaluation mode.
      */
     configId: pulumi.Input<number>;
 }

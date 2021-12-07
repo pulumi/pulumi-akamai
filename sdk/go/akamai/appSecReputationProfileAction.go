@@ -11,7 +11,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecReputationProfileAction` resource to update what action should be taken when a reputation profile's rule is triggered.
+// **Scopes**: Reputation profile
+//
+// Modifies the action taken when a reputation profile is triggered.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-profiles/{reputationProfileId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putreputationprofileaction)
 //
 // ## Example Usage
 //
@@ -27,7 +31,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -36,14 +40,14 @@ import (
 // 		}
 // 		appsecReputationProfileAction, err := akamai.NewAppSecReputationProfileAction(ctx, "appsecReputationProfileAction", &akamai.AppSecReputationProfileActionArgs{
 // 			ConfigId:            pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId:    pulumi.Any(_var.Security_policy_id),
-// 			ReputationProfileId: pulumi.Any(akamai_appsec_reputation_profile.Reputation_profile.Id),
+// 			SecurityPolicyId:    pulumi.String("gms1_134637"),
+// 			ReputationProfileId: pulumi.Int(130713),
 // 			Action:              pulumi.String("alert"),
 // 		})
 // 		if err != nil {
 // 			return err
 // 		}
-// 		ctx.Export("reputationProfileId", akamai_appsec_reputation_profile.Reputation_profile.Reputation_profile_id)
+// 		ctx.Export("reputationProfileId", appsecReputationProfileAction.ReputationProfileId)
 // 		ctx.Export("reputationProfileAction", appsecReputationProfileAction.Action)
 // 		return nil
 // 	})
@@ -52,13 +56,17 @@ import (
 type AppSecReputationProfileAction struct {
 	pulumi.CustomResourceState
 
-	// The action to take when the specified reputation profile’s rule is triggered: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+	// . Action taken any time the reputation profile is triggered. Allows values are:
+	// - **alert**. Record the event.
+	// - **deny**. Block the request.
+	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+	// - **none**. Take no action.
 	Action pulumi.StringOutput `pulumi:"action"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the reputation profile action being modified.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// The ID of the reputation profile to use.
+	// . Unique identifier of the reputation profile whose action is being modified.
 	ReputationProfileId pulumi.IntOutput `pulumi:"reputationProfileId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the reputation profile action being modified.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
 
@@ -103,24 +111,32 @@ func GetAppSecReputationProfileAction(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecReputationProfileAction resources.
 type appSecReputationProfileActionState struct {
-	// The action to take when the specified reputation profile’s rule is triggered: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+	// . Action taken any time the reputation profile is triggered. Allows values are:
+	// - **alert**. Record the event.
+	// - **deny**. Block the request.
+	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+	// - **none**. Take no action.
 	Action *string `pulumi:"action"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the reputation profile action being modified.
 	ConfigId *int `pulumi:"configId"`
-	// The ID of the reputation profile to use.
+	// . Unique identifier of the reputation profile whose action is being modified.
 	ReputationProfileId *int `pulumi:"reputationProfileId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the reputation profile action being modified.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppSecReputationProfileActionState struct {
-	// The action to take when the specified reputation profile’s rule is triggered: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+	// . Action taken any time the reputation profile is triggered. Allows values are:
+	// - **alert**. Record the event.
+	// - **deny**. Block the request.
+	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+	// - **none**. Take no action.
 	Action pulumi.StringPtrInput
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the reputation profile action being modified.
 	ConfigId pulumi.IntPtrInput
-	// The ID of the reputation profile to use.
+	// . Unique identifier of the reputation profile whose action is being modified.
 	ReputationProfileId pulumi.IntPtrInput
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the reputation profile action being modified.
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -129,25 +145,33 @@ func (AppSecReputationProfileActionState) ElementType() reflect.Type {
 }
 
 type appSecReputationProfileActionArgs struct {
-	// The action to take when the specified reputation profile’s rule is triggered: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+	// . Action taken any time the reputation profile is triggered. Allows values are:
+	// - **alert**. Record the event.
+	// - **deny**. Block the request.
+	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+	// - **none**. Take no action.
 	Action string `pulumi:"action"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the reputation profile action being modified.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the reputation profile to use.
+	// . Unique identifier of the reputation profile whose action is being modified.
 	ReputationProfileId int `pulumi:"reputationProfileId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the reputation profile action being modified.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // The set of arguments for constructing a AppSecReputationProfileAction resource.
 type AppSecReputationProfileActionArgs struct {
-	// The action to take when the specified reputation profile’s rule is triggered: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+	// . Action taken any time the reputation profile is triggered. Allows values are:
+	// - **alert**. Record the event.
+	// - **deny**. Block the request.
+	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+	// - **none**. Take no action.
 	Action pulumi.StringInput
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the reputation profile action being modified.
 	ConfigId pulumi.IntInput
-	// The ID of the reputation profile to use.
+	// . Unique identifier of the reputation profile whose action is being modified.
 	ReputationProfileId pulumi.IntInput
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the reputation profile action being modified.
 	SecurityPolicyId pulumi.StringInput
 }
 

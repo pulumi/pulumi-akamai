@@ -4,9 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * The `resourceAkamaiAppsecApiRequestConstraints` resource allows you to update what action to take when the API request constraint triggers. This operation modifies an individual API constraint action. To use this operation, use the `akamai.getAppSecApiEndpoints` data source to list one or all API endpoints, and use the ID of the selected endpoint. Use the `action` paameter to specify how the alert should be handled.
- */
 export class AppSecApiRequestConstraints extends pulumi.CustomResource {
     /**
      * Get an existing AppSecApiRequestConstraints resource's state with the given name, ID, and optional extra
@@ -36,19 +33,23 @@ export class AppSecApiRequestConstraints extends pulumi.CustomResource {
     }
 
     /**
-     * The action to assign to API request constraints: either `alert`, `deny`, or `none`.
+     * . Action to assign to the API request constraint. Allowed values are:
+     * - **alert**, Record the event.
+     * - **deny**. Block the request.
+     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+     * - **none**. Take no action.
      */
     public readonly action!: pulumi.Output<string>;
     /**
-     * The ID of the API endpoint to use.
+     * . ID of the API endpoint the constraint will be assigned to.
      */
     public readonly apiEndpointId!: pulumi.Output<number | undefined>;
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the API request constraint settings being modified.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the API request constraint settings being modified.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
@@ -97,19 +98,23 @@ export class AppSecApiRequestConstraints extends pulumi.CustomResource {
  */
 export interface AppSecApiRequestConstraintsState {
     /**
-     * The action to assign to API request constraints: either `alert`, `deny`, or `none`.
+     * . Action to assign to the API request constraint. Allowed values are:
+     * - **alert**, Record the event.
+     * - **deny**. Block the request.
+     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+     * - **none**. Take no action.
      */
     action?: pulumi.Input<string>;
     /**
-     * The ID of the API endpoint to use.
+     * . ID of the API endpoint the constraint will be assigned to.
      */
     apiEndpointId?: pulumi.Input<number>;
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the API request constraint settings being modified.
      */
     configId?: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the API request constraint settings being modified.
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -119,19 +124,23 @@ export interface AppSecApiRequestConstraintsState {
  */
 export interface AppSecApiRequestConstraintsArgs {
     /**
-     * The action to assign to API request constraints: either `alert`, `deny`, or `none`.
+     * . Action to assign to the API request constraint. Allowed values are:
+     * - **alert**, Record the event.
+     * - **deny**. Block the request.
+     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+     * - **none**. Take no action.
      */
     action: pulumi.Input<string>;
     /**
-     * The ID of the API endpoint to use.
+     * . ID of the API endpoint the constraint will be assigned to.
      */
     apiEndpointId?: pulumi.Input<number>;
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the API request constraint settings being modified.
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the API request constraint settings being modified.
      */
     securityPolicyId: pulumi.Input<string>;
 }

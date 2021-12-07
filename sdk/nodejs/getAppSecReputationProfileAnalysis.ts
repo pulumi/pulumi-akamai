@@ -5,7 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecReputationProfileAnalysis` data source to retrieve information about the current reputation analysis settings. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getreputationanalysis).
+ * **Scopes**: Security policy
+ *
+ * Returns information about the following two reputation analysis settings:
+ *
+ * - `forwardToHTTPHeader`. When enabled, client reputation information associated with a request is forwarded to origin servers by using an HTTP header.
+ * - `forwardSharedIPToHTTPHeaderAndSIEM`. When enabled, both the HTTP header and SIEM integration events include a value indicating that the IP addresses is shared address.
+ *
+ * The returned information is described in the [ReputationAnalysis members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#f06bb20c) section of the Application Security API.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getreputationanalysis)
  *
  * ## Example Usage
  *
@@ -16,15 +25,21 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const reputationAnalysis = configuration.then(configuration => akamai.getAppSecReputationProfileAnalysis({
  *     configId: configuration.configId,
- *     securityPolicyId: _var.security_policy_id,
+ *     securityPolicyId: "gms1_134637",
  * }));
  * export const reputationAnalysisText = reputationAnalysis.then(reputationAnalysis => reputationAnalysis.outputText);
  * export const reputationAnalysisJson = reputationAnalysis.then(reputationAnalysis => reputationAnalysis.json);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. JSON-formatted list of the reputation analysis settings.
+ * - `outputText`. Tabular report showing the reputation analysis settings.
  */
 export function getAppSecReputationProfileAnalysis(args: GetAppSecReputationProfileAnalysisArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecReputationProfileAnalysisResult> {
     if (!opts) {
@@ -45,11 +60,11 @@ export function getAppSecReputationProfileAnalysis(args: GetAppSecReputationProf
  */
 export interface GetAppSecReputationProfileAnalysisArgs {
     /**
-     * The configuration ID to use.
+     * . Unique identifier of the security configuration associated with the reputation profile analysis settings.
      */
     configId: number;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the reputation profile analysis settings.
      */
     securityPolicyId: string;
 }
@@ -63,13 +78,7 @@ export interface GetAppSecReputationProfileAnalysisResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted list of the reputation analysis settings.
-     */
     readonly json: string;
-    /**
-     * A tabular display showing the reputation analysis settings.
-     */
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
@@ -83,11 +92,11 @@ export function getAppSecReputationProfileAnalysisOutput(args: GetAppSecReputati
  */
 export interface GetAppSecReputationProfileAnalysisOutputArgs {
     /**
-     * The configuration ID to use.
+     * . Unique identifier of the security configuration associated with the reputation profile analysis settings.
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the reputation profile analysis settings.
      */
     securityPolicyId: pulumi.Input<string>;
 }

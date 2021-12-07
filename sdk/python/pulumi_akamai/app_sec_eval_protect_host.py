@@ -17,8 +17,8 @@ class AppSecEvalProtectHostArgs:
                  hostnames: pulumi.Input[Sequence[pulumi.Input[str]]]):
         """
         The set of arguments for constructing a AppSecEvalProtectHost resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: The evaluation hostnames to be moved to active protection.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration in evaluation mode.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: . JSON array of the hostnames to be moved from the evaluation hostname list to the protected hostname list.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "hostnames", hostnames)
@@ -27,7 +27,7 @@ class AppSecEvalProtectHostArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration in evaluation mode.
         """
         return pulumi.get(self, "config_id")
 
@@ -39,7 +39,7 @@ class AppSecEvalProtectHostArgs:
     @pulumi.getter
     def hostnames(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
-        The evaluation hostnames to be moved to active protection.
+        . JSON array of the hostnames to be moved from the evaluation hostname list to the protected hostname list.
         """
         return pulumi.get(self, "hostnames")
 
@@ -55,8 +55,8 @@ class _AppSecEvalProtectHostState:
                  hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering AppSecEvalProtectHost resources.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: The evaluation hostnames to be moved to active protection.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration in evaluation mode.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: . JSON array of the hostnames to be moved from the evaluation hostname list to the protected hostname list.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -67,7 +67,7 @@ class _AppSecEvalProtectHostState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration in evaluation mode.
         """
         return pulumi.get(self, "config_id")
 
@@ -79,7 +79,7 @@ class _AppSecEvalProtectHostState:
     @pulumi.getter
     def hostnames(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The evaluation hostnames to be moved to active protection.
+        . JSON array of the hostnames to be moved from the evaluation hostname list to the protected hostname list.
         """
         return pulumi.get(self, "hostnames")
 
@@ -97,7 +97,11 @@ class AppSecEvalProtectHost(pulumi.CustomResource):
                  hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        The `resource_akamai_appsec_eval_protect_host` resource allows you to move hostnames that you are evaluating to active protection. When you move a hostname from the evaluation hostnames list, it’s added to your security policy as a protected hostname.
+        **Scopes**: Security configuration
+
+        Moves hostnames being evaluated to active protection. When you move a hostname from the evaluation hostnames list that host is added to your security policy as a protected hostname and is removed from the collection of hosts being evaluated.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/protect-eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putmoveevaluationhostnamestoprotection)
 
         ## Example Usage
 
@@ -107,7 +111,7 @@ class AppSecEvalProtectHost(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         eval_hostnames = akamai.get_app_sec_eval_hostnames(config_id=configuration.config_id)
         protect_host = akamai.AppSecEvalProtectHost("protectHost",
             config_id=configuration.config_id,
@@ -116,8 +120,8 @@ class AppSecEvalProtectHost(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: The evaluation hostnames to be moved to active protection.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration in evaluation mode.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: . JSON array of the hostnames to be moved from the evaluation hostname list to the protected hostname list.
         """
         ...
     @overload
@@ -126,7 +130,11 @@ class AppSecEvalProtectHost(pulumi.CustomResource):
                  args: AppSecEvalProtectHostArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        The `resource_akamai_appsec_eval_protect_host` resource allows you to move hostnames that you are evaluating to active protection. When you move a hostname from the evaluation hostnames list, it’s added to your security policy as a protected hostname.
+        **Scopes**: Security configuration
+
+        Moves hostnames being evaluated to active protection. When you move a hostname from the evaluation hostnames list that host is added to your security policy as a protected hostname and is removed from the collection of hosts being evaluated.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/protect-eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putmoveevaluationhostnamestoprotection)
 
         ## Example Usage
 
@@ -136,7 +144,7 @@ class AppSecEvalProtectHost(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         eval_hostnames = akamai.get_app_sec_eval_hostnames(config_id=configuration.config_id)
         protect_host = akamai.AppSecEvalProtectHost("protectHost",
             config_id=configuration.config_id,
@@ -197,8 +205,8 @@ class AppSecEvalProtectHost(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: The evaluation hostnames to be moved to active protection.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration in evaluation mode.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: . JSON array of the hostnames to be moved from the evaluation hostname list to the protected hostname list.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -212,7 +220,7 @@ class AppSecEvalProtectHost(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration in evaluation mode.
         """
         return pulumi.get(self, "config_id")
 
@@ -220,7 +228,7 @@ class AppSecEvalProtectHost(pulumi.CustomResource):
     @pulumi.getter
     def hostnames(self) -> pulumi.Output[Sequence[str]]:
         """
-        The evaluation hostnames to be moved to active protection.
+        . JSON array of the hostnames to be moved from the evaluation hostname list to the protected hostname list.
         """
         return pulumi.get(self, "hostnames")
 

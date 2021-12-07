@@ -10,8 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecThreatIntel` data source to view threat intelligence setting for a policy
-// __BETA__ This is Adaptive Security Engine(ASE) related data source. Please contact your akamai representative if you want to learn more
+// **Scopes**: Security policy
+//
+// Returns threat intelligence settings for a security policy Note that this data source is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information on ASE, please contact your Akamai representative.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/threat-intel](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getthreatintelligence)l
 //
 // ## Example Usage
 //
@@ -27,7 +30,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -36,7 +39,7 @@ import (
 // 		}
 // 		threatIntelAppSecThreatIntel, err := akamai.LookupAppSecThreatIntel(ctx, &GetAppSecThreatIntelArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: _var.Security_policy_id,
+// 			SecurityPolicyId: "gms1_134637",
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -48,6 +51,13 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `threatIntel`. Reports the threat Intelligence setting, either **on** or **off**.
+// - `json`. JSON-formatted threat intelligence report
+// - `outputText`. Tabular report of the threat intelligence information.
 func LookupAppSecThreatIntel(ctx *pulumi.Context, args *LookupAppSecThreatIntelArgs, opts ...pulumi.InvokeOption) (*LookupAppSecThreatIntelResult, error) {
 	var rv LookupAppSecThreatIntelResult
 	err := ctx.Invoke("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", args, &rv, opts...)
@@ -59,9 +69,9 @@ func LookupAppSecThreatIntel(ctx *pulumi.Context, args *LookupAppSecThreatIntelA
 
 // A collection of arguments for invoking getAppSecThreatIntel.
 type LookupAppSecThreatIntelArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the threat intelligence settings.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the threat intelligence settings.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -69,14 +79,11 @@ type LookupAppSecThreatIntelArgs struct {
 type LookupAppSecThreatIntelResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted threat intelligence object
-	Json string `pulumi:"json"`
-	// A tabular display of the threat intel information.
+	Id               string `pulumi:"id"`
+	Json             string `pulumi:"json"`
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// Threat Intelligence setting, either `on` or `off`.
-	ThreatIntel string `pulumi:"threatIntel"`
+	ThreatIntel      string `pulumi:"threatIntel"`
 }
 
 func LookupAppSecThreatIntelOutput(ctx *pulumi.Context, args LookupAppSecThreatIntelOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecThreatIntelResultOutput {
@@ -90,9 +97,9 @@ func LookupAppSecThreatIntelOutput(ctx *pulumi.Context, args LookupAppSecThreatI
 
 // A collection of arguments for invoking getAppSecThreatIntel.
 type LookupAppSecThreatIntelOutputArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the threat intelligence settings.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the threat intelligence settings.
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 
@@ -124,12 +131,10 @@ func (o LookupAppSecThreatIntelResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecThreatIntelResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted threat intelligence object
 func (o LookupAppSecThreatIntelResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecThreatIntelResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display of the threat intel information.
 func (o LookupAppSecThreatIntelResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecThreatIntelResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
@@ -138,7 +143,6 @@ func (o LookupAppSecThreatIntelResultOutput) SecurityPolicyId() pulumi.StringOut
 	return o.ApplyT(func(v LookupAppSecThreatIntelResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
-// Threat Intelligence setting, either `on` or `off`.
 func (o LookupAppSecThreatIntelResultOutput) ThreatIntel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecThreatIntelResult) string { return v.ThreatIntel }).(pulumi.StringOutput)
 }

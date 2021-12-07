@@ -12,101 +12,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecRules
     {
-        /// <summary>
-        /// Use the `akamai.getAppSecRules` data source to list the action and condition-exception information for a rule or rules.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = @var.Security_configuration,
-        ///         }));
-        ///         var rule = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecRules.InvokeAsync(new Akamai.GetAppSecRulesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
-        ///             RuleId = @var.Rule_id,
-        ///         })));
-        ///         this.RuleAction = akamai_appsec_rules.Rule.Rule_action;
-        ///         this.ConditionException = akamai_appsec_rules.Rule.Condition_exception;
-        ///         this.Json = akamai_appsec_rules.Rule.Json;
-        ///         this.OutputText = akamai_appsec_rules.Rule.Output_text;
-        ///     }
-        /// 
-        ///     [Output("ruleAction")]
-        ///     public Output&lt;string&gt; RuleAction { get; set; }
-        ///     [Output("conditionException")]
-        ///     public Output&lt;string&gt; ConditionException { get; set; }
-        ///     [Output("json")]
-        ///     public Output&lt;string&gt; Json { get; set; }
-        ///     [Output("outputText")]
-        ///     public Output&lt;string&gt; OutputText { get; set; }
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// </summary>
         public static Task<GetAppSecRulesResult> InvokeAsync(GetAppSecRulesArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecRulesResult>("akamai:index/getAppSecRules:getAppSecRules", args ?? new GetAppSecRulesArgs(), options.WithVersion());
 
-        /// <summary>
-        /// Use the `akamai.getAppSecRules` data source to list the action and condition-exception information for a rule or rules.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = @var.Security_configuration,
-        ///         }));
-        ///         var rule = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecRules.InvokeAsync(new Akamai.GetAppSecRulesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
-        ///             RuleId = @var.Rule_id,
-        ///         })));
-        ///         this.RuleAction = akamai_appsec_rules.Rule.Rule_action;
-        ///         this.ConditionException = akamai_appsec_rules.Rule.Condition_exception;
-        ///         this.Json = akamai_appsec_rules.Rule.Json;
-        ///         this.OutputText = akamai_appsec_rules.Rule.Output_text;
-        ///     }
-        /// 
-        ///     [Output("ruleAction")]
-        ///     public Output&lt;string&gt; RuleAction { get; set; }
-        ///     [Output("conditionException")]
-        ///     public Output&lt;string&gt; ConditionException { get; set; }
-        ///     [Output("json")]
-        ///     public Output&lt;string&gt; Json { get; set; }
-        ///     [Output("outputText")]
-        ///     public Output&lt;string&gt; OutputText { get; set; }
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// </summary>
         public static Output<GetAppSecRulesResult> Invoke(GetAppSecRulesInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecRulesResult>("akamai:index/getAppSecRules:getAppSecRules", args ?? new GetAppSecRulesInvokeArgs(), options.WithVersion());
     }
@@ -115,19 +23,19 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecRulesArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the rules.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
         /// <summary>
-        /// The ID of the rule to use. If not specified, information about all rules will be returned.
+        /// . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
         /// </summary>
         [Input("ruleId")]
         public int? RuleId { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the rules.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
@@ -140,19 +48,19 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecRulesInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the rules.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the rule to use. If not specified, information about all rules will be returned.
+        /// . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
         /// </summary>
         [Input("ruleId")]
         public Input<int>? RuleId { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the rules.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -166,28 +74,14 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetAppSecRulesResult
     {
-        /// <summary>
-        /// The rule's conditions and exceptions.
-        /// </summary>
         public readonly string ConditionException;
         public readonly int ConfigId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A JSON-formatted list of the action and condition-exception information for the specified rule.
-        /// This output is only generated if a rule is specified.
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// A tabular display showing, for the specified rule or rules, the rule action and boolean values
-        /// indicating whether conditions and exceptions are present.
-        /// </summary>
         public readonly string OutputText;
-        /// <summary>
-        /// The rule's action, either `alert`, `deny`, or `none`.
-        /// </summary>
         public readonly string RuleAction;
         public readonly int? RuleId;
         public readonly string SecurityPolicyId;

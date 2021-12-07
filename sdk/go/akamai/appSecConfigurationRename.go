@@ -11,7 +11,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The `AppSecConfigurationRename` resource allows you to rename an existing security configuration.
+// **Scopes**: Security configuration
+//
+// Renames an existing security configuration.
+// Note that you can only change the configuration name.
+// The ID assigned to a security configuration can not be modified.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putrenameconfiguration)
 //
 // ## Example Usage
 //
@@ -27,7 +33,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configurationAppSecConfiguration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -36,7 +42,7 @@ import (
 // 		}
 // 		_, err = akamai.NewAppSecConfigurationRename(ctx, "configurationAppSecConfigurationRename", &akamai.AppSecConfigurationRenameArgs{
 // 			ConfigId:    pulumi.Int(configurationAppSecConfiguration.ConfigId),
-// 			Description: pulumi.Any(_var.Description),
+// 			Description: pulumi.String("This configuration is by both the documentation team and the training team."),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -48,11 +54,11 @@ import (
 type AppSecConfigurationRename struct {
 	pulumi.CustomResourceState
 
-	// The ID of the security configuration to be renamed.
+	// . Unique identifier of the security configurating being renamed.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// The description to be applied to the configuration.
+	// . Brief description of the security configuration.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// The new name to be given to the configuration.
+	// . New name for the security configuration.
 	Name pulumi.StringOutput `pulumi:"name"`
 }
 
@@ -91,20 +97,20 @@ func GetAppSecConfigurationRename(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecConfigurationRename resources.
 type appSecConfigurationRenameState struct {
-	// The ID of the security configuration to be renamed.
+	// . Unique identifier of the security configurating being renamed.
 	ConfigId *int `pulumi:"configId"`
-	// The description to be applied to the configuration.
+	// . Brief description of the security configuration.
 	Description *string `pulumi:"description"`
-	// The new name to be given to the configuration.
+	// . New name for the security configuration.
 	Name *string `pulumi:"name"`
 }
 
 type AppSecConfigurationRenameState struct {
-	// The ID of the security configuration to be renamed.
+	// . Unique identifier of the security configurating being renamed.
 	ConfigId pulumi.IntPtrInput
-	// The description to be applied to the configuration.
+	// . Brief description of the security configuration.
 	Description pulumi.StringPtrInput
-	// The new name to be given to the configuration.
+	// . New name for the security configuration.
 	Name pulumi.StringPtrInput
 }
 
@@ -113,21 +119,21 @@ func (AppSecConfigurationRenameState) ElementType() reflect.Type {
 }
 
 type appSecConfigurationRenameArgs struct {
-	// The ID of the security configuration to be renamed.
+	// . Unique identifier of the security configurating being renamed.
 	ConfigId int `pulumi:"configId"`
-	// The description to be applied to the configuration.
+	// . Brief description of the security configuration.
 	Description string `pulumi:"description"`
-	// The new name to be given to the configuration.
+	// . New name for the security configuration.
 	Name *string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a AppSecConfigurationRename resource.
 type AppSecConfigurationRenameArgs struct {
-	// The ID of the security configuration to be renamed.
+	// . Unique identifier of the security configurating being renamed.
 	ConfigId pulumi.IntInput
-	// The description to be applied to the configuration.
+	// . Brief description of the security configuration.
 	Description pulumi.StringInput
-	// The new name to be given to the configuration.
+	// . New name for the security configuration.
 	Name pulumi.StringPtrInput
 }
 

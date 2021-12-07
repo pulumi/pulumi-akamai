@@ -21,12 +21,12 @@ class AppSecIPGeoArgs:
                  ip_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a AppSecIPGeo resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] mode: The mode to use for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] exception_ip_network_lists: The network lists to be allowed regardless of `mode`, `geo_network_lists`, and `ip_network_lists` parameters.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] geo_network_lists: The network lists to be blocked or allowed geographically.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_network_lists: The network lists to be blocked or allowd by IP address.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
+        :param pulumi.Input[str] mode: . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the IP/Geo lists being modified.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] exception_ip_network_lists: . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] geo_network_lists: . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_network_lists: . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "mode", mode)
@@ -42,7 +42,7 @@ class AppSecIPGeoArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -54,7 +54,7 @@ class AppSecIPGeoArgs:
     @pulumi.getter
     def mode(self) -> pulumi.Input[str]:
         """
-        The mode to use for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
+        . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
         """
         return pulumi.get(self, "mode")
 
@@ -66,7 +66,7 @@ class AppSecIPGeoArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the IP/Geo lists being modified.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -78,7 +78,7 @@ class AppSecIPGeoArgs:
     @pulumi.getter(name="exceptionIpNetworkLists")
     def exception_ip_network_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The network lists to be allowed regardless of `mode`, `geo_network_lists`, and `ip_network_lists` parameters.
+        . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
         """
         return pulumi.get(self, "exception_ip_network_lists")
 
@@ -90,7 +90,7 @@ class AppSecIPGeoArgs:
     @pulumi.getter(name="geoNetworkLists")
     def geo_network_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The network lists to be blocked or allowed geographically.
+        . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
         """
         return pulumi.get(self, "geo_network_lists")
 
@@ -102,7 +102,7 @@ class AppSecIPGeoArgs:
     @pulumi.getter(name="ipNetworkLists")
     def ip_network_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The network lists to be blocked or allowd by IP address.
+        . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
         """
         return pulumi.get(self, "ip_network_lists")
 
@@ -122,12 +122,12 @@ class _AppSecIPGeoState:
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecIPGeo resources.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] exception_ip_network_lists: The network lists to be allowed regardless of `mode`, `geo_network_lists`, and `ip_network_lists` parameters.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] geo_network_lists: The network lists to be blocked or allowed geographically.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_network_lists: The network lists to be blocked or allowd by IP address.
-        :param pulumi.Input[str] mode: The mode to use for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] exception_ip_network_lists: . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] geo_network_lists: . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_network_lists: . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
+        :param pulumi.Input[str] mode: . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the IP/Geo lists being modified.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -146,7 +146,7 @@ class _AppSecIPGeoState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -158,7 +158,7 @@ class _AppSecIPGeoState:
     @pulumi.getter(name="exceptionIpNetworkLists")
     def exception_ip_network_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The network lists to be allowed regardless of `mode`, `geo_network_lists`, and `ip_network_lists` parameters.
+        . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
         """
         return pulumi.get(self, "exception_ip_network_lists")
 
@@ -170,7 +170,7 @@ class _AppSecIPGeoState:
     @pulumi.getter(name="geoNetworkLists")
     def geo_network_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The network lists to be blocked or allowed geographically.
+        . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
         """
         return pulumi.get(self, "geo_network_lists")
 
@@ -182,7 +182,7 @@ class _AppSecIPGeoState:
     @pulumi.getter(name="ipNetworkLists")
     def ip_network_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The network lists to be blocked or allowd by IP address.
+        . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
         """
         return pulumi.get(self, "ip_network_lists")
 
@@ -194,7 +194,7 @@ class _AppSecIPGeoState:
     @pulumi.getter
     def mode(self) -> Optional[pulumi.Input[str]]:
         """
-        The mode to use for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
+        . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
         """
         return pulumi.get(self, "mode")
 
@@ -206,7 +206,7 @@ class _AppSecIPGeoState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the IP/Geo lists being modified.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -228,7 +228,11 @@ class AppSecIPGeo(pulumi.CustomResource):
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Use the `AppSecIPGeo` resource to update the method and which network lists to use for IP/Geo firewall blocking.
+        **Scopes**: Security policy
+
+        Modifies the method used for firewall blocking, and manages the network lists used for IP/Geo firewall blocking.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putipgeofirewall)
 
         ## Example Usage
 
@@ -238,21 +242,20 @@ class AppSecIPGeo(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-        # USE CASE: user wants to update the IP/GEO firewall mode to "block specific IPs/Subnets and Geos" and update the IP list, GEO list & Exception list
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         ip_geo_block = akamai.AppSecIPGeo("ipGeoBlock",
             config_id=configuration.config_id,
-            security_policy_id=var["security_policy_id1"],
-            mode=var["block"],
-            geo_network_lists=var["geo_network_lists"],
-            ip_network_lists=var["ip_network_lists"],
-            exception_ip_network_lists=var["exception_ip_network_lists"])
-        # USE CASE: user wants to update the IP/GEO firewall mode to "block all traffic except IPs/Subnets in block exceptions" and update the Exception list
+            security_policy_id="gms1_134637",
+            mode="block",
+            geo_network_lists=["06038_GEO_TEST"],
+            ip_network_lists=["56921_TEST"],
+            exception_ip_network_lists=["07126_EXCEPTION_TEST"])
+        # USE CASE: User wants to update the IP/Geo firewall mode and update the exception list.
         ip_geo_allow = akamai.AppSecIPGeo("ipGeoAllow",
             config_id=configuration.config_id,
-            security_policy_id=var["security_policy_id2"],
-            mode=var["allow"],
-            exception_ip_network_lists=var["exception_ip_network_lists"])
+            security_policy_id="gms1-090334",
+            mode="allow",
+            exception_ip_network_lists=["07126_EXCEPTION_TEST"])
         pulumi.export("ipGeoModeBlock", ip_geo_block.mode)
         pulumi.export("blockGeoNetworkLists", ip_geo_block.geo_network_lists)
         pulumi.export("blockIpNetworkLists", ip_geo_block.ip_network_lists)
@@ -263,12 +266,12 @@ class AppSecIPGeo(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] exception_ip_network_lists: The network lists to be allowed regardless of `mode`, `geo_network_lists`, and `ip_network_lists` parameters.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] geo_network_lists: The network lists to be blocked or allowed geographically.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_network_lists: The network lists to be blocked or allowd by IP address.
-        :param pulumi.Input[str] mode: The mode to use for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] exception_ip_network_lists: . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] geo_network_lists: . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_network_lists: . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
+        :param pulumi.Input[str] mode: . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the IP/Geo lists being modified.
         """
         ...
     @overload
@@ -277,7 +280,11 @@ class AppSecIPGeo(pulumi.CustomResource):
                  args: AppSecIPGeoArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `AppSecIPGeo` resource to update the method and which network lists to use for IP/Geo firewall blocking.
+        **Scopes**: Security policy
+
+        Modifies the method used for firewall blocking, and manages the network lists used for IP/Geo firewall blocking.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putipgeofirewall)
 
         ## Example Usage
 
@@ -287,21 +294,20 @@ class AppSecIPGeo(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-        # USE CASE: user wants to update the IP/GEO firewall mode to "block specific IPs/Subnets and Geos" and update the IP list, GEO list & Exception list
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         ip_geo_block = akamai.AppSecIPGeo("ipGeoBlock",
             config_id=configuration.config_id,
-            security_policy_id=var["security_policy_id1"],
-            mode=var["block"],
-            geo_network_lists=var["geo_network_lists"],
-            ip_network_lists=var["ip_network_lists"],
-            exception_ip_network_lists=var["exception_ip_network_lists"])
-        # USE CASE: user wants to update the IP/GEO firewall mode to "block all traffic except IPs/Subnets in block exceptions" and update the Exception list
+            security_policy_id="gms1_134637",
+            mode="block",
+            geo_network_lists=["06038_GEO_TEST"],
+            ip_network_lists=["56921_TEST"],
+            exception_ip_network_lists=["07126_EXCEPTION_TEST"])
+        # USE CASE: User wants to update the IP/Geo firewall mode and update the exception list.
         ip_geo_allow = akamai.AppSecIPGeo("ipGeoAllow",
             config_id=configuration.config_id,
-            security_policy_id=var["security_policy_id2"],
-            mode=var["allow"],
-            exception_ip_network_lists=var["exception_ip_network_lists"])
+            security_policy_id="gms1-090334",
+            mode="allow",
+            exception_ip_network_lists=["07126_EXCEPTION_TEST"])
         pulumi.export("ipGeoModeBlock", ip_geo_block.mode)
         pulumi.export("blockGeoNetworkLists", ip_geo_block.geo_network_lists)
         pulumi.export("blockIpNetworkLists", ip_geo_block.ip_network_lists)
@@ -378,12 +384,12 @@ class AppSecIPGeo(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] exception_ip_network_lists: The network lists to be allowed regardless of `mode`, `geo_network_lists`, and `ip_network_lists` parameters.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] geo_network_lists: The network lists to be blocked or allowed geographically.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_network_lists: The network lists to be blocked or allowd by IP address.
-        :param pulumi.Input[str] mode: The mode to use for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] exception_ip_network_lists: . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] geo_network_lists: . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_network_lists: . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
+        :param pulumi.Input[str] mode: . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the IP/Geo lists being modified.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -401,7 +407,7 @@ class AppSecIPGeo(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -409,7 +415,7 @@ class AppSecIPGeo(pulumi.CustomResource):
     @pulumi.getter(name="exceptionIpNetworkLists")
     def exception_ip_network_lists(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        The network lists to be allowed regardless of `mode`, `geo_network_lists`, and `ip_network_lists` parameters.
+        . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
         """
         return pulumi.get(self, "exception_ip_network_lists")
 
@@ -417,7 +423,7 @@ class AppSecIPGeo(pulumi.CustomResource):
     @pulumi.getter(name="geoNetworkLists")
     def geo_network_lists(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        The network lists to be blocked or allowed geographically.
+        . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
         """
         return pulumi.get(self, "geo_network_lists")
 
@@ -425,7 +431,7 @@ class AppSecIPGeo(pulumi.CustomResource):
     @pulumi.getter(name="ipNetworkLists")
     def ip_network_lists(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        The network lists to be blocked or allowd by IP address.
+        . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
         """
         return pulumi.get(self, "ip_network_lists")
 
@@ -433,7 +439,7 @@ class AppSecIPGeo(pulumi.CustomResource):
     @pulumi.getter
     def mode(self) -> pulumi.Output[str]:
         """
-        The mode to use for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
+        . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
         """
         return pulumi.get(self, "mode")
 
@@ -441,7 +447,7 @@ class AppSecIPGeo(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the IP/Geo lists being modified.
         """
         return pulumi.get(self, "security_policy_id")
 

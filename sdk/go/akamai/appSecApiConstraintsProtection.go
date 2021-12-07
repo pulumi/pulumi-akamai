@@ -11,7 +11,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecApiConstraintsProtection` resource to enable or disable API constraints protection for a given configuration and security policy.
+// **Scopes**: Security policy
+//
+// Enables or disables API constraints protection. These constraints specify the action to be taken when designated API endpoints are invoked.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putprotections)
 //
 // ## Example Usage
 //
@@ -27,7 +31,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -36,8 +40,8 @@ import (
 // 		}
 // 		_, err = akamai.NewAppSecApiConstraintsProtection(ctx, "protection", &akamai.AppSecApiConstraintsProtectionArgs{
 // 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.Any(_var.Security_policy_id),
-// 			Enabled:          pulumi.Any(_var.Enabled),
+// 			SecurityPolicyId: pulumi.String("gms1_134637"),
+// 			Enabled:          pulumi.Bool(true),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -46,16 +50,18 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `outputText`. Tabular report showing the current protection settings.
 type AppSecApiConstraintsProtection struct {
 	pulumi.CustomResourceState
 
-	// The ID of the security configuration to use.
-	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// Whether to enable API constraints protection: either `true` or `false`.
-	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// A tabular display showing the current protection settings.
-	OutputText pulumi.StringOutput `pulumi:"outputText"`
-	// The ID of the security policy to use.
+	ConfigId pulumi.IntOutput  `pulumi:"configId"`
+	Enabled  pulumi.BoolOutput `pulumi:"enabled"`
+	// Text Export representation
+	OutputText       pulumi.StringOutput `pulumi:"outputText"`
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
 
@@ -97,24 +103,18 @@ func GetAppSecApiConstraintsProtection(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecApiConstraintsProtection resources.
 type appSecApiConstraintsProtectionState struct {
-	// The ID of the security configuration to use.
-	ConfigId *int `pulumi:"configId"`
-	// Whether to enable API constraints protection: either `true` or `false`.
-	Enabled *bool `pulumi:"enabled"`
-	// A tabular display showing the current protection settings.
-	OutputText *string `pulumi:"outputText"`
-	// The ID of the security policy to use.
+	ConfigId *int  `pulumi:"configId"`
+	Enabled  *bool `pulumi:"enabled"`
+	// Text Export representation
+	OutputText       *string `pulumi:"outputText"`
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppSecApiConstraintsProtectionState struct {
-	// The ID of the security configuration to use.
 	ConfigId pulumi.IntPtrInput
-	// Whether to enable API constraints protection: either `true` or `false`.
-	Enabled pulumi.BoolPtrInput
-	// A tabular display showing the current protection settings.
-	OutputText pulumi.StringPtrInput
-	// The ID of the security policy to use.
+	Enabled  pulumi.BoolPtrInput
+	// Text Export representation
+	OutputText       pulumi.StringPtrInput
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -123,21 +123,15 @@ func (AppSecApiConstraintsProtectionState) ElementType() reflect.Type {
 }
 
 type appSecApiConstraintsProtectionArgs struct {
-	// The ID of the security configuration to use.
-	ConfigId int `pulumi:"configId"`
-	// Whether to enable API constraints protection: either `true` or `false`.
-	Enabled bool `pulumi:"enabled"`
-	// The ID of the security policy to use.
+	ConfigId         int    `pulumi:"configId"`
+	Enabled          bool   `pulumi:"enabled"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // The set of arguments for constructing a AppSecApiConstraintsProtection resource.
 type AppSecApiConstraintsProtectionArgs struct {
-	// The ID of the security configuration to use.
-	ConfigId pulumi.IntInput
-	// Whether to enable API constraints protection: either `true` or `false`.
-	Enabled pulumi.BoolInput
-	// The ID of the security policy to use.
+	ConfigId         pulumi.IntInput
+	Enabled          pulumi.BoolInput
 	SecurityPolicyId pulumi.StringInput
 }
 

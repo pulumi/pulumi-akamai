@@ -13,7 +13,11 @@ namespace Pulumi.Akamai
     public static class GetAppSecWafMode
     {
         /// <summary>
-        /// Use the `akamai.AppSecWafMode` data source to retrieve the mode that indicates how the WAF rules of the given security configuration and security policy will be updated.
+        /// **Scopes**: Security policy
+        /// 
+        /// Returns information about how the Kona Rule Set rules associated with a security configuration and security policy are updated. The WAF (Web Application Firewall) mode determines whether Kona Rule Sets are automatically updated as part of automated attack groups (`mode = AAG`) or whether you must periodically check for new rules and then manually update those rules yourself (`mode = KRS`).
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/mode](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getmode)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -31,12 +35,12 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var wafMode = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecWafMode.InvokeAsync(new Akamai.GetAppSecWafModeArgs
         ///         {
         ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Policy_id,
+        ///             SecurityPolicyId = "gms1_134637",
         ///         })));
         ///         this.WafModeMode = wafMode.Apply(wafMode =&gt; wafMode.Mode);
         ///         this.WafModeCurrentRuleset = wafMode.Apply(wafMode =&gt; wafMode.CurrentRuleset);
@@ -65,12 +69,27 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `mode`. Security policy mode, either **KRS** (update manually) or **AAG** (update automatically), For organizations running the Adaptive Security Engine (ASE) beta, you'll get back **ASE_AUTO** for automatic updates or **ASE_MANUAL** for manual updates. Please contact your Akamai representative to learn more about ASE.
+        /// - `current_ruleset`. Current ruleset version and the ISO 8601 date the version was introduced.
+        /// - `eval_status`. Specifies whether evaluation mode is enabled or disabled.
+        /// - `eval_ruleset`. Evaluation ruleset version and the ISO 8601 date the evaluation began.
+        /// - `eval_expiration_date`. ISO 8601 timestamp indicating when evaluation mode expires. Valid only if `eval_status` is set to **enabled**.
+        /// - `output_text`. Tabular report of the mode information.
+        /// - `json`. JSON-formatted list of the mode information.
         /// </summary>
         public static Task<GetAppSecWafModeResult> InvokeAsync(GetAppSecWafModeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecWafModeResult>("akamai:index/getAppSecWafMode:getAppSecWafMode", args ?? new GetAppSecWafModeArgs(), options.WithVersion());
 
         /// <summary>
-        /// Use the `akamai.AppSecWafMode` data source to retrieve the mode that indicates how the WAF rules of the given security configuration and security policy will be updated.
+        /// **Scopes**: Security policy
+        /// 
+        /// Returns information about how the Kona Rule Set rules associated with a security configuration and security policy are updated. The WAF (Web Application Firewall) mode determines whether Kona Rule Sets are automatically updated as part of automated attack groups (`mode = AAG`) or whether you must periodically check for new rules and then manually update those rules yourself (`mode = KRS`).
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/mode](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getmode)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -88,12 +107,12 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var wafMode = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecWafMode.InvokeAsync(new Akamai.GetAppSecWafModeArgs
         ///         {
         ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Policy_id,
+        ///             SecurityPolicyId = "gms1_134637",
         ///         })));
         ///         this.WafModeMode = wafMode.Apply(wafMode =&gt; wafMode.Mode);
         ///         this.WafModeCurrentRuleset = wafMode.Apply(wafMode =&gt; wafMode.CurrentRuleset);
@@ -122,6 +141,17 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `mode`. Security policy mode, either **KRS** (update manually) or **AAG** (update automatically), For organizations running the Adaptive Security Engine (ASE) beta, you'll get back **ASE_AUTO** for automatic updates or **ASE_MANUAL** for manual updates. Please contact your Akamai representative to learn more about ASE.
+        /// - `current_ruleset`. Current ruleset version and the ISO 8601 date the version was introduced.
+        /// - `eval_status`. Specifies whether evaluation mode is enabled or disabled.
+        /// - `eval_ruleset`. Evaluation ruleset version and the ISO 8601 date the evaluation began.
+        /// - `eval_expiration_date`. ISO 8601 timestamp indicating when evaluation mode expires. Valid only if `eval_status` is set to **enabled**.
+        /// - `output_text`. Tabular report of the mode information.
+        /// - `json`. JSON-formatted list of the mode information.
         /// </summary>
         public static Output<GetAppSecWafModeResult> Invoke(GetAppSecWafModeInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecWafModeResult>("akamai:index/getAppSecWafMode:getAppSecWafMode", args ?? new GetAppSecWafModeInvokeArgs(), options.WithVersion());
@@ -131,13 +161,13 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecWafModeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the Kona Rule Set rules.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the Kona Rule Set rules.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
@@ -150,13 +180,13 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecWafModeInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the Kona Rule Set rules.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the Kona Rule Set rules.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -171,37 +201,16 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecWafModeResult
     {
         public readonly int ConfigId;
-        /// <summary>
-        /// The current rule set version and the ISO 8601 date the rule set version was introduced; this date acts like a version number.
-        /// </summary>
         public readonly string CurrentRuleset;
-        /// <summary>
-        /// The ISO 8601 time stamp when the evaluation is expiring. This value only appears when `eval` is set to "enabled".
-        /// </summary>
         public readonly string EvalExpirationDate;
-        /// <summary>
-        /// The evaluation rule set version and the ISO 8601 date the evaluation starts.
-        /// </summary>
         public readonly string EvalRuleset;
-        /// <summary>
-        /// Whether the evaluation mode is enabled or disabled."
-        /// </summary>
         public readonly string EvalStatus;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A JSON-formatted list of the mode information.
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// The security policy mode, either `KRS` (update manually) or `AAG` (update automatically), For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE.
-        /// </summary>
         public readonly string Mode;
-        /// <summary>
-        /// A tabular display of the mode information.
-        /// </summary>
         public readonly string OutputText;
         public readonly string SecurityPolicyId;
 

@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecFailoverHostnames` data source to retrieve a list of the failover hostnames in a configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames).
+ * **Scopes**: Security configuration
+ *
+ * Returns a list of the failover hostnames in a configuration. The returned information is described in the [List failover hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames) section of the Application Security API.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/failover-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames)
  *
  * ## Example Usage
  *
@@ -16,7 +20,7 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const failoverHostnamesAppSecFailoverHostnames = configuration.then(configuration => akamai.getAppSecFailoverHostnames({
  *     configId: configuration.configId,
@@ -25,6 +29,12 @@ import * as utilities from "./utilities";
  * export const failoverHostnamesOutput = failoverHostnamesAppSecFailoverHostnames.then(failoverHostnamesAppSecFailoverHostnames => failoverHostnamesAppSecFailoverHostnames.outputText);
  * export const failoverHostnamesJson = failoverHostnamesAppSecFailoverHostnames.then(failoverHostnamesAppSecFailoverHostnames => failoverHostnamesAppSecFailoverHostnames.json);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `hostnames`. List of the failover hostnames.
+ * - `json`. JSON-formatted list of the failover hostnames.
  */
 export function getAppSecFailoverHostnames(args: GetAppSecFailoverHostnamesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecFailoverHostnamesResult> {
     if (!opts) {
@@ -44,7 +54,7 @@ export function getAppSecFailoverHostnames(args: GetAppSecFailoverHostnamesArgs,
  */
 export interface GetAppSecFailoverHostnamesArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the failover hosts.
      */
     configId: number;
 }
@@ -54,21 +64,12 @@ export interface GetAppSecFailoverHostnamesArgs {
  */
 export interface GetAppSecFailoverHostnamesResult {
     readonly configId: number;
-    /**
-     * A list of the failover hostnames.
-     */
     readonly hostnames: string[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted list of the failover hostnames.
-     */
     readonly json: string;
-    /**
-     * A tabular display showing the failover hostnames.
-     */
     readonly outputText: string;
 }
 
@@ -81,7 +82,7 @@ export function getAppSecFailoverHostnamesOutput(args: GetAppSecFailoverHostname
  */
 export interface GetAppSecFailoverHostnamesOutputArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the failover hosts.
      */
     configId: pulumi.Input<number>;
 }

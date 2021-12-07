@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecAdvancedSettingsLogging` data source to retrieve information about the HTTP header logging controls for a configuration. This operation applies at the configuration level, and therefore applies to all policies within a configuration. You may retrieve these settings for a particular policy by specifying the policy using the securityPolicyId parameter. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethttpheaderloggingforaconfiguration).
+ * **Scopes**: Security configuration; security policy
+ *
+ * Returns information about your HTTP header logging controls. By default, information is returned for all the security policies in the configuration; however, you can return data for a single policy by using the `securityPolicyId` parameter. The returned information is described in the [ConfigHeaderLog members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#a6d1c316) section of the Application Security API.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethttpheaderloggingforaconfiguration)
  *
  * ## Example Usage
  *
@@ -16,20 +20,26 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
- * const logging = configuration.then(configuration => akamai.getAppSecAdvancedSettingsLogging({
+ * const customRules = configuration.then(configuration => akamai.getAppSecCustomRules({
  *     configId: configuration.configId,
  * }));
- * export const advancedSettingsLoggingOutput = logging.then(logging => logging.outputText);
- * export const advancedSettingsLoggingJson = logging.then(logging => logging.json);
- * const policyOverride = configuration.then(configuration => akamai.getAppSecAdvancedSettingsLogging({
+ * export const customRulesOutputText = customRules.then(customRules => customRules.outputText);
+ * export const customRulesJson = customRules.then(customRules => customRules.json);
+ * export const customRulesConfigId = customRules.then(customRules => customRules.configId);
+ * const specificCustomRule = configuration.then(configuration => akamai.getAppSecCustomRules({
  *     configId: configuration.configId,
- *     securityPolicyId: _var.security_policy_id,
+ *     customRuleId: "60029316",
  * }));
- * export const advancedSettingsPolicyLoggingOutput = policyOverride.then(policyOverride => policyOverride.outputText);
- * export const advancedSettingsPolicyLoggingJson = policyOverride.then(policyOverride => policyOverride.json);
+ * export const specificCustomRuleJson = specificCustomRule.then(specificCustomRule => specificCustomRule.json);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. JSON-formatted list of information about the logging settings.
+ * - `outputText`. Tabular report showing the logging settings.
  */
 export function getAppSecAdvancedSettingsLogging(args: GetAppSecAdvancedSettingsLoggingArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecAdvancedSettingsLoggingResult> {
     if (!opts) {
@@ -50,11 +60,11 @@ export function getAppSecAdvancedSettingsLogging(args: GetAppSecAdvancedSettings
  */
 export interface GetAppSecAdvancedSettingsLoggingArgs {
     /**
-     * The configuration ID.
+     * . Unique identifier of the security configuration associated with the logging settings.
      */
     configId: number;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the logging settings. If not included, information is returned for all your security policies.
      */
     securityPolicyId?: string;
 }
@@ -68,13 +78,7 @@ export interface GetAppSecAdvancedSettingsLoggingResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted list of information about the logging settings.
-     */
     readonly json: string;
-    /**
-     * A tabular display showing the logging settings.
-     */
     readonly outputText: string;
     readonly securityPolicyId?: string;
 }
@@ -88,11 +92,11 @@ export function getAppSecAdvancedSettingsLoggingOutput(args: GetAppSecAdvancedSe
  */
 export interface GetAppSecAdvancedSettingsLoggingOutputArgs {
     /**
-     * The configuration ID.
+     * . Unique identifier of the security configuration associated with the logging settings.
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the logging settings. If not included, information is returned for all your security policies.
      */
     securityPolicyId?: pulumi.Input<string>;
 }

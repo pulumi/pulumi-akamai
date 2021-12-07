@@ -10,7 +10,11 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// Use the `akamai.AppSecVersionNodes` resource to update the version notes for a configuration.
+    /// **Scopes**: Security configuration
+    /// 
+    /// Updates the version notes for a security configuration.
+    /// 
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putversionnotes)
     /// 
     /// ## Example Usage
     /// 
@@ -26,13 +30,12 @@ namespace Pulumi.Akamai
     ///     {
     ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
     ///         {
-    ///             Name = @var.Security_configuration,
+    ///             Name = "Documentation",
     ///         }));
-    ///         // USE CASE: user wants to update the version notes of the latest version
     ///         var versionNotesAppSecVersionNodes = new Akamai.AppSecVersionNodes("versionNotesAppSecVersionNodes", new Akamai.AppSecVersionNodesArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             VersionNotes = @var.Version_notes,
+    ///             VersionNotes = "This version enables reputation profiles.",
     ///         });
     ///         this.VersionNotes = versionNotesAppSecVersionNodes.OutputText;
     ///     }
@@ -41,24 +44,29 @@ namespace Pulumi.Akamai
     ///     public Output&lt;string&gt; VersionNotes { get; set; }
     /// }
     /// ```
+    /// ## Output Options
+    /// 
+    /// The following options can be used to determine the information returned, and how that returned information is formatted:
+    /// 
+    /// - `output_text`. Tabular report showing the updated version notes.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecVersionNodes:AppSecVersionNodes")]
     public partial class AppSecVersionNodes : Pulumi.CustomResource
     {
         /// <summary>
-        /// The configuration ID to use.
+        /// . Unique identifier of the security configuration whose version notes are being modified.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// A tabular display showing the updated version notes.
+        /// Text Export representation
         /// </summary>
         [Output("outputText")]
         public Output<string> OutputText { get; private set; } = null!;
 
         /// <summary>
-        /// A string containing the version notes to be used.
+        /// . Brief description of the security configuration version.
         /// </summary>
         [Output("versionNotes")]
         public Output<string> VersionNotes { get; private set; } = null!;
@@ -110,13 +118,13 @@ namespace Pulumi.Akamai
     public sealed class AppSecVersionNodesArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration ID to use.
+        /// . Unique identifier of the security configuration whose version notes are being modified.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// A string containing the version notes to be used.
+        /// . Brief description of the security configuration version.
         /// </summary>
         [Input("versionNotes", required: true)]
         public Input<string> VersionNotes { get; set; } = null!;
@@ -129,19 +137,19 @@ namespace Pulumi.Akamai
     public sealed class AppSecVersionNodesState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration ID to use.
+        /// . Unique identifier of the security configuration whose version notes are being modified.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// A tabular display showing the updated version notes.
+        /// Text Export representation
         /// </summary>
         [Input("outputText")]
         public Input<string>? OutputText { get; set; }
 
         /// <summary>
-        /// A string containing the version notes to be used.
+        /// . Brief description of the security configuration version.
         /// </summary>
         [Input("versionNotes")]
         public Input<string>? VersionNotes { get; set; }

@@ -13,13 +13,137 @@ namespace Pulumi.Akamai
     public static class GetAppSecReputationProfileActions
     {
         /// <summary>
-        /// Use the `akamai.getAppSecReputationProfileActions` data source to retrieve details about reputation profiles and their associated actions, or about the actions associated with a specific reputation profile.
+        /// ## akamai.getAppSecReputationProfileActions
+        /// 
+        /// **Scopes**: Security policy; reputation profile
+        /// 
+        /// Returns action information for your reputation profiles. Actions specify what happens any time a profile is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-profiles](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getreputationprofileactions)
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = "Documentation",
+        ///         }));
+        ///         var reputationProfileActions = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfileActions.InvokeAsync(new Akamai.GetAppSecReputationProfileActionsArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = "gms1_134637",
+        ///         })));
+        ///         this.ReputationProfileActionsText = reputationProfileActions.Apply(reputationProfileActions =&gt; reputationProfileActions.OutputText);
+        ///         this.ReputationProfileActionsJson = reputationProfileActions.Apply(reputationProfileActions =&gt; reputationProfileActions.Json);
+        ///         var reputationProfileActions2AppSecReputationProfileActions = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfileActions.InvokeAsync(new Akamai.GetAppSecReputationProfileActionsArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = "gms1_134637",
+        ///             ReputationProfileId = 12345,
+        ///         })));
+        ///         this.ReputationProfileActions2 = reputationProfileActions.Apply(reputationProfileActions =&gt; reputationProfileActions.Action);
+        ///     }
+        /// 
+        ///     [Output("reputationProfileActionsText")]
+        ///     public Output&lt;string&gt; ReputationProfileActionsText { get; set; }
+        ///     [Output("reputationProfileActionsJson")]
+        ///     public Output&lt;string&gt; ReputationProfileActionsJson { get; set; }
+        ///     [Output("reputationProfileActions2")]
+        ///     public Output&lt;string&gt; ReputationProfileActions2 { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `action`. Action taken any time the reputation profile is triggered. Valid values are:
+        ///   - **alert**. Record the event.
+        ///   - **deny**. Block the request.
+        ///   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
+        ///   - **none**. Take no action.
+        /// - `json`. JSON-formatted report of the reputation profile action information.
+        /// - `output_text`. Tabular report of the reputation profile action information.
         /// </summary>
         public static Task<GetAppSecReputationProfileActionsResult> InvokeAsync(GetAppSecReputationProfileActionsArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecReputationProfileActionsResult>("akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions", args ?? new GetAppSecReputationProfileActionsArgs(), options.WithVersion());
 
         /// <summary>
-        /// Use the `akamai.getAppSecReputationProfileActions` data source to retrieve details about reputation profiles and their associated actions, or about the actions associated with a specific reputation profile.
+        /// ## akamai.getAppSecReputationProfileActions
+        /// 
+        /// **Scopes**: Security policy; reputation profile
+        /// 
+        /// Returns action information for your reputation profiles. Actions specify what happens any time a profile is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-profiles](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getreputationprofileactions)
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = "Documentation",
+        ///         }));
+        ///         var reputationProfileActions = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfileActions.InvokeAsync(new Akamai.GetAppSecReputationProfileActionsArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = "gms1_134637",
+        ///         })));
+        ///         this.ReputationProfileActionsText = reputationProfileActions.Apply(reputationProfileActions =&gt; reputationProfileActions.OutputText);
+        ///         this.ReputationProfileActionsJson = reputationProfileActions.Apply(reputationProfileActions =&gt; reputationProfileActions.Json);
+        ///         var reputationProfileActions2AppSecReputationProfileActions = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfileActions.InvokeAsync(new Akamai.GetAppSecReputationProfileActionsArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = "gms1_134637",
+        ///             ReputationProfileId = 12345,
+        ///         })));
+        ///         this.ReputationProfileActions2 = reputationProfileActions.Apply(reputationProfileActions =&gt; reputationProfileActions.Action);
+        ///     }
+        /// 
+        ///     [Output("reputationProfileActionsText")]
+        ///     public Output&lt;string&gt; ReputationProfileActionsText { get; set; }
+        ///     [Output("reputationProfileActionsJson")]
+        ///     public Output&lt;string&gt; ReputationProfileActionsJson { get; set; }
+        ///     [Output("reputationProfileActions2")]
+        ///     public Output&lt;string&gt; ReputationProfileActions2 { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `action`. Action taken any time the reputation profile is triggered. Valid values are:
+        ///   - **alert**. Record the event.
+        ///   - **deny**. Block the request.
+        ///   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
+        ///   - **none**. Take no action.
+        /// - `json`. JSON-formatted report of the reputation profile action information.
+        /// - `output_text`. Tabular report of the reputation profile action information.
         /// </summary>
         public static Output<GetAppSecReputationProfileActionsResult> Invoke(GetAppSecReputationProfileActionsInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfileActionsResult>("akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions", args ?? new GetAppSecReputationProfileActionsInvokeArgs(), options.WithVersion());
@@ -29,19 +153,19 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecReputationProfileActionsArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the reputation profiles.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
         /// <summary>
-        /// The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
+        /// . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
         /// </summary>
         [Input("reputationProfileId")]
         public int? ReputationProfileId { get; set; }
 
         /// <summary>
-        /// THe ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the reputation profiles.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
@@ -54,19 +178,19 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecReputationProfileActionsInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the reputation profiles.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
+        /// . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
         /// </summary>
         [Input("reputationProfileId")]
         public Input<int>? ReputationProfileId { get; set; }
 
         /// <summary>
-        /// THe ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the reputation profiles.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -80,22 +204,13 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetAppSecReputationProfileActionsResult
     {
-        /// <summary>
-        /// The action that the specified reputation profile or profiles take when triggered.
-        /// </summary>
         public readonly string Action;
         public readonly int ConfigId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A JSON-formatted display of the specified reputation profile action information.
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// A tabular display of the specified reputation profile action information.
-        /// </summary>
         public readonly string OutputText;
         public readonly int? ReputationProfileId;
         public readonly string SecurityPolicyId;

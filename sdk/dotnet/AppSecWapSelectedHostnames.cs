@@ -9,17 +9,11 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// The `akamai.AppSecWapSelectedHostnames` resource allows you to set the lists of hostnames to be protected and to be evaluated
-    /// under a given security configuration and policy. This resource is available only for WAP accounts. Either of the lists of hostnames
-    /// may be omitted or specified as an empty list, but at least one of the two lists must be present and non-empty. (WAP selected hostnames
-    /// is currently in beta. Please contact your Akamai representative for more information about this feature.)
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecWapSelectedHostnames:AppSecWapSelectedHostnames")]
     public partial class AppSecWapSelectedHostnames : Pulumi.CustomResource
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
@@ -31,7 +25,7 @@ namespace Pulumi.Akamai
         public Output<ImmutableArray<string>> ProtectedHosts { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -83,7 +77,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecWapSelectedHostnamesArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
@@ -105,7 +99,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -118,7 +112,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecWapSelectedHostnamesState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
@@ -140,7 +134,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

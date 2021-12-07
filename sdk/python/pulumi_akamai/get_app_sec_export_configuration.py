@@ -56,17 +56,11 @@ class GetAppSecExportConfigurationResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        The complete set of information about the specified security configuration version, in JSON format. This includes the types available for the `search` parameter, plus several additional fields such as createDate and createdBy.
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display showing the types of data specified in the `search` parameter. Included only if the `search` parameter specifies at least one type.
-        """
         return pulumi.get(self, "output_text")
 
     @property
@@ -99,7 +93,11 @@ def get_app_sec_export_configuration(config_id: Optional[int] = None,
                                      version: Optional[int] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecExportConfigurationResult:
     """
-    Use the `get_app_sec_export_configuration` data source to retrieve comprehensive details about a security configuration version, including rate and security policies, rules, hostnames, and other settings. You can retrieve the entire set of information in JSON format, or a subset of the information in tabular format.
+    **Scopes**: Security configuration and version
+
+    Returns comprehensive details about a security configuration, including rate policies, security policies, rules, hostnames, and match targets.
+
+    **Related API Endpoint**: [/appsec/v1/export/configs/{configId}/versions/{versionNumber}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getconfigurationversionexport)
 
     ## Example Usage
 
@@ -109,7 +107,7 @@ def get_app_sec_export_configuration(config_id: Optional[int] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     export = akamai.get_app_sec_export_configuration(config_id=configuration.config_id,
         version=configuration.latest_version,
         searches=[
@@ -119,19 +117,39 @@ def get_app_sec_export_configuration(config_id: Optional[int] = None,
     pulumi.export("json", export.json)
     pulumi.export("text", export.output_text)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `json`. Complete set of information about the specified security configuration version in JSON format. Includes the types available for the `search` parameter as well as additional fields such as `createDate` and `createdBy`.
+    - `output_text`. Tabular report showing the types of data specified in the `search` parameter. Valid only if the `search` parameter references at least one type.
 
 
-    :param int config_id: The ID of the security configuration to use.
-    :param Sequence[str] searches: A bracket-delimited list of quoted strings specifying the types of information to be retrieved and made available for display in the `output_text` format. The following types are available:
-           * customRules
-           * matchTargets
-           * ratePolicies
-           * reputationProfiles
-           * rulesets
-           * securityPolicies
-           * selectableHosts
-           * selectedHosts
-    :param int version: The version number of the security configuration to use.
+    :param int config_id: . Unique identifier of the security configuration you want to return information for.
+    :param Sequence[str] searches: . JSON array of strings specifying the types of information to be retrieved. Allowed values include:
+           > - **AdvancedSettingsLogging**
+           > - **AdvancedSettingsPrefetch**
+           > - **ApiRequestConstraints**
+           > - **AttackGroup**
+           > - **AttackGroupConditionException**
+           > - **Eval**
+           > - **EvalRuleConditionException**
+           > - **CustomDeny**
+           > - **CustomRule**
+           > - **CustomRuleAction**
+           > - **IPGeoFirewall**
+           > - **MatchTarget**
+           > - **PenaltyBox**
+           > - **RatePolicy**
+           > - **RatePolicyAction**
+           > - **ReputationProfile**
+           > - **ReputationProfileAction**
+           > - **Rule**
+           > - **RuleConditionException**
+           > - **SecurityPolicy**
+           > - **SiemSettings**
+           > - **SlowPost**
+    :param int version: . Version number of the security configuration.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -158,7 +176,11 @@ def get_app_sec_export_configuration_output(config_id: Optional[pulumi.Input[int
                                             version: Optional[pulumi.Input[int]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecExportConfigurationResult]:
     """
-    Use the `get_app_sec_export_configuration` data source to retrieve comprehensive details about a security configuration version, including rate and security policies, rules, hostnames, and other settings. You can retrieve the entire set of information in JSON format, or a subset of the information in tabular format.
+    **Scopes**: Security configuration and version
+
+    Returns comprehensive details about a security configuration, including rate policies, security policies, rules, hostnames, and match targets.
+
+    **Related API Endpoint**: [/appsec/v1/export/configs/{configId}/versions/{versionNumber}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getconfigurationversionexport)
 
     ## Example Usage
 
@@ -168,7 +190,7 @@ def get_app_sec_export_configuration_output(config_id: Optional[pulumi.Input[int
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     export = akamai.get_app_sec_export_configuration(config_id=configuration.config_id,
         version=configuration.latest_version,
         searches=[
@@ -178,18 +200,38 @@ def get_app_sec_export_configuration_output(config_id: Optional[pulumi.Input[int
     pulumi.export("json", export.json)
     pulumi.export("text", export.output_text)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `json`. Complete set of information about the specified security configuration version in JSON format. Includes the types available for the `search` parameter as well as additional fields such as `createDate` and `createdBy`.
+    - `output_text`. Tabular report showing the types of data specified in the `search` parameter. Valid only if the `search` parameter references at least one type.
 
 
-    :param int config_id: The ID of the security configuration to use.
-    :param Sequence[str] searches: A bracket-delimited list of quoted strings specifying the types of information to be retrieved and made available for display in the `output_text` format. The following types are available:
-           * customRules
-           * matchTargets
-           * ratePolicies
-           * reputationProfiles
-           * rulesets
-           * securityPolicies
-           * selectableHosts
-           * selectedHosts
-    :param int version: The version number of the security configuration to use.
+    :param int config_id: . Unique identifier of the security configuration you want to return information for.
+    :param Sequence[str] searches: . JSON array of strings specifying the types of information to be retrieved. Allowed values include:
+           > - **AdvancedSettingsLogging**
+           > - **AdvancedSettingsPrefetch**
+           > - **ApiRequestConstraints**
+           > - **AttackGroup**
+           > - **AttackGroupConditionException**
+           > - **Eval**
+           > - **EvalRuleConditionException**
+           > - **CustomDeny**
+           > - **CustomRule**
+           > - **CustomRuleAction**
+           > - **IPGeoFirewall**
+           > - **MatchTarget**
+           > - **PenaltyBox**
+           > - **RatePolicy**
+           > - **RatePolicyAction**
+           > - **ReputationProfile**
+           > - **ReputationProfileAction**
+           > - **Rule**
+           > - **RuleConditionException**
+           > - **SecurityPolicy**
+           > - **SiemSettings**
+           > - **SlowPost**
+    :param int version: . Version number of the security configuration.
     """
     ...

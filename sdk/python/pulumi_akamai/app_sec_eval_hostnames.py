@@ -17,8 +17,8 @@ class AppSecEvalHostnamesArgs:
                  hostnames: pulumi.Input[Sequence[pulumi.Input[str]]]):
         """
         The set of arguments for constructing a AppSecEvalHostnames resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: A list of evaluation hostnames to be used for the specified configuration version.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration in evaluation mode.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: . JSON array of hostnames to be used in the evaluation process. Note that this list replaces your existing list of evaluation hosts.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "hostnames", hostnames)
@@ -27,7 +27,7 @@ class AppSecEvalHostnamesArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration in evaluation mode.
         """
         return pulumi.get(self, "config_id")
 
@@ -39,7 +39,7 @@ class AppSecEvalHostnamesArgs:
     @pulumi.getter
     def hostnames(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
-        A list of evaluation hostnames to be used for the specified configuration version.
+        . JSON array of hostnames to be used in the evaluation process. Note that this list replaces your existing list of evaluation hosts.
         """
         return pulumi.get(self, "hostnames")
 
@@ -55,8 +55,8 @@ class _AppSecEvalHostnamesState:
                  hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering AppSecEvalHostnames resources.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: A list of evaluation hostnames to be used for the specified configuration version.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration in evaluation mode.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: . JSON array of hostnames to be used in the evaluation process. Note that this list replaces your existing list of evaluation hosts.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -67,7 +67,7 @@ class _AppSecEvalHostnamesState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration in evaluation mode.
         """
         return pulumi.get(self, "config_id")
 
@@ -79,7 +79,7 @@ class _AppSecEvalHostnamesState:
     @pulumi.getter
     def hostnames(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of evaluation hostnames to be used for the specified configuration version.
+        . JSON array of hostnames to be used in the evaluation process. Note that this list replaces your existing list of evaluation hosts.
         """
         return pulumi.get(self, "hostnames")
 
@@ -97,7 +97,13 @@ class AppSecEvalHostnames(pulumi.CustomResource):
                  hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        The `resource_akamai_appsec_eval_hostnames` resource allows you to update the list of hostnames you want to evaluate for a configuration.
+        **Scopes**: Security configuration
+
+        Modifies the list of hostnames evaluated while a security configuration is in evaluation mode.
+        During evaluation mode, hosts take no action of any kind when responding to traffic.
+        Instead, these hosts simply maintain a record of the actions they *would* have taken if they had been responding to live traffic in your production network.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames/eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevaluationhostnames)
 
         ## Example Usage
 
@@ -107,17 +113,20 @@ class AppSecEvalHostnames(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-        # USE CASE: user wants to specify the hostnames to evaluate
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         eval_hostnames = akamai.AppSecEvalHostnames("evalHostnames",
             config_id=configuration.config_id,
-            hostnames=var["hostnames"])
+            hostnames=[
+                "documentation.akamai.com",
+                "training.akamai.com",
+                "videos.akamai.com",
+            ])
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: A list of evaluation hostnames to be used for the specified configuration version.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration in evaluation mode.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: . JSON array of hostnames to be used in the evaluation process. Note that this list replaces your existing list of evaluation hosts.
         """
         ...
     @overload
@@ -126,7 +135,13 @@ class AppSecEvalHostnames(pulumi.CustomResource):
                  args: AppSecEvalHostnamesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        The `resource_akamai_appsec_eval_hostnames` resource allows you to update the list of hostnames you want to evaluate for a configuration.
+        **Scopes**: Security configuration
+
+        Modifies the list of hostnames evaluated while a security configuration is in evaluation mode.
+        During evaluation mode, hosts take no action of any kind when responding to traffic.
+        Instead, these hosts simply maintain a record of the actions they *would* have taken if they had been responding to live traffic in your production network.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames/eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevaluationhostnames)
 
         ## Example Usage
 
@@ -136,11 +151,14 @@ class AppSecEvalHostnames(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-        # USE CASE: user wants to specify the hostnames to evaluate
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         eval_hostnames = akamai.AppSecEvalHostnames("evalHostnames",
             config_id=configuration.config_id,
-            hostnames=var["hostnames"])
+            hostnames=[
+                "documentation.akamai.com",
+                "training.akamai.com",
+                "videos.akamai.com",
+            ])
         ```
 
         :param str resource_name: The name of the resource.
@@ -197,8 +215,8 @@ class AppSecEvalHostnames(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: A list of evaluation hostnames to be used for the specified configuration version.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration in evaluation mode.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: . JSON array of hostnames to be used in the evaluation process. Note that this list replaces your existing list of evaluation hosts.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -212,7 +230,7 @@ class AppSecEvalHostnames(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration in evaluation mode.
         """
         return pulumi.get(self, "config_id")
 
@@ -220,7 +238,7 @@ class AppSecEvalHostnames(pulumi.CustomResource):
     @pulumi.getter
     def hostnames(self) -> pulumi.Output[Sequence[str]]:
         """
-        A list of evaluation hostnames to be used for the specified configuration version.
+        . JSON array of hostnames to be used in the evaluation process. Note that this list replaces your existing list of evaluation hosts.
         """
         return pulumi.get(self, "hostnames")
 

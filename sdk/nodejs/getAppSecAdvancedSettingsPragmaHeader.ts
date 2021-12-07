@@ -5,7 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecAdvancedSettingsPragmaHeader` data source to retrieve pragma header settings for a configuration or a security policy. Additional information is available [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getpragmaheaderconfiguration).
+ * **Scopes**: Security configuration; security policy
+ *
+ * Returns pragma header settings information. This HTTP header provides information about such things as: the edge routers used in a transaction; the Akamai IP addresses involved; information about whether a request was cached or not; and so on. By default, pragma headers are removed from all responses.
+ *
+ * Additional information is available from the [PragmaHeader members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#64c92ba1) section of the Application Security API.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/pragma-header](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getpragmaheaderconfiguration)
  *
  * ## Example Usage
  *
@@ -16,7 +22,7 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const pragmaHeader = configuration.then(configuration => akamai.getAppSecAdvancedSettingsPragmaHeader({
  *     configId: configuration.configId,
@@ -25,11 +31,17 @@ import * as utilities from "./utilities";
  * export const advancedSettingsPragmaHeaderJson = pragmaHeader.then(pragmaHeader => pragmaHeader.json);
  * const policyPragmaHeader = configuration.then(configuration => akamai.getAppSecAdvancedSettingsPragmaHeader({
  *     configId: configuration.configId,
- *     securityPolicyId: _var.security_policy_id,
+ *     securityPolicyId: "gms1_134637",
  * }));
  * export const advancedSettingsPolicyPragmaHeaderOutput = policyPragmaHeader.then(policyPragmaHeader => policyPragmaHeader.outputText);
  * export const advancedSettingsPolicyPragmaHeaderJson = policyPragmaHeader.then(policyPragmaHeader => policyPragmaHeader.json);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. JSON-formatted list of information about the pragma header settings.
+ * - `outputText`. Tabular report showing the pragma header settings.
  */
 export function getAppSecAdvancedSettingsPragmaHeader(args: GetAppSecAdvancedSettingsPragmaHeaderArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecAdvancedSettingsPragmaHeaderResult> {
     if (!opts) {
@@ -50,11 +62,11 @@ export function getAppSecAdvancedSettingsPragmaHeader(args: GetAppSecAdvancedSet
  */
 export interface GetAppSecAdvancedSettingsPragmaHeaderArgs {
     /**
-     * The configuration ID.
+     * . Unique identifier of the security configuration associated with the pragma header settings.
      */
     configId: number;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the pragma header settings. If not included, information is returned for all your security policies.
      */
     securityPolicyId?: string;
 }
@@ -68,13 +80,7 @@ export interface GetAppSecAdvancedSettingsPragmaHeaderResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpragmaheaderpolicy)) list of information about the pragma header settings.
-     */
     readonly json: string;
-    /**
-     * A tabular display showing the pragma header settings.
-     */
     readonly outputText: string;
     readonly securityPolicyId?: string;
 }
@@ -88,11 +94,11 @@ export function getAppSecAdvancedSettingsPragmaHeaderOutput(args: GetAppSecAdvan
  */
 export interface GetAppSecAdvancedSettingsPragmaHeaderOutputArgs {
     /**
-     * The configuration ID.
+     * . Unique identifier of the security configuration associated with the pragma header settings.
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the pragma header settings. If not included, information is returned for all your security policies.
      */
     securityPolicyId?: pulumi.Input<string>;
 }

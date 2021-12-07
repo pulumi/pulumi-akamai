@@ -50,17 +50,11 @@ class GetAppSecAdvancedSettingsPrefetchResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        A JSON-formatted list of information about the prefetch request settings.
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display showing the prefetch request settings.
-        """
         return pulumi.get(self, "output_text")
 
 
@@ -79,24 +73,34 @@ class AwaitableGetAppSecAdvancedSettingsPrefetchResult(GetAppSecAdvancedSettings
 def get_app_sec_advanced_settings_prefetch(config_id: Optional[int] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecAdvancedSettingsPrefetchResult:
     """
-    Use the `AppSecAdvancedSettingsPrefetch` data source to retrieve information the prefetch request settings for a security configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprefetchrequestsforaconfiguration).
+    **Scopes**: Security configuration
 
-    ## Example Usage
+    Returns information about your prefetch request settings. By default, the Web Application Firewall only inspects external requests: requests originating outside of your firewall or Akamai's edge servers. When prefetch is enabled, however, internal requests – that is, requests between your origin servers and Akamai's edge servers – can also be inspected by the firewall. The returned information is described in the [PrefetchRequest members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#deb7220d) section of the Application Security API.
 
+    **Related** **API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/prefetch](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprefetchrequestsforaconfiguration)
+
+    Example Usage
     Basic usage:
 
     ```python
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     prefetch = akamai.get_app_sec_advanced_settings_prefetch(config_id=configuration.config_id)
     pulumi.export("advancedSettingsPrefetchOutput", prefetch.output_text)
     pulumi.export("advancedSettingsPrefetchJson", prefetch.json)
     ```
 
+    ## Output Options
 
-    :param int config_id: The configuration ID.
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `json`. JSON-formatted list of information about the prefetch request settings.
+    - `output_text`. Tabular report showing the prefetch request settings.
+
+
+    :param int config_id: . Unique identifier of the security configuration associated with the prefetch settings.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -117,23 +121,33 @@ def get_app_sec_advanced_settings_prefetch(config_id: Optional[int] = None,
 def get_app_sec_advanced_settings_prefetch_output(config_id: Optional[pulumi.Input[int]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecAdvancedSettingsPrefetchResult]:
     """
-    Use the `AppSecAdvancedSettingsPrefetch` data source to retrieve information the prefetch request settings for a security configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprefetchrequestsforaconfiguration).
+    **Scopes**: Security configuration
 
-    ## Example Usage
+    Returns information about your prefetch request settings. By default, the Web Application Firewall only inspects external requests: requests originating outside of your firewall or Akamai's edge servers. When prefetch is enabled, however, internal requests – that is, requests between your origin servers and Akamai's edge servers – can also be inspected by the firewall. The returned information is described in the [PrefetchRequest members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#deb7220d) section of the Application Security API.
 
+    **Related** **API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/prefetch](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprefetchrequestsforaconfiguration)
+
+    Example Usage
     Basic usage:
 
     ```python
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     prefetch = akamai.get_app_sec_advanced_settings_prefetch(config_id=configuration.config_id)
     pulumi.export("advancedSettingsPrefetchOutput", prefetch.output_text)
     pulumi.export("advancedSettingsPrefetchJson", prefetch.json)
     ```
 
+    ## Output Options
 
-    :param int config_id: The configuration ID.
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `json`. JSON-formatted list of information about the prefetch request settings.
+    - `output_text`. Tabular report showing the prefetch request settings.
+
+
+    :param int config_id: . Unique identifier of the security configuration associated with the prefetch settings.
     """
     ...

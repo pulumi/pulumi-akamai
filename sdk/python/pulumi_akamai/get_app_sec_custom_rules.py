@@ -58,17 +58,11 @@ class GetAppSecCustomRulesResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        A JSON-formatted display of the custom rule information.
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display showing the ID and name of the custom rule(s).
-        """
         return pulumi.get(self, "output_text")
 
 
@@ -89,7 +83,11 @@ def get_app_sec_custom_rules(config_id: Optional[int] = None,
                              custom_rule_id: Optional[int] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecCustomRulesResult:
     """
-    Use the `get_app_sec_custom_rules` data source to retrieve a list of the custom rules defined for a security configuration.
+    **Scopes**: Security configuration; custom rule
+
+    Returns a list of the custom rules defined for a security configuration; you can also use this resource to return information for an individual custom rule. Custom rules are rules you have created yourself and are not part of the Kona Rule Set.
+
+    **Related API Endpoint**:[/appsec/v1/configs/{configId}/custom-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcustomrules)
 
     ## Example Usage
 
@@ -99,19 +97,25 @@ def get_app_sec_custom_rules(config_id: Optional[int] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     custom_rules = akamai.get_app_sec_custom_rules(config_id=configuration.config_id)
     pulumi.export("customRulesOutputText", custom_rules.output_text)
     pulumi.export("customRulesJson", custom_rules.json)
     pulumi.export("customRulesConfigId", custom_rules.config_id)
     specific_custom_rule = akamai.get_app_sec_custom_rules(config_id=configuration.config_id,
-        custom_rule_id=var["custom_rule_id"])
+        custom_rule_id=60029316)
     pulumi.export("specificCustomRuleJson", specific_custom_rule.json)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `output_text`. Tabular report showing the ID and name of the custom rule information.
+    - `json`. JSON-formatted report of the custom rule information.
 
 
-    :param int config_id: The ID of the security configuration to use.
-    :param int custom_rule_id: The ID of a specific custom rule to use. If not supplied, information about all custom rules associated with the given security configuration will be returned.
+    :param int config_id: . Unique identifier of the security configuration associated with the custom rules
+    :param int custom_rule_id: . Unique identifier of the custom rule you want to return information for. If not included, information is returned for all your custom rules.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -135,7 +139,11 @@ def get_app_sec_custom_rules_output(config_id: Optional[pulumi.Input[int]] = Non
                                     custom_rule_id: Optional[pulumi.Input[Optional[int]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecCustomRulesResult]:
     """
-    Use the `get_app_sec_custom_rules` data source to retrieve a list of the custom rules defined for a security configuration.
+    **Scopes**: Security configuration; custom rule
+
+    Returns a list of the custom rules defined for a security configuration; you can also use this resource to return information for an individual custom rule. Custom rules are rules you have created yourself and are not part of the Kona Rule Set.
+
+    **Related API Endpoint**:[/appsec/v1/configs/{configId}/custom-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcustomrules)
 
     ## Example Usage
 
@@ -145,18 +153,24 @@ def get_app_sec_custom_rules_output(config_id: Optional[pulumi.Input[int]] = Non
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     custom_rules = akamai.get_app_sec_custom_rules(config_id=configuration.config_id)
     pulumi.export("customRulesOutputText", custom_rules.output_text)
     pulumi.export("customRulesJson", custom_rules.json)
     pulumi.export("customRulesConfigId", custom_rules.config_id)
     specific_custom_rule = akamai.get_app_sec_custom_rules(config_id=configuration.config_id,
-        custom_rule_id=var["custom_rule_id"])
+        custom_rule_id=60029316)
     pulumi.export("specificCustomRuleJson", specific_custom_rule.json)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `output_text`. Tabular report showing the ID and name of the custom rule information.
+    - `json`. JSON-formatted report of the custom rule information.
 
 
-    :param int config_id: The ID of the security configuration to use.
-    :param int custom_rule_id: The ID of a specific custom rule to use. If not supplied, information about all custom rules associated with the given security configuration will be returned.
+    :param int config_id: . Unique identifier of the security configuration associated with the custom rules
+    :param int custom_rule_id: . Unique identifier of the custom rule you want to return information for. If not included, information is returned for all your custom rules.
     """
     ...

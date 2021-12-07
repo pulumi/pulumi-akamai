@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * The `akamai.AppSecCustomRule` resource allows you to create or modify a custom rule associated with a given security configuration.
+ * **Scopes**: Security configuration
+ *
+ * Creates a custom rule associated with a security configuration. Custom rules are rules that you define yourself and are not part of the Kona Rule Set.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/custom-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)
  */
 export class AppSecCustomRule extends pulumi.CustomResource {
     /**
@@ -36,16 +40,13 @@ export class AppSecCustomRule extends pulumi.CustomResource {
     }
 
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the custom rule being modified.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
+     * . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules) section of the Application Security API documentation.
      */
     public readonly customRule!: pulumi.Output<string>;
-    /**
-     * The ID of the custom rule.
-     */
     public /*out*/ readonly customRuleId!: pulumi.Output<number>;
 
     /**
@@ -88,16 +89,13 @@ export class AppSecCustomRule extends pulumi.CustomResource {
  */
 export interface AppSecCustomRuleState {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the custom rule being modified.
      */
     configId?: pulumi.Input<number>;
     /**
-     * The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
+     * . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules) section of the Application Security API documentation.
      */
     customRule?: pulumi.Input<string>;
-    /**
-     * The ID of the custom rule.
-     */
     customRuleId?: pulumi.Input<number>;
 }
 
@@ -106,11 +104,11 @@ export interface AppSecCustomRuleState {
  */
 export interface AppSecCustomRuleArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the custom rule being modified.
      */
     configId: pulumi.Input<number>;
     /**
-     * The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
+     * . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules) section of the Application Security API documentation.
      */
     customRule: pulumi.Input<string>;
 }

@@ -10,7 +10,11 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// The `akamai.AppSecMatchTarget` resource allows you to create or modify a match target associated with a given security configuration.
+    /// **Scopes**: Security configuration
+    /// 
+    /// Creates a match target associated with a security configuration. Match targets determine which security policy should apply to an API, hostname or path.
+    /// 
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)
     /// 
     /// ## Example Usage
     /// 
@@ -27,7 +31,7 @@ namespace Pulumi.Akamai
     ///     {
     ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
     ///         {
-    ///             Name = "Akamai Tools",
+    ///             Name = "Documentation",
     ///         }));
     ///         var matchTarget = new Akamai.AppSecMatchTarget("matchTarget", new Akamai.AppSecMatchTargetArgs
     ///         {
@@ -38,25 +42,27 @@ namespace Pulumi.Akamai
     /// 
     /// }
     /// ```
+    /// ## Output Options
+    /// 
+    /// In addition to the arguments above, the following attribute is exported:
+    /// 
+    /// - `match_target_id`. ID of the match target.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecMatchTarget:AppSecMatchTarget")]
     public partial class AppSecMatchTarget : Pulumi.CustomResource
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the match target being modified.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
+        /// . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
         /// </summary>
         [Output("matchTarget")]
         public Output<string> MatchTarget { get; private set; } = null!;
 
-        /// <summary>
-        /// The ID of the match target.
-        /// </summary>
         [Output("matchTargetId")]
         public Output<int> MatchTargetId { get; private set; } = null!;
 
@@ -107,13 +113,13 @@ namespace Pulumi.Akamai
     public sealed class AppSecMatchTargetArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the match target being modified.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
+        /// . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
         /// </summary>
         [Input("matchTarget", required: true)]
         public Input<string> MatchTarget { get; set; } = null!;
@@ -126,20 +132,17 @@ namespace Pulumi.Akamai
     public sealed class AppSecMatchTargetState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the match target being modified.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
+        /// . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
         /// </summary>
         [Input("matchTarget")]
         public Input<string>? MatchTarget { get; set; }
 
-        /// <summary>
-        /// The ID of the match target.
-        /// </summary>
         [Input("matchTargetId")]
         public Input<int>? MatchTargetId { get; set; }
 

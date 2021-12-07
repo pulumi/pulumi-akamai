@@ -53,17 +53,11 @@ class GetAppSecRatePoliciesResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        A JSON-formatted list of the rate policy information.
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display showing the ID and name of all rate policies associated with the specified security configuration.
-        """
         return pulumi.get(self, "output_text")
 
     @property
@@ -89,7 +83,11 @@ def get_app_sec_rate_policies(config_id: Optional[int] = None,
                               rate_policy_id: Optional[int] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecRatePoliciesResult:
     """
-    Use the `get_app_sec_rate_policies` data source to retrieve the rate policies for a specific security configuration, or a single rate policy.
+    **Scopes**: Security configuration; rate policy
+
+    Returns information about your rate policies. Rate polices help you monitor and moderate the number and rate of all the requests you receive; in turn, this helps you prevent your website from being overwhelmed by a dramatic, and unexpected, surge in traffic.
+
+    **Related API Endpoint:** [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getratepolicies)
 
     ## Example Usage
 
@@ -99,19 +97,25 @@ def get_app_sec_rate_policies(config_id: Optional[int] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     rate_policies = akamai.get_app_sec_rate_policies(config_id=configuration.config_id)
     pulumi.export("ratePoliciesOutput", rate_policies.output_text)
     pulumi.export("ratePoliciesJson", rate_policies.json)
     rate_policy = akamai.get_app_sec_rate_policies(config_id=configuration.config_id,
-        rate_policy_id=var["rate_policy_id"])
+        rate_policy_id=122149)
     pulumi.export("ratePolicyJson", rate_policy.json)
     pulumi.export("ratePolicyOutput", rate_policy.output_text)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `output_text`. Tabular report showing the ID and name of the rate policies.
+    - `json`. JSON-formatted list of the rate policy information.
 
 
-    :param int config_id: The ID of the security configuration to use.
-    :param int rate_policy_id: The ID of the rate policy to use. If this parameter is not supplied, information about all rate policies will be returned.
+    :param int config_id: . Unique identifier of the security configuration associated with the rate policies.
+    :param int rate_policy_id: . Unique identifier of the rate policy you want to return information for. If not included, information is returned for all your rate policies.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -135,7 +139,11 @@ def get_app_sec_rate_policies_output(config_id: Optional[pulumi.Input[int]] = No
                                      rate_policy_id: Optional[pulumi.Input[Optional[int]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecRatePoliciesResult]:
     """
-    Use the `get_app_sec_rate_policies` data source to retrieve the rate policies for a specific security configuration, or a single rate policy.
+    **Scopes**: Security configuration; rate policy
+
+    Returns information about your rate policies. Rate polices help you monitor and moderate the number and rate of all the requests you receive; in turn, this helps you prevent your website from being overwhelmed by a dramatic, and unexpected, surge in traffic.
+
+    **Related API Endpoint:** [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getratepolicies)
 
     ## Example Usage
 
@@ -145,18 +153,24 @@ def get_app_sec_rate_policies_output(config_id: Optional[pulumi.Input[int]] = No
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     rate_policies = akamai.get_app_sec_rate_policies(config_id=configuration.config_id)
     pulumi.export("ratePoliciesOutput", rate_policies.output_text)
     pulumi.export("ratePoliciesJson", rate_policies.json)
     rate_policy = akamai.get_app_sec_rate_policies(config_id=configuration.config_id,
-        rate_policy_id=var["rate_policy_id"])
+        rate_policy_id=122149)
     pulumi.export("ratePolicyJson", rate_policy.json)
     pulumi.export("ratePolicyOutput", rate_policy.output_text)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `output_text`. Tabular report showing the ID and name of the rate policies.
+    - `json`. JSON-formatted list of the rate policy information.
 
 
-    :param int config_id: The ID of the security configuration to use.
-    :param int rate_policy_id: The ID of the rate policy to use. If this parameter is not supplied, information about all rate policies will be returned.
+    :param int config_id: . Unique identifier of the security configuration associated with the rate policies.
+    :param int rate_policy_id: . Unique identifier of the rate policy you want to return information for. If not included, information is returned for all your rate policies.
     """
     ...

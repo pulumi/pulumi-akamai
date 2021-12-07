@@ -17,8 +17,8 @@ class AppSecByPassNetworkListArgs:
                  config_id: pulumi.Input[int]):
         """
         The set of arguments for constructing a AppSecByPassNetworkList resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] bypass_network_lists: A list containing the IDs of the network lists to use.
-        :param pulumi.Input[int] config_id: The configuration ID to use.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] bypass_network_lists: . JSON array of network IDs that comprise the bypass list.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the network bypass lists being modified.
         """
         pulumi.set(__self__, "bypass_network_lists", bypass_network_lists)
         pulumi.set(__self__, "config_id", config_id)
@@ -27,7 +27,7 @@ class AppSecByPassNetworkListArgs:
     @pulumi.getter(name="bypassNetworkLists")
     def bypass_network_lists(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
-        A list containing the IDs of the network lists to use.
+        . JSON array of network IDs that comprise the bypass list.
         """
         return pulumi.get(self, "bypass_network_lists")
 
@@ -39,7 +39,7 @@ class AppSecByPassNetworkListArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        The configuration ID to use.
+        . Unique identifier of the security configuration associated with the network bypass lists being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -55,8 +55,8 @@ class _AppSecByPassNetworkListState:
                  config_id: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering AppSecByPassNetworkList resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] bypass_network_lists: A list containing the IDs of the network lists to use.
-        :param pulumi.Input[int] config_id: The configuration ID to use.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] bypass_network_lists: . JSON array of network IDs that comprise the bypass list.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the network bypass lists being modified.
         """
         if bypass_network_lists is not None:
             pulumi.set(__self__, "bypass_network_lists", bypass_network_lists)
@@ -67,7 +67,7 @@ class _AppSecByPassNetworkListState:
     @pulumi.getter(name="bypassNetworkLists")
     def bypass_network_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list containing the IDs of the network lists to use.
+        . JSON array of network IDs that comprise the bypass list.
         """
         return pulumi.get(self, "bypass_network_lists")
 
@@ -79,7 +79,7 @@ class _AppSecByPassNetworkListState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The configuration ID to use.
+        . Unique identifier of the security configuration associated with the network bypass lists being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -97,9 +97,13 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
                  config_id: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        Use the `AppSecByPassNetworkList` resource to update which network lists to use in the
-        bypass network lists settings. Note: this resource is only applicable to WAP (Web Application
-        Protector) configurations.
+        **Scopes**: Security configuration
+
+        Specifies the networks that appear on the bypass network list. Networks on this list are allowed to bypass the Web Application Firewall.
+
+        Note that this resource is only applicable to WAP (Web Application Protector) configurations.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/bypass-network-lists](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putbypassnetworklistsforawapconfigversion)
 
         ## Example Usage
 
@@ -109,19 +113,24 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         bypass_network_lists = akamai.AppSecByPassNetworkList("bypassNetworkLists",
             config_id=configuration.config_id,
             bypass_network_lists=[
-                "id1",
-                "id2",
+                "DocumentationNetworkList",
+                "TrainingNetworkList",
             ])
         ```
+        ## Output Options
+
+        The following options can be used to determine the information returned, and how that returned information is formatted:
+
+        - `output_text`. Tabular report showing the updated list of bypass network IDs.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] bypass_network_lists: A list containing the IDs of the network lists to use.
-        :param pulumi.Input[int] config_id: The configuration ID to use.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] bypass_network_lists: . JSON array of network IDs that comprise the bypass list.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the network bypass lists being modified.
         """
         ...
     @overload
@@ -130,9 +139,13 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
                  args: AppSecByPassNetworkListArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `AppSecByPassNetworkList` resource to update which network lists to use in the
-        bypass network lists settings. Note: this resource is only applicable to WAP (Web Application
-        Protector) configurations.
+        **Scopes**: Security configuration
+
+        Specifies the networks that appear on the bypass network list. Networks on this list are allowed to bypass the Web Application Firewall.
+
+        Note that this resource is only applicable to WAP (Web Application Protector) configurations.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/bypass-network-lists](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putbypassnetworklistsforawapconfigversion)
 
         ## Example Usage
 
@@ -142,14 +155,19 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         bypass_network_lists = akamai.AppSecByPassNetworkList("bypassNetworkLists",
             config_id=configuration.config_id,
             bypass_network_lists=[
-                "id1",
-                "id2",
+                "DocumentationNetworkList",
+                "TrainingNetworkList",
             ])
         ```
+        ## Output Options
+
+        The following options can be used to determine the information returned, and how that returned information is formatted:
+
+        - `output_text`. Tabular report showing the updated list of bypass network IDs.
 
         :param str resource_name: The name of the resource.
         :param AppSecByPassNetworkListArgs args: The arguments to use to populate this resource's properties.
@@ -205,8 +223,8 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] bypass_network_lists: A list containing the IDs of the network lists to use.
-        :param pulumi.Input[int] config_id: The configuration ID to use.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] bypass_network_lists: . JSON array of network IDs that comprise the bypass list.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the network bypass lists being modified.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -220,7 +238,7 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
     @pulumi.getter(name="bypassNetworkLists")
     def bypass_network_lists(self) -> pulumi.Output[Sequence[str]]:
         """
-        A list containing the IDs of the network lists to use.
+        . JSON array of network IDs that comprise the bypass list.
         """
         return pulumi.get(self, "bypass_network_lists")
 
@@ -228,7 +246,7 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        The configuration ID to use.
+        . Unique identifier of the security configuration associated with the network bypass lists being modified.
         """
         return pulumi.get(self, "config_id")
 

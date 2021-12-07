@@ -19,10 +19,10 @@ class AppSecReputationProfileAnalysisArgs:
                  security_policy_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecReputationProfileAnalysis resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[bool] forward_shared_ip_to_http_header_siem: Whether to add value indicating that shared IPs are included in HTTP header and SIEM integration.
-        :param pulumi.Input[bool] forward_to_http_header: Whether to add client reputation details to requests forwarded to origin in an HTTP header.
-        :param pulumi.Input[str] security_policy_id: The ID of the security_policy_id to which the settings should be applied.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
+        :param pulumi.Input[bool] forward_shared_ip_to_http_header_siem: . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
+        :param pulumi.Input[bool] forward_to_http_header: . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "forward_shared_ip_to_http_header_siem", forward_shared_ip_to_http_header_siem)
@@ -33,7 +33,7 @@ class AppSecReputationProfileAnalysisArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -45,7 +45,7 @@ class AppSecReputationProfileAnalysisArgs:
     @pulumi.getter(name="forwardSharedIpToHttpHeaderSiem")
     def forward_shared_ip_to_http_header_siem(self) -> pulumi.Input[bool]:
         """
-        Whether to add value indicating that shared IPs are included in HTTP header and SIEM integration.
+        . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
         """
         return pulumi.get(self, "forward_shared_ip_to_http_header_siem")
 
@@ -57,7 +57,7 @@ class AppSecReputationProfileAnalysisArgs:
     @pulumi.getter(name="forwardToHttpHeader")
     def forward_to_http_header(self) -> pulumi.Input[bool]:
         """
-        Whether to add client reputation details to requests forwarded to origin in an HTTP header.
+        . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
         """
         return pulumi.get(self, "forward_to_http_header")
 
@@ -69,7 +69,7 @@ class AppSecReputationProfileAnalysisArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
         """
-        The ID of the security_policy_id to which the settings should be applied.
+        . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -87,10 +87,10 @@ class _AppSecReputationProfileAnalysisState:
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecReputationProfileAnalysis resources.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[bool] forward_shared_ip_to_http_header_siem: Whether to add value indicating that shared IPs are included in HTTP header and SIEM integration.
-        :param pulumi.Input[bool] forward_to_http_header: Whether to add client reputation details to requests forwarded to origin in an HTTP header.
-        :param pulumi.Input[str] security_policy_id: The ID of the security_policy_id to which the settings should be applied.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
+        :param pulumi.Input[bool] forward_shared_ip_to_http_header_siem: . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
+        :param pulumi.Input[bool] forward_to_http_header: . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -105,7 +105,7 @@ class _AppSecReputationProfileAnalysisState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -117,7 +117,7 @@ class _AppSecReputationProfileAnalysisState:
     @pulumi.getter(name="forwardSharedIpToHttpHeaderSiem")
     def forward_shared_ip_to_http_header_siem(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether to add value indicating that shared IPs are included in HTTP header and SIEM integration.
+        . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
         """
         return pulumi.get(self, "forward_shared_ip_to_http_header_siem")
 
@@ -129,7 +129,7 @@ class _AppSecReputationProfileAnalysisState:
     @pulumi.getter(name="forwardToHttpHeader")
     def forward_to_http_header(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether to add client reputation details to requests forwarded to origin in an HTTP header.
+        . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
         """
         return pulumi.get(self, "forward_to_http_header")
 
@@ -141,7 +141,7 @@ class _AppSecReputationProfileAnalysisState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The ID of the security_policy_id to which the settings should be applied.
+        . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -161,7 +161,14 @@ class AppSecReputationProfileAnalysis(pulumi.CustomResource):
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        The `resource_akamai_appsec_reputation_profile_analysis` resource allows you to toggle the reputation analysis settings for a given security policy. The `forward_to_http_header` parameter indicates whether to add client reputation details to requests forwarded to origin in an HTTP header. The `forward_shared_ip_to_http_header_siem` parameter indicates whether to add value indicating that shared IPs are included in HTTP header and SIEM integration.
+        **Scopes**: Security policy
+
+        Modifies the reputation analysis settings for a security policy. These settings include the following:
+
+        - The `forward_to_http_header` parameter, which indicates whether client reputation details are added to requests forwarded to origin in an HTTP header.
+        - The `forward_shared_ip_to_http_header_siem` parameter, which specifies whether a value is added indicating that shared IPs addresses are included in HTTP headers and in SIEM integration events.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putreputationanalysis)
 
         ## Example Usage
 
@@ -171,21 +178,20 @@ class AppSecReputationProfileAnalysis(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-        # USE CASE: user wants to set reputation analysis settings
-        reputation_analysis = akamai.AppSecReputationProfileAnalysis("reputationAnalysis",
-            config_id=configuration.config_id,
-            security_policy_id=var["security_policy_id"],
-            forward_to_http_header=True,
-            forward_shared_ip_to_http_header_siem=True)
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
+        reputation_analysis = akamai.get_app_sec_reputation_profile_analysis(config_id=configuration.config_id,
+            security_policy_id="gms1_134637",
+            forward_to_http_header=True)
+        pulumi.export("reputationAnalysisText", reputation_analysis.output_text)
+        pulumi.export("reputationAnalysisJson", reputation_analysis.json)
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[bool] forward_shared_ip_to_http_header_siem: Whether to add value indicating that shared IPs are included in HTTP header and SIEM integration.
-        :param pulumi.Input[bool] forward_to_http_header: Whether to add client reputation details to requests forwarded to origin in an HTTP header.
-        :param pulumi.Input[str] security_policy_id: The ID of the security_policy_id to which the settings should be applied.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
+        :param pulumi.Input[bool] forward_shared_ip_to_http_header_siem: . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
+        :param pulumi.Input[bool] forward_to_http_header: . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
         """
         ...
     @overload
@@ -194,7 +200,14 @@ class AppSecReputationProfileAnalysis(pulumi.CustomResource):
                  args: AppSecReputationProfileAnalysisArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        The `resource_akamai_appsec_reputation_profile_analysis` resource allows you to toggle the reputation analysis settings for a given security policy. The `forward_to_http_header` parameter indicates whether to add client reputation details to requests forwarded to origin in an HTTP header. The `forward_shared_ip_to_http_header_siem` parameter indicates whether to add value indicating that shared IPs are included in HTTP header and SIEM integration.
+        **Scopes**: Security policy
+
+        Modifies the reputation analysis settings for a security policy. These settings include the following:
+
+        - The `forward_to_http_header` parameter, which indicates whether client reputation details are added to requests forwarded to origin in an HTTP header.
+        - The `forward_shared_ip_to_http_header_siem` parameter, which specifies whether a value is added indicating that shared IPs addresses are included in HTTP headers and in SIEM integration events.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putreputationanalysis)
 
         ## Example Usage
 
@@ -204,13 +217,12 @@ class AppSecReputationProfileAnalysis(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-        # USE CASE: user wants to set reputation analysis settings
-        reputation_analysis = akamai.AppSecReputationProfileAnalysis("reputationAnalysis",
-            config_id=configuration.config_id,
-            security_policy_id=var["security_policy_id"],
-            forward_to_http_header=True,
-            forward_shared_ip_to_http_header_siem=True)
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
+        reputation_analysis = akamai.get_app_sec_reputation_profile_analysis(config_id=configuration.config_id,
+            security_policy_id="gms1_134637",
+            forward_to_http_header=True)
+        pulumi.export("reputationAnalysisText", reputation_analysis.output_text)
+        pulumi.export("reputationAnalysisJson", reputation_analysis.json)
         ```
 
         :param str resource_name: The name of the resource.
@@ -277,10 +289,10 @@ class AppSecReputationProfileAnalysis(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[bool] forward_shared_ip_to_http_header_siem: Whether to add value indicating that shared IPs are included in HTTP header and SIEM integration.
-        :param pulumi.Input[bool] forward_to_http_header: Whether to add client reputation details to requests forwarded to origin in an HTTP header.
-        :param pulumi.Input[str] security_policy_id: The ID of the security_policy_id to which the settings should be applied.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
+        :param pulumi.Input[bool] forward_shared_ip_to_http_header_siem: . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
+        :param pulumi.Input[bool] forward_to_http_header: . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -296,7 +308,7 @@ class AppSecReputationProfileAnalysis(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -304,7 +316,7 @@ class AppSecReputationProfileAnalysis(pulumi.CustomResource):
     @pulumi.getter(name="forwardSharedIpToHttpHeaderSiem")
     def forward_shared_ip_to_http_header_siem(self) -> pulumi.Output[bool]:
         """
-        Whether to add value indicating that shared IPs are included in HTTP header and SIEM integration.
+        . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
         """
         return pulumi.get(self, "forward_shared_ip_to_http_header_siem")
 
@@ -312,7 +324,7 @@ class AppSecReputationProfileAnalysis(pulumi.CustomResource):
     @pulumi.getter(name="forwardToHttpHeader")
     def forward_to_http_header(self) -> pulumi.Output[bool]:
         """
-        Whether to add client reputation details to requests forwarded to origin in an HTTP header.
+        . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
         """
         return pulumi.get(self, "forward_to_http_header")
 
@@ -320,7 +332,7 @@ class AppSecReputationProfileAnalysis(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
-        The ID of the security_policy_id to which the settings should be applied.
+        . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
         """
         return pulumi.get(self, "security_policy_id")
 

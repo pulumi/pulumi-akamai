@@ -119,7 +119,7 @@ import * as utilities from "./utilities";
  *
  * * `flags`
  * * `protocol` - Set to `3`. If the value isn't `3`, the DNSKEY resource record is treated as invalid during signature verification.
- * * `algorithm` - The public key’s cryptographic algorithm. This algorithm determines the format of the public key field.
+ * * `algorithm` - The public key's cryptographic algorithm. This algorithm determines the format of the public key field.
  * * `key` - A Base64 encoded value representing the public key. The format used depends on the `algorithm`.
  *
  * ### DS record
@@ -219,8 +219,8 @@ import * as utilities from "./utilities";
  * * `typeCovered` - The resource record set type covered by this signature.
  * * `algorithm` - Identifies the cryptographic algorithm used to create the signature.
  * * `originalTtl` - The TTL of the covered record set as it appears in the authoritative zone.
- * * `expiration` - The end point of this signature’s validity. The signature can`t be used for authentication past this point in time.
- * * `inception` - The start point of this signature’s validity. The signature can`t be used for authentication prior to this point in time.
+ * * `expiration` - The end point of this signature's validity. The signature can`t be used for authentication past this point in time.
+ * * `inception` - The start point of this signature's validity. The signature can`t be used for authentication prior to this point in time.
  * * `keytag` - The Key Tag field contains the key tag value of the DNSKEY RR that validates this signature, in network byte order.
  * * `signer` - The owner of the DNSKEY resource record who validates this signature.
  * * `signature` - The base 64 encoded cryptographic signature that covers the RRSIG RDATA and covered record set. Format depends on the TSIG algorithm in use.
@@ -238,7 +238,7 @@ import * as utilities from "./utilities";
  *
  * * `target` - The domain name of the target host.
  * * `priority` - A 16-bit integer that specifies the preference given to this resource record among others at the same owner. Lower values are preferred.
- * * `weight` - A server selection mechanism that specifies a relative weight for entries with the same priority. Larger weights are given a proportionately higher probability of being selected. The range of this number is 0–65535, a 16-bit unsigned integer in network byte order. Domain administrators should use Weight 0 when there isn’t any server selection to do, to make the RR easier to read for humans. In the presence of records containing weights greater than 0, records with weight 0 should have a very small chance of being selected.
+ * * `weight` - A server selection mechanism that specifies a relative weight for entries with the same priority. Larger weights are given a proportionately higher probability of being selected. The range of this number is 0–65535, a 16-bit unsigned integer in network byte order. Domain administrators should use Weight 0 when there isn't any server selection to do, to make the RR easier to read for humans. In the presence of records containing weights greater than 0, records with weight 0 should have a very small chance of being selected.
  * * `port` - The port on this target of this service. The range of this number is 0–65535, a 16-bit unsigned integer in network byte order.
  *
  * ### SSHFP record

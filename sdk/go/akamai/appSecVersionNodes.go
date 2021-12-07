@@ -11,7 +11,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecVersionNodes` resource to update the version notes for a configuration.
+// **Scopes**: Security configuration
+//
+// Updates the version notes for a security configuration.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putversionnotes)
 //
 // ## Example Usage
 //
@@ -27,7 +31,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -36,7 +40,7 @@ import (
 // 		}
 // 		versionNotesAppSecVersionNodes, err := akamai.NewAppSecVersionNodes(ctx, "versionNotesAppSecVersionNodes", &akamai.AppSecVersionNodesArgs{
 // 			ConfigId:     pulumi.Int(configuration.ConfigId),
-// 			VersionNotes: pulumi.Any(_var.Version_notes),
+// 			VersionNotes: pulumi.String("This version enables reputation profiles."),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -46,14 +50,19 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `outputText`. Tabular report showing the updated version notes.
 type AppSecVersionNodes struct {
 	pulumi.CustomResourceState
 
-	// The configuration ID to use.
+	// . Unique identifier of the security configuration whose version notes are being modified.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// A tabular display showing the updated version notes.
+	// Text Export representation
 	OutputText pulumi.StringOutput `pulumi:"outputText"`
-	// A string containing the version notes to be used.
+	// . Brief description of the security configuration version.
 	VersionNotes pulumi.StringOutput `pulumi:"versionNotes"`
 }
 
@@ -92,20 +101,20 @@ func GetAppSecVersionNodes(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecVersionNodes resources.
 type appSecVersionNodesState struct {
-	// The configuration ID to use.
+	// . Unique identifier of the security configuration whose version notes are being modified.
 	ConfigId *int `pulumi:"configId"`
-	// A tabular display showing the updated version notes.
+	// Text Export representation
 	OutputText *string `pulumi:"outputText"`
-	// A string containing the version notes to be used.
+	// . Brief description of the security configuration version.
 	VersionNotes *string `pulumi:"versionNotes"`
 }
 
 type AppSecVersionNodesState struct {
-	// The configuration ID to use.
+	// . Unique identifier of the security configuration whose version notes are being modified.
 	ConfigId pulumi.IntPtrInput
-	// A tabular display showing the updated version notes.
+	// Text Export representation
 	OutputText pulumi.StringPtrInput
-	// A string containing the version notes to be used.
+	// . Brief description of the security configuration version.
 	VersionNotes pulumi.StringPtrInput
 }
 
@@ -114,17 +123,17 @@ func (AppSecVersionNodesState) ElementType() reflect.Type {
 }
 
 type appSecVersionNodesArgs struct {
-	// The configuration ID to use.
+	// . Unique identifier of the security configuration whose version notes are being modified.
 	ConfigId int `pulumi:"configId"`
-	// A string containing the version notes to be used.
+	// . Brief description of the security configuration version.
 	VersionNotes string `pulumi:"versionNotes"`
 }
 
 // The set of arguments for constructing a AppSecVersionNodes resource.
 type AppSecVersionNodesArgs struct {
-	// The configuration ID to use.
+	// . Unique identifier of the security configuration whose version notes are being modified.
 	ConfigId pulumi.IntInput
-	// A string containing the version notes to be used.
+	// . Brief description of the security configuration version.
 	VersionNotes pulumi.StringInput
 }
 

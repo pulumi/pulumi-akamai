@@ -40,9 +40,6 @@ class GetAppSecBypassNetworkListsResult:
     @property
     @pulumi.getter(name="bypassNetworkLists")
     def bypass_network_lists(self) -> Sequence[str]:
-        """
-        A list of strings containing the network list IDs.
-        """
         return pulumi.get(self, "bypass_network_lists")
 
     @property
@@ -61,17 +58,11 @@ class GetAppSecBypassNetworkListsResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        A JSON-formatted list of information about the bypass network lists.
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display showing the bypass network list information.
-        """
         return pulumi.get(self, "output_text")
 
 
@@ -91,10 +82,13 @@ class AwaitableGetAppSecBypassNetworkListsResult(GetAppSecBypassNetworkListsResu
 def get_app_sec_bypass_network_lists(config_id: Optional[int] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecBypassNetworkListsResult:
     """
-    Use the `AppSecByPassNetworkList` data source to retrieve information about which network
-    lists are used in the bypass network lists settings.  The information available is described
-    [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getbypassnetworklistsforawapconfigversion).
-    Note: this data source is only applicable to WAP (Web Application Protector) configurations.
+    **Scopes**: Security configuration
+
+    Returns information about the network lists assigned to the bypass network list; networks on this list are not subject to firewall checking. The returned information is described in the [BypassNetworkList members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#bypassnetworklist) section of the Application Security API.
+
+    Note that this data source is only applicable to WAP (Web Application Protector) configurations.
+
+    **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/bypass-network-lists](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getbypassnetworklistsforawapconfigversion)
 
     ## Example Usage
 
@@ -104,15 +98,22 @@ def get_app_sec_bypass_network_lists(config_id: Optional[int] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     bypass_network_lists = akamai.get_app_sec_bypass_network_lists(config_id=configuration.config_id)
     pulumi.export("bypassNetworkListsOutput", bypass_network_lists.output_text)
     pulumi.export("bypassNetworkListsJson", bypass_network_lists.json)
     pulumi.export("bypassNetworkListsIdList", bypass_network_lists.bypass_network_lists)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `bypass_network_list`. List of network IDs.
+    - `json`. JSON-formatted list of information about the bypass networks.
+    - `output_text`. Tabular report showing the bypass network list information.
 
 
-    :param int config_id: The configuration ID to use.
+    :param int config_id: . Unique identifier of the security configuration associated with the bypass network list.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -134,10 +135,13 @@ def get_app_sec_bypass_network_lists(config_id: Optional[int] = None,
 def get_app_sec_bypass_network_lists_output(config_id: Optional[pulumi.Input[int]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecBypassNetworkListsResult]:
     """
-    Use the `AppSecByPassNetworkList` data source to retrieve information about which network
-    lists are used in the bypass network lists settings.  The information available is described
-    [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getbypassnetworklistsforawapconfigversion).
-    Note: this data source is only applicable to WAP (Web Application Protector) configurations.
+    **Scopes**: Security configuration
+
+    Returns information about the network lists assigned to the bypass network list; networks on this list are not subject to firewall checking. The returned information is described in the [BypassNetworkList members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#bypassnetworklist) section of the Application Security API.
+
+    Note that this data source is only applicable to WAP (Web Application Protector) configurations.
+
+    **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/bypass-network-lists](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getbypassnetworklistsforawapconfigversion)
 
     ## Example Usage
 
@@ -147,14 +151,21 @@ def get_app_sec_bypass_network_lists_output(config_id: Optional[pulumi.Input[int
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     bypass_network_lists = akamai.get_app_sec_bypass_network_lists(config_id=configuration.config_id)
     pulumi.export("bypassNetworkListsOutput", bypass_network_lists.output_text)
     pulumi.export("bypassNetworkListsJson", bypass_network_lists.json)
     pulumi.export("bypassNetworkListsIdList", bypass_network_lists.bypass_network_lists)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `bypass_network_list`. List of network IDs.
+    - `json`. JSON-formatted list of information about the bypass networks.
+    - `output_text`. Tabular report showing the bypass network list information.
 
 
-    :param int config_id: The configuration ID to use.
+    :param int config_id: . Unique identifier of the security configuration associated with the bypass network list.
     """
     ...

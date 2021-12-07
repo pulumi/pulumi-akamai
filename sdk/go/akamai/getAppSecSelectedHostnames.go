@@ -10,7 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecSelectedHostnames` data source to retrieve a list of the hostnames that are currently protected under a given security configuration.
+// **Scopes**: Security configuration
+//
+// Returns a list of the hostnames currently protected by the specified security configuration.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getselectedhostnames)
 //
 // ## Example Usage
 //
@@ -26,7 +30,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Akamai Tools"
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -46,6 +50,13 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `hostnames`. List of selected hostnames.
+// - `hostnamesJson`. JSON-formatted list of selected hostnames.
+// - `outputText`. Tabular report of the selected hostnames.
 func LookupAppSecSelectedHostnames(ctx *pulumi.Context, args *LookupAppSecSelectedHostnamesArgs, opts ...pulumi.InvokeOption) (*LookupAppSecSelectedHostnamesResult, error) {
 	var rv LookupAppSecSelectedHostnamesResult
 	err := ctx.Invoke("akamai:index/getAppSecSelectedHostnames:getAppSecSelectedHostnames", args, &rv, opts...)
@@ -57,20 +68,17 @@ func LookupAppSecSelectedHostnames(ctx *pulumi.Context, args *LookupAppSecSelect
 
 // A collection of arguments for invoking getAppSecSelectedHostnames.
 type LookupAppSecSelectedHostnamesArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the protected hosts.
 	ConfigId int `pulumi:"configId"`
 }
 
 // A collection of values returned by getAppSecSelectedHostnames.
 type LookupAppSecSelectedHostnamesResult struct {
-	ConfigId int `pulumi:"configId"`
-	// The list of selected hostnames.
-	Hostnames []string `pulumi:"hostnames"`
-	// The list of selected hostnames in JSON format.
-	HostnamesJson string `pulumi:"hostnamesJson"`
+	ConfigId      int      `pulumi:"configId"`
+	Hostnames     []string `pulumi:"hostnames"`
+	HostnamesJson string   `pulumi:"hostnamesJson"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A tabular display of the selected hostnames.
+	Id         string `pulumi:"id"`
 	OutputText string `pulumi:"outputText"`
 }
 
@@ -85,7 +93,7 @@ func LookupAppSecSelectedHostnamesOutput(ctx *pulumi.Context, args LookupAppSecS
 
 // A collection of arguments for invoking getAppSecSelectedHostnames.
 type LookupAppSecSelectedHostnamesOutputArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the protected hosts.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
 }
 
@@ -112,12 +120,10 @@ func (o LookupAppSecSelectedHostnamesResultOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAppSecSelectedHostnamesResult) int { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// The list of selected hostnames.
 func (o LookupAppSecSelectedHostnamesResultOutput) Hostnames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupAppSecSelectedHostnamesResult) []string { return v.Hostnames }).(pulumi.StringArrayOutput)
 }
 
-// The list of selected hostnames in JSON format.
 func (o LookupAppSecSelectedHostnamesResultOutput) HostnamesJson() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecSelectedHostnamesResult) string { return v.HostnamesJson }).(pulumi.StringOutput)
 }
@@ -127,7 +133,6 @@ func (o LookupAppSecSelectedHostnamesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecSelectedHostnamesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A tabular display of the selected hostnames.
 func (o LookupAppSecSelectedHostnamesResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecSelectedHostnamesResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

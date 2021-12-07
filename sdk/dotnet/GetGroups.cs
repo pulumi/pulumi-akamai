@@ -20,12 +20,14 @@ namespace Pulumi.Akamai
         /// 
         /// ```csharp
         /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
         /// 
         /// class MyStack : Stack
         /// {
         ///     public MyStack()
         ///     {
-        ///         this.PropertyMatch = data.Akamai_groups.My_example;
+        ///         var my_example = Output.Create(Akamai.GetGroups.InvokeAsync());
+        ///         this.PropertyMatch = my_example;
         ///     }
         /// 
         ///     [Output("propertyMatch")]

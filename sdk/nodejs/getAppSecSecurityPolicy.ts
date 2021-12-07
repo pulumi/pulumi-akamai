@@ -4,32 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.AppSecSecurityPolicy` data source to retrieve information about the security policies associated with a specific security configuration, or about a specific security policy.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Akamai Tools",
- * });
- * const securityPolicies = configuration.then(configuration => akamai.getAppSecSecurityPolicy({
- *     configId: configuration.configId,
- * }));
- * export const securityPoliciesList = securityPolicies.then(securityPolicies => securityPolicies.securityPolicyIdLists);
- * export const securityPoliciesText = securityPolicies.then(securityPolicies => securityPolicies.outputText);
- * const specificSecurityPolicy = configuration.then(configuration => akamai.getAppSecSecurityPolicy({
- *     configId: configuration.configId,
- *     securityPolicyName: "APIs",
- * }));
- * export const specificSecurityPolicyId = specificSecurityPolicy.then(specificSecurityPolicy => specificSecurityPolicy.securityPolicyId);
- * ```
- */
 export function getAppSecSecurityPolicy(args: GetAppSecSecurityPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecSecurityPolicyResult> {
     if (!opts) {
         opts = {}
@@ -49,12 +23,10 @@ export function getAppSecSecurityPolicy(args: GetAppSecSecurityPolicyArgs, opts?
  */
 export interface GetAppSecSecurityPolicyArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the security policies.
+     * - `securityPolicyName`. (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
      */
     configId: number;
-    /**
-     * The name of the security policy to use. If not supplied, information about all security policies is returned.
-     */
     securityPolicyName?: string;
 }
 
@@ -67,17 +39,8 @@ export interface GetAppSecSecurityPolicyResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A tabular display showing the ID and name of all security policies.
-     */
     readonly outputText: string;
-    /**
-     * The ID of the security policy. Included only if `securityPolicyName` was specified.
-     */
     readonly securityPolicyId: string;
-    /**
-     * A list of the IDs of all security policies.
-     */
     readonly securityPolicyIdLists: string[];
     readonly securityPolicyName?: string;
 }
@@ -91,11 +54,9 @@ export function getAppSecSecurityPolicyOutput(args: GetAppSecSecurityPolicyOutpu
  */
 export interface GetAppSecSecurityPolicyOutputArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the security policies.
+     * - `securityPolicyName`. (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
      */
     configId: pulumi.Input<number>;
-    /**
-     * The name of the security policy to use. If not supplied, information about all security policies is returned.
-     */
     securityPolicyName?: pulumi.Input<string>;
 }

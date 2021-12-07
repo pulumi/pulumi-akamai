@@ -10,7 +10,11 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// Use the `akamai.AppSecIPGeo` resource to update the method and which network lists to use for IP/Geo firewall blocking.
+    /// **Scopes**: Security policy
+    /// 
+    /// Modifies the method used for firewall blocking, and manages the network lists used for IP/Geo firewall blocking.
+    /// 
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putipgeofirewall)
     /// 
     /// ## Example Usage
     /// 
@@ -26,25 +30,36 @@ namespace Pulumi.Akamai
     ///     {
     ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
     ///         {
-    ///             Name = @var.Security_configuration,
+    ///             Name = "Documentation",
     ///         }));
-    ///         // USE CASE: user wants to update the IP/GEO firewall mode to "block specific IPs/Subnets and Geos" and update the IP list, GEO list &amp; Exception list
     ///         var ipGeoBlock = new Akamai.AppSecIPGeo("ipGeoBlock", new Akamai.AppSecIPGeoArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = @var.Security_policy_id1,
-    ///             Mode = @var.Block,
-    ///             GeoNetworkLists = @var.Geo_network_lists,
-    ///             IpNetworkLists = @var.Ip_network_lists,
-    ///             ExceptionIpNetworkLists = @var.Exception_ip_network_lists,
+    ///             SecurityPolicyId = "gms1_134637",
+    ///             Mode = "block",
+    ///             GeoNetworkLists = 
+    ///             {
+    ///                 "06038_GEO_TEST",
+    ///             },
+    ///             IpNetworkLists = 
+    ///             {
+    ///                 "56921_TEST",
+    ///             },
+    ///             ExceptionIpNetworkLists = 
+    ///             {
+    ///                 "07126_EXCEPTION_TEST",
+    ///             },
     ///         });
-    ///         // USE CASE: user wants to update the IP/GEO firewall mode to "block all traffic except IPs/Subnets in block exceptions" and update the Exception list
+    ///         // USE CASE: User wants to update the IP/Geo firewall mode and update the exception list.
     ///         var ipGeoAllow = new Akamai.AppSecIPGeo("ipGeoAllow", new Akamai.AppSecIPGeoArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = @var.Security_policy_id2,
-    ///             Mode = @var.Allow,
-    ///             ExceptionIpNetworkLists = @var.Exception_ip_network_lists,
+    ///             SecurityPolicyId = "gms1-090334",
+    ///             Mode = "allow",
+    ///             ExceptionIpNetworkLists = 
+    ///             {
+    ///                 "07126_EXCEPTION_TEST",
+    ///             },
     ///         });
     ///         this.IpGeoModeBlock = ipGeoBlock.Mode;
     ///         this.BlockGeoNetworkLists = ipGeoBlock.GeoNetworkLists;
@@ -73,37 +88,37 @@ namespace Pulumi.Akamai
     public partial class AppSecIPGeo : Pulumi.CustomResource
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// The network lists to be allowed regardless of `mode`, `geo_network_lists`, and `ip_network_lists` parameters.
+        /// . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
         /// </summary>
         [Output("exceptionIpNetworkLists")]
         public Output<ImmutableArray<string>> ExceptionIpNetworkLists { get; private set; } = null!;
 
         /// <summary>
-        /// The network lists to be blocked or allowed geographically.
+        /// . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
         /// </summary>
         [Output("geoNetworkLists")]
         public Output<ImmutableArray<string>> GeoNetworkLists { get; private set; } = null!;
 
         /// <summary>
-        /// The network lists to be blocked or allowd by IP address.
+        /// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
         /// </summary>
         [Output("ipNetworkLists")]
         public Output<ImmutableArray<string>> IpNetworkLists { get; private set; } = null!;
 
         /// <summary>
-        /// The mode to use for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
+        /// . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
         /// </summary>
         [Output("mode")]
         public Output<string> Mode { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the IP/Geo lists being modified.
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -155,7 +170,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecIPGeoArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
@@ -164,7 +179,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _exceptionIpNetworkLists;
 
         /// <summary>
-        /// The network lists to be allowed regardless of `mode`, `geo_network_lists`, and `ip_network_lists` parameters.
+        /// . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
         /// </summary>
         public InputList<string> ExceptionIpNetworkLists
         {
@@ -176,7 +191,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _geoNetworkLists;
 
         /// <summary>
-        /// The network lists to be blocked or allowed geographically.
+        /// . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
         /// </summary>
         public InputList<string> GeoNetworkLists
         {
@@ -188,7 +203,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _ipNetworkLists;
 
         /// <summary>
-        /// The network lists to be blocked or allowd by IP address.
+        /// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
         /// </summary>
         public InputList<string> IpNetworkLists
         {
@@ -197,13 +212,13 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The mode to use for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
+        /// . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
         /// </summary>
         [Input("mode", required: true)]
         public Input<string> Mode { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the IP/Geo lists being modified.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -216,7 +231,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecIPGeoState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
@@ -225,7 +240,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _exceptionIpNetworkLists;
 
         /// <summary>
-        /// The network lists to be allowed regardless of `mode`, `geo_network_lists`, and `ip_network_lists` parameters.
+        /// . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
         /// </summary>
         public InputList<string> ExceptionIpNetworkLists
         {
@@ -237,7 +252,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _geoNetworkLists;
 
         /// <summary>
-        /// The network lists to be blocked or allowed geographically.
+        /// . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
         /// </summary>
         public InputList<string> GeoNetworkLists
         {
@@ -249,7 +264,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _ipNetworkLists;
 
         /// <summary>
-        /// The network lists to be blocked or allowd by IP address.
+        /// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
         /// </summary>
         public InputList<string> IpNetworkLists
         {
@@ -258,13 +273,13 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The mode to use for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
+        /// . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
         /// </summary>
         [Input("mode")]
         public Input<string>? Mode { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the IP/Geo lists being modified.
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

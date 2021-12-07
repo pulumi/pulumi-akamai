@@ -50,17 +50,11 @@ class GetAppSecSiemSettingsResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        A JSON-formatted list of the SIEM setting information.
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display showing the SIEM setting information.
-        """
         return pulumi.get(self, "output_text")
 
 
@@ -79,7 +73,11 @@ class AwaitableGetAppSecSiemSettingsResult(GetAppSecSiemSettingsResult):
 def get_app_sec_siem_settings(config_id: Optional[int] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecSiemSettingsResult:
     """
-    Use the `AppSecSiemSettings` data source to retrieve the SIEM settings for a specific configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemsettings).
+    **Scopes**: Security configuration
+
+    Returns the SIEM (Security Event and Information Management) settings for a security configuration. The returned information is described in the [SIEM members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#d8470aff) section of the Application Security API.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/siem](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemsettings)
 
     ## Example Usage
 
@@ -89,14 +87,20 @@ def get_app_sec_siem_settings(config_id: Optional[int] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     siem_settings = akamai.get_app_sec_siem_settings(config_id=configuration.config_id)
     pulumi.export("siemSettingsJson", siem_settings.json)
     pulumi.export("siemSettingsOutput", siem_settings.output_text)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `json`. JSON-formatted list of the SIEM setting information.
+    - `output_text`. Tabular report showing the SIEM setting information.
 
 
-    :param int config_id: The ID of the security configuration to use.
+    :param int config_id: . Unique identifier of the security configuration you want to return information for.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -117,7 +121,11 @@ def get_app_sec_siem_settings(config_id: Optional[int] = None,
 def get_app_sec_siem_settings_output(config_id: Optional[pulumi.Input[int]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecSiemSettingsResult]:
     """
-    Use the `AppSecSiemSettings` data source to retrieve the SIEM settings for a specific configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemsettings).
+    **Scopes**: Security configuration
+
+    Returns the SIEM (Security Event and Information Management) settings for a security configuration. The returned information is described in the [SIEM members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#d8470aff) section of the Application Security API.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/siem](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemsettings)
 
     ## Example Usage
 
@@ -127,13 +135,19 @@ def get_app_sec_siem_settings_output(config_id: Optional[pulumi.Input[int]] = No
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     siem_settings = akamai.get_app_sec_siem_settings(config_id=configuration.config_id)
     pulumi.export("siemSettingsJson", siem_settings.json)
     pulumi.export("siemSettingsOutput", siem_settings.output_text)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `json`. JSON-formatted list of the SIEM setting information.
+    - `output_text`. Tabular report showing the SIEM setting information.
 
 
-    :param int config_id: The ID of the security configuration to use.
+    :param int config_id: . Unique identifier of the security configuration you want to return information for.
     """
     ...

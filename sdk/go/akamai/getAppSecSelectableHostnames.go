@@ -10,7 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecSelectableHostnames` data source to retrieve the list of hostnames that may be protected under a given security configuration. You can specify the list to be retrieved either by supplying the name of a security configuration, or by supplying a group ID and contract ID.
+// **Scopes**: Security configuration; contract; group
+//
+// Returns the list of hostnames that can be (but aren't yet) protected by a security configuration. You can specify the set of hostnames to be retrieved either by supplying the name of a security configuration or by supplying an Akamai group ID and contract ID.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selectable-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getavailablehostnames)
 //
 // ## Example Usage
 //
@@ -26,7 +30,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -43,11 +47,9 @@ import (
 // 		ctx.Export("selectableHostnames", selectableHostnamesAppSecSelectableHostnames.Hostnames)
 // 		ctx.Export("selectableHostnamesJson", selectableHostnamesAppSecSelectableHostnames.HostnamesJson)
 // 		ctx.Export("selectableHostnamesOutputText", selectableHostnamesAppSecSelectableHostnames.OutputText)
-// 		opt2 := _var.Contractid
-// 		opt3 := _var.Groupid
 // 		selectableHostnamesForCreateConfigurationAppSecSelectableHostnames, err := akamai.GetAppSecSelectableHostnames(ctx, &GetAppSecSelectableHostnamesArgs{
-// 			Contractid: &opt2,
-// 			Groupid:    &opt3,
+// 			ContractId: "5-2WA382",
+// 			GroupId:    12198,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -59,6 +61,13 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `hostnames`. List of selectable hostnames.
+// - `hostnamesJson`. JSON-formatted list of selectable hostnames.
+// - `outputText`. Tabular report of the selectable hostnames showing the name and configId of the security configuration under which the host is protected in production.
 func GetAppSecSelectableHostnames(ctx *pulumi.Context, args *GetAppSecSelectableHostnamesArgs, opts ...pulumi.InvokeOption) (*GetAppSecSelectableHostnamesResult, error) {
 	var rv GetAppSecSelectableHostnamesResult
 	err := ctx.Invoke("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", args, &rv, opts...)
@@ -72,28 +81,25 @@ func GetAppSecSelectableHostnames(ctx *pulumi.Context, args *GetAppSecSelectable
 type GetAppSecSelectableHostnamesArgs struct {
 	ActiveInProduction *bool `pulumi:"activeInProduction"`
 	ActiveInStaging    *bool `pulumi:"activeInStaging"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration you want to return hostname information for. If not included, information is returned for all your security configurations. Note that argument can't be used with either the `contractid` or the `groupid` arguments.
 	ConfigId *int `pulumi:"configId"`
-	// The ID of the contract to use.
+	// . Unique identifier of the Akamai contract you want to return hostname information for. If not included, information is returned for all the Akamai contracts associated with your account. Note that this argument can't be used with the `configId` argument.
 	Contractid *string `pulumi:"contractid"`
-	// The ID of the group to use.
+	// . Unique identifier of the contract group you want to return hostname information for. If not included, information is returned for all your contract groups. (Or, if you include the `contractid` argument, all the groups associated with the specified contract.) Note that this argument can't be used with the `configId` argument.
 	Groupid *int `pulumi:"groupid"`
 }
 
 // A collection of values returned by getAppSecSelectableHostnames.
 type GetAppSecSelectableHostnamesResult struct {
-	ActiveInProduction *bool   `pulumi:"activeInProduction"`
-	ActiveInStaging    *bool   `pulumi:"activeInStaging"`
-	ConfigId           *int    `pulumi:"configId"`
-	Contractid         *string `pulumi:"contractid"`
-	Groupid            *int    `pulumi:"groupid"`
-	// The list of selectable hostnames.
-	Hostnames []string `pulumi:"hostnames"`
-	// The list of selectable hostnames in json format.
-	HostnamesJson string `pulumi:"hostnamesJson"`
+	ActiveInProduction *bool    `pulumi:"activeInProduction"`
+	ActiveInStaging    *bool    `pulumi:"activeInStaging"`
+	ConfigId           *int     `pulumi:"configId"`
+	Contractid         *string  `pulumi:"contractid"`
+	Groupid            *int     `pulumi:"groupid"`
+	Hostnames          []string `pulumi:"hostnames"`
+	HostnamesJson      string   `pulumi:"hostnamesJson"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A tabular display of the selectable hostnames showing the name and configId of the security configuration under which the host is protected in production, or '-' if the host is not protected in production.
+	Id         string `pulumi:"id"`
 	OutputText string `pulumi:"outputText"`
 }
 
@@ -110,11 +116,11 @@ func GetAppSecSelectableHostnamesOutput(ctx *pulumi.Context, args GetAppSecSelec
 type GetAppSecSelectableHostnamesOutputArgs struct {
 	ActiveInProduction pulumi.BoolPtrInput `pulumi:"activeInProduction"`
 	ActiveInStaging    pulumi.BoolPtrInput `pulumi:"activeInStaging"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration you want to return hostname information for. If not included, information is returned for all your security configurations. Note that argument can't be used with either the `contractid` or the `groupid` arguments.
 	ConfigId pulumi.IntPtrInput `pulumi:"configId"`
-	// The ID of the contract to use.
+	// . Unique identifier of the Akamai contract you want to return hostname information for. If not included, information is returned for all the Akamai contracts associated with your account. Note that this argument can't be used with the `configId` argument.
 	Contractid pulumi.StringPtrInput `pulumi:"contractid"`
-	// The ID of the group to use.
+	// . Unique identifier of the contract group you want to return hostname information for. If not included, information is returned for all your contract groups. (Or, if you include the `contractid` argument, all the groups associated with the specified contract.) Note that this argument can't be used with the `configId` argument.
 	Groupid pulumi.IntPtrInput `pulumi:"groupid"`
 }
 
@@ -157,12 +163,10 @@ func (o GetAppSecSelectableHostnamesResultOutput) Groupid() pulumi.IntPtrOutput 
 	return o.ApplyT(func(v GetAppSecSelectableHostnamesResult) *int { return v.Groupid }).(pulumi.IntPtrOutput)
 }
 
-// The list of selectable hostnames.
 func (o GetAppSecSelectableHostnamesResultOutput) Hostnames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAppSecSelectableHostnamesResult) []string { return v.Hostnames }).(pulumi.StringArrayOutput)
 }
 
-// The list of selectable hostnames in json format.
 func (o GetAppSecSelectableHostnamesResultOutput) HostnamesJson() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecSelectableHostnamesResult) string { return v.HostnamesJson }).(pulumi.StringOutput)
 }
@@ -172,7 +176,6 @@ func (o GetAppSecSelectableHostnamesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecSelectableHostnamesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A tabular display of the selectable hostnames showing the name and configId of the security configuration under which the host is protected in production, or '-' if the host is not protected in production.
 func (o GetAppSecSelectableHostnamesResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecSelectableHostnamesResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

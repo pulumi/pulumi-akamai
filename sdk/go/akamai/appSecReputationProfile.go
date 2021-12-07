@@ -11,7 +11,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecReputationProfile` resource to create or modify a reputation profile for a specific security configuration.
+// **Scopes**: Security policy
+//
+// Creates or modifies a reputation profile.
+// Reputation profiles grade the security risk of an IP address based on previous activities associated with that address.
+// Depending on the reputation score and how your configuration has been set up, requests from a specific IP address can trigger an alert or even be blocked.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/reputation-profiles](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles)
 //
 // ## Example Usage
 //
@@ -38,34 +44,38 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		_, err = akamai.NewAppSecReputationProfile(ctx, "reputationProfile", &akamai.AppSecReputationProfileArgs{
+// 		reputationProfile, err := akamai.NewAppSecReputationProfile(ctx, "reputationProfile", &akamai.AppSecReputationProfileArgs{
 // 			ConfigId:          pulumi.Int(configuration.ConfigId),
 // 			ReputationProfile: readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/reputation_profile.json")),
 // 		})
 // 		if err != nil {
 // 			return err
 // 		}
-// 		ctx.Export("reputationProfileId", akamai_appsec_reputation_profile.Reputation_profile_id)
+// 		ctx.Export("reputationProfileId", reputationProfile.ReputationProfileId)
 // 		return nil
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `reputationProfileId`. ID of the newly-created or newly-modified reputation profile.
 type AppSecReputationProfile struct {
 	pulumi.CustomResourceState
 
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the reputation profile being modified.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// The name of a file containing a JSON-formatted definition of the reputation profile. ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles))
-	ReputationProfile pulumi.StringOutput `pulumi:"reputationProfile"`
-	// The ID of the newly created or modified reputation profile.
-	ReputationProfileId pulumi.IntOutput `pulumi:"reputationProfileId"`
+	// . Path to a JSON file containing a definition of the reputation profile. You can view a sample JSON file in the [Create a reputation profile](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles) section of the Application Security API documentation.
+	ReputationProfile   pulumi.StringOutput `pulumi:"reputationProfile"`
+	ReputationProfileId pulumi.IntOutput    `pulumi:"reputationProfileId"`
 }
 
 // NewAppSecReputationProfile registers a new resource with the given unique name, arguments, and options.
@@ -103,20 +113,18 @@ func GetAppSecReputationProfile(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecReputationProfile resources.
 type appSecReputationProfileState struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the reputation profile being modified.
 	ConfigId *int `pulumi:"configId"`
-	// The name of a file containing a JSON-formatted definition of the reputation profile. ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles))
-	ReputationProfile *string `pulumi:"reputationProfile"`
-	// The ID of the newly created or modified reputation profile.
-	ReputationProfileId *int `pulumi:"reputationProfileId"`
+	// . Path to a JSON file containing a definition of the reputation profile. You can view a sample JSON file in the [Create a reputation profile](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles) section of the Application Security API documentation.
+	ReputationProfile   *string `pulumi:"reputationProfile"`
+	ReputationProfileId *int    `pulumi:"reputationProfileId"`
 }
 
 type AppSecReputationProfileState struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the reputation profile being modified.
 	ConfigId pulumi.IntPtrInput
-	// The name of a file containing a JSON-formatted definition of the reputation profile. ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles))
-	ReputationProfile pulumi.StringPtrInput
-	// The ID of the newly created or modified reputation profile.
+	// . Path to a JSON file containing a definition of the reputation profile. You can view a sample JSON file in the [Create a reputation profile](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles) section of the Application Security API documentation.
+	ReputationProfile   pulumi.StringPtrInput
 	ReputationProfileId pulumi.IntPtrInput
 }
 
@@ -125,17 +133,17 @@ func (AppSecReputationProfileState) ElementType() reflect.Type {
 }
 
 type appSecReputationProfileArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the reputation profile being modified.
 	ConfigId int `pulumi:"configId"`
-	// The name of a file containing a JSON-formatted definition of the reputation profile. ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles))
+	// . Path to a JSON file containing a definition of the reputation profile. You can view a sample JSON file in the [Create a reputation profile](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles) section of the Application Security API documentation.
 	ReputationProfile string `pulumi:"reputationProfile"`
 }
 
 // The set of arguments for constructing a AppSecReputationProfile resource.
 type AppSecReputationProfileArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the reputation profile being modified.
 	ConfigId pulumi.IntInput
-	// The name of a file containing a JSON-formatted definition of the reputation profile. ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles))
+	// . Path to a JSON file containing a definition of the reputation profile. You can view a sample JSON file in the [Create a reputation profile](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles) section of the Application Security API documentation.
 	ReputationProfile pulumi.StringInput
 }
 

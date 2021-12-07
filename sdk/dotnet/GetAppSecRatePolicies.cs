@@ -13,7 +13,11 @@ namespace Pulumi.Akamai
     public static class GetAppSecRatePolicies
     {
         /// <summary>
-        /// Use the `akamai.getAppSecRatePolicies` data source to retrieve the rate policies for a specific security configuration, or a single rate policy.
+        /// **Scopes**: Security configuration; rate policy
+        /// 
+        /// Returns information about your rate policies. Rate polices help you monitor and moderate the number and rate of all the requests you receive; in turn, this helps you prevent your website from being overwhelmed by a dramatic, and unexpected, surge in traffic.
+        /// 
+        /// **Related API Endpoint:** [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getratepolicies)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -31,7 +35,7 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var ratePolicies = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecRatePolicies.InvokeAsync(new Akamai.GetAppSecRatePoliciesArgs
         ///         {
@@ -42,7 +46,7 @@ namespace Pulumi.Akamai
         ///         var ratePolicy = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecRatePolicies.InvokeAsync(new Akamai.GetAppSecRatePoliciesArgs
         ///         {
         ///             ConfigId = configuration.ConfigId,
-        ///             RatePolicyId = @var.Rate_policy_id,
+        ///             RatePolicyId = 122149,
         ///         })));
         ///         this.RatePolicyJson = ratePolicy.Apply(ratePolicy =&gt; ratePolicy.Json);
         ///         this.RatePolicyOutput = ratePolicy.Apply(ratePolicy =&gt; ratePolicy.OutputText);
@@ -60,12 +64,22 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `output_text`. Tabular report showing the ID and name of the rate policies.
+        /// - `json`. JSON-formatted list of the rate policy information.
         /// </summary>
         public static Task<GetAppSecRatePoliciesResult> InvokeAsync(GetAppSecRatePoliciesArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecRatePoliciesResult>("akamai:index/getAppSecRatePolicies:getAppSecRatePolicies", args ?? new GetAppSecRatePoliciesArgs(), options.WithVersion());
 
         /// <summary>
-        /// Use the `akamai.getAppSecRatePolicies` data source to retrieve the rate policies for a specific security configuration, or a single rate policy.
+        /// **Scopes**: Security configuration; rate policy
+        /// 
+        /// Returns information about your rate policies. Rate polices help you monitor and moderate the number and rate of all the requests you receive; in turn, this helps you prevent your website from being overwhelmed by a dramatic, and unexpected, surge in traffic.
+        /// 
+        /// **Related API Endpoint:** [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getratepolicies)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -83,7 +97,7 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var ratePolicies = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecRatePolicies.InvokeAsync(new Akamai.GetAppSecRatePoliciesArgs
         ///         {
@@ -94,7 +108,7 @@ namespace Pulumi.Akamai
         ///         var ratePolicy = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecRatePolicies.InvokeAsync(new Akamai.GetAppSecRatePoliciesArgs
         ///         {
         ///             ConfigId = configuration.ConfigId,
-        ///             RatePolicyId = @var.Rate_policy_id,
+        ///             RatePolicyId = 122149,
         ///         })));
         ///         this.RatePolicyJson = ratePolicy.Apply(ratePolicy =&gt; ratePolicy.Json);
         ///         this.RatePolicyOutput = ratePolicy.Apply(ratePolicy =&gt; ratePolicy.OutputText);
@@ -112,6 +126,12 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `output_text`. Tabular report showing the ID and name of the rate policies.
+        /// - `json`. JSON-formatted list of the rate policy information.
         /// </summary>
         public static Output<GetAppSecRatePoliciesResult> Invoke(GetAppSecRatePoliciesInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecRatePoliciesResult>("akamai:index/getAppSecRatePolicies:getAppSecRatePolicies", args ?? new GetAppSecRatePoliciesInvokeArgs(), options.WithVersion());
@@ -121,13 +141,13 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecRatePoliciesArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the rate policies.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
         /// <summary>
-        /// The ID of the rate policy to use. If this parameter is not supplied, information about all rate policies will be returned.
+        /// . Unique identifier of the rate policy you want to return information for. If not included, information is returned for all your rate policies.
         /// </summary>
         [Input("ratePolicyId")]
         public int? RatePolicyId { get; set; }
@@ -140,13 +160,13 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecRatePoliciesInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the rate policies.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the rate policy to use. If this parameter is not supplied, information about all rate policies will be returned.
+        /// . Unique identifier of the rate policy you want to return information for. If not included, information is returned for all your rate policies.
         /// </summary>
         [Input("ratePolicyId")]
         public Input<int>? RatePolicyId { get; set; }
@@ -165,13 +185,7 @@ namespace Pulumi.Akamai
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A JSON-formatted list of the rate policy information.
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// A tabular display showing the ID and name of all rate policies associated with the specified security configuration.
-        /// </summary>
         public readonly string OutputText;
         public readonly int? RatePolicyId;
 

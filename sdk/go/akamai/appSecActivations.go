@@ -11,7 +11,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The `AppSecActivations` resource allows you to activate or deactivate a given security configuration version.
+// **Scopes**: Security configuration
+//
+// Activates or deactivates a security configuration. Security configurations activated on the staging network can be used for testing and fine-tuning; security configurations activated on the production network are used to protect your actual websites.
+//
+// **Related API Endpoint**: [/appsec/v1/activations](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postactivations)
 //
 // ## Example Usage
 //
@@ -27,7 +31,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Akamai Tools"
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -37,7 +41,7 @@ import (
 // 		_, err = akamai.NewAppSecActivations(ctx, "activation", &akamai.AppSecActivationsArgs{
 // 			ConfigId: pulumi.Int(configuration.ConfigId),
 // 			Network:  pulumi.String("STAGING"),
-// 			Notes:    pulumi.String("TEST Notes"),
+// 			Notes:    pulumi.String("This configuration was activated for testing purposes only."),
 // 			NotificationEmails: pulumi.StringArray{
 // 				pulumi.String("user@example.com"),
 // 			},
@@ -49,23 +53,29 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `status`. Status of the operation. Valid values are:
+//
+//   *   **ACTIVATED**
+//   *   **DEACTIVATED**
+//   *   **FAILED**
 type AppSecActivations struct {
 	pulumi.CustomResourceState
 
-	// A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+	// . Set to **true** to activate the specified security configuration; set to **false** to deactivate the configuration. If not included, the security configuration will be activated.
 	Activate pulumi.BoolPtrOutput `pulumi:"activate"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration being activated.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+	// . Network on which activation will occur; allowed values are:
 	Network pulumi.StringPtrOutput `pulumi:"network"`
-	// A text note describing this operation. If no attributes were changed since the last time a security
-	// configuration was updated using the AppSecActivations resource, an activation will not occur. To ensure an activation
-	// is called, please update one of the attributes, e.g. the notes attribute.
+	// . Brief description of the activation/deactivation process. Note that, if no attributes have changed since the last time you called the AppSecActivations resource, neither activation nor deactivation takes place: that's because *something* must be different in order to trigger the activation/deactivation process. With that in mind, it's recommended that you always update the `notes` argument. That ensures that the resource will be called and that activation or deactivation will occur.
 	Notes pulumi.StringOutput `pulumi:"notes"`
-	// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+	// . JSON array containing the email addresses of the people to be notified when activation is complete.
 	NotificationEmails pulumi.StringArrayOutput `pulumi:"notificationEmails"`
-	// The status of the operation. The following values are may be returned:
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status             pulumi.StringOutput      `pulumi:"status"`
 }
 
 // NewAppSecActivations registers a new resource with the given unique name, arguments, and options.
@@ -106,37 +116,31 @@ func GetAppSecActivations(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecActivations resources.
 type appSecActivationsState struct {
-	// A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+	// . Set to **true** to activate the specified security configuration; set to **false** to deactivate the configuration. If not included, the security configuration will be activated.
 	Activate *bool `pulumi:"activate"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration being activated.
 	ConfigId *int `pulumi:"configId"`
-	// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+	// . Network on which activation will occur; allowed values are:
 	Network *string `pulumi:"network"`
-	// A text note describing this operation. If no attributes were changed since the last time a security
-	// configuration was updated using the AppSecActivations resource, an activation will not occur. To ensure an activation
-	// is called, please update one of the attributes, e.g. the notes attribute.
+	// . Brief description of the activation/deactivation process. Note that, if no attributes have changed since the last time you called the AppSecActivations resource, neither activation nor deactivation takes place: that's because *something* must be different in order to trigger the activation/deactivation process. With that in mind, it's recommended that you always update the `notes` argument. That ensures that the resource will be called and that activation or deactivation will occur.
 	Notes *string `pulumi:"notes"`
-	// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+	// . JSON array containing the email addresses of the people to be notified when activation is complete.
 	NotificationEmails []string `pulumi:"notificationEmails"`
-	// The status of the operation. The following values are may be returned:
-	Status *string `pulumi:"status"`
+	Status             *string  `pulumi:"status"`
 }
 
 type AppSecActivationsState struct {
-	// A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+	// . Set to **true** to activate the specified security configuration; set to **false** to deactivate the configuration. If not included, the security configuration will be activated.
 	Activate pulumi.BoolPtrInput
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration being activated.
 	ConfigId pulumi.IntPtrInput
-	// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+	// . Network on which activation will occur; allowed values are:
 	Network pulumi.StringPtrInput
-	// A text note describing this operation. If no attributes were changed since the last time a security
-	// configuration was updated using the AppSecActivations resource, an activation will not occur. To ensure an activation
-	// is called, please update one of the attributes, e.g. the notes attribute.
+	// . Brief description of the activation/deactivation process. Note that, if no attributes have changed since the last time you called the AppSecActivations resource, neither activation nor deactivation takes place: that's because *something* must be different in order to trigger the activation/deactivation process. With that in mind, it's recommended that you always update the `notes` argument. That ensures that the resource will be called and that activation or deactivation will occur.
 	Notes pulumi.StringPtrInput
-	// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+	// . JSON array containing the email addresses of the people to be notified when activation is complete.
 	NotificationEmails pulumi.StringArrayInput
-	// The status of the operation. The following values are may be returned:
-	Status pulumi.StringPtrInput
+	Status             pulumi.StringPtrInput
 }
 
 func (AppSecActivationsState) ElementType() reflect.Type {
@@ -144,33 +148,29 @@ func (AppSecActivationsState) ElementType() reflect.Type {
 }
 
 type appSecActivationsArgs struct {
-	// A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+	// . Set to **true** to activate the specified security configuration; set to **false** to deactivate the configuration. If not included, the security configuration will be activated.
 	Activate *bool `pulumi:"activate"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration being activated.
 	ConfigId int `pulumi:"configId"`
-	// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+	// . Network on which activation will occur; allowed values are:
 	Network *string `pulumi:"network"`
-	// A text note describing this operation. If no attributes were changed since the last time a security
-	// configuration was updated using the AppSecActivations resource, an activation will not occur. To ensure an activation
-	// is called, please update one of the attributes, e.g. the notes attribute.
+	// . Brief description of the activation/deactivation process. Note that, if no attributes have changed since the last time you called the AppSecActivations resource, neither activation nor deactivation takes place: that's because *something* must be different in order to trigger the activation/deactivation process. With that in mind, it's recommended that you always update the `notes` argument. That ensures that the resource will be called and that activation or deactivation will occur.
 	Notes string `pulumi:"notes"`
-	// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+	// . JSON array containing the email addresses of the people to be notified when activation is complete.
 	NotificationEmails []string `pulumi:"notificationEmails"`
 }
 
 // The set of arguments for constructing a AppSecActivations resource.
 type AppSecActivationsArgs struct {
-	// A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+	// . Set to **true** to activate the specified security configuration; set to **false** to deactivate the configuration. If not included, the security configuration will be activated.
 	Activate pulumi.BoolPtrInput
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration being activated.
 	ConfigId pulumi.IntInput
-	// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+	// . Network on which activation will occur; allowed values are:
 	Network pulumi.StringPtrInput
-	// A text note describing this operation. If no attributes were changed since the last time a security
-	// configuration was updated using the AppSecActivations resource, an activation will not occur. To ensure an activation
-	// is called, please update one of the attributes, e.g. the notes attribute.
+	// . Brief description of the activation/deactivation process. Note that, if no attributes have changed since the last time you called the AppSecActivations resource, neither activation nor deactivation takes place: that's because *something* must be different in order to trigger the activation/deactivation process. With that in mind, it's recommended that you always update the `notes` argument. That ensures that the resource will be called and that activation or deactivation will occur.
 	Notes pulumi.StringInput
-	// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+	// . JSON array containing the email addresses of the people to be notified when activation is complete.
 	NotificationEmails pulumi.StringArrayInput
 }
 

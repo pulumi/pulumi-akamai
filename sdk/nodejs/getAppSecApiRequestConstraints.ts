@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecApiRequestConstraints` data source to retrieve a list of APIs with their constraints and associated actions, or the constraints and actions for a particular API. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapirequestconstraints).
+ * **Scopes**: Security policy; API endpoint
+ *
+ * Returns information about API endpoint constraints and actions. The returned information is described in the [API Constraints members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapirequestconstraints) section of the Application Security API.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/api-request-constraints](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapirequestconstraints)
  *
  * ## Example Usage
  *
@@ -16,22 +20,28 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const apisRequestConstraints = configuration.then(configuration => akamai.getAppSecApiRequestConstraints({
  *     configId: configuration.configId,
- *     securityPolicyId: _var.security_policy_id,
+ *     securityPolicyId: "gms1_134637",
  * }));
  * export const apisConstraintsText = apisRequestConstraints.then(apisRequestConstraints => apisRequestConstraints.outputText);
  * export const apisConstraintsJson = apisRequestConstraints.then(apisRequestConstraints => apisRequestConstraints.json);
  * const apiRequestConstraints = configuration.then(configuration => akamai.getAppSecApiRequestConstraints({
  *     configId: configuration.configId,
- *     securityPolicyId: _var.security_policy_id,
- *     apiId: _var.api_id,
+ *     securityPolicyId: "gms1_134637",
+ *     apiId: 624913,
  * }));
  * export const apiConstraintsText = apiRequestConstraints.then(apiRequestConstraints => apiRequestConstraints.outputText);
  * export const apiConstraintsJson = apiRequestConstraints.then(apiRequestConstraints => apiRequestConstraints.json);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. JSON-formatted list of information about the APIs, their constraints, and their actions.
+ * - `outputText`. Tabular report of the APIs, their constraints, and their actions.
  */
 export function getAppSecApiRequestConstraints(args: GetAppSecApiRequestConstraintsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecApiRequestConstraintsResult> {
     if (!opts) {
@@ -53,15 +63,15 @@ export function getAppSecApiRequestConstraints(args: GetAppSecApiRequestConstrai
  */
 export interface GetAppSecApiRequestConstraintsArgs {
     /**
-     * The ID of a specific API for which to retrieve constraint information.
+     * . Unique identifier of the API endpoint you want to return constraint information for.
      */
     apiId?: number;
     /**
-     * The configuration ID to use.
+     * . Unique identifier of the security configuration associated with the API constraints.
      */
     configId: number;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the API constraints.
      */
     securityPolicyId: string;
 }
@@ -76,13 +86,7 @@ export interface GetAppSecApiRequestConstraintsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted list of information about the APIs and their constraints and actions.
-     */
     readonly json: string;
-    /**
-     * A tabular display showing the APIs and their constraints and actions.
-     */
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
@@ -96,15 +100,15 @@ export function getAppSecApiRequestConstraintsOutput(args: GetAppSecApiRequestCo
  */
 export interface GetAppSecApiRequestConstraintsOutputArgs {
     /**
-     * The ID of a specific API for which to retrieve constraint information.
+     * . Unique identifier of the API endpoint you want to return constraint information for.
      */
     apiId?: pulumi.Input<number>;
     /**
-     * The configuration ID to use.
+     * . Unique identifier of the security configuration associated with the API constraints.
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the API constraints.
      */
     securityPolicyId: pulumi.Input<string>;
 }

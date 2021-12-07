@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecCustomRuleActions` data source to retrieve information about the actions defined for the custom rules, or a specific custom rule, associated with a specific security configuration and security policy.
+ * **Scopes**: Security policy; custom rule
+ *
+ * Retrieve information about the actions defined for your custom rules. Custom rules are rules that you create yourself: these rules aren't part of Akamai's Kona Rule Set.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/custom-rules/{ruleId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcustomruleactions)
  *
  * ## Example Usage
  *
@@ -16,14 +20,19 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: "Akamai Tools",
+ *     name: "Documentation",
  * });
  * const customRuleActionsAppSecCustomRuleActions = configuration.then(configuration => akamai.getAppSecCustomRuleActions({
  *     configId: configuration.configId,
- *     securityPolicyId: "crAP_75829",
+ *     securityPolicyId: "gms1_134637",
  * }));
  * export const customRuleActions = customRuleActionsAppSecCustomRuleActions.then(customRuleActionsAppSecCustomRuleActions => customRuleActionsAppSecCustomRuleActions.outputText);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `outputText`. Tabular report showing the ID, name, and action of the custom rules.
  */
 export function getAppSecCustomRuleActions(args: GetAppSecCustomRuleActionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecCustomRuleActionsResult> {
     if (!opts) {
@@ -45,15 +54,15 @@ export function getAppSecCustomRuleActions(args: GetAppSecCustomRuleActionsArgs,
  */
 export interface GetAppSecCustomRuleActionsArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the custom rules.
      */
     configId: number;
     /**
-     * A specific custom rule for which to retrieve information. If not supplied, information about all custom rules will be returned.
+     * . Unique identifier of the custom rule you want to return information for. If not included, action information is returned for all your custom rules.
      */
     customRuleId?: number;
     /**
-     * The ID of the security policy to use
+     * . Unique identifier of the security policy associated with the custom rules.
      */
     securityPolicyId: string;
 }
@@ -68,9 +77,6 @@ export interface GetAppSecCustomRuleActionsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A tabular display showing the ID, name, and action of all custom rules, or of the specific custom rule, associated with the specified security configuration, version and security policy.
-     */
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
@@ -84,15 +90,15 @@ export function getAppSecCustomRuleActionsOutput(args: GetAppSecCustomRuleAction
  */
 export interface GetAppSecCustomRuleActionsOutputArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the custom rules.
      */
     configId: pulumi.Input<number>;
     /**
-     * A specific custom rule for which to retrieve information. If not supplied, information about all custom rules will be returned.
+     * . Unique identifier of the custom rule you want to return information for. If not included, action information is returned for all your custom rules.
      */
     customRuleId?: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use
+     * . Unique identifier of the security policy associated with the custom rules.
      */
     securityPolicyId: pulumi.Input<string>;
 }

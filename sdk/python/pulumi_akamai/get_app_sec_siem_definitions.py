@@ -45,17 +45,11 @@ class GetAppSecSiemDefinitionsResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        A JSON-formatted list of the SIEM version information.
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display showing the ID and name of each SIEM version.
-        """
         return pulumi.get(self, "output_text")
 
     @property
@@ -79,7 +73,11 @@ class AwaitableGetAppSecSiemDefinitionsResult(GetAppSecSiemDefinitionsResult):
 def get_app_sec_siem_definitions(siem_definition_name: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecSiemDefinitionsResult:
     """
-    Use the `get_app_sec_siem_definitions` data source to retrieve information about the available SIEM versions, or about a specific SIEM version. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemversions).
+    **Scopes**: SIEM definition
+
+    Returns information about your SIEM (Security Information and Event Management) versions. The returned information is described in the [Get SIEM versions](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemversions) section of the Application Security API.
+
+    **Related API Endpoint**: [/appsec/v1/siem-definitions](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemversions)
 
     ## Example Usage
 
@@ -89,16 +87,21 @@ def get_app_sec_siem_definitions(siem_definition_name: Optional[str] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
     siem_definitions = akamai.get_app_sec_siem_definitions()
     pulumi.export("siemDefinitionsJson", siem_definitions.json)
     pulumi.export("siemDefinitionsOutput", siem_definitions.output_text)
-    siem_definition = akamai.get_app_sec_siem_definitions(siem_definition_name=var["siem_definition_name"])
+    siem_definition = akamai.get_app_sec_siem_definitions(siem_definition_name="SIEM Version 01")
     pulumi.export("siemDefinitionId", siem_definition.id)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `json`. JSON-formatted list of the SIEM version information.
+    - `output_text`. Tabular report showing the ID and name of each SIEM version.
 
 
-    :param str siem_definition_name: The name of a specific SIEM definition for which to retrieve information.
+    :param str siem_definition_name: . Name of the SIEM definition you want to return information for. If not included, information is returned for all your SIEM definitions.
     """
     __args__ = dict()
     __args__['siemDefinitionName'] = siem_definition_name
@@ -119,7 +122,11 @@ def get_app_sec_siem_definitions(siem_definition_name: Optional[str] = None,
 def get_app_sec_siem_definitions_output(siem_definition_name: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecSiemDefinitionsResult]:
     """
-    Use the `get_app_sec_siem_definitions` data source to retrieve information about the available SIEM versions, or about a specific SIEM version. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemversions).
+    **Scopes**: SIEM definition
+
+    Returns information about your SIEM (Security Information and Event Management) versions. The returned information is described in the [Get SIEM versions](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemversions) section of the Application Security API.
+
+    **Related API Endpoint**: [/appsec/v1/siem-definitions](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemversions)
 
     ## Example Usage
 
@@ -129,15 +136,20 @@ def get_app_sec_siem_definitions_output(siem_definition_name: Optional[pulumi.In
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
     siem_definitions = akamai.get_app_sec_siem_definitions()
     pulumi.export("siemDefinitionsJson", siem_definitions.json)
     pulumi.export("siemDefinitionsOutput", siem_definitions.output_text)
-    siem_definition = akamai.get_app_sec_siem_definitions(siem_definition_name=var["siem_definition_name"])
+    siem_definition = akamai.get_app_sec_siem_definitions(siem_definition_name="SIEM Version 01")
     pulumi.export("siemDefinitionId", siem_definition.id)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `json`. JSON-formatted list of the SIEM version information.
+    - `output_text`. Tabular report showing the ID and name of each SIEM version.
 
 
-    :param str siem_definition_name: The name of a specific SIEM definition for which to retrieve information.
+    :param str siem_definition_name: . Name of the SIEM definition you want to return information for. If not included, information is returned for all your SIEM definitions.
     """
     ...

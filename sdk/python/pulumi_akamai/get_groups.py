@@ -62,8 +62,10 @@ def get_groups(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGroup
 
     ```python
     import pulumi
+    import pulumi_akamai as akamai
 
-    pulumi.export("propertyMatch", data["akamai_groups"]["my-example"])
+    my_example = akamai.get_groups()
+    pulumi.export("propertyMatch", my_example)
     ```
 
     ## Argument reference

@@ -17,12 +17,17 @@ import (
 // package main
 //
 // import (
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		ctx.Export("propertyMatch", data.Akamai_groups.My-example)
+// 		my_example, err := akamai.GetGroups(ctx, nil, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		ctx.Export("propertyMatch", my_example)
 // 		return nil
 // 	})
 // }

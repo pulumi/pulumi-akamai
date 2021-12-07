@@ -4,28 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.AppSecConfiguration` data source to retrieve the list of security configurations, or information about a specific security configuration.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configurations = akamai.getAppSecConfiguration({});
- * export const configurationList = configurations.then(configurations => configurations.outputText);
- * const specificConfiguration = akamai.getAppSecConfiguration({
- *     name: "Akamai Tools",
- * });
- * export const latest = specificConfiguration.then(specificConfiguration => specificConfiguration.latestVersion);
- * export const staging = specificConfiguration.then(specificConfiguration => specificConfiguration.stagingVersion);
- * export const production = specificConfiguration.then(specificConfiguration => specificConfiguration.productionVersion);
- * export const id = specificConfiguration.then(specificConfiguration => specificConfiguration.configId);
- * ```
- */
 export function getAppSecConfiguration(args?: GetAppSecConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecConfigurationResult> {
     args = args || {};
     if (!opts) {
@@ -45,7 +23,7 @@ export function getAppSecConfiguration(args?: GetAppSecConfigurationArgs, opts?:
  */
 export interface GetAppSecConfigurationArgs {
     /**
-     * The name of a specific security configuration. If not supplied, information about all security configurations is returned.
+     * . Name of the security configuration you want to return information for. If not included, information is returned for all your security configurations.
      */
     name?: string;
 }
@@ -54,30 +32,15 @@ export interface GetAppSecConfigurationArgs {
  * A collection of values returned by getAppSecConfiguration.
  */
 export interface GetAppSecConfigurationResult {
-    /**
-     * The ID of the specified security configuration. Returned only if `name` was specified.
-     */
     readonly configId: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * The last version of the specified security configuration created. Returned only if `name` was specified.
-     */
     readonly latestVersion: number;
     readonly name?: string;
-    /**
-     * A tabular display showing the following information about all available security configurations: config_id, name, latest_version, version_active_in_staging, and version_active_in_production.
-     */
     readonly outputText: string;
-    /**
-     * The version of the specified security configuration currently active in production. Returned only if `name` was specified.
-     */
     readonly productionVersion: number;
-    /**
-     * The version of the specified security configuration currently active in staging. Returned only if `name` was specified.
-     */
     readonly stagingVersion: number;
 }
 
@@ -90,7 +53,7 @@ export function getAppSecConfigurationOutput(args?: GetAppSecConfigurationOutput
  */
 export interface GetAppSecConfigurationOutputArgs {
     /**
-     * The name of a specific security configuration. If not supplied, information about all security configurations is returned.
+     * . Name of the security configuration you want to return information for. If not included, information is returned for all your security configurations.
      */
     name?: pulumi.Input<string>;
 }

@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecCustomRules` data source to retrieve a list of the custom rules defined for a security configuration.
+ * **Scopes**: Security configuration; custom rule
+ *
+ * Returns a list of the custom rules defined for a security configuration; you can also use this resource to return information for an individual custom rule. Custom rules are rules you have created yourself and are not part of the Kona Rule Set.
+ *
+ * **Related API Endpoint**:[/appsec/v1/configs/{configId}/custom-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcustomrules)
  *
  * ## Example Usage
  *
@@ -16,7 +20,7 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const customRules = configuration.then(configuration => akamai.getAppSecCustomRules({
  *     configId: configuration.configId,
@@ -26,10 +30,16 @@ import * as utilities from "./utilities";
  * export const customRulesConfigId = customRules.then(customRules => customRules.configId);
  * const specificCustomRule = configuration.then(configuration => akamai.getAppSecCustomRules({
  *     configId: configuration.configId,
- *     customRuleId: _var.custom_rule_id,
+ *     customRuleId: "60029316",
  * }));
  * export const specificCustomRuleJson = specificCustomRule.then(specificCustomRule => specificCustomRule.json);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `outputText`. Tabular report showing the ID and name of the custom rule information.
+ * - `json`. JSON-formatted report of the custom rule information.
  */
 export function getAppSecCustomRules(args: GetAppSecCustomRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecCustomRulesResult> {
     if (!opts) {
@@ -50,11 +60,11 @@ export function getAppSecCustomRules(args: GetAppSecCustomRulesArgs, opts?: pulu
  */
 export interface GetAppSecCustomRulesArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the custom rules
      */
     configId: number;
     /**
-     * The ID of a specific custom rule to use. If not supplied, information about all custom rules associated with the given security configuration will be returned.
+     * . Unique identifier of the custom rule you want to return information for. If not included, information is returned for all your custom rules.
      */
     customRuleId?: number;
 }
@@ -69,13 +79,7 @@ export interface GetAppSecCustomRulesResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted display of the custom rule information.
-     */
     readonly json: string;
-    /**
-     * A tabular display showing the ID and name of the custom rule(s).
-     */
     readonly outputText: string;
 }
 
@@ -88,11 +92,11 @@ export function getAppSecCustomRulesOutput(args: GetAppSecCustomRulesOutputArgs,
  */
 export interface GetAppSecCustomRulesOutputArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the custom rules
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of a specific custom rule to use. If not supplied, information about all custom rules associated with the given security configuration will be returned.
+     * . Unique identifier of the custom rule you want to return information for. If not included, information is returned for all your custom rules.
      */
     customRuleId?: pulumi.Input<number>;
 }

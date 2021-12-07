@@ -17,8 +17,8 @@ class AppSecRatePolicyArgs:
                  rate_policy: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecRatePolicy resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] rate_policy: The name of a file containing a JSON-formatted rate policy definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#57c65cbd)).
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the rate policy being modified.
+        :param pulumi.Input[str] rate_policy: . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "rate_policy", rate_policy)
@@ -27,7 +27,7 @@ class AppSecRatePolicyArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the rate policy being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -39,7 +39,7 @@ class AppSecRatePolicyArgs:
     @pulumi.getter(name="ratePolicy")
     def rate_policy(self) -> pulumi.Input[str]:
         """
-        The name of a file containing a JSON-formatted rate policy definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#57c65cbd)).
+        . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
         """
         return pulumi.get(self, "rate_policy")
 
@@ -56,9 +56,9 @@ class _AppSecRatePolicyState:
                  rate_policy_id: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering AppSecRatePolicy resources.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] rate_policy: The name of a file containing a JSON-formatted rate policy definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#57c65cbd)).
-        :param pulumi.Input[int] rate_policy_id: The ID of an existing rate policy to be modified.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the rate policy being modified.
+        :param pulumi.Input[str] rate_policy: . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
+        :param pulumi.Input[int] rate_policy_id: . Unique identifier of an existing rate policy.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -71,7 +71,7 @@ class _AppSecRatePolicyState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the rate policy being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -83,7 +83,7 @@ class _AppSecRatePolicyState:
     @pulumi.getter(name="ratePolicy")
     def rate_policy(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of a file containing a JSON-formatted rate policy definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#57c65cbd)).
+        . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
         """
         return pulumi.get(self, "rate_policy")
 
@@ -95,7 +95,7 @@ class _AppSecRatePolicyState:
     @pulumi.getter(name="ratePolicyId")
     def rate_policy_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The ID of an existing rate policy to be modified.
+        . Unique identifier of an existing rate policy.
         """
         return pulumi.get(self, "rate_policy_id")
 
@@ -113,7 +113,13 @@ class AppSecRatePolicy(pulumi.CustomResource):
                  rate_policy: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        The `resource_akamai_appsec_rate_policy` resource allows you to create, modify or delete rate policies for a specific security configuration.
+        **Scopes**: Security configuration; rate policy
+
+        Creates, modifies or deletes rate policies.
+        Rate polices help you monitor and moderate the number and  rate of all the requests you receive.
+        In turn, this helps you prevent your website from being overwhelmed by a dramatic and unexpected surge in traffic.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postratepolicies)
 
         ## Example Usage
 
@@ -123,17 +129,22 @@ class AppSecRatePolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         rate_policy = akamai.AppSecRatePolicy("ratePolicy",
             config_id=configuration.config_id,
             rate_policy=(lambda path: open(path).read())(f"{path['module']}/rate_policy.json"))
         pulumi.export("ratePolicyId", rate_policy.rate_policy_id)
         ```
+        ## Output Options
+
+        The following options can be used to determine the information returned, and how that returned information is formatted:
+
+        - `rate_policy_id`. ID of the modified or newly-created rate policy.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] rate_policy: The name of a file containing a JSON-formatted rate policy definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#57c65cbd)).
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the rate policy being modified.
+        :param pulumi.Input[str] rate_policy: . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
         """
         ...
     @overload
@@ -142,7 +153,13 @@ class AppSecRatePolicy(pulumi.CustomResource):
                  args: AppSecRatePolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        The `resource_akamai_appsec_rate_policy` resource allows you to create, modify or delete rate policies for a specific security configuration.
+        **Scopes**: Security configuration; rate policy
+
+        Creates, modifies or deletes rate policies.
+        Rate polices help you monitor and moderate the number and  rate of all the requests you receive.
+        In turn, this helps you prevent your website from being overwhelmed by a dramatic and unexpected surge in traffic.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postratepolicies)
 
         ## Example Usage
 
@@ -152,12 +169,17 @@ class AppSecRatePolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         rate_policy = akamai.AppSecRatePolicy("ratePolicy",
             config_id=configuration.config_id,
             rate_policy=(lambda path: open(path).read())(f"{path['module']}/rate_policy.json"))
         pulumi.export("ratePolicyId", rate_policy.rate_policy_id)
         ```
+        ## Output Options
+
+        The following options can be used to determine the information returned, and how that returned information is formatted:
+
+        - `rate_policy_id`. ID of the modified or newly-created rate policy.
 
         :param str resource_name: The name of the resource.
         :param AppSecRatePolicyArgs args: The arguments to use to populate this resource's properties.
@@ -215,9 +237,9 @@ class AppSecRatePolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] rate_policy: The name of a file containing a JSON-formatted rate policy definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#57c65cbd)).
-        :param pulumi.Input[int] rate_policy_id: The ID of an existing rate policy to be modified.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the rate policy being modified.
+        :param pulumi.Input[str] rate_policy: . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
+        :param pulumi.Input[int] rate_policy_id: . Unique identifier of an existing rate policy.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -232,7 +254,7 @@ class AppSecRatePolicy(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the rate policy being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -240,7 +262,7 @@ class AppSecRatePolicy(pulumi.CustomResource):
     @pulumi.getter(name="ratePolicy")
     def rate_policy(self) -> pulumi.Output[str]:
         """
-        The name of a file containing a JSON-formatted rate policy definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#57c65cbd)).
+        . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
         """
         return pulumi.get(self, "rate_policy")
 
@@ -248,7 +270,7 @@ class AppSecRatePolicy(pulumi.CustomResource):
     @pulumi.getter(name="ratePolicyId")
     def rate_policy_id(self) -> pulumi.Output[int]:
         """
-        The ID of an existing rate policy to be modified.
+        . Unique identifier of an existing rate policy.
         """
         return pulumi.get(self, "rate_policy_id")
 

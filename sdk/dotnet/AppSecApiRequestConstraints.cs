@@ -9,32 +9,33 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// The `resource_akamai_appsec_api_request_constraints` resource allows you to update what action to take when the API request constraint triggers. This operation modifies an individual API constraint action. To use this operation, use the `akamai.getAppSecApiEndpoints` data source to list one or all API endpoints, and use the ID of the selected endpoint. Use the `action` paameter to specify how the alert should be handled.
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecApiRequestConstraints:AppSecApiRequestConstraints")]
     public partial class AppSecApiRequestConstraints : Pulumi.CustomResource
     {
         /// <summary>
-        /// The action to assign to API request constraints: either `alert`, `deny`, or `none`.
+        /// . Action to assign to the API request constraint. Allowed values are:
+        /// - **alert**, Record the event.
+        /// - **deny**. Block the request.
+        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        /// - **none**. Take no action.
         /// </summary>
         [Output("action")]
         public Output<string> Action { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the API endpoint to use.
+        /// . ID of the API endpoint the constraint will be assigned to.
         /// </summary>
         [Output("apiEndpointId")]
         public Output<int?> ApiEndpointId { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the API request constraint settings being modified.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the API request constraint settings being modified.
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -86,25 +87,29 @@ namespace Pulumi.Akamai
     public sealed class AppSecApiRequestConstraintsArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The action to assign to API request constraints: either `alert`, `deny`, or `none`.
+        /// . Action to assign to the API request constraint. Allowed values are:
+        /// - **alert**, Record the event.
+        /// - **deny**. Block the request.
+        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        /// - **none**. Take no action.
         /// </summary>
         [Input("action", required: true)]
         public Input<string> Action { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the API endpoint to use.
+        /// . ID of the API endpoint the constraint will be assigned to.
         /// </summary>
         [Input("apiEndpointId")]
         public Input<int>? ApiEndpointId { get; set; }
 
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the API request constraint settings being modified.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the API request constraint settings being modified.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -117,25 +122,29 @@ namespace Pulumi.Akamai
     public sealed class AppSecApiRequestConstraintsState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The action to assign to API request constraints: either `alert`, `deny`, or `none`.
+        /// . Action to assign to the API request constraint. Allowed values are:
+        /// - **alert**, Record the event.
+        /// - **deny**. Block the request.
+        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        /// - **none**. Take no action.
         /// </summary>
         [Input("action")]
         public Input<string>? Action { get; set; }
 
         /// <summary>
-        /// The ID of the API endpoint to use.
+        /// . ID of the API endpoint the constraint will be assigned to.
         /// </summary>
         [Input("apiEndpointId")]
         public Input<int>? ApiEndpointId { get; set; }
 
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the API request constraint settings being modified.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the API request constraint settings being modified.
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

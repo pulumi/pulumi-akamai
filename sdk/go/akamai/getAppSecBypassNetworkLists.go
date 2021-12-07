@@ -10,10 +10,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecByPassNetworkList` data source to retrieve information about which network
-// lists are used in the bypass network lists settings.  The information available is described
-// [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getbypassnetworklistsforawapconfigversion).
-// Note: this data source is only applicable to WAP (Web Application Protector) configurations.
+// **Scopes**: Security configuration
+//
+// Returns information about the network lists assigned to the bypass network list; networks on this list are not subject to firewall checking. The returned information is described in the [BypassNetworkList members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#bypassnetworklist) section of the Application Security API.
+//
+// Note that this data source is only applicable to WAP (Web Application Protector) configurations.
+//
+// **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/bypass-network-lists](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getbypassnetworklistsforawapconfigversion)
 //
 // ## Example Usage
 //
@@ -29,7 +32,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -49,6 +52,13 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `bypassNetworkList`. List of network IDs.
+// - `json`. JSON-formatted list of information about the bypass networks.
+// - `outputText`. Tabular report showing the bypass network list information.
 func GetAppSecBypassNetworkLists(ctx *pulumi.Context, args *GetAppSecBypassNetworkListsArgs, opts ...pulumi.InvokeOption) (*GetAppSecBypassNetworkListsResult, error) {
 	var rv GetAppSecBypassNetworkListsResult
 	err := ctx.Invoke("akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists", args, &rv, opts...)
@@ -60,20 +70,17 @@ func GetAppSecBypassNetworkLists(ctx *pulumi.Context, args *GetAppSecBypassNetwo
 
 // A collection of arguments for invoking getAppSecBypassNetworkLists.
 type GetAppSecBypassNetworkListsArgs struct {
-	// The configuration ID to use.
+	// . Unique identifier of the security configuration associated with the bypass network list.
 	ConfigId int `pulumi:"configId"`
 }
 
 // A collection of values returned by getAppSecBypassNetworkLists.
 type GetAppSecBypassNetworkListsResult struct {
-	// A list of strings containing the network list IDs.
 	BypassNetworkLists []string `pulumi:"bypassNetworkLists"`
 	ConfigId           int      `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted list of information about the bypass network lists.
-	Json string `pulumi:"json"`
-	// A tabular display showing the bypass network list information.
+	Id         string `pulumi:"id"`
+	Json       string `pulumi:"json"`
 	OutputText string `pulumi:"outputText"`
 }
 
@@ -88,7 +95,7 @@ func GetAppSecBypassNetworkListsOutput(ctx *pulumi.Context, args GetAppSecBypass
 
 // A collection of arguments for invoking getAppSecBypassNetworkLists.
 type GetAppSecBypassNetworkListsOutputArgs struct {
-	// The configuration ID to use.
+	// . Unique identifier of the security configuration associated with the bypass network list.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
 }
 
@@ -111,7 +118,6 @@ func (o GetAppSecBypassNetworkListsResultOutput) ToGetAppSecBypassNetworkListsRe
 	return o
 }
 
-// A list of strings containing the network list IDs.
 func (o GetAppSecBypassNetworkListsResultOutput) BypassNetworkLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAppSecBypassNetworkListsResult) []string { return v.BypassNetworkLists }).(pulumi.StringArrayOutput)
 }
@@ -125,12 +131,10 @@ func (o GetAppSecBypassNetworkListsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecBypassNetworkListsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted list of information about the bypass network lists.
 func (o GetAppSecBypassNetworkListsResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecBypassNetworkListsResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display showing the bypass network list information.
 func (o GetAppSecBypassNetworkListsResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecBypassNetworkListsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

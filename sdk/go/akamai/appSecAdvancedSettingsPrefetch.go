@@ -11,7 +11,15 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The `resourceAkamaiAppsecAdvancedSettingsPrefetch` resource allows you to enable inspection of internal requests (those between your origin and Akamai’s servers) for file types that you specify. You can also apply rate controls to prefetch requests. This operation applies at the configuration level.
+// **Scopes**: Security configuration
+//
+// Enables inspection of internal requests (that is, requests between your origin servers and Akamai's edge servers).
+// You can also use this resource to apply rate controls to prefetch requests.
+// When prefetch is enabled, internal requests are inspected by your firewall the same way that external requests (requests that originate outside the firewall and outside Akamai's edge servers) are inspected.
+//
+// This operation applies at the security configuration level, meaning that the settings affect all the security policies in that configuration.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/prefetch](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putprefetchrequestsforaconfiguration)
 //
 // ## Example Usage
 //
@@ -27,7 +35,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -39,7 +47,13 @@ import (
 // 			EnableAppLayer:     pulumi.Bool(false),
 // 			AllExtensions:      pulumi.Bool(true),
 // 			EnableRateControls: pulumi.Bool(false),
-// 			Extensions:         pulumi.Any(_var.Extensions),
+// 			Extensions: pulumi.StringArray{
+// 				pulumi.String(".tiff"),
+// 				pulumi.String(".bmp"),
+// 				pulumi.String(".jpg"),
+// 				pulumi.String(".gif"),
+// 				pulumi.String(".png"),
+// 			},
 // 		})
 // 		if err != nil {
 // 			return err
@@ -51,15 +65,15 @@ import (
 type AppSecAdvancedSettingsPrefetch struct {
 	pulumi.CustomResourceState
 
-	// Whether to enable prefetch requests for all extensions.
+	// . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
 	AllExtensions pulumi.BoolOutput `pulumi:"allExtensions"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the prefetch settings being modified.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// Whether to enable prefetch requests.
+	// . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
 	EnableAppLayer pulumi.BoolOutput `pulumi:"enableAppLayer"`
-	// Whether to enable prefetch requests for rate controls.
+	// . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
 	EnableRateControls pulumi.BoolOutput `pulumi:"enableRateControls"`
-	// The specific extensions for which to enable prefetch requests. If `allExtensions` is True, `extensions` must be an empty list.
+	// . If `allExtensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won't be used with any file extensions not included in the array. If `allExtensions` is **true**, then this argument must be set to an empty array: **[]**.
 	Extensions pulumi.StringArrayOutput `pulumi:"extensions"`
 }
 
@@ -107,28 +121,28 @@ func GetAppSecAdvancedSettingsPrefetch(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecAdvancedSettingsPrefetch resources.
 type appSecAdvancedSettingsPrefetchState struct {
-	// Whether to enable prefetch requests for all extensions.
+	// . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
 	AllExtensions *bool `pulumi:"allExtensions"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the prefetch settings being modified.
 	ConfigId *int `pulumi:"configId"`
-	// Whether to enable prefetch requests.
+	// . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
 	EnableAppLayer *bool `pulumi:"enableAppLayer"`
-	// Whether to enable prefetch requests for rate controls.
+	// . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
 	EnableRateControls *bool `pulumi:"enableRateControls"`
-	// The specific extensions for which to enable prefetch requests. If `allExtensions` is True, `extensions` must be an empty list.
+	// . If `allExtensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won't be used with any file extensions not included in the array. If `allExtensions` is **true**, then this argument must be set to an empty array: **[]**.
 	Extensions []string `pulumi:"extensions"`
 }
 
 type AppSecAdvancedSettingsPrefetchState struct {
-	// Whether to enable prefetch requests for all extensions.
+	// . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
 	AllExtensions pulumi.BoolPtrInput
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the prefetch settings being modified.
 	ConfigId pulumi.IntPtrInput
-	// Whether to enable prefetch requests.
+	// . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
 	EnableAppLayer pulumi.BoolPtrInput
-	// Whether to enable prefetch requests for rate controls.
+	// . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
 	EnableRateControls pulumi.BoolPtrInput
-	// The specific extensions for which to enable prefetch requests. If `allExtensions` is True, `extensions` must be an empty list.
+	// . If `allExtensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won't be used with any file extensions not included in the array. If `allExtensions` is **true**, then this argument must be set to an empty array: **[]**.
 	Extensions pulumi.StringArrayInput
 }
 
@@ -137,29 +151,29 @@ func (AppSecAdvancedSettingsPrefetchState) ElementType() reflect.Type {
 }
 
 type appSecAdvancedSettingsPrefetchArgs struct {
-	// Whether to enable prefetch requests for all extensions.
+	// . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
 	AllExtensions bool `pulumi:"allExtensions"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the prefetch settings being modified.
 	ConfigId int `pulumi:"configId"`
-	// Whether to enable prefetch requests.
+	// . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
 	EnableAppLayer bool `pulumi:"enableAppLayer"`
-	// Whether to enable prefetch requests for rate controls.
+	// . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
 	EnableRateControls bool `pulumi:"enableRateControls"`
-	// The specific extensions for which to enable prefetch requests. If `allExtensions` is True, `extensions` must be an empty list.
+	// . If `allExtensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won't be used with any file extensions not included in the array. If `allExtensions` is **true**, then this argument must be set to an empty array: **[]**.
 	Extensions []string `pulumi:"extensions"`
 }
 
 // The set of arguments for constructing a AppSecAdvancedSettingsPrefetch resource.
 type AppSecAdvancedSettingsPrefetchArgs struct {
-	// Whether to enable prefetch requests for all extensions.
+	// . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
 	AllExtensions pulumi.BoolInput
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the prefetch settings being modified.
 	ConfigId pulumi.IntInput
-	// Whether to enable prefetch requests.
+	// . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
 	EnableAppLayer pulumi.BoolInput
-	// Whether to enable prefetch requests for rate controls.
+	// . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
 	EnableRateControls pulumi.BoolInput
-	// The specific extensions for which to enable prefetch requests. If `allExtensions` is True, `extensions` must be an empty list.
+	// . If `allExtensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won't be used with any file extensions not included in the array. If `allExtensions` is **true**, then this argument must be set to an empty array: **[]**.
 	Extensions pulumi.StringArrayInput
 }
 

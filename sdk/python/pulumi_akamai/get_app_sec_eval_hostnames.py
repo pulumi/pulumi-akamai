@@ -45,9 +45,6 @@ class GetAppSecEvalHostnamesResult:
     @property
     @pulumi.getter
     def hostnames(self) -> Sequence[str]:
-        """
-        A list of the evaluation hostnames.
-        """
         return pulumi.get(self, "hostnames")
 
     @property
@@ -61,17 +58,11 @@ class GetAppSecEvalHostnamesResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        A JSON-formatted list of the evaluation hostnames.
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display showing the evaluation hostnames.
-        """
         return pulumi.get(self, "output_text")
 
 
@@ -91,7 +82,13 @@ class AwaitableGetAppSecEvalHostnamesResult(GetAppSecEvalHostnamesResult):
 def get_app_sec_eval_hostnames(config_id: Optional[int] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecEvalHostnamesResult:
     """
-    Use the `AppSecEvalHostnames` data source to retrieve the evaluation hostnames for a configuration. Evaluation mode for hostnames is only available for Web Application Protector. Run hostnames in evaluation mode to see how your configuration settings protect traffic for that hostname before adding a hostname directly to a live configuration. An evaluation period lasts four weeks unless you stop the evaluation. Once you begin, the hostnames you evaluate start responding to traffic as if they are your current hostnames. However, instead of taking an action the evaluation hostnames log which action they would have taken if they were your actively-protected hostnames and not a test.
+    **Scopes**: Security configuration
+
+    Returns the evaluation hostnames for a configuration. In evaluation mode, you use evaluation hosts to monitor how well your configuration settings protects host traffic. (Note that the evaluation host isn't actually protected, and the host takes no action other than recording the actions it would have taken had it been on the production network).
+
+    Evaluation mode for hostnames is only available for organizations running Web Application Protector.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames/eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getevaluationhostnames)
 
     ## Example Usage
 
@@ -101,15 +98,22 @@ def get_app_sec_eval_hostnames(config_id: Optional[int] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     eval_hostnames_app_sec_eval_hostnames = akamai.get_app_sec_eval_hostnames(config_id=configuration.config_id)
     pulumi.export("evalHostnames", eval_hostnames_app_sec_eval_hostnames.hostnames)
     pulumi.export("evalHostnamesOutput", eval_hostnames_app_sec_eval_hostnames.output_text)
     pulumi.export("evalHostnamesJson", eval_hostnames_app_sec_eval_hostnames.json)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `hostnames`. List of evaluation hostnames.
+    - `json`. JSON-formatted list of evaluation hostnames.
+    - `output_text`. Tabular report showing evaluation hostnames.
 
 
-    :param int config_id: The ID of the security configuration to use.
+    :param int config_id: . Unique identifier of the security configuration running in evaluation mode.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -131,7 +135,13 @@ def get_app_sec_eval_hostnames(config_id: Optional[int] = None,
 def get_app_sec_eval_hostnames_output(config_id: Optional[pulumi.Input[int]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecEvalHostnamesResult]:
     """
-    Use the `AppSecEvalHostnames` data source to retrieve the evaluation hostnames for a configuration. Evaluation mode for hostnames is only available for Web Application Protector. Run hostnames in evaluation mode to see how your configuration settings protect traffic for that hostname before adding a hostname directly to a live configuration. An evaluation period lasts four weeks unless you stop the evaluation. Once you begin, the hostnames you evaluate start responding to traffic as if they are your current hostnames. However, instead of taking an action the evaluation hostnames log which action they would have taken if they were your actively-protected hostnames and not a test.
+    **Scopes**: Security configuration
+
+    Returns the evaluation hostnames for a configuration. In evaluation mode, you use evaluation hosts to monitor how well your configuration settings protects host traffic. (Note that the evaluation host isn't actually protected, and the host takes no action other than recording the actions it would have taken had it been on the production network).
+
+    Evaluation mode for hostnames is only available for organizations running Web Application Protector.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames/eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getevaluationhostnames)
 
     ## Example Usage
 
@@ -141,14 +151,21 @@ def get_app_sec_eval_hostnames_output(config_id: Optional[pulumi.Input[int]] = N
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     eval_hostnames_app_sec_eval_hostnames = akamai.get_app_sec_eval_hostnames(config_id=configuration.config_id)
     pulumi.export("evalHostnames", eval_hostnames_app_sec_eval_hostnames.hostnames)
     pulumi.export("evalHostnamesOutput", eval_hostnames_app_sec_eval_hostnames.output_text)
     pulumi.export("evalHostnamesJson", eval_hostnames_app_sec_eval_hostnames.json)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `hostnames`. List of evaluation hostnames.
+    - `json`. JSON-formatted list of evaluation hostnames.
+    - `output_text`. Tabular report showing evaluation hostnames.
 
 
-    :param int config_id: The ID of the security configuration to use.
+    :param int config_id: . Unique identifier of the security configuration running in evaluation mode.
     """
     ...

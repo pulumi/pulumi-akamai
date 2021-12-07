@@ -13,7 +13,11 @@ namespace Pulumi.Akamai
     public static class GetAppSecSecurityPolicyProtections
     {
         /// <summary>
-        /// Use the `akamai.getAppSecSecurityPolicyProtections` data source to retrieve the protections in effect for a given security policy.
+        /// **Scopes**: Security policy
+        /// 
+        /// Returns information about the protections in effect for the specified security policy.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprotections)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -31,12 +35,12 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var protections = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSecurityPolicyProtections.InvokeAsync(new Akamai.GetAppSecSecurityPolicyProtectionsArgs
         ///         {
         ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///             SecurityPolicyId = "gms1_134637",
         ///         })));
         ///         this.ProtectionsJson = protections.Apply(protections =&gt; protections.Json);
         ///         this.ProtectionsApplyApiConstraints = protections.Apply(protections =&gt; protections.ApplyApiConstraints);
@@ -68,12 +72,29 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned and how that returned information is formatted:
+        /// 
+        /// - `apply_application_layer_controls`. Returns **true** if application layer controls are enabled; returns **false** if they are not.
+        /// - `apply_network_layer_controls`. Returns **true** if network layer controls are enabled; returns **false** if they are not.
+        /// - `apply_rate_controls`. Returns **true** if rate controls are enabled; returns **false** if they are not.
+        /// - `apply_reputation_controls`. Returns **true** if reputation controls are enabled; returns **false** if they are not.
+        /// - `apply_botman_controls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
+        /// - `apply_api_constraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
+        /// - `apply_slow_post_controls`. Returns **true** if slow POST controls are enabled; returns **false** if they are not.
+        /// - `json`. JSON-formatted list showing the status of the protection settings.
+        /// - `output_text`. Tabular report showing the status of the protection settings
         /// </summary>
         public static Task<GetAppSecSecurityPolicyProtectionsResult> InvokeAsync(GetAppSecSecurityPolicyProtectionsArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSecurityPolicyProtectionsResult>("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", args ?? new GetAppSecSecurityPolicyProtectionsArgs(), options.WithVersion());
 
         /// <summary>
-        /// Use the `akamai.getAppSecSecurityPolicyProtections` data source to retrieve the protections in effect for a given security policy.
+        /// **Scopes**: Security policy
+        /// 
+        /// Returns information about the protections in effect for the specified security policy.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprotections)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -91,12 +112,12 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var protections = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSecurityPolicyProtections.InvokeAsync(new Akamai.GetAppSecSecurityPolicyProtectionsArgs
         ///         {
         ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///             SecurityPolicyId = "gms1_134637",
         ///         })));
         ///         this.ProtectionsJson = protections.Apply(protections =&gt; protections.Json);
         ///         this.ProtectionsApplyApiConstraints = protections.Apply(protections =&gt; protections.ApplyApiConstraints);
@@ -128,6 +149,19 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned and how that returned information is formatted:
+        /// 
+        /// - `apply_application_layer_controls`. Returns **true** if application layer controls are enabled; returns **false** if they are not.
+        /// - `apply_network_layer_controls`. Returns **true** if network layer controls are enabled; returns **false** if they are not.
+        /// - `apply_rate_controls`. Returns **true** if rate controls are enabled; returns **false** if they are not.
+        /// - `apply_reputation_controls`. Returns **true** if reputation controls are enabled; returns **false** if they are not.
+        /// - `apply_botman_controls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
+        /// - `apply_api_constraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
+        /// - `apply_slow_post_controls`. Returns **true** if slow POST controls are enabled; returns **false** if they are not.
+        /// - `json`. JSON-formatted list showing the status of the protection settings.
+        /// - `output_text`. Tabular report showing the status of the protection settings
         /// </summary>
         public static Output<GetAppSecSecurityPolicyProtectionsResult> Invoke(GetAppSecSecurityPolicyProtectionsInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecSecurityPolicyProtectionsResult>("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", args ?? new GetAppSecSecurityPolicyProtectionsInvokeArgs(), options.WithVersion());
@@ -137,13 +171,13 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecSecurityPolicyProtectionsArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the security policy protections.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy you want to return protections information for.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
@@ -156,13 +190,13 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecSecurityPolicyProtectionsInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the security policy protections.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy you want to return protections information for.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -176,46 +210,19 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetAppSecSecurityPolicyProtectionsResult
     {
-        /// <summary>
-        /// `true` or `false`, indicating whether API constraints are in effect.
-        /// </summary>
         public readonly bool ApplyApiConstraints;
-        /// <summary>
-        /// `true` or `false`, indicating whether application layer controls are in effect.
-        /// </summary>
         public readonly bool ApplyApplicationLayerControls;
-        /// <summary>
-        /// `true` or `false`, indicating whether botman controls are in effect.
-        /// </summary>
         public readonly bool ApplyBotmanControls;
-        /// <summary>
-        /// `true` or `false`, indicating whether network layer controls are in effect.
-        /// </summary>
         public readonly bool ApplyNetworkLayerControls;
-        /// <summary>
-        /// `true` or `false`, indicating whether rate controls are in effect.
-        /// </summary>
         public readonly bool ApplyRateControls;
-        /// <summary>
-        /// `true` or `false`, indicating whether reputation controls are in effect.
-        /// </summary>
         public readonly bool ApplyReputationControls;
-        /// <summary>
-        /// `true` or `false`, indicating whether slow post controls are in effect.
-        /// </summary>
         public readonly bool ApplySlowPostControls;
         public readonly int ConfigId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// a JSON-formatted list showing the status of the protection settings
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// a tabular display showing the status of the protection settings
-        /// </summary>
         public readonly string OutputText;
         public readonly string SecurityPolicyId;
 

@@ -10,8 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecEvalRules` data source to list the action and condition-exception information
-// for a rule or rules you want to evaluate.
+// **Scopes**: Security policy; evaluation rule
+//
+// Returns the action and the condition-exception information for a rule or set of rules being used in evaluation mode.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getevalrules)
 //
 // ## Example Usage
 //
@@ -27,30 +30,42 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		opt1 := _var.Rule_id
-// 		_, err = akamai.GetAppSecEvalRules(ctx, &GetAppSecEvalRulesArgs{
+// 		opt1 := 60029316
+// 		evalRule, err := akamai.GetAppSecEvalRules(ctx, &GetAppSecEvalRulesArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: _var.Security_policy_id,
+// 			SecurityPolicyId: "gms1_134637",
 // 			RuleId:           &opt1,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		ctx.Export("evalRuleAction", akamai_appsec_eval_rules.Eval_rule.Eval_rule_action)
-// 		ctx.Export("conditionException", akamai_appsec_eval_rules.Eval_rule.Condition_exception)
-// 		ctx.Export("json", akamai_appsec_eval_rules.Eval_rule.Json)
-// 		ctx.Export("outputText", akamai_appsec_eval_rules.Eval_rule.Output_text)
+// 		ctx.Export("evalRuleAction", evalRule.EvalRuleAction)
+// 		ctx.Export("conditionException", evalRule.ConditionException)
+// 		ctx.Export("json", evalRule.Json)
+// 		ctx.Export("outputText", evalRule.OutputText)
 // 		return nil
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `evalRuleAction`. Action taken anytime the evaluation rule is triggered. Valid values are:
+//   - **alert**. Record the event,
+//   - **deny**. Reject the request.
+//   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
+//   - **none**. Take no action.
+// - `conditionException`. Conditions and exceptions associated with the rule.
+// - `json`. JSON-formatted list of the action and the condition-exception information for the rule. This output is only generated if the `ruleId` argument is included.
+// - `outputText`. Tabular report showing the rule action as well as Boolean values indicating whether conditions and exceptions have been configured for the rule.
 func GetAppSecEvalRules(ctx *pulumi.Context, args *GetAppSecEvalRulesArgs, opts ...pulumi.InvokeOption) (*GetAppSecEvalRulesResult, error) {
 	var rv GetAppSecEvalRulesResult
 	err := ctx.Invoke("akamai:index/getAppSecEvalRules:getAppSecEvalRules", args, &rv, opts...)
@@ -62,28 +77,22 @@ func GetAppSecEvalRules(ctx *pulumi.Context, args *GetAppSecEvalRulesArgs, opts 
 
 // A collection of arguments for invoking getAppSecEvalRules.
 type GetAppSecEvalRulesArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration running in evaluation mode.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the rule to use. If not specified, information about all rules will be returned.
+	// . Unique identifier of the evaluation rule you want to return information for. If not included, information is returned for all your evaluation rules.
 	RuleId *int `pulumi:"ruleId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the evaluation rule.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // A collection of values returned by getAppSecEvalRules.
 type GetAppSecEvalRulesResult struct {
-	// The eval rule's conditions and exceptions.
 	ConditionException string `pulumi:"conditionException"`
 	ConfigId           int    `pulumi:"configId"`
-	// The eval rule's action, either `alert`, `deny`, or `none`.
-	EvalRuleAction string `pulumi:"evalRuleAction"`
+	EvalRuleAction     string `pulumi:"evalRuleAction"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted list of the action and condition-exception information for the specified eval rule.
-	// This output is only generated if an eval rule is specified.
-	Json string `pulumi:"json"`
-	// A tabular display showing, for the specified eval rule or rules, the rule action and boolean values
-	// indicating whether conditions and exceptions are present.
+	Id               string `pulumi:"id"`
+	Json             string `pulumi:"json"`
 	OutputText       string `pulumi:"outputText"`
 	RuleId           *int   `pulumi:"ruleId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
@@ -100,11 +109,11 @@ func GetAppSecEvalRulesOutput(ctx *pulumi.Context, args GetAppSecEvalRulesOutput
 
 // A collection of arguments for invoking getAppSecEvalRules.
 type GetAppSecEvalRulesOutputArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration running in evaluation mode.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The ID of the rule to use. If not specified, information about all rules will be returned.
+	// . Unique identifier of the evaluation rule you want to return information for. If not included, information is returned for all your evaluation rules.
 	RuleId pulumi.IntPtrInput `pulumi:"ruleId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the evaluation rule.
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 
@@ -127,7 +136,6 @@ func (o GetAppSecEvalRulesResultOutput) ToGetAppSecEvalRulesResultOutputWithCont
 	return o
 }
 
-// The eval rule's conditions and exceptions.
 func (o GetAppSecEvalRulesResultOutput) ConditionException() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecEvalRulesResult) string { return v.ConditionException }).(pulumi.StringOutput)
 }
@@ -136,7 +144,6 @@ func (o GetAppSecEvalRulesResultOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAppSecEvalRulesResult) int { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// The eval rule's action, either `alert`, `deny`, or `none`.
 func (o GetAppSecEvalRulesResultOutput) EvalRuleAction() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecEvalRulesResult) string { return v.EvalRuleAction }).(pulumi.StringOutput)
 }
@@ -146,14 +153,10 @@ func (o GetAppSecEvalRulesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecEvalRulesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted list of the action and condition-exception information for the specified eval rule.
-// This output is only generated if an eval rule is specified.
 func (o GetAppSecEvalRulesResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecEvalRulesResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display showing, for the specified eval rule or rules, the rule action and boolean values
-// indicating whether conditions and exceptions are present.
 func (o GetAppSecEvalRulesResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecEvalRulesResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

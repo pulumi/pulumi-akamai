@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * The `resourceAkamaiAppsecEvalProtectHost` resource allows you to move hostnames that you are evaluating to active protection. When you move a hostname from the evaluation hostnames list, it’s added to your security policy as a protected hostname.
+ * **Scopes**: Security configuration
+ *
+ * Moves hostnames being evaluated to active protection. When you move a hostname from the evaluation hostnames list that host is added to your security policy as a protected hostname and is removed from the collection of hosts being evaluated.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/protect-eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putmoveevaluationhostnamestoprotection)
  *
  * ## Example Usage
  *
@@ -16,7 +20,7 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const evalHostnames = configuration.then(configuration => akamai.getAppSecEvalHostnames({
  *     configId: configuration.configId,
@@ -56,11 +60,11 @@ export class AppSecEvalProtectHost extends pulumi.CustomResource {
     }
 
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration in evaluation mode.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * The evaluation hostnames to be moved to active protection.
+     * . JSON array of the hostnames to be moved from the evaluation hostname list to the protected hostname list.
      */
     public readonly hostnames!: pulumi.Output<string[]>;
 
@@ -102,11 +106,11 @@ export class AppSecEvalProtectHost extends pulumi.CustomResource {
  */
 export interface AppSecEvalProtectHostState {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration in evaluation mode.
      */
     configId?: pulumi.Input<number>;
     /**
-     * The evaluation hostnames to be moved to active protection.
+     * . JSON array of the hostnames to be moved from the evaluation hostname list to the protected hostname list.
      */
     hostnames?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -116,11 +120,11 @@ export interface AppSecEvalProtectHostState {
  */
 export interface AppSecEvalProtectHostArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration in evaluation mode.
      */
     configId: pulumi.Input<number>;
     /**
-     * The evaluation hostnames to be moved to active protection.
+     * . JSON array of the hostnames to be moved from the evaluation hostname list to the protected hostname list.
      */
     hostnames: pulumi.Input<pulumi.Input<string>[]>;
 }

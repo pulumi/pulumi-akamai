@@ -5,7 +5,12 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecWafMode` resource to specify how your rule sets are updated. Use KRS mode to update the rule sets manually, or AAG to have them update automatically.
+ * **Scopes**: Security policy
+ *
+ * Modifies the way your Kona Rule Set rules are updated.
+ * Use **KRS** mode to update the rule sets manually or **AAG** to have those rule sets automatically updated.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/mode](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putmode)
  *
  * ## Example Usage
  *
@@ -16,12 +21,12 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const wafMode = new akamai.AppSecWafMode("wafMode", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: _var.policy_id,
- *     mode: _var.mode,
+ *     securityPolicyId: "gms1_134637",
+ *     mode: "KRS",
  * });
  * export const wafModeMode = wafMode.mode;
  * export const wafModeCurrentRuleset = wafMode.currentRuleset;
@@ -29,6 +34,15 @@ import * as utilities from "./utilities";
  * export const wafModeEvalRuleset = wafMode.evalRuleset;
  * export const wafModeEvalExpirationDate = wafMode.evalExpirationDate;
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `currentRuleset` – Versioning information for the current Kona Rule Set.
+ * - `evalRuleset`. Versioning information for the Kona Rule Set being evaluated (if applicable) .
+ * - `evalStatus`. Returns **enabled** if an evaluation is currently in progress; otherwise returns **disabled**.
+ * - `evalExpirationDate`. Date on which the evaluation period ends (if applicable).
+ * - `outputText`. Tabular report showing the current rule set, WAF mode and evaluation status.
  */
 export class AppSecWafMode extends pulumi.CustomResource {
     /**
@@ -59,35 +73,23 @@ export class AppSecWafMode extends pulumi.CustomResource {
     }
 
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the WAF mode settings being modified.
      */
     public readonly configId!: pulumi.Output<number>;
-    /**
-     * The current rule set.
-     */
     public /*out*/ readonly currentRuleset!: pulumi.Output<string>;
-    /**
-     * The date on which the evaluation period ends.
-     */
     public /*out*/ readonly evalExpirationDate!: pulumi.Output<string>;
-    /**
-     * The rule set being evaluated if any.
-     */
     public /*out*/ readonly evalRuleset!: pulumi.Output<string>;
-    /**
-     * Either `enabled` if an evaluation is currently in progress, or `disabled` otherwise.
-     */
     public /*out*/ readonly evalStatus!: pulumi.Output<string>;
     /**
-     * "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
+     * . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
      */
     public readonly mode!: pulumi.Output<string>;
     /**
-     * A tabular display showing the current rule set, WAF mode and evaluation status (`enabled` if a rule set is currently being evaluated, `disabled` otherwise).
+     * Text Export representation
      */
     public /*out*/ readonly outputText!: pulumi.Output<string>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the WAF mode settings being modified.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
@@ -144,35 +146,23 @@ export class AppSecWafMode extends pulumi.CustomResource {
  */
 export interface AppSecWafModeState {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the WAF mode settings being modified.
      */
     configId?: pulumi.Input<number>;
-    /**
-     * The current rule set.
-     */
     currentRuleset?: pulumi.Input<string>;
-    /**
-     * The date on which the evaluation period ends.
-     */
     evalExpirationDate?: pulumi.Input<string>;
-    /**
-     * The rule set being evaluated if any.
-     */
     evalRuleset?: pulumi.Input<string>;
-    /**
-     * Either `enabled` if an evaluation is currently in progress, or `disabled` otherwise.
-     */
     evalStatus?: pulumi.Input<string>;
     /**
-     * "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
+     * . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
      */
     mode?: pulumi.Input<string>;
     /**
-     * A tabular display showing the current rule set, WAF mode and evaluation status (`enabled` if a rule set is currently being evaluated, `disabled` otherwise).
+     * Text Export representation
      */
     outputText?: pulumi.Input<string>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the WAF mode settings being modified.
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -182,15 +172,15 @@ export interface AppSecWafModeState {
  */
 export interface AppSecWafModeArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the WAF mode settings being modified.
      */
     configId: pulumi.Input<number>;
     /**
-     * "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
+     * . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
      */
     mode: pulumi.Input<string>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the WAF mode settings being modified.
      */
     securityPolicyId: pulumi.Input<string>;
 }

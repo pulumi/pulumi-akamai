@@ -4,32 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.getAppSecAttackGroups` data source to list the action and condition-exception information for an attack
- * group or groups.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
- * });
- * const attackGroup = configuration.then(configuration => akamai.getAppSecAttackGroups({
- *     configId: configuration.configId,
- *     securityPolicyId: _var.security_policy_id,
- *     attackGroup: _var.attack_group,
- * }));
- * export const attackGroupAction = akamai_appsec_attack_groups.attack_group.attack_group_action;
- * export const conditionException = akamai_appsec_attack_groups.attack_group.condition_exception;
- * export const json = akamai_appsec_attack_groups.attack_group.json;
- * export const outputText = akamai_appsec_attack_groups.attack_group.output_text;
- * ```
- */
 export function getAppSecAttackGroups(args: GetAppSecAttackGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecAttackGroupsResult> {
     if (!opts) {
         opts = {}
@@ -50,15 +24,15 @@ export function getAppSecAttackGroups(args: GetAppSecAttackGroupsArgs, opts?: pu
  */
 export interface GetAppSecAttackGroupsArgs {
     /**
-     * The ID of the attack group to use.
+     * . Unique name of the attack group you want to return information for. If not included, information is returned for all your attack groups.
      */
     attackGroup?: string;
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the attack group.
      */
     configId: number;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the attack group.
      */
     securityPolicyId: string;
 }
@@ -68,28 +42,14 @@ export interface GetAppSecAttackGroupsArgs {
  */
 export interface GetAppSecAttackGroupsResult {
     readonly attackGroup?: string;
-    /**
-     * The attack group's action, either `alert`, `deny`, or `none`.
-     */
     readonly attackGroupAction: string;
-    /**
-     * The attack group's conditions and exceptions.
-     */
     readonly conditionException: string;
     readonly configId: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted list of the action and condition-exception information for the specified attack
-     * group. This output is only generated if an attack group is specified.
-     */
     readonly json: string;
-    /**
-     * A tabular display showing, for the specified attack group or groups, the attack group's action and
-     * boolean values indicating whether conditions and exceptions are present.
-     */
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
@@ -103,15 +63,15 @@ export function getAppSecAttackGroupsOutput(args: GetAppSecAttackGroupsOutputArg
  */
 export interface GetAppSecAttackGroupsOutputArgs {
     /**
-     * The ID of the attack group to use.
+     * . Unique name of the attack group you want to return information for. If not included, information is returned for all your attack groups.
      */
     attackGroup?: pulumi.Input<string>;
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the attack group.
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the attack group.
      */
     securityPolicyId: pulumi.Input<string>;
 }

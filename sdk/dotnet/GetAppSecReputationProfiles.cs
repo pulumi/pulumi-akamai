@@ -13,7 +13,11 @@ namespace Pulumi.Akamai
     public static class GetAppSecReputationProfiles
     {
         /// <summary>
-        /// Use the `akamai.getAppSecReputationProfiles` data source to retrieve details about all reputation profiles, or a specific reputation profiles.
+        /// **Scopes**: Security configuration; reputation profile
+        /// 
+        /// Returns information about your reputation profiles. Reputation profiles grade the security risk of an IP address based on previous activities associated with that address. Depending on the reputation score, and depending on how your configuration has been set up, requests from a specific IP address can trigger an alert, or even be blocked.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/reputation-profiles](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getreputationprofiles)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -31,7 +35,7 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var reputationProfiles = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfiles.InvokeAsync(new Akamai.GetAppSecReputationProfilesArgs
         ///         {
@@ -42,7 +46,7 @@ namespace Pulumi.Akamai
         ///         var reputationProfile = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfiles.InvokeAsync(new Akamai.GetAppSecReputationProfilesArgs
         ///         {
         ///             ConfigId = configuration.ConfigId,
-        ///             ReputationProfileId = @var.Reputation_profile_id,
+        ///             ReputationProfileId = 12345,
         ///         })));
         ///         this.ReputationProfileJson = reputationProfile.Apply(reputationProfile =&gt; reputationProfile.Json);
         ///         this.ReputationProfileOutput = reputationProfile.Apply(reputationProfile =&gt; reputationProfile.OutputText);
@@ -60,12 +64,22 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `output_text`. Tabular report of the details about the specified reputation profile or profiles.
+        /// - `json`. JSON-formatted report of the details about the specified reputation profile or profiles.
         /// </summary>
         public static Task<GetAppSecReputationProfilesResult> InvokeAsync(GetAppSecReputationProfilesArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecReputationProfilesResult>("akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles", args ?? new GetAppSecReputationProfilesArgs(), options.WithVersion());
 
         /// <summary>
-        /// Use the `akamai.getAppSecReputationProfiles` data source to retrieve details about all reputation profiles, or a specific reputation profiles.
+        /// **Scopes**: Security configuration; reputation profile
+        /// 
+        /// Returns information about your reputation profiles. Reputation profiles grade the security risk of an IP address based on previous activities associated with that address. Depending on the reputation score, and depending on how your configuration has been set up, requests from a specific IP address can trigger an alert, or even be blocked.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/reputation-profiles](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getreputationprofiles)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -83,7 +97,7 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var reputationProfiles = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfiles.InvokeAsync(new Akamai.GetAppSecReputationProfilesArgs
         ///         {
@@ -94,7 +108,7 @@ namespace Pulumi.Akamai
         ///         var reputationProfile = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfiles.InvokeAsync(new Akamai.GetAppSecReputationProfilesArgs
         ///         {
         ///             ConfigId = configuration.ConfigId,
-        ///             ReputationProfileId = @var.Reputation_profile_id,
+        ///             ReputationProfileId = 12345,
         ///         })));
         ///         this.ReputationProfileJson = reputationProfile.Apply(reputationProfile =&gt; reputationProfile.Json);
         ///         this.ReputationProfileOutput = reputationProfile.Apply(reputationProfile =&gt; reputationProfile.OutputText);
@@ -112,6 +126,12 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `output_text`. Tabular report of the details about the specified reputation profile or profiles.
+        /// - `json`. JSON-formatted report of the details about the specified reputation profile or profiles.
         /// </summary>
         public static Output<GetAppSecReputationProfilesResult> Invoke(GetAppSecReputationProfilesInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfilesResult>("akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles", args ?? new GetAppSecReputationProfilesInvokeArgs(), options.WithVersion());
@@ -121,13 +141,13 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecReputationProfilesArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the reputation profiles.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
         /// <summary>
-        /// The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
+        /// . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
         /// </summary>
         [Input("reputationProfileId")]
         public int? ReputationProfileId { get; set; }
@@ -140,13 +160,13 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecReputationProfilesInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the reputation profiles.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
+        /// . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
         /// </summary>
         [Input("reputationProfileId")]
         public Input<int>? ReputationProfileId { get; set; }
@@ -165,13 +185,7 @@ namespace Pulumi.Akamai
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A JSON-formatted display of the details about the indicated reputation profile or profiles.
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// A tabular display of the details about the indicated reputation profile or profiles.
-        /// </summary>
         public readonly string OutputText;
         public readonly int? ReputationProfileId;
 

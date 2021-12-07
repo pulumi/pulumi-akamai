@@ -20,10 +20,17 @@ class AppSecRatePolicyActionArgs:
                  security_policy_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecRatePolicyAction resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] ipv4_action: The ipv4 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
-        :param pulumi.Input[str] ipv6_action: The ipv6 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
-        :param pulumi.Input[int] rate_policy_id: The ID of the rate policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the rate policy action  being modified.
+        :param pulumi.Input[str] ipv4_action: . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
+               - **alert**. Record the event,
+               - **deny**. Block the request.
+               - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+               - **none**. Take no action.
+        :param pulumi.Input[str] ipv6_action: . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
+               - **alert**. Record the event.
+               - **deny**. Block the request.
+               - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+        :param pulumi.Input[int] rate_policy_id: . Unique identifier of the rate policy whose action is being modified.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "ipv4_action", ipv4_action)
@@ -35,7 +42,7 @@ class AppSecRatePolicyActionArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the rate policy action  being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -47,7 +54,11 @@ class AppSecRatePolicyActionArgs:
     @pulumi.getter(name="ipv4Action")
     def ipv4_action(self) -> pulumi.Input[str]:
         """
-        The ipv4 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
+        . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
+        - **alert**. Record the event,
+        - **deny**. Block the request.
+        - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+        - **none**. Take no action.
         """
         return pulumi.get(self, "ipv4_action")
 
@@ -59,7 +70,10 @@ class AppSecRatePolicyActionArgs:
     @pulumi.getter(name="ipv6Action")
     def ipv6_action(self) -> pulumi.Input[str]:
         """
-        The ipv6 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
+        . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
+        - **alert**. Record the event.
+        - **deny**. Block the request.
+        - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
         """
         return pulumi.get(self, "ipv6_action")
 
@@ -71,7 +85,7 @@ class AppSecRatePolicyActionArgs:
     @pulumi.getter(name="ratePolicyId")
     def rate_policy_id(self) -> pulumi.Input[int]:
         """
-        The ID of the rate policy to use.
+        . Unique identifier of the rate policy whose action is being modified.
         """
         return pulumi.get(self, "rate_policy_id")
 
@@ -99,10 +113,17 @@ class _AppSecRatePolicyActionState:
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecRatePolicyAction resources.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] ipv4_action: The ipv4 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
-        :param pulumi.Input[str] ipv6_action: The ipv6 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
-        :param pulumi.Input[int] rate_policy_id: The ID of the rate policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the rate policy action  being modified.
+        :param pulumi.Input[str] ipv4_action: . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
+               - **alert**. Record the event,
+               - **deny**. Block the request.
+               - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+               - **none**. Take no action.
+        :param pulumi.Input[str] ipv6_action: . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
+               - **alert**. Record the event.
+               - **deny**. Block the request.
+               - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+        :param pulumi.Input[int] rate_policy_id: . Unique identifier of the rate policy whose action is being modified.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -119,7 +140,7 @@ class _AppSecRatePolicyActionState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the rate policy action  being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -131,7 +152,11 @@ class _AppSecRatePolicyActionState:
     @pulumi.getter(name="ipv4Action")
     def ipv4_action(self) -> Optional[pulumi.Input[str]]:
         """
-        The ipv4 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
+        . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
+        - **alert**. Record the event,
+        - **deny**. Block the request.
+        - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+        - **none**. Take no action.
         """
         return pulumi.get(self, "ipv4_action")
 
@@ -143,7 +168,10 @@ class _AppSecRatePolicyActionState:
     @pulumi.getter(name="ipv6Action")
     def ipv6_action(self) -> Optional[pulumi.Input[str]]:
         """
-        The ipv6 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
+        . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
+        - **alert**. Record the event.
+        - **deny**. Block the request.
+        - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
         """
         return pulumi.get(self, "ipv6_action")
 
@@ -155,7 +183,7 @@ class _AppSecRatePolicyActionState:
     @pulumi.getter(name="ratePolicyId")
     def rate_policy_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The ID of the rate policy to use.
+        . Unique identifier of the rate policy whose action is being modified.
         """
         return pulumi.get(self, "rate_policy_id")
 
@@ -185,7 +213,13 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        The `resource_akamai_appsec_rate_policy_action` resource allows you to create, modify or delete the actions in a rate policy.
+        **Scopes**: Rate policy
+
+        Creates, modifies or deletes the actions associated with a rate policy.
+        By default, rate policies take no action when triggered.
+        Note that you must set separate actions for requests originating from an IPv4 IP address and for requests originating from an IPv6 address.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rate-policies/{ratePolicyId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putactionsperratepolicy)
 
         ## Example Usage
 
@@ -195,13 +229,13 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         appsec_rate_policy = akamai.AppSecRatePolicy("appsecRatePolicy",
             config_id=configuration.config_id,
             rate_policy=(lambda path: open(path).read())(f"{path['module']}/rate_policy.json"))
         appsec_rate_policy_action = akamai.AppSecRatePolicyAction("appsecRatePolicyAction",
             config_id=configuration.config_id,
-            security_policy_id=var["security_policy_id"],
+            security_policy_id="gms1_134637",
             rate_policy_id=appsec_rate_policy.rate_policy_id,
             ipv4_action="deny",
             ipv6_action="deny")
@@ -209,10 +243,17 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] ipv4_action: The ipv4 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
-        :param pulumi.Input[str] ipv6_action: The ipv6 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
-        :param pulumi.Input[int] rate_policy_id: The ID of the rate policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the rate policy action  being modified.
+        :param pulumi.Input[str] ipv4_action: . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
+               - **alert**. Record the event,
+               - **deny**. Block the request.
+               - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+               - **none**. Take no action.
+        :param pulumi.Input[str] ipv6_action: . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
+               - **alert**. Record the event.
+               - **deny**. Block the request.
+               - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+        :param pulumi.Input[int] rate_policy_id: . Unique identifier of the rate policy whose action is being modified.
         """
         ...
     @overload
@@ -221,7 +262,13 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
                  args: AppSecRatePolicyActionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        The `resource_akamai_appsec_rate_policy_action` resource allows you to create, modify or delete the actions in a rate policy.
+        **Scopes**: Rate policy
+
+        Creates, modifies or deletes the actions associated with a rate policy.
+        By default, rate policies take no action when triggered.
+        Note that you must set separate actions for requests originating from an IPv4 IP address and for requests originating from an IPv6 address.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rate-policies/{ratePolicyId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putactionsperratepolicy)
 
         ## Example Usage
 
@@ -231,13 +278,13 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         appsec_rate_policy = akamai.AppSecRatePolicy("appsecRatePolicy",
             config_id=configuration.config_id,
             rate_policy=(lambda path: open(path).read())(f"{path['module']}/rate_policy.json"))
         appsec_rate_policy_action = akamai.AppSecRatePolicyAction("appsecRatePolicyAction",
             config_id=configuration.config_id,
-            security_policy_id=var["security_policy_id"],
+            security_policy_id="gms1_134637",
             rate_policy_id=appsec_rate_policy.rate_policy_id,
             ipv4_action="deny",
             ipv6_action="deny")
@@ -312,10 +359,17 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] ipv4_action: The ipv4 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
-        :param pulumi.Input[str] ipv6_action: The ipv6 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
-        :param pulumi.Input[int] rate_policy_id: The ID of the rate policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the rate policy action  being modified.
+        :param pulumi.Input[str] ipv4_action: . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
+               - **alert**. Record the event,
+               - **deny**. Block the request.
+               - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+               - **none**. Take no action.
+        :param pulumi.Input[str] ipv6_action: . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
+               - **alert**. Record the event.
+               - **deny**. Block the request.
+               - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+        :param pulumi.Input[int] rate_policy_id: . Unique identifier of the rate policy whose action is being modified.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -332,7 +386,7 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the rate policy action  being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -340,7 +394,11 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
     @pulumi.getter(name="ipv4Action")
     def ipv4_action(self) -> pulumi.Output[str]:
         """
-        The ipv4 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
+        . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
+        - **alert**. Record the event,
+        - **deny**. Block the request.
+        - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+        - **none**. Take no action.
         """
         return pulumi.get(self, "ipv4_action")
 
@@ -348,7 +406,10 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
     @pulumi.getter(name="ipv6Action")
     def ipv6_action(self) -> pulumi.Output[str]:
         """
-        The ipv6 action to assign to this rate policy, either `alert`, `deny`, `deny_custom_{custom_deny_id}`, or `none`. If the action is none, the rate policy is inactive in the policy.
+        . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
+        - **alert**. Record the event.
+        - **deny**. Block the request.
+        - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
         """
         return pulumi.get(self, "ipv6_action")
 
@@ -356,7 +417,7 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
     @pulumi.getter(name="ratePolicyId")
     def rate_policy_id(self) -> pulumi.Output[int]:
         """
-        The ID of the rate policy to use.
+        . Unique identifier of the rate policy whose action is being modified.
         """
         return pulumi.get(self, "rate_policy_id")
 

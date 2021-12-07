@@ -64,25 +64,16 @@ class GetAppSecApiEndpointsResult:
     @property
     @pulumi.getter(name="idLists")
     def id_lists(self) -> Sequence[int]:
-        """
-        A list of IDs of the API endpoints.
-        """
         return pulumi.get(self, "id_lists")
 
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        A JSON-formatted list of information about the API endpoints.
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display showing the ID and name of the API endpoints.
-        """
         return pulumi.get(self, "output_text")
 
     @property
@@ -111,7 +102,11 @@ def get_app_sec_api_endpoints(api_name: Optional[str] = None,
                               security_policy_id: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecApiEndpointsResult:
     """
-    Use the `get_app_sec_api_endpoints` data source to retrieve information about the API Endpoints associated with a security policy or configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapiendpoints).
+    **Scopes**: Security configuration; security policy
+
+    Returns information about the API endpoints associated with a security policy or configuration. The returned information is described in the [Endpoint members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#apiendpoint) section of the Application Security API documentation.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/api-endpoints](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapiendpoints)
 
     ## Example Usage
 
@@ -121,14 +116,21 @@ def get_app_sec_api_endpoints(api_name: Optional[str] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    api_endpoints = akamai.get_app_sec_api_endpoints(api_name="TestEndpoint",
-        config_id=43253)
+    api_endpoints = akamai.get_app_sec_api_endpoints(api_name="Contracts",
+        config_id=58843)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `id_list`. List of API endpoint IDs.
+    - `json`. JSON-formatted list of information about the API endpoints.
+    - `output_text`. Tabular report showing the ID and name of the API endpoints.
 
 
-    :param str api_name: The name of a specific endpoint.
-    :param int config_id: The configuration ID.
-    :param str security_policy_id: The ID of the security policy to use.
+    :param str api_name: . Name of the API endpoint you want to return information for. If not included, information is returned for all your API endpoints.
+    :param int config_id: . Unique identifier of the security configuration associated with the API endpoints.
+    :param str security_policy_id: . Unique identifier of the security policy associated with the API endpoints. If not included, information is returned for all your security policies.
     """
     __args__ = dict()
     __args__['apiName'] = api_name
@@ -156,7 +158,11 @@ def get_app_sec_api_endpoints_output(api_name: Optional[pulumi.Input[Optional[st
                                      security_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecApiEndpointsResult]:
     """
-    Use the `get_app_sec_api_endpoints` data source to retrieve information about the API Endpoints associated with a security policy or configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapiendpoints).
+    **Scopes**: Security configuration; security policy
+
+    Returns information about the API endpoints associated with a security policy or configuration. The returned information is described in the [Endpoint members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#apiendpoint) section of the Application Security API documentation.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/api-endpoints](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapiendpoints)
 
     ## Example Usage
 
@@ -166,13 +172,20 @@ def get_app_sec_api_endpoints_output(api_name: Optional[pulumi.Input[Optional[st
     import pulumi
     import pulumi_akamai as akamai
 
-    api_endpoints = akamai.get_app_sec_api_endpoints(api_name="TestEndpoint",
-        config_id=43253)
+    api_endpoints = akamai.get_app_sec_api_endpoints(api_name="Contracts",
+        config_id=58843)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `id_list`. List of API endpoint IDs.
+    - `json`. JSON-formatted list of information about the API endpoints.
+    - `output_text`. Tabular report showing the ID and name of the API endpoints.
 
 
-    :param str api_name: The name of a specific endpoint.
-    :param int config_id: The configuration ID.
-    :param str security_policy_id: The ID of the security policy to use.
+    :param str api_name: . Name of the API endpoint you want to return information for. If not included, information is returned for all your API endpoints.
+    :param int config_id: . Unique identifier of the security configuration associated with the API endpoints.
+    :param str security_policy_id: . Unique identifier of the security policy associated with the API endpoints. If not included, information is returned for all your security policies.
     """
     ...

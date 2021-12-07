@@ -11,7 +11,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The `AppSecSelectedHostnames` resource allows you to set the list of hostnames protected under a given security configuration.
+// **Scopes**: Security configuration
+//
+// Modifies the list of hostnames protected under by a security configuration.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putselectedhostnames)
 //
 // ## Example Usage
 //
@@ -27,7 +31,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Akamai Tools"
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -51,11 +55,14 @@ import (
 type AppSecSelectedHostnames struct {
 	pulumi.CustomResourceState
 
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the hostnames.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// The list of hostnames to be applied, added or removed.
+	// . JSON array of hostnames to be added or removed from the protected hosts list.
 	Hostnames pulumi.StringArrayOutput `pulumi:"hostnames"`
-	// A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
+	// . Indicates how the `hostnames` array is to be applied. Allowed values are:
+	// - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
+	// - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
+	// - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
 	Mode pulumi.StringOutput `pulumi:"mode"`
 }
 
@@ -97,20 +104,26 @@ func GetAppSecSelectedHostnames(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecSelectedHostnames resources.
 type appSecSelectedHostnamesState struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the hostnames.
 	ConfigId *int `pulumi:"configId"`
-	// The list of hostnames to be applied, added or removed.
+	// . JSON array of hostnames to be added or removed from the protected hosts list.
 	Hostnames []string `pulumi:"hostnames"`
-	// A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
+	// . Indicates how the `hostnames` array is to be applied. Allowed values are:
+	// - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
+	// - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
+	// - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
 	Mode *string `pulumi:"mode"`
 }
 
 type AppSecSelectedHostnamesState struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the hostnames.
 	ConfigId pulumi.IntPtrInput
-	// The list of hostnames to be applied, added or removed.
+	// . JSON array of hostnames to be added or removed from the protected hosts list.
 	Hostnames pulumi.StringArrayInput
-	// A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
+	// . Indicates how the `hostnames` array is to be applied. Allowed values are:
+	// - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
+	// - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
+	// - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
 	Mode pulumi.StringPtrInput
 }
 
@@ -119,21 +132,27 @@ func (AppSecSelectedHostnamesState) ElementType() reflect.Type {
 }
 
 type appSecSelectedHostnamesArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the hostnames.
 	ConfigId int `pulumi:"configId"`
-	// The list of hostnames to be applied, added or removed.
+	// . JSON array of hostnames to be added or removed from the protected hosts list.
 	Hostnames []string `pulumi:"hostnames"`
-	// A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
+	// . Indicates how the `hostnames` array is to be applied. Allowed values are:
+	// - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
+	// - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
+	// - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
 	Mode string `pulumi:"mode"`
 }
 
 // The set of arguments for constructing a AppSecSelectedHostnames resource.
 type AppSecSelectedHostnamesArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the hostnames.
 	ConfigId pulumi.IntInput
-	// The list of hostnames to be applied, added or removed.
+	// . JSON array of hostnames to be added or removed from the protected hosts list.
 	Hostnames pulumi.StringArrayInput
-	// A string specifying the interpretation of the `hostnames` parameter. Must be one of the following:
+	// . Indicates how the `hostnames` array is to be applied. Allowed values are:
+	// - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
+	// - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
+	// - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
 	Mode pulumi.StringInput
 }
 

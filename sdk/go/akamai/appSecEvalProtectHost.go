@@ -11,7 +11,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The `resourceAkamaiAppsecEvalProtectHost` resource allows you to move hostnames that you are evaluating to active protection. When you move a hostname from the evaluation hostnames list, it’s added to your security policy as a protected hostname.
+// **Scopes**: Security configuration
+//
+// Moves hostnames being evaluated to active protection. When you move a hostname from the evaluation hostnames list that host is added to your security policy as a protected hostname and is removed from the collection of hosts being evaluated.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/protect-eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putmoveevaluationhostnamestoprotection)
 //
 // ## Example Usage
 //
@@ -27,7 +31,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -54,9 +58,9 @@ import (
 type AppSecEvalProtectHost struct {
 	pulumi.CustomResourceState
 
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration in evaluation mode.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// The evaluation hostnames to be moved to active protection.
+	// . JSON array of the hostnames to be moved from the evaluation hostname list to the protected hostname list.
 	Hostnames pulumi.StringArrayOutput `pulumi:"hostnames"`
 }
 
@@ -95,16 +99,16 @@ func GetAppSecEvalProtectHost(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecEvalProtectHost resources.
 type appSecEvalProtectHostState struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration in evaluation mode.
 	ConfigId *int `pulumi:"configId"`
-	// The evaluation hostnames to be moved to active protection.
+	// . JSON array of the hostnames to be moved from the evaluation hostname list to the protected hostname list.
 	Hostnames []string `pulumi:"hostnames"`
 }
 
 type AppSecEvalProtectHostState struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration in evaluation mode.
 	ConfigId pulumi.IntPtrInput
-	// The evaluation hostnames to be moved to active protection.
+	// . JSON array of the hostnames to be moved from the evaluation hostname list to the protected hostname list.
 	Hostnames pulumi.StringArrayInput
 }
 
@@ -113,17 +117,17 @@ func (AppSecEvalProtectHostState) ElementType() reflect.Type {
 }
 
 type appSecEvalProtectHostArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration in evaluation mode.
 	ConfigId int `pulumi:"configId"`
-	// The evaluation hostnames to be moved to active protection.
+	// . JSON array of the hostnames to be moved from the evaluation hostname list to the protected hostname list.
 	Hostnames []string `pulumi:"hostnames"`
 }
 
 // The set of arguments for constructing a AppSecEvalProtectHost resource.
 type AppSecEvalProtectHostArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration in evaluation mode.
 	ConfigId pulumi.IntInput
-	// The evaluation hostnames to be moved to active protection.
+	// . JSON array of the hostnames to be moved from the evaluation hostname list to the protected hostname list.
 	Hostnames pulumi.StringArrayInput
 }
 

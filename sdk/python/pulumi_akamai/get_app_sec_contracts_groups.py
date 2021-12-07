@@ -46,33 +46,21 @@ class GetAppSecContractsGroupsResult:
     @property
     @pulumi.getter
     def contractid(self) -> Optional[str]:
-        """
-        (Optional) The ID of a contract for which to retrieve information.
-        """
         return pulumi.get(self, "contractid")
 
     @property
     @pulumi.getter(name="defaultContractid")
     def default_contractid(self) -> str:
-        """
-        The default contract ID for the specified contract and group.
-        """
         return pulumi.get(self, "default_contractid")
 
     @property
     @pulumi.getter(name="defaultGroupid")
     def default_groupid(self) -> int:
-        """
-        The default group ID for the specified contract and group.
-        """
         return pulumi.get(self, "default_groupid")
 
     @property
     @pulumi.getter
     def groupid(self) -> Optional[int]:
-        """
-        (Optional) The ID of a group for which to retrieve information.
-        """
         return pulumi.get(self, "groupid")
 
     @property
@@ -86,17 +74,11 @@ class GetAppSecContractsGroupsResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        A JSON-formatted list of the contract and group information.
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display showing the contract and group information.
-        """
         return pulumi.get(self, "output_text")
 
 
@@ -119,7 +101,11 @@ def get_app_sec_contracts_groups(contractid: Optional[str] = None,
                                  groupid: Optional[int] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecContractsGroupsResult:
     """
-    Use the `get_app_sec_contracts_groups` data source to retrieve information about the contracts and groups for your account. Each object contains the contract, groups associated with the contract, and whether Kona Site Defender or Web Application Protector is the product for that contract. You’ll need this information when you create a new security configuration or when you want to get a list of hostnames still available for use in a security policy. The information available via this data source is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf).
+    **Scopes**: Contract; group
+
+    Returns information about the contracts and groups associated with your account. Among other things, this information is required to create a new security configuration and to return a list of the hostnames available for use in a security policy. The returned information for this data source is described in the [List contracts and groups](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf) of the Application Security API.
+
+    **Related API Endpoint**: [/appsec/v1/contracts-groups](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf)
 
     ## Example Usage
 
@@ -129,17 +115,25 @@ def get_app_sec_contracts_groups(contractid: Optional[str] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    contracts_groups = akamai.get_app_sec_contracts_groups(contractid=var["contractid"],
-        groupid=var["groupid"])
+    contracts_groups = akamai.get_app_sec_contracts_groups(contractid="5-2WA382",
+        groupid=12198)
     pulumi.export("contractsGroupsList", contracts_groups.output_text)
     pulumi.export("contractsGroupsJson", contracts_groups.json)
     pulumi.export("contractGroupsDefaultContractid", contracts_groups.default_contractid)
     pulumi.export("contractGroupsDefaultGroupid", contracts_groups.default_groupid)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `json`. JSON-formatted list of contract and group information.
+    - `output_text`. Tabular report of contract and group information.
+    - `default_contractid`. Default contract ID for the specified contract and group.
+    - `default_groupid`. Default group ID for the specified contract and group.
 
 
-    :param str contractid: (Optional) The ID of a contract for which to retrieve information.
-    :param int groupid: (Optional) The ID of a group for which to retrieve information.
+    :param str contractid: . Unique identifier of an Akamai contract. If not included, information is returned for all the Akamai contracts associated with your account.
+    :param int groupid: . Unique identifier of a contract group. If not included, information is returned for all the groups associated with your account.
     """
     __args__ = dict()
     __args__['contractid'] = contractid
@@ -165,7 +159,11 @@ def get_app_sec_contracts_groups_output(contractid: Optional[pulumi.Input[Option
                                         groupid: Optional[pulumi.Input[Optional[int]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecContractsGroupsResult]:
     """
-    Use the `get_app_sec_contracts_groups` data source to retrieve information about the contracts and groups for your account. Each object contains the contract, groups associated with the contract, and whether Kona Site Defender or Web Application Protector is the product for that contract. You’ll need this information when you create a new security configuration or when you want to get a list of hostnames still available for use in a security policy. The information available via this data source is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf).
+    **Scopes**: Contract; group
+
+    Returns information about the contracts and groups associated with your account. Among other things, this information is required to create a new security configuration and to return a list of the hostnames available for use in a security policy. The returned information for this data source is described in the [List contracts and groups](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf) of the Application Security API.
+
+    **Related API Endpoint**: [/appsec/v1/contracts-groups](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf)
 
     ## Example Usage
 
@@ -175,16 +173,24 @@ def get_app_sec_contracts_groups_output(contractid: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_akamai as akamai
 
-    contracts_groups = akamai.get_app_sec_contracts_groups(contractid=var["contractid"],
-        groupid=var["groupid"])
+    contracts_groups = akamai.get_app_sec_contracts_groups(contractid="5-2WA382",
+        groupid=12198)
     pulumi.export("contractsGroupsList", contracts_groups.output_text)
     pulumi.export("contractsGroupsJson", contracts_groups.json)
     pulumi.export("contractGroupsDefaultContractid", contracts_groups.default_contractid)
     pulumi.export("contractGroupsDefaultGroupid", contracts_groups.default_groupid)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `json`. JSON-formatted list of contract and group information.
+    - `output_text`. Tabular report of contract and group information.
+    - `default_contractid`. Default contract ID for the specified contract and group.
+    - `default_groupid`. Default group ID for the specified contract and group.
 
 
-    :param str contractid: (Optional) The ID of a contract for which to retrieve information.
-    :param int groupid: (Optional) The ID of a group for which to retrieve information.
+    :param str contractid: . Unique identifier of an Akamai contract. If not included, information is returned for all the Akamai contracts associated with your account.
+    :param int groupid: . Unique identifier of a contract group. If not included, information is returned for all the groups associated with your account.
     """
     ...

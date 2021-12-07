@@ -37,13 +37,13 @@ import * as utilities from "./utilities";
  *   * `loadObjectPort` - Specifies the TCP port to connect to when requesting the load object.
  *   * `loadServers` - Specifies a list of servers to request the load object from.
  * * `city` - (Optional) The name of the city where the data center is located.
- * * `cloneOf` - (Optional) Identifies the data center’s `datacenterId` of which this data center is a clone.
+ * * `cloneOf` - (Optional) Identifies the data center's `datacenterId` of which this data center is a clone.
  * * `cloudServerTargeting` - (Optional) A boolean indicating whether to balance load between two or more servers in a cloud environment.
  * * `cloudServerHostHeaderOverride` - (Optional) A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
  * * `continent` - (Optional) A two-letter code that specifies the continent where the data center maps to.
  * * `country` - (Optional) A two-letter ISO 3166 country code that specifies the country where the data center maps to.
- * * `latitude` - (Optional) Specifies the geographical latitude of the data center’s position. See also longitude within this object.
- * * `longitude` - (Optional) Specifies the geographic longitude of the data center’s position. See also latitude within this object.
+ * * `latitude` - (Optional) Specifies the geographical latitude of the data center's position. See also longitude within this object.
+ * * `longitude` - (Optional) Specifies the geographic longitude of the data center's position. See also latitude within this object.
  * * `stateOrProvince` - (Optional) Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
  *
  * ## Attribute reference

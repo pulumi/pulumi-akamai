@@ -10,7 +10,16 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecReputationProfileAnalysis` data source to retrieve information about the current reputation analysis settings. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getreputationanalysis).
+// **Scopes**: Security policy
+//
+// Returns information about the following two reputation analysis settings:
+//
+// - `forwardToHTTPHeader`. When enabled, client reputation information associated with a request is forwarded to origin servers by using an HTTP header.
+// - `forwardSharedIPToHTTPHeaderAndSIEM`. When enabled, both the HTTP header and SIEM integration events include a value indicating that the IP addresses is shared address.
+//
+// The returned information is described in the [ReputationAnalysis members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#f06bb20c) section of the Application Security API.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getreputationanalysis)
 //
 // ## Example Usage
 //
@@ -26,7 +35,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -35,7 +44,7 @@ import (
 // 		}
 // 		reputationAnalysis, err := akamai.LookupAppSecReputationProfileAnalysis(ctx, &GetAppSecReputationProfileAnalysisArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: _var.Security_policy_id,
+// 			SecurityPolicyId: "gms1_134637",
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -46,6 +55,12 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `json`. JSON-formatted list of the reputation analysis settings.
+// - `outputText`. Tabular report showing the reputation analysis settings.
 func LookupAppSecReputationProfileAnalysis(ctx *pulumi.Context, args *LookupAppSecReputationProfileAnalysisArgs, opts ...pulumi.InvokeOption) (*LookupAppSecReputationProfileAnalysisResult, error) {
 	var rv LookupAppSecReputationProfileAnalysisResult
 	err := ctx.Invoke("akamai:index/getAppSecReputationProfileAnalysis:getAppSecReputationProfileAnalysis", args, &rv, opts...)
@@ -57,9 +72,9 @@ func LookupAppSecReputationProfileAnalysis(ctx *pulumi.Context, args *LookupAppS
 
 // A collection of arguments for invoking getAppSecReputationProfileAnalysis.
 type LookupAppSecReputationProfileAnalysisArgs struct {
-	// The configuration ID to use.
+	// . Unique identifier of the security configuration associated with the reputation profile analysis settings.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the reputation profile analysis settings.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -67,10 +82,8 @@ type LookupAppSecReputationProfileAnalysisArgs struct {
 type LookupAppSecReputationProfileAnalysisResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted list of the reputation analysis settings.
-	Json string `pulumi:"json"`
-	// A tabular display showing the reputation analysis settings.
+	Id               string `pulumi:"id"`
+	Json             string `pulumi:"json"`
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
@@ -86,9 +99,9 @@ func LookupAppSecReputationProfileAnalysisOutput(ctx *pulumi.Context, args Looku
 
 // A collection of arguments for invoking getAppSecReputationProfileAnalysis.
 type LookupAppSecReputationProfileAnalysisOutputArgs struct {
-	// The configuration ID to use.
+	// . Unique identifier of the security configuration associated with the reputation profile analysis settings.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the reputation profile analysis settings.
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 
@@ -120,12 +133,10 @@ func (o LookupAppSecReputationProfileAnalysisResultOutput) Id() pulumi.StringOut
 	return o.ApplyT(func(v LookupAppSecReputationProfileAnalysisResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted list of the reputation analysis settings.
 func (o LookupAppSecReputationProfileAnalysisResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecReputationProfileAnalysisResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display showing the reputation analysis settings.
 func (o LookupAppSecReputationProfileAnalysisResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecReputationProfileAnalysisResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

@@ -10,9 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// Use the `akamai.AppSecByPassNetworkList` resource to update which network lists to use in the
-    /// bypass network lists settings. Note: this resource is only applicable to WAP (Web Application
-    /// Protector) configurations.
+    /// **Scopes**: Security configuration
+    /// 
+    /// Specifies the networks that appear on the bypass network list. Networks on this list are allowed to bypass the Web Application Firewall.
+    /// 
+    /// Note that this resource is only applicable to WAP (Web Application Protector) configurations.
+    /// 
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/bypass-network-lists](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putbypassnetworklistsforawapconfigversion)
     /// 
     /// ## Example Usage
     /// 
@@ -28,33 +32,38 @@ namespace Pulumi.Akamai
     ///     {
     ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
     ///         {
-    ///             Name = @var.Security_configuration,
+    ///             Name = "Documentation",
     ///         }));
     ///         var bypassNetworkLists = new Akamai.AppSecByPassNetworkList("bypassNetworkLists", new Akamai.AppSecByPassNetworkListArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
     ///             BypassNetworkLists = 
     ///             {
-    ///                 "id1",
-    ///                 "id2",
+    ///                 "DocumentationNetworkList",
+    ///                 "TrainingNetworkList",
     ///             },
     ///         });
     ///     }
     /// 
     /// }
     /// ```
+    /// ## Output Options
+    /// 
+    /// The following options can be used to determine the information returned, and how that returned information is formatted:
+    /// 
+    /// - `output_text`. Tabular report showing the updated list of bypass network IDs.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecByPassNetworkList:AppSecByPassNetworkList")]
     public partial class AppSecByPassNetworkList : Pulumi.CustomResource
     {
         /// <summary>
-        /// A list containing the IDs of the network lists to use.
+        /// . JSON array of network IDs that comprise the bypass list.
         /// </summary>
         [Output("bypassNetworkLists")]
         public Output<ImmutableArray<string>> BypassNetworkLists { get; private set; } = null!;
 
         /// <summary>
-        /// The configuration ID to use.
+        /// . Unique identifier of the security configuration associated with the network bypass lists being modified.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
@@ -109,7 +118,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _bypassNetworkLists;
 
         /// <summary>
-        /// A list containing the IDs of the network lists to use.
+        /// . JSON array of network IDs that comprise the bypass list.
         /// </summary>
         public InputList<string> BypassNetworkLists
         {
@@ -118,7 +127,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The configuration ID to use.
+        /// . Unique identifier of the security configuration associated with the network bypass lists being modified.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
@@ -134,7 +143,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _bypassNetworkLists;
 
         /// <summary>
-        /// A list containing the IDs of the network lists to use.
+        /// . JSON array of network IDs that comprise the bypass list.
         /// </summary>
         public InputList<string> BypassNetworkLists
         {
@@ -143,7 +152,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The configuration ID to use.
+        /// . Unique identifier of the security configuration associated with the network bypass lists being modified.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }

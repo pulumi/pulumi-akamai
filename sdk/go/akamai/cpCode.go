@@ -89,20 +89,13 @@ import (
 //
 // The following arguments are supported:
 //
-// <<<<<<< HEAD
-// * `name` - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can’t include commas, underscores, quotes, or any of these special characters: ^ # %.
-// * `contractId` - (Required) A contract's unique ID, including the `ctr_` prefix.
-// * `groupId` - (Required) A group's unique ID, including the `grp_` prefix.
-// * `productId` - (Required) A product's unique ID, including the `prd_` prefix.
-//   =======
-// * `name` - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can’t include commas, underscores, quotes, or any of these special characters: ^ # %.
+// * `name` - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
 // * `contractId` - (Required) A contract's unique ID, including the `ctr_` prefix.
 // * `groupId` - (Required) A group's unique ID, including the `grp_` prefix.
 // * `productId` - (Required) A product's unique ID, including the `prd_` prefix.
 //
 // ### Deprecated arguments
 //
-// > > > > > > > v1.6.1
 // * `contract` - (Deprecated) Replaced by `contractId`. Maintained for legacy purposes.
 // * `group` - (Deprecated) Replaced by `groupId`. Maintained for legacy purposes.
 // * `product` - (Deprecated) Replaced by `productId`. Maintained for legacy purposes.

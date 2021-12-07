@@ -10,7 +10,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecEvalHostnames` data source to retrieve the evaluation hostnames for a configuration. Evaluation mode for hostnames is only available for Web Application Protector. Run hostnames in evaluation mode to see how your configuration settings protect traffic for that hostname before adding a hostname directly to a live configuration. An evaluation period lasts four weeks unless you stop the evaluation. Once you begin, the hostnames you evaluate start responding to traffic as if they are your current hostnames. However, instead of taking an action the evaluation hostnames log which action they would have taken if they were your actively-protected hostnames and not a test.
+// **Scopes**: Security configuration
+//
+// Returns the evaluation hostnames for a configuration. In evaluation mode, you use evaluation hosts to monitor how well your configuration settings protects host traffic. (Note that the evaluation host isn't actually protected, and the host takes no action other than recording the actions it would have taken had it been on the production network).
+//
+// Evaluation mode for hostnames is only available for organizations running Web Application Protector.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames/eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getevaluationhostnames)
 //
 // ## Example Usage
 //
@@ -26,7 +32,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -46,6 +52,13 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `hostnames`. List of evaluation hostnames.
+// - `json`. JSON-formatted list of evaluation hostnames.
+// - `outputText`. Tabular report showing evaluation hostnames.
 func LookupAppSecEvalHostnames(ctx *pulumi.Context, args *LookupAppSecEvalHostnamesArgs, opts ...pulumi.InvokeOption) (*LookupAppSecEvalHostnamesResult, error) {
 	var rv LookupAppSecEvalHostnamesResult
 	err := ctx.Invoke("akamai:index/getAppSecEvalHostnames:getAppSecEvalHostnames", args, &rv, opts...)
@@ -57,20 +70,17 @@ func LookupAppSecEvalHostnames(ctx *pulumi.Context, args *LookupAppSecEvalHostna
 
 // A collection of arguments for invoking getAppSecEvalHostnames.
 type LookupAppSecEvalHostnamesArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration running in evaluation mode.
 	ConfigId int `pulumi:"configId"`
 }
 
 // A collection of values returned by getAppSecEvalHostnames.
 type LookupAppSecEvalHostnamesResult struct {
-	ConfigId int `pulumi:"configId"`
-	// A list of the evaluation hostnames.
+	ConfigId  int      `pulumi:"configId"`
 	Hostnames []string `pulumi:"hostnames"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted list of the evaluation hostnames.
-	Json string `pulumi:"json"`
-	// A tabular display showing the evaluation hostnames.
+	Id         string `pulumi:"id"`
+	Json       string `pulumi:"json"`
 	OutputText string `pulumi:"outputText"`
 }
 
@@ -85,7 +95,7 @@ func LookupAppSecEvalHostnamesOutput(ctx *pulumi.Context, args LookupAppSecEvalH
 
 // A collection of arguments for invoking getAppSecEvalHostnames.
 type LookupAppSecEvalHostnamesOutputArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration running in evaluation mode.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
 }
 
@@ -112,7 +122,6 @@ func (o LookupAppSecEvalHostnamesResultOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAppSecEvalHostnamesResult) int { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// A list of the evaluation hostnames.
 func (o LookupAppSecEvalHostnamesResultOutput) Hostnames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupAppSecEvalHostnamesResult) []string { return v.Hostnames }).(pulumi.StringArrayOutput)
 }
@@ -122,12 +131,10 @@ func (o LookupAppSecEvalHostnamesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecEvalHostnamesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted list of the evaluation hostnames.
 func (o LookupAppSecEvalHostnamesResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecEvalHostnamesResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display showing the evaluation hostnames.
 func (o LookupAppSecEvalHostnamesResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecEvalHostnamesResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

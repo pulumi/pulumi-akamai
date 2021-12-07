@@ -10,7 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecRatePolicyActions` data source to retrieve a list of all rate policies associated with a given configuration and security policy, or the actions associated with a specific rate policy.
+// **Scopes**: Security policy; rate policy
+//
+// Returns information about your rate policy actions, Actions specify what happens any time a rate policy is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.
+//
+// **Related API Endpoint:** [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rate-policies](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getratepolicyactions)
 //
 // ## Example Usage
 //
@@ -26,7 +30,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -35,7 +39,7 @@ import (
 // 		}
 // 		ratePolicyActionsAppSecRatePolicyActions, err := akamai.GetAppSecRatePolicyActions(ctx, &GetAppSecRatePolicyActionsArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: _var.Security_policy_id,
+// 			SecurityPolicyId: "gms1_134637",
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -45,6 +49,11 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `outputText`. Tabular report showing the ID, IPv4 action, and IPv6 action of the rate policies.
 func GetAppSecRatePolicyActions(ctx *pulumi.Context, args *GetAppSecRatePolicyActionsArgs, opts ...pulumi.InvokeOption) (*GetAppSecRatePolicyActionsResult, error) {
 	var rv GetAppSecRatePolicyActionsResult
 	err := ctx.Invoke("akamai:index/getAppSecRatePolicyActions:getAppSecRatePolicyActions", args, &rv, opts...)
@@ -56,11 +65,11 @@ func GetAppSecRatePolicyActions(ctx *pulumi.Context, args *GetAppSecRatePolicyAc
 
 // A collection of arguments for invoking getAppSecRatePolicyActions.
 type GetAppSecRatePolicyActionsArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the rate policies and rate policy actions.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the rate policy to use. If not supplied, information about all rate policies will be returned.
+	// . Unique identifier of the rate policy you want to return action information for. If not included, action information is returned for all your rate policies.
 	RatePolicyId *int `pulumi:"ratePolicyId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the rate policies and rate policy actions.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -68,8 +77,7 @@ type GetAppSecRatePolicyActionsArgs struct {
 type GetAppSecRatePolicyActionsResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A tabular display showing the ID IPv4Action and IPv6Action of the indicated security policy.
+	Id               string `pulumi:"id"`
 	OutputText       string `pulumi:"outputText"`
 	RatePolicyId     *int   `pulumi:"ratePolicyId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
@@ -86,11 +94,11 @@ func GetAppSecRatePolicyActionsOutput(ctx *pulumi.Context, args GetAppSecRatePol
 
 // A collection of arguments for invoking getAppSecRatePolicyActions.
 type GetAppSecRatePolicyActionsOutputArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the rate policies and rate policy actions.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The ID of the rate policy to use. If not supplied, information about all rate policies will be returned.
+	// . Unique identifier of the rate policy you want to return action information for. If not included, action information is returned for all your rate policies.
 	RatePolicyId pulumi.IntPtrInput `pulumi:"ratePolicyId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the rate policies and rate policy actions.
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 
@@ -122,7 +130,6 @@ func (o GetAppSecRatePolicyActionsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecRatePolicyActionsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A tabular display showing the ID IPv4Action and IPv6Action of the indicated security policy.
 func (o GetAppSecRatePolicyActionsResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecRatePolicyActionsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

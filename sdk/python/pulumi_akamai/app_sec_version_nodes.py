@@ -17,8 +17,8 @@ class AppSecVersionNodesArgs:
                  version_notes: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecVersionNodes resource.
-        :param pulumi.Input[int] config_id: The configuration ID to use.
-        :param pulumi.Input[str] version_notes: A string containing the version notes to be used.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration whose version notes are being modified.
+        :param pulumi.Input[str] version_notes: . Brief description of the security configuration version.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "version_notes", version_notes)
@@ -27,7 +27,7 @@ class AppSecVersionNodesArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        The configuration ID to use.
+        . Unique identifier of the security configuration whose version notes are being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -39,7 +39,7 @@ class AppSecVersionNodesArgs:
     @pulumi.getter(name="versionNotes")
     def version_notes(self) -> pulumi.Input[str]:
         """
-        A string containing the version notes to be used.
+        . Brief description of the security configuration version.
         """
         return pulumi.get(self, "version_notes")
 
@@ -56,9 +56,9 @@ class _AppSecVersionNodesState:
                  version_notes: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecVersionNodes resources.
-        :param pulumi.Input[int] config_id: The configuration ID to use.
-        :param pulumi.Input[str] output_text: A tabular display showing the updated version notes.
-        :param pulumi.Input[str] version_notes: A string containing the version notes to be used.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration whose version notes are being modified.
+        :param pulumi.Input[str] output_text: Text Export representation
+        :param pulumi.Input[str] version_notes: . Brief description of the security configuration version.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -71,7 +71,7 @@ class _AppSecVersionNodesState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The configuration ID to use.
+        . Unique identifier of the security configuration whose version notes are being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -83,7 +83,7 @@ class _AppSecVersionNodesState:
     @pulumi.getter(name="outputText")
     def output_text(self) -> Optional[pulumi.Input[str]]:
         """
-        A tabular display showing the updated version notes.
+        Text Export representation
         """
         return pulumi.get(self, "output_text")
 
@@ -95,7 +95,7 @@ class _AppSecVersionNodesState:
     @pulumi.getter(name="versionNotes")
     def version_notes(self) -> Optional[pulumi.Input[str]]:
         """
-        A string containing the version notes to be used.
+        . Brief description of the security configuration version.
         """
         return pulumi.get(self, "version_notes")
 
@@ -113,7 +113,11 @@ class AppSecVersionNodes(pulumi.CustomResource):
                  version_notes: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Use the `AppSecVersionNodes` resource to update the version notes for a configuration.
+        **Scopes**: Security configuration
+
+        Updates the version notes for a security configuration.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putversionnotes)
 
         ## Example Usage
 
@@ -123,18 +127,22 @@ class AppSecVersionNodes(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-        # USE CASE: user wants to update the version notes of the latest version
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         version_notes_app_sec_version_nodes = akamai.AppSecVersionNodes("versionNotesAppSecVersionNodes",
             config_id=configuration.config_id,
-            version_notes=var["version_notes"])
+            version_notes="This version enables reputation profiles.")
         pulumi.export("versionNotes", version_notes_app_sec_version_nodes.output_text)
         ```
+        ## Output Options
+
+        The following options can be used to determine the information returned, and how that returned information is formatted:
+
+        - `output_text`. Tabular report showing the updated version notes.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The configuration ID to use.
-        :param pulumi.Input[str] version_notes: A string containing the version notes to be used.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration whose version notes are being modified.
+        :param pulumi.Input[str] version_notes: . Brief description of the security configuration version.
         """
         ...
     @overload
@@ -143,7 +151,11 @@ class AppSecVersionNodes(pulumi.CustomResource):
                  args: AppSecVersionNodesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `AppSecVersionNodes` resource to update the version notes for a configuration.
+        **Scopes**: Security configuration
+
+        Updates the version notes for a security configuration.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putversionnotes)
 
         ## Example Usage
 
@@ -153,13 +165,17 @@ class AppSecVersionNodes(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-        # USE CASE: user wants to update the version notes of the latest version
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         version_notes_app_sec_version_nodes = akamai.AppSecVersionNodes("versionNotesAppSecVersionNodes",
             config_id=configuration.config_id,
-            version_notes=var["version_notes"])
+            version_notes="This version enables reputation profiles.")
         pulumi.export("versionNotes", version_notes_app_sec_version_nodes.output_text)
         ```
+        ## Output Options
+
+        The following options can be used to determine the information returned, and how that returned information is formatted:
+
+        - `output_text`. Tabular report showing the updated version notes.
 
         :param str resource_name: The name of the resource.
         :param AppSecVersionNodesArgs args: The arguments to use to populate this resource's properties.
@@ -217,9 +233,9 @@ class AppSecVersionNodes(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The configuration ID to use.
-        :param pulumi.Input[str] output_text: A tabular display showing the updated version notes.
-        :param pulumi.Input[str] version_notes: A string containing the version notes to be used.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration whose version notes are being modified.
+        :param pulumi.Input[str] output_text: Text Export representation
+        :param pulumi.Input[str] version_notes: . Brief description of the security configuration version.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -234,7 +250,7 @@ class AppSecVersionNodes(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        The configuration ID to use.
+        . Unique identifier of the security configuration whose version notes are being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -242,7 +258,7 @@ class AppSecVersionNodes(pulumi.CustomResource):
     @pulumi.getter(name="outputText")
     def output_text(self) -> pulumi.Output[str]:
         """
-        A tabular display showing the updated version notes.
+        Text Export representation
         """
         return pulumi.get(self, "output_text")
 
@@ -250,7 +266,7 @@ class AppSecVersionNodes(pulumi.CustomResource):
     @pulumi.getter(name="versionNotes")
     def version_notes(self) -> pulumi.Output[str]:
         """
-        A string containing the version notes to be used.
+        . Brief description of the security configuration version.
         """
         return pulumi.get(self, "version_notes")
 

@@ -10,7 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecRatePolicies` data source to retrieve the rate policies for a specific security configuration, or a single rate policy.
+// **Scopes**: Security configuration; rate policy
+//
+// Returns information about your rate policies. Rate polices help you monitor and moderate the number and rate of all the requests you receive; in turn, this helps you prevent your website from being overwhelmed by a dramatic, and unexpected, surge in traffic.
+//
+// **Related API Endpoint:** [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getratepolicies)
 //
 // ## Example Usage
 //
@@ -26,7 +30,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -41,7 +45,7 @@ import (
 // 		}
 // 		ctx.Export("ratePoliciesOutput", ratePolicies.OutputText)
 // 		ctx.Export("ratePoliciesJson", ratePolicies.Json)
-// 		opt1 := _var.Rate_policy_id
+// 		opt1 := 122149
 // 		ratePolicy, err := akamai.GetAppSecRatePolicies(ctx, &GetAppSecRatePoliciesArgs{
 // 			ConfigId:     configuration.ConfigId,
 // 			RatePolicyId: &opt1,
@@ -55,6 +59,12 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `outputText`. Tabular report showing the ID and name of the rate policies.
+// - `json`. JSON-formatted list of the rate policy information.
 func GetAppSecRatePolicies(ctx *pulumi.Context, args *GetAppSecRatePoliciesArgs, opts ...pulumi.InvokeOption) (*GetAppSecRatePoliciesResult, error) {
 	var rv GetAppSecRatePoliciesResult
 	err := ctx.Invoke("akamai:index/getAppSecRatePolicies:getAppSecRatePolicies", args, &rv, opts...)
@@ -66,9 +76,9 @@ func GetAppSecRatePolicies(ctx *pulumi.Context, args *GetAppSecRatePoliciesArgs,
 
 // A collection of arguments for invoking getAppSecRatePolicies.
 type GetAppSecRatePoliciesArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the rate policies.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the rate policy to use. If this parameter is not supplied, information about all rate policies will be returned.
+	// . Unique identifier of the rate policy you want to return information for. If not included, information is returned for all your rate policies.
 	RatePolicyId *int `pulumi:"ratePolicyId"`
 }
 
@@ -76,10 +86,8 @@ type GetAppSecRatePoliciesArgs struct {
 type GetAppSecRatePoliciesResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted list of the rate policy information.
-	Json string `pulumi:"json"`
-	// A tabular display showing the ID and name of all rate policies associated with the specified security configuration.
+	Id           string `pulumi:"id"`
+	Json         string `pulumi:"json"`
 	OutputText   string `pulumi:"outputText"`
 	RatePolicyId *int   `pulumi:"ratePolicyId"`
 }
@@ -95,9 +103,9 @@ func GetAppSecRatePoliciesOutput(ctx *pulumi.Context, args GetAppSecRatePolicies
 
 // A collection of arguments for invoking getAppSecRatePolicies.
 type GetAppSecRatePoliciesOutputArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the rate policies.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The ID of the rate policy to use. If this parameter is not supplied, information about all rate policies will be returned.
+	// . Unique identifier of the rate policy you want to return information for. If not included, information is returned for all your rate policies.
 	RatePolicyId pulumi.IntPtrInput `pulumi:"ratePolicyId"`
 }
 
@@ -129,12 +137,10 @@ func (o GetAppSecRatePoliciesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecRatePoliciesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted list of the rate policy information.
 func (o GetAppSecRatePoliciesResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecRatePoliciesResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display showing the ID and name of all rate policies associated with the specified security configuration.
 func (o GetAppSecRatePoliciesResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecRatePoliciesResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

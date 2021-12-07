@@ -12,105 +12,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecEvalGroups
     {
-        /// <summary>
-        /// Use the `akamai.getAppSecEvalGroups` data source to list the action and condition-exception information for an evaluation attack
-        /// group or groups.
-        /// __BETA__ This is Adaptive Security Engine(ASE) related data source. Please contact your akamai representative if you want to learn more
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = @var.Security_configuration,
-        ///         }));
-        ///         var evalAttackGroup = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecEvalGroups.InvokeAsync(new Akamai.GetAppSecEvalGroupsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
-        ///             AttackGroup = @var.Attack_group,
-        ///         })));
-        ///         this.EvalAttackGroupAction = evalAttackGroup.Apply(evalAttackGroup =&gt; evalAttackGroup.AttackGroupAction);
-        ///         this.ConditionException = evalAttackGroup.Apply(evalAttackGroup =&gt; evalAttackGroup.ConditionException);
-        ///         this.Json = evalAttackGroup.Apply(evalAttackGroup =&gt; evalAttackGroup.Json);
-        ///         this.OutputText = evalAttackGroup.Apply(evalAttackGroup =&gt; evalAttackGroup.OutputText);
-        ///     }
-        /// 
-        ///     [Output("evalAttackGroupAction")]
-        ///     public Output&lt;string&gt; EvalAttackGroupAction { get; set; }
-        ///     [Output("conditionException")]
-        ///     public Output&lt;string&gt; ConditionException { get; set; }
-        ///     [Output("json")]
-        ///     public Output&lt;string&gt; Json { get; set; }
-        ///     [Output("outputText")]
-        ///     public Output&lt;string&gt; OutputText { get; set; }
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// </summary>
         public static Task<GetAppSecEvalGroupsResult> InvokeAsync(GetAppSecEvalGroupsArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalGroupsResult>("akamai:index/getAppSecEvalGroups:getAppSecEvalGroups", args ?? new GetAppSecEvalGroupsArgs(), options.WithVersion());
 
-        /// <summary>
-        /// Use the `akamai.getAppSecEvalGroups` data source to list the action and condition-exception information for an evaluation attack
-        /// group or groups.
-        /// __BETA__ This is Adaptive Security Engine(ASE) related data source. Please contact your akamai representative if you want to learn more
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = @var.Security_configuration,
-        ///         }));
-        ///         var evalAttackGroup = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecEvalGroups.InvokeAsync(new Akamai.GetAppSecEvalGroupsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
-        ///             AttackGroup = @var.Attack_group,
-        ///         })));
-        ///         this.EvalAttackGroupAction = evalAttackGroup.Apply(evalAttackGroup =&gt; evalAttackGroup.AttackGroupAction);
-        ///         this.ConditionException = evalAttackGroup.Apply(evalAttackGroup =&gt; evalAttackGroup.ConditionException);
-        ///         this.Json = evalAttackGroup.Apply(evalAttackGroup =&gt; evalAttackGroup.Json);
-        ///         this.OutputText = evalAttackGroup.Apply(evalAttackGroup =&gt; evalAttackGroup.OutputText);
-        ///     }
-        /// 
-        ///     [Output("evalAttackGroupAction")]
-        ///     public Output&lt;string&gt; EvalAttackGroupAction { get; set; }
-        ///     [Output("conditionException")]
-        ///     public Output&lt;string&gt; ConditionException { get; set; }
-        ///     [Output("json")]
-        ///     public Output&lt;string&gt; Json { get; set; }
-        ///     [Output("outputText")]
-        ///     public Output&lt;string&gt; OutputText { get; set; }
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// </summary>
         public static Output<GetAppSecEvalGroupsResult> Invoke(GetAppSecEvalGroupsInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecEvalGroupsResult>("akamai:index/getAppSecEvalGroups:getAppSecEvalGroups", args ?? new GetAppSecEvalGroupsInvokeArgs(), options.WithVersion());
     }
@@ -119,19 +23,19 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecEvalGroupsArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the eval attack group to use.
+        /// . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
         /// </summary>
         [Input("attackGroup")]
         public string? AttackGroup { get; set; }
 
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the evaluation attack group.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the evaluation attack group.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
@@ -144,19 +48,19 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecEvalGroupsInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the eval attack group to use.
+        /// . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
         /// </summary>
         [Input("attackGroup")]
         public Input<string>? AttackGroup { get; set; }
 
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the evaluation attack group.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the evaluation attack group.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -171,28 +75,14 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecEvalGroupsResult
     {
         public readonly string? AttackGroup;
-        /// <summary>
-        /// The eval attack group's action, either `alert`, `d
-        /// </summary>
         public readonly string AttackGroupAction;
-        /// <summary>
-        /// The eval attack group's conditions and exceptions.
-        /// </summary>
         public readonly string ConditionException;
         public readonly int ConfigId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A JSON-formatted list of the action and condition-exception information for the specified eval attack
-        /// group. This output is only generated if an attack group is specified.
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// A tabular display showing, for the specified eval attack group or groups, the eval attack group's action and
-        /// boolean values indicating whether conditions and exceptions are present.
-        /// </summary>
         public readonly string OutputText;
         public readonly string SecurityPolicyId;
 

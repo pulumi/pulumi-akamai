@@ -10,7 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecIPGeo` data source to retrieve information about which network lists are used in the IP/Geo Firewall settings.
+// **Scopes**: Security configuration; security policy
+//
+// Returns information about the network lists used in the IP/Geo Firewall settings; also returns the firewall `mode`, which indicates whether devices on the geographic or IP address lists are allowed through the firewall or are blocked by the firewall.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getipgeofirewall)
 //
 // ## Example Usage
 //
@@ -26,7 +30,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -35,7 +39,7 @@ import (
 // 		}
 // 		ipGeo, err := akamai.LookupAppSecIPGeo(ctx, &GetAppSecIPGeoArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: _var.Security_policy_id,
+// 			SecurityPolicyId: "gms1_134637",
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -48,6 +52,17 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `mode`. Specifies the action taken by the IP/Geo firewall. Valid values are:
+//   - **block**. Networks on the IP and geographic network lists are prevented from passing through the firewall.
+//   - **allow**.  Networks on the IP and geographic network lists are allowed to pass through the firewall.
+// - `geoNetworkLists`. Network lists blocked or allowed based on geographic location.
+// - `ipNetworkLists`. Network lists blocked or allowed based on IP address.
+// - `exceptionIpNetworkLists`. Network lists allowed through the firewall regardless of the values assigned to the `mode`, `geoNetworkLists`, and `ipNetworkLists` parameters.
+// - `outputText`. Tabular report of the IP/Geo firewall settings.
 func LookupAppSecIPGeo(ctx *pulumi.Context, args *LookupAppSecIPGeoArgs, opts ...pulumi.InvokeOption) (*LookupAppSecIPGeoResult, error) {
 	var rv LookupAppSecIPGeoResult
 	err := ctx.Invoke("akamai:index/getAppSecIPGeo:getAppSecIPGeo", args, &rv, opts...)
@@ -59,28 +74,23 @@ func LookupAppSecIPGeo(ctx *pulumi.Context, args *LookupAppSecIPGeoArgs, opts ..
 
 // A collection of arguments for invoking getAppSecIPGeo.
 type LookupAppSecIPGeoArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the IP/Geo lists.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the IP/Geo lists. If not included, information is returned for all your security policies.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // A collection of values returned by getAppSecIPGeo.
 type LookupAppSecIPGeoResult struct {
-	ConfigId int `pulumi:"configId"`
-	// The network lists to be allowed regardless of `mode`, `geoNetworkLists`, and `ipNetworkLists` parameters.
+	ConfigId                int      `pulumi:"configId"`
 	ExceptionIpNetworkLists []string `pulumi:"exceptionIpNetworkLists"`
-	// The network lists to be blocked or allowed geographically.
-	GeoNetworkLists []string `pulumi:"geoNetworkLists"`
+	GeoNetworkLists         []string `pulumi:"geoNetworkLists"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// The network lists to be blocked or allowd by IP address.
-	IpNetworkLists []string `pulumi:"ipNetworkLists"`
-	// The mode used for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
-	Mode string `pulumi:"mode"`
-	// A tabular display of the IP/Geo firewall settings.
-	OutputText       string `pulumi:"outputText"`
-	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	Id               string   `pulumi:"id"`
+	IpNetworkLists   []string `pulumi:"ipNetworkLists"`
+	Mode             string   `pulumi:"mode"`
+	OutputText       string   `pulumi:"outputText"`
+	SecurityPolicyId string   `pulumi:"securityPolicyId"`
 }
 
 func LookupAppSecIPGeoOutput(ctx *pulumi.Context, args LookupAppSecIPGeoOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecIPGeoResultOutput {
@@ -94,9 +104,9 @@ func LookupAppSecIPGeoOutput(ctx *pulumi.Context, args LookupAppSecIPGeoOutputAr
 
 // A collection of arguments for invoking getAppSecIPGeo.
 type LookupAppSecIPGeoOutputArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the IP/Geo lists.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the IP/Geo lists. If not included, information is returned for all your security policies.
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 
@@ -123,12 +133,10 @@ func (o LookupAppSecIPGeoResultOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAppSecIPGeoResult) int { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// The network lists to be allowed regardless of `mode`, `geoNetworkLists`, and `ipNetworkLists` parameters.
 func (o LookupAppSecIPGeoResultOutput) ExceptionIpNetworkLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupAppSecIPGeoResult) []string { return v.ExceptionIpNetworkLists }).(pulumi.StringArrayOutput)
 }
 
-// The network lists to be blocked or allowed geographically.
 func (o LookupAppSecIPGeoResultOutput) GeoNetworkLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupAppSecIPGeoResult) []string { return v.GeoNetworkLists }).(pulumi.StringArrayOutput)
 }
@@ -138,17 +146,14 @@ func (o LookupAppSecIPGeoResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecIPGeoResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The network lists to be blocked or allowd by IP address.
 func (o LookupAppSecIPGeoResultOutput) IpNetworkLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupAppSecIPGeoResult) []string { return v.IpNetworkLists }).(pulumi.StringArrayOutput)
 }
 
-// The mode used for IP/Geo firewall blocking: `block` to block specific IPs, geographies or network lists, or `allow` to allow specific IPs or geographies to be let through while blocking the rest.
 func (o LookupAppSecIPGeoResultOutput) Mode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecIPGeoResult) string { return v.Mode }).(pulumi.StringOutput)
 }
 
-// A tabular display of the IP/Geo firewall settings.
 func (o LookupAppSecIPGeoResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecIPGeoResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

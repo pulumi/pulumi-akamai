@@ -13,7 +13,13 @@ namespace Pulumi.Akamai
     public static class GetAppSecAdvancedSettingsPragmaHeader
     {
         /// <summary>
-        /// Use the `akamai.AppSecAdvancedSettingsPragmaHeader` data source to retrieve pragma header settings for a configuration or a security policy. Additional information is available [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getpragmaheaderconfiguration).
+        /// **Scopes**: Security configuration; security policy
+        /// 
+        /// Returns pragma header settings information. This HTTP header provides information about such things as: the edge routers used in a transaction; the Akamai IP addresses involved; information about whether a request was cached or not; and so on. By default, pragma headers are removed from all responses.
+        /// 
+        /// Additional information is available from the [PragmaHeader members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#64c92ba1) section of the Application Security API.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/pragma-header](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getpragmaheaderconfiguration)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -31,7 +37,7 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var pragmaHeader = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAdvancedSettingsPragmaHeader.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsPragmaHeaderArgs
         ///         {
@@ -42,7 +48,7 @@ namespace Pulumi.Akamai
         ///         var policyPragmaHeader = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAdvancedSettingsPragmaHeader.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsPragmaHeaderArgs
         ///         {
         ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///             SecurityPolicyId = "gms1_134637",
         ///         })));
         ///         this.AdvancedSettingsPolicyPragmaHeaderOutput = policyPragmaHeader.Apply(policyPragmaHeader =&gt; policyPragmaHeader.OutputText);
         ///         this.AdvancedSettingsPolicyPragmaHeaderJson = policyPragmaHeader.Apply(policyPragmaHeader =&gt; policyPragmaHeader.Json);
@@ -60,12 +66,24 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `json`. JSON-formatted list of information about the pragma header settings.
+        /// - `output_text`. Tabular report showing the pragma header settings.
         /// </summary>
         public static Task<GetAppSecAdvancedSettingsPragmaHeaderResult> InvokeAsync(GetAppSecAdvancedSettingsPragmaHeaderArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAdvancedSettingsPragmaHeaderResult>("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", args ?? new GetAppSecAdvancedSettingsPragmaHeaderArgs(), options.WithVersion());
 
         /// <summary>
-        /// Use the `akamai.AppSecAdvancedSettingsPragmaHeader` data source to retrieve pragma header settings for a configuration or a security policy. Additional information is available [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getpragmaheaderconfiguration).
+        /// **Scopes**: Security configuration; security policy
+        /// 
+        /// Returns pragma header settings information. This HTTP header provides information about such things as: the edge routers used in a transaction; the Akamai IP addresses involved; information about whether a request was cached or not; and so on. By default, pragma headers are removed from all responses.
+        /// 
+        /// Additional information is available from the [PragmaHeader members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#64c92ba1) section of the Application Security API.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/pragma-header](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getpragmaheaderconfiguration)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -83,7 +101,7 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var pragmaHeader = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAdvancedSettingsPragmaHeader.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsPragmaHeaderArgs
         ///         {
@@ -94,7 +112,7 @@ namespace Pulumi.Akamai
         ///         var policyPragmaHeader = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAdvancedSettingsPragmaHeader.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsPragmaHeaderArgs
         ///         {
         ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
+        ///             SecurityPolicyId = "gms1_134637",
         ///         })));
         ///         this.AdvancedSettingsPolicyPragmaHeaderOutput = policyPragmaHeader.Apply(policyPragmaHeader =&gt; policyPragmaHeader.OutputText);
         ///         this.AdvancedSettingsPolicyPragmaHeaderJson = policyPragmaHeader.Apply(policyPragmaHeader =&gt; policyPragmaHeader.Json);
@@ -112,6 +130,12 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `json`. JSON-formatted list of information about the pragma header settings.
+        /// - `output_text`. Tabular report showing the pragma header settings.
         /// </summary>
         public static Output<GetAppSecAdvancedSettingsPragmaHeaderResult> Invoke(GetAppSecAdvancedSettingsPragmaHeaderInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsPragmaHeaderResult>("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", args ?? new GetAppSecAdvancedSettingsPragmaHeaderInvokeArgs(), options.WithVersion());
@@ -121,13 +145,13 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecAdvancedSettingsPragmaHeaderArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The configuration ID.
+        /// . Unique identifier of the security configuration associated with the pragma header settings.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the pragma header settings. If not included, information is returned for all your security policies.
         /// </summary>
         [Input("securityPolicyId")]
         public string? SecurityPolicyId { get; set; }
@@ -140,13 +164,13 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecAdvancedSettingsPragmaHeaderInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The configuration ID.
+        /// . Unique identifier of the security configuration associated with the pragma header settings.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the pragma header settings. If not included, information is returned for all your security policies.
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
@@ -165,13 +189,7 @@ namespace Pulumi.Akamai
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A JSON-formatted ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpragmaheaderpolicy)) list of information about the pragma header settings.
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// A tabular display showing the pragma header settings.
-        /// </summary>
         public readonly string OutputText;
         public readonly string? SecurityPolicyId;
 

@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecReputationProfiles` data source to retrieve details about all reputation profiles, or a specific reputation profiles.
+ * **Scopes**: Security configuration; reputation profile
+ *
+ * Returns information about your reputation profiles. Reputation profiles grade the security risk of an IP address based on previous activities associated with that address. Depending on the reputation score, and depending on how your configuration has been set up, requests from a specific IP address can trigger an alert, or even be blocked.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/reputation-profiles](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getreputationprofiles)
  *
  * ## Example Usage
  *
@@ -16,7 +20,7 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const reputationProfiles = configuration.then(configuration => akamai.getAppSecReputationProfiles({
  *     configId: configuration.configId,
@@ -25,11 +29,17 @@ import * as utilities from "./utilities";
  * export const reputationProfilesJson = reputationProfiles.then(reputationProfiles => reputationProfiles.json);
  * const reputationProfile = configuration.then(configuration => akamai.getAppSecReputationProfiles({
  *     configId: configuration.configId,
- *     reputationProfileId: _var.reputation_profile_id,
+ *     reputationProfileId: "12345",
  * }));
  * export const reputationProfileJson = reputationProfile.then(reputationProfile => reputationProfile.json);
  * export const reputationProfileOutput = reputationProfile.then(reputationProfile => reputationProfile.outputText);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `outputText`. Tabular report of the details about the specified reputation profile or profiles.
+ * - `json`. JSON-formatted report of the details about the specified reputation profile or profiles.
  */
 export function getAppSecReputationProfiles(args: GetAppSecReputationProfilesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecReputationProfilesResult> {
     if (!opts) {
@@ -50,11 +60,11 @@ export function getAppSecReputationProfiles(args: GetAppSecReputationProfilesArg
  */
 export interface GetAppSecReputationProfilesArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the reputation profiles.
      */
     configId: number;
     /**
-     * The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
+     * . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
      */
     reputationProfileId?: number;
 }
@@ -68,13 +78,7 @@ export interface GetAppSecReputationProfilesResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted display of the details about the indicated reputation profile or profiles.
-     */
     readonly json: string;
-    /**
-     * A tabular display of the details about the indicated reputation profile or profiles.
-     */
     readonly outputText: string;
     readonly reputationProfileId?: number;
 }
@@ -88,11 +92,11 @@ export function getAppSecReputationProfilesOutput(args: GetAppSecReputationProfi
  */
 export interface GetAppSecReputationProfilesOutputArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the reputation profiles.
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
+     * . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
      */
     reputationProfileId?: pulumi.Input<number>;
 }

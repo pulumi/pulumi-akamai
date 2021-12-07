@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecSiemSettings` resource to mpdate the SIEM integration settings for a specific configuration.
+ * **Scopes**: Security configuration
+ *
+ * Modifies SIEM (Security Information and Event Management) integration settings for a security configuration.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/siem](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsiemsettings)
  *
  * ## Example Usage
  *
@@ -16,10 +20,10 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const siemDefinition = akamai.getAppSecSiemDefinitions({
- *     siemDefinitionName: _var.siem_definition_name,
+ *     siemDefinitionName: "SIEM Version 01",
  * });
  * const securityPolicies = configuration.then(configuration => akamai.getAppSecSecurityPolicy({
  *     configId: configuration.configId,
@@ -33,6 +37,11 @@ import * as utilities from "./utilities";
  *     securityPolicyIds: securityPolicies.then(securityPolicies => securityPolicies.securityPolicyIdLists),
  * });
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `outputText`. Tabular report showing the updated SIEM integration settings.
  */
 export class AppSecSiemSettings extends pulumi.CustomResource {
     /**
@@ -63,27 +72,27 @@ export class AppSecSiemSettings extends pulumi.CustomResource {
     }
 
     /**
-     * The configuration ID to use.
+     * . Unique identifier of the security configuration associated with the SIEM settings being modified.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * Whether you enabled SIEM for the Bot Manager events.
+     * . Set to **true** to include Bot Manager events in your SIEM events; set to **false** to exclude Bot Manager events from your SIEM events.
      */
     public readonly enableBotmanSiem!: pulumi.Output<boolean>;
     /**
-     * Whether you enabled SIEM for all the security policies in the configuration.
+     * . Set to **true** to enable SIEM on all security policies in the security configuration; set to **false** to only enable SIEM on the security policies specified by the `securityPolicyIds` argument.
      */
     public readonly enableForAllPolicies!: pulumi.Output<boolean>;
     /**
-     * Whether you enabled SIEM in a security configuration version.
+     * . Set to **true** to enable SIEM; set to **false** to disable SIEM.
      */
     public readonly enableSiem!: pulumi.Output<boolean>;
     /**
-     * The list of security policy identifiers for which to enable the SIEM integration.
+     * JSON array of IDs for the security policies where SIEM integration is to be enabled.
      */
     public readonly securityPolicyIds!: pulumi.Output<string[] | undefined>;
     /**
-     * An integer that uniquely identifies the SIEM settings.
+     * . Unique identifier of the SIEM settings being modified.
      */
     public readonly siemId!: pulumi.Output<number>;
 
@@ -142,27 +151,27 @@ export class AppSecSiemSettings extends pulumi.CustomResource {
  */
 export interface AppSecSiemSettingsState {
     /**
-     * The configuration ID to use.
+     * . Unique identifier of the security configuration associated with the SIEM settings being modified.
      */
     configId?: pulumi.Input<number>;
     /**
-     * Whether you enabled SIEM for the Bot Manager events.
+     * . Set to **true** to include Bot Manager events in your SIEM events; set to **false** to exclude Bot Manager events from your SIEM events.
      */
     enableBotmanSiem?: pulumi.Input<boolean>;
     /**
-     * Whether you enabled SIEM for all the security policies in the configuration.
+     * . Set to **true** to enable SIEM on all security policies in the security configuration; set to **false** to only enable SIEM on the security policies specified by the `securityPolicyIds` argument.
      */
     enableForAllPolicies?: pulumi.Input<boolean>;
     /**
-     * Whether you enabled SIEM in a security configuration version.
+     * . Set to **true** to enable SIEM; set to **false** to disable SIEM.
      */
     enableSiem?: pulumi.Input<boolean>;
     /**
-     * The list of security policy identifiers for which to enable the SIEM integration.
+     * JSON array of IDs for the security policies where SIEM integration is to be enabled.
      */
     securityPolicyIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * An integer that uniquely identifies the SIEM settings.
+     * . Unique identifier of the SIEM settings being modified.
      */
     siemId?: pulumi.Input<number>;
 }
@@ -172,27 +181,27 @@ export interface AppSecSiemSettingsState {
  */
 export interface AppSecSiemSettingsArgs {
     /**
-     * The configuration ID to use.
+     * . Unique identifier of the security configuration associated with the SIEM settings being modified.
      */
     configId: pulumi.Input<number>;
     /**
-     * Whether you enabled SIEM for the Bot Manager events.
+     * . Set to **true** to include Bot Manager events in your SIEM events; set to **false** to exclude Bot Manager events from your SIEM events.
      */
     enableBotmanSiem: pulumi.Input<boolean>;
     /**
-     * Whether you enabled SIEM for all the security policies in the configuration.
+     * . Set to **true** to enable SIEM on all security policies in the security configuration; set to **false** to only enable SIEM on the security policies specified by the `securityPolicyIds` argument.
      */
     enableForAllPolicies: pulumi.Input<boolean>;
     /**
-     * Whether you enabled SIEM in a security configuration version.
+     * . Set to **true** to enable SIEM; set to **false** to disable SIEM.
      */
     enableSiem: pulumi.Input<boolean>;
     /**
-     * The list of security policy identifiers for which to enable the SIEM integration.
+     * JSON array of IDs for the security policies where SIEM integration is to be enabled.
      */
     securityPolicyIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * An integer that uniquely identifies the SIEM settings.
+     * . Unique identifier of the SIEM settings being modified.
      */
     siemId: pulumi.Input<number>;
 }

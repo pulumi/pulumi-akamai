@@ -18,9 +18,9 @@ class AppSecWafModeArgs:
                  security_policy_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecWafMode resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] mode: "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the WAF mode settings being modified.
+        :param pulumi.Input[str] mode: . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the WAF mode settings being modified.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "mode", mode)
@@ -30,7 +30,7 @@ class AppSecWafModeArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the WAF mode settings being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -42,7 +42,7 @@ class AppSecWafModeArgs:
     @pulumi.getter
     def mode(self) -> pulumi.Input[str]:
         """
-        "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
+        . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
         """
         return pulumi.get(self, "mode")
 
@@ -54,7 +54,7 @@ class AppSecWafModeArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the WAF mode settings being modified.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -76,14 +76,10 @@ class _AppSecWafModeState:
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecWafMode resources.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] current_ruleset: The current rule set.
-        :param pulumi.Input[str] eval_expiration_date: The date on which the evaluation period ends.
-        :param pulumi.Input[str] eval_ruleset: The rule set being evaluated if any.
-        :param pulumi.Input[str] eval_status: Either `enabled` if an evaluation is currently in progress, or `disabled` otherwise.
-        :param pulumi.Input[str] mode: "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
-        :param pulumi.Input[str] output_text: A tabular display showing the current rule set, WAF mode and evaluation status (`enabled` if a rule set is currently being evaluated, `disabled` otherwise).
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the WAF mode settings being modified.
+        :param pulumi.Input[str] mode: . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
+        :param pulumi.Input[str] output_text: Text Export representation
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the WAF mode settings being modified.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -106,7 +102,7 @@ class _AppSecWafModeState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the WAF mode settings being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -117,9 +113,6 @@ class _AppSecWafModeState:
     @property
     @pulumi.getter(name="currentRuleset")
     def current_ruleset(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current rule set.
-        """
         return pulumi.get(self, "current_ruleset")
 
     @current_ruleset.setter
@@ -129,9 +122,6 @@ class _AppSecWafModeState:
     @property
     @pulumi.getter(name="evalExpirationDate")
     def eval_expiration_date(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date on which the evaluation period ends.
-        """
         return pulumi.get(self, "eval_expiration_date")
 
     @eval_expiration_date.setter
@@ -141,9 +131,6 @@ class _AppSecWafModeState:
     @property
     @pulumi.getter(name="evalRuleset")
     def eval_ruleset(self) -> Optional[pulumi.Input[str]]:
-        """
-        The rule set being evaluated if any.
-        """
         return pulumi.get(self, "eval_ruleset")
 
     @eval_ruleset.setter
@@ -153,9 +140,6 @@ class _AppSecWafModeState:
     @property
     @pulumi.getter(name="evalStatus")
     def eval_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        Either `enabled` if an evaluation is currently in progress, or `disabled` otherwise.
-        """
         return pulumi.get(self, "eval_status")
 
     @eval_status.setter
@@ -166,7 +150,7 @@ class _AppSecWafModeState:
     @pulumi.getter
     def mode(self) -> Optional[pulumi.Input[str]]:
         """
-        "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
+        . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
         """
         return pulumi.get(self, "mode")
 
@@ -178,7 +162,7 @@ class _AppSecWafModeState:
     @pulumi.getter(name="outputText")
     def output_text(self) -> Optional[pulumi.Input[str]]:
         """
-        A tabular display showing the current rule set, WAF mode and evaluation status (`enabled` if a rule set is currently being evaluated, `disabled` otherwise).
+        Text Export representation
         """
         return pulumi.get(self, "output_text")
 
@@ -190,7 +174,7 @@ class _AppSecWafModeState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the WAF mode settings being modified.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -209,7 +193,12 @@ class AppSecWafMode(pulumi.CustomResource):
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Use the `AppSecWafMode` resource to specify how your rule sets are updated. Use KRS mode to update the rule sets manually, or AAG to have them update automatically.
+        **Scopes**: Security policy
+
+        Modifies the way your Kona Rule Set rules are updated.
+        Use **KRS** mode to update the rule sets manually or **AAG** to have those rule sets automatically updated.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/mode](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putmode)
 
         ## Example Usage
 
@@ -219,23 +208,32 @@ class AppSecWafMode(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         waf_mode = akamai.AppSecWafMode("wafMode",
             config_id=configuration.config_id,
-            security_policy_id=var["policy_id"],
-            mode=var["mode"])
+            security_policy_id="gms1_134637",
+            mode="KRS")
         pulumi.export("wafModeMode", waf_mode.mode)
         pulumi.export("wafModeCurrentRuleset", waf_mode.current_ruleset)
         pulumi.export("wafModeEvalStatus", waf_mode.eval_status)
         pulumi.export("wafModeEvalRuleset", waf_mode.eval_ruleset)
         pulumi.export("wafModeEvalExpirationDate", waf_mode.eval_expiration_date)
         ```
+        ## Output Options
+
+        The following options can be used to determine the information returned, and how that returned information is formatted:
+
+        - `current_ruleset` – Versioning information for the current Kona Rule Set.
+        - `eval_ruleset`. Versioning information for the Kona Rule Set being evaluated (if applicable) .
+        - `eval_status`. Returns **enabled** if an evaluation is currently in progress; otherwise returns **disabled**.
+        - `eval_expiration_date`. Date on which the evaluation period ends (if applicable).
+        - `output_text`. Tabular report showing the current rule set, WAF mode and evaluation status.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] mode: "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the WAF mode settings being modified.
+        :param pulumi.Input[str] mode: . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the WAF mode settings being modified.
         """
         ...
     @overload
@@ -244,7 +242,12 @@ class AppSecWafMode(pulumi.CustomResource):
                  args: AppSecWafModeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `AppSecWafMode` resource to specify how your rule sets are updated. Use KRS mode to update the rule sets manually, or AAG to have them update automatically.
+        **Scopes**: Security policy
+
+        Modifies the way your Kona Rule Set rules are updated.
+        Use **KRS** mode to update the rule sets manually or **AAG** to have those rule sets automatically updated.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/mode](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putmode)
 
         ## Example Usage
 
@@ -254,17 +257,26 @@ class AppSecWafMode(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         waf_mode = akamai.AppSecWafMode("wafMode",
             config_id=configuration.config_id,
-            security_policy_id=var["policy_id"],
-            mode=var["mode"])
+            security_policy_id="gms1_134637",
+            mode="KRS")
         pulumi.export("wafModeMode", waf_mode.mode)
         pulumi.export("wafModeCurrentRuleset", waf_mode.current_ruleset)
         pulumi.export("wafModeEvalStatus", waf_mode.eval_status)
         pulumi.export("wafModeEvalRuleset", waf_mode.eval_ruleset)
         pulumi.export("wafModeEvalExpirationDate", waf_mode.eval_expiration_date)
         ```
+        ## Output Options
+
+        The following options can be used to determine the information returned, and how that returned information is formatted:
+
+        - `current_ruleset` – Versioning information for the current Kona Rule Set.
+        - `eval_ruleset`. Versioning information for the Kona Rule Set being evaluated (if applicable) .
+        - `eval_status`. Returns **enabled** if an evaluation is currently in progress; otherwise returns **disabled**.
+        - `eval_expiration_date`. Date on which the evaluation period ends (if applicable).
+        - `output_text`. Tabular report showing the current rule set, WAF mode and evaluation status.
 
         :param str resource_name: The name of the resource.
         :param AppSecWafModeArgs args: The arguments to use to populate this resource's properties.
@@ -335,14 +347,10 @@ class AppSecWafMode(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] current_ruleset: The current rule set.
-        :param pulumi.Input[str] eval_expiration_date: The date on which the evaluation period ends.
-        :param pulumi.Input[str] eval_ruleset: The rule set being evaluated if any.
-        :param pulumi.Input[str] eval_status: Either `enabled` if an evaluation is currently in progress, or `disabled` otherwise.
-        :param pulumi.Input[str] mode: "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
-        :param pulumi.Input[str] output_text: A tabular display showing the current rule set, WAF mode and evaluation status (`enabled` if a rule set is currently being evaluated, `disabled` otherwise).
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the WAF mode settings being modified.
+        :param pulumi.Input[str] mode: . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
+        :param pulumi.Input[str] output_text: Text Export representation
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the WAF mode settings being modified.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -362,47 +370,35 @@ class AppSecWafMode(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the WAF mode settings being modified.
         """
         return pulumi.get(self, "config_id")
 
     @property
     @pulumi.getter(name="currentRuleset")
     def current_ruleset(self) -> pulumi.Output[str]:
-        """
-        The current rule set.
-        """
         return pulumi.get(self, "current_ruleset")
 
     @property
     @pulumi.getter(name="evalExpirationDate")
     def eval_expiration_date(self) -> pulumi.Output[str]:
-        """
-        The date on which the evaluation period ends.
-        """
         return pulumi.get(self, "eval_expiration_date")
 
     @property
     @pulumi.getter(name="evalRuleset")
     def eval_ruleset(self) -> pulumi.Output[str]:
-        """
-        The rule set being evaluated if any.
-        """
         return pulumi.get(self, "eval_ruleset")
 
     @property
     @pulumi.getter(name="evalStatus")
     def eval_status(self) -> pulumi.Output[str]:
-        """
-        Either `enabled` if an evaluation is currently in progress, or `disabled` otherwise.
-        """
         return pulumi.get(self, "eval_status")
 
     @property
     @pulumi.getter
     def mode(self) -> pulumi.Output[str]:
         """
-        "KRS" to update the rule sets manually, or "AAG" to have them update automatically. For Adaptive Security Engine (ASE) __BETA__, use `ASE_AUTO` for automatic updates or `ASE_MANUAL` to manually get current rules. Please contact your Akamai representative to learn more about ASE. Policy Rule Actions and Threat Intelligence setting are read only in ASE_AUTO mode
+        . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
         """
         return pulumi.get(self, "mode")
 
@@ -410,7 +406,7 @@ class AppSecWafMode(pulumi.CustomResource):
     @pulumi.getter(name="outputText")
     def output_text(self) -> pulumi.Output[str]:
         """
-        A tabular display showing the current rule set, WAF mode and evaluation status (`enabled` if a rule set is currently being evaluated, `disabled` otherwise).
+        Text Export representation
         """
         return pulumi.get(self, "output_text")
 
@@ -418,7 +414,7 @@ class AppSecWafMode(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the WAF mode settings being modified.
         """
         return pulumi.get(self, "security_policy_id")
 
