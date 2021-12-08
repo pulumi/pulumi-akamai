@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecVersionNodes` resource to update the version notes for a configuration.
+ * **Scopes**: Security configuration
+ *
+ * Updates the version notes for a security configuration.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putversionnotes)
  *
  * ## Example Usage
  *
@@ -16,15 +20,19 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
- * // USE CASE: user wants to update the version notes of the latest version
  * const versionNotesAppSecVersionNodes = new akamai.AppSecVersionNodes("versionNotesAppSecVersionNodes", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     versionNotes: _var.version_notes,
+ *     versionNotes: "This version enables reputation profiles.",
  * });
  * export const versionNotes = versionNotesAppSecVersionNodes.outputText;
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `outputText`. Tabular report showing the updated version notes.
  */
 export class AppSecVersionNodes extends pulumi.CustomResource {
     /**
@@ -55,15 +63,15 @@ export class AppSecVersionNodes extends pulumi.CustomResource {
     }
 
     /**
-     * The configuration ID to use.
+     * . Unique identifier of the security configuration whose version notes are being modified.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * A tabular display showing the updated version notes.
+     * Text Export representation
      */
     public /*out*/ readonly outputText!: pulumi.Output<string>;
     /**
-     * A string containing the version notes to be used.
+     * . Brief description of the security configuration version.
      */
     public readonly versionNotes!: pulumi.Output<string>;
 
@@ -107,15 +115,15 @@ export class AppSecVersionNodes extends pulumi.CustomResource {
  */
 export interface AppSecVersionNodesState {
     /**
-     * The configuration ID to use.
+     * . Unique identifier of the security configuration whose version notes are being modified.
      */
     configId?: pulumi.Input<number>;
     /**
-     * A tabular display showing the updated version notes.
+     * Text Export representation
      */
     outputText?: pulumi.Input<string>;
     /**
-     * A string containing the version notes to be used.
+     * . Brief description of the security configuration version.
      */
     versionNotes?: pulumi.Input<string>;
 }
@@ -125,11 +133,11 @@ export interface AppSecVersionNodesState {
  */
 export interface AppSecVersionNodesArgs {
     /**
-     * The configuration ID to use.
+     * . Unique identifier of the security configuration whose version notes are being modified.
      */
     configId: pulumi.Input<number>;
     /**
-     * A string containing the version notes to be used.
+     * . Brief description of the security configuration version.
      */
     versionNotes: pulumi.Input<string>;
 }

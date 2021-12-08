@@ -11,15 +11,19 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The `AppSecSecurityPolicyRename` resource allows you to rename an existing security policy.
+// **Scopes**: Security policy
+//
+// Renames an existing security policy. Note that you can only change the name of the policy: once issued, the security policy ID can't be modified.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsecuritypolicy)
 type AppSecSecurityPolicyRename struct {
 	pulumi.CustomResourceState
 
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the security policy being renamed.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// The ID of the security policy to be renamed.
+	// . Unique identifier of the security policy being renamed.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
-	// The new name to be given to the security policy.
+	// . New name to be given to the security policy.
 	SecurityPolicyName pulumi.StringOutput `pulumi:"securityPolicyName"`
 }
 
@@ -61,20 +65,20 @@ func GetAppSecSecurityPolicyRename(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecSecurityPolicyRename resources.
 type appSecSecurityPolicyRenameState struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the security policy being renamed.
 	ConfigId *int `pulumi:"configId"`
-	// The ID of the security policy to be renamed.
+	// . Unique identifier of the security policy being renamed.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// The new name to be given to the security policy.
+	// . New name to be given to the security policy.
 	SecurityPolicyName *string `pulumi:"securityPolicyName"`
 }
 
 type AppSecSecurityPolicyRenameState struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the security policy being renamed.
 	ConfigId pulumi.IntPtrInput
-	// The ID of the security policy to be renamed.
+	// . Unique identifier of the security policy being renamed.
 	SecurityPolicyId pulumi.StringPtrInput
-	// The new name to be given to the security policy.
+	// . New name to be given to the security policy.
 	SecurityPolicyName pulumi.StringPtrInput
 }
 
@@ -83,21 +87,21 @@ func (AppSecSecurityPolicyRenameState) ElementType() reflect.Type {
 }
 
 type appSecSecurityPolicyRenameArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the security policy being renamed.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the security policy to be renamed.
+	// . Unique identifier of the security policy being renamed.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// The new name to be given to the security policy.
+	// . New name to be given to the security policy.
 	SecurityPolicyName string `pulumi:"securityPolicyName"`
 }
 
 // The set of arguments for constructing a AppSecSecurityPolicyRename resource.
 type AppSecSecurityPolicyRenameArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the security policy being renamed.
 	ConfigId pulumi.IntInput
-	// The ID of the security policy to be renamed.
+	// . Unique identifier of the security policy being renamed.
 	SecurityPolicyId pulumi.StringInput
-	// The new name to be given to the security policy.
+	// . New name to be given to the security policy.
 	SecurityPolicyName pulumi.StringInput
 }
 

@@ -58,17 +58,11 @@ class GetAppSecHostnameCoverageMatchTargetsResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        A JSON-formatted list of the coverage information.
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display of the coverage information.
-        """
         return pulumi.get(self, "output_text")
 
 
@@ -89,7 +83,11 @@ def get_app_sec_hostname_coverage_match_targets(config_id: Optional[int] = None,
                                                 hostname: Optional[str] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecHostnameCoverageMatchTargetsResult:
     """
-    Use the `get_app_sec_hostname_coverage_match_targets` data source to retrieve information about the API and website match targets that protect a hostname. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoveragematchtargets).
+    **Scopes**: Hostname
+
+    Returns information about the API and website match targets used to protect a hostname. The returned information is described in the [Get the hostname coverage match targets](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames) section of the Application Security API.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/hostname-coverage/match-targets?hostname={host}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoveragematchtargets)
 
     ## Example Usage
 
@@ -99,13 +97,19 @@ def get_app_sec_hostname_coverage_match_targets(config_id: Optional[int] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    match_targets = akamai.get_app_sec_hostname_coverage_match_targets(config_id=43253,
-        hostname="example.com")
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
+    match_targets = akamai.get_app_sec_hostname_coverage_match_targets(config_id=configuration.config_id,
+        hostname="documentation.akamai.com")
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `json`. JSON-formatted list of the coverage information.
+    - `output_text`. Tabular report of the coverage information.
 
 
-    :param int config_id: The configuration ID.
-    :param str hostname: The hostname for which to retrieve information.
+    :param str hostname: . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -129,7 +133,11 @@ def get_app_sec_hostname_coverage_match_targets_output(config_id: Optional[pulum
                                                        hostname: Optional[pulumi.Input[str]] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecHostnameCoverageMatchTargetsResult]:
     """
-    Use the `get_app_sec_hostname_coverage_match_targets` data source to retrieve information about the API and website match targets that protect a hostname. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoveragematchtargets).
+    **Scopes**: Hostname
+
+    Returns information about the API and website match targets used to protect a hostname. The returned information is described in the [Get the hostname coverage match targets](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames) section of the Application Security API.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/hostname-coverage/match-targets?hostname={host}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoveragematchtargets)
 
     ## Example Usage
 
@@ -139,12 +147,18 @@ def get_app_sec_hostname_coverage_match_targets_output(config_id: Optional[pulum
     import pulumi
     import pulumi_akamai as akamai
 
-    match_targets = akamai.get_app_sec_hostname_coverage_match_targets(config_id=43253,
-        hostname="example.com")
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
+    match_targets = akamai.get_app_sec_hostname_coverage_match_targets(config_id=configuration.config_id,
+        hostname="documentation.akamai.com")
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `json`. JSON-formatted list of the coverage information.
+    - `output_text`. Tabular report of the coverage information.
 
 
-    :param int config_id: The configuration ID.
-    :param str hostname: The hostname for which to retrieve information.
+    :param str hostname: . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
     """
     ...

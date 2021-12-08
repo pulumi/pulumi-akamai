@@ -53,17 +53,11 @@ class GetAppSecReputationProfilesResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        A JSON-formatted display of the details about the indicated reputation profile or profiles.
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display of the details about the indicated reputation profile or profiles.
-        """
         return pulumi.get(self, "output_text")
 
     @property
@@ -89,7 +83,11 @@ def get_app_sec_reputation_profiles(config_id: Optional[int] = None,
                                     reputation_profile_id: Optional[int] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecReputationProfilesResult:
     """
-    Use the `get_app_sec_reputation_profiles` data source to retrieve details about all reputation profiles, or a specific reputation profiles.
+    **Scopes**: Security configuration; reputation profile
+
+    Returns information about your reputation profiles. Reputation profiles grade the security risk of an IP address based on previous activities associated with that address. Depending on the reputation score, and depending on how your configuration has been set up, requests from a specific IP address can trigger an alert, or even be blocked.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/reputation-profiles](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getreputationprofiles)
 
     ## Example Usage
 
@@ -99,19 +97,25 @@ def get_app_sec_reputation_profiles(config_id: Optional[int] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     reputation_profiles = akamai.get_app_sec_reputation_profiles(config_id=configuration.config_id)
     pulumi.export("reputationProfilesOutput", reputation_profiles.output_text)
     pulumi.export("reputationProfilesJson", reputation_profiles.json)
     reputation_profile = akamai.get_app_sec_reputation_profiles(config_id=configuration.config_id,
-        reputation_profile_id=var["reputation_profile_id"])
+        reputation_profile_id=12345)
     pulumi.export("reputationProfileJson", reputation_profile.json)
     pulumi.export("reputationProfileOutput", reputation_profile.output_text)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `output_text`. Tabular report of the details about the specified reputation profile or profiles.
+    - `json`. JSON-formatted report of the details about the specified reputation profile or profiles.
 
 
-    :param int config_id: The ID of the security configuration to use.
-    :param int reputation_profile_id: The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
+    :param int config_id: . Unique identifier of the security configuration associated with the reputation profiles.
+    :param int reputation_profile_id: . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -135,7 +139,11 @@ def get_app_sec_reputation_profiles_output(config_id: Optional[pulumi.Input[int]
                                            reputation_profile_id: Optional[pulumi.Input[Optional[int]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecReputationProfilesResult]:
     """
-    Use the `get_app_sec_reputation_profiles` data source to retrieve details about all reputation profiles, or a specific reputation profiles.
+    **Scopes**: Security configuration; reputation profile
+
+    Returns information about your reputation profiles. Reputation profiles grade the security risk of an IP address based on previous activities associated with that address. Depending on the reputation score, and depending on how your configuration has been set up, requests from a specific IP address can trigger an alert, or even be blocked.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/reputation-profiles](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getreputationprofiles)
 
     ## Example Usage
 
@@ -145,18 +153,24 @@ def get_app_sec_reputation_profiles_output(config_id: Optional[pulumi.Input[int]
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     reputation_profiles = akamai.get_app_sec_reputation_profiles(config_id=configuration.config_id)
     pulumi.export("reputationProfilesOutput", reputation_profiles.output_text)
     pulumi.export("reputationProfilesJson", reputation_profiles.json)
     reputation_profile = akamai.get_app_sec_reputation_profiles(config_id=configuration.config_id,
-        reputation_profile_id=var["reputation_profile_id"])
+        reputation_profile_id=12345)
     pulumi.export("reputationProfileJson", reputation_profile.json)
     pulumi.export("reputationProfileOutput", reputation_profile.output_text)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `output_text`. Tabular report of the details about the specified reputation profile or profiles.
+    - `json`. JSON-formatted report of the details about the specified reputation profile or profiles.
 
 
-    :param int config_id: The ID of the security configuration to use.
-    :param int reputation_profile_id: The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
+    :param int config_id: . Unique identifier of the security configuration associated with the reputation profiles.
+    :param int reputation_profile_id: . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
     """
     ...

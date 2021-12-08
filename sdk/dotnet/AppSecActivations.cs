@@ -10,7 +10,11 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// The `akamai.AppSecActivations` resource allows you to activate or deactivate a given security configuration version.
+    /// **Scopes**: Security configuration
+    /// 
+    /// Activates or deactivates a security configuration. Security configurations activated on the staging network can be used for testing and fine-tuning; security configurations activated on the production network are used to protect your actual websites.
+    /// 
+    /// **Related API Endpoint**: [/appsec/v1/activations](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postactivations)
     /// 
     /// ## Example Usage
     /// 
@@ -26,13 +30,13 @@ namespace Pulumi.Akamai
     ///     {
     ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
     ///         {
-    ///             Name = "Akamai Tools",
+    ///             Name = "Documentation",
     ///         }));
     ///         var activation = new Akamai.AppSecActivations("activation", new Akamai.AppSecActivationsArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
     ///             Network = "STAGING",
-    ///             Notes = "TEST Notes",
+    ///             Notes = "This configuration was activated for testing purposes only.",
     ///             NotificationEmails = 
     ///             {
     ///                 "user@example.com",
@@ -42,45 +46,49 @@ namespace Pulumi.Akamai
     /// 
     /// }
     /// ```
+    /// ## Output Options
+    /// 
+    /// The following options can be used to determine the information returned, and how that returned information is formatted:
+    /// 
+    /// - `status`. Status of the operation. Valid values are:
+    ///   
+    ///   *   **ACTIVATED**
+    ///   *   **DEACTIVATED**
+    ///   *   **FAILED**
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecActivations:AppSecActivations")]
     public partial class AppSecActivations : Pulumi.CustomResource
     {
         /// <summary>
-        /// A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+        /// . Set to **true** to activate the specified security configuration; set to **false** to deactivate the configuration. If not included, the security configuration will be activated.
         /// </summary>
         [Output("activate")]
         public Output<bool?> Activate { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration being activated.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+        /// . Network on which activation will occur; allowed values are:
         /// </summary>
         [Output("network")]
         public Output<string?> Network { get; private set; } = null!;
 
         /// <summary>
-        /// A text note describing this operation. If no attributes were changed since the last time a security
-        /// configuration was updated using the akamai.AppSecActivations resource, an activation will not occur. To ensure an activation
-        /// is called, please update one of the attributes, e.g. the notes attribute.
+        /// . Brief description of the activation/deactivation process. Note that, if no attributes have changed since the last time you called the akamai.AppSecActivations resource, neither activation nor deactivation takes place: that's because *something* must be different in order to trigger the activation/deactivation process. With that in mind, it's recommended that you always update the `notes` argument. That ensures that the resource will be called and that activation or deactivation will occur.
         /// </summary>
         [Output("notes")]
         public Output<string> Notes { get; private set; } = null!;
 
         /// <summary>
-        /// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+        /// . JSON array containing the email addresses of the people to be notified when activation is complete.
         /// </summary>
         [Output("notificationEmails")]
         public Output<ImmutableArray<string>> NotificationEmails { get; private set; } = null!;
 
-        /// <summary>
-        /// The status of the operation. The following values are may be returned:
-        /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
@@ -131,27 +139,25 @@ namespace Pulumi.Akamai
     public sealed class AppSecActivationsArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+        /// . Set to **true** to activate the specified security configuration; set to **false** to deactivate the configuration. If not included, the security configuration will be activated.
         /// </summary>
         [Input("activate")]
         public Input<bool>? Activate { get; set; }
 
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration being activated.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+        /// . Network on which activation will occur; allowed values are:
         /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
 
         /// <summary>
-        /// A text note describing this operation. If no attributes were changed since the last time a security
-        /// configuration was updated using the akamai.AppSecActivations resource, an activation will not occur. To ensure an activation
-        /// is called, please update one of the attributes, e.g. the notes attribute.
+        /// . Brief description of the activation/deactivation process. Note that, if no attributes have changed since the last time you called the akamai.AppSecActivations resource, neither activation nor deactivation takes place: that's because *something* must be different in order to trigger the activation/deactivation process. With that in mind, it's recommended that you always update the `notes` argument. That ensures that the resource will be called and that activation or deactivation will occur.
         /// </summary>
         [Input("notes", required: true)]
         public Input<string> Notes { get; set; } = null!;
@@ -160,7 +166,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _notificationEmails;
 
         /// <summary>
-        /// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+        /// . JSON array containing the email addresses of the people to be notified when activation is complete.
         /// </summary>
         public InputList<string> NotificationEmails
         {
@@ -176,27 +182,25 @@ namespace Pulumi.Akamai
     public sealed class AppSecActivationsState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// A boolean indicating whether to activate the specified configuration version. If not supplied, True is assumed.
+        /// . Set to **true** to activate the specified security configuration; set to **false** to deactivate the configuration. If not included, the security configuration will be activated.
         /// </summary>
         [Input("activate")]
         public Input<bool>? Activate { get; set; }
 
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration being activated.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// The network in which the security configuration should be activated. If supplied, must be either STAGING or PRODUCTION. If not supplied, STAGING will be assumed.
+        /// . Network on which activation will occur; allowed values are:
         /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
 
         /// <summary>
-        /// A text note describing this operation. If no attributes were changed since the last time a security
-        /// configuration was updated using the akamai.AppSecActivations resource, an activation will not occur. To ensure an activation
-        /// is called, please update one of the attributes, e.g. the notes attribute.
+        /// . Brief description of the activation/deactivation process. Note that, if no attributes have changed since the last time you called the akamai.AppSecActivations resource, neither activation nor deactivation takes place: that's because *something* must be different in order to trigger the activation/deactivation process. With that in mind, it's recommended that you always update the `notes` argument. That ensures that the resource will be called and that activation or deactivation will occur.
         /// </summary>
         [Input("notes")]
         public Input<string>? Notes { get; set; }
@@ -205,7 +209,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _notificationEmails;
 
         /// <summary>
-        /// A bracketed, comma-separated list of email addresses that will be notified when the operation is complete.
+        /// . JSON array containing the email addresses of the people to be notified when activation is complete.
         /// </summary>
         public InputList<string> NotificationEmails
         {
@@ -213,9 +217,6 @@ namespace Pulumi.Akamai
             set => _notificationEmails = value;
         }
 
-        /// <summary>
-        /// The status of the operation. The following values are may be returned:
-        /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 

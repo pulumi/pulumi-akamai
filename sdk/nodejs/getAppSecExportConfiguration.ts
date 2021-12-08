@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecExportConfiguration` data source to retrieve comprehensive details about a security configuration version, including rate and security policies, rules, hostnames, and other settings. You can retrieve the entire set of information in JSON format, or a subset of the information in tabular format.
+ * **Scopes**: Security configuration and version
+ *
+ * Returns comprehensive details about a security configuration, including rate policies, security policies, rules, hostnames, and match targets.
+ *
+ * **Related API Endpoint**: [/appsec/v1/export/configs/{configId}/versions/{versionNumber}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getconfigurationversionexport)
  *
  * ## Example Usage
  *
@@ -16,7 +20,7 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: "Akamai Tools",
+ *     name: "Documentation",
  * });
  * const export = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecExportConfiguration({
  *     configId: configuration.configId,
@@ -29,6 +33,12 @@ import * as utilities from "./utilities";
  * export const json = _export.then(_export => _export.json);
  * export const text = _export.then(_export => _export.outputText);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. Complete set of information about the specified security configuration version in JSON format. Includes the types available for the `search` parameter as well as additional fields such as `createDate` and `createdBy`.
+ * - `outputText`. Tabular report showing the types of data specified in the `search` parameter. Valid only if the `search` parameter references at least one type.
  */
 export function getAppSecExportConfiguration(args: GetAppSecExportConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecExportConfigurationResult> {
     if (!opts) {
@@ -50,23 +60,37 @@ export function getAppSecExportConfiguration(args: GetAppSecExportConfigurationA
  */
 export interface GetAppSecExportConfigurationArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration you want to return information for.
      */
     configId: number;
     /**
-     * A bracket-delimited list of quoted strings specifying the types of information to be retrieved and made available for display in the `outputText` format. The following types are available:
-     * * customRules
-     * * matchTargets
-     * * ratePolicies
-     * * reputationProfiles
-     * * rulesets
-     * * securityPolicies
-     * * selectableHosts
-     * * selectedHosts
+     * . JSON array of strings specifying the types of information to be retrieved. Allowed values include:
+     * > - **AdvancedSettingsLogging**
+     * > - **AdvancedSettingsPrefetch**
+     * > - **ApiRequestConstraints**
+     * > - **AttackGroup**
+     * > - **AttackGroupConditionException**
+     * > - **Eval**
+     * > - **EvalRuleConditionException**
+     * > - **CustomDeny**
+     * > - **CustomRule**
+     * > - **CustomRuleAction**
+     * > - **IPGeoFirewall**
+     * > - **MatchTarget**
+     * > - **PenaltyBox**
+     * > - **RatePolicy**
+     * > - **RatePolicyAction**
+     * > - **ReputationProfile**
+     * > - **ReputationProfileAction**
+     * > - **Rule**
+     * > - **RuleConditionException**
+     * > - **SecurityPolicy**
+     * > - **SiemSettings**
+     * > - **SlowPost**
      */
     searches?: string[];
     /**
-     * The version number of the security configuration to use.
+     * . Version number of the security configuration.
      */
     version: number;
 }
@@ -80,13 +104,7 @@ export interface GetAppSecExportConfigurationResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * The complete set of information about the specified security configuration version, in JSON format. This includes the types available for the `search` parameter, plus several additional fields such as createDate and createdBy.
-     */
     readonly json: string;
-    /**
-     * A tabular display showing the types of data specified in the `search` parameter. Included only if the `search` parameter specifies at least one type.
-     */
     readonly outputText: string;
     readonly searches?: string[];
     readonly version: number;
@@ -101,23 +119,37 @@ export function getAppSecExportConfigurationOutput(args: GetAppSecExportConfigur
  */
 export interface GetAppSecExportConfigurationOutputArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration you want to return information for.
      */
     configId: pulumi.Input<number>;
     /**
-     * A bracket-delimited list of quoted strings specifying the types of information to be retrieved and made available for display in the `outputText` format. The following types are available:
-     * * customRules
-     * * matchTargets
-     * * ratePolicies
-     * * reputationProfiles
-     * * rulesets
-     * * securityPolicies
-     * * selectableHosts
-     * * selectedHosts
+     * . JSON array of strings specifying the types of information to be retrieved. Allowed values include:
+     * > - **AdvancedSettingsLogging**
+     * > - **AdvancedSettingsPrefetch**
+     * > - **ApiRequestConstraints**
+     * > - **AttackGroup**
+     * > - **AttackGroupConditionException**
+     * > - **Eval**
+     * > - **EvalRuleConditionException**
+     * > - **CustomDeny**
+     * > - **CustomRule**
+     * > - **CustomRuleAction**
+     * > - **IPGeoFirewall**
+     * > - **MatchTarget**
+     * > - **PenaltyBox**
+     * > - **RatePolicy**
+     * > - **RatePolicyAction**
+     * > - **ReputationProfile**
+     * > - **ReputationProfileAction**
+     * > - **Rule**
+     * > - **RuleConditionException**
+     * > - **SecurityPolicy**
+     * > - **SiemSettings**
+     * > - **SlowPost**
      */
     searches?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The version number of the security configuration to use.
+     * . Version number of the security configuration.
      */
     version: pulumi.Input<number>;
 }

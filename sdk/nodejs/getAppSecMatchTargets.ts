@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecMatchTargets` data source to retrieve information about the match targets associated with a given configuration, or about a specific match target.
+ * **Scopes**: Security configuration; match target
+ *
+ * Returns information about your match targets. Match targets determine which security policy should apply to an API, hostname or path.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets{?policyId,includeChildObjectName}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getmatchtargets)
  *
  * ## Example Usage
  *
@@ -16,7 +20,7 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const matchTargetsAppSecMatchTargets = configuration.then(configuration => akamai.getAppSecMatchTargets({
  *     configId: configuration.configId,
@@ -24,10 +28,16 @@ import * as utilities from "./utilities";
  * export const matchTargets = matchTargetsAppSecMatchTargets.then(matchTargetsAppSecMatchTargets => matchTargetsAppSecMatchTargets.outputText);
  * const matchTarget = configuration.then(configuration => akamai.getAppSecMatchTargets({
  *     configId: configuration.configId,
- *     matchTargetId: _var.match_target_id,
+ *     matchTargetId: "2712938",
  * }));
  * export const matchTargetOutput = matchTarget.then(matchTarget => matchTarget.outputText);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `outputText`. Tabular report showing the ID and security policy ID of your match targets.
+ * - `json`. JSON-formatted list of the match target information.
  */
 export function getAppSecMatchTargets(args: GetAppSecMatchTargetsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecMatchTargetsResult> {
     if (!opts) {
@@ -48,11 +58,11 @@ export function getAppSecMatchTargets(args: GetAppSecMatchTargetsArgs, opts?: pu
  */
 export interface GetAppSecMatchTargetsArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the match targets.
      */
     configId: number;
     /**
-     * The ID of the match target to use. If not supplied, information about all match targets is returned.
+     * . Unique identifier of the match target you want to return information for. If not included, information is returned for all your match targets.
      */
     matchTargetId?: number;
 }
@@ -66,14 +76,8 @@ export interface GetAppSecMatchTargetsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted list of the match target information.
-     */
     readonly json: string;
     readonly matchTargetId?: number;
-    /**
-     * A tabular display showing the ID and Policy ID of all match targets associated with the specified security configuration, or of the specific match target if `matchTargetId` was supplied.
-     */
     readonly outputText: string;
 }
 
@@ -86,11 +90,11 @@ export function getAppSecMatchTargetsOutput(args: GetAppSecMatchTargetsOutputArg
  */
 export interface GetAppSecMatchTargetsOutputArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the match targets.
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of the match target to use. If not supplied, information about all match targets is returned.
+     * . Unique identifier of the match target you want to return information for. If not included, information is returned for all your match targets.
      */
     matchTargetId?: pulumi.Input<number>;
 }

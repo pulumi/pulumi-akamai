@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecSlowPost` data source to retrieve the slow post protection settings for a given security configuration and policy.
+ * **Scopes**: Security policy
+ *
+ * Returns the slow POST protection settings for the specified security configuration and policy. Slow POST protections help defend a site against attacks that try to tie up the site by using extremely slow requests and responses: the idea is to keep the site occupied waiting for these requests and responses to finish instead of being occupied with new (and legitimate) transactions.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/slow-post](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getslowpostprotectionsettings)
  *
  * ## Example Usage
  *
@@ -16,14 +20,25 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const slowPost = configuration.then(configuration => akamai.getAppSecSlowPost({
  *     configId: configuration.configId,
- *     securityPolicyId: _var.security_policy_id,
+ *     securityPolicyId: "gms1_134637",
  * }));
  * export const slowPostOutputText = slowPost.then(slowPost => slowPost.outputText);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `outputText`. Tabular report including the following:
+ *   - **ACTION**. Action taken any time slow POST protection is triggered. Valid values are:
+ *     - **alert**. Record the event.
+ *     - **abort**. Block the request.
+ *   - **SLOW_RATE_THRESHOLD RATE**. Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
+ *   - **SLOW_RATE_THRESHOLD PERIOD**. Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
+ *   - **DURATION_THRESHOLD TIMEOUT**. Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in order to avoid triggering the specified action.
  */
 export function getAppSecSlowPost(args: GetAppSecSlowPostArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecSlowPostResult> {
     if (!opts) {
@@ -44,11 +59,11 @@ export function getAppSecSlowPost(args: GetAppSecSlowPostArgs, opts?: pulumi.Inv
  */
 export interface GetAppSecSlowPostArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the slow POST settings.
      */
     configId: number;
     /**
-     * The ID of the security policy to use
+     * . Unique identifier of the security policy associated with the slow POST settings.
      */
     securityPolicyId: string;
 }
@@ -63,9 +78,6 @@ export interface GetAppSecSlowPostResult {
      */
     readonly id: string;
     readonly json: string;
-    /**
-     * A tabular display including the following columns:
-     */
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
@@ -79,11 +91,11 @@ export function getAppSecSlowPostOutput(args: GetAppSecSlowPostOutputArgs, opts?
  */
 export interface GetAppSecSlowPostOutputArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the slow POST settings.
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use
+     * . Unique identifier of the security policy associated with the slow POST settings.
      */
     securityPolicyId: pulumi.Input<string>;
 }

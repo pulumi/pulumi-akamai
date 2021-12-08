@@ -13,12 +13,13 @@ namespace Pulumi.Akamai
     public static class GetAppSecAdvancedSettingsPrefetch
     {
         /// <summary>
-        /// Use the `akamai.AppSecAdvancedSettingsPrefetch` data source to retrieve information the prefetch request settings for a security configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprefetchrequestsforaconfiguration).
+        /// **Scopes**: Security configuration
         /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
+        /// Returns information about your prefetch request settings. By default, the Web Application Firewall only inspects external requests: requests originating outside of your firewall or Akamai's edge servers. When prefetch is enabled, however, internal requests – that is, requests between your origin servers and Akamai's edge servers – can also be inspected by the firewall. The returned information is described in the [PrefetchRequest members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#deb7220d) section of the Application Security API.
         /// 
+        /// **Related** **API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/prefetch](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprefetchrequestsforaconfiguration)
+        /// 
+        /// Example Usage
         /// Basic usage:
         /// 
         /// ```csharp
@@ -31,7 +32,7 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var prefetch = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAdvancedSettingsPrefetch.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsPrefetchArgs
         ///         {
@@ -47,19 +48,25 @@ namespace Pulumi.Akamai
         ///     public Output&lt;string&gt; AdvancedSettingsPrefetchJson { get; set; }
         /// }
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// 
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `json`. JSON-formatted list of information about the prefetch request settings.
+        /// - `output_text`. Tabular report showing the prefetch request settings.
         /// </summary>
         public static Task<GetAppSecAdvancedSettingsPrefetchResult> InvokeAsync(GetAppSecAdvancedSettingsPrefetchArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAdvancedSettingsPrefetchResult>("akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch", args ?? new GetAppSecAdvancedSettingsPrefetchArgs(), options.WithVersion());
 
         /// <summary>
-        /// Use the `akamai.AppSecAdvancedSettingsPrefetch` data source to retrieve information the prefetch request settings for a security configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprefetchrequestsforaconfiguration).
+        /// **Scopes**: Security configuration
         /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
+        /// Returns information about your prefetch request settings. By default, the Web Application Firewall only inspects external requests: requests originating outside of your firewall or Akamai's edge servers. When prefetch is enabled, however, internal requests – that is, requests between your origin servers and Akamai's edge servers – can also be inspected by the firewall. The returned information is described in the [PrefetchRequest members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#deb7220d) section of the Application Security API.
         /// 
+        /// **Related** **API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/prefetch](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprefetchrequestsforaconfiguration)
+        /// 
+        /// Example Usage
         /// Basic usage:
         /// 
         /// ```csharp
@@ -72,7 +79,7 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var prefetch = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAdvancedSettingsPrefetch.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsPrefetchArgs
         ///         {
@@ -88,8 +95,13 @@ namespace Pulumi.Akamai
         ///     public Output&lt;string&gt; AdvancedSettingsPrefetchJson { get; set; }
         /// }
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// 
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `json`. JSON-formatted list of information about the prefetch request settings.
+        /// - `output_text`. Tabular report showing the prefetch request settings.
         /// </summary>
         public static Output<GetAppSecAdvancedSettingsPrefetchResult> Invoke(GetAppSecAdvancedSettingsPrefetchInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsPrefetchResult>("akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch", args ?? new GetAppSecAdvancedSettingsPrefetchInvokeArgs(), options.WithVersion());
@@ -99,7 +111,7 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecAdvancedSettingsPrefetchArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The configuration ID.
+        /// . Unique identifier of the security configuration associated with the prefetch settings.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
@@ -112,7 +124,7 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecAdvancedSettingsPrefetchInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The configuration ID.
+        /// . Unique identifier of the security configuration associated with the prefetch settings.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
@@ -131,13 +143,7 @@ namespace Pulumi.Akamai
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A JSON-formatted list of information about the prefetch request settings.
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// A tabular display showing the prefetch request settings.
-        /// </summary>
         public readonly string OutputText;
 
         [OutputConstructor]

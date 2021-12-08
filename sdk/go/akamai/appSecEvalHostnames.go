@@ -11,7 +11,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The `resourceAkamaiAppsecEvalHostnames` resource allows you to update the list of hostnames you want to evaluate for a configuration.
+// **Scopes**: Security configuration
+//
+// Modifies the list of hostnames evaluated while a security configuration is in evaluation mode.
+// During evaluation mode, hosts take no action of any kind when responding to traffic.
+// Instead, these hosts simply maintain a record of the actions they *would* have taken if they had been responding to live traffic in your production network.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames/eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevaluationhostnames)
 //
 // ## Example Usage
 //
@@ -27,7 +33,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -35,8 +41,12 @@ import (
 // 			return err
 // 		}
 // 		_, err = akamai.NewAppSecEvalHostnames(ctx, "evalHostnames", &akamai.AppSecEvalHostnamesArgs{
-// 			ConfigId:  pulumi.Int(configuration.ConfigId),
-// 			Hostnames: pulumi.Any(_var.Hostnames),
+// 			ConfigId: pulumi.Int(configuration.ConfigId),
+// 			Hostnames: pulumi.StringArray{
+// 				pulumi.String("documentation.akamai.com"),
+// 				pulumi.String("training.akamai.com"),
+// 				pulumi.String("videos.akamai.com"),
+// 			},
 // 		})
 // 		if err != nil {
 // 			return err
@@ -48,9 +58,9 @@ import (
 type AppSecEvalHostnames struct {
 	pulumi.CustomResourceState
 
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration in evaluation mode.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// A list of evaluation hostnames to be used for the specified configuration version.
+	// . JSON array of hostnames to be used in the evaluation process. Note that this list replaces your existing list of evaluation hosts.
 	Hostnames pulumi.StringArrayOutput `pulumi:"hostnames"`
 }
 
@@ -89,16 +99,16 @@ func GetAppSecEvalHostnames(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecEvalHostnames resources.
 type appSecEvalHostnamesState struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration in evaluation mode.
 	ConfigId *int `pulumi:"configId"`
-	// A list of evaluation hostnames to be used for the specified configuration version.
+	// . JSON array of hostnames to be used in the evaluation process. Note that this list replaces your existing list of evaluation hosts.
 	Hostnames []string `pulumi:"hostnames"`
 }
 
 type AppSecEvalHostnamesState struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration in evaluation mode.
 	ConfigId pulumi.IntPtrInput
-	// A list of evaluation hostnames to be used for the specified configuration version.
+	// . JSON array of hostnames to be used in the evaluation process. Note that this list replaces your existing list of evaluation hosts.
 	Hostnames pulumi.StringArrayInput
 }
 
@@ -107,17 +117,17 @@ func (AppSecEvalHostnamesState) ElementType() reflect.Type {
 }
 
 type appSecEvalHostnamesArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration in evaluation mode.
 	ConfigId int `pulumi:"configId"`
-	// A list of evaluation hostnames to be used for the specified configuration version.
+	// . JSON array of hostnames to be used in the evaluation process. Note that this list replaces your existing list of evaluation hosts.
 	Hostnames []string `pulumi:"hostnames"`
 }
 
 // The set of arguments for constructing a AppSecEvalHostnames resource.
 type AppSecEvalHostnamesArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration in evaluation mode.
 	ConfigId pulumi.IntInput
-	// A list of evaluation hostnames to be used for the specified configuration version.
+	// . JSON array of hostnames to be used in the evaluation process. Note that this list replaces your existing list of evaluation hosts.
 	Hostnames pulumi.StringArrayInput
 }
 

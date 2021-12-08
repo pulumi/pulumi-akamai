@@ -11,9 +11,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecByPassNetworkList` resource to update which network lists to use in the
-// bypass network lists settings. Note: this resource is only applicable to WAP (Web Application
-// Protector) configurations.
+// **Scopes**: Security configuration
+//
+// Specifies the networks that appear on the bypass network list. Networks on this list are allowed to bypass the Web Application Firewall.
+//
+// Note that this resource is only applicable to WAP (Web Application Protector) configurations.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/bypass-network-lists](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putbypassnetworklistsforawapconfigversion)
 //
 // ## Example Usage
 //
@@ -29,7 +33,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -39,8 +43,8 @@ import (
 // 		_, err = akamai.NewAppSecByPassNetworkList(ctx, "bypassNetworkLists", &akamai.AppSecByPassNetworkListArgs{
 // 			ConfigId: pulumi.Int(configuration.ConfigId),
 // 			BypassNetworkLists: pulumi.StringArray{
-// 				pulumi.String("id1"),
-// 				pulumi.String("id2"),
+// 				pulumi.String("DocumentationNetworkList"),
+// 				pulumi.String("TrainingNetworkList"),
 // 			},
 // 		})
 // 		if err != nil {
@@ -50,12 +54,17 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `outputText`. Tabular report showing the updated list of bypass network IDs.
 type AppSecByPassNetworkList struct {
 	pulumi.CustomResourceState
 
-	// A list containing the IDs of the network lists to use.
+	// . JSON array of network IDs that comprise the bypass list.
 	BypassNetworkLists pulumi.StringArrayOutput `pulumi:"bypassNetworkLists"`
-	// The configuration ID to use.
+	// . Unique identifier of the security configuration associated with the network bypass lists being modified.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 }
 
@@ -94,16 +103,16 @@ func GetAppSecByPassNetworkList(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecByPassNetworkList resources.
 type appSecByPassNetworkListState struct {
-	// A list containing the IDs of the network lists to use.
+	// . JSON array of network IDs that comprise the bypass list.
 	BypassNetworkLists []string `pulumi:"bypassNetworkLists"`
-	// The configuration ID to use.
+	// . Unique identifier of the security configuration associated with the network bypass lists being modified.
 	ConfigId *int `pulumi:"configId"`
 }
 
 type AppSecByPassNetworkListState struct {
-	// A list containing the IDs of the network lists to use.
+	// . JSON array of network IDs that comprise the bypass list.
 	BypassNetworkLists pulumi.StringArrayInput
-	// The configuration ID to use.
+	// . Unique identifier of the security configuration associated with the network bypass lists being modified.
 	ConfigId pulumi.IntPtrInput
 }
 
@@ -112,17 +121,17 @@ func (AppSecByPassNetworkListState) ElementType() reflect.Type {
 }
 
 type appSecByPassNetworkListArgs struct {
-	// A list containing the IDs of the network lists to use.
+	// . JSON array of network IDs that comprise the bypass list.
 	BypassNetworkLists []string `pulumi:"bypassNetworkLists"`
-	// The configuration ID to use.
+	// . Unique identifier of the security configuration associated with the network bypass lists being modified.
 	ConfigId int `pulumi:"configId"`
 }
 
 // The set of arguments for constructing a AppSecByPassNetworkList resource.
 type AppSecByPassNetworkListArgs struct {
-	// A list containing the IDs of the network lists to use.
+	// . JSON array of network IDs that comprise the bypass list.
 	BypassNetworkLists pulumi.StringArrayInput
-	// The configuration ID to use.
+	// . Unique identifier of the security configuration associated with the network bypass lists being modified.
 	ConfigId pulumi.IntInput
 }
 

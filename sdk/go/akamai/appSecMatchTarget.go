@@ -11,7 +11,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The `AppSecMatchTarget` resource allows you to create or modify a match target associated with a given security configuration.
+// **Scopes**: Security configuration
+//
+// Creates a match target associated with a security configuration. Match targets determine which security policy should apply to an API, hostname or path.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)
 //
 // ## Example Usage
 //
@@ -38,7 +42,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Akamai Tools"
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -56,15 +60,19 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// In addition to the arguments above, the following attribute is exported:
+//
+// - `matchTargetId`. ID of the match target.
 type AppSecMatchTarget struct {
 	pulumi.CustomResourceState
 
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the match target being modified.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
-	MatchTarget pulumi.StringOutput `pulumi:"matchTarget"`
-	// The ID of the match target.
-	MatchTargetId pulumi.IntOutput `pulumi:"matchTargetId"`
+	// . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
+	MatchTarget   pulumi.StringOutput `pulumi:"matchTarget"`
+	MatchTargetId pulumi.IntOutput    `pulumi:"matchTargetId"`
 }
 
 // NewAppSecMatchTarget registers a new resource with the given unique name, arguments, and options.
@@ -102,20 +110,18 @@ func GetAppSecMatchTarget(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecMatchTarget resources.
 type appSecMatchTargetState struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the match target being modified.
 	ConfigId *int `pulumi:"configId"`
-	// The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
-	MatchTarget *string `pulumi:"matchTarget"`
-	// The ID of the match target.
-	MatchTargetId *int `pulumi:"matchTargetId"`
+	// . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
+	MatchTarget   *string `pulumi:"matchTarget"`
+	MatchTargetId *int    `pulumi:"matchTargetId"`
 }
 
 type AppSecMatchTargetState struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the match target being modified.
 	ConfigId pulumi.IntPtrInput
-	// The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
-	MatchTarget pulumi.StringPtrInput
-	// The ID of the match target.
+	// . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
+	MatchTarget   pulumi.StringPtrInput
 	MatchTargetId pulumi.IntPtrInput
 }
 
@@ -124,17 +130,17 @@ func (AppSecMatchTargetState) ElementType() reflect.Type {
 }
 
 type appSecMatchTargetArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the match target being modified.
 	ConfigId int `pulumi:"configId"`
-	// The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
+	// . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
 	MatchTarget string `pulumi:"matchTarget"`
 }
 
 // The set of arguments for constructing a AppSecMatchTarget resource.
 type AppSecMatchTargetArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the match target being modified.
 	ConfigId pulumi.IntInput
-	// The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
+	// . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
 	MatchTarget pulumi.StringInput
 }
 

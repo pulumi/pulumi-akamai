@@ -20,11 +20,15 @@ class AppSecEvalRuleArgs:
                  condition_exception: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AppSecEvalRule resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] rule_action: The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
-        :param pulumi.Input[int] rule_id: The ID of the eval rule to use.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[str] condition_exception: The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions))
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration in evaluation mode.
+        :param pulumi.Input[str] rule_action: . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
+               - **alert**. Record the event.
+               - **deny**. Block the request.
+               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+               - **none**. Take no action.
+        :param pulumi.Input[int] rule_id: . Unique identifier of the evaluation rule being modified.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the evaluation process.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "rule_action", rule_action)
@@ -37,7 +41,7 @@ class AppSecEvalRuleArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration in evaluation mode.
         """
         return pulumi.get(self, "config_id")
 
@@ -49,7 +53,11 @@ class AppSecEvalRuleArgs:
     @pulumi.getter(name="ruleAction")
     def rule_action(self) -> pulumi.Input[str]:
         """
-        The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
+        - **alert**. Record the event.
+        - **deny**. Block the request.
+        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        - **none**. Take no action.
         """
         return pulumi.get(self, "rule_action")
 
@@ -61,7 +69,7 @@ class AppSecEvalRuleArgs:
     @pulumi.getter(name="ruleId")
     def rule_id(self) -> pulumi.Input[int]:
         """
-        The ID of the eval rule to use.
+        . Unique identifier of the evaluation rule being modified.
         """
         return pulumi.get(self, "rule_id")
 
@@ -73,7 +81,7 @@ class AppSecEvalRuleArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the evaluation process.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -85,7 +93,7 @@ class AppSecEvalRuleArgs:
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions))
+        . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
         """
         return pulumi.get(self, "condition_exception")
 
@@ -104,11 +112,15 @@ class _AppSecEvalRuleState:
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecEvalRule resources.
-        :param pulumi.Input[str] condition_exception: The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions))
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] rule_action: The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
-        :param pulumi.Input[int] rule_id: The ID of the eval rule to use.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration in evaluation mode.
+        :param pulumi.Input[str] rule_action: . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
+               - **alert**. Record the event.
+               - **deny**. Block the request.
+               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+               - **none**. Take no action.
+        :param pulumi.Input[int] rule_id: . Unique identifier of the evaluation rule being modified.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the evaluation process.
         """
         if condition_exception is not None:
             pulumi.set(__self__, "condition_exception", condition_exception)
@@ -125,7 +137,7 @@ class _AppSecEvalRuleState:
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions))
+        . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
         """
         return pulumi.get(self, "condition_exception")
 
@@ -137,7 +149,7 @@ class _AppSecEvalRuleState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration in evaluation mode.
         """
         return pulumi.get(self, "config_id")
 
@@ -149,7 +161,11 @@ class _AppSecEvalRuleState:
     @pulumi.getter(name="ruleAction")
     def rule_action(self) -> Optional[pulumi.Input[str]]:
         """
-        The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
+        - **alert**. Record the event.
+        - **deny**. Block the request.
+        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        - **none**. Take no action.
         """
         return pulumi.get(self, "rule_action")
 
@@ -161,7 +177,7 @@ class _AppSecEvalRuleState:
     @pulumi.getter(name="ruleId")
     def rule_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The ID of the eval rule to use.
+        . Unique identifier of the evaluation rule being modified.
         """
         return pulumi.get(self, "rule_id")
 
@@ -173,7 +189,7 @@ class _AppSecEvalRuleState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the evaluation process.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -194,7 +210,13 @@ class AppSecEvalRule(pulumi.CustomResource):
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Use the `AppSecEvalRule` resource to create or modify an eval rule's action, conditions and exceptions. When the conditions are met, the rule’s actions are ignored and not applied to that specific traffic.
+        **Scopes**: Evaluation rule
+
+        Creates or modifies an evaluation rule's action, conditions, and exceptions.
+        Evaluation rules are Kona Rule Set rules used when running a security configuration in evaluation mode.
+        Changes to these rules do not affect the rules used on your production network.
+
+        **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalrule) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}/condition-exception](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions)
 
         ## Example Usage
 
@@ -204,22 +226,26 @@ class AppSecEvalRule(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         eval_rule = akamai.AppSecEvalRule("evalRule",
             config_id=configuration.config_id,
-            security_policy_id=var["security_policy_id"],
-            rule_id=var["rule_id"],
-            rule_action=var["action"],
+            security_policy_id="gms1_134637",
+            rule_id=60029316,
+            rule_action="deny",
             condition_exception=(lambda path: open(path).read())(f"{path['module']}/condition_exception.json"))
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] condition_exception: The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions))
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] rule_action: The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
-        :param pulumi.Input[int] rule_id: The ID of the eval rule to use.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration in evaluation mode.
+        :param pulumi.Input[str] rule_action: . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
+               - **alert**. Record the event.
+               - **deny**. Block the request.
+               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+               - **none**. Take no action.
+        :param pulumi.Input[int] rule_id: . Unique identifier of the evaluation rule being modified.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the evaluation process.
         """
         ...
     @overload
@@ -228,7 +254,13 @@ class AppSecEvalRule(pulumi.CustomResource):
                  args: AppSecEvalRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `AppSecEvalRule` resource to create or modify an eval rule's action, conditions and exceptions. When the conditions are met, the rule’s actions are ignored and not applied to that specific traffic.
+        **Scopes**: Evaluation rule
+
+        Creates or modifies an evaluation rule's action, conditions, and exceptions.
+        Evaluation rules are Kona Rule Set rules used when running a security configuration in evaluation mode.
+        Changes to these rules do not affect the rules used on your production network.
+
+        **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalrule) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}/condition-exception](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions)
 
         ## Example Usage
 
@@ -238,12 +270,12 @@ class AppSecEvalRule(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         eval_rule = akamai.AppSecEvalRule("evalRule",
             config_id=configuration.config_id,
-            security_policy_id=var["security_policy_id"],
-            rule_id=var["rule_id"],
-            rule_action=var["action"],
+            security_policy_id="gms1_134637",
+            rule_id=60029316,
+            rule_action="deny",
             condition_exception=(lambda path: open(path).read())(f"{path['module']}/condition_exception.json"))
         ```
 
@@ -314,11 +346,15 @@ class AppSecEvalRule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] condition_exception: The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions))
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] rule_action: The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
-        :param pulumi.Input[int] rule_id: The ID of the eval rule to use.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration in evaluation mode.
+        :param pulumi.Input[str] rule_action: . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
+               - **alert**. Record the event.
+               - **deny**. Block the request.
+               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+               - **none**. Take no action.
+        :param pulumi.Input[int] rule_id: . Unique identifier of the evaluation rule being modified.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the evaluation process.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -335,7 +371,7 @@ class AppSecEvalRule(pulumi.CustomResource):
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> pulumi.Output[Optional[str]]:
         """
-        The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions))
+        . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
         """
         return pulumi.get(self, "condition_exception")
 
@@ -343,7 +379,7 @@ class AppSecEvalRule(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration in evaluation mode.
         """
         return pulumi.get(self, "config_id")
 
@@ -351,7 +387,11 @@ class AppSecEvalRule(pulumi.CustomResource):
     @pulumi.getter(name="ruleAction")
     def rule_action(self) -> pulumi.Output[str]:
         """
-        The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
+        - **alert**. Record the event.
+        - **deny**. Block the request.
+        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        - **none**. Take no action.
         """
         return pulumi.get(self, "rule_action")
 
@@ -359,7 +399,7 @@ class AppSecEvalRule(pulumi.CustomResource):
     @pulumi.getter(name="ruleId")
     def rule_id(self) -> pulumi.Output[int]:
         """
-        The ID of the eval rule to use.
+        . Unique identifier of the evaluation rule being modified.
         """
         return pulumi.get(self, "rule_id")
 
@@ -367,7 +407,7 @@ class AppSecEvalRule(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the evaluation process.
         """
         return pulumi.get(self, "security_policy_id")
 

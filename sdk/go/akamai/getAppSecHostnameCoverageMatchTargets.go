@@ -10,7 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecHostnameCoverageMatchTargets` data source to retrieve information about the API and website match targets that protect a hostname. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoveragematchtargets).
+// **Scopes**: Hostname
+//
+// Returns information about the API and website match targets used to protect a hostname. The returned information is described in the [Get the hostname coverage match targets](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames) section of the Application Security API.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/hostname-coverage/match-targets?hostname={host}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoveragematchtargets)
 //
 // ## Example Usage
 //
@@ -26,9 +30,16 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.GetAppSecHostnameCoverageMatchTargets(ctx, &GetAppSecHostnameCoverageMatchTargetsArgs{
-// 			ConfigId: 43253,
-// 			Hostname: "example.com",
+// 		opt0 := "Documentation"
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+// 			Name: &opt0,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		_, err = akamai.GetAppSecHostnameCoverageMatchTargets(ctx, &GetAppSecHostnameCoverageMatchTargetsArgs{
+// 			ConfigId: configuration.ConfigId,
+// 			Hostname: "documentation.akamai.com",
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -37,6 +48,12 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `json`. JSON-formatted list of the coverage information.
+// - `outputText`. Tabular report of the coverage information.
 func GetAppSecHostnameCoverageMatchTargets(ctx *pulumi.Context, args *GetAppSecHostnameCoverageMatchTargetsArgs, opts ...pulumi.InvokeOption) (*GetAppSecHostnameCoverageMatchTargetsResult, error) {
 	var rv GetAppSecHostnameCoverageMatchTargetsResult
 	err := ctx.Invoke("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", args, &rv, opts...)
@@ -48,9 +65,8 @@ func GetAppSecHostnameCoverageMatchTargets(ctx *pulumi.Context, args *GetAppSecH
 
 // A collection of arguments for invoking getAppSecHostnameCoverageMatchTargets.
 type GetAppSecHostnameCoverageMatchTargetsArgs struct {
-	// The configuration ID.
 	ConfigId int `pulumi:"configId"`
-	// The hostname for which to retrieve information.
+	// . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
 	Hostname string `pulumi:"hostname"`
 }
 
@@ -59,10 +75,8 @@ type GetAppSecHostnameCoverageMatchTargetsResult struct {
 	ConfigId int    `pulumi:"configId"`
 	Hostname string `pulumi:"hostname"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted list of the coverage information.
-	Json string `pulumi:"json"`
-	// A tabular display of the coverage information.
+	Id         string `pulumi:"id"`
+	Json       string `pulumi:"json"`
 	OutputText string `pulumi:"outputText"`
 }
 
@@ -77,9 +91,8 @@ func GetAppSecHostnameCoverageMatchTargetsOutput(ctx *pulumi.Context, args GetAp
 
 // A collection of arguments for invoking getAppSecHostnameCoverageMatchTargets.
 type GetAppSecHostnameCoverageMatchTargetsOutputArgs struct {
-	// The configuration ID.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The hostname for which to retrieve information.
+	// . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 }
 
@@ -115,12 +128,10 @@ func (o GetAppSecHostnameCoverageMatchTargetsResultOutput) Id() pulumi.StringOut
 	return o.ApplyT(func(v GetAppSecHostnameCoverageMatchTargetsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted list of the coverage information.
 func (o GetAppSecHostnameCoverageMatchTargetsResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecHostnameCoverageMatchTargetsResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display of the coverage information.
 func (o GetAppSecHostnameCoverageMatchTargetsResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecHostnameCoverageMatchTargetsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

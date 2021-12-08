@@ -5,7 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecEvalRule` resource to create or modify an eval rule's action, conditions and exceptions. When the conditions are met, the rule’s actions are ignored and not applied to that specific traffic.
+ * **Scopes**: Evaluation rule
+ *
+ * Creates or modifies an evaluation rule's action, conditions, and exceptions.
+ * Evaluation rules are Kona Rule Set rules used when running a security configuration in evaluation mode.
+ * Changes to these rules do not affect the rules used on your production network.
+ *
+ * **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalrule) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}/condition-exception](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions)
  *
  * ## Example Usage
  *
@@ -17,13 +23,13 @@ import * as utilities from "./utilities";
  * import * from "fs";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const evalRule = new akamai.AppSecEvalRule("evalRule", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: _var.security_policy_id,
- *     ruleId: _var.rule_id,
- *     ruleAction: _var.action,
+ *     securityPolicyId: "gms1_134637",
+ *     ruleId: 60029316,
+ *     ruleAction: "deny",
  *     conditionException: fs.readFileSync(`${path.module}/condition_exception.json`),
  * });
  * ```
@@ -57,23 +63,27 @@ export class AppSecEvalRule extends pulumi.CustomResource {
     }
 
     /**
-     * The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions))
+     * . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
      */
     public readonly conditionException!: pulumi.Output<string | undefined>;
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration in evaluation mode.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+     * . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
+     * - **alert**. Record the event.
+     * - **deny**. Block the request.
+     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+     * - **none**. Take no action.
      */
     public readonly ruleAction!: pulumi.Output<string>;
     /**
-     * The ID of the eval rule to use.
+     * . Unique identifier of the evaluation rule being modified.
      */
     public readonly ruleId!: pulumi.Output<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the evaluation process.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
@@ -127,23 +137,27 @@ export class AppSecEvalRule extends pulumi.CustomResource {
  */
 export interface AppSecEvalRuleState {
     /**
-     * The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions))
+     * . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
      */
     conditionException?: pulumi.Input<string>;
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration in evaluation mode.
      */
     configId?: pulumi.Input<number>;
     /**
-     * The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+     * . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
+     * - **alert**. Record the event.
+     * - **deny**. Block the request.
+     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+     * - **none**. Take no action.
      */
     ruleAction?: pulumi.Input<string>;
     /**
-     * The ID of the eval rule to use.
+     * . Unique identifier of the evaluation rule being modified.
      */
     ruleId?: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the evaluation process.
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -153,23 +167,27 @@ export interface AppSecEvalRuleState {
  */
 export interface AppSecEvalRuleArgs {
     /**
-     * The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions))
+     * . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
      */
     conditionException?: pulumi.Input<string>;
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration in evaluation mode.
      */
     configId: pulumi.Input<number>;
     /**
-     * The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+     * . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
+     * - **alert**. Record the event.
+     * - **deny**. Block the request.
+     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+     * - **none**. Take no action.
      */
     ruleAction: pulumi.Input<string>;
     /**
-     * The ID of the eval rule to use.
+     * . Unique identifier of the evaluation rule being modified.
      */
     ruleId: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the evaluation process.
      */
     securityPolicyId: pulumi.Input<string>;
 }

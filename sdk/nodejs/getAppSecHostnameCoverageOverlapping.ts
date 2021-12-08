@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecHostnameCoverageOverlapping` data source to retrieve information about the configuration versions that contain a hostname also included in the current configuration version. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoverageoverlapping).
+ * **Scopes**: Security configuration; hostname
+ *
+ * Returns information about any other configuration versions that contain a hostname found in the current configuration version. The returned information is described in the [List hostname overlaps](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoverageoverlapping) section of the Application Security API.
+ *
+ * **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/hostname-coverage/overlapping?hostname={host}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoverageoverlapping)
  *
  * ## Example Usage
  *
@@ -15,11 +19,20 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const test = pulumi.output(akamai.getAppSecHostnameCoverageOverlapping({
- *     configId: 43253,
- *     hostname: "example.com",
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const test = configuration.then(configuration => akamai.getAppSecHostnameCoverageOverlapping({
+ *     configId: configuration.configId,
+ *     hostname: "documentation.akamai.com",
  * }));
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. JSON-formatted list of the overlap information.
+ * - `outputText`. Tabular report of the overlap information.
  */
 export function getAppSecHostnameCoverageOverlapping(args: GetAppSecHostnameCoverageOverlappingArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecHostnameCoverageOverlappingResult> {
     if (!opts) {
@@ -40,11 +53,11 @@ export function getAppSecHostnameCoverageOverlapping(args: GetAppSecHostnameCove
  */
 export interface GetAppSecHostnameCoverageOverlappingArgs {
     /**
-     * The configuration ID.
+     * . Unique identifier of the security configuration you want to return information for.
      */
     configId: number;
     /**
-     * The hostname for which to retrieve information.
+     * . Name of the host you want to return information for.
      */
     hostname: string;
 }
@@ -59,13 +72,7 @@ export interface GetAppSecHostnameCoverageOverlappingResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted list of the overlap information.
-     */
     readonly json: string;
-    /**
-     * A tabular display of the overlap information.
-     */
     readonly outputText: string;
 }
 
@@ -78,11 +85,11 @@ export function getAppSecHostnameCoverageOverlappingOutput(args: GetAppSecHostna
  */
 export interface GetAppSecHostnameCoverageOverlappingOutputArgs {
     /**
-     * The configuration ID.
+     * . Unique identifier of the security configuration you want to return information for.
      */
     configId: pulumi.Input<number>;
     /**
-     * The hostname for which to retrieve information.
+     * . Name of the host you want to return information for.
      */
     hostname: pulumi.Input<string>;
 }

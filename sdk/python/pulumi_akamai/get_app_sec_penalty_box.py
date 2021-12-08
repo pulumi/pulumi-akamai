@@ -43,9 +43,6 @@ class GetAppSecPenaltyBoxResult:
     @property
     @pulumi.getter
     def action(self) -> str:
-        """
-        The action for the penalty box: `alert`, `deny`, or `none`.
-        """
         return pulumi.get(self, "action")
 
     @property
@@ -56,9 +53,6 @@ class GetAppSecPenaltyBoxResult:
     @property
     @pulumi.getter
     def enabled(self) -> bool:
-        """
-        Either `true` or `false`, indicating whether penalty box protection is enabled.
-        """
         return pulumi.get(self, "enabled")
 
     @property
@@ -72,9 +66,6 @@ class GetAppSecPenaltyBoxResult:
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display of the `action` and `enabled` information.
-        """
         return pulumi.get(self, "output_text")
 
     @property
@@ -101,7 +92,11 @@ def get_app_sec_penalty_box(config_id: Optional[int] = None,
                             security_policy_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecPenaltyBoxResult:
     """
-    Use the `AppSecPenaltyBox` data source to retrieve the penalty box settings for a specified security policy.
+    **Scopes**: Security policy
+
+    Returns penalty box settings for the specified security policy. When using automated attack groups, and when the penalty box is enabled, clients that trigger an attack group are placed in the “penalty box.” That means that, for the next 10 minutes, all requests from that client are ignored.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/penalty-box](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getpenaltybox)
 
     ## Example Usage
 
@@ -111,17 +106,28 @@ def get_app_sec_penalty_box(config_id: Optional[int] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     penalty_box = akamai.get_app_sec_penalty_box(config_id=configuration.config_id,
-        security_policy_id=var["security_policy_id"])
+        security_policy_id="gms1_134637")
     pulumi.export("penaltyBoxAction", penalty_box.action)
     pulumi.export("penaltyBoxEnabled", penalty_box.enabled)
     pulumi.export("penaltyBoxText", penalty_box.output_text)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `action`. Action taken any time the penalty box is triggered. Valid values are:
+      - **alert**. Record the event.
+      - **deny**. The request is blocked.
+      - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
+      - **none**. Take no action.
+    - `enabled`. If **true**, penalty box protection is enabled. If **false**, penalty box protection is disabled.
+    - `output_text`. Tabular report of penalty box protection settings.
 
 
-    :param int config_id: The ID of the security configuration to use.
-    :param str security_policy_id: The ID of the security policy to use.
+    :param int config_id: . Unique identifier of the security configuration associated with the penalty box settings.
+    :param str security_policy_id: . Unique identifier of the security policy associated with the penalty box settings.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -146,7 +152,11 @@ def get_app_sec_penalty_box_output(config_id: Optional[pulumi.Input[int]] = None
                                    security_policy_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecPenaltyBoxResult]:
     """
-    Use the `AppSecPenaltyBox` data source to retrieve the penalty box settings for a specified security policy.
+    **Scopes**: Security policy
+
+    Returns penalty box settings for the specified security policy. When using automated attack groups, and when the penalty box is enabled, clients that trigger an attack group are placed in the “penalty box.” That means that, for the next 10 minutes, all requests from that client are ignored.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/penalty-box](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getpenaltybox)
 
     ## Example Usage
 
@@ -156,16 +166,27 @@ def get_app_sec_penalty_box_output(config_id: Optional[pulumi.Input[int]] = None
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     penalty_box = akamai.get_app_sec_penalty_box(config_id=configuration.config_id,
-        security_policy_id=var["security_policy_id"])
+        security_policy_id="gms1_134637")
     pulumi.export("penaltyBoxAction", penalty_box.action)
     pulumi.export("penaltyBoxEnabled", penalty_box.enabled)
     pulumi.export("penaltyBoxText", penalty_box.output_text)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `action`. Action taken any time the penalty box is triggered. Valid values are:
+      - **alert**. Record the event.
+      - **deny**. The request is blocked.
+      - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
+      - **none**. Take no action.
+    - `enabled`. If **true**, penalty box protection is enabled. If **false**, penalty box protection is disabled.
+    - `output_text`. Tabular report of penalty box protection settings.
 
 
-    :param int config_id: The ID of the security configuration to use.
-    :param str security_policy_id: The ID of the security policy to use.
+    :param int config_id: . Unique identifier of the security configuration associated with the penalty box settings.
+    :param str security_policy_id: . Unique identifier of the security policy associated with the penalty box settings.
     """
     ...

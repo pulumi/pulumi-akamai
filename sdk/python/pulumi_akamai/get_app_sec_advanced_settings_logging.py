@@ -53,17 +53,11 @@ class GetAppSecAdvancedSettingsLoggingResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        A JSON-formatted list of information about the logging settings.
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display showing the logging settings.
-        """
         return pulumi.get(self, "output_text")
 
     @property
@@ -89,7 +83,11 @@ def get_app_sec_advanced_settings_logging(config_id: Optional[int] = None,
                                           security_policy_id: Optional[str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecAdvancedSettingsLoggingResult:
     """
-    Use the `AppSecAdvancedSettingsLogging` data source to retrieve information about the HTTP header logging controls for a configuration. This operation applies at the configuration level, and therefore applies to all policies within a configuration. You may retrieve these settings for a particular policy by specifying the policy using the security_policy_id parameter. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethttpheaderloggingforaconfiguration).
+    **Scopes**: Security configuration; security policy
+
+    Returns information about your HTTP header logging controls. By default, information is returned for all the security policies in the configuration; however, you can return data for a single policy by using the `security_policy_id` parameter. The returned information is described in the [ConfigHeaderLog members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#a6d1c316) section of the Application Security API.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethttpheaderloggingforaconfiguration)
 
     ## Example Usage
 
@@ -99,19 +97,25 @@ def get_app_sec_advanced_settings_logging(config_id: Optional[int] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-    logging = akamai.get_app_sec_advanced_settings_logging(config_id=configuration.config_id)
-    pulumi.export("advancedSettingsLoggingOutput", logging.output_text)
-    pulumi.export("advancedSettingsLoggingJson", logging.json)
-    policy_override = akamai.get_app_sec_advanced_settings_logging(config_id=configuration.config_id,
-        security_policy_id=var["security_policy_id"])
-    pulumi.export("advancedSettingsPolicyLoggingOutput", policy_override.output_text)
-    pulumi.export("advancedSettingsPolicyLoggingJson", policy_override.json)
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
+    custom_rules = akamai.get_app_sec_custom_rules(config_id=configuration.config_id)
+    pulumi.export("customRulesOutputText", custom_rules.output_text)
+    pulumi.export("customRulesJson", custom_rules.json)
+    pulumi.export("customRulesConfigId", custom_rules.config_id)
+    specific_custom_rule = akamai.get_app_sec_custom_rules(config_id=configuration.config_id,
+        custom_rule_id=60029316)
+    pulumi.export("specificCustomRuleJson", specific_custom_rule.json)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `json`. JSON-formatted list of information about the logging settings.
+    - `output_text`. Tabular report showing the logging settings.
 
 
-    :param int config_id: The configuration ID.
-    :param str security_policy_id: The ID of the security policy to use.
+    :param int config_id: . Unique identifier of the security configuration associated with the logging settings.
+    :param str security_policy_id: . Unique identifier of the security policy associated with the logging settings. If not included, information is returned for all your security policies.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -135,7 +139,11 @@ def get_app_sec_advanced_settings_logging_output(config_id: Optional[pulumi.Inpu
                                                  security_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecAdvancedSettingsLoggingResult]:
     """
-    Use the `AppSecAdvancedSettingsLogging` data source to retrieve information about the HTTP header logging controls for a configuration. This operation applies at the configuration level, and therefore applies to all policies within a configuration. You may retrieve these settings for a particular policy by specifying the policy using the security_policy_id parameter. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethttpheaderloggingforaconfiguration).
+    **Scopes**: Security configuration; security policy
+
+    Returns information about your HTTP header logging controls. By default, information is returned for all the security policies in the configuration; however, you can return data for a single policy by using the `security_policy_id` parameter. The returned information is described in the [ConfigHeaderLog members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#a6d1c316) section of the Application Security API.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethttpheaderloggingforaconfiguration)
 
     ## Example Usage
 
@@ -145,18 +153,24 @@ def get_app_sec_advanced_settings_logging_output(config_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-    logging = akamai.get_app_sec_advanced_settings_logging(config_id=configuration.config_id)
-    pulumi.export("advancedSettingsLoggingOutput", logging.output_text)
-    pulumi.export("advancedSettingsLoggingJson", logging.json)
-    policy_override = akamai.get_app_sec_advanced_settings_logging(config_id=configuration.config_id,
-        security_policy_id=var["security_policy_id"])
-    pulumi.export("advancedSettingsPolicyLoggingOutput", policy_override.output_text)
-    pulumi.export("advancedSettingsPolicyLoggingJson", policy_override.json)
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
+    custom_rules = akamai.get_app_sec_custom_rules(config_id=configuration.config_id)
+    pulumi.export("customRulesOutputText", custom_rules.output_text)
+    pulumi.export("customRulesJson", custom_rules.json)
+    pulumi.export("customRulesConfigId", custom_rules.config_id)
+    specific_custom_rule = akamai.get_app_sec_custom_rules(config_id=configuration.config_id,
+        custom_rule_id=60029316)
+    pulumi.export("specificCustomRuleJson", specific_custom_rule.json)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `json`. JSON-formatted list of information about the logging settings.
+    - `output_text`. Tabular report showing the logging settings.
 
 
-    :param int config_id: The configuration ID.
-    :param str security_policy_id: The ID of the security policy to use.
+    :param int config_id: . Unique identifier of the security configuration associated with the logging settings.
+    :param str security_policy_id: . Unique identifier of the security policy associated with the logging settings. If not included, information is returned for all your security policies.
     """
     ...

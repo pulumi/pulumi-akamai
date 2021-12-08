@@ -10,7 +10,11 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// The `resource_akamai_appsec_eval_protect_host` resource allows you to move hostnames that you are evaluating to active protection. When you move a hostname from the evaluation hostnames list, it’s added to your security policy as a protected hostname.
+    /// **Scopes**: Security configuration
+    /// 
+    /// Moves hostnames being evaluated to active protection. When you move a hostname from the evaluation hostnames list that host is added to your security policy as a protected hostname and is removed from the collection of hosts being evaluated.
+    /// 
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/protect-eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putmoveevaluationhostnamestoprotection)
     /// 
     /// ## Example Usage
     /// 
@@ -26,7 +30,7 @@ namespace Pulumi.Akamai
     ///     {
     ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
     ///         {
-    ///             Name = @var.Security_configuration,
+    ///             Name = "Documentation",
     ///         }));
     ///         var evalHostnames = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecEvalHostnames.InvokeAsync(new Akamai.GetAppSecEvalHostnamesArgs
     ///         {
@@ -46,13 +50,13 @@ namespace Pulumi.Akamai
     public partial class AppSecEvalProtectHost : Pulumi.CustomResource
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration in evaluation mode.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// The evaluation hostnames to be moved to active protection.
+        /// . JSON array of the hostnames to be moved from the evaluation hostname list to the protected hostname list.
         /// </summary>
         [Output("hostnames")]
         public Output<ImmutableArray<string>> Hostnames { get; private set; } = null!;
@@ -104,7 +108,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecEvalProtectHostArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration in evaluation mode.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
@@ -113,7 +117,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _hostnames;
 
         /// <summary>
-        /// The evaluation hostnames to be moved to active protection.
+        /// . JSON array of the hostnames to be moved from the evaluation hostname list to the protected hostname list.
         /// </summary>
         public InputList<string> Hostnames
         {
@@ -129,7 +133,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecEvalProtectHostState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration in evaluation mode.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
@@ -138,7 +142,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _hostnames;
 
         /// <summary>
-        /// The evaluation hostnames to be moved to active protection.
+        /// . JSON array of the hostnames to be moved from the evaluation hostname list to the protected hostname list.
         /// </summary>
         public InputList<string> Hostnames
         {

@@ -10,47 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecAttackGroups` data source to list the action and condition-exception information for an attack
-// group or groups.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: &opt0,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		opt1 := _var.Attack_group
-// 		_, err = akamai.GetAppSecAttackGroups(ctx, &GetAppSecAttackGroupsArgs{
-// 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: _var.Security_policy_id,
-// 			AttackGroup:      &opt1,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("attackGroupAction", akamai_appsec_attack_groups.Attack_group.Attack_group_action)
-// 		ctx.Export("conditionException", akamai_appsec_attack_groups.Attack_group.Condition_exception)
-// 		ctx.Export("json", akamai_appsec_attack_groups.Attack_group.Json)
-// 		ctx.Export("outputText", akamai_appsec_attack_groups.Attack_group.Output_text)
-// 		return nil
-// 	})
-// }
-// ```
 func GetAppSecAttackGroups(ctx *pulumi.Context, args *GetAppSecAttackGroupsArgs, opts ...pulumi.InvokeOption) (*GetAppSecAttackGroupsResult, error) {
 	var rv GetAppSecAttackGroupsResult
 	err := ctx.Invoke("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", args, &rv, opts...)
@@ -62,29 +21,23 @@ func GetAppSecAttackGroups(ctx *pulumi.Context, args *GetAppSecAttackGroupsArgs,
 
 // A collection of arguments for invoking getAppSecAttackGroups.
 type GetAppSecAttackGroupsArgs struct {
-	// The ID of the attack group to use.
+	// . Unique name of the attack group you want to return information for. If not included, information is returned for all your attack groups.
 	AttackGroup *string `pulumi:"attackGroup"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the attack group.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the attack group.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // A collection of values returned by getAppSecAttackGroups.
 type GetAppSecAttackGroupsResult struct {
-	AttackGroup *string `pulumi:"attackGroup"`
-	// The attack group's action, either `alert`, `deny`, or `none`.
-	AttackGroupAction string `pulumi:"attackGroupAction"`
-	// The attack group's conditions and exceptions.
-	ConditionException string `pulumi:"conditionException"`
-	ConfigId           int    `pulumi:"configId"`
+	AttackGroup        *string `pulumi:"attackGroup"`
+	AttackGroupAction  string  `pulumi:"attackGroupAction"`
+	ConditionException string  `pulumi:"conditionException"`
+	ConfigId           int     `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted list of the action and condition-exception information for the specified attack
-	// group. This output is only generated if an attack group is specified.
-	Json string `pulumi:"json"`
-	// A tabular display showing, for the specified attack group or groups, the attack group's action and
-	// boolean values indicating whether conditions and exceptions are present.
+	Id               string `pulumi:"id"`
+	Json             string `pulumi:"json"`
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
@@ -100,11 +53,11 @@ func GetAppSecAttackGroupsOutput(ctx *pulumi.Context, args GetAppSecAttackGroups
 
 // A collection of arguments for invoking getAppSecAttackGroups.
 type GetAppSecAttackGroupsOutputArgs struct {
-	// The ID of the attack group to use.
+	// . Unique name of the attack group you want to return information for. If not included, information is returned for all your attack groups.
 	AttackGroup pulumi.StringPtrInput `pulumi:"attackGroup"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the attack group.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the attack group.
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 
@@ -131,12 +84,10 @@ func (o GetAppSecAttackGroupsResultOutput) AttackGroup() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v GetAppSecAttackGroupsResult) *string { return v.AttackGroup }).(pulumi.StringPtrOutput)
 }
 
-// The attack group's action, either `alert`, `deny`, or `none`.
 func (o GetAppSecAttackGroupsResultOutput) AttackGroupAction() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecAttackGroupsResult) string { return v.AttackGroupAction }).(pulumi.StringOutput)
 }
 
-// The attack group's conditions and exceptions.
 func (o GetAppSecAttackGroupsResultOutput) ConditionException() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecAttackGroupsResult) string { return v.ConditionException }).(pulumi.StringOutput)
 }
@@ -150,14 +101,10 @@ func (o GetAppSecAttackGroupsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecAttackGroupsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted list of the action and condition-exception information for the specified attack
-// group. This output is only generated if an attack group is specified.
 func (o GetAppSecAttackGroupsResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecAttackGroupsResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display showing, for the specified attack group or groups, the attack group's action and
-// boolean values indicating whether conditions and exceptions are present.
 func (o GetAppSecAttackGroupsResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecAttackGroupsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

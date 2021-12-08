@@ -18,9 +18,9 @@ class AppSecThreatIntelArgs:
                  threat_intel: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecThreatIntel resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[str] threat_intel: threat_intel - "on" or "off"
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
+        :param pulumi.Input[str] threat_intel: . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "security_policy_id", security_policy_id)
@@ -30,7 +30,7 @@ class AppSecThreatIntelArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -42,7 +42,7 @@ class AppSecThreatIntelArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -54,7 +54,7 @@ class AppSecThreatIntelArgs:
     @pulumi.getter(name="threatIntel")
     def threat_intel(self) -> pulumi.Input[str]:
         """
-        threat_intel - "on" or "off"
+        . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
         """
         return pulumi.get(self, "threat_intel")
 
@@ -71,9 +71,9 @@ class _AppSecThreatIntelState:
                  threat_intel: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecThreatIntel resources.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[str] threat_intel: threat_intel - "on" or "off"
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
+        :param pulumi.Input[str] threat_intel: . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -86,7 +86,7 @@ class _AppSecThreatIntelState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -98,7 +98,7 @@ class _AppSecThreatIntelState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -110,7 +110,7 @@ class _AppSecThreatIntelState:
     @pulumi.getter(name="threatIntel")
     def threat_intel(self) -> Optional[pulumi.Input[str]]:
         """
-        threat_intel - "on" or "off"
+        . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
         """
         return pulumi.get(self, "threat_intel")
 
@@ -129,8 +129,11 @@ class AppSecThreatIntel(pulumi.CustomResource):
                  threat_intel: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Use `AppSecThreatIntel` resource to update threat intelligence setting for a policy. Only applies to ASE Manual rulesets. Allowed values are on and off
-        __BETA__ This is Adaptive Security Engine(ASE) related data resource. Please contact your akamai representative if you want to learn more
+        **Scopes**: Security policy
+
+        Enables or disables threat intelligence for a security policy. This resource is only available to organizations running the Adaptive Security Engine (ASE) beta Please contact your Akamai representative for more information.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/threat-intel](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putthreatintelligence)
 
         ## Example Usage
 
@@ -140,18 +143,18 @@ class AppSecThreatIntel(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         threat_intel = akamai.AppSecThreatIntel("threatIntel",
             config_id=configuration.config_id,
-            security_policy_id=var["security_policy_id"],
-            threat_intel=var["threat_intel"])
+            security_policy_id="gms1_134637",
+            threat_intel="on")
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[str] threat_intel: threat_intel - "on" or "off"
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
+        :param pulumi.Input[str] threat_intel: . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
         """
         ...
     @overload
@@ -160,8 +163,11 @@ class AppSecThreatIntel(pulumi.CustomResource):
                  args: AppSecThreatIntelArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use `AppSecThreatIntel` resource to update threat intelligence setting for a policy. Only applies to ASE Manual rulesets. Allowed values are on and off
-        __BETA__ This is Adaptive Security Engine(ASE) related data resource. Please contact your akamai representative if you want to learn more
+        **Scopes**: Security policy
+
+        Enables or disables threat intelligence for a security policy. This resource is only available to organizations running the Adaptive Security Engine (ASE) beta Please contact your Akamai representative for more information.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/threat-intel](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putthreatintelligence)
 
         ## Example Usage
 
@@ -171,11 +177,11 @@ class AppSecThreatIntel(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         threat_intel = akamai.AppSecThreatIntel("threatIntel",
             config_id=configuration.config_id,
-            security_policy_id=var["security_policy_id"],
-            threat_intel=var["threat_intel"])
+            security_policy_id="gms1_134637",
+            threat_intel="on")
         ```
 
         :param str resource_name: The name of the resource.
@@ -237,9 +243,9 @@ class AppSecThreatIntel(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
-        :param pulumi.Input[str] threat_intel: threat_intel - "on" or "off"
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
+        :param pulumi.Input[str] threat_intel: . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -254,7 +260,7 @@ class AppSecThreatIntel(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -262,7 +268,7 @@ class AppSecThreatIntel(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -270,7 +276,7 @@ class AppSecThreatIntel(pulumi.CustomResource):
     @pulumi.getter(name="threatIntel")
     def threat_intel(self) -> pulumi.Output[str]:
         """
-        threat_intel - "on" or "off"
+        . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
         """
         return pulumi.get(self, "threat_intel")
 

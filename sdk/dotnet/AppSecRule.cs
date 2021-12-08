@@ -10,7 +10,11 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// Use the `akamai.AppSecRule` resource to create or modify a rule's action, conditions and exceptions. When the conditions are met, the rule’s actions are ignored and not applied to that specific traffic.
+    /// **Scopes**: Rule
+    /// 
+    /// Modifies a Kona Rule Set rule's action, conditions, and exceptions.
+    /// 
+    /// **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/{ruleId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleaction) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/{ruleId}/condition-exception](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception)
     /// 
     /// ## Example Usage
     /// 
@@ -27,14 +31,14 @@ namespace Pulumi.Akamai
     ///     {
     ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
     ///         {
-    ///             Name = @var.Security_configuration,
+    ///             Name = "Documentation",
     ///         }));
     ///         var rule = new Akamai.AppSecRule("rule", new Akamai.AppSecRuleArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = @var.Security_policy_id,
-    ///             RuleId = @var.Rule_id,
-    ///             RuleAction = @var.Action,
+    ///             SecurityPolicyId = "gms1_134637",
+    ///             RuleId = 60029316,
+    ///             RuleAction = "deny",
     ///             ConditionException = File.ReadAllText($"{path.Module}/condition_exception.json"),
     ///         });
     ///     }
@@ -46,31 +50,31 @@ namespace Pulumi.Akamai
     public partial class AppSecRule : Pulumi.CustomResource
     {
         /// <summary>
-        /// The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putconditionexception))
+        /// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
         /// </summary>
         [Output("conditionException")]
         public Output<string?> ConditionException { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only condition_exception can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
+        /// . Action to be taken anytime the rule is triggered. Allowed values are:
         /// </summary>
         [Output("ruleAction")]
         public Output<string?> RuleAction { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the rule to use.
+        /// . Unique identifier of the rule being modified.
         /// </summary>
         [Output("ruleId")]
         public Output<int> RuleId { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -122,31 +126,31 @@ namespace Pulumi.Akamai
     public sealed class AppSecRuleArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putconditionexception))
+        /// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
         /// </summary>
         [Input("conditionException")]
         public Input<string>? ConditionException { get; set; }
 
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only condition_exception can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
+        /// . Action to be taken anytime the rule is triggered. Allowed values are:
         /// </summary>
         [Input("ruleAction")]
         public Input<string>? RuleAction { get; set; }
 
         /// <summary>
-        /// The ID of the rule to use.
+        /// . Unique identifier of the rule being modified.
         /// </summary>
         [Input("ruleId", required: true)]
         public Input<int> RuleId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -159,31 +163,31 @@ namespace Pulumi.Akamai
     public sealed class AppSecRuleState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putconditionexception))
+        /// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
         /// </summary>
         [Input("conditionException")]
         public Input<string>? ConditionException { get; set; }
 
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. __ASE Beta__. if policy is in ASE_AUTO mode, only condition_exception can be modified, "ASE (Adaptive Security Engine) is currently in beta. Please contact your Akamai representative to learn more.
+        /// . Action to be taken anytime the rule is triggered. Allowed values are:
         /// </summary>
         [Input("ruleAction")]
         public Input<string>? RuleAction { get; set; }
 
         /// <summary>
-        /// The ID of the rule to use.
+        /// . Unique identifier of the rule being modified.
         /// </summary>
         [Input("ruleId")]
         public Input<int>? RuleId { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

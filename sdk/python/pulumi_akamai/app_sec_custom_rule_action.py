@@ -19,10 +19,14 @@ class AppSecCustomRuleActionArgs:
                  security_policy_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecCustomRuleAction resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] custom_rule_action: The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
-        :param pulumi.Input[int] custom_rule_id: The custom rule for which to apply the action.
-        :param pulumi.Input[str] security_policy_id: The security policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the custom rule action being modified.
+        :param pulumi.Input[str] custom_rule_action: . Action to be taken when the custom rule is invoked. Allowed values are:
+               - **alert**. Record the event.
+               - **deny**. Block the request.
+               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+               - **none**. Take no action.
+        :param pulumi.Input[int] custom_rule_id: . Unique identifier of the custom rule whose action is being modified.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the custom rule action being modified d.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "custom_rule_action", custom_rule_action)
@@ -33,7 +37,7 @@ class AppSecCustomRuleActionArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the custom rule action being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -45,7 +49,11 @@ class AppSecCustomRuleActionArgs:
     @pulumi.getter(name="customRuleAction")
     def custom_rule_action(self) -> pulumi.Input[str]:
         """
-        The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        . Action to be taken when the custom rule is invoked. Allowed values are:
+        - **alert**. Record the event.
+        - **deny**. Block the request.
+        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        - **none**. Take no action.
         """
         return pulumi.get(self, "custom_rule_action")
 
@@ -57,7 +65,7 @@ class AppSecCustomRuleActionArgs:
     @pulumi.getter(name="customRuleId")
     def custom_rule_id(self) -> pulumi.Input[int]:
         """
-        The custom rule for which to apply the action.
+        . Unique identifier of the custom rule whose action is being modified.
         """
         return pulumi.get(self, "custom_rule_id")
 
@@ -69,7 +77,7 @@ class AppSecCustomRuleActionArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
         """
-        The security policy to use.
+        . Unique identifier of the security policy associated with the custom rule action being modified d.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -87,10 +95,14 @@ class _AppSecCustomRuleActionState:
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecCustomRuleAction resources.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] custom_rule_action: The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
-        :param pulumi.Input[int] custom_rule_id: The custom rule for which to apply the action.
-        :param pulumi.Input[str] security_policy_id: The security policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the custom rule action being modified.
+        :param pulumi.Input[str] custom_rule_action: . Action to be taken when the custom rule is invoked. Allowed values are:
+               - **alert**. Record the event.
+               - **deny**. Block the request.
+               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+               - **none**. Take no action.
+        :param pulumi.Input[int] custom_rule_id: . Unique identifier of the custom rule whose action is being modified.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the custom rule action being modified d.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -105,7 +117,7 @@ class _AppSecCustomRuleActionState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the custom rule action being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -117,7 +129,11 @@ class _AppSecCustomRuleActionState:
     @pulumi.getter(name="customRuleAction")
     def custom_rule_action(self) -> Optional[pulumi.Input[str]]:
         """
-        The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        . Action to be taken when the custom rule is invoked. Allowed values are:
+        - **alert**. Record the event.
+        - **deny**. Block the request.
+        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        - **none**. Take no action.
         """
         return pulumi.get(self, "custom_rule_action")
 
@@ -129,7 +145,7 @@ class _AppSecCustomRuleActionState:
     @pulumi.getter(name="customRuleId")
     def custom_rule_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The custom rule for which to apply the action.
+        . Unique identifier of the custom rule whose action is being modified.
         """
         return pulumi.get(self, "custom_rule_id")
 
@@ -141,7 +157,7 @@ class _AppSecCustomRuleActionState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The security policy to use.
+        . Unique identifier of the security policy associated with the custom rule action being modified d.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -161,7 +177,11 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        The `AppSecCustomRuleAction` resource allows you to associate an action to a custom rule.
+        **Scopes**: Custom rule
+
+        Associates an action with a custom rule. Custom rules are rules that you define yourself and are not part of the Kona Rule Set.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/custom-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putactionruleid)
 
         ## Example Usage
 
@@ -171,10 +191,10 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         create_custom_rule_action = akamai.AppSecCustomRuleAction("createCustomRuleAction",
             config_id=configuration.config_id,
-            security_policy_id="crAP_75829",
+            security_policy_id="gms1_134637",
             custom_rule_id=12345,
             custom_rule_action="alert")
         pulumi.export("customRuleId", create_custom_rule_action.custom_rule_id)
@@ -182,10 +202,14 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] custom_rule_action: The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
-        :param pulumi.Input[int] custom_rule_id: The custom rule for which to apply the action.
-        :param pulumi.Input[str] security_policy_id: The security policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the custom rule action being modified.
+        :param pulumi.Input[str] custom_rule_action: . Action to be taken when the custom rule is invoked. Allowed values are:
+               - **alert**. Record the event.
+               - **deny**. Block the request.
+               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+               - **none**. Take no action.
+        :param pulumi.Input[int] custom_rule_id: . Unique identifier of the custom rule whose action is being modified.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the custom rule action being modified d.
         """
         ...
     @overload
@@ -194,7 +218,11 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
                  args: AppSecCustomRuleActionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        The `AppSecCustomRuleAction` resource allows you to associate an action to a custom rule.
+        **Scopes**: Custom rule
+
+        Associates an action with a custom rule. Custom rules are rules that you define yourself and are not part of the Kona Rule Set.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/custom-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putactionruleid)
 
         ## Example Usage
 
@@ -204,10 +232,10 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         create_custom_rule_action = akamai.AppSecCustomRuleAction("createCustomRuleAction",
             config_id=configuration.config_id,
-            security_policy_id="crAP_75829",
+            security_policy_id="gms1_134637",
             custom_rule_id=12345,
             custom_rule_action="alert")
         pulumi.export("customRuleId", create_custom_rule_action.custom_rule_id)
@@ -277,10 +305,14 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] custom_rule_action: The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
-        :param pulumi.Input[int] custom_rule_id: The custom rule for which to apply the action.
-        :param pulumi.Input[str] security_policy_id: The security policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the custom rule action being modified.
+        :param pulumi.Input[str] custom_rule_action: . Action to be taken when the custom rule is invoked. Allowed values are:
+               - **alert**. Record the event.
+               - **deny**. Block the request.
+               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+               - **none**. Take no action.
+        :param pulumi.Input[int] custom_rule_id: . Unique identifier of the custom rule whose action is being modified.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the custom rule action being modified d.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -296,7 +328,7 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the custom rule action being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -304,7 +336,11 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
     @pulumi.getter(name="customRuleAction")
     def custom_rule_action(self) -> pulumi.Output[str]:
         """
-        The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        . Action to be taken when the custom rule is invoked. Allowed values are:
+        - **alert**. Record the event.
+        - **deny**. Block the request.
+        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        - **none**. Take no action.
         """
         return pulumi.get(self, "custom_rule_action")
 
@@ -312,7 +348,7 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
     @pulumi.getter(name="customRuleId")
     def custom_rule_id(self) -> pulumi.Output[int]:
         """
-        The custom rule for which to apply the action.
+        . Unique identifier of the custom rule whose action is being modified.
         """
         return pulumi.get(self, "custom_rule_id")
 
@@ -320,7 +356,7 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
-        The security policy to use.
+        . Unique identifier of the security policy associated with the custom rule action being modified d.
         """
         return pulumi.get(self, "security_policy_id")
 

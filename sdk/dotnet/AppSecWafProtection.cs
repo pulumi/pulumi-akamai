@@ -10,7 +10,11 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// Use the `akamai.AppSecWafProtection` resource to enable or disable WAF protection for a given configuration and security policy.
+    /// **Scopes**: Security policy
+    /// 
+    /// Enables or disables Web Application Firewall (WAF) protection for a security policy.
+    /// 
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putprotections)
     /// 
     /// ## Example Usage
     /// 
@@ -26,42 +30,47 @@ namespace Pulumi.Akamai
     ///     {
     ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
     ///         {
-    ///             Name = @var.Security_configuration,
+    ///             Name = "Documentation",
     ///         }));
     ///         var protection = new Akamai.AppSecWafProtection("protection", new Akamai.AppSecWafProtectionArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = @var.Security_policy_id,
-    ///             Enabled = @var.Enabled,
+    ///             SecurityPolicyId = "gms1_134637",
+    ///             Enabled = true,
     ///         });
     ///     }
     /// 
     /// }
     /// ```
+    /// ## Output Options
+    /// 
+    /// The following options can be used to determine the information returned, and how that returned information is formatted:
+    /// 
+    /// - `output_text`. Tabular report showing the current protection settings.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecWafProtection:AppSecWafProtection")]
     public partial class AppSecWafProtection : Pulumi.CustomResource
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the WAF protection settings being modified.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// Whether to enable WAF controls: either `true` or `false`.
+        /// . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
         /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// A tabular display showing the current protection settings.
+        /// Text Export representation
         /// </summary>
         [Output("outputText")]
         public Output<string> OutputText { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the WAF protection settings being modified.
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -113,19 +122,19 @@ namespace Pulumi.Akamai
     public sealed class AppSecWafProtectionArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the WAF protection settings being modified.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// Whether to enable WAF controls: either `true` or `false`.
+        /// . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the WAF protection settings being modified.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -138,25 +147,25 @@ namespace Pulumi.Akamai
     public sealed class AppSecWafProtectionState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the WAF protection settings being modified.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// Whether to enable WAF controls: either `true` or `false`.
+        /// . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// A tabular display showing the current protection settings.
+        /// Text Export representation
         /// </summary>
         [Input("outputText")]
         public Input<string>? OutputText { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the WAF protection settings being modified.
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

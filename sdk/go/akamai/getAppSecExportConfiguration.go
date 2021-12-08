@@ -10,7 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecExportConfiguration` data source to retrieve comprehensive details about a security configuration version, including rate and security policies, rules, hostnames, and other settings. You can retrieve the entire set of information in JSON format, or a subset of the information in tabular format.
+// **Scopes**: Security configuration and version
+//
+// Returns comprehensive details about a security configuration, including rate policies, security policies, rules, hostnames, and match targets.
+//
+// **Related API Endpoint**: [/appsec/v1/export/configs/{configId}/versions/{versionNumber}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getconfigurationversionexport)
 //
 // ## Example Usage
 //
@@ -26,7 +30,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Akamai Tools"
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -50,6 +54,12 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `json`. Complete set of information about the specified security configuration version in JSON format. Includes the types available for the `search` parameter as well as additional fields such as `createDate` and `createdBy`.
+// - `outputText`. Tabular report showing the types of data specified in the `search` parameter. Valid only if the `search` parameter references at least one type.
 func GetAppSecExportConfiguration(ctx *pulumi.Context, args *GetAppSecExportConfigurationArgs, opts ...pulumi.InvokeOption) (*GetAppSecExportConfigurationResult, error) {
 	var rv GetAppSecExportConfigurationResult
 	err := ctx.Invoke("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", args, &rv, opts...)
@@ -61,19 +71,33 @@ func GetAppSecExportConfiguration(ctx *pulumi.Context, args *GetAppSecExportConf
 
 // A collection of arguments for invoking getAppSecExportConfiguration.
 type GetAppSecExportConfigurationArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration you want to return information for.
 	ConfigId int `pulumi:"configId"`
-	// A bracket-delimited list of quoted strings specifying the types of information to be retrieved and made available for display in the `outputText` format. The following types are available:
-	// * customRules
-	// * matchTargets
-	// * ratePolicies
-	// * reputationProfiles
-	// * rulesets
-	// * securityPolicies
-	// * selectableHosts
-	// * selectedHosts
+	// . JSON array of strings specifying the types of information to be retrieved. Allowed values include:
+	// > - **AdvancedSettingsLogging**
+	// > - **AdvancedSettingsPrefetch**
+	// > - **ApiRequestConstraints**
+	// > - **AttackGroup**
+	// > - **AttackGroupConditionException**
+	// > - **Eval**
+	// > - **EvalRuleConditionException**
+	// > - **CustomDeny**
+	// > - **CustomRule**
+	// > - **CustomRuleAction**
+	// > - **IPGeoFirewall**
+	// > - **MatchTarget**
+	// > - **PenaltyBox**
+	// > - **RatePolicy**
+	// > - **RatePolicyAction**
+	// > - **ReputationProfile**
+	// > - **ReputationProfileAction**
+	// > - **Rule**
+	// > - **RuleConditionException**
+	// > - **SecurityPolicy**
+	// > - **SiemSettings**
+	// > - **SlowPost**
 	Searches []string `pulumi:"searches"`
-	// The version number of the security configuration to use.
+	// . Version number of the security configuration.
 	Version int `pulumi:"version"`
 }
 
@@ -81,10 +105,8 @@ type GetAppSecExportConfigurationArgs struct {
 type GetAppSecExportConfigurationResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// The complete set of information about the specified security configuration version, in JSON format. This includes the types available for the `search` parameter, plus several additional fields such as createDate and createdBy.
-	Json string `pulumi:"json"`
-	// A tabular display showing the types of data specified in the `search` parameter. Included only if the `search` parameter specifies at least one type.
+	Id         string   `pulumi:"id"`
+	Json       string   `pulumi:"json"`
 	OutputText string   `pulumi:"outputText"`
 	Searches   []string `pulumi:"searches"`
 	Version    int      `pulumi:"version"`
@@ -101,19 +123,33 @@ func GetAppSecExportConfigurationOutput(ctx *pulumi.Context, args GetAppSecExpor
 
 // A collection of arguments for invoking getAppSecExportConfiguration.
 type GetAppSecExportConfigurationOutputArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration you want to return information for.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// A bracket-delimited list of quoted strings specifying the types of information to be retrieved and made available for display in the `outputText` format. The following types are available:
-	// * customRules
-	// * matchTargets
-	// * ratePolicies
-	// * reputationProfiles
-	// * rulesets
-	// * securityPolicies
-	// * selectableHosts
-	// * selectedHosts
+	// . JSON array of strings specifying the types of information to be retrieved. Allowed values include:
+	// > - **AdvancedSettingsLogging**
+	// > - **AdvancedSettingsPrefetch**
+	// > - **ApiRequestConstraints**
+	// > - **AttackGroup**
+	// > - **AttackGroupConditionException**
+	// > - **Eval**
+	// > - **EvalRuleConditionException**
+	// > - **CustomDeny**
+	// > - **CustomRule**
+	// > - **CustomRuleAction**
+	// > - **IPGeoFirewall**
+	// > - **MatchTarget**
+	// > - **PenaltyBox**
+	// > - **RatePolicy**
+	// > - **RatePolicyAction**
+	// > - **ReputationProfile**
+	// > - **ReputationProfileAction**
+	// > - **Rule**
+	// > - **RuleConditionException**
+	// > - **SecurityPolicy**
+	// > - **SiemSettings**
+	// > - **SlowPost**
 	Searches pulumi.StringArrayInput `pulumi:"searches"`
-	// The version number of the security configuration to use.
+	// . Version number of the security configuration.
 	Version pulumi.IntInput `pulumi:"version"`
 }
 
@@ -145,12 +181,10 @@ func (o GetAppSecExportConfigurationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecExportConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The complete set of information about the specified security configuration version, in JSON format. This includes the types available for the `search` parameter, plus several additional fields such as createDate and createdBy.
 func (o GetAppSecExportConfigurationResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecExportConfigurationResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display showing the types of data specified in the `search` parameter. Included only if the `search` parameter specifies at least one type.
 func (o GetAppSecExportConfigurationResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecExportConfigurationResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

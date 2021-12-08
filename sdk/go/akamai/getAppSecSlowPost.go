@@ -10,7 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecSlowPost` data source to retrieve the slow post protection settings for a given security configuration and policy.
+// **Scopes**: Security policy
+//
+// Returns the slow POST protection settings for the specified security configuration and policy. Slow POST protections help defend a site against attacks that try to tie up the site by using extremely slow requests and responses: the idea is to keep the site occupied waiting for these requests and responses to finish instead of being occupied with new (and legitimate) transactions.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/slow-post](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getslowpostprotectionsettings)
 //
 // ## Example Usage
 //
@@ -26,7 +30,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -35,7 +39,7 @@ import (
 // 		}
 // 		slowPost, err := akamai.LookupAppSecSlowPost(ctx, &GetAppSecSlowPostArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: _var.Security_policy_id,
+// 			SecurityPolicyId: "gms1_134637",
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -45,6 +49,17 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `outputText`. Tabular report including the following:
+//   - **ACTION**. Action taken any time slow POST protection is triggered. Valid values are:
+//     - **alert**. Record the event.
+//     - **abort**. Block the request.
+//   - **SLOW_RATE_THRESHOLD RATE**. Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
+//   - **SLOW_RATE_THRESHOLD PERIOD**. Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
+//   - **DURATION_THRESHOLD TIMEOUT**. Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in order to avoid triggering the specified action.
 func LookupAppSecSlowPost(ctx *pulumi.Context, args *LookupAppSecSlowPostArgs, opts ...pulumi.InvokeOption) (*LookupAppSecSlowPostResult, error) {
 	var rv LookupAppSecSlowPostResult
 	err := ctx.Invoke("akamai:index/getAppSecSlowPost:getAppSecSlowPost", args, &rv, opts...)
@@ -56,9 +71,9 @@ func LookupAppSecSlowPost(ctx *pulumi.Context, args *LookupAppSecSlowPostArgs, o
 
 // A collection of arguments for invoking getAppSecSlowPost.
 type LookupAppSecSlowPostArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the slow POST settings.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the security policy to use
+	// . Unique identifier of the security policy associated with the slow POST settings.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -66,9 +81,8 @@ type LookupAppSecSlowPostArgs struct {
 type LookupAppSecSlowPostResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string `pulumi:"id"`
-	Json string `pulumi:"json"`
-	// A tabular display including the following columns:
+	Id               string `pulumi:"id"`
+	Json             string `pulumi:"json"`
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
@@ -84,9 +98,9 @@ func LookupAppSecSlowPostOutput(ctx *pulumi.Context, args LookupAppSecSlowPostOu
 
 // A collection of arguments for invoking getAppSecSlowPost.
 type LookupAppSecSlowPostOutputArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the slow POST settings.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The ID of the security policy to use
+	// . Unique identifier of the security policy associated with the slow POST settings.
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 
@@ -122,7 +136,6 @@ func (o LookupAppSecSlowPostResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecSlowPostResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display including the following columns:
 func (o LookupAppSecSlowPostResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecSlowPostResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecContractsGroups` data source to retrieve information about the contracts and groups for your account. Each object contains the contract, groups associated with the contract, and whether Kona Site Defender or Web Application Protector is the product for that contract. You’ll need this information when you create a new security configuration or when you want to get a list of hostnames still available for use in a security policy. The information available via this data source is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf).
+ * **Scopes**: Contract; group
+ *
+ * Returns information about the contracts and groups associated with your account. Among other things, this information is required to create a new security configuration and to return a list of the hostnames available for use in a security policy. The returned information for this data source is described in the [List contracts and groups](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf) of the Application Security API.
+ *
+ * **Related API Endpoint**: [/appsec/v1/contracts-groups](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf)
  *
  * ## Example Usage
  *
@@ -16,14 +20,22 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const contractsGroups = akamai.getAppSecContractsGroups({
- *     contractid: _var.contractid,
- *     groupid: _var.groupid,
+ *     contractid: "5-2WA382",
+ *     groupid: 12198,
  * });
  * export const contractsGroupsList = contractsGroups.then(contractsGroups => contractsGroups.outputText);
  * export const contractsGroupsJson = contractsGroups.then(contractsGroups => contractsGroups.json);
  * export const contractGroupsDefaultContractid = contractsGroups.then(contractsGroups => contractsGroups.defaultContractid);
  * export const contractGroupsDefaultGroupid = contractsGroups.then(contractsGroups => contractsGroups.defaultGroupid);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. JSON-formatted list of contract and group information.
+ * - `outputText`. Tabular report of contract and group information.
+ * - `defaultContractid`. Default contract ID for the specified contract and group.
+ * - `defaultGroupid`. Default group ID for the specified contract and group.
  */
 export function getAppSecContractsGroups(args?: GetAppSecContractsGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecContractsGroupsResult> {
     args = args || {};
@@ -45,11 +57,11 @@ export function getAppSecContractsGroups(args?: GetAppSecContractsGroupsArgs, op
  */
 export interface GetAppSecContractsGroupsArgs {
     /**
-     * (Optional) The ID of a contract for which to retrieve information.
+     * . Unique identifier of an Akamai contract. If not included, information is returned for all the Akamai contracts associated with your account.
      */
     contractid?: string;
     /**
-     * (Optional) The ID of a group for which to retrieve information.
+     * . Unique identifier of a contract group. If not included, information is returned for all the groups associated with your account.
      */
     groupid?: number;
 }
@@ -58,33 +70,15 @@ export interface GetAppSecContractsGroupsArgs {
  * A collection of values returned by getAppSecContractsGroups.
  */
 export interface GetAppSecContractsGroupsResult {
-    /**
-     * (Optional) The ID of a contract for which to retrieve information.
-     */
     readonly contractid?: string;
-    /**
-     * The default contract ID for the specified contract and group.
-     */
     readonly defaultContractid: string;
-    /**
-     * The default group ID for the specified contract and group.
-     */
     readonly defaultGroupid: number;
-    /**
-     * (Optional) The ID of a group for which to retrieve information.
-     */
     readonly groupid?: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted list of the contract and group information.
-     */
     readonly json: string;
-    /**
-     * A tabular display showing the contract and group information.
-     */
     readonly outputText: string;
 }
 
@@ -97,11 +91,11 @@ export function getAppSecContractsGroupsOutput(args?: GetAppSecContractsGroupsOu
  */
 export interface GetAppSecContractsGroupsOutputArgs {
     /**
-     * (Optional) The ID of a contract for which to retrieve information.
+     * . Unique identifier of an Akamai contract. If not included, information is returned for all the Akamai contracts associated with your account.
      */
     contractid?: pulumi.Input<string>;
     /**
-     * (Optional) The ID of a group for which to retrieve information.
+     * . Unique identifier of a contract group. If not included, information is returned for all the groups associated with your account.
      */
     groupid?: pulumi.Input<number>;
 }

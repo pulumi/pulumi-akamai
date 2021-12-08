@@ -10,7 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// Use the `akamai.AppSecReputationProfile` resource to create or modify a reputation profile for a specific security configuration.
+    /// **Scopes**: Security policy
+    /// 
+    /// Creates or modifies a reputation profile.
+    /// Reputation profiles grade the security risk of an IP address based on previous activities associated with that address.
+    /// Depending on the reputation score and how your configuration has been set up, requests from a specific IP address can trigger an alert or even be blocked.
+    /// 
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/reputation-profiles](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles)
     /// 
     /// ## Example Usage
     /// 
@@ -27,40 +33,41 @@ namespace Pulumi.Akamai
     ///     {
     ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
     ///         {
-    ///             Name = @var.Security_configuration,
+    ///             Name = "Documentation",
     ///         }));
-    ///         // USE CASE: user wants to create a reputation profile for a given configuration and version, using a JSON definition
     ///         var reputationProfile = new Akamai.AppSecReputationProfile("reputationProfile", new Akamai.AppSecReputationProfileArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
     ///             ReputationProfile = File.ReadAllText($"{path.Module}/reputation_profile.json"),
     ///         });
-    ///         this.ReputationProfileId = akamai_appsec_reputation_profile.Reputation_profile_id;
+    ///         this.ReputationProfileId = reputationProfile.ReputationProfileId;
     ///     }
     /// 
     ///     [Output("reputationProfileId")]
     ///     public Output&lt;string&gt; ReputationProfileId { get; set; }
     /// }
     /// ```
+    /// ## Output Options
+    /// 
+    /// The following options can be used to determine the information returned, and how that returned information is formatted:
+    /// 
+    /// - `reputation_profile_id`. ID of the newly-created or newly-modified reputation profile.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecReputationProfile:AppSecReputationProfile")]
     public partial class AppSecReputationProfile : Pulumi.CustomResource
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the reputation profile being modified.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// The name of a file containing a JSON-formatted definition of the reputation profile. ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles))
+        /// . Path to a JSON file containing a definition of the reputation profile. You can view a sample JSON file in the [Create a reputation profile](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles) section of the Application Security API documentation.
         /// </summary>
         [Output("reputationProfile")]
         public Output<string> ReputationProfile { get; private set; } = null!;
 
-        /// <summary>
-        /// The ID of the newly created or modified reputation profile.
-        /// </summary>
         [Output("reputationProfileId")]
         public Output<int> ReputationProfileId { get; private set; } = null!;
 
@@ -111,13 +118,13 @@ namespace Pulumi.Akamai
     public sealed class AppSecReputationProfileArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the reputation profile being modified.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The name of a file containing a JSON-formatted definition of the reputation profile. ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles))
+        /// . Path to a JSON file containing a definition of the reputation profile. You can view a sample JSON file in the [Create a reputation profile](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles) section of the Application Security API documentation.
         /// </summary>
         [Input("reputationProfile", required: true)]
         public Input<string> ReputationProfile { get; set; } = null!;
@@ -130,20 +137,17 @@ namespace Pulumi.Akamai
     public sealed class AppSecReputationProfileState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the reputation profile being modified.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// The name of a file containing a JSON-formatted definition of the reputation profile. ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles))
+        /// . Path to a JSON file containing a definition of the reputation profile. You can view a sample JSON file in the [Create a reputation profile](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles) section of the Application Security API documentation.
         /// </summary>
         [Input("reputationProfile")]
         public Input<string>? ReputationProfile { get; set; }
 
-        /// <summary>
-        /// The ID of the newly created or modified reputation profile.
-        /// </summary>
         [Input("reputationProfileId")]
         public Input<int>? ReputationProfileId { get; set; }
 

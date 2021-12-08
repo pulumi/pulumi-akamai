@@ -13,8 +13,11 @@ namespace Pulumi.Akamai
     public static class GetAppSecEvalRules
     {
         /// <summary>
-        /// Use the `akamai.getAppSecEvalRules` data source to list the action and condition-exception information
-        /// for a rule or rules you want to evaluate.
+        /// **Scopes**: Security policy; evaluation rule
+        /// 
+        /// Returns the action and the condition-exception information for a rule or set of rules being used in evaluation mode.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getevalrules)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -32,18 +35,18 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var evalRule = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecEvalRules.InvokeAsync(new Akamai.GetAppSecEvalRulesArgs
         ///         {
         ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
-        ///             RuleId = @var.Rule_id,
+        ///             SecurityPolicyId = "gms1_134637",
+        ///             RuleId = 60029316,
         ///         })));
-        ///         this.EvalRuleAction = akamai_appsec_eval_rules.Eval_rule.Eval_rule_action;
-        ///         this.ConditionException = akamai_appsec_eval_rules.Eval_rule.Condition_exception;
-        ///         this.Json = akamai_appsec_eval_rules.Eval_rule.Json;
-        ///         this.OutputText = akamai_appsec_eval_rules.Eval_rule.Output_text;
+        ///         this.EvalRuleAction = evalRule.Apply(evalRule =&gt; evalRule.EvalRuleAction);
+        ///         this.ConditionException = evalRule.Apply(evalRule =&gt; evalRule.ConditionException);
+        ///         this.Json = evalRule.Apply(evalRule =&gt; evalRule.Json);
+        ///         this.OutputText = evalRule.Apply(evalRule =&gt; evalRule.OutputText);
         ///     }
         /// 
         ///     [Output("evalRuleAction")]
@@ -58,13 +61,28 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `eval_rule_action`. Action taken anytime the evaluation rule is triggered. Valid values are:
+        ///   - **alert**. Record the event,
+        ///   - **deny**. Reject the request.
+        ///   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
+        ///   - **none**. Take no action.
+        /// - `condition_exception`. Conditions and exceptions associated with the rule.
+        /// - `json`. JSON-formatted list of the action and the condition-exception information for the rule. This output is only generated if the `rule_id` argument is included.
+        /// - `output_text`. Tabular report showing the rule action as well as Boolean values indicating whether conditions and exceptions have been configured for the rule.
         /// </summary>
         public static Task<GetAppSecEvalRulesResult> InvokeAsync(GetAppSecEvalRulesArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalRulesResult>("akamai:index/getAppSecEvalRules:getAppSecEvalRules", args ?? new GetAppSecEvalRulesArgs(), options.WithVersion());
 
         /// <summary>
-        /// Use the `akamai.getAppSecEvalRules` data source to list the action and condition-exception information
-        /// for a rule or rules you want to evaluate.
+        /// **Scopes**: Security policy; evaluation rule
+        /// 
+        /// Returns the action and the condition-exception information for a rule or set of rules being used in evaluation mode.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getevalrules)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -82,18 +100,18 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var evalRule = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecEvalRules.InvokeAsync(new Akamai.GetAppSecEvalRulesArgs
         ///         {
         ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
-        ///             RuleId = @var.Rule_id,
+        ///             SecurityPolicyId = "gms1_134637",
+        ///             RuleId = 60029316,
         ///         })));
-        ///         this.EvalRuleAction = akamai_appsec_eval_rules.Eval_rule.Eval_rule_action;
-        ///         this.ConditionException = akamai_appsec_eval_rules.Eval_rule.Condition_exception;
-        ///         this.Json = akamai_appsec_eval_rules.Eval_rule.Json;
-        ///         this.OutputText = akamai_appsec_eval_rules.Eval_rule.Output_text;
+        ///         this.EvalRuleAction = evalRule.Apply(evalRule =&gt; evalRule.EvalRuleAction);
+        ///         this.ConditionException = evalRule.Apply(evalRule =&gt; evalRule.ConditionException);
+        ///         this.Json = evalRule.Apply(evalRule =&gt; evalRule.Json);
+        ///         this.OutputText = evalRule.Apply(evalRule =&gt; evalRule.OutputText);
         ///     }
         /// 
         ///     [Output("evalRuleAction")]
@@ -108,6 +126,18 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `eval_rule_action`. Action taken anytime the evaluation rule is triggered. Valid values are:
+        ///   - **alert**. Record the event,
+        ///   - **deny**. Reject the request.
+        ///   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
+        ///   - **none**. Take no action.
+        /// - `condition_exception`. Conditions and exceptions associated with the rule.
+        /// - `json`. JSON-formatted list of the action and the condition-exception information for the rule. This output is only generated if the `rule_id` argument is included.
+        /// - `output_text`. Tabular report showing the rule action as well as Boolean values indicating whether conditions and exceptions have been configured for the rule.
         /// </summary>
         public static Output<GetAppSecEvalRulesResult> Invoke(GetAppSecEvalRulesInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecEvalRulesResult>("akamai:index/getAppSecEvalRules:getAppSecEvalRules", args ?? new GetAppSecEvalRulesInvokeArgs(), options.WithVersion());
@@ -117,19 +147,19 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecEvalRulesArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration running in evaluation mode.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
         /// <summary>
-        /// The ID of the rule to use. If not specified, information about all rules will be returned.
+        /// . Unique identifier of the evaluation rule you want to return information for. If not included, information is returned for all your evaluation rules.
         /// </summary>
         [Input("ruleId")]
         public int? RuleId { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the evaluation rule.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
@@ -142,19 +172,19 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecEvalRulesInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration running in evaluation mode.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the rule to use. If not specified, information about all rules will be returned.
+        /// . Unique identifier of the evaluation rule you want to return information for. If not included, information is returned for all your evaluation rules.
         /// </summary>
         [Input("ruleId")]
         public Input<int>? RuleId { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the evaluation rule.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -168,28 +198,14 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetAppSecEvalRulesResult
     {
-        /// <summary>
-        /// The eval rule's conditions and exceptions.
-        /// </summary>
         public readonly string ConditionException;
         public readonly int ConfigId;
-        /// <summary>
-        /// The eval rule's action, either `alert`, `deny`, or `none`.
-        /// </summary>
         public readonly string EvalRuleAction;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A JSON-formatted list of the action and condition-exception information for the specified eval rule.
-        /// This output is only generated if an eval rule is specified.
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// A tabular display showing, for the specified eval rule or rules, the rule action and boolean values
-        /// indicating whether conditions and exceptions are present.
-        /// </summary>
         public readonly string OutputText;
         public readonly int? RuleId;
         public readonly string SecurityPolicyId;

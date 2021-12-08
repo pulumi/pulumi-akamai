@@ -10,7 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecReputationProfiles` data source to retrieve details about all reputation profiles, or a specific reputation profiles.
+// **Scopes**: Security configuration; reputation profile
+//
+// Returns information about your reputation profiles. Reputation profiles grade the security risk of an IP address based on previous activities associated with that address. Depending on the reputation score, and depending on how your configuration has been set up, requests from a specific IP address can trigger an alert, or even be blocked.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/reputation-profiles](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getreputationprofiles)
 //
 // ## Example Usage
 //
@@ -26,7 +30,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -41,7 +45,7 @@ import (
 // 		}
 // 		ctx.Export("reputationProfilesOutput", reputationProfiles.OutputText)
 // 		ctx.Export("reputationProfilesJson", reputationProfiles.Json)
-// 		opt1 := _var.Reputation_profile_id
+// 		opt1 := 12345
 // 		reputationProfile, err := akamai.GetAppSecReputationProfiles(ctx, &GetAppSecReputationProfilesArgs{
 // 			ConfigId:            configuration.ConfigId,
 // 			ReputationProfileId: &opt1,
@@ -55,6 +59,12 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `outputText`. Tabular report of the details about the specified reputation profile or profiles.
+// - `json`. JSON-formatted report of the details about the specified reputation profile or profiles.
 func GetAppSecReputationProfiles(ctx *pulumi.Context, args *GetAppSecReputationProfilesArgs, opts ...pulumi.InvokeOption) (*GetAppSecReputationProfilesResult, error) {
 	var rv GetAppSecReputationProfilesResult
 	err := ctx.Invoke("akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles", args, &rv, opts...)
@@ -66,9 +76,9 @@ func GetAppSecReputationProfiles(ctx *pulumi.Context, args *GetAppSecReputationP
 
 // A collection of arguments for invoking getAppSecReputationProfiles.
 type GetAppSecReputationProfilesArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the reputation profiles.
 	ConfigId int `pulumi:"configId"`
-	// The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
+	// . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
 	ReputationProfileId *int `pulumi:"reputationProfileId"`
 }
 
@@ -76,10 +86,8 @@ type GetAppSecReputationProfilesArgs struct {
 type GetAppSecReputationProfilesResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted display of the details about the indicated reputation profile or profiles.
-	Json string `pulumi:"json"`
-	// A tabular display of the details about the indicated reputation profile or profiles.
+	Id                  string `pulumi:"id"`
+	Json                string `pulumi:"json"`
 	OutputText          string `pulumi:"outputText"`
 	ReputationProfileId *int   `pulumi:"reputationProfileId"`
 }
@@ -95,9 +103,9 @@ func GetAppSecReputationProfilesOutput(ctx *pulumi.Context, args GetAppSecReputa
 
 // A collection of arguments for invoking getAppSecReputationProfiles.
 type GetAppSecReputationProfilesOutputArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the reputation profiles.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The ID of a given reputation profile. If not supplied, information about all reputation profiles is returned.
+	// . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
 	ReputationProfileId pulumi.IntPtrInput `pulumi:"reputationProfileId"`
 }
 
@@ -129,12 +137,10 @@ func (o GetAppSecReputationProfilesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecReputationProfilesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted display of the details about the indicated reputation profile or profiles.
 func (o GetAppSecReputationProfilesResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecReputationProfilesResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display of the details about the indicated reputation profile or profiles.
 func (o GetAppSecReputationProfilesResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecReputationProfilesResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

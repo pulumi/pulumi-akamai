@@ -62,8 +62,10 @@ def get_contracts(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCo
 
     ```python
     import pulumi
+    import pulumi_akamai as akamai
 
-    pulumi.export("propertyMatch", data["akamai_contracts"]["my-example"])
+    my_example = akamai.get_contracts()
+    pulumi.export("propertyMatch", my_example)
     ```
     ## Argument reference
 

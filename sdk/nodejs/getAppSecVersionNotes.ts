@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecVersionNodes` data source to retrieve the most recent version notes for a configuration.
+ * **Scopes**: Security configuration
+ *
+ * Returns the most recent version notes for a security configuration.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getversionnotes)
  *
  * ## Example Usage
  *
@@ -16,7 +20,7 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const versionNotes = configuration.then(configuration => akamai.getAppSecVersionNotes({
  *     configId: configuration.configId,
@@ -24,6 +28,12 @@ import * as utilities from "./utilities";
  * export const versionNotesText = versionNotes.then(versionNotes => versionNotes.outputText);
  * export const versionNotesJson = versionNotes.then(versionNotes => versionNotes.json);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. JSON-formatted list showing the version notes.
+ * - `outputText`. Tabular report showing the version notes.
  */
 export function getAppSecVersionNotes(args: GetAppSecVersionNotesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecVersionNotesResult> {
     if (!opts) {
@@ -43,7 +53,7 @@ export function getAppSecVersionNotes(args: GetAppSecVersionNotesArgs, opts?: pu
  */
 export interface GetAppSecVersionNotesArgs {
     /**
-     * The configuration ID to use.
+     * . Unique identifier of the security configuration you want to return information for.
      */
     configId: number;
 }
@@ -57,13 +67,7 @@ export interface GetAppSecVersionNotesResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted list showing the version notes.
-     */
     readonly json: string;
-    /**
-     * A tabular display showing the version notes.
-     */
     readonly outputText: string;
 }
 
@@ -76,7 +80,7 @@ export function getAppSecVersionNotesOutput(args: GetAppSecVersionNotesOutputArg
  */
 export interface GetAppSecVersionNotesOutputArgs {
     /**
-     * The configuration ID to use.
+     * . Unique identifier of the security configuration you want to return information for.
      */
     configId: pulumi.Input<number>;
 }

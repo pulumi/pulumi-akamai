@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecRateProtection` resource to enable or disable rate protection for a given configuration and security policy.
+ * **Scopes**: Security policy
+ *
+ * Enables or disables rate protection for a security policy.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putprotections)
  *
  * ## Example Usage
  *
@@ -16,14 +20,19 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const protection = new akamai.AppSecRateProtection("protection", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: _var.security_policy_id,
- *     enabled: _var.enabled,
+ *     securityPolicyId: "gms1_134637",
+ *     enabled: true,
  * });
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `outputText`. Tabular report showing the current protection settings.
  */
 export class AppSecRateProtection extends pulumi.CustomResource {
     /**
@@ -54,19 +63,19 @@ export class AppSecRateProtection extends pulumi.CustomResource {
     }
 
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the rate protection settings being modified.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * Whether to enable rate controls: either `true` or `false`.
+     * . Set to **true** to enable rate protection; set to **false** to disable rate protection.
      */
     public readonly enabled!: pulumi.Output<boolean>;
     /**
-     * A tabular display showing the current protection settings.
+     * Text Export representation
      */
     public /*out*/ readonly outputText!: pulumi.Output<string>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the rate protection settings being modified.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
@@ -115,19 +124,19 @@ export class AppSecRateProtection extends pulumi.CustomResource {
  */
 export interface AppSecRateProtectionState {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the rate protection settings being modified.
      */
     configId?: pulumi.Input<number>;
     /**
-     * Whether to enable rate controls: either `true` or `false`.
+     * . Set to **true** to enable rate protection; set to **false** to disable rate protection.
      */
     enabled?: pulumi.Input<boolean>;
     /**
-     * A tabular display showing the current protection settings.
+     * Text Export representation
      */
     outputText?: pulumi.Input<string>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the rate protection settings being modified.
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -137,15 +146,15 @@ export interface AppSecRateProtectionState {
  */
 export interface AppSecRateProtectionArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the rate protection settings being modified.
      */
     configId: pulumi.Input<number>;
     /**
-     * Whether to enable rate controls: either `true` or `false`.
+     * . Set to **true** to enable rate protection; set to **false** to disable rate protection.
      */
     enabled: pulumi.Input<boolean>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the rate protection settings being modified.
      */
     securityPolicyId: pulumi.Input<string>;
 }

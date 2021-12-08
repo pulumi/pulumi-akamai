@@ -41,17 +41,11 @@ class GetAppSecHostnameCoverageResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        A JSON-formatted list of the hostname coverage information.
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display of the hostname coverage information.
-        """
         return pulumi.get(self, "output_text")
 
 
@@ -68,7 +62,11 @@ class AwaitableGetAppSecHostnameCoverageResult(GetAppSecHostnameCoverageResult):
 
 def get_app_sec_hostname_coverage(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecHostnameCoverageResult:
     """
-    Use the `get_app_sec_hostname_coverage` data source to retrieve a list of hostnames in the account with their current protections, activation statuses, and other summary information. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#8eb23096).
+    **Scopes**: Individual account
+
+    Returns information about the hostnames associated with your account; the returned data includes the hostname's protections, activation status, and other summary information. This information is described in the [HostnameCoverage members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames) section of the Application Security API.
+
+    **Related API Endpoint**: [/appsec/v1/hostname-coverage](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoverage)
 
     ## Example Usage
 
@@ -78,11 +76,16 @@ def get_app_sec_hostname_coverage(opts: Optional[pulumi.InvokeOptions] = None) -
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
     hostname_coverage = akamai.get_app_sec_hostname_coverage()
     pulumi.export("hostnameCoverageListJson", hostname_coverage.json)
     pulumi.export("hostnameCoverageListOutput", hostname_coverage.output_text)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `json`. JSON-formatted list of the hostname coverage information.
+    - `output_text`. Tabular report of the hostname coverage information.
     """
     __args__ = dict()
     if opts is None:

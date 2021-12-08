@@ -11,7 +11,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecRateProtection` resource to enable or disable rate protection for a given configuration and security policy.
+// **Scopes**: Security policy
+//
+// Enables or disables rate protection for a security policy.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putprotections)
 //
 // ## Example Usage
 //
@@ -27,7 +31,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -36,8 +40,8 @@ import (
 // 		}
 // 		_, err = akamai.NewAppSecRateProtection(ctx, "protection", &akamai.AppSecRateProtectionArgs{
 // 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.Any(_var.Security_policy_id),
-// 			Enabled:          pulumi.Any(_var.Enabled),
+// 			SecurityPolicyId: pulumi.String("gms1_134637"),
+// 			Enabled:          pulumi.Bool(true),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -46,16 +50,21 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `outputText`. Tabular report showing the current protection settings.
 type AppSecRateProtection struct {
 	pulumi.CustomResourceState
 
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the rate protection settings being modified.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// Whether to enable rate controls: either `true` or `false`.
+	// . Set to **true** to enable rate protection; set to **false** to disable rate protection.
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// A tabular display showing the current protection settings.
+	// Text Export representation
 	OutputText pulumi.StringOutput `pulumi:"outputText"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the rate protection settings being modified.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
 
@@ -97,24 +106,24 @@ func GetAppSecRateProtection(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecRateProtection resources.
 type appSecRateProtectionState struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the rate protection settings being modified.
 	ConfigId *int `pulumi:"configId"`
-	// Whether to enable rate controls: either `true` or `false`.
+	// . Set to **true** to enable rate protection; set to **false** to disable rate protection.
 	Enabled *bool `pulumi:"enabled"`
-	// A tabular display showing the current protection settings.
+	// Text Export representation
 	OutputText *string `pulumi:"outputText"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the rate protection settings being modified.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppSecRateProtectionState struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the rate protection settings being modified.
 	ConfigId pulumi.IntPtrInput
-	// Whether to enable rate controls: either `true` or `false`.
+	// . Set to **true** to enable rate protection; set to **false** to disable rate protection.
 	Enabled pulumi.BoolPtrInput
-	// A tabular display showing the current protection settings.
+	// Text Export representation
 	OutputText pulumi.StringPtrInput
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the rate protection settings being modified.
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -123,21 +132,21 @@ func (AppSecRateProtectionState) ElementType() reflect.Type {
 }
 
 type appSecRateProtectionArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the rate protection settings being modified.
 	ConfigId int `pulumi:"configId"`
-	// Whether to enable rate controls: either `true` or `false`.
+	// . Set to **true** to enable rate protection; set to **false** to disable rate protection.
 	Enabled bool `pulumi:"enabled"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the rate protection settings being modified.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // The set of arguments for constructing a AppSecRateProtection resource.
 type AppSecRateProtectionArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the rate protection settings being modified.
 	ConfigId pulumi.IntInput
-	// Whether to enable rate controls: either `true` or `false`.
+	// . Set to **true** to enable rate protection; set to **false** to disable rate protection.
 	Enabled pulumi.BoolInput
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the rate protection settings being modified.
 	SecurityPolicyId pulumi.StringInput
 }
 

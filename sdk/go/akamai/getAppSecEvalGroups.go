@@ -10,48 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecEvalGroups` data source to list the action and condition-exception information for an evaluation attack
-// group or groups.
-// __BETA__ This is Adaptive Security Engine(ASE) related data source. Please contact your akamai representative if you want to learn more
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: &opt0,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		opt1 := _var.Attack_group
-// 		evalAttackGroup, err := akamai.GetAppSecEvalGroups(ctx, &GetAppSecEvalGroupsArgs{
-// 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: _var.Security_policy_id,
-// 			AttackGroup:      &opt1,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("evalAttackGroupAction", evalAttackGroup.AttackGroupAction)
-// 		ctx.Export("conditionException", evalAttackGroup.ConditionException)
-// 		ctx.Export("json", evalAttackGroup.Json)
-// 		ctx.Export("outputText", evalAttackGroup.OutputText)
-// 		return nil
-// 	})
-// }
-// ```
 func GetAppSecEvalGroups(ctx *pulumi.Context, args *GetAppSecEvalGroupsArgs, opts ...pulumi.InvokeOption) (*GetAppSecEvalGroupsResult, error) {
 	var rv GetAppSecEvalGroupsResult
 	err := ctx.Invoke("akamai:index/getAppSecEvalGroups:getAppSecEvalGroups", args, &rv, opts...)
@@ -63,29 +21,23 @@ func GetAppSecEvalGroups(ctx *pulumi.Context, args *GetAppSecEvalGroupsArgs, opt
 
 // A collection of arguments for invoking getAppSecEvalGroups.
 type GetAppSecEvalGroupsArgs struct {
-	// The ID of the eval attack group to use.
+	// . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
 	AttackGroup *string `pulumi:"attackGroup"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the evaluation attack group.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the evaluation attack group.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // A collection of values returned by getAppSecEvalGroups.
 type GetAppSecEvalGroupsResult struct {
-	AttackGroup *string `pulumi:"attackGroup"`
-	// The eval attack group's action, either `alert`, `d
-	AttackGroupAction string `pulumi:"attackGroupAction"`
-	// The eval attack group's conditions and exceptions.
-	ConditionException string `pulumi:"conditionException"`
-	ConfigId           int    `pulumi:"configId"`
+	AttackGroup        *string `pulumi:"attackGroup"`
+	AttackGroupAction  string  `pulumi:"attackGroupAction"`
+	ConditionException string  `pulumi:"conditionException"`
+	ConfigId           int     `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted list of the action and condition-exception information for the specified eval attack
-	// group. This output is only generated if an attack group is specified.
-	Json string `pulumi:"json"`
-	// A tabular display showing, for the specified eval attack group or groups, the eval attack group's action and
-	// boolean values indicating whether conditions and exceptions are present.
+	Id               string `pulumi:"id"`
+	Json             string `pulumi:"json"`
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
@@ -101,11 +53,11 @@ func GetAppSecEvalGroupsOutput(ctx *pulumi.Context, args GetAppSecEvalGroupsOutp
 
 // A collection of arguments for invoking getAppSecEvalGroups.
 type GetAppSecEvalGroupsOutputArgs struct {
-	// The ID of the eval attack group to use.
+	// . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
 	AttackGroup pulumi.StringPtrInput `pulumi:"attackGroup"`
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the evaluation attack group.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the evaluation attack group.
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 
@@ -132,12 +84,10 @@ func (o GetAppSecEvalGroupsResultOutput) AttackGroup() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAppSecEvalGroupsResult) *string { return v.AttackGroup }).(pulumi.StringPtrOutput)
 }
 
-// The eval attack group's action, either `alert`, `d
 func (o GetAppSecEvalGroupsResultOutput) AttackGroupAction() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecEvalGroupsResult) string { return v.AttackGroupAction }).(pulumi.StringOutput)
 }
 
-// The eval attack group's conditions and exceptions.
 func (o GetAppSecEvalGroupsResultOutput) ConditionException() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecEvalGroupsResult) string { return v.ConditionException }).(pulumi.StringOutput)
 }
@@ -151,14 +101,10 @@ func (o GetAppSecEvalGroupsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecEvalGroupsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted list of the action and condition-exception information for the specified eval attack
-// group. This output is only generated if an attack group is specified.
 func (o GetAppSecEvalGroupsResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecEvalGroupsResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display showing, for the specified eval attack group or groups, the eval attack group's action and
-// boolean values indicating whether conditions and exceptions are present.
 func (o GetAppSecEvalGroupsResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecEvalGroupsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

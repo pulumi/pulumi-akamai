@@ -10,7 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// The `resource_akamai_appsec_eval_hostnames` resource allows you to update the list of hostnames you want to evaluate for a configuration.
+    /// **Scopes**: Security configuration
+    /// 
+    /// Modifies the list of hostnames evaluated while a security configuration is in evaluation mode.
+    /// During evaluation mode, hosts take no action of any kind when responding to traffic.
+    /// Instead, these hosts simply maintain a record of the actions they *would* have taken if they had been responding to live traffic in your production network.
+    /// 
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames/eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevaluationhostnames)
     /// 
     /// ## Example Usage
     /// 
@@ -26,13 +32,17 @@ namespace Pulumi.Akamai
     ///     {
     ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
     ///         {
-    ///             Name = @var.Security_configuration,
+    ///             Name = "Documentation",
     ///         }));
-    ///         // USE CASE: user wants to specify the hostnames to evaluate
     ///         var evalHostnames = new Akamai.AppSecEvalHostnames("evalHostnames", new Akamai.AppSecEvalHostnamesArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Hostnames = @var.Hostnames,
+    ///             Hostnames = 
+    ///             {
+    ///                 "documentation.akamai.com",
+    ///                 "training.akamai.com",
+    ///                 "videos.akamai.com",
+    ///             },
     ///         });
     ///     }
     /// 
@@ -43,13 +53,13 @@ namespace Pulumi.Akamai
     public partial class AppSecEvalHostnames : Pulumi.CustomResource
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration in evaluation mode.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// A list of evaluation hostnames to be used for the specified configuration version.
+        /// . JSON array of hostnames to be used in the evaluation process. Note that this list replaces your existing list of evaluation hosts.
         /// </summary>
         [Output("hostnames")]
         public Output<ImmutableArray<string>> Hostnames { get; private set; } = null!;
@@ -101,7 +111,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecEvalHostnamesArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration in evaluation mode.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
@@ -110,7 +120,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _hostnames;
 
         /// <summary>
-        /// A list of evaluation hostnames to be used for the specified configuration version.
+        /// . JSON array of hostnames to be used in the evaluation process. Note that this list replaces your existing list of evaluation hosts.
         /// </summary>
         public InputList<string> Hostnames
         {
@@ -126,7 +136,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecEvalHostnamesState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration in evaluation mode.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
@@ -135,7 +145,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _hostnames;
 
         /// <summary>
-        /// A list of evaluation hostnames to be used for the specified configuration version.
+        /// . JSON array of hostnames to be used in the evaluation process. Note that this list replaces your existing list of evaluation hosts.
         /// </summary>
         public InputList<string> Hostnames
         {

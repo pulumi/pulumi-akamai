@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecSecurityPolicyProtections` data source to retrieve the protections in effect for a given security policy.
+ * **Scopes**: Security policy
+ *
+ * Returns information about the protections in effect for the specified security policy.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprotections)
  *
  * ## Example Usage
  *
@@ -16,11 +20,11 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const protections = configuration.then(configuration => akamai.getAppSecSecurityPolicyProtections({
  *     configId: configuration.configId,
- *     securityPolicyId: _var.security_policy_id,
+ *     securityPolicyId: "gms1_134637",
  * }));
  * export const protectionsJson = protections.then(protections => protections.json);
  * export const protectionsApplyApiConstraints = protections.then(protections => protections.applyApiConstraints);
@@ -31,6 +35,19 @@ import * as utilities from "./utilities";
  * export const protectionsApplyReputationControls = protections.then(protections => protections.applyReputationControls);
  * export const protectionsApplySlowPostControls = protections.then(protections => protections.applySlowPostControls);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned and how that returned information is formatted:
+ *
+ * - `applyApplicationLayerControls`. Returns **true** if application layer controls are enabled; returns **false** if they are not.
+ * - `applyNetworkLayerControls`. Returns **true** if network layer controls are enabled; returns **false** if they are not.
+ * - `applyRateControls`. Returns **true** if rate controls are enabled; returns **false** if they are not.
+ * - `applyReputationControls`. Returns **true** if reputation controls are enabled; returns **false** if they are not.
+ * - `applyBotmanControls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
+ * - `applyApiConstraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
+ * - `applySlowPostControls`. Returns **true** if slow POST controls are enabled; returns **false** if they are not.
+ * - `json`. JSON-formatted list showing the status of the protection settings.
+ * - `outputText`. Tabular report showing the status of the protection settings
  */
 export function getAppSecSecurityPolicyProtections(args: GetAppSecSecurityPolicyProtectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecSecurityPolicyProtectionsResult> {
     if (!opts) {
@@ -51,11 +68,11 @@ export function getAppSecSecurityPolicyProtections(args: GetAppSecSecurityPolicy
  */
 export interface GetAppSecSecurityPolicyProtectionsArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the security policy protections.
      */
     configId: number;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy you want to return protections information for.
      */
     securityPolicyId: string;
 }
@@ -64,46 +81,19 @@ export interface GetAppSecSecurityPolicyProtectionsArgs {
  * A collection of values returned by getAppSecSecurityPolicyProtections.
  */
 export interface GetAppSecSecurityPolicyProtectionsResult {
-    /**
-     * `true` or `false`, indicating whether API constraints are in effect.
-     */
     readonly applyApiConstraints: boolean;
-    /**
-     * `true` or `false`, indicating whether application layer controls are in effect.
-     */
     readonly applyApplicationLayerControls: boolean;
-    /**
-     * `true` or `false`, indicating whether botman controls are in effect.
-     */
     readonly applyBotmanControls: boolean;
-    /**
-     * `true` or `false`, indicating whether network layer controls are in effect.
-     */
     readonly applyNetworkLayerControls: boolean;
-    /**
-     * `true` or `false`, indicating whether rate controls are in effect.
-     */
     readonly applyRateControls: boolean;
-    /**
-     * `true` or `false`, indicating whether reputation controls are in effect.
-     */
     readonly applyReputationControls: boolean;
-    /**
-     * `true` or `false`, indicating whether slow post controls are in effect.
-     */
     readonly applySlowPostControls: boolean;
     readonly configId: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * a JSON-formatted list showing the status of the protection settings
-     */
     readonly json: string;
-    /**
-     * a tabular display showing the status of the protection settings
-     */
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
@@ -117,11 +107,11 @@ export function getAppSecSecurityPolicyProtectionsOutput(args: GetAppSecSecurity
  */
 export interface GetAppSecSecurityPolicyProtectionsOutputArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the security policy protections.
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy you want to return protections information for.
      */
     securityPolicyId: pulumi.Input<string>;
 }

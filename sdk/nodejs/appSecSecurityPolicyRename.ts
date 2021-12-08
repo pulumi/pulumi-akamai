@@ -5,25 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * The `akamai.AppSecSecurityPolicyRename` resource allows you to rename an existing security policy.
+ * **Scopes**: Security policy
  *
- * ## Example Usage
+ * Renames an existing security policy. Note that you can only change the name of the policy: once issued, the security policy ID can't be modified.
  *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
- * });
- * const securityPolicyRename = new akamai.AppSecSecurityPolicy("securityPolicyRename", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: _var.security_policy_id,
- *     securityPolicyName: _var.name,
- * });
- * ```
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsecuritypolicy)
  */
 export class AppSecSecurityPolicyRename extends pulumi.CustomResource {
     /**
@@ -54,15 +40,15 @@ export class AppSecSecurityPolicyRename extends pulumi.CustomResource {
     }
 
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the security policy being renamed.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * The ID of the security policy to be renamed.
+     * . Unique identifier of the security policy being renamed.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
     /**
-     * The new name to be given to the security policy.
+     * . New name to be given to the security policy.
      */
     public readonly securityPolicyName!: pulumi.Output<string>;
 
@@ -109,15 +95,15 @@ export class AppSecSecurityPolicyRename extends pulumi.CustomResource {
  */
 export interface AppSecSecurityPolicyRenameState {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the security policy being renamed.
      */
     configId?: pulumi.Input<number>;
     /**
-     * The ID of the security policy to be renamed.
+     * . Unique identifier of the security policy being renamed.
      */
     securityPolicyId?: pulumi.Input<string>;
     /**
-     * The new name to be given to the security policy.
+     * . New name to be given to the security policy.
      */
     securityPolicyName?: pulumi.Input<string>;
 }
@@ -127,15 +113,15 @@ export interface AppSecSecurityPolicyRenameState {
  */
 export interface AppSecSecurityPolicyRenameArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the security policy being renamed.
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of the security policy to be renamed.
+     * . Unique identifier of the security policy being renamed.
      */
     securityPolicyId: pulumi.Input<string>;
     /**
-     * The new name to be given to the security policy.
+     * . New name to be given to the security policy.
      */
     securityPolicyName: pulumi.Input<string>;
 }

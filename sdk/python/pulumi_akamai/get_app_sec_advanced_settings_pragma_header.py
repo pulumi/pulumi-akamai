@@ -53,17 +53,11 @@ class GetAppSecAdvancedSettingsPragmaHeaderResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        A JSON-formatted ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpragmaheaderpolicy)) list of information about the pragma header settings.
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display showing the pragma header settings.
-        """
         return pulumi.get(self, "output_text")
 
     @property
@@ -89,7 +83,13 @@ def get_app_sec_advanced_settings_pragma_header(config_id: Optional[int] = None,
                                                 security_policy_id: Optional[str] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecAdvancedSettingsPragmaHeaderResult:
     """
-    Use the `AppSecAdvancedSettingsPragmaHeader` data source to retrieve pragma header settings for a configuration or a security policy. Additional information is available [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getpragmaheaderconfiguration).
+    **Scopes**: Security configuration; security policy
+
+    Returns pragma header settings information. This HTTP header provides information about such things as: the edge routers used in a transaction; the Akamai IP addresses involved; information about whether a request was cached or not; and so on. By default, pragma headers are removed from all responses.
+
+    Additional information is available from the [PragmaHeader members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#64c92ba1) section of the Application Security API.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/pragma-header](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getpragmaheaderconfiguration)
 
     ## Example Usage
 
@@ -99,19 +99,25 @@ def get_app_sec_advanced_settings_pragma_header(config_id: Optional[int] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     pragma_header = akamai.get_app_sec_advanced_settings_pragma_header(config_id=configuration.config_id)
     pulumi.export("advancedSettingsPragmaHeaderOutput", pragma_header.output_text)
     pulumi.export("advancedSettingsPragmaHeaderJson", pragma_header.json)
     policy_pragma_header = akamai.get_app_sec_advanced_settings_pragma_header(config_id=configuration.config_id,
-        security_policy_id=var["security_policy_id"])
+        security_policy_id="gms1_134637")
     pulumi.export("advancedSettingsPolicyPragmaHeaderOutput", policy_pragma_header.output_text)
     pulumi.export("advancedSettingsPolicyPragmaHeaderJson", policy_pragma_header.json)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `json`. JSON-formatted list of information about the pragma header settings.
+    - `output_text`. Tabular report showing the pragma header settings.
 
 
-    :param int config_id: The configuration ID.
-    :param str security_policy_id: The ID of the security policy to use.
+    :param int config_id: . Unique identifier of the security configuration associated with the pragma header settings.
+    :param str security_policy_id: . Unique identifier of the security policy associated with the pragma header settings. If not included, information is returned for all your security policies.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -135,7 +141,13 @@ def get_app_sec_advanced_settings_pragma_header_output(config_id: Optional[pulum
                                                        security_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecAdvancedSettingsPragmaHeaderResult]:
     """
-    Use the `AppSecAdvancedSettingsPragmaHeader` data source to retrieve pragma header settings for a configuration or a security policy. Additional information is available [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getpragmaheaderconfiguration).
+    **Scopes**: Security configuration; security policy
+
+    Returns pragma header settings information. This HTTP header provides information about such things as: the edge routers used in a transaction; the Akamai IP addresses involved; information about whether a request was cached or not; and so on. By default, pragma headers are removed from all responses.
+
+    Additional information is available from the [PragmaHeader members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#64c92ba1) section of the Application Security API.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/pragma-header](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getpragmaheaderconfiguration)
 
     ## Example Usage
 
@@ -145,18 +157,24 @@ def get_app_sec_advanced_settings_pragma_header_output(config_id: Optional[pulum
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     pragma_header = akamai.get_app_sec_advanced_settings_pragma_header(config_id=configuration.config_id)
     pulumi.export("advancedSettingsPragmaHeaderOutput", pragma_header.output_text)
     pulumi.export("advancedSettingsPragmaHeaderJson", pragma_header.json)
     policy_pragma_header = akamai.get_app_sec_advanced_settings_pragma_header(config_id=configuration.config_id,
-        security_policy_id=var["security_policy_id"])
+        security_policy_id="gms1_134637")
     pulumi.export("advancedSettingsPolicyPragmaHeaderOutput", policy_pragma_header.output_text)
     pulumi.export("advancedSettingsPolicyPragmaHeaderJson", policy_pragma_header.json)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `json`. JSON-formatted list of information about the pragma header settings.
+    - `output_text`. Tabular report showing the pragma header settings.
 
 
-    :param int config_id: The configuration ID.
-    :param str security_policy_id: The ID of the security policy to use.
+    :param int config_id: . Unique identifier of the security configuration associated with the pragma header settings.
+    :param str security_policy_id: . Unique identifier of the security policy associated with the pragma header settings. If not included, information is returned for all your security policies.
     """
     ...

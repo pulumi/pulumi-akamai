@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * The `akamai.AppSecMatchTarget` resource allows you to create or modify a match target associated with a given security configuration.
+ * **Scopes**: Security configuration
+ *
+ * Creates a match target associated with a security configuration. Match targets determine which security policy should apply to an API, hostname or path.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)
  *
  * ## Example Usage
  *
@@ -17,13 +21,18 @@ import * as utilities from "./utilities";
  * import * from "fs";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: "Akamai Tools",
+ *     name: "Documentation",
  * });
  * const matchTarget = new akamai.AppSecMatchTarget("matchTarget", {
  *     configId: configuration.then(configuration => configuration.configId),
  *     matchTarget: fs.readFileSync(`${path.module}/match_targets.json`),
  * });
  * ```
+ * ## Output Options
+ *
+ * In addition to the arguments above, the following attribute is exported:
+ *
+ * - `matchTargetId`. ID of the match target.
  */
 export class AppSecMatchTarget extends pulumi.CustomResource {
     /**
@@ -54,16 +63,13 @@ export class AppSecMatchTarget extends pulumi.CustomResource {
     }
 
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the match target being modified.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
+     * . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
      */
     public readonly matchTarget!: pulumi.Output<string>;
-    /**
-     * The ID of the match target.
-     */
     public /*out*/ readonly matchTargetId!: pulumi.Output<number>;
 
     /**
@@ -106,16 +112,13 @@ export class AppSecMatchTarget extends pulumi.CustomResource {
  */
 export interface AppSecMatchTargetState {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the match target being modified.
      */
     configId?: pulumi.Input<number>;
     /**
-     * The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
+     * . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
      */
     matchTarget?: pulumi.Input<string>;
-    /**
-     * The ID of the match target.
-     */
     matchTargetId?: pulumi.Input<number>;
 }
 
@@ -124,11 +127,11 @@ export interface AppSecMatchTargetState {
  */
 export interface AppSecMatchTargetArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the match target being modified.
      */
     configId: pulumi.Input<number>;
     /**
-     * The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
+     * . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
      */
     matchTarget: pulumi.Input<string>;
 }

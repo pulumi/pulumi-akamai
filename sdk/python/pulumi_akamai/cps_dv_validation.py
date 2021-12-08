@@ -94,7 +94,7 @@ class CpsDvValidation(pulumi.CustomResource):
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        Once you complete the Let’s Encrypt challenges, optionally use the `CpsDvValidation` resource to send the acknowledgement to CPS and inform it that tokens are ready for validation. You can also wait for CPS to check for the tokens, which it does on a regular schedule. Next, CPS automatically deploys the certificate on Staging, and eventually on the Production network.
+        Once you complete the Let's Encrypt challenges, optionally use the `CpsDvValidation` resource to send the acknowledgement to CPS and inform it that tokens are ready for validation. You can also wait for CPS to check for the tokens, which it does on a regular schedule. Next, CPS automatically deploys the certificate on Staging, and eventually on the Production network.
 
         ## Example Usage
 
@@ -129,7 +129,7 @@ class CpsDvValidation(pulumi.CustomResource):
                  args: CpsDvValidationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Once you complete the Let’s Encrypt challenges, optionally use the `CpsDvValidation` resource to send the acknowledgement to CPS and inform it that tokens are ready for validation. You can also wait for CPS to check for the tokens, which it does on a regular schedule. Next, CPS automatically deploys the certificate on Staging, and eventually on the Production network.
+        Once you complete the Let's Encrypt challenges, optionally use the `CpsDvValidation` resource to send the acknowledgement to CPS and inform it that tokens are ready for validation. You can also wait for CPS to check for the tokens, which it does on a regular schedule. Next, CPS automatically deploys the certificate on Staging, and eventually on the Production network.
 
         ## Example Usage
 

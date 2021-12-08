@@ -13,7 +13,11 @@ namespace Pulumi.Akamai
     public static class GetAppSecFailoverHostnames
     {
         /// <summary>
-        /// Use the `akamai.getAppSecFailoverHostnames` data source to retrieve a list of the failover hostnames in a configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames).
+        /// **Scopes**: Security configuration
+        /// 
+        /// Returns a list of the failover hostnames in a configuration. The returned information is described in the [List failover hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames) section of the Application Security API.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/failover-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -31,7 +35,7 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var failoverHostnamesAppSecFailoverHostnames = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecFailoverHostnames.InvokeAsync(new Akamai.GetAppSecFailoverHostnamesArgs
         ///         {
@@ -52,12 +56,22 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `hostnames`. List of the failover hostnames.
+        /// - `json`. JSON-formatted list of the failover hostnames.
         /// </summary>
         public static Task<GetAppSecFailoverHostnamesResult> InvokeAsync(GetAppSecFailoverHostnamesArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecFailoverHostnamesResult>("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", args ?? new GetAppSecFailoverHostnamesArgs(), options.WithVersion());
 
         /// <summary>
-        /// Use the `akamai.getAppSecFailoverHostnames` data source to retrieve a list of the failover hostnames in a configuration. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames).
+        /// **Scopes**: Security configuration
+        /// 
+        /// Returns a list of the failover hostnames in a configuration. The returned information is described in the [List failover hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames) section of the Application Security API.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/failover-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -75,7 +89,7 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var failoverHostnamesAppSecFailoverHostnames = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecFailoverHostnames.InvokeAsync(new Akamai.GetAppSecFailoverHostnamesArgs
         ///         {
@@ -96,6 +110,12 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `hostnames`. List of the failover hostnames.
+        /// - `json`. JSON-formatted list of the failover hostnames.
         /// </summary>
         public static Output<GetAppSecFailoverHostnamesResult> Invoke(GetAppSecFailoverHostnamesInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecFailoverHostnamesResult>("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", args ?? new GetAppSecFailoverHostnamesInvokeArgs(), options.WithVersion());
@@ -105,7 +125,7 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecFailoverHostnamesArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the failover hosts.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
@@ -118,7 +138,7 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecFailoverHostnamesInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the failover hosts.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
@@ -133,21 +153,12 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecFailoverHostnamesResult
     {
         public readonly int ConfigId;
-        /// <summary>
-        /// A list of the failover hostnames.
-        /// </summary>
         public readonly ImmutableArray<string> Hostnames;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A JSON-formatted list of the failover hostnames.
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// A tabular display showing the failover hostnames.
-        /// </summary>
         public readonly string OutputText;
 
         [OutputConstructor]

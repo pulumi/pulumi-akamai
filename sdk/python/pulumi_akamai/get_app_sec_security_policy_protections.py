@@ -61,57 +61,36 @@ class GetAppSecSecurityPolicyProtectionsResult:
     @property
     @pulumi.getter(name="applyApiConstraints")
     def apply_api_constraints(self) -> bool:
-        """
-        `true` or `false`, indicating whether API constraints are in effect.
-        """
         return pulumi.get(self, "apply_api_constraints")
 
     @property
     @pulumi.getter(name="applyApplicationLayerControls")
     def apply_application_layer_controls(self) -> bool:
-        """
-        `true` or `false`, indicating whether application layer controls are in effect.
-        """
         return pulumi.get(self, "apply_application_layer_controls")
 
     @property
     @pulumi.getter(name="applyBotmanControls")
     def apply_botman_controls(self) -> bool:
-        """
-        `true` or `false`, indicating whether botman controls are in effect.
-        """
         return pulumi.get(self, "apply_botman_controls")
 
     @property
     @pulumi.getter(name="applyNetworkLayerControls")
     def apply_network_layer_controls(self) -> bool:
-        """
-        `true` or `false`, indicating whether network layer controls are in effect.
-        """
         return pulumi.get(self, "apply_network_layer_controls")
 
     @property
     @pulumi.getter(name="applyRateControls")
     def apply_rate_controls(self) -> bool:
-        """
-        `true` or `false`, indicating whether rate controls are in effect.
-        """
         return pulumi.get(self, "apply_rate_controls")
 
     @property
     @pulumi.getter(name="applyReputationControls")
     def apply_reputation_controls(self) -> bool:
-        """
-        `true` or `false`, indicating whether reputation controls are in effect.
-        """
         return pulumi.get(self, "apply_reputation_controls")
 
     @property
     @pulumi.getter(name="applySlowPostControls")
     def apply_slow_post_controls(self) -> bool:
-        """
-        `true` or `false`, indicating whether slow post controls are in effect.
-        """
         return pulumi.get(self, "apply_slow_post_controls")
 
     @property
@@ -130,17 +109,11 @@ class GetAppSecSecurityPolicyProtectionsResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        a JSON-formatted list showing the status of the protection settings
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        a tabular display showing the status of the protection settings
-        """
         return pulumi.get(self, "output_text")
 
     @property
@@ -173,7 +146,11 @@ def get_app_sec_security_policy_protections(config_id: Optional[int] = None,
                                             security_policy_id: Optional[str] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecSecurityPolicyProtectionsResult:
     """
-    Use the `get_app_sec_security_policy_protections` data source to retrieve the protections in effect for a given security policy.
+    **Scopes**: Security policy
+
+    Returns information about the protections in effect for the specified security policy.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprotections)
 
     ## Example Usage
 
@@ -183,9 +160,9 @@ def get_app_sec_security_policy_protections(config_id: Optional[int] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     protections = akamai.get_app_sec_security_policy_protections(config_id=configuration.config_id,
-        security_policy_id=var["security_policy_id"])
+        security_policy_id="gms1_134637")
     pulumi.export("protectionsJson", protections.json)
     pulumi.export("protectionsApplyApiConstraints", protections.apply_api_constraints)
     pulumi.export("protectionsApplyApplicationLayerControls", protections.apply_application_layer_controls)
@@ -195,10 +172,23 @@ def get_app_sec_security_policy_protections(config_id: Optional[int] = None,
     pulumi.export("protectionsApplyReputationControls", protections.apply_reputation_controls)
     pulumi.export("protectionsApplySlowPostControls", protections.apply_slow_post_controls)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned and how that returned information is formatted:
+
+    - `apply_application_layer_controls`. Returns **true** if application layer controls are enabled; returns **false** if they are not.
+    - `apply_network_layer_controls`. Returns **true** if network layer controls are enabled; returns **false** if they are not.
+    - `apply_rate_controls`. Returns **true** if rate controls are enabled; returns **false** if they are not.
+    - `apply_reputation_controls`. Returns **true** if reputation controls are enabled; returns **false** if they are not.
+    - `apply_botman_controls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
+    - `apply_api_constraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
+    - `apply_slow_post_controls`. Returns **true** if slow POST controls are enabled; returns **false** if they are not.
+    - `json`. JSON-formatted list showing the status of the protection settings.
+    - `output_text`. Tabular report showing the status of the protection settings
 
 
-    :param int config_id: The ID of the security configuration to use.
-    :param str security_policy_id: The ID of the security policy to use.
+    :param int config_id: . Unique identifier of the security configuration associated with the security policy protections.
+    :param str security_policy_id: . Unique identifier of the security policy you want to return protections information for.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -229,7 +219,11 @@ def get_app_sec_security_policy_protections_output(config_id: Optional[pulumi.In
                                                    security_policy_id: Optional[pulumi.Input[str]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecSecurityPolicyProtectionsResult]:
     """
-    Use the `get_app_sec_security_policy_protections` data source to retrieve the protections in effect for a given security policy.
+    **Scopes**: Security policy
+
+    Returns information about the protections in effect for the specified security policy.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprotections)
 
     ## Example Usage
 
@@ -239,9 +233,9 @@ def get_app_sec_security_policy_protections_output(config_id: Optional[pulumi.In
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     protections = akamai.get_app_sec_security_policy_protections(config_id=configuration.config_id,
-        security_policy_id=var["security_policy_id"])
+        security_policy_id="gms1_134637")
     pulumi.export("protectionsJson", protections.json)
     pulumi.export("protectionsApplyApiConstraints", protections.apply_api_constraints)
     pulumi.export("protectionsApplyApplicationLayerControls", protections.apply_application_layer_controls)
@@ -251,9 +245,22 @@ def get_app_sec_security_policy_protections_output(config_id: Optional[pulumi.In
     pulumi.export("protectionsApplyReputationControls", protections.apply_reputation_controls)
     pulumi.export("protectionsApplySlowPostControls", protections.apply_slow_post_controls)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned and how that returned information is formatted:
+
+    - `apply_application_layer_controls`. Returns **true** if application layer controls are enabled; returns **false** if they are not.
+    - `apply_network_layer_controls`. Returns **true** if network layer controls are enabled; returns **false** if they are not.
+    - `apply_rate_controls`. Returns **true** if rate controls are enabled; returns **false** if they are not.
+    - `apply_reputation_controls`. Returns **true** if reputation controls are enabled; returns **false** if they are not.
+    - `apply_botman_controls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
+    - `apply_api_constraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
+    - `apply_slow_post_controls`. Returns **true** if slow POST controls are enabled; returns **false** if they are not.
+    - `json`. JSON-formatted list showing the status of the protection settings.
+    - `output_text`. Tabular report showing the status of the protection settings
 
 
-    :param int config_id: The ID of the security configuration to use.
-    :param str security_policy_id: The ID of the security policy to use.
+    :param int config_id: . Unique identifier of the security configuration associated with the security policy protections.
+    :param str security_policy_id: . Unique identifier of the security policy you want to return protections information for.
     """
     ...

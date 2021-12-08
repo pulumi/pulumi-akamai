@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecSlowPost` data source to update the slow post protection settings for a given security configuration and policy.
+ * **Scopes**: Security policy
+ *
+ * Modifies slow POST protection settings for a security configuration and security policy. Slow POST protections help defend a site against attacks that try to tie up the site by using extremely slow requests and responses.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/slow-post](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putslowpostprotectionsettings)
  *
  * ## Example Usage
  *
@@ -16,11 +20,11 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const slowPost = new akamai.AppSecSlowPost("slowPost", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: _var.security_policy_id,
+ *     securityPolicyId: "gms1_134637",
  *     slowRateAction: "alert",
  *     slowRateThresholdRate: 10,
  *     slowRateThresholdPeriod: 30,
@@ -57,27 +61,29 @@ export class AppSecSlowPost extends pulumi.CustomResource {
     }
 
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the slow POST settings being modified.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * The time in seconds before the first eight kilobytes of the POST body must be received to avoid triggering the specified `action`.
+     * . Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in to avoid triggering the specified action.
      */
     public readonly durationThresholdTimeout!: pulumi.Output<number | undefined>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the slow POST settings being modified.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
     /**
-     * The action that the rule should trigger (either `alert` or `abort`).
+     * . Action to be taken if slow POST protection is triggered. Allowed values are:
+     * - **alert**. Record the event.
+     * - **abort**. Block the request.
      */
     public readonly slowRateAction!: pulumi.Output<string>;
     /**
-     * The slow rate period value: the amount of time in seconds that the server should accept a request to determine whether a POST request is too slow.
+     * . Amount of time (in seconds) that the server should allow a request before marking the request as being too slow.
      */
     public readonly slowRateThresholdPeriod!: pulumi.Output<number | undefined>;
     /**
-     * The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
+     * . Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
      */
     public readonly slowRateThresholdRate!: pulumi.Output<number | undefined>;
 
@@ -130,27 +136,29 @@ export class AppSecSlowPost extends pulumi.CustomResource {
  */
 export interface AppSecSlowPostState {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the slow POST settings being modified.
      */
     configId?: pulumi.Input<number>;
     /**
-     * The time in seconds before the first eight kilobytes of the POST body must be received to avoid triggering the specified `action`.
+     * . Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in to avoid triggering the specified action.
      */
     durationThresholdTimeout?: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the slow POST settings being modified.
      */
     securityPolicyId?: pulumi.Input<string>;
     /**
-     * The action that the rule should trigger (either `alert` or `abort`).
+     * . Action to be taken if slow POST protection is triggered. Allowed values are:
+     * - **alert**. Record the event.
+     * - **abort**. Block the request.
      */
     slowRateAction?: pulumi.Input<string>;
     /**
-     * The slow rate period value: the amount of time in seconds that the server should accept a request to determine whether a POST request is too slow.
+     * . Amount of time (in seconds) that the server should allow a request before marking the request as being too slow.
      */
     slowRateThresholdPeriod?: pulumi.Input<number>;
     /**
-     * The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
+     * . Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
      */
     slowRateThresholdRate?: pulumi.Input<number>;
 }
@@ -160,27 +168,29 @@ export interface AppSecSlowPostState {
  */
 export interface AppSecSlowPostArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the slow POST settings being modified.
      */
     configId: pulumi.Input<number>;
     /**
-     * The time in seconds before the first eight kilobytes of the POST body must be received to avoid triggering the specified `action`.
+     * . Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in to avoid triggering the specified action.
      */
     durationThresholdTimeout?: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the slow POST settings being modified.
      */
     securityPolicyId: pulumi.Input<string>;
     /**
-     * The action that the rule should trigger (either `alert` or `abort`).
+     * . Action to be taken if slow POST protection is triggered. Allowed values are:
+     * - **alert**. Record the event.
+     * - **abort**. Block the request.
      */
     slowRateAction: pulumi.Input<string>;
     /**
-     * The slow rate period value: the amount of time in seconds that the server should accept a request to determine whether a POST request is too slow.
+     * . Amount of time (in seconds) that the server should allow a request before marking the request as being too slow.
      */
     slowRateThresholdPeriod?: pulumi.Input<number>;
     /**
-     * The average rate in bytes per second over the period specified by `period` before the specified `action` is triggered.
+     * . Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
      */
     slowRateThresholdRate?: pulumi.Input<number>;
 }

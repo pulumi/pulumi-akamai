@@ -5,10 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecByPassNetworkList` data source to retrieve information about which network
- * lists are used in the bypass network lists settings.  The information available is described
- * [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getbypassnetworklistsforawapconfigversion).
- * Note: this data source is only applicable to WAP (Web Application Protector) configurations.
+ * **Scopes**: Security configuration
+ *
+ * Returns information about the network lists assigned to the bypass network list; networks on this list are not subject to firewall checking. The returned information is described in the [BypassNetworkList members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#bypassnetworklist) section of the Application Security API.
+ *
+ * Note that this data source is only applicable to WAP (Web Application Protector) configurations.
+ *
+ * **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/bypass-network-lists](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getbypassnetworklistsforawapconfigversion)
  *
  * ## Example Usage
  *
@@ -19,7 +22,7 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const bypassNetworkLists = configuration.then(configuration => akamai.getAppSecBypassNetworkLists({
  *     configId: configuration.configId,
@@ -28,6 +31,13 @@ import * as utilities from "./utilities";
  * export const bypassNetworkListsJson = bypassNetworkLists.then(bypassNetworkLists => bypassNetworkLists.json);
  * export const bypassNetworkListsIdList = bypassNetworkLists.then(bypassNetworkLists => bypassNetworkLists.bypassNetworkLists);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `bypassNetworkList`. List of network IDs.
+ * - `json`. JSON-formatted list of information about the bypass networks.
+ * - `outputText`. Tabular report showing the bypass network list information.
  */
 export function getAppSecBypassNetworkLists(args: GetAppSecBypassNetworkListsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecBypassNetworkListsResult> {
     if (!opts) {
@@ -47,7 +57,7 @@ export function getAppSecBypassNetworkLists(args: GetAppSecBypassNetworkListsArg
  */
 export interface GetAppSecBypassNetworkListsArgs {
     /**
-     * The configuration ID to use.
+     * . Unique identifier of the security configuration associated with the bypass network list.
      */
     configId: number;
 }
@@ -56,22 +66,13 @@ export interface GetAppSecBypassNetworkListsArgs {
  * A collection of values returned by getAppSecBypassNetworkLists.
  */
 export interface GetAppSecBypassNetworkListsResult {
-    /**
-     * A list of strings containing the network list IDs.
-     */
     readonly bypassNetworkLists: string[];
     readonly configId: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted list of information about the bypass network lists.
-     */
     readonly json: string;
-    /**
-     * A tabular display showing the bypass network list information.
-     */
     readonly outputText: string;
 }
 
@@ -84,7 +85,7 @@ export function getAppSecBypassNetworkListsOutput(args: GetAppSecBypassNetworkLi
  */
 export interface GetAppSecBypassNetworkListsOutputArgs {
     /**
-     * The configuration ID to use.
+     * . Unique identifier of the security configuration associated with the bypass network list.
      */
     configId: pulumi.Input<number>;
 }

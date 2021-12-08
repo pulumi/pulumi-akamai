@@ -4,31 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * The `akamai.AppSecWapSelectedHostnames` resource allows you to set the lists of hostnames to be protected and to be evaluated
- * under a given security configuration and policy. This resource is available only for WAP accounts. Either of the lists of hostnames
- * may be omitted or specified as an empty list, but at least one of the two lists must be present and non-empty. (WAP selected hostnames
- * is currently in beta. Please contact your Akamai representative for more information about this feature.)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Akamai Tools",
- * });
- * const appsecwapSelectedhostnames = new akamai.AppSecWapSelectedHostnames("appsecwapSelectedhostnames", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: _var.security_policy_id,
- *     protectedHostnames: ["example.com"],
- *     evaluatedHostnames: ["example2.com"],
- * });
- * ```
- */
 export class AppSecWapSelectedHostnames extends pulumi.CustomResource {
     /**
      * Get an existing AppSecWapSelectedHostnames resource's state with the given name, ID, and optional extra
@@ -58,13 +33,13 @@ export class AppSecWapSelectedHostnames extends pulumi.CustomResource {
     }
 
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
      */
     public readonly configId!: pulumi.Output<number>;
     public readonly evaluatedHosts!: pulumi.Output<string[] | undefined>;
     public readonly protectedHosts!: pulumi.Output<string[] | undefined>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
@@ -110,13 +85,13 @@ export class AppSecWapSelectedHostnames extends pulumi.CustomResource {
  */
 export interface AppSecWapSelectedHostnamesState {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
      */
     configId?: pulumi.Input<number>;
     evaluatedHosts?: pulumi.Input<pulumi.Input<string>[]>;
     protectedHosts?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -126,13 +101,13 @@ export interface AppSecWapSelectedHostnamesState {
  */
 export interface AppSecWapSelectedHostnamesArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
      */
     configId: pulumi.Input<number>;
     evaluatedHosts?: pulumi.Input<pulumi.Input<string>[]>;
     protectedHosts?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
      */
     securityPolicyId: pulumi.Input<string>;
 }

@@ -97,7 +97,7 @@ import * as utilities from "./utilities";
  * * `contractId` - (Required) A contract's ID, optionally with the `ctr_` prefix.
  * * `commonName` - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
  * * `sans` - (Optional) Additional common names to create a Subject Alternative Names (SAN) list.
- * * `secureNetwork` - (Required) The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai’s standard secure network, but it isn't PCI compliant. `enhanced-tls` deploys your certificate to Akamai’s more secure network with PCI compliance capability.
+ * * `secureNetwork` - (Required) The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai's standard secure network, but it isn't PCI compliant. `enhanced-tls` deploys your certificate to Akamai's more secure network with PCI compliance capability.
  * * `sniOnly` - (Required) Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can't change this setting once an enrollment is created.
  * * `acknowledgePreVerificationWarnings` - (Optional) Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
  * * `adminContact` - (Required) Contact information for the certificate administrator at your company.
@@ -188,15 +188,15 @@ import * as utilities from "./utilities";
  *   Returns these additional attributes:
  *   
  *       * `domain` - The domain to validate.
- *       * `fullPath` - The URL where Akamai publishes `responseBody` for Let’s Encrypt to validate.
- *       * `responseBody` - The data Let’s Encrypt expects to find served at `fullPath` URL.
+ *       * `fullPath` - The URL where Akamai publishes `responseBody` for Let's Encrypt to validate.
+ *       * `responseBody` - The data Let's Encrypt expects to find served at `fullPath` URL.
  * * `httpChallenges` - The validation challenge for the domains listed in the certificate. To successfully perform the validation, only one challenge for each domain must be complete, either `dnsChallenges` or `httpChallenges`.
  *   
  *   Returns these additional attributes:
  *   
  *       * `domain` - The domain to validate.
- *       * `fullPath` - The URL where Akamai publishes `responseBody` for Let’s Encrypt to validate.
- *       * `responseBody` - The data Let’s Encrypt expects to find served at `fullPath` URL.
+ *       * `fullPath` - The URL where Akamai publishes `responseBody` for Let's Encrypt to validate.
+ *       * `responseBody` - The data Let's Encrypt expects to find served at `fullPath` URL.
  *
  * ## Import
  *

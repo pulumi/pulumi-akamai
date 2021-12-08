@@ -10,7 +10,15 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// The `resource_akamai_appsec_advanced_settings_prefetch` resource allows you to enable inspection of internal requests (those between your origin and Akamai’s servers) for file types that you specify. You can also apply rate controls to prefetch requests. This operation applies at the configuration level.
+    /// **Scopes**: Security configuration
+    /// 
+    /// Enables inspection of internal requests (that is, requests between your origin servers and Akamai's edge servers).
+    /// You can also use this resource to apply rate controls to prefetch requests.
+    /// When prefetch is enabled, internal requests are inspected by your firewall the same way that external requests (requests that originate outside the firewall and outside Akamai's edge servers) are inspected.
+    /// 
+    /// This operation applies at the security configuration level, meaning that the settings affect all the security policies in that configuration.
+    /// 
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/prefetch](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putprefetchrequestsforaconfiguration)
     /// 
     /// ## Example Usage
     /// 
@@ -26,7 +34,7 @@ namespace Pulumi.Akamai
     ///     {
     ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
     ///         {
-    ///             Name = @var.Security_configuration,
+    ///             Name = "Documentation",
     ///         }));
     ///         var prefetch = new Akamai.AppSecAdvancedSettingsPrefetch("prefetch", new Akamai.AppSecAdvancedSettingsPrefetchArgs
     ///         {
@@ -34,7 +42,14 @@ namespace Pulumi.Akamai
     ///             EnableAppLayer = false,
     ///             AllExtensions = true,
     ///             EnableRateControls = false,
-    ///             Extensions = @var.Extensions,
+    ///             Extensions = 
+    ///             {
+    ///                 ".tiff",
+    ///                 ".bmp",
+    ///                 ".jpg",
+    ///                 ".gif",
+    ///                 ".png",
+    ///             },
     ///         });
     ///     }
     /// 
@@ -45,31 +60,31 @@ namespace Pulumi.Akamai
     public partial class AppSecAdvancedSettingsPrefetch : Pulumi.CustomResource
     {
         /// <summary>
-        /// Whether to enable prefetch requests for all extensions.
+        /// . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
         /// </summary>
         [Output("allExtensions")]
         public Output<bool> AllExtensions { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the prefetch settings being modified.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// Whether to enable prefetch requests.
+        /// . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
         /// </summary>
         [Output("enableAppLayer")]
         public Output<bool> EnableAppLayer { get; private set; } = null!;
 
         /// <summary>
-        /// Whether to enable prefetch requests for rate controls.
+        /// . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
         /// </summary>
         [Output("enableRateControls")]
         public Output<bool> EnableRateControls { get; private set; } = null!;
 
         /// <summary>
-        /// The specific extensions for which to enable prefetch requests. If `all_extensions` is True, `extensions` must be an empty list.
+        /// . If `all_extensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won't be used with any file extensions not included in the array. If `all_extensions` is **true**, then this argument must be set to an empty array: **[]**.
         /// </summary>
         [Output("extensions")]
         public Output<ImmutableArray<string>> Extensions { get; private set; } = null!;
@@ -121,25 +136,25 @@ namespace Pulumi.Akamai
     public sealed class AppSecAdvancedSettingsPrefetchArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether to enable prefetch requests for all extensions.
+        /// . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
         /// </summary>
         [Input("allExtensions", required: true)]
         public Input<bool> AllExtensions { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the prefetch settings being modified.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// Whether to enable prefetch requests.
+        /// . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
         /// </summary>
         [Input("enableAppLayer", required: true)]
         public Input<bool> EnableAppLayer { get; set; } = null!;
 
         /// <summary>
-        /// Whether to enable prefetch requests for rate controls.
+        /// . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
         /// </summary>
         [Input("enableRateControls", required: true)]
         public Input<bool> EnableRateControls { get; set; } = null!;
@@ -148,7 +163,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _extensions;
 
         /// <summary>
-        /// The specific extensions for which to enable prefetch requests. If `all_extensions` is True, `extensions` must be an empty list.
+        /// . If `all_extensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won't be used with any file extensions not included in the array. If `all_extensions` is **true**, then this argument must be set to an empty array: **[]**.
         /// </summary>
         public InputList<string> Extensions
         {
@@ -164,25 +179,25 @@ namespace Pulumi.Akamai
     public sealed class AppSecAdvancedSettingsPrefetchState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether to enable prefetch requests for all extensions.
+        /// . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
         /// </summary>
         [Input("allExtensions")]
         public Input<bool>? AllExtensions { get; set; }
 
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the prefetch settings being modified.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// Whether to enable prefetch requests.
+        /// . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
         /// </summary>
         [Input("enableAppLayer")]
         public Input<bool>? EnableAppLayer { get; set; }
 
         /// <summary>
-        /// Whether to enable prefetch requests for rate controls.
+        /// . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
         /// </summary>
         [Input("enableRateControls")]
         public Input<bool>? EnableRateControls { get; set; }
@@ -191,7 +206,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _extensions;
 
         /// <summary>
-        /// The specific extensions for which to enable prefetch requests. If `all_extensions` is True, `extensions` must be an empty list.
+        /// . If `all_extensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won't be used with any file extensions not included in the array. If `all_extensions` is **true**, then this argument must be set to an empty array: **[]**.
         /// </summary>
         public InputList<string> Extensions
         {

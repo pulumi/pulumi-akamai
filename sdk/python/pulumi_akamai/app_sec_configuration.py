@@ -22,13 +22,13 @@ class AppSecConfigurationArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AppSecConfiguration resource.
-        :param pulumi.Input[str] contract_id: The contract ID of the configuration.
-        :param pulumi.Input[str] description: A description of the configuration.
-        :param pulumi.Input[int] group_id: The group ID of the configuration.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] host_names: The list of hostnames protected by this security configuration.
-        :param pulumi.Input[int] create_from_config_id: The config ID of the security configuration to clone from.
-        :param pulumi.Input[int] create_from_version: The version number of the security configuration to clone from.
-        :param pulumi.Input[str] name: The name to be assigned to the configuration.
+        :param pulumi.Input[str] contract_id: . Unique identifier of the Akamai contract t associated with the new configuration.
+        :param pulumi.Input[str] description: . Brief description of the new configuration.
+        :param pulumi.Input[int] group_id: . Unique identifier of the contract group associated with the new configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] host_names: . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+        :param pulumi.Input[int] create_from_config_id: . Unique identifier of the existing configuration being cloned in order to create the new configuration.
+        :param pulumi.Input[int] create_from_version: . Version number of the security configuration being cloned.
+        :param pulumi.Input[str] name: . Name of the new configuration.
         """
         pulumi.set(__self__, "contract_id", contract_id)
         pulumi.set(__self__, "description", description)
@@ -45,7 +45,7 @@ class AppSecConfigurationArgs:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Input[str]:
         """
-        The contract ID of the configuration.
+        . Unique identifier of the Akamai contract t associated with the new configuration.
         """
         return pulumi.get(self, "contract_id")
 
@@ -57,7 +57,7 @@ class AppSecConfigurationArgs:
     @pulumi.getter
     def description(self) -> pulumi.Input[str]:
         """
-        A description of the configuration.
+        . Brief description of the new configuration.
         """
         return pulumi.get(self, "description")
 
@@ -69,7 +69,7 @@ class AppSecConfigurationArgs:
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Input[int]:
         """
-        The group ID of the configuration.
+        . Unique identifier of the contract group associated with the new configuration.
         """
         return pulumi.get(self, "group_id")
 
@@ -81,7 +81,7 @@ class AppSecConfigurationArgs:
     @pulumi.getter(name="hostNames")
     def host_names(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
-        The list of hostnames protected by this security configuration.
+        . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
         """
         return pulumi.get(self, "host_names")
 
@@ -93,7 +93,7 @@ class AppSecConfigurationArgs:
     @pulumi.getter(name="createFromConfigId")
     def create_from_config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The config ID of the security configuration to clone from.
+        . Unique identifier of the existing configuration being cloned in order to create the new configuration.
         """
         return pulumi.get(self, "create_from_config_id")
 
@@ -105,7 +105,7 @@ class AppSecConfigurationArgs:
     @pulumi.getter(name="createFromVersion")
     def create_from_version(self) -> Optional[pulumi.Input[int]]:
         """
-        The version number of the security configuration to clone from.
+        . Version number of the security configuration being cloned.
         """
         return pulumi.get(self, "create_from_version")
 
@@ -117,7 +117,7 @@ class AppSecConfigurationArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name to be assigned to the configuration.
+        . Name of the new configuration.
         """
         return pulumi.get(self, "name")
 
@@ -139,14 +139,13 @@ class _AppSecConfigurationState:
                  name: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecConfiguration resources.
-        :param pulumi.Input[int] config_id: (Required) The ID of the security configuration.
-        :param pulumi.Input[str] contract_id: The contract ID of the configuration.
-        :param pulumi.Input[int] create_from_config_id: The config ID of the security configuration to clone from.
-        :param pulumi.Input[int] create_from_version: The version number of the security configuration to clone from.
-        :param pulumi.Input[str] description: A description of the configuration.
-        :param pulumi.Input[int] group_id: The group ID of the configuration.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] host_names: The list of hostnames protected by this security configuration.
-        :param pulumi.Input[str] name: The name to be assigned to the configuration.
+        :param pulumi.Input[str] contract_id: . Unique identifier of the Akamai contract t associated with the new configuration.
+        :param pulumi.Input[int] create_from_config_id: . Unique identifier of the existing configuration being cloned in order to create the new configuration.
+        :param pulumi.Input[int] create_from_version: . Version number of the security configuration being cloned.
+        :param pulumi.Input[str] description: . Brief description of the new configuration.
+        :param pulumi.Input[int] group_id: . Unique identifier of the contract group associated with the new configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] host_names: . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+        :param pulumi.Input[str] name: . Name of the new configuration.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -168,9 +167,6 @@ class _AppSecConfigurationState:
     @property
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Required) The ID of the security configuration.
-        """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
@@ -181,7 +177,7 @@ class _AppSecConfigurationState:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The contract ID of the configuration.
+        . Unique identifier of the Akamai contract t associated with the new configuration.
         """
         return pulumi.get(self, "contract_id")
 
@@ -193,7 +189,7 @@ class _AppSecConfigurationState:
     @pulumi.getter(name="createFromConfigId")
     def create_from_config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The config ID of the security configuration to clone from.
+        . Unique identifier of the existing configuration being cloned in order to create the new configuration.
         """
         return pulumi.get(self, "create_from_config_id")
 
@@ -205,7 +201,7 @@ class _AppSecConfigurationState:
     @pulumi.getter(name="createFromVersion")
     def create_from_version(self) -> Optional[pulumi.Input[int]]:
         """
-        The version number of the security configuration to clone from.
+        . Version number of the security configuration being cloned.
         """
         return pulumi.get(self, "create_from_version")
 
@@ -217,7 +213,7 @@ class _AppSecConfigurationState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        A description of the configuration.
+        . Brief description of the new configuration.
         """
         return pulumi.get(self, "description")
 
@@ -229,7 +225,7 @@ class _AppSecConfigurationState:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The group ID of the configuration.
+        . Unique identifier of the contract group associated with the new configuration.
         """
         return pulumi.get(self, "group_id")
 
@@ -241,7 +237,7 @@ class _AppSecConfigurationState:
     @pulumi.getter(name="hostNames")
     def host_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The list of hostnames protected by this security configuration.
+        . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
         """
         return pulumi.get(self, "host_names")
 
@@ -253,7 +249,7 @@ class _AppSecConfigurationState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name to be assigned to the configuration.
+        . Name of the new configuration.
         """
         return pulumi.get(self, "name")
 
@@ -276,17 +272,56 @@ class AppSecConfiguration(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        The `resource_akamai_appsec_configuration` resource allows you to create a new WAP or KSD security configuration. KSD security configurations start out empty, and WAP configurations are created with preset values. The contract you pass in the request body determines which product you use. You can edit the default settings included in the WAP configuration, but you’ll need to run additional operations in this API to select specific protections for KSD. Your KSD configuration needs match targets and protection settings before it can be activated.
+        **Scopes**: Contract and group
+
+        Creates a new WAP (Web Application Protector) or KSD (Kona Site Defender) security configuration. KSD security configurations start out empty (i.e., unconfigured), while WAP configurations are created using preset values. The contract referenced in the request body determines the type of configuration you can create.
+
+        In addition to manually creating a new configuration, you can use the `create_from_config_id` argument to clone an existing configuration.
+
+        **Related API Endpoint**: [/appsec/v1/configs](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postconfigurations)
+
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        selectable_hostnames = akamai.get_app_sec_selectable_hostnames(config_id="Documentation")
+        create_config = akamai.AppSecConfiguration("createConfig",
+            description="This configuration is used as a testing environment for the documentation team.",
+            contract_id="5-2WA382",
+            group_id=12198,
+            host_names=[
+                "documentation.akamai.com",
+                "training.akamai.com",
+            ])
+        pulumi.export("createConfigId", create_config.config_id)
+        clone_config = akamai.AppSecConfiguration("cloneConfig",
+            description="This configuration is used as a testing environment for the documentation team.",
+            create_from_config_id=data["akamai_appsec_configuration"]["configuration"]["config_id"],
+            create_from_version=data["akamai_appsec_configuration"]["configuration"]["latest_version"],
+            contract_id="5-2WA382",
+            group_id=12198,
+            host_names=selectable_hostnames.hostnames)
+        pulumi.export("cloneConfigId", clone_config.config_id)
+        ```
+        ## Output Options
+
+        The following options can be used to determine the information returned, and how that returned information is formatted:
+
+        - `config_id`. ID of the new security configuration.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] contract_id: The contract ID of the configuration.
-        :param pulumi.Input[int] create_from_config_id: The config ID of the security configuration to clone from.
-        :param pulumi.Input[int] create_from_version: The version number of the security configuration to clone from.
-        :param pulumi.Input[str] description: A description of the configuration.
-        :param pulumi.Input[int] group_id: The group ID of the configuration.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] host_names: The list of hostnames protected by this security configuration.
-        :param pulumi.Input[str] name: The name to be assigned to the configuration.
+        :param pulumi.Input[str] contract_id: . Unique identifier of the Akamai contract t associated with the new configuration.
+        :param pulumi.Input[int] create_from_config_id: . Unique identifier of the existing configuration being cloned in order to create the new configuration.
+        :param pulumi.Input[int] create_from_version: . Version number of the security configuration being cloned.
+        :param pulumi.Input[str] description: . Brief description of the new configuration.
+        :param pulumi.Input[int] group_id: . Unique identifier of the contract group associated with the new configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] host_names: . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+        :param pulumi.Input[str] name: . Name of the new configuration.
         """
         ...
     @overload
@@ -295,7 +330,46 @@ class AppSecConfiguration(pulumi.CustomResource):
                  args: AppSecConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        The `resource_akamai_appsec_configuration` resource allows you to create a new WAP or KSD security configuration. KSD security configurations start out empty, and WAP configurations are created with preset values. The contract you pass in the request body determines which product you use. You can edit the default settings included in the WAP configuration, but you’ll need to run additional operations in this API to select specific protections for KSD. Your KSD configuration needs match targets and protection settings before it can be activated.
+        **Scopes**: Contract and group
+
+        Creates a new WAP (Web Application Protector) or KSD (Kona Site Defender) security configuration. KSD security configurations start out empty (i.e., unconfigured), while WAP configurations are created using preset values. The contract referenced in the request body determines the type of configuration you can create.
+
+        In addition to manually creating a new configuration, you can use the `create_from_config_id` argument to clone an existing configuration.
+
+        **Related API Endpoint**: [/appsec/v1/configs](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postconfigurations)
+
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        selectable_hostnames = akamai.get_app_sec_selectable_hostnames(config_id="Documentation")
+        create_config = akamai.AppSecConfiguration("createConfig",
+            description="This configuration is used as a testing environment for the documentation team.",
+            contract_id="5-2WA382",
+            group_id=12198,
+            host_names=[
+                "documentation.akamai.com",
+                "training.akamai.com",
+            ])
+        pulumi.export("createConfigId", create_config.config_id)
+        clone_config = akamai.AppSecConfiguration("cloneConfig",
+            description="This configuration is used as a testing environment for the documentation team.",
+            create_from_config_id=data["akamai_appsec_configuration"]["configuration"]["config_id"],
+            create_from_version=data["akamai_appsec_configuration"]["configuration"]["latest_version"],
+            contract_id="5-2WA382",
+            group_id=12198,
+            host_names=selectable_hostnames.hostnames)
+        pulumi.export("cloneConfigId", clone_config.config_id)
+        ```
+        ## Output Options
+
+        The following options can be used to determine the information returned, and how that returned information is formatted:
+
+        - `config_id`. ID of the new security configuration.
 
         :param str resource_name: The name of the resource.
         :param AppSecConfigurationArgs args: The arguments to use to populate this resource's properties.
@@ -372,14 +446,13 @@ class AppSecConfiguration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: (Required) The ID of the security configuration.
-        :param pulumi.Input[str] contract_id: The contract ID of the configuration.
-        :param pulumi.Input[int] create_from_config_id: The config ID of the security configuration to clone from.
-        :param pulumi.Input[int] create_from_version: The version number of the security configuration to clone from.
-        :param pulumi.Input[str] description: A description of the configuration.
-        :param pulumi.Input[int] group_id: The group ID of the configuration.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] host_names: The list of hostnames protected by this security configuration.
-        :param pulumi.Input[str] name: The name to be assigned to the configuration.
+        :param pulumi.Input[str] contract_id: . Unique identifier of the Akamai contract t associated with the new configuration.
+        :param pulumi.Input[int] create_from_config_id: . Unique identifier of the existing configuration being cloned in order to create the new configuration.
+        :param pulumi.Input[int] create_from_version: . Version number of the security configuration being cloned.
+        :param pulumi.Input[str] description: . Brief description of the new configuration.
+        :param pulumi.Input[int] group_id: . Unique identifier of the contract group associated with the new configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] host_names: . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+        :param pulumi.Input[str] name: . Name of the new configuration.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -398,16 +471,13 @@ class AppSecConfiguration(pulumi.CustomResource):
     @property
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
-        """
-        (Required) The ID of the security configuration.
-        """
         return pulumi.get(self, "config_id")
 
     @property
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Output[str]:
         """
-        The contract ID of the configuration.
+        . Unique identifier of the Akamai contract t associated with the new configuration.
         """
         return pulumi.get(self, "contract_id")
 
@@ -415,7 +485,7 @@ class AppSecConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="createFromConfigId")
     def create_from_config_id(self) -> pulumi.Output[Optional[int]]:
         """
-        The config ID of the security configuration to clone from.
+        . Unique identifier of the existing configuration being cloned in order to create the new configuration.
         """
         return pulumi.get(self, "create_from_config_id")
 
@@ -423,7 +493,7 @@ class AppSecConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="createFromVersion")
     def create_from_version(self) -> pulumi.Output[Optional[int]]:
         """
-        The version number of the security configuration to clone from.
+        . Version number of the security configuration being cloned.
         """
         return pulumi.get(self, "create_from_version")
 
@@ -431,7 +501,7 @@ class AppSecConfiguration(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        A description of the configuration.
+        . Brief description of the new configuration.
         """
         return pulumi.get(self, "description")
 
@@ -439,7 +509,7 @@ class AppSecConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[int]:
         """
-        The group ID of the configuration.
+        . Unique identifier of the contract group associated with the new configuration.
         """
         return pulumi.get(self, "group_id")
 
@@ -447,7 +517,7 @@ class AppSecConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="hostNames")
     def host_names(self) -> pulumi.Output[Sequence[str]]:
         """
-        The list of hostnames protected by this security configuration.
+        . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
         """
         return pulumi.get(self, "host_names")
 
@@ -455,7 +525,7 @@ class AppSecConfiguration(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        The name to be assigned to the configuration.
+        . Name of the new configuration.
         """
         return pulumi.get(self, "name")
 

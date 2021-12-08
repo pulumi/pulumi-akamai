@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecSelectedHostnames` data source to retrieve a list of the hostnames that are currently protected under a given security configuration.
+ * **Scopes**: Security configuration
+ *
+ * Returns a list of the hostnames currently protected by the specified security configuration.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getselectedhostnames)
  *
  * ## Example Usage
  *
@@ -16,7 +20,7 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: "Akamai Tools",
+ *     name: "Documentation",
  * });
  * const selectedHostnamesAppSecSelectedHostnames = configuration.then(configuration => akamai.getAppSecSelectedHostnames({
  *     configId: configuration.configId,
@@ -25,6 +29,13 @@ import * as utilities from "./utilities";
  * export const selectedHostnamesJson = selectedHostnamesAppSecSelectedHostnames.then(selectedHostnamesAppSecSelectedHostnames => selectedHostnamesAppSecSelectedHostnames.hostnamesJson);
  * export const selectedHostnamesOutputText = selectedHostnamesAppSecSelectedHostnames.then(selectedHostnamesAppSecSelectedHostnames => selectedHostnamesAppSecSelectedHostnames.outputText);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `hostnames`. List of selected hostnames.
+ * - `hostnamesJson`. JSON-formatted list of selected hostnames.
+ * - `outputText`. Tabular report of the selected hostnames.
  */
 export function getAppSecSelectedHostnames(args: GetAppSecSelectedHostnamesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecSelectedHostnamesResult> {
     if (!opts) {
@@ -44,7 +55,7 @@ export function getAppSecSelectedHostnames(args: GetAppSecSelectedHostnamesArgs,
  */
 export interface GetAppSecSelectedHostnamesArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the protected hosts.
      */
     configId: number;
 }
@@ -54,21 +65,12 @@ export interface GetAppSecSelectedHostnamesArgs {
  */
 export interface GetAppSecSelectedHostnamesResult {
     readonly configId: number;
-    /**
-     * The list of selected hostnames.
-     */
     readonly hostnames: string[];
-    /**
-     * The list of selected hostnames in JSON format.
-     */
     readonly hostnamesJson: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A tabular display of the selected hostnames.
-     */
     readonly outputText: string;
 }
 
@@ -81,7 +83,7 @@ export function getAppSecSelectedHostnamesOutput(args: GetAppSecSelectedHostname
  */
 export interface GetAppSecSelectedHostnamesOutputArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the protected hosts.
      */
     configId: pulumi.Input<number>;
 }

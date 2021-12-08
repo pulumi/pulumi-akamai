@@ -10,7 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecApiRequestConstraints` data source to retrieve a list of APIs with their constraints and associated actions, or the constraints and actions for a particular API. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapirequestconstraints).
+// **Scopes**: Security policy; API endpoint
+//
+// Returns information about API endpoint constraints and actions. The returned information is described in the [API Constraints members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapirequestconstraints) section of the Application Security API.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/api-request-constraints](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapirequestconstraints)
 //
 // ## Example Usage
 //
@@ -26,7 +30,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
@@ -35,17 +39,17 @@ import (
 // 		}
 // 		apisRequestConstraints, err := akamai.LookupAppSecApiRequestConstraints(ctx, &GetAppSecApiRequestConstraintsArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: _var.Security_policy_id,
+// 			SecurityPolicyId: "gms1_134637",
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
 // 		ctx.Export("apisConstraintsText", apisRequestConstraints.OutputText)
 // 		ctx.Export("apisConstraintsJson", apisRequestConstraints.Json)
-// 		opt1 := _var.Api_id
+// 		opt1 := 624913
 // 		apiRequestConstraints, err := akamai.LookupAppSecApiRequestConstraints(ctx, &GetAppSecApiRequestConstraintsArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: _var.Security_policy_id,
+// 			SecurityPolicyId: "gms1_134637",
 // 			ApiId:            &opt1,
 // 		}, nil)
 // 		if err != nil {
@@ -57,6 +61,12 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `json`. JSON-formatted list of information about the APIs, their constraints, and their actions.
+// - `outputText`. Tabular report of the APIs, their constraints, and their actions.
 func LookupAppSecApiRequestConstraints(ctx *pulumi.Context, args *LookupAppSecApiRequestConstraintsArgs, opts ...pulumi.InvokeOption) (*LookupAppSecApiRequestConstraintsResult, error) {
 	var rv LookupAppSecApiRequestConstraintsResult
 	err := ctx.Invoke("akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints", args, &rv, opts...)
@@ -68,11 +78,11 @@ func LookupAppSecApiRequestConstraints(ctx *pulumi.Context, args *LookupAppSecAp
 
 // A collection of arguments for invoking getAppSecApiRequestConstraints.
 type LookupAppSecApiRequestConstraintsArgs struct {
-	// The ID of a specific API for which to retrieve constraint information.
+	// . Unique identifier of the API endpoint you want to return constraint information for.
 	ApiId *int `pulumi:"apiId"`
-	// The configuration ID to use.
+	// . Unique identifier of the security configuration associated with the API constraints.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the API constraints.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -81,10 +91,8 @@ type LookupAppSecApiRequestConstraintsResult struct {
 	ApiId    *int `pulumi:"apiId"`
 	ConfigId int  `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted list of information about the APIs and their constraints and actions.
-	Json string `pulumi:"json"`
-	// A tabular display showing the APIs and their constraints and actions.
+	Id               string `pulumi:"id"`
+	Json             string `pulumi:"json"`
 	OutputText       string `pulumi:"outputText"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
@@ -100,11 +108,11 @@ func LookupAppSecApiRequestConstraintsOutput(ctx *pulumi.Context, args LookupApp
 
 // A collection of arguments for invoking getAppSecApiRequestConstraints.
 type LookupAppSecApiRequestConstraintsOutputArgs struct {
-	// The ID of a specific API for which to retrieve constraint information.
+	// . Unique identifier of the API endpoint you want to return constraint information for.
 	ApiId pulumi.IntPtrInput `pulumi:"apiId"`
-	// The configuration ID to use.
+	// . Unique identifier of the security configuration associated with the API constraints.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the API constraints.
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 
@@ -140,12 +148,10 @@ func (o LookupAppSecApiRequestConstraintsResultOutput) Id() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupAppSecApiRequestConstraintsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted list of information about the APIs and their constraints and actions.
 func (o LookupAppSecApiRequestConstraintsResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecApiRequestConstraintsResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display showing the APIs and their constraints and actions.
 func (o LookupAppSecApiRequestConstraintsResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecApiRequestConstraintsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

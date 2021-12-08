@@ -10,46 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecRules` data source to list the action and condition-exception information for a rule or rules.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: &opt0,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		opt1 := _var.Rule_id
-// 		_, err = akamai.GetAppSecRules(ctx, &GetAppSecRulesArgs{
-// 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: _var.Security_policy_id,
-// 			RuleId:           &opt1,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("ruleAction", akamai_appsec_rules.Rule.Rule_action)
-// 		ctx.Export("conditionException", akamai_appsec_rules.Rule.Condition_exception)
-// 		ctx.Export("json", akamai_appsec_rules.Rule.Json)
-// 		ctx.Export("outputText", akamai_appsec_rules.Rule.Output_text)
-// 		return nil
-// 	})
-// }
-// ```
 func GetAppSecRules(ctx *pulumi.Context, args *GetAppSecRulesArgs, opts ...pulumi.InvokeOption) (*GetAppSecRulesResult, error) {
 	var rv GetAppSecRulesResult
 	err := ctx.Invoke("akamai:index/getAppSecRules:getAppSecRules", args, &rv, opts...)
@@ -61,28 +21,22 @@ func GetAppSecRules(ctx *pulumi.Context, args *GetAppSecRulesArgs, opts ...pulum
 
 // A collection of arguments for invoking getAppSecRules.
 type GetAppSecRulesArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the rules.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the rule to use. If not specified, information about all rules will be returned.
+	// . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
 	RuleId *int `pulumi:"ruleId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the rules.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // A collection of values returned by getAppSecRules.
 type GetAppSecRulesResult struct {
-	// The rule's conditions and exceptions.
 	ConditionException string `pulumi:"conditionException"`
 	ConfigId           int    `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted list of the action and condition-exception information for the specified rule.
-	// This output is only generated if a rule is specified.
-	Json string `pulumi:"json"`
-	// A tabular display showing, for the specified rule or rules, the rule action and boolean values
-	// indicating whether conditions and exceptions are present.
-	OutputText string `pulumi:"outputText"`
-	// The rule's action, either `alert`, `deny`, or `none`.
+	Id               string `pulumi:"id"`
+	Json             string `pulumi:"json"`
+	OutputText       string `pulumi:"outputText"`
 	RuleAction       string `pulumi:"ruleAction"`
 	RuleId           *int   `pulumi:"ruleId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
@@ -99,11 +53,11 @@ func GetAppSecRulesOutput(ctx *pulumi.Context, args GetAppSecRulesOutputArgs, op
 
 // A collection of arguments for invoking getAppSecRules.
 type GetAppSecRulesOutputArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the rules.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The ID of the rule to use. If not specified, information about all rules will be returned.
+	// . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
 	RuleId pulumi.IntPtrInput `pulumi:"ruleId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the rules.
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 
@@ -126,7 +80,6 @@ func (o GetAppSecRulesResultOutput) ToGetAppSecRulesResultOutputWithContext(ctx 
 	return o
 }
 
-// The rule's conditions and exceptions.
 func (o GetAppSecRulesResultOutput) ConditionException() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecRulesResult) string { return v.ConditionException }).(pulumi.StringOutput)
 }
@@ -140,19 +93,14 @@ func (o GetAppSecRulesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecRulesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted list of the action and condition-exception information for the specified rule.
-// This output is only generated if a rule is specified.
 func (o GetAppSecRulesResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecRulesResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display showing, for the specified rule or rules, the rule action and boolean values
-// indicating whether conditions and exceptions are present.
 func (o GetAppSecRulesResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecRulesResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
-// The rule's action, either `alert`, `deny`, or `none`.
 func (o GetAppSecRulesResultOutput) RuleAction() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecRulesResult) string { return v.RuleAction }).(pulumi.StringOutput)
 }

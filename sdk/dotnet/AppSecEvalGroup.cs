@@ -10,8 +10,11 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// Use the `akamai.AppSecEvalGroup` resource to create or modify an evaluation attack group's action, conditions and exceptions. When the conditions are met, the rule’s actions are ignored and not applied to that specific traffic.
-    /// __BETA__ This is Adaptive Security Engine(ASE) related data resource. Please contact your akamai representative if you want to learn more
+    /// **Scopes**: Evaluation attack group
+    /// 
+    /// Modifies the action and the conditions and exceptions for an evaluation mode attack group.
+    /// 
+    /// Note that this resource is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information about ASE, please contact your Akamai representative.
     /// 
     /// ## Example Usage
     /// 
@@ -28,14 +31,14 @@ namespace Pulumi.Akamai
     ///     {
     ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
     ///         {
-    ///             Name = @var.Security_configuration,
+    ///             Name = "Documentation",
     ///         }));
     ///         var evalAttackGroup = new Akamai.AppSecEvalGroup("evalAttackGroup", new Akamai.AppSecEvalGroupArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = @var.Security_policy_id,
-    ///             AttackGroup = @var.Attack_group,
-    ///             AttackGroupAction = @var.Attack_group_action,
+    ///             SecurityPolicyId = "gms1_134637",
+    ///             AttackGroup = "SQL",
+    ///             AttackGroupAction = "deny",
     ///             ConditionException = File.ReadAllText($"{path.Module}/condition_exception.json"),
     ///         });
     ///     }
@@ -47,31 +50,35 @@ namespace Pulumi.Akamai
     public partial class AppSecEvalGroup : Pulumi.CustomResource
     {
         /// <summary>
-        /// The eval attack group to use.
+        /// . Unique identifier of the evaluation attack group being modified.
         /// </summary>
         [Output("attackGroup")]
         public Output<string> AttackGroup { get; private set; } = null!;
 
         /// <summary>
-        /// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        /// . Action to be taken any time the attack group is triggered. Allowed values are:
+        /// - **alert**. Record the event.
+        /// - **deny**. Block the request
+        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        /// - **none**. Take no action.
         /// </summary>
         [Output("attackGroupAction")]
         public Output<string> AttackGroupAction { get; private set; } = null!;
 
         /// <summary>
-        /// The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception)).
+        /// . Path to a JSON file containing properties and property values for the attack group. For more information, the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
         /// </summary>
         [Output("conditionException")]
         public Output<string?> ConditionException { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration where evaluation is taking place.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the evaluation process.
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -123,31 +130,35 @@ namespace Pulumi.Akamai
     public sealed class AppSecEvalGroupArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The eval attack group to use.
+        /// . Unique identifier of the evaluation attack group being modified.
         /// </summary>
         [Input("attackGroup", required: true)]
         public Input<string> AttackGroup { get; set; } = null!;
 
         /// <summary>
-        /// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        /// . Action to be taken any time the attack group is triggered. Allowed values are:
+        /// - **alert**. Record the event.
+        /// - **deny**. Block the request
+        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        /// - **none**. Take no action.
         /// </summary>
         [Input("attackGroupAction", required: true)]
         public Input<string> AttackGroupAction { get; set; } = null!;
 
         /// <summary>
-        /// The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception)).
+        /// . Path to a JSON file containing properties and property values for the attack group. For more information, the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
         /// </summary>
         [Input("conditionException")]
         public Input<string>? ConditionException { get; set; }
 
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration where evaluation is taking place.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the evaluation process.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -160,31 +171,35 @@ namespace Pulumi.Akamai
     public sealed class AppSecEvalGroupState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The eval attack group to use.
+        /// . Unique identifier of the evaluation attack group being modified.
         /// </summary>
         [Input("attackGroup")]
         public Input<string>? AttackGroup { get; set; }
 
         /// <summary>
-        /// The action to be taken: `alert` to record the trigger of the event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        /// . Action to be taken any time the attack group is triggered. Allowed values are:
+        /// - **alert**. Record the event.
+        /// - **deny**. Block the request
+        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        /// - **none**. Take no action.
         /// </summary>
         [Input("attackGroupAction")]
         public Input<string>? AttackGroupAction { get; set; }
 
         /// <summary>
-        /// The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception)).
+        /// . Path to a JSON file containing properties and property values for the attack group. For more information, the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
         /// </summary>
         [Input("conditionException")]
         public Input<string>? ConditionException { get; set; }
 
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration where evaluation is taking place.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the evaluation process.
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

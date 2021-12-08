@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getAppSecRatePolicies` data source to retrieve the rate policies for a specific security configuration, or a single rate policy.
+ * **Scopes**: Security configuration; rate policy
+ *
+ * Returns information about your rate policies. Rate polices help you monitor and moderate the number and rate of all the requests you receive; in turn, this helps you prevent your website from being overwhelmed by a dramatic, and unexpected, surge in traffic.
+ *
+ * **Related API Endpoint:** [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getratepolicies)
  *
  * ## Example Usage
  *
@@ -16,7 +20,7 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const ratePolicies = configuration.then(configuration => akamai.getAppSecRatePolicies({
  *     configId: configuration.configId,
@@ -25,11 +29,17 @@ import * as utilities from "./utilities";
  * export const ratePoliciesJson = ratePolicies.then(ratePolicies => ratePolicies.json);
  * const ratePolicy = configuration.then(configuration => akamai.getAppSecRatePolicies({
  *     configId: configuration.configId,
- *     ratePolicyId: _var.rate_policy_id,
+ *     ratePolicyId: "122149",
  * }));
  * export const ratePolicyJson = ratePolicy.then(ratePolicy => ratePolicy.json);
  * export const ratePolicyOutput = ratePolicy.then(ratePolicy => ratePolicy.outputText);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `outputText`. Tabular report showing the ID and name of the rate policies.
+ * - `json`. JSON-formatted list of the rate policy information.
  */
 export function getAppSecRatePolicies(args: GetAppSecRatePoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecRatePoliciesResult> {
     if (!opts) {
@@ -50,11 +60,11 @@ export function getAppSecRatePolicies(args: GetAppSecRatePoliciesArgs, opts?: pu
  */
 export interface GetAppSecRatePoliciesArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the rate policies.
      */
     configId: number;
     /**
-     * The ID of the rate policy to use. If this parameter is not supplied, information about all rate policies will be returned.
+     * . Unique identifier of the rate policy you want to return information for. If not included, information is returned for all your rate policies.
      */
     ratePolicyId?: number;
 }
@@ -68,13 +78,7 @@ export interface GetAppSecRatePoliciesResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted list of the rate policy information.
-     */
     readonly json: string;
-    /**
-     * A tabular display showing the ID and name of all rate policies associated with the specified security configuration.
-     */
     readonly outputText: string;
     readonly ratePolicyId?: number;
 }
@@ -88,11 +92,11 @@ export function getAppSecRatePoliciesOutput(args: GetAppSecRatePoliciesOutputArg
  */
 export interface GetAppSecRatePoliciesOutputArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the rate policies.
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of the rate policy to use. If this parameter is not supplied, information about all rate policies will be returned.
+     * . Unique identifier of the rate policy you want to return information for. If not included, information is returned for all your rate policies.
      */
     ratePolicyId?: pulumi.Input<number>;
 }

@@ -4,33 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.getAppSecEvalGroups` data source to list the action and condition-exception information for an evaluation attack
- * group or groups.
- * __BETA__ This is Adaptive Security Engine(ASE) related data source. Please contact your akamai representative if you want to learn more
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
- * });
- * const evalAttackGroup = configuration.then(configuration => akamai.getAppSecEvalGroups({
- *     configId: configuration.configId,
- *     securityPolicyId: _var.security_policy_id,
- *     attackGroup: _var.attack_group,
- * }));
- * export const evalAttackGroupAction = evalAttackGroup.then(evalAttackGroup => evalAttackGroup.attackGroupAction);
- * export const conditionException = evalAttackGroup.then(evalAttackGroup => evalAttackGroup.conditionException);
- * export const json = evalAttackGroup.then(evalAttackGroup => evalAttackGroup.json);
- * export const outputText = evalAttackGroup.then(evalAttackGroup => evalAttackGroup.outputText);
- * ```
- */
 export function getAppSecEvalGroups(args: GetAppSecEvalGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecEvalGroupsResult> {
     if (!opts) {
         opts = {}
@@ -51,15 +24,15 @@ export function getAppSecEvalGroups(args: GetAppSecEvalGroupsArgs, opts?: pulumi
  */
 export interface GetAppSecEvalGroupsArgs {
     /**
-     * The ID of the eval attack group to use.
+     * . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
      */
     attackGroup?: string;
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the evaluation attack group.
      */
     configId: number;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the evaluation attack group.
      */
     securityPolicyId: string;
 }
@@ -69,28 +42,14 @@ export interface GetAppSecEvalGroupsArgs {
  */
 export interface GetAppSecEvalGroupsResult {
     readonly attackGroup?: string;
-    /**
-     * The eval attack group's action, either `alert`, `d
-     */
     readonly attackGroupAction: string;
-    /**
-     * The eval attack group's conditions and exceptions.
-     */
     readonly conditionException: string;
     readonly configId: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted list of the action and condition-exception information for the specified eval attack
-     * group. This output is only generated if an attack group is specified.
-     */
     readonly json: string;
-    /**
-     * A tabular display showing, for the specified eval attack group or groups, the eval attack group's action and
-     * boolean values indicating whether conditions and exceptions are present.
-     */
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
@@ -104,15 +63,15 @@ export function getAppSecEvalGroupsOutput(args: GetAppSecEvalGroupsOutputArgs, o
  */
 export interface GetAppSecEvalGroupsOutputArgs {
     /**
-     * The ID of the eval attack group to use.
+     * . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
      */
     attackGroup?: pulumi.Input<string>;
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the evaluation attack group.
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the evaluation attack group.
      */
     securityPolicyId: pulumi.Input<string>;
 }

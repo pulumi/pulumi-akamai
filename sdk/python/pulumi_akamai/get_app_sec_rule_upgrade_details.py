@@ -53,17 +53,11 @@ class GetAppSecRuleUpgradeDetailsResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        A JSON-formatted list of the changes (additions and deletions) to the rules for the specified security policy.
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display showing changes (additions and deletions) to the rules for the specified security policy.
-        """
         return pulumi.get(self, "output_text")
 
     @property
@@ -89,7 +83,11 @@ def get_app_sec_rule_upgrade_details(config_id: Optional[int] = None,
                                      security_policy_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecRuleUpgradeDetailsResult:
     """
-    Use the `get_app_sec_rule_upgrade_details` data source to retrieve information on changes to the KRS rule sets.
+    **Scopes**: Security policy
+
+    Returns information indicating which of your Kona Rule Sets (if any) need to be updated. A value of **false** indicates that no updates are required.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/upgrade-details](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getupgradedetails)
 
     ## Example Usage
 
@@ -99,16 +97,22 @@ def get_app_sec_rule_upgrade_details(config_id: Optional[int] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     upgrade_details = akamai.get_app_sec_rule_upgrade_details(config_id=configuration.config_id,
-        security_policy_id=var["security_policy_id"])
+        security_policy_id="gms1_134637")
     pulumi.export("upgradeDetailsText", upgrade_details.output_text)
     pulumi.export("upgradeDetailsJson", upgrade_details.json)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `output_text`. Tabular report showing changes (additions and deletions) to the rules for the specified security policy.
+    - `json`. JSON-formatted list of the changes (additions and deletions) to the rules for the specified security policy.
 
 
-    :param int config_id: The ID of the security configuration to use.
-    :param str security_policy_id: The ID of the security policy to use.
+    :param int config_id: . Unique identifier of the security configuration associated with the Kona Rule Sets.
+    :param str security_policy_id: . Unique identifier of the security policy associated with the Kona Rule Sets.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -132,7 +136,11 @@ def get_app_sec_rule_upgrade_details_output(config_id: Optional[pulumi.Input[int
                                             security_policy_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecRuleUpgradeDetailsResult]:
     """
-    Use the `get_app_sec_rule_upgrade_details` data source to retrieve information on changes to the KRS rule sets.
+    **Scopes**: Security policy
+
+    Returns information indicating which of your Kona Rule Sets (if any) need to be updated. A value of **false** indicates that no updates are required.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/upgrade-details](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getupgradedetails)
 
     ## Example Usage
 
@@ -142,15 +150,21 @@ def get_app_sec_rule_upgrade_details_output(config_id: Optional[pulumi.Input[int
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     upgrade_details = akamai.get_app_sec_rule_upgrade_details(config_id=configuration.config_id,
-        security_policy_id=var["security_policy_id"])
+        security_policy_id="gms1_134637")
     pulumi.export("upgradeDetailsText", upgrade_details.output_text)
     pulumi.export("upgradeDetailsJson", upgrade_details.json)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `output_text`. Tabular report showing changes (additions and deletions) to the rules for the specified security policy.
+    - `json`. JSON-formatted list of the changes (additions and deletions) to the rules for the specified security policy.
 
 
-    :param int config_id: The ID of the security configuration to use.
-    :param str security_policy_id: The ID of the security policy to use.
+    :param int config_id: . Unique identifier of the security configuration associated with the Kona Rule Sets.
+    :param str security_policy_id: . Unique identifier of the security policy associated with the Kona Rule Sets.
     """
     ...

@@ -4,31 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.getAppSecRules` data source to list the action and condition-exception information for a rule or rules.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
- * });
- * const rule = configuration.then(configuration => akamai.getAppSecRules({
- *     configId: configuration.configId,
- *     securityPolicyId: _var.security_policy_id,
- *     ruleId: _var.rule_id,
- * }));
- * export const ruleAction = akamai_appsec_rules.rule.rule_action;
- * export const conditionException = akamai_appsec_rules.rule.condition_exception;
- * export const json = akamai_appsec_rules.rule.json;
- * export const outputText = akamai_appsec_rules.rule.output_text;
- * ```
- */
 export function getAppSecRules(args: GetAppSecRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecRulesResult> {
     if (!opts) {
         opts = {}
@@ -49,15 +24,15 @@ export function getAppSecRules(args: GetAppSecRulesArgs, opts?: pulumi.InvokeOpt
  */
 export interface GetAppSecRulesArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the rules.
      */
     configId: number;
     /**
-     * The ID of the rule to use. If not specified, information about all rules will be returned.
+     * . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
      */
     ruleId?: number;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the rules.
      */
     securityPolicyId: string;
 }
@@ -66,28 +41,14 @@ export interface GetAppSecRulesArgs {
  * A collection of values returned by getAppSecRules.
  */
 export interface GetAppSecRulesResult {
-    /**
-     * The rule's conditions and exceptions.
-     */
     readonly conditionException: string;
     readonly configId: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted list of the action and condition-exception information for the specified rule.
-     * This output is only generated if a rule is specified.
-     */
     readonly json: string;
-    /**
-     * A tabular display showing, for the specified rule or rules, the rule action and boolean values
-     * indicating whether conditions and exceptions are present.
-     */
     readonly outputText: string;
-    /**
-     * The rule's action, either `alert`, `deny`, or `none`.
-     */
     readonly ruleAction: string;
     readonly ruleId?: number;
     readonly securityPolicyId: string;
@@ -102,15 +63,15 @@ export function getAppSecRulesOutput(args: GetAppSecRulesOutputArgs, opts?: pulu
  */
 export interface GetAppSecRulesOutputArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the rules.
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of the rule to use. If not specified, information about all rules will be returned.
+     * . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
      */
     ruleId?: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the rules.
      */
     securityPolicyId: pulumi.Input<string>;
 }

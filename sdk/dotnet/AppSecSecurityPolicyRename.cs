@@ -10,25 +10,29 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// The `akamai.AppSecSecurityPolicyRename` resource allows you to rename an existing security policy.
+    /// **Scopes**: Security policy
+    /// 
+    /// Renames an existing security policy. Note that you can only change the name of the policy: once issued, the security policy ID can't be modified.
+    /// 
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsecuritypolicy)
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecSecurityPolicyRename:AppSecSecurityPolicyRename")]
     public partial class AppSecSecurityPolicyRename : Pulumi.CustomResource
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the security policy being renamed.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to be renamed.
+        /// . Unique identifier of the security policy being renamed.
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
 
         /// <summary>
-        /// The new name to be given to the security policy.
+        /// . New name to be given to the security policy.
         /// </summary>
         [Output("securityPolicyName")]
         public Output<string> SecurityPolicyName { get; private set; } = null!;
@@ -80,19 +84,19 @@ namespace Pulumi.Akamai
     public sealed class AppSecSecurityPolicyRenameArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the security policy being renamed.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to be renamed.
+        /// . Unique identifier of the security policy being renamed.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 
         /// <summary>
-        /// The new name to be given to the security policy.
+        /// . New name to be given to the security policy.
         /// </summary>
         [Input("securityPolicyName", required: true)]
         public Input<string> SecurityPolicyName { get; set; } = null!;
@@ -105,19 +109,19 @@ namespace Pulumi.Akamai
     public sealed class AppSecSecurityPolicyRenameState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the security policy being renamed.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to be renamed.
+        /// . Unique identifier of the security policy being renamed.
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
 
         /// <summary>
-        /// The new name to be given to the security policy.
+        /// . New name to be given to the security policy.
         /// </summary>
         [Input("securityPolicyName")]
         public Input<string>? SecurityPolicyName { get; set; }

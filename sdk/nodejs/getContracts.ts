@@ -14,8 +14,10 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
  *
- * export const propertyMatch = data.akamai_contracts["my-example"];
+ * const my-example = akamai.getContracts({});
+ * export const propertyMatch = my_example;
  * ```
  * ## Argument reference
  *

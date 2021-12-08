@@ -18,9 +18,9 @@ class AppSecWafProtectionArgs:
                  security_policy_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecWafProtection resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[bool] enabled: Whether to enable WAF controls: either `true` or `false`.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the WAF protection settings being modified.
+        :param pulumi.Input[bool] enabled: . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the WAF protection settings being modified.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "enabled", enabled)
@@ -30,7 +30,7 @@ class AppSecWafProtectionArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the WAF protection settings being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -42,7 +42,7 @@ class AppSecWafProtectionArgs:
     @pulumi.getter
     def enabled(self) -> pulumi.Input[bool]:
         """
-        Whether to enable WAF controls: either `true` or `false`.
+        . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
         """
         return pulumi.get(self, "enabled")
 
@@ -54,7 +54,7 @@ class AppSecWafProtectionArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the WAF protection settings being modified.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -72,10 +72,10 @@ class _AppSecWafProtectionState:
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecWafProtection resources.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[bool] enabled: Whether to enable WAF controls: either `true` or `false`.
-        :param pulumi.Input[str] output_text: A tabular display showing the current protection settings.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the WAF protection settings being modified.
+        :param pulumi.Input[bool] enabled: . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
+        :param pulumi.Input[str] output_text: Text Export representation
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the WAF protection settings being modified.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -90,7 +90,7 @@ class _AppSecWafProtectionState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the WAF protection settings being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -102,7 +102,7 @@ class _AppSecWafProtectionState:
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether to enable WAF controls: either `true` or `false`.
+        . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
         """
         return pulumi.get(self, "enabled")
 
@@ -114,7 +114,7 @@ class _AppSecWafProtectionState:
     @pulumi.getter(name="outputText")
     def output_text(self) -> Optional[pulumi.Input[str]]:
         """
-        A tabular display showing the current protection settings.
+        Text Export representation
         """
         return pulumi.get(self, "output_text")
 
@@ -126,7 +126,7 @@ class _AppSecWafProtectionState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the WAF protection settings being modified.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -145,7 +145,11 @@ class AppSecWafProtection(pulumi.CustomResource):
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Use the `AppSecWafProtection` resource to enable or disable WAF protection for a given configuration and security policy.
+        **Scopes**: Security policy
+
+        Enables or disables Web Application Firewall (WAF) protection for a security policy.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putprotections)
 
         ## Example Usage
 
@@ -155,18 +159,23 @@ class AppSecWafProtection(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         protection = akamai.AppSecWafProtection("protection",
             config_id=configuration.config_id,
-            security_policy_id=var["security_policy_id"],
-            enabled=var["enabled"])
+            security_policy_id="gms1_134637",
+            enabled=True)
         ```
+        ## Output Options
+
+        The following options can be used to determine the information returned, and how that returned information is formatted:
+
+        - `output_text`. Tabular report showing the current protection settings.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[bool] enabled: Whether to enable WAF controls: either `true` or `false`.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the WAF protection settings being modified.
+        :param pulumi.Input[bool] enabled: . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the WAF protection settings being modified.
         """
         ...
     @overload
@@ -175,7 +184,11 @@ class AppSecWafProtection(pulumi.CustomResource):
                  args: AppSecWafProtectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `AppSecWafProtection` resource to enable or disable WAF protection for a given configuration and security policy.
+        **Scopes**: Security policy
+
+        Enables or disables Web Application Firewall (WAF) protection for a security policy.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putprotections)
 
         ## Example Usage
 
@@ -185,12 +198,17 @@ class AppSecWafProtection(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         protection = akamai.AppSecWafProtection("protection",
             config_id=configuration.config_id,
-            security_policy_id=var["security_policy_id"],
-            enabled=var["enabled"])
+            security_policy_id="gms1_134637",
+            enabled=True)
         ```
+        ## Output Options
+
+        The following options can be used to determine the information returned, and how that returned information is formatted:
+
+        - `output_text`. Tabular report showing the current protection settings.
 
         :param str resource_name: The name of the resource.
         :param AppSecWafProtectionArgs args: The arguments to use to populate this resource's properties.
@@ -253,10 +271,10 @@ class AppSecWafProtection(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[bool] enabled: Whether to enable WAF controls: either `true` or `false`.
-        :param pulumi.Input[str] output_text: A tabular display showing the current protection settings.
-        :param pulumi.Input[str] security_policy_id: The ID of the security policy to use.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the WAF protection settings being modified.
+        :param pulumi.Input[bool] enabled: . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
+        :param pulumi.Input[str] output_text: Text Export representation
+        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the WAF protection settings being modified.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -272,7 +290,7 @@ class AppSecWafProtection(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the WAF protection settings being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -280,7 +298,7 @@ class AppSecWafProtection(pulumi.CustomResource):
     @pulumi.getter
     def enabled(self) -> pulumi.Output[bool]:
         """
-        Whether to enable WAF controls: either `true` or `false`.
+        . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
         """
         return pulumi.get(self, "enabled")
 
@@ -288,7 +306,7 @@ class AppSecWafProtection(pulumi.CustomResource):
     @pulumi.getter(name="outputText")
     def output_text(self) -> pulumi.Output[str]:
         """
-        A tabular display showing the current protection settings.
+        Text Export representation
         """
         return pulumi.get(self, "output_text")
 
@@ -296,7 +314,7 @@ class AppSecWafProtection(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
-        The ID of the security policy to use.
+        . Unique identifier of the security policy associated with the WAF protection settings being modified.
         """
         return pulumi.get(self, "security_policy_id")
 

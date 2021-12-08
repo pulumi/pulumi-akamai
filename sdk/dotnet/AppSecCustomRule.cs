@@ -10,26 +10,27 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// The `akamai.AppSecCustomRule` resource allows you to create or modify a custom rule associated with a given security configuration.
+    /// **Scopes**: Security configuration
+    /// 
+    /// Creates a custom rule associated with a security configuration. Custom rules are rules that you define yourself and are not part of the Kona Rule Set.
+    /// 
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/custom-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecCustomRule:AppSecCustomRule")]
     public partial class AppSecCustomRule : Pulumi.CustomResource
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the custom rule being modified.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
+        /// . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules) section of the Application Security API documentation.
         /// </summary>
         [Output("customRule")]
         public Output<string> CustomRule { get; private set; } = null!;
 
-        /// <summary>
-        /// The ID of the custom rule.
-        /// </summary>
         [Output("customRuleId")]
         public Output<int> CustomRuleId { get; private set; } = null!;
 
@@ -80,13 +81,13 @@ namespace Pulumi.Akamai
     public sealed class AppSecCustomRuleArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the custom rule being modified.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
+        /// . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules) section of the Application Security API documentation.
         /// </summary>
         [Input("customRule", required: true)]
         public Input<string> CustomRule { get; set; } = null!;
@@ -99,20 +100,17 @@ namespace Pulumi.Akamai
     public sealed class AppSecCustomRuleState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the custom rule being modified.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// The name of a JSON file containing a custom rule definition ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)).
+        /// . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules) section of the Application Security API documentation.
         /// </summary>
         [Input("customRule")]
         public Input<string>? CustomRule { get; set; }
 
-        /// <summary>
-        /// The ID of the custom rule.
-        /// </summary>
         [Input("customRuleId")]
         public Input<int>? CustomRuleId { get; set; }
 

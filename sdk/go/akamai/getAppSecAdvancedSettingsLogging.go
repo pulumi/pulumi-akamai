@@ -10,7 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `AppSecAdvancedSettingsLogging` data source to retrieve information about the HTTP header logging controls for a configuration. This operation applies at the configuration level, and therefore applies to all policies within a configuration. You may retrieve these settings for a particular policy by specifying the policy using the securityPolicyId parameter. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethttpheaderloggingforaconfiguration).
+// **Scopes**: Security configuration; security policy
+//
+// Returns information about your HTTP header logging controls. By default, information is returned for all the security policies in the configuration; however, you can return data for a single policy by using the `securityPolicyId` parameter. The returned information is described in the [ConfigHeaderLog members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#a6d1c316) section of the Application Security API.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethttpheaderloggingforaconfiguration)
 //
 // ## Example Usage
 //
@@ -26,35 +30,41 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
+// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
 // 			Name: &opt0,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		logging, err := akamai.LookupAppSecAdvancedSettingsLogging(ctx, &GetAppSecAdvancedSettingsLoggingArgs{
+// 		customRules, err := akamai.GetAppSecCustomRules(ctx, &GetAppSecCustomRulesArgs{
 // 			ConfigId: configuration.ConfigId,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		ctx.Export("advancedSettingsLoggingOutput", logging.OutputText)
-// 		ctx.Export("advancedSettingsLoggingJson", logging.Json)
-// 		opt1 := _var.Security_policy_id
-// 		policyOverride, err := akamai.LookupAppSecAdvancedSettingsLogging(ctx, &GetAppSecAdvancedSettingsLoggingArgs{
-// 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: &opt1,
+// 		ctx.Export("customRulesOutputText", customRules.OutputText)
+// 		ctx.Export("customRulesJson", customRules.Json)
+// 		ctx.Export("customRulesConfigId", customRules.ConfigId)
+// 		opt1 := 60029316
+// 		specificCustomRule, err := akamai.GetAppSecCustomRules(ctx, &GetAppSecCustomRulesArgs{
+// 			ConfigId:     configuration.ConfigId,
+// 			CustomRuleId: &opt1,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		ctx.Export("advancedSettingsPolicyLoggingOutput", policyOverride.OutputText)
-// 		ctx.Export("advancedSettingsPolicyLoggingJson", policyOverride.Json)
+// 		ctx.Export("specificCustomRuleJson", specificCustomRule.Json)
 // 		return nil
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `json`. JSON-formatted list of information about the logging settings.
+// - `outputText`. Tabular report showing the logging settings.
 func LookupAppSecAdvancedSettingsLogging(ctx *pulumi.Context, args *LookupAppSecAdvancedSettingsLoggingArgs, opts ...pulumi.InvokeOption) (*LookupAppSecAdvancedSettingsLoggingResult, error) {
 	var rv LookupAppSecAdvancedSettingsLoggingResult
 	err := ctx.Invoke("akamai:index/getAppSecAdvancedSettingsLogging:getAppSecAdvancedSettingsLogging", args, &rv, opts...)
@@ -66,9 +76,9 @@ func LookupAppSecAdvancedSettingsLogging(ctx *pulumi.Context, args *LookupAppSec
 
 // A collection of arguments for invoking getAppSecAdvancedSettingsLogging.
 type LookupAppSecAdvancedSettingsLoggingArgs struct {
-	// The configuration ID.
+	// . Unique identifier of the security configuration associated with the logging settings.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the logging settings. If not included, information is returned for all your security policies.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
@@ -76,10 +86,8 @@ type LookupAppSecAdvancedSettingsLoggingArgs struct {
 type LookupAppSecAdvancedSettingsLoggingResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted list of information about the logging settings.
-	Json string `pulumi:"json"`
-	// A tabular display showing the logging settings.
+	Id               string  `pulumi:"id"`
+	Json             string  `pulumi:"json"`
 	OutputText       string  `pulumi:"outputText"`
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
@@ -95,9 +103,9 @@ func LookupAppSecAdvancedSettingsLoggingOutput(ctx *pulumi.Context, args LookupA
 
 // A collection of arguments for invoking getAppSecAdvancedSettingsLogging.
 type LookupAppSecAdvancedSettingsLoggingOutputArgs struct {
-	// The configuration ID.
+	// . Unique identifier of the security configuration associated with the logging settings.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy associated with the logging settings. If not included, information is returned for all your security policies.
 	SecurityPolicyId pulumi.StringPtrInput `pulumi:"securityPolicyId"`
 }
 
@@ -129,12 +137,10 @@ func (o LookupAppSecAdvancedSettingsLoggingResultOutput) Id() pulumi.StringOutpu
 	return o.ApplyT(func(v LookupAppSecAdvancedSettingsLoggingResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted list of information about the logging settings.
 func (o LookupAppSecAdvancedSettingsLoggingResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecAdvancedSettingsLoggingResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display showing the logging settings.
 func (o LookupAppSecAdvancedSettingsLoggingResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecAdvancedSettingsLoggingResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

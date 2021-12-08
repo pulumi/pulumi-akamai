@@ -13,7 +13,13 @@ namespace Pulumi.Akamai
     public static class GetAppSecEvalHostnames
     {
         /// <summary>
-        /// Use the `akamai.AppSecEvalHostnames` data source to retrieve the evaluation hostnames for a configuration. Evaluation mode for hostnames is only available for Web Application Protector. Run hostnames in evaluation mode to see how your configuration settings protect traffic for that hostname before adding a hostname directly to a live configuration. An evaluation period lasts four weeks unless you stop the evaluation. Once you begin, the hostnames you evaluate start responding to traffic as if they are your current hostnames. However, instead of taking an action the evaluation hostnames log which action they would have taken if they were your actively-protected hostnames and not a test.
+        /// **Scopes**: Security configuration
+        /// 
+        /// Returns the evaluation hostnames for a configuration. In evaluation mode, you use evaluation hosts to monitor how well your configuration settings protects host traffic. (Note that the evaluation host isn't actually protected, and the host takes no action other than recording the actions it would have taken had it been on the production network).
+        /// 
+        /// Evaluation mode for hostnames is only available for organizations running Web Application Protector.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames/eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getevaluationhostnames)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -31,7 +37,7 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var evalHostnamesAppSecEvalHostnames = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecEvalHostnames.InvokeAsync(new Akamai.GetAppSecEvalHostnamesArgs
         ///         {
@@ -52,12 +58,25 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `hostnames`. List of evaluation hostnames.
+        /// - `json`. JSON-formatted list of evaluation hostnames.
+        /// - `output_text`. Tabular report showing evaluation hostnames.
         /// </summary>
         public static Task<GetAppSecEvalHostnamesResult> InvokeAsync(GetAppSecEvalHostnamesArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalHostnamesResult>("akamai:index/getAppSecEvalHostnames:getAppSecEvalHostnames", args ?? new GetAppSecEvalHostnamesArgs(), options.WithVersion());
 
         /// <summary>
-        /// Use the `akamai.AppSecEvalHostnames` data source to retrieve the evaluation hostnames for a configuration. Evaluation mode for hostnames is only available for Web Application Protector. Run hostnames in evaluation mode to see how your configuration settings protect traffic for that hostname before adding a hostname directly to a live configuration. An evaluation period lasts four weeks unless you stop the evaluation. Once you begin, the hostnames you evaluate start responding to traffic as if they are your current hostnames. However, instead of taking an action the evaluation hostnames log which action they would have taken if they were your actively-protected hostnames and not a test.
+        /// **Scopes**: Security configuration
+        /// 
+        /// Returns the evaluation hostnames for a configuration. In evaluation mode, you use evaluation hosts to monitor how well your configuration settings protects host traffic. (Note that the evaluation host isn't actually protected, and the host takes no action other than recording the actions it would have taken had it been on the production network).
+        /// 
+        /// Evaluation mode for hostnames is only available for organizations running Web Application Protector.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames/eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getevaluationhostnames)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -75,7 +94,7 @@ namespace Pulumi.Akamai
         ///     {
         ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
         ///         {
-        ///             Name = @var.Security_configuration,
+        ///             Name = "Documentation",
         ///         }));
         ///         var evalHostnamesAppSecEvalHostnames = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecEvalHostnames.InvokeAsync(new Akamai.GetAppSecEvalHostnamesArgs
         ///         {
@@ -96,6 +115,13 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `hostnames`. List of evaluation hostnames.
+        /// - `json`. JSON-formatted list of evaluation hostnames.
+        /// - `output_text`. Tabular report showing evaluation hostnames.
         /// </summary>
         public static Output<GetAppSecEvalHostnamesResult> Invoke(GetAppSecEvalHostnamesInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecEvalHostnamesResult>("akamai:index/getAppSecEvalHostnames:getAppSecEvalHostnames", args ?? new GetAppSecEvalHostnamesInvokeArgs(), options.WithVersion());
@@ -105,7 +131,7 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecEvalHostnamesArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration running in evaluation mode.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
@@ -118,7 +144,7 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecEvalHostnamesInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration running in evaluation mode.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
@@ -133,21 +159,12 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecEvalHostnamesResult
     {
         public readonly int ConfigId;
-        /// <summary>
-        /// A list of the evaluation hostnames.
-        /// </summary>
         public readonly ImmutableArray<string> Hostnames;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A JSON-formatted list of the evaluation hostnames.
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// A tabular display showing the evaluation hostnames.
-        /// </summary>
         public readonly string OutputText;
 
         [OutputConstructor]

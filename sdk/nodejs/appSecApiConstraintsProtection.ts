@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecApiConstraintsProtection` resource to enable or disable API constraints protection for a given configuration and security policy.
+ * **Scopes**: Security policy
+ *
+ * Enables or disables API constraints protection. These constraints specify the action to be taken when designated API endpoints are invoked.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putprotections)
  *
  * ## Example Usage
  *
@@ -16,14 +20,19 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const protection = new akamai.AppSecApiConstraintsProtection("protection", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: _var.security_policy_id,
- *     enabled: _var.enabled,
+ *     securityPolicyId: "gms1_134637",
+ *     enabled: true,
  * });
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `outputText`. Tabular report showing the current protection settings.
  */
 export class AppSecApiConstraintsProtection extends pulumi.CustomResource {
     /**
@@ -53,21 +62,12 @@ export class AppSecApiConstraintsProtection extends pulumi.CustomResource {
         return obj['__pulumiType'] === AppSecApiConstraintsProtection.__pulumiType;
     }
 
-    /**
-     * The ID of the security configuration to use.
-     */
     public readonly configId!: pulumi.Output<number>;
-    /**
-     * Whether to enable API constraints protection: either `true` or `false`.
-     */
     public readonly enabled!: pulumi.Output<boolean>;
     /**
-     * A tabular display showing the current protection settings.
+     * Text Export representation
      */
     public /*out*/ readonly outputText!: pulumi.Output<string>;
-    /**
-     * The ID of the security policy to use.
-     */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
     /**
@@ -114,21 +114,12 @@ export class AppSecApiConstraintsProtection extends pulumi.CustomResource {
  * Input properties used for looking up and filtering AppSecApiConstraintsProtection resources.
  */
 export interface AppSecApiConstraintsProtectionState {
-    /**
-     * The ID of the security configuration to use.
-     */
     configId?: pulumi.Input<number>;
-    /**
-     * Whether to enable API constraints protection: either `true` or `false`.
-     */
     enabled?: pulumi.Input<boolean>;
     /**
-     * A tabular display showing the current protection settings.
+     * Text Export representation
      */
     outputText?: pulumi.Input<string>;
-    /**
-     * The ID of the security policy to use.
-     */
     securityPolicyId?: pulumi.Input<string>;
 }
 
@@ -136,16 +127,7 @@ export interface AppSecApiConstraintsProtectionState {
  * The set of arguments for constructing a AppSecApiConstraintsProtection resource.
  */
 export interface AppSecApiConstraintsProtectionArgs {
-    /**
-     * The ID of the security configuration to use.
-     */
     configId: pulumi.Input<number>;
-    /**
-     * Whether to enable API constraints protection: either `true` or `false`.
-     */
     enabled: pulumi.Input<boolean>;
-    /**
-     * The ID of the security policy to use.
-     */
     securityPolicyId: pulumi.Input<string>;
 }

@@ -13,19 +13,111 @@ namespace Pulumi.Akamai
     public static class GetAppSecWapSelectedHostnames
     {
         /// <summary>
-        /// Use the `akamai.AppSecWapSelectedHostnames` data source to retrieve lists of the hostnames that are currently
-        /// protected and currently being evaluated under a given security configuration and policy. This resource is available
-        /// only for WAP accounts. (WAP selected hostnames is currently in beta. Please contact your Akamai representative for
-        /// more information about this feature.)
+        /// **Scopes**: Security policy
+        /// 
+        /// Returns hostnames currently protected or being evaluated by a configuration and security policy.
+        /// This resource is available only to organizations running Web Application Protector (WAP).
+        /// Note that the WAP selected hostnames feature is currently in beta.
+        /// Please contact your Akamai representative for more information.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = "Documentation",
+        ///         }));
+        ///         var wapSelectedHostnames = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecWapSelectedHostnames.InvokeAsync(new Akamai.GetAppSecWapSelectedHostnamesArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = "gms1_134637",
+        ///         })));
+        ///         this.ProtectedHostnames = wapSelectedHostnames.Apply(wapSelectedHostnames =&gt; wapSelectedHostnames.ProtectedHosts);
+        ///         this.EvaluatedHostnames = wapSelectedHostnames.Apply(wapSelectedHostnames =&gt; wapSelectedHostnames.EvaluatedHosts);
+        ///     }
+        /// 
+        ///     [Output("protectedHostnames")]
+        ///     public Output&lt;string&gt; ProtectedHostnames { get; set; }
+        ///     [Output("evaluatedHostnames")]
+        ///     public Output&lt;string&gt; EvaluatedHostnames { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned and how that returned information is formatted:
+        /// 
+        /// - `protected_hostnames`. List of hostnames currently protected under the security configuration and security policy.
+        /// - `evaluated_hostnames`. List of hostnames currently being evaluated under the security configuration and security policy.
+        /// - `hostnames_json`. JSON-formatted report of the protected and evaluated hostnames.
+        /// - `output_text`. Tabular reports of the protected and evaluated hostnames.
         /// </summary>
         public static Task<GetAppSecWapSelectedHostnamesResult> InvokeAsync(GetAppSecWapSelectedHostnamesArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecWapSelectedHostnamesResult>("akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames", args ?? new GetAppSecWapSelectedHostnamesArgs(), options.WithVersion());
 
         /// <summary>
-        /// Use the `akamai.AppSecWapSelectedHostnames` data source to retrieve lists of the hostnames that are currently
-        /// protected and currently being evaluated under a given security configuration and policy. This resource is available
-        /// only for WAP accounts. (WAP selected hostnames is currently in beta. Please contact your Akamai representative for
-        /// more information about this feature.)
+        /// **Scopes**: Security policy
+        /// 
+        /// Returns hostnames currently protected or being evaluated by a configuration and security policy.
+        /// This resource is available only to organizations running Web Application Protector (WAP).
+        /// Note that the WAP selected hostnames feature is currently in beta.
+        /// Please contact your Akamai representative for more information.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+        ///         {
+        ///             Name = "Documentation",
+        ///         }));
+        ///         var wapSelectedHostnames = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecWapSelectedHostnames.InvokeAsync(new Akamai.GetAppSecWapSelectedHostnamesArgs
+        ///         {
+        ///             ConfigId = configuration.ConfigId,
+        ///             SecurityPolicyId = "gms1_134637",
+        ///         })));
+        ///         this.ProtectedHostnames = wapSelectedHostnames.Apply(wapSelectedHostnames =&gt; wapSelectedHostnames.ProtectedHosts);
+        ///         this.EvaluatedHostnames = wapSelectedHostnames.Apply(wapSelectedHostnames =&gt; wapSelectedHostnames.EvaluatedHosts);
+        ///     }
+        /// 
+        ///     [Output("protectedHostnames")]
+        ///     public Output&lt;string&gt; ProtectedHostnames { get; set; }
+        ///     [Output("evaluatedHostnames")]
+        ///     public Output&lt;string&gt; EvaluatedHostnames { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned and how that returned information is formatted:
+        /// 
+        /// - `protected_hostnames`. List of hostnames currently protected under the security configuration and security policy.
+        /// - `evaluated_hostnames`. List of hostnames currently being evaluated under the security configuration and security policy.
+        /// - `hostnames_json`. JSON-formatted report of the protected and evaluated hostnames.
+        /// - `output_text`. Tabular reports of the protected and evaluated hostnames.
         /// </summary>
         public static Output<GetAppSecWapSelectedHostnamesResult> Invoke(GetAppSecWapSelectedHostnamesInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecWapSelectedHostnamesResult>("akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames", args ?? new GetAppSecWapSelectedHostnamesInvokeArgs(), options.WithVersion());
@@ -35,13 +127,13 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecWapSelectedHostnamesArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the hostnames.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the hostnames.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
@@ -54,13 +146,13 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecWapSelectedHostnamesInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the hostnames.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the hostnames.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -82,9 +174,6 @@ namespace Pulumi.Akamai
         public readonly string Id;
         public readonly string Json;
         public readonly string MatchTargets;
-        /// <summary>
-        /// A tabular display of the protected and evaluated hostnames.
-        /// </summary>
         public readonly string OutputText;
         public readonly ImmutableArray<string> ProtectedHosts;
         public readonly string SecurityPolicyId;

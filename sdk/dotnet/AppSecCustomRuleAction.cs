@@ -10,7 +10,11 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// The `akamai.AppSecCustomRuleAction` resource allows you to associate an action to a custom rule.
+    /// **Scopes**: Custom rule
+    /// 
+    /// Associates an action with a custom rule. Custom rules are rules that you define yourself and are not part of the Kona Rule Set.
+    /// 
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/custom-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putactionruleid)
     /// 
     /// ## Example Usage
     /// 
@@ -26,12 +30,12 @@ namespace Pulumi.Akamai
     ///     {
     ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
     ///         {
-    ///             Name = "Akamai Tools",
+    ///             Name = "Documentation",
     ///         }));
     ///         var createCustomRuleAction = new Akamai.AppSecCustomRuleAction("createCustomRuleAction", new Akamai.AppSecCustomRuleActionArgs
     ///         {
     ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "crAP_75829",
+    ///             SecurityPolicyId = "gms1_134637",
     ///             CustomRuleId = 12345,
     ///             CustomRuleAction = "alert",
     ///         });
@@ -47,25 +51,29 @@ namespace Pulumi.Akamai
     public partial class AppSecCustomRuleAction : Pulumi.CustomResource
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the custom rule action being modified.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        /// . Action to be taken when the custom rule is invoked. Allowed values are:
+        /// - **alert**. Record the event.
+        /// - **deny**. Block the request.
+        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        /// - **none**. Take no action.
         /// </summary>
         [Output("customRuleAction")]
         public Output<string> CustomRuleAction { get; private set; } = null!;
 
         /// <summary>
-        /// The custom rule for which to apply the action.
+        /// . Unique identifier of the custom rule whose action is being modified.
         /// </summary>
         [Output("customRuleId")]
         public Output<int> CustomRuleId { get; private set; } = null!;
 
         /// <summary>
-        /// The security policy to use.
+        /// . Unique identifier of the security policy associated with the custom rule action being modified d.
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -117,25 +125,29 @@ namespace Pulumi.Akamai
     public sealed class AppSecCustomRuleActionArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the custom rule action being modified.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        /// . Action to be taken when the custom rule is invoked. Allowed values are:
+        /// - **alert**. Record the event.
+        /// - **deny**. Block the request.
+        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        /// - **none**. Take no action.
         /// </summary>
         [Input("customRuleAction", required: true)]
         public Input<string> CustomRuleAction { get; set; } = null!;
 
         /// <summary>
-        /// The custom rule for which to apply the action.
+        /// . Unique identifier of the custom rule whose action is being modified.
         /// </summary>
         [Input("customRuleId", required: true)]
         public Input<int> CustomRuleId { get; set; } = null!;
 
         /// <summary>
-        /// The security policy to use.
+        /// . Unique identifier of the security policy associated with the custom rule action being modified d.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -148,25 +160,29 @@ namespace Pulumi.Akamai
     public sealed class AppSecCustomRuleActionState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the custom rule action being modified.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// The action to take when the custom rule is invoked: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action.
+        /// . Action to be taken when the custom rule is invoked. Allowed values are:
+        /// - **alert**. Record the event.
+        /// - **deny**. Block the request.
+        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        /// - **none**. Take no action.
         /// </summary>
         [Input("customRuleAction")]
         public Input<string>? CustomRuleAction { get; set; }
 
         /// <summary>
-        /// The custom rule for which to apply the action.
+        /// . Unique identifier of the custom rule whose action is being modified.
         /// </summary>
         [Input("customRuleId")]
         public Input<int>? CustomRuleId { get; set; }
 
         /// <summary>
-        /// The security policy to use.
+        /// . Unique identifier of the security policy associated with the custom rule action being modified d.
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

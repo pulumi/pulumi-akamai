@@ -17,8 +17,8 @@ class AppSecMatchTargetArgs:
                  match_target: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecMatchTarget resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] match_target: The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the match target being modified.
+        :param pulumi.Input[str] match_target: . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "match_target", match_target)
@@ -27,7 +27,7 @@ class AppSecMatchTargetArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the match target being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -39,7 +39,7 @@ class AppSecMatchTargetArgs:
     @pulumi.getter(name="matchTarget")
     def match_target(self) -> pulumi.Input[str]:
         """
-        The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
+        . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
         """
         return pulumi.get(self, "match_target")
 
@@ -56,9 +56,8 @@ class _AppSecMatchTargetState:
                  match_target_id: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering AppSecMatchTarget resources.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] match_target: The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
-        :param pulumi.Input[int] match_target_id: The ID of the match target.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the match target being modified.
+        :param pulumi.Input[str] match_target: . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -71,7 +70,7 @@ class _AppSecMatchTargetState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the match target being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -83,7 +82,7 @@ class _AppSecMatchTargetState:
     @pulumi.getter(name="matchTarget")
     def match_target(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
+        . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
         """
         return pulumi.get(self, "match_target")
 
@@ -94,9 +93,6 @@ class _AppSecMatchTargetState:
     @property
     @pulumi.getter(name="matchTargetId")
     def match_target_id(self) -> Optional[pulumi.Input[int]]:
-        """
-        The ID of the match target.
-        """
         return pulumi.get(self, "match_target_id")
 
     @match_target_id.setter
@@ -113,7 +109,11 @@ class AppSecMatchTarget(pulumi.CustomResource):
                  match_target: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        The `AppSecMatchTarget` resource allows you to create or modify a match target associated with a given security configuration.
+        **Scopes**: Security configuration
+
+        Creates a match target associated with a security configuration. Match targets determine which security policy should apply to an API, hostname or path.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)
 
         ## Example Usage
 
@@ -123,16 +123,21 @@ class AppSecMatchTarget(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         match_target = akamai.AppSecMatchTarget("matchTarget",
             config_id=configuration.config_id,
             match_target=(lambda path: open(path).read())(f"{path['module']}/match_targets.json"))
         ```
+        ## Output Options
+
+        In addition to the arguments above, the following attribute is exported:
+
+        - `match_target_id`. ID of the match target.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] match_target: The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the match target being modified.
+        :param pulumi.Input[str] match_target: . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
         """
         ...
     @overload
@@ -141,7 +146,11 @@ class AppSecMatchTarget(pulumi.CustomResource):
                  args: AppSecMatchTargetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        The `AppSecMatchTarget` resource allows you to create or modify a match target associated with a given security configuration.
+        **Scopes**: Security configuration
+
+        Creates a match target associated with a security configuration. Match targets determine which security policy should apply to an API, hostname or path.
+
+        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)
 
         ## Example Usage
 
@@ -151,11 +160,16 @@ class AppSecMatchTarget(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
         match_target = akamai.AppSecMatchTarget("matchTarget",
             config_id=configuration.config_id,
             match_target=(lambda path: open(path).read())(f"{path['module']}/match_targets.json"))
         ```
+        ## Output Options
+
+        In addition to the arguments above, the following attribute is exported:
+
+        - `match_target_id`. ID of the match target.
 
         :param str resource_name: The name of the resource.
         :param AppSecMatchTargetArgs args: The arguments to use to populate this resource's properties.
@@ -213,9 +227,8 @@ class AppSecMatchTarget(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: The ID of the security configuration to use.
-        :param pulumi.Input[str] match_target: The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
-        :param pulumi.Input[int] match_target_id: The ID of the match target.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the match target being modified.
+        :param pulumi.Input[str] match_target: . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -230,7 +243,7 @@ class AppSecMatchTarget(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        The ID of the security configuration to use.
+        . Unique identifier of the security configuration associated with the match target being modified.
         """
         return pulumi.get(self, "config_id")
 
@@ -238,15 +251,12 @@ class AppSecMatchTarget(pulumi.CustomResource):
     @pulumi.getter(name="matchTarget")
     def match_target(self) -> pulumi.Output[str]:
         """
-        The name of a JSON file containing one or more match target definitions ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)).
+        . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
         """
         return pulumi.get(self, "match_target")
 
     @property
     @pulumi.getter(name="matchTargetId")
     def match_target_id(self) -> pulumi.Output[int]:
-        """
-        The ID of the match target.
-        """
         return pulumi.get(self, "match_target_id")
 

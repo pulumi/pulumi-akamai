@@ -10,52 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecConfigurationVersion` data source to retrieve information about the versions of a security configuration, or about a specific version.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Akamai Tools"
-// 		specificConfiguration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: &opt0,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		versions, err := akamai.GetAppSecConfigurationVersion(ctx, &GetAppSecConfigurationVersionArgs{
-// 			ConfigId: specificConfiguration.ConfigId,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("versionsOutputText", versions.OutputText)
-// 		ctx.Export("versionsLatest", versions.LatestVersion)
-// 		opt1 := 42
-// 		specificVersion, err := akamai.GetAppSecConfigurationVersion(ctx, &GetAppSecConfigurationVersionArgs{
-// 			ConfigId: specificConfiguration.ConfigId,
-// 			Version:  &opt1,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("specificVersionVersion", specificVersion.Version)
-// 		ctx.Export("specificVersionStaging", specificVersion.StagingStatus)
-// 		ctx.Export("specificVersionProduction", specificVersion.ProductionStatus)
-// 		return nil
-// 	})
-// }
-// ```
 func GetAppSecConfigurationVersion(ctx *pulumi.Context, args *GetAppSecConfigurationVersionArgs, opts ...pulumi.InvokeOption) (*GetAppSecConfigurationVersionResult, error) {
 	var rv GetAppSecConfigurationVersionResult
 	err := ctx.Invoke("akamai:index/getAppSecConfigurationVersion:getAppSecConfigurationVersion", args, &rv, opts...)
@@ -67,9 +21,9 @@ func GetAppSecConfigurationVersion(ctx *pulumi.Context, args *GetAppSecConfigura
 
 // A collection of arguments for invoking getAppSecConfigurationVersion.
 type GetAppSecConfigurationVersionArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration you want to return version information for.
 	ConfigId int `pulumi:"configId"`
-	// The version number of the security configuration to use. If not supplied, information about all versions of the specified security configuration is returned.
+	// . Version number of the security configuration you want to return information about. If not included, information about all the security configuration's versions is returned.
 	Version *int `pulumi:"version"`
 }
 
@@ -77,16 +31,12 @@ type GetAppSecConfigurationVersionArgs struct {
 type GetAppSecConfigurationVersionResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// The last version of the security configuration created.
-	LatestVersion int `pulumi:"latestVersion"`
-	// A tabular display showing the following information about all versions of the security configuration: version number, staging status, and production status.
-	OutputText string `pulumi:"outputText"`
-	// The status of the specified version in production: "Active", "Inactive", or "Deactivated". Returned only if `version` was specified.
+	Id               string `pulumi:"id"`
+	LatestVersion    int    `pulumi:"latestVersion"`
+	OutputText       string `pulumi:"outputText"`
 	ProductionStatus string `pulumi:"productionStatus"`
-	// The status of the specified version in staging: "Active", "Inactive", or "Deactivated". Returned only if `version` was specified.
-	StagingStatus string `pulumi:"stagingStatus"`
-	Version       *int   `pulumi:"version"`
+	StagingStatus    string `pulumi:"stagingStatus"`
+	Version          *int   `pulumi:"version"`
 }
 
 func GetAppSecConfigurationVersionOutput(ctx *pulumi.Context, args GetAppSecConfigurationVersionOutputArgs, opts ...pulumi.InvokeOption) GetAppSecConfigurationVersionResultOutput {
@@ -100,9 +50,9 @@ func GetAppSecConfigurationVersionOutput(ctx *pulumi.Context, args GetAppSecConf
 
 // A collection of arguments for invoking getAppSecConfigurationVersion.
 type GetAppSecConfigurationVersionOutputArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration you want to return version information for.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The version number of the security configuration to use. If not supplied, information about all versions of the specified security configuration is returned.
+	// . Version number of the security configuration you want to return information about. If not included, information about all the security configuration's versions is returned.
 	Version pulumi.IntPtrInput `pulumi:"version"`
 }
 
@@ -134,22 +84,18 @@ func (o GetAppSecConfigurationVersionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecConfigurationVersionResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The last version of the security configuration created.
 func (o GetAppSecConfigurationVersionResultOutput) LatestVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAppSecConfigurationVersionResult) int { return v.LatestVersion }).(pulumi.IntOutput)
 }
 
-// A tabular display showing the following information about all versions of the security configuration: version number, staging status, and production status.
 func (o GetAppSecConfigurationVersionResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecConfigurationVersionResult) string { return v.OutputText }).(pulumi.StringOutput)
 }
 
-// The status of the specified version in production: "Active", "Inactive", or "Deactivated". Returned only if `version` was specified.
 func (o GetAppSecConfigurationVersionResultOutput) ProductionStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecConfigurationVersionResult) string { return v.ProductionStatus }).(pulumi.StringOutput)
 }
 
-// The status of the specified version in staging: "Active", "Inactive", or "Deactivated". Returned only if `version` was specified.
 func (o GetAppSecConfigurationVersionResultOutput) StagingStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecConfigurationVersionResult) string { return v.StagingStatus }).(pulumi.StringOutput)
 }

@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecPenaltyBox` resource to update the penalty box settings for a given security policy.
+ * **Scopes**: Security policy
+ *
+ * Modifies the penalty box settings for a security policy. When using automated attack groups, and when the penalty box is enabled, clients that trigger an attack group  are placed in the “penalty box.” That means that, for the next 10 minutes, all requests from that client are ignored.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets/sequence](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpenaltybox)
  *
  * ## Example Usage
  *
@@ -16,13 +20,13 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const penaltyBox = new akamai.AppSecPenaltyBox("penaltyBox", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: _var.security_policy_id,
+ *     securityPolicyId: "gms1_134637",
  *     penaltyBoxProtection: true,
- *     penaltyBoxAction: _var.action,
+ *     penaltyBoxAction: "deny",
  * });
  * ```
  */
@@ -55,19 +59,23 @@ export class AppSecPenaltyBox extends pulumi.CustomResource {
     }
 
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the penalty box settings being modified.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * The action to take when penalty box protection is triggered: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. Ignored if `penaltyBoxProtection` is set to `false`.
+     * . Action taken any time penalty box protection is triggered. Allowed values are:
+     * - **alert**. Record the event,
+     * - **deny**. Block the request.
+     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+     * - **none**. Take no action.
      */
     public readonly penaltyBoxAction!: pulumi.Output<string>;
     /**
-     * A boolean value indicating whether to enable penalty box protection.
+     * . Set to **true** to enable penalty box protection; set to **false** to disable penalty box protection.
      */
     public readonly penaltyBoxProtection!: pulumi.Output<boolean>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the penalty box settings being modified.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
@@ -119,19 +127,23 @@ export class AppSecPenaltyBox extends pulumi.CustomResource {
  */
 export interface AppSecPenaltyBoxState {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the penalty box settings being modified.
      */
     configId?: pulumi.Input<number>;
     /**
-     * The action to take when penalty box protection is triggered: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. Ignored if `penaltyBoxProtection` is set to `false`.
+     * . Action taken any time penalty box protection is triggered. Allowed values are:
+     * - **alert**. Record the event,
+     * - **deny**. Block the request.
+     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+     * - **none**. Take no action.
      */
     penaltyBoxAction?: pulumi.Input<string>;
     /**
-     * A boolean value indicating whether to enable penalty box protection.
+     * . Set to **true** to enable penalty box protection; set to **false** to disable penalty box protection.
      */
     penaltyBoxProtection?: pulumi.Input<boolean>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the penalty box settings being modified.
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -141,19 +153,23 @@ export interface AppSecPenaltyBoxState {
  */
 export interface AppSecPenaltyBoxArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the penalty box settings being modified.
      */
     configId: pulumi.Input<number>;
     /**
-     * The action to take when penalty box protection is triggered: `alert` to record the trigger event, `deny` to block the request, `deny_custom_{custom_deny_id}` to execute a custom deny action, or `none` to take no action. Ignored if `penaltyBoxProtection` is set to `false`.
+     * . Action taken any time penalty box protection is triggered. Allowed values are:
+     * - **alert**. Record the event,
+     * - **deny**. Block the request.
+     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+     * - **none**. Take no action.
      */
     penaltyBoxAction: pulumi.Input<string>;
     /**
-     * A boolean value indicating whether to enable penalty box protection.
+     * . Set to **true** to enable penalty box protection; set to **false** to disable penalty box protection.
      */
     penaltyBoxProtection: pulumi.Input<boolean>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the penalty box settings being modified.
      */
     securityPolicyId: pulumi.Input<string>;
 }

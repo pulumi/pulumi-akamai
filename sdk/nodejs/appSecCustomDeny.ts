@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * The `resourceAkamaiAppsecCustomDeny` resource allows you to create a new custom deny action for a specific configuration.
+ * **Scopes**: Custom deny
+ *
+ * Modifies a custom deny action. Custom denies enable you to craft your own error message or redirect pages for use when HTTP requests are denied.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/custom-deny](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putcustomdenyaction)
  *
  * ## Example Usage
  *
@@ -17,7 +21,7 @@ import * as utilities from "./utilities";
  * import * from "fs";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const customDeny = new akamai.AppSecCustomDeny("customDeny", {
  *     configId: configuration.then(configuration => configuration.configId),
@@ -25,6 +29,11 @@ import * as utilities from "./utilities";
  * });
  * export const customDenyId = customDeny.customDenyId;
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `customDenyId`. ID of the new custom deny action.
  */
 export class AppSecCustomDeny extends pulumi.CustomResource {
     /**
@@ -55,11 +64,11 @@ export class AppSecCustomDeny extends pulumi.CustomResource {
     }
 
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the custom deny.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * The JSON-formatted definition of the custom deny action ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3)).
+     * . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
      */
     public readonly customDeny!: pulumi.Output<string>;
     /**
@@ -107,11 +116,11 @@ export class AppSecCustomDeny extends pulumi.CustomResource {
  */
 export interface AppSecCustomDenyState {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the custom deny.
      */
     configId?: pulumi.Input<number>;
     /**
-     * The JSON-formatted definition of the custom deny action ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3)).
+     * . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
      */
     customDeny?: pulumi.Input<string>;
     /**
@@ -125,11 +134,11 @@ export interface AppSecCustomDenyState {
  */
 export interface AppSecCustomDenyArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the custom deny.
      */
     configId: pulumi.Input<number>;
     /**
-     * The JSON-formatted definition of the custom deny action ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3)).
+     * . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
      */
     customDeny: pulumi.Input<string>;
 }

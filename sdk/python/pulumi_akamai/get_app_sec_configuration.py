@@ -46,9 +46,6 @@ class GetAppSecConfigurationResult:
     @property
     @pulumi.getter(name="configId")
     def config_id(self) -> int:
-        """
-        The ID of the specified security configuration. Returned only if `name` was specified.
-        """
         return pulumi.get(self, "config_id")
 
     @property
@@ -62,9 +59,6 @@ class GetAppSecConfigurationResult:
     @property
     @pulumi.getter(name="latestVersion")
     def latest_version(self) -> int:
-        """
-        The last version of the specified security configuration created. Returned only if `name` was specified.
-        """
         return pulumi.get(self, "latest_version")
 
     @property
@@ -75,25 +69,16 @@ class GetAppSecConfigurationResult:
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display showing the following information about all available security configurations: config_id, name, latest_version, version_active_in_staging, and version_active_in_production.
-        """
         return pulumi.get(self, "output_text")
 
     @property
     @pulumi.getter(name="productionVersion")
     def production_version(self) -> int:
-        """
-        The version of the specified security configuration currently active in production. Returned only if `name` was specified.
-        """
         return pulumi.get(self, "production_version")
 
     @property
     @pulumi.getter(name="stagingVersion")
     def staging_version(self) -> int:
-        """
-        The version of the specified security configuration currently active in staging. Returned only if `name` was specified.
-        """
         return pulumi.get(self, "staging_version")
 
 
@@ -115,27 +100,9 @@ class AwaitableGetAppSecConfigurationResult(GetAppSecConfigurationResult):
 def get_app_sec_configuration(name: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecConfigurationResult:
     """
-    Use the `AppSecConfiguration` data source to retrieve the list of security configurations, or information about a specific security configuration.
+    Use this data source to access information about an existing resource.
 
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configurations = akamai.get_app_sec_configuration()
-    pulumi.export("configurationList", configurations.output_text)
-    specific_configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
-    pulumi.export("latest", specific_configuration.latest_version)
-    pulumi.export("staging", specific_configuration.staging_version)
-    pulumi.export("production", specific_configuration.production_version)
-    pulumi.export("id", specific_configuration.config_id)
-    ```
-
-
-    :param str name: The name of a specific security configuration. If not supplied, information about all security configurations is returned.
+    :param str name: . Name of the security configuration you want to return information for. If not included, information is returned for all your security configurations.
     """
     __args__ = dict()
     __args__['name'] = name
@@ -159,26 +126,8 @@ def get_app_sec_configuration(name: Optional[str] = None,
 def get_app_sec_configuration_output(name: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecConfigurationResult]:
     """
-    Use the `AppSecConfiguration` data source to retrieve the list of security configurations, or information about a specific security configuration.
+    Use this data source to access information about an existing resource.
 
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configurations = akamai.get_app_sec_configuration()
-    pulumi.export("configurationList", configurations.output_text)
-    specific_configuration = akamai.get_app_sec_configuration(name="Akamai Tools")
-    pulumi.export("latest", specific_configuration.latest_version)
-    pulumi.export("staging", specific_configuration.staging_version)
-    pulumi.export("production", specific_configuration.production_version)
-    pulumi.export("id", specific_configuration.config_id)
-    ```
-
-
-    :param str name: The name of a specific security configuration. If not supplied, information about all security configurations is returned.
+    :param str name: . Name of the security configuration you want to return information for. If not included, information is returned for all your security configurations.
     """
     ...

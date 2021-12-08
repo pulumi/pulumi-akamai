@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.AppSecPenaltyBox` data source to retrieve the penalty box settings for a specified security policy.
+ * **Scopes**: Security policy
+ *
+ * Returns penalty box settings for the specified security policy. When using automated attack groups, and when the penalty box is enabled, clients that trigger an attack group are placed in the “penalty box.” That means that, for the next 10 minutes, all requests from that client are ignored.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/penalty-box](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getpenaltybox)
  *
  * ## Example Usage
  *
@@ -16,16 +20,27 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const penaltyBox = configuration.then(configuration => akamai.getAppSecPenaltyBox({
  *     configId: configuration.configId,
- *     securityPolicyId: _var.security_policy_id,
+ *     securityPolicyId: "gms1_134637",
  * }));
  * export const penaltyBoxAction = penaltyBox.then(penaltyBox => penaltyBox.action);
  * export const penaltyBoxEnabled = penaltyBox.then(penaltyBox => penaltyBox.enabled);
  * export const penaltyBoxText = penaltyBox.then(penaltyBox => penaltyBox.outputText);
  * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `action`. Action taken any time the penalty box is triggered. Valid values are:
+ *   - **alert**. Record the event.
+ *   - **deny**. The request is blocked.
+ *   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
+ *   - **none**. Take no action.
+ * - `enabled`. If **true**, penalty box protection is enabled. If **false**, penalty box protection is disabled.
+ * - `outputText`. Tabular report of penalty box protection settings.
  */
 export function getAppSecPenaltyBox(args: GetAppSecPenaltyBoxArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecPenaltyBoxResult> {
     if (!opts) {
@@ -46,11 +61,11 @@ export function getAppSecPenaltyBox(args: GetAppSecPenaltyBoxArgs, opts?: pulumi
  */
 export interface GetAppSecPenaltyBoxArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the penalty box settings.
      */
     configId: number;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the penalty box settings.
      */
     securityPolicyId: string;
 }
@@ -59,22 +74,13 @@ export interface GetAppSecPenaltyBoxArgs {
  * A collection of values returned by getAppSecPenaltyBox.
  */
 export interface GetAppSecPenaltyBoxResult {
-    /**
-     * The action for the penalty box: `alert`, `deny`, or `none`.
-     */
     readonly action: string;
     readonly configId: number;
-    /**
-     * Either `true` or `false`, indicating whether penalty box protection is enabled.
-     */
     readonly enabled: boolean;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A tabular display of the `action` and `enabled` information.
-     */
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
@@ -88,11 +94,11 @@ export function getAppSecPenaltyBoxOutput(args: GetAppSecPenaltyBoxOutputArgs, o
  */
 export interface GetAppSecPenaltyBoxOutputArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the penalty box settings.
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the penalty box settings.
      */
     securityPolicyId: pulumi.Input<string>;
 }

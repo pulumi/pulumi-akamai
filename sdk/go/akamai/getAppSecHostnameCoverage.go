@@ -7,7 +7,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecHostnameCoverage` data source to retrieve a list of hostnames in the account with their current protections, activation statuses, and other summary information. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#8eb23096).
+// **Scopes**: Individual account
+//
+// Returns information about the hostnames associated with your account; the returned data includes the hostname's protections, activation status, and other summary information. This information is described in the [HostnameCoverage members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames) section of the Application Security API.
+//
+// **Related API Endpoint**: [/appsec/v1/hostname-coverage](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoverage)
 //
 // ## Example Usage
 //
@@ -23,13 +27,6 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Security_configuration
-// 		_, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: &opt0,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
 // 		hostnameCoverage, err := akamai.GetAppSecHostnameCoverage(ctx, nil, nil)
 // 		if err != nil {
 // 			return err
@@ -40,6 +37,12 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `json`. JSON-formatted list of the hostname coverage information.
+// - `outputText`. Tabular report of the hostname coverage information.
 func GetAppSecHostnameCoverage(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetAppSecHostnameCoverageResult, error) {
 	var rv GetAppSecHostnameCoverageResult
 	err := ctx.Invoke("akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage", nil, &rv, opts...)
@@ -52,9 +55,7 @@ func GetAppSecHostnameCoverage(ctx *pulumi.Context, opts ...pulumi.InvokeOption)
 // A collection of values returned by getAppSecHostnameCoverage.
 type GetAppSecHostnameCoverageResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted list of the hostname coverage information.
-	Json string `pulumi:"json"`
-	// A tabular display of the hostname coverage information.
+	Id         string `pulumi:"id"`
+	Json       string `pulumi:"json"`
 	OutputText string `pulumi:"outputText"`
 }

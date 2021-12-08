@@ -5,8 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Use `akamai.AppSecThreatIntel` resource to update threat intelligence setting for a policy. Only applies to ASE Manual rulesets. Allowed values are on and off
- * __BETA__ This is Adaptive Security Engine(ASE) related data resource. Please contact your akamai representative if you want to learn more
+ * **Scopes**: Security policy
+ *
+ * Enables or disables threat intelligence for a security policy. This resource is only available to organizations running the Adaptive Security Engine (ASE) beta Please contact your Akamai representative for more information.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/threat-intel](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putthreatintelligence)
  *
  * ## Example Usage
  *
@@ -17,12 +20,12 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
  * const threatIntel = new akamai.AppSecThreatIntel("threatIntel", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: _var.security_policy_id,
- *     threatIntel: _var.threat_intel,
+ *     securityPolicyId: "gms1_134637",
+ *     threatIntel: "on",
  * });
  * ```
  */
@@ -55,15 +58,15 @@ export class AppSecThreatIntel extends pulumi.CustomResource {
     }
 
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
     /**
-     * threat_intel - "on" or "off"
+     * . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
      */
     public readonly threatIntel!: pulumi.Output<string>;
 
@@ -110,15 +113,15 @@ export class AppSecThreatIntel extends pulumi.CustomResource {
  */
 export interface AppSecThreatIntelState {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
      */
     configId?: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
      */
     securityPolicyId?: pulumi.Input<string>;
     /**
-     * threat_intel - "on" or "off"
+     * . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
      */
     threatIntel?: pulumi.Input<string>;
 }
@@ -128,15 +131,15 @@ export interface AppSecThreatIntelState {
  */
 export interface AppSecThreatIntelArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of the security policy to use.
+     * . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
      */
     securityPolicyId: pulumi.Input<string>;
     /**
-     * threat_intel - "on" or "off"
+     * . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
      */
     threatIntel: pulumi.Input<string>;
 }

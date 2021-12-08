@@ -5,7 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * The `resourceAkamaiAppsecEvalHostnames` resource allows you to update the list of hostnames you want to evaluate for a configuration.
+ * **Scopes**: Security configuration
+ *
+ * Modifies the list of hostnames evaluated while a security configuration is in evaluation mode.
+ * During evaluation mode, hosts take no action of any kind when responding to traffic.
+ * Instead, these hosts simply maintain a record of the actions they *would* have taken if they had been responding to live traffic in your production network.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames/eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevaluationhostnames)
  *
  * ## Example Usage
  *
@@ -16,12 +22,15 @@ import * as utilities from "./utilities";
  * import * as akamai from "@pulumi/akamai";
  *
  * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
+ *     name: "Documentation",
  * });
- * // USE CASE: user wants to specify the hostnames to evaluate
  * const evalHostnames = new akamai.AppSecEvalHostnames("evalHostnames", {
  *     configId: configuration.then(configuration => configuration.configId),
- *     hostnames: _var.hostnames,
+ *     hostnames: [
+ *         "documentation.akamai.com",
+ *         "training.akamai.com",
+ *         "videos.akamai.com",
+ *     ],
  * });
  * ```
  */
@@ -54,11 +63,11 @@ export class AppSecEvalHostnames extends pulumi.CustomResource {
     }
 
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration in evaluation mode.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * A list of evaluation hostnames to be used for the specified configuration version.
+     * . JSON array of hostnames to be used in the evaluation process. Note that this list replaces your existing list of evaluation hosts.
      */
     public readonly hostnames!: pulumi.Output<string[]>;
 
@@ -100,11 +109,11 @@ export class AppSecEvalHostnames extends pulumi.CustomResource {
  */
 export interface AppSecEvalHostnamesState {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration in evaluation mode.
      */
     configId?: pulumi.Input<number>;
     /**
-     * A list of evaluation hostnames to be used for the specified configuration version.
+     * . JSON array of hostnames to be used in the evaluation process. Note that this list replaces your existing list of evaluation hosts.
      */
     hostnames?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -114,11 +123,11 @@ export interface AppSecEvalHostnamesState {
  */
 export interface AppSecEvalHostnamesArgs {
     /**
-     * The ID of the security configuration to use.
+     * . Unique identifier of the security configuration in evaluation mode.
      */
     configId: pulumi.Input<number>;
     /**
-     * A list of evaluation hostnames to be used for the specified configuration version.
+     * . JSON array of hostnames to be used in the evaluation process. Note that this list replaces your existing list of evaluation hosts.
      */
     hostnames: pulumi.Input<pulumi.Input<string>[]>;
 }

@@ -11,18 +11,14 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The `AppSecWapSelectedHostnames` resource allows you to set the lists of hostnames to be protected and to be evaluated
-// under a given security configuration and policy. This resource is available only for WAP accounts. Either of the lists of hostnames
-// may be omitted or specified as an empty list, but at least one of the two lists must be present and non-empty. (WAP selected hostnames
-// is currently in beta. Please contact your Akamai representative for more information about this feature.)
 type AppSecWapSelectedHostnames struct {
 	pulumi.CustomResourceState
 
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
 	ConfigId       pulumi.IntOutput         `pulumi:"configId"`
 	EvaluatedHosts pulumi.StringArrayOutput `pulumi:"evaluatedHosts"`
 	ProtectedHosts pulumi.StringArrayOutput `pulumi:"protectedHosts"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
 
@@ -61,20 +57,20 @@ func GetAppSecWapSelectedHostnames(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecWapSelectedHostnames resources.
 type appSecWapSelectedHostnamesState struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
 	ConfigId       *int     `pulumi:"configId"`
 	EvaluatedHosts []string `pulumi:"evaluatedHosts"`
 	ProtectedHosts []string `pulumi:"protectedHosts"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppSecWapSelectedHostnamesState struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
 	ConfigId       pulumi.IntPtrInput
 	EvaluatedHosts pulumi.StringArrayInput
 	ProtectedHosts pulumi.StringArrayInput
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -83,21 +79,21 @@ func (AppSecWapSelectedHostnamesState) ElementType() reflect.Type {
 }
 
 type appSecWapSelectedHostnamesArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
 	ConfigId       int      `pulumi:"configId"`
 	EvaluatedHosts []string `pulumi:"evaluatedHosts"`
 	ProtectedHosts []string `pulumi:"protectedHosts"`
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // The set of arguments for constructing a AppSecWapSelectedHostnames resource.
 type AppSecWapSelectedHostnamesArgs struct {
-	// The ID of the security configuration to use.
+	// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
 	ConfigId       pulumi.IntInput
 	EvaluatedHosts pulumi.StringArrayInput
 	ProtectedHosts pulumi.StringArrayInput
-	// The ID of the security policy to use.
+	// . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
 	SecurityPolicyId pulumi.StringInput
 }
 

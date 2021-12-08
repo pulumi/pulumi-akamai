@@ -10,7 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getAppSecHostnameCoverageOverlapping` data source to retrieve information about the configuration versions that contain a hostname also included in the current configuration version. The information available is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoverageoverlapping).
+// **Scopes**: Security configuration; hostname
+//
+// Returns information about any other configuration versions that contain a hostname found in the current configuration version. The returned information is described in the [List hostname overlaps](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoverageoverlapping) section of the Application Security API.
+//
+// **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/hostname-coverage/overlapping?hostname={host}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoverageoverlapping)
 //
 // ## Example Usage
 //
@@ -26,9 +30,16 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.GetAppSecHostnameCoverageOverlapping(ctx, &GetAppSecHostnameCoverageOverlappingArgs{
-// 			ConfigId: 43253,
-// 			Hostname: "example.com",
+// 		opt0 := "Documentation"
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+// 			Name: &opt0,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		_, err = akamai.GetAppSecHostnameCoverageOverlapping(ctx, &GetAppSecHostnameCoverageOverlappingArgs{
+// 			ConfigId: configuration.ConfigId,
+// 			Hostname: "documentation.akamai.com",
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -37,6 +48,12 @@ import (
 // 	})
 // }
 // ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `json`. JSON-formatted list of the overlap information.
+// - `outputText`. Tabular report of the overlap information.
 func GetAppSecHostnameCoverageOverlapping(ctx *pulumi.Context, args *GetAppSecHostnameCoverageOverlappingArgs, opts ...pulumi.InvokeOption) (*GetAppSecHostnameCoverageOverlappingResult, error) {
 	var rv GetAppSecHostnameCoverageOverlappingResult
 	err := ctx.Invoke("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", args, &rv, opts...)
@@ -48,9 +65,9 @@ func GetAppSecHostnameCoverageOverlapping(ctx *pulumi.Context, args *GetAppSecHo
 
 // A collection of arguments for invoking getAppSecHostnameCoverageOverlapping.
 type GetAppSecHostnameCoverageOverlappingArgs struct {
-	// The configuration ID.
+	// . Unique identifier of the security configuration you want to return information for.
 	ConfigId int `pulumi:"configId"`
-	// The hostname for which to retrieve information.
+	// . Name of the host you want to return information for.
 	Hostname string `pulumi:"hostname"`
 }
 
@@ -59,10 +76,8 @@ type GetAppSecHostnameCoverageOverlappingResult struct {
 	ConfigId int    `pulumi:"configId"`
 	Hostname string `pulumi:"hostname"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted list of the overlap information.
-	Json string `pulumi:"json"`
-	// A tabular display of the overlap information.
+	Id         string `pulumi:"id"`
+	Json       string `pulumi:"json"`
 	OutputText string `pulumi:"outputText"`
 }
 
@@ -77,9 +92,9 @@ func GetAppSecHostnameCoverageOverlappingOutput(ctx *pulumi.Context, args GetApp
 
 // A collection of arguments for invoking getAppSecHostnameCoverageOverlapping.
 type GetAppSecHostnameCoverageOverlappingOutputArgs struct {
-	// The configuration ID.
+	// . Unique identifier of the security configuration you want to return information for.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The hostname for which to retrieve information.
+	// . Name of the host you want to return information for.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 }
 
@@ -115,12 +130,10 @@ func (o GetAppSecHostnameCoverageOverlappingResultOutput) Id() pulumi.StringOutp
 	return o.ApplyT(func(v GetAppSecHostnameCoverageOverlappingResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted list of the overlap information.
 func (o GetAppSecHostnameCoverageOverlappingResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecHostnameCoverageOverlappingResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display of the overlap information.
 func (o GetAppSecHostnameCoverageOverlappingResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecHostnameCoverageOverlappingResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

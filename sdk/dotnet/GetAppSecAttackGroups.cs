@@ -12,103 +12,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecAttackGroups
     {
-        /// <summary>
-        /// Use the `akamai.getAppSecAttackGroups` data source to list the action and condition-exception information for an attack
-        /// group or groups.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = @var.Security_configuration,
-        ///         }));
-        ///         var attackGroup = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAttackGroups.InvokeAsync(new Akamai.GetAppSecAttackGroupsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
-        ///             AttackGroup = @var.Attack_group,
-        ///         })));
-        ///         this.AttackGroupAction = akamai_appsec_attack_groups.Attack_group.Attack_group_action;
-        ///         this.ConditionException = akamai_appsec_attack_groups.Attack_group.Condition_exception;
-        ///         this.Json = akamai_appsec_attack_groups.Attack_group.Json;
-        ///         this.OutputText = akamai_appsec_attack_groups.Attack_group.Output_text;
-        ///     }
-        /// 
-        ///     [Output("attackGroupAction")]
-        ///     public Output&lt;string&gt; AttackGroupAction { get; set; }
-        ///     [Output("conditionException")]
-        ///     public Output&lt;string&gt; ConditionException { get; set; }
-        ///     [Output("json")]
-        ///     public Output&lt;string&gt; Json { get; set; }
-        ///     [Output("outputText")]
-        ///     public Output&lt;string&gt; OutputText { get; set; }
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// </summary>
         public static Task<GetAppSecAttackGroupsResult> InvokeAsync(GetAppSecAttackGroupsArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAttackGroupsResult>("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", args ?? new GetAppSecAttackGroupsArgs(), options.WithVersion());
 
-        /// <summary>
-        /// Use the `akamai.getAppSecAttackGroups` data source to list the action and condition-exception information for an attack
-        /// group or groups.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = @var.Security_configuration,
-        ///         }));
-        ///         var attackGroup = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAttackGroups.InvokeAsync(new Akamai.GetAppSecAttackGroupsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
-        ///             AttackGroup = @var.Attack_group,
-        ///         })));
-        ///         this.AttackGroupAction = akamai_appsec_attack_groups.Attack_group.Attack_group_action;
-        ///         this.ConditionException = akamai_appsec_attack_groups.Attack_group.Condition_exception;
-        ///         this.Json = akamai_appsec_attack_groups.Attack_group.Json;
-        ///         this.OutputText = akamai_appsec_attack_groups.Attack_group.Output_text;
-        ///     }
-        /// 
-        ///     [Output("attackGroupAction")]
-        ///     public Output&lt;string&gt; AttackGroupAction { get; set; }
-        ///     [Output("conditionException")]
-        ///     public Output&lt;string&gt; ConditionException { get; set; }
-        ///     [Output("json")]
-        ///     public Output&lt;string&gt; Json { get; set; }
-        ///     [Output("outputText")]
-        ///     public Output&lt;string&gt; OutputText { get; set; }
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// </summary>
         public static Output<GetAppSecAttackGroupsResult> Invoke(GetAppSecAttackGroupsInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecAttackGroupsResult>("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", args ?? new GetAppSecAttackGroupsInvokeArgs(), options.WithVersion());
     }
@@ -117,19 +23,19 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecAttackGroupsArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the attack group to use.
+        /// . Unique name of the attack group you want to return information for. If not included, information is returned for all your attack groups.
         /// </summary>
         [Input("attackGroup")]
         public string? AttackGroup { get; set; }
 
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the attack group.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the attack group.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
@@ -142,19 +48,19 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecAttackGroupsInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the attack group to use.
+        /// . Unique name of the attack group you want to return information for. If not included, information is returned for all your attack groups.
         /// </summary>
         [Input("attackGroup")]
         public Input<string>? AttackGroup { get; set; }
 
         /// <summary>
-        /// The ID of the security configuration to use.
+        /// . Unique identifier of the security configuration associated with the attack group.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the security policy to use.
+        /// . Unique identifier of the security policy associated with the attack group.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -169,28 +75,14 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecAttackGroupsResult
     {
         public readonly string? AttackGroup;
-        /// <summary>
-        /// The attack group's action, either `alert`, `deny`, or `none`.
-        /// </summary>
         public readonly string AttackGroupAction;
-        /// <summary>
-        /// The attack group's conditions and exceptions.
-        /// </summary>
         public readonly string ConditionException;
         public readonly int ConfigId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A JSON-formatted list of the action and condition-exception information for the specified attack
-        /// group. This output is only generated if an attack group is specified.
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// A tabular display showing, for the specified attack group or groups, the attack group's action and
-        /// boolean values indicating whether conditions and exceptions are present.
-        /// </summary>
         public readonly string OutputText;
         public readonly string SecurityPolicyId;
 

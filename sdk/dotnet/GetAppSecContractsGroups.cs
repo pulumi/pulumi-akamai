@@ -13,7 +13,11 @@ namespace Pulumi.Akamai
     public static class GetAppSecContractsGroups
     {
         /// <summary>
-        /// Use the `akamai.getAppSecContractsGroups` data source to retrieve information about the contracts and groups for your account. Each object contains the contract, groups associated with the contract, and whether Kona Site Defender or Web Application Protector is the product for that contract. You’ll need this information when you create a new security configuration or when you want to get a list of hostnames still available for use in a security policy. The information available via this data source is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf).
+        /// **Scopes**: Contract; group
+        /// 
+        /// Returns information about the contracts and groups associated with your account. Among other things, this information is required to create a new security configuration and to return a list of the hostnames available for use in a security policy. The returned information for this data source is described in the [List contracts and groups](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf) of the Application Security API.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/contracts-groups](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -31,8 +35,8 @@ namespace Pulumi.Akamai
         ///     {
         ///         var contractsGroups = Output.Create(Akamai.GetAppSecContractsGroups.InvokeAsync(new Akamai.GetAppSecContractsGroupsArgs
         ///         {
-        ///             Contractid = @var.Contractid,
-        ///             Groupid = @var.Groupid,
+        ///             Contractid = "5-2WA382",
+        ///             Groupid = 12198,
         ///         }));
         ///         this.ContractsGroupsList = contractsGroups.Apply(contractsGroups =&gt; contractsGroups.OutputText);
         ///         this.ContractsGroupsJson = contractsGroups.Apply(contractsGroups =&gt; contractsGroups.Json);
@@ -52,12 +56,24 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `json`. JSON-formatted list of contract and group information.
+        /// - `output_text`. Tabular report of contract and group information.
+        /// - `default_contractid`. Default contract ID for the specified contract and group.
+        /// - `default_groupid`. Default group ID for the specified contract and group.
         /// </summary>
         public static Task<GetAppSecContractsGroupsResult> InvokeAsync(GetAppSecContractsGroupsArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecContractsGroupsResult>("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", args ?? new GetAppSecContractsGroupsArgs(), options.WithVersion());
 
         /// <summary>
-        /// Use the `akamai.getAppSecContractsGroups` data source to retrieve information about the contracts and groups for your account. Each object contains the contract, groups associated with the contract, and whether Kona Site Defender or Web Application Protector is the product for that contract. You’ll need this information when you create a new security configuration or when you want to get a list of hostnames still available for use in a security policy. The information available via this data source is described [here](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf).
+        /// **Scopes**: Contract; group
+        /// 
+        /// Returns information about the contracts and groups associated with your account. Among other things, this information is required to create a new security configuration and to return a list of the hostnames available for use in a security policy. The returned information for this data source is described in the [List contracts and groups](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf) of the Application Security API.
+        /// 
+        /// **Related API Endpoint**: [/appsec/v1/contracts-groups](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -75,8 +91,8 @@ namespace Pulumi.Akamai
         ///     {
         ///         var contractsGroups = Output.Create(Akamai.GetAppSecContractsGroups.InvokeAsync(new Akamai.GetAppSecContractsGroupsArgs
         ///         {
-        ///             Contractid = @var.Contractid,
-        ///             Groupid = @var.Groupid,
+        ///             Contractid = "5-2WA382",
+        ///             Groupid = 12198,
         ///         }));
         ///         this.ContractsGroupsList = contractsGroups.Apply(contractsGroups =&gt; contractsGroups.OutputText);
         ///         this.ContractsGroupsJson = contractsGroups.Apply(contractsGroups =&gt; contractsGroups.Json);
@@ -96,6 +112,14 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
+        /// ## Output Options
+        /// 
+        /// The following options can be used to determine the information returned, and how that returned information is formatted:
+        /// 
+        /// - `json`. JSON-formatted list of contract and group information.
+        /// - `output_text`. Tabular report of contract and group information.
+        /// - `default_contractid`. Default contract ID for the specified contract and group.
+        /// - `default_groupid`. Default group ID for the specified contract and group.
         /// </summary>
         public static Output<GetAppSecContractsGroupsResult> Invoke(GetAppSecContractsGroupsInvokeArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecContractsGroupsResult>("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", args ?? new GetAppSecContractsGroupsInvokeArgs(), options.WithVersion());
@@ -105,13 +129,13 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecContractsGroupsArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// (Optional) The ID of a contract for which to retrieve information.
+        /// . Unique identifier of an Akamai contract. If not included, information is returned for all the Akamai contracts associated with your account.
         /// </summary>
         [Input("contractid")]
         public string? Contractid { get; set; }
 
         /// <summary>
-        /// (Optional) The ID of a group for which to retrieve information.
+        /// . Unique identifier of a contract group. If not included, information is returned for all the groups associated with your account.
         /// </summary>
         [Input("groupid")]
         public int? Groupid { get; set; }
@@ -124,13 +148,13 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecContractsGroupsInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// (Optional) The ID of a contract for which to retrieve information.
+        /// . Unique identifier of an Akamai contract. If not included, information is returned for all the Akamai contracts associated with your account.
         /// </summary>
         [Input("contractid")]
         public Input<string>? Contractid { get; set; }
 
         /// <summary>
-        /// (Optional) The ID of a group for which to retrieve information.
+        /// . Unique identifier of a contract group. If not included, information is returned for all the groups associated with your account.
         /// </summary>
         [Input("groupid")]
         public Input<int>? Groupid { get; set; }
@@ -144,33 +168,15 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetAppSecContractsGroupsResult
     {
-        /// <summary>
-        /// (Optional) The ID of a contract for which to retrieve information.
-        /// </summary>
         public readonly string? Contractid;
-        /// <summary>
-        /// The default contract ID for the specified contract and group.
-        /// </summary>
         public readonly string DefaultContractid;
-        /// <summary>
-        /// The default group ID for the specified contract and group.
-        /// </summary>
         public readonly int DefaultGroupid;
-        /// <summary>
-        /// (Optional) The ID of a group for which to retrieve information.
-        /// </summary>
         public readonly int? Groupid;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A JSON-formatted list of the contract and group information.
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// A tabular display showing the contract and group information.
-        /// </summary>
         public readonly string OutputText;
 
         [OutputConstructor]

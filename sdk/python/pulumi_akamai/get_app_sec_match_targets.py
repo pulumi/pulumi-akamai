@@ -53,9 +53,6 @@ class GetAppSecMatchTargetsResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        A JSON-formatted list of the match target information.
-        """
         return pulumi.get(self, "json")
 
     @property
@@ -66,9 +63,6 @@ class GetAppSecMatchTargetsResult:
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display showing the ID and Policy ID of all match targets associated with the specified security configuration, or of the specific match target if `match_target_id` was supplied.
-        """
         return pulumi.get(self, "output_text")
 
 
@@ -89,7 +83,11 @@ def get_app_sec_match_targets(config_id: Optional[int] = None,
                               match_target_id: Optional[int] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecMatchTargetsResult:
     """
-    Use the `get_app_sec_match_targets` data source to retrieve information about the match targets associated with a given configuration, or about a specific match target.
+    **Scopes**: Security configuration; match target
+
+    Returns information about your match targets. Match targets determine which security policy should apply to an API, hostname or path.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets{?policyId,includeChildObjectName}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getmatchtargets)
 
     ## Example Usage
 
@@ -99,17 +97,23 @@ def get_app_sec_match_targets(config_id: Optional[int] = None,
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     match_targets_app_sec_match_targets = akamai.get_app_sec_match_targets(config_id=configuration.config_id)
     pulumi.export("matchTargets", match_targets_app_sec_match_targets.output_text)
     match_target = akamai.get_app_sec_match_targets(config_id=configuration.config_id,
-        match_target_id=var["match_target_id"])
+        match_target_id=2712938)
     pulumi.export("matchTargetOutput", match_target.output_text)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `output_text`. Tabular report showing the ID and security policy ID of your match targets.
+    - `json`. JSON-formatted list of the match target information.
 
 
-    :param int config_id: The ID of the security configuration to use.
-    :param int match_target_id: The ID of the match target to use. If not supplied, information about all match targets is returned.
+    :param int config_id: . Unique identifier of the security configuration associated with the match targets.
+    :param int match_target_id: . Unique identifier of the match target you want to return information for. If not included, information is returned for all your match targets.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -133,7 +137,11 @@ def get_app_sec_match_targets_output(config_id: Optional[pulumi.Input[int]] = No
                                      match_target_id: Optional[pulumi.Input[Optional[int]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecMatchTargetsResult]:
     """
-    Use the `get_app_sec_match_targets` data source to retrieve information about the match targets associated with a given configuration, or about a specific match target.
+    **Scopes**: Security configuration; match target
+
+    Returns information about your match targets. Match targets determine which security policy should apply to an API, hostname or path.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets{?policyId,includeChildObjectName}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getmatchtargets)
 
     ## Example Usage
 
@@ -143,16 +151,22 @@ def get_app_sec_match_targets_output(config_id: Optional[pulumi.Input[int]] = No
     import pulumi
     import pulumi_akamai as akamai
 
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
     match_targets_app_sec_match_targets = akamai.get_app_sec_match_targets(config_id=configuration.config_id)
     pulumi.export("matchTargets", match_targets_app_sec_match_targets.output_text)
     match_target = akamai.get_app_sec_match_targets(config_id=configuration.config_id,
-        match_target_id=var["match_target_id"])
+        match_target_id=2712938)
     pulumi.export("matchTargetOutput", match_target.output_text)
     ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `output_text`. Tabular report showing the ID and security policy ID of your match targets.
+    - `json`. JSON-formatted list of the match target information.
 
 
-    :param int config_id: The ID of the security configuration to use.
-    :param int match_target_id: The ID of the match target to use. If not supplied, information about all match targets is returned.
+    :param int config_id: . Unique identifier of the security configuration associated with the match targets.
+    :param int match_target_id: . Unique identifier of the match target you want to return information for. If not included, information is returned for all your match targets.
     """
     ...
