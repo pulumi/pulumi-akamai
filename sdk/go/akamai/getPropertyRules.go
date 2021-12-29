@@ -22,12 +22,25 @@ import (
 // package main
 //
 // import (
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		ctx.Export("propertyMatch", data.Akamai_property_rules.My-example)
+// 		opt0 := "grp_12345"
+// 		opt1 := "ctr_1-AB123"
+// 		opt2 := 3
+// 		my_example, err := akamai.GetPropertyRules(ctx, &GetPropertyRulesArgs{
+// 			PropertyId: "prp_123",
+// 			GroupId:    &opt0,
+// 			ContractId: &opt1,
+// 			Version:    &opt2,
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		ctx.Export("propertyMatch", my_example)
 // 		return nil
 // 	})
 // }
@@ -46,6 +59,7 @@ import (
 //
 // This data source returns these attributes:
 //
+// * `ruleFormat` - The rule tree version used. Property rule objects are versioned infrequently, and are known as rule formats. See [About rule formats](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#rf) to learn more.
 // * `rules` - A JSON-encoded rule tree for the property.
 // * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the Property Manager API documentation.
 func GetPropertyRules(ctx *pulumi.Context, args *GetPropertyRulesArgs, opts ...pulumi.InvokeOption) (*GetPropertyRulesResult, error) {
@@ -62,6 +76,7 @@ type GetPropertyRulesArgs struct {
 	ContractId *string `pulumi:"contractId"`
 	GroupId    *string `pulumi:"groupId"`
 	PropertyId string  `pulumi:"propertyId"`
+	RuleFormat *string `pulumi:"ruleFormat"`
 	Version    *int    `pulumi:"version"`
 }
 
@@ -71,10 +86,11 @@ type GetPropertyRulesResult struct {
 	Errors     string `pulumi:"errors"`
 	GroupId    string `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id         string `pulumi:"id"`
-	PropertyId string `pulumi:"propertyId"`
-	Rules      string `pulumi:"rules"`
-	Version    int    `pulumi:"version"`
+	Id         string  `pulumi:"id"`
+	PropertyId string  `pulumi:"propertyId"`
+	RuleFormat *string `pulumi:"ruleFormat"`
+	Rules      string  `pulumi:"rules"`
+	Version    int     `pulumi:"version"`
 }
 
 func GetPropertyRulesOutput(ctx *pulumi.Context, args GetPropertyRulesOutputArgs, opts ...pulumi.InvokeOption) GetPropertyRulesResultOutput {
@@ -91,6 +107,7 @@ type GetPropertyRulesOutputArgs struct {
 	ContractId pulumi.StringPtrInput `pulumi:"contractId"`
 	GroupId    pulumi.StringPtrInput `pulumi:"groupId"`
 	PropertyId pulumi.StringInput    `pulumi:"propertyId"`
+	RuleFormat pulumi.StringPtrInput `pulumi:"ruleFormat"`
 	Version    pulumi.IntPtrInput    `pulumi:"version"`
 }
 
@@ -132,6 +149,10 @@ func (o GetPropertyRulesResultOutput) Id() pulumi.StringOutput {
 
 func (o GetPropertyRulesResultOutput) PropertyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPropertyRulesResult) string { return v.PropertyId }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyRulesResultOutput) RuleFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPropertyRulesResult) *string { return v.RuleFormat }).(pulumi.StringPtrOutput)
 }
 
 func (o GetPropertyRulesResultOutput) Rules() pulumi.StringOutput {

@@ -50,7 +50,10 @@ import * as utilities from "./utilities";
  * * `productId` - (Required) A product's unique ID, including the `prd_` prefix.
  * * `edgeHostname` - (Required) One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
  * * `certificate` - (Optional) Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
- * * `ipBehavior` - (Required) Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6. The default value is `IPV4`.
+ * * `ipBehavior` - (Required) Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
+ *
+ * ### Deprecated arguments
+ *
  * * `contract` - (Deprecated) Replaced by `contractId`. Maintained for legacy purposes.
  * * `group` - (Deprecated) Replaced by `groupId`. Maintained for legacy purposes.
  * * `product` - (Deprecated) Replaced by `productId`. Maintained for legacy purposes.
@@ -121,6 +124,10 @@ export class EdgeHostName extends pulumi.CustomResource {
      */
     public readonly product!: pulumi.Output<string>;
     public readonly productId!: pulumi.Output<string>;
+    /**
+     * A JSON encoded list of use cases
+     */
+    public readonly useCases!: pulumi.Output<string | undefined>;
 
     /**
      * Create a EdgeHostName resource with the given unique name, arguments, and options.
@@ -144,6 +151,7 @@ export class EdgeHostName extends pulumi.CustomResource {
             inputs["ipBehavior"] = state ? state.ipBehavior : undefined;
             inputs["product"] = state ? state.product : undefined;
             inputs["productId"] = state ? state.productId : undefined;
+            inputs["useCases"] = state ? state.useCases : undefined;
         } else {
             const args = argsOrState as EdgeHostNameArgs | undefined;
             if ((!args || args.edgeHostname === undefined) && !opts.urn) {
@@ -161,6 +169,7 @@ export class EdgeHostName extends pulumi.CustomResource {
             inputs["ipBehavior"] = args ? args.ipBehavior : undefined;
             inputs["product"] = args ? args.product : undefined;
             inputs["productId"] = args ? args.productId : undefined;
+            inputs["useCases"] = args ? args.useCases : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -193,6 +202,10 @@ export interface EdgeHostNameState {
      */
     product?: pulumi.Input<string>;
     productId?: pulumi.Input<string>;
+    /**
+     * A JSON encoded list of use cases
+     */
+    useCases?: pulumi.Input<string>;
 }
 
 /**
@@ -217,4 +230,8 @@ export interface EdgeHostNameArgs {
      */
     product?: pulumi.Input<string>;
     productId?: pulumi.Input<string>;
+    /**
+     * A JSON encoded list of use cases
+     */
+    useCases?: pulumi.Input<string>;
 }

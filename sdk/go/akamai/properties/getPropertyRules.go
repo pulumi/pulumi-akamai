@@ -25,6 +25,7 @@ type GetPropertyRulesArgs struct {
 	ContractId *string `pulumi:"contractId"`
 	GroupId    *string `pulumi:"groupId"`
 	PropertyId string  `pulumi:"propertyId"`
+	RuleFormat *string `pulumi:"ruleFormat"`
 	Version    *int    `pulumi:"version"`
 }
 
@@ -34,10 +35,11 @@ type GetPropertyRulesResult struct {
 	Errors     string `pulumi:"errors"`
 	GroupId    string `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id         string `pulumi:"id"`
-	PropertyId string `pulumi:"propertyId"`
-	Rules      string `pulumi:"rules"`
-	Version    int    `pulumi:"version"`
+	Id         string  `pulumi:"id"`
+	PropertyId string  `pulumi:"propertyId"`
+	RuleFormat *string `pulumi:"ruleFormat"`
+	Rules      string  `pulumi:"rules"`
+	Version    int     `pulumi:"version"`
 }
 
 func GetPropertyRulesOutput(ctx *pulumi.Context, args GetPropertyRulesOutputArgs, opts ...pulumi.InvokeOption) GetPropertyRulesResultOutput {
@@ -54,6 +56,7 @@ type GetPropertyRulesOutputArgs struct {
 	ContractId pulumi.StringPtrInput `pulumi:"contractId"`
 	GroupId    pulumi.StringPtrInput `pulumi:"groupId"`
 	PropertyId pulumi.StringInput    `pulumi:"propertyId"`
+	RuleFormat pulumi.StringPtrInput `pulumi:"ruleFormat"`
 	Version    pulumi.IntPtrInput    `pulumi:"version"`
 }
 
@@ -95,6 +98,10 @@ func (o GetPropertyRulesResultOutput) Id() pulumi.StringOutput {
 
 func (o GetPropertyRulesResultOutput) PropertyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPropertyRulesResult) string { return v.PropertyId }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyRulesResultOutput) RuleFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPropertyRulesResult) *string { return v.RuleFormat }).(pulumi.StringPtrOutput)
 }
 
 func (o GetPropertyRulesResultOutput) Rules() pulumi.StringOutput {

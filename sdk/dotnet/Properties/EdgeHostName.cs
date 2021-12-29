@@ -40,6 +40,12 @@ namespace Pulumi.Akamai.Properties
         [Output("productId")]
         public Output<string> ProductId { get; private set; } = null!;
 
+        /// <summary>
+        /// A JSON encoded list of use cases
+        /// </summary>
+        [Output("useCases")]
+        public Output<string?> UseCases { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a EdgeHostName resource with the given unique name, arguments, and options.
@@ -113,6 +119,12 @@ namespace Pulumi.Akamai.Properties
         [Input("productId")]
         public Input<string>? ProductId { get; set; }
 
+        /// <summary>
+        /// A JSON encoded list of use cases
+        /// </summary>
+        [Input("useCases")]
+        public Input<string>? UseCases { get; set; }
+
         public EdgeHostNameArgs()
         {
         }
@@ -146,6 +158,12 @@ namespace Pulumi.Akamai.Properties
 
         [Input("productId")]
         public Input<string>? ProductId { get; set; }
+
+        /// <summary>
+        /// A JSON encoded list of use cases
+        /// </summary>
+        [Input("useCases")]
+        public Input<string>? UseCases { get; set; }
 
         public EdgeHostNameState()
         {

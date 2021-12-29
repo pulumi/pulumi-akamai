@@ -18,6 +18,7 @@ export function getPropertyRules(args: GetPropertyRulesArgs, opts?: pulumi.Invok
         "contractId": args.contractId,
         "groupId": args.groupId,
         "propertyId": args.propertyId,
+        "ruleFormat": args.ruleFormat,
         "version": args.version,
     }, opts);
 }
@@ -29,6 +30,7 @@ export interface GetPropertyRulesArgs {
     contractId?: string;
     groupId?: string;
     propertyId: string;
+    ruleFormat?: string;
     version?: number;
 }
 
@@ -44,6 +46,7 @@ export interface GetPropertyRulesResult {
      */
     readonly id: string;
     readonly propertyId: string;
+    readonly ruleFormat?: string;
     readonly rules: string;
     readonly version: number;
 }
@@ -59,5 +62,6 @@ export interface GetPropertyRulesOutputArgs {
     contractId?: pulumi.Input<string>;
     groupId?: pulumi.Input<string>;
     propertyId: pulumi.Input<string>;
+    ruleFormat?: pulumi.Input<string>;
     version?: pulumi.Input<number>;
 }

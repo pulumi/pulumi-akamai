@@ -134,6 +134,11 @@ export interface GetPropertyProductsProduct {
     productName: string;
 }
 
+export interface GetPropertyRulesTemplateTemplate {
+    templateData: string;
+    templateDir: string;
+}
+
 export interface GetPropertyRulesTemplateVariable {
     name: string;
     type?: string;

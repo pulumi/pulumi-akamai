@@ -6290,6 +6290,106 @@ func (o GetPropertyProductsProductArrayOutput) Index(i pulumi.IntInput) GetPrope
 	}).(GetPropertyProductsProductOutput)
 }
 
+type GetPropertyRulesTemplateTemplate struct {
+	TemplateData string `pulumi:"templateData"`
+	TemplateDir  string `pulumi:"templateDir"`
+}
+
+// GetPropertyRulesTemplateTemplateInput is an input type that accepts GetPropertyRulesTemplateTemplateArgs and GetPropertyRulesTemplateTemplateOutput values.
+// You can construct a concrete instance of `GetPropertyRulesTemplateTemplateInput` via:
+//
+//          GetPropertyRulesTemplateTemplateArgs{...}
+type GetPropertyRulesTemplateTemplateInput interface {
+	pulumi.Input
+
+	ToGetPropertyRulesTemplateTemplateOutput() GetPropertyRulesTemplateTemplateOutput
+	ToGetPropertyRulesTemplateTemplateOutputWithContext(context.Context) GetPropertyRulesTemplateTemplateOutput
+}
+
+type GetPropertyRulesTemplateTemplateArgs struct {
+	TemplateData pulumi.StringInput `pulumi:"templateData"`
+	TemplateDir  pulumi.StringInput `pulumi:"templateDir"`
+}
+
+func (GetPropertyRulesTemplateTemplateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyRulesTemplateTemplate)(nil)).Elem()
+}
+
+func (i GetPropertyRulesTemplateTemplateArgs) ToGetPropertyRulesTemplateTemplateOutput() GetPropertyRulesTemplateTemplateOutput {
+	return i.ToGetPropertyRulesTemplateTemplateOutputWithContext(context.Background())
+}
+
+func (i GetPropertyRulesTemplateTemplateArgs) ToGetPropertyRulesTemplateTemplateOutputWithContext(ctx context.Context) GetPropertyRulesTemplateTemplateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyRulesTemplateTemplateOutput)
+}
+
+// GetPropertyRulesTemplateTemplateArrayInput is an input type that accepts GetPropertyRulesTemplateTemplateArray and GetPropertyRulesTemplateTemplateArrayOutput values.
+// You can construct a concrete instance of `GetPropertyRulesTemplateTemplateArrayInput` via:
+//
+//          GetPropertyRulesTemplateTemplateArray{ GetPropertyRulesTemplateTemplateArgs{...} }
+type GetPropertyRulesTemplateTemplateArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyRulesTemplateTemplateArrayOutput() GetPropertyRulesTemplateTemplateArrayOutput
+	ToGetPropertyRulesTemplateTemplateArrayOutputWithContext(context.Context) GetPropertyRulesTemplateTemplateArrayOutput
+}
+
+type GetPropertyRulesTemplateTemplateArray []GetPropertyRulesTemplateTemplateInput
+
+func (GetPropertyRulesTemplateTemplateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyRulesTemplateTemplate)(nil)).Elem()
+}
+
+func (i GetPropertyRulesTemplateTemplateArray) ToGetPropertyRulesTemplateTemplateArrayOutput() GetPropertyRulesTemplateTemplateArrayOutput {
+	return i.ToGetPropertyRulesTemplateTemplateArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyRulesTemplateTemplateArray) ToGetPropertyRulesTemplateTemplateArrayOutputWithContext(ctx context.Context) GetPropertyRulesTemplateTemplateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyRulesTemplateTemplateArrayOutput)
+}
+
+type GetPropertyRulesTemplateTemplateOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyRulesTemplateTemplateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyRulesTemplateTemplate)(nil)).Elem()
+}
+
+func (o GetPropertyRulesTemplateTemplateOutput) ToGetPropertyRulesTemplateTemplateOutput() GetPropertyRulesTemplateTemplateOutput {
+	return o
+}
+
+func (o GetPropertyRulesTemplateTemplateOutput) ToGetPropertyRulesTemplateTemplateOutputWithContext(ctx context.Context) GetPropertyRulesTemplateTemplateOutput {
+	return o
+}
+
+func (o GetPropertyRulesTemplateTemplateOutput) TemplateData() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyRulesTemplateTemplate) string { return v.TemplateData }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyRulesTemplateTemplateOutput) TemplateDir() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyRulesTemplateTemplate) string { return v.TemplateDir }).(pulumi.StringOutput)
+}
+
+type GetPropertyRulesTemplateTemplateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyRulesTemplateTemplateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyRulesTemplateTemplate)(nil)).Elem()
+}
+
+func (o GetPropertyRulesTemplateTemplateArrayOutput) ToGetPropertyRulesTemplateTemplateArrayOutput() GetPropertyRulesTemplateTemplateArrayOutput {
+	return o
+}
+
+func (o GetPropertyRulesTemplateTemplateArrayOutput) ToGetPropertyRulesTemplateTemplateArrayOutputWithContext(ctx context.Context) GetPropertyRulesTemplateTemplateArrayOutput {
+	return o
+}
+
+func (o GetPropertyRulesTemplateTemplateArrayOutput) Index(i pulumi.IntInput) GetPropertyRulesTemplateTemplateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyRulesTemplateTemplate {
+		return vs[0].([]GetPropertyRulesTemplateTemplate)[vs[1].(int)]
+	}).(GetPropertyRulesTemplateTemplateOutput)
+}
+
 type GetPropertyRulesTemplateVariable struct {
 	Name  string  `pulumi:"name"`
 	Type  *string `pulumi:"type"`
@@ -6481,6 +6581,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameCertStatusArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyProductsProductInput)(nil)).Elem(), GetPropertyProductsProductArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyProductsProductArrayInput)(nil)).Elem(), GetPropertyProductsProductArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyRulesTemplateTemplateInput)(nil)).Elem(), GetPropertyRulesTemplateTemplateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyRulesTemplateTemplateArrayInput)(nil)).Elem(), GetPropertyRulesTemplateTemplateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyRulesTemplateVariableInput)(nil)).Elem(), GetPropertyRulesTemplateVariableArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyRulesTemplateVariableArrayInput)(nil)).Elem(), GetPropertyRulesTemplateVariableArray{})
 	pulumi.RegisterOutputType(CpsDvEnrollmentAdminContactOutput{})
@@ -6567,6 +6669,8 @@ func init() {
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCertStatusArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertyProductsProductOutput{})
 	pulumi.RegisterOutputType(GetPropertyProductsProductArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyRulesTemplateTemplateOutput{})
+	pulumi.RegisterOutputType(GetPropertyRulesTemplateTemplateArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertyRulesTemplateVariableOutput{})
 	pulumi.RegisterOutputType(GetPropertyRulesTemplateVariableArrayOutput{})
 }

@@ -27,6 +27,8 @@ type EdgeHostName struct {
 	// Deprecated: The setting "product" has been deprecated.
 	Product   pulumi.StringOutput `pulumi:"product"`
 	ProductId pulumi.StringOutput `pulumi:"productId"`
+	// A JSON encoded list of use cases
+	UseCases pulumi.StringPtrOutput `pulumi:"useCases"`
 }
 
 // NewEdgeHostName registers a new resource with the given unique name, arguments, and options.
@@ -76,6 +78,8 @@ type edgeHostNameState struct {
 	// Deprecated: The setting "product" has been deprecated.
 	Product   *string `pulumi:"product"`
 	ProductId *string `pulumi:"productId"`
+	// A JSON encoded list of use cases
+	UseCases *string `pulumi:"useCases"`
 }
 
 type EdgeHostNameState struct {
@@ -91,6 +95,8 @@ type EdgeHostNameState struct {
 	// Deprecated: The setting "product" has been deprecated.
 	Product   pulumi.StringPtrInput
 	ProductId pulumi.StringPtrInput
+	// A JSON encoded list of use cases
+	UseCases pulumi.StringPtrInput
 }
 
 func (EdgeHostNameState) ElementType() reflect.Type {
@@ -110,6 +116,8 @@ type edgeHostNameArgs struct {
 	// Deprecated: The setting "product" has been deprecated.
 	Product   *string `pulumi:"product"`
 	ProductId *string `pulumi:"productId"`
+	// A JSON encoded list of use cases
+	UseCases *string `pulumi:"useCases"`
 }
 
 // The set of arguments for constructing a EdgeHostName resource.
@@ -126,6 +134,8 @@ type EdgeHostNameArgs struct {
 	// Deprecated: The setting "product" has been deprecated.
 	Product   pulumi.StringPtrInput
 	ProductId pulumi.StringPtrInput
+	// A JSON encoded list of use cases
+	UseCases pulumi.StringPtrInput
 }
 
 func (EdgeHostNameArgs) ElementType() reflect.Type {

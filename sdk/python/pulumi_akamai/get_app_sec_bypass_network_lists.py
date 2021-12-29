@@ -20,7 +20,7 @@ class GetAppSecBypassNetworkListsResult:
     """
     A collection of values returned by getAppSecBypassNetworkLists.
     """
-    def __init__(__self__, bypass_network_lists=None, config_id=None, id=None, json=None, output_text=None):
+    def __init__(__self__, bypass_network_lists=None, config_id=None, id=None, json=None, output_text=None, security_policy_id=None):
         if bypass_network_lists and not isinstance(bypass_network_lists, list):
             raise TypeError("Expected argument 'bypass_network_lists' to be a list")
         pulumi.set(__self__, "bypass_network_lists", bypass_network_lists)
@@ -36,6 +36,9 @@ class GetAppSecBypassNetworkListsResult:
         if output_text and not isinstance(output_text, str):
             raise TypeError("Expected argument 'output_text' to be a str")
         pulumi.set(__self__, "output_text", output_text)
+        if security_policy_id and not isinstance(security_policy_id, str):
+            raise TypeError("Expected argument 'security_policy_id' to be a str")
+        pulumi.set(__self__, "security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="bypassNetworkLists")
@@ -65,6 +68,11 @@ class GetAppSecBypassNetworkListsResult:
     def output_text(self) -> str:
         return pulumi.get(self, "output_text")
 
+    @property
+    @pulumi.getter(name="securityPolicyId")
+    def security_policy_id(self) -> Optional[str]:
+        return pulumi.get(self, "security_policy_id")
+
 
 class AwaitableGetAppSecBypassNetworkListsResult(GetAppSecBypassNetworkListsResult):
     # pylint: disable=using-constant-test
@@ -76,10 +84,12 @@ class AwaitableGetAppSecBypassNetworkListsResult(GetAppSecBypassNetworkListsResu
             config_id=self.config_id,
             id=self.id,
             json=self.json,
-            output_text=self.output_text)
+            output_text=self.output_text,
+            security_policy_id=self.security_policy_id)
 
 
 def get_app_sec_bypass_network_lists(config_id: Optional[int] = None,
+                                     security_policy_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecBypassNetworkListsResult:
     """
     **Scopes**: Security configuration
@@ -117,6 +127,7 @@ def get_app_sec_bypass_network_lists(config_id: Optional[int] = None,
     """
     __args__ = dict()
     __args__['configId'] = config_id
+    __args__['securityPolicyId'] = security_policy_id
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -128,11 +139,13 @@ def get_app_sec_bypass_network_lists(config_id: Optional[int] = None,
         config_id=__ret__.config_id,
         id=__ret__.id,
         json=__ret__.json,
-        output_text=__ret__.output_text)
+        output_text=__ret__.output_text,
+        security_policy_id=__ret__.security_policy_id)
 
 
 @_utilities.lift_output_func(get_app_sec_bypass_network_lists)
 def get_app_sec_bypass_network_lists_output(config_id: Optional[pulumi.Input[int]] = None,
+                                            security_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecBypassNetworkListsResult]:
     """
     **Scopes**: Security configuration

@@ -136,6 +136,9 @@ namespace Pulumi.Akamai
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
+        [Input("securityPolicyId")]
+        public string? SecurityPolicyId { get; set; }
+
         public GetAppSecBypassNetworkListsArgs()
         {
         }
@@ -148,6 +151,9 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
+
+        [Input("securityPolicyId")]
+        public Input<string>? SecurityPolicyId { get; set; }
 
         public GetAppSecBypassNetworkListsInvokeArgs()
         {
@@ -166,6 +172,7 @@ namespace Pulumi.Akamai
         public readonly string Id;
         public readonly string Json;
         public readonly string OutputText;
+        public readonly string? SecurityPolicyId;
 
         [OutputConstructor]
         private GetAppSecBypassNetworkListsResult(
@@ -177,13 +184,16 @@ namespace Pulumi.Akamai
 
             string json,
 
-            string outputText)
+            string outputText,
+
+            string? securityPolicyId)
         {
             BypassNetworkLists = bypassNetworkLists;
             ConfigId = configId;
             Id = id;
             Json = json;
             OutputText = outputText;
+            SecurityPolicyId = securityPolicyId;
         }
     }
 }

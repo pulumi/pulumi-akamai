@@ -15,8 +15,15 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
  *
- * export const propertyMatch = data.akamai_property_rules["my-example"];
+ * const my-example = akamai.getPropertyRules({
+ *     propertyId: "prp_123",
+ *     groupId: "grp_12345",
+ *     contractId: "ctr_1-AB123",
+ *     version: 3,
+ * });
+ * export const propertyMatch = my_example;
  * ```
  *
  * ## Argument reference
@@ -32,6 +39,7 @@ import * as utilities from "./utilities";
  *
  * This data source returns these attributes:
  *
+ * * `ruleFormat` - The rule tree version used. Property rule objects are versioned infrequently, and are known as rule formats. See [About rule formats](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#rf) to learn more.
  * * `rules` - A JSON-encoded rule tree for the property.
  * * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the Property Manager API documentation.
  */
@@ -47,6 +55,7 @@ export function getPropertyRules(args: GetPropertyRulesArgs, opts?: pulumi.Invok
         "contractId": args.contractId,
         "groupId": args.groupId,
         "propertyId": args.propertyId,
+        "ruleFormat": args.ruleFormat,
         "version": args.version,
     }, opts);
 }
@@ -58,6 +67,7 @@ export interface GetPropertyRulesArgs {
     contractId?: string;
     groupId?: string;
     propertyId: string;
+    ruleFormat?: string;
     version?: number;
 }
 
@@ -73,6 +83,7 @@ export interface GetPropertyRulesResult {
      */
     readonly id: string;
     readonly propertyId: string;
+    readonly ruleFormat?: string;
     readonly rules: string;
     readonly version: number;
 }
@@ -88,5 +99,6 @@ export interface GetPropertyRulesOutputArgs {
     contractId?: pulumi.Input<string>;
     groupId?: pulumi.Input<string>;
     propertyId: pulumi.Input<string>;
+    ruleFormat?: pulumi.Input<string>;
     version?: pulumi.Input<number>;
 }

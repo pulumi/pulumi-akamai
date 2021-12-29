@@ -62,10 +62,14 @@ namespace Pulumi.Akamai
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Action to be taken anytime the rule is triggered. Allowed values are:
+        /// Allowed values are:
+        /// - **alert**. Record the event.
+        /// - **deny**. Block the request.
+        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        /// - **none**. Take no action. or `none` to take no action.
         /// </summary>
         [Output("ruleAction")]
-        public Output<string?> RuleAction { get; private set; } = null!;
+        public Output<string> RuleAction { get; private set; } = null!;
 
         /// <summary>
         /// . Unique identifier of the rule being modified.
@@ -138,7 +142,11 @@ namespace Pulumi.Akamai
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Action to be taken anytime the rule is triggered. Allowed values are:
+        /// Allowed values are:
+        /// - **alert**. Record the event.
+        /// - **deny**. Block the request.
+        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        /// - **none**. Take no action. or `none` to take no action.
         /// </summary>
         [Input("ruleAction")]
         public Input<string>? RuleAction { get; set; }
@@ -175,7 +183,11 @@ namespace Pulumi.Akamai
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Action to be taken anytime the rule is triggered. Allowed values are:
+        /// Allowed values are:
+        /// - **alert**. Record the event.
+        /// - **deny**. Block the request.
+        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+        /// - **none**. Take no action. or `none` to take no action.
         /// </summary>
         [Input("ruleAction")]
         public Input<string>? RuleAction { get; set; }

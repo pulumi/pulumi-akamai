@@ -74,6 +74,10 @@ export class AppSecByPassNetworkList extends pulumi.CustomResource {
      * . Unique identifier of the security configuration associated with the network bypass lists being modified.
      */
     public readonly configId!: pulumi.Output<number>;
+    /**
+     * The ID of the security policy governing the bypass network lists
+     */
+    public readonly securityPolicyId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AppSecByPassNetworkList resource with the given unique name, arguments, and options.
@@ -90,6 +94,7 @@ export class AppSecByPassNetworkList extends pulumi.CustomResource {
             const state = argsOrState as AppSecByPassNetworkListState | undefined;
             inputs["bypassNetworkLists"] = state ? state.bypassNetworkLists : undefined;
             inputs["configId"] = state ? state.configId : undefined;
+            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
         } else {
             const args = argsOrState as AppSecByPassNetworkListArgs | undefined;
             if ((!args || args.bypassNetworkLists === undefined) && !opts.urn) {
@@ -100,6 +105,7 @@ export class AppSecByPassNetworkList extends pulumi.CustomResource {
             }
             inputs["bypassNetworkLists"] = args ? args.bypassNetworkLists : undefined;
             inputs["configId"] = args ? args.configId : undefined;
+            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -120,6 +126,10 @@ export interface AppSecByPassNetworkListState {
      * . Unique identifier of the security configuration associated with the network bypass lists being modified.
      */
     configId?: pulumi.Input<number>;
+    /**
+     * The ID of the security policy governing the bypass network lists
+     */
+    securityPolicyId?: pulumi.Input<string>;
 }
 
 /**
@@ -134,4 +144,8 @@ export interface AppSecByPassNetworkListArgs {
      * . Unique identifier of the security configuration associated with the network bypass lists being modified.
      */
     configId: pulumi.Input<number>;
+    /**
+     * The ID of the security policy governing the bypass network lists
+     */
+    securityPolicyId?: pulumi.Input<string>;
 }

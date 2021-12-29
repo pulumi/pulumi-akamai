@@ -22,7 +22,7 @@ class GetPropertyRulesTemplateResult:
     """
     A collection of values returned by getPropertyRulesTemplate.
     """
-    def __init__(__self__, id=None, json=None, template_file=None, var_definition_file=None, var_values_file=None, variables=None):
+    def __init__(__self__, id=None, json=None, template_file=None, templates=None, var_definition_file=None, var_values_file=None, variables=None):
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -32,6 +32,9 @@ class GetPropertyRulesTemplateResult:
         if template_file and not isinstance(template_file, str):
             raise TypeError("Expected argument 'template_file' to be a str")
         pulumi.set(__self__, "template_file", template_file)
+        if templates and not isinstance(templates, list):
+            raise TypeError("Expected argument 'templates' to be a list")
+        pulumi.set(__self__, "templates", templates)
         if var_definition_file and not isinstance(var_definition_file, str):
             raise TypeError("Expected argument 'var_definition_file' to be a str")
         pulumi.set(__self__, "var_definition_file", var_definition_file)
@@ -57,8 +60,13 @@ class GetPropertyRulesTemplateResult:
 
     @property
     @pulumi.getter(name="templateFile")
-    def template_file(self) -> str:
+    def template_file(self) -> Optional[str]:
         return pulumi.get(self, "template_file")
+
+    @property
+    @pulumi.getter
+    def templates(self) -> Optional[Sequence['outputs.GetPropertyRulesTemplateTemplateResult']]:
+        return pulumi.get(self, "templates")
 
     @property
     @pulumi.getter(name="varDefinitionFile")
@@ -85,12 +93,14 @@ class AwaitableGetPropertyRulesTemplateResult(GetPropertyRulesTemplateResult):
             id=self.id,
             json=self.json,
             template_file=self.template_file,
+            templates=self.templates,
             var_definition_file=self.var_definition_file,
             var_values_file=self.var_values_file,
             variables=self.variables)
 
 
 def get_property_rules_template(template_file: Optional[str] = None,
+                                templates: Optional[Sequence[pulumi.InputType['GetPropertyRulesTemplateTemplateArgs']]] = None,
                                 var_definition_file: Optional[str] = None,
                                 var_values_file: Optional[str] = None,
                                 variables: Optional[Sequence[pulumi.InputType['GetPropertyRulesTemplateVariableArgs']]] = None,
@@ -141,6 +151,7 @@ def get_property_rules_template(template_file: Optional[str] = None,
     """
     __args__ = dict()
     __args__['templateFile'] = template_file
+    __args__['templates'] = templates
     __args__['varDefinitionFile'] = var_definition_file
     __args__['varValuesFile'] = var_values_file
     __args__['variables'] = variables
@@ -154,13 +165,15 @@ def get_property_rules_template(template_file: Optional[str] = None,
         id=__ret__.id,
         json=__ret__.json,
         template_file=__ret__.template_file,
+        templates=__ret__.templates,
         var_definition_file=__ret__.var_definition_file,
         var_values_file=__ret__.var_values_file,
         variables=__ret__.variables)
 
 
 @_utilities.lift_output_func(get_property_rules_template)
-def get_property_rules_template_output(template_file: Optional[pulumi.Input[str]] = None,
+def get_property_rules_template_output(template_file: Optional[pulumi.Input[Optional[str]]] = None,
+                                       templates: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPropertyRulesTemplateTemplateArgs']]]]] = None,
                                        var_definition_file: Optional[pulumi.Input[Optional[str]]] = None,
                                        var_values_file: Optional[pulumi.Input[Optional[str]]] = None,
                                        variables: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPropertyRulesTemplateVariableArgs']]]]] = None,

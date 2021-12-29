@@ -45,6 +45,7 @@ __all__ = [
     'ProviderGtmArgs',
     'ProviderNetworkArgs',
     'ProviderPropertyArgs',
+    'GetPropertyRulesTemplateTemplateArgs',
     'GetPropertyRulesTemplateVariableArgs',
 ]
 
@@ -2580,6 +2581,33 @@ class ProviderPropertyArgs:
     @max_body.setter
     def max_body(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "max_body", value)
+
+
+@pulumi.input_type
+class GetPropertyRulesTemplateTemplateArgs:
+    def __init__(__self__, *,
+                 template_data: str,
+                 template_dir: str):
+        pulumi.set(__self__, "template_data", template_data)
+        pulumi.set(__self__, "template_dir", template_dir)
+
+    @property
+    @pulumi.getter(name="templateData")
+    def template_data(self) -> str:
+        return pulumi.get(self, "template_data")
+
+    @template_data.setter
+    def template_data(self, value: str):
+        pulumi.set(self, "template_data", value)
+
+    @property
+    @pulumi.getter(name="templateDir")
+    def template_dir(self) -> str:
+        return pulumi.get(self, "template_dir")
+
+    @template_dir.setter
+    def template_dir(self, value: str):
+        pulumi.set(self, "template_dir", value)
 
 
 @pulumi.input_type
