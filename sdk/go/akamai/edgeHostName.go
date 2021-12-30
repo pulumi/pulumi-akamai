@@ -68,7 +68,10 @@ import (
 // * `productId` - (Required) A product's unique ID, including the `prd_` prefix.
 // * `edgeHostname` - (Required) One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
 // * `certificate` - (Optional) Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
-// * `ipBehavior` - (Required) Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6. The default value is `IPV4`.
+// * `ipBehavior` - (Required) Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
+//
+// ### Deprecated arguments
+//
 // * `contract` - (Deprecated) Replaced by `contractId`. Maintained for legacy purposes.
 // * `group` - (Deprecated) Replaced by `groupId`. Maintained for legacy purposes.
 // * `product` - (Deprecated) Replaced by `productId`. Maintained for legacy purposes.
@@ -107,6 +110,8 @@ type EdgeHostName struct {
 	// Deprecated: The setting "product" has been deprecated.
 	Product   pulumi.StringOutput `pulumi:"product"`
 	ProductId pulumi.StringOutput `pulumi:"productId"`
+	// A JSON encoded list of use cases
+	UseCases pulumi.StringPtrOutput `pulumi:"useCases"`
 }
 
 // NewEdgeHostName registers a new resource with the given unique name, arguments, and options.
@@ -162,6 +167,8 @@ type edgeHostNameState struct {
 	// Deprecated: The setting "product" has been deprecated.
 	Product   *string `pulumi:"product"`
 	ProductId *string `pulumi:"productId"`
+	// A JSON encoded list of use cases
+	UseCases *string `pulumi:"useCases"`
 }
 
 type EdgeHostNameState struct {
@@ -177,6 +184,8 @@ type EdgeHostNameState struct {
 	// Deprecated: The setting "product" has been deprecated.
 	Product   pulumi.StringPtrInput
 	ProductId pulumi.StringPtrInput
+	// A JSON encoded list of use cases
+	UseCases pulumi.StringPtrInput
 }
 
 func (EdgeHostNameState) ElementType() reflect.Type {
@@ -196,6 +205,8 @@ type edgeHostNameArgs struct {
 	// Deprecated: The setting "product" has been deprecated.
 	Product   *string `pulumi:"product"`
 	ProductId *string `pulumi:"productId"`
+	// A JSON encoded list of use cases
+	UseCases *string `pulumi:"useCases"`
 }
 
 // The set of arguments for constructing a EdgeHostName resource.
@@ -212,6 +223,8 @@ type EdgeHostNameArgs struct {
 	// Deprecated: The setting "product" has been deprecated.
 	Product   pulumi.StringPtrInput
 	ProductId pulumi.StringPtrInput
+	// A JSON encoded list of use cases
+	UseCases pulumi.StringPtrInput
 }
 
 func (EdgeHostNameArgs) ElementType() reflect.Type {

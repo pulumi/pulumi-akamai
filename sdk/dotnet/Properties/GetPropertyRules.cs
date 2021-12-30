@@ -32,6 +32,9 @@ namespace Pulumi.Akamai.Properties
         [Input("propertyId", required: true)]
         public string PropertyId { get; set; } = null!;
 
+        [Input("ruleFormat")]
+        public string? RuleFormat { get; set; }
+
         [Input("version")]
         public int? Version { get; set; }
 
@@ -50,6 +53,9 @@ namespace Pulumi.Akamai.Properties
 
         [Input("propertyId", required: true)]
         public Input<string> PropertyId { get; set; } = null!;
+
+        [Input("ruleFormat")]
+        public Input<string>? RuleFormat { get; set; }
 
         [Input("version")]
         public Input<int>? Version { get; set; }
@@ -71,6 +77,7 @@ namespace Pulumi.Akamai.Properties
         /// </summary>
         public readonly string Id;
         public readonly string PropertyId;
+        public readonly string? RuleFormat;
         public readonly string Rules;
         public readonly int Version;
 
@@ -86,6 +93,8 @@ namespace Pulumi.Akamai.Properties
 
             string propertyId,
 
+            string? ruleFormat,
+
             string rules,
 
             int version)
@@ -95,6 +104,7 @@ namespace Pulumi.Akamai.Properties
             GroupId = groupId;
             Id = id;
             PropertyId = propertyId;
+            RuleFormat = ruleFormat;
             Rules = rules;
             Version = version;
         }

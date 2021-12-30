@@ -2537,6 +2537,31 @@
                 }
             }
         },
+        "akamai:index/getPropertyRulesTemplateTemplate:getPropertyRulesTemplateTemplate": {
+            "properties": {
+                "templateData": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "templateDir": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "templateData",
+                "templateDir"
+            ]
+        },
         "akamai:index/getPropertyRulesTemplateVariable:getPropertyRulesTemplateVariable": {
             "properties": {
                 "name": {
@@ -5019,6 +5044,10 @@
                 "configId": {
                     "type": "integer",
                     "description": ". Unique identifier of the security configuration associated with the network bypass lists being modified.\n"
+                },
+                "securityPolicyId": {
+                    "type": "string",
+                    "description": "The ID of the security policy governing the bypass network lists\n"
                 }
             },
             "required": [
@@ -5036,6 +5065,10 @@
                 "configId": {
                     "type": "integer",
                     "description": ". Unique identifier of the security configuration associated with the network bypass lists being modified.\n"
+                },
+                "securityPolicyId": {
+                    "type": "string",
+                    "description": "The ID of the security policy governing the bypass network lists\n"
                 }
             },
             "requiredInputs": [
@@ -5055,6 +5088,10 @@
                     "configId": {
                         "type": "integer",
                         "description": ". Unique identifier of the security configuration associated with the network bypass lists being modified.\n"
+                    },
+                    "securityPolicyId": {
+                        "type": "string",
+                        "description": "The ID of the security policy governing the bypass network lists\n"
                     }
                 },
                 "type": "object"
@@ -5608,7 +5645,7 @@
             }
         },
         "akamai:index/appSecEvalHostnames:AppSecEvalHostnames": {
-            "description": "**Scopes**: Security configuration\n\nModifies the list of hostnames evaluated while a security configuration is in evaluation mode.\nDuring evaluation mode, hosts take no action of any kind when responding to traffic.\nInstead, these hosts simply maintain a record of the actions they *would* have taken if they had been responding to live traffic in your production network.\n\n**Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames/eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevaluationhostnames)\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst configuration = akamai.getAppSecConfiguration({\n    name: \"Documentation\",\n});\nconst evalHostnames = new akamai.AppSecEvalHostnames(\"evalHostnames\", {\n    configId: configuration.then(configuration =\u003e configuration.configId),\n    hostnames: [\n        \"documentation.akamai.com\",\n        \"training.akamai.com\",\n        \"videos.akamai.com\",\n    ],\n});\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nconfiguration = akamai.get_app_sec_configuration(name=\"Documentation\")\neval_hostnames = akamai.AppSecEvalHostnames(\"evalHostnames\",\n    config_id=configuration.config_id,\n    hostnames=[\n        \"documentation.akamai.com\",\n        \"training.akamai.com\",\n        \"videos.akamai.com\",\n    ])\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs\n        {\n            Name = \"Documentation\",\n        }));\n        var evalHostnames = new Akamai.AppSecEvalHostnames(\"evalHostnames\", new Akamai.AppSecEvalHostnamesArgs\n        {\n            ConfigId = configuration.Apply(configuration =\u003e configuration.ConfigId),\n            Hostnames = \n            {\n                \"documentation.akamai.com\",\n                \"training.akamai.com\",\n                \"videos.akamai.com\",\n            },\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\topt0 := \"Documentation\"\n\t\tconfiguration, err := akamai.LookupAppSecConfiguration(ctx, \u0026GetAppSecConfigurationArgs{\n\t\t\tName: \u0026opt0,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = akamai.NewAppSecEvalHostnames(ctx, \"evalHostnames\", \u0026akamai.AppSecEvalHostnamesArgs{\n\t\t\tConfigId: pulumi.Int(configuration.ConfigId),\n\t\t\tHostnames: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"documentation.akamai.com\"),\n\t\t\t\tpulumi.String(\"training.akamai.com\"),\n\t\t\t\tpulumi.String(\"videos.akamai.com\"),\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
+            "description": "**Scopes**: Security configuration\n\n**Note**: This data source is deprecated and may be removed in a future release.\n\nModifies the list of hostnames evaluated while a security configuration is in evaluation mode.\nDuring evaluation mode, hosts take no action of any kind when responding to traffic.\nInstead, these hosts simply maintain a record of the actions they *would* have taken if they had been responding to live traffic in your production network.\n\n**Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames/eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevaluationhostnames)\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst configuration = akamai.getAppSecConfiguration({\n    name: \"Documentation\",\n});\nconst evalHostnames = new akamai.AppSecEvalHostnames(\"evalHostnames\", {\n    configId: configuration.then(configuration =\u003e configuration.configId),\n    hostnames: [\n        \"documentation.akamai.com\",\n        \"training.akamai.com\",\n        \"videos.akamai.com\",\n    ],\n});\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nconfiguration = akamai.get_app_sec_configuration(name=\"Documentation\")\neval_hostnames = akamai.AppSecEvalHostnames(\"evalHostnames\",\n    config_id=configuration.config_id,\n    hostnames=[\n        \"documentation.akamai.com\",\n        \"training.akamai.com\",\n        \"videos.akamai.com\",\n    ])\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs\n        {\n            Name = \"Documentation\",\n        }));\n        var evalHostnames = new Akamai.AppSecEvalHostnames(\"evalHostnames\", new Akamai.AppSecEvalHostnamesArgs\n        {\n            ConfigId = configuration.Apply(configuration =\u003e configuration.ConfigId),\n            Hostnames = \n            {\n                \"documentation.akamai.com\",\n                \"training.akamai.com\",\n                \"videos.akamai.com\",\n            },\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\topt0 := \"Documentation\"\n\t\tconfiguration, err := akamai.LookupAppSecConfiguration(ctx, \u0026GetAppSecConfigurationArgs{\n\t\t\tName: \u0026opt0,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = akamai.NewAppSecEvalHostnames(ctx, \"evalHostnames\", \u0026akamai.AppSecEvalHostnamesArgs{\n\t\t\tConfigId: pulumi.Int(configuration.ConfigId),\n\t\t\tHostnames: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"documentation.akamai.com\"),\n\t\t\t\tpulumi.String(\"training.akamai.com\"),\n\t\t\t\tpulumi.String(\"videos.akamai.com\"),\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
             "properties": {
                 "configId": {
                     "type": "integer",
@@ -5662,7 +5699,7 @@
             }
         },
         "akamai:index/appSecEvalProtectHost:AppSecEvalProtectHost": {
-            "description": "**Scopes**: Security configuration\n\nMoves hostnames being evaluated to active protection. When you move a hostname from the evaluation hostnames list that host is added to your security policy as a protected hostname and is removed from the collection of hosts being evaluated.\n\n**Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/protect-eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putmoveevaluationhostnamestoprotection)\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst configuration = akamai.getAppSecConfiguration({\n    name: \"Documentation\",\n});\nconst evalHostnames = configuration.then(configuration =\u003e akamai.getAppSecEvalHostnames({\n    configId: configuration.configId,\n}));\nconst protectHost = new akamai.AppSecEvalProtectHost(\"protectHost\", {\n    configId: configuration.then(configuration =\u003e configuration.configId),\n    hostnames: evalHostnames.then(evalHostnames =\u003e evalHostnames.hostnames),\n});\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nconfiguration = akamai.get_app_sec_configuration(name=\"Documentation\")\neval_hostnames = akamai.get_app_sec_eval_hostnames(config_id=configuration.config_id)\nprotect_host = akamai.AppSecEvalProtectHost(\"protectHost\",\n    config_id=configuration.config_id,\n    hostnames=eval_hostnames.hostnames)\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs\n        {\n            Name = \"Documentation\",\n        }));\n        var evalHostnames = configuration.Apply(configuration =\u003e Output.Create(Akamai.GetAppSecEvalHostnames.InvokeAsync(new Akamai.GetAppSecEvalHostnamesArgs\n        {\n            ConfigId = configuration.ConfigId,\n        })));\n        var protectHost = new Akamai.AppSecEvalProtectHost(\"protectHost\", new Akamai.AppSecEvalProtectHostArgs\n        {\n            ConfigId = configuration.Apply(configuration =\u003e configuration.ConfigId),\n            Hostnames = evalHostnames.Apply(evalHostnames =\u003e evalHostnames.Hostnames),\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\topt0 := \"Documentation\"\n\t\tconfiguration, err := akamai.LookupAppSecConfiguration(ctx, \u0026GetAppSecConfigurationArgs{\n\t\t\tName: \u0026opt0,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tevalHostnames, err := akamai.LookupAppSecEvalHostnames(ctx, \u0026GetAppSecEvalHostnamesArgs{\n\t\t\tConfigId: configuration.ConfigId,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = akamai.NewAppSecEvalProtectHost(ctx, \"protectHost\", \u0026akamai.AppSecEvalProtectHostArgs{\n\t\t\tConfigId:  pulumi.Int(configuration.ConfigId),\n\t\t\tHostnames: interface{}(evalHostnames.Hostnames),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
+            "description": "**Scopes**: Security configuration\n\n**Important**: This data source is deprecated and may be removed in a future release. You may use the `akamai.AppSecWapSelectedHostnames` resource instead.\n\nMoves hostnames being evaluated to active protection. When you move a hostname from the evaluation hostnames list that host is added to your security policy as a protected hostname and is removed from the collection of hosts being evaluated.\n\n**Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/protect-eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putmoveevaluationhostnamestoprotection)\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst configuration = akamai.getAppSecConfiguration({\n    name: \"Documentation\",\n});\nconst evalHostnames = configuration.then(configuration =\u003e akamai.getAppSecEvalHostnames({\n    configId: configuration.configId,\n}));\nconst protectHost = new akamai.AppSecEvalProtectHost(\"protectHost\", {\n    configId: configuration.then(configuration =\u003e configuration.configId),\n    hostnames: evalHostnames.then(evalHostnames =\u003e evalHostnames.hostnames),\n});\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nconfiguration = akamai.get_app_sec_configuration(name=\"Documentation\")\neval_hostnames = akamai.get_app_sec_eval_hostnames(config_id=configuration.config_id)\nprotect_host = akamai.AppSecEvalProtectHost(\"protectHost\",\n    config_id=configuration.config_id,\n    hostnames=eval_hostnames.hostnames)\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs\n        {\n            Name = \"Documentation\",\n        }));\n        var evalHostnames = configuration.Apply(configuration =\u003e Output.Create(Akamai.GetAppSecEvalHostnames.InvokeAsync(new Akamai.GetAppSecEvalHostnamesArgs\n        {\n            ConfigId = configuration.ConfigId,\n        })));\n        var protectHost = new Akamai.AppSecEvalProtectHost(\"protectHost\", new Akamai.AppSecEvalProtectHostArgs\n        {\n            ConfigId = configuration.Apply(configuration =\u003e configuration.ConfigId),\n            Hostnames = evalHostnames.Apply(evalHostnames =\u003e evalHostnames.Hostnames),\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\topt0 := \"Documentation\"\n\t\tconfiguration, err := akamai.LookupAppSecConfiguration(ctx, \u0026GetAppSecConfigurationArgs{\n\t\t\tName: \u0026opt0,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tevalHostnames, err := akamai.LookupAppSecEvalHostnames(ctx, \u0026GetAppSecEvalHostnamesArgs{\n\t\t\tConfigId: configuration.ConfigId,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = akamai.NewAppSecEvalProtectHost(ctx, \"protectHost\", \u0026akamai.AppSecEvalProtectHostArgs{\n\t\t\tConfigId:  pulumi.Int(configuration.ConfigId),\n\t\t\tHostnames: interface{}(evalHostnames.Hostnames),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
             "properties": {
                 "configId": {
                     "type": "integer",
@@ -6643,7 +6680,7 @@
                 },
                 "ruleAction": {
                     "type": "string",
-                    "description": ". Action to be taken anytime the rule is triggered. Allowed values are:\n"
+                    "description": "Allowed values are:\n- **alert**. Record the event.\n- **deny**. Block the request.\n- **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.\n- **none**. Take no action. or `none` to take no action.\n"
                 },
                 "ruleId": {
                     "type": "integer",
@@ -6656,6 +6693,7 @@
             },
             "required": [
                 "configId",
+                "ruleAction",
                 "ruleId",
                 "securityPolicyId"
             ],
@@ -6670,7 +6708,7 @@
                 },
                 "ruleAction": {
                     "type": "string",
-                    "description": ". Action to be taken anytime the rule is triggered. Allowed values are:\n"
+                    "description": "Allowed values are:\n- **alert**. Record the event.\n- **deny**. Block the request.\n- **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.\n- **none**. Take no action. or `none` to take no action.\n"
                 },
                 "ruleId": {
                     "type": "integer",
@@ -6699,7 +6737,7 @@
                     },
                     "ruleAction": {
                         "type": "string",
-                        "description": ". Action to be taken anytime the rule is triggered. Allowed values are:\n"
+                        "description": "Allowed values are:\n- **alert**. Record the event.\n- **deny**. Block the request.\n- **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.\n- **none**. Take no action. or `none` to take no action.\n"
                     },
                     "ruleId": {
                         "type": "integer",
@@ -8732,7 +8770,7 @@
             ]
         },
         "akamai:index/edgeHostName:EdgeHostName": {
-            "description": "The `akamai.EdgeHostName` resource lets you configure a secure edge hostname. Your\nedge hostname determines how requests for your site, app, or content are mapped to\nAkamai edge servers.\n\nAn edge hostname is the CNAME target you use when directing your end user traffic to\nAkamai. Each hostname assigned to a property has a corresponding edge hostname.\n\nAkamai supports three types of edge hostnames, depending on the level of security\nyou need for your traffic: Standard TLS, Enhanced TLS, and Shared Certificate. When\nentering the `edge_hostname` attribute, you need to include a specific domain suffix\nfor your edge hostname type:\n\n| Edge hostname type | Domain suffix |\n|------|-------|\n| Enhanced TLS | edgekey.net |\n| Standard TLS | edgesuite.net |\n| Shared Cert | akamaized.net |\n\nFor example, if you use Standard TLS and have `www.example.com` as a hostname, your edge hostname would be `www.example.com.edgesuite.net`. If you wanted to use Enhanced TLS with the same hostname, your edge hostname would be `www.example.com.edgekey.net`. See the [Property Manager API (PAPI)](https://developer.akamai.com/api/core_features/property_manager/v1.html#createedgehostnames) for more information.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst provider_demo = new akamai.EdgeHostName(\"provider-demo\", {\n    contractId: \"ctr_1-AB123\",\n    edgeHostname: \"www.example.org.edgesuite.net\",\n    groupId: \"grp_123\",\n    productId: \"prd_Object_Delivery\",\n});\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nprovider_demo = akamai.EdgeHostName(\"provider-demo\",\n    contract_id=\"ctr_1-AB123\",\n    edge_hostname=\"www.example.org.edgesuite.net\",\n    group_id=\"grp_123\",\n    product_id=\"prd_Object_Delivery\")\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var provider_demo = new Akamai.EdgeHostName(\"provider-demo\", new Akamai.EdgeHostNameArgs\n        {\n            ContractId = \"ctr_1-AB123\",\n            EdgeHostname = \"www.example.org.edgesuite.net\",\n            GroupId = \"grp_123\",\n            ProductId = \"prd_Object_Delivery\",\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := akamai.NewEdgeHostName(ctx, \"provider_demo\", \u0026akamai.EdgeHostNameArgs{\n\t\t\tContractId:   pulumi.String(\"ctr_1-AB123\"),\n\t\t\tEdgeHostname: pulumi.String(\"www.example.org.edgesuite.net\"),\n\t\t\tGroupId:      pulumi.String(\"grp_123\"),\n\t\t\tProductId:    pulumi.String(\"prd_Object_Delivery\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}\n## Argument reference\n\nThis resource supports these arguments:\n\n* `name` - (Required) The name of the edge hostname.\n* `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.\n* `group_id` - (Required) A group's unique ID, including the `grp_` prefix.\n* `product_id` - (Required) A product's unique ID, including the `prd_` prefix.\n* `edge_hostname` - (Required) One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.\n* `certificate` - (Optional) Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .\n* `ip_behavior` - (Required) Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6. The default value is `IPV4`.\n* `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.\n* `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.\n* `product` - (Deprecated) Replaced by `product_id`. Maintained for legacy purposes.\n\n## Attributes reference\n\nThis resource returns this attribute:\n\n* `ip_behavior` - Returns the IP protocol the hostname will use, either `IPV4` for version 4, IPV6_PERFORMANCE` for version 6, or `IPV6_COMPLIANCE` for both.\n\n\n## Import\n\nBasic Usagehcl resource \"akamai_edge_hostname\" \"example\" {\n\n\n\n # (resource arguments)\n\n } You can import Akamai edge hostnames using a comma-delimited string of edge hostname, contract ID, and group ID. You have to enter the values in this order:\n\n`edge_hostname, contract_id, group_id` For example\n\n```sh\n $ pulumi import akamai:index/edgeHostName:EdgeHostName example ehn_123,ctr_1-AB123,grp_123\n```\n\n ",
+            "description": "The `akamai.EdgeHostName` resource lets you configure a secure edge hostname. Your\nedge hostname determines how requests for your site, app, or content are mapped to\nAkamai edge servers.\n\nAn edge hostname is the CNAME target you use when directing your end user traffic to\nAkamai. Each hostname assigned to a property has a corresponding edge hostname.\n\nAkamai supports three types of edge hostnames, depending on the level of security\nyou need for your traffic: Standard TLS, Enhanced TLS, and Shared Certificate. When\nentering the `edge_hostname` attribute, you need to include a specific domain suffix\nfor your edge hostname type:\n\n| Edge hostname type | Domain suffix |\n|------|-------|\n| Enhanced TLS | edgekey.net |\n| Standard TLS | edgesuite.net |\n| Shared Cert | akamaized.net |\n\nFor example, if you use Standard TLS and have `www.example.com` as a hostname, your edge hostname would be `www.example.com.edgesuite.net`. If you wanted to use Enhanced TLS with the same hostname, your edge hostname would be `www.example.com.edgekey.net`. See the [Property Manager API (PAPI)](https://developer.akamai.com/api/core_features/property_manager/v1.html#createedgehostnames) for more information.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst provider_demo = new akamai.EdgeHostName(\"provider-demo\", {\n    contractId: \"ctr_1-AB123\",\n    edgeHostname: \"www.example.org.edgesuite.net\",\n    groupId: \"grp_123\",\n    productId: \"prd_Object_Delivery\",\n});\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nprovider_demo = akamai.EdgeHostName(\"provider-demo\",\n    contract_id=\"ctr_1-AB123\",\n    edge_hostname=\"www.example.org.edgesuite.net\",\n    group_id=\"grp_123\",\n    product_id=\"prd_Object_Delivery\")\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var provider_demo = new Akamai.EdgeHostName(\"provider-demo\", new Akamai.EdgeHostNameArgs\n        {\n            ContractId = \"ctr_1-AB123\",\n            EdgeHostname = \"www.example.org.edgesuite.net\",\n            GroupId = \"grp_123\",\n            ProductId = \"prd_Object_Delivery\",\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := akamai.NewEdgeHostName(ctx, \"provider_demo\", \u0026akamai.EdgeHostNameArgs{\n\t\t\tContractId:   pulumi.String(\"ctr_1-AB123\"),\n\t\t\tEdgeHostname: pulumi.String(\"www.example.org.edgesuite.net\"),\n\t\t\tGroupId:      pulumi.String(\"grp_123\"),\n\t\t\tProductId:    pulumi.String(\"prd_Object_Delivery\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}\n## Argument reference\n\nThis resource supports these arguments:\n\n* `name` - (Required) The name of the edge hostname.\n* `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.\n* `group_id` - (Required) A group's unique ID, including the `grp_` prefix.\n* `product_id` - (Required) A product's unique ID, including the `prd_` prefix.\n* `edge_hostname` - (Required) One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.\n* `certificate` - (Optional) Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .\n* `ip_behavior` - (Required) Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.\n\n### Deprecated arguments\n\n* `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.\n* `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.\n* `product` - (Deprecated) Replaced by `product_id`. Maintained for legacy purposes.\n\n## Attributes reference\n\nThis resource returns this attribute:\n\n* `ip_behavior` - Returns the IP protocol the hostname will use, either `IPV4` for version 4, IPV6_PERFORMANCE` for version 6, or `IPV6_COMPLIANCE` for both.\n\n\n## Import\n\nBasic Usagehcl resource \"akamai_edge_hostname\" \"example\" {\n\n\n\n # (resource arguments)\n\n } You can import Akamai edge hostnames using a comma-delimited string of edge hostname, contract ID, and group ID. You have to enter the values in this order:\n\n`edge_hostname, contract_id, group_id` For example\n\n```sh\n $ pulumi import akamai:index/edgeHostName:EdgeHostName example ehn_123,ctr_1-AB123,grp_123\n```\n\n ",
             "properties": {
                 "certificate": {
                     "type": "integer"
@@ -8763,6 +8801,10 @@
                 },
                 "productId": {
                     "type": "string"
+                },
+                "useCases": {
+                    "type": "string",
+                    "description": "A JSON encoded list of use cases\n"
                 }
             },
             "required": [
@@ -8805,6 +8847,10 @@
                 },
                 "productId": {
                     "type": "string"
+                },
+                "useCases": {
+                    "type": "string",
+                    "description": "A JSON encoded list of use cases\n"
                 }
             },
             "requiredInputs": [
@@ -8843,6 +8889,10 @@
                     },
                     "productId": {
                         "type": "string"
+                    },
+                    "useCases": {
+                        "type": "string",
+                        "description": "A JSON encoded list of use cases\n"
                     }
                 },
                 "type": "object"
@@ -9515,7 +9565,7 @@
             ]
         },
         "akamai:index/gtmGeomap:GtmGeomap": {
-            "description": "Use the `akamai.GtmGeomap` resource to create, configure, and import a GTM Geographic map. Geographic mapping lets you configure a property that returns a CNAME based on the geographic location of the request. \n\nYou can reuse maps for multiple properties or create new ones. To configure a property for geographic mapping, you need to define at least one geographic map for your domain. Each map needs at least two definitions. For example, you can have one definition that maps a set of countries to a specific data center, and a second definition that routes all other traffic. \n\n\u003e **Note** Import requires an ID with this format: `existing_domain_name`:`existing_map_name`.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst demoGeomap = new akamai.GtmGeomap(\"demo_geomap\", {\n    defaultDatacenter: {\n        datacenterId: 5400,\n        nickname: \"All Others\",\n    },\n    domain: \"demo_domain.akadns.net\",\n});\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\ndemo_geomap = akamai.GtmGeomap(\"demoGeomap\",\n    default_datacenter=akamai.GtmGeomapDefaultDatacenterArgs(\n        datacenter_id=5400,\n        nickname=\"All Others\",\n    ),\n    domain=\"demo_domain.akadns.net\")\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var demoGeomap = new Akamai.GtmGeomap(\"demoGeomap\", new Akamai.GtmGeomapArgs\n        {\n            DefaultDatacenter = new Akamai.Inputs.GtmGeomapDefaultDatacenterArgs\n            {\n                DatacenterId = 5400,\n                Nickname = \"All Others\",\n            },\n            Domain = \"demo_domain.akadns.net\",\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := akamai.NewGtmGeomap(ctx, \"demoGeomap\", \u0026akamai.GtmGeomapArgs{\n\t\t\tDefaultDatacenter: \u0026GtmGeomapDefaultDatacenterArgs{\n\t\t\t\tDatacenterId: pulumi.Int(5400),\n\t\t\t\tNickname:     pulumi.String(\"All Others\"),\n\t\t\t},\n\t\t\tDomain: pulumi.String(\"demo_domain.akadns.net\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}\n## Argument reference\n\nThis resource supports these arguments:\n\n* `domain` - (Required) GTM Domain name for the Geographic Map.\n* `name` - (Required) A descriptive label for the Geographic map.\n* `default_datacenter` - (Required) A placeholder for all other geographic zones. Requires these additional arguments:\n  * `datacenter_id` - (Required) For each property, an identifier for all other geographic zones.\n  * `nickname` - (Required) A descriptive label for all other geographic zones.\n* `wait_on_complete` - (Optional) A boolean indicating whether to wait for transaction to complete. Set to `true` by default.\n* `assignment` - (Optional) Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:\n  * `datacenter_id` - (Optional) A unique identifier for an existing data center in the domain.\n  * `nickname` - (Optional) A descriptive label for the group.\n  * `countries` - (Optional) Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.\n\n## Schema reference\n\nYou can download the GTM Geographic Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#geographicmap) page.\n",
+            "description": "Use the `akamai.GtmGeomap` resource to create, configure, and import a GTM Geographic map. Geographic mapping lets you configure a property that returns a CNAME based on the geographic location of the request.\n\nYou can reuse maps for multiple properties or create new ones. To configure a property for geographic mapping, you need to define at least one geographic map for your domain. Each map needs at least two definitions. For example, you can have one definition that maps a set of countries to a specific data center, and a second definition that routes all other traffic.\n\n\u003e **Note** Import requires an ID with this format: `existing_domain_name`:`existing_map_name`.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst demoGeomap = new akamai.GtmGeomap(\"demo_geomap\", {\n    defaultDatacenter: {\n        datacenterId: 5400,\n        nickname: \"All Others\",\n    },\n    domain: \"demo_domain.akadns.net\",\n});\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\ndemo_geomap = akamai.GtmGeomap(\"demoGeomap\",\n    default_datacenter=akamai.GtmGeomapDefaultDatacenterArgs(\n        datacenter_id=5400,\n        nickname=\"All Others\",\n    ),\n    domain=\"demo_domain.akadns.net\")\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var demoGeomap = new Akamai.GtmGeomap(\"demoGeomap\", new Akamai.GtmGeomapArgs\n        {\n            DefaultDatacenter = new Akamai.Inputs.GtmGeomapDefaultDatacenterArgs\n            {\n                DatacenterId = 5400,\n                Nickname = \"All Others\",\n            },\n            Domain = \"demo_domain.akadns.net\",\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := akamai.NewGtmGeomap(ctx, \"demoGeomap\", \u0026akamai.GtmGeomapArgs{\n\t\t\tDefaultDatacenter: \u0026GtmGeomapDefaultDatacenterArgs{\n\t\t\t\tDatacenterId: pulumi.Int(5400),\n\t\t\t\tNickname:     pulumi.String(\"All Others\"),\n\t\t\t},\n\t\t\tDomain: pulumi.String(\"demo_domain.akadns.net\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}\n## Argument reference\n\nThis resource supports these arguments:\n\n* `domain` - (Required) GTM Domain name for the Geographic Map.\n* `name` - (Required) A descriptive label for the Geographic map.\n* `default_datacenter` - (Required) A placeholder for all other geographic zones. Requires these additional arguments:\n  * `datacenter_id` - (Required) For each property, an identifier for all other geographic zones.\n  * `nickname` - (Required) A descriptive label for all other geographic zones.\n* `wait_on_complete` - (Optional) A boolean indicating whether to wait for transaction to complete. Set to `true` by default.\n* `assignment` - (Optional) Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:\n  * `datacenter_id` - (Required) A unique identifier for an existing data center in the domain.\n  * `nickname` - (Optional) A descriptive label for the group.\n  * `countries` - (Optional) Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.\n\n## Schema reference\n\nYou can download the GTM Geographic Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#geographicmap) page.\n",
             "properties": {
                 "assignments": {
                     "type": "array",
@@ -11150,6 +11200,10 @@
                 },
                 "productId": {
                     "type": "string"
+                },
+                "useCases": {
+                    "type": "string",
+                    "description": "A JSON encoded list of use cases\n"
                 }
             },
             "required": [
@@ -11192,6 +11246,10 @@
                 },
                 "productId": {
                     "type": "string"
+                },
+                "useCases": {
+                    "type": "string",
+                    "description": "A JSON encoded list of use cases\n"
                 }
             },
             "requiredInputs": [
@@ -11230,6 +11288,10 @@
                     },
                     "productId": {
                         "type": "string"
+                    },
+                    "useCases": {
+                        "type": "string",
+                        "description": "A JSON encoded list of use cases\n"
                     }
                 },
                 "type": "object"
@@ -13422,6 +13484,9 @@
                     "configId": {
                         "type": "integer",
                         "description": ". Unique identifier of the security configuration associated with the bypass network list.\n"
+                    },
+                    "securityPolicyId": {
+                        "type": "string"
                     }
                 },
                 "type": "object",
@@ -13449,6 +13514,9 @@
                         "type": "string"
                     },
                     "outputText": {
+                        "type": "string"
+                    },
+                    "securityPolicyId": {
                         "type": "string"
                     }
                 },
@@ -13874,7 +13942,7 @@
             }
         },
         "akamai:index/getAppSecEvalHostnames:getAppSecEvalHostnames": {
-            "description": "**Scopes**: Security configuration\n\nReturns the evaluation hostnames for a configuration. In evaluation mode, you use evaluation hosts to monitor how well your configuration settings protects host traffic. (Note that the evaluation host isn't actually protected, and the host takes no action other than recording the actions it would have taken had it been on the production network).\n\nEvaluation mode for hostnames is only available for organizations running Web Application Protector.\n\n**Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames/eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getevaluationhostnames)\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst configuration = akamai.getAppSecConfiguration({\n    name: \"Documentation\",\n});\nconst evalHostnamesAppSecEvalHostnames = configuration.then(configuration =\u003e akamai.getAppSecEvalHostnames({\n    configId: configuration.configId,\n}));\nexport const evalHostnames = evalHostnamesAppSecEvalHostnames.then(evalHostnamesAppSecEvalHostnames =\u003e evalHostnamesAppSecEvalHostnames.hostnames);\nexport const evalHostnamesOutput = evalHostnamesAppSecEvalHostnames.then(evalHostnamesAppSecEvalHostnames =\u003e evalHostnamesAppSecEvalHostnames.outputText);\nexport const evalHostnamesJson = evalHostnamesAppSecEvalHostnames.then(evalHostnamesAppSecEvalHostnames =\u003e evalHostnamesAppSecEvalHostnames.json);\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nconfiguration = akamai.get_app_sec_configuration(name=\"Documentation\")\neval_hostnames_app_sec_eval_hostnames = akamai.get_app_sec_eval_hostnames(config_id=configuration.config_id)\npulumi.export(\"evalHostnames\", eval_hostnames_app_sec_eval_hostnames.hostnames)\npulumi.export(\"evalHostnamesOutput\", eval_hostnames_app_sec_eval_hostnames.output_text)\npulumi.export(\"evalHostnamesJson\", eval_hostnames_app_sec_eval_hostnames.json)\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs\n        {\n            Name = \"Documentation\",\n        }));\n        var evalHostnamesAppSecEvalHostnames = configuration.Apply(configuration =\u003e Output.Create(Akamai.GetAppSecEvalHostnames.InvokeAsync(new Akamai.GetAppSecEvalHostnamesArgs\n        {\n            ConfigId = configuration.ConfigId,\n        })));\n        this.EvalHostnames = evalHostnamesAppSecEvalHostnames.Apply(evalHostnamesAppSecEvalHostnames =\u003e evalHostnamesAppSecEvalHostnames.Hostnames);\n        this.EvalHostnamesOutput = evalHostnamesAppSecEvalHostnames.Apply(evalHostnamesAppSecEvalHostnames =\u003e evalHostnamesAppSecEvalHostnames.OutputText);\n        this.EvalHostnamesJson = evalHostnamesAppSecEvalHostnames.Apply(evalHostnamesAppSecEvalHostnames =\u003e evalHostnamesAppSecEvalHostnames.Json);\n    }\n\n    [Output(\"evalHostnames\")]\n    public Output\u003cstring\u003e EvalHostnames { get; set; }\n    [Output(\"evalHostnamesOutput\")]\n    public Output\u003cstring\u003e EvalHostnamesOutput { get; set; }\n    [Output(\"evalHostnamesJson\")]\n    public Output\u003cstring\u003e EvalHostnamesJson { get; set; }\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\topt0 := \"Documentation\"\n\t\tconfiguration, err := akamai.LookupAppSecConfiguration(ctx, \u0026GetAppSecConfigurationArgs{\n\t\t\tName: \u0026opt0,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tevalHostnamesAppSecEvalHostnames, err := akamai.LookupAppSecEvalHostnames(ctx, \u0026GetAppSecEvalHostnamesArgs{\n\t\t\tConfigId: configuration.ConfigId,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tctx.Export(\"evalHostnames\", evalHostnamesAppSecEvalHostnames.Hostnames)\n\t\tctx.Export(\"evalHostnamesOutput\", evalHostnamesAppSecEvalHostnames.OutputText)\n\t\tctx.Export(\"evalHostnamesJson\", evalHostnamesAppSecEvalHostnames.Json)\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}\n## Output Options\n\nThe following options can be used to determine the information returned, and how that returned information is formatted:\n\n- `hostnames`. List of evaluation hostnames.\n- `json`. JSON-formatted list of evaluation hostnames.\n- `output_text`. Tabular report showing evaluation hostnames.\n",
+            "description": "**Scopes**: Security configuration\n\n**Important**: This data source is deprecated and may be removed in a future release. You may use the `akamai.AppSecWapSelectedHostnames` data source instead.\n\nReturns the evaluation hostnames for a configuration. In evaluation mode, you use evaluation hosts to monitor how well your configuration settings protect host traffic. (Note that the evaluation host isn't actually protected, and the host takes no action other than recording the actions it would have taken had it been on the production network.)\n\nEvaluation mode for hostnames is available only for organizations running Web Application Protector.\n\n**Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames/eval-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getevaluationhostnames)\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\nBasic usage:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst configuration = akamai.getAppSecConfiguration({\n    name: \"Documentation\",\n});\nconst evalHostnamesAppSecEvalHostnames = configuration.then(configuration =\u003e akamai.getAppSecEvalHostnames({\n    configId: configuration.configId,\n}));\nexport const evalHostnames = evalHostnamesAppSecEvalHostnames.then(evalHostnamesAppSecEvalHostnames =\u003e evalHostnamesAppSecEvalHostnames.hostnames);\nexport const evalHostnamesOutput = evalHostnamesAppSecEvalHostnames.then(evalHostnamesAppSecEvalHostnames =\u003e evalHostnamesAppSecEvalHostnames.outputText);\nexport const evalHostnamesJson = evalHostnamesAppSecEvalHostnames.then(evalHostnamesAppSecEvalHostnames =\u003e evalHostnamesAppSecEvalHostnames.json);\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nconfiguration = akamai.get_app_sec_configuration(name=\"Documentation\")\neval_hostnames_app_sec_eval_hostnames = akamai.get_app_sec_eval_hostnames(config_id=configuration.config_id)\npulumi.export(\"evalHostnames\", eval_hostnames_app_sec_eval_hostnames.hostnames)\npulumi.export(\"evalHostnamesOutput\", eval_hostnames_app_sec_eval_hostnames.output_text)\npulumi.export(\"evalHostnamesJson\", eval_hostnames_app_sec_eval_hostnames.json)\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs\n        {\n            Name = \"Documentation\",\n        }));\n        var evalHostnamesAppSecEvalHostnames = configuration.Apply(configuration =\u003e Output.Create(Akamai.GetAppSecEvalHostnames.InvokeAsync(new Akamai.GetAppSecEvalHostnamesArgs\n        {\n            ConfigId = configuration.ConfigId,\n        })));\n        this.EvalHostnames = evalHostnamesAppSecEvalHostnames.Apply(evalHostnamesAppSecEvalHostnames =\u003e evalHostnamesAppSecEvalHostnames.Hostnames);\n        this.EvalHostnamesOutput = evalHostnamesAppSecEvalHostnames.Apply(evalHostnamesAppSecEvalHostnames =\u003e evalHostnamesAppSecEvalHostnames.OutputText);\n        this.EvalHostnamesJson = evalHostnamesAppSecEvalHostnames.Apply(evalHostnamesAppSecEvalHostnames =\u003e evalHostnamesAppSecEvalHostnames.Json);\n    }\n\n    [Output(\"evalHostnames\")]\n    public Output\u003cstring\u003e EvalHostnames { get; set; }\n    [Output(\"evalHostnamesOutput\")]\n    public Output\u003cstring\u003e EvalHostnamesOutput { get; set; }\n    [Output(\"evalHostnamesJson\")]\n    public Output\u003cstring\u003e EvalHostnamesJson { get; set; }\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\topt0 := \"Documentation\"\n\t\tconfiguration, err := akamai.LookupAppSecConfiguration(ctx, \u0026GetAppSecConfigurationArgs{\n\t\t\tName: \u0026opt0,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tevalHostnamesAppSecEvalHostnames, err := akamai.LookupAppSecEvalHostnames(ctx, \u0026GetAppSecEvalHostnamesArgs{\n\t\t\tConfigId: configuration.ConfigId,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tctx.Export(\"evalHostnames\", evalHostnamesAppSecEvalHostnames.Hostnames)\n\t\tctx.Export(\"evalHostnamesOutput\", evalHostnamesAppSecEvalHostnames.OutputText)\n\t\tctx.Export(\"evalHostnamesJson\", evalHostnamesAppSecEvalHostnames.Json)\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}\n## Output Options\n\nThe following options can be used to determine the information returned, and how that returned information is formatted:\n\n- `hostnames`. List of evaluation hostnames.\n- `json`. JSON-formatted list of evaluation hostnames.\n- `output_text`. Tabular report showing evaluation hostnames.\n",
             "inputs": {
                 "description": "A collection of arguments for invoking getAppSecEvalHostnames.\n",
                 "properties": {
@@ -16007,7 +16075,7 @@
             }
         },
         "akamai:index/getPropertyRules:getPropertyRules": {
-            "description": "Use the `akamai.getPropertyRules` data source to query and retrieve the rule tree of\nan existing property version. This data source lets you search across the contracts\nand groups you have access to.\n\n## Basic usage\n\nThis example returns the rule tree for version 3 of a property based on the selected contract and group:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\n\nexport const propertyMatch = data.akamai_property_rules[\"my-example\"];\n```\n```python\nimport pulumi\n\npulumi.export(\"propertyMatch\", data[\"akamai_property_rules\"][\"my-example\"])\n```\n```csharp\nusing Pulumi;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        this.PropertyMatch = data.Akamai_property_rules.My_example;\n    }\n\n    [Output(\"propertyMatch\")]\n    public Output\u003cstring\u003e PropertyMatch { get; set; }\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\tctx.Export(\"propertyMatch\", data.Akamai_property_rules.My-example)\n\t\treturn nil\n\t})\n}\n```\n\n## Argument reference\n\nThis data source supports these arguments:\n\n* `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.\n* `group_id` - (Required) A group's unique ID, including the `grp_` prefix.\n* `property_id` - (Required) A property's unique ID, including the `prp_` prefix.\n* `version` - (Optional) The version to return. Returns the latest version by default.\n\n## Attributes reference\n\nThis data source returns these attributes:\n\n* `rules` - A JSON-encoded rule tree for the property.\n* `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the Property Manager API documentation.\n",
+            "description": "Use the `akamai.getPropertyRules` data source to query and retrieve the rule tree of\nan existing property version. This data source lets you search across the contracts\nand groups you have access to.\n\n## Basic usage\n\nThis example returns the rule tree for version 3 of a property based on the selected contract and group:\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as akamai from \"@pulumi/akamai\";\n\nconst my-example = akamai.getPropertyRules({\n    propertyId: \"prp_123\",\n    groupId: \"grp_12345\",\n    contractId: \"ctr_1-AB123\",\n    version: 3,\n});\nexport const propertyMatch = my_example;\n```\n```python\nimport pulumi\nimport pulumi_akamai as akamai\n\nmy_example = akamai.get_property_rules(property_id=\"prp_123\",\n    group_id=\"grp_12345\",\n    contract_id=\"ctr_1-AB123\",\n    version=3)\npulumi.export(\"propertyMatch\", my_example)\n```\n```csharp\nusing Pulumi;\nusing Akamai = Pulumi.Akamai;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var my_example = Output.Create(Akamai.GetPropertyRules.InvokeAsync(new Akamai.GetPropertyRulesArgs\n        {\n            PropertyId = \"prp_123\",\n            GroupId = \"grp_12345\",\n            ContractId = \"ctr_1-AB123\",\n            Version = 3,\n        }));\n        this.PropertyMatch = my_example;\n    }\n\n    [Output(\"propertyMatch\")]\n    public Output\u003cstring\u003e PropertyMatch { get; set; }\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\topt0 := \"grp_12345\"\n\t\topt1 := \"ctr_1-AB123\"\n\t\topt2 := 3\n\t\tmy_example, err := akamai.GetPropertyRules(ctx, \u0026GetPropertyRulesArgs{\n\t\t\tPropertyId: \"prp_123\",\n\t\t\tGroupId:    \u0026opt0,\n\t\t\tContractId: \u0026opt1,\n\t\t\tVersion:    \u0026opt2,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tctx.Export(\"propertyMatch\", my_example)\n\t\treturn nil\n\t})\n}\n```\n\n## Argument reference\n\nThis data source supports these arguments:\n\n* `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.\n* `group_id` - (Required) A group's unique ID, including the `grp_` prefix.\n* `property_id` - (Required) A property's unique ID, including the `prp_` prefix.\n* `version` - (Optional) The version to return. Returns the latest version by default.\n\n## Attributes reference\n\nThis data source returns these attributes:\n\n* `rule_format` - The rule tree version used. Property rule objects are versioned infrequently, and are known as rule formats. See [About rule formats](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#rf) to learn more.\n* `rules` - A JSON-encoded rule tree for the property.\n* `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the Property Manager API documentation.\n",
             "inputs": {
                 "description": "A collection of arguments for invoking getPropertyRules.\n",
                 "properties": {
@@ -16018,6 +16086,9 @@
                         "type": "string"
                     },
                     "propertyId": {
+                        "type": "string"
+                    },
+                    "ruleFormat": {
                         "type": "string"
                     },
                     "version": {
@@ -16048,6 +16119,9 @@
                     "propertyId": {
                         "type": "string"
                     },
+                    "ruleFormat": {
+                        "type": "string"
+                    },
                     "rules": {
                         "type": "string"
                     },
@@ -16075,6 +16149,12 @@
                     "templateFile": {
                         "type": "string"
                     },
+                    "templates": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/getPropertyRulesTemplateTemplate:getPropertyRulesTemplateTemplate"
+                        }
+                    },
                     "varDefinitionFile": {
                         "type": "string"
                     },
@@ -16088,10 +16168,7 @@
                         }
                     }
                 },
-                "type": "object",
-                "required": [
-                    "templateFile"
-                ]
+                "type": "object"
             },
             "outputs": {
                 "description": "A collection of values returned by getPropertyRulesTemplate.\n",
@@ -16105,6 +16182,12 @@
                     },
                     "templateFile": {
                         "type": "string"
+                    },
+                    "templates": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/getPropertyRulesTemplateTemplate:getPropertyRulesTemplateTemplate"
+                        }
                     },
                     "varDefinitionFile": {
                         "type": "string"
@@ -16122,7 +16205,6 @@
                 "type": "object",
                 "required": [
                     "json",
-                    "templateFile",
                     "id"
                 ]
             }
@@ -16253,6 +16335,9 @@
                     "propertyId": {
                         "type": "string"
                     },
+                    "ruleFormat": {
+                        "type": "string"
+                    },
                     "version": {
                         "type": "integer"
                     }
@@ -16279,6 +16364,9 @@
                         "description": "The provider-assigned unique ID for this managed resource.\n"
                     },
                     "propertyId": {
+                        "type": "string"
+                    },
+                    "ruleFormat": {
                         "type": "string"
                     },
                     "rules": {

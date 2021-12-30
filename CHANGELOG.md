@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Upgrade terraform-provider-akamai to v1.9.0
+* Upgrade terraform-provider-akamai to v1.9.1
 
 ---
 

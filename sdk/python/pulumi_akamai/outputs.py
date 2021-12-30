@@ -46,6 +46,7 @@ __all__ = [
     'GetPropertyHostnamesHostnameResult',
     'GetPropertyHostnamesHostnameCertStatusResult',
     'GetPropertyProductsProductResult',
+    'GetPropertyRulesTemplateTemplateResult',
     'GetPropertyRulesTemplateVariableResult',
 ]
 
@@ -2248,6 +2249,25 @@ class GetPropertyProductsProductResult(dict):
     @pulumi.getter(name="productName")
     def product_name(self) -> str:
         return pulumi.get(self, "product_name")
+
+
+@pulumi.output_type
+class GetPropertyRulesTemplateTemplateResult(dict):
+    def __init__(__self__, *,
+                 template_data: str,
+                 template_dir: str):
+        pulumi.set(__self__, "template_data", template_data)
+        pulumi.set(__self__, "template_dir", template_dir)
+
+    @property
+    @pulumi.getter(name="templateData")
+    def template_data(self) -> str:
+        return pulumi.get(self, "template_data")
+
+    @property
+    @pulumi.getter(name="templateDir")
+    def template_dir(self) -> str:
+        return pulumi.get(self, "template_dir")
 
 
 @pulumi.output_type

@@ -69,9 +69,13 @@ export class AppSecRule extends pulumi.CustomResource {
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Action to be taken anytime the rule is triggered. Allowed values are:
+     * Allowed values are:
+     * - **alert**. Record the event.
+     * - **deny**. Block the request.
+     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+     * - **none**. Take no action. or `none` to take no action.
      */
-    public readonly ruleAction!: pulumi.Output<string | undefined>;
+    public readonly ruleAction!: pulumi.Output<string>;
     /**
      * . Unique identifier of the rule being modified.
      */
@@ -136,7 +140,11 @@ export interface AppSecRuleState {
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Action to be taken anytime the rule is triggered. Allowed values are:
+     * Allowed values are:
+     * - **alert**. Record the event.
+     * - **deny**. Block the request.
+     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+     * - **none**. Take no action. or `none` to take no action.
      */
     ruleAction?: pulumi.Input<string>;
     /**
@@ -162,7 +170,11 @@ export interface AppSecRuleArgs {
      */
     configId: pulumi.Input<number>;
     /**
-     * . Action to be taken anytime the rule is triggered. Allowed values are:
+     * Allowed values are:
+     * - **alert**. Record the event.
+     * - **deny**. Block the request.
+     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+     * - **none**. Take no action. or `none` to take no action.
      */
     ruleAction?: pulumi.Input<string>;
     /**

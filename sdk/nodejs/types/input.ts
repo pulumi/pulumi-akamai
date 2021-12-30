@@ -88,6 +88,16 @@ export interface DnsZoneTsigKey {
     secret: pulumi.Input<string>;
 }
 
+export interface GetPropertyRulesTemplateTemplate {
+    templateData: string;
+    templateDir: string;
+}
+
+export interface GetPropertyRulesTemplateTemplateArgs {
+    templateData: pulumi.Input<string>;
+    templateDir: pulumi.Input<string>;
+}
+
 export interface GetPropertyRulesTemplateVariable {
     name: string;
     type?: string;

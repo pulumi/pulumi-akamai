@@ -63,7 +63,8 @@ func GetPropertyRulesTemplate(ctx *pulumi.Context, args *GetPropertyRulesTemplat
 
 // A collection of arguments for invoking getPropertyRulesTemplate.
 type GetPropertyRulesTemplateArgs struct {
-	TemplateFile      string                             `pulumi:"templateFile"`
+	TemplateFile      *string                            `pulumi:"templateFile"`
+	Templates         []GetPropertyRulesTemplateTemplate `pulumi:"templates"`
 	VarDefinitionFile *string                            `pulumi:"varDefinitionFile"`
 	VarValuesFile     *string                            `pulumi:"varValuesFile"`
 	Variables         []GetPropertyRulesTemplateVariable `pulumi:"variables"`
@@ -74,7 +75,8 @@ type GetPropertyRulesTemplateResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id                string                             `pulumi:"id"`
 	Json              string                             `pulumi:"json"`
-	TemplateFile      string                             `pulumi:"templateFile"`
+	TemplateFile      *string                            `pulumi:"templateFile"`
+	Templates         []GetPropertyRulesTemplateTemplate `pulumi:"templates"`
 	VarDefinitionFile *string                            `pulumi:"varDefinitionFile"`
 	VarValuesFile     *string                            `pulumi:"varValuesFile"`
 	Variables         []GetPropertyRulesTemplateVariable `pulumi:"variables"`
@@ -91,7 +93,8 @@ func GetPropertyRulesTemplateOutput(ctx *pulumi.Context, args GetPropertyRulesTe
 
 // A collection of arguments for invoking getPropertyRulesTemplate.
 type GetPropertyRulesTemplateOutputArgs struct {
-	TemplateFile      pulumi.StringInput                         `pulumi:"templateFile"`
+	TemplateFile      pulumi.StringPtrInput                      `pulumi:"templateFile"`
+	Templates         GetPropertyRulesTemplateTemplateArrayInput `pulumi:"templates"`
 	VarDefinitionFile pulumi.StringPtrInput                      `pulumi:"varDefinitionFile"`
 	VarValuesFile     pulumi.StringPtrInput                      `pulumi:"varValuesFile"`
 	Variables         GetPropertyRulesTemplateVariableArrayInput `pulumi:"variables"`
@@ -125,8 +128,12 @@ func (o GetPropertyRulesTemplateResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPropertyRulesTemplateResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-func (o GetPropertyRulesTemplateResultOutput) TemplateFile() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyRulesTemplateResult) string { return v.TemplateFile }).(pulumi.StringOutput)
+func (o GetPropertyRulesTemplateResultOutput) TemplateFile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPropertyRulesTemplateResult) *string { return v.TemplateFile }).(pulumi.StringPtrOutput)
+}
+
+func (o GetPropertyRulesTemplateResultOutput) Templates() GetPropertyRulesTemplateTemplateArrayOutput {
+	return o.ApplyT(func(v GetPropertyRulesTemplateResult) []GetPropertyRulesTemplateTemplate { return v.Templates }).(GetPropertyRulesTemplateTemplateArrayOutput)
 }
 
 func (o GetPropertyRulesTemplateResultOutput) VarDefinitionFile() pulumi.StringPtrOutput {

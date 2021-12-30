@@ -70,8 +70,12 @@ type AppSecRule struct {
 	ConditionException pulumi.StringPtrOutput `pulumi:"conditionException"`
 	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Action to be taken anytime the rule is triggered. Allowed values are:
-	RuleAction pulumi.StringPtrOutput `pulumi:"ruleAction"`
+	// Allowed values are:
+	// - **alert**. Record the event.
+	// - **deny**. Block the request.
+	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+	// - **none**. Take no action. or `none` to take no action.
+	RuleAction pulumi.StringOutput `pulumi:"ruleAction"`
 	// . Unique identifier of the rule being modified.
 	RuleId pulumi.IntOutput `pulumi:"ruleId"`
 	// . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
@@ -120,7 +124,11 @@ type appSecRuleState struct {
 	ConditionException *string `pulumi:"conditionException"`
 	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
 	ConfigId *int `pulumi:"configId"`
-	// . Action to be taken anytime the rule is triggered. Allowed values are:
+	// Allowed values are:
+	// - **alert**. Record the event.
+	// - **deny**. Block the request.
+	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+	// - **none**. Take no action. or `none` to take no action.
 	RuleAction *string `pulumi:"ruleAction"`
 	// . Unique identifier of the rule being modified.
 	RuleId *int `pulumi:"ruleId"`
@@ -133,7 +141,11 @@ type AppSecRuleState struct {
 	ConditionException pulumi.StringPtrInput
 	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
 	ConfigId pulumi.IntPtrInput
-	// . Action to be taken anytime the rule is triggered. Allowed values are:
+	// Allowed values are:
+	// - **alert**. Record the event.
+	// - **deny**. Block the request.
+	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+	// - **none**. Take no action. or `none` to take no action.
 	RuleAction pulumi.StringPtrInput
 	// . Unique identifier of the rule being modified.
 	RuleId pulumi.IntPtrInput
@@ -150,7 +162,11 @@ type appSecRuleArgs struct {
 	ConditionException *string `pulumi:"conditionException"`
 	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
 	ConfigId int `pulumi:"configId"`
-	// . Action to be taken anytime the rule is triggered. Allowed values are:
+	// Allowed values are:
+	// - **alert**. Record the event.
+	// - **deny**. Block the request.
+	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+	// - **none**. Take no action. or `none` to take no action.
 	RuleAction *string `pulumi:"ruleAction"`
 	// . Unique identifier of the rule being modified.
 	RuleId int `pulumi:"ruleId"`
@@ -164,7 +180,11 @@ type AppSecRuleArgs struct {
 	ConditionException pulumi.StringPtrInput
 	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
 	ConfigId pulumi.IntInput
-	// . Action to be taken anytime the rule is triggered. Allowed values are:
+	// Allowed values are:
+	// - **alert**. Record the event.
+	// - **deny**. Block the request.
+	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+	// - **none**. Take no action. or `none` to take no action.
 	RuleAction pulumi.StringPtrInput
 	// . Unique identifier of the rule being modified.
 	RuleId pulumi.IntInput

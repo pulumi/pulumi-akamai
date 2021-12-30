@@ -71,7 +71,8 @@ func GetAppSecBypassNetworkLists(ctx *pulumi.Context, args *GetAppSecBypassNetwo
 // A collection of arguments for invoking getAppSecBypassNetworkLists.
 type GetAppSecBypassNetworkListsArgs struct {
 	// . Unique identifier of the security configuration associated with the bypass network list.
-	ConfigId int `pulumi:"configId"`
+	ConfigId         int     `pulumi:"configId"`
+	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 // A collection of values returned by getAppSecBypassNetworkLists.
@@ -79,9 +80,10 @@ type GetAppSecBypassNetworkListsResult struct {
 	BypassNetworkLists []string `pulumi:"bypassNetworkLists"`
 	ConfigId           int      `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id         string `pulumi:"id"`
-	Json       string `pulumi:"json"`
-	OutputText string `pulumi:"outputText"`
+	Id               string  `pulumi:"id"`
+	Json             string  `pulumi:"json"`
+	OutputText       string  `pulumi:"outputText"`
+	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 func GetAppSecBypassNetworkListsOutput(ctx *pulumi.Context, args GetAppSecBypassNetworkListsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecBypassNetworkListsResultOutput {
@@ -96,7 +98,8 @@ func GetAppSecBypassNetworkListsOutput(ctx *pulumi.Context, args GetAppSecBypass
 // A collection of arguments for invoking getAppSecBypassNetworkLists.
 type GetAppSecBypassNetworkListsOutputArgs struct {
 	// . Unique identifier of the security configuration associated with the bypass network list.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
+	ConfigId         pulumi.IntInput       `pulumi:"configId"`
+	SecurityPolicyId pulumi.StringPtrInput `pulumi:"securityPolicyId"`
 }
 
 func (GetAppSecBypassNetworkListsOutputArgs) ElementType() reflect.Type {
@@ -137,6 +140,10 @@ func (o GetAppSecBypassNetworkListsResultOutput) Json() pulumi.StringOutput {
 
 func (o GetAppSecBypassNetworkListsResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecBypassNetworkListsResult) string { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecBypassNetworkListsResultOutput) SecurityPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppSecBypassNetworkListsResult) *string { return v.SecurityPolicyId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

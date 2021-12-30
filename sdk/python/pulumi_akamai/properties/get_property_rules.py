@@ -22,7 +22,7 @@ class GetPropertyRulesResult:
     """
     A collection of values returned by getPropertyRules.
     """
-    def __init__(__self__, contract_id=None, errors=None, group_id=None, id=None, property_id=None, rules=None, version=None):
+    def __init__(__self__, contract_id=None, errors=None, group_id=None, id=None, property_id=None, rule_format=None, rules=None, version=None):
         if contract_id and not isinstance(contract_id, str):
             raise TypeError("Expected argument 'contract_id' to be a str")
         pulumi.set(__self__, "contract_id", contract_id)
@@ -38,6 +38,9 @@ class GetPropertyRulesResult:
         if property_id and not isinstance(property_id, str):
             raise TypeError("Expected argument 'property_id' to be a str")
         pulumi.set(__self__, "property_id", property_id)
+        if rule_format and not isinstance(rule_format, str):
+            raise TypeError("Expected argument 'rule_format' to be a str")
+        pulumi.set(__self__, "rule_format", rule_format)
         if rules and not isinstance(rules, str):
             raise TypeError("Expected argument 'rules' to be a str")
         pulumi.set(__self__, "rules", rules)
@@ -74,6 +77,11 @@ class GetPropertyRulesResult:
         return pulumi.get(self, "property_id")
 
     @property
+    @pulumi.getter(name="ruleFormat")
+    def rule_format(self) -> Optional[str]:
+        return pulumi.get(self, "rule_format")
+
+    @property
     @pulumi.getter
     def rules(self) -> str:
         return pulumi.get(self, "rules")
@@ -95,6 +103,7 @@ class AwaitableGetPropertyRulesResult(GetPropertyRulesResult):
             group_id=self.group_id,
             id=self.id,
             property_id=self.property_id,
+            rule_format=self.rule_format,
             rules=self.rules,
             version=self.version)
 
@@ -102,6 +111,7 @@ class AwaitableGetPropertyRulesResult(GetPropertyRulesResult):
 def get_property_rules(contract_id: Optional[str] = None,
                        group_id: Optional[str] = None,
                        property_id: Optional[str] = None,
+                       rule_format: Optional[str] = None,
                        version: Optional[int] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyRulesResult:
     """
@@ -112,6 +122,7 @@ def get_property_rules(contract_id: Optional[str] = None,
     __args__['contractId'] = contract_id
     __args__['groupId'] = group_id
     __args__['propertyId'] = property_id
+    __args__['ruleFormat'] = rule_format
     __args__['version'] = version
     if opts is None:
         opts = pulumi.InvokeOptions()
@@ -125,6 +136,7 @@ def get_property_rules(contract_id: Optional[str] = None,
         group_id=__ret__.group_id,
         id=__ret__.id,
         property_id=__ret__.property_id,
+        rule_format=__ret__.rule_format,
         rules=__ret__.rules,
         version=__ret__.version)
 
@@ -133,6 +145,7 @@ def get_property_rules(contract_id: Optional[str] = None,
 def get_property_rules_output(contract_id: Optional[pulumi.Input[Optional[str]]] = None,
                               group_id: Optional[pulumi.Input[Optional[str]]] = None,
                               property_id: Optional[pulumi.Input[str]] = None,
+                              rule_format: Optional[pulumi.Input[Optional[str]]] = None,
                               version: Optional[pulumi.Input[Optional[int]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyRulesResult]:
     """

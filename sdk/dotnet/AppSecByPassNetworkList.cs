@@ -68,6 +68,12 @@ namespace Pulumi.Akamai
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
+        /// <summary>
+        /// The ID of the security policy governing the bypass network lists
+        /// </summary>
+        [Output("securityPolicyId")]
+        public Output<string?> SecurityPolicyId { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a AppSecByPassNetworkList resource with the given unique name, arguments, and options.
@@ -132,6 +138,12 @@ namespace Pulumi.Akamai
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
+        /// <summary>
+        /// The ID of the security policy governing the bypass network lists
+        /// </summary>
+        [Input("securityPolicyId")]
+        public Input<string>? SecurityPolicyId { get; set; }
+
         public AppSecByPassNetworkListArgs()
         {
         }
@@ -156,6 +168,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
+
+        /// <summary>
+        /// The ID of the security policy governing the bypass network lists
+        /// </summary>
+        [Input("securityPolicyId")]
+        public Input<string>? SecurityPolicyId { get; set; }
 
         public AppSecByPassNetworkListState()
         {

@@ -49,7 +49,8 @@ import * as utilities from "./utilities";
  *
  * * `json` - The fully expanded template with variables and all nested templates resolved.
  */
-export function getPropertyRulesTemplate(args: GetPropertyRulesTemplateArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyRulesTemplateResult> {
+export function getPropertyRulesTemplate(args?: GetPropertyRulesTemplateArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyRulesTemplateResult> {
+    args = args || {};
     if (!opts) {
         opts = {}
     }
@@ -59,6 +60,7 @@ export function getPropertyRulesTemplate(args: GetPropertyRulesTemplateArgs, opt
     }
     return pulumi.runtime.invoke("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", {
         "templateFile": args.templateFile,
+        "templates": args.templates,
         "varDefinitionFile": args.varDefinitionFile,
         "varValuesFile": args.varValuesFile,
         "variables": args.variables,
@@ -69,7 +71,8 @@ export function getPropertyRulesTemplate(args: GetPropertyRulesTemplateArgs, opt
  * A collection of arguments for invoking getPropertyRulesTemplate.
  */
 export interface GetPropertyRulesTemplateArgs {
-    templateFile: string;
+    templateFile?: string;
+    templates?: inputs.GetPropertyRulesTemplateTemplate[];
     varDefinitionFile?: string;
     varValuesFile?: string;
     variables?: inputs.GetPropertyRulesTemplateVariable[];
@@ -84,13 +87,14 @@ export interface GetPropertyRulesTemplateResult {
      */
     readonly id: string;
     readonly json: string;
-    readonly templateFile: string;
+    readonly templateFile?: string;
+    readonly templates?: outputs.GetPropertyRulesTemplateTemplate[];
     readonly varDefinitionFile?: string;
     readonly varValuesFile?: string;
     readonly variables?: outputs.GetPropertyRulesTemplateVariable[];
 }
 
-export function getPropertyRulesTemplateOutput(args: GetPropertyRulesTemplateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyRulesTemplateResult> {
+export function getPropertyRulesTemplateOutput(args?: GetPropertyRulesTemplateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyRulesTemplateResult> {
     return pulumi.output(args).apply(a => getPropertyRulesTemplate(a, opts))
 }
 
@@ -98,7 +102,8 @@ export function getPropertyRulesTemplateOutput(args: GetPropertyRulesTemplateOut
  * A collection of arguments for invoking getPropertyRulesTemplate.
  */
 export interface GetPropertyRulesTemplateOutputArgs {
-    templateFile: pulumi.Input<string>;
+    templateFile?: pulumi.Input<string>;
+    templates?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesTemplateTemplateArgs>[]>;
     varDefinitionFile?: pulumi.Input<string>;
     varValuesFile?: pulumi.Input<string>;
     variables?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesTemplateVariableArgs>[]>;

@@ -58,7 +58,7 @@ namespace Pulumi.Akamai
         /// 
         /// * `json` - The fully expanded template with variables and all nested templates resolved.
         /// </summary>
-        public static Task<GetPropertyRulesTemplateResult> InvokeAsync(GetPropertyRulesTemplateArgs args, InvokeOptions? options = null)
+        public static Task<GetPropertyRulesTemplateResult> InvokeAsync(GetPropertyRulesTemplateArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRulesTemplateResult>("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", args ?? new GetPropertyRulesTemplateArgs(), options.WithVersion());
 
         /// <summary>
@@ -107,15 +107,23 @@ namespace Pulumi.Akamai
         /// 
         /// * `json` - The fully expanded template with variables and all nested templates resolved.
         /// </summary>
-        public static Output<GetPropertyRulesTemplateResult> Invoke(GetPropertyRulesTemplateInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetPropertyRulesTemplateResult> Invoke(GetPropertyRulesTemplateInvokeArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetPropertyRulesTemplateResult>("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", args ?? new GetPropertyRulesTemplateInvokeArgs(), options.WithVersion());
     }
 
 
     public sealed class GetPropertyRulesTemplateArgs : Pulumi.InvokeArgs
     {
-        [Input("templateFile", required: true)]
-        public string TemplateFile { get; set; } = null!;
+        [Input("templateFile")]
+        public string? TemplateFile { get; set; }
+
+        [Input("templates")]
+        private List<Inputs.GetPropertyRulesTemplateTemplateArgs>? _templates;
+        public List<Inputs.GetPropertyRulesTemplateTemplateArgs> Templates
+        {
+            get => _templates ?? (_templates = new List<Inputs.GetPropertyRulesTemplateTemplateArgs>());
+            set => _templates = value;
+        }
 
         [Input("varDefinitionFile")]
         public string? VarDefinitionFile { get; set; }
@@ -138,8 +146,16 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyRulesTemplateInvokeArgs : Pulumi.InvokeArgs
     {
-        [Input("templateFile", required: true)]
-        public Input<string> TemplateFile { get; set; } = null!;
+        [Input("templateFile")]
+        public Input<string>? TemplateFile { get; set; }
+
+        [Input("templates")]
+        private InputList<Inputs.GetPropertyRulesTemplateTemplateInputArgs>? _templates;
+        public InputList<Inputs.GetPropertyRulesTemplateTemplateInputArgs> Templates
+        {
+            get => _templates ?? (_templates = new InputList<Inputs.GetPropertyRulesTemplateTemplateInputArgs>());
+            set => _templates = value;
+        }
 
         [Input("varDefinitionFile")]
         public Input<string>? VarDefinitionFile { get; set; }
@@ -169,7 +185,8 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string Id;
         public readonly string Json;
-        public readonly string TemplateFile;
+        public readonly string? TemplateFile;
+        public readonly ImmutableArray<Outputs.GetPropertyRulesTemplateTemplateResult> Templates;
         public readonly string? VarDefinitionFile;
         public readonly string? VarValuesFile;
         public readonly ImmutableArray<Outputs.GetPropertyRulesTemplateVariableResult> Variables;
@@ -180,7 +197,9 @@ namespace Pulumi.Akamai
 
             string json,
 
-            string templateFile,
+            string? templateFile,
+
+            ImmutableArray<Outputs.GetPropertyRulesTemplateTemplateResult> templates,
 
             string? varDefinitionFile,
 
@@ -191,6 +210,7 @@ namespace Pulumi.Akamai
             Id = id;
             Json = json;
             TemplateFile = templateFile;
+            Templates = templates;
             VarDefinitionFile = varDefinitionFile;
             VarValuesFile = varValuesFile;
             Variables = variables;

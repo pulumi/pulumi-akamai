@@ -54,6 +54,10 @@ export class EdgeHostName extends pulumi.CustomResource {
      */
     public readonly product!: pulumi.Output<string>;
     public readonly productId!: pulumi.Output<string>;
+    /**
+     * A JSON encoded list of use cases
+     */
+    public readonly useCases!: pulumi.Output<string | undefined>;
 
     /**
      * Create a EdgeHostName resource with the given unique name, arguments, and options.
@@ -80,6 +84,7 @@ export class EdgeHostName extends pulumi.CustomResource {
             inputs["ipBehavior"] = state ? state.ipBehavior : undefined;
             inputs["product"] = state ? state.product : undefined;
             inputs["productId"] = state ? state.productId : undefined;
+            inputs["useCases"] = state ? state.useCases : undefined;
         } else {
             const args = argsOrState as EdgeHostNameArgs | undefined;
             if ((!args || args.edgeHostname === undefined) && !opts.urn) {
@@ -97,6 +102,7 @@ export class EdgeHostName extends pulumi.CustomResource {
             inputs["ipBehavior"] = args ? args.ipBehavior : undefined;
             inputs["product"] = args ? args.product : undefined;
             inputs["productId"] = args ? args.productId : undefined;
+            inputs["useCases"] = args ? args.useCases : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
@@ -127,6 +133,10 @@ export interface EdgeHostNameState {
      */
     product?: pulumi.Input<string>;
     productId?: pulumi.Input<string>;
+    /**
+     * A JSON encoded list of use cases
+     */
+    useCases?: pulumi.Input<string>;
 }
 
 /**
@@ -151,4 +161,8 @@ export interface EdgeHostNameArgs {
      */
     product?: pulumi.Input<string>;
     productId?: pulumi.Input<string>;
+    /**
+     * A JSON encoded list of use cases
+     */
+    useCases?: pulumi.Input<string>;
 }

@@ -21,9 +21,11 @@ class EdgeHostNameArgs:
                  group: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
                  product: Optional[pulumi.Input[str]] = None,
-                 product_id: Optional[pulumi.Input[str]] = None):
+                 product_id: Optional[pulumi.Input[str]] = None,
+                 use_cases: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a EdgeHostName resource.
+        :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         pulumi.set(__self__, "edge_hostname", edge_hostname)
         pulumi.set(__self__, "ip_behavior", ip_behavior)
@@ -50,6 +52,8 @@ class EdgeHostNameArgs:
             pulumi.set(__self__, "product", product)
         if product_id is not None:
             pulumi.set(__self__, "product_id", product_id)
+        if use_cases is not None:
+            pulumi.set(__self__, "use_cases", use_cases)
 
     @property
     @pulumi.getter(name="edgeHostname")
@@ -132,6 +136,18 @@ class EdgeHostNameArgs:
     def product_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "product_id", value)
 
+    @property
+    @pulumi.getter(name="useCases")
+    def use_cases(self) -> Optional[pulumi.Input[str]]:
+        """
+        A JSON encoded list of use cases
+        """
+        return pulumi.get(self, "use_cases")
+
+    @use_cases.setter
+    def use_cases(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "use_cases", value)
+
 
 @pulumi.input_type
 class _EdgeHostNameState:
@@ -144,9 +160,11 @@ class _EdgeHostNameState:
                  group_id: Optional[pulumi.Input[str]] = None,
                  ip_behavior: Optional[pulumi.Input[str]] = None,
                  product: Optional[pulumi.Input[str]] = None,
-                 product_id: Optional[pulumi.Input[str]] = None):
+                 product_id: Optional[pulumi.Input[str]] = None,
+                 use_cases: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering EdgeHostName resources.
+        :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         if certificate is not None:
             pulumi.set(__self__, "certificate", certificate)
@@ -175,6 +193,8 @@ class _EdgeHostNameState:
             pulumi.set(__self__, "product", product)
         if product_id is not None:
             pulumi.set(__self__, "product_id", product_id)
+        if use_cases is not None:
+            pulumi.set(__self__, "use_cases", use_cases)
 
     @property
     @pulumi.getter
@@ -257,6 +277,18 @@ class _EdgeHostNameState:
     def product_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "product_id", value)
 
+    @property
+    @pulumi.getter(name="useCases")
+    def use_cases(self) -> Optional[pulumi.Input[str]]:
+        """
+        A JSON encoded list of use cases
+        """
+        return pulumi.get(self, "use_cases")
+
+    @use_cases.setter
+    def use_cases(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "use_cases", value)
+
 
 warnings.warn("""akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName""", DeprecationWarning)
 
@@ -277,11 +309,13 @@ class EdgeHostName(pulumi.CustomResource):
                  ip_behavior: Optional[pulumi.Input[str]] = None,
                  product: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
+                 use_cases: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         Create a EdgeHostName resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         ...
     @overload
@@ -315,6 +349,7 @@ class EdgeHostName(pulumi.CustomResource):
                  ip_behavior: Optional[pulumi.Input[str]] = None,
                  product: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
+                 use_cases: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         pulumi.log.warn("""EdgeHostName is deprecated: akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName""")
         if opts is None:
@@ -350,6 +385,7 @@ class EdgeHostName(pulumi.CustomResource):
                 pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
             __props__.__dict__["product"] = product
             __props__.__dict__["product_id"] = product_id
+            __props__.__dict__["use_cases"] = use_cases
         super(EdgeHostName, __self__).__init__(
             'akamai:properties/edgeHostName:EdgeHostName',
             resource_name,
@@ -368,7 +404,8 @@ class EdgeHostName(pulumi.CustomResource):
             group_id: Optional[pulumi.Input[str]] = None,
             ip_behavior: Optional[pulumi.Input[str]] = None,
             product: Optional[pulumi.Input[str]] = None,
-            product_id: Optional[pulumi.Input[str]] = None) -> 'EdgeHostName':
+            product_id: Optional[pulumi.Input[str]] = None,
+            use_cases: Optional[pulumi.Input[str]] = None) -> 'EdgeHostName':
         """
         Get an existing EdgeHostName resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -376,6 +413,7 @@ class EdgeHostName(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -390,6 +428,7 @@ class EdgeHostName(pulumi.CustomResource):
         __props__.__dict__["ip_behavior"] = ip_behavior
         __props__.__dict__["product"] = product
         __props__.__dict__["product_id"] = product_id
+        __props__.__dict__["use_cases"] = use_cases
         return EdgeHostName(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -436,4 +475,12 @@ class EdgeHostName(pulumi.CustomResource):
     @pulumi.getter(name="productId")
     def product_id(self) -> pulumi.Output[str]:
         return pulumi.get(self, "product_id")
+
+    @property
+    @pulumi.getter(name="useCases")
+    def use_cases(self) -> pulumi.Output[Optional[str]]:
+        """
+        A JSON encoded list of use cases
+        """
+        return pulumi.get(self, "use_cases")
 

@@ -23,12 +23,20 @@ namespace Pulumi.Akamai
         /// 
         /// ```csharp
         /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
         /// 
         /// class MyStack : Stack
         /// {
         ///     public MyStack()
         ///     {
-        ///         this.PropertyMatch = data.Akamai_property_rules.My_example;
+        ///         var my_example = Output.Create(Akamai.GetPropertyRules.InvokeAsync(new Akamai.GetPropertyRulesArgs
+        ///         {
+        ///             PropertyId = "prp_123",
+        ///             GroupId = "grp_12345",
+        ///             ContractId = "ctr_1-AB123",
+        ///             Version = 3,
+        ///         }));
+        ///         this.PropertyMatch = my_example;
         ///     }
         /// 
         ///     [Output("propertyMatch")]
@@ -49,6 +57,7 @@ namespace Pulumi.Akamai
         /// 
         /// This data source returns these attributes:
         /// 
+        /// * `rule_format` - The rule tree version used. Property rule objects are versioned infrequently, and are known as rule formats. See [About rule formats](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#rf) to learn more.
         /// * `rules` - A JSON-encoded rule tree for the property.
         /// * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the Property Manager API documentation.
         /// </summary>
@@ -66,12 +75,20 @@ namespace Pulumi.Akamai
         /// 
         /// ```csharp
         /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
         /// 
         /// class MyStack : Stack
         /// {
         ///     public MyStack()
         ///     {
-        ///         this.PropertyMatch = data.Akamai_property_rules.My_example;
+        ///         var my_example = Output.Create(Akamai.GetPropertyRules.InvokeAsync(new Akamai.GetPropertyRulesArgs
+        ///         {
+        ///             PropertyId = "prp_123",
+        ///             GroupId = "grp_12345",
+        ///             ContractId = "ctr_1-AB123",
+        ///             Version = 3,
+        ///         }));
+        ///         this.PropertyMatch = my_example;
         ///     }
         /// 
         ///     [Output("propertyMatch")]
@@ -92,6 +109,7 @@ namespace Pulumi.Akamai
         /// 
         /// This data source returns these attributes:
         /// 
+        /// * `rule_format` - The rule tree version used. Property rule objects are versioned infrequently, and are known as rule formats. See [About rule formats](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#rf) to learn more.
         /// * `rules` - A JSON-encoded rule tree for the property.
         /// * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the Property Manager API documentation.
         /// </summary>
@@ -111,6 +129,9 @@ namespace Pulumi.Akamai
         [Input("propertyId", required: true)]
         public string PropertyId { get; set; } = null!;
 
+        [Input("ruleFormat")]
+        public string? RuleFormat { get; set; }
+
         [Input("version")]
         public int? Version { get; set; }
 
@@ -129,6 +150,9 @@ namespace Pulumi.Akamai
 
         [Input("propertyId", required: true)]
         public Input<string> PropertyId { get; set; } = null!;
+
+        [Input("ruleFormat")]
+        public Input<string>? RuleFormat { get; set; }
 
         [Input("version")]
         public Input<int>? Version { get; set; }
@@ -150,6 +174,7 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string Id;
         public readonly string PropertyId;
+        public readonly string? RuleFormat;
         public readonly string Rules;
         public readonly int Version;
 
@@ -165,6 +190,8 @@ namespace Pulumi.Akamai
 
             string propertyId,
 
+            string? ruleFormat,
+
             string rules,
 
             int version)
@@ -174,6 +201,7 @@ namespace Pulumi.Akamai
             GroupId = groupId;
             Id = id;
             PropertyId = propertyId;
+            RuleFormat = ruleFormat;
             Rules = rules;
             Version = version;
         }

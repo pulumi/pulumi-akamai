@@ -14,14 +14,18 @@ __all__ = ['AppSecByPassNetworkListArgs', 'AppSecByPassNetworkList']
 class AppSecByPassNetworkListArgs:
     def __init__(__self__, *,
                  bypass_network_lists: pulumi.Input[Sequence[pulumi.Input[str]]],
-                 config_id: pulumi.Input[int]):
+                 config_id: pulumi.Input[int],
+                 security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AppSecByPassNetworkList resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] bypass_network_lists: . JSON array of network IDs that comprise the bypass list.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the network bypass lists being modified.
+        :param pulumi.Input[str] security_policy_id: The ID of the security policy governing the bypass network lists
         """
         pulumi.set(__self__, "bypass_network_lists", bypass_network_lists)
         pulumi.set(__self__, "config_id", config_id)
+        if security_policy_id is not None:
+            pulumi.set(__self__, "security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="bypassNetworkLists")
@@ -47,21 +51,37 @@ class AppSecByPassNetworkListArgs:
     def config_id(self, value: pulumi.Input[int]):
         pulumi.set(self, "config_id", value)
 
+    @property
+    @pulumi.getter(name="securityPolicyId")
+    def security_policy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of the security policy governing the bypass network lists
+        """
+        return pulumi.get(self, "security_policy_id")
+
+    @security_policy_id.setter
+    def security_policy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "security_policy_id", value)
+
 
 @pulumi.input_type
 class _AppSecByPassNetworkListState:
     def __init__(__self__, *,
                  bypass_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 config_id: Optional[pulumi.Input[int]] = None):
+                 config_id: Optional[pulumi.Input[int]] = None,
+                 security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecByPassNetworkList resources.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] bypass_network_lists: . JSON array of network IDs that comprise the bypass list.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the network bypass lists being modified.
+        :param pulumi.Input[str] security_policy_id: The ID of the security policy governing the bypass network lists
         """
         if bypass_network_lists is not None:
             pulumi.set(__self__, "bypass_network_lists", bypass_network_lists)
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
+        if security_policy_id is not None:
+            pulumi.set(__self__, "security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="bypassNetworkLists")
@@ -87,6 +107,18 @@ class _AppSecByPassNetworkListState:
     def config_id(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "config_id", value)
 
+    @property
+    @pulumi.getter(name="securityPolicyId")
+    def security_policy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of the security policy governing the bypass network lists
+        """
+        return pulumi.get(self, "security_policy_id")
+
+    @security_policy_id.setter
+    def security_policy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "security_policy_id", value)
+
 
 class AppSecByPassNetworkList(pulumi.CustomResource):
     @overload
@@ -95,6 +127,7 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bypass_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
+                 security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         **Scopes**: Security configuration
@@ -131,6 +164,7 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] bypass_network_lists: . JSON array of network IDs that comprise the bypass list.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the network bypass lists being modified.
+        :param pulumi.Input[str] security_policy_id: The ID of the security policy governing the bypass network lists
         """
         ...
     @overload
@@ -186,6 +220,7 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bypass_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
+                 security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
@@ -204,6 +239,7 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
             if config_id is None and not opts.urn:
                 raise TypeError("Missing required property 'config_id'")
             __props__.__dict__["config_id"] = config_id
+            __props__.__dict__["security_policy_id"] = security_policy_id
         super(AppSecByPassNetworkList, __self__).__init__(
             'akamai:index/appSecByPassNetworkList:AppSecByPassNetworkList',
             resource_name,
@@ -215,7 +251,8 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             bypass_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            config_id: Optional[pulumi.Input[int]] = None) -> 'AppSecByPassNetworkList':
+            config_id: Optional[pulumi.Input[int]] = None,
+            security_policy_id: Optional[pulumi.Input[str]] = None) -> 'AppSecByPassNetworkList':
         """
         Get an existing AppSecByPassNetworkList resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -225,6 +262,7 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] bypass_network_lists: . JSON array of network IDs that comprise the bypass list.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the network bypass lists being modified.
+        :param pulumi.Input[str] security_policy_id: The ID of the security policy governing the bypass network lists
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -232,6 +270,7 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
 
         __props__.__dict__["bypass_network_lists"] = bypass_network_lists
         __props__.__dict__["config_id"] = config_id
+        __props__.__dict__["security_policy_id"] = security_policy_id
         return AppSecByPassNetworkList(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -249,4 +288,12 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
         . Unique identifier of the security configuration associated with the network bypass lists being modified.
         """
         return pulumi.get(self, "config_id")
+
+    @property
+    @pulumi.getter(name="securityPolicyId")
+    def security_policy_id(self) -> pulumi.Output[Optional[str]]:
+        """
+        The ID of the security policy governing the bypass network lists
+        """
+        return pulumi.get(self, "security_policy_id")
 

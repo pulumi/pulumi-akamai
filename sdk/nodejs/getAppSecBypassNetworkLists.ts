@@ -49,6 +49,7 @@ export function getAppSecBypassNetworkLists(args: GetAppSecBypassNetworkListsArg
     }
     return pulumi.runtime.invoke("akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists", {
         "configId": args.configId,
+        "securityPolicyId": args.securityPolicyId,
     }, opts);
 }
 
@@ -60,6 +61,7 @@ export interface GetAppSecBypassNetworkListsArgs {
      * . Unique identifier of the security configuration associated with the bypass network list.
      */
     configId: number;
+    securityPolicyId?: string;
 }
 
 /**
@@ -74,6 +76,7 @@ export interface GetAppSecBypassNetworkListsResult {
     readonly id: string;
     readonly json: string;
     readonly outputText: string;
+    readonly securityPolicyId?: string;
 }
 
 export function getAppSecBypassNetworkListsOutput(args: GetAppSecBypassNetworkListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecBypassNetworkListsResult> {
@@ -88,4 +91,5 @@ export interface GetAppSecBypassNetworkListsOutputArgs {
      * . Unique identifier of the security configuration associated with the bypass network list.
      */
     configId: pulumi.Input<number>;
+    securityPolicyId?: pulumi.Input<string>;
 }
