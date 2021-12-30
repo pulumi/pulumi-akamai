@@ -2,9 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Upgrade terraform-provider-akamai to v1.9.1
+_(none)_
 
 ---
+
+## 2.6.0 (2021-12-30)
+* Upgrade terraform-provider-akamai to v1.9.1
 
 ## 2.5.0 (2021-11-22)
 * Upgrade to terraform-bridge 3.11.0
