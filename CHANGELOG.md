@@ -1,5 +1,8 @@
 CHANGELOG
 =========
+## Notice (2022-01-06)
+
+*As of this notice, using CHANGELOG.md is DEPRECATED. We will be using [GitHub Releases](https://github.com/pulumi/pulumi-akamai/releases) for this repository*
 
 ## HEAD (Unreleased)
 _(none)_
