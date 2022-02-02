@@ -85,54 +85,36 @@ import (
 // 	})
 // }
 // ```
-// ## Argument reference
-//
-// The following arguments are supported:
-//
-// * `propertyId` - (Required) The property's unique identifier, including the `prp_` prefix.
-// * `contact` - (Required) One or more email addresses to send activation status changes to.
-// * `version` - (Required) The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latestVersion` attribute in the `Property` resource labeled `example`.
-// * `network` - (Optional) Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-// * `note` - (Optional) A log message you can assign to the activation request.
-// * `autoAcknowledgeRuleWarnings` - (Optional) Whether the activation should proceed despite any warnings. By default set to `true`.
-//
-// ### Deprecated arguments
-//
-// * `property` - (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
-//
-// ## Attribute reference
-//
-// The following attributes are returned:
-//
-// * `id` - The unique identifier for this activation.
-// * `warnings` - The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
-// * `errors` - The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
-// * `activationId` - The ID given to the activation event while it's in progress.
-// * `status` - The property version's activation status on the selected network.
-//
-// ### Deprecated attributes
-//
-// * `ruleWarnings` - (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
 type PropertyActivation struct {
 	pulumi.CustomResourceState
 
+	// The ID given to the activation event while it's in progress.
 	ActivationId pulumi.StringOutput `pulumi:"activationId"`
-	// automatically acknowledge all rule warnings for activation to continue. default is true
-	AutoAcknowledgeRuleWarnings pulumi.BoolPtrOutput     `pulumi:"autoAcknowledgeRuleWarnings"`
-	Contacts                    pulumi.StringArrayOutput `pulumi:"contacts"`
-	Errors                      pulumi.StringOutput      `pulumi:"errors"`
-	Network                     pulumi.StringPtrOutput   `pulumi:"network"`
-	// assigns a log message to the activation request
+	// Whether the activation should proceed despite any warnings. By default set to `true`.
+	AutoAcknowledgeRuleWarnings pulumi.BoolPtrOutput `pulumi:"autoAcknowledgeRuleWarnings"`
+	// One or more email addresses to send activation status changes to.
+	Contacts pulumi.StringArrayOutput `pulumi:"contacts"`
+	// The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+	Errors pulumi.StringOutput `pulumi:"errors"`
+	// Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+	Network pulumi.StringPtrOutput `pulumi:"network"`
+	// A log message you can assign to the activation request.
 	Note pulumi.StringPtrOutput `pulumi:"note"`
+	// - (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "property" has been deprecated.
-	Property   pulumi.StringOutput                    `pulumi:"property"`
+	Property pulumi.StringOutput `pulumi:"property"`
+	// - (Required) The property's unique identifier, including the `prp_` prefix.
 	PropertyId pulumi.StringOutput                    `pulumi:"propertyId"`
 	RuleErrors PropertyActivationRuleErrorArrayOutput `pulumi:"ruleErrors"`
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings PropertyActivationRuleWarningArrayOutput `pulumi:"ruleWarnings"`
-	Status       pulumi.StringOutput                      `pulumi:"status"`
-	Version      pulumi.IntOutput                         `pulumi:"version"`
-	Warnings     pulumi.StringOutput                      `pulumi:"warnings"`
+	// The property version's activation status on the selected network.
+	Status pulumi.StringOutput `pulumi:"status"`
+	// The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latestVersion` attribute in the `Property` resource labeled `example`.
+	Version pulumi.IntOutput `pulumi:"version"`
+	// The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+	Warnings pulumi.StringOutput `pulumi:"warnings"`
 }
 
 // NewPropertyActivation registers a new resource with the given unique name, arguments, and options.
@@ -176,43 +158,63 @@ func GetPropertyActivation(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering PropertyActivation resources.
 type propertyActivationState struct {
+	// The ID given to the activation event while it's in progress.
 	ActivationId *string `pulumi:"activationId"`
-	// automatically acknowledge all rule warnings for activation to continue. default is true
-	AutoAcknowledgeRuleWarnings *bool    `pulumi:"autoAcknowledgeRuleWarnings"`
-	Contacts                    []string `pulumi:"contacts"`
-	Errors                      *string  `pulumi:"errors"`
-	Network                     *string  `pulumi:"network"`
-	// assigns a log message to the activation request
+	// Whether the activation should proceed despite any warnings. By default set to `true`.
+	AutoAcknowledgeRuleWarnings *bool `pulumi:"autoAcknowledgeRuleWarnings"`
+	// One or more email addresses to send activation status changes to.
+	Contacts []string `pulumi:"contacts"`
+	// The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+	Errors *string `pulumi:"errors"`
+	// Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+	Network *string `pulumi:"network"`
+	// A log message you can assign to the activation request.
 	Note *string `pulumi:"note"`
+	// - (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "property" has been deprecated.
-	Property   *string                       `pulumi:"property"`
+	Property *string `pulumi:"property"`
+	// - (Required) The property's unique identifier, including the `prp_` prefix.
 	PropertyId *string                       `pulumi:"propertyId"`
 	RuleErrors []PropertyActivationRuleError `pulumi:"ruleErrors"`
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings []PropertyActivationRuleWarning `pulumi:"ruleWarnings"`
-	Status       *string                         `pulumi:"status"`
-	Version      *int                            `pulumi:"version"`
-	Warnings     *string                         `pulumi:"warnings"`
+	// The property version's activation status on the selected network.
+	Status *string `pulumi:"status"`
+	// The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latestVersion` attribute in the `Property` resource labeled `example`.
+	Version *int `pulumi:"version"`
+	// The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+	Warnings *string `pulumi:"warnings"`
 }
 
 type PropertyActivationState struct {
+	// The ID given to the activation event while it's in progress.
 	ActivationId pulumi.StringPtrInput
-	// automatically acknowledge all rule warnings for activation to continue. default is true
+	// Whether the activation should proceed despite any warnings. By default set to `true`.
 	AutoAcknowledgeRuleWarnings pulumi.BoolPtrInput
-	Contacts                    pulumi.StringArrayInput
-	Errors                      pulumi.StringPtrInput
-	Network                     pulumi.StringPtrInput
-	// assigns a log message to the activation request
+	// One or more email addresses to send activation status changes to.
+	Contacts pulumi.StringArrayInput
+	// The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+	Errors pulumi.StringPtrInput
+	// Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+	Network pulumi.StringPtrInput
+	// A log message you can assign to the activation request.
 	Note pulumi.StringPtrInput
+	// - (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "property" has been deprecated.
-	Property   pulumi.StringPtrInput
+	Property pulumi.StringPtrInput
+	// - (Required) The property's unique identifier, including the `prp_` prefix.
 	PropertyId pulumi.StringPtrInput
 	RuleErrors PropertyActivationRuleErrorArrayInput
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings PropertyActivationRuleWarningArrayInput
-	Status       pulumi.StringPtrInput
-	Version      pulumi.IntPtrInput
-	Warnings     pulumi.StringPtrInput
+	// The property version's activation status on the selected network.
+	Status pulumi.StringPtrInput
+	// The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latestVersion` attribute in the `Property` resource labeled `example`.
+	Version pulumi.IntPtrInput
+	// The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+	Warnings pulumi.StringPtrInput
 }
 
 func (PropertyActivationState) ElementType() reflect.Type {
@@ -220,38 +222,52 @@ func (PropertyActivationState) ElementType() reflect.Type {
 }
 
 type propertyActivationArgs struct {
+	// The ID given to the activation event while it's in progress.
 	ActivationId *string `pulumi:"activationId"`
-	// automatically acknowledge all rule warnings for activation to continue. default is true
-	AutoAcknowledgeRuleWarnings *bool    `pulumi:"autoAcknowledgeRuleWarnings"`
-	Contacts                    []string `pulumi:"contacts"`
-	Network                     *string  `pulumi:"network"`
-	// assigns a log message to the activation request
+	// Whether the activation should proceed despite any warnings. By default set to `true`.
+	AutoAcknowledgeRuleWarnings *bool `pulumi:"autoAcknowledgeRuleWarnings"`
+	// One or more email addresses to send activation status changes to.
+	Contacts []string `pulumi:"contacts"`
+	// Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+	Network *string `pulumi:"network"`
+	// A log message you can assign to the activation request.
 	Note *string `pulumi:"note"`
+	// - (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "property" has been deprecated.
-	Property   *string                       `pulumi:"property"`
+	Property *string `pulumi:"property"`
+	// - (Required) The property's unique identifier, including the `prp_` prefix.
 	PropertyId *string                       `pulumi:"propertyId"`
 	RuleErrors []PropertyActivationRuleError `pulumi:"ruleErrors"`
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings []PropertyActivationRuleWarning `pulumi:"ruleWarnings"`
-	Version      int                             `pulumi:"version"`
+	// The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latestVersion` attribute in the `Property` resource labeled `example`.
+	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a PropertyActivation resource.
 type PropertyActivationArgs struct {
+	// The ID given to the activation event while it's in progress.
 	ActivationId pulumi.StringPtrInput
-	// automatically acknowledge all rule warnings for activation to continue. default is true
+	// Whether the activation should proceed despite any warnings. By default set to `true`.
 	AutoAcknowledgeRuleWarnings pulumi.BoolPtrInput
-	Contacts                    pulumi.StringArrayInput
-	Network                     pulumi.StringPtrInput
-	// assigns a log message to the activation request
+	// One or more email addresses to send activation status changes to.
+	Contacts pulumi.StringArrayInput
+	// Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+	Network pulumi.StringPtrInput
+	// A log message you can assign to the activation request.
 	Note pulumi.StringPtrInput
+	// - (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "property" has been deprecated.
-	Property   pulumi.StringPtrInput
+	Property pulumi.StringPtrInput
+	// - (Required) The property's unique identifier, including the `prp_` prefix.
 	PropertyId pulumi.StringPtrInput
 	RuleErrors PropertyActivationRuleErrorArrayInput
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings PropertyActivationRuleWarningArrayInput
-	Version      pulumi.IntInput
+	// The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latestVersion` attribute in the `Property` resource labeled `example`.
+	Version pulumi.IntInput
 }
 
 func (PropertyActivationArgs) ElementType() reflect.Type {
@@ -266,7 +282,7 @@ type PropertyActivationInput interface {
 }
 
 func (*PropertyActivation) ElementType() reflect.Type {
-	return reflect.TypeOf((*PropertyActivation)(nil))
+	return reflect.TypeOf((**PropertyActivation)(nil)).Elem()
 }
 
 func (i *PropertyActivation) ToPropertyActivationOutput() PropertyActivationOutput {
@@ -275,35 +291,6 @@ func (i *PropertyActivation) ToPropertyActivationOutput() PropertyActivationOutp
 
 func (i *PropertyActivation) ToPropertyActivationOutputWithContext(ctx context.Context) PropertyActivationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationOutput)
-}
-
-func (i *PropertyActivation) ToPropertyActivationPtrOutput() PropertyActivationPtrOutput {
-	return i.ToPropertyActivationPtrOutputWithContext(context.Background())
-}
-
-func (i *PropertyActivation) ToPropertyActivationPtrOutputWithContext(ctx context.Context) PropertyActivationPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationPtrOutput)
-}
-
-type PropertyActivationPtrInput interface {
-	pulumi.Input
-
-	ToPropertyActivationPtrOutput() PropertyActivationPtrOutput
-	ToPropertyActivationPtrOutputWithContext(ctx context.Context) PropertyActivationPtrOutput
-}
-
-type propertyActivationPtrType PropertyActivationArgs
-
-func (*propertyActivationPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**PropertyActivation)(nil))
-}
-
-func (i *propertyActivationPtrType) ToPropertyActivationPtrOutput() PropertyActivationPtrOutput {
-	return i.ToPropertyActivationPtrOutputWithContext(context.Background())
-}
-
-func (i *propertyActivationPtrType) ToPropertyActivationPtrOutputWithContext(ctx context.Context) PropertyActivationPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationPtrOutput)
 }
 
 // PropertyActivationArrayInput is an input type that accepts PropertyActivationArray and PropertyActivationArrayOutput values.
@@ -359,7 +346,7 @@ func (i PropertyActivationMap) ToPropertyActivationMapOutputWithContext(ctx cont
 type PropertyActivationOutput struct{ *pulumi.OutputState }
 
 func (PropertyActivationOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*PropertyActivation)(nil))
+	return reflect.TypeOf((**PropertyActivation)(nil)).Elem()
 }
 
 func (o PropertyActivationOutput) ToPropertyActivationOutput() PropertyActivationOutput {
@@ -370,44 +357,10 @@ func (o PropertyActivationOutput) ToPropertyActivationOutputWithContext(ctx cont
 	return o
 }
 
-func (o PropertyActivationOutput) ToPropertyActivationPtrOutput() PropertyActivationPtrOutput {
-	return o.ToPropertyActivationPtrOutputWithContext(context.Background())
-}
-
-func (o PropertyActivationOutput) ToPropertyActivationPtrOutputWithContext(ctx context.Context) PropertyActivationPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v PropertyActivation) *PropertyActivation {
-		return &v
-	}).(PropertyActivationPtrOutput)
-}
-
-type PropertyActivationPtrOutput struct{ *pulumi.OutputState }
-
-func (PropertyActivationPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**PropertyActivation)(nil))
-}
-
-func (o PropertyActivationPtrOutput) ToPropertyActivationPtrOutput() PropertyActivationPtrOutput {
-	return o
-}
-
-func (o PropertyActivationPtrOutput) ToPropertyActivationPtrOutputWithContext(ctx context.Context) PropertyActivationPtrOutput {
-	return o
-}
-
-func (o PropertyActivationPtrOutput) Elem() PropertyActivationOutput {
-	return o.ApplyT(func(v *PropertyActivation) PropertyActivation {
-		if v != nil {
-			return *v
-		}
-		var ret PropertyActivation
-		return ret
-	}).(PropertyActivationOutput)
-}
-
 type PropertyActivationArrayOutput struct{ *pulumi.OutputState }
 
 func (PropertyActivationArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]PropertyActivation)(nil))
+	return reflect.TypeOf((*[]*PropertyActivation)(nil)).Elem()
 }
 
 func (o PropertyActivationArrayOutput) ToPropertyActivationArrayOutput() PropertyActivationArrayOutput {
@@ -419,15 +372,15 @@ func (o PropertyActivationArrayOutput) ToPropertyActivationArrayOutputWithContex
 }
 
 func (o PropertyActivationArrayOutput) Index(i pulumi.IntInput) PropertyActivationOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyActivation {
-		return vs[0].([]PropertyActivation)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *PropertyActivation {
+		return vs[0].([]*PropertyActivation)[vs[1].(int)]
 	}).(PropertyActivationOutput)
 }
 
 type PropertyActivationMapOutput struct{ *pulumi.OutputState }
 
 func (PropertyActivationMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]PropertyActivation)(nil))
+	return reflect.TypeOf((*map[string]*PropertyActivation)(nil)).Elem()
 }
 
 func (o PropertyActivationMapOutput) ToPropertyActivationMapOutput() PropertyActivationMapOutput {
@@ -439,18 +392,16 @@ func (o PropertyActivationMapOutput) ToPropertyActivationMapOutputWithContext(ct
 }
 
 func (o PropertyActivationMapOutput) MapIndex(k pulumi.StringInput) PropertyActivationOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) PropertyActivation {
-		return vs[0].(map[string]PropertyActivation)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *PropertyActivation {
+		return vs[0].(map[string]*PropertyActivation)[vs[1].(string)]
 	}).(PropertyActivationOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationInput)(nil)).Elem(), &PropertyActivation{})
-	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationPtrInput)(nil)).Elem(), &PropertyActivation{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationArrayInput)(nil)).Elem(), PropertyActivationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationMapInput)(nil)).Elem(), PropertyActivationMap{})
 	pulumi.RegisterOutputType(PropertyActivationOutput{})
-	pulumi.RegisterOutputType(PropertyActivationPtrOutput{})
 	pulumi.RegisterOutputType(PropertyActivationArrayOutput{})
 	pulumi.RegisterOutputType(PropertyActivationMapOutput{})
 }

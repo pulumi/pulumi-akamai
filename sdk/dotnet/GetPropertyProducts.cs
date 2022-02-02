@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -37,12 +36,6 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
-        /// ## Argument reference
-        /// 
-        /// This data source supports this argument:
-        /// 
-        /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-        /// 
         /// ## Attributes reference
         /// 
         /// This data source returns these attributes:
@@ -52,7 +45,7 @@ namespace Pulumi.Akamai
         ///   * `product_name` - A string containing the product name.
         /// </summary>
         public static Task<GetPropertyProductsResult> InvokeAsync(GetPropertyProductsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyProductsResult>("akamai:index/getPropertyProducts:getPropertyProducts", args ?? new GetPropertyProductsArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyProductsResult>("akamai:index/getPropertyProducts:getPropertyProducts", args ?? new GetPropertyProductsArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.getPropertyProducts` data source to list the products included on a contract.
@@ -79,12 +72,6 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
-        /// ## Argument reference
-        /// 
-        /// This data source supports this argument:
-        /// 
-        /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-        /// 
         /// ## Attributes reference
         /// 
         /// This data source returns these attributes:
@@ -94,12 +81,15 @@ namespace Pulumi.Akamai
         ///   * `product_name` - A string containing the product name.
         /// </summary>
         public static Output<GetPropertyProductsResult> Invoke(GetPropertyProductsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPropertyProductsResult>("akamai:index/getPropertyProducts:getPropertyProducts", args ?? new GetPropertyProductsInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetPropertyProductsResult>("akamai:index/getPropertyProducts:getPropertyProducts", args ?? new GetPropertyProductsInvokeArgs(), options.WithDefaults());
     }
 
 
     public sealed class GetPropertyProductsArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// </summary>
         [Input("contractId", required: true)]
         public string ContractId { get; set; } = null!;
 
@@ -110,6 +100,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyProductsInvokeArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 

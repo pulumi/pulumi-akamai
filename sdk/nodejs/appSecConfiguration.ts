@@ -117,18 +117,18 @@ export class AppSecConfiguration extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecConfigurationArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecConfigurationArgs | AppSecConfigurationState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecConfigurationState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["contractId"] = state ? state.contractId : undefined;
-            inputs["createFromConfigId"] = state ? state.createFromConfigId : undefined;
-            inputs["createFromVersion"] = state ? state.createFromVersion : undefined;
-            inputs["description"] = state ? state.description : undefined;
-            inputs["groupId"] = state ? state.groupId : undefined;
-            inputs["hostNames"] = state ? state.hostNames : undefined;
-            inputs["name"] = state ? state.name : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["contractId"] = state ? state.contractId : undefined;
+            resourceInputs["createFromConfigId"] = state ? state.createFromConfigId : undefined;
+            resourceInputs["createFromVersion"] = state ? state.createFromVersion : undefined;
+            resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["groupId"] = state ? state.groupId : undefined;
+            resourceInputs["hostNames"] = state ? state.hostNames : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
         } else {
             const args = argsOrState as AppSecConfigurationArgs | undefined;
             if ((!args || args.contractId === undefined) && !opts.urn) {
@@ -143,19 +143,17 @@ export class AppSecConfiguration extends pulumi.CustomResource {
             if ((!args || args.hostNames === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'hostNames'");
             }
-            inputs["contractId"] = args ? args.contractId : undefined;
-            inputs["createFromConfigId"] = args ? args.createFromConfigId : undefined;
-            inputs["createFromVersion"] = args ? args.createFromVersion : undefined;
-            inputs["description"] = args ? args.description : undefined;
-            inputs["groupId"] = args ? args.groupId : undefined;
-            inputs["hostNames"] = args ? args.hostNames : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["configId"] = undefined /*out*/;
+            resourceInputs["contractId"] = args ? args.contractId : undefined;
+            resourceInputs["createFromConfigId"] = args ? args.createFromConfigId : undefined;
+            resourceInputs["createFromVersion"] = args ? args.createFromVersion : undefined;
+            resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["groupId"] = args ? args.groupId : undefined;
+            resourceInputs["hostNames"] = args ? args.hostNames : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["configId"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecConfiguration.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecConfiguration.__pulumiType, name, resourceInputs, opts);
     }
 }
 

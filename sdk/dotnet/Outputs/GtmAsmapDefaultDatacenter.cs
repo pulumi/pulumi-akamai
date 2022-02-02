@@ -13,7 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GtmAsmapDefaultDatacenter
     {
+        /// <summary>
+        /// A unique identifier for an existing data center in the domain.
+        /// </summary>
         public readonly int DatacenterId;
+        /// <summary>
+        /// A descriptive label for the group.
+        /// </summary>
         public readonly string? Nickname;
 
         [OutputConstructor]

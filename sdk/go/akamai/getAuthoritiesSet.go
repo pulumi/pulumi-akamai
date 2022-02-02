@@ -36,12 +36,6 @@ import (
 // 	})
 // }
 // ```
-// ## Argument reference
-//
-// This data source supports this argument:
-//
-// * `contract` - (Required) The contract ID.
-//
 // ## Attributes reference
 //
 // This data source supports this attribute:
@@ -58,6 +52,7 @@ func GetAuthoritiesSet(ctx *pulumi.Context, args *GetAuthoritiesSetArgs, opts ..
 
 // A collection of arguments for invoking getAuthoritiesSet.
 type GetAuthoritiesSetArgs struct {
+	// The contract ID.
 	Contract string `pulumi:"contract"`
 }
 
@@ -80,6 +75,7 @@ func GetAuthoritiesSetOutput(ctx *pulumi.Context, args GetAuthoritiesSetOutputAr
 
 // A collection of arguments for invoking getAuthoritiesSet.
 type GetAuthoritiesSetOutputArgs struct {
+	// The contract ID.
 	Contract pulumi.StringInput `pulumi:"contract"`
 }
 

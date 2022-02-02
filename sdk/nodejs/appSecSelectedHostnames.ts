@@ -82,13 +82,13 @@ export class AppSecSelectedHostnames extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecSelectedHostnamesArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecSelectedHostnamesArgs | AppSecSelectedHostnamesState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecSelectedHostnamesState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["hostnames"] = state ? state.hostnames : undefined;
-            inputs["mode"] = state ? state.mode : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["hostnames"] = state ? state.hostnames : undefined;
+            resourceInputs["mode"] = state ? state.mode : undefined;
         } else {
             const args = argsOrState as AppSecSelectedHostnamesArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -100,14 +100,12 @@ export class AppSecSelectedHostnames extends pulumi.CustomResource {
             if ((!args || args.mode === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'mode'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["hostnames"] = args ? args.hostnames : undefined;
-            inputs["mode"] = args ? args.mode : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["hostnames"] = args ? args.hostnames : undefined;
+            resourceInputs["mode"] = args ? args.mode : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecSelectedHostnames.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecSelectedHostnames.__pulumiType, name, resourceInputs, opts);
     }
 }
 

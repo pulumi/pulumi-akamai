@@ -40,9 +40,7 @@ export function getAppSecSiemSettings(args: GetAppSecSiemSettingsArgs, opts?: pu
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecSiemSettings:getAppSecSiemSettings", {
         "configId": args.configId,
     }, opts);

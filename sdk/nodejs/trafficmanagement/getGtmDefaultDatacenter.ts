@@ -11,9 +11,7 @@ export function getGtmDefaultDatacenter(args: GetGtmDefaultDatacenterArgs, opts?
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter", {
         "datacenter": args.datacenter,
         "domain": args.domain,

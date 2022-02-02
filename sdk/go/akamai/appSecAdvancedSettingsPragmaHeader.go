@@ -94,7 +94,7 @@ type AppSecAdvancedSettingsPragmaHeaderInput interface {
 }
 
 func (*AppSecAdvancedSettingsPragmaHeader) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecAdvancedSettingsPragmaHeader)(nil))
+	return reflect.TypeOf((**AppSecAdvancedSettingsPragmaHeader)(nil)).Elem()
 }
 
 func (i *AppSecAdvancedSettingsPragmaHeader) ToAppSecAdvancedSettingsPragmaHeaderOutput() AppSecAdvancedSettingsPragmaHeaderOutput {
@@ -103,35 +103,6 @@ func (i *AppSecAdvancedSettingsPragmaHeader) ToAppSecAdvancedSettingsPragmaHeade
 
 func (i *AppSecAdvancedSettingsPragmaHeader) ToAppSecAdvancedSettingsPragmaHeaderOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPragmaHeaderOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsPragmaHeaderOutput)
-}
-
-func (i *AppSecAdvancedSettingsPragmaHeader) ToAppSecAdvancedSettingsPragmaHeaderPtrOutput() AppSecAdvancedSettingsPragmaHeaderPtrOutput {
-	return i.ToAppSecAdvancedSettingsPragmaHeaderPtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecAdvancedSettingsPragmaHeader) ToAppSecAdvancedSettingsPragmaHeaderPtrOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPragmaHeaderPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsPragmaHeaderPtrOutput)
-}
-
-type AppSecAdvancedSettingsPragmaHeaderPtrInput interface {
-	pulumi.Input
-
-	ToAppSecAdvancedSettingsPragmaHeaderPtrOutput() AppSecAdvancedSettingsPragmaHeaderPtrOutput
-	ToAppSecAdvancedSettingsPragmaHeaderPtrOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPragmaHeaderPtrOutput
-}
-
-type appSecAdvancedSettingsPragmaHeaderPtrType AppSecAdvancedSettingsPragmaHeaderArgs
-
-func (*appSecAdvancedSettingsPragmaHeaderPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecAdvancedSettingsPragmaHeader)(nil))
-}
-
-func (i *appSecAdvancedSettingsPragmaHeaderPtrType) ToAppSecAdvancedSettingsPragmaHeaderPtrOutput() AppSecAdvancedSettingsPragmaHeaderPtrOutput {
-	return i.ToAppSecAdvancedSettingsPragmaHeaderPtrOutputWithContext(context.Background())
-}
-
-func (i *appSecAdvancedSettingsPragmaHeaderPtrType) ToAppSecAdvancedSettingsPragmaHeaderPtrOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPragmaHeaderPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsPragmaHeaderPtrOutput)
 }
 
 // AppSecAdvancedSettingsPragmaHeaderArrayInput is an input type that accepts AppSecAdvancedSettingsPragmaHeaderArray and AppSecAdvancedSettingsPragmaHeaderArrayOutput values.
@@ -187,7 +158,7 @@ func (i AppSecAdvancedSettingsPragmaHeaderMap) ToAppSecAdvancedSettingsPragmaHea
 type AppSecAdvancedSettingsPragmaHeaderOutput struct{ *pulumi.OutputState }
 
 func (AppSecAdvancedSettingsPragmaHeaderOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecAdvancedSettingsPragmaHeader)(nil))
+	return reflect.TypeOf((**AppSecAdvancedSettingsPragmaHeader)(nil)).Elem()
 }
 
 func (o AppSecAdvancedSettingsPragmaHeaderOutput) ToAppSecAdvancedSettingsPragmaHeaderOutput() AppSecAdvancedSettingsPragmaHeaderOutput {
@@ -198,44 +169,10 @@ func (o AppSecAdvancedSettingsPragmaHeaderOutput) ToAppSecAdvancedSettingsPragma
 	return o
 }
 
-func (o AppSecAdvancedSettingsPragmaHeaderOutput) ToAppSecAdvancedSettingsPragmaHeaderPtrOutput() AppSecAdvancedSettingsPragmaHeaderPtrOutput {
-	return o.ToAppSecAdvancedSettingsPragmaHeaderPtrOutputWithContext(context.Background())
-}
-
-func (o AppSecAdvancedSettingsPragmaHeaderOutput) ToAppSecAdvancedSettingsPragmaHeaderPtrOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPragmaHeaderPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecAdvancedSettingsPragmaHeader) *AppSecAdvancedSettingsPragmaHeader {
-		return &v
-	}).(AppSecAdvancedSettingsPragmaHeaderPtrOutput)
-}
-
-type AppSecAdvancedSettingsPragmaHeaderPtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecAdvancedSettingsPragmaHeaderPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecAdvancedSettingsPragmaHeader)(nil))
-}
-
-func (o AppSecAdvancedSettingsPragmaHeaderPtrOutput) ToAppSecAdvancedSettingsPragmaHeaderPtrOutput() AppSecAdvancedSettingsPragmaHeaderPtrOutput {
-	return o
-}
-
-func (o AppSecAdvancedSettingsPragmaHeaderPtrOutput) ToAppSecAdvancedSettingsPragmaHeaderPtrOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPragmaHeaderPtrOutput {
-	return o
-}
-
-func (o AppSecAdvancedSettingsPragmaHeaderPtrOutput) Elem() AppSecAdvancedSettingsPragmaHeaderOutput {
-	return o.ApplyT(func(v *AppSecAdvancedSettingsPragmaHeader) AppSecAdvancedSettingsPragmaHeader {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecAdvancedSettingsPragmaHeader
-		return ret
-	}).(AppSecAdvancedSettingsPragmaHeaderOutput)
-}
-
 type AppSecAdvancedSettingsPragmaHeaderArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecAdvancedSettingsPragmaHeaderArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecAdvancedSettingsPragmaHeader)(nil))
+	return reflect.TypeOf((*[]*AppSecAdvancedSettingsPragmaHeader)(nil)).Elem()
 }
 
 func (o AppSecAdvancedSettingsPragmaHeaderArrayOutput) ToAppSecAdvancedSettingsPragmaHeaderArrayOutput() AppSecAdvancedSettingsPragmaHeaderArrayOutput {
@@ -247,15 +184,15 @@ func (o AppSecAdvancedSettingsPragmaHeaderArrayOutput) ToAppSecAdvancedSettingsP
 }
 
 func (o AppSecAdvancedSettingsPragmaHeaderArrayOutput) Index(i pulumi.IntInput) AppSecAdvancedSettingsPragmaHeaderOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecAdvancedSettingsPragmaHeader {
-		return vs[0].([]AppSecAdvancedSettingsPragmaHeader)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecAdvancedSettingsPragmaHeader {
+		return vs[0].([]*AppSecAdvancedSettingsPragmaHeader)[vs[1].(int)]
 	}).(AppSecAdvancedSettingsPragmaHeaderOutput)
 }
 
 type AppSecAdvancedSettingsPragmaHeaderMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecAdvancedSettingsPragmaHeaderMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecAdvancedSettingsPragmaHeader)(nil))
+	return reflect.TypeOf((*map[string]*AppSecAdvancedSettingsPragmaHeader)(nil)).Elem()
 }
 
 func (o AppSecAdvancedSettingsPragmaHeaderMapOutput) ToAppSecAdvancedSettingsPragmaHeaderMapOutput() AppSecAdvancedSettingsPragmaHeaderMapOutput {
@@ -267,18 +204,16 @@ func (o AppSecAdvancedSettingsPragmaHeaderMapOutput) ToAppSecAdvancedSettingsPra
 }
 
 func (o AppSecAdvancedSettingsPragmaHeaderMapOutput) MapIndex(k pulumi.StringInput) AppSecAdvancedSettingsPragmaHeaderOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecAdvancedSettingsPragmaHeader {
-		return vs[0].(map[string]AppSecAdvancedSettingsPragmaHeader)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecAdvancedSettingsPragmaHeader {
+		return vs[0].(map[string]*AppSecAdvancedSettingsPragmaHeader)[vs[1].(string)]
 	}).(AppSecAdvancedSettingsPragmaHeaderOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAdvancedSettingsPragmaHeaderInput)(nil)).Elem(), &AppSecAdvancedSettingsPragmaHeader{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAdvancedSettingsPragmaHeaderPtrInput)(nil)).Elem(), &AppSecAdvancedSettingsPragmaHeader{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAdvancedSettingsPragmaHeaderArrayInput)(nil)).Elem(), AppSecAdvancedSettingsPragmaHeaderArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAdvancedSettingsPragmaHeaderMapInput)(nil)).Elem(), AppSecAdvancedSettingsPragmaHeaderMap{})
 	pulumi.RegisterOutputType(AppSecAdvancedSettingsPragmaHeaderOutput{})
-	pulumi.RegisterOutputType(AppSecAdvancedSettingsPragmaHeaderPtrOutput{})
 	pulumi.RegisterOutputType(AppSecAdvancedSettingsPragmaHeaderArrayOutput{})
 	pulumi.RegisterOutputType(AppSecAdvancedSettingsPragmaHeaderMapOutput{})
 }

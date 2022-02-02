@@ -13,8 +13,17 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class DnsZoneTsigKey
     {
+        /// <summary>
+        /// The hashing algorithm.
+        /// </summary>
         public readonly string Algorithm;
+        /// <summary>
+        /// The key name.
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// String known between transfer endpoints.
+        /// </summary>
         public readonly string Secret;
 
         [OutputConstructor]

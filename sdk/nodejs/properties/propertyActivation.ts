@@ -75,23 +75,23 @@ export class PropertyActivation extends pulumi.CustomResource {
     /** @deprecated akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation */
     constructor(name: string, argsOrState?: PropertyActivationArgs | PropertyActivationState, opts?: pulumi.CustomResourceOptions) {
         pulumi.log.warn("PropertyActivation is deprecated: akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation")
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PropertyActivationState | undefined;
-            inputs["activationId"] = state ? state.activationId : undefined;
-            inputs["autoAcknowledgeRuleWarnings"] = state ? state.autoAcknowledgeRuleWarnings : undefined;
-            inputs["contacts"] = state ? state.contacts : undefined;
-            inputs["errors"] = state ? state.errors : undefined;
-            inputs["network"] = state ? state.network : undefined;
-            inputs["note"] = state ? state.note : undefined;
-            inputs["property"] = state ? state.property : undefined;
-            inputs["propertyId"] = state ? state.propertyId : undefined;
-            inputs["ruleErrors"] = state ? state.ruleErrors : undefined;
-            inputs["ruleWarnings"] = state ? state.ruleWarnings : undefined;
-            inputs["status"] = state ? state.status : undefined;
-            inputs["version"] = state ? state.version : undefined;
-            inputs["warnings"] = state ? state.warnings : undefined;
+            resourceInputs["activationId"] = state ? state.activationId : undefined;
+            resourceInputs["autoAcknowledgeRuleWarnings"] = state ? state.autoAcknowledgeRuleWarnings : undefined;
+            resourceInputs["contacts"] = state ? state.contacts : undefined;
+            resourceInputs["errors"] = state ? state.errors : undefined;
+            resourceInputs["network"] = state ? state.network : undefined;
+            resourceInputs["note"] = state ? state.note : undefined;
+            resourceInputs["property"] = state ? state.property : undefined;
+            resourceInputs["propertyId"] = state ? state.propertyId : undefined;
+            resourceInputs["ruleErrors"] = state ? state.ruleErrors : undefined;
+            resourceInputs["ruleWarnings"] = state ? state.ruleWarnings : undefined;
+            resourceInputs["status"] = state ? state.status : undefined;
+            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["warnings"] = state ? state.warnings : undefined;
         } else {
             const args = argsOrState as PropertyActivationArgs | undefined;
             if ((!args || args.contacts === undefined) && !opts.urn) {
@@ -100,24 +100,22 @@ export class PropertyActivation extends pulumi.CustomResource {
             if ((!args || args.version === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
-            inputs["activationId"] = args ? args.activationId : undefined;
-            inputs["autoAcknowledgeRuleWarnings"] = args ? args.autoAcknowledgeRuleWarnings : undefined;
-            inputs["contacts"] = args ? args.contacts : undefined;
-            inputs["network"] = args ? args.network : undefined;
-            inputs["note"] = args ? args.note : undefined;
-            inputs["property"] = args ? args.property : undefined;
-            inputs["propertyId"] = args ? args.propertyId : undefined;
-            inputs["ruleErrors"] = args ? args.ruleErrors : undefined;
-            inputs["ruleWarnings"] = args ? args.ruleWarnings : undefined;
-            inputs["version"] = args ? args.version : undefined;
-            inputs["errors"] = undefined /*out*/;
-            inputs["status"] = undefined /*out*/;
-            inputs["warnings"] = undefined /*out*/;
+            resourceInputs["activationId"] = args ? args.activationId : undefined;
+            resourceInputs["autoAcknowledgeRuleWarnings"] = args ? args.autoAcknowledgeRuleWarnings : undefined;
+            resourceInputs["contacts"] = args ? args.contacts : undefined;
+            resourceInputs["network"] = args ? args.network : undefined;
+            resourceInputs["note"] = args ? args.note : undefined;
+            resourceInputs["property"] = args ? args.property : undefined;
+            resourceInputs["propertyId"] = args ? args.propertyId : undefined;
+            resourceInputs["ruleErrors"] = args ? args.ruleErrors : undefined;
+            resourceInputs["ruleWarnings"] = args ? args.ruleWarnings : undefined;
+            resourceInputs["version"] = args ? args.version : undefined;
+            resourceInputs["errors"] = undefined /*out*/;
+            resourceInputs["status"] = undefined /*out*/;
+            resourceInputs["warnings"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(PropertyActivation.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(PropertyActivation.__pulumiType, name, resourceInputs, opts);
     }
 }
 

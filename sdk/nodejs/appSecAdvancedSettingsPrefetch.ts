@@ -99,15 +99,15 @@ export class AppSecAdvancedSettingsPrefetch extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecAdvancedSettingsPrefetchArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecAdvancedSettingsPrefetchArgs | AppSecAdvancedSettingsPrefetchState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecAdvancedSettingsPrefetchState | undefined;
-            inputs["allExtensions"] = state ? state.allExtensions : undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["enableAppLayer"] = state ? state.enableAppLayer : undefined;
-            inputs["enableRateControls"] = state ? state.enableRateControls : undefined;
-            inputs["extensions"] = state ? state.extensions : undefined;
+            resourceInputs["allExtensions"] = state ? state.allExtensions : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["enableAppLayer"] = state ? state.enableAppLayer : undefined;
+            resourceInputs["enableRateControls"] = state ? state.enableRateControls : undefined;
+            resourceInputs["extensions"] = state ? state.extensions : undefined;
         } else {
             const args = argsOrState as AppSecAdvancedSettingsPrefetchArgs | undefined;
             if ((!args || args.allExtensions === undefined) && !opts.urn) {
@@ -125,16 +125,14 @@ export class AppSecAdvancedSettingsPrefetch extends pulumi.CustomResource {
             if ((!args || args.extensions === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'extensions'");
             }
-            inputs["allExtensions"] = args ? args.allExtensions : undefined;
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["enableAppLayer"] = args ? args.enableAppLayer : undefined;
-            inputs["enableRateControls"] = args ? args.enableRateControls : undefined;
-            inputs["extensions"] = args ? args.extensions : undefined;
+            resourceInputs["allExtensions"] = args ? args.allExtensions : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["enableAppLayer"] = args ? args.enableAppLayer : undefined;
+            resourceInputs["enableRateControls"] = args ? args.enableRateControls : undefined;
+            resourceInputs["extensions"] = args ? args.extensions : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecAdvancedSettingsPrefetch.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecAdvancedSettingsPrefetch.__pulumiType, name, resourceInputs, opts);
     }
 }
 

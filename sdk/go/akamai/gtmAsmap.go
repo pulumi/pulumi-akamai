@@ -45,32 +45,22 @@ import (
 // 	})
 // }
 // ```
-// ## Argument reference
-//
-// This resource supports these arguments:
-//
-// * `domain` - (Required) The GTM Domain name for the AS map.
-// * `name` - (Required) A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
-// * `defaultDatacenter` - (Required) A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
-//   * `datacenterId` - (Required) A unique identifier for an existing data center in the domain.
-//   * `nickname` - (Required) A descriptive label for all other AS zones, up to 128 characters.
-// * `waitOnComplete` - (Optional) A boolean that, if `true`, waits for transaction to complete.
-// * `assignment` - (Optional) Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
-//   * `datacenterId` - A unique identifier for an existing data center in the domain.
-//   * `nickname` - A descriptive label for the group.
-//   * `asNumbers` - Specifies an array of AS numbers.
-//
 // ## Schema reference
 //
 // You can download the GTM AS Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#asmap) page.
 type GtmAsmap struct {
 	pulumi.CustomResourceState
 
-	Assignments       GtmAsmapAssignmentArrayOutput   `pulumi:"assignments"`
+	// Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+	Assignments GtmAsmapAssignmentArrayOutput `pulumi:"assignments"`
+	// A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
 	DefaultDatacenter GtmAsmapDefaultDatacenterOutput `pulumi:"defaultDatacenter"`
-	Domain            pulumi.StringOutput             `pulumi:"domain"`
-	Name              pulumi.StringOutput             `pulumi:"name"`
-	WaitOnComplete    pulumi.BoolPtrOutput            `pulumi:"waitOnComplete"`
+	// The GTM Domain name for the AS map.
+	Domain pulumi.StringOutput `pulumi:"domain"`
+	// A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+	Name pulumi.StringOutput `pulumi:"name"`
+	// A boolean that, if `true`, waits for transaction to complete.
+	WaitOnComplete pulumi.BoolPtrOutput `pulumi:"waitOnComplete"`
 }
 
 // NewGtmAsmap registers a new resource with the given unique name, arguments, and options.
@@ -114,19 +104,29 @@ func GetGtmAsmap(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering GtmAsmap resources.
 type gtmAsmapState struct {
-	Assignments       []GtmAsmapAssignment       `pulumi:"assignments"`
+	// Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+	Assignments []GtmAsmapAssignment `pulumi:"assignments"`
+	// A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
 	DefaultDatacenter *GtmAsmapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	Domain            *string                    `pulumi:"domain"`
-	Name              *string                    `pulumi:"name"`
-	WaitOnComplete    *bool                      `pulumi:"waitOnComplete"`
+	// The GTM Domain name for the AS map.
+	Domain *string `pulumi:"domain"`
+	// A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+	Name *string `pulumi:"name"`
+	// A boolean that, if `true`, waits for transaction to complete.
+	WaitOnComplete *bool `pulumi:"waitOnComplete"`
 }
 
 type GtmAsmapState struct {
-	Assignments       GtmAsmapAssignmentArrayInput
+	// Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+	Assignments GtmAsmapAssignmentArrayInput
+	// A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
 	DefaultDatacenter GtmAsmapDefaultDatacenterPtrInput
-	Domain            pulumi.StringPtrInput
-	Name              pulumi.StringPtrInput
-	WaitOnComplete    pulumi.BoolPtrInput
+	// The GTM Domain name for the AS map.
+	Domain pulumi.StringPtrInput
+	// A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+	Name pulumi.StringPtrInput
+	// A boolean that, if `true`, waits for transaction to complete.
+	WaitOnComplete pulumi.BoolPtrInput
 }
 
 func (GtmAsmapState) ElementType() reflect.Type {
@@ -134,20 +134,30 @@ func (GtmAsmapState) ElementType() reflect.Type {
 }
 
 type gtmAsmapArgs struct {
-	Assignments       []GtmAsmapAssignment      `pulumi:"assignments"`
+	// Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+	Assignments []GtmAsmapAssignment `pulumi:"assignments"`
+	// A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
 	DefaultDatacenter GtmAsmapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	Domain            string                    `pulumi:"domain"`
-	Name              *string                   `pulumi:"name"`
-	WaitOnComplete    *bool                     `pulumi:"waitOnComplete"`
+	// The GTM Domain name for the AS map.
+	Domain string `pulumi:"domain"`
+	// A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+	Name *string `pulumi:"name"`
+	// A boolean that, if `true`, waits for transaction to complete.
+	WaitOnComplete *bool `pulumi:"waitOnComplete"`
 }
 
 // The set of arguments for constructing a GtmAsmap resource.
 type GtmAsmapArgs struct {
-	Assignments       GtmAsmapAssignmentArrayInput
+	// Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+	Assignments GtmAsmapAssignmentArrayInput
+	// A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
 	DefaultDatacenter GtmAsmapDefaultDatacenterInput
-	Domain            pulumi.StringInput
-	Name              pulumi.StringPtrInput
-	WaitOnComplete    pulumi.BoolPtrInput
+	// The GTM Domain name for the AS map.
+	Domain pulumi.StringInput
+	// A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+	Name pulumi.StringPtrInput
+	// A boolean that, if `true`, waits for transaction to complete.
+	WaitOnComplete pulumi.BoolPtrInput
 }
 
 func (GtmAsmapArgs) ElementType() reflect.Type {
@@ -162,7 +172,7 @@ type GtmAsmapInput interface {
 }
 
 func (*GtmAsmap) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmAsmap)(nil))
+	return reflect.TypeOf((**GtmAsmap)(nil)).Elem()
 }
 
 func (i *GtmAsmap) ToGtmAsmapOutput() GtmAsmapOutput {
@@ -171,35 +181,6 @@ func (i *GtmAsmap) ToGtmAsmapOutput() GtmAsmapOutput {
 
 func (i *GtmAsmap) ToGtmAsmapOutputWithContext(ctx context.Context) GtmAsmapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GtmAsmapOutput)
-}
-
-func (i *GtmAsmap) ToGtmAsmapPtrOutput() GtmAsmapPtrOutput {
-	return i.ToGtmAsmapPtrOutputWithContext(context.Background())
-}
-
-func (i *GtmAsmap) ToGtmAsmapPtrOutputWithContext(ctx context.Context) GtmAsmapPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GtmAsmapPtrOutput)
-}
-
-type GtmAsmapPtrInput interface {
-	pulumi.Input
-
-	ToGtmAsmapPtrOutput() GtmAsmapPtrOutput
-	ToGtmAsmapPtrOutputWithContext(ctx context.Context) GtmAsmapPtrOutput
-}
-
-type gtmAsmapPtrType GtmAsmapArgs
-
-func (*gtmAsmapPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**GtmAsmap)(nil))
-}
-
-func (i *gtmAsmapPtrType) ToGtmAsmapPtrOutput() GtmAsmapPtrOutput {
-	return i.ToGtmAsmapPtrOutputWithContext(context.Background())
-}
-
-func (i *gtmAsmapPtrType) ToGtmAsmapPtrOutputWithContext(ctx context.Context) GtmAsmapPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GtmAsmapPtrOutput)
 }
 
 // GtmAsmapArrayInput is an input type that accepts GtmAsmapArray and GtmAsmapArrayOutput values.
@@ -255,7 +236,7 @@ func (i GtmAsmapMap) ToGtmAsmapMapOutputWithContext(ctx context.Context) GtmAsma
 type GtmAsmapOutput struct{ *pulumi.OutputState }
 
 func (GtmAsmapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmAsmap)(nil))
+	return reflect.TypeOf((**GtmAsmap)(nil)).Elem()
 }
 
 func (o GtmAsmapOutput) ToGtmAsmapOutput() GtmAsmapOutput {
@@ -266,44 +247,10 @@ func (o GtmAsmapOutput) ToGtmAsmapOutputWithContext(ctx context.Context) GtmAsma
 	return o
 }
 
-func (o GtmAsmapOutput) ToGtmAsmapPtrOutput() GtmAsmapPtrOutput {
-	return o.ToGtmAsmapPtrOutputWithContext(context.Background())
-}
-
-func (o GtmAsmapOutput) ToGtmAsmapPtrOutputWithContext(ctx context.Context) GtmAsmapPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmAsmap) *GtmAsmap {
-		return &v
-	}).(GtmAsmapPtrOutput)
-}
-
-type GtmAsmapPtrOutput struct{ *pulumi.OutputState }
-
-func (GtmAsmapPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**GtmAsmap)(nil))
-}
-
-func (o GtmAsmapPtrOutput) ToGtmAsmapPtrOutput() GtmAsmapPtrOutput {
-	return o
-}
-
-func (o GtmAsmapPtrOutput) ToGtmAsmapPtrOutputWithContext(ctx context.Context) GtmAsmapPtrOutput {
-	return o
-}
-
-func (o GtmAsmapPtrOutput) Elem() GtmAsmapOutput {
-	return o.ApplyT(func(v *GtmAsmap) GtmAsmap {
-		if v != nil {
-			return *v
-		}
-		var ret GtmAsmap
-		return ret
-	}).(GtmAsmapOutput)
-}
-
 type GtmAsmapArrayOutput struct{ *pulumi.OutputState }
 
 func (GtmAsmapArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GtmAsmap)(nil))
+	return reflect.TypeOf((*[]*GtmAsmap)(nil)).Elem()
 }
 
 func (o GtmAsmapArrayOutput) ToGtmAsmapArrayOutput() GtmAsmapArrayOutput {
@@ -315,15 +262,15 @@ func (o GtmAsmapArrayOutput) ToGtmAsmapArrayOutputWithContext(ctx context.Contex
 }
 
 func (o GtmAsmapArrayOutput) Index(i pulumi.IntInput) GtmAsmapOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmAsmap {
-		return vs[0].([]GtmAsmap)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *GtmAsmap {
+		return vs[0].([]*GtmAsmap)[vs[1].(int)]
 	}).(GtmAsmapOutput)
 }
 
 type GtmAsmapMapOutput struct{ *pulumi.OutputState }
 
 func (GtmAsmapMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]GtmAsmap)(nil))
+	return reflect.TypeOf((*map[string]*GtmAsmap)(nil)).Elem()
 }
 
 func (o GtmAsmapMapOutput) ToGtmAsmapMapOutput() GtmAsmapMapOutput {
@@ -335,18 +282,16 @@ func (o GtmAsmapMapOutput) ToGtmAsmapMapOutputWithContext(ctx context.Context) G
 }
 
 func (o GtmAsmapMapOutput) MapIndex(k pulumi.StringInput) GtmAsmapOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GtmAsmap {
-		return vs[0].(map[string]GtmAsmap)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *GtmAsmap {
+		return vs[0].(map[string]*GtmAsmap)[vs[1].(string)]
 	}).(GtmAsmapOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GtmAsmapInput)(nil)).Elem(), &GtmAsmap{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GtmAsmapPtrInput)(nil)).Elem(), &GtmAsmap{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GtmAsmapArrayInput)(nil)).Elem(), GtmAsmapArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GtmAsmapMapInput)(nil)).Elem(), GtmAsmapMap{})
 	pulumi.RegisterOutputType(GtmAsmapOutput{})
-	pulumi.RegisterOutputType(GtmAsmapPtrOutput{})
 	pulumi.RegisterOutputType(GtmAsmapArrayOutput{})
 	pulumi.RegisterOutputType(GtmAsmapMapOutput{})
 }

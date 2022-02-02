@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -79,7 +78,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the selectable hostnames showing the name and config_id of the security configuration under which the host is protected in production.
         /// </summary>
         public static Task<GetAppSecSelectableHostnamesResult> InvokeAsync(GetAppSecSelectableHostnamesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSelectableHostnamesResult>("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", args ?? new GetAppSecSelectableHostnamesArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSelectableHostnamesResult>("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", args ?? new GetAppSecSelectableHostnamesArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; contract; group
@@ -148,7 +147,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the selectable hostnames showing the name and config_id of the security configuration under which the host is protected in production.
         /// </summary>
         public static Output<GetAppSecSelectableHostnamesResult> Invoke(GetAppSecSelectableHostnamesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecSelectableHostnamesResult>("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", args ?? new GetAppSecSelectableHostnamesInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecSelectableHostnamesResult>("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", args ?? new GetAppSecSelectableHostnamesInvokeArgs(), options.WithDefaults());
     }
 
 

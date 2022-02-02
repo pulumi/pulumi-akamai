@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -72,7 +71,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the custom deny information.
         /// </summary>
         public static Task<GetAppSecCustomDenyResult> InvokeAsync(GetAppSecCustomDenyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecCustomDenyResult>("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", args ?? new GetAppSecCustomDenyArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecCustomDenyResult>("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", args ?? new GetAppSecCustomDenyArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; custom deny
@@ -134,7 +133,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the custom deny information.
         /// </summary>
         public static Output<GetAppSecCustomDenyResult> Invoke(GetAppSecCustomDenyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecCustomDenyResult>("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", args ?? new GetAppSecCustomDenyInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecCustomDenyResult>("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", args ?? new GetAppSecCustomDenyInvokeArgs(), options.WithDefaults());
     }
 
 

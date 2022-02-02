@@ -76,12 +76,6 @@ def get_property_products(contract_id: Optional[str] = None,
 
     pulumi.export("propertyMatch", data["akamai_property_products"]["my-example"])
     ```
-    ## Argument reference
-
-    This data source supports this argument:
-
-    * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-
     ## Attributes reference
 
     This data source returns these attributes:
@@ -89,6 +83,9 @@ def get_property_products(contract_id: Optional[str] = None,
     * `products` - A list of supported products for the contract, including:
       * `product_id` - The product's unique ID, including the `prd_` prefix.
       * `product_name` - A string containing the product name.
+
+
+    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
@@ -119,12 +116,6 @@ def get_property_products_output(contract_id: Optional[pulumi.Input[str]] = None
 
     pulumi.export("propertyMatch", data["akamai_property_products"]["my-example"])
     ```
-    ## Argument reference
-
-    This data source supports this argument:
-
-    * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-
     ## Attributes reference
 
     This data source returns these attributes:
@@ -132,5 +123,8 @@ def get_property_products_output(contract_id: Optional[pulumi.Input[str]] = None
     * `products` - A list of supported products for the contract, including:
       * `product_id` - The product's unique ID, including the `prd_` prefix.
       * `product_name` - A string containing the product name.
+
+
+    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
     """
     ...

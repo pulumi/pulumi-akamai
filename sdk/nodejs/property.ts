@@ -48,41 +48,6 @@ import * as utilities from "./utilities";
  *     rules: data.akamai_property_rules_template.example.json,
  * });
  * ```
- * ## Argument reference
- *
- * This resource supports these arguments:
- *
- * * `name` - (Required) The property name.
- * * `contractId` - (Required) A contract's unique ID, including the `ctr_` prefix.
- * * `groupId` - (Required) A group's unique ID, including the `grp_` prefix.
- * * `productId` - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
- * * `hostnames` - (Optional) A mapping of public hostnames to edge hostnames. See the `akamai.getPropertyHostnames` data source for details on the necessary DNS configuration.
- *   
- *     > **Note** Starting from version 1.5.0, the `hostnames` argument supports a new block type. If you created your code and state in version 1.4 or earlier, you need to manually update your configuration and replace the previous input for `hostnames` with the new syntax. This error indicates that the state is outdated: `Error: missing expected [`. To fix it, remove `akamai.Property` from the state and import it again.
- *   
- *   Requires these additional arguments:
- *   
- *       * `cnameFrom` - (Required) A string containing the original origin's hostname. For example, `"example.org"`.
- *       * `cnameTo` - (Required) A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
- *       * `certProvisioningType` - (Required) The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
- * * `rules` - (Optional) A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `akamai.getPropertyRules` data source.
- * * `ruleFormat` - (Optional) The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
- * * `contract` - (Deprecated) Replaced by `contractId`. Maintained for legacy purposes.
- * * `group` - (Deprecated) Replaced by `groupId`. Maintained for legacy purposes.
- * * `product` - (Deprecated) Optional argument replaced by the now required `productId`. Maintained for legacy purposes.
- *
- * ## Attribute reference
- *
- * The resource returns these attributes:
- *
- * * `ruleErrors` - The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
- * * `latestVersion` - The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
- * * `productionVersion` - The current version of the property active on the Akamai production network.
- * * `stagingVersion` - The current version of the property active on the Akamai staging network.
- *
- * ### Deprecated attributes
- *
- * * `ruleWarnings` - (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
  *
  * ## Import
  *
@@ -159,11 +124,13 @@ export class Property extends pulumi.CustomResource {
      */
     public readonly contacts!: pulumi.Output<string[] | undefined>;
     /**
+     * Replaced by `contractId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "contract" has been deprecated.
      */
     public readonly contract!: pulumi.Output<string>;
     /**
-     * Contract ID to be assigned to the Property
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     public readonly contractId!: pulumi.Output<string>;
     /**
@@ -171,24 +138,29 @@ export class Property extends pulumi.CustomResource {
      */
     public readonly cpCode!: pulumi.Output<string | undefined>;
     /**
+     * Replaced by `groupId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "group" has been deprecated.
      */
     public readonly group!: pulumi.Output<string>;
     /**
-     * Group ID to be assigned to the Property
+     * - (Required) A group's unique ID, including the `grp_` prefix.
      */
     public readonly groupId!: pulumi.Output<string>;
+    /**
+     * A mapping of public hostnames to edge hostnames. See the `akamai.getPropertyHostnames` data source for details on the necessary DNS configuration.
+     */
     public readonly hostnames!: pulumi.Output<outputs.PropertyHostname[] | undefined>;
     /**
      * @deprecated The setting "is_secure" has been deprecated.
      */
     public readonly isSecure!: pulumi.Output<boolean | undefined>;
     /**
-     * Property's current latest version number
+     * The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
      */
     public /*out*/ readonly latestVersion!: pulumi.Output<number>;
     /**
-     * Name to give to the Property (must be unique)
+     * The property name.
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -196,24 +168,29 @@ export class Property extends pulumi.CustomResource {
      */
     public readonly origins!: pulumi.Output<outputs.PropertyOrigin[] | undefined>;
     /**
+     * Optional argument replaced by the now required `productId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "product" has been deprecated.
      */
     public readonly product!: pulumi.Output<string>;
     /**
-     * Product ID to be assigned to the Property
+     * - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
      */
     public readonly productId!: pulumi.Output<string>;
     /**
-     * Property's version currently activated in production (zero when not active in production)
+     * The current version of the property active on the Akamai production network.
      */
     public /*out*/ readonly productionVersion!: pulumi.Output<number>;
     /**
      * Required property's version to be read
      */
     public /*out*/ readonly readVersion!: pulumi.Output<number>;
+    /**
+     * The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+     */
     public /*out*/ readonly ruleErrors!: pulumi.Output<outputs.PropertyRuleError[]>;
     /**
-     * Specify the rule format version (defaults to latest version available when created)
+     * The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
      */
     public readonly ruleFormat!: pulumi.Output<string>;
     /**
@@ -221,11 +198,11 @@ export class Property extends pulumi.CustomResource {
      */
     public readonly ruleWarnings!: pulumi.Output<outputs.PropertyRuleWarning[]>;
     /**
-     * Property Rules as JSON
+     * A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `akamai.getPropertyRules` data source.
      */
     public readonly rules!: pulumi.Output<string>;
     /**
-     * Property's version currently activated in staging (zero when not active in staging)
+     * The current version of the property active on the Akamai staging network.
      */
     public /*out*/ readonly stagingVersion!: pulumi.Output<number>;
     /**
@@ -242,61 +219,59 @@ export class Property extends pulumi.CustomResource {
      */
     constructor(name: string, args?: PropertyArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: PropertyArgs | PropertyState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PropertyState | undefined;
-            inputs["contacts"] = state ? state.contacts : undefined;
-            inputs["contract"] = state ? state.contract : undefined;
-            inputs["contractId"] = state ? state.contractId : undefined;
-            inputs["cpCode"] = state ? state.cpCode : undefined;
-            inputs["group"] = state ? state.group : undefined;
-            inputs["groupId"] = state ? state.groupId : undefined;
-            inputs["hostnames"] = state ? state.hostnames : undefined;
-            inputs["isSecure"] = state ? state.isSecure : undefined;
-            inputs["latestVersion"] = state ? state.latestVersion : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["origins"] = state ? state.origins : undefined;
-            inputs["product"] = state ? state.product : undefined;
-            inputs["productId"] = state ? state.productId : undefined;
-            inputs["productionVersion"] = state ? state.productionVersion : undefined;
-            inputs["readVersion"] = state ? state.readVersion : undefined;
-            inputs["ruleErrors"] = state ? state.ruleErrors : undefined;
-            inputs["ruleFormat"] = state ? state.ruleFormat : undefined;
-            inputs["ruleWarnings"] = state ? state.ruleWarnings : undefined;
-            inputs["rules"] = state ? state.rules : undefined;
-            inputs["stagingVersion"] = state ? state.stagingVersion : undefined;
-            inputs["variables"] = state ? state.variables : undefined;
+            resourceInputs["contacts"] = state ? state.contacts : undefined;
+            resourceInputs["contract"] = state ? state.contract : undefined;
+            resourceInputs["contractId"] = state ? state.contractId : undefined;
+            resourceInputs["cpCode"] = state ? state.cpCode : undefined;
+            resourceInputs["group"] = state ? state.group : undefined;
+            resourceInputs["groupId"] = state ? state.groupId : undefined;
+            resourceInputs["hostnames"] = state ? state.hostnames : undefined;
+            resourceInputs["isSecure"] = state ? state.isSecure : undefined;
+            resourceInputs["latestVersion"] = state ? state.latestVersion : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["origins"] = state ? state.origins : undefined;
+            resourceInputs["product"] = state ? state.product : undefined;
+            resourceInputs["productId"] = state ? state.productId : undefined;
+            resourceInputs["productionVersion"] = state ? state.productionVersion : undefined;
+            resourceInputs["readVersion"] = state ? state.readVersion : undefined;
+            resourceInputs["ruleErrors"] = state ? state.ruleErrors : undefined;
+            resourceInputs["ruleFormat"] = state ? state.ruleFormat : undefined;
+            resourceInputs["ruleWarnings"] = state ? state.ruleWarnings : undefined;
+            resourceInputs["rules"] = state ? state.rules : undefined;
+            resourceInputs["stagingVersion"] = state ? state.stagingVersion : undefined;
+            resourceInputs["variables"] = state ? state.variables : undefined;
         } else {
             const args = argsOrState as PropertyArgs | undefined;
-            inputs["contacts"] = args ? args.contacts : undefined;
-            inputs["contract"] = args ? args.contract : undefined;
-            inputs["contractId"] = args ? args.contractId : undefined;
-            inputs["cpCode"] = args ? args.cpCode : undefined;
-            inputs["group"] = args ? args.group : undefined;
-            inputs["groupId"] = args ? args.groupId : undefined;
-            inputs["hostnames"] = args ? args.hostnames : undefined;
-            inputs["isSecure"] = args ? args.isSecure : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["origins"] = args ? args.origins : undefined;
-            inputs["product"] = args ? args.product : undefined;
-            inputs["productId"] = args ? args.productId : undefined;
-            inputs["ruleFormat"] = args ? args.ruleFormat : undefined;
-            inputs["ruleWarnings"] = args ? args.ruleWarnings : undefined;
-            inputs["rules"] = args ? args.rules : undefined;
-            inputs["variables"] = args ? args.variables : undefined;
-            inputs["latestVersion"] = undefined /*out*/;
-            inputs["productionVersion"] = undefined /*out*/;
-            inputs["readVersion"] = undefined /*out*/;
-            inputs["ruleErrors"] = undefined /*out*/;
-            inputs["stagingVersion"] = undefined /*out*/;
+            resourceInputs["contacts"] = args ? args.contacts : undefined;
+            resourceInputs["contract"] = args ? args.contract : undefined;
+            resourceInputs["contractId"] = args ? args.contractId : undefined;
+            resourceInputs["cpCode"] = args ? args.cpCode : undefined;
+            resourceInputs["group"] = args ? args.group : undefined;
+            resourceInputs["groupId"] = args ? args.groupId : undefined;
+            resourceInputs["hostnames"] = args ? args.hostnames : undefined;
+            resourceInputs["isSecure"] = args ? args.isSecure : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["origins"] = args ? args.origins : undefined;
+            resourceInputs["product"] = args ? args.product : undefined;
+            resourceInputs["productId"] = args ? args.productId : undefined;
+            resourceInputs["ruleFormat"] = args ? args.ruleFormat : undefined;
+            resourceInputs["ruleWarnings"] = args ? args.ruleWarnings : undefined;
+            resourceInputs["rules"] = args ? args.rules : undefined;
+            resourceInputs["variables"] = args ? args.variables : undefined;
+            resourceInputs["latestVersion"] = undefined /*out*/;
+            resourceInputs["productionVersion"] = undefined /*out*/;
+            resourceInputs["readVersion"] = undefined /*out*/;
+            resourceInputs["ruleErrors"] = undefined /*out*/;
+            resourceInputs["stagingVersion"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const aliasOpts = { aliases: [{ type: "akamai:properties/property:Property" }] };
         opts = pulumi.mergeOptions(opts, aliasOpts);
-        super(Property.__pulumiType, name, inputs, opts);
+        super(Property.__pulumiType, name, resourceInputs, opts);
     }
 }
 
@@ -309,11 +284,13 @@ export interface PropertyState {
      */
     contacts?: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * Replaced by `contractId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "contract" has been deprecated.
      */
     contract?: pulumi.Input<string>;
     /**
-     * Contract ID to be assigned to the Property
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId?: pulumi.Input<string>;
     /**
@@ -321,24 +298,29 @@ export interface PropertyState {
      */
     cpCode?: pulumi.Input<string>;
     /**
+     * Replaced by `groupId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "group" has been deprecated.
      */
     group?: pulumi.Input<string>;
     /**
-     * Group ID to be assigned to the Property
+     * - (Required) A group's unique ID, including the `grp_` prefix.
      */
     groupId?: pulumi.Input<string>;
+    /**
+     * A mapping of public hostnames to edge hostnames. See the `akamai.getPropertyHostnames` data source for details on the necessary DNS configuration.
+     */
     hostnames?: pulumi.Input<pulumi.Input<inputs.PropertyHostname>[]>;
     /**
      * @deprecated The setting "is_secure" has been deprecated.
      */
     isSecure?: pulumi.Input<boolean>;
     /**
-     * Property's current latest version number
+     * The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
      */
     latestVersion?: pulumi.Input<number>;
     /**
-     * Name to give to the Property (must be unique)
+     * The property name.
      */
     name?: pulumi.Input<string>;
     /**
@@ -346,24 +328,29 @@ export interface PropertyState {
      */
     origins?: pulumi.Input<pulumi.Input<inputs.PropertyOrigin>[]>;
     /**
+     * Optional argument replaced by the now required `productId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "product" has been deprecated.
      */
     product?: pulumi.Input<string>;
     /**
-     * Product ID to be assigned to the Property
+     * - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
      */
     productId?: pulumi.Input<string>;
     /**
-     * Property's version currently activated in production (zero when not active in production)
+     * The current version of the property active on the Akamai production network.
      */
     productionVersion?: pulumi.Input<number>;
     /**
      * Required property's version to be read
      */
     readVersion?: pulumi.Input<number>;
+    /**
+     * The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+     */
     ruleErrors?: pulumi.Input<pulumi.Input<inputs.PropertyRuleError>[]>;
     /**
-     * Specify the rule format version (defaults to latest version available when created)
+     * The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
      */
     ruleFormat?: pulumi.Input<string>;
     /**
@@ -371,11 +358,11 @@ export interface PropertyState {
      */
     ruleWarnings?: pulumi.Input<pulumi.Input<inputs.PropertyRuleWarning>[]>;
     /**
-     * Property Rules as JSON
+     * A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `akamai.getPropertyRules` data source.
      */
     rules?: pulumi.Input<string>;
     /**
-     * Property's version currently activated in staging (zero when not active in staging)
+     * The current version of the property active on the Akamai staging network.
      */
     stagingVersion?: pulumi.Input<number>;
     /**
@@ -393,11 +380,13 @@ export interface PropertyArgs {
      */
     contacts?: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * Replaced by `contractId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "contract" has been deprecated.
      */
     contract?: pulumi.Input<string>;
     /**
-     * Contract ID to be assigned to the Property
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId?: pulumi.Input<string>;
     /**
@@ -405,20 +394,25 @@ export interface PropertyArgs {
      */
     cpCode?: pulumi.Input<string>;
     /**
+     * Replaced by `groupId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "group" has been deprecated.
      */
     group?: pulumi.Input<string>;
     /**
-     * Group ID to be assigned to the Property
+     * - (Required) A group's unique ID, including the `grp_` prefix.
      */
     groupId?: pulumi.Input<string>;
+    /**
+     * A mapping of public hostnames to edge hostnames. See the `akamai.getPropertyHostnames` data source for details on the necessary DNS configuration.
+     */
     hostnames?: pulumi.Input<pulumi.Input<inputs.PropertyHostname>[]>;
     /**
      * @deprecated The setting "is_secure" has been deprecated.
      */
     isSecure?: pulumi.Input<boolean>;
     /**
-     * Name to give to the Property (must be unique)
+     * The property name.
      */
     name?: pulumi.Input<string>;
     /**
@@ -426,15 +420,17 @@ export interface PropertyArgs {
      */
     origins?: pulumi.Input<pulumi.Input<inputs.PropertyOrigin>[]>;
     /**
+     * Optional argument replaced by the now required `productId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "product" has been deprecated.
      */
     product?: pulumi.Input<string>;
     /**
-     * Product ID to be assigned to the Property
+     * - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
      */
     productId?: pulumi.Input<string>;
     /**
-     * Specify the rule format version (defaults to latest version available when created)
+     * The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
      */
     ruleFormat?: pulumi.Input<string>;
     /**
@@ -442,7 +438,7 @@ export interface PropertyArgs {
      */
     ruleWarnings?: pulumi.Input<pulumi.Input<inputs.PropertyRuleWarning>[]>;
     /**
-     * Property Rules as JSON
+     * A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `akamai.getPropertyRules` data source.
      */
     rules?: pulumi.Input<string>;
     /**

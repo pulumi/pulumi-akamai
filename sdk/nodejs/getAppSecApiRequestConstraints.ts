@@ -48,9 +48,7 @@ export function getAppSecApiRequestConstraints(args: GetAppSecApiRequestConstrai
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints", {
         "apiId": args.apiId,
         "configId": args.configId,

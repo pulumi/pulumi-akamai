@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -69,7 +68,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing evaluation hostnames.
         /// </summary>
         public static Task<GetAppSecEvalHostnamesResult> InvokeAsync(GetAppSecEvalHostnamesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalHostnamesResult>("akamai:index/getAppSecEvalHostnames:getAppSecEvalHostnames", args ?? new GetAppSecEvalHostnamesArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalHostnamesResult>("akamai:index/getAppSecEvalHostnames:getAppSecEvalHostnames", args ?? new GetAppSecEvalHostnamesArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration
@@ -128,7 +127,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing evaluation hostnames.
         /// </summary>
         public static Output<GetAppSecEvalHostnamesResult> Invoke(GetAppSecEvalHostnamesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecEvalHostnamesResult>("akamai:index/getAppSecEvalHostnames:getAppSecEvalHostnames", args ?? new GetAppSecEvalHostnamesInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecEvalHostnamesResult>("akamai:index/getAppSecEvalHostnames:getAppSecEvalHostnames", args ?? new GetAppSecEvalHostnamesInvokeArgs(), options.WithDefaults());
     }
 
 

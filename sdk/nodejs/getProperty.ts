@@ -21,13 +21,6 @@ import * as utilities from "./utilities";
  * });
  * export const myPropertyID = example;
  * ```
- * ## Argument reference
- *
- * This data source supports these arguments:
- *
- * * `name` - (Required) The property name.
- * * `version` - (Optional) The version of the property whose ID you want to list.
- *
  * ## Attributes reference
  *
  * This data source returns these attributes:
@@ -40,9 +33,7 @@ export function getProperty(args: GetPropertyArgs, opts?: pulumi.InvokeOptions):
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getProperty:getProperty", {
         "name": args.name,
         "version": args.version,
@@ -53,7 +44,13 @@ export function getProperty(args: GetPropertyArgs, opts?: pulumi.InvokeOptions):
  * A collection of arguments for invoking getProperty.
  */
 export interface GetPropertyArgs {
+    /**
+     * - (Required) The property name.
+     */
     name: string;
+    /**
+     * - (Optional) The version of the property whose ID you want to list.
+     */
     version?: number;
 }
 
@@ -78,6 +75,12 @@ export function getPropertyOutput(args: GetPropertyOutputArgs, opts?: pulumi.Inv
  * A collection of arguments for invoking getProperty.
  */
 export interface GetPropertyOutputArgs {
+    /**
+     * - (Required) The property name.
+     */
     name: pulumi.Input<string>;
+    /**
+     * - (Optional) The version of the property whose ID you want to list.
+     */
     version?: pulumi.Input<number>;
 }

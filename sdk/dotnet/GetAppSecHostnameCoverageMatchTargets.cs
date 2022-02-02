@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -56,7 +55,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the coverage information.
         /// </summary>
         public static Task<GetAppSecHostnameCoverageMatchTargetsResult> InvokeAsync(GetAppSecHostnameCoverageMatchTargetsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecHostnameCoverageMatchTargetsResult>("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", args ?? new GetAppSecHostnameCoverageMatchTargetsArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecHostnameCoverageMatchTargetsResult>("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", args ?? new GetAppSecHostnameCoverageMatchTargetsArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Hostname
@@ -102,7 +101,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the coverage information.
         /// </summary>
         public static Output<GetAppSecHostnameCoverageMatchTargetsResult> Invoke(GetAppSecHostnameCoverageMatchTargetsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecHostnameCoverageMatchTargetsResult>("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", args ?? new GetAppSecHostnameCoverageMatchTargetsInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecHostnameCoverageMatchTargetsResult>("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", args ?? new GetAppSecHostnameCoverageMatchTargetsInvokeArgs(), options.WithDefaults());
     }
 
 

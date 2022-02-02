@@ -81,13 +81,13 @@ export class AppSecMatchTarget extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecMatchTargetArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecMatchTargetArgs | AppSecMatchTargetState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecMatchTargetState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["matchTarget"] = state ? state.matchTarget : undefined;
-            inputs["matchTargetId"] = state ? state.matchTargetId : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["matchTarget"] = state ? state.matchTarget : undefined;
+            resourceInputs["matchTargetId"] = state ? state.matchTargetId : undefined;
         } else {
             const args = argsOrState as AppSecMatchTargetArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -96,14 +96,12 @@ export class AppSecMatchTarget extends pulumi.CustomResource {
             if ((!args || args.matchTarget === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'matchTarget'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["matchTarget"] = args ? args.matchTarget : undefined;
-            inputs["matchTargetId"] = undefined /*out*/;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["matchTarget"] = args ? args.matchTarget : undefined;
+            resourceInputs["matchTargetId"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecMatchTarget.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecMatchTarget.__pulumiType, name, resourceInputs, opts);
     }
 }
 

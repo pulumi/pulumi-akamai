@@ -133,21 +133,15 @@ def get_property_rules_template(template_file: Optional[str] = None,
     These variables follow the format used in the [Property Manager CLI](https://github.com/akamai/cli-property-manager#update-the-variabledefinitions-file).  They differ from the provider variables which should resolve normally.
 
     ## Example Usage
-    ## Argument reference
-
-    * `template_file` - (Required) The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree.
-    * `variables` - (Optional) A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `variable_definition_file` and `variable_values_file` arguments. A `variables` block includes:
-        * `name` - The name of the variable used in template.
-        * `type` - The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
-        * `value` - The value of the variable passed as a string.
-    * `variable_definition_file` - (Optional) The absolute path to the file containing variable definitions and defaults. This file follows the syntax used in the [Property Manager CLI](https://github.com/akamai/cli-property-manager). This argument is required if you set `variable_values_file` and conflicts with `variables`.
-    * `variable_values_file` - (Optional) The absolute path to the file containing variable values. This file follows the syntax used in the Property Manager CLI. This argument is required if you set `variable_definition_file` and conflicts with `variables`.
-
     ## Attributes reference
 
     This data source returns this attribute:
 
     * `json` - The fully expanded template with variables and all nested templates resolved.
+
+
+    :param str template_file: The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree.
+    :param Sequence[pulumi.InputType['GetPropertyRulesTemplateVariableArgs']] variables: A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `variable_definition_file` and `variable_values_file` arguments. A `variables` block includes:
     """
     __args__ = dict()
     __args__['templateFile'] = template_file
@@ -206,20 +200,14 @@ def get_property_rules_template_output(template_file: Optional[pulumi.Input[Opti
     These variables follow the format used in the [Property Manager CLI](https://github.com/akamai/cli-property-manager#update-the-variabledefinitions-file).  They differ from the provider variables which should resolve normally.
 
     ## Example Usage
-    ## Argument reference
-
-    * `template_file` - (Required) The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree.
-    * `variables` - (Optional) A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `variable_definition_file` and `variable_values_file` arguments. A `variables` block includes:
-        * `name` - The name of the variable used in template.
-        * `type` - The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
-        * `value` - The value of the variable passed as a string.
-    * `variable_definition_file` - (Optional) The absolute path to the file containing variable definitions and defaults. This file follows the syntax used in the [Property Manager CLI](https://github.com/akamai/cli-property-manager). This argument is required if you set `variable_values_file` and conflicts with `variables`.
-    * `variable_values_file` - (Optional) The absolute path to the file containing variable values. This file follows the syntax used in the Property Manager CLI. This argument is required if you set `variable_definition_file` and conflicts with `variables`.
-
     ## Attributes reference
 
     This data source returns this attribute:
 
     * `json` - The fully expanded template with variables and all nested templates resolved.
+
+
+    :param str template_file: The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree.
+    :param Sequence[pulumi.InputType['GetPropertyRulesTemplateVariableArgs']] variables: A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `variable_definition_file` and `variable_values_file` arguments. A `variables` block includes:
     """
     ...

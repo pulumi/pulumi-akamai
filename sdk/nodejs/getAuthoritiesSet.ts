@@ -19,12 +19,6 @@ import * as utilities from "./utilities";
  *     contract: "ctr_1-AB123",
  * }));
  * ```
- * ## Argument reference
- *
- * This data source supports this argument:
- *
- * * `contract` - (Required) The contract ID.
- *
  * ## Attributes reference
  *
  * This data source supports this attribute:
@@ -36,9 +30,7 @@ export function getAuthoritiesSet(args: GetAuthoritiesSetArgs, opts?: pulumi.Inv
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAuthoritiesSet:getAuthoritiesSet", {
         "contract": args.contract,
     }, opts);
@@ -48,6 +40,9 @@ export function getAuthoritiesSet(args: GetAuthoritiesSetArgs, opts?: pulumi.Inv
  * A collection of arguments for invoking getAuthoritiesSet.
  */
 export interface GetAuthoritiesSetArgs {
+    /**
+     * The contract ID.
+     */
     contract: string;
 }
 
@@ -71,5 +66,8 @@ export function getAuthoritiesSetOutput(args: GetAuthoritiesSetOutputArgs, opts?
  * A collection of arguments for invoking getAuthoritiesSet.
  */
 export interface GetAuthoritiesSetOutputArgs {
+    /**
+     * The contract ID.
+     */
     contract: pulumi.Input<string>;
 }

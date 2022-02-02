@@ -96,16 +96,16 @@ export class AppSecSlowPost extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecSlowPostArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecSlowPostArgs | AppSecSlowPostState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecSlowPostState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["durationThresholdTimeout"] = state ? state.durationThresholdTimeout : undefined;
-            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            inputs["slowRateAction"] = state ? state.slowRateAction : undefined;
-            inputs["slowRateThresholdPeriod"] = state ? state.slowRateThresholdPeriod : undefined;
-            inputs["slowRateThresholdRate"] = state ? state.slowRateThresholdRate : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["durationThresholdTimeout"] = state ? state.durationThresholdTimeout : undefined;
+            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["slowRateAction"] = state ? state.slowRateAction : undefined;
+            resourceInputs["slowRateThresholdPeriod"] = state ? state.slowRateThresholdPeriod : undefined;
+            resourceInputs["slowRateThresholdRate"] = state ? state.slowRateThresholdRate : undefined;
         } else {
             const args = argsOrState as AppSecSlowPostArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -117,17 +117,15 @@ export class AppSecSlowPost extends pulumi.CustomResource {
             if ((!args || args.slowRateAction === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'slowRateAction'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["durationThresholdTimeout"] = args ? args.durationThresholdTimeout : undefined;
-            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            inputs["slowRateAction"] = args ? args.slowRateAction : undefined;
-            inputs["slowRateThresholdPeriod"] = args ? args.slowRateThresholdPeriod : undefined;
-            inputs["slowRateThresholdRate"] = args ? args.slowRateThresholdRate : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["durationThresholdTimeout"] = args ? args.durationThresholdTimeout : undefined;
+            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["slowRateAction"] = args ? args.slowRateAction : undefined;
+            resourceInputs["slowRateThresholdPeriod"] = args ? args.slowRateThresholdPeriod : undefined;
+            resourceInputs["slowRateThresholdRate"] = args ? args.slowRateThresholdRate : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecSlowPost.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecSlowPost.__pulumiType, name, resourceInputs, opts);
     }
 }
 

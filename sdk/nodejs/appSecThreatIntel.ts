@@ -79,13 +79,13 @@ export class AppSecThreatIntel extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecThreatIntelArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecThreatIntelArgs | AppSecThreatIntelState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecThreatIntelState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            inputs["threatIntel"] = state ? state.threatIntel : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["threatIntel"] = state ? state.threatIntel : undefined;
         } else {
             const args = argsOrState as AppSecThreatIntelArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -97,14 +97,12 @@ export class AppSecThreatIntel extends pulumi.CustomResource {
             if ((!args || args.threatIntel === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'threatIntel'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            inputs["threatIntel"] = args ? args.threatIntel : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["threatIntel"] = args ? args.threatIntel : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecThreatIntel.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecThreatIntel.__pulumiType, name, resourceInputs, opts);
     }
 }
 

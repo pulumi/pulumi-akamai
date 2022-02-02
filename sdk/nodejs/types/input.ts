@@ -5,25 +5,76 @@ import * as pulumi from "@pulumi/pulumi";
 import { input as inputs, output as outputs } from "../types";
 
 export interface CpsDvEnrollmentAdminContact {
+    /**
+     * The address of your organization.
+     */
     addressLineOne: pulumi.Input<string>;
+    /**
+     * The address of your organization.
+     */
     addressLineTwo?: pulumi.Input<string>;
+    /**
+     * The city where your organization resides.
+     */
     city: pulumi.Input<string>;
+    /**
+     * The code for the country where your organization resides.
+     */
     countryCode: pulumi.Input<string>;
+    /**
+     * The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+     */
     email: pulumi.Input<string>;
+    /**
+     * The first name of the technical contact at Akamai.
+     */
     firstName: pulumi.Input<string>;
+    /**
+     * The last name of the technical contact at Akamai.
+     */
     lastName: pulumi.Input<string>;
+    /**
+     * Your organization information.
+     */
     organization: pulumi.Input<string>;
+    /**
+     * The phone number of the administrator who you want to use as a contact at your company.
+     */
     phone: pulumi.Input<string>;
+    /**
+     * The postal code of your organization.
+     */
     postalCode: pulumi.Input<string>;
+    /**
+     * The region of your organization, typically a state or province.
+     */
     region: pulumi.Input<string>;
+    /**
+     * The title of the technical contact at Akamai.
+     */
     title?: pulumi.Input<string>;
 }
 
 export interface CpsDvEnrollmentCsr {
+    /**
+     * The city where your organization resides.
+     */
     city: pulumi.Input<string>;
+    /**
+     * The code for the country where your organization resides.
+     */
     countryCode: pulumi.Input<string>;
+    /**
+     * Your organization information.
+     */
     organization: pulumi.Input<string>;
+    /**
+     * Your organizational unit.
+     */
     organizationalUnit: pulumi.Input<string>;
+    /**
+     * Your state or province.
+     */
     state: pulumi.Input<string>;
 }
 
@@ -40,51 +91,153 @@ export interface CpsDvEnrollmentHttpChallenge {
 }
 
 export interface CpsDvEnrollmentNetworkConfiguration {
+    /**
+     * The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
+     */
     clientMutualAuthentication?: pulumi.Input<inputs.CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication>;
+    /**
+     * Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
+     */
     cloneDnsNames?: pulumi.Input<boolean>;
+    /**
+     * The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
+     */
     disallowedTlsVersions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
+     */
     geography: pulumi.Input<string>;
+    /**
+     * The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     */
     mustHaveCiphers?: pulumi.Input<string>;
+    /**
+     * Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
+     */
     ocspStapling?: pulumi.Input<string>;
+    /**
+     * Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     */
     preferredCiphers?: pulumi.Input<string>;
+    /**
+     * Whether to use the QUIC transport layer network protocol.
+     */
     quicEnabled?: pulumi.Input<boolean>;
 }
 
 export interface CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication {
+    /**
+     * Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
+     */
     ocspEnabled?: pulumi.Input<boolean>;
+    /**
+     * Whether you want to enable the server to send the certificate authority (CA) list to the client.
+     */
     sendCaListToClient?: pulumi.Input<boolean>;
+    /**
+     * The identifier of the set of trust chains, created in the [Trust Chain Manager](https://developer.akamai.com/api/web_performance/trust_chain_manager/v1.html).
+     */
     setId?: pulumi.Input<string>;
 }
 
 export interface CpsDvEnrollmentOrganization {
+    /**
+     * The address of your organization.
+     */
     addressLineOne: pulumi.Input<string>;
+    /**
+     * The address of your organization.
+     */
     addressLineTwo?: pulumi.Input<string>;
+    /**
+     * The city where your organization resides.
+     */
     city: pulumi.Input<string>;
+    /**
+     * The code for the country where your organization resides.
+     */
     countryCode: pulumi.Input<string>;
+    /**
+     * The name of your organization.
+     */
     name: pulumi.Input<string>;
+    /**
+     * The phone number of the administrator who you want to use as a contact at your company.
+     */
     phone: pulumi.Input<string>;
+    /**
+     * The postal code of your organization.
+     */
     postalCode: pulumi.Input<string>;
+    /**
+     * The region of your organization, typically a state or province.
+     */
     region: pulumi.Input<string>;
 }
 
 export interface CpsDvEnrollmentTechContact {
+    /**
+     * The address of your organization.
+     */
     addressLineOne: pulumi.Input<string>;
+    /**
+     * The address of your organization.
+     */
     addressLineTwo?: pulumi.Input<string>;
+    /**
+     * The city where your organization resides.
+     */
     city: pulumi.Input<string>;
+    /**
+     * The code for the country where your organization resides.
+     */
     countryCode: pulumi.Input<string>;
+    /**
+     * The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+     */
     email: pulumi.Input<string>;
+    /**
+     * The first name of the technical contact at Akamai.
+     */
     firstName: pulumi.Input<string>;
+    /**
+     * The last name of the technical contact at Akamai.
+     */
     lastName: pulumi.Input<string>;
+    /**
+     * Your organization information.
+     */
     organization: pulumi.Input<string>;
+    /**
+     * The phone number of the administrator who you want to use as a contact at your company.
+     */
     phone: pulumi.Input<string>;
+    /**
+     * The postal code of your organization.
+     */
     postalCode: pulumi.Input<string>;
+    /**
+     * The region of your organization, typically a state or province.
+     */
     region: pulumi.Input<string>;
+    /**
+     * The title of the technical contact at Akamai.
+     */
     title?: pulumi.Input<string>;
 }
 
 export interface DnsZoneTsigKey {
+    /**
+     * The hashing algorithm.
+     */
     algorithm: pulumi.Input<string>;
+    /**
+     * The key name.
+     */
     name: pulumi.Input<string>;
+    /**
+     * String known between transfer endpoints.
+     */
     secret: pulumi.Input<string>;
 }
 
@@ -99,108 +252,300 @@ export interface GetPropertyRulesTemplateTemplateArgs {
 }
 
 export interface GetPropertyRulesTemplateVariable {
+    /**
+     * The name of the variable used in template.
+     */
     name: string;
+    /**
+     * The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
+     */
     type?: string;
+    /**
+     * The value of the variable passed as a string.
+     */
     value: string;
 }
 
 export interface GetPropertyRulesTemplateVariableArgs {
+    /**
+     * The name of the variable used in template.
+     */
     name: pulumi.Input<string>;
+    /**
+     * The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
+     */
     type?: pulumi.Input<string>;
+    /**
+     * The value of the variable passed as a string.
+     */
     value: pulumi.Input<string>;
 }
 
 export interface GtmAsmapAssignment {
+    /**
+     * Specifies an array of AS numbers.
+     */
     asNumbers: pulumi.Input<pulumi.Input<number>[]>;
+    /**
+     * A unique identifier for an existing data center in the domain.
+     */
     datacenterId: pulumi.Input<number>;
+    /**
+     * A descriptive label for the group.
+     */
     nickname: pulumi.Input<string>;
 }
 
 export interface GtmAsmapDefaultDatacenter {
+    /**
+     * A unique identifier for an existing data center in the domain.
+     */
     datacenterId: pulumi.Input<number>;
+    /**
+     * A descriptive label for the group.
+     */
     nickname?: pulumi.Input<string>;
 }
 
 export interface GtmCidrmapAssignment {
+    /**
+     * Specifies an array of CIDR blocks.
+     */
     blocks?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A unique identifier for an existing data center in the domain.
+     */
     datacenterId: pulumi.Input<number>;
+    /**
+     * A descriptive label for the CIDR zone group, up to 256 characters.
+     */
     nickname: pulumi.Input<string>;
 }
 
 export interface GtmCidrmapDefaultDatacenter {
+    /**
+     * A unique identifier for an existing data center in the domain.
+     */
     datacenterId: pulumi.Input<number>;
+    /**
+     * A descriptive label for the CIDR zone group, up to 256 characters.
+     */
     nickname?: pulumi.Input<string>;
 }
 
 export interface GtmDatacenterDefaultLoadObject {
+    /**
+     * A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
+     */
     loadObject?: pulumi.Input<string>;
+    /**
+     * Specifies the TCP port to connect to when requesting the load object.
+     */
     loadObjectPort?: pulumi.Input<number>;
+    /**
+     * Specifies a list of servers to request the load object from.
+     */
     loadServers?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface GtmGeomapAssignment {
+    /**
+     * Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
+     */
     countries?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A unique identifier for an existing data center in the domain.
+     */
     datacenterId: pulumi.Input<number>;
+    /**
+     * A descriptive label for the group.
+     */
     nickname: pulumi.Input<string>;
 }
 
 export interface GtmGeomapDefaultDatacenter {
+    /**
+     * A unique identifier for an existing data center in the domain.
+     */
     datacenterId: pulumi.Input<number>;
+    /**
+     * A descriptive label for the group.
+     */
     nickname?: pulumi.Input<string>;
 }
 
 export interface GtmPropertyLivenessTest {
+    /**
+     * If `testObjectProtocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
+     */
     answersRequired?: pulumi.Input<boolean>;
+    /**
+     * A boolean that if set to `true`, disables warnings when non-standard ports are used.
+     */
     disableNonstandardPortWarning?: pulumi.Input<boolean>;
+    /**
+     * A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
+     */
     disabled?: pulumi.Input<boolean>;
+    /**
+     * Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
+     */
     errorPenalty?: pulumi.Input<number>;
+    /**
+     * A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+     */
     httpError3xx?: pulumi.Input<boolean>;
+    /**
+     * A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+     */
     httpError4xx?: pulumi.Input<boolean>;
+    /**
+     * A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+     */
     httpError5xx?: pulumi.Input<boolean>;
+    /**
+     * Contains HTTP headers to send if the `testObjectProtocol` is `http` or `https`. You can have multiple `httpHeader` entries. Requires these arguments:
+     */
     httpHeaders?: pulumi.Input<pulumi.Input<inputs.GtmPropertyLivenessTestHttpHeader>[]>;
+    /**
+     * Name of HTTP header.
+     */
     name: pulumi.Input<string>;
+    /**
+     * A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `testObjectProtocol` of https.
+     */
     peerCertificateVerification?: pulumi.Input<boolean>;
+    /**
+     * A boolean indicating whether the `testObjectProtocol` is DNS. The DNS query is recursive.
+     */
     recursionRequested?: pulumi.Input<boolean>;
+    /**
+     * Specifies a request string.
+     */
     requestString?: pulumi.Input<string>;
+    /**
+     * Specifies the query type, if `testObjectProtocol` is DNS.
+     */
     resourceType?: pulumi.Input<string>;
+    /**
+     * Specifies a response string.
+     */
     responseString?: pulumi.Input<string>;
+    /**
+     * Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
+     */
     sslClientCertificate?: pulumi.Input<string>;
+    /**
+     * Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can't have a passphrase nor be used for any other purpose.
+     */
     sslClientPrivateKey?: pulumi.Input<string>;
+    /**
+     * Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
+     */
     testInterval: pulumi.Input<number>;
+    /**
+     * Specifies the static text that acts as a stand-in for the data that you're sending on the network.
+     */
     testObject: pulumi.Input<string>;
+    /**
+     * Specifies the test object's password. It is required if testObjectProtocol is ftp.
+     */
     testObjectPassword?: pulumi.Input<string>;
+    /**
+     * Specifies the port number for the testObject.
+     */
     testObjectPort?: pulumi.Input<number>;
+    /**
+     * Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
+     */
     testObjectProtocol: pulumi.Input<string>;
+    /**
+     * A descriptive name for the testObject.
+     */
     testObjectUsername?: pulumi.Input<string>;
+    /**
+     * Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
+     */
     testTimeout: pulumi.Input<number>;
+    /**
+     * Specifies the score to be reported if the liveness test times out.
+     */
     timeoutPenalty?: pulumi.Input<number>;
 }
 
 export interface GtmPropertyLivenessTestHttpHeader {
+    /**
+     * Name of HTTP header.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * Value of HTTP header.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface GtmPropertyStaticRrSet {
+    /**
+     * (List) An array of data strings, representing multiple records within a set.
+     */
     rdatas?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The number of seconds that this record should live in a resolver's cache before being refetched.
+     */
     ttl?: pulumi.Input<number>;
+    /**
+     * The record type.
+     */
     type?: pulumi.Input<string>;
 }
 
 export interface GtmPropertyTrafficTarget {
+    /**
+     * A unique identifier for an existing data center in the domain.
+     */
     datacenterId?: pulumi.Input<number>;
+    /**
+     * A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
+     */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * Specifies an optional data center for the property. Used when there are no servers configured for the property.
+     */
     handoutCname?: pulumi.Input<string>;
+    /**
+     * Name of HTTP header.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * (List) Identifies the IP address or the hostnames of the servers.
+     */
     servers?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Specifies the traffic weight for the target.
+     */
     weight?: pulumi.Input<number>;
 }
 
 export interface GtmResourceResourceInstance {
+    /**
+     * A unique identifier for an existing data center in the domain.
+     */
     datacenterId: pulumi.Input<number>;
+    /**
+     * Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
+     */
     loadObject?: pulumi.Input<string>;
+    /**
+     * Specifies the TCP port of the `loadObject`.
+     */
     loadObjectPort?: pulumi.Input<number>;
+    /**
+     * (List) Specifies a list of servers from which to request the load object.
+     */
     loadServers?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A boolean that indicates whether a default `loadObject` is used for the resources.
+     */
     useDefaultLoadObject?: pulumi.Input<boolean>;
 }
 
@@ -225,9 +570,18 @@ export interface PropertyActivationRuleWarning {
 }
 
 export interface PropertyHostname {
+    /**
+     * The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+     */
     certProvisioningType: pulumi.Input<string>;
     certStatuses?: pulumi.Input<pulumi.Input<inputs.PropertyHostnameCertStatus>[]>;
+    /**
+     * A string containing the original origin's hostname. For example, `"example.org"`.
+     */
     cnameFrom: pulumi.Input<string>;
+    /**
+     * A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
+     */
     cnameTo: pulumi.Input<string>;
     cnameType?: pulumi.Input<string>;
     edgeHostnameId?: pulumi.Input<string>;

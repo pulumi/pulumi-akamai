@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -56,7 +55,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the overlap information.
         /// </summary>
         public static Task<GetAppSecHostnameCoverageOverlappingResult> InvokeAsync(GetAppSecHostnameCoverageOverlappingArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecHostnameCoverageOverlappingResult>("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", args ?? new GetAppSecHostnameCoverageOverlappingArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecHostnameCoverageOverlappingResult>("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", args ?? new GetAppSecHostnameCoverageOverlappingArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; hostname
@@ -102,7 +101,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the overlap information.
         /// </summary>
         public static Output<GetAppSecHostnameCoverageOverlappingResult> Invoke(GetAppSecHostnameCoverageOverlappingInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecHostnameCoverageOverlappingResult>("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", args ?? new GetAppSecHostnameCoverageOverlappingInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecHostnameCoverageOverlappingResult>("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", args ?? new GetAppSecHostnameCoverageOverlappingInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -89,14 +89,14 @@ export class AppSecCustomRuleAction extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecCustomRuleActionArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecCustomRuleActionArgs | AppSecCustomRuleActionState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecCustomRuleActionState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["customRuleAction"] = state ? state.customRuleAction : undefined;
-            inputs["customRuleId"] = state ? state.customRuleId : undefined;
-            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["customRuleAction"] = state ? state.customRuleAction : undefined;
+            resourceInputs["customRuleId"] = state ? state.customRuleId : undefined;
+            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
         } else {
             const args = argsOrState as AppSecCustomRuleActionArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -111,15 +111,13 @@ export class AppSecCustomRuleAction extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["customRuleAction"] = args ? args.customRuleAction : undefined;
-            inputs["customRuleId"] = args ? args.customRuleId : undefined;
-            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["customRuleAction"] = args ? args.customRuleAction : undefined;
+            resourceInputs["customRuleId"] = args ? args.customRuleId : undefined;
+            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecCustomRuleAction.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecCustomRuleAction.__pulumiType, name, resourceInputs, opts);
     }
 }
 

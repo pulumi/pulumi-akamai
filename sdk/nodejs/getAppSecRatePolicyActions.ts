@@ -39,9 +39,7 @@ export function getAppSecRatePolicyActions(args: GetAppSecRatePolicyActionsArgs,
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecRatePolicyActions:getAppSecRatePolicyActions", {
         "configId": args.configId,
         "ratePolicyId": args.ratePolicyId,

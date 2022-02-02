@@ -189,7 +189,7 @@ type AppSecAdvancedSettingsPrefetchInput interface {
 }
 
 func (*AppSecAdvancedSettingsPrefetch) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecAdvancedSettingsPrefetch)(nil))
+	return reflect.TypeOf((**AppSecAdvancedSettingsPrefetch)(nil)).Elem()
 }
 
 func (i *AppSecAdvancedSettingsPrefetch) ToAppSecAdvancedSettingsPrefetchOutput() AppSecAdvancedSettingsPrefetchOutput {
@@ -198,35 +198,6 @@ func (i *AppSecAdvancedSettingsPrefetch) ToAppSecAdvancedSettingsPrefetchOutput(
 
 func (i *AppSecAdvancedSettingsPrefetch) ToAppSecAdvancedSettingsPrefetchOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPrefetchOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsPrefetchOutput)
-}
-
-func (i *AppSecAdvancedSettingsPrefetch) ToAppSecAdvancedSettingsPrefetchPtrOutput() AppSecAdvancedSettingsPrefetchPtrOutput {
-	return i.ToAppSecAdvancedSettingsPrefetchPtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecAdvancedSettingsPrefetch) ToAppSecAdvancedSettingsPrefetchPtrOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPrefetchPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsPrefetchPtrOutput)
-}
-
-type AppSecAdvancedSettingsPrefetchPtrInput interface {
-	pulumi.Input
-
-	ToAppSecAdvancedSettingsPrefetchPtrOutput() AppSecAdvancedSettingsPrefetchPtrOutput
-	ToAppSecAdvancedSettingsPrefetchPtrOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPrefetchPtrOutput
-}
-
-type appSecAdvancedSettingsPrefetchPtrType AppSecAdvancedSettingsPrefetchArgs
-
-func (*appSecAdvancedSettingsPrefetchPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecAdvancedSettingsPrefetch)(nil))
-}
-
-func (i *appSecAdvancedSettingsPrefetchPtrType) ToAppSecAdvancedSettingsPrefetchPtrOutput() AppSecAdvancedSettingsPrefetchPtrOutput {
-	return i.ToAppSecAdvancedSettingsPrefetchPtrOutputWithContext(context.Background())
-}
-
-func (i *appSecAdvancedSettingsPrefetchPtrType) ToAppSecAdvancedSettingsPrefetchPtrOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPrefetchPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsPrefetchPtrOutput)
 }
 
 // AppSecAdvancedSettingsPrefetchArrayInput is an input type that accepts AppSecAdvancedSettingsPrefetchArray and AppSecAdvancedSettingsPrefetchArrayOutput values.
@@ -282,7 +253,7 @@ func (i AppSecAdvancedSettingsPrefetchMap) ToAppSecAdvancedSettingsPrefetchMapOu
 type AppSecAdvancedSettingsPrefetchOutput struct{ *pulumi.OutputState }
 
 func (AppSecAdvancedSettingsPrefetchOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecAdvancedSettingsPrefetch)(nil))
+	return reflect.TypeOf((**AppSecAdvancedSettingsPrefetch)(nil)).Elem()
 }
 
 func (o AppSecAdvancedSettingsPrefetchOutput) ToAppSecAdvancedSettingsPrefetchOutput() AppSecAdvancedSettingsPrefetchOutput {
@@ -293,44 +264,10 @@ func (o AppSecAdvancedSettingsPrefetchOutput) ToAppSecAdvancedSettingsPrefetchOu
 	return o
 }
 
-func (o AppSecAdvancedSettingsPrefetchOutput) ToAppSecAdvancedSettingsPrefetchPtrOutput() AppSecAdvancedSettingsPrefetchPtrOutput {
-	return o.ToAppSecAdvancedSettingsPrefetchPtrOutputWithContext(context.Background())
-}
-
-func (o AppSecAdvancedSettingsPrefetchOutput) ToAppSecAdvancedSettingsPrefetchPtrOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPrefetchPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecAdvancedSettingsPrefetch) *AppSecAdvancedSettingsPrefetch {
-		return &v
-	}).(AppSecAdvancedSettingsPrefetchPtrOutput)
-}
-
-type AppSecAdvancedSettingsPrefetchPtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecAdvancedSettingsPrefetchPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecAdvancedSettingsPrefetch)(nil))
-}
-
-func (o AppSecAdvancedSettingsPrefetchPtrOutput) ToAppSecAdvancedSettingsPrefetchPtrOutput() AppSecAdvancedSettingsPrefetchPtrOutput {
-	return o
-}
-
-func (o AppSecAdvancedSettingsPrefetchPtrOutput) ToAppSecAdvancedSettingsPrefetchPtrOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPrefetchPtrOutput {
-	return o
-}
-
-func (o AppSecAdvancedSettingsPrefetchPtrOutput) Elem() AppSecAdvancedSettingsPrefetchOutput {
-	return o.ApplyT(func(v *AppSecAdvancedSettingsPrefetch) AppSecAdvancedSettingsPrefetch {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecAdvancedSettingsPrefetch
-		return ret
-	}).(AppSecAdvancedSettingsPrefetchOutput)
-}
-
 type AppSecAdvancedSettingsPrefetchArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecAdvancedSettingsPrefetchArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecAdvancedSettingsPrefetch)(nil))
+	return reflect.TypeOf((*[]*AppSecAdvancedSettingsPrefetch)(nil)).Elem()
 }
 
 func (o AppSecAdvancedSettingsPrefetchArrayOutput) ToAppSecAdvancedSettingsPrefetchArrayOutput() AppSecAdvancedSettingsPrefetchArrayOutput {
@@ -342,15 +279,15 @@ func (o AppSecAdvancedSettingsPrefetchArrayOutput) ToAppSecAdvancedSettingsPrefe
 }
 
 func (o AppSecAdvancedSettingsPrefetchArrayOutput) Index(i pulumi.IntInput) AppSecAdvancedSettingsPrefetchOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecAdvancedSettingsPrefetch {
-		return vs[0].([]AppSecAdvancedSettingsPrefetch)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecAdvancedSettingsPrefetch {
+		return vs[0].([]*AppSecAdvancedSettingsPrefetch)[vs[1].(int)]
 	}).(AppSecAdvancedSettingsPrefetchOutput)
 }
 
 type AppSecAdvancedSettingsPrefetchMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecAdvancedSettingsPrefetchMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecAdvancedSettingsPrefetch)(nil))
+	return reflect.TypeOf((*map[string]*AppSecAdvancedSettingsPrefetch)(nil)).Elem()
 }
 
 func (o AppSecAdvancedSettingsPrefetchMapOutput) ToAppSecAdvancedSettingsPrefetchMapOutput() AppSecAdvancedSettingsPrefetchMapOutput {
@@ -362,18 +299,16 @@ func (o AppSecAdvancedSettingsPrefetchMapOutput) ToAppSecAdvancedSettingsPrefetc
 }
 
 func (o AppSecAdvancedSettingsPrefetchMapOutput) MapIndex(k pulumi.StringInput) AppSecAdvancedSettingsPrefetchOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecAdvancedSettingsPrefetch {
-		return vs[0].(map[string]AppSecAdvancedSettingsPrefetch)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecAdvancedSettingsPrefetch {
+		return vs[0].(map[string]*AppSecAdvancedSettingsPrefetch)[vs[1].(string)]
 	}).(AppSecAdvancedSettingsPrefetchOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAdvancedSettingsPrefetchInput)(nil)).Elem(), &AppSecAdvancedSettingsPrefetch{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAdvancedSettingsPrefetchPtrInput)(nil)).Elem(), &AppSecAdvancedSettingsPrefetch{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAdvancedSettingsPrefetchArrayInput)(nil)).Elem(), AppSecAdvancedSettingsPrefetchArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAdvancedSettingsPrefetchMapInput)(nil)).Elem(), AppSecAdvancedSettingsPrefetchMap{})
 	pulumi.RegisterOutputType(AppSecAdvancedSettingsPrefetchOutput{})
-	pulumi.RegisterOutputType(AppSecAdvancedSettingsPrefetchPtrOutput{})
 	pulumi.RegisterOutputType(AppSecAdvancedSettingsPrefetchArrayOutput{})
 	pulumi.RegisterOutputType(AppSecAdvancedSettingsPrefetchMapOutput{})
 }

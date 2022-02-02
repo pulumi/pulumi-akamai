@@ -33,12 +33,16 @@ class PropertyArgs:
                  variables: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Property resource.
-        :param pulumi.Input[str] contract_id: Contract ID to be assigned to the Property
-        :param pulumi.Input[str] group_id: Group ID to be assigned to the Property
-        :param pulumi.Input[str] name: Name to give to the Property (must be unique)
-        :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
-        :param pulumi.Input[str] rule_format: Specify the rule format version (defaults to latest version available when created)
-        :param pulumi.Input[str] rules: Property Rules as JSON
+        :param pulumi.Input[str] contract: Replaced by `contract_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+        :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
+        :param pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]] hostnames: A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
+        :param pulumi.Input[str] name: The property name.
+        :param pulumi.Input[str] product: Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] product_id: - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+        :param pulumi.Input[str] rule_format: The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
+        :param pulumi.Input[str] rules: A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
         """
         if contacts is not None:
             warnings.warn("""The setting \"contact\" has been deprecated.""", DeprecationWarning)
@@ -112,6 +116,9 @@ class PropertyArgs:
     @property
     @pulumi.getter
     def contract(self) -> Optional[pulumi.Input[str]]:
+        """
+        Replaced by `contract_id`. Maintained for legacy purposes.
+        """
         return pulumi.get(self, "contract")
 
     @contract.setter
@@ -122,7 +129,7 @@ class PropertyArgs:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Contract ID to be assigned to the Property
+        - (Required) A contract's unique ID, including the `ctr_` prefix.
         """
         return pulumi.get(self, "contract_id")
 
@@ -142,6 +149,9 @@ class PropertyArgs:
     @property
     @pulumi.getter
     def group(self) -> Optional[pulumi.Input[str]]:
+        """
+        Replaced by `group_id`. Maintained for legacy purposes.
+        """
         return pulumi.get(self, "group")
 
     @group.setter
@@ -152,7 +162,7 @@ class PropertyArgs:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Group ID to be assigned to the Property
+        - (Required) A group's unique ID, including the `grp_` prefix.
         """
         return pulumi.get(self, "group_id")
 
@@ -163,6 +173,9 @@ class PropertyArgs:
     @property
     @pulumi.getter
     def hostnames(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]]:
+        """
+        A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
+        """
         return pulumi.get(self, "hostnames")
 
     @hostnames.setter
@@ -182,7 +195,7 @@ class PropertyArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        Name to give to the Property (must be unique)
+        The property name.
         """
         return pulumi.get(self, "name")
 
@@ -202,6 +215,9 @@ class PropertyArgs:
     @property
     @pulumi.getter
     def product(self) -> Optional[pulumi.Input[str]]:
+        """
+        Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
+        """
         return pulumi.get(self, "product")
 
     @product.setter
@@ -212,7 +228,7 @@ class PropertyArgs:
     @pulumi.getter(name="productId")
     def product_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Product ID to be assigned to the Property
+        - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
         """
         return pulumi.get(self, "product_id")
 
@@ -224,7 +240,7 @@ class PropertyArgs:
     @pulumi.getter(name="ruleFormat")
     def rule_format(self) -> Optional[pulumi.Input[str]]:
         """
-        Specify the rule format version (defaults to latest version available when created)
+        The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
         """
         return pulumi.get(self, "rule_format")
 
@@ -245,7 +261,7 @@ class PropertyArgs:
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[str]]:
         """
-        Property Rules as JSON
+        A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
         """
         return pulumi.get(self, "rules")
 
@@ -289,16 +305,21 @@ class _PropertyState:
                  variables: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Property resources.
-        :param pulumi.Input[str] contract_id: Contract ID to be assigned to the Property
-        :param pulumi.Input[str] group_id: Group ID to be assigned to the Property
-        :param pulumi.Input[int] latest_version: Property's current latest version number
-        :param pulumi.Input[str] name: Name to give to the Property (must be unique)
-        :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
-        :param pulumi.Input[int] production_version: Property's version currently activated in production (zero when not active in production)
+        :param pulumi.Input[str] contract: Replaced by `contract_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+        :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
+        :param pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]] hostnames: A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
+        :param pulumi.Input[int] latest_version: The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
+        :param pulumi.Input[str] name: The property name.
+        :param pulumi.Input[str] product: Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] product_id: - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+        :param pulumi.Input[int] production_version: The current version of the property active on the Akamai production network.
         :param pulumi.Input[int] read_version: Required property's version to be read
-        :param pulumi.Input[str] rule_format: Specify the rule format version (defaults to latest version available when created)
-        :param pulumi.Input[str] rules: Property Rules as JSON
-        :param pulumi.Input[int] staging_version: Property's version currently activated in staging (zero when not active in staging)
+        :param pulumi.Input[Sequence[pulumi.Input['PropertyRuleErrorArgs']]] rule_errors: The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        :param pulumi.Input[str] rule_format: The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
+        :param pulumi.Input[str] rules: A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
+        :param pulumi.Input[int] staging_version: The current version of the property active on the Akamai staging network.
         """
         if contacts is not None:
             warnings.warn("""The setting \"contact\" has been deprecated.""", DeprecationWarning)
@@ -382,6 +403,9 @@ class _PropertyState:
     @property
     @pulumi.getter
     def contract(self) -> Optional[pulumi.Input[str]]:
+        """
+        Replaced by `contract_id`. Maintained for legacy purposes.
+        """
         return pulumi.get(self, "contract")
 
     @contract.setter
@@ -392,7 +416,7 @@ class _PropertyState:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Contract ID to be assigned to the Property
+        - (Required) A contract's unique ID, including the `ctr_` prefix.
         """
         return pulumi.get(self, "contract_id")
 
@@ -412,6 +436,9 @@ class _PropertyState:
     @property
     @pulumi.getter
     def group(self) -> Optional[pulumi.Input[str]]:
+        """
+        Replaced by `group_id`. Maintained for legacy purposes.
+        """
         return pulumi.get(self, "group")
 
     @group.setter
@@ -422,7 +449,7 @@ class _PropertyState:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Group ID to be assigned to the Property
+        - (Required) A group's unique ID, including the `grp_` prefix.
         """
         return pulumi.get(self, "group_id")
 
@@ -433,6 +460,9 @@ class _PropertyState:
     @property
     @pulumi.getter
     def hostnames(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]]:
+        """
+        A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
+        """
         return pulumi.get(self, "hostnames")
 
     @hostnames.setter
@@ -452,7 +482,7 @@ class _PropertyState:
     @pulumi.getter(name="latestVersion")
     def latest_version(self) -> Optional[pulumi.Input[int]]:
         """
-        Property's current latest version number
+        The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
         """
         return pulumi.get(self, "latest_version")
 
@@ -464,7 +494,7 @@ class _PropertyState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        Name to give to the Property (must be unique)
+        The property name.
         """
         return pulumi.get(self, "name")
 
@@ -484,6 +514,9 @@ class _PropertyState:
     @property
     @pulumi.getter
     def product(self) -> Optional[pulumi.Input[str]]:
+        """
+        Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
+        """
         return pulumi.get(self, "product")
 
     @product.setter
@@ -494,7 +527,7 @@ class _PropertyState:
     @pulumi.getter(name="productId")
     def product_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Product ID to be assigned to the Property
+        - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
         """
         return pulumi.get(self, "product_id")
 
@@ -506,7 +539,7 @@ class _PropertyState:
     @pulumi.getter(name="productionVersion")
     def production_version(self) -> Optional[pulumi.Input[int]]:
         """
-        Property's version currently activated in production (zero when not active in production)
+        The current version of the property active on the Akamai production network.
         """
         return pulumi.get(self, "production_version")
 
@@ -529,6 +562,9 @@ class _PropertyState:
     @property
     @pulumi.getter(name="ruleErrors")
     def rule_errors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleErrorArgs']]]]:
+        """
+        The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        """
         return pulumi.get(self, "rule_errors")
 
     @rule_errors.setter
@@ -539,7 +575,7 @@ class _PropertyState:
     @pulumi.getter(name="ruleFormat")
     def rule_format(self) -> Optional[pulumi.Input[str]]:
         """
-        Specify the rule format version (defaults to latest version available when created)
+        The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
         """
         return pulumi.get(self, "rule_format")
 
@@ -560,7 +596,7 @@ class _PropertyState:
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[str]]:
         """
-        Property Rules as JSON
+        A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
         """
         return pulumi.get(self, "rules")
 
@@ -572,7 +608,7 @@ class _PropertyState:
     @pulumi.getter(name="stagingVersion")
     def staging_version(self) -> Optional[pulumi.Input[int]]:
         """
-        Property's version currently activated in staging (zero when not active in staging)
+        The current version of the property active on the Akamai staging network.
         """
         return pulumi.get(self, "staging_version")
 
@@ -654,41 +690,6 @@ class Property(pulumi.CustomResource):
             rule_format="v2020-03-04",
             rules=data["akamai_property_rules_template"]["example"]["json"])
         ```
-        ## Argument reference
-
-        This resource supports these arguments:
-
-        * `name` - (Required) The property name.
-        * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-        * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
-        * `product_id` - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
-        * `hostnames` - (Optional) A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
-          
-            > **Note** Starting from version 1.5.0, the `hostnames` argument supports a new block type. If you created your code and state in version 1.4 or earlier, you need to manually update your configuration and replace the previous input for `hostnames` with the new syntax. This error indicates that the state is outdated: `Error: missing expected [`. To fix it, remove `Property` from the state and import it again.
-          
-          Requires these additional arguments:
-          
-              * `cname_from` - (Required) A string containing the original origin's hostname. For example, `"example.org"`.
-              * `cname_to` - (Required) A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
-              * `cert_provisioning_type` - (Required) The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
-        * `rules` - (Optional) A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
-        * `rule_format` - (Optional) The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
-        * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
-        * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
-        * `product` - (Deprecated) Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
-
-        ## Attribute reference
-
-        The resource returns these attributes:
-
-        * `rule_errors` - The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
-        * `latest_version` - The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
-        * `production_version` - The current version of the property active on the Akamai production network.
-        * `staging_version` - The current version of the property active on the Akamai staging network.
-
-        ### Deprecated attributes
-
-        * `rule_warnings` - (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
 
         ## Import
 
@@ -734,12 +735,16 @@ class Property(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] contract_id: Contract ID to be assigned to the Property
-        :param pulumi.Input[str] group_id: Group ID to be assigned to the Property
-        :param pulumi.Input[str] name: Name to give to the Property (must be unique)
-        :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
-        :param pulumi.Input[str] rule_format: Specify the rule format version (defaults to latest version available when created)
-        :param pulumi.Input[str] rules: Property Rules as JSON
+        :param pulumi.Input[str] contract: Replaced by `contract_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+        :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]] hostnames: A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
+        :param pulumi.Input[str] name: The property name.
+        :param pulumi.Input[str] product: Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] product_id: - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+        :param pulumi.Input[str] rule_format: The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
+        :param pulumi.Input[str] rules: A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
         """
         ...
     @overload
@@ -789,41 +794,6 @@ class Property(pulumi.CustomResource):
             rule_format="v2020-03-04",
             rules=data["akamai_property_rules_template"]["example"]["json"])
         ```
-        ## Argument reference
-
-        This resource supports these arguments:
-
-        * `name` - (Required) The property name.
-        * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-        * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
-        * `product_id` - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
-        * `hostnames` - (Optional) A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
-          
-            > **Note** Starting from version 1.5.0, the `hostnames` argument supports a new block type. If you created your code and state in version 1.4 or earlier, you need to manually update your configuration and replace the previous input for `hostnames` with the new syntax. This error indicates that the state is outdated: `Error: missing expected [`. To fix it, remove `Property` from the state and import it again.
-          
-          Requires these additional arguments:
-          
-              * `cname_from` - (Required) A string containing the original origin's hostname. For example, `"example.org"`.
-              * `cname_to` - (Required) A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
-              * `cert_provisioning_type` - (Required) The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
-        * `rules` - (Optional) A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
-        * `rule_format` - (Optional) The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
-        * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
-        * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
-        * `product` - (Deprecated) Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
-
-        ## Attribute reference
-
-        The resource returns these attributes:
-
-        * `rule_errors` - The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
-        * `latest_version` - The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
-        * `production_version` - The current version of the property active on the Akamai production network.
-        * `staging_version` - The current version of the property active on the Akamai staging network.
-
-        ### Deprecated attributes
-
-        * `rule_warnings` - (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
 
         ## Import
 
@@ -998,16 +968,21 @@ class Property(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] contract_id: Contract ID to be assigned to the Property
-        :param pulumi.Input[str] group_id: Group ID to be assigned to the Property
-        :param pulumi.Input[int] latest_version: Property's current latest version number
-        :param pulumi.Input[str] name: Name to give to the Property (must be unique)
-        :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
-        :param pulumi.Input[int] production_version: Property's version currently activated in production (zero when not active in production)
+        :param pulumi.Input[str] contract: Replaced by `contract_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+        :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]] hostnames: A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
+        :param pulumi.Input[int] latest_version: The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
+        :param pulumi.Input[str] name: The property name.
+        :param pulumi.Input[str] product: Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] product_id: - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+        :param pulumi.Input[int] production_version: The current version of the property active on the Akamai production network.
         :param pulumi.Input[int] read_version: Required property's version to be read
-        :param pulumi.Input[str] rule_format: Specify the rule format version (defaults to latest version available when created)
-        :param pulumi.Input[str] rules: Property Rules as JSON
-        :param pulumi.Input[int] staging_version: Property's version currently activated in staging (zero when not active in staging)
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleErrorArgs']]]] rule_errors: The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        :param pulumi.Input[str] rule_format: The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
+        :param pulumi.Input[str] rules: A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
+        :param pulumi.Input[int] staging_version: The current version of the property active on the Akamai staging network.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1044,13 +1019,16 @@ class Property(pulumi.CustomResource):
     @property
     @pulumi.getter
     def contract(self) -> pulumi.Output[str]:
+        """
+        Replaced by `contract_id`. Maintained for legacy purposes.
+        """
         return pulumi.get(self, "contract")
 
     @property
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Output[str]:
         """
-        Contract ID to be assigned to the Property
+        - (Required) A contract's unique ID, including the `ctr_` prefix.
         """
         return pulumi.get(self, "contract_id")
 
@@ -1062,19 +1040,25 @@ class Property(pulumi.CustomResource):
     @property
     @pulumi.getter
     def group(self) -> pulumi.Output[str]:
+        """
+        Replaced by `group_id`. Maintained for legacy purposes.
+        """
         return pulumi.get(self, "group")
 
     @property
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[str]:
         """
-        Group ID to be assigned to the Property
+        - (Required) A group's unique ID, including the `grp_` prefix.
         """
         return pulumi.get(self, "group_id")
 
     @property
     @pulumi.getter
     def hostnames(self) -> pulumi.Output[Optional[Sequence['outputs.PropertyHostname']]]:
+        """
+        A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
+        """
         return pulumi.get(self, "hostnames")
 
     @property
@@ -1086,7 +1070,7 @@ class Property(pulumi.CustomResource):
     @pulumi.getter(name="latestVersion")
     def latest_version(self) -> pulumi.Output[int]:
         """
-        Property's current latest version number
+        The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
         """
         return pulumi.get(self, "latest_version")
 
@@ -1094,7 +1078,7 @@ class Property(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        Name to give to the Property (must be unique)
+        The property name.
         """
         return pulumi.get(self, "name")
 
@@ -1106,13 +1090,16 @@ class Property(pulumi.CustomResource):
     @property
     @pulumi.getter
     def product(self) -> pulumi.Output[str]:
+        """
+        Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
+        """
         return pulumi.get(self, "product")
 
     @property
     @pulumi.getter(name="productId")
     def product_id(self) -> pulumi.Output[str]:
         """
-        Product ID to be assigned to the Property
+        - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
         """
         return pulumi.get(self, "product_id")
 
@@ -1120,7 +1107,7 @@ class Property(pulumi.CustomResource):
     @pulumi.getter(name="productionVersion")
     def production_version(self) -> pulumi.Output[int]:
         """
-        Property's version currently activated in production (zero when not active in production)
+        The current version of the property active on the Akamai production network.
         """
         return pulumi.get(self, "production_version")
 
@@ -1135,13 +1122,16 @@ class Property(pulumi.CustomResource):
     @property
     @pulumi.getter(name="ruleErrors")
     def rule_errors(self) -> pulumi.Output[Sequence['outputs.PropertyRuleError']]:
+        """
+        The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        """
         return pulumi.get(self, "rule_errors")
 
     @property
     @pulumi.getter(name="ruleFormat")
     def rule_format(self) -> pulumi.Output[str]:
         """
-        Specify the rule format version (defaults to latest version available when created)
+        The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
         """
         return pulumi.get(self, "rule_format")
 
@@ -1154,7 +1144,7 @@ class Property(pulumi.CustomResource):
     @pulumi.getter
     def rules(self) -> pulumi.Output[str]:
         """
-        Property Rules as JSON
+        A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
         """
         return pulumi.get(self, "rules")
 
@@ -1162,7 +1152,7 @@ class Property(pulumi.CustomResource):
     @pulumi.getter(name="stagingVersion")
     def staging_version(self) -> pulumi.Output[int]:
         """
-        Property's version currently activated in staging (zero when not active in staging)
+        The current version of the property active on the Akamai staging network.
         """
         return pulumi.get(self, "staging_version")
 

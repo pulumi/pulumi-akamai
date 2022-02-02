@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -65,7 +64,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular reports of the protected and evaluated hostnames.
         /// </summary>
         public static Task<GetAppSecWapSelectedHostnamesResult> InvokeAsync(GetAppSecWapSelectedHostnamesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecWapSelectedHostnamesResult>("akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames", args ?? new GetAppSecWapSelectedHostnamesArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecWapSelectedHostnamesResult>("akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames", args ?? new GetAppSecWapSelectedHostnamesArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy
@@ -120,7 +119,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular reports of the protected and evaluated hostnames.
         /// </summary>
         public static Output<GetAppSecWapSelectedHostnamesResult> Invoke(GetAppSecWapSelectedHostnamesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecWapSelectedHostnamesResult>("akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames", args ?? new GetAppSecWapSelectedHostnamesInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecWapSelectedHostnamesResult>("akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames", args ?? new GetAppSecWapSelectedHostnamesInvokeArgs(), options.WithDefaults());
     }
 
 

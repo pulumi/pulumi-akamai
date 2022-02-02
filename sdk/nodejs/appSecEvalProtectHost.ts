@@ -79,12 +79,12 @@ export class AppSecEvalProtectHost extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecEvalProtectHostArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecEvalProtectHostArgs | AppSecEvalProtectHostState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecEvalProtectHostState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["hostnames"] = state ? state.hostnames : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["hostnames"] = state ? state.hostnames : undefined;
         } else {
             const args = argsOrState as AppSecEvalProtectHostArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -93,13 +93,11 @@ export class AppSecEvalProtectHost extends pulumi.CustomResource {
             if ((!args || args.hostnames === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'hostnames'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["hostnames"] = args ? args.hostnames : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["hostnames"] = args ? args.hostnames : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecEvalProtectHost.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecEvalProtectHost.__pulumiType, name, resourceInputs, opts);
     }
 }
 

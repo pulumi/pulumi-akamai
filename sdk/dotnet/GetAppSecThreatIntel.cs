@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -66,7 +65,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the threat intelligence information.
         /// </summary>
         public static Task<GetAppSecThreatIntelResult> InvokeAsync(GetAppSecThreatIntelArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecThreatIntelResult>("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", args ?? new GetAppSecThreatIntelArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecThreatIntelResult>("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", args ?? new GetAppSecThreatIntelArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy
@@ -122,7 +121,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the threat intelligence information.
         /// </summary>
         public static Output<GetAppSecThreatIntelResult> Invoke(GetAppSecThreatIntelInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecThreatIntelResult>("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", args ?? new GetAppSecThreatIntelInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecThreatIntelResult>("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", args ?? new GetAppSecThreatIntelInvokeArgs(), options.WithDefaults());
     }
 
 

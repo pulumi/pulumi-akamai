@@ -160,7 +160,7 @@ type AppSecCustomDenyInput interface {
 }
 
 func (*AppSecCustomDeny) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecCustomDeny)(nil))
+	return reflect.TypeOf((**AppSecCustomDeny)(nil)).Elem()
 }
 
 func (i *AppSecCustomDeny) ToAppSecCustomDenyOutput() AppSecCustomDenyOutput {
@@ -169,35 +169,6 @@ func (i *AppSecCustomDeny) ToAppSecCustomDenyOutput() AppSecCustomDenyOutput {
 
 func (i *AppSecCustomDeny) ToAppSecCustomDenyOutputWithContext(ctx context.Context) AppSecCustomDenyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomDenyOutput)
-}
-
-func (i *AppSecCustomDeny) ToAppSecCustomDenyPtrOutput() AppSecCustomDenyPtrOutput {
-	return i.ToAppSecCustomDenyPtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecCustomDeny) ToAppSecCustomDenyPtrOutputWithContext(ctx context.Context) AppSecCustomDenyPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomDenyPtrOutput)
-}
-
-type AppSecCustomDenyPtrInput interface {
-	pulumi.Input
-
-	ToAppSecCustomDenyPtrOutput() AppSecCustomDenyPtrOutput
-	ToAppSecCustomDenyPtrOutputWithContext(ctx context.Context) AppSecCustomDenyPtrOutput
-}
-
-type appSecCustomDenyPtrType AppSecCustomDenyArgs
-
-func (*appSecCustomDenyPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecCustomDeny)(nil))
-}
-
-func (i *appSecCustomDenyPtrType) ToAppSecCustomDenyPtrOutput() AppSecCustomDenyPtrOutput {
-	return i.ToAppSecCustomDenyPtrOutputWithContext(context.Background())
-}
-
-func (i *appSecCustomDenyPtrType) ToAppSecCustomDenyPtrOutputWithContext(ctx context.Context) AppSecCustomDenyPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomDenyPtrOutput)
 }
 
 // AppSecCustomDenyArrayInput is an input type that accepts AppSecCustomDenyArray and AppSecCustomDenyArrayOutput values.
@@ -253,7 +224,7 @@ func (i AppSecCustomDenyMap) ToAppSecCustomDenyMapOutputWithContext(ctx context.
 type AppSecCustomDenyOutput struct{ *pulumi.OutputState }
 
 func (AppSecCustomDenyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecCustomDeny)(nil))
+	return reflect.TypeOf((**AppSecCustomDeny)(nil)).Elem()
 }
 
 func (o AppSecCustomDenyOutput) ToAppSecCustomDenyOutput() AppSecCustomDenyOutput {
@@ -264,44 +235,10 @@ func (o AppSecCustomDenyOutput) ToAppSecCustomDenyOutputWithContext(ctx context.
 	return o
 }
 
-func (o AppSecCustomDenyOutput) ToAppSecCustomDenyPtrOutput() AppSecCustomDenyPtrOutput {
-	return o.ToAppSecCustomDenyPtrOutputWithContext(context.Background())
-}
-
-func (o AppSecCustomDenyOutput) ToAppSecCustomDenyPtrOutputWithContext(ctx context.Context) AppSecCustomDenyPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecCustomDeny) *AppSecCustomDeny {
-		return &v
-	}).(AppSecCustomDenyPtrOutput)
-}
-
-type AppSecCustomDenyPtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecCustomDenyPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecCustomDeny)(nil))
-}
-
-func (o AppSecCustomDenyPtrOutput) ToAppSecCustomDenyPtrOutput() AppSecCustomDenyPtrOutput {
-	return o
-}
-
-func (o AppSecCustomDenyPtrOutput) ToAppSecCustomDenyPtrOutputWithContext(ctx context.Context) AppSecCustomDenyPtrOutput {
-	return o
-}
-
-func (o AppSecCustomDenyPtrOutput) Elem() AppSecCustomDenyOutput {
-	return o.ApplyT(func(v *AppSecCustomDeny) AppSecCustomDeny {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecCustomDeny
-		return ret
-	}).(AppSecCustomDenyOutput)
-}
-
 type AppSecCustomDenyArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecCustomDenyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecCustomDeny)(nil))
+	return reflect.TypeOf((*[]*AppSecCustomDeny)(nil)).Elem()
 }
 
 func (o AppSecCustomDenyArrayOutput) ToAppSecCustomDenyArrayOutput() AppSecCustomDenyArrayOutput {
@@ -313,15 +250,15 @@ func (o AppSecCustomDenyArrayOutput) ToAppSecCustomDenyArrayOutputWithContext(ct
 }
 
 func (o AppSecCustomDenyArrayOutput) Index(i pulumi.IntInput) AppSecCustomDenyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecCustomDeny {
-		return vs[0].([]AppSecCustomDeny)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecCustomDeny {
+		return vs[0].([]*AppSecCustomDeny)[vs[1].(int)]
 	}).(AppSecCustomDenyOutput)
 }
 
 type AppSecCustomDenyMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecCustomDenyMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecCustomDeny)(nil))
+	return reflect.TypeOf((*map[string]*AppSecCustomDeny)(nil)).Elem()
 }
 
 func (o AppSecCustomDenyMapOutput) ToAppSecCustomDenyMapOutput() AppSecCustomDenyMapOutput {
@@ -333,18 +270,16 @@ func (o AppSecCustomDenyMapOutput) ToAppSecCustomDenyMapOutputWithContext(ctx co
 }
 
 func (o AppSecCustomDenyMapOutput) MapIndex(k pulumi.StringInput) AppSecCustomDenyOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecCustomDeny {
-		return vs[0].(map[string]AppSecCustomDeny)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecCustomDeny {
+		return vs[0].(map[string]*AppSecCustomDeny)[vs[1].(string)]
 	}).(AppSecCustomDenyOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecCustomDenyInput)(nil)).Elem(), &AppSecCustomDeny{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecCustomDenyPtrInput)(nil)).Elem(), &AppSecCustomDeny{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecCustomDenyArrayInput)(nil)).Elem(), AppSecCustomDenyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecCustomDenyMapInput)(nil)).Elem(), AppSecCustomDenyMap{})
 	pulumi.RegisterOutputType(AppSecCustomDenyOutput{})
-	pulumi.RegisterOutputType(AppSecCustomDenyPtrOutput{})
 	pulumi.RegisterOutputType(AppSecCustomDenyArrayOutput{})
 	pulumi.RegisterOutputType(AppSecCustomDenyMapOutput{})
 }

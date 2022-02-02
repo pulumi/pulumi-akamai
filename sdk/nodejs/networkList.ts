@@ -107,20 +107,20 @@ export class NetworkList extends pulumi.CustomResource {
      */
     constructor(name: string, args: NetworkListArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: NetworkListArgs | NetworkListState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkListState | undefined;
-            inputs["contractId"] = state ? state.contractId : undefined;
-            inputs["description"] = state ? state.description : undefined;
-            inputs["groupId"] = state ? state.groupId : undefined;
-            inputs["lists"] = state ? state.lists : undefined;
-            inputs["mode"] = state ? state.mode : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["networkListId"] = state ? state.networkListId : undefined;
-            inputs["syncPoint"] = state ? state.syncPoint : undefined;
-            inputs["type"] = state ? state.type : undefined;
-            inputs["uniqueid"] = state ? state.uniqueid : undefined;
+            resourceInputs["contractId"] = state ? state.contractId : undefined;
+            resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["groupId"] = state ? state.groupId : undefined;
+            resourceInputs["lists"] = state ? state.lists : undefined;
+            resourceInputs["mode"] = state ? state.mode : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["networkListId"] = state ? state.networkListId : undefined;
+            resourceInputs["syncPoint"] = state ? state.syncPoint : undefined;
+            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["uniqueid"] = state ? state.uniqueid : undefined;
         } else {
             const args = argsOrState as NetworkListArgs | undefined;
             if ((!args || args.description === undefined) && !opts.urn) {
@@ -132,21 +132,19 @@ export class NetworkList extends pulumi.CustomResource {
             if ((!args || args.type === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            inputs["contractId"] = args ? args.contractId : undefined;
-            inputs["description"] = args ? args.description : undefined;
-            inputs["groupId"] = args ? args.groupId : undefined;
-            inputs["lists"] = args ? args.lists : undefined;
-            inputs["mode"] = args ? args.mode : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["type"] = args ? args.type : undefined;
-            inputs["networkListId"] = undefined /*out*/;
-            inputs["syncPoint"] = undefined /*out*/;
-            inputs["uniqueid"] = undefined /*out*/;
+            resourceInputs["contractId"] = args ? args.contractId : undefined;
+            resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["groupId"] = args ? args.groupId : undefined;
+            resourceInputs["lists"] = args ? args.lists : undefined;
+            resourceInputs["mode"] = args ? args.mode : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["networkListId"] = undefined /*out*/;
+            resourceInputs["syncPoint"] = undefined /*out*/;
+            resourceInputs["uniqueid"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(NetworkList.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(NetworkList.__pulumiType, name, resourceInputs, opts);
     }
 }
 

@@ -12,27 +12,51 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class CpsDvEnrollmentOrganizationGetArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The address of your organization.
+        /// </summary>
         [Input("addressLineOne", required: true)]
         public Input<string> AddressLineOne { get; set; } = null!;
 
+        /// <summary>
+        /// The address of your organization.
+        /// </summary>
         [Input("addressLineTwo")]
         public Input<string>? AddressLineTwo { get; set; }
 
+        /// <summary>
+        /// The city where your organization resides.
+        /// </summary>
         [Input("city", required: true)]
         public Input<string> City { get; set; } = null!;
 
+        /// <summary>
+        /// The code for the country where your organization resides.
+        /// </summary>
         [Input("countryCode", required: true)]
         public Input<string> CountryCode { get; set; } = null!;
 
+        /// <summary>
+        /// The name of your organization.
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        /// <summary>
+        /// The phone number of the administrator who you want to use as a contact at your company.
+        /// </summary>
         [Input("phone", required: true)]
         public Input<string> Phone { get; set; } = null!;
 
+        /// <summary>
+        /// The postal code of your organization.
+        /// </summary>
         [Input("postalCode", required: true)]
         public Input<string> PostalCode { get; set; } = null!;
 
+        /// <summary>
+        /// The region of your organization, typically a state or province.
+        /// </summary>
         [Input("region", required: true)]
         public Input<string> Region { get; set; } = null!;
 

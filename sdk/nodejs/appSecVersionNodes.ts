@@ -84,13 +84,13 @@ export class AppSecVersionNodes extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecVersionNodesArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecVersionNodesArgs | AppSecVersionNodesState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecVersionNodesState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["outputText"] = state ? state.outputText : undefined;
-            inputs["versionNotes"] = state ? state.versionNotes : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["outputText"] = state ? state.outputText : undefined;
+            resourceInputs["versionNotes"] = state ? state.versionNotes : undefined;
         } else {
             const args = argsOrState as AppSecVersionNodesArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -99,14 +99,12 @@ export class AppSecVersionNodes extends pulumi.CustomResource {
             if ((!args || args.versionNotes === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'versionNotes'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["versionNotes"] = args ? args.versionNotes : undefined;
-            inputs["outputText"] = undefined /*out*/;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["versionNotes"] = args ? args.versionNotes : undefined;
+            resourceInputs["outputText"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecVersionNodes.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecVersionNodes.__pulumiType, name, resourceInputs, opts);
     }
 }
 

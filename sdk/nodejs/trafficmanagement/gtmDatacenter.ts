@@ -71,62 +71,60 @@ export class GtmDatacenter extends pulumi.CustomResource {
     /** @deprecated akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter */
     constructor(name: string, argsOrState?: GtmDatacenterArgs | GtmDatacenterState, opts?: pulumi.CustomResourceOptions) {
         pulumi.log.warn("GtmDatacenter is deprecated: akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter")
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GtmDatacenterState | undefined;
-            inputs["city"] = state ? state.city : undefined;
-            inputs["cloneOf"] = state ? state.cloneOf : undefined;
-            inputs["cloudServerHostHeaderOverride"] = state ? state.cloudServerHostHeaderOverride : undefined;
-            inputs["cloudServerTargeting"] = state ? state.cloudServerTargeting : undefined;
-            inputs["continent"] = state ? state.continent : undefined;
-            inputs["country"] = state ? state.country : undefined;
-            inputs["datacenterId"] = state ? state.datacenterId : undefined;
-            inputs["defaultLoadObject"] = state ? state.defaultLoadObject : undefined;
-            inputs["domain"] = state ? state.domain : undefined;
-            inputs["latitude"] = state ? state.latitude : undefined;
-            inputs["longitude"] = state ? state.longitude : undefined;
-            inputs["nickname"] = state ? state.nickname : undefined;
-            inputs["pingInterval"] = state ? state.pingInterval : undefined;
-            inputs["pingPacketSize"] = state ? state.pingPacketSize : undefined;
-            inputs["scorePenalty"] = state ? state.scorePenalty : undefined;
-            inputs["servermonitorLivenessCount"] = state ? state.servermonitorLivenessCount : undefined;
-            inputs["servermonitorLoadCount"] = state ? state.servermonitorLoadCount : undefined;
-            inputs["servermonitorPool"] = state ? state.servermonitorPool : undefined;
-            inputs["stateOrProvince"] = state ? state.stateOrProvince : undefined;
-            inputs["virtual"] = state ? state.virtual : undefined;
-            inputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
+            resourceInputs["city"] = state ? state.city : undefined;
+            resourceInputs["cloneOf"] = state ? state.cloneOf : undefined;
+            resourceInputs["cloudServerHostHeaderOverride"] = state ? state.cloudServerHostHeaderOverride : undefined;
+            resourceInputs["cloudServerTargeting"] = state ? state.cloudServerTargeting : undefined;
+            resourceInputs["continent"] = state ? state.continent : undefined;
+            resourceInputs["country"] = state ? state.country : undefined;
+            resourceInputs["datacenterId"] = state ? state.datacenterId : undefined;
+            resourceInputs["defaultLoadObject"] = state ? state.defaultLoadObject : undefined;
+            resourceInputs["domain"] = state ? state.domain : undefined;
+            resourceInputs["latitude"] = state ? state.latitude : undefined;
+            resourceInputs["longitude"] = state ? state.longitude : undefined;
+            resourceInputs["nickname"] = state ? state.nickname : undefined;
+            resourceInputs["pingInterval"] = state ? state.pingInterval : undefined;
+            resourceInputs["pingPacketSize"] = state ? state.pingPacketSize : undefined;
+            resourceInputs["scorePenalty"] = state ? state.scorePenalty : undefined;
+            resourceInputs["servermonitorLivenessCount"] = state ? state.servermonitorLivenessCount : undefined;
+            resourceInputs["servermonitorLoadCount"] = state ? state.servermonitorLoadCount : undefined;
+            resourceInputs["servermonitorPool"] = state ? state.servermonitorPool : undefined;
+            resourceInputs["stateOrProvince"] = state ? state.stateOrProvince : undefined;
+            resourceInputs["virtual"] = state ? state.virtual : undefined;
+            resourceInputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
         } else {
             const args = argsOrState as GtmDatacenterArgs | undefined;
             if ((!args || args.domain === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'domain'");
             }
-            inputs["city"] = args ? args.city : undefined;
-            inputs["cloneOf"] = args ? args.cloneOf : undefined;
-            inputs["cloudServerHostHeaderOverride"] = args ? args.cloudServerHostHeaderOverride : undefined;
-            inputs["cloudServerTargeting"] = args ? args.cloudServerTargeting : undefined;
-            inputs["continent"] = args ? args.continent : undefined;
-            inputs["country"] = args ? args.country : undefined;
-            inputs["defaultLoadObject"] = args ? args.defaultLoadObject : undefined;
-            inputs["domain"] = args ? args.domain : undefined;
-            inputs["latitude"] = args ? args.latitude : undefined;
-            inputs["longitude"] = args ? args.longitude : undefined;
-            inputs["nickname"] = args ? args.nickname : undefined;
-            inputs["stateOrProvince"] = args ? args.stateOrProvince : undefined;
-            inputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
-            inputs["datacenterId"] = undefined /*out*/;
-            inputs["pingInterval"] = undefined /*out*/;
-            inputs["pingPacketSize"] = undefined /*out*/;
-            inputs["scorePenalty"] = undefined /*out*/;
-            inputs["servermonitorLivenessCount"] = undefined /*out*/;
-            inputs["servermonitorLoadCount"] = undefined /*out*/;
-            inputs["servermonitorPool"] = undefined /*out*/;
-            inputs["virtual"] = undefined /*out*/;
+            resourceInputs["city"] = args ? args.city : undefined;
+            resourceInputs["cloneOf"] = args ? args.cloneOf : undefined;
+            resourceInputs["cloudServerHostHeaderOverride"] = args ? args.cloudServerHostHeaderOverride : undefined;
+            resourceInputs["cloudServerTargeting"] = args ? args.cloudServerTargeting : undefined;
+            resourceInputs["continent"] = args ? args.continent : undefined;
+            resourceInputs["country"] = args ? args.country : undefined;
+            resourceInputs["defaultLoadObject"] = args ? args.defaultLoadObject : undefined;
+            resourceInputs["domain"] = args ? args.domain : undefined;
+            resourceInputs["latitude"] = args ? args.latitude : undefined;
+            resourceInputs["longitude"] = args ? args.longitude : undefined;
+            resourceInputs["nickname"] = args ? args.nickname : undefined;
+            resourceInputs["stateOrProvince"] = args ? args.stateOrProvince : undefined;
+            resourceInputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
+            resourceInputs["datacenterId"] = undefined /*out*/;
+            resourceInputs["pingInterval"] = undefined /*out*/;
+            resourceInputs["pingPacketSize"] = undefined /*out*/;
+            resourceInputs["scorePenalty"] = undefined /*out*/;
+            resourceInputs["servermonitorLivenessCount"] = undefined /*out*/;
+            resourceInputs["servermonitorLoadCount"] = undefined /*out*/;
+            resourceInputs["servermonitorPool"] = undefined /*out*/;
+            resourceInputs["virtual"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(GtmDatacenter.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(GtmDatacenter.__pulumiType, name, resourceInputs, opts);
     }
 }
 

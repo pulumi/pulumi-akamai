@@ -88,19 +88,16 @@ def get_property(name: Optional[str] = None,
         version=1)
     pulumi.export("myPropertyID", example)
     ```
-    ## Argument reference
-
-    This data source supports these arguments:
-
-    * `name` - (Required) The property name.
-    * `version` - (Optional) The version of the property whose ID you want to list.
-
     ## Attributes reference
 
     This data source returns these attributes:
 
     * `property_ID` - A property's unique identifier, including the `prp_` prefix.
     * `rules` - A JSON-encoded rule tree for a given property.
+
+
+    :param str name: - (Required) The property name.
+    :param int version: - (Optional) The version of the property whose ID you want to list.
     """
     __args__ = dict()
     __args__['name'] = name
@@ -137,18 +134,15 @@ def get_property_output(name: Optional[pulumi.Input[str]] = None,
         version=1)
     pulumi.export("myPropertyID", example)
     ```
-    ## Argument reference
-
-    This data source supports these arguments:
-
-    * `name` - (Required) The property name.
-    * `version` - (Optional) The version of the property whose ID you want to list.
-
     ## Attributes reference
 
     This data source returns these attributes:
 
     * `property_ID` - A property's unique identifier, including the `prp_` prefix.
     * `rules` - A JSON-encoded rule tree for a given property.
+
+
+    :param str name: - (Required) The property name.
+    :param int version: - (Optional) The version of the property whose ID you want to list.
     """
     ...

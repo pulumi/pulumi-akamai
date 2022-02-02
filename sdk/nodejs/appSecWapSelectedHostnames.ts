@@ -52,14 +52,14 @@ export class AppSecWapSelectedHostnames extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecWapSelectedHostnamesArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecWapSelectedHostnamesArgs | AppSecWapSelectedHostnamesState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecWapSelectedHostnamesState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["evaluatedHosts"] = state ? state.evaluatedHosts : undefined;
-            inputs["protectedHosts"] = state ? state.protectedHosts : undefined;
-            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["evaluatedHosts"] = state ? state.evaluatedHosts : undefined;
+            resourceInputs["protectedHosts"] = state ? state.protectedHosts : undefined;
+            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
         } else {
             const args = argsOrState as AppSecWapSelectedHostnamesArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -68,15 +68,13 @@ export class AppSecWapSelectedHostnames extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["evaluatedHosts"] = args ? args.evaluatedHosts : undefined;
-            inputs["protectedHosts"] = args ? args.protectedHosts : undefined;
-            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["evaluatedHosts"] = args ? args.evaluatedHosts : undefined;
+            resourceInputs["protectedHosts"] = args ? args.protectedHosts : undefined;
+            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecWapSelectedHostnames.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecWapSelectedHostnames.__pulumiType, name, resourceInputs, opts);
     }
 }
 

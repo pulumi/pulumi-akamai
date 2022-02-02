@@ -75,24 +75,22 @@ export class AppSecMatchTargetSequence extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecMatchTargetSequenceArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecMatchTargetSequenceArgs | AppSecMatchTargetSequenceState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecMatchTargetSequenceState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["matchTargetSequence"] = state ? state.matchTargetSequence : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["matchTargetSequence"] = state ? state.matchTargetSequence : undefined;
         } else {
             const args = argsOrState as AppSecMatchTargetSequenceArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["matchTargetSequence"] = args ? args.matchTargetSequence : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["matchTargetSequence"] = args ? args.matchTargetSequence : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecMatchTargetSequence.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecMatchTargetSequence.__pulumiType, name, resourceInputs, opts);
     }
 }
 

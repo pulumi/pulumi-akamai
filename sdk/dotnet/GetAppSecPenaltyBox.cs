@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -70,7 +69,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of penalty box protection settings.
         /// </summary>
         public static Task<GetAppSecPenaltyBoxResult> InvokeAsync(GetAppSecPenaltyBoxArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecPenaltyBoxResult>("akamai:index/getAppSecPenaltyBox:getAppSecPenaltyBox", args ?? new GetAppSecPenaltyBoxArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecPenaltyBoxResult>("akamai:index/getAppSecPenaltyBox:getAppSecPenaltyBox", args ?? new GetAppSecPenaltyBoxArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy
@@ -130,7 +129,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of penalty box protection settings.
         /// </summary>
         public static Output<GetAppSecPenaltyBoxResult> Invoke(GetAppSecPenaltyBoxInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecPenaltyBoxResult>("akamai:index/getAppSecPenaltyBox:getAppSecPenaltyBox", args ?? new GetAppSecPenaltyBoxInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecPenaltyBoxResult>("akamai:index/getAppSecPenaltyBox:getAppSecPenaltyBox", args ?? new GetAppSecPenaltyBoxInvokeArgs(), options.WithDefaults());
     }
 
 

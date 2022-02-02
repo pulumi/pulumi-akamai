@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -53,7 +52,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the ID and name of the API endpoints.
         /// </summary>
         public static Task<GetAppSecApiEndpointsResult> InvokeAsync(GetAppSecApiEndpointsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecApiEndpointsResult>("akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints", args ?? new GetAppSecApiEndpointsArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecApiEndpointsResult>("akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints", args ?? new GetAppSecApiEndpointsArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; security policy
@@ -96,7 +95,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the ID and name of the API endpoints.
         /// </summary>
         public static Output<GetAppSecApiEndpointsResult> Invoke(GetAppSecApiEndpointsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecApiEndpointsResult>("akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints", args ?? new GetAppSecApiEndpointsInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecApiEndpointsResult>("akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints", args ?? new GetAppSecApiEndpointsInvokeArgs(), options.WithDefaults());
     }
 
 

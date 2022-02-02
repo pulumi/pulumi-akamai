@@ -46,9 +46,7 @@ export function getAppSecAdvancedSettingsLogging(args: GetAppSecAdvancedSettings
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecAdvancedSettingsLogging:getAppSecAdvancedSettingsLogging", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,

@@ -41,9 +41,7 @@ export function getAppSecFailoverHostnames(args: GetAppSecFailoverHostnamesArgs,
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", {
         "configId": args.configId,
     }, opts);

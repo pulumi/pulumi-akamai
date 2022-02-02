@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -72,7 +71,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the logging settings.
         /// </summary>
         public static Task<GetAppSecAdvancedSettingsLoggingResult> InvokeAsync(GetAppSecAdvancedSettingsLoggingArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAdvancedSettingsLoggingResult>("akamai:index/getAppSecAdvancedSettingsLogging:getAppSecAdvancedSettingsLogging", args ?? new GetAppSecAdvancedSettingsLoggingArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAdvancedSettingsLoggingResult>("akamai:index/getAppSecAdvancedSettingsLogging:getAppSecAdvancedSettingsLogging", args ?? new GetAppSecAdvancedSettingsLoggingArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; security policy
@@ -134,7 +133,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the logging settings.
         /// </summary>
         public static Output<GetAppSecAdvancedSettingsLoggingResult> Invoke(GetAppSecAdvancedSettingsLoggingInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsLoggingResult>("akamai:index/getAppSecAdvancedSettingsLogging:getAppSecAdvancedSettingsLogging", args ?? new GetAppSecAdvancedSettingsLoggingInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsLoggingResult>("akamai:index/getAppSecAdvancedSettingsLogging:getAppSecAdvancedSettingsLogging", args ?? new GetAppSecAdvancedSettingsLoggingInvokeArgs(), options.WithDefaults());
     }
 
 

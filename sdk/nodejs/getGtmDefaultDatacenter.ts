@@ -7,13 +7,6 @@ import * as utilities from "./utilities";
 /**
  * Use the `akamai.getGtmDefaultDatacenter` data source to retrieve the default data center, ID, and nickname.
  *
- * ## Argument reference
- *
- * This data source supports these arguments:
- *
- * * `domain` - (Required)
- * * `datacenter` - (Optional) The default is `5400`.
- *
  * ## Attributes reference
  *
  * This data source supports these attributes:
@@ -27,9 +20,7 @@ export function getGtmDefaultDatacenter(args: GetGtmDefaultDatacenterArgs, opts?
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getGtmDefaultDatacenter:getGtmDefaultDatacenter", {
         "datacenter": args.datacenter,
         "domain": args.domain,
@@ -40,6 +31,9 @@ export function getGtmDefaultDatacenter(args: GetGtmDefaultDatacenterArgs, opts?
  * A collection of arguments for invoking getGtmDefaultDatacenter.
  */
 export interface GetGtmDefaultDatacenterArgs {
+    /**
+     * The default is `5400`.
+     */
     datacenter?: number;
     domain: string;
 }
@@ -66,6 +60,9 @@ export function getGtmDefaultDatacenterOutput(args: GetGtmDefaultDatacenterOutpu
  * A collection of arguments for invoking getGtmDefaultDatacenter.
  */
 export interface GetGtmDefaultDatacenterOutputArgs {
+    /**
+     * The default is `5400`.
+     */
     datacenter?: pulumi.Input<number>;
     domain: pulumi.Input<string>;
 }

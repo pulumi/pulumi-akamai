@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -14,13 +13,6 @@ namespace Pulumi.Akamai
     {
         /// <summary>
         /// Use the `akamai.getGtmDefaultDatacenter` data source to retrieve the default data center, ID, and nickname.
-        /// 
-        /// ## Argument reference
-        /// 
-        /// This data source supports these arguments:
-        /// 
-        /// * `domain` - (Required)
-        /// * `datacenter` - (Optional) The default is `5400`.
         /// 
         /// ## Attributes reference
         /// 
@@ -31,17 +23,10 @@ namespace Pulumi.Akamai
         /// * `nickname` - The default data center nickname.
         /// </summary>
         public static Task<GetGtmDefaultDatacenterResult> InvokeAsync(GetGtmDefaultDatacenterArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetGtmDefaultDatacenterResult>("akamai:index/getGtmDefaultDatacenter:getGtmDefaultDatacenter", args ?? new GetGtmDefaultDatacenterArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetGtmDefaultDatacenterResult>("akamai:index/getGtmDefaultDatacenter:getGtmDefaultDatacenter", args ?? new GetGtmDefaultDatacenterArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.getGtmDefaultDatacenter` data source to retrieve the default data center, ID, and nickname.
-        /// 
-        /// ## Argument reference
-        /// 
-        /// This data source supports these arguments:
-        /// 
-        /// * `domain` - (Required)
-        /// * `datacenter` - (Optional) The default is `5400`.
         /// 
         /// ## Attributes reference
         /// 
@@ -52,12 +37,15 @@ namespace Pulumi.Akamai
         /// * `nickname` - The default data center nickname.
         /// </summary>
         public static Output<GetGtmDefaultDatacenterResult> Invoke(GetGtmDefaultDatacenterInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetGtmDefaultDatacenterResult>("akamai:index/getGtmDefaultDatacenter:getGtmDefaultDatacenter", args ?? new GetGtmDefaultDatacenterInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetGtmDefaultDatacenterResult>("akamai:index/getGtmDefaultDatacenter:getGtmDefaultDatacenter", args ?? new GetGtmDefaultDatacenterInvokeArgs(), options.WithDefaults());
     }
 
 
     public sealed class GetGtmDefaultDatacenterArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The default is `5400`.
+        /// </summary>
         [Input("datacenter")]
         public int? Datacenter { get; set; }
 
@@ -71,6 +59,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetGtmDefaultDatacenterInvokeArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The default is `5400`.
+        /// </summary>
         [Input("datacenter")]
         public Input<int>? Datacenter { get; set; }
 

@@ -73,12 +73,12 @@ export class NetworkListSubscription extends pulumi.CustomResource {
      */
     constructor(name: string, args: NetworkListSubscriptionArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: NetworkListSubscriptionArgs | NetworkListSubscriptionState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkListSubscriptionState | undefined;
-            inputs["networkLists"] = state ? state.networkLists : undefined;
-            inputs["recipients"] = state ? state.recipients : undefined;
+            resourceInputs["networkLists"] = state ? state.networkLists : undefined;
+            resourceInputs["recipients"] = state ? state.recipients : undefined;
         } else {
             const args = argsOrState as NetworkListSubscriptionArgs | undefined;
             if ((!args || args.networkLists === undefined) && !opts.urn) {
@@ -87,13 +87,11 @@ export class NetworkListSubscription extends pulumi.CustomResource {
             if ((!args || args.recipients === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'recipients'");
             }
-            inputs["networkLists"] = args ? args.networkLists : undefined;
-            inputs["recipients"] = args ? args.recipients : undefined;
+            resourceInputs["networkLists"] = args ? args.networkLists : undefined;
+            resourceInputs["recipients"] = args ? args.recipients : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(NetworkListSubscription.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(NetworkListSubscription.__pulumiType, name, resourceInputs, opts);
     }
 }
 

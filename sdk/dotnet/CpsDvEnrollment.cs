@@ -115,91 +115,6 @@ namespace Pulumi.Akamai
     ///     public Output&lt;string&gt; EnrollmentId { get; set; }
     /// }
     /// ```
-    /// ## Argument reference
-    /// 
-    /// The following arguments are supported:
-    /// 
-    /// * `contract_id` - (Required) A contract's ID, optionally with the `ctr_` prefix.
-    /// * `common_name` - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
-    /// * `sans` - (Optional) Additional common names to create a Subject Alternative Names (SAN) list.
-    /// * `secure_network` - (Required) The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai's standard secure network, but it isn't PCI compliant. `enhanced-tls` deploys your certificate to Akamai's more secure network with PCI compliance capability.
-    /// * `sni_only` - (Required) Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can't change this setting once an enrollment is created.
-    /// * `acknowledge_pre_verification_warnings` - (Optional) Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
-    /// * `admin_contact` - (Required) Contact information for the certificate administrator at your company.
-    ///   
-    ///   Requires these additional arguments:
-    ///   
-    ///       * `first_name` - (Required) The first name of the certificate administrator at your company.
-    ///       * `last_name` - (Required) The last name of the certificate administrator at your company.
-    ///       * `title` - (Optional) The title of the certificate administrator at your company.
-    ///       * `organization` - (Required) The name of your organization.
-    ///       * `email` - (Required) The email address of the administrator who you want to use as a contact at your company.
-    ///       * `phone` - (Required) The phone number of your organization.
-    ///       * `address_line_one` - (Required) The address of your organization.
-    ///       * `address_line_two` - (Optional) The address of your organization.
-    ///       * `city` - (Required) The city where your organization resides.
-    ///       * `region` - (Required) The region of your organization, typically a state or province.
-    ///       * `postal_code` - (Required) The postal code of your organization.
-    ///       * `country_code` - (Required) The code for the counrty where your organization resides.
-    /// * `certificate_chain_type` - (Optional) Certificate trust chain type.
-    /// * `csr` - (Required) 	When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
-    ///   
-    ///   Requires these additional arguments:
-    ///   
-    ///       * `country_code` - (Required) The country code for the country where your organization is located.
-    ///       * `city` - (Required) The city where your organization resides.
-    ///       * `organization` - (Required The name of your company or organization. Enter the name as it appears in all legal documents and as it appears in the legal entity filing.
-    ///       * `organizational_unit` - (Required) Your organizational unit.
-    ///       * `state` - (Required) 	Your state or province.
-    /// * `enable_multi_stacked_certificates` - (Optional) Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
-    /// * `network_configuration` - (Required) The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
-    ///   
-    ///   Requires these additional arguments:
-    ///   
-    ///       * `client_mutual_authentication` - (Optional) The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
-    ///       
-    ///         Requires these additional arguments:
-    ///       
-    ///          * `send_ca_list_to_client` - (Optional) Whether you want to enable the server to send the certificate authority (CA) list to the client.
-    ///          * `ocsp_enabled` - (Optional) Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
-    ///          * `set_id` - (Optional) The identifier of the set of trust chains, created in the [Trust Chain Manager](https://developer.akamai.com/api/web_performance/trust_chain_manager/v1.html).
-    ///       * `disallowed_tls_versions` - (Optional) The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
-    ///       * `clone_dns_names` - (Optional) Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
-    ///       * `geography` - (Required) Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
-    ///       * `must_have_ciphers` - (Optional) The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
-    ///       * `ocsp_stapling` - (Optional) Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
-    ///       * `preferred_ciphers` - (Optional) Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
-    ///       * `quic_enabled` - (Optional) Whether to use the QUIC transport layer network protocol.
-    /// * `signature_algorithm` - (Required) The Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
-    /// * `tech_contact` - (Required) The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `admin_contact`.
-    ///   
-    ///   Requires these additional arguments:
-    ///   
-    ///       * `first_name` - (Required) The first name of the technical contact at Akamai.
-    ///       * `last_name` - (Required) The last name of the technical contact at Akamai.
-    ///       * `title` - (Optional) The title of the technical contact at Akamai.
-    ///       * `organization` - (Required) The name of the organization in Akamai where your technical contact works.
-    ///       * `email` - (Required) The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
-    ///       * `phone` - (Required) The phone number of the technical contact at Akamai.
-    ///       * `address_line_one` - (Required) The address for the technical contact at Akamai.
-    ///       * `address_line_two` - (Optional) The address for the technical contact at Akamai.
-    ///       * `city` - (Required) The address for the technical contact at Akamai.
-    ///       * `region` - (Required) The region for the technical contact at Akamai.
-    ///       * `postal_code` - (Required) The postal code for the technical contact at Akamai.
-    ///       * `country_code` - (Required) The country code for the technical contact at Akamai.
-    /// * `organization` - (Required) Your organization information.
-    ///   
-    ///   Requires these additional arguments:
-    ///   
-    ///       * `name` - (Required) The name of your organization.
-    ///       * `phone` - (Required) The phone number of the administrator who you want to use as a contact at your company.
-    ///       * `address_line_one` - (Required) The address of your organization.
-    ///       * `address_line_two` - (Optional) The address of your organization.
-    ///       * `city` - (Required) The city where your organization resides.
-    ///       * `region` - (Required) The region of your organization, typically a state or province.
-    ///       * `postal_code` - (Required) The postal code of your organization.
-    ///       * `country_code` - (Required) The code for the country where your organization resides.
-    /// 
     /// ## Attributes reference
     /// 
     /// The resource returns these attributes:
@@ -236,57 +151,99 @@ namespace Pulumi.Akamai
     [AkamaiResourceType("akamai:index/cpsDvEnrollment:CpsDvEnrollment")]
     public partial class CpsDvEnrollment : Pulumi.CustomResource
     {
+        /// <summary>
+        /// Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
+        /// </summary>
         [Output("acknowledgePreVerificationWarnings")]
         public Output<bool?> AcknowledgePreVerificationWarnings { get; private set; } = null!;
 
+        /// <summary>
+        /// Contact information for the certificate administrator at your company.
+        /// </summary>
         [Output("adminContact")]
         public Output<Outputs.CpsDvEnrollmentAdminContact> AdminContact { get; private set; } = null!;
 
+        /// <summary>
+        /// Certificate trust chain type.
+        /// </summary>
         [Output("certificateChainType")]
         public Output<string?> CertificateChainType { get; private set; } = null!;
 
         [Output("certificateType")]
         public Output<string> CertificateType { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+        /// </summary>
         [Output("commonName")]
         public Output<string> CommonName { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) A contract's ID, optionally with the `ctr_` prefix.
+        /// </summary>
         [Output("contractId")]
         public Output<string> ContractId { get; private set; } = null!;
 
+        /// <summary>
+        /// When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+        /// </summary>
         [Output("csr")]
         public Output<Outputs.CpsDvEnrollmentCsr> Csr { get; private set; } = null!;
 
         [Output("dnsChallenges")]
         public Output<ImmutableArray<Outputs.CpsDvEnrollmentDnsChallenge>> DnsChallenges { get; private set; } = null!;
 
+        /// <summary>
+        /// Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
+        /// </summary>
         [Output("enableMultiStackedCertificates")]
         public Output<bool?> EnableMultiStackedCertificates { get; private set; } = null!;
 
         [Output("httpChallenges")]
         public Output<ImmutableArray<Outputs.CpsDvEnrollmentHttpChallenge>> HttpChallenges { get; private set; } = null!;
 
+        /// <summary>
+        /// The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+        /// </summary>
         [Output("networkConfiguration")]
         public Output<Outputs.CpsDvEnrollmentNetworkConfiguration> NetworkConfiguration { get; private set; } = null!;
 
+        /// <summary>
+        /// Your organization information.
+        /// </summary>
         [Output("organization")]
         public Output<Outputs.CpsDvEnrollmentOrganization> Organization { get; private set; } = null!;
 
         [Output("registrationAuthority")]
         public Output<string> RegistrationAuthority { get; private set; } = null!;
 
+        /// <summary>
+        /// Additional common names to create a Subject Alternative Names (SAN) list.
+        /// </summary>
         [Output("sans")]
         public Output<ImmutableArray<string>> Sans { get; private set; } = null!;
 
+        /// <summary>
+        /// The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai's standard secure network, but it isn't PCI compliant. `enhanced-tls` deploys your certificate to Akamai's more secure network with PCI compliance capability.
+        /// </summary>
         [Output("secureNetwork")]
         public Output<string> SecureNetwork { get; private set; } = null!;
 
+        /// <summary>
+        /// The Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
+        /// </summary>
         [Output("signatureAlgorithm")]
         public Output<string> SignatureAlgorithm { get; private set; } = null!;
 
+        /// <summary>
+        /// Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can't change this setting once an enrollment is created.
+        /// </summary>
         [Output("sniOnly")]
         public Output<bool> SniOnly { get; private set; } = null!;
 
+        /// <summary>
+        /// The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `admin_contact`.
+        /// </summary>
         [Output("techContact")]
         public Output<Outputs.CpsDvEnrollmentTechContact> TechContact { get; private set; } = null!;
 
@@ -339,50 +296,93 @@ namespace Pulumi.Akamai
 
     public sealed class CpsDvEnrollmentArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
+        /// </summary>
         [Input("acknowledgePreVerificationWarnings")]
         public Input<bool>? AcknowledgePreVerificationWarnings { get; set; }
 
+        /// <summary>
+        /// Contact information for the certificate administrator at your company.
+        /// </summary>
         [Input("adminContact", required: true)]
         public Input<Inputs.CpsDvEnrollmentAdminContactArgs> AdminContact { get; set; } = null!;
 
+        /// <summary>
+        /// Certificate trust chain type.
+        /// </summary>
         [Input("certificateChainType")]
         public Input<string>? CertificateChainType { get; set; }
 
+        /// <summary>
+        /// - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+        /// </summary>
         [Input("commonName", required: true)]
         public Input<string> CommonName { get; set; } = null!;
 
+        /// <summary>
+        /// - (Required) A contract's ID, optionally with the `ctr_` prefix.
+        /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
+        /// <summary>
+        /// When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+        /// </summary>
         [Input("csr", required: true)]
         public Input<Inputs.CpsDvEnrollmentCsrArgs> Csr { get; set; } = null!;
 
+        /// <summary>
+        /// Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
+        /// </summary>
         [Input("enableMultiStackedCertificates")]
         public Input<bool>? EnableMultiStackedCertificates { get; set; }
 
+        /// <summary>
+        /// The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+        /// </summary>
         [Input("networkConfiguration", required: true)]
         public Input<Inputs.CpsDvEnrollmentNetworkConfigurationArgs> NetworkConfiguration { get; set; } = null!;
 
+        /// <summary>
+        /// Your organization information.
+        /// </summary>
         [Input("organization", required: true)]
         public Input<Inputs.CpsDvEnrollmentOrganizationArgs> Organization { get; set; } = null!;
 
         [Input("sans")]
         private InputList<string>? _sans;
+
+        /// <summary>
+        /// Additional common names to create a Subject Alternative Names (SAN) list.
+        /// </summary>
         public InputList<string> Sans
         {
             get => _sans ?? (_sans = new InputList<string>());
             set => _sans = value;
         }
 
+        /// <summary>
+        /// The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai's standard secure network, but it isn't PCI compliant. `enhanced-tls` deploys your certificate to Akamai's more secure network with PCI compliance capability.
+        /// </summary>
         [Input("secureNetwork", required: true)]
         public Input<string> SecureNetwork { get; set; } = null!;
 
+        /// <summary>
+        /// The Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
+        /// </summary>
         [Input("signatureAlgorithm", required: true)]
         public Input<string> SignatureAlgorithm { get; set; } = null!;
 
+        /// <summary>
+        /// Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can't change this setting once an enrollment is created.
+        /// </summary>
         [Input("sniOnly", required: true)]
         public Input<bool> SniOnly { get; set; } = null!;
 
+        /// <summary>
+        /// The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `admin_contact`.
+        /// </summary>
         [Input("techContact", required: true)]
         public Input<Inputs.CpsDvEnrollmentTechContactArgs> TechContact { get; set; } = null!;
 
@@ -393,24 +393,42 @@ namespace Pulumi.Akamai
 
     public sealed class CpsDvEnrollmentState : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
+        /// </summary>
         [Input("acknowledgePreVerificationWarnings")]
         public Input<bool>? AcknowledgePreVerificationWarnings { get; set; }
 
+        /// <summary>
+        /// Contact information for the certificate administrator at your company.
+        /// </summary>
         [Input("adminContact")]
         public Input<Inputs.CpsDvEnrollmentAdminContactGetArgs>? AdminContact { get; set; }
 
+        /// <summary>
+        /// Certificate trust chain type.
+        /// </summary>
         [Input("certificateChainType")]
         public Input<string>? CertificateChainType { get; set; }
 
         [Input("certificateType")]
         public Input<string>? CertificateType { get; set; }
 
+        /// <summary>
+        /// - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+        /// </summary>
         [Input("commonName")]
         public Input<string>? CommonName { get; set; }
 
+        /// <summary>
+        /// - (Required) A contract's ID, optionally with the `ctr_` prefix.
+        /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
 
+        /// <summary>
+        /// When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+        /// </summary>
         [Input("csr")]
         public Input<Inputs.CpsDvEnrollmentCsrGetArgs>? Csr { get; set; }
 
@@ -422,6 +440,9 @@ namespace Pulumi.Akamai
             set => _dnsChallenges = value;
         }
 
+        /// <summary>
+        /// Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
+        /// </summary>
         [Input("enableMultiStackedCertificates")]
         public Input<bool>? EnableMultiStackedCertificates { get; set; }
 
@@ -433,9 +454,15 @@ namespace Pulumi.Akamai
             set => _httpChallenges = value;
         }
 
+        /// <summary>
+        /// The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+        /// </summary>
         [Input("networkConfiguration")]
         public Input<Inputs.CpsDvEnrollmentNetworkConfigurationGetArgs>? NetworkConfiguration { get; set; }
 
+        /// <summary>
+        /// Your organization information.
+        /// </summary>
         [Input("organization")]
         public Input<Inputs.CpsDvEnrollmentOrganizationGetArgs>? Organization { get; set; }
 
@@ -444,21 +471,37 @@ namespace Pulumi.Akamai
 
         [Input("sans")]
         private InputList<string>? _sans;
+
+        /// <summary>
+        /// Additional common names to create a Subject Alternative Names (SAN) list.
+        /// </summary>
         public InputList<string> Sans
         {
             get => _sans ?? (_sans = new InputList<string>());
             set => _sans = value;
         }
 
+        /// <summary>
+        /// The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai's standard secure network, but it isn't PCI compliant. `enhanced-tls` deploys your certificate to Akamai's more secure network with PCI compliance capability.
+        /// </summary>
         [Input("secureNetwork")]
         public Input<string>? SecureNetwork { get; set; }
 
+        /// <summary>
+        /// The Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
+        /// </summary>
         [Input("signatureAlgorithm")]
         public Input<string>? SignatureAlgorithm { get; set; }
 
+        /// <summary>
+        /// Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can't change this setting once an enrollment is created.
+        /// </summary>
         [Input("sniOnly")]
         public Input<bool>? SniOnly { get; set; }
 
+        /// <summary>
+        /// The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `admin_contact`.
+        /// </summary>
         [Input("techContact")]
         public Input<Inputs.CpsDvEnrollmentTechContactGetArgs>? TechContact { get; set; }
 

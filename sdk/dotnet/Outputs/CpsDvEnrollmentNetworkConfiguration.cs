@@ -13,13 +13,37 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class CpsDvEnrollmentNetworkConfiguration
     {
+        /// <summary>
+        /// The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
+        /// </summary>
         public readonly Outputs.CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication? ClientMutualAuthentication;
+        /// <summary>
+        /// Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
+        /// </summary>
         public readonly bool? CloneDnsNames;
+        /// <summary>
+        /// The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
+        /// </summary>
         public readonly ImmutableArray<string> DisallowedTlsVersions;
+        /// <summary>
+        /// Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
+        /// </summary>
         public readonly string Geography;
+        /// <summary>
+        /// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+        /// </summary>
         public readonly string? MustHaveCiphers;
+        /// <summary>
+        /// Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
+        /// </summary>
         public readonly string? OcspStapling;
+        /// <summary>
+        /// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+        /// </summary>
         public readonly string? PreferredCiphers;
+        /// <summary>
+        /// Whether to use the QUIC transport layer network protocol.
+        /// </summary>
         public readonly bool? QuicEnabled;
 
         [OutputConstructor]

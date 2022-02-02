@@ -11,18 +11,30 @@ import (
 )
 
 type CpsDvEnrollmentAdminContact struct {
-	AddressLineOne string  `pulumi:"addressLineOne"`
+	// The address of your organization.
+	AddressLineOne string `pulumi:"addressLineOne"`
+	// The address of your organization.
 	AddressLineTwo *string `pulumi:"addressLineTwo"`
-	City           string  `pulumi:"city"`
-	CountryCode    string  `pulumi:"countryCode"`
-	Email          string  `pulumi:"email"`
-	FirstName      string  `pulumi:"firstName"`
-	LastName       string  `pulumi:"lastName"`
-	Organization   string  `pulumi:"organization"`
-	Phone          string  `pulumi:"phone"`
-	PostalCode     string  `pulumi:"postalCode"`
-	Region         string  `pulumi:"region"`
-	Title          *string `pulumi:"title"`
+	// The city where your organization resides.
+	City string `pulumi:"city"`
+	// The code for the country where your organization resides.
+	CountryCode string `pulumi:"countryCode"`
+	// The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+	Email string `pulumi:"email"`
+	// The first name of the technical contact at Akamai.
+	FirstName string `pulumi:"firstName"`
+	// The last name of the technical contact at Akamai.
+	LastName string `pulumi:"lastName"`
+	// Your organization information.
+	Organization string `pulumi:"organization"`
+	// The phone number of the administrator who you want to use as a contact at your company.
+	Phone string `pulumi:"phone"`
+	// The postal code of your organization.
+	PostalCode string `pulumi:"postalCode"`
+	// The region of your organization, typically a state or province.
+	Region string `pulumi:"region"`
+	// The title of the technical contact at Akamai.
+	Title *string `pulumi:"title"`
 }
 
 // CpsDvEnrollmentAdminContactInput is an input type that accepts CpsDvEnrollmentAdminContactArgs and CpsDvEnrollmentAdminContactOutput values.
@@ -37,18 +49,30 @@ type CpsDvEnrollmentAdminContactInput interface {
 }
 
 type CpsDvEnrollmentAdminContactArgs struct {
-	AddressLineOne pulumi.StringInput    `pulumi:"addressLineOne"`
+	// The address of your organization.
+	AddressLineOne pulumi.StringInput `pulumi:"addressLineOne"`
+	// The address of your organization.
 	AddressLineTwo pulumi.StringPtrInput `pulumi:"addressLineTwo"`
-	City           pulumi.StringInput    `pulumi:"city"`
-	CountryCode    pulumi.StringInput    `pulumi:"countryCode"`
-	Email          pulumi.StringInput    `pulumi:"email"`
-	FirstName      pulumi.StringInput    `pulumi:"firstName"`
-	LastName       pulumi.StringInput    `pulumi:"lastName"`
-	Organization   pulumi.StringInput    `pulumi:"organization"`
-	Phone          pulumi.StringInput    `pulumi:"phone"`
-	PostalCode     pulumi.StringInput    `pulumi:"postalCode"`
-	Region         pulumi.StringInput    `pulumi:"region"`
-	Title          pulumi.StringPtrInput `pulumi:"title"`
+	// The city where your organization resides.
+	City pulumi.StringInput `pulumi:"city"`
+	// The code for the country where your organization resides.
+	CountryCode pulumi.StringInput `pulumi:"countryCode"`
+	// The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+	Email pulumi.StringInput `pulumi:"email"`
+	// The first name of the technical contact at Akamai.
+	FirstName pulumi.StringInput `pulumi:"firstName"`
+	// The last name of the technical contact at Akamai.
+	LastName pulumi.StringInput `pulumi:"lastName"`
+	// Your organization information.
+	Organization pulumi.StringInput `pulumi:"organization"`
+	// The phone number of the administrator who you want to use as a contact at your company.
+	Phone pulumi.StringInput `pulumi:"phone"`
+	// The postal code of your organization.
+	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	// The region of your organization, typically a state or province.
+	Region pulumi.StringInput `pulumi:"region"`
+	// The title of the technical contact at Akamai.
+	Title pulumi.StringPtrInput `pulumi:"title"`
 }
 
 func (CpsDvEnrollmentAdminContactArgs) ElementType() reflect.Type {
@@ -128,50 +152,62 @@ func (o CpsDvEnrollmentAdminContactOutput) ToCpsDvEnrollmentAdminContactPtrOutpu
 	}).(CpsDvEnrollmentAdminContactPtrOutput)
 }
 
+// The address of your organization.
 func (o CpsDvEnrollmentAdminContactOutput) AddressLineOne() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.AddressLineOne }).(pulumi.StringOutput)
 }
 
+// The address of your organization.
 func (o CpsDvEnrollmentAdminContactOutput) AddressLineTwo() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) *string { return v.AddressLineTwo }).(pulumi.StringPtrOutput)
 }
 
+// The city where your organization resides.
 func (o CpsDvEnrollmentAdminContactOutput) City() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.City }).(pulumi.StringOutput)
 }
 
+// The code for the country where your organization resides.
 func (o CpsDvEnrollmentAdminContactOutput) CountryCode() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.CountryCode }).(pulumi.StringOutput)
 }
 
+// The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
 func (o CpsDvEnrollmentAdminContactOutput) Email() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.Email }).(pulumi.StringOutput)
 }
 
+// The first name of the technical contact at Akamai.
 func (o CpsDvEnrollmentAdminContactOutput) FirstName() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.FirstName }).(pulumi.StringOutput)
 }
 
+// The last name of the technical contact at Akamai.
 func (o CpsDvEnrollmentAdminContactOutput) LastName() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.LastName }).(pulumi.StringOutput)
 }
 
+// Your organization information.
 func (o CpsDvEnrollmentAdminContactOutput) Organization() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.Organization }).(pulumi.StringOutput)
 }
 
+// The phone number of the administrator who you want to use as a contact at your company.
 func (o CpsDvEnrollmentAdminContactOutput) Phone() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.Phone }).(pulumi.StringOutput)
 }
 
+// The postal code of your organization.
 func (o CpsDvEnrollmentAdminContactOutput) PostalCode() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.PostalCode }).(pulumi.StringOutput)
 }
 
+// The region of your organization, typically a state or province.
 func (o CpsDvEnrollmentAdminContactOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) string { return v.Region }).(pulumi.StringOutput)
 }
 
+// The title of the technical contact at Akamai.
 func (o CpsDvEnrollmentAdminContactOutput) Title() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentAdminContact) *string { return v.Title }).(pulumi.StringPtrOutput)
 }
@@ -200,6 +236,7 @@ func (o CpsDvEnrollmentAdminContactPtrOutput) Elem() CpsDvEnrollmentAdminContact
 	}).(CpsDvEnrollmentAdminContactOutput)
 }
 
+// The address of your organization.
 func (o CpsDvEnrollmentAdminContactPtrOutput) AddressLineOne() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
 		if v == nil {
@@ -209,6 +246,7 @@ func (o CpsDvEnrollmentAdminContactPtrOutput) AddressLineOne() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
+// The address of your organization.
 func (o CpsDvEnrollmentAdminContactPtrOutput) AddressLineTwo() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
 		if v == nil {
@@ -218,6 +256,7 @@ func (o CpsDvEnrollmentAdminContactPtrOutput) AddressLineTwo() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
+// The city where your organization resides.
 func (o CpsDvEnrollmentAdminContactPtrOutput) City() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
 		if v == nil {
@@ -227,6 +266,7 @@ func (o CpsDvEnrollmentAdminContactPtrOutput) City() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The code for the country where your organization resides.
 func (o CpsDvEnrollmentAdminContactPtrOutput) CountryCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
 		if v == nil {
@@ -236,6 +276,7 @@ func (o CpsDvEnrollmentAdminContactPtrOutput) CountryCode() pulumi.StringPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
+// The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
 func (o CpsDvEnrollmentAdminContactPtrOutput) Email() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
 		if v == nil {
@@ -245,6 +286,7 @@ func (o CpsDvEnrollmentAdminContactPtrOutput) Email() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The first name of the technical contact at Akamai.
 func (o CpsDvEnrollmentAdminContactPtrOutput) FirstName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
 		if v == nil {
@@ -254,6 +296,7 @@ func (o CpsDvEnrollmentAdminContactPtrOutput) FirstName() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
+// The last name of the technical contact at Akamai.
 func (o CpsDvEnrollmentAdminContactPtrOutput) LastName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
 		if v == nil {
@@ -263,6 +306,7 @@ func (o CpsDvEnrollmentAdminContactPtrOutput) LastName() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
+// Your organization information.
 func (o CpsDvEnrollmentAdminContactPtrOutput) Organization() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
 		if v == nil {
@@ -272,6 +316,7 @@ func (o CpsDvEnrollmentAdminContactPtrOutput) Organization() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
+// The phone number of the administrator who you want to use as a contact at your company.
 func (o CpsDvEnrollmentAdminContactPtrOutput) Phone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
 		if v == nil {
@@ -281,6 +326,7 @@ func (o CpsDvEnrollmentAdminContactPtrOutput) Phone() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The postal code of your organization.
 func (o CpsDvEnrollmentAdminContactPtrOutput) PostalCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
 		if v == nil {
@@ -290,6 +336,7 @@ func (o CpsDvEnrollmentAdminContactPtrOutput) PostalCode() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
+// The region of your organization, typically a state or province.
 func (o CpsDvEnrollmentAdminContactPtrOutput) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
 		if v == nil {
@@ -299,6 +346,7 @@ func (o CpsDvEnrollmentAdminContactPtrOutput) Region() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The title of the technical contact at Akamai.
 func (o CpsDvEnrollmentAdminContactPtrOutput) Title() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentAdminContact) *string {
 		if v == nil {
@@ -309,11 +357,16 @@ func (o CpsDvEnrollmentAdminContactPtrOutput) Title() pulumi.StringPtrOutput {
 }
 
 type CpsDvEnrollmentCsr struct {
-	City               string `pulumi:"city"`
-	CountryCode        string `pulumi:"countryCode"`
-	Organization       string `pulumi:"organization"`
+	// The city where your organization resides.
+	City string `pulumi:"city"`
+	// The code for the country where your organization resides.
+	CountryCode string `pulumi:"countryCode"`
+	// Your organization information.
+	Organization string `pulumi:"organization"`
+	// Your organizational unit.
 	OrganizationalUnit string `pulumi:"organizationalUnit"`
-	State              string `pulumi:"state"`
+	// Your state or province.
+	State string `pulumi:"state"`
 }
 
 // CpsDvEnrollmentCsrInput is an input type that accepts CpsDvEnrollmentCsrArgs and CpsDvEnrollmentCsrOutput values.
@@ -328,11 +381,16 @@ type CpsDvEnrollmentCsrInput interface {
 }
 
 type CpsDvEnrollmentCsrArgs struct {
-	City               pulumi.StringInput `pulumi:"city"`
-	CountryCode        pulumi.StringInput `pulumi:"countryCode"`
-	Organization       pulumi.StringInput `pulumi:"organization"`
+	// The city where your organization resides.
+	City pulumi.StringInput `pulumi:"city"`
+	// The code for the country where your organization resides.
+	CountryCode pulumi.StringInput `pulumi:"countryCode"`
+	// Your organization information.
+	Organization pulumi.StringInput `pulumi:"organization"`
+	// Your organizational unit.
 	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
-	State              pulumi.StringInput `pulumi:"state"`
+	// Your state or province.
+	State pulumi.StringInput `pulumi:"state"`
 }
 
 func (CpsDvEnrollmentCsrArgs) ElementType() reflect.Type {
@@ -412,22 +470,27 @@ func (o CpsDvEnrollmentCsrOutput) ToCpsDvEnrollmentCsrPtrOutputWithContext(ctx c
 	}).(CpsDvEnrollmentCsrPtrOutput)
 }
 
+// The city where your organization resides.
 func (o CpsDvEnrollmentCsrOutput) City() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentCsr) string { return v.City }).(pulumi.StringOutput)
 }
 
+// The code for the country where your organization resides.
 func (o CpsDvEnrollmentCsrOutput) CountryCode() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentCsr) string { return v.CountryCode }).(pulumi.StringOutput)
 }
 
+// Your organization information.
 func (o CpsDvEnrollmentCsrOutput) Organization() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentCsr) string { return v.Organization }).(pulumi.StringOutput)
 }
 
+// Your organizational unit.
 func (o CpsDvEnrollmentCsrOutput) OrganizationalUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentCsr) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
 }
 
+// Your state or province.
 func (o CpsDvEnrollmentCsrOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentCsr) string { return v.State }).(pulumi.StringOutput)
 }
@@ -456,6 +519,7 @@ func (o CpsDvEnrollmentCsrPtrOutput) Elem() CpsDvEnrollmentCsrOutput {
 	}).(CpsDvEnrollmentCsrOutput)
 }
 
+// The city where your organization resides.
 func (o CpsDvEnrollmentCsrPtrOutput) City() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentCsr) *string {
 		if v == nil {
@@ -465,6 +529,7 @@ func (o CpsDvEnrollmentCsrPtrOutput) City() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The code for the country where your organization resides.
 func (o CpsDvEnrollmentCsrPtrOutput) CountryCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentCsr) *string {
 		if v == nil {
@@ -474,6 +539,7 @@ func (o CpsDvEnrollmentCsrPtrOutput) CountryCode() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Your organization information.
 func (o CpsDvEnrollmentCsrPtrOutput) Organization() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentCsr) *string {
 		if v == nil {
@@ -483,6 +549,7 @@ func (o CpsDvEnrollmentCsrPtrOutput) Organization() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Your organizational unit.
 func (o CpsDvEnrollmentCsrPtrOutput) OrganizationalUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentCsr) *string {
 		if v == nil {
@@ -492,6 +559,7 @@ func (o CpsDvEnrollmentCsrPtrOutput) OrganizationalUnit() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
+// Your state or province.
 func (o CpsDvEnrollmentCsrPtrOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentCsr) *string {
 		if v == nil {
@@ -714,14 +782,22 @@ func (o CpsDvEnrollmentHttpChallengeArrayOutput) Index(i pulumi.IntInput) CpsDvE
 }
 
 type CpsDvEnrollmentNetworkConfiguration struct {
+	// The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
 	ClientMutualAuthentication *CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication `pulumi:"clientMutualAuthentication"`
-	CloneDnsNames              *bool                                                          `pulumi:"cloneDnsNames"`
-	DisallowedTlsVersions      []string                                                       `pulumi:"disallowedTlsVersions"`
-	Geography                  string                                                         `pulumi:"geography"`
-	MustHaveCiphers            *string                                                        `pulumi:"mustHaveCiphers"`
-	OcspStapling               *string                                                        `pulumi:"ocspStapling"`
-	PreferredCiphers           *string                                                        `pulumi:"preferredCiphers"`
-	QuicEnabled                *bool                                                          `pulumi:"quicEnabled"`
+	// Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
+	CloneDnsNames *bool `pulumi:"cloneDnsNames"`
+	// The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
+	DisallowedTlsVersions []string `pulumi:"disallowedTlsVersions"`
+	// Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
+	Geography string `pulumi:"geography"`
+	// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+	MustHaveCiphers *string `pulumi:"mustHaveCiphers"`
+	// Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
+	OcspStapling *string `pulumi:"ocspStapling"`
+	// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+	PreferredCiphers *string `pulumi:"preferredCiphers"`
+	// Whether to use the QUIC transport layer network protocol.
+	QuicEnabled *bool `pulumi:"quicEnabled"`
 }
 
 // CpsDvEnrollmentNetworkConfigurationInput is an input type that accepts CpsDvEnrollmentNetworkConfigurationArgs and CpsDvEnrollmentNetworkConfigurationOutput values.
@@ -736,14 +812,22 @@ type CpsDvEnrollmentNetworkConfigurationInput interface {
 }
 
 type CpsDvEnrollmentNetworkConfigurationArgs struct {
+	// The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
 	ClientMutualAuthentication CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrInput `pulumi:"clientMutualAuthentication"`
-	CloneDnsNames              pulumi.BoolPtrInput                                                   `pulumi:"cloneDnsNames"`
-	DisallowedTlsVersions      pulumi.StringArrayInput                                               `pulumi:"disallowedTlsVersions"`
-	Geography                  pulumi.StringInput                                                    `pulumi:"geography"`
-	MustHaveCiphers            pulumi.StringPtrInput                                                 `pulumi:"mustHaveCiphers"`
-	OcspStapling               pulumi.StringPtrInput                                                 `pulumi:"ocspStapling"`
-	PreferredCiphers           pulumi.StringPtrInput                                                 `pulumi:"preferredCiphers"`
-	QuicEnabled                pulumi.BoolPtrInput                                                   `pulumi:"quicEnabled"`
+	// Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
+	CloneDnsNames pulumi.BoolPtrInput `pulumi:"cloneDnsNames"`
+	// The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
+	DisallowedTlsVersions pulumi.StringArrayInput `pulumi:"disallowedTlsVersions"`
+	// Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
+	Geography pulumi.StringInput `pulumi:"geography"`
+	// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+	MustHaveCiphers pulumi.StringPtrInput `pulumi:"mustHaveCiphers"`
+	// Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
+	OcspStapling pulumi.StringPtrInput `pulumi:"ocspStapling"`
+	// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+	PreferredCiphers pulumi.StringPtrInput `pulumi:"preferredCiphers"`
+	// Whether to use the QUIC transport layer network protocol.
+	QuicEnabled pulumi.BoolPtrInput `pulumi:"quicEnabled"`
 }
 
 func (CpsDvEnrollmentNetworkConfigurationArgs) ElementType() reflect.Type {
@@ -823,36 +907,44 @@ func (o CpsDvEnrollmentNetworkConfigurationOutput) ToCpsDvEnrollmentNetworkConfi
 	}).(CpsDvEnrollmentNetworkConfigurationPtrOutput)
 }
 
+// The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
 func (o CpsDvEnrollmentNetworkConfigurationOutput) ClientMutualAuthentication() CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication {
 		return v.ClientMutualAuthentication
 	}).(CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput)
 }
 
+// Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
 func (o CpsDvEnrollmentNetworkConfigurationOutput) CloneDnsNames() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *bool { return v.CloneDnsNames }).(pulumi.BoolPtrOutput)
 }
 
+// The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
 func (o CpsDvEnrollmentNetworkConfigurationOutput) DisallowedTlsVersions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) []string { return v.DisallowedTlsVersions }).(pulumi.StringArrayOutput)
 }
 
+// Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
 func (o CpsDvEnrollmentNetworkConfigurationOutput) Geography() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) string { return v.Geography }).(pulumi.StringOutput)
 }
 
+// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 func (o CpsDvEnrollmentNetworkConfigurationOutput) MustHaveCiphers() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *string { return v.MustHaveCiphers }).(pulumi.StringPtrOutput)
 }
 
+// Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
 func (o CpsDvEnrollmentNetworkConfigurationOutput) OcspStapling() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *string { return v.OcspStapling }).(pulumi.StringPtrOutput)
 }
 
+// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 func (o CpsDvEnrollmentNetworkConfigurationOutput) PreferredCiphers() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *string { return v.PreferredCiphers }).(pulumi.StringPtrOutput)
 }
 
+// Whether to use the QUIC transport layer network protocol.
 func (o CpsDvEnrollmentNetworkConfigurationOutput) QuicEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *bool { return v.QuicEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -881,6 +973,7 @@ func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) Elem() CpsDvEnrollmentNetw
 	}).(CpsDvEnrollmentNetworkConfigurationOutput)
 }
 
+// The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
 func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) ClientMutualAuthentication() CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) *CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication {
 		if v == nil {
@@ -890,6 +983,7 @@ func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) ClientMutualAuthentication
 	}).(CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput)
 }
 
+// Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
 func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) CloneDnsNames() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) *bool {
 		if v == nil {
@@ -899,6 +993,7 @@ func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) CloneDnsNames() pulumi.Boo
 	}).(pulumi.BoolPtrOutput)
 }
 
+// The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
 func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) DisallowedTlsVersions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) []string {
 		if v == nil {
@@ -908,6 +1003,7 @@ func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) DisallowedTlsVersions() pu
 	}).(pulumi.StringArrayOutput)
 }
 
+// Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
 func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) Geography() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) *string {
 		if v == nil {
@@ -917,6 +1013,7 @@ func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) Geography() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
+// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) MustHaveCiphers() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) *string {
 		if v == nil {
@@ -926,6 +1023,7 @@ func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) MustHaveCiphers() pulumi.S
 	}).(pulumi.StringPtrOutput)
 }
 
+// Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
 func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) OcspStapling() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) *string {
 		if v == nil {
@@ -935,6 +1033,7 @@ func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) OcspStapling() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
+// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) PreferredCiphers() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) *string {
 		if v == nil {
@@ -944,6 +1043,7 @@ func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) PreferredCiphers() pulumi.
 	}).(pulumi.StringPtrOutput)
 }
 
+// Whether to use the QUIC transport layer network protocol.
 func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) QuicEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) *bool {
 		if v == nil {
@@ -954,9 +1054,12 @@ func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) QuicEnabled() pulumi.BoolP
 }
 
 type CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication struct {
-	OcspEnabled        *bool   `pulumi:"ocspEnabled"`
-	SendCaListToClient *bool   `pulumi:"sendCaListToClient"`
-	SetId              *string `pulumi:"setId"`
+	// Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
+	OcspEnabled *bool `pulumi:"ocspEnabled"`
+	// Whether you want to enable the server to send the certificate authority (CA) list to the client.
+	SendCaListToClient *bool `pulumi:"sendCaListToClient"`
+	// The identifier of the set of trust chains, created in the [Trust Chain Manager](https://developer.akamai.com/api/web_performance/trust_chain_manager/v1.html).
+	SetId *string `pulumi:"setId"`
 }
 
 // CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationInput is an input type that accepts CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs and CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput values.
@@ -971,9 +1074,12 @@ type CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationInput interfac
 }
 
 type CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs struct {
-	OcspEnabled        pulumi.BoolPtrInput   `pulumi:"ocspEnabled"`
-	SendCaListToClient pulumi.BoolPtrInput   `pulumi:"sendCaListToClient"`
-	SetId              pulumi.StringPtrInput `pulumi:"setId"`
+	// Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
+	OcspEnabled pulumi.BoolPtrInput `pulumi:"ocspEnabled"`
+	// Whether you want to enable the server to send the certificate authority (CA) list to the client.
+	SendCaListToClient pulumi.BoolPtrInput `pulumi:"sendCaListToClient"`
+	// The identifier of the set of trust chains, created in the [Trust Chain Manager](https://developer.akamai.com/api/web_performance/trust_chain_manager/v1.html).
+	SetId pulumi.StringPtrInput `pulumi:"setId"`
 }
 
 func (CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) ElementType() reflect.Type {
@@ -1053,16 +1159,19 @@ func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) ToC
 	}).(CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput)
 }
 
+// Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
 func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) OcspEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication) *bool { return v.OcspEnabled }).(pulumi.BoolPtrOutput)
 }
 
+// Whether you want to enable the server to send the certificate authority (CA) list to the client.
 func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) SendCaListToClient() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication) *bool {
 		return v.SendCaListToClient
 	}).(pulumi.BoolPtrOutput)
 }
 
+// The identifier of the set of trust chains, created in the [Trust Chain Manager](https://developer.akamai.com/api/web_performance/trust_chain_manager/v1.html).
 func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) SetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication) *string { return v.SetId }).(pulumi.StringPtrOutput)
 }
@@ -1091,6 +1200,7 @@ func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) 
 	}).(CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput)
 }
 
+// Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
 func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) OcspEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication) *bool {
 		if v == nil {
@@ -1100,6 +1210,7 @@ func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) 
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Whether you want to enable the server to send the certificate authority (CA) list to the client.
 func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) SendCaListToClient() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication) *bool {
 		if v == nil {
@@ -1109,6 +1220,7 @@ func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) 
 	}).(pulumi.BoolPtrOutput)
 }
 
+// The identifier of the set of trust chains, created in the [Trust Chain Manager](https://developer.akamai.com/api/web_performance/trust_chain_manager/v1.html).
 func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) SetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication) *string {
 		if v == nil {
@@ -1119,14 +1231,22 @@ func (o CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) 
 }
 
 type CpsDvEnrollmentOrganization struct {
-	AddressLineOne string  `pulumi:"addressLineOne"`
+	// The address of your organization.
+	AddressLineOne string `pulumi:"addressLineOne"`
+	// The address of your organization.
 	AddressLineTwo *string `pulumi:"addressLineTwo"`
-	City           string  `pulumi:"city"`
-	CountryCode    string  `pulumi:"countryCode"`
-	Name           string  `pulumi:"name"`
-	Phone          string  `pulumi:"phone"`
-	PostalCode     string  `pulumi:"postalCode"`
-	Region         string  `pulumi:"region"`
+	// The city where your organization resides.
+	City string `pulumi:"city"`
+	// The code for the country where your organization resides.
+	CountryCode string `pulumi:"countryCode"`
+	// The name of your organization.
+	Name string `pulumi:"name"`
+	// The phone number of the administrator who you want to use as a contact at your company.
+	Phone string `pulumi:"phone"`
+	// The postal code of your organization.
+	PostalCode string `pulumi:"postalCode"`
+	// The region of your organization, typically a state or province.
+	Region string `pulumi:"region"`
 }
 
 // CpsDvEnrollmentOrganizationInput is an input type that accepts CpsDvEnrollmentOrganizationArgs and CpsDvEnrollmentOrganizationOutput values.
@@ -1141,14 +1261,22 @@ type CpsDvEnrollmentOrganizationInput interface {
 }
 
 type CpsDvEnrollmentOrganizationArgs struct {
-	AddressLineOne pulumi.StringInput    `pulumi:"addressLineOne"`
+	// The address of your organization.
+	AddressLineOne pulumi.StringInput `pulumi:"addressLineOne"`
+	// The address of your organization.
 	AddressLineTwo pulumi.StringPtrInput `pulumi:"addressLineTwo"`
-	City           pulumi.StringInput    `pulumi:"city"`
-	CountryCode    pulumi.StringInput    `pulumi:"countryCode"`
-	Name           pulumi.StringInput    `pulumi:"name"`
-	Phone          pulumi.StringInput    `pulumi:"phone"`
-	PostalCode     pulumi.StringInput    `pulumi:"postalCode"`
-	Region         pulumi.StringInput    `pulumi:"region"`
+	// The city where your organization resides.
+	City pulumi.StringInput `pulumi:"city"`
+	// The code for the country where your organization resides.
+	CountryCode pulumi.StringInput `pulumi:"countryCode"`
+	// The name of your organization.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The phone number of the administrator who you want to use as a contact at your company.
+	Phone pulumi.StringInput `pulumi:"phone"`
+	// The postal code of your organization.
+	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	// The region of your organization, typically a state or province.
+	Region pulumi.StringInput `pulumi:"region"`
 }
 
 func (CpsDvEnrollmentOrganizationArgs) ElementType() reflect.Type {
@@ -1228,34 +1356,42 @@ func (o CpsDvEnrollmentOrganizationOutput) ToCpsDvEnrollmentOrganizationPtrOutpu
 	}).(CpsDvEnrollmentOrganizationPtrOutput)
 }
 
+// The address of your organization.
 func (o CpsDvEnrollmentOrganizationOutput) AddressLineOne() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentOrganization) string { return v.AddressLineOne }).(pulumi.StringOutput)
 }
 
+// The address of your organization.
 func (o CpsDvEnrollmentOrganizationOutput) AddressLineTwo() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentOrganization) *string { return v.AddressLineTwo }).(pulumi.StringPtrOutput)
 }
 
+// The city where your organization resides.
 func (o CpsDvEnrollmentOrganizationOutput) City() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentOrganization) string { return v.City }).(pulumi.StringOutput)
 }
 
+// The code for the country where your organization resides.
 func (o CpsDvEnrollmentOrganizationOutput) CountryCode() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentOrganization) string { return v.CountryCode }).(pulumi.StringOutput)
 }
 
+// The name of your organization.
 func (o CpsDvEnrollmentOrganizationOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentOrganization) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// The phone number of the administrator who you want to use as a contact at your company.
 func (o CpsDvEnrollmentOrganizationOutput) Phone() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentOrganization) string { return v.Phone }).(pulumi.StringOutput)
 }
 
+// The postal code of your organization.
 func (o CpsDvEnrollmentOrganizationOutput) PostalCode() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentOrganization) string { return v.PostalCode }).(pulumi.StringOutput)
 }
 
+// The region of your organization, typically a state or province.
 func (o CpsDvEnrollmentOrganizationOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentOrganization) string { return v.Region }).(pulumi.StringOutput)
 }
@@ -1284,6 +1420,7 @@ func (o CpsDvEnrollmentOrganizationPtrOutput) Elem() CpsDvEnrollmentOrganization
 	}).(CpsDvEnrollmentOrganizationOutput)
 }
 
+// The address of your organization.
 func (o CpsDvEnrollmentOrganizationPtrOutput) AddressLineOne() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentOrganization) *string {
 		if v == nil {
@@ -1293,6 +1430,7 @@ func (o CpsDvEnrollmentOrganizationPtrOutput) AddressLineOne() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
+// The address of your organization.
 func (o CpsDvEnrollmentOrganizationPtrOutput) AddressLineTwo() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentOrganization) *string {
 		if v == nil {
@@ -1302,6 +1440,7 @@ func (o CpsDvEnrollmentOrganizationPtrOutput) AddressLineTwo() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
+// The city where your organization resides.
 func (o CpsDvEnrollmentOrganizationPtrOutput) City() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentOrganization) *string {
 		if v == nil {
@@ -1311,6 +1450,7 @@ func (o CpsDvEnrollmentOrganizationPtrOutput) City() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The code for the country where your organization resides.
 func (o CpsDvEnrollmentOrganizationPtrOutput) CountryCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentOrganization) *string {
 		if v == nil {
@@ -1320,6 +1460,7 @@ func (o CpsDvEnrollmentOrganizationPtrOutput) CountryCode() pulumi.StringPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
+// The name of your organization.
 func (o CpsDvEnrollmentOrganizationPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentOrganization) *string {
 		if v == nil {
@@ -1329,6 +1470,7 @@ func (o CpsDvEnrollmentOrganizationPtrOutput) Name() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The phone number of the administrator who you want to use as a contact at your company.
 func (o CpsDvEnrollmentOrganizationPtrOutput) Phone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentOrganization) *string {
 		if v == nil {
@@ -1338,6 +1480,7 @@ func (o CpsDvEnrollmentOrganizationPtrOutput) Phone() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The postal code of your organization.
 func (o CpsDvEnrollmentOrganizationPtrOutput) PostalCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentOrganization) *string {
 		if v == nil {
@@ -1347,6 +1490,7 @@ func (o CpsDvEnrollmentOrganizationPtrOutput) PostalCode() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
+// The region of your organization, typically a state or province.
 func (o CpsDvEnrollmentOrganizationPtrOutput) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentOrganization) *string {
 		if v == nil {
@@ -1357,18 +1501,30 @@ func (o CpsDvEnrollmentOrganizationPtrOutput) Region() pulumi.StringPtrOutput {
 }
 
 type CpsDvEnrollmentTechContact struct {
-	AddressLineOne string  `pulumi:"addressLineOne"`
+	// The address of your organization.
+	AddressLineOne string `pulumi:"addressLineOne"`
+	// The address of your organization.
 	AddressLineTwo *string `pulumi:"addressLineTwo"`
-	City           string  `pulumi:"city"`
-	CountryCode    string  `pulumi:"countryCode"`
-	Email          string  `pulumi:"email"`
-	FirstName      string  `pulumi:"firstName"`
-	LastName       string  `pulumi:"lastName"`
-	Organization   string  `pulumi:"organization"`
-	Phone          string  `pulumi:"phone"`
-	PostalCode     string  `pulumi:"postalCode"`
-	Region         string  `pulumi:"region"`
-	Title          *string `pulumi:"title"`
+	// The city where your organization resides.
+	City string `pulumi:"city"`
+	// The code for the country where your organization resides.
+	CountryCode string `pulumi:"countryCode"`
+	// The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+	Email string `pulumi:"email"`
+	// The first name of the technical contact at Akamai.
+	FirstName string `pulumi:"firstName"`
+	// The last name of the technical contact at Akamai.
+	LastName string `pulumi:"lastName"`
+	// Your organization information.
+	Organization string `pulumi:"organization"`
+	// The phone number of the administrator who you want to use as a contact at your company.
+	Phone string `pulumi:"phone"`
+	// The postal code of your organization.
+	PostalCode string `pulumi:"postalCode"`
+	// The region of your organization, typically a state or province.
+	Region string `pulumi:"region"`
+	// The title of the technical contact at Akamai.
+	Title *string `pulumi:"title"`
 }
 
 // CpsDvEnrollmentTechContactInput is an input type that accepts CpsDvEnrollmentTechContactArgs and CpsDvEnrollmentTechContactOutput values.
@@ -1383,18 +1539,30 @@ type CpsDvEnrollmentTechContactInput interface {
 }
 
 type CpsDvEnrollmentTechContactArgs struct {
-	AddressLineOne pulumi.StringInput    `pulumi:"addressLineOne"`
+	// The address of your organization.
+	AddressLineOne pulumi.StringInput `pulumi:"addressLineOne"`
+	// The address of your organization.
 	AddressLineTwo pulumi.StringPtrInput `pulumi:"addressLineTwo"`
-	City           pulumi.StringInput    `pulumi:"city"`
-	CountryCode    pulumi.StringInput    `pulumi:"countryCode"`
-	Email          pulumi.StringInput    `pulumi:"email"`
-	FirstName      pulumi.StringInput    `pulumi:"firstName"`
-	LastName       pulumi.StringInput    `pulumi:"lastName"`
-	Organization   pulumi.StringInput    `pulumi:"organization"`
-	Phone          pulumi.StringInput    `pulumi:"phone"`
-	PostalCode     pulumi.StringInput    `pulumi:"postalCode"`
-	Region         pulumi.StringInput    `pulumi:"region"`
-	Title          pulumi.StringPtrInput `pulumi:"title"`
+	// The city where your organization resides.
+	City pulumi.StringInput `pulumi:"city"`
+	// The code for the country where your organization resides.
+	CountryCode pulumi.StringInput `pulumi:"countryCode"`
+	// The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+	Email pulumi.StringInput `pulumi:"email"`
+	// The first name of the technical contact at Akamai.
+	FirstName pulumi.StringInput `pulumi:"firstName"`
+	// The last name of the technical contact at Akamai.
+	LastName pulumi.StringInput `pulumi:"lastName"`
+	// Your organization information.
+	Organization pulumi.StringInput `pulumi:"organization"`
+	// The phone number of the administrator who you want to use as a contact at your company.
+	Phone pulumi.StringInput `pulumi:"phone"`
+	// The postal code of your organization.
+	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	// The region of your organization, typically a state or province.
+	Region pulumi.StringInput `pulumi:"region"`
+	// The title of the technical contact at Akamai.
+	Title pulumi.StringPtrInput `pulumi:"title"`
 }
 
 func (CpsDvEnrollmentTechContactArgs) ElementType() reflect.Type {
@@ -1474,50 +1642,62 @@ func (o CpsDvEnrollmentTechContactOutput) ToCpsDvEnrollmentTechContactPtrOutputW
 	}).(CpsDvEnrollmentTechContactPtrOutput)
 }
 
+// The address of your organization.
 func (o CpsDvEnrollmentTechContactOutput) AddressLineOne() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.AddressLineOne }).(pulumi.StringOutput)
 }
 
+// The address of your organization.
 func (o CpsDvEnrollmentTechContactOutput) AddressLineTwo() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentTechContact) *string { return v.AddressLineTwo }).(pulumi.StringPtrOutput)
 }
 
+// The city where your organization resides.
 func (o CpsDvEnrollmentTechContactOutput) City() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.City }).(pulumi.StringOutput)
 }
 
+// The code for the country where your organization resides.
 func (o CpsDvEnrollmentTechContactOutput) CountryCode() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.CountryCode }).(pulumi.StringOutput)
 }
 
+// The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
 func (o CpsDvEnrollmentTechContactOutput) Email() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.Email }).(pulumi.StringOutput)
 }
 
+// The first name of the technical contact at Akamai.
 func (o CpsDvEnrollmentTechContactOutput) FirstName() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.FirstName }).(pulumi.StringOutput)
 }
 
+// The last name of the technical contact at Akamai.
 func (o CpsDvEnrollmentTechContactOutput) LastName() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.LastName }).(pulumi.StringOutput)
 }
 
+// Your organization information.
 func (o CpsDvEnrollmentTechContactOutput) Organization() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.Organization }).(pulumi.StringOutput)
 }
 
+// The phone number of the administrator who you want to use as a contact at your company.
 func (o CpsDvEnrollmentTechContactOutput) Phone() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.Phone }).(pulumi.StringOutput)
 }
 
+// The postal code of your organization.
 func (o CpsDvEnrollmentTechContactOutput) PostalCode() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.PostalCode }).(pulumi.StringOutput)
 }
 
+// The region of your organization, typically a state or province.
 func (o CpsDvEnrollmentTechContactOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentTechContact) string { return v.Region }).(pulumi.StringOutput)
 }
 
+// The title of the technical contact at Akamai.
 func (o CpsDvEnrollmentTechContactOutput) Title() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentTechContact) *string { return v.Title }).(pulumi.StringPtrOutput)
 }
@@ -1546,6 +1726,7 @@ func (o CpsDvEnrollmentTechContactPtrOutput) Elem() CpsDvEnrollmentTechContactOu
 	}).(CpsDvEnrollmentTechContactOutput)
 }
 
+// The address of your organization.
 func (o CpsDvEnrollmentTechContactPtrOutput) AddressLineOne() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
 		if v == nil {
@@ -1555,6 +1736,7 @@ func (o CpsDvEnrollmentTechContactPtrOutput) AddressLineOne() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
+// The address of your organization.
 func (o CpsDvEnrollmentTechContactPtrOutput) AddressLineTwo() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
 		if v == nil {
@@ -1564,6 +1746,7 @@ func (o CpsDvEnrollmentTechContactPtrOutput) AddressLineTwo() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
+// The city where your organization resides.
 func (o CpsDvEnrollmentTechContactPtrOutput) City() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
 		if v == nil {
@@ -1573,6 +1756,7 @@ func (o CpsDvEnrollmentTechContactPtrOutput) City() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The code for the country where your organization resides.
 func (o CpsDvEnrollmentTechContactPtrOutput) CountryCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
 		if v == nil {
@@ -1582,6 +1766,7 @@ func (o CpsDvEnrollmentTechContactPtrOutput) CountryCode() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
+// The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
 func (o CpsDvEnrollmentTechContactPtrOutput) Email() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
 		if v == nil {
@@ -1591,6 +1776,7 @@ func (o CpsDvEnrollmentTechContactPtrOutput) Email() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The first name of the technical contact at Akamai.
 func (o CpsDvEnrollmentTechContactPtrOutput) FirstName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
 		if v == nil {
@@ -1600,6 +1786,7 @@ func (o CpsDvEnrollmentTechContactPtrOutput) FirstName() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
+// The last name of the technical contact at Akamai.
 func (o CpsDvEnrollmentTechContactPtrOutput) LastName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
 		if v == nil {
@@ -1609,6 +1796,7 @@ func (o CpsDvEnrollmentTechContactPtrOutput) LastName() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Your organization information.
 func (o CpsDvEnrollmentTechContactPtrOutput) Organization() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
 		if v == nil {
@@ -1618,6 +1806,7 @@ func (o CpsDvEnrollmentTechContactPtrOutput) Organization() pulumi.StringPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
+// The phone number of the administrator who you want to use as a contact at your company.
 func (o CpsDvEnrollmentTechContactPtrOutput) Phone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
 		if v == nil {
@@ -1627,6 +1816,7 @@ func (o CpsDvEnrollmentTechContactPtrOutput) Phone() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The postal code of your organization.
 func (o CpsDvEnrollmentTechContactPtrOutput) PostalCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
 		if v == nil {
@@ -1636,6 +1826,7 @@ func (o CpsDvEnrollmentTechContactPtrOutput) PostalCode() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
+// The region of your organization, typically a state or province.
 func (o CpsDvEnrollmentTechContactPtrOutput) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
 		if v == nil {
@@ -1645,6 +1836,7 @@ func (o CpsDvEnrollmentTechContactPtrOutput) Region() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The title of the technical contact at Akamai.
 func (o CpsDvEnrollmentTechContactPtrOutput) Title() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentTechContact) *string {
 		if v == nil {
@@ -1655,9 +1847,12 @@ func (o CpsDvEnrollmentTechContactPtrOutput) Title() pulumi.StringPtrOutput {
 }
 
 type DnsZoneTsigKey struct {
+	// The hashing algorithm.
 	Algorithm string `pulumi:"algorithm"`
-	Name      string `pulumi:"name"`
-	Secret    string `pulumi:"secret"`
+	// The key name.
+	Name string `pulumi:"name"`
+	// String known between transfer endpoints.
+	Secret string `pulumi:"secret"`
 }
 
 // DnsZoneTsigKeyInput is an input type that accepts DnsZoneTsigKeyArgs and DnsZoneTsigKeyOutput values.
@@ -1672,9 +1867,12 @@ type DnsZoneTsigKeyInput interface {
 }
 
 type DnsZoneTsigKeyArgs struct {
+	// The hashing algorithm.
 	Algorithm pulumi.StringInput `pulumi:"algorithm"`
-	Name      pulumi.StringInput `pulumi:"name"`
-	Secret    pulumi.StringInput `pulumi:"secret"`
+	// The key name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// String known between transfer endpoints.
+	Secret pulumi.StringInput `pulumi:"secret"`
 }
 
 func (DnsZoneTsigKeyArgs) ElementType() reflect.Type {
@@ -1754,14 +1952,17 @@ func (o DnsZoneTsigKeyOutput) ToDnsZoneTsigKeyPtrOutputWithContext(ctx context.C
 	}).(DnsZoneTsigKeyPtrOutput)
 }
 
+// The hashing algorithm.
 func (o DnsZoneTsigKeyOutput) Algorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v DnsZoneTsigKey) string { return v.Algorithm }).(pulumi.StringOutput)
 }
 
+// The key name.
 func (o DnsZoneTsigKeyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v DnsZoneTsigKey) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// String known between transfer endpoints.
 func (o DnsZoneTsigKeyOutput) Secret() pulumi.StringOutput {
 	return o.ApplyT(func(v DnsZoneTsigKey) string { return v.Secret }).(pulumi.StringOutput)
 }
@@ -1790,6 +1991,7 @@ func (o DnsZoneTsigKeyPtrOutput) Elem() DnsZoneTsigKeyOutput {
 	}).(DnsZoneTsigKeyOutput)
 }
 
+// The hashing algorithm.
 func (o DnsZoneTsigKeyPtrOutput) Algorithm() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DnsZoneTsigKey) *string {
 		if v == nil {
@@ -1799,6 +2001,7 @@ func (o DnsZoneTsigKeyPtrOutput) Algorithm() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The key name.
 func (o DnsZoneTsigKeyPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DnsZoneTsigKey) *string {
 		if v == nil {
@@ -1808,6 +2011,7 @@ func (o DnsZoneTsigKeyPtrOutput) Name() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// String known between transfer endpoints.
 func (o DnsZoneTsigKeyPtrOutput) Secret() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DnsZoneTsigKey) *string {
 		if v == nil {
@@ -1818,9 +2022,12 @@ func (o DnsZoneTsigKeyPtrOutput) Secret() pulumi.StringPtrOutput {
 }
 
 type GtmAsmapAssignment struct {
-	AsNumbers    []int  `pulumi:"asNumbers"`
-	DatacenterId int    `pulumi:"datacenterId"`
-	Nickname     string `pulumi:"nickname"`
+	// Specifies an array of AS numbers.
+	AsNumbers []int `pulumi:"asNumbers"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId int `pulumi:"datacenterId"`
+	// A descriptive label for the group.
+	Nickname string `pulumi:"nickname"`
 }
 
 // GtmAsmapAssignmentInput is an input type that accepts GtmAsmapAssignmentArgs and GtmAsmapAssignmentOutput values.
@@ -1835,9 +2042,12 @@ type GtmAsmapAssignmentInput interface {
 }
 
 type GtmAsmapAssignmentArgs struct {
-	AsNumbers    pulumi.IntArrayInput `pulumi:"asNumbers"`
-	DatacenterId pulumi.IntInput      `pulumi:"datacenterId"`
-	Nickname     pulumi.StringInput   `pulumi:"nickname"`
+	// Specifies an array of AS numbers.
+	AsNumbers pulumi.IntArrayInput `pulumi:"asNumbers"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId pulumi.IntInput `pulumi:"datacenterId"`
+	// A descriptive label for the group.
+	Nickname pulumi.StringInput `pulumi:"nickname"`
 }
 
 func (GtmAsmapAssignmentArgs) ElementType() reflect.Type {
@@ -1891,14 +2101,17 @@ func (o GtmAsmapAssignmentOutput) ToGtmAsmapAssignmentOutputWithContext(ctx cont
 	return o
 }
 
+// Specifies an array of AS numbers.
 func (o GtmAsmapAssignmentOutput) AsNumbers() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v GtmAsmapAssignment) []int { return v.AsNumbers }).(pulumi.IntArrayOutput)
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmAsmapAssignmentOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmAsmapAssignment) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
 
+// A descriptive label for the group.
 func (o GtmAsmapAssignmentOutput) Nickname() pulumi.StringOutput {
 	return o.ApplyT(func(v GtmAsmapAssignment) string { return v.Nickname }).(pulumi.StringOutput)
 }
@@ -1924,8 +2137,10 @@ func (o GtmAsmapAssignmentArrayOutput) Index(i pulumi.IntInput) GtmAsmapAssignme
 }
 
 type GtmAsmapDefaultDatacenter struct {
-	DatacenterId int     `pulumi:"datacenterId"`
-	Nickname     *string `pulumi:"nickname"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId int `pulumi:"datacenterId"`
+	// A descriptive label for the group.
+	Nickname *string `pulumi:"nickname"`
 }
 
 // GtmAsmapDefaultDatacenterInput is an input type that accepts GtmAsmapDefaultDatacenterArgs and GtmAsmapDefaultDatacenterOutput values.
@@ -1940,8 +2155,10 @@ type GtmAsmapDefaultDatacenterInput interface {
 }
 
 type GtmAsmapDefaultDatacenterArgs struct {
-	DatacenterId pulumi.IntInput       `pulumi:"datacenterId"`
-	Nickname     pulumi.StringPtrInput `pulumi:"nickname"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId pulumi.IntInput `pulumi:"datacenterId"`
+	// A descriptive label for the group.
+	Nickname pulumi.StringPtrInput `pulumi:"nickname"`
 }
 
 func (GtmAsmapDefaultDatacenterArgs) ElementType() reflect.Type {
@@ -2021,10 +2238,12 @@ func (o GtmAsmapDefaultDatacenterOutput) ToGtmAsmapDefaultDatacenterPtrOutputWit
 	}).(GtmAsmapDefaultDatacenterPtrOutput)
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmAsmapDefaultDatacenterOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmAsmapDefaultDatacenter) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
 
+// A descriptive label for the group.
 func (o GtmAsmapDefaultDatacenterOutput) Nickname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmAsmapDefaultDatacenter) *string { return v.Nickname }).(pulumi.StringPtrOutput)
 }
@@ -2053,6 +2272,7 @@ func (o GtmAsmapDefaultDatacenterPtrOutput) Elem() GtmAsmapDefaultDatacenterOutp
 	}).(GtmAsmapDefaultDatacenterOutput)
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmAsmapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *GtmAsmapDefaultDatacenter) *int {
 		if v == nil {
@@ -2062,6 +2282,7 @@ func (o GtmAsmapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
+// A descriptive label for the group.
 func (o GtmAsmapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GtmAsmapDefaultDatacenter) *string {
 		if v == nil {
@@ -2072,9 +2293,12 @@ func (o GtmAsmapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput {
 }
 
 type GtmCidrmapAssignment struct {
-	Blocks       []string `pulumi:"blocks"`
-	DatacenterId int      `pulumi:"datacenterId"`
-	Nickname     string   `pulumi:"nickname"`
+	// Specifies an array of CIDR blocks.
+	Blocks []string `pulumi:"blocks"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId int `pulumi:"datacenterId"`
+	// A descriptive label for the CIDR zone group, up to 256 characters.
+	Nickname string `pulumi:"nickname"`
 }
 
 // GtmCidrmapAssignmentInput is an input type that accepts GtmCidrmapAssignmentArgs and GtmCidrmapAssignmentOutput values.
@@ -2089,9 +2313,12 @@ type GtmCidrmapAssignmentInput interface {
 }
 
 type GtmCidrmapAssignmentArgs struct {
-	Blocks       pulumi.StringArrayInput `pulumi:"blocks"`
-	DatacenterId pulumi.IntInput         `pulumi:"datacenterId"`
-	Nickname     pulumi.StringInput      `pulumi:"nickname"`
+	// Specifies an array of CIDR blocks.
+	Blocks pulumi.StringArrayInput `pulumi:"blocks"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId pulumi.IntInput `pulumi:"datacenterId"`
+	// A descriptive label for the CIDR zone group, up to 256 characters.
+	Nickname pulumi.StringInput `pulumi:"nickname"`
 }
 
 func (GtmCidrmapAssignmentArgs) ElementType() reflect.Type {
@@ -2145,14 +2372,17 @@ func (o GtmCidrmapAssignmentOutput) ToGtmCidrmapAssignmentOutputWithContext(ctx 
 	return o
 }
 
+// Specifies an array of CIDR blocks.
 func (o GtmCidrmapAssignmentOutput) Blocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GtmCidrmapAssignment) []string { return v.Blocks }).(pulumi.StringArrayOutput)
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmCidrmapAssignmentOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmCidrmapAssignment) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
 
+// A descriptive label for the CIDR zone group, up to 256 characters.
 func (o GtmCidrmapAssignmentOutput) Nickname() pulumi.StringOutput {
 	return o.ApplyT(func(v GtmCidrmapAssignment) string { return v.Nickname }).(pulumi.StringOutput)
 }
@@ -2178,8 +2408,10 @@ func (o GtmCidrmapAssignmentArrayOutput) Index(i pulumi.IntInput) GtmCidrmapAssi
 }
 
 type GtmCidrmapDefaultDatacenter struct {
-	DatacenterId int     `pulumi:"datacenterId"`
-	Nickname     *string `pulumi:"nickname"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId int `pulumi:"datacenterId"`
+	// A descriptive label for the CIDR zone group, up to 256 characters.
+	Nickname *string `pulumi:"nickname"`
 }
 
 // GtmCidrmapDefaultDatacenterInput is an input type that accepts GtmCidrmapDefaultDatacenterArgs and GtmCidrmapDefaultDatacenterOutput values.
@@ -2194,8 +2426,10 @@ type GtmCidrmapDefaultDatacenterInput interface {
 }
 
 type GtmCidrmapDefaultDatacenterArgs struct {
-	DatacenterId pulumi.IntInput       `pulumi:"datacenterId"`
-	Nickname     pulumi.StringPtrInput `pulumi:"nickname"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId pulumi.IntInput `pulumi:"datacenterId"`
+	// A descriptive label for the CIDR zone group, up to 256 characters.
+	Nickname pulumi.StringPtrInput `pulumi:"nickname"`
 }
 
 func (GtmCidrmapDefaultDatacenterArgs) ElementType() reflect.Type {
@@ -2275,10 +2509,12 @@ func (o GtmCidrmapDefaultDatacenterOutput) ToGtmCidrmapDefaultDatacenterPtrOutpu
 	}).(GtmCidrmapDefaultDatacenterPtrOutput)
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmCidrmapDefaultDatacenterOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmCidrmapDefaultDatacenter) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
 
+// A descriptive label for the CIDR zone group, up to 256 characters.
 func (o GtmCidrmapDefaultDatacenterOutput) Nickname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmCidrmapDefaultDatacenter) *string { return v.Nickname }).(pulumi.StringPtrOutput)
 }
@@ -2307,6 +2543,7 @@ func (o GtmCidrmapDefaultDatacenterPtrOutput) Elem() GtmCidrmapDefaultDatacenter
 	}).(GtmCidrmapDefaultDatacenterOutput)
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmCidrmapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *GtmCidrmapDefaultDatacenter) *int {
 		if v == nil {
@@ -2316,6 +2553,7 @@ func (o GtmCidrmapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput
 	}).(pulumi.IntPtrOutput)
 }
 
+// A descriptive label for the CIDR zone group, up to 256 characters.
 func (o GtmCidrmapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GtmCidrmapDefaultDatacenter) *string {
 		if v == nil {
@@ -2326,9 +2564,12 @@ func (o GtmCidrmapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput 
 }
 
 type GtmDatacenterDefaultLoadObject struct {
-	LoadObject     *string  `pulumi:"loadObject"`
-	LoadObjectPort *int     `pulumi:"loadObjectPort"`
-	LoadServers    []string `pulumi:"loadServers"`
+	// A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
+	LoadObject *string `pulumi:"loadObject"`
+	// Specifies the TCP port to connect to when requesting the load object.
+	LoadObjectPort *int `pulumi:"loadObjectPort"`
+	// Specifies a list of servers to request the load object from.
+	LoadServers []string `pulumi:"loadServers"`
 }
 
 // GtmDatacenterDefaultLoadObjectInput is an input type that accepts GtmDatacenterDefaultLoadObjectArgs and GtmDatacenterDefaultLoadObjectOutput values.
@@ -2343,9 +2584,12 @@ type GtmDatacenterDefaultLoadObjectInput interface {
 }
 
 type GtmDatacenterDefaultLoadObjectArgs struct {
-	LoadObject     pulumi.StringPtrInput   `pulumi:"loadObject"`
-	LoadObjectPort pulumi.IntPtrInput      `pulumi:"loadObjectPort"`
-	LoadServers    pulumi.StringArrayInput `pulumi:"loadServers"`
+	// A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
+	LoadObject pulumi.StringPtrInput `pulumi:"loadObject"`
+	// Specifies the TCP port to connect to when requesting the load object.
+	LoadObjectPort pulumi.IntPtrInput `pulumi:"loadObjectPort"`
+	// Specifies a list of servers to request the load object from.
+	LoadServers pulumi.StringArrayInput `pulumi:"loadServers"`
 }
 
 func (GtmDatacenterDefaultLoadObjectArgs) ElementType() reflect.Type {
@@ -2425,14 +2669,17 @@ func (o GtmDatacenterDefaultLoadObjectOutput) ToGtmDatacenterDefaultLoadObjectPt
 	}).(GtmDatacenterDefaultLoadObjectPtrOutput)
 }
 
+// A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
 func (o GtmDatacenterDefaultLoadObjectOutput) LoadObject() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmDatacenterDefaultLoadObject) *string { return v.LoadObject }).(pulumi.StringPtrOutput)
 }
 
+// Specifies the TCP port to connect to when requesting the load object.
 func (o GtmDatacenterDefaultLoadObjectOutput) LoadObjectPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GtmDatacenterDefaultLoadObject) *int { return v.LoadObjectPort }).(pulumi.IntPtrOutput)
 }
 
+// Specifies a list of servers to request the load object from.
 func (o GtmDatacenterDefaultLoadObjectOutput) LoadServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GtmDatacenterDefaultLoadObject) []string { return v.LoadServers }).(pulumi.StringArrayOutput)
 }
@@ -2461,6 +2708,7 @@ func (o GtmDatacenterDefaultLoadObjectPtrOutput) Elem() GtmDatacenterDefaultLoad
 	}).(GtmDatacenterDefaultLoadObjectOutput)
 }
 
+// A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
 func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadObject() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GtmDatacenterDefaultLoadObject) *string {
 		if v == nil {
@@ -2470,6 +2718,7 @@ func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadObject() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
+// Specifies the TCP port to connect to when requesting the load object.
 func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadObjectPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *GtmDatacenterDefaultLoadObject) *int {
 		if v == nil {
@@ -2479,6 +2728,7 @@ func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadObjectPort() pulumi.IntPtrO
 	}).(pulumi.IntPtrOutput)
 }
 
+// Specifies a list of servers to request the load object from.
 func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *GtmDatacenterDefaultLoadObject) []string {
 		if v == nil {
@@ -2489,9 +2739,12 @@ func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadServers() pulumi.StringArra
 }
 
 type GtmGeomapAssignment struct {
-	Countries    []string `pulumi:"countries"`
-	DatacenterId int      `pulumi:"datacenterId"`
-	Nickname     string   `pulumi:"nickname"`
+	// Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
+	Countries []string `pulumi:"countries"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId int `pulumi:"datacenterId"`
+	// A descriptive label for the group.
+	Nickname string `pulumi:"nickname"`
 }
 
 // GtmGeomapAssignmentInput is an input type that accepts GtmGeomapAssignmentArgs and GtmGeomapAssignmentOutput values.
@@ -2506,9 +2759,12 @@ type GtmGeomapAssignmentInput interface {
 }
 
 type GtmGeomapAssignmentArgs struct {
-	Countries    pulumi.StringArrayInput `pulumi:"countries"`
-	DatacenterId pulumi.IntInput         `pulumi:"datacenterId"`
-	Nickname     pulumi.StringInput      `pulumi:"nickname"`
+	// Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
+	Countries pulumi.StringArrayInput `pulumi:"countries"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId pulumi.IntInput `pulumi:"datacenterId"`
+	// A descriptive label for the group.
+	Nickname pulumi.StringInput `pulumi:"nickname"`
 }
 
 func (GtmGeomapAssignmentArgs) ElementType() reflect.Type {
@@ -2562,14 +2818,17 @@ func (o GtmGeomapAssignmentOutput) ToGtmGeomapAssignmentOutputWithContext(ctx co
 	return o
 }
 
+// Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
 func (o GtmGeomapAssignmentOutput) Countries() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GtmGeomapAssignment) []string { return v.Countries }).(pulumi.StringArrayOutput)
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmGeomapAssignmentOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmGeomapAssignment) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
 
+// A descriptive label for the group.
 func (o GtmGeomapAssignmentOutput) Nickname() pulumi.StringOutput {
 	return o.ApplyT(func(v GtmGeomapAssignment) string { return v.Nickname }).(pulumi.StringOutput)
 }
@@ -2595,8 +2854,10 @@ func (o GtmGeomapAssignmentArrayOutput) Index(i pulumi.IntInput) GtmGeomapAssign
 }
 
 type GtmGeomapDefaultDatacenter struct {
-	DatacenterId int     `pulumi:"datacenterId"`
-	Nickname     *string `pulumi:"nickname"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId int `pulumi:"datacenterId"`
+	// A descriptive label for the group.
+	Nickname *string `pulumi:"nickname"`
 }
 
 // GtmGeomapDefaultDatacenterInput is an input type that accepts GtmGeomapDefaultDatacenterArgs and GtmGeomapDefaultDatacenterOutput values.
@@ -2611,8 +2872,10 @@ type GtmGeomapDefaultDatacenterInput interface {
 }
 
 type GtmGeomapDefaultDatacenterArgs struct {
-	DatacenterId pulumi.IntInput       `pulumi:"datacenterId"`
-	Nickname     pulumi.StringPtrInput `pulumi:"nickname"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId pulumi.IntInput `pulumi:"datacenterId"`
+	// A descriptive label for the group.
+	Nickname pulumi.StringPtrInput `pulumi:"nickname"`
 }
 
 func (GtmGeomapDefaultDatacenterArgs) ElementType() reflect.Type {
@@ -2692,10 +2955,12 @@ func (o GtmGeomapDefaultDatacenterOutput) ToGtmGeomapDefaultDatacenterPtrOutputW
 	}).(GtmGeomapDefaultDatacenterPtrOutput)
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmGeomapDefaultDatacenterOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmGeomapDefaultDatacenter) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
 
+// A descriptive label for the group.
 func (o GtmGeomapDefaultDatacenterOutput) Nickname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmGeomapDefaultDatacenter) *string { return v.Nickname }).(pulumi.StringPtrOutput)
 }
@@ -2724,6 +2989,7 @@ func (o GtmGeomapDefaultDatacenterPtrOutput) Elem() GtmGeomapDefaultDatacenterOu
 	}).(GtmGeomapDefaultDatacenterOutput)
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmGeomapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *GtmGeomapDefaultDatacenter) *int {
 		if v == nil {
@@ -2733,6 +2999,7 @@ func (o GtmGeomapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput 
 	}).(pulumi.IntPtrOutput)
 }
 
+// A descriptive label for the group.
 func (o GtmGeomapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GtmGeomapDefaultDatacenter) *string {
 		if v == nil {
@@ -2743,30 +3010,54 @@ func (o GtmGeomapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput {
 }
 
 type GtmPropertyLivenessTest struct {
-	AnswersRequired               *bool                               `pulumi:"answersRequired"`
-	DisableNonstandardPortWarning *bool                               `pulumi:"disableNonstandardPortWarning"`
-	Disabled                      *bool                               `pulumi:"disabled"`
-	ErrorPenalty                  *float64                            `pulumi:"errorPenalty"`
-	HttpError3xx                  *bool                               `pulumi:"httpError3xx"`
-	HttpError4xx                  *bool                               `pulumi:"httpError4xx"`
-	HttpError5xx                  *bool                               `pulumi:"httpError5xx"`
-	HttpHeaders                   []GtmPropertyLivenessTestHttpHeader `pulumi:"httpHeaders"`
-	Name                          string                              `pulumi:"name"`
-	PeerCertificateVerification   *bool                               `pulumi:"peerCertificateVerification"`
-	RecursionRequested            *bool                               `pulumi:"recursionRequested"`
-	RequestString                 *string                             `pulumi:"requestString"`
-	ResourceType                  *string                             `pulumi:"resourceType"`
-	ResponseString                *string                             `pulumi:"responseString"`
-	SslClientCertificate          *string                             `pulumi:"sslClientCertificate"`
-	SslClientPrivateKey           *string                             `pulumi:"sslClientPrivateKey"`
-	TestInterval                  int                                 `pulumi:"testInterval"`
-	TestObject                    string                              `pulumi:"testObject"`
-	TestObjectPassword            *string                             `pulumi:"testObjectPassword"`
-	TestObjectPort                *int                                `pulumi:"testObjectPort"`
-	TestObjectProtocol            string                              `pulumi:"testObjectProtocol"`
-	TestObjectUsername            *string                             `pulumi:"testObjectUsername"`
-	TestTimeout                   float64                             `pulumi:"testTimeout"`
-	TimeoutPenalty                *float64                            `pulumi:"timeoutPenalty"`
+	// If `testObjectProtocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
+	AnswersRequired *bool `pulumi:"answersRequired"`
+	// A boolean that if set to `true`, disables warnings when non-standard ports are used.
+	DisableNonstandardPortWarning *bool `pulumi:"disableNonstandardPortWarning"`
+	// A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
+	Disabled *bool `pulumi:"disabled"`
+	// Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
+	ErrorPenalty *float64 `pulumi:"errorPenalty"`
+	// A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+	HttpError3xx *bool `pulumi:"httpError3xx"`
+	// A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+	HttpError4xx *bool `pulumi:"httpError4xx"`
+	// A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+	HttpError5xx *bool `pulumi:"httpError5xx"`
+	// Contains HTTP headers to send if the `testObjectProtocol` is `http` or `https`. You can have multiple `httpHeader` entries. Requires these arguments:
+	HttpHeaders []GtmPropertyLivenessTestHttpHeader `pulumi:"httpHeaders"`
+	// Name of HTTP header.
+	Name string `pulumi:"name"`
+	// A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `testObjectProtocol` of https.
+	PeerCertificateVerification *bool `pulumi:"peerCertificateVerification"`
+	// A boolean indicating whether the `testObjectProtocol` is DNS. The DNS query is recursive.
+	RecursionRequested *bool `pulumi:"recursionRequested"`
+	// Specifies a request string.
+	RequestString *string `pulumi:"requestString"`
+	// Specifies the query type, if `testObjectProtocol` is DNS.
+	ResourceType *string `pulumi:"resourceType"`
+	// Specifies a response string.
+	ResponseString *string `pulumi:"responseString"`
+	// Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
+	SslClientCertificate *string `pulumi:"sslClientCertificate"`
+	// Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can't have a passphrase nor be used for any other purpose.
+	SslClientPrivateKey *string `pulumi:"sslClientPrivateKey"`
+	// Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
+	TestInterval int `pulumi:"testInterval"`
+	// Specifies the static text that acts as a stand-in for the data that you're sending on the network.
+	TestObject string `pulumi:"testObject"`
+	// Specifies the test object's password. It is required if testObjectProtocol is ftp.
+	TestObjectPassword *string `pulumi:"testObjectPassword"`
+	// Specifies the port number for the testObject.
+	TestObjectPort *int `pulumi:"testObjectPort"`
+	// Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
+	TestObjectProtocol string `pulumi:"testObjectProtocol"`
+	// A descriptive name for the testObject.
+	TestObjectUsername *string `pulumi:"testObjectUsername"`
+	// Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
+	TestTimeout float64 `pulumi:"testTimeout"`
+	// Specifies the score to be reported if the liveness test times out.
+	TimeoutPenalty *float64 `pulumi:"timeoutPenalty"`
 }
 
 // GtmPropertyLivenessTestInput is an input type that accepts GtmPropertyLivenessTestArgs and GtmPropertyLivenessTestOutput values.
@@ -2781,30 +3072,54 @@ type GtmPropertyLivenessTestInput interface {
 }
 
 type GtmPropertyLivenessTestArgs struct {
-	AnswersRequired               pulumi.BoolPtrInput                         `pulumi:"answersRequired"`
-	DisableNonstandardPortWarning pulumi.BoolPtrInput                         `pulumi:"disableNonstandardPortWarning"`
-	Disabled                      pulumi.BoolPtrInput                         `pulumi:"disabled"`
-	ErrorPenalty                  pulumi.Float64PtrInput                      `pulumi:"errorPenalty"`
-	HttpError3xx                  pulumi.BoolPtrInput                         `pulumi:"httpError3xx"`
-	HttpError4xx                  pulumi.BoolPtrInput                         `pulumi:"httpError4xx"`
-	HttpError5xx                  pulumi.BoolPtrInput                         `pulumi:"httpError5xx"`
-	HttpHeaders                   GtmPropertyLivenessTestHttpHeaderArrayInput `pulumi:"httpHeaders"`
-	Name                          pulumi.StringInput                          `pulumi:"name"`
-	PeerCertificateVerification   pulumi.BoolPtrInput                         `pulumi:"peerCertificateVerification"`
-	RecursionRequested            pulumi.BoolPtrInput                         `pulumi:"recursionRequested"`
-	RequestString                 pulumi.StringPtrInput                       `pulumi:"requestString"`
-	ResourceType                  pulumi.StringPtrInput                       `pulumi:"resourceType"`
-	ResponseString                pulumi.StringPtrInput                       `pulumi:"responseString"`
-	SslClientCertificate          pulumi.StringPtrInput                       `pulumi:"sslClientCertificate"`
-	SslClientPrivateKey           pulumi.StringPtrInput                       `pulumi:"sslClientPrivateKey"`
-	TestInterval                  pulumi.IntInput                             `pulumi:"testInterval"`
-	TestObject                    pulumi.StringInput                          `pulumi:"testObject"`
-	TestObjectPassword            pulumi.StringPtrInput                       `pulumi:"testObjectPassword"`
-	TestObjectPort                pulumi.IntPtrInput                          `pulumi:"testObjectPort"`
-	TestObjectProtocol            pulumi.StringInput                          `pulumi:"testObjectProtocol"`
-	TestObjectUsername            pulumi.StringPtrInput                       `pulumi:"testObjectUsername"`
-	TestTimeout                   pulumi.Float64Input                         `pulumi:"testTimeout"`
-	TimeoutPenalty                pulumi.Float64PtrInput                      `pulumi:"timeoutPenalty"`
+	// If `testObjectProtocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
+	AnswersRequired pulumi.BoolPtrInput `pulumi:"answersRequired"`
+	// A boolean that if set to `true`, disables warnings when non-standard ports are used.
+	DisableNonstandardPortWarning pulumi.BoolPtrInput `pulumi:"disableNonstandardPortWarning"`
+	// A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
+	Disabled pulumi.BoolPtrInput `pulumi:"disabled"`
+	// Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
+	ErrorPenalty pulumi.Float64PtrInput `pulumi:"errorPenalty"`
+	// A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+	HttpError3xx pulumi.BoolPtrInput `pulumi:"httpError3xx"`
+	// A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+	HttpError4xx pulumi.BoolPtrInput `pulumi:"httpError4xx"`
+	// A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+	HttpError5xx pulumi.BoolPtrInput `pulumi:"httpError5xx"`
+	// Contains HTTP headers to send if the `testObjectProtocol` is `http` or `https`. You can have multiple `httpHeader` entries. Requires these arguments:
+	HttpHeaders GtmPropertyLivenessTestHttpHeaderArrayInput `pulumi:"httpHeaders"`
+	// Name of HTTP header.
+	Name pulumi.StringInput `pulumi:"name"`
+	// A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `testObjectProtocol` of https.
+	PeerCertificateVerification pulumi.BoolPtrInput `pulumi:"peerCertificateVerification"`
+	// A boolean indicating whether the `testObjectProtocol` is DNS. The DNS query is recursive.
+	RecursionRequested pulumi.BoolPtrInput `pulumi:"recursionRequested"`
+	// Specifies a request string.
+	RequestString pulumi.StringPtrInput `pulumi:"requestString"`
+	// Specifies the query type, if `testObjectProtocol` is DNS.
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
+	// Specifies a response string.
+	ResponseString pulumi.StringPtrInput `pulumi:"responseString"`
+	// Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
+	SslClientCertificate pulumi.StringPtrInput `pulumi:"sslClientCertificate"`
+	// Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can't have a passphrase nor be used for any other purpose.
+	SslClientPrivateKey pulumi.StringPtrInput `pulumi:"sslClientPrivateKey"`
+	// Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
+	TestInterval pulumi.IntInput `pulumi:"testInterval"`
+	// Specifies the static text that acts as a stand-in for the data that you're sending on the network.
+	TestObject pulumi.StringInput `pulumi:"testObject"`
+	// Specifies the test object's password. It is required if testObjectProtocol is ftp.
+	TestObjectPassword pulumi.StringPtrInput `pulumi:"testObjectPassword"`
+	// Specifies the port number for the testObject.
+	TestObjectPort pulumi.IntPtrInput `pulumi:"testObjectPort"`
+	// Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
+	TestObjectProtocol pulumi.StringInput `pulumi:"testObjectProtocol"`
+	// A descriptive name for the testObject.
+	TestObjectUsername pulumi.StringPtrInput `pulumi:"testObjectUsername"`
+	// Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
+	TestTimeout pulumi.Float64Input `pulumi:"testTimeout"`
+	// Specifies the score to be reported if the liveness test times out.
+	TimeoutPenalty pulumi.Float64PtrInput `pulumi:"timeoutPenalty"`
 }
 
 func (GtmPropertyLivenessTestArgs) ElementType() reflect.Type {
@@ -2858,98 +3173,122 @@ func (o GtmPropertyLivenessTestOutput) ToGtmPropertyLivenessTestOutputWithContex
 	return o
 }
 
+// If `testObjectProtocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
 func (o GtmPropertyLivenessTestOutput) AnswersRequired() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.AnswersRequired }).(pulumi.BoolPtrOutput)
 }
 
+// A boolean that if set to `true`, disables warnings when non-standard ports are used.
 func (o GtmPropertyLivenessTestOutput) DisableNonstandardPortWarning() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.DisableNonstandardPortWarning }).(pulumi.BoolPtrOutput)
 }
 
+// A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
 func (o GtmPropertyLivenessTestOutput) Disabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.Disabled }).(pulumi.BoolPtrOutput)
 }
 
+// Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
 func (o GtmPropertyLivenessTestOutput) ErrorPenalty() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *float64 { return v.ErrorPenalty }).(pulumi.Float64PtrOutput)
 }
 
+// A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
 func (o GtmPropertyLivenessTestOutput) HttpError3xx() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.HttpError3xx }).(pulumi.BoolPtrOutput)
 }
 
+// A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
 func (o GtmPropertyLivenessTestOutput) HttpError4xx() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.HttpError4xx }).(pulumi.BoolPtrOutput)
 }
 
+// A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
 func (o GtmPropertyLivenessTestOutput) HttpError5xx() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.HttpError5xx }).(pulumi.BoolPtrOutput)
 }
 
+// Contains HTTP headers to send if the `testObjectProtocol` is `http` or `https`. You can have multiple `httpHeader` entries. Requires these arguments:
 func (o GtmPropertyLivenessTestOutput) HttpHeaders() GtmPropertyLivenessTestHttpHeaderArrayOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) []GtmPropertyLivenessTestHttpHeader { return v.HttpHeaders }).(GtmPropertyLivenessTestHttpHeaderArrayOutput)
 }
 
+// Name of HTTP header.
 func (o GtmPropertyLivenessTestOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `testObjectProtocol` of https.
 func (o GtmPropertyLivenessTestOutput) PeerCertificateVerification() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.PeerCertificateVerification }).(pulumi.BoolPtrOutput)
 }
 
+// A boolean indicating whether the `testObjectProtocol` is DNS. The DNS query is recursive.
 func (o GtmPropertyLivenessTestOutput) RecursionRequested() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.RecursionRequested }).(pulumi.BoolPtrOutput)
 }
 
+// Specifies a request string.
 func (o GtmPropertyLivenessTestOutput) RequestString() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.RequestString }).(pulumi.StringPtrOutput)
 }
 
+// Specifies the query type, if `testObjectProtocol` is DNS.
 func (o GtmPropertyLivenessTestOutput) ResourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
+// Specifies a response string.
 func (o GtmPropertyLivenessTestOutput) ResponseString() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.ResponseString }).(pulumi.StringPtrOutput)
 }
 
+// Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
 func (o GtmPropertyLivenessTestOutput) SslClientCertificate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.SslClientCertificate }).(pulumi.StringPtrOutput)
 }
 
+// Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can't have a passphrase nor be used for any other purpose.
 func (o GtmPropertyLivenessTestOutput) SslClientPrivateKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.SslClientPrivateKey }).(pulumi.StringPtrOutput)
 }
 
+// Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
 func (o GtmPropertyLivenessTestOutput) TestInterval() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) int { return v.TestInterval }).(pulumi.IntOutput)
 }
 
+// Specifies the static text that acts as a stand-in for the data that you're sending on the network.
 func (o GtmPropertyLivenessTestOutput) TestObject() pulumi.StringOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) string { return v.TestObject }).(pulumi.StringOutput)
 }
 
+// Specifies the test object's password. It is required if testObjectProtocol is ftp.
 func (o GtmPropertyLivenessTestOutput) TestObjectPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.TestObjectPassword }).(pulumi.StringPtrOutput)
 }
 
+// Specifies the port number for the testObject.
 func (o GtmPropertyLivenessTestOutput) TestObjectPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *int { return v.TestObjectPort }).(pulumi.IntPtrOutput)
 }
 
+// Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
 func (o GtmPropertyLivenessTestOutput) TestObjectProtocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) string { return v.TestObjectProtocol }).(pulumi.StringOutput)
 }
 
+// A descriptive name for the testObject.
 func (o GtmPropertyLivenessTestOutput) TestObjectUsername() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.TestObjectUsername }).(pulumi.StringPtrOutput)
 }
 
+// Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
 func (o GtmPropertyLivenessTestOutput) TestTimeout() pulumi.Float64Output {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) float64 { return v.TestTimeout }).(pulumi.Float64Output)
 }
 
+// Specifies the score to be reported if the liveness test times out.
 func (o GtmPropertyLivenessTestOutput) TimeoutPenalty() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *float64 { return v.TimeoutPenalty }).(pulumi.Float64PtrOutput)
 }
@@ -2975,7 +3314,9 @@ func (o GtmPropertyLivenessTestArrayOutput) Index(i pulumi.IntInput) GtmProperty
 }
 
 type GtmPropertyLivenessTestHttpHeader struct {
-	Name  *string `pulumi:"name"`
+	// Name of HTTP header.
+	Name *string `pulumi:"name"`
+	// Value of HTTP header.
 	Value *string `pulumi:"value"`
 }
 
@@ -2991,7 +3332,9 @@ type GtmPropertyLivenessTestHttpHeaderInput interface {
 }
 
 type GtmPropertyLivenessTestHttpHeaderArgs struct {
-	Name  pulumi.StringPtrInput `pulumi:"name"`
+	// Name of HTTP header.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Value of HTTP header.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -3046,10 +3389,12 @@ func (o GtmPropertyLivenessTestHttpHeaderOutput) ToGtmPropertyLivenessTestHttpHe
 	return o
 }
 
+// Name of HTTP header.
 func (o GtmPropertyLivenessTestHttpHeaderOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTestHttpHeader) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// Value of HTTP header.
 func (o GtmPropertyLivenessTestHttpHeaderOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTestHttpHeader) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -3075,9 +3420,12 @@ func (o GtmPropertyLivenessTestHttpHeaderArrayOutput) Index(i pulumi.IntInput) G
 }
 
 type GtmPropertyStaticRrSet struct {
+	// (List) An array of data strings, representing multiple records within a set.
 	Rdatas []string `pulumi:"rdatas"`
-	Ttl    *int     `pulumi:"ttl"`
-	Type   *string  `pulumi:"type"`
+	// The number of seconds that this record should live in a resolver's cache before being refetched.
+	Ttl *int `pulumi:"ttl"`
+	// The record type.
+	Type *string `pulumi:"type"`
 }
 
 // GtmPropertyStaticRrSetInput is an input type that accepts GtmPropertyStaticRrSetArgs and GtmPropertyStaticRrSetOutput values.
@@ -3092,9 +3440,12 @@ type GtmPropertyStaticRrSetInput interface {
 }
 
 type GtmPropertyStaticRrSetArgs struct {
+	// (List) An array of data strings, representing multiple records within a set.
 	Rdatas pulumi.StringArrayInput `pulumi:"rdatas"`
-	Ttl    pulumi.IntPtrInput      `pulumi:"ttl"`
-	Type   pulumi.StringPtrInput   `pulumi:"type"`
+	// The number of seconds that this record should live in a resolver's cache before being refetched.
+	Ttl pulumi.IntPtrInput `pulumi:"ttl"`
+	// The record type.
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GtmPropertyStaticRrSetArgs) ElementType() reflect.Type {
@@ -3148,14 +3499,17 @@ func (o GtmPropertyStaticRrSetOutput) ToGtmPropertyStaticRrSetOutputWithContext(
 	return o
 }
 
+// (List) An array of data strings, representing multiple records within a set.
 func (o GtmPropertyStaticRrSetOutput) Rdatas() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GtmPropertyStaticRrSet) []string { return v.Rdatas }).(pulumi.StringArrayOutput)
 }
 
+// The number of seconds that this record should live in a resolver's cache before being refetched.
 func (o GtmPropertyStaticRrSetOutput) Ttl() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GtmPropertyStaticRrSet) *int { return v.Ttl }).(pulumi.IntPtrOutput)
 }
 
+// The record type.
 func (o GtmPropertyStaticRrSetOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyStaticRrSet) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -3181,12 +3535,18 @@ func (o GtmPropertyStaticRrSetArrayOutput) Index(i pulumi.IntInput) GtmPropertyS
 }
 
 type GtmPropertyTrafficTarget struct {
-	DatacenterId *int     `pulumi:"datacenterId"`
-	Enabled      *bool    `pulumi:"enabled"`
-	HandoutCname *string  `pulumi:"handoutCname"`
-	Name         *string  `pulumi:"name"`
-	Servers      []string `pulumi:"servers"`
-	Weight       *float64 `pulumi:"weight"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId *int `pulumi:"datacenterId"`
+	// A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
+	Enabled *bool `pulumi:"enabled"`
+	// Specifies an optional data center for the property. Used when there are no servers configured for the property.
+	HandoutCname *string `pulumi:"handoutCname"`
+	// Name of HTTP header.
+	Name *string `pulumi:"name"`
+	// (List) Identifies the IP address or the hostnames of the servers.
+	Servers []string `pulumi:"servers"`
+	// Specifies the traffic weight for the target.
+	Weight *float64 `pulumi:"weight"`
 }
 
 // GtmPropertyTrafficTargetInput is an input type that accepts GtmPropertyTrafficTargetArgs and GtmPropertyTrafficTargetOutput values.
@@ -3201,12 +3561,18 @@ type GtmPropertyTrafficTargetInput interface {
 }
 
 type GtmPropertyTrafficTargetArgs struct {
-	DatacenterId pulumi.IntPtrInput      `pulumi:"datacenterId"`
-	Enabled      pulumi.BoolPtrInput     `pulumi:"enabled"`
-	HandoutCname pulumi.StringPtrInput   `pulumi:"handoutCname"`
-	Name         pulumi.StringPtrInput   `pulumi:"name"`
-	Servers      pulumi.StringArrayInput `pulumi:"servers"`
-	Weight       pulumi.Float64PtrInput  `pulumi:"weight"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId pulumi.IntPtrInput `pulumi:"datacenterId"`
+	// A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// Specifies an optional data center for the property. Used when there are no servers configured for the property.
+	HandoutCname pulumi.StringPtrInput `pulumi:"handoutCname"`
+	// Name of HTTP header.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (List) Identifies the IP address or the hostnames of the servers.
+	Servers pulumi.StringArrayInput `pulumi:"servers"`
+	// Specifies the traffic weight for the target.
+	Weight pulumi.Float64PtrInput `pulumi:"weight"`
 }
 
 func (GtmPropertyTrafficTargetArgs) ElementType() reflect.Type {
@@ -3260,26 +3626,32 @@ func (o GtmPropertyTrafficTargetOutput) ToGtmPropertyTrafficTargetOutputWithCont
 	return o
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmPropertyTrafficTargetOutput) DatacenterId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *int { return v.DatacenterId }).(pulumi.IntPtrOutput)
 }
 
+// A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
 func (o GtmPropertyTrafficTargetOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
+// Specifies an optional data center for the property. Used when there are no servers configured for the property.
 func (o GtmPropertyTrafficTargetOutput) HandoutCname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *string { return v.HandoutCname }).(pulumi.StringPtrOutput)
 }
 
+// Name of HTTP header.
 func (o GtmPropertyTrafficTargetOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// (List) Identifies the IP address or the hostnames of the servers.
 func (o GtmPropertyTrafficTargetOutput) Servers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) []string { return v.Servers }).(pulumi.StringArrayOutput)
 }
 
+// Specifies the traffic weight for the target.
 func (o GtmPropertyTrafficTargetOutput) Weight() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *float64 { return v.Weight }).(pulumi.Float64PtrOutput)
 }
@@ -3305,11 +3677,16 @@ func (o GtmPropertyTrafficTargetArrayOutput) Index(i pulumi.IntInput) GtmPropert
 }
 
 type GtmResourceResourceInstance struct {
-	DatacenterId         int      `pulumi:"datacenterId"`
-	LoadObject           *string  `pulumi:"loadObject"`
-	LoadObjectPort       *int     `pulumi:"loadObjectPort"`
-	LoadServers          []string `pulumi:"loadServers"`
-	UseDefaultLoadObject *bool    `pulumi:"useDefaultLoadObject"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId int `pulumi:"datacenterId"`
+	// Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
+	LoadObject *string `pulumi:"loadObject"`
+	// Specifies the TCP port of the `loadObject`.
+	LoadObjectPort *int `pulumi:"loadObjectPort"`
+	// (List) Specifies a list of servers from which to request the load object.
+	LoadServers []string `pulumi:"loadServers"`
+	// A boolean that indicates whether a default `loadObject` is used for the resources.
+	UseDefaultLoadObject *bool `pulumi:"useDefaultLoadObject"`
 }
 
 // GtmResourceResourceInstanceInput is an input type that accepts GtmResourceResourceInstanceArgs and GtmResourceResourceInstanceOutput values.
@@ -3324,11 +3701,16 @@ type GtmResourceResourceInstanceInput interface {
 }
 
 type GtmResourceResourceInstanceArgs struct {
-	DatacenterId         pulumi.IntInput         `pulumi:"datacenterId"`
-	LoadObject           pulumi.StringPtrInput   `pulumi:"loadObject"`
-	LoadObjectPort       pulumi.IntPtrInput      `pulumi:"loadObjectPort"`
-	LoadServers          pulumi.StringArrayInput `pulumi:"loadServers"`
-	UseDefaultLoadObject pulumi.BoolPtrInput     `pulumi:"useDefaultLoadObject"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId pulumi.IntInput `pulumi:"datacenterId"`
+	// Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
+	LoadObject pulumi.StringPtrInput `pulumi:"loadObject"`
+	// Specifies the TCP port of the `loadObject`.
+	LoadObjectPort pulumi.IntPtrInput `pulumi:"loadObjectPort"`
+	// (List) Specifies a list of servers from which to request the load object.
+	LoadServers pulumi.StringArrayInput `pulumi:"loadServers"`
+	// A boolean that indicates whether a default `loadObject` is used for the resources.
+	UseDefaultLoadObject pulumi.BoolPtrInput `pulumi:"useDefaultLoadObject"`
 }
 
 func (GtmResourceResourceInstanceArgs) ElementType() reflect.Type {
@@ -3382,22 +3764,27 @@ func (o GtmResourceResourceInstanceOutput) ToGtmResourceResourceInstanceOutputWi
 	return o
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmResourceResourceInstanceOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmResourceResourceInstance) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
 
+// Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
 func (o GtmResourceResourceInstanceOutput) LoadObject() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmResourceResourceInstance) *string { return v.LoadObject }).(pulumi.StringPtrOutput)
 }
 
+// Specifies the TCP port of the `loadObject`.
 func (o GtmResourceResourceInstanceOutput) LoadObjectPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GtmResourceResourceInstance) *int { return v.LoadObjectPort }).(pulumi.IntPtrOutput)
 }
 
+// (List) Specifies a list of servers from which to request the load object.
 func (o GtmResourceResourceInstanceOutput) LoadServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GtmResourceResourceInstance) []string { return v.LoadServers }).(pulumi.StringArrayOutput)
 }
 
+// A boolean that indicates whether a default `loadObject` is used for the resources.
 func (o GtmResourceResourceInstanceOutput) UseDefaultLoadObject() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmResourceResourceInstance) *bool { return v.UseDefaultLoadObject }).(pulumi.BoolPtrOutput)
 }
@@ -3683,12 +4070,15 @@ func (o PropertyActivationRuleWarningArrayOutput) Index(i pulumi.IntInput) Prope
 }
 
 type PropertyHostname struct {
+	// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
 	CertProvisioningType string                       `pulumi:"certProvisioningType"`
 	CertStatuses         []PropertyHostnameCertStatus `pulumi:"certStatuses"`
-	CnameFrom            string                       `pulumi:"cnameFrom"`
-	CnameTo              string                       `pulumi:"cnameTo"`
-	CnameType            *string                      `pulumi:"cnameType"`
-	EdgeHostnameId       *string                      `pulumi:"edgeHostnameId"`
+	// A string containing the original origin's hostname. For example, `"example.org"`.
+	CnameFrom string `pulumi:"cnameFrom"`
+	// A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
+	CnameTo        string  `pulumi:"cnameTo"`
+	CnameType      *string `pulumi:"cnameType"`
+	EdgeHostnameId *string `pulumi:"edgeHostnameId"`
 }
 
 // PropertyHostnameInput is an input type that accepts PropertyHostnameArgs and PropertyHostnameOutput values.
@@ -3703,12 +4093,15 @@ type PropertyHostnameInput interface {
 }
 
 type PropertyHostnameArgs struct {
+	// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
 	CertProvisioningType pulumi.StringInput                   `pulumi:"certProvisioningType"`
 	CertStatuses         PropertyHostnameCertStatusArrayInput `pulumi:"certStatuses"`
-	CnameFrom            pulumi.StringInput                   `pulumi:"cnameFrom"`
-	CnameTo              pulumi.StringInput                   `pulumi:"cnameTo"`
-	CnameType            pulumi.StringPtrInput                `pulumi:"cnameType"`
-	EdgeHostnameId       pulumi.StringPtrInput                `pulumi:"edgeHostnameId"`
+	// A string containing the original origin's hostname. For example, `"example.org"`.
+	CnameFrom pulumi.StringInput `pulumi:"cnameFrom"`
+	// A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
+	CnameTo        pulumi.StringInput    `pulumi:"cnameTo"`
+	CnameType      pulumi.StringPtrInput `pulumi:"cnameType"`
+	EdgeHostnameId pulumi.StringPtrInput `pulumi:"edgeHostnameId"`
 }
 
 func (PropertyHostnameArgs) ElementType() reflect.Type {
@@ -3762,6 +4155,7 @@ func (o PropertyHostnameOutput) ToPropertyHostnameOutputWithContext(ctx context.
 	return o
 }
 
+// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
 func (o PropertyHostnameOutput) CertProvisioningType() pulumi.StringOutput {
 	return o.ApplyT(func(v PropertyHostname) string { return v.CertProvisioningType }).(pulumi.StringOutput)
 }
@@ -3770,10 +4164,12 @@ func (o PropertyHostnameOutput) CertStatuses() PropertyHostnameCertStatusArrayOu
 	return o.ApplyT(func(v PropertyHostname) []PropertyHostnameCertStatus { return v.CertStatuses }).(PropertyHostnameCertStatusArrayOutput)
 }
 
+// A string containing the original origin's hostname. For example, `"example.org"`.
 func (o PropertyHostnameOutput) CnameFrom() pulumi.StringOutput {
 	return o.ApplyT(func(v PropertyHostname) string { return v.CnameFrom }).(pulumi.StringOutput)
 }
 
+// A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
 func (o PropertyHostnameOutput) CnameTo() pulumi.StringOutput {
 	return o.ApplyT(func(v PropertyHostname) string { return v.CnameTo }).(pulumi.StringOutput)
 }
@@ -5807,7 +6203,9 @@ func (o GetGroupsGroupArrayOutput) Index(i pulumi.IntInput) GetGroupsGroupOutput
 }
 
 type GetPropertiesProperty struct {
-	ContractId        string `pulumi:"contractId"`
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	ContractId string `pulumi:"contractId"`
+	// - (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId           string `pulumi:"groupId"`
 	LatestVersion     int    `pulumi:"latestVersion"`
 	Note              string `pulumi:"note"`
@@ -5831,7 +6229,9 @@ type GetPropertiesPropertyInput interface {
 }
 
 type GetPropertiesPropertyArgs struct {
-	ContractId        pulumi.StringInput `pulumi:"contractId"`
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	ContractId pulumi.StringInput `pulumi:"contractId"`
+	// - (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId           pulumi.StringInput `pulumi:"groupId"`
 	LatestVersion     pulumi.IntInput    `pulumi:"latestVersion"`
 	Note              pulumi.StringInput `pulumi:"note"`
@@ -5894,10 +6294,12 @@ func (o GetPropertiesPropertyOutput) ToGetPropertiesPropertyOutputWithContext(ct
 	return o
 }
 
+// - (Required) A contract's unique ID, including the `ctr_` prefix.
 func (o GetPropertiesPropertyOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPropertiesProperty) string { return v.ContractId }).(pulumi.StringOutput)
 }
 
+// - (Required) A group's unique ID, including the `grp_` prefix.
 func (o GetPropertiesPropertyOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPropertiesProperty) string { return v.GroupId }).(pulumi.StringOutput)
 }
@@ -6391,9 +6793,12 @@ func (o GetPropertyRulesTemplateTemplateArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetPropertyRulesTemplateVariable struct {
-	Name  string  `pulumi:"name"`
-	Type  *string `pulumi:"type"`
-	Value string  `pulumi:"value"`
+	// The name of the variable used in template.
+	Name string `pulumi:"name"`
+	// The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
+	Type *string `pulumi:"type"`
+	// The value of the variable passed as a string.
+	Value string `pulumi:"value"`
 }
 
 // GetPropertyRulesTemplateVariableInput is an input type that accepts GetPropertyRulesTemplateVariableArgs and GetPropertyRulesTemplateVariableOutput values.
@@ -6408,9 +6813,12 @@ type GetPropertyRulesTemplateVariableInput interface {
 }
 
 type GetPropertyRulesTemplateVariableArgs struct {
-	Name  pulumi.StringInput    `pulumi:"name"`
-	Type  pulumi.StringPtrInput `pulumi:"type"`
-	Value pulumi.StringInput    `pulumi:"value"`
+	// The name of the variable used in template.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// The value of the variable passed as a string.
+	Value pulumi.StringInput `pulumi:"value"`
 }
 
 func (GetPropertyRulesTemplateVariableArgs) ElementType() reflect.Type {
@@ -6464,14 +6872,17 @@ func (o GetPropertyRulesTemplateVariableOutput) ToGetPropertyRulesTemplateVariab
 	return o
 }
 
+// The name of the variable used in template.
 func (o GetPropertyRulesTemplateVariableOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPropertyRulesTemplateVariable) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
 func (o GetPropertyRulesTemplateVariableOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetPropertyRulesTemplateVariable) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
+// The value of the variable passed as a string.
 func (o GetPropertyRulesTemplateVariableOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPropertyRulesTemplateVariable) string { return v.Value }).(pulumi.StringOutput)
 }

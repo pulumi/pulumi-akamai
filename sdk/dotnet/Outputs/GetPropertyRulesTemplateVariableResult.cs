@@ -13,8 +13,17 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesTemplateVariableResult
     {
+        /// <summary>
+        /// The name of the variable used in template.
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
+        /// </summary>
         public readonly string? Type;
+        /// <summary>
+        /// The value of the variable passed as a string.
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

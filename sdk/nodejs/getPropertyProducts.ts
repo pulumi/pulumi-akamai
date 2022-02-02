@@ -17,12 +17,6 @@ import * as utilities from "./utilities";
  *
  * export const propertyMatch = data.akamai_property_products["my-example"];
  * ```
- * ## Argument reference
- *
- * This data source supports this argument:
- *
- * * `contractId` - (Required) A contract's unique ID, including the `ctr_` prefix.
- *
  * ## Attributes reference
  *
  * This data source returns these attributes:
@@ -36,9 +30,7 @@ export function getPropertyProducts(args: GetPropertyProductsArgs, opts?: pulumi
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getPropertyProducts:getPropertyProducts", {
         "contractId": args.contractId,
     }, opts);
@@ -48,6 +40,9 @@ export function getPropertyProducts(args: GetPropertyProductsArgs, opts?: pulumi
  * A collection of arguments for invoking getPropertyProducts.
  */
 export interface GetPropertyProductsArgs {
+    /**
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     */
     contractId: string;
 }
 
@@ -71,5 +66,8 @@ export function getPropertyProductsOutput(args: GetPropertyProductsOutputArgs, o
  * A collection of arguments for invoking getPropertyProducts.
  */
 export interface GetPropertyProductsOutputArgs {
+    /**
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     */
     contractId: pulumi.Input<string>;
 }

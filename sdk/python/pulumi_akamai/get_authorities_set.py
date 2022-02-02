@@ -76,17 +76,14 @@ def get_authorities_set(contract: Optional[str] = None,
 
     example = akamai.get_authorities_set(contract="ctr_1-AB123")
     ```
-    ## Argument reference
-
-    This data source supports this argument:
-
-    * `contract` - (Required) The contract ID.
-
     ## Attributes reference
 
     This data source supports this attribute:
 
     * `authorities` - A list of authorities.
+
+
+    :param str contract: The contract ID.
     """
     __args__ = dict()
     __args__['contract'] = contract
@@ -118,16 +115,13 @@ def get_authorities_set_output(contract: Optional[pulumi.Input[str]] = None,
 
     example = akamai.get_authorities_set(contract="ctr_1-AB123")
     ```
-    ## Argument reference
-
-    This data source supports this argument:
-
-    * `contract` - (Required) The contract ID.
-
     ## Attributes reference
 
     This data source supports this attribute:
 
     * `authorities` - A list of authorities.
+
+
+    :param str contract: The contract ID.
     """
     ...

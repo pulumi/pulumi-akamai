@@ -19,17 +19,6 @@ import (
 // account administrators can assign properties to specific groups, each with
 // its own set of users and accompanying roles.
 //
-// ## Argument reference
-//
-// This data source supports these arguments:
-//
-// * `groupName` - (Required) The group name.
-// * `contractId` - (Required) A contract's unique ID, including the `ctr_` prefix.
-//
-// ### Deprecated arguments
-// * `contract` - (Deprecated) Replaced by `contractId`. Maintained for legacy purposes.
-// * `name` -  (Deprecated) Replaced by `groupName`. Maintained for legacy purposes.
-//
 // ## Attributes reference
 //
 // This data source returns this attribute:
@@ -46,10 +35,16 @@ func GetGroup(ctx *pulumi.Context, args *GetGroupArgs, opts ...pulumi.InvokeOpti
 
 // A collection of arguments for invoking getGroup.
 type GetGroupArgs struct {
+	// Replaced by `contractId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract   *string `pulumi:"contract"`
+	Contract *string `pulumi:"contract"`
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId *string `pulumi:"contractId"`
-	GroupName  *string `pulumi:"groupName"`
+	// The group name.
+	GroupName *string `pulumi:"groupName"`
+	// Replaced by `groupName`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "name" has been deprecated.
 	Name *string `pulumi:"name"`
 }
@@ -77,10 +72,16 @@ func GetGroupOutput(ctx *pulumi.Context, args GetGroupOutputArgs, opts ...pulumi
 
 // A collection of arguments for invoking getGroup.
 type GetGroupOutputArgs struct {
+	// Replaced by `contractId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract   pulumi.StringPtrInput `pulumi:"contract"`
+	Contract pulumi.StringPtrInput `pulumi:"contract"`
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringPtrInput `pulumi:"contractId"`
-	GroupName  pulumi.StringPtrInput `pulumi:"groupName"`
+	// The group name.
+	GroupName pulumi.StringPtrInput `pulumi:"groupName"`
+	// Replaced by `groupName`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "name" has been deprecated.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }

@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -75,7 +74,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the rule action as well as Boolean values indicating whether conditions and exceptions have been configured for the rule.
         /// </summary>
         public static Task<GetAppSecEvalRulesResult> InvokeAsync(GetAppSecEvalRulesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalRulesResult>("akamai:index/getAppSecEvalRules:getAppSecEvalRules", args ?? new GetAppSecEvalRulesArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalRulesResult>("akamai:index/getAppSecEvalRules:getAppSecEvalRules", args ?? new GetAppSecEvalRulesArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy; evaluation rule
@@ -140,7 +139,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the rule action as well as Boolean values indicating whether conditions and exceptions have been configured for the rule.
         /// </summary>
         public static Output<GetAppSecEvalRulesResult> Invoke(GetAppSecEvalRulesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecEvalRulesResult>("akamai:index/getAppSecEvalRules:getAppSecEvalRules", args ?? new GetAppSecEvalRulesInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecEvalRulesResult>("akamai:index/getAppSecEvalRules:getAppSecEvalRules", args ?? new GetAppSecEvalRulesInvokeArgs(), options.WithDefaults());
     }
 
 

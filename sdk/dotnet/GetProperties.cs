@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -39,13 +38,6 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
-        /// ## Argument reference
-        /// 
-        /// This data source supports these arguments:
-        /// 
-        /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-        /// * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
-        /// 
         /// ## Attributes reference
         /// 
         /// This data source returns this attribute:
@@ -53,7 +45,7 @@ namespace Pulumi.Akamai
         /// * `properties` - A list of properties available for the contract and group IDs provided.
         /// </summary>
         public static Task<GetPropertiesResult> InvokeAsync(GetPropertiesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertiesResult>("akamai:index/getProperties:getProperties", args ?? new GetPropertiesArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertiesResult>("akamai:index/getProperties:getProperties", args ?? new GetPropertiesArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.getProperties` data source to query and retrieve the list of properties for a group and contract
@@ -82,13 +74,6 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
-        /// ## Argument reference
-        /// 
-        /// This data source supports these arguments:
-        /// 
-        /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-        /// * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
-        /// 
         /// ## Attributes reference
         /// 
         /// This data source returns this attribute:
@@ -96,15 +81,21 @@ namespace Pulumi.Akamai
         /// * `properties` - A list of properties available for the contract and group IDs provided.
         /// </summary>
         public static Output<GetPropertiesResult> Invoke(GetPropertiesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPropertiesResult>("akamai:index/getProperties:getProperties", args ?? new GetPropertiesInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetPropertiesResult>("akamai:index/getProperties:getProperties", args ?? new GetPropertiesInvokeArgs(), options.WithDefaults());
     }
 
 
     public sealed class GetPropertiesArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// </summary>
         [Input("contractId", required: true)]
         public string ContractId { get; set; } = null!;
 
+        /// <summary>
+        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// </summary>
         [Input("groupId", required: true)]
         public string GroupId { get; set; } = null!;
 
@@ -115,9 +106,15 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertiesInvokeArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
+        /// <summary>
+        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// </summary>
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;
 

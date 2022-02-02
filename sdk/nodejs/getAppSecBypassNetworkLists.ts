@@ -44,9 +44,7 @@ export function getAppSecBypassNetworkLists(args: GetAppSecBypassNetworkListsArg
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,

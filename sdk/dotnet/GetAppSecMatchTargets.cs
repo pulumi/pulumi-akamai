@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -66,7 +65,7 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted list of the match target information.
         /// </summary>
         public static Task<GetAppSecMatchTargetsResult> InvokeAsync(GetAppSecMatchTargetsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecMatchTargetsResult>("akamai:index/getAppSecMatchTargets:getAppSecMatchTargets", args ?? new GetAppSecMatchTargetsArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecMatchTargetsResult>("akamai:index/getAppSecMatchTargets:getAppSecMatchTargets", args ?? new GetAppSecMatchTargetsArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; match target
@@ -122,7 +121,7 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted list of the match target information.
         /// </summary>
         public static Output<GetAppSecMatchTargetsResult> Invoke(GetAppSecMatchTargetsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecMatchTargetsResult>("akamai:index/getAppSecMatchTargets:getAppSecMatchTargets", args ?? new GetAppSecMatchTargetsInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecMatchTargetsResult>("akamai:index/getAppSecMatchTargets:getAppSecMatchTargets", args ?? new GetAppSecMatchTargetsInvokeArgs(), options.WithDefaults());
     }
 
 

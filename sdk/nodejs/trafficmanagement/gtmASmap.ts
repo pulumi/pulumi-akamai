@@ -55,15 +55,15 @@ export class GtmASmap extends pulumi.CustomResource {
     /** @deprecated akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap */
     constructor(name: string, argsOrState?: GtmASmapArgs | GtmASmapState, opts?: pulumi.CustomResourceOptions) {
         pulumi.log.warn("GtmASmap is deprecated: akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap")
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GtmASmapState | undefined;
-            inputs["assignments"] = state ? state.assignments : undefined;
-            inputs["defaultDatacenter"] = state ? state.defaultDatacenter : undefined;
-            inputs["domain"] = state ? state.domain : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
+            resourceInputs["assignments"] = state ? state.assignments : undefined;
+            resourceInputs["defaultDatacenter"] = state ? state.defaultDatacenter : undefined;
+            resourceInputs["domain"] = state ? state.domain : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
         } else {
             const args = argsOrState as GtmASmapArgs | undefined;
             if ((!args || args.defaultDatacenter === undefined) && !opts.urn) {
@@ -72,16 +72,14 @@ export class GtmASmap extends pulumi.CustomResource {
             if ((!args || args.domain === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'domain'");
             }
-            inputs["assignments"] = args ? args.assignments : undefined;
-            inputs["defaultDatacenter"] = args ? args.defaultDatacenter : undefined;
-            inputs["domain"] = args ? args.domain : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
+            resourceInputs["assignments"] = args ? args.assignments : undefined;
+            resourceInputs["defaultDatacenter"] = args ? args.defaultDatacenter : undefined;
+            resourceInputs["domain"] = args ? args.domain : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(GtmASmap.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(GtmASmap.__pulumiType, name, resourceInputs, opts);
     }
 }
 

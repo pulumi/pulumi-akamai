@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -74,7 +73,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the APIs, their constraints, and their actions.
         /// </summary>
         public static Task<GetAppSecApiRequestConstraintsResult> InvokeAsync(GetAppSecApiRequestConstraintsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecApiRequestConstraintsResult>("akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints", args ?? new GetAppSecApiRequestConstraintsArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecApiRequestConstraintsResult>("akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints", args ?? new GetAppSecApiRequestConstraintsArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy; API endpoint
@@ -138,7 +137,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the APIs, their constraints, and their actions.
         /// </summary>
         public static Output<GetAppSecApiRequestConstraintsResult> Invoke(GetAppSecApiRequestConstraintsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecApiRequestConstraintsResult>("akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints", args ?? new GetAppSecApiRequestConstraintsInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecApiRequestConstraintsResult>("akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints", args ?? new GetAppSecApiRequestConstraintsInvokeArgs(), options.WithDefaults());
     }
 
 

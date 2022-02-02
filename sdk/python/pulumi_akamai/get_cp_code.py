@@ -142,24 +142,19 @@ def get_cp_code(contract: Optional[str] = None,
         group_id=example_group.id,
         contract_id=example_contract.id)
     ```
-    ## Argument reference
-
-    This data source supports these arguments:
-
-    * `name` - (Required) The name of the CP code.
-    * `group_id` - (Required) The group's unique ID, including the `grp_` prefix.
-    * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-
-    ### Deprecated arguments
-    * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
-    * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
-
     ## Attributes reference
 
     This data source returns these attributes:
 
     * `id` - The ID of the CP code, including the `cpc_` prefix.
     * `product_ids` - An array of product IDs associated with this CP code. Each ID returned includes the `prd_` prefix.
+
+
+    :param str contract: Replaced by `contract_id`. Maintained for legacy purposes.
+    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+    :param str group: Replaced by `group_id`. Maintained for legacy purposes.
+    :param str group_id: The group's unique ID, including the `grp_` prefix.
+    :param str name: The name of the CP code.
     """
     __args__ = dict()
     __args__['contract'] = contract
@@ -221,23 +216,18 @@ def get_cp_code_output(contract: Optional[pulumi.Input[Optional[str]]] = None,
         group_id=example_group.id,
         contract_id=example_contract.id)
     ```
-    ## Argument reference
-
-    This data source supports these arguments:
-
-    * `name` - (Required) The name of the CP code.
-    * `group_id` - (Required) The group's unique ID, including the `grp_` prefix.
-    * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-
-    ### Deprecated arguments
-    * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
-    * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
-
     ## Attributes reference
 
     This data source returns these attributes:
 
     * `id` - The ID of the CP code, including the `cpc_` prefix.
     * `product_ids` - An array of product IDs associated with this CP code. Each ID returned includes the `prd_` prefix.
+
+
+    :param str contract: Replaced by `contract_id`. Maintained for legacy purposes.
+    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+    :param str group: Replaced by `group_id`. Maintained for legacy purposes.
+    :param str group_id: The group's unique ID, including the `grp_` prefix.
+    :param str name: The name of the CP code.
     """
     ...

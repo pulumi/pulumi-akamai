@@ -145,7 +145,7 @@ type AppSecEvalHostnamesInput interface {
 }
 
 func (*AppSecEvalHostnames) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecEvalHostnames)(nil))
+	return reflect.TypeOf((**AppSecEvalHostnames)(nil)).Elem()
 }
 
 func (i *AppSecEvalHostnames) ToAppSecEvalHostnamesOutput() AppSecEvalHostnamesOutput {
@@ -154,35 +154,6 @@ func (i *AppSecEvalHostnames) ToAppSecEvalHostnamesOutput() AppSecEvalHostnamesO
 
 func (i *AppSecEvalHostnames) ToAppSecEvalHostnamesOutputWithContext(ctx context.Context) AppSecEvalHostnamesOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecEvalHostnamesOutput)
-}
-
-func (i *AppSecEvalHostnames) ToAppSecEvalHostnamesPtrOutput() AppSecEvalHostnamesPtrOutput {
-	return i.ToAppSecEvalHostnamesPtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecEvalHostnames) ToAppSecEvalHostnamesPtrOutputWithContext(ctx context.Context) AppSecEvalHostnamesPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecEvalHostnamesPtrOutput)
-}
-
-type AppSecEvalHostnamesPtrInput interface {
-	pulumi.Input
-
-	ToAppSecEvalHostnamesPtrOutput() AppSecEvalHostnamesPtrOutput
-	ToAppSecEvalHostnamesPtrOutputWithContext(ctx context.Context) AppSecEvalHostnamesPtrOutput
-}
-
-type appSecEvalHostnamesPtrType AppSecEvalHostnamesArgs
-
-func (*appSecEvalHostnamesPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecEvalHostnames)(nil))
-}
-
-func (i *appSecEvalHostnamesPtrType) ToAppSecEvalHostnamesPtrOutput() AppSecEvalHostnamesPtrOutput {
-	return i.ToAppSecEvalHostnamesPtrOutputWithContext(context.Background())
-}
-
-func (i *appSecEvalHostnamesPtrType) ToAppSecEvalHostnamesPtrOutputWithContext(ctx context.Context) AppSecEvalHostnamesPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecEvalHostnamesPtrOutput)
 }
 
 // AppSecEvalHostnamesArrayInput is an input type that accepts AppSecEvalHostnamesArray and AppSecEvalHostnamesArrayOutput values.
@@ -238,7 +209,7 @@ func (i AppSecEvalHostnamesMap) ToAppSecEvalHostnamesMapOutputWithContext(ctx co
 type AppSecEvalHostnamesOutput struct{ *pulumi.OutputState }
 
 func (AppSecEvalHostnamesOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecEvalHostnames)(nil))
+	return reflect.TypeOf((**AppSecEvalHostnames)(nil)).Elem()
 }
 
 func (o AppSecEvalHostnamesOutput) ToAppSecEvalHostnamesOutput() AppSecEvalHostnamesOutput {
@@ -249,44 +220,10 @@ func (o AppSecEvalHostnamesOutput) ToAppSecEvalHostnamesOutputWithContext(ctx co
 	return o
 }
 
-func (o AppSecEvalHostnamesOutput) ToAppSecEvalHostnamesPtrOutput() AppSecEvalHostnamesPtrOutput {
-	return o.ToAppSecEvalHostnamesPtrOutputWithContext(context.Background())
-}
-
-func (o AppSecEvalHostnamesOutput) ToAppSecEvalHostnamesPtrOutputWithContext(ctx context.Context) AppSecEvalHostnamesPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecEvalHostnames) *AppSecEvalHostnames {
-		return &v
-	}).(AppSecEvalHostnamesPtrOutput)
-}
-
-type AppSecEvalHostnamesPtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecEvalHostnamesPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecEvalHostnames)(nil))
-}
-
-func (o AppSecEvalHostnamesPtrOutput) ToAppSecEvalHostnamesPtrOutput() AppSecEvalHostnamesPtrOutput {
-	return o
-}
-
-func (o AppSecEvalHostnamesPtrOutput) ToAppSecEvalHostnamesPtrOutputWithContext(ctx context.Context) AppSecEvalHostnamesPtrOutput {
-	return o
-}
-
-func (o AppSecEvalHostnamesPtrOutput) Elem() AppSecEvalHostnamesOutput {
-	return o.ApplyT(func(v *AppSecEvalHostnames) AppSecEvalHostnames {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecEvalHostnames
-		return ret
-	}).(AppSecEvalHostnamesOutput)
-}
-
 type AppSecEvalHostnamesArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecEvalHostnamesArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecEvalHostnames)(nil))
+	return reflect.TypeOf((*[]*AppSecEvalHostnames)(nil)).Elem()
 }
 
 func (o AppSecEvalHostnamesArrayOutput) ToAppSecEvalHostnamesArrayOutput() AppSecEvalHostnamesArrayOutput {
@@ -298,15 +235,15 @@ func (o AppSecEvalHostnamesArrayOutput) ToAppSecEvalHostnamesArrayOutputWithCont
 }
 
 func (o AppSecEvalHostnamesArrayOutput) Index(i pulumi.IntInput) AppSecEvalHostnamesOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecEvalHostnames {
-		return vs[0].([]AppSecEvalHostnames)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecEvalHostnames {
+		return vs[0].([]*AppSecEvalHostnames)[vs[1].(int)]
 	}).(AppSecEvalHostnamesOutput)
 }
 
 type AppSecEvalHostnamesMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecEvalHostnamesMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecEvalHostnames)(nil))
+	return reflect.TypeOf((*map[string]*AppSecEvalHostnames)(nil)).Elem()
 }
 
 func (o AppSecEvalHostnamesMapOutput) ToAppSecEvalHostnamesMapOutput() AppSecEvalHostnamesMapOutput {
@@ -318,18 +255,16 @@ func (o AppSecEvalHostnamesMapOutput) ToAppSecEvalHostnamesMapOutputWithContext(
 }
 
 func (o AppSecEvalHostnamesMapOutput) MapIndex(k pulumi.StringInput) AppSecEvalHostnamesOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecEvalHostnames {
-		return vs[0].(map[string]AppSecEvalHostnames)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecEvalHostnames {
+		return vs[0].(map[string]*AppSecEvalHostnames)[vs[1].(string)]
 	}).(AppSecEvalHostnamesOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecEvalHostnamesInput)(nil)).Elem(), &AppSecEvalHostnames{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecEvalHostnamesPtrInput)(nil)).Elem(), &AppSecEvalHostnames{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecEvalHostnamesArrayInput)(nil)).Elem(), AppSecEvalHostnamesArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecEvalHostnamesMapInput)(nil)).Elem(), AppSecEvalHostnamesMap{})
 	pulumi.RegisterOutputType(AppSecEvalHostnamesOutput{})
-	pulumi.RegisterOutputType(AppSecEvalHostnamesPtrOutput{})
 	pulumi.RegisterOutputType(AppSecEvalHostnamesArrayOutput{})
 	pulumi.RegisterOutputType(AppSecEvalHostnamesMapOutput{})
 }

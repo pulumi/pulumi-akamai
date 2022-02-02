@@ -95,6 +95,10 @@ def get_property_hostnames(contract_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyHostnamesResult:
     """
     Use this data source to access information about an existing resource.
+
+    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+    :param str group_id: - (Required) A group's unique ID, including the `grp_` prefix.
+    :param str property_id: - (Required) A property's unique ID, including the `prp_` prefix.
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
@@ -122,5 +126,9 @@ def get_property_hostnames_output(contract_id: Optional[pulumi.Input[str]] = Non
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyHostnamesResult]:
     """
     Use this data source to access information about an existing resource.
+
+    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+    :param str group_id: - (Required) A group's unique ID, including the `grp_` prefix.
+    :param str property_id: - (Required) A property's unique ID, including the `prp_` prefix.
     """
     ...

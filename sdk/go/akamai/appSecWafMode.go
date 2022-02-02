@@ -184,7 +184,7 @@ type AppSecWafModeInput interface {
 }
 
 func (*AppSecWafMode) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecWafMode)(nil))
+	return reflect.TypeOf((**AppSecWafMode)(nil)).Elem()
 }
 
 func (i *AppSecWafMode) ToAppSecWafModeOutput() AppSecWafModeOutput {
@@ -193,35 +193,6 @@ func (i *AppSecWafMode) ToAppSecWafModeOutput() AppSecWafModeOutput {
 
 func (i *AppSecWafMode) ToAppSecWafModeOutputWithContext(ctx context.Context) AppSecWafModeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecWafModeOutput)
-}
-
-func (i *AppSecWafMode) ToAppSecWafModePtrOutput() AppSecWafModePtrOutput {
-	return i.ToAppSecWafModePtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecWafMode) ToAppSecWafModePtrOutputWithContext(ctx context.Context) AppSecWafModePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecWafModePtrOutput)
-}
-
-type AppSecWafModePtrInput interface {
-	pulumi.Input
-
-	ToAppSecWafModePtrOutput() AppSecWafModePtrOutput
-	ToAppSecWafModePtrOutputWithContext(ctx context.Context) AppSecWafModePtrOutput
-}
-
-type appSecWafModePtrType AppSecWafModeArgs
-
-func (*appSecWafModePtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecWafMode)(nil))
-}
-
-func (i *appSecWafModePtrType) ToAppSecWafModePtrOutput() AppSecWafModePtrOutput {
-	return i.ToAppSecWafModePtrOutputWithContext(context.Background())
-}
-
-func (i *appSecWafModePtrType) ToAppSecWafModePtrOutputWithContext(ctx context.Context) AppSecWafModePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecWafModePtrOutput)
 }
 
 // AppSecWafModeArrayInput is an input type that accepts AppSecWafModeArray and AppSecWafModeArrayOutput values.
@@ -277,7 +248,7 @@ func (i AppSecWafModeMap) ToAppSecWafModeMapOutputWithContext(ctx context.Contex
 type AppSecWafModeOutput struct{ *pulumi.OutputState }
 
 func (AppSecWafModeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecWafMode)(nil))
+	return reflect.TypeOf((**AppSecWafMode)(nil)).Elem()
 }
 
 func (o AppSecWafModeOutput) ToAppSecWafModeOutput() AppSecWafModeOutput {
@@ -288,44 +259,10 @@ func (o AppSecWafModeOutput) ToAppSecWafModeOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o AppSecWafModeOutput) ToAppSecWafModePtrOutput() AppSecWafModePtrOutput {
-	return o.ToAppSecWafModePtrOutputWithContext(context.Background())
-}
-
-func (o AppSecWafModeOutput) ToAppSecWafModePtrOutputWithContext(ctx context.Context) AppSecWafModePtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecWafMode) *AppSecWafMode {
-		return &v
-	}).(AppSecWafModePtrOutput)
-}
-
-type AppSecWafModePtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecWafModePtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecWafMode)(nil))
-}
-
-func (o AppSecWafModePtrOutput) ToAppSecWafModePtrOutput() AppSecWafModePtrOutput {
-	return o
-}
-
-func (o AppSecWafModePtrOutput) ToAppSecWafModePtrOutputWithContext(ctx context.Context) AppSecWafModePtrOutput {
-	return o
-}
-
-func (o AppSecWafModePtrOutput) Elem() AppSecWafModeOutput {
-	return o.ApplyT(func(v *AppSecWafMode) AppSecWafMode {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecWafMode
-		return ret
-	}).(AppSecWafModeOutput)
-}
-
 type AppSecWafModeArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecWafModeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecWafMode)(nil))
+	return reflect.TypeOf((*[]*AppSecWafMode)(nil)).Elem()
 }
 
 func (o AppSecWafModeArrayOutput) ToAppSecWafModeArrayOutput() AppSecWafModeArrayOutput {
@@ -337,15 +274,15 @@ func (o AppSecWafModeArrayOutput) ToAppSecWafModeArrayOutputWithContext(ctx cont
 }
 
 func (o AppSecWafModeArrayOutput) Index(i pulumi.IntInput) AppSecWafModeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecWafMode {
-		return vs[0].([]AppSecWafMode)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecWafMode {
+		return vs[0].([]*AppSecWafMode)[vs[1].(int)]
 	}).(AppSecWafModeOutput)
 }
 
 type AppSecWafModeMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecWafModeMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecWafMode)(nil))
+	return reflect.TypeOf((*map[string]*AppSecWafMode)(nil)).Elem()
 }
 
 func (o AppSecWafModeMapOutput) ToAppSecWafModeMapOutput() AppSecWafModeMapOutput {
@@ -357,18 +294,16 @@ func (o AppSecWafModeMapOutput) ToAppSecWafModeMapOutputWithContext(ctx context.
 }
 
 func (o AppSecWafModeMapOutput) MapIndex(k pulumi.StringInput) AppSecWafModeOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecWafMode {
-		return vs[0].(map[string]AppSecWafMode)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecWafMode {
+		return vs[0].(map[string]*AppSecWafMode)[vs[1].(string)]
 	}).(AppSecWafModeOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecWafModeInput)(nil)).Elem(), &AppSecWafMode{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecWafModePtrInput)(nil)).Elem(), &AppSecWafMode{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecWafModeArrayInput)(nil)).Elem(), AppSecWafModeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecWafModeMapInput)(nil)).Elem(), AppSecWafModeMap{})
 	pulumi.RegisterOutputType(AppSecWafModeOutput{})
-	pulumi.RegisterOutputType(AppSecWafModePtrOutput{})
 	pulumi.RegisterOutputType(AppSecWafModeArrayOutput{})
 	pulumi.RegisterOutputType(AppSecWafModeMapOutput{})
 }

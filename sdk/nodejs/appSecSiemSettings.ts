@@ -105,16 +105,16 @@ export class AppSecSiemSettings extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecSiemSettingsArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecSiemSettingsArgs | AppSecSiemSettingsState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecSiemSettingsState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["enableBotmanSiem"] = state ? state.enableBotmanSiem : undefined;
-            inputs["enableForAllPolicies"] = state ? state.enableForAllPolicies : undefined;
-            inputs["enableSiem"] = state ? state.enableSiem : undefined;
-            inputs["securityPolicyIds"] = state ? state.securityPolicyIds : undefined;
-            inputs["siemId"] = state ? state.siemId : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["enableBotmanSiem"] = state ? state.enableBotmanSiem : undefined;
+            resourceInputs["enableForAllPolicies"] = state ? state.enableForAllPolicies : undefined;
+            resourceInputs["enableSiem"] = state ? state.enableSiem : undefined;
+            resourceInputs["securityPolicyIds"] = state ? state.securityPolicyIds : undefined;
+            resourceInputs["siemId"] = state ? state.siemId : undefined;
         } else {
             const args = argsOrState as AppSecSiemSettingsArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -132,17 +132,15 @@ export class AppSecSiemSettings extends pulumi.CustomResource {
             if ((!args || args.siemId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'siemId'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["enableBotmanSiem"] = args ? args.enableBotmanSiem : undefined;
-            inputs["enableForAllPolicies"] = args ? args.enableForAllPolicies : undefined;
-            inputs["enableSiem"] = args ? args.enableSiem : undefined;
-            inputs["securityPolicyIds"] = args ? args.securityPolicyIds : undefined;
-            inputs["siemId"] = args ? args.siemId : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["enableBotmanSiem"] = args ? args.enableBotmanSiem : undefined;
+            resourceInputs["enableForAllPolicies"] = args ? args.enableForAllPolicies : undefined;
+            resourceInputs["enableSiem"] = args ? args.enableSiem : undefined;
+            resourceInputs["securityPolicyIds"] = args ? args.securityPolicyIds : undefined;
+            resourceInputs["siemId"] = args ? args.siemId : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecSiemSettings.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecSiemSettings.__pulumiType, name, resourceInputs, opts);
     }
 }
 

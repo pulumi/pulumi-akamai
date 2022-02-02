@@ -47,21 +47,6 @@ import * as utilities from "./utilities";
  *     productId: "prd_Object_Delivery",
  * });
  * ```
- * ## Argument reference
- *
- * The following arguments are supported:
- *
- * * `name` - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
- * * `contractId` - (Required) A contract's unique ID, including the `ctr_` prefix.
- * * `groupId` - (Required) A group's unique ID, including the `grp_` prefix.
- * * `productId` - (Required) A product's unique ID, including the `prd_` prefix.
- *
- * ### Deprecated arguments
- *
- * * `contract` - (Deprecated) Replaced by `contractId`. Maintained for legacy purposes.
- * * `group` - (Deprecated) Replaced by `groupId`. Maintained for legacy purposes.
- * * `product` - (Deprecated) Replaced by `productId`. Maintained for legacy purposes.
- *
  * ## Attributes reference
  *
  * * `id` - The ID of the CP code.
@@ -107,20 +92,38 @@ export class CpCode extends pulumi.CustomResource {
     }
 
     /**
+     * Replaced by `contractId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "contract" has been deprecated.
      */
     public readonly contract!: pulumi.Output<string>;
+    /**
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     */
     public readonly contractId!: pulumi.Output<string>;
     /**
+     * Replaced by `groupId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "group" has been deprecated.
      */
     public readonly group!: pulumi.Output<string>;
+    /**
+     * - (Required) A group's unique ID, including the `grp_` prefix.
+     */
     public readonly groupId!: pulumi.Output<string>;
+    /**
+     * - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+     */
     public readonly name!: pulumi.Output<string>;
     /**
+     * Replaced by `productId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "product" has been deprecated.
      */
     public readonly product!: pulumi.Output<string>;
+    /**
+     * - (Required) A product's unique ID, including the `prd_` prefix.
+     */
     public readonly productId!: pulumi.Output<string>;
 
     /**
@@ -132,33 +135,31 @@ export class CpCode extends pulumi.CustomResource {
      */
     constructor(name: string, args?: CpCodeArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: CpCodeArgs | CpCodeState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CpCodeState | undefined;
-            inputs["contract"] = state ? state.contract : undefined;
-            inputs["contractId"] = state ? state.contractId : undefined;
-            inputs["group"] = state ? state.group : undefined;
-            inputs["groupId"] = state ? state.groupId : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["product"] = state ? state.product : undefined;
-            inputs["productId"] = state ? state.productId : undefined;
+            resourceInputs["contract"] = state ? state.contract : undefined;
+            resourceInputs["contractId"] = state ? state.contractId : undefined;
+            resourceInputs["group"] = state ? state.group : undefined;
+            resourceInputs["groupId"] = state ? state.groupId : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["product"] = state ? state.product : undefined;
+            resourceInputs["productId"] = state ? state.productId : undefined;
         } else {
             const args = argsOrState as CpCodeArgs | undefined;
-            inputs["contract"] = args ? args.contract : undefined;
-            inputs["contractId"] = args ? args.contractId : undefined;
-            inputs["group"] = args ? args.group : undefined;
-            inputs["groupId"] = args ? args.groupId : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["product"] = args ? args.product : undefined;
-            inputs["productId"] = args ? args.productId : undefined;
+            resourceInputs["contract"] = args ? args.contract : undefined;
+            resourceInputs["contractId"] = args ? args.contractId : undefined;
+            resourceInputs["group"] = args ? args.group : undefined;
+            resourceInputs["groupId"] = args ? args.groupId : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["product"] = args ? args.product : undefined;
+            resourceInputs["productId"] = args ? args.productId : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const aliasOpts = { aliases: [{ type: "akamai:properties/cpCode:CpCode" }] };
         opts = pulumi.mergeOptions(opts, aliasOpts);
-        super(CpCode.__pulumiType, name, inputs, opts);
+        super(CpCode.__pulumiType, name, resourceInputs, opts);
     }
 }
 
@@ -167,20 +168,38 @@ export class CpCode extends pulumi.CustomResource {
  */
 export interface CpCodeState {
     /**
+     * Replaced by `contractId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "contract" has been deprecated.
      */
     contract?: pulumi.Input<string>;
+    /**
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     */
     contractId?: pulumi.Input<string>;
     /**
+     * Replaced by `groupId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "group" has been deprecated.
      */
     group?: pulumi.Input<string>;
+    /**
+     * - (Required) A group's unique ID, including the `grp_` prefix.
+     */
     groupId?: pulumi.Input<string>;
+    /**
+     * - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+     */
     name?: pulumi.Input<string>;
     /**
+     * Replaced by `productId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "product" has been deprecated.
      */
     product?: pulumi.Input<string>;
+    /**
+     * - (Required) A product's unique ID, including the `prd_` prefix.
+     */
     productId?: pulumi.Input<string>;
 }
 
@@ -189,19 +208,37 @@ export interface CpCodeState {
  */
 export interface CpCodeArgs {
     /**
+     * Replaced by `contractId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "contract" has been deprecated.
      */
     contract?: pulumi.Input<string>;
+    /**
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     */
     contractId?: pulumi.Input<string>;
     /**
+     * Replaced by `groupId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "group" has been deprecated.
      */
     group?: pulumi.Input<string>;
+    /**
+     * - (Required) A group's unique ID, including the `grp_` prefix.
+     */
     groupId?: pulumi.Input<string>;
+    /**
+     * - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+     */
     name?: pulumi.Input<string>;
     /**
+     * Replaced by `productId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "product" has been deprecated.
      */
     product?: pulumi.Input<string>;
+    /**
+     * - (Required) A product's unique ID, including the `prd_` prefix.
+     */
     productId?: pulumi.Input<string>;
 }

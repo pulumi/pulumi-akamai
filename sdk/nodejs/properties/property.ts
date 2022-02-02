@@ -128,59 +128,57 @@ export class Property extends pulumi.CustomResource {
     /** @deprecated akamai.properties.Property has been deprecated in favor of akamai.Property */
     constructor(name: string, argsOrState?: PropertyArgs | PropertyState, opts?: pulumi.CustomResourceOptions) {
         pulumi.log.warn("Property is deprecated: akamai.properties.Property has been deprecated in favor of akamai.Property")
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PropertyState | undefined;
-            inputs["contacts"] = state ? state.contacts : undefined;
-            inputs["contract"] = state ? state.contract : undefined;
-            inputs["contractId"] = state ? state.contractId : undefined;
-            inputs["cpCode"] = state ? state.cpCode : undefined;
-            inputs["group"] = state ? state.group : undefined;
-            inputs["groupId"] = state ? state.groupId : undefined;
-            inputs["hostnames"] = state ? state.hostnames : undefined;
-            inputs["isSecure"] = state ? state.isSecure : undefined;
-            inputs["latestVersion"] = state ? state.latestVersion : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["origins"] = state ? state.origins : undefined;
-            inputs["product"] = state ? state.product : undefined;
-            inputs["productId"] = state ? state.productId : undefined;
-            inputs["productionVersion"] = state ? state.productionVersion : undefined;
-            inputs["readVersion"] = state ? state.readVersion : undefined;
-            inputs["ruleErrors"] = state ? state.ruleErrors : undefined;
-            inputs["ruleFormat"] = state ? state.ruleFormat : undefined;
-            inputs["ruleWarnings"] = state ? state.ruleWarnings : undefined;
-            inputs["rules"] = state ? state.rules : undefined;
-            inputs["stagingVersion"] = state ? state.stagingVersion : undefined;
-            inputs["variables"] = state ? state.variables : undefined;
+            resourceInputs["contacts"] = state ? state.contacts : undefined;
+            resourceInputs["contract"] = state ? state.contract : undefined;
+            resourceInputs["contractId"] = state ? state.contractId : undefined;
+            resourceInputs["cpCode"] = state ? state.cpCode : undefined;
+            resourceInputs["group"] = state ? state.group : undefined;
+            resourceInputs["groupId"] = state ? state.groupId : undefined;
+            resourceInputs["hostnames"] = state ? state.hostnames : undefined;
+            resourceInputs["isSecure"] = state ? state.isSecure : undefined;
+            resourceInputs["latestVersion"] = state ? state.latestVersion : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["origins"] = state ? state.origins : undefined;
+            resourceInputs["product"] = state ? state.product : undefined;
+            resourceInputs["productId"] = state ? state.productId : undefined;
+            resourceInputs["productionVersion"] = state ? state.productionVersion : undefined;
+            resourceInputs["readVersion"] = state ? state.readVersion : undefined;
+            resourceInputs["ruleErrors"] = state ? state.ruleErrors : undefined;
+            resourceInputs["ruleFormat"] = state ? state.ruleFormat : undefined;
+            resourceInputs["ruleWarnings"] = state ? state.ruleWarnings : undefined;
+            resourceInputs["rules"] = state ? state.rules : undefined;
+            resourceInputs["stagingVersion"] = state ? state.stagingVersion : undefined;
+            resourceInputs["variables"] = state ? state.variables : undefined;
         } else {
             const args = argsOrState as PropertyArgs | undefined;
-            inputs["contacts"] = args ? args.contacts : undefined;
-            inputs["contract"] = args ? args.contract : undefined;
-            inputs["contractId"] = args ? args.contractId : undefined;
-            inputs["cpCode"] = args ? args.cpCode : undefined;
-            inputs["group"] = args ? args.group : undefined;
-            inputs["groupId"] = args ? args.groupId : undefined;
-            inputs["hostnames"] = args ? args.hostnames : undefined;
-            inputs["isSecure"] = args ? args.isSecure : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["origins"] = args ? args.origins : undefined;
-            inputs["product"] = args ? args.product : undefined;
-            inputs["productId"] = args ? args.productId : undefined;
-            inputs["ruleFormat"] = args ? args.ruleFormat : undefined;
-            inputs["ruleWarnings"] = args ? args.ruleWarnings : undefined;
-            inputs["rules"] = args ? args.rules : undefined;
-            inputs["variables"] = args ? args.variables : undefined;
-            inputs["latestVersion"] = undefined /*out*/;
-            inputs["productionVersion"] = undefined /*out*/;
-            inputs["readVersion"] = undefined /*out*/;
-            inputs["ruleErrors"] = undefined /*out*/;
-            inputs["stagingVersion"] = undefined /*out*/;
+            resourceInputs["contacts"] = args ? args.contacts : undefined;
+            resourceInputs["contract"] = args ? args.contract : undefined;
+            resourceInputs["contractId"] = args ? args.contractId : undefined;
+            resourceInputs["cpCode"] = args ? args.cpCode : undefined;
+            resourceInputs["group"] = args ? args.group : undefined;
+            resourceInputs["groupId"] = args ? args.groupId : undefined;
+            resourceInputs["hostnames"] = args ? args.hostnames : undefined;
+            resourceInputs["isSecure"] = args ? args.isSecure : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["origins"] = args ? args.origins : undefined;
+            resourceInputs["product"] = args ? args.product : undefined;
+            resourceInputs["productId"] = args ? args.productId : undefined;
+            resourceInputs["ruleFormat"] = args ? args.ruleFormat : undefined;
+            resourceInputs["ruleWarnings"] = args ? args.ruleWarnings : undefined;
+            resourceInputs["rules"] = args ? args.rules : undefined;
+            resourceInputs["variables"] = args ? args.variables : undefined;
+            resourceInputs["latestVersion"] = undefined /*out*/;
+            resourceInputs["productionVersion"] = undefined /*out*/;
+            resourceInputs["readVersion"] = undefined /*out*/;
+            resourceInputs["ruleErrors"] = undefined /*out*/;
+            resourceInputs["stagingVersion"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(Property.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(Property.__pulumiType, name, resourceInputs, opts);
     }
 }
 

@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -63,7 +62,7 @@ namespace Pulumi.Akamai
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetNetworkListsResult> InvokeAsync(GetNetworkListsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetNetworkListsResult>("akamai:index/getNetworkLists:getNetworkLists", args ?? new GetNetworkListsArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetNetworkListsResult>("akamai:index/getNetworkLists:getNetworkLists", args ?? new GetNetworkListsArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.getNetworkLists` data source to retrieve information about the available network lists,
@@ -116,7 +115,7 @@ namespace Pulumi.Akamai
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetNetworkListsResult> Invoke(GetNetworkListsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetNetworkListsResult>("akamai:index/getNetworkLists:getNetworkLists", args ?? new GetNetworkListsInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetNetworkListsResult>("akamai:index/getNetworkLists:getNetworkLists", args ?? new GetNetworkListsInvokeArgs(), options.WithDefaults());
     }
 
 

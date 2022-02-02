@@ -61,13 +61,13 @@ export class AppSecSecurityPolicyRename extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecSecurityPolicyRenameArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecSecurityPolicyRenameArgs | AppSecSecurityPolicyRenameState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecSecurityPolicyRenameState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            inputs["securityPolicyName"] = state ? state.securityPolicyName : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["securityPolicyName"] = state ? state.securityPolicyName : undefined;
         } else {
             const args = argsOrState as AppSecSecurityPolicyRenameArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -79,14 +79,12 @@ export class AppSecSecurityPolicyRename extends pulumi.CustomResource {
             if ((!args || args.securityPolicyName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyName'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            inputs["securityPolicyName"] = args ? args.securityPolicyName : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["securityPolicyName"] = args ? args.securityPolicyName : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecSecurityPolicyRename.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecSecurityPolicyRename.__pulumiType, name, resourceInputs, opts);
     }
 }
 

@@ -32,10 +32,6 @@ import (
 // 	})
 // }
 // ```
-// ## Argument reference
-//
-// There are no arguments available for this data source.
-//
 // ## Attributes reference
 //
 // This data source returns these attributes:

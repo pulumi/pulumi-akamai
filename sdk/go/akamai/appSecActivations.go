@@ -186,7 +186,7 @@ type AppSecActivationsInput interface {
 }
 
 func (*AppSecActivations) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecActivations)(nil))
+	return reflect.TypeOf((**AppSecActivations)(nil)).Elem()
 }
 
 func (i *AppSecActivations) ToAppSecActivationsOutput() AppSecActivationsOutput {
@@ -195,35 +195,6 @@ func (i *AppSecActivations) ToAppSecActivationsOutput() AppSecActivationsOutput 
 
 func (i *AppSecActivations) ToAppSecActivationsOutputWithContext(ctx context.Context) AppSecActivationsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecActivationsOutput)
-}
-
-func (i *AppSecActivations) ToAppSecActivationsPtrOutput() AppSecActivationsPtrOutput {
-	return i.ToAppSecActivationsPtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecActivations) ToAppSecActivationsPtrOutputWithContext(ctx context.Context) AppSecActivationsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecActivationsPtrOutput)
-}
-
-type AppSecActivationsPtrInput interface {
-	pulumi.Input
-
-	ToAppSecActivationsPtrOutput() AppSecActivationsPtrOutput
-	ToAppSecActivationsPtrOutputWithContext(ctx context.Context) AppSecActivationsPtrOutput
-}
-
-type appSecActivationsPtrType AppSecActivationsArgs
-
-func (*appSecActivationsPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecActivations)(nil))
-}
-
-func (i *appSecActivationsPtrType) ToAppSecActivationsPtrOutput() AppSecActivationsPtrOutput {
-	return i.ToAppSecActivationsPtrOutputWithContext(context.Background())
-}
-
-func (i *appSecActivationsPtrType) ToAppSecActivationsPtrOutputWithContext(ctx context.Context) AppSecActivationsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecActivationsPtrOutput)
 }
 
 // AppSecActivationsArrayInput is an input type that accepts AppSecActivationsArray and AppSecActivationsArrayOutput values.
@@ -279,7 +250,7 @@ func (i AppSecActivationsMap) ToAppSecActivationsMapOutputWithContext(ctx contex
 type AppSecActivationsOutput struct{ *pulumi.OutputState }
 
 func (AppSecActivationsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecActivations)(nil))
+	return reflect.TypeOf((**AppSecActivations)(nil)).Elem()
 }
 
 func (o AppSecActivationsOutput) ToAppSecActivationsOutput() AppSecActivationsOutput {
@@ -290,44 +261,10 @@ func (o AppSecActivationsOutput) ToAppSecActivationsOutputWithContext(ctx contex
 	return o
 }
 
-func (o AppSecActivationsOutput) ToAppSecActivationsPtrOutput() AppSecActivationsPtrOutput {
-	return o.ToAppSecActivationsPtrOutputWithContext(context.Background())
-}
-
-func (o AppSecActivationsOutput) ToAppSecActivationsPtrOutputWithContext(ctx context.Context) AppSecActivationsPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecActivations) *AppSecActivations {
-		return &v
-	}).(AppSecActivationsPtrOutput)
-}
-
-type AppSecActivationsPtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecActivationsPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecActivations)(nil))
-}
-
-func (o AppSecActivationsPtrOutput) ToAppSecActivationsPtrOutput() AppSecActivationsPtrOutput {
-	return o
-}
-
-func (o AppSecActivationsPtrOutput) ToAppSecActivationsPtrOutputWithContext(ctx context.Context) AppSecActivationsPtrOutput {
-	return o
-}
-
-func (o AppSecActivationsPtrOutput) Elem() AppSecActivationsOutput {
-	return o.ApplyT(func(v *AppSecActivations) AppSecActivations {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecActivations
-		return ret
-	}).(AppSecActivationsOutput)
-}
-
 type AppSecActivationsArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecActivationsArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecActivations)(nil))
+	return reflect.TypeOf((*[]*AppSecActivations)(nil)).Elem()
 }
 
 func (o AppSecActivationsArrayOutput) ToAppSecActivationsArrayOutput() AppSecActivationsArrayOutput {
@@ -339,15 +276,15 @@ func (o AppSecActivationsArrayOutput) ToAppSecActivationsArrayOutputWithContext(
 }
 
 func (o AppSecActivationsArrayOutput) Index(i pulumi.IntInput) AppSecActivationsOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecActivations {
-		return vs[0].([]AppSecActivations)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecActivations {
+		return vs[0].([]*AppSecActivations)[vs[1].(int)]
 	}).(AppSecActivationsOutput)
 }
 
 type AppSecActivationsMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecActivationsMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecActivations)(nil))
+	return reflect.TypeOf((*map[string]*AppSecActivations)(nil)).Elem()
 }
 
 func (o AppSecActivationsMapOutput) ToAppSecActivationsMapOutput() AppSecActivationsMapOutput {
@@ -359,18 +296,16 @@ func (o AppSecActivationsMapOutput) ToAppSecActivationsMapOutputWithContext(ctx 
 }
 
 func (o AppSecActivationsMapOutput) MapIndex(k pulumi.StringInput) AppSecActivationsOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecActivations {
-		return vs[0].(map[string]AppSecActivations)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecActivations {
+		return vs[0].(map[string]*AppSecActivations)[vs[1].(string)]
 	}).(AppSecActivationsOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecActivationsInput)(nil)).Elem(), &AppSecActivations{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecActivationsPtrInput)(nil)).Elem(), &AppSecActivations{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecActivationsArrayInput)(nil)).Elem(), AppSecActivationsArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecActivationsMapInput)(nil)).Elem(), AppSecActivationsMap{})
 	pulumi.RegisterOutputType(AppSecActivationsOutput{})
-	pulumi.RegisterOutputType(AppSecActivationsPtrOutput{})
 	pulumi.RegisterOutputType(AppSecActivationsArrayOutput{})
 	pulumi.RegisterOutputType(AppSecActivationsMapOutput{})
 }

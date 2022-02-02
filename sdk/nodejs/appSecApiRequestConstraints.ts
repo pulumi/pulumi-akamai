@@ -62,14 +62,14 @@ export class AppSecApiRequestConstraints extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecApiRequestConstraintsArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecApiRequestConstraintsArgs | AppSecApiRequestConstraintsState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecApiRequestConstraintsState | undefined;
-            inputs["action"] = state ? state.action : undefined;
-            inputs["apiEndpointId"] = state ? state.apiEndpointId : undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["action"] = state ? state.action : undefined;
+            resourceInputs["apiEndpointId"] = state ? state.apiEndpointId : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
         } else {
             const args = argsOrState as AppSecApiRequestConstraintsArgs | undefined;
             if ((!args || args.action === undefined) && !opts.urn) {
@@ -81,15 +81,13 @@ export class AppSecApiRequestConstraints extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            inputs["action"] = args ? args.action : undefined;
-            inputs["apiEndpointId"] = args ? args.apiEndpointId : undefined;
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["action"] = args ? args.action : undefined;
+            resourceInputs["apiEndpointId"] = args ? args.apiEndpointId : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecApiRequestConstraints.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecApiRequestConstraints.__pulumiType, name, resourceInputs, opts);
     }
 }
 

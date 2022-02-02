@@ -57,16 +57,16 @@ export class AppSecRuleUpgrade extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecRuleUpgradeArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecRuleUpgradeArgs | AppSecRuleUpgradeState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecRuleUpgradeState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["currentRuleset"] = state ? state.currentRuleset : undefined;
-            inputs["evalStatus"] = state ? state.evalStatus : undefined;
-            inputs["mode"] = state ? state.mode : undefined;
-            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            inputs["upgradeMode"] = state ? state.upgradeMode : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["currentRuleset"] = state ? state.currentRuleset : undefined;
+            resourceInputs["evalStatus"] = state ? state.evalStatus : undefined;
+            resourceInputs["mode"] = state ? state.mode : undefined;
+            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["upgradeMode"] = state ? state.upgradeMode : undefined;
         } else {
             const args = argsOrState as AppSecRuleUpgradeArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -75,17 +75,15 @@ export class AppSecRuleUpgrade extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            inputs["upgradeMode"] = args ? args.upgradeMode : undefined;
-            inputs["currentRuleset"] = undefined /*out*/;
-            inputs["evalStatus"] = undefined /*out*/;
-            inputs["mode"] = undefined /*out*/;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["upgradeMode"] = args ? args.upgradeMode : undefined;
+            resourceInputs["currentRuleset"] = undefined /*out*/;
+            resourceInputs["evalStatus"] = undefined /*out*/;
+            resourceInputs["mode"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecRuleUpgrade.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecRuleUpgrade.__pulumiType, name, resourceInputs, opts);
     }
 }
 

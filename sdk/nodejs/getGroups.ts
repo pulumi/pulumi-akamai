@@ -20,10 +20,6 @@ import * as utilities from "./utilities";
  * export const propertyMatch = my_example;
  * ```
  *
- * ## Argument reference
- *
- * There are no arguments available for this data source.
- *
  * ## Attributes reference
  *
  * This data source returns these attributes:
@@ -39,9 +35,7 @@ export function getGroups(opts?: pulumi.InvokeOptions): Promise<GetGroupsResult>
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getGroups:getGroups", {
     }, opts);
 }

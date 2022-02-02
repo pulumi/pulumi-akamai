@@ -102,16 +102,16 @@ export class AppSecSecurityPolicy extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecSecurityPolicyArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecSecurityPolicyArgs | AppSecSecurityPolicyState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecSecurityPolicyState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["createFromSecurityPolicyId"] = state ? state.createFromSecurityPolicyId : undefined;
-            inputs["defaultSettings"] = state ? state.defaultSettings : undefined;
-            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            inputs["securityPolicyName"] = state ? state.securityPolicyName : undefined;
-            inputs["securityPolicyPrefix"] = state ? state.securityPolicyPrefix : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["createFromSecurityPolicyId"] = state ? state.createFromSecurityPolicyId : undefined;
+            resourceInputs["defaultSettings"] = state ? state.defaultSettings : undefined;
+            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["securityPolicyName"] = state ? state.securityPolicyName : undefined;
+            resourceInputs["securityPolicyPrefix"] = state ? state.securityPolicyPrefix : undefined;
         } else {
             const args = argsOrState as AppSecSecurityPolicyArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -123,17 +123,15 @@ export class AppSecSecurityPolicy extends pulumi.CustomResource {
             if ((!args || args.securityPolicyPrefix === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyPrefix'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["createFromSecurityPolicyId"] = args ? args.createFromSecurityPolicyId : undefined;
-            inputs["defaultSettings"] = args ? args.defaultSettings : undefined;
-            inputs["securityPolicyName"] = args ? args.securityPolicyName : undefined;
-            inputs["securityPolicyPrefix"] = args ? args.securityPolicyPrefix : undefined;
-            inputs["securityPolicyId"] = undefined /*out*/;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["createFromSecurityPolicyId"] = args ? args.createFromSecurityPolicyId : undefined;
+            resourceInputs["defaultSettings"] = args ? args.defaultSettings : undefined;
+            resourceInputs["securityPolicyName"] = args ? args.securityPolicyName : undefined;
+            resourceInputs["securityPolicyPrefix"] = args ? args.securityPolicyPrefix : undefined;
+            resourceInputs["securityPolicyId"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecSecurityPolicy.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecSecurityPolicy.__pulumiType, name, resourceInputs, opts);
     }
 }
 

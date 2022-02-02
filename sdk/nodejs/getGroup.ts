@@ -35,17 +35,6 @@ import * as utilities from "./utilities";
  *     groupId: "",
  * });
  * ```
- * ## Argument reference
- *
- * This data source supports these arguments:
- *
- * * `groupName` - (Required) The group name.
- * * `contractId` - (Required) A contract's unique ID, including the `ctr_` prefix.
- *
- * ### Deprecated arguments
- * * `contract` - (Deprecated) Replaced by `contractId`. Maintained for legacy purposes.
- * * `name` -  (Deprecated) Replaced by `groupName`. Maintained for legacy purposes.
- *
  * ## Attributes reference
  *
  * This data source returns this attribute:
@@ -58,9 +47,7 @@ export function getGroup(args?: GetGroupArgs, opts?: pulumi.InvokeOptions): Prom
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getGroup:getGroup", {
         "contract": args.contract,
         "contractId": args.contractId,
@@ -74,12 +61,22 @@ export function getGroup(args?: GetGroupArgs, opts?: pulumi.InvokeOptions): Prom
  */
 export interface GetGroupArgs {
     /**
+     * Replaced by `contractId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "contract" has been deprecated.
      */
     contract?: string;
+    /**
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     */
     contractId?: string;
+    /**
+     * The group name.
+     */
     groupName?: string;
     /**
+     * Replaced by `groupName`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "name" has been deprecated.
      */
     name?: string;
@@ -114,12 +111,22 @@ export function getGroupOutput(args?: GetGroupOutputArgs, opts?: pulumi.InvokeOp
  */
 export interface GetGroupOutputArgs {
     /**
+     * Replaced by `contractId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "contract" has been deprecated.
      */
     contract?: pulumi.Input<string>;
+    /**
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     */
     contractId?: pulumi.Input<string>;
+    /**
+     * The group name.
+     */
     groupName?: pulumi.Input<string>;
     /**
+     * Replaced by `groupName`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "name" has been deprecated.
      */
     name?: pulumi.Input<string>;

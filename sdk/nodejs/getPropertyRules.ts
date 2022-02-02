@@ -26,15 +26,6 @@ import * as utilities from "./utilities";
  * export const propertyMatch = my_example;
  * ```
  *
- * ## Argument reference
- *
- * This data source supports these arguments:
- *
- * * `contractId` - (Required) A contract's unique ID, including the `ctr_` prefix.
- * * `groupId` - (Required) A group's unique ID, including the `grp_` prefix.
- * * `propertyId` - (Required) A property's unique ID, including the `prp_` prefix.
- * * `version` - (Optional) The version to return. Returns the latest version by default.
- *
  * ## Attributes reference
  *
  * This data source returns these attributes:
@@ -48,9 +39,7 @@ export function getPropertyRules(args: GetPropertyRulesArgs, opts?: pulumi.Invok
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getPropertyRules:getPropertyRules", {
         "contractId": args.contractId,
         "groupId": args.groupId,
@@ -64,10 +53,22 @@ export function getPropertyRules(args: GetPropertyRulesArgs, opts?: pulumi.Invok
  * A collection of arguments for invoking getPropertyRules.
  */
 export interface GetPropertyRulesArgs {
+    /**
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     */
     contractId?: string;
+    /**
+     * - (Required) A group's unique ID, including the `grp_` prefix.
+     */
     groupId?: string;
+    /**
+     * - (Required) A property's unique ID, including the `prp_` prefix.
+     */
     propertyId: string;
     ruleFormat?: string;
+    /**
+     * - (Optional) The version to return. Returns the latest version by default.
+     */
     version?: number;
 }
 
@@ -96,9 +97,21 @@ export function getPropertyRulesOutput(args: GetPropertyRulesOutputArgs, opts?: 
  * A collection of arguments for invoking getPropertyRules.
  */
 export interface GetPropertyRulesOutputArgs {
+    /**
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     */
     contractId?: pulumi.Input<string>;
+    /**
+     * - (Required) A group's unique ID, including the `grp_` prefix.
+     */
     groupId?: pulumi.Input<string>;
+    /**
+     * - (Required) A property's unique ID, including the `prp_` prefix.
+     */
     propertyId: pulumi.Input<string>;
     ruleFormat?: pulumi.Input<string>;
+    /**
+     * - (Optional) The version to return. Returns the latest version by default.
+     */
     version?: pulumi.Input<number>;
 }

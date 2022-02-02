@@ -47,9 +47,7 @@ export function getAppSecPenaltyBox(args: GetAppSecPenaltyBoxArgs, opts?: pulumi
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecPenaltyBox:getAppSecPenaltyBox", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,

@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -78,7 +77,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the reputation profile action information.
         /// </summary>
         public static Task<GetAppSecReputationProfileActionsResult> InvokeAsync(GetAppSecReputationProfileActionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecReputationProfileActionsResult>("akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions", args ?? new GetAppSecReputationProfileActionsArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecReputationProfileActionsResult>("akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions", args ?? new GetAppSecReputationProfileActionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// ## akamai.getAppSecReputationProfileActions
@@ -146,7 +145,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the reputation profile action information.
         /// </summary>
         public static Output<GetAppSecReputationProfileActionsResult> Invoke(GetAppSecReputationProfileActionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfileActionsResult>("akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions", args ?? new GetAppSecReputationProfileActionsInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfileActionsResult>("akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions", args ?? new GetAppSecReputationProfileActionsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -41,12 +41,9 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
-        /// ## Argument reference
-        /// 
-        /// There are no arguments available for this data source.
         /// </summary>
         public static Task<GetPropertyRuleFormatsResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRuleFormatsResult>("akamai:index/getPropertyRuleFormats:getPropertyRuleFormats", InvokeArgs.Empty, options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRuleFormatsResult>("akamai:index/getPropertyRuleFormats:getPropertyRuleFormats", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

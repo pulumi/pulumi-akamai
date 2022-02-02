@@ -73,65 +73,55 @@ namespace Pulumi.Akamai
     /// 
     /// }
     /// ```
-    /// ## Argument reference
-    /// 
-    /// The following arguments are supported:
-    /// 
-    /// * `property_id` - (Required) The property's unique identifier, including the `prp_` prefix.
-    /// * `contact` - (Required) One or more email addresses to send activation status changes to.
-    /// * `version` - (Required) The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `akamai.Property` resource labeled `example`.
-    /// * `network` - (Optional) Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-    /// * `note` - (Optional) A log message you can assign to the activation request.
-    /// * `auto_acknowledge_rule_warnings` - (Optional) Whether the activation should proceed despite any warnings. By default set to `true`.
-    /// 
-    /// ### Deprecated arguments
-    /// 
-    /// * `property` - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
-    /// 
-    /// ## Attribute reference
-    /// 
-    /// The following attributes are returned:
-    /// 
-    /// * `id` - The unique identifier for this activation.
-    /// * `warnings` - The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
-    /// * `errors` - The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
-    /// * `activation_id` - The ID given to the activation event while it's in progress.
-    /// * `status` - The property version's activation status on the selected network.
-    /// 
-    /// ### Deprecated attributes
-    /// 
-    /// * `rule_warnings` - (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
     /// </summary>
     [AkamaiResourceType("akamai:index/propertyActivation:PropertyActivation")]
     public partial class PropertyActivation : Pulumi.CustomResource
     {
+        /// <summary>
+        /// The ID given to the activation event while it's in progress.
+        /// </summary>
         [Output("activationId")]
         public Output<string> ActivationId { get; private set; } = null!;
 
         /// <summary>
-        /// automatically acknowledge all rule warnings for activation to continue. default is true
+        /// Whether the activation should proceed despite any warnings. By default set to `true`.
         /// </summary>
         [Output("autoAcknowledgeRuleWarnings")]
         public Output<bool?> AutoAcknowledgeRuleWarnings { get; private set; } = null!;
 
+        /// <summary>
+        /// One or more email addresses to send activation status changes to.
+        /// </summary>
         [Output("contacts")]
         public Output<ImmutableArray<string>> Contacts { get; private set; } = null!;
 
+        /// <summary>
+        /// The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        /// </summary>
         [Output("errors")]
         public Output<string> Errors { get; private set; } = null!;
 
+        /// <summary>
+        /// Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+        /// </summary>
         [Output("network")]
         public Output<string?> Network { get; private set; } = null!;
 
         /// <summary>
-        /// assigns a log message to the activation request
+        /// A log message you can assign to the activation request.
         /// </summary>
         [Output("note")]
         public Output<string?> Note { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+        /// </summary>
         [Output("property")]
         public Output<string> Property { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) The property's unique identifier, including the `prp_` prefix.
+        /// </summary>
         [Output("propertyId")]
         public Output<string> PropertyId { get; private set; } = null!;
 
@@ -141,12 +131,21 @@ namespace Pulumi.Akamai
         [Output("ruleWarnings")]
         public Output<ImmutableArray<Outputs.PropertyActivationRuleWarning>> RuleWarnings { get; private set; } = null!;
 
+        /// <summary>
+        /// The property version's activation status on the selected network.
+        /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
+        /// <summary>
+        /// The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `akamai.Property` resource labeled `example`.
+        /// </summary>
         [Output("version")]
         public Output<int> Version { get; private set; } = null!;
 
+        /// <summary>
+        /// The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        /// </summary>
         [Output("warnings")]
         public Output<string> Warnings { get; private set; } = null!;
 
@@ -200,35 +199,51 @@ namespace Pulumi.Akamai
 
     public sealed class PropertyActivationArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The ID given to the activation event while it's in progress.
+        /// </summary>
         [Input("activationId")]
         public Input<string>? ActivationId { get; set; }
 
         /// <summary>
-        /// automatically acknowledge all rule warnings for activation to continue. default is true
+        /// Whether the activation should proceed despite any warnings. By default set to `true`.
         /// </summary>
         [Input("autoAcknowledgeRuleWarnings")]
         public Input<bool>? AutoAcknowledgeRuleWarnings { get; set; }
 
         [Input("contacts", required: true)]
         private InputList<string>? _contacts;
+
+        /// <summary>
+        /// One or more email addresses to send activation status changes to.
+        /// </summary>
         public InputList<string> Contacts
         {
             get => _contacts ?? (_contacts = new InputList<string>());
             set => _contacts = value;
         }
 
+        /// <summary>
+        /// Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+        /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
 
         /// <summary>
-        /// assigns a log message to the activation request
+        /// A log message you can assign to the activation request.
         /// </summary>
         [Input("note")]
         public Input<string>? Note { get; set; }
 
+        /// <summary>
+        /// - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("property")]
         public Input<string>? Property { get; set; }
 
+        /// <summary>
+        /// - (Required) The property's unique identifier, including the `prp_` prefix.
+        /// </summary>
         [Input("propertyId")]
         public Input<string>? PropertyId { get; set; }
 
@@ -249,6 +264,9 @@ namespace Pulumi.Akamai
             set => _ruleWarnings = value;
         }
 
+        /// <summary>
+        /// The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `akamai.Property` resource labeled `example`.
+        /// </summary>
         [Input("version", required: true)]
         public Input<int> Version { get; set; } = null!;
 
@@ -259,38 +277,57 @@ namespace Pulumi.Akamai
 
     public sealed class PropertyActivationState : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The ID given to the activation event while it's in progress.
+        /// </summary>
         [Input("activationId")]
         public Input<string>? ActivationId { get; set; }
 
         /// <summary>
-        /// automatically acknowledge all rule warnings for activation to continue. default is true
+        /// Whether the activation should proceed despite any warnings. By default set to `true`.
         /// </summary>
         [Input("autoAcknowledgeRuleWarnings")]
         public Input<bool>? AutoAcknowledgeRuleWarnings { get; set; }
 
         [Input("contacts")]
         private InputList<string>? _contacts;
+
+        /// <summary>
+        /// One or more email addresses to send activation status changes to.
+        /// </summary>
         public InputList<string> Contacts
         {
             get => _contacts ?? (_contacts = new InputList<string>());
             set => _contacts = value;
         }
 
+        /// <summary>
+        /// The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        /// </summary>
         [Input("errors")]
         public Input<string>? Errors { get; set; }
 
+        /// <summary>
+        /// Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+        /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
 
         /// <summary>
-        /// assigns a log message to the activation request
+        /// A log message you can assign to the activation request.
         /// </summary>
         [Input("note")]
         public Input<string>? Note { get; set; }
 
+        /// <summary>
+        /// - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("property")]
         public Input<string>? Property { get; set; }
 
+        /// <summary>
+        /// - (Required) The property's unique identifier, including the `prp_` prefix.
+        /// </summary>
         [Input("propertyId")]
         public Input<string>? PropertyId { get; set; }
 
@@ -311,12 +348,21 @@ namespace Pulumi.Akamai
             set => _ruleWarnings = value;
         }
 
+        /// <summary>
+        /// The property version's activation status on the selected network.
+        /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
+        /// <summary>
+        /// The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `akamai.Property` resource labeled `example`.
+        /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }
 
+        /// <summary>
+        /// The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        /// </summary>
         [Input("warnings")]
         public Input<string>? Warnings { get; set; }
 

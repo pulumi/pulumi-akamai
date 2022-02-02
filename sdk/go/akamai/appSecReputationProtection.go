@@ -164,7 +164,7 @@ type AppSecReputationProtectionInput interface {
 }
 
 func (*AppSecReputationProtection) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecReputationProtection)(nil))
+	return reflect.TypeOf((**AppSecReputationProtection)(nil)).Elem()
 }
 
 func (i *AppSecReputationProtection) ToAppSecReputationProtectionOutput() AppSecReputationProtectionOutput {
@@ -173,35 +173,6 @@ func (i *AppSecReputationProtection) ToAppSecReputationProtectionOutput() AppSec
 
 func (i *AppSecReputationProtection) ToAppSecReputationProtectionOutputWithContext(ctx context.Context) AppSecReputationProtectionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecReputationProtectionOutput)
-}
-
-func (i *AppSecReputationProtection) ToAppSecReputationProtectionPtrOutput() AppSecReputationProtectionPtrOutput {
-	return i.ToAppSecReputationProtectionPtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecReputationProtection) ToAppSecReputationProtectionPtrOutputWithContext(ctx context.Context) AppSecReputationProtectionPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecReputationProtectionPtrOutput)
-}
-
-type AppSecReputationProtectionPtrInput interface {
-	pulumi.Input
-
-	ToAppSecReputationProtectionPtrOutput() AppSecReputationProtectionPtrOutput
-	ToAppSecReputationProtectionPtrOutputWithContext(ctx context.Context) AppSecReputationProtectionPtrOutput
-}
-
-type appSecReputationProtectionPtrType AppSecReputationProtectionArgs
-
-func (*appSecReputationProtectionPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecReputationProtection)(nil))
-}
-
-func (i *appSecReputationProtectionPtrType) ToAppSecReputationProtectionPtrOutput() AppSecReputationProtectionPtrOutput {
-	return i.ToAppSecReputationProtectionPtrOutputWithContext(context.Background())
-}
-
-func (i *appSecReputationProtectionPtrType) ToAppSecReputationProtectionPtrOutputWithContext(ctx context.Context) AppSecReputationProtectionPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecReputationProtectionPtrOutput)
 }
 
 // AppSecReputationProtectionArrayInput is an input type that accepts AppSecReputationProtectionArray and AppSecReputationProtectionArrayOutput values.
@@ -257,7 +228,7 @@ func (i AppSecReputationProtectionMap) ToAppSecReputationProtectionMapOutputWith
 type AppSecReputationProtectionOutput struct{ *pulumi.OutputState }
 
 func (AppSecReputationProtectionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecReputationProtection)(nil))
+	return reflect.TypeOf((**AppSecReputationProtection)(nil)).Elem()
 }
 
 func (o AppSecReputationProtectionOutput) ToAppSecReputationProtectionOutput() AppSecReputationProtectionOutput {
@@ -268,44 +239,10 @@ func (o AppSecReputationProtectionOutput) ToAppSecReputationProtectionOutputWith
 	return o
 }
 
-func (o AppSecReputationProtectionOutput) ToAppSecReputationProtectionPtrOutput() AppSecReputationProtectionPtrOutput {
-	return o.ToAppSecReputationProtectionPtrOutputWithContext(context.Background())
-}
-
-func (o AppSecReputationProtectionOutput) ToAppSecReputationProtectionPtrOutputWithContext(ctx context.Context) AppSecReputationProtectionPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecReputationProtection) *AppSecReputationProtection {
-		return &v
-	}).(AppSecReputationProtectionPtrOutput)
-}
-
-type AppSecReputationProtectionPtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecReputationProtectionPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecReputationProtection)(nil))
-}
-
-func (o AppSecReputationProtectionPtrOutput) ToAppSecReputationProtectionPtrOutput() AppSecReputationProtectionPtrOutput {
-	return o
-}
-
-func (o AppSecReputationProtectionPtrOutput) ToAppSecReputationProtectionPtrOutputWithContext(ctx context.Context) AppSecReputationProtectionPtrOutput {
-	return o
-}
-
-func (o AppSecReputationProtectionPtrOutput) Elem() AppSecReputationProtectionOutput {
-	return o.ApplyT(func(v *AppSecReputationProtection) AppSecReputationProtection {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecReputationProtection
-		return ret
-	}).(AppSecReputationProtectionOutput)
-}
-
 type AppSecReputationProtectionArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecReputationProtectionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecReputationProtection)(nil))
+	return reflect.TypeOf((*[]*AppSecReputationProtection)(nil)).Elem()
 }
 
 func (o AppSecReputationProtectionArrayOutput) ToAppSecReputationProtectionArrayOutput() AppSecReputationProtectionArrayOutput {
@@ -317,15 +254,15 @@ func (o AppSecReputationProtectionArrayOutput) ToAppSecReputationProtectionArray
 }
 
 func (o AppSecReputationProtectionArrayOutput) Index(i pulumi.IntInput) AppSecReputationProtectionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecReputationProtection {
-		return vs[0].([]AppSecReputationProtection)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecReputationProtection {
+		return vs[0].([]*AppSecReputationProtection)[vs[1].(int)]
 	}).(AppSecReputationProtectionOutput)
 }
 
 type AppSecReputationProtectionMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecReputationProtectionMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecReputationProtection)(nil))
+	return reflect.TypeOf((*map[string]*AppSecReputationProtection)(nil)).Elem()
 }
 
 func (o AppSecReputationProtectionMapOutput) ToAppSecReputationProtectionMapOutput() AppSecReputationProtectionMapOutput {
@@ -337,18 +274,16 @@ func (o AppSecReputationProtectionMapOutput) ToAppSecReputationProtectionMapOutp
 }
 
 func (o AppSecReputationProtectionMapOutput) MapIndex(k pulumi.StringInput) AppSecReputationProtectionOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecReputationProtection {
-		return vs[0].(map[string]AppSecReputationProtection)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecReputationProtection {
+		return vs[0].(map[string]*AppSecReputationProtection)[vs[1].(string)]
 	}).(AppSecReputationProtectionOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecReputationProtectionInput)(nil)).Elem(), &AppSecReputationProtection{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecReputationProtectionPtrInput)(nil)).Elem(), &AppSecReputationProtection{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecReputationProtectionArrayInput)(nil)).Elem(), AppSecReputationProtectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecReputationProtectionMapInput)(nil)).Elem(), AppSecReputationProtectionMap{})
 	pulumi.RegisterOutputType(AppSecReputationProtectionOutput{})
-	pulumi.RegisterOutputType(AppSecReputationProtectionPtrOutput{})
 	pulumi.RegisterOutputType(AppSecReputationProtectionArrayOutput{})
 	pulumi.RegisterOutputType(AppSecReputationProtectionMapOutput{})
 }

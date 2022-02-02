@@ -6,17 +6,16 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
     public static class GetAppSecEval
     {
         public static Task<GetAppSecEvalResult> InvokeAsync(GetAppSecEvalArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalResult>("akamai:index/getAppSecEval:getAppSecEval", args ?? new GetAppSecEvalArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalResult>("akamai:index/getAppSecEval:getAppSecEval", args ?? new GetAppSecEvalArgs(), options.WithDefaults());
 
         public static Output<GetAppSecEvalResult> Invoke(GetAppSecEvalInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecEvalResult>("akamai:index/getAppSecEval:getAppSecEval", args ?? new GetAppSecEvalInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecEvalResult>("akamai:index/getAppSecEval:getAppSecEval", args ?? new GetAppSecEvalInvokeArgs(), options.WithDefaults());
     }
 
 

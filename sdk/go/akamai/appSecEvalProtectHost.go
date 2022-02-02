@@ -145,7 +145,7 @@ type AppSecEvalProtectHostInput interface {
 }
 
 func (*AppSecEvalProtectHost) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecEvalProtectHost)(nil))
+	return reflect.TypeOf((**AppSecEvalProtectHost)(nil)).Elem()
 }
 
 func (i *AppSecEvalProtectHost) ToAppSecEvalProtectHostOutput() AppSecEvalProtectHostOutput {
@@ -154,35 +154,6 @@ func (i *AppSecEvalProtectHost) ToAppSecEvalProtectHostOutput() AppSecEvalProtec
 
 func (i *AppSecEvalProtectHost) ToAppSecEvalProtectHostOutputWithContext(ctx context.Context) AppSecEvalProtectHostOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecEvalProtectHostOutput)
-}
-
-func (i *AppSecEvalProtectHost) ToAppSecEvalProtectHostPtrOutput() AppSecEvalProtectHostPtrOutput {
-	return i.ToAppSecEvalProtectHostPtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecEvalProtectHost) ToAppSecEvalProtectHostPtrOutputWithContext(ctx context.Context) AppSecEvalProtectHostPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecEvalProtectHostPtrOutput)
-}
-
-type AppSecEvalProtectHostPtrInput interface {
-	pulumi.Input
-
-	ToAppSecEvalProtectHostPtrOutput() AppSecEvalProtectHostPtrOutput
-	ToAppSecEvalProtectHostPtrOutputWithContext(ctx context.Context) AppSecEvalProtectHostPtrOutput
-}
-
-type appSecEvalProtectHostPtrType AppSecEvalProtectHostArgs
-
-func (*appSecEvalProtectHostPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecEvalProtectHost)(nil))
-}
-
-func (i *appSecEvalProtectHostPtrType) ToAppSecEvalProtectHostPtrOutput() AppSecEvalProtectHostPtrOutput {
-	return i.ToAppSecEvalProtectHostPtrOutputWithContext(context.Background())
-}
-
-func (i *appSecEvalProtectHostPtrType) ToAppSecEvalProtectHostPtrOutputWithContext(ctx context.Context) AppSecEvalProtectHostPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecEvalProtectHostPtrOutput)
 }
 
 // AppSecEvalProtectHostArrayInput is an input type that accepts AppSecEvalProtectHostArray and AppSecEvalProtectHostArrayOutput values.
@@ -238,7 +209,7 @@ func (i AppSecEvalProtectHostMap) ToAppSecEvalProtectHostMapOutputWithContext(ct
 type AppSecEvalProtectHostOutput struct{ *pulumi.OutputState }
 
 func (AppSecEvalProtectHostOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecEvalProtectHost)(nil))
+	return reflect.TypeOf((**AppSecEvalProtectHost)(nil)).Elem()
 }
 
 func (o AppSecEvalProtectHostOutput) ToAppSecEvalProtectHostOutput() AppSecEvalProtectHostOutput {
@@ -249,44 +220,10 @@ func (o AppSecEvalProtectHostOutput) ToAppSecEvalProtectHostOutputWithContext(ct
 	return o
 }
 
-func (o AppSecEvalProtectHostOutput) ToAppSecEvalProtectHostPtrOutput() AppSecEvalProtectHostPtrOutput {
-	return o.ToAppSecEvalProtectHostPtrOutputWithContext(context.Background())
-}
-
-func (o AppSecEvalProtectHostOutput) ToAppSecEvalProtectHostPtrOutputWithContext(ctx context.Context) AppSecEvalProtectHostPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecEvalProtectHost) *AppSecEvalProtectHost {
-		return &v
-	}).(AppSecEvalProtectHostPtrOutput)
-}
-
-type AppSecEvalProtectHostPtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecEvalProtectHostPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecEvalProtectHost)(nil))
-}
-
-func (o AppSecEvalProtectHostPtrOutput) ToAppSecEvalProtectHostPtrOutput() AppSecEvalProtectHostPtrOutput {
-	return o
-}
-
-func (o AppSecEvalProtectHostPtrOutput) ToAppSecEvalProtectHostPtrOutputWithContext(ctx context.Context) AppSecEvalProtectHostPtrOutput {
-	return o
-}
-
-func (o AppSecEvalProtectHostPtrOutput) Elem() AppSecEvalProtectHostOutput {
-	return o.ApplyT(func(v *AppSecEvalProtectHost) AppSecEvalProtectHost {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecEvalProtectHost
-		return ret
-	}).(AppSecEvalProtectHostOutput)
-}
-
 type AppSecEvalProtectHostArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecEvalProtectHostArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecEvalProtectHost)(nil))
+	return reflect.TypeOf((*[]*AppSecEvalProtectHost)(nil)).Elem()
 }
 
 func (o AppSecEvalProtectHostArrayOutput) ToAppSecEvalProtectHostArrayOutput() AppSecEvalProtectHostArrayOutput {
@@ -298,15 +235,15 @@ func (o AppSecEvalProtectHostArrayOutput) ToAppSecEvalProtectHostArrayOutputWith
 }
 
 func (o AppSecEvalProtectHostArrayOutput) Index(i pulumi.IntInput) AppSecEvalProtectHostOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecEvalProtectHost {
-		return vs[0].([]AppSecEvalProtectHost)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecEvalProtectHost {
+		return vs[0].([]*AppSecEvalProtectHost)[vs[1].(int)]
 	}).(AppSecEvalProtectHostOutput)
 }
 
 type AppSecEvalProtectHostMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecEvalProtectHostMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecEvalProtectHost)(nil))
+	return reflect.TypeOf((*map[string]*AppSecEvalProtectHost)(nil)).Elem()
 }
 
 func (o AppSecEvalProtectHostMapOutput) ToAppSecEvalProtectHostMapOutput() AppSecEvalProtectHostMapOutput {
@@ -318,18 +255,16 @@ func (o AppSecEvalProtectHostMapOutput) ToAppSecEvalProtectHostMapOutputWithCont
 }
 
 func (o AppSecEvalProtectHostMapOutput) MapIndex(k pulumi.StringInput) AppSecEvalProtectHostOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecEvalProtectHost {
-		return vs[0].(map[string]AppSecEvalProtectHost)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecEvalProtectHost {
+		return vs[0].(map[string]*AppSecEvalProtectHost)[vs[1].(string)]
 	}).(AppSecEvalProtectHostOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecEvalProtectHostInput)(nil)).Elem(), &AppSecEvalProtectHost{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecEvalProtectHostPtrInput)(nil)).Elem(), &AppSecEvalProtectHost{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecEvalProtectHostArrayInput)(nil)).Elem(), AppSecEvalProtectHostArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecEvalProtectHostMapInput)(nil)).Elem(), AppSecEvalProtectHostMap{})
 	pulumi.RegisterOutputType(AppSecEvalProtectHostOutput{})
-	pulumi.RegisterOutputType(AppSecEvalProtectHostPtrOutput{})
 	pulumi.RegisterOutputType(AppSecEvalProtectHostArrayOutput{})
 	pulumi.RegisterOutputType(AppSecEvalProtectHostMapOutput{})
 }

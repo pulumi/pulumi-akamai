@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai.Properties
 {
@@ -14,10 +13,10 @@ namespace Pulumi.Akamai.Properties
     public static class GetCpCode
     {
         public static Task<GetCpCodeResult> InvokeAsync(GetCpCodeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCpCodeResult>("akamai:properties/getCpCode:getCpCode", args ?? new GetCpCodeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetCpCodeResult>("akamai:properties/getCpCode:getCpCode", args ?? new GetCpCodeArgs(), options.WithDefaults());
 
         public static Output<GetCpCodeResult> Invoke(GetCpCodeInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCpCodeResult>("akamai:properties/getCpCode:getCpCode", args ?? new GetCpCodeInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetCpCodeResult>("akamai:properties/getCpCode:getCpCode", args ?? new GetCpCodeInvokeArgs(), options.WithDefaults());
     }
 
 

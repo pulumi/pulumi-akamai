@@ -13,11 +13,29 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GtmPropertyTrafficTarget
     {
+        /// <summary>
+        /// A unique identifier for an existing data center in the domain.
+        /// </summary>
         public readonly int? DatacenterId;
+        /// <summary>
+        /// A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Specifies an optional data center for the property. Used when there are no servers configured for the property.
+        /// </summary>
         public readonly string? HandoutCname;
+        /// <summary>
+        /// Name of HTTP header.
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// (List) Identifies the IP address or the hostnames of the servers.
+        /// </summary>
         public readonly ImmutableArray<string> Servers;
+        /// <summary>
+        /// Specifies the traffic weight for the target.
+        /// </summary>
         public readonly double? Weight;
 
         [OutputConstructor]

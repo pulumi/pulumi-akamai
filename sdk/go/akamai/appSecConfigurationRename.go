@@ -149,7 +149,7 @@ type AppSecConfigurationRenameInput interface {
 }
 
 func (*AppSecConfigurationRename) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecConfigurationRename)(nil))
+	return reflect.TypeOf((**AppSecConfigurationRename)(nil)).Elem()
 }
 
 func (i *AppSecConfigurationRename) ToAppSecConfigurationRenameOutput() AppSecConfigurationRenameOutput {
@@ -158,35 +158,6 @@ func (i *AppSecConfigurationRename) ToAppSecConfigurationRenameOutput() AppSecCo
 
 func (i *AppSecConfigurationRename) ToAppSecConfigurationRenameOutputWithContext(ctx context.Context) AppSecConfigurationRenameOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecConfigurationRenameOutput)
-}
-
-func (i *AppSecConfigurationRename) ToAppSecConfigurationRenamePtrOutput() AppSecConfigurationRenamePtrOutput {
-	return i.ToAppSecConfigurationRenamePtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecConfigurationRename) ToAppSecConfigurationRenamePtrOutputWithContext(ctx context.Context) AppSecConfigurationRenamePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecConfigurationRenamePtrOutput)
-}
-
-type AppSecConfigurationRenamePtrInput interface {
-	pulumi.Input
-
-	ToAppSecConfigurationRenamePtrOutput() AppSecConfigurationRenamePtrOutput
-	ToAppSecConfigurationRenamePtrOutputWithContext(ctx context.Context) AppSecConfigurationRenamePtrOutput
-}
-
-type appSecConfigurationRenamePtrType AppSecConfigurationRenameArgs
-
-func (*appSecConfigurationRenamePtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecConfigurationRename)(nil))
-}
-
-func (i *appSecConfigurationRenamePtrType) ToAppSecConfigurationRenamePtrOutput() AppSecConfigurationRenamePtrOutput {
-	return i.ToAppSecConfigurationRenamePtrOutputWithContext(context.Background())
-}
-
-func (i *appSecConfigurationRenamePtrType) ToAppSecConfigurationRenamePtrOutputWithContext(ctx context.Context) AppSecConfigurationRenamePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecConfigurationRenamePtrOutput)
 }
 
 // AppSecConfigurationRenameArrayInput is an input type that accepts AppSecConfigurationRenameArray and AppSecConfigurationRenameArrayOutput values.
@@ -242,7 +213,7 @@ func (i AppSecConfigurationRenameMap) ToAppSecConfigurationRenameMapOutputWithCo
 type AppSecConfigurationRenameOutput struct{ *pulumi.OutputState }
 
 func (AppSecConfigurationRenameOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecConfigurationRename)(nil))
+	return reflect.TypeOf((**AppSecConfigurationRename)(nil)).Elem()
 }
 
 func (o AppSecConfigurationRenameOutput) ToAppSecConfigurationRenameOutput() AppSecConfigurationRenameOutput {
@@ -253,44 +224,10 @@ func (o AppSecConfigurationRenameOutput) ToAppSecConfigurationRenameOutputWithCo
 	return o
 }
 
-func (o AppSecConfigurationRenameOutput) ToAppSecConfigurationRenamePtrOutput() AppSecConfigurationRenamePtrOutput {
-	return o.ToAppSecConfigurationRenamePtrOutputWithContext(context.Background())
-}
-
-func (o AppSecConfigurationRenameOutput) ToAppSecConfigurationRenamePtrOutputWithContext(ctx context.Context) AppSecConfigurationRenamePtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecConfigurationRename) *AppSecConfigurationRename {
-		return &v
-	}).(AppSecConfigurationRenamePtrOutput)
-}
-
-type AppSecConfigurationRenamePtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecConfigurationRenamePtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecConfigurationRename)(nil))
-}
-
-func (o AppSecConfigurationRenamePtrOutput) ToAppSecConfigurationRenamePtrOutput() AppSecConfigurationRenamePtrOutput {
-	return o
-}
-
-func (o AppSecConfigurationRenamePtrOutput) ToAppSecConfigurationRenamePtrOutputWithContext(ctx context.Context) AppSecConfigurationRenamePtrOutput {
-	return o
-}
-
-func (o AppSecConfigurationRenamePtrOutput) Elem() AppSecConfigurationRenameOutput {
-	return o.ApplyT(func(v *AppSecConfigurationRename) AppSecConfigurationRename {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecConfigurationRename
-		return ret
-	}).(AppSecConfigurationRenameOutput)
-}
-
 type AppSecConfigurationRenameArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecConfigurationRenameArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecConfigurationRename)(nil))
+	return reflect.TypeOf((*[]*AppSecConfigurationRename)(nil)).Elem()
 }
 
 func (o AppSecConfigurationRenameArrayOutput) ToAppSecConfigurationRenameArrayOutput() AppSecConfigurationRenameArrayOutput {
@@ -302,15 +239,15 @@ func (o AppSecConfigurationRenameArrayOutput) ToAppSecConfigurationRenameArrayOu
 }
 
 func (o AppSecConfigurationRenameArrayOutput) Index(i pulumi.IntInput) AppSecConfigurationRenameOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecConfigurationRename {
-		return vs[0].([]AppSecConfigurationRename)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecConfigurationRename {
+		return vs[0].([]*AppSecConfigurationRename)[vs[1].(int)]
 	}).(AppSecConfigurationRenameOutput)
 }
 
 type AppSecConfigurationRenameMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecConfigurationRenameMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecConfigurationRename)(nil))
+	return reflect.TypeOf((*map[string]*AppSecConfigurationRename)(nil)).Elem()
 }
 
 func (o AppSecConfigurationRenameMapOutput) ToAppSecConfigurationRenameMapOutput() AppSecConfigurationRenameMapOutput {
@@ -322,18 +259,16 @@ func (o AppSecConfigurationRenameMapOutput) ToAppSecConfigurationRenameMapOutput
 }
 
 func (o AppSecConfigurationRenameMapOutput) MapIndex(k pulumi.StringInput) AppSecConfigurationRenameOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecConfigurationRename {
-		return vs[0].(map[string]AppSecConfigurationRename)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecConfigurationRename {
+		return vs[0].(map[string]*AppSecConfigurationRename)[vs[1].(string)]
 	}).(AppSecConfigurationRenameOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecConfigurationRenameInput)(nil)).Elem(), &AppSecConfigurationRename{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecConfigurationRenamePtrInput)(nil)).Elem(), &AppSecConfigurationRename{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecConfigurationRenameArrayInput)(nil)).Elem(), AppSecConfigurationRenameArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecConfigurationRenameMapInput)(nil)).Elem(), AppSecConfigurationRenameMap{})
 	pulumi.RegisterOutputType(AppSecConfigurationRenameOutput{})
-	pulumi.RegisterOutputType(AppSecConfigurationRenamePtrOutput{})
 	pulumi.RegisterOutputType(AppSecConfigurationRenameArrayOutput{})
 	pulumi.RegisterOutputType(AppSecConfigurationRenameMapOutput{})
 }

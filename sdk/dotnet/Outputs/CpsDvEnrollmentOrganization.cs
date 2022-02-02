@@ -13,13 +13,37 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class CpsDvEnrollmentOrganization
     {
+        /// <summary>
+        /// The address of your organization.
+        /// </summary>
         public readonly string AddressLineOne;
+        /// <summary>
+        /// The address of your organization.
+        /// </summary>
         public readonly string? AddressLineTwo;
+        /// <summary>
+        /// The city where your organization resides.
+        /// </summary>
         public readonly string City;
+        /// <summary>
+        /// The code for the country where your organization resides.
+        /// </summary>
         public readonly string CountryCode;
+        /// <summary>
+        /// The name of your organization.
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The phone number of the administrator who you want to use as a contact at your company.
+        /// </summary>
         public readonly string Phone;
+        /// <summary>
+        /// The postal code of your organization.
+        /// </summary>
         public readonly string PostalCode;
+        /// <summary>
+        /// The region of your organization, typically a state or province.
+        /// </summary>
         public readonly string Region;
 
         [OutputConstructor]

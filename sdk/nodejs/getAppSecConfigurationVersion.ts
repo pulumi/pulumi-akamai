@@ -9,9 +9,7 @@ export function getAppSecConfigurationVersion(args: GetAppSecConfigurationVersio
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecConfigurationVersion:getAppSecConfigurationVersion", {
         "configId": args.configId,
         "version": args.version,

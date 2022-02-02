@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -44,15 +43,6 @@ namespace Pulumi.Akamai
         /// }
         /// ```
         /// 
-        /// ## Argument reference
-        /// 
-        /// This data source supports these arguments:
-        /// 
-        /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-        /// * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
-        /// * `property_id` - (Required) A property's unique ID, including the `prp_` prefix.
-        /// * `version` - (Optional) The version to return. Returns the latest version by default.
-        /// 
         /// ## Attributes reference
         /// 
         /// This data source returns these attributes:
@@ -62,7 +52,7 @@ namespace Pulumi.Akamai
         /// * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the Property Manager API documentation.
         /// </summary>
         public static Task<GetPropertyRulesResult> InvokeAsync(GetPropertyRulesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRulesResult>("akamai:index/getPropertyRules:getPropertyRules", args ?? new GetPropertyRulesArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRulesResult>("akamai:index/getPropertyRules:getPropertyRules", args ?? new GetPropertyRulesArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.getPropertyRules` data source to query and retrieve the rule tree of
@@ -96,15 +86,6 @@ namespace Pulumi.Akamai
         /// }
         /// ```
         /// 
-        /// ## Argument reference
-        /// 
-        /// This data source supports these arguments:
-        /// 
-        /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-        /// * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
-        /// * `property_id` - (Required) A property's unique ID, including the `prp_` prefix.
-        /// * `version` - (Optional) The version to return. Returns the latest version by default.
-        /// 
         /// ## Attributes reference
         /// 
         /// This data source returns these attributes:
@@ -114,24 +95,36 @@ namespace Pulumi.Akamai
         /// * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the Property Manager API documentation.
         /// </summary>
         public static Output<GetPropertyRulesResult> Invoke(GetPropertyRulesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPropertyRulesResult>("akamai:index/getPropertyRules:getPropertyRules", args ?? new GetPropertyRulesInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetPropertyRulesResult>("akamai:index/getPropertyRules:getPropertyRules", args ?? new GetPropertyRulesInvokeArgs(), options.WithDefaults());
     }
 
 
     public sealed class GetPropertyRulesArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// </summary>
         [Input("contractId")]
         public string? ContractId { get; set; }
 
+        /// <summary>
+        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// </summary>
         [Input("groupId")]
         public string? GroupId { get; set; }
 
+        /// <summary>
+        /// - (Required) A property's unique ID, including the `prp_` prefix.
+        /// </summary>
         [Input("propertyId", required: true)]
         public string PropertyId { get; set; } = null!;
 
         [Input("ruleFormat")]
         public string? RuleFormat { get; set; }
 
+        /// <summary>
+        /// - (Optional) The version to return. Returns the latest version by default.
+        /// </summary>
         [Input("version")]
         public int? Version { get; set; }
 
@@ -142,18 +135,30 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyRulesInvokeArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
 
+        /// <summary>
+        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
+        /// <summary>
+        /// - (Required) A property's unique ID, including the `prp_` prefix.
+        /// </summary>
         [Input("propertyId", required: true)]
         public Input<string> PropertyId { get; set; } = null!;
 
         [Input("ruleFormat")]
         public Input<string>? RuleFormat { get; set; }
 
+        /// <summary>
+        /// - (Optional) The version to return. Returns the latest version by default.
+        /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }
 

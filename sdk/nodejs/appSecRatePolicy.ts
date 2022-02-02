@@ -87,13 +87,13 @@ export class AppSecRatePolicy extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecRatePolicyArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecRatePolicyArgs | AppSecRatePolicyState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecRatePolicyState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["ratePolicy"] = state ? state.ratePolicy : undefined;
-            inputs["ratePolicyId"] = state ? state.ratePolicyId : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["ratePolicy"] = state ? state.ratePolicy : undefined;
+            resourceInputs["ratePolicyId"] = state ? state.ratePolicyId : undefined;
         } else {
             const args = argsOrState as AppSecRatePolicyArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -102,14 +102,12 @@ export class AppSecRatePolicy extends pulumi.CustomResource {
             if ((!args || args.ratePolicy === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'ratePolicy'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["ratePolicy"] = args ? args.ratePolicy : undefined;
-            inputs["ratePolicyId"] = undefined /*out*/;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["ratePolicy"] = args ? args.ratePolicy : undefined;
+            resourceInputs["ratePolicyId"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecRatePolicy.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecRatePolicy.__pulumiType, name, resourceInputs, opts);
     }
 }
 

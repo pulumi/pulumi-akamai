@@ -46,9 +46,7 @@ export function getAppSecCustomDeny(args: GetAppSecCustomDenyArgs, opts?: pulumi
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", {
         "configId": args.configId,
         "customDenyId": args.customDenyId,

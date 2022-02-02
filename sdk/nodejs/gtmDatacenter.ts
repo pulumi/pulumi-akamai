@@ -25,40 +25,6 @@ import * as utilities from "./utilities";
  *     nickname: "demo_datacenter",
  * });
  * ```
- * ## Argument reference
- *
- * This resource supports these arguments:
- *
- * * `domain` - (Required) The GTM domain name for the data center.
- * * `waitOnComplete` - (Optional) A boolean, that if set to `true`, waits for transaction to complete.
- * * `nickname` - (Optional) A descriptive label for the data center.
- * * `defaultLoadObject` - (Optional) Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
- *   * `loadObject` - A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
- *   * `loadObjectPort` - Specifies the TCP port to connect to when requesting the load object.
- *   * `loadServers` - Specifies a list of servers to request the load object from.
- * * `city` - (Optional) The name of the city where the data center is located.
- * * `cloneOf` - (Optional) Identifies the data center's `datacenterId` of which this data center is a clone.
- * * `cloudServerTargeting` - (Optional) A boolean indicating whether to balance load between two or more servers in a cloud environment.
- * * `cloudServerHostHeaderOverride` - (Optional) A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
- * * `continent` - (Optional) A two-letter code that specifies the continent where the data center maps to.
- * * `country` - (Optional) A two-letter ISO 3166 country code that specifies the country where the data center maps to.
- * * `latitude` - (Optional) Specifies the geographical latitude of the data center's position. See also longitude within this object.
- * * `longitude` - (Optional) Specifies the geographic longitude of the data center's position. See also latitude within this object.
- * * `stateOrProvince` - (Optional) Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
- *
- * ## Attribute reference
- *
- * This resource returns these computed attributes in the state file:
- *
- * * `datacenterId` - A unique identifier for an existing data center in the domain.
- * * `pingInterval`
- * * `pingPacketSize`
- * * `scorePenalty`
- * * `servermonitorLivenessCount`
- * * `servermonitorLoadCount`
- * * `servermonitorPool`
- * * `virtual` - A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
- *
  * ## Schema reference
  *
  * You can download the GTM Data Center backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#datacenter) page.
@@ -91,17 +57,59 @@ export class GtmDatacenter extends pulumi.CustomResource {
         return obj['__pulumiType'] === GtmDatacenter.__pulumiType;
     }
 
+    /**
+     * The name of the city where the data center is located.
+     */
     public readonly city!: pulumi.Output<string | undefined>;
+    /**
+     * Identifies the data center's `datacenterId` of which this data center is a clone.
+     */
     public readonly cloneOf!: pulumi.Output<number | undefined>;
+    /**
+     * A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
+     */
     public readonly cloudServerHostHeaderOverride!: pulumi.Output<boolean | undefined>;
+    /**
+     * A boolean indicating whether to balance load between two or more servers in a cloud environment.
+     */
     public readonly cloudServerTargeting!: pulumi.Output<boolean | undefined>;
+    /**
+     * A two-letter code that specifies the continent where the data center maps to.
+     */
     public readonly continent!: pulumi.Output<string | undefined>;
+    /**
+     * A two-letter ISO 3166 country code that specifies the country where the data center maps to.
+     */
     public readonly country!: pulumi.Output<string | undefined>;
+    /**
+     * A unique identifier for an existing data center in the domain.
+     * * `pingInterval`
+     * * `pingPacketSize`
+     * * `scorePenalty`
+     * * `servermonitorLivenessCount`
+     * * `servermonitorLoadCount`
+     * * `servermonitorPool`
+     */
     public /*out*/ readonly datacenterId!: pulumi.Output<number>;
+    /**
+     * Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
+     */
     public readonly defaultLoadObject!: pulumi.Output<outputs.GtmDatacenterDefaultLoadObject | undefined>;
+    /**
+     * The GTM domain name for the data center.
+     */
     public readonly domain!: pulumi.Output<string>;
+    /**
+     * Specifies the geographical latitude of the data center's position. See also longitude within this object.
+     */
     public readonly latitude!: pulumi.Output<number | undefined>;
+    /**
+     * Specifies the geographic longitude of the data center's position. See also latitude within this object.
+     */
     public readonly longitude!: pulumi.Output<number | undefined>;
+    /**
+     * A descriptive label for the data center.
+     */
     public readonly nickname!: pulumi.Output<string | undefined>;
     public /*out*/ readonly pingInterval!: pulumi.Output<number>;
     public /*out*/ readonly pingPacketSize!: pulumi.Output<number>;
@@ -109,8 +117,17 @@ export class GtmDatacenter extends pulumi.CustomResource {
     public /*out*/ readonly servermonitorLivenessCount!: pulumi.Output<number>;
     public /*out*/ readonly servermonitorLoadCount!: pulumi.Output<number>;
     public /*out*/ readonly servermonitorPool!: pulumi.Output<string>;
+    /**
+     * Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
+     */
     public readonly stateOrProvince!: pulumi.Output<string | undefined>;
+    /**
+     * A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
+     */
     public /*out*/ readonly virtual!: pulumi.Output<boolean>;
+    /**
+     * A boolean, that if set to `true`, waits for transaction to complete.
+     */
     public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
 
     /**
@@ -122,64 +139,62 @@ export class GtmDatacenter extends pulumi.CustomResource {
      */
     constructor(name: string, args: GtmDatacenterArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: GtmDatacenterArgs | GtmDatacenterState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GtmDatacenterState | undefined;
-            inputs["city"] = state ? state.city : undefined;
-            inputs["cloneOf"] = state ? state.cloneOf : undefined;
-            inputs["cloudServerHostHeaderOverride"] = state ? state.cloudServerHostHeaderOverride : undefined;
-            inputs["cloudServerTargeting"] = state ? state.cloudServerTargeting : undefined;
-            inputs["continent"] = state ? state.continent : undefined;
-            inputs["country"] = state ? state.country : undefined;
-            inputs["datacenterId"] = state ? state.datacenterId : undefined;
-            inputs["defaultLoadObject"] = state ? state.defaultLoadObject : undefined;
-            inputs["domain"] = state ? state.domain : undefined;
-            inputs["latitude"] = state ? state.latitude : undefined;
-            inputs["longitude"] = state ? state.longitude : undefined;
-            inputs["nickname"] = state ? state.nickname : undefined;
-            inputs["pingInterval"] = state ? state.pingInterval : undefined;
-            inputs["pingPacketSize"] = state ? state.pingPacketSize : undefined;
-            inputs["scorePenalty"] = state ? state.scorePenalty : undefined;
-            inputs["servermonitorLivenessCount"] = state ? state.servermonitorLivenessCount : undefined;
-            inputs["servermonitorLoadCount"] = state ? state.servermonitorLoadCount : undefined;
-            inputs["servermonitorPool"] = state ? state.servermonitorPool : undefined;
-            inputs["stateOrProvince"] = state ? state.stateOrProvince : undefined;
-            inputs["virtual"] = state ? state.virtual : undefined;
-            inputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
+            resourceInputs["city"] = state ? state.city : undefined;
+            resourceInputs["cloneOf"] = state ? state.cloneOf : undefined;
+            resourceInputs["cloudServerHostHeaderOverride"] = state ? state.cloudServerHostHeaderOverride : undefined;
+            resourceInputs["cloudServerTargeting"] = state ? state.cloudServerTargeting : undefined;
+            resourceInputs["continent"] = state ? state.continent : undefined;
+            resourceInputs["country"] = state ? state.country : undefined;
+            resourceInputs["datacenterId"] = state ? state.datacenterId : undefined;
+            resourceInputs["defaultLoadObject"] = state ? state.defaultLoadObject : undefined;
+            resourceInputs["domain"] = state ? state.domain : undefined;
+            resourceInputs["latitude"] = state ? state.latitude : undefined;
+            resourceInputs["longitude"] = state ? state.longitude : undefined;
+            resourceInputs["nickname"] = state ? state.nickname : undefined;
+            resourceInputs["pingInterval"] = state ? state.pingInterval : undefined;
+            resourceInputs["pingPacketSize"] = state ? state.pingPacketSize : undefined;
+            resourceInputs["scorePenalty"] = state ? state.scorePenalty : undefined;
+            resourceInputs["servermonitorLivenessCount"] = state ? state.servermonitorLivenessCount : undefined;
+            resourceInputs["servermonitorLoadCount"] = state ? state.servermonitorLoadCount : undefined;
+            resourceInputs["servermonitorPool"] = state ? state.servermonitorPool : undefined;
+            resourceInputs["stateOrProvince"] = state ? state.stateOrProvince : undefined;
+            resourceInputs["virtual"] = state ? state.virtual : undefined;
+            resourceInputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
         } else {
             const args = argsOrState as GtmDatacenterArgs | undefined;
             if ((!args || args.domain === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'domain'");
             }
-            inputs["city"] = args ? args.city : undefined;
-            inputs["cloneOf"] = args ? args.cloneOf : undefined;
-            inputs["cloudServerHostHeaderOverride"] = args ? args.cloudServerHostHeaderOverride : undefined;
-            inputs["cloudServerTargeting"] = args ? args.cloudServerTargeting : undefined;
-            inputs["continent"] = args ? args.continent : undefined;
-            inputs["country"] = args ? args.country : undefined;
-            inputs["defaultLoadObject"] = args ? args.defaultLoadObject : undefined;
-            inputs["domain"] = args ? args.domain : undefined;
-            inputs["latitude"] = args ? args.latitude : undefined;
-            inputs["longitude"] = args ? args.longitude : undefined;
-            inputs["nickname"] = args ? args.nickname : undefined;
-            inputs["stateOrProvince"] = args ? args.stateOrProvince : undefined;
-            inputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
-            inputs["datacenterId"] = undefined /*out*/;
-            inputs["pingInterval"] = undefined /*out*/;
-            inputs["pingPacketSize"] = undefined /*out*/;
-            inputs["scorePenalty"] = undefined /*out*/;
-            inputs["servermonitorLivenessCount"] = undefined /*out*/;
-            inputs["servermonitorLoadCount"] = undefined /*out*/;
-            inputs["servermonitorPool"] = undefined /*out*/;
-            inputs["virtual"] = undefined /*out*/;
+            resourceInputs["city"] = args ? args.city : undefined;
+            resourceInputs["cloneOf"] = args ? args.cloneOf : undefined;
+            resourceInputs["cloudServerHostHeaderOverride"] = args ? args.cloudServerHostHeaderOverride : undefined;
+            resourceInputs["cloudServerTargeting"] = args ? args.cloudServerTargeting : undefined;
+            resourceInputs["continent"] = args ? args.continent : undefined;
+            resourceInputs["country"] = args ? args.country : undefined;
+            resourceInputs["defaultLoadObject"] = args ? args.defaultLoadObject : undefined;
+            resourceInputs["domain"] = args ? args.domain : undefined;
+            resourceInputs["latitude"] = args ? args.latitude : undefined;
+            resourceInputs["longitude"] = args ? args.longitude : undefined;
+            resourceInputs["nickname"] = args ? args.nickname : undefined;
+            resourceInputs["stateOrProvince"] = args ? args.stateOrProvince : undefined;
+            resourceInputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
+            resourceInputs["datacenterId"] = undefined /*out*/;
+            resourceInputs["pingInterval"] = undefined /*out*/;
+            resourceInputs["pingPacketSize"] = undefined /*out*/;
+            resourceInputs["scorePenalty"] = undefined /*out*/;
+            resourceInputs["servermonitorLivenessCount"] = undefined /*out*/;
+            resourceInputs["servermonitorLoadCount"] = undefined /*out*/;
+            resourceInputs["servermonitorPool"] = undefined /*out*/;
+            resourceInputs["virtual"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const aliasOpts = { aliases: [{ type: "akamai:trafficmanagement/gtmDatacenter:GtmDatacenter" }] };
         opts = pulumi.mergeOptions(opts, aliasOpts);
-        super(GtmDatacenter.__pulumiType, name, inputs, opts);
+        super(GtmDatacenter.__pulumiType, name, resourceInputs, opts);
     }
 }
 
@@ -187,17 +202,59 @@ export class GtmDatacenter extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmDatacenter resources.
  */
 export interface GtmDatacenterState {
+    /**
+     * The name of the city where the data center is located.
+     */
     city?: pulumi.Input<string>;
+    /**
+     * Identifies the data center's `datacenterId` of which this data center is a clone.
+     */
     cloneOf?: pulumi.Input<number>;
+    /**
+     * A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
+     */
     cloudServerHostHeaderOverride?: pulumi.Input<boolean>;
+    /**
+     * A boolean indicating whether to balance load between two or more servers in a cloud environment.
+     */
     cloudServerTargeting?: pulumi.Input<boolean>;
+    /**
+     * A two-letter code that specifies the continent where the data center maps to.
+     */
     continent?: pulumi.Input<string>;
+    /**
+     * A two-letter ISO 3166 country code that specifies the country where the data center maps to.
+     */
     country?: pulumi.Input<string>;
+    /**
+     * A unique identifier for an existing data center in the domain.
+     * * `pingInterval`
+     * * `pingPacketSize`
+     * * `scorePenalty`
+     * * `servermonitorLivenessCount`
+     * * `servermonitorLoadCount`
+     * * `servermonitorPool`
+     */
     datacenterId?: pulumi.Input<number>;
+    /**
+     * Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
+     */
     defaultLoadObject?: pulumi.Input<inputs.GtmDatacenterDefaultLoadObject>;
+    /**
+     * The GTM domain name for the data center.
+     */
     domain?: pulumi.Input<string>;
+    /**
+     * Specifies the geographical latitude of the data center's position. See also longitude within this object.
+     */
     latitude?: pulumi.Input<number>;
+    /**
+     * Specifies the geographic longitude of the data center's position. See also latitude within this object.
+     */
     longitude?: pulumi.Input<number>;
+    /**
+     * A descriptive label for the data center.
+     */
     nickname?: pulumi.Input<string>;
     pingInterval?: pulumi.Input<number>;
     pingPacketSize?: pulumi.Input<number>;
@@ -205,8 +262,17 @@ export interface GtmDatacenterState {
     servermonitorLivenessCount?: pulumi.Input<number>;
     servermonitorLoadCount?: pulumi.Input<number>;
     servermonitorPool?: pulumi.Input<string>;
+    /**
+     * Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
+     */
     stateOrProvince?: pulumi.Input<string>;
+    /**
+     * A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
+     */
     virtual?: pulumi.Input<boolean>;
+    /**
+     * A boolean, that if set to `true`, waits for transaction to complete.
+     */
     waitOnComplete?: pulumi.Input<boolean>;
 }
 
@@ -214,17 +280,56 @@ export interface GtmDatacenterState {
  * The set of arguments for constructing a GtmDatacenter resource.
  */
 export interface GtmDatacenterArgs {
+    /**
+     * The name of the city where the data center is located.
+     */
     city?: pulumi.Input<string>;
+    /**
+     * Identifies the data center's `datacenterId` of which this data center is a clone.
+     */
     cloneOf?: pulumi.Input<number>;
+    /**
+     * A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
+     */
     cloudServerHostHeaderOverride?: pulumi.Input<boolean>;
+    /**
+     * A boolean indicating whether to balance load between two or more servers in a cloud environment.
+     */
     cloudServerTargeting?: pulumi.Input<boolean>;
+    /**
+     * A two-letter code that specifies the continent where the data center maps to.
+     */
     continent?: pulumi.Input<string>;
+    /**
+     * A two-letter ISO 3166 country code that specifies the country where the data center maps to.
+     */
     country?: pulumi.Input<string>;
+    /**
+     * Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
+     */
     defaultLoadObject?: pulumi.Input<inputs.GtmDatacenterDefaultLoadObject>;
+    /**
+     * The GTM domain name for the data center.
+     */
     domain: pulumi.Input<string>;
+    /**
+     * Specifies the geographical latitude of the data center's position. See also longitude within this object.
+     */
     latitude?: pulumi.Input<number>;
+    /**
+     * Specifies the geographic longitude of the data center's position. See also latitude within this object.
+     */
     longitude?: pulumi.Input<number>;
+    /**
+     * A descriptive label for the data center.
+     */
     nickname?: pulumi.Input<string>;
+    /**
+     * Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
+     */
     stateOrProvince?: pulumi.Input<string>;
+    /**
+     * A boolean, that if set to `true`, waits for transaction to complete.
+     */
     waitOnComplete?: pulumi.Input<boolean>;
 }

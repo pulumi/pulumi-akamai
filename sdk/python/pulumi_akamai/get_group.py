@@ -102,22 +102,17 @@ def get_group(contract: Optional[str] = None,
     account administrators can assign properties to specific groups, each with
     its own set of users and accompanying roles.
 
-    ## Argument reference
-
-    This data source supports these arguments:
-
-    * `group_name` - (Required) The group name.
-    * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-
-    ### Deprecated arguments
-    * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
-    * `name` -  (Deprecated) Replaced by `group_name`. Maintained for legacy purposes.
-
     ## Attributes reference
 
     This data source returns this attribute:
 
     * `id` - The group's unique ID, including the `grp_` prefix.
+
+
+    :param str contract: Replaced by `contract_id`. Maintained for legacy purposes.
+    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+    :param str group_name: The group name.
+    :param str name: Replaced by `group_name`. Maintained for legacy purposes.
     """
     __args__ = dict()
     __args__['contract'] = contract
@@ -154,21 +149,16 @@ def get_group_output(contract: Optional[pulumi.Input[Optional[str]]] = None,
     account administrators can assign properties to specific groups, each with
     its own set of users and accompanying roles.
 
-    ## Argument reference
-
-    This data source supports these arguments:
-
-    * `group_name` - (Required) The group name.
-    * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-
-    ### Deprecated arguments
-    * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
-    * `name` -  (Deprecated) Replaced by `group_name`. Maintained for legacy purposes.
-
     ## Attributes reference
 
     This data source returns this attribute:
 
     * `id` - The group's unique ID, including the `grp_` prefix.
+
+
+    :param str contract: Replaced by `contract_id`. Maintained for legacy purposes.
+    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+    :param str group_name: The group name.
+    :param str name: Replaced by `group_name`. Maintained for legacy purposes.
     """
     ...

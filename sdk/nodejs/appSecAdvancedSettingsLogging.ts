@@ -85,13 +85,13 @@ export class AppSecAdvancedSettingsLogging extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecAdvancedSettingsLoggingArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecAdvancedSettingsLoggingArgs | AppSecAdvancedSettingsLoggingState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecAdvancedSettingsLoggingState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["logging"] = state ? state.logging : undefined;
-            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["logging"] = state ? state.logging : undefined;
+            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
         } else {
             const args = argsOrState as AppSecAdvancedSettingsLoggingArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -100,14 +100,12 @@ export class AppSecAdvancedSettingsLogging extends pulumi.CustomResource {
             if ((!args || args.logging === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'logging'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["logging"] = args ? args.logging : undefined;
-            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["logging"] = args ? args.logging : undefined;
+            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecAdvancedSettingsLogging.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecAdvancedSettingsLogging.__pulumiType, name, resourceInputs, opts);
     }
 }
 

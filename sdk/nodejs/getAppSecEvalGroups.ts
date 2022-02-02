@@ -9,9 +9,7 @@ export function getAppSecEvalGroups(args: GetAppSecEvalGroupsArgs, opts?: pulumi
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecEvalGroups:getAppSecEvalGroups", {
         "attackGroup": args.attackGroup,
         "configId": args.configId,

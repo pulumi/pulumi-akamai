@@ -166,7 +166,7 @@ type AppSecAdvancedSettingsLoggingInput interface {
 }
 
 func (*AppSecAdvancedSettingsLogging) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecAdvancedSettingsLogging)(nil))
+	return reflect.TypeOf((**AppSecAdvancedSettingsLogging)(nil)).Elem()
 }
 
 func (i *AppSecAdvancedSettingsLogging) ToAppSecAdvancedSettingsLoggingOutput() AppSecAdvancedSettingsLoggingOutput {
@@ -175,35 +175,6 @@ func (i *AppSecAdvancedSettingsLogging) ToAppSecAdvancedSettingsLoggingOutput() 
 
 func (i *AppSecAdvancedSettingsLogging) ToAppSecAdvancedSettingsLoggingOutputWithContext(ctx context.Context) AppSecAdvancedSettingsLoggingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsLoggingOutput)
-}
-
-func (i *AppSecAdvancedSettingsLogging) ToAppSecAdvancedSettingsLoggingPtrOutput() AppSecAdvancedSettingsLoggingPtrOutput {
-	return i.ToAppSecAdvancedSettingsLoggingPtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecAdvancedSettingsLogging) ToAppSecAdvancedSettingsLoggingPtrOutputWithContext(ctx context.Context) AppSecAdvancedSettingsLoggingPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsLoggingPtrOutput)
-}
-
-type AppSecAdvancedSettingsLoggingPtrInput interface {
-	pulumi.Input
-
-	ToAppSecAdvancedSettingsLoggingPtrOutput() AppSecAdvancedSettingsLoggingPtrOutput
-	ToAppSecAdvancedSettingsLoggingPtrOutputWithContext(ctx context.Context) AppSecAdvancedSettingsLoggingPtrOutput
-}
-
-type appSecAdvancedSettingsLoggingPtrType AppSecAdvancedSettingsLoggingArgs
-
-func (*appSecAdvancedSettingsLoggingPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecAdvancedSettingsLogging)(nil))
-}
-
-func (i *appSecAdvancedSettingsLoggingPtrType) ToAppSecAdvancedSettingsLoggingPtrOutput() AppSecAdvancedSettingsLoggingPtrOutput {
-	return i.ToAppSecAdvancedSettingsLoggingPtrOutputWithContext(context.Background())
-}
-
-func (i *appSecAdvancedSettingsLoggingPtrType) ToAppSecAdvancedSettingsLoggingPtrOutputWithContext(ctx context.Context) AppSecAdvancedSettingsLoggingPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsLoggingPtrOutput)
 }
 
 // AppSecAdvancedSettingsLoggingArrayInput is an input type that accepts AppSecAdvancedSettingsLoggingArray and AppSecAdvancedSettingsLoggingArrayOutput values.
@@ -259,7 +230,7 @@ func (i AppSecAdvancedSettingsLoggingMap) ToAppSecAdvancedSettingsLoggingMapOutp
 type AppSecAdvancedSettingsLoggingOutput struct{ *pulumi.OutputState }
 
 func (AppSecAdvancedSettingsLoggingOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecAdvancedSettingsLogging)(nil))
+	return reflect.TypeOf((**AppSecAdvancedSettingsLogging)(nil)).Elem()
 }
 
 func (o AppSecAdvancedSettingsLoggingOutput) ToAppSecAdvancedSettingsLoggingOutput() AppSecAdvancedSettingsLoggingOutput {
@@ -270,44 +241,10 @@ func (o AppSecAdvancedSettingsLoggingOutput) ToAppSecAdvancedSettingsLoggingOutp
 	return o
 }
 
-func (o AppSecAdvancedSettingsLoggingOutput) ToAppSecAdvancedSettingsLoggingPtrOutput() AppSecAdvancedSettingsLoggingPtrOutput {
-	return o.ToAppSecAdvancedSettingsLoggingPtrOutputWithContext(context.Background())
-}
-
-func (o AppSecAdvancedSettingsLoggingOutput) ToAppSecAdvancedSettingsLoggingPtrOutputWithContext(ctx context.Context) AppSecAdvancedSettingsLoggingPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecAdvancedSettingsLogging) *AppSecAdvancedSettingsLogging {
-		return &v
-	}).(AppSecAdvancedSettingsLoggingPtrOutput)
-}
-
-type AppSecAdvancedSettingsLoggingPtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecAdvancedSettingsLoggingPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecAdvancedSettingsLogging)(nil))
-}
-
-func (o AppSecAdvancedSettingsLoggingPtrOutput) ToAppSecAdvancedSettingsLoggingPtrOutput() AppSecAdvancedSettingsLoggingPtrOutput {
-	return o
-}
-
-func (o AppSecAdvancedSettingsLoggingPtrOutput) ToAppSecAdvancedSettingsLoggingPtrOutputWithContext(ctx context.Context) AppSecAdvancedSettingsLoggingPtrOutput {
-	return o
-}
-
-func (o AppSecAdvancedSettingsLoggingPtrOutput) Elem() AppSecAdvancedSettingsLoggingOutput {
-	return o.ApplyT(func(v *AppSecAdvancedSettingsLogging) AppSecAdvancedSettingsLogging {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecAdvancedSettingsLogging
-		return ret
-	}).(AppSecAdvancedSettingsLoggingOutput)
-}
-
 type AppSecAdvancedSettingsLoggingArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecAdvancedSettingsLoggingArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecAdvancedSettingsLogging)(nil))
+	return reflect.TypeOf((*[]*AppSecAdvancedSettingsLogging)(nil)).Elem()
 }
 
 func (o AppSecAdvancedSettingsLoggingArrayOutput) ToAppSecAdvancedSettingsLoggingArrayOutput() AppSecAdvancedSettingsLoggingArrayOutput {
@@ -319,15 +256,15 @@ func (o AppSecAdvancedSettingsLoggingArrayOutput) ToAppSecAdvancedSettingsLoggin
 }
 
 func (o AppSecAdvancedSettingsLoggingArrayOutput) Index(i pulumi.IntInput) AppSecAdvancedSettingsLoggingOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecAdvancedSettingsLogging {
-		return vs[0].([]AppSecAdvancedSettingsLogging)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecAdvancedSettingsLogging {
+		return vs[0].([]*AppSecAdvancedSettingsLogging)[vs[1].(int)]
 	}).(AppSecAdvancedSettingsLoggingOutput)
 }
 
 type AppSecAdvancedSettingsLoggingMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecAdvancedSettingsLoggingMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecAdvancedSettingsLogging)(nil))
+	return reflect.TypeOf((*map[string]*AppSecAdvancedSettingsLogging)(nil)).Elem()
 }
 
 func (o AppSecAdvancedSettingsLoggingMapOutput) ToAppSecAdvancedSettingsLoggingMapOutput() AppSecAdvancedSettingsLoggingMapOutput {
@@ -339,18 +276,16 @@ func (o AppSecAdvancedSettingsLoggingMapOutput) ToAppSecAdvancedSettingsLoggingM
 }
 
 func (o AppSecAdvancedSettingsLoggingMapOutput) MapIndex(k pulumi.StringInput) AppSecAdvancedSettingsLoggingOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecAdvancedSettingsLogging {
-		return vs[0].(map[string]AppSecAdvancedSettingsLogging)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecAdvancedSettingsLogging {
+		return vs[0].(map[string]*AppSecAdvancedSettingsLogging)[vs[1].(string)]
 	}).(AppSecAdvancedSettingsLoggingOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAdvancedSettingsLoggingInput)(nil)).Elem(), &AppSecAdvancedSettingsLogging{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAdvancedSettingsLoggingPtrInput)(nil)).Elem(), &AppSecAdvancedSettingsLogging{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAdvancedSettingsLoggingArrayInput)(nil)).Elem(), AppSecAdvancedSettingsLoggingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecAdvancedSettingsLoggingMapInput)(nil)).Elem(), AppSecAdvancedSettingsLoggingMap{})
 	pulumi.RegisterOutputType(AppSecAdvancedSettingsLoggingOutput{})
-	pulumi.RegisterOutputType(AppSecAdvancedSettingsLoggingPtrOutput{})
 	pulumi.RegisterOutputType(AppSecAdvancedSettingsLoggingArrayOutput{})
 	pulumi.RegisterOutputType(AppSecAdvancedSettingsLoggingMapOutput{})
 }

@@ -50,9 +50,7 @@ export function getAppSecSelectableHostnames(args?: GetAppSecSelectableHostnames
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", {
         "activeInProduction": args.activeInProduction,
         "activeInStaging": args.activeInStaging,

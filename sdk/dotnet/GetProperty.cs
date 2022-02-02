@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -44,13 +43,6 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
-        /// ## Argument reference
-        /// 
-        /// This data source supports these arguments:
-        /// 
-        /// * `name` - (Required) The property name.
-        /// * `version` - (Optional) The version of the property whose ID you want to list.
-        /// 
         /// ## Attributes reference
         /// 
         /// This data source returns these attributes:
@@ -59,7 +51,7 @@ namespace Pulumi.Akamai
         /// * `rules` - A JSON-encoded rule tree for a given property.
         /// </summary>
         public static Task<GetPropertyResult> InvokeAsync(GetPropertyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyResult>("akamai:index/getProperty:getProperty", args ?? new GetPropertyArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyResult>("akamai:index/getProperty:getProperty", args ?? new GetPropertyArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.Property` data source to query and list the property ID and rule tree based on the property name.
@@ -93,13 +85,6 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
-        /// ## Argument reference
-        /// 
-        /// This data source supports these arguments:
-        /// 
-        /// * `name` - (Required) The property name.
-        /// * `version` - (Optional) The version of the property whose ID you want to list.
-        /// 
         /// ## Attributes reference
         /// 
         /// This data source returns these attributes:
@@ -108,15 +93,21 @@ namespace Pulumi.Akamai
         /// * `rules` - A JSON-encoded rule tree for a given property.
         /// </summary>
         public static Output<GetPropertyResult> Invoke(GetPropertyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPropertyResult>("akamai:index/getProperty:getProperty", args ?? new GetPropertyInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetPropertyResult>("akamai:index/getProperty:getProperty", args ?? new GetPropertyInvokeArgs(), options.WithDefaults());
     }
 
 
     public sealed class GetPropertyArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// - (Required) The property name.
+        /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The version of the property whose ID you want to list.
+        /// </summary>
         [Input("version")]
         public int? Version { get; set; }
 
@@ -127,9 +118,15 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyInvokeArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// - (Required) The property name.
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The version of the property whose ID you want to list.
+        /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }
 

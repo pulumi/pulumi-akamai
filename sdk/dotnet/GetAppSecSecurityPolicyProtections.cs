@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -87,7 +86,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the status of the protection settings
         /// </summary>
         public static Task<GetAppSecSecurityPolicyProtectionsResult> InvokeAsync(GetAppSecSecurityPolicyProtectionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSecurityPolicyProtectionsResult>("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", args ?? new GetAppSecSecurityPolicyProtectionsArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSecurityPolicyProtectionsResult>("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", args ?? new GetAppSecSecurityPolicyProtectionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy
@@ -164,7 +163,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the status of the protection settings
         /// </summary>
         public static Output<GetAppSecSecurityPolicyProtectionsResult> Invoke(GetAppSecSecurityPolicyProtectionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecSecurityPolicyProtectionsResult>("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", args ?? new GetAppSecSecurityPolicyProtectionsInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecSecurityPolicyProtectionsResult>("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", args ?? new GetAppSecSecurityPolicyProtectionsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -5,25 +5,76 @@ import * as pulumi from "@pulumi/pulumi";
 import { input as inputs, output as outputs } from "../types";
 
 export interface CpsDvEnrollmentAdminContact {
+    /**
+     * The address of your organization.
+     */
     addressLineOne: string;
+    /**
+     * The address of your organization.
+     */
     addressLineTwo?: string;
+    /**
+     * The city where your organization resides.
+     */
     city: string;
+    /**
+     * The code for the country where your organization resides.
+     */
     countryCode: string;
+    /**
+     * The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+     */
     email: string;
+    /**
+     * The first name of the technical contact at Akamai.
+     */
     firstName: string;
+    /**
+     * The last name of the technical contact at Akamai.
+     */
     lastName: string;
+    /**
+     * Your organization information.
+     */
     organization: string;
+    /**
+     * The phone number of the administrator who you want to use as a contact at your company.
+     */
     phone: string;
+    /**
+     * The postal code of your organization.
+     */
     postalCode: string;
+    /**
+     * The region of your organization, typically a state or province.
+     */
     region: string;
+    /**
+     * The title of the technical contact at Akamai.
+     */
     title?: string;
 }
 
 export interface CpsDvEnrollmentCsr {
+    /**
+     * The city where your organization resides.
+     */
     city: string;
+    /**
+     * The code for the country where your organization resides.
+     */
     countryCode: string;
+    /**
+     * Your organization information.
+     */
     organization: string;
+    /**
+     * Your organizational unit.
+     */
     organizationalUnit: string;
+    /**
+     * Your state or province.
+     */
     state: string;
 }
 
@@ -40,51 +91,153 @@ export interface CpsDvEnrollmentHttpChallenge {
 }
 
 export interface CpsDvEnrollmentNetworkConfiguration {
+    /**
+     * The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
+     */
     clientMutualAuthentication?: outputs.CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication;
+    /**
+     * Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
+     */
     cloneDnsNames?: boolean;
+    /**
+     * The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
+     */
     disallowedTlsVersions?: string[];
+    /**
+     * Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
+     */
     geography: string;
+    /**
+     * The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     */
     mustHaveCiphers?: string;
+    /**
+     * Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
+     */
     ocspStapling?: string;
+    /**
+     * Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     */
     preferredCiphers?: string;
+    /**
+     * Whether to use the QUIC transport layer network protocol.
+     */
     quicEnabled?: boolean;
 }
 
 export interface CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication {
+    /**
+     * Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
+     */
     ocspEnabled?: boolean;
+    /**
+     * Whether you want to enable the server to send the certificate authority (CA) list to the client.
+     */
     sendCaListToClient?: boolean;
+    /**
+     * The identifier of the set of trust chains, created in the [Trust Chain Manager](https://developer.akamai.com/api/web_performance/trust_chain_manager/v1.html).
+     */
     setId?: string;
 }
 
 export interface CpsDvEnrollmentOrganization {
+    /**
+     * The address of your organization.
+     */
     addressLineOne: string;
+    /**
+     * The address of your organization.
+     */
     addressLineTwo?: string;
+    /**
+     * The city where your organization resides.
+     */
     city: string;
+    /**
+     * The code for the country where your organization resides.
+     */
     countryCode: string;
+    /**
+     * The name of your organization.
+     */
     name: string;
+    /**
+     * The phone number of the administrator who you want to use as a contact at your company.
+     */
     phone: string;
+    /**
+     * The postal code of your organization.
+     */
     postalCode: string;
+    /**
+     * The region of your organization, typically a state or province.
+     */
     region: string;
 }
 
 export interface CpsDvEnrollmentTechContact {
+    /**
+     * The address of your organization.
+     */
     addressLineOne: string;
+    /**
+     * The address of your organization.
+     */
     addressLineTwo?: string;
+    /**
+     * The city where your organization resides.
+     */
     city: string;
+    /**
+     * The code for the country where your organization resides.
+     */
     countryCode: string;
+    /**
+     * The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+     */
     email: string;
+    /**
+     * The first name of the technical contact at Akamai.
+     */
     firstName: string;
+    /**
+     * The last name of the technical contact at Akamai.
+     */
     lastName: string;
+    /**
+     * Your organization information.
+     */
     organization: string;
+    /**
+     * The phone number of the administrator who you want to use as a contact at your company.
+     */
     phone: string;
+    /**
+     * The postal code of your organization.
+     */
     postalCode: string;
+    /**
+     * The region of your organization, typically a state or province.
+     */
     region: string;
+    /**
+     * The title of the technical contact at Akamai.
+     */
     title?: string;
 }
 
 export interface DnsZoneTsigKey {
+    /**
+     * The hashing algorithm.
+     */
     algorithm: string;
+    /**
+     * The key name.
+     */
     name: string;
+    /**
+     * String known between transfer endpoints.
+     */
     secret: string;
 }
 
@@ -101,7 +254,13 @@ export interface GetGroupsGroup {
 }
 
 export interface GetPropertiesProperty {
+    /**
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     */
     contractId: string;
+    /**
+     * - (Required) A group's unique ID, including the `grp_` prefix.
+     */
     groupId: string;
     latestVersion: number;
     note: string;
@@ -140,102 +299,285 @@ export interface GetPropertyRulesTemplateTemplate {
 }
 
 export interface GetPropertyRulesTemplateVariable {
+    /**
+     * The name of the variable used in template.
+     */
     name: string;
+    /**
+     * The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
+     */
     type?: string;
+    /**
+     * The value of the variable passed as a string.
+     */
     value: string;
 }
 
 export interface GtmAsmapAssignment {
+    /**
+     * Specifies an array of AS numbers.
+     */
     asNumbers: number[];
+    /**
+     * A unique identifier for an existing data center in the domain.
+     */
     datacenterId: number;
+    /**
+     * A descriptive label for the group.
+     */
     nickname: string;
 }
 
 export interface GtmAsmapDefaultDatacenter {
+    /**
+     * A unique identifier for an existing data center in the domain.
+     */
     datacenterId: number;
+    /**
+     * A descriptive label for the group.
+     */
     nickname?: string;
 }
 
 export interface GtmCidrmapAssignment {
+    /**
+     * Specifies an array of CIDR blocks.
+     */
     blocks?: string[];
+    /**
+     * A unique identifier for an existing data center in the domain.
+     */
     datacenterId: number;
+    /**
+     * A descriptive label for the CIDR zone group, up to 256 characters.
+     */
     nickname: string;
 }
 
 export interface GtmCidrmapDefaultDatacenter {
+    /**
+     * A unique identifier for an existing data center in the domain.
+     */
     datacenterId: number;
+    /**
+     * A descriptive label for the CIDR zone group, up to 256 characters.
+     */
     nickname?: string;
 }
 
 export interface GtmDatacenterDefaultLoadObject {
+    /**
+     * A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
+     */
     loadObject?: string;
+    /**
+     * Specifies the TCP port to connect to when requesting the load object.
+     */
     loadObjectPort?: number;
+    /**
+     * Specifies a list of servers to request the load object from.
+     */
     loadServers?: string[];
 }
 
 export interface GtmGeomapAssignment {
+    /**
+     * Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
+     */
     countries?: string[];
+    /**
+     * A unique identifier for an existing data center in the domain.
+     */
     datacenterId: number;
+    /**
+     * A descriptive label for the group.
+     */
     nickname: string;
 }
 
 export interface GtmGeomapDefaultDatacenter {
+    /**
+     * A unique identifier for an existing data center in the domain.
+     */
     datacenterId: number;
+    /**
+     * A descriptive label for the group.
+     */
     nickname?: string;
 }
 
 export interface GtmPropertyLivenessTest {
+    /**
+     * If `testObjectProtocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
+     */
     answersRequired?: boolean;
+    /**
+     * A boolean that if set to `true`, disables warnings when non-standard ports are used.
+     */
     disableNonstandardPortWarning?: boolean;
+    /**
+     * A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
+     */
     disabled?: boolean;
+    /**
+     * Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
+     */
     errorPenalty?: number;
+    /**
+     * A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+     */
     httpError3xx?: boolean;
+    /**
+     * A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+     */
     httpError4xx?: boolean;
+    /**
+     * A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+     */
     httpError5xx?: boolean;
+    /**
+     * Contains HTTP headers to send if the `testObjectProtocol` is `http` or `https`. You can have multiple `httpHeader` entries. Requires these arguments:
+     */
     httpHeaders?: outputs.GtmPropertyLivenessTestHttpHeader[];
+    /**
+     * Name of HTTP header.
+     */
     name: string;
+    /**
+     * A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `testObjectProtocol` of https.
+     */
     peerCertificateVerification?: boolean;
+    /**
+     * A boolean indicating whether the `testObjectProtocol` is DNS. The DNS query is recursive.
+     */
     recursionRequested?: boolean;
+    /**
+     * Specifies a request string.
+     */
     requestString?: string;
+    /**
+     * Specifies the query type, if `testObjectProtocol` is DNS.
+     */
     resourceType?: string;
+    /**
+     * Specifies a response string.
+     */
     responseString?: string;
+    /**
+     * Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
+     */
     sslClientCertificate?: string;
+    /**
+     * Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can't have a passphrase nor be used for any other purpose.
+     */
     sslClientPrivateKey?: string;
+    /**
+     * Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
+     */
     testInterval: number;
+    /**
+     * Specifies the static text that acts as a stand-in for the data that you're sending on the network.
+     */
     testObject: string;
+    /**
+     * Specifies the test object's password. It is required if testObjectProtocol is ftp.
+     */
     testObjectPassword?: string;
+    /**
+     * Specifies the port number for the testObject.
+     */
     testObjectPort?: number;
+    /**
+     * Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
+     */
     testObjectProtocol: string;
+    /**
+     * A descriptive name for the testObject.
+     */
     testObjectUsername?: string;
+    /**
+     * Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
+     */
     testTimeout: number;
+    /**
+     * Specifies the score to be reported if the liveness test times out.
+     */
     timeoutPenalty?: number;
 }
 
 export interface GtmPropertyLivenessTestHttpHeader {
+    /**
+     * Name of HTTP header.
+     */
     name?: string;
+    /**
+     * Value of HTTP header.
+     */
     value?: string;
 }
 
 export interface GtmPropertyStaticRrSet {
+    /**
+     * (List) An array of data strings, representing multiple records within a set.
+     */
     rdatas?: string[];
+    /**
+     * The number of seconds that this record should live in a resolver's cache before being refetched.
+     */
     ttl?: number;
+    /**
+     * The record type.
+     */
     type?: string;
 }
 
 export interface GtmPropertyTrafficTarget {
+    /**
+     * A unique identifier for an existing data center in the domain.
+     */
     datacenterId?: number;
+    /**
+     * A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
+     */
     enabled?: boolean;
+    /**
+     * Specifies an optional data center for the property. Used when there are no servers configured for the property.
+     */
     handoutCname?: string;
+    /**
+     * Name of HTTP header.
+     */
     name?: string;
+    /**
+     * (List) Identifies the IP address or the hostnames of the servers.
+     */
     servers?: string[];
+    /**
+     * Specifies the traffic weight for the target.
+     */
     weight?: number;
 }
 
 export interface GtmResourceResourceInstance {
+    /**
+     * A unique identifier for an existing data center in the domain.
+     */
     datacenterId: number;
+    /**
+     * Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
+     */
     loadObject?: string;
+    /**
+     * Specifies the TCP port of the `loadObject`.
+     */
     loadObjectPort?: number;
+    /**
+     * (List) Specifies a list of servers from which to request the load object.
+     */
     loadServers?: string[];
+    /**
+     * A boolean that indicates whether a default `loadObject` is used for the resources.
+     */
     useDefaultLoadObject?: boolean;
 }
 
@@ -260,9 +602,18 @@ export interface PropertyActivationRuleWarning {
 }
 
 export interface PropertyHostname {
+    /**
+     * The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+     */
     certProvisioningType: string;
     certStatuses: outputs.PropertyHostnameCertStatus[];
+    /**
+     * A string containing the original origin's hostname. For example, `"example.org"`.
+     */
     cnameFrom: string;
+    /**
+     * A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
+     */
     cnameTo: string;
     cnameType: string;
     edgeHostnameId: string;

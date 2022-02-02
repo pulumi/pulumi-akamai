@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -72,7 +71,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the types of data specified in the `search` parameter. Valid only if the `search` parameter references at least one type.
         /// </summary>
         public static Task<GetAppSecExportConfigurationResult> InvokeAsync(GetAppSecExportConfigurationArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecExportConfigurationResult>("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", args ?? new GetAppSecExportConfigurationArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecExportConfigurationResult>("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", args ?? new GetAppSecExportConfigurationArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration and version
@@ -134,7 +133,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the types of data specified in the `search` parameter. Valid only if the `search` parameter references at least one type.
         /// </summary>
         public static Output<GetAppSecExportConfigurationResult> Invoke(GetAppSecExportConfigurationInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecExportConfigurationResult>("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", args ?? new GetAppSecExportConfigurationInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecExportConfigurationResult>("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", args ?? new GetAppSecExportConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 

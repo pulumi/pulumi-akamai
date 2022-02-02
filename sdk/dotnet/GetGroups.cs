@@ -35,10 +35,6 @@ namespace Pulumi.Akamai
         /// }
         /// ```
         /// 
-        /// ## Argument reference
-        /// 
-        /// There are no arguments available for this data source.
-        /// 
         /// ## Attributes reference
         /// 
         /// This data source returns these attributes:
@@ -50,7 +46,7 @@ namespace Pulumi.Akamai
         ///   * `contract_ids` - An array of strings listing the contract IDs for each group.
         /// </summary>
         public static Task<GetGroupsResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetGroupsResult>("akamai:index/getGroups:getGroups", InvokeArgs.Empty, options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetGroupsResult>("akamai:index/getGroups:getGroups", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

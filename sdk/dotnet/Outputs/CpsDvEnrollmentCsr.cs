@@ -13,10 +13,25 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class CpsDvEnrollmentCsr
     {
+        /// <summary>
+        /// The city where your organization resides.
+        /// </summary>
         public readonly string City;
+        /// <summary>
+        /// The code for the country where your organization resides.
+        /// </summary>
         public readonly string CountryCode;
+        /// <summary>
+        /// Your organization information.
+        /// </summary>
         public readonly string Organization;
+        /// <summary>
+        /// Your organizational unit.
+        /// </summary>
         public readonly string OrganizationalUnit;
+        /// <summary>
+        /// Your state or province.
+        /// </summary>
         public readonly string State;
 
         [OutputConstructor]

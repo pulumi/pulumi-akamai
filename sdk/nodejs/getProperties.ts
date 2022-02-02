@@ -18,13 +18,6 @@ import * as utilities from "./utilities";
  *
  * export const myPropertyList = data.akamai_properties.example;
  * ```
- * ## Argument reference
- *
- * This data source supports these arguments:
- *
- * * `contractId` - (Required) A contract's unique ID, including the `ctr_` prefix.
- * * `groupId` - (Required) A group's unique ID, including the `grp_` prefix.
- *
  * ## Attributes reference
  *
  * This data source returns this attribute:
@@ -36,9 +29,7 @@ export function getProperties(args: GetPropertiesArgs, opts?: pulumi.InvokeOptio
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getProperties:getProperties", {
         "contractId": args.contractId,
         "groupId": args.groupId,
@@ -49,7 +40,13 @@ export function getProperties(args: GetPropertiesArgs, opts?: pulumi.InvokeOptio
  * A collection of arguments for invoking getProperties.
  */
 export interface GetPropertiesArgs {
+    /**
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     */
     contractId: string;
+    /**
+     * - (Required) A group's unique ID, including the `grp_` prefix.
+     */
     groupId: string;
 }
 
@@ -74,6 +71,12 @@ export function getPropertiesOutput(args: GetPropertiesOutputArgs, opts?: pulumi
  * A collection of arguments for invoking getProperties.
  */
 export interface GetPropertiesOutputArgs {
+    /**
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     */
     contractId: pulumi.Input<string>;
+    /**
+     * - (Required) A group's unique ID, including the `grp_` prefix.
+     */
     groupId: pulumi.Input<string>;
 }

@@ -45,9 +45,7 @@ export function getAppSecExportConfiguration(args: GetAppSecExportConfigurationA
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", {
         "configId": args.configId,
         "searches": args.searches,

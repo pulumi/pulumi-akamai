@@ -12,13 +12,6 @@ import (
 
 // Use the `getContract` data source to find a contract ID.
 //
-// ## Argument reference
-//
-// This data source requires one of these group arguments to return contract information:
-//   * `groupName` - The name of the group containing the contract.
-//   * `groupId` - The unique ID of the group containing the contract, including the  `grp_` prefix.
-//   * `group` - (Deprecated) Either the group ID or the group name that includes the contract. You can't use this argument with `groupId` and `groupName`.
-//
 // ## Attributes reference
 //
 // * `id` - The contract's unique ID, including the `ctr_` prefix.
@@ -33,9 +26,13 @@ func GetContract(ctx *pulumi.Context, args *GetContractArgs, opts ...pulumi.Invo
 
 // A collection of arguments for invoking getContract.
 type GetContractArgs struct {
+	// Either the group ID or the group name that includes the contract. You can't use this argument with `groupId` and `groupName`.
+	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group     *string `pulumi:"group"`
-	GroupId   *string `pulumi:"groupId"`
+	Group *string `pulumi:"group"`
+	// The unique ID of the group containing the contract, including the  `grp_` prefix.
+	GroupId *string `pulumi:"groupId"`
+	// The name of the group containing the contract.
 	GroupName *string `pulumi:"groupName"`
 }
 
@@ -60,9 +57,13 @@ func GetContractOutput(ctx *pulumi.Context, args GetContractOutputArgs, opts ...
 
 // A collection of arguments for invoking getContract.
 type GetContractOutputArgs struct {
+	// Either the group ID or the group name that includes the contract. You can't use this argument with `groupId` and `groupName`.
+	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group     pulumi.StringPtrInput `pulumi:"group"`
-	GroupId   pulumi.StringPtrInput `pulumi:"groupId"`
+	Group pulumi.StringPtrInput `pulumi:"group"`
+	// The unique ID of the group containing the contract, including the  `grp_` prefix.
+	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
+	// The name of the group containing the contract.
 	GroupName pulumi.StringPtrInput `pulumi:"groupName"`
 }
 

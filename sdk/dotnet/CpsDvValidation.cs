@@ -33,13 +33,6 @@ namespace Pulumi.Akamai
     /// 
     /// }
     /// ```
-    /// ## Argument reference
-    /// 
-    /// The following arguments are supported:
-    /// 
-    /// * `enrollment_id` (Required) - Unique identifier for the DV certificate enrollment.
-    /// * `sans` - (Optional) The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
-    /// 
     /// ## Attributes reference
     /// 
     /// * `status` - The status of certificate validation.
@@ -47,9 +40,15 @@ namespace Pulumi.Akamai
     [AkamaiResourceType("akamai:index/cpsDvValidation:CpsDvValidation")]
     public partial class CpsDvValidation : Pulumi.CustomResource
     {
+        /// <summary>
+        /// Unique identifier for the DV certificate enrollment.
+        /// </summary>
         [Output("enrollmentId")]
         public Output<int> EnrollmentId { get; private set; } = null!;
 
+        /// <summary>
+        /// The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+        /// </summary>
         [Output("sans")]
         public Output<ImmutableArray<string>> Sans { get; private set; } = null!;
 
@@ -102,11 +101,18 @@ namespace Pulumi.Akamai
 
     public sealed class CpsDvValidationArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Unique identifier for the DV certificate enrollment.
+        /// </summary>
         [Input("enrollmentId", required: true)]
         public Input<int> EnrollmentId { get; set; } = null!;
 
         [Input("sans")]
         private InputList<string>? _sans;
+
+        /// <summary>
+        /// The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+        /// </summary>
         public InputList<string> Sans
         {
             get => _sans ?? (_sans = new InputList<string>());
@@ -120,11 +126,18 @@ namespace Pulumi.Akamai
 
     public sealed class CpsDvValidationState : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Unique identifier for the DV certificate enrollment.
+        /// </summary>
         [Input("enrollmentId")]
         public Input<int>? EnrollmentId { get; set; }
 
         [Input("sans")]
         private InputList<string>? _sans;
+
+        /// <summary>
+        /// The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+        /// </summary>
         public InputList<string> Sans
         {
             get => _sans ?? (_sans = new InputList<string>());

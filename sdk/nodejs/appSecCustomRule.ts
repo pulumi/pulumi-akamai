@@ -58,13 +58,13 @@ export class AppSecCustomRule extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecCustomRuleArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecCustomRuleArgs | AppSecCustomRuleState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecCustomRuleState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["customRule"] = state ? state.customRule : undefined;
-            inputs["customRuleId"] = state ? state.customRuleId : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["customRule"] = state ? state.customRule : undefined;
+            resourceInputs["customRuleId"] = state ? state.customRuleId : undefined;
         } else {
             const args = argsOrState as AppSecCustomRuleArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -73,14 +73,12 @@ export class AppSecCustomRule extends pulumi.CustomResource {
             if ((!args || args.customRule === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'customRule'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["customRule"] = args ? args.customRule : undefined;
-            inputs["customRuleId"] = undefined /*out*/;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["customRule"] = args ? args.customRule : undefined;
+            resourceInputs["customRuleId"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecCustomRule.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecCustomRule.__pulumiType, name, resourceInputs, opts);
     }
 }
 

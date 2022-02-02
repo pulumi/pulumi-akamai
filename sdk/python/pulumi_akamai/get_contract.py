@@ -81,16 +81,14 @@ def get_contract(group: Optional[str] = None,
     """
     Use the `get_contract` data source to find a contract ID.
 
-    ## Argument reference
-
-    This data source requires one of these group arguments to return contract information:
-      * `group_name` - The name of the group containing the contract.
-      * `group_id` - The unique ID of the group containing the contract, including the  `grp_` prefix.
-      * `group` - (Deprecated) Either the group ID or the group name that includes the contract. You can't use this argument with `group_id` and `group_name`.
-
     ## Attributes reference
 
     * `id` - The contract's unique ID, including the `ctr_` prefix.
+
+
+    :param str group: Either the group ID or the group name that includes the contract. You can't use this argument with `group_id` and `group_name`.
+    :param str group_id: The unique ID of the group containing the contract, including the  `grp_` prefix.
+    :param str group_name: The name of the group containing the contract.
     """
     __args__ = dict()
     __args__['group'] = group
@@ -117,15 +115,13 @@ def get_contract_output(group: Optional[pulumi.Input[Optional[str]]] = None,
     """
     Use the `get_contract` data source to find a contract ID.
 
-    ## Argument reference
-
-    This data source requires one of these group arguments to return contract information:
-      * `group_name` - The name of the group containing the contract.
-      * `group_id` - The unique ID of the group containing the contract, including the  `grp_` prefix.
-      * `group` - (Deprecated) Either the group ID or the group name that includes the contract. You can't use this argument with `group_id` and `group_name`.
-
     ## Attributes reference
 
     * `id` - The contract's unique ID, including the `ctr_` prefix.
+
+
+    :param str group: Either the group ID or the group name that includes the contract. You can't use this argument with `group_id` and `group_name`.
+    :param str group_id: The unique ID of the group containing the contract, including the  `grp_` prefix.
+    :param str group_name: The name of the group containing the contract.
     """
     ...

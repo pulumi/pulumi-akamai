@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -73,7 +72,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the IP/Geo firewall settings.
         /// </summary>
         public static Task<GetAppSecIPGeoResult> InvokeAsync(GetAppSecIPGeoArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecIPGeoResult>("akamai:index/getAppSecIPGeo:getAppSecIPGeo", args ?? new GetAppSecIPGeoArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecIPGeoResult>("akamai:index/getAppSecIPGeo:getAppSecIPGeo", args ?? new GetAppSecIPGeoArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; security policy
@@ -136,7 +135,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the IP/Geo firewall settings.
         /// </summary>
         public static Output<GetAppSecIPGeoResult> Invoke(GetAppSecIPGeoInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecIPGeoResult>("akamai:index/getAppSecIPGeo:getAppSecIPGeo", args ?? new GetAppSecIPGeoInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecIPGeoResult>("akamai:index/getAppSecIPGeo:getAppSecIPGeo", args ?? new GetAppSecIPGeoInvokeArgs(), options.WithDefaults());
     }
 
 

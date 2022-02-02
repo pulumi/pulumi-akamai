@@ -89,16 +89,16 @@ export class NetworkListActivations extends pulumi.CustomResource {
      */
     constructor(name: string, args: NetworkListActivationsArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: NetworkListActivationsArgs | NetworkListActivationsState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkListActivationsState | undefined;
-            inputs["activate"] = state ? state.activate : undefined;
-            inputs["network"] = state ? state.network : undefined;
-            inputs["networkListId"] = state ? state.networkListId : undefined;
-            inputs["notes"] = state ? state.notes : undefined;
-            inputs["notificationEmails"] = state ? state.notificationEmails : undefined;
-            inputs["status"] = state ? state.status : undefined;
+            resourceInputs["activate"] = state ? state.activate : undefined;
+            resourceInputs["network"] = state ? state.network : undefined;
+            resourceInputs["networkListId"] = state ? state.networkListId : undefined;
+            resourceInputs["notes"] = state ? state.notes : undefined;
+            resourceInputs["notificationEmails"] = state ? state.notificationEmails : undefined;
+            resourceInputs["status"] = state ? state.status : undefined;
         } else {
             const args = argsOrState as NetworkListActivationsArgs | undefined;
             if ((!args || args.networkListId === undefined) && !opts.urn) {
@@ -107,17 +107,15 @@ export class NetworkListActivations extends pulumi.CustomResource {
             if ((!args || args.notificationEmails === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'notificationEmails'");
             }
-            inputs["activate"] = args ? args.activate : undefined;
-            inputs["network"] = args ? args.network : undefined;
-            inputs["networkListId"] = args ? args.networkListId : undefined;
-            inputs["notes"] = args ? args.notes : undefined;
-            inputs["notificationEmails"] = args ? args.notificationEmails : undefined;
-            inputs["status"] = undefined /*out*/;
+            resourceInputs["activate"] = args ? args.activate : undefined;
+            resourceInputs["network"] = args ? args.network : undefined;
+            resourceInputs["networkListId"] = args ? args.networkListId : undefined;
+            resourceInputs["notes"] = args ? args.notes : undefined;
+            resourceInputs["notificationEmails"] = args ? args.notificationEmails : undefined;
+            resourceInputs["status"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(NetworkListActivations.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(NetworkListActivations.__pulumiType, name, resourceInputs, opts);
     }
 }
 
