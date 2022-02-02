@@ -151,7 +151,7 @@ type AppSecThreatIntelInput interface {
 }
 
 func (*AppSecThreatIntel) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecThreatIntel)(nil))
+	return reflect.TypeOf((**AppSecThreatIntel)(nil)).Elem()
 }
 
 func (i *AppSecThreatIntel) ToAppSecThreatIntelOutput() AppSecThreatIntelOutput {
@@ -160,35 +160,6 @@ func (i *AppSecThreatIntel) ToAppSecThreatIntelOutput() AppSecThreatIntelOutput 
 
 func (i *AppSecThreatIntel) ToAppSecThreatIntelOutputWithContext(ctx context.Context) AppSecThreatIntelOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecThreatIntelOutput)
-}
-
-func (i *AppSecThreatIntel) ToAppSecThreatIntelPtrOutput() AppSecThreatIntelPtrOutput {
-	return i.ToAppSecThreatIntelPtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecThreatIntel) ToAppSecThreatIntelPtrOutputWithContext(ctx context.Context) AppSecThreatIntelPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecThreatIntelPtrOutput)
-}
-
-type AppSecThreatIntelPtrInput interface {
-	pulumi.Input
-
-	ToAppSecThreatIntelPtrOutput() AppSecThreatIntelPtrOutput
-	ToAppSecThreatIntelPtrOutputWithContext(ctx context.Context) AppSecThreatIntelPtrOutput
-}
-
-type appSecThreatIntelPtrType AppSecThreatIntelArgs
-
-func (*appSecThreatIntelPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecThreatIntel)(nil))
-}
-
-func (i *appSecThreatIntelPtrType) ToAppSecThreatIntelPtrOutput() AppSecThreatIntelPtrOutput {
-	return i.ToAppSecThreatIntelPtrOutputWithContext(context.Background())
-}
-
-func (i *appSecThreatIntelPtrType) ToAppSecThreatIntelPtrOutputWithContext(ctx context.Context) AppSecThreatIntelPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecThreatIntelPtrOutput)
 }
 
 // AppSecThreatIntelArrayInput is an input type that accepts AppSecThreatIntelArray and AppSecThreatIntelArrayOutput values.
@@ -244,7 +215,7 @@ func (i AppSecThreatIntelMap) ToAppSecThreatIntelMapOutputWithContext(ctx contex
 type AppSecThreatIntelOutput struct{ *pulumi.OutputState }
 
 func (AppSecThreatIntelOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecThreatIntel)(nil))
+	return reflect.TypeOf((**AppSecThreatIntel)(nil)).Elem()
 }
 
 func (o AppSecThreatIntelOutput) ToAppSecThreatIntelOutput() AppSecThreatIntelOutput {
@@ -255,44 +226,10 @@ func (o AppSecThreatIntelOutput) ToAppSecThreatIntelOutputWithContext(ctx contex
 	return o
 }
 
-func (o AppSecThreatIntelOutput) ToAppSecThreatIntelPtrOutput() AppSecThreatIntelPtrOutput {
-	return o.ToAppSecThreatIntelPtrOutputWithContext(context.Background())
-}
-
-func (o AppSecThreatIntelOutput) ToAppSecThreatIntelPtrOutputWithContext(ctx context.Context) AppSecThreatIntelPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecThreatIntel) *AppSecThreatIntel {
-		return &v
-	}).(AppSecThreatIntelPtrOutput)
-}
-
-type AppSecThreatIntelPtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecThreatIntelPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecThreatIntel)(nil))
-}
-
-func (o AppSecThreatIntelPtrOutput) ToAppSecThreatIntelPtrOutput() AppSecThreatIntelPtrOutput {
-	return o
-}
-
-func (o AppSecThreatIntelPtrOutput) ToAppSecThreatIntelPtrOutputWithContext(ctx context.Context) AppSecThreatIntelPtrOutput {
-	return o
-}
-
-func (o AppSecThreatIntelPtrOutput) Elem() AppSecThreatIntelOutput {
-	return o.ApplyT(func(v *AppSecThreatIntel) AppSecThreatIntel {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecThreatIntel
-		return ret
-	}).(AppSecThreatIntelOutput)
-}
-
 type AppSecThreatIntelArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecThreatIntelArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecThreatIntel)(nil))
+	return reflect.TypeOf((*[]*AppSecThreatIntel)(nil)).Elem()
 }
 
 func (o AppSecThreatIntelArrayOutput) ToAppSecThreatIntelArrayOutput() AppSecThreatIntelArrayOutput {
@@ -304,15 +241,15 @@ func (o AppSecThreatIntelArrayOutput) ToAppSecThreatIntelArrayOutputWithContext(
 }
 
 func (o AppSecThreatIntelArrayOutput) Index(i pulumi.IntInput) AppSecThreatIntelOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecThreatIntel {
-		return vs[0].([]AppSecThreatIntel)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecThreatIntel {
+		return vs[0].([]*AppSecThreatIntel)[vs[1].(int)]
 	}).(AppSecThreatIntelOutput)
 }
 
 type AppSecThreatIntelMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecThreatIntelMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecThreatIntel)(nil))
+	return reflect.TypeOf((*map[string]*AppSecThreatIntel)(nil)).Elem()
 }
 
 func (o AppSecThreatIntelMapOutput) ToAppSecThreatIntelMapOutput() AppSecThreatIntelMapOutput {
@@ -324,18 +261,16 @@ func (o AppSecThreatIntelMapOutput) ToAppSecThreatIntelMapOutputWithContext(ctx 
 }
 
 func (o AppSecThreatIntelMapOutput) MapIndex(k pulumi.StringInput) AppSecThreatIntelOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecThreatIntel {
-		return vs[0].(map[string]AppSecThreatIntel)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecThreatIntel {
+		return vs[0].(map[string]*AppSecThreatIntel)[vs[1].(string)]
 	}).(AppSecThreatIntelOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecThreatIntelInput)(nil)).Elem(), &AppSecThreatIntel{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecThreatIntelPtrInput)(nil)).Elem(), &AppSecThreatIntel{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecThreatIntelArrayInput)(nil)).Elem(), AppSecThreatIntelArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecThreatIntelMapInput)(nil)).Elem(), AppSecThreatIntelMap{})
 	pulumi.RegisterOutputType(AppSecThreatIntelOutput{})
-	pulumi.RegisterOutputType(AppSecThreatIntelPtrOutput{})
 	pulumi.RegisterOutputType(AppSecThreatIntelArrayOutput{})
 	pulumi.RegisterOutputType(AppSecThreatIntelMapOutput{})
 }

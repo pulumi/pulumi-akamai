@@ -63,41 +63,6 @@ namespace Pulumi.Akamai
     /// 
     /// }
     /// ```
-    /// ## Argument reference
-    /// 
-    /// This resource supports these arguments:
-    /// 
-    /// * `name` - (Required) The property name.
-    /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-    /// * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
-    /// * `product_id` - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
-    /// * `hostnames` - (Optional) A mapping of public hostnames to edge hostnames. See the `akamai.getPropertyHostnames` data source for details on the necessary DNS configuration.
-    ///   
-    ///     &gt; **Note** Starting from version 1.5.0, the `hostnames` argument supports a new block type. If you created your code and state in version 1.4 or earlier, you need to manually update your configuration and replace the previous input for `hostnames` with the new syntax. This error indicates that the state is outdated: `Error: missing expected [`. To fix it, remove `akamai.Property` from the state and import it again.
-    ///   
-    ///   Requires these additional arguments:
-    ///   
-    ///       * `cname_from` - (Required) A string containing the original origin's hostname. For example, `"example.org"`.
-    ///       * `cname_to` - (Required) A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
-    ///       * `cert_provisioning_type` - (Required) The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
-    /// * `rules` - (Optional) A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `akamai.getPropertyRules` data source.
-    /// * `rule_format` - (Optional) The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
-    /// * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
-    /// * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
-    /// * `product` - (Deprecated) Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
-    /// 
-    /// ## Attribute reference
-    /// 
-    /// The resource returns these attributes:
-    /// 
-    /// * `rule_errors` - The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
-    /// * `latest_version` - The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
-    /// * `production_version` - The current version of the property active on the Akamai production network.
-    /// * `staging_version` - The current version of the property active on the Akamai staging network.
-    /// 
-    /// ### Deprecated attributes
-    /// 
-    /// * `rule_warnings` - (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
     /// 
     /// ## Import
     /// 
@@ -147,11 +112,14 @@ namespace Pulumi.Akamai
         [Output("contacts")]
         public Output<ImmutableArray<string>> Contacts { get; private set; } = null!;
 
+        /// <summary>
+        /// Replaced by `contract_id`. Maintained for legacy purposes.
+        /// </summary>
         [Output("contract")]
         public Output<string> Contract { get; private set; } = null!;
 
         /// <summary>
-        /// Contract ID to be assigned to the Property
+        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Output("contractId")]
         public Output<string> ContractId { get; private set; } = null!;
@@ -159,15 +127,21 @@ namespace Pulumi.Akamai
         [Output("cpCode")]
         public Output<string?> CpCode { get; private set; } = null!;
 
+        /// <summary>
+        /// Replaced by `group_id`. Maintained for legacy purposes.
+        /// </summary>
         [Output("group")]
         public Output<string> Group { get; private set; } = null!;
 
         /// <summary>
-        /// Group ID to be assigned to the Property
+        /// - (Required) A group's unique ID, including the `grp_` prefix.
         /// </summary>
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
 
+        /// <summary>
+        /// A mapping of public hostnames to edge hostnames. See the `akamai.getPropertyHostnames` data source for details on the necessary DNS configuration.
+        /// </summary>
         [Output("hostnames")]
         public Output<ImmutableArray<Outputs.PropertyHostname>> Hostnames { get; private set; } = null!;
 
@@ -175,13 +149,13 @@ namespace Pulumi.Akamai
         public Output<bool?> IsSecure { get; private set; } = null!;
 
         /// <summary>
-        /// Property's current latest version number
+        /// The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
         /// </summary>
         [Output("latestVersion")]
         public Output<int> LatestVersion { get; private set; } = null!;
 
         /// <summary>
-        /// Name to give to the Property (must be unique)
+        /// The property name.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -189,17 +163,20 @@ namespace Pulumi.Akamai
         [Output("origins")]
         public Output<ImmutableArray<Outputs.PropertyOrigin>> Origins { get; private set; } = null!;
 
+        /// <summary>
+        /// Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
+        /// </summary>
         [Output("product")]
         public Output<string> Product { get; private set; } = null!;
 
         /// <summary>
-        /// Product ID to be assigned to the Property
+        /// - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
         /// </summary>
         [Output("productId")]
         public Output<string> ProductId { get; private set; } = null!;
 
         /// <summary>
-        /// Property's version currently activated in production (zero when not active in production)
+        /// The current version of the property active on the Akamai production network.
         /// </summary>
         [Output("productionVersion")]
         public Output<int> ProductionVersion { get; private set; } = null!;
@@ -210,11 +187,14 @@ namespace Pulumi.Akamai
         [Output("readVersion")]
         public Output<int> ReadVersion { get; private set; } = null!;
 
+        /// <summary>
+        /// The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        /// </summary>
         [Output("ruleErrors")]
         public Output<ImmutableArray<Outputs.PropertyRuleError>> RuleErrors { get; private set; } = null!;
 
         /// <summary>
-        /// Specify the rule format version (defaults to latest version available when created)
+        /// The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
         /// </summary>
         [Output("ruleFormat")]
         public Output<string> RuleFormat { get; private set; } = null!;
@@ -223,13 +203,13 @@ namespace Pulumi.Akamai
         public Output<ImmutableArray<Outputs.PropertyRuleWarning>> RuleWarnings { get; private set; } = null!;
 
         /// <summary>
-        /// Property Rules as JSON
+        /// A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `akamai.getPropertyRules` data source.
         /// </summary>
         [Output("rules")]
         public Output<string> Rules { get; private set; } = null!;
 
         /// <summary>
-        /// Property's version currently activated in staging (zero when not active in staging)
+        /// The current version of the property active on the Akamai staging network.
         /// </summary>
         [Output("stagingVersion")]
         public Output<int> StagingVersion { get; private set; } = null!;
@@ -296,11 +276,14 @@ namespace Pulumi.Akamai
             set => _contacts = value;
         }
 
+        /// <summary>
+        /// Replaced by `contract_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("contract")]
         public Input<string>? Contract { get; set; }
 
         /// <summary>
-        /// Contract ID to be assigned to the Property
+        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
@@ -308,17 +291,24 @@ namespace Pulumi.Akamai
         [Input("cpCode")]
         public Input<string>? CpCode { get; set; }
 
+        /// <summary>
+        /// Replaced by `group_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
 
         /// <summary>
-        /// Group ID to be assigned to the Property
+        /// - (Required) A group's unique ID, including the `grp_` prefix.
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
         [Input("hostnames")]
         private InputList<Inputs.PropertyHostnameArgs>? _hostnames;
+
+        /// <summary>
+        /// A mapping of public hostnames to edge hostnames. See the `akamai.getPropertyHostnames` data source for details on the necessary DNS configuration.
+        /// </summary>
         public InputList<Inputs.PropertyHostnameArgs> Hostnames
         {
             get => _hostnames ?? (_hostnames = new InputList<Inputs.PropertyHostnameArgs>());
@@ -329,7 +319,7 @@ namespace Pulumi.Akamai
         public Input<bool>? IsSecure { get; set; }
 
         /// <summary>
-        /// Name to give to the Property (must be unique)
+        /// The property name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -343,17 +333,20 @@ namespace Pulumi.Akamai
             set => _origins = value;
         }
 
+        /// <summary>
+        /// Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("product")]
         public Input<string>? Product { get; set; }
 
         /// <summary>
-        /// Product ID to be assigned to the Property
+        /// - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
         /// </summary>
         [Input("productId")]
         public Input<string>? ProductId { get; set; }
 
         /// <summary>
-        /// Specify the rule format version (defaults to latest version available when created)
+        /// The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
         /// </summary>
         [Input("ruleFormat")]
         public Input<string>? RuleFormat { get; set; }
@@ -368,7 +361,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// Property Rules as JSON
+        /// A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `akamai.getPropertyRules` data source.
         /// </summary>
         [Input("rules")]
         public Input<string>? Rules { get; set; }
@@ -392,11 +385,14 @@ namespace Pulumi.Akamai
             set => _contacts = value;
         }
 
+        /// <summary>
+        /// Replaced by `contract_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("contract")]
         public Input<string>? Contract { get; set; }
 
         /// <summary>
-        /// Contract ID to be assigned to the Property
+        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
@@ -404,17 +400,24 @@ namespace Pulumi.Akamai
         [Input("cpCode")]
         public Input<string>? CpCode { get; set; }
 
+        /// <summary>
+        /// Replaced by `group_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
 
         /// <summary>
-        /// Group ID to be assigned to the Property
+        /// - (Required) A group's unique ID, including the `grp_` prefix.
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
         [Input("hostnames")]
         private InputList<Inputs.PropertyHostnameGetArgs>? _hostnames;
+
+        /// <summary>
+        /// A mapping of public hostnames to edge hostnames. See the `akamai.getPropertyHostnames` data source for details on the necessary DNS configuration.
+        /// </summary>
         public InputList<Inputs.PropertyHostnameGetArgs> Hostnames
         {
             get => _hostnames ?? (_hostnames = new InputList<Inputs.PropertyHostnameGetArgs>());
@@ -425,13 +428,13 @@ namespace Pulumi.Akamai
         public Input<bool>? IsSecure { get; set; }
 
         /// <summary>
-        /// Property's current latest version number
+        /// The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
         /// </summary>
         [Input("latestVersion")]
         public Input<int>? LatestVersion { get; set; }
 
         /// <summary>
-        /// Name to give to the Property (must be unique)
+        /// The property name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -445,17 +448,20 @@ namespace Pulumi.Akamai
             set => _origins = value;
         }
 
+        /// <summary>
+        /// Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("product")]
         public Input<string>? Product { get; set; }
 
         /// <summary>
-        /// Product ID to be assigned to the Property
+        /// - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
         /// </summary>
         [Input("productId")]
         public Input<string>? ProductId { get; set; }
 
         /// <summary>
-        /// Property's version currently activated in production (zero when not active in production)
+        /// The current version of the property active on the Akamai production network.
         /// </summary>
         [Input("productionVersion")]
         public Input<int>? ProductionVersion { get; set; }
@@ -468,6 +474,10 @@ namespace Pulumi.Akamai
 
         [Input("ruleErrors")]
         private InputList<Inputs.PropertyRuleErrorGetArgs>? _ruleErrors;
+
+        /// <summary>
+        /// The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        /// </summary>
         public InputList<Inputs.PropertyRuleErrorGetArgs> RuleErrors
         {
             get => _ruleErrors ?? (_ruleErrors = new InputList<Inputs.PropertyRuleErrorGetArgs>());
@@ -475,7 +485,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// Specify the rule format version (defaults to latest version available when created)
+        /// The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
         /// </summary>
         [Input("ruleFormat")]
         public Input<string>? RuleFormat { get; set; }
@@ -490,13 +500,13 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// Property Rules as JSON
+        /// A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `akamai.getPropertyRules` data source.
         /// </summary>
         [Input("rules")]
         public Input<string>? Rules { get; set; }
 
         /// <summary>
-        /// Property's version currently activated in staging (zero when not active in staging)
+        /// The current version of the property active on the Akamai staging network.
         /// </summary>
         [Input("stagingVersion")]
         public Input<int>? StagingVersion { get; set; }

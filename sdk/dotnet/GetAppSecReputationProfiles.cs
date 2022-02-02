@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -72,7 +71,7 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted report of the details about the specified reputation profile or profiles.
         /// </summary>
         public static Task<GetAppSecReputationProfilesResult> InvokeAsync(GetAppSecReputationProfilesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecReputationProfilesResult>("akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles", args ?? new GetAppSecReputationProfilesArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecReputationProfilesResult>("akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles", args ?? new GetAppSecReputationProfilesArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; reputation profile
@@ -134,7 +133,7 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted report of the details about the specified reputation profile or profiles.
         /// </summary>
         public static Output<GetAppSecReputationProfilesResult> Invoke(GetAppSecReputationProfilesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfilesResult>("akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles", args ?? new GetAppSecReputationProfilesInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfilesResult>("akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles", args ?? new GetAppSecReputationProfilesInvokeArgs(), options.WithDefaults());
     }
 
 

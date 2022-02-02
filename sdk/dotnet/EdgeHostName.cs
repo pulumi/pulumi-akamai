@@ -53,24 +53,6 @@ namespace Pulumi.Akamai
     /// 
     /// }
     /// ```
-    /// ## Argument reference
-    /// 
-    /// This resource supports these arguments:
-    /// 
-    /// * `name` - (Required) The name of the edge hostname.
-    /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-    /// * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
-    /// * `product_id` - (Required) A product's unique ID, including the `prd_` prefix.
-    /// * `edge_hostname` - (Required) One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
-    /// * `certificate` - (Optional) Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
-    /// * `ip_behavior` - (Required) Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
-    /// 
-    /// ### Deprecated arguments
-    /// 
-    /// * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
-    /// * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
-    /// * `product` - (Deprecated) Replaced by `product_id`. Maintained for legacy purposes.
-    /// 
     /// ## Attributes reference
     /// 
     /// This resource returns this attribute:
@@ -94,30 +76,57 @@ namespace Pulumi.Akamai
     [AkamaiResourceType("akamai:index/edgeHostName:EdgeHostName")]
     public partial class EdgeHostName : Pulumi.CustomResource
     {
+        /// <summary>
+        /// Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
+        /// </summary>
         [Output("certificate")]
         public Output<int?> Certificate { get; private set; } = null!;
 
+        /// <summary>
+        /// Replaced by `contract_id`. Maintained for legacy purposes.
+        /// </summary>
         [Output("contract")]
         public Output<string> Contract { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// </summary>
         [Output("contractId")]
         public Output<string> ContractId { get; private set; } = null!;
 
+        /// <summary>
+        /// One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
+        /// </summary>
         [Output("edgeHostname")]
         public Output<string> EdgeHostname { get; private set; } = null!;
 
+        /// <summary>
+        /// Replaced by `group_id`. Maintained for legacy purposes.
+        /// </summary>
         [Output("group")]
         public Output<string> Group { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// </summary>
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
 
+        /// <summary>
+        /// Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
+        /// </summary>
         [Output("ipBehavior")]
         public Output<string> IpBehavior { get; private set; } = null!;
 
+        /// <summary>
+        /// Replaced by `product_id`. Maintained for legacy purposes.
+        /// </summary>
         [Output("product")]
         public Output<string> Product { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) A product's unique ID, including the `prd_` prefix.
+        /// </summary>
         [Output("productId")]
         public Output<string> ProductId { get; private set; } = null!;
 
@@ -177,30 +186,57 @@ namespace Pulumi.Akamai
 
     public sealed class EdgeHostNameArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
+        /// </summary>
         [Input("certificate")]
         public Input<int>? Certificate { get; set; }
 
+        /// <summary>
+        /// Replaced by `contract_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("contract")]
         public Input<string>? Contract { get; set; }
 
+        /// <summary>
+        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
 
+        /// <summary>
+        /// One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
+        /// </summary>
         [Input("edgeHostname", required: true)]
         public Input<string> EdgeHostname { get; set; } = null!;
 
+        /// <summary>
+        /// Replaced by `group_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
 
+        /// <summary>
+        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
+        /// <summary>
+        /// Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
+        /// </summary>
         [Input("ipBehavior", required: true)]
         public Input<string> IpBehavior { get; set; } = null!;
 
+        /// <summary>
+        /// Replaced by `product_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("product")]
         public Input<string>? Product { get; set; }
 
+        /// <summary>
+        /// - (Required) A product's unique ID, including the `prd_` prefix.
+        /// </summary>
         [Input("productId")]
         public Input<string>? ProductId { get; set; }
 
@@ -217,30 +253,57 @@ namespace Pulumi.Akamai
 
     public sealed class EdgeHostNameState : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
+        /// </summary>
         [Input("certificate")]
         public Input<int>? Certificate { get; set; }
 
+        /// <summary>
+        /// Replaced by `contract_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("contract")]
         public Input<string>? Contract { get; set; }
 
+        /// <summary>
+        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
 
+        /// <summary>
+        /// One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
+        /// </summary>
         [Input("edgeHostname")]
         public Input<string>? EdgeHostname { get; set; }
 
+        /// <summary>
+        /// Replaced by `group_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
 
+        /// <summary>
+        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
+        /// <summary>
+        /// Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
+        /// </summary>
         [Input("ipBehavior")]
         public Input<string>? IpBehavior { get; set; }
 
+        /// <summary>
+        /// Replaced by `product_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("product")]
         public Input<string>? Product { get; set; }
 
+        /// <summary>
+        /// - (Required) A product's unique ID, including the `prd_` prefix.
+        /// </summary>
         [Input("productId")]
         public Input<string>? ProductId { get; set; }
 

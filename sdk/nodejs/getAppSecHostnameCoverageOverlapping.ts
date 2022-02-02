@@ -39,9 +39,7 @@ export function getAppSecHostnameCoverageOverlapping(args: GetAppSecHostnameCove
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", {
         "configId": args.configId,
         "hostname": args.hostname,

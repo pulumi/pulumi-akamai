@@ -147,7 +147,7 @@ type AppSecApiConstraintsProtectionInput interface {
 }
 
 func (*AppSecApiConstraintsProtection) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecApiConstraintsProtection)(nil))
+	return reflect.TypeOf((**AppSecApiConstraintsProtection)(nil)).Elem()
 }
 
 func (i *AppSecApiConstraintsProtection) ToAppSecApiConstraintsProtectionOutput() AppSecApiConstraintsProtectionOutput {
@@ -156,35 +156,6 @@ func (i *AppSecApiConstraintsProtection) ToAppSecApiConstraintsProtectionOutput(
 
 func (i *AppSecApiConstraintsProtection) ToAppSecApiConstraintsProtectionOutputWithContext(ctx context.Context) AppSecApiConstraintsProtectionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecApiConstraintsProtectionOutput)
-}
-
-func (i *AppSecApiConstraintsProtection) ToAppSecApiConstraintsProtectionPtrOutput() AppSecApiConstraintsProtectionPtrOutput {
-	return i.ToAppSecApiConstraintsProtectionPtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecApiConstraintsProtection) ToAppSecApiConstraintsProtectionPtrOutputWithContext(ctx context.Context) AppSecApiConstraintsProtectionPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecApiConstraintsProtectionPtrOutput)
-}
-
-type AppSecApiConstraintsProtectionPtrInput interface {
-	pulumi.Input
-
-	ToAppSecApiConstraintsProtectionPtrOutput() AppSecApiConstraintsProtectionPtrOutput
-	ToAppSecApiConstraintsProtectionPtrOutputWithContext(ctx context.Context) AppSecApiConstraintsProtectionPtrOutput
-}
-
-type appSecApiConstraintsProtectionPtrType AppSecApiConstraintsProtectionArgs
-
-func (*appSecApiConstraintsProtectionPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecApiConstraintsProtection)(nil))
-}
-
-func (i *appSecApiConstraintsProtectionPtrType) ToAppSecApiConstraintsProtectionPtrOutput() AppSecApiConstraintsProtectionPtrOutput {
-	return i.ToAppSecApiConstraintsProtectionPtrOutputWithContext(context.Background())
-}
-
-func (i *appSecApiConstraintsProtectionPtrType) ToAppSecApiConstraintsProtectionPtrOutputWithContext(ctx context.Context) AppSecApiConstraintsProtectionPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecApiConstraintsProtectionPtrOutput)
 }
 
 // AppSecApiConstraintsProtectionArrayInput is an input type that accepts AppSecApiConstraintsProtectionArray and AppSecApiConstraintsProtectionArrayOutput values.
@@ -240,7 +211,7 @@ func (i AppSecApiConstraintsProtectionMap) ToAppSecApiConstraintsProtectionMapOu
 type AppSecApiConstraintsProtectionOutput struct{ *pulumi.OutputState }
 
 func (AppSecApiConstraintsProtectionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecApiConstraintsProtection)(nil))
+	return reflect.TypeOf((**AppSecApiConstraintsProtection)(nil)).Elem()
 }
 
 func (o AppSecApiConstraintsProtectionOutput) ToAppSecApiConstraintsProtectionOutput() AppSecApiConstraintsProtectionOutput {
@@ -251,44 +222,10 @@ func (o AppSecApiConstraintsProtectionOutput) ToAppSecApiConstraintsProtectionOu
 	return o
 }
 
-func (o AppSecApiConstraintsProtectionOutput) ToAppSecApiConstraintsProtectionPtrOutput() AppSecApiConstraintsProtectionPtrOutput {
-	return o.ToAppSecApiConstraintsProtectionPtrOutputWithContext(context.Background())
-}
-
-func (o AppSecApiConstraintsProtectionOutput) ToAppSecApiConstraintsProtectionPtrOutputWithContext(ctx context.Context) AppSecApiConstraintsProtectionPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecApiConstraintsProtection) *AppSecApiConstraintsProtection {
-		return &v
-	}).(AppSecApiConstraintsProtectionPtrOutput)
-}
-
-type AppSecApiConstraintsProtectionPtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecApiConstraintsProtectionPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecApiConstraintsProtection)(nil))
-}
-
-func (o AppSecApiConstraintsProtectionPtrOutput) ToAppSecApiConstraintsProtectionPtrOutput() AppSecApiConstraintsProtectionPtrOutput {
-	return o
-}
-
-func (o AppSecApiConstraintsProtectionPtrOutput) ToAppSecApiConstraintsProtectionPtrOutputWithContext(ctx context.Context) AppSecApiConstraintsProtectionPtrOutput {
-	return o
-}
-
-func (o AppSecApiConstraintsProtectionPtrOutput) Elem() AppSecApiConstraintsProtectionOutput {
-	return o.ApplyT(func(v *AppSecApiConstraintsProtection) AppSecApiConstraintsProtection {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecApiConstraintsProtection
-		return ret
-	}).(AppSecApiConstraintsProtectionOutput)
-}
-
 type AppSecApiConstraintsProtectionArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecApiConstraintsProtectionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecApiConstraintsProtection)(nil))
+	return reflect.TypeOf((*[]*AppSecApiConstraintsProtection)(nil)).Elem()
 }
 
 func (o AppSecApiConstraintsProtectionArrayOutput) ToAppSecApiConstraintsProtectionArrayOutput() AppSecApiConstraintsProtectionArrayOutput {
@@ -300,15 +237,15 @@ func (o AppSecApiConstraintsProtectionArrayOutput) ToAppSecApiConstraintsProtect
 }
 
 func (o AppSecApiConstraintsProtectionArrayOutput) Index(i pulumi.IntInput) AppSecApiConstraintsProtectionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecApiConstraintsProtection {
-		return vs[0].([]AppSecApiConstraintsProtection)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecApiConstraintsProtection {
+		return vs[0].([]*AppSecApiConstraintsProtection)[vs[1].(int)]
 	}).(AppSecApiConstraintsProtectionOutput)
 }
 
 type AppSecApiConstraintsProtectionMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecApiConstraintsProtectionMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecApiConstraintsProtection)(nil))
+	return reflect.TypeOf((*map[string]*AppSecApiConstraintsProtection)(nil)).Elem()
 }
 
 func (o AppSecApiConstraintsProtectionMapOutput) ToAppSecApiConstraintsProtectionMapOutput() AppSecApiConstraintsProtectionMapOutput {
@@ -320,18 +257,16 @@ func (o AppSecApiConstraintsProtectionMapOutput) ToAppSecApiConstraintsProtectio
 }
 
 func (o AppSecApiConstraintsProtectionMapOutput) MapIndex(k pulumi.StringInput) AppSecApiConstraintsProtectionOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecApiConstraintsProtection {
-		return vs[0].(map[string]AppSecApiConstraintsProtection)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecApiConstraintsProtection {
+		return vs[0].(map[string]*AppSecApiConstraintsProtection)[vs[1].(string)]
 	}).(AppSecApiConstraintsProtectionOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecApiConstraintsProtectionInput)(nil)).Elem(), &AppSecApiConstraintsProtection{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecApiConstraintsProtectionPtrInput)(nil)).Elem(), &AppSecApiConstraintsProtection{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecApiConstraintsProtectionArrayInput)(nil)).Elem(), AppSecApiConstraintsProtectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecApiConstraintsProtectionMapInput)(nil)).Elem(), AppSecApiConstraintsProtectionMap{})
 	pulumi.RegisterOutputType(AppSecApiConstraintsProtectionOutput{})
-	pulumi.RegisterOutputType(AppSecApiConstraintsProtectionPtrOutput{})
 	pulumi.RegisterOutputType(AppSecApiConstraintsProtectionArrayOutput{})
 	pulumi.RegisterOutputType(AppSecApiConstraintsProtectionMapOutput{})
 }

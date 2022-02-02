@@ -87,18 +87,15 @@ def get_properties(contract_id: Optional[str] = None,
 
     pulumi.export("myPropertyList", data["akamai_properties"]["example"])
     ```
-    ## Argument reference
-
-    This data source supports these arguments:
-
-    * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-    * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
-
     ## Attributes reference
 
     This data source returns this attribute:
 
     * `properties` - A list of properties available for the contract and group IDs provided.
+
+
+    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+    :param str group_id: - (Required) A group's unique ID, including the `grp_` prefix.
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
@@ -133,17 +130,14 @@ def get_properties_output(contract_id: Optional[pulumi.Input[str]] = None,
 
     pulumi.export("myPropertyList", data["akamai_properties"]["example"])
     ```
-    ## Argument reference
-
-    This data source supports these arguments:
-
-    * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-    * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
-
     ## Attributes reference
 
     This data source returns this attribute:
 
     * `properties` - A list of properties available for the contract and group IDs provided.
+
+
+    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+    :param str group_id: - (Required) A group's unique ID, including the `grp_` prefix.
     """
     ...

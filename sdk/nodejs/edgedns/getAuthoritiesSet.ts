@@ -11,9 +11,7 @@ export function getAuthoritiesSet(args: GetAuthoritiesSetArgs, opts?: pulumi.Inv
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet", {
         "contract": args.contract,
     }, opts);

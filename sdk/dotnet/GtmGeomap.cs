@@ -41,21 +41,6 @@ namespace Pulumi.Akamai
     /// 
     /// }
     /// ```
-    /// ## Argument reference
-    /// 
-    /// This resource supports these arguments:
-    /// 
-    /// * `domain` - (Required) GTM Domain name for the Geographic Map.
-    /// * `name` - (Required) A descriptive label for the Geographic map.
-    /// * `default_datacenter` - (Required) A placeholder for all other geographic zones. Requires these additional arguments:
-    ///   * `datacenter_id` - (Required) For each property, an identifier for all other geographic zones.
-    ///   * `nickname` - (Required) A descriptive label for all other geographic zones.
-    /// * `wait_on_complete` - (Optional) A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
-    /// * `assignment` - (Optional) Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
-    ///   * `datacenter_id` - (Required) A unique identifier for an existing data center in the domain.
-    ///   * `nickname` - (Optional) A descriptive label for the group.
-    ///   * `countries` - (Optional) Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
-    /// 
     /// ## Schema reference
     /// 
     /// You can download the GTM Geographic Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#geographicmap) page.
@@ -63,18 +48,33 @@ namespace Pulumi.Akamai
     [AkamaiResourceType("akamai:index/gtmGeomap:GtmGeomap")]
     public partial class GtmGeomap : Pulumi.CustomResource
     {
+        /// <summary>
+        /// Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
+        /// </summary>
         [Output("assignments")]
         public Output<ImmutableArray<Outputs.GtmGeomapAssignment>> Assignments { get; private set; } = null!;
 
+        /// <summary>
+        /// A placeholder for all other geographic zones. Requires these additional arguments:
+        /// </summary>
         [Output("defaultDatacenter")]
         public Output<Outputs.GtmGeomapDefaultDatacenter> DefaultDatacenter { get; private set; } = null!;
 
+        /// <summary>
+        /// GTM Domain name for the Geographic Map.
+        /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
 
+        /// <summary>
+        /// A descriptive label for the Geographic map.
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+        /// </summary>
         [Output("waitOnComplete")]
         public Output<bool?> WaitOnComplete { get; private set; } = null!;
 
@@ -130,21 +130,37 @@ namespace Pulumi.Akamai
     {
         [Input("assignments")]
         private InputList<Inputs.GtmGeomapAssignmentArgs>? _assignments;
+
+        /// <summary>
+        /// Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
+        /// </summary>
         public InputList<Inputs.GtmGeomapAssignmentArgs> Assignments
         {
             get => _assignments ?? (_assignments = new InputList<Inputs.GtmGeomapAssignmentArgs>());
             set => _assignments = value;
         }
 
+        /// <summary>
+        /// A placeholder for all other geographic zones. Requires these additional arguments:
+        /// </summary>
         [Input("defaultDatacenter", required: true)]
         public Input<Inputs.GtmGeomapDefaultDatacenterArgs> DefaultDatacenter { get; set; } = null!;
 
+        /// <summary>
+        /// GTM Domain name for the Geographic Map.
+        /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
 
+        /// <summary>
+        /// A descriptive label for the Geographic map.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 
@@ -157,21 +173,37 @@ namespace Pulumi.Akamai
     {
         [Input("assignments")]
         private InputList<Inputs.GtmGeomapAssignmentGetArgs>? _assignments;
+
+        /// <summary>
+        /// Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
+        /// </summary>
         public InputList<Inputs.GtmGeomapAssignmentGetArgs> Assignments
         {
             get => _assignments ?? (_assignments = new InputList<Inputs.GtmGeomapAssignmentGetArgs>());
             set => _assignments = value;
         }
 
+        /// <summary>
+        /// A placeholder for all other geographic zones. Requires these additional arguments:
+        /// </summary>
         [Input("defaultDatacenter")]
         public Input<Inputs.GtmGeomapDefaultDatacenterGetArgs>? DefaultDatacenter { get; set; }
 
+        /// <summary>
+        /// GTM Domain name for the Geographic Map.
+        /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
+        /// <summary>
+        /// A descriptive label for the Geographic map.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 

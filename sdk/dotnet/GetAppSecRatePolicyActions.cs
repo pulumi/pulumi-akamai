@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -58,7 +57,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the ID, IPv4 action, and IPv6 action of the rate policies.
         /// </summary>
         public static Task<GetAppSecRatePolicyActionsResult> InvokeAsync(GetAppSecRatePolicyActionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecRatePolicyActionsResult>("akamai:index/getAppSecRatePolicyActions:getAppSecRatePolicyActions", args ?? new GetAppSecRatePolicyActionsArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecRatePolicyActionsResult>("akamai:index/getAppSecRatePolicyActions:getAppSecRatePolicyActions", args ?? new GetAppSecRatePolicyActionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy; rate policy
@@ -106,7 +105,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the ID, IPv4 action, and IPv6 action of the rate policies.
         /// </summary>
         public static Output<GetAppSecRatePolicyActionsResult> Invoke(GetAppSecRatePolicyActionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecRatePolicyActionsResult>("akamai:index/getAppSecRatePolicyActions:getAppSecRatePolicyActions", args ?? new GetAppSecRatePolicyActionsInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecRatePolicyActionsResult>("akamai:index/getAppSecRatePolicyActions:getAppSecRatePolicyActions", args ?? new GetAppSecRatePolicyActionsInvokeArgs(), options.WithDefaults());
     }
 
 

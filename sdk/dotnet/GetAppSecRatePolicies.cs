@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -72,7 +71,7 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted list of the rate policy information.
         /// </summary>
         public static Task<GetAppSecRatePoliciesResult> InvokeAsync(GetAppSecRatePoliciesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecRatePoliciesResult>("akamai:index/getAppSecRatePolicies:getAppSecRatePolicies", args ?? new GetAppSecRatePoliciesArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecRatePoliciesResult>("akamai:index/getAppSecRatePolicies:getAppSecRatePolicies", args ?? new GetAppSecRatePoliciesArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; rate policy
@@ -134,7 +133,7 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted list of the rate policy information.
         /// </summary>
         public static Output<GetAppSecRatePoliciesResult> Invoke(GetAppSecRatePoliciesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecRatePoliciesResult>("akamai:index/getAppSecRatePolicies:getAppSecRatePolicies", args ?? new GetAppSecRatePoliciesInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecRatePoliciesResult>("akamai:index/getAppSecRatePolicies:getAppSecRatePolicies", args ?? new GetAppSecRatePoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

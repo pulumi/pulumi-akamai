@@ -106,18 +106,18 @@ export class AppSecEval extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecEvalArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecEvalArgs | AppSecEvalState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecEvalState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["currentRuleset"] = state ? state.currentRuleset : undefined;
-            inputs["evalMode"] = state ? state.evalMode : undefined;
-            inputs["evalOperation"] = state ? state.evalOperation : undefined;
-            inputs["evalStatus"] = state ? state.evalStatus : undefined;
-            inputs["evaluatingRuleset"] = state ? state.evaluatingRuleset : undefined;
-            inputs["expirationDate"] = state ? state.expirationDate : undefined;
-            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["currentRuleset"] = state ? state.currentRuleset : undefined;
+            resourceInputs["evalMode"] = state ? state.evalMode : undefined;
+            resourceInputs["evalOperation"] = state ? state.evalOperation : undefined;
+            resourceInputs["evalStatus"] = state ? state.evalStatus : undefined;
+            resourceInputs["evaluatingRuleset"] = state ? state.evaluatingRuleset : undefined;
+            resourceInputs["expirationDate"] = state ? state.expirationDate : undefined;
+            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
         } else {
             const args = argsOrState as AppSecEvalArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -129,19 +129,17 @@ export class AppSecEval extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["evalMode"] = args ? args.evalMode : undefined;
-            inputs["evalOperation"] = args ? args.evalOperation : undefined;
-            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            inputs["currentRuleset"] = undefined /*out*/;
-            inputs["evalStatus"] = undefined /*out*/;
-            inputs["evaluatingRuleset"] = undefined /*out*/;
-            inputs["expirationDate"] = undefined /*out*/;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["evalMode"] = args ? args.evalMode : undefined;
+            resourceInputs["evalOperation"] = args ? args.evalOperation : undefined;
+            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["currentRuleset"] = undefined /*out*/;
+            resourceInputs["evalStatus"] = undefined /*out*/;
+            resourceInputs["evaluatingRuleset"] = undefined /*out*/;
+            resourceInputs["expirationDate"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecEval.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecEval.__pulumiType, name, resourceInputs, opts);
     }
 }
 

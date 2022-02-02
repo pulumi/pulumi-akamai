@@ -64,24 +64,24 @@ export class DnsZone extends pulumi.CustomResource {
     /** @deprecated akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone */
     constructor(name: string, argsOrState?: DnsZoneArgs | DnsZoneState, opts?: pulumi.CustomResourceOptions) {
         pulumi.log.warn("DnsZone is deprecated: akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone")
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DnsZoneState | undefined;
-            inputs["activationState"] = state ? state.activationState : undefined;
-            inputs["aliasCount"] = state ? state.aliasCount : undefined;
-            inputs["comment"] = state ? state.comment : undefined;
-            inputs["contract"] = state ? state.contract : undefined;
-            inputs["endCustomerId"] = state ? state.endCustomerId : undefined;
-            inputs["group"] = state ? state.group : undefined;
-            inputs["masters"] = state ? state.masters : undefined;
-            inputs["signAndServe"] = state ? state.signAndServe : undefined;
-            inputs["signAndServeAlgorithm"] = state ? state.signAndServeAlgorithm : undefined;
-            inputs["target"] = state ? state.target : undefined;
-            inputs["tsigKey"] = state ? state.tsigKey : undefined;
-            inputs["type"] = state ? state.type : undefined;
-            inputs["versionId"] = state ? state.versionId : undefined;
-            inputs["zone"] = state ? state.zone : undefined;
+            resourceInputs["activationState"] = state ? state.activationState : undefined;
+            resourceInputs["aliasCount"] = state ? state.aliasCount : undefined;
+            resourceInputs["comment"] = state ? state.comment : undefined;
+            resourceInputs["contract"] = state ? state.contract : undefined;
+            resourceInputs["endCustomerId"] = state ? state.endCustomerId : undefined;
+            resourceInputs["group"] = state ? state.group : undefined;
+            resourceInputs["masters"] = state ? state.masters : undefined;
+            resourceInputs["signAndServe"] = state ? state.signAndServe : undefined;
+            resourceInputs["signAndServeAlgorithm"] = state ? state.signAndServeAlgorithm : undefined;
+            resourceInputs["target"] = state ? state.target : undefined;
+            resourceInputs["tsigKey"] = state ? state.tsigKey : undefined;
+            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["versionId"] = state ? state.versionId : undefined;
+            resourceInputs["zone"] = state ? state.zone : undefined;
         } else {
             const args = argsOrState as DnsZoneArgs | undefined;
             if ((!args || args.contract === undefined) && !opts.urn) {
@@ -93,25 +93,23 @@ export class DnsZone extends pulumi.CustomResource {
             if ((!args || args.zone === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'zone'");
             }
-            inputs["comment"] = args ? args.comment : undefined;
-            inputs["contract"] = args ? args.contract : undefined;
-            inputs["endCustomerId"] = args ? args.endCustomerId : undefined;
-            inputs["group"] = args ? args.group : undefined;
-            inputs["masters"] = args ? args.masters : undefined;
-            inputs["signAndServe"] = args ? args.signAndServe : undefined;
-            inputs["signAndServeAlgorithm"] = args ? args.signAndServeAlgorithm : undefined;
-            inputs["target"] = args ? args.target : undefined;
-            inputs["tsigKey"] = args ? args.tsigKey : undefined;
-            inputs["type"] = args ? args.type : undefined;
-            inputs["zone"] = args ? args.zone : undefined;
-            inputs["activationState"] = undefined /*out*/;
-            inputs["aliasCount"] = undefined /*out*/;
-            inputs["versionId"] = undefined /*out*/;
+            resourceInputs["comment"] = args ? args.comment : undefined;
+            resourceInputs["contract"] = args ? args.contract : undefined;
+            resourceInputs["endCustomerId"] = args ? args.endCustomerId : undefined;
+            resourceInputs["group"] = args ? args.group : undefined;
+            resourceInputs["masters"] = args ? args.masters : undefined;
+            resourceInputs["signAndServe"] = args ? args.signAndServe : undefined;
+            resourceInputs["signAndServeAlgorithm"] = args ? args.signAndServeAlgorithm : undefined;
+            resourceInputs["target"] = args ? args.target : undefined;
+            resourceInputs["tsigKey"] = args ? args.tsigKey : undefined;
+            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["zone"] = args ? args.zone : undefined;
+            resourceInputs["activationState"] = undefined /*out*/;
+            resourceInputs["aliasCount"] = undefined /*out*/;
+            resourceInputs["versionId"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(DnsZone.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(DnsZone.__pulumiType, name, resourceInputs, opts);
     }
 }
 

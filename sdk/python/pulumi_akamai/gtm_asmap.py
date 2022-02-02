@@ -22,6 +22,11 @@ class GtmAsmapArgs:
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a GtmAsmap resource.
+        :param pulumi.Input['GtmAsmapDefaultDatacenterArgs'] default_datacenter: A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+        :param pulumi.Input[str] domain: The GTM Domain name for the AS map.
+        :param pulumi.Input[Sequence[pulumi.Input['GtmAsmapAssignmentArgs']]] assignments: Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+        :param pulumi.Input[str] name: A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+        :param pulumi.Input[bool] wait_on_complete: A boolean that, if `true`, waits for transaction to complete.
         """
         pulumi.set(__self__, "default_datacenter", default_datacenter)
         pulumi.set(__self__, "domain", domain)
@@ -35,6 +40,9 @@ class GtmAsmapArgs:
     @property
     @pulumi.getter(name="defaultDatacenter")
     def default_datacenter(self) -> pulumi.Input['GtmAsmapDefaultDatacenterArgs']:
+        """
+        A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+        """
         return pulumi.get(self, "default_datacenter")
 
     @default_datacenter.setter
@@ -44,6 +52,9 @@ class GtmAsmapArgs:
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Input[str]:
+        """
+        The GTM Domain name for the AS map.
+        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -53,6 +64,9 @@ class GtmAsmapArgs:
     @property
     @pulumi.getter
     def assignments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmAsmapAssignmentArgs']]]]:
+        """
+        Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+        """
         return pulumi.get(self, "assignments")
 
     @assignments.setter
@@ -62,6 +76,9 @@ class GtmAsmapArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -71,6 +88,9 @@ class GtmAsmapArgs:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean that, if `true`, waits for transaction to complete.
+        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -88,6 +108,11 @@ class _GtmAsmapState:
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering GtmAsmap resources.
+        :param pulumi.Input[Sequence[pulumi.Input['GtmAsmapAssignmentArgs']]] assignments: Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+        :param pulumi.Input['GtmAsmapDefaultDatacenterArgs'] default_datacenter: A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+        :param pulumi.Input[str] domain: The GTM Domain name for the AS map.
+        :param pulumi.Input[str] name: A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+        :param pulumi.Input[bool] wait_on_complete: A boolean that, if `true`, waits for transaction to complete.
         """
         if assignments is not None:
             pulumi.set(__self__, "assignments", assignments)
@@ -103,6 +128,9 @@ class _GtmAsmapState:
     @property
     @pulumi.getter
     def assignments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmAsmapAssignmentArgs']]]]:
+        """
+        Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+        """
         return pulumi.get(self, "assignments")
 
     @assignments.setter
@@ -112,6 +140,9 @@ class _GtmAsmapState:
     @property
     @pulumi.getter(name="defaultDatacenter")
     def default_datacenter(self) -> Optional[pulumi.Input['GtmAsmapDefaultDatacenterArgs']]:
+        """
+        A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+        """
         return pulumi.get(self, "default_datacenter")
 
     @default_datacenter.setter
@@ -121,6 +152,9 @@ class _GtmAsmapState:
     @property
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        The GTM Domain name for the AS map.
+        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -130,6 +164,9 @@ class _GtmAsmapState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -139,6 +176,9 @@ class _GtmAsmapState:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean that, if `true`, waits for transaction to complete.
+        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -179,27 +219,17 @@ class GtmAsmap(pulumi.CustomResource):
             ),
             domain="demo_domain.akadns.net")
         ```
-        ## Argument reference
-
-        This resource supports these arguments:
-
-        * `domain` - (Required) The GTM Domain name for the AS map.
-        * `name` - (Required) A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
-        * `default_datacenter` - (Required) A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
-          * `datacenter_id` - (Required) A unique identifier for an existing data center in the domain.
-          * `nickname` - (Required) A descriptive label for all other AS zones, up to 128 characters.
-        * `wait_on_complete` - (Optional) A boolean that, if `true`, waits for transaction to complete.
-        * `assignment` - (Optional) Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
-          * `datacenter_id` - A unique identifier for an existing data center in the domain.
-          * `nickname` - A descriptive label for the group.
-          * `as_numbers` - Specifies an array of AS numbers.
-
         ## Schema reference
 
         You can download the GTM AS Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#asmap) page.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmAsmapAssignmentArgs']]]] assignments: Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+        :param pulumi.Input[pulumi.InputType['GtmAsmapDefaultDatacenterArgs']] default_datacenter: A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+        :param pulumi.Input[str] domain: The GTM Domain name for the AS map.
+        :param pulumi.Input[str] name: A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+        :param pulumi.Input[bool] wait_on_complete: A boolean that, if `true`, waits for transaction to complete.
         """
         ...
     @overload
@@ -229,21 +259,6 @@ class GtmAsmap(pulumi.CustomResource):
             ),
             domain="demo_domain.akadns.net")
         ```
-        ## Argument reference
-
-        This resource supports these arguments:
-
-        * `domain` - (Required) The GTM Domain name for the AS map.
-        * `name` - (Required) A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
-        * `default_datacenter` - (Required) A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
-          * `datacenter_id` - (Required) A unique identifier for an existing data center in the domain.
-          * `nickname` - (Required) A descriptive label for all other AS zones, up to 128 characters.
-        * `wait_on_complete` - (Optional) A boolean that, if `true`, waits for transaction to complete.
-        * `assignment` - (Optional) Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
-          * `datacenter_id` - A unique identifier for an existing data center in the domain.
-          * `nickname` - A descriptive label for the group.
-          * `as_numbers` - Specifies an array of AS numbers.
-
         ## Schema reference
 
         You can download the GTM AS Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#asmap) page.
@@ -313,6 +328,11 @@ class GtmAsmap(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmAsmapAssignmentArgs']]]] assignments: Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+        :param pulumi.Input[pulumi.InputType['GtmAsmapDefaultDatacenterArgs']] default_datacenter: A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+        :param pulumi.Input[str] domain: The GTM Domain name for the AS map.
+        :param pulumi.Input[str] name: A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+        :param pulumi.Input[bool] wait_on_complete: A boolean that, if `true`, waits for transaction to complete.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -328,25 +348,40 @@ class GtmAsmap(pulumi.CustomResource):
     @property
     @pulumi.getter
     def assignments(self) -> pulumi.Output[Optional[Sequence['outputs.GtmAsmapAssignment']]]:
+        """
+        Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+        """
         return pulumi.get(self, "assignments")
 
     @property
     @pulumi.getter(name="defaultDatacenter")
     def default_datacenter(self) -> pulumi.Output['outputs.GtmAsmapDefaultDatacenter']:
+        """
+        A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+        """
         return pulumi.get(self, "default_datacenter")
 
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Output[str]:
+        """
+        The GTM Domain name for the AS map.
+        """
         return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
+        """
+        A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> pulumi.Output[Optional[bool]]:
+        """
+        A boolean that, if `true`, waits for transaction to complete.
+        """
         return pulumi.get(self, "wait_on_complete")
 

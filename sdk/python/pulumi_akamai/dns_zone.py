@@ -28,6 +28,17 @@ class DnsZoneArgs:
                  tsig_key: Optional[pulumi.Input['DnsZoneTsigKeyArgs']] = None):
         """
         The set of arguments for constructing a DnsZone resource.
+        :param pulumi.Input[str] contract: The contract ID.
+        :param pulumi.Input[str] type: Whether the zone is `primary`, `secondary`, or `alias`.
+        :param pulumi.Input[str] zone: The domain zone, encapsulating any nested subdomains.
+        :param pulumi.Input[str] comment: A descriptive comment.
+        :param pulumi.Input[str] end_customer_id: A free form identifier for the zone.
+        :param pulumi.Input[str] group: The currently selected group ID.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] masters: The names or IP addresses of the nameservers that the zone data should be retrieved from.
+        :param pulumi.Input[bool] sign_and_serve: Whether DNSSEC Sign and Serve is enabled.
+        :param pulumi.Input[str] sign_and_serve_algorithm: The algorithm used by Sign and Serve.
+        :param pulumi.Input[str] target: The name of the zone whose configuration this zone will copy.
+        :param pulumi.Input['DnsZoneTsigKeyArgs'] tsig_key: The TSIG Key used in secure zone transfers. If used, requires these arguments:
         """
         pulumi.set(__self__, "contract", contract)
         pulumi.set(__self__, "type", type)
@@ -52,6 +63,9 @@ class DnsZoneArgs:
     @property
     @pulumi.getter
     def contract(self) -> pulumi.Input[str]:
+        """
+        The contract ID.
+        """
         return pulumi.get(self, "contract")
 
     @contract.setter
@@ -61,6 +75,9 @@ class DnsZoneArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
+        """
+        Whether the zone is `primary`, `secondary`, or `alias`.
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -70,6 +87,9 @@ class DnsZoneArgs:
     @property
     @pulumi.getter
     def zone(self) -> pulumi.Input[str]:
+        """
+        The domain zone, encapsulating any nested subdomains.
+        """
         return pulumi.get(self, "zone")
 
     @zone.setter
@@ -79,6 +99,9 @@ class DnsZoneArgs:
     @property
     @pulumi.getter
     def comment(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive comment.
+        """
         return pulumi.get(self, "comment")
 
     @comment.setter
@@ -88,6 +111,9 @@ class DnsZoneArgs:
     @property
     @pulumi.getter(name="endCustomerId")
     def end_customer_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        A free form identifier for the zone.
+        """
         return pulumi.get(self, "end_customer_id")
 
     @end_customer_id.setter
@@ -97,6 +123,9 @@ class DnsZoneArgs:
     @property
     @pulumi.getter
     def group(self) -> Optional[pulumi.Input[str]]:
+        """
+        The currently selected group ID.
+        """
         return pulumi.get(self, "group")
 
     @group.setter
@@ -106,6 +135,9 @@ class DnsZoneArgs:
     @property
     @pulumi.getter
     def masters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The names or IP addresses of the nameservers that the zone data should be retrieved from.
+        """
         return pulumi.get(self, "masters")
 
     @masters.setter
@@ -115,6 +147,9 @@ class DnsZoneArgs:
     @property
     @pulumi.getter(name="signAndServe")
     def sign_and_serve(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether DNSSEC Sign and Serve is enabled.
+        """
         return pulumi.get(self, "sign_and_serve")
 
     @sign_and_serve.setter
@@ -124,6 +159,9 @@ class DnsZoneArgs:
     @property
     @pulumi.getter(name="signAndServeAlgorithm")
     def sign_and_serve_algorithm(self) -> Optional[pulumi.Input[str]]:
+        """
+        The algorithm used by Sign and Serve.
+        """
         return pulumi.get(self, "sign_and_serve_algorithm")
 
     @sign_and_serve_algorithm.setter
@@ -133,6 +171,9 @@ class DnsZoneArgs:
     @property
     @pulumi.getter
     def target(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the zone whose configuration this zone will copy.
+        """
         return pulumi.get(self, "target")
 
     @target.setter
@@ -142,6 +183,9 @@ class DnsZoneArgs:
     @property
     @pulumi.getter(name="tsigKey")
     def tsig_key(self) -> Optional[pulumi.Input['DnsZoneTsigKeyArgs']]:
+        """
+        The TSIG Key used in secure zone transfers. If used, requires these arguments:
+        """
         return pulumi.get(self, "tsig_key")
 
     @tsig_key.setter
@@ -168,6 +212,17 @@ class _DnsZoneState:
                  zone: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DnsZone resources.
+        :param pulumi.Input[str] comment: A descriptive comment.
+        :param pulumi.Input[str] contract: The contract ID.
+        :param pulumi.Input[str] end_customer_id: A free form identifier for the zone.
+        :param pulumi.Input[str] group: The currently selected group ID.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] masters: The names or IP addresses of the nameservers that the zone data should be retrieved from.
+        :param pulumi.Input[bool] sign_and_serve: Whether DNSSEC Sign and Serve is enabled.
+        :param pulumi.Input[str] sign_and_serve_algorithm: The algorithm used by Sign and Serve.
+        :param pulumi.Input[str] target: The name of the zone whose configuration this zone will copy.
+        :param pulumi.Input['DnsZoneTsigKeyArgs'] tsig_key: The TSIG Key used in secure zone transfers. If used, requires these arguments:
+        :param pulumi.Input[str] type: Whether the zone is `primary`, `secondary`, or `alias`.
+        :param pulumi.Input[str] zone: The domain zone, encapsulating any nested subdomains.
         """
         if activation_state is not None:
             pulumi.set(__self__, "activation_state", activation_state)
@@ -219,6 +274,9 @@ class _DnsZoneState:
     @property
     @pulumi.getter
     def comment(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive comment.
+        """
         return pulumi.get(self, "comment")
 
     @comment.setter
@@ -228,6 +286,9 @@ class _DnsZoneState:
     @property
     @pulumi.getter
     def contract(self) -> Optional[pulumi.Input[str]]:
+        """
+        The contract ID.
+        """
         return pulumi.get(self, "contract")
 
     @contract.setter
@@ -237,6 +298,9 @@ class _DnsZoneState:
     @property
     @pulumi.getter(name="endCustomerId")
     def end_customer_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        A free form identifier for the zone.
+        """
         return pulumi.get(self, "end_customer_id")
 
     @end_customer_id.setter
@@ -246,6 +310,9 @@ class _DnsZoneState:
     @property
     @pulumi.getter
     def group(self) -> Optional[pulumi.Input[str]]:
+        """
+        The currently selected group ID.
+        """
         return pulumi.get(self, "group")
 
     @group.setter
@@ -255,6 +322,9 @@ class _DnsZoneState:
     @property
     @pulumi.getter
     def masters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The names or IP addresses of the nameservers that the zone data should be retrieved from.
+        """
         return pulumi.get(self, "masters")
 
     @masters.setter
@@ -264,6 +334,9 @@ class _DnsZoneState:
     @property
     @pulumi.getter(name="signAndServe")
     def sign_and_serve(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether DNSSEC Sign and Serve is enabled.
+        """
         return pulumi.get(self, "sign_and_serve")
 
     @sign_and_serve.setter
@@ -273,6 +346,9 @@ class _DnsZoneState:
     @property
     @pulumi.getter(name="signAndServeAlgorithm")
     def sign_and_serve_algorithm(self) -> Optional[pulumi.Input[str]]:
+        """
+        The algorithm used by Sign and Serve.
+        """
         return pulumi.get(self, "sign_and_serve_algorithm")
 
     @sign_and_serve_algorithm.setter
@@ -282,6 +358,9 @@ class _DnsZoneState:
     @property
     @pulumi.getter
     def target(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the zone whose configuration this zone will copy.
+        """
         return pulumi.get(self, "target")
 
     @target.setter
@@ -291,6 +370,9 @@ class _DnsZoneState:
     @property
     @pulumi.getter(name="tsigKey")
     def tsig_key(self) -> Optional[pulumi.Input['DnsZoneTsigKeyArgs']]:
+        """
+        The TSIG Key used in secure zone transfers. If used, requires these arguments:
+        """
         return pulumi.get(self, "tsig_key")
 
     @tsig_key.setter
@@ -300,6 +382,9 @@ class _DnsZoneState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Whether the zone is `primary`, `secondary`, or `alias`.
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -318,6 +403,9 @@ class _DnsZoneState:
     @property
     @pulumi.getter
     def zone(self) -> Optional[pulumi.Input[str]]:
+        """
+        The domain zone, encapsulating any nested subdomains.
+        """
         return pulumi.get(self, "zone")
 
     @zone.setter
@@ -346,6 +434,17 @@ class DnsZone(pulumi.CustomResource):
         Create a DnsZone resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] comment: A descriptive comment.
+        :param pulumi.Input[str] contract: The contract ID.
+        :param pulumi.Input[str] end_customer_id: A free form identifier for the zone.
+        :param pulumi.Input[str] group: The currently selected group ID.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] masters: The names or IP addresses of the nameservers that the zone data should be retrieved from.
+        :param pulumi.Input[bool] sign_and_serve: Whether DNSSEC Sign and Serve is enabled.
+        :param pulumi.Input[str] sign_and_serve_algorithm: The algorithm used by Sign and Serve.
+        :param pulumi.Input[str] target: The name of the zone whose configuration this zone will copy.
+        :param pulumi.Input[pulumi.InputType['DnsZoneTsigKeyArgs']] tsig_key: The TSIG Key used in secure zone transfers. If used, requires these arguments:
+        :param pulumi.Input[str] type: Whether the zone is `primary`, `secondary`, or `alias`.
+        :param pulumi.Input[str] zone: The domain zone, encapsulating any nested subdomains.
         """
         ...
     @overload
@@ -446,6 +545,17 @@ class DnsZone(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] comment: A descriptive comment.
+        :param pulumi.Input[str] contract: The contract ID.
+        :param pulumi.Input[str] end_customer_id: A free form identifier for the zone.
+        :param pulumi.Input[str] group: The currently selected group ID.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] masters: The names or IP addresses of the nameservers that the zone data should be retrieved from.
+        :param pulumi.Input[bool] sign_and_serve: Whether DNSSEC Sign and Serve is enabled.
+        :param pulumi.Input[str] sign_and_serve_algorithm: The algorithm used by Sign and Serve.
+        :param pulumi.Input[str] target: The name of the zone whose configuration this zone will copy.
+        :param pulumi.Input[pulumi.InputType['DnsZoneTsigKeyArgs']] tsig_key: The TSIG Key used in secure zone transfers. If used, requires these arguments:
+        :param pulumi.Input[str] type: Whether the zone is `primary`, `secondary`, or `alias`.
+        :param pulumi.Input[str] zone: The domain zone, encapsulating any nested subdomains.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -480,51 +590,81 @@ class DnsZone(pulumi.CustomResource):
     @property
     @pulumi.getter
     def comment(self) -> pulumi.Output[Optional[str]]:
+        """
+        A descriptive comment.
+        """
         return pulumi.get(self, "comment")
 
     @property
     @pulumi.getter
     def contract(self) -> pulumi.Output[str]:
+        """
+        The contract ID.
+        """
         return pulumi.get(self, "contract")
 
     @property
     @pulumi.getter(name="endCustomerId")
     def end_customer_id(self) -> pulumi.Output[Optional[str]]:
+        """
+        A free form identifier for the zone.
+        """
         return pulumi.get(self, "end_customer_id")
 
     @property
     @pulumi.getter
     def group(self) -> pulumi.Output[Optional[str]]:
+        """
+        The currently selected group ID.
+        """
         return pulumi.get(self, "group")
 
     @property
     @pulumi.getter
     def masters(self) -> pulumi.Output[Optional[Sequence[str]]]:
+        """
+        The names or IP addresses of the nameservers that the zone data should be retrieved from.
+        """
         return pulumi.get(self, "masters")
 
     @property
     @pulumi.getter(name="signAndServe")
     def sign_and_serve(self) -> pulumi.Output[Optional[bool]]:
+        """
+        Whether DNSSEC Sign and Serve is enabled.
+        """
         return pulumi.get(self, "sign_and_serve")
 
     @property
     @pulumi.getter(name="signAndServeAlgorithm")
     def sign_and_serve_algorithm(self) -> pulumi.Output[Optional[str]]:
+        """
+        The algorithm used by Sign and Serve.
+        """
         return pulumi.get(self, "sign_and_serve_algorithm")
 
     @property
     @pulumi.getter
     def target(self) -> pulumi.Output[Optional[str]]:
+        """
+        The name of the zone whose configuration this zone will copy.
+        """
         return pulumi.get(self, "target")
 
     @property
     @pulumi.getter(name="tsigKey")
     def tsig_key(self) -> pulumi.Output[Optional['outputs.DnsZoneTsigKey']]:
+        """
+        The TSIG Key used in secure zone transfers. If used, requires these arguments:
+        """
         return pulumi.get(self, "tsig_key")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
+        """
+        Whether the zone is `primary`, `secondary`, or `alias`.
+        """
         return pulumi.get(self, "type")
 
     @property
@@ -535,5 +675,8 @@ class DnsZone(pulumi.CustomResource):
     @property
     @pulumi.getter
     def zone(self) -> pulumi.Output[str]:
+        """
+        The domain zone, encapsulating any nested subdomains.
+        """
         return pulumi.get(self, "zone")
 

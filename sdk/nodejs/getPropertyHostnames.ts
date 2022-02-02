@@ -10,9 +10,7 @@ export function getPropertyHostnames(args: GetPropertyHostnamesArgs, opts?: pulu
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getPropertyHostnames:getPropertyHostnames", {
         "contractId": args.contractId,
         "groupId": args.groupId,
@@ -24,8 +22,17 @@ export function getPropertyHostnames(args: GetPropertyHostnamesArgs, opts?: pulu
  * A collection of arguments for invoking getPropertyHostnames.
  */
 export interface GetPropertyHostnamesArgs {
+    /**
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     */
     contractId: string;
+    /**
+     * - (Required) A group's unique ID, including the `grp_` prefix.
+     */
     groupId: string;
+    /**
+     * - (Required) A property's unique ID, including the `prp_` prefix.
+     */
     propertyId: string;
 }
 
@@ -52,7 +59,16 @@ export function getPropertyHostnamesOutput(args: GetPropertyHostnamesOutputArgs,
  * A collection of arguments for invoking getPropertyHostnames.
  */
 export interface GetPropertyHostnamesOutputArgs {
+    /**
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     */
     contractId: pulumi.Input<string>;
+    /**
+     * - (Required) A group's unique ID, including the `grp_` prefix.
+     */
     groupId: pulumi.Input<string>;
+    /**
+     * - (Required) A property's unique ID, including the `prp_` prefix.
+     */
     propertyId: pulumi.Input<string>;
 }

@@ -48,9 +48,7 @@ export function getAppSecIPGeo(args: GetAppSecIPGeoArgs, opts?: pulumi.InvokeOpt
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecIPGeo:getAppSecIPGeo", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,

@@ -21,18 +21,13 @@ import * as utilities from "./utilities";
  *
  * export const propertyMatch = data.akamai_property_rule_formats["my-example"];
  * ```
- * ## Argument reference
- *
- * There are no arguments available for this data source.
  */
 export function getPropertyRuleFormats(opts?: pulumi.InvokeOptions): Promise<GetPropertyRuleFormatsResult> {
     if (!opts) {
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getPropertyRuleFormats:getPropertyRuleFormats", {
     }, opts);
 }

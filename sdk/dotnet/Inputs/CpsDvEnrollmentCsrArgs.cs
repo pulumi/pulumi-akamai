@@ -12,18 +12,33 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class CpsDvEnrollmentCsrArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The city where your organization resides.
+        /// </summary>
         [Input("city", required: true)]
         public Input<string> City { get; set; } = null!;
 
+        /// <summary>
+        /// The code for the country where your organization resides.
+        /// </summary>
         [Input("countryCode", required: true)]
         public Input<string> CountryCode { get; set; } = null!;
 
+        /// <summary>
+        /// Your organization information.
+        /// </summary>
         [Input("organization", required: true)]
         public Input<string> Organization { get; set; } = null!;
 
+        /// <summary>
+        /// Your organizational unit.
+        /// </summary>
         [Input("organizationalUnit", required: true)]
         public Input<string> OrganizationalUnit { get; set; } = null!;
 
+        /// <summary>
+        /// Your state or province.
+        /// </summary>
         [Input("state", required: true)]
         public Input<string> State { get; set; } = null!;
 

@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -61,7 +60,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the SIEM setting information.
         /// </summary>
         public static Task<GetAppSecSiemSettingsResult> InvokeAsync(GetAppSecSiemSettingsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSiemSettingsResult>("akamai:index/getAppSecSiemSettings:getAppSecSiemSettings", args ?? new GetAppSecSiemSettingsArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSiemSettingsResult>("akamai:index/getAppSecSiemSettings:getAppSecSiemSettings", args ?? new GetAppSecSiemSettingsArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration
@@ -112,7 +111,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the SIEM setting information.
         /// </summary>
         public static Output<GetAppSecSiemSettingsResult> Invoke(GetAppSecSiemSettingsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecSiemSettingsResult>("akamai:index/getAppSecSiemSettings:getAppSecSiemSettings", args ?? new GetAppSecSiemSettingsInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecSiemSettingsResult>("akamai:index/getAppSecSiemSettings:getAppSecSiemSettings", args ?? new GetAppSecSiemSettingsInvokeArgs(), options.WithDefaults());
     }
 
 

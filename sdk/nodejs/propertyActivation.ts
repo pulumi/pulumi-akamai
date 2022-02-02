@@ -48,34 +48,6 @@ import * as utilities from "./utilities";
  *     dependsOn: [exampleStaging],
  * });
  * ```
- * ## Argument reference
- *
- * The following arguments are supported:
- *
- * * `propertyId` - (Required) The property's unique identifier, including the `prp_` prefix.
- * * `contact` - (Required) One or more email addresses to send activation status changes to.
- * * `version` - (Required) The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latestVersion` attribute in the `akamai.Property` resource labeled `example`.
- * * `network` - (Optional) Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
- * * `note` - (Optional) A log message you can assign to the activation request.
- * * `autoAcknowledgeRuleWarnings` - (Optional) Whether the activation should proceed despite any warnings. By default set to `true`.
- *
- * ### Deprecated arguments
- *
- * * `property` - (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
- *
- * ## Attribute reference
- *
- * The following attributes are returned:
- *
- * * `id` - The unique identifier for this activation.
- * * `warnings` - The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
- * * `errors` - The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
- * * `activationId` - The ID given to the activation event while it's in progress.
- * * `status` - The property version's activation status on the selected network.
- *
- * ### Deprecated attributes
- *
- * * `ruleWarnings` - (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
  */
 export class PropertyActivation extends pulumi.CustomResource {
     /**
@@ -105,30 +77,56 @@ export class PropertyActivation extends pulumi.CustomResource {
         return obj['__pulumiType'] === PropertyActivation.__pulumiType;
     }
 
+    /**
+     * The ID given to the activation event while it's in progress.
+     */
     public readonly activationId!: pulumi.Output<string>;
     /**
-     * automatically acknowledge all rule warnings for activation to continue. default is true
+     * Whether the activation should proceed despite any warnings. By default set to `true`.
      */
     public readonly autoAcknowledgeRuleWarnings!: pulumi.Output<boolean | undefined>;
+    /**
+     * One or more email addresses to send activation status changes to.
+     */
     public readonly contacts!: pulumi.Output<string[]>;
+    /**
+     * The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+     */
     public /*out*/ readonly errors!: pulumi.Output<string>;
+    /**
+     * Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+     */
     public readonly network!: pulumi.Output<string | undefined>;
     /**
-     * assigns a log message to the activation request
+     * A log message you can assign to the activation request.
      */
     public readonly note!: pulumi.Output<string | undefined>;
     /**
+     * - (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "property" has been deprecated.
      */
     public readonly property!: pulumi.Output<string>;
+    /**
+     * - (Required) The property's unique identifier, including the `prp_` prefix.
+     */
     public readonly propertyId!: pulumi.Output<string>;
     public readonly ruleErrors!: pulumi.Output<outputs.PropertyActivationRuleError[]>;
     /**
      * @deprecated Rule warnings will not be set in state anymore
      */
     public readonly ruleWarnings!: pulumi.Output<outputs.PropertyActivationRuleWarning[]>;
+    /**
+     * The property version's activation status on the selected network.
+     */
     public /*out*/ readonly status!: pulumi.Output<string>;
+    /**
+     * The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latestVersion` attribute in the `akamai.Property` resource labeled `example`.
+     */
     public readonly version!: pulumi.Output<number>;
+    /**
+     * The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+     */
     public /*out*/ readonly warnings!: pulumi.Output<string>;
 
     /**
@@ -140,23 +138,23 @@ export class PropertyActivation extends pulumi.CustomResource {
      */
     constructor(name: string, args: PropertyActivationArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: PropertyActivationArgs | PropertyActivationState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PropertyActivationState | undefined;
-            inputs["activationId"] = state ? state.activationId : undefined;
-            inputs["autoAcknowledgeRuleWarnings"] = state ? state.autoAcknowledgeRuleWarnings : undefined;
-            inputs["contacts"] = state ? state.contacts : undefined;
-            inputs["errors"] = state ? state.errors : undefined;
-            inputs["network"] = state ? state.network : undefined;
-            inputs["note"] = state ? state.note : undefined;
-            inputs["property"] = state ? state.property : undefined;
-            inputs["propertyId"] = state ? state.propertyId : undefined;
-            inputs["ruleErrors"] = state ? state.ruleErrors : undefined;
-            inputs["ruleWarnings"] = state ? state.ruleWarnings : undefined;
-            inputs["status"] = state ? state.status : undefined;
-            inputs["version"] = state ? state.version : undefined;
-            inputs["warnings"] = state ? state.warnings : undefined;
+            resourceInputs["activationId"] = state ? state.activationId : undefined;
+            resourceInputs["autoAcknowledgeRuleWarnings"] = state ? state.autoAcknowledgeRuleWarnings : undefined;
+            resourceInputs["contacts"] = state ? state.contacts : undefined;
+            resourceInputs["errors"] = state ? state.errors : undefined;
+            resourceInputs["network"] = state ? state.network : undefined;
+            resourceInputs["note"] = state ? state.note : undefined;
+            resourceInputs["property"] = state ? state.property : undefined;
+            resourceInputs["propertyId"] = state ? state.propertyId : undefined;
+            resourceInputs["ruleErrors"] = state ? state.ruleErrors : undefined;
+            resourceInputs["ruleWarnings"] = state ? state.ruleWarnings : undefined;
+            resourceInputs["status"] = state ? state.status : undefined;
+            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["warnings"] = state ? state.warnings : undefined;
         } else {
             const args = argsOrState as PropertyActivationArgs | undefined;
             if ((!args || args.contacts === undefined) && !opts.urn) {
@@ -165,26 +163,24 @@ export class PropertyActivation extends pulumi.CustomResource {
             if ((!args || args.version === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
-            inputs["activationId"] = args ? args.activationId : undefined;
-            inputs["autoAcknowledgeRuleWarnings"] = args ? args.autoAcknowledgeRuleWarnings : undefined;
-            inputs["contacts"] = args ? args.contacts : undefined;
-            inputs["network"] = args ? args.network : undefined;
-            inputs["note"] = args ? args.note : undefined;
-            inputs["property"] = args ? args.property : undefined;
-            inputs["propertyId"] = args ? args.propertyId : undefined;
-            inputs["ruleErrors"] = args ? args.ruleErrors : undefined;
-            inputs["ruleWarnings"] = args ? args.ruleWarnings : undefined;
-            inputs["version"] = args ? args.version : undefined;
-            inputs["errors"] = undefined /*out*/;
-            inputs["status"] = undefined /*out*/;
-            inputs["warnings"] = undefined /*out*/;
+            resourceInputs["activationId"] = args ? args.activationId : undefined;
+            resourceInputs["autoAcknowledgeRuleWarnings"] = args ? args.autoAcknowledgeRuleWarnings : undefined;
+            resourceInputs["contacts"] = args ? args.contacts : undefined;
+            resourceInputs["network"] = args ? args.network : undefined;
+            resourceInputs["note"] = args ? args.note : undefined;
+            resourceInputs["property"] = args ? args.property : undefined;
+            resourceInputs["propertyId"] = args ? args.propertyId : undefined;
+            resourceInputs["ruleErrors"] = args ? args.ruleErrors : undefined;
+            resourceInputs["ruleWarnings"] = args ? args.ruleWarnings : undefined;
+            resourceInputs["version"] = args ? args.version : undefined;
+            resourceInputs["errors"] = undefined /*out*/;
+            resourceInputs["status"] = undefined /*out*/;
+            resourceInputs["warnings"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const aliasOpts = { aliases: [{ type: "akamai:properties/propertyActivation:PropertyActivation" }] };
         opts = pulumi.mergeOptions(opts, aliasOpts);
-        super(PropertyActivation.__pulumiType, name, inputs, opts);
+        super(PropertyActivation.__pulumiType, name, resourceInputs, opts);
     }
 }
 
@@ -192,30 +188,56 @@ export class PropertyActivation extends pulumi.CustomResource {
  * Input properties used for looking up and filtering PropertyActivation resources.
  */
 export interface PropertyActivationState {
+    /**
+     * The ID given to the activation event while it's in progress.
+     */
     activationId?: pulumi.Input<string>;
     /**
-     * automatically acknowledge all rule warnings for activation to continue. default is true
+     * Whether the activation should proceed despite any warnings. By default set to `true`.
      */
     autoAcknowledgeRuleWarnings?: pulumi.Input<boolean>;
+    /**
+     * One or more email addresses to send activation status changes to.
+     */
     contacts?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+     */
     errors?: pulumi.Input<string>;
+    /**
+     * Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+     */
     network?: pulumi.Input<string>;
     /**
-     * assigns a log message to the activation request
+     * A log message you can assign to the activation request.
      */
     note?: pulumi.Input<string>;
     /**
+     * - (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "property" has been deprecated.
      */
     property?: pulumi.Input<string>;
+    /**
+     * - (Required) The property's unique identifier, including the `prp_` prefix.
+     */
     propertyId?: pulumi.Input<string>;
     ruleErrors?: pulumi.Input<pulumi.Input<inputs.PropertyActivationRuleError>[]>;
     /**
      * @deprecated Rule warnings will not be set in state anymore
      */
     ruleWarnings?: pulumi.Input<pulumi.Input<inputs.PropertyActivationRuleWarning>[]>;
+    /**
+     * The property version's activation status on the selected network.
+     */
     status?: pulumi.Input<string>;
+    /**
+     * The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latestVersion` attribute in the `akamai.Property` resource labeled `example`.
+     */
     version?: pulumi.Input<number>;
+    /**
+     * The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+     */
     warnings?: pulumi.Input<string>;
 }
 
@@ -223,26 +245,43 @@ export interface PropertyActivationState {
  * The set of arguments for constructing a PropertyActivation resource.
  */
 export interface PropertyActivationArgs {
+    /**
+     * The ID given to the activation event while it's in progress.
+     */
     activationId?: pulumi.Input<string>;
     /**
-     * automatically acknowledge all rule warnings for activation to continue. default is true
+     * Whether the activation should proceed despite any warnings. By default set to `true`.
      */
     autoAcknowledgeRuleWarnings?: pulumi.Input<boolean>;
+    /**
+     * One or more email addresses to send activation status changes to.
+     */
     contacts: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+     */
     network?: pulumi.Input<string>;
     /**
-     * assigns a log message to the activation request
+     * A log message you can assign to the activation request.
      */
     note?: pulumi.Input<string>;
     /**
+     * - (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "property" has been deprecated.
      */
     property?: pulumi.Input<string>;
+    /**
+     * - (Required) The property's unique identifier, including the `prp_` prefix.
+     */
     propertyId?: pulumi.Input<string>;
     ruleErrors?: pulumi.Input<pulumi.Input<inputs.PropertyActivationRuleError>[]>;
     /**
      * @deprecated Rule warnings will not be set in state anymore
      */
     ruleWarnings?: pulumi.Input<pulumi.Input<inputs.PropertyActivationRuleWarning>[]>;
+    /**
+     * The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latestVersion` attribute in the `akamai.Property` resource labeled `example`.
+     */
     version: pulumi.Input<number>;
 }

@@ -88,14 +88,14 @@ export class AppSecReputationProfileAnalysis extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecReputationProfileAnalysisArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecReputationProfileAnalysisArgs | AppSecReputationProfileAnalysisState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecReputationProfileAnalysisState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["forwardSharedIpToHttpHeaderSiem"] = state ? state.forwardSharedIpToHttpHeaderSiem : undefined;
-            inputs["forwardToHttpHeader"] = state ? state.forwardToHttpHeader : undefined;
-            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["forwardSharedIpToHttpHeaderSiem"] = state ? state.forwardSharedIpToHttpHeaderSiem : undefined;
+            resourceInputs["forwardToHttpHeader"] = state ? state.forwardToHttpHeader : undefined;
+            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
         } else {
             const args = argsOrState as AppSecReputationProfileAnalysisArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -110,15 +110,13 @@ export class AppSecReputationProfileAnalysis extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["forwardSharedIpToHttpHeaderSiem"] = args ? args.forwardSharedIpToHttpHeaderSiem : undefined;
-            inputs["forwardToHttpHeader"] = args ? args.forwardToHttpHeader : undefined;
-            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["forwardSharedIpToHttpHeaderSiem"] = args ? args.forwardSharedIpToHttpHeaderSiem : undefined;
+            resourceInputs["forwardToHttpHeader"] = args ? args.forwardToHttpHeader : undefined;
+            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecReputationProfileAnalysis.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecReputationProfileAnalysis.__pulumiType, name, resourceInputs, opts);
     }
 }
 

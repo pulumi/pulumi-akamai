@@ -44,9 +44,7 @@ export function getAppSecMatchTargets(args: GetAppSecMatchTargetsArgs, opts?: pu
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecMatchTargets:getAppSecMatchTargets", {
         "configId": args.configId,
         "matchTargetId": args.matchTargetId,

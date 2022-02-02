@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -64,7 +63,7 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted list of the failover hostnames.
         /// </summary>
         public static Task<GetAppSecFailoverHostnamesResult> InvokeAsync(GetAppSecFailoverHostnamesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecFailoverHostnamesResult>("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", args ?? new GetAppSecFailoverHostnamesArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecFailoverHostnamesResult>("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", args ?? new GetAppSecFailoverHostnamesArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration
@@ -118,7 +117,7 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted list of the failover hostnames.
         /// </summary>
         public static Output<GetAppSecFailoverHostnamesResult> Invoke(GetAppSecFailoverHostnamesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecFailoverHostnamesResult>("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", args ?? new GetAppSecFailoverHostnamesInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecFailoverHostnamesResult>("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", args ?? new GetAppSecFailoverHostnamesInvokeArgs(), options.WithDefaults());
     }
 
 

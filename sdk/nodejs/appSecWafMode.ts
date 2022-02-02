@@ -102,18 +102,18 @@ export class AppSecWafMode extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecWafModeArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecWafModeArgs | AppSecWafModeState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecWafModeState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["currentRuleset"] = state ? state.currentRuleset : undefined;
-            inputs["evalExpirationDate"] = state ? state.evalExpirationDate : undefined;
-            inputs["evalRuleset"] = state ? state.evalRuleset : undefined;
-            inputs["evalStatus"] = state ? state.evalStatus : undefined;
-            inputs["mode"] = state ? state.mode : undefined;
-            inputs["outputText"] = state ? state.outputText : undefined;
-            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["currentRuleset"] = state ? state.currentRuleset : undefined;
+            resourceInputs["evalExpirationDate"] = state ? state.evalExpirationDate : undefined;
+            resourceInputs["evalRuleset"] = state ? state.evalRuleset : undefined;
+            resourceInputs["evalStatus"] = state ? state.evalStatus : undefined;
+            resourceInputs["mode"] = state ? state.mode : undefined;
+            resourceInputs["outputText"] = state ? state.outputText : undefined;
+            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
         } else {
             const args = argsOrState as AppSecWafModeArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -125,19 +125,17 @@ export class AppSecWafMode extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["mode"] = args ? args.mode : undefined;
-            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            inputs["currentRuleset"] = undefined /*out*/;
-            inputs["evalExpirationDate"] = undefined /*out*/;
-            inputs["evalRuleset"] = undefined /*out*/;
-            inputs["evalStatus"] = undefined /*out*/;
-            inputs["outputText"] = undefined /*out*/;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["mode"] = args ? args.mode : undefined;
+            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["currentRuleset"] = undefined /*out*/;
+            resourceInputs["evalExpirationDate"] = undefined /*out*/;
+            resourceInputs["evalRuleset"] = undefined /*out*/;
+            resourceInputs["evalStatus"] = undefined /*out*/;
+            resourceInputs["outputText"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecWafMode.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecWafMode.__pulumiType, name, resourceInputs, opts);
     }
 }
 

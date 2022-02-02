@@ -45,13 +45,13 @@ export class AppSecAdvancedSettingsPragmaHeader extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecAdvancedSettingsPragmaHeaderArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecAdvancedSettingsPragmaHeaderArgs | AppSecAdvancedSettingsPragmaHeaderState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecAdvancedSettingsPragmaHeaderState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["pragmaHeader"] = state ? state.pragmaHeader : undefined;
-            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["pragmaHeader"] = state ? state.pragmaHeader : undefined;
+            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
         } else {
             const args = argsOrState as AppSecAdvancedSettingsPragmaHeaderArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -60,14 +60,12 @@ export class AppSecAdvancedSettingsPragmaHeader extends pulumi.CustomResource {
             if ((!args || args.pragmaHeader === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'pragmaHeader'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["pragmaHeader"] = args ? args.pragmaHeader : undefined;
-            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["pragmaHeader"] = args ? args.pragmaHeader : undefined;
+            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecAdvancedSettingsPragmaHeader.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecAdvancedSettingsPragmaHeader.__pulumiType, name, resourceInputs, opts);
     }
 }
 

@@ -36,9 +36,7 @@ export function getNetworkLists(args?: GetNetworkListsArgs, opts?: pulumi.Invoke
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getNetworkLists:getNetworkLists", {
         "name": args.name,
         "type": args.type,

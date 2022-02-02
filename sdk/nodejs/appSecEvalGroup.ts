@@ -94,15 +94,15 @@ export class AppSecEvalGroup extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecEvalGroupArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecEvalGroupArgs | AppSecEvalGroupState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecEvalGroupState | undefined;
-            inputs["attackGroup"] = state ? state.attackGroup : undefined;
-            inputs["attackGroupAction"] = state ? state.attackGroupAction : undefined;
-            inputs["conditionException"] = state ? state.conditionException : undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["attackGroup"] = state ? state.attackGroup : undefined;
+            resourceInputs["attackGroupAction"] = state ? state.attackGroupAction : undefined;
+            resourceInputs["conditionException"] = state ? state.conditionException : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
         } else {
             const args = argsOrState as AppSecEvalGroupArgs | undefined;
             if ((!args || args.attackGroup === undefined) && !opts.urn) {
@@ -117,16 +117,14 @@ export class AppSecEvalGroup extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            inputs["attackGroup"] = args ? args.attackGroup : undefined;
-            inputs["attackGroupAction"] = args ? args.attackGroupAction : undefined;
-            inputs["conditionException"] = args ? args.conditionException : undefined;
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["attackGroup"] = args ? args.attackGroup : undefined;
+            resourceInputs["attackGroupAction"] = args ? args.attackGroupAction : undefined;
+            resourceInputs["conditionException"] = args ? args.conditionException : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecEvalGroup.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecEvalGroup.__pulumiType, name, resourceInputs, opts);
     }
 }
 

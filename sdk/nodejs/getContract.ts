@@ -23,13 +23,6 @@ import * as utilities from "./utilities";
  *     "data.akamai_contract.example.id": [{}],
  * });
  * ```
- * ## Argument reference
- *
- * This data source requires one of these group arguments to return contract information:
- *   * `groupName` - The name of the group containing the contract.
- *   * `groupId` - The unique ID of the group containing the contract, including the  `grp_` prefix.
- *   * `group` - (Deprecated) Either the group ID or the group name that includes the contract. You can't use this argument with `groupId` and `groupName`.
- *
  * ## Attributes reference
  *
  * * `id` - The contract's unique ID, including the `ctr_` prefix.
@@ -40,9 +33,7 @@ export function getContract(args?: GetContractArgs, opts?: pulumi.InvokeOptions)
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getContract:getContract", {
         "group": args.group,
         "groupId": args.groupId,
@@ -55,10 +46,18 @@ export function getContract(args?: GetContractArgs, opts?: pulumi.InvokeOptions)
  */
 export interface GetContractArgs {
     /**
+     * Either the group ID or the group name that includes the contract. You can't use this argument with `groupId` and `groupName`.
+     *
      * @deprecated The setting "group" has been deprecated.
      */
     group?: string;
+    /**
+     * The unique ID of the group containing the contract, including the  `grp_` prefix.
+     */
     groupId?: string;
+    /**
+     * The name of the group containing the contract.
+     */
     groupName?: string;
 }
 
@@ -87,9 +86,17 @@ export function getContractOutput(args?: GetContractOutputArgs, opts?: pulumi.In
  */
 export interface GetContractOutputArgs {
     /**
+     * Either the group ID or the group name that includes the contract. You can't use this argument with `groupId` and `groupName`.
+     *
      * @deprecated The setting "group" has been deprecated.
      */
     group?: pulumi.Input<string>;
+    /**
+     * The unique ID of the group containing the contract, including the  `grp_` prefix.
+     */
     groupId?: pulumi.Input<string>;
+    /**
+     * The name of the group containing the contract.
+     */
     groupName?: pulumi.Input<string>;
 }

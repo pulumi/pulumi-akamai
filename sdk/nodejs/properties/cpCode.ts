@@ -65,31 +65,29 @@ export class CpCode extends pulumi.CustomResource {
     /** @deprecated akamai.properties.CpCode has been deprecated in favor of akamai.CpCode */
     constructor(name: string, argsOrState?: CpCodeArgs | CpCodeState, opts?: pulumi.CustomResourceOptions) {
         pulumi.log.warn("CpCode is deprecated: akamai.properties.CpCode has been deprecated in favor of akamai.CpCode")
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CpCodeState | undefined;
-            inputs["contract"] = state ? state.contract : undefined;
-            inputs["contractId"] = state ? state.contractId : undefined;
-            inputs["group"] = state ? state.group : undefined;
-            inputs["groupId"] = state ? state.groupId : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["product"] = state ? state.product : undefined;
-            inputs["productId"] = state ? state.productId : undefined;
+            resourceInputs["contract"] = state ? state.contract : undefined;
+            resourceInputs["contractId"] = state ? state.contractId : undefined;
+            resourceInputs["group"] = state ? state.group : undefined;
+            resourceInputs["groupId"] = state ? state.groupId : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["product"] = state ? state.product : undefined;
+            resourceInputs["productId"] = state ? state.productId : undefined;
         } else {
             const args = argsOrState as CpCodeArgs | undefined;
-            inputs["contract"] = args ? args.contract : undefined;
-            inputs["contractId"] = args ? args.contractId : undefined;
-            inputs["group"] = args ? args.group : undefined;
-            inputs["groupId"] = args ? args.groupId : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["product"] = args ? args.product : undefined;
-            inputs["productId"] = args ? args.productId : undefined;
+            resourceInputs["contract"] = args ? args.contract : undefined;
+            resourceInputs["contractId"] = args ? args.contractId : undefined;
+            resourceInputs["group"] = args ? args.group : undefined;
+            resourceInputs["groupId"] = args ? args.groupId : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["product"] = args ? args.product : undefined;
+            resourceInputs["productId"] = args ? args.productId : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(CpCode.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(CpCode.__pulumiType, name, resourceInputs, opts);
     }
 }
 

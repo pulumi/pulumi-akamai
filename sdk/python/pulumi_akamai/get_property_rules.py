@@ -132,15 +132,6 @@ def get_property_rules(contract_id: Optional[str] = None,
     pulumi.export("propertyMatch", my_example)
     ```
 
-    ## Argument reference
-
-    This data source supports these arguments:
-
-    * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-    * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
-    * `property_id` - (Required) A property's unique ID, including the `prp_` prefix.
-    * `version` - (Optional) The version to return. Returns the latest version by default.
-
     ## Attributes reference
 
     This data source returns these attributes:
@@ -148,6 +139,12 @@ def get_property_rules(contract_id: Optional[str] = None,
     * `rule_format` - The rule tree version used. Property rule objects are versioned infrequently, and are known as rule formats. See [About rule formats](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#rf) to learn more.
     * `rules` - A JSON-encoded rule tree for the property.
     * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the Property Manager API documentation.
+
+
+    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+    :param str group_id: - (Required) A group's unique ID, including the `grp_` prefix.
+    :param str property_id: - (Required) A property's unique ID, including the `prp_` prefix.
+    :param int version: - (Optional) The version to return. Returns the latest version by default.
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
@@ -199,15 +196,6 @@ def get_property_rules_output(contract_id: Optional[pulumi.Input[Optional[str]]]
     pulumi.export("propertyMatch", my_example)
     ```
 
-    ## Argument reference
-
-    This data source supports these arguments:
-
-    * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-    * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
-    * `property_id` - (Required) A property's unique ID, including the `prp_` prefix.
-    * `version` - (Optional) The version to return. Returns the latest version by default.
-
     ## Attributes reference
 
     This data source returns these attributes:
@@ -215,5 +203,11 @@ def get_property_rules_output(contract_id: Optional[pulumi.Input[Optional[str]]]
     * `rule_format` - The rule tree version used. Property rule objects are versioned infrequently, and are known as rule formats. See [About rule formats](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#rf) to learn more.
     * `rules` - A JSON-encoded rule tree for the property.
     * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the Property Manager API documentation.
+
+
+    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+    :param str group_id: - (Required) A group's unique ID, including the `grp_` prefix.
+    :param str property_id: - (Required) A property's unique ID, including the `prp_` prefix.
+    :param int version: - (Optional) The version to return. Returns the latest version by default.
     """
     ...

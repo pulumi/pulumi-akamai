@@ -71,20 +71,20 @@ export class EdgeHostName extends pulumi.CustomResource {
     /** @deprecated akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName */
     constructor(name: string, argsOrState?: EdgeHostNameArgs | EdgeHostNameState, opts?: pulumi.CustomResourceOptions) {
         pulumi.log.warn("EdgeHostName is deprecated: akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName")
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EdgeHostNameState | undefined;
-            inputs["certificate"] = state ? state.certificate : undefined;
-            inputs["contract"] = state ? state.contract : undefined;
-            inputs["contractId"] = state ? state.contractId : undefined;
-            inputs["edgeHostname"] = state ? state.edgeHostname : undefined;
-            inputs["group"] = state ? state.group : undefined;
-            inputs["groupId"] = state ? state.groupId : undefined;
-            inputs["ipBehavior"] = state ? state.ipBehavior : undefined;
-            inputs["product"] = state ? state.product : undefined;
-            inputs["productId"] = state ? state.productId : undefined;
-            inputs["useCases"] = state ? state.useCases : undefined;
+            resourceInputs["certificate"] = state ? state.certificate : undefined;
+            resourceInputs["contract"] = state ? state.contract : undefined;
+            resourceInputs["contractId"] = state ? state.contractId : undefined;
+            resourceInputs["edgeHostname"] = state ? state.edgeHostname : undefined;
+            resourceInputs["group"] = state ? state.group : undefined;
+            resourceInputs["groupId"] = state ? state.groupId : undefined;
+            resourceInputs["ipBehavior"] = state ? state.ipBehavior : undefined;
+            resourceInputs["product"] = state ? state.product : undefined;
+            resourceInputs["productId"] = state ? state.productId : undefined;
+            resourceInputs["useCases"] = state ? state.useCases : undefined;
         } else {
             const args = argsOrState as EdgeHostNameArgs | undefined;
             if ((!args || args.edgeHostname === undefined) && !opts.urn) {
@@ -93,21 +93,19 @@ export class EdgeHostName extends pulumi.CustomResource {
             if ((!args || args.ipBehavior === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'ipBehavior'");
             }
-            inputs["certificate"] = args ? args.certificate : undefined;
-            inputs["contract"] = args ? args.contract : undefined;
-            inputs["contractId"] = args ? args.contractId : undefined;
-            inputs["edgeHostname"] = args ? args.edgeHostname : undefined;
-            inputs["group"] = args ? args.group : undefined;
-            inputs["groupId"] = args ? args.groupId : undefined;
-            inputs["ipBehavior"] = args ? args.ipBehavior : undefined;
-            inputs["product"] = args ? args.product : undefined;
-            inputs["productId"] = args ? args.productId : undefined;
-            inputs["useCases"] = args ? args.useCases : undefined;
+            resourceInputs["certificate"] = args ? args.certificate : undefined;
+            resourceInputs["contract"] = args ? args.contract : undefined;
+            resourceInputs["contractId"] = args ? args.contractId : undefined;
+            resourceInputs["edgeHostname"] = args ? args.edgeHostname : undefined;
+            resourceInputs["group"] = args ? args.group : undefined;
+            resourceInputs["groupId"] = args ? args.groupId : undefined;
+            resourceInputs["ipBehavior"] = args ? args.ipBehavior : undefined;
+            resourceInputs["product"] = args ? args.product : undefined;
+            resourceInputs["productId"] = args ? args.productId : undefined;
+            resourceInputs["useCases"] = args ? args.useCases : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(EdgeHostName.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(EdgeHostName.__pulumiType, name, resourceInputs, opts);
     }
 }
 

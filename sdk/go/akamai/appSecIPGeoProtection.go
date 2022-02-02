@@ -162,7 +162,7 @@ type AppSecIPGeoProtectionInput interface {
 }
 
 func (*AppSecIPGeoProtection) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecIPGeoProtection)(nil))
+	return reflect.TypeOf((**AppSecIPGeoProtection)(nil)).Elem()
 }
 
 func (i *AppSecIPGeoProtection) ToAppSecIPGeoProtectionOutput() AppSecIPGeoProtectionOutput {
@@ -171,35 +171,6 @@ func (i *AppSecIPGeoProtection) ToAppSecIPGeoProtectionOutput() AppSecIPGeoProte
 
 func (i *AppSecIPGeoProtection) ToAppSecIPGeoProtectionOutputWithContext(ctx context.Context) AppSecIPGeoProtectionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecIPGeoProtectionOutput)
-}
-
-func (i *AppSecIPGeoProtection) ToAppSecIPGeoProtectionPtrOutput() AppSecIPGeoProtectionPtrOutput {
-	return i.ToAppSecIPGeoProtectionPtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecIPGeoProtection) ToAppSecIPGeoProtectionPtrOutputWithContext(ctx context.Context) AppSecIPGeoProtectionPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecIPGeoProtectionPtrOutput)
-}
-
-type AppSecIPGeoProtectionPtrInput interface {
-	pulumi.Input
-
-	ToAppSecIPGeoProtectionPtrOutput() AppSecIPGeoProtectionPtrOutput
-	ToAppSecIPGeoProtectionPtrOutputWithContext(ctx context.Context) AppSecIPGeoProtectionPtrOutput
-}
-
-type appSecIPGeoProtectionPtrType AppSecIPGeoProtectionArgs
-
-func (*appSecIPGeoProtectionPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecIPGeoProtection)(nil))
-}
-
-func (i *appSecIPGeoProtectionPtrType) ToAppSecIPGeoProtectionPtrOutput() AppSecIPGeoProtectionPtrOutput {
-	return i.ToAppSecIPGeoProtectionPtrOutputWithContext(context.Background())
-}
-
-func (i *appSecIPGeoProtectionPtrType) ToAppSecIPGeoProtectionPtrOutputWithContext(ctx context.Context) AppSecIPGeoProtectionPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecIPGeoProtectionPtrOutput)
 }
 
 // AppSecIPGeoProtectionArrayInput is an input type that accepts AppSecIPGeoProtectionArray and AppSecIPGeoProtectionArrayOutput values.
@@ -255,7 +226,7 @@ func (i AppSecIPGeoProtectionMap) ToAppSecIPGeoProtectionMapOutputWithContext(ct
 type AppSecIPGeoProtectionOutput struct{ *pulumi.OutputState }
 
 func (AppSecIPGeoProtectionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecIPGeoProtection)(nil))
+	return reflect.TypeOf((**AppSecIPGeoProtection)(nil)).Elem()
 }
 
 func (o AppSecIPGeoProtectionOutput) ToAppSecIPGeoProtectionOutput() AppSecIPGeoProtectionOutput {
@@ -266,44 +237,10 @@ func (o AppSecIPGeoProtectionOutput) ToAppSecIPGeoProtectionOutputWithContext(ct
 	return o
 }
 
-func (o AppSecIPGeoProtectionOutput) ToAppSecIPGeoProtectionPtrOutput() AppSecIPGeoProtectionPtrOutput {
-	return o.ToAppSecIPGeoProtectionPtrOutputWithContext(context.Background())
-}
-
-func (o AppSecIPGeoProtectionOutput) ToAppSecIPGeoProtectionPtrOutputWithContext(ctx context.Context) AppSecIPGeoProtectionPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecIPGeoProtection) *AppSecIPGeoProtection {
-		return &v
-	}).(AppSecIPGeoProtectionPtrOutput)
-}
-
-type AppSecIPGeoProtectionPtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecIPGeoProtectionPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecIPGeoProtection)(nil))
-}
-
-func (o AppSecIPGeoProtectionPtrOutput) ToAppSecIPGeoProtectionPtrOutput() AppSecIPGeoProtectionPtrOutput {
-	return o
-}
-
-func (o AppSecIPGeoProtectionPtrOutput) ToAppSecIPGeoProtectionPtrOutputWithContext(ctx context.Context) AppSecIPGeoProtectionPtrOutput {
-	return o
-}
-
-func (o AppSecIPGeoProtectionPtrOutput) Elem() AppSecIPGeoProtectionOutput {
-	return o.ApplyT(func(v *AppSecIPGeoProtection) AppSecIPGeoProtection {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecIPGeoProtection
-		return ret
-	}).(AppSecIPGeoProtectionOutput)
-}
-
 type AppSecIPGeoProtectionArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecIPGeoProtectionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecIPGeoProtection)(nil))
+	return reflect.TypeOf((*[]*AppSecIPGeoProtection)(nil)).Elem()
 }
 
 func (o AppSecIPGeoProtectionArrayOutput) ToAppSecIPGeoProtectionArrayOutput() AppSecIPGeoProtectionArrayOutput {
@@ -315,15 +252,15 @@ func (o AppSecIPGeoProtectionArrayOutput) ToAppSecIPGeoProtectionArrayOutputWith
 }
 
 func (o AppSecIPGeoProtectionArrayOutput) Index(i pulumi.IntInput) AppSecIPGeoProtectionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecIPGeoProtection {
-		return vs[0].([]AppSecIPGeoProtection)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecIPGeoProtection {
+		return vs[0].([]*AppSecIPGeoProtection)[vs[1].(int)]
 	}).(AppSecIPGeoProtectionOutput)
 }
 
 type AppSecIPGeoProtectionMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecIPGeoProtectionMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecIPGeoProtection)(nil))
+	return reflect.TypeOf((*map[string]*AppSecIPGeoProtection)(nil)).Elem()
 }
 
 func (o AppSecIPGeoProtectionMapOutput) ToAppSecIPGeoProtectionMapOutput() AppSecIPGeoProtectionMapOutput {
@@ -335,18 +272,16 @@ func (o AppSecIPGeoProtectionMapOutput) ToAppSecIPGeoProtectionMapOutputWithCont
 }
 
 func (o AppSecIPGeoProtectionMapOutput) MapIndex(k pulumi.StringInput) AppSecIPGeoProtectionOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecIPGeoProtection {
-		return vs[0].(map[string]AppSecIPGeoProtection)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecIPGeoProtection {
+		return vs[0].(map[string]*AppSecIPGeoProtection)[vs[1].(string)]
 	}).(AppSecIPGeoProtectionOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecIPGeoProtectionInput)(nil)).Elem(), &AppSecIPGeoProtection{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecIPGeoProtectionPtrInput)(nil)).Elem(), &AppSecIPGeoProtection{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecIPGeoProtectionArrayInput)(nil)).Elem(), AppSecIPGeoProtectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecIPGeoProtectionMapInput)(nil)).Elem(), AppSecIPGeoProtectionMap{})
 	pulumi.RegisterOutputType(AppSecIPGeoProtectionOutput{})
-	pulumi.RegisterOutputType(AppSecIPGeoProtectionPtrOutput{})
 	pulumi.RegisterOutputType(AppSecIPGeoProtectionArrayOutput{})
 	pulumi.RegisterOutputType(AppSecIPGeoProtectionMapOutput{})
 }

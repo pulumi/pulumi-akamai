@@ -208,7 +208,7 @@ type AppSecSiemSettingsInput interface {
 }
 
 func (*AppSecSiemSettings) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecSiemSettings)(nil))
+	return reflect.TypeOf((**AppSecSiemSettings)(nil)).Elem()
 }
 
 func (i *AppSecSiemSettings) ToAppSecSiemSettingsOutput() AppSecSiemSettingsOutput {
@@ -217,35 +217,6 @@ func (i *AppSecSiemSettings) ToAppSecSiemSettingsOutput() AppSecSiemSettingsOutp
 
 func (i *AppSecSiemSettings) ToAppSecSiemSettingsOutputWithContext(ctx context.Context) AppSecSiemSettingsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSiemSettingsOutput)
-}
-
-func (i *AppSecSiemSettings) ToAppSecSiemSettingsPtrOutput() AppSecSiemSettingsPtrOutput {
-	return i.ToAppSecSiemSettingsPtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecSiemSettings) ToAppSecSiemSettingsPtrOutputWithContext(ctx context.Context) AppSecSiemSettingsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecSiemSettingsPtrOutput)
-}
-
-type AppSecSiemSettingsPtrInput interface {
-	pulumi.Input
-
-	ToAppSecSiemSettingsPtrOutput() AppSecSiemSettingsPtrOutput
-	ToAppSecSiemSettingsPtrOutputWithContext(ctx context.Context) AppSecSiemSettingsPtrOutput
-}
-
-type appSecSiemSettingsPtrType AppSecSiemSettingsArgs
-
-func (*appSecSiemSettingsPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecSiemSettings)(nil))
-}
-
-func (i *appSecSiemSettingsPtrType) ToAppSecSiemSettingsPtrOutput() AppSecSiemSettingsPtrOutput {
-	return i.ToAppSecSiemSettingsPtrOutputWithContext(context.Background())
-}
-
-func (i *appSecSiemSettingsPtrType) ToAppSecSiemSettingsPtrOutputWithContext(ctx context.Context) AppSecSiemSettingsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecSiemSettingsPtrOutput)
 }
 
 // AppSecSiemSettingsArrayInput is an input type that accepts AppSecSiemSettingsArray and AppSecSiemSettingsArrayOutput values.
@@ -301,7 +272,7 @@ func (i AppSecSiemSettingsMap) ToAppSecSiemSettingsMapOutputWithContext(ctx cont
 type AppSecSiemSettingsOutput struct{ *pulumi.OutputState }
 
 func (AppSecSiemSettingsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecSiemSettings)(nil))
+	return reflect.TypeOf((**AppSecSiemSettings)(nil)).Elem()
 }
 
 func (o AppSecSiemSettingsOutput) ToAppSecSiemSettingsOutput() AppSecSiemSettingsOutput {
@@ -312,44 +283,10 @@ func (o AppSecSiemSettingsOutput) ToAppSecSiemSettingsOutputWithContext(ctx cont
 	return o
 }
 
-func (o AppSecSiemSettingsOutput) ToAppSecSiemSettingsPtrOutput() AppSecSiemSettingsPtrOutput {
-	return o.ToAppSecSiemSettingsPtrOutputWithContext(context.Background())
-}
-
-func (o AppSecSiemSettingsOutput) ToAppSecSiemSettingsPtrOutputWithContext(ctx context.Context) AppSecSiemSettingsPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecSiemSettings) *AppSecSiemSettings {
-		return &v
-	}).(AppSecSiemSettingsPtrOutput)
-}
-
-type AppSecSiemSettingsPtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecSiemSettingsPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecSiemSettings)(nil))
-}
-
-func (o AppSecSiemSettingsPtrOutput) ToAppSecSiemSettingsPtrOutput() AppSecSiemSettingsPtrOutput {
-	return o
-}
-
-func (o AppSecSiemSettingsPtrOutput) ToAppSecSiemSettingsPtrOutputWithContext(ctx context.Context) AppSecSiemSettingsPtrOutput {
-	return o
-}
-
-func (o AppSecSiemSettingsPtrOutput) Elem() AppSecSiemSettingsOutput {
-	return o.ApplyT(func(v *AppSecSiemSettings) AppSecSiemSettings {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecSiemSettings
-		return ret
-	}).(AppSecSiemSettingsOutput)
-}
-
 type AppSecSiemSettingsArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecSiemSettingsArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecSiemSettings)(nil))
+	return reflect.TypeOf((*[]*AppSecSiemSettings)(nil)).Elem()
 }
 
 func (o AppSecSiemSettingsArrayOutput) ToAppSecSiemSettingsArrayOutput() AppSecSiemSettingsArrayOutput {
@@ -361,15 +298,15 @@ func (o AppSecSiemSettingsArrayOutput) ToAppSecSiemSettingsArrayOutputWithContex
 }
 
 func (o AppSecSiemSettingsArrayOutput) Index(i pulumi.IntInput) AppSecSiemSettingsOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecSiemSettings {
-		return vs[0].([]AppSecSiemSettings)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecSiemSettings {
+		return vs[0].([]*AppSecSiemSettings)[vs[1].(int)]
 	}).(AppSecSiemSettingsOutput)
 }
 
 type AppSecSiemSettingsMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecSiemSettingsMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecSiemSettings)(nil))
+	return reflect.TypeOf((*map[string]*AppSecSiemSettings)(nil)).Elem()
 }
 
 func (o AppSecSiemSettingsMapOutput) ToAppSecSiemSettingsMapOutput() AppSecSiemSettingsMapOutput {
@@ -381,18 +318,16 @@ func (o AppSecSiemSettingsMapOutput) ToAppSecSiemSettingsMapOutputWithContext(ct
 }
 
 func (o AppSecSiemSettingsMapOutput) MapIndex(k pulumi.StringInput) AppSecSiemSettingsOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecSiemSettings {
-		return vs[0].(map[string]AppSecSiemSettings)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecSiemSettings {
+		return vs[0].(map[string]*AppSecSiemSettings)[vs[1].(string)]
 	}).(AppSecSiemSettingsOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSiemSettingsInput)(nil)).Elem(), &AppSecSiemSettings{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSiemSettingsPtrInput)(nil)).Elem(), &AppSecSiemSettings{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSiemSettingsArrayInput)(nil)).Elem(), AppSecSiemSettingsArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSiemSettingsMapInput)(nil)).Elem(), AppSecSiemSettingsMap{})
 	pulumi.RegisterOutputType(AppSecSiemSettingsOutput{})
-	pulumi.RegisterOutputType(AppSecSiemSettingsPtrOutput{})
 	pulumi.RegisterOutputType(AppSecSiemSettingsArrayOutput{})
 	pulumi.RegisterOutputType(AppSecSiemSettingsMapOutput{})
 }

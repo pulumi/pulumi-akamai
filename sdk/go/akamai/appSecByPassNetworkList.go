@@ -157,7 +157,7 @@ type AppSecByPassNetworkListInput interface {
 }
 
 func (*AppSecByPassNetworkList) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecByPassNetworkList)(nil))
+	return reflect.TypeOf((**AppSecByPassNetworkList)(nil)).Elem()
 }
 
 func (i *AppSecByPassNetworkList) ToAppSecByPassNetworkListOutput() AppSecByPassNetworkListOutput {
@@ -166,35 +166,6 @@ func (i *AppSecByPassNetworkList) ToAppSecByPassNetworkListOutput() AppSecByPass
 
 func (i *AppSecByPassNetworkList) ToAppSecByPassNetworkListOutputWithContext(ctx context.Context) AppSecByPassNetworkListOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecByPassNetworkListOutput)
-}
-
-func (i *AppSecByPassNetworkList) ToAppSecByPassNetworkListPtrOutput() AppSecByPassNetworkListPtrOutput {
-	return i.ToAppSecByPassNetworkListPtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecByPassNetworkList) ToAppSecByPassNetworkListPtrOutputWithContext(ctx context.Context) AppSecByPassNetworkListPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecByPassNetworkListPtrOutput)
-}
-
-type AppSecByPassNetworkListPtrInput interface {
-	pulumi.Input
-
-	ToAppSecByPassNetworkListPtrOutput() AppSecByPassNetworkListPtrOutput
-	ToAppSecByPassNetworkListPtrOutputWithContext(ctx context.Context) AppSecByPassNetworkListPtrOutput
-}
-
-type appSecByPassNetworkListPtrType AppSecByPassNetworkListArgs
-
-func (*appSecByPassNetworkListPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecByPassNetworkList)(nil))
-}
-
-func (i *appSecByPassNetworkListPtrType) ToAppSecByPassNetworkListPtrOutput() AppSecByPassNetworkListPtrOutput {
-	return i.ToAppSecByPassNetworkListPtrOutputWithContext(context.Background())
-}
-
-func (i *appSecByPassNetworkListPtrType) ToAppSecByPassNetworkListPtrOutputWithContext(ctx context.Context) AppSecByPassNetworkListPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecByPassNetworkListPtrOutput)
 }
 
 // AppSecByPassNetworkListArrayInput is an input type that accepts AppSecByPassNetworkListArray and AppSecByPassNetworkListArrayOutput values.
@@ -250,7 +221,7 @@ func (i AppSecByPassNetworkListMap) ToAppSecByPassNetworkListMapOutputWithContex
 type AppSecByPassNetworkListOutput struct{ *pulumi.OutputState }
 
 func (AppSecByPassNetworkListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecByPassNetworkList)(nil))
+	return reflect.TypeOf((**AppSecByPassNetworkList)(nil)).Elem()
 }
 
 func (o AppSecByPassNetworkListOutput) ToAppSecByPassNetworkListOutput() AppSecByPassNetworkListOutput {
@@ -261,44 +232,10 @@ func (o AppSecByPassNetworkListOutput) ToAppSecByPassNetworkListOutputWithContex
 	return o
 }
 
-func (o AppSecByPassNetworkListOutput) ToAppSecByPassNetworkListPtrOutput() AppSecByPassNetworkListPtrOutput {
-	return o.ToAppSecByPassNetworkListPtrOutputWithContext(context.Background())
-}
-
-func (o AppSecByPassNetworkListOutput) ToAppSecByPassNetworkListPtrOutputWithContext(ctx context.Context) AppSecByPassNetworkListPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecByPassNetworkList) *AppSecByPassNetworkList {
-		return &v
-	}).(AppSecByPassNetworkListPtrOutput)
-}
-
-type AppSecByPassNetworkListPtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecByPassNetworkListPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecByPassNetworkList)(nil))
-}
-
-func (o AppSecByPassNetworkListPtrOutput) ToAppSecByPassNetworkListPtrOutput() AppSecByPassNetworkListPtrOutput {
-	return o
-}
-
-func (o AppSecByPassNetworkListPtrOutput) ToAppSecByPassNetworkListPtrOutputWithContext(ctx context.Context) AppSecByPassNetworkListPtrOutput {
-	return o
-}
-
-func (o AppSecByPassNetworkListPtrOutput) Elem() AppSecByPassNetworkListOutput {
-	return o.ApplyT(func(v *AppSecByPassNetworkList) AppSecByPassNetworkList {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecByPassNetworkList
-		return ret
-	}).(AppSecByPassNetworkListOutput)
-}
-
 type AppSecByPassNetworkListArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecByPassNetworkListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecByPassNetworkList)(nil))
+	return reflect.TypeOf((*[]*AppSecByPassNetworkList)(nil)).Elem()
 }
 
 func (o AppSecByPassNetworkListArrayOutput) ToAppSecByPassNetworkListArrayOutput() AppSecByPassNetworkListArrayOutput {
@@ -310,15 +247,15 @@ func (o AppSecByPassNetworkListArrayOutput) ToAppSecByPassNetworkListArrayOutput
 }
 
 func (o AppSecByPassNetworkListArrayOutput) Index(i pulumi.IntInput) AppSecByPassNetworkListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecByPassNetworkList {
-		return vs[0].([]AppSecByPassNetworkList)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecByPassNetworkList {
+		return vs[0].([]*AppSecByPassNetworkList)[vs[1].(int)]
 	}).(AppSecByPassNetworkListOutput)
 }
 
 type AppSecByPassNetworkListMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecByPassNetworkListMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecByPassNetworkList)(nil))
+	return reflect.TypeOf((*map[string]*AppSecByPassNetworkList)(nil)).Elem()
 }
 
 func (o AppSecByPassNetworkListMapOutput) ToAppSecByPassNetworkListMapOutput() AppSecByPassNetworkListMapOutput {
@@ -330,18 +267,16 @@ func (o AppSecByPassNetworkListMapOutput) ToAppSecByPassNetworkListMapOutputWith
 }
 
 func (o AppSecByPassNetworkListMapOutput) MapIndex(k pulumi.StringInput) AppSecByPassNetworkListOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecByPassNetworkList {
-		return vs[0].(map[string]AppSecByPassNetworkList)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecByPassNetworkList {
+		return vs[0].(map[string]*AppSecByPassNetworkList)[vs[1].(string)]
 	}).(AppSecByPassNetworkListOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecByPassNetworkListInput)(nil)).Elem(), &AppSecByPassNetworkList{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecByPassNetworkListPtrInput)(nil)).Elem(), &AppSecByPassNetworkList{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecByPassNetworkListArrayInput)(nil)).Elem(), AppSecByPassNetworkListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecByPassNetworkListMapInput)(nil)).Elem(), AppSecByPassNetworkListMap{})
 	pulumi.RegisterOutputType(AppSecByPassNetworkListOutput{})
-	pulumi.RegisterOutputType(AppSecByPassNetworkListPtrOutput{})
 	pulumi.RegisterOutputType(AppSecByPassNetworkListArrayOutput{})
 	pulumi.RegisterOutputType(AppSecByPassNetworkListMapOutput{})
 }

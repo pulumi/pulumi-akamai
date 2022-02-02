@@ -25,6 +25,15 @@ class EdgeHostNameArgs:
                  use_cases: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a EdgeHostName resource.
+        :param pulumi.Input[str] edge_hostname: One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
+        :param pulumi.Input[str] ip_behavior: Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
+        :param pulumi.Input[int] certificate: Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
+        :param pulumi.Input[str] contract: Replaced by `contract_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+        :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
+        :param pulumi.Input[str] product: Replaced by `product_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] product_id: - (Required) A product's unique ID, including the `prd_` prefix.
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         pulumi.set(__self__, "edge_hostname", edge_hostname)
@@ -58,6 +67,9 @@ class EdgeHostNameArgs:
     @property
     @pulumi.getter(name="edgeHostname")
     def edge_hostname(self) -> pulumi.Input[str]:
+        """
+        One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
+        """
         return pulumi.get(self, "edge_hostname")
 
     @edge_hostname.setter
@@ -67,6 +79,9 @@ class EdgeHostNameArgs:
     @property
     @pulumi.getter(name="ipBehavior")
     def ip_behavior(self) -> pulumi.Input[str]:
+        """
+        Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
+        """
         return pulumi.get(self, "ip_behavior")
 
     @ip_behavior.setter
@@ -76,6 +91,9 @@ class EdgeHostNameArgs:
     @property
     @pulumi.getter
     def certificate(self) -> Optional[pulumi.Input[int]]:
+        """
+        Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
+        """
         return pulumi.get(self, "certificate")
 
     @certificate.setter
@@ -85,6 +103,9 @@ class EdgeHostNameArgs:
     @property
     @pulumi.getter
     def contract(self) -> Optional[pulumi.Input[str]]:
+        """
+        Replaced by `contract_id`. Maintained for legacy purposes.
+        """
         return pulumi.get(self, "contract")
 
     @contract.setter
@@ -94,6 +115,9 @@ class EdgeHostNameArgs:
     @property
     @pulumi.getter(name="contractId")
     def contract_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) A contract's unique ID, including the `ctr_` prefix.
+        """
         return pulumi.get(self, "contract_id")
 
     @contract_id.setter
@@ -103,6 +127,9 @@ class EdgeHostNameArgs:
     @property
     @pulumi.getter
     def group(self) -> Optional[pulumi.Input[str]]:
+        """
+        Replaced by `group_id`. Maintained for legacy purposes.
+        """
         return pulumi.get(self, "group")
 
     @group.setter
@@ -112,6 +139,9 @@ class EdgeHostNameArgs:
     @property
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) A group's unique ID, including the `grp_` prefix.
+        """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
@@ -121,6 +151,9 @@ class EdgeHostNameArgs:
     @property
     @pulumi.getter
     def product(self) -> Optional[pulumi.Input[str]]:
+        """
+        Replaced by `product_id`. Maintained for legacy purposes.
+        """
         return pulumi.get(self, "product")
 
     @product.setter
@@ -130,6 +163,9 @@ class EdgeHostNameArgs:
     @property
     @pulumi.getter(name="productId")
     def product_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) A product's unique ID, including the `prd_` prefix.
+        """
         return pulumi.get(self, "product_id")
 
     @product_id.setter
@@ -164,6 +200,15 @@ class _EdgeHostNameState:
                  use_cases: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering EdgeHostName resources.
+        :param pulumi.Input[int] certificate: Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
+        :param pulumi.Input[str] contract: Replaced by `contract_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+        :param pulumi.Input[str] edge_hostname: One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
+        :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
+        :param pulumi.Input[str] ip_behavior: Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
+        :param pulumi.Input[str] product: Replaced by `product_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] product_id: - (Required) A product's unique ID, including the `prd_` prefix.
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         if certificate is not None:
@@ -199,6 +244,9 @@ class _EdgeHostNameState:
     @property
     @pulumi.getter
     def certificate(self) -> Optional[pulumi.Input[int]]:
+        """
+        Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
+        """
         return pulumi.get(self, "certificate")
 
     @certificate.setter
@@ -208,6 +256,9 @@ class _EdgeHostNameState:
     @property
     @pulumi.getter
     def contract(self) -> Optional[pulumi.Input[str]]:
+        """
+        Replaced by `contract_id`. Maintained for legacy purposes.
+        """
         return pulumi.get(self, "contract")
 
     @contract.setter
@@ -217,6 +268,9 @@ class _EdgeHostNameState:
     @property
     @pulumi.getter(name="contractId")
     def contract_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) A contract's unique ID, including the `ctr_` prefix.
+        """
         return pulumi.get(self, "contract_id")
 
     @contract_id.setter
@@ -226,6 +280,9 @@ class _EdgeHostNameState:
     @property
     @pulumi.getter(name="edgeHostname")
     def edge_hostname(self) -> Optional[pulumi.Input[str]]:
+        """
+        One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
+        """
         return pulumi.get(self, "edge_hostname")
 
     @edge_hostname.setter
@@ -235,6 +292,9 @@ class _EdgeHostNameState:
     @property
     @pulumi.getter
     def group(self) -> Optional[pulumi.Input[str]]:
+        """
+        Replaced by `group_id`. Maintained for legacy purposes.
+        """
         return pulumi.get(self, "group")
 
     @group.setter
@@ -244,6 +304,9 @@ class _EdgeHostNameState:
     @property
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) A group's unique ID, including the `grp_` prefix.
+        """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
@@ -253,6 +316,9 @@ class _EdgeHostNameState:
     @property
     @pulumi.getter(name="ipBehavior")
     def ip_behavior(self) -> Optional[pulumi.Input[str]]:
+        """
+        Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
+        """
         return pulumi.get(self, "ip_behavior")
 
     @ip_behavior.setter
@@ -262,6 +328,9 @@ class _EdgeHostNameState:
     @property
     @pulumi.getter
     def product(self) -> Optional[pulumi.Input[str]]:
+        """
+        Replaced by `product_id`. Maintained for legacy purposes.
+        """
         return pulumi.get(self, "product")
 
     @product.setter
@@ -271,6 +340,9 @@ class _EdgeHostNameState:
     @property
     @pulumi.getter(name="productId")
     def product_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) A product's unique ID, including the `prd_` prefix.
+        """
         return pulumi.get(self, "product_id")
 
     @product_id.setter
@@ -341,24 +413,6 @@ class EdgeHostName(pulumi.CustomResource):
             group_id="grp_123",
             product_id="prd_Object_Delivery")
         ```
-        ## Argument reference
-
-        This resource supports these arguments:
-
-        * `name` - (Required) The name of the edge hostname.
-        * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-        * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
-        * `product_id` - (Required) A product's unique ID, including the `prd_` prefix.
-        * `edge_hostname` - (Required) One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
-        * `certificate` - (Optional) Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
-        * `ip_behavior` - (Required) Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
-
-        ### Deprecated arguments
-
-        * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
-        * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
-        * `product` - (Deprecated) Replaced by `product_id`. Maintained for legacy purposes.
-
         ## Attributes reference
 
         This resource returns this attribute:
@@ -381,6 +435,15 @@ class EdgeHostName(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[int] certificate: Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
+        :param pulumi.Input[str] contract: Replaced by `contract_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+        :param pulumi.Input[str] edge_hostname: One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
+        :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
+        :param pulumi.Input[str] ip_behavior: Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
+        :param pulumi.Input[str] product: Replaced by `product_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] product_id: - (Required) A product's unique ID, including the `prd_` prefix.
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         ...
@@ -424,24 +487,6 @@ class EdgeHostName(pulumi.CustomResource):
             group_id="grp_123",
             product_id="prd_Object_Delivery")
         ```
-        ## Argument reference
-
-        This resource supports these arguments:
-
-        * `name` - (Required) The name of the edge hostname.
-        * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-        * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
-        * `product_id` - (Required) A product's unique ID, including the `prd_` prefix.
-        * `edge_hostname` - (Required) One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
-        * `certificate` - (Optional) Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
-        * `ip_behavior` - (Required) Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
-
-        ### Deprecated arguments
-
-        * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
-        * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
-        * `product` - (Deprecated) Replaced by `product_id`. Maintained for legacy purposes.
-
         ## Attributes reference
 
         This resource returns this attribute:
@@ -551,6 +596,15 @@ class EdgeHostName(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[int] certificate: Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
+        :param pulumi.Input[str] contract: Replaced by `contract_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+        :param pulumi.Input[str] edge_hostname: One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
+        :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
+        :param pulumi.Input[str] ip_behavior: Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
+        :param pulumi.Input[str] product: Replaced by `product_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] product_id: - (Required) A product's unique ID, including the `prd_` prefix.
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -572,46 +626,73 @@ class EdgeHostName(pulumi.CustomResource):
     @property
     @pulumi.getter
     def certificate(self) -> pulumi.Output[Optional[int]]:
+        """
+        Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
+        """
         return pulumi.get(self, "certificate")
 
     @property
     @pulumi.getter
     def contract(self) -> pulumi.Output[str]:
+        """
+        Replaced by `contract_id`. Maintained for legacy purposes.
+        """
         return pulumi.get(self, "contract")
 
     @property
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Output[str]:
+        """
+        - (Required) A contract's unique ID, including the `ctr_` prefix.
+        """
         return pulumi.get(self, "contract_id")
 
     @property
     @pulumi.getter(name="edgeHostname")
     def edge_hostname(self) -> pulumi.Output[str]:
+        """
+        One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
+        """
         return pulumi.get(self, "edge_hostname")
 
     @property
     @pulumi.getter
     def group(self) -> pulumi.Output[str]:
+        """
+        Replaced by `group_id`. Maintained for legacy purposes.
+        """
         return pulumi.get(self, "group")
 
     @property
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[str]:
+        """
+        - (Required) A group's unique ID, including the `grp_` prefix.
+        """
         return pulumi.get(self, "group_id")
 
     @property
     @pulumi.getter(name="ipBehavior")
     def ip_behavior(self) -> pulumi.Output[str]:
+        """
+        Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
+        """
         return pulumi.get(self, "ip_behavior")
 
     @property
     @pulumi.getter
     def product(self) -> pulumi.Output[str]:
+        """
+        Replaced by `product_id`. Maintained for legacy purposes.
+        """
         return pulumi.get(self, "product")
 
     @property
     @pulumi.getter(name="productId")
     def product_id(self) -> pulumi.Output[str]:
+        """
+        - (Required) A product's unique ID, including the `prd_` prefix.
+        """
         return pulumi.get(self, "product_id")
 
     @property

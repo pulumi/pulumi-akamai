@@ -85,13 +85,13 @@ export class AppSecCustomDeny extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecCustomDenyArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecCustomDenyArgs | AppSecCustomDenyState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecCustomDenyState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["customDeny"] = state ? state.customDeny : undefined;
-            inputs["customDenyId"] = state ? state.customDenyId : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["customDeny"] = state ? state.customDeny : undefined;
+            resourceInputs["customDenyId"] = state ? state.customDenyId : undefined;
         } else {
             const args = argsOrState as AppSecCustomDenyArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -100,14 +100,12 @@ export class AppSecCustomDeny extends pulumi.CustomResource {
             if ((!args || args.customDeny === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'customDeny'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["customDeny"] = args ? args.customDeny : undefined;
-            inputs["customDenyId"] = undefined /*out*/;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["customDeny"] = args ? args.customDeny : undefined;
+            resourceInputs["customDenyId"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecCustomDeny.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecCustomDeny.__pulumiType, name, resourceInputs, opts);
     }
 }
 

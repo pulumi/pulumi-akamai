@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -78,18 +77,6 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
-        /// ## Argument reference
-        /// 
-        /// This data source supports these arguments:
-        /// 
-        /// * `name` - (Required) The name of the CP code.
-        /// * `group_id` - (Required) The group's unique ID, including the `grp_` prefix.
-        /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-        /// 
-        /// ### Deprecated arguments
-        /// * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
-        /// * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
-        /// 
         /// ## Attributes reference
         /// 
         /// This data source returns these attributes:
@@ -98,7 +85,7 @@ namespace Pulumi.Akamai
         /// * `product_ids` - An array of product IDs associated with this CP code. Each ID returned includes the `prd_` prefix.
         /// </summary>
         public static Task<GetCpCodeResult> InvokeAsync(GetCpCodeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCpCodeResult>("akamai:index/getCpCode:getCpCode", args ?? new GetCpCodeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetCpCodeResult>("akamai:index/getCpCode:getCpCode", args ?? new GetCpCodeArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.CpCode` data source to retrieve the ID for a content provider (CP) code.
@@ -166,18 +153,6 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
-        /// ## Argument reference
-        /// 
-        /// This data source supports these arguments:
-        /// 
-        /// * `name` - (Required) The name of the CP code.
-        /// * `group_id` - (Required) The group's unique ID, including the `grp_` prefix.
-        /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-        /// 
-        /// ### Deprecated arguments
-        /// * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
-        /// * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
-        /// 
         /// ## Attributes reference
         /// 
         /// This data source returns these attributes:
@@ -186,24 +161,39 @@ namespace Pulumi.Akamai
         /// * `product_ids` - An array of product IDs associated with this CP code. Each ID returned includes the `prd_` prefix.
         /// </summary>
         public static Output<GetCpCodeResult> Invoke(GetCpCodeInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCpCodeResult>("akamai:index/getCpCode:getCpCode", args ?? new GetCpCodeInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetCpCodeResult>("akamai:index/getCpCode:getCpCode", args ?? new GetCpCodeInvokeArgs(), options.WithDefaults());
     }
 
 
     public sealed class GetCpCodeArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Replaced by `contract_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("contract")]
         public string? Contract { get; set; }
 
+        /// <summary>
+        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// </summary>
         [Input("contractId")]
         public string? ContractId { get; set; }
 
+        /// <summary>
+        /// Replaced by `group_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("group")]
         public string? Group { get; set; }
 
+        /// <summary>
+        /// The group's unique ID, including the `grp_` prefix.
+        /// </summary>
         [Input("groupId")]
         public string? GroupId { get; set; }
 
+        /// <summary>
+        /// The name of the CP code.
+        /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
 
@@ -214,18 +204,33 @@ namespace Pulumi.Akamai
 
     public sealed class GetCpCodeInvokeArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Replaced by `contract_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("contract")]
         public Input<string>? Contract { get; set; }
 
+        /// <summary>
+        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
 
+        /// <summary>
+        /// Replaced by `group_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
 
+        /// <summary>
+        /// The group's unique ID, including the `grp_` prefix.
+        /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
+        /// <summary>
+        /// The name of the CP code.
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 

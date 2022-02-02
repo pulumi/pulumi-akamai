@@ -51,9 +51,7 @@ export function getAppSecWafMode(args: GetAppSecWafModeArgs, opts?: pulumi.Invok
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecWafMode:getAppSecWafMode", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,

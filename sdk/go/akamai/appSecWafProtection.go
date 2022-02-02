@@ -162,7 +162,7 @@ type AppSecWafProtectionInput interface {
 }
 
 func (*AppSecWafProtection) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecWafProtection)(nil))
+	return reflect.TypeOf((**AppSecWafProtection)(nil)).Elem()
 }
 
 func (i *AppSecWafProtection) ToAppSecWafProtectionOutput() AppSecWafProtectionOutput {
@@ -171,35 +171,6 @@ func (i *AppSecWafProtection) ToAppSecWafProtectionOutput() AppSecWafProtectionO
 
 func (i *AppSecWafProtection) ToAppSecWafProtectionOutputWithContext(ctx context.Context) AppSecWafProtectionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecWafProtectionOutput)
-}
-
-func (i *AppSecWafProtection) ToAppSecWafProtectionPtrOutput() AppSecWafProtectionPtrOutput {
-	return i.ToAppSecWafProtectionPtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecWafProtection) ToAppSecWafProtectionPtrOutputWithContext(ctx context.Context) AppSecWafProtectionPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecWafProtectionPtrOutput)
-}
-
-type AppSecWafProtectionPtrInput interface {
-	pulumi.Input
-
-	ToAppSecWafProtectionPtrOutput() AppSecWafProtectionPtrOutput
-	ToAppSecWafProtectionPtrOutputWithContext(ctx context.Context) AppSecWafProtectionPtrOutput
-}
-
-type appSecWafProtectionPtrType AppSecWafProtectionArgs
-
-func (*appSecWafProtectionPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecWafProtection)(nil))
-}
-
-func (i *appSecWafProtectionPtrType) ToAppSecWafProtectionPtrOutput() AppSecWafProtectionPtrOutput {
-	return i.ToAppSecWafProtectionPtrOutputWithContext(context.Background())
-}
-
-func (i *appSecWafProtectionPtrType) ToAppSecWafProtectionPtrOutputWithContext(ctx context.Context) AppSecWafProtectionPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecWafProtectionPtrOutput)
 }
 
 // AppSecWafProtectionArrayInput is an input type that accepts AppSecWafProtectionArray and AppSecWafProtectionArrayOutput values.
@@ -255,7 +226,7 @@ func (i AppSecWafProtectionMap) ToAppSecWafProtectionMapOutputWithContext(ctx co
 type AppSecWafProtectionOutput struct{ *pulumi.OutputState }
 
 func (AppSecWafProtectionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecWafProtection)(nil))
+	return reflect.TypeOf((**AppSecWafProtection)(nil)).Elem()
 }
 
 func (o AppSecWafProtectionOutput) ToAppSecWafProtectionOutput() AppSecWafProtectionOutput {
@@ -266,44 +237,10 @@ func (o AppSecWafProtectionOutput) ToAppSecWafProtectionOutputWithContext(ctx co
 	return o
 }
 
-func (o AppSecWafProtectionOutput) ToAppSecWafProtectionPtrOutput() AppSecWafProtectionPtrOutput {
-	return o.ToAppSecWafProtectionPtrOutputWithContext(context.Background())
-}
-
-func (o AppSecWafProtectionOutput) ToAppSecWafProtectionPtrOutputWithContext(ctx context.Context) AppSecWafProtectionPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecWafProtection) *AppSecWafProtection {
-		return &v
-	}).(AppSecWafProtectionPtrOutput)
-}
-
-type AppSecWafProtectionPtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecWafProtectionPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecWafProtection)(nil))
-}
-
-func (o AppSecWafProtectionPtrOutput) ToAppSecWafProtectionPtrOutput() AppSecWafProtectionPtrOutput {
-	return o
-}
-
-func (o AppSecWafProtectionPtrOutput) ToAppSecWafProtectionPtrOutputWithContext(ctx context.Context) AppSecWafProtectionPtrOutput {
-	return o
-}
-
-func (o AppSecWafProtectionPtrOutput) Elem() AppSecWafProtectionOutput {
-	return o.ApplyT(func(v *AppSecWafProtection) AppSecWafProtection {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecWafProtection
-		return ret
-	}).(AppSecWafProtectionOutput)
-}
-
 type AppSecWafProtectionArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecWafProtectionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecWafProtection)(nil))
+	return reflect.TypeOf((*[]*AppSecWafProtection)(nil)).Elem()
 }
 
 func (o AppSecWafProtectionArrayOutput) ToAppSecWafProtectionArrayOutput() AppSecWafProtectionArrayOutput {
@@ -315,15 +252,15 @@ func (o AppSecWafProtectionArrayOutput) ToAppSecWafProtectionArrayOutputWithCont
 }
 
 func (o AppSecWafProtectionArrayOutput) Index(i pulumi.IntInput) AppSecWafProtectionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecWafProtection {
-		return vs[0].([]AppSecWafProtection)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecWafProtection {
+		return vs[0].([]*AppSecWafProtection)[vs[1].(int)]
 	}).(AppSecWafProtectionOutput)
 }
 
 type AppSecWafProtectionMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecWafProtectionMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecWafProtection)(nil))
+	return reflect.TypeOf((*map[string]*AppSecWafProtection)(nil)).Elem()
 }
 
 func (o AppSecWafProtectionMapOutput) ToAppSecWafProtectionMapOutput() AppSecWafProtectionMapOutput {
@@ -335,18 +272,16 @@ func (o AppSecWafProtectionMapOutput) ToAppSecWafProtectionMapOutputWithContext(
 }
 
 func (o AppSecWafProtectionMapOutput) MapIndex(k pulumi.StringInput) AppSecWafProtectionOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecWafProtection {
-		return vs[0].(map[string]AppSecWafProtection)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecWafProtection {
+		return vs[0].(map[string]*AppSecWafProtection)[vs[1].(string)]
 	}).(AppSecWafProtectionOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecWafProtectionInput)(nil)).Elem(), &AppSecWafProtection{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecWafProtectionPtrInput)(nil)).Elem(), &AppSecWafProtection{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecWafProtectionArrayInput)(nil)).Elem(), AppSecWafProtectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecWafProtectionMapInput)(nil)).Elem(), AppSecWafProtectionMap{})
 	pulumi.RegisterOutputType(AppSecWafProtectionOutput{})
-	pulumi.RegisterOutputType(AppSecWafProtectionPtrOutput{})
 	pulumi.RegisterOutputType(AppSecWafProtectionArrayOutput{})
 	pulumi.RegisterOutputType(AppSecWafProtectionMapOutput{})
 }

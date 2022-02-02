@@ -85,13 +85,6 @@ def get_gtm_default_datacenter(datacenter: Optional[int] = None,
     """
     Use the `get_gtm_default_datacenter` data source to retrieve the default data center, ID, and nickname.
 
-    ## Argument reference
-
-    This data source supports these arguments:
-
-    * `domain` - (Required)
-    * `datacenter` - (Optional) The default is `5400`.
-
     ## Attributes reference
 
     This data source supports these attributes:
@@ -99,6 +92,9 @@ def get_gtm_default_datacenter(datacenter: Optional[int] = None,
     * `id` - The data resource ID. Enter in this format: `<domain>:default_datacenter:<datacenter_id>`.
     * `datacenter_id` - The default data center ID.
     * `nickname` - The default data center nickname.
+
+
+    :param int datacenter: The default is `5400`.
     """
     __args__ = dict()
     __args__['datacenter'] = datacenter
@@ -124,13 +120,6 @@ def get_gtm_default_datacenter_output(datacenter: Optional[pulumi.Input[Optional
     """
     Use the `get_gtm_default_datacenter` data source to retrieve the default data center, ID, and nickname.
 
-    ## Argument reference
-
-    This data source supports these arguments:
-
-    * `domain` - (Required)
-    * `datacenter` - (Optional) The default is `5400`.
-
     ## Attributes reference
 
     This data source supports these attributes:
@@ -138,5 +127,8 @@ def get_gtm_default_datacenter_output(datacenter: Optional[pulumi.Input[Optional
     * `id` - The data resource ID. Enter in this format: `<domain>:default_datacenter:<datacenter_id>`.
     * `datacenter_id` - The default data center ID.
     * `nickname` - The default data center nickname.
+
+
+    :param int datacenter: The default is `5400`.
     """
     ...

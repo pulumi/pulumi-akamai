@@ -6,17 +6,16 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
     public static class GetAppSecSecurityPolicy
     {
         public static Task<GetAppSecSecurityPolicyResult> InvokeAsync(GetAppSecSecurityPolicyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSecurityPolicyResult>("akamai:index/getAppSecSecurityPolicy:getAppSecSecurityPolicy", args ?? new GetAppSecSecurityPolicyArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSecurityPolicyResult>("akamai:index/getAppSecSecurityPolicy:getAppSecSecurityPolicy", args ?? new GetAppSecSecurityPolicyArgs(), options.WithDefaults());
 
         public static Output<GetAppSecSecurityPolicyResult> Invoke(GetAppSecSecurityPolicyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecSecurityPolicyResult>("akamai:index/getAppSecSecurityPolicy:getAppSecSecurityPolicy", args ?? new GetAppSecSecurityPolicyInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecSecurityPolicyResult>("akamai:index/getAppSecSecurityPolicy:getAppSecSecurityPolicy", args ?? new GetAppSecSecurityPolicyInvokeArgs(), options.WithDefaults());
     }
 
 

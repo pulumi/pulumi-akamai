@@ -221,7 +221,7 @@ type AppSecConfigurationInput interface {
 }
 
 func (*AppSecConfiguration) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecConfiguration)(nil))
+	return reflect.TypeOf((**AppSecConfiguration)(nil)).Elem()
 }
 
 func (i *AppSecConfiguration) ToAppSecConfigurationOutput() AppSecConfigurationOutput {
@@ -230,35 +230,6 @@ func (i *AppSecConfiguration) ToAppSecConfigurationOutput() AppSecConfigurationO
 
 func (i *AppSecConfiguration) ToAppSecConfigurationOutputWithContext(ctx context.Context) AppSecConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecConfigurationOutput)
-}
-
-func (i *AppSecConfiguration) ToAppSecConfigurationPtrOutput() AppSecConfigurationPtrOutput {
-	return i.ToAppSecConfigurationPtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecConfiguration) ToAppSecConfigurationPtrOutputWithContext(ctx context.Context) AppSecConfigurationPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecConfigurationPtrOutput)
-}
-
-type AppSecConfigurationPtrInput interface {
-	pulumi.Input
-
-	ToAppSecConfigurationPtrOutput() AppSecConfigurationPtrOutput
-	ToAppSecConfigurationPtrOutputWithContext(ctx context.Context) AppSecConfigurationPtrOutput
-}
-
-type appSecConfigurationPtrType AppSecConfigurationArgs
-
-func (*appSecConfigurationPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecConfiguration)(nil))
-}
-
-func (i *appSecConfigurationPtrType) ToAppSecConfigurationPtrOutput() AppSecConfigurationPtrOutput {
-	return i.ToAppSecConfigurationPtrOutputWithContext(context.Background())
-}
-
-func (i *appSecConfigurationPtrType) ToAppSecConfigurationPtrOutputWithContext(ctx context.Context) AppSecConfigurationPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecConfigurationPtrOutput)
 }
 
 // AppSecConfigurationArrayInput is an input type that accepts AppSecConfigurationArray and AppSecConfigurationArrayOutput values.
@@ -314,7 +285,7 @@ func (i AppSecConfigurationMap) ToAppSecConfigurationMapOutputWithContext(ctx co
 type AppSecConfigurationOutput struct{ *pulumi.OutputState }
 
 func (AppSecConfigurationOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecConfiguration)(nil))
+	return reflect.TypeOf((**AppSecConfiguration)(nil)).Elem()
 }
 
 func (o AppSecConfigurationOutput) ToAppSecConfigurationOutput() AppSecConfigurationOutput {
@@ -325,44 +296,10 @@ func (o AppSecConfigurationOutput) ToAppSecConfigurationOutputWithContext(ctx co
 	return o
 }
 
-func (o AppSecConfigurationOutput) ToAppSecConfigurationPtrOutput() AppSecConfigurationPtrOutput {
-	return o.ToAppSecConfigurationPtrOutputWithContext(context.Background())
-}
-
-func (o AppSecConfigurationOutput) ToAppSecConfigurationPtrOutputWithContext(ctx context.Context) AppSecConfigurationPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecConfiguration) *AppSecConfiguration {
-		return &v
-	}).(AppSecConfigurationPtrOutput)
-}
-
-type AppSecConfigurationPtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecConfigurationPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecConfiguration)(nil))
-}
-
-func (o AppSecConfigurationPtrOutput) ToAppSecConfigurationPtrOutput() AppSecConfigurationPtrOutput {
-	return o
-}
-
-func (o AppSecConfigurationPtrOutput) ToAppSecConfigurationPtrOutputWithContext(ctx context.Context) AppSecConfigurationPtrOutput {
-	return o
-}
-
-func (o AppSecConfigurationPtrOutput) Elem() AppSecConfigurationOutput {
-	return o.ApplyT(func(v *AppSecConfiguration) AppSecConfiguration {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecConfiguration
-		return ret
-	}).(AppSecConfigurationOutput)
-}
-
 type AppSecConfigurationArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecConfigurationArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecConfiguration)(nil))
+	return reflect.TypeOf((*[]*AppSecConfiguration)(nil)).Elem()
 }
 
 func (o AppSecConfigurationArrayOutput) ToAppSecConfigurationArrayOutput() AppSecConfigurationArrayOutput {
@@ -374,15 +311,15 @@ func (o AppSecConfigurationArrayOutput) ToAppSecConfigurationArrayOutputWithCont
 }
 
 func (o AppSecConfigurationArrayOutput) Index(i pulumi.IntInput) AppSecConfigurationOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecConfiguration {
-		return vs[0].([]AppSecConfiguration)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecConfiguration {
+		return vs[0].([]*AppSecConfiguration)[vs[1].(int)]
 	}).(AppSecConfigurationOutput)
 }
 
 type AppSecConfigurationMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecConfigurationMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecConfiguration)(nil))
+	return reflect.TypeOf((*map[string]*AppSecConfiguration)(nil)).Elem()
 }
 
 func (o AppSecConfigurationMapOutput) ToAppSecConfigurationMapOutput() AppSecConfigurationMapOutput {
@@ -394,18 +331,16 @@ func (o AppSecConfigurationMapOutput) ToAppSecConfigurationMapOutputWithContext(
 }
 
 func (o AppSecConfigurationMapOutput) MapIndex(k pulumi.StringInput) AppSecConfigurationOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecConfiguration {
-		return vs[0].(map[string]AppSecConfiguration)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecConfiguration {
+		return vs[0].(map[string]*AppSecConfiguration)[vs[1].(string)]
 	}).(AppSecConfigurationOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecConfigurationInput)(nil)).Elem(), &AppSecConfiguration{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecConfigurationPtrInput)(nil)).Elem(), &AppSecConfiguration{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecConfigurationArrayInput)(nil)).Elem(), AppSecConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecConfigurationMapInput)(nil)).Elem(), AppSecConfigurationMap{})
 	pulumi.RegisterOutputType(AppSecConfigurationOutput{})
-	pulumi.RegisterOutputType(AppSecConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(AppSecConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(AppSecConfigurationMapOutput{})
 }

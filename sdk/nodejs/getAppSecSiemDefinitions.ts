@@ -40,9 +40,7 @@ export function getAppSecSiemDefinitions(args?: GetAppSecSiemDefinitionsArgs, op
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions", {
         "siemDefinitionName": args.siemDefinitionName,
     }, opts);

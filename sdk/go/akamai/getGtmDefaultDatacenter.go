@@ -12,13 +12,6 @@ import (
 
 // Use the `getGtmDefaultDatacenter` data source to retrieve the default data center, ID, and nickname.
 //
-// ## Argument reference
-//
-// This data source supports these arguments:
-//
-// * `domain` - (Required)
-// * `datacenter` - (Optional) The default is `5400`.
-//
 // ## Attributes reference
 //
 // This data source supports these attributes:
@@ -37,6 +30,7 @@ func GetGtmDefaultDatacenter(ctx *pulumi.Context, args *GetGtmDefaultDatacenterA
 
 // A collection of arguments for invoking getGtmDefaultDatacenter.
 type GetGtmDefaultDatacenterArgs struct {
+	// The default is `5400`.
 	Datacenter *int   `pulumi:"datacenter"`
 	Domain     string `pulumi:"domain"`
 }
@@ -62,6 +56,7 @@ func GetGtmDefaultDatacenterOutput(ctx *pulumi.Context, args GetGtmDefaultDatace
 
 // A collection of arguments for invoking getGtmDefaultDatacenter.
 type GetGtmDefaultDatacenterOutputArgs struct {
+	// The default is `5400`.
 	Datacenter pulumi.IntPtrInput `pulumi:"datacenter"`
 	Domain     pulumi.StringInput `pulumi:"domain"`
 }

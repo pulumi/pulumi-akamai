@@ -13,8 +13,17 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication
     {
+        /// <summary>
+        /// Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
+        /// </summary>
         public readonly bool? OcspEnabled;
+        /// <summary>
+        /// Whether you want to enable the server to send the certificate authority (CA) list to the client.
+        /// </summary>
         public readonly bool? SendCaListToClient;
+        /// <summary>
+        /// The identifier of the set of trust chains, created in the [Trust Chain Manager](https://developer.akamai.com/api/web_performance/trust_chain_manager/v1.html).
+        /// </summary>
         public readonly string? SetId;
 
         [OutputConstructor]

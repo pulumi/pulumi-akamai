@@ -38,10 +38,6 @@ namespace Pulumi.Akamai
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
-        /// ## Argument reference
-        /// 
-        /// There are no arguments available for this data source.
-        /// 
         /// ## Attributes reference
         /// 
         /// This data source returns these attributes:
@@ -51,7 +47,7 @@ namespace Pulumi.Akamai
         ///   * `contract_type_name` - The type of contract, either `DIRECT_CUSTOMER`, `INDIRECT_CUSTOMER`, `PARENT_CUSTOMER`, `REFERRAL_PARTNER`, `TIER_1_RESELLER`, `VAR_CUSTOMER`, `VALUE_ADDED_RESELLER`, `PARTNER`, `PORTAL_PARTNER`, `STREAMING_RESELLER`, `AKAMAI_INTERNAL`, or `UNKNOWN`.
         /// </summary>
         public static Task<GetContractsResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetContractsResult>("akamai:index/getContracts:getContracts", InvokeArgs.Empty, options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetContractsResult>("akamai:index/getContracts:getContracts", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

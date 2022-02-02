@@ -100,15 +100,15 @@ export class AppSecRatePolicyAction extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecRatePolicyActionArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecRatePolicyActionArgs | AppSecRatePolicyActionState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecRatePolicyActionState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["ipv4Action"] = state ? state.ipv4Action : undefined;
-            inputs["ipv6Action"] = state ? state.ipv6Action : undefined;
-            inputs["ratePolicyId"] = state ? state.ratePolicyId : undefined;
-            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["ipv4Action"] = state ? state.ipv4Action : undefined;
+            resourceInputs["ipv6Action"] = state ? state.ipv6Action : undefined;
+            resourceInputs["ratePolicyId"] = state ? state.ratePolicyId : undefined;
+            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
         } else {
             const args = argsOrState as AppSecRatePolicyActionArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -126,16 +126,14 @@ export class AppSecRatePolicyAction extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["ipv4Action"] = args ? args.ipv4Action : undefined;
-            inputs["ipv6Action"] = args ? args.ipv6Action : undefined;
-            inputs["ratePolicyId"] = args ? args.ratePolicyId : undefined;
-            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["ipv4Action"] = args ? args.ipv4Action : undefined;
+            resourceInputs["ipv6Action"] = args ? args.ipv6Action : undefined;
+            resourceInputs["ratePolicyId"] = args ? args.ratePolicyId : undefined;
+            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecRatePolicyAction.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecRatePolicyAction.__pulumiType, name, resourceInputs, opts);
     }
 }
 

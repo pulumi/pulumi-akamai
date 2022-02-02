@@ -68,10 +68,6 @@ def get_groups(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGroup
     pulumi.export("propertyMatch", my_example)
     ```
 
-    ## Argument reference
-
-    There are no arguments available for this data source.
-
     ## Attributes reference
 
     This data source returns these attributes:

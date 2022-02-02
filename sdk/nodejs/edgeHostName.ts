@@ -40,24 +40,6 @@ import * as utilities from "./utilities";
  *     productId: "prd_Object_Delivery",
  * });
  * ```
- * ## Argument reference
- *
- * This resource supports these arguments:
- *
- * * `name` - (Required) The name of the edge hostname.
- * * `contractId` - (Required) A contract's unique ID, including the `ctr_` prefix.
- * * `groupId` - (Required) A group's unique ID, including the `grp_` prefix.
- * * `productId` - (Required) A product's unique ID, including the `prd_` prefix.
- * * `edgeHostname` - (Required) One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
- * * `certificate` - (Optional) Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
- * * `ipBehavior` - (Required) Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
- *
- * ### Deprecated arguments
- *
- * * `contract` - (Deprecated) Replaced by `contractId`. Maintained for legacy purposes.
- * * `group` - (Deprecated) Replaced by `groupId`. Maintained for legacy purposes.
- * * `product` - (Deprecated) Replaced by `productId`. Maintained for legacy purposes.
- *
  * ## Attributes reference
  *
  * This resource returns this attribute:
@@ -106,23 +88,47 @@ export class EdgeHostName extends pulumi.CustomResource {
         return obj['__pulumiType'] === EdgeHostName.__pulumiType;
     }
 
+    /**
+     * Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
+     */
     public readonly certificate!: pulumi.Output<number | undefined>;
     /**
+     * Replaced by `contractId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "contract" has been deprecated.
      */
     public readonly contract!: pulumi.Output<string>;
+    /**
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     */
     public readonly contractId!: pulumi.Output<string>;
+    /**
+     * One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
+     */
     public readonly edgeHostname!: pulumi.Output<string>;
     /**
+     * Replaced by `groupId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "group" has been deprecated.
      */
     public readonly group!: pulumi.Output<string>;
+    /**
+     * - (Required) A group's unique ID, including the `grp_` prefix.
+     */
     public readonly groupId!: pulumi.Output<string>;
+    /**
+     * Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
+     */
     public readonly ipBehavior!: pulumi.Output<string>;
     /**
+     * Replaced by `productId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "product" has been deprecated.
      */
     public readonly product!: pulumi.Output<string>;
+    /**
+     * - (Required) A product's unique ID, including the `prd_` prefix.
+     */
     public readonly productId!: pulumi.Output<string>;
     /**
      * A JSON encoded list of use cases
@@ -138,20 +144,20 @@ export class EdgeHostName extends pulumi.CustomResource {
      */
     constructor(name: string, args: EdgeHostNameArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: EdgeHostNameArgs | EdgeHostNameState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EdgeHostNameState | undefined;
-            inputs["certificate"] = state ? state.certificate : undefined;
-            inputs["contract"] = state ? state.contract : undefined;
-            inputs["contractId"] = state ? state.contractId : undefined;
-            inputs["edgeHostname"] = state ? state.edgeHostname : undefined;
-            inputs["group"] = state ? state.group : undefined;
-            inputs["groupId"] = state ? state.groupId : undefined;
-            inputs["ipBehavior"] = state ? state.ipBehavior : undefined;
-            inputs["product"] = state ? state.product : undefined;
-            inputs["productId"] = state ? state.productId : undefined;
-            inputs["useCases"] = state ? state.useCases : undefined;
+            resourceInputs["certificate"] = state ? state.certificate : undefined;
+            resourceInputs["contract"] = state ? state.contract : undefined;
+            resourceInputs["contractId"] = state ? state.contractId : undefined;
+            resourceInputs["edgeHostname"] = state ? state.edgeHostname : undefined;
+            resourceInputs["group"] = state ? state.group : undefined;
+            resourceInputs["groupId"] = state ? state.groupId : undefined;
+            resourceInputs["ipBehavior"] = state ? state.ipBehavior : undefined;
+            resourceInputs["product"] = state ? state.product : undefined;
+            resourceInputs["productId"] = state ? state.productId : undefined;
+            resourceInputs["useCases"] = state ? state.useCases : undefined;
         } else {
             const args = argsOrState as EdgeHostNameArgs | undefined;
             if ((!args || args.edgeHostname === undefined) && !opts.urn) {
@@ -160,23 +166,21 @@ export class EdgeHostName extends pulumi.CustomResource {
             if ((!args || args.ipBehavior === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'ipBehavior'");
             }
-            inputs["certificate"] = args ? args.certificate : undefined;
-            inputs["contract"] = args ? args.contract : undefined;
-            inputs["contractId"] = args ? args.contractId : undefined;
-            inputs["edgeHostname"] = args ? args.edgeHostname : undefined;
-            inputs["group"] = args ? args.group : undefined;
-            inputs["groupId"] = args ? args.groupId : undefined;
-            inputs["ipBehavior"] = args ? args.ipBehavior : undefined;
-            inputs["product"] = args ? args.product : undefined;
-            inputs["productId"] = args ? args.productId : undefined;
-            inputs["useCases"] = args ? args.useCases : undefined;
+            resourceInputs["certificate"] = args ? args.certificate : undefined;
+            resourceInputs["contract"] = args ? args.contract : undefined;
+            resourceInputs["contractId"] = args ? args.contractId : undefined;
+            resourceInputs["edgeHostname"] = args ? args.edgeHostname : undefined;
+            resourceInputs["group"] = args ? args.group : undefined;
+            resourceInputs["groupId"] = args ? args.groupId : undefined;
+            resourceInputs["ipBehavior"] = args ? args.ipBehavior : undefined;
+            resourceInputs["product"] = args ? args.product : undefined;
+            resourceInputs["productId"] = args ? args.productId : undefined;
+            resourceInputs["useCases"] = args ? args.useCases : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const aliasOpts = { aliases: [{ type: "akamai:properties/edgeHostName:EdgeHostName" }] };
         opts = pulumi.mergeOptions(opts, aliasOpts);
-        super(EdgeHostName.__pulumiType, name, inputs, opts);
+        super(EdgeHostName.__pulumiType, name, resourceInputs, opts);
     }
 }
 
@@ -184,23 +188,47 @@ export class EdgeHostName extends pulumi.CustomResource {
  * Input properties used for looking up and filtering EdgeHostName resources.
  */
 export interface EdgeHostNameState {
+    /**
+     * Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
+     */
     certificate?: pulumi.Input<number>;
     /**
+     * Replaced by `contractId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "contract" has been deprecated.
      */
     contract?: pulumi.Input<string>;
+    /**
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     */
     contractId?: pulumi.Input<string>;
+    /**
+     * One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
+     */
     edgeHostname?: pulumi.Input<string>;
     /**
+     * Replaced by `groupId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "group" has been deprecated.
      */
     group?: pulumi.Input<string>;
+    /**
+     * - (Required) A group's unique ID, including the `grp_` prefix.
+     */
     groupId?: pulumi.Input<string>;
+    /**
+     * Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
+     */
     ipBehavior?: pulumi.Input<string>;
     /**
+     * Replaced by `productId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "product" has been deprecated.
      */
     product?: pulumi.Input<string>;
+    /**
+     * - (Required) A product's unique ID, including the `prd_` prefix.
+     */
     productId?: pulumi.Input<string>;
     /**
      * A JSON encoded list of use cases
@@ -212,23 +240,47 @@ export interface EdgeHostNameState {
  * The set of arguments for constructing a EdgeHostName resource.
  */
 export interface EdgeHostNameArgs {
+    /**
+     * Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
+     */
     certificate?: pulumi.Input<number>;
     /**
+     * Replaced by `contractId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "contract" has been deprecated.
      */
     contract?: pulumi.Input<string>;
+    /**
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     */
     contractId?: pulumi.Input<string>;
+    /**
+     * One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
+     */
     edgeHostname: pulumi.Input<string>;
     /**
+     * Replaced by `groupId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "group" has been deprecated.
      */
     group?: pulumi.Input<string>;
+    /**
+     * - (Required) A group's unique ID, including the `grp_` prefix.
+     */
     groupId?: pulumi.Input<string>;
+    /**
+     * Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
+     */
     ipBehavior: pulumi.Input<string>;
     /**
+     * Replaced by `productId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "product" has been deprecated.
      */
     product?: pulumi.Input<string>;
+    /**
+     * - (Required) A product's unique ID, including the `prd_` prefix.
+     */
     productId?: pulumi.Input<string>;
     /**
      * A JSON encoded list of use cases

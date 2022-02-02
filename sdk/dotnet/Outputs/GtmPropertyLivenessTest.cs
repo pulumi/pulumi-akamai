@@ -13,29 +13,101 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GtmPropertyLivenessTest
     {
+        /// <summary>
+        /// If `test_object_protocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
+        /// </summary>
         public readonly bool? AnswersRequired;
+        /// <summary>
+        /// A boolean that if set to `true`, disables warnings when non-standard ports are used.
+        /// </summary>
         public readonly bool? DisableNonstandardPortWarning;
+        /// <summary>
+        /// A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
+        /// </summary>
         public readonly bool? Disabled;
+        /// <summary>
+        /// Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
+        /// </summary>
         public readonly double? ErrorPenalty;
+        /// <summary>
+        /// A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+        /// </summary>
         public readonly bool? HttpError3xx;
+        /// <summary>
+        /// A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+        /// </summary>
         public readonly bool? HttpError4xx;
+        /// <summary>
+        /// A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+        /// </summary>
         public readonly bool? HttpError5xx;
+        /// <summary>
+        /// Contains HTTP headers to send if the `test_object_protocol` is `http` or `https`. You can have multiple `http_header` entries. Requires these arguments:
+        /// </summary>
         public readonly ImmutableArray<Outputs.GtmPropertyLivenessTestHttpHeader> HttpHeaders;
+        /// <summary>
+        /// Name of HTTP header.
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `test_object_protocol` of https.
+        /// </summary>
         public readonly bool? PeerCertificateVerification;
+        /// <summary>
+        /// A boolean indicating whether the `test_object_protocol` is DNS. The DNS query is recursive.
+        /// </summary>
         public readonly bool? RecursionRequested;
+        /// <summary>
+        /// Specifies a request string.
+        /// </summary>
         public readonly string? RequestString;
+        /// <summary>
+        /// Specifies the query type, if `test_object_protocol` is DNS.
+        /// </summary>
         public readonly string? ResourceType;
+        /// <summary>
+        /// Specifies a response string.
+        /// </summary>
         public readonly string? ResponseString;
+        /// <summary>
+        /// Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
+        /// </summary>
         public readonly string? SslClientCertificate;
+        /// <summary>
+        /// Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can't have a passphrase nor be used for any other purpose.
+        /// </summary>
         public readonly string? SslClientPrivateKey;
+        /// <summary>
+        /// Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
+        /// </summary>
         public readonly int TestInterval;
+        /// <summary>
+        /// Specifies the static text that acts as a stand-in for the data that you're sending on the network.
+        /// </summary>
         public readonly string TestObject;
+        /// <summary>
+        /// Specifies the test object's password. It is required if testObjectProtocol is ftp.
+        /// </summary>
         public readonly string? TestObjectPassword;
+        /// <summary>
+        /// Specifies the port number for the testObject.
+        /// </summary>
         public readonly int? TestObjectPort;
+        /// <summary>
+        /// Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
+        /// </summary>
         public readonly string TestObjectProtocol;
+        /// <summary>
+        /// A descriptive name for the testObject.
+        /// </summary>
         public readonly string? TestObjectUsername;
+        /// <summary>
+        /// Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
+        /// </summary>
         public readonly double TestTimeout;
+        /// <summary>
+        /// Specifies the score to be reported if the liveness test times out.
+        /// </summary>
         public readonly double? TimeoutPenalty;
 
         [OutputConstructor]

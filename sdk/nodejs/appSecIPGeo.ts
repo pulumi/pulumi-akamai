@@ -107,16 +107,16 @@ export class AppSecIPGeo extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecIPGeoArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecIPGeoArgs | AppSecIPGeoState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecIPGeoState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["exceptionIpNetworkLists"] = state ? state.exceptionIpNetworkLists : undefined;
-            inputs["geoNetworkLists"] = state ? state.geoNetworkLists : undefined;
-            inputs["ipNetworkLists"] = state ? state.ipNetworkLists : undefined;
-            inputs["mode"] = state ? state.mode : undefined;
-            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["exceptionIpNetworkLists"] = state ? state.exceptionIpNetworkLists : undefined;
+            resourceInputs["geoNetworkLists"] = state ? state.geoNetworkLists : undefined;
+            resourceInputs["ipNetworkLists"] = state ? state.ipNetworkLists : undefined;
+            resourceInputs["mode"] = state ? state.mode : undefined;
+            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
         } else {
             const args = argsOrState as AppSecIPGeoArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -128,17 +128,15 @@ export class AppSecIPGeo extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["exceptionIpNetworkLists"] = args ? args.exceptionIpNetworkLists : undefined;
-            inputs["geoNetworkLists"] = args ? args.geoNetworkLists : undefined;
-            inputs["ipNetworkLists"] = args ? args.ipNetworkLists : undefined;
-            inputs["mode"] = args ? args.mode : undefined;
-            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["exceptionIpNetworkLists"] = args ? args.exceptionIpNetworkLists : undefined;
+            resourceInputs["geoNetworkLists"] = args ? args.geoNetworkLists : undefined;
+            resourceInputs["ipNetworkLists"] = args ? args.ipNetworkLists : undefined;
+            resourceInputs["mode"] = args ? args.mode : undefined;
+            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecIPGeo.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecIPGeo.__pulumiType, name, resourceInputs, opts);
     }
 }
 

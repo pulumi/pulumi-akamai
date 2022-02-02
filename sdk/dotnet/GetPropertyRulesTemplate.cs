@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -42,16 +41,6 @@ namespace Pulumi.Akamai
         /// {{% examples %}}
         /// ## Example Usage
         /// {{% /examples %}}
-        /// ## Argument reference
-        /// 
-        /// * `template_file` - (Required) The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree.
-        /// * `variables` - (Optional) A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `variable_definition_file` and `variable_values_file` arguments. A `variables` block includes:
-        ///     * `name` - The name of the variable used in template.
-        ///     * `type` - The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
-        ///     * `value` - The value of the variable passed as a string.
-        /// * `variable_definition_file` - (Optional) The absolute path to the file containing variable definitions and defaults. This file follows the syntax used in the [Property Manager CLI](https://github.com/akamai/cli-property-manager). This argument is required if you set `variable_values_file` and conflicts with `variables`.
-        /// * `variable_values_file` - (Optional) The absolute path to the file containing variable values. This file follows the syntax used in the Property Manager CLI. This argument is required if you set `variable_definition_file` and conflicts with `variables`.
-        /// 
         /// ## Attributes reference
         /// 
         /// This data source returns this attribute:
@@ -59,7 +48,7 @@ namespace Pulumi.Akamai
         /// * `json` - The fully expanded template with variables and all nested templates resolved.
         /// </summary>
         public static Task<GetPropertyRulesTemplateResult> InvokeAsync(GetPropertyRulesTemplateArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRulesTemplateResult>("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", args ?? new GetPropertyRulesTemplateArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRulesTemplateResult>("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", args ?? new GetPropertyRulesTemplateArgs(), options.WithDefaults());
 
         /// <summary>
         /// The `akamai.getPropertyRulesTemplate` data source lets you configure a rule tree through the use of JSON template files. A rule tree is a nested block of property
@@ -91,16 +80,6 @@ namespace Pulumi.Akamai
         /// {{% examples %}}
         /// ## Example Usage
         /// {{% /examples %}}
-        /// ## Argument reference
-        /// 
-        /// * `template_file` - (Required) The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree.
-        /// * `variables` - (Optional) A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `variable_definition_file` and `variable_values_file` arguments. A `variables` block includes:
-        ///     * `name` - The name of the variable used in template.
-        ///     * `type` - The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
-        ///     * `value` - The value of the variable passed as a string.
-        /// * `variable_definition_file` - (Optional) The absolute path to the file containing variable definitions and defaults. This file follows the syntax used in the [Property Manager CLI](https://github.com/akamai/cli-property-manager). This argument is required if you set `variable_values_file` and conflicts with `variables`.
-        /// * `variable_values_file` - (Optional) The absolute path to the file containing variable values. This file follows the syntax used in the Property Manager CLI. This argument is required if you set `variable_definition_file` and conflicts with `variables`.
-        /// 
         /// ## Attributes reference
         /// 
         /// This data source returns this attribute:
@@ -108,12 +87,15 @@ namespace Pulumi.Akamai
         /// * `json` - The fully expanded template with variables and all nested templates resolved.
         /// </summary>
         public static Output<GetPropertyRulesTemplateResult> Invoke(GetPropertyRulesTemplateInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPropertyRulesTemplateResult>("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", args ?? new GetPropertyRulesTemplateInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetPropertyRulesTemplateResult>("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", args ?? new GetPropertyRulesTemplateInvokeArgs(), options.WithDefaults());
     }
 
 
     public sealed class GetPropertyRulesTemplateArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree.
+        /// </summary>
         [Input("templateFile")]
         public string? TemplateFile { get; set; }
 
@@ -133,6 +115,10 @@ namespace Pulumi.Akamai
 
         [Input("variables")]
         private List<Inputs.GetPropertyRulesTemplateVariableArgs>? _variables;
+
+        /// <summary>
+        /// A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `variable_definition_file` and `variable_values_file` arguments. A `variables` block includes:
+        /// </summary>
         public List<Inputs.GetPropertyRulesTemplateVariableArgs> Variables
         {
             get => _variables ?? (_variables = new List<Inputs.GetPropertyRulesTemplateVariableArgs>());
@@ -146,6 +132,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyRulesTemplateInvokeArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree.
+        /// </summary>
         [Input("templateFile")]
         public Input<string>? TemplateFile { get; set; }
 
@@ -165,6 +154,10 @@ namespace Pulumi.Akamai
 
         [Input("variables")]
         private InputList<Inputs.GetPropertyRulesTemplateVariableInputArgs>? _variables;
+
+        /// <summary>
+        /// A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `variable_definition_file` and `variable_values_file` arguments. A `variables` block includes:
+        /// </summary>
         public InputList<Inputs.GetPropertyRulesTemplateVariableInputArgs> Variables
         {
             get => _variables ?? (_variables = new InputList<Inputs.GetPropertyRulesTemplateVariableInputArgs>());

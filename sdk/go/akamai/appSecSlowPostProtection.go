@@ -162,7 +162,7 @@ type AppSecSlowPostProtectionInput interface {
 }
 
 func (*AppSecSlowPostProtection) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecSlowPostProtection)(nil))
+	return reflect.TypeOf((**AppSecSlowPostProtection)(nil)).Elem()
 }
 
 func (i *AppSecSlowPostProtection) ToAppSecSlowPostProtectionOutput() AppSecSlowPostProtectionOutput {
@@ -171,35 +171,6 @@ func (i *AppSecSlowPostProtection) ToAppSecSlowPostProtectionOutput() AppSecSlow
 
 func (i *AppSecSlowPostProtection) ToAppSecSlowPostProtectionOutputWithContext(ctx context.Context) AppSecSlowPostProtectionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSlowPostProtectionOutput)
-}
-
-func (i *AppSecSlowPostProtection) ToAppSecSlowPostProtectionPtrOutput() AppSecSlowPostProtectionPtrOutput {
-	return i.ToAppSecSlowPostProtectionPtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecSlowPostProtection) ToAppSecSlowPostProtectionPtrOutputWithContext(ctx context.Context) AppSecSlowPostProtectionPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecSlowPostProtectionPtrOutput)
-}
-
-type AppSecSlowPostProtectionPtrInput interface {
-	pulumi.Input
-
-	ToAppSecSlowPostProtectionPtrOutput() AppSecSlowPostProtectionPtrOutput
-	ToAppSecSlowPostProtectionPtrOutputWithContext(ctx context.Context) AppSecSlowPostProtectionPtrOutput
-}
-
-type appSecSlowPostProtectionPtrType AppSecSlowPostProtectionArgs
-
-func (*appSecSlowPostProtectionPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecSlowPostProtection)(nil))
-}
-
-func (i *appSecSlowPostProtectionPtrType) ToAppSecSlowPostProtectionPtrOutput() AppSecSlowPostProtectionPtrOutput {
-	return i.ToAppSecSlowPostProtectionPtrOutputWithContext(context.Background())
-}
-
-func (i *appSecSlowPostProtectionPtrType) ToAppSecSlowPostProtectionPtrOutputWithContext(ctx context.Context) AppSecSlowPostProtectionPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecSlowPostProtectionPtrOutput)
 }
 
 // AppSecSlowPostProtectionArrayInput is an input type that accepts AppSecSlowPostProtectionArray and AppSecSlowPostProtectionArrayOutput values.
@@ -255,7 +226,7 @@ func (i AppSecSlowPostProtectionMap) ToAppSecSlowPostProtectionMapOutputWithCont
 type AppSecSlowPostProtectionOutput struct{ *pulumi.OutputState }
 
 func (AppSecSlowPostProtectionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecSlowPostProtection)(nil))
+	return reflect.TypeOf((**AppSecSlowPostProtection)(nil)).Elem()
 }
 
 func (o AppSecSlowPostProtectionOutput) ToAppSecSlowPostProtectionOutput() AppSecSlowPostProtectionOutput {
@@ -266,44 +237,10 @@ func (o AppSecSlowPostProtectionOutput) ToAppSecSlowPostProtectionOutputWithCont
 	return o
 }
 
-func (o AppSecSlowPostProtectionOutput) ToAppSecSlowPostProtectionPtrOutput() AppSecSlowPostProtectionPtrOutput {
-	return o.ToAppSecSlowPostProtectionPtrOutputWithContext(context.Background())
-}
-
-func (o AppSecSlowPostProtectionOutput) ToAppSecSlowPostProtectionPtrOutputWithContext(ctx context.Context) AppSecSlowPostProtectionPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecSlowPostProtection) *AppSecSlowPostProtection {
-		return &v
-	}).(AppSecSlowPostProtectionPtrOutput)
-}
-
-type AppSecSlowPostProtectionPtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecSlowPostProtectionPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecSlowPostProtection)(nil))
-}
-
-func (o AppSecSlowPostProtectionPtrOutput) ToAppSecSlowPostProtectionPtrOutput() AppSecSlowPostProtectionPtrOutput {
-	return o
-}
-
-func (o AppSecSlowPostProtectionPtrOutput) ToAppSecSlowPostProtectionPtrOutputWithContext(ctx context.Context) AppSecSlowPostProtectionPtrOutput {
-	return o
-}
-
-func (o AppSecSlowPostProtectionPtrOutput) Elem() AppSecSlowPostProtectionOutput {
-	return o.ApplyT(func(v *AppSecSlowPostProtection) AppSecSlowPostProtection {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecSlowPostProtection
-		return ret
-	}).(AppSecSlowPostProtectionOutput)
-}
-
 type AppSecSlowPostProtectionArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecSlowPostProtectionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecSlowPostProtection)(nil))
+	return reflect.TypeOf((*[]*AppSecSlowPostProtection)(nil)).Elem()
 }
 
 func (o AppSecSlowPostProtectionArrayOutput) ToAppSecSlowPostProtectionArrayOutput() AppSecSlowPostProtectionArrayOutput {
@@ -315,15 +252,15 @@ func (o AppSecSlowPostProtectionArrayOutput) ToAppSecSlowPostProtectionArrayOutp
 }
 
 func (o AppSecSlowPostProtectionArrayOutput) Index(i pulumi.IntInput) AppSecSlowPostProtectionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecSlowPostProtection {
-		return vs[0].([]AppSecSlowPostProtection)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecSlowPostProtection {
+		return vs[0].([]*AppSecSlowPostProtection)[vs[1].(int)]
 	}).(AppSecSlowPostProtectionOutput)
 }
 
 type AppSecSlowPostProtectionMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecSlowPostProtectionMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecSlowPostProtection)(nil))
+	return reflect.TypeOf((*map[string]*AppSecSlowPostProtection)(nil)).Elem()
 }
 
 func (o AppSecSlowPostProtectionMapOutput) ToAppSecSlowPostProtectionMapOutput() AppSecSlowPostProtectionMapOutput {
@@ -335,18 +272,16 @@ func (o AppSecSlowPostProtectionMapOutput) ToAppSecSlowPostProtectionMapOutputWi
 }
 
 func (o AppSecSlowPostProtectionMapOutput) MapIndex(k pulumi.StringInput) AppSecSlowPostProtectionOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecSlowPostProtection {
-		return vs[0].(map[string]AppSecSlowPostProtection)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecSlowPostProtection {
+		return vs[0].(map[string]*AppSecSlowPostProtection)[vs[1].(string)]
 	}).(AppSecSlowPostProtectionOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSlowPostProtectionInput)(nil)).Elem(), &AppSecSlowPostProtection{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSlowPostProtectionPtrInput)(nil)).Elem(), &AppSecSlowPostProtection{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSlowPostProtectionArrayInput)(nil)).Elem(), AppSecSlowPostProtectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecSlowPostProtectionMapInput)(nil)).Elem(), AppSecSlowPostProtectionMap{})
 	pulumi.RegisterOutputType(AppSecSlowPostProtectionOutput{})
-	pulumi.RegisterOutputType(AppSecSlowPostProtectionPtrOutput{})
 	pulumi.RegisterOutputType(AppSecSlowPostProtectionArrayOutput{})
 	pulumi.RegisterOutputType(AppSecSlowPostProtectionMapOutput{})
 }

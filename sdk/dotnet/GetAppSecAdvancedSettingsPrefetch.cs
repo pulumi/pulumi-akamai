@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -57,7 +56,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the prefetch request settings.
         /// </summary>
         public static Task<GetAppSecAdvancedSettingsPrefetchResult> InvokeAsync(GetAppSecAdvancedSettingsPrefetchArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAdvancedSettingsPrefetchResult>("akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch", args ?? new GetAppSecAdvancedSettingsPrefetchArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAdvancedSettingsPrefetchResult>("akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch", args ?? new GetAppSecAdvancedSettingsPrefetchArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration
@@ -104,7 +103,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the prefetch request settings.
         /// </summary>
         public static Output<GetAppSecAdvancedSettingsPrefetchResult> Invoke(GetAppSecAdvancedSettingsPrefetchInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsPrefetchResult>("akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch", args ?? new GetAppSecAdvancedSettingsPrefetchInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsPrefetchResult>("akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch", args ?? new GetAppSecAdvancedSettingsPrefetchInvokeArgs(), options.WithDefaults());
     }
 
 

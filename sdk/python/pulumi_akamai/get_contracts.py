@@ -67,10 +67,6 @@ def get_contracts(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCo
     my_example = akamai.get_contracts()
     pulumi.export("propertyMatch", my_example)
     ```
-    ## Argument reference
-
-    There are no arguments available for this data source.
-
     ## Attributes reference
 
     This data source returns these attributes:

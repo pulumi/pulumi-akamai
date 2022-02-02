@@ -12,9 +12,15 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GtmCidrmapDefaultDatacenterGetArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// A unique identifier for an existing data center in the domain.
+        /// </summary>
         [Input("datacenterId", required: true)]
         public Input<int> DatacenterId { get; set; } = null!;
 
+        /// <summary>
+        /// A descriptive label for the CIDR zone group, up to 256 characters.
+        /// </summary>
         [Input("nickname")]
         public Input<string>? Nickname { get; set; }
 

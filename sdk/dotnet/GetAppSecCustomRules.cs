@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -72,7 +71,7 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted report of the custom rule information.
         /// </summary>
         public static Task<GetAppSecCustomRulesResult> InvokeAsync(GetAppSecCustomRulesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecCustomRulesResult>("akamai:index/getAppSecCustomRules:getAppSecCustomRules", args ?? new GetAppSecCustomRulesArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecCustomRulesResult>("akamai:index/getAppSecCustomRules:getAppSecCustomRules", args ?? new GetAppSecCustomRulesArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; custom rule
@@ -134,7 +133,7 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted report of the custom rule information.
         /// </summary>
         public static Output<GetAppSecCustomRulesResult> Invoke(GetAppSecCustomRulesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecCustomRulesResult>("akamai:index/getAppSecCustomRules:getAppSecCustomRules", args ?? new GetAppSecCustomRulesInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecCustomRulesResult>("akamai:index/getAppSecCustomRules:getAppSecCustomRules", args ?? new GetAppSecCustomRulesInvokeArgs(), options.WithDefaults());
     }
 
 

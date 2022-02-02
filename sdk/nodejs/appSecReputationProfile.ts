@@ -84,13 +84,13 @@ export class AppSecReputationProfile extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecReputationProfileArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecReputationProfileArgs | AppSecReputationProfileState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecReputationProfileState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["reputationProfile"] = state ? state.reputationProfile : undefined;
-            inputs["reputationProfileId"] = state ? state.reputationProfileId : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["reputationProfile"] = state ? state.reputationProfile : undefined;
+            resourceInputs["reputationProfileId"] = state ? state.reputationProfileId : undefined;
         } else {
             const args = argsOrState as AppSecReputationProfileArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -99,14 +99,12 @@ export class AppSecReputationProfile extends pulumi.CustomResource {
             if ((!args || args.reputationProfile === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'reputationProfile'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["reputationProfile"] = args ? args.reputationProfile : undefined;
-            inputs["reputationProfileId"] = undefined /*out*/;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["reputationProfile"] = args ? args.reputationProfile : undefined;
+            resourceInputs["reputationProfileId"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecReputationProfile.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecReputationProfile.__pulumiType, name, resourceInputs, opts);
     }
 }
 

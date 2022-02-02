@@ -107,7 +107,7 @@ type AppSecCustomRuleInput interface {
 }
 
 func (*AppSecCustomRule) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecCustomRule)(nil))
+	return reflect.TypeOf((**AppSecCustomRule)(nil)).Elem()
 }
 
 func (i *AppSecCustomRule) ToAppSecCustomRuleOutput() AppSecCustomRuleOutput {
@@ -116,35 +116,6 @@ func (i *AppSecCustomRule) ToAppSecCustomRuleOutput() AppSecCustomRuleOutput {
 
 func (i *AppSecCustomRule) ToAppSecCustomRuleOutputWithContext(ctx context.Context) AppSecCustomRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomRuleOutput)
-}
-
-func (i *AppSecCustomRule) ToAppSecCustomRulePtrOutput() AppSecCustomRulePtrOutput {
-	return i.ToAppSecCustomRulePtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecCustomRule) ToAppSecCustomRulePtrOutputWithContext(ctx context.Context) AppSecCustomRulePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomRulePtrOutput)
-}
-
-type AppSecCustomRulePtrInput interface {
-	pulumi.Input
-
-	ToAppSecCustomRulePtrOutput() AppSecCustomRulePtrOutput
-	ToAppSecCustomRulePtrOutputWithContext(ctx context.Context) AppSecCustomRulePtrOutput
-}
-
-type appSecCustomRulePtrType AppSecCustomRuleArgs
-
-func (*appSecCustomRulePtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecCustomRule)(nil))
-}
-
-func (i *appSecCustomRulePtrType) ToAppSecCustomRulePtrOutput() AppSecCustomRulePtrOutput {
-	return i.ToAppSecCustomRulePtrOutputWithContext(context.Background())
-}
-
-func (i *appSecCustomRulePtrType) ToAppSecCustomRulePtrOutputWithContext(ctx context.Context) AppSecCustomRulePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomRulePtrOutput)
 }
 
 // AppSecCustomRuleArrayInput is an input type that accepts AppSecCustomRuleArray and AppSecCustomRuleArrayOutput values.
@@ -200,7 +171,7 @@ func (i AppSecCustomRuleMap) ToAppSecCustomRuleMapOutputWithContext(ctx context.
 type AppSecCustomRuleOutput struct{ *pulumi.OutputState }
 
 func (AppSecCustomRuleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecCustomRule)(nil))
+	return reflect.TypeOf((**AppSecCustomRule)(nil)).Elem()
 }
 
 func (o AppSecCustomRuleOutput) ToAppSecCustomRuleOutput() AppSecCustomRuleOutput {
@@ -211,44 +182,10 @@ func (o AppSecCustomRuleOutput) ToAppSecCustomRuleOutputWithContext(ctx context.
 	return o
 }
 
-func (o AppSecCustomRuleOutput) ToAppSecCustomRulePtrOutput() AppSecCustomRulePtrOutput {
-	return o.ToAppSecCustomRulePtrOutputWithContext(context.Background())
-}
-
-func (o AppSecCustomRuleOutput) ToAppSecCustomRulePtrOutputWithContext(ctx context.Context) AppSecCustomRulePtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecCustomRule) *AppSecCustomRule {
-		return &v
-	}).(AppSecCustomRulePtrOutput)
-}
-
-type AppSecCustomRulePtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecCustomRulePtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecCustomRule)(nil))
-}
-
-func (o AppSecCustomRulePtrOutput) ToAppSecCustomRulePtrOutput() AppSecCustomRulePtrOutput {
-	return o
-}
-
-func (o AppSecCustomRulePtrOutput) ToAppSecCustomRulePtrOutputWithContext(ctx context.Context) AppSecCustomRulePtrOutput {
-	return o
-}
-
-func (o AppSecCustomRulePtrOutput) Elem() AppSecCustomRuleOutput {
-	return o.ApplyT(func(v *AppSecCustomRule) AppSecCustomRule {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecCustomRule
-		return ret
-	}).(AppSecCustomRuleOutput)
-}
-
 type AppSecCustomRuleArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecCustomRuleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecCustomRule)(nil))
+	return reflect.TypeOf((*[]*AppSecCustomRule)(nil)).Elem()
 }
 
 func (o AppSecCustomRuleArrayOutput) ToAppSecCustomRuleArrayOutput() AppSecCustomRuleArrayOutput {
@@ -260,15 +197,15 @@ func (o AppSecCustomRuleArrayOutput) ToAppSecCustomRuleArrayOutputWithContext(ct
 }
 
 func (o AppSecCustomRuleArrayOutput) Index(i pulumi.IntInput) AppSecCustomRuleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecCustomRule {
-		return vs[0].([]AppSecCustomRule)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecCustomRule {
+		return vs[0].([]*AppSecCustomRule)[vs[1].(int)]
 	}).(AppSecCustomRuleOutput)
 }
 
 type AppSecCustomRuleMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecCustomRuleMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecCustomRule)(nil))
+	return reflect.TypeOf((*map[string]*AppSecCustomRule)(nil)).Elem()
 }
 
 func (o AppSecCustomRuleMapOutput) ToAppSecCustomRuleMapOutput() AppSecCustomRuleMapOutput {
@@ -280,18 +217,16 @@ func (o AppSecCustomRuleMapOutput) ToAppSecCustomRuleMapOutputWithContext(ctx co
 }
 
 func (o AppSecCustomRuleMapOutput) MapIndex(k pulumi.StringInput) AppSecCustomRuleOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecCustomRule {
-		return vs[0].(map[string]AppSecCustomRule)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecCustomRule {
+		return vs[0].(map[string]*AppSecCustomRule)[vs[1].(string)]
 	}).(AppSecCustomRuleOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecCustomRuleInput)(nil)).Elem(), &AppSecCustomRule{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecCustomRulePtrInput)(nil)).Elem(), &AppSecCustomRule{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecCustomRuleArrayInput)(nil)).Elem(), AppSecCustomRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecCustomRuleMapInput)(nil)).Elem(), AppSecCustomRuleMap{})
 	pulumi.RegisterOutputType(AppSecCustomRuleOutput{})
-	pulumi.RegisterOutputType(AppSecCustomRulePtrOutput{})
 	pulumi.RegisterOutputType(AppSecCustomRuleArrayOutput{})
 	pulumi.RegisterOutputType(AppSecCustomRuleMapOutput{})
 }

@@ -46,9 +46,7 @@ export function getAppSecEvalHostnames(args: GetAppSecEvalHostnamesArgs, opts?: 
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecEvalHostnames:getAppSecEvalHostnames", {
         "configId": args.configId,
     }, opts);

@@ -45,32 +45,22 @@ import (
 // 	})
 // }
 // ```
-// ## Argument reference
-//
-// This resource supports these arguments:
-//
-// * `domain` - (Required) GTM Domain name for the AS Map.
-// * `name` - (Required) A descriptive label for the CIDR map, up to 255 characters.
-// * `defaultDatacenter` - (Required) A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
-//   * `datacenterId` - (Required) For each property, an identifier for all other CIDR zones.
-//   * `nickname` - (Required) A descriptive label for the all other CIDR blocks.
-// * `waitOnComplete` - (Optional) A boolean that, if set to `true`, waits for transaction to complete.
-// * `assignment` - (Optional) Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
-//   * `datacenterId` - (Optional) A unique identifier for an existing data center in the domain.
-//   * `nickname` - (Optional) A descriptive label for the CIDR zone group, up to 256 characters.
-//   * `blocks` - (Optional, list) Specifies an array of CIDR blocks.
-//
 // ## Schema reference
 //
 // You can download the GTM CIDR Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#cidrmap) page.
 type GtmCidrmap struct {
 	pulumi.CustomResourceState
 
-	Assignments       GtmCidrmapAssignmentArrayOutput   `pulumi:"assignments"`
+	// Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+	Assignments GtmCidrmapAssignmentArrayOutput `pulumi:"assignments"`
+	// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
 	DefaultDatacenter GtmCidrmapDefaultDatacenterOutput `pulumi:"defaultDatacenter"`
-	Domain            pulumi.StringOutput               `pulumi:"domain"`
-	Name              pulumi.StringOutput               `pulumi:"name"`
-	WaitOnComplete    pulumi.BoolPtrOutput              `pulumi:"waitOnComplete"`
+	// GTM Domain name for the AS Map.
+	Domain pulumi.StringOutput `pulumi:"domain"`
+	// A descriptive label for the CIDR map, up to 255 characters.
+	Name pulumi.StringOutput `pulumi:"name"`
+	// A boolean that, if set to `true`, waits for transaction to complete.
+	WaitOnComplete pulumi.BoolPtrOutput `pulumi:"waitOnComplete"`
 }
 
 // NewGtmCidrmap registers a new resource with the given unique name, arguments, and options.
@@ -114,19 +104,29 @@ func GetGtmCidrmap(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering GtmCidrmap resources.
 type gtmCidrmapState struct {
-	Assignments       []GtmCidrmapAssignment       `pulumi:"assignments"`
+	// Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+	Assignments []GtmCidrmapAssignment `pulumi:"assignments"`
+	// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
 	DefaultDatacenter *GtmCidrmapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	Domain            *string                      `pulumi:"domain"`
-	Name              *string                      `pulumi:"name"`
-	WaitOnComplete    *bool                        `pulumi:"waitOnComplete"`
+	// GTM Domain name for the AS Map.
+	Domain *string `pulumi:"domain"`
+	// A descriptive label for the CIDR map, up to 255 characters.
+	Name *string `pulumi:"name"`
+	// A boolean that, if set to `true`, waits for transaction to complete.
+	WaitOnComplete *bool `pulumi:"waitOnComplete"`
 }
 
 type GtmCidrmapState struct {
-	Assignments       GtmCidrmapAssignmentArrayInput
+	// Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+	Assignments GtmCidrmapAssignmentArrayInput
+	// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
 	DefaultDatacenter GtmCidrmapDefaultDatacenterPtrInput
-	Domain            pulumi.StringPtrInput
-	Name              pulumi.StringPtrInput
-	WaitOnComplete    pulumi.BoolPtrInput
+	// GTM Domain name for the AS Map.
+	Domain pulumi.StringPtrInput
+	// A descriptive label for the CIDR map, up to 255 characters.
+	Name pulumi.StringPtrInput
+	// A boolean that, if set to `true`, waits for transaction to complete.
+	WaitOnComplete pulumi.BoolPtrInput
 }
 
 func (GtmCidrmapState) ElementType() reflect.Type {
@@ -134,20 +134,30 @@ func (GtmCidrmapState) ElementType() reflect.Type {
 }
 
 type gtmCidrmapArgs struct {
-	Assignments       []GtmCidrmapAssignment      `pulumi:"assignments"`
+	// Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+	Assignments []GtmCidrmapAssignment `pulumi:"assignments"`
+	// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
 	DefaultDatacenter GtmCidrmapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	Domain            string                      `pulumi:"domain"`
-	Name              *string                     `pulumi:"name"`
-	WaitOnComplete    *bool                       `pulumi:"waitOnComplete"`
+	// GTM Domain name for the AS Map.
+	Domain string `pulumi:"domain"`
+	// A descriptive label for the CIDR map, up to 255 characters.
+	Name *string `pulumi:"name"`
+	// A boolean that, if set to `true`, waits for transaction to complete.
+	WaitOnComplete *bool `pulumi:"waitOnComplete"`
 }
 
 // The set of arguments for constructing a GtmCidrmap resource.
 type GtmCidrmapArgs struct {
-	Assignments       GtmCidrmapAssignmentArrayInput
+	// Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+	Assignments GtmCidrmapAssignmentArrayInput
+	// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
 	DefaultDatacenter GtmCidrmapDefaultDatacenterInput
-	Domain            pulumi.StringInput
-	Name              pulumi.StringPtrInput
-	WaitOnComplete    pulumi.BoolPtrInput
+	// GTM Domain name for the AS Map.
+	Domain pulumi.StringInput
+	// A descriptive label for the CIDR map, up to 255 characters.
+	Name pulumi.StringPtrInput
+	// A boolean that, if set to `true`, waits for transaction to complete.
+	WaitOnComplete pulumi.BoolPtrInput
 }
 
 func (GtmCidrmapArgs) ElementType() reflect.Type {
@@ -162,7 +172,7 @@ type GtmCidrmapInput interface {
 }
 
 func (*GtmCidrmap) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmCidrmap)(nil))
+	return reflect.TypeOf((**GtmCidrmap)(nil)).Elem()
 }
 
 func (i *GtmCidrmap) ToGtmCidrmapOutput() GtmCidrmapOutput {
@@ -171,35 +181,6 @@ func (i *GtmCidrmap) ToGtmCidrmapOutput() GtmCidrmapOutput {
 
 func (i *GtmCidrmap) ToGtmCidrmapOutputWithContext(ctx context.Context) GtmCidrmapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GtmCidrmapOutput)
-}
-
-func (i *GtmCidrmap) ToGtmCidrmapPtrOutput() GtmCidrmapPtrOutput {
-	return i.ToGtmCidrmapPtrOutputWithContext(context.Background())
-}
-
-func (i *GtmCidrmap) ToGtmCidrmapPtrOutputWithContext(ctx context.Context) GtmCidrmapPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GtmCidrmapPtrOutput)
-}
-
-type GtmCidrmapPtrInput interface {
-	pulumi.Input
-
-	ToGtmCidrmapPtrOutput() GtmCidrmapPtrOutput
-	ToGtmCidrmapPtrOutputWithContext(ctx context.Context) GtmCidrmapPtrOutput
-}
-
-type gtmCidrmapPtrType GtmCidrmapArgs
-
-func (*gtmCidrmapPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**GtmCidrmap)(nil))
-}
-
-func (i *gtmCidrmapPtrType) ToGtmCidrmapPtrOutput() GtmCidrmapPtrOutput {
-	return i.ToGtmCidrmapPtrOutputWithContext(context.Background())
-}
-
-func (i *gtmCidrmapPtrType) ToGtmCidrmapPtrOutputWithContext(ctx context.Context) GtmCidrmapPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GtmCidrmapPtrOutput)
 }
 
 // GtmCidrmapArrayInput is an input type that accepts GtmCidrmapArray and GtmCidrmapArrayOutput values.
@@ -255,7 +236,7 @@ func (i GtmCidrmapMap) ToGtmCidrmapMapOutputWithContext(ctx context.Context) Gtm
 type GtmCidrmapOutput struct{ *pulumi.OutputState }
 
 func (GtmCidrmapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmCidrmap)(nil))
+	return reflect.TypeOf((**GtmCidrmap)(nil)).Elem()
 }
 
 func (o GtmCidrmapOutput) ToGtmCidrmapOutput() GtmCidrmapOutput {
@@ -266,44 +247,10 @@ func (o GtmCidrmapOutput) ToGtmCidrmapOutputWithContext(ctx context.Context) Gtm
 	return o
 }
 
-func (o GtmCidrmapOutput) ToGtmCidrmapPtrOutput() GtmCidrmapPtrOutput {
-	return o.ToGtmCidrmapPtrOutputWithContext(context.Background())
-}
-
-func (o GtmCidrmapOutput) ToGtmCidrmapPtrOutputWithContext(ctx context.Context) GtmCidrmapPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmCidrmap) *GtmCidrmap {
-		return &v
-	}).(GtmCidrmapPtrOutput)
-}
-
-type GtmCidrmapPtrOutput struct{ *pulumi.OutputState }
-
-func (GtmCidrmapPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**GtmCidrmap)(nil))
-}
-
-func (o GtmCidrmapPtrOutput) ToGtmCidrmapPtrOutput() GtmCidrmapPtrOutput {
-	return o
-}
-
-func (o GtmCidrmapPtrOutput) ToGtmCidrmapPtrOutputWithContext(ctx context.Context) GtmCidrmapPtrOutput {
-	return o
-}
-
-func (o GtmCidrmapPtrOutput) Elem() GtmCidrmapOutput {
-	return o.ApplyT(func(v *GtmCidrmap) GtmCidrmap {
-		if v != nil {
-			return *v
-		}
-		var ret GtmCidrmap
-		return ret
-	}).(GtmCidrmapOutput)
-}
-
 type GtmCidrmapArrayOutput struct{ *pulumi.OutputState }
 
 func (GtmCidrmapArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GtmCidrmap)(nil))
+	return reflect.TypeOf((*[]*GtmCidrmap)(nil)).Elem()
 }
 
 func (o GtmCidrmapArrayOutput) ToGtmCidrmapArrayOutput() GtmCidrmapArrayOutput {
@@ -315,15 +262,15 @@ func (o GtmCidrmapArrayOutput) ToGtmCidrmapArrayOutputWithContext(ctx context.Co
 }
 
 func (o GtmCidrmapArrayOutput) Index(i pulumi.IntInput) GtmCidrmapOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmCidrmap {
-		return vs[0].([]GtmCidrmap)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *GtmCidrmap {
+		return vs[0].([]*GtmCidrmap)[vs[1].(int)]
 	}).(GtmCidrmapOutput)
 }
 
 type GtmCidrmapMapOutput struct{ *pulumi.OutputState }
 
 func (GtmCidrmapMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]GtmCidrmap)(nil))
+	return reflect.TypeOf((*map[string]*GtmCidrmap)(nil)).Elem()
 }
 
 func (o GtmCidrmapMapOutput) ToGtmCidrmapMapOutput() GtmCidrmapMapOutput {
@@ -335,18 +282,16 @@ func (o GtmCidrmapMapOutput) ToGtmCidrmapMapOutputWithContext(ctx context.Contex
 }
 
 func (o GtmCidrmapMapOutput) MapIndex(k pulumi.StringInput) GtmCidrmapOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GtmCidrmap {
-		return vs[0].(map[string]GtmCidrmap)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *GtmCidrmap {
+		return vs[0].(map[string]*GtmCidrmap)[vs[1].(string)]
 	}).(GtmCidrmapOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GtmCidrmapInput)(nil)).Elem(), &GtmCidrmap{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GtmCidrmapPtrInput)(nil)).Elem(), &GtmCidrmap{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GtmCidrmapArrayInput)(nil)).Elem(), GtmCidrmapArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GtmCidrmapMapInput)(nil)).Elem(), GtmCidrmapMap{})
 	pulumi.RegisterOutputType(GtmCidrmapOutput{})
-	pulumi.RegisterOutputType(GtmCidrmapPtrOutput{})
 	pulumi.RegisterOutputType(GtmCidrmapArrayOutput{})
 	pulumi.RegisterOutputType(GtmCidrmapMapOutput{})
 }

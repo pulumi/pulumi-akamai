@@ -162,7 +162,7 @@ type AppSecRateProtectionInput interface {
 }
 
 func (*AppSecRateProtection) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecRateProtection)(nil))
+	return reflect.TypeOf((**AppSecRateProtection)(nil)).Elem()
 }
 
 func (i *AppSecRateProtection) ToAppSecRateProtectionOutput() AppSecRateProtectionOutput {
@@ -171,35 +171,6 @@ func (i *AppSecRateProtection) ToAppSecRateProtectionOutput() AppSecRateProtecti
 
 func (i *AppSecRateProtection) ToAppSecRateProtectionOutputWithContext(ctx context.Context) AppSecRateProtectionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecRateProtectionOutput)
-}
-
-func (i *AppSecRateProtection) ToAppSecRateProtectionPtrOutput() AppSecRateProtectionPtrOutput {
-	return i.ToAppSecRateProtectionPtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecRateProtection) ToAppSecRateProtectionPtrOutputWithContext(ctx context.Context) AppSecRateProtectionPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecRateProtectionPtrOutput)
-}
-
-type AppSecRateProtectionPtrInput interface {
-	pulumi.Input
-
-	ToAppSecRateProtectionPtrOutput() AppSecRateProtectionPtrOutput
-	ToAppSecRateProtectionPtrOutputWithContext(ctx context.Context) AppSecRateProtectionPtrOutput
-}
-
-type appSecRateProtectionPtrType AppSecRateProtectionArgs
-
-func (*appSecRateProtectionPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecRateProtection)(nil))
-}
-
-func (i *appSecRateProtectionPtrType) ToAppSecRateProtectionPtrOutput() AppSecRateProtectionPtrOutput {
-	return i.ToAppSecRateProtectionPtrOutputWithContext(context.Background())
-}
-
-func (i *appSecRateProtectionPtrType) ToAppSecRateProtectionPtrOutputWithContext(ctx context.Context) AppSecRateProtectionPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecRateProtectionPtrOutput)
 }
 
 // AppSecRateProtectionArrayInput is an input type that accepts AppSecRateProtectionArray and AppSecRateProtectionArrayOutput values.
@@ -255,7 +226,7 @@ func (i AppSecRateProtectionMap) ToAppSecRateProtectionMapOutputWithContext(ctx 
 type AppSecRateProtectionOutput struct{ *pulumi.OutputState }
 
 func (AppSecRateProtectionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecRateProtection)(nil))
+	return reflect.TypeOf((**AppSecRateProtection)(nil)).Elem()
 }
 
 func (o AppSecRateProtectionOutput) ToAppSecRateProtectionOutput() AppSecRateProtectionOutput {
@@ -266,44 +237,10 @@ func (o AppSecRateProtectionOutput) ToAppSecRateProtectionOutputWithContext(ctx 
 	return o
 }
 
-func (o AppSecRateProtectionOutput) ToAppSecRateProtectionPtrOutput() AppSecRateProtectionPtrOutput {
-	return o.ToAppSecRateProtectionPtrOutputWithContext(context.Background())
-}
-
-func (o AppSecRateProtectionOutput) ToAppSecRateProtectionPtrOutputWithContext(ctx context.Context) AppSecRateProtectionPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecRateProtection) *AppSecRateProtection {
-		return &v
-	}).(AppSecRateProtectionPtrOutput)
-}
-
-type AppSecRateProtectionPtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecRateProtectionPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecRateProtection)(nil))
-}
-
-func (o AppSecRateProtectionPtrOutput) ToAppSecRateProtectionPtrOutput() AppSecRateProtectionPtrOutput {
-	return o
-}
-
-func (o AppSecRateProtectionPtrOutput) ToAppSecRateProtectionPtrOutputWithContext(ctx context.Context) AppSecRateProtectionPtrOutput {
-	return o
-}
-
-func (o AppSecRateProtectionPtrOutput) Elem() AppSecRateProtectionOutput {
-	return o.ApplyT(func(v *AppSecRateProtection) AppSecRateProtection {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecRateProtection
-		return ret
-	}).(AppSecRateProtectionOutput)
-}
-
 type AppSecRateProtectionArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecRateProtectionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecRateProtection)(nil))
+	return reflect.TypeOf((*[]*AppSecRateProtection)(nil)).Elem()
 }
 
 func (o AppSecRateProtectionArrayOutput) ToAppSecRateProtectionArrayOutput() AppSecRateProtectionArrayOutput {
@@ -315,15 +252,15 @@ func (o AppSecRateProtectionArrayOutput) ToAppSecRateProtectionArrayOutputWithCo
 }
 
 func (o AppSecRateProtectionArrayOutput) Index(i pulumi.IntInput) AppSecRateProtectionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecRateProtection {
-		return vs[0].([]AppSecRateProtection)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecRateProtection {
+		return vs[0].([]*AppSecRateProtection)[vs[1].(int)]
 	}).(AppSecRateProtectionOutput)
 }
 
 type AppSecRateProtectionMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecRateProtectionMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecRateProtection)(nil))
+	return reflect.TypeOf((*map[string]*AppSecRateProtection)(nil)).Elem()
 }
 
 func (o AppSecRateProtectionMapOutput) ToAppSecRateProtectionMapOutput() AppSecRateProtectionMapOutput {
@@ -335,18 +272,16 @@ func (o AppSecRateProtectionMapOutput) ToAppSecRateProtectionMapOutputWithContex
 }
 
 func (o AppSecRateProtectionMapOutput) MapIndex(k pulumi.StringInput) AppSecRateProtectionOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecRateProtection {
-		return vs[0].(map[string]AppSecRateProtection)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecRateProtection {
+		return vs[0].(map[string]*AppSecRateProtection)[vs[1].(string)]
 	}).(AppSecRateProtectionOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRateProtectionInput)(nil)).Elem(), &AppSecRateProtection{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRateProtectionPtrInput)(nil)).Elem(), &AppSecRateProtection{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRateProtectionArrayInput)(nil)).Elem(), AppSecRateProtectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRateProtectionMapInput)(nil)).Elem(), AppSecRateProtectionMap{})
 	pulumi.RegisterOutputType(AppSecRateProtectionOutput{})
-	pulumi.RegisterOutputType(AppSecRateProtectionPtrOutput{})
 	pulumi.RegisterOutputType(AppSecRateProtectionArrayOutput{})
 	pulumi.RegisterOutputType(AppSecRateProtectionMapOutput{})
 }

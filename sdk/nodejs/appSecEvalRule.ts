@@ -96,15 +96,15 @@ export class AppSecEvalRule extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecEvalRuleArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecEvalRuleArgs | AppSecEvalRuleState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecEvalRuleState | undefined;
-            inputs["conditionException"] = state ? state.conditionException : undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["ruleAction"] = state ? state.ruleAction : undefined;
-            inputs["ruleId"] = state ? state.ruleId : undefined;
-            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["conditionException"] = state ? state.conditionException : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["ruleAction"] = state ? state.ruleAction : undefined;
+            resourceInputs["ruleId"] = state ? state.ruleId : undefined;
+            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
         } else {
             const args = argsOrState as AppSecEvalRuleArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -119,16 +119,14 @@ export class AppSecEvalRule extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            inputs["conditionException"] = args ? args.conditionException : undefined;
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["ruleAction"] = args ? args.ruleAction : undefined;
-            inputs["ruleId"] = args ? args.ruleId : undefined;
-            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["conditionException"] = args ? args.conditionException : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["ruleAction"] = args ? args.ruleAction : undefined;
+            resourceInputs["ruleId"] = args ? args.ruleId : undefined;
+            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecEvalRule.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecEvalRule.__pulumiType, name, resourceInputs, opts);
     }
 }
 

@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai.Properties
 {
@@ -14,10 +13,10 @@ namespace Pulumi.Akamai.Properties
     public static class GetProperty
     {
         public static Task<GetPropertyResult> InvokeAsync(GetPropertyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyResult>("akamai:properties/getProperty:getProperty", args ?? new GetPropertyArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyResult>("akamai:properties/getProperty:getProperty", args ?? new GetPropertyArgs(), options.WithDefaults());
 
         public static Output<GetPropertyResult> Invoke(GetPropertyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPropertyResult>("akamai:properties/getProperty:getProperty", args ?? new GetPropertyInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetPropertyResult>("akamai:properties/getProperty:getProperty", args ?? new GetPropertyInvokeArgs(), options.WithDefaults());
     }
 
 

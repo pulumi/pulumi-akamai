@@ -50,9 +50,7 @@ export function getAppSecEvalRules(args: GetAppSecEvalRulesArgs, opts?: pulumi.I
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecEvalRules:getAppSecEvalRules", {
         "configId": args.configId,
         "ruleId": args.ruleId,

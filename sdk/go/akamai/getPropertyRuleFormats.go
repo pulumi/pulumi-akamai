@@ -32,9 +32,6 @@ import (
 // 	})
 // }
 // ```
-// ## Argument reference
-//
-// There are no arguments available for this data source.
 func GetPropertyRuleFormats(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetPropertyRuleFormatsResult, error) {
 	var rv GetPropertyRuleFormatsResult
 	err := ctx.Invoke("akamai:index/getPropertyRuleFormats:getPropertyRuleFormats", nil, &rv, opts...)

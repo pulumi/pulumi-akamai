@@ -166,7 +166,7 @@ type GtmDatacenterInput interface {
 }
 
 func (*GtmDatacenter) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmDatacenter)(nil))
+	return reflect.TypeOf((**GtmDatacenter)(nil)).Elem()
 }
 
 func (i *GtmDatacenter) ToGtmDatacenterOutput() GtmDatacenterOutput {
@@ -175,35 +175,6 @@ func (i *GtmDatacenter) ToGtmDatacenterOutput() GtmDatacenterOutput {
 
 func (i *GtmDatacenter) ToGtmDatacenterOutputWithContext(ctx context.Context) GtmDatacenterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GtmDatacenterOutput)
-}
-
-func (i *GtmDatacenter) ToGtmDatacenterPtrOutput() GtmDatacenterPtrOutput {
-	return i.ToGtmDatacenterPtrOutputWithContext(context.Background())
-}
-
-func (i *GtmDatacenter) ToGtmDatacenterPtrOutputWithContext(ctx context.Context) GtmDatacenterPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GtmDatacenterPtrOutput)
-}
-
-type GtmDatacenterPtrInput interface {
-	pulumi.Input
-
-	ToGtmDatacenterPtrOutput() GtmDatacenterPtrOutput
-	ToGtmDatacenterPtrOutputWithContext(ctx context.Context) GtmDatacenterPtrOutput
-}
-
-type gtmDatacenterPtrType GtmDatacenterArgs
-
-func (*gtmDatacenterPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**GtmDatacenter)(nil))
-}
-
-func (i *gtmDatacenterPtrType) ToGtmDatacenterPtrOutput() GtmDatacenterPtrOutput {
-	return i.ToGtmDatacenterPtrOutputWithContext(context.Background())
-}
-
-func (i *gtmDatacenterPtrType) ToGtmDatacenterPtrOutputWithContext(ctx context.Context) GtmDatacenterPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GtmDatacenterPtrOutput)
 }
 
 // GtmDatacenterArrayInput is an input type that accepts GtmDatacenterArray and GtmDatacenterArrayOutput values.
@@ -259,7 +230,7 @@ func (i GtmDatacenterMap) ToGtmDatacenterMapOutputWithContext(ctx context.Contex
 type GtmDatacenterOutput struct{ *pulumi.OutputState }
 
 func (GtmDatacenterOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmDatacenter)(nil))
+	return reflect.TypeOf((**GtmDatacenter)(nil)).Elem()
 }
 
 func (o GtmDatacenterOutput) ToGtmDatacenterOutput() GtmDatacenterOutput {
@@ -270,44 +241,10 @@ func (o GtmDatacenterOutput) ToGtmDatacenterOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o GtmDatacenterOutput) ToGtmDatacenterPtrOutput() GtmDatacenterPtrOutput {
-	return o.ToGtmDatacenterPtrOutputWithContext(context.Background())
-}
-
-func (o GtmDatacenterOutput) ToGtmDatacenterPtrOutputWithContext(ctx context.Context) GtmDatacenterPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmDatacenter) *GtmDatacenter {
-		return &v
-	}).(GtmDatacenterPtrOutput)
-}
-
-type GtmDatacenterPtrOutput struct{ *pulumi.OutputState }
-
-func (GtmDatacenterPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**GtmDatacenter)(nil))
-}
-
-func (o GtmDatacenterPtrOutput) ToGtmDatacenterPtrOutput() GtmDatacenterPtrOutput {
-	return o
-}
-
-func (o GtmDatacenterPtrOutput) ToGtmDatacenterPtrOutputWithContext(ctx context.Context) GtmDatacenterPtrOutput {
-	return o
-}
-
-func (o GtmDatacenterPtrOutput) Elem() GtmDatacenterOutput {
-	return o.ApplyT(func(v *GtmDatacenter) GtmDatacenter {
-		if v != nil {
-			return *v
-		}
-		var ret GtmDatacenter
-		return ret
-	}).(GtmDatacenterOutput)
-}
-
 type GtmDatacenterArrayOutput struct{ *pulumi.OutputState }
 
 func (GtmDatacenterArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GtmDatacenter)(nil))
+	return reflect.TypeOf((*[]*GtmDatacenter)(nil)).Elem()
 }
 
 func (o GtmDatacenterArrayOutput) ToGtmDatacenterArrayOutput() GtmDatacenterArrayOutput {
@@ -319,15 +256,15 @@ func (o GtmDatacenterArrayOutput) ToGtmDatacenterArrayOutputWithContext(ctx cont
 }
 
 func (o GtmDatacenterArrayOutput) Index(i pulumi.IntInput) GtmDatacenterOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmDatacenter {
-		return vs[0].([]GtmDatacenter)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *GtmDatacenter {
+		return vs[0].([]*GtmDatacenter)[vs[1].(int)]
 	}).(GtmDatacenterOutput)
 }
 
 type GtmDatacenterMapOutput struct{ *pulumi.OutputState }
 
 func (GtmDatacenterMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]GtmDatacenter)(nil))
+	return reflect.TypeOf((*map[string]*GtmDatacenter)(nil)).Elem()
 }
 
 func (o GtmDatacenterMapOutput) ToGtmDatacenterMapOutput() GtmDatacenterMapOutput {
@@ -339,18 +276,16 @@ func (o GtmDatacenterMapOutput) ToGtmDatacenterMapOutputWithContext(ctx context.
 }
 
 func (o GtmDatacenterMapOutput) MapIndex(k pulumi.StringInput) GtmDatacenterOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GtmDatacenter {
-		return vs[0].(map[string]GtmDatacenter)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *GtmDatacenter {
+		return vs[0].(map[string]*GtmDatacenter)[vs[1].(string)]
 	}).(GtmDatacenterOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GtmDatacenterInput)(nil)).Elem(), &GtmDatacenter{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GtmDatacenterPtrInput)(nil)).Elem(), &GtmDatacenter{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GtmDatacenterArrayInput)(nil)).Elem(), GtmDatacenterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GtmDatacenterMapInput)(nil)).Elem(), GtmDatacenterMap{})
 	pulumi.RegisterOutputType(GtmDatacenterOutput{})
-	pulumi.RegisterOutputType(GtmDatacenterPtrOutput{})
 	pulumi.RegisterOutputType(GtmDatacenterArrayOutput{})
 	pulumi.RegisterOutputType(GtmDatacenterMapOutput{})
 }

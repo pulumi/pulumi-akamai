@@ -39,13 +39,6 @@ import (
 // 	})
 // }
 // ```
-// ## Argument reference
-//
-// This data source supports these arguments:
-//
-// * `name` - (Required) The property name.
-// * `version` - (Optional) The version of the property whose ID you want to list.
-//
 // ## Attributes reference
 //
 // This data source returns these attributes:
@@ -63,8 +56,10 @@ func LookupProperty(ctx *pulumi.Context, args *LookupPropertyArgs, opts ...pulum
 
 // A collection of arguments for invoking getProperty.
 type LookupPropertyArgs struct {
-	Name    string `pulumi:"name"`
-	Version *int   `pulumi:"version"`
+	// - (Required) The property name.
+	Name string `pulumi:"name"`
+	// - (Optional) The version of the property whose ID you want to list.
+	Version *int `pulumi:"version"`
 }
 
 // A collection of values returned by getProperty.
@@ -87,7 +82,9 @@ func LookupPropertyOutput(ctx *pulumi.Context, args LookupPropertyOutputArgs, op
 
 // A collection of arguments for invoking getProperty.
 type LookupPropertyOutputArgs struct {
-	Name    pulumi.StringInput `pulumi:"name"`
+	// - (Required) The property name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// - (Optional) The version of the property whose ID you want to list.
 	Version pulumi.IntPtrInput `pulumi:"version"`
 }
 

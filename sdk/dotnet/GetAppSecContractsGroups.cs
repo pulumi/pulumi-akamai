@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -66,7 +65,7 @@ namespace Pulumi.Akamai
         /// - `default_groupid`. Default group ID for the specified contract and group.
         /// </summary>
         public static Task<GetAppSecContractsGroupsResult> InvokeAsync(GetAppSecContractsGroupsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecContractsGroupsResult>("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", args ?? new GetAppSecContractsGroupsArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecContractsGroupsResult>("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", args ?? new GetAppSecContractsGroupsArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Contract; group
@@ -122,7 +121,7 @@ namespace Pulumi.Akamai
         /// - `default_groupid`. Default group ID for the specified contract and group.
         /// </summary>
         public static Output<GetAppSecContractsGroupsResult> Invoke(GetAppSecContractsGroupsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecContractsGroupsResult>("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", args ?? new GetAppSecContractsGroupsInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecContractsGroupsResult>("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", args ?? new GetAppSecContractsGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

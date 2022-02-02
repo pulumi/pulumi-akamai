@@ -33,16 +33,6 @@ import * as utilities from "./utilities";
  * These variables follow the format used in the [Property Manager CLI](https://github.com/akamai/cli-property-manager#update-the-variabledefinitions-file).  They differ from the provider variables which should resolve normally.
  *
  * ## Example Usage
- * ## Argument reference
- *
- * * `templateFile` - (Required) The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree.
- * * `variables` - (Optional) A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `variableDefinitionFile` and `variableValuesFile` arguments. A `variables` block includes:
- *     * `name` - The name of the variable used in template.
- *     * `type` - The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
- *     * `value` - The value of the variable passed as a string.
- * * `variableDefinitionFile` - (Optional) The absolute path to the file containing variable definitions and defaults. This file follows the syntax used in the [Property Manager CLI](https://github.com/akamai/cli-property-manager). This argument is required if you set `variableValuesFile` and conflicts with `variables`.
- * * `variableValuesFile` - (Optional) The absolute path to the file containing variable values. This file follows the syntax used in the Property Manager CLI. This argument is required if you set `variableDefinitionFile` and conflicts with `variables`.
- *
  * ## Attributes reference
  *
  * This data source returns this attribute:
@@ -55,9 +45,7 @@ export function getPropertyRulesTemplate(args?: GetPropertyRulesTemplateArgs, op
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", {
         "templateFile": args.templateFile,
         "templates": args.templates,
@@ -71,10 +59,16 @@ export function getPropertyRulesTemplate(args?: GetPropertyRulesTemplateArgs, op
  * A collection of arguments for invoking getPropertyRulesTemplate.
  */
 export interface GetPropertyRulesTemplateArgs {
+    /**
+     * The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree.
+     */
     templateFile?: string;
     templates?: inputs.GetPropertyRulesTemplateTemplate[];
     varDefinitionFile?: string;
     varValuesFile?: string;
+    /**
+     * A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `variableDefinitionFile` and `variableValuesFile` arguments. A `variables` block includes:
+     */
     variables?: inputs.GetPropertyRulesTemplateVariable[];
 }
 
@@ -102,9 +96,15 @@ export function getPropertyRulesTemplateOutput(args?: GetPropertyRulesTemplateOu
  * A collection of arguments for invoking getPropertyRulesTemplate.
  */
 export interface GetPropertyRulesTemplateOutputArgs {
+    /**
+     * The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree.
+     */
     templateFile?: pulumi.Input<string>;
     templates?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesTemplateTemplateArgs>[]>;
     varDefinitionFile?: pulumi.Input<string>;
     varValuesFile?: pulumi.Input<string>;
+    /**
+     * A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `variableDefinitionFile` and `variableValuesFile` arguments. A `variables` block includes:
+     */
     variables?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesTemplateVariableArgs>[]>;
 }

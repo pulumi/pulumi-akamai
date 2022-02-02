@@ -85,21 +85,6 @@ import (
 // 	})
 // }
 // ```
-// ## Argument reference
-//
-// The following arguments are supported:
-//
-// * `name` - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
-// * `contractId` - (Required) A contract's unique ID, including the `ctr_` prefix.
-// * `groupId` - (Required) A group's unique ID, including the `grp_` prefix.
-// * `productId` - (Required) A product's unique ID, including the `prd_` prefix.
-//
-// ### Deprecated arguments
-//
-// * `contract` - (Deprecated) Replaced by `contractId`. Maintained for legacy purposes.
-// * `group` - (Deprecated) Replaced by `groupId`. Maintained for legacy purposes.
-// * `product` - (Deprecated) Replaced by `productId`. Maintained for legacy purposes.
-//
 // ## Attributes reference
 //
 // * `id` - The ID of the CP code.
@@ -118,15 +103,25 @@ import (
 type CpCode struct {
 	pulumi.CustomResourceState
 
+	// Replaced by `contractId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract   pulumi.StringOutput `pulumi:"contract"`
+	Contract pulumi.StringOutput `pulumi:"contract"`
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
+	// Replaced by `groupId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group   pulumi.StringOutput `pulumi:"group"`
+	Group pulumi.StringOutput `pulumi:"group"`
+	// - (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId pulumi.StringOutput `pulumi:"groupId"`
-	Name    pulumi.StringOutput `pulumi:"name"`
+	// - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+	Name pulumi.StringOutput `pulumi:"name"`
+	// Replaced by `productId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product   pulumi.StringOutput `pulumi:"product"`
+	Product pulumi.StringOutput `pulumi:"product"`
+	// - (Required) A product's unique ID, including the `prd_` prefix.
 	ProductId pulumi.StringOutput `pulumi:"productId"`
 }
 
@@ -165,28 +160,48 @@ func GetCpCode(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CpCode resources.
 type cpCodeState struct {
+	// Replaced by `contractId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract   *string `pulumi:"contract"`
+	Contract *string `pulumi:"contract"`
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId *string `pulumi:"contractId"`
+	// Replaced by `groupId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group   *string `pulumi:"group"`
+	Group *string `pulumi:"group"`
+	// - (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId *string `pulumi:"groupId"`
-	Name    *string `pulumi:"name"`
+	// - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+	Name *string `pulumi:"name"`
+	// Replaced by `productId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product   *string `pulumi:"product"`
+	Product *string `pulumi:"product"`
+	// - (Required) A product's unique ID, including the `prd_` prefix.
 	ProductId *string `pulumi:"productId"`
 }
 
 type CpCodeState struct {
+	// Replaced by `contractId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract   pulumi.StringPtrInput
+	Contract pulumi.StringPtrInput
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringPtrInput
+	// Replaced by `groupId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group   pulumi.StringPtrInput
+	Group pulumi.StringPtrInput
+	// - (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId pulumi.StringPtrInput
-	Name    pulumi.StringPtrInput
+	// - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+	Name pulumi.StringPtrInput
+	// Replaced by `productId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product   pulumi.StringPtrInput
+	Product pulumi.StringPtrInput
+	// - (Required) A product's unique ID, including the `prd_` prefix.
 	ProductId pulumi.StringPtrInput
 }
 
@@ -195,29 +210,49 @@ func (CpCodeState) ElementType() reflect.Type {
 }
 
 type cpCodeArgs struct {
+	// Replaced by `contractId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract   *string `pulumi:"contract"`
+	Contract *string `pulumi:"contract"`
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId *string `pulumi:"contractId"`
+	// Replaced by `groupId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group   *string `pulumi:"group"`
+	Group *string `pulumi:"group"`
+	// - (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId *string `pulumi:"groupId"`
-	Name    *string `pulumi:"name"`
+	// - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+	Name *string `pulumi:"name"`
+	// Replaced by `productId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product   *string `pulumi:"product"`
+	Product *string `pulumi:"product"`
+	// - (Required) A product's unique ID, including the `prd_` prefix.
 	ProductId *string `pulumi:"productId"`
 }
 
 // The set of arguments for constructing a CpCode resource.
 type CpCodeArgs struct {
+	// Replaced by `contractId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract   pulumi.StringPtrInput
+	Contract pulumi.StringPtrInput
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringPtrInput
+	// Replaced by `groupId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group   pulumi.StringPtrInput
+	Group pulumi.StringPtrInput
+	// - (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId pulumi.StringPtrInput
-	Name    pulumi.StringPtrInput
+	// - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+	Name pulumi.StringPtrInput
+	// Replaced by `productId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product   pulumi.StringPtrInput
+	Product pulumi.StringPtrInput
+	// - (Required) A product's unique ID, including the `prd_` prefix.
 	ProductId pulumi.StringPtrInput
 }
 
@@ -233,7 +268,7 @@ type CpCodeInput interface {
 }
 
 func (*CpCode) ElementType() reflect.Type {
-	return reflect.TypeOf((*CpCode)(nil))
+	return reflect.TypeOf((**CpCode)(nil)).Elem()
 }
 
 func (i *CpCode) ToCpCodeOutput() CpCodeOutput {
@@ -242,35 +277,6 @@ func (i *CpCode) ToCpCodeOutput() CpCodeOutput {
 
 func (i *CpCode) ToCpCodeOutputWithContext(ctx context.Context) CpCodeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CpCodeOutput)
-}
-
-func (i *CpCode) ToCpCodePtrOutput() CpCodePtrOutput {
-	return i.ToCpCodePtrOutputWithContext(context.Background())
-}
-
-func (i *CpCode) ToCpCodePtrOutputWithContext(ctx context.Context) CpCodePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CpCodePtrOutput)
-}
-
-type CpCodePtrInput interface {
-	pulumi.Input
-
-	ToCpCodePtrOutput() CpCodePtrOutput
-	ToCpCodePtrOutputWithContext(ctx context.Context) CpCodePtrOutput
-}
-
-type cpCodePtrType CpCodeArgs
-
-func (*cpCodePtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**CpCode)(nil))
-}
-
-func (i *cpCodePtrType) ToCpCodePtrOutput() CpCodePtrOutput {
-	return i.ToCpCodePtrOutputWithContext(context.Background())
-}
-
-func (i *cpCodePtrType) ToCpCodePtrOutputWithContext(ctx context.Context) CpCodePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CpCodePtrOutput)
 }
 
 // CpCodeArrayInput is an input type that accepts CpCodeArray and CpCodeArrayOutput values.
@@ -326,7 +332,7 @@ func (i CpCodeMap) ToCpCodeMapOutputWithContext(ctx context.Context) CpCodeMapOu
 type CpCodeOutput struct{ *pulumi.OutputState }
 
 func (CpCodeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*CpCode)(nil))
+	return reflect.TypeOf((**CpCode)(nil)).Elem()
 }
 
 func (o CpCodeOutput) ToCpCodeOutput() CpCodeOutput {
@@ -337,44 +343,10 @@ func (o CpCodeOutput) ToCpCodeOutputWithContext(ctx context.Context) CpCodeOutpu
 	return o
 }
 
-func (o CpCodeOutput) ToCpCodePtrOutput() CpCodePtrOutput {
-	return o.ToCpCodePtrOutputWithContext(context.Background())
-}
-
-func (o CpCodeOutput) ToCpCodePtrOutputWithContext(ctx context.Context) CpCodePtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v CpCode) *CpCode {
-		return &v
-	}).(CpCodePtrOutput)
-}
-
-type CpCodePtrOutput struct{ *pulumi.OutputState }
-
-func (CpCodePtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**CpCode)(nil))
-}
-
-func (o CpCodePtrOutput) ToCpCodePtrOutput() CpCodePtrOutput {
-	return o
-}
-
-func (o CpCodePtrOutput) ToCpCodePtrOutputWithContext(ctx context.Context) CpCodePtrOutput {
-	return o
-}
-
-func (o CpCodePtrOutput) Elem() CpCodeOutput {
-	return o.ApplyT(func(v *CpCode) CpCode {
-		if v != nil {
-			return *v
-		}
-		var ret CpCode
-		return ret
-	}).(CpCodeOutput)
-}
-
 type CpCodeArrayOutput struct{ *pulumi.OutputState }
 
 func (CpCodeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]CpCode)(nil))
+	return reflect.TypeOf((*[]*CpCode)(nil)).Elem()
 }
 
 func (o CpCodeArrayOutput) ToCpCodeArrayOutput() CpCodeArrayOutput {
@@ -386,15 +358,15 @@ func (o CpCodeArrayOutput) ToCpCodeArrayOutputWithContext(ctx context.Context) C
 }
 
 func (o CpCodeArrayOutput) Index(i pulumi.IntInput) CpCodeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CpCode {
-		return vs[0].([]CpCode)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CpCode {
+		return vs[0].([]*CpCode)[vs[1].(int)]
 	}).(CpCodeOutput)
 }
 
 type CpCodeMapOutput struct{ *pulumi.OutputState }
 
 func (CpCodeMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]CpCode)(nil))
+	return reflect.TypeOf((*map[string]*CpCode)(nil)).Elem()
 }
 
 func (o CpCodeMapOutput) ToCpCodeMapOutput() CpCodeMapOutput {
@@ -406,18 +378,16 @@ func (o CpCodeMapOutput) ToCpCodeMapOutputWithContext(ctx context.Context) CpCod
 }
 
 func (o CpCodeMapOutput) MapIndex(k pulumi.StringInput) CpCodeOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CpCode {
-		return vs[0].(map[string]CpCode)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *CpCode {
+		return vs[0].(map[string]*CpCode)[vs[1].(string)]
 	}).(CpCodeOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CpCodeInput)(nil)).Elem(), &CpCode{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CpCodePtrInput)(nil)).Elem(), &CpCode{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CpCodeArrayInput)(nil)).Elem(), CpCodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CpCodeMapInput)(nil)).Elem(), CpCodeMap{})
 	pulumi.RegisterOutputType(CpCodeOutput{})
-	pulumi.RegisterOutputType(CpCodePtrOutput{})
 	pulumi.RegisterOutputType(CpCodeArrayOutput{})
 	pulumi.RegisterOutputType(CpCodeMapOutput{})
 }

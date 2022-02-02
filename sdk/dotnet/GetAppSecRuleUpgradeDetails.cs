@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -62,7 +61,7 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted list of the changes (additions and deletions) to the rules for the specified security policy.
         /// </summary>
         public static Task<GetAppSecRuleUpgradeDetailsResult> InvokeAsync(GetAppSecRuleUpgradeDetailsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecRuleUpgradeDetailsResult>("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", args ?? new GetAppSecRuleUpgradeDetailsArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecRuleUpgradeDetailsResult>("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", args ?? new GetAppSecRuleUpgradeDetailsArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy
@@ -114,7 +113,7 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted list of the changes (additions and deletions) to the rules for the specified security policy.
         /// </summary>
         public static Output<GetAppSecRuleUpgradeDetailsResult> Invoke(GetAppSecRuleUpgradeDetailsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecRuleUpgradeDetailsResult>("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", args ?? new GetAppSecRuleUpgradeDetailsInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecRuleUpgradeDetailsResult>("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", args ?? new GetAppSecRuleUpgradeDetailsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -9,9 +9,7 @@ export function getDnsRecordSet(args: GetDnsRecordSetArgs, opts?: pulumi.InvokeO
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getDnsRecordSet:getDnsRecordSet", {
         "host": args.host,
         "recordType": args.recordType,

@@ -25,31 +25,6 @@ import * as utilities from "./utilities";
  *     type: "XML load object via HTTP",
  * });
  * ```
- * ## Argument reference
- *
- * This resource supports these arguments:
- *
- * * `domain` - (Required) DNS name for the GTM Domain set that includes this property.
- * * `name` - (Required) A descriptive label for the GTM resource.
- * * `aggregationType` - (Required) Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
- * * `type` - (Required) Indicates the kind of `loadObject` format used to determine the load on the resource.
- * * `waitOnComplete` - (Optional) A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
- * * `resourceInstance`  - (Optional) (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resourceInstance` entries. Requires these arguments:
- *   * `datacenterId` - (Optional) A unique identifier for an existing data center in the domain.
- *   * `loadObject` - (Optional) Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
- *   * `loadObjectPort` - (Optional) Specifies the TCP port of the `loadObject`.
- *   * `loadServers` - (Optional) (List) Specifies a list of servers from which to request the load object.
- *   * `useDefaultLoadObject` - (Optional) A boolean that indicates whether a default `loadObject` is used for the resources.
- * * `hostHeader` - (Optional) Optionally specifies the host header used when fetching the load object.
- * * `leastSquaresDecay` - (Optional) For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
- * * `upperBound` - (Optional) An optional sanity check that specifies the maximum allowed value for any component of the load object.
- * * `description` - (Optional) A descriptive note to help you track what the resource constrains.
- * * `leaderString` - (Optional) Specifies the text that comes before the `loadObject`.
- * * `constrainedProperty` - (Optional) Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
- * * `loadImbalancePercent` - (Optional) Indicates the percent of load imbalance factor (LIF) for the property.
- * * `maxUMultiplicativeIncrement` - (Optional) For Akamai internal use only. You can omit the value or set it to `null`.
- * * `decayRate` - (Optional) For Akamai internal use only. You can omit the value or set it to `null`.
- *
  * ## Schema reference
  *
  * You can download the GTM Resource backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#resource) page.
@@ -82,20 +57,62 @@ export class GtmResource extends pulumi.CustomResource {
         return obj['__pulumiType'] === GtmResource.__pulumiType;
     }
 
+    /**
+     * Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+     */
     public readonly aggregationType!: pulumi.Output<string>;
+    /**
+     * Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
+     */
     public readonly constrainedProperty!: pulumi.Output<string | undefined>;
+    /**
+     * For Akamai internal use only. You can omit the value or set it to `null`.
+     */
     public readonly decayRate!: pulumi.Output<number | undefined>;
+    /**
+     * A descriptive note to help you track what the resource constrains.
+     */
     public readonly description!: pulumi.Output<string | undefined>;
+    /**
+     * DNS name for the GTM Domain set that includes this property.
+     */
     public readonly domain!: pulumi.Output<string>;
+    /**
+     * Optionally specifies the host header used when fetching the load object.
+     */
     public readonly hostHeader!: pulumi.Output<string | undefined>;
+    /**
+     * Specifies the text that comes before the `loadObject`.
+     */
     public readonly leaderString!: pulumi.Output<string | undefined>;
+    /**
+     * For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
+     */
     public readonly leastSquaresDecay!: pulumi.Output<number | undefined>;
     public readonly loadImbalancePercentage!: pulumi.Output<number | undefined>;
+    /**
+     * For Akamai internal use only. You can omit the value or set it to `null`.
+     */
     public readonly maxUMultiplicativeIncrement!: pulumi.Output<number | undefined>;
+    /**
+     * A descriptive label for the GTM resource.
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resourceInstance` entries. Requires these arguments:
+     */
     public readonly resourceInstances!: pulumi.Output<outputs.GtmResourceResourceInstance[] | undefined>;
+    /**
+     * Indicates the kind of `loadObject` format used to determine the load on the resource.
+     */
     public readonly type!: pulumi.Output<string>;
+    /**
+     * An optional sanity check that specifies the maximum allowed value for any component of the load object.
+     */
     public readonly upperBound!: pulumi.Output<number | undefined>;
+    /**
+     * A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+     */
     public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
 
     /**
@@ -107,25 +124,25 @@ export class GtmResource extends pulumi.CustomResource {
      */
     constructor(name: string, args: GtmResourceArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: GtmResourceArgs | GtmResourceState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GtmResourceState | undefined;
-            inputs["aggregationType"] = state ? state.aggregationType : undefined;
-            inputs["constrainedProperty"] = state ? state.constrainedProperty : undefined;
-            inputs["decayRate"] = state ? state.decayRate : undefined;
-            inputs["description"] = state ? state.description : undefined;
-            inputs["domain"] = state ? state.domain : undefined;
-            inputs["hostHeader"] = state ? state.hostHeader : undefined;
-            inputs["leaderString"] = state ? state.leaderString : undefined;
-            inputs["leastSquaresDecay"] = state ? state.leastSquaresDecay : undefined;
-            inputs["loadImbalancePercentage"] = state ? state.loadImbalancePercentage : undefined;
-            inputs["maxUMultiplicativeIncrement"] = state ? state.maxUMultiplicativeIncrement : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["resourceInstances"] = state ? state.resourceInstances : undefined;
-            inputs["type"] = state ? state.type : undefined;
-            inputs["upperBound"] = state ? state.upperBound : undefined;
-            inputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
+            resourceInputs["aggregationType"] = state ? state.aggregationType : undefined;
+            resourceInputs["constrainedProperty"] = state ? state.constrainedProperty : undefined;
+            resourceInputs["decayRate"] = state ? state.decayRate : undefined;
+            resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["domain"] = state ? state.domain : undefined;
+            resourceInputs["hostHeader"] = state ? state.hostHeader : undefined;
+            resourceInputs["leaderString"] = state ? state.leaderString : undefined;
+            resourceInputs["leastSquaresDecay"] = state ? state.leastSquaresDecay : undefined;
+            resourceInputs["loadImbalancePercentage"] = state ? state.loadImbalancePercentage : undefined;
+            resourceInputs["maxUMultiplicativeIncrement"] = state ? state.maxUMultiplicativeIncrement : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["resourceInstances"] = state ? state.resourceInstances : undefined;
+            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["upperBound"] = state ? state.upperBound : undefined;
+            resourceInputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
         } else {
             const args = argsOrState as GtmResourceArgs | undefined;
             if ((!args || args.aggregationType === undefined) && !opts.urn) {
@@ -137,28 +154,26 @@ export class GtmResource extends pulumi.CustomResource {
             if ((!args || args.type === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            inputs["aggregationType"] = args ? args.aggregationType : undefined;
-            inputs["constrainedProperty"] = args ? args.constrainedProperty : undefined;
-            inputs["decayRate"] = args ? args.decayRate : undefined;
-            inputs["description"] = args ? args.description : undefined;
-            inputs["domain"] = args ? args.domain : undefined;
-            inputs["hostHeader"] = args ? args.hostHeader : undefined;
-            inputs["leaderString"] = args ? args.leaderString : undefined;
-            inputs["leastSquaresDecay"] = args ? args.leastSquaresDecay : undefined;
-            inputs["loadImbalancePercentage"] = args ? args.loadImbalancePercentage : undefined;
-            inputs["maxUMultiplicativeIncrement"] = args ? args.maxUMultiplicativeIncrement : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["resourceInstances"] = args ? args.resourceInstances : undefined;
-            inputs["type"] = args ? args.type : undefined;
-            inputs["upperBound"] = args ? args.upperBound : undefined;
-            inputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
+            resourceInputs["aggregationType"] = args ? args.aggregationType : undefined;
+            resourceInputs["constrainedProperty"] = args ? args.constrainedProperty : undefined;
+            resourceInputs["decayRate"] = args ? args.decayRate : undefined;
+            resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["domain"] = args ? args.domain : undefined;
+            resourceInputs["hostHeader"] = args ? args.hostHeader : undefined;
+            resourceInputs["leaderString"] = args ? args.leaderString : undefined;
+            resourceInputs["leastSquaresDecay"] = args ? args.leastSquaresDecay : undefined;
+            resourceInputs["loadImbalancePercentage"] = args ? args.loadImbalancePercentage : undefined;
+            resourceInputs["maxUMultiplicativeIncrement"] = args ? args.maxUMultiplicativeIncrement : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["resourceInstances"] = args ? args.resourceInstances : undefined;
+            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["upperBound"] = args ? args.upperBound : undefined;
+            resourceInputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const aliasOpts = { aliases: [{ type: "akamai:trafficmanagement/gtmResource:GtmResource" }] };
         opts = pulumi.mergeOptions(opts, aliasOpts);
-        super(GtmResource.__pulumiType, name, inputs, opts);
+        super(GtmResource.__pulumiType, name, resourceInputs, opts);
     }
 }
 
@@ -166,20 +181,62 @@ export class GtmResource extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmResource resources.
  */
 export interface GtmResourceState {
+    /**
+     * Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+     */
     aggregationType?: pulumi.Input<string>;
+    /**
+     * Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
+     */
     constrainedProperty?: pulumi.Input<string>;
+    /**
+     * For Akamai internal use only. You can omit the value or set it to `null`.
+     */
     decayRate?: pulumi.Input<number>;
+    /**
+     * A descriptive note to help you track what the resource constrains.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * DNS name for the GTM Domain set that includes this property.
+     */
     domain?: pulumi.Input<string>;
+    /**
+     * Optionally specifies the host header used when fetching the load object.
+     */
     hostHeader?: pulumi.Input<string>;
+    /**
+     * Specifies the text that comes before the `loadObject`.
+     */
     leaderString?: pulumi.Input<string>;
+    /**
+     * For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
+     */
     leastSquaresDecay?: pulumi.Input<number>;
     loadImbalancePercentage?: pulumi.Input<number>;
+    /**
+     * For Akamai internal use only. You can omit the value or set it to `null`.
+     */
     maxUMultiplicativeIncrement?: pulumi.Input<number>;
+    /**
+     * A descriptive label for the GTM resource.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resourceInstance` entries. Requires these arguments:
+     */
     resourceInstances?: pulumi.Input<pulumi.Input<inputs.GtmResourceResourceInstance>[]>;
+    /**
+     * Indicates the kind of `loadObject` format used to determine the load on the resource.
+     */
     type?: pulumi.Input<string>;
+    /**
+     * An optional sanity check that specifies the maximum allowed value for any component of the load object.
+     */
     upperBound?: pulumi.Input<number>;
+    /**
+     * A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+     */
     waitOnComplete?: pulumi.Input<boolean>;
 }
 
@@ -187,19 +244,61 @@ export interface GtmResourceState {
  * The set of arguments for constructing a GtmResource resource.
  */
 export interface GtmResourceArgs {
+    /**
+     * Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+     */
     aggregationType: pulumi.Input<string>;
+    /**
+     * Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
+     */
     constrainedProperty?: pulumi.Input<string>;
+    /**
+     * For Akamai internal use only. You can omit the value or set it to `null`.
+     */
     decayRate?: pulumi.Input<number>;
+    /**
+     * A descriptive note to help you track what the resource constrains.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * DNS name for the GTM Domain set that includes this property.
+     */
     domain: pulumi.Input<string>;
+    /**
+     * Optionally specifies the host header used when fetching the load object.
+     */
     hostHeader?: pulumi.Input<string>;
+    /**
+     * Specifies the text that comes before the `loadObject`.
+     */
     leaderString?: pulumi.Input<string>;
+    /**
+     * For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
+     */
     leastSquaresDecay?: pulumi.Input<number>;
     loadImbalancePercentage?: pulumi.Input<number>;
+    /**
+     * For Akamai internal use only. You can omit the value or set it to `null`.
+     */
     maxUMultiplicativeIncrement?: pulumi.Input<number>;
+    /**
+     * A descriptive label for the GTM resource.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resourceInstance` entries. Requires these arguments:
+     */
     resourceInstances?: pulumi.Input<pulumi.Input<inputs.GtmResourceResourceInstance>[]>;
+    /**
+     * Indicates the kind of `loadObject` format used to determine the load on the resource.
+     */
     type: pulumi.Input<string>;
+    /**
+     * An optional sanity check that specifies the maximum allowed value for any component of the load object.
+     */
     upperBound?: pulumi.Input<number>;
+    /**
+     * A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+     */
     waitOnComplete?: pulumi.Input<boolean>;
 }

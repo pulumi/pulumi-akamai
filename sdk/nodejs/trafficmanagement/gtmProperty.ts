@@ -84,44 +84,44 @@ export class GtmProperty extends pulumi.CustomResource {
     /** @deprecated akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty */
     constructor(name: string, argsOrState?: GtmPropertyArgs | GtmPropertyState, opts?: pulumi.CustomResourceOptions) {
         pulumi.log.warn("GtmProperty is deprecated: akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty")
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GtmPropertyState | undefined;
-            inputs["backupCname"] = state ? state.backupCname : undefined;
-            inputs["backupIp"] = state ? state.backupIp : undefined;
-            inputs["balanceByDownloadScore"] = state ? state.balanceByDownloadScore : undefined;
-            inputs["cname"] = state ? state.cname : undefined;
-            inputs["comments"] = state ? state.comments : undefined;
-            inputs["domain"] = state ? state.domain : undefined;
-            inputs["dynamicTtl"] = state ? state.dynamicTtl : undefined;
-            inputs["failbackDelay"] = state ? state.failbackDelay : undefined;
-            inputs["failoverDelay"] = state ? state.failoverDelay : undefined;
-            inputs["ghostDemandReporting"] = state ? state.ghostDemandReporting : undefined;
-            inputs["handoutLimit"] = state ? state.handoutLimit : undefined;
-            inputs["handoutMode"] = state ? state.handoutMode : undefined;
-            inputs["healthMax"] = state ? state.healthMax : undefined;
-            inputs["healthMultiplier"] = state ? state.healthMultiplier : undefined;
-            inputs["healthThreshold"] = state ? state.healthThreshold : undefined;
-            inputs["ipv6"] = state ? state.ipv6 : undefined;
-            inputs["livenessTests"] = state ? state.livenessTests : undefined;
-            inputs["loadImbalancePercentage"] = state ? state.loadImbalancePercentage : undefined;
-            inputs["mapName"] = state ? state.mapName : undefined;
-            inputs["maxUnreachablePenalty"] = state ? state.maxUnreachablePenalty : undefined;
-            inputs["minLiveFraction"] = state ? state.minLiveFraction : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["scoreAggregationType"] = state ? state.scoreAggregationType : undefined;
-            inputs["staticRrSets"] = state ? state.staticRrSets : undefined;
-            inputs["staticTtl"] = state ? state.staticTtl : undefined;
-            inputs["stickinessBonusConstant"] = state ? state.stickinessBonusConstant : undefined;
-            inputs["stickinessBonusPercentage"] = state ? state.stickinessBonusPercentage : undefined;
-            inputs["trafficTargets"] = state ? state.trafficTargets : undefined;
-            inputs["type"] = state ? state.type : undefined;
-            inputs["unreachableThreshold"] = state ? state.unreachableThreshold : undefined;
-            inputs["useComputedTargets"] = state ? state.useComputedTargets : undefined;
-            inputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
-            inputs["weightedHashBitsForIpv4"] = state ? state.weightedHashBitsForIpv4 : undefined;
-            inputs["weightedHashBitsForIpv6"] = state ? state.weightedHashBitsForIpv6 : undefined;
+            resourceInputs["backupCname"] = state ? state.backupCname : undefined;
+            resourceInputs["backupIp"] = state ? state.backupIp : undefined;
+            resourceInputs["balanceByDownloadScore"] = state ? state.balanceByDownloadScore : undefined;
+            resourceInputs["cname"] = state ? state.cname : undefined;
+            resourceInputs["comments"] = state ? state.comments : undefined;
+            resourceInputs["domain"] = state ? state.domain : undefined;
+            resourceInputs["dynamicTtl"] = state ? state.dynamicTtl : undefined;
+            resourceInputs["failbackDelay"] = state ? state.failbackDelay : undefined;
+            resourceInputs["failoverDelay"] = state ? state.failoverDelay : undefined;
+            resourceInputs["ghostDemandReporting"] = state ? state.ghostDemandReporting : undefined;
+            resourceInputs["handoutLimit"] = state ? state.handoutLimit : undefined;
+            resourceInputs["handoutMode"] = state ? state.handoutMode : undefined;
+            resourceInputs["healthMax"] = state ? state.healthMax : undefined;
+            resourceInputs["healthMultiplier"] = state ? state.healthMultiplier : undefined;
+            resourceInputs["healthThreshold"] = state ? state.healthThreshold : undefined;
+            resourceInputs["ipv6"] = state ? state.ipv6 : undefined;
+            resourceInputs["livenessTests"] = state ? state.livenessTests : undefined;
+            resourceInputs["loadImbalancePercentage"] = state ? state.loadImbalancePercentage : undefined;
+            resourceInputs["mapName"] = state ? state.mapName : undefined;
+            resourceInputs["maxUnreachablePenalty"] = state ? state.maxUnreachablePenalty : undefined;
+            resourceInputs["minLiveFraction"] = state ? state.minLiveFraction : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["scoreAggregationType"] = state ? state.scoreAggregationType : undefined;
+            resourceInputs["staticRrSets"] = state ? state.staticRrSets : undefined;
+            resourceInputs["staticTtl"] = state ? state.staticTtl : undefined;
+            resourceInputs["stickinessBonusConstant"] = state ? state.stickinessBonusConstant : undefined;
+            resourceInputs["stickinessBonusPercentage"] = state ? state.stickinessBonusPercentage : undefined;
+            resourceInputs["trafficTargets"] = state ? state.trafficTargets : undefined;
+            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["unreachableThreshold"] = state ? state.unreachableThreshold : undefined;
+            resourceInputs["useComputedTargets"] = state ? state.useComputedTargets : undefined;
+            resourceInputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
+            resourceInputs["weightedHashBitsForIpv4"] = state ? state.weightedHashBitsForIpv4 : undefined;
+            resourceInputs["weightedHashBitsForIpv6"] = state ? state.weightedHashBitsForIpv6 : undefined;
         } else {
             const args = argsOrState as GtmPropertyArgs | undefined;
             if ((!args || args.domain === undefined) && !opts.urn) {
@@ -139,45 +139,43 @@ export class GtmProperty extends pulumi.CustomResource {
             if ((!args || args.type === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            inputs["backupCname"] = args ? args.backupCname : undefined;
-            inputs["backupIp"] = args ? args.backupIp : undefined;
-            inputs["balanceByDownloadScore"] = args ? args.balanceByDownloadScore : undefined;
-            inputs["cname"] = args ? args.cname : undefined;
-            inputs["comments"] = args ? args.comments : undefined;
-            inputs["domain"] = args ? args.domain : undefined;
-            inputs["dynamicTtl"] = args ? args.dynamicTtl : undefined;
-            inputs["failbackDelay"] = args ? args.failbackDelay : undefined;
-            inputs["failoverDelay"] = args ? args.failoverDelay : undefined;
-            inputs["ghostDemandReporting"] = args ? args.ghostDemandReporting : undefined;
-            inputs["handoutLimit"] = args ? args.handoutLimit : undefined;
-            inputs["handoutMode"] = args ? args.handoutMode : undefined;
-            inputs["healthMax"] = args ? args.healthMax : undefined;
-            inputs["healthMultiplier"] = args ? args.healthMultiplier : undefined;
-            inputs["healthThreshold"] = args ? args.healthThreshold : undefined;
-            inputs["ipv6"] = args ? args.ipv6 : undefined;
-            inputs["livenessTests"] = args ? args.livenessTests : undefined;
-            inputs["loadImbalancePercentage"] = args ? args.loadImbalancePercentage : undefined;
-            inputs["mapName"] = args ? args.mapName : undefined;
-            inputs["maxUnreachablePenalty"] = args ? args.maxUnreachablePenalty : undefined;
-            inputs["minLiveFraction"] = args ? args.minLiveFraction : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["scoreAggregationType"] = args ? args.scoreAggregationType : undefined;
-            inputs["staticRrSets"] = args ? args.staticRrSets : undefined;
-            inputs["staticTtl"] = args ? args.staticTtl : undefined;
-            inputs["stickinessBonusConstant"] = args ? args.stickinessBonusConstant : undefined;
-            inputs["stickinessBonusPercentage"] = args ? args.stickinessBonusPercentage : undefined;
-            inputs["trafficTargets"] = args ? args.trafficTargets : undefined;
-            inputs["type"] = args ? args.type : undefined;
-            inputs["unreachableThreshold"] = args ? args.unreachableThreshold : undefined;
-            inputs["useComputedTargets"] = args ? args.useComputedTargets : undefined;
-            inputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
-            inputs["weightedHashBitsForIpv4"] = undefined /*out*/;
-            inputs["weightedHashBitsForIpv6"] = undefined /*out*/;
+            resourceInputs["backupCname"] = args ? args.backupCname : undefined;
+            resourceInputs["backupIp"] = args ? args.backupIp : undefined;
+            resourceInputs["balanceByDownloadScore"] = args ? args.balanceByDownloadScore : undefined;
+            resourceInputs["cname"] = args ? args.cname : undefined;
+            resourceInputs["comments"] = args ? args.comments : undefined;
+            resourceInputs["domain"] = args ? args.domain : undefined;
+            resourceInputs["dynamicTtl"] = args ? args.dynamicTtl : undefined;
+            resourceInputs["failbackDelay"] = args ? args.failbackDelay : undefined;
+            resourceInputs["failoverDelay"] = args ? args.failoverDelay : undefined;
+            resourceInputs["ghostDemandReporting"] = args ? args.ghostDemandReporting : undefined;
+            resourceInputs["handoutLimit"] = args ? args.handoutLimit : undefined;
+            resourceInputs["handoutMode"] = args ? args.handoutMode : undefined;
+            resourceInputs["healthMax"] = args ? args.healthMax : undefined;
+            resourceInputs["healthMultiplier"] = args ? args.healthMultiplier : undefined;
+            resourceInputs["healthThreshold"] = args ? args.healthThreshold : undefined;
+            resourceInputs["ipv6"] = args ? args.ipv6 : undefined;
+            resourceInputs["livenessTests"] = args ? args.livenessTests : undefined;
+            resourceInputs["loadImbalancePercentage"] = args ? args.loadImbalancePercentage : undefined;
+            resourceInputs["mapName"] = args ? args.mapName : undefined;
+            resourceInputs["maxUnreachablePenalty"] = args ? args.maxUnreachablePenalty : undefined;
+            resourceInputs["minLiveFraction"] = args ? args.minLiveFraction : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["scoreAggregationType"] = args ? args.scoreAggregationType : undefined;
+            resourceInputs["staticRrSets"] = args ? args.staticRrSets : undefined;
+            resourceInputs["staticTtl"] = args ? args.staticTtl : undefined;
+            resourceInputs["stickinessBonusConstant"] = args ? args.stickinessBonusConstant : undefined;
+            resourceInputs["stickinessBonusPercentage"] = args ? args.stickinessBonusPercentage : undefined;
+            resourceInputs["trafficTargets"] = args ? args.trafficTargets : undefined;
+            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["unreachableThreshold"] = args ? args.unreachableThreshold : undefined;
+            resourceInputs["useComputedTargets"] = args ? args.useComputedTargets : undefined;
+            resourceInputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
+            resourceInputs["weightedHashBitsForIpv4"] = undefined /*out*/;
+            resourceInputs["weightedHashBitsForIpv6"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(GtmProperty.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(GtmProperty.__pulumiType, name, resourceInputs, opts);
     }
 }
 

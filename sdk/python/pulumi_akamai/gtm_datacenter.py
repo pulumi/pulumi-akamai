@@ -30,6 +30,19 @@ class GtmDatacenterArgs:
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a GtmDatacenter resource.
+        :param pulumi.Input[str] domain: The GTM domain name for the data center.
+        :param pulumi.Input[str] city: The name of the city where the data center is located.
+        :param pulumi.Input[int] clone_of: Identifies the data center's `datacenter_id` of which this data center is a clone.
+        :param pulumi.Input[bool] cloud_server_host_header_override: A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
+        :param pulumi.Input[bool] cloud_server_targeting: A boolean indicating whether to balance load between two or more servers in a cloud environment.
+        :param pulumi.Input[str] continent: A two-letter code that specifies the continent where the data center maps to.
+        :param pulumi.Input[str] country: A two-letter ISO 3166 country code that specifies the country where the data center maps to.
+        :param pulumi.Input['GtmDatacenterDefaultLoadObjectArgs'] default_load_object: Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
+        :param pulumi.Input[float] latitude: Specifies the geographical latitude of the data center's position. See also longitude within this object.
+        :param pulumi.Input[float] longitude: Specifies the geographic longitude of the data center's position. See also latitude within this object.
+        :param pulumi.Input[str] nickname: A descriptive label for the data center.
+        :param pulumi.Input[str] state_or_province: Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
+        :param pulumi.Input[bool] wait_on_complete: A boolean, that if set to `true`, waits for transaction to complete.
         """
         pulumi.set(__self__, "domain", domain)
         if city is not None:
@@ -60,6 +73,9 @@ class GtmDatacenterArgs:
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Input[str]:
+        """
+        The GTM domain name for the data center.
+        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -69,6 +85,9 @@ class GtmDatacenterArgs:
     @property
     @pulumi.getter
     def city(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the city where the data center is located.
+        """
         return pulumi.get(self, "city")
 
     @city.setter
@@ -78,6 +97,9 @@ class GtmDatacenterArgs:
     @property
     @pulumi.getter(name="cloneOf")
     def clone_of(self) -> Optional[pulumi.Input[int]]:
+        """
+        Identifies the data center's `datacenter_id` of which this data center is a clone.
+        """
         return pulumi.get(self, "clone_of")
 
     @clone_of.setter
@@ -87,6 +109,9 @@ class GtmDatacenterArgs:
     @property
     @pulumi.getter(name="cloudServerHostHeaderOverride")
     def cloud_server_host_header_override(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
+        """
         return pulumi.get(self, "cloud_server_host_header_override")
 
     @cloud_server_host_header_override.setter
@@ -96,6 +121,9 @@ class GtmDatacenterArgs:
     @property
     @pulumi.getter(name="cloudServerTargeting")
     def cloud_server_targeting(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean indicating whether to balance load between two or more servers in a cloud environment.
+        """
         return pulumi.get(self, "cloud_server_targeting")
 
     @cloud_server_targeting.setter
@@ -105,6 +133,9 @@ class GtmDatacenterArgs:
     @property
     @pulumi.getter
     def continent(self) -> Optional[pulumi.Input[str]]:
+        """
+        A two-letter code that specifies the continent where the data center maps to.
+        """
         return pulumi.get(self, "continent")
 
     @continent.setter
@@ -114,6 +145,9 @@ class GtmDatacenterArgs:
     @property
     @pulumi.getter
     def country(self) -> Optional[pulumi.Input[str]]:
+        """
+        A two-letter ISO 3166 country code that specifies the country where the data center maps to.
+        """
         return pulumi.get(self, "country")
 
     @country.setter
@@ -123,6 +157,9 @@ class GtmDatacenterArgs:
     @property
     @pulumi.getter(name="defaultLoadObject")
     def default_load_object(self) -> Optional[pulumi.Input['GtmDatacenterDefaultLoadObjectArgs']]:
+        """
+        Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
+        """
         return pulumi.get(self, "default_load_object")
 
     @default_load_object.setter
@@ -132,6 +169,9 @@ class GtmDatacenterArgs:
     @property
     @pulumi.getter
     def latitude(self) -> Optional[pulumi.Input[float]]:
+        """
+        Specifies the geographical latitude of the data center's position. See also longitude within this object.
+        """
         return pulumi.get(self, "latitude")
 
     @latitude.setter
@@ -141,6 +181,9 @@ class GtmDatacenterArgs:
     @property
     @pulumi.getter
     def longitude(self) -> Optional[pulumi.Input[float]]:
+        """
+        Specifies the geographic longitude of the data center's position. See also latitude within this object.
+        """
         return pulumi.get(self, "longitude")
 
     @longitude.setter
@@ -150,6 +193,9 @@ class GtmDatacenterArgs:
     @property
     @pulumi.getter
     def nickname(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive label for the data center.
+        """
         return pulumi.get(self, "nickname")
 
     @nickname.setter
@@ -159,6 +205,9 @@ class GtmDatacenterArgs:
     @property
     @pulumi.getter(name="stateOrProvince")
     def state_or_province(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
+        """
         return pulumi.get(self, "state_or_province")
 
     @state_or_province.setter
@@ -168,6 +217,9 @@ class GtmDatacenterArgs:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean, that if set to `true`, waits for transaction to complete.
+        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -201,6 +253,27 @@ class _GtmDatacenterState:
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering GtmDatacenter resources.
+        :param pulumi.Input[str] city: The name of the city where the data center is located.
+        :param pulumi.Input[int] clone_of: Identifies the data center's `datacenter_id` of which this data center is a clone.
+        :param pulumi.Input[bool] cloud_server_host_header_override: A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
+        :param pulumi.Input[bool] cloud_server_targeting: A boolean indicating whether to balance load between two or more servers in a cloud environment.
+        :param pulumi.Input[str] continent: A two-letter code that specifies the continent where the data center maps to.
+        :param pulumi.Input[str] country: A two-letter ISO 3166 country code that specifies the country where the data center maps to.
+        :param pulumi.Input[int] datacenter_id: A unique identifier for an existing data center in the domain.
+               * `ping_interval`
+               * `ping_packet_size`
+               * `score_penalty`
+               * `servermonitor_liveness_count`
+               * `servermonitor_load_count`
+               * `servermonitor_pool`
+        :param pulumi.Input['GtmDatacenterDefaultLoadObjectArgs'] default_load_object: Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
+        :param pulumi.Input[str] domain: The GTM domain name for the data center.
+        :param pulumi.Input[float] latitude: Specifies the geographical latitude of the data center's position. See also longitude within this object.
+        :param pulumi.Input[float] longitude: Specifies the geographic longitude of the data center's position. See also latitude within this object.
+        :param pulumi.Input[str] nickname: A descriptive label for the data center.
+        :param pulumi.Input[str] state_or_province: Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
+        :param pulumi.Input[bool] virtual: A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
+        :param pulumi.Input[bool] wait_on_complete: A boolean, that if set to `true`, waits for transaction to complete.
         """
         if city is not None:
             pulumi.set(__self__, "city", city)
@@ -248,6 +321,9 @@ class _GtmDatacenterState:
     @property
     @pulumi.getter
     def city(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the city where the data center is located.
+        """
         return pulumi.get(self, "city")
 
     @city.setter
@@ -257,6 +333,9 @@ class _GtmDatacenterState:
     @property
     @pulumi.getter(name="cloneOf")
     def clone_of(self) -> Optional[pulumi.Input[int]]:
+        """
+        Identifies the data center's `datacenter_id` of which this data center is a clone.
+        """
         return pulumi.get(self, "clone_of")
 
     @clone_of.setter
@@ -266,6 +345,9 @@ class _GtmDatacenterState:
     @property
     @pulumi.getter(name="cloudServerHostHeaderOverride")
     def cloud_server_host_header_override(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
+        """
         return pulumi.get(self, "cloud_server_host_header_override")
 
     @cloud_server_host_header_override.setter
@@ -275,6 +357,9 @@ class _GtmDatacenterState:
     @property
     @pulumi.getter(name="cloudServerTargeting")
     def cloud_server_targeting(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean indicating whether to balance load between two or more servers in a cloud environment.
+        """
         return pulumi.get(self, "cloud_server_targeting")
 
     @cloud_server_targeting.setter
@@ -284,6 +369,9 @@ class _GtmDatacenterState:
     @property
     @pulumi.getter
     def continent(self) -> Optional[pulumi.Input[str]]:
+        """
+        A two-letter code that specifies the continent where the data center maps to.
+        """
         return pulumi.get(self, "continent")
 
     @continent.setter
@@ -293,6 +381,9 @@ class _GtmDatacenterState:
     @property
     @pulumi.getter
     def country(self) -> Optional[pulumi.Input[str]]:
+        """
+        A two-letter ISO 3166 country code that specifies the country where the data center maps to.
+        """
         return pulumi.get(self, "country")
 
     @country.setter
@@ -302,6 +393,15 @@ class _GtmDatacenterState:
     @property
     @pulumi.getter(name="datacenterId")
     def datacenter_id(self) -> Optional[pulumi.Input[int]]:
+        """
+        A unique identifier for an existing data center in the domain.
+        * `ping_interval`
+        * `ping_packet_size`
+        * `score_penalty`
+        * `servermonitor_liveness_count`
+        * `servermonitor_load_count`
+        * `servermonitor_pool`
+        """
         return pulumi.get(self, "datacenter_id")
 
     @datacenter_id.setter
@@ -311,6 +411,9 @@ class _GtmDatacenterState:
     @property
     @pulumi.getter(name="defaultLoadObject")
     def default_load_object(self) -> Optional[pulumi.Input['GtmDatacenterDefaultLoadObjectArgs']]:
+        """
+        Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
+        """
         return pulumi.get(self, "default_load_object")
 
     @default_load_object.setter
@@ -320,6 +423,9 @@ class _GtmDatacenterState:
     @property
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        The GTM domain name for the data center.
+        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -329,6 +435,9 @@ class _GtmDatacenterState:
     @property
     @pulumi.getter
     def latitude(self) -> Optional[pulumi.Input[float]]:
+        """
+        Specifies the geographical latitude of the data center's position. See also longitude within this object.
+        """
         return pulumi.get(self, "latitude")
 
     @latitude.setter
@@ -338,6 +447,9 @@ class _GtmDatacenterState:
     @property
     @pulumi.getter
     def longitude(self) -> Optional[pulumi.Input[float]]:
+        """
+        Specifies the geographic longitude of the data center's position. See also latitude within this object.
+        """
         return pulumi.get(self, "longitude")
 
     @longitude.setter
@@ -347,6 +459,9 @@ class _GtmDatacenterState:
     @property
     @pulumi.getter
     def nickname(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive label for the data center.
+        """
         return pulumi.get(self, "nickname")
 
     @nickname.setter
@@ -410,6 +525,9 @@ class _GtmDatacenterState:
     @property
     @pulumi.getter(name="stateOrProvince")
     def state_or_province(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
+        """
         return pulumi.get(self, "state_or_province")
 
     @state_or_province.setter
@@ -419,6 +537,9 @@ class _GtmDatacenterState:
     @property
     @pulumi.getter
     def virtual(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
+        """
         return pulumi.get(self, "virtual")
 
     @virtual.setter
@@ -428,6 +549,9 @@ class _GtmDatacenterState:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean, that if set to `true`, waits for transaction to complete.
+        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -473,46 +597,25 @@ class GtmDatacenter(pulumi.CustomResource):
             domain="demo_domain.akadns.net",
             nickname="demo_datacenter")
         ```
-        ## Argument reference
-
-        This resource supports these arguments:
-
-        * `domain` - (Required) The GTM domain name for the data center.
-        * `wait_on_complete` - (Optional) A boolean, that if set to `true`, waits for transaction to complete.
-        * `nickname` - (Optional) A descriptive label for the data center.
-        * `default_load_object` - (Optional) Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
-          * `load_object` - A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
-          * `load_object_port` - Specifies the TCP port to connect to when requesting the load object.
-          * `load_servers` - Specifies a list of servers to request the load object from.
-        * `city` - (Optional) The name of the city where the data center is located.
-        * `clone_of` - (Optional) Identifies the data center's `datacenter_id` of which this data center is a clone.
-        * `cloud_server_targeting` - (Optional) A boolean indicating whether to balance load between two or more servers in a cloud environment.
-        * `cloud_server_host_header_override` - (Optional) A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
-        * `continent` - (Optional) A two-letter code that specifies the continent where the data center maps to.
-        * `country` - (Optional) A two-letter ISO 3166 country code that specifies the country where the data center maps to.
-        * `latitude` - (Optional) Specifies the geographical latitude of the data center's position. See also longitude within this object.
-        * `longitude` - (Optional) Specifies the geographic longitude of the data center's position. See also latitude within this object.
-        * `state_or_province` - (Optional) Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
-
-        ## Attribute reference
-
-        This resource returns these computed attributes in the state file:
-
-        * `datacenter_id` - A unique identifier for an existing data center in the domain.
-        * `ping_interval`
-        * `ping_packet_size`
-        * `score_penalty`
-        * `servermonitor_liveness_count`
-        * `servermonitor_load_count`
-        * `servermonitor_pool`
-        * `virtual` - A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
-
         ## Schema reference
 
         You can download the GTM Data Center backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#datacenter) page.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] city: The name of the city where the data center is located.
+        :param pulumi.Input[int] clone_of: Identifies the data center's `datacenter_id` of which this data center is a clone.
+        :param pulumi.Input[bool] cloud_server_host_header_override: A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
+        :param pulumi.Input[bool] cloud_server_targeting: A boolean indicating whether to balance load between two or more servers in a cloud environment.
+        :param pulumi.Input[str] continent: A two-letter code that specifies the continent where the data center maps to.
+        :param pulumi.Input[str] country: A two-letter ISO 3166 country code that specifies the country where the data center maps to.
+        :param pulumi.Input[pulumi.InputType['GtmDatacenterDefaultLoadObjectArgs']] default_load_object: Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
+        :param pulumi.Input[str] domain: The GTM domain name for the data center.
+        :param pulumi.Input[float] latitude: Specifies the geographical latitude of the data center's position. See also longitude within this object.
+        :param pulumi.Input[float] longitude: Specifies the geographic longitude of the data center's position. See also latitude within this object.
+        :param pulumi.Input[str] nickname: A descriptive label for the data center.
+        :param pulumi.Input[str] state_or_province: Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
+        :param pulumi.Input[bool] wait_on_complete: A boolean, that if set to `true`, waits for transaction to complete.
         """
         ...
     @overload
@@ -539,40 +642,6 @@ class GtmDatacenter(pulumi.CustomResource):
             domain="demo_domain.akadns.net",
             nickname="demo_datacenter")
         ```
-        ## Argument reference
-
-        This resource supports these arguments:
-
-        * `domain` - (Required) The GTM domain name for the data center.
-        * `wait_on_complete` - (Optional) A boolean, that if set to `true`, waits for transaction to complete.
-        * `nickname` - (Optional) A descriptive label for the data center.
-        * `default_load_object` - (Optional) Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
-          * `load_object` - A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
-          * `load_object_port` - Specifies the TCP port to connect to when requesting the load object.
-          * `load_servers` - Specifies a list of servers to request the load object from.
-        * `city` - (Optional) The name of the city where the data center is located.
-        * `clone_of` - (Optional) Identifies the data center's `datacenter_id` of which this data center is a clone.
-        * `cloud_server_targeting` - (Optional) A boolean indicating whether to balance load between two or more servers in a cloud environment.
-        * `cloud_server_host_header_override` - (Optional) A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
-        * `continent` - (Optional) A two-letter code that specifies the continent where the data center maps to.
-        * `country` - (Optional) A two-letter ISO 3166 country code that specifies the country where the data center maps to.
-        * `latitude` - (Optional) Specifies the geographical latitude of the data center's position. See also longitude within this object.
-        * `longitude` - (Optional) Specifies the geographic longitude of the data center's position. See also latitude within this object.
-        * `state_or_province` - (Optional) Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
-
-        ## Attribute reference
-
-        This resource returns these computed attributes in the state file:
-
-        * `datacenter_id` - A unique identifier for an existing data center in the domain.
-        * `ping_interval`
-        * `ping_packet_size`
-        * `score_penalty`
-        * `servermonitor_liveness_count`
-        * `servermonitor_load_count`
-        * `servermonitor_pool`
-        * `virtual` - A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
-
         ## Schema reference
 
         You can download the GTM Data Center backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#datacenter) page.
@@ -680,6 +749,27 @@ class GtmDatacenter(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] city: The name of the city where the data center is located.
+        :param pulumi.Input[int] clone_of: Identifies the data center's `datacenter_id` of which this data center is a clone.
+        :param pulumi.Input[bool] cloud_server_host_header_override: A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
+        :param pulumi.Input[bool] cloud_server_targeting: A boolean indicating whether to balance load between two or more servers in a cloud environment.
+        :param pulumi.Input[str] continent: A two-letter code that specifies the continent where the data center maps to.
+        :param pulumi.Input[str] country: A two-letter ISO 3166 country code that specifies the country where the data center maps to.
+        :param pulumi.Input[int] datacenter_id: A unique identifier for an existing data center in the domain.
+               * `ping_interval`
+               * `ping_packet_size`
+               * `score_penalty`
+               * `servermonitor_liveness_count`
+               * `servermonitor_load_count`
+               * `servermonitor_pool`
+        :param pulumi.Input[pulumi.InputType['GtmDatacenterDefaultLoadObjectArgs']] default_load_object: Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
+        :param pulumi.Input[str] domain: The GTM domain name for the data center.
+        :param pulumi.Input[float] latitude: Specifies the geographical latitude of the data center's position. See also longitude within this object.
+        :param pulumi.Input[float] longitude: Specifies the geographic longitude of the data center's position. See also latitude within this object.
+        :param pulumi.Input[str] nickname: A descriptive label for the data center.
+        :param pulumi.Input[str] state_or_province: Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
+        :param pulumi.Input[bool] virtual: A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
+        :param pulumi.Input[bool] wait_on_complete: A boolean, that if set to `true`, waits for transaction to complete.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -711,61 +801,103 @@ class GtmDatacenter(pulumi.CustomResource):
     @property
     @pulumi.getter
     def city(self) -> pulumi.Output[Optional[str]]:
+        """
+        The name of the city where the data center is located.
+        """
         return pulumi.get(self, "city")
 
     @property
     @pulumi.getter(name="cloneOf")
     def clone_of(self) -> pulumi.Output[Optional[int]]:
+        """
+        Identifies the data center's `datacenter_id` of which this data center is a clone.
+        """
         return pulumi.get(self, "clone_of")
 
     @property
     @pulumi.getter(name="cloudServerHostHeaderOverride")
     def cloud_server_host_header_override(self) -> pulumi.Output[Optional[bool]]:
+        """
+        A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
+        """
         return pulumi.get(self, "cloud_server_host_header_override")
 
     @property
     @pulumi.getter(name="cloudServerTargeting")
     def cloud_server_targeting(self) -> pulumi.Output[Optional[bool]]:
+        """
+        A boolean indicating whether to balance load between two or more servers in a cloud environment.
+        """
         return pulumi.get(self, "cloud_server_targeting")
 
     @property
     @pulumi.getter
     def continent(self) -> pulumi.Output[Optional[str]]:
+        """
+        A two-letter code that specifies the continent where the data center maps to.
+        """
         return pulumi.get(self, "continent")
 
     @property
     @pulumi.getter
     def country(self) -> pulumi.Output[Optional[str]]:
+        """
+        A two-letter ISO 3166 country code that specifies the country where the data center maps to.
+        """
         return pulumi.get(self, "country")
 
     @property
     @pulumi.getter(name="datacenterId")
     def datacenter_id(self) -> pulumi.Output[int]:
+        """
+        A unique identifier for an existing data center in the domain.
+        * `ping_interval`
+        * `ping_packet_size`
+        * `score_penalty`
+        * `servermonitor_liveness_count`
+        * `servermonitor_load_count`
+        * `servermonitor_pool`
+        """
         return pulumi.get(self, "datacenter_id")
 
     @property
     @pulumi.getter(name="defaultLoadObject")
     def default_load_object(self) -> pulumi.Output[Optional['outputs.GtmDatacenterDefaultLoadObject']]:
+        """
+        Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
+        """
         return pulumi.get(self, "default_load_object")
 
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Output[str]:
+        """
+        The GTM domain name for the data center.
+        """
         return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter
     def latitude(self) -> pulumi.Output[Optional[float]]:
+        """
+        Specifies the geographical latitude of the data center's position. See also longitude within this object.
+        """
         return pulumi.get(self, "latitude")
 
     @property
     @pulumi.getter
     def longitude(self) -> pulumi.Output[Optional[float]]:
+        """
+        Specifies the geographic longitude of the data center's position. See also latitude within this object.
+        """
         return pulumi.get(self, "longitude")
 
     @property
     @pulumi.getter
     def nickname(self) -> pulumi.Output[Optional[str]]:
+        """
+        A descriptive label for the data center.
+        """
         return pulumi.get(self, "nickname")
 
     @property
@@ -801,15 +933,24 @@ class GtmDatacenter(pulumi.CustomResource):
     @property
     @pulumi.getter(name="stateOrProvince")
     def state_or_province(self) -> pulumi.Output[Optional[str]]:
+        """
+        Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
+        """
         return pulumi.get(self, "state_or_province")
 
     @property
     @pulumi.getter
     def virtual(self) -> pulumi.Output[bool]:
+        """
+        A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
+        """
         return pulumi.get(self, "virtual")
 
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> pulumi.Output[Optional[bool]]:
+        """
+        A boolean, that if set to `true`, waits for transaction to complete.
+        """
         return pulumi.get(self, "wait_on_complete")
 

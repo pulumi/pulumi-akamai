@@ -54,9 +54,7 @@ export function getAppSecSecurityPolicyProtections(args: GetAppSecSecurityPolicy
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,

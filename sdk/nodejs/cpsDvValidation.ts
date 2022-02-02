@@ -20,13 +20,6 @@ import * as utilities from "./utilities";
  *     sans: akamai_cps_dv_enrollment.example.sans,
  * });
  * ```
- * ## Argument reference
- *
- * The following arguments are supported:
- *
- * * `enrollmentId` (Required) - Unique identifier for the DV certificate enrollment.
- * * `sans` - (Optional) The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
- *
  * ## Attributes reference
  *
  * * `status` - The status of certificate validation.
@@ -59,7 +52,13 @@ export class CpsDvValidation extends pulumi.CustomResource {
         return obj['__pulumiType'] === CpsDvValidation.__pulumiType;
     }
 
+    /**
+     * Unique identifier for the DV certificate enrollment.
+     */
     public readonly enrollmentId!: pulumi.Output<number>;
+    /**
+     * The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+     */
     public readonly sans!: pulumi.Output<string[] | undefined>;
     public /*out*/ readonly status!: pulumi.Output<string>;
 
@@ -72,26 +71,24 @@ export class CpsDvValidation extends pulumi.CustomResource {
      */
     constructor(name: string, args: CpsDvValidationArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: CpsDvValidationArgs | CpsDvValidationState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CpsDvValidationState | undefined;
-            inputs["enrollmentId"] = state ? state.enrollmentId : undefined;
-            inputs["sans"] = state ? state.sans : undefined;
-            inputs["status"] = state ? state.status : undefined;
+            resourceInputs["enrollmentId"] = state ? state.enrollmentId : undefined;
+            resourceInputs["sans"] = state ? state.sans : undefined;
+            resourceInputs["status"] = state ? state.status : undefined;
         } else {
             const args = argsOrState as CpsDvValidationArgs | undefined;
             if ((!args || args.enrollmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'enrollmentId'");
             }
-            inputs["enrollmentId"] = args ? args.enrollmentId : undefined;
-            inputs["sans"] = args ? args.sans : undefined;
-            inputs["status"] = undefined /*out*/;
+            resourceInputs["enrollmentId"] = args ? args.enrollmentId : undefined;
+            resourceInputs["sans"] = args ? args.sans : undefined;
+            resourceInputs["status"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(CpsDvValidation.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(CpsDvValidation.__pulumiType, name, resourceInputs, opts);
     }
 }
 
@@ -99,7 +96,13 @@ export class CpsDvValidation extends pulumi.CustomResource {
  * Input properties used for looking up and filtering CpsDvValidation resources.
  */
 export interface CpsDvValidationState {
+    /**
+     * Unique identifier for the DV certificate enrollment.
+     */
     enrollmentId?: pulumi.Input<number>;
+    /**
+     * The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+     */
     sans?: pulumi.Input<pulumi.Input<string>[]>;
     status?: pulumi.Input<string>;
 }
@@ -108,6 +111,12 @@ export interface CpsDvValidationState {
  * The set of arguments for constructing a CpsDvValidation resource.
  */
 export interface CpsDvValidationArgs {
+    /**
+     * Unique identifier for the DV certificate enrollment.
+     */
     enrollmentId: pulumi.Input<number>;
+    /**
+     * The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+     */
     sans?: pulumi.Input<pulumi.Input<string>[]>;
 }

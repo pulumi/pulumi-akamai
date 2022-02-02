@@ -28,21 +28,6 @@ import * as utilities from "./utilities";
  *     domain: "demo_domain.akadns.net",
  * });
  * ```
- * ## Argument reference
- *
- * This resource supports these arguments:
- *
- * * `domain` - (Required) GTM Domain name for the AS Map.
- * * `name` - (Required) A descriptive label for the CIDR map, up to 255 characters.
- * * `defaultDatacenter` - (Required) A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
- *   * `datacenterId` - (Required) For each property, an identifier for all other CIDR zones.
- *   * `nickname` - (Required) A descriptive label for the all other CIDR blocks.
- * * `waitOnComplete` - (Optional) A boolean that, if set to `true`, waits for transaction to complete.
- * * `assignment` - (Optional) Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
- *   * `datacenterId` - (Optional) A unique identifier for an existing data center in the domain.
- *   * `nickname` - (Optional) A descriptive label for the CIDR zone group, up to 256 characters.
- *   * `blocks` - (Optional, list) Specifies an array of CIDR blocks.
- *
  * ## Schema reference
  *
  * You can download the GTM CIDR Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#cidrmap) page.
@@ -75,10 +60,25 @@ export class GtmCidrmap extends pulumi.CustomResource {
         return obj['__pulumiType'] === GtmCidrmap.__pulumiType;
     }
 
+    /**
+     * Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+     */
     public readonly assignments!: pulumi.Output<outputs.GtmCidrmapAssignment[] | undefined>;
+    /**
+     * A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+     */
     public readonly defaultDatacenter!: pulumi.Output<outputs.GtmCidrmapDefaultDatacenter>;
+    /**
+     * GTM Domain name for the AS Map.
+     */
     public readonly domain!: pulumi.Output<string>;
+    /**
+     * A descriptive label for the CIDR map, up to 255 characters.
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * A boolean that, if set to `true`, waits for transaction to complete.
+     */
     public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
 
     /**
@@ -90,15 +90,15 @@ export class GtmCidrmap extends pulumi.CustomResource {
      */
     constructor(name: string, args: GtmCidrmapArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: GtmCidrmapArgs | GtmCidrmapState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GtmCidrmapState | undefined;
-            inputs["assignments"] = state ? state.assignments : undefined;
-            inputs["defaultDatacenter"] = state ? state.defaultDatacenter : undefined;
-            inputs["domain"] = state ? state.domain : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
+            resourceInputs["assignments"] = state ? state.assignments : undefined;
+            resourceInputs["defaultDatacenter"] = state ? state.defaultDatacenter : undefined;
+            resourceInputs["domain"] = state ? state.domain : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
         } else {
             const args = argsOrState as GtmCidrmapArgs | undefined;
             if ((!args || args.defaultDatacenter === undefined) && !opts.urn) {
@@ -107,18 +107,16 @@ export class GtmCidrmap extends pulumi.CustomResource {
             if ((!args || args.domain === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'domain'");
             }
-            inputs["assignments"] = args ? args.assignments : undefined;
-            inputs["defaultDatacenter"] = args ? args.defaultDatacenter : undefined;
-            inputs["domain"] = args ? args.domain : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
+            resourceInputs["assignments"] = args ? args.assignments : undefined;
+            resourceInputs["defaultDatacenter"] = args ? args.defaultDatacenter : undefined;
+            resourceInputs["domain"] = args ? args.domain : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const aliasOpts = { aliases: [{ type: "akamai:trafficmanagement/gtmCidrmap:GtmCidrmap" }] };
         opts = pulumi.mergeOptions(opts, aliasOpts);
-        super(GtmCidrmap.__pulumiType, name, inputs, opts);
+        super(GtmCidrmap.__pulumiType, name, resourceInputs, opts);
     }
 }
 
@@ -126,10 +124,25 @@ export class GtmCidrmap extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmCidrmap resources.
  */
 export interface GtmCidrmapState {
+    /**
+     * Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+     */
     assignments?: pulumi.Input<pulumi.Input<inputs.GtmCidrmapAssignment>[]>;
+    /**
+     * A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+     */
     defaultDatacenter?: pulumi.Input<inputs.GtmCidrmapDefaultDatacenter>;
+    /**
+     * GTM Domain name for the AS Map.
+     */
     domain?: pulumi.Input<string>;
+    /**
+     * A descriptive label for the CIDR map, up to 255 characters.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * A boolean that, if set to `true`, waits for transaction to complete.
+     */
     waitOnComplete?: pulumi.Input<boolean>;
 }
 
@@ -137,9 +150,24 @@ export interface GtmCidrmapState {
  * The set of arguments for constructing a GtmCidrmap resource.
  */
 export interface GtmCidrmapArgs {
+    /**
+     * Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+     */
     assignments?: pulumi.Input<pulumi.Input<inputs.GtmCidrmapAssignment>[]>;
+    /**
+     * A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+     */
     defaultDatacenter: pulumi.Input<inputs.GtmCidrmapDefaultDatacenter>;
+    /**
+     * GTM Domain name for the AS Map.
+     */
     domain: pulumi.Input<string>;
+    /**
+     * A descriptive label for the CIDR map, up to 255 characters.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * A boolean that, if set to `true`, waits for transaction to complete.
+     */
     waitOnComplete?: pulumi.Input<boolean>;
 }

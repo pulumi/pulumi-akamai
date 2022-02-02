@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -61,7 +60,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the ID and name of each SIEM version.
         /// </summary>
         public static Task<GetAppSecSiemDefinitionsResult> InvokeAsync(GetAppSecSiemDefinitionsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSiemDefinitionsResult>("akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions", args ?? new GetAppSecSiemDefinitionsArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSiemDefinitionsResult>("akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions", args ?? new GetAppSecSiemDefinitionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: SIEM definition
@@ -112,7 +111,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the ID and name of each SIEM version.
         /// </summary>
         public static Output<GetAppSecSiemDefinitionsResult> Invoke(GetAppSecSiemDefinitionsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecSiemDefinitionsResult>("akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions", args ?? new GetAppSecSiemDefinitionsInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecSiemDefinitionsResult>("akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions", args ?? new GetAppSecSiemDefinitionsInvokeArgs(), options.WithDefaults());
     }
 
 

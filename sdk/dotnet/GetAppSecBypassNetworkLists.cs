@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -67,7 +66,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the bypass network list information.
         /// </summary>
         public static Task<GetAppSecBypassNetworkListsResult> InvokeAsync(GetAppSecBypassNetworkListsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecBypassNetworkListsResult>("akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists", args ?? new GetAppSecBypassNetworkListsArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecBypassNetworkListsResult>("akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists", args ?? new GetAppSecBypassNetworkListsArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration
@@ -124,7 +123,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the bypass network list information.
         /// </summary>
         public static Output<GetAppSecBypassNetworkListsResult> Invoke(GetAppSecBypassNetworkListsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecBypassNetworkListsResult>("akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists", args ?? new GetAppSecBypassNetworkListsInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecBypassNetworkListsResult>("akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists", args ?? new GetAppSecBypassNetworkListsInvokeArgs(), options.WithDefaults());
     }
 
 

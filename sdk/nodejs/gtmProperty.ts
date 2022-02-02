@@ -29,84 +29,6 @@ import * as utilities from "./utilities";
  *     type: "weighted-round-robin",
  * });
  * ```
- * ## Argument reference
- *
- * This resource supports these arguments:
- *
- * * `domain` - (Required) DNS name for the GTM Domain set that includes this Property.
- * * `name` - (Required) DNS name for a collection of IP address or CNAME responses. The value, together with the GTM domainName, forms the Property's hostname.
- * * `type` - (Required) Specifies the load balancing behavior for the property. Either failover, geographic, cidrmapping, weighted-round-robin, weighted-hashed, weighted-round-robin-load-feedback, qtr, or performance.
- * * `scoreAggregationType` - (Required) Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
- * * `handoutLimit` - (Required) Indicates the limit for the number of live IPs handed out to a DNS request.
- * * `handoutMode` - (Required) Specifies how IPs are returned when more than one IP is alive and available.
- * * `trafficTarget` - (Optional) Contains information about where to direct data center traffic. You can have multiple `trafficTarget` arguments. If used, includes these arguments:
- *   * `datacenterId` - (Optional) A unique identifier for an existing data center in the domain.
- *   * `enabled` - (Optional) A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
- *   * `weight` - (Optional) Specifies the traffic weight for the target.
- *   * `servers` - (Optional) (List) Identifies the IP address or the hostnames of the servers.
- *   * `name` - (Optional) An alternative label for the traffic target.
- *   * `handoutCname` - (Optional) Specifies an optional data center for the property. Used when there are no servers configured for the property.
- * * `livenessTest` - (Optional) Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `livenessTest` arguments. If used, requires these arguments:
- *   * `name` - (Required) A descriptive name for the liveness test.
- *   * `testInterval` - (Required) Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
- *   * `testObjectProtocol` - (Required) Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
- *   * `testTimeout` - (Required) Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
- *   * `answersRequired` - (Optional) If `testObjectProtocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
- *   * `disabled` - (Optional) A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
- *   * `disableNonstandardPortWarning` - (Optional) A boolean that if set to `true`, disables warnings when non-standard ports are used.
- *   * `errorPenalty` - (Optional) Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
- *   * `httpHeader` - (Optional) Contains HTTP headers to send if the `testObjectProtocol` is `http` or `https`. You can have multiple `httpHeader` entries. Requires these arguments:
- *     * `name` - (Optional) Name of HTTP header.
- *     * `value` - (Optional) Value of HTTP header.
- *   * `httpError3xx` - (Optional) A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
- *   * `httpError4xx` - (Optional) A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
- *   * `httpError5xx` - (Optional) A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
- *   * `peerCertificateVerification` - (Optional) A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `testObjectProtocol` of https.
- *   * `recursionRequested` - (Optional) A boolean indicating whether the `testObjectProtocol` is DNS. The DNS query is recursive.
- *   * `requestString` - (Optional) Specifies a request string.
- *   * `resourceType` - (Optional) Specifies the query type, if `testObjectProtocol` is DNS.
- *   * `responseString` - (Optional) Specifies a response string.
- *   * `sslClientCertificate` - (Optional) Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
- *   * `sslClientPrivateKey` - (Optional) Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can't have a passphrase nor be used for any other purpose.
- *   * `testObject` - (Required) Specifies the static text that acts as a stand-in for the data that you're sending on the network.
- *   * `testObjectPassword` - (Optional) Specifies the test object's password. It is required if testObjectProtocol is ftp.
- *   * `testObjectPort` - (Required) Specifies the port number for the testObject.
- *   * `testObjectUsername` - (Optional) A descriptive name for the testObject.
- *   * `timeoutPenalty`- (Optional) Specifies the score to be reported if the liveness test times out.
- * * `waitOnComplete` - (Optional) A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
- * * `failoverDelay` - (Optional) Specifies the failover delay in seconds.
- * * `failbackDelay` - (Optional) Specifies the failback delay in seconds.
- * * `ipv6` - (Optional) A boolean that indicates the type of IP address handed out by a GTM property.
- * * `stickinessBonusPercentage` - (Optional) Specifies a percentage used to configure data center affinity.
- * * `stickinessBonusConstant` - (Optional) Specifies a constant used to configure data center affinity.
- * * `healthThreshold` - (Optional) Configures a cutoff value that is computed from the median scores.
- * * `useComputedTargets` - (Optional) For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
- * * `backupIp` - (Optional) Specifies a backup IP. When GTM declares that all of the targets are down, the backup IP is handed out. If a backup IP is set, do not set a backup CNAME.
- * * `backupCname` - (Optional) Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
- * * `balanceByDownloadScore` - (Optional) A boolean that indicates whether download score based load balancing is enabled.
- * * `unreachableThreshold` - (Optional) For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
- * * `healthMultiplier` - (Optional) Configures a cutoff value that is computed from the median scores.
- * * `dynamicTtl` - (Optional) Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing such as A and AAAA records, and CNAMEs.
- * * `maxUnreachablePenalty` - (Optional) For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
- * * `mapName` - (Optional) A descriptive label for a GeographicMap or a CidrMap that's required if the property is either geographic or cidrmapping, in which case mapName needs to reference either an existing GeographicMap or CidrMap in the same domain.
- * * `loadImbalancePercentage` - (Optional) Indicates the percent of load imbalance factor (LIF) for the property.
- * * `healthMax` - (Optional) Defines the absolute limit beyond which IPs are declared unhealthy.
- * * `cname` - (Optional) Indicates the fully qualified name aliased to a particular property.
- * * `comments` - (Optional) A descriptive note about changes to the domain. The maximum is 4000 characters.
- * * `ghostDemandReporting` - (Optional) Use load estimates from Akamai Ghost utilization messages.
- * * `minLiveFraction` - (Optional) Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
- * * `staticRrSet` - (Optional) Contains static record sets. You can have multiple `staticRrSet` entries. Requires these arguments:
- *   * `type` - (Optional) The record type.
- *   * `ttl` - (Optional) The number of seconds that this record should live in a resolver's cache before being refetched.
- *   * `rdata` - (Optional) (List) An array of data strings, representing multiple records within a set.
- *
- * ## Attribute reference
- *
- * This resource returns these computed attributes in the state file:
- *
- * * `weightedHashBitsForIpv4`
- * * `weightedHashBitsForIpv6`
- *
  * ## Schema reference
  *
  * You can download the GTM Property backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#property) page.
@@ -139,37 +61,130 @@ export class GtmProperty extends pulumi.CustomResource {
         return obj['__pulumiType'] === GtmProperty.__pulumiType;
     }
 
+    /**
+     * Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
+     */
     public readonly backupCname!: pulumi.Output<string | undefined>;
+    /**
+     * Specifies a backup IP. When GTM declares that all of the targets are down, the backup IP is handed out. If a backup IP is set, do not set a backup CNAME.
+     */
     public readonly backupIp!: pulumi.Output<string | undefined>;
+    /**
+     * A boolean that indicates whether download score based load balancing is enabled.
+     */
     public readonly balanceByDownloadScore!: pulumi.Output<boolean | undefined>;
+    /**
+     * Indicates the fully qualified name aliased to a particular property.
+     */
     public readonly cname!: pulumi.Output<string | undefined>;
+    /**
+     * A descriptive note about changes to the domain. The maximum is 4000 characters.
+     */
     public readonly comments!: pulumi.Output<string | undefined>;
+    /**
+     * DNS name for the GTM Domain set that includes this Property.
+     */
     public readonly domain!: pulumi.Output<string>;
+    /**
+     * Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing such as A and AAAA records, and CNAMEs.
+     */
     public readonly dynamicTtl!: pulumi.Output<number | undefined>;
+    /**
+     * Specifies the failback delay in seconds.
+     */
     public readonly failbackDelay!: pulumi.Output<number | undefined>;
+    /**
+     * Specifies the failover delay in seconds.
+     */
     public readonly failoverDelay!: pulumi.Output<number | undefined>;
+    /**
+     * Use load estimates from Akamai Ghost utilization messages.
+     */
     public readonly ghostDemandReporting!: pulumi.Output<boolean | undefined>;
+    /**
+     * Indicates the limit for the number of live IPs handed out to a DNS request.
+     */
     public readonly handoutLimit!: pulumi.Output<number>;
+    /**
+     * Specifies how IPs are returned when more than one IP is alive and available.
+     */
     public readonly handoutMode!: pulumi.Output<string>;
+    /**
+     * Defines the absolute limit beyond which IPs are declared unhealthy.
+     */
     public readonly healthMax!: pulumi.Output<number | undefined>;
+    /**
+     * Configures a cutoff value that is computed from the median scores.
+     */
     public readonly healthMultiplier!: pulumi.Output<number | undefined>;
+    /**
+     * Configures a cutoff value that is computed from the median scores.
+     */
     public readonly healthThreshold!: pulumi.Output<number | undefined>;
+    /**
+     * A boolean that indicates the type of IP address handed out by a GTM property.
+     */
     public readonly ipv6!: pulumi.Output<boolean | undefined>;
+    /**
+     * Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `livenessTest` arguments. If used, requires these arguments:
+     */
     public readonly livenessTests!: pulumi.Output<outputs.GtmPropertyLivenessTest[] | undefined>;
+    /**
+     * Indicates the percent of load imbalance factor (LIF) for the property.
+     */
     public readonly loadImbalancePercentage!: pulumi.Output<number | undefined>;
+    /**
+     * A descriptive label for a GeographicMap or a CidrMap that's required if the property is either geographic or cidrmapping, in which case mapName needs to reference either an existing GeographicMap or CidrMap in the same domain.
+     */
     public readonly mapName!: pulumi.Output<string | undefined>;
+    /**
+     * For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
+     */
     public readonly maxUnreachablePenalty!: pulumi.Output<number | undefined>;
+    /**
+     * Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
+     */
     public readonly minLiveFraction!: pulumi.Output<number | undefined>;
+    /**
+     * Name of HTTP header.
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
+     */
     public readonly scoreAggregationType!: pulumi.Output<string>;
+    /**
+     * Contains static record sets. You can have multiple `staticRrSet` entries. Requires these arguments:
+     */
     public readonly staticRrSets!: pulumi.Output<outputs.GtmPropertyStaticRrSet[] | undefined>;
     public readonly staticTtl!: pulumi.Output<number | undefined>;
+    /**
+     * Specifies a constant used to configure data center affinity.
+     */
     public readonly stickinessBonusConstant!: pulumi.Output<number | undefined>;
+    /**
+     * Specifies a percentage used to configure data center affinity.
+     */
     public readonly stickinessBonusPercentage!: pulumi.Output<number | undefined>;
+    /**
+     * Contains information about where to direct data center traffic. You can have multiple `trafficTarget` arguments. If used, includes these arguments:
+     */
     public readonly trafficTargets!: pulumi.Output<outputs.GtmPropertyTrafficTarget[] | undefined>;
+    /**
+     * The record type.
+     */
     public readonly type!: pulumi.Output<string>;
+    /**
+     * For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
+     */
     public readonly unreachableThreshold!: pulumi.Output<number | undefined>;
+    /**
+     * For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
+     */
     public readonly useComputedTargets!: pulumi.Output<boolean | undefined>;
+    /**
+     * A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+     */
     public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
     public /*out*/ readonly weightedHashBitsForIpv4!: pulumi.Output<number>;
     public /*out*/ readonly weightedHashBitsForIpv6!: pulumi.Output<number>;
@@ -183,44 +198,44 @@ export class GtmProperty extends pulumi.CustomResource {
      */
     constructor(name: string, args: GtmPropertyArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: GtmPropertyArgs | GtmPropertyState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GtmPropertyState | undefined;
-            inputs["backupCname"] = state ? state.backupCname : undefined;
-            inputs["backupIp"] = state ? state.backupIp : undefined;
-            inputs["balanceByDownloadScore"] = state ? state.balanceByDownloadScore : undefined;
-            inputs["cname"] = state ? state.cname : undefined;
-            inputs["comments"] = state ? state.comments : undefined;
-            inputs["domain"] = state ? state.domain : undefined;
-            inputs["dynamicTtl"] = state ? state.dynamicTtl : undefined;
-            inputs["failbackDelay"] = state ? state.failbackDelay : undefined;
-            inputs["failoverDelay"] = state ? state.failoverDelay : undefined;
-            inputs["ghostDemandReporting"] = state ? state.ghostDemandReporting : undefined;
-            inputs["handoutLimit"] = state ? state.handoutLimit : undefined;
-            inputs["handoutMode"] = state ? state.handoutMode : undefined;
-            inputs["healthMax"] = state ? state.healthMax : undefined;
-            inputs["healthMultiplier"] = state ? state.healthMultiplier : undefined;
-            inputs["healthThreshold"] = state ? state.healthThreshold : undefined;
-            inputs["ipv6"] = state ? state.ipv6 : undefined;
-            inputs["livenessTests"] = state ? state.livenessTests : undefined;
-            inputs["loadImbalancePercentage"] = state ? state.loadImbalancePercentage : undefined;
-            inputs["mapName"] = state ? state.mapName : undefined;
-            inputs["maxUnreachablePenalty"] = state ? state.maxUnreachablePenalty : undefined;
-            inputs["minLiveFraction"] = state ? state.minLiveFraction : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["scoreAggregationType"] = state ? state.scoreAggregationType : undefined;
-            inputs["staticRrSets"] = state ? state.staticRrSets : undefined;
-            inputs["staticTtl"] = state ? state.staticTtl : undefined;
-            inputs["stickinessBonusConstant"] = state ? state.stickinessBonusConstant : undefined;
-            inputs["stickinessBonusPercentage"] = state ? state.stickinessBonusPercentage : undefined;
-            inputs["trafficTargets"] = state ? state.trafficTargets : undefined;
-            inputs["type"] = state ? state.type : undefined;
-            inputs["unreachableThreshold"] = state ? state.unreachableThreshold : undefined;
-            inputs["useComputedTargets"] = state ? state.useComputedTargets : undefined;
-            inputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
-            inputs["weightedHashBitsForIpv4"] = state ? state.weightedHashBitsForIpv4 : undefined;
-            inputs["weightedHashBitsForIpv6"] = state ? state.weightedHashBitsForIpv6 : undefined;
+            resourceInputs["backupCname"] = state ? state.backupCname : undefined;
+            resourceInputs["backupIp"] = state ? state.backupIp : undefined;
+            resourceInputs["balanceByDownloadScore"] = state ? state.balanceByDownloadScore : undefined;
+            resourceInputs["cname"] = state ? state.cname : undefined;
+            resourceInputs["comments"] = state ? state.comments : undefined;
+            resourceInputs["domain"] = state ? state.domain : undefined;
+            resourceInputs["dynamicTtl"] = state ? state.dynamicTtl : undefined;
+            resourceInputs["failbackDelay"] = state ? state.failbackDelay : undefined;
+            resourceInputs["failoverDelay"] = state ? state.failoverDelay : undefined;
+            resourceInputs["ghostDemandReporting"] = state ? state.ghostDemandReporting : undefined;
+            resourceInputs["handoutLimit"] = state ? state.handoutLimit : undefined;
+            resourceInputs["handoutMode"] = state ? state.handoutMode : undefined;
+            resourceInputs["healthMax"] = state ? state.healthMax : undefined;
+            resourceInputs["healthMultiplier"] = state ? state.healthMultiplier : undefined;
+            resourceInputs["healthThreshold"] = state ? state.healthThreshold : undefined;
+            resourceInputs["ipv6"] = state ? state.ipv6 : undefined;
+            resourceInputs["livenessTests"] = state ? state.livenessTests : undefined;
+            resourceInputs["loadImbalancePercentage"] = state ? state.loadImbalancePercentage : undefined;
+            resourceInputs["mapName"] = state ? state.mapName : undefined;
+            resourceInputs["maxUnreachablePenalty"] = state ? state.maxUnreachablePenalty : undefined;
+            resourceInputs["minLiveFraction"] = state ? state.minLiveFraction : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["scoreAggregationType"] = state ? state.scoreAggregationType : undefined;
+            resourceInputs["staticRrSets"] = state ? state.staticRrSets : undefined;
+            resourceInputs["staticTtl"] = state ? state.staticTtl : undefined;
+            resourceInputs["stickinessBonusConstant"] = state ? state.stickinessBonusConstant : undefined;
+            resourceInputs["stickinessBonusPercentage"] = state ? state.stickinessBonusPercentage : undefined;
+            resourceInputs["trafficTargets"] = state ? state.trafficTargets : undefined;
+            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["unreachableThreshold"] = state ? state.unreachableThreshold : undefined;
+            resourceInputs["useComputedTargets"] = state ? state.useComputedTargets : undefined;
+            resourceInputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
+            resourceInputs["weightedHashBitsForIpv4"] = state ? state.weightedHashBitsForIpv4 : undefined;
+            resourceInputs["weightedHashBitsForIpv6"] = state ? state.weightedHashBitsForIpv6 : undefined;
         } else {
             const args = argsOrState as GtmPropertyArgs | undefined;
             if ((!args || args.domain === undefined) && !opts.urn) {
@@ -238,47 +253,45 @@ export class GtmProperty extends pulumi.CustomResource {
             if ((!args || args.type === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            inputs["backupCname"] = args ? args.backupCname : undefined;
-            inputs["backupIp"] = args ? args.backupIp : undefined;
-            inputs["balanceByDownloadScore"] = args ? args.balanceByDownloadScore : undefined;
-            inputs["cname"] = args ? args.cname : undefined;
-            inputs["comments"] = args ? args.comments : undefined;
-            inputs["domain"] = args ? args.domain : undefined;
-            inputs["dynamicTtl"] = args ? args.dynamicTtl : undefined;
-            inputs["failbackDelay"] = args ? args.failbackDelay : undefined;
-            inputs["failoverDelay"] = args ? args.failoverDelay : undefined;
-            inputs["ghostDemandReporting"] = args ? args.ghostDemandReporting : undefined;
-            inputs["handoutLimit"] = args ? args.handoutLimit : undefined;
-            inputs["handoutMode"] = args ? args.handoutMode : undefined;
-            inputs["healthMax"] = args ? args.healthMax : undefined;
-            inputs["healthMultiplier"] = args ? args.healthMultiplier : undefined;
-            inputs["healthThreshold"] = args ? args.healthThreshold : undefined;
-            inputs["ipv6"] = args ? args.ipv6 : undefined;
-            inputs["livenessTests"] = args ? args.livenessTests : undefined;
-            inputs["loadImbalancePercentage"] = args ? args.loadImbalancePercentage : undefined;
-            inputs["mapName"] = args ? args.mapName : undefined;
-            inputs["maxUnreachablePenalty"] = args ? args.maxUnreachablePenalty : undefined;
-            inputs["minLiveFraction"] = args ? args.minLiveFraction : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["scoreAggregationType"] = args ? args.scoreAggregationType : undefined;
-            inputs["staticRrSets"] = args ? args.staticRrSets : undefined;
-            inputs["staticTtl"] = args ? args.staticTtl : undefined;
-            inputs["stickinessBonusConstant"] = args ? args.stickinessBonusConstant : undefined;
-            inputs["stickinessBonusPercentage"] = args ? args.stickinessBonusPercentage : undefined;
-            inputs["trafficTargets"] = args ? args.trafficTargets : undefined;
-            inputs["type"] = args ? args.type : undefined;
-            inputs["unreachableThreshold"] = args ? args.unreachableThreshold : undefined;
-            inputs["useComputedTargets"] = args ? args.useComputedTargets : undefined;
-            inputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
-            inputs["weightedHashBitsForIpv4"] = undefined /*out*/;
-            inputs["weightedHashBitsForIpv6"] = undefined /*out*/;
+            resourceInputs["backupCname"] = args ? args.backupCname : undefined;
+            resourceInputs["backupIp"] = args ? args.backupIp : undefined;
+            resourceInputs["balanceByDownloadScore"] = args ? args.balanceByDownloadScore : undefined;
+            resourceInputs["cname"] = args ? args.cname : undefined;
+            resourceInputs["comments"] = args ? args.comments : undefined;
+            resourceInputs["domain"] = args ? args.domain : undefined;
+            resourceInputs["dynamicTtl"] = args ? args.dynamicTtl : undefined;
+            resourceInputs["failbackDelay"] = args ? args.failbackDelay : undefined;
+            resourceInputs["failoverDelay"] = args ? args.failoverDelay : undefined;
+            resourceInputs["ghostDemandReporting"] = args ? args.ghostDemandReporting : undefined;
+            resourceInputs["handoutLimit"] = args ? args.handoutLimit : undefined;
+            resourceInputs["handoutMode"] = args ? args.handoutMode : undefined;
+            resourceInputs["healthMax"] = args ? args.healthMax : undefined;
+            resourceInputs["healthMultiplier"] = args ? args.healthMultiplier : undefined;
+            resourceInputs["healthThreshold"] = args ? args.healthThreshold : undefined;
+            resourceInputs["ipv6"] = args ? args.ipv6 : undefined;
+            resourceInputs["livenessTests"] = args ? args.livenessTests : undefined;
+            resourceInputs["loadImbalancePercentage"] = args ? args.loadImbalancePercentage : undefined;
+            resourceInputs["mapName"] = args ? args.mapName : undefined;
+            resourceInputs["maxUnreachablePenalty"] = args ? args.maxUnreachablePenalty : undefined;
+            resourceInputs["minLiveFraction"] = args ? args.minLiveFraction : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["scoreAggregationType"] = args ? args.scoreAggregationType : undefined;
+            resourceInputs["staticRrSets"] = args ? args.staticRrSets : undefined;
+            resourceInputs["staticTtl"] = args ? args.staticTtl : undefined;
+            resourceInputs["stickinessBonusConstant"] = args ? args.stickinessBonusConstant : undefined;
+            resourceInputs["stickinessBonusPercentage"] = args ? args.stickinessBonusPercentage : undefined;
+            resourceInputs["trafficTargets"] = args ? args.trafficTargets : undefined;
+            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["unreachableThreshold"] = args ? args.unreachableThreshold : undefined;
+            resourceInputs["useComputedTargets"] = args ? args.useComputedTargets : undefined;
+            resourceInputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
+            resourceInputs["weightedHashBitsForIpv4"] = undefined /*out*/;
+            resourceInputs["weightedHashBitsForIpv6"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const aliasOpts = { aliases: [{ type: "akamai:trafficmanagement/gtmProperty:GtmProperty" }] };
         opts = pulumi.mergeOptions(opts, aliasOpts);
-        super(GtmProperty.__pulumiType, name, inputs, opts);
+        super(GtmProperty.__pulumiType, name, resourceInputs, opts);
     }
 }
 
@@ -286,37 +299,130 @@ export class GtmProperty extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmProperty resources.
  */
 export interface GtmPropertyState {
+    /**
+     * Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
+     */
     backupCname?: pulumi.Input<string>;
+    /**
+     * Specifies a backup IP. When GTM declares that all of the targets are down, the backup IP is handed out. If a backup IP is set, do not set a backup CNAME.
+     */
     backupIp?: pulumi.Input<string>;
+    /**
+     * A boolean that indicates whether download score based load balancing is enabled.
+     */
     balanceByDownloadScore?: pulumi.Input<boolean>;
+    /**
+     * Indicates the fully qualified name aliased to a particular property.
+     */
     cname?: pulumi.Input<string>;
+    /**
+     * A descriptive note about changes to the domain. The maximum is 4000 characters.
+     */
     comments?: pulumi.Input<string>;
+    /**
+     * DNS name for the GTM Domain set that includes this Property.
+     */
     domain?: pulumi.Input<string>;
+    /**
+     * Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing such as A and AAAA records, and CNAMEs.
+     */
     dynamicTtl?: pulumi.Input<number>;
+    /**
+     * Specifies the failback delay in seconds.
+     */
     failbackDelay?: pulumi.Input<number>;
+    /**
+     * Specifies the failover delay in seconds.
+     */
     failoverDelay?: pulumi.Input<number>;
+    /**
+     * Use load estimates from Akamai Ghost utilization messages.
+     */
     ghostDemandReporting?: pulumi.Input<boolean>;
+    /**
+     * Indicates the limit for the number of live IPs handed out to a DNS request.
+     */
     handoutLimit?: pulumi.Input<number>;
+    /**
+     * Specifies how IPs are returned when more than one IP is alive and available.
+     */
     handoutMode?: pulumi.Input<string>;
+    /**
+     * Defines the absolute limit beyond which IPs are declared unhealthy.
+     */
     healthMax?: pulumi.Input<number>;
+    /**
+     * Configures a cutoff value that is computed from the median scores.
+     */
     healthMultiplier?: pulumi.Input<number>;
+    /**
+     * Configures a cutoff value that is computed from the median scores.
+     */
     healthThreshold?: pulumi.Input<number>;
+    /**
+     * A boolean that indicates the type of IP address handed out by a GTM property.
+     */
     ipv6?: pulumi.Input<boolean>;
+    /**
+     * Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `livenessTest` arguments. If used, requires these arguments:
+     */
     livenessTests?: pulumi.Input<pulumi.Input<inputs.GtmPropertyLivenessTest>[]>;
+    /**
+     * Indicates the percent of load imbalance factor (LIF) for the property.
+     */
     loadImbalancePercentage?: pulumi.Input<number>;
+    /**
+     * A descriptive label for a GeographicMap or a CidrMap that's required if the property is either geographic or cidrmapping, in which case mapName needs to reference either an existing GeographicMap or CidrMap in the same domain.
+     */
     mapName?: pulumi.Input<string>;
+    /**
+     * For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
+     */
     maxUnreachablePenalty?: pulumi.Input<number>;
+    /**
+     * Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
+     */
     minLiveFraction?: pulumi.Input<number>;
+    /**
+     * Name of HTTP header.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
+     */
     scoreAggregationType?: pulumi.Input<string>;
+    /**
+     * Contains static record sets. You can have multiple `staticRrSet` entries. Requires these arguments:
+     */
     staticRrSets?: pulumi.Input<pulumi.Input<inputs.GtmPropertyStaticRrSet>[]>;
     staticTtl?: pulumi.Input<number>;
+    /**
+     * Specifies a constant used to configure data center affinity.
+     */
     stickinessBonusConstant?: pulumi.Input<number>;
+    /**
+     * Specifies a percentage used to configure data center affinity.
+     */
     stickinessBonusPercentage?: pulumi.Input<number>;
+    /**
+     * Contains information about where to direct data center traffic. You can have multiple `trafficTarget` arguments. If used, includes these arguments:
+     */
     trafficTargets?: pulumi.Input<pulumi.Input<inputs.GtmPropertyTrafficTarget>[]>;
+    /**
+     * The record type.
+     */
     type?: pulumi.Input<string>;
+    /**
+     * For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
+     */
     unreachableThreshold?: pulumi.Input<number>;
+    /**
+     * For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
+     */
     useComputedTargets?: pulumi.Input<boolean>;
+    /**
+     * A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+     */
     waitOnComplete?: pulumi.Input<boolean>;
     weightedHashBitsForIpv4?: pulumi.Input<number>;
     weightedHashBitsForIpv6?: pulumi.Input<number>;
@@ -326,36 +432,129 @@ export interface GtmPropertyState {
  * The set of arguments for constructing a GtmProperty resource.
  */
 export interface GtmPropertyArgs {
+    /**
+     * Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
+     */
     backupCname?: pulumi.Input<string>;
+    /**
+     * Specifies a backup IP. When GTM declares that all of the targets are down, the backup IP is handed out. If a backup IP is set, do not set a backup CNAME.
+     */
     backupIp?: pulumi.Input<string>;
+    /**
+     * A boolean that indicates whether download score based load balancing is enabled.
+     */
     balanceByDownloadScore?: pulumi.Input<boolean>;
+    /**
+     * Indicates the fully qualified name aliased to a particular property.
+     */
     cname?: pulumi.Input<string>;
+    /**
+     * A descriptive note about changes to the domain. The maximum is 4000 characters.
+     */
     comments?: pulumi.Input<string>;
+    /**
+     * DNS name for the GTM Domain set that includes this Property.
+     */
     domain: pulumi.Input<string>;
+    /**
+     * Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing such as A and AAAA records, and CNAMEs.
+     */
     dynamicTtl?: pulumi.Input<number>;
+    /**
+     * Specifies the failback delay in seconds.
+     */
     failbackDelay?: pulumi.Input<number>;
+    /**
+     * Specifies the failover delay in seconds.
+     */
     failoverDelay?: pulumi.Input<number>;
+    /**
+     * Use load estimates from Akamai Ghost utilization messages.
+     */
     ghostDemandReporting?: pulumi.Input<boolean>;
+    /**
+     * Indicates the limit for the number of live IPs handed out to a DNS request.
+     */
     handoutLimit: pulumi.Input<number>;
+    /**
+     * Specifies how IPs are returned when more than one IP is alive and available.
+     */
     handoutMode: pulumi.Input<string>;
+    /**
+     * Defines the absolute limit beyond which IPs are declared unhealthy.
+     */
     healthMax?: pulumi.Input<number>;
+    /**
+     * Configures a cutoff value that is computed from the median scores.
+     */
     healthMultiplier?: pulumi.Input<number>;
+    /**
+     * Configures a cutoff value that is computed from the median scores.
+     */
     healthThreshold?: pulumi.Input<number>;
+    /**
+     * A boolean that indicates the type of IP address handed out by a GTM property.
+     */
     ipv6?: pulumi.Input<boolean>;
+    /**
+     * Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `livenessTest` arguments. If used, requires these arguments:
+     */
     livenessTests?: pulumi.Input<pulumi.Input<inputs.GtmPropertyLivenessTest>[]>;
+    /**
+     * Indicates the percent of load imbalance factor (LIF) for the property.
+     */
     loadImbalancePercentage?: pulumi.Input<number>;
+    /**
+     * A descriptive label for a GeographicMap or a CidrMap that's required if the property is either geographic or cidrmapping, in which case mapName needs to reference either an existing GeographicMap or CidrMap in the same domain.
+     */
     mapName?: pulumi.Input<string>;
+    /**
+     * For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
+     */
     maxUnreachablePenalty?: pulumi.Input<number>;
+    /**
+     * Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
+     */
     minLiveFraction?: pulumi.Input<number>;
+    /**
+     * Name of HTTP header.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
+     */
     scoreAggregationType: pulumi.Input<string>;
+    /**
+     * Contains static record sets. You can have multiple `staticRrSet` entries. Requires these arguments:
+     */
     staticRrSets?: pulumi.Input<pulumi.Input<inputs.GtmPropertyStaticRrSet>[]>;
     staticTtl?: pulumi.Input<number>;
+    /**
+     * Specifies a constant used to configure data center affinity.
+     */
     stickinessBonusConstant?: pulumi.Input<number>;
+    /**
+     * Specifies a percentage used to configure data center affinity.
+     */
     stickinessBonusPercentage?: pulumi.Input<number>;
+    /**
+     * Contains information about where to direct data center traffic. You can have multiple `trafficTarget` arguments. If used, includes these arguments:
+     */
     trafficTargets?: pulumi.Input<pulumi.Input<inputs.GtmPropertyTrafficTarget>[]>;
+    /**
+     * The record type.
+     */
     type: pulumi.Input<string>;
+    /**
+     * For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
+     */
     unreachableThreshold?: pulumi.Input<number>;
+    /**
+     * For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
+     */
     useComputedTargets?: pulumi.Input<boolean>;
+    /**
+     * A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+     */
     waitOnComplete?: pulumi.Input<boolean>;
 }

@@ -64,6 +64,20 @@ class CpsDvEnrollmentAdminContactArgs:
                  region: pulumi.Input[str],
                  address_line_two: Optional[pulumi.Input[str]] = None,
                  title: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] address_line_one: The address of your organization.
+        :param pulumi.Input[str] city: The city where your organization resides.
+        :param pulumi.Input[str] country_code: The code for the country where your organization resides.
+        :param pulumi.Input[str] email: The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+        :param pulumi.Input[str] first_name: The first name of the technical contact at Akamai.
+        :param pulumi.Input[str] last_name: The last name of the technical contact at Akamai.
+        :param pulumi.Input[str] organization: Your organization information.
+        :param pulumi.Input[str] phone: The phone number of the administrator who you want to use as a contact at your company.
+        :param pulumi.Input[str] postal_code: The postal code of your organization.
+        :param pulumi.Input[str] region: The region of your organization, typically a state or province.
+        :param pulumi.Input[str] address_line_two: The address of your organization.
+        :param pulumi.Input[str] title: The title of the technical contact at Akamai.
+        """
         pulumi.set(__self__, "address_line_one", address_line_one)
         pulumi.set(__self__, "city", city)
         pulumi.set(__self__, "country_code", country_code)
@@ -82,6 +96,9 @@ class CpsDvEnrollmentAdminContactArgs:
     @property
     @pulumi.getter(name="addressLineOne")
     def address_line_one(self) -> pulumi.Input[str]:
+        """
+        The address of your organization.
+        """
         return pulumi.get(self, "address_line_one")
 
     @address_line_one.setter
@@ -91,6 +108,9 @@ class CpsDvEnrollmentAdminContactArgs:
     @property
     @pulumi.getter
     def city(self) -> pulumi.Input[str]:
+        """
+        The city where your organization resides.
+        """
         return pulumi.get(self, "city")
 
     @city.setter
@@ -100,6 +120,9 @@ class CpsDvEnrollmentAdminContactArgs:
     @property
     @pulumi.getter(name="countryCode")
     def country_code(self) -> pulumi.Input[str]:
+        """
+        The code for the country where your organization resides.
+        """
         return pulumi.get(self, "country_code")
 
     @country_code.setter
@@ -109,6 +132,9 @@ class CpsDvEnrollmentAdminContactArgs:
     @property
     @pulumi.getter
     def email(self) -> pulumi.Input[str]:
+        """
+        The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+        """
         return pulumi.get(self, "email")
 
     @email.setter
@@ -118,6 +144,9 @@ class CpsDvEnrollmentAdminContactArgs:
     @property
     @pulumi.getter(name="firstName")
     def first_name(self) -> pulumi.Input[str]:
+        """
+        The first name of the technical contact at Akamai.
+        """
         return pulumi.get(self, "first_name")
 
     @first_name.setter
@@ -127,6 +156,9 @@ class CpsDvEnrollmentAdminContactArgs:
     @property
     @pulumi.getter(name="lastName")
     def last_name(self) -> pulumi.Input[str]:
+        """
+        The last name of the technical contact at Akamai.
+        """
         return pulumi.get(self, "last_name")
 
     @last_name.setter
@@ -136,6 +168,9 @@ class CpsDvEnrollmentAdminContactArgs:
     @property
     @pulumi.getter
     def organization(self) -> pulumi.Input[str]:
+        """
+        Your organization information.
+        """
         return pulumi.get(self, "organization")
 
     @organization.setter
@@ -145,6 +180,9 @@ class CpsDvEnrollmentAdminContactArgs:
     @property
     @pulumi.getter
     def phone(self) -> pulumi.Input[str]:
+        """
+        The phone number of the administrator who you want to use as a contact at your company.
+        """
         return pulumi.get(self, "phone")
 
     @phone.setter
@@ -154,6 +192,9 @@ class CpsDvEnrollmentAdminContactArgs:
     @property
     @pulumi.getter(name="postalCode")
     def postal_code(self) -> pulumi.Input[str]:
+        """
+        The postal code of your organization.
+        """
         return pulumi.get(self, "postal_code")
 
     @postal_code.setter
@@ -163,6 +204,9 @@ class CpsDvEnrollmentAdminContactArgs:
     @property
     @pulumi.getter
     def region(self) -> pulumi.Input[str]:
+        """
+        The region of your organization, typically a state or province.
+        """
         return pulumi.get(self, "region")
 
     @region.setter
@@ -172,6 +216,9 @@ class CpsDvEnrollmentAdminContactArgs:
     @property
     @pulumi.getter(name="addressLineTwo")
     def address_line_two(self) -> Optional[pulumi.Input[str]]:
+        """
+        The address of your organization.
+        """
         return pulumi.get(self, "address_line_two")
 
     @address_line_two.setter
@@ -181,6 +228,9 @@ class CpsDvEnrollmentAdminContactArgs:
     @property
     @pulumi.getter
     def title(self) -> Optional[pulumi.Input[str]]:
+        """
+        The title of the technical contact at Akamai.
+        """
         return pulumi.get(self, "title")
 
     @title.setter
@@ -196,6 +246,13 @@ class CpsDvEnrollmentCsrArgs:
                  organization: pulumi.Input[str],
                  organizational_unit: pulumi.Input[str],
                  state: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] city: The city where your organization resides.
+        :param pulumi.Input[str] country_code: The code for the country where your organization resides.
+        :param pulumi.Input[str] organization: Your organization information.
+        :param pulumi.Input[str] organizational_unit: Your organizational unit.
+        :param pulumi.Input[str] state: Your state or province.
+        """
         pulumi.set(__self__, "city", city)
         pulumi.set(__self__, "country_code", country_code)
         pulumi.set(__self__, "organization", organization)
@@ -205,6 +262,9 @@ class CpsDvEnrollmentCsrArgs:
     @property
     @pulumi.getter
     def city(self) -> pulumi.Input[str]:
+        """
+        The city where your organization resides.
+        """
         return pulumi.get(self, "city")
 
     @city.setter
@@ -214,6 +274,9 @@ class CpsDvEnrollmentCsrArgs:
     @property
     @pulumi.getter(name="countryCode")
     def country_code(self) -> pulumi.Input[str]:
+        """
+        The code for the country where your organization resides.
+        """
         return pulumi.get(self, "country_code")
 
     @country_code.setter
@@ -223,6 +286,9 @@ class CpsDvEnrollmentCsrArgs:
     @property
     @pulumi.getter
     def organization(self) -> pulumi.Input[str]:
+        """
+        Your organization information.
+        """
         return pulumi.get(self, "organization")
 
     @organization.setter
@@ -232,6 +298,9 @@ class CpsDvEnrollmentCsrArgs:
     @property
     @pulumi.getter(name="organizationalUnit")
     def organizational_unit(self) -> pulumi.Input[str]:
+        """
+        Your organizational unit.
+        """
         return pulumi.get(self, "organizational_unit")
 
     @organizational_unit.setter
@@ -241,6 +310,9 @@ class CpsDvEnrollmentCsrArgs:
     @property
     @pulumi.getter
     def state(self) -> pulumi.Input[str]:
+        """
+        Your state or province.
+        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -341,6 +413,16 @@ class CpsDvEnrollmentNetworkConfigurationArgs:
                  ocsp_stapling: Optional[pulumi.Input[str]] = None,
                  preferred_ciphers: Optional[pulumi.Input[str]] = None,
                  quic_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] geography: Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
+        :param pulumi.Input['CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs'] client_mutual_authentication: The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
+        :param pulumi.Input[bool] clone_dns_names: Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] disallowed_tls_versions: The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
+        :param pulumi.Input[str] must_have_ciphers: The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+        :param pulumi.Input[str] ocsp_stapling: Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
+        :param pulumi.Input[str] preferred_ciphers: Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+        :param pulumi.Input[bool] quic_enabled: Whether to use the QUIC transport layer network protocol.
+        """
         pulumi.set(__self__, "geography", geography)
         if client_mutual_authentication is not None:
             pulumi.set(__self__, "client_mutual_authentication", client_mutual_authentication)
@@ -360,6 +442,9 @@ class CpsDvEnrollmentNetworkConfigurationArgs:
     @property
     @pulumi.getter
     def geography(self) -> pulumi.Input[str]:
+        """
+        Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
+        """
         return pulumi.get(self, "geography")
 
     @geography.setter
@@ -369,6 +454,9 @@ class CpsDvEnrollmentNetworkConfigurationArgs:
     @property
     @pulumi.getter(name="clientMutualAuthentication")
     def client_mutual_authentication(self) -> Optional[pulumi.Input['CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs']]:
+        """
+        The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
+        """
         return pulumi.get(self, "client_mutual_authentication")
 
     @client_mutual_authentication.setter
@@ -378,6 +466,9 @@ class CpsDvEnrollmentNetworkConfigurationArgs:
     @property
     @pulumi.getter(name="cloneDnsNames")
     def clone_dns_names(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
+        """
         return pulumi.get(self, "clone_dns_names")
 
     @clone_dns_names.setter
@@ -387,6 +478,9 @@ class CpsDvEnrollmentNetworkConfigurationArgs:
     @property
     @pulumi.getter(name="disallowedTlsVersions")
     def disallowed_tls_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
+        """
         return pulumi.get(self, "disallowed_tls_versions")
 
     @disallowed_tls_versions.setter
@@ -396,6 +490,9 @@ class CpsDvEnrollmentNetworkConfigurationArgs:
     @property
     @pulumi.getter(name="mustHaveCiphers")
     def must_have_ciphers(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+        """
         return pulumi.get(self, "must_have_ciphers")
 
     @must_have_ciphers.setter
@@ -405,6 +502,9 @@ class CpsDvEnrollmentNetworkConfigurationArgs:
     @property
     @pulumi.getter(name="ocspStapling")
     def ocsp_stapling(self) -> Optional[pulumi.Input[str]]:
+        """
+        Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
+        """
         return pulumi.get(self, "ocsp_stapling")
 
     @ocsp_stapling.setter
@@ -414,6 +514,9 @@ class CpsDvEnrollmentNetworkConfigurationArgs:
     @property
     @pulumi.getter(name="preferredCiphers")
     def preferred_ciphers(self) -> Optional[pulumi.Input[str]]:
+        """
+        Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+        """
         return pulumi.get(self, "preferred_ciphers")
 
     @preferred_ciphers.setter
@@ -423,6 +526,9 @@ class CpsDvEnrollmentNetworkConfigurationArgs:
     @property
     @pulumi.getter(name="quicEnabled")
     def quic_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to use the QUIC transport layer network protocol.
+        """
         return pulumi.get(self, "quic_enabled")
 
     @quic_enabled.setter
@@ -436,6 +542,11 @@ class CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs:
                  ocsp_enabled: Optional[pulumi.Input[bool]] = None,
                  send_ca_list_to_client: Optional[pulumi.Input[bool]] = None,
                  set_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] ocsp_enabled: Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
+        :param pulumi.Input[bool] send_ca_list_to_client: Whether you want to enable the server to send the certificate authority (CA) list to the client.
+        :param pulumi.Input[str] set_id: The identifier of the set of trust chains, created in the [Trust Chain Manager](https://developer.akamai.com/api/web_performance/trust_chain_manager/v1.html).
+        """
         if ocsp_enabled is not None:
             pulumi.set(__self__, "ocsp_enabled", ocsp_enabled)
         if send_ca_list_to_client is not None:
@@ -446,6 +557,9 @@ class CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs:
     @property
     @pulumi.getter(name="ocspEnabled")
     def ocsp_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
+        """
         return pulumi.get(self, "ocsp_enabled")
 
     @ocsp_enabled.setter
@@ -455,6 +569,9 @@ class CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs:
     @property
     @pulumi.getter(name="sendCaListToClient")
     def send_ca_list_to_client(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether you want to enable the server to send the certificate authority (CA) list to the client.
+        """
         return pulumi.get(self, "send_ca_list_to_client")
 
     @send_ca_list_to_client.setter
@@ -464,6 +581,9 @@ class CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs:
     @property
     @pulumi.getter(name="setId")
     def set_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The identifier of the set of trust chains, created in the [Trust Chain Manager](https://developer.akamai.com/api/web_performance/trust_chain_manager/v1.html).
+        """
         return pulumi.get(self, "set_id")
 
     @set_id.setter
@@ -482,6 +602,16 @@ class CpsDvEnrollmentOrganizationArgs:
                  postal_code: pulumi.Input[str],
                  region: pulumi.Input[str],
                  address_line_two: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] address_line_one: The address of your organization.
+        :param pulumi.Input[str] city: The city where your organization resides.
+        :param pulumi.Input[str] country_code: The code for the country where your organization resides.
+        :param pulumi.Input[str] name: The name of your organization.
+        :param pulumi.Input[str] phone: The phone number of the administrator who you want to use as a contact at your company.
+        :param pulumi.Input[str] postal_code: The postal code of your organization.
+        :param pulumi.Input[str] region: The region of your organization, typically a state or province.
+        :param pulumi.Input[str] address_line_two: The address of your organization.
+        """
         pulumi.set(__self__, "address_line_one", address_line_one)
         pulumi.set(__self__, "city", city)
         pulumi.set(__self__, "country_code", country_code)
@@ -495,6 +625,9 @@ class CpsDvEnrollmentOrganizationArgs:
     @property
     @pulumi.getter(name="addressLineOne")
     def address_line_one(self) -> pulumi.Input[str]:
+        """
+        The address of your organization.
+        """
         return pulumi.get(self, "address_line_one")
 
     @address_line_one.setter
@@ -504,6 +637,9 @@ class CpsDvEnrollmentOrganizationArgs:
     @property
     @pulumi.getter
     def city(self) -> pulumi.Input[str]:
+        """
+        The city where your organization resides.
+        """
         return pulumi.get(self, "city")
 
     @city.setter
@@ -513,6 +649,9 @@ class CpsDvEnrollmentOrganizationArgs:
     @property
     @pulumi.getter(name="countryCode")
     def country_code(self) -> pulumi.Input[str]:
+        """
+        The code for the country where your organization resides.
+        """
         return pulumi.get(self, "country_code")
 
     @country_code.setter
@@ -522,6 +661,9 @@ class CpsDvEnrollmentOrganizationArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
+        """
+        The name of your organization.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -531,6 +673,9 @@ class CpsDvEnrollmentOrganizationArgs:
     @property
     @pulumi.getter
     def phone(self) -> pulumi.Input[str]:
+        """
+        The phone number of the administrator who you want to use as a contact at your company.
+        """
         return pulumi.get(self, "phone")
 
     @phone.setter
@@ -540,6 +685,9 @@ class CpsDvEnrollmentOrganizationArgs:
     @property
     @pulumi.getter(name="postalCode")
     def postal_code(self) -> pulumi.Input[str]:
+        """
+        The postal code of your organization.
+        """
         return pulumi.get(self, "postal_code")
 
     @postal_code.setter
@@ -549,6 +697,9 @@ class CpsDvEnrollmentOrganizationArgs:
     @property
     @pulumi.getter
     def region(self) -> pulumi.Input[str]:
+        """
+        The region of your organization, typically a state or province.
+        """
         return pulumi.get(self, "region")
 
     @region.setter
@@ -558,6 +709,9 @@ class CpsDvEnrollmentOrganizationArgs:
     @property
     @pulumi.getter(name="addressLineTwo")
     def address_line_two(self) -> Optional[pulumi.Input[str]]:
+        """
+        The address of your organization.
+        """
         return pulumi.get(self, "address_line_two")
 
     @address_line_two.setter
@@ -580,6 +734,20 @@ class CpsDvEnrollmentTechContactArgs:
                  region: pulumi.Input[str],
                  address_line_two: Optional[pulumi.Input[str]] = None,
                  title: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] address_line_one: The address of your organization.
+        :param pulumi.Input[str] city: The city where your organization resides.
+        :param pulumi.Input[str] country_code: The code for the country where your organization resides.
+        :param pulumi.Input[str] email: The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+        :param pulumi.Input[str] first_name: The first name of the technical contact at Akamai.
+        :param pulumi.Input[str] last_name: The last name of the technical contact at Akamai.
+        :param pulumi.Input[str] organization: Your organization information.
+        :param pulumi.Input[str] phone: The phone number of the administrator who you want to use as a contact at your company.
+        :param pulumi.Input[str] postal_code: The postal code of your organization.
+        :param pulumi.Input[str] region: The region of your organization, typically a state or province.
+        :param pulumi.Input[str] address_line_two: The address of your organization.
+        :param pulumi.Input[str] title: The title of the technical contact at Akamai.
+        """
         pulumi.set(__self__, "address_line_one", address_line_one)
         pulumi.set(__self__, "city", city)
         pulumi.set(__self__, "country_code", country_code)
@@ -598,6 +766,9 @@ class CpsDvEnrollmentTechContactArgs:
     @property
     @pulumi.getter(name="addressLineOne")
     def address_line_one(self) -> pulumi.Input[str]:
+        """
+        The address of your organization.
+        """
         return pulumi.get(self, "address_line_one")
 
     @address_line_one.setter
@@ -607,6 +778,9 @@ class CpsDvEnrollmentTechContactArgs:
     @property
     @pulumi.getter
     def city(self) -> pulumi.Input[str]:
+        """
+        The city where your organization resides.
+        """
         return pulumi.get(self, "city")
 
     @city.setter
@@ -616,6 +790,9 @@ class CpsDvEnrollmentTechContactArgs:
     @property
     @pulumi.getter(name="countryCode")
     def country_code(self) -> pulumi.Input[str]:
+        """
+        The code for the country where your organization resides.
+        """
         return pulumi.get(self, "country_code")
 
     @country_code.setter
@@ -625,6 +802,9 @@ class CpsDvEnrollmentTechContactArgs:
     @property
     @pulumi.getter
     def email(self) -> pulumi.Input[str]:
+        """
+        The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+        """
         return pulumi.get(self, "email")
 
     @email.setter
@@ -634,6 +814,9 @@ class CpsDvEnrollmentTechContactArgs:
     @property
     @pulumi.getter(name="firstName")
     def first_name(self) -> pulumi.Input[str]:
+        """
+        The first name of the technical contact at Akamai.
+        """
         return pulumi.get(self, "first_name")
 
     @first_name.setter
@@ -643,6 +826,9 @@ class CpsDvEnrollmentTechContactArgs:
     @property
     @pulumi.getter(name="lastName")
     def last_name(self) -> pulumi.Input[str]:
+        """
+        The last name of the technical contact at Akamai.
+        """
         return pulumi.get(self, "last_name")
 
     @last_name.setter
@@ -652,6 +838,9 @@ class CpsDvEnrollmentTechContactArgs:
     @property
     @pulumi.getter
     def organization(self) -> pulumi.Input[str]:
+        """
+        Your organization information.
+        """
         return pulumi.get(self, "organization")
 
     @organization.setter
@@ -661,6 +850,9 @@ class CpsDvEnrollmentTechContactArgs:
     @property
     @pulumi.getter
     def phone(self) -> pulumi.Input[str]:
+        """
+        The phone number of the administrator who you want to use as a contact at your company.
+        """
         return pulumi.get(self, "phone")
 
     @phone.setter
@@ -670,6 +862,9 @@ class CpsDvEnrollmentTechContactArgs:
     @property
     @pulumi.getter(name="postalCode")
     def postal_code(self) -> pulumi.Input[str]:
+        """
+        The postal code of your organization.
+        """
         return pulumi.get(self, "postal_code")
 
     @postal_code.setter
@@ -679,6 +874,9 @@ class CpsDvEnrollmentTechContactArgs:
     @property
     @pulumi.getter
     def region(self) -> pulumi.Input[str]:
+        """
+        The region of your organization, typically a state or province.
+        """
         return pulumi.get(self, "region")
 
     @region.setter
@@ -688,6 +886,9 @@ class CpsDvEnrollmentTechContactArgs:
     @property
     @pulumi.getter(name="addressLineTwo")
     def address_line_two(self) -> Optional[pulumi.Input[str]]:
+        """
+        The address of your organization.
+        """
         return pulumi.get(self, "address_line_two")
 
     @address_line_two.setter
@@ -697,6 +898,9 @@ class CpsDvEnrollmentTechContactArgs:
     @property
     @pulumi.getter
     def title(self) -> Optional[pulumi.Input[str]]:
+        """
+        The title of the technical contact at Akamai.
+        """
         return pulumi.get(self, "title")
 
     @title.setter
@@ -710,6 +914,11 @@ class DnsZoneTsigKeyArgs:
                  algorithm: pulumi.Input[str],
                  name: pulumi.Input[str],
                  secret: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] algorithm: The hashing algorithm.
+        :param pulumi.Input[str] name: The key name.
+        :param pulumi.Input[str] secret: String known between transfer endpoints.
+        """
         pulumi.set(__self__, "algorithm", algorithm)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "secret", secret)
@@ -717,6 +926,9 @@ class DnsZoneTsigKeyArgs:
     @property
     @pulumi.getter
     def algorithm(self) -> pulumi.Input[str]:
+        """
+        The hashing algorithm.
+        """
         return pulumi.get(self, "algorithm")
 
     @algorithm.setter
@@ -726,6 +938,9 @@ class DnsZoneTsigKeyArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
+        """
+        The key name.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -735,6 +950,9 @@ class DnsZoneTsigKeyArgs:
     @property
     @pulumi.getter
     def secret(self) -> pulumi.Input[str]:
+        """
+        String known between transfer endpoints.
+        """
         return pulumi.get(self, "secret")
 
     @secret.setter
@@ -748,6 +966,11 @@ class GtmAsmapAssignmentArgs:
                  as_numbers: pulumi.Input[Sequence[pulumi.Input[int]]],
                  datacenter_id: pulumi.Input[int],
                  nickname: pulumi.Input[str]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] as_numbers: Specifies an array of AS numbers.
+        :param pulumi.Input[int] datacenter_id: A unique identifier for an existing data center in the domain.
+        :param pulumi.Input[str] nickname: A descriptive label for the group.
+        """
         pulumi.set(__self__, "as_numbers", as_numbers)
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         pulumi.set(__self__, "nickname", nickname)
@@ -755,6 +978,9 @@ class GtmAsmapAssignmentArgs:
     @property
     @pulumi.getter(name="asNumbers")
     def as_numbers(self) -> pulumi.Input[Sequence[pulumi.Input[int]]]:
+        """
+        Specifies an array of AS numbers.
+        """
         return pulumi.get(self, "as_numbers")
 
     @as_numbers.setter
@@ -764,6 +990,9 @@ class GtmAsmapAssignmentArgs:
     @property
     @pulumi.getter(name="datacenterId")
     def datacenter_id(self) -> pulumi.Input[int]:
+        """
+        A unique identifier for an existing data center in the domain.
+        """
         return pulumi.get(self, "datacenter_id")
 
     @datacenter_id.setter
@@ -773,6 +1002,9 @@ class GtmAsmapAssignmentArgs:
     @property
     @pulumi.getter
     def nickname(self) -> pulumi.Input[str]:
+        """
+        A descriptive label for the group.
+        """
         return pulumi.get(self, "nickname")
 
     @nickname.setter
@@ -785,6 +1017,10 @@ class GtmAsmapDefaultDatacenterArgs:
     def __init__(__self__, *,
                  datacenter_id: pulumi.Input[int],
                  nickname: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[int] datacenter_id: A unique identifier for an existing data center in the domain.
+        :param pulumi.Input[str] nickname: A descriptive label for the group.
+        """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         if nickname is not None:
             pulumi.set(__self__, "nickname", nickname)
@@ -792,6 +1028,9 @@ class GtmAsmapDefaultDatacenterArgs:
     @property
     @pulumi.getter(name="datacenterId")
     def datacenter_id(self) -> pulumi.Input[int]:
+        """
+        A unique identifier for an existing data center in the domain.
+        """
         return pulumi.get(self, "datacenter_id")
 
     @datacenter_id.setter
@@ -801,6 +1040,9 @@ class GtmAsmapDefaultDatacenterArgs:
     @property
     @pulumi.getter
     def nickname(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive label for the group.
+        """
         return pulumi.get(self, "nickname")
 
     @nickname.setter
@@ -814,6 +1056,11 @@ class GtmCidrmapAssignmentArgs:
                  datacenter_id: pulumi.Input[int],
                  nickname: pulumi.Input[str],
                  blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[int] datacenter_id: A unique identifier for an existing data center in the domain.
+        :param pulumi.Input[str] nickname: A descriptive label for the CIDR zone group, up to 256 characters.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] blocks: Specifies an array of CIDR blocks.
+        """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         pulumi.set(__self__, "nickname", nickname)
         if blocks is not None:
@@ -822,6 +1069,9 @@ class GtmCidrmapAssignmentArgs:
     @property
     @pulumi.getter(name="datacenterId")
     def datacenter_id(self) -> pulumi.Input[int]:
+        """
+        A unique identifier for an existing data center in the domain.
+        """
         return pulumi.get(self, "datacenter_id")
 
     @datacenter_id.setter
@@ -831,6 +1081,9 @@ class GtmCidrmapAssignmentArgs:
     @property
     @pulumi.getter
     def nickname(self) -> pulumi.Input[str]:
+        """
+        A descriptive label for the CIDR zone group, up to 256 characters.
+        """
         return pulumi.get(self, "nickname")
 
     @nickname.setter
@@ -840,6 +1093,9 @@ class GtmCidrmapAssignmentArgs:
     @property
     @pulumi.getter
     def blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Specifies an array of CIDR blocks.
+        """
         return pulumi.get(self, "blocks")
 
     @blocks.setter
@@ -852,6 +1108,10 @@ class GtmCidrmapDefaultDatacenterArgs:
     def __init__(__self__, *,
                  datacenter_id: pulumi.Input[int],
                  nickname: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[int] datacenter_id: A unique identifier for an existing data center in the domain.
+        :param pulumi.Input[str] nickname: A descriptive label for the CIDR zone group, up to 256 characters.
+        """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         if nickname is not None:
             pulumi.set(__self__, "nickname", nickname)
@@ -859,6 +1119,9 @@ class GtmCidrmapDefaultDatacenterArgs:
     @property
     @pulumi.getter(name="datacenterId")
     def datacenter_id(self) -> pulumi.Input[int]:
+        """
+        A unique identifier for an existing data center in the domain.
+        """
         return pulumi.get(self, "datacenter_id")
 
     @datacenter_id.setter
@@ -868,6 +1131,9 @@ class GtmCidrmapDefaultDatacenterArgs:
     @property
     @pulumi.getter
     def nickname(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive label for the CIDR zone group, up to 256 characters.
+        """
         return pulumi.get(self, "nickname")
 
     @nickname.setter
@@ -881,6 +1147,11 @@ class GtmDatacenterDefaultLoadObjectArgs:
                  load_object: Optional[pulumi.Input[str]] = None,
                  load_object_port: Optional[pulumi.Input[int]] = None,
                  load_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] load_object: A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
+        :param pulumi.Input[int] load_object_port: Specifies the TCP port to connect to when requesting the load object.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] load_servers: Specifies a list of servers to request the load object from.
+        """
         if load_object is not None:
             pulumi.set(__self__, "load_object", load_object)
         if load_object_port is not None:
@@ -891,6 +1162,9 @@ class GtmDatacenterDefaultLoadObjectArgs:
     @property
     @pulumi.getter(name="loadObject")
     def load_object(self) -> Optional[pulumi.Input[str]]:
+        """
+        A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
+        """
         return pulumi.get(self, "load_object")
 
     @load_object.setter
@@ -900,6 +1174,9 @@ class GtmDatacenterDefaultLoadObjectArgs:
     @property
     @pulumi.getter(name="loadObjectPort")
     def load_object_port(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specifies the TCP port to connect to when requesting the load object.
+        """
         return pulumi.get(self, "load_object_port")
 
     @load_object_port.setter
@@ -909,6 +1186,9 @@ class GtmDatacenterDefaultLoadObjectArgs:
     @property
     @pulumi.getter(name="loadServers")
     def load_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Specifies a list of servers to request the load object from.
+        """
         return pulumi.get(self, "load_servers")
 
     @load_servers.setter
@@ -922,6 +1202,11 @@ class GtmGeomapAssignmentArgs:
                  datacenter_id: pulumi.Input[int],
                  nickname: pulumi.Input[str],
                  countries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[int] datacenter_id: A unique identifier for an existing data center in the domain.
+        :param pulumi.Input[str] nickname: A descriptive label for the group.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] countries: Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
+        """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         pulumi.set(__self__, "nickname", nickname)
         if countries is not None:
@@ -930,6 +1215,9 @@ class GtmGeomapAssignmentArgs:
     @property
     @pulumi.getter(name="datacenterId")
     def datacenter_id(self) -> pulumi.Input[int]:
+        """
+        A unique identifier for an existing data center in the domain.
+        """
         return pulumi.get(self, "datacenter_id")
 
     @datacenter_id.setter
@@ -939,6 +1227,9 @@ class GtmGeomapAssignmentArgs:
     @property
     @pulumi.getter
     def nickname(self) -> pulumi.Input[str]:
+        """
+        A descriptive label for the group.
+        """
         return pulumi.get(self, "nickname")
 
     @nickname.setter
@@ -948,6 +1239,9 @@ class GtmGeomapAssignmentArgs:
     @property
     @pulumi.getter
     def countries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
+        """
         return pulumi.get(self, "countries")
 
     @countries.setter
@@ -960,6 +1254,10 @@ class GtmGeomapDefaultDatacenterArgs:
     def __init__(__self__, *,
                  datacenter_id: pulumi.Input[int],
                  nickname: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[int] datacenter_id: A unique identifier for an existing data center in the domain.
+        :param pulumi.Input[str] nickname: A descriptive label for the group.
+        """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         if nickname is not None:
             pulumi.set(__self__, "nickname", nickname)
@@ -967,6 +1265,9 @@ class GtmGeomapDefaultDatacenterArgs:
     @property
     @pulumi.getter(name="datacenterId")
     def datacenter_id(self) -> pulumi.Input[int]:
+        """
+        A unique identifier for an existing data center in the domain.
+        """
         return pulumi.get(self, "datacenter_id")
 
     @datacenter_id.setter
@@ -976,6 +1277,9 @@ class GtmGeomapDefaultDatacenterArgs:
     @property
     @pulumi.getter
     def nickname(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive label for the group.
+        """
         return pulumi.get(self, "nickname")
 
     @nickname.setter
@@ -1010,6 +1314,32 @@ class GtmPropertyLivenessTestArgs:
                  test_object_port: Optional[pulumi.Input[int]] = None,
                  test_object_username: Optional[pulumi.Input[str]] = None,
                  timeout_penalty: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[str] name: Name of HTTP header.
+        :param pulumi.Input[int] test_interval: Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
+        :param pulumi.Input[str] test_object: Specifies the static text that acts as a stand-in for the data that you're sending on the network.
+        :param pulumi.Input[str] test_object_protocol: Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
+        :param pulumi.Input[float] test_timeout: Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
+        :param pulumi.Input[bool] answers_required: If `test_object_protocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
+        :param pulumi.Input[bool] disable_nonstandard_port_warning: A boolean that if set to `true`, disables warnings when non-standard ports are used.
+        :param pulumi.Input[bool] disabled: A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
+        :param pulumi.Input[float] error_penalty: Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
+        :param pulumi.Input[bool] http_error3xx: A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+        :param pulumi.Input[bool] http_error4xx: A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+        :param pulumi.Input[bool] http_error5xx: A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+        :param pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestHttpHeaderArgs']]] http_headers: Contains HTTP headers to send if the `test_object_protocol` is `http` or `https`. You can have multiple `http_header` entries. Requires these arguments:
+        :param pulumi.Input[bool] peer_certificate_verification: A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `test_object_protocol` of https.
+        :param pulumi.Input[bool] recursion_requested: A boolean indicating whether the `test_object_protocol` is DNS. The DNS query is recursive.
+        :param pulumi.Input[str] request_string: Specifies a request string.
+        :param pulumi.Input[str] resource_type: Specifies the query type, if `test_object_protocol` is DNS.
+        :param pulumi.Input[str] response_string: Specifies a response string.
+        :param pulumi.Input[str] ssl_client_certificate: Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
+        :param pulumi.Input[str] ssl_client_private_key: Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can't have a passphrase nor be used for any other purpose.
+        :param pulumi.Input[str] test_object_password: Specifies the test object's password. It is required if testObjectProtocol is ftp.
+        :param pulumi.Input[int] test_object_port: Specifies the port number for the testObject.
+        :param pulumi.Input[str] test_object_username: A descriptive name for the testObject.
+        :param pulumi.Input[float] timeout_penalty: Specifies the score to be reported if the liveness test times out.
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "test_interval", test_interval)
         pulumi.set(__self__, "test_object", test_object)
@@ -1057,6 +1387,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
+        """
+        Name of HTTP header.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1066,6 +1399,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="testInterval")
     def test_interval(self) -> pulumi.Input[int]:
+        """
+        Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
+        """
         return pulumi.get(self, "test_interval")
 
     @test_interval.setter
@@ -1075,6 +1411,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="testObject")
     def test_object(self) -> pulumi.Input[str]:
+        """
+        Specifies the static text that acts as a stand-in for the data that you're sending on the network.
+        """
         return pulumi.get(self, "test_object")
 
     @test_object.setter
@@ -1084,6 +1423,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="testObjectProtocol")
     def test_object_protocol(self) -> pulumi.Input[str]:
+        """
+        Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
+        """
         return pulumi.get(self, "test_object_protocol")
 
     @test_object_protocol.setter
@@ -1093,6 +1435,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="testTimeout")
     def test_timeout(self) -> pulumi.Input[float]:
+        """
+        Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
+        """
         return pulumi.get(self, "test_timeout")
 
     @test_timeout.setter
@@ -1102,6 +1447,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="answersRequired")
     def answers_required(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If `test_object_protocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
+        """
         return pulumi.get(self, "answers_required")
 
     @answers_required.setter
@@ -1111,6 +1459,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="disableNonstandardPortWarning")
     def disable_nonstandard_port_warning(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean that if set to `true`, disables warnings when non-standard ports are used.
+        """
         return pulumi.get(self, "disable_nonstandard_port_warning")
 
     @disable_nonstandard_port_warning.setter
@@ -1120,6 +1471,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter
     def disabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
+        """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
@@ -1129,6 +1483,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="errorPenalty")
     def error_penalty(self) -> Optional[pulumi.Input[float]]:
+        """
+        Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
+        """
         return pulumi.get(self, "error_penalty")
 
     @error_penalty.setter
@@ -1138,6 +1495,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="httpError3xx")
     def http_error3xx(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+        """
         return pulumi.get(self, "http_error3xx")
 
     @http_error3xx.setter
@@ -1147,6 +1507,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="httpError4xx")
     def http_error4xx(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+        """
         return pulumi.get(self, "http_error4xx")
 
     @http_error4xx.setter
@@ -1156,6 +1519,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="httpError5xx")
     def http_error5xx(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+        """
         return pulumi.get(self, "http_error5xx")
 
     @http_error5xx.setter
@@ -1165,6 +1531,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="httpHeaders")
     def http_headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestHttpHeaderArgs']]]]:
+        """
+        Contains HTTP headers to send if the `test_object_protocol` is `http` or `https`. You can have multiple `http_header` entries. Requires these arguments:
+        """
         return pulumi.get(self, "http_headers")
 
     @http_headers.setter
@@ -1174,6 +1543,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="peerCertificateVerification")
     def peer_certificate_verification(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `test_object_protocol` of https.
+        """
         return pulumi.get(self, "peer_certificate_verification")
 
     @peer_certificate_verification.setter
@@ -1183,6 +1555,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="recursionRequested")
     def recursion_requested(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean indicating whether the `test_object_protocol` is DNS. The DNS query is recursive.
+        """
         return pulumi.get(self, "recursion_requested")
 
     @recursion_requested.setter
@@ -1192,6 +1567,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="requestString")
     def request_string(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies a request string.
+        """
         return pulumi.get(self, "request_string")
 
     @request_string.setter
@@ -1201,6 +1579,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies the query type, if `test_object_protocol` is DNS.
+        """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
@@ -1210,6 +1591,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="responseString")
     def response_string(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies a response string.
+        """
         return pulumi.get(self, "response_string")
 
     @response_string.setter
@@ -1219,6 +1603,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="sslClientCertificate")
     def ssl_client_certificate(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
+        """
         return pulumi.get(self, "ssl_client_certificate")
 
     @ssl_client_certificate.setter
@@ -1228,6 +1615,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="sslClientPrivateKey")
     def ssl_client_private_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can't have a passphrase nor be used for any other purpose.
+        """
         return pulumi.get(self, "ssl_client_private_key")
 
     @ssl_client_private_key.setter
@@ -1237,6 +1627,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="testObjectPassword")
     def test_object_password(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies the test object's password. It is required if testObjectProtocol is ftp.
+        """
         return pulumi.get(self, "test_object_password")
 
     @test_object_password.setter
@@ -1246,6 +1639,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="testObjectPort")
     def test_object_port(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specifies the port number for the testObject.
+        """
         return pulumi.get(self, "test_object_port")
 
     @test_object_port.setter
@@ -1255,6 +1651,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="testObjectUsername")
     def test_object_username(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive name for the testObject.
+        """
         return pulumi.get(self, "test_object_username")
 
     @test_object_username.setter
@@ -1264,6 +1663,9 @@ class GtmPropertyLivenessTestArgs:
     @property
     @pulumi.getter(name="timeoutPenalty")
     def timeout_penalty(self) -> Optional[pulumi.Input[float]]:
+        """
+        Specifies the score to be reported if the liveness test times out.
+        """
         return pulumi.get(self, "timeout_penalty")
 
     @timeout_penalty.setter
@@ -1276,6 +1678,10 @@ class GtmPropertyLivenessTestHttpHeaderArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: Name of HTTP header.
+        :param pulumi.Input[str] value: Value of HTTP header.
+        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if value is not None:
@@ -1284,6 +1690,9 @@ class GtmPropertyLivenessTestHttpHeaderArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of HTTP header.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1293,6 +1702,9 @@ class GtmPropertyLivenessTestHttpHeaderArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        Value of HTTP header.
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -1306,6 +1718,11 @@ class GtmPropertyStaticRrSetArgs:
                  rdatas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ttl: Optional[pulumi.Input[int]] = None,
                  type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] rdatas: (List) An array of data strings, representing multiple records within a set.
+        :param pulumi.Input[int] ttl: The number of seconds that this record should live in a resolver's cache before being refetched.
+        :param pulumi.Input[str] type: The record type.
+        """
         if rdatas is not None:
             pulumi.set(__self__, "rdatas", rdatas)
         if ttl is not None:
@@ -1316,6 +1733,9 @@ class GtmPropertyStaticRrSetArgs:
     @property
     @pulumi.getter
     def rdatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (List) An array of data strings, representing multiple records within a set.
+        """
         return pulumi.get(self, "rdatas")
 
     @rdatas.setter
@@ -1325,6 +1745,9 @@ class GtmPropertyStaticRrSetArgs:
     @property
     @pulumi.getter
     def ttl(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of seconds that this record should live in a resolver's cache before being refetched.
+        """
         return pulumi.get(self, "ttl")
 
     @ttl.setter
@@ -1334,6 +1757,9 @@ class GtmPropertyStaticRrSetArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The record type.
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -1350,6 +1776,14 @@ class GtmPropertyTrafficTargetArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  weight: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[int] datacenter_id: A unique identifier for an existing data center in the domain.
+        :param pulumi.Input[bool] enabled: A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
+        :param pulumi.Input[str] handout_cname: Specifies an optional data center for the property. Used when there are no servers configured for the property.
+        :param pulumi.Input[str] name: Name of HTTP header.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] servers: (List) Identifies the IP address or the hostnames of the servers.
+        :param pulumi.Input[float] weight: Specifies the traffic weight for the target.
+        """
         if datacenter_id is not None:
             pulumi.set(__self__, "datacenter_id", datacenter_id)
         if enabled is not None:
@@ -1366,6 +1800,9 @@ class GtmPropertyTrafficTargetArgs:
     @property
     @pulumi.getter(name="datacenterId")
     def datacenter_id(self) -> Optional[pulumi.Input[int]]:
+        """
+        A unique identifier for an existing data center in the domain.
+        """
         return pulumi.get(self, "datacenter_id")
 
     @datacenter_id.setter
@@ -1375,6 +1812,9 @@ class GtmPropertyTrafficTargetArgs:
     @property
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
+        """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
@@ -1384,6 +1824,9 @@ class GtmPropertyTrafficTargetArgs:
     @property
     @pulumi.getter(name="handoutCname")
     def handout_cname(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies an optional data center for the property. Used when there are no servers configured for the property.
+        """
         return pulumi.get(self, "handout_cname")
 
     @handout_cname.setter
@@ -1393,6 +1836,9 @@ class GtmPropertyTrafficTargetArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of HTTP header.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1402,6 +1848,9 @@ class GtmPropertyTrafficTargetArgs:
     @property
     @pulumi.getter
     def servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (List) Identifies the IP address or the hostnames of the servers.
+        """
         return pulumi.get(self, "servers")
 
     @servers.setter
@@ -1411,6 +1860,9 @@ class GtmPropertyTrafficTargetArgs:
     @property
     @pulumi.getter
     def weight(self) -> Optional[pulumi.Input[float]]:
+        """
+        Specifies the traffic weight for the target.
+        """
         return pulumi.get(self, "weight")
 
     @weight.setter
@@ -1426,6 +1878,13 @@ class GtmResourceResourceInstanceArgs:
                  load_object_port: Optional[pulumi.Input[int]] = None,
                  load_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  use_default_load_object: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[int] datacenter_id: A unique identifier for an existing data center in the domain.
+        :param pulumi.Input[str] load_object: Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
+        :param pulumi.Input[int] load_object_port: Specifies the TCP port of the `load_object`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] load_servers: (List) Specifies a list of servers from which to request the load object.
+        :param pulumi.Input[bool] use_default_load_object: A boolean that indicates whether a default `load_object` is used for the resources.
+        """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         if load_object is not None:
             pulumi.set(__self__, "load_object", load_object)
@@ -1439,6 +1898,9 @@ class GtmResourceResourceInstanceArgs:
     @property
     @pulumi.getter(name="datacenterId")
     def datacenter_id(self) -> pulumi.Input[int]:
+        """
+        A unique identifier for an existing data center in the domain.
+        """
         return pulumi.get(self, "datacenter_id")
 
     @datacenter_id.setter
@@ -1448,6 +1910,9 @@ class GtmResourceResourceInstanceArgs:
     @property
     @pulumi.getter(name="loadObject")
     def load_object(self) -> Optional[pulumi.Input[str]]:
+        """
+        Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
+        """
         return pulumi.get(self, "load_object")
 
     @load_object.setter
@@ -1457,6 +1922,9 @@ class GtmResourceResourceInstanceArgs:
     @property
     @pulumi.getter(name="loadObjectPort")
     def load_object_port(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specifies the TCP port of the `load_object`.
+        """
         return pulumi.get(self, "load_object_port")
 
     @load_object_port.setter
@@ -1466,6 +1934,9 @@ class GtmResourceResourceInstanceArgs:
     @property
     @pulumi.getter(name="loadServers")
     def load_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (List) Specifies a list of servers from which to request the load object.
+        """
         return pulumi.get(self, "load_servers")
 
     @load_servers.setter
@@ -1475,6 +1946,9 @@ class GtmResourceResourceInstanceArgs:
     @property
     @pulumi.getter(name="useDefaultLoadObject")
     def use_default_load_object(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean that indicates whether a default `load_object` is used for the resources.
+        """
         return pulumi.get(self, "use_default_load_object")
 
     @use_default_load_object.setter
@@ -1669,6 +2143,11 @@ class PropertyHostnameArgs:
                  cert_statuses: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusArgs']]]] = None,
                  cname_type: Optional[pulumi.Input[str]] = None,
                  edge_hostname_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] cert_provisioning_type: The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+        :param pulumi.Input[str] cname_from: A string containing the original origin's hostname. For example, `"example.org"`.
+        :param pulumi.Input[str] cname_to: A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
+        """
         pulumi.set(__self__, "cert_provisioning_type", cert_provisioning_type)
         pulumi.set(__self__, "cname_from", cname_from)
         pulumi.set(__self__, "cname_to", cname_to)
@@ -1682,6 +2161,9 @@ class PropertyHostnameArgs:
     @property
     @pulumi.getter(name="certProvisioningType")
     def cert_provisioning_type(self) -> pulumi.Input[str]:
+        """
+        The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+        """
         return pulumi.get(self, "cert_provisioning_type")
 
     @cert_provisioning_type.setter
@@ -1691,6 +2173,9 @@ class PropertyHostnameArgs:
     @property
     @pulumi.getter(name="cnameFrom")
     def cname_from(self) -> pulumi.Input[str]:
+        """
+        A string containing the original origin's hostname. For example, `"example.org"`.
+        """
         return pulumi.get(self, "cname_from")
 
     @cname_from.setter
@@ -1700,6 +2185,9 @@ class PropertyHostnameArgs:
     @property
     @pulumi.getter(name="cnameTo")
     def cname_to(self) -> pulumi.Input[str]:
+        """
+        A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
+        """
         return pulumi.get(self, "cname_to")
 
     @cname_to.setter
@@ -2616,6 +3104,11 @@ class GetPropertyRulesTemplateVariableArgs:
                  name: str,
                  value: str,
                  type: Optional[str] = None):
+        """
+        :param str name: The name of the variable used in template.
+        :param str value: The value of the variable passed as a string.
+        :param str type: The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
         if type is not None:
@@ -2624,6 +3117,9 @@ class GetPropertyRulesTemplateVariableArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        The name of the variable used in template.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -2633,6 +3129,9 @@ class GetPropertyRulesTemplateVariableArgs:
     @property
     @pulumi.getter
     def value(self) -> str:
+        """
+        The value of the variable passed as a string.
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -2642,6 +3141,9 @@ class GetPropertyRulesTemplateVariableArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
+        """
+        The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
+        """
         return pulumi.get(self, "type")
 
     @type.setter

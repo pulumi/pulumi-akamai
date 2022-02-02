@@ -11,9 +11,7 @@ export function getCpCode(args: GetCpCodeArgs, opts?: pulumi.InvokeOptions): Pro
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:properties/getCpCode:getCpCode", {
         "contract": args.contract,
         "contractId": args.contractId,

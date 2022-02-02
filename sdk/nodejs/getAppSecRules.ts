@@ -9,9 +9,7 @@ export function getAppSecRules(args: GetAppSecRulesArgs, opts?: pulumi.InvokeOpt
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecRules:getAppSecRules", {
         "configId": args.configId,
         "ruleId": args.ruleId,

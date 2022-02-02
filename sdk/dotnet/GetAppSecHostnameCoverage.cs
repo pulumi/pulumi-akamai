@@ -53,7 +53,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the hostname coverage information.
         /// </summary>
         public static Task<GetAppSecHostnameCoverageResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecHostnameCoverageResult>("akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage", InvokeArgs.Empty, options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecHostnameCoverageResult>("akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

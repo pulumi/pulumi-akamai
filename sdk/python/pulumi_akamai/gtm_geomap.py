@@ -22,6 +22,11 @@ class GtmGeomapArgs:
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a GtmGeomap resource.
+        :param pulumi.Input['GtmGeomapDefaultDatacenterArgs'] default_datacenter: A placeholder for all other geographic zones. Requires these additional arguments:
+        :param pulumi.Input[str] domain: GTM Domain name for the Geographic Map.
+        :param pulumi.Input[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]] assignments: Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
+        :param pulumi.Input[str] name: A descriptive label for the Geographic map.
+        :param pulumi.Input[bool] wait_on_complete: A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
         """
         pulumi.set(__self__, "default_datacenter", default_datacenter)
         pulumi.set(__self__, "domain", domain)
@@ -35,6 +40,9 @@ class GtmGeomapArgs:
     @property
     @pulumi.getter(name="defaultDatacenter")
     def default_datacenter(self) -> pulumi.Input['GtmGeomapDefaultDatacenterArgs']:
+        """
+        A placeholder for all other geographic zones. Requires these additional arguments:
+        """
         return pulumi.get(self, "default_datacenter")
 
     @default_datacenter.setter
@@ -44,6 +52,9 @@ class GtmGeomapArgs:
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Input[str]:
+        """
+        GTM Domain name for the Geographic Map.
+        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -53,6 +64,9 @@ class GtmGeomapArgs:
     @property
     @pulumi.getter
     def assignments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]]]:
+        """
+        Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
+        """
         return pulumi.get(self, "assignments")
 
     @assignments.setter
@@ -62,6 +76,9 @@ class GtmGeomapArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive label for the Geographic map.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -71,6 +88,9 @@ class GtmGeomapArgs:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -88,6 +108,11 @@ class _GtmGeomapState:
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering GtmGeomap resources.
+        :param pulumi.Input[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]] assignments: Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
+        :param pulumi.Input['GtmGeomapDefaultDatacenterArgs'] default_datacenter: A placeholder for all other geographic zones. Requires these additional arguments:
+        :param pulumi.Input[str] domain: GTM Domain name for the Geographic Map.
+        :param pulumi.Input[str] name: A descriptive label for the Geographic map.
+        :param pulumi.Input[bool] wait_on_complete: A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
         """
         if assignments is not None:
             pulumi.set(__self__, "assignments", assignments)
@@ -103,6 +128,9 @@ class _GtmGeomapState:
     @property
     @pulumi.getter
     def assignments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmGeomapAssignmentArgs']]]]:
+        """
+        Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
+        """
         return pulumi.get(self, "assignments")
 
     @assignments.setter
@@ -112,6 +140,9 @@ class _GtmGeomapState:
     @property
     @pulumi.getter(name="defaultDatacenter")
     def default_datacenter(self) -> Optional[pulumi.Input['GtmGeomapDefaultDatacenterArgs']]:
+        """
+        A placeholder for all other geographic zones. Requires these additional arguments:
+        """
         return pulumi.get(self, "default_datacenter")
 
     @default_datacenter.setter
@@ -121,6 +152,9 @@ class _GtmGeomapState:
     @property
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        GTM Domain name for the Geographic Map.
+        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -130,6 +164,9 @@ class _GtmGeomapState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive label for the Geographic map.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -139,6 +176,9 @@ class _GtmGeomapState:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -179,27 +219,17 @@ class GtmGeomap(pulumi.CustomResource):
             ),
             domain="demo_domain.akadns.net")
         ```
-        ## Argument reference
-
-        This resource supports these arguments:
-
-        * `domain` - (Required) GTM Domain name for the Geographic Map.
-        * `name` - (Required) A descriptive label for the Geographic map.
-        * `default_datacenter` - (Required) A placeholder for all other geographic zones. Requires these additional arguments:
-          * `datacenter_id` - (Required) For each property, an identifier for all other geographic zones.
-          * `nickname` - (Required) A descriptive label for all other geographic zones.
-        * `wait_on_complete` - (Optional) A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
-        * `assignment` - (Optional) Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
-          * `datacenter_id` - (Required) A unique identifier for an existing data center in the domain.
-          * `nickname` - (Optional) A descriptive label for the group.
-          * `countries` - (Optional) Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
-
         ## Schema reference
 
         You can download the GTM Geographic Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#geographicmap) page.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmGeomapAssignmentArgs']]]] assignments: Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
+        :param pulumi.Input[pulumi.InputType['GtmGeomapDefaultDatacenterArgs']] default_datacenter: A placeholder for all other geographic zones. Requires these additional arguments:
+        :param pulumi.Input[str] domain: GTM Domain name for the Geographic Map.
+        :param pulumi.Input[str] name: A descriptive label for the Geographic map.
+        :param pulumi.Input[bool] wait_on_complete: A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
         """
         ...
     @overload
@@ -229,21 +259,6 @@ class GtmGeomap(pulumi.CustomResource):
             ),
             domain="demo_domain.akadns.net")
         ```
-        ## Argument reference
-
-        This resource supports these arguments:
-
-        * `domain` - (Required) GTM Domain name for the Geographic Map.
-        * `name` - (Required) A descriptive label for the Geographic map.
-        * `default_datacenter` - (Required) A placeholder for all other geographic zones. Requires these additional arguments:
-          * `datacenter_id` - (Required) For each property, an identifier for all other geographic zones.
-          * `nickname` - (Required) A descriptive label for all other geographic zones.
-        * `wait_on_complete` - (Optional) A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
-        * `assignment` - (Optional) Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
-          * `datacenter_id` - (Required) A unique identifier for an existing data center in the domain.
-          * `nickname` - (Optional) A descriptive label for the group.
-          * `countries` - (Optional) Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
-
         ## Schema reference
 
         You can download the GTM Geographic Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#geographicmap) page.
@@ -313,6 +328,11 @@ class GtmGeomap(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmGeomapAssignmentArgs']]]] assignments: Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
+        :param pulumi.Input[pulumi.InputType['GtmGeomapDefaultDatacenterArgs']] default_datacenter: A placeholder for all other geographic zones. Requires these additional arguments:
+        :param pulumi.Input[str] domain: GTM Domain name for the Geographic Map.
+        :param pulumi.Input[str] name: A descriptive label for the Geographic map.
+        :param pulumi.Input[bool] wait_on_complete: A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -328,25 +348,40 @@ class GtmGeomap(pulumi.CustomResource):
     @property
     @pulumi.getter
     def assignments(self) -> pulumi.Output[Optional[Sequence['outputs.GtmGeomapAssignment']]]:
+        """
+        Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
+        """
         return pulumi.get(self, "assignments")
 
     @property
     @pulumi.getter(name="defaultDatacenter")
     def default_datacenter(self) -> pulumi.Output['outputs.GtmGeomapDefaultDatacenter']:
+        """
+        A placeholder for all other geographic zones. Requires these additional arguments:
+        """
         return pulumi.get(self, "default_datacenter")
 
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Output[str]:
+        """
+        GTM Domain name for the Geographic Map.
+        """
         return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
+        """
+        A descriptive label for the Geographic map.
+        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> pulumi.Output[Optional[bool]]:
+        """
+        A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+        """
         return pulumi.get(self, "wait_on_complete")
 

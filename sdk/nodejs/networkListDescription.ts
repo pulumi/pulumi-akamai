@@ -71,13 +71,13 @@ export class NetworkListDescription extends pulumi.CustomResource {
      */
     constructor(name: string, args: NetworkListDescriptionArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: NetworkListDescriptionArgs | NetworkListDescriptionState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkListDescriptionState | undefined;
-            inputs["description"] = state ? state.description : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["networkListId"] = state ? state.networkListId : undefined;
+            resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["networkListId"] = state ? state.networkListId : undefined;
         } else {
             const args = argsOrState as NetworkListDescriptionArgs | undefined;
             if ((!args || args.description === undefined) && !opts.urn) {
@@ -86,14 +86,12 @@ export class NetworkListDescription extends pulumi.CustomResource {
             if ((!args || args.networkListId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'networkListId'");
             }
-            inputs["description"] = args ? args.description : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["networkListId"] = args ? args.networkListId : undefined;
+            resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["networkListId"] = args ? args.networkListId : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(NetworkListDescription.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(NetworkListDescription.__pulumiType, name, resourceInputs, opts);
     }
 }
 

@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -61,7 +60,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the version notes.
         /// </summary>
         public static Task<GetAppSecVersionNotesResult> InvokeAsync(GetAppSecVersionNotesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecVersionNotesResult>("akamai:index/getAppSecVersionNotes:getAppSecVersionNotes", args ?? new GetAppSecVersionNotesArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecVersionNotesResult>("akamai:index/getAppSecVersionNotes:getAppSecVersionNotes", args ?? new GetAppSecVersionNotesArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration
@@ -112,7 +111,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the version notes.
         /// </summary>
         public static Output<GetAppSecVersionNotesResult> Invoke(GetAppSecVersionNotesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecVersionNotesResult>("akamai:index/getAppSecVersionNotes:getAppSecVersionNotes", args ?? new GetAppSecVersionNotesInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecVersionNotesResult>("akamai:index/getAppSecVersionNotes:getAppSecVersionNotes", args ?? new GetAppSecVersionNotesInvokeArgs(), options.WithDefaults());
     }
 
 

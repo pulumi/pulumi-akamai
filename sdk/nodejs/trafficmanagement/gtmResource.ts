@@ -65,25 +65,25 @@ export class GtmResource extends pulumi.CustomResource {
     /** @deprecated akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource */
     constructor(name: string, argsOrState?: GtmResourceArgs | GtmResourceState, opts?: pulumi.CustomResourceOptions) {
         pulumi.log.warn("GtmResource is deprecated: akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource")
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GtmResourceState | undefined;
-            inputs["aggregationType"] = state ? state.aggregationType : undefined;
-            inputs["constrainedProperty"] = state ? state.constrainedProperty : undefined;
-            inputs["decayRate"] = state ? state.decayRate : undefined;
-            inputs["description"] = state ? state.description : undefined;
-            inputs["domain"] = state ? state.domain : undefined;
-            inputs["hostHeader"] = state ? state.hostHeader : undefined;
-            inputs["leaderString"] = state ? state.leaderString : undefined;
-            inputs["leastSquaresDecay"] = state ? state.leastSquaresDecay : undefined;
-            inputs["loadImbalancePercentage"] = state ? state.loadImbalancePercentage : undefined;
-            inputs["maxUMultiplicativeIncrement"] = state ? state.maxUMultiplicativeIncrement : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["resourceInstances"] = state ? state.resourceInstances : undefined;
-            inputs["type"] = state ? state.type : undefined;
-            inputs["upperBound"] = state ? state.upperBound : undefined;
-            inputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
+            resourceInputs["aggregationType"] = state ? state.aggregationType : undefined;
+            resourceInputs["constrainedProperty"] = state ? state.constrainedProperty : undefined;
+            resourceInputs["decayRate"] = state ? state.decayRate : undefined;
+            resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["domain"] = state ? state.domain : undefined;
+            resourceInputs["hostHeader"] = state ? state.hostHeader : undefined;
+            resourceInputs["leaderString"] = state ? state.leaderString : undefined;
+            resourceInputs["leastSquaresDecay"] = state ? state.leastSquaresDecay : undefined;
+            resourceInputs["loadImbalancePercentage"] = state ? state.loadImbalancePercentage : undefined;
+            resourceInputs["maxUMultiplicativeIncrement"] = state ? state.maxUMultiplicativeIncrement : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["resourceInstances"] = state ? state.resourceInstances : undefined;
+            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["upperBound"] = state ? state.upperBound : undefined;
+            resourceInputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
         } else {
             const args = argsOrState as GtmResourceArgs | undefined;
             if ((!args || args.aggregationType === undefined) && !opts.urn) {
@@ -95,26 +95,24 @@ export class GtmResource extends pulumi.CustomResource {
             if ((!args || args.type === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            inputs["aggregationType"] = args ? args.aggregationType : undefined;
-            inputs["constrainedProperty"] = args ? args.constrainedProperty : undefined;
-            inputs["decayRate"] = args ? args.decayRate : undefined;
-            inputs["description"] = args ? args.description : undefined;
-            inputs["domain"] = args ? args.domain : undefined;
-            inputs["hostHeader"] = args ? args.hostHeader : undefined;
-            inputs["leaderString"] = args ? args.leaderString : undefined;
-            inputs["leastSquaresDecay"] = args ? args.leastSquaresDecay : undefined;
-            inputs["loadImbalancePercentage"] = args ? args.loadImbalancePercentage : undefined;
-            inputs["maxUMultiplicativeIncrement"] = args ? args.maxUMultiplicativeIncrement : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["resourceInstances"] = args ? args.resourceInstances : undefined;
-            inputs["type"] = args ? args.type : undefined;
-            inputs["upperBound"] = args ? args.upperBound : undefined;
-            inputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
+            resourceInputs["aggregationType"] = args ? args.aggregationType : undefined;
+            resourceInputs["constrainedProperty"] = args ? args.constrainedProperty : undefined;
+            resourceInputs["decayRate"] = args ? args.decayRate : undefined;
+            resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["domain"] = args ? args.domain : undefined;
+            resourceInputs["hostHeader"] = args ? args.hostHeader : undefined;
+            resourceInputs["leaderString"] = args ? args.leaderString : undefined;
+            resourceInputs["leastSquaresDecay"] = args ? args.leastSquaresDecay : undefined;
+            resourceInputs["loadImbalancePercentage"] = args ? args.loadImbalancePercentage : undefined;
+            resourceInputs["maxUMultiplicativeIncrement"] = args ? args.maxUMultiplicativeIncrement : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["resourceInstances"] = args ? args.resourceInstances : undefined;
+            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["upperBound"] = args ? args.upperBound : undefined;
+            resourceInputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(GtmResource.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(GtmResource.__pulumiType, name, resourceInputs, opts);
     }
 }
 

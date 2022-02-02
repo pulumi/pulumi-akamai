@@ -43,9 +43,7 @@ export function getAppSecContractsGroups(args?: GetAppSecContractsGroupsArgs, op
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", {
         "contractid": args.contractid,
         "groupid": args.groupid,

@@ -70,21 +70,6 @@ namespace Pulumi.Akamai
     /// 
     /// }
     /// ```
-    /// ## Argument reference
-    /// 
-    /// The following arguments are supported:
-    /// 
-    /// * `name` - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
-    /// * `contract_id` - (Required) A contract's unique ID, including the `ctr_` prefix.
-    /// * `group_id` - (Required) A group's unique ID, including the `grp_` prefix.
-    /// * `product_id` - (Required) A product's unique ID, including the `prd_` prefix.
-    /// 
-    /// ### Deprecated arguments
-    /// 
-    /// * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
-    /// * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
-    /// * `product` - (Deprecated) Replaced by `product_id`. Maintained for legacy purposes.
-    /// 
     /// ## Attributes reference
     /// 
     /// * `id` - The ID of the CP code.
@@ -104,24 +89,45 @@ namespace Pulumi.Akamai
     [AkamaiResourceType("akamai:index/cpCode:CpCode")]
     public partial class CpCode : Pulumi.CustomResource
     {
+        /// <summary>
+        /// Replaced by `contract_id`. Maintained for legacy purposes.
+        /// </summary>
         [Output("contract")]
         public Output<string> Contract { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// </summary>
         [Output("contractId")]
         public Output<string> ContractId { get; private set; } = null!;
 
+        /// <summary>
+        /// Replaced by `group_id`. Maintained for legacy purposes.
+        /// </summary>
         [Output("group")]
         public Output<string> Group { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// </summary>
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// Replaced by `product_id`. Maintained for legacy purposes.
+        /// </summary>
         [Output("product")]
         public Output<string> Product { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) A product's unique ID, including the `prd_` prefix.
+        /// </summary>
         [Output("productId")]
         public Output<string> ProductId { get; private set; } = null!;
 
@@ -175,24 +181,45 @@ namespace Pulumi.Akamai
 
     public sealed class CpCodeArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Replaced by `contract_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("contract")]
         public Input<string>? Contract { get; set; }
 
+        /// <summary>
+        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
 
+        /// <summary>
+        /// Replaced by `group_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
 
+        /// <summary>
+        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
+        /// <summary>
+        /// - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// Replaced by `product_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("product")]
         public Input<string>? Product { get; set; }
 
+        /// <summary>
+        /// - (Required) A product's unique ID, including the `prd_` prefix.
+        /// </summary>
         [Input("productId")]
         public Input<string>? ProductId { get; set; }
 
@@ -203,24 +230,45 @@ namespace Pulumi.Akamai
 
     public sealed class CpCodeState : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Replaced by `contract_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("contract")]
         public Input<string>? Contract { get; set; }
 
+        /// <summary>
+        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
 
+        /// <summary>
+        /// Replaced by `group_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
 
+        /// <summary>
+        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
+        /// <summary>
+        /// - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// Replaced by `product_id`. Maintained for legacy purposes.
+        /// </summary>
         [Input("product")]
         public Input<string>? Product { get; set; }
 
+        /// <summary>
+        /// - (Required) A product's unique ID, including the `prd_` prefix.
+        /// </summary>
         [Input("productId")]
         public Input<string>? ProductId { get; set; }
 

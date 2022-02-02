@@ -17,6 +17,8 @@ class CpsDvValidationArgs:
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a CpsDvValidation resource.
+        :param pulumi.Input[int] enrollment_id: Unique identifier for the DV certificate enrollment.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
         """
         pulumi.set(__self__, "enrollment_id", enrollment_id)
         if sans is not None:
@@ -25,6 +27,9 @@ class CpsDvValidationArgs:
     @property
     @pulumi.getter(name="enrollmentId")
     def enrollment_id(self) -> pulumi.Input[int]:
+        """
+        Unique identifier for the DV certificate enrollment.
+        """
         return pulumi.get(self, "enrollment_id")
 
     @enrollment_id.setter
@@ -34,6 +39,9 @@ class CpsDvValidationArgs:
     @property
     @pulumi.getter
     def sans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+        """
         return pulumi.get(self, "sans")
 
     @sans.setter
@@ -49,6 +57,8 @@ class _CpsDvValidationState:
                  status: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CpsDvValidation resources.
+        :param pulumi.Input[int] enrollment_id: Unique identifier for the DV certificate enrollment.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
         """
         if enrollment_id is not None:
             pulumi.set(__self__, "enrollment_id", enrollment_id)
@@ -60,6 +70,9 @@ class _CpsDvValidationState:
     @property
     @pulumi.getter(name="enrollmentId")
     def enrollment_id(self) -> Optional[pulumi.Input[int]]:
+        """
+        Unique identifier for the DV certificate enrollment.
+        """
         return pulumi.get(self, "enrollment_id")
 
     @enrollment_id.setter
@@ -69,6 +82,9 @@ class _CpsDvValidationState:
     @property
     @pulumi.getter
     def sans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+        """
         return pulumi.get(self, "sans")
 
     @sans.setter
@@ -108,19 +124,14 @@ class CpsDvValidation(pulumi.CustomResource):
             enrollment_id=akamai_cps_dv_enrollment["example"]["id"],
             sans=akamai_cps_dv_enrollment["example"]["sans"])
         ```
-        ## Argument reference
-
-        The following arguments are supported:
-
-        * `enrollment_id` (Required) - Unique identifier for the DV certificate enrollment.
-        * `sans` - (Optional) The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
-
         ## Attributes reference
 
         * `status` - The status of certificate validation.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[int] enrollment_id: Unique identifier for the DV certificate enrollment.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
         """
         ...
     @overload
@@ -143,13 +154,6 @@ class CpsDvValidation(pulumi.CustomResource):
             enrollment_id=akamai_cps_dv_enrollment["example"]["id"],
             sans=akamai_cps_dv_enrollment["example"]["sans"])
         ```
-        ## Argument reference
-
-        The following arguments are supported:
-
-        * `enrollment_id` (Required) - Unique identifier for the DV certificate enrollment.
-        * `sans` - (Optional) The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
-
         ## Attributes reference
 
         * `status` - The status of certificate validation.
@@ -208,6 +212,8 @@ class CpsDvValidation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[int] enrollment_id: Unique identifier for the DV certificate enrollment.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -221,11 +227,17 @@ class CpsDvValidation(pulumi.CustomResource):
     @property
     @pulumi.getter(name="enrollmentId")
     def enrollment_id(self) -> pulumi.Output[int]:
+        """
+        Unique identifier for the DV certificate enrollment.
+        """
         return pulumi.get(self, "enrollment_id")
 
     @property
     @pulumi.getter
     def sans(self) -> pulumi.Output[Optional[Sequence[str]]]:
+        """
+        The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+        """
         return pulumi.get(self, "sans")
 
     @property

@@ -69,9 +69,6 @@ def get_property_rule_formats(opts: Optional[pulumi.InvokeOptions] = None) -> Aw
 
     pulumi.export("propertyMatch", data["akamai_property_rule_formats"]["my-example"])
     ```
-    ## Argument reference
-
-    There are no arguments available for this data source.
     """
     __args__ = dict()
     if opts is None:

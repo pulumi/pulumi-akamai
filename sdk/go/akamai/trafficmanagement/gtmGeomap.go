@@ -105,7 +105,7 @@ type GtmGeomapInput interface {
 }
 
 func (*GtmGeomap) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmGeomap)(nil))
+	return reflect.TypeOf((**GtmGeomap)(nil)).Elem()
 }
 
 func (i *GtmGeomap) ToGtmGeomapOutput() GtmGeomapOutput {
@@ -114,35 +114,6 @@ func (i *GtmGeomap) ToGtmGeomapOutput() GtmGeomapOutput {
 
 func (i *GtmGeomap) ToGtmGeomapOutputWithContext(ctx context.Context) GtmGeomapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GtmGeomapOutput)
-}
-
-func (i *GtmGeomap) ToGtmGeomapPtrOutput() GtmGeomapPtrOutput {
-	return i.ToGtmGeomapPtrOutputWithContext(context.Background())
-}
-
-func (i *GtmGeomap) ToGtmGeomapPtrOutputWithContext(ctx context.Context) GtmGeomapPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GtmGeomapPtrOutput)
-}
-
-type GtmGeomapPtrInput interface {
-	pulumi.Input
-
-	ToGtmGeomapPtrOutput() GtmGeomapPtrOutput
-	ToGtmGeomapPtrOutputWithContext(ctx context.Context) GtmGeomapPtrOutput
-}
-
-type gtmGeomapPtrType GtmGeomapArgs
-
-func (*gtmGeomapPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**GtmGeomap)(nil))
-}
-
-func (i *gtmGeomapPtrType) ToGtmGeomapPtrOutput() GtmGeomapPtrOutput {
-	return i.ToGtmGeomapPtrOutputWithContext(context.Background())
-}
-
-func (i *gtmGeomapPtrType) ToGtmGeomapPtrOutputWithContext(ctx context.Context) GtmGeomapPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GtmGeomapPtrOutput)
 }
 
 // GtmGeomapArrayInput is an input type that accepts GtmGeomapArray and GtmGeomapArrayOutput values.
@@ -198,7 +169,7 @@ func (i GtmGeomapMap) ToGtmGeomapMapOutputWithContext(ctx context.Context) GtmGe
 type GtmGeomapOutput struct{ *pulumi.OutputState }
 
 func (GtmGeomapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GtmGeomap)(nil))
+	return reflect.TypeOf((**GtmGeomap)(nil)).Elem()
 }
 
 func (o GtmGeomapOutput) ToGtmGeomapOutput() GtmGeomapOutput {
@@ -209,44 +180,10 @@ func (o GtmGeomapOutput) ToGtmGeomapOutputWithContext(ctx context.Context) GtmGe
 	return o
 }
 
-func (o GtmGeomapOutput) ToGtmGeomapPtrOutput() GtmGeomapPtrOutput {
-	return o.ToGtmGeomapPtrOutputWithContext(context.Background())
-}
-
-func (o GtmGeomapOutput) ToGtmGeomapPtrOutputWithContext(ctx context.Context) GtmGeomapPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmGeomap) *GtmGeomap {
-		return &v
-	}).(GtmGeomapPtrOutput)
-}
-
-type GtmGeomapPtrOutput struct{ *pulumi.OutputState }
-
-func (GtmGeomapPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**GtmGeomap)(nil))
-}
-
-func (o GtmGeomapPtrOutput) ToGtmGeomapPtrOutput() GtmGeomapPtrOutput {
-	return o
-}
-
-func (o GtmGeomapPtrOutput) ToGtmGeomapPtrOutputWithContext(ctx context.Context) GtmGeomapPtrOutput {
-	return o
-}
-
-func (o GtmGeomapPtrOutput) Elem() GtmGeomapOutput {
-	return o.ApplyT(func(v *GtmGeomap) GtmGeomap {
-		if v != nil {
-			return *v
-		}
-		var ret GtmGeomap
-		return ret
-	}).(GtmGeomapOutput)
-}
-
 type GtmGeomapArrayOutput struct{ *pulumi.OutputState }
 
 func (GtmGeomapArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GtmGeomap)(nil))
+	return reflect.TypeOf((*[]*GtmGeomap)(nil)).Elem()
 }
 
 func (o GtmGeomapArrayOutput) ToGtmGeomapArrayOutput() GtmGeomapArrayOutput {
@@ -258,15 +195,15 @@ func (o GtmGeomapArrayOutput) ToGtmGeomapArrayOutputWithContext(ctx context.Cont
 }
 
 func (o GtmGeomapArrayOutput) Index(i pulumi.IntInput) GtmGeomapOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmGeomap {
-		return vs[0].([]GtmGeomap)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *GtmGeomap {
+		return vs[0].([]*GtmGeomap)[vs[1].(int)]
 	}).(GtmGeomapOutput)
 }
 
 type GtmGeomapMapOutput struct{ *pulumi.OutputState }
 
 func (GtmGeomapMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]GtmGeomap)(nil))
+	return reflect.TypeOf((*map[string]*GtmGeomap)(nil)).Elem()
 }
 
 func (o GtmGeomapMapOutput) ToGtmGeomapMapOutput() GtmGeomapMapOutput {
@@ -278,18 +215,16 @@ func (o GtmGeomapMapOutput) ToGtmGeomapMapOutputWithContext(ctx context.Context)
 }
 
 func (o GtmGeomapMapOutput) MapIndex(k pulumi.StringInput) GtmGeomapOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GtmGeomap {
-		return vs[0].(map[string]GtmGeomap)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *GtmGeomap {
+		return vs[0].(map[string]*GtmGeomap)[vs[1].(string)]
 	}).(GtmGeomapOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GtmGeomapInput)(nil)).Elem(), &GtmGeomap{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GtmGeomapPtrInput)(nil)).Elem(), &GtmGeomap{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GtmGeomapArrayInput)(nil)).Elem(), GtmGeomapArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GtmGeomapMapInput)(nil)).Elem(), GtmGeomapMap{})
 	pulumi.RegisterOutputType(GtmGeomapOutput{})
-	pulumi.RegisterOutputType(GtmGeomapPtrOutput{})
 	pulumi.RegisterOutputType(GtmGeomapArrayOutput{})
 	pulumi.RegisterOutputType(GtmGeomapMapOutput{})
 }

@@ -45,7 +45,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewEdgeHostName(ctx, "provider_demo", &akamai.EdgeHostNameArgs{
+// 		_, err := akamai.NewEdgeHostName(ctx, "provider-demo", &akamai.EdgeHostNameArgs{
 // 			ContractId:   pulumi.String("ctr_1-AB123"),
 // 			EdgeHostname: pulumi.String("www.example.org.edgesuite.net"),
 // 			GroupId:      pulumi.String("grp_123"),
@@ -58,24 +58,6 @@ import (
 // 	})
 // }
 // ```
-// ## Argument reference
-//
-// This resource supports these arguments:
-//
-// * `name` - (Required) The name of the edge hostname.
-// * `contractId` - (Required) A contract's unique ID, including the `ctr_` prefix.
-// * `groupId` - (Required) A group's unique ID, including the `grp_` prefix.
-// * `productId` - (Required) A product's unique ID, including the `prd_` prefix.
-// * `edgeHostname` - (Required) One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
-// * `certificate` - (Optional) Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
-// * `ipBehavior` - (Required) Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
-//
-// ### Deprecated arguments
-//
-// * `contract` - (Deprecated) Replaced by `contractId`. Maintained for legacy purposes.
-// * `group` - (Deprecated) Replaced by `groupId`. Maintained for legacy purposes.
-// * `product` - (Deprecated) Replaced by `productId`. Maintained for legacy purposes.
-//
 // ## Attributes reference
 //
 // This resource returns this attribute:
@@ -98,17 +80,29 @@ import (
 type EdgeHostName struct {
 	pulumi.CustomResourceState
 
+	// Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
 	Certificate pulumi.IntPtrOutput `pulumi:"certificate"`
+	// Replaced by `contractId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract     pulumi.StringOutput `pulumi:"contract"`
-	ContractId   pulumi.StringOutput `pulumi:"contractId"`
+	Contract pulumi.StringOutput `pulumi:"contract"`
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	ContractId pulumi.StringOutput `pulumi:"contractId"`
+	// One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
 	EdgeHostname pulumi.StringOutput `pulumi:"edgeHostname"`
+	// Replaced by `groupId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group      pulumi.StringOutput `pulumi:"group"`
-	GroupId    pulumi.StringOutput `pulumi:"groupId"`
+	Group pulumi.StringOutput `pulumi:"group"`
+	// - (Required) A group's unique ID, including the `grp_` prefix.
+	GroupId pulumi.StringOutput `pulumi:"groupId"`
+	// Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
 	IpBehavior pulumi.StringOutput `pulumi:"ipBehavior"`
+	// Replaced by `productId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product   pulumi.StringOutput `pulumi:"product"`
+	Product pulumi.StringOutput `pulumi:"product"`
+	// - (Required) A product's unique ID, including the `prd_` prefix.
 	ProductId pulumi.StringOutput `pulumi:"productId"`
 	// A JSON encoded list of use cases
 	UseCases pulumi.StringPtrOutput `pulumi:"useCases"`
@@ -155,34 +149,58 @@ func GetEdgeHostName(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering EdgeHostName resources.
 type edgeHostNameState struct {
+	// Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
 	Certificate *int `pulumi:"certificate"`
+	// Replaced by `contractId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract     *string `pulumi:"contract"`
-	ContractId   *string `pulumi:"contractId"`
+	Contract *string `pulumi:"contract"`
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	ContractId *string `pulumi:"contractId"`
+	// One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
 	EdgeHostname *string `pulumi:"edgeHostname"`
+	// Replaced by `groupId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group      *string `pulumi:"group"`
-	GroupId    *string `pulumi:"groupId"`
+	Group *string `pulumi:"group"`
+	// - (Required) A group's unique ID, including the `grp_` prefix.
+	GroupId *string `pulumi:"groupId"`
+	// Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
 	IpBehavior *string `pulumi:"ipBehavior"`
+	// Replaced by `productId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product   *string `pulumi:"product"`
+	Product *string `pulumi:"product"`
+	// - (Required) A product's unique ID, including the `prd_` prefix.
 	ProductId *string `pulumi:"productId"`
 	// A JSON encoded list of use cases
 	UseCases *string `pulumi:"useCases"`
 }
 
 type EdgeHostNameState struct {
+	// Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
 	Certificate pulumi.IntPtrInput
+	// Replaced by `contractId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract     pulumi.StringPtrInput
-	ContractId   pulumi.StringPtrInput
+	Contract pulumi.StringPtrInput
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	ContractId pulumi.StringPtrInput
+	// One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
 	EdgeHostname pulumi.StringPtrInput
+	// Replaced by `groupId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group      pulumi.StringPtrInput
-	GroupId    pulumi.StringPtrInput
+	Group pulumi.StringPtrInput
+	// - (Required) A group's unique ID, including the `grp_` prefix.
+	GroupId pulumi.StringPtrInput
+	// Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
 	IpBehavior pulumi.StringPtrInput
+	// Replaced by `productId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product   pulumi.StringPtrInput
+	Product pulumi.StringPtrInput
+	// - (Required) A product's unique ID, including the `prd_` prefix.
 	ProductId pulumi.StringPtrInput
 	// A JSON encoded list of use cases
 	UseCases pulumi.StringPtrInput
@@ -193,17 +211,29 @@ func (EdgeHostNameState) ElementType() reflect.Type {
 }
 
 type edgeHostNameArgs struct {
+	// Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
 	Certificate *int `pulumi:"certificate"`
+	// Replaced by `contractId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract     *string `pulumi:"contract"`
-	ContractId   *string `pulumi:"contractId"`
-	EdgeHostname string  `pulumi:"edgeHostname"`
+	Contract *string `pulumi:"contract"`
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	ContractId *string `pulumi:"contractId"`
+	// One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
+	EdgeHostname string `pulumi:"edgeHostname"`
+	// Replaced by `groupId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group      *string `pulumi:"group"`
-	GroupId    *string `pulumi:"groupId"`
-	IpBehavior string  `pulumi:"ipBehavior"`
+	Group *string `pulumi:"group"`
+	// - (Required) A group's unique ID, including the `grp_` prefix.
+	GroupId *string `pulumi:"groupId"`
+	// Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
+	IpBehavior string `pulumi:"ipBehavior"`
+	// Replaced by `productId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product   *string `pulumi:"product"`
+	Product *string `pulumi:"product"`
+	// - (Required) A product's unique ID, including the `prd_` prefix.
 	ProductId *string `pulumi:"productId"`
 	// A JSON encoded list of use cases
 	UseCases *string `pulumi:"useCases"`
@@ -211,17 +241,29 @@ type edgeHostNameArgs struct {
 
 // The set of arguments for constructing a EdgeHostName resource.
 type EdgeHostNameArgs struct {
+	// Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
 	Certificate pulumi.IntPtrInput
+	// Replaced by `contractId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract     pulumi.StringPtrInput
-	ContractId   pulumi.StringPtrInput
+	Contract pulumi.StringPtrInput
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	ContractId pulumi.StringPtrInput
+	// One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
 	EdgeHostname pulumi.StringInput
+	// Replaced by `groupId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group      pulumi.StringPtrInput
-	GroupId    pulumi.StringPtrInput
+	Group pulumi.StringPtrInput
+	// - (Required) A group's unique ID, including the `grp_` prefix.
+	GroupId pulumi.StringPtrInput
+	// Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
 	IpBehavior pulumi.StringInput
+	// Replaced by `productId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product   pulumi.StringPtrInput
+	Product pulumi.StringPtrInput
+	// - (Required) A product's unique ID, including the `prd_` prefix.
 	ProductId pulumi.StringPtrInput
 	// A JSON encoded list of use cases
 	UseCases pulumi.StringPtrInput
@@ -239,7 +281,7 @@ type EdgeHostNameInput interface {
 }
 
 func (*EdgeHostName) ElementType() reflect.Type {
-	return reflect.TypeOf((*EdgeHostName)(nil))
+	return reflect.TypeOf((**EdgeHostName)(nil)).Elem()
 }
 
 func (i *EdgeHostName) ToEdgeHostNameOutput() EdgeHostNameOutput {
@@ -248,35 +290,6 @@ func (i *EdgeHostName) ToEdgeHostNameOutput() EdgeHostNameOutput {
 
 func (i *EdgeHostName) ToEdgeHostNameOutputWithContext(ctx context.Context) EdgeHostNameOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EdgeHostNameOutput)
-}
-
-func (i *EdgeHostName) ToEdgeHostNamePtrOutput() EdgeHostNamePtrOutput {
-	return i.ToEdgeHostNamePtrOutputWithContext(context.Background())
-}
-
-func (i *EdgeHostName) ToEdgeHostNamePtrOutputWithContext(ctx context.Context) EdgeHostNamePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(EdgeHostNamePtrOutput)
-}
-
-type EdgeHostNamePtrInput interface {
-	pulumi.Input
-
-	ToEdgeHostNamePtrOutput() EdgeHostNamePtrOutput
-	ToEdgeHostNamePtrOutputWithContext(ctx context.Context) EdgeHostNamePtrOutput
-}
-
-type edgeHostNamePtrType EdgeHostNameArgs
-
-func (*edgeHostNamePtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**EdgeHostName)(nil))
-}
-
-func (i *edgeHostNamePtrType) ToEdgeHostNamePtrOutput() EdgeHostNamePtrOutput {
-	return i.ToEdgeHostNamePtrOutputWithContext(context.Background())
-}
-
-func (i *edgeHostNamePtrType) ToEdgeHostNamePtrOutputWithContext(ctx context.Context) EdgeHostNamePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(EdgeHostNamePtrOutput)
 }
 
 // EdgeHostNameArrayInput is an input type that accepts EdgeHostNameArray and EdgeHostNameArrayOutput values.
@@ -332,7 +345,7 @@ func (i EdgeHostNameMap) ToEdgeHostNameMapOutputWithContext(ctx context.Context)
 type EdgeHostNameOutput struct{ *pulumi.OutputState }
 
 func (EdgeHostNameOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*EdgeHostName)(nil))
+	return reflect.TypeOf((**EdgeHostName)(nil)).Elem()
 }
 
 func (o EdgeHostNameOutput) ToEdgeHostNameOutput() EdgeHostNameOutput {
@@ -343,44 +356,10 @@ func (o EdgeHostNameOutput) ToEdgeHostNameOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o EdgeHostNameOutput) ToEdgeHostNamePtrOutput() EdgeHostNamePtrOutput {
-	return o.ToEdgeHostNamePtrOutputWithContext(context.Background())
-}
-
-func (o EdgeHostNameOutput) ToEdgeHostNamePtrOutputWithContext(ctx context.Context) EdgeHostNamePtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v EdgeHostName) *EdgeHostName {
-		return &v
-	}).(EdgeHostNamePtrOutput)
-}
-
-type EdgeHostNamePtrOutput struct{ *pulumi.OutputState }
-
-func (EdgeHostNamePtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**EdgeHostName)(nil))
-}
-
-func (o EdgeHostNamePtrOutput) ToEdgeHostNamePtrOutput() EdgeHostNamePtrOutput {
-	return o
-}
-
-func (o EdgeHostNamePtrOutput) ToEdgeHostNamePtrOutputWithContext(ctx context.Context) EdgeHostNamePtrOutput {
-	return o
-}
-
-func (o EdgeHostNamePtrOutput) Elem() EdgeHostNameOutput {
-	return o.ApplyT(func(v *EdgeHostName) EdgeHostName {
-		if v != nil {
-			return *v
-		}
-		var ret EdgeHostName
-		return ret
-	}).(EdgeHostNameOutput)
-}
-
 type EdgeHostNameArrayOutput struct{ *pulumi.OutputState }
 
 func (EdgeHostNameArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]EdgeHostName)(nil))
+	return reflect.TypeOf((*[]*EdgeHostName)(nil)).Elem()
 }
 
 func (o EdgeHostNameArrayOutput) ToEdgeHostNameArrayOutput() EdgeHostNameArrayOutput {
@@ -392,15 +371,15 @@ func (o EdgeHostNameArrayOutput) ToEdgeHostNameArrayOutputWithContext(ctx contex
 }
 
 func (o EdgeHostNameArrayOutput) Index(i pulumi.IntInput) EdgeHostNameOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) EdgeHostName {
-		return vs[0].([]EdgeHostName)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *EdgeHostName {
+		return vs[0].([]*EdgeHostName)[vs[1].(int)]
 	}).(EdgeHostNameOutput)
 }
 
 type EdgeHostNameMapOutput struct{ *pulumi.OutputState }
 
 func (EdgeHostNameMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]EdgeHostName)(nil))
+	return reflect.TypeOf((*map[string]*EdgeHostName)(nil)).Elem()
 }
 
 func (o EdgeHostNameMapOutput) ToEdgeHostNameMapOutput() EdgeHostNameMapOutput {
@@ -412,18 +391,16 @@ func (o EdgeHostNameMapOutput) ToEdgeHostNameMapOutputWithContext(ctx context.Co
 }
 
 func (o EdgeHostNameMapOutput) MapIndex(k pulumi.StringInput) EdgeHostNameOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) EdgeHostName {
-		return vs[0].(map[string]EdgeHostName)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *EdgeHostName {
+		return vs[0].(map[string]*EdgeHostName)[vs[1].(string)]
 	}).(EdgeHostNameOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*EdgeHostNameInput)(nil)).Elem(), &EdgeHostName{})
-	pulumi.RegisterInputType(reflect.TypeOf((*EdgeHostNamePtrInput)(nil)).Elem(), &EdgeHostName{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EdgeHostNameArrayInput)(nil)).Elem(), EdgeHostNameArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EdgeHostNameMapInput)(nil)).Elem(), EdgeHostNameMap{})
 	pulumi.RegisterOutputType(EdgeHostNameOutput{})
-	pulumi.RegisterOutputType(EdgeHostNamePtrOutput{})
 	pulumi.RegisterOutputType(EdgeHostNameArrayOutput{})
 	pulumi.RegisterOutputType(EdgeHostNameMapOutput{})
 }

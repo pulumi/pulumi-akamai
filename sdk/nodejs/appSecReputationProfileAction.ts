@@ -90,14 +90,14 @@ export class AppSecReputationProfileAction extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecReputationProfileActionArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecReputationProfileActionArgs | AppSecReputationProfileActionState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecReputationProfileActionState | undefined;
-            inputs["action"] = state ? state.action : undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["reputationProfileId"] = state ? state.reputationProfileId : undefined;
-            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["action"] = state ? state.action : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["reputationProfileId"] = state ? state.reputationProfileId : undefined;
+            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
         } else {
             const args = argsOrState as AppSecReputationProfileActionArgs | undefined;
             if ((!args || args.action === undefined) && !opts.urn) {
@@ -112,15 +112,13 @@ export class AppSecReputationProfileAction extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            inputs["action"] = args ? args.action : undefined;
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["reputationProfileId"] = args ? args.reputationProfileId : undefined;
-            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["action"] = args ? args.action : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["reputationProfileId"] = args ? args.reputationProfileId : undefined;
+            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecReputationProfileAction.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecReputationProfileAction.__pulumiType, name, resourceInputs, opts);
     }
 }
 

@@ -88,14 +88,14 @@ export class AppSecPenaltyBox extends pulumi.CustomResource {
      */
     constructor(name: string, args: AppSecPenaltyBoxArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppSecPenaltyBoxArgs | AppSecPenaltyBoxState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecPenaltyBoxState | undefined;
-            inputs["configId"] = state ? state.configId : undefined;
-            inputs["penaltyBoxAction"] = state ? state.penaltyBoxAction : undefined;
-            inputs["penaltyBoxProtection"] = state ? state.penaltyBoxProtection : undefined;
-            inputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["configId"] = state ? state.configId : undefined;
+            resourceInputs["penaltyBoxAction"] = state ? state.penaltyBoxAction : undefined;
+            resourceInputs["penaltyBoxProtection"] = state ? state.penaltyBoxProtection : undefined;
+            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
         } else {
             const args = argsOrState as AppSecPenaltyBoxArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -110,15 +110,13 @@ export class AppSecPenaltyBox extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            inputs["configId"] = args ? args.configId : undefined;
-            inputs["penaltyBoxAction"] = args ? args.penaltyBoxAction : undefined;
-            inputs["penaltyBoxProtection"] = args ? args.penaltyBoxProtection : undefined;
-            inputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["configId"] = args ? args.configId : undefined;
+            resourceInputs["penaltyBoxAction"] = args ? args.penaltyBoxAction : undefined;
+            resourceInputs["penaltyBoxProtection"] = args ? args.penaltyBoxProtection : undefined;
+            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AppSecPenaltyBox.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AppSecPenaltyBox.__pulumiType, name, resourceInputs, opts);
     }
 }
 

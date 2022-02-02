@@ -64,29 +64,27 @@ export class Provider extends pulumi.ProviderResource {
      * @param opts A bag of options that control this resource's behavior.
      */
     constructor(name: string, args?: ProviderArgs, opts?: pulumi.ResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
-            inputs["appsecSection"] = args ? args.appsecSection : undefined;
-            inputs["appsecs"] = pulumi.output(args ? args.appsecs : undefined).apply(JSON.stringify);
-            inputs["cacheEnabled"] = pulumi.output(args ? args.cacheEnabled : undefined).apply(JSON.stringify);
-            inputs["config"] = pulumi.output(args ? args.config : undefined).apply(JSON.stringify);
-            inputs["configSection"] = args ? args.configSection : undefined;
-            inputs["dns"] = pulumi.output(args ? args.dns : undefined).apply(JSON.stringify);
-            inputs["dnsSection"] = args ? args.dnsSection : undefined;
-            inputs["edgerc"] = args ? args.edgerc : undefined;
-            inputs["gtm"] = pulumi.output(args ? args.gtm : undefined).apply(JSON.stringify);
-            inputs["gtmSection"] = args ? args.gtmSection : undefined;
-            inputs["networklistSection"] = args ? args.networklistSection : undefined;
-            inputs["networks"] = pulumi.output(args ? args.networks : undefined).apply(JSON.stringify);
-            inputs["papiSection"] = args ? args.papiSection : undefined;
-            inputs["property"] = pulumi.output(args ? args.property : undefined).apply(JSON.stringify);
-            inputs["propertySection"] = args ? args.propertySection : undefined;
+            resourceInputs["appsecSection"] = args ? args.appsecSection : undefined;
+            resourceInputs["appsecs"] = pulumi.output(args ? args.appsecs : undefined).apply(JSON.stringify);
+            resourceInputs["cacheEnabled"] = pulumi.output(args ? args.cacheEnabled : undefined).apply(JSON.stringify);
+            resourceInputs["config"] = pulumi.output(args ? args.config : undefined).apply(JSON.stringify);
+            resourceInputs["configSection"] = args ? args.configSection : undefined;
+            resourceInputs["dns"] = pulumi.output(args ? args.dns : undefined).apply(JSON.stringify);
+            resourceInputs["dnsSection"] = args ? args.dnsSection : undefined;
+            resourceInputs["edgerc"] = args ? args.edgerc : undefined;
+            resourceInputs["gtm"] = pulumi.output(args ? args.gtm : undefined).apply(JSON.stringify);
+            resourceInputs["gtmSection"] = args ? args.gtmSection : undefined;
+            resourceInputs["networklistSection"] = args ? args.networklistSection : undefined;
+            resourceInputs["networks"] = pulumi.output(args ? args.networks : undefined).apply(JSON.stringify);
+            resourceInputs["papiSection"] = args ? args.papiSection : undefined;
+            resourceInputs["property"] = pulumi.output(args ? args.property : undefined).apply(JSON.stringify);
+            resourceInputs["propertySection"] = args ? args.propertySection : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(Provider.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(Provider.__pulumiType, name, resourceInputs, opts);
     }
 }
 

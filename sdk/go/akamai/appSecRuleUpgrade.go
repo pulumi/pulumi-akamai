@@ -128,7 +128,7 @@ type AppSecRuleUpgradeInput interface {
 }
 
 func (*AppSecRuleUpgrade) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecRuleUpgrade)(nil))
+	return reflect.TypeOf((**AppSecRuleUpgrade)(nil)).Elem()
 }
 
 func (i *AppSecRuleUpgrade) ToAppSecRuleUpgradeOutput() AppSecRuleUpgradeOutput {
@@ -137,35 +137,6 @@ func (i *AppSecRuleUpgrade) ToAppSecRuleUpgradeOutput() AppSecRuleUpgradeOutput 
 
 func (i *AppSecRuleUpgrade) ToAppSecRuleUpgradeOutputWithContext(ctx context.Context) AppSecRuleUpgradeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecRuleUpgradeOutput)
-}
-
-func (i *AppSecRuleUpgrade) ToAppSecRuleUpgradePtrOutput() AppSecRuleUpgradePtrOutput {
-	return i.ToAppSecRuleUpgradePtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecRuleUpgrade) ToAppSecRuleUpgradePtrOutputWithContext(ctx context.Context) AppSecRuleUpgradePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecRuleUpgradePtrOutput)
-}
-
-type AppSecRuleUpgradePtrInput interface {
-	pulumi.Input
-
-	ToAppSecRuleUpgradePtrOutput() AppSecRuleUpgradePtrOutput
-	ToAppSecRuleUpgradePtrOutputWithContext(ctx context.Context) AppSecRuleUpgradePtrOutput
-}
-
-type appSecRuleUpgradePtrType AppSecRuleUpgradeArgs
-
-func (*appSecRuleUpgradePtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecRuleUpgrade)(nil))
-}
-
-func (i *appSecRuleUpgradePtrType) ToAppSecRuleUpgradePtrOutput() AppSecRuleUpgradePtrOutput {
-	return i.ToAppSecRuleUpgradePtrOutputWithContext(context.Background())
-}
-
-func (i *appSecRuleUpgradePtrType) ToAppSecRuleUpgradePtrOutputWithContext(ctx context.Context) AppSecRuleUpgradePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecRuleUpgradePtrOutput)
 }
 
 // AppSecRuleUpgradeArrayInput is an input type that accepts AppSecRuleUpgradeArray and AppSecRuleUpgradeArrayOutput values.
@@ -221,7 +192,7 @@ func (i AppSecRuleUpgradeMap) ToAppSecRuleUpgradeMapOutputWithContext(ctx contex
 type AppSecRuleUpgradeOutput struct{ *pulumi.OutputState }
 
 func (AppSecRuleUpgradeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecRuleUpgrade)(nil))
+	return reflect.TypeOf((**AppSecRuleUpgrade)(nil)).Elem()
 }
 
 func (o AppSecRuleUpgradeOutput) ToAppSecRuleUpgradeOutput() AppSecRuleUpgradeOutput {
@@ -232,44 +203,10 @@ func (o AppSecRuleUpgradeOutput) ToAppSecRuleUpgradeOutputWithContext(ctx contex
 	return o
 }
 
-func (o AppSecRuleUpgradeOutput) ToAppSecRuleUpgradePtrOutput() AppSecRuleUpgradePtrOutput {
-	return o.ToAppSecRuleUpgradePtrOutputWithContext(context.Background())
-}
-
-func (o AppSecRuleUpgradeOutput) ToAppSecRuleUpgradePtrOutputWithContext(ctx context.Context) AppSecRuleUpgradePtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecRuleUpgrade) *AppSecRuleUpgrade {
-		return &v
-	}).(AppSecRuleUpgradePtrOutput)
-}
-
-type AppSecRuleUpgradePtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecRuleUpgradePtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecRuleUpgrade)(nil))
-}
-
-func (o AppSecRuleUpgradePtrOutput) ToAppSecRuleUpgradePtrOutput() AppSecRuleUpgradePtrOutput {
-	return o
-}
-
-func (o AppSecRuleUpgradePtrOutput) ToAppSecRuleUpgradePtrOutputWithContext(ctx context.Context) AppSecRuleUpgradePtrOutput {
-	return o
-}
-
-func (o AppSecRuleUpgradePtrOutput) Elem() AppSecRuleUpgradeOutput {
-	return o.ApplyT(func(v *AppSecRuleUpgrade) AppSecRuleUpgrade {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecRuleUpgrade
-		return ret
-	}).(AppSecRuleUpgradeOutput)
-}
-
 type AppSecRuleUpgradeArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecRuleUpgradeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecRuleUpgrade)(nil))
+	return reflect.TypeOf((*[]*AppSecRuleUpgrade)(nil)).Elem()
 }
 
 func (o AppSecRuleUpgradeArrayOutput) ToAppSecRuleUpgradeArrayOutput() AppSecRuleUpgradeArrayOutput {
@@ -281,15 +218,15 @@ func (o AppSecRuleUpgradeArrayOutput) ToAppSecRuleUpgradeArrayOutputWithContext(
 }
 
 func (o AppSecRuleUpgradeArrayOutput) Index(i pulumi.IntInput) AppSecRuleUpgradeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecRuleUpgrade {
-		return vs[0].([]AppSecRuleUpgrade)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecRuleUpgrade {
+		return vs[0].([]*AppSecRuleUpgrade)[vs[1].(int)]
 	}).(AppSecRuleUpgradeOutput)
 }
 
 type AppSecRuleUpgradeMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecRuleUpgradeMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecRuleUpgrade)(nil))
+	return reflect.TypeOf((*map[string]*AppSecRuleUpgrade)(nil)).Elem()
 }
 
 func (o AppSecRuleUpgradeMapOutput) ToAppSecRuleUpgradeMapOutput() AppSecRuleUpgradeMapOutput {
@@ -301,18 +238,16 @@ func (o AppSecRuleUpgradeMapOutput) ToAppSecRuleUpgradeMapOutputWithContext(ctx 
 }
 
 func (o AppSecRuleUpgradeMapOutput) MapIndex(k pulumi.StringInput) AppSecRuleUpgradeOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecRuleUpgrade {
-		return vs[0].(map[string]AppSecRuleUpgrade)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecRuleUpgrade {
+		return vs[0].(map[string]*AppSecRuleUpgrade)[vs[1].(string)]
 	}).(AppSecRuleUpgradeOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRuleUpgradeInput)(nil)).Elem(), &AppSecRuleUpgrade{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRuleUpgradePtrInput)(nil)).Elem(), &AppSecRuleUpgrade{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRuleUpgradeArrayInput)(nil)).Elem(), AppSecRuleUpgradeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecRuleUpgradeMapInput)(nil)).Elem(), AppSecRuleUpgradeMap{})
 	pulumi.RegisterOutputType(AppSecRuleUpgradeOutput{})
-	pulumi.RegisterOutputType(AppSecRuleUpgradePtrOutput{})
 	pulumi.RegisterOutputType(AppSecRuleUpgradeArrayOutput{})
 	pulumi.RegisterOutputType(AppSecRuleUpgradeMapOutput{})
 }

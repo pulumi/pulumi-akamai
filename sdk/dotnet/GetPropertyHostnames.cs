@@ -6,28 +6,36 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
     public static class GetPropertyHostnames
     {
         public static Task<GetPropertyHostnamesResult> InvokeAsync(GetPropertyHostnamesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyHostnamesResult>("akamai:index/getPropertyHostnames:getPropertyHostnames", args ?? new GetPropertyHostnamesArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyHostnamesResult>("akamai:index/getPropertyHostnames:getPropertyHostnames", args ?? new GetPropertyHostnamesArgs(), options.WithDefaults());
 
         public static Output<GetPropertyHostnamesResult> Invoke(GetPropertyHostnamesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPropertyHostnamesResult>("akamai:index/getPropertyHostnames:getPropertyHostnames", args ?? new GetPropertyHostnamesInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetPropertyHostnamesResult>("akamai:index/getPropertyHostnames:getPropertyHostnames", args ?? new GetPropertyHostnamesInvokeArgs(), options.WithDefaults());
     }
 
 
     public sealed class GetPropertyHostnamesArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// </summary>
         [Input("contractId", required: true)]
         public string ContractId { get; set; } = null!;
 
+        /// <summary>
+        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// </summary>
         [Input("groupId", required: true)]
         public string GroupId { get; set; } = null!;
 
+        /// <summary>
+        /// - (Required) A property's unique ID, including the `prp_` prefix.
+        /// </summary>
         [Input("propertyId", required: true)]
         public string PropertyId { get; set; } = null!;
 
@@ -38,12 +46,21 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyHostnamesInvokeArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
+        /// <summary>
+        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// </summary>
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;
 
+        /// <summary>
+        /// - (Required) A property's unique ID, including the `prp_` prefix.
+        /// </summary>
         [Input("propertyId", required: true)]
         public Input<string> PropertyId { get; set; } = null!;
 

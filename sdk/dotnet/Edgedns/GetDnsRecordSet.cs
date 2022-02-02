@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai.Edgedns
 {
@@ -14,10 +13,10 @@ namespace Pulumi.Akamai.Edgedns
     public static class GetDnsRecordSet
     {
         public static Task<GetDnsRecordSetResult> InvokeAsync(GetDnsRecordSetArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDnsRecordSetResult>("akamai:edgedns/getDnsRecordSet:getDnsRecordSet", args ?? new GetDnsRecordSetArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetDnsRecordSetResult>("akamai:edgedns/getDnsRecordSet:getDnsRecordSet", args ?? new GetDnsRecordSetArgs(), options.WithDefaults());
 
         public static Output<GetDnsRecordSetResult> Invoke(GetDnsRecordSetInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDnsRecordSetResult>("akamai:edgedns/getDnsRecordSet:getDnsRecordSet", args ?? new GetDnsRecordSetInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetDnsRecordSetResult>("akamai:edgedns/getDnsRecordSet:getDnsRecordSet", args ?? new GetDnsRecordSetInvokeArgs(), options.WithDefaults());
     }
 
 

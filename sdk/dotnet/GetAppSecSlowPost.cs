@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -64,7 +63,7 @@ namespace Pulumi.Akamai
         ///   - **DURATION_THRESHOLD TIMEOUT**. Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in order to avoid triggering the specified action.
         /// </summary>
         public static Task<GetAppSecSlowPostResult> InvokeAsync(GetAppSecSlowPostArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSlowPostResult>("akamai:index/getAppSecSlowPost:getAppSecSlowPost", args ?? new GetAppSecSlowPostArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSlowPostResult>("akamai:index/getAppSecSlowPost:getAppSecSlowPost", args ?? new GetAppSecSlowPostArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy
@@ -118,7 +117,7 @@ namespace Pulumi.Akamai
         ///   - **DURATION_THRESHOLD TIMEOUT**. Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in order to avoid triggering the specified action.
         /// </summary>
         public static Output<GetAppSecSlowPostResult> Invoke(GetAppSecSlowPostInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecSlowPostResult>("akamai:index/getAppSecSlowPost:getAppSecSlowPost", args ?? new GetAppSecSlowPostInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecSlowPostResult>("akamai:index/getAppSecSlowPost:getAppSecSlowPost", args ?? new GetAppSecSlowPostInvokeArgs(), options.WithDefaults());
     }
 
 

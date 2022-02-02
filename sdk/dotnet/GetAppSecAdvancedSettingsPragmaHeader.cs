@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -74,7 +73,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the pragma header settings.
         /// </summary>
         public static Task<GetAppSecAdvancedSettingsPragmaHeaderResult> InvokeAsync(GetAppSecAdvancedSettingsPragmaHeaderArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAdvancedSettingsPragmaHeaderResult>("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", args ?? new GetAppSecAdvancedSettingsPragmaHeaderArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAdvancedSettingsPragmaHeaderResult>("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", args ?? new GetAppSecAdvancedSettingsPragmaHeaderArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; security policy
@@ -138,7 +137,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the pragma header settings.
         /// </summary>
         public static Output<GetAppSecAdvancedSettingsPragmaHeaderResult> Invoke(GetAppSecAdvancedSettingsPragmaHeaderInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsPragmaHeaderResult>("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", args ?? new GetAppSecAdvancedSettingsPragmaHeaderInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsPragmaHeaderResult>("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", args ?? new GetAppSecAdvancedSettingsPragmaHeaderInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
@@ -82,7 +81,7 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted list of the mode information.
         /// </summary>
         public static Task<GetAppSecWafModeResult> InvokeAsync(GetAppSecWafModeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecWafModeResult>("akamai:index/getAppSecWafMode:getAppSecWafMode", args ?? new GetAppSecWafModeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecWafModeResult>("akamai:index/getAppSecWafMode:getAppSecWafMode", args ?? new GetAppSecWafModeArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy
@@ -154,7 +153,7 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted list of the mode information.
         /// </summary>
         public static Output<GetAppSecWafModeResult> Invoke(GetAppSecWafModeInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecWafModeResult>("akamai:index/getAppSecWafMode:getAppSecWafMode", args ?? new GetAppSecWafModeInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecWafModeResult>("akamai:index/getAppSecWafMode:getAppSecWafMode", args ?? new GetAppSecWafModeInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -6,17 +6,16 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
-using Pulumi.Utilities;
 
 namespace Pulumi.Akamai
 {
     public static class GetAppSecAttackGroups
     {
         public static Task<GetAppSecAttackGroupsResult> InvokeAsync(GetAppSecAttackGroupsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAttackGroupsResult>("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", args ?? new GetAppSecAttackGroupsArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAttackGroupsResult>("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", args ?? new GetAppSecAttackGroupsArgs(), options.WithDefaults());
 
         public static Output<GetAppSecAttackGroupsResult> Invoke(GetAppSecAttackGroupsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecAttackGroupsResult>("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", args ?? new GetAppSecAttackGroupsInvokeArgs(), options.WithVersion());
+            => Pulumi.Deployment.Instance.Invoke<GetAppSecAttackGroupsResult>("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", args ?? new GetAppSecAttackGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

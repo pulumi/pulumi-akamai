@@ -54,9 +54,7 @@ export function getAppSecReputationProfileActions(args: GetAppSecReputationProfi
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions", {
         "configId": args.configId,
         "reputationProfileId": args.reputationProfileId,

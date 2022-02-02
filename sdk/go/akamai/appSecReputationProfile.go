@@ -159,7 +159,7 @@ type AppSecReputationProfileInput interface {
 }
 
 func (*AppSecReputationProfile) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecReputationProfile)(nil))
+	return reflect.TypeOf((**AppSecReputationProfile)(nil)).Elem()
 }
 
 func (i *AppSecReputationProfile) ToAppSecReputationProfileOutput() AppSecReputationProfileOutput {
@@ -168,35 +168,6 @@ func (i *AppSecReputationProfile) ToAppSecReputationProfileOutput() AppSecReputa
 
 func (i *AppSecReputationProfile) ToAppSecReputationProfileOutputWithContext(ctx context.Context) AppSecReputationProfileOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecReputationProfileOutput)
-}
-
-func (i *AppSecReputationProfile) ToAppSecReputationProfilePtrOutput() AppSecReputationProfilePtrOutput {
-	return i.ToAppSecReputationProfilePtrOutputWithContext(context.Background())
-}
-
-func (i *AppSecReputationProfile) ToAppSecReputationProfilePtrOutputWithContext(ctx context.Context) AppSecReputationProfilePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecReputationProfilePtrOutput)
-}
-
-type AppSecReputationProfilePtrInput interface {
-	pulumi.Input
-
-	ToAppSecReputationProfilePtrOutput() AppSecReputationProfilePtrOutput
-	ToAppSecReputationProfilePtrOutputWithContext(ctx context.Context) AppSecReputationProfilePtrOutput
-}
-
-type appSecReputationProfilePtrType AppSecReputationProfileArgs
-
-func (*appSecReputationProfilePtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecReputationProfile)(nil))
-}
-
-func (i *appSecReputationProfilePtrType) ToAppSecReputationProfilePtrOutput() AppSecReputationProfilePtrOutput {
-	return i.ToAppSecReputationProfilePtrOutputWithContext(context.Background())
-}
-
-func (i *appSecReputationProfilePtrType) ToAppSecReputationProfilePtrOutputWithContext(ctx context.Context) AppSecReputationProfilePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppSecReputationProfilePtrOutput)
 }
 
 // AppSecReputationProfileArrayInput is an input type that accepts AppSecReputationProfileArray and AppSecReputationProfileArrayOutput values.
@@ -252,7 +223,7 @@ func (i AppSecReputationProfileMap) ToAppSecReputationProfileMapOutputWithContex
 type AppSecReputationProfileOutput struct{ *pulumi.OutputState }
 
 func (AppSecReputationProfileOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppSecReputationProfile)(nil))
+	return reflect.TypeOf((**AppSecReputationProfile)(nil)).Elem()
 }
 
 func (o AppSecReputationProfileOutput) ToAppSecReputationProfileOutput() AppSecReputationProfileOutput {
@@ -263,44 +234,10 @@ func (o AppSecReputationProfileOutput) ToAppSecReputationProfileOutputWithContex
 	return o
 }
 
-func (o AppSecReputationProfileOutput) ToAppSecReputationProfilePtrOutput() AppSecReputationProfilePtrOutput {
-	return o.ToAppSecReputationProfilePtrOutputWithContext(context.Background())
-}
-
-func (o AppSecReputationProfileOutput) ToAppSecReputationProfilePtrOutputWithContext(ctx context.Context) AppSecReputationProfilePtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppSecReputationProfile) *AppSecReputationProfile {
-		return &v
-	}).(AppSecReputationProfilePtrOutput)
-}
-
-type AppSecReputationProfilePtrOutput struct{ *pulumi.OutputState }
-
-func (AppSecReputationProfilePtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AppSecReputationProfile)(nil))
-}
-
-func (o AppSecReputationProfilePtrOutput) ToAppSecReputationProfilePtrOutput() AppSecReputationProfilePtrOutput {
-	return o
-}
-
-func (o AppSecReputationProfilePtrOutput) ToAppSecReputationProfilePtrOutputWithContext(ctx context.Context) AppSecReputationProfilePtrOutput {
-	return o
-}
-
-func (o AppSecReputationProfilePtrOutput) Elem() AppSecReputationProfileOutput {
-	return o.ApplyT(func(v *AppSecReputationProfile) AppSecReputationProfile {
-		if v != nil {
-			return *v
-		}
-		var ret AppSecReputationProfile
-		return ret
-	}).(AppSecReputationProfileOutput)
-}
-
 type AppSecReputationProfileArrayOutput struct{ *pulumi.OutputState }
 
 func (AppSecReputationProfileArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AppSecReputationProfile)(nil))
+	return reflect.TypeOf((*[]*AppSecReputationProfile)(nil)).Elem()
 }
 
 func (o AppSecReputationProfileArrayOutput) ToAppSecReputationProfileArrayOutput() AppSecReputationProfileArrayOutput {
@@ -312,15 +249,15 @@ func (o AppSecReputationProfileArrayOutput) ToAppSecReputationProfileArrayOutput
 }
 
 func (o AppSecReputationProfileArrayOutput) Index(i pulumi.IntInput) AppSecReputationProfileOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppSecReputationProfile {
-		return vs[0].([]AppSecReputationProfile)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecReputationProfile {
+		return vs[0].([]*AppSecReputationProfile)[vs[1].(int)]
 	}).(AppSecReputationProfileOutput)
 }
 
 type AppSecReputationProfileMapOutput struct{ *pulumi.OutputState }
 
 func (AppSecReputationProfileMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AppSecReputationProfile)(nil))
+	return reflect.TypeOf((*map[string]*AppSecReputationProfile)(nil)).Elem()
 }
 
 func (o AppSecReputationProfileMapOutput) ToAppSecReputationProfileMapOutput() AppSecReputationProfileMapOutput {
@@ -332,18 +269,16 @@ func (o AppSecReputationProfileMapOutput) ToAppSecReputationProfileMapOutputWith
 }
 
 func (o AppSecReputationProfileMapOutput) MapIndex(k pulumi.StringInput) AppSecReputationProfileOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppSecReputationProfile {
-		return vs[0].(map[string]AppSecReputationProfile)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AppSecReputationProfile {
+		return vs[0].(map[string]*AppSecReputationProfile)[vs[1].(string)]
 	}).(AppSecReputationProfileOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecReputationProfileInput)(nil)).Elem(), &AppSecReputationProfile{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppSecReputationProfilePtrInput)(nil)).Elem(), &AppSecReputationProfile{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecReputationProfileArrayInput)(nil)).Elem(), AppSecReputationProfileArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecReputationProfileMapInput)(nil)).Elem(), AppSecReputationProfileMap{})
 	pulumi.RegisterOutputType(AppSecReputationProfileOutput{})
-	pulumi.RegisterOutputType(AppSecReputationProfilePtrOutput{})
 	pulumi.RegisterOutputType(AppSecReputationProfileArrayOutput{})
 	pulumi.RegisterOutputType(AppSecReputationProfileMapOutput{})
 }

@@ -41,9 +41,7 @@ export function getAppSecRuleUpgradeDetails(args: GetAppSecRuleUpgradeDetailsArg
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
