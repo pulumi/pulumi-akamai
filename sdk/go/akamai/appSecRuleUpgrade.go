@@ -11,6 +11,55 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// ## Example Usage
+//
+// Basic usage:
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+// 			Name: pulumi.StringRef("Documentation"),
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		ruleUpgrade, err := akamai.NewAppSecRuleUpgrade(ctx, "ruleUpgrade", &akamai.AppSecRuleUpgradeArgs{
+// 			ConfigId:         pulumi.Int(configuration.ConfigId),
+// 			SecurityPolicyId: pulumi.String("gms1_134637"),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		ctx.Export("ruleUpgradeCurrentRuleset", ruleUpgrade.CurrentRuleset)
+// 		ctx.Export("ruleUpgradeMode", ruleUpgrade.Mode)
+// 		ctx.Export("ruleUpgradeEvalStatus", ruleUpgrade.EvalStatus)
+// 		return nil
+// 	})
+// }
+// ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned and how that returned information is formatted:
+//
+// - `currentRuleset`. Versioning information for your current KRS rule set.
+// - `mode`. Specifies the current upgrade mode type. Valid values are:
+//   - **KRS**. Rulesets must be manually upgraded.
+//
+//   - **AAG**. Rulesets are automatically upgraded by Akamai.
+//
+//   - **ASE_MANUAL**. Adaptive Security Engine rulesets must be manually upgraded.
+//
+//   - **ASE_AUTO**. Adaptive Security Engine rulesets are automatically updated by Akamai.
+//
+// - `evalStatus`. Returns **enabled** if an evaluation is currently in progress; otherwise returns **disabled**.
 type AppSecRuleUpgrade struct {
 	pulumi.CustomResourceState
 

@@ -30,9 +30,8 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Contracts"
 // 		_, err := akamai.GetAppSecApiEndpoints(ctx, &GetAppSecApiEndpointsArgs{
-// 			ApiName:  &opt0,
+// 			ApiName:  pulumi.StringRef("Contracts"),
 // 			ConfigId: 58843,
 // 		}, nil)
 // 		if err != nil {

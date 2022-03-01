@@ -147,7 +147,22 @@ class AppSecWapSelectedHostnames(pulumi.CustomResource):
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Create a AppSecWapSelectedHostnames resource with the given unique name, props, and options.
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
+        appsecwap_selectedhostnames = akamai.AppSecWapSelectedHostnames("appsecwapSelectedhostnames",
+            config_id=configuration.config_id,
+            security_policy_id="gms1_134637",
+            protected_hosts=["documentation.akamai.com"],
+            evaluated_hosts=["training.akamai.com"])
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
@@ -160,7 +175,22 @@ class AppSecWapSelectedHostnames(pulumi.CustomResource):
                  args: AppSecWapSelectedHostnamesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AppSecWapSelectedHostnames resource with the given unique name, props, and options.
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
+        appsecwap_selectedhostnames = akamai.AppSecWapSelectedHostnames("appsecwapSelectedhostnames",
+            config_id=configuration.config_id,
+            security_policy_id="gms1_134637",
+            protected_hosts=["documentation.akamai.com"],
+            evaluated_hosts=["training.akamai.com"])
+        ```
+
         :param str resource_name: The name of the resource.
         :param AppSecWapSelectedHostnamesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

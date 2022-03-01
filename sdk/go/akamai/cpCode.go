@@ -57,18 +57,15 @@ import (
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		groupName := "example group name"
 // 		_ := "My CP Code"
-// 		opt0 := groupName
 // 		exampleContract, err := akamai.GetContract(ctx, &GetContractArgs{
-// 			GroupName: &opt0,
+// 			GroupName: pulumi.StringRef(groupName),
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		opt1 := groupName
-// 		opt2 := exampleContract.Id
 // 		exampleGroup, err := akamai.GetGroup(ctx, &GetGroupArgs{
-// 			Name:       &opt1,
-// 			ContractId: &opt2,
+// 			Name:       pulumi.StringRef(groupName),
+// 			ContractId: pulumi.StringRef(exampleContract.Id),
 // 		}, nil)
 // 		if err != nil {
 // 			return err

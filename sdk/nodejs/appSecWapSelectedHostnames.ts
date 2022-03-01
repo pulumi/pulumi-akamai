@@ -4,6 +4,26 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const appsecwapSelectedhostnames = new akamai.AppSecWapSelectedHostnames("appsecwapSelectedhostnames", {
+ *     configId: configuration.then(configuration => configuration.configId),
+ *     securityPolicyId: "gms1_134637",
+ *     protectedHosts: ["documentation.akamai.com"],
+ *     evaluatedHosts: ["training.akamai.com"],
+ * });
+ * ```
+ */
 export class AppSecWapSelectedHostnames extends pulumi.CustomResource {
     /**
      * Get an existing AppSecWapSelectedHostnames resource's state with the given name, ID, and optional extra

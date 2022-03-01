@@ -33,9 +33,8 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Documentation"
 // 		selectableHostnames, err := akamai.GetAppSecSelectableHostnames(ctx, &GetAppSecSelectableHostnamesArgs{
-// 			ConfigId: &opt0,
+// 			ConfigId: pulumi.IntRef("Documentation"),
 // 		}, nil)
 // 		if err != nil {
 // 			return err

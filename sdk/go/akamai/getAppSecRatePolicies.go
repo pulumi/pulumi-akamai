@@ -30,9 +30,8 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: &opt0,
+// 			Name: pulumi.StringRef("Documentation"),
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -45,10 +44,9 @@ import (
 // 		}
 // 		ctx.Export("ratePoliciesOutput", ratePolicies.OutputText)
 // 		ctx.Export("ratePoliciesJson", ratePolicies.Json)
-// 		opt1 := 122149
 // 		ratePolicy, err := akamai.GetAppSecRatePolicies(ctx, &GetAppSecRatePoliciesArgs{
 // 			ConfigId:     configuration.ConfigId,
-// 			RatePolicyId: &opt1,
+// 			RatePolicyId: pulumi.IntRef(122149),
 // 		}, nil)
 // 		if err != nil {
 // 			return err

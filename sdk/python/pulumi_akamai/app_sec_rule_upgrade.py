@@ -170,7 +170,38 @@ class AppSecRuleUpgrade(pulumi.CustomResource):
                  upgrade_mode: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Create a AppSecRuleUpgrade resource with the given unique name, props, and options.
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
+        rule_upgrade = akamai.AppSecRuleUpgrade("ruleUpgrade",
+            config_id=configuration.config_id,
+            security_policy_id="gms1_134637")
+        pulumi.export("ruleUpgradeCurrentRuleset", rule_upgrade.current_ruleset)
+        pulumi.export("ruleUpgradeMode", rule_upgrade.mode)
+        pulumi.export("ruleUpgradeEvalStatus", rule_upgrade.eval_status)
+        ```
+        ## Output Options
+
+        The following options can be used to determine the information returned and how that returned information is formatted:
+
+        - `current_ruleset`. Versioning information for your current KRS rule set.
+        - `mode`. Specifies the current upgrade mode type. Valid values are:
+          - **KRS**. Rulesets must be manually upgraded.
+          
+          - **AAG**. Rulesets are automatically upgraded by Akamai.
+          
+          - **ASE_MANUAL**. Adaptive Security Engine rulesets must be manually upgraded.
+          
+          - **ASE_AUTO**. Adaptive Security Engine rulesets are automatically updated by Akamai.
+
+        - `eval_status`. Returns **enabled** if an evaluation is currently in progress; otherwise returns **disabled**.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the ruleset being upgraded.
@@ -186,7 +217,38 @@ class AppSecRuleUpgrade(pulumi.CustomResource):
                  args: AppSecRuleUpgradeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AppSecRuleUpgrade resource with the given unique name, props, and options.
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
+        rule_upgrade = akamai.AppSecRuleUpgrade("ruleUpgrade",
+            config_id=configuration.config_id,
+            security_policy_id="gms1_134637")
+        pulumi.export("ruleUpgradeCurrentRuleset", rule_upgrade.current_ruleset)
+        pulumi.export("ruleUpgradeMode", rule_upgrade.mode)
+        pulumi.export("ruleUpgradeEvalStatus", rule_upgrade.eval_status)
+        ```
+        ## Output Options
+
+        The following options can be used to determine the information returned and how that returned information is formatted:
+
+        - `current_ruleset`. Versioning information for your current KRS rule set.
+        - `mode`. Specifies the current upgrade mode type. Valid values are:
+          - **KRS**. Rulesets must be manually upgraded.
+          
+          - **AAG**. Rulesets are automatically upgraded by Akamai.
+          
+          - **ASE_MANUAL**. Adaptive Security Engine rulesets must be manually upgraded.
+          
+          - **ASE_AUTO**. Adaptive Security Engine rulesets are automatically updated by Akamai.
+
+        - `eval_status`. Returns **enabled** if an evaluation is currently in progress; otherwise returns **disabled**.
+
         :param str resource_name: The name of the resource.
         :param AppSecRuleUpgradeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

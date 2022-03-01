@@ -30,9 +30,8 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: &opt0,
+// 			Name: pulumi.StringRef("Documentation"),
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -46,10 +45,9 @@ import (
 // 		ctx.Export("customRulesOutputText", customRules.OutputText)
 // 		ctx.Export("customRulesJson", customRules.Json)
 // 		ctx.Export("customRulesConfigId", customRules.ConfigId)
-// 		opt1 := 60029316
 // 		specificCustomRule, err := akamai.GetAppSecCustomRules(ctx, &GetAppSecCustomRulesArgs{
 // 			ConfigId:     configuration.ConfigId,
-// 			CustomRuleId: &opt1,
+// 			CustomRuleId: pulumi.IntRef(60029316),
 // 		}, nil)
 // 		if err != nil {
 // 			return err

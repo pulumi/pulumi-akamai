@@ -26,10 +26,9 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := 1
 // 		example, err := akamai.LookupProperty(ctx, &GetPropertyArgs{
 // 			Name:    "terraform-demo",
-// 			Version: &opt0,
+// 			Version: pulumi.IntRef(1),
 // 		}, nil)
 // 		if err != nil {
 // 			return err

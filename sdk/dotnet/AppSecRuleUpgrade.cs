@@ -9,6 +9,57 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
+    /// <summary>
+    /// ## Example Usage
+    /// 
+    /// Basic usage:
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+    ///         {
+    ///             Name = "Documentation",
+    ///         }));
+    ///         var ruleUpgrade = new Akamai.AppSecRuleUpgrade("ruleUpgrade", new Akamai.AppSecRuleUpgradeArgs
+    ///         {
+    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
+    ///             SecurityPolicyId = "gms1_134637",
+    ///         });
+    ///         this.RuleUpgradeCurrentRuleset = ruleUpgrade.CurrentRuleset;
+    ///         this.RuleUpgradeMode = ruleUpgrade.Mode;
+    ///         this.RuleUpgradeEvalStatus = ruleUpgrade.EvalStatus;
+    ///     }
+    /// 
+    ///     [Output("ruleUpgradeCurrentRuleset")]
+    ///     public Output&lt;string&gt; RuleUpgradeCurrentRuleset { get; set; }
+    ///     [Output("ruleUpgradeMode")]
+    ///     public Output&lt;string&gt; RuleUpgradeMode { get; set; }
+    ///     [Output("ruleUpgradeEvalStatus")]
+    ///     public Output&lt;string&gt; RuleUpgradeEvalStatus { get; set; }
+    /// }
+    /// ```
+    /// ## Output Options
+    /// 
+    /// The following options can be used to determine the information returned and how that returned information is formatted:
+    /// 
+    /// - `current_ruleset`. Versioning information for your current KRS rule set.
+    /// - `mode`. Specifies the current upgrade mode type. Valid values are:
+    ///   - **KRS**. Rulesets must be manually upgraded.
+    ///   
+    ///   - **AAG**. Rulesets are automatically upgraded by Akamai.
+    ///   
+    ///   - **ASE_MANUAL**. Adaptive Security Engine rulesets must be manually upgraded.
+    ///   
+    ///   - **ASE_AUTO**. Adaptive Security Engine rulesets are automatically updated by Akamai.
+    /// 
+    /// - `eval_status`. Returns **enabled** if an evaluation is currently in progress; otherwise returns **disabled**.
+    /// </summary>
     [AkamaiResourceType("akamai:index/appSecRuleUpgrade:AppSecRuleUpgrade")]
     public partial class AppSecRuleUpgrade : Pulumi.CustomResource
     {

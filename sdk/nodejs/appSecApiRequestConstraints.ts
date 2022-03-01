@@ -4,6 +4,31 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const apiEndpoint = configuration.then(configuration => akamai.getAppSecApiEndpoints({
+ *     configId: configuration.configId,
+ *     securityPolicyId: "gms1_134637",
+ *     apiName: "Contracts",
+ * }));
+ * const apiRequestConstraints = new akamai.AppSecApiRequestConstraints("apiRequestConstraints", {
+ *     configId: configuration.then(configuration => configuration.configId),
+ *     securityPolicyId: "gms1_134637",
+ *     apiEndpointId: apiEndpoint.then(apiEndpoint => apiEndpoint.id),
+ *     action: "alert",
+ * });
+ * ```
+ */
 export class AppSecApiRequestConstraints extends pulumi.CustomResource {
     /**
      * Get an existing AppSecApiRequestConstraints resource's state with the given name, ID, and optional extra

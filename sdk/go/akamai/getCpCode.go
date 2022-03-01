@@ -26,11 +26,9 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "ctr_1-AB123"
-// 		opt1 := "grp_123"
 // 		_, err := akamai.LookupCpCode(ctx, &GetCpCodeArgs{
-// 			ContractId: &opt0,
-// 			GroupId:    &opt1,
+// 			ContractId: pulumi.StringRef("ctr_1-AB123"),
+// 			GroupId:    pulumi.StringRef("grp_123"),
 // 			Name:       "my cpcode name",
 // 		}, nil)
 // 		if err != nil {
@@ -55,28 +53,23 @@ import (
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		groupName := "example group name"
 // 		cpcodeName := "My CP code Name"
-// 		opt0 := groupName
 // 		exampleContract, err := akamai.GetContract(ctx, &GetContractArgs{
-// 			GroupName: &opt0,
+// 			GroupName: pulumi.StringRef(groupName),
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		opt1 := groupName
-// 		opt2 := exampleContract.Id
 // 		exampleGroup, err := akamai.GetGroup(ctx, &GetGroupArgs{
-// 			GroupName:  &opt1,
-// 			ContractId: &opt2,
+// 			GroupName:  pulumi.StringRef(groupName),
+// 			ContractId: pulumi.StringRef(exampleContract.Id),
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		opt3 := exampleGroup.Id
-// 		opt4 := exampleContract.Id
 // 		_, err = akamai.LookupCpCode(ctx, &GetCpCodeArgs{
 // 			Name:       cpcodeName,
-// 			GroupId:    &opt3,
-// 			ContractId: &opt4,
+// 			GroupId:    pulumi.StringRef(exampleGroup.Id),
+// 			ContractId: pulumi.StringRef(exampleContract.Id),
 // 		}, nil)
 // 		if err != nil {
 // 			return err

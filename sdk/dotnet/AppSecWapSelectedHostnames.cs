@@ -9,6 +9,41 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
+    /// <summary>
+    /// ## Example Usage
+    /// 
+    /// Basic usage:
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+    ///         {
+    ///             Name = "Documentation",
+    ///         }));
+    ///         var appsecwapSelectedhostnames = new Akamai.AppSecWapSelectedHostnames("appsecwapSelectedhostnames", new Akamai.AppSecWapSelectedHostnamesArgs
+    ///         {
+    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
+    ///             SecurityPolicyId = "gms1_134637",
+    ///             ProtectedHosts = 
+    ///             {
+    ///                 "documentation.akamai.com",
+    ///             },
+    ///             EvaluatedHosts = 
+    ///             {
+    ///                 "training.akamai.com",
+    ///             },
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
+    /// </summary>
     [AkamaiResourceType("akamai:index/appSecWapSelectedHostnames:AppSecWapSelectedHostnames")]
     public partial class AppSecWapSelectedHostnames : Pulumi.CustomResource
     {

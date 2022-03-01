@@ -28,14 +28,11 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "grp_12345"
-// 		opt1 := "ctr_1-AB123"
-// 		opt2 := 3
 // 		my_example, err := akamai.GetPropertyRules(ctx, &GetPropertyRulesArgs{
 // 			PropertyId: "prp_123",
-// 			GroupId:    &opt0,
-// 			ContractId: &opt1,
-// 			Version:    &opt2,
+// 			GroupId:    pulumi.StringRef("grp_12345"),
+// 			ContractId: pulumi.StringRef("ctr_1-AB123"),
+// 			Version:    pulumi.IntRef(3),
 // 		}, nil)
 // 		if err != nil {
 // 			return err
