@@ -28,9 +28,8 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := _var.Network_list
 // 		networkListsFilter, err := akamai.GetNetworkLists(ctx, &GetNetworkListsArgs{
-// 			Name: &opt0,
+// 			Name: pulumi.StringRef(_var.Network_list),
 // 		}, nil)
 // 		if err != nil {
 // 			return err

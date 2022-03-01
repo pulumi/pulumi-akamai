@@ -32,9 +32,8 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: &opt0,
+// 			Name: pulumi.StringRef("Documentation"),
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -47,10 +46,9 @@ import (
 // 		}
 // 		ctx.Export("advancedSettingsPragmaHeaderOutput", pragmaHeader.OutputText)
 // 		ctx.Export("advancedSettingsPragmaHeaderJson", pragmaHeader.Json)
-// 		opt1 := "gms1_134637"
 // 		policyPragmaHeader, err := akamai.LookupAppSecAdvancedSettingsPragmaHeader(ctx, &GetAppSecAdvancedSettingsPragmaHeaderArgs{
 // 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: &opt1,
+// 			SecurityPolicyId: pulumi.StringRef("gms1_134637"),
 // 		}, nil)
 // 		if err != nil {
 // 			return err

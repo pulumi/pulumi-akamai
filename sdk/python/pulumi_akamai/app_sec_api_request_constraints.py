@@ -178,7 +178,25 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Create a AppSecApiRequestConstraints resource with the given unique name, props, and options.
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
+        api_endpoint = akamai.get_app_sec_api_endpoints(config_id=configuration.config_id,
+            security_policy_id="gms1_134637",
+            api_name="Contracts")
+        api_request_constraints = akamai.AppSecApiRequestConstraints("apiRequestConstraints",
+            config_id=configuration.config_id,
+            security_policy_id="gms1_134637",
+            api_endpoint_id=api_endpoint.id,
+            action="alert")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] action: . Action to assign to the API request constraint. Allowed values are:
@@ -197,7 +215,25 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
                  args: AppSecApiRequestConstraintsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AppSecApiRequestConstraints resource with the given unique name, props, and options.
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        configuration = akamai.get_app_sec_configuration(name="Documentation")
+        api_endpoint = akamai.get_app_sec_api_endpoints(config_id=configuration.config_id,
+            security_policy_id="gms1_134637",
+            api_name="Contracts")
+        api_request_constraints = akamai.AppSecApiRequestConstraints("apiRequestConstraints",
+            config_id=configuration.config_id,
+            security_policy_id="gms1_134637",
+            api_endpoint_id=api_endpoint.id,
+            action="alert")
+        ```
+
         :param str resource_name: The name of the resource.
         :param AppSecApiRequestConstraintsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

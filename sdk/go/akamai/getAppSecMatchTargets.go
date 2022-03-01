@@ -30,9 +30,8 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: &opt0,
+// 			Name: pulumi.StringRef("Documentation"),
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -44,10 +43,9 @@ import (
 // 			return err
 // 		}
 // 		ctx.Export("matchTargets", matchTargetsAppSecMatchTargets.OutputText)
-// 		opt1 := 2712938
 // 		matchTarget, err := akamai.GetAppSecMatchTargets(ctx, &GetAppSecMatchTargetsArgs{
 // 			ConfigId:      configuration.ConfigId,
-// 			MatchTargetId: &opt1,
+// 			MatchTargetId: pulumi.IntRef(2712938),
 // 		}, nil)
 // 		if err != nil {
 // 			return err

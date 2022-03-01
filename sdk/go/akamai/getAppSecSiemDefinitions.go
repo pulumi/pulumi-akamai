@@ -36,9 +36,8 @@ import (
 // 		}
 // 		ctx.Export("siemDefinitionsJson", siemDefinitions.Json)
 // 		ctx.Export("siemDefinitionsOutput", siemDefinitions.OutputText)
-// 		opt0 := "SIEM Version 01"
 // 		siemDefinition, err := akamai.GetAppSecSiemDefinitions(ctx, &GetAppSecSiemDefinitionsArgs{
-// 			SiemDefinitionName: &opt0,
+// 			SiemDefinitionName: pulumi.StringRef("SIEM Version 01"),
 // 		}, nil)
 // 		if err != nil {
 // 			return err

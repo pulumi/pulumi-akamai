@@ -30,11 +30,9 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "5-2WA382"
-// 		opt1 := 12198
 // 		contractsGroups, err := akamai.GetAppSecContractsGroups(ctx, &GetAppSecContractsGroupsArgs{
-// 			Contractid: &opt0,
-// 			Groupid:    &opt1,
+// 			Contractid: pulumi.StringRef("5-2WA382"),
+// 			Groupid:    pulumi.IntRef(12198),
 // 		}, nil)
 // 		if err != nil {
 // 			return err

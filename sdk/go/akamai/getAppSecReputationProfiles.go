@@ -30,9 +30,8 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: &opt0,
+// 			Name: pulumi.StringRef("Documentation"),
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -45,10 +44,9 @@ import (
 // 		}
 // 		ctx.Export("reputationProfilesOutput", reputationProfiles.OutputText)
 // 		ctx.Export("reputationProfilesJson", reputationProfiles.Json)
-// 		opt1 := 12345
 // 		reputationProfile, err := akamai.GetAppSecReputationProfiles(ctx, &GetAppSecReputationProfilesArgs{
 // 			ConfigId:            configuration.ConfigId,
-// 			ReputationProfileId: &opt1,
+// 			ReputationProfileId: pulumi.IntRef(12345),
 // 		}, nil)
 // 		if err != nil {
 // 			return err

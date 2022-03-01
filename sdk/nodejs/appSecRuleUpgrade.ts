@@ -4,6 +4,42 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const ruleUpgrade = new akamai.AppSecRuleUpgrade("ruleUpgrade", {
+ *     configId: configuration.then(configuration => configuration.configId),
+ *     securityPolicyId: "gms1_134637",
+ * });
+ * export const ruleUpgradeCurrentRuleset = ruleUpgrade.currentRuleset;
+ * export const ruleUpgradeMode = ruleUpgrade.mode;
+ * export const ruleUpgradeEvalStatus = ruleUpgrade.evalStatus;
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned and how that returned information is formatted:
+ *
+ * - `currentRuleset`. Versioning information for your current KRS rule set.
+ * - `mode`. Specifies the current upgrade mode type. Valid values are:
+ *   - **KRS**. Rulesets must be manually upgraded.
+ *   
+ *   - **AAG**. Rulesets are automatically upgraded by Akamai.
+ *   
+ *   - **ASE_MANUAL**. Adaptive Security Engine rulesets must be manually upgraded.
+ *   
+ *   - **ASE_AUTO**. Adaptive Security Engine rulesets are automatically updated by Akamai.
+ *
+ * - `evalStatus`. Returns **enabled** if an evaluation is currently in progress; otherwise returns **disabled**.
+ */
 export class AppSecRuleUpgrade extends pulumi.CustomResource {
     /**
      * Get an existing AppSecRuleUpgrade resource's state with the given name, ID, and optional extra

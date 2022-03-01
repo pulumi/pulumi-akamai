@@ -33,9 +33,8 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Documentation"
 // 		configurationAppSecConfiguration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: &opt0,
+// 			Name: pulumi.StringRef("Documentation"),
 // 		}, nil)
 // 		if err != nil {
 // 			return err

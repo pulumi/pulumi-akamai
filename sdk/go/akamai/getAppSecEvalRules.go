@@ -30,18 +30,16 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: &opt0,
+// 			Name: pulumi.StringRef("Documentation"),
 // 		}, nil)
 // 		if err != nil {
 // 			return err
 // 		}
-// 		opt1 := 60029316
 // 		evalRule, err := akamai.GetAppSecEvalRules(ctx, &GetAppSecEvalRulesArgs{
 // 			ConfigId:         configuration.ConfigId,
 // 			SecurityPolicyId: "gms1_134637",
-// 			RuleId:           &opt1,
+// 			RuleId:           pulumi.IntRef(60029316),
 // 		}, nil)
 // 		if err != nil {
 // 			return err

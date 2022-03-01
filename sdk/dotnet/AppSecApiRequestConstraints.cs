@@ -9,6 +9,41 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
+    /// <summary>
+    /// ## Example Usage
+    /// 
+    /// Basic usage:
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+    ///         {
+    ///             Name = "Documentation",
+    ///         }));
+    ///         var apiEndpoint = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecApiEndpoints.InvokeAsync(new Akamai.GetAppSecApiEndpointsArgs
+    ///         {
+    ///             ConfigId = configuration.ConfigId,
+    ///             SecurityPolicyId = "gms1_134637",
+    ///             ApiName = "Contracts",
+    ///         })));
+    ///         var apiRequestConstraints = new Akamai.AppSecApiRequestConstraints("apiRequestConstraints", new Akamai.AppSecApiRequestConstraintsArgs
+    ///         {
+    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
+    ///             SecurityPolicyId = "gms1_134637",
+    ///             ApiEndpointId = apiEndpoint.Apply(apiEndpoint =&gt; apiEndpoint.Id),
+    ///             Action = "alert",
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
+    /// </summary>
     [AkamaiResourceType("akamai:index/appSecApiRequestConstraints:AppSecApiRequestConstraints")]
     public partial class AppSecApiRequestConstraints : Pulumi.CustomResource
     {

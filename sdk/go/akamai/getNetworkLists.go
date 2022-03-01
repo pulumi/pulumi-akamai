@@ -35,11 +35,9 @@ import (
 // 		ctx.Export("networkListsText", networkLists.OutputText)
 // 		ctx.Export("networkListsJson", networkLists.Json)
 // 		ctx.Export("networkListsList", networkLists.Lists)
-// 		opt0 := "Test Whitelist"
-// 		opt1 := "IP"
 // 		networkListsFilter, err := akamai.GetNetworkLists(ctx, &GetNetworkListsArgs{
-// 			Name: &opt0,
-// 			Type: &opt1,
+// 			Name: pulumi.StringRef("Test Whitelist"),
+// 			Type: pulumi.StringRef("IP"),
 // 		}, nil)
 // 		if err != nil {
 // 			return err

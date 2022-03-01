@@ -30,9 +30,8 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: &opt0,
+// 			Name: pulumi.StringRef("Documentation"),
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -45,10 +44,9 @@ import (
 // 		}
 // 		ctx.Export("customDenyListOutput", customDenyList.OutputText)
 // 		ctx.Export("customDenyListJson", customDenyList.Json)
-// 		opt1 := "deny_custom_64386"
 // 		customDeny, err := akamai.LookupAppSecCustomDeny(ctx, &GetAppSecCustomDenyArgs{
 // 			ConfigId:     configuration.ConfigId,
-// 			CustomDenyId: &opt1,
+// 			CustomDenyId: pulumi.StringRef("deny_custom_64386"),
 // 		}, nil)
 // 		if err != nil {
 // 			return err

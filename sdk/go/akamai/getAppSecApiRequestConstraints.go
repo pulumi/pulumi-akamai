@@ -30,9 +30,8 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		opt0 := "Documentation"
 // 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: &opt0,
+// 			Name: pulumi.StringRef("Documentation"),
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -46,11 +45,10 @@ import (
 // 		}
 // 		ctx.Export("apisConstraintsText", apisRequestConstraints.OutputText)
 // 		ctx.Export("apisConstraintsJson", apisRequestConstraints.Json)
-// 		opt1 := 624913
 // 		apiRequestConstraints, err := akamai.LookupAppSecApiRequestConstraints(ctx, &GetAppSecApiRequestConstraintsArgs{
 // 			ConfigId:         configuration.ConfigId,
 // 			SecurityPolicyId: "gms1_134637",
-// 			ApiId:            &opt1,
+// 			ApiId:            pulumi.IntRef(624913),
 // 		}, nil)
 // 		if err != nil {
 // 			return err
