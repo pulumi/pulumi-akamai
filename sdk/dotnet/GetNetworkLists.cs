@@ -129,6 +129,13 @@ namespace Pulumi.Akamai
         public string? Name { get; set; }
 
         /// <summary>
+        /// The ID of a specific network list to retrieve.
+        /// If not supplied, information about all network lists will be returned.
+        /// </summary>
+        [Input("networkListId")]
+        public string? NetworkListId { get; set; }
+
+        /// <summary>
         /// The type of network lists to be retrieved; must be either "IP" or "GEO". If not supplied,
         /// information about both types will be returned.
         /// </summary>
@@ -150,6 +157,13 @@ namespace Pulumi.Akamai
         public Input<string>? Name { get; set; }
 
         /// <summary>
+        /// The ID of a specific network list to retrieve.
+        /// If not supplied, information about all network lists will be returned.
+        /// </summary>
+        [Input("networkListId")]
+        public Input<string>? NetworkListId { get; set; }
+
+        /// <summary>
         /// The type of network lists to be retrieved; must be either "IP" or "GEO". If not supplied,
         /// information about both types will be returned.
         /// </summary>
@@ -165,6 +179,8 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetNetworkListsResult
     {
+        public readonly string ContractId;
+        public readonly int GroupId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
@@ -178,18 +194,19 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly ImmutableArray<string> Lists;
         public readonly string? Name;
+        public readonly string NetworkListId;
         /// <summary>
         /// A tabular display showing the network list information.
         /// </summary>
         public readonly string OutputText;
         public readonly string? Type;
-        /// <summary>
-        /// The ID of the indicated list (if the `name` argument was supplied).
-        /// </summary>
-        public readonly string Uniqueid;
 
         [OutputConstructor]
         private GetNetworkListsResult(
+            string contractId,
+
+            int groupId,
+
             string id,
 
             string json,
@@ -198,19 +215,21 @@ namespace Pulumi.Akamai
 
             string? name,
 
+            string networkListId,
+
             string outputText,
 
-            string? type,
-
-            string uniqueid)
+            string? type)
         {
+            ContractId = contractId;
+            GroupId = groupId;
             Id = id;
             Json = json;
             Lists = lists;
             Name = name;
+            NetworkListId = networkListId;
             OutputText = outputText;
             Type = type;
-            Uniqueid = uniqueid;
         }
     }
 }

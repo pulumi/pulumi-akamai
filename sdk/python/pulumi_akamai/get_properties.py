@@ -76,7 +76,7 @@ def get_properties(contract_id: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertiesResult:
     """
     Use the `get_properties` data source to query and retrieve the list of properties for a group and contract
-    based on the [EdgeGrid API client token](https://developer.akamai.com/getting-started/edgegrid) you're using.
+    based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
 
     ## Example Usage
 
@@ -119,7 +119,7 @@ def get_properties_output(contract_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertiesResult]:
     """
     Use the `get_properties` data source to query and retrieve the list of properties for a group and contract
-    based on the [EdgeGrid API client token](https://developer.akamai.com/getting-started/edgegrid) you're using.
+    based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
 
     ## Example Usage
 

@@ -52,6 +52,7 @@ import (
 type NetworkListActivations struct {
 	pulumi.CustomResourceState
 
+	// Deprecated: The setting "activate" has been deprecated.
 	Activate pulumi.BoolPtrOutput `pulumi:"activate"`
 	// The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
 	// `STAGING`.
@@ -103,6 +104,7 @@ func GetNetworkListActivations(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NetworkListActivations resources.
 type networkListActivationsState struct {
+	// Deprecated: The setting "activate" has been deprecated.
 	Activate *bool `pulumi:"activate"`
 	// The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
 	// `STAGING`.
@@ -120,6 +122,7 @@ type networkListActivationsState struct {
 }
 
 type NetworkListActivationsState struct {
+	// Deprecated: The setting "activate" has been deprecated.
 	Activate pulumi.BoolPtrInput
 	// The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
 	// `STAGING`.
@@ -141,6 +144,7 @@ func (NetworkListActivationsState) ElementType() reflect.Type {
 }
 
 type networkListActivationsArgs struct {
+	// Deprecated: The setting "activate" has been deprecated.
 	Activate *bool `pulumi:"activate"`
 	// The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
 	// `STAGING`.
@@ -156,6 +160,7 @@ type networkListActivationsArgs struct {
 
 // The set of arguments for constructing a NetworkListActivations resource.
 type NetworkListActivationsArgs struct {
+	// Deprecated: The setting "activate" has been deprecated.
 	Activate pulumi.BoolPtrInput
 	// The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
 	// `STAGING`.

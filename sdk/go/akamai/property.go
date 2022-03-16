@@ -139,7 +139,7 @@ type Property struct {
 	//
 	// Deprecated: The setting "product" has been deprecated.
 	Product pulumi.StringOutput `pulumi:"product"`
-	// - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+	// Product ID to be assigned to the Property
 	ProductId pulumi.StringOutput `pulumi:"productId"`
 	// The current version of the property active on the Akamai production network.
 	ProductionVersion pulumi.IntOutput `pulumi:"productionVersion"`
@@ -224,7 +224,7 @@ type propertyState struct {
 	//
 	// Deprecated: The setting "product" has been deprecated.
 	Product *string `pulumi:"product"`
-	// - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+	// Product ID to be assigned to the Property
 	ProductId *string `pulumi:"productId"`
 	// The current version of the property active on the Akamai production network.
 	ProductionVersion *int `pulumi:"productionVersion"`
@@ -275,7 +275,7 @@ type PropertyState struct {
 	//
 	// Deprecated: The setting "product" has been deprecated.
 	Product pulumi.StringPtrInput
-	// - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+	// Product ID to be assigned to the Property
 	ProductId pulumi.StringPtrInput
 	// The current version of the property active on the Akamai production network.
 	ProductionVersion pulumi.IntPtrInput
@@ -328,7 +328,7 @@ type propertyArgs struct {
 	//
 	// Deprecated: The setting "product" has been deprecated.
 	Product *string `pulumi:"product"`
-	// - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+	// Product ID to be assigned to the Property
 	ProductId *string `pulumi:"productId"`
 	// The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
 	RuleFormat *string `pulumi:"ruleFormat"`
@@ -370,7 +370,7 @@ type PropertyArgs struct {
 	//
 	// Deprecated: The setting "product" has been deprecated.
 	Product pulumi.StringPtrInput
-	// - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+	// Product ID to be assigned to the Property
 	ProductId pulumi.StringPtrInput
 	// The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
 	RuleFormat pulumi.StringPtrInput

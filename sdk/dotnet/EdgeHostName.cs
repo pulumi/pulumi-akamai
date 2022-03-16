@@ -124,9 +124,6 @@ namespace Pulumi.Akamai
         [Output("product")]
         public Output<string> Product { get; private set; } = null!;
 
-        /// <summary>
-        /// - (Required) A product's unique ID, including the `prd_` prefix.
-        /// </summary>
         [Output("productId")]
         public Output<string> ProductId { get; private set; } = null!;
 
@@ -234,9 +231,6 @@ namespace Pulumi.Akamai
         [Input("product")]
         public Input<string>? Product { get; set; }
 
-        /// <summary>
-        /// - (Required) A product's unique ID, including the `prd_` prefix.
-        /// </summary>
         [Input("productId")]
         public Input<string>? ProductId { get; set; }
 
@@ -301,9 +295,6 @@ namespace Pulumi.Akamai
         [Input("product")]
         public Input<string>? Product { get; set; }
 
-        /// <summary>
-        /// - (Required) A product's unique ID, including the `prd_` prefix.
-        /// </summary>
         [Input("productId")]
         public Input<string>? ProductId { get; set; }
 

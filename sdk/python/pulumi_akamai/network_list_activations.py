@@ -30,6 +30,9 @@ class NetworkListActivationsArgs:
         pulumi.set(__self__, "network_list_id", network_list_id)
         pulumi.set(__self__, "notification_emails", notification_emails)
         if activate is not None:
+            warnings.warn("""The setting \"activate\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated.""")
+        if activate is not None:
             pulumi.set(__self__, "activate", activate)
         if network is not None:
             pulumi.set(__self__, "network", network)
@@ -116,6 +119,9 @@ class _NetworkListActivationsState:
         :param pulumi.Input[str] status: The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
                list was not activated.
         """
+        if activate is not None:
+            warnings.warn("""The setting \"activate\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated.""")
         if activate is not None:
             pulumi.set(__self__, "activate", activate)
         if network is not None:
@@ -300,6 +306,9 @@ class NetworkListActivations(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = NetworkListActivationsArgs.__new__(NetworkListActivationsArgs)
 
+            if activate is not None and not opts.urn:
+                warnings.warn("""The setting \"activate\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated.""")
             __props__.__dict__["activate"] = activate
             __props__.__dict__["network"] = network
             if network_list_id is None and not opts.urn:

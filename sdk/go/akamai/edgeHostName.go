@@ -101,8 +101,7 @@ type EdgeHostName struct {
 	// Replaced by `productId`. Maintained for legacy purposes.
 	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product pulumi.StringOutput `pulumi:"product"`
-	// - (Required) A product's unique ID, including the `prd_` prefix.
+	Product   pulumi.StringOutput `pulumi:"product"`
 	ProductId pulumi.StringOutput `pulumi:"productId"`
 	// A JSON encoded list of use cases
 	UseCases pulumi.StringPtrOutput `pulumi:"useCases"`
@@ -170,8 +169,7 @@ type edgeHostNameState struct {
 	// Replaced by `productId`. Maintained for legacy purposes.
 	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product *string `pulumi:"product"`
-	// - (Required) A product's unique ID, including the `prd_` prefix.
+	Product   *string `pulumi:"product"`
 	ProductId *string `pulumi:"productId"`
 	// A JSON encoded list of use cases
 	UseCases *string `pulumi:"useCases"`
@@ -199,8 +197,7 @@ type EdgeHostNameState struct {
 	// Replaced by `productId`. Maintained for legacy purposes.
 	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product pulumi.StringPtrInput
-	// - (Required) A product's unique ID, including the `prd_` prefix.
+	Product   pulumi.StringPtrInput
 	ProductId pulumi.StringPtrInput
 	// A JSON encoded list of use cases
 	UseCases pulumi.StringPtrInput
@@ -232,8 +229,7 @@ type edgeHostNameArgs struct {
 	// Replaced by `productId`. Maintained for legacy purposes.
 	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product *string `pulumi:"product"`
-	// - (Required) A product's unique ID, including the `prd_` prefix.
+	Product   *string `pulumi:"product"`
 	ProductId *string `pulumi:"productId"`
 	// A JSON encoded list of use cases
 	UseCases *string `pulumi:"useCases"`
@@ -262,8 +258,7 @@ type EdgeHostNameArgs struct {
 	// Replaced by `productId`. Maintained for legacy purposes.
 	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product pulumi.StringPtrInput
-	// - (Required) A product's unique ID, including the `prd_` prefix.
+	Product   pulumi.StringPtrInput
 	ProductId pulumi.StringPtrInput
 	// A JSON encoded list of use cases
 	UseCases pulumi.StringPtrInput

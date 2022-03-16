@@ -120,8 +120,8 @@ github.com/agext/levenshtein v1.2.1/go.mod h1:JEDfjyjHDjOF/1e4FlBE/PkbqA9OfWu2ki
 github.com/agext/levenshtein v1.2.2 h1:0S/Yg6LYmFJ5stwQeRp6EeOcCbj7xiqQSdNelsXvaqE=
 github.com/agext/levenshtein v1.2.2/go.mod h1:JEDfjyjHDjOF/1e4FlBE/PkbqA9OfWu2ki2W0IB5558=
 github.com/agl/ed25519 v0.0.0-20170116200512-5312a6153412/go.mod h1:WPjqKcmVOxf0XSf3YxCJs6N6AOSrOx3obionmG7T0y0=
-github.com/akamai/AkamaiOPEN-edgegrid-golang/v2 v2.8.1 h1:CuEi/Ix+b6pjiWc+MiypmLc6V8dUBQ8Lf2bXB3sxnnU=
-github.com/akamai/AkamaiOPEN-edgegrid-golang/v2 v2.8.1/go.mod h1:+L0oC63nFHFP6DO3pGaV6Gvf/3C4Bk7ecFp+7pBnakg=
+github.com/akamai/AkamaiOPEN-edgegrid-golang/v2 v2.10.0 h1:8b4UMZFeyYkq7UEWFchHN6qVz+qukx32CAVFAl8EkUg=
+github.com/akamai/AkamaiOPEN-edgegrid-golang/v2 v2.10.0/go.mod h1:NUp3zcqw6k6AXwf9yr8ksTXpppJTbm35kXeqwdNreRc=
 github.com/alcortesm/tgz v0.0.0-20161220082320-9c5fe88206d7 h1:uSoVVbwJiQipAclBbw+8quDsfcvFjOpI5iCf4p/cqCs=
 github.com/alcortesm/tgz v0.0.0-20161220082320-9c5fe88206d7/go.mod h1:6zEj6s6u/ghQa61ZWa/C2Aw3RkjiTBOix7dkqa1VLIs=
 github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
@@ -281,8 +281,6 @@ github.com/go-ldap/ldap/v3 v3.1.10/go.mod h1:5Zun81jBTabRaI8lzN7E1JjyEl1g6zI6u9p
 github.com/go-logfmt/logfmt v0.3.0/go.mod h1:Qt1PoO58o5twSAckw1HlFXLmHsOX5/0LbT9GBnD5lWE=
 github.com/go-logfmt/logfmt v0.4.0/go.mod h1:3RMwSq7FuexP4Kalkev3ejPJsZTpXXBr9+V4qmtdjCk=
 github.com/go-ole/go-ole v1.2.5/go.mod h1:pprOEPIfldk/42T2oK7lQ4v4JSDwmV0As9GaiUsvbm0=
-github.com/go-ozzo/ozzo-validation v3.6.0+incompatible h1:msy24VGS42fKO9K1vLz82/GeYW1cILu7Nuuj1N3BBkE=
-github.com/go-ozzo/ozzo-validation v3.6.0+incompatible/go.mod h1:gsEKFIVnabGBt6mXmxK0MoFy+cZoTJY6mu5Ll3LVLBU=
 github.com/go-ozzo/ozzo-validation/v4 v4.3.0 h1:byhDUpfEwjsVQb1vBunvIjh2BHQ9ead57VkAEY4V+Es=
 github.com/go-ozzo/ozzo-validation/v4 v4.3.0/go.mod h1:2NKgrcHl3z6cJs+3Oo940FPRiTzuqKbvfrL2RxCj6Ew=
 github.com/go-playground/assert/v2 v2.0.1/go.mod h1:VDjEfimB/XKnb+ZQfWdccd7VUvScMdVu0Titje2rxJ4=
@@ -727,8 +725,8 @@ github.com/pulumi/terraform-diff-reader v0.0.0-20201211191010-ad4715e9285e h1:Di
 github.com/pulumi/terraform-diff-reader v0.0.0-20201211191010-ad4715e9285e/go.mod h1:sZ9FUzGO+yM41hsQHs/yIcj/Y993qMdBxBU5mpDmAfQ=
 github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20211019194827-62530c6537a4 h1:7EyuNFV2RFLBgGUnYjjcTzZL8BOFM4QBy/FJP1jTQxg=
 github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20211019194827-62530c6537a4/go.mod h1:6KbP09YzlB++S6XSUKYl83WyoHVN4MgeoCbPRsdfCtA=
-github.com/pulumi/terraform-provider-akamai/v2 v2.0.0-20211229175952-f694d05c6b46 h1:DBYf3FjkHkdoGJ3WcP5Rv4Ym36WcY38QDAGE2aGGdw0=
-github.com/pulumi/terraform-provider-akamai/v2 v2.0.0-20211229175952-f694d05c6b46/go.mod h1:dV9lJ8K3VNbMxvEOhztOHIebGEAEdJwJdPrP+GRuUec=
+github.com/pulumi/terraform-provider-akamai/v2 v2.0.0-20220316124847-36d84648e7ea h1:ENJ5JKx6J1YwgOFb88IE0DCFfHVFktNJfaDa9pjO53A=
+github.com/pulumi/terraform-provider-akamai/v2 v2.0.0-20220316124847-36d84648e7ea/go.mod h1:mDznFxrkSDNDEYGjcF7nY+nP0wTvBU9+AyaDIyYXRY4=
 github.com/rivo/uniseg v0.2.0 h1:S1pD9weZBuJdFmowNwbpi7BJ8TNftyUImj/0WQi72jY=
 github.com/rivo/uniseg v0.2.0/go.mod h1:J6wj4VEh+S6ZtnVlnTBMWIodfgj8LQOQFoIToxlJtxc=
 github.com/rjeczalik/notify v0.9.2 h1:MiTWrPj55mNDHEiIX5YUSKefw/+lCQVoAFmD6oQm5w8=

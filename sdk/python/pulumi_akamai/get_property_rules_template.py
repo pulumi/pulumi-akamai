@@ -141,7 +141,9 @@ def get_property_rules_template(template_file: Optional[str] = None,
 
 
     :param str template_file: The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree.
-    :param Sequence[pulumi.InputType['GetPropertyRulesTemplateVariableArgs']] variables: A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `variable_definition_file` and `variable_values_file` arguments. A `variables` block includes:
+    :param str var_definition_file: The absolute path to the file containing variable definitions and defaults. This file follows the syntax used in the [Property Manager CLI](https://github.com/akamai/cli-property-manager). This argument is required if you set `var_values_file` and conflicts with `variables`.
+    :param str var_values_file: The absolute path to the file containing variable values. This file follows the syntax used in the Property Manager CLI. This argument is required if you set `var_definition_file` and conflicts with `variables`.
+    :param Sequence[pulumi.InputType['GetPropertyRulesTemplateVariableArgs']] variables: A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `var_definition_file` and `var_values_file` arguments. A `variables` block includes:
     """
     __args__ = dict()
     __args__['templateFile'] = template_file
@@ -208,6 +210,8 @@ def get_property_rules_template_output(template_file: Optional[pulumi.Input[Opti
 
 
     :param str template_file: The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree.
-    :param Sequence[pulumi.InputType['GetPropertyRulesTemplateVariableArgs']] variables: A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `variable_definition_file` and `variable_values_file` arguments. A `variables` block includes:
+    :param str var_definition_file: The absolute path to the file containing variable definitions and defaults. This file follows the syntax used in the [Property Manager CLI](https://github.com/akamai/cli-property-manager). This argument is required if you set `var_values_file` and conflicts with `variables`.
+    :param str var_values_file: The absolute path to the file containing variable values. This file follows the syntax used in the Property Manager CLI. This argument is required if you set `var_definition_file` and conflicts with `variables`.
+    :param Sequence[pulumi.InputType['GetPropertyRulesTemplateVariableArgs']] variables: A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `var_definition_file` and `var_values_file` arguments. A `variables` block includes:
     """
     ...

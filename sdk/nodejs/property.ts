@@ -174,7 +174,7 @@ export class Property extends pulumi.CustomResource {
      */
     public readonly product!: pulumi.Output<string>;
     /**
-     * - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+     * Product ID to be assigned to the Property
      */
     public readonly productId!: pulumi.Output<string>;
     /**
@@ -334,7 +334,7 @@ export interface PropertyState {
      */
     product?: pulumi.Input<string>;
     /**
-     * - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+     * Product ID to be assigned to the Property
      */
     productId?: pulumi.Input<string>;
     /**
@@ -426,7 +426,7 @@ export interface PropertyArgs {
      */
     product?: pulumi.Input<string>;
     /**
-     * - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+     * Product ID to be assigned to the Property
      */
     productId?: pulumi.Input<string>;
     /**

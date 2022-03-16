@@ -67,7 +67,7 @@ type NetworkList struct {
 	SyncPoint pulumi.IntOutput `pulumi:"syncPoint"`
 	// The type of the network list; must be either "IP" or "GEO".
 	Type pulumi.StringOutput `pulumi:"type"`
-	// uniqueId
+	// unique ID
 	Uniqueid pulumi.StringOutput `pulumi:"uniqueid"`
 }
 
@@ -131,7 +131,7 @@ type networkListState struct {
 	SyncPoint *int `pulumi:"syncPoint"`
 	// The type of the network list; must be either "IP" or "GEO".
 	Type *string `pulumi:"type"`
-	// uniqueId
+	// unique ID
 	Uniqueid *string `pulumi:"uniqueid"`
 }
 
@@ -158,7 +158,7 @@ type NetworkListState struct {
 	SyncPoint pulumi.IntPtrInput
 	// The type of the network list; must be either "IP" or "GEO".
 	Type pulumi.StringPtrInput
-	// uniqueId
+	// unique ID
 	Uniqueid pulumi.StringPtrInput
 }
 

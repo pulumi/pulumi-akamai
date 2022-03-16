@@ -28,7 +28,6 @@ class CpCodeArgs:
         :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
         :param pulumi.Input[str] name: - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
         :param pulumi.Input[str] product: Replaced by `product_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] product_id: - (Required) A product's unique ID, including the `prd_` prefix.
         """
         if contract is not None:
             warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
@@ -129,9 +128,6 @@ class CpCodeArgs:
     @property
     @pulumi.getter(name="productId")
     def product_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        - (Required) A product's unique ID, including the `prd_` prefix.
-        """
         return pulumi.get(self, "product_id")
 
     @product_id.setter
@@ -157,7 +153,6 @@ class _CpCodeState:
         :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
         :param pulumi.Input[str] name: - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
         :param pulumi.Input[str] product: Replaced by `product_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] product_id: - (Required) A product's unique ID, including the `prd_` prefix.
         """
         if contract is not None:
             warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
@@ -258,9 +253,6 @@ class _CpCodeState:
     @property
     @pulumi.getter(name="productId")
     def product_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        - (Required) A product's unique ID, including the `prd_` prefix.
-        """
         return pulumi.get(self, "product_id")
 
     @product_id.setter
@@ -342,7 +334,6 @@ class CpCode(pulumi.CustomResource):
         :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
         :param pulumi.Input[str] name: - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
         :param pulumi.Input[str] product: Replaced by `product_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] product_id: - (Required) A product's unique ID, including the `prd_` prefix.
         """
         ...
     @overload
@@ -485,7 +476,6 @@ class CpCode(pulumi.CustomResource):
         :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
         :param pulumi.Input[str] name: - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
         :param pulumi.Input[str] product: Replaced by `product_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] product_id: - (Required) A product's unique ID, including the `prd_` prefix.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -551,8 +541,5 @@ class CpCode(pulumi.CustomResource):
     @property
     @pulumi.getter(name="productId")
     def product_id(self) -> pulumi.Output[str]:
-        """
-        - (Required) A product's unique ID, including the `prd_` prefix.
-        """
         return pulumi.get(self, "product_id")
 

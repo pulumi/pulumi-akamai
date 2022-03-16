@@ -161,7 +161,7 @@ class _NetworkListState:
         :param pulumi.Input[int] sync_point: An integer that identifies the current version of the network list; this value is incremented each time
                the list is modified.
         :param pulumi.Input[str] type: The type of the network list; must be either "IP" or "GEO".
-        :param pulumi.Input[str] uniqueid: uniqueId
+        :param pulumi.Input[str] uniqueid: unique ID
         """
         if contract_id is not None:
             pulumi.set(__self__, "contract_id", contract_id)
@@ -300,7 +300,7 @@ class _NetworkListState:
     @pulumi.getter
     def uniqueid(self) -> Optional[pulumi.Input[str]]:
         """
-        uniqueId
+        unique ID
         """
         return pulumi.get(self, "uniqueid")
 
@@ -471,7 +471,7 @@ class NetworkList(pulumi.CustomResource):
         :param pulumi.Input[int] sync_point: An integer that identifies the current version of the network list; this value is incremented each time
                the list is modified.
         :param pulumi.Input[str] type: The type of the network list; must be either "IP" or "GEO".
-        :param pulumi.Input[str] uniqueid: uniqueId
+        :param pulumi.Input[str] uniqueid: unique ID
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -569,7 +569,7 @@ class NetworkList(pulumi.CustomResource):
     @pulumi.getter
     def uniqueid(self) -> pulumi.Output[str]:
         """
-        uniqueId
+        unique ID
         """
         return pulumi.get(self, "uniqueid")
 

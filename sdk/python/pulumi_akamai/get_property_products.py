@@ -69,7 +69,7 @@ def get_property_products(contract_id: Optional[str] = None,
 
     ## Example Usage
 
-    This example returns products associated with the [EdgeGrid client token](https://developer.akamai.com/getting-started/edgegrid) for a given contract:
+    This example returns products associated with the [EdgeGrid client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) for a given contract:
 
     ```python
     import pulumi
@@ -109,7 +109,7 @@ def get_property_products_output(contract_id: Optional[pulumi.Input[str]] = None
 
     ## Example Usage
 
-    This example returns products associated with the [EdgeGrid client token](https://developer.akamai.com/getting-started/edgegrid) for a given contract:
+    This example returns products associated with the [EdgeGrid client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) for a given contract:
 
     ```python
     import pulumi

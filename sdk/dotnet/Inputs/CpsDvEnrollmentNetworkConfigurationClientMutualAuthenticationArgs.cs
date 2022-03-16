@@ -25,7 +25,7 @@ namespace Pulumi.Akamai.Inputs
         public Input<bool>? SendCaListToClient { get; set; }
 
         /// <summary>
-        /// The identifier of the set of trust chains, created in the [Trust Chain Manager](https://developer.akamai.com/api/web_performance/trust_chain_manager/v1.html).
+        /// The identifier of the set of trust chains, created in [Trust Chain Manager](https://techdocs.akamai.com/trust-chain-mgr/docs/welcome-trust-chain-manager).
         /// </summary>
         [Input("setId")]
         public Input<string>? SetId { get; set; }

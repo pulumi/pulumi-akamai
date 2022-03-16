@@ -63,6 +63,9 @@ type GetNetworkListsArgs struct {
 	// The name of a specific network list to retrieve. If not supplied, information about all network
 	// lists will be returned.
 	Name *string `pulumi:"name"`
+	// The ID of a specific network list to retrieve.
+	// If not supplied, information about all network lists will be returned.
+	NetworkListId *string `pulumi:"networkListId"`
 	// The type of network lists to be retrieved; must be either "IP" or "GEO". If not supplied,
 	// information about both types will be returned.
 	Type *string `pulumi:"type"`
@@ -70,18 +73,19 @@ type GetNetworkListsArgs struct {
 
 // A collection of values returned by getNetworkLists.
 type GetNetworkListsResult struct {
+	ContractId string `pulumi:"contractId"`
+	GroupId    int    `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// A JSON-formatted list of information about the specified network list(s).
 	Json string `pulumi:"json"`
 	// A list containing the IDs of the specified network lists(s).
-	Lists []string `pulumi:"lists"`
-	Name  *string  `pulumi:"name"`
+	Lists         []string `pulumi:"lists"`
+	Name          *string  `pulumi:"name"`
+	NetworkListId string   `pulumi:"networkListId"`
 	// A tabular display showing the network list information.
 	OutputText string  `pulumi:"outputText"`
 	Type       *string `pulumi:"type"`
-	// The ID of the indicated list (if the `name` argument was supplied).
-	Uniqueid string `pulumi:"uniqueid"`
 }
 
 func GetNetworkListsOutput(ctx *pulumi.Context, args GetNetworkListsOutputArgs, opts ...pulumi.InvokeOption) GetNetworkListsResultOutput {
@@ -98,6 +102,9 @@ type GetNetworkListsOutputArgs struct {
 	// The name of a specific network list to retrieve. If not supplied, information about all network
 	// lists will be returned.
 	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The ID of a specific network list to retrieve.
+	// If not supplied, information about all network lists will be returned.
+	NetworkListId pulumi.StringPtrInput `pulumi:"networkListId"`
 	// The type of network lists to be retrieved; must be either "IP" or "GEO". If not supplied,
 	// information about both types will be returned.
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -122,6 +129,14 @@ func (o GetNetworkListsResultOutput) ToGetNetworkListsResultOutputWithContext(ct
 	return o
 }
 
+func (o GetNetworkListsResultOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkListsResult) string { return v.ContractId }).(pulumi.StringOutput)
+}
+
+func (o GetNetworkListsResultOutput) GroupId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNetworkListsResult) int { return v.GroupId }).(pulumi.IntOutput)
+}
+
 // The provider-assigned unique ID for this managed resource.
 func (o GetNetworkListsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkListsResult) string { return v.Id }).(pulumi.StringOutput)
@@ -141,6 +156,10 @@ func (o GetNetworkListsResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetNetworkListsResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+func (o GetNetworkListsResultOutput) NetworkListId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkListsResult) string { return v.NetworkListId }).(pulumi.StringOutput)
+}
+
 // A tabular display showing the network list information.
 func (o GetNetworkListsResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkListsResult) string { return v.OutputText }).(pulumi.StringOutput)
@@ -148,11 +167,6 @@ func (o GetNetworkListsResultOutput) OutputText() pulumi.StringOutput {
 
 func (o GetNetworkListsResultOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetNetworkListsResult) *string { return v.Type }).(pulumi.StringPtrOutput)
-}
-
-// The ID of the indicated list (if the `name` argument was supplied).
-func (o GetNetworkListsResultOutput) Uniqueid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkListsResult) string { return v.Uniqueid }).(pulumi.StringOutput)
 }
 
 func init() {

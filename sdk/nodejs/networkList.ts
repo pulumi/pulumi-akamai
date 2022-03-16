@@ -94,7 +94,7 @@ export class NetworkList extends pulumi.CustomResource {
      */
     public readonly type!: pulumi.Output<string>;
     /**
-     * uniqueId
+     * unique ID
      */
     public /*out*/ readonly uniqueid!: pulumi.Output<string>;
 
@@ -193,7 +193,7 @@ export interface NetworkListState {
      */
     type?: pulumi.Input<string>;
     /**
-     * uniqueId
+     * unique ID
      */
     uniqueid?: pulumi.Input<string>;
 }

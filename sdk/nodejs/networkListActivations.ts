@@ -55,6 +55,9 @@ export class NetworkListActivations extends pulumi.CustomResource {
         return obj['__pulumiType'] === NetworkListActivations.__pulumiType;
     }
 
+    /**
+     * @deprecated The setting "activate" has been deprecated.
+     */
     public readonly activate!: pulumi.Output<boolean | undefined>;
     /**
      * The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
@@ -123,6 +126,9 @@ export class NetworkListActivations extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NetworkListActivations resources.
  */
 export interface NetworkListActivationsState {
+    /**
+     * @deprecated The setting "activate" has been deprecated.
+     */
     activate?: pulumi.Input<boolean>;
     /**
      * The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
@@ -153,6 +159,9 @@ export interface NetworkListActivationsState {
  * The set of arguments for constructing a NetworkListActivations resource.
  */
 export interface NetworkListActivationsArgs {
+    /**
+     * @deprecated The setting "activate" has been deprecated.
+     */
     activate?: pulumi.Input<boolean>;
     /**
      * The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to

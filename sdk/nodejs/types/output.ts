@@ -4,6 +4,112 @@
 import * as pulumi from "@pulumi/pulumi";
 import { input as inputs, output as outputs } from "../types";
 
+export interface CloudletsApplicationLoadBalancerDataCenter {
+    /**
+     * The city in which the data center is located.
+     */
+    city?: string;
+    /**
+     * Whether to override the cloud server host header.
+     */
+    cloudServerHostHeaderOverride?: boolean;
+    /**
+     * Whether this datacenter is a cloud service.
+     */
+    cloudService?: boolean;
+    /**
+     * The code of the continent on which the data center is located. See [Continent Codes](https://control.akamai.com/dl/edgescape/continentCodes.csv) for a list of valid codes.
+     */
+    continent: string;
+    /**
+     * The country in which the data center is located. See [Country Codes](https://control.akamai.com/dl/edgescape/cc2continent.csv) for a list of valid codes.
+     */
+    country: string;
+    /**
+     * The name of the host that can be used as a Conditional Origin. This should match the `hostname` value defined for this datacenter in Property Manager.
+     */
+    hostname?: string;
+    /**
+     * The latitude value for the data center. This member supports six decimal places of precision.
+     */
+    latitude: number;
+    /**
+     * A list of the origin servers used to poll the data centers in an Application Load Balancer configuration. These servers support basic HTTP polling.
+     */
+    livenessHosts?: string[];
+    /**
+     * The longitude value for the data center. This member supports six decimal places of precision.
+     */
+    longitude: number;
+    /**
+     * The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+     */
+    originId: string;
+    /**
+     * The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
+     */
+    percent: number;
+    /**
+     * The state, province, or region where the data center is located.
+     */
+    stateOrProvince?: string;
+}
+
+export interface CloudletsApplicationLoadBalancerLivenessSettings {
+    /**
+     * Maps additional case-insensitive HTTP header names included to the liveness testing requests.
+     */
+    additionalHeaders?: {[key: string]: string};
+    /**
+     * The Host header for the liveness HTTP request.
+     */
+    hostHeader?: string;
+    /**
+     * The frequency of liveness tests. Defaults to 60 seconds, minimum is 10 seconds.
+     */
+    interval?: number;
+    /**
+     * The path to the test object used for liveness testing. The function of the test object is to help determine whether the data center is functioning.
+     */
+    path: string;
+    /**
+     * Whether to validate the origin certificate for an HTTPS request.
+     */
+    peerCertificateVerification?: boolean;
+    /**
+     * The port for the test object. The default port is 80, which is standard for HTTP. Enter 443 if you are using HTTPS.
+     */
+    port: number;
+    /**
+     * The protocol or scheme for the database, either `HTTP` or `HTTPS`.
+     */
+    protocol: string;
+    /**
+     * The request used for TCP and TCPS tests.
+     */
+    requestString?: string;
+    /**
+     * The response used for TCP and TCPS tests.
+     */
+    responseString?: string;
+    /**
+     * If set to `true`, marks the liveness test as failed when the request returns a 3xx (redirection) status code.
+     */
+    status3xxFailure?: boolean;
+    /**
+     * If set to `true`, marks the liveness test as failed when the request returns a 4xx (client error) status code.
+     */
+    status4xxFailure?: boolean;
+    /**
+     * If set to `true`, marks the liveness test as failed when the request returns a 5xx (server error) status code.
+     */
+    status5xxFailure?: boolean;
+    /**
+     * The number of seconds the system waits before failing the liveness test.
+     */
+    timeout?: number;
+}
+
 export interface CpsDvEnrollmentAdminContact {
     /**
      * The address of your organization.
@@ -135,7 +241,7 @@ export interface CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication {
      */
     sendCaListToClient?: boolean;
     /**
-     * The identifier of the set of trust chains, created in the [Trust Chain Manager](https://developer.akamai.com/api/web_performance/trust_chain_manager/v1.html).
+     * The identifier of the set of trust chains, created in [Trust Chain Manager](https://techdocs.akamai.com/trust-chain-mgr/docs/welcome-trust-chain-manager).
      */
     setId?: string;
 }
@@ -226,6 +332,265 @@ export interface CpsDvEnrollmentTechContact {
     title?: string;
 }
 
+export interface DatastreamAzureConnector {
+    /**
+     * **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
+     */
+    accessKey: string;
+    /**
+     * - (Required) Specifies the Azure Storage account name.
+     */
+    accountName: string;
+    /**
+     * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+     */
+    compressLogs: boolean;
+    connectorId: number;
+    /**
+     * The name of the connector.
+     */
+    connectorName: string;
+    /**
+     * - (Required) Specifies the Azure Storage container name.
+     */
+    containerName: string;
+    /**
+     * The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
+     */
+    path: string;
+}
+
+export interface DatastreamConfig {
+    /**
+     * A delimiter that you want to use to separate data set fields in the log lines. Currently, `SPACE` is the only available delimiter. This field is required for the `STRUCTURED` log file `format`.
+     */
+    delimiter?: string;
+    /**
+     * - (Required) The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
+     */
+    format: string;
+    /**
+     * - (Required) How often you want to collect logs from each uploader and send them to a destination.
+     */
+    frequency: outputs.DatastreamConfigFrequency;
+    /**
+     * - (Optional) The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
+     */
+    uploadFilePrefix?: string;
+    /**
+     * The suffix of the log file that you want to send to a destination. It’s a static string of at most 10 characters. If unspecified, defaults to `ds`.
+     */
+    uploadFileSuffix?: string;
+}
+
+export interface DatastreamConfigFrequency {
+    /**
+     * - (Required) The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
+     */
+    timeInSec: number;
+}
+
+export interface DatastreamDatadogConnector {
+    /**
+     * - (Required) **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
+     * * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
+     */
+    authToken: string;
+    /**
+     * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+     */
+    compressLogs?: boolean;
+    connectorId: number;
+    /**
+     * The name of the connector.
+     */
+    connectorName: string;
+    /**
+     * The service of the Datadog connector. A service groups together endpoints, queries, or jobs for the purposes of scaling instances. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_configuration/attributes_naming_convention/#reserved-attributes).
+     */
+    service?: string;
+    /**
+     * The source of the Datadog connector. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_collection/?tab=http#reserved-attributes).
+     */
+    source?: string;
+    /**
+     * The tags of the Datadog connector. See [View Datadog tags](https://docs.datadoghq.com/getting_started/tagging/).
+     */
+    tags?: string;
+    /**
+     * Enter the secure URL where you want to send and store your logs.
+     */
+    url: string;
+}
+
+export interface DatastreamGcsConnector {
+    /**
+     * The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
+     */
+    bucket: string;
+    /**
+     * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+     */
+    compressLogs: boolean;
+    connectorId: number;
+    /**
+     * The name of the connector.
+     */
+    connectorName: string;
+    /**
+     * The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
+     */
+    path?: string;
+    /**
+     * - (Required) **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
+     */
+    privateKey: string;
+    /**
+     * - (Required) The unique ID of your Google Cloud project.
+     */
+    projectId: string;
+    /**
+     * - (Required)	The name of the service account with the storage.object.create permission or Storage Object Creator role.
+     */
+    serviceAccountName: string;
+}
+
+export interface DatastreamHttpsConnector {
+    /**
+     * Either `NONE` for no authentication, or `BASIC`. For basic authentication, provide the `userName` and `password` you set in your custom HTTPS endpoint.
+     */
+    authenticationType: string;
+    /**
+     * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+     */
+    compressLogs?: boolean;
+    connectorId: number;
+    /**
+     * The name of the connector.
+     */
+    connectorName: string;
+    /**
+     * **Secret**. Enter the password you set in your custom HTTPS endpoint for authentication.
+     */
+    password?: string;
+    /**
+     * Enter the secure URL where you want to send and store your logs.
+     */
+    url: string;
+    /**
+     * **Secret**. Enter the valid username you set in your custom HTTPS endpoint for authentication.
+     */
+    userName?: string;
+}
+
+export interface DatastreamOracleConnector {
+    /**
+     * **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
+     */
+    accessKey: string;
+    /**
+     * The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
+     */
+    bucket: string;
+    /**
+     * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+     */
+    compressLogs: boolean;
+    connectorId: number;
+    /**
+     * The name of the connector.
+     */
+    connectorName: string;
+    /**
+     * The namespace of your Oracle Cloud Storage account. See [Understanding Object Storage namespaces](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/understandingnamespaces.htm).
+     */
+    namespace: string;
+    /**
+     * The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
+     */
+    path: string;
+    /**
+     * The Oracle Cloud Storage region where your bucket resides. See [Regions and availability domains in OCS](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+     */
+    region: string;
+    /**
+     * **Secret**. The secret access key identifier that you use to authenticate requests to your Oracle Cloud account.
+     */
+    secretAccessKey: string;
+}
+
+export interface DatastreamS3Connector {
+    /**
+     * **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
+     */
+    accessKey: string;
+    /**
+     * The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
+     */
+    bucket: string;
+    /**
+     * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+     */
+    compressLogs: boolean;
+    connectorId: number;
+    /**
+     * The name of the connector.
+     */
+    connectorName: string;
+    /**
+     * The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
+     */
+    path: string;
+    /**
+     * The Oracle Cloud Storage region where your bucket resides. See [Regions and availability domains in OCS](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+     */
+    region: string;
+    /**
+     * **Secret**. The secret access key identifier that you use to authenticate requests to your Oracle Cloud account.
+     */
+    secretAccessKey: string;
+}
+
+export interface DatastreamSplunkConnector {
+    /**
+     * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+     */
+    compressLogs?: boolean;
+    connectorId: number;
+    /**
+     * The name of the connector.
+     */
+    connectorName: string;
+    /**
+     * - (Required) **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
+     */
+    eventCollectorToken: string;
+    /**
+     * Enter the secure URL where you want to send and store your logs.
+     */
+    url: string;
+}
+
+export interface DatastreamSumologicConnector {
+    /**
+     * **Secret**. The unique HTTP collector code of your Sumo Logic `endpoint`.
+     */
+    collectorCode: string;
+    /**
+     * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+     */
+    compressLogs?: boolean;
+    connectorId: number;
+    /**
+     * The name of the connector.
+     */
+    connectorName: string;
+    /**
+     * The Sumo Logic collection endpoint where you want to send your logs. You should follow the `https://<SumoEndpoint>/receiver/v1/http` format and pass the collector code in the `collectorCode` argument.
+     */
+    endpoint: string;
+}
+
 export interface DnsZoneTsigKey {
     /**
      * The hashing algorithm.
@@ -241,9 +606,957 @@ export interface DnsZoneTsigKey {
     secret: string;
 }
 
+export interface EdgeKvInitialData {
+    group?: string;
+    key: string;
+    value: string;
+}
+
+export interface GetCloudletsApiPrioritizationMatchRuleMatchRule {
+    /**
+     * - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+     */
+    disabled?: boolean;
+    /**
+     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    end?: number;
+    /**
+     * - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+     * * `passThroughPercent`- (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin.
+     */
+    matchUrl?: string;
+    /**
+     * - (Optional) A list of conditions to apply to a Cloudlet, including:
+     */
+    matches?: outputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch[];
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: string;
+    passThroughPercent: number;
+    /**
+     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    start?: number;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: string;
+}
+
+export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch {
+    /**
+     * - (Optional) Whether the match is case sensitive.
+     */
+    caseSensitive?: boolean;
+    /**
+     * - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+     */
+    checkIps?: string;
+    /**
+     * - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+     */
+    matchOperator?: string;
+    /**
+     * - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+     */
+    matchType?: string;
+    /**
+     * - (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
+     */
+    matchValue?: string;
+    /**
+     * - (Optional) Whether to negate the match.
+     */
+    negate?: boolean;
+    /**
+     * - (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+     */
+    objectMatchValues?: outputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValue[];
+}
+
+export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValue {
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: string;
+    /**
+     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+     */
+    nameCaseSensitive?: boolean;
+    /**
+     * - (Optional) Whether the `name` argument includes wildcards.
+     */
+    nameHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+     */
+    options?: outputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptions;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: string;
+    /**
+     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     */
+    values?: string[];
+}
+
+export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptions {
+    /**
+     * - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+     */
+    valueCaseSensitive?: boolean;
+    /**
+     * - (Optional) Whether the `value` argument should be compared in an escaped form.
+     */
+    valueEscaped?: boolean;
+    /**
+     * - (Optional) Whether the `value` argument includes wildcards.
+     */
+    valueHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     */
+    values?: string[];
+}
+
+export interface GetCloudletsApplicationLoadBalancerDataCenter {
+    city: string;
+    cloudServerHostHeaderOverride: boolean;
+    cloudService: boolean;
+    continent: string;
+    country: string;
+    hostname: string;
+    latitude: number;
+    livenessHosts: string[];
+    longitude: number;
+    /**
+     * - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
+     */
+    originId: string;
+    percent: number;
+    stateOrProvince: string;
+}
+
+export interface GetCloudletsApplicationLoadBalancerLivenessSetting {
+    additionalHeaders: {[key: string]: string};
+    hostHeader: string;
+    interval: number;
+    path: string;
+    peerCertificateVerification: boolean;
+    port: number;
+    protocol: string;
+    requestString: string;
+    responseString: string;
+    status3xxFailure: boolean;
+    status4xxFailure: boolean;
+    status5xxFailure: boolean;
+    timeout: number;
+}
+
+export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRule {
+    disabled?: boolean;
+    /**
+     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    end?: number;
+    /**
+     * - (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
+     */
+    forwardSettings: outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSetting[];
+    /**
+     * - (Optional) An identifier for Akamai internal use only.
+     */
+    id?: number;
+    /**
+     * - (Optional) The URL that the Cloudlet uses to match the incoming request.
+     */
+    matchUrl?: string;
+    /**
+     * - (Optional) A list of conditions to apply to a Cloudlet, including:
+     */
+    matches?: outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatch[];
+    /**
+     * - (Optional) Whether the match supports default rules that apply to all requests.
+     */
+    matchesAlways?: boolean;
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: string;
+    /**
+     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    start?: number;
+    /**
+     * - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: string;
+}
+
+export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSetting {
+    /**
+     * - (Required) The ID of the Conditional Origin the requests are forwarded to.
+     */
+    originId: string;
+}
+
+export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatch {
+    /**
+     * - (Optional) Whether the match is case sensitive.
+     */
+    caseSensitive?: boolean;
+    /**
+     * - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+     */
+    checkIps?: string;
+    /**
+     * - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+     */
+    matchOperator?: string;
+    /**
+     * - (Optional) The type of match used, either `clientip`, `continent`, `cookie`, `countrycode`, `deviceCharacteristics`, `extension`, `header`, `hostname`, `method`, `path`, `protocol`, `proxy`, `query`, `regioncode`, or `range`.
+     */
+    matchType?: string;
+    /**
+     * - (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
+     */
+    matchValue?: string;
+    /**
+     * - (Optional) Whether to negate the match.
+     */
+    negate?: boolean;
+    /**
+     * - (Optional) If `matchValue` is empty, this argument is required. An object used when a rule either includes more complex match criteria, like multiple value attributes, or a range match. Includes these sub-arguments:
+     */
+    objectMatchValues?: outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValue[];
+}
+
+export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValue {
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: string;
+    /**
+     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+     */
+    nameCaseSensitive?: boolean;
+    /**
+     * - (Optional) Whether the `name` argument includes wildcards.
+     */
+    nameHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+     */
+    options?: outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptions;
+    /**
+     * - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: string;
+    /**
+     * - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
+     */
+    values?: string[];
+}
+
+export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptions {
+    /**
+     * - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+     */
+    valueCaseSensitive?: boolean;
+    /**
+     * - (Optional) Whether the `value` argument should be compared in an escaped form.
+     */
+    valueEscaped?: boolean;
+    /**
+     * - (Optional) Whether the `value` argument includes wildcards.
+     */
+    valueHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
+     */
+    values?: string[];
+}
+
+export interface GetCloudletsAudienceSegmentationMatchRuleMatchRule {
+    /**
+     * - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+     */
+    disabled?: boolean;
+    /**
+     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    end?: number;
+    /**
+     * (Required) The data used to construct a new request URL if all match conditions are met. If all conditions are met, the edge server returns an HTTP response from the rewritten URL.
+     */
+    forwardSettings: outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettings;
+    /**
+     * - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+     */
+    matchUrl?: string;
+    /**
+     * - (Optional) A list of conditions to apply to a Cloudlet, including:
+     */
+    matches?: outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatch[];
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: string;
+    /**
+     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    start?: number;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: string;
+}
+
+export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettings {
+    /**
+     * - (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
+     */
+    originId?: string;
+    /**
+     * - (Optional) When match conditions are met, this value defines the path, resource, or query string added to the rewritten URL.
+     */
+    pathAndQs?: string;
+    /**
+     * - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
+     */
+    useIncomingQueryString?: boolean;
+}
+
+export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatch {
+    /**
+     * - (Optional) Whether the match is case sensitive.
+     */
+    caseSensitive?: boolean;
+    /**
+     * - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+     */
+    checkIps?: string;
+    /**
+     * - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+     */
+    matchOperator?: string;
+    /**
+     * - (Optional) The type of match used, either header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+     */
+    matchType?: string;
+    /**
+     * - (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
+     */
+    matchValue?: string;
+    /**
+     * - (Optional) Whether to negate the match.
+     */
+    negate?: boolean;
+    /**
+     * - (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+     */
+    objectMatchValues?: outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValue[];
+}
+
+export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValue {
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: string;
+    /**
+     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+     */
+    nameCaseSensitive?: boolean;
+    /**
+     * - (Optional) Whether the `name` argument includes wildcards.
+     */
+    nameHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+     */
+    options?: outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptions;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: string;
+    /**
+     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     */
+    values?: string[];
+}
+
+export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptions {
+    /**
+     * - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+     */
+    valueCaseSensitive?: boolean;
+    /**
+     * - (Optional) Whether the `value` argument should be compared in an escaped form.
+     */
+    valueEscaped?: boolean;
+    /**
+     * - (Optional) Whether the `value` argument includes wildcards.
+     */
+    valueHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     */
+    values?: string[];
+}
+
+export interface GetCloudletsEdgeRedirectorMatchRuleMatchRule {
+    /**
+     * - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+     */
+    disabled?: boolean;
+    /**
+     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    end?: number;
+    /**
+     * - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+     */
+    matchUrl?: string;
+    /**
+     * - (Optional) A list of conditions to apply to a Cloudlet, including:
+     */
+    matches?: outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch[];
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: string;
+    /**
+     * - (Required) The URL Edge Redirector redirects the request to. If you're using `useRelativeUrl`, you can enter a path for the value.
+     */
+    redirectUrl: string;
+    /**
+     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    start?: number;
+    /**
+     * - (Required) The HTTP response status code, which is either `301` (permanent redirect) or `302` (temporary redirect).
+     */
+    statusCode: number;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: string;
+    /**
+     * - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
+     */
+    useIncomingQueryString?: boolean;
+    /**
+     * - (Optional) If set to `relativeUrl`, takes the path you specify in the `redirectUrl` argument and sets it in the response’s Location header. The client or browser receiving the request decides which protocol and hostname to use. If set to `copySchemeHostname`, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information you specify in the `redirectUrl` argument. This absolute path is set in the response’s Location header. If you do not specify useRelativeUrl or set to `none`, then specify the `redirectUrl` argument as a fully-qualified URL.
+     */
+    useRelativeUrl?: string;
+}
+
+export interface GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch {
+    /**
+     * - (Optional) Whether the match is case sensitive.
+     */
+    caseSensitive?: boolean;
+    /**
+     * - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+     */
+    checkIps?: string;
+    /**
+     * - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+     */
+    matchOperator?: string;
+    /**
+     * - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+     */
+    matchType?: string;
+    /**
+     * - (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
+     */
+    matchValue?: string;
+    /**
+     * - (Optional) Whether to negate the match.
+     */
+    negate?: boolean;
+    /**
+     * - (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+     */
+    objectMatchValues?: outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValue[];
+}
+
+export interface GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValue {
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: string;
+    /**
+     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+     */
+    nameCaseSensitive?: boolean;
+    /**
+     * - (Optional) Whether the `name` argument includes wildcards.
+     */
+    nameHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+     */
+    options?: outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptions;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: string;
+    /**
+     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     */
+    values?: string[];
+}
+
+export interface GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptions {
+    /**
+     * - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+     */
+    valueCaseSensitive?: boolean;
+    /**
+     * - (Optional) Whether the `value` argument should be compared in an escaped form.
+     */
+    valueEscaped?: boolean;
+    /**
+     * - (Optional) Whether the `value` argument includes wildcards.
+     */
+    valueHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     */
+    values?: string[];
+}
+
+export interface GetCloudletsForwardRewriteMatchRuleMatchRule {
+    /**
+     * - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+     */
+    disabled?: boolean;
+    /**
+     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    end?: number;
+    /**
+     * (Required) The data used to construct a new request URL if all match conditions are met. If all conditions are met, the edge server returns an HTTP response from the rewritten URL.
+     */
+    forwardSettings: outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings;
+    /**
+     * - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+     */
+    matchUrl?: string;
+    /**
+     * - (Optional) A list of conditions to apply to a Cloudlet, including:
+     */
+    matches?: outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatch[];
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: string;
+    /**
+     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    start?: number;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: string;
+}
+
+export interface GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings {
+    /**
+     * - (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
+     */
+    originId?: string;
+    /**
+     * - (Optional) When match conditions are met, this value defines the path, resource, or query string added to the rewritten URL.
+     */
+    pathAndQs?: string;
+    /**
+     * - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
+     */
+    useIncomingQueryString?: boolean;
+}
+
+export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatch {
+    /**
+     * - (Optional) Whether the match is case sensitive.
+     */
+    caseSensitive?: boolean;
+    /**
+     * - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+     */
+    checkIps?: string;
+    /**
+     * - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+     */
+    matchOperator?: string;
+    /**
+     * - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+     */
+    matchType?: string;
+    /**
+     * - (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
+     */
+    matchValue?: string;
+    /**
+     * - (Optional) Whether to negate the match.
+     */
+    negate?: boolean;
+    /**
+     * - (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+     */
+    objectMatchValues?: outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValue[];
+}
+
+export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValue {
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: string;
+    /**
+     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+     */
+    nameCaseSensitive?: boolean;
+    /**
+     * - (Optional) Whether the `name` argument includes wildcards.
+     */
+    nameHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+     */
+    options?: outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptions;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: string;
+    /**
+     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     */
+    values?: string[];
+}
+
+export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptions {
+    /**
+     * - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+     */
+    valueCaseSensitive?: boolean;
+    /**
+     * - (Optional) Whether the `value` argument should be compared in an escaped form.
+     */
+    valueEscaped?: boolean;
+    /**
+     * - (Optional) Whether the `value` argument includes wildcards.
+     */
+    valueHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     */
+    values?: string[];
+}
+
+export interface GetCloudletsPhasedReleaseMatchRuleMatchRule {
+    /**
+     * - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+     */
+    disabled?: boolean;
+    /**
+     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    end?: number;
+    /**
+     * (Required) The data used to construct a new request URL if all match conditions are met. If all conditions are met, the edge server returns an HTTP response from the rewritten URL.
+     */
+    forwardSettings: outputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings;
+    /**
+     * - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+     */
+    matchUrl?: string;
+    /**
+     * - (Optional) A list of conditions to apply to a Cloudlet, including:
+     */
+    matches?: outputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatch[];
+    /**
+     * - (Optional) Whether the match supports default rules that apply to all requests.
+     */
+    matchesAlways?: boolean;
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: string;
+    /**
+     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    start?: number;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: string;
+}
+
+export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings {
+    /**
+     * - (Required) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
+     */
+    originId: string;
+    /**
+     * - (Required)
+     */
+    percent: number;
+}
+
+export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatch {
+    /**
+     * - (Optional) Whether the match is case sensitive.
+     */
+    caseSensitive?: boolean;
+    /**
+     * - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+     */
+    checkIps?: string;
+    /**
+     * - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+     */
+    matchOperator?: string;
+    /**
+     * - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+     */
+    matchType?: string;
+    /**
+     * - (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
+     */
+    matchValue?: string;
+    /**
+     * - (Optional) Whether to negate the match.
+     */
+    negate?: boolean;
+    /**
+     * - (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+     */
+    objectMatchValues?: outputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValue[];
+}
+
+export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValue {
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: string;
+    /**
+     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+     */
+    nameCaseSensitive?: boolean;
+    /**
+     * - (Optional) Whether the `name` argument includes wildcards.
+     */
+    nameHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+     */
+    options?: outputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptions;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: string;
+    /**
+     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     */
+    values?: string[];
+}
+
+export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptions {
+    /**
+     * - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+     */
+    valueCaseSensitive?: boolean;
+    /**
+     * - (Optional) Whether the `value` argument should be compared in an escaped form.
+     */
+    valueEscaped?: boolean;
+    /**
+     * - (Optional) Whether the `value` argument includes wildcards.
+     */
+    valueHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     */
+    values?: string[];
+}
+
+export interface GetCloudletsPolicyActivation {
+    apiVersion: string;
+    network: string;
+    policyInfos: outputs.GetCloudletsPolicyActivationPolicyInfo[];
+    propertyInfos: outputs.GetCloudletsPolicyActivationPropertyInfo[];
+}
+
+export interface GetCloudletsPolicyActivationPolicyInfo {
+    activatedBy: string;
+    activationDate: number;
+    name: string;
+    /**
+     * - (Required) An integer identifier that is associated with all versions of a policy.
+     */
+    policyId: number;
+    status: string;
+    statusDetail: string;
+    /**
+     * - (Optional) The version number of a policy.
+     */
+    version: number;
+}
+
+export interface GetCloudletsPolicyActivationPropertyInfo {
+    activatedBy: string;
+    activationDate: number;
+    groupId: number;
+    name: string;
+    status: string;
+    /**
+     * - (Optional) The version number of a policy.
+     */
+    version: number;
+}
+
+export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRule {
+    /**
+     * - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+     */
+    disabled?: boolean;
+    /**
+     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    end?: number;
+    /**
+     * - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+     * * `passThroughPercent`- (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin. Enter `-1` to send everyone to the waiting room.
+     */
+    matchUrl?: string;
+    /**
+     * - (Optional) A list of conditions to apply to a Cloudlet, including:
+     */
+    matches?: outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch[];
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: string;
+    passThroughPercent: number;
+    /**
+     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    start?: number;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: string;
+}
+
+export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch {
+    /**
+     * - (Optional) Whether the match is case sensitive.
+     */
+    caseSensitive?: boolean;
+    /**
+     * - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+     */
+    checkIps?: string;
+    /**
+     * - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+     */
+    matchOperator?: string;
+    /**
+     * - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+     */
+    matchType?: string;
+    /**
+     * - (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
+     */
+    matchValue?: string;
+    /**
+     * - (Optional) Whether to negate the match.
+     */
+    negate?: boolean;
+    /**
+     * - (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+     */
+    objectMatchValues?: outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValue[];
+}
+
+export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValue {
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: string;
+    /**
+     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+     */
+    nameCaseSensitive?: boolean;
+    /**
+     * - (Optional) Whether the `name` argument includes wildcards.
+     */
+    nameHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+     */
+    options?: outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptions;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: string;
+    /**
+     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     */
+    values?: string[];
+}
+
+export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptions {
+    /**
+     * - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+     */
+    valueCaseSensitive?: boolean;
+    /**
+     * - (Optional) Whether the `value` argument should be compared in an escaped form.
+     */
+    valueEscaped?: boolean;
+    /**
+     * - (Optional) Whether the `value` argument includes wildcards.
+     */
+    valueHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     */
+    values?: string[];
+}
+
 export interface GetContractsContract {
     contractId: string;
     contractTypeName: string;
+}
+
+export interface GetDatastreamActivationHistoryActivation {
+    createdBy: string;
+    createdDate: string;
+    isActive: boolean;
+    /**
+     * - (Required) A stream's unique identifier.
+     */
+    streamId: number;
+    streamVersionId: number;
+}
+
+export interface GetDatastreamDatasetFieldsField {
+    datasetFields: outputs.GetDatastreamDatasetFieldsFieldDatasetField[];
+    datasetGroupDescription: string;
+    datasetGroupName: string;
+}
+
+export interface GetDatastreamDatasetFieldsFieldDatasetField {
+    datasetFieldDescription: string;
+    datasetFieldId: number;
+    datasetFieldJsonKey: string;
+    datasetFieldName: string;
 }
 
 export interface GetGroupsGroup {

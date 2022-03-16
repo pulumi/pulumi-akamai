@@ -6,7 +6,7 @@ import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.getGroups` data source to list groups associated with the [EdgeGrid API client token](https://developer.akamai.com/getting-started/edgegrid) you're using.
+ * Use the `akamai.getGroups` data source to list groups associated with the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
  *
  * ## Basic usage
  *

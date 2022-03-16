@@ -6,6 +6,7 @@ from . import _utilities
 import typing
 # Export this package's modules as members:
 from .app_sec_activations import *
+from .app_sec_advanced_settings_evasive_path_match import *
 from .app_sec_advanced_settings_logging import *
 from .app_sec_advanced_settings_pragma_header import *
 from .app_sec_advanced_settings_prefetch import *
@@ -20,8 +21,6 @@ from .app_sec_custom_rule import *
 from .app_sec_custom_rule_action import *
 from .app_sec_eval import *
 from .app_sec_eval_group import *
-from .app_sec_eval_hostnames import *
-from .app_sec_eval_protect_host import *
 from .app_sec_eval_rule import *
 from .app_sec_ip_geo import *
 from .app_sec_ip_geo_protection import *
@@ -48,12 +47,21 @@ from .app_sec_version_nodes import *
 from .app_sec_waf_mode import *
 from .app_sec_waf_protection import *
 from .app_sec_wap_selected_hostnames import *
+from .cloudlets_application_load_balancer import *
+from .cloudlets_application_load_balancer_activation import *
+from .cloudlets_policy import *
+from .cloudlets_policy_activation import *
 from .cp_code import *
 from .cps_dv_enrollment import *
 from .cps_dv_validation import *
+from .datastream import *
 from .dns_record import *
 from .dns_zone import *
 from .edge_host_name import *
+from .edge_kv import *
+from .edge_worker import *
+from .edge_workers_activation import *
+from .get_app_sec_advanced_settings_evasive_path_match import *
 from .get_app_sec_advanced_settings_logging import *
 from .get_app_sec_advanced_settings_pragma_header import *
 from .get_app_sec_advanced_settings_prefetch import *
@@ -69,7 +77,6 @@ from .get_app_sec_custom_rule_actions import *
 from .get_app_sec_custom_rules import *
 from .get_app_sec_eval import *
 from .get_app_sec_eval_groups import *
-from .get_app_sec_eval_hostnames import *
 from .get_app_sec_eval_rules import *
 from .get_app_sec_export_configuration import *
 from .get_app_sec_failover_hostnames import *
@@ -94,14 +101,28 @@ from .get_app_sec_siem_definitions import *
 from .get_app_sec_siem_settings import *
 from .get_app_sec_slow_post import *
 from .get_app_sec_threat_intel import *
+from .get_app_sec_tuning_recommendations import *
 from .get_app_sec_version_notes import *
 from .get_app_sec_waf_mode import *
 from .get_app_sec_wap_selected_hostnames import *
 from .get_authorities_set import *
+from .get_cloudlets_api_prioritization_match_rule import *
+from .get_cloudlets_application_load_balancer import *
+from .get_cloudlets_application_load_balancer_match_rule import *
+from .get_cloudlets_audience_segmentation_match_rule import *
+from .get_cloudlets_edge_redirector_match_rule import *
+from .get_cloudlets_forward_rewrite_match_rule import *
+from .get_cloudlets_phased_release_match_rule import *
+from .get_cloudlets_policy import *
+from .get_cloudlets_visitor_prioritization_match_rule import *
 from .get_contract import *
 from .get_contracts import *
 from .get_cp_code import *
+from .get_datastream_activation_history import *
+from .get_datastream_dataset_fields import *
 from .get_dns_record_set import *
+from .get_edge_workers_property_rules import *
+from .get_edge_workers_resource_tier import *
 from .get_group import *
 from .get_groups import *
 from .get_gtm_default_datacenter import *
@@ -172,6 +193,14 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/appSecActivations:AppSecActivations": "AppSecActivations"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appSecAdvancedSettingsEvasivePathMatch",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appSecAdvancedSettingsEvasivePathMatch:AppSecAdvancedSettingsEvasivePathMatch": "AppSecAdvancedSettingsEvasivePathMatch"
   }
  },
  {
@@ -284,22 +313,6 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/appSecEvalGroup:AppSecEvalGroup": "AppSecEvalGroup"
-  }
- },
- {
-  "pkg": "akamai",
-  "mod": "index/appSecEvalHostnames",
-  "fqn": "pulumi_akamai",
-  "classes": {
-   "akamai:index/appSecEvalHostnames:AppSecEvalHostnames": "AppSecEvalHostnames"
-  }
- },
- {
-  "pkg": "akamai",
-  "mod": "index/appSecEvalProtectHost",
-  "fqn": "pulumi_akamai",
-  "classes": {
-   "akamai:index/appSecEvalProtectHost:AppSecEvalProtectHost": "AppSecEvalProtectHost"
   }
  },
  {
@@ -512,6 +525,38 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
+  "mod": "index/cloudletsApplicationLoadBalancer",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer": "CloudletsApplicationLoadBalancer"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/cloudletsApplicationLoadBalancerActivation",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation": "CloudletsApplicationLoadBalancerActivation"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/cloudletsPolicy",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/cloudletsPolicy:CloudletsPolicy": "CloudletsPolicy"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/cloudletsPolicyActivation",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/cloudletsPolicyActivation:CloudletsPolicyActivation": "CloudletsPolicyActivation"
+  }
+ },
+ {
+  "pkg": "akamai",
   "mod": "index/cpCode",
   "fqn": "pulumi_akamai",
   "classes": {
@@ -536,6 +581,14 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
+  "mod": "index/datastream",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/datastream:Datastream": "Datastream"
+  }
+ },
+ {
+  "pkg": "akamai",
   "mod": "index/dnsRecord",
   "fqn": "pulumi_akamai",
   "classes": {
@@ -556,6 +609,30 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/edgeHostName:EdgeHostName": "EdgeHostName"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/edgeKv",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/edgeKv:EdgeKv": "EdgeKv"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/edgeWorker",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/edgeWorker:EdgeWorker": "EdgeWorker"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/edgeWorkersActivation",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/edgeWorkersActivation:EdgeWorkersActivation": "EdgeWorkersActivation"
   }
  },
  {
