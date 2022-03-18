@@ -40,7 +40,7 @@ class PropertyArgs:
         :param pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]] hostnames: A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
         :param pulumi.Input[str] name: The property name.
         :param pulumi.Input[str] product: Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] product_id: - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+        :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
         :param pulumi.Input[str] rule_format: The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
         :param pulumi.Input[str] rules: A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
         """
@@ -228,7 +228,7 @@ class PropertyArgs:
     @pulumi.getter(name="productId")
     def product_id(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+        Product ID to be assigned to the Property
         """
         return pulumi.get(self, "product_id")
 
@@ -313,7 +313,7 @@ class _PropertyState:
         :param pulumi.Input[int] latest_version: The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
         :param pulumi.Input[str] name: The property name.
         :param pulumi.Input[str] product: Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] product_id: - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+        :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
         :param pulumi.Input[int] production_version: The current version of the property active on the Akamai production network.
         :param pulumi.Input[int] read_version: Required property's version to be read
         :param pulumi.Input[Sequence[pulumi.Input['PropertyRuleErrorArgs']]] rule_errors: The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
@@ -527,7 +527,7 @@ class _PropertyState:
     @pulumi.getter(name="productId")
     def product_id(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+        Product ID to be assigned to the Property
         """
         return pulumi.get(self, "product_id")
 
@@ -742,7 +742,7 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]] hostnames: A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
         :param pulumi.Input[str] name: The property name.
         :param pulumi.Input[str] product: Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] product_id: - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+        :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
         :param pulumi.Input[str] rule_format: The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
         :param pulumi.Input[str] rules: A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
         """
@@ -976,7 +976,7 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[int] latest_version: The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
         :param pulumi.Input[str] name: The property name.
         :param pulumi.Input[str] product: Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] product_id: - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+        :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
         :param pulumi.Input[int] production_version: The current version of the property active on the Akamai production network.
         :param pulumi.Input[int] read_version: Required property's version to be read
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleErrorArgs']]]] rule_errors: The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
@@ -1099,7 +1099,7 @@ class Property(pulumi.CustomResource):
     @pulumi.getter(name="productId")
     def product_id(self) -> pulumi.Output[str]:
         """
-        - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+        Product ID to be assigned to the Property
         """
         return pulumi.get(self, "product_id")
 

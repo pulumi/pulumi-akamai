@@ -126,9 +126,6 @@ export class EdgeHostName extends pulumi.CustomResource {
      * @deprecated The setting "product" has been deprecated.
      */
     public readonly product!: pulumi.Output<string>;
-    /**
-     * - (Required) A product's unique ID, including the `prd_` prefix.
-     */
     public readonly productId!: pulumi.Output<string>;
     /**
      * A JSON encoded list of use cases
@@ -226,9 +223,6 @@ export interface EdgeHostNameState {
      * @deprecated The setting "product" has been deprecated.
      */
     product?: pulumi.Input<string>;
-    /**
-     * - (Required) A product's unique ID, including the `prd_` prefix.
-     */
     productId?: pulumi.Input<string>;
     /**
      * A JSON encoded list of use cases
@@ -278,9 +272,6 @@ export interface EdgeHostNameArgs {
      * @deprecated The setting "product" has been deprecated.
      */
     product?: pulumi.Input<string>;
-    /**
-     * - (Required) A product's unique ID, including the `prd_` prefix.
-     */
     productId?: pulumi.Input<string>;
     /**
      * A JSON encoded list of use cases

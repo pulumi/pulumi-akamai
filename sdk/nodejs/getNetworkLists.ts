@@ -39,6 +39,7 @@ export function getNetworkLists(args?: GetNetworkListsArgs, opts?: pulumi.Invoke
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("akamai:index/getNetworkLists:getNetworkLists", {
         "name": args.name,
+        "networkListId": args.networkListId,
         "type": args.type,
     }, opts);
 }
@@ -53,6 +54,11 @@ export interface GetNetworkListsArgs {
      */
     name?: string;
     /**
+     * The ID of a specific network list to retrieve.
+     * If not supplied, information about all network lists will be returned.
+     */
+    networkListId?: string;
+    /**
      * The type of network lists to be retrieved; must be either "IP" or "GEO". If not supplied,
      * information about both types will be returned.
      */
@@ -63,6 +69,8 @@ export interface GetNetworkListsArgs {
  * A collection of values returned by getNetworkLists.
  */
 export interface GetNetworkListsResult {
+    readonly contractId: string;
+    readonly groupId: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
@@ -76,15 +84,12 @@ export interface GetNetworkListsResult {
      */
     readonly lists: string[];
     readonly name?: string;
+    readonly networkListId: string;
     /**
      * A tabular display showing the network list information.
      */
     readonly outputText: string;
     readonly type?: string;
-    /**
-     * The ID of the indicated list (if the `name` argument was supplied).
-     */
-    readonly uniqueid: string;
 }
 
 export function getNetworkListsOutput(args?: GetNetworkListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkListsResult> {
@@ -100,6 +105,11 @@ export interface GetNetworkListsOutputArgs {
      * lists will be returned.
      */
     name?: pulumi.Input<string>;
+    /**
+     * The ID of a specific network list to retrieve.
+     * If not supplied, information about all network lists will be returned.
+     */
+    networkListId?: pulumi.Input<string>;
     /**
      * The type of network lists to be retrieved; must be either "IP" or "GEO". If not supplied,
      * information about both types will be returned.

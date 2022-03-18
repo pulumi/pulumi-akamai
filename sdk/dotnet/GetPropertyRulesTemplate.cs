@@ -107,9 +107,15 @@ namespace Pulumi.Akamai
             set => _templates = value;
         }
 
+        /// <summary>
+        /// The absolute path to the file containing variable definitions and defaults. This file follows the syntax used in the [Property Manager CLI](https://github.com/akamai/cli-property-manager). This argument is required if you set `var_values_file` and conflicts with `variables`.
+        /// </summary>
         [Input("varDefinitionFile")]
         public string? VarDefinitionFile { get; set; }
 
+        /// <summary>
+        /// The absolute path to the file containing variable values. This file follows the syntax used in the Property Manager CLI. This argument is required if you set `var_definition_file` and conflicts with `variables`.
+        /// </summary>
         [Input("varValuesFile")]
         public string? VarValuesFile { get; set; }
 
@@ -117,7 +123,7 @@ namespace Pulumi.Akamai
         private List<Inputs.GetPropertyRulesTemplateVariableArgs>? _variables;
 
         /// <summary>
-        /// A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `variable_definition_file` and `variable_values_file` arguments. A `variables` block includes:
+        /// A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `var_definition_file` and `var_values_file` arguments. A `variables` block includes:
         /// </summary>
         public List<Inputs.GetPropertyRulesTemplateVariableArgs> Variables
         {
@@ -146,9 +152,15 @@ namespace Pulumi.Akamai
             set => _templates = value;
         }
 
+        /// <summary>
+        /// The absolute path to the file containing variable definitions and defaults. This file follows the syntax used in the [Property Manager CLI](https://github.com/akamai/cli-property-manager). This argument is required if you set `var_values_file` and conflicts with `variables`.
+        /// </summary>
         [Input("varDefinitionFile")]
         public Input<string>? VarDefinitionFile { get; set; }
 
+        /// <summary>
+        /// The absolute path to the file containing variable values. This file follows the syntax used in the Property Manager CLI. This argument is required if you set `var_definition_file` and conflicts with `variables`.
+        /// </summary>
         [Input("varValuesFile")]
         public Input<string>? VarValuesFile { get; set; }
 
@@ -156,7 +168,7 @@ namespace Pulumi.Akamai
         private InputList<Inputs.GetPropertyRulesTemplateVariableInputArgs>? _variables;
 
         /// <summary>
-        /// A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `variable_definition_file` and `variable_values_file` arguments. A `variables` block includes:
+        /// A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `var_definition_file` and `var_values_file` arguments. A `variables` block includes:
         /// </summary>
         public InputList<Inputs.GetPropertyRulesTemplateVariableInputArgs> Variables
         {

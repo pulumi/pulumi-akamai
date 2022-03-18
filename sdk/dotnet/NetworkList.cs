@@ -100,7 +100,7 @@ namespace Pulumi.Akamai
         public Output<string> Type { get; private set; } = null!;
 
         /// <summary>
-        /// uniqueId
+        /// unique ID
         /// </summary>
         [Output("uniqueid")]
         public Output<string> Uniqueid { get; private set; } = null!;
@@ -274,7 +274,7 @@ namespace Pulumi.Akamai
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// uniqueId
+        /// unique ID
         /// </summary>
         [Input("uniqueid")]
         public Input<string>? Uniqueid { get; set; }

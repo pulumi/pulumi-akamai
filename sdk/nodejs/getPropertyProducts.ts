@@ -10,7 +10,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
- * This example returns products associated with the [EdgeGrid client token](https://developer.akamai.com/getting-started/edgegrid) for a given contract:
+ * This example returns products associated with the [EdgeGrid client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) for a given contract:
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";

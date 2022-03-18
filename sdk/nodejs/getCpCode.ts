@@ -4,52 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.CpCode` data source to retrieve the ID for a content provider (CP) code.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = pulumi.output(akamai.getCpCode({
- *     contractId: "ctr_1-AB123",
- *     groupId: "grp_123",
- *     name: "my cpcode name",
- * }));
- * ```
- *
- * Here's a real-world example that includes other data sources as dependencies:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const groupName = "example group name";
- * const cpcodeName = "My CP code Name";
- * const exampleContract = akamai.getContract({
- *     groupName: groupName,
- * });
- * const exampleGroup = exampleContract.then(exampleContract => akamai.getGroup({
- *     groupName: groupName,
- *     contractId: exampleContract.id,
- * }));
- * const exampleCpCode = Promise.all([exampleGroup, exampleContract]).then(([exampleGroup, exampleContract]) => akamai.getCpCode({
- *     name: cpcodeName,
- *     groupId: exampleGroup.id,
- *     contractId: exampleContract.id,
- * }));
- * ```
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `id` - The ID of the CP code, including the `cpc_` prefix.
- * * `productIds` - An array of product IDs associated with this CP code. Each ID returned includes the `prd_` prefix.
- */
 export function getCpCode(args: GetCpCodeArgs, opts?: pulumi.InvokeOptions): Promise<GetCpCodeResult> {
     if (!opts) {
         opts = {}

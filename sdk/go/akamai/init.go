@@ -22,6 +22,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "akamai:index/appSecActivations:AppSecActivations":
 		r = &AppSecActivations{}
+	case "akamai:index/appSecAdvancedSettingsEvasivePathMatch:AppSecAdvancedSettingsEvasivePathMatch":
+		r = &AppSecAdvancedSettingsEvasivePathMatch{}
 	case "akamai:index/appSecAdvancedSettingsLogging:AppSecAdvancedSettingsLogging":
 		r = &AppSecAdvancedSettingsLogging{}
 	case "akamai:index/appSecAdvancedSettingsPragmaHeader:AppSecAdvancedSettingsPragmaHeader":
@@ -50,10 +52,6 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppSecEval{}
 	case "akamai:index/appSecEvalGroup:AppSecEvalGroup":
 		r = &AppSecEvalGroup{}
-	case "akamai:index/appSecEvalHostnames:AppSecEvalHostnames":
-		r = &AppSecEvalHostnames{}
-	case "akamai:index/appSecEvalProtectHost:AppSecEvalProtectHost":
-		r = &AppSecEvalProtectHost{}
 	case "akamai:index/appSecEvalRule:AppSecEvalRule":
 		r = &AppSecEvalRule{}
 	case "akamai:index/appSecIPGeo:AppSecIPGeo":
@@ -106,18 +104,34 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppSecWafProtection{}
 	case "akamai:index/appSecWapSelectedHostnames:AppSecWapSelectedHostnames":
 		r = &AppSecWapSelectedHostnames{}
+	case "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer":
+		r = &CloudletsApplicationLoadBalancer{}
+	case "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation":
+		r = &CloudletsApplicationLoadBalancerActivation{}
+	case "akamai:index/cloudletsPolicy:CloudletsPolicy":
+		r = &CloudletsPolicy{}
+	case "akamai:index/cloudletsPolicyActivation:CloudletsPolicyActivation":
+		r = &CloudletsPolicyActivation{}
 	case "akamai:index/cpCode:CpCode":
 		r = &CpCode{}
 	case "akamai:index/cpsDvEnrollment:CpsDvEnrollment":
 		r = &CpsDvEnrollment{}
 	case "akamai:index/cpsDvValidation:CpsDvValidation":
 		r = &CpsDvValidation{}
+	case "akamai:index/datastream:Datastream":
+		r = &Datastream{}
 	case "akamai:index/dnsRecord:DnsRecord":
 		r = &DnsRecord{}
 	case "akamai:index/dnsZone:DnsZone":
 		r = &DnsZone{}
 	case "akamai:index/edgeHostName:EdgeHostName":
 		r = &EdgeHostName{}
+	case "akamai:index/edgeKv:EdgeKv":
+		r = &EdgeKv{}
+	case "akamai:index/edgeWorker:EdgeWorker":
+		r = &EdgeWorker{}
+	case "akamai:index/edgeWorkersActivation:EdgeWorkersActivation":
+		r = &EdgeWorkersActivation{}
 	case "akamai:index/gtmAsmap:GtmAsmap":
 		r = &GtmAsmap{}
 	case "akamai:index/gtmCidrmap:GtmCidrmap":
@@ -180,6 +194,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/appSecActivations",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/appSecAdvancedSettingsEvasivePathMatch",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -250,16 +269,6 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/appSecEvalGroup",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"akamai",
-		"index/appSecEvalHostnames",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"akamai",
-		"index/appSecEvalProtectHost",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -394,6 +403,26 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
+		"index/cloudletsApplicationLoadBalancer",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/cloudletsApplicationLoadBalancerActivation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/cloudletsPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/cloudletsPolicyActivation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
 		"index/cpCode",
 		&module{version},
 	)
@@ -409,6 +438,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
+		"index/datastream",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
 		"index/dnsRecord",
 		&module{version},
 	)
@@ -420,6 +454,21 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/edgeHostName",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/edgeKv",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/edgeWorker",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/edgeWorkersActivation",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

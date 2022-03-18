@@ -10,6 +10,8 @@ from . import _utilities
 from . import outputs
 
 __all__ = [
+    'CloudletsApplicationLoadBalancerDataCenter',
+    'CloudletsApplicationLoadBalancerLivenessSettings',
     'CpsDvEnrollmentAdminContact',
     'CpsDvEnrollmentCsr',
     'CpsDvEnrollmentDnsChallenge',
@@ -18,7 +20,18 @@ __all__ = [
     'CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication',
     'CpsDvEnrollmentOrganization',
     'CpsDvEnrollmentTechContact',
+    'DatastreamAzureConnector',
+    'DatastreamConfig',
+    'DatastreamConfigFrequency',
+    'DatastreamDatadogConnector',
+    'DatastreamGcsConnector',
+    'DatastreamHttpsConnector',
+    'DatastreamOracleConnector',
+    'DatastreamS3Connector',
+    'DatastreamSplunkConnector',
+    'DatastreamSumologicConnector',
     'DnsZoneTsigKey',
+    'EdgeKvInitialData',
     'GtmAsmapAssignment',
     'GtmAsmapDefaultDatacenter',
     'GtmCidrmapAssignment',
@@ -40,7 +53,47 @@ __all__ = [
     'PropertyRuleWarning',
     'PropertyVariablesVariable',
     'PropertyVariablesVariableVariable',
+    'GetCloudletsApiPrioritizationMatchRuleMatchRuleResult',
+    'GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchResult',
+    'GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueResult',
+    'GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsResult',
+    'GetCloudletsApplicationLoadBalancerDataCenterResult',
+    'GetCloudletsApplicationLoadBalancerLivenessSettingResult',
+    'GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleResult',
+    'GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingResult',
+    'GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchResult',
+    'GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueResult',
+    'GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsResult',
+    'GetCloudletsAudienceSegmentationMatchRuleMatchRuleResult',
+    'GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsResult',
+    'GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchResult',
+    'GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueResult',
+    'GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsResult',
+    'GetCloudletsEdgeRedirectorMatchRuleMatchRuleResult',
+    'GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchResult',
+    'GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueResult',
+    'GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsResult',
+    'GetCloudletsForwardRewriteMatchRuleMatchRuleResult',
+    'GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsResult',
+    'GetCloudletsForwardRewriteMatchRuleMatchRuleMatchResult',
+    'GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueResult',
+    'GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsResult',
+    'GetCloudletsPhasedReleaseMatchRuleMatchRuleResult',
+    'GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsResult',
+    'GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchResult',
+    'GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueResult',
+    'GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsResult',
+    'GetCloudletsPolicyActivationResult',
+    'GetCloudletsPolicyActivationPolicyInfoResult',
+    'GetCloudletsPolicyActivationPropertyInfoResult',
+    'GetCloudletsVisitorPrioritizationMatchRuleMatchRuleResult',
+    'GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchResult',
+    'GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueResult',
+    'GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsResult',
     'GetContractsContractResult',
+    'GetDatastreamActivationHistoryActivationResult',
+    'GetDatastreamDatasetFieldsFieldResult',
+    'GetDatastreamDatasetFieldsFieldDatasetFieldResult',
     'GetGroupsGroupResult',
     'GetPropertiesPropertyResult',
     'GetPropertyHostnamesHostnameResult',
@@ -49,6 +102,367 @@ __all__ = [
     'GetPropertyRulesTemplateTemplateResult',
     'GetPropertyRulesTemplateVariableResult',
 ]
+
+@pulumi.output_type
+class CloudletsApplicationLoadBalancerDataCenter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "originId":
+            suggest = "origin_id"
+        elif key == "cloudServerHostHeaderOverride":
+            suggest = "cloud_server_host_header_override"
+        elif key == "cloudService":
+            suggest = "cloud_service"
+        elif key == "livenessHosts":
+            suggest = "liveness_hosts"
+        elif key == "stateOrProvince":
+            suggest = "state_or_province"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudletsApplicationLoadBalancerDataCenter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudletsApplicationLoadBalancerDataCenter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudletsApplicationLoadBalancerDataCenter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 continent: str,
+                 country: str,
+                 latitude: float,
+                 longitude: float,
+                 origin_id: str,
+                 percent: float,
+                 city: Optional[str] = None,
+                 cloud_server_host_header_override: Optional[bool] = None,
+                 cloud_service: Optional[bool] = None,
+                 hostname: Optional[str] = None,
+                 liveness_hosts: Optional[Sequence[str]] = None,
+                 state_or_province: Optional[str] = None):
+        """
+        :param str continent: The code of the continent on which the data center is located. See [Continent Codes](https://control.akamai.com/dl/edgescape/continentCodes.csv) for a list of valid codes.
+        :param str country: The country in which the data center is located. See [Country Codes](https://control.akamai.com/dl/edgescape/cc2continent.csv) for a list of valid codes.
+        :param float latitude: The latitude value for the data center. This member supports six decimal places of precision.
+        :param float longitude: The longitude value for the data center. This member supports six decimal places of precision.
+        :param str origin_id: The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+        :param float percent: The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
+        :param str city: The city in which the data center is located.
+        :param bool cloud_server_host_header_override: Whether to override the cloud server host header.
+        :param bool cloud_service: Whether this datacenter is a cloud service.
+        :param str hostname: The name of the host that can be used as a Conditional Origin. This should match the `hostname` value defined for this datacenter in Property Manager.
+        :param Sequence[str] liveness_hosts: A list of the origin servers used to poll the data centers in an Application Load Balancer configuration. These servers support basic HTTP polling.
+        :param str state_or_province: The state, province, or region where the data center is located.
+        """
+        pulumi.set(__self__, "continent", continent)
+        pulumi.set(__self__, "country", country)
+        pulumi.set(__self__, "latitude", latitude)
+        pulumi.set(__self__, "longitude", longitude)
+        pulumi.set(__self__, "origin_id", origin_id)
+        pulumi.set(__self__, "percent", percent)
+        if city is not None:
+            pulumi.set(__self__, "city", city)
+        if cloud_server_host_header_override is not None:
+            pulumi.set(__self__, "cloud_server_host_header_override", cloud_server_host_header_override)
+        if cloud_service is not None:
+            pulumi.set(__self__, "cloud_service", cloud_service)
+        if hostname is not None:
+            pulumi.set(__self__, "hostname", hostname)
+        if liveness_hosts is not None:
+            pulumi.set(__self__, "liveness_hosts", liveness_hosts)
+        if state_or_province is not None:
+            pulumi.set(__self__, "state_or_province", state_or_province)
+
+    @property
+    @pulumi.getter
+    def continent(self) -> str:
+        """
+        The code of the continent on which the data center is located. See [Continent Codes](https://control.akamai.com/dl/edgescape/continentCodes.csv) for a list of valid codes.
+        """
+        return pulumi.get(self, "continent")
+
+    @property
+    @pulumi.getter
+    def country(self) -> str:
+        """
+        The country in which the data center is located. See [Country Codes](https://control.akamai.com/dl/edgescape/cc2continent.csv) for a list of valid codes.
+        """
+        return pulumi.get(self, "country")
+
+    @property
+    @pulumi.getter
+    def latitude(self) -> float:
+        """
+        The latitude value for the data center. This member supports six decimal places of precision.
+        """
+        return pulumi.get(self, "latitude")
+
+    @property
+    @pulumi.getter
+    def longitude(self) -> float:
+        """
+        The longitude value for the data center. This member supports six decimal places of precision.
+        """
+        return pulumi.get(self, "longitude")
+
+    @property
+    @pulumi.getter(name="originId")
+    def origin_id(self) -> str:
+        """
+        The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+        """
+        return pulumi.get(self, "origin_id")
+
+    @property
+    @pulumi.getter
+    def percent(self) -> float:
+        """
+        The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
+        """
+        return pulumi.get(self, "percent")
+
+    @property
+    @pulumi.getter
+    def city(self) -> Optional[str]:
+        """
+        The city in which the data center is located.
+        """
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter(name="cloudServerHostHeaderOverride")
+    def cloud_server_host_header_override(self) -> Optional[bool]:
+        """
+        Whether to override the cloud server host header.
+        """
+        return pulumi.get(self, "cloud_server_host_header_override")
+
+    @property
+    @pulumi.getter(name="cloudService")
+    def cloud_service(self) -> Optional[bool]:
+        """
+        Whether this datacenter is a cloud service.
+        """
+        return pulumi.get(self, "cloud_service")
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> Optional[str]:
+        """
+        The name of the host that can be used as a Conditional Origin. This should match the `hostname` value defined for this datacenter in Property Manager.
+        """
+        return pulumi.get(self, "hostname")
+
+    @property
+    @pulumi.getter(name="livenessHosts")
+    def liveness_hosts(self) -> Optional[Sequence[str]]:
+        """
+        A list of the origin servers used to poll the data centers in an Application Load Balancer configuration. These servers support basic HTTP polling.
+        """
+        return pulumi.get(self, "liveness_hosts")
+
+    @property
+    @pulumi.getter(name="stateOrProvince")
+    def state_or_province(self) -> Optional[str]:
+        """
+        The state, province, or region where the data center is located.
+        """
+        return pulumi.get(self, "state_or_province")
+
+
+@pulumi.output_type
+class CloudletsApplicationLoadBalancerLivenessSettings(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "additionalHeaders":
+            suggest = "additional_headers"
+        elif key == "hostHeader":
+            suggest = "host_header"
+        elif key == "peerCertificateVerification":
+            suggest = "peer_certificate_verification"
+        elif key == "requestString":
+            suggest = "request_string"
+        elif key == "responseString":
+            suggest = "response_string"
+        elif key == "status3xxFailure":
+            suggest = "status3xx_failure"
+        elif key == "status4xxFailure":
+            suggest = "status4xx_failure"
+        elif key == "status5xxFailure":
+            suggest = "status5xx_failure"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudletsApplicationLoadBalancerLivenessSettings. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudletsApplicationLoadBalancerLivenessSettings.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudletsApplicationLoadBalancerLivenessSettings.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 path: str,
+                 port: int,
+                 protocol: str,
+                 additional_headers: Optional[Mapping[str, str]] = None,
+                 host_header: Optional[str] = None,
+                 interval: Optional[int] = None,
+                 peer_certificate_verification: Optional[bool] = None,
+                 request_string: Optional[str] = None,
+                 response_string: Optional[str] = None,
+                 status3xx_failure: Optional[bool] = None,
+                 status4xx_failure: Optional[bool] = None,
+                 status5xx_failure: Optional[bool] = None,
+                 timeout: Optional[float] = None):
+        """
+        :param str path: The path to the test object used for liveness testing. The function of the test object is to help determine whether the data center is functioning.
+        :param int port: The port for the test object. The default port is 80, which is standard for HTTP. Enter 443 if you are using HTTPS.
+        :param str protocol: The protocol or scheme for the database, either `HTTP` or `HTTPS`.
+        :param Mapping[str, str] additional_headers: Maps additional case-insensitive HTTP header names included to the liveness testing requests.
+        :param str host_header: The Host header for the liveness HTTP request.
+        :param int interval: The frequency of liveness tests. Defaults to 60 seconds, minimum is 10 seconds.
+        :param bool peer_certificate_verification: Whether to validate the origin certificate for an HTTPS request.
+        :param str request_string: The request used for TCP and TCPS tests.
+        :param str response_string: The response used for TCP and TCPS tests.
+        :param bool status3xx_failure: If set to `true`, marks the liveness test as failed when the request returns a 3xx (redirection) status code.
+        :param bool status4xx_failure: If set to `true`, marks the liveness test as failed when the request returns a 4xx (client error) status code.
+        :param bool status5xx_failure: If set to `true`, marks the liveness test as failed when the request returns a 5xx (server error) status code.
+        :param float timeout: The number of seconds the system waits before failing the liveness test.
+        """
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        if additional_headers is not None:
+            pulumi.set(__self__, "additional_headers", additional_headers)
+        if host_header is not None:
+            pulumi.set(__self__, "host_header", host_header)
+        if interval is not None:
+            pulumi.set(__self__, "interval", interval)
+        if peer_certificate_verification is not None:
+            pulumi.set(__self__, "peer_certificate_verification", peer_certificate_verification)
+        if request_string is not None:
+            pulumi.set(__self__, "request_string", request_string)
+        if response_string is not None:
+            pulumi.set(__self__, "response_string", response_string)
+        if status3xx_failure is not None:
+            pulumi.set(__self__, "status3xx_failure", status3xx_failure)
+        if status4xx_failure is not None:
+            pulumi.set(__self__, "status4xx_failure", status4xx_failure)
+        if status5xx_failure is not None:
+            pulumi.set(__self__, "status5xx_failure", status5xx_failure)
+        if timeout is not None:
+            pulumi.set(__self__, "timeout", timeout)
+
+    @property
+    @pulumi.getter
+    def path(self) -> str:
+        """
+        The path to the test object used for liveness testing. The function of the test object is to help determine whether the data center is functioning.
+        """
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter
+    def port(self) -> int:
+        """
+        The port for the test object. The default port is 80, which is standard for HTTP. Enter 443 if you are using HTTPS.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> str:
+        """
+        The protocol or scheme for the database, either `HTTP` or `HTTPS`.
+        """
+        return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter(name="additionalHeaders")
+    def additional_headers(self) -> Optional[Mapping[str, str]]:
+        """
+        Maps additional case-insensitive HTTP header names included to the liveness testing requests.
+        """
+        return pulumi.get(self, "additional_headers")
+
+    @property
+    @pulumi.getter(name="hostHeader")
+    def host_header(self) -> Optional[str]:
+        """
+        The Host header for the liveness HTTP request.
+        """
+        return pulumi.get(self, "host_header")
+
+    @property
+    @pulumi.getter
+    def interval(self) -> Optional[int]:
+        """
+        The frequency of liveness tests. Defaults to 60 seconds, minimum is 10 seconds.
+        """
+        return pulumi.get(self, "interval")
+
+    @property
+    @pulumi.getter(name="peerCertificateVerification")
+    def peer_certificate_verification(self) -> Optional[bool]:
+        """
+        Whether to validate the origin certificate for an HTTPS request.
+        """
+        return pulumi.get(self, "peer_certificate_verification")
+
+    @property
+    @pulumi.getter(name="requestString")
+    def request_string(self) -> Optional[str]:
+        """
+        The request used for TCP and TCPS tests.
+        """
+        return pulumi.get(self, "request_string")
+
+    @property
+    @pulumi.getter(name="responseString")
+    def response_string(self) -> Optional[str]:
+        """
+        The response used for TCP and TCPS tests.
+        """
+        return pulumi.get(self, "response_string")
+
+    @property
+    @pulumi.getter(name="status3xxFailure")
+    def status3xx_failure(self) -> Optional[bool]:
+        """
+        If set to `true`, marks the liveness test as failed when the request returns a 3xx (redirection) status code.
+        """
+        return pulumi.get(self, "status3xx_failure")
+
+    @property
+    @pulumi.getter(name="status4xxFailure")
+    def status4xx_failure(self) -> Optional[bool]:
+        """
+        If set to `true`, marks the liveness test as failed when the request returns a 4xx (client error) status code.
+        """
+        return pulumi.get(self, "status4xx_failure")
+
+    @property
+    @pulumi.getter(name="status5xxFailure")
+    def status5xx_failure(self) -> Optional[bool]:
+        """
+        If set to `true`, marks the liveness test as failed when the request returns a 5xx (server error) status code.
+        """
+        return pulumi.get(self, "status5xx_failure")
+
+    @property
+    @pulumi.getter
+    def timeout(self) -> Optional[float]:
+        """
+        The number of seconds the system waits before failing the liveness test.
+        """
+        return pulumi.get(self, "timeout")
+
 
 @pulumi.output_type
 class CpsDvEnrollmentAdminContact(dict):
@@ -556,7 +970,7 @@ class CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication(dict):
         """
         :param bool ocsp_enabled: Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
         :param bool send_ca_list_to_client: Whether you want to enable the server to send the certificate authority (CA) list to the client.
-        :param str set_id: The identifier of the set of trust chains, created in the [Trust Chain Manager](https://developer.akamai.com/api/web_performance/trust_chain_manager/v1.html).
+        :param str set_id: The identifier of the set of trust chains, created in [Trust Chain Manager](https://techdocs.akamai.com/trust-chain-mgr/docs/welcome-trust-chain-manager).
         """
         if ocsp_enabled is not None:
             pulumi.set(__self__, "ocsp_enabled", ocsp_enabled)
@@ -585,7 +999,7 @@ class CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication(dict):
     @pulumi.getter(name="setId")
     def set_id(self) -> Optional[str]:
         """
-        The identifier of the set of trust chains, created in the [Trust Chain Manager](https://developer.akamai.com/api/web_performance/trust_chain_manager/v1.html).
+        The identifier of the set of trust chains, created in [Trust Chain Manager](https://techdocs.akamai.com/trust-chain-mgr/docs/welcome-trust-chain-manager).
         """
         return pulumi.get(self, "set_id")
 
@@ -878,6 +1292,998 @@ class CpsDvEnrollmentTechContact(dict):
 
 
 @pulumi.output_type
+class DatastreamAzureConnector(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "accessKey":
+            suggest = "access_key"
+        elif key == "accountName":
+            suggest = "account_name"
+        elif key == "connectorName":
+            suggest = "connector_name"
+        elif key == "containerName":
+            suggest = "container_name"
+        elif key == "compressLogs":
+            suggest = "compress_logs"
+        elif key == "connectorId":
+            suggest = "connector_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatastreamAzureConnector. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatastreamAzureConnector.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatastreamAzureConnector.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 access_key: str,
+                 account_name: str,
+                 connector_name: str,
+                 container_name: str,
+                 path: str,
+                 compress_logs: Optional[bool] = None,
+                 connector_id: Optional[int] = None):
+        """
+        :param str access_key: **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
+        :param str account_name: - (Required) Specifies the Azure Storage account name.
+        :param str connector_name: The name of the connector.
+        :param str container_name: - (Required) Specifies the Azure Storage container name.
+        :param str path: The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
+        :param bool compress_logs: Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+        """
+        pulumi.set(__self__, "access_key", access_key)
+        pulumi.set(__self__, "account_name", account_name)
+        pulumi.set(__self__, "connector_name", connector_name)
+        pulumi.set(__self__, "container_name", container_name)
+        pulumi.set(__self__, "path", path)
+        if compress_logs is not None:
+            pulumi.set(__self__, "compress_logs", compress_logs)
+        if connector_id is not None:
+            pulumi.set(__self__, "connector_id", connector_id)
+
+    @property
+    @pulumi.getter(name="accessKey")
+    def access_key(self) -> str:
+        """
+        **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
+        """
+        return pulumi.get(self, "access_key")
+
+    @property
+    @pulumi.getter(name="accountName")
+    def account_name(self) -> str:
+        """
+        - (Required) Specifies the Azure Storage account name.
+        """
+        return pulumi.get(self, "account_name")
+
+    @property
+    @pulumi.getter(name="connectorName")
+    def connector_name(self) -> str:
+        """
+        The name of the connector.
+        """
+        return pulumi.get(self, "connector_name")
+
+    @property
+    @pulumi.getter(name="containerName")
+    def container_name(self) -> str:
+        """
+        - (Required) Specifies the Azure Storage container name.
+        """
+        return pulumi.get(self, "container_name")
+
+    @property
+    @pulumi.getter
+    def path(self) -> str:
+        """
+        The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
+        """
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter(name="compressLogs")
+    def compress_logs(self) -> Optional[bool]:
+        """
+        Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+        """
+        return pulumi.get(self, "compress_logs")
+
+    @property
+    @pulumi.getter(name="connectorId")
+    def connector_id(self) -> Optional[int]:
+        return pulumi.get(self, "connector_id")
+
+
+@pulumi.output_type
+class DatastreamConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "uploadFilePrefix":
+            suggest = "upload_file_prefix"
+        elif key == "uploadFileSuffix":
+            suggest = "upload_file_suffix"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatastreamConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatastreamConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatastreamConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 format: str,
+                 frequency: 'outputs.DatastreamConfigFrequency',
+                 delimiter: Optional[str] = None,
+                 upload_file_prefix: Optional[str] = None,
+                 upload_file_suffix: Optional[str] = None):
+        """
+        :param str format: - (Required) The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
+        :param 'DatastreamConfigFrequencyArgs' frequency: - (Required) How often you want to collect logs from each uploader and send them to a destination.
+        :param str delimiter: A delimiter that you want to use to separate data set fields in the log lines. Currently, `SPACE` is the only available delimiter. This field is required for the `STRUCTURED` log file `format`.
+        :param str upload_file_prefix: - (Optional) The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
+        :param str upload_file_suffix: The suffix of the log file that you want to send to a destination. It’s a static string of at most 10 characters. If unspecified, defaults to `ds`.
+        """
+        pulumi.set(__self__, "format", format)
+        pulumi.set(__self__, "frequency", frequency)
+        if delimiter is not None:
+            pulumi.set(__self__, "delimiter", delimiter)
+        if upload_file_prefix is not None:
+            pulumi.set(__self__, "upload_file_prefix", upload_file_prefix)
+        if upload_file_suffix is not None:
+            pulumi.set(__self__, "upload_file_suffix", upload_file_suffix)
+
+    @property
+    @pulumi.getter
+    def format(self) -> str:
+        """
+        - (Required) The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
+        """
+        return pulumi.get(self, "format")
+
+    @property
+    @pulumi.getter
+    def frequency(self) -> 'outputs.DatastreamConfigFrequency':
+        """
+        - (Required) How often you want to collect logs from each uploader and send them to a destination.
+        """
+        return pulumi.get(self, "frequency")
+
+    @property
+    @pulumi.getter
+    def delimiter(self) -> Optional[str]:
+        """
+        A delimiter that you want to use to separate data set fields in the log lines. Currently, `SPACE` is the only available delimiter. This field is required for the `STRUCTURED` log file `format`.
+        """
+        return pulumi.get(self, "delimiter")
+
+    @property
+    @pulumi.getter(name="uploadFilePrefix")
+    def upload_file_prefix(self) -> Optional[str]:
+        """
+        - (Optional) The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
+        """
+        return pulumi.get(self, "upload_file_prefix")
+
+    @property
+    @pulumi.getter(name="uploadFileSuffix")
+    def upload_file_suffix(self) -> Optional[str]:
+        """
+        The suffix of the log file that you want to send to a destination. It’s a static string of at most 10 characters. If unspecified, defaults to `ds`.
+        """
+        return pulumi.get(self, "upload_file_suffix")
+
+
+@pulumi.output_type
+class DatastreamConfigFrequency(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "timeInSec":
+            suggest = "time_in_sec"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatastreamConfigFrequency. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatastreamConfigFrequency.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatastreamConfigFrequency.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 time_in_sec: int):
+        """
+        :param int time_in_sec: - (Required) The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
+        """
+        pulumi.set(__self__, "time_in_sec", time_in_sec)
+
+    @property
+    @pulumi.getter(name="timeInSec")
+    def time_in_sec(self) -> int:
+        """
+        - (Required) The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
+        """
+        return pulumi.get(self, "time_in_sec")
+
+
+@pulumi.output_type
+class DatastreamDatadogConnector(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "authToken":
+            suggest = "auth_token"
+        elif key == "connectorName":
+            suggest = "connector_name"
+        elif key == "compressLogs":
+            suggest = "compress_logs"
+        elif key == "connectorId":
+            suggest = "connector_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatastreamDatadogConnector. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatastreamDatadogConnector.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatastreamDatadogConnector.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 auth_token: str,
+                 connector_name: str,
+                 url: str,
+                 compress_logs: Optional[bool] = None,
+                 connector_id: Optional[int] = None,
+                 service: Optional[str] = None,
+                 source: Optional[str] = None,
+                 tags: Optional[str] = None):
+        """
+        :param str auth_token: - (Required) **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
+               * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
+        :param str connector_name: The name of the connector.
+        :param str url: Enter the secure URL where you want to send and store your logs.
+        :param bool compress_logs: Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+        :param str service: The service of the Datadog connector. A service groups together endpoints, queries, or jobs for the purposes of scaling instances. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_configuration/attributes_naming_convention/#reserved-attributes).
+        :param str source: The source of the Datadog connector. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_collection/?tab=http#reserved-attributes).
+        :param str tags: The tags of the Datadog connector. See [View Datadog tags](https://docs.datadoghq.com/getting_started/tagging/).
+        """
+        pulumi.set(__self__, "auth_token", auth_token)
+        pulumi.set(__self__, "connector_name", connector_name)
+        pulumi.set(__self__, "url", url)
+        if compress_logs is not None:
+            pulumi.set(__self__, "compress_logs", compress_logs)
+        if connector_id is not None:
+            pulumi.set(__self__, "connector_id", connector_id)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+
+    @property
+    @pulumi.getter(name="authToken")
+    def auth_token(self) -> str:
+        """
+        - (Required) **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
+        * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
+        """
+        return pulumi.get(self, "auth_token")
+
+    @property
+    @pulumi.getter(name="connectorName")
+    def connector_name(self) -> str:
+        """
+        The name of the connector.
+        """
+        return pulumi.get(self, "connector_name")
+
+    @property
+    @pulumi.getter
+    def url(self) -> str:
+        """
+        Enter the secure URL where you want to send and store your logs.
+        """
+        return pulumi.get(self, "url")
+
+    @property
+    @pulumi.getter(name="compressLogs")
+    def compress_logs(self) -> Optional[bool]:
+        """
+        Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+        """
+        return pulumi.get(self, "compress_logs")
+
+    @property
+    @pulumi.getter(name="connectorId")
+    def connector_id(self) -> Optional[int]:
+        return pulumi.get(self, "connector_id")
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[str]:
+        """
+        The service of the Datadog connector. A service groups together endpoints, queries, or jobs for the purposes of scaling instances. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_configuration/attributes_naming_convention/#reserved-attributes).
+        """
+        return pulumi.get(self, "service")
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[str]:
+        """
+        The source of the Datadog connector. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_collection/?tab=http#reserved-attributes).
+        """
+        return pulumi.get(self, "source")
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Optional[str]:
+        """
+        The tags of the Datadog connector. See [View Datadog tags](https://docs.datadoghq.com/getting_started/tagging/).
+        """
+        return pulumi.get(self, "tags")
+
+
+@pulumi.output_type
+class DatastreamGcsConnector(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectorName":
+            suggest = "connector_name"
+        elif key == "privateKey":
+            suggest = "private_key"
+        elif key == "projectId":
+            suggest = "project_id"
+        elif key == "serviceAccountName":
+            suggest = "service_account_name"
+        elif key == "compressLogs":
+            suggest = "compress_logs"
+        elif key == "connectorId":
+            suggest = "connector_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatastreamGcsConnector. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatastreamGcsConnector.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatastreamGcsConnector.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bucket: str,
+                 connector_name: str,
+                 private_key: str,
+                 project_id: str,
+                 service_account_name: str,
+                 compress_logs: Optional[bool] = None,
+                 connector_id: Optional[int] = None,
+                 path: Optional[str] = None):
+        """
+        :param str bucket: The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
+        :param str connector_name: The name of the connector.
+        :param str private_key: - (Required) **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
+        :param str project_id: - (Required) The unique ID of your Google Cloud project.
+        :param str service_account_name: - (Required)	The name of the service account with the storage.object.create permission or Storage Object Creator role.
+        :param bool compress_logs: Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+        :param str path: The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "connector_name", connector_name)
+        pulumi.set(__self__, "private_key", private_key)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "service_account_name", service_account_name)
+        if compress_logs is not None:
+            pulumi.set(__self__, "compress_logs", compress_logs)
+        if connector_id is not None:
+            pulumi.set(__self__, "connector_id", connector_id)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="connectorName")
+    def connector_name(self) -> str:
+        """
+        The name of the connector.
+        """
+        return pulumi.get(self, "connector_name")
+
+    @property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> str:
+        """
+        - (Required) **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
+        """
+        return pulumi.get(self, "private_key")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> str:
+        """
+        - (Required) The unique ID of your Google Cloud project.
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter(name="serviceAccountName")
+    def service_account_name(self) -> str:
+        """
+        - (Required)	The name of the service account with the storage.object.create permission or Storage Object Creator role.
+        """
+        return pulumi.get(self, "service_account_name")
+
+    @property
+    @pulumi.getter(name="compressLogs")
+    def compress_logs(self) -> Optional[bool]:
+        """
+        Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+        """
+        return pulumi.get(self, "compress_logs")
+
+    @property
+    @pulumi.getter(name="connectorId")
+    def connector_id(self) -> Optional[int]:
+        return pulumi.get(self, "connector_id")
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[str]:
+        """
+        The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
+        """
+        return pulumi.get(self, "path")
+
+
+@pulumi.output_type
+class DatastreamHttpsConnector(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "authenticationType":
+            suggest = "authentication_type"
+        elif key == "connectorName":
+            suggest = "connector_name"
+        elif key == "compressLogs":
+            suggest = "compress_logs"
+        elif key == "connectorId":
+            suggest = "connector_id"
+        elif key == "userName":
+            suggest = "user_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatastreamHttpsConnector. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatastreamHttpsConnector.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatastreamHttpsConnector.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 authentication_type: str,
+                 connector_name: str,
+                 url: str,
+                 compress_logs: Optional[bool] = None,
+                 connector_id: Optional[int] = None,
+                 password: Optional[str] = None,
+                 user_name: Optional[str] = None):
+        """
+        :param str authentication_type: Either `NONE` for no authentication, or `BASIC`. For basic authentication, provide the `user_name` and `password` you set in your custom HTTPS endpoint.
+        :param str connector_name: The name of the connector.
+        :param str url: Enter the secure URL where you want to send and store your logs.
+        :param bool compress_logs: Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+        :param str password: **Secret**. Enter the password you set in your custom HTTPS endpoint for authentication.
+        :param str user_name: **Secret**. Enter the valid username you set in your custom HTTPS endpoint for authentication.
+        """
+        pulumi.set(__self__, "authentication_type", authentication_type)
+        pulumi.set(__self__, "connector_name", connector_name)
+        pulumi.set(__self__, "url", url)
+        if compress_logs is not None:
+            pulumi.set(__self__, "compress_logs", compress_logs)
+        if connector_id is not None:
+            pulumi.set(__self__, "connector_id", connector_id)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="authenticationType")
+    def authentication_type(self) -> str:
+        """
+        Either `NONE` for no authentication, or `BASIC`. For basic authentication, provide the `user_name` and `password` you set in your custom HTTPS endpoint.
+        """
+        return pulumi.get(self, "authentication_type")
+
+    @property
+    @pulumi.getter(name="connectorName")
+    def connector_name(self) -> str:
+        """
+        The name of the connector.
+        """
+        return pulumi.get(self, "connector_name")
+
+    @property
+    @pulumi.getter
+    def url(self) -> str:
+        """
+        Enter the secure URL where you want to send and store your logs.
+        """
+        return pulumi.get(self, "url")
+
+    @property
+    @pulumi.getter(name="compressLogs")
+    def compress_logs(self) -> Optional[bool]:
+        """
+        Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+        """
+        return pulumi.get(self, "compress_logs")
+
+    @property
+    @pulumi.getter(name="connectorId")
+    def connector_id(self) -> Optional[int]:
+        return pulumi.get(self, "connector_id")
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[str]:
+        """
+        **Secret**. Enter the password you set in your custom HTTPS endpoint for authentication.
+        """
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[str]:
+        """
+        **Secret**. Enter the valid username you set in your custom HTTPS endpoint for authentication.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class DatastreamOracleConnector(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "accessKey":
+            suggest = "access_key"
+        elif key == "connectorName":
+            suggest = "connector_name"
+        elif key == "secretAccessKey":
+            suggest = "secret_access_key"
+        elif key == "compressLogs":
+            suggest = "compress_logs"
+        elif key == "connectorId":
+            suggest = "connector_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatastreamOracleConnector. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatastreamOracleConnector.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatastreamOracleConnector.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 access_key: str,
+                 bucket: str,
+                 connector_name: str,
+                 namespace: str,
+                 path: str,
+                 region: str,
+                 secret_access_key: str,
+                 compress_logs: Optional[bool] = None,
+                 connector_id: Optional[int] = None):
+        """
+        :param str access_key: **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
+        :param str bucket: The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
+        :param str connector_name: The name of the connector.
+        :param str namespace: The namespace of your Oracle Cloud Storage account. See [Understanding Object Storage namespaces](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/understandingnamespaces.htm).
+        :param str path: The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
+        :param str region: The Oracle Cloud Storage region where your bucket resides. See [Regions and availability domains in OCS](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        :param str secret_access_key: **Secret**. The secret access key identifier that you use to authenticate requests to your Oracle Cloud account.
+        :param bool compress_logs: Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+        """
+        pulumi.set(__self__, "access_key", access_key)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "connector_name", connector_name)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "secret_access_key", secret_access_key)
+        if compress_logs is not None:
+            pulumi.set(__self__, "compress_logs", compress_logs)
+        if connector_id is not None:
+            pulumi.set(__self__, "connector_id", connector_id)
+
+    @property
+    @pulumi.getter(name="accessKey")
+    def access_key(self) -> str:
+        """
+        **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
+        """
+        return pulumi.get(self, "access_key")
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="connectorName")
+    def connector_name(self) -> str:
+        """
+        The name of the connector.
+        """
+        return pulumi.get(self, "connector_name")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The namespace of your Oracle Cloud Storage account. See [Understanding Object Storage namespaces](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/understandingnamespaces.htm).
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def path(self) -> str:
+        """
+        The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
+        """
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        The Oracle Cloud Storage region where your bucket resides. See [Regions and availability domains in OCS](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="secretAccessKey")
+    def secret_access_key(self) -> str:
+        """
+        **Secret**. The secret access key identifier that you use to authenticate requests to your Oracle Cloud account.
+        """
+        return pulumi.get(self, "secret_access_key")
+
+    @property
+    @pulumi.getter(name="compressLogs")
+    def compress_logs(self) -> Optional[bool]:
+        """
+        Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+        """
+        return pulumi.get(self, "compress_logs")
+
+    @property
+    @pulumi.getter(name="connectorId")
+    def connector_id(self) -> Optional[int]:
+        return pulumi.get(self, "connector_id")
+
+
+@pulumi.output_type
+class DatastreamS3Connector(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "accessKey":
+            suggest = "access_key"
+        elif key == "connectorName":
+            suggest = "connector_name"
+        elif key == "secretAccessKey":
+            suggest = "secret_access_key"
+        elif key == "compressLogs":
+            suggest = "compress_logs"
+        elif key == "connectorId":
+            suggest = "connector_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatastreamS3Connector. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatastreamS3Connector.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatastreamS3Connector.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 access_key: str,
+                 bucket: str,
+                 connector_name: str,
+                 path: str,
+                 region: str,
+                 secret_access_key: str,
+                 compress_logs: Optional[bool] = None,
+                 connector_id: Optional[int] = None):
+        """
+        :param str access_key: **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
+        :param str bucket: The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
+        :param str connector_name: The name of the connector.
+        :param str path: The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
+        :param str region: The Oracle Cloud Storage region where your bucket resides. See [Regions and availability domains in OCS](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        :param str secret_access_key: **Secret**. The secret access key identifier that you use to authenticate requests to your Oracle Cloud account.
+        :param bool compress_logs: Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+        """
+        pulumi.set(__self__, "access_key", access_key)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "connector_name", connector_name)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "secret_access_key", secret_access_key)
+        if compress_logs is not None:
+            pulumi.set(__self__, "compress_logs", compress_logs)
+        if connector_id is not None:
+            pulumi.set(__self__, "connector_id", connector_id)
+
+    @property
+    @pulumi.getter(name="accessKey")
+    def access_key(self) -> str:
+        """
+        **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
+        """
+        return pulumi.get(self, "access_key")
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="connectorName")
+    def connector_name(self) -> str:
+        """
+        The name of the connector.
+        """
+        return pulumi.get(self, "connector_name")
+
+    @property
+    @pulumi.getter
+    def path(self) -> str:
+        """
+        The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
+        """
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        The Oracle Cloud Storage region where your bucket resides. See [Regions and availability domains in OCS](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="secretAccessKey")
+    def secret_access_key(self) -> str:
+        """
+        **Secret**. The secret access key identifier that you use to authenticate requests to your Oracle Cloud account.
+        """
+        return pulumi.get(self, "secret_access_key")
+
+    @property
+    @pulumi.getter(name="compressLogs")
+    def compress_logs(self) -> Optional[bool]:
+        """
+        Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+        """
+        return pulumi.get(self, "compress_logs")
+
+    @property
+    @pulumi.getter(name="connectorId")
+    def connector_id(self) -> Optional[int]:
+        return pulumi.get(self, "connector_id")
+
+
+@pulumi.output_type
+class DatastreamSplunkConnector(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectorName":
+            suggest = "connector_name"
+        elif key == "eventCollectorToken":
+            suggest = "event_collector_token"
+        elif key == "compressLogs":
+            suggest = "compress_logs"
+        elif key == "connectorId":
+            suggest = "connector_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatastreamSplunkConnector. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatastreamSplunkConnector.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatastreamSplunkConnector.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connector_name: str,
+                 event_collector_token: str,
+                 url: str,
+                 compress_logs: Optional[bool] = None,
+                 connector_id: Optional[int] = None):
+        """
+        :param str connector_name: The name of the connector.
+        :param str event_collector_token: - (Required) **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
+        :param str url: Enter the secure URL where you want to send and store your logs.
+        :param bool compress_logs: Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+        """
+        pulumi.set(__self__, "connector_name", connector_name)
+        pulumi.set(__self__, "event_collector_token", event_collector_token)
+        pulumi.set(__self__, "url", url)
+        if compress_logs is not None:
+            pulumi.set(__self__, "compress_logs", compress_logs)
+        if connector_id is not None:
+            pulumi.set(__self__, "connector_id", connector_id)
+
+    @property
+    @pulumi.getter(name="connectorName")
+    def connector_name(self) -> str:
+        """
+        The name of the connector.
+        """
+        return pulumi.get(self, "connector_name")
+
+    @property
+    @pulumi.getter(name="eventCollectorToken")
+    def event_collector_token(self) -> str:
+        """
+        - (Required) **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
+        """
+        return pulumi.get(self, "event_collector_token")
+
+    @property
+    @pulumi.getter
+    def url(self) -> str:
+        """
+        Enter the secure URL where you want to send and store your logs.
+        """
+        return pulumi.get(self, "url")
+
+    @property
+    @pulumi.getter(name="compressLogs")
+    def compress_logs(self) -> Optional[bool]:
+        """
+        Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+        """
+        return pulumi.get(self, "compress_logs")
+
+    @property
+    @pulumi.getter(name="connectorId")
+    def connector_id(self) -> Optional[int]:
+        return pulumi.get(self, "connector_id")
+
+
+@pulumi.output_type
+class DatastreamSumologicConnector(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "collectorCode":
+            suggest = "collector_code"
+        elif key == "connectorName":
+            suggest = "connector_name"
+        elif key == "compressLogs":
+            suggest = "compress_logs"
+        elif key == "connectorId":
+            suggest = "connector_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatastreamSumologicConnector. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatastreamSumologicConnector.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatastreamSumologicConnector.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 collector_code: str,
+                 connector_name: str,
+                 endpoint: str,
+                 compress_logs: Optional[bool] = None,
+                 connector_id: Optional[int] = None):
+        """
+        :param str collector_code: **Secret**. The unique HTTP collector code of your Sumo Logic `endpoint`.
+        :param str connector_name: The name of the connector.
+        :param str endpoint: The Sumo Logic collection endpoint where you want to send your logs. You should follow the `https://<SumoEndpoint>/receiver/v1/http` format and pass the collector code in the `collectorCode` argument.
+        :param bool compress_logs: Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+        """
+        pulumi.set(__self__, "collector_code", collector_code)
+        pulumi.set(__self__, "connector_name", connector_name)
+        pulumi.set(__self__, "endpoint", endpoint)
+        if compress_logs is not None:
+            pulumi.set(__self__, "compress_logs", compress_logs)
+        if connector_id is not None:
+            pulumi.set(__self__, "connector_id", connector_id)
+
+    @property
+    @pulumi.getter(name="collectorCode")
+    def collector_code(self) -> str:
+        """
+        **Secret**. The unique HTTP collector code of your Sumo Logic `endpoint`.
+        """
+        return pulumi.get(self, "collector_code")
+
+    @property
+    @pulumi.getter(name="connectorName")
+    def connector_name(self) -> str:
+        """
+        The name of the connector.
+        """
+        return pulumi.get(self, "connector_name")
+
+    @property
+    @pulumi.getter
+    def endpoint(self) -> str:
+        """
+        The Sumo Logic collection endpoint where you want to send your logs. You should follow the `https://<SumoEndpoint>/receiver/v1/http` format and pass the collector code in the `collectorCode` argument.
+        """
+        return pulumi.get(self, "endpoint")
+
+    @property
+    @pulumi.getter(name="compressLogs")
+    def compress_logs(self) -> Optional[bool]:
+        """
+        Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+        """
+        return pulumi.get(self, "compress_logs")
+
+    @property
+    @pulumi.getter(name="connectorId")
+    def connector_id(self) -> Optional[int]:
+        return pulumi.get(self, "connector_id")
+
+
+@pulumi.output_type
 class DnsZoneTsigKey(dict):
     def __init__(__self__, *,
                  algorithm: str,
@@ -915,6 +2321,33 @@ class DnsZoneTsigKey(dict):
         String known between transfer endpoints.
         """
         return pulumi.get(self, "secret")
+
+
+@pulumi.output_type
+class EdgeKvInitialData(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 value: str,
+                 group: Optional[str] = None):
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+        if group is not None:
+            pulumi.set(__self__, "group", group)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter
+    def group(self) -> Optional[str]:
+        return pulumi.get(self, "group")
 
 
 @pulumi.output_type
@@ -2514,6 +3947,2818 @@ class PropertyVariablesVariableVariable(dict):
 
 
 @pulumi.output_type
+class GetCloudletsApiPrioritizationMatchRuleMatchRuleResult(dict):
+    def __init__(__self__, *,
+                 pass_through_percent: float,
+                 type: str,
+                 disabled: Optional[bool] = None,
+                 end: Optional[int] = None,
+                 match_url: Optional[str] = None,
+                 matches: Optional[Sequence['outputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchResult']] = None,
+                 name: Optional[str] = None,
+                 start: Optional[int] = None):
+        """
+        :param str type: - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        :param bool disabled: - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+        :param int end: - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+        :param str match_url: - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+               * `pass_through_percent`- (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin.
+        :param Sequence['GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs'] matches: - (Optional) A list of conditions to apply to a Cloudlet, including:
+        :param str name: - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        :param int start: - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        pulumi.set(__self__, "pass_through_percent", pass_through_percent)
+        pulumi.set(__self__, "type", type)
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if end is not None:
+            pulumi.set(__self__, "end", end)
+        if match_url is not None:
+            pulumi.set(__self__, "match_url", match_url)
+        if matches is not None:
+            pulumi.set(__self__, "matches", matches)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if start is not None:
+            pulumi.set(__self__, "start", start)
+
+    @property
+    @pulumi.getter(name="passThroughPercent")
+    def pass_through_percent(self) -> float:
+        return pulumi.get(self, "pass_through_percent")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> Optional[bool]:
+        """
+        - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+        """
+        return pulumi.get(self, "disabled")
+
+    @property
+    @pulumi.getter
+    def end(self) -> Optional[int]:
+        """
+        - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        return pulumi.get(self, "end")
+
+    @property
+    @pulumi.getter(name="matchUrl")
+    def match_url(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+        * `pass_through_percent`- (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin.
+        """
+        return pulumi.get(self, "match_url")
+
+    @property
+    @pulumi.getter
+    def matches(self) -> Optional[Sequence['outputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchResult']]:
+        """
+        - (Optional) A list of conditions to apply to a Cloudlet, including:
+        """
+        return pulumi.get(self, "matches")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def start(self) -> Optional[int]:
+        """
+        - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        return pulumi.get(self, "start")
+
+
+@pulumi.output_type
+class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchResult(dict):
+    def __init__(__self__, *,
+                 case_sensitive: Optional[bool] = None,
+                 check_ips: Optional[str] = None,
+                 match_operator: Optional[str] = None,
+                 match_type: Optional[str] = None,
+                 match_value: Optional[str] = None,
+                 negate: Optional[bool] = None,
+                 object_match_values: Optional[Sequence['outputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueResult']] = None):
+        """
+        :param bool case_sensitive: - (Optional) Whether the match is case sensitive.
+        :param str check_ips: - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+        :param str match_operator: - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+        :param str match_type: - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+        :param str match_value: - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+        :param bool negate: - (Optional) Whether to negate the match.
+        :param Sequence['GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs'] object_match_values: - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+        """
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if check_ips is not None:
+            pulumi.set(__self__, "check_ips", check_ips)
+        if match_operator is not None:
+            pulumi.set(__self__, "match_operator", match_operator)
+        if match_type is not None:
+            pulumi.set(__self__, "match_type", match_type)
+        if match_value is not None:
+            pulumi.set(__self__, "match_value", match_value)
+        if negate is not None:
+            pulumi.set(__self__, "negate", negate)
+        if object_match_values is not None:
+            pulumi.set(__self__, "object_match_values", object_match_values)
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the match is case sensitive.
+        """
+        return pulumi.get(self, "case_sensitive")
+
+    @property
+    @pulumi.getter(name="checkIps")
+    def check_ips(self) -> Optional[str]:
+        """
+        - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+        """
+        return pulumi.get(self, "check_ips")
+
+    @property
+    @pulumi.getter(name="matchOperator")
+    def match_operator(self) -> Optional[str]:
+        """
+        - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+        """
+        return pulumi.get(self, "match_operator")
+
+    @property
+    @pulumi.getter(name="matchType")
+    def match_type(self) -> Optional[str]:
+        """
+        - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+        """
+        return pulumi.get(self, "match_type")
+
+    @property
+    @pulumi.getter(name="matchValue")
+    def match_value(self) -> Optional[str]:
+        """
+        - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+        """
+        return pulumi.get(self, "match_value")
+
+    @property
+    @pulumi.getter
+    def negate(self) -> Optional[bool]:
+        """
+        - (Optional) Whether to negate the match.
+        """
+        return pulumi.get(self, "negate")
+
+    @property
+    @pulumi.getter(name="objectMatchValues")
+    def object_match_values(self) -> Optional[Sequence['outputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueResult']]:
+        """
+        - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+        """
+        return pulumi.get(self, "object_match_values")
+
+
+@pulumi.output_type
+class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueResult(dict):
+    def __init__(__self__, *,
+                 type: str,
+                 name: Optional[str] = None,
+                 name_case_sensitive: Optional[bool] = None,
+                 name_has_wildcard: Optional[bool] = None,
+                 options: Optional['outputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsResult'] = None,
+                 values: Optional[Sequence[str]] = None):
+        """
+        :param str type: - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        :param str name: - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        :param bool name_case_sensitive: - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+        :param bool name_has_wildcard: - (Optional) Whether the `name` argument includes wildcards.
+        :param 'GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs' options: - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+        :param Sequence[str] values: - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        pulumi.set(__self__, "type", type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if name_case_sensitive is not None:
+            pulumi.set(__self__, "name_case_sensitive", name_case_sensitive)
+        if name_has_wildcard is not None:
+            pulumi.set(__self__, "name_has_wildcard", name_has_wildcard)
+        if options is not None:
+            pulumi.set(__self__, "options", options)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="nameCaseSensitive")
+    def name_case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+        """
+        return pulumi.get(self, "name_case_sensitive")
+
+    @property
+    @pulumi.getter(name="nameHasWildcard")
+    def name_has_wildcard(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `name` argument includes wildcards.
+        """
+        return pulumi.get(self, "name_has_wildcard")
+
+    @property
+    @pulumi.getter
+    def options(self) -> Optional['outputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsResult']:
+        """
+        - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+        """
+        return pulumi.get(self, "options")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[str]]:
+        """
+        - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsResult(dict):
+    def __init__(__self__, *,
+                 value_case_sensitive: Optional[bool] = None,
+                 value_escaped: Optional[bool] = None,
+                 value_has_wildcard: Optional[bool] = None,
+                 values: Optional[Sequence[str]] = None):
+        """
+        :param bool value_case_sensitive: - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+        :param bool value_escaped: - (Optional) Whether the `value` argument should be compared in an escaped form.
+        :param bool value_has_wildcard: - (Optional) Whether the `value` argument includes wildcards.
+        :param Sequence[str] values: - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        if value_case_sensitive is not None:
+            pulumi.set(__self__, "value_case_sensitive", value_case_sensitive)
+        if value_escaped is not None:
+            pulumi.set(__self__, "value_escaped", value_escaped)
+        if value_has_wildcard is not None:
+            pulumi.set(__self__, "value_has_wildcard", value_has_wildcard)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter(name="valueCaseSensitive")
+    def value_case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+        """
+        return pulumi.get(self, "value_case_sensitive")
+
+    @property
+    @pulumi.getter(name="valueEscaped")
+    def value_escaped(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument should be compared in an escaped form.
+        """
+        return pulumi.get(self, "value_escaped")
+
+    @property
+    @pulumi.getter(name="valueHasWildcard")
+    def value_has_wildcard(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument includes wildcards.
+        """
+        return pulumi.get(self, "value_has_wildcard")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[str]]:
+        """
+        - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetCloudletsApplicationLoadBalancerDataCenterResult(dict):
+    def __init__(__self__, *,
+                 city: str,
+                 cloud_server_host_header_override: bool,
+                 cloud_service: bool,
+                 continent: str,
+                 country: str,
+                 hostname: str,
+                 latitude: float,
+                 liveness_hosts: Sequence[str],
+                 longitude: float,
+                 origin_id: str,
+                 percent: float,
+                 state_or_province: str):
+        """
+        :param str origin_id: - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
+        """
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "cloud_server_host_header_override", cloud_server_host_header_override)
+        pulumi.set(__self__, "cloud_service", cloud_service)
+        pulumi.set(__self__, "continent", continent)
+        pulumi.set(__self__, "country", country)
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "latitude", latitude)
+        pulumi.set(__self__, "liveness_hosts", liveness_hosts)
+        pulumi.set(__self__, "longitude", longitude)
+        pulumi.set(__self__, "origin_id", origin_id)
+        pulumi.set(__self__, "percent", percent)
+        pulumi.set(__self__, "state_or_province", state_or_province)
+
+    @property
+    @pulumi.getter
+    def city(self) -> str:
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter(name="cloudServerHostHeaderOverride")
+    def cloud_server_host_header_override(self) -> bool:
+        return pulumi.get(self, "cloud_server_host_header_override")
+
+    @property
+    @pulumi.getter(name="cloudService")
+    def cloud_service(self) -> bool:
+        return pulumi.get(self, "cloud_service")
+
+    @property
+    @pulumi.getter
+    def continent(self) -> str:
+        return pulumi.get(self, "continent")
+
+    @property
+    @pulumi.getter
+    def country(self) -> str:
+        return pulumi.get(self, "country")
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> str:
+        return pulumi.get(self, "hostname")
+
+    @property
+    @pulumi.getter
+    def latitude(self) -> float:
+        return pulumi.get(self, "latitude")
+
+    @property
+    @pulumi.getter(name="livenessHosts")
+    def liveness_hosts(self) -> Sequence[str]:
+        return pulumi.get(self, "liveness_hosts")
+
+    @property
+    @pulumi.getter
+    def longitude(self) -> float:
+        return pulumi.get(self, "longitude")
+
+    @property
+    @pulumi.getter(name="originId")
+    def origin_id(self) -> str:
+        """
+        - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
+        """
+        return pulumi.get(self, "origin_id")
+
+    @property
+    @pulumi.getter
+    def percent(self) -> float:
+        return pulumi.get(self, "percent")
+
+    @property
+    @pulumi.getter(name="stateOrProvince")
+    def state_or_province(self) -> str:
+        return pulumi.get(self, "state_or_province")
+
+
+@pulumi.output_type
+class GetCloudletsApplicationLoadBalancerLivenessSettingResult(dict):
+    def __init__(__self__, *,
+                 additional_headers: Mapping[str, str],
+                 host_header: str,
+                 interval: int,
+                 path: str,
+                 peer_certificate_verification: bool,
+                 port: int,
+                 protocol: str,
+                 request_string: str,
+                 response_string: str,
+                 status3xx_failure: bool,
+                 status4xx_failure: bool,
+                 status5xx_failure: bool,
+                 timeout: float):
+        pulumi.set(__self__, "additional_headers", additional_headers)
+        pulumi.set(__self__, "host_header", host_header)
+        pulumi.set(__self__, "interval", interval)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "peer_certificate_verification", peer_certificate_verification)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "request_string", request_string)
+        pulumi.set(__self__, "response_string", response_string)
+        pulumi.set(__self__, "status3xx_failure", status3xx_failure)
+        pulumi.set(__self__, "status4xx_failure", status4xx_failure)
+        pulumi.set(__self__, "status5xx_failure", status5xx_failure)
+        pulumi.set(__self__, "timeout", timeout)
+
+    @property
+    @pulumi.getter(name="additionalHeaders")
+    def additional_headers(self) -> Mapping[str, str]:
+        return pulumi.get(self, "additional_headers")
+
+    @property
+    @pulumi.getter(name="hostHeader")
+    def host_header(self) -> str:
+        return pulumi.get(self, "host_header")
+
+    @property
+    @pulumi.getter
+    def interval(self) -> int:
+        return pulumi.get(self, "interval")
+
+    @property
+    @pulumi.getter
+    def path(self) -> str:
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter(name="peerCertificateVerification")
+    def peer_certificate_verification(self) -> bool:
+        return pulumi.get(self, "peer_certificate_verification")
+
+    @property
+    @pulumi.getter
+    def port(self) -> int:
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> str:
+        return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter(name="requestString")
+    def request_string(self) -> str:
+        return pulumi.get(self, "request_string")
+
+    @property
+    @pulumi.getter(name="responseString")
+    def response_string(self) -> str:
+        return pulumi.get(self, "response_string")
+
+    @property
+    @pulumi.getter(name="status3xxFailure")
+    def status3xx_failure(self) -> bool:
+        return pulumi.get(self, "status3xx_failure")
+
+    @property
+    @pulumi.getter(name="status4xxFailure")
+    def status4xx_failure(self) -> bool:
+        return pulumi.get(self, "status4xx_failure")
+
+    @property
+    @pulumi.getter(name="status5xxFailure")
+    def status5xx_failure(self) -> bool:
+        return pulumi.get(self, "status5xx_failure")
+
+    @property
+    @pulumi.getter
+    def timeout(self) -> float:
+        return pulumi.get(self, "timeout")
+
+
+@pulumi.output_type
+class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleResult(dict):
+    def __init__(__self__, *,
+                 forward_settings: Sequence['outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingResult'],
+                 type: str,
+                 disabled: Optional[bool] = None,
+                 end: Optional[int] = None,
+                 id: Optional[int] = None,
+                 match_url: Optional[str] = None,
+                 matches: Optional[Sequence['outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchResult']] = None,
+                 matches_always: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 start: Optional[int] = None):
+        """
+        :param Sequence['GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs'] forward_settings: - (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
+        :param str type: - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
+        :param int end: - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+        :param int id: - (Optional) An identifier for Akamai internal use only.
+        :param str match_url: - (Optional) The URL that the Cloudlet uses to match the incoming request.
+        :param Sequence['GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs'] matches: - (Optional) A list of conditions to apply to a Cloudlet, including:
+        :param bool matches_always: - (Optional) Whether the match supports default rules that apply to all requests.
+        :param str name: - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        :param int start: - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        pulumi.set(__self__, "forward_settings", forward_settings)
+        pulumi.set(__self__, "type", type)
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if end is not None:
+            pulumi.set(__self__, "end", end)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if match_url is not None:
+            pulumi.set(__self__, "match_url", match_url)
+        if matches is not None:
+            pulumi.set(__self__, "matches", matches)
+        if matches_always is not None:
+            pulumi.set(__self__, "matches_always", matches_always)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if start is not None:
+            pulumi.set(__self__, "start", start)
+
+    @property
+    @pulumi.getter(name="forwardSettings")
+    def forward_settings(self) -> Sequence['outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingResult']:
+        """
+        - (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
+        """
+        return pulumi.get(self, "forward_settings")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> Optional[bool]:
+        return pulumi.get(self, "disabled")
+
+    @property
+    @pulumi.getter
+    def end(self) -> Optional[int]:
+        """
+        - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        return pulumi.get(self, "end")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[int]:
+        """
+        - (Optional) An identifier for Akamai internal use only.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="matchUrl")
+    def match_url(self) -> Optional[str]:
+        """
+        - (Optional) The URL that the Cloudlet uses to match the incoming request.
+        """
+        return pulumi.get(self, "match_url")
+
+    @property
+    @pulumi.getter
+    def matches(self) -> Optional[Sequence['outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchResult']]:
+        """
+        - (Optional) A list of conditions to apply to a Cloudlet, including:
+        """
+        return pulumi.get(self, "matches")
+
+    @property
+    @pulumi.getter(name="matchesAlways")
+    def matches_always(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the match supports default rules that apply to all requests.
+        """
+        return pulumi.get(self, "matches_always")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def start(self) -> Optional[int]:
+        """
+        - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        return pulumi.get(self, "start")
+
+
+@pulumi.output_type
+class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingResult(dict):
+    def __init__(__self__, *,
+                 origin_id: str):
+        """
+        :param str origin_id: - (Required) The ID of the Conditional Origin the requests are forwarded to.
+        """
+        pulumi.set(__self__, "origin_id", origin_id)
+
+    @property
+    @pulumi.getter(name="originId")
+    def origin_id(self) -> str:
+        """
+        - (Required) The ID of the Conditional Origin the requests are forwarded to.
+        """
+        return pulumi.get(self, "origin_id")
+
+
+@pulumi.output_type
+class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchResult(dict):
+    def __init__(__self__, *,
+                 case_sensitive: Optional[bool] = None,
+                 check_ips: Optional[str] = None,
+                 match_operator: Optional[str] = None,
+                 match_type: Optional[str] = None,
+                 match_value: Optional[str] = None,
+                 negate: Optional[bool] = None,
+                 object_match_values: Optional[Sequence['outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueResult']] = None):
+        """
+        :param bool case_sensitive: - (Optional) Whether the match is case sensitive.
+        :param str check_ips: - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+        :param str match_operator: - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+        :param str match_type: - (Optional) The type of match used, either `clientip`, `continent`, `cookie`, `countrycode`, `deviceCharacteristics`, `extension`, `header`, `hostname`, `method`, `path`, `protocol`, `proxy`, `query`, `regioncode`, or `range`.
+        :param str match_value: - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+        :param bool negate: - (Optional) Whether to negate the match.
+        :param Sequence['GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArgs'] object_match_values: - (Optional) If `match_value` is empty, this argument is required. An object used when a rule either includes more complex match criteria, like multiple value attributes, or a range match. Includes these sub-arguments:
+        """
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if check_ips is not None:
+            pulumi.set(__self__, "check_ips", check_ips)
+        if match_operator is not None:
+            pulumi.set(__self__, "match_operator", match_operator)
+        if match_type is not None:
+            pulumi.set(__self__, "match_type", match_type)
+        if match_value is not None:
+            pulumi.set(__self__, "match_value", match_value)
+        if negate is not None:
+            pulumi.set(__self__, "negate", negate)
+        if object_match_values is not None:
+            pulumi.set(__self__, "object_match_values", object_match_values)
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the match is case sensitive.
+        """
+        return pulumi.get(self, "case_sensitive")
+
+    @property
+    @pulumi.getter(name="checkIps")
+    def check_ips(self) -> Optional[str]:
+        """
+        - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+        """
+        return pulumi.get(self, "check_ips")
+
+    @property
+    @pulumi.getter(name="matchOperator")
+    def match_operator(self) -> Optional[str]:
+        """
+        - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+        """
+        return pulumi.get(self, "match_operator")
+
+    @property
+    @pulumi.getter(name="matchType")
+    def match_type(self) -> Optional[str]:
+        """
+        - (Optional) The type of match used, either `clientip`, `continent`, `cookie`, `countrycode`, `deviceCharacteristics`, `extension`, `header`, `hostname`, `method`, `path`, `protocol`, `proxy`, `query`, `regioncode`, or `range`.
+        """
+        return pulumi.get(self, "match_type")
+
+    @property
+    @pulumi.getter(name="matchValue")
+    def match_value(self) -> Optional[str]:
+        """
+        - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+        """
+        return pulumi.get(self, "match_value")
+
+    @property
+    @pulumi.getter
+    def negate(self) -> Optional[bool]:
+        """
+        - (Optional) Whether to negate the match.
+        """
+        return pulumi.get(self, "negate")
+
+    @property
+    @pulumi.getter(name="objectMatchValues")
+    def object_match_values(self) -> Optional[Sequence['outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueResult']]:
+        """
+        - (Optional) If `match_value` is empty, this argument is required. An object used when a rule either includes more complex match criteria, like multiple value attributes, or a range match. Includes these sub-arguments:
+        """
+        return pulumi.get(self, "object_match_values")
+
+
+@pulumi.output_type
+class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueResult(dict):
+    def __init__(__self__, *,
+                 type: str,
+                 name: Optional[str] = None,
+                 name_case_sensitive: Optional[bool] = None,
+                 name_has_wildcard: Optional[bool] = None,
+                 options: Optional['outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsResult'] = None,
+                 values: Optional[Sequence[str]] = None):
+        """
+        :param str type: - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
+        :param str name: - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        :param bool name_case_sensitive: - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+        :param bool name_has_wildcard: - (Optional) Whether the `name` argument includes wildcards.
+        :param 'GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs' options: - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+        :param Sequence[str] values: - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
+        """
+        pulumi.set(__self__, "type", type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if name_case_sensitive is not None:
+            pulumi.set(__self__, "name_case_sensitive", name_case_sensitive)
+        if name_has_wildcard is not None:
+            pulumi.set(__self__, "name_has_wildcard", name_has_wildcard)
+        if options is not None:
+            pulumi.set(__self__, "options", options)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="nameCaseSensitive")
+    def name_case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+        """
+        return pulumi.get(self, "name_case_sensitive")
+
+    @property
+    @pulumi.getter(name="nameHasWildcard")
+    def name_has_wildcard(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `name` argument includes wildcards.
+        """
+        return pulumi.get(self, "name_has_wildcard")
+
+    @property
+    @pulumi.getter
+    def options(self) -> Optional['outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsResult']:
+        """
+        - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+        """
+        return pulumi.get(self, "options")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[str]]:
+        """
+        - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsResult(dict):
+    def __init__(__self__, *,
+                 value_case_sensitive: Optional[bool] = None,
+                 value_escaped: Optional[bool] = None,
+                 value_has_wildcard: Optional[bool] = None,
+                 values: Optional[Sequence[str]] = None):
+        """
+        :param bool value_case_sensitive: - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+        :param bool value_escaped: - (Optional) Whether the `value` argument should be compared in an escaped form.
+        :param bool value_has_wildcard: - (Optional) Whether the `value` argument includes wildcards.
+        :param Sequence[str] values: - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
+        """
+        if value_case_sensitive is not None:
+            pulumi.set(__self__, "value_case_sensitive", value_case_sensitive)
+        if value_escaped is not None:
+            pulumi.set(__self__, "value_escaped", value_escaped)
+        if value_has_wildcard is not None:
+            pulumi.set(__self__, "value_has_wildcard", value_has_wildcard)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter(name="valueCaseSensitive")
+    def value_case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+        """
+        return pulumi.get(self, "value_case_sensitive")
+
+    @property
+    @pulumi.getter(name="valueEscaped")
+    def value_escaped(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument should be compared in an escaped form.
+        """
+        return pulumi.get(self, "value_escaped")
+
+    @property
+    @pulumi.getter(name="valueHasWildcard")
+    def value_has_wildcard(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument includes wildcards.
+        """
+        return pulumi.get(self, "value_has_wildcard")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[str]]:
+        """
+        - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetCloudletsAudienceSegmentationMatchRuleMatchRuleResult(dict):
+    def __init__(__self__, *,
+                 forward_settings: 'outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsResult',
+                 type: str,
+                 disabled: Optional[bool] = None,
+                 end: Optional[int] = None,
+                 match_url: Optional[str] = None,
+                 matches: Optional[Sequence['outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchResult']] = None,
+                 name: Optional[str] = None,
+                 start: Optional[int] = None):
+        """
+        :param 'GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsArgs' forward_settings: (Required) The data used to construct a new request URL if all match conditions are met. If all conditions are met, the edge server returns an HTTP response from the rewritten URL.
+        :param str type: - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        :param bool disabled: - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+        :param int end: - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+        :param str match_url: - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+        :param Sequence['GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs'] matches: - (Optional) A list of conditions to apply to a Cloudlet, including:
+        :param str name: - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        :param int start: - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        pulumi.set(__self__, "forward_settings", forward_settings)
+        pulumi.set(__self__, "type", type)
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if end is not None:
+            pulumi.set(__self__, "end", end)
+        if match_url is not None:
+            pulumi.set(__self__, "match_url", match_url)
+        if matches is not None:
+            pulumi.set(__self__, "matches", matches)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if start is not None:
+            pulumi.set(__self__, "start", start)
+
+    @property
+    @pulumi.getter(name="forwardSettings")
+    def forward_settings(self) -> 'outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsResult':
+        """
+        (Required) The data used to construct a new request URL if all match conditions are met. If all conditions are met, the edge server returns an HTTP response from the rewritten URL.
+        """
+        return pulumi.get(self, "forward_settings")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> Optional[bool]:
+        """
+        - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+        """
+        return pulumi.get(self, "disabled")
+
+    @property
+    @pulumi.getter
+    def end(self) -> Optional[int]:
+        """
+        - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        return pulumi.get(self, "end")
+
+    @property
+    @pulumi.getter(name="matchUrl")
+    def match_url(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+        """
+        return pulumi.get(self, "match_url")
+
+    @property
+    @pulumi.getter
+    def matches(self) -> Optional[Sequence['outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchResult']]:
+        """
+        - (Optional) A list of conditions to apply to a Cloudlet, including:
+        """
+        return pulumi.get(self, "matches")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def start(self) -> Optional[int]:
+        """
+        - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        return pulumi.get(self, "start")
+
+
+@pulumi.output_type
+class GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsResult(dict):
+    def __init__(__self__, *,
+                 origin_id: Optional[str] = None,
+                 path_and_qs: Optional[str] = None,
+                 use_incoming_query_string: Optional[bool] = None):
+        """
+        :param str origin_id: - (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
+        :param str path_and_qs: - (Optional) When match conditions are met, this value defines the path, resource, or query string added to the rewritten URL.
+        :param bool use_incoming_query_string: - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
+        """
+        if origin_id is not None:
+            pulumi.set(__self__, "origin_id", origin_id)
+        if path_and_qs is not None:
+            pulumi.set(__self__, "path_and_qs", path_and_qs)
+        if use_incoming_query_string is not None:
+            pulumi.set(__self__, "use_incoming_query_string", use_incoming_query_string)
+
+    @property
+    @pulumi.getter(name="originId")
+    def origin_id(self) -> Optional[str]:
+        """
+        - (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
+        """
+        return pulumi.get(self, "origin_id")
+
+    @property
+    @pulumi.getter(name="pathAndQs")
+    def path_and_qs(self) -> Optional[str]:
+        """
+        - (Optional) When match conditions are met, this value defines the path, resource, or query string added to the rewritten URL.
+        """
+        return pulumi.get(self, "path_and_qs")
+
+    @property
+    @pulumi.getter(name="useIncomingQueryString")
+    def use_incoming_query_string(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
+        """
+        return pulumi.get(self, "use_incoming_query_string")
+
+
+@pulumi.output_type
+class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchResult(dict):
+    def __init__(__self__, *,
+                 case_sensitive: Optional[bool] = None,
+                 check_ips: Optional[str] = None,
+                 match_operator: Optional[str] = None,
+                 match_type: Optional[str] = None,
+                 match_value: Optional[str] = None,
+                 negate: Optional[bool] = None,
+                 object_match_values: Optional[Sequence['outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueResult']] = None):
+        """
+        :param bool case_sensitive: - (Optional) Whether the match is case sensitive.
+        :param str check_ips: - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+        :param str match_operator: - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+        :param str match_type: - (Optional) The type of match used, either header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+        :param str match_value: - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+        :param bool negate: - (Optional) Whether to negate the match.
+        :param Sequence['GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArgs'] object_match_values: - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+        """
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if check_ips is not None:
+            pulumi.set(__self__, "check_ips", check_ips)
+        if match_operator is not None:
+            pulumi.set(__self__, "match_operator", match_operator)
+        if match_type is not None:
+            pulumi.set(__self__, "match_type", match_type)
+        if match_value is not None:
+            pulumi.set(__self__, "match_value", match_value)
+        if negate is not None:
+            pulumi.set(__self__, "negate", negate)
+        if object_match_values is not None:
+            pulumi.set(__self__, "object_match_values", object_match_values)
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the match is case sensitive.
+        """
+        return pulumi.get(self, "case_sensitive")
+
+    @property
+    @pulumi.getter(name="checkIps")
+    def check_ips(self) -> Optional[str]:
+        """
+        - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+        """
+        return pulumi.get(self, "check_ips")
+
+    @property
+    @pulumi.getter(name="matchOperator")
+    def match_operator(self) -> Optional[str]:
+        """
+        - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+        """
+        return pulumi.get(self, "match_operator")
+
+    @property
+    @pulumi.getter(name="matchType")
+    def match_type(self) -> Optional[str]:
+        """
+        - (Optional) The type of match used, either header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+        """
+        return pulumi.get(self, "match_type")
+
+    @property
+    @pulumi.getter(name="matchValue")
+    def match_value(self) -> Optional[str]:
+        """
+        - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+        """
+        return pulumi.get(self, "match_value")
+
+    @property
+    @pulumi.getter
+    def negate(self) -> Optional[bool]:
+        """
+        - (Optional) Whether to negate the match.
+        """
+        return pulumi.get(self, "negate")
+
+    @property
+    @pulumi.getter(name="objectMatchValues")
+    def object_match_values(self) -> Optional[Sequence['outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueResult']]:
+        """
+        - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+        """
+        return pulumi.get(self, "object_match_values")
+
+
+@pulumi.output_type
+class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueResult(dict):
+    def __init__(__self__, *,
+                 type: str,
+                 name: Optional[str] = None,
+                 name_case_sensitive: Optional[bool] = None,
+                 name_has_wildcard: Optional[bool] = None,
+                 options: Optional['outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsResult'] = None,
+                 values: Optional[Sequence[str]] = None):
+        """
+        :param str type: - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        :param str name: - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        :param bool name_case_sensitive: - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+        :param bool name_has_wildcard: - (Optional) Whether the `name` argument includes wildcards.
+        :param 'GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs' options: - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+        :param Sequence[str] values: - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        pulumi.set(__self__, "type", type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if name_case_sensitive is not None:
+            pulumi.set(__self__, "name_case_sensitive", name_case_sensitive)
+        if name_has_wildcard is not None:
+            pulumi.set(__self__, "name_has_wildcard", name_has_wildcard)
+        if options is not None:
+            pulumi.set(__self__, "options", options)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="nameCaseSensitive")
+    def name_case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+        """
+        return pulumi.get(self, "name_case_sensitive")
+
+    @property
+    @pulumi.getter(name="nameHasWildcard")
+    def name_has_wildcard(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `name` argument includes wildcards.
+        """
+        return pulumi.get(self, "name_has_wildcard")
+
+    @property
+    @pulumi.getter
+    def options(self) -> Optional['outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsResult']:
+        """
+        - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+        """
+        return pulumi.get(self, "options")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[str]]:
+        """
+        - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsResult(dict):
+    def __init__(__self__, *,
+                 value_case_sensitive: Optional[bool] = None,
+                 value_escaped: Optional[bool] = None,
+                 value_has_wildcard: Optional[bool] = None,
+                 values: Optional[Sequence[str]] = None):
+        """
+        :param bool value_case_sensitive: - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+        :param bool value_escaped: - (Optional) Whether the `value` argument should be compared in an escaped form.
+        :param bool value_has_wildcard: - (Optional) Whether the `value` argument includes wildcards.
+        :param Sequence[str] values: - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        if value_case_sensitive is not None:
+            pulumi.set(__self__, "value_case_sensitive", value_case_sensitive)
+        if value_escaped is not None:
+            pulumi.set(__self__, "value_escaped", value_escaped)
+        if value_has_wildcard is not None:
+            pulumi.set(__self__, "value_has_wildcard", value_has_wildcard)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter(name="valueCaseSensitive")
+    def value_case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+        """
+        return pulumi.get(self, "value_case_sensitive")
+
+    @property
+    @pulumi.getter(name="valueEscaped")
+    def value_escaped(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument should be compared in an escaped form.
+        """
+        return pulumi.get(self, "value_escaped")
+
+    @property
+    @pulumi.getter(name="valueHasWildcard")
+    def value_has_wildcard(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument includes wildcards.
+        """
+        return pulumi.get(self, "value_has_wildcard")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[str]]:
+        """
+        - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetCloudletsEdgeRedirectorMatchRuleMatchRuleResult(dict):
+    def __init__(__self__, *,
+                 redirect_url: str,
+                 status_code: int,
+                 type: str,
+                 disabled: Optional[bool] = None,
+                 end: Optional[int] = None,
+                 match_url: Optional[str] = None,
+                 matches: Optional[Sequence['outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchResult']] = None,
+                 name: Optional[str] = None,
+                 start: Optional[int] = None,
+                 use_incoming_query_string: Optional[bool] = None,
+                 use_relative_url: Optional[str] = None):
+        """
+        :param str redirect_url: - (Required) The URL Edge Redirector redirects the request to. If you're using `use_relative_url`, you can enter a path for the value.
+        :param int status_code: - (Required) The HTTP response status code, which is either `301` (permanent redirect) or `302` (temporary redirect).
+        :param str type: - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        :param bool disabled: - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+        :param int end: - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+        :param str match_url: - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+        :param Sequence['GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs'] matches: - (Optional) A list of conditions to apply to a Cloudlet, including:
+        :param str name: - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        :param int start: - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+        :param bool use_incoming_query_string: - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
+        :param str use_relative_url: - (Optional) If set to `relative_url`, takes the path you specify in the `redirect_url` argument and sets it in the response’s Location header. The client or browser receiving the request decides which protocol and hostname to use. If set to `copy_scheme_hostname`, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information you specify in the `redirect_url` argument. This absolute path is set in the response’s Location header. If you do not specify use_relative_url or set to `none`, then specify the `redirect_url` argument as a fully-qualified URL.
+        """
+        pulumi.set(__self__, "redirect_url", redirect_url)
+        pulumi.set(__self__, "status_code", status_code)
+        pulumi.set(__self__, "type", type)
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if end is not None:
+            pulumi.set(__self__, "end", end)
+        if match_url is not None:
+            pulumi.set(__self__, "match_url", match_url)
+        if matches is not None:
+            pulumi.set(__self__, "matches", matches)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if start is not None:
+            pulumi.set(__self__, "start", start)
+        if use_incoming_query_string is not None:
+            pulumi.set(__self__, "use_incoming_query_string", use_incoming_query_string)
+        if use_relative_url is not None:
+            pulumi.set(__self__, "use_relative_url", use_relative_url)
+
+    @property
+    @pulumi.getter(name="redirectUrl")
+    def redirect_url(self) -> str:
+        """
+        - (Required) The URL Edge Redirector redirects the request to. If you're using `use_relative_url`, you can enter a path for the value.
+        """
+        return pulumi.get(self, "redirect_url")
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> int:
+        """
+        - (Required) The HTTP response status code, which is either `301` (permanent redirect) or `302` (temporary redirect).
+        """
+        return pulumi.get(self, "status_code")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> Optional[bool]:
+        """
+        - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+        """
+        return pulumi.get(self, "disabled")
+
+    @property
+    @pulumi.getter
+    def end(self) -> Optional[int]:
+        """
+        - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        return pulumi.get(self, "end")
+
+    @property
+    @pulumi.getter(name="matchUrl")
+    def match_url(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+        """
+        return pulumi.get(self, "match_url")
+
+    @property
+    @pulumi.getter
+    def matches(self) -> Optional[Sequence['outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchResult']]:
+        """
+        - (Optional) A list of conditions to apply to a Cloudlet, including:
+        """
+        return pulumi.get(self, "matches")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def start(self) -> Optional[int]:
+        """
+        - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        return pulumi.get(self, "start")
+
+    @property
+    @pulumi.getter(name="useIncomingQueryString")
+    def use_incoming_query_string(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
+        """
+        return pulumi.get(self, "use_incoming_query_string")
+
+    @property
+    @pulumi.getter(name="useRelativeUrl")
+    def use_relative_url(self) -> Optional[str]:
+        """
+        - (Optional) If set to `relative_url`, takes the path you specify in the `redirect_url` argument and sets it in the response’s Location header. The client or browser receiving the request decides which protocol and hostname to use. If set to `copy_scheme_hostname`, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information you specify in the `redirect_url` argument. This absolute path is set in the response’s Location header. If you do not specify use_relative_url or set to `none`, then specify the `redirect_url` argument as a fully-qualified URL.
+        """
+        return pulumi.get(self, "use_relative_url")
+
+
+@pulumi.output_type
+class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchResult(dict):
+    def __init__(__self__, *,
+                 case_sensitive: Optional[bool] = None,
+                 check_ips: Optional[str] = None,
+                 match_operator: Optional[str] = None,
+                 match_type: Optional[str] = None,
+                 match_value: Optional[str] = None,
+                 negate: Optional[bool] = None,
+                 object_match_values: Optional[Sequence['outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueResult']] = None):
+        """
+        :param bool case_sensitive: - (Optional) Whether the match is case sensitive.
+        :param str check_ips: - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+        :param str match_operator: - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+        :param str match_type: - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+        :param str match_value: - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+        :param bool negate: - (Optional) Whether to negate the match.
+        :param Sequence['GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgs'] object_match_values: - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+        """
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if check_ips is not None:
+            pulumi.set(__self__, "check_ips", check_ips)
+        if match_operator is not None:
+            pulumi.set(__self__, "match_operator", match_operator)
+        if match_type is not None:
+            pulumi.set(__self__, "match_type", match_type)
+        if match_value is not None:
+            pulumi.set(__self__, "match_value", match_value)
+        if negate is not None:
+            pulumi.set(__self__, "negate", negate)
+        if object_match_values is not None:
+            pulumi.set(__self__, "object_match_values", object_match_values)
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the match is case sensitive.
+        """
+        return pulumi.get(self, "case_sensitive")
+
+    @property
+    @pulumi.getter(name="checkIps")
+    def check_ips(self) -> Optional[str]:
+        """
+        - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+        """
+        return pulumi.get(self, "check_ips")
+
+    @property
+    @pulumi.getter(name="matchOperator")
+    def match_operator(self) -> Optional[str]:
+        """
+        - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+        """
+        return pulumi.get(self, "match_operator")
+
+    @property
+    @pulumi.getter(name="matchType")
+    def match_type(self) -> Optional[str]:
+        """
+        - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+        """
+        return pulumi.get(self, "match_type")
+
+    @property
+    @pulumi.getter(name="matchValue")
+    def match_value(self) -> Optional[str]:
+        """
+        - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+        """
+        return pulumi.get(self, "match_value")
+
+    @property
+    @pulumi.getter
+    def negate(self) -> Optional[bool]:
+        """
+        - (Optional) Whether to negate the match.
+        """
+        return pulumi.get(self, "negate")
+
+    @property
+    @pulumi.getter(name="objectMatchValues")
+    def object_match_values(self) -> Optional[Sequence['outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueResult']]:
+        """
+        - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+        """
+        return pulumi.get(self, "object_match_values")
+
+
+@pulumi.output_type
+class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueResult(dict):
+    def __init__(__self__, *,
+                 type: str,
+                 name: Optional[str] = None,
+                 name_case_sensitive: Optional[bool] = None,
+                 name_has_wildcard: Optional[bool] = None,
+                 options: Optional['outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsResult'] = None,
+                 values: Optional[Sequence[str]] = None):
+        """
+        :param str type: - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        :param str name: - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        :param bool name_case_sensitive: - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+        :param bool name_has_wildcard: - (Optional) Whether the `name` argument includes wildcards.
+        :param 'GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs' options: - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+        :param Sequence[str] values: - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        pulumi.set(__self__, "type", type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if name_case_sensitive is not None:
+            pulumi.set(__self__, "name_case_sensitive", name_case_sensitive)
+        if name_has_wildcard is not None:
+            pulumi.set(__self__, "name_has_wildcard", name_has_wildcard)
+        if options is not None:
+            pulumi.set(__self__, "options", options)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="nameCaseSensitive")
+    def name_case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+        """
+        return pulumi.get(self, "name_case_sensitive")
+
+    @property
+    @pulumi.getter(name="nameHasWildcard")
+    def name_has_wildcard(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `name` argument includes wildcards.
+        """
+        return pulumi.get(self, "name_has_wildcard")
+
+    @property
+    @pulumi.getter
+    def options(self) -> Optional['outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsResult']:
+        """
+        - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+        """
+        return pulumi.get(self, "options")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[str]]:
+        """
+        - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsResult(dict):
+    def __init__(__self__, *,
+                 value_case_sensitive: Optional[bool] = None,
+                 value_escaped: Optional[bool] = None,
+                 value_has_wildcard: Optional[bool] = None,
+                 values: Optional[Sequence[str]] = None):
+        """
+        :param bool value_case_sensitive: - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+        :param bool value_escaped: - (Optional) Whether the `value` argument should be compared in an escaped form.
+        :param bool value_has_wildcard: - (Optional) Whether the `value` argument includes wildcards.
+        :param Sequence[str] values: - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        if value_case_sensitive is not None:
+            pulumi.set(__self__, "value_case_sensitive", value_case_sensitive)
+        if value_escaped is not None:
+            pulumi.set(__self__, "value_escaped", value_escaped)
+        if value_has_wildcard is not None:
+            pulumi.set(__self__, "value_has_wildcard", value_has_wildcard)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter(name="valueCaseSensitive")
+    def value_case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+        """
+        return pulumi.get(self, "value_case_sensitive")
+
+    @property
+    @pulumi.getter(name="valueEscaped")
+    def value_escaped(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument should be compared in an escaped form.
+        """
+        return pulumi.get(self, "value_escaped")
+
+    @property
+    @pulumi.getter(name="valueHasWildcard")
+    def value_has_wildcard(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument includes wildcards.
+        """
+        return pulumi.get(self, "value_has_wildcard")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[str]]:
+        """
+        - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetCloudletsForwardRewriteMatchRuleMatchRuleResult(dict):
+    def __init__(__self__, *,
+                 forward_settings: 'outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsResult',
+                 type: str,
+                 disabled: Optional[bool] = None,
+                 end: Optional[int] = None,
+                 match_url: Optional[str] = None,
+                 matches: Optional[Sequence['outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchResult']] = None,
+                 name: Optional[str] = None,
+                 start: Optional[int] = None):
+        """
+        :param 'GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgs' forward_settings: (Required) The data used to construct a new request URL if all match conditions are met. If all conditions are met, the edge server returns an HTTP response from the rewritten URL.
+        :param str type: - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        :param bool disabled: - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+        :param int end: - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+        :param str match_url: - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+        :param Sequence['GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs'] matches: - (Optional) A list of conditions to apply to a Cloudlet, including:
+        :param str name: - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        :param int start: - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        pulumi.set(__self__, "forward_settings", forward_settings)
+        pulumi.set(__self__, "type", type)
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if end is not None:
+            pulumi.set(__self__, "end", end)
+        if match_url is not None:
+            pulumi.set(__self__, "match_url", match_url)
+        if matches is not None:
+            pulumi.set(__self__, "matches", matches)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if start is not None:
+            pulumi.set(__self__, "start", start)
+
+    @property
+    @pulumi.getter(name="forwardSettings")
+    def forward_settings(self) -> 'outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsResult':
+        """
+        (Required) The data used to construct a new request URL if all match conditions are met. If all conditions are met, the edge server returns an HTTP response from the rewritten URL.
+        """
+        return pulumi.get(self, "forward_settings")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> Optional[bool]:
+        """
+        - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+        """
+        return pulumi.get(self, "disabled")
+
+    @property
+    @pulumi.getter
+    def end(self) -> Optional[int]:
+        """
+        - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        return pulumi.get(self, "end")
+
+    @property
+    @pulumi.getter(name="matchUrl")
+    def match_url(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+        """
+        return pulumi.get(self, "match_url")
+
+    @property
+    @pulumi.getter
+    def matches(self) -> Optional[Sequence['outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchResult']]:
+        """
+        - (Optional) A list of conditions to apply to a Cloudlet, including:
+        """
+        return pulumi.get(self, "matches")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def start(self) -> Optional[int]:
+        """
+        - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        return pulumi.get(self, "start")
+
+
+@pulumi.output_type
+class GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsResult(dict):
+    def __init__(__self__, *,
+                 origin_id: Optional[str] = None,
+                 path_and_qs: Optional[str] = None,
+                 use_incoming_query_string: Optional[bool] = None):
+        """
+        :param str origin_id: - (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
+        :param str path_and_qs: - (Optional) When match conditions are met, this value defines the path, resource, or query string added to the rewritten URL.
+        :param bool use_incoming_query_string: - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
+        """
+        if origin_id is not None:
+            pulumi.set(__self__, "origin_id", origin_id)
+        if path_and_qs is not None:
+            pulumi.set(__self__, "path_and_qs", path_and_qs)
+        if use_incoming_query_string is not None:
+            pulumi.set(__self__, "use_incoming_query_string", use_incoming_query_string)
+
+    @property
+    @pulumi.getter(name="originId")
+    def origin_id(self) -> Optional[str]:
+        """
+        - (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
+        """
+        return pulumi.get(self, "origin_id")
+
+    @property
+    @pulumi.getter(name="pathAndQs")
+    def path_and_qs(self) -> Optional[str]:
+        """
+        - (Optional) When match conditions are met, this value defines the path, resource, or query string added to the rewritten URL.
+        """
+        return pulumi.get(self, "path_and_qs")
+
+    @property
+    @pulumi.getter(name="useIncomingQueryString")
+    def use_incoming_query_string(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
+        """
+        return pulumi.get(self, "use_incoming_query_string")
+
+
+@pulumi.output_type
+class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchResult(dict):
+    def __init__(__self__, *,
+                 case_sensitive: Optional[bool] = None,
+                 check_ips: Optional[str] = None,
+                 match_operator: Optional[str] = None,
+                 match_type: Optional[str] = None,
+                 match_value: Optional[str] = None,
+                 negate: Optional[bool] = None,
+                 object_match_values: Optional[Sequence['outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueResult']] = None):
+        """
+        :param bool case_sensitive: - (Optional) Whether the match is case sensitive.
+        :param str check_ips: - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+        :param str match_operator: - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+        :param str match_type: - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+        :param str match_value: - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+        :param bool negate: - (Optional) Whether to negate the match.
+        :param Sequence['GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgs'] object_match_values: - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+        """
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if check_ips is not None:
+            pulumi.set(__self__, "check_ips", check_ips)
+        if match_operator is not None:
+            pulumi.set(__self__, "match_operator", match_operator)
+        if match_type is not None:
+            pulumi.set(__self__, "match_type", match_type)
+        if match_value is not None:
+            pulumi.set(__self__, "match_value", match_value)
+        if negate is not None:
+            pulumi.set(__self__, "negate", negate)
+        if object_match_values is not None:
+            pulumi.set(__self__, "object_match_values", object_match_values)
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the match is case sensitive.
+        """
+        return pulumi.get(self, "case_sensitive")
+
+    @property
+    @pulumi.getter(name="checkIps")
+    def check_ips(self) -> Optional[str]:
+        """
+        - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+        """
+        return pulumi.get(self, "check_ips")
+
+    @property
+    @pulumi.getter(name="matchOperator")
+    def match_operator(self) -> Optional[str]:
+        """
+        - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+        """
+        return pulumi.get(self, "match_operator")
+
+    @property
+    @pulumi.getter(name="matchType")
+    def match_type(self) -> Optional[str]:
+        """
+        - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+        """
+        return pulumi.get(self, "match_type")
+
+    @property
+    @pulumi.getter(name="matchValue")
+    def match_value(self) -> Optional[str]:
+        """
+        - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+        """
+        return pulumi.get(self, "match_value")
+
+    @property
+    @pulumi.getter
+    def negate(self) -> Optional[bool]:
+        """
+        - (Optional) Whether to negate the match.
+        """
+        return pulumi.get(self, "negate")
+
+    @property
+    @pulumi.getter(name="objectMatchValues")
+    def object_match_values(self) -> Optional[Sequence['outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueResult']]:
+        """
+        - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+        """
+        return pulumi.get(self, "object_match_values")
+
+
+@pulumi.output_type
+class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueResult(dict):
+    def __init__(__self__, *,
+                 type: str,
+                 name: Optional[str] = None,
+                 name_case_sensitive: Optional[bool] = None,
+                 name_has_wildcard: Optional[bool] = None,
+                 options: Optional['outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsResult'] = None,
+                 values: Optional[Sequence[str]] = None):
+        """
+        :param str type: - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        :param str name: - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        :param bool name_case_sensitive: - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+        :param bool name_has_wildcard: - (Optional) Whether the `name` argument includes wildcards.
+        :param 'GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs' options: - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+        :param Sequence[str] values: - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        pulumi.set(__self__, "type", type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if name_case_sensitive is not None:
+            pulumi.set(__self__, "name_case_sensitive", name_case_sensitive)
+        if name_has_wildcard is not None:
+            pulumi.set(__self__, "name_has_wildcard", name_has_wildcard)
+        if options is not None:
+            pulumi.set(__self__, "options", options)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="nameCaseSensitive")
+    def name_case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+        """
+        return pulumi.get(self, "name_case_sensitive")
+
+    @property
+    @pulumi.getter(name="nameHasWildcard")
+    def name_has_wildcard(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `name` argument includes wildcards.
+        """
+        return pulumi.get(self, "name_has_wildcard")
+
+    @property
+    @pulumi.getter
+    def options(self) -> Optional['outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsResult']:
+        """
+        - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+        """
+        return pulumi.get(self, "options")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[str]]:
+        """
+        - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsResult(dict):
+    def __init__(__self__, *,
+                 value_case_sensitive: Optional[bool] = None,
+                 value_escaped: Optional[bool] = None,
+                 value_has_wildcard: Optional[bool] = None,
+                 values: Optional[Sequence[str]] = None):
+        """
+        :param bool value_case_sensitive: - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+        :param bool value_escaped: - (Optional) Whether the `value` argument should be compared in an escaped form.
+        :param bool value_has_wildcard: - (Optional) Whether the `value` argument includes wildcards.
+        :param Sequence[str] values: - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        if value_case_sensitive is not None:
+            pulumi.set(__self__, "value_case_sensitive", value_case_sensitive)
+        if value_escaped is not None:
+            pulumi.set(__self__, "value_escaped", value_escaped)
+        if value_has_wildcard is not None:
+            pulumi.set(__self__, "value_has_wildcard", value_has_wildcard)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter(name="valueCaseSensitive")
+    def value_case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+        """
+        return pulumi.get(self, "value_case_sensitive")
+
+    @property
+    @pulumi.getter(name="valueEscaped")
+    def value_escaped(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument should be compared in an escaped form.
+        """
+        return pulumi.get(self, "value_escaped")
+
+    @property
+    @pulumi.getter(name="valueHasWildcard")
+    def value_has_wildcard(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument includes wildcards.
+        """
+        return pulumi.get(self, "value_has_wildcard")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[str]]:
+        """
+        - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetCloudletsPhasedReleaseMatchRuleMatchRuleResult(dict):
+    def __init__(__self__, *,
+                 forward_settings: 'outputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsResult',
+                 type: str,
+                 disabled: Optional[bool] = None,
+                 end: Optional[int] = None,
+                 match_url: Optional[str] = None,
+                 matches: Optional[Sequence['outputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchResult']] = None,
+                 matches_always: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 start: Optional[int] = None):
+        """
+        :param 'GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArgs' forward_settings: (Required) The data used to construct a new request URL if all match conditions are met. If all conditions are met, the edge server returns an HTTP response from the rewritten URL.
+        :param str type: - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        :param bool disabled: - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+        :param int end: - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+        :param str match_url: - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+        :param Sequence['GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs'] matches: - (Optional) A list of conditions to apply to a Cloudlet, including:
+        :param bool matches_always: - (Optional) Whether the match supports default rules that apply to all requests.
+        :param str name: - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        :param int start: - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        pulumi.set(__self__, "forward_settings", forward_settings)
+        pulumi.set(__self__, "type", type)
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if end is not None:
+            pulumi.set(__self__, "end", end)
+        if match_url is not None:
+            pulumi.set(__self__, "match_url", match_url)
+        if matches is not None:
+            pulumi.set(__self__, "matches", matches)
+        if matches_always is not None:
+            pulumi.set(__self__, "matches_always", matches_always)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if start is not None:
+            pulumi.set(__self__, "start", start)
+
+    @property
+    @pulumi.getter(name="forwardSettings")
+    def forward_settings(self) -> 'outputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsResult':
+        """
+        (Required) The data used to construct a new request URL if all match conditions are met. If all conditions are met, the edge server returns an HTTP response from the rewritten URL.
+        """
+        return pulumi.get(self, "forward_settings")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> Optional[bool]:
+        """
+        - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+        """
+        return pulumi.get(self, "disabled")
+
+    @property
+    @pulumi.getter
+    def end(self) -> Optional[int]:
+        """
+        - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        return pulumi.get(self, "end")
+
+    @property
+    @pulumi.getter(name="matchUrl")
+    def match_url(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+        """
+        return pulumi.get(self, "match_url")
+
+    @property
+    @pulumi.getter
+    def matches(self) -> Optional[Sequence['outputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchResult']]:
+        """
+        - (Optional) A list of conditions to apply to a Cloudlet, including:
+        """
+        return pulumi.get(self, "matches")
+
+    @property
+    @pulumi.getter(name="matchesAlways")
+    def matches_always(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the match supports default rules that apply to all requests.
+        """
+        return pulumi.get(self, "matches_always")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def start(self) -> Optional[int]:
+        """
+        - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        return pulumi.get(self, "start")
+
+
+@pulumi.output_type
+class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsResult(dict):
+    def __init__(__self__, *,
+                 origin_id: str,
+                 percent: int):
+        """
+        :param str origin_id: - (Required) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
+        :param int percent: - (Required)
+        """
+        pulumi.set(__self__, "origin_id", origin_id)
+        pulumi.set(__self__, "percent", percent)
+
+    @property
+    @pulumi.getter(name="originId")
+    def origin_id(self) -> str:
+        """
+        - (Required) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
+        """
+        return pulumi.get(self, "origin_id")
+
+    @property
+    @pulumi.getter
+    def percent(self) -> int:
+        """
+        - (Required)
+        """
+        return pulumi.get(self, "percent")
+
+
+@pulumi.output_type
+class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchResult(dict):
+    def __init__(__self__, *,
+                 case_sensitive: Optional[bool] = None,
+                 check_ips: Optional[str] = None,
+                 match_operator: Optional[str] = None,
+                 match_type: Optional[str] = None,
+                 match_value: Optional[str] = None,
+                 negate: Optional[bool] = None,
+                 object_match_values: Optional[Sequence['outputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueResult']] = None):
+        """
+        :param bool case_sensitive: - (Optional) Whether the match is case sensitive.
+        :param str check_ips: - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+        :param str match_operator: - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+        :param str match_type: - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+        :param str match_value: - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+        :param bool negate: - (Optional) Whether to negate the match.
+        :param Sequence['GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgs'] object_match_values: - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+        """
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if check_ips is not None:
+            pulumi.set(__self__, "check_ips", check_ips)
+        if match_operator is not None:
+            pulumi.set(__self__, "match_operator", match_operator)
+        if match_type is not None:
+            pulumi.set(__self__, "match_type", match_type)
+        if match_value is not None:
+            pulumi.set(__self__, "match_value", match_value)
+        if negate is not None:
+            pulumi.set(__self__, "negate", negate)
+        if object_match_values is not None:
+            pulumi.set(__self__, "object_match_values", object_match_values)
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the match is case sensitive.
+        """
+        return pulumi.get(self, "case_sensitive")
+
+    @property
+    @pulumi.getter(name="checkIps")
+    def check_ips(self) -> Optional[str]:
+        """
+        - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+        """
+        return pulumi.get(self, "check_ips")
+
+    @property
+    @pulumi.getter(name="matchOperator")
+    def match_operator(self) -> Optional[str]:
+        """
+        - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+        """
+        return pulumi.get(self, "match_operator")
+
+    @property
+    @pulumi.getter(name="matchType")
+    def match_type(self) -> Optional[str]:
+        """
+        - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+        """
+        return pulumi.get(self, "match_type")
+
+    @property
+    @pulumi.getter(name="matchValue")
+    def match_value(self) -> Optional[str]:
+        """
+        - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+        """
+        return pulumi.get(self, "match_value")
+
+    @property
+    @pulumi.getter
+    def negate(self) -> Optional[bool]:
+        """
+        - (Optional) Whether to negate the match.
+        """
+        return pulumi.get(self, "negate")
+
+    @property
+    @pulumi.getter(name="objectMatchValues")
+    def object_match_values(self) -> Optional[Sequence['outputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueResult']]:
+        """
+        - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+        """
+        return pulumi.get(self, "object_match_values")
+
+
+@pulumi.output_type
+class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueResult(dict):
+    def __init__(__self__, *,
+                 type: str,
+                 name: Optional[str] = None,
+                 name_case_sensitive: Optional[bool] = None,
+                 name_has_wildcard: Optional[bool] = None,
+                 options: Optional['outputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsResult'] = None,
+                 values: Optional[Sequence[str]] = None):
+        """
+        :param str type: - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        :param str name: - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        :param bool name_case_sensitive: - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+        :param bool name_has_wildcard: - (Optional) Whether the `name` argument includes wildcards.
+        :param 'GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs' options: - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+        :param Sequence[str] values: - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        pulumi.set(__self__, "type", type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if name_case_sensitive is not None:
+            pulumi.set(__self__, "name_case_sensitive", name_case_sensitive)
+        if name_has_wildcard is not None:
+            pulumi.set(__self__, "name_has_wildcard", name_has_wildcard)
+        if options is not None:
+            pulumi.set(__self__, "options", options)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="nameCaseSensitive")
+    def name_case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+        """
+        return pulumi.get(self, "name_case_sensitive")
+
+    @property
+    @pulumi.getter(name="nameHasWildcard")
+    def name_has_wildcard(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `name` argument includes wildcards.
+        """
+        return pulumi.get(self, "name_has_wildcard")
+
+    @property
+    @pulumi.getter
+    def options(self) -> Optional['outputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsResult']:
+        """
+        - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+        """
+        return pulumi.get(self, "options")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[str]]:
+        """
+        - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsResult(dict):
+    def __init__(__self__, *,
+                 value_case_sensitive: Optional[bool] = None,
+                 value_escaped: Optional[bool] = None,
+                 value_has_wildcard: Optional[bool] = None,
+                 values: Optional[Sequence[str]] = None):
+        """
+        :param bool value_case_sensitive: - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+        :param bool value_escaped: - (Optional) Whether the `value` argument should be compared in an escaped form.
+        :param bool value_has_wildcard: - (Optional) Whether the `value` argument includes wildcards.
+        :param Sequence[str] values: - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        if value_case_sensitive is not None:
+            pulumi.set(__self__, "value_case_sensitive", value_case_sensitive)
+        if value_escaped is not None:
+            pulumi.set(__self__, "value_escaped", value_escaped)
+        if value_has_wildcard is not None:
+            pulumi.set(__self__, "value_has_wildcard", value_has_wildcard)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter(name="valueCaseSensitive")
+    def value_case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+        """
+        return pulumi.get(self, "value_case_sensitive")
+
+    @property
+    @pulumi.getter(name="valueEscaped")
+    def value_escaped(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument should be compared in an escaped form.
+        """
+        return pulumi.get(self, "value_escaped")
+
+    @property
+    @pulumi.getter(name="valueHasWildcard")
+    def value_has_wildcard(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument includes wildcards.
+        """
+        return pulumi.get(self, "value_has_wildcard")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[str]]:
+        """
+        - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetCloudletsPolicyActivationResult(dict):
+    def __init__(__self__, *,
+                 api_version: str,
+                 network: str,
+                 policy_infos: Sequence['outputs.GetCloudletsPolicyActivationPolicyInfoResult'],
+                 property_infos: Sequence['outputs.GetCloudletsPolicyActivationPropertyInfoResult']):
+        pulumi.set(__self__, "api_version", api_version)
+        pulumi.set(__self__, "network", network)
+        pulumi.set(__self__, "policy_infos", policy_infos)
+        pulumi.set(__self__, "property_infos", property_infos)
+
+    @property
+    @pulumi.getter(name="apiVersion")
+    def api_version(self) -> str:
+        return pulumi.get(self, "api_version")
+
+    @property
+    @pulumi.getter
+    def network(self) -> str:
+        return pulumi.get(self, "network")
+
+    @property
+    @pulumi.getter(name="policyInfos")
+    def policy_infos(self) -> Sequence['outputs.GetCloudletsPolicyActivationPolicyInfoResult']:
+        return pulumi.get(self, "policy_infos")
+
+    @property
+    @pulumi.getter(name="propertyInfos")
+    def property_infos(self) -> Sequence['outputs.GetCloudletsPolicyActivationPropertyInfoResult']:
+        return pulumi.get(self, "property_infos")
+
+
+@pulumi.output_type
+class GetCloudletsPolicyActivationPolicyInfoResult(dict):
+    def __init__(__self__, *,
+                 activated_by: str,
+                 activation_date: int,
+                 name: str,
+                 policy_id: int,
+                 status: str,
+                 status_detail: str,
+                 version: int):
+        """
+        :param int policy_id: - (Required) An integer identifier that is associated with all versions of a policy.
+        :param int version: - (Optional) The version number of a policy.
+        """
+        pulumi.set(__self__, "activated_by", activated_by)
+        pulumi.set(__self__, "activation_date", activation_date)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "policy_id", policy_id)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "status_detail", status_detail)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="activatedBy")
+    def activated_by(self) -> str:
+        return pulumi.get(self, "activated_by")
+
+    @property
+    @pulumi.getter(name="activationDate")
+    def activation_date(self) -> int:
+        return pulumi.get(self, "activation_date")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="policyId")
+    def policy_id(self) -> int:
+        """
+        - (Required) An integer identifier that is associated with all versions of a policy.
+        """
+        return pulumi.get(self, "policy_id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="statusDetail")
+    def status_detail(self) -> str:
+        return pulumi.get(self, "status_detail")
+
+    @property
+    @pulumi.getter
+    def version(self) -> int:
+        """
+        - (Optional) The version number of a policy.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetCloudletsPolicyActivationPropertyInfoResult(dict):
+    def __init__(__self__, *,
+                 activated_by: str,
+                 activation_date: int,
+                 group_id: int,
+                 name: str,
+                 status: str,
+                 version: int):
+        """
+        :param int version: - (Optional) The version number of a policy.
+        """
+        pulumi.set(__self__, "activated_by", activated_by)
+        pulumi.set(__self__, "activation_date", activation_date)
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="activatedBy")
+    def activated_by(self) -> str:
+        return pulumi.get(self, "activated_by")
+
+    @property
+    @pulumi.getter(name="activationDate")
+    def activation_date(self) -> int:
+        return pulumi.get(self, "activation_date")
+
+    @property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> int:
+        return pulumi.get(self, "group_id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def version(self) -> int:
+        """
+        - (Optional) The version number of a policy.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleResult(dict):
+    def __init__(__self__, *,
+                 pass_through_percent: float,
+                 type: str,
+                 disabled: Optional[bool] = None,
+                 end: Optional[int] = None,
+                 match_url: Optional[str] = None,
+                 matches: Optional[Sequence['outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchResult']] = None,
+                 name: Optional[str] = None,
+                 start: Optional[int] = None):
+        """
+        :param str type: - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        :param bool disabled: - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+        :param int end: - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+        :param str match_url: - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+               * `pass_through_percent`- (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin. Enter `-1` to send everyone to the waiting room.
+        :param Sequence['GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs'] matches: - (Optional) A list of conditions to apply to a Cloudlet, including:
+        :param str name: - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        :param int start: - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        pulumi.set(__self__, "pass_through_percent", pass_through_percent)
+        pulumi.set(__self__, "type", type)
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if end is not None:
+            pulumi.set(__self__, "end", end)
+        if match_url is not None:
+            pulumi.set(__self__, "match_url", match_url)
+        if matches is not None:
+            pulumi.set(__self__, "matches", matches)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if start is not None:
+            pulumi.set(__self__, "start", start)
+
+    @property
+    @pulumi.getter(name="passThroughPercent")
+    def pass_through_percent(self) -> float:
+        return pulumi.get(self, "pass_through_percent")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> Optional[bool]:
+        """
+        - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+        """
+        return pulumi.get(self, "disabled")
+
+    @property
+    @pulumi.getter
+    def end(self) -> Optional[int]:
+        """
+        - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        return pulumi.get(self, "end")
+
+    @property
+    @pulumi.getter(name="matchUrl")
+    def match_url(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+        * `pass_through_percent`- (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin. Enter `-1` to send everyone to the waiting room.
+        """
+        return pulumi.get(self, "match_url")
+
+    @property
+    @pulumi.getter
+    def matches(self) -> Optional[Sequence['outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchResult']]:
+        """
+        - (Optional) A list of conditions to apply to a Cloudlet, including:
+        """
+        return pulumi.get(self, "matches")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def start(self) -> Optional[int]:
+        """
+        - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+        """
+        return pulumi.get(self, "start")
+
+
+@pulumi.output_type
+class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchResult(dict):
+    def __init__(__self__, *,
+                 case_sensitive: Optional[bool] = None,
+                 check_ips: Optional[str] = None,
+                 match_operator: Optional[str] = None,
+                 match_type: Optional[str] = None,
+                 match_value: Optional[str] = None,
+                 negate: Optional[bool] = None,
+                 object_match_values: Optional[Sequence['outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueResult']] = None):
+        """
+        :param bool case_sensitive: - (Optional) Whether the match is case sensitive.
+        :param str check_ips: - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+        :param str match_operator: - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+        :param str match_type: - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+        :param str match_value: - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+        :param bool negate: - (Optional) Whether to negate the match.
+        :param Sequence['GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs'] object_match_values: - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+        """
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if check_ips is not None:
+            pulumi.set(__self__, "check_ips", check_ips)
+        if match_operator is not None:
+            pulumi.set(__self__, "match_operator", match_operator)
+        if match_type is not None:
+            pulumi.set(__self__, "match_type", match_type)
+        if match_value is not None:
+            pulumi.set(__self__, "match_value", match_value)
+        if negate is not None:
+            pulumi.set(__self__, "negate", negate)
+        if object_match_values is not None:
+            pulumi.set(__self__, "object_match_values", object_match_values)
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the match is case sensitive.
+        """
+        return pulumi.get(self, "case_sensitive")
+
+    @property
+    @pulumi.getter(name="checkIps")
+    def check_ips(self) -> Optional[str]:
+        """
+        - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+        """
+        return pulumi.get(self, "check_ips")
+
+    @property
+    @pulumi.getter(name="matchOperator")
+    def match_operator(self) -> Optional[str]:
+        """
+        - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+        """
+        return pulumi.get(self, "match_operator")
+
+    @property
+    @pulumi.getter(name="matchType")
+    def match_type(self) -> Optional[str]:
+        """
+        - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+        """
+        return pulumi.get(self, "match_type")
+
+    @property
+    @pulumi.getter(name="matchValue")
+    def match_value(self) -> Optional[str]:
+        """
+        - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+        """
+        return pulumi.get(self, "match_value")
+
+    @property
+    @pulumi.getter
+    def negate(self) -> Optional[bool]:
+        """
+        - (Optional) Whether to negate the match.
+        """
+        return pulumi.get(self, "negate")
+
+    @property
+    @pulumi.getter(name="objectMatchValues")
+    def object_match_values(self) -> Optional[Sequence['outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueResult']]:
+        """
+        - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+        """
+        return pulumi.get(self, "object_match_values")
+
+
+@pulumi.output_type
+class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueResult(dict):
+    def __init__(__self__, *,
+                 type: str,
+                 name: Optional[str] = None,
+                 name_case_sensitive: Optional[bool] = None,
+                 name_has_wildcard: Optional[bool] = None,
+                 options: Optional['outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsResult'] = None,
+                 values: Optional[Sequence[str]] = None):
+        """
+        :param str type: - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        :param str name: - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        :param bool name_case_sensitive: - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+        :param bool name_has_wildcard: - (Optional) Whether the `name` argument includes wildcards.
+        :param 'GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs' options: - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+        :param Sequence[str] values: - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        pulumi.set(__self__, "type", type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if name_case_sensitive is not None:
+            pulumi.set(__self__, "name_case_sensitive", name_case_sensitive)
+        if name_has_wildcard is not None:
+            pulumi.set(__self__, "name_has_wildcard", name_has_wildcard)
+        if options is not None:
+            pulumi.set(__self__, "options", options)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="nameCaseSensitive")
+    def name_case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+        """
+        return pulumi.get(self, "name_case_sensitive")
+
+    @property
+    @pulumi.getter(name="nameHasWildcard")
+    def name_has_wildcard(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `name` argument includes wildcards.
+        """
+        return pulumi.get(self, "name_has_wildcard")
+
+    @property
+    @pulumi.getter
+    def options(self) -> Optional['outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsResult']:
+        """
+        - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+        """
+        return pulumi.get(self, "options")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[str]]:
+        """
+        - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsResult(dict):
+    def __init__(__self__, *,
+                 value_case_sensitive: Optional[bool] = None,
+                 value_escaped: Optional[bool] = None,
+                 value_has_wildcard: Optional[bool] = None,
+                 values: Optional[Sequence[str]] = None):
+        """
+        :param bool value_case_sensitive: - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+        :param bool value_escaped: - (Optional) Whether the `value` argument should be compared in an escaped form.
+        :param bool value_has_wildcard: - (Optional) Whether the `value` argument includes wildcards.
+        :param Sequence[str] values: - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        if value_case_sensitive is not None:
+            pulumi.set(__self__, "value_case_sensitive", value_case_sensitive)
+        if value_escaped is not None:
+            pulumi.set(__self__, "value_escaped", value_escaped)
+        if value_has_wildcard is not None:
+            pulumi.set(__self__, "value_has_wildcard", value_has_wildcard)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter(name="valueCaseSensitive")
+    def value_case_sensitive(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+        """
+        return pulumi.get(self, "value_case_sensitive")
+
+    @property
+    @pulumi.getter(name="valueEscaped")
+    def value_escaped(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument should be compared in an escaped form.
+        """
+        return pulumi.get(self, "value_escaped")
+
+    @property
+    @pulumi.getter(name="valueHasWildcard")
+    def value_has_wildcard(self) -> Optional[bool]:
+        """
+        - (Optional) Whether the `value` argument includes wildcards.
+        """
+        return pulumi.get(self, "value_has_wildcard")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[str]]:
+        """
+        - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
 class GetContractsContractResult(dict):
     def __init__(__self__, *,
                  contract_id: str,
@@ -2530,6 +6775,111 @@ class GetContractsContractResult(dict):
     @pulumi.getter(name="contractTypeName")
     def contract_type_name(self) -> str:
         return pulumi.get(self, "contract_type_name")
+
+
+@pulumi.output_type
+class GetDatastreamActivationHistoryActivationResult(dict):
+    def __init__(__self__, *,
+                 created_by: str,
+                 created_date: str,
+                 is_active: bool,
+                 stream_id: int,
+                 stream_version_id: int):
+        """
+        :param int stream_id: - (Required) A stream's unique identifier.
+        """
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_date", created_date)
+        pulumi.set(__self__, "is_active", is_active)
+        pulumi.set(__self__, "stream_id", stream_id)
+        pulumi.set(__self__, "stream_version_id", stream_version_id)
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> str:
+        return pulumi.get(self, "created_date")
+
+    @property
+    @pulumi.getter(name="isActive")
+    def is_active(self) -> bool:
+        return pulumi.get(self, "is_active")
+
+    @property
+    @pulumi.getter(name="streamId")
+    def stream_id(self) -> int:
+        """
+        - (Required) A stream's unique identifier.
+        """
+        return pulumi.get(self, "stream_id")
+
+    @property
+    @pulumi.getter(name="streamVersionId")
+    def stream_version_id(self) -> int:
+        return pulumi.get(self, "stream_version_id")
+
+
+@pulumi.output_type
+class GetDatastreamDatasetFieldsFieldResult(dict):
+    def __init__(__self__, *,
+                 dataset_fields: Sequence['outputs.GetDatastreamDatasetFieldsFieldDatasetFieldResult'],
+                 dataset_group_description: str,
+                 dataset_group_name: str):
+        pulumi.set(__self__, "dataset_fields", dataset_fields)
+        pulumi.set(__self__, "dataset_group_description", dataset_group_description)
+        pulumi.set(__self__, "dataset_group_name", dataset_group_name)
+
+    @property
+    @pulumi.getter(name="datasetFields")
+    def dataset_fields(self) -> Sequence['outputs.GetDatastreamDatasetFieldsFieldDatasetFieldResult']:
+        return pulumi.get(self, "dataset_fields")
+
+    @property
+    @pulumi.getter(name="datasetGroupDescription")
+    def dataset_group_description(self) -> str:
+        return pulumi.get(self, "dataset_group_description")
+
+    @property
+    @pulumi.getter(name="datasetGroupName")
+    def dataset_group_name(self) -> str:
+        return pulumi.get(self, "dataset_group_name")
+
+
+@pulumi.output_type
+class GetDatastreamDatasetFieldsFieldDatasetFieldResult(dict):
+    def __init__(__self__, *,
+                 dataset_field_description: str,
+                 dataset_field_id: int,
+                 dataset_field_json_key: str,
+                 dataset_field_name: str):
+        pulumi.set(__self__, "dataset_field_description", dataset_field_description)
+        pulumi.set(__self__, "dataset_field_id", dataset_field_id)
+        pulumi.set(__self__, "dataset_field_json_key", dataset_field_json_key)
+        pulumi.set(__self__, "dataset_field_name", dataset_field_name)
+
+    @property
+    @pulumi.getter(name="datasetFieldDescription")
+    def dataset_field_description(self) -> str:
+        return pulumi.get(self, "dataset_field_description")
+
+    @property
+    @pulumi.getter(name="datasetFieldId")
+    def dataset_field_id(self) -> int:
+        return pulumi.get(self, "dataset_field_id")
+
+    @property
+    @pulumi.getter(name="datasetFieldJsonKey")
+    def dataset_field_json_key(self) -> str:
+        return pulumi.get(self, "dataset_field_json_key")
+
+    @property
+    @pulumi.getter(name="datasetFieldName")
+    def dataset_field_name(self) -> str:
+        return pulumi.get(self, "dataset_field_name")
 
 
 @pulumi.output_type

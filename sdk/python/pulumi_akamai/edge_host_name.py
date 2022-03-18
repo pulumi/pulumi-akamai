@@ -33,7 +33,6 @@ class EdgeHostNameArgs:
         :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
         :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
         :param pulumi.Input[str] product: Replaced by `product_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] product_id: - (Required) A product's unique ID, including the `prd_` prefix.
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         pulumi.set(__self__, "edge_hostname", edge_hostname)
@@ -163,9 +162,6 @@ class EdgeHostNameArgs:
     @property
     @pulumi.getter(name="productId")
     def product_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        - (Required) A product's unique ID, including the `prd_` prefix.
-        """
         return pulumi.get(self, "product_id")
 
     @product_id.setter
@@ -208,7 +204,6 @@ class _EdgeHostNameState:
         :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
         :param pulumi.Input[str] ip_behavior: Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
         :param pulumi.Input[str] product: Replaced by `product_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] product_id: - (Required) A product's unique ID, including the `prd_` prefix.
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         if certificate is not None:
@@ -340,9 +335,6 @@ class _EdgeHostNameState:
     @property
     @pulumi.getter(name="productId")
     def product_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        - (Required) A product's unique ID, including the `prd_` prefix.
-        """
         return pulumi.get(self, "product_id")
 
     @product_id.setter
@@ -443,7 +435,6 @@ class EdgeHostName(pulumi.CustomResource):
         :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
         :param pulumi.Input[str] ip_behavior: Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
         :param pulumi.Input[str] product: Replaced by `product_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] product_id: - (Required) A product's unique ID, including the `prd_` prefix.
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         ...
@@ -604,7 +595,6 @@ class EdgeHostName(pulumi.CustomResource):
         :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
         :param pulumi.Input[str] ip_behavior: Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
         :param pulumi.Input[str] product: Replaced by `product_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] product_id: - (Required) A product's unique ID, including the `prd_` prefix.
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -690,9 +680,6 @@ class EdgeHostName(pulumi.CustomResource):
     @property
     @pulumi.getter(name="productId")
     def product_id(self) -> pulumi.Output[str]:
-        """
-        - (Required) A product's unique ID, including the `prd_` prefix.
-        """
         return pulumi.get(self, "product_id")
 
     @property

@@ -6,6 +6,7 @@ import * as utilities from "./utilities";
 
 // Export members:
 export * from "./appSecActivations";
+export * from "./appSecAdvancedSettingsEvasivePathMatch";
 export * from "./appSecAdvancedSettingsLogging";
 export * from "./appSecAdvancedSettingsPragmaHeader";
 export * from "./appSecAdvancedSettingsPrefetch";
@@ -20,8 +21,6 @@ export * from "./appSecCustomRule";
 export * from "./appSecCustomRuleAction";
 export * from "./appSecEval";
 export * from "./appSecEvalGroup";
-export * from "./appSecEvalHostnames";
-export * from "./appSecEvalProtectHost";
 export * from "./appSecEvalRule";
 export * from "./appSecIPGeo";
 export * from "./appSecIPGeoProtection";
@@ -48,12 +47,21 @@ export * from "./appSecVersionNodes";
 export * from "./appSecWafMode";
 export * from "./appSecWafProtection";
 export * from "./appSecWapSelectedHostnames";
+export * from "./cloudletsApplicationLoadBalancer";
+export * from "./cloudletsApplicationLoadBalancerActivation";
+export * from "./cloudletsPolicy";
+export * from "./cloudletsPolicyActivation";
 export * from "./cpCode";
 export * from "./cpsDvEnrollment";
 export * from "./cpsDvValidation";
+export * from "./datastream";
 export * from "./dnsRecord";
 export * from "./dnsZone";
 export * from "./edgeHostName";
+export * from "./edgeKv";
+export * from "./edgeWorker";
+export * from "./edgeWorkersActivation";
+export * from "./getAppSecAdvancedSettingsEvasivePathMatch";
 export * from "./getAppSecAdvancedSettingsLogging";
 export * from "./getAppSecAdvancedSettingsPragmaHeader";
 export * from "./getAppSecAdvancedSettingsPrefetch";
@@ -69,7 +77,6 @@ export * from "./getAppSecCustomRuleActions";
 export * from "./getAppSecCustomRules";
 export * from "./getAppSecEval";
 export * from "./getAppSecEvalGroups";
-export * from "./getAppSecEvalHostnames";
 export * from "./getAppSecEvalRules";
 export * from "./getAppSecExportConfiguration";
 export * from "./getAppSecFailoverHostnames";
@@ -94,14 +101,28 @@ export * from "./getAppSecSiemDefinitions";
 export * from "./getAppSecSiemSettings";
 export * from "./getAppSecSlowPost";
 export * from "./getAppSecThreatIntel";
+export * from "./getAppSecTuningRecommendations";
 export * from "./getAppSecVersionNotes";
 export * from "./getAppSecWafMode";
 export * from "./getAppSecWapSelectedHostnames";
 export * from "./getAuthoritiesSet";
+export * from "./getCloudletsApiPrioritizationMatchRule";
+export * from "./getCloudletsApplicationLoadBalancer";
+export * from "./getCloudletsApplicationLoadBalancerMatchRule";
+export * from "./getCloudletsAudienceSegmentationMatchRule";
+export * from "./getCloudletsEdgeRedirectorMatchRule";
+export * from "./getCloudletsForwardRewriteMatchRule";
+export * from "./getCloudletsPhasedReleaseMatchRule";
+export * from "./getCloudletsPolicy";
+export * from "./getCloudletsVisitorPrioritizationMatchRule";
 export * from "./getContract";
 export * from "./getContracts";
 export * from "./getCpCode";
+export * from "./getDatastreamActivationHistory";
+export * from "./getDatastreamDatasetFields";
 export * from "./getDnsRecordSet";
+export * from "./getEdgeWorkersPropertyRules";
+export * from "./getEdgeWorkersResourceTier";
 export * from "./getGroup";
 export * from "./getGroups";
 export * from "./getGtmDefaultDatacenter";
@@ -146,6 +167,7 @@ export {
 
 // Import resources to register:
 import { AppSecActivations } from "./appSecActivations";
+import { AppSecAdvancedSettingsEvasivePathMatch } from "./appSecAdvancedSettingsEvasivePathMatch";
 import { AppSecAdvancedSettingsLogging } from "./appSecAdvancedSettingsLogging";
 import { AppSecAdvancedSettingsPragmaHeader } from "./appSecAdvancedSettingsPragmaHeader";
 import { AppSecAdvancedSettingsPrefetch } from "./appSecAdvancedSettingsPrefetch";
@@ -160,8 +182,6 @@ import { AppSecCustomRule } from "./appSecCustomRule";
 import { AppSecCustomRuleAction } from "./appSecCustomRuleAction";
 import { AppSecEval } from "./appSecEval";
 import { AppSecEvalGroup } from "./appSecEvalGroup";
-import { AppSecEvalHostnames } from "./appSecEvalHostnames";
-import { AppSecEvalProtectHost } from "./appSecEvalProtectHost";
 import { AppSecEvalRule } from "./appSecEvalRule";
 import { AppSecIPGeo } from "./appSecIPGeo";
 import { AppSecIPGeoProtection } from "./appSecIPGeoProtection";
@@ -188,12 +208,20 @@ import { AppSecVersionNodes } from "./appSecVersionNodes";
 import { AppSecWafMode } from "./appSecWafMode";
 import { AppSecWafProtection } from "./appSecWafProtection";
 import { AppSecWapSelectedHostnames } from "./appSecWapSelectedHostnames";
+import { CloudletsApplicationLoadBalancer } from "./cloudletsApplicationLoadBalancer";
+import { CloudletsApplicationLoadBalancerActivation } from "./cloudletsApplicationLoadBalancerActivation";
+import { CloudletsPolicy } from "./cloudletsPolicy";
+import { CloudletsPolicyActivation } from "./cloudletsPolicyActivation";
 import { CpCode } from "./cpCode";
 import { CpsDvEnrollment } from "./cpsDvEnrollment";
 import { CpsDvValidation } from "./cpsDvValidation";
+import { Datastream } from "./datastream";
 import { DnsRecord } from "./dnsRecord";
 import { DnsZone } from "./dnsZone";
 import { EdgeHostName } from "./edgeHostName";
+import { EdgeKv } from "./edgeKv";
+import { EdgeWorker } from "./edgeWorker";
+import { EdgeWorkersActivation } from "./edgeWorkersActivation";
 import { GtmAsmap } from "./gtmAsmap";
 import { GtmCidrmap } from "./gtmCidrmap";
 import { GtmDatacenter } from "./gtmDatacenter";
@@ -215,6 +243,8 @@ const _module = {
         switch (type) {
             case "akamai:index/appSecActivations:AppSecActivations":
                 return new AppSecActivations(name, <any>undefined, { urn })
+            case "akamai:index/appSecAdvancedSettingsEvasivePathMatch:AppSecAdvancedSettingsEvasivePathMatch":
+                return new AppSecAdvancedSettingsEvasivePathMatch(name, <any>undefined, { urn })
             case "akamai:index/appSecAdvancedSettingsLogging:AppSecAdvancedSettingsLogging":
                 return new AppSecAdvancedSettingsLogging(name, <any>undefined, { urn })
             case "akamai:index/appSecAdvancedSettingsPragmaHeader:AppSecAdvancedSettingsPragmaHeader":
@@ -243,10 +273,6 @@ const _module = {
                 return new AppSecEval(name, <any>undefined, { urn })
             case "akamai:index/appSecEvalGroup:AppSecEvalGroup":
                 return new AppSecEvalGroup(name, <any>undefined, { urn })
-            case "akamai:index/appSecEvalHostnames:AppSecEvalHostnames":
-                return new AppSecEvalHostnames(name, <any>undefined, { urn })
-            case "akamai:index/appSecEvalProtectHost:AppSecEvalProtectHost":
-                return new AppSecEvalProtectHost(name, <any>undefined, { urn })
             case "akamai:index/appSecEvalRule:AppSecEvalRule":
                 return new AppSecEvalRule(name, <any>undefined, { urn })
             case "akamai:index/appSecIPGeo:AppSecIPGeo":
@@ -299,18 +325,34 @@ const _module = {
                 return new AppSecWafProtection(name, <any>undefined, { urn })
             case "akamai:index/appSecWapSelectedHostnames:AppSecWapSelectedHostnames":
                 return new AppSecWapSelectedHostnames(name, <any>undefined, { urn })
+            case "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer":
+                return new CloudletsApplicationLoadBalancer(name, <any>undefined, { urn })
+            case "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation":
+                return new CloudletsApplicationLoadBalancerActivation(name, <any>undefined, { urn })
+            case "akamai:index/cloudletsPolicy:CloudletsPolicy":
+                return new CloudletsPolicy(name, <any>undefined, { urn })
+            case "akamai:index/cloudletsPolicyActivation:CloudletsPolicyActivation":
+                return new CloudletsPolicyActivation(name, <any>undefined, { urn })
             case "akamai:index/cpCode:CpCode":
                 return new CpCode(name, <any>undefined, { urn })
             case "akamai:index/cpsDvEnrollment:CpsDvEnrollment":
                 return new CpsDvEnrollment(name, <any>undefined, { urn })
             case "akamai:index/cpsDvValidation:CpsDvValidation":
                 return new CpsDvValidation(name, <any>undefined, { urn })
+            case "akamai:index/datastream:Datastream":
+                return new Datastream(name, <any>undefined, { urn })
             case "akamai:index/dnsRecord:DnsRecord":
                 return new DnsRecord(name, <any>undefined, { urn })
             case "akamai:index/dnsZone:DnsZone":
                 return new DnsZone(name, <any>undefined, { urn })
             case "akamai:index/edgeHostName:EdgeHostName":
                 return new EdgeHostName(name, <any>undefined, { urn })
+            case "akamai:index/edgeKv:EdgeKv":
+                return new EdgeKv(name, <any>undefined, { urn })
+            case "akamai:index/edgeWorker:EdgeWorker":
+                return new EdgeWorker(name, <any>undefined, { urn })
+            case "akamai:index/edgeWorkersActivation:EdgeWorkersActivation":
+                return new EdgeWorkersActivation(name, <any>undefined, { urn })
             case "akamai:index/gtmAsmap:GtmAsmap":
                 return new GtmAsmap(name, <any>undefined, { urn })
             case "akamai:index/gtmCidrmap:GtmCidrmap":
@@ -345,6 +387,7 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("akamai", "index/appSecActivations", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appSecAdvancedSettingsEvasivePathMatch", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecAdvancedSettingsLogging", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecAdvancedSettingsPragmaHeader", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecAdvancedSettingsPrefetch", _module)
@@ -359,8 +402,6 @@ pulumi.runtime.registerResourceModule("akamai", "index/appSecCustomRule", _modul
 pulumi.runtime.registerResourceModule("akamai", "index/appSecCustomRuleAction", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecEval", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecEvalGroup", _module)
-pulumi.runtime.registerResourceModule("akamai", "index/appSecEvalHostnames", _module)
-pulumi.runtime.registerResourceModule("akamai", "index/appSecEvalProtectHost", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecEvalRule", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecIPGeo", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecIPGeoProtection", _module)
@@ -387,12 +428,20 @@ pulumi.runtime.registerResourceModule("akamai", "index/appSecVersionNodes", _mod
 pulumi.runtime.registerResourceModule("akamai", "index/appSecWafMode", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecWafProtection", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecWapSelectedHostnames", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/cloudletsApplicationLoadBalancer", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/cloudletsApplicationLoadBalancerActivation", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/cloudletsPolicy", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/cloudletsPolicyActivation", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cpCode", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cpsDvEnrollment", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cpsDvValidation", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/datastream", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/dnsRecord", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/dnsZone", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/edgeHostName", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/edgeKv", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/edgeWorker", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/edgeWorkersActivation", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/gtmAsmap", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/gtmCidrmap", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/gtmDatacenter", _module)

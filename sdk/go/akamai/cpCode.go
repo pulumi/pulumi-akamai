@@ -117,8 +117,7 @@ type CpCode struct {
 	// Replaced by `productId`. Maintained for legacy purposes.
 	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product pulumi.StringOutput `pulumi:"product"`
-	// - (Required) A product's unique ID, including the `prd_` prefix.
+	Product   pulumi.StringOutput `pulumi:"product"`
 	ProductId pulumi.StringOutput `pulumi:"productId"`
 }
 
@@ -174,8 +173,7 @@ type cpCodeState struct {
 	// Replaced by `productId`. Maintained for legacy purposes.
 	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product *string `pulumi:"product"`
-	// - (Required) A product's unique ID, including the `prd_` prefix.
+	Product   *string `pulumi:"product"`
 	ProductId *string `pulumi:"productId"`
 }
 
@@ -197,8 +195,7 @@ type CpCodeState struct {
 	// Replaced by `productId`. Maintained for legacy purposes.
 	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product pulumi.StringPtrInput
-	// - (Required) A product's unique ID, including the `prd_` prefix.
+	Product   pulumi.StringPtrInput
 	ProductId pulumi.StringPtrInput
 }
 
@@ -224,8 +221,7 @@ type cpCodeArgs struct {
 	// Replaced by `productId`. Maintained for legacy purposes.
 	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product *string `pulumi:"product"`
-	// - (Required) A product's unique ID, including the `prd_` prefix.
+	Product   *string `pulumi:"product"`
 	ProductId *string `pulumi:"productId"`
 }
 
@@ -248,8 +244,7 @@ type CpCodeArgs struct {
 	// Replaced by `productId`. Maintained for legacy purposes.
 	//
 	// Deprecated: The setting "product" has been deprecated.
-	Product pulumi.StringPtrInput
-	// - (Required) A product's unique ID, including the `prd_` prefix.
+	Product   pulumi.StringPtrInput
 	ProductId pulumi.StringPtrInput
 }
 

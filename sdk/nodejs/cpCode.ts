@@ -121,9 +121,6 @@ export class CpCode extends pulumi.CustomResource {
      * @deprecated The setting "product" has been deprecated.
      */
     public readonly product!: pulumi.Output<string>;
-    /**
-     * - (Required) A product's unique ID, including the `prd_` prefix.
-     */
     public readonly productId!: pulumi.Output<string>;
 
     /**
@@ -197,9 +194,6 @@ export interface CpCodeState {
      * @deprecated The setting "product" has been deprecated.
      */
     product?: pulumi.Input<string>;
-    /**
-     * - (Required) A product's unique ID, including the `prd_` prefix.
-     */
     productId?: pulumi.Input<string>;
 }
 
@@ -237,8 +231,5 @@ export interface CpCodeArgs {
      * @deprecated The setting "product" has been deprecated.
      */
     product?: pulumi.Input<string>;
-    /**
-     * - (Required) A product's unique ID, including the `prd_` prefix.
-     */
     productId?: pulumi.Input<string>;
 }

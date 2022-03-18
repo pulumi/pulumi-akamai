@@ -170,7 +170,7 @@ namespace Pulumi.Akamai
         public Output<string> Product { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+        /// Product ID to be assigned to the Property
         /// </summary>
         [Output("productId")]
         public Output<string> ProductId { get; private set; } = null!;
@@ -340,7 +340,7 @@ namespace Pulumi.Akamai
         public Input<string>? Product { get; set; }
 
         /// <summary>
-        /// - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+        /// Product ID to be assigned to the Property
         /// </summary>
         [Input("productId")]
         public Input<string>? ProductId { get; set; }
@@ -455,7 +455,7 @@ namespace Pulumi.Akamai
         public Input<string>? Product { get; set; }
 
         /// <summary>
-        /// - (Required to create, otherwise Optional) A product's unique ID, including the `prd_` prefix.
+        /// Product ID to be assigned to the Property
         /// </summary>
         [Input("productId")]
         public Input<string>? ProductId { get; set; }

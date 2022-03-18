@@ -7,7 +7,7 @@ import * as utilities from "./utilities";
 
 /**
  * Use the `akamai.getProperties` data source to query and retrieve the list of properties for a group and contract
- * based on the [EdgeGrid API client token](https://developer.akamai.com/getting-started/edgegrid) you're using.
+ * based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
  *
  * ## Example Usage
  *

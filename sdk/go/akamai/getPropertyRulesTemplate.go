@@ -54,11 +54,13 @@ func GetPropertyRulesTemplate(ctx *pulumi.Context, args *GetPropertyRulesTemplat
 // A collection of arguments for invoking getPropertyRulesTemplate.
 type GetPropertyRulesTemplateArgs struct {
 	// The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree.
-	TemplateFile      *string                            `pulumi:"templateFile"`
-	Templates         []GetPropertyRulesTemplateTemplate `pulumi:"templates"`
-	VarDefinitionFile *string                            `pulumi:"varDefinitionFile"`
-	VarValuesFile     *string                            `pulumi:"varValuesFile"`
-	// A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `variableDefinitionFile` and `variableValuesFile` arguments. A `variables` block includes:
+	TemplateFile *string                            `pulumi:"templateFile"`
+	Templates    []GetPropertyRulesTemplateTemplate `pulumi:"templates"`
+	// The absolute path to the file containing variable definitions and defaults. This file follows the syntax used in the [Property Manager CLI](https://github.com/akamai/cli-property-manager). This argument is required if you set `varValuesFile` and conflicts with `variables`.
+	VarDefinitionFile *string `pulumi:"varDefinitionFile"`
+	// The absolute path to the file containing variable values. This file follows the syntax used in the Property Manager CLI. This argument is required if you set `varDefinitionFile` and conflicts with `variables`.
+	VarValuesFile *string `pulumi:"varValuesFile"`
+	// A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `varDefinitionFile` and `varValuesFile` arguments. A `variables` block includes:
 	Variables []GetPropertyRulesTemplateVariable `pulumi:"variables"`
 }
 
@@ -86,11 +88,13 @@ func GetPropertyRulesTemplateOutput(ctx *pulumi.Context, args GetPropertyRulesTe
 // A collection of arguments for invoking getPropertyRulesTemplate.
 type GetPropertyRulesTemplateOutputArgs struct {
 	// The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree.
-	TemplateFile      pulumi.StringPtrInput                      `pulumi:"templateFile"`
-	Templates         GetPropertyRulesTemplateTemplateArrayInput `pulumi:"templates"`
-	VarDefinitionFile pulumi.StringPtrInput                      `pulumi:"varDefinitionFile"`
-	VarValuesFile     pulumi.StringPtrInput                      `pulumi:"varValuesFile"`
-	// A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `variableDefinitionFile` and `variableValuesFile` arguments. A `variables` block includes:
+	TemplateFile pulumi.StringPtrInput                      `pulumi:"templateFile"`
+	Templates    GetPropertyRulesTemplateTemplateArrayInput `pulumi:"templates"`
+	// The absolute path to the file containing variable definitions and defaults. This file follows the syntax used in the [Property Manager CLI](https://github.com/akamai/cli-property-manager). This argument is required if you set `varValuesFile` and conflicts with `variables`.
+	VarDefinitionFile pulumi.StringPtrInput `pulumi:"varDefinitionFile"`
+	// The absolute path to the file containing variable values. This file follows the syntax used in the Property Manager CLI. This argument is required if you set `varDefinitionFile` and conflicts with `variables`.
+	VarValuesFile pulumi.StringPtrInput `pulumi:"varValuesFile"`
+	// A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `varDefinitionFile` and `varValuesFile` arguments. A `variables` block includes:
 	Variables GetPropertyRulesTemplateVariableArrayInput `pulumi:"variables"`
 }
 

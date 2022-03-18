@@ -64,10 +64,16 @@ export interface GetPropertyRulesTemplateArgs {
      */
     templateFile?: string;
     templates?: inputs.GetPropertyRulesTemplateTemplate[];
+    /**
+     * The absolute path to the file containing variable definitions and defaults. This file follows the syntax used in the [Property Manager CLI](https://github.com/akamai/cli-property-manager). This argument is required if you set `varValuesFile` and conflicts with `variables`.
+     */
     varDefinitionFile?: string;
+    /**
+     * The absolute path to the file containing variable values. This file follows the syntax used in the Property Manager CLI. This argument is required if you set `varDefinitionFile` and conflicts with `variables`.
+     */
     varValuesFile?: string;
     /**
-     * A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `variableDefinitionFile` and `variableValuesFile` arguments. A `variables` block includes:
+     * A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `varDefinitionFile` and `varValuesFile` arguments. A `variables` block includes:
      */
     variables?: inputs.GetPropertyRulesTemplateVariable[];
 }
@@ -101,10 +107,16 @@ export interface GetPropertyRulesTemplateOutputArgs {
      */
     templateFile?: pulumi.Input<string>;
     templates?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesTemplateTemplateArgs>[]>;
+    /**
+     * The absolute path to the file containing variable definitions and defaults. This file follows the syntax used in the [Property Manager CLI](https://github.com/akamai/cli-property-manager). This argument is required if you set `varValuesFile` and conflicts with `variables`.
+     */
     varDefinitionFile?: pulumi.Input<string>;
+    /**
+     * The absolute path to the file containing variable values. This file follows the syntax used in the Property Manager CLI. This argument is required if you set `varDefinitionFile` and conflicts with `variables`.
+     */
     varValuesFile?: pulumi.Input<string>;
     /**
-     * A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `variableDefinitionFile` and `variableValuesFile` arguments. A `variables` block includes:
+     * A definition of a variable. Variables aren't required and you can use multiple ones if needed. This argument conflicts with the `varDefinitionFile` and `varValuesFile` arguments. A `variables` block includes:
      */
     variables?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesTemplateVariableArgs>[]>;
 }
