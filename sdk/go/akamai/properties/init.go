@@ -29,8 +29,6 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Property{}
 	case "akamai:properties/propertyActivation:PropertyActivation":
 		r = &PropertyActivation{}
-	case "akamai:properties/propertyVariables:PropertyVariables":
-		r = &PropertyVariables{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -62,11 +60,6 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"properties/propertyActivation",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"akamai",
-		"properties/propertyVariables",
 		&module{version},
 	)
 }

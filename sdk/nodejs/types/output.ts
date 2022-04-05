@@ -1420,6 +1420,118 @@ export interface GetCloudletsPolicyActivationPropertyInfo {
     version: number;
 }
 
+export interface GetCloudletsRequestControlMatchRuleMatchRule {
+    /**
+     * - (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
+     */
+    allowDeny: string;
+    /**
+     * - (Optional) Whether to disable a rule. When a rule is disabled it's not evaluated against incoming requests.
+     */
+    disabled?: boolean;
+    /**
+     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    end?: number;
+    /**
+     * - (Optional) A list of conditions to apply to a Cloudlet, including:
+     */
+    matches?: outputs.GetCloudletsRequestControlMatchRuleMatchRuleMatch[];
+    /**
+     * - (Optional) Match on all incoming requests.
+     */
+    matchesAlways?: boolean;
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: string;
+    /**
+     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    start?: number;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: string;
+}
+
+export interface GetCloudletsRequestControlMatchRuleMatchRuleMatch {
+    /**
+     * - (Optional) Whether the match is case sensitive.
+     */
+    caseSensitive?: boolean;
+    /**
+     * - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+     */
+    checkIps?: string;
+    /**
+     * - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+     */
+    matchOperator?: string;
+    /**
+     * - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+     */
+    matchType?: string;
+    /**
+     * - (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
+     */
+    matchValue?: string;
+    /**
+     * - (Optional) Whether to negate the match.
+     */
+    negate?: boolean;
+    /**
+     * - (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+     */
+    objectMatchValues?: outputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue[];
+}
+
+export interface GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue {
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: string;
+    /**
+     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+     */
+    nameCaseSensitive?: boolean;
+    /**
+     * - (Optional) Whether the `name` argument includes wildcards.
+     */
+    nameHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+     */
+    options?: outputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: string;
+    /**
+     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     */
+    values?: string[];
+}
+
+export interface GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions {
+    /**
+     * - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+     */
+    valueCaseSensitive?: boolean;
+    /**
+     * - (Optional) Whether the `value` argument should be compared in an escaped form.
+     */
+    valueEscaped?: boolean;
+    /**
+     * - (Optional) Whether the `value` argument includes wildcards.
+     */
+    valueHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     */
+    values?: string[];
+}
+
 export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRule {
     /**
      * - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
@@ -1583,6 +1695,22 @@ export interface GetPropertiesProperty {
     propertyName: string;
     ruleFormat: string;
     stagingVersion: number;
+}
+
+export interface GetPropertiesSearchProperty {
+    accountId: string;
+    assetId: string;
+    contractId: string;
+    edgeHostname: string;
+    groupId: string;
+    hostname: string;
+    productionStatus: string;
+    propertyId: string;
+    propertyName: string;
+    propertyVersion: number;
+    stagingStatus: string;
+    updatedByUser: string;
+    updatedDate: string;
 }
 
 export interface GetPropertyHostnamesHostname {
@@ -1968,18 +2096,6 @@ export interface PropertyRuleWarning {
     type?: string;
 }
 
-export interface PropertyVariablesVariable {
-    variables?: outputs.PropertyVariablesVariableVariable[];
-}
-
-export interface PropertyVariablesVariableVariable {
-    description?: string;
-    hidden: boolean;
-    name: string;
-    sensitive: boolean;
-    value?: string;
-}
-
 export namespace config {
     export interface Appsecs {
         accessToken?: string;
@@ -2039,8 +2155,17 @@ export namespace config {
 
 export namespace edgedns {
     export interface DnsZoneTsigKey {
+        /**
+         * The hashing algorithm.
+         */
         algorithm: string;
+        /**
+         * The key name.
+         */
         name: string;
+        /**
+         * String known between transfer endpoints.
+         */
         secret: string;
     }
 
@@ -2068,9 +2193,18 @@ export namespace properties {
     }
 
     export interface PropertyHostname {
+        /**
+         * The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+         */
         certProvisioningType: string;
         certStatuses: outputs.properties.PropertyHostnameCertStatus[];
+        /**
+         * A string containing the original origin's hostname. For example, `"example.org"`.
+         */
         cnameFrom: string;
+        /**
+         * A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
+         */
         cnameTo: string;
         cnameType: string;
         edgeHostnameId: string;
@@ -2112,112 +2246,274 @@ export namespace properties {
         type?: string;
     }
 
-    export interface PropertyVariablesVariable {
-        variables?: outputs.properties.PropertyVariablesVariableVariable[];
-    }
-
-    export interface PropertyVariablesVariableVariable {
-        description?: string;
-        hidden: boolean;
-        name: string;
-        sensitive: boolean;
-        value?: string;
-    }
-
 }
 
 export namespace trafficmanagement {
     export interface GtmASmapAssignment {
+        /**
+         * Specifies an array of AS numbers.
+         */
         asNumbers: number[];
+        /**
+         * A unique identifier for an existing data center in the domain.
+         */
         datacenterId: number;
+        /**
+         * A descriptive label for the group.
+         */
         nickname: string;
     }
 
     export interface GtmASmapDefaultDatacenter {
+        /**
+         * A unique identifier for an existing data center in the domain.
+         */
         datacenterId: number;
+        /**
+         * A descriptive label for the group.
+         */
         nickname?: string;
     }
 
     export interface GtmCidrmapAssignment {
+        /**
+         * Specifies an array of CIDR blocks.
+         */
         blocks?: string[];
+        /**
+         * A unique identifier for an existing data center in the domain.
+         */
         datacenterId: number;
+        /**
+         * A descriptive label for the CIDR zone group, up to 256 characters.
+         */
         nickname: string;
     }
 
     export interface GtmCidrmapDefaultDatacenter {
+        /**
+         * A unique identifier for an existing data center in the domain.
+         */
         datacenterId: number;
+        /**
+         * A descriptive label for the CIDR zone group, up to 256 characters.
+         */
         nickname?: string;
     }
 
     export interface GtmDatacenterDefaultLoadObject {
+        /**
+         * A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
+         */
         loadObject?: string;
+        /**
+         * Specifies the TCP port to connect to when requesting the load object.
+         */
         loadObjectPort?: number;
+        /**
+         * Specifies a list of servers to request the load object from.
+         */
         loadServers?: string[];
     }
 
     export interface GtmGeomapAssignment {
+        /**
+         * Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
+         */
         countries?: string[];
+        /**
+         * A unique identifier for an existing data center in the domain.
+         */
         datacenterId: number;
+        /**
+         * A descriptive label for the group.
+         */
         nickname: string;
     }
 
     export interface GtmGeomapDefaultDatacenter {
+        /**
+         * A unique identifier for an existing data center in the domain.
+         */
         datacenterId: number;
+        /**
+         * A descriptive label for the group.
+         */
         nickname?: string;
     }
 
     export interface GtmPropertyLivenessTest {
+        /**
+         * If `testObjectProtocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
+         */
         answersRequired?: boolean;
+        /**
+         * A boolean that if set to `true`, disables warnings when non-standard ports are used.
+         */
         disableNonstandardPortWarning?: boolean;
+        /**
+         * A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
+         */
         disabled?: boolean;
+        /**
+         * Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
+         */
         errorPenalty?: number;
+        /**
+         * A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+         */
         httpError3xx?: boolean;
+        /**
+         * A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+         */
         httpError4xx?: boolean;
+        /**
+         * A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+         */
         httpError5xx?: boolean;
+        /**
+         * Contains HTTP headers to send if the `testObjectProtocol` is `http` or `https`. You can have multiple `httpHeader` entries. Requires these arguments:
+         */
         httpHeaders?: outputs.trafficmanagement.GtmPropertyLivenessTestHttpHeader[];
+        /**
+         * Name of HTTP header.
+         */
         name: string;
+        /**
+         * A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `testObjectProtocol` of https.
+         */
         peerCertificateVerification?: boolean;
+        /**
+         * A boolean indicating whether the `testObjectProtocol` is DNS. The DNS query is recursive.
+         */
         recursionRequested?: boolean;
+        /**
+         * Specifies a request string.
+         */
         requestString?: string;
+        /**
+         * Specifies the query type, if `testObjectProtocol` is DNS.
+         */
         resourceType?: string;
+        /**
+         * Specifies a response string.
+         */
         responseString?: string;
+        /**
+         * Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
+         */
         sslClientCertificate?: string;
+        /**
+         * Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can't have a passphrase nor be used for any other purpose.
+         */
         sslClientPrivateKey?: string;
+        /**
+         * Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
+         */
         testInterval: number;
+        /**
+         * Specifies the static text that acts as a stand-in for the data that you're sending on the network.
+         */
         testObject: string;
+        /**
+         * Specifies the test object's password. It is required if testObjectProtocol is ftp.
+         */
         testObjectPassword?: string;
+        /**
+         * Specifies the port number for the testObject.
+         */
         testObjectPort?: number;
+        /**
+         * Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
+         */
         testObjectProtocol: string;
+        /**
+         * A descriptive name for the testObject.
+         */
         testObjectUsername?: string;
+        /**
+         * Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
+         */
         testTimeout: number;
+        /**
+         * Specifies the score to be reported if the liveness test times out.
+         */
         timeoutPenalty?: number;
     }
 
     export interface GtmPropertyLivenessTestHttpHeader {
+        /**
+         * Name of HTTP header.
+         */
         name?: string;
+        /**
+         * Value of HTTP header.
+         */
         value?: string;
     }
 
     export interface GtmPropertyStaticRrSet {
+        /**
+         * (List) An array of data strings, representing multiple records within a set.
+         */
         rdatas?: string[];
+        /**
+         * The number of seconds that this record should live in a resolver's cache before being refetched.
+         */
         ttl?: number;
+        /**
+         * The record type.
+         */
         type?: string;
     }
 
     export interface GtmPropertyTrafficTarget {
+        /**
+         * A unique identifier for an existing data center in the domain.
+         */
         datacenterId?: number;
+        /**
+         * A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
+         */
         enabled?: boolean;
+        /**
+         * Specifies an optional data center for the property. Used when there are no servers configured for the property.
+         */
         handoutCname?: string;
+        /**
+         * Name of HTTP header.
+         */
         name?: string;
+        /**
+         * (List) Identifies the IP address or the hostnames of the servers.
+         */
         servers?: string[];
+        /**
+         * Specifies the traffic weight for the target.
+         */
         weight?: number;
     }
 
     export interface GtmResourceResourceInstance {
+        /**
+         * A unique identifier for an existing data center in the domain.
+         */
         datacenterId: number;
+        /**
+         * Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
+         */
         loadObject?: string;
+        /**
+         * Specifies the TCP port of the `loadObject`.
+         */
         loadObjectPort?: number;
+        /**
+         * (List) Specifies a list of servers from which to request the load object.
+         */
         loadServers?: string[];
+        /**
+         * A boolean that indicates whether a default `loadObject` is used for the resources.
+         */
         useDefaultLoadObject?: boolean;
     }
 

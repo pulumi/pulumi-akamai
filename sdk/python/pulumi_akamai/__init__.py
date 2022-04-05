@@ -114,6 +114,7 @@ from .get_cloudlets_edge_redirector_match_rule import *
 from .get_cloudlets_forward_rewrite_match_rule import *
 from .get_cloudlets_phased_release_match_rule import *
 from .get_cloudlets_policy import *
+from .get_cloudlets_request_control_match_rule import *
 from .get_cloudlets_visitor_prioritization_match_rule import *
 from .get_contract import *
 from .get_contracts import *
@@ -128,6 +129,7 @@ from .get_groups import *
 from .get_gtm_default_datacenter import *
 from .get_network_lists import *
 from .get_properties import *
+from .get_properties_search import *
 from .get_property import *
 from .get_property_hostnames import *
 from .get_property_products import *
@@ -147,7 +149,6 @@ from .network_list_description import *
 from .network_list_subscription import *
 from .property import *
 from .property_activation import *
-from .property_variables import *
 from .provider import *
 from ._inputs import *
 from . import outputs
@@ -741,14 +742,6 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
-  "mod": "index/propertyVariables",
-  "fqn": "pulumi_akamai",
-  "classes": {
-   "akamai:index/propertyVariables:PropertyVariables": "PropertyVariables"
-  }
- },
- {
-  "pkg": "akamai",
   "mod": "properties/cpCode",
   "fqn": "pulumi_akamai.properties",
   "classes": {
@@ -777,14 +770,6 @@ _utilities.register(
   "fqn": "pulumi_akamai.properties",
   "classes": {
    "akamai:properties/propertyActivation:PropertyActivation": "PropertyActivation"
-  }
- },
- {
-  "pkg": "akamai",
-  "mod": "properties/propertyVariables",
-  "fqn": "pulumi_akamai.properties",
-  "classes": {
-   "akamai:properties/propertyVariables:PropertyVariables": "PropertyVariables"
   }
  },
  {

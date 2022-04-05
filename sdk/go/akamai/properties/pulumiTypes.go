@@ -271,12 +271,15 @@ func (o PropertyActivationRuleWarningArrayOutput) Index(i pulumi.IntInput) Prope
 }
 
 type PropertyHostname struct {
+	// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
 	CertProvisioningType string                       `pulumi:"certProvisioningType"`
 	CertStatuses         []PropertyHostnameCertStatus `pulumi:"certStatuses"`
-	CnameFrom            string                       `pulumi:"cnameFrom"`
-	CnameTo              string                       `pulumi:"cnameTo"`
-	CnameType            *string                      `pulumi:"cnameType"`
-	EdgeHostnameId       *string                      `pulumi:"edgeHostnameId"`
+	// A string containing the original origin's hostname. For example, `"example.org"`.
+	CnameFrom string `pulumi:"cnameFrom"`
+	// A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
+	CnameTo        string  `pulumi:"cnameTo"`
+	CnameType      *string `pulumi:"cnameType"`
+	EdgeHostnameId *string `pulumi:"edgeHostnameId"`
 }
 
 // PropertyHostnameInput is an input type that accepts PropertyHostnameArgs and PropertyHostnameOutput values.
@@ -291,12 +294,15 @@ type PropertyHostnameInput interface {
 }
 
 type PropertyHostnameArgs struct {
+	// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
 	CertProvisioningType pulumi.StringInput                   `pulumi:"certProvisioningType"`
 	CertStatuses         PropertyHostnameCertStatusArrayInput `pulumi:"certStatuses"`
-	CnameFrom            pulumi.StringInput                   `pulumi:"cnameFrom"`
-	CnameTo              pulumi.StringInput                   `pulumi:"cnameTo"`
-	CnameType            pulumi.StringPtrInput                `pulumi:"cnameType"`
-	EdgeHostnameId       pulumi.StringPtrInput                `pulumi:"edgeHostnameId"`
+	// A string containing the original origin's hostname. For example, `"example.org"`.
+	CnameFrom pulumi.StringInput `pulumi:"cnameFrom"`
+	// A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
+	CnameTo        pulumi.StringInput    `pulumi:"cnameTo"`
+	CnameType      pulumi.StringPtrInput `pulumi:"cnameType"`
+	EdgeHostnameId pulumi.StringPtrInput `pulumi:"edgeHostnameId"`
 }
 
 func (PropertyHostnameArgs) ElementType() reflect.Type {
@@ -350,6 +356,7 @@ func (o PropertyHostnameOutput) ToPropertyHostnameOutputWithContext(ctx context.
 	return o
 }
 
+// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
 func (o PropertyHostnameOutput) CertProvisioningType() pulumi.StringOutput {
 	return o.ApplyT(func(v PropertyHostname) string { return v.CertProvisioningType }).(pulumi.StringOutput)
 }
@@ -358,10 +365,12 @@ func (o PropertyHostnameOutput) CertStatuses() PropertyHostnameCertStatusArrayOu
 	return o.ApplyT(func(v PropertyHostname) []PropertyHostnameCertStatus { return v.CertStatuses }).(PropertyHostnameCertStatusArrayOutput)
 }
 
+// A string containing the original origin's hostname. For example, `"example.org"`.
 func (o PropertyHostnameOutput) CnameFrom() pulumi.StringOutput {
 	return o.ApplyT(func(v PropertyHostname) string { return v.CnameFrom }).(pulumi.StringOutput)
 }
 
+// A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
 func (o PropertyHostnameOutput) CnameTo() pulumi.StringOutput {
 	return o.ApplyT(func(v PropertyHostname) string { return v.CnameTo }).(pulumi.StringOutput)
 }
@@ -890,218 +899,6 @@ func (o PropertyRuleWarningArrayOutput) Index(i pulumi.IntInput) PropertyRuleWar
 	}).(PropertyRuleWarningOutput)
 }
 
-type PropertyVariablesVariable struct {
-	Variables []PropertyVariablesVariableVariable `pulumi:"variables"`
-}
-
-// PropertyVariablesVariableInput is an input type that accepts PropertyVariablesVariableArgs and PropertyVariablesVariableOutput values.
-// You can construct a concrete instance of `PropertyVariablesVariableInput` via:
-//
-//          PropertyVariablesVariableArgs{...}
-type PropertyVariablesVariableInput interface {
-	pulumi.Input
-
-	ToPropertyVariablesVariableOutput() PropertyVariablesVariableOutput
-	ToPropertyVariablesVariableOutputWithContext(context.Context) PropertyVariablesVariableOutput
-}
-
-type PropertyVariablesVariableArgs struct {
-	Variables PropertyVariablesVariableVariableArrayInput `pulumi:"variables"`
-}
-
-func (PropertyVariablesVariableArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*PropertyVariablesVariable)(nil)).Elem()
-}
-
-func (i PropertyVariablesVariableArgs) ToPropertyVariablesVariableOutput() PropertyVariablesVariableOutput {
-	return i.ToPropertyVariablesVariableOutputWithContext(context.Background())
-}
-
-func (i PropertyVariablesVariableArgs) ToPropertyVariablesVariableOutputWithContext(ctx context.Context) PropertyVariablesVariableOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesVariableOutput)
-}
-
-// PropertyVariablesVariableArrayInput is an input type that accepts PropertyVariablesVariableArray and PropertyVariablesVariableArrayOutput values.
-// You can construct a concrete instance of `PropertyVariablesVariableArrayInput` via:
-//
-//          PropertyVariablesVariableArray{ PropertyVariablesVariableArgs{...} }
-type PropertyVariablesVariableArrayInput interface {
-	pulumi.Input
-
-	ToPropertyVariablesVariableArrayOutput() PropertyVariablesVariableArrayOutput
-	ToPropertyVariablesVariableArrayOutputWithContext(context.Context) PropertyVariablesVariableArrayOutput
-}
-
-type PropertyVariablesVariableArray []PropertyVariablesVariableInput
-
-func (PropertyVariablesVariableArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]PropertyVariablesVariable)(nil)).Elem()
-}
-
-func (i PropertyVariablesVariableArray) ToPropertyVariablesVariableArrayOutput() PropertyVariablesVariableArrayOutput {
-	return i.ToPropertyVariablesVariableArrayOutputWithContext(context.Background())
-}
-
-func (i PropertyVariablesVariableArray) ToPropertyVariablesVariableArrayOutputWithContext(ctx context.Context) PropertyVariablesVariableArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesVariableArrayOutput)
-}
-
-type PropertyVariablesVariableOutput struct{ *pulumi.OutputState }
-
-func (PropertyVariablesVariableOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*PropertyVariablesVariable)(nil)).Elem()
-}
-
-func (o PropertyVariablesVariableOutput) ToPropertyVariablesVariableOutput() PropertyVariablesVariableOutput {
-	return o
-}
-
-func (o PropertyVariablesVariableOutput) ToPropertyVariablesVariableOutputWithContext(ctx context.Context) PropertyVariablesVariableOutput {
-	return o
-}
-
-func (o PropertyVariablesVariableOutput) Variables() PropertyVariablesVariableVariableArrayOutput {
-	return o.ApplyT(func(v PropertyVariablesVariable) []PropertyVariablesVariableVariable { return v.Variables }).(PropertyVariablesVariableVariableArrayOutput)
-}
-
-type PropertyVariablesVariableArrayOutput struct{ *pulumi.OutputState }
-
-func (PropertyVariablesVariableArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]PropertyVariablesVariable)(nil)).Elem()
-}
-
-func (o PropertyVariablesVariableArrayOutput) ToPropertyVariablesVariableArrayOutput() PropertyVariablesVariableArrayOutput {
-	return o
-}
-
-func (o PropertyVariablesVariableArrayOutput) ToPropertyVariablesVariableArrayOutputWithContext(ctx context.Context) PropertyVariablesVariableArrayOutput {
-	return o
-}
-
-func (o PropertyVariablesVariableArrayOutput) Index(i pulumi.IntInput) PropertyVariablesVariableOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyVariablesVariable {
-		return vs[0].([]PropertyVariablesVariable)[vs[1].(int)]
-	}).(PropertyVariablesVariableOutput)
-}
-
-type PropertyVariablesVariableVariable struct {
-	Description *string `pulumi:"description"`
-	Hidden      bool    `pulumi:"hidden"`
-	Name        string  `pulumi:"name"`
-	Sensitive   bool    `pulumi:"sensitive"`
-	Value       *string `pulumi:"value"`
-}
-
-// PropertyVariablesVariableVariableInput is an input type that accepts PropertyVariablesVariableVariableArgs and PropertyVariablesVariableVariableOutput values.
-// You can construct a concrete instance of `PropertyVariablesVariableVariableInput` via:
-//
-//          PropertyVariablesVariableVariableArgs{...}
-type PropertyVariablesVariableVariableInput interface {
-	pulumi.Input
-
-	ToPropertyVariablesVariableVariableOutput() PropertyVariablesVariableVariableOutput
-	ToPropertyVariablesVariableVariableOutputWithContext(context.Context) PropertyVariablesVariableVariableOutput
-}
-
-type PropertyVariablesVariableVariableArgs struct {
-	Description pulumi.StringPtrInput `pulumi:"description"`
-	Hidden      pulumi.BoolInput      `pulumi:"hidden"`
-	Name        pulumi.StringInput    `pulumi:"name"`
-	Sensitive   pulumi.BoolInput      `pulumi:"sensitive"`
-	Value       pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (PropertyVariablesVariableVariableArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*PropertyVariablesVariableVariable)(nil)).Elem()
-}
-
-func (i PropertyVariablesVariableVariableArgs) ToPropertyVariablesVariableVariableOutput() PropertyVariablesVariableVariableOutput {
-	return i.ToPropertyVariablesVariableVariableOutputWithContext(context.Background())
-}
-
-func (i PropertyVariablesVariableVariableArgs) ToPropertyVariablesVariableVariableOutputWithContext(ctx context.Context) PropertyVariablesVariableVariableOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesVariableVariableOutput)
-}
-
-// PropertyVariablesVariableVariableArrayInput is an input type that accepts PropertyVariablesVariableVariableArray and PropertyVariablesVariableVariableArrayOutput values.
-// You can construct a concrete instance of `PropertyVariablesVariableVariableArrayInput` via:
-//
-//          PropertyVariablesVariableVariableArray{ PropertyVariablesVariableVariableArgs{...} }
-type PropertyVariablesVariableVariableArrayInput interface {
-	pulumi.Input
-
-	ToPropertyVariablesVariableVariableArrayOutput() PropertyVariablesVariableVariableArrayOutput
-	ToPropertyVariablesVariableVariableArrayOutputWithContext(context.Context) PropertyVariablesVariableVariableArrayOutput
-}
-
-type PropertyVariablesVariableVariableArray []PropertyVariablesVariableVariableInput
-
-func (PropertyVariablesVariableVariableArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]PropertyVariablesVariableVariable)(nil)).Elem()
-}
-
-func (i PropertyVariablesVariableVariableArray) ToPropertyVariablesVariableVariableArrayOutput() PropertyVariablesVariableVariableArrayOutput {
-	return i.ToPropertyVariablesVariableVariableArrayOutputWithContext(context.Background())
-}
-
-func (i PropertyVariablesVariableVariableArray) ToPropertyVariablesVariableVariableArrayOutputWithContext(ctx context.Context) PropertyVariablesVariableVariableArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesVariableVariableArrayOutput)
-}
-
-type PropertyVariablesVariableVariableOutput struct{ *pulumi.OutputState }
-
-func (PropertyVariablesVariableVariableOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*PropertyVariablesVariableVariable)(nil)).Elem()
-}
-
-func (o PropertyVariablesVariableVariableOutput) ToPropertyVariablesVariableVariableOutput() PropertyVariablesVariableVariableOutput {
-	return o
-}
-
-func (o PropertyVariablesVariableVariableOutput) ToPropertyVariablesVariableVariableOutputWithContext(ctx context.Context) PropertyVariablesVariableVariableOutput {
-	return o
-}
-
-func (o PropertyVariablesVariableVariableOutput) Description() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v PropertyVariablesVariableVariable) *string { return v.Description }).(pulumi.StringPtrOutput)
-}
-
-func (o PropertyVariablesVariableVariableOutput) Hidden() pulumi.BoolOutput {
-	return o.ApplyT(func(v PropertyVariablesVariableVariable) bool { return v.Hidden }).(pulumi.BoolOutput)
-}
-
-func (o PropertyVariablesVariableVariableOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v PropertyVariablesVariableVariable) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o PropertyVariablesVariableVariableOutput) Sensitive() pulumi.BoolOutput {
-	return o.ApplyT(func(v PropertyVariablesVariableVariable) bool { return v.Sensitive }).(pulumi.BoolOutput)
-}
-
-func (o PropertyVariablesVariableVariableOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v PropertyVariablesVariableVariable) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type PropertyVariablesVariableVariableArrayOutput struct{ *pulumi.OutputState }
-
-func (PropertyVariablesVariableVariableArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]PropertyVariablesVariableVariable)(nil)).Elem()
-}
-
-func (o PropertyVariablesVariableVariableArrayOutput) ToPropertyVariablesVariableVariableArrayOutput() PropertyVariablesVariableVariableArrayOutput {
-	return o
-}
-
-func (o PropertyVariablesVariableVariableArrayOutput) ToPropertyVariablesVariableVariableArrayOutputWithContext(ctx context.Context) PropertyVariablesVariableVariableArrayOutput {
-	return o
-}
-
-func (o PropertyVariablesVariableVariableArrayOutput) Index(i pulumi.IntInput) PropertyVariablesVariableVariableOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyVariablesVariableVariable {
-		return vs[0].([]PropertyVariablesVariableVariable)[vs[1].(int)]
-	}).(PropertyVariablesVariableVariableOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationRuleErrorInput)(nil)).Elem(), PropertyActivationRuleErrorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationRuleErrorArrayInput)(nil)).Elem(), PropertyActivationRuleErrorArray{})
@@ -1117,10 +914,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyRuleErrorArrayInput)(nil)).Elem(), PropertyRuleErrorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyRuleWarningInput)(nil)).Elem(), PropertyRuleWarningArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyRuleWarningArrayInput)(nil)).Elem(), PropertyRuleWarningArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*PropertyVariablesVariableInput)(nil)).Elem(), PropertyVariablesVariableArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*PropertyVariablesVariableArrayInput)(nil)).Elem(), PropertyVariablesVariableArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*PropertyVariablesVariableVariableInput)(nil)).Elem(), PropertyVariablesVariableVariableArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*PropertyVariablesVariableVariableArrayInput)(nil)).Elem(), PropertyVariablesVariableVariableArray{})
 	pulumi.RegisterOutputType(PropertyActivationRuleErrorOutput{})
 	pulumi.RegisterOutputType(PropertyActivationRuleErrorArrayOutput{})
 	pulumi.RegisterOutputType(PropertyActivationRuleWarningOutput{})
@@ -1135,8 +928,4 @@ func init() {
 	pulumi.RegisterOutputType(PropertyRuleErrorArrayOutput{})
 	pulumi.RegisterOutputType(PropertyRuleWarningOutput{})
 	pulumi.RegisterOutputType(PropertyRuleWarningArrayOutput{})
-	pulumi.RegisterOutputType(PropertyVariablesVariableOutput{})
-	pulumi.RegisterOutputType(PropertyVariablesVariableArrayOutput{})
-	pulumi.RegisterOutputType(PropertyVariablesVariableVariableOutput{})
-	pulumi.RegisterOutputType(PropertyVariablesVariableVariableArrayOutput{})
 }

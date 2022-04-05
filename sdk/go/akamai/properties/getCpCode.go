@@ -22,13 +22,20 @@ func LookupCpCode(ctx *pulumi.Context, args *LookupCpCodeArgs, opts ...pulumi.In
 
 // A collection of arguments for invoking getCpCode.
 type LookupCpCodeArgs struct {
+	// Replaced by `contractId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract   *string `pulumi:"contract"`
+	Contract *string `pulumi:"contract"`
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId *string `pulumi:"contractId"`
+	// Replaced by `groupId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group   *string `pulumi:"group"`
+	Group *string `pulumi:"group"`
+	// The group's unique ID, including the `grp_` prefix.
 	GroupId *string `pulumi:"groupId"`
-	Name    string  `pulumi:"name"`
+	// The name of the CP code.
+	Name string `pulumi:"name"`
 }
 
 // A collection of values returned by getCpCode.
@@ -56,13 +63,20 @@ func LookupCpCodeOutput(ctx *pulumi.Context, args LookupCpCodeOutputArgs, opts .
 
 // A collection of arguments for invoking getCpCode.
 type LookupCpCodeOutputArgs struct {
+	// Replaced by `contractId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract   pulumi.StringPtrInput `pulumi:"contract"`
+	Contract pulumi.StringPtrInput `pulumi:"contract"`
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringPtrInput `pulumi:"contractId"`
+	// Replaced by `groupId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group   pulumi.StringPtrInput `pulumi:"group"`
+	Group pulumi.StringPtrInput `pulumi:"group"`
+	// The group's unique ID, including the `grp_` prefix.
 	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
-	Name    pulumi.StringInput    `pulumi:"name"`
+	// The name of the CP code.
+	Name pulumi.StringInput `pulumi:"name"`
 }
 
 func (LookupCpCodeOutputArgs) ElementType() reflect.Type {

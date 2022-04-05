@@ -12,6 +12,9 @@ namespace Pulumi.Akamai.Properties.Inputs
 
     public sealed class PropertyHostnameArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+        /// </summary>
         [Input("certProvisioningType", required: true)]
         public Input<string> CertProvisioningType { get; set; } = null!;
 
@@ -23,9 +26,15 @@ namespace Pulumi.Akamai.Properties.Inputs
             set => _certStatuses = value;
         }
 
+        /// <summary>
+        /// A string containing the original origin's hostname. For example, `"example.org"`.
+        /// </summary>
         [Input("cnameFrom", required: true)]
         public Input<string> CnameFrom { get; set; } = null!;
 
+        /// <summary>
+        /// A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
+        /// </summary>
         [Input("cnameTo", required: true)]
         public Input<string> CnameTo { get; set; } = null!;
 

@@ -18,6 +18,11 @@ class DnsZoneTsigKeyArgs:
                  algorithm: pulumi.Input[str],
                  name: pulumi.Input[str],
                  secret: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] algorithm: The hashing algorithm.
+        :param pulumi.Input[str] name: The key name.
+        :param pulumi.Input[str] secret: String known between transfer endpoints.
+        """
         pulumi.set(__self__, "algorithm", algorithm)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "secret", secret)
@@ -25,6 +30,9 @@ class DnsZoneTsigKeyArgs:
     @property
     @pulumi.getter
     def algorithm(self) -> pulumi.Input[str]:
+        """
+        The hashing algorithm.
+        """
         return pulumi.get(self, "algorithm")
 
     @algorithm.setter
@@ -34,6 +42,9 @@ class DnsZoneTsigKeyArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
+        """
+        The key name.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -43,6 +54,9 @@ class DnsZoneTsigKeyArgs:
     @property
     @pulumi.getter
     def secret(self) -> pulumi.Input[str]:
+        """
+        String known between transfer endpoints.
+        """
         return pulumi.get(self, "secret")
 
     @secret.setter

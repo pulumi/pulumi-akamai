@@ -66,7 +66,26 @@ class AwaitableGetAuthoritiesSetResult(GetAuthoritiesSetResult):
 def get_authorities_set(contract: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuthoritiesSetResult:
     """
-    Use this data source to access information about an existing resource.
+    Use the `get_authorities_set` data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    example = akamai.get_authorities_set(contract="ctr_1-AB123")
+    ```
+    ## Attributes reference
+
+    This data source supports this attribute:
+
+    * `authorities` - A list of authorities.
+
+
+    :param str contract: The contract ID.
     """
     pulumi.log.warn("""get_authorities_set is deprecated: akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet""")
     __args__ = dict()
@@ -87,7 +106,26 @@ def get_authorities_set(contract: Optional[str] = None,
 def get_authorities_set_output(contract: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuthoritiesSetResult]:
     """
-    Use this data source to access information about an existing resource.
+    Use the `get_authorities_set` data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    example = akamai.get_authorities_set(contract="ctr_1-AB123")
+    ```
+    ## Attributes reference
+
+    This data source supports this attribute:
+
+    * `authorities` - A list of authorities.
+
+
+    :param str contract: The contract ID.
     """
     pulumi.log.warn("""get_authorities_set is deprecated: akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet""")
     ...

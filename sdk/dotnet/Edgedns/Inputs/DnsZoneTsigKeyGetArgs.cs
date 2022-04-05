@@ -12,12 +12,21 @@ namespace Pulumi.Akamai.Edgedns.Inputs
 
     public sealed class DnsZoneTsigKeyGetArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The hashing algorithm.
+        /// </summary>
         [Input("algorithm", required: true)]
         public Input<string> Algorithm { get; set; } = null!;
 
+        /// <summary>
+        /// The key name.
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        /// <summary>
+        /// String known between transfer endpoints.
+        /// </summary>
         [Input("secret", required: true)]
         public Input<string> Secret { get; set; } = null!;
 

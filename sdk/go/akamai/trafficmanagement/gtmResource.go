@@ -11,25 +11,74 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// The `GtmResource` lets you create, configure, and import a GTM resource. In GTM, a resource is anything you can measure whose scarcity affects load balancing. Examples of resources include bandwidth, CPU load average, database queries per second, or disk operations per second.
+//
+// > **Note** Import requires an ID with this format: `existingDomainName`:
+// `existingResourceName`.
+//
+// ## Example Usage
+//
+// Basic usage:
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		_, err := akamai.NewGtmResource(ctx, "demoResource", &akamai.GtmResourceArgs{
+// 			AggregationType: pulumi.String("latest"),
+// 			Domain:          pulumi.String("demo_domain.akadns.net"),
+// 			Type:            pulumi.String("XML load object via HTTP"),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
+// ## Schema reference
+//
+// You can download the GTM Resource backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#resource) page.
+//
 // Deprecated: akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource
 type GtmResource struct {
 	pulumi.CustomResourceState
 
-	AggregationType             pulumi.StringOutput                    `pulumi:"aggregationType"`
-	ConstrainedProperty         pulumi.StringPtrOutput                 `pulumi:"constrainedProperty"`
-	DecayRate                   pulumi.Float64PtrOutput                `pulumi:"decayRate"`
-	Description                 pulumi.StringPtrOutput                 `pulumi:"description"`
-	Domain                      pulumi.StringOutput                    `pulumi:"domain"`
-	HostHeader                  pulumi.StringPtrOutput                 `pulumi:"hostHeader"`
-	LeaderString                pulumi.StringPtrOutput                 `pulumi:"leaderString"`
-	LeastSquaresDecay           pulumi.Float64PtrOutput                `pulumi:"leastSquaresDecay"`
-	LoadImbalancePercentage     pulumi.Float64PtrOutput                `pulumi:"loadImbalancePercentage"`
-	MaxUMultiplicativeIncrement pulumi.Float64PtrOutput                `pulumi:"maxUMultiplicativeIncrement"`
-	Name                        pulumi.StringOutput                    `pulumi:"name"`
-	ResourceInstances           GtmResourceResourceInstanceArrayOutput `pulumi:"resourceInstances"`
-	Type                        pulumi.StringOutput                    `pulumi:"type"`
-	UpperBound                  pulumi.IntPtrOutput                    `pulumi:"upperBound"`
-	WaitOnComplete              pulumi.BoolPtrOutput                   `pulumi:"waitOnComplete"`
+	// Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+	AggregationType pulumi.StringOutput `pulumi:"aggregationType"`
+	// Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
+	ConstrainedProperty pulumi.StringPtrOutput `pulumi:"constrainedProperty"`
+	// For Akamai internal use only. You can omit the value or set it to `null`.
+	DecayRate pulumi.Float64PtrOutput `pulumi:"decayRate"`
+	// A descriptive note to help you track what the resource constrains.
+	Description pulumi.StringPtrOutput `pulumi:"description"`
+	// DNS name for the GTM Domain set that includes this property.
+	Domain pulumi.StringOutput `pulumi:"domain"`
+	// Optionally specifies the host header used when fetching the load object.
+	HostHeader pulumi.StringPtrOutput `pulumi:"hostHeader"`
+	// Specifies the text that comes before the `loadObject`.
+	LeaderString pulumi.StringPtrOutput `pulumi:"leaderString"`
+	// For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
+	LeastSquaresDecay       pulumi.Float64PtrOutput `pulumi:"leastSquaresDecay"`
+	LoadImbalancePercentage pulumi.Float64PtrOutput `pulumi:"loadImbalancePercentage"`
+	// For Akamai internal use only. You can omit the value or set it to `null`.
+	MaxUMultiplicativeIncrement pulumi.Float64PtrOutput `pulumi:"maxUMultiplicativeIncrement"`
+	// A descriptive label for the GTM resource.
+	Name pulumi.StringOutput `pulumi:"name"`
+	// (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resourceInstance` entries. Requires these arguments:
+	ResourceInstances GtmResourceResourceInstanceArrayOutput `pulumi:"resourceInstances"`
+	// Indicates the kind of `loadObject` format used to determine the load on the resource.
+	Type pulumi.StringOutput `pulumi:"type"`
+	// An optional sanity check that specifies the maximum allowed value for any component of the load object.
+	UpperBound pulumi.IntPtrOutput `pulumi:"upperBound"`
+	// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+	WaitOnComplete pulumi.BoolPtrOutput `pulumi:"waitOnComplete"`
 }
 
 // NewGtmResource registers a new resource with the given unique name, arguments, and options.
@@ -70,39 +119,67 @@ func GetGtmResource(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering GtmResource resources.
 type gtmResourceState struct {
-	AggregationType             *string                       `pulumi:"aggregationType"`
-	ConstrainedProperty         *string                       `pulumi:"constrainedProperty"`
-	DecayRate                   *float64                      `pulumi:"decayRate"`
-	Description                 *string                       `pulumi:"description"`
-	Domain                      *string                       `pulumi:"domain"`
-	HostHeader                  *string                       `pulumi:"hostHeader"`
-	LeaderString                *string                       `pulumi:"leaderString"`
-	LeastSquaresDecay           *float64                      `pulumi:"leastSquaresDecay"`
-	LoadImbalancePercentage     *float64                      `pulumi:"loadImbalancePercentage"`
-	MaxUMultiplicativeIncrement *float64                      `pulumi:"maxUMultiplicativeIncrement"`
-	Name                        *string                       `pulumi:"name"`
-	ResourceInstances           []GtmResourceResourceInstance `pulumi:"resourceInstances"`
-	Type                        *string                       `pulumi:"type"`
-	UpperBound                  *int                          `pulumi:"upperBound"`
-	WaitOnComplete              *bool                         `pulumi:"waitOnComplete"`
+	// Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+	AggregationType *string `pulumi:"aggregationType"`
+	// Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
+	ConstrainedProperty *string `pulumi:"constrainedProperty"`
+	// For Akamai internal use only. You can omit the value or set it to `null`.
+	DecayRate *float64 `pulumi:"decayRate"`
+	// A descriptive note to help you track what the resource constrains.
+	Description *string `pulumi:"description"`
+	// DNS name for the GTM Domain set that includes this property.
+	Domain *string `pulumi:"domain"`
+	// Optionally specifies the host header used when fetching the load object.
+	HostHeader *string `pulumi:"hostHeader"`
+	// Specifies the text that comes before the `loadObject`.
+	LeaderString *string `pulumi:"leaderString"`
+	// For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
+	LeastSquaresDecay       *float64 `pulumi:"leastSquaresDecay"`
+	LoadImbalancePercentage *float64 `pulumi:"loadImbalancePercentage"`
+	// For Akamai internal use only. You can omit the value or set it to `null`.
+	MaxUMultiplicativeIncrement *float64 `pulumi:"maxUMultiplicativeIncrement"`
+	// A descriptive label for the GTM resource.
+	Name *string `pulumi:"name"`
+	// (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resourceInstance` entries. Requires these arguments:
+	ResourceInstances []GtmResourceResourceInstance `pulumi:"resourceInstances"`
+	// Indicates the kind of `loadObject` format used to determine the load on the resource.
+	Type *string `pulumi:"type"`
+	// An optional sanity check that specifies the maximum allowed value for any component of the load object.
+	UpperBound *int `pulumi:"upperBound"`
+	// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+	WaitOnComplete *bool `pulumi:"waitOnComplete"`
 }
 
 type GtmResourceState struct {
-	AggregationType             pulumi.StringPtrInput
-	ConstrainedProperty         pulumi.StringPtrInput
-	DecayRate                   pulumi.Float64PtrInput
-	Description                 pulumi.StringPtrInput
-	Domain                      pulumi.StringPtrInput
-	HostHeader                  pulumi.StringPtrInput
-	LeaderString                pulumi.StringPtrInput
-	LeastSquaresDecay           pulumi.Float64PtrInput
-	LoadImbalancePercentage     pulumi.Float64PtrInput
+	// Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+	AggregationType pulumi.StringPtrInput
+	// Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
+	ConstrainedProperty pulumi.StringPtrInput
+	// For Akamai internal use only. You can omit the value or set it to `null`.
+	DecayRate pulumi.Float64PtrInput
+	// A descriptive note to help you track what the resource constrains.
+	Description pulumi.StringPtrInput
+	// DNS name for the GTM Domain set that includes this property.
+	Domain pulumi.StringPtrInput
+	// Optionally specifies the host header used when fetching the load object.
+	HostHeader pulumi.StringPtrInput
+	// Specifies the text that comes before the `loadObject`.
+	LeaderString pulumi.StringPtrInput
+	// For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
+	LeastSquaresDecay       pulumi.Float64PtrInput
+	LoadImbalancePercentage pulumi.Float64PtrInput
+	// For Akamai internal use only. You can omit the value or set it to `null`.
 	MaxUMultiplicativeIncrement pulumi.Float64PtrInput
-	Name                        pulumi.StringPtrInput
-	ResourceInstances           GtmResourceResourceInstanceArrayInput
-	Type                        pulumi.StringPtrInput
-	UpperBound                  pulumi.IntPtrInput
-	WaitOnComplete              pulumi.BoolPtrInput
+	// A descriptive label for the GTM resource.
+	Name pulumi.StringPtrInput
+	// (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resourceInstance` entries. Requires these arguments:
+	ResourceInstances GtmResourceResourceInstanceArrayInput
+	// Indicates the kind of `loadObject` format used to determine the load on the resource.
+	Type pulumi.StringPtrInput
+	// An optional sanity check that specifies the maximum allowed value for any component of the load object.
+	UpperBound pulumi.IntPtrInput
+	// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+	WaitOnComplete pulumi.BoolPtrInput
 }
 
 func (GtmResourceState) ElementType() reflect.Type {
@@ -110,40 +187,68 @@ func (GtmResourceState) ElementType() reflect.Type {
 }
 
 type gtmResourceArgs struct {
-	AggregationType             string                        `pulumi:"aggregationType"`
-	ConstrainedProperty         *string                       `pulumi:"constrainedProperty"`
-	DecayRate                   *float64                      `pulumi:"decayRate"`
-	Description                 *string                       `pulumi:"description"`
-	Domain                      string                        `pulumi:"domain"`
-	HostHeader                  *string                       `pulumi:"hostHeader"`
-	LeaderString                *string                       `pulumi:"leaderString"`
-	LeastSquaresDecay           *float64                      `pulumi:"leastSquaresDecay"`
-	LoadImbalancePercentage     *float64                      `pulumi:"loadImbalancePercentage"`
-	MaxUMultiplicativeIncrement *float64                      `pulumi:"maxUMultiplicativeIncrement"`
-	Name                        *string                       `pulumi:"name"`
-	ResourceInstances           []GtmResourceResourceInstance `pulumi:"resourceInstances"`
-	Type                        string                        `pulumi:"type"`
-	UpperBound                  *int                          `pulumi:"upperBound"`
-	WaitOnComplete              *bool                         `pulumi:"waitOnComplete"`
+	// Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+	AggregationType string `pulumi:"aggregationType"`
+	// Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
+	ConstrainedProperty *string `pulumi:"constrainedProperty"`
+	// For Akamai internal use only. You can omit the value or set it to `null`.
+	DecayRate *float64 `pulumi:"decayRate"`
+	// A descriptive note to help you track what the resource constrains.
+	Description *string `pulumi:"description"`
+	// DNS name for the GTM Domain set that includes this property.
+	Domain string `pulumi:"domain"`
+	// Optionally specifies the host header used when fetching the load object.
+	HostHeader *string `pulumi:"hostHeader"`
+	// Specifies the text that comes before the `loadObject`.
+	LeaderString *string `pulumi:"leaderString"`
+	// For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
+	LeastSquaresDecay       *float64 `pulumi:"leastSquaresDecay"`
+	LoadImbalancePercentage *float64 `pulumi:"loadImbalancePercentage"`
+	// For Akamai internal use only. You can omit the value or set it to `null`.
+	MaxUMultiplicativeIncrement *float64 `pulumi:"maxUMultiplicativeIncrement"`
+	// A descriptive label for the GTM resource.
+	Name *string `pulumi:"name"`
+	// (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resourceInstance` entries. Requires these arguments:
+	ResourceInstances []GtmResourceResourceInstance `pulumi:"resourceInstances"`
+	// Indicates the kind of `loadObject` format used to determine the load on the resource.
+	Type string `pulumi:"type"`
+	// An optional sanity check that specifies the maximum allowed value for any component of the load object.
+	UpperBound *int `pulumi:"upperBound"`
+	// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+	WaitOnComplete *bool `pulumi:"waitOnComplete"`
 }
 
 // The set of arguments for constructing a GtmResource resource.
 type GtmResourceArgs struct {
-	AggregationType             pulumi.StringInput
-	ConstrainedProperty         pulumi.StringPtrInput
-	DecayRate                   pulumi.Float64PtrInput
-	Description                 pulumi.StringPtrInput
-	Domain                      pulumi.StringInput
-	HostHeader                  pulumi.StringPtrInput
-	LeaderString                pulumi.StringPtrInput
-	LeastSquaresDecay           pulumi.Float64PtrInput
-	LoadImbalancePercentage     pulumi.Float64PtrInput
+	// Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+	AggregationType pulumi.StringInput
+	// Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
+	ConstrainedProperty pulumi.StringPtrInput
+	// For Akamai internal use only. You can omit the value or set it to `null`.
+	DecayRate pulumi.Float64PtrInput
+	// A descriptive note to help you track what the resource constrains.
+	Description pulumi.StringPtrInput
+	// DNS name for the GTM Domain set that includes this property.
+	Domain pulumi.StringInput
+	// Optionally specifies the host header used when fetching the load object.
+	HostHeader pulumi.StringPtrInput
+	// Specifies the text that comes before the `loadObject`.
+	LeaderString pulumi.StringPtrInput
+	// For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
+	LeastSquaresDecay       pulumi.Float64PtrInput
+	LoadImbalancePercentage pulumi.Float64PtrInput
+	// For Akamai internal use only. You can omit the value or set it to `null`.
 	MaxUMultiplicativeIncrement pulumi.Float64PtrInput
-	Name                        pulumi.StringPtrInput
-	ResourceInstances           GtmResourceResourceInstanceArrayInput
-	Type                        pulumi.StringInput
-	UpperBound                  pulumi.IntPtrInput
-	WaitOnComplete              pulumi.BoolPtrInput
+	// A descriptive label for the GTM resource.
+	Name pulumi.StringPtrInput
+	// (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resourceInstance` entries. Requires these arguments:
+	ResourceInstances GtmResourceResourceInstanceArrayInput
+	// Indicates the kind of `loadObject` format used to determine the load on the resource.
+	Type pulumi.StringInput
+	// An optional sanity check that specifies the maximum allowed value for any component of the load object.
+	UpperBound pulumi.IntPtrInput
+	// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+	WaitOnComplete pulumi.BoolPtrInput
 }
 
 func (GtmResourceArgs) ElementType() reflect.Type {

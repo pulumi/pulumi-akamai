@@ -12,6 +12,5 @@ from .get_property import *
 from .get_property_rules import *
 from .property import *
 from .property_activation import *
-from .property_variables import *
 from ._inputs import *
 from . import outputs

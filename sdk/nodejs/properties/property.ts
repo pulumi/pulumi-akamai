@@ -6,6 +6,91 @@ import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
+ * The `akamai.Property` resource represents an Akamai property configuration.
+ * This resource lets you to create, update, and activate properties on the
+ * Akamai platform.
+ *
+ * Akamai's edge network caches your web assets near to servers that request them.
+ * A property provides the main way to control how edge servers respond to various
+ * kinds of requests for those assets. Properties apply rules to a set of hostnames,
+ * and you can only apply one property at a time to any given hostname. Each property
+ * is assigned to a product, which determines which behaviors you can use. Each
+ * property's default rule needs a valid content provider (CP) code assigned to bill
+ * and report for the service.
+ *
+ * > **Note** In version 0.10 and earlier of this resource, it also controlled content provider (CP) codes, origin settings, rules, and hostname associations. Starting with version 1.0.0, this logic is broken out into individual resources.
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const example = new akamai.Property("example", {
+ *     productId: "prd_SPM",
+ *     contractId: _var.contractid,
+ *     groupId: _var.groupid,
+ *     hostnames: [
+ *         {
+ *             cnameFrom: "example.com",
+ *             cnameTo: "example.com.edgekey.net",
+ *             certProvisioningType: "DEFAULT",
+ *         },
+ *         {
+ *             cnameFrom: "www.example.com",
+ *             cnameTo: "example.com.edgesuite.net",
+ *             certProvisioningType: "CPS_MANAGED",
+ *         },
+ *     ],
+ *     ruleFormat: "v2020-03-04",
+ *     rules: data.akamai_property_rules_template.example.json,
+ * });
+ * ```
+ *
+ * ## Import
+ *
+ * Basic Usagehcl resource "akamai_property" "example" {
+ *
+ * # (resource arguments)
+ *
+ *  } You can import the latest Akamai property version by using either the `property_id` or a comma-delimited string of the property, contract, and group IDs. You'll need to enter the string of IDs if the property belongs to multiple groups or contracts. If using the string of IDs, you need to enter them in this order`property_id,contract_id,group_id` To import a specific property version, pass additional parameters, either* `LATEST` to import the latest version of the property, regardless of whether it's active or not. This works the same as providing just the `property_id` or a string of the property, contract, and group IDs, which is the default behavior. * `PRODUCTION`, `PROD`, or `P` to import the latest version activated on the production environment. * `STAGING`, `STAGE`, `STAG`, or `S` to import the latest version activated on the staging environment. * Version number or version number with the `ver_` prefix to import a specific property version. For example `3` and `ver_3` correspond to the same version number. Here are some examples for the latest property version
+ *
+ * ```sh
+ *  $ pulumi import akamai:properties/property:Property example prp_123
+ * ```
+ *
+ *  Or
+ *
+ * ```sh
+ *  $ pulumi import akamai:properties/property:Property example prp_123,ctr_1-AB123,grp_123
+ * ```
+ *
+ *  Here are some examples for the latest active property version on the production network
+ *
+ * ```sh
+ *  $ pulumi import akamai:properties/property:Property example prp_123,P
+ * ```
+ *
+ *  Or
+ *
+ * ```sh
+ *  $ pulumi import akamai:properties/property:Property example prp_123,ctr_1-AB123,grp_123,PROD
+ * ```
+ *
+ *  Here are some examples for the specific property version
+ *
+ * ```sh
+ *  $ pulumi import akamai:properties/property:Property example prp_123,3
+ * ```
+ *
+ *  Or
+ *
+ * ```sh
+ *  $ pulumi import akamai:properties/property:Property example prp_123,ctr_1-AB123,grp_123,ver_3
+ * ```
+ *
  * @deprecated akamai.properties.Property has been deprecated in favor of akamai.Property
  */
 export class Property extends pulumi.CustomResource {
@@ -42,11 +127,13 @@ export class Property extends pulumi.CustomResource {
      */
     public readonly contacts!: pulumi.Output<string[] | undefined>;
     /**
+     * Replaced by `contractId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "contract" has been deprecated.
      */
     public readonly contract!: pulumi.Output<string>;
     /**
-     * Contract ID to be assigned to the Property
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     public readonly contractId!: pulumi.Output<string>;
     /**
@@ -54,24 +141,29 @@ export class Property extends pulumi.CustomResource {
      */
     public readonly cpCode!: pulumi.Output<string | undefined>;
     /**
+     * Replaced by `groupId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "group" has been deprecated.
      */
     public readonly group!: pulumi.Output<string>;
     /**
-     * Group ID to be assigned to the Property
+     * - (Required) A group's unique ID, including the `grp_` prefix.
      */
     public readonly groupId!: pulumi.Output<string>;
+    /**
+     * A mapping of public hostnames to edge hostnames. See the `akamai.getPropertyHostnames` data source for details on the necessary DNS configuration.
+     */
     public readonly hostnames!: pulumi.Output<outputs.properties.PropertyHostname[] | undefined>;
     /**
      * @deprecated The setting "is_secure" has been deprecated.
      */
     public readonly isSecure!: pulumi.Output<boolean | undefined>;
     /**
-     * Property's current latest version number
+     * The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
      */
     public /*out*/ readonly latestVersion!: pulumi.Output<number>;
     /**
-     * Name to give to the Property (must be unique)
+     * The property name.
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -79,6 +171,8 @@ export class Property extends pulumi.CustomResource {
      */
     public readonly origins!: pulumi.Output<outputs.properties.PropertyOrigin[] | undefined>;
     /**
+     * Optional argument replaced by the now required `productId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "product" has been deprecated.
      */
     public readonly product!: pulumi.Output<string>;
@@ -87,16 +181,19 @@ export class Property extends pulumi.CustomResource {
      */
     public readonly productId!: pulumi.Output<string>;
     /**
-     * Property's version currently activated in production (zero when not active in production)
+     * The current version of the property active on the Akamai production network.
      */
     public /*out*/ readonly productionVersion!: pulumi.Output<number>;
     /**
      * Required property's version to be read
      */
     public /*out*/ readonly readVersion!: pulumi.Output<number>;
+    /**
+     * The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+     */
     public /*out*/ readonly ruleErrors!: pulumi.Output<outputs.properties.PropertyRuleError[]>;
     /**
-     * Specify the rule format version (defaults to latest version available when created)
+     * The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
      */
     public readonly ruleFormat!: pulumi.Output<string>;
     /**
@@ -104,11 +201,11 @@ export class Property extends pulumi.CustomResource {
      */
     public readonly ruleWarnings!: pulumi.Output<outputs.properties.PropertyRuleWarning[]>;
     /**
-     * Property Rules as JSON
+     * A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `akamai.getPropertyRules` data source.
      */
     public readonly rules!: pulumi.Output<string>;
     /**
-     * Property's version currently activated in staging (zero when not active in staging)
+     * The current version of the property active on the Akamai staging network.
      */
     public /*out*/ readonly stagingVersion!: pulumi.Output<number>;
     /**
@@ -191,11 +288,13 @@ export interface PropertyState {
      */
     contacts?: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * Replaced by `contractId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "contract" has been deprecated.
      */
     contract?: pulumi.Input<string>;
     /**
-     * Contract ID to be assigned to the Property
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId?: pulumi.Input<string>;
     /**
@@ -203,24 +302,29 @@ export interface PropertyState {
      */
     cpCode?: pulumi.Input<string>;
     /**
+     * Replaced by `groupId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "group" has been deprecated.
      */
     group?: pulumi.Input<string>;
     /**
-     * Group ID to be assigned to the Property
+     * - (Required) A group's unique ID, including the `grp_` prefix.
      */
     groupId?: pulumi.Input<string>;
+    /**
+     * A mapping of public hostnames to edge hostnames. See the `akamai.getPropertyHostnames` data source for details on the necessary DNS configuration.
+     */
     hostnames?: pulumi.Input<pulumi.Input<inputs.properties.PropertyHostname>[]>;
     /**
      * @deprecated The setting "is_secure" has been deprecated.
      */
     isSecure?: pulumi.Input<boolean>;
     /**
-     * Property's current latest version number
+     * The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
      */
     latestVersion?: pulumi.Input<number>;
     /**
-     * Name to give to the Property (must be unique)
+     * The property name.
      */
     name?: pulumi.Input<string>;
     /**
@@ -228,6 +332,8 @@ export interface PropertyState {
      */
     origins?: pulumi.Input<pulumi.Input<inputs.properties.PropertyOrigin>[]>;
     /**
+     * Optional argument replaced by the now required `productId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "product" has been deprecated.
      */
     product?: pulumi.Input<string>;
@@ -236,16 +342,19 @@ export interface PropertyState {
      */
     productId?: pulumi.Input<string>;
     /**
-     * Property's version currently activated in production (zero when not active in production)
+     * The current version of the property active on the Akamai production network.
      */
     productionVersion?: pulumi.Input<number>;
     /**
      * Required property's version to be read
      */
     readVersion?: pulumi.Input<number>;
+    /**
+     * The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+     */
     ruleErrors?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRuleError>[]>;
     /**
-     * Specify the rule format version (defaults to latest version available when created)
+     * The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
      */
     ruleFormat?: pulumi.Input<string>;
     /**
@@ -253,11 +362,11 @@ export interface PropertyState {
      */
     ruleWarnings?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRuleWarning>[]>;
     /**
-     * Property Rules as JSON
+     * A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `akamai.getPropertyRules` data source.
      */
     rules?: pulumi.Input<string>;
     /**
-     * Property's version currently activated in staging (zero when not active in staging)
+     * The current version of the property active on the Akamai staging network.
      */
     stagingVersion?: pulumi.Input<number>;
     /**
@@ -275,11 +384,13 @@ export interface PropertyArgs {
      */
     contacts?: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * Replaced by `contractId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "contract" has been deprecated.
      */
     contract?: pulumi.Input<string>;
     /**
-     * Contract ID to be assigned to the Property
+     * - (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId?: pulumi.Input<string>;
     /**
@@ -287,20 +398,25 @@ export interface PropertyArgs {
      */
     cpCode?: pulumi.Input<string>;
     /**
+     * Replaced by `groupId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "group" has been deprecated.
      */
     group?: pulumi.Input<string>;
     /**
-     * Group ID to be assigned to the Property
+     * - (Required) A group's unique ID, including the `grp_` prefix.
      */
     groupId?: pulumi.Input<string>;
+    /**
+     * A mapping of public hostnames to edge hostnames. See the `akamai.getPropertyHostnames` data source for details on the necessary DNS configuration.
+     */
     hostnames?: pulumi.Input<pulumi.Input<inputs.properties.PropertyHostname>[]>;
     /**
      * @deprecated The setting "is_secure" has been deprecated.
      */
     isSecure?: pulumi.Input<boolean>;
     /**
-     * Name to give to the Property (must be unique)
+     * The property name.
      */
     name?: pulumi.Input<string>;
     /**
@@ -308,6 +424,8 @@ export interface PropertyArgs {
      */
     origins?: pulumi.Input<pulumi.Input<inputs.properties.PropertyOrigin>[]>;
     /**
+     * Optional argument replaced by the now required `productId`. Maintained for legacy purposes.
+     *
      * @deprecated The setting "product" has been deprecated.
      */
     product?: pulumi.Input<string>;
@@ -316,7 +434,7 @@ export interface PropertyArgs {
      */
     productId?: pulumi.Input<string>;
     /**
-     * Specify the rule format version (defaults to latest version available when created)
+     * The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
      */
     ruleFormat?: pulumi.Input<string>;
     /**
@@ -324,7 +442,7 @@ export interface PropertyArgs {
      */
     ruleWarnings?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRuleWarning>[]>;
     /**
-     * Property Rules as JSON
+     * A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `akamai.getPropertyRules` data source.
      */
     rules?: pulumi.Input<string>;
     /**

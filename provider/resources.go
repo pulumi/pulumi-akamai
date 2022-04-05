@@ -106,40 +106,50 @@ func Provider() tfbridge.ProviderInfo {
 				CSharpName: "ConfigDetails",
 			},
 		},
+		IgnoreMappings: []string{
+			// Executing this resource's code in the upstream provider yields an error message saying it's no longer
+			// supported:
+			"akamai_property_variables",
+		},
 		Resources: map[string]*tfbridge.ResourceInfo{
-			"akamai_appsec_activations":                          {Tok: makeResource(mainMod, "AppSecActivations")},
-			"akamai_appsec_custom_rule":                          {Tok: makeResource(mainMod, "AppSecCustomRule")},
-			"akamai_appsec_custom_rule_action":                   {Tok: makeResource(mainMod, "AppSecCustomRuleAction")},
-			"akamai_appsec_match_target":                         {Tok: makeResource(mainMod, "AppSecMatchTarget")},
-			"akamai_appsec_match_target_sequence":                {Tok: makeResource(mainMod, "AppSecMatchTargetSequence")},
-			"akamai_appsec_selected_hostnames":                   {Tok: makeResource(mainMod, "AppSecSelectedHostnames")},
-			"akamai_appsec_advanced_settings_logging":            {Tok: makeResource(mainMod, "AppSecAdvancedSettingsLogging")},
-			"akamai_appsec_advanced_settings_prefetch":           {Tok: makeResource(mainMod, "AppSecAdvancedSettingsPrefetch")},
-			"akamai_appsec_api_request_constraints":              {Tok: makeResource(mainMod, "AppSecApiRequestConstraints")},
-			"akamai_appsec_bypass_network_lists":                 {Tok: makeResource(mainMod, "AppSecByPassNetworkList")},
-			"akamai_appsec_configuration":                        {Tok: makeResource(mainMod, "AppSecConfiguration")},
-			"akamai_appsec_configuration_rename":                 {Tok: makeResource(mainMod, "AppSecConfigurationRename")},
-			"akamai_appsec_custom_deny":                          {Tok: makeResource(mainMod, "AppSecCustomDeny")},
-			"akamai_appsec_eval":                                 {Tok: makeResource(mainMod, "AppSecEval")},
-			"akamai_appsec_ip_geo":                               {Tok: makeResource(mainMod, "AppSecIPGeo")},
-			"akamai_appsec_penalty_box":                          {Tok: makeResource(mainMod, "AppSecPenaltyBox")},
-			"akamai_appsec_rate_policy":                          {Tok: makeResource(mainMod, "AppSecRatePolicy")},
-			"akamai_appsec_rate_policy_action":                   {Tok: makeResource(mainMod, "AppSecRatePolicyAction")},
-			"akamai_appsec_rate_protection":                      {Tok: makeResource(mainMod, "AppSecRateProtection")},
-			"akamai_appsec_reputation_profile":                   {Tok: makeResource(mainMod, "AppSecReputationProfile")},
-			"akamai_appsec_reputation_profile_action":            {Tok: makeResource(mainMod, "AppSecReputationProfileAction")},
-			"akamai_appsec_reputation_profile_analysis":          {Tok: makeResource(mainMod, "AppSecReputationProfileAnalysis")},
-			"akamai_appsec_reputation_protection":                {Tok: makeResource(mainMod, "AppSecReputationProtection")},
-			"akamai_appsec_rule_upgrade":                         {Tok: makeResource(mainMod, "AppSecRuleUpgrade")},
-			"akamai_appsec_security_policy":                      {Tok: makeResource(mainMod, "AppSecSecurityPolicy")},
-			"akamai_appsec_security_policy_rename":               {Tok: makeResource(mainMod, "AppSecSecurityPolicyRename")},
-			"akamai_appsec_siem_settings":                        {Tok: makeResource(mainMod, "AppSecSiemSettings")},
-			"akamai_appsec_slow_post":                            {Tok: makeResource(mainMod, "AppSecSlowPost")},
-			"akamai_appsec_slowpost_protection":                  {Tok: makeResource(mainMod, "AppSecSlowPostProtection")},
-			"akamai_appsec_version_notes":                        {Tok: makeResource(mainMod, "AppSecVersionNodes")},
-			"akamai_appsec_waf_mode":                             {Tok: makeResource(mainMod, "AppSecWafMode")},
-			"akamai_appsec_waf_protection":                       {Tok: makeResource(mainMod, "AppSecWafProtection")},
-			"akamai_appsec_advanced_settings_pragma_header":      {Tok: makeResource(mainMod, "AppSecAdvancedSettingsPragmaHeader")},
+			"akamai_appsec_activations":                 {Tok: makeResource(mainMod, "AppSecActivations")},
+			"akamai_appsec_custom_rule":                 {Tok: makeResource(mainMod, "AppSecCustomRule")},
+			"akamai_appsec_custom_rule_action":          {Tok: makeResource(mainMod, "AppSecCustomRuleAction")},
+			"akamai_appsec_match_target":                {Tok: makeResource(mainMod, "AppSecMatchTarget")},
+			"akamai_appsec_match_target_sequence":       {Tok: makeResource(mainMod, "AppSecMatchTargetSequence")},
+			"akamai_appsec_selected_hostnames":          {Tok: makeResource(mainMod, "AppSecSelectedHostnames")},
+			"akamai_appsec_advanced_settings_logging":   {Tok: makeResource(mainMod, "AppSecAdvancedSettingsLogging")},
+			"akamai_appsec_advanced_settings_prefetch":  {Tok: makeResource(mainMod, "AppSecAdvancedSettingsPrefetch")},
+			"akamai_appsec_api_request_constraints":     {Tok: makeResource(mainMod, "AppSecApiRequestConstraints")},
+			"akamai_appsec_bypass_network_lists":        {Tok: makeResource(mainMod, "AppSecByPassNetworkList")},
+			"akamai_appsec_configuration":               {Tok: makeResource(mainMod, "AppSecConfiguration")},
+			"akamai_appsec_configuration_rename":        {Tok: makeResource(mainMod, "AppSecConfigurationRename")},
+			"akamai_appsec_custom_deny":                 {Tok: makeResource(mainMod, "AppSecCustomDeny")},
+			"akamai_appsec_eval":                        {Tok: makeResource(mainMod, "AppSecEval")},
+			"akamai_appsec_ip_geo":                      {Tok: makeResource(mainMod, "AppSecIPGeo")},
+			"akamai_appsec_penalty_box":                 {Tok: makeResource(mainMod, "AppSecPenaltyBox")},
+			"akamai_appsec_rate_policy":                 {Tok: makeResource(mainMod, "AppSecRatePolicy")},
+			"akamai_appsec_rate_policy_action":          {Tok: makeResource(mainMod, "AppSecRatePolicyAction")},
+			"akamai_appsec_rate_protection":             {Tok: makeResource(mainMod, "AppSecRateProtection")},
+			"akamai_appsec_reputation_profile":          {Tok: makeResource(mainMod, "AppSecReputationProfile")},
+			"akamai_appsec_reputation_profile_action":   {Tok: makeResource(mainMod, "AppSecReputationProfileAction")},
+			"akamai_appsec_reputation_profile_analysis": {Tok: makeResource(mainMod, "AppSecReputationProfileAnalysis")},
+			"akamai_appsec_reputation_protection":       {Tok: makeResource(mainMod, "AppSecReputationProtection")},
+			"akamai_appsec_rule_upgrade":                {Tok: makeResource(mainMod, "AppSecRuleUpgrade")},
+			"akamai_appsec_security_policy":             {Tok: makeResource(mainMod, "AppSecSecurityPolicy")},
+			"akamai_appsec_security_policy_rename":      {Tok: makeResource(mainMod, "AppSecSecurityPolicyRename")},
+			"akamai_appsec_siem_settings":               {Tok: makeResource(mainMod, "AppSecSiemSettings")},
+			"akamai_appsec_slow_post":                   {Tok: makeResource(mainMod, "AppSecSlowPost")},
+			"akamai_appsec_slowpost_protection":         {Tok: makeResource(mainMod, "AppSecSlowPostProtection")},
+			"akamai_appsec_version_notes":               {Tok: makeResource(mainMod, "AppSecVersionNodes")},
+			"akamai_appsec_waf_mode":                    {Tok: makeResource(mainMod, "AppSecWafMode")},
+			"akamai_appsec_waf_protection":              {Tok: makeResource(mainMod, "AppSecWafProtection")},
+			"akamai_appsec_advanced_settings_pragma_header": {
+				Tok: makeResource(mainMod, "AppSecAdvancedSettingsPragmaHeader"),
+				Docs: &tfbridge.DocInfo{
+					Source: "appsec_advanced_settings_pragma.md",
+				},
+			},
 			"akamai_appsec_api_constraints_protection":           {Tok: makeResource(mainMod, "AppSecApiConstraintsProtection")},
 			"akamai_appsec_attack_group":                         {Tok: makeResource(mainMod, "AppSecAttackGroup")},
 			"akamai_appsec_eval_rule":                            {Tok: makeResource(mainMod, "AppSecEvalRule")},
@@ -160,8 +170,13 @@ func Provider() tfbridge.ProviderInfo {
 
 			"akamai_datastream": {Tok: makeResource(mainMod, "Datastream")},
 
-			"akamai_edgekv":                 {Tok: makeResource(mainMod, "EdgeKv")},
-			"akamai_edgeworker":             {Tok: makeResource(mainMod, "EdgeWorker")},
+			"akamai_edgekv": {Tok: makeResource(mainMod, "EdgeKv")},
+			"akamai_edgeworker": {
+				Tok: makeResource(mainMod, "EdgeWorker"),
+				Docs: &tfbridge.DocInfo{
+					Source: "edgeworkers.md",
+				},
+			},
 			"akamai_edgeworkers_activation": {Tok: makeResource(mainMod, "EdgeWorkersActivation")},
 
 			"akamai_networklist_activations":  {Tok: makeResource(mainMod, "NetworkListActivations")},
@@ -175,23 +190,26 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_group":     {Tok: makeDataSource(mainMod, "getGroup")},
 			"akamai_groups":    {Tok: makeDataSource(mainMod, "getGroups")},
 
-			"akamai_appsec_configuration":                        {Tok: makeDataSource(mainMod, "getAppSecConfiguration")},
-			"akamai_appsec_configuration_version":                {Tok: makeDataSource(mainMod, "getAppSecConfigurationVersion")},
-			"akamai_appsec_custom_rule_actions":                  {Tok: makeDataSource(mainMod, "getAppSecCustomRuleActions")},
-			"akamai_appsec_custom_rules":                         {Tok: makeDataSource(mainMod, "getAppSecCustomRules")},
-			"akamai_appsec_export_configuration":                 {Tok: makeDataSource(mainMod, "getAppSecExportConfiguration")},
-			"akamai_appsec_match_targets":                        {Tok: makeDataSource(mainMod, "getAppSecMatchTargets")},
-			"akamai_appsec_security_policy":                      {Tok: makeDataSource(mainMod, "getAppSecSecurityPolicy")},
-			"akamai_appsec_selectable_hostnames":                 {Tok: makeDataSource(mainMod, "getAppSecSelectableHostnames")},
-			"akamai_appsec_selected_hostnames":                   {Tok: makeDataSource(mainMod, "getAppSecSelectedHostnames")},
-			"akamai_appsec_advanced_settings_logging":            {Tok: makeDataSource(mainMod, "getAppSecAdvancedSettingsLogging")},
-			"akamai_appsec_advanced_settings_prefetch":           {Tok: makeDataSource(mainMod, "getAppSecAdvancedSettingsPrefetch")},
-			"akamai_appsec_api_endpoints":                        {Tok: makeDataSource(mainMod, "getAppSecApiEndpoints")},
-			"akamai_appsec_api_request_constraints":              {Tok: makeDataSource(mainMod, "getAppSecApiRequestConstraints")},
-			"akamai_appsec_bypass_network_lists":                 {Tok: makeDataSource(mainMod, "getAppSecBypassNetworkLists")},
-			"akamai_appsec_contracts_groups":                     {Tok: makeDataSource(mainMod, "getAppSecContractsGroups")},
-			"akamai_appsec_custom_deny":                          {Tok: makeDataSource(mainMod, "getAppSecCustomDeny")},
-			"akamai_appsec_eval":                                 {Tok: makeDataSource(mainMod, "getAppSecEval")},
+			"akamai_appsec_configuration":              {Tok: makeDataSource(mainMod, "getAppSecConfiguration")},
+			"akamai_appsec_configuration_version":      {Tok: makeDataSource(mainMod, "getAppSecConfigurationVersion")},
+			"akamai_appsec_custom_rule_actions":        {Tok: makeDataSource(mainMod, "getAppSecCustomRuleActions")},
+			"akamai_appsec_custom_rules":               {Tok: makeDataSource(mainMod, "getAppSecCustomRules")},
+			"akamai_appsec_export_configuration":       {Tok: makeDataSource(mainMod, "getAppSecExportConfiguration")},
+			"akamai_appsec_match_targets":              {Tok: makeDataSource(mainMod, "getAppSecMatchTargets")},
+			"akamai_appsec_security_policy":            {Tok: makeDataSource(mainMod, "getAppSecSecurityPolicy")},
+			"akamai_appsec_selectable_hostnames":       {Tok: makeDataSource(mainMod, "getAppSecSelectableHostnames")},
+			"akamai_appsec_selected_hostnames":         {Tok: makeDataSource(mainMod, "getAppSecSelectedHostnames")},
+			"akamai_appsec_advanced_settings_logging":  {Tok: makeDataSource(mainMod, "getAppSecAdvancedSettingsLogging")},
+			"akamai_appsec_advanced_settings_prefetch": {Tok: makeDataSource(mainMod, "getAppSecAdvancedSettingsPrefetch")},
+			"akamai_appsec_api_endpoints":              {Tok: makeDataSource(mainMod, "getAppSecApiEndpoints")},
+			"akamai_appsec_api_request_constraints":    {Tok: makeDataSource(mainMod, "getAppSecApiRequestConstraints")},
+			"akamai_appsec_bypass_network_lists":       {Tok: makeDataSource(mainMod, "getAppSecBypassNetworkLists")},
+			"akamai_appsec_contracts_groups":           {Tok: makeDataSource(mainMod, "getAppSecContractsGroups")},
+			"akamai_appsec_custom_deny":                {Tok: makeDataSource(mainMod, "getAppSecCustomDeny")},
+			"akamai_appsec_eval": {
+				Tok:  makeDataSource(mainMod, "getAppSecEval"),
+				Docs: noUpstreamDocs(),
+			},
 			"akamai_appsec_failover_hostnames":                   {Tok: makeDataSource(mainMod, "getAppSecFailoverHostnames")},
 			"akamai_appsec_hostname_coverage":                    {Tok: makeDataSource(mainMod, "getAppSecHostnameCoverage")},
 			"akamai_appsec_hostname_coverage_match_targets":      {Tok: makeDataSource(mainMod, "getAppSecHostnameCoverageMatchTargets")},
@@ -242,7 +260,9 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_property_rules_template": {Tok: makeDataSource(mainMod, "getPropertyRulesTemplate")},
 			"akamai_property_hostnames":      {Tok: makeDataSource(mainMod, "getPropertyHostnames")},
 
-			"akamai_networklist_network_lists": {Tok: makeDataSource(mainMod, "getNetworkLists")},
+			"akamai_networklist_network_lists":            {Tok: makeDataSource(mainMod, "getNetworkLists")},
+			"akamai_cloudlets_request_control_match_rule": {Tok: makeDataSource(mainMod, "getCloudletsRequestControlMatchRule")},
+			"akamai_properties_search":                    {Tok: makeDataSource(mainMod, "getPropertiesSearch")},
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
 			// List any npm dependencies and their versions
@@ -281,51 +301,129 @@ func Provider() tfbridge.ProviderInfo {
 
 	// edgeDns -> mainMod
 	prov.RenameResourceWithAlias("akamai_dns_record", makeResource(edgeDNSMod, "DnsRecord"),
-		makeResource(mainMod, "DnsRecord"), edgeDNSMod, mainMod, nil)
+		makeResource(mainMod, "DnsRecord"), edgeDNSMod, mainMod, &tfbridge.ResourceInfo{
+			Docs: &tfbridge.DocInfo{
+				Source: "dns_record.md",
+			},
+		})
 	prov.RenameResourceWithAlias("akamai_dns_zone", makeResource(edgeDNSMod, "DnsZone"),
-		makeResource(mainMod, "DnsZone"), edgeDNSMod, mainMod, nil)
+		makeResource(mainMod, "DnsZone"), edgeDNSMod, mainMod, &tfbridge.ResourceInfo{
+			Docs: &tfbridge.DocInfo{
+				Source: "dns_zone.md",
+			},
+		})
 	prov.RenameDataSource("akamai_authorities_set", makeDataSource(edgeDNSMod, "getAuthoritiesSet"),
-		makeDataSource(mainMod, "getAuthoritiesSet"), edgeDNSMod, mainMod, nil)
+		makeDataSource(mainMod, "getAuthoritiesSet"), edgeDNSMod, mainMod, &tfbridge.DataSourceInfo{
+			Docs: &tfbridge.DocInfo{
+				Source: "authorities_set.md",
+			},
+		})
 	prov.RenameDataSource("akamai_dns_record_set", makeDataSource(edgeDNSMod, "getDnsRecordSet"),
-		makeDataSource(mainMod, "getDnsRecordSet"), edgeDNSMod, mainMod, nil)
+		makeDataSource(mainMod, "getDnsRecordSet"), edgeDNSMod, mainMod, &tfbridge.DataSourceInfo{
+			Docs: noUpstreamDocs(),
+		})
 
 	// trafficManagement -> mainMod
 	prov.RenameResourceWithAlias("akamai_gtm_domain", makeResource(trafficManagementMod, "GtmDomain"),
-		makeResource(mainMod, "GtmDomain"), trafficManagementMod, mainMod, nil)
+		makeResource(mainMod, "GtmDomain"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{
+			Docs: &tfbridge.DocInfo{
+				Source: "gtm_domain.md",
+			},
+		})
 	prov.RenameResourceWithAlias("akamai_gtm_datacenter", makeResource(trafficManagementMod, "GtmDatacenter"),
-		makeResource(mainMod, "GtmDatacenter"), trafficManagementMod, mainMod, nil)
+		makeResource(mainMod, "GtmDatacenter"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{
+			Docs: &tfbridge.DocInfo{
+				Source: "gtm_datacenter.md",
+			},
+		})
 	prov.RenameResourceWithAlias("akamai_gtm_property", makeResource(trafficManagementMod, "GtmProperty"),
-		makeResource(mainMod, "GtmProperty"), trafficManagementMod, mainMod, nil)
+		makeResource(mainMod, "GtmProperty"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{
+			Docs: &tfbridge.DocInfo{
+				Source: "gtm_property.md",
+			},
+		})
 	prov.RenameResourceWithAlias("akamai_gtm_resource", makeResource(trafficManagementMod, "GtmResource"),
-		makeResource(mainMod, "GtmResource"), trafficManagementMod, mainMod, nil)
+		makeResource(mainMod, "GtmResource"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{
+			Docs: &tfbridge.DocInfo{
+				Source: "gtm_resource.md",
+			},
+		})
 	prov.RenameResourceWithAlias("akamai_gtm_cidrmap", makeResource(trafficManagementMod, "GtmCidrmap"),
-		makeResource(mainMod, "GtmCidrmap"), trafficManagementMod, mainMod, nil)
+		makeResource(mainMod, "GtmCidrmap"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{
+			Docs: &tfbridge.DocInfo{
+				Source: "gtm_cidrmap.md",
+			},
+		})
 	prov.RenameResourceWithAlias("akamai_gtm_asmap", makeResource(trafficManagementMod, "GtmASmap"),
-		makeResource(mainMod, "GtmAsmap"), trafficManagementMod, mainMod, nil)
+		makeResource(mainMod, "GtmAsmap"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{
+			Docs: &tfbridge.DocInfo{
+				Source: "gtm_asmap.md",
+			},
+		})
 	prov.RenameResourceWithAlias("akamai_gtm_geomap", makeResource(trafficManagementMod, "GtmGeomap"),
-		makeResource(mainMod, "GtmGeomap"), trafficManagementMod, mainMod, nil)
+		makeResource(mainMod, "GtmGeomap"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{
+			Docs: &tfbridge.DocInfo{
+				Source: "gtm_geomap.md",
+			},
+		})
 	prov.RenameDataSource("akamai_gtm_default_datacenter", makeDataSource(trafficManagementMod, "getGtmDefaultDatacenter"),
-		makeDataSource(mainMod, "getGtmDefaultDatacenter"), trafficManagementMod, mainMod, nil)
+		makeDataSource(mainMod, "getGtmDefaultDatacenter"), trafficManagementMod, mainMod, &tfbridge.DataSourceInfo{
+			Docs: &tfbridge.DocInfo{
+				Source: "gtm_default_datacenter.md",
+			},
+		})
 
 	// properties -> mainMod
 	prov.RenameResourceWithAlias("akamai_cp_code", makeResource(propertiesMod, "CpCode"),
-		makeResource(mainMod, "CpCode"), propertiesMod, mainMod, nil)
+		makeResource(mainMod, "CpCode"), propertiesMod, mainMod, &tfbridge.ResourceInfo{
+			Docs: &tfbridge.DocInfo{
+				Source: "cp_code.md",
+			},
+		})
 	prov.RenameResourceWithAlias("akamai_edge_hostname", makeResource(propertiesMod, "EdgeHostName"),
-		makeResource(mainMod, "EdgeHostName"), propertiesMod, mainMod, nil)
+		makeResource(mainMod, "EdgeHostName"), propertiesMod, mainMod, &tfbridge.ResourceInfo{
+			Docs: &tfbridge.DocInfo{
+				Source: "edge_hostname.md",
+			},
+		})
 	prov.RenameResourceWithAlias("akamai_property", makeResource(propertiesMod, "Property"),
-		makeResource(mainMod, "Property"), propertiesMod, mainMod, nil)
+		makeResource(mainMod, "Property"), propertiesMod, mainMod, &tfbridge.ResourceInfo{
+			Docs: &tfbridge.DocInfo{
+				Source: "property.md",
+			},
+		})
 	prov.RenameResourceWithAlias("akamai_property_activation", makeResource(propertiesMod, "PropertyActivation"),
-		makeResource(mainMod, "PropertyActivation"), propertiesMod, mainMod, nil)
-	prov.RenameResourceWithAlias("akamai_property_variables", makeResource(propertiesMod, "PropertyVariables"),
-		makeResource(mainMod, "PropertyVariables"), propertiesMod, mainMod, nil)
+		makeResource(mainMod, "PropertyActivation"), propertiesMod, mainMod, &tfbridge.ResourceInfo{
+			Docs: &tfbridge.DocInfo{
+				Source: "property_activation.md",
+			},
+		})
 	prov.RenameDataSource("akamai_cp_code", makeDataSource(propertiesMod, "getCpCode"),
-		makeDataSource(mainMod, "getCpCode"), propertiesMod, mainMod, nil)
+		makeDataSource(mainMod, "getCpCode"), propertiesMod, mainMod, &tfbridge.DataSourceInfo{
+			Docs: &tfbridge.DocInfo{
+				Source: "cp_code.md",
+			},
+		})
 	prov.RenameDataSource("akamai_property", makeDataSource(propertiesMod, "getProperty"),
-		makeDataSource(mainMod, "getProperty"), propertiesMod, mainMod, nil)
+		makeDataSource(mainMod, "getProperty"), propertiesMod, mainMod, &tfbridge.DataSourceInfo{
+			Docs: &tfbridge.DocInfo{
+				Source: "property.md",
+			},
+		})
 	prov.RenameDataSource("akamai_property_rules", makeDataSource(propertiesMod, "getPropertyRules"),
-		makeDataSource(mainMod, "getPropertyRules"), propertiesMod, mainMod, nil)
+		makeDataSource(mainMod, "getPropertyRules"), propertiesMod, mainMod, &tfbridge.DataSourceInfo{
+			Docs: &tfbridge.DocInfo{
+				Source: "property_rules.md",
+			},
+		})
 
 	prov.SetAutonaming(255, "-")
 
 	return prov
+}
+
+func noUpstreamDocs() *tfbridge.DocInfo {
+	return &tfbridge.DocInfo{
+		Markdown: []byte(" "),
+	}
 }

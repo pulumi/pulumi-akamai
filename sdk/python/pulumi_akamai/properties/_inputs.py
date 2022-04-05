@@ -16,8 +16,6 @@ __all__ = [
     'PropertyOriginArgs',
     'PropertyRuleErrorArgs',
     'PropertyRuleWarningArgs',
-    'PropertyVariablesVariableArgs',
-    'PropertyVariablesVariableVariableArgs',
 ]
 
 @pulumi.input_type
@@ -207,6 +205,11 @@ class PropertyHostnameArgs:
                  cert_statuses: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusArgs']]]] = None,
                  cname_type: Optional[pulumi.Input[str]] = None,
                  edge_hostname_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] cert_provisioning_type: The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+        :param pulumi.Input[str] cname_from: A string containing the original origin's hostname. For example, `"example.org"`.
+        :param pulumi.Input[str] cname_to: A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
+        """
         pulumi.set(__self__, "cert_provisioning_type", cert_provisioning_type)
         pulumi.set(__self__, "cname_from", cname_from)
         pulumi.set(__self__, "cname_to", cname_to)
@@ -220,6 +223,9 @@ class PropertyHostnameArgs:
     @property
     @pulumi.getter(name="certProvisioningType")
     def cert_provisioning_type(self) -> pulumi.Input[str]:
+        """
+        The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+        """
         return pulumi.get(self, "cert_provisioning_type")
 
     @cert_provisioning_type.setter
@@ -229,6 +235,9 @@ class PropertyHostnameArgs:
     @property
     @pulumi.getter(name="cnameFrom")
     def cname_from(self) -> pulumi.Input[str]:
+        """
+        A string containing the original origin's hostname. For example, `"example.org"`.
+        """
         return pulumi.get(self, "cname_from")
 
     @cname_from.setter
@@ -238,6 +247,9 @@ class PropertyHostnameArgs:
     @property
     @pulumi.getter(name="cnameTo")
     def cname_to(self) -> pulumi.Input[str]:
+        """
+        A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
+        """
         return pulumi.get(self, "cname_to")
 
     @cname_to.setter
@@ -578,84 +590,5 @@ class PropertyRuleWarningArgs:
     @type.setter
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
-
-
-@pulumi.input_type
-class PropertyVariablesVariableArgs:
-    def __init__(__self__, *,
-                 variables: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyVariablesVariableVariableArgs']]]] = None):
-        if variables is not None:
-            pulumi.set(__self__, "variables", variables)
-
-    @property
-    @pulumi.getter
-    def variables(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyVariablesVariableVariableArgs']]]]:
-        return pulumi.get(self, "variables")
-
-    @variables.setter
-    def variables(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyVariablesVariableVariableArgs']]]]):
-        pulumi.set(self, "variables", value)
-
-
-@pulumi.input_type
-class PropertyVariablesVariableVariableArgs:
-    def __init__(__self__, *,
-                 hidden: pulumi.Input[bool],
-                 name: pulumi.Input[str],
-                 sensitive: pulumi.Input[bool],
-                 description: Optional[pulumi.Input[str]] = None,
-                 value: Optional[pulumi.Input[str]] = None):
-        pulumi.set(__self__, "hidden", hidden)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "sensitive", sensitive)
-        if description is not None:
-            pulumi.set(__self__, "description", description)
-        if value is not None:
-            pulumi.set(__self__, "value", value)
-
-    @property
-    @pulumi.getter
-    def hidden(self) -> pulumi.Input[bool]:
-        return pulumi.get(self, "hidden")
-
-    @hidden.setter
-    def hidden(self, value: pulumi.Input[bool]):
-        pulumi.set(self, "hidden", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
-    def sensitive(self) -> pulumi.Input[bool]:
-        return pulumi.get(self, "sensitive")
-
-    @sensitive.setter
-    def sensitive(self, value: pulumi.Input[bool]):
-        pulumi.set(self, "sensitive", value)
-
-    @property
-    @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "description")
-
-    @description.setter
-    def description(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "description", value)
-
-    @property
-    @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "value")
-
-    @value.setter
-    def value(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "value", value)
 
 

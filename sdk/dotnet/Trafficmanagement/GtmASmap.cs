@@ -9,22 +9,73 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Trafficmanagement
 {
+    /// <summary>
+    /// Use the `akamai.GtmAsmap` resource to create, configure, and import a GTM Autonomous System (AS) map. AS mapping lets you configure a GTM property that returns a CNAME based on the AS number associated with the requester's IP address.
+    /// 
+    /// You can reuse maps for multiple properties or create new ones. AS maps split the Internet into multiple AS block zones. Properties that use AS maps can specify handout integers for each zone. AS mapping lets you configure a property that directs users to a specific environment or to the origin.
+    /// 
+    /// &gt; **Note** Import requires an ID with this format: `existing_domain_name`:`existing_map_name`.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// Basic usage:
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var demoAsmap = new Akamai.GtmAsmap("demoAsmap", new Akamai.GtmAsmapArgs
+    ///         {
+    ///             DefaultDatacenter = new Akamai.Inputs.GtmAsmapDefaultDatacenterArgs
+    ///             {
+    ///                 DatacenterId = 5400,
+    ///                 Nickname = "All Other AS numbers",
+    ///             },
+    ///             Domain = "demo_domain.akadns.net",
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
+    /// ## Schema reference
+    /// 
+    /// You can download the GTM AS Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#asmap) page.
+    /// </summary>
     [Obsolete(@"akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap")]
     [AkamaiResourceType("akamai:trafficmanagement/gtmASmap:GtmASmap")]
     public partial class GtmASmap : Pulumi.CustomResource
     {
+        /// <summary>
+        /// Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+        /// </summary>
         [Output("assignments")]
         public Output<ImmutableArray<Outputs.GtmASmapAssignment>> Assignments { get; private set; } = null!;
 
+        /// <summary>
+        /// A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+        /// </summary>
         [Output("defaultDatacenter")]
         public Output<Outputs.GtmASmapDefaultDatacenter> DefaultDatacenter { get; private set; } = null!;
 
+        /// <summary>
+        /// The GTM Domain name for the AS map.
+        /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
 
+        /// <summary>
+        /// A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// A boolean that, if `true`, waits for transaction to complete.
+        /// </summary>
         [Output("waitOnComplete")]
         public Output<bool?> WaitOnComplete { get; private set; } = null!;
 
@@ -76,21 +127,37 @@ namespace Pulumi.Akamai.Trafficmanagement
     {
         [Input("assignments")]
         private InputList<Inputs.GtmASmapAssignmentArgs>? _assignments;
+
+        /// <summary>
+        /// Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+        /// </summary>
         public InputList<Inputs.GtmASmapAssignmentArgs> Assignments
         {
             get => _assignments ?? (_assignments = new InputList<Inputs.GtmASmapAssignmentArgs>());
             set => _assignments = value;
         }
 
+        /// <summary>
+        /// A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+        /// </summary>
         [Input("defaultDatacenter", required: true)]
         public Input<Inputs.GtmASmapDefaultDatacenterArgs> DefaultDatacenter { get; set; } = null!;
 
+        /// <summary>
+        /// The GTM Domain name for the AS map.
+        /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
 
+        /// <summary>
+        /// A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// A boolean that, if `true`, waits for transaction to complete.
+        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 
@@ -103,21 +170,37 @@ namespace Pulumi.Akamai.Trafficmanagement
     {
         [Input("assignments")]
         private InputList<Inputs.GtmASmapAssignmentGetArgs>? _assignments;
+
+        /// <summary>
+        /// Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+        /// </summary>
         public InputList<Inputs.GtmASmapAssignmentGetArgs> Assignments
         {
             get => _assignments ?? (_assignments = new InputList<Inputs.GtmASmapAssignmentGetArgs>());
             set => _assignments = value;
         }
 
+        /// <summary>
+        /// A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+        /// </summary>
         [Input("defaultDatacenter")]
         public Input<Inputs.GtmASmapDefaultDatacenterGetArgs>? DefaultDatacenter { get; set; }
 
+        /// <summary>
+        /// The GTM Domain name for the AS map.
+        /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
+        /// <summary>
+        /// A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// A boolean that, if `true`, waits for transaction to complete.
+        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 

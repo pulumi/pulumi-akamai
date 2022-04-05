@@ -12,14 +12,12 @@ export * from "./getProperty";
 export * from "./getPropertyRules";
 export * from "./property";
 export * from "./propertyActivation";
-export * from "./propertyVariables";
 
 // Import resources to register:
 import { CpCode } from "./cpCode";
 import { EdgeHostName } from "./edgeHostName";
 import { Property } from "./property";
 import { PropertyActivation } from "./propertyActivation";
-import { PropertyVariables } from "./propertyVariables";
 
 const _module = {
     version: utilities.getVersion(),
@@ -33,8 +31,6 @@ const _module = {
                 return new Property(name, <any>undefined, { urn })
             case "akamai:properties/propertyActivation:PropertyActivation":
                 return new PropertyActivation(name, <any>undefined, { urn })
-            case "akamai:properties/propertyVariables:PropertyVariables":
-                return new PropertyVariables(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -44,4 +40,3 @@ pulumi.runtime.registerResourceModule("akamai", "properties/cpCode", _module)
 pulumi.runtime.registerResourceModule("akamai", "properties/edgeHostName", _module)
 pulumi.runtime.registerResourceModule("akamai", "properties/property", _module)
 pulumi.runtime.registerResourceModule("akamai", "properties/propertyActivation", _module)
-pulumi.runtime.registerResourceModule("akamai", "properties/propertyVariables", _module)

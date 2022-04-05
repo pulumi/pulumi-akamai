@@ -12,9 +12,15 @@ namespace Pulumi.Akamai.Trafficmanagement.Inputs
 
     public sealed class GtmASmapDefaultDatacenterArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// A unique identifier for an existing data center in the domain.
+        /// </summary>
         [Input("datacenterId", required: true)]
         public Input<int> DatacenterId { get; set; } = null!;
 
+        /// <summary>
+        /// A descriptive label for the group.
+        /// </summary>
         [Input("nickname")]
         public Input<string>? Nickname { get; set; }
 

@@ -114,6 +114,7 @@ export * from "./getCloudletsEdgeRedirectorMatchRule";
 export * from "./getCloudletsForwardRewriteMatchRule";
 export * from "./getCloudletsPhasedReleaseMatchRule";
 export * from "./getCloudletsPolicy";
+export * from "./getCloudletsRequestControlMatchRule";
 export * from "./getCloudletsVisitorPrioritizationMatchRule";
 export * from "./getContract";
 export * from "./getContracts";
@@ -128,6 +129,7 @@ export * from "./getGroups";
 export * from "./getGtmDefaultDatacenter";
 export * from "./getNetworkLists";
 export * from "./getProperties";
+export * from "./getPropertiesSearch";
 export * from "./getProperty";
 export * from "./getPropertyHostnames";
 export * from "./getPropertyProducts";
@@ -147,7 +149,6 @@ export * from "./networkListDescription";
 export * from "./networkListSubscription";
 export * from "./property";
 export * from "./propertyActivation";
-export * from "./propertyVariables";
 export * from "./provider";
 
 // Export sub-modules:
@@ -235,7 +236,6 @@ import { NetworkListDescription } from "./networkListDescription";
 import { NetworkListSubscription } from "./networkListSubscription";
 import { Property } from "./property";
 import { PropertyActivation } from "./propertyActivation";
-import { PropertyVariables } from "./propertyVariables";
 
 const _module = {
     version: utilities.getVersion(),
@@ -379,8 +379,6 @@ const _module = {
                 return new Property(name, <any>undefined, { urn })
             case "akamai:index/propertyActivation:PropertyActivation":
                 return new PropertyActivation(name, <any>undefined, { urn })
-            case "akamai:index/propertyVariables:PropertyVariables":
-                return new PropertyVariables(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -455,7 +453,6 @@ pulumi.runtime.registerResourceModule("akamai", "index/networkListDescription", 
 pulumi.runtime.registerResourceModule("akamai", "index/networkListSubscription", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/property", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyActivation", _module)
-pulumi.runtime.registerResourceModule("akamai", "index/propertyVariables", _module)
 
 import { Provider } from "./provider";
 

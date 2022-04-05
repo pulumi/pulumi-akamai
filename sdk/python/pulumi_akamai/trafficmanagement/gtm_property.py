@@ -49,6 +49,37 @@ class GtmPropertyArgs:
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a GtmProperty resource.
+        :param pulumi.Input[str] domain: DNS name for the GTM Domain set that includes this Property.
+        :param pulumi.Input[int] handout_limit: Indicates the limit for the number of live IPs handed out to a DNS request.
+        :param pulumi.Input[str] handout_mode: Specifies how IPs are returned when more than one IP is alive and available.
+        :param pulumi.Input[str] score_aggregation_type: Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
+        :param pulumi.Input[str] type: The record type.
+        :param pulumi.Input[str] backup_cname: Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
+        :param pulumi.Input[str] backup_ip: Specifies a backup IP. When GTM declares that all of the targets are down, the backup IP is handed out. If a backup IP is set, do not set a backup CNAME.
+        :param pulumi.Input[bool] balance_by_download_score: A boolean that indicates whether download score based load balancing is enabled.
+        :param pulumi.Input[str] cname: Indicates the fully qualified name aliased to a particular property.
+        :param pulumi.Input[str] comments: A descriptive note about changes to the domain. The maximum is 4000 characters.
+        :param pulumi.Input[int] dynamic_ttl: Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing such as A and AAAA records, and CNAMEs.
+        :param pulumi.Input[int] failback_delay: Specifies the failback delay in seconds.
+        :param pulumi.Input[int] failover_delay: Specifies the failover delay in seconds.
+        :param pulumi.Input[bool] ghost_demand_reporting: Use load estimates from Akamai Ghost utilization messages.
+        :param pulumi.Input[float] health_max: Defines the absolute limit beyond which IPs are declared unhealthy.
+        :param pulumi.Input[float] health_multiplier: Configures a cutoff value that is computed from the median scores.
+        :param pulumi.Input[float] health_threshold: Configures a cutoff value that is computed from the median scores.
+        :param pulumi.Input[bool] ipv6: A boolean that indicates the type of IP address handed out by a GTM property.
+        :param pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]] liveness_tests: Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `liveness_test` arguments. If used, requires these arguments:
+        :param pulumi.Input[float] load_imbalance_percentage: Indicates the percent of load imbalance factor (LIF) for the property.
+        :param pulumi.Input[str] map_name: A descriptive label for a GeographicMap or a CidrMap that's required if the property is either geographic or cidrmapping, in which case mapName needs to reference either an existing GeographicMap or CidrMap in the same domain.
+        :param pulumi.Input[int] max_unreachable_penalty: For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
+        :param pulumi.Input[float] min_live_fraction: Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
+        :param pulumi.Input[str] name: Name of HTTP header.
+        :param pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]] static_rr_sets: Contains static record sets. You can have multiple `static_rr_set` entries. Requires these arguments:
+        :param pulumi.Input[int] stickiness_bonus_constant: Specifies a constant used to configure data center affinity.
+        :param pulumi.Input[int] stickiness_bonus_percentage: Specifies a percentage used to configure data center affinity.
+        :param pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]] traffic_targets: Contains information about where to direct data center traffic. You can have multiple `traffic_target` arguments. If used, includes these arguments:
+        :param pulumi.Input[float] unreachable_threshold: For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
+        :param pulumi.Input[bool] use_computed_targets: For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
+        :param pulumi.Input[bool] wait_on_complete: A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
         """
         pulumi.set(__self__, "domain", domain)
         pulumi.set(__self__, "handout_limit", handout_limit)
@@ -113,6 +144,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Input[str]:
+        """
+        DNS name for the GTM Domain set that includes this Property.
+        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -122,6 +156,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="handoutLimit")
     def handout_limit(self) -> pulumi.Input[int]:
+        """
+        Indicates the limit for the number of live IPs handed out to a DNS request.
+        """
         return pulumi.get(self, "handout_limit")
 
     @handout_limit.setter
@@ -131,6 +168,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="handoutMode")
     def handout_mode(self) -> pulumi.Input[str]:
+        """
+        Specifies how IPs are returned when more than one IP is alive and available.
+        """
         return pulumi.get(self, "handout_mode")
 
     @handout_mode.setter
@@ -140,6 +180,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="scoreAggregationType")
     def score_aggregation_type(self) -> pulumi.Input[str]:
+        """
+        Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
+        """
         return pulumi.get(self, "score_aggregation_type")
 
     @score_aggregation_type.setter
@@ -149,6 +192,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
+        """
+        The record type.
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -158,6 +204,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="backupCname")
     def backup_cname(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
+        """
         return pulumi.get(self, "backup_cname")
 
     @backup_cname.setter
@@ -167,6 +216,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="backupIp")
     def backup_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies a backup IP. When GTM declares that all of the targets are down, the backup IP is handed out. If a backup IP is set, do not set a backup CNAME.
+        """
         return pulumi.get(self, "backup_ip")
 
     @backup_ip.setter
@@ -176,6 +228,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="balanceByDownloadScore")
     def balance_by_download_score(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean that indicates whether download score based load balancing is enabled.
+        """
         return pulumi.get(self, "balance_by_download_score")
 
     @balance_by_download_score.setter
@@ -185,6 +240,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter
     def cname(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates the fully qualified name aliased to a particular property.
+        """
         return pulumi.get(self, "cname")
 
     @cname.setter
@@ -194,6 +252,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter
     def comments(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive note about changes to the domain. The maximum is 4000 characters.
+        """
         return pulumi.get(self, "comments")
 
     @comments.setter
@@ -203,6 +264,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="dynamicTtl")
     def dynamic_ttl(self) -> Optional[pulumi.Input[int]]:
+        """
+        Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing such as A and AAAA records, and CNAMEs.
+        """
         return pulumi.get(self, "dynamic_ttl")
 
     @dynamic_ttl.setter
@@ -212,6 +276,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="failbackDelay")
     def failback_delay(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specifies the failback delay in seconds.
+        """
         return pulumi.get(self, "failback_delay")
 
     @failback_delay.setter
@@ -221,6 +288,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="failoverDelay")
     def failover_delay(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specifies the failover delay in seconds.
+        """
         return pulumi.get(self, "failover_delay")
 
     @failover_delay.setter
@@ -230,6 +300,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="ghostDemandReporting")
     def ghost_demand_reporting(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Use load estimates from Akamai Ghost utilization messages.
+        """
         return pulumi.get(self, "ghost_demand_reporting")
 
     @ghost_demand_reporting.setter
@@ -239,6 +312,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="healthMax")
     def health_max(self) -> Optional[pulumi.Input[float]]:
+        """
+        Defines the absolute limit beyond which IPs are declared unhealthy.
+        """
         return pulumi.get(self, "health_max")
 
     @health_max.setter
@@ -248,6 +324,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="healthMultiplier")
     def health_multiplier(self) -> Optional[pulumi.Input[float]]:
+        """
+        Configures a cutoff value that is computed from the median scores.
+        """
         return pulumi.get(self, "health_multiplier")
 
     @health_multiplier.setter
@@ -257,6 +336,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="healthThreshold")
     def health_threshold(self) -> Optional[pulumi.Input[float]]:
+        """
+        Configures a cutoff value that is computed from the median scores.
+        """
         return pulumi.get(self, "health_threshold")
 
     @health_threshold.setter
@@ -266,6 +348,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter
     def ipv6(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean that indicates the type of IP address handed out by a GTM property.
+        """
         return pulumi.get(self, "ipv6")
 
     @ipv6.setter
@@ -275,6 +360,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="livenessTests")
     def liveness_tests(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]]:
+        """
+        Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `liveness_test` arguments. If used, requires these arguments:
+        """
         return pulumi.get(self, "liveness_tests")
 
     @liveness_tests.setter
@@ -284,6 +372,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="loadImbalancePercentage")
     def load_imbalance_percentage(self) -> Optional[pulumi.Input[float]]:
+        """
+        Indicates the percent of load imbalance factor (LIF) for the property.
+        """
         return pulumi.get(self, "load_imbalance_percentage")
 
     @load_imbalance_percentage.setter
@@ -293,6 +384,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="mapName")
     def map_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive label for a GeographicMap or a CidrMap that's required if the property is either geographic or cidrmapping, in which case mapName needs to reference either an existing GeographicMap or CidrMap in the same domain.
+        """
         return pulumi.get(self, "map_name")
 
     @map_name.setter
@@ -302,6 +396,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="maxUnreachablePenalty")
     def max_unreachable_penalty(self) -> Optional[pulumi.Input[int]]:
+        """
+        For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
+        """
         return pulumi.get(self, "max_unreachable_penalty")
 
     @max_unreachable_penalty.setter
@@ -311,6 +408,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="minLiveFraction")
     def min_live_fraction(self) -> Optional[pulumi.Input[float]]:
+        """
+        Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
+        """
         return pulumi.get(self, "min_live_fraction")
 
     @min_live_fraction.setter
@@ -320,6 +420,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of HTTP header.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -329,6 +432,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="staticRrSets")
     def static_rr_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]]:
+        """
+        Contains static record sets. You can have multiple `static_rr_set` entries. Requires these arguments:
+        """
         return pulumi.get(self, "static_rr_sets")
 
     @static_rr_sets.setter
@@ -347,6 +453,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="stickinessBonusConstant")
     def stickiness_bonus_constant(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specifies a constant used to configure data center affinity.
+        """
         return pulumi.get(self, "stickiness_bonus_constant")
 
     @stickiness_bonus_constant.setter
@@ -356,6 +465,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="stickinessBonusPercentage")
     def stickiness_bonus_percentage(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specifies a percentage used to configure data center affinity.
+        """
         return pulumi.get(self, "stickiness_bonus_percentage")
 
     @stickiness_bonus_percentage.setter
@@ -365,6 +477,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="trafficTargets")
     def traffic_targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]]:
+        """
+        Contains information about where to direct data center traffic. You can have multiple `traffic_target` arguments. If used, includes these arguments:
+        """
         return pulumi.get(self, "traffic_targets")
 
     @traffic_targets.setter
@@ -374,6 +489,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="unreachableThreshold")
     def unreachable_threshold(self) -> Optional[pulumi.Input[float]]:
+        """
+        For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
+        """
         return pulumi.get(self, "unreachable_threshold")
 
     @unreachable_threshold.setter
@@ -383,6 +501,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="useComputedTargets")
     def use_computed_targets(self) -> Optional[pulumi.Input[bool]]:
+        """
+        For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
+        """
         return pulumi.get(self, "use_computed_targets")
 
     @use_computed_targets.setter
@@ -392,6 +513,9 @@ class GtmPropertyArgs:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -438,6 +562,37 @@ class _GtmPropertyState:
                  weighted_hash_bits_for_ipv6: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering GtmProperty resources.
+        :param pulumi.Input[str] backup_cname: Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
+        :param pulumi.Input[str] backup_ip: Specifies a backup IP. When GTM declares that all of the targets are down, the backup IP is handed out. If a backup IP is set, do not set a backup CNAME.
+        :param pulumi.Input[bool] balance_by_download_score: A boolean that indicates whether download score based load balancing is enabled.
+        :param pulumi.Input[str] cname: Indicates the fully qualified name aliased to a particular property.
+        :param pulumi.Input[str] comments: A descriptive note about changes to the domain. The maximum is 4000 characters.
+        :param pulumi.Input[str] domain: DNS name for the GTM Domain set that includes this Property.
+        :param pulumi.Input[int] dynamic_ttl: Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing such as A and AAAA records, and CNAMEs.
+        :param pulumi.Input[int] failback_delay: Specifies the failback delay in seconds.
+        :param pulumi.Input[int] failover_delay: Specifies the failover delay in seconds.
+        :param pulumi.Input[bool] ghost_demand_reporting: Use load estimates from Akamai Ghost utilization messages.
+        :param pulumi.Input[int] handout_limit: Indicates the limit for the number of live IPs handed out to a DNS request.
+        :param pulumi.Input[str] handout_mode: Specifies how IPs are returned when more than one IP is alive and available.
+        :param pulumi.Input[float] health_max: Defines the absolute limit beyond which IPs are declared unhealthy.
+        :param pulumi.Input[float] health_multiplier: Configures a cutoff value that is computed from the median scores.
+        :param pulumi.Input[float] health_threshold: Configures a cutoff value that is computed from the median scores.
+        :param pulumi.Input[bool] ipv6: A boolean that indicates the type of IP address handed out by a GTM property.
+        :param pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]] liveness_tests: Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `liveness_test` arguments. If used, requires these arguments:
+        :param pulumi.Input[float] load_imbalance_percentage: Indicates the percent of load imbalance factor (LIF) for the property.
+        :param pulumi.Input[str] map_name: A descriptive label for a GeographicMap or a CidrMap that's required if the property is either geographic or cidrmapping, in which case mapName needs to reference either an existing GeographicMap or CidrMap in the same domain.
+        :param pulumi.Input[int] max_unreachable_penalty: For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
+        :param pulumi.Input[float] min_live_fraction: Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
+        :param pulumi.Input[str] name: Name of HTTP header.
+        :param pulumi.Input[str] score_aggregation_type: Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
+        :param pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]] static_rr_sets: Contains static record sets. You can have multiple `static_rr_set` entries. Requires these arguments:
+        :param pulumi.Input[int] stickiness_bonus_constant: Specifies a constant used to configure data center affinity.
+        :param pulumi.Input[int] stickiness_bonus_percentage: Specifies a percentage used to configure data center affinity.
+        :param pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]] traffic_targets: Contains information about where to direct data center traffic. You can have multiple `traffic_target` arguments. If used, includes these arguments:
+        :param pulumi.Input[str] type: The record type.
+        :param pulumi.Input[float] unreachable_threshold: For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
+        :param pulumi.Input[bool] use_computed_targets: For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
+        :param pulumi.Input[bool] wait_on_complete: A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
         """
         if backup_cname is not None:
             pulumi.set(__self__, "backup_cname", backup_cname)
@@ -511,6 +666,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="backupCname")
     def backup_cname(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
+        """
         return pulumi.get(self, "backup_cname")
 
     @backup_cname.setter
@@ -520,6 +678,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="backupIp")
     def backup_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies a backup IP. When GTM declares that all of the targets are down, the backup IP is handed out. If a backup IP is set, do not set a backup CNAME.
+        """
         return pulumi.get(self, "backup_ip")
 
     @backup_ip.setter
@@ -529,6 +690,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="balanceByDownloadScore")
     def balance_by_download_score(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean that indicates whether download score based load balancing is enabled.
+        """
         return pulumi.get(self, "balance_by_download_score")
 
     @balance_by_download_score.setter
@@ -538,6 +702,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter
     def cname(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates the fully qualified name aliased to a particular property.
+        """
         return pulumi.get(self, "cname")
 
     @cname.setter
@@ -547,6 +714,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter
     def comments(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive note about changes to the domain. The maximum is 4000 characters.
+        """
         return pulumi.get(self, "comments")
 
     @comments.setter
@@ -556,6 +726,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        DNS name for the GTM Domain set that includes this Property.
+        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -565,6 +738,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="dynamicTtl")
     def dynamic_ttl(self) -> Optional[pulumi.Input[int]]:
+        """
+        Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing such as A and AAAA records, and CNAMEs.
+        """
         return pulumi.get(self, "dynamic_ttl")
 
     @dynamic_ttl.setter
@@ -574,6 +750,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="failbackDelay")
     def failback_delay(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specifies the failback delay in seconds.
+        """
         return pulumi.get(self, "failback_delay")
 
     @failback_delay.setter
@@ -583,6 +762,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="failoverDelay")
     def failover_delay(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specifies the failover delay in seconds.
+        """
         return pulumi.get(self, "failover_delay")
 
     @failover_delay.setter
@@ -592,6 +774,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="ghostDemandReporting")
     def ghost_demand_reporting(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Use load estimates from Akamai Ghost utilization messages.
+        """
         return pulumi.get(self, "ghost_demand_reporting")
 
     @ghost_demand_reporting.setter
@@ -601,6 +786,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="handoutLimit")
     def handout_limit(self) -> Optional[pulumi.Input[int]]:
+        """
+        Indicates the limit for the number of live IPs handed out to a DNS request.
+        """
         return pulumi.get(self, "handout_limit")
 
     @handout_limit.setter
@@ -610,6 +798,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="handoutMode")
     def handout_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies how IPs are returned when more than one IP is alive and available.
+        """
         return pulumi.get(self, "handout_mode")
 
     @handout_mode.setter
@@ -619,6 +810,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="healthMax")
     def health_max(self) -> Optional[pulumi.Input[float]]:
+        """
+        Defines the absolute limit beyond which IPs are declared unhealthy.
+        """
         return pulumi.get(self, "health_max")
 
     @health_max.setter
@@ -628,6 +822,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="healthMultiplier")
     def health_multiplier(self) -> Optional[pulumi.Input[float]]:
+        """
+        Configures a cutoff value that is computed from the median scores.
+        """
         return pulumi.get(self, "health_multiplier")
 
     @health_multiplier.setter
@@ -637,6 +834,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="healthThreshold")
     def health_threshold(self) -> Optional[pulumi.Input[float]]:
+        """
+        Configures a cutoff value that is computed from the median scores.
+        """
         return pulumi.get(self, "health_threshold")
 
     @health_threshold.setter
@@ -646,6 +846,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter
     def ipv6(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean that indicates the type of IP address handed out by a GTM property.
+        """
         return pulumi.get(self, "ipv6")
 
     @ipv6.setter
@@ -655,6 +858,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="livenessTests")
     def liveness_tests(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]]:
+        """
+        Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `liveness_test` arguments. If used, requires these arguments:
+        """
         return pulumi.get(self, "liveness_tests")
 
     @liveness_tests.setter
@@ -664,6 +870,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="loadImbalancePercentage")
     def load_imbalance_percentage(self) -> Optional[pulumi.Input[float]]:
+        """
+        Indicates the percent of load imbalance factor (LIF) for the property.
+        """
         return pulumi.get(self, "load_imbalance_percentage")
 
     @load_imbalance_percentage.setter
@@ -673,6 +882,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="mapName")
     def map_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive label for a GeographicMap or a CidrMap that's required if the property is either geographic or cidrmapping, in which case mapName needs to reference either an existing GeographicMap or CidrMap in the same domain.
+        """
         return pulumi.get(self, "map_name")
 
     @map_name.setter
@@ -682,6 +894,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="maxUnreachablePenalty")
     def max_unreachable_penalty(self) -> Optional[pulumi.Input[int]]:
+        """
+        For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
+        """
         return pulumi.get(self, "max_unreachable_penalty")
 
     @max_unreachable_penalty.setter
@@ -691,6 +906,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="minLiveFraction")
     def min_live_fraction(self) -> Optional[pulumi.Input[float]]:
+        """
+        Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
+        """
         return pulumi.get(self, "min_live_fraction")
 
     @min_live_fraction.setter
@@ -700,6 +918,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of HTTP header.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -709,6 +930,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="scoreAggregationType")
     def score_aggregation_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
+        """
         return pulumi.get(self, "score_aggregation_type")
 
     @score_aggregation_type.setter
@@ -718,6 +942,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="staticRrSets")
     def static_rr_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]]:
+        """
+        Contains static record sets. You can have multiple `static_rr_set` entries. Requires these arguments:
+        """
         return pulumi.get(self, "static_rr_sets")
 
     @static_rr_sets.setter
@@ -736,6 +963,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="stickinessBonusConstant")
     def stickiness_bonus_constant(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specifies a constant used to configure data center affinity.
+        """
         return pulumi.get(self, "stickiness_bonus_constant")
 
     @stickiness_bonus_constant.setter
@@ -745,6 +975,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="stickinessBonusPercentage")
     def stickiness_bonus_percentage(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specifies a percentage used to configure data center affinity.
+        """
         return pulumi.get(self, "stickiness_bonus_percentage")
 
     @stickiness_bonus_percentage.setter
@@ -754,6 +987,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="trafficTargets")
     def traffic_targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]]:
+        """
+        Contains information about where to direct data center traffic. You can have multiple `traffic_target` arguments. If used, includes these arguments:
+        """
         return pulumi.get(self, "traffic_targets")
 
     @traffic_targets.setter
@@ -763,6 +999,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The record type.
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -772,6 +1011,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="unreachableThreshold")
     def unreachable_threshold(self) -> Optional[pulumi.Input[float]]:
+        """
+        For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
+        """
         return pulumi.get(self, "unreachable_threshold")
 
     @unreachable_threshold.setter
@@ -781,6 +1023,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="useComputedTargets")
     def use_computed_targets(self) -> Optional[pulumi.Input[bool]]:
+        """
+        For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
+        """
         return pulumi.get(self, "use_computed_targets")
 
     @use_computed_targets.setter
@@ -790,6 +1035,9 @@ class _GtmPropertyState:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -859,9 +1107,65 @@ class GtmProperty(pulumi.CustomResource):
                  wait_on_complete: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        Create a GtmProperty resource with the given unique name, props, and options.
+        Use the `GtmProperty` resource to create, configure and import a GTM property, a set of IP addresses or CNAMEs that GTM provides in response to DNS queries based on a set of rules.
+
+        > **Note** Import requires an ID with this format: `existing_domain_name`:`existing_property_name`.
+
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        demo_property = akamai.GtmProperty("demoProperty",
+            domain="demo_domain.akadns.net",
+            handout_limit=5,
+            handout_mode="normal",
+            score_aggregation_type="median",
+            traffic_targets=[akamai.GtmPropertyTrafficTargetArgs(
+                datacenter_id=3131,
+            )],
+            type="weighted-round-robin")
+        ```
+        ## Schema reference
+
+        You can download the GTM Property backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#property) page.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] backup_cname: Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
+        :param pulumi.Input[str] backup_ip: Specifies a backup IP. When GTM declares that all of the targets are down, the backup IP is handed out. If a backup IP is set, do not set a backup CNAME.
+        :param pulumi.Input[bool] balance_by_download_score: A boolean that indicates whether download score based load balancing is enabled.
+        :param pulumi.Input[str] cname: Indicates the fully qualified name aliased to a particular property.
+        :param pulumi.Input[str] comments: A descriptive note about changes to the domain. The maximum is 4000 characters.
+        :param pulumi.Input[str] domain: DNS name for the GTM Domain set that includes this Property.
+        :param pulumi.Input[int] dynamic_ttl: Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing such as A and AAAA records, and CNAMEs.
+        :param pulumi.Input[int] failback_delay: Specifies the failback delay in seconds.
+        :param pulumi.Input[int] failover_delay: Specifies the failover delay in seconds.
+        :param pulumi.Input[bool] ghost_demand_reporting: Use load estimates from Akamai Ghost utilization messages.
+        :param pulumi.Input[int] handout_limit: Indicates the limit for the number of live IPs handed out to a DNS request.
+        :param pulumi.Input[str] handout_mode: Specifies how IPs are returned when more than one IP is alive and available.
+        :param pulumi.Input[float] health_max: Defines the absolute limit beyond which IPs are declared unhealthy.
+        :param pulumi.Input[float] health_multiplier: Configures a cutoff value that is computed from the median scores.
+        :param pulumi.Input[float] health_threshold: Configures a cutoff value that is computed from the median scores.
+        :param pulumi.Input[bool] ipv6: A boolean that indicates the type of IP address handed out by a GTM property.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyLivenessTestArgs']]]] liveness_tests: Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `liveness_test` arguments. If used, requires these arguments:
+        :param pulumi.Input[float] load_imbalance_percentage: Indicates the percent of load imbalance factor (LIF) for the property.
+        :param pulumi.Input[str] map_name: A descriptive label for a GeographicMap or a CidrMap that's required if the property is either geographic or cidrmapping, in which case mapName needs to reference either an existing GeographicMap or CidrMap in the same domain.
+        :param pulumi.Input[int] max_unreachable_penalty: For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
+        :param pulumi.Input[float] min_live_fraction: Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
+        :param pulumi.Input[str] name: Name of HTTP header.
+        :param pulumi.Input[str] score_aggregation_type: Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyStaticRrSetArgs']]]] static_rr_sets: Contains static record sets. You can have multiple `static_rr_set` entries. Requires these arguments:
+        :param pulumi.Input[int] stickiness_bonus_constant: Specifies a constant used to configure data center affinity.
+        :param pulumi.Input[int] stickiness_bonus_percentage: Specifies a percentage used to configure data center affinity.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyTrafficTargetArgs']]]] traffic_targets: Contains information about where to direct data center traffic. You can have multiple `traffic_target` arguments. If used, includes these arguments:
+        :param pulumi.Input[str] type: The record type.
+        :param pulumi.Input[float] unreachable_threshold: For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
+        :param pulumi.Input[bool] use_computed_targets: For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
+        :param pulumi.Input[bool] wait_on_complete: A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
         """
         ...
     @overload
@@ -870,7 +1174,32 @@ class GtmProperty(pulumi.CustomResource):
                  args: GtmPropertyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a GtmProperty resource with the given unique name, props, and options.
+        Use the `GtmProperty` resource to create, configure and import a GTM property, a set of IP addresses or CNAMEs that GTM provides in response to DNS queries based on a set of rules.
+
+        > **Note** Import requires an ID with this format: `existing_domain_name`:`existing_property_name`.
+
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        demo_property = akamai.GtmProperty("demoProperty",
+            domain="demo_domain.akadns.net",
+            handout_limit=5,
+            handout_mode="normal",
+            score_aggregation_type="median",
+            traffic_targets=[akamai.GtmPropertyTrafficTargetArgs(
+                datacenter_id=3131,
+            )],
+            type="weighted-round-robin")
+        ```
+        ## Schema reference
+
+        You can download the GTM Property backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#property) page.
+
         :param str resource_name: The name of the resource.
         :param GtmPropertyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1026,6 +1355,37 @@ class GtmProperty(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] backup_cname: Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
+        :param pulumi.Input[str] backup_ip: Specifies a backup IP. When GTM declares that all of the targets are down, the backup IP is handed out. If a backup IP is set, do not set a backup CNAME.
+        :param pulumi.Input[bool] balance_by_download_score: A boolean that indicates whether download score based load balancing is enabled.
+        :param pulumi.Input[str] cname: Indicates the fully qualified name aliased to a particular property.
+        :param pulumi.Input[str] comments: A descriptive note about changes to the domain. The maximum is 4000 characters.
+        :param pulumi.Input[str] domain: DNS name for the GTM Domain set that includes this Property.
+        :param pulumi.Input[int] dynamic_ttl: Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing such as A and AAAA records, and CNAMEs.
+        :param pulumi.Input[int] failback_delay: Specifies the failback delay in seconds.
+        :param pulumi.Input[int] failover_delay: Specifies the failover delay in seconds.
+        :param pulumi.Input[bool] ghost_demand_reporting: Use load estimates from Akamai Ghost utilization messages.
+        :param pulumi.Input[int] handout_limit: Indicates the limit for the number of live IPs handed out to a DNS request.
+        :param pulumi.Input[str] handout_mode: Specifies how IPs are returned when more than one IP is alive and available.
+        :param pulumi.Input[float] health_max: Defines the absolute limit beyond which IPs are declared unhealthy.
+        :param pulumi.Input[float] health_multiplier: Configures a cutoff value that is computed from the median scores.
+        :param pulumi.Input[float] health_threshold: Configures a cutoff value that is computed from the median scores.
+        :param pulumi.Input[bool] ipv6: A boolean that indicates the type of IP address handed out by a GTM property.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyLivenessTestArgs']]]] liveness_tests: Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `liveness_test` arguments. If used, requires these arguments:
+        :param pulumi.Input[float] load_imbalance_percentage: Indicates the percent of load imbalance factor (LIF) for the property.
+        :param pulumi.Input[str] map_name: A descriptive label for a GeographicMap or a CidrMap that's required if the property is either geographic or cidrmapping, in which case mapName needs to reference either an existing GeographicMap or CidrMap in the same domain.
+        :param pulumi.Input[int] max_unreachable_penalty: For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
+        :param pulumi.Input[float] min_live_fraction: Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
+        :param pulumi.Input[str] name: Name of HTTP header.
+        :param pulumi.Input[str] score_aggregation_type: Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyStaticRrSetArgs']]]] static_rr_sets: Contains static record sets. You can have multiple `static_rr_set` entries. Requires these arguments:
+        :param pulumi.Input[int] stickiness_bonus_constant: Specifies a constant used to configure data center affinity.
+        :param pulumi.Input[int] stickiness_bonus_percentage: Specifies a percentage used to configure data center affinity.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmPropertyTrafficTargetArgs']]]] traffic_targets: Contains information about where to direct data center traffic. You can have multiple `traffic_target` arguments. If used, includes these arguments:
+        :param pulumi.Input[str] type: The record type.
+        :param pulumi.Input[float] unreachable_threshold: For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
+        :param pulumi.Input[bool] use_computed_targets: For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
+        :param pulumi.Input[bool] wait_on_complete: A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1070,121 +1430,193 @@ class GtmProperty(pulumi.CustomResource):
     @property
     @pulumi.getter(name="backupCname")
     def backup_cname(self) -> pulumi.Output[Optional[str]]:
+        """
+        Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
+        """
         return pulumi.get(self, "backup_cname")
 
     @property
     @pulumi.getter(name="backupIp")
     def backup_ip(self) -> pulumi.Output[Optional[str]]:
+        """
+        Specifies a backup IP. When GTM declares that all of the targets are down, the backup IP is handed out. If a backup IP is set, do not set a backup CNAME.
+        """
         return pulumi.get(self, "backup_ip")
 
     @property
     @pulumi.getter(name="balanceByDownloadScore")
     def balance_by_download_score(self) -> pulumi.Output[Optional[bool]]:
+        """
+        A boolean that indicates whether download score based load balancing is enabled.
+        """
         return pulumi.get(self, "balance_by_download_score")
 
     @property
     @pulumi.getter
     def cname(self) -> pulumi.Output[Optional[str]]:
+        """
+        Indicates the fully qualified name aliased to a particular property.
+        """
         return pulumi.get(self, "cname")
 
     @property
     @pulumi.getter
     def comments(self) -> pulumi.Output[Optional[str]]:
+        """
+        A descriptive note about changes to the domain. The maximum is 4000 characters.
+        """
         return pulumi.get(self, "comments")
 
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Output[str]:
+        """
+        DNS name for the GTM Domain set that includes this Property.
+        """
         return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter(name="dynamicTtl")
     def dynamic_ttl(self) -> pulumi.Output[Optional[int]]:
+        """
+        Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing such as A and AAAA records, and CNAMEs.
+        """
         return pulumi.get(self, "dynamic_ttl")
 
     @property
     @pulumi.getter(name="failbackDelay")
     def failback_delay(self) -> pulumi.Output[Optional[int]]:
+        """
+        Specifies the failback delay in seconds.
+        """
         return pulumi.get(self, "failback_delay")
 
     @property
     @pulumi.getter(name="failoverDelay")
     def failover_delay(self) -> pulumi.Output[Optional[int]]:
+        """
+        Specifies the failover delay in seconds.
+        """
         return pulumi.get(self, "failover_delay")
 
     @property
     @pulumi.getter(name="ghostDemandReporting")
     def ghost_demand_reporting(self) -> pulumi.Output[Optional[bool]]:
+        """
+        Use load estimates from Akamai Ghost utilization messages.
+        """
         return pulumi.get(self, "ghost_demand_reporting")
 
     @property
     @pulumi.getter(name="handoutLimit")
     def handout_limit(self) -> pulumi.Output[int]:
+        """
+        Indicates the limit for the number of live IPs handed out to a DNS request.
+        """
         return pulumi.get(self, "handout_limit")
 
     @property
     @pulumi.getter(name="handoutMode")
     def handout_mode(self) -> pulumi.Output[str]:
+        """
+        Specifies how IPs are returned when more than one IP is alive and available.
+        """
         return pulumi.get(self, "handout_mode")
 
     @property
     @pulumi.getter(name="healthMax")
     def health_max(self) -> pulumi.Output[Optional[float]]:
+        """
+        Defines the absolute limit beyond which IPs are declared unhealthy.
+        """
         return pulumi.get(self, "health_max")
 
     @property
     @pulumi.getter(name="healthMultiplier")
     def health_multiplier(self) -> pulumi.Output[Optional[float]]:
+        """
+        Configures a cutoff value that is computed from the median scores.
+        """
         return pulumi.get(self, "health_multiplier")
 
     @property
     @pulumi.getter(name="healthThreshold")
     def health_threshold(self) -> pulumi.Output[Optional[float]]:
+        """
+        Configures a cutoff value that is computed from the median scores.
+        """
         return pulumi.get(self, "health_threshold")
 
     @property
     @pulumi.getter
     def ipv6(self) -> pulumi.Output[Optional[bool]]:
+        """
+        A boolean that indicates the type of IP address handed out by a GTM property.
+        """
         return pulumi.get(self, "ipv6")
 
     @property
     @pulumi.getter(name="livenessTests")
     def liveness_tests(self) -> pulumi.Output[Optional[Sequence['outputs.GtmPropertyLivenessTest']]]:
+        """
+        Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `liveness_test` arguments. If used, requires these arguments:
+        """
         return pulumi.get(self, "liveness_tests")
 
     @property
     @pulumi.getter(name="loadImbalancePercentage")
     def load_imbalance_percentage(self) -> pulumi.Output[Optional[float]]:
+        """
+        Indicates the percent of load imbalance factor (LIF) for the property.
+        """
         return pulumi.get(self, "load_imbalance_percentage")
 
     @property
     @pulumi.getter(name="mapName")
     def map_name(self) -> pulumi.Output[Optional[str]]:
+        """
+        A descriptive label for a GeographicMap or a CidrMap that's required if the property is either geographic or cidrmapping, in which case mapName needs to reference either an existing GeographicMap or CidrMap in the same domain.
+        """
         return pulumi.get(self, "map_name")
 
     @property
     @pulumi.getter(name="maxUnreachablePenalty")
     def max_unreachable_penalty(self) -> pulumi.Output[Optional[int]]:
+        """
+        For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
+        """
         return pulumi.get(self, "max_unreachable_penalty")
 
     @property
     @pulumi.getter(name="minLiveFraction")
     def min_live_fraction(self) -> pulumi.Output[Optional[float]]:
+        """
+        Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
+        """
         return pulumi.get(self, "min_live_fraction")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
+        """
+        Name of HTTP header.
+        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="scoreAggregationType")
     def score_aggregation_type(self) -> pulumi.Output[str]:
+        """
+        Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
+        """
         return pulumi.get(self, "score_aggregation_type")
 
     @property
     @pulumi.getter(name="staticRrSets")
     def static_rr_sets(self) -> pulumi.Output[Optional[Sequence['outputs.GtmPropertyStaticRrSet']]]:
+        """
+        Contains static record sets. You can have multiple `static_rr_set` entries. Requires these arguments:
+        """
         return pulumi.get(self, "static_rr_sets")
 
     @property
@@ -1195,36 +1627,57 @@ class GtmProperty(pulumi.CustomResource):
     @property
     @pulumi.getter(name="stickinessBonusConstant")
     def stickiness_bonus_constant(self) -> pulumi.Output[Optional[int]]:
+        """
+        Specifies a constant used to configure data center affinity.
+        """
         return pulumi.get(self, "stickiness_bonus_constant")
 
     @property
     @pulumi.getter(name="stickinessBonusPercentage")
     def stickiness_bonus_percentage(self) -> pulumi.Output[Optional[int]]:
+        """
+        Specifies a percentage used to configure data center affinity.
+        """
         return pulumi.get(self, "stickiness_bonus_percentage")
 
     @property
     @pulumi.getter(name="trafficTargets")
     def traffic_targets(self) -> pulumi.Output[Optional[Sequence['outputs.GtmPropertyTrafficTarget']]]:
+        """
+        Contains information about where to direct data center traffic. You can have multiple `traffic_target` arguments. If used, includes these arguments:
+        """
         return pulumi.get(self, "traffic_targets")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
+        """
+        The record type.
+        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="unreachableThreshold")
     def unreachable_threshold(self) -> pulumi.Output[Optional[float]]:
+        """
+        For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
+        """
         return pulumi.get(self, "unreachable_threshold")
 
     @property
     @pulumi.getter(name="useComputedTargets")
     def use_computed_targets(self) -> pulumi.Output[Optional[bool]]:
+        """
+        For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
+        """
         return pulumi.get(self, "use_computed_targets")
 
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> pulumi.Output[Optional[bool]]:
+        """
+        A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+        """
         return pulumi.get(self, "wait_on_complete")
 
     @property

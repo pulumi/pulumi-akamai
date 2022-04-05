@@ -7714,218 +7714,6 @@ func (o PropertyRuleWarningArrayOutput) Index(i pulumi.IntInput) PropertyRuleWar
 	}).(PropertyRuleWarningOutput)
 }
 
-type PropertyVariablesVariable struct {
-	Variables []PropertyVariablesVariableVariable `pulumi:"variables"`
-}
-
-// PropertyVariablesVariableInput is an input type that accepts PropertyVariablesVariableArgs and PropertyVariablesVariableOutput values.
-// You can construct a concrete instance of `PropertyVariablesVariableInput` via:
-//
-//          PropertyVariablesVariableArgs{...}
-type PropertyVariablesVariableInput interface {
-	pulumi.Input
-
-	ToPropertyVariablesVariableOutput() PropertyVariablesVariableOutput
-	ToPropertyVariablesVariableOutputWithContext(context.Context) PropertyVariablesVariableOutput
-}
-
-type PropertyVariablesVariableArgs struct {
-	Variables PropertyVariablesVariableVariableArrayInput `pulumi:"variables"`
-}
-
-func (PropertyVariablesVariableArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*PropertyVariablesVariable)(nil)).Elem()
-}
-
-func (i PropertyVariablesVariableArgs) ToPropertyVariablesVariableOutput() PropertyVariablesVariableOutput {
-	return i.ToPropertyVariablesVariableOutputWithContext(context.Background())
-}
-
-func (i PropertyVariablesVariableArgs) ToPropertyVariablesVariableOutputWithContext(ctx context.Context) PropertyVariablesVariableOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesVariableOutput)
-}
-
-// PropertyVariablesVariableArrayInput is an input type that accepts PropertyVariablesVariableArray and PropertyVariablesVariableArrayOutput values.
-// You can construct a concrete instance of `PropertyVariablesVariableArrayInput` via:
-//
-//          PropertyVariablesVariableArray{ PropertyVariablesVariableArgs{...} }
-type PropertyVariablesVariableArrayInput interface {
-	pulumi.Input
-
-	ToPropertyVariablesVariableArrayOutput() PropertyVariablesVariableArrayOutput
-	ToPropertyVariablesVariableArrayOutputWithContext(context.Context) PropertyVariablesVariableArrayOutput
-}
-
-type PropertyVariablesVariableArray []PropertyVariablesVariableInput
-
-func (PropertyVariablesVariableArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]PropertyVariablesVariable)(nil)).Elem()
-}
-
-func (i PropertyVariablesVariableArray) ToPropertyVariablesVariableArrayOutput() PropertyVariablesVariableArrayOutput {
-	return i.ToPropertyVariablesVariableArrayOutputWithContext(context.Background())
-}
-
-func (i PropertyVariablesVariableArray) ToPropertyVariablesVariableArrayOutputWithContext(ctx context.Context) PropertyVariablesVariableArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesVariableArrayOutput)
-}
-
-type PropertyVariablesVariableOutput struct{ *pulumi.OutputState }
-
-func (PropertyVariablesVariableOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*PropertyVariablesVariable)(nil)).Elem()
-}
-
-func (o PropertyVariablesVariableOutput) ToPropertyVariablesVariableOutput() PropertyVariablesVariableOutput {
-	return o
-}
-
-func (o PropertyVariablesVariableOutput) ToPropertyVariablesVariableOutputWithContext(ctx context.Context) PropertyVariablesVariableOutput {
-	return o
-}
-
-func (o PropertyVariablesVariableOutput) Variables() PropertyVariablesVariableVariableArrayOutput {
-	return o.ApplyT(func(v PropertyVariablesVariable) []PropertyVariablesVariableVariable { return v.Variables }).(PropertyVariablesVariableVariableArrayOutput)
-}
-
-type PropertyVariablesVariableArrayOutput struct{ *pulumi.OutputState }
-
-func (PropertyVariablesVariableArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]PropertyVariablesVariable)(nil)).Elem()
-}
-
-func (o PropertyVariablesVariableArrayOutput) ToPropertyVariablesVariableArrayOutput() PropertyVariablesVariableArrayOutput {
-	return o
-}
-
-func (o PropertyVariablesVariableArrayOutput) ToPropertyVariablesVariableArrayOutputWithContext(ctx context.Context) PropertyVariablesVariableArrayOutput {
-	return o
-}
-
-func (o PropertyVariablesVariableArrayOutput) Index(i pulumi.IntInput) PropertyVariablesVariableOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyVariablesVariable {
-		return vs[0].([]PropertyVariablesVariable)[vs[1].(int)]
-	}).(PropertyVariablesVariableOutput)
-}
-
-type PropertyVariablesVariableVariable struct {
-	Description *string `pulumi:"description"`
-	Hidden      bool    `pulumi:"hidden"`
-	Name        string  `pulumi:"name"`
-	Sensitive   bool    `pulumi:"sensitive"`
-	Value       *string `pulumi:"value"`
-}
-
-// PropertyVariablesVariableVariableInput is an input type that accepts PropertyVariablesVariableVariableArgs and PropertyVariablesVariableVariableOutput values.
-// You can construct a concrete instance of `PropertyVariablesVariableVariableInput` via:
-//
-//          PropertyVariablesVariableVariableArgs{...}
-type PropertyVariablesVariableVariableInput interface {
-	pulumi.Input
-
-	ToPropertyVariablesVariableVariableOutput() PropertyVariablesVariableVariableOutput
-	ToPropertyVariablesVariableVariableOutputWithContext(context.Context) PropertyVariablesVariableVariableOutput
-}
-
-type PropertyVariablesVariableVariableArgs struct {
-	Description pulumi.StringPtrInput `pulumi:"description"`
-	Hidden      pulumi.BoolInput      `pulumi:"hidden"`
-	Name        pulumi.StringInput    `pulumi:"name"`
-	Sensitive   pulumi.BoolInput      `pulumi:"sensitive"`
-	Value       pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (PropertyVariablesVariableVariableArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*PropertyVariablesVariableVariable)(nil)).Elem()
-}
-
-func (i PropertyVariablesVariableVariableArgs) ToPropertyVariablesVariableVariableOutput() PropertyVariablesVariableVariableOutput {
-	return i.ToPropertyVariablesVariableVariableOutputWithContext(context.Background())
-}
-
-func (i PropertyVariablesVariableVariableArgs) ToPropertyVariablesVariableVariableOutputWithContext(ctx context.Context) PropertyVariablesVariableVariableOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesVariableVariableOutput)
-}
-
-// PropertyVariablesVariableVariableArrayInput is an input type that accepts PropertyVariablesVariableVariableArray and PropertyVariablesVariableVariableArrayOutput values.
-// You can construct a concrete instance of `PropertyVariablesVariableVariableArrayInput` via:
-//
-//          PropertyVariablesVariableVariableArray{ PropertyVariablesVariableVariableArgs{...} }
-type PropertyVariablesVariableVariableArrayInput interface {
-	pulumi.Input
-
-	ToPropertyVariablesVariableVariableArrayOutput() PropertyVariablesVariableVariableArrayOutput
-	ToPropertyVariablesVariableVariableArrayOutputWithContext(context.Context) PropertyVariablesVariableVariableArrayOutput
-}
-
-type PropertyVariablesVariableVariableArray []PropertyVariablesVariableVariableInput
-
-func (PropertyVariablesVariableVariableArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]PropertyVariablesVariableVariable)(nil)).Elem()
-}
-
-func (i PropertyVariablesVariableVariableArray) ToPropertyVariablesVariableVariableArrayOutput() PropertyVariablesVariableVariableArrayOutput {
-	return i.ToPropertyVariablesVariableVariableArrayOutputWithContext(context.Background())
-}
-
-func (i PropertyVariablesVariableVariableArray) ToPropertyVariablesVariableVariableArrayOutputWithContext(ctx context.Context) PropertyVariablesVariableVariableArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PropertyVariablesVariableVariableArrayOutput)
-}
-
-type PropertyVariablesVariableVariableOutput struct{ *pulumi.OutputState }
-
-func (PropertyVariablesVariableVariableOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*PropertyVariablesVariableVariable)(nil)).Elem()
-}
-
-func (o PropertyVariablesVariableVariableOutput) ToPropertyVariablesVariableVariableOutput() PropertyVariablesVariableVariableOutput {
-	return o
-}
-
-func (o PropertyVariablesVariableVariableOutput) ToPropertyVariablesVariableVariableOutputWithContext(ctx context.Context) PropertyVariablesVariableVariableOutput {
-	return o
-}
-
-func (o PropertyVariablesVariableVariableOutput) Description() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v PropertyVariablesVariableVariable) *string { return v.Description }).(pulumi.StringPtrOutput)
-}
-
-func (o PropertyVariablesVariableVariableOutput) Hidden() pulumi.BoolOutput {
-	return o.ApplyT(func(v PropertyVariablesVariableVariable) bool { return v.Hidden }).(pulumi.BoolOutput)
-}
-
-func (o PropertyVariablesVariableVariableOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v PropertyVariablesVariableVariable) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o PropertyVariablesVariableVariableOutput) Sensitive() pulumi.BoolOutput {
-	return o.ApplyT(func(v PropertyVariablesVariableVariable) bool { return v.Sensitive }).(pulumi.BoolOutput)
-}
-
-func (o PropertyVariablesVariableVariableOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v PropertyVariablesVariableVariable) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type PropertyVariablesVariableVariableArrayOutput struct{ *pulumi.OutputState }
-
-func (PropertyVariablesVariableVariableArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]PropertyVariablesVariableVariable)(nil)).Elem()
-}
-
-func (o PropertyVariablesVariableVariableArrayOutput) ToPropertyVariablesVariableVariableArrayOutput() PropertyVariablesVariableVariableArrayOutput {
-	return o
-}
-
-func (o PropertyVariablesVariableVariableArrayOutput) ToPropertyVariablesVariableVariableArrayOutputWithContext(ctx context.Context) PropertyVariablesVariableVariableArrayOutput {
-	return o
-}
-
-func (o PropertyVariablesVariableVariableArrayOutput) Index(i pulumi.IntInput) PropertyVariablesVariableVariableOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyVariablesVariableVariable {
-		return vs[0].([]PropertyVariablesVariableVariable)[vs[1].(int)]
-	}).(PropertyVariablesVariableVariableOutput)
-}
-
 type ProviderAppsec struct {
 	AccessToken  *string `pulumi:"accessToken"`
 	AccountKey   *string `pulumi:"accountKey"`
@@ -14075,6 +13863,671 @@ func (o GetCloudletsPolicyActivationPropertyInfoArrayOutput) Index(i pulumi.IntI
 	}).(GetCloudletsPolicyActivationPropertyInfoOutput)
 }
 
+type GetCloudletsRequestControlMatchRuleMatchRule struct {
+	// - (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
+	AllowDeny string `pulumi:"allowDeny"`
+	// - (Optional) Whether to disable a rule. When a rule is disabled it's not evaluated against incoming requests.
+	Disabled *bool `pulumi:"disabled"`
+	// - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+	End *int `pulumi:"end"`
+	// - (Optional) A list of conditions to apply to a Cloudlet, including:
+	Matches []GetCloudletsRequestControlMatchRuleMatchRuleMatch `pulumi:"matches"`
+	// - (Optional) Match on all incoming requests.
+	MatchesAlways *bool `pulumi:"matchesAlways"`
+	// - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+	Name *string `pulumi:"name"`
+	// - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+	Start *int `pulumi:"start"`
+	// - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+	Type string `pulumi:"type"`
+}
+
+// GetCloudletsRequestControlMatchRuleMatchRuleInput is an input type that accepts GetCloudletsRequestControlMatchRuleMatchRuleArgs and GetCloudletsRequestControlMatchRuleMatchRuleOutput values.
+// You can construct a concrete instance of `GetCloudletsRequestControlMatchRuleMatchRuleInput` via:
+//
+//          GetCloudletsRequestControlMatchRuleMatchRuleArgs{...}
+type GetCloudletsRequestControlMatchRuleMatchRuleInput interface {
+	pulumi.Input
+
+	ToGetCloudletsRequestControlMatchRuleMatchRuleOutput() GetCloudletsRequestControlMatchRuleMatchRuleOutput
+	ToGetCloudletsRequestControlMatchRuleMatchRuleOutputWithContext(context.Context) GetCloudletsRequestControlMatchRuleMatchRuleOutput
+}
+
+type GetCloudletsRequestControlMatchRuleMatchRuleArgs struct {
+	// - (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
+	AllowDeny pulumi.StringInput `pulumi:"allowDeny"`
+	// - (Optional) Whether to disable a rule. When a rule is disabled it's not evaluated against incoming requests.
+	Disabled pulumi.BoolPtrInput `pulumi:"disabled"`
+	// - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+	End pulumi.IntPtrInput `pulumi:"end"`
+	// - (Optional) A list of conditions to apply to a Cloudlet, including:
+	Matches GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayInput `pulumi:"matches"`
+	// - (Optional) Match on all incoming requests.
+	MatchesAlways pulumi.BoolPtrInput `pulumi:"matchesAlways"`
+	// - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+	Start pulumi.IntPtrInput `pulumi:"start"`
+	// - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetCloudletsRequestControlMatchRuleMatchRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudletsRequestControlMatchRuleMatchRule)(nil)).Elem()
+}
+
+func (i GetCloudletsRequestControlMatchRuleMatchRuleArgs) ToGetCloudletsRequestControlMatchRuleMatchRuleOutput() GetCloudletsRequestControlMatchRuleMatchRuleOutput {
+	return i.ToGetCloudletsRequestControlMatchRuleMatchRuleOutputWithContext(context.Background())
+}
+
+func (i GetCloudletsRequestControlMatchRuleMatchRuleArgs) ToGetCloudletsRequestControlMatchRuleMatchRuleOutputWithContext(ctx context.Context) GetCloudletsRequestControlMatchRuleMatchRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudletsRequestControlMatchRuleMatchRuleOutput)
+}
+
+// GetCloudletsRequestControlMatchRuleMatchRuleArrayInput is an input type that accepts GetCloudletsRequestControlMatchRuleMatchRuleArray and GetCloudletsRequestControlMatchRuleMatchRuleArrayOutput values.
+// You can construct a concrete instance of `GetCloudletsRequestControlMatchRuleMatchRuleArrayInput` via:
+//
+//          GetCloudletsRequestControlMatchRuleMatchRuleArray{ GetCloudletsRequestControlMatchRuleMatchRuleArgs{...} }
+type GetCloudletsRequestControlMatchRuleMatchRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudletsRequestControlMatchRuleMatchRuleArrayOutput() GetCloudletsRequestControlMatchRuleMatchRuleArrayOutput
+	ToGetCloudletsRequestControlMatchRuleMatchRuleArrayOutputWithContext(context.Context) GetCloudletsRequestControlMatchRuleMatchRuleArrayOutput
+}
+
+type GetCloudletsRequestControlMatchRuleMatchRuleArray []GetCloudletsRequestControlMatchRuleMatchRuleInput
+
+func (GetCloudletsRequestControlMatchRuleMatchRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudletsRequestControlMatchRuleMatchRule)(nil)).Elem()
+}
+
+func (i GetCloudletsRequestControlMatchRuleMatchRuleArray) ToGetCloudletsRequestControlMatchRuleMatchRuleArrayOutput() GetCloudletsRequestControlMatchRuleMatchRuleArrayOutput {
+	return i.ToGetCloudletsRequestControlMatchRuleMatchRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudletsRequestControlMatchRuleMatchRuleArray) ToGetCloudletsRequestControlMatchRuleMatchRuleArrayOutputWithContext(ctx context.Context) GetCloudletsRequestControlMatchRuleMatchRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudletsRequestControlMatchRuleMatchRuleArrayOutput)
+}
+
+type GetCloudletsRequestControlMatchRuleMatchRuleOutput struct{ *pulumi.OutputState }
+
+func (GetCloudletsRequestControlMatchRuleMatchRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudletsRequestControlMatchRuleMatchRule)(nil)).Elem()
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleOutput) ToGetCloudletsRequestControlMatchRuleMatchRuleOutput() GetCloudletsRequestControlMatchRuleMatchRuleOutput {
+	return o
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleOutput) ToGetCloudletsRequestControlMatchRuleMatchRuleOutputWithContext(ctx context.Context) GetCloudletsRequestControlMatchRuleMatchRuleOutput {
+	return o
+}
+
+// - (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleOutput) AllowDeny() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRule) string { return v.AllowDeny }).(pulumi.StringOutput)
+}
+
+// - (Optional) Whether to disable a rule. When a rule is disabled it's not evaluated against incoming requests.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleOutput) Disabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRule) *bool { return v.Disabled }).(pulumi.BoolPtrOutput)
+}
+
+// - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleOutput) End() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRule) *int { return v.End }).(pulumi.IntPtrOutput)
+}
+
+// - (Optional) A list of conditions to apply to a Cloudlet, including:
+func (o GetCloudletsRequestControlMatchRuleMatchRuleOutput) Matches() GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRule) []GetCloudletsRequestControlMatchRuleMatchRuleMatch {
+		return v.Matches
+	}).(GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput)
+}
+
+// - (Optional) Match on all incoming requests.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleOutput) MatchesAlways() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRule) *bool { return v.MatchesAlways }).(pulumi.BoolPtrOutput)
+}
+
+// - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRule) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleOutput) Start() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRule) *int { return v.Start }).(pulumi.IntPtrOutput)
+}
+
+// - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRule) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetCloudletsRequestControlMatchRuleMatchRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudletsRequestControlMatchRuleMatchRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudletsRequestControlMatchRuleMatchRule)(nil)).Elem()
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleArrayOutput) ToGetCloudletsRequestControlMatchRuleMatchRuleArrayOutput() GetCloudletsRequestControlMatchRuleMatchRuleArrayOutput {
+	return o
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleArrayOutput) ToGetCloudletsRequestControlMatchRuleMatchRuleArrayOutputWithContext(ctx context.Context) GetCloudletsRequestControlMatchRuleMatchRuleArrayOutput {
+	return o
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleArrayOutput) Index(i pulumi.IntInput) GetCloudletsRequestControlMatchRuleMatchRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudletsRequestControlMatchRuleMatchRule {
+		return vs[0].([]GetCloudletsRequestControlMatchRuleMatchRule)[vs[1].(int)]
+	}).(GetCloudletsRequestControlMatchRuleMatchRuleOutput)
+}
+
+type GetCloudletsRequestControlMatchRuleMatchRuleMatch struct {
+	// - (Optional) Whether the match is case sensitive.
+	CaseSensitive *bool `pulumi:"caseSensitive"`
+	// - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+	CheckIps *string `pulumi:"checkIps"`
+	// - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+	MatchOperator *string `pulumi:"matchOperator"`
+	// - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+	MatchType *string `pulumi:"matchType"`
+	// - (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
+	MatchValue *string `pulumi:"matchValue"`
+	// - (Optional) Whether to negate the match.
+	Negate *bool `pulumi:"negate"`
+	// - (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+	ObjectMatchValues []GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue `pulumi:"objectMatchValues"`
+}
+
+// GetCloudletsRequestControlMatchRuleMatchRuleMatchInput is an input type that accepts GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs and GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput values.
+// You can construct a concrete instance of `GetCloudletsRequestControlMatchRuleMatchRuleMatchInput` via:
+//
+//          GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs{...}
+type GetCloudletsRequestControlMatchRuleMatchRuleMatchInput interface {
+	pulumi.Input
+
+	ToGetCloudletsRequestControlMatchRuleMatchRuleMatchOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput
+	ToGetCloudletsRequestControlMatchRuleMatchRuleMatchOutputWithContext(context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput
+}
+
+type GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs struct {
+	// - (Optional) Whether the match is case sensitive.
+	CaseSensitive pulumi.BoolPtrInput `pulumi:"caseSensitive"`
+	// - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+	CheckIps pulumi.StringPtrInput `pulumi:"checkIps"`
+	// - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+	MatchOperator pulumi.StringPtrInput `pulumi:"matchOperator"`
+	// - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+	MatchType pulumi.StringPtrInput `pulumi:"matchType"`
+	// - (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
+	MatchValue pulumi.StringPtrInput `pulumi:"matchValue"`
+	// - (Optional) Whether to negate the match.
+	Negate pulumi.BoolPtrInput `pulumi:"negate"`
+	// - (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+	ObjectMatchValues GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayInput `pulumi:"objectMatchValues"`
+}
+
+func (GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudletsRequestControlMatchRuleMatchRuleMatch)(nil)).Elem()
+}
+
+func (i GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput {
+	return i.ToGetCloudletsRequestControlMatchRuleMatchRuleMatchOutputWithContext(context.Background())
+}
+
+func (i GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchOutputWithContext(ctx context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput)
+}
+
+// GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayInput is an input type that accepts GetCloudletsRequestControlMatchRuleMatchRuleMatchArray and GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput values.
+// You can construct a concrete instance of `GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayInput` via:
+//
+//          GetCloudletsRequestControlMatchRuleMatchRuleMatchArray{ GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs{...} }
+type GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput
+	ToGetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutputWithContext(context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput
+}
+
+type GetCloudletsRequestControlMatchRuleMatchRuleMatchArray []GetCloudletsRequestControlMatchRuleMatchRuleMatchInput
+
+func (GetCloudletsRequestControlMatchRuleMatchRuleMatchArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudletsRequestControlMatchRuleMatchRuleMatch)(nil)).Elem()
+}
+
+func (i GetCloudletsRequestControlMatchRuleMatchRuleMatchArray) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput {
+	return i.ToGetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudletsRequestControlMatchRuleMatchRuleMatchArray) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutputWithContext(ctx context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput)
+}
+
+type GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput struct{ *pulumi.OutputState }
+
+func (GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudletsRequestControlMatchRuleMatchRuleMatch)(nil)).Elem()
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput {
+	return o
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchOutputWithContext(ctx context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput {
+	return o
+}
+
+// - (Optional) Whether the match is case sensitive.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput) CaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRuleMatch) *bool { return v.CaseSensitive }).(pulumi.BoolPtrOutput)
+}
+
+// - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput) CheckIps() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRuleMatch) *string { return v.CheckIps }).(pulumi.StringPtrOutput)
+}
+
+// - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput) MatchOperator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRuleMatch) *string { return v.MatchOperator }).(pulumi.StringPtrOutput)
+}
+
+// - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput) MatchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRuleMatch) *string { return v.MatchType }).(pulumi.StringPtrOutput)
+}
+
+// - (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput) MatchValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRuleMatch) *string { return v.MatchValue }).(pulumi.StringPtrOutput)
+}
+
+// - (Optional) Whether to negate the match.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput) Negate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRuleMatch) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
+}
+
+// - (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput) ObjectMatchValues() GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRuleMatch) []GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue {
+		return v.ObjectMatchValues
+	}).(GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput)
+}
+
+type GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudletsRequestControlMatchRuleMatchRuleMatch)(nil)).Elem()
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput {
+	return o
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutputWithContext(ctx context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput {
+	return o
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput) Index(i pulumi.IntInput) GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudletsRequestControlMatchRuleMatchRuleMatch {
+		return vs[0].([]GetCloudletsRequestControlMatchRuleMatchRuleMatch)[vs[1].(int)]
+	}).(GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput)
+}
+
+type GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue struct {
+	// - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+	Name *string `pulumi:"name"`
+	// - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+	NameCaseSensitive *bool `pulumi:"nameCaseSensitive"`
+	// - (Optional) Whether the `name` argument includes wildcards.
+	NameHasWildcard *bool `pulumi:"nameHasWildcard"`
+	// - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+	Options *GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions `pulumi:"options"`
+	// - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+	Type string `pulumi:"type"`
+	// - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+	Values []string `pulumi:"values"`
+}
+
+// GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueInput is an input type that accepts GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs and GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput values.
+// You can construct a concrete instance of `GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueInput` via:
+//
+//          GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs{...}
+type GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueInput interface {
+	pulumi.Input
+
+	ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput
+	ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutputWithContext(context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput
+}
+
+type GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs struct {
+	// - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+	NameCaseSensitive pulumi.BoolPtrInput `pulumi:"nameCaseSensitive"`
+	// - (Optional) Whether the `name` argument includes wildcards.
+	NameHasWildcard pulumi.BoolPtrInput `pulumi:"nameHasWildcard"`
+	// - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+	Options GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput `pulumi:"options"`
+	// - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+	Type pulumi.StringInput `pulumi:"type"`
+	// - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue)(nil)).Elem()
+}
+
+func (i GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput {
+	return i.ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutputWithContext(context.Background())
+}
+
+func (i GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutputWithContext(ctx context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput)
+}
+
+// GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayInput is an input type that accepts GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArray and GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput values.
+// You can construct a concrete instance of `GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayInput` via:
+//
+//          GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArray{ GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs{...} }
+type GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput
+	ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutputWithContext(context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput
+}
+
+type GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArray []GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueInput
+
+func (GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue)(nil)).Elem()
+}
+
+func (i GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArray) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput {
+	return i.ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArray) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutputWithContext(ctx context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput)
+}
+
+type GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput struct{ *pulumi.OutputState }
+
+func (GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue)(nil)).Elem()
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput {
+	return o
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutputWithContext(ctx context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput {
+	return o
+}
+
+// - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput) NameCaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue) *bool {
+		return v.NameCaseSensitive
+	}).(pulumi.BoolPtrOutput)
+}
+
+// - (Optional) Whether the `name` argument includes wildcards.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput) NameHasWildcard() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue) *bool {
+		return v.NameHasWildcard
+	}).(pulumi.BoolPtrOutput)
+}
+
+// - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput) Options() GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue) *GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions {
+		return v.Options
+	}).(GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput)
+}
+
+// - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue)(nil)).Elem()
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput {
+	return o
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutputWithContext(ctx context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput {
+	return o
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput) Index(i pulumi.IntInput) GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue {
+		return vs[0].([]GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue)[vs[1].(int)]
+	}).(GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput)
+}
+
+type GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions struct {
+	// - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+	ValueCaseSensitive *bool `pulumi:"valueCaseSensitive"`
+	// - (Optional) Whether the `value` argument should be compared in an escaped form.
+	ValueEscaped *bool `pulumi:"valueEscaped"`
+	// - (Optional) Whether the `value` argument includes wildcards.
+	ValueHasWildcard *bool `pulumi:"valueHasWildcard"`
+	// - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+	Values []string `pulumi:"values"`
+}
+
+// GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsInput is an input type that accepts GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs and GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput values.
+// You can construct a concrete instance of `GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsInput` via:
+//
+//          GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
+type GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsInput interface {
+	pulumi.Input
+
+	ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput
+	ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutputWithContext(context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput
+}
+
+type GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs struct {
+	// - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+	ValueCaseSensitive pulumi.BoolPtrInput `pulumi:"valueCaseSensitive"`
+	// - (Optional) Whether the `value` argument should be compared in an escaped form.
+	ValueEscaped pulumi.BoolPtrInput `pulumi:"valueEscaped"`
+	// - (Optional) Whether the `value` argument includes wildcards.
+	ValueHasWildcard pulumi.BoolPtrInput `pulumi:"valueHasWildcard"`
+	// - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions)(nil)).Elem()
+}
+
+func (i GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput {
+	return i.ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutputWithContext(context.Background())
+}
+
+func (i GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutputWithContext(ctx context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput)
+}
+
+func (i GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput {
+	return i.ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutputWithContext(context.Background())
+}
+
+func (i GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutputWithContext(ctx context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput).ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutputWithContext(ctx)
+}
+
+// GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput is an input type that accepts GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs, GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtr and GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput values.
+// You can construct a concrete instance of `GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput` via:
+//
+//          GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
+//
+//  or:
+//
+//          nil
+type GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput interface {
+	pulumi.Input
+
+	ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput
+	ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutputWithContext(context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput
+}
+
+type getCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrType GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs
+
+func GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtr(v *GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs) GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput {
+	return (*getCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrType)(v)
+}
+
+func (*getCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions)(nil)).Elem()
+}
+
+func (i *getCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrType) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput {
+	return i.ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutputWithContext(context.Background())
+}
+
+func (i *getCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrType) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutputWithContext(ctx context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput)
+}
+
+type GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput struct{ *pulumi.OutputState }
+
+func (GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions)(nil)).Elem()
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput {
+	return o
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutputWithContext(ctx context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput {
+	return o
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput {
+	return o.ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutputWithContext(context.Background())
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutputWithContext(ctx context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions) *GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions {
+		return &v
+	}).(GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput)
+}
+
+// - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput) ValueCaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions) *bool {
+		return v.ValueCaseSensitive
+	}).(pulumi.BoolPtrOutput)
+}
+
+// - (Optional) Whether the `value` argument should be compared in an escaped form.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput) ValueEscaped() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions) *bool {
+		return v.ValueEscaped
+	}).(pulumi.BoolPtrOutput)
+}
+
+// - (Optional) Whether the `value` argument includes wildcards.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput) ValueHasWildcard() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions) *bool {
+		return v.ValueHasWildcard
+	}).(pulumi.BoolPtrOutput)
+}
+
+// - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions) []string {
+		return v.Values
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput struct{ *pulumi.OutputState }
+
+func (GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions)(nil)).Elem()
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput() GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput {
+	return o
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput) ToGetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutputWithContext(ctx context.Context) GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput {
+	return o
+}
+
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput) Elem() GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput {
+	return o.ApplyT(func(v *GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions) GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions {
+		if v != nil {
+			return *v
+		}
+		var ret GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions
+		return ret
+	}).(GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput)
+}
+
+// - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput) ValueCaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ValueCaseSensitive
+	}).(pulumi.BoolPtrOutput)
+}
+
+// - (Optional) Whether the `value` argument should be compared in an escaped form.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput) ValueEscaped() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ValueEscaped
+	}).(pulumi.BoolPtrOutput)
+}
+
+// - (Optional) Whether the `value` argument includes wildcards.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput) ValueHasWildcard() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ValueHasWildcard
+	}).(pulumi.BoolPtrOutput)
+}
+
+// - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+func (o GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Values
+	}).(pulumi.StringArrayOutput)
+}
+
 type GetCloudletsVisitorPrioritizationMatchRuleMatchRule struct {
 	// - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
 	Disabled *bool `pulumi:"disabled"`
@@ -15451,6 +15904,172 @@ func (o GetPropertiesPropertyArrayOutput) Index(i pulumi.IntInput) GetProperties
 	}).(GetPropertiesPropertyOutput)
 }
 
+type GetPropertiesSearchProperty struct {
+	AccountId        string `pulumi:"accountId"`
+	AssetId          string `pulumi:"assetId"`
+	ContractId       string `pulumi:"contractId"`
+	EdgeHostname     string `pulumi:"edgeHostname"`
+	GroupId          string `pulumi:"groupId"`
+	Hostname         string `pulumi:"hostname"`
+	ProductionStatus string `pulumi:"productionStatus"`
+	PropertyId       string `pulumi:"propertyId"`
+	PropertyName     string `pulumi:"propertyName"`
+	PropertyVersion  int    `pulumi:"propertyVersion"`
+	StagingStatus    string `pulumi:"stagingStatus"`
+	UpdatedByUser    string `pulumi:"updatedByUser"`
+	UpdatedDate      string `pulumi:"updatedDate"`
+}
+
+// GetPropertiesSearchPropertyInput is an input type that accepts GetPropertiesSearchPropertyArgs and GetPropertiesSearchPropertyOutput values.
+// You can construct a concrete instance of `GetPropertiesSearchPropertyInput` via:
+//
+//          GetPropertiesSearchPropertyArgs{...}
+type GetPropertiesSearchPropertyInput interface {
+	pulumi.Input
+
+	ToGetPropertiesSearchPropertyOutput() GetPropertiesSearchPropertyOutput
+	ToGetPropertiesSearchPropertyOutputWithContext(context.Context) GetPropertiesSearchPropertyOutput
+}
+
+type GetPropertiesSearchPropertyArgs struct {
+	AccountId        pulumi.StringInput `pulumi:"accountId"`
+	AssetId          pulumi.StringInput `pulumi:"assetId"`
+	ContractId       pulumi.StringInput `pulumi:"contractId"`
+	EdgeHostname     pulumi.StringInput `pulumi:"edgeHostname"`
+	GroupId          pulumi.StringInput `pulumi:"groupId"`
+	Hostname         pulumi.StringInput `pulumi:"hostname"`
+	ProductionStatus pulumi.StringInput `pulumi:"productionStatus"`
+	PropertyId       pulumi.StringInput `pulumi:"propertyId"`
+	PropertyName     pulumi.StringInput `pulumi:"propertyName"`
+	PropertyVersion  pulumi.IntInput    `pulumi:"propertyVersion"`
+	StagingStatus    pulumi.StringInput `pulumi:"stagingStatus"`
+	UpdatedByUser    pulumi.StringInput `pulumi:"updatedByUser"`
+	UpdatedDate      pulumi.StringInput `pulumi:"updatedDate"`
+}
+
+func (GetPropertiesSearchPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertiesSearchProperty)(nil)).Elem()
+}
+
+func (i GetPropertiesSearchPropertyArgs) ToGetPropertiesSearchPropertyOutput() GetPropertiesSearchPropertyOutput {
+	return i.ToGetPropertiesSearchPropertyOutputWithContext(context.Background())
+}
+
+func (i GetPropertiesSearchPropertyArgs) ToGetPropertiesSearchPropertyOutputWithContext(ctx context.Context) GetPropertiesSearchPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertiesSearchPropertyOutput)
+}
+
+// GetPropertiesSearchPropertyArrayInput is an input type that accepts GetPropertiesSearchPropertyArray and GetPropertiesSearchPropertyArrayOutput values.
+// You can construct a concrete instance of `GetPropertiesSearchPropertyArrayInput` via:
+//
+//          GetPropertiesSearchPropertyArray{ GetPropertiesSearchPropertyArgs{...} }
+type GetPropertiesSearchPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertiesSearchPropertyArrayOutput() GetPropertiesSearchPropertyArrayOutput
+	ToGetPropertiesSearchPropertyArrayOutputWithContext(context.Context) GetPropertiesSearchPropertyArrayOutput
+}
+
+type GetPropertiesSearchPropertyArray []GetPropertiesSearchPropertyInput
+
+func (GetPropertiesSearchPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertiesSearchProperty)(nil)).Elem()
+}
+
+func (i GetPropertiesSearchPropertyArray) ToGetPropertiesSearchPropertyArrayOutput() GetPropertiesSearchPropertyArrayOutput {
+	return i.ToGetPropertiesSearchPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertiesSearchPropertyArray) ToGetPropertiesSearchPropertyArrayOutputWithContext(ctx context.Context) GetPropertiesSearchPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertiesSearchPropertyArrayOutput)
+}
+
+type GetPropertiesSearchPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetPropertiesSearchPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertiesSearchProperty)(nil)).Elem()
+}
+
+func (o GetPropertiesSearchPropertyOutput) ToGetPropertiesSearchPropertyOutput() GetPropertiesSearchPropertyOutput {
+	return o
+}
+
+func (o GetPropertiesSearchPropertyOutput) ToGetPropertiesSearchPropertyOutputWithContext(ctx context.Context) GetPropertiesSearchPropertyOutput {
+	return o
+}
+
+func (o GetPropertiesSearchPropertyOutput) AccountId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.AccountId }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesSearchPropertyOutput) AssetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.AssetId }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesSearchPropertyOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.ContractId }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesSearchPropertyOutput) EdgeHostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.EdgeHostname }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesSearchPropertyOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.GroupId }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesSearchPropertyOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesSearchPropertyOutput) ProductionStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.ProductionStatus }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesSearchPropertyOutput) PropertyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.PropertyId }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesSearchPropertyOutput) PropertyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.PropertyName }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesSearchPropertyOutput) PropertyVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPropertiesSearchProperty) int { return v.PropertyVersion }).(pulumi.IntOutput)
+}
+
+func (o GetPropertiesSearchPropertyOutput) StagingStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.StagingStatus }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesSearchPropertyOutput) UpdatedByUser() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.UpdatedByUser }).(pulumi.StringOutput)
+}
+
+func (o GetPropertiesSearchPropertyOutput) UpdatedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.UpdatedDate }).(pulumi.StringOutput)
+}
+
+type GetPropertiesSearchPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertiesSearchPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertiesSearchProperty)(nil)).Elem()
+}
+
+func (o GetPropertiesSearchPropertyArrayOutput) ToGetPropertiesSearchPropertyArrayOutput() GetPropertiesSearchPropertyArrayOutput {
+	return o
+}
+
+func (o GetPropertiesSearchPropertyArrayOutput) ToGetPropertiesSearchPropertyArrayOutputWithContext(ctx context.Context) GetPropertiesSearchPropertyArrayOutput {
+	return o
+}
+
+func (o GetPropertiesSearchPropertyArrayOutput) Index(i pulumi.IntInput) GetPropertiesSearchPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertiesSearchProperty {
+		return vs[0].([]GetPropertiesSearchProperty)[vs[1].(int)]
+	}).(GetPropertiesSearchPropertyOutput)
+}
+
 type GetPropertyHostnamesHostname struct {
 	CertProvisioningType string                                   `pulumi:"certProvisioningType"`
 	CertStatuses         []GetPropertyHostnamesHostnameCertStatus `pulumi:"certStatuses"`
@@ -16085,10 +16704,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyRuleErrorArrayInput)(nil)).Elem(), PropertyRuleErrorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyRuleWarningInput)(nil)).Elem(), PropertyRuleWarningArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyRuleWarningArrayInput)(nil)).Elem(), PropertyRuleWarningArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*PropertyVariablesVariableInput)(nil)).Elem(), PropertyVariablesVariableArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*PropertyVariablesVariableArrayInput)(nil)).Elem(), PropertyVariablesVariableArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*PropertyVariablesVariableVariableInput)(nil)).Elem(), PropertyVariablesVariableVariableArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*PropertyVariablesVariableVariableArrayInput)(nil)).Elem(), PropertyVariablesVariableVariableArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProviderAppsecInput)(nil)).Elem(), ProviderAppsecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProviderAppsecArrayInput)(nil)).Elem(), ProviderAppsecArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProviderConfigInput)(nil)).Elem(), ProviderConfigArgs{})
@@ -16164,6 +16779,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsPolicyActivationPolicyInfoArrayInput)(nil)).Elem(), GetCloudletsPolicyActivationPolicyInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsPolicyActivationPropertyInfoInput)(nil)).Elem(), GetCloudletsPolicyActivationPropertyInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsPolicyActivationPropertyInfoArrayInput)(nil)).Elem(), GetCloudletsPolicyActivationPropertyInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsRequestControlMatchRuleMatchRuleInput)(nil)).Elem(), GetCloudletsRequestControlMatchRuleMatchRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsRequestControlMatchRuleMatchRuleArrayInput)(nil)).Elem(), GetCloudletsRequestControlMatchRuleMatchRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsRequestControlMatchRuleMatchRuleMatchInput)(nil)).Elem(), GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayInput)(nil)).Elem(), GetCloudletsRequestControlMatchRuleMatchRuleMatchArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueInput)(nil)).Elem(), GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayInput)(nil)).Elem(), GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsInput)(nil)).Elem(), GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput)(nil)).Elem(), GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsVisitorPrioritizationMatchRuleMatchRuleInput)(nil)).Elem(), GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArrayInput)(nil)).Elem(), GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchInput)(nil)).Elem(), GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs{})
@@ -16184,6 +16807,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupsGroupArrayInput)(nil)).Elem(), GetGroupsGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertiesPropertyInput)(nil)).Elem(), GetPropertiesPropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertiesPropertyArrayInput)(nil)).Elem(), GetPropertiesPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertiesSearchPropertyInput)(nil)).Elem(), GetPropertiesSearchPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertiesSearchPropertyArrayInput)(nil)).Elem(), GetPropertiesSearchPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameInput)(nil)).Elem(), GetPropertyHostnamesHostnameArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusInput)(nil)).Elem(), GetPropertyHostnamesHostnameCertStatusArgs{})
@@ -16276,10 +16901,6 @@ func init() {
 	pulumi.RegisterOutputType(PropertyRuleErrorArrayOutput{})
 	pulumi.RegisterOutputType(PropertyRuleWarningOutput{})
 	pulumi.RegisterOutputType(PropertyRuleWarningArrayOutput{})
-	pulumi.RegisterOutputType(PropertyVariablesVariableOutput{})
-	pulumi.RegisterOutputType(PropertyVariablesVariableArrayOutput{})
-	pulumi.RegisterOutputType(PropertyVariablesVariableVariableOutput{})
-	pulumi.RegisterOutputType(PropertyVariablesVariableVariableArrayOutput{})
 	pulumi.RegisterOutputType(ProviderAppsecOutput{})
 	pulumi.RegisterOutputType(ProviderAppsecArrayOutput{})
 	pulumi.RegisterOutputType(ProviderConfigOutput{})
@@ -16355,6 +16976,14 @@ func init() {
 	pulumi.RegisterOutputType(GetCloudletsPolicyActivationPolicyInfoArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudletsPolicyActivationPropertyInfoOutput{})
 	pulumi.RegisterOutputType(GetCloudletsPolicyActivationPropertyInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudletsRequestControlMatchRuleMatchRuleOutput{})
+	pulumi.RegisterOutputType(GetCloudletsRequestControlMatchRuleMatchRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput{})
+	pulumi.RegisterOutputType(GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput{})
+	pulumi.RegisterOutputType(GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput{})
+	pulumi.RegisterOutputType(GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput{})
 	pulumi.RegisterOutputType(GetCloudletsVisitorPrioritizationMatchRuleMatchRuleOutput{})
 	pulumi.RegisterOutputType(GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchOutput{})
@@ -16375,6 +17004,8 @@ func init() {
 	pulumi.RegisterOutputType(GetGroupsGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertiesPropertyOutput{})
 	pulumi.RegisterOutputType(GetPropertiesPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertiesSearchPropertyOutput{})
+	pulumi.RegisterOutputType(GetPropertiesSearchPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameOutput{})
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCertStatusOutput{})

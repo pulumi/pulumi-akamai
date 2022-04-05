@@ -11,9 +11,12 @@ import (
 )
 
 type DnsZoneTsigKey struct {
+	// The hashing algorithm.
 	Algorithm string `pulumi:"algorithm"`
-	Name      string `pulumi:"name"`
-	Secret    string `pulumi:"secret"`
+	// The key name.
+	Name string `pulumi:"name"`
+	// String known between transfer endpoints.
+	Secret string `pulumi:"secret"`
 }
 
 // DnsZoneTsigKeyInput is an input type that accepts DnsZoneTsigKeyArgs and DnsZoneTsigKeyOutput values.
@@ -28,9 +31,12 @@ type DnsZoneTsigKeyInput interface {
 }
 
 type DnsZoneTsigKeyArgs struct {
+	// The hashing algorithm.
 	Algorithm pulumi.StringInput `pulumi:"algorithm"`
-	Name      pulumi.StringInput `pulumi:"name"`
-	Secret    pulumi.StringInput `pulumi:"secret"`
+	// The key name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// String known between transfer endpoints.
+	Secret pulumi.StringInput `pulumi:"secret"`
 }
 
 func (DnsZoneTsigKeyArgs) ElementType() reflect.Type {
@@ -110,14 +116,17 @@ func (o DnsZoneTsigKeyOutput) ToDnsZoneTsigKeyPtrOutputWithContext(ctx context.C
 	}).(DnsZoneTsigKeyPtrOutput)
 }
 
+// The hashing algorithm.
 func (o DnsZoneTsigKeyOutput) Algorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v DnsZoneTsigKey) string { return v.Algorithm }).(pulumi.StringOutput)
 }
 
+// The key name.
 func (o DnsZoneTsigKeyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v DnsZoneTsigKey) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// String known between transfer endpoints.
 func (o DnsZoneTsigKeyOutput) Secret() pulumi.StringOutput {
 	return o.ApplyT(func(v DnsZoneTsigKey) string { return v.Secret }).(pulumi.StringOutput)
 }
@@ -146,6 +155,7 @@ func (o DnsZoneTsigKeyPtrOutput) Elem() DnsZoneTsigKeyOutput {
 	}).(DnsZoneTsigKeyOutput)
 }
 
+// The hashing algorithm.
 func (o DnsZoneTsigKeyPtrOutput) Algorithm() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DnsZoneTsigKey) *string {
 		if v == nil {
@@ -155,6 +165,7 @@ func (o DnsZoneTsigKeyPtrOutput) Algorithm() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The key name.
 func (o DnsZoneTsigKeyPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DnsZoneTsigKey) *string {
 		if v == nil {
@@ -164,6 +175,7 @@ func (o DnsZoneTsigKeyPtrOutput) Name() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// String known between transfer endpoints.
 func (o DnsZoneTsigKeyPtrOutput) Secret() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DnsZoneTsigKey) *string {
 		if v == nil {

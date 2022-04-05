@@ -12,9 +12,87 @@ namespace Pulumi.Akamai.Properties
     [Obsolete(@"akamai.properties.getProperty has been deprecated in favor of akamai.getProperty")]
     public static class GetProperty
     {
+        /// <summary>
+        /// Use the `akamai.Property` data source to query and list the property ID and rule tree based on the property name.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// This example returns the property ID and rule tree based on the property name and optional version argument:
+        /// 
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var example = Output.Create(Akamai.GetProperty.InvokeAsync(new Akamai.GetPropertyArgs
+        ///         {
+        ///             Name = "terraform-demo",
+        ///             Version = 1,
+        ///         }));
+        ///         this.MyPropertyID = example;
+        ///     }
+        /// 
+        ///     [Output("myPropertyID")]
+        ///     public Output&lt;string&gt; MyPropertyID { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// ## Attributes reference
+        /// 
+        /// This data source returns these attributes:
+        /// 
+        /// * `property_ID` - A property's unique identifier, including the `prp_` prefix.
+        /// * `rules` - A JSON-encoded rule tree for a given property.
+        /// </summary>
         public static Task<GetPropertyResult> InvokeAsync(GetPropertyArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyResult>("akamai:properties/getProperty:getProperty", args ?? new GetPropertyArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// Use the `akamai.Property` data source to query and list the property ID and rule tree based on the property name.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// This example returns the property ID and rule tree based on the property name and optional version argument:
+        /// 
+        /// 
+        /// ```csharp
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// class MyStack : Stack
+        /// {
+        ///     public MyStack()
+        ///     {
+        ///         var example = Output.Create(Akamai.GetProperty.InvokeAsync(new Akamai.GetPropertyArgs
+        ///         {
+        ///             Name = "terraform-demo",
+        ///             Version = 1,
+        ///         }));
+        ///         this.MyPropertyID = example;
+        ///     }
+        /// 
+        ///     [Output("myPropertyID")]
+        ///     public Output&lt;string&gt; MyPropertyID { get; set; }
+        /// }
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// ## Attributes reference
+        /// 
+        /// This data source returns these attributes:
+        /// 
+        /// * `property_ID` - A property's unique identifier, including the `prp_` prefix.
+        /// * `rules` - A JSON-encoded rule tree for a given property.
+        /// </summary>
         public static Output<GetPropertyResult> Invoke(GetPropertyInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetPropertyResult>("akamai:properties/getProperty:getProperty", args ?? new GetPropertyInvokeArgs(), options.WithDefaults());
     }
@@ -22,9 +100,15 @@ namespace Pulumi.Akamai.Properties
 
     public sealed class GetPropertyArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// - (Required) The property name.
+        /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The version of the property whose ID you want to list.
+        /// </summary>
         [Input("version")]
         public int? Version { get; set; }
 
@@ -35,9 +119,15 @@ namespace Pulumi.Akamai.Properties
 
     public sealed class GetPropertyInvokeArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// - (Required) The property name.
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The version of the property whose ID you want to list.
+        /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }
 
