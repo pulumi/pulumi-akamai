@@ -17,8 +17,6 @@ __all__ = [
     'PropertyOrigin',
     'PropertyRuleError',
     'PropertyRuleWarning',
-    'PropertyVariablesVariable',
-    'PropertyVariablesVariableVariable',
 ]
 
 @pulumi.output_type
@@ -221,6 +219,11 @@ class PropertyHostname(dict):
                  cert_statuses: Optional[Sequence['outputs.PropertyHostnameCertStatus']] = None,
                  cname_type: Optional[str] = None,
                  edge_hostname_id: Optional[str] = None):
+        """
+        :param str cert_provisioning_type: The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+        :param str cname_from: A string containing the original origin's hostname. For example, `"example.org"`.
+        :param str cname_to: A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
+        """
         pulumi.set(__self__, "cert_provisioning_type", cert_provisioning_type)
         pulumi.set(__self__, "cname_from", cname_from)
         pulumi.set(__self__, "cname_to", cname_to)
@@ -234,16 +237,25 @@ class PropertyHostname(dict):
     @property
     @pulumi.getter(name="certProvisioningType")
     def cert_provisioning_type(self) -> str:
+        """
+        The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+        """
         return pulumi.get(self, "cert_provisioning_type")
 
     @property
     @pulumi.getter(name="cnameFrom")
     def cname_from(self) -> str:
+        """
+        A string containing the original origin's hostname. For example, `"example.org"`.
+        """
         return pulumi.get(self, "cname_from")
 
     @property
     @pulumi.getter(name="cnameTo")
     def cname_to(self) -> str:
+        """
+        A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
+        """
         return pulumi.get(self, "cname_to")
 
     @property
@@ -554,60 +566,5 @@ class PropertyRuleWarning(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
-
-
-@pulumi.output_type
-class PropertyVariablesVariable(dict):
-    def __init__(__self__, *,
-                 variables: Optional[Sequence['outputs.PropertyVariablesVariableVariable']] = None):
-        if variables is not None:
-            pulumi.set(__self__, "variables", variables)
-
-    @property
-    @pulumi.getter
-    def variables(self) -> Optional[Sequence['outputs.PropertyVariablesVariableVariable']]:
-        return pulumi.get(self, "variables")
-
-
-@pulumi.output_type
-class PropertyVariablesVariableVariable(dict):
-    def __init__(__self__, *,
-                 hidden: bool,
-                 name: str,
-                 sensitive: bool,
-                 description: Optional[str] = None,
-                 value: Optional[str] = None):
-        pulumi.set(__self__, "hidden", hidden)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "sensitive", sensitive)
-        if description is not None:
-            pulumi.set(__self__, "description", description)
-        if value is not None:
-            pulumi.set(__self__, "value", value)
-
-    @property
-    @pulumi.getter
-    def hidden(self) -> bool:
-        return pulumi.get(self, "hidden")
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter
-    def sensitive(self) -> bool:
-        return pulumi.get(self, "sensitive")
-
-    @property
-    @pulumi.getter
-    def description(self) -> Optional[str]:
-        return pulumi.get(self, "description")
-
-    @property
-    @pulumi.getter
-    def value(self) -> Optional[str]:
-        return pulumi.get(self, "value")
 
 

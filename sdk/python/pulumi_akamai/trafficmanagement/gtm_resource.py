@@ -32,6 +32,20 @@ class GtmResourceArgs:
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a GtmResource resource.
+        :param pulumi.Input[str] aggregation_type: Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+        :param pulumi.Input[str] domain: DNS name for the GTM Domain set that includes this property.
+        :param pulumi.Input[str] type: Indicates the kind of `load_object` format used to determine the load on the resource.
+        :param pulumi.Input[str] constrained_property: Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
+        :param pulumi.Input[float] decay_rate: For Akamai internal use only. You can omit the value or set it to `null`.
+        :param pulumi.Input[str] description: A descriptive note to help you track what the resource constrains.
+        :param pulumi.Input[str] host_header: Optionally specifies the host header used when fetching the load object.
+        :param pulumi.Input[str] leader_string: Specifies the text that comes before the `load_object`.
+        :param pulumi.Input[float] least_squares_decay: For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
+        :param pulumi.Input[float] max_u_multiplicative_increment: For Akamai internal use only. You can omit the value or set it to `null`.
+        :param pulumi.Input[str] name: A descriptive label for the GTM resource.
+        :param pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]] resource_instances: (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resource_instance` entries. Requires these arguments:
+        :param pulumi.Input[int] upper_bound: An optional sanity check that specifies the maximum allowed value for any component of the load object.
+        :param pulumi.Input[bool] wait_on_complete: A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
         """
         pulumi.set(__self__, "aggregation_type", aggregation_type)
         pulumi.set(__self__, "domain", domain)
@@ -64,6 +78,9 @@ class GtmResourceArgs:
     @property
     @pulumi.getter(name="aggregationType")
     def aggregation_type(self) -> pulumi.Input[str]:
+        """
+        Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+        """
         return pulumi.get(self, "aggregation_type")
 
     @aggregation_type.setter
@@ -73,6 +90,9 @@ class GtmResourceArgs:
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Input[str]:
+        """
+        DNS name for the GTM Domain set that includes this property.
+        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -82,6 +102,9 @@ class GtmResourceArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
+        """
+        Indicates the kind of `load_object` format used to determine the load on the resource.
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -91,6 +114,9 @@ class GtmResourceArgs:
     @property
     @pulumi.getter(name="constrainedProperty")
     def constrained_property(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
+        """
         return pulumi.get(self, "constrained_property")
 
     @constrained_property.setter
@@ -100,6 +126,9 @@ class GtmResourceArgs:
     @property
     @pulumi.getter(name="decayRate")
     def decay_rate(self) -> Optional[pulumi.Input[float]]:
+        """
+        For Akamai internal use only. You can omit the value or set it to `null`.
+        """
         return pulumi.get(self, "decay_rate")
 
     @decay_rate.setter
@@ -109,6 +138,9 @@ class GtmResourceArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive note to help you track what the resource constrains.
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -118,6 +150,9 @@ class GtmResourceArgs:
     @property
     @pulumi.getter(name="hostHeader")
     def host_header(self) -> Optional[pulumi.Input[str]]:
+        """
+        Optionally specifies the host header used when fetching the load object.
+        """
         return pulumi.get(self, "host_header")
 
     @host_header.setter
@@ -127,6 +162,9 @@ class GtmResourceArgs:
     @property
     @pulumi.getter(name="leaderString")
     def leader_string(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies the text that comes before the `load_object`.
+        """
         return pulumi.get(self, "leader_string")
 
     @leader_string.setter
@@ -136,6 +174,9 @@ class GtmResourceArgs:
     @property
     @pulumi.getter(name="leastSquaresDecay")
     def least_squares_decay(self) -> Optional[pulumi.Input[float]]:
+        """
+        For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
+        """
         return pulumi.get(self, "least_squares_decay")
 
     @least_squares_decay.setter
@@ -154,6 +195,9 @@ class GtmResourceArgs:
     @property
     @pulumi.getter(name="maxUMultiplicativeIncrement")
     def max_u_multiplicative_increment(self) -> Optional[pulumi.Input[float]]:
+        """
+        For Akamai internal use only. You can omit the value or set it to `null`.
+        """
         return pulumi.get(self, "max_u_multiplicative_increment")
 
     @max_u_multiplicative_increment.setter
@@ -163,6 +207,9 @@ class GtmResourceArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive label for the GTM resource.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -172,6 +219,9 @@ class GtmResourceArgs:
     @property
     @pulumi.getter(name="resourceInstances")
     def resource_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]]:
+        """
+        (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resource_instance` entries. Requires these arguments:
+        """
         return pulumi.get(self, "resource_instances")
 
     @resource_instances.setter
@@ -181,6 +231,9 @@ class GtmResourceArgs:
     @property
     @pulumi.getter(name="upperBound")
     def upper_bound(self) -> Optional[pulumi.Input[int]]:
+        """
+        An optional sanity check that specifies the maximum allowed value for any component of the load object.
+        """
         return pulumi.get(self, "upper_bound")
 
     @upper_bound.setter
@@ -190,6 +243,9 @@ class GtmResourceArgs:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -217,6 +273,20 @@ class _GtmResourceState:
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering GtmResource resources.
+        :param pulumi.Input[str] aggregation_type: Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+        :param pulumi.Input[str] constrained_property: Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
+        :param pulumi.Input[float] decay_rate: For Akamai internal use only. You can omit the value or set it to `null`.
+        :param pulumi.Input[str] description: A descriptive note to help you track what the resource constrains.
+        :param pulumi.Input[str] domain: DNS name for the GTM Domain set that includes this property.
+        :param pulumi.Input[str] host_header: Optionally specifies the host header used when fetching the load object.
+        :param pulumi.Input[str] leader_string: Specifies the text that comes before the `load_object`.
+        :param pulumi.Input[float] least_squares_decay: For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
+        :param pulumi.Input[float] max_u_multiplicative_increment: For Akamai internal use only. You can omit the value or set it to `null`.
+        :param pulumi.Input[str] name: A descriptive label for the GTM resource.
+        :param pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]] resource_instances: (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resource_instance` entries. Requires these arguments:
+        :param pulumi.Input[str] type: Indicates the kind of `load_object` format used to determine the load on the resource.
+        :param pulumi.Input[int] upper_bound: An optional sanity check that specifies the maximum allowed value for any component of the load object.
+        :param pulumi.Input[bool] wait_on_complete: A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
         """
         if aggregation_type is not None:
             pulumi.set(__self__, "aggregation_type", aggregation_type)
@@ -252,6 +322,9 @@ class _GtmResourceState:
     @property
     @pulumi.getter(name="aggregationType")
     def aggregation_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+        """
         return pulumi.get(self, "aggregation_type")
 
     @aggregation_type.setter
@@ -261,6 +334,9 @@ class _GtmResourceState:
     @property
     @pulumi.getter(name="constrainedProperty")
     def constrained_property(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
+        """
         return pulumi.get(self, "constrained_property")
 
     @constrained_property.setter
@@ -270,6 +346,9 @@ class _GtmResourceState:
     @property
     @pulumi.getter(name="decayRate")
     def decay_rate(self) -> Optional[pulumi.Input[float]]:
+        """
+        For Akamai internal use only. You can omit the value or set it to `null`.
+        """
         return pulumi.get(self, "decay_rate")
 
     @decay_rate.setter
@@ -279,6 +358,9 @@ class _GtmResourceState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive note to help you track what the resource constrains.
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -288,6 +370,9 @@ class _GtmResourceState:
     @property
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        DNS name for the GTM Domain set that includes this property.
+        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -297,6 +382,9 @@ class _GtmResourceState:
     @property
     @pulumi.getter(name="hostHeader")
     def host_header(self) -> Optional[pulumi.Input[str]]:
+        """
+        Optionally specifies the host header used when fetching the load object.
+        """
         return pulumi.get(self, "host_header")
 
     @host_header.setter
@@ -306,6 +394,9 @@ class _GtmResourceState:
     @property
     @pulumi.getter(name="leaderString")
     def leader_string(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies the text that comes before the `load_object`.
+        """
         return pulumi.get(self, "leader_string")
 
     @leader_string.setter
@@ -315,6 +406,9 @@ class _GtmResourceState:
     @property
     @pulumi.getter(name="leastSquaresDecay")
     def least_squares_decay(self) -> Optional[pulumi.Input[float]]:
+        """
+        For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
+        """
         return pulumi.get(self, "least_squares_decay")
 
     @least_squares_decay.setter
@@ -333,6 +427,9 @@ class _GtmResourceState:
     @property
     @pulumi.getter(name="maxUMultiplicativeIncrement")
     def max_u_multiplicative_increment(self) -> Optional[pulumi.Input[float]]:
+        """
+        For Akamai internal use only. You can omit the value or set it to `null`.
+        """
         return pulumi.get(self, "max_u_multiplicative_increment")
 
     @max_u_multiplicative_increment.setter
@@ -342,6 +439,9 @@ class _GtmResourceState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A descriptive label for the GTM resource.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -351,6 +451,9 @@ class _GtmResourceState:
     @property
     @pulumi.getter(name="resourceInstances")
     def resource_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]]:
+        """
+        (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resource_instance` entries. Requires these arguments:
+        """
         return pulumi.get(self, "resource_instances")
 
     @resource_instances.setter
@@ -360,6 +463,9 @@ class _GtmResourceState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates the kind of `load_object` format used to determine the load on the resource.
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -369,6 +475,9 @@ class _GtmResourceState:
     @property
     @pulumi.getter(name="upperBound")
     def upper_bound(self) -> Optional[pulumi.Input[int]]:
+        """
+        An optional sanity check that specifies the maximum allowed value for any component of the load object.
+        """
         return pulumi.get(self, "upper_bound")
 
     @upper_bound.setter
@@ -378,6 +487,9 @@ class _GtmResourceState:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -412,9 +524,44 @@ class GtmResource(pulumi.CustomResource):
                  wait_on_complete: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        Create a GtmResource resource with the given unique name, props, and options.
+        The `GtmResource` lets you create, configure, and import a GTM resource. In GTM, a resource is anything you can measure whose scarcity affects load balancing. Examples of resources include bandwidth, CPU load average, database queries per second, or disk operations per second.
+
+        > **Note** Import requires an ID with this format: `existing_domain_name`:
+        `existing_resource_name`.
+
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        demo_resource = akamai.GtmResource("demoResource",
+            aggregation_type="latest",
+            domain="demo_domain.akadns.net",
+            type="XML load object via HTTP")
+        ```
+        ## Schema reference
+
+        You can download the GTM Resource backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#resource) page.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] aggregation_type: Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+        :param pulumi.Input[str] constrained_property: Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
+        :param pulumi.Input[float] decay_rate: For Akamai internal use only. You can omit the value or set it to `null`.
+        :param pulumi.Input[str] description: A descriptive note to help you track what the resource constrains.
+        :param pulumi.Input[str] domain: DNS name for the GTM Domain set that includes this property.
+        :param pulumi.Input[str] host_header: Optionally specifies the host header used when fetching the load object.
+        :param pulumi.Input[str] leader_string: Specifies the text that comes before the `load_object`.
+        :param pulumi.Input[float] least_squares_decay: For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
+        :param pulumi.Input[float] max_u_multiplicative_increment: For Akamai internal use only. You can omit the value or set it to `null`.
+        :param pulumi.Input[str] name: A descriptive label for the GTM resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmResourceResourceInstanceArgs']]]] resource_instances: (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resource_instance` entries. Requires these arguments:
+        :param pulumi.Input[str] type: Indicates the kind of `load_object` format used to determine the load on the resource.
+        :param pulumi.Input[int] upper_bound: An optional sanity check that specifies the maximum allowed value for any component of the load object.
+        :param pulumi.Input[bool] wait_on_complete: A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
         """
         ...
     @overload
@@ -423,7 +570,28 @@ class GtmResource(pulumi.CustomResource):
                  args: GtmResourceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a GtmResource resource with the given unique name, props, and options.
+        The `GtmResource` lets you create, configure, and import a GTM resource. In GTM, a resource is anything you can measure whose scarcity affects load balancing. Examples of resources include bandwidth, CPU load average, database queries per second, or disk operations per second.
+
+        > **Note** Import requires an ID with this format: `existing_domain_name`:
+        `existing_resource_name`.
+
+        ## Example Usage
+
+        Basic usage:
+
+        ```python
+        import pulumi
+        import pulumi_akamai as akamai
+
+        demo_resource = akamai.GtmResource("demoResource",
+            aggregation_type="latest",
+            domain="demo_domain.akadns.net",
+            type="XML load object via HTTP")
+        ```
+        ## Schema reference
+
+        You can download the GTM Resource backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#resource) page.
+
         :param str resource_name: The name of the resource.
         :param GtmResourceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -520,6 +688,20 @@ class GtmResource(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] aggregation_type: Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+        :param pulumi.Input[str] constrained_property: Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
+        :param pulumi.Input[float] decay_rate: For Akamai internal use only. You can omit the value or set it to `null`.
+        :param pulumi.Input[str] description: A descriptive note to help you track what the resource constrains.
+        :param pulumi.Input[str] domain: DNS name for the GTM Domain set that includes this property.
+        :param pulumi.Input[str] host_header: Optionally specifies the host header used when fetching the load object.
+        :param pulumi.Input[str] leader_string: Specifies the text that comes before the `load_object`.
+        :param pulumi.Input[float] least_squares_decay: For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
+        :param pulumi.Input[float] max_u_multiplicative_increment: For Akamai internal use only. You can omit the value or set it to `null`.
+        :param pulumi.Input[str] name: A descriptive label for the GTM resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmResourceResourceInstanceArgs']]]] resource_instances: (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resource_instance` entries. Requires these arguments:
+        :param pulumi.Input[str] type: Indicates the kind of `load_object` format used to determine the load on the resource.
+        :param pulumi.Input[int] upper_bound: An optional sanity check that specifies the maximum allowed value for any component of the load object.
+        :param pulumi.Input[bool] wait_on_complete: A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -545,41 +727,65 @@ class GtmResource(pulumi.CustomResource):
     @property
     @pulumi.getter(name="aggregationType")
     def aggregation_type(self) -> pulumi.Output[str]:
+        """
+        Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+        """
         return pulumi.get(self, "aggregation_type")
 
     @property
     @pulumi.getter(name="constrainedProperty")
     def constrained_property(self) -> pulumi.Output[Optional[str]]:
+        """
+        Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
+        """
         return pulumi.get(self, "constrained_property")
 
     @property
     @pulumi.getter(name="decayRate")
     def decay_rate(self) -> pulumi.Output[Optional[float]]:
+        """
+        For Akamai internal use only. You can omit the value or set it to `null`.
+        """
         return pulumi.get(self, "decay_rate")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[str]]:
+        """
+        A descriptive note to help you track what the resource constrains.
+        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Output[str]:
+        """
+        DNS name for the GTM Domain set that includes this property.
+        """
         return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter(name="hostHeader")
     def host_header(self) -> pulumi.Output[Optional[str]]:
+        """
+        Optionally specifies the host header used when fetching the load object.
+        """
         return pulumi.get(self, "host_header")
 
     @property
     @pulumi.getter(name="leaderString")
     def leader_string(self) -> pulumi.Output[Optional[str]]:
+        """
+        Specifies the text that comes before the `load_object`.
+        """
         return pulumi.get(self, "leader_string")
 
     @property
     @pulumi.getter(name="leastSquaresDecay")
     def least_squares_decay(self) -> pulumi.Output[Optional[float]]:
+        """
+        For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
+        """
         return pulumi.get(self, "least_squares_decay")
 
     @property
@@ -590,30 +796,48 @@ class GtmResource(pulumi.CustomResource):
     @property
     @pulumi.getter(name="maxUMultiplicativeIncrement")
     def max_u_multiplicative_increment(self) -> pulumi.Output[Optional[float]]:
+        """
+        For Akamai internal use only. You can omit the value or set it to `null`.
+        """
         return pulumi.get(self, "max_u_multiplicative_increment")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
+        """
+        A descriptive label for the GTM resource.
+        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="resourceInstances")
     def resource_instances(self) -> pulumi.Output[Optional[Sequence['outputs.GtmResourceResourceInstance']]]:
+        """
+        (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resource_instance` entries. Requires these arguments:
+        """
         return pulumi.get(self, "resource_instances")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
+        """
+        Indicates the kind of `load_object` format used to determine the load on the resource.
+        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="upperBound")
     def upper_bound(self) -> pulumi.Output[Optional[int]]:
+        """
+        An optional sanity check that specifies the maximum allowed value for any component of the load object.
+        """
         return pulumi.get(self, "upper_bound")
 
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> pulumi.Output[Optional[bool]]:
+        """
+        A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+        """
         return pulumi.get(self, "wait_on_complete")
 

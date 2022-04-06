@@ -9,15 +9,61 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
+    /// <summary>
+    /// **Scopes**: Security configuration; security policy
+    /// 
+    /// Specifies the headers you can exclude from inspection when you are working with a Pragma debug header, a header that provides information about such things as: the edge routers used in a transaction; the Akamai IP addresses involved; whether a request was cached or not; etc. By default, pragma headers are removed from all responses.
+    /// 
+    /// This operation can be applied at the security configuration level (in which case it applies to all the security policies in the configuration), or can be customized for an individual security policy.
+    /// 
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/pragma-header](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpragmaheaderpolicy)
+    /// 
+    /// ## Example Usage
+    /// 
+    /// Basic usage:
+    /// 
+    /// ```csharp
+    /// using System.IO;
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
+    ///         {
+    ///             Name = "Documentation",
+    ///         }));
+    ///         var pragmaHeader = new Akamai.AppSecAdvancedSettingsPragmaHeader("pragmaHeader", new Akamai.AppSecAdvancedSettingsPragmaHeaderArgs
+    ///         {
+    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
+    ///             SecurityPolicyId = "gms1_134637",
+    ///             PragmaHeader = File.ReadAllText($"{path.Module}/pragma_header.json"),
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
+    /// </summary>
     [AkamaiResourceType("akamai:index/appSecAdvancedSettingsPragmaHeader:AppSecAdvancedSettingsPragmaHeader")]
     public partial class AppSecAdvancedSettingsPragmaHeader : Pulumi.CustomResource
     {
+        /// <summary>
+        /// . Unique identifier of the security configuration associated with the pragma header settings being modified.
+        /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
+        /// <summary>
+        /// . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`. You can view a sample JSON file in the [Modify pragma settings for a security setting](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpragmaheaderconfiguration) section of the Application Security API documentation.
+        /// </summary>
         [Output("pragmaHeader")]
         public Output<string> PragmaHeader { get; private set; } = null!;
 
+        /// <summary>
+        /// . Unique identifier of the security policy associated with the pragma header settings being modified. If not included, pragma header settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+        /// </summary>
         [Output("securityPolicyId")]
         public Output<string?> SecurityPolicyId { get; private set; } = null!;
 
@@ -67,12 +113,21 @@ namespace Pulumi.Akamai
 
     public sealed class AppSecAdvancedSettingsPragmaHeaderArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// . Unique identifier of the security configuration associated with the pragma header settings being modified.
+        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
+        /// <summary>
+        /// . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`. You can view a sample JSON file in the [Modify pragma settings for a security setting](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpragmaheaderconfiguration) section of the Application Security API documentation.
+        /// </summary>
         [Input("pragmaHeader", required: true)]
         public Input<string> PragmaHeader { get; set; } = null!;
 
+        /// <summary>
+        /// . Unique identifier of the security policy associated with the pragma header settings being modified. If not included, pragma header settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+        /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
 
@@ -83,12 +138,21 @@ namespace Pulumi.Akamai
 
     public sealed class AppSecAdvancedSettingsPragmaHeaderState : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// . Unique identifier of the security configuration associated with the pragma header settings being modified.
+        /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
+        /// <summary>
+        /// . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`. You can view a sample JSON file in the [Modify pragma settings for a security setting](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpragmaheaderconfiguration) section of the Application Security API documentation.
+        /// </summary>
         [Input("pragmaHeader")]
         public Input<string>? PragmaHeader { get; set; }
 
+        /// <summary>
+        /// . Unique identifier of the security policy associated with the pragma header settings being modified. If not included, pragma header settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+        /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
 

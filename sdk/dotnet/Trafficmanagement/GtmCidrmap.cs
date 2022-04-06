@@ -9,22 +9,73 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Trafficmanagement
 {
+    /// <summary>
+    /// Use the `akamai.GtmCidrmap` resource to create, configure, and import a GTM Classless Inter-Domain Routing (CIDR) map. CIDR mapping uses the IP addresses of the requesting name server to provide IP-specific CNAME entries. CNAMEs let you direct internal users to a specific environment or direct them to the origin. This lets you provide different responses to an internal corporate DNS infrastructure, such as internal test environments and another answer for all other name servers (`default_datacenter`).
+    /// 
+    ///  CIDR maps split the Internet into multiple CIDR block zones. Properties that use a map can specify a handout CNAME for each zone on the property's editing page. To configure a property for CIDR mapping, your domain needs at least one CIDR map defined.
+    /// 
+    /// &gt; **Note** Import requires an ID with this format: `existing_domain_name`:`existing_map_name`.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// Basic usage:
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Akamai = Pulumi.Akamai;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var demoCidrmap = new Akamai.GtmCidrmap("demoCidrmap", new Akamai.GtmCidrmapArgs
+    ///         {
+    ///             DefaultDatacenter = new Akamai.Inputs.GtmCidrmapDefaultDatacenterArgs
+    ///             {
+    ///                 DatacenterId = 5400,
+    ///                 Nickname = "All Other CIDR Blocks",
+    ///             },
+    ///             Domain = "demo_domain.akadns.net",
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
+    /// ## Schema reference
+    /// 
+    /// You can download the GTM CIDR Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#cidrmap) page.
+    /// </summary>
     [Obsolete(@"akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap")]
     [AkamaiResourceType("akamai:trafficmanagement/gtmCidrmap:GtmCidrmap")]
     public partial class GtmCidrmap : Pulumi.CustomResource
     {
+        /// <summary>
+        /// Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+        /// </summary>
         [Output("assignments")]
         public Output<ImmutableArray<Outputs.GtmCidrmapAssignment>> Assignments { get; private set; } = null!;
 
+        /// <summary>
+        /// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+        /// </summary>
         [Output("defaultDatacenter")]
         public Output<Outputs.GtmCidrmapDefaultDatacenter> DefaultDatacenter { get; private set; } = null!;
 
+        /// <summary>
+        /// GTM Domain name for the AS Map.
+        /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
 
+        /// <summary>
+        /// A descriptive label for the CIDR map, up to 255 characters.
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// A boolean that, if set to `true`, waits for transaction to complete.
+        /// </summary>
         [Output("waitOnComplete")]
         public Output<bool?> WaitOnComplete { get; private set; } = null!;
 
@@ -76,21 +127,37 @@ namespace Pulumi.Akamai.Trafficmanagement
     {
         [Input("assignments")]
         private InputList<Inputs.GtmCidrmapAssignmentArgs>? _assignments;
+
+        /// <summary>
+        /// Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+        /// </summary>
         public InputList<Inputs.GtmCidrmapAssignmentArgs> Assignments
         {
             get => _assignments ?? (_assignments = new InputList<Inputs.GtmCidrmapAssignmentArgs>());
             set => _assignments = value;
         }
 
+        /// <summary>
+        /// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+        /// </summary>
         [Input("defaultDatacenter", required: true)]
         public Input<Inputs.GtmCidrmapDefaultDatacenterArgs> DefaultDatacenter { get; set; } = null!;
 
+        /// <summary>
+        /// GTM Domain name for the AS Map.
+        /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
 
+        /// <summary>
+        /// A descriptive label for the CIDR map, up to 255 characters.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// A boolean that, if set to `true`, waits for transaction to complete.
+        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 
@@ -103,21 +170,37 @@ namespace Pulumi.Akamai.Trafficmanagement
     {
         [Input("assignments")]
         private InputList<Inputs.GtmCidrmapAssignmentGetArgs>? _assignments;
+
+        /// <summary>
+        /// Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+        /// </summary>
         public InputList<Inputs.GtmCidrmapAssignmentGetArgs> Assignments
         {
             get => _assignments ?? (_assignments = new InputList<Inputs.GtmCidrmapAssignmentGetArgs>());
             set => _assignments = value;
         }
 
+        /// <summary>
+        /// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+        /// </summary>
         [Input("defaultDatacenter")]
         public Input<Inputs.GtmCidrmapDefaultDatacenterGetArgs>? DefaultDatacenter { get; set; }
 
+        /// <summary>
+        /// GTM Domain name for the AS Map.
+        /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
+        /// <summary>
+        /// A descriptive label for the CIDR map, up to 255 characters.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// A boolean that, if set to `true`, waits for transaction to complete.
+        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 

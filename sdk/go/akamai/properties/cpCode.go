@@ -10,17 +10,114 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// The `CpCode` resource lets you create or reuse content provider (CP) codes.  CP codes track web traffic handled by Akamai servers. Akamai gives you a CP code when you purchase a product. You need this code when you activate associated properties.
+//
+// You can create additional CP codes to support more detailed billing and reporting functions.
+//
+// By default, the Akamai Provider uses your existing CP code instead of creating a new one.
+//
+// ## Example Usage
+//
+// Basic usage:
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		_, err := akamai.NewCpCode(ctx, "cpCode", &akamai.CpCodeArgs{
+// 			ContractId: pulumi.Any(akamai_contract.Contract.Id),
+// 			GroupId:    pulumi.Any(akamai_group.Group.Id),
+// 			ProductId:  pulumi.String("prd_Object_Delivery"),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
+//
+// Here's a real-life example that includes other data sources as dependencies:
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		groupName := "example group name"
+// 		_ := "My CP Code"
+// 		exampleContract, err := akamai.GetContract(ctx, &GetContractArgs{
+// 			GroupName: pulumi.StringRef(groupName),
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		exampleGroup, err := akamai.GetGroup(ctx, &GetGroupArgs{
+// 			Name:       pulumi.StringRef(groupName),
+// 			ContractId: pulumi.StringRef(exampleContract.Id),
+// 		}, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		_, err = akamai.NewCpCode(ctx, "exampleCp", &akamai.CpCodeArgs{
+// 			GroupId:    pulumi.String(exampleGroup.Id),
+// 			ContractId: pulumi.String(exampleContract.Id),
+// 			ProductId:  pulumi.String("prd_Object_Delivery"),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
+// ## Attributes reference
+//
+// * `id` - The ID of the CP code.
+//
+// ## Import
+//
+// Basic Usagehcl resource "akamai_cp_code" "example" {
+//
+// # (resource arguments)
+//
+//  } You can import your Akamai CP codes using a comma-delimited string of the CP code, contract, and group IDs. You have to enter the IDs in this order`cpcode_id,contract_id,group_id` For example
+//
+// ```sh
+//  $ pulumi import akamai:properties/cpCode:CpCode example cpc_123,ctr_1-AB123,grp_123
+// ```
+//
 // Deprecated: akamai.properties.CpCode has been deprecated in favor of akamai.CpCode
 type CpCode struct {
 	pulumi.CustomResourceState
 
+	// Replaced by `contractId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract   pulumi.StringOutput `pulumi:"contract"`
+	Contract pulumi.StringOutput `pulumi:"contract"`
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
+	// Replaced by `groupId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group   pulumi.StringOutput `pulumi:"group"`
+	Group pulumi.StringOutput `pulumi:"group"`
+	// - (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId pulumi.StringOutput `pulumi:"groupId"`
-	Name    pulumi.StringOutput `pulumi:"name"`
+	// - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+	Name pulumi.StringOutput `pulumi:"name"`
+	// Replaced by `productId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "product" has been deprecated.
 	Product   pulumi.StringOutput `pulumi:"product"`
 	ProductId pulumi.StringOutput `pulumi:"productId"`
@@ -55,26 +152,44 @@ func GetCpCode(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CpCode resources.
 type cpCodeState struct {
+	// Replaced by `contractId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract   *string `pulumi:"contract"`
+	Contract *string `pulumi:"contract"`
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId *string `pulumi:"contractId"`
+	// Replaced by `groupId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group   *string `pulumi:"group"`
+	Group *string `pulumi:"group"`
+	// - (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId *string `pulumi:"groupId"`
-	Name    *string `pulumi:"name"`
+	// - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+	Name *string `pulumi:"name"`
+	// Replaced by `productId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "product" has been deprecated.
 	Product   *string `pulumi:"product"`
 	ProductId *string `pulumi:"productId"`
 }
 
 type CpCodeState struct {
+	// Replaced by `contractId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract   pulumi.StringPtrInput
+	Contract pulumi.StringPtrInput
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringPtrInput
+	// Replaced by `groupId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group   pulumi.StringPtrInput
+	Group pulumi.StringPtrInput
+	// - (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId pulumi.StringPtrInput
-	Name    pulumi.StringPtrInput
+	// - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+	Name pulumi.StringPtrInput
+	// Replaced by `productId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "product" has been deprecated.
 	Product   pulumi.StringPtrInput
 	ProductId pulumi.StringPtrInput
@@ -85,13 +200,22 @@ func (CpCodeState) ElementType() reflect.Type {
 }
 
 type cpCodeArgs struct {
+	// Replaced by `contractId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract   *string `pulumi:"contract"`
+	Contract *string `pulumi:"contract"`
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId *string `pulumi:"contractId"`
+	// Replaced by `groupId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group   *string `pulumi:"group"`
+	Group *string `pulumi:"group"`
+	// - (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId *string `pulumi:"groupId"`
-	Name    *string `pulumi:"name"`
+	// - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+	Name *string `pulumi:"name"`
+	// Replaced by `productId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "product" has been deprecated.
 	Product   *string `pulumi:"product"`
 	ProductId *string `pulumi:"productId"`
@@ -99,13 +223,22 @@ type cpCodeArgs struct {
 
 // The set of arguments for constructing a CpCode resource.
 type CpCodeArgs struct {
+	// Replaced by `contractId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract   pulumi.StringPtrInput
+	Contract pulumi.StringPtrInput
+	// - (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringPtrInput
+	// Replaced by `groupId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group   pulumi.StringPtrInput
+	Group pulumi.StringPtrInput
+	// - (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId pulumi.StringPtrInput
-	Name    pulumi.StringPtrInput
+	// - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+	Name pulumi.StringPtrInput
+	// Replaced by `productId`. Maintained for legacy purposes.
+	//
 	// Deprecated: The setting "product" has been deprecated.
 	Product   pulumi.StringPtrInput
 	ProductId pulumi.StringPtrInput

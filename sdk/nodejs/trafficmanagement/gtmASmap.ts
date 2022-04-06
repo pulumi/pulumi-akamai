@@ -6,6 +6,32 @@ import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
+ * Use the `akamai.GtmAsmap` resource to create, configure, and import a GTM Autonomous System (AS) map. AS mapping lets you configure a GTM property that returns a CNAME based on the AS number associated with the requester's IP address.
+ *
+ * You can reuse maps for multiple properties or create new ones. AS maps split the Internet into multiple AS block zones. Properties that use AS maps can specify handout integers for each zone. AS mapping lets you configure a property that directs users to a specific environment or to the origin.
+ *
+ * > **Note** Import requires an ID with this format: `existingDomainName`:`existingMapName`.
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const demoAsmap = new akamai.GtmAsmap("demo_asmap", {
+ *     defaultDatacenter: {
+ *         datacenterId: 5400,
+ *         nickname: "All Other AS numbers",
+ *     },
+ *     domain: "demo_domain.akadns.net",
+ * });
+ * ```
+ * ## Schema reference
+ *
+ * You can download the GTM AS Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#asmap) page.
+ *
  * @deprecated akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap
  */
 export class GtmASmap extends pulumi.CustomResource {
@@ -37,10 +63,25 @@ export class GtmASmap extends pulumi.CustomResource {
         return obj['__pulumiType'] === GtmASmap.__pulumiType;
     }
 
+    /**
+     * Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+     */
     public readonly assignments!: pulumi.Output<outputs.trafficmanagement.GtmASmapAssignment[] | undefined>;
+    /**
+     * A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+     */
     public readonly defaultDatacenter!: pulumi.Output<outputs.trafficmanagement.GtmASmapDefaultDatacenter>;
+    /**
+     * The GTM Domain name for the AS map.
+     */
     public readonly domain!: pulumi.Output<string>;
+    /**
+     * A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * A boolean that, if `true`, waits for transaction to complete.
+     */
     public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
 
     /**
@@ -87,10 +128,25 @@ export class GtmASmap extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmASmap resources.
  */
 export interface GtmASmapState {
+    /**
+     * Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+     */
     assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmASmapAssignment>[]>;
+    /**
+     * A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+     */
     defaultDatacenter?: pulumi.Input<inputs.trafficmanagement.GtmASmapDefaultDatacenter>;
+    /**
+     * The GTM Domain name for the AS map.
+     */
     domain?: pulumi.Input<string>;
+    /**
+     * A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * A boolean that, if `true`, waits for transaction to complete.
+     */
     waitOnComplete?: pulumi.Input<boolean>;
 }
 
@@ -98,9 +154,24 @@ export interface GtmASmapState {
  * The set of arguments for constructing a GtmASmap resource.
  */
 export interface GtmASmapArgs {
+    /**
+     * Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+     */
     assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmASmapAssignment>[]>;
+    /**
+     * A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+     */
     defaultDatacenter: pulumi.Input<inputs.trafficmanagement.GtmASmapDefaultDatacenter>;
+    /**
+     * The GTM Domain name for the AS map.
+     */
     domain: pulumi.Input<string>;
+    /**
+     * A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * A boolean that, if `true`, waits for transaction to complete.
+     */
     waitOnComplete?: pulumi.Input<boolean>;
 }

@@ -49,6 +49,11 @@ class GtmASmapAssignment(dict):
                  as_numbers: Sequence[int],
                  datacenter_id: int,
                  nickname: str):
+        """
+        :param Sequence[int] as_numbers: Specifies an array of AS numbers.
+        :param int datacenter_id: A unique identifier for an existing data center in the domain.
+        :param str nickname: A descriptive label for the group.
+        """
         pulumi.set(__self__, "as_numbers", as_numbers)
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         pulumi.set(__self__, "nickname", nickname)
@@ -56,16 +61,25 @@ class GtmASmapAssignment(dict):
     @property
     @pulumi.getter(name="asNumbers")
     def as_numbers(self) -> Sequence[int]:
+        """
+        Specifies an array of AS numbers.
+        """
         return pulumi.get(self, "as_numbers")
 
     @property
     @pulumi.getter(name="datacenterId")
     def datacenter_id(self) -> int:
+        """
+        A unique identifier for an existing data center in the domain.
+        """
         return pulumi.get(self, "datacenter_id")
 
     @property
     @pulumi.getter
     def nickname(self) -> str:
+        """
+        A descriptive label for the group.
+        """
         return pulumi.get(self, "nickname")
 
 
@@ -91,6 +105,10 @@ class GtmASmapDefaultDatacenter(dict):
     def __init__(__self__, *,
                  datacenter_id: int,
                  nickname: Optional[str] = None):
+        """
+        :param int datacenter_id: A unique identifier for an existing data center in the domain.
+        :param str nickname: A descriptive label for the group.
+        """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         if nickname is not None:
             pulumi.set(__self__, "nickname", nickname)
@@ -98,11 +116,17 @@ class GtmASmapDefaultDatacenter(dict):
     @property
     @pulumi.getter(name="datacenterId")
     def datacenter_id(self) -> int:
+        """
+        A unique identifier for an existing data center in the domain.
+        """
         return pulumi.get(self, "datacenter_id")
 
     @property
     @pulumi.getter
     def nickname(self) -> Optional[str]:
+        """
+        A descriptive label for the group.
+        """
         return pulumi.get(self, "nickname")
 
 
@@ -129,6 +153,11 @@ class GtmCidrmapAssignment(dict):
                  datacenter_id: int,
                  nickname: str,
                  blocks: Optional[Sequence[str]] = None):
+        """
+        :param int datacenter_id: A unique identifier for an existing data center in the domain.
+        :param str nickname: A descriptive label for the CIDR zone group, up to 256 characters.
+        :param Sequence[str] blocks: Specifies an array of CIDR blocks.
+        """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         pulumi.set(__self__, "nickname", nickname)
         if blocks is not None:
@@ -137,16 +166,25 @@ class GtmCidrmapAssignment(dict):
     @property
     @pulumi.getter(name="datacenterId")
     def datacenter_id(self) -> int:
+        """
+        A unique identifier for an existing data center in the domain.
+        """
         return pulumi.get(self, "datacenter_id")
 
     @property
     @pulumi.getter
     def nickname(self) -> str:
+        """
+        A descriptive label for the CIDR zone group, up to 256 characters.
+        """
         return pulumi.get(self, "nickname")
 
     @property
     @pulumi.getter
     def blocks(self) -> Optional[Sequence[str]]:
+        """
+        Specifies an array of CIDR blocks.
+        """
         return pulumi.get(self, "blocks")
 
 
@@ -172,6 +210,10 @@ class GtmCidrmapDefaultDatacenter(dict):
     def __init__(__self__, *,
                  datacenter_id: int,
                  nickname: Optional[str] = None):
+        """
+        :param int datacenter_id: A unique identifier for an existing data center in the domain.
+        :param str nickname: A descriptive label for the CIDR zone group, up to 256 characters.
+        """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         if nickname is not None:
             pulumi.set(__self__, "nickname", nickname)
@@ -179,11 +221,17 @@ class GtmCidrmapDefaultDatacenter(dict):
     @property
     @pulumi.getter(name="datacenterId")
     def datacenter_id(self) -> int:
+        """
+        A unique identifier for an existing data center in the domain.
+        """
         return pulumi.get(self, "datacenter_id")
 
     @property
     @pulumi.getter
     def nickname(self) -> Optional[str]:
+        """
+        A descriptive label for the CIDR zone group, up to 256 characters.
+        """
         return pulumi.get(self, "nickname")
 
 
@@ -214,6 +262,11 @@ class GtmDatacenterDefaultLoadObject(dict):
                  load_object: Optional[str] = None,
                  load_object_port: Optional[int] = None,
                  load_servers: Optional[Sequence[str]] = None):
+        """
+        :param str load_object: A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
+        :param int load_object_port: Specifies the TCP port to connect to when requesting the load object.
+        :param Sequence[str] load_servers: Specifies a list of servers to request the load object from.
+        """
         if load_object is not None:
             pulumi.set(__self__, "load_object", load_object)
         if load_object_port is not None:
@@ -224,16 +277,25 @@ class GtmDatacenterDefaultLoadObject(dict):
     @property
     @pulumi.getter(name="loadObject")
     def load_object(self) -> Optional[str]:
+        """
+        A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
+        """
         return pulumi.get(self, "load_object")
 
     @property
     @pulumi.getter(name="loadObjectPort")
     def load_object_port(self) -> Optional[int]:
+        """
+        Specifies the TCP port to connect to when requesting the load object.
+        """
         return pulumi.get(self, "load_object_port")
 
     @property
     @pulumi.getter(name="loadServers")
     def load_servers(self) -> Optional[Sequence[str]]:
+        """
+        Specifies a list of servers to request the load object from.
+        """
         return pulumi.get(self, "load_servers")
 
 
@@ -260,6 +322,11 @@ class GtmGeomapAssignment(dict):
                  datacenter_id: int,
                  nickname: str,
                  countries: Optional[Sequence[str]] = None):
+        """
+        :param int datacenter_id: A unique identifier for an existing data center in the domain.
+        :param str nickname: A descriptive label for the group.
+        :param Sequence[str] countries: Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
+        """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         pulumi.set(__self__, "nickname", nickname)
         if countries is not None:
@@ -268,16 +335,25 @@ class GtmGeomapAssignment(dict):
     @property
     @pulumi.getter(name="datacenterId")
     def datacenter_id(self) -> int:
+        """
+        A unique identifier for an existing data center in the domain.
+        """
         return pulumi.get(self, "datacenter_id")
 
     @property
     @pulumi.getter
     def nickname(self) -> str:
+        """
+        A descriptive label for the group.
+        """
         return pulumi.get(self, "nickname")
 
     @property
     @pulumi.getter
     def countries(self) -> Optional[Sequence[str]]:
+        """
+        Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
+        """
         return pulumi.get(self, "countries")
 
 
@@ -303,6 +379,10 @@ class GtmGeomapDefaultDatacenter(dict):
     def __init__(__self__, *,
                  datacenter_id: int,
                  nickname: Optional[str] = None):
+        """
+        :param int datacenter_id: A unique identifier for an existing data center in the domain.
+        :param str nickname: A descriptive label for the group.
+        """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         if nickname is not None:
             pulumi.set(__self__, "nickname", nickname)
@@ -310,11 +390,17 @@ class GtmGeomapDefaultDatacenter(dict):
     @property
     @pulumi.getter(name="datacenterId")
     def datacenter_id(self) -> int:
+        """
+        A unique identifier for an existing data center in the domain.
+        """
         return pulumi.get(self, "datacenter_id")
 
     @property
     @pulumi.getter
     def nickname(self) -> Optional[str]:
+        """
+        A descriptive label for the group.
+        """
         return pulumi.get(self, "nickname")
 
 
@@ -404,6 +490,32 @@ class GtmPropertyLivenessTest(dict):
                  test_object_port: Optional[int] = None,
                  test_object_username: Optional[str] = None,
                  timeout_penalty: Optional[float] = None):
+        """
+        :param str name: Name of HTTP header.
+        :param int test_interval: Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
+        :param str test_object: Specifies the static text that acts as a stand-in for the data that you're sending on the network.
+        :param str test_object_protocol: Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
+        :param float test_timeout: Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
+        :param bool answers_required: If `test_object_protocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
+        :param bool disable_nonstandard_port_warning: A boolean that if set to `true`, disables warnings when non-standard ports are used.
+        :param bool disabled: A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
+        :param float error_penalty: Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
+        :param bool http_error3xx: A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+        :param bool http_error4xx: A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+        :param bool http_error5xx: A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+        :param Sequence['GtmPropertyLivenessTestHttpHeaderArgs'] http_headers: Contains HTTP headers to send if the `test_object_protocol` is `http` or `https`. You can have multiple `http_header` entries. Requires these arguments:
+        :param bool peer_certificate_verification: A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `test_object_protocol` of https.
+        :param bool recursion_requested: A boolean indicating whether the `test_object_protocol` is DNS. The DNS query is recursive.
+        :param str request_string: Specifies a request string.
+        :param str resource_type: Specifies the query type, if `test_object_protocol` is DNS.
+        :param str response_string: Specifies a response string.
+        :param str ssl_client_certificate: Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
+        :param str ssl_client_private_key: Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can't have a passphrase nor be used for any other purpose.
+        :param str test_object_password: Specifies the test object's password. It is required if testObjectProtocol is ftp.
+        :param int test_object_port: Specifies the port number for the testObject.
+        :param str test_object_username: A descriptive name for the testObject.
+        :param float timeout_penalty: Specifies the score to be reported if the liveness test times out.
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "test_interval", test_interval)
         pulumi.set(__self__, "test_object", test_object)
@@ -451,121 +563,193 @@ class GtmPropertyLivenessTest(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        Name of HTTP header.
+        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="testInterval")
     def test_interval(self) -> int:
+        """
+        Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
+        """
         return pulumi.get(self, "test_interval")
 
     @property
     @pulumi.getter(name="testObject")
     def test_object(self) -> str:
+        """
+        Specifies the static text that acts as a stand-in for the data that you're sending on the network.
+        """
         return pulumi.get(self, "test_object")
 
     @property
     @pulumi.getter(name="testObjectProtocol")
     def test_object_protocol(self) -> str:
+        """
+        Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
+        """
         return pulumi.get(self, "test_object_protocol")
 
     @property
     @pulumi.getter(name="testTimeout")
     def test_timeout(self) -> float:
+        """
+        Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
+        """
         return pulumi.get(self, "test_timeout")
 
     @property
     @pulumi.getter(name="answersRequired")
     def answers_required(self) -> Optional[bool]:
+        """
+        If `test_object_protocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
+        """
         return pulumi.get(self, "answers_required")
 
     @property
     @pulumi.getter(name="disableNonstandardPortWarning")
     def disable_nonstandard_port_warning(self) -> Optional[bool]:
+        """
+        A boolean that if set to `true`, disables warnings when non-standard ports are used.
+        """
         return pulumi.get(self, "disable_nonstandard_port_warning")
 
     @property
     @pulumi.getter
     def disabled(self) -> Optional[bool]:
+        """
+        A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
+        """
         return pulumi.get(self, "disabled")
 
     @property
     @pulumi.getter(name="errorPenalty")
     def error_penalty(self) -> Optional[float]:
+        """
+        Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
+        """
         return pulumi.get(self, "error_penalty")
 
     @property
     @pulumi.getter(name="httpError3xx")
     def http_error3xx(self) -> Optional[bool]:
+        """
+        A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+        """
         return pulumi.get(self, "http_error3xx")
 
     @property
     @pulumi.getter(name="httpError4xx")
     def http_error4xx(self) -> Optional[bool]:
+        """
+        A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+        """
         return pulumi.get(self, "http_error4xx")
 
     @property
     @pulumi.getter(name="httpError5xx")
     def http_error5xx(self) -> Optional[bool]:
+        """
+        A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
+        """
         return pulumi.get(self, "http_error5xx")
 
     @property
     @pulumi.getter(name="httpHeaders")
     def http_headers(self) -> Optional[Sequence['outputs.GtmPropertyLivenessTestHttpHeader']]:
+        """
+        Contains HTTP headers to send if the `test_object_protocol` is `http` or `https`. You can have multiple `http_header` entries. Requires these arguments:
+        """
         return pulumi.get(self, "http_headers")
 
     @property
     @pulumi.getter(name="peerCertificateVerification")
     def peer_certificate_verification(self) -> Optional[bool]:
+        """
+        A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `test_object_protocol` of https.
+        """
         return pulumi.get(self, "peer_certificate_verification")
 
     @property
     @pulumi.getter(name="recursionRequested")
     def recursion_requested(self) -> Optional[bool]:
+        """
+        A boolean indicating whether the `test_object_protocol` is DNS. The DNS query is recursive.
+        """
         return pulumi.get(self, "recursion_requested")
 
     @property
     @pulumi.getter(name="requestString")
     def request_string(self) -> Optional[str]:
+        """
+        Specifies a request string.
+        """
         return pulumi.get(self, "request_string")
 
     @property
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[str]:
+        """
+        Specifies the query type, if `test_object_protocol` is DNS.
+        """
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter(name="responseString")
     def response_string(self) -> Optional[str]:
+        """
+        Specifies a response string.
+        """
         return pulumi.get(self, "response_string")
 
     @property
     @pulumi.getter(name="sslClientCertificate")
     def ssl_client_certificate(self) -> Optional[str]:
+        """
+        Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
+        """
         return pulumi.get(self, "ssl_client_certificate")
 
     @property
     @pulumi.getter(name="sslClientPrivateKey")
     def ssl_client_private_key(self) -> Optional[str]:
+        """
+        Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can't have a passphrase nor be used for any other purpose.
+        """
         return pulumi.get(self, "ssl_client_private_key")
 
     @property
     @pulumi.getter(name="testObjectPassword")
     def test_object_password(self) -> Optional[str]:
+        """
+        Specifies the test object's password. It is required if testObjectProtocol is ftp.
+        """
         return pulumi.get(self, "test_object_password")
 
     @property
     @pulumi.getter(name="testObjectPort")
     def test_object_port(self) -> Optional[int]:
+        """
+        Specifies the port number for the testObject.
+        """
         return pulumi.get(self, "test_object_port")
 
     @property
     @pulumi.getter(name="testObjectUsername")
     def test_object_username(self) -> Optional[str]:
+        """
+        A descriptive name for the testObject.
+        """
         return pulumi.get(self, "test_object_username")
 
     @property
     @pulumi.getter(name="timeoutPenalty")
     def timeout_penalty(self) -> Optional[float]:
+        """
+        Specifies the score to be reported if the liveness test times out.
+        """
         return pulumi.get(self, "timeout_penalty")
 
 
@@ -574,6 +758,10 @@ class GtmPropertyLivenessTestHttpHeader(dict):
     def __init__(__self__, *,
                  name: Optional[str] = None,
                  value: Optional[str] = None):
+        """
+        :param str name: Name of HTTP header.
+        :param str value: Value of HTTP header.
+        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if value is not None:
@@ -582,11 +770,17 @@ class GtmPropertyLivenessTestHttpHeader(dict):
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
+        """
+        Name of HTTP header.
+        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        Value of HTTP header.
+        """
         return pulumi.get(self, "value")
 
 
@@ -596,6 +790,11 @@ class GtmPropertyStaticRrSet(dict):
                  rdatas: Optional[Sequence[str]] = None,
                  ttl: Optional[int] = None,
                  type: Optional[str] = None):
+        """
+        :param Sequence[str] rdatas: (List) An array of data strings, representing multiple records within a set.
+        :param int ttl: The number of seconds that this record should live in a resolver's cache before being refetched.
+        :param str type: The record type.
+        """
         if rdatas is not None:
             pulumi.set(__self__, "rdatas", rdatas)
         if ttl is not None:
@@ -606,16 +805,25 @@ class GtmPropertyStaticRrSet(dict):
     @property
     @pulumi.getter
     def rdatas(self) -> Optional[Sequence[str]]:
+        """
+        (List) An array of data strings, representing multiple records within a set.
+        """
         return pulumi.get(self, "rdatas")
 
     @property
     @pulumi.getter
     def ttl(self) -> Optional[int]:
+        """
+        The number of seconds that this record should live in a resolver's cache before being refetched.
+        """
         return pulumi.get(self, "ttl")
 
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
+        """
+        The record type.
+        """
         return pulumi.get(self, "type")
 
 
@@ -647,6 +855,14 @@ class GtmPropertyTrafficTarget(dict):
                  name: Optional[str] = None,
                  servers: Optional[Sequence[str]] = None,
                  weight: Optional[float] = None):
+        """
+        :param int datacenter_id: A unique identifier for an existing data center in the domain.
+        :param bool enabled: A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
+        :param str handout_cname: Specifies an optional data center for the property. Used when there are no servers configured for the property.
+        :param str name: Name of HTTP header.
+        :param Sequence[str] servers: (List) Identifies the IP address or the hostnames of the servers.
+        :param float weight: Specifies the traffic weight for the target.
+        """
         if datacenter_id is not None:
             pulumi.set(__self__, "datacenter_id", datacenter_id)
         if enabled is not None:
@@ -663,31 +879,49 @@ class GtmPropertyTrafficTarget(dict):
     @property
     @pulumi.getter(name="datacenterId")
     def datacenter_id(self) -> Optional[int]:
+        """
+        A unique identifier for an existing data center in the domain.
+        """
         return pulumi.get(self, "datacenter_id")
 
     @property
     @pulumi.getter
     def enabled(self) -> Optional[bool]:
+        """
+        A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
+        """
         return pulumi.get(self, "enabled")
 
     @property
     @pulumi.getter(name="handoutCname")
     def handout_cname(self) -> Optional[str]:
+        """
+        Specifies an optional data center for the property. Used when there are no servers configured for the property.
+        """
         return pulumi.get(self, "handout_cname")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
+        """
+        Name of HTTP header.
+        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def servers(self) -> Optional[Sequence[str]]:
+        """
+        (List) Identifies the IP address or the hostnames of the servers.
+        """
         return pulumi.get(self, "servers")
 
     @property
     @pulumi.getter
     def weight(self) -> Optional[float]:
+        """
+        Specifies the traffic weight for the target.
+        """
         return pulumi.get(self, "weight")
 
 
@@ -724,6 +958,13 @@ class GtmResourceResourceInstance(dict):
                  load_object_port: Optional[int] = None,
                  load_servers: Optional[Sequence[str]] = None,
                  use_default_load_object: Optional[bool] = None):
+        """
+        :param int datacenter_id: A unique identifier for an existing data center in the domain.
+        :param str load_object: Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
+        :param int load_object_port: Specifies the TCP port of the `load_object`.
+        :param Sequence[str] load_servers: (List) Specifies a list of servers from which to request the load object.
+        :param bool use_default_load_object: A boolean that indicates whether a default `load_object` is used for the resources.
+        """
         pulumi.set(__self__, "datacenter_id", datacenter_id)
         if load_object is not None:
             pulumi.set(__self__, "load_object", load_object)
@@ -737,26 +978,41 @@ class GtmResourceResourceInstance(dict):
     @property
     @pulumi.getter(name="datacenterId")
     def datacenter_id(self) -> int:
+        """
+        A unique identifier for an existing data center in the domain.
+        """
         return pulumi.get(self, "datacenter_id")
 
     @property
     @pulumi.getter(name="loadObject")
     def load_object(self) -> Optional[str]:
+        """
+        Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
+        """
         return pulumi.get(self, "load_object")
 
     @property
     @pulumi.getter(name="loadObjectPort")
     def load_object_port(self) -> Optional[int]:
+        """
+        Specifies the TCP port of the `load_object`.
+        """
         return pulumi.get(self, "load_object_port")
 
     @property
     @pulumi.getter(name="loadServers")
     def load_servers(self) -> Optional[Sequence[str]]:
+        """
+        (List) Specifies a list of servers from which to request the load object.
+        """
         return pulumi.get(self, "load_servers")
 
     @property
     @pulumi.getter(name="useDefaultLoadObject")
     def use_default_load_object(self) -> Optional[bool]:
+        """
+        A boolean that indicates whether a default `load_object` is used for the resources.
+        """
         return pulumi.get(self, "use_default_load_object")
 
 

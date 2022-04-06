@@ -4,6 +4,27 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
+/**
+ * Use the `akamai.getAuthoritiesSet` data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const example = pulumi.output(akamai.getAuthoritiesSet({
+ *     contract: "ctr_1-AB123",
+ * }));
+ * ```
+ * ## Attributes reference
+ *
+ * This data source supports this attribute:
+ *
+ * * `authorities` - A list of authorities.
+ */
 /** @deprecated akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet */
 export function getAuthoritiesSet(args: GetAuthoritiesSetArgs, opts?: pulumi.InvokeOptions): Promise<GetAuthoritiesSetResult> {
     pulumi.log.warn("getAuthoritiesSet is deprecated: akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet")
@@ -21,6 +42,9 @@ export function getAuthoritiesSet(args: GetAuthoritiesSetArgs, opts?: pulumi.Inv
  * A collection of arguments for invoking getAuthoritiesSet.
  */
 export interface GetAuthoritiesSetArgs {
+    /**
+     * The contract ID.
+     */
     contract: string;
 }
 
@@ -44,5 +68,8 @@ export function getAuthoritiesSetOutput(args: GetAuthoritiesSetOutputArgs, opts?
  * A collection of arguments for invoking getAuthoritiesSet.
  */
 export interface GetAuthoritiesSetOutputArgs {
+    /**
+     * The contract ID.
+     */
     contract: pulumi.Input<string>;
 }

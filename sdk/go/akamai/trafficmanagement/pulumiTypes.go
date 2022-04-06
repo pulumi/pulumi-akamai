@@ -11,9 +11,12 @@ import (
 )
 
 type GtmASmapAssignment struct {
-	AsNumbers    []int  `pulumi:"asNumbers"`
-	DatacenterId int    `pulumi:"datacenterId"`
-	Nickname     string `pulumi:"nickname"`
+	// Specifies an array of AS numbers.
+	AsNumbers []int `pulumi:"asNumbers"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId int `pulumi:"datacenterId"`
+	// A descriptive label for the group.
+	Nickname string `pulumi:"nickname"`
 }
 
 // GtmASmapAssignmentInput is an input type that accepts GtmASmapAssignmentArgs and GtmASmapAssignmentOutput values.
@@ -28,9 +31,12 @@ type GtmASmapAssignmentInput interface {
 }
 
 type GtmASmapAssignmentArgs struct {
-	AsNumbers    pulumi.IntArrayInput `pulumi:"asNumbers"`
-	DatacenterId pulumi.IntInput      `pulumi:"datacenterId"`
-	Nickname     pulumi.StringInput   `pulumi:"nickname"`
+	// Specifies an array of AS numbers.
+	AsNumbers pulumi.IntArrayInput `pulumi:"asNumbers"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId pulumi.IntInput `pulumi:"datacenterId"`
+	// A descriptive label for the group.
+	Nickname pulumi.StringInput `pulumi:"nickname"`
 }
 
 func (GtmASmapAssignmentArgs) ElementType() reflect.Type {
@@ -84,14 +90,17 @@ func (o GtmASmapAssignmentOutput) ToGtmASmapAssignmentOutputWithContext(ctx cont
 	return o
 }
 
+// Specifies an array of AS numbers.
 func (o GtmASmapAssignmentOutput) AsNumbers() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v GtmASmapAssignment) []int { return v.AsNumbers }).(pulumi.IntArrayOutput)
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmASmapAssignmentOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmASmapAssignment) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
 
+// A descriptive label for the group.
 func (o GtmASmapAssignmentOutput) Nickname() pulumi.StringOutput {
 	return o.ApplyT(func(v GtmASmapAssignment) string { return v.Nickname }).(pulumi.StringOutput)
 }
@@ -117,8 +126,10 @@ func (o GtmASmapAssignmentArrayOutput) Index(i pulumi.IntInput) GtmASmapAssignme
 }
 
 type GtmASmapDefaultDatacenter struct {
-	DatacenterId int     `pulumi:"datacenterId"`
-	Nickname     *string `pulumi:"nickname"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId int `pulumi:"datacenterId"`
+	// A descriptive label for the group.
+	Nickname *string `pulumi:"nickname"`
 }
 
 // GtmASmapDefaultDatacenterInput is an input type that accepts GtmASmapDefaultDatacenterArgs and GtmASmapDefaultDatacenterOutput values.
@@ -133,8 +144,10 @@ type GtmASmapDefaultDatacenterInput interface {
 }
 
 type GtmASmapDefaultDatacenterArgs struct {
-	DatacenterId pulumi.IntInput       `pulumi:"datacenterId"`
-	Nickname     pulumi.StringPtrInput `pulumi:"nickname"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId pulumi.IntInput `pulumi:"datacenterId"`
+	// A descriptive label for the group.
+	Nickname pulumi.StringPtrInput `pulumi:"nickname"`
 }
 
 func (GtmASmapDefaultDatacenterArgs) ElementType() reflect.Type {
@@ -214,10 +227,12 @@ func (o GtmASmapDefaultDatacenterOutput) ToGtmASmapDefaultDatacenterPtrOutputWit
 	}).(GtmASmapDefaultDatacenterPtrOutput)
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmASmapDefaultDatacenterOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmASmapDefaultDatacenter) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
 
+// A descriptive label for the group.
 func (o GtmASmapDefaultDatacenterOutput) Nickname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmASmapDefaultDatacenter) *string { return v.Nickname }).(pulumi.StringPtrOutput)
 }
@@ -246,6 +261,7 @@ func (o GtmASmapDefaultDatacenterPtrOutput) Elem() GtmASmapDefaultDatacenterOutp
 	}).(GtmASmapDefaultDatacenterOutput)
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmASmapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *GtmASmapDefaultDatacenter) *int {
 		if v == nil {
@@ -255,6 +271,7 @@ func (o GtmASmapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
+// A descriptive label for the group.
 func (o GtmASmapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GtmASmapDefaultDatacenter) *string {
 		if v == nil {
@@ -265,9 +282,12 @@ func (o GtmASmapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput {
 }
 
 type GtmCidrmapAssignment struct {
-	Blocks       []string `pulumi:"blocks"`
-	DatacenterId int      `pulumi:"datacenterId"`
-	Nickname     string   `pulumi:"nickname"`
+	// Specifies an array of CIDR blocks.
+	Blocks []string `pulumi:"blocks"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId int `pulumi:"datacenterId"`
+	// A descriptive label for the CIDR zone group, up to 256 characters.
+	Nickname string `pulumi:"nickname"`
 }
 
 // GtmCidrmapAssignmentInput is an input type that accepts GtmCidrmapAssignmentArgs and GtmCidrmapAssignmentOutput values.
@@ -282,9 +302,12 @@ type GtmCidrmapAssignmentInput interface {
 }
 
 type GtmCidrmapAssignmentArgs struct {
-	Blocks       pulumi.StringArrayInput `pulumi:"blocks"`
-	DatacenterId pulumi.IntInput         `pulumi:"datacenterId"`
-	Nickname     pulumi.StringInput      `pulumi:"nickname"`
+	// Specifies an array of CIDR blocks.
+	Blocks pulumi.StringArrayInput `pulumi:"blocks"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId pulumi.IntInput `pulumi:"datacenterId"`
+	// A descriptive label for the CIDR zone group, up to 256 characters.
+	Nickname pulumi.StringInput `pulumi:"nickname"`
 }
 
 func (GtmCidrmapAssignmentArgs) ElementType() reflect.Type {
@@ -338,14 +361,17 @@ func (o GtmCidrmapAssignmentOutput) ToGtmCidrmapAssignmentOutputWithContext(ctx 
 	return o
 }
 
+// Specifies an array of CIDR blocks.
 func (o GtmCidrmapAssignmentOutput) Blocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GtmCidrmapAssignment) []string { return v.Blocks }).(pulumi.StringArrayOutput)
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmCidrmapAssignmentOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmCidrmapAssignment) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
 
+// A descriptive label for the CIDR zone group, up to 256 characters.
 func (o GtmCidrmapAssignmentOutput) Nickname() pulumi.StringOutput {
 	return o.ApplyT(func(v GtmCidrmapAssignment) string { return v.Nickname }).(pulumi.StringOutput)
 }
@@ -371,8 +397,10 @@ func (o GtmCidrmapAssignmentArrayOutput) Index(i pulumi.IntInput) GtmCidrmapAssi
 }
 
 type GtmCidrmapDefaultDatacenter struct {
-	DatacenterId int     `pulumi:"datacenterId"`
-	Nickname     *string `pulumi:"nickname"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId int `pulumi:"datacenterId"`
+	// A descriptive label for the CIDR zone group, up to 256 characters.
+	Nickname *string `pulumi:"nickname"`
 }
 
 // GtmCidrmapDefaultDatacenterInput is an input type that accepts GtmCidrmapDefaultDatacenterArgs and GtmCidrmapDefaultDatacenterOutput values.
@@ -387,8 +415,10 @@ type GtmCidrmapDefaultDatacenterInput interface {
 }
 
 type GtmCidrmapDefaultDatacenterArgs struct {
-	DatacenterId pulumi.IntInput       `pulumi:"datacenterId"`
-	Nickname     pulumi.StringPtrInput `pulumi:"nickname"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId pulumi.IntInput `pulumi:"datacenterId"`
+	// A descriptive label for the CIDR zone group, up to 256 characters.
+	Nickname pulumi.StringPtrInput `pulumi:"nickname"`
 }
 
 func (GtmCidrmapDefaultDatacenterArgs) ElementType() reflect.Type {
@@ -468,10 +498,12 @@ func (o GtmCidrmapDefaultDatacenterOutput) ToGtmCidrmapDefaultDatacenterPtrOutpu
 	}).(GtmCidrmapDefaultDatacenterPtrOutput)
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmCidrmapDefaultDatacenterOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmCidrmapDefaultDatacenter) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
 
+// A descriptive label for the CIDR zone group, up to 256 characters.
 func (o GtmCidrmapDefaultDatacenterOutput) Nickname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmCidrmapDefaultDatacenter) *string { return v.Nickname }).(pulumi.StringPtrOutput)
 }
@@ -500,6 +532,7 @@ func (o GtmCidrmapDefaultDatacenterPtrOutput) Elem() GtmCidrmapDefaultDatacenter
 	}).(GtmCidrmapDefaultDatacenterOutput)
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmCidrmapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *GtmCidrmapDefaultDatacenter) *int {
 		if v == nil {
@@ -509,6 +542,7 @@ func (o GtmCidrmapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput
 	}).(pulumi.IntPtrOutput)
 }
 
+// A descriptive label for the CIDR zone group, up to 256 characters.
 func (o GtmCidrmapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GtmCidrmapDefaultDatacenter) *string {
 		if v == nil {
@@ -519,9 +553,12 @@ func (o GtmCidrmapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput 
 }
 
 type GtmDatacenterDefaultLoadObject struct {
-	LoadObject     *string  `pulumi:"loadObject"`
-	LoadObjectPort *int     `pulumi:"loadObjectPort"`
-	LoadServers    []string `pulumi:"loadServers"`
+	// A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
+	LoadObject *string `pulumi:"loadObject"`
+	// Specifies the TCP port to connect to when requesting the load object.
+	LoadObjectPort *int `pulumi:"loadObjectPort"`
+	// Specifies a list of servers to request the load object from.
+	LoadServers []string `pulumi:"loadServers"`
 }
 
 // GtmDatacenterDefaultLoadObjectInput is an input type that accepts GtmDatacenterDefaultLoadObjectArgs and GtmDatacenterDefaultLoadObjectOutput values.
@@ -536,9 +573,12 @@ type GtmDatacenterDefaultLoadObjectInput interface {
 }
 
 type GtmDatacenterDefaultLoadObjectArgs struct {
-	LoadObject     pulumi.StringPtrInput   `pulumi:"loadObject"`
-	LoadObjectPort pulumi.IntPtrInput      `pulumi:"loadObjectPort"`
-	LoadServers    pulumi.StringArrayInput `pulumi:"loadServers"`
+	// A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
+	LoadObject pulumi.StringPtrInput `pulumi:"loadObject"`
+	// Specifies the TCP port to connect to when requesting the load object.
+	LoadObjectPort pulumi.IntPtrInput `pulumi:"loadObjectPort"`
+	// Specifies a list of servers to request the load object from.
+	LoadServers pulumi.StringArrayInput `pulumi:"loadServers"`
 }
 
 func (GtmDatacenterDefaultLoadObjectArgs) ElementType() reflect.Type {
@@ -618,14 +658,17 @@ func (o GtmDatacenterDefaultLoadObjectOutput) ToGtmDatacenterDefaultLoadObjectPt
 	}).(GtmDatacenterDefaultLoadObjectPtrOutput)
 }
 
+// A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
 func (o GtmDatacenterDefaultLoadObjectOutput) LoadObject() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmDatacenterDefaultLoadObject) *string { return v.LoadObject }).(pulumi.StringPtrOutput)
 }
 
+// Specifies the TCP port to connect to when requesting the load object.
 func (o GtmDatacenterDefaultLoadObjectOutput) LoadObjectPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GtmDatacenterDefaultLoadObject) *int { return v.LoadObjectPort }).(pulumi.IntPtrOutput)
 }
 
+// Specifies a list of servers to request the load object from.
 func (o GtmDatacenterDefaultLoadObjectOutput) LoadServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GtmDatacenterDefaultLoadObject) []string { return v.LoadServers }).(pulumi.StringArrayOutput)
 }
@@ -654,6 +697,7 @@ func (o GtmDatacenterDefaultLoadObjectPtrOutput) Elem() GtmDatacenterDefaultLoad
 	}).(GtmDatacenterDefaultLoadObjectOutput)
 }
 
+// A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
 func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadObject() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GtmDatacenterDefaultLoadObject) *string {
 		if v == nil {
@@ -663,6 +707,7 @@ func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadObject() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
+// Specifies the TCP port to connect to when requesting the load object.
 func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadObjectPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *GtmDatacenterDefaultLoadObject) *int {
 		if v == nil {
@@ -672,6 +717,7 @@ func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadObjectPort() pulumi.IntPtrO
 	}).(pulumi.IntPtrOutput)
 }
 
+// Specifies a list of servers to request the load object from.
 func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *GtmDatacenterDefaultLoadObject) []string {
 		if v == nil {
@@ -682,9 +728,12 @@ func (o GtmDatacenterDefaultLoadObjectPtrOutput) LoadServers() pulumi.StringArra
 }
 
 type GtmGeomapAssignment struct {
-	Countries    []string `pulumi:"countries"`
-	DatacenterId int      `pulumi:"datacenterId"`
-	Nickname     string   `pulumi:"nickname"`
+	// Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
+	Countries []string `pulumi:"countries"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId int `pulumi:"datacenterId"`
+	// A descriptive label for the group.
+	Nickname string `pulumi:"nickname"`
 }
 
 // GtmGeomapAssignmentInput is an input type that accepts GtmGeomapAssignmentArgs and GtmGeomapAssignmentOutput values.
@@ -699,9 +748,12 @@ type GtmGeomapAssignmentInput interface {
 }
 
 type GtmGeomapAssignmentArgs struct {
-	Countries    pulumi.StringArrayInput `pulumi:"countries"`
-	DatacenterId pulumi.IntInput         `pulumi:"datacenterId"`
-	Nickname     pulumi.StringInput      `pulumi:"nickname"`
+	// Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
+	Countries pulumi.StringArrayInput `pulumi:"countries"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId pulumi.IntInput `pulumi:"datacenterId"`
+	// A descriptive label for the group.
+	Nickname pulumi.StringInput `pulumi:"nickname"`
 }
 
 func (GtmGeomapAssignmentArgs) ElementType() reflect.Type {
@@ -755,14 +807,17 @@ func (o GtmGeomapAssignmentOutput) ToGtmGeomapAssignmentOutputWithContext(ctx co
 	return o
 }
 
+// Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
 func (o GtmGeomapAssignmentOutput) Countries() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GtmGeomapAssignment) []string { return v.Countries }).(pulumi.StringArrayOutput)
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmGeomapAssignmentOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmGeomapAssignment) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
 
+// A descriptive label for the group.
 func (o GtmGeomapAssignmentOutput) Nickname() pulumi.StringOutput {
 	return o.ApplyT(func(v GtmGeomapAssignment) string { return v.Nickname }).(pulumi.StringOutput)
 }
@@ -788,8 +843,10 @@ func (o GtmGeomapAssignmentArrayOutput) Index(i pulumi.IntInput) GtmGeomapAssign
 }
 
 type GtmGeomapDefaultDatacenter struct {
-	DatacenterId int     `pulumi:"datacenterId"`
-	Nickname     *string `pulumi:"nickname"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId int `pulumi:"datacenterId"`
+	// A descriptive label for the group.
+	Nickname *string `pulumi:"nickname"`
 }
 
 // GtmGeomapDefaultDatacenterInput is an input type that accepts GtmGeomapDefaultDatacenterArgs and GtmGeomapDefaultDatacenterOutput values.
@@ -804,8 +861,10 @@ type GtmGeomapDefaultDatacenterInput interface {
 }
 
 type GtmGeomapDefaultDatacenterArgs struct {
-	DatacenterId pulumi.IntInput       `pulumi:"datacenterId"`
-	Nickname     pulumi.StringPtrInput `pulumi:"nickname"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId pulumi.IntInput `pulumi:"datacenterId"`
+	// A descriptive label for the group.
+	Nickname pulumi.StringPtrInput `pulumi:"nickname"`
 }
 
 func (GtmGeomapDefaultDatacenterArgs) ElementType() reflect.Type {
@@ -885,10 +944,12 @@ func (o GtmGeomapDefaultDatacenterOutput) ToGtmGeomapDefaultDatacenterPtrOutputW
 	}).(GtmGeomapDefaultDatacenterPtrOutput)
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmGeomapDefaultDatacenterOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmGeomapDefaultDatacenter) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
 
+// A descriptive label for the group.
 func (o GtmGeomapDefaultDatacenterOutput) Nickname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmGeomapDefaultDatacenter) *string { return v.Nickname }).(pulumi.StringPtrOutput)
 }
@@ -917,6 +978,7 @@ func (o GtmGeomapDefaultDatacenterPtrOutput) Elem() GtmGeomapDefaultDatacenterOu
 	}).(GtmGeomapDefaultDatacenterOutput)
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmGeomapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *GtmGeomapDefaultDatacenter) *int {
 		if v == nil {
@@ -926,6 +988,7 @@ func (o GtmGeomapDefaultDatacenterPtrOutput) DatacenterId() pulumi.IntPtrOutput 
 	}).(pulumi.IntPtrOutput)
 }
 
+// A descriptive label for the group.
 func (o GtmGeomapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GtmGeomapDefaultDatacenter) *string {
 		if v == nil {
@@ -936,30 +999,54 @@ func (o GtmGeomapDefaultDatacenterPtrOutput) Nickname() pulumi.StringPtrOutput {
 }
 
 type GtmPropertyLivenessTest struct {
-	AnswersRequired               *bool                               `pulumi:"answersRequired"`
-	DisableNonstandardPortWarning *bool                               `pulumi:"disableNonstandardPortWarning"`
-	Disabled                      *bool                               `pulumi:"disabled"`
-	ErrorPenalty                  *float64                            `pulumi:"errorPenalty"`
-	HttpError3xx                  *bool                               `pulumi:"httpError3xx"`
-	HttpError4xx                  *bool                               `pulumi:"httpError4xx"`
-	HttpError5xx                  *bool                               `pulumi:"httpError5xx"`
-	HttpHeaders                   []GtmPropertyLivenessTestHttpHeader `pulumi:"httpHeaders"`
-	Name                          string                              `pulumi:"name"`
-	PeerCertificateVerification   *bool                               `pulumi:"peerCertificateVerification"`
-	RecursionRequested            *bool                               `pulumi:"recursionRequested"`
-	RequestString                 *string                             `pulumi:"requestString"`
-	ResourceType                  *string                             `pulumi:"resourceType"`
-	ResponseString                *string                             `pulumi:"responseString"`
-	SslClientCertificate          *string                             `pulumi:"sslClientCertificate"`
-	SslClientPrivateKey           *string                             `pulumi:"sslClientPrivateKey"`
-	TestInterval                  int                                 `pulumi:"testInterval"`
-	TestObject                    string                              `pulumi:"testObject"`
-	TestObjectPassword            *string                             `pulumi:"testObjectPassword"`
-	TestObjectPort                *int                                `pulumi:"testObjectPort"`
-	TestObjectProtocol            string                              `pulumi:"testObjectProtocol"`
-	TestObjectUsername            *string                             `pulumi:"testObjectUsername"`
-	TestTimeout                   float64                             `pulumi:"testTimeout"`
-	TimeoutPenalty                *float64                            `pulumi:"timeoutPenalty"`
+	// If `testObjectProtocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
+	AnswersRequired *bool `pulumi:"answersRequired"`
+	// A boolean that if set to `true`, disables warnings when non-standard ports are used.
+	DisableNonstandardPortWarning *bool `pulumi:"disableNonstandardPortWarning"`
+	// A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
+	Disabled *bool `pulumi:"disabled"`
+	// Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
+	ErrorPenalty *float64 `pulumi:"errorPenalty"`
+	// A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+	HttpError3xx *bool `pulumi:"httpError3xx"`
+	// A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+	HttpError4xx *bool `pulumi:"httpError4xx"`
+	// A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+	HttpError5xx *bool `pulumi:"httpError5xx"`
+	// Contains HTTP headers to send if the `testObjectProtocol` is `http` or `https`. You can have multiple `httpHeader` entries. Requires these arguments:
+	HttpHeaders []GtmPropertyLivenessTestHttpHeader `pulumi:"httpHeaders"`
+	// Name of HTTP header.
+	Name string `pulumi:"name"`
+	// A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `testObjectProtocol` of https.
+	PeerCertificateVerification *bool `pulumi:"peerCertificateVerification"`
+	// A boolean indicating whether the `testObjectProtocol` is DNS. The DNS query is recursive.
+	RecursionRequested *bool `pulumi:"recursionRequested"`
+	// Specifies a request string.
+	RequestString *string `pulumi:"requestString"`
+	// Specifies the query type, if `testObjectProtocol` is DNS.
+	ResourceType *string `pulumi:"resourceType"`
+	// Specifies a response string.
+	ResponseString *string `pulumi:"responseString"`
+	// Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
+	SslClientCertificate *string `pulumi:"sslClientCertificate"`
+	// Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can't have a passphrase nor be used for any other purpose.
+	SslClientPrivateKey *string `pulumi:"sslClientPrivateKey"`
+	// Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
+	TestInterval int `pulumi:"testInterval"`
+	// Specifies the static text that acts as a stand-in for the data that you're sending on the network.
+	TestObject string `pulumi:"testObject"`
+	// Specifies the test object's password. It is required if testObjectProtocol is ftp.
+	TestObjectPassword *string `pulumi:"testObjectPassword"`
+	// Specifies the port number for the testObject.
+	TestObjectPort *int `pulumi:"testObjectPort"`
+	// Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
+	TestObjectProtocol string `pulumi:"testObjectProtocol"`
+	// A descriptive name for the testObject.
+	TestObjectUsername *string `pulumi:"testObjectUsername"`
+	// Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
+	TestTimeout float64 `pulumi:"testTimeout"`
+	// Specifies the score to be reported if the liveness test times out.
+	TimeoutPenalty *float64 `pulumi:"timeoutPenalty"`
 }
 
 // GtmPropertyLivenessTestInput is an input type that accepts GtmPropertyLivenessTestArgs and GtmPropertyLivenessTestOutput values.
@@ -974,30 +1061,54 @@ type GtmPropertyLivenessTestInput interface {
 }
 
 type GtmPropertyLivenessTestArgs struct {
-	AnswersRequired               pulumi.BoolPtrInput                         `pulumi:"answersRequired"`
-	DisableNonstandardPortWarning pulumi.BoolPtrInput                         `pulumi:"disableNonstandardPortWarning"`
-	Disabled                      pulumi.BoolPtrInput                         `pulumi:"disabled"`
-	ErrorPenalty                  pulumi.Float64PtrInput                      `pulumi:"errorPenalty"`
-	HttpError3xx                  pulumi.BoolPtrInput                         `pulumi:"httpError3xx"`
-	HttpError4xx                  pulumi.BoolPtrInput                         `pulumi:"httpError4xx"`
-	HttpError5xx                  pulumi.BoolPtrInput                         `pulumi:"httpError5xx"`
-	HttpHeaders                   GtmPropertyLivenessTestHttpHeaderArrayInput `pulumi:"httpHeaders"`
-	Name                          pulumi.StringInput                          `pulumi:"name"`
-	PeerCertificateVerification   pulumi.BoolPtrInput                         `pulumi:"peerCertificateVerification"`
-	RecursionRequested            pulumi.BoolPtrInput                         `pulumi:"recursionRequested"`
-	RequestString                 pulumi.StringPtrInput                       `pulumi:"requestString"`
-	ResourceType                  pulumi.StringPtrInput                       `pulumi:"resourceType"`
-	ResponseString                pulumi.StringPtrInput                       `pulumi:"responseString"`
-	SslClientCertificate          pulumi.StringPtrInput                       `pulumi:"sslClientCertificate"`
-	SslClientPrivateKey           pulumi.StringPtrInput                       `pulumi:"sslClientPrivateKey"`
-	TestInterval                  pulumi.IntInput                             `pulumi:"testInterval"`
-	TestObject                    pulumi.StringInput                          `pulumi:"testObject"`
-	TestObjectPassword            pulumi.StringPtrInput                       `pulumi:"testObjectPassword"`
-	TestObjectPort                pulumi.IntPtrInput                          `pulumi:"testObjectPort"`
-	TestObjectProtocol            pulumi.StringInput                          `pulumi:"testObjectProtocol"`
-	TestObjectUsername            pulumi.StringPtrInput                       `pulumi:"testObjectUsername"`
-	TestTimeout                   pulumi.Float64Input                         `pulumi:"testTimeout"`
-	TimeoutPenalty                pulumi.Float64PtrInput                      `pulumi:"timeoutPenalty"`
+	// If `testObjectProtocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
+	AnswersRequired pulumi.BoolPtrInput `pulumi:"answersRequired"`
+	// A boolean that if set to `true`, disables warnings when non-standard ports are used.
+	DisableNonstandardPortWarning pulumi.BoolPtrInput `pulumi:"disableNonstandardPortWarning"`
+	// A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
+	Disabled pulumi.BoolPtrInput `pulumi:"disabled"`
+	// Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
+	ErrorPenalty pulumi.Float64PtrInput `pulumi:"errorPenalty"`
+	// A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+	HttpError3xx pulumi.BoolPtrInput `pulumi:"httpError3xx"`
+	// A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+	HttpError4xx pulumi.BoolPtrInput `pulumi:"httpError4xx"`
+	// A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
+	HttpError5xx pulumi.BoolPtrInput `pulumi:"httpError5xx"`
+	// Contains HTTP headers to send if the `testObjectProtocol` is `http` or `https`. You can have multiple `httpHeader` entries. Requires these arguments:
+	HttpHeaders GtmPropertyLivenessTestHttpHeaderArrayInput `pulumi:"httpHeaders"`
+	// Name of HTTP header.
+	Name pulumi.StringInput `pulumi:"name"`
+	// A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `testObjectProtocol` of https.
+	PeerCertificateVerification pulumi.BoolPtrInput `pulumi:"peerCertificateVerification"`
+	// A boolean indicating whether the `testObjectProtocol` is DNS. The DNS query is recursive.
+	RecursionRequested pulumi.BoolPtrInput `pulumi:"recursionRequested"`
+	// Specifies a request string.
+	RequestString pulumi.StringPtrInput `pulumi:"requestString"`
+	// Specifies the query type, if `testObjectProtocol` is DNS.
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
+	// Specifies a response string.
+	ResponseString pulumi.StringPtrInput `pulumi:"responseString"`
+	// Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
+	SslClientCertificate pulumi.StringPtrInput `pulumi:"sslClientCertificate"`
+	// Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can't have a passphrase nor be used for any other purpose.
+	SslClientPrivateKey pulumi.StringPtrInput `pulumi:"sslClientPrivateKey"`
+	// Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
+	TestInterval pulumi.IntInput `pulumi:"testInterval"`
+	// Specifies the static text that acts as a stand-in for the data that you're sending on the network.
+	TestObject pulumi.StringInput `pulumi:"testObject"`
+	// Specifies the test object's password. It is required if testObjectProtocol is ftp.
+	TestObjectPassword pulumi.StringPtrInput `pulumi:"testObjectPassword"`
+	// Specifies the port number for the testObject.
+	TestObjectPort pulumi.IntPtrInput `pulumi:"testObjectPort"`
+	// Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
+	TestObjectProtocol pulumi.StringInput `pulumi:"testObjectProtocol"`
+	// A descriptive name for the testObject.
+	TestObjectUsername pulumi.StringPtrInput `pulumi:"testObjectUsername"`
+	// Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
+	TestTimeout pulumi.Float64Input `pulumi:"testTimeout"`
+	// Specifies the score to be reported if the liveness test times out.
+	TimeoutPenalty pulumi.Float64PtrInput `pulumi:"timeoutPenalty"`
 }
 
 func (GtmPropertyLivenessTestArgs) ElementType() reflect.Type {
@@ -1051,98 +1162,122 @@ func (o GtmPropertyLivenessTestOutput) ToGtmPropertyLivenessTestOutputWithContex
 	return o
 }
 
+// If `testObjectProtocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
 func (o GtmPropertyLivenessTestOutput) AnswersRequired() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.AnswersRequired }).(pulumi.BoolPtrOutput)
 }
 
+// A boolean that if set to `true`, disables warnings when non-standard ports are used.
 func (o GtmPropertyLivenessTestOutput) DisableNonstandardPortWarning() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.DisableNonstandardPortWarning }).(pulumi.BoolPtrOutput)
 }
 
+// A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
 func (o GtmPropertyLivenessTestOutput) Disabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.Disabled }).(pulumi.BoolPtrOutput)
 }
 
+// Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
 func (o GtmPropertyLivenessTestOutput) ErrorPenalty() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *float64 { return v.ErrorPenalty }).(pulumi.Float64PtrOutput)
 }
 
+// A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
 func (o GtmPropertyLivenessTestOutput) HttpError3xx() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.HttpError3xx }).(pulumi.BoolPtrOutput)
 }
 
+// A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
 func (o GtmPropertyLivenessTestOutput) HttpError4xx() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.HttpError4xx }).(pulumi.BoolPtrOutput)
 }
 
+// A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
 func (o GtmPropertyLivenessTestOutput) HttpError5xx() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.HttpError5xx }).(pulumi.BoolPtrOutput)
 }
 
+// Contains HTTP headers to send if the `testObjectProtocol` is `http` or `https`. You can have multiple `httpHeader` entries. Requires these arguments:
 func (o GtmPropertyLivenessTestOutput) HttpHeaders() GtmPropertyLivenessTestHttpHeaderArrayOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) []GtmPropertyLivenessTestHttpHeader { return v.HttpHeaders }).(GtmPropertyLivenessTestHttpHeaderArrayOutput)
 }
 
+// Name of HTTP header.
 func (o GtmPropertyLivenessTestOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `testObjectProtocol` of https.
 func (o GtmPropertyLivenessTestOutput) PeerCertificateVerification() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.PeerCertificateVerification }).(pulumi.BoolPtrOutput)
 }
 
+// A boolean indicating whether the `testObjectProtocol` is DNS. The DNS query is recursive.
 func (o GtmPropertyLivenessTestOutput) RecursionRequested() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *bool { return v.RecursionRequested }).(pulumi.BoolPtrOutput)
 }
 
+// Specifies a request string.
 func (o GtmPropertyLivenessTestOutput) RequestString() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.RequestString }).(pulumi.StringPtrOutput)
 }
 
+// Specifies the query type, if `testObjectProtocol` is DNS.
 func (o GtmPropertyLivenessTestOutput) ResourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
+// Specifies a response string.
 func (o GtmPropertyLivenessTestOutput) ResponseString() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.ResponseString }).(pulumi.StringPtrOutput)
 }
 
+// Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
 func (o GtmPropertyLivenessTestOutput) SslClientCertificate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.SslClientCertificate }).(pulumi.StringPtrOutput)
 }
 
+// Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can't have a passphrase nor be used for any other purpose.
 func (o GtmPropertyLivenessTestOutput) SslClientPrivateKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.SslClientPrivateKey }).(pulumi.StringPtrOutput)
 }
 
+// Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
 func (o GtmPropertyLivenessTestOutput) TestInterval() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) int { return v.TestInterval }).(pulumi.IntOutput)
 }
 
+// Specifies the static text that acts as a stand-in for the data that you're sending on the network.
 func (o GtmPropertyLivenessTestOutput) TestObject() pulumi.StringOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) string { return v.TestObject }).(pulumi.StringOutput)
 }
 
+// Specifies the test object's password. It is required if testObjectProtocol is ftp.
 func (o GtmPropertyLivenessTestOutput) TestObjectPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.TestObjectPassword }).(pulumi.StringPtrOutput)
 }
 
+// Specifies the port number for the testObject.
 func (o GtmPropertyLivenessTestOutput) TestObjectPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *int { return v.TestObjectPort }).(pulumi.IntPtrOutput)
 }
 
+// Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
 func (o GtmPropertyLivenessTestOutput) TestObjectProtocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) string { return v.TestObjectProtocol }).(pulumi.StringOutput)
 }
 
+// A descriptive name for the testObject.
 func (o GtmPropertyLivenessTestOutput) TestObjectUsername() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *string { return v.TestObjectUsername }).(pulumi.StringPtrOutput)
 }
 
+// Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
 func (o GtmPropertyLivenessTestOutput) TestTimeout() pulumi.Float64Output {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) float64 { return v.TestTimeout }).(pulumi.Float64Output)
 }
 
+// Specifies the score to be reported if the liveness test times out.
 func (o GtmPropertyLivenessTestOutput) TimeoutPenalty() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTest) *float64 { return v.TimeoutPenalty }).(pulumi.Float64PtrOutput)
 }
@@ -1168,7 +1303,9 @@ func (o GtmPropertyLivenessTestArrayOutput) Index(i pulumi.IntInput) GtmProperty
 }
 
 type GtmPropertyLivenessTestHttpHeader struct {
-	Name  *string `pulumi:"name"`
+	// Name of HTTP header.
+	Name *string `pulumi:"name"`
+	// Value of HTTP header.
 	Value *string `pulumi:"value"`
 }
 
@@ -1184,7 +1321,9 @@ type GtmPropertyLivenessTestHttpHeaderInput interface {
 }
 
 type GtmPropertyLivenessTestHttpHeaderArgs struct {
-	Name  pulumi.StringPtrInput `pulumi:"name"`
+	// Name of HTTP header.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Value of HTTP header.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1239,10 +1378,12 @@ func (o GtmPropertyLivenessTestHttpHeaderOutput) ToGtmPropertyLivenessTestHttpHe
 	return o
 }
 
+// Name of HTTP header.
 func (o GtmPropertyLivenessTestHttpHeaderOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTestHttpHeader) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// Value of HTTP header.
 func (o GtmPropertyLivenessTestHttpHeaderOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyLivenessTestHttpHeader) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1268,9 +1409,12 @@ func (o GtmPropertyLivenessTestHttpHeaderArrayOutput) Index(i pulumi.IntInput) G
 }
 
 type GtmPropertyStaticRrSet struct {
+	// (List) An array of data strings, representing multiple records within a set.
 	Rdatas []string `pulumi:"rdatas"`
-	Ttl    *int     `pulumi:"ttl"`
-	Type   *string  `pulumi:"type"`
+	// The number of seconds that this record should live in a resolver's cache before being refetched.
+	Ttl *int `pulumi:"ttl"`
+	// The record type.
+	Type *string `pulumi:"type"`
 }
 
 // GtmPropertyStaticRrSetInput is an input type that accepts GtmPropertyStaticRrSetArgs and GtmPropertyStaticRrSetOutput values.
@@ -1285,9 +1429,12 @@ type GtmPropertyStaticRrSetInput interface {
 }
 
 type GtmPropertyStaticRrSetArgs struct {
+	// (List) An array of data strings, representing multiple records within a set.
 	Rdatas pulumi.StringArrayInput `pulumi:"rdatas"`
-	Ttl    pulumi.IntPtrInput      `pulumi:"ttl"`
-	Type   pulumi.StringPtrInput   `pulumi:"type"`
+	// The number of seconds that this record should live in a resolver's cache before being refetched.
+	Ttl pulumi.IntPtrInput `pulumi:"ttl"`
+	// The record type.
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GtmPropertyStaticRrSetArgs) ElementType() reflect.Type {
@@ -1341,14 +1488,17 @@ func (o GtmPropertyStaticRrSetOutput) ToGtmPropertyStaticRrSetOutputWithContext(
 	return o
 }
 
+// (List) An array of data strings, representing multiple records within a set.
 func (o GtmPropertyStaticRrSetOutput) Rdatas() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GtmPropertyStaticRrSet) []string { return v.Rdatas }).(pulumi.StringArrayOutput)
 }
 
+// The number of seconds that this record should live in a resolver's cache before being refetched.
 func (o GtmPropertyStaticRrSetOutput) Ttl() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GtmPropertyStaticRrSet) *int { return v.Ttl }).(pulumi.IntPtrOutput)
 }
 
+// The record type.
 func (o GtmPropertyStaticRrSetOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyStaticRrSet) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -1374,12 +1524,18 @@ func (o GtmPropertyStaticRrSetArrayOutput) Index(i pulumi.IntInput) GtmPropertyS
 }
 
 type GtmPropertyTrafficTarget struct {
-	DatacenterId *int     `pulumi:"datacenterId"`
-	Enabled      *bool    `pulumi:"enabled"`
-	HandoutCname *string  `pulumi:"handoutCname"`
-	Name         *string  `pulumi:"name"`
-	Servers      []string `pulumi:"servers"`
-	Weight       *float64 `pulumi:"weight"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId *int `pulumi:"datacenterId"`
+	// A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
+	Enabled *bool `pulumi:"enabled"`
+	// Specifies an optional data center for the property. Used when there are no servers configured for the property.
+	HandoutCname *string `pulumi:"handoutCname"`
+	// Name of HTTP header.
+	Name *string `pulumi:"name"`
+	// (List) Identifies the IP address or the hostnames of the servers.
+	Servers []string `pulumi:"servers"`
+	// Specifies the traffic weight for the target.
+	Weight *float64 `pulumi:"weight"`
 }
 
 // GtmPropertyTrafficTargetInput is an input type that accepts GtmPropertyTrafficTargetArgs and GtmPropertyTrafficTargetOutput values.
@@ -1394,12 +1550,18 @@ type GtmPropertyTrafficTargetInput interface {
 }
 
 type GtmPropertyTrafficTargetArgs struct {
-	DatacenterId pulumi.IntPtrInput      `pulumi:"datacenterId"`
-	Enabled      pulumi.BoolPtrInput     `pulumi:"enabled"`
-	HandoutCname pulumi.StringPtrInput   `pulumi:"handoutCname"`
-	Name         pulumi.StringPtrInput   `pulumi:"name"`
-	Servers      pulumi.StringArrayInput `pulumi:"servers"`
-	Weight       pulumi.Float64PtrInput  `pulumi:"weight"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId pulumi.IntPtrInput `pulumi:"datacenterId"`
+	// A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// Specifies an optional data center for the property. Used when there are no servers configured for the property.
+	HandoutCname pulumi.StringPtrInput `pulumi:"handoutCname"`
+	// Name of HTTP header.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (List) Identifies the IP address or the hostnames of the servers.
+	Servers pulumi.StringArrayInput `pulumi:"servers"`
+	// Specifies the traffic weight for the target.
+	Weight pulumi.Float64PtrInput `pulumi:"weight"`
 }
 
 func (GtmPropertyTrafficTargetArgs) ElementType() reflect.Type {
@@ -1453,26 +1615,32 @@ func (o GtmPropertyTrafficTargetOutput) ToGtmPropertyTrafficTargetOutputWithCont
 	return o
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmPropertyTrafficTargetOutput) DatacenterId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *int { return v.DatacenterId }).(pulumi.IntPtrOutput)
 }
 
+// A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
 func (o GtmPropertyTrafficTargetOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
+// Specifies an optional data center for the property. Used when there are no servers configured for the property.
 func (o GtmPropertyTrafficTargetOutput) HandoutCname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *string { return v.HandoutCname }).(pulumi.StringPtrOutput)
 }
 
+// Name of HTTP header.
 func (o GtmPropertyTrafficTargetOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// (List) Identifies the IP address or the hostnames of the servers.
 func (o GtmPropertyTrafficTargetOutput) Servers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) []string { return v.Servers }).(pulumi.StringArrayOutput)
 }
 
+// Specifies the traffic weight for the target.
 func (o GtmPropertyTrafficTargetOutput) Weight() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *float64 { return v.Weight }).(pulumi.Float64PtrOutput)
 }
@@ -1498,11 +1666,16 @@ func (o GtmPropertyTrafficTargetArrayOutput) Index(i pulumi.IntInput) GtmPropert
 }
 
 type GtmResourceResourceInstance struct {
-	DatacenterId         int      `pulumi:"datacenterId"`
-	LoadObject           *string  `pulumi:"loadObject"`
-	LoadObjectPort       *int     `pulumi:"loadObjectPort"`
-	LoadServers          []string `pulumi:"loadServers"`
-	UseDefaultLoadObject *bool    `pulumi:"useDefaultLoadObject"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId int `pulumi:"datacenterId"`
+	// Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
+	LoadObject *string `pulumi:"loadObject"`
+	// Specifies the TCP port of the `loadObject`.
+	LoadObjectPort *int `pulumi:"loadObjectPort"`
+	// (List) Specifies a list of servers from which to request the load object.
+	LoadServers []string `pulumi:"loadServers"`
+	// A boolean that indicates whether a default `loadObject` is used for the resources.
+	UseDefaultLoadObject *bool `pulumi:"useDefaultLoadObject"`
 }
 
 // GtmResourceResourceInstanceInput is an input type that accepts GtmResourceResourceInstanceArgs and GtmResourceResourceInstanceOutput values.
@@ -1517,11 +1690,16 @@ type GtmResourceResourceInstanceInput interface {
 }
 
 type GtmResourceResourceInstanceArgs struct {
-	DatacenterId         pulumi.IntInput         `pulumi:"datacenterId"`
-	LoadObject           pulumi.StringPtrInput   `pulumi:"loadObject"`
-	LoadObjectPort       pulumi.IntPtrInput      `pulumi:"loadObjectPort"`
-	LoadServers          pulumi.StringArrayInput `pulumi:"loadServers"`
-	UseDefaultLoadObject pulumi.BoolPtrInput     `pulumi:"useDefaultLoadObject"`
+	// A unique identifier for an existing data center in the domain.
+	DatacenterId pulumi.IntInput `pulumi:"datacenterId"`
+	// Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
+	LoadObject pulumi.StringPtrInput `pulumi:"loadObject"`
+	// Specifies the TCP port of the `loadObject`.
+	LoadObjectPort pulumi.IntPtrInput `pulumi:"loadObjectPort"`
+	// (List) Specifies a list of servers from which to request the load object.
+	LoadServers pulumi.StringArrayInput `pulumi:"loadServers"`
+	// A boolean that indicates whether a default `loadObject` is used for the resources.
+	UseDefaultLoadObject pulumi.BoolPtrInput `pulumi:"useDefaultLoadObject"`
 }
 
 func (GtmResourceResourceInstanceArgs) ElementType() reflect.Type {
@@ -1575,22 +1753,27 @@ func (o GtmResourceResourceInstanceOutput) ToGtmResourceResourceInstanceOutputWi
 	return o
 }
 
+// A unique identifier for an existing data center in the domain.
 func (o GtmResourceResourceInstanceOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v GtmResourceResourceInstance) int { return v.DatacenterId }).(pulumi.IntOutput)
 }
 
+// Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
 func (o GtmResourceResourceInstanceOutput) LoadObject() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmResourceResourceInstance) *string { return v.LoadObject }).(pulumi.StringPtrOutput)
 }
 
+// Specifies the TCP port of the `loadObject`.
 func (o GtmResourceResourceInstanceOutput) LoadObjectPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GtmResourceResourceInstance) *int { return v.LoadObjectPort }).(pulumi.IntPtrOutput)
 }
 
+// (List) Specifies a list of servers from which to request the load object.
 func (o GtmResourceResourceInstanceOutput) LoadServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GtmResourceResourceInstance) []string { return v.LoadServers }).(pulumi.StringArrayOutput)
 }
 
+// A boolean that indicates whether a default `loadObject` is used for the resources.
 func (o GtmResourceResourceInstanceOutput) UseDefaultLoadObject() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GtmResourceResourceInstance) *bool { return v.UseDefaultLoadObject }).(pulumi.BoolPtrOutput)
 }

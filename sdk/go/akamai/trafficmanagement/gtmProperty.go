@@ -11,44 +11,116 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Use the `GtmProperty` resource to create, configure and import a GTM property, a set of IP addresses or CNAMEs that GTM provides in response to DNS queries based on a set of rules.
+//
+// > **Note** Import requires an ID with this format: `existingDomainName`:`existingPropertyName`.
+//
+// ## Example Usage
+//
+// Basic usage:
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		_, err := akamai.NewGtmProperty(ctx, "demoProperty", &akamai.GtmPropertyArgs{
+// 			Domain:               pulumi.String("demo_domain.akadns.net"),
+// 			HandoutLimit:         pulumi.Int(5),
+// 			HandoutMode:          pulumi.String("normal"),
+// 			ScoreAggregationType: pulumi.String("median"),
+// 			TrafficTargets: GtmPropertyTrafficTargetArray{
+// 				&GtmPropertyTrafficTargetArgs{
+// 					DatacenterId: pulumi.Int(3131),
+// 				},
+// 			},
+// 			Type: pulumi.String("weighted-round-robin"),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
+// ## Schema reference
+//
+// You can download the GTM Property backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#property) page.
+//
 // Deprecated: akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty
 type GtmProperty struct {
 	pulumi.CustomResourceState
 
-	BackupCname               pulumi.StringPtrOutput              `pulumi:"backupCname"`
-	BackupIp                  pulumi.StringPtrOutput              `pulumi:"backupIp"`
-	BalanceByDownloadScore    pulumi.BoolPtrOutput                `pulumi:"balanceByDownloadScore"`
-	Cname                     pulumi.StringPtrOutput              `pulumi:"cname"`
-	Comments                  pulumi.StringPtrOutput              `pulumi:"comments"`
-	Domain                    pulumi.StringOutput                 `pulumi:"domain"`
-	DynamicTtl                pulumi.IntPtrOutput                 `pulumi:"dynamicTtl"`
-	FailbackDelay             pulumi.IntPtrOutput                 `pulumi:"failbackDelay"`
-	FailoverDelay             pulumi.IntPtrOutput                 `pulumi:"failoverDelay"`
-	GhostDemandReporting      pulumi.BoolPtrOutput                `pulumi:"ghostDemandReporting"`
-	HandoutLimit              pulumi.IntOutput                    `pulumi:"handoutLimit"`
-	HandoutMode               pulumi.StringOutput                 `pulumi:"handoutMode"`
-	HealthMax                 pulumi.Float64PtrOutput             `pulumi:"healthMax"`
-	HealthMultiplier          pulumi.Float64PtrOutput             `pulumi:"healthMultiplier"`
-	HealthThreshold           pulumi.Float64PtrOutput             `pulumi:"healthThreshold"`
-	Ipv6                      pulumi.BoolPtrOutput                `pulumi:"ipv6"`
-	LivenessTests             GtmPropertyLivenessTestArrayOutput  `pulumi:"livenessTests"`
-	LoadImbalancePercentage   pulumi.Float64PtrOutput             `pulumi:"loadImbalancePercentage"`
-	MapName                   pulumi.StringPtrOutput              `pulumi:"mapName"`
-	MaxUnreachablePenalty     pulumi.IntPtrOutput                 `pulumi:"maxUnreachablePenalty"`
-	MinLiveFraction           pulumi.Float64PtrOutput             `pulumi:"minLiveFraction"`
-	Name                      pulumi.StringOutput                 `pulumi:"name"`
-	ScoreAggregationType      pulumi.StringOutput                 `pulumi:"scoreAggregationType"`
-	StaticRrSets              GtmPropertyStaticRrSetArrayOutput   `pulumi:"staticRrSets"`
-	StaticTtl                 pulumi.IntPtrOutput                 `pulumi:"staticTtl"`
-	StickinessBonusConstant   pulumi.IntPtrOutput                 `pulumi:"stickinessBonusConstant"`
-	StickinessBonusPercentage pulumi.IntPtrOutput                 `pulumi:"stickinessBonusPercentage"`
-	TrafficTargets            GtmPropertyTrafficTargetArrayOutput `pulumi:"trafficTargets"`
-	Type                      pulumi.StringOutput                 `pulumi:"type"`
-	UnreachableThreshold      pulumi.Float64PtrOutput             `pulumi:"unreachableThreshold"`
-	UseComputedTargets        pulumi.BoolPtrOutput                `pulumi:"useComputedTargets"`
-	WaitOnComplete            pulumi.BoolPtrOutput                `pulumi:"waitOnComplete"`
-	WeightedHashBitsForIpv4   pulumi.IntOutput                    `pulumi:"weightedHashBitsForIpv4"`
-	WeightedHashBitsForIpv6   pulumi.IntOutput                    `pulumi:"weightedHashBitsForIpv6"`
+	// Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
+	BackupCname pulumi.StringPtrOutput `pulumi:"backupCname"`
+	// Specifies a backup IP. When GTM declares that all of the targets are down, the backup IP is handed out. If a backup IP is set, do not set a backup CNAME.
+	BackupIp pulumi.StringPtrOutput `pulumi:"backupIp"`
+	// A boolean that indicates whether download score based load balancing is enabled.
+	BalanceByDownloadScore pulumi.BoolPtrOutput `pulumi:"balanceByDownloadScore"`
+	// Indicates the fully qualified name aliased to a particular property.
+	Cname pulumi.StringPtrOutput `pulumi:"cname"`
+	// A descriptive note about changes to the domain. The maximum is 4000 characters.
+	Comments pulumi.StringPtrOutput `pulumi:"comments"`
+	// DNS name for the GTM Domain set that includes this Property.
+	Domain pulumi.StringOutput `pulumi:"domain"`
+	// Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing such as A and AAAA records, and CNAMEs.
+	DynamicTtl pulumi.IntPtrOutput `pulumi:"dynamicTtl"`
+	// Specifies the failback delay in seconds.
+	FailbackDelay pulumi.IntPtrOutput `pulumi:"failbackDelay"`
+	// Specifies the failover delay in seconds.
+	FailoverDelay pulumi.IntPtrOutput `pulumi:"failoverDelay"`
+	// Use load estimates from Akamai Ghost utilization messages.
+	GhostDemandReporting pulumi.BoolPtrOutput `pulumi:"ghostDemandReporting"`
+	// Indicates the limit for the number of live IPs handed out to a DNS request.
+	HandoutLimit pulumi.IntOutput `pulumi:"handoutLimit"`
+	// Specifies how IPs are returned when more than one IP is alive and available.
+	HandoutMode pulumi.StringOutput `pulumi:"handoutMode"`
+	// Defines the absolute limit beyond which IPs are declared unhealthy.
+	HealthMax pulumi.Float64PtrOutput `pulumi:"healthMax"`
+	// Configures a cutoff value that is computed from the median scores.
+	HealthMultiplier pulumi.Float64PtrOutput `pulumi:"healthMultiplier"`
+	// Configures a cutoff value that is computed from the median scores.
+	HealthThreshold pulumi.Float64PtrOutput `pulumi:"healthThreshold"`
+	// A boolean that indicates the type of IP address handed out by a GTM property.
+	Ipv6 pulumi.BoolPtrOutput `pulumi:"ipv6"`
+	// Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `livenessTest` arguments. If used, requires these arguments:
+	LivenessTests GtmPropertyLivenessTestArrayOutput `pulumi:"livenessTests"`
+	// Indicates the percent of load imbalance factor (LIF) for the property.
+	LoadImbalancePercentage pulumi.Float64PtrOutput `pulumi:"loadImbalancePercentage"`
+	// A descriptive label for a GeographicMap or a CidrMap that's required if the property is either geographic or cidrmapping, in which case mapName needs to reference either an existing GeographicMap or CidrMap in the same domain.
+	MapName pulumi.StringPtrOutput `pulumi:"mapName"`
+	// For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
+	MaxUnreachablePenalty pulumi.IntPtrOutput `pulumi:"maxUnreachablePenalty"`
+	// Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
+	MinLiveFraction pulumi.Float64PtrOutput `pulumi:"minLiveFraction"`
+	// Name of HTTP header.
+	Name pulumi.StringOutput `pulumi:"name"`
+	// Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
+	ScoreAggregationType pulumi.StringOutput `pulumi:"scoreAggregationType"`
+	// Contains static record sets. You can have multiple `staticRrSet` entries. Requires these arguments:
+	StaticRrSets GtmPropertyStaticRrSetArrayOutput `pulumi:"staticRrSets"`
+	StaticTtl    pulumi.IntPtrOutput               `pulumi:"staticTtl"`
+	// Specifies a constant used to configure data center affinity.
+	StickinessBonusConstant pulumi.IntPtrOutput `pulumi:"stickinessBonusConstant"`
+	// Specifies a percentage used to configure data center affinity.
+	StickinessBonusPercentage pulumi.IntPtrOutput `pulumi:"stickinessBonusPercentage"`
+	// Contains information about where to direct data center traffic. You can have multiple `trafficTarget` arguments. If used, includes these arguments:
+	TrafficTargets GtmPropertyTrafficTargetArrayOutput `pulumi:"trafficTargets"`
+	// The record type.
+	Type pulumi.StringOutput `pulumi:"type"`
+	// For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
+	UnreachableThreshold pulumi.Float64PtrOutput `pulumi:"unreachableThreshold"`
+	// For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
+	UseComputedTargets pulumi.BoolPtrOutput `pulumi:"useComputedTargets"`
+	// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+	WaitOnComplete          pulumi.BoolPtrOutput `pulumi:"waitOnComplete"`
+	WeightedHashBitsForIpv4 pulumi.IntOutput     `pulumi:"weightedHashBitsForIpv4"`
+	WeightedHashBitsForIpv6 pulumi.IntOutput     `pulumi:"weightedHashBitsForIpv6"`
 }
 
 // NewGtmProperty registers a new resource with the given unique name, arguments, and options.
@@ -95,77 +167,139 @@ func GetGtmProperty(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering GtmProperty resources.
 type gtmPropertyState struct {
-	BackupCname               *string                    `pulumi:"backupCname"`
-	BackupIp                  *string                    `pulumi:"backupIp"`
-	BalanceByDownloadScore    *bool                      `pulumi:"balanceByDownloadScore"`
-	Cname                     *string                    `pulumi:"cname"`
-	Comments                  *string                    `pulumi:"comments"`
-	Domain                    *string                    `pulumi:"domain"`
-	DynamicTtl                *int                       `pulumi:"dynamicTtl"`
-	FailbackDelay             *int                       `pulumi:"failbackDelay"`
-	FailoverDelay             *int                       `pulumi:"failoverDelay"`
-	GhostDemandReporting      *bool                      `pulumi:"ghostDemandReporting"`
-	HandoutLimit              *int                       `pulumi:"handoutLimit"`
-	HandoutMode               *string                    `pulumi:"handoutMode"`
-	HealthMax                 *float64                   `pulumi:"healthMax"`
-	HealthMultiplier          *float64                   `pulumi:"healthMultiplier"`
-	HealthThreshold           *float64                   `pulumi:"healthThreshold"`
-	Ipv6                      *bool                      `pulumi:"ipv6"`
-	LivenessTests             []GtmPropertyLivenessTest  `pulumi:"livenessTests"`
-	LoadImbalancePercentage   *float64                   `pulumi:"loadImbalancePercentage"`
-	MapName                   *string                    `pulumi:"mapName"`
-	MaxUnreachablePenalty     *int                       `pulumi:"maxUnreachablePenalty"`
-	MinLiveFraction           *float64                   `pulumi:"minLiveFraction"`
-	Name                      *string                    `pulumi:"name"`
-	ScoreAggregationType      *string                    `pulumi:"scoreAggregationType"`
-	StaticRrSets              []GtmPropertyStaticRrSet   `pulumi:"staticRrSets"`
-	StaticTtl                 *int                       `pulumi:"staticTtl"`
-	StickinessBonusConstant   *int                       `pulumi:"stickinessBonusConstant"`
-	StickinessBonusPercentage *int                       `pulumi:"stickinessBonusPercentage"`
-	TrafficTargets            []GtmPropertyTrafficTarget `pulumi:"trafficTargets"`
-	Type                      *string                    `pulumi:"type"`
-	UnreachableThreshold      *float64                   `pulumi:"unreachableThreshold"`
-	UseComputedTargets        *bool                      `pulumi:"useComputedTargets"`
-	WaitOnComplete            *bool                      `pulumi:"waitOnComplete"`
-	WeightedHashBitsForIpv4   *int                       `pulumi:"weightedHashBitsForIpv4"`
-	WeightedHashBitsForIpv6   *int                       `pulumi:"weightedHashBitsForIpv6"`
+	// Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
+	BackupCname *string `pulumi:"backupCname"`
+	// Specifies a backup IP. When GTM declares that all of the targets are down, the backup IP is handed out. If a backup IP is set, do not set a backup CNAME.
+	BackupIp *string `pulumi:"backupIp"`
+	// A boolean that indicates whether download score based load balancing is enabled.
+	BalanceByDownloadScore *bool `pulumi:"balanceByDownloadScore"`
+	// Indicates the fully qualified name aliased to a particular property.
+	Cname *string `pulumi:"cname"`
+	// A descriptive note about changes to the domain. The maximum is 4000 characters.
+	Comments *string `pulumi:"comments"`
+	// DNS name for the GTM Domain set that includes this Property.
+	Domain *string `pulumi:"domain"`
+	// Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing such as A and AAAA records, and CNAMEs.
+	DynamicTtl *int `pulumi:"dynamicTtl"`
+	// Specifies the failback delay in seconds.
+	FailbackDelay *int `pulumi:"failbackDelay"`
+	// Specifies the failover delay in seconds.
+	FailoverDelay *int `pulumi:"failoverDelay"`
+	// Use load estimates from Akamai Ghost utilization messages.
+	GhostDemandReporting *bool `pulumi:"ghostDemandReporting"`
+	// Indicates the limit for the number of live IPs handed out to a DNS request.
+	HandoutLimit *int `pulumi:"handoutLimit"`
+	// Specifies how IPs are returned when more than one IP is alive and available.
+	HandoutMode *string `pulumi:"handoutMode"`
+	// Defines the absolute limit beyond which IPs are declared unhealthy.
+	HealthMax *float64 `pulumi:"healthMax"`
+	// Configures a cutoff value that is computed from the median scores.
+	HealthMultiplier *float64 `pulumi:"healthMultiplier"`
+	// Configures a cutoff value that is computed from the median scores.
+	HealthThreshold *float64 `pulumi:"healthThreshold"`
+	// A boolean that indicates the type of IP address handed out by a GTM property.
+	Ipv6 *bool `pulumi:"ipv6"`
+	// Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `livenessTest` arguments. If used, requires these arguments:
+	LivenessTests []GtmPropertyLivenessTest `pulumi:"livenessTests"`
+	// Indicates the percent of load imbalance factor (LIF) for the property.
+	LoadImbalancePercentage *float64 `pulumi:"loadImbalancePercentage"`
+	// A descriptive label for a GeographicMap or a CidrMap that's required if the property is either geographic or cidrmapping, in which case mapName needs to reference either an existing GeographicMap or CidrMap in the same domain.
+	MapName *string `pulumi:"mapName"`
+	// For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
+	MaxUnreachablePenalty *int `pulumi:"maxUnreachablePenalty"`
+	// Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
+	MinLiveFraction *float64 `pulumi:"minLiveFraction"`
+	// Name of HTTP header.
+	Name *string `pulumi:"name"`
+	// Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
+	ScoreAggregationType *string `pulumi:"scoreAggregationType"`
+	// Contains static record sets. You can have multiple `staticRrSet` entries. Requires these arguments:
+	StaticRrSets []GtmPropertyStaticRrSet `pulumi:"staticRrSets"`
+	StaticTtl    *int                     `pulumi:"staticTtl"`
+	// Specifies a constant used to configure data center affinity.
+	StickinessBonusConstant *int `pulumi:"stickinessBonusConstant"`
+	// Specifies a percentage used to configure data center affinity.
+	StickinessBonusPercentage *int `pulumi:"stickinessBonusPercentage"`
+	// Contains information about where to direct data center traffic. You can have multiple `trafficTarget` arguments. If used, includes these arguments:
+	TrafficTargets []GtmPropertyTrafficTarget `pulumi:"trafficTargets"`
+	// The record type.
+	Type *string `pulumi:"type"`
+	// For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
+	UnreachableThreshold *float64 `pulumi:"unreachableThreshold"`
+	// For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
+	UseComputedTargets *bool `pulumi:"useComputedTargets"`
+	// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+	WaitOnComplete          *bool `pulumi:"waitOnComplete"`
+	WeightedHashBitsForIpv4 *int  `pulumi:"weightedHashBitsForIpv4"`
+	WeightedHashBitsForIpv6 *int  `pulumi:"weightedHashBitsForIpv6"`
 }
 
 type GtmPropertyState struct {
-	BackupCname               pulumi.StringPtrInput
-	BackupIp                  pulumi.StringPtrInput
-	BalanceByDownloadScore    pulumi.BoolPtrInput
-	Cname                     pulumi.StringPtrInput
-	Comments                  pulumi.StringPtrInput
-	Domain                    pulumi.StringPtrInput
-	DynamicTtl                pulumi.IntPtrInput
-	FailbackDelay             pulumi.IntPtrInput
-	FailoverDelay             pulumi.IntPtrInput
-	GhostDemandReporting      pulumi.BoolPtrInput
-	HandoutLimit              pulumi.IntPtrInput
-	HandoutMode               pulumi.StringPtrInput
-	HealthMax                 pulumi.Float64PtrInput
-	HealthMultiplier          pulumi.Float64PtrInput
-	HealthThreshold           pulumi.Float64PtrInput
-	Ipv6                      pulumi.BoolPtrInput
-	LivenessTests             GtmPropertyLivenessTestArrayInput
-	LoadImbalancePercentage   pulumi.Float64PtrInput
-	MapName                   pulumi.StringPtrInput
-	MaxUnreachablePenalty     pulumi.IntPtrInput
-	MinLiveFraction           pulumi.Float64PtrInput
-	Name                      pulumi.StringPtrInput
-	ScoreAggregationType      pulumi.StringPtrInput
-	StaticRrSets              GtmPropertyStaticRrSetArrayInput
-	StaticTtl                 pulumi.IntPtrInput
-	StickinessBonusConstant   pulumi.IntPtrInput
+	// Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
+	BackupCname pulumi.StringPtrInput
+	// Specifies a backup IP. When GTM declares that all of the targets are down, the backup IP is handed out. If a backup IP is set, do not set a backup CNAME.
+	BackupIp pulumi.StringPtrInput
+	// A boolean that indicates whether download score based load balancing is enabled.
+	BalanceByDownloadScore pulumi.BoolPtrInput
+	// Indicates the fully qualified name aliased to a particular property.
+	Cname pulumi.StringPtrInput
+	// A descriptive note about changes to the domain. The maximum is 4000 characters.
+	Comments pulumi.StringPtrInput
+	// DNS name for the GTM Domain set that includes this Property.
+	Domain pulumi.StringPtrInput
+	// Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing such as A and AAAA records, and CNAMEs.
+	DynamicTtl pulumi.IntPtrInput
+	// Specifies the failback delay in seconds.
+	FailbackDelay pulumi.IntPtrInput
+	// Specifies the failover delay in seconds.
+	FailoverDelay pulumi.IntPtrInput
+	// Use load estimates from Akamai Ghost utilization messages.
+	GhostDemandReporting pulumi.BoolPtrInput
+	// Indicates the limit for the number of live IPs handed out to a DNS request.
+	HandoutLimit pulumi.IntPtrInput
+	// Specifies how IPs are returned when more than one IP is alive and available.
+	HandoutMode pulumi.StringPtrInput
+	// Defines the absolute limit beyond which IPs are declared unhealthy.
+	HealthMax pulumi.Float64PtrInput
+	// Configures a cutoff value that is computed from the median scores.
+	HealthMultiplier pulumi.Float64PtrInput
+	// Configures a cutoff value that is computed from the median scores.
+	HealthThreshold pulumi.Float64PtrInput
+	// A boolean that indicates the type of IP address handed out by a GTM property.
+	Ipv6 pulumi.BoolPtrInput
+	// Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `livenessTest` arguments. If used, requires these arguments:
+	LivenessTests GtmPropertyLivenessTestArrayInput
+	// Indicates the percent of load imbalance factor (LIF) for the property.
+	LoadImbalancePercentage pulumi.Float64PtrInput
+	// A descriptive label for a GeographicMap or a CidrMap that's required if the property is either geographic or cidrmapping, in which case mapName needs to reference either an existing GeographicMap or CidrMap in the same domain.
+	MapName pulumi.StringPtrInput
+	// For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
+	MaxUnreachablePenalty pulumi.IntPtrInput
+	// Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
+	MinLiveFraction pulumi.Float64PtrInput
+	// Name of HTTP header.
+	Name pulumi.StringPtrInput
+	// Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
+	ScoreAggregationType pulumi.StringPtrInput
+	// Contains static record sets. You can have multiple `staticRrSet` entries. Requires these arguments:
+	StaticRrSets GtmPropertyStaticRrSetArrayInput
+	StaticTtl    pulumi.IntPtrInput
+	// Specifies a constant used to configure data center affinity.
+	StickinessBonusConstant pulumi.IntPtrInput
+	// Specifies a percentage used to configure data center affinity.
 	StickinessBonusPercentage pulumi.IntPtrInput
-	TrafficTargets            GtmPropertyTrafficTargetArrayInput
-	Type                      pulumi.StringPtrInput
-	UnreachableThreshold      pulumi.Float64PtrInput
-	UseComputedTargets        pulumi.BoolPtrInput
-	WaitOnComplete            pulumi.BoolPtrInput
-	WeightedHashBitsForIpv4   pulumi.IntPtrInput
-	WeightedHashBitsForIpv6   pulumi.IntPtrInput
+	// Contains information about where to direct data center traffic. You can have multiple `trafficTarget` arguments. If used, includes these arguments:
+	TrafficTargets GtmPropertyTrafficTargetArrayInput
+	// The record type.
+	Type pulumi.StringPtrInput
+	// For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
+	UnreachableThreshold pulumi.Float64PtrInput
+	// For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
+	UseComputedTargets pulumi.BoolPtrInput
+	// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+	WaitOnComplete          pulumi.BoolPtrInput
+	WeightedHashBitsForIpv4 pulumi.IntPtrInput
+	WeightedHashBitsForIpv6 pulumi.IntPtrInput
 }
 
 func (GtmPropertyState) ElementType() reflect.Type {
@@ -173,74 +307,136 @@ func (GtmPropertyState) ElementType() reflect.Type {
 }
 
 type gtmPropertyArgs struct {
-	BackupCname               *string                    `pulumi:"backupCname"`
-	BackupIp                  *string                    `pulumi:"backupIp"`
-	BalanceByDownloadScore    *bool                      `pulumi:"balanceByDownloadScore"`
-	Cname                     *string                    `pulumi:"cname"`
-	Comments                  *string                    `pulumi:"comments"`
-	Domain                    string                     `pulumi:"domain"`
-	DynamicTtl                *int                       `pulumi:"dynamicTtl"`
-	FailbackDelay             *int                       `pulumi:"failbackDelay"`
-	FailoverDelay             *int                       `pulumi:"failoverDelay"`
-	GhostDemandReporting      *bool                      `pulumi:"ghostDemandReporting"`
-	HandoutLimit              int                        `pulumi:"handoutLimit"`
-	HandoutMode               string                     `pulumi:"handoutMode"`
-	HealthMax                 *float64                   `pulumi:"healthMax"`
-	HealthMultiplier          *float64                   `pulumi:"healthMultiplier"`
-	HealthThreshold           *float64                   `pulumi:"healthThreshold"`
-	Ipv6                      *bool                      `pulumi:"ipv6"`
-	LivenessTests             []GtmPropertyLivenessTest  `pulumi:"livenessTests"`
-	LoadImbalancePercentage   *float64                   `pulumi:"loadImbalancePercentage"`
-	MapName                   *string                    `pulumi:"mapName"`
-	MaxUnreachablePenalty     *int                       `pulumi:"maxUnreachablePenalty"`
-	MinLiveFraction           *float64                   `pulumi:"minLiveFraction"`
-	Name                      *string                    `pulumi:"name"`
-	ScoreAggregationType      string                     `pulumi:"scoreAggregationType"`
-	StaticRrSets              []GtmPropertyStaticRrSet   `pulumi:"staticRrSets"`
-	StaticTtl                 *int                       `pulumi:"staticTtl"`
-	StickinessBonusConstant   *int                       `pulumi:"stickinessBonusConstant"`
-	StickinessBonusPercentage *int                       `pulumi:"stickinessBonusPercentage"`
-	TrafficTargets            []GtmPropertyTrafficTarget `pulumi:"trafficTargets"`
-	Type                      string                     `pulumi:"type"`
-	UnreachableThreshold      *float64                   `pulumi:"unreachableThreshold"`
-	UseComputedTargets        *bool                      `pulumi:"useComputedTargets"`
-	WaitOnComplete            *bool                      `pulumi:"waitOnComplete"`
+	// Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
+	BackupCname *string `pulumi:"backupCname"`
+	// Specifies a backup IP. When GTM declares that all of the targets are down, the backup IP is handed out. If a backup IP is set, do not set a backup CNAME.
+	BackupIp *string `pulumi:"backupIp"`
+	// A boolean that indicates whether download score based load balancing is enabled.
+	BalanceByDownloadScore *bool `pulumi:"balanceByDownloadScore"`
+	// Indicates the fully qualified name aliased to a particular property.
+	Cname *string `pulumi:"cname"`
+	// A descriptive note about changes to the domain. The maximum is 4000 characters.
+	Comments *string `pulumi:"comments"`
+	// DNS name for the GTM Domain set that includes this Property.
+	Domain string `pulumi:"domain"`
+	// Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing such as A and AAAA records, and CNAMEs.
+	DynamicTtl *int `pulumi:"dynamicTtl"`
+	// Specifies the failback delay in seconds.
+	FailbackDelay *int `pulumi:"failbackDelay"`
+	// Specifies the failover delay in seconds.
+	FailoverDelay *int `pulumi:"failoverDelay"`
+	// Use load estimates from Akamai Ghost utilization messages.
+	GhostDemandReporting *bool `pulumi:"ghostDemandReporting"`
+	// Indicates the limit for the number of live IPs handed out to a DNS request.
+	HandoutLimit int `pulumi:"handoutLimit"`
+	// Specifies how IPs are returned when more than one IP is alive and available.
+	HandoutMode string `pulumi:"handoutMode"`
+	// Defines the absolute limit beyond which IPs are declared unhealthy.
+	HealthMax *float64 `pulumi:"healthMax"`
+	// Configures a cutoff value that is computed from the median scores.
+	HealthMultiplier *float64 `pulumi:"healthMultiplier"`
+	// Configures a cutoff value that is computed from the median scores.
+	HealthThreshold *float64 `pulumi:"healthThreshold"`
+	// A boolean that indicates the type of IP address handed out by a GTM property.
+	Ipv6 *bool `pulumi:"ipv6"`
+	// Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `livenessTest` arguments. If used, requires these arguments:
+	LivenessTests []GtmPropertyLivenessTest `pulumi:"livenessTests"`
+	// Indicates the percent of load imbalance factor (LIF) for the property.
+	LoadImbalancePercentage *float64 `pulumi:"loadImbalancePercentage"`
+	// A descriptive label for a GeographicMap or a CidrMap that's required if the property is either geographic or cidrmapping, in which case mapName needs to reference either an existing GeographicMap or CidrMap in the same domain.
+	MapName *string `pulumi:"mapName"`
+	// For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
+	MaxUnreachablePenalty *int `pulumi:"maxUnreachablePenalty"`
+	// Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
+	MinLiveFraction *float64 `pulumi:"minLiveFraction"`
+	// Name of HTTP header.
+	Name *string `pulumi:"name"`
+	// Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
+	ScoreAggregationType string `pulumi:"scoreAggregationType"`
+	// Contains static record sets. You can have multiple `staticRrSet` entries. Requires these arguments:
+	StaticRrSets []GtmPropertyStaticRrSet `pulumi:"staticRrSets"`
+	StaticTtl    *int                     `pulumi:"staticTtl"`
+	// Specifies a constant used to configure data center affinity.
+	StickinessBonusConstant *int `pulumi:"stickinessBonusConstant"`
+	// Specifies a percentage used to configure data center affinity.
+	StickinessBonusPercentage *int `pulumi:"stickinessBonusPercentage"`
+	// Contains information about where to direct data center traffic. You can have multiple `trafficTarget` arguments. If used, includes these arguments:
+	TrafficTargets []GtmPropertyTrafficTarget `pulumi:"trafficTargets"`
+	// The record type.
+	Type string `pulumi:"type"`
+	// For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
+	UnreachableThreshold *float64 `pulumi:"unreachableThreshold"`
+	// For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
+	UseComputedTargets *bool `pulumi:"useComputedTargets"`
+	// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+	WaitOnComplete *bool `pulumi:"waitOnComplete"`
 }
 
 // The set of arguments for constructing a GtmProperty resource.
 type GtmPropertyArgs struct {
-	BackupCname               pulumi.StringPtrInput
-	BackupIp                  pulumi.StringPtrInput
-	BalanceByDownloadScore    pulumi.BoolPtrInput
-	Cname                     pulumi.StringPtrInput
-	Comments                  pulumi.StringPtrInput
-	Domain                    pulumi.StringInput
-	DynamicTtl                pulumi.IntPtrInput
-	FailbackDelay             pulumi.IntPtrInput
-	FailoverDelay             pulumi.IntPtrInput
-	GhostDemandReporting      pulumi.BoolPtrInput
-	HandoutLimit              pulumi.IntInput
-	HandoutMode               pulumi.StringInput
-	HealthMax                 pulumi.Float64PtrInput
-	HealthMultiplier          pulumi.Float64PtrInput
-	HealthThreshold           pulumi.Float64PtrInput
-	Ipv6                      pulumi.BoolPtrInput
-	LivenessTests             GtmPropertyLivenessTestArrayInput
-	LoadImbalancePercentage   pulumi.Float64PtrInput
-	MapName                   pulumi.StringPtrInput
-	MaxUnreachablePenalty     pulumi.IntPtrInput
-	MinLiveFraction           pulumi.Float64PtrInput
-	Name                      pulumi.StringPtrInput
-	ScoreAggregationType      pulumi.StringInput
-	StaticRrSets              GtmPropertyStaticRrSetArrayInput
-	StaticTtl                 pulumi.IntPtrInput
-	StickinessBonusConstant   pulumi.IntPtrInput
+	// Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
+	BackupCname pulumi.StringPtrInput
+	// Specifies a backup IP. When GTM declares that all of the targets are down, the backup IP is handed out. If a backup IP is set, do not set a backup CNAME.
+	BackupIp pulumi.StringPtrInput
+	// A boolean that indicates whether download score based load balancing is enabled.
+	BalanceByDownloadScore pulumi.BoolPtrInput
+	// Indicates the fully qualified name aliased to a particular property.
+	Cname pulumi.StringPtrInput
+	// A descriptive note about changes to the domain. The maximum is 4000 characters.
+	Comments pulumi.StringPtrInput
+	// DNS name for the GTM Domain set that includes this Property.
+	Domain pulumi.StringInput
+	// Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing such as A and AAAA records, and CNAMEs.
+	DynamicTtl pulumi.IntPtrInput
+	// Specifies the failback delay in seconds.
+	FailbackDelay pulumi.IntPtrInput
+	// Specifies the failover delay in seconds.
+	FailoverDelay pulumi.IntPtrInput
+	// Use load estimates from Akamai Ghost utilization messages.
+	GhostDemandReporting pulumi.BoolPtrInput
+	// Indicates the limit for the number of live IPs handed out to a DNS request.
+	HandoutLimit pulumi.IntInput
+	// Specifies how IPs are returned when more than one IP is alive and available.
+	HandoutMode pulumi.StringInput
+	// Defines the absolute limit beyond which IPs are declared unhealthy.
+	HealthMax pulumi.Float64PtrInput
+	// Configures a cutoff value that is computed from the median scores.
+	HealthMultiplier pulumi.Float64PtrInput
+	// Configures a cutoff value that is computed from the median scores.
+	HealthThreshold pulumi.Float64PtrInput
+	// A boolean that indicates the type of IP address handed out by a GTM property.
+	Ipv6 pulumi.BoolPtrInput
+	// Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `livenessTest` arguments. If used, requires these arguments:
+	LivenessTests GtmPropertyLivenessTestArrayInput
+	// Indicates the percent of load imbalance factor (LIF) for the property.
+	LoadImbalancePercentage pulumi.Float64PtrInput
+	// A descriptive label for a GeographicMap or a CidrMap that's required if the property is either geographic or cidrmapping, in which case mapName needs to reference either an existing GeographicMap or CidrMap in the same domain.
+	MapName pulumi.StringPtrInput
+	// For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
+	MaxUnreachablePenalty pulumi.IntPtrInput
+	// Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
+	MinLiveFraction pulumi.Float64PtrInput
+	// Name of HTTP header.
+	Name pulumi.StringPtrInput
+	// Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
+	ScoreAggregationType pulumi.StringInput
+	// Contains static record sets. You can have multiple `staticRrSet` entries. Requires these arguments:
+	StaticRrSets GtmPropertyStaticRrSetArrayInput
+	StaticTtl    pulumi.IntPtrInput
+	// Specifies a constant used to configure data center affinity.
+	StickinessBonusConstant pulumi.IntPtrInput
+	// Specifies a percentage used to configure data center affinity.
 	StickinessBonusPercentage pulumi.IntPtrInput
-	TrafficTargets            GtmPropertyTrafficTargetArrayInput
-	Type                      pulumi.StringInput
-	UnreachableThreshold      pulumi.Float64PtrInput
-	UseComputedTargets        pulumi.BoolPtrInput
-	WaitOnComplete            pulumi.BoolPtrInput
+	// Contains information about where to direct data center traffic. You can have multiple `trafficTarget` arguments. If used, includes these arguments:
+	TrafficTargets GtmPropertyTrafficTargetArrayInput
+	// The record type.
+	Type pulumi.StringInput
+	// For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
+	UnreachableThreshold pulumi.Float64PtrInput
+	// For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
+	UseComputedTargets pulumi.BoolPtrInput
+	// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+	WaitOnComplete pulumi.BoolPtrInput
 }
 
 func (GtmPropertyArgs) ElementType() reflect.Type {

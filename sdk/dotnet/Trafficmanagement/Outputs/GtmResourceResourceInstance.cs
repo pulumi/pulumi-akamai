@@ -13,10 +13,25 @@ namespace Pulumi.Akamai.Trafficmanagement.Outputs
     [OutputType]
     public sealed class GtmResourceResourceInstance
     {
+        /// <summary>
+        /// A unique identifier for an existing data center in the domain.
+        /// </summary>
         public readonly int DatacenterId;
+        /// <summary>
+        /// Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
+        /// </summary>
         public readonly string? LoadObject;
+        /// <summary>
+        /// Specifies the TCP port of the `load_object`.
+        /// </summary>
         public readonly int? LoadObjectPort;
+        /// <summary>
+        /// (List) Specifies a list of servers from which to request the load object.
+        /// </summary>
         public readonly ImmutableArray<string> LoadServers;
+        /// <summary>
+        /// A boolean that indicates whether a default `load_object` is used for the resources.
+        /// </summary>
         public readonly bool? UseDefaultLoadObject;
 
         [OutputConstructor]

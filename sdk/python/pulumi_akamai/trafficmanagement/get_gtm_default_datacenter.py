@@ -85,7 +85,18 @@ def get_gtm_default_datacenter(datacenter: Optional[int] = None,
                                domain: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGtmDefaultDatacenterResult:
     """
-    Use this data source to access information about an existing resource.
+    Use the `get_gtm_default_datacenter` data source to retrieve the default data center, ID, and nickname.
+
+    ## Attributes reference
+
+    This data source supports these attributes:
+
+    * `id` - The data resource ID. Enter in this format: `<domain>:default_datacenter:<datacenter_id>`.
+    * `datacenter_id` - The default data center ID.
+    * `nickname` - The default data center nickname.
+
+
+    :param int datacenter: The default is `5400`.
     """
     pulumi.log.warn("""get_gtm_default_datacenter is deprecated: akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter""")
     __args__ = dict()
@@ -110,7 +121,18 @@ def get_gtm_default_datacenter_output(datacenter: Optional[pulumi.Input[Optional
                                       domain: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGtmDefaultDatacenterResult]:
     """
-    Use this data source to access information about an existing resource.
+    Use the `get_gtm_default_datacenter` data source to retrieve the default data center, ID, and nickname.
+
+    ## Attributes reference
+
+    This data source supports these attributes:
+
+    * `id` - The data resource ID. Enter in this format: `<domain>:default_datacenter:<datacenter_id>`.
+    * `datacenter_id` - The default data center ID.
+    * `nickname` - The default data center nickname.
+
+
+    :param int datacenter: The default is `5400`.
     """
     pulumi.log.warn("""get_gtm_default_datacenter is deprecated: akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter""")
     ...

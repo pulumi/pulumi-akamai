@@ -6,6 +6,32 @@ import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
+ * Use the `akamai.GtmCidrmap` resource to create, configure, and import a GTM Classless Inter-Domain Routing (CIDR) map. CIDR mapping uses the IP addresses of the requesting name server to provide IP-specific CNAME entries. CNAMEs let you direct internal users to a specific environment or direct them to the origin. This lets you provide different responses to an internal corporate DNS infrastructure, such as internal test environments and another answer for all other name servers (`defaultDatacenter`).
+ *
+ *  CIDR maps split the Internet into multiple CIDR block zones. Properties that use a map can specify a handout CNAME for each zone on the property's editing page. To configure a property for CIDR mapping, your domain needs at least one CIDR map defined.
+ *
+ * > **Note** Import requires an ID with this format: `existingDomainName`:`existingMapName`.
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const demoCidrmap = new akamai.GtmCidrmap("demo_cidrmap", {
+ *     defaultDatacenter: {
+ *         datacenterId: 5400,
+ *         nickname: "All Other CIDR Blocks",
+ *     },
+ *     domain: "demo_domain.akadns.net",
+ * });
+ * ```
+ * ## Schema reference
+ *
+ * You can download the GTM CIDR Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#cidrmap) page.
+ *
  * @deprecated akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap
  */
 export class GtmCidrmap extends pulumi.CustomResource {
@@ -37,10 +63,25 @@ export class GtmCidrmap extends pulumi.CustomResource {
         return obj['__pulumiType'] === GtmCidrmap.__pulumiType;
     }
 
+    /**
+     * Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+     */
     public readonly assignments!: pulumi.Output<outputs.trafficmanagement.GtmCidrmapAssignment[] | undefined>;
+    /**
+     * A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+     */
     public readonly defaultDatacenter!: pulumi.Output<outputs.trafficmanagement.GtmCidrmapDefaultDatacenter>;
+    /**
+     * GTM Domain name for the AS Map.
+     */
     public readonly domain!: pulumi.Output<string>;
+    /**
+     * A descriptive label for the CIDR map, up to 255 characters.
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * A boolean that, if set to `true`, waits for transaction to complete.
+     */
     public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
 
     /**
@@ -87,10 +128,25 @@ export class GtmCidrmap extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmCidrmap resources.
  */
 export interface GtmCidrmapState {
+    /**
+     * Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+     */
     assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmCidrmapAssignment>[]>;
+    /**
+     * A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+     */
     defaultDatacenter?: pulumi.Input<inputs.trafficmanagement.GtmCidrmapDefaultDatacenter>;
+    /**
+     * GTM Domain name for the AS Map.
+     */
     domain?: pulumi.Input<string>;
+    /**
+     * A descriptive label for the CIDR map, up to 255 characters.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * A boolean that, if set to `true`, waits for transaction to complete.
+     */
     waitOnComplete?: pulumi.Input<boolean>;
 }
 
@@ -98,9 +154,24 @@ export interface GtmCidrmapState {
  * The set of arguments for constructing a GtmCidrmap resource.
  */
 export interface GtmCidrmapArgs {
+    /**
+     * Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+     */
     assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmCidrmapAssignment>[]>;
+    /**
+     * A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+     */
     defaultDatacenter: pulumi.Input<inputs.trafficmanagement.GtmCidrmapDefaultDatacenter>;
+    /**
+     * GTM Domain name for the AS Map.
+     */
     domain: pulumi.Input<string>;
+    /**
+     * A descriptive label for the CIDR map, up to 255 characters.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * A boolean that, if set to `true`, waits for transaction to complete.
+     */
     waitOnComplete?: pulumi.Input<boolean>;
 }

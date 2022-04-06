@@ -4,6 +4,30 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
+/**
+ * Use the `akamai.Property` data source to query and list the property ID and rule tree based on the property name.
+ *
+ * ## Example Usage
+ *
+ * This example returns the property ID and rule tree based on the property name and optional version argument:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const example = akamai.getProperty({
+ *     name: "terraform-demo",
+ *     version: "1",
+ * });
+ * export const myPropertyID = example;
+ * ```
+ * ## Attributes reference
+ *
+ * This data source returns these attributes:
+ *
+ * * `property_ID` - A property's unique identifier, including the `prp_` prefix.
+ * * `rules` - A JSON-encoded rule tree for a given property.
+ */
 /** @deprecated akamai.properties.getProperty has been deprecated in favor of akamai.getProperty */
 export function getProperty(args: GetPropertyArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyResult> {
     pulumi.log.warn("getProperty is deprecated: akamai.properties.getProperty has been deprecated in favor of akamai.getProperty")
@@ -22,7 +46,13 @@ export function getProperty(args: GetPropertyArgs, opts?: pulumi.InvokeOptions):
  * A collection of arguments for invoking getProperty.
  */
 export interface GetPropertyArgs {
+    /**
+     * - (Required) The property name.
+     */
     name: string;
+    /**
+     * - (Optional) The version of the property whose ID you want to list.
+     */
     version?: number;
 }
 
@@ -47,6 +77,12 @@ export function getPropertyOutput(args: GetPropertyOutputArgs, opts?: pulumi.Inv
  * A collection of arguments for invoking getProperty.
  */
 export interface GetPropertyOutputArgs {
+    /**
+     * - (Required) The property name.
+     */
     name: pulumi.Input<string>;
+    /**
+     * - (Optional) The version of the property whose ID you want to list.
+     */
     version?: pulumi.Input<number>;
 }

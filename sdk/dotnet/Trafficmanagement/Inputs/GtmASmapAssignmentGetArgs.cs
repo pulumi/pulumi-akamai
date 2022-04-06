@@ -14,15 +14,25 @@ namespace Pulumi.Akamai.Trafficmanagement.Inputs
     {
         [Input("asNumbers", required: true)]
         private InputList<int>? _asNumbers;
+
+        /// <summary>
+        /// Specifies an array of AS numbers.
+        /// </summary>
         public InputList<int> AsNumbers
         {
             get => _asNumbers ?? (_asNumbers = new InputList<int>());
             set => _asNumbers = value;
         }
 
+        /// <summary>
+        /// A unique identifier for an existing data center in the domain.
+        /// </summary>
         [Input("datacenterId", required: true)]
         public Input<int> DatacenterId { get; set; } = null!;
 
+        /// <summary>
+        /// A descriptive label for the group.
+        /// </summary>
         [Input("nickname", required: true)]
         public Input<string> Nickname { get; set; } = null!;
 

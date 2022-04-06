@@ -4,6 +4,30 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * The `akamai.EdgeWorker` resource lets you deploy custom code on thousands of edge servers and apply logic that creates powerful web experiences.
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const ew = new akamai.EdgeWorker("ew", {
+ *     groupId: 72297,
+ *     resourceTierId: 100,
+ *     localBundle: _var.bundle_path,
+ * });
+ * ```
+ * ## Attributes reference
+ *
+ * * `edgeworkerId` - Unique identifier for an EdgeWorker ID.
+ * * `localBundleHash` - A SHA-256 hash digest of the EdgeWorkers code bundle.
+ * * `version` - Unique identifier for a specific EdgeWorker version.
+ * * `warnings` - List of validation warnings.
+ */
 export class EdgeWorker extends pulumi.CustomResource {
     /**
      * Get an existing EdgeWorker resource's state with the given name, ID, and optional extra
@@ -37,11 +61,11 @@ export class EdgeWorker extends pulumi.CustomResource {
      */
     public /*out*/ readonly edgeworkerId!: pulumi.Output<number>;
     /**
-     * Defines the group association for the EdgeWorker
+     * - (Required) Identifies a group to assign to the EdgeWorker ID.
      */
     public readonly groupId!: pulumi.Output<number>;
     /**
-     * The path to the EdgeWorkers tgz code bundle
+     * - (Optional) The path to the EdgeWorkers code bundle.
      */
     public readonly localBundle!: pulumi.Output<string | undefined>;
     /**
@@ -49,11 +73,11 @@ export class EdgeWorker extends pulumi.CustomResource {
      */
     public /*out*/ readonly localBundleHash!: pulumi.Output<string>;
     /**
-     * The EdgeWorker name
+     * - (Required) The name of the EdgeWorker ID.
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * The unique identifier of a resource tier
+     * - (Required) Unique identifier of the resource tier.
      */
     public readonly resourceTierId!: pulumi.Output<number>;
     /**
@@ -117,11 +141,11 @@ export interface EdgeWorkerState {
      */
     edgeworkerId?: pulumi.Input<number>;
     /**
-     * Defines the group association for the EdgeWorker
+     * - (Required) Identifies a group to assign to the EdgeWorker ID.
      */
     groupId?: pulumi.Input<number>;
     /**
-     * The path to the EdgeWorkers tgz code bundle
+     * - (Optional) The path to the EdgeWorkers code bundle.
      */
     localBundle?: pulumi.Input<string>;
     /**
@@ -129,11 +153,11 @@ export interface EdgeWorkerState {
      */
     localBundleHash?: pulumi.Input<string>;
     /**
-     * The EdgeWorker name
+     * - (Required) The name of the EdgeWorker ID.
      */
     name?: pulumi.Input<string>;
     /**
-     * The unique identifier of a resource tier
+     * - (Required) Unique identifier of the resource tier.
      */
     resourceTierId?: pulumi.Input<number>;
     /**
@@ -151,19 +175,19 @@ export interface EdgeWorkerState {
  */
 export interface EdgeWorkerArgs {
     /**
-     * Defines the group association for the EdgeWorker
+     * - (Required) Identifies a group to assign to the EdgeWorker ID.
      */
     groupId: pulumi.Input<number>;
     /**
-     * The path to the EdgeWorkers tgz code bundle
+     * - (Optional) The path to the EdgeWorkers code bundle.
      */
     localBundle?: pulumi.Input<string>;
     /**
-     * The EdgeWorker name
+     * - (Required) The name of the EdgeWorker ID.
      */
     name?: pulumi.Input<string>;
     /**
-     * The unique identifier of a resource tier
+     * - (Required) Unique identifier of the resource tier.
      */
     resourceTierId: pulumi.Input<number>;
 }
