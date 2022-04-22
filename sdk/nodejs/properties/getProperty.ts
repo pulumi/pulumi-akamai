@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  *
  * const example = akamai.getProperty({
  *     name: "terraform-demo",
- *     version: "1",
+ *     version: 1,
  * });
  * export const myPropertyID = example;
  * ```

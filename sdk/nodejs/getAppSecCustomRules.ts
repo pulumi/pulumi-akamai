@@ -30,7 +30,7 @@ import * as utilities from "./utilities";
  * export const customRulesConfigId = customRules.then(customRules => customRules.configId);
  * const specificCustomRule = configuration.then(configuration => akamai.getAppSecCustomRules({
  *     configId: configuration.configId,
- *     customRuleId: "60029316",
+ *     customRuleId: 60029316,
  * }));
  * export const specificCustomRuleJson = specificCustomRule.then(specificCustomRule => specificCustomRule.json);
  * ```

@@ -29,7 +29,7 @@ import * as utilities from "./utilities";
  * export const reputationProfilesJson = reputationProfiles.then(reputationProfiles => reputationProfiles.json);
  * const reputationProfile = configuration.then(configuration => akamai.getAppSecReputationProfiles({
  *     configId: configuration.configId,
- *     reputationProfileId: "12345",
+ *     reputationProfileId: 12345,
  * }));
  * export const reputationProfileJson = reputationProfile.then(reputationProfile => reputationProfile.json);
  * export const reputationProfileOutput = reputationProfile.then(reputationProfile => reputationProfile.outputText);

@@ -28,7 +28,7 @@ import * as utilities from "./utilities";
  * export const matchTargets = matchTargetsAppSecMatchTargets.then(matchTargetsAppSecMatchTargets => matchTargetsAppSecMatchTargets.outputText);
  * const matchTarget = configuration.then(configuration => akamai.getAppSecMatchTargets({
  *     configId: configuration.configId,
- *     matchTargetId: "2712938",
+ *     matchTargetId: 2712938,
  * }));
  * export const matchTargetOutput = matchTarget.then(matchTarget => matchTarget.outputText);
  * ```

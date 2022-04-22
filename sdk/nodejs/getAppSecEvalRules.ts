@@ -25,7 +25,7 @@ import * as utilities from "./utilities";
  * const evalRule = configuration.then(configuration => akamai.getAppSecEvalRules({
  *     configId: configuration.configId,
  *     securityPolicyId: "gms1_134637",
- *     ruleId: "60029316",
+ *     ruleId: 60029316,
  * }));
  * export const evalRuleAction = evalRule.then(evalRule => evalRule.evalRuleAction);
  * export const conditionException = evalRule.then(evalRule => evalRule.conditionException);
