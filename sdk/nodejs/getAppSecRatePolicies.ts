@@ -29,7 +29,7 @@ import * as utilities from "./utilities";
  * export const ratePoliciesJson = ratePolicies.then(ratePolicies => ratePolicies.json);
  * const ratePolicy = configuration.then(configuration => akamai.getAppSecRatePolicies({
  *     configId: configuration.configId,
- *     ratePolicyId: "122149",
+ *     ratePolicyId: 122149,
  * }));
  * export const ratePolicyJson = ratePolicy.then(ratePolicy => ratePolicy.json);
  * export const ratePolicyOutput = ratePolicy.then(ratePolicy => ratePolicy.outputText);

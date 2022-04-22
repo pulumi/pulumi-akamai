@@ -33,7 +33,7 @@ import * as utilities from "./utilities";
  * const reputationProfileActions2AppSecReputationProfileActions = configuration.then(configuration => akamai.getAppSecReputationProfileActions({
  *     configId: configuration.configId,
  *     securityPolicyId: "gms1_134637",
- *     reputationProfileId: "12345",
+ *     reputationProfileId: 12345,
  * }));
  * export const reputationProfileActions2 = reputationProfileActions.then(reputationProfileActions => reputationProfileActions.action);
  * ```
