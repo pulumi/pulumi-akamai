@@ -23,7 +23,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -392,6 +392,157 @@ func (o GtmDomainOutput) ToGtmDomainOutput() GtmDomainOutput {
 
 func (o GtmDomainOutput) ToGtmDomainOutputWithContext(ctx context.Context) GtmDomainOutput {
 	return o
+}
+
+// A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
+func (o GtmDomainOutput) CnameCoalescingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.BoolPtrOutput { return v.CnameCoalescingEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// A descriptive note about changes to the domain. The maximum is 4000 characters.
+func (o GtmDomainOutput) Comment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.StringPtrOutput { return v.Comment }).(pulumi.StringPtrOutput)
+}
+
+// If creating a domain, the contract ID.
+func (o GtmDomainOutput) Contract() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.StringPtrOutput { return v.Contract }).(pulumi.StringPtrOutput)
+}
+
+// Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
+func (o GtmDomainOutput) DefaultErrorPenalty() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.IntPtrOutput { return v.DefaultErrorPenalty }).(pulumi.IntPtrOutput)
+}
+
+func (o GtmDomainOutput) DefaultHealthMax() pulumi.Float64Output {
+	return o.ApplyT(func(v *GtmDomain) pulumi.Float64Output { return v.DefaultHealthMax }).(pulumi.Float64Output)
+}
+
+func (o GtmDomainOutput) DefaultHealthMultiplier() pulumi.Float64Output {
+	return o.ApplyT(func(v *GtmDomain) pulumi.Float64Output { return v.DefaultHealthMultiplier }).(pulumi.Float64Output)
+}
+
+func (o GtmDomainOutput) DefaultHealthThreshold() pulumi.Float64Output {
+	return o.ApplyT(func(v *GtmDomain) pulumi.Float64Output { return v.DefaultHealthThreshold }).(pulumi.Float64Output)
+}
+
+func (o GtmDomainOutput) DefaultMaxUnreachablePenalty() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.IntOutput { return v.DefaultMaxUnreachablePenalty }).(pulumi.IntOutput)
+}
+
+// Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
+func (o GtmDomainOutput) DefaultSslClientCertificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.StringPtrOutput { return v.DefaultSslClientCertificate }).(pulumi.StringPtrOutput)
+}
+
+// Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
+func (o GtmDomainOutput) DefaultSslClientPrivateKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.StringPtrOutput { return v.DefaultSslClientPrivateKey }).(pulumi.StringPtrOutput)
+}
+
+// Specifies the timeout penalty score. Default is `25`.
+func (o GtmDomainOutput) DefaultTimeoutPenalty() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.IntPtrOutput { return v.DefaultTimeoutPenalty }).(pulumi.IntPtrOutput)
+}
+
+func (o GtmDomainOutput) DefaultUnreachableThreshold() pulumi.Float64Output {
+	return o.ApplyT(func(v *GtmDomain) pulumi.Float64Output { return v.DefaultUnreachableThreshold }).(pulumi.Float64Output)
+}
+
+// A list of email addresses to notify when a change is made to the domain.
+func (o GtmDomainOutput) EmailNotificationLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.StringArrayOutput { return v.EmailNotificationLists }).(pulumi.StringArrayOutput)
+}
+
+// A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
+func (o GtmDomainOutput) EndUserMappingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.BoolPtrOutput { return v.EndUserMappingEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// If creating a domain, the currently selected group ID.
+func (o GtmDomainOutput) Group() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.StringPtrOutput { return v.Group }).(pulumi.StringPtrOutput)
+}
+
+// A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
+func (o GtmDomainOutput) LoadFeedback() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.BoolPtrOutput { return v.LoadFeedback }).(pulumi.BoolPtrOutput)
+}
+
+// Indicates the percentage of load imbalance factor (LIF) for the domain.
+func (o GtmDomainOutput) LoadImbalancePercentage() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.Float64PtrOutput { return v.LoadImbalancePercentage }).(pulumi.Float64PtrOutput)
+}
+
+func (o GtmDomainOutput) MapUpdateInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.IntOutput { return v.MapUpdateInterval }).(pulumi.IntOutput)
+}
+
+func (o GtmDomainOutput) MaxProperties() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.IntOutput { return v.MaxProperties }).(pulumi.IntOutput)
+}
+
+func (o GtmDomainOutput) MaxResources() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.IntOutput { return v.MaxResources }).(pulumi.IntOutput)
+}
+
+func (o GtmDomainOutput) MaxTestTimeout() pulumi.Float64Output {
+	return o.ApplyT(func(v *GtmDomain) pulumi.Float64Output { return v.MaxTestTimeout }).(pulumi.Float64Output)
+}
+
+func (o GtmDomainOutput) MaxTtl() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.IntOutput { return v.MaxTtl }).(pulumi.IntOutput)
+}
+
+func (o GtmDomainOutput) MinPingableRegionFraction() pulumi.Float64Output {
+	return o.ApplyT(func(v *GtmDomain) pulumi.Float64Output { return v.MinPingableRegionFraction }).(pulumi.Float64Output)
+}
+
+func (o GtmDomainOutput) MinTestInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.IntOutput { return v.MinTestInterval }).(pulumi.IntOutput)
+}
+
+func (o GtmDomainOutput) MinTtl() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.IntOutput { return v.MinTtl }).(pulumi.IntOutput)
+}
+
+// The DNS name for a collection of GTM Properties.
+func (o GtmDomainOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GtmDomainOutput) PingInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.IntOutput { return v.PingInterval }).(pulumi.IntOutput)
+}
+
+func (o GtmDomainOutput) PingPacketSize() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.IntOutput { return v.PingPacketSize }).(pulumi.IntOutput)
+}
+
+func (o GtmDomainOutput) RoundRobinPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.StringOutput { return v.RoundRobinPrefix }).(pulumi.StringOutput)
+}
+
+func (o GtmDomainOutput) ServermonitorLivenessCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.IntOutput { return v.ServermonitorLivenessCount }).(pulumi.IntOutput)
+}
+
+func (o GtmDomainOutput) ServermonitorLoadCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.IntOutput { return v.ServermonitorLoadCount }).(pulumi.IntOutput)
+}
+
+func (o GtmDomainOutput) ServermonitorPool() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.StringOutput { return v.ServermonitorPool }).(pulumi.StringOutput)
+}
+
+// Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
+func (o GtmDomainOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+}
+
+// A boolean that, if set to `true`, waits for transaction to complete.
+func (o GtmDomainOutput) WaitOnComplete() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.BoolPtrOutput { return v.WaitOnComplete }).(pulumi.BoolPtrOutput)
 }
 
 type GtmDomainArrayOutput struct{ *pulumi.OutputState }

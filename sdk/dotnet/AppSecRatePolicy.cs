@@ -12,11 +12,10 @@ namespace Pulumi.Akamai
     /// <summary>
     /// **Scopes**: Security configuration; rate policy
     /// 
-    /// Creates, modifies or deletes rate policies.
-    /// Rate polices help you monitor and moderate the number and  rate of all the requests you receive.
+    /// Creates, modifies, or deletes rate policies. Rate polices help you monitor and moderate the number and rate of all the requests you receive.
     /// In turn, this helps you prevent your website from being overwhelmed by a dramatic and unexpected surge in traffic.
     /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postratepolicies)
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://techdocs.akamai.com/application-security/reference/post-rate-policies)
     /// 
     /// ## Example Usage
     /// 
@@ -68,9 +67,6 @@ namespace Pulumi.Akamai
         [Output("ratePolicy")]
         public Output<string> RatePolicy { get; private set; } = null!;
 
-        /// <summary>
-        /// . Unique identifier of an existing rate policy.
-        /// </summary>
         [Output("ratePolicyId")]
         public Output<int> RatePolicyId { get; private set; } = null!;
 
@@ -151,9 +147,6 @@ namespace Pulumi.Akamai
         [Input("ratePolicy")]
         public Input<string>? RatePolicy { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of an existing rate policy.
-        /// </summary>
         [Input("ratePolicyId")]
         public Input<int>? RatePolicyId { get; set; }
 

@@ -11,7 +11,7 @@ import * as utilities from "./utilities";
  *
  * Note that this resource is only applicable to WAP (Web Application Protector) configurations.
  *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/bypass-network-lists](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putbypassnetworklistsforawapconfigversion)
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/bypass-network-lists](https://techdocs.akamai.com/application-security/reference/put-bypass-network-lists)
  *
  * ## Example Usage
  *
@@ -26,6 +26,7 @@ import * as utilities from "./utilities";
  * });
  * const bypassNetworkLists = new akamai.AppSecByPassNetworkList("bypassNetworkLists", {
  *     configId: configuration.then(configuration => configuration.configId),
+ *     securityPolicyId: "gms1_134637",
  *     bypassNetworkLists: [
  *         "DocumentationNetworkList",
  *         "TrainingNetworkList",
@@ -71,13 +72,13 @@ export class AppSecByPassNetworkList extends pulumi.CustomResource {
      */
     public readonly bypassNetworkLists!: pulumi.Output<string[]>;
     /**
-     * . Unique identifier of the security configuration associated with the network bypass lists being modified.
+     * . Unique identifier of the security configuration associated with the bypass network lists being modified.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * The ID of the security policy governing the bypass network lists
+     * . Unique identifier of the security policy associated with the bypass network lists.
      */
-    public readonly securityPolicyId!: pulumi.Output<string | undefined>;
+    public readonly securityPolicyId!: pulumi.Output<string>;
 
     /**
      * Create a AppSecByPassNetworkList resource with the given unique name, arguments, and options.
@@ -103,6 +104,9 @@ export class AppSecByPassNetworkList extends pulumi.CustomResource {
             if ((!args || args.configId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
+            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'securityPolicyId'");
+            }
             resourceInputs["bypassNetworkLists"] = args ? args.bypassNetworkLists : undefined;
             resourceInputs["configId"] = args ? args.configId : undefined;
             resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
@@ -121,11 +125,11 @@ export interface AppSecByPassNetworkListState {
      */
     bypassNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * . Unique identifier of the security configuration associated with the network bypass lists being modified.
+     * . Unique identifier of the security configuration associated with the bypass network lists being modified.
      */
     configId?: pulumi.Input<number>;
     /**
-     * The ID of the security policy governing the bypass network lists
+     * . Unique identifier of the security policy associated with the bypass network lists.
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -139,11 +143,11 @@ export interface AppSecByPassNetworkListArgs {
      */
     bypassNetworkLists: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * . Unique identifier of the security configuration associated with the network bypass lists being modified.
+     * . Unique identifier of the security configuration associated with the bypass network lists being modified.
      */
     configId: pulumi.Input<number>;
     /**
-     * The ID of the security policy governing the bypass network lists
+     * . Unique identifier of the security policy associated with the bypass network lists.
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId: pulumi.Input<string>;
 }

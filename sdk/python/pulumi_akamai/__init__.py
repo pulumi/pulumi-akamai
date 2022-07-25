@@ -21,6 +21,7 @@ from .app_sec_custom_rule import *
 from .app_sec_custom_rule_action import *
 from .app_sec_eval import *
 from .app_sec_eval_group import *
+from .app_sec_eval_penalty_box import *
 from .app_sec_eval_rule import *
 from .app_sec_ip_geo import *
 from .app_sec_ip_geo_protection import *
@@ -77,6 +78,7 @@ from .get_app_sec_custom_rule_actions import *
 from .get_app_sec_custom_rules import *
 from .get_app_sec_eval import *
 from .get_app_sec_eval_groups import *
+from .get_app_sec_eval_penalty_box import *
 from .get_app_sec_eval_rules import *
 from .get_app_sec_export_configuration import *
 from .get_app_sec_failover_hostnames import *
@@ -127,6 +129,14 @@ from .get_edge_workers_resource_tier import *
 from .get_group import *
 from .get_groups import *
 from .get_gtm_default_datacenter import *
+from .get_iam_contact_types import *
+from .get_iam_countries import *
+from .get_iam_grantable_roles import *
+from .get_iam_roles import *
+from .get_iam_states import *
+from .get_iam_supported_langs import *
+from .get_iam_timeout_policies import *
+from .get_iam_timezones import *
 from .get_network_lists import *
 from .get_properties import *
 from .get_properties_search import *
@@ -143,6 +153,10 @@ from .gtm_domain import *
 from .gtm_geomap import *
 from .gtm_property import *
 from .gtm_resource import *
+from .iam_blocked_user_properties import *
+from .iam_group import *
+from .iam_role import *
+from .iam_user import *
 from .network_list import *
 from .network_list_activations import *
 from .network_list_description import *
@@ -314,6 +328,14 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/appSecEvalGroup:AppSecEvalGroup": "AppSecEvalGroup"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appSecEvalPenaltyBox",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appSecEvalPenaltyBox:AppSecEvalPenaltyBox": "AppSecEvalPenaltyBox"
   }
  },
  {
@@ -690,6 +712,38 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/gtmResource:GtmResource": "GtmResource"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/iamBlockedUserProperties",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/iamBlockedUserProperties:IamBlockedUserProperties": "IamBlockedUserProperties"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/iamGroup",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/iamGroup:IamGroup": "IamGroup"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/iamRole",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/iamRole:IamRole": "IamRole"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/iamUser",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/iamUser:IamUser": "IamUser"
   }
  },
  {

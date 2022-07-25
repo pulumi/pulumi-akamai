@@ -14,57 +14,6 @@ import (
 //
 // Use the `getCloudletsAudienceSegmentationMatchRule` data source to build a match rule JSON object for the Audience Segmentation Cloudlet.
 //
-// ## Basic usage
-//
-// This example returns the JSON-encoded rules for the Audience Segmentation Cloudlet:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.GetCloudletsAudienceSegmentationMatchRule(ctx, &GetCloudletsAudienceSegmentationMatchRuleArgs{
-// 			MatchRules: []GetCloudletsAudienceSegmentationMatchRuleMatchRule{
-// 				GetCloudletsAudienceSegmentationMatchRuleMatchRule{
-// 					ForwardSettings: GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettings{
-// 						OriginId:               pulumi.StringRef("123"),
-// 						PathAndQs:              pulumi.StringRef("/test"),
-// 						UseIncomingQueryString: pulumi.BoolRef(true),
-// 					},
-// 					Matches: []GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatch{
-// 						GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatch{
-// 							MatchOperator: pulumi.StringRef("contains"),
-// 							MatchType:     pulumi.StringRef("header"),
-// 							ObjectMatchValue: []map[string]interface{}{
-// 								map[string]interface{}{
-// 									"name": "cookie",
-// 									"options": map[string]interface{}{
-// 										"value": []string{
-// 											"abcd",
-// 										},
-// 									},
-// 									"type": "object",
-// 								},
-// 							},
-// 						},
-// 					},
-// 					Name: pulumi.StringRef("rule"),
-// 				},
-// 			},
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
-//
 // ## Attributes reference
 //
 // This data source returns these attributes:

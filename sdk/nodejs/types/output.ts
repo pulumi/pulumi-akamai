@@ -1678,6 +1678,30 @@ export interface GetGroupsGroup {
     parentGroupId: string;
 }
 
+export interface GetIamGrantableRolesGrantableRole {
+    description: string;
+    grantedRoleId: number;
+    name: string;
+}
+
+export interface GetIamRolesRole {
+    createdBy: string;
+    description: string;
+    modifiedBy: string;
+    name: string;
+    roleId: string;
+    timeCreated: string;
+    timeModified: string;
+    type: string;
+}
+
+export interface GetIamTimezonesTimezone {
+    description: string;
+    offset: string;
+    posix: string;
+    timezone: string;
+}
+
 export interface GetPropertiesProperty {
     /**
      * - (Required) A contract's unique ID, including the `ctr_` prefix.
@@ -1735,13 +1759,19 @@ export interface GetPropertyProductsProduct {
 }
 
 export interface GetPropertyRulesTemplateTemplate {
+    /**
+     * The content of the JSON template as a string.
+     */
     templateData: string;
+    /**
+     * The absolute or relative path to the directory containing the template files. The path must end with `property-snippets`, the required directory name. For example: `templateDir = abspath("${path.root}/property-snippets/")`, or `templateDir = "property-snippets/"`.
+     */
     templateDir: string;
 }
 
 export interface GetPropertyRulesTemplateVariable {
     /**
-     * The name of the variable used in template.
+     * The name of the variable used in the template.
      */
     name: string;
     /**

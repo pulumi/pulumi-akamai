@@ -14,7 +14,7 @@ namespace Pulumi.Akamai
     /// 
     /// Modifies the list of hostnames protected under by a security configuration.
     /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putselectedhostnames)
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames](https://techdocs.akamai.com/application-security/reference/put-selected-hostnames-per-config)
     /// 
     /// ## Example Usage
     /// 

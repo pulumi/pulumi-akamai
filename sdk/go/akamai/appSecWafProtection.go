@@ -15,7 +15,7 @@ import (
 //
 // Enables or disables Web Application Firewall (WAF) protection for a security policy.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putprotections)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/put-policy-protections)
 //
 // ## Example Usage
 //
@@ -25,7 +25,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -234,6 +234,26 @@ func (o AppSecWafProtectionOutput) ToAppSecWafProtectionOutput() AppSecWafProtec
 
 func (o AppSecWafProtectionOutput) ToAppSecWafProtectionOutputWithContext(ctx context.Context) AppSecWafProtectionOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration associated with the WAF protection settings being modified.
+func (o AppSecWafProtectionOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecWafProtection) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
+func (o AppSecWafProtectionOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppSecWafProtection) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Text Export representation
+func (o AppSecWafProtectionOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecWafProtection) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
+}
+
+// . Unique identifier of the security policy associated with the WAF protection settings being modified.
+func (o AppSecWafProtectionOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecWafProtection) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
 type AppSecWafProtectionArrayOutput struct{ *pulumi.OutputState }

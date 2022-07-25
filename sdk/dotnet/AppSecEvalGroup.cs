@@ -58,7 +58,7 @@ namespace Pulumi.Akamai
         /// <summary>
         /// . Action to be taken any time the attack group is triggered. Allowed values are:
         /// - **alert**. Record the event.
-        /// - **deny**. Block the request
+        /// - **deny**. Block the request.
         /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
         /// - **none**. Take no action.
         /// </summary>
@@ -138,7 +138,7 @@ namespace Pulumi.Akamai
         /// <summary>
         /// . Action to be taken any time the attack group is triggered. Allowed values are:
         /// - **alert**. Record the event.
-        /// - **deny**. Block the request
+        /// - **deny**. Block the request.
         /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
         /// - **none**. Take no action.
         /// </summary>
@@ -179,7 +179,7 @@ namespace Pulumi.Akamai
         /// <summary>
         /// . Action to be taken any time the attack group is triggered. Allowed values are:
         /// - **alert**. Record the event.
-        /// - **deny**. Block the request
+        /// - **deny**. Block the request.
         /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
         /// - **none**. Take no action.
         /// </summary>

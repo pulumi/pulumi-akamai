@@ -7,9 +7,11 @@ import * as utilities from "./utilities";
 /**
  * **Scopes**: Security configuration; security policy
  *
- * Enables, disables, or updates HTTP header logging settings. By default, this operation applies at the configuration level, which means that it applies to all the security policies within that configuration. However, by using the `securityPolicyId` parameter you can specify custom settings for an individual security policy.
+ * Enables, disables, or updates HTTP header logging settings.
+ * By default, this operation applies at the configuration level, which means that it applies to all the security policies within that configuration.
+ * However, by using the `securityPolicyId` parameter you can specify custom settings for an individual security policy.
  *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging](https://developer.akamai.com/api/cloud_security/application_security/v1.html#puthttpheaderlogging)
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging](https://techdocs.akamai.com/application-security/reference/put-policies-logging)
  *
  * ## Example Usage
  *
@@ -18,7 +20,7 @@ import * as utilities from "./utilities";
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
- * import * from "fs";
+ * import * as fs from "fs";
  *
  * const configuration = akamai.getAppSecConfiguration({
  *     name: "Documentation",

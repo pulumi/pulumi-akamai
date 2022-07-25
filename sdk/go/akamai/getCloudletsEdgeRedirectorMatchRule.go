@@ -14,58 +14,6 @@ import (
 //
 // Use the `getCloudletsEdgeRedirectorMatchRule` data source to build a match rule JSON object for the Edge Redirector Cloudlet.
 //
-// ## Basic usage
-//
-// This example returns the JSON-encoded rules for the Edge Redirector Cloudlet:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.GetCloudletsEdgeRedirectorMatchRule(ctx, &GetCloudletsEdgeRedirectorMatchRuleArgs{
-// 			MatchRules: []GetCloudletsEdgeRedirectorMatchRuleMatchRule{
-// 				GetCloudletsEdgeRedirectorMatchRuleMatchRule{
-// 					End:      pulumi.IntRef(1645037845),
-// 					MatchUrl: pulumi.StringRef("example.com"),
-// 					Matches: []GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch{
-// 						GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch{
-// 							CaseSensitive: pulumi.BoolRef(false),
-// 							MatchOperator: pulumi.StringRef("equals"),
-// 							MatchType:     pulumi.StringRef("method"),
-// 							Negate:        pulumi.BoolRef(false),
-// 							ObjectMatchValue: []map[string]interface{}{
-// 								map[string]interface{}{
-// 									"type": "simple",
-// 									"value": []string{
-// 										"GET",
-// 									},
-// 								},
-// 							},
-// 						},
-// 					},
-// 					Name:                   pulumi.StringRef("rule"),
-// 					RedirectUrl:            "https://www.example.com",
-// 					Start:                  pulumi.IntRef(1644865045),
-// 					StatusCode:             301,
-// 					UseIncomingQueryString: pulumi.BoolRef(false),
-// 					UseRelativeUrl:         pulumi.StringRef("none"),
-// 				},
-// 			},
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
-//
 // ## Attributes reference
 //
 // This data source returns these attributes:

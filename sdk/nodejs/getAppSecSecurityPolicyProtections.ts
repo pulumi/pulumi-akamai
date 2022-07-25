@@ -9,7 +9,7 @@ import * as utilities from "./utilities";
  *
  * Returns information about the protections in effect for the specified security policy.
  *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprotections)
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/get-policy-protections)
  *
  * ## Example Usage
  *
@@ -47,7 +47,7 @@ import * as utilities from "./utilities";
  * - `applyApiConstraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
  * - `applySlowPostControls`. Returns **true** if slow POST controls are enabled; returns **false** if they are not.
  * - `json`. JSON-formatted list showing the status of the protection settings.
- * - `outputText`. Tabular report showing the status of the protection settings
+ * - `outputText`. Tabular report showing the status of the protection settings.
  */
 export function getAppSecSecurityPolicyProtections(args: GetAppSecSecurityPolicyProtectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecSecurityPolicyProtectionsResult> {
     if (!opts) {

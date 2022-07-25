@@ -13,7 +13,7 @@ namespace Pulumi.Akamai.Inputs
     public sealed class GetPropertyRulesTemplateVariableInputArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of the variable used in template.
+        /// The name of the variable used in the template.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

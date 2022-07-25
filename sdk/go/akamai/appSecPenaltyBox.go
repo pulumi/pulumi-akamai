@@ -13,9 +13,11 @@ import (
 
 // **Scopes**: Security policy
 //
-// Modifies the penalty box settings for a security policy. When using automated attack groups, and when the penalty box is enabled, clients that trigger an attack group  are placed in the “penalty box.” That means that, for the next 10 minutes, all requests from that client are ignored.
+// Modifies the penalty box settings for a security policy.
+// When the penalty box is enabled for a policy, clients that trigger a WAF Deny action are placed in the “penalty box”.
+// There, the action you select for penalty box (either Alert or Deny ) continues to apply to any requests from that client for the next 10 minutes.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets/sequence](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpenaltybox)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets/sequence](https://techdocs.akamai.com/application-security/reference/put-policy-penalty-box)
 //
 // ## Example Usage
 //
@@ -25,7 +27,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -56,7 +58,7 @@ type AppSecPenaltyBox struct {
 	// . Unique identifier of the security configuration associated with the penalty box settings being modified.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// . Action taken any time penalty box protection is triggered. Allowed values are:
-	// - **alert**. Record the event,
+	// - **alert**. Record the event.
 	// - **deny**. Block the request.
 	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
 	// - **none**. Take no action.
@@ -111,7 +113,7 @@ type appSecPenaltyBoxState struct {
 	// . Unique identifier of the security configuration associated with the penalty box settings being modified.
 	ConfigId *int `pulumi:"configId"`
 	// . Action taken any time penalty box protection is triggered. Allowed values are:
-	// - **alert**. Record the event,
+	// - **alert**. Record the event.
 	// - **deny**. Block the request.
 	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
 	// - **none**. Take no action.
@@ -126,7 +128,7 @@ type AppSecPenaltyBoxState struct {
 	// . Unique identifier of the security configuration associated with the penalty box settings being modified.
 	ConfigId pulumi.IntPtrInput
 	// . Action taken any time penalty box protection is triggered. Allowed values are:
-	// - **alert**. Record the event,
+	// - **alert**. Record the event.
 	// - **deny**. Block the request.
 	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
 	// - **none**. Take no action.
@@ -145,7 +147,7 @@ type appSecPenaltyBoxArgs struct {
 	// . Unique identifier of the security configuration associated with the penalty box settings being modified.
 	ConfigId int `pulumi:"configId"`
 	// . Action taken any time penalty box protection is triggered. Allowed values are:
-	// - **alert**. Record the event,
+	// - **alert**. Record the event.
 	// - **deny**. Block the request.
 	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
 	// - **none**. Take no action.
@@ -161,7 +163,7 @@ type AppSecPenaltyBoxArgs struct {
 	// . Unique identifier of the security configuration associated with the penalty box settings being modified.
 	ConfigId pulumi.IntInput
 	// . Action taken any time penalty box protection is triggered. Allowed values are:
-	// - **alert**. Record the event,
+	// - **alert**. Record the event.
 	// - **deny**. Block the request.
 	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
 	// - **none**. Take no action.
@@ -257,6 +259,30 @@ func (o AppSecPenaltyBoxOutput) ToAppSecPenaltyBoxOutput() AppSecPenaltyBoxOutpu
 
 func (o AppSecPenaltyBoxOutput) ToAppSecPenaltyBoxOutputWithContext(ctx context.Context) AppSecPenaltyBoxOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration associated with the penalty box settings being modified.
+func (o AppSecPenaltyBoxOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecPenaltyBox) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Action taken any time penalty box protection is triggered. Allowed values are:
+// - **alert**. Record the event.
+// - **deny**. Block the request.
+// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+// - **none**. Take no action.
+func (o AppSecPenaltyBoxOutput) PenaltyBoxAction() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecPenaltyBox) pulumi.StringOutput { return v.PenaltyBoxAction }).(pulumi.StringOutput)
+}
+
+// . Set to **true** to enable penalty box protection; set to **false** to disable penalty box protection.
+func (o AppSecPenaltyBoxOutput) PenaltyBoxProtection() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppSecPenaltyBox) pulumi.BoolOutput { return v.PenaltyBoxProtection }).(pulumi.BoolOutput)
+}
+
+// . Unique identifier of the security policy associated with the penalty box settings being modified.
+func (o AppSecPenaltyBoxOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecPenaltyBox) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
 type AppSecPenaltyBoxArrayOutput struct{ *pulumi.OutputState }

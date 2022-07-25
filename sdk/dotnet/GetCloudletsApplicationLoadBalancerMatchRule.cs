@@ -16,64 +16,6 @@ namespace Pulumi.Akamai
         /// 
         /// Use the `akamai.getCloudletsApplicationLoadBalancerMatchRule` data source to build a match rule JSON object for the Application Load Balancer Cloudlet.
         /// 
-        /// ## Basic usage
-        /// 
-        /// This example returns the JSON-encoded rules for the Application Load Balancer Cloudlet:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var example = Output.Create(Akamai.GetCloudletsApplicationLoadBalancerMatchRule.InvokeAsync(new Akamai.GetCloudletsApplicationLoadBalancerMatchRuleArgs
-        ///         {
-        ///             MatchRules = 
-        ///             {
-        ///                 new Akamai.Inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs
-        ///                 {
-        ///                     End = 1645037845,
-        ///                     ForwardSettings = 
-        ///                     {
-        ///                         new Akamai.Inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs
-        ///                         {
-        ///                             OriginId = "alb_test_1",
-        ///                         },
-        ///                     },
-        ///                     MatchUrl = "example.com",
-        ///                     Matches = 
-        ///                     {
-        ///                         new Akamai.Inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs
-        ///                         {
-        ///                             CaseSensitive = false,
-        ///                             MatchOperator = "equals",
-        ///                             MatchType = "method",
-        ///                             Negate = false,
-        ///                             ObjectMatchValue = 
-        ///                             {
-        ///                                 
-        ///                                 {
-        ///                                     { "type", "simple" },
-        ///                                     { "value", 
-        ///                                     {
-        ///                                         "GET",
-        ///                                     } },
-        ///                                 },
-        ///                             },
-        ///                         },
-        ///                     },
-        ///                     Name = "rule",
-        ///                     Start = 1644865045,
-        ///                 },
-        ///             },
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// 
         /// ## Attributes reference
         /// 
         /// This data source returns these attributes:
@@ -88,64 +30,6 @@ namespace Pulumi.Akamai
         /// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
         /// 
         /// Use the `akamai.getCloudletsApplicationLoadBalancerMatchRule` data source to build a match rule JSON object for the Application Load Balancer Cloudlet.
-        /// 
-        /// ## Basic usage
-        /// 
-        /// This example returns the JSON-encoded rules for the Application Load Balancer Cloudlet:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var example = Output.Create(Akamai.GetCloudletsApplicationLoadBalancerMatchRule.InvokeAsync(new Akamai.GetCloudletsApplicationLoadBalancerMatchRuleArgs
-        ///         {
-        ///             MatchRules = 
-        ///             {
-        ///                 new Akamai.Inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs
-        ///                 {
-        ///                     End = 1645037845,
-        ///                     ForwardSettings = 
-        ///                     {
-        ///                         new Akamai.Inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs
-        ///                         {
-        ///                             OriginId = "alb_test_1",
-        ///                         },
-        ///                     },
-        ///                     MatchUrl = "example.com",
-        ///                     Matches = 
-        ///                     {
-        ///                         new Akamai.Inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs
-        ///                         {
-        ///                             CaseSensitive = false,
-        ///                             MatchOperator = "equals",
-        ///                             MatchType = "method",
-        ///                             Negate = false,
-        ///                             ObjectMatchValue = 
-        ///                             {
-        ///                                 
-        ///                                 {
-        ///                                     { "type", "simple" },
-        ///                                     { "value", 
-        ///                                     {
-        ///                                         "GET",
-        ///                                     } },
-        ///                                 },
-        ///                             },
-        ///                         },
-        ///                     },
-        ///                     Name = "rule",
-        ///                     Start = 1644865045,
-        ///                 },
-        ///             },
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
         /// 
         /// ## Attributes reference
         /// 

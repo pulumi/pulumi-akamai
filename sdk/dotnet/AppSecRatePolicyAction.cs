@@ -12,11 +12,11 @@ namespace Pulumi.Akamai
     /// <summary>
     /// **Scopes**: Rate policy
     /// 
-    /// Creates, modifies or deletes the actions associated with a rate policy.
+    /// Creates, modifies, or deletes the actions associated with a rate policy.
     /// By default, rate policies take no action when triggered.
     /// Note that you must set separate actions for requests originating from an IPv4 IP address and for requests originating from an IPv6 address.
     /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rate-policies/{ratePolicyId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putactionsperratepolicy)
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rate-policies/{ratePolicyId}](https://techdocs.akamai.com/application-security/reference/put-rate-policy-action)
     /// 
     /// ## Example Usage
     /// 
@@ -57,14 +57,14 @@ namespace Pulumi.Akamai
     public partial class AppSecRatePolicyAction : Pulumi.CustomResource
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the rate policy action  being modified.
+        /// . Unique identifier of the security configuration associated with the rate policy action being modified.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
         /// . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-        /// - **alert**. Record the event,
+        /// - **alert**. Record the event.
         /// - **deny**. Block the request.
         /// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
         /// - **none**. Take no action.
@@ -87,6 +87,9 @@ namespace Pulumi.Akamai
         [Output("ratePolicyId")]
         public Output<int> RatePolicyId { get; private set; } = null!;
 
+        /// <summary>
+        /// . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+        /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
 
@@ -137,14 +140,14 @@ namespace Pulumi.Akamai
     public sealed class AppSecRatePolicyActionArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the rate policy action  being modified.
+        /// . Unique identifier of the security configuration associated with the rate policy action being modified.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
         /// . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-        /// - **alert**. Record the event,
+        /// - **alert**. Record the event.
         /// - **deny**. Block the request.
         /// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
         /// - **none**. Take no action.
@@ -167,6 +170,9 @@ namespace Pulumi.Akamai
         [Input("ratePolicyId", required: true)]
         public Input<int> RatePolicyId { get; set; } = null!;
 
+        /// <summary>
+        /// . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+        /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 
@@ -178,14 +184,14 @@ namespace Pulumi.Akamai
     public sealed class AppSecRatePolicyActionState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the rate policy action  being modified.
+        /// . Unique identifier of the security configuration associated with the rate policy action being modified.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
         /// . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-        /// - **alert**. Record the event,
+        /// - **alert**. Record the event.
         /// - **deny**. Block the request.
         /// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
         /// - **none**. Take no action.
@@ -208,6 +214,9 @@ namespace Pulumi.Akamai
         [Input("ratePolicyId")]
         public Input<int>? RatePolicyId { get; set; }
 
+        /// <summary>
+        /// . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+        /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
 

@@ -15,7 +15,7 @@ import (
 //
 // Creates a match target associated with a security configuration. Match targets determine which security policy should apply to an API, hostname or path.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets](https://techdocs.akamai.com/application-security/reference/post-match-targets)
 //
 // ## Example Usage
 //
@@ -28,7 +28,7 @@ import (
 // 	"fmt"
 // 	"io/ioutil"
 //
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -50,7 +50,7 @@ import (
 // 		}
 // 		_, err = akamai.NewAppSecMatchTarget(ctx, "matchTarget", &akamai.AppSecMatchTargetArgs{
 // 			ConfigId:    pulumi.Int(configuration.ConfigId),
-// 			MatchTarget: readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/match_targets.json")),
+// 			MatchTarget: readFileOrPanic(fmt.Sprintf("%v/match_targets.json", path.Module)),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -228,6 +228,20 @@ func (o AppSecMatchTargetOutput) ToAppSecMatchTargetOutput() AppSecMatchTargetOu
 
 func (o AppSecMatchTargetOutput) ToAppSecMatchTargetOutputWithContext(ctx context.Context) AppSecMatchTargetOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration associated with the match target being modified.
+func (o AppSecMatchTargetOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecMatchTarget) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
+func (o AppSecMatchTargetOutput) MatchTarget() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecMatchTarget) pulumi.StringOutput { return v.MatchTarget }).(pulumi.StringOutput)
+}
+
+func (o AppSecMatchTargetOutput) MatchTargetId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecMatchTarget) pulumi.IntOutput { return v.MatchTargetId }).(pulumi.IntOutput)
 }
 
 type AppSecMatchTargetArrayOutput struct{ *pulumi.OutputState }

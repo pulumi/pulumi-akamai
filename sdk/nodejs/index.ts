@@ -21,6 +21,7 @@ export * from "./appSecCustomRule";
 export * from "./appSecCustomRuleAction";
 export * from "./appSecEval";
 export * from "./appSecEvalGroup";
+export * from "./appSecEvalPenaltyBox";
 export * from "./appSecEvalRule";
 export * from "./appSecIPGeo";
 export * from "./appSecIPGeoProtection";
@@ -77,6 +78,7 @@ export * from "./getAppSecCustomRuleActions";
 export * from "./getAppSecCustomRules";
 export * from "./getAppSecEval";
 export * from "./getAppSecEvalGroups";
+export * from "./getAppSecEvalPenaltyBox";
 export * from "./getAppSecEvalRules";
 export * from "./getAppSecExportConfiguration";
 export * from "./getAppSecFailoverHostnames";
@@ -127,6 +129,14 @@ export * from "./getEdgeWorkersResourceTier";
 export * from "./getGroup";
 export * from "./getGroups";
 export * from "./getGtmDefaultDatacenter";
+export * from "./getIamContactTypes";
+export * from "./getIamCountries";
+export * from "./getIamGrantableRoles";
+export * from "./getIamRoles";
+export * from "./getIamStates";
+export * from "./getIamSupportedLangs";
+export * from "./getIamTimeoutPolicies";
+export * from "./getIamTimezones";
 export * from "./getNetworkLists";
 export * from "./getProperties";
 export * from "./getPropertiesSearch";
@@ -143,6 +153,10 @@ export * from "./gtmDomain";
 export * from "./gtmGeomap";
 export * from "./gtmProperty";
 export * from "./gtmResource";
+export * from "./iamBlockedUserProperties";
+export * from "./iamGroup";
+export * from "./iamRole";
+export * from "./iamUser";
 export * from "./networkList";
 export * from "./networkListActivations";
 export * from "./networkListDescription";
@@ -183,6 +197,7 @@ import { AppSecCustomRule } from "./appSecCustomRule";
 import { AppSecCustomRuleAction } from "./appSecCustomRuleAction";
 import { AppSecEval } from "./appSecEval";
 import { AppSecEvalGroup } from "./appSecEvalGroup";
+import { AppSecEvalPenaltyBox } from "./appSecEvalPenaltyBox";
 import { AppSecEvalRule } from "./appSecEvalRule";
 import { AppSecIPGeo } from "./appSecIPGeo";
 import { AppSecIPGeoProtection } from "./appSecIPGeoProtection";
@@ -230,6 +245,10 @@ import { GtmDomain } from "./gtmDomain";
 import { GtmGeomap } from "./gtmGeomap";
 import { GtmProperty } from "./gtmProperty";
 import { GtmResource } from "./gtmResource";
+import { IamBlockedUserProperties } from "./iamBlockedUserProperties";
+import { IamGroup } from "./iamGroup";
+import { IamRole } from "./iamRole";
+import { IamUser } from "./iamUser";
 import { NetworkList } from "./networkList";
 import { NetworkListActivations } from "./networkListActivations";
 import { NetworkListDescription } from "./networkListDescription";
@@ -273,6 +292,8 @@ const _module = {
                 return new AppSecEval(name, <any>undefined, { urn })
             case "akamai:index/appSecEvalGroup:AppSecEvalGroup":
                 return new AppSecEvalGroup(name, <any>undefined, { urn })
+            case "akamai:index/appSecEvalPenaltyBox:AppSecEvalPenaltyBox":
+                return new AppSecEvalPenaltyBox(name, <any>undefined, { urn })
             case "akamai:index/appSecEvalRule:AppSecEvalRule":
                 return new AppSecEvalRule(name, <any>undefined, { urn })
             case "akamai:index/appSecIPGeo:AppSecIPGeo":
@@ -367,6 +388,14 @@ const _module = {
                 return new GtmProperty(name, <any>undefined, { urn })
             case "akamai:index/gtmResource:GtmResource":
                 return new GtmResource(name, <any>undefined, { urn })
+            case "akamai:index/iamBlockedUserProperties:IamBlockedUserProperties":
+                return new IamBlockedUserProperties(name, <any>undefined, { urn })
+            case "akamai:index/iamGroup:IamGroup":
+                return new IamGroup(name, <any>undefined, { urn })
+            case "akamai:index/iamRole:IamRole":
+                return new IamRole(name, <any>undefined, { urn })
+            case "akamai:index/iamUser:IamUser":
+                return new IamUser(name, <any>undefined, { urn })
             case "akamai:index/networkList:NetworkList":
                 return new NetworkList(name, <any>undefined, { urn })
             case "akamai:index/networkListActivations:NetworkListActivations":
@@ -400,6 +429,7 @@ pulumi.runtime.registerResourceModule("akamai", "index/appSecCustomRule", _modul
 pulumi.runtime.registerResourceModule("akamai", "index/appSecCustomRuleAction", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecEval", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecEvalGroup", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appSecEvalPenaltyBox", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecEvalRule", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecIPGeo", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecIPGeoProtection", _module)
@@ -447,6 +477,10 @@ pulumi.runtime.registerResourceModule("akamai", "index/gtmDomain", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/gtmGeomap", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/gtmProperty", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/gtmResource", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/iamBlockedUserProperties", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/iamGroup", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/iamRole", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/iamUser", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/networkList", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/networkListActivations", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/networkListDescription", _module)

@@ -14,7 +14,7 @@ namespace Pulumi.Akamai
     /// 
     /// Modifies the method used for firewall blocking, and manages the network lists used for IP/Geo firewall blocking.
     /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putipgeofirewall)
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://techdocs.akamai.com/application-security/reference/put-policy-ip-geo-firewall)
     /// 
     /// ## Example Usage
     /// 
@@ -106,7 +106,7 @@ namespace Pulumi.Akamai
         public Output<ImmutableArray<string>> GeoNetworkLists { get; private set; } = null!;
 
         /// <summary>
-        /// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
+        /// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
         /// </summary>
         [Output("ipNetworkLists")]
         public Output<ImmutableArray<string>> IpNetworkLists { get; private set; } = null!;
@@ -203,7 +203,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _ipNetworkLists;
 
         /// <summary>
-        /// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
+        /// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
         /// </summary>
         public InputList<string> IpNetworkLists
         {
@@ -264,7 +264,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _ipNetworkLists;
 
         /// <summary>
-        /// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
+        /// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
         /// </summary>
         public InputList<string> IpNetworkLists
         {

@@ -37,6 +37,7 @@ import * as utilities from "./utilities";
  *     contractId: "ctr_1-AB123",
  *     edgeHostname: "www.example.org.edgesuite.net",
  *     groupId: "grp_123",
+ *     ipBehavior: "IPV4",
  *     productId: "prd_Object_Delivery",
  * });
  * ```
@@ -50,9 +51,7 @@ import * as utilities from "./utilities";
  *
  * Basic Usagehcl resource "akamai_edge_hostname" "example" {
  *
- * # (resource arguments)
- *
- *  } You can import Akamai edge hostnames using a comma-delimited string of edge hostname, contract ID, and group ID. You have to enter the values in this order:
+ * # (resource arguments) } You can import Akamai edge hostnames using a comma-delimited string of edge hostname, contract ID, and group ID. You have to enter the values in this order:
  *
  * `edge_hostname, contract_id, group_id` For example
  *
@@ -99,7 +98,7 @@ export class EdgeHostName extends pulumi.CustomResource {
      */
     public readonly contract!: pulumi.Output<string>;
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * A contract's unique ID, including the `ctr_` prefix.
      */
     public readonly contractId!: pulumi.Output<string>;
     /**
@@ -113,7 +112,7 @@ export class EdgeHostName extends pulumi.CustomResource {
      */
     public readonly group!: pulumi.Output<string>;
     /**
-     * - (Required) A group's unique ID, including the `grp_` prefix.
+     * A group's unique ID, including the `grp_` prefix.
      */
     public readonly groupId!: pulumi.Output<string>;
     /**
@@ -128,7 +127,11 @@ export class EdgeHostName extends pulumi.CustomResource {
     public readonly product!: pulumi.Output<string>;
     public readonly productId!: pulumi.Output<string>;
     /**
-     * A JSON encoded list of use cases
+     * Email address that should receive updates on the IP behavior update request. Required for update operation.
+     */
+    public readonly statusUpdateEmails!: pulumi.Output<string[] | undefined>;
+    /**
+     * A JSON encoded list of use cases.
      */
     public readonly useCases!: pulumi.Output<string | undefined>;
 
@@ -154,6 +157,7 @@ export class EdgeHostName extends pulumi.CustomResource {
             resourceInputs["ipBehavior"] = state ? state.ipBehavior : undefined;
             resourceInputs["product"] = state ? state.product : undefined;
             resourceInputs["productId"] = state ? state.productId : undefined;
+            resourceInputs["statusUpdateEmails"] = state ? state.statusUpdateEmails : undefined;
             resourceInputs["useCases"] = state ? state.useCases : undefined;
         } else {
             const args = argsOrState as EdgeHostNameArgs | undefined;
@@ -172,6 +176,7 @@ export class EdgeHostName extends pulumi.CustomResource {
             resourceInputs["ipBehavior"] = args ? args.ipBehavior : undefined;
             resourceInputs["product"] = args ? args.product : undefined;
             resourceInputs["productId"] = args ? args.productId : undefined;
+            resourceInputs["statusUpdateEmails"] = args ? args.statusUpdateEmails : undefined;
             resourceInputs["useCases"] = args ? args.useCases : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -196,7 +201,7 @@ export interface EdgeHostNameState {
      */
     contract?: pulumi.Input<string>;
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * A contract's unique ID, including the `ctr_` prefix.
      */
     contractId?: pulumi.Input<string>;
     /**
@@ -210,7 +215,7 @@ export interface EdgeHostNameState {
      */
     group?: pulumi.Input<string>;
     /**
-     * - (Required) A group's unique ID, including the `grp_` prefix.
+     * A group's unique ID, including the `grp_` prefix.
      */
     groupId?: pulumi.Input<string>;
     /**
@@ -225,7 +230,11 @@ export interface EdgeHostNameState {
     product?: pulumi.Input<string>;
     productId?: pulumi.Input<string>;
     /**
-     * A JSON encoded list of use cases
+     * Email address that should receive updates on the IP behavior update request. Required for update operation.
+     */
+    statusUpdateEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A JSON encoded list of use cases.
      */
     useCases?: pulumi.Input<string>;
 }
@@ -245,7 +254,7 @@ export interface EdgeHostNameArgs {
      */
     contract?: pulumi.Input<string>;
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * A contract's unique ID, including the `ctr_` prefix.
      */
     contractId?: pulumi.Input<string>;
     /**
@@ -259,7 +268,7 @@ export interface EdgeHostNameArgs {
      */
     group?: pulumi.Input<string>;
     /**
-     * - (Required) A group's unique ID, including the `grp_` prefix.
+     * A group's unique ID, including the `grp_` prefix.
      */
     groupId?: pulumi.Input<string>;
     /**
@@ -274,7 +283,11 @@ export interface EdgeHostNameArgs {
     product?: pulumi.Input<string>;
     productId?: pulumi.Input<string>;
     /**
-     * A JSON encoded list of use cases
+     * Email address that should receive updates on the IP behavior update request. Required for update operation.
+     */
+    statusUpdateEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A JSON encoded list of use cases.
      */
     useCases?: pulumi.Input<string>;
 }

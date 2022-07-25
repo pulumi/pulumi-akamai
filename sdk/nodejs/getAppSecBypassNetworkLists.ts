@@ -11,7 +11,7 @@ import * as utilities from "./utilities";
  *
  * Note that this data source is only applicable to WAP (Web Application Protector) configurations.
  *
- * **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/bypass-network-lists](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getbypassnetworklistsforawapconfigversion)
+ * **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/bypass-network-lists](https://techdocs.akamai.com/application-security/reference/get-bypass-network-lists-per-policy)
  *
  * ## Example Usage
  *
@@ -26,6 +26,7 @@ import * as utilities from "./utilities";
  * });
  * const bypassNetworkLists = configuration.then(configuration => akamai.getAppSecBypassNetworkLists({
  *     configId: configuration.configId,
+ *     securityPolicyId: "gms1_134637",
  * }));
  * export const bypassNetworkListsOutput = bypassNetworkLists.then(bypassNetworkLists => bypassNetworkLists.outputText);
  * export const bypassNetworkListsJson = bypassNetworkLists.then(bypassNetworkLists => bypassNetworkLists.json);
@@ -56,10 +57,13 @@ export function getAppSecBypassNetworkLists(args: GetAppSecBypassNetworkListsArg
  */
 export interface GetAppSecBypassNetworkListsArgs {
     /**
-     * . Unique identifier of the security configuration associated with the bypass network list.
+     * . Unique identifier of the security configuration associated with the bypass network lists.
      */
     configId: number;
-    securityPolicyId?: string;
+    /**
+     * . Unique identifier of the security policy associated with the bypass network lists.
+     */
+    securityPolicyId: string;
 }
 
 /**
@@ -74,7 +78,7 @@ export interface GetAppSecBypassNetworkListsResult {
     readonly id: string;
     readonly json: string;
     readonly outputText: string;
-    readonly securityPolicyId?: string;
+    readonly securityPolicyId: string;
 }
 
 export function getAppSecBypassNetworkListsOutput(args: GetAppSecBypassNetworkListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecBypassNetworkListsResult> {
@@ -86,8 +90,11 @@ export function getAppSecBypassNetworkListsOutput(args: GetAppSecBypassNetworkLi
  */
 export interface GetAppSecBypassNetworkListsOutputArgs {
     /**
-     * . Unique identifier of the security configuration associated with the bypass network list.
+     * . Unique identifier of the security configuration associated with the bypass network lists.
      */
     configId: pulumi.Input<number>;
-    securityPolicyId?: pulumi.Input<string>;
+    /**
+     * . Unique identifier of the security policy associated with the bypass network lists.
+     */
+    securityPolicyId: pulumi.Input<string>;
 }

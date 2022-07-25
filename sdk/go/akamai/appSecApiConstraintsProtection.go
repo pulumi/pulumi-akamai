@@ -15,7 +15,7 @@ import (
 //
 // Enables or disables API constraints protection. These constraints specify the action to be taken when designated API endpoints are invoked.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putprotections)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/put-policy-protections)
 //
 // ## Example Usage
 //
@@ -25,7 +25,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -219,6 +219,23 @@ func (o AppSecApiConstraintsProtectionOutput) ToAppSecApiConstraintsProtectionOu
 
 func (o AppSecApiConstraintsProtectionOutput) ToAppSecApiConstraintsProtectionOutputWithContext(ctx context.Context) AppSecApiConstraintsProtectionOutput {
 	return o
+}
+
+func (o AppSecApiConstraintsProtectionOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecApiConstraintsProtection) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+func (o AppSecApiConstraintsProtectionOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppSecApiConstraintsProtection) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Text Export representation
+func (o AppSecApiConstraintsProtectionOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecApiConstraintsProtection) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
+}
+
+func (o AppSecApiConstraintsProtectionOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecApiConstraintsProtection) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
 type AppSecApiConstraintsProtectionArrayOutput struct{ *pulumi.OutputState }

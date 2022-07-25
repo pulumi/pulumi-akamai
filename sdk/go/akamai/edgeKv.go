@@ -21,7 +21,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -258,6 +258,36 @@ func (o EdgeKvOutput) ToEdgeKvOutput() EdgeKvOutput {
 
 func (o EdgeKvOutput) ToEdgeKvOutputWithContext(ctx context.Context) EdgeKvOutput {
 	return o
+}
+
+// Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
+func (o EdgeKvOutput) GeoLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EdgeKv) pulumi.StringPtrOutput { return v.GeoLocation }).(pulumi.StringPtrOutput)
+}
+
+// - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+func (o EdgeKvOutput) GroupId() pulumi.IntOutput {
+	return o.ApplyT(func(v *EdgeKv) pulumi.IntOutput { return v.GroupId }).(pulumi.IntOutput)
+}
+
+// List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
+func (o EdgeKvOutput) InitialDatas() EdgeKvInitialDataArrayOutput {
+	return o.ApplyT(func(v *EdgeKv) EdgeKvInitialDataArrayOutput { return v.InitialDatas }).(EdgeKvInitialDataArrayOutput)
+}
+
+// - (Required) The name of the namespace.
+func (o EdgeKvOutput) NamespaceName() pulumi.StringOutput {
+	return o.ApplyT(func(v *EdgeKv) pulumi.StringOutput { return v.NamespaceName }).(pulumi.StringOutput)
+}
+
+// The network you want to activate the EdgeKV database on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+func (o EdgeKvOutput) Network() pulumi.StringOutput {
+	return o.ApplyT(func(v *EdgeKv) pulumi.StringOutput { return v.Network }).(pulumi.StringOutput)
+}
+
+// - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+func (o EdgeKvOutput) RetentionInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v *EdgeKv) pulumi.IntOutput { return v.RetentionInSeconds }).(pulumi.IntOutput)
 }
 
 type EdgeKvArrayOutput struct{ *pulumi.OutputState }

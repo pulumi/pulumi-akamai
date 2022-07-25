@@ -14,51 +14,8 @@ import (
 //
 // Returns the list of hostnames that can be (but aren't yet) protected by a security configuration. You can specify the set of hostnames to be retrieved either by supplying the name of a security configuration or by supplying an Akamai group ID and contract ID.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selectable-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getavailablehostnames)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selectable-hostnames](https://techdocs.akamai.com/application-security/reference/get-selectable-hostnames)
 //
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		selectableHostnamesAppSecSelectableHostnames, err := akamai.GetAppSecSelectableHostnames(ctx, &GetAppSecSelectableHostnamesArgs{
-// 			ConfigId: pulumi.IntRef(configuration.ConfigId),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("selectableHostnames", selectableHostnamesAppSecSelectableHostnames.Hostnames)
-// 		ctx.Export("selectableHostnamesJson", selectableHostnamesAppSecSelectableHostnames.HostnamesJson)
-// 		ctx.Export("selectableHostnamesOutputText", selectableHostnamesAppSecSelectableHostnames.OutputText)
-// 		selectableHostnamesForCreateConfigurationAppSecSelectableHostnames, err := akamai.GetAppSecSelectableHostnames(ctx, &GetAppSecSelectableHostnamesArgs{
-// 			ContractId: "5-2WA382",
-// 			GroupId:    12198,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("selectableHostnamesForCreateConfiguration", selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Hostnames)
-// 		ctx.Export("selectableHostnamesForCreateConfigurationJson", selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.HostnamesJson)
-// 		ctx.Export("selectableHostnamesForCreateConfigurationOutputText", selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.OutputText)
-// 		return nil
-// 	})
-// }
-// ```
 // ## Output Options
 //
 // The following options can be used to determine the information returned, and how that returned information is formatted:

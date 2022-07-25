@@ -23,7 +23,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -222,6 +222,26 @@ func (o CloudletsApplicationLoadBalancerActivationOutput) ToCloudletsApplication
 
 func (o CloudletsApplicationLoadBalancerActivationOutput) ToCloudletsApplicationLoadBalancerActivationOutputWithContext(ctx context.Context) CloudletsApplicationLoadBalancerActivationOutput {
 	return o
+}
+
+// The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+func (o CloudletsApplicationLoadBalancerActivationOutput) Network() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudletsApplicationLoadBalancerActivation) pulumi.StringOutput { return v.Network }).(pulumi.StringOutput)
+}
+
+// The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+func (o CloudletsApplicationLoadBalancerActivationOutput) OriginId() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudletsApplicationLoadBalancerActivation) pulumi.StringOutput { return v.OriginId }).(pulumi.StringOutput)
+}
+
+// The activation status for this load balancing configuration.
+func (o CloudletsApplicationLoadBalancerActivationOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudletsApplicationLoadBalancerActivation) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+}
+
+// The Application Load Balancer Cloudlet configuration version you want to activate.
+func (o CloudletsApplicationLoadBalancerActivationOutput) Version() pulumi.IntOutput {
+	return o.ApplyT(func(v *CloudletsApplicationLoadBalancerActivation) pulumi.IntOutput { return v.Version }).(pulumi.IntOutput)
 }
 
 type CloudletsApplicationLoadBalancerActivationArrayOutput struct{ *pulumi.OutputState }

@@ -14,7 +14,7 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetPropertyRulesTemplateVariableResult
     {
         /// <summary>
-        /// The name of the variable used in template.
+        /// The name of the variable used in the template.
         /// </summary>
         public readonly string Name;
         /// <summary>

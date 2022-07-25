@@ -16,7 +16,7 @@ namespace Pulumi.Akamai
         /// 
         /// Returns a list of the custom rules defined for a security configuration; you can also use this resource to return information for an individual custom rule. Custom rules are rules you have created yourself and are not part of the Kona Rule Set.
         /// 
-        /// **Related API Endpoint**:[/appsec/v1/configs/{configId}/custom-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcustomrules)
+        /// **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/custom-rules](https://techdocs.akamai.com/application-security/reference/get-custom-rules)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -78,7 +78,7 @@ namespace Pulumi.Akamai
         /// 
         /// Returns a list of the custom rules defined for a security configuration; you can also use this resource to return information for an individual custom rule. Custom rules are rules you have created yourself and are not part of the Kona Rule Set.
         /// 
-        /// **Related API Endpoint**:[/appsec/v1/configs/{configId}/custom-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcustomrules)
+        /// **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/custom-rules](https://techdocs.akamai.com/application-security/reference/get-custom-rules)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -140,7 +140,7 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecCustomRulesArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the custom rules
+        /// . Unique identifier of the security configuration associated with the custom rules.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
@@ -159,7 +159,7 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecCustomRulesInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the custom rules
+        /// . Unique identifier of the security configuration associated with the custom rules.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;

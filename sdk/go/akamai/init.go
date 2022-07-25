@@ -52,6 +52,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppSecEval{}
 	case "akamai:index/appSecEvalGroup:AppSecEvalGroup":
 		r = &AppSecEvalGroup{}
+	case "akamai:index/appSecEvalPenaltyBox:AppSecEvalPenaltyBox":
+		r = &AppSecEvalPenaltyBox{}
 	case "akamai:index/appSecEvalRule:AppSecEvalRule":
 		r = &AppSecEvalRule{}
 	case "akamai:index/appSecIPGeo:AppSecIPGeo":
@@ -146,6 +148,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &GtmProperty{}
 	case "akamai:index/gtmResource:GtmResource":
 		r = &GtmResource{}
+	case "akamai:index/iamBlockedUserProperties:IamBlockedUserProperties":
+		r = &IamBlockedUserProperties{}
+	case "akamai:index/iamGroup:IamGroup":
+		r = &IamGroup{}
+	case "akamai:index/iamRole:IamRole":
+		r = &IamRole{}
+	case "akamai:index/iamUser:IamUser":
+		r = &IamUser{}
 	case "akamai:index/networkList:NetworkList":
 		r = &NetworkList{}
 	case "akamai:index/networkListActivations:NetworkListActivations":
@@ -264,6 +274,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/appSecEvalGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/appSecEvalPenaltyBox",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -499,6 +514,26 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/gtmResource",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/iamBlockedUserProperties",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/iamGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/iamRole",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/iamUser",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

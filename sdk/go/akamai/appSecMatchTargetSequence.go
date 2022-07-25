@@ -15,7 +15,7 @@ import (
 //
 // Specifies the order in which match targets are applied within a security configuration. As a general rule, you should process broader and more-general match targets first, gradually working your way down to more granular and highly-specific targets.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets/sequence](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets/sequence](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence)
 //
 // ## Example Usage
 //
@@ -28,7 +28,7 @@ import (
 // 	"fmt"
 // 	"io/ioutil"
 //
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -50,7 +50,7 @@ import (
 // 		}
 // 		_, err = akamai.NewAppSecMatchTargetSequence(ctx, "matchTargetSequence", &akamai.AppSecMatchTargetSequenceArgs{
 // 			ConfigId:            pulumi.Int(configuration.ConfigId),
-// 			MatchTargetSequence: readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/match_targets_sequence.json")),
+// 			MatchTargetSequence: readFileOrPanic(fmt.Sprintf("%v/match_targets_sequence.json", path.Module)),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -217,6 +217,16 @@ func (o AppSecMatchTargetSequenceOutput) ToAppSecMatchTargetSequenceOutput() App
 
 func (o AppSecMatchTargetSequenceOutput) ToAppSecMatchTargetSequenceOutputWithContext(ctx context.Context) AppSecMatchTargetSequenceOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration associated with the match target sequence being modified.
+func (o AppSecMatchTargetSequenceOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecMatchTargetSequence) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://developer.akamai.com/api/cloud_security/application_security/v1.html#matchtargetorder) section of the Application Security API documentation.
+func (o AppSecMatchTargetSequenceOutput) MatchTargetSequence() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppSecMatchTargetSequence) pulumi.StringPtrOutput { return v.MatchTargetSequence }).(pulumi.StringPtrOutput)
 }
 
 type AppSecMatchTargetSequenceArrayOutput struct{ *pulumi.OutputState }

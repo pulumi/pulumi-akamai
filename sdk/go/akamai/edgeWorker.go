@@ -21,7 +21,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -250,6 +250,46 @@ func (o EdgeWorkerOutput) ToEdgeWorkerOutput() EdgeWorkerOutput {
 
 func (o EdgeWorkerOutput) ToEdgeWorkerOutputWithContext(ctx context.Context) EdgeWorkerOutput {
 	return o
+}
+
+// The unique identifier of the EdgeWorker
+func (o EdgeWorkerOutput) EdgeworkerId() pulumi.IntOutput {
+	return o.ApplyT(func(v *EdgeWorker) pulumi.IntOutput { return v.EdgeworkerId }).(pulumi.IntOutput)
+}
+
+// - (Required) Identifies a group to assign to the EdgeWorker ID.
+func (o EdgeWorkerOutput) GroupId() pulumi.IntOutput {
+	return o.ApplyT(func(v *EdgeWorker) pulumi.IntOutput { return v.GroupId }).(pulumi.IntOutput)
+}
+
+// - (Optional) The path to the EdgeWorkers code bundle.
+func (o EdgeWorkerOutput) LocalBundle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EdgeWorker) pulumi.StringPtrOutput { return v.LocalBundle }).(pulumi.StringPtrOutput)
+}
+
+// The local bundle hash for the EdgeWorker
+func (o EdgeWorkerOutput) LocalBundleHash() pulumi.StringOutput {
+	return o.ApplyT(func(v *EdgeWorker) pulumi.StringOutput { return v.LocalBundleHash }).(pulumi.StringOutput)
+}
+
+// - (Required) The name of the EdgeWorker ID.
+func (o EdgeWorkerOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *EdgeWorker) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// - (Required) Unique identifier of the resource tier.
+func (o EdgeWorkerOutput) ResourceTierId() pulumi.IntOutput {
+	return o.ApplyT(func(v *EdgeWorker) pulumi.IntOutput { return v.ResourceTierId }).(pulumi.IntOutput)
+}
+
+// The bundle version
+func (o EdgeWorkerOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v *EdgeWorker) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
+}
+
+// The list of warnings returned by EdgeWorker validation
+func (o EdgeWorkerOutput) Warnings() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *EdgeWorker) pulumi.StringArrayOutput { return v.Warnings }).(pulumi.StringArrayOutput)
 }
 
 type EdgeWorkerArrayOutput struct{ *pulumi.OutputState }

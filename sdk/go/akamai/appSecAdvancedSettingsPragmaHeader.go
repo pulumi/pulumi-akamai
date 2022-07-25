@@ -17,7 +17,7 @@ import (
 //
 // This operation can be applied at the security configuration level (in which case it applies to all the security policies in the configuration), or can be customized for an individual security policy.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/pragma-header](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpragmaheaderpolicy)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/pragma-header](https://techdocs.akamai.com/application-security/reference/put-policies-pragma-header)
 //
 // ## Example Usage
 //
@@ -30,7 +30,7 @@ import (
 // 	"fmt"
 // 	"io/ioutil"
 //
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -53,7 +53,7 @@ import (
 // 		_, err = akamai.NewAppSecAdvancedSettingsPragmaHeader(ctx, "pragmaHeader", &akamai.AppSecAdvancedSettingsPragmaHeaderArgs{
 // 			ConfigId:         pulumi.Int(configuration.ConfigId),
 // 			SecurityPolicyId: pulumi.String("gms1_134637"),
-// 			PragmaHeader:     readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/pragma_header.json")),
+// 			PragmaHeader:     readFileOrPanic(fmt.Sprintf("%v/pragma_header.json", path.Module)),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -233,6 +233,21 @@ func (o AppSecAdvancedSettingsPragmaHeaderOutput) ToAppSecAdvancedSettingsPragma
 
 func (o AppSecAdvancedSettingsPragmaHeaderOutput) ToAppSecAdvancedSettingsPragmaHeaderOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPragmaHeaderOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration associated with the pragma header settings being modified.
+func (o AppSecAdvancedSettingsPragmaHeaderOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecAdvancedSettingsPragmaHeader) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`. You can view a sample JSON file in the [Modify pragma settings for a security setting](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpragmaheaderconfiguration) section of the Application Security API documentation.
+func (o AppSecAdvancedSettingsPragmaHeaderOutput) PragmaHeader() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecAdvancedSettingsPragmaHeader) pulumi.StringOutput { return v.PragmaHeader }).(pulumi.StringOutput)
+}
+
+// . Unique identifier of the security policy associated with the pragma header settings being modified. If not included, pragma header settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+func (o AppSecAdvancedSettingsPragmaHeaderOutput) SecurityPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppSecAdvancedSettingsPragmaHeader) pulumi.StringPtrOutput { return v.SecurityPolicyId }).(pulumi.StringPtrOutput)
 }
 
 type AppSecAdvancedSettingsPragmaHeaderArrayOutput struct{ *pulumi.OutputState }

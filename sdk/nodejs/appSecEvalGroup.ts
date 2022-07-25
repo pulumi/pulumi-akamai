@@ -18,7 +18,7 @@ import * as utilities from "./utilities";
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
- * import * from "fs";
+ * import * as fs from "fs";
  *
  * const configuration = akamai.getAppSecConfiguration({
  *     name: "Documentation",
@@ -67,7 +67,7 @@ export class AppSecEvalGroup extends pulumi.CustomResource {
     /**
      * . Action to be taken any time the attack group is triggered. Allowed values are:
      * - **alert**. Record the event.
-     * - **deny**. Block the request
+     * - **deny**. Block the request.
      * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
      * - **none**. Take no action.
      */
@@ -139,7 +139,7 @@ export interface AppSecEvalGroupState {
     /**
      * . Action to be taken any time the attack group is triggered. Allowed values are:
      * - **alert**. Record the event.
-     * - **deny**. Block the request
+     * - **deny**. Block the request.
      * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
      * - **none**. Take no action.
      */
@@ -169,7 +169,7 @@ export interface AppSecEvalGroupArgs {
     /**
      * . Action to be taken any time the attack group is triggered. Allowed values are:
      * - **alert**. Record the event.
-     * - **deny**. Block the request
+     * - **deny**. Block the request.
      * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
      * - **none**. Take no action.
      */

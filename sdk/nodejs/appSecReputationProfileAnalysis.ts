@@ -12,27 +12,7 @@ import * as utilities from "./utilities";
  * - The `forwardToHttpHeader` parameter, which indicates whether client reputation details are added to requests forwarded to origin in an HTTP header.
  * - The `forwardSharedIpToHttpHeaderSiem` parameter, which specifies whether a value is added indicating that shared IPs addresses are included in HTTP headers and in SIEM integration events.
  *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putreputationanalysis)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const reputationAnalysis = configuration.then(configuration => akamai.getAppSecReputationProfileAnalysis({
- *     configId: configuration.configId,
- *     securityPolicyId: "gms1_134637",
- *     forwardToHttpHeader: true,
- * }));
- * export const reputationAnalysisText = reputationAnalysis.then(reputationAnalysis => reputationAnalysis.outputText);
- * export const reputationAnalysisJson = reputationAnalysis.then(reputationAnalysis => reputationAnalysis.json);
- * ```
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://techdocs.akamai.com/application-security/reference/put-reputation-analysis)
  */
 export class AppSecReputationProfileAnalysis extends pulumi.CustomResource {
     /**

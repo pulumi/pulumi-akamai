@@ -22,7 +22,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -218,6 +218,18 @@ func (o NetworkListSubscriptionOutput) ToNetworkListSubscriptionOutput() Network
 
 func (o NetworkListSubscriptionOutput) ToNetworkListSubscriptionOutputWithContext(ctx context.Context) NetworkListSubscriptionOutput {
 	return o
+}
+
+// A list containing one or more IDs of the network lists to which the indicated email
+// addresses should be subscribed.
+func (o NetworkListSubscriptionOutput) NetworkLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NetworkListSubscription) pulumi.StringArrayOutput { return v.NetworkLists }).(pulumi.StringArrayOutput)
+}
+
+// A bracketed, comma-separated list of email addresses that will be notified of changes to any
+// of the specified network lists.
+func (o NetworkListSubscriptionOutput) Recipients() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NetworkListSubscription) pulumi.StringArrayOutput { return v.Recipients }).(pulumi.StringArrayOutput)
 }
 
 type NetworkListSubscriptionArrayOutput struct{ *pulumi.OutputState }

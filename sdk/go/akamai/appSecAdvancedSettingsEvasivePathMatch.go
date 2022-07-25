@@ -11,8 +11,14 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The `resourceAkamaiAppsecAdvancedSettingsEvasivePathMatch` resource allows you to enable, disable, or update the evasive path match setting for a configuration. This setting determines whether fuzzy matching is used to make URL matching more inclusive.
-// This operation applies at the configuration level, and therefore applies to all policies within a configuration. You may override this setting for a particular policy by specifying the policy using the securityPolicyId parameter.
+// **Scopes**: Security configuration; security policy
+//
+// The `resourceAkamaiAppsecAdvancedSettingsEvasivePathMatch` resource allows you to enable, disable, or update the evasive path match setting for a configuration.
+// This setting determines whether fuzzy matching is used to make URL matching more inclusive.
+// This operation applies at the configuration level, and therefore applies to all policies within a configuration.
+// You may override this setting for a particular policy by specifying the policy using the securityPolicyId parameter.
+//
+// **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/advanced-settings/evasive-path-match](https://techdocs.akamai.com/application-security/reference/put-evasive-path-match)
 //
 // ## Example Usage
 //
@@ -22,7 +28,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -224,6 +230,21 @@ func (o AppSecAdvancedSettingsEvasivePathMatchOutput) ToAppSecAdvancedSettingsEv
 
 func (o AppSecAdvancedSettingsEvasivePathMatchOutput) ToAppSecAdvancedSettingsEvasivePathMatchOutputWithContext(ctx context.Context) AppSecAdvancedSettingsEvasivePathMatchOutput {
 	return o
+}
+
+// The ID of the security configuration to use.
+func (o AppSecAdvancedSettingsEvasivePathMatchOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecAdvancedSettingsEvasivePathMatch) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// Whether to enable path match.
+func (o AppSecAdvancedSettingsEvasivePathMatchOutput) EnablePathMatch() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppSecAdvancedSettingsEvasivePathMatch) pulumi.BoolOutput { return v.EnablePathMatch }).(pulumi.BoolOutput)
+}
+
+// The ID of a specific security policy to which the evasive path match setting should be applied. If not supplied, the indicated setting will be applied to all policies within the configuration.
+func (o AppSecAdvancedSettingsEvasivePathMatchOutput) SecurityPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppSecAdvancedSettingsEvasivePathMatch) pulumi.StringPtrOutput { return v.SecurityPolicyId }).(pulumi.StringPtrOutput)
 }
 
 type AppSecAdvancedSettingsEvasivePathMatchArrayOutput struct{ *pulumi.OutputState }

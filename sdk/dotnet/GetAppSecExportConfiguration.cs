@@ -12,12 +12,6 @@ namespace Pulumi.Akamai
     public static class GetAppSecExportConfiguration
     {
         /// <summary>
-        /// **Scopes**: Security configuration and version
-        /// 
-        /// Returns comprehensive details about a security configuration, including rate policies, security policies, rules, hostnames, and match targets.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/export/configs/{configId}/versions/{versionNumber}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getconfigurationversionexport)
-        /// 
         /// {{% examples %}}
         /// ## Example Usage
         /// {{% example %}}
@@ -67,19 +61,13 @@ namespace Pulumi.Akamai
         /// 
         /// The following options can be used to determine the information returned, and how that returned information is formatted:
         /// 
-        /// - `json`. Complete set of information about the specified security configuration version in JSON format. Includes the types available for the `search` parameter as well as additional fields such as `createDate` and `createdBy`.
+        /// - `json`. Complete set of information about the specified security configuration version in JSON format. When this option is included information is always returned for the _entire_ configuration. Among other things, that means that, if your command uses the `search` parameter, that parameter is ignored.
         /// - `output_text`. Tabular report showing the types of data specified in the `search` parameter. Valid only if the `search` parameter references at least one type.
         /// </summary>
         public static Task<GetAppSecExportConfigurationResult> InvokeAsync(GetAppSecExportConfigurationArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecExportConfigurationResult>("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", args ?? new GetAppSecExportConfigurationArgs(), options.WithDefaults());
 
         /// <summary>
-        /// **Scopes**: Security configuration and version
-        /// 
-        /// Returns comprehensive details about a security configuration, including rate policies, security policies, rules, hostnames, and match targets.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/export/configs/{configId}/versions/{versionNumber}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getconfigurationversionexport)
-        /// 
         /// {{% examples %}}
         /// ## Example Usage
         /// {{% example %}}
@@ -129,7 +117,7 @@ namespace Pulumi.Akamai
         /// 
         /// The following options can be used to determine the information returned, and how that returned information is formatted:
         /// 
-        /// - `json`. Complete set of information about the specified security configuration version in JSON format. Includes the types available for the `search` parameter as well as additional fields such as `createDate` and `createdBy`.
+        /// - `json`. Complete set of information about the specified security configuration version in JSON format. When this option is included information is always returned for the _entire_ configuration. Among other things, that means that, if your command uses the `search` parameter, that parameter is ignored.
         /// - `output_text`. Tabular report showing the types of data specified in the `search` parameter. Valid only if the `search` parameter references at least one type.
         /// </summary>
         public static Output<GetAppSecExportConfigurationResult> Invoke(GetAppSecExportConfigurationInvokeArgs args, InvokeOptions? options = null)
@@ -149,29 +137,7 @@ namespace Pulumi.Akamai
         private List<string>? _searches;
 
         /// <summary>
-        /// . JSON array of strings specifying the types of information to be retrieved. Allowed values include:
-        /// &gt; - **AdvancedSettingsLogging**
-        /// &gt; - **AdvancedSettingsPrefetch**
-        /// &gt; - **ApiRequestConstraints**
-        /// &gt; - **AttackGroup**
-        /// &gt; - **AttackGroupConditionException**
-        /// &gt; - **Eval**
-        /// &gt; - **EvalRuleConditionException**
-        /// &gt; - **CustomDeny**
-        /// &gt; - **CustomRule**
-        /// &gt; - **CustomRuleAction**
-        /// &gt; - **IPGeoFirewall**
-        /// &gt; - **MatchTarget**
-        /// &gt; - **PenaltyBox**
-        /// &gt; - **RatePolicy**
-        /// &gt; - **RatePolicyAction**
-        /// &gt; - **ReputationProfile**
-        /// &gt; - **ReputationProfileAction**
-        /// &gt; - **Rule**
-        /// &gt; - **RuleConditionException**
-        /// &gt; - **SecurityPolicy**
-        /// &gt; - **SiemSettings**
-        /// &gt; - **SlowPost**
+        /// . JSON array of strings specifying the types of information to be retrieved. Note that there are two different ways to return data by using the `search` parameter. To return data in tabular format, use one or more of the following terms:
         /// </summary>
         public List<string> Searches
         {
@@ -202,29 +168,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _searches;
 
         /// <summary>
-        /// . JSON array of strings specifying the types of information to be retrieved. Allowed values include:
-        /// &gt; - **AdvancedSettingsLogging**
-        /// &gt; - **AdvancedSettingsPrefetch**
-        /// &gt; - **ApiRequestConstraints**
-        /// &gt; - **AttackGroup**
-        /// &gt; - **AttackGroupConditionException**
-        /// &gt; - **Eval**
-        /// &gt; - **EvalRuleConditionException**
-        /// &gt; - **CustomDeny**
-        /// &gt; - **CustomRule**
-        /// &gt; - **CustomRuleAction**
-        /// &gt; - **IPGeoFirewall**
-        /// &gt; - **MatchTarget**
-        /// &gt; - **PenaltyBox**
-        /// &gt; - **RatePolicy**
-        /// &gt; - **RatePolicyAction**
-        /// &gt; - **ReputationProfile**
-        /// &gt; - **ReputationProfileAction**
-        /// &gt; - **Rule**
-        /// &gt; - **RuleConditionException**
-        /// &gt; - **SecurityPolicy**
-        /// &gt; - **SiemSettings**
-        /// &gt; - **SlowPost**
+        /// . JSON array of strings specifying the types of information to be retrieved. Note that there are two different ways to return data by using the `search` parameter. To return data in tabular format, use one or more of the following terms:
         /// </summary>
         public InputList<string> Searches
         {

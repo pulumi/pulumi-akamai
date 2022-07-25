@@ -15,7 +15,7 @@ import (
 //
 // Modifies the action taken when a reputation profile is triggered.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-profiles/{reputationProfileId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putreputationprofileaction)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-profiles/{reputationProfileId}](https://techdocs.akamai.com/application-security/reference/put-reputation-profile-action)
 //
 // ## Example Usage
 //
@@ -25,7 +25,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -259,6 +259,30 @@ func (o AppSecReputationProfileActionOutput) ToAppSecReputationProfileActionOutp
 
 func (o AppSecReputationProfileActionOutput) ToAppSecReputationProfileActionOutputWithContext(ctx context.Context) AppSecReputationProfileActionOutput {
 	return o
+}
+
+// . Action taken any time the reputation profile is triggered. Allows values are:
+// - **alert**. Record the event.
+// - **deny**. Block the request.
+// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+// - **none**. Take no action.
+func (o AppSecReputationProfileActionOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecReputationProfileAction) pulumi.StringOutput { return v.Action }).(pulumi.StringOutput)
+}
+
+// . Unique identifier of the security configuration associated with the reputation profile action being modified.
+func (o AppSecReputationProfileActionOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecReputationProfileAction) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Unique identifier of the reputation profile whose action is being modified.
+func (o AppSecReputationProfileActionOutput) ReputationProfileId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecReputationProfileAction) pulumi.IntOutput { return v.ReputationProfileId }).(pulumi.IntOutput)
+}
+
+// . Unique identifier of the security policy associated with the reputation profile action being modified.
+func (o AppSecReputationProfileActionOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecReputationProfileAction) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
 type AppSecReputationProfileActionArrayOutput struct{ *pulumi.OutputState }

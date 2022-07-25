@@ -7,11 +7,10 @@ import * as utilities from "./utilities";
 /**
  * **Scopes**: Security configuration; rate policy
  *
- * Creates, modifies or deletes rate policies.
- * Rate polices help you monitor and moderate the number and  rate of all the requests you receive.
+ * Creates, modifies, or deletes rate policies. Rate polices help you monitor and moderate the number and rate of all the requests you receive.
  * In turn, this helps you prevent your website from being overwhelmed by a dramatic and unexpected surge in traffic.
  *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postratepolicies)
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://techdocs.akamai.com/application-security/reference/post-rate-policies)
  *
  * ## Example Usage
  *
@@ -20,7 +19,7 @@ import * as utilities from "./utilities";
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
- * import * from "fs";
+ * import * as fs from "fs";
  *
  * const configuration = akamai.getAppSecConfiguration({
  *     name: "Documentation",
@@ -73,9 +72,6 @@ export class AppSecRatePolicy extends pulumi.CustomResource {
      * . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
      */
     public readonly ratePolicy!: pulumi.Output<string>;
-    /**
-     * . Unique identifier of an existing rate policy.
-     */
     public /*out*/ readonly ratePolicyId!: pulumi.Output<number>;
 
     /**
@@ -123,9 +119,6 @@ export interface AppSecRatePolicyState {
      * . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
      */
     ratePolicy?: pulumi.Input<string>;
-    /**
-     * . Unique identifier of an existing rate policy.
-     */
     ratePolicyId?: pulumi.Input<number>;
 }
 

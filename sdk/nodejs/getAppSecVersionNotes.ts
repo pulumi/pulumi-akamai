@@ -9,7 +9,7 @@ import * as utilities from "./utilities";
  *
  * Returns the most recent version notes for a security configuration.
  *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getversionnotes)
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://techdocs.akamai.com/application-security/reference/get-version-notes)
  *
  * ## Example Usage
  *

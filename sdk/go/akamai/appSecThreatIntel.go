@@ -15,7 +15,7 @@ import (
 //
 // Enables or disables threat intelligence for a security policy. This resource is only available to organizations running the Adaptive Security Engine (ASE) beta Please contact your Akamai representative for more information.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/threat-intel](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putthreatintelligence)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/threat-intel](https://techdocs.akamai.com/application-security/reference/put-rules-threat-intel)
 //
 // ## Example Usage
 //
@@ -25,7 +25,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -223,6 +223,21 @@ func (o AppSecThreatIntelOutput) ToAppSecThreatIntelOutput() AppSecThreatIntelOu
 
 func (o AppSecThreatIntelOutput) ToAppSecThreatIntelOutputWithContext(ctx context.Context) AppSecThreatIntelOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
+func (o AppSecThreatIntelOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecThreatIntel) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
+func (o AppSecThreatIntelOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecThreatIntel) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+// . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
+func (o AppSecThreatIntelOutput) ThreatIntel() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecThreatIntel) pulumi.StringOutput { return v.ThreatIntel }).(pulumi.StringOutput)
 }
 
 type AppSecThreatIntelArrayOutput struct{ *pulumi.OutputState }

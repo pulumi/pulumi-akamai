@@ -14,61 +14,6 @@ import (
 //
 // Use the `getCloudletsPhasedReleaseMatchRule` data source to build a match rule JSON object for the Phased Release Cloudlet.
 //
-// ## Basic usage
-//
-// This example returns the JSON-encoded rules for the Phased Release Cloudlet:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.GetCloudletsPhasedReleaseMatchRule(ctx, &GetCloudletsPhasedReleaseMatchRuleArgs{
-// 			MatchRules: []GetCloudletsPhasedReleaseMatchRuleMatchRule{
-// 				GetCloudletsPhasedReleaseMatchRuleMatchRule{
-// 					End: pulumi.IntRef(1645037845),
-// 					ForwardSettings: GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings{
-// 						OriginId: "1234",
-// 						Percent:  100,
-// 					},
-// 					Matches: []GetCloudletsPhasedReleaseMatchRuleMatchRuleMatch{
-// 						GetCloudletsPhasedReleaseMatchRuleMatchRuleMatch{
-// 							CaseSensitive: pulumi.BoolRef(false),
-// 							CheckIps:      pulumi.StringRef("CONNECTING_IP XFF_HEADERS"),
-// 							MatchOperator: pulumi.StringRef("equals"),
-// 							MatchType:     pulumi.StringRef("header"),
-// 							Negate:        pulumi.BoolRef(false),
-// 							ObjectMatchValue: []map[string]interface{}{
-// 								map[string]interface{}{
-// 									"name": "Content-Type",
-// 									"options": map[string]interface{}{
-// 										"value": []string{
-// 											"application/json",
-// 										},
-// 									},
-// 									"type": "object",
-// 								},
-// 							},
-// 						},
-// 					},
-// 					Name:  pulumi.StringRef("rule"),
-// 					Start: pulumi.IntRef(1644865045),
-// 				},
-// 			},
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
-//
 // ## Attributes reference
 //
 // This data source returns these attributes:

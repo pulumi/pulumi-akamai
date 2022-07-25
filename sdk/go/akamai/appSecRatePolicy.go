@@ -13,11 +13,10 @@ import (
 
 // **Scopes**: Security configuration; rate policy
 //
-// Creates, modifies or deletes rate policies.
-// Rate polices help you monitor and moderate the number and  rate of all the requests you receive.
+// Creates, modifies, or deletes rate policies. Rate polices help you monitor and moderate the number and rate of all the requests you receive.
 // In turn, this helps you prevent your website from being overwhelmed by a dramatic and unexpected surge in traffic.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postratepolicies)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://techdocs.akamai.com/application-security/reference/post-rate-policies)
 //
 // ## Example Usage
 //
@@ -30,7 +29,7 @@ import (
 // 	"fmt"
 // 	"io/ioutil"
 //
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -52,7 +51,7 @@ import (
 // 		}
 // 		ratePolicy, err := akamai.NewAppSecRatePolicy(ctx, "ratePolicy", &akamai.AppSecRatePolicyArgs{
 // 			ConfigId:   pulumi.Int(configuration.ConfigId),
-// 			RatePolicy: readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/rate_policy.json")),
+// 			RatePolicy: readFileOrPanic(fmt.Sprintf("%v/rate_policy.json", path.Module)),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -73,9 +72,8 @@ type AppSecRatePolicy struct {
 	// . Unique identifier of the security configuration associated with the rate policy being modified.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
-	RatePolicy pulumi.StringOutput `pulumi:"ratePolicy"`
-	// . Unique identifier of an existing rate policy.
-	RatePolicyId pulumi.IntOutput `pulumi:"ratePolicyId"`
+	RatePolicy   pulumi.StringOutput `pulumi:"ratePolicy"`
+	RatePolicyId pulumi.IntOutput    `pulumi:"ratePolicyId"`
 }
 
 // NewAppSecRatePolicy registers a new resource with the given unique name, arguments, and options.
@@ -116,17 +114,15 @@ type appSecRatePolicyState struct {
 	// . Unique identifier of the security configuration associated with the rate policy being modified.
 	ConfigId *int `pulumi:"configId"`
 	// . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
-	RatePolicy *string `pulumi:"ratePolicy"`
-	// . Unique identifier of an existing rate policy.
-	RatePolicyId *int `pulumi:"ratePolicyId"`
+	RatePolicy   *string `pulumi:"ratePolicy"`
+	RatePolicyId *int    `pulumi:"ratePolicyId"`
 }
 
 type AppSecRatePolicyState struct {
 	// . Unique identifier of the security configuration associated with the rate policy being modified.
 	ConfigId pulumi.IntPtrInput
 	// . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
-	RatePolicy pulumi.StringPtrInput
-	// . Unique identifier of an existing rate policy.
+	RatePolicy   pulumi.StringPtrInput
 	RatePolicyId pulumi.IntPtrInput
 }
 
@@ -234,6 +230,20 @@ func (o AppSecRatePolicyOutput) ToAppSecRatePolicyOutput() AppSecRatePolicyOutpu
 
 func (o AppSecRatePolicyOutput) ToAppSecRatePolicyOutputWithContext(ctx context.Context) AppSecRatePolicyOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration associated with the rate policy being modified.
+func (o AppSecRatePolicyOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecRatePolicy) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
+func (o AppSecRatePolicyOutput) RatePolicy() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecRatePolicy) pulumi.StringOutput { return v.RatePolicy }).(pulumi.StringOutput)
+}
+
+func (o AppSecRatePolicyOutput) RatePolicyId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecRatePolicy) pulumi.IntOutput { return v.RatePolicyId }).(pulumi.IntOutput)
 }
 
 type AppSecRatePolicyArrayOutput struct{ *pulumi.OutputState }

@@ -9,7 +9,7 @@ import * as utilities from "./utilities";
  *
  * Returns threat intelligence settings for a security policy Note that this data source is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information on ASE, please contact your Akamai representative.
  *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/threat-intel](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getthreatintelligence)l
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/threat-intel](https://techdocs.akamai.com/application-security/reference/get-rules-threat-intel)
  *
  * ## Example Usage
  *
@@ -35,7 +35,7 @@ import * as utilities from "./utilities";
  * The following options can be used to determine the information returned, and how that returned information is formatted:
  *
  * - `threatIntel`. Reports the threat Intelligence setting, either **on** or **off**.
- * - `json`. JSON-formatted threat intelligence report
+ * - `json`. JSON-formatted threat intelligence report.
  * - `outputText`. Tabular report of the threat intelligence information.
  */
 export function getAppSecThreatIntel(args: GetAppSecThreatIntelArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecThreatIntelResult> {

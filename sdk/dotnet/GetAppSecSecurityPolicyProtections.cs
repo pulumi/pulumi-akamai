@@ -16,7 +16,7 @@ namespace Pulumi.Akamai
         /// 
         /// Returns information about the protections in effect for the specified security policy.
         /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprotections)
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/get-policy-protections)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -83,7 +83,7 @@ namespace Pulumi.Akamai
         /// - `apply_api_constraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
         /// - `apply_slow_post_controls`. Returns **true** if slow POST controls are enabled; returns **false** if they are not.
         /// - `json`. JSON-formatted list showing the status of the protection settings.
-        /// - `output_text`. Tabular report showing the status of the protection settings
+        /// - `output_text`. Tabular report showing the status of the protection settings.
         /// </summary>
         public static Task<GetAppSecSecurityPolicyProtectionsResult> InvokeAsync(GetAppSecSecurityPolicyProtectionsArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSecurityPolicyProtectionsResult>("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", args ?? new GetAppSecSecurityPolicyProtectionsArgs(), options.WithDefaults());
@@ -93,7 +93,7 @@ namespace Pulumi.Akamai
         /// 
         /// Returns information about the protections in effect for the specified security policy.
         /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprotections)
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/get-policy-protections)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -160,7 +160,7 @@ namespace Pulumi.Akamai
         /// - `apply_api_constraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
         /// - `apply_slow_post_controls`. Returns **true** if slow POST controls are enabled; returns **false** if they are not.
         /// - `json`. JSON-formatted list showing the status of the protection settings.
-        /// - `output_text`. Tabular report showing the status of the protection settings
+        /// - `output_text`. Tabular report showing the status of the protection settings.
         /// </summary>
         public static Output<GetAppSecSecurityPolicyProtectionsResult> Invoke(GetAppSecSecurityPolicyProtectionsInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetAppSecSecurityPolicyProtectionsResult>("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", args ?? new GetAppSecSecurityPolicyProtectionsInvokeArgs(), options.WithDefaults());

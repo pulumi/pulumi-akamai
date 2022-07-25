@@ -15,7 +15,7 @@ import (
 //
 // Modify an attack group's action, conditions, and exceptions. Attack groups are collections of Kona Rule Set rules used to streamline the management of website protections.
 //
-// **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/attack-groups/{attackGroupId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroup) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/attack-groups/{attackGroupId}/condition-exception](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception)
+// **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/attack-groups/{attackGroupId}](https://techdocs.akamai.com/application-security/reference/put-attack-group-condition-exception) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/attack-groups/{attackGroupId}/condition-exception](https://techdocs.akamai.com/application-security/reference/put-attack-group-condition-exception)
 //
 // ## Example Usage
 //
@@ -28,7 +28,7 @@ import (
 // 	"fmt"
 // 	"io/ioutil"
 //
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -53,7 +53,7 @@ import (
 // 			SecurityPolicyId:   pulumi.String("gms1_134637"),
 // 			AttackGroup:        pulumi.String("SQL"),
 // 			AttackGroupAction:  pulumi.String("deny"),
-// 			ConditionException: readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/condition_exception.json")),
+// 			ConditionException: readFileOrPanic(fmt.Sprintf("%v/condition_exception.json", path.Module)),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -279,6 +279,35 @@ func (o AppSecAttackGroupOutput) ToAppSecAttackGroupOutput() AppSecAttackGroupOu
 
 func (o AppSecAttackGroupOutput) ToAppSecAttackGroupOutputWithContext(ctx context.Context) AppSecAttackGroupOutput {
 	return o
+}
+
+// . Unique name of the attack group being modified.
+func (o AppSecAttackGroupOutput) AttackGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecAttackGroup) pulumi.StringOutput { return v.AttackGroup }).(pulumi.StringOutput)
+}
+
+// . Action taken any time the attack group is triggered. Allowed values are:
+// - **alert**. Record information about the request.
+// - **deny**. Block the request,
+// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+// - **none**. Take no action.
+func (o AppSecAttackGroupOutput) AttackGroupAction() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecAttackGroup) pulumi.StringOutput { return v.AttackGroupAction }).(pulumi.StringOutput)
+}
+
+// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+func (o AppSecAttackGroupOutput) ConditionException() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppSecAttackGroup) pulumi.StringPtrOutput { return v.ConditionException }).(pulumi.StringPtrOutput)
+}
+
+// . Unique identifier of the security configuration associated with the attack group being modified.
+func (o AppSecAttackGroupOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecAttackGroup) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Unique identifier of the security policy associated with the attack group being modified.
+func (o AppSecAttackGroupOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecAttackGroup) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
 type AppSecAttackGroupArrayOutput struct{ *pulumi.OutputState }

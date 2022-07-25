@@ -14,7 +14,7 @@ namespace Pulumi.Akamai
     /// 
     /// Modifies SIEM (Security Information and Event Management) integration settings for a security configuration.
     /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/siem](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsiemsettings)
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/siem](https://techdocs.akamai.com/application-security/reference/put-siem)
     /// 
     /// ## Example Usage
     /// 

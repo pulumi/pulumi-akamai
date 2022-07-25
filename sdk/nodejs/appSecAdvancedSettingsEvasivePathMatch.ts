@@ -5,8 +5,14 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * The `resourceAkamaiAppsecAdvancedSettingsEvasivePathMatch` resource allows you to enable, disable, or update the evasive path match setting for a configuration. This setting determines whether fuzzy matching is used to make URL matching more inclusive.
- * This operation applies at the configuration level, and therefore applies to all policies within a configuration. You may override this setting for a particular policy by specifying the policy using the securityPolicyId parameter.
+ * **Scopes**: Security configuration; security policy
+ *
+ * The `resourceAkamaiAppsecAdvancedSettingsEvasivePathMatch` resource allows you to enable, disable, or update the evasive path match setting for a configuration.
+ * This setting determines whether fuzzy matching is used to make URL matching more inclusive.
+ * This operation applies at the configuration level, and therefore applies to all policies within a configuration.
+ * You may override this setting for a particular policy by specifying the policy using the securityPolicyId parameter.
+ *
+ * **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/advanced-settings/evasive-path-match](https://techdocs.akamai.com/application-security/reference/put-evasive-path-match)
  *
  * ## Example Usage
  *

@@ -15,7 +15,7 @@ import (
 //
 // Modifies the list of hostnames protected under by a security configuration.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putselectedhostnames)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames](https://techdocs.akamai.com/application-security/reference/put-selected-hostnames-per-config)
 //
 // ## Example Usage
 //
@@ -25,7 +25,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -240,6 +240,24 @@ func (o AppSecSelectedHostnamesOutput) ToAppSecSelectedHostnamesOutput() AppSecS
 
 func (o AppSecSelectedHostnamesOutput) ToAppSecSelectedHostnamesOutputWithContext(ctx context.Context) AppSecSelectedHostnamesOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration associated with the hostnames.
+func (o AppSecSelectedHostnamesOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecSelectedHostnames) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . JSON array of hostnames to be added or removed from the protected hosts list.
+func (o AppSecSelectedHostnamesOutput) Hostnames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AppSecSelectedHostnames) pulumi.StringArrayOutput { return v.Hostnames }).(pulumi.StringArrayOutput)
+}
+
+// . Indicates how the `hostnames` array is to be applied. Allowed values are:
+// - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
+// - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
+// - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
+func (o AppSecSelectedHostnamesOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecSelectedHostnames) pulumi.StringOutput { return v.Mode }).(pulumi.StringOutput)
 }
 
 type AppSecSelectedHostnamesArrayOutput struct{ *pulumi.OutputState }

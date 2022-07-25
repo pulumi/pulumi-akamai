@@ -14,56 +14,6 @@ import (
 //
 // Use the `getCloudletsApiPrioritizationMatchRule` data source to build a match rule JSON object for the API Prioritization Cloudlet.
 //
-// ## Basic usage
-//
-// This example returns the JSON-encoded rules for the API Prioritization Cloudlet:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.GetCloudletsApiPrioritizationMatchRule(ctx, &GetCloudletsApiPrioritizationMatchRuleArgs{
-// 			MatchRules: []GetCloudletsApiPrioritizationMatchRuleMatchRule{
-// 				GetCloudletsApiPrioritizationMatchRuleMatchRule{
-// 					Disabled: pulumi.BoolRef(false),
-// 					End:      pulumi.IntRef(1645037845),
-// 					MatchUrl: pulumi.StringRef("example.com"),
-// 					Matches: []GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch{
-// 						GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch{
-// 							CaseSensitive: pulumi.BoolRef(true),
-// 							MatchOperator: pulumi.StringRef("equals"),
-// 							MatchType:     pulumi.StringRef("method"),
-// 							Negate:        pulumi.BoolRef(false),
-// 							ObjectMatchValue: []map[string]interface{}{
-// 								map[string]interface{}{
-// 									"type": "simple",
-// 									"value": []string{
-// 										"POST",
-// 									},
-// 								},
-// 							},
-// 						},
-// 					},
-// 					Name:               pulumi.StringRef("rule"),
-// 					PassThroughPercent: 10,
-// 					Start:              pulumi.IntRef(1644865045),
-// 				},
-// 			},
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
-//
 // ## Attributes reference
 //
 // This data source returns these attributes:

@@ -24,7 +24,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -49,7 +49,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -329,6 +329,46 @@ func (o CpCodeOutput) ToCpCodeOutput() CpCodeOutput {
 
 func (o CpCodeOutput) ToCpCodeOutputWithContext(ctx context.Context) CpCodeOutput {
 	return o
+}
+
+// Replaced by `contractId`. Maintained for legacy purposes.
+//
+// Deprecated: The setting "contract" has been deprecated.
+func (o CpCodeOutput) Contract() pulumi.StringOutput {
+	return o.ApplyT(func(v *CpCode) pulumi.StringOutput { return v.Contract }).(pulumi.StringOutput)
+}
+
+// - (Required) A contract's unique ID, including the `ctr_` prefix.
+func (o CpCodeOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v *CpCode) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
+}
+
+// Replaced by `groupId`. Maintained for legacy purposes.
+//
+// Deprecated: The setting "group" has been deprecated.
+func (o CpCodeOutput) Group() pulumi.StringOutput {
+	return o.ApplyT(func(v *CpCode) pulumi.StringOutput { return v.Group }).(pulumi.StringOutput)
+}
+
+// - (Required) A group's unique ID, including the `grp_` prefix.
+func (o CpCodeOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *CpCode) pulumi.StringOutput { return v.GroupId }).(pulumi.StringOutput)
+}
+
+// - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+func (o CpCodeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *CpCode) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// Replaced by `productId`. Maintained for legacy purposes.
+//
+// Deprecated: The setting "product" has been deprecated.
+func (o CpCodeOutput) Product() pulumi.StringOutput {
+	return o.ApplyT(func(v *CpCode) pulumi.StringOutput { return v.Product }).(pulumi.StringOutput)
+}
+
+func (o CpCodeOutput) ProductId() pulumi.StringOutput {
+	return o.ApplyT(func(v *CpCode) pulumi.StringOutput { return v.ProductId }).(pulumi.StringOutput)
 }
 
 type CpCodeArrayOutput struct{ *pulumi.OutputState }

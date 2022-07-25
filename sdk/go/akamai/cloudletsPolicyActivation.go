@@ -23,7 +23,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -52,7 +52,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -281,6 +281,31 @@ func (o CloudletsPolicyActivationOutput) ToCloudletsPolicyActivationOutput() Clo
 
 func (o CloudletsPolicyActivationOutput) ToCloudletsPolicyActivationOutputWithContext(ctx context.Context) CloudletsPolicyActivationOutput {
 	return o
+}
+
+// A set of property identifiers related to this Cloudlet policy. You can't activate a Cloudlet policy if it doesn't have any properties associated with it.
+func (o CloudletsPolicyActivationOutput) AssociatedProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *CloudletsPolicyActivation) pulumi.StringArrayOutput { return v.AssociatedProperties }).(pulumi.StringArrayOutput)
+}
+
+// The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
+func (o CloudletsPolicyActivationOutput) Network() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudletsPolicyActivation) pulumi.StringOutput { return v.Network }).(pulumi.StringOutput)
+}
+
+// An identifier for the Cloudlet policy you want to activate.
+func (o CloudletsPolicyActivationOutput) PolicyId() pulumi.IntOutput {
+	return o.ApplyT(func(v *CloudletsPolicyActivation) pulumi.IntOutput { return v.PolicyId }).(pulumi.IntOutput)
+}
+
+// The activation status for this Cloudlet policy.
+func (o CloudletsPolicyActivationOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudletsPolicyActivation) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+}
+
+// The Cloudlet policy version you want to activate.
+func (o CloudletsPolicyActivationOutput) Version() pulumi.IntOutput {
+	return o.ApplyT(func(v *CloudletsPolicyActivation) pulumi.IntOutput { return v.Version }).(pulumi.IntOutput)
 }
 
 type CloudletsPolicyActivationArrayOutput struct{ *pulumi.OutputState }

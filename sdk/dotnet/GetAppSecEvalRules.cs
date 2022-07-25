@@ -16,7 +16,7 @@ namespace Pulumi.Akamai
         /// 
         /// Returns the action and the condition-exception information for a rule or set of rules being used in evaluation mode.
         /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getevalrules)
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules](https://techdocs.akamai.com/application-security/reference/get-policy-eval-rules)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -65,7 +65,7 @@ namespace Pulumi.Akamai
         /// The following options can be used to determine the information returned, and how that returned information is formatted:
         /// 
         /// - `eval_rule_action`. Action taken anytime the evaluation rule is triggered. Valid values are:
-        ///   - **alert**. Record the event,
+        ///   - **alert**. Record the event.
         ///   - **deny**. Reject the request.
         ///   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
         ///   - **none**. Take no action.
@@ -81,7 +81,7 @@ namespace Pulumi.Akamai
         /// 
         /// Returns the action and the condition-exception information for a rule or set of rules being used in evaluation mode.
         /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getevalrules)
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules](https://techdocs.akamai.com/application-security/reference/get-policy-eval-rules)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -130,7 +130,7 @@ namespace Pulumi.Akamai
         /// The following options can be used to determine the information returned, and how that returned information is formatted:
         /// 
         /// - `eval_rule_action`. Action taken anytime the evaluation rule is triggered. Valid values are:
-        ///   - **alert**. Record the event,
+        ///   - **alert**. Record the event.
         ///   - **deny**. Reject the request.
         ///   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
         ///   - **none**. Take no action.

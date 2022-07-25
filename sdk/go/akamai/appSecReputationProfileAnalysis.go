@@ -18,42 +18,7 @@ import (
 // - The `forwardToHttpHeader` parameter, which indicates whether client reputation details are added to requests forwarded to origin in an HTTP header.
 // - The `forwardSharedIpToHttpHeaderSiem` parameter, which specifies whether a value is added indicating that shared IPs addresses are included in HTTP headers and in SIEM integration events.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putreputationanalysis)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		reputationAnalysis, err := akamai.LookupAppSecReputationProfileAnalysis(ctx, &GetAppSecReputationProfileAnalysisArgs{
-// 			ConfigId:            configuration.ConfigId,
-// 			SecurityPolicyId:    "gms1_134637",
-// 			ForwardToHttpHeader: true,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("reputationAnalysisText", reputationAnalysis.OutputText)
-// 		ctx.Export("reputationAnalysisJson", reputationAnalysis.Json)
-// 		return nil
-// 	})
-// }
-// ```
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://techdocs.akamai.com/application-security/reference/put-reputation-analysis)
 type AppSecReputationProfileAnalysis struct {
 	pulumi.CustomResourceState
 
@@ -241,6 +206,26 @@ func (o AppSecReputationProfileAnalysisOutput) ToAppSecReputationProfileAnalysis
 
 func (o AppSecReputationProfileAnalysisOutput) ToAppSecReputationProfileAnalysisOutputWithContext(ctx context.Context) AppSecReputationProfileAnalysisOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
+func (o AppSecReputationProfileAnalysisOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecReputationProfileAnalysis) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
+func (o AppSecReputationProfileAnalysisOutput) ForwardSharedIpToHttpHeaderSiem() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppSecReputationProfileAnalysis) pulumi.BoolOutput { return v.ForwardSharedIpToHttpHeaderSiem }).(pulumi.BoolOutput)
+}
+
+// . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
+func (o AppSecReputationProfileAnalysisOutput) ForwardToHttpHeader() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppSecReputationProfileAnalysis) pulumi.BoolOutput { return v.ForwardToHttpHeader }).(pulumi.BoolOutput)
+}
+
+// . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
+func (o AppSecReputationProfileAnalysisOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecReputationProfileAnalysis) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
 type AppSecReputationProfileAnalysisArrayOutput struct{ *pulumi.OutputState }

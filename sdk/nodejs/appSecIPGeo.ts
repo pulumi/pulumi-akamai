@@ -9,7 +9,7 @@ import * as utilities from "./utilities";
  *
  * Modifies the method used for firewall blocking, and manages the network lists used for IP/Geo firewall blocking.
  *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putipgeofirewall)
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://techdocs.akamai.com/application-security/reference/put-policy-ip-geo-firewall)
  *
  * ## Example Usage
  *
@@ -86,7 +86,7 @@ export class AppSecIPGeo extends pulumi.CustomResource {
      */
     public readonly geoNetworkLists!: pulumi.Output<string[] | undefined>;
     /**
-     * . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
+     * . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
      */
     public readonly ipNetworkLists!: pulumi.Output<string[] | undefined>;
     /**
@@ -157,7 +157,7 @@ export interface AppSecIPGeoState {
      */
     geoNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
+     * . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
      */
     ipNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -187,7 +187,7 @@ export interface AppSecIPGeoArgs {
      */
     geoNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
+     * . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
      */
     ipNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**

@@ -16,62 +16,6 @@ namespace Pulumi.Akamai
         /// 
         /// Use the `akamai.getCloudletsAudienceSegmentationMatchRule` data source to build a match rule JSON object for the Audience Segmentation Cloudlet.
         /// 
-        /// ## Basic usage
-        /// 
-        /// This example returns the JSON-encoded rules for the Audience Segmentation Cloudlet:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var example = Output.Create(Akamai.GetCloudletsAudienceSegmentationMatchRule.InvokeAsync(new Akamai.GetCloudletsAudienceSegmentationMatchRuleArgs
-        ///         {
-        ///             MatchRules = 
-        ///             {
-        ///                 new Akamai.Inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs
-        ///                 {
-        ///                     ForwardSettings = new Akamai.Inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsArgs
-        ///                     {
-        ///                         OriginId = "123",
-        ///                         PathAndQs = "/test",
-        ///                         UseIncomingQueryString = true,
-        ///                     },
-        ///                     Matches = 
-        ///                     {
-        ///                         new Akamai.Inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs
-        ///                         {
-        ///                             MatchOperator = "contains",
-        ///                             MatchType = "header",
-        ///                             ObjectMatchValue = 
-        ///                             {
-        ///                                 
-        ///                                 {
-        ///                                     { "name", "cookie" },
-        ///                                     { "options", 
-        ///                                     {
-        ///                                         { "value", 
-        ///                                         {
-        ///                                             "abcd",
-        ///                                         } },
-        ///                                     } },
-        ///                                     { "type", "object" },
-        ///                                 },
-        ///                             },
-        ///                         },
-        ///                     },
-        ///                     Name = "rule",
-        ///                 },
-        ///             },
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// 
         /// ## Attributes reference
         /// 
         /// This data source returns these attributes:
@@ -86,62 +30,6 @@ namespace Pulumi.Akamai
         /// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
         /// 
         /// Use the `akamai.getCloudletsAudienceSegmentationMatchRule` data source to build a match rule JSON object for the Audience Segmentation Cloudlet.
-        /// 
-        /// ## Basic usage
-        /// 
-        /// This example returns the JSON-encoded rules for the Audience Segmentation Cloudlet:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var example = Output.Create(Akamai.GetCloudletsAudienceSegmentationMatchRule.InvokeAsync(new Akamai.GetCloudletsAudienceSegmentationMatchRuleArgs
-        ///         {
-        ///             MatchRules = 
-        ///             {
-        ///                 new Akamai.Inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs
-        ///                 {
-        ///                     ForwardSettings = new Akamai.Inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsArgs
-        ///                     {
-        ///                         OriginId = "123",
-        ///                         PathAndQs = "/test",
-        ///                         UseIncomingQueryString = true,
-        ///                     },
-        ///                     Matches = 
-        ///                     {
-        ///                         new Akamai.Inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs
-        ///                         {
-        ///                             MatchOperator = "contains",
-        ///                             MatchType = "header",
-        ///                             ObjectMatchValue = 
-        ///                             {
-        ///                                 
-        ///                                 {
-        ///                                     { "name", "cookie" },
-        ///                                     { "options", 
-        ///                                     {
-        ///                                         { "value", 
-        ///                                         {
-        ///                                             "abcd",
-        ///                                         } },
-        ///                                     } },
-        ///                                     { "type", "object" },
-        ///                                 },
-        ///                             },
-        ///                         },
-        ///                     },
-        ///                     Name = "rule",
-        ///                 },
-        ///             },
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
         /// 
         /// ## Attributes reference
         /// 

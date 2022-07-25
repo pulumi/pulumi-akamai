@@ -25,7 +25,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -241,6 +241,31 @@ func (o GtmASmapOutput) ToGtmASmapOutput() GtmASmapOutput {
 
 func (o GtmASmapOutput) ToGtmASmapOutputWithContext(ctx context.Context) GtmASmapOutput {
 	return o
+}
+
+// Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
+func (o GtmASmapOutput) Assignments() GtmASmapAssignmentArrayOutput {
+	return o.ApplyT(func(v *GtmASmap) GtmASmapAssignmentArrayOutput { return v.Assignments }).(GtmASmapAssignmentArrayOutput)
+}
+
+// A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+func (o GtmASmapOutput) DefaultDatacenter() GtmASmapDefaultDatacenterOutput {
+	return o.ApplyT(func(v *GtmASmap) GtmASmapDefaultDatacenterOutput { return v.DefaultDatacenter }).(GtmASmapDefaultDatacenterOutput)
+}
+
+// The GTM Domain name for the AS map.
+func (o GtmASmapOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmASmap) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
+}
+
+// A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
+func (o GtmASmapOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmASmap) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// A boolean that, if `true`, waits for transaction to complete.
+func (o GtmASmapOutput) WaitOnComplete() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmASmap) pulumi.BoolPtrOutput { return v.WaitOnComplete }).(pulumi.BoolPtrOutput)
 }
 
 type GtmASmapArrayOutput struct{ *pulumi.OutputState }

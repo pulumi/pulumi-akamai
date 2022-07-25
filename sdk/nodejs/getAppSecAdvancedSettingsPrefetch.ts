@@ -7,11 +7,12 @@ import * as utilities from "./utilities";
 /**
  * **Scopes**: Security configuration
  *
- * Returns information about your prefetch request settings. By default, the Web Application Firewall only inspects external requests: requests originating outside of your firewall or Akamai's edge servers. When prefetch is enabled, however, internal requests – that is, requests between your origin servers and Akamai's edge servers – can also be inspected by the firewall. The returned information is described in the [PrefetchRequest members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#deb7220d) section of the Application Security API.
+ * Returns information about your prefetch request settings. By default, Web Application Firewall inspects only external requests — requests originating outside of your firewall or Akamai's edge servers. When prefetch is enabled, requests between your origin servers and Akamai's edge servers can also be inspected by the firewall. The returned information is described in the [PrefetchRequest members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#deb7220d) section of the Application Security API.
  *
- * **Related** **API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/prefetch](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprefetchrequestsforaconfiguration)
+ * **Related** **API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/prefetch](https://techdocs.akamai.com/application-security/reference/get-advanced-settings-prefetch)
  *
- * Example Usage
+ * ## Example Usage
+ *
  * Basic usage:
  *
  * ```typescript
@@ -27,7 +28,6 @@ import * as utilities from "./utilities";
  * export const advancedSettingsPrefetchOutput = prefetch.then(prefetch => prefetch.outputText);
  * export const advancedSettingsPrefetchJson = prefetch.then(prefetch => prefetch.json);
  * ```
- *
  * ## Output Options
  *
  * The following options can be used to determine the information returned, and how that returned information is formatted:

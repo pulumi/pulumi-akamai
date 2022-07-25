@@ -14,7 +14,7 @@ import (
 //
 // Returns information about the protections in effect for the specified security policy.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getprotections)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/get-policy-protections)
 //
 // ## Example Usage
 //
@@ -24,7 +24,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -67,7 +67,7 @@ import (
 // - `applyApiConstraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
 // - `applySlowPostControls`. Returns **true** if slow POST controls are enabled; returns **false** if they are not.
 // - `json`. JSON-formatted list showing the status of the protection settings.
-// - `outputText`. Tabular report showing the status of the protection settings
+// - `outputText`. Tabular report showing the status of the protection settings.
 func GetAppSecSecurityPolicyProtections(ctx *pulumi.Context, args *GetAppSecSecurityPolicyProtectionsArgs, opts ...pulumi.InvokeOption) (*GetAppSecSecurityPolicyProtectionsResult, error) {
 	var rv GetAppSecSecurityPolicyProtectionsResult
 	err := ctx.Invoke("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", args, &rv, opts...)

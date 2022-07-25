@@ -15,7 +15,7 @@ import (
 //
 // Associates an action with a custom rule. Custom rules are rules that you define yourself and are not part of the Kona Rule Set.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/custom-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putactionruleid)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/custom-rules](https://techdocs.akamai.com/application-security/reference/get-configs-custom-rules)
 //
 // ## Example Usage
 //
@@ -25,7 +25,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -64,7 +64,7 @@ type AppSecCustomRuleAction struct {
 	CustomRuleAction pulumi.StringOutput `pulumi:"customRuleAction"`
 	// . Unique identifier of the custom rule whose action is being modified.
 	CustomRuleId pulumi.IntOutput `pulumi:"customRuleId"`
-	// . Unique identifier of the security policy associated with the custom rule action being modified d.
+	// . Unique identifier of the security policy associated with the custom rule action being modified.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
 
@@ -119,7 +119,7 @@ type appSecCustomRuleActionState struct {
 	CustomRuleAction *string `pulumi:"customRuleAction"`
 	// . Unique identifier of the custom rule whose action is being modified.
 	CustomRuleId *int `pulumi:"customRuleId"`
-	// . Unique identifier of the security policy associated with the custom rule action being modified d.
+	// . Unique identifier of the security policy associated with the custom rule action being modified.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
@@ -134,7 +134,7 @@ type AppSecCustomRuleActionState struct {
 	CustomRuleAction pulumi.StringPtrInput
 	// . Unique identifier of the custom rule whose action is being modified.
 	CustomRuleId pulumi.IntPtrInput
-	// . Unique identifier of the security policy associated with the custom rule action being modified d.
+	// . Unique identifier of the security policy associated with the custom rule action being modified.
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -153,7 +153,7 @@ type appSecCustomRuleActionArgs struct {
 	CustomRuleAction string `pulumi:"customRuleAction"`
 	// . Unique identifier of the custom rule whose action is being modified.
 	CustomRuleId int `pulumi:"customRuleId"`
-	// . Unique identifier of the security policy associated with the custom rule action being modified d.
+	// . Unique identifier of the security policy associated with the custom rule action being modified.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -169,7 +169,7 @@ type AppSecCustomRuleActionArgs struct {
 	CustomRuleAction pulumi.StringInput
 	// . Unique identifier of the custom rule whose action is being modified.
 	CustomRuleId pulumi.IntInput
-	// . Unique identifier of the security policy associated with the custom rule action being modified d.
+	// . Unique identifier of the security policy associated with the custom rule action being modified.
 	SecurityPolicyId pulumi.StringInput
 }
 
@@ -258,6 +258,30 @@ func (o AppSecCustomRuleActionOutput) ToAppSecCustomRuleActionOutput() AppSecCus
 
 func (o AppSecCustomRuleActionOutput) ToAppSecCustomRuleActionOutputWithContext(ctx context.Context) AppSecCustomRuleActionOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration associated with the custom rule action being modified.
+func (o AppSecCustomRuleActionOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecCustomRuleAction) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Action to be taken when the custom rule is invoked. Allowed values are:
+// - **alert**. Record the event.
+// - **deny**. Block the request.
+// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+// - **none**. Take no action.
+func (o AppSecCustomRuleActionOutput) CustomRuleAction() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecCustomRuleAction) pulumi.StringOutput { return v.CustomRuleAction }).(pulumi.StringOutput)
+}
+
+// . Unique identifier of the custom rule whose action is being modified.
+func (o AppSecCustomRuleActionOutput) CustomRuleId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecCustomRuleAction) pulumi.IntOutput { return v.CustomRuleId }).(pulumi.IntOutput)
+}
+
+// . Unique identifier of the security policy associated with the custom rule action being modified.
+func (o AppSecCustomRuleActionOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecCustomRuleAction) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
 type AppSecCustomRuleActionArrayOutput struct{ *pulumi.OutputState }

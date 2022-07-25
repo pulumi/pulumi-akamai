@@ -9,7 +9,7 @@ import * as utilities from "./utilities";
  *
  * Enables or disables Web Application Firewall (WAF) protection for a security policy.
  *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putprotections)
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/put-policy-protections)
  *
  * ## Example Usage
  *

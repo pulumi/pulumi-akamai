@@ -17,7 +17,7 @@ import (
 // Evaluation mode is used for testing and fine-tuning your Kona Rule Set rules and configuration settings.
 // In evaluation mode rules are triggered by events, but the only thing those rules do is record the actions they *would* have taken had the event occurred on the production network.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postevaluationmode)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval](https://techdocs.akamai.com/application-security/reference/post-policy-eval)
 //
 // ## Example Usage
 //
@@ -27,7 +27,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -284,6 +284,47 @@ func (o AppSecEvalOutput) ToAppSecEvalOutput() AppSecEvalOutput {
 
 func (o AppSecEvalOutput) ToAppSecEvalOutputWithContext(ctx context.Context) AppSecEvalOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration where evaluation mode will take place (or is currently taking place).
+func (o AppSecEvalOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecEval) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+func (o AppSecEvalOutput) CurrentRuleset() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecEval) pulumi.StringOutput { return v.CurrentRuleset }).(pulumi.StringOutput)
+}
+
+// . Set to **ASE_AUTO** to have your Kona Rule Set rules automatically updated during the evaluation period; set to **ASE_MANUAL** if you want to manually update your evaluation rules. Note that this option is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information about ASE, please contact your Akamai representative.
+func (o AppSecEvalOutput) EvalMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppSecEval) pulumi.StringPtrOutput { return v.EvalMode }).(pulumi.StringPtrOutput)
+}
+
+// . Evaluation mode operation. Allowed values are:
+// - **START**. Starts evaluation mode. By default, evaluation mode runs for four weeks.
+// - **STOP**, Pauses evaluation mode without upgrading the Kona Rule Set on your production network.
+// - **RESTART**. Resumes an evaluation trial that was paused by using the **STOP** command.
+// - **UPDATE**. Upgrades the Kona Rule Set rules in the evaluation ruleset to their latest versions.
+// - **COMPLETE**. Concludes the evaluation period (even if the four-week trial mode is not over) and automatically upgrades the Kona Rule Set on your production network to the same rule set you just finished evaluating.
+func (o AppSecEvalOutput) EvalOperation() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecEval) pulumi.StringOutput { return v.EvalOperation }).(pulumi.StringOutput)
+}
+
+func (o AppSecEvalOutput) EvalStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecEval) pulumi.StringOutput { return v.EvalStatus }).(pulumi.StringOutput)
+}
+
+func (o AppSecEvalOutput) EvaluatingRuleset() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecEval) pulumi.StringOutput { return v.EvaluatingRuleset }).(pulumi.StringOutput)
+}
+
+func (o AppSecEvalOutput) ExpirationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecEval) pulumi.StringOutput { return v.ExpirationDate }).(pulumi.StringOutput)
+}
+
+// . Unique identifier of the security policy associated with the evaluation process.
+func (o AppSecEvalOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecEval) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
 type AppSecEvalArrayOutput struct{ *pulumi.OutputState }

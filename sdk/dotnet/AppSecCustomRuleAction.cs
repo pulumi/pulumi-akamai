@@ -14,7 +14,7 @@ namespace Pulumi.Akamai
     /// 
     /// Associates an action with a custom rule. Custom rules are rules that you define yourself and are not part of the Kona Rule Set.
     /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/custom-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putactionruleid)
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/custom-rules](https://techdocs.akamai.com/application-security/reference/get-configs-custom-rules)
     /// 
     /// ## Example Usage
     /// 
@@ -73,7 +73,7 @@ namespace Pulumi.Akamai
         public Output<int> CustomRuleId { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the custom rule action being modified d.
+        /// . Unique identifier of the security policy associated with the custom rule action being modified.
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -147,7 +147,7 @@ namespace Pulumi.Akamai
         public Input<int> CustomRuleId { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the custom rule action being modified d.
+        /// . Unique identifier of the security policy associated with the custom rule action being modified.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -182,7 +182,7 @@ namespace Pulumi.Akamai
         public Input<int>? CustomRuleId { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the custom rule action being modified d.
+        /// . Unique identifier of the security policy associated with the custom rule action being modified.
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

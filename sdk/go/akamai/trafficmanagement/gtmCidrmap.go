@@ -25,7 +25,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -241,6 +241,31 @@ func (o GtmCidrmapOutput) ToGtmCidrmapOutput() GtmCidrmapOutput {
 
 func (o GtmCidrmapOutput) ToGtmCidrmapOutputWithContext(ctx context.Context) GtmCidrmapOutput {
 	return o
+}
+
+// Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
+func (o GtmCidrmapOutput) Assignments() GtmCidrmapAssignmentArrayOutput {
+	return o.ApplyT(func(v *GtmCidrmap) GtmCidrmapAssignmentArrayOutput { return v.Assignments }).(GtmCidrmapAssignmentArrayOutput)
+}
+
+// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+func (o GtmCidrmapOutput) DefaultDatacenter() GtmCidrmapDefaultDatacenterOutput {
+	return o.ApplyT(func(v *GtmCidrmap) GtmCidrmapDefaultDatacenterOutput { return v.DefaultDatacenter }).(GtmCidrmapDefaultDatacenterOutput)
+}
+
+// GTM Domain name for the AS Map.
+func (o GtmCidrmapOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmCidrmap) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
+}
+
+// A descriptive label for the CIDR map, up to 255 characters.
+func (o GtmCidrmapOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmCidrmap) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// A boolean that, if set to `true`, waits for transaction to complete.
+func (o GtmCidrmapOutput) WaitOnComplete() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmCidrmap) pulumi.BoolPtrOutput { return v.WaitOnComplete }).(pulumi.BoolPtrOutput)
 }
 
 type GtmCidrmapArrayOutput struct{ *pulumi.OutputState }

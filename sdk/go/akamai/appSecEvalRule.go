@@ -17,7 +17,7 @@ import (
 // Evaluation rules are Kona Rule Set rules used when running a security configuration in evaluation mode.
 // Changes to these rules do not affect the rules used on your production network.
 //
-// **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalrule) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}/condition-exception](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions)
+// **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}](https://techdocs.akamai.com/application-security/reference/put-policy-eval-rule) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}/condition-exception](https://techdocs.akamai.com/application-security/reference/put-condition-exception)
 //
 // ## Example Usage
 //
@@ -30,7 +30,7 @@ import (
 // 	"fmt"
 // 	"io/ioutil"
 //
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -55,7 +55,7 @@ import (
 // 			SecurityPolicyId:   pulumi.String("gms1_134637"),
 // 			RuleId:             pulumi.Int(60029316),
 // 			RuleAction:         pulumi.String("deny"),
-// 			ConditionException: readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/condition_exception.json")),
+// 			ConditionException: readFileOrPanic(fmt.Sprintf("%v/condition_exception.json", path.Module)),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -281,6 +281,35 @@ func (o AppSecEvalRuleOutput) ToAppSecEvalRuleOutput() AppSecEvalRuleOutput {
 
 func (o AppSecEvalRuleOutput) ToAppSecEvalRuleOutputWithContext(ctx context.Context) AppSecEvalRuleOutput {
 	return o
+}
+
+// . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
+func (o AppSecEvalRuleOutput) ConditionException() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppSecEvalRule) pulumi.StringPtrOutput { return v.ConditionException }).(pulumi.StringPtrOutput)
+}
+
+// . Unique identifier of the security configuration in evaluation mode.
+func (o AppSecEvalRuleOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecEvalRule) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
+// - **alert**. Record the event.
+// - **deny**. Block the request.
+// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+// - **none**. Take no action.
+func (o AppSecEvalRuleOutput) RuleAction() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecEvalRule) pulumi.StringOutput { return v.RuleAction }).(pulumi.StringOutput)
+}
+
+// . Unique identifier of the evaluation rule being modified.
+func (o AppSecEvalRuleOutput) RuleId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecEvalRule) pulumi.IntOutput { return v.RuleId }).(pulumi.IntOutput)
+}
+
+// . Unique identifier of the security policy associated with the evaluation process.
+func (o AppSecEvalRuleOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecEvalRule) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
 type AppSecEvalRuleArrayOutput struct{ *pulumi.OutputState }
