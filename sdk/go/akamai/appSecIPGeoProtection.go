@@ -15,7 +15,7 @@ import (
 //
 // Enables or disables IP/Geo protection for the specified configuration and security policy. When enabled, this allows your firewall to allow (or to block) clients based on their IP address or their geographic location.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putprotections)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://techdocs.akamai.com/application-security/reference/put-policy-protections)
 //
 // ## Example Usage
 //
@@ -25,7 +25,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -234,6 +234,26 @@ func (o AppSecIPGeoProtectionOutput) ToAppSecIPGeoProtectionOutput() AppSecIPGeo
 
 func (o AppSecIPGeoProtectionOutput) ToAppSecIPGeoProtectionOutputWithContext(ctx context.Context) AppSecIPGeoProtectionOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration associated with the IP/Geo protection settings being modified.
+func (o AppSecIPGeoProtectionOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecIPGeoProtection) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
+func (o AppSecIPGeoProtectionOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppSecIPGeoProtection) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Text Export representation
+func (o AppSecIPGeoProtectionOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecIPGeoProtection) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
+}
+
+// . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
+func (o AppSecIPGeoProtectionOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecIPGeoProtection) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
 type AppSecIPGeoProtectionArrayOutput struct{ *pulumi.OutputState }

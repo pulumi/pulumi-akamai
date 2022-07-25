@@ -15,7 +15,7 @@ import (
 //
 // Updates the version notes for a security configuration.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putversionnotes)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://techdocs.akamai.com/application-security/reference/put-version-notes)
 //
 // ## Example Usage
 //
@@ -25,7 +25,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -221,6 +221,21 @@ func (o AppSecVersionNodesOutput) ToAppSecVersionNodesOutput() AppSecVersionNode
 
 func (o AppSecVersionNodesOutput) ToAppSecVersionNodesOutputWithContext(ctx context.Context) AppSecVersionNodesOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration whose version notes are being modified.
+func (o AppSecVersionNodesOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecVersionNodes) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// Text Export representation
+func (o AppSecVersionNodesOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecVersionNodes) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
+}
+
+// . Brief description of the security configuration version.
+func (o AppSecVersionNodesOutput) VersionNotes() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecVersionNodes) pulumi.StringOutput { return v.VersionNotes }).(pulumi.StringOutput)
 }
 
 type AppSecVersionNodesArrayOutput struct{ *pulumi.OutputState }

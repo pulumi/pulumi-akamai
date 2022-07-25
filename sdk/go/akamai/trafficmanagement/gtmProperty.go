@@ -23,7 +23,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -524,6 +524,173 @@ func (o GtmPropertyOutput) ToGtmPropertyOutput() GtmPropertyOutput {
 
 func (o GtmPropertyOutput) ToGtmPropertyOutputWithContext(ctx context.Context) GtmPropertyOutput {
 	return o
+}
+
+// Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
+func (o GtmPropertyOutput) BackupCname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.StringPtrOutput { return v.BackupCname }).(pulumi.StringPtrOutput)
+}
+
+// Specifies a backup IP. When GTM declares that all of the targets are down, the backup IP is handed out. If a backup IP is set, do not set a backup CNAME.
+func (o GtmPropertyOutput) BackupIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.StringPtrOutput { return v.BackupIp }).(pulumi.StringPtrOutput)
+}
+
+// A boolean that indicates whether download score based load balancing is enabled.
+func (o GtmPropertyOutput) BalanceByDownloadScore() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.BoolPtrOutput { return v.BalanceByDownloadScore }).(pulumi.BoolPtrOutput)
+}
+
+// Indicates the fully qualified name aliased to a particular property.
+func (o GtmPropertyOutput) Cname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.StringPtrOutput { return v.Cname }).(pulumi.StringPtrOutput)
+}
+
+// A descriptive note about changes to the domain. The maximum is 4000 characters.
+func (o GtmPropertyOutput) Comments() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.StringPtrOutput { return v.Comments }).(pulumi.StringPtrOutput)
+}
+
+// DNS name for the GTM Domain set that includes this Property.
+func (o GtmPropertyOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
+}
+
+// Indicates the TTL in seconds for records that might change dynamically based on liveness and load balancing such as A and AAAA records, and CNAMEs.
+func (o GtmPropertyOutput) DynamicTtl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.IntPtrOutput { return v.DynamicTtl }).(pulumi.IntPtrOutput)
+}
+
+// Specifies the failback delay in seconds.
+func (o GtmPropertyOutput) FailbackDelay() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.IntPtrOutput { return v.FailbackDelay }).(pulumi.IntPtrOutput)
+}
+
+// Specifies the failover delay in seconds.
+func (o GtmPropertyOutput) FailoverDelay() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.IntPtrOutput { return v.FailoverDelay }).(pulumi.IntPtrOutput)
+}
+
+// Use load estimates from Akamai Ghost utilization messages.
+func (o GtmPropertyOutput) GhostDemandReporting() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.BoolPtrOutput { return v.GhostDemandReporting }).(pulumi.BoolPtrOutput)
+}
+
+// Indicates the limit for the number of live IPs handed out to a DNS request.
+func (o GtmPropertyOutput) HandoutLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.IntOutput { return v.HandoutLimit }).(pulumi.IntOutput)
+}
+
+// Specifies how IPs are returned when more than one IP is alive and available.
+func (o GtmPropertyOutput) HandoutMode() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.StringOutput { return v.HandoutMode }).(pulumi.StringOutput)
+}
+
+// Defines the absolute limit beyond which IPs are declared unhealthy.
+func (o GtmPropertyOutput) HealthMax() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.Float64PtrOutput { return v.HealthMax }).(pulumi.Float64PtrOutput)
+}
+
+// Configures a cutoff value that is computed from the median scores.
+func (o GtmPropertyOutput) HealthMultiplier() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.Float64PtrOutput { return v.HealthMultiplier }).(pulumi.Float64PtrOutput)
+}
+
+// Configures a cutoff value that is computed from the median scores.
+func (o GtmPropertyOutput) HealthThreshold() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.Float64PtrOutput { return v.HealthThreshold }).(pulumi.Float64PtrOutput)
+}
+
+// A boolean that indicates the type of IP address handed out by a GTM property.
+func (o GtmPropertyOutput) Ipv6() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.BoolPtrOutput { return v.Ipv6 }).(pulumi.BoolPtrOutput)
+}
+
+// Contains information about the liveness tests, which are run periodically to determine whether your servers respond to requests. You can have multiple `livenessTest` arguments. If used, requires these arguments:
+func (o GtmPropertyOutput) LivenessTests() GtmPropertyLivenessTestArrayOutput {
+	return o.ApplyT(func(v *GtmProperty) GtmPropertyLivenessTestArrayOutput { return v.LivenessTests }).(GtmPropertyLivenessTestArrayOutput)
+}
+
+// Indicates the percent of load imbalance factor (LIF) for the property.
+func (o GtmPropertyOutput) LoadImbalancePercentage() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.Float64PtrOutput { return v.LoadImbalancePercentage }).(pulumi.Float64PtrOutput)
+}
+
+// A descriptive label for a GeographicMap or a CidrMap that's required if the property is either geographic or cidrmapping, in which case mapName needs to reference either an existing GeographicMap or CidrMap in the same domain.
+func (o GtmPropertyOutput) MapName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.StringPtrOutput { return v.MapName }).(pulumi.StringPtrOutput)
+}
+
+// For performance domains, this specifies a penalty value that's added to liveness test scores when data centers show an aggregated loss fraction higher than the penalty value.
+func (o GtmPropertyOutput) MaxUnreachablePenalty() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.IntPtrOutput { return v.MaxUnreachablePenalty }).(pulumi.IntPtrOutput)
+}
+
+// Specifies what fraction of the servers need to respond to requests so GTM considers the data center up and able to receive traffic.
+func (o GtmPropertyOutput) MinLiveFraction() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.Float64PtrOutput { return v.MinLiveFraction }).(pulumi.Float64PtrOutput)
+}
+
+// Name of HTTP header.
+func (o GtmPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// Specifies how GTM aggregates liveness test scores across different tests, when multiple tests are configured.
+func (o GtmPropertyOutput) ScoreAggregationType() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.StringOutput { return v.ScoreAggregationType }).(pulumi.StringOutput)
+}
+
+// Contains static record sets. You can have multiple `staticRrSet` entries. Requires these arguments:
+func (o GtmPropertyOutput) StaticRrSets() GtmPropertyStaticRrSetArrayOutput {
+	return o.ApplyT(func(v *GtmProperty) GtmPropertyStaticRrSetArrayOutput { return v.StaticRrSets }).(GtmPropertyStaticRrSetArrayOutput)
+}
+
+func (o GtmPropertyOutput) StaticTtl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.IntPtrOutput { return v.StaticTtl }).(pulumi.IntPtrOutput)
+}
+
+// Specifies a constant used to configure data center affinity.
+func (o GtmPropertyOutput) StickinessBonusConstant() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.IntPtrOutput { return v.StickinessBonusConstant }).(pulumi.IntPtrOutput)
+}
+
+// Specifies a percentage used to configure data center affinity.
+func (o GtmPropertyOutput) StickinessBonusPercentage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.IntPtrOutput { return v.StickinessBonusPercentage }).(pulumi.IntPtrOutput)
+}
+
+// Contains information about where to direct data center traffic. You can have multiple `trafficTarget` arguments. If used, includes these arguments:
+func (o GtmPropertyOutput) TrafficTargets() GtmPropertyTrafficTargetArrayOutput {
+	return o.ApplyT(func(v *GtmProperty) GtmPropertyTrafficTargetArrayOutput { return v.TrafficTargets }).(GtmPropertyTrafficTargetArrayOutput)
+}
+
+// The record type.
+func (o GtmPropertyOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+}
+
+// For performance domains, this specifies a penalty value that's added to liveness test scores when data centers have an aggregated loss fraction higher than this value.
+func (o GtmPropertyOutput) UnreachableThreshold() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.Float64PtrOutput { return v.UnreachableThreshold }).(pulumi.Float64PtrOutput)
+}
+
+// For load-feedback domains only, a boolean that indicates whether you want GTM to automatically compute target load.
+func (o GtmPropertyOutput) UseComputedTargets() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.BoolPtrOutput { return v.UseComputedTargets }).(pulumi.BoolPtrOutput)
+}
+
+// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+func (o GtmPropertyOutput) WaitOnComplete() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.BoolPtrOutput { return v.WaitOnComplete }).(pulumi.BoolPtrOutput)
+}
+
+func (o GtmPropertyOutput) WeightedHashBitsForIpv4() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.IntOutput { return v.WeightedHashBitsForIpv4 }).(pulumi.IntOutput)
+}
+
+func (o GtmPropertyOutput) WeightedHashBitsForIpv6() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmProperty) pulumi.IntOutput { return v.WeightedHashBitsForIpv6 }).(pulumi.IntOutput)
 }
 
 type GtmPropertyArrayOutput struct{ *pulumi.OutputState }

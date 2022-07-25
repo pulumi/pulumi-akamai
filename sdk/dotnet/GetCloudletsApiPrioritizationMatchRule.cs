@@ -16,59 +16,6 @@ namespace Pulumi.Akamai
         /// 
         /// Use the `akamai.getCloudletsApiPrioritizationMatchRule` data source to build a match rule JSON object for the API Prioritization Cloudlet.
         /// 
-        /// ## Basic usage
-        /// 
-        /// This example returns the JSON-encoded rules for the API Prioritization Cloudlet:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var example = Output.Create(Akamai.GetCloudletsApiPrioritizationMatchRule.InvokeAsync(new Akamai.GetCloudletsApiPrioritizationMatchRuleArgs
-        ///         {
-        ///             MatchRules = 
-        ///             {
-        ///                 new Akamai.Inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs
-        ///                 {
-        ///                     Disabled = false,
-        ///                     End = 1645037845,
-        ///                     MatchUrl = "example.com",
-        ///                     Matches = 
-        ///                     {
-        ///                         new Akamai.Inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs
-        ///                         {
-        ///                             CaseSensitive = true,
-        ///                             MatchOperator = "equals",
-        ///                             MatchType = "method",
-        ///                             Negate = false,
-        ///                             ObjectMatchValue = 
-        ///                             {
-        ///                                 
-        ///                                 {
-        ///                                     { "type", "simple" },
-        ///                                     { "value", 
-        ///                                     {
-        ///                                         "POST",
-        ///                                     } },
-        ///                                 },
-        ///                             },
-        ///                         },
-        ///                     },
-        ///                     Name = "rule",
-        ///                     PassThroughPercent = 10,
-        ///                     Start = 1644865045,
-        ///                 },
-        ///             },
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// 
         /// ## Attributes reference
         /// 
         /// This data source returns these attributes:
@@ -83,59 +30,6 @@ namespace Pulumi.Akamai
         /// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
         /// 
         /// Use the `akamai.getCloudletsApiPrioritizationMatchRule` data source to build a match rule JSON object for the API Prioritization Cloudlet.
-        /// 
-        /// ## Basic usage
-        /// 
-        /// This example returns the JSON-encoded rules for the API Prioritization Cloudlet:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var example = Output.Create(Akamai.GetCloudletsApiPrioritizationMatchRule.InvokeAsync(new Akamai.GetCloudletsApiPrioritizationMatchRuleArgs
-        ///         {
-        ///             MatchRules = 
-        ///             {
-        ///                 new Akamai.Inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs
-        ///                 {
-        ///                     Disabled = false,
-        ///                     End = 1645037845,
-        ///                     MatchUrl = "example.com",
-        ///                     Matches = 
-        ///                     {
-        ///                         new Akamai.Inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs
-        ///                         {
-        ///                             CaseSensitive = true,
-        ///                             MatchOperator = "equals",
-        ///                             MatchType = "method",
-        ///                             Negate = false,
-        ///                             ObjectMatchValue = 
-        ///                             {
-        ///                                 
-        ///                                 {
-        ///                                     { "type", "simple" },
-        ///                                     { "value", 
-        ///                                     {
-        ///                                         "POST",
-        ///                                     } },
-        ///                                 },
-        ///                             },
-        ///                         },
-        ///                     },
-        ///                     Name = "rule",
-        ///                     PassThroughPercent = 10,
-        ///                     Start = 1644865045,
-        ///                 },
-        ///             },
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
         /// 
         /// ## Attributes reference
         /// 

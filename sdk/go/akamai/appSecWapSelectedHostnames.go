@@ -19,7 +19,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -219,6 +219,24 @@ func (o AppSecWapSelectedHostnamesOutput) ToAppSecWapSelectedHostnamesOutput() A
 
 func (o AppSecWapSelectedHostnamesOutput) ToAppSecWapSelectedHostnamesOutputWithContext(ctx context.Context) AppSecWapSelectedHostnamesOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
+func (o AppSecWapSelectedHostnamesOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecWapSelectedHostnames) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+func (o AppSecWapSelectedHostnamesOutput) EvaluatedHosts() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AppSecWapSelectedHostnames) pulumi.StringArrayOutput { return v.EvaluatedHosts }).(pulumi.StringArrayOutput)
+}
+
+func (o AppSecWapSelectedHostnamesOutput) ProtectedHosts() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AppSecWapSelectedHostnames) pulumi.StringArrayOutput { return v.ProtectedHosts }).(pulumi.StringArrayOutput)
+}
+
+// . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
+func (o AppSecWapSelectedHostnamesOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecWapSelectedHostnames) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
 type AppSecWapSelectedHostnamesArrayOutput struct{ *pulumi.OutputState }

@@ -15,7 +15,7 @@ import (
 //
 // Modifies the method used for firewall blocking, and manages the network lists used for IP/Geo firewall blocking.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putipgeofirewall)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://techdocs.akamai.com/application-security/reference/put-policy-ip-geo-firewall)
 //
 // ## Example Usage
 //
@@ -25,7 +25,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -84,7 +84,7 @@ type AppSecIPGeo struct {
 	ExceptionIpNetworkLists pulumi.StringArrayOutput `pulumi:"exceptionIpNetworkLists"`
 	// . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
 	GeoNetworkLists pulumi.StringArrayOutput `pulumi:"geoNetworkLists"`
-	// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
+	// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
 	IpNetworkLists pulumi.StringArrayOutput `pulumi:"ipNetworkLists"`
 	// . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
 	Mode pulumi.StringOutput `pulumi:"mode"`
@@ -136,7 +136,7 @@ type appSecIPGeoState struct {
 	ExceptionIpNetworkLists []string `pulumi:"exceptionIpNetworkLists"`
 	// . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
 	GeoNetworkLists []string `pulumi:"geoNetworkLists"`
-	// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
+	// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
 	IpNetworkLists []string `pulumi:"ipNetworkLists"`
 	// . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
 	Mode *string `pulumi:"mode"`
@@ -151,7 +151,7 @@ type AppSecIPGeoState struct {
 	ExceptionIpNetworkLists pulumi.StringArrayInput
 	// . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
 	GeoNetworkLists pulumi.StringArrayInput
-	// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
+	// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
 	IpNetworkLists pulumi.StringArrayInput
 	// . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
 	Mode pulumi.StringPtrInput
@@ -170,7 +170,7 @@ type appSecIPGeoArgs struct {
 	ExceptionIpNetworkLists []string `pulumi:"exceptionIpNetworkLists"`
 	// . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
 	GeoNetworkLists []string `pulumi:"geoNetworkLists"`
-	// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
+	// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
 	IpNetworkLists []string `pulumi:"ipNetworkLists"`
 	// . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
 	Mode string `pulumi:"mode"`
@@ -186,7 +186,7 @@ type AppSecIPGeoArgs struct {
 	ExceptionIpNetworkLists pulumi.StringArrayInput
 	// . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
 	GeoNetworkLists pulumi.StringArrayInput
-	// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall..
+	// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
 	IpNetworkLists pulumi.StringArrayInput
 	// . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
 	Mode pulumi.StringInput
@@ -279,6 +279,36 @@ func (o AppSecIPGeoOutput) ToAppSecIPGeoOutput() AppSecIPGeoOutput {
 
 func (o AppSecIPGeoOutput) ToAppSecIPGeoOutputWithContext(ctx context.Context) AppSecIPGeoOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
+func (o AppSecIPGeoOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecIPGeo) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
+func (o AppSecIPGeoOutput) ExceptionIpNetworkLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringArrayOutput { return v.ExceptionIpNetworkLists }).(pulumi.StringArrayOutput)
+}
+
+// . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+func (o AppSecIPGeoOutput) GeoNetworkLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringArrayOutput { return v.GeoNetworkLists }).(pulumi.StringArrayOutput)
+}
+
+// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+func (o AppSecIPGeoOutput) IpNetworkLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringArrayOutput { return v.IpNetworkLists }).(pulumi.StringArrayOutput)
+}
+
+// . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
+func (o AppSecIPGeoOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringOutput { return v.Mode }).(pulumi.StringOutput)
+}
+
+// . Unique identifier of the security policy associated with the IP/Geo lists being modified.
+func (o AppSecIPGeoOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
 type AppSecIPGeoArrayOutput struct{ *pulumi.OutputState }

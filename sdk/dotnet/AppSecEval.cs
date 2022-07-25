@@ -16,7 +16,7 @@ namespace Pulumi.Akamai
     /// Evaluation mode is used for testing and fine-tuning your Kona Rule Set rules and configuration settings.
     /// In evaluation mode rules are triggered by events, but the only thing those rules do is record the actions they *would* have taken had the event occurred on the production network.
     /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postevaluationmode)
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval](https://techdocs.akamai.com/application-security/reference/post-policy-eval)
     /// 
     /// ## Example Usage
     /// 

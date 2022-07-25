@@ -24,7 +24,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -336,6 +336,80 @@ func (o GtmResourceOutput) ToGtmResourceOutput() GtmResourceOutput {
 
 func (o GtmResourceOutput) ToGtmResourceOutputWithContext(ctx context.Context) GtmResourceOutput {
 	return o
+}
+
+// Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
+func (o GtmResourceOutput) AggregationType() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmResource) pulumi.StringOutput { return v.AggregationType }).(pulumi.StringOutput)
+}
+
+// Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
+func (o GtmResourceOutput) ConstrainedProperty() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmResource) pulumi.StringPtrOutput { return v.ConstrainedProperty }).(pulumi.StringPtrOutput)
+}
+
+// For Akamai internal use only. You can omit the value or set it to `null`.
+func (o GtmResourceOutput) DecayRate() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *GtmResource) pulumi.Float64PtrOutput { return v.DecayRate }).(pulumi.Float64PtrOutput)
+}
+
+// A descriptive note to help you track what the resource constrains.
+func (o GtmResourceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmResource) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// DNS name for the GTM Domain set that includes this property.
+func (o GtmResourceOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmResource) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
+}
+
+// Optionally specifies the host header used when fetching the load object.
+func (o GtmResourceOutput) HostHeader() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmResource) pulumi.StringPtrOutput { return v.HostHeader }).(pulumi.StringPtrOutput)
+}
+
+// Specifies the text that comes before the `loadObject`.
+func (o GtmResourceOutput) LeaderString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmResource) pulumi.StringPtrOutput { return v.LeaderString }).(pulumi.StringPtrOutput)
+}
+
+// For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
+func (o GtmResourceOutput) LeastSquaresDecay() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *GtmResource) pulumi.Float64PtrOutput { return v.LeastSquaresDecay }).(pulumi.Float64PtrOutput)
+}
+
+func (o GtmResourceOutput) LoadImbalancePercentage() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *GtmResource) pulumi.Float64PtrOutput { return v.LoadImbalancePercentage }).(pulumi.Float64PtrOutput)
+}
+
+// For Akamai internal use only. You can omit the value or set it to `null`.
+func (o GtmResourceOutput) MaxUMultiplicativeIncrement() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *GtmResource) pulumi.Float64PtrOutput { return v.MaxUMultiplicativeIncrement }).(pulumi.Float64PtrOutput)
+}
+
+// A descriptive label for the GTM resource.
+func (o GtmResourceOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmResource) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resourceInstance` entries. Requires these arguments:
+func (o GtmResourceOutput) ResourceInstances() GtmResourceResourceInstanceArrayOutput {
+	return o.ApplyT(func(v *GtmResource) GtmResourceResourceInstanceArrayOutput { return v.ResourceInstances }).(GtmResourceResourceInstanceArrayOutput)
+}
+
+// Indicates the kind of `loadObject` format used to determine the load on the resource.
+func (o GtmResourceOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmResource) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+}
+
+// An optional sanity check that specifies the maximum allowed value for any component of the load object.
+func (o GtmResourceOutput) UpperBound() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmResource) pulumi.IntPtrOutput { return v.UpperBound }).(pulumi.IntPtrOutput)
+}
+
+// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+func (o GtmResourceOutput) WaitOnComplete() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmResource) pulumi.BoolPtrOutput { return v.WaitOnComplete }).(pulumi.BoolPtrOutput)
 }
 
 type GtmResourceArrayOutput struct{ *pulumi.OutputState }

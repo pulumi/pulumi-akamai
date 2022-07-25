@@ -15,7 +15,7 @@ import (
 //
 // Modifies slow POST protection settings for a security configuration and security policy. Slow POST protections help defend a site against attacks that try to tie up the site by using extremely slow requests and responses.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/slow-post](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putslowpostprotectionsettings)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/slow-post](https://techdocs.akamai.com/application-security/reference/put-policy-slow-post)
 //
 // ## Example Usage
 //
@@ -25,7 +25,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -266,6 +266,38 @@ func (o AppSecSlowPostOutput) ToAppSecSlowPostOutput() AppSecSlowPostOutput {
 
 func (o AppSecSlowPostOutput) ToAppSecSlowPostOutputWithContext(ctx context.Context) AppSecSlowPostOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration associated with the slow POST settings being modified.
+func (o AppSecSlowPostOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecSlowPost) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in to avoid triggering the specified action.
+func (o AppSecSlowPostOutput) DurationThresholdTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AppSecSlowPost) pulumi.IntPtrOutput { return v.DurationThresholdTimeout }).(pulumi.IntPtrOutput)
+}
+
+// . Unique identifier of the security policy associated with the slow POST settings being modified.
+func (o AppSecSlowPostOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecSlowPost) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+// . Action to be taken if slow POST protection is triggered. Allowed values are:
+// - **alert**. Record the event.
+// - **abort**. Block the request.
+func (o AppSecSlowPostOutput) SlowRateAction() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecSlowPost) pulumi.StringOutput { return v.SlowRateAction }).(pulumi.StringOutput)
+}
+
+// . Amount of time (in seconds) that the server should allow a request before marking the request as being too slow.
+func (o AppSecSlowPostOutput) SlowRateThresholdPeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AppSecSlowPost) pulumi.IntPtrOutput { return v.SlowRateThresholdPeriod }).(pulumi.IntPtrOutput)
+}
+
+// . Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
+func (o AppSecSlowPostOutput) SlowRateThresholdRate() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AppSecSlowPost) pulumi.IntPtrOutput { return v.SlowRateThresholdRate }).(pulumi.IntPtrOutput)
 }
 
 type AppSecSlowPostArrayOutput struct{ *pulumi.OutputState }

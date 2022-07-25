@@ -17,40 +17,7 @@ namespace Pulumi.Akamai
     /// - The `forward_to_http_header` parameter, which indicates whether client reputation details are added to requests forwarded to origin in an HTTP header.
     /// - The `forward_shared_ip_to_http_header_siem` parameter, which specifies whether a value is added indicating that shared IPs addresses are included in HTTP headers and in SIEM integration events.
     /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putreputationanalysis)
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var reputationAnalysis = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfileAnalysis.InvokeAsync(new Akamai.GetAppSecReputationProfileAnalysisArgs
-    ///         {
-    ///             ConfigId = configuration.ConfigId,
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             ForwardToHttpHeader = true,
-    ///         })));
-    ///         this.ReputationAnalysisText = reputationAnalysis.Apply(reputationAnalysis =&gt; reputationAnalysis.OutputText);
-    ///         this.ReputationAnalysisJson = reputationAnalysis.Apply(reputationAnalysis =&gt; reputationAnalysis.Json);
-    ///     }
-    /// 
-    ///     [Output("reputationAnalysisText")]
-    ///     public Output&lt;string&gt; ReputationAnalysisText { get; set; }
-    ///     [Output("reputationAnalysisJson")]
-    ///     public Output&lt;string&gt; ReputationAnalysisJson { get; set; }
-    /// }
-    /// ```
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://techdocs.akamai.com/application-security/reference/put-reputation-analysis)
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecReputationProfileAnalysis:AppSecReputationProfileAnalysis")]
     public partial class AppSecReputationProfileAnalysis : Pulumi.CustomResource

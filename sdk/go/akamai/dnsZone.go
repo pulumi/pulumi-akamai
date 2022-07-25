@@ -282,6 +282,73 @@ func (o DnsZoneOutput) ToDnsZoneOutputWithContext(ctx context.Context) DnsZoneOu
 	return o
 }
 
+func (o DnsZoneOutput) ActivationState() pulumi.StringOutput {
+	return o.ApplyT(func(v *DnsZone) pulumi.StringOutput { return v.ActivationState }).(pulumi.StringOutput)
+}
+
+func (o DnsZoneOutput) AliasCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *DnsZone) pulumi.IntOutput { return v.AliasCount }).(pulumi.IntOutput)
+}
+
+// A descriptive comment.
+func (o DnsZoneOutput) Comment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsZone) pulumi.StringPtrOutput { return v.Comment }).(pulumi.StringPtrOutput)
+}
+
+// The contract ID.
+func (o DnsZoneOutput) Contract() pulumi.StringOutput {
+	return o.ApplyT(func(v *DnsZone) pulumi.StringOutput { return v.Contract }).(pulumi.StringOutput)
+}
+
+// A free form identifier for the zone.
+func (o DnsZoneOutput) EndCustomerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsZone) pulumi.StringPtrOutput { return v.EndCustomerId }).(pulumi.StringPtrOutput)
+}
+
+// The currently selected group ID.
+func (o DnsZoneOutput) Group() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsZone) pulumi.StringPtrOutput { return v.Group }).(pulumi.StringPtrOutput)
+}
+
+// The names or IP addresses of the nameservers that the zone data should be retrieved from.
+func (o DnsZoneOutput) Masters() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DnsZone) pulumi.StringArrayOutput { return v.Masters }).(pulumi.StringArrayOutput)
+}
+
+// Whether DNSSEC Sign and Serve is enabled.
+func (o DnsZoneOutput) SignAndServe() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DnsZone) pulumi.BoolPtrOutput { return v.SignAndServe }).(pulumi.BoolPtrOutput)
+}
+
+// The algorithm used by Sign and Serve.
+func (o DnsZoneOutput) SignAndServeAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsZone) pulumi.StringPtrOutput { return v.SignAndServeAlgorithm }).(pulumi.StringPtrOutput)
+}
+
+// The name of the zone whose configuration this zone will copy.
+func (o DnsZoneOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsZone) pulumi.StringPtrOutput { return v.Target }).(pulumi.StringPtrOutput)
+}
+
+// The TSIG Key used in secure zone transfers. If used, requires these arguments:
+func (o DnsZoneOutput) TsigKey() DnsZoneTsigKeyPtrOutput {
+	return o.ApplyT(func(v *DnsZone) DnsZoneTsigKeyPtrOutput { return v.TsigKey }).(DnsZoneTsigKeyPtrOutput)
+}
+
+// Whether the zone is `primary`, `secondary`, or `alias`.
+func (o DnsZoneOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v *DnsZone) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+}
+
+func (o DnsZoneOutput) VersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v *DnsZone) pulumi.StringOutput { return v.VersionId }).(pulumi.StringOutput)
+}
+
+// The domain zone, encapsulating any nested subdomains.
+func (o DnsZoneOutput) Zone() pulumi.StringOutput {
+	return o.ApplyT(func(v *DnsZone) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
+}
+
 type DnsZoneArrayOutput struct{ *pulumi.OutputState }
 
 func (DnsZoneArrayOutput) ElementType() reflect.Type {

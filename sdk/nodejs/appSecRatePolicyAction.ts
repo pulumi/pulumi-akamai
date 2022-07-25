@@ -7,11 +7,11 @@ import * as utilities from "./utilities";
 /**
  * **Scopes**: Rate policy
  *
- * Creates, modifies or deletes the actions associated with a rate policy.
+ * Creates, modifies, or deletes the actions associated with a rate policy.
  * By default, rate policies take no action when triggered.
  * Note that you must set separate actions for requests originating from an IPv4 IP address and for requests originating from an IPv6 address.
  *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rate-policies/{ratePolicyId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putactionsperratepolicy)
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rate-policies/{ratePolicyId}](https://techdocs.akamai.com/application-security/reference/put-rate-policy-action)
  *
  * ## Example Usage
  *
@@ -20,7 +20,7 @@ import * as utilities from "./utilities";
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
- * import * from "fs";
+ * import * as fs from "fs";
  *
  * const configuration = akamai.getAppSecConfiguration({
  *     name: "Documentation",
@@ -67,12 +67,12 @@ export class AppSecRatePolicyAction extends pulumi.CustomResource {
     }
 
     /**
-     * . Unique identifier of the security configuration associated with the rate policy action  being modified.
+     * . Unique identifier of the security configuration associated with the rate policy action being modified.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
      * . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-     * - **alert**. Record the event,
+     * - **alert**. Record the event.
      * - **deny**. Block the request.
      * - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
      * - **none**. Take no action.
@@ -89,6 +89,9 @@ export class AppSecRatePolicyAction extends pulumi.CustomResource {
      * . Unique identifier of the rate policy whose action is being modified.
      */
     public readonly ratePolicyId!: pulumi.Output<number>;
+    /**
+     * . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+     */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
     /**
@@ -142,12 +145,12 @@ export class AppSecRatePolicyAction extends pulumi.CustomResource {
  */
 export interface AppSecRatePolicyActionState {
     /**
-     * . Unique identifier of the security configuration associated with the rate policy action  being modified.
+     * . Unique identifier of the security configuration associated with the rate policy action being modified.
      */
     configId?: pulumi.Input<number>;
     /**
      * . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-     * - **alert**. Record the event,
+     * - **alert**. Record the event.
      * - **deny**. Block the request.
      * - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
      * - **none**. Take no action.
@@ -164,6 +167,9 @@ export interface AppSecRatePolicyActionState {
      * . Unique identifier of the rate policy whose action is being modified.
      */
     ratePolicyId?: pulumi.Input<number>;
+    /**
+     * . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+     */
     securityPolicyId?: pulumi.Input<string>;
 }
 
@@ -172,12 +178,12 @@ export interface AppSecRatePolicyActionState {
  */
 export interface AppSecRatePolicyActionArgs {
     /**
-     * . Unique identifier of the security configuration associated with the rate policy action  being modified.
+     * . Unique identifier of the security configuration associated with the rate policy action being modified.
      */
     configId: pulumi.Input<number>;
     /**
      * . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-     * - **alert**. Record the event,
+     * - **alert**. Record the event.
      * - **deny**. Block the request.
      * - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
      * - **none**. Take no action.
@@ -194,5 +200,8 @@ export interface AppSecRatePolicyActionArgs {
      * . Unique identifier of the rate policy whose action is being modified.
      */
     ratePolicyId: pulumi.Input<number>;
+    /**
+     * . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+     */
     securityPolicyId: pulumi.Input<string>;
 }

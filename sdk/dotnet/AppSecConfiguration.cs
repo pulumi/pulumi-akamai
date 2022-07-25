@@ -16,7 +16,7 @@ namespace Pulumi.Akamai
     /// 
     /// In addition to manually creating a new configuration, you can use the `create_from_config_id` argument to clone an existing configuration.
     /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postconfigurations)
+    /// **Related API Endpoint**: [/appsec/v1/configs](https://techdocs.akamai.com/application-security/reference/post-config)
     /// 
     /// ## Example Usage
     /// 

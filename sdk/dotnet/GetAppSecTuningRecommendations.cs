@@ -16,8 +16,10 @@ namespace Pulumi.Akamai
         /// Tuning recommendations help minimize the number of false positives triggered by a security policy. With a false positive, a client request is marked as having violated the security policy restrictions even though it actually did not.
         /// Tuning recommendations are returned as attack group exceptions: if you choose, you can copy the response and use the `akamai.AppSecAttackGroup` resource to add the recommended exception to a security policy or attack group.
         /// If the data source response is empty, that means that there are no further recommendations for tuning your security policy or attack group.
-        /// If you need, you can manually merge a recommended exception for an attack group with the exception previously configured in the attack group resource. 
-        /// You can find additional information in our [Application Security API v1 documentation](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getrecommendations).
+        /// If you need, you can manually merge a recommended exception for an attack group with the exception previously configured in the attack group resource.
+        /// You can find additional information in our [Application Security API v1 documentation](https://techdocs.akamai.com/application-security/reference/get-recommendations).
+        /// 
+        /// **Related API endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/recommendation](https://techdocs.akamai.com/application-security/reference/get-recommendations)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -47,6 +49,7 @@ namespace Pulumi.Akamai
         ///         {
         ///             ConfigId = configuration.ConfigId,
         ///             SecurityPolicyId = @var.Security_policy_id,
+        ///             RulesetType = @var.Ruleset_type,
         ///             AttackGroup = @var.Attack_group,
         ///         })));
         ///         this.AttackGroupRecommendationsJson = attackGroupRecommendations.Apply(attackGroupRecommendations =&gt; attackGroupRecommendations.Json);
@@ -69,8 +72,10 @@ namespace Pulumi.Akamai
         /// Tuning recommendations help minimize the number of false positives triggered by a security policy. With a false positive, a client request is marked as having violated the security policy restrictions even though it actually did not.
         /// Tuning recommendations are returned as attack group exceptions: if you choose, you can copy the response and use the `akamai.AppSecAttackGroup` resource to add the recommended exception to a security policy or attack group.
         /// If the data source response is empty, that means that there are no further recommendations for tuning your security policy or attack group.
-        /// If you need, you can manually merge a recommended exception for an attack group with the exception previously configured in the attack group resource. 
-        /// You can find additional information in our [Application Security API v1 documentation](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getrecommendations).
+        /// If you need, you can manually merge a recommended exception for an attack group with the exception previously configured in the attack group resource.
+        /// You can find additional information in our [Application Security API v1 documentation](https://techdocs.akamai.com/application-security/reference/get-recommendations).
+        /// 
+        /// **Related API endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/recommendation](https://techdocs.akamai.com/application-security/reference/get-recommendations)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -100,6 +105,7 @@ namespace Pulumi.Akamai
         ///         {
         ///             ConfigId = configuration.ConfigId,
         ///             SecurityPolicyId = @var.Security_policy_id,
+        ///             RulesetType = @var.Ruleset_type,
         ///             AttackGroup = @var.Attack_group,
         ///         })));
         ///         this.AttackGroupRecommendationsJson = attackGroupRecommendations.Apply(attackGroupRecommendations =&gt; attackGroupRecommendations.Json);
@@ -122,19 +128,25 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecTuningRecommendationsArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// . Unique name of the attack group you want to return tuning recommendations for. If not included, recommendations are returned for all your attack groups.
+        /// . Unique name of the attack group you want tuning recommendations for. If not included, recommendations are returned for all attack groups.
         /// </summary>
         [Input("attackGroup")]
         public string? AttackGroup { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security configuration you want to return tuning recommendations for.
+        /// . Unique identifier of the security configuration you want tuning recommendations for.
         /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security policy you want to return tuning recommendations for.
+        /// . Type of ruleset used by the security configuration you want tuning recommendations for. Supported values are `active` and `evaluation`. Defaults to `active`.
+        /// </summary>
+        [Input("rulesetType")]
+        public string? RulesetType { get; set; }
+
+        /// <summary>
+        /// . Unique identifier of the security policy you want tuning recommendations for.
         /// </summary>
         [Input("securityPolicyId")]
         public string? SecurityPolicyId { get; set; }
@@ -147,19 +159,25 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecTuningRecommendationsInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// . Unique name of the attack group you want to return tuning recommendations for. If not included, recommendations are returned for all your attack groups.
+        /// . Unique name of the attack group you want tuning recommendations for. If not included, recommendations are returned for all attack groups.
         /// </summary>
         [Input("attackGroup")]
         public Input<string>? AttackGroup { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security configuration you want to return tuning recommendations for.
+        /// . Unique identifier of the security configuration you want tuning recommendations for.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy you want to return tuning recommendations for.
+        /// . Type of ruleset used by the security configuration you want tuning recommendations for. Supported values are `active` and `evaluation`. Defaults to `active`.
+        /// </summary>
+        [Input("rulesetType")]
+        public Input<string>? RulesetType { get; set; }
+
+        /// <summary>
+        /// . Unique identifier of the security policy you want tuning recommendations for.
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
@@ -183,6 +201,7 @@ namespace Pulumi.Akamai
         /// JSON-formatted list of the tuning recommendations for the security policy or the attack group. The exception block format in a recommendation conforms to the exception block format used in `condition_exception` element of `attack_group` resource.
         /// </summary>
         public readonly string Json;
+        public readonly string? RulesetType;
         public readonly string? SecurityPolicyId;
 
         [OutputConstructor]
@@ -195,12 +214,15 @@ namespace Pulumi.Akamai
 
             string json,
 
+            string? rulesetType,
+
             string? securityPolicyId)
         {
             AttackGroup = attackGroup;
             ConfigId = configId;
             Id = id;
             Json = json;
+            RulesetType = rulesetType;
             SecurityPolicyId = securityPolicyId;
         }
     }

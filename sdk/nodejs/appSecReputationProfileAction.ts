@@ -9,7 +9,7 @@ import * as utilities from "./utilities";
  *
  * Modifies the action taken when a reputation profile is triggered.
  *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-profiles/{reputationProfileId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putreputationprofileaction)
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-profiles/{reputationProfileId}](https://techdocs.akamai.com/application-security/reference/put-reputation-profile-action)
  *
  * ## Example Usage
  *

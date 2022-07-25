@@ -4,43 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security configuration
- *
- * Activates or deactivates a security configuration. Security configurations activated on the staging network can be used for testing and fine-tuning; security configurations activated on the production network are used to protect your actual websites.
- *
- * Note that activation fails if the security configuration includes one or more invalid hostnames. You can find these names in the resulting activation error message. To activate the configuration, remove the invalid hosts and try again.
- *
- * **Related API Endpoint**: [/appsec/v1/activations](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postactivations)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const activation = new akamai.AppSecActivations("activation", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     network: "STAGING",
- *     notes: "This configuration was activated for testing purposes only.",
- *     notificationEmails: ["user@example.com"],
- * });
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `status`. Status of the operation. Valid values are:
- *   
- *   *   **ACTIVATED**
- *   *   **DEACTIVATED**
- *   *   **FAILED**
- */
 export class AppSecActivations extends pulumi.CustomResource {
     /**
      * Get an existing AppSecActivations resource's state with the given name, ID, and optional extra
@@ -70,26 +33,43 @@ export class AppSecActivations extends pulumi.CustomResource {
     }
 
     /**
-     * . Set to **true** to activate the specified security configuration; set to **false** to deactivate the configuration. If not included, the security configuration will be activated.
+     * . Set to **true** to activate the specified security configuration or set to **false** to deactivate the configuration. If not included, the security configuration is activated. This argument applies only to versions prior to 2.0.0.
+     *
+     * @deprecated The setting activate has been deprecated; "terraform apply" will always perform activation. (Use "terraform destroy" for deactivation.)
      */
     public readonly activate!: pulumi.Output<boolean | undefined>;
     /**
-     * . Unique identifier of the security configuration being activated.
+     * . Unique identifier of the security configuration being activated. This is unchanged from previous versions.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Network on which activation will occur; allowed values are:
+     * . Network on which activation will occur; if not included, activation takes place on the staging network. Allowed values are:
+     * * **PRODUCTION**
+     * * **STAGING**
      */
     public readonly network!: pulumi.Output<string | undefined>;
     /**
-     * . Brief description of the activation/deactivation process. Note that, if no attributes have changed since the last time you called the akamai.AppSecActivations resource, neither activation nor deactivation takes place: that's because *something* must be different in order to trigger the activation/deactivation process. With that in mind, it's recommended that you always update the `notes` argument. That ensures that the resource will be called and that activation or deactivation will occur.
+     * . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That's because something must be different in order to trigger these processes. Because of that, it's recommended that you always update the **note** argument. That ensures that the resource is called and that activation or deactivation occurs.
      */
-    public readonly notes!: pulumi.Output<string>;
+    public readonly note!: pulumi.Output<string | undefined>;
     /**
-     * . JSON array containing the email addresses of the people to be notified when activation is complete.
+     * . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That's because something must be different in order to trigger one of these processes. Because of that, it's recommended that you always update the `notes` argument. Doing so ensures that the resource is called and activation or deactivation occurs. This argument applies only to versions prior to 2.0.0.
+     *
+     * @deprecated The setting notes has been deprecated. Use "note" instead.
+     */
+    public readonly notes!: pulumi.Output<string | undefined>;
+    /**
+     * . JSON array containing the email addresses of the people to be notified when activation is complete. This is unchanged from previous versions.
      */
     public readonly notificationEmails!: pulumi.Output<string[]>;
+    /**
+     * The results of the activation
+     */
     public /*out*/ readonly status!: pulumi.Output<string>;
+    /**
+     * . Version number of the security configuration being activated. This can be a hard-coded version number (for example, **5**), or you can use the security configuration’s **latest_version** attribute (data.akamai_appsec_configuration.configuration.latest_version). If you do the latter, you’ll always activate the most recent version of the configuration. This argument applies only to versions 2.0.0 and later.
+     */
+    public readonly version!: pulumi.Output<number>;
 
     /**
      * Create a AppSecActivations resource with the given unique name, arguments, and options.
@@ -107,25 +87,29 @@ export class AppSecActivations extends pulumi.CustomResource {
             resourceInputs["activate"] = state ? state.activate : undefined;
             resourceInputs["configId"] = state ? state.configId : undefined;
             resourceInputs["network"] = state ? state.network : undefined;
+            resourceInputs["note"] = state ? state.note : undefined;
             resourceInputs["notes"] = state ? state.notes : undefined;
             resourceInputs["notificationEmails"] = state ? state.notificationEmails : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
+            resourceInputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as AppSecActivationsArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
             }
-            if ((!args || args.notes === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'notes'");
-            }
             if ((!args || args.notificationEmails === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'notificationEmails'");
+            }
+            if ((!args || args.version === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'version'");
             }
             resourceInputs["activate"] = args ? args.activate : undefined;
             resourceInputs["configId"] = args ? args.configId : undefined;
             resourceInputs["network"] = args ? args.network : undefined;
+            resourceInputs["note"] = args ? args.note : undefined;
             resourceInputs["notes"] = args ? args.notes : undefined;
             resourceInputs["notificationEmails"] = args ? args.notificationEmails : undefined;
+            resourceInputs["version"] = args ? args.version : undefined;
             resourceInputs["status"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -138,26 +122,43 @@ export class AppSecActivations extends pulumi.CustomResource {
  */
 export interface AppSecActivationsState {
     /**
-     * . Set to **true** to activate the specified security configuration; set to **false** to deactivate the configuration. If not included, the security configuration will be activated.
+     * . Set to **true** to activate the specified security configuration or set to **false** to deactivate the configuration. If not included, the security configuration is activated. This argument applies only to versions prior to 2.0.0.
+     *
+     * @deprecated The setting activate has been deprecated; "terraform apply" will always perform activation. (Use "terraform destroy" for deactivation.)
      */
     activate?: pulumi.Input<boolean>;
     /**
-     * . Unique identifier of the security configuration being activated.
+     * . Unique identifier of the security configuration being activated. This is unchanged from previous versions.
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Network on which activation will occur; allowed values are:
+     * . Network on which activation will occur; if not included, activation takes place on the staging network. Allowed values are:
+     * * **PRODUCTION**
+     * * **STAGING**
      */
     network?: pulumi.Input<string>;
     /**
-     * . Brief description of the activation/deactivation process. Note that, if no attributes have changed since the last time you called the akamai.AppSecActivations resource, neither activation nor deactivation takes place: that's because *something* must be different in order to trigger the activation/deactivation process. With that in mind, it's recommended that you always update the `notes` argument. That ensures that the resource will be called and that activation or deactivation will occur.
+     * . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That's because something must be different in order to trigger these processes. Because of that, it's recommended that you always update the **note** argument. That ensures that the resource is called and that activation or deactivation occurs.
+     */
+    note?: pulumi.Input<string>;
+    /**
+     * . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That's because something must be different in order to trigger one of these processes. Because of that, it's recommended that you always update the `notes` argument. Doing so ensures that the resource is called and activation or deactivation occurs. This argument applies only to versions prior to 2.0.0.
+     *
+     * @deprecated The setting notes has been deprecated. Use "note" instead.
      */
     notes?: pulumi.Input<string>;
     /**
-     * . JSON array containing the email addresses of the people to be notified when activation is complete.
+     * . JSON array containing the email addresses of the people to be notified when activation is complete. This is unchanged from previous versions.
      */
     notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The results of the activation
+     */
     status?: pulumi.Input<string>;
+    /**
+     * . Version number of the security configuration being activated. This can be a hard-coded version number (for example, **5**), or you can use the security configuration’s **latest_version** attribute (data.akamai_appsec_configuration.configuration.latest_version). If you do the latter, you’ll always activate the most recent version of the configuration. This argument applies only to versions 2.0.0 and later.
+     */
+    version?: pulumi.Input<number>;
 }
 
 /**
@@ -165,23 +166,37 @@ export interface AppSecActivationsState {
  */
 export interface AppSecActivationsArgs {
     /**
-     * . Set to **true** to activate the specified security configuration; set to **false** to deactivate the configuration. If not included, the security configuration will be activated.
+     * . Set to **true** to activate the specified security configuration or set to **false** to deactivate the configuration. If not included, the security configuration is activated. This argument applies only to versions prior to 2.0.0.
+     *
+     * @deprecated The setting activate has been deprecated; "terraform apply" will always perform activation. (Use "terraform destroy" for deactivation.)
      */
     activate?: pulumi.Input<boolean>;
     /**
-     * . Unique identifier of the security configuration being activated.
+     * . Unique identifier of the security configuration being activated. This is unchanged from previous versions.
      */
     configId: pulumi.Input<number>;
     /**
-     * . Network on which activation will occur; allowed values are:
+     * . Network on which activation will occur; if not included, activation takes place on the staging network. Allowed values are:
+     * * **PRODUCTION**
+     * * **STAGING**
      */
     network?: pulumi.Input<string>;
     /**
-     * . Brief description of the activation/deactivation process. Note that, if no attributes have changed since the last time you called the akamai.AppSecActivations resource, neither activation nor deactivation takes place: that's because *something* must be different in order to trigger the activation/deactivation process. With that in mind, it's recommended that you always update the `notes` argument. That ensures that the resource will be called and that activation or deactivation will occur.
+     * . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That's because something must be different in order to trigger these processes. Because of that, it's recommended that you always update the **note** argument. That ensures that the resource is called and that activation or deactivation occurs.
      */
-    notes: pulumi.Input<string>;
+    note?: pulumi.Input<string>;
     /**
-     * . JSON array containing the email addresses of the people to be notified when activation is complete.
+     * . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That's because something must be different in order to trigger one of these processes. Because of that, it's recommended that you always update the `notes` argument. Doing so ensures that the resource is called and activation or deactivation occurs. This argument applies only to versions prior to 2.0.0.
+     *
+     * @deprecated The setting notes has been deprecated. Use "note" instead.
+     */
+    notes?: pulumi.Input<string>;
+    /**
+     * . JSON array containing the email addresses of the people to be notified when activation is complete. This is unchanged from previous versions.
      */
     notificationEmails: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * . Version number of the security configuration being activated. This can be a hard-coded version number (for example, **5**), or you can use the security configuration’s **latest_version** attribute (data.akamai_appsec_configuration.configuration.latest_version). If you do the latter, you’ll always activate the most recent version of the configuration. This argument applies only to versions 2.0.0 and later.
+     */
+    version: pulumi.Input<number>;
 }

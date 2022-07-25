@@ -25,7 +25,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -241,6 +241,31 @@ func (o GtmGeomapOutput) ToGtmGeomapOutput() GtmGeomapOutput {
 
 func (o GtmGeomapOutput) ToGtmGeomapOutputWithContext(ctx context.Context) GtmGeomapOutput {
 	return o
+}
+
+// Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
+func (o GtmGeomapOutput) Assignments() GtmGeomapAssignmentArrayOutput {
+	return o.ApplyT(func(v *GtmGeomap) GtmGeomapAssignmentArrayOutput { return v.Assignments }).(GtmGeomapAssignmentArrayOutput)
+}
+
+// A placeholder for all other geographic zones. Requires these additional arguments:
+func (o GtmGeomapOutput) DefaultDatacenter() GtmGeomapDefaultDatacenterOutput {
+	return o.ApplyT(func(v *GtmGeomap) GtmGeomapDefaultDatacenterOutput { return v.DefaultDatacenter }).(GtmGeomapDefaultDatacenterOutput)
+}
+
+// GTM Domain name for the Geographic Map.
+func (o GtmGeomapOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmGeomap) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
+}
+
+// A descriptive label for the Geographic map.
+func (o GtmGeomapOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmGeomap) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
+func (o GtmGeomapOutput) WaitOnComplete() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmGeomap) pulumi.BoolPtrOutput { return v.WaitOnComplete }).(pulumi.BoolPtrOutput)
 }
 
 type GtmGeomapArrayOutput struct{ *pulumi.OutputState }

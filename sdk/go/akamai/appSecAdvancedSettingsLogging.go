@@ -13,9 +13,11 @@ import (
 
 // **Scopes**: Security configuration; security policy
 //
-// Enables, disables, or updates HTTP header logging settings. By default, this operation applies at the configuration level, which means that it applies to all the security policies within that configuration. However, by using the `securityPolicyId` parameter you can specify custom settings for an individual security policy.
+// Enables, disables, or updates HTTP header logging settings.
+// By default, this operation applies at the configuration level, which means that it applies to all the security policies within that configuration.
+// However, by using the `securityPolicyId` parameter you can specify custom settings for an individual security policy.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging](https://developer.akamai.com/api/cloud_security/application_security/v1.html#puthttpheaderlogging)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging](https://techdocs.akamai.com/application-security/reference/put-policies-logging)
 //
 // ## Example Usage
 //
@@ -28,7 +30,7 @@ import (
 // 	"fmt"
 // 	"io/ioutil"
 //
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -50,7 +52,7 @@ import (
 // 		}
 // 		_, err = akamai.NewAppSecAdvancedSettingsLogging(ctx, "logging", &akamai.AppSecAdvancedSettingsLoggingArgs{
 // 			ConfigId: pulumi.Int(configuration.ConfigId),
-// 			Logging:  readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/logging.json")),
+// 			Logging:  readFileOrPanic(fmt.Sprintf("%v/logging.json", path.Module)),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -58,7 +60,7 @@ import (
 // 		_, err = akamai.NewAppSecAdvancedSettingsLogging(ctx, "policyLogging", &akamai.AppSecAdvancedSettingsLoggingArgs{
 // 			ConfigId:         pulumi.Int(configuration.ConfigId),
 // 			SecurityPolicyId: pulumi.String("gms1_134637"),
-// 			Logging:          readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/logging.json")),
+// 			Logging:          readFileOrPanic(fmt.Sprintf("%v/logging.json", path.Module)),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -238,6 +240,21 @@ func (o AppSecAdvancedSettingsLoggingOutput) ToAppSecAdvancedSettingsLoggingOutp
 
 func (o AppSecAdvancedSettingsLoggingOutput) ToAppSecAdvancedSettingsLoggingOutputWithContext(ctx context.Context) AppSecAdvancedSettingsLoggingOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration containing the logging settings being modified.
+func (o AppSecAdvancedSettingsLoggingOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecAdvancedSettingsLogging) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Path to a JSON file containing the logging settings to be configured. A sample JSON file can be found in the [Modify HTTP header log settings for a configuration](https://developer.akamai.com/api/cloud_security/application_security/v1.html#puthttpheaderloggingforaconfiguration) section of the Application Security API documentation.
+func (o AppSecAdvancedSettingsLoggingOutput) Logging() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecAdvancedSettingsLogging) pulumi.StringOutput { return v.Logging }).(pulumi.StringOutput)
+}
+
+// . Unique identifier of the security policies whose settings are being modified. If not included, the logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+func (o AppSecAdvancedSettingsLoggingOutput) SecurityPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppSecAdvancedSettingsLogging) pulumi.StringPtrOutput { return v.SecurityPolicyId }).(pulumi.StringPtrOutput)
 }
 
 type AppSecAdvancedSettingsLoggingArrayOutput struct{ *pulumi.OutputState }

@@ -14,59 +14,6 @@ import (
 //
 // Use the `getCloudletsApplicationLoadBalancerMatchRule` data source to build a match rule JSON object for the Application Load Balancer Cloudlet.
 //
-// ## Basic usage
-//
-// This example returns the JSON-encoded rules for the Application Load Balancer Cloudlet:
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.GetCloudletsApplicationLoadBalancerMatchRule(ctx, &GetCloudletsApplicationLoadBalancerMatchRuleArgs{
-// 			MatchRules: []GetCloudletsApplicationLoadBalancerMatchRuleMatchRule{
-// 				GetCloudletsApplicationLoadBalancerMatchRuleMatchRule{
-// 					End: pulumi.IntRef(1645037845),
-// 					ForwardSettings: []GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSetting{
-// 						GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSetting{
-// 							OriginId: "alb_test_1",
-// 						},
-// 					},
-// 					MatchUrl: pulumi.StringRef("example.com"),
-// 					Matches: []GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatch{
-// 						GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatch{
-// 							CaseSensitive: pulumi.BoolRef(false),
-// 							MatchOperator: pulumi.StringRef("equals"),
-// 							MatchType:     pulumi.StringRef("method"),
-// 							Negate:        pulumi.BoolRef(false),
-// 							ObjectMatchValue: []map[string]interface{}{
-// 								map[string]interface{}{
-// 									"type": "simple",
-// 									"value": []string{
-// 										"GET",
-// 									},
-// 								},
-// 							},
-// 						},
-// 					},
-// 					Name:  pulumi.StringRef("rule"),
-// 					Start: pulumi.IntRef(1644865045),
-// 				},
-// 			},
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
-//
 // ## Attributes reference
 //
 // This data source returns these attributes:

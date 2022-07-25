@@ -27,9 +27,10 @@ import (
 	dnsProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/dns"
 	edgeworksProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/edgeworkers"
 	gtmProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/gtm"
+	iamProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/iam"
 	networkListsProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/networklists"
 	propertyProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/property"
-	"github.com/pulumi/pulumi-akamai/provider/v2/pkg/version"
+	"github.com/pulumi/pulumi-akamai/provider/v3/pkg/version"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
@@ -85,6 +86,7 @@ func Provider() tfbridge.ProviderInfo {
 		gtmProvider.Subprovider(),
 		networkListsProvider.Subprovider(),
 		propertyProvider.Subprovider(),
+		iamProvider.Subprovider(),
 	)
 
 	// Instantiate the Terraform provider
@@ -110,6 +112,9 @@ func Provider() tfbridge.ProviderInfo {
 			// Executing this resource's code in the upstream provider yields an error message saying it's no longer
 			// supported:
 			"akamai_property_variables",
+			// This provides a DotNet codegen class as follows:
+			// GetIamGroupsGroupSubGroupSubGroupSubGroupSubGroupSubGroupSubGroupSubGroupSubGroupSubGroupSubGrou....
+			"akamai_iam_groups",
 		},
 		Resources: map[string]*tfbridge.ResourceInfo{
 			"akamai_appsec_activations":                 {Tok: makeResource(mainMod, "AppSecActivations")},
@@ -128,6 +133,7 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_appsec_eval":                        {Tok: makeResource(mainMod, "AppSecEval")},
 			"akamai_appsec_ip_geo":                      {Tok: makeResource(mainMod, "AppSecIPGeo")},
 			"akamai_appsec_penalty_box":                 {Tok: makeResource(mainMod, "AppSecPenaltyBox")},
+			"akamai_appsec_eval_penalty_box":            {Tok: makeResource(mainMod, "AppSecEvalPenaltyBox")},
 			"akamai_appsec_rate_policy":                 {Tok: makeResource(mainMod, "AppSecRatePolicy")},
 			"akamai_appsec_rate_policy_action":          {Tok: makeResource(mainMod, "AppSecRatePolicyAction")},
 			"akamai_appsec_rate_protection":             {Tok: makeResource(mainMod, "AppSecRateProtection")},
@@ -173,6 +179,11 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_edgekv": {Tok: makeResource(mainMod, "EdgeKv")},
 			"akamai_edgeworker": {
 				Tok: makeResource(mainMod, "EdgeWorker"),
+				Fields: map[string]*tfbridge.SchemaInfo{
+					"group_id": {
+						Type: "integer",
+					},
+				},
 				Docs: &tfbridge.DocInfo{
 					Source: "edgeworkers.md",
 				},
@@ -183,6 +194,11 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_networklist_description":  {Tok: makeResource(mainMod, "NetworkListDescription")},
 			"akamai_networklist_network_list": {Tok: makeResource(mainMod, "NetworkList")},
 			"akamai_networklist_subscription": {Tok: makeResource(mainMod, "NetworkListSubscription")},
+
+			"akamai_iam_blocked_user_properties": {Tok: makeResource(mainMod, "IamBlockedUserProperties")},
+			"akamai_iam_group":                   {Tok: makeResource(mainMod, "IamGroup")},
+			"akamai_iam_role":                    {Tok: makeResource(mainMod, "IamRole")},
+			"akamai_iam_user":                    {Tok: makeResource(mainMod, "IamUser")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
 			"akamai_contract":  {Tok: makeDataSource(mainMod, "getContract")},
@@ -216,6 +232,7 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_appsec_hostname_coverage_overlapping":        {Tok: makeDataSource(mainMod, "getAppSecHostnameCoverageOverlapping")},
 			"akamai_appsec_ip_geo":                               {Tok: makeDataSource(mainMod, "getAppSecIPGeo")},
 			"akamai_appsec_penalty_box":                          {Tok: makeDataSource(mainMod, "getAppSecPenaltyBox")},
+			"akamai_appsec_eval_penalty_box":                     {Tok: makeDataSource(mainMod, "getAppSecEvalPenaltyBox")},
 			"akamai_appsec_rate_policies":                        {Tok: makeDataSource(mainMod, "getAppSecRatePolicies")},
 			"akamai_appsec_rate_policy_actions":                  {Tok: makeDataSource(mainMod, "getAppSecRatePolicyActions")},
 			"akamai_appsec_reputation_profile_actions":           {Tok: makeDataSource(mainMod, "getAppSecReputationProfileActions")},
@@ -263,6 +280,15 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_networklist_network_lists":            {Tok: makeDataSource(mainMod, "getNetworkLists")},
 			"akamai_cloudlets_request_control_match_rule": {Tok: makeDataSource(mainMod, "getCloudletsRequestControlMatchRule")},
 			"akamai_properties_search":                    {Tok: makeDataSource(mainMod, "getPropertiesSearch")},
+
+			"akamai_iam_contact_types":    {Tok: makeDataSource(mainMod, "getIamContactTypes")},
+			"akamai_iam_countries":        {Tok: makeDataSource(mainMod, "getIamCountries")},
+			"akamai_iam_grantable_roles":  {Tok: makeDataSource(mainMod, "getIamGrantableRoles")},
+			"akamai_iam_roles":            {Tok: makeDataSource(mainMod, "getIamRoles")},
+			"akamai_iam_states":           {Tok: makeDataSource(mainMod, "getIamStates")},
+			"akamai_iam_supported_langs":  {Tok: makeDataSource(mainMod, "getIamSupportedLangs")},
+			"akamai_iam_timeout_policies": {Tok: makeDataSource(mainMod, "getIamTimeoutPolicies")},
+			"akamai_iam_timezones":        {Tok: makeDataSource(mainMod, "getIamTimezones")},
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
 			// List any npm dependencies and their versions

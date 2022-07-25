@@ -15,7 +15,7 @@ import (
 //
 // Creates a custom rule associated with a security configuration. Custom rules are rules that you define yourself and are not part of the Kona Rule Set.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/custom-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/custom-rules]https://techdocs.akamai.com/application-security/reference/get-configs-custom-rules)
 type AppSecCustomRule struct {
 	pulumi.CustomResourceState
 
@@ -180,6 +180,20 @@ func (o AppSecCustomRuleOutput) ToAppSecCustomRuleOutput() AppSecCustomRuleOutpu
 
 func (o AppSecCustomRuleOutput) ToAppSecCustomRuleOutputWithContext(ctx context.Context) AppSecCustomRuleOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration associated with the custom rule being modified.
+func (o AppSecCustomRuleOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecCustomRule) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules) section of the Application Security API documentation.
+func (o AppSecCustomRuleOutput) CustomRule() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecCustomRule) pulumi.StringOutput { return v.CustomRule }).(pulumi.StringOutput)
+}
+
+func (o AppSecCustomRuleOutput) CustomRuleId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecCustomRule) pulumi.IntOutput { return v.CustomRuleId }).(pulumi.IntOutput)
 }
 
 type AppSecCustomRuleArrayOutput struct{ *pulumi.OutputState }

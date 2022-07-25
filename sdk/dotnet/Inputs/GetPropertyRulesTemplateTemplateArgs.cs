@@ -12,9 +12,15 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesTemplateTemplateInputArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The content of the JSON template as a string.
+        /// </summary>
         [Input("templateData", required: true)]
         public Input<string> TemplateData { get; set; } = null!;
 
+        /// <summary>
+        /// The absolute or relative path to the directory containing the template files. The path must end with `property-snippets`, the required directory name. For example: `template_dir = abspath("${path.root}/property-snippets/")`, or `template_dir = "property-snippets/"`.
+        /// </summary>
         [Input("templateDir", required: true)]
         public Input<string> TemplateDir { get; set; } = null!;
 

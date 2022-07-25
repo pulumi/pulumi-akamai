@@ -14,9 +14,9 @@ namespace Pulumi.Akamai
         /// <summary>
         /// **Scopes**: Security policy
         /// 
-        /// Returns information indicating which of your Kona Rule Sets (if any) need to be updated. A value of **false** indicates that no updates are required.
+        /// Returns information indicating which of your Kona Rule Sets, if any, need to be updated. A value of **false** indicates that no updates are required.
         /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/upgrade-details](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getupgradedetails)
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/upgrade-details](https://techdocs.akamai.com/application-security/reference/get-rules-upgrade-details)
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -66,9 +66,9 @@ namespace Pulumi.Akamai
         /// <summary>
         /// **Scopes**: Security policy
         /// 
-        /// Returns information indicating which of your Kona Rule Sets (if any) need to be updated. A value of **false** indicates that no updates are required.
+        /// Returns information indicating which of your Kona Rule Sets, if any, need to be updated. A value of **false** indicates that no updates are required.
         /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/upgrade-details](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getupgradedetails)
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/upgrade-details](https://techdocs.akamai.com/application-security/reference/get-rules-upgrade-details)
         /// 
         /// {{% examples %}}
         /// ## Example Usage

@@ -9,7 +9,7 @@ import * as utilities from "./utilities";
  *
  * Returns a list of the failover hostnames in a configuration. The returned information is described in the [List failover hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames) section of the Application Security API.
  *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/failover-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames)
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/failover-hostnames](https://techdocs.akamai.com/application-security/reference/get-failover-hostnames)
  *
  * ## Example Usage
  *

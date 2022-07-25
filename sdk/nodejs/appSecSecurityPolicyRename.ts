@@ -9,7 +9,7 @@ import * as utilities from "./utilities";
  *
  * Renames an existing security policy. Note that you can only change the name of the policy: once issued, the security policy ID can't be modified.
  *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsecuritypolicy)
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}](https://techdocs.akamai.com/application-security/reference/put-policy)
  */
 export class AppSecSecurityPolicyRename extends pulumi.CustomResource {
     /**

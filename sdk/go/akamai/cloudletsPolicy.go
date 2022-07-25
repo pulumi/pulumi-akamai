@@ -23,7 +23,7 @@ import (
 // import (
 // 	"fmt"
 //
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -33,7 +33,37 @@ import (
 // 			CloudletCode: pulumi.String("ER"),
 // 			Description:  pulumi.String("policy description"),
 // 			GroupId:      pulumi.String("grp_123"),
-// 			MatchRules:   pulumi.String(fmt.Sprintf("%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v", "  [\n", "  {\n", "    \"name\": \"rule1\",\n", "    \"type\": \"erMatchRule\",\n", "    \"useRelativeUrl\": \"none\",\n", "    \"statusCode\": 301,\n", "    \"redirectURL\": \"https://www.example.com\",\n", "    \"matchURL\": \"example.com\",\n", "    \"useIncomingQueryString\": false,\n", "    \"useIncomingSchemeAndHost\": true\n", "  },\n", "  {\n", "    \"name\": \"rule2\",\n", "    \"type\": \"erMatchRule\",\n", "    \"matches\": [\n", "      {\n", "        \"matchType\": \"hostname\",\n", "        \"matchValue\": \"3333.dom\",\n", "        \"matchOperator\": \"equals\",\n", "        \"caseSensitive\": true,\n", "        \"negate\": false\n", "      }\n", "    ],\n", "    \"useRelativeUrl\": \"none\",\n", "    \"statusCode\": 301,\n", "    \"redirectURL\": \"https://www.example.com\",\n", "    \"useIncomingQueryString\": false,\n", "    \"useIncomingSchemeAndHost\": true\n", "  }\n", "]\n")),
+// 			MatchRules: pulumi.String(fmt.Sprintf(`  [
+//   {
+//     "name": "rule1",
+//     "type": "erMatchRule",
+//     "useRelativeUrl": "none",
+//     "statusCode": 301,
+//     "redirectURL": "https://www.example.com",
+//     "matchURL": "example.com",
+//     "useIncomingQueryString": false,
+//     "useIncomingSchemeAndHost": true
+//   },
+//   {
+//     "name": "rule2",
+//     "type": "erMatchRule",
+//     "matches": [
+//       {
+//         "matchType": "hostname",
+//         "matchValue": "3333.dom",
+//         "matchOperator": "equals",
+//         "caseSensitive": true,
+//         "negate": false
+//       }
+//     ],
+//     "useRelativeUrl": "none",
+//     "statusCode": 301,
+//     "redirectURL": "https://www.example.com",
+//     "useIncomingQueryString": false,
+//     "useIncomingSchemeAndHost": true
+//   }
+// ]
+// `)),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -273,6 +303,51 @@ func (o CloudletsPolicyOutput) ToCloudletsPolicyOutput() CloudletsPolicyOutput {
 
 func (o CloudletsPolicyOutput) ToCloudletsPolicyOutputWithContext(ctx context.Context) CloudletsPolicyOutput {
 	return o
+}
+
+// The two- or three- character code for the type of Cloudlet, either `ALB` for Application Load Balancer or `ER` for Edge Redirector.
+func (o CloudletsPolicyOutput) CloudletCode() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringOutput { return v.CloudletCode }).(pulumi.StringOutput)
+}
+
+// A unique identifier that corresponds to a Cloudlets policy type, either `0` for Edge Redirector or `9` for Application Load Balancer.
+func (o CloudletsPolicyOutput) CloudletId() pulumi.IntOutput {
+	return o.ApplyT(func(v *CloudletsPolicy) pulumi.IntOutput { return v.CloudletId }).(pulumi.IntOutput)
+}
+
+// The description of this specific policy.
+func (o CloudletsPolicyOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Defines the group association for the policy. You must have edit privileges for the group.
+func (o CloudletsPolicyOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringOutput { return v.GroupId }).(pulumi.StringOutput)
+}
+
+// The version of the Cloudlet-specific `matchRules`.
+func (o CloudletsPolicyOutput) MatchRuleFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringPtrOutput { return v.MatchRuleFormat }).(pulumi.StringPtrOutput)
+}
+
+// A JSON structure that defines the rules for this policy
+func (o CloudletsPolicyOutput) MatchRules() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringPtrOutput { return v.MatchRules }).(pulumi.StringPtrOutput)
+}
+
+// The unique name of the policy.
+func (o CloudletsPolicyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// The version number of the policy.
+func (o CloudletsPolicyOutput) Version() pulumi.IntOutput {
+	return o.ApplyT(func(v *CloudletsPolicy) pulumi.IntOutput { return v.Version }).(pulumi.IntOutput)
+}
+
+// A JSON-encoded list of warnings.
+func (o CloudletsPolicyOutput) Warnings() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringOutput { return v.Warnings }).(pulumi.StringOutput)
 }
 
 type CloudletsPolicyArrayOutput struct{ *pulumi.OutputState }

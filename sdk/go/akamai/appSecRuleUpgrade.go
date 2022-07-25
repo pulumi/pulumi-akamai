@@ -19,7 +19,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -250,6 +250,35 @@ func (o AppSecRuleUpgradeOutput) ToAppSecRuleUpgradeOutput() AppSecRuleUpgradeOu
 
 func (o AppSecRuleUpgradeOutput) ToAppSecRuleUpgradeOutputWithContext(ctx context.Context) AppSecRuleUpgradeOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration associated with the ruleset being upgraded.
+func (o AppSecRuleUpgradeOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecRuleUpgrade) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+func (o AppSecRuleUpgradeOutput) CurrentRuleset() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecRuleUpgrade) pulumi.StringOutput { return v.CurrentRuleset }).(pulumi.StringOutput)
+}
+
+func (o AppSecRuleUpgradeOutput) EvalStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecRuleUpgrade) pulumi.StringOutput { return v.EvalStatus }).(pulumi.StringOutput)
+}
+
+func (o AppSecRuleUpgradeOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecRuleUpgrade) pulumi.StringOutput { return v.Mode }).(pulumi.StringOutput)
+}
+
+// . Unique identifier of the security policy associated with the ruleset being upgraded.
+// - `upgradeMode`. (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
+// - **ASE_AUTO**. Akamai automatically updates your rulesets.
+// - **ASE_MANUAL**. Manually updates your rulesets.
+func (o AppSecRuleUpgradeOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecRuleUpgrade) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+func (o AppSecRuleUpgradeOutput) UpgradeMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppSecRuleUpgrade) pulumi.StringPtrOutput { return v.UpgradeMode }).(pulumi.StringPtrOutput)
 }
 
 type AppSecRuleUpgradeArrayOutput struct{ *pulumi.OutputState }

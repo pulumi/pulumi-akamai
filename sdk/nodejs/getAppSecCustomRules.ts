@@ -9,7 +9,7 @@ import * as utilities from "./utilities";
  *
  * Returns a list of the custom rules defined for a security configuration; you can also use this resource to return information for an individual custom rule. Custom rules are rules you have created yourself and are not part of the Kona Rule Set.
  *
- * **Related API Endpoint**:[/appsec/v1/configs/{configId}/custom-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcustomrules)
+ * **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/custom-rules](https://techdocs.akamai.com/application-security/reference/get-custom-rules)
  *
  * ## Example Usage
  *
@@ -58,7 +58,7 @@ export function getAppSecCustomRules(args: GetAppSecCustomRulesArgs, opts?: pulu
  */
 export interface GetAppSecCustomRulesArgs {
     /**
-     * . Unique identifier of the security configuration associated with the custom rules
+     * . Unique identifier of the security configuration associated with the custom rules.
      */
     configId: number;
     /**
@@ -90,7 +90,7 @@ export function getAppSecCustomRulesOutput(args: GetAppSecCustomRulesOutputArgs,
  */
 export interface GetAppSecCustomRulesOutputArgs {
     /**
-     * . Unique identifier of the security configuration associated with the custom rules
+     * . Unique identifier of the security configuration associated with the custom rules.
      */
     configId: pulumi.Input<number>;
     /**

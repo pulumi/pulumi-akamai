@@ -13,7 +13,7 @@ import * as utilities from "./utilities";
  * - Create a new policy preconfigured with the default security policy settings.
  * - Clone an existing security policy.
  *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postsecuritypolicies)
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies](https://techdocs.akamai.com/application-security/reference/post-policy)
  *
  * ## Example Usage
  *

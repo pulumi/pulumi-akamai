@@ -145,6 +145,45 @@ func (o ProviderOutput) ToProviderOutputWithContext(ctx context.Context) Provide
 	return o
 }
 
+// Deprecated: The setting "appsec_section" has been deprecated.
+func (o ProviderOutput) AppsecSection() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.AppsecSection }).(pulumi.StringPtrOutput)
+}
+
+// The section of the edgerc file to use for configuration
+func (o ProviderOutput) ConfigSection() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.ConfigSection }).(pulumi.StringPtrOutput)
+}
+
+// Deprecated: The setting "dns_section" has been deprecated.
+func (o ProviderOutput) DnsSection() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.DnsSection }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderOutput) Edgerc() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.Edgerc }).(pulumi.StringPtrOutput)
+}
+
+// Deprecated: The setting "gtm_section" has been deprecated.
+func (o ProviderOutput) GtmSection() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.GtmSection }).(pulumi.StringPtrOutput)
+}
+
+// Deprecated: The setting "networklist_section" has been deprecated.
+func (o ProviderOutput) NetworklistSection() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.NetworklistSection }).(pulumi.StringPtrOutput)
+}
+
+// Deprecated: The setting "papi_section" has been deprecated.
+func (o ProviderOutput) PapiSection() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.PapiSection }).(pulumi.StringPtrOutput)
+}
+
+// Deprecated: The setting "property_section" has been deprecated.
+func (o ProviderOutput) PropertySection() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.PropertySection }).(pulumi.StringPtrOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ProviderInput)(nil)).Elem(), &Provider{})
 	pulumi.RegisterOutputType(ProviderOutput{})

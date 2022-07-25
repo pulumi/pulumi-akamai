@@ -19,7 +19,7 @@ import (
 // - Create a new policy preconfigured with the default security policy settings.
 // - Clone an existing security policy.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postsecuritypolicies)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies](https://techdocs.akamai.com/application-security/reference/post-policy)
 //
 // ## Example Usage
 //
@@ -29,7 +29,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -260,6 +260,36 @@ func (o AppSecSecurityPolicyOutput) ToAppSecSecurityPolicyOutput() AppSecSecurit
 
 func (o AppSecSecurityPolicyOutput) ToAppSecSecurityPolicyOutputWithContext(ctx context.Context) AppSecSecurityPolicyOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration to be associated with the new security policy.
+func (o AppSecSecurityPolicyOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecSecurityPolicy) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Unique identifier of the existing security policy that the new policy will be cloned from.
+func (o AppSecSecurityPolicyOutput) CreateFromSecurityPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppSecSecurityPolicy) pulumi.StringPtrOutput { return v.CreateFromSecurityPolicyId }).(pulumi.StringPtrOutput)
+}
+
+// . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+func (o AppSecSecurityPolicyOutput) DefaultSettings() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AppSecSecurityPolicy) pulumi.BoolPtrOutput { return v.DefaultSettings }).(pulumi.BoolPtrOutput)
+}
+
+// Policy ID for new policy
+func (o AppSecSecurityPolicyOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecSecurityPolicy) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+// . Name of the new security policy.
+func (o AppSecSecurityPolicyOutput) SecurityPolicyName() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecSecurityPolicy) pulumi.StringOutput { return v.SecurityPolicyName }).(pulumi.StringOutput)
+}
+
+// . Four-character alphanumeric string prefix used in creating the security policy ID.
+func (o AppSecSecurityPolicyOutput) SecurityPolicyPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecSecurityPolicy) pulumi.StringOutput { return v.SecurityPolicyPrefix }).(pulumi.StringOutput)
 }
 
 type AppSecSecurityPolicyArrayOutput struct{ *pulumi.OutputState }

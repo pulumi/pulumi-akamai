@@ -16,59 +16,8 @@ namespace Pulumi.Akamai
         /// 
         /// Returns the list of hostnames that can be (but aren't yet) protected by a security configuration. You can specify the set of hostnames to be retrieved either by supplying the name of a security configuration or by supplying an Akamai group ID and contract ID.
         /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selectable-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getavailablehostnames)
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selectable-hostnames](https://techdocs.akamai.com/application-security/reference/get-selectable-hostnames)
         /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var selectableHostnamesAppSecSelectableHostnames = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSelectableHostnames.InvokeAsync(new Akamai.GetAppSecSelectableHostnamesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.SelectableHostnames = selectableHostnamesAppSecSelectableHostnames.Apply(selectableHostnamesAppSecSelectableHostnames =&gt; selectableHostnamesAppSecSelectableHostnames.Hostnames);
-        ///         this.SelectableHostnamesJson = selectableHostnamesAppSecSelectableHostnames.Apply(selectableHostnamesAppSecSelectableHostnames =&gt; selectableHostnamesAppSecSelectableHostnames.HostnamesJson);
-        ///         this.SelectableHostnamesOutputText = selectableHostnamesAppSecSelectableHostnames.Apply(selectableHostnamesAppSecSelectableHostnames =&gt; selectableHostnamesAppSecSelectableHostnames.OutputText);
-        ///         var selectableHostnamesForCreateConfigurationAppSecSelectableHostnames = Output.Create(Akamai.GetAppSecSelectableHostnames.InvokeAsync(new Akamai.GetAppSecSelectableHostnamesArgs
-        ///         {
-        ///             ContractId = "5-2WA382",
-        ///             GroupId = 12198,
-        ///         }));
-        ///         this.SelectableHostnamesForCreateConfiguration = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Apply(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames =&gt; selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Hostnames);
-        ///         this.SelectableHostnamesForCreateConfigurationJson = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Apply(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames =&gt; selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.HostnamesJson);
-        ///         this.SelectableHostnamesForCreateConfigurationOutputText = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Apply(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames =&gt; selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.OutputText);
-        ///     }
-        /// 
-        ///     [Output("selectableHostnames")]
-        ///     public Output&lt;string&gt; SelectableHostnames { get; set; }
-        ///     [Output("selectableHostnamesJson")]
-        ///     public Output&lt;string&gt; SelectableHostnamesJson { get; set; }
-        ///     [Output("selectableHostnamesOutputText")]
-        ///     public Output&lt;string&gt; SelectableHostnamesOutputText { get; set; }
-        ///     [Output("selectableHostnamesForCreateConfiguration")]
-        ///     public Output&lt;string&gt; SelectableHostnamesForCreateConfiguration { get; set; }
-        ///     [Output("selectableHostnamesForCreateConfigurationJson")]
-        ///     public Output&lt;string&gt; SelectableHostnamesForCreateConfigurationJson { get; set; }
-        ///     [Output("selectableHostnamesForCreateConfigurationOutputText")]
-        ///     public Output&lt;string&gt; SelectableHostnamesForCreateConfigurationOutputText { get; set; }
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// ## Output Options
         /// 
         /// The following options can be used to determine the information returned, and how that returned information is formatted:
@@ -85,59 +34,8 @@ namespace Pulumi.Akamai
         /// 
         /// Returns the list of hostnames that can be (but aren't yet) protected by a security configuration. You can specify the set of hostnames to be retrieved either by supplying the name of a security configuration or by supplying an Akamai group ID and contract ID.
         /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selectable-hostnames](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getavailablehostnames)
+        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selectable-hostnames](https://techdocs.akamai.com/application-security/reference/get-selectable-hostnames)
         /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var selectableHostnamesAppSecSelectableHostnames = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSelectableHostnames.InvokeAsync(new Akamai.GetAppSecSelectableHostnamesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.SelectableHostnames = selectableHostnamesAppSecSelectableHostnames.Apply(selectableHostnamesAppSecSelectableHostnames =&gt; selectableHostnamesAppSecSelectableHostnames.Hostnames);
-        ///         this.SelectableHostnamesJson = selectableHostnamesAppSecSelectableHostnames.Apply(selectableHostnamesAppSecSelectableHostnames =&gt; selectableHostnamesAppSecSelectableHostnames.HostnamesJson);
-        ///         this.SelectableHostnamesOutputText = selectableHostnamesAppSecSelectableHostnames.Apply(selectableHostnamesAppSecSelectableHostnames =&gt; selectableHostnamesAppSecSelectableHostnames.OutputText);
-        ///         var selectableHostnamesForCreateConfigurationAppSecSelectableHostnames = Output.Create(Akamai.GetAppSecSelectableHostnames.InvokeAsync(new Akamai.GetAppSecSelectableHostnamesArgs
-        ///         {
-        ///             ContractId = "5-2WA382",
-        ///             GroupId = 12198,
-        ///         }));
-        ///         this.SelectableHostnamesForCreateConfiguration = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Apply(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames =&gt; selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Hostnames);
-        ///         this.SelectableHostnamesForCreateConfigurationJson = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Apply(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames =&gt; selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.HostnamesJson);
-        ///         this.SelectableHostnamesForCreateConfigurationOutputText = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Apply(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames =&gt; selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.OutputText);
-        ///     }
-        /// 
-        ///     [Output("selectableHostnames")]
-        ///     public Output&lt;string&gt; SelectableHostnames { get; set; }
-        ///     [Output("selectableHostnamesJson")]
-        ///     public Output&lt;string&gt; SelectableHostnamesJson { get; set; }
-        ///     [Output("selectableHostnamesOutputText")]
-        ///     public Output&lt;string&gt; SelectableHostnamesOutputText { get; set; }
-        ///     [Output("selectableHostnamesForCreateConfiguration")]
-        ///     public Output&lt;string&gt; SelectableHostnamesForCreateConfiguration { get; set; }
-        ///     [Output("selectableHostnamesForCreateConfigurationJson")]
-        ///     public Output&lt;string&gt; SelectableHostnamesForCreateConfigurationJson { get; set; }
-        ///     [Output("selectableHostnamesForCreateConfigurationOutputText")]
-        ///     public Output&lt;string&gt; SelectableHostnamesForCreateConfigurationOutputText { get; set; }
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// ## Output Options
         /// 
         /// The following options can be used to determine the information returned, and how that returned information is formatted:

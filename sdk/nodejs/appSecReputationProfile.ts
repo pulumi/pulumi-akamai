@@ -11,7 +11,7 @@ import * as utilities from "./utilities";
  * Reputation profiles grade the security risk of an IP address based on previous activities associated with that address.
  * Depending on the reputation score and how your configuration has been set up, requests from a specific IP address can trigger an alert or even be blocked.
  *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/reputation-profiles](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles)
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/reputation-profiles](https://techdocs.akamai.com/application-security/reference/put-reputation-profile)
  *
  * ## Example Usage
  *
@@ -20,7 +20,7 @@ import * as utilities from "./utilities";
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
- * import * from "fs";
+ * import * as fs from "fs";
  *
  * const configuration = akamai.getAppSecConfiguration({
  *     name: "Documentation",

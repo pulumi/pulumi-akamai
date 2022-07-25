@@ -12,9 +12,11 @@ namespace Pulumi.Akamai
     /// <summary>
     /// **Scopes**: Security policy
     /// 
-    /// Modifies the penalty box settings for a security policy. When using automated attack groups, and when the penalty box is enabled, clients that trigger an attack group  are placed in the “penalty box.” That means that, for the next 10 minutes, all requests from that client are ignored.
+    /// Modifies the penalty box settings for a security policy.
+    /// When the penalty box is enabled for a policy, clients that trigger a WAF Deny action are placed in the “penalty box”.
+    /// There, the action you select for penalty box (either Alert or Deny ) continues to apply to any requests from that client for the next 10 minutes.
     /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets/sequence](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpenaltybox)
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets/sequence](https://techdocs.akamai.com/application-security/reference/put-policy-penalty-box)
     /// 
     /// ## Example Usage
     /// 
@@ -55,7 +57,7 @@ namespace Pulumi.Akamai
 
         /// <summary>
         /// . Action taken any time penalty box protection is triggered. Allowed values are:
-        /// - **alert**. Record the event,
+        /// - **alert**. Record the event.
         /// - **deny**. Block the request.
         /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
         /// - **none**. Take no action.
@@ -129,7 +131,7 @@ namespace Pulumi.Akamai
 
         /// <summary>
         /// . Action taken any time penalty box protection is triggered. Allowed values are:
-        /// - **alert**. Record the event,
+        /// - **alert**. Record the event.
         /// - **deny**. Block the request.
         /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
         /// - **none**. Take no action.
@@ -164,7 +166,7 @@ namespace Pulumi.Akamai
 
         /// <summary>
         /// . Action taken any time penalty box protection is triggered. Allowed values are:
-        /// - **alert**. Record the event,
+        /// - **alert**. Record the event.
         /// - **deny**. Block the request.
         /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
         /// - **none**. Take no action.

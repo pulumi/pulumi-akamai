@@ -47,6 +47,7 @@ namespace Pulumi.Akamai.Properties
     ///             ContractId = "ctr_1-AB123",
     ///             EdgeHostname = "www.example.org.edgesuite.net",
     ///             GroupId = "grp_123",
+    ///             IpBehavior = "IPV4",
     ///             ProductId = "prd_Object_Delivery",
     ///         });
     ///     }
@@ -63,9 +64,7 @@ namespace Pulumi.Akamai.Properties
     /// 
     /// Basic Usagehcl resource "akamai_edge_hostname" "example" {
     /// 
-    /// # (resource arguments)
-    /// 
-    ///  } You can import Akamai edge hostnames using a comma-delimited string of edge hostname, contract ID, and group ID. You have to enter the values in this order:
+    /// # (resource arguments) } You can import Akamai edge hostnames using a comma-delimited string of edge hostname, contract ID, and group ID. You have to enter the values in this order:
     /// 
     /// `edge_hostname, contract_id, group_id` For example
     /// 
@@ -90,7 +89,7 @@ namespace Pulumi.Akamai.Properties
         public Output<string> Contract { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Output("contractId")]
         public Output<string> ContractId { get; private set; } = null!;
@@ -108,7 +107,7 @@ namespace Pulumi.Akamai.Properties
         public Output<string> Group { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// A group's unique ID, including the `grp_` prefix.
         /// </summary>
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
@@ -129,7 +128,13 @@ namespace Pulumi.Akamai.Properties
         public Output<string> ProductId { get; private set; } = null!;
 
         /// <summary>
-        /// A JSON encoded list of use cases
+        /// Email address that should receive updates on the IP behavior update request. Required for update operation.
+        /// </summary>
+        [Output("statusUpdateEmails")]
+        public Output<ImmutableArray<string>> StatusUpdateEmails { get; private set; } = null!;
+
+        /// <summary>
+        /// A JSON encoded list of use cases.
         /// </summary>
         [Output("useCases")]
         public Output<string?> UseCases { get; private set; } = null!;
@@ -193,7 +198,7 @@ namespace Pulumi.Akamai.Properties
         public Input<string>? Contract { get; set; }
 
         /// <summary>
-        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
@@ -211,7 +216,7 @@ namespace Pulumi.Akamai.Properties
         public Input<string>? Group { get; set; }
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// A group's unique ID, including the `grp_` prefix.
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
@@ -231,8 +236,20 @@ namespace Pulumi.Akamai.Properties
         [Input("productId")]
         public Input<string>? ProductId { get; set; }
 
+        [Input("statusUpdateEmails")]
+        private InputList<string>? _statusUpdateEmails;
+
         /// <summary>
-        /// A JSON encoded list of use cases
+        /// Email address that should receive updates on the IP behavior update request. Required for update operation.
+        /// </summary>
+        public InputList<string> StatusUpdateEmails
+        {
+            get => _statusUpdateEmails ?? (_statusUpdateEmails = new InputList<string>());
+            set => _statusUpdateEmails = value;
+        }
+
+        /// <summary>
+        /// A JSON encoded list of use cases.
         /// </summary>
         [Input("useCases")]
         public Input<string>? UseCases { get; set; }
@@ -257,7 +274,7 @@ namespace Pulumi.Akamai.Properties
         public Input<string>? Contract { get; set; }
 
         /// <summary>
-        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
@@ -275,7 +292,7 @@ namespace Pulumi.Akamai.Properties
         public Input<string>? Group { get; set; }
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// A group's unique ID, including the `grp_` prefix.
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
@@ -295,8 +312,20 @@ namespace Pulumi.Akamai.Properties
         [Input("productId")]
         public Input<string>? ProductId { get; set; }
 
+        [Input("statusUpdateEmails")]
+        private InputList<string>? _statusUpdateEmails;
+
         /// <summary>
-        /// A JSON encoded list of use cases
+        /// Email address that should receive updates on the IP behavior update request. Required for update operation.
+        /// </summary>
+        public InputList<string> StatusUpdateEmails
+        {
+            get => _statusUpdateEmails ?? (_statusUpdateEmails = new InputList<string>());
+            set => _statusUpdateEmails = value;
+        }
+
+        /// <summary>
+        /// A JSON encoded list of use cases.
         /// </summary>
         [Input("useCases")]
         public Input<string>? UseCases { get; set; }

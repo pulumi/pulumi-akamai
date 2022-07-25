@@ -15,7 +15,9 @@ import (
 // Tuning recommendations are returned as attack group exceptions: if you choose, you can copy the response and use the `AppSecAttackGroup` resource to add the recommended exception to a security policy or attack group.
 // If the data source response is empty, that means that there are no further recommendations for tuning your security policy or attack group.
 // If you need, you can manually merge a recommended exception for an attack group with the exception previously configured in the attack group resource.
-// You can find additional information in our [Application Security API v1 documentation](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getrecommendations).
+// You can find additional information in our [Application Security API v1 documentation](https://techdocs.akamai.com/application-security/reference/get-recommendations).
+//
+// **Related API endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/recommendation](https://techdocs.akamai.com/application-security/reference/get-recommendations)
 //
 // ## Example Usage
 //
@@ -25,7 +27,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -48,6 +50,7 @@ import (
 // 		attackGroupRecommendations, err := akamai.GetAppSecTuningRecommendations(ctx, &GetAppSecTuningRecommendationsArgs{
 // 			ConfigId:         configuration.ConfigId,
 // 			SecurityPolicyId: pulumi.StringRef(_var.Security_policy_id),
+// 			RulesetType:      pulumi.StringRef(_var.Ruleset_type),
 // 			AttackGroup:      pulumi.StringRef(_var.Attack_group),
 // 		}, nil)
 // 		if err != nil {
@@ -69,11 +72,13 @@ func GetAppSecTuningRecommendations(ctx *pulumi.Context, args *GetAppSecTuningRe
 
 // A collection of arguments for invoking getAppSecTuningRecommendations.
 type GetAppSecTuningRecommendationsArgs struct {
-	// . Unique name of the attack group you want to return tuning recommendations for. If not included, recommendations are returned for all your attack groups.
+	// . Unique name of the attack group you want tuning recommendations for. If not included, recommendations are returned for all attack groups.
 	AttackGroup *string `pulumi:"attackGroup"`
-	// . Unique identifier of the security configuration you want to return tuning recommendations for.
+	// . Unique identifier of the security configuration you want tuning recommendations for.
 	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the security policy you want to return tuning recommendations for.
+	// . Type of ruleset used by the security configuration you want tuning recommendations for. Supported values are `active` and `evaluation`. Defaults to `active`.
+	RulesetType *string `pulumi:"rulesetType"`
+	// . Unique identifier of the security policy you want tuning recommendations for.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
@@ -85,6 +90,7 @@ type GetAppSecTuningRecommendationsResult struct {
 	Id string `pulumi:"id"`
 	// JSON-formatted list of the tuning recommendations for the security policy or the attack group. The exception block format in a recommendation conforms to the exception block format used in `conditionException` element of `attackGroup` resource.
 	Json             string  `pulumi:"json"`
+	RulesetType      *string `pulumi:"rulesetType"`
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
@@ -103,11 +109,13 @@ func GetAppSecTuningRecommendationsOutput(ctx *pulumi.Context, args GetAppSecTun
 
 // A collection of arguments for invoking getAppSecTuningRecommendations.
 type GetAppSecTuningRecommendationsOutputArgs struct {
-	// . Unique name of the attack group you want to return tuning recommendations for. If not included, recommendations are returned for all your attack groups.
+	// . Unique name of the attack group you want tuning recommendations for. If not included, recommendations are returned for all attack groups.
 	AttackGroup pulumi.StringPtrInput `pulumi:"attackGroup"`
-	// . Unique identifier of the security configuration you want to return tuning recommendations for.
+	// . Unique identifier of the security configuration you want tuning recommendations for.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the security policy you want to return tuning recommendations for.
+	// . Type of ruleset used by the security configuration you want tuning recommendations for. Supported values are `active` and `evaluation`. Defaults to `active`.
+	RulesetType pulumi.StringPtrInput `pulumi:"rulesetType"`
+	// . Unique identifier of the security policy you want tuning recommendations for.
 	SecurityPolicyId pulumi.StringPtrInput `pulumi:"securityPolicyId"`
 }
 
@@ -146,6 +154,10 @@ func (o GetAppSecTuningRecommendationsResultOutput) Id() pulumi.StringOutput {
 // JSON-formatted list of the tuning recommendations for the security policy or the attack group. The exception block format in a recommendation conforms to the exception block format used in `conditionException` element of `attackGroup` resource.
 func (o GetAppSecTuningRecommendationsResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAppSecTuningRecommendationsResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func (o GetAppSecTuningRecommendationsResultOutput) RulesetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppSecTuningRecommendationsResult) *string { return v.RulesetType }).(pulumi.StringPtrOutput)
 }
 
 func (o GetAppSecTuningRecommendationsResultOutput) SecurityPolicyId() pulumi.StringPtrOutput {

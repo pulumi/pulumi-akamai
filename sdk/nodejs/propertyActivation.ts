@@ -17,7 +17,7 @@ import * as utilities from "./utilities";
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
- * import * from "fs";
+ * import * as fs from "fs";
  *
  * const email = "user@example.org";
  * const ruleFormat = "v2020-03-04";

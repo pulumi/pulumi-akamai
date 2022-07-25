@@ -11,7 +11,7 @@ import * as utilities from "./utilities";
  * Evaluation rules are Kona Rule Set rules used when running a security configuration in evaluation mode.
  * Changes to these rules do not affect the rules used on your production network.
  *
- * **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalrule) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}/condition-exception](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions)
+ * **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}](https://techdocs.akamai.com/application-security/reference/put-policy-eval-rule) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}/condition-exception](https://techdocs.akamai.com/application-security/reference/put-condition-exception)
  *
  * ## Example Usage
  *
@@ -20,7 +20,7 @@ import * as utilities from "./utilities";
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
- * import * from "fs";
+ * import * as fs from "fs";
  *
  * const configuration = akamai.getAppSecConfiguration({
  *     name: "Documentation",

@@ -22,7 +22,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -259,6 +259,39 @@ func (o NetworkListActivationsOutput) ToNetworkListActivationsOutput() NetworkLi
 
 func (o NetworkListActivationsOutput) ToNetworkListActivationsOutputWithContext(ctx context.Context) NetworkListActivationsOutput {
 	return o
+}
+
+// Deprecated: The setting "activate" has been deprecated.
+func (o NetworkListActivationsOutput) Activate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NetworkListActivations) pulumi.BoolPtrOutput { return v.Activate }).(pulumi.BoolPtrOutput)
+}
+
+// The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
+// `STAGING`.
+func (o NetworkListActivationsOutput) Network() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkListActivations) pulumi.StringPtrOutput { return v.Network }).(pulumi.StringPtrOutput)
+}
+
+// The ID of the network list to be activated
+func (o NetworkListActivationsOutput) NetworkListId() pulumi.StringOutput {
+	return o.ApplyT(func(v *NetworkListActivations) pulumi.StringOutput { return v.NetworkListId }).(pulumi.StringOutput)
+}
+
+// A comment describing the activation.
+func (o NetworkListActivationsOutput) Notes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkListActivations) pulumi.StringPtrOutput { return v.Notes }).(pulumi.StringPtrOutput)
+}
+
+// A bracketed, comma-separated list of email addresses that will be notified when the
+// operation is complete.
+func (o NetworkListActivationsOutput) NotificationEmails() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NetworkListActivations) pulumi.StringArrayOutput { return v.NotificationEmails }).(pulumi.StringArrayOutput)
+}
+
+// The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
+// list was not activated.
+func (o NetworkListActivationsOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v *NetworkListActivations) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
 type NetworkListActivationsArrayOutput struct{ *pulumi.OutputState }

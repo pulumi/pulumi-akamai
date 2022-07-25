@@ -14,7 +14,7 @@ import (
 //
 // Returns a list of the custom rules defined for a security configuration; you can also use this resource to return information for an individual custom rule. Custom rules are rules you have created yourself and are not part of the Kona Rule Set.
 //
-// **Related API Endpoint**:[/appsec/v1/configs/{configId}/custom-rules](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcustomrules)
+// **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/custom-rules](https://techdocs.akamai.com/application-security/reference/get-custom-rules)
 //
 // ## Example Usage
 //
@@ -24,7 +24,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -74,7 +74,7 @@ func GetAppSecCustomRules(ctx *pulumi.Context, args *GetAppSecCustomRulesArgs, o
 
 // A collection of arguments for invoking getAppSecCustomRules.
 type GetAppSecCustomRulesArgs struct {
-	// . Unique identifier of the security configuration associated with the custom rules
+	// . Unique identifier of the security configuration associated with the custom rules.
 	ConfigId int `pulumi:"configId"`
 	// . Unique identifier of the custom rule you want to return information for. If not included, information is returned for all your custom rules.
 	CustomRuleId *int `pulumi:"customRuleId"`
@@ -105,7 +105,7 @@ func GetAppSecCustomRulesOutput(ctx *pulumi.Context, args GetAppSecCustomRulesOu
 
 // A collection of arguments for invoking getAppSecCustomRules.
 type GetAppSecCustomRulesOutputArgs struct {
-	// . Unique identifier of the security configuration associated with the custom rules
+	// . Unique identifier of the security configuration associated with the custom rules.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
 	// . Unique identifier of the custom rule you want to return information for. If not included, information is returned for all your custom rules.
 	CustomRuleId pulumi.IntPtrInput `pulumi:"customRuleId"`

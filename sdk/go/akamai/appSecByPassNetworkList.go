@@ -17,7 +17,7 @@ import (
 //
 // Note that this resource is only applicable to WAP (Web Application Protector) configurations.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/bypass-network-lists](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putbypassnetworklistsforawapconfigversion)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/bypass-network-lists](https://techdocs.akamai.com/application-security/reference/put-bypass-network-lists)
 //
 // ## Example Usage
 //
@@ -27,7 +27,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -40,7 +40,8 @@ import (
 // 			return err
 // 		}
 // 		_, err = akamai.NewAppSecByPassNetworkList(ctx, "bypassNetworkLists", &akamai.AppSecByPassNetworkListArgs{
-// 			ConfigId: pulumi.Int(configuration.ConfigId),
+// 			ConfigId:         pulumi.Int(configuration.ConfigId),
+// 			SecurityPolicyId: pulumi.String("gms1_134637"),
 // 			BypassNetworkLists: pulumi.StringArray{
 // 				pulumi.String("DocumentationNetworkList"),
 // 				pulumi.String("TrainingNetworkList"),
@@ -63,10 +64,10 @@ type AppSecByPassNetworkList struct {
 
 	// . JSON array of network IDs that comprise the bypass list.
 	BypassNetworkLists pulumi.StringArrayOutput `pulumi:"bypassNetworkLists"`
-	// . Unique identifier of the security configuration associated with the network bypass lists being modified.
+	// . Unique identifier of the security configuration associated with the bypass network lists being modified.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// The ID of the security policy governing the bypass network lists
-	SecurityPolicyId pulumi.StringPtrOutput `pulumi:"securityPolicyId"`
+	// . Unique identifier of the security policy associated with the bypass network lists.
+	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
 
 // NewAppSecByPassNetworkList registers a new resource with the given unique name, arguments, and options.
@@ -81,6 +82,9 @@ func NewAppSecByPassNetworkList(ctx *pulumi.Context,
 	}
 	if args.ConfigId == nil {
 		return nil, errors.New("invalid value for required argument 'ConfigId'")
+	}
+	if args.SecurityPolicyId == nil {
+		return nil, errors.New("invalid value for required argument 'SecurityPolicyId'")
 	}
 	var resource AppSecByPassNetworkList
 	err := ctx.RegisterResource("akamai:index/appSecByPassNetworkList:AppSecByPassNetworkList", name, args, &resource, opts...)
@@ -106,18 +110,18 @@ func GetAppSecByPassNetworkList(ctx *pulumi.Context,
 type appSecByPassNetworkListState struct {
 	// . JSON array of network IDs that comprise the bypass list.
 	BypassNetworkLists []string `pulumi:"bypassNetworkLists"`
-	// . Unique identifier of the security configuration associated with the network bypass lists being modified.
+	// . Unique identifier of the security configuration associated with the bypass network lists being modified.
 	ConfigId *int `pulumi:"configId"`
-	// The ID of the security policy governing the bypass network lists
+	// . Unique identifier of the security policy associated with the bypass network lists.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppSecByPassNetworkListState struct {
 	// . JSON array of network IDs that comprise the bypass list.
 	BypassNetworkLists pulumi.StringArrayInput
-	// . Unique identifier of the security configuration associated with the network bypass lists being modified.
+	// . Unique identifier of the security configuration associated with the bypass network lists being modified.
 	ConfigId pulumi.IntPtrInput
-	// The ID of the security policy governing the bypass network lists
+	// . Unique identifier of the security policy associated with the bypass network lists.
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -128,20 +132,20 @@ func (AppSecByPassNetworkListState) ElementType() reflect.Type {
 type appSecByPassNetworkListArgs struct {
 	// . JSON array of network IDs that comprise the bypass list.
 	BypassNetworkLists []string `pulumi:"bypassNetworkLists"`
-	// . Unique identifier of the security configuration associated with the network bypass lists being modified.
+	// . Unique identifier of the security configuration associated with the bypass network lists being modified.
 	ConfigId int `pulumi:"configId"`
-	// The ID of the security policy governing the bypass network lists
-	SecurityPolicyId *string `pulumi:"securityPolicyId"`
+	// . Unique identifier of the security policy associated with the bypass network lists.
+	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // The set of arguments for constructing a AppSecByPassNetworkList resource.
 type AppSecByPassNetworkListArgs struct {
 	// . JSON array of network IDs that comprise the bypass list.
 	BypassNetworkLists pulumi.StringArrayInput
-	// . Unique identifier of the security configuration associated with the network bypass lists being modified.
+	// . Unique identifier of the security configuration associated with the bypass network lists being modified.
 	ConfigId pulumi.IntInput
-	// The ID of the security policy governing the bypass network lists
-	SecurityPolicyId pulumi.StringPtrInput
+	// . Unique identifier of the security policy associated with the bypass network lists.
+	SecurityPolicyId pulumi.StringInput
 }
 
 func (AppSecByPassNetworkListArgs) ElementType() reflect.Type {
@@ -229,6 +233,21 @@ func (o AppSecByPassNetworkListOutput) ToAppSecByPassNetworkListOutput() AppSecB
 
 func (o AppSecByPassNetworkListOutput) ToAppSecByPassNetworkListOutputWithContext(ctx context.Context) AppSecByPassNetworkListOutput {
 	return o
+}
+
+// . JSON array of network IDs that comprise the bypass list.
+func (o AppSecByPassNetworkListOutput) BypassNetworkLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AppSecByPassNetworkList) pulumi.StringArrayOutput { return v.BypassNetworkLists }).(pulumi.StringArrayOutput)
+}
+
+// . Unique identifier of the security configuration associated with the bypass network lists being modified.
+func (o AppSecByPassNetworkListOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecByPassNetworkList) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Unique identifier of the security policy associated with the bypass network lists.
+func (o AppSecByPassNetworkListOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecByPassNetworkList) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
 type AppSecByPassNetworkListArrayOutput struct{ *pulumi.OutputState }

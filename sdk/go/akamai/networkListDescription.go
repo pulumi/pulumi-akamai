@@ -21,7 +21,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -209,6 +209,21 @@ func (o NetworkListDescriptionOutput) ToNetworkListDescriptionOutput() NetworkLi
 
 func (o NetworkListDescriptionOutput) ToNetworkListDescriptionOutputWithContext(ctx context.Context) NetworkListDescriptionOutput {
 	return o
+}
+
+// The description to be assigned to the network list.
+func (o NetworkListDescriptionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v *NetworkListDescription) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// The name to be assigned to the network list.
+func (o NetworkListDescriptionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *NetworkListDescription) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// The unique ID of the network list to use.
+func (o NetworkListDescriptionOutput) NetworkListId() pulumi.StringOutput {
+	return o.ApplyT(func(v *NetworkListDescription) pulumi.StringOutput { return v.NetworkListId }).(pulumi.StringOutput)
 }
 
 type NetworkListDescriptionArrayOutput struct{ *pulumi.OutputState }

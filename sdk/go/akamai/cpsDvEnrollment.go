@@ -23,7 +23,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -459,6 +459,96 @@ func (o CpsDvEnrollmentOutput) ToCpsDvEnrollmentOutput() CpsDvEnrollmentOutput {
 
 func (o CpsDvEnrollmentOutput) ToCpsDvEnrollmentOutputWithContext(ctx context.Context) CpsDvEnrollmentOutput {
 	return o
+}
+
+// Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
+func (o CpsDvEnrollmentOutput) AcknowledgePreVerificationWarnings() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.BoolPtrOutput { return v.AcknowledgePreVerificationWarnings }).(pulumi.BoolPtrOutput)
+}
+
+// Contact information for the certificate administrator at your company.
+func (o CpsDvEnrollmentOutput) AdminContact() CpsDvEnrollmentAdminContactOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollmentAdminContactOutput { return v.AdminContact }).(CpsDvEnrollmentAdminContactOutput)
+}
+
+// Certificate trust chain type.
+func (o CpsDvEnrollmentOutput) CertificateChainType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.StringPtrOutput { return v.CertificateChainType }).(pulumi.StringPtrOutput)
+}
+
+func (o CpsDvEnrollmentOutput) CertificateType() pulumi.StringOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.StringOutput { return v.CertificateType }).(pulumi.StringOutput)
+}
+
+// - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+func (o CpsDvEnrollmentOutput) CommonName() pulumi.StringOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.StringOutput { return v.CommonName }).(pulumi.StringOutput)
+}
+
+// - (Required) A contract's ID, optionally with the `ctr_` prefix.
+func (o CpsDvEnrollmentOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
+}
+
+// When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+func (o CpsDvEnrollmentOutput) Csr() CpsDvEnrollmentCsrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollmentCsrOutput { return v.Csr }).(CpsDvEnrollmentCsrOutput)
+}
+
+func (o CpsDvEnrollmentOutput) DnsChallenges() CpsDvEnrollmentDnsChallengeArrayOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollmentDnsChallengeArrayOutput { return v.DnsChallenges }).(CpsDvEnrollmentDnsChallengeArrayOutput)
+}
+
+// Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
+func (o CpsDvEnrollmentOutput) EnableMultiStackedCertificates() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.BoolPtrOutput { return v.EnableMultiStackedCertificates }).(pulumi.BoolPtrOutput)
+}
+
+func (o CpsDvEnrollmentOutput) HttpChallenges() CpsDvEnrollmentHttpChallengeArrayOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollmentHttpChallengeArrayOutput { return v.HttpChallenges }).(CpsDvEnrollmentHttpChallengeArrayOutput)
+}
+
+// The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+func (o CpsDvEnrollmentOutput) NetworkConfiguration() CpsDvEnrollmentNetworkConfigurationOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollmentNetworkConfigurationOutput { return v.NetworkConfiguration }).(CpsDvEnrollmentNetworkConfigurationOutput)
+}
+
+// Your organization information.
+func (o CpsDvEnrollmentOutput) Organization() CpsDvEnrollmentOrganizationOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollmentOrganizationOutput { return v.Organization }).(CpsDvEnrollmentOrganizationOutput)
+}
+
+func (o CpsDvEnrollmentOutput) RegistrationAuthority() pulumi.StringOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.StringOutput { return v.RegistrationAuthority }).(pulumi.StringOutput)
+}
+
+// Additional common names to create a Subject Alternative Names (SAN) list.
+func (o CpsDvEnrollmentOutput) Sans() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.StringArrayOutput { return v.Sans }).(pulumi.StringArrayOutput)
+}
+
+// The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai's standard secure network, but it isn't PCI compliant. `enhanced-tls` deploys your certificate to Akamai's more secure network with PCI compliance capability.
+func (o CpsDvEnrollmentOutput) SecureNetwork() pulumi.StringOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.StringOutput { return v.SecureNetwork }).(pulumi.StringOutput)
+}
+
+// The Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
+func (o CpsDvEnrollmentOutput) SignatureAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.StringOutput { return v.SignatureAlgorithm }).(pulumi.StringOutput)
+}
+
+// Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can't change this setting once an enrollment is created.
+func (o CpsDvEnrollmentOutput) SniOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.BoolOutput { return v.SniOnly }).(pulumi.BoolOutput)
+}
+
+// The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `adminContact`.
+func (o CpsDvEnrollmentOutput) TechContact() CpsDvEnrollmentTechContactOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollmentTechContactOutput { return v.TechContact }).(CpsDvEnrollmentTechContactOutput)
+}
+
+func (o CpsDvEnrollmentOutput) ValidationType() pulumi.StringOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.StringOutput { return v.ValidationType }).(pulumi.StringOutput)
 }
 
 type CpsDvEnrollmentArrayOutput struct{ *pulumi.OutputState }

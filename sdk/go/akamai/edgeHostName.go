@@ -39,7 +39,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -49,6 +49,7 @@ import (
 // 			ContractId:   pulumi.String("ctr_1-AB123"),
 // 			EdgeHostname: pulumi.String("www.example.org.edgesuite.net"),
 // 			GroupId:      pulumi.String("grp_123"),
+// 			IpBehavior:   pulumi.String("IPV4"),
 // 			ProductId:    pulumi.String("prd_Object_Delivery"),
 // 		})
 // 		if err != nil {
@@ -68,9 +69,7 @@ import (
 //
 // Basic Usagehcl resource "akamai_edge_hostname" "example" {
 //
-// # (resource arguments)
-//
-//  } You can import Akamai edge hostnames using a comma-delimited string of edge hostname, contract ID, and group ID. You have to enter the values in this order:
+// # (resource arguments) } You can import Akamai edge hostnames using a comma-delimited string of edge hostname, contract ID, and group ID. You have to enter the values in this order:
 //
 // `edge_hostname, contract_id, group_id` For example
 //
@@ -86,7 +85,7 @@ type EdgeHostName struct {
 	//
 	// Deprecated: The setting "contract" has been deprecated.
 	Contract pulumi.StringOutput `pulumi:"contract"`
-	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	// A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
 	// One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
 	EdgeHostname pulumi.StringOutput `pulumi:"edgeHostname"`
@@ -94,7 +93,7 @@ type EdgeHostName struct {
 	//
 	// Deprecated: The setting "group" has been deprecated.
 	Group pulumi.StringOutput `pulumi:"group"`
-	// - (Required) A group's unique ID, including the `grp_` prefix.
+	// A group's unique ID, including the `grp_` prefix.
 	GroupId pulumi.StringOutput `pulumi:"groupId"`
 	// Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
 	IpBehavior pulumi.StringOutput `pulumi:"ipBehavior"`
@@ -103,7 +102,9 @@ type EdgeHostName struct {
 	// Deprecated: The setting "product" has been deprecated.
 	Product   pulumi.StringOutput `pulumi:"product"`
 	ProductId pulumi.StringOutput `pulumi:"productId"`
-	// A JSON encoded list of use cases
+	// Email address that should receive updates on the IP behavior update request. Required for update operation.
+	StatusUpdateEmails pulumi.StringArrayOutput `pulumi:"statusUpdateEmails"`
+	// A JSON encoded list of use cases.
 	UseCases pulumi.StringPtrOutput `pulumi:"useCases"`
 }
 
@@ -154,7 +155,7 @@ type edgeHostNameState struct {
 	//
 	// Deprecated: The setting "contract" has been deprecated.
 	Contract *string `pulumi:"contract"`
-	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	// A contract's unique ID, including the `ctr_` prefix.
 	ContractId *string `pulumi:"contractId"`
 	// One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
 	EdgeHostname *string `pulumi:"edgeHostname"`
@@ -162,7 +163,7 @@ type edgeHostNameState struct {
 	//
 	// Deprecated: The setting "group" has been deprecated.
 	Group *string `pulumi:"group"`
-	// - (Required) A group's unique ID, including the `grp_` prefix.
+	// A group's unique ID, including the `grp_` prefix.
 	GroupId *string `pulumi:"groupId"`
 	// Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
 	IpBehavior *string `pulumi:"ipBehavior"`
@@ -171,7 +172,9 @@ type edgeHostNameState struct {
 	// Deprecated: The setting "product" has been deprecated.
 	Product   *string `pulumi:"product"`
 	ProductId *string `pulumi:"productId"`
-	// A JSON encoded list of use cases
+	// Email address that should receive updates on the IP behavior update request. Required for update operation.
+	StatusUpdateEmails []string `pulumi:"statusUpdateEmails"`
+	// A JSON encoded list of use cases.
 	UseCases *string `pulumi:"useCases"`
 }
 
@@ -182,7 +185,7 @@ type EdgeHostNameState struct {
 	//
 	// Deprecated: The setting "contract" has been deprecated.
 	Contract pulumi.StringPtrInput
-	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	// A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringPtrInput
 	// One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
 	EdgeHostname pulumi.StringPtrInput
@@ -190,7 +193,7 @@ type EdgeHostNameState struct {
 	//
 	// Deprecated: The setting "group" has been deprecated.
 	Group pulumi.StringPtrInput
-	// - (Required) A group's unique ID, including the `grp_` prefix.
+	// A group's unique ID, including the `grp_` prefix.
 	GroupId pulumi.StringPtrInput
 	// Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
 	IpBehavior pulumi.StringPtrInput
@@ -199,7 +202,9 @@ type EdgeHostNameState struct {
 	// Deprecated: The setting "product" has been deprecated.
 	Product   pulumi.StringPtrInput
 	ProductId pulumi.StringPtrInput
-	// A JSON encoded list of use cases
+	// Email address that should receive updates on the IP behavior update request. Required for update operation.
+	StatusUpdateEmails pulumi.StringArrayInput
+	// A JSON encoded list of use cases.
 	UseCases pulumi.StringPtrInput
 }
 
@@ -214,7 +219,7 @@ type edgeHostNameArgs struct {
 	//
 	// Deprecated: The setting "contract" has been deprecated.
 	Contract *string `pulumi:"contract"`
-	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	// A contract's unique ID, including the `ctr_` prefix.
 	ContractId *string `pulumi:"contractId"`
 	// One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
 	EdgeHostname string `pulumi:"edgeHostname"`
@@ -222,7 +227,7 @@ type edgeHostNameArgs struct {
 	//
 	// Deprecated: The setting "group" has been deprecated.
 	Group *string `pulumi:"group"`
-	// - (Required) A group's unique ID, including the `grp_` prefix.
+	// A group's unique ID, including the `grp_` prefix.
 	GroupId *string `pulumi:"groupId"`
 	// Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
 	IpBehavior string `pulumi:"ipBehavior"`
@@ -231,7 +236,9 @@ type edgeHostNameArgs struct {
 	// Deprecated: The setting "product" has been deprecated.
 	Product   *string `pulumi:"product"`
 	ProductId *string `pulumi:"productId"`
-	// A JSON encoded list of use cases
+	// Email address that should receive updates on the IP behavior update request. Required for update operation.
+	StatusUpdateEmails []string `pulumi:"statusUpdateEmails"`
+	// A JSON encoded list of use cases.
 	UseCases *string `pulumi:"useCases"`
 }
 
@@ -243,7 +250,7 @@ type EdgeHostNameArgs struct {
 	//
 	// Deprecated: The setting "contract" has been deprecated.
 	Contract pulumi.StringPtrInput
-	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	// A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringPtrInput
 	// One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
 	EdgeHostname pulumi.StringInput
@@ -251,7 +258,7 @@ type EdgeHostNameArgs struct {
 	//
 	// Deprecated: The setting "group" has been deprecated.
 	Group pulumi.StringPtrInput
-	// - (Required) A group's unique ID, including the `grp_` prefix.
+	// A group's unique ID, including the `grp_` prefix.
 	GroupId pulumi.StringPtrInput
 	// Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
 	IpBehavior pulumi.StringInput
@@ -260,7 +267,9 @@ type EdgeHostNameArgs struct {
 	// Deprecated: The setting "product" has been deprecated.
 	Product   pulumi.StringPtrInput
 	ProductId pulumi.StringPtrInput
-	// A JSON encoded list of use cases
+	// Email address that should receive updates on the IP behavior update request. Required for update operation.
+	StatusUpdateEmails pulumi.StringArrayInput
+	// A JSON encoded list of use cases.
 	UseCases pulumi.StringPtrInput
 }
 
@@ -349,6 +358,66 @@ func (o EdgeHostNameOutput) ToEdgeHostNameOutput() EdgeHostNameOutput {
 
 func (o EdgeHostNameOutput) ToEdgeHostNameOutputWithContext(ctx context.Context) EdgeHostNameOutput {
 	return o
+}
+
+// Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
+func (o EdgeHostNameOutput) Certificate() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *EdgeHostName) pulumi.IntPtrOutput { return v.Certificate }).(pulumi.IntPtrOutput)
+}
+
+// Replaced by `contractId`. Maintained for legacy purposes.
+//
+// Deprecated: The setting "contract" has been deprecated.
+func (o EdgeHostNameOutput) Contract() pulumi.StringOutput {
+	return o.ApplyT(func(v *EdgeHostName) pulumi.StringOutput { return v.Contract }).(pulumi.StringOutput)
+}
+
+// A contract's unique ID, including the `ctr_` prefix.
+func (o EdgeHostNameOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v *EdgeHostName) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
+}
+
+// One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
+func (o EdgeHostNameOutput) EdgeHostname() pulumi.StringOutput {
+	return o.ApplyT(func(v *EdgeHostName) pulumi.StringOutput { return v.EdgeHostname }).(pulumi.StringOutput)
+}
+
+// Replaced by `groupId`. Maintained for legacy purposes.
+//
+// Deprecated: The setting "group" has been deprecated.
+func (o EdgeHostNameOutput) Group() pulumi.StringOutput {
+	return o.ApplyT(func(v *EdgeHostName) pulumi.StringOutput { return v.Group }).(pulumi.StringOutput)
+}
+
+// A group's unique ID, including the `grp_` prefix.
+func (o EdgeHostNameOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *EdgeHostName) pulumi.StringOutput { return v.GroupId }).(pulumi.StringOutput)
+}
+
+// Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
+func (o EdgeHostNameOutput) IpBehavior() pulumi.StringOutput {
+	return o.ApplyT(func(v *EdgeHostName) pulumi.StringOutput { return v.IpBehavior }).(pulumi.StringOutput)
+}
+
+// Replaced by `productId`. Maintained for legacy purposes.
+//
+// Deprecated: The setting "product" has been deprecated.
+func (o EdgeHostNameOutput) Product() pulumi.StringOutput {
+	return o.ApplyT(func(v *EdgeHostName) pulumi.StringOutput { return v.Product }).(pulumi.StringOutput)
+}
+
+func (o EdgeHostNameOutput) ProductId() pulumi.StringOutput {
+	return o.ApplyT(func(v *EdgeHostName) pulumi.StringOutput { return v.ProductId }).(pulumi.StringOutput)
+}
+
+// Email address that should receive updates on the IP behavior update request. Required for update operation.
+func (o EdgeHostNameOutput) StatusUpdateEmails() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *EdgeHostName) pulumi.StringArrayOutput { return v.StatusUpdateEmails }).(pulumi.StringArrayOutput)
+}
+
+// A JSON encoded list of use cases.
+func (o EdgeHostNameOutput) UseCases() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EdgeHostName) pulumi.StringPtrOutput { return v.UseCases }).(pulumi.StringPtrOutput)
 }
 
 type EdgeHostNameArrayOutput struct{ *pulumi.OutputState }

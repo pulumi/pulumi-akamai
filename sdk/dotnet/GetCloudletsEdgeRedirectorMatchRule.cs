@@ -16,61 +16,6 @@ namespace Pulumi.Akamai
         /// 
         /// Use the `akamai.getCloudletsEdgeRedirectorMatchRule` data source to build a match rule JSON object for the Edge Redirector Cloudlet.
         /// 
-        /// ## Basic usage
-        /// 
-        /// This example returns the JSON-encoded rules for the Edge Redirector Cloudlet:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var example = Output.Create(Akamai.GetCloudletsEdgeRedirectorMatchRule.InvokeAsync(new Akamai.GetCloudletsEdgeRedirectorMatchRuleArgs
-        ///         {
-        ///             MatchRules = 
-        ///             {
-        ///                 new Akamai.Inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs
-        ///                 {
-        ///                     End = 1645037845,
-        ///                     MatchUrl = "example.com",
-        ///                     Matches = 
-        ///                     {
-        ///                         new Akamai.Inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs
-        ///                         {
-        ///                             CaseSensitive = false,
-        ///                             MatchOperator = "equals",
-        ///                             MatchType = "method",
-        ///                             Negate = false,
-        ///                             ObjectMatchValue = 
-        ///                             {
-        ///                                 
-        ///                                 {
-        ///                                     { "type", "simple" },
-        ///                                     { "value", 
-        ///                                     {
-        ///                                         "GET",
-        ///                                     } },
-        ///                                 },
-        ///                             },
-        ///                         },
-        ///                     },
-        ///                     Name = "rule",
-        ///                     RedirectUrl = "https://www.example.com",
-        ///                     Start = 1644865045,
-        ///                     StatusCode = 301,
-        ///                     UseIncomingQueryString = false,
-        ///                     UseRelativeUrl = "none",
-        ///                 },
-        ///             },
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// 
         /// ## Attributes reference
         /// 
         /// This data source returns these attributes:
@@ -85,61 +30,6 @@ namespace Pulumi.Akamai
         /// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
         /// 
         /// Use the `akamai.getCloudletsEdgeRedirectorMatchRule` data source to build a match rule JSON object for the Edge Redirector Cloudlet.
-        /// 
-        /// ## Basic usage
-        /// 
-        /// This example returns the JSON-encoded rules for the Edge Redirector Cloudlet:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var example = Output.Create(Akamai.GetCloudletsEdgeRedirectorMatchRule.InvokeAsync(new Akamai.GetCloudletsEdgeRedirectorMatchRuleArgs
-        ///         {
-        ///             MatchRules = 
-        ///             {
-        ///                 new Akamai.Inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs
-        ///                 {
-        ///                     End = 1645037845,
-        ///                     MatchUrl = "example.com",
-        ///                     Matches = 
-        ///                     {
-        ///                         new Akamai.Inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs
-        ///                         {
-        ///                             CaseSensitive = false,
-        ///                             MatchOperator = "equals",
-        ///                             MatchType = "method",
-        ///                             Negate = false,
-        ///                             ObjectMatchValue = 
-        ///                             {
-        ///                                 
-        ///                                 {
-        ///                                     { "type", "simple" },
-        ///                                     { "value", 
-        ///                                     {
-        ///                                         "GET",
-        ///                                     } },
-        ///                                 },
-        ///                             },
-        ///                         },
-        ///                     },
-        ///                     Name = "rule",
-        ///                     RedirectUrl = "https://www.example.com",
-        ///                     Start = 1644865045,
-        ///                     StatusCode = 301,
-        ///                     UseIncomingQueryString = false,
-        ///                     UseRelativeUrl = "none",
-        ///                 },
-        ///             },
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
         /// 
         /// ## Attributes reference
         /// 

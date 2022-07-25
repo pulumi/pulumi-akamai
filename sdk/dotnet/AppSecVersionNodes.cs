@@ -14,7 +14,7 @@ namespace Pulumi.Akamai
     /// 
     /// Updates the version notes for a security configuration.
     /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putversionnotes)
+    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://techdocs.akamai.com/application-security/reference/put-version-notes)
     /// 
     /// ## Example Usage
     /// 

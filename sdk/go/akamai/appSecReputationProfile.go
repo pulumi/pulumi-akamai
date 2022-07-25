@@ -17,7 +17,7 @@ import (
 // Reputation profiles grade the security risk of an IP address based on previous activities associated with that address.
 // Depending on the reputation score and how your configuration has been set up, requests from a specific IP address can trigger an alert or even be blocked.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/reputation-profiles](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/reputation-profiles](https://techdocs.akamai.com/application-security/reference/put-reputation-profile)
 //
 // ## Example Usage
 //
@@ -30,7 +30,7 @@ import (
 // 	"fmt"
 // 	"io/ioutil"
 //
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -52,7 +52,7 @@ import (
 // 		}
 // 		reputationProfile, err := akamai.NewAppSecReputationProfile(ctx, "reputationProfile", &akamai.AppSecReputationProfileArgs{
 // 			ConfigId:          pulumi.Int(configuration.ConfigId),
-// 			ReputationProfile: readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/reputation_profile.json")),
+// 			ReputationProfile: readFileOrPanic(fmt.Sprintf("%v/reputation_profile.json", path.Module)),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -231,6 +231,20 @@ func (o AppSecReputationProfileOutput) ToAppSecReputationProfileOutput() AppSecR
 
 func (o AppSecReputationProfileOutput) ToAppSecReputationProfileOutputWithContext(ctx context.Context) AppSecReputationProfileOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration associated with the reputation profile being modified.
+func (o AppSecReputationProfileOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecReputationProfile) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Path to a JSON file containing a definition of the reputation profile. You can view a sample JSON file in the [Create a reputation profile](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles) section of the Application Security API documentation.
+func (o AppSecReputationProfileOutput) ReputationProfile() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecReputationProfile) pulumi.StringOutput { return v.ReputationProfile }).(pulumi.StringOutput)
+}
+
+func (o AppSecReputationProfileOutput) ReputationProfileId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecReputationProfile) pulumi.IntOutput { return v.ReputationProfileId }).(pulumi.IntOutput)
 }
 
 type AppSecReputationProfileArrayOutput struct{ *pulumi.OutputState }

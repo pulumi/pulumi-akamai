@@ -21,7 +21,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -285,6 +285,45 @@ func (o CloudletsApplicationLoadBalancerOutput) ToCloudletsApplicationLoadBalanc
 
 func (o CloudletsApplicationLoadBalancerOutput) ToCloudletsApplicationLoadBalancerOutputWithContext(ctx context.Context) CloudletsApplicationLoadBalancerOutput {
 	return o
+}
+
+// The type of load balancing being performed, either `WEIGHTED` or `PERFORMANCE`.
+func (o CloudletsApplicationLoadBalancerOutput) BalancingType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudletsApplicationLoadBalancer) pulumi.StringPtrOutput { return v.BalancingType }).(pulumi.StringPtrOutput)
+}
+
+// Specifies the Conditional Origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an origin type of `CUSTOMER` or `NETSTORAGE` can be used as data centers in an Application Load Balancer configuration.
+func (o CloudletsApplicationLoadBalancerOutput) DataCenters() CloudletsApplicationLoadBalancerDataCenterArrayOutput {
+	return o.ApplyT(func(v *CloudletsApplicationLoadBalancer) CloudletsApplicationLoadBalancerDataCenterArrayOutput {
+		return v.DataCenters
+	}).(CloudletsApplicationLoadBalancerDataCenterArrayOutput)
+}
+
+// The description of the load balancing configuration.
+func (o CloudletsApplicationLoadBalancerOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudletsApplicationLoadBalancer) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Specifies the health of each load balanced data center defined in the data center list.
+func (o CloudletsApplicationLoadBalancerOutput) LivenessSettings() CloudletsApplicationLoadBalancerLivenessSettingsPtrOutput {
+	return o.ApplyT(func(v *CloudletsApplicationLoadBalancer) CloudletsApplicationLoadBalancerLivenessSettingsPtrOutput {
+		return v.LivenessSettings
+	}).(CloudletsApplicationLoadBalancerLivenessSettingsPtrOutput)
+}
+
+// The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+func (o CloudletsApplicationLoadBalancerOutput) OriginId() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudletsApplicationLoadBalancer) pulumi.StringOutput { return v.OriginId }).(pulumi.StringOutput)
+}
+
+// The version number of the load balancing configuration.
+func (o CloudletsApplicationLoadBalancerOutput) Version() pulumi.IntOutput {
+	return o.ApplyT(func(v *CloudletsApplicationLoadBalancer) pulumi.IntOutput { return v.Version }).(pulumi.IntOutput)
+}
+
+// A list of warnings that occurred during the activation of the load balancing configuration.
+func (o CloudletsApplicationLoadBalancerOutput) Warnings() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudletsApplicationLoadBalancer) pulumi.StringOutput { return v.Warnings }).(pulumi.StringOutput)
 }
 
 type CloudletsApplicationLoadBalancerArrayOutput struct{ *pulumi.OutputState }

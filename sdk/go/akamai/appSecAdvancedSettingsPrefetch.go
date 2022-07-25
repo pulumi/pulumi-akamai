@@ -13,13 +13,13 @@ import (
 
 // **Scopes**: Security configuration
 //
-// Enables inspection of internal requests (that is, requests between your origin servers and Akamai's edge servers).
-// You can also use this resource to apply rate controls to prefetch requests.
+// Enables inspection of internal requests (that is, requests between your origin servers and Akamai's edge servers). You can also use this resource to apply rate controls to prefetch requests.
+//
 // When prefetch is enabled, internal requests are inspected by your firewall the same way that external requests (requests that originate outside the firewall and outside Akamai's edge servers) are inspected.
 //
 // This operation applies at the security configuration level, meaning that the settings affect all the security policies in that configuration.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/prefetch](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putprefetchrequestsforaconfiguration)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/prefetch](https://techdocs.akamai.com/application-security/reference/put-advanced-settings-prefetch)
 //
 // ## Example Usage
 //
@@ -29,7 +29,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -261,6 +261,31 @@ func (o AppSecAdvancedSettingsPrefetchOutput) ToAppSecAdvancedSettingsPrefetchOu
 
 func (o AppSecAdvancedSettingsPrefetchOutput) ToAppSecAdvancedSettingsPrefetchOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPrefetchOutput {
 	return o
+}
+
+// . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
+func (o AppSecAdvancedSettingsPrefetchOutput) AllExtensions() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppSecAdvancedSettingsPrefetch) pulumi.BoolOutput { return v.AllExtensions }).(pulumi.BoolOutput)
+}
+
+// . Unique identifier of the security configuration associated with the prefetch settings being modified.
+func (o AppSecAdvancedSettingsPrefetchOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecAdvancedSettingsPrefetch) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
+func (o AppSecAdvancedSettingsPrefetchOutput) EnableAppLayer() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppSecAdvancedSettingsPrefetch) pulumi.BoolOutput { return v.EnableAppLayer }).(pulumi.BoolOutput)
+}
+
+// . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
+func (o AppSecAdvancedSettingsPrefetchOutput) EnableRateControls() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppSecAdvancedSettingsPrefetch) pulumi.BoolOutput { return v.EnableRateControls }).(pulumi.BoolOutput)
+}
+
+// . If `allExtensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won't be used with any file extensions not included in the array. If `allExtensions` is **true**, then this argument must be set to an empty array: **[]**.
+func (o AppSecAdvancedSettingsPrefetchOutput) Extensions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AppSecAdvancedSettingsPrefetch) pulumi.StringArrayOutput { return v.Extensions }).(pulumi.StringArrayOutput)
 }
 
 type AppSecAdvancedSettingsPrefetchArrayOutput struct{ *pulumi.OutputState }

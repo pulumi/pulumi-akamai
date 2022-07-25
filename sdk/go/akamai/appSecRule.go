@@ -15,7 +15,7 @@ import (
 //
 // Modifies a Kona Rule Set rule's action, conditions, and exceptions.
 //
-// **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/{ruleId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleaction) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/{ruleId}/condition-exception](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception)
+// **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/{ruleId}](https://techdocs.akamai.com/application-security/reference/put-rule) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/{ruleId}/condition-exception](https://techdocs.akamai.com/application-security/reference/put-rule-condition-exception)
 //
 // ## Example Usage
 //
@@ -28,7 +28,7 @@ import (
 // 	"fmt"
 // 	"io/ioutil"
 //
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -53,7 +53,7 @@ import (
 // 			SecurityPolicyId:   pulumi.String("gms1_134637"),
 // 			RuleId:             pulumi.Int(60029316),
 // 			RuleAction:         pulumi.String("deny"),
-// 			ConditionException: readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/condition_exception.json")),
+// 			ConditionException: readFileOrPanic(fmt.Sprintf("%v/condition_exception.json", path.Module)),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -276,6 +276,35 @@ func (o AppSecRuleOutput) ToAppSecRuleOutput() AppSecRuleOutput {
 
 func (o AppSecRuleOutput) ToAppSecRuleOutputWithContext(ctx context.Context) AppSecRuleOutput {
 	return o
+}
+
+// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+func (o AppSecRuleOutput) ConditionException() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppSecRule) pulumi.StringPtrOutput { return v.ConditionException }).(pulumi.StringPtrOutput)
+}
+
+// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+func (o AppSecRuleOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecRule) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// Allowed values are:
+// - **alert**. Record the event.
+// - **deny**. Block the request.
+// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
+// - **none**. Take no action. or `none` to take no action.
+func (o AppSecRuleOutput) RuleAction() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecRule) pulumi.StringOutput { return v.RuleAction }).(pulumi.StringOutput)
+}
+
+// . Unique identifier of the rule being modified.
+func (o AppSecRuleOutput) RuleId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecRule) pulumi.IntOutput { return v.RuleId }).(pulumi.IntOutput)
+}
+
+// . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+func (o AppSecRuleOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecRule) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
 type AppSecRuleArrayOutput struct{ *pulumi.OutputState }

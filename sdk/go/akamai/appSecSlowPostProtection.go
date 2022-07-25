@@ -15,7 +15,7 @@ import (
 //
 // Enables or disables slow POST protection for a security configuration and security policy. Slow POST protections help defend a site against attacks that try to tie up the site by using extremely slow requests and responses.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putprotections)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/put-policy-protections)
 //
 // ## Example Usage
 //
@@ -25,7 +25,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -234,6 +234,26 @@ func (o AppSecSlowPostProtectionOutput) ToAppSecSlowPostProtectionOutput() AppSe
 
 func (o AppSecSlowPostProtectionOutput) ToAppSecSlowPostProtectionOutputWithContext(ctx context.Context) AppSecSlowPostProtectionOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration associated with the slow POST protection settings being modified.
+func (o AppSecSlowPostProtectionOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecSlowPostProtection) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Set to **true** to enable slow POST protection; set to **false** to disable slow POST protection.
+func (o AppSecSlowPostProtectionOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppSecSlowPostProtection) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Text Export representation
+func (o AppSecSlowPostProtectionOutput) OutputText() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecSlowPostProtection) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
+}
+
+// . Unique identifier of the security policy associated with the slow POST protection settings being modified.
+func (o AppSecSlowPostProtectionOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecSlowPostProtection) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
 type AppSecSlowPostProtectionArrayOutput struct{ *pulumi.OutputState }

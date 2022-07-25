@@ -25,7 +25,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -367,6 +367,111 @@ func (o GtmDatacenterOutput) ToGtmDatacenterOutput() GtmDatacenterOutput {
 
 func (o GtmDatacenterOutput) ToGtmDatacenterOutputWithContext(ctx context.Context) GtmDatacenterOutput {
 	return o
+}
+
+// The name of the city where the data center is located.
+func (o GtmDatacenterOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.StringPtrOutput { return v.City }).(pulumi.StringPtrOutput)
+}
+
+// Identifies the data center's `datacenterId` of which this data center is a clone.
+func (o GtmDatacenterOutput) CloneOf() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.IntPtrOutput { return v.CloneOf }).(pulumi.IntPtrOutput)
+}
+
+// A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
+func (o GtmDatacenterOutput) CloudServerHostHeaderOverride() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.BoolPtrOutput { return v.CloudServerHostHeaderOverride }).(pulumi.BoolPtrOutput)
+}
+
+// A boolean indicating whether to balance load between two or more servers in a cloud environment.
+func (o GtmDatacenterOutput) CloudServerTargeting() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.BoolPtrOutput { return v.CloudServerTargeting }).(pulumi.BoolPtrOutput)
+}
+
+// A two-letter code that specifies the continent where the data center maps to.
+func (o GtmDatacenterOutput) Continent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.StringPtrOutput { return v.Continent }).(pulumi.StringPtrOutput)
+}
+
+// A two-letter ISO 3166 country code that specifies the country where the data center maps to.
+func (o GtmDatacenterOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.StringPtrOutput { return v.Country }).(pulumi.StringPtrOutput)
+}
+
+// A unique identifier for an existing data center in the domain.
+// * `pingInterval`
+// * `pingPacketSize`
+// * `scorePenalty`
+// * `servermonitorLivenessCount`
+// * `servermonitorLoadCount`
+// * `servermonitorPool`
+func (o GtmDatacenterOutput) DatacenterId() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.IntOutput { return v.DatacenterId }).(pulumi.IntOutput)
+}
+
+// Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
+func (o GtmDatacenterOutput) DefaultLoadObject() GtmDatacenterDefaultLoadObjectPtrOutput {
+	return o.ApplyT(func(v *GtmDatacenter) GtmDatacenterDefaultLoadObjectPtrOutput { return v.DefaultLoadObject }).(GtmDatacenterDefaultLoadObjectPtrOutput)
+}
+
+// The GTM domain name for the data center.
+func (o GtmDatacenterOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
+}
+
+// Specifies the geographical latitude of the data center's position. See also longitude within this object.
+func (o GtmDatacenterOutput) Latitude() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.Float64PtrOutput { return v.Latitude }).(pulumi.Float64PtrOutput)
+}
+
+// Specifies the geographic longitude of the data center's position. See also latitude within this object.
+func (o GtmDatacenterOutput) Longitude() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.Float64PtrOutput { return v.Longitude }).(pulumi.Float64PtrOutput)
+}
+
+// A descriptive label for the data center.
+func (o GtmDatacenterOutput) Nickname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.StringPtrOutput { return v.Nickname }).(pulumi.StringPtrOutput)
+}
+
+func (o GtmDatacenterOutput) PingInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.IntOutput { return v.PingInterval }).(pulumi.IntOutput)
+}
+
+func (o GtmDatacenterOutput) PingPacketSize() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.IntOutput { return v.PingPacketSize }).(pulumi.IntOutput)
+}
+
+func (o GtmDatacenterOutput) ScorePenalty() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.IntOutput { return v.ScorePenalty }).(pulumi.IntOutput)
+}
+
+func (o GtmDatacenterOutput) ServermonitorLivenessCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.IntOutput { return v.ServermonitorLivenessCount }).(pulumi.IntOutput)
+}
+
+func (o GtmDatacenterOutput) ServermonitorLoadCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.IntOutput { return v.ServermonitorLoadCount }).(pulumi.IntOutput)
+}
+
+func (o GtmDatacenterOutput) ServermonitorPool() pulumi.StringOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.StringOutput { return v.ServermonitorPool }).(pulumi.StringOutput)
+}
+
+// Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
+func (o GtmDatacenterOutput) StateOrProvince() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.StringPtrOutput { return v.StateOrProvince }).(pulumi.StringPtrOutput)
+}
+
+// A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
+func (o GtmDatacenterOutput) Virtual() pulumi.BoolOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.BoolOutput { return v.Virtual }).(pulumi.BoolOutput)
+}
+
+// A boolean, that if set to `true`, waits for transaction to complete.
+func (o GtmDatacenterOutput) WaitOnComplete() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmDatacenter) pulumi.BoolPtrOutput { return v.WaitOnComplete }).(pulumi.BoolPtrOutput)
 }
 
 type GtmDatacenterArrayOutput struct{ *pulumi.OutputState }

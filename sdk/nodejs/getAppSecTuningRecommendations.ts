@@ -10,7 +10,9 @@ import * as utilities from "./utilities";
  * Tuning recommendations are returned as attack group exceptions: if you choose, you can copy the response and use the `akamai.AppSecAttackGroup` resource to add the recommended exception to a security policy or attack group.
  * If the data source response is empty, that means that there are no further recommendations for tuning your security policy or attack group.
  * If you need, you can manually merge a recommended exception for an attack group with the exception previously configured in the attack group resource.
- * You can find additional information in our [Application Security API v1 documentation](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getrecommendations).
+ * You can find additional information in our [Application Security API v1 documentation](https://techdocs.akamai.com/application-security/reference/get-recommendations).
+ *
+ * **Related API endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/recommendation](https://techdocs.akamai.com/application-security/reference/get-recommendations)
  *
  * ## Example Usage
  *
@@ -31,6 +33,7 @@ import * as utilities from "./utilities";
  * const attackGroupRecommendations = configuration.then(configuration => akamai.getAppSecTuningRecommendations({
  *     configId: configuration.configId,
  *     securityPolicyId: _var.security_policy_id,
+ *     rulesetType: _var.ruleset_type,
  *     attackGroup: _var.attack_group,
  * }));
  * export const attackGroupRecommendationsJson = attackGroupRecommendations.then(attackGroupRecommendations => attackGroupRecommendations.json);
@@ -45,6 +48,7 @@ export function getAppSecTuningRecommendations(args: GetAppSecTuningRecommendati
     return pulumi.runtime.invoke("akamai:index/getAppSecTuningRecommendations:getAppSecTuningRecommendations", {
         "attackGroup": args.attackGroup,
         "configId": args.configId,
+        "rulesetType": args.rulesetType,
         "securityPolicyId": args.securityPolicyId,
     }, opts);
 }
@@ -54,15 +58,19 @@ export function getAppSecTuningRecommendations(args: GetAppSecTuningRecommendati
  */
 export interface GetAppSecTuningRecommendationsArgs {
     /**
-     * . Unique name of the attack group you want to return tuning recommendations for. If not included, recommendations are returned for all your attack groups.
+     * . Unique name of the attack group you want tuning recommendations for. If not included, recommendations are returned for all attack groups.
      */
     attackGroup?: string;
     /**
-     * . Unique identifier of the security configuration you want to return tuning recommendations for.
+     * . Unique identifier of the security configuration you want tuning recommendations for.
      */
     configId: number;
     /**
-     * . Unique identifier of the security policy you want to return tuning recommendations for.
+     * . Type of ruleset used by the security configuration you want tuning recommendations for. Supported values are `active` and `evaluation`. Defaults to `active`.
+     */
+    rulesetType?: string;
+    /**
+     * . Unique identifier of the security policy you want tuning recommendations for.
      */
     securityPolicyId?: string;
 }
@@ -81,6 +89,7 @@ export interface GetAppSecTuningRecommendationsResult {
      * JSON-formatted list of the tuning recommendations for the security policy or the attack group. The exception block format in a recommendation conforms to the exception block format used in `conditionException` element of `attackGroup` resource.
      */
     readonly json: string;
+    readonly rulesetType?: string;
     readonly securityPolicyId?: string;
 }
 
@@ -93,15 +102,19 @@ export function getAppSecTuningRecommendationsOutput(args: GetAppSecTuningRecomm
  */
 export interface GetAppSecTuningRecommendationsOutputArgs {
     /**
-     * . Unique name of the attack group you want to return tuning recommendations for. If not included, recommendations are returned for all your attack groups.
+     * . Unique name of the attack group you want tuning recommendations for. If not included, recommendations are returned for all attack groups.
      */
     attackGroup?: pulumi.Input<string>;
     /**
-     * . Unique identifier of the security configuration you want to return tuning recommendations for.
+     * . Unique identifier of the security configuration you want tuning recommendations for.
      */
     configId: pulumi.Input<number>;
     /**
-     * . Unique identifier of the security policy you want to return tuning recommendations for.
+     * . Type of ruleset used by the security configuration you want tuning recommendations for. Supported values are `active` and `evaluation`. Defaults to `active`.
+     */
+    rulesetType?: pulumi.Input<string>;
+    /**
+     * . Unique identifier of the security policy you want tuning recommendations for.
      */
     securityPolicyId?: pulumi.Input<string>;
 }

@@ -16,66 +16,6 @@ namespace Pulumi.Akamai
         /// 
         /// Use the `akamai.getCloudletsPhasedReleaseMatchRule` data source to build a match rule JSON object for the Phased Release Cloudlet.
         /// 
-        /// ## Basic usage
-        /// 
-        /// This example returns the JSON-encoded rules for the Phased Release Cloudlet:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var example = Output.Create(Akamai.GetCloudletsPhasedReleaseMatchRule.InvokeAsync(new Akamai.GetCloudletsPhasedReleaseMatchRuleArgs
-        ///         {
-        ///             MatchRules = 
-        ///             {
-        ///                 new Akamai.Inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs
-        ///                 {
-        ///                     End = 1645037845,
-        ///                     ForwardSettings = new Akamai.Inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArgs
-        ///                     {
-        ///                         OriginId = "1234",
-        ///                         Percent = 100,
-        ///                     },
-        ///                     Matches = 
-        ///                     {
-        ///                         new Akamai.Inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs
-        ///                         {
-        ///                             CaseSensitive = false,
-        ///                             CheckIps = "CONNECTING_IP XFF_HEADERS",
-        ///                             MatchOperator = "equals",
-        ///                             MatchType = "header",
-        ///                             Negate = false,
-        ///                             ObjectMatchValue = 
-        ///                             {
-        ///                                 
-        ///                                 {
-        ///                                     { "name", "Content-Type" },
-        ///                                     { "options", 
-        ///                                     {
-        ///                                         { "value", 
-        ///                                         {
-        ///                                             "application/json",
-        ///                                         } },
-        ///                                     } },
-        ///                                     { "type", "object" },
-        ///                                 },
-        ///                             },
-        ///                         },
-        ///                     },
-        ///                     Name = "rule",
-        ///                     Start = 1644865045,
-        ///                 },
-        ///             },
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// 
         /// ## Attributes reference
         /// 
         /// This data source returns these attributes:
@@ -90,66 +30,6 @@ namespace Pulumi.Akamai
         /// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
         /// 
         /// Use the `akamai.getCloudletsPhasedReleaseMatchRule` data source to build a match rule JSON object for the Phased Release Cloudlet.
-        /// 
-        /// ## Basic usage
-        /// 
-        /// This example returns the JSON-encoded rules for the Phased Release Cloudlet:
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var example = Output.Create(Akamai.GetCloudletsPhasedReleaseMatchRule.InvokeAsync(new Akamai.GetCloudletsPhasedReleaseMatchRuleArgs
-        ///         {
-        ///             MatchRules = 
-        ///             {
-        ///                 new Akamai.Inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs
-        ///                 {
-        ///                     End = 1645037845,
-        ///                     ForwardSettings = new Akamai.Inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArgs
-        ///                     {
-        ///                         OriginId = "1234",
-        ///                         Percent = 100,
-        ///                     },
-        ///                     Matches = 
-        ///                     {
-        ///                         new Akamai.Inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs
-        ///                         {
-        ///                             CaseSensitive = false,
-        ///                             CheckIps = "CONNECTING_IP XFF_HEADERS",
-        ///                             MatchOperator = "equals",
-        ///                             MatchType = "header",
-        ///                             Negate = false,
-        ///                             ObjectMatchValue = 
-        ///                             {
-        ///                                 
-        ///                                 {
-        ///                                     { "name", "Content-Type" },
-        ///                                     { "options", 
-        ///                                     {
-        ///                                         { "value", 
-        ///                                         {
-        ///                                             "application/json",
-        ///                                         } },
-        ///                                     } },
-        ///                                     { "type", "object" },
-        ///                                 },
-        ///                             },
-        ///                         },
-        ///                     },
-        ///                     Name = "rule",
-        ///                     Start = 1644865045,
-        ///                 },
-        ///             },
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
         /// 
         /// ## Attributes reference
         /// 

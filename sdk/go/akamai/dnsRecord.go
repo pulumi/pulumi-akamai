@@ -22,7 +22,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -50,7 +50,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -767,6 +767,246 @@ func (o DnsRecordOutput) ToDnsRecordOutput() DnsRecordOutput {
 
 func (o DnsRecordOutput) ToDnsRecordOutputWithContext(ctx context.Context) DnsRecordOutput {
 	return o
+}
+
+func (o DnsRecordOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.BoolPtrOutput { return v.Active }).(pulumi.BoolPtrOutput)
+}
+
+func (o DnsRecordOutput) Algorithm() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.Algorithm }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) AnswerType() pulumi.StringOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringOutput { return v.AnswerType }).(pulumi.StringOutput)
+}
+
+func (o DnsRecordOutput) Certificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.Certificate }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) Digest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.Digest }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) DigestType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.DigestType }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) DnsName() pulumi.StringOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringOutput { return v.DnsName }).(pulumi.StringOutput)
+}
+
+func (o DnsRecordOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.EmailAddress }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) Expiration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.Expiration }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) Expiry() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.Expiry }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) Fingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.Fingerprint }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) FingerprintType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.FingerprintType }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) Flags() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.Flags }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) Flagsnaptr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.Flagsnaptr }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) Hardware() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.Hardware }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) Inception() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.Inception }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) Iterations() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.Iterations }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) Keytag() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.Keytag }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) Labels() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.Labels }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) Mailbox() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.Mailbox }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) MatchType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.MatchType }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o DnsRecordOutput) NameServer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.NameServer }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) NextHashedOwnerName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.NextHashedOwnerName }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) NxdomainTtl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.NxdomainTtl }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) Order() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.Order }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) OriginalTtl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.OriginalTtl }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) Preference() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.Preference }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) Priority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.Priority }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) PriorityIncrement() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.PriorityIncrement }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) Protocol() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.Protocol }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) RecordSha() pulumi.StringOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringOutput { return v.RecordSha }).(pulumi.StringOutput)
+}
+
+func (o DnsRecordOutput) Recordtype() pulumi.StringOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringOutput { return v.Recordtype }).(pulumi.StringOutput)
+}
+
+func (o DnsRecordOutput) Refresh() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.Refresh }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) Regexp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.Regexp }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) Replacement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.Replacement }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) Retry() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.Retry }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) Salt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.Salt }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) Selector() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.Selector }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) Serial() pulumi.IntOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntOutput { return v.Serial }).(pulumi.IntOutput)
+}
+
+func (o DnsRecordOutput) Service() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.Service }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) Signature() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.Signature }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) Signer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.Signer }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) Software() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.Software }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) Subtype() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.Subtype }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) SvcParams() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.SvcParams }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) SvcPriority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.SvcPriority }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) TargetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.TargetName }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) Targets() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringArrayOutput { return v.Targets }).(pulumi.StringArrayOutput)
+}
+
+func (o DnsRecordOutput) Ttl() pulumi.IntOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntOutput { return v.Ttl }).(pulumi.IntOutput)
+}
+
+func (o DnsRecordOutput) Txt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.Txt }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) TypeBitmaps() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.TypeBitmaps }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) TypeCovered() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.TypeCovered }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) TypeMnemonic() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringPtrOutput { return v.TypeMnemonic }).(pulumi.StringPtrOutput)
+}
+
+func (o DnsRecordOutput) TypeValue() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.TypeValue }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) Usage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.Usage }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.IntPtrOutput { return v.Weight }).(pulumi.IntPtrOutput)
+}
+
+func (o DnsRecordOutput) Zone() pulumi.StringOutput {
+	return o.ApplyT(func(v *DnsRecord) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
 type DnsRecordArrayOutput struct{ *pulumi.OutputState }

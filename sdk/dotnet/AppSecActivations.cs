@@ -9,90 +9,58 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Security configuration
-    /// 
-    /// Activates or deactivates a security configuration. Security configurations activated on the staging network can be used for testing and fine-tuning; security configurations activated on the production network are used to protect your actual websites.
-    /// 
-    /// Note that activation fails if the security configuration includes one or more invalid hostnames. You can find these names in the resulting activation error message. To activate the configuration, remove the invalid hosts and try again.
-    /// 
-    /// **Related API Endpoint**: [/appsec/v1/activations](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postactivations)
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var activation = new Akamai.AppSecActivations("activation", new Akamai.AppSecActivationsArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Network = "STAGING",
-    ///             Notes = "This configuration was activated for testing purposes only.",
-    ///             NotificationEmails = 
-    ///             {
-    ///                 "user@example.com",
-    ///             },
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// ## Output Options
-    /// 
-    /// The following options can be used to determine the information returned, and how that returned information is formatted:
-    /// 
-    /// - `status`. Status of the operation. Valid values are:
-    ///   
-    ///   *   **ACTIVATED**
-    ///   *   **DEACTIVATED**
-    ///   *   **FAILED**
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecActivations:AppSecActivations")]
     public partial class AppSecActivations : Pulumi.CustomResource
     {
         /// <summary>
-        /// . Set to **true** to activate the specified security configuration; set to **false** to deactivate the configuration. If not included, the security configuration will be activated.
+        /// . Set to **true** to activate the specified security configuration or set to **false** to deactivate the configuration. If not included, the security configuration is activated. This argument applies only to versions prior to 2.0.0.
         /// </summary>
         [Output("activate")]
         public Output<bool?> Activate { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security configuration being activated.
+        /// . Unique identifier of the security configuration being activated. This is unchanged from previous versions.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Network on which activation will occur; allowed values are:
+        /// . Network on which activation will occur; if not included, activation takes place on the staging network. Allowed values are:
+        /// * **PRODUCTION**
+        /// * **STAGING**
         /// </summary>
         [Output("network")]
         public Output<string?> Network { get; private set; } = null!;
 
         /// <summary>
-        /// . Brief description of the activation/deactivation process. Note that, if no attributes have changed since the last time you called the akamai.AppSecActivations resource, neither activation nor deactivation takes place: that's because *something* must be different in order to trigger the activation/deactivation process. With that in mind, it's recommended that you always update the `notes` argument. That ensures that the resource will be called and that activation or deactivation will occur.
+        /// . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That's because something must be different in order to trigger these processes. Because of that, it's recommended that you always update the **note** argument. That ensures that the resource is called and that activation or deactivation occurs.
         /// </summary>
-        [Output("notes")]
-        public Output<string> Notes { get; private set; } = null!;
+        [Output("note")]
+        public Output<string?> Note { get; private set; } = null!;
 
         /// <summary>
-        /// . JSON array containing the email addresses of the people to be notified when activation is complete.
+        /// . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That's because something must be different in order to trigger one of these processes. Because of that, it's recommended that you always update the `notes` argument. Doing so ensures that the resource is called and activation or deactivation occurs. This argument applies only to versions prior to 2.0.0.
+        /// </summary>
+        [Output("notes")]
+        public Output<string?> Notes { get; private set; } = null!;
+
+        /// <summary>
+        /// . JSON array containing the email addresses of the people to be notified when activation is complete. This is unchanged from previous versions.
         /// </summary>
         [Output("notificationEmails")]
         public Output<ImmutableArray<string>> NotificationEmails { get; private set; } = null!;
 
+        /// <summary>
+        /// The results of the activation
+        /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
+
+        /// <summary>
+        /// . Version number of the security configuration being activated. This can be a hard-coded version number (for example, **5**), or you can use the security configuration’s **latest_version** attribute (data.akamai_appsec_configuration.configuration.latest_version). If you do the latter, you’ll always activate the most recent version of the configuration. This argument applies only to versions 2.0.0 and later.
+        /// </summary>
+        [Output("version")]
+        public Output<int> Version { get; private set; } = null!;
 
 
         /// <summary>
@@ -141,40 +109,54 @@ namespace Pulumi.Akamai
     public sealed class AppSecActivationsArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Set to **true** to activate the specified security configuration; set to **false** to deactivate the configuration. If not included, the security configuration will be activated.
+        /// . Set to **true** to activate the specified security configuration or set to **false** to deactivate the configuration. If not included, the security configuration is activated. This argument applies only to versions prior to 2.0.0.
         /// </summary>
         [Input("activate")]
         public Input<bool>? Activate { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security configuration being activated.
+        /// . Unique identifier of the security configuration being activated. This is unchanged from previous versions.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Network on which activation will occur; allowed values are:
+        /// . Network on which activation will occur; if not included, activation takes place on the staging network. Allowed values are:
+        /// * **PRODUCTION**
+        /// * **STAGING**
         /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
 
         /// <summary>
-        /// . Brief description of the activation/deactivation process. Note that, if no attributes have changed since the last time you called the akamai.AppSecActivations resource, neither activation nor deactivation takes place: that's because *something* must be different in order to trigger the activation/deactivation process. With that in mind, it's recommended that you always update the `notes` argument. That ensures that the resource will be called and that activation or deactivation will occur.
+        /// . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That's because something must be different in order to trigger these processes. Because of that, it's recommended that you always update the **note** argument. That ensures that the resource is called and that activation or deactivation occurs.
         /// </summary>
-        [Input("notes", required: true)]
-        public Input<string> Notes { get; set; } = null!;
+        [Input("note")]
+        public Input<string>? Note { get; set; }
+
+        /// <summary>
+        /// . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That's because something must be different in order to trigger one of these processes. Because of that, it's recommended that you always update the `notes` argument. Doing so ensures that the resource is called and activation or deactivation occurs. This argument applies only to versions prior to 2.0.0.
+        /// </summary>
+        [Input("notes")]
+        public Input<string>? Notes { get; set; }
 
         [Input("notificationEmails", required: true)]
         private InputList<string>? _notificationEmails;
 
         /// <summary>
-        /// . JSON array containing the email addresses of the people to be notified when activation is complete.
+        /// . JSON array containing the email addresses of the people to be notified when activation is complete. This is unchanged from previous versions.
         /// </summary>
         public InputList<string> NotificationEmails
         {
             get => _notificationEmails ?? (_notificationEmails = new InputList<string>());
             set => _notificationEmails = value;
         }
+
+        /// <summary>
+        /// . Version number of the security configuration being activated. This can be a hard-coded version number (for example, **5**), or you can use the security configuration’s **latest_version** attribute (data.akamai_appsec_configuration.configuration.latest_version). If you do the latter, you’ll always activate the most recent version of the configuration. This argument applies only to versions 2.0.0 and later.
+        /// </summary>
+        [Input("version", required: true)]
+        public Input<int> Version { get; set; } = null!;
 
         public AppSecActivationsArgs()
         {
@@ -184,25 +166,33 @@ namespace Pulumi.Akamai
     public sealed class AppSecActivationsState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Set to **true** to activate the specified security configuration; set to **false** to deactivate the configuration. If not included, the security configuration will be activated.
+        /// . Set to **true** to activate the specified security configuration or set to **false** to deactivate the configuration. If not included, the security configuration is activated. This argument applies only to versions prior to 2.0.0.
         /// </summary>
         [Input("activate")]
         public Input<bool>? Activate { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security configuration being activated.
+        /// . Unique identifier of the security configuration being activated. This is unchanged from previous versions.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Network on which activation will occur; allowed values are:
+        /// . Network on which activation will occur; if not included, activation takes place on the staging network. Allowed values are:
+        /// * **PRODUCTION**
+        /// * **STAGING**
         /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
 
         /// <summary>
-        /// . Brief description of the activation/deactivation process. Note that, if no attributes have changed since the last time you called the akamai.AppSecActivations resource, neither activation nor deactivation takes place: that's because *something* must be different in order to trigger the activation/deactivation process. With that in mind, it's recommended that you always update the `notes` argument. That ensures that the resource will be called and that activation or deactivation will occur.
+        /// . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That's because something must be different in order to trigger these processes. Because of that, it's recommended that you always update the **note** argument. That ensures that the resource is called and that activation or deactivation occurs.
+        /// </summary>
+        [Input("note")]
+        public Input<string>? Note { get; set; }
+
+        /// <summary>
+        /// . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That's because something must be different in order to trigger one of these processes. Because of that, it's recommended that you always update the `notes` argument. Doing so ensures that the resource is called and activation or deactivation occurs. This argument applies only to versions prior to 2.0.0.
         /// </summary>
         [Input("notes")]
         public Input<string>? Notes { get; set; }
@@ -211,7 +201,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _notificationEmails;
 
         /// <summary>
-        /// . JSON array containing the email addresses of the people to be notified when activation is complete.
+        /// . JSON array containing the email addresses of the people to be notified when activation is complete. This is unchanged from previous versions.
         /// </summary>
         public InputList<string> NotificationEmails
         {
@@ -219,8 +209,17 @@ namespace Pulumi.Akamai
             set => _notificationEmails = value;
         }
 
+        /// <summary>
+        /// The results of the activation
+        /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
+
+        /// <summary>
+        /// . Version number of the security configuration being activated. This can be a hard-coded version number (for example, **5**), or you can use the security configuration’s **latest_version** attribute (data.akamai_appsec_configuration.configuration.latest_version). If you do the latter, you’ll always activate the most recent version of the configuration. This argument applies only to versions 2.0.0 and later.
+        /// </summary>
+        [Input("version")]
+        public Input<int>? Version { get; set; }
 
         public AppSecActivationsState()
         {

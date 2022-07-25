@@ -15750,6 +15750,360 @@ func (o GetGroupsGroupArrayOutput) Index(i pulumi.IntInput) GetGroupsGroupOutput
 	}).(GetGroupsGroupOutput)
 }
 
+type GetIamGrantableRolesGrantableRole struct {
+	Description   string `pulumi:"description"`
+	GrantedRoleId int    `pulumi:"grantedRoleId"`
+	Name          string `pulumi:"name"`
+}
+
+// GetIamGrantableRolesGrantableRoleInput is an input type that accepts GetIamGrantableRolesGrantableRoleArgs and GetIamGrantableRolesGrantableRoleOutput values.
+// You can construct a concrete instance of `GetIamGrantableRolesGrantableRoleInput` via:
+//
+//          GetIamGrantableRolesGrantableRoleArgs{...}
+type GetIamGrantableRolesGrantableRoleInput interface {
+	pulumi.Input
+
+	ToGetIamGrantableRolesGrantableRoleOutput() GetIamGrantableRolesGrantableRoleOutput
+	ToGetIamGrantableRolesGrantableRoleOutputWithContext(context.Context) GetIamGrantableRolesGrantableRoleOutput
+}
+
+type GetIamGrantableRolesGrantableRoleArgs struct {
+	Description   pulumi.StringInput `pulumi:"description"`
+	GrantedRoleId pulumi.IntInput    `pulumi:"grantedRoleId"`
+	Name          pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetIamGrantableRolesGrantableRoleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamGrantableRolesGrantableRole)(nil)).Elem()
+}
+
+func (i GetIamGrantableRolesGrantableRoleArgs) ToGetIamGrantableRolesGrantableRoleOutput() GetIamGrantableRolesGrantableRoleOutput {
+	return i.ToGetIamGrantableRolesGrantableRoleOutputWithContext(context.Background())
+}
+
+func (i GetIamGrantableRolesGrantableRoleArgs) ToGetIamGrantableRolesGrantableRoleOutputWithContext(ctx context.Context) GetIamGrantableRolesGrantableRoleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamGrantableRolesGrantableRoleOutput)
+}
+
+// GetIamGrantableRolesGrantableRoleArrayInput is an input type that accepts GetIamGrantableRolesGrantableRoleArray and GetIamGrantableRolesGrantableRoleArrayOutput values.
+// You can construct a concrete instance of `GetIamGrantableRolesGrantableRoleArrayInput` via:
+//
+//          GetIamGrantableRolesGrantableRoleArray{ GetIamGrantableRolesGrantableRoleArgs{...} }
+type GetIamGrantableRolesGrantableRoleArrayInput interface {
+	pulumi.Input
+
+	ToGetIamGrantableRolesGrantableRoleArrayOutput() GetIamGrantableRolesGrantableRoleArrayOutput
+	ToGetIamGrantableRolesGrantableRoleArrayOutputWithContext(context.Context) GetIamGrantableRolesGrantableRoleArrayOutput
+}
+
+type GetIamGrantableRolesGrantableRoleArray []GetIamGrantableRolesGrantableRoleInput
+
+func (GetIamGrantableRolesGrantableRoleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamGrantableRolesGrantableRole)(nil)).Elem()
+}
+
+func (i GetIamGrantableRolesGrantableRoleArray) ToGetIamGrantableRolesGrantableRoleArrayOutput() GetIamGrantableRolesGrantableRoleArrayOutput {
+	return i.ToGetIamGrantableRolesGrantableRoleArrayOutputWithContext(context.Background())
+}
+
+func (i GetIamGrantableRolesGrantableRoleArray) ToGetIamGrantableRolesGrantableRoleArrayOutputWithContext(ctx context.Context) GetIamGrantableRolesGrantableRoleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamGrantableRolesGrantableRoleArrayOutput)
+}
+
+type GetIamGrantableRolesGrantableRoleOutput struct{ *pulumi.OutputState }
+
+func (GetIamGrantableRolesGrantableRoleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamGrantableRolesGrantableRole)(nil)).Elem()
+}
+
+func (o GetIamGrantableRolesGrantableRoleOutput) ToGetIamGrantableRolesGrantableRoleOutput() GetIamGrantableRolesGrantableRoleOutput {
+	return o
+}
+
+func (o GetIamGrantableRolesGrantableRoleOutput) ToGetIamGrantableRolesGrantableRoleOutputWithContext(ctx context.Context) GetIamGrantableRolesGrantableRoleOutput {
+	return o
+}
+
+func (o GetIamGrantableRolesGrantableRoleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamGrantableRolesGrantableRole) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetIamGrantableRolesGrantableRoleOutput) GrantedRoleId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIamGrantableRolesGrantableRole) int { return v.GrantedRoleId }).(pulumi.IntOutput)
+}
+
+func (o GetIamGrantableRolesGrantableRoleOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamGrantableRolesGrantableRole) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetIamGrantableRolesGrantableRoleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIamGrantableRolesGrantableRoleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamGrantableRolesGrantableRole)(nil)).Elem()
+}
+
+func (o GetIamGrantableRolesGrantableRoleArrayOutput) ToGetIamGrantableRolesGrantableRoleArrayOutput() GetIamGrantableRolesGrantableRoleArrayOutput {
+	return o
+}
+
+func (o GetIamGrantableRolesGrantableRoleArrayOutput) ToGetIamGrantableRolesGrantableRoleArrayOutputWithContext(ctx context.Context) GetIamGrantableRolesGrantableRoleArrayOutput {
+	return o
+}
+
+func (o GetIamGrantableRolesGrantableRoleArrayOutput) Index(i pulumi.IntInput) GetIamGrantableRolesGrantableRoleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIamGrantableRolesGrantableRole {
+		return vs[0].([]GetIamGrantableRolesGrantableRole)[vs[1].(int)]
+	}).(GetIamGrantableRolesGrantableRoleOutput)
+}
+
+type GetIamRolesRole struct {
+	CreatedBy    string `pulumi:"createdBy"`
+	Description  string `pulumi:"description"`
+	ModifiedBy   string `pulumi:"modifiedBy"`
+	Name         string `pulumi:"name"`
+	RoleId       string `pulumi:"roleId"`
+	TimeCreated  string `pulumi:"timeCreated"`
+	TimeModified string `pulumi:"timeModified"`
+	Type         string `pulumi:"type"`
+}
+
+// GetIamRolesRoleInput is an input type that accepts GetIamRolesRoleArgs and GetIamRolesRoleOutput values.
+// You can construct a concrete instance of `GetIamRolesRoleInput` via:
+//
+//          GetIamRolesRoleArgs{...}
+type GetIamRolesRoleInput interface {
+	pulumi.Input
+
+	ToGetIamRolesRoleOutput() GetIamRolesRoleOutput
+	ToGetIamRolesRoleOutputWithContext(context.Context) GetIamRolesRoleOutput
+}
+
+type GetIamRolesRoleArgs struct {
+	CreatedBy    pulumi.StringInput `pulumi:"createdBy"`
+	Description  pulumi.StringInput `pulumi:"description"`
+	ModifiedBy   pulumi.StringInput `pulumi:"modifiedBy"`
+	Name         pulumi.StringInput `pulumi:"name"`
+	RoleId       pulumi.StringInput `pulumi:"roleId"`
+	TimeCreated  pulumi.StringInput `pulumi:"timeCreated"`
+	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+	Type         pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetIamRolesRoleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamRolesRole)(nil)).Elem()
+}
+
+func (i GetIamRolesRoleArgs) ToGetIamRolesRoleOutput() GetIamRolesRoleOutput {
+	return i.ToGetIamRolesRoleOutputWithContext(context.Background())
+}
+
+func (i GetIamRolesRoleArgs) ToGetIamRolesRoleOutputWithContext(ctx context.Context) GetIamRolesRoleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamRolesRoleOutput)
+}
+
+// GetIamRolesRoleArrayInput is an input type that accepts GetIamRolesRoleArray and GetIamRolesRoleArrayOutput values.
+// You can construct a concrete instance of `GetIamRolesRoleArrayInput` via:
+//
+//          GetIamRolesRoleArray{ GetIamRolesRoleArgs{...} }
+type GetIamRolesRoleArrayInput interface {
+	pulumi.Input
+
+	ToGetIamRolesRoleArrayOutput() GetIamRolesRoleArrayOutput
+	ToGetIamRolesRoleArrayOutputWithContext(context.Context) GetIamRolesRoleArrayOutput
+}
+
+type GetIamRolesRoleArray []GetIamRolesRoleInput
+
+func (GetIamRolesRoleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamRolesRole)(nil)).Elem()
+}
+
+func (i GetIamRolesRoleArray) ToGetIamRolesRoleArrayOutput() GetIamRolesRoleArrayOutput {
+	return i.ToGetIamRolesRoleArrayOutputWithContext(context.Background())
+}
+
+func (i GetIamRolesRoleArray) ToGetIamRolesRoleArrayOutputWithContext(ctx context.Context) GetIamRolesRoleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamRolesRoleArrayOutput)
+}
+
+type GetIamRolesRoleOutput struct{ *pulumi.OutputState }
+
+func (GetIamRolesRoleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamRolesRole)(nil)).Elem()
+}
+
+func (o GetIamRolesRoleOutput) ToGetIamRolesRoleOutput() GetIamRolesRoleOutput {
+	return o
+}
+
+func (o GetIamRolesRoleOutput) ToGetIamRolesRoleOutputWithContext(ctx context.Context) GetIamRolesRoleOutput {
+	return o
+}
+
+func (o GetIamRolesRoleOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamRolesRole) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+func (o GetIamRolesRoleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamRolesRole) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetIamRolesRoleOutput) ModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamRolesRole) string { return v.ModifiedBy }).(pulumi.StringOutput)
+}
+
+func (o GetIamRolesRoleOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamRolesRole) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIamRolesRoleOutput) RoleId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamRolesRole) string { return v.RoleId }).(pulumi.StringOutput)
+}
+
+func (o GetIamRolesRoleOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamRolesRole) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+func (o GetIamRolesRoleOutput) TimeModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamRolesRole) string { return v.TimeModified }).(pulumi.StringOutput)
+}
+
+func (o GetIamRolesRoleOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamRolesRole) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetIamRolesRoleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIamRolesRoleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamRolesRole)(nil)).Elem()
+}
+
+func (o GetIamRolesRoleArrayOutput) ToGetIamRolesRoleArrayOutput() GetIamRolesRoleArrayOutput {
+	return o
+}
+
+func (o GetIamRolesRoleArrayOutput) ToGetIamRolesRoleArrayOutputWithContext(ctx context.Context) GetIamRolesRoleArrayOutput {
+	return o
+}
+
+func (o GetIamRolesRoleArrayOutput) Index(i pulumi.IntInput) GetIamRolesRoleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIamRolesRole {
+		return vs[0].([]GetIamRolesRole)[vs[1].(int)]
+	}).(GetIamRolesRoleOutput)
+}
+
+type GetIamTimezonesTimezone struct {
+	Description string `pulumi:"description"`
+	Offset      string `pulumi:"offset"`
+	Posix       string `pulumi:"posix"`
+	Timezone    string `pulumi:"timezone"`
+}
+
+// GetIamTimezonesTimezoneInput is an input type that accepts GetIamTimezonesTimezoneArgs and GetIamTimezonesTimezoneOutput values.
+// You can construct a concrete instance of `GetIamTimezonesTimezoneInput` via:
+//
+//          GetIamTimezonesTimezoneArgs{...}
+type GetIamTimezonesTimezoneInput interface {
+	pulumi.Input
+
+	ToGetIamTimezonesTimezoneOutput() GetIamTimezonesTimezoneOutput
+	ToGetIamTimezonesTimezoneOutputWithContext(context.Context) GetIamTimezonesTimezoneOutput
+}
+
+type GetIamTimezonesTimezoneArgs struct {
+	Description pulumi.StringInput `pulumi:"description"`
+	Offset      pulumi.StringInput `pulumi:"offset"`
+	Posix       pulumi.StringInput `pulumi:"posix"`
+	Timezone    pulumi.StringInput `pulumi:"timezone"`
+}
+
+func (GetIamTimezonesTimezoneArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamTimezonesTimezone)(nil)).Elem()
+}
+
+func (i GetIamTimezonesTimezoneArgs) ToGetIamTimezonesTimezoneOutput() GetIamTimezonesTimezoneOutput {
+	return i.ToGetIamTimezonesTimezoneOutputWithContext(context.Background())
+}
+
+func (i GetIamTimezonesTimezoneArgs) ToGetIamTimezonesTimezoneOutputWithContext(ctx context.Context) GetIamTimezonesTimezoneOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamTimezonesTimezoneOutput)
+}
+
+// GetIamTimezonesTimezoneArrayInput is an input type that accepts GetIamTimezonesTimezoneArray and GetIamTimezonesTimezoneArrayOutput values.
+// You can construct a concrete instance of `GetIamTimezonesTimezoneArrayInput` via:
+//
+//          GetIamTimezonesTimezoneArray{ GetIamTimezonesTimezoneArgs{...} }
+type GetIamTimezonesTimezoneArrayInput interface {
+	pulumi.Input
+
+	ToGetIamTimezonesTimezoneArrayOutput() GetIamTimezonesTimezoneArrayOutput
+	ToGetIamTimezonesTimezoneArrayOutputWithContext(context.Context) GetIamTimezonesTimezoneArrayOutput
+}
+
+type GetIamTimezonesTimezoneArray []GetIamTimezonesTimezoneInput
+
+func (GetIamTimezonesTimezoneArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamTimezonesTimezone)(nil)).Elem()
+}
+
+func (i GetIamTimezonesTimezoneArray) ToGetIamTimezonesTimezoneArrayOutput() GetIamTimezonesTimezoneArrayOutput {
+	return i.ToGetIamTimezonesTimezoneArrayOutputWithContext(context.Background())
+}
+
+func (i GetIamTimezonesTimezoneArray) ToGetIamTimezonesTimezoneArrayOutputWithContext(ctx context.Context) GetIamTimezonesTimezoneArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamTimezonesTimezoneArrayOutput)
+}
+
+type GetIamTimezonesTimezoneOutput struct{ *pulumi.OutputState }
+
+func (GetIamTimezonesTimezoneOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamTimezonesTimezone)(nil)).Elem()
+}
+
+func (o GetIamTimezonesTimezoneOutput) ToGetIamTimezonesTimezoneOutput() GetIamTimezonesTimezoneOutput {
+	return o
+}
+
+func (o GetIamTimezonesTimezoneOutput) ToGetIamTimezonesTimezoneOutputWithContext(ctx context.Context) GetIamTimezonesTimezoneOutput {
+	return o
+}
+
+func (o GetIamTimezonesTimezoneOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamTimezonesTimezone) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetIamTimezonesTimezoneOutput) Offset() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamTimezonesTimezone) string { return v.Offset }).(pulumi.StringOutput)
+}
+
+func (o GetIamTimezonesTimezoneOutput) Posix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamTimezonesTimezone) string { return v.Posix }).(pulumi.StringOutput)
+}
+
+func (o GetIamTimezonesTimezoneOutput) Timezone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamTimezonesTimezone) string { return v.Timezone }).(pulumi.StringOutput)
+}
+
+type GetIamTimezonesTimezoneArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIamTimezonesTimezoneArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamTimezonesTimezone)(nil)).Elem()
+}
+
+func (o GetIamTimezonesTimezoneArrayOutput) ToGetIamTimezonesTimezoneArrayOutput() GetIamTimezonesTimezoneArrayOutput {
+	return o
+}
+
+func (o GetIamTimezonesTimezoneArrayOutput) ToGetIamTimezonesTimezoneArrayOutputWithContext(ctx context.Context) GetIamTimezonesTimezoneArrayOutput {
+	return o
+}
+
+func (o GetIamTimezonesTimezoneArrayOutput) Index(i pulumi.IntInput) GetIamTimezonesTimezoneOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIamTimezonesTimezone {
+		return vs[0].([]GetIamTimezonesTimezone)[vs[1].(int)]
+	}).(GetIamTimezonesTimezoneOutput)
+}
+
 type GetPropertiesProperty struct {
 	// - (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId string `pulumi:"contractId"`
@@ -16407,8 +16761,10 @@ func (o GetPropertyProductsProductArrayOutput) Index(i pulumi.IntInput) GetPrope
 }
 
 type GetPropertyRulesTemplateTemplate struct {
+	// The content of the JSON template as a string.
 	TemplateData string `pulumi:"templateData"`
-	TemplateDir  string `pulumi:"templateDir"`
+	// The absolute or relative path to the directory containing the template files. The path must end with `property-snippets`, the required directory name. For example: `templateDir = abspath("${path.root}/property-snippets/")`, or `templateDir = "property-snippets/"`.
+	TemplateDir string `pulumi:"templateDir"`
 }
 
 // GetPropertyRulesTemplateTemplateInput is an input type that accepts GetPropertyRulesTemplateTemplateArgs and GetPropertyRulesTemplateTemplateOutput values.
@@ -16423,8 +16779,10 @@ type GetPropertyRulesTemplateTemplateInput interface {
 }
 
 type GetPropertyRulesTemplateTemplateArgs struct {
+	// The content of the JSON template as a string.
 	TemplateData pulumi.StringInput `pulumi:"templateData"`
-	TemplateDir  pulumi.StringInput `pulumi:"templateDir"`
+	// The absolute or relative path to the directory containing the template files. The path must end with `property-snippets`, the required directory name. For example: `templateDir = abspath("${path.root}/property-snippets/")`, or `templateDir = "property-snippets/"`.
+	TemplateDir pulumi.StringInput `pulumi:"templateDir"`
 }
 
 func (GetPropertyRulesTemplateTemplateArgs) ElementType() reflect.Type {
@@ -16478,10 +16836,12 @@ func (o GetPropertyRulesTemplateTemplateOutput) ToGetPropertyRulesTemplateTempla
 	return o
 }
 
+// The content of the JSON template as a string.
 func (o GetPropertyRulesTemplateTemplateOutput) TemplateData() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPropertyRulesTemplateTemplate) string { return v.TemplateData }).(pulumi.StringOutput)
 }
 
+// The absolute or relative path to the directory containing the template files. The path must end with `property-snippets`, the required directory name. For example: `templateDir = abspath("${path.root}/property-snippets/")`, or `templateDir = "property-snippets/"`.
 func (o GetPropertyRulesTemplateTemplateOutput) TemplateDir() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPropertyRulesTemplateTemplate) string { return v.TemplateDir }).(pulumi.StringOutput)
 }
@@ -16507,7 +16867,7 @@ func (o GetPropertyRulesTemplateTemplateArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetPropertyRulesTemplateVariable struct {
-	// The name of the variable used in template.
+	// The name of the variable used in the template.
 	Name string `pulumi:"name"`
 	// The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
 	Type *string `pulumi:"type"`
@@ -16527,7 +16887,7 @@ type GetPropertyRulesTemplateVariableInput interface {
 }
 
 type GetPropertyRulesTemplateVariableArgs struct {
-	// The name of the variable used in template.
+	// The name of the variable used in the template.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -16586,7 +16946,7 @@ func (o GetPropertyRulesTemplateVariableOutput) ToGetPropertyRulesTemplateVariab
 	return o
 }
 
-// The name of the variable used in template.
+// The name of the variable used in the template.
 func (o GetPropertyRulesTemplateVariableOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPropertyRulesTemplateVariable) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -16805,6 +17165,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamDatasetFieldsFieldDatasetFieldArrayInput)(nil)).Elem(), GetDatastreamDatasetFieldsFieldDatasetFieldArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupsGroupInput)(nil)).Elem(), GetGroupsGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupsGroupArrayInput)(nil)).Elem(), GetGroupsGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamGrantableRolesGrantableRoleInput)(nil)).Elem(), GetIamGrantableRolesGrantableRoleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamGrantableRolesGrantableRoleArrayInput)(nil)).Elem(), GetIamGrantableRolesGrantableRoleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamRolesRoleInput)(nil)).Elem(), GetIamRolesRoleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamRolesRoleArrayInput)(nil)).Elem(), GetIamRolesRoleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamTimezonesTimezoneInput)(nil)).Elem(), GetIamTimezonesTimezoneArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamTimezonesTimezoneArrayInput)(nil)).Elem(), GetIamTimezonesTimezoneArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertiesPropertyInput)(nil)).Elem(), GetPropertiesPropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertiesPropertyArrayInput)(nil)).Elem(), GetPropertiesPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertiesSearchPropertyInput)(nil)).Elem(), GetPropertiesSearchPropertyArgs{})
@@ -17002,6 +17368,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDatastreamDatasetFieldsFieldDatasetFieldArrayOutput{})
 	pulumi.RegisterOutputType(GetGroupsGroupOutput{})
 	pulumi.RegisterOutputType(GetGroupsGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetIamGrantableRolesGrantableRoleOutput{})
+	pulumi.RegisterOutputType(GetIamGrantableRolesGrantableRoleArrayOutput{})
+	pulumi.RegisterOutputType(GetIamRolesRoleOutput{})
+	pulumi.RegisterOutputType(GetIamRolesRoleArrayOutput{})
+	pulumi.RegisterOutputType(GetIamTimezonesTimezoneOutput{})
+	pulumi.RegisterOutputType(GetIamTimezonesTimezoneArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertiesPropertyOutput{})
 	pulumi.RegisterOutputType(GetPropertiesPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertiesSearchPropertyOutput{})

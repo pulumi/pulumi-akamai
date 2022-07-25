@@ -14,10 +14,9 @@ import (
 // **Scopes**: Security configuration
 //
 // Renames an existing security configuration.
-// Note that you can only change the configuration name.
-// The ID assigned to a security configuration can not be modified.
+// Note that you can change only the configuration name. You can't modify the ID assigned to a security configuration.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putrenameconfiguration)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}](https://techdocs.akamai.com/application-security/reference/put-config)
 //
 // ## Example Usage
 //
@@ -27,7 +26,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -221,6 +220,21 @@ func (o AppSecConfigurationRenameOutput) ToAppSecConfigurationRenameOutput() App
 
 func (o AppSecConfigurationRenameOutput) ToAppSecConfigurationRenameOutputWithContext(ctx context.Context) AppSecConfigurationRenameOutput {
 	return o
+}
+
+// . Unique identifier of the security configurating being renamed.
+func (o AppSecConfigurationRenameOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecConfigurationRename) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Brief description of the security configuration.
+func (o AppSecConfigurationRenameOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecConfigurationRename) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// . New name for the security configuration.
+func (o AppSecConfigurationRenameOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecConfigurationRename) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
 type AppSecConfigurationRenameArrayOutput struct{ *pulumi.OutputState }

@@ -678,37 +678,6 @@ export interface GetCloudletsApiPrioritizationMatchRuleMatchRule {
     type?: string;
 }
 
-export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs {
-    /**
-     * - (Optional) Whether the match is case sensitive.
-     */
-    caseSensitive?: pulumi.Input<boolean>;
-    /**
-     * - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
-     */
-    checkIps?: pulumi.Input<string>;
-    /**
-     * - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
-     */
-    matchOperator?: pulumi.Input<string>;
-    /**
-     * - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
-     */
-    matchType?: pulumi.Input<string>;
-    /**
-     * - (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
-     */
-    matchValue?: pulumi.Input<string>;
-    /**
-     * - (Optional) Whether to negate the match.
-     */
-    negate?: pulumi.Input<boolean>;
-    /**
-     * - (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
-     */
-    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs>[]>;
-}
-
 export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch {
     /**
      * - (Optional) Whether the match is case sensitive.
@@ -738,6 +707,37 @@ export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch {
      * - (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
      */
     objectMatchValues?: inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValue[];
+}
+
+export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs {
+    /**
+     * - (Optional) Whether the match is case sensitive.
+     */
+    caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+     */
+    checkIps?: pulumi.Input<string>;
+    /**
+     * - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+     */
+    matchOperator?: pulumi.Input<string>;
+    /**
+     * - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+     */
+    matchType?: pulumi.Input<string>;
+    /**
+     * - (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
+     */
+    matchValue?: pulumi.Input<string>;
+    /**
+     * - (Optional) Whether to negate the match.
+     */
+    negate?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+     */
+    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs>[]>;
 }
 
 export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValue {
@@ -832,46 +832,6 @@ export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatch
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
-export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs {
-    disabled?: pulumi.Input<boolean>;
-    /**
-     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-     */
-    end?: pulumi.Input<number>;
-    /**
-     * - (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
-     */
-    forwardSettings: pulumi.Input<pulumi.Input<inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs>[]>;
-    /**
-     * - (Optional) An identifier for Akamai internal use only.
-     */
-    id?: pulumi.Input<number>;
-    /**
-     * - (Optional) The URL that the Cloudlet uses to match the incoming request.
-     */
-    matchUrl?: pulumi.Input<string>;
-    /**
-     * - (Optional) A list of conditions to apply to a Cloudlet, including:
-     */
-    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs>[]>;
-    /**
-     * - (Optional) Whether the match supports default rules that apply to all requests.
-     */
-    matchesAlways?: pulumi.Input<boolean>;
-    /**
-     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
-    name?: pulumi.Input<string>;
-    /**
-     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-     */
-    start?: pulumi.Input<number>;
-    /**
-     * - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
-    type?: pulumi.Input<string>;
-}
-
 export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRule {
     disabled?: boolean;
     /**
@@ -910,6 +870,46 @@ export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRule {
      * - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
      */
     type?: string;
+}
+
+export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs {
+    disabled?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    end?: pulumi.Input<number>;
+    /**
+     * - (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
+     */
+    forwardSettings: pulumi.Input<pulumi.Input<inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs>[]>;
+    /**
+     * - (Optional) An identifier for Akamai internal use only.
+     */
+    id?: pulumi.Input<number>;
+    /**
+     * - (Optional) The URL that the Cloudlet uses to match the incoming request.
+     */
+    matchUrl?: pulumi.Input<string>;
+    /**
+     * - (Optional) A list of conditions to apply to a Cloudlet, including:
+     */
+    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs>[]>;
+    /**
+     * - (Optional) Whether the match supports default rules that apply to all requests.
+     */
+    matchesAlways?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    start?: pulumi.Input<number>;
+    /**
+     * - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type?: pulumi.Input<string>;
 }
 
 export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs {
@@ -988,33 +988,6 @@ export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatch {
     objectMatchValues?: inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValue[];
 }
 
-export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArgs {
-    /**
-     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
-    name?: pulumi.Input<string>;
-    /**
-     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
-     */
-    nameCaseSensitive?: pulumi.Input<boolean>;
-    /**
-     * - (Optional) Whether the `name` argument includes wildcards.
-     */
-    nameHasWildcard?: pulumi.Input<boolean>;
-    /**
-     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
-     */
-    options?: pulumi.Input<inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs>;
-    /**
-     * - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
-    type: pulumi.Input<string>;
-    /**
-     * - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
-     */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
-}
-
 export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValue {
     /**
      * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
@@ -1042,19 +1015,27 @@ export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjec
     values?: string[];
 }
 
-export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs {
+export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArgs {
     /**
-     * - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      */
-    valueCaseSensitive?: pulumi.Input<boolean>;
+    name?: pulumi.Input<string>;
     /**
-     * - (Optional) Whether the `value` argument should be compared in an escaped form.
+     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
      */
-    valueEscaped?: pulumi.Input<boolean>;
+    nameCaseSensitive?: pulumi.Input<boolean>;
     /**
-     * - (Optional) Whether the `value` argument includes wildcards.
+     * - (Optional) Whether the `name` argument includes wildcards.
      */
-    valueHasWildcard?: pulumi.Input<boolean>;
+    nameHasWildcard?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+     */
+    options?: pulumi.Input<inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs>;
+    /**
+     * - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: pulumi.Input<string>;
     /**
      * - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
      */
@@ -1078,6 +1059,25 @@ export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjec
      * - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
      */
     values?: string[];
+}
+
+export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs {
+    /**
+     * - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+     */
+    valueCaseSensitive?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Whether the `value` argument should be compared in an escaped form.
+     */
+    valueEscaped?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Whether the `value` argument includes wildcards.
+     */
+    valueHasWildcard?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
+     */
+    values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface GetCloudletsAudienceSegmentationMatchRuleMatchRule {
@@ -1150,21 +1150,6 @@ export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs {
     type?: pulumi.Input<string>;
 }
 
-export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettings {
-    /**
-     * - (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
-     */
-    originId?: string;
-    /**
-     * - (Optional) When match conditions are met, this value defines the path, resource, or query string added to the rewritten URL.
-     */
-    pathAndQs?: string;
-    /**
-     * - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
-     */
-    useIncomingQueryString?: boolean;
-}
-
 export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsArgs {
     /**
      * - (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
@@ -1180,35 +1165,19 @@ export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettin
     useIncomingQueryString?: pulumi.Input<boolean>;
 }
 
-export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatch {
+export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettings {
     /**
-     * - (Optional) Whether the match is case sensitive.
+     * - (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
      */
-    caseSensitive?: boolean;
+    originId?: string;
     /**
-     * - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+     * - (Optional) When match conditions are met, this value defines the path, resource, or query string added to the rewritten URL.
      */
-    checkIps?: string;
+    pathAndQs?: string;
     /**
-     * - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+     * - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
      */
-    matchOperator?: string;
-    /**
-     * - (Optional) The type of match used, either header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
-     */
-    matchType?: string;
-    /**
-     * - (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
-     */
-    matchValue?: string;
-    /**
-     * - (Optional) Whether to negate the match.
-     */
-    negate?: boolean;
-    /**
-     * - (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
-     */
-    objectMatchValues?: inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValue[];
+    useIncomingQueryString?: boolean;
 }
 
 export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs {
@@ -1242,31 +1211,35 @@ export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs {
     objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArgs>[]>;
 }
 
-export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValue {
+export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatch {
     /**
-     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * - (Optional) Whether the match is case sensitive.
      */
-    name?: string;
+    caseSensitive?: boolean;
     /**
-     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+     * - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
      */
-    nameCaseSensitive?: boolean;
+    checkIps?: string;
     /**
-     * - (Optional) Whether the `name` argument includes wildcards.
+     * - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
      */
-    nameHasWildcard?: boolean;
+    matchOperator?: string;
     /**
-     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+     * - (Optional) The type of match used, either header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
      */
-    options?: inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptions;
+    matchType?: string;
     /**
-     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * - (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
      */
-    type: string;
+    matchValue?: string;
     /**
-     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     * - (Optional) Whether to negate the match.
      */
-    values?: string[];
+    negate?: boolean;
+    /**
+     * - (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+     */
+    objectMatchValues?: inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValue[];
 }
 
 export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArgs {
@@ -1294,6 +1267,33 @@ export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMa
      * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
      */
     values?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValue {
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: string;
+    /**
+     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+     */
+    nameCaseSensitive?: boolean;
+    /**
+     * - (Optional) Whether the `name` argument includes wildcards.
+     */
+    nameHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+     */
+    options?: inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptions;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: string;
+    /**
+     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     */
+    values?: string[];
 }
 
 export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptions {
@@ -1582,41 +1582,6 @@ export interface GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchVal
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
-export interface GetCloudletsForwardRewriteMatchRuleMatchRuleArgs {
-    /**
-     * - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
-     */
-    disabled?: pulumi.Input<boolean>;
-    /**
-     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-     */
-    end?: pulumi.Input<number>;
-    /**
-     * (Required) The data used to construct a new request URL if all match conditions are met. If all conditions are met, the edge server returns an HTTP response from the rewritten URL.
-     */
-    forwardSettings: pulumi.Input<inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgs>;
-    /**
-     * - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
-     */
-    matchUrl?: pulumi.Input<string>;
-    /**
-     * - (Optional) A list of conditions to apply to a Cloudlet, including:
-     */
-    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs>[]>;
-    /**
-     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
-    name?: pulumi.Input<string>;
-    /**
-     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-     */
-    start?: pulumi.Input<number>;
-    /**
-     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
-    type?: pulumi.Input<string>;
-}
-
 export interface GetCloudletsForwardRewriteMatchRuleMatchRule {
     /**
      * - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
@@ -1652,19 +1617,39 @@ export interface GetCloudletsForwardRewriteMatchRuleMatchRule {
     type?: string;
 }
 
-export interface GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgs {
+export interface GetCloudletsForwardRewriteMatchRuleMatchRuleArgs {
     /**
-     * - (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
+     * - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
      */
-    originId?: pulumi.Input<string>;
+    disabled?: pulumi.Input<boolean>;
     /**
-     * - (Optional) When match conditions are met, this value defines the path, resource, or query string added to the rewritten URL.
+     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
      */
-    pathAndQs?: pulumi.Input<string>;
+    end?: pulumi.Input<number>;
     /**
-     * - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
+     * (Required) The data used to construct a new request URL if all match conditions are met. If all conditions are met, the edge server returns an HTTP response from the rewritten URL.
      */
-    useIncomingQueryString?: pulumi.Input<boolean>;
+    forwardSettings: pulumi.Input<inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgs>;
+    /**
+     * - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+     */
+    matchUrl?: pulumi.Input<string>;
+    /**
+     * - (Optional) A list of conditions to apply to a Cloudlet, including:
+     */
+    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs>[]>;
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    start?: pulumi.Input<number>;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type?: pulumi.Input<string>;
 }
 
 export interface GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings {
@@ -1680,6 +1665,21 @@ export interface GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings {
      * - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
      */
     useIncomingQueryString?: boolean;
+}
+
+export interface GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgs {
+    /**
+     * - (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
+     */
+    originId?: pulumi.Input<string>;
+    /**
+     * - (Optional) When match conditions are met, this value defines the path, resource, or query string added to the rewritten URL.
+     */
+    pathAndQs?: pulumi.Input<string>;
+    /**
+     * - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
+     */
+    useIncomingQueryString?: pulumi.Input<boolean>;
 }
 
 export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatch {
@@ -1744,33 +1744,6 @@ export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs {
     objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgs>[]>;
 }
 
-export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValue {
-    /**
-     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
-    name?: string;
-    /**
-     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
-     */
-    nameCaseSensitive?: boolean;
-    /**
-     * - (Optional) Whether the `name` argument includes wildcards.
-     */
-    nameHasWildcard?: boolean;
-    /**
-     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
-     */
-    options?: inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptions;
-    /**
-     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
-    type: string;
-    /**
-     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     */
-    values?: string[];
-}
-
 export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgs {
     /**
      * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
@@ -1798,19 +1771,27 @@ export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchVal
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
-export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptions {
+export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValue {
     /**
-     * - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      */
-    valueCaseSensitive?: boolean;
+    name?: string;
     /**
-     * - (Optional) Whether the `value` argument should be compared in an escaped form.
+     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
      */
-    valueEscaped?: boolean;
+    nameCaseSensitive?: boolean;
     /**
-     * - (Optional) Whether the `value` argument includes wildcards.
+     * - (Optional) Whether the `name` argument includes wildcards.
      */
-    valueHasWildcard?: boolean;
+    nameHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+     */
+    options?: inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptions;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: string;
     /**
      * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
      */
@@ -1836,43 +1817,23 @@ export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchVal
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
-export interface GetCloudletsPhasedReleaseMatchRuleMatchRule {
+export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptions {
     /**
-     * - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+     * - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
      */
-    disabled?: boolean;
+    valueCaseSensitive?: boolean;
     /**
-     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     * - (Optional) Whether the `value` argument should be compared in an escaped form.
      */
-    end?: number;
+    valueEscaped?: boolean;
     /**
-     * (Required) The data used to construct a new request URL if all match conditions are met. If all conditions are met, the edge server returns an HTTP response from the rewritten URL.
+     * - (Optional) Whether the `value` argument includes wildcards.
      */
-    forwardSettings: inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings;
+    valueHasWildcard?: boolean;
     /**
-     * - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
      */
-    matchUrl?: string;
-    /**
-     * - (Optional) A list of conditions to apply to a Cloudlet, including:
-     */
-    matches?: inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatch[];
-    /**
-     * - (Optional) Whether the match supports default rules that apply to all requests.
-     */
-    matchesAlways?: boolean;
-    /**
-     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
-    name?: string;
-    /**
-     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-     */
-    start?: number;
-    /**
-     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
-    type?: string;
+    values?: string[];
 }
 
 export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs {
@@ -1914,6 +1875,45 @@ export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs {
     type?: pulumi.Input<string>;
 }
 
+export interface GetCloudletsPhasedReleaseMatchRuleMatchRule {
+    /**
+     * - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+     */
+    disabled?: boolean;
+    /**
+     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    end?: number;
+    /**
+     * (Required) The data used to construct a new request URL if all match conditions are met. If all conditions are met, the edge server returns an HTTP response from the rewritten URL.
+     */
+    forwardSettings: inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings;
+    /**
+     * - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+     */
+    matchUrl?: string;
+    /**
+     * - (Optional) A list of conditions to apply to a Cloudlet, including:
+     */
+    matches?: inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatch[];
+    /**
+     * - (Optional) Whether the match supports default rules that apply to all requests.
+     */
+    matchesAlways?: boolean;
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: string;
+    /**
+     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    start?: number;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type?: string;
+}
+
 export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArgs {
     /**
      * - (Required) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
@@ -1934,37 +1934,6 @@ export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings {
      * - (Required)
      */
     percent: number;
-}
-
-export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs {
-    /**
-     * - (Optional) Whether the match is case sensitive.
-     */
-    caseSensitive?: pulumi.Input<boolean>;
-    /**
-     * - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
-     */
-    checkIps?: pulumi.Input<string>;
-    /**
-     * - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
-     */
-    matchOperator?: pulumi.Input<string>;
-    /**
-     * - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
-     */
-    matchType?: pulumi.Input<string>;
-    /**
-     * - (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
-     */
-    matchValue?: pulumi.Input<string>;
-    /**
-     * - (Optional) Whether to negate the match.
-     */
-    negate?: pulumi.Input<boolean>;
-    /**
-     * - (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
-     */
-    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgs>[]>;
 }
 
 export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatch {
@@ -1998,31 +1967,35 @@ export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatch {
     objectMatchValues?: inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValue[];
 }
 
-export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValue {
+export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs {
     /**
-     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * - (Optional) Whether the match is case sensitive.
      */
-    name?: string;
+    caseSensitive?: pulumi.Input<boolean>;
     /**
-     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+     * - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
      */
-    nameCaseSensitive?: boolean;
+    checkIps?: pulumi.Input<string>;
     /**
-     * - (Optional) Whether the `name` argument includes wildcards.
+     * - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
      */
-    nameHasWildcard?: boolean;
+    matchOperator?: pulumi.Input<string>;
     /**
-     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+     * - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
      */
-    options?: inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptions;
+    matchType?: pulumi.Input<string>;
     /**
-     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * - (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
      */
-    type: string;
+    matchValue?: pulumi.Input<string>;
     /**
-     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     * - (Optional) Whether to negate the match.
      */
-    values?: string[];
+    negate?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+     */
+    objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgs>[]>;
 }
 
 export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgs {
@@ -2052,19 +2025,27 @@ export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValu
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
-export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptions {
+export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValue {
     /**
-     * - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      */
-    valueCaseSensitive?: boolean;
+    name?: string;
     /**
-     * - (Optional) Whether the `value` argument should be compared in an escaped form.
+     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
      */
-    valueEscaped?: boolean;
+    nameCaseSensitive?: boolean;
     /**
-     * - (Optional) Whether the `value` argument includes wildcards.
+     * - (Optional) Whether the `name` argument includes wildcards.
      */
-    valueHasWildcard?: boolean;
+    nameHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+     */
+    options?: inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptions;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: string;
     /**
      * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
      */
@@ -2088,6 +2069,25 @@ export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValu
      * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
      */
     values?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptions {
+    /**
+     * - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+     */
+    valueCaseSensitive?: boolean;
+    /**
+     * - (Optional) Whether the `value` argument should be compared in an escaped form.
+     */
+    valueEscaped?: boolean;
+    /**
+     * - (Optional) Whether the `value` argument includes wildcards.
+     */
+    valueHasWildcard?: boolean;
+    /**
+     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     */
+    values?: string[];
 }
 
 export interface GetCloudletsRequestControlMatchRuleMatchRule {
@@ -2222,33 +2222,6 @@ export interface GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs {
     objectMatchValues?: pulumi.Input<pulumi.Input<inputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs>[]>;
 }
 
-export interface GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs {
-    /**
-     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
-    name?: pulumi.Input<string>;
-    /**
-     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
-     */
-    nameCaseSensitive?: pulumi.Input<boolean>;
-    /**
-     * - (Optional) Whether the `name` argument includes wildcards.
-     */
-    nameHasWildcard?: pulumi.Input<boolean>;
-    /**
-     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
-     */
-    options?: pulumi.Input<inputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs>;
-    /**
-     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
-    type: pulumi.Input<string>;
-    /**
-     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
-}
-
 export interface GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue {
     /**
      * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
@@ -2274,6 +2247,33 @@ export interface GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchVal
      * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
      */
     values?: string[];
+}
+
+export interface GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs {
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+     */
+    nameCaseSensitive?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Whether the `name` argument includes wildcards.
+     */
+    nameHasWildcard?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+     */
+    options?: pulumi.Input<inputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs>;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type: pulumi.Input<string>;
+    /**
+     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     */
+    values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions {
@@ -2314,39 +2314,6 @@ export interface GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchVal
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
-export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs {
-    /**
-     * - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
-     */
-    disabled?: pulumi.Input<boolean>;
-    /**
-     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-     */
-    end?: pulumi.Input<number>;
-    /**
-     * - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
-     * * `passThroughPercent`- (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin. Enter `-1` to send everyone to the waiting room.
-     */
-    matchUrl?: pulumi.Input<string>;
-    /**
-     * - (Optional) A list of conditions to apply to a Cloudlet, including:
-     */
-    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs>[]>;
-    /**
-     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
-    name?: pulumi.Input<string>;
-    passThroughPercent: pulumi.Input<number>;
-    /**
-     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-     */
-    start?: pulumi.Input<number>;
-    /**
-     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
-    type?: pulumi.Input<string>;
-}
-
 export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRule {
     /**
      * - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
@@ -2378,6 +2345,39 @@ export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRule {
      * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
      */
     type?: string;
+}
+
+export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs {
+    /**
+     * - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+     */
+    disabled?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    end?: pulumi.Input<number>;
+    /**
+     * - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+     * * `passThroughPercent`- (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin. Enter `-1` to send everyone to the waiting room.
+     */
+    matchUrl?: pulumi.Input<string>;
+    /**
+     * - (Optional) A list of conditions to apply to a Cloudlet, including:
+     */
+    matches?: pulumi.Input<pulumi.Input<inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs>[]>;
+    /**
+     * - (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     */
+    name?: pulumi.Input<string>;
+    passThroughPercent: pulumi.Input<number>;
+    /**
+     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     */
+    start?: pulumi.Input<number>;
+    /**
+     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     */
+    type?: pulumi.Input<string>;
 }
 
 export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs {
@@ -2534,34 +2534,31 @@ export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectM
     values?: string[];
 }
 
-export interface GetPropertyRulesTemplateTemplate {
-    templateData: string;
-    templateDir: string;
-}
-
 export interface GetPropertyRulesTemplateTemplateArgs {
+    /**
+     * The content of the JSON template as a string.
+     */
     templateData: pulumi.Input<string>;
+    /**
+     * The absolute or relative path to the directory containing the template files. The path must end with `property-snippets`, the required directory name. For example: `templateDir = abspath("${path.root}/property-snippets/")`, or `templateDir = "property-snippets/"`.
+     */
     templateDir: pulumi.Input<string>;
 }
 
-export interface GetPropertyRulesTemplateVariableArgs {
+export interface GetPropertyRulesTemplateTemplate {
     /**
-     * The name of the variable used in template.
+     * The content of the JSON template as a string.
      */
-    name: pulumi.Input<string>;
+    templateData: string;
     /**
-     * The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
+     * The absolute or relative path to the directory containing the template files. The path must end with `property-snippets`, the required directory name. For example: `templateDir = abspath("${path.root}/property-snippets/")`, or `templateDir = "property-snippets/"`.
      */
-    type?: pulumi.Input<string>;
-    /**
-     * The value of the variable passed as a string.
-     */
-    value: pulumi.Input<string>;
+    templateDir: string;
 }
 
 export interface GetPropertyRulesTemplateVariable {
     /**
-     * The name of the variable used in template.
+     * The name of the variable used in the template.
      */
     name: string;
     /**
@@ -2572,6 +2569,21 @@ export interface GetPropertyRulesTemplateVariable {
      * The value of the variable passed as a string.
      */
     value: string;
+}
+
+export interface GetPropertyRulesTemplateVariableArgs {
+    /**
+     * The name of the variable used in the template.
+     */
+    name: pulumi.Input<string>;
+    /**
+     * The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
+     */
+    type?: pulumi.Input<string>;
+    /**
+     * The value of the variable passed as a string.
+     */
+    value: pulumi.Input<string>;
 }
 
 export interface GtmAsmapAssignment {

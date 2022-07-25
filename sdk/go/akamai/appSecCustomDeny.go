@@ -15,7 +15,7 @@ import (
 //
 // Modifies a custom deny action. Custom denies enable you to craft your own error message or redirect pages for use when HTTP requests are denied.
 //
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/custom-deny](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putcustomdenyaction)
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/custom-deny](https://techdocs.akamai.com/application-security/reference/get-custom-deny-actions)
 //
 // ## Example Usage
 //
@@ -28,7 +28,7 @@ import (
 // 	"fmt"
 // 	"io/ioutil"
 //
-// 	"github.com/pulumi/pulumi-akamai/sdk/v2/go/akamai"
+// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
@@ -50,7 +50,7 @@ import (
 // 		}
 // 		customDeny, err := akamai.NewAppSecCustomDeny(ctx, "customDeny", &akamai.AppSecCustomDenyArgs{
 // 			ConfigId:   pulumi.Int(configuration.ConfigId),
-// 			CustomDeny: readFileOrPanic(fmt.Sprintf("%v%v", path.Module, "/custom_deny.json")),
+// 			CustomDeny: readFileOrPanic(fmt.Sprintf("%v/custom_deny.json", path.Module)),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -232,6 +232,21 @@ func (o AppSecCustomDenyOutput) ToAppSecCustomDenyOutput() AppSecCustomDenyOutpu
 
 func (o AppSecCustomDenyOutput) ToAppSecCustomDenyOutputWithContext(ctx context.Context) AppSecCustomDenyOutput {
 	return o
+}
+
+// . Unique identifier of the security configuration associated with the custom deny.
+func (o AppSecCustomDenyOutput) ConfigId() pulumi.IntOutput {
+	return o.ApplyT(func(v *AppSecCustomDeny) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+// . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
+func (o AppSecCustomDenyOutput) CustomDeny() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecCustomDeny) pulumi.StringOutput { return v.CustomDeny }).(pulumi.StringOutput)
+}
+
+// custom_deny_id
+func (o AppSecCustomDenyOutput) CustomDenyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppSecCustomDeny) pulumi.StringOutput { return v.CustomDenyId }).(pulumi.StringOutput)
 }
 
 type AppSecCustomDenyArrayOutput struct{ *pulumi.OutputState }
