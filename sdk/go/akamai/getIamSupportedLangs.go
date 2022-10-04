@@ -17,20 +17,23 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		supportedLangs, err := akamai.GetIamSupportedLangs(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("supportedSupportedLangs", supportedLangs)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			supportedLangs, err := akamai.GetIamSupportedLangs(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("supportedSupportedLangs", supportedLangs)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Attributes reference
 //
@@ -38,7 +41,7 @@ import (
 //
 // * `languages` — Languages supported by Akamai
 //
-// [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getadminsupportedlanguages)
+// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-user-languages)
 func GetIamSupportedLangs(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamSupportedLangsResult, error) {
 	var rv GetIamSupportedLangsResult
 	err := ctx.Invoke("akamai:index/getIamSupportedLangs:getIamSupportedLangs", nil, &rv, opts...)

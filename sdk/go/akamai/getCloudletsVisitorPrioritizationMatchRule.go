@@ -22,39 +22,42 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.GetCloudletsVisitorPrioritizationMatchRule(ctx, &GetCloudletsVisitorPrioritizationMatchRuleArgs{
-// 			MatchRules: []GetCloudletsVisitorPrioritizationMatchRuleMatchRule{
-// 				GetCloudletsVisitorPrioritizationMatchRuleMatchRule{
-// 					End:      pulumi.IntRef(1645037845),
-// 					MatchUrl: pulumi.StringRef("example.com"),
-// 					Matches: []GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch{
-// 						GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch{
-// 							CaseSensitive: pulumi.BoolRef(false),
-// 							CheckIps:      pulumi.StringRef("CONNECTING_IP"),
-// 							MatchOperator: pulumi.StringRef("equals"),
-// 							MatchType:     pulumi.StringRef("protocol"),
-// 							MatchValue:    pulumi.StringRef("http"),
-// 							Negate:        pulumi.BoolRef(false),
-// 						},
-// 					},
-// 					Name:               pulumi.StringRef("rule"),
-// 					PassThroughPercent: -1,
-// 					Start:              pulumi.IntRef(1644865045),
-// 				},
-// 			},
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.GetCloudletsVisitorPrioritizationMatchRule(ctx, &GetCloudletsVisitorPrioritizationMatchRuleArgs{
+//				MatchRules: []GetCloudletsVisitorPrioritizationMatchRuleMatchRule{
+//					GetCloudletsVisitorPrioritizationMatchRuleMatchRule{
+//						End:      pulumi.IntRef(1645037845),
+//						MatchUrl: pulumi.StringRef("example.com"),
+//						Matches: []GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch{
+//							GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch{
+//								CaseSensitive: pulumi.BoolRef(false),
+//								CheckIps:      pulumi.StringRef("CONNECTING_IP"),
+//								MatchOperator: pulumi.StringRef("equals"),
+//								MatchType:     pulumi.StringRef("protocol"),
+//								MatchValue:    pulumi.StringRef("http"),
+//								Negate:        pulumi.BoolRef(false),
+//							},
+//						},
+//						Name:               pulumi.StringRef("rule"),
+//						PassThroughPercent: -1,
+//						Start:              pulumi.IntRef(1644865045),
+//					},
+//				},
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Attributes reference

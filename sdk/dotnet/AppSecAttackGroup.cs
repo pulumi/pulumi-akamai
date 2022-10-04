@@ -66,7 +66,7 @@ namespace Pulumi.Akamai
         public Output<string> AttackGroupAction { get; private set; } = null!;
 
         /// <summary>
-        /// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+        /// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
         /// </summary>
         [Output("conditionException")]
         public Output<string?> ConditionException { get; private set; } = null!;
@@ -146,7 +146,7 @@ namespace Pulumi.Akamai
         public Input<string> AttackGroupAction { get; set; } = null!;
 
         /// <summary>
-        /// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+        /// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
         /// </summary>
         [Input("conditionException")]
         public Input<string>? ConditionException { get; set; }
@@ -187,7 +187,7 @@ namespace Pulumi.Akamai
         public Input<string>? AttackGroupAction { get; set; }
 
         /// <summary>
-        /// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+        /// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
         /// </summary>
         [Input("conditionException")]
         public Input<string>? ConditionException { get; set; }

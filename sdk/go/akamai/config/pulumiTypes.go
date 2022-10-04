@@ -22,7 +22,7 @@ type Appsecs struct {
 // AppsecsInput is an input type that accepts AppsecsArgs and AppsecsOutput values.
 // You can construct a concrete instance of `AppsecsInput` via:
 //
-//          AppsecsArgs{...}
+//	AppsecsArgs{...}
 type AppsecsInput interface {
 	pulumi.Input
 
@@ -54,7 +54,7 @@ func (i AppsecsArgs) ToAppsecsOutputWithContext(ctx context.Context) AppsecsOutp
 // AppsecsArrayInput is an input type that accepts AppsecsArray and AppsecsArrayOutput values.
 // You can construct a concrete instance of `AppsecsArrayInput` via:
 //
-//          AppsecsArray{ AppsecsArgs{...} }
+//	AppsecsArray{ AppsecsArgs{...} }
 type AppsecsArrayInput interface {
 	pulumi.Input
 
@@ -146,7 +146,7 @@ type Config struct {
 // ConfigInput is an input type that accepts ConfigArgs and ConfigOutput values.
 // You can construct a concrete instance of `ConfigInput` via:
 //
-//          ConfigArgs{...}
+//	ConfigArgs{...}
 type ConfigInput interface {
 	pulumi.Input
 
@@ -225,7 +225,7 @@ type Dns struct {
 // DnsInput is an input type that accepts DnsArgs and DnsOutput values.
 // You can construct a concrete instance of `DnsInput` via:
 //
-//          DnsArgs{...}
+//	DnsArgs{...}
 type DnsInput interface {
 	pulumi.Input
 
@@ -304,7 +304,7 @@ type Gtm struct {
 // GtmInput is an input type that accepts GtmArgs and GtmOutput values.
 // You can construct a concrete instance of `GtmInput` via:
 //
-//          GtmArgs{...}
+//	GtmArgs{...}
 type GtmInput interface {
 	pulumi.Input
 
@@ -383,7 +383,7 @@ type Networks struct {
 // NetworksInput is an input type that accepts NetworksArgs and NetworksOutput values.
 // You can construct a concrete instance of `NetworksInput` via:
 //
-//          NetworksArgs{...}
+//	NetworksArgs{...}
 type NetworksInput interface {
 	pulumi.Input
 
@@ -415,7 +415,7 @@ func (i NetworksArgs) ToNetworksOutputWithContext(ctx context.Context) NetworksO
 // NetworksArrayInput is an input type that accepts NetworksArray and NetworksArrayOutput values.
 // You can construct a concrete instance of `NetworksArrayInput` via:
 //
-//          NetworksArray{ NetworksArgs{...} }
+//	NetworksArray{ NetworksArgs{...} }
 type NetworksArrayInput interface {
 	pulumi.Input
 
@@ -507,7 +507,7 @@ type Property struct {
 // PropertyInput is an input type that accepts PropertyArgs and PropertyOutput values.
 // You can construct a concrete instance of `PropertyInput` via:
 //
-//          PropertyArgs{...}
+//	PropertyArgs{...}
 type PropertyInput interface {
 	pulumi.Input
 

@@ -25,6 +25,10 @@ export * from "./appSecEvalPenaltyBox";
 export * from "./appSecEvalRule";
 export * from "./appSecIPGeo";
 export * from "./appSecIPGeoProtection";
+export * from "./appSecMalwarePolicy";
+export * from "./appSecMalwarePolicyAction";
+export * from "./appSecMalwarePolicyActions";
+export * from "./appSecMalwareProtection";
 export * from "./appSecMatchTarget";
 export * from "./appSecMatchTargetSequence";
 export * from "./appSecPenaltyBox";
@@ -86,6 +90,9 @@ export * from "./getAppSecHostnameCoverage";
 export * from "./getAppSecHostnameCoverageMatchTargets";
 export * from "./getAppSecHostnameCoverageOverlapping";
 export * from "./getAppSecIPGeo";
+export * from "./getAppSecMalwareContentTypes";
+export * from "./getAppSecMalwarePolicies";
+export * from "./getAppSecMalwarePolicyActions";
 export * from "./getAppSecMatchTargets";
 export * from "./getAppSecPenaltyBox";
 export * from "./getAppSecRatePolicies";
@@ -108,6 +115,8 @@ export * from "./getAppSecVersionNotes";
 export * from "./getAppSecWafMode";
 export * from "./getAppSecWapSelectedHostnames";
 export * from "./getAuthoritiesSet";
+export * from "./getCPSEnrollment";
+export * from "./getCPSEnrollments";
 export * from "./getCloudletsApiPrioritizationMatchRule";
 export * from "./getCloudletsApplicationLoadBalancer";
 export * from "./getCloudletsApplicationLoadBalancerMatchRule";
@@ -124,6 +133,8 @@ export * from "./getCpCode";
 export * from "./getDatastreamActivationHistory";
 export * from "./getDatastreamDatasetFields";
 export * from "./getDnsRecordSet";
+export * from "./getEdgeWorker";
+export * from "./getEdgeWorkerActivation";
 export * from "./getEdgeWorkersPropertyRules";
 export * from "./getEdgeWorkersResourceTier";
 export * from "./getGroup";
@@ -201,6 +212,10 @@ import { AppSecEvalPenaltyBox } from "./appSecEvalPenaltyBox";
 import { AppSecEvalRule } from "./appSecEvalRule";
 import { AppSecIPGeo } from "./appSecIPGeo";
 import { AppSecIPGeoProtection } from "./appSecIPGeoProtection";
+import { AppSecMalwarePolicy } from "./appSecMalwarePolicy";
+import { AppSecMalwarePolicyAction } from "./appSecMalwarePolicyAction";
+import { AppSecMalwarePolicyActions } from "./appSecMalwarePolicyActions";
+import { AppSecMalwareProtection } from "./appSecMalwareProtection";
 import { AppSecMatchTarget } from "./appSecMatchTarget";
 import { AppSecMatchTargetSequence } from "./appSecMatchTargetSequence";
 import { AppSecPenaltyBox } from "./appSecPenaltyBox";
@@ -300,6 +315,14 @@ const _module = {
                 return new AppSecIPGeo(name, <any>undefined, { urn })
             case "akamai:index/appSecIPGeoProtection:AppSecIPGeoProtection":
                 return new AppSecIPGeoProtection(name, <any>undefined, { urn })
+            case "akamai:index/appSecMalwarePolicy:AppSecMalwarePolicy":
+                return new AppSecMalwarePolicy(name, <any>undefined, { urn })
+            case "akamai:index/appSecMalwarePolicyAction:AppSecMalwarePolicyAction":
+                return new AppSecMalwarePolicyAction(name, <any>undefined, { urn })
+            case "akamai:index/appSecMalwarePolicyActions:AppSecMalwarePolicyActions":
+                return new AppSecMalwarePolicyActions(name, <any>undefined, { urn })
+            case "akamai:index/appSecMalwareProtection:AppSecMalwareProtection":
+                return new AppSecMalwareProtection(name, <any>undefined, { urn })
             case "akamai:index/appSecMatchTarget:AppSecMatchTarget":
                 return new AppSecMatchTarget(name, <any>undefined, { urn })
             case "akamai:index/appSecMatchTargetSequence:AppSecMatchTargetSequence":
@@ -433,6 +456,10 @@ pulumi.runtime.registerResourceModule("akamai", "index/appSecEvalPenaltyBox", _m
 pulumi.runtime.registerResourceModule("akamai", "index/appSecEvalRule", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecIPGeo", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecIPGeoProtection", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appSecMalwarePolicy", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appSecMalwarePolicyAction", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appSecMalwarePolicyActions", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appSecMalwareProtection", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecMatchTarget", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecMatchTargetSequence", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecPenaltyBox", _module)

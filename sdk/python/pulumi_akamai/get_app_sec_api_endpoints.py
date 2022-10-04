@@ -105,7 +105,7 @@ def get_app_sec_api_endpoints(api_name: Optional[str] = None,
     """
     **Scopes**: Security configuration; security policy
 
-    Returns information about the API endpoints associated with a security policy or configuration. The returned information is described in the [Endpoint members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#apiendpoint) section of the Application Security API documentation.
+    Returns information about the API endpoints associated with a security policy or configuration.
 
     **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/api-endpoints](https://techdocs.akamai.com/application-security/reference/get-api-endpoints)
 
@@ -158,7 +158,7 @@ def get_app_sec_api_endpoints_output(api_name: Optional[pulumi.Input[Optional[st
     """
     **Scopes**: Security configuration; security policy
 
-    Returns information about the API endpoints associated with a security policy or configuration. The returned information is described in the [Endpoint members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#apiendpoint) section of the Application Security API documentation.
+    Returns information about the API endpoints associated with a security policy or configuration.
 
     **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/api-endpoints](https://techdocs.akamai.com/application-security/reference/get-api-endpoints)
 

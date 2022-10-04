@@ -25,31 +25,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecSelectedHostnames(ctx, "appsecselectedhostnames", &akamai.AppSecSelectedHostnamesArgs{
-// 			ConfigId: pulumi.Int(configuration.ConfigId),
-// 			Hostnames: pulumi.StringArray{
-// 				pulumi.String("example.com"),
-// 			},
-// 			Mode: pulumi.String("APPEND"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecSelectedHostnames(ctx, "appsecselectedhostnames", &akamai.AppSecSelectedHostnamesArgs{
+//				ConfigId: pulumi.Int(configuration.ConfigId),
+//				Hostnames: pulumi.StringArray{
+//					pulumi.String("example.com"),
+//				},
+//				Mode: pulumi.String("APPEND"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type AppSecSelectedHostnames struct {
 	pulumi.CustomResourceState
@@ -181,7 +184,7 @@ func (i *AppSecSelectedHostnames) ToAppSecSelectedHostnamesOutputWithContext(ctx
 // AppSecSelectedHostnamesArrayInput is an input type that accepts AppSecSelectedHostnamesArray and AppSecSelectedHostnamesArrayOutput values.
 // You can construct a concrete instance of `AppSecSelectedHostnamesArrayInput` via:
 //
-//          AppSecSelectedHostnamesArray{ AppSecSelectedHostnamesArgs{...} }
+//	AppSecSelectedHostnamesArray{ AppSecSelectedHostnamesArgs{...} }
 type AppSecSelectedHostnamesArrayInput interface {
 	pulumi.Input
 
@@ -206,7 +209,7 @@ func (i AppSecSelectedHostnamesArray) ToAppSecSelectedHostnamesArrayOutputWithCo
 // AppSecSelectedHostnamesMapInput is an input type that accepts AppSecSelectedHostnamesMap and AppSecSelectedHostnamesMapOutput values.
 // You can construct a concrete instance of `AppSecSelectedHostnamesMapInput` via:
 //
-//          AppSecSelectedHostnamesMap{ "key": AppSecSelectedHostnamesArgs{...} }
+//	AppSecSelectedHostnamesMap{ "key": AppSecSelectedHostnamesArgs{...} }
 type AppSecSelectedHostnamesMapInput interface {
 	pulumi.Input
 

@@ -12,7 +12,7 @@ namespace Pulumi.Akamai
     public static class GetIamGrantableRoles
     {
         /// <summary>
-        /// List which grantable roles you can include in a new custom role or add to an existing custom role. 
+        /// List which grantable roles you can include in a new custom role or add to an existing custom role.
         /// 
         /// ## Basic usage
         /// 
@@ -42,7 +42,7 @@ namespace Pulumi.Akamai
         /// 
         /// This resource returns this attribute:
         /// 
-        /// * `grantable_roles` - Lists which grantable roles you can include in a new custom role or add to an existing custom role. 
+        /// * `grantable_roles` - Lists which grantable roles you can include in a new custom role or add to an existing custom role.
         ///   * `granted_role_id` - Granted role ID.
         ///   * `name` - Granted role name.
         ///   * `description` - Granted role description.

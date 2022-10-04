@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		ctx.Export("propertyMatch", data.Akamai_property_products.My-example)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			ctx.Export("propertyMatch", data.Akamai_property_products.My-example)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Attributes reference
 //
 // This data source returns these attributes:
 //
 // * `products` - A list of supported products for the contract, including:
-//   * `productId` - The product's unique ID, including the `prd_` prefix.
-//   * `productName` - A string containing the product name.
+//   - `productId` - The product's unique ID, including the `prd_` prefix.
+//   - `productName` - A string containing the product name.
 func GetPropertyProducts(ctx *pulumi.Context, args *GetPropertyProductsArgs, opts ...pulumi.InvokeOption) (*GetPropertyProductsResult, error) {
 	var rv GetPropertyProductsResult
 	err := ctx.Invoke("akamai:index/getPropertyProducts:getPropertyProducts", args, &rv, opts...)

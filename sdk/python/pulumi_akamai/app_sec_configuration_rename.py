@@ -19,7 +19,7 @@ class AppSecConfigurationRenameArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AppSecConfigurationRename resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configurating being renamed.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuring being renamed.
         :param pulumi.Input[str] description: . Brief description of the security configuration.
         :param pulumi.Input[str] name: . New name for the security configuration.
         """
@@ -32,7 +32,7 @@ class AppSecConfigurationRenameArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        . Unique identifier of the security configurating being renamed.
+        . Unique identifier of the security configuring being renamed.
         """
         return pulumi.get(self, "config_id")
 
@@ -73,7 +73,7 @@ class _AppSecConfigurationRenameState:
                  name: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecConfigurationRename resources.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configurating being renamed.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuring being renamed.
         :param pulumi.Input[str] description: . Brief description of the security configuration.
         :param pulumi.Input[str] name: . New name for the security configuration.
         """
@@ -88,7 +88,7 @@ class _AppSecConfigurationRenameState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . Unique identifier of the security configurating being renamed.
+        . Unique identifier of the security configuring being renamed.
         """
         return pulumi.get(self, "config_id")
 
@@ -154,7 +154,7 @@ class AppSecConfigurationRename(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configurating being renamed.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuring being renamed.
         :param pulumi.Input[str] description: . Brief description of the security configuration.
         :param pulumi.Input[str] name: . New name for the security configuration.
         """
@@ -240,7 +240,7 @@ class AppSecConfigurationRename(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configurating being renamed.
+        :param pulumi.Input[int] config_id: . Unique identifier of the security configuring being renamed.
         :param pulumi.Input[str] description: . Brief description of the security configuration.
         :param pulumi.Input[str] name: . New name for the security configuration.
         """
@@ -257,7 +257,7 @@ class AppSecConfigurationRename(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        . Unique identifier of the security configurating being renamed.
+        . Unique identifier of the security configuring being renamed.
         """
         return pulumi.get(self, "config_id")
 

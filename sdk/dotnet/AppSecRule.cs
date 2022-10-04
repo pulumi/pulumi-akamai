@@ -50,7 +50,7 @@ namespace Pulumi.Akamai
     public partial class AppSecRule : Pulumi.CustomResource
     {
         /// <summary>
-        /// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+        /// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
         /// </summary>
         [Output("conditionException")]
         public Output<string?> ConditionException { get; private set; } = null!;
@@ -130,7 +130,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecRuleArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+        /// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
         /// </summary>
         [Input("conditionException")]
         public Input<string>? ConditionException { get; set; }
@@ -171,7 +171,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecRuleState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+        /// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
         /// </summary>
         [Input("conditionException")]
         public Input<string>? ConditionException { get; set; }

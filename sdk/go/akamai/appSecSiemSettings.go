@@ -25,44 +25,47 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		siemDefinition, err := akamai.GetAppSecSiemDefinitions(ctx, &GetAppSecSiemDefinitionsArgs{
-// 			SiemDefinitionName: pulumi.StringRef("SIEM Version 01"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		securityPolicies, err := akamai.LookupAppSecSecurityPolicy(ctx, &GetAppSecSecurityPolicyArgs{
-// 			ConfigId: configuration.ConfigId,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecSiemSettings(ctx, "siem", &akamai.AppSecSiemSettingsArgs{
-// 			ConfigId:             pulumi.Int(configuration.ConfigId),
-// 			EnableSiem:           pulumi.Bool(true),
-// 			EnableForAllPolicies: pulumi.Bool(false),
-// 			EnableBotmanSiem:     pulumi.Bool(true),
-// 			SiemId:               pulumi.String(siemDefinition.Id),
-// 			SecurityPolicyIds:    interface{}(securityPolicies.SecurityPolicyIdLists),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			siemDefinition, err := akamai.GetAppSecSiemDefinitions(ctx, &GetAppSecSiemDefinitionsArgs{
+//				SiemDefinitionName: pulumi.StringRef("SIEM Version 01"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			securityPolicies, err := akamai.LookupAppSecSecurityPolicy(ctx, &GetAppSecSecurityPolicyArgs{
+//				ConfigId: configuration.ConfigId,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecSiemSettings(ctx, "siem", &akamai.AppSecSiemSettingsArgs{
+//				ConfigId:             pulumi.Int(configuration.ConfigId),
+//				EnableSiem:           pulumi.Bool(true),
+//				EnableForAllPolicies: pulumi.Bool(false),
+//				EnableBotmanSiem:     pulumi.Bool(true),
+//				SiemId:               pulumi.String(siemDefinition.Id),
+//				SecurityPolicyIds:    interface{}(securityPolicies.SecurityPolicyIdLists),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
@@ -220,7 +223,7 @@ func (i *AppSecSiemSettings) ToAppSecSiemSettingsOutputWithContext(ctx context.C
 // AppSecSiemSettingsArrayInput is an input type that accepts AppSecSiemSettingsArray and AppSecSiemSettingsArrayOutput values.
 // You can construct a concrete instance of `AppSecSiemSettingsArrayInput` via:
 //
-//          AppSecSiemSettingsArray{ AppSecSiemSettingsArgs{...} }
+//	AppSecSiemSettingsArray{ AppSecSiemSettingsArgs{...} }
 type AppSecSiemSettingsArrayInput interface {
 	pulumi.Input
 
@@ -245,7 +248,7 @@ func (i AppSecSiemSettingsArray) ToAppSecSiemSettingsArrayOutputWithContext(ctx 
 // AppSecSiemSettingsMapInput is an input type that accepts AppSecSiemSettingsMap and AppSecSiemSettingsMapOutput values.
 // You can construct a concrete instance of `AppSecSiemSettingsMapInput` via:
 //
-//          AppSecSiemSettingsMap{ "key": AppSecSiemSettingsArgs{...} }
+//	AppSecSiemSettingsMap{ "key": AppSecSiemSettingsArgs{...} }
 type AppSecSiemSettingsMapInput interface {
 	pulumi.Input
 

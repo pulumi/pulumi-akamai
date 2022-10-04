@@ -25,29 +25,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecWafProtection(ctx, "protection", &akamai.AppSecWafProtectionArgs{
-// 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.String("gms1_134637"),
-// 			Enabled:          pulumi.Bool(true),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecWafProtection(ctx, "protection", &akamai.AppSecWafProtectionArgs{
+//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId: pulumi.String("gms1_134637"),
+//				Enabled:          pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
@@ -61,7 +64,7 @@ type AppSecWafProtection struct {
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// Text Export representation
+	// Text representation
 	OutputText pulumi.StringOutput `pulumi:"outputText"`
 	// . Unique identifier of the security policy associated with the WAF protection settings being modified.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
@@ -109,7 +112,7 @@ type appSecWafProtectionState struct {
 	ConfigId *int `pulumi:"configId"`
 	// . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
 	Enabled *bool `pulumi:"enabled"`
-	// Text Export representation
+	// Text representation
 	OutputText *string `pulumi:"outputText"`
 	// . Unique identifier of the security policy associated with the WAF protection settings being modified.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
@@ -120,7 +123,7 @@ type AppSecWafProtectionState struct {
 	ConfigId pulumi.IntPtrInput
 	// . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
 	Enabled pulumi.BoolPtrInput
-	// Text Export representation
+	// Text representation
 	OutputText pulumi.StringPtrInput
 	// . Unique identifier of the security policy associated with the WAF protection settings being modified.
 	SecurityPolicyId pulumi.StringPtrInput
@@ -175,7 +178,7 @@ func (i *AppSecWafProtection) ToAppSecWafProtectionOutputWithContext(ctx context
 // AppSecWafProtectionArrayInput is an input type that accepts AppSecWafProtectionArray and AppSecWafProtectionArrayOutput values.
 // You can construct a concrete instance of `AppSecWafProtectionArrayInput` via:
 //
-//          AppSecWafProtectionArray{ AppSecWafProtectionArgs{...} }
+//	AppSecWafProtectionArray{ AppSecWafProtectionArgs{...} }
 type AppSecWafProtectionArrayInput interface {
 	pulumi.Input
 
@@ -200,7 +203,7 @@ func (i AppSecWafProtectionArray) ToAppSecWafProtectionArrayOutputWithContext(ct
 // AppSecWafProtectionMapInput is an input type that accepts AppSecWafProtectionMap and AppSecWafProtectionMapOutput values.
 // You can construct a concrete instance of `AppSecWafProtectionMapInput` via:
 //
-//          AppSecWafProtectionMap{ "key": AppSecWafProtectionArgs{...} }
+//	AppSecWafProtectionMap{ "key": AppSecWafProtectionArgs{...} }
 type AppSecWafProtectionMapInput interface {
 	pulumi.Input
 
@@ -246,7 +249,7 @@ func (o AppSecWafProtectionOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AppSecWafProtection) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Text Export representation
+// Text representation
 func (o AppSecWafProtectionOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecWafProtection) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
 }

@@ -25,26 +25,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewGtmDatacenter(ctx, "demoDatacenter", &akamai.GtmDatacenterArgs{
-// 			Domain:   pulumi.String("demo_domain.akadns.net"),
-// 			Nickname: pulumi.String("demo_datacenter"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
-// ## Schema reference
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewGtmDatacenter(ctx, "demoDatacenter", &akamai.GtmDatacenterArgs{
+//				Domain:   pulumi.String("demo_domain.akadns.net"),
+//				Nickname: pulumi.String("demo_datacenter"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
 //
-// You can download the GTM Data Center backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#datacenter) page.
+// ```
 //
 // Deprecated: akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter
 type GtmDatacenter struct {
@@ -304,7 +304,7 @@ func (i *GtmDatacenter) ToGtmDatacenterOutputWithContext(ctx context.Context) Gt
 // GtmDatacenterArrayInput is an input type that accepts GtmDatacenterArray and GtmDatacenterArrayOutput values.
 // You can construct a concrete instance of `GtmDatacenterArrayInput` via:
 //
-//          GtmDatacenterArray{ GtmDatacenterArgs{...} }
+//	GtmDatacenterArray{ GtmDatacenterArgs{...} }
 type GtmDatacenterArrayInput interface {
 	pulumi.Input
 
@@ -329,7 +329,7 @@ func (i GtmDatacenterArray) ToGtmDatacenterArrayOutputWithContext(ctx context.Co
 // GtmDatacenterMapInput is an input type that accepts GtmDatacenterMap and GtmDatacenterMapOutput values.
 // You can construct a concrete instance of `GtmDatacenterMapInput` via:
 //
-//          GtmDatacenterMap{ "key": GtmDatacenterArgs{...} }
+//	GtmDatacenterMap{ "key": GtmDatacenterArgs{...} }
 type GtmDatacenterMapInput interface {
 	pulumi.Input
 

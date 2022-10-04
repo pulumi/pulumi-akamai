@@ -47,7 +47,7 @@ namespace Pulumi.Akamai
     public partial class AppSecConfigurationRename : Pulumi.CustomResource
     {
         /// <summary>
-        /// . Unique identifier of the security configurating being renamed.
+        /// . Unique identifier of the security configuring being renamed.
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
@@ -111,7 +111,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecConfigurationRenameArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configurating being renamed.
+        /// . Unique identifier of the security configuring being renamed.
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
@@ -136,7 +136,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecConfigurationRenameState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configurating being renamed.
+        /// . Unique identifier of the security configuring being renamed.
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }

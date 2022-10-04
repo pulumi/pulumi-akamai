@@ -23,7 +23,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string ConnectorName;
         /// <summary>
-        /// - (Required) **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
+        /// **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
         /// </summary>
         public readonly string EventCollectorToken;
         /// <summary>

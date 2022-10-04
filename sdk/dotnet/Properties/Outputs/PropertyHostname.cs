@@ -14,7 +14,7 @@ namespace Pulumi.Akamai.Properties.Outputs
     public sealed class PropertyHostname
     {
         /// <summary>
-        /// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+        /// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
         /// </summary>
         public readonly string CertProvisioningType;
         public readonly ImmutableArray<Outputs.PropertyHostnameCertStatus> CertStatuses;

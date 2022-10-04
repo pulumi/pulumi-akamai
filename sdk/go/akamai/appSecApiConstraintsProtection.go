@@ -25,29 +25,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecApiConstraintsProtection(ctx, "protection", &akamai.AppSecApiConstraintsProtectionArgs{
-// 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.String("gms1_134637"),
-// 			Enabled:          pulumi.Bool(true),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecApiConstraintsProtection(ctx, "protection", &akamai.AppSecApiConstraintsProtectionArgs{
+//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId: pulumi.String("gms1_134637"),
+//				Enabled:          pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
@@ -57,10 +60,13 @@ import (
 type AppSecApiConstraintsProtection struct {
 	pulumi.CustomResourceState
 
-	ConfigId pulumi.IntOutput  `pulumi:"configId"`
-	Enabled  pulumi.BoolOutput `pulumi:"enabled"`
-	// Text Export representation
-	OutputText       pulumi.StringOutput `pulumi:"outputText"`
+	// Unique identifier of the security configuration
+	ConfigId pulumi.IntOutput `pulumi:"configId"`
+	// Whether to enable API constraints protection
+	Enabled pulumi.BoolOutput `pulumi:"enabled"`
+	// Text representation
+	OutputText pulumi.StringOutput `pulumi:"outputText"`
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
 
@@ -102,18 +108,24 @@ func GetAppSecApiConstraintsProtection(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecApiConstraintsProtection resources.
 type appSecApiConstraintsProtectionState struct {
-	ConfigId *int  `pulumi:"configId"`
-	Enabled  *bool `pulumi:"enabled"`
-	// Text Export representation
-	OutputText       *string `pulumi:"outputText"`
+	// Unique identifier of the security configuration
+	ConfigId *int `pulumi:"configId"`
+	// Whether to enable API constraints protection
+	Enabled *bool `pulumi:"enabled"`
+	// Text representation
+	OutputText *string `pulumi:"outputText"`
+	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppSecApiConstraintsProtectionState struct {
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	Enabled  pulumi.BoolPtrInput
-	// Text Export representation
-	OutputText       pulumi.StringPtrInput
+	// Whether to enable API constraints protection
+	Enabled pulumi.BoolPtrInput
+	// Text representation
+	OutputText pulumi.StringPtrInput
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -122,15 +134,21 @@ func (AppSecApiConstraintsProtectionState) ElementType() reflect.Type {
 }
 
 type appSecApiConstraintsProtectionArgs struct {
-	ConfigId         int    `pulumi:"configId"`
-	Enabled          bool   `pulumi:"enabled"`
+	// Unique identifier of the security configuration
+	ConfigId int `pulumi:"configId"`
+	// Whether to enable API constraints protection
+	Enabled bool `pulumi:"enabled"`
+	// Unique identifier of the security policy
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // The set of arguments for constructing a AppSecApiConstraintsProtection resource.
 type AppSecApiConstraintsProtectionArgs struct {
-	ConfigId         pulumi.IntInput
-	Enabled          pulumi.BoolInput
+	// Unique identifier of the security configuration
+	ConfigId pulumi.IntInput
+	// Whether to enable API constraints protection
+	Enabled pulumi.BoolInput
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringInput
 }
 
@@ -160,7 +178,7 @@ func (i *AppSecApiConstraintsProtection) ToAppSecApiConstraintsProtectionOutputW
 // AppSecApiConstraintsProtectionArrayInput is an input type that accepts AppSecApiConstraintsProtectionArray and AppSecApiConstraintsProtectionArrayOutput values.
 // You can construct a concrete instance of `AppSecApiConstraintsProtectionArrayInput` via:
 //
-//          AppSecApiConstraintsProtectionArray{ AppSecApiConstraintsProtectionArgs{...} }
+//	AppSecApiConstraintsProtectionArray{ AppSecApiConstraintsProtectionArgs{...} }
 type AppSecApiConstraintsProtectionArrayInput interface {
 	pulumi.Input
 
@@ -185,7 +203,7 @@ func (i AppSecApiConstraintsProtectionArray) ToAppSecApiConstraintsProtectionArr
 // AppSecApiConstraintsProtectionMapInput is an input type that accepts AppSecApiConstraintsProtectionMap and AppSecApiConstraintsProtectionMapOutput values.
 // You can construct a concrete instance of `AppSecApiConstraintsProtectionMapInput` via:
 //
-//          AppSecApiConstraintsProtectionMap{ "key": AppSecApiConstraintsProtectionArgs{...} }
+//	AppSecApiConstraintsProtectionMap{ "key": AppSecApiConstraintsProtectionArgs{...} }
 type AppSecApiConstraintsProtectionMapInput interface {
 	pulumi.Input
 
@@ -221,19 +239,22 @@ func (o AppSecApiConstraintsProtectionOutput) ToAppSecApiConstraintsProtectionOu
 	return o
 }
 
+// Unique identifier of the security configuration
 func (o AppSecApiConstraintsProtectionOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecApiConstraintsProtection) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
+// Whether to enable API constraints protection
 func (o AppSecApiConstraintsProtectionOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AppSecApiConstraintsProtection) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Text Export representation
+// Text representation
 func (o AppSecApiConstraintsProtectionOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecApiConstraintsProtection) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
 }
 
+// Unique identifier of the security policy
 func (o AppSecApiConstraintsProtectionOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecApiConstraintsProtection) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }

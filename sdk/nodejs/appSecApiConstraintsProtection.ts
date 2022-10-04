@@ -62,12 +62,21 @@ export class AppSecApiConstraintsProtection extends pulumi.CustomResource {
         return obj['__pulumiType'] === AppSecApiConstraintsProtection.__pulumiType;
     }
 
+    /**
+     * Unique identifier of the security configuration
+     */
     public readonly configId!: pulumi.Output<number>;
+    /**
+     * Whether to enable API constraints protection
+     */
     public readonly enabled!: pulumi.Output<boolean>;
     /**
-     * Text Export representation
+     * Text representation
      */
     public /*out*/ readonly outputText!: pulumi.Output<string>;
+    /**
+     * Unique identifier of the security policy
+     */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
     /**
@@ -112,12 +121,21 @@ export class AppSecApiConstraintsProtection extends pulumi.CustomResource {
  * Input properties used for looking up and filtering AppSecApiConstraintsProtection resources.
  */
 export interface AppSecApiConstraintsProtectionState {
+    /**
+     * Unique identifier of the security configuration
+     */
     configId?: pulumi.Input<number>;
+    /**
+     * Whether to enable API constraints protection
+     */
     enabled?: pulumi.Input<boolean>;
     /**
-     * Text Export representation
+     * Text representation
      */
     outputText?: pulumi.Input<string>;
+    /**
+     * Unique identifier of the security policy
+     */
     securityPolicyId?: pulumi.Input<string>;
 }
 
@@ -125,7 +143,16 @@ export interface AppSecApiConstraintsProtectionState {
  * The set of arguments for constructing a AppSecApiConstraintsProtection resource.
  */
 export interface AppSecApiConstraintsProtectionArgs {
+    /**
+     * Unique identifier of the security configuration
+     */
     configId: pulumi.Input<number>;
+    /**
+     * Whether to enable API constraints protection
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Unique identifier of the security policy
+     */
     securityPolicyId: pulumi.Input<string>;
 }

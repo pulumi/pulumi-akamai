@@ -12,7 +12,7 @@ import (
 
 // **Scopes**: Security configuration; hostname
 //
-// Returns information about any other configuration versions that contain a hostname found in the current configuration version. The returned information is described in the [List hostname overlaps](https://developer.akamai.com/api/cloud_security/application_security/v1.html#gethostnamecoverageoverlapping) section of the Application Security API.
+// Returns information about any other configuration versions that contain a hostname found in the current configuration version.
 //
 // **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/hostname-coverage/overlapping](https://techdocs.akamai.com/application-security/reference/get-hostname-coverage-overlapping)
 //
@@ -24,28 +24,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.GetAppSecHostnameCoverageOverlapping(ctx, &GetAppSecHostnameCoverageOverlappingArgs{
-// 			ConfigId: configuration.ConfigId,
-// 			Hostname: "documentation.akamai.com",
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.GetAppSecHostnameCoverageOverlapping(ctx, &GetAppSecHostnameCoverageOverlappingArgs{
+//				ConfigId: configuration.ConfigId,
+//				Hostname: "documentation.akamai.com",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //

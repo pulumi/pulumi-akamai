@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.LookupCloudletsApplicationLoadBalancer(ctx, &GetCloudletsApplicationLoadBalancerArgs{
-// 			OriginId: "alb_test_1",
-// 			Version:  pulumi.IntRef(1),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.LookupCloudletsApplicationLoadBalancer(ctx, &GetCloudletsApplicationLoadBalancerArgs{
+//				OriginId: "alb_test_1",
+//				Version:  pulumi.IntRef(1),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Attributes reference
@@ -51,34 +54,35 @@ import (
 // * `immutable` - Whether you can edit the load balancing version. The default setting for this member is false. It automatically becomes true when the load balancing version is activated for the first time.
 // * `lastModifiedBy` - The user who last modified the load balancing configuration.
 // * `lastModifiedDate` - The date, in ISO 8601 format, when the initial load balancing configuration was last modified.
-// * `warnings` - A list of warnings that occured during the activation of the load balancing configuration.
+// * `warnings` - A list of warnings that occurred during the activation of the load balancing configuration.
 // * `dataCenters` - Specifies the Conditional Origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an origin type of `CUSTOMER` or `NETSTORAGE` can be used as data centers in an Application Load Balancer configuration.
-//   * `city` - The city in which the data center is located.
-//   * `cloudServerHostHeaderOverride` - Whether the cloud server host header is overridden.
-//   * `cloudService` - Whether this datacenter is a cloud service.
-//   * `continent` - The code of the continent on which the data center is located. See [Continent Codes](https://control.akamai.com/dl/edgescape/continentCodes.csv) for a list of valid codes.
-//   * `country` - The country in which the data center is located. See [Country Codes](https://control.akamai.com/dl/edgescape/cc2continent.csv) for a list of valid codes.
-//   * `hostname` - The name of the host that can be used as a Conditional Origin. This should match the `hostname` value defined for this datacenter in Property Manager.
-//   * `latitude` - The latitude value for the data center. This member supports six decimal places of precision.
-//   * `livenessHosts` - A list of the origin servers used to poll the data centers in an Application Load Balancer configuration. These servers support basic HTTP polling.
-//   * `longitude` - The longitude value for the data center. This member supports six decimal places of precision.
-//   * `originId` - The ID of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
-//   * `percent` - The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
-//   * `stateOrProvince` - The state, province, or region where the data center is located.
+//   - `city` - The city in which the data center is located.
+//   - `cloudServerHostHeaderOverride` - Whether the cloud server host header is overridden.
+//   - `cloudService` - Whether this datacenter is a cloud service.
+//   - `continent` - The code of the continent on which the data center is located. See [Continent Codes](https://control.akamai.com/dl/edgescape/continentCodes.csv) for a list of valid codes.
+//   - `country` - The country in which the data center is located. See [Country Codes](https://control.akamai.com/dl/edgescape/cc2continent.csv) for a list of valid codes.
+//   - `hostname` - The name of the host that can be used as a Conditional Origin. This should match the `hostname` value defined for this datacenter in Property Manager.
+//   - `latitude` - The latitude value for the data center. This member supports six decimal places of precision.
+//   - `livenessHosts` - A list of the origin servers used to poll the data centers in an Application Load Balancer configuration. These servers support basic HTTP polling.
+//   - `longitude` - The longitude value for the data center. This member supports six decimal places of precision.
+//   - `originId` - The ID of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+//   - `percent` - The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
+//   - `stateOrProvince` - The state, province, or region where the data center is located.
+//
 // * `livenessSettings` - Specifies the health of each load balanced data center defined in the data center list.
-//   * `hostHeader` - The Host header for the liveness HTTP request.
-//   * `additionalHeaders` - Maps additional case-insensitive HTTP header names included to the liveness testing requests.
-//   * `interval` - The frequency of liveness tests. Defaults to 60 seconds, minimum is 10 seconds.
-//   * `path` - The path to the test object used for liveness testing. The function of the test object is to help determine whether the data center is functioning.
-//   * `peerCertificateVerification` - Whether to validate the origin certificate for an HTTPS request.
-//   * `port` - The port for the test object. The default port is 80, which is standard for HTTP. Enter 443 if you are using HTTPS.
-//   * `protocol` - The protocol or scheme for the database, either `HTTP` or `HTTPS`.
-//   * `requestString` - The request used for TCP and TCPS tests.
-//   * `responseString` - The response used for TCP and TCPS tests.
-//   * `status3xxFailure` - If `true`, marks the liveness test as failed when the request returns a 3xx (redirection) status code.
-//   * `status4xxFailure` - If `true`, marks the liveness test as failed when the request returns a 4xx (client error) status code.
-//   * `status5xxFailure` - If `true`, marks the liveness test as failed when the request returns a 5xx (server error) status code.
-//   * `timeout` - The number of seconds the system waits before failing the liveness test.
+//   - `hostHeader` - The Host header for the liveness HTTP request.
+//   - `additionalHeaders` - Maps additional case-insensitive HTTP header names included to the liveness testing requests.
+//   - `interval` - The frequency of liveness tests. Defaults to 60 seconds, minimum is 10 seconds.
+//   - `path` - The path to the test object used for liveness testing. The function of the test object is to help determine whether the data center is functioning.
+//   - `peerCertificateVerification` - Whether to validate the origin certificate for an HTTPS request.
+//   - `port` - The port for the test object. The default port is 80, which is standard for HTTP. Enter 443 if you are using HTTPS.
+//   - `protocol` - The protocol or scheme for the database, either `HTTP` or `HTTPS`.
+//   - `requestString` - The request used for TCP and TCPS tests.
+//   - `responseString` - The response used for TCP and TCPS tests.
+//   - `status3xxFailure` - If `true`, marks the liveness test as failed when the request returns a 3xx (redirection) status code.
+//   - `status4xxFailure` - If `true`, marks the liveness test as failed when the request returns a 4xx (client error) status code.
+//   - `status5xxFailure` - If `true`, marks the liveness test as failed when the request returns a 5xx (server error) status code.
+//   - `timeout` - The number of seconds the system waits before failing the liveness test.
 func LookupCloudletsApplicationLoadBalancer(ctx *pulumi.Context, args *LookupCloudletsApplicationLoadBalancerArgs, opts ...pulumi.InvokeOption) (*LookupCloudletsApplicationLoadBalancerResult, error) {
 	var rv LookupCloudletsApplicationLoadBalancerResult
 	err := ctx.Invoke("akamai:index/getCloudletsApplicationLoadBalancer:getCloudletsApplicationLoadBalancer", args, &rv, opts...)

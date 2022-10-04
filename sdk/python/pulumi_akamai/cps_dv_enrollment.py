@@ -27,6 +27,7 @@ class CpsDvEnrollmentArgs:
                  sni_only: pulumi.Input[bool],
                  tech_contact: pulumi.Input['CpsDvEnrollmentTechContactArgs'],
                  acknowledge_pre_verification_warnings: Optional[pulumi.Input[bool]] = None,
+                 allow_duplicate_common_name: Optional[pulumi.Input[bool]] = None,
                  certificate_chain_type: Optional[pulumi.Input[str]] = None,
                  enable_multi_stacked_certificates: Optional[pulumi.Input[bool]] = None,
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
@@ -59,6 +60,8 @@ class CpsDvEnrollmentArgs:
         pulumi.set(__self__, "tech_contact", tech_contact)
         if acknowledge_pre_verification_warnings is not None:
             pulumi.set(__self__, "acknowledge_pre_verification_warnings", acknowledge_pre_verification_warnings)
+        if allow_duplicate_common_name is not None:
+            pulumi.set(__self__, "allow_duplicate_common_name", allow_duplicate_common_name)
         if certificate_chain_type is not None:
             pulumi.set(__self__, "certificate_chain_type", certificate_chain_type)
         if enable_multi_stacked_certificates is not None:
@@ -199,6 +202,15 @@ class CpsDvEnrollmentArgs:
         pulumi.set(self, "acknowledge_pre_verification_warnings", value)
 
     @property
+    @pulumi.getter(name="allowDuplicateCommonName")
+    def allow_duplicate_common_name(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "allow_duplicate_common_name")
+
+    @allow_duplicate_common_name.setter
+    def allow_duplicate_common_name(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "allow_duplicate_common_name", value)
+
+    @property
     @pulumi.getter(name="certificateChainType")
     def certificate_chain_type(self) -> Optional[pulumi.Input[str]]:
         """
@@ -240,6 +252,7 @@ class _CpsDvEnrollmentState:
     def __init__(__self__, *,
                  acknowledge_pre_verification_warnings: Optional[pulumi.Input[bool]] = None,
                  admin_contact: Optional[pulumi.Input['CpsDvEnrollmentAdminContactArgs']] = None,
+                 allow_duplicate_common_name: Optional[pulumi.Input[bool]] = None,
                  certificate_chain_type: Optional[pulumi.Input[str]] = None,
                  certificate_type: Optional[pulumi.Input[str]] = None,
                  common_name: Optional[pulumi.Input[str]] = None,
@@ -278,6 +291,8 @@ class _CpsDvEnrollmentState:
             pulumi.set(__self__, "acknowledge_pre_verification_warnings", acknowledge_pre_verification_warnings)
         if admin_contact is not None:
             pulumi.set(__self__, "admin_contact", admin_contact)
+        if allow_duplicate_common_name is not None:
+            pulumi.set(__self__, "allow_duplicate_common_name", allow_duplicate_common_name)
         if certificate_chain_type is not None:
             pulumi.set(__self__, "certificate_chain_type", certificate_chain_type)
         if certificate_type is not None:
@@ -336,6 +351,15 @@ class _CpsDvEnrollmentState:
     @admin_contact.setter
     def admin_contact(self, value: Optional[pulumi.Input['CpsDvEnrollmentAdminContactArgs']]):
         pulumi.set(self, "admin_contact", value)
+
+    @property
+    @pulumi.getter(name="allowDuplicateCommonName")
+    def allow_duplicate_common_name(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "allow_duplicate_common_name")
+
+    @allow_duplicate_common_name.setter
+    def allow_duplicate_common_name(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "allow_duplicate_common_name", value)
 
     @property
     @pulumi.getter(name="certificateChainType")
@@ -534,6 +558,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  acknowledge_pre_verification_warnings: Optional[pulumi.Input[bool]] = None,
                  admin_contact: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentAdminContactArgs']]] = None,
+                 allow_duplicate_common_name: Optional[pulumi.Input[bool]] = None,
                  certificate_chain_type: Optional[pulumi.Input[str]] = None,
                  common_name: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
@@ -821,6 +846,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  acknowledge_pre_verification_warnings: Optional[pulumi.Input[bool]] = None,
                  admin_contact: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentAdminContactArgs']]] = None,
+                 allow_duplicate_common_name: Optional[pulumi.Input[bool]] = None,
                  certificate_chain_type: Optional[pulumi.Input[str]] = None,
                  common_name: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
@@ -846,6 +872,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
             if admin_contact is None and not opts.urn:
                 raise TypeError("Missing required property 'admin_contact'")
             __props__.__dict__["admin_contact"] = admin_contact
+            __props__.__dict__["allow_duplicate_common_name"] = allow_duplicate_common_name
             __props__.__dict__["certificate_chain_type"] = certificate_chain_type
             if common_name is None and not opts.urn:
                 raise TypeError("Missing required property 'common_name'")
@@ -893,6 +920,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             acknowledge_pre_verification_warnings: Optional[pulumi.Input[bool]] = None,
             admin_contact: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentAdminContactArgs']]] = None,
+            allow_duplicate_common_name: Optional[pulumi.Input[bool]] = None,
             certificate_chain_type: Optional[pulumi.Input[str]] = None,
             certificate_type: Optional[pulumi.Input[str]] = None,
             common_name: Optional[pulumi.Input[str]] = None,
@@ -938,6 +966,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
 
         __props__.__dict__["acknowledge_pre_verification_warnings"] = acknowledge_pre_verification_warnings
         __props__.__dict__["admin_contact"] = admin_contact
+        __props__.__dict__["allow_duplicate_common_name"] = allow_duplicate_common_name
         __props__.__dict__["certificate_chain_type"] = certificate_chain_type
         __props__.__dict__["certificate_type"] = certificate_type
         __props__.__dict__["common_name"] = common_name
@@ -972,6 +1001,11 @@ class CpsDvEnrollment(pulumi.CustomResource):
         Contact information for the certificate administrator at your company.
         """
         return pulumi.get(self, "admin_contact")
+
+    @property
+    @pulumi.getter(name="allowDuplicateCommonName")
+    def allow_duplicate_common_name(self) -> pulumi.Output[Optional[bool]]:
+        return pulumi.get(self, "allow_duplicate_common_name")
 
     @property
     @pulumi.getter(name="certificateChainType")

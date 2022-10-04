@@ -30,7 +30,7 @@ type GetContractArgs struct {
 	//
 	// Deprecated: The setting "group" has been deprecated.
 	Group *string `pulumi:"group"`
-	// The unique ID of the group containing the contract, including the  `grp_` prefix.
+	// - The unique ID of the group containing the contract, including the  `grp_` prefix.
 	GroupId *string `pulumi:"groupId"`
 	// The name of the group containing the contract.
 	GroupName *string `pulumi:"groupName"`
@@ -65,7 +65,7 @@ type GetContractOutputArgs struct {
 	//
 	// Deprecated: The setting "group" has been deprecated.
 	Group pulumi.StringPtrInput `pulumi:"group"`
-	// The unique ID of the group containing the contract, including the  `grp_` prefix.
+	// - The unique ID of the group containing the contract, including the  `grp_` prefix.
 	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
 	// The name of the group containing the contract.
 	GroupName pulumi.StringPtrInput `pulumi:"groupName"`

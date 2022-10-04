@@ -60,6 +60,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppSecIPGeo{}
 	case "akamai:index/appSecIPGeoProtection:AppSecIPGeoProtection":
 		r = &AppSecIPGeoProtection{}
+	case "akamai:index/appSecMalwarePolicy:AppSecMalwarePolicy":
+		r = &AppSecMalwarePolicy{}
+	case "akamai:index/appSecMalwarePolicyAction:AppSecMalwarePolicyAction":
+		r = &AppSecMalwarePolicyAction{}
+	case "akamai:index/appSecMalwarePolicyActions:AppSecMalwarePolicyActions":
+		r = &AppSecMalwarePolicyActions{}
+	case "akamai:index/appSecMalwareProtection:AppSecMalwareProtection":
+		r = &AppSecMalwareProtection{}
 	case "akamai:index/appSecMatchTarget:AppSecMatchTarget":
 		r = &AppSecMatchTarget{}
 	case "akamai:index/appSecMatchTargetSequence:AppSecMatchTargetSequence":
@@ -294,6 +302,26 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/appSecIPGeoProtection",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/appSecMalwarePolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/appSecMalwarePolicyAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/appSecMalwarePolicyActions",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/appSecMalwareProtection",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

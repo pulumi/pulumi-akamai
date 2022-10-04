@@ -24,7 +24,7 @@ import * as utilities from "./utilities";
  *
  * * `contactTypes` — A list of contact types.
  *
- * [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getadmincontacttypes)
+ * [API Reference](https://techdocs.akamai.com/iam-api/reference/get-user-contact-types)
  */
 export function getIamContactTypes(opts?: pulumi.InvokeOptions): Promise<GetIamContactTypesResult> {
     if (!opts) {

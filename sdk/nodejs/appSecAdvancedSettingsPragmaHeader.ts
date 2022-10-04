@@ -65,7 +65,7 @@ export class AppSecAdvancedSettingsPragmaHeader extends pulumi.CustomResource {
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`. You can view a sample JSON file in the [Modify pragma settings for a security setting](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpragmaheaderconfiguration) section of the Application Security API documentation.
+     * . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`.
      */
     public readonly pragmaHeader!: pulumi.Output<string>;
     /**
@@ -115,7 +115,7 @@ export interface AppSecAdvancedSettingsPragmaHeaderState {
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`. You can view a sample JSON file in the [Modify pragma settings for a security setting](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpragmaheaderconfiguration) section of the Application Security API documentation.
+     * . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`.
      */
     pragmaHeader?: pulumi.Input<string>;
     /**
@@ -133,7 +133,7 @@ export interface AppSecAdvancedSettingsPragmaHeaderArgs {
      */
     configId: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`. You can view a sample JSON file in the [Modify pragma settings for a security setting](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpragmaheaderconfiguration) section of the Application Security API documentation.
+     * . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`.
      */
     pragmaHeader: pulumi.Input<string>;
     /**

@@ -65,7 +65,7 @@ def get_app_sec_hostname_coverage(opts: Optional[pulumi.InvokeOptions] = None) -
     """
     **Scopes**: Individual account
 
-    Returns information about the hostnames associated with your account; the returned data includes the hostname's protections, activation status, and other summary information. This information is described in the [HostnameCoverage members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames) section of the Application Security API.
+    Returns information about the hostnames associated with your account. The returned data includes the hostname's protections, activation status, and other summary information.
 
     **Related API Endpoint**: [/appsec/v1/hostname-coverage](https://techdocs.akamai.com/application-security/reference/get-hostname-coverage)
 

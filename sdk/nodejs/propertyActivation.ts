@@ -90,7 +90,7 @@ export class PropertyActivation extends pulumi.CustomResource {
      */
     public readonly contacts!: pulumi.Output<string[]>;
     /**
-     * The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+     * The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
      */
     public /*out*/ readonly errors!: pulumi.Output<string>;
     /**
@@ -125,7 +125,7 @@ export class PropertyActivation extends pulumi.CustomResource {
      */
     public readonly version!: pulumi.Output<number>;
     /**
-     * The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+     * The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
      */
     public /*out*/ readonly warnings!: pulumi.Output<string>;
 
@@ -201,7 +201,7 @@ export interface PropertyActivationState {
      */
     contacts?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+     * The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
      */
     errors?: pulumi.Input<string>;
     /**
@@ -236,7 +236,7 @@ export interface PropertyActivationState {
      */
     version?: pulumi.Input<number>;
     /**
-     * The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+     * The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
      */
     warnings?: pulumi.Input<string>;
 }

@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.LookupCloudletsPolicy(ctx, &GetCloudletsPolicyArgs{
-// 			PolicyId: 1234,
-// 			Version:  pulumi.IntRef(1),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.LookupCloudletsPolicy(ctx, &GetCloudletsPolicyArgs{
+//				PolicyId: 1234,
+//				Version:  pulumi.IntRef(1),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Attributes reference
@@ -45,8 +48,8 @@ import (
 // * `groupId` - Defines the group association for the policy. You must have edit privileges for the group.
 // * `name` - The unique name of the policy.
 // * `apiVersion` - The specific version of the Cloudlets API.
-// * `cloudletId` - A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `5` for API Prioritization, `7` for Phased Release, or `9` for Application Load Balancer.
-// * `cloudletCode` - The two- or three- character code for the type of Cloudlet, `ALB` for Application Load Balancer, `AP` for API Prioritization, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, and `VP` for Visitor Prioritization.
+// * `cloudletId` - A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
+// * `cloudletCode` - The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
 // * `revisionId` - A unique identifier given to every policy version update.
 // * `description` - The description of this specific policy.
 // * `versionDescription` - The description of this specific policy version.
@@ -55,23 +58,23 @@ import (
 // * `matchRuleFormat` - The format of the Cloudlet-specific `matchRules`.
 // * `warnings` - A JSON encoded list of warnings.
 // * `activations` - A list of of current policy activation information, including:
-//   * `apiVersion` - The specific version of the Cloudlets API.
-//   * `network` - The network, either `staging` or `prod` on which a property or a Cloudlets policy has been activated.
-//   * `policyInfo` - A list of Cloudlet policy information, including:
-//       * `policyId` - An integer identifier that is associated with all versions of a policy.
-//       * `name` - The name of the policy.
-//       * `version` - The version number of the policy.
-//       * `status` - The activation status for the policy. Values include the following: `inactive` where the policy version has not been activated. No active property versions reference this policy. `active` where the policy version is currently active (published) and its associated property version is also active. `deactivated` where the policy version was previously activated but it has been superseded by a more recent activation of another policy version. `pending` where the policy version is proceeding through the activation workflow. `failed` where the policy version activation workflow has failed.
-//       * `statusDetail` - Information about the status of an activation operation. This field is not returned when it has no value.
-//       * `activatedBy` - The name of the user who activated the policy.
-//       * `activationDate` - The date on which the policy was activated in milliseconds since epoch.
-//   * `propertyInfo` A list of Cloudlet property information, including:
-//       * `name` - The name of the property.
-//       * `version` - The version number of the activated property.
-//       * `groupId` - Defines the group association for the policy or property. If returns `0`, the policy is not tied to a group and in effect appears in all groups for the account. You must have edit privileges for the group.
-//       * `status` - The activation status for the property. Values include the following: `inactive` where the policy version has not been activated. No active property versions reference this policy. `active` where the policy version is currently active (published) and its associated property version is also active. `deactivated` where the policy version was previously activated but it has been superseded by a more recent activation of another policy version. `pending` where the policy version is proceeding through the activation workflow. `failed` where the policy version activation workflow has failed.
-//       * `activatedBy` - The name of the user who activated the property.
-//       * `activationDate` - The date on which the property was activated in milliseconds since epoch.
+//   - `apiVersion` - The specific version of the Cloudlets API.
+//   - `network` - The network, either `staging` or `prod` on which a property or a Cloudlets policy has been activated.
+//   - `policyInfo` - A list of Cloudlet policy information, including:
+//   - `policyId` - An integer identifier that is associated with all versions of a policy.
+//   - `name` - The name of the policy.
+//   - `version` - The version number of the policy.
+//   - `status` - The activation status for the policy. Values include the following: `inactive` where the policy version has not been activated. No active property versions reference this policy. `active` where the policy version is currently active (published) and its associated property version is also active. `deactivated` where the policy version was previously activated but it has been superseded by a more recent activation of another policy version. `pending` where the policy version is proceeding through the activation workflow. `failed` where the policy version activation workflow has failed.
+//   - `statusDetail` - Information about the status of an activation operation. This field is not returned when it has no value.
+//   - `activatedBy` - The name of the user who activated the policy.
+//   - `activationDate` - The date on which the policy was activated in milliseconds since epoch.
+//   - `propertyInfo` A list of Cloudlet property information, including:
+//   - `name` - The name of the property.
+//   - `version` - The version number of the activated property.
+//   - `groupId` - Defines the group association for the policy or property. If returns `0`, the policy is not tied to a group and in effect appears in all groups for the account. You must have edit privileges for the group.
+//   - `status` - The activation status for the property. Values include the following: `inactive` where the policy version has not been activated. No active property versions reference this policy. `active` where the policy version is currently active (published) and its associated property version is also active. `deactivated` where the policy version was previously activated but it has been superseded by a more recent activation of another policy version. `pending` where the policy version is proceeding through the activation workflow. `failed` where the policy version activation workflow has failed.
+//   - `activatedBy` - The name of the user who activated the property.
+//   - `activationDate` - The date on which the property was activated in milliseconds since epoch.
 func LookupCloudletsPolicy(ctx *pulumi.Context, args *LookupCloudletsPolicyArgs, opts ...pulumi.InvokeOption) (*LookupCloudletsPolicyResult, error) {
 	var rv LookupCloudletsPolicyResult
 	err := ctx.Invoke("akamai:index/getCloudletsPolicy:getCloudletsPolicy", args, &rv, opts...)

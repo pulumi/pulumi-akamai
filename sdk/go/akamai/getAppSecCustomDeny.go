@@ -12,7 +12,7 @@ import (
 
 // **Scopes**: Security configuration; custom deny
 //
-// Returns information about custom deny actions: the returned information is described in the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API. Custom denies allow you to craft your own error messages or redirect pages to use when HTTP requests are denied.
+// Returns information about custom deny actions. Custom denies allow you to craft your own error messages or redirect pages to use when HTTP requests are denied.
 //
 // **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/custom-deny](https://techdocs.akamai.com/application-security/reference/get-custom-deny-actions)
 //
@@ -24,38 +24,41 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		customDenyList, err := akamai.LookupAppSecCustomDeny(ctx, &GetAppSecCustomDenyArgs{
-// 			ConfigId: configuration.ConfigId,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("customDenyListOutput", customDenyList.OutputText)
-// 		ctx.Export("customDenyListJson", customDenyList.Json)
-// 		customDeny, err := akamai.LookupAppSecCustomDeny(ctx, &GetAppSecCustomDenyArgs{
-// 			ConfigId:     configuration.ConfigId,
-// 			CustomDenyId: pulumi.StringRef("deny_custom_64386"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("customDenyJson", customDeny.Json)
-// 		ctx.Export("customDenyOutput", customDeny.OutputText)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			customDenyList, err := akamai.LookupAppSecCustomDeny(ctx, &GetAppSecCustomDenyArgs{
+//				ConfigId: configuration.ConfigId,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("customDenyListOutput", customDenyList.OutputText)
+//			ctx.Export("customDenyListJson", customDenyList.Json)
+//			customDeny, err := akamai.LookupAppSecCustomDeny(ctx, &GetAppSecCustomDenyArgs{
+//				ConfigId:     configuration.ConfigId,
+//				CustomDenyId: pulumi.StringRef("deny_custom_64386"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("customDenyJson", customDeny.Json)
+//			ctx.Export("customDenyOutput", customDeny.OutputText)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //

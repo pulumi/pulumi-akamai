@@ -73,11 +73,14 @@ namespace Pulumi.Akamai
     [AkamaiResourceType("akamai:index/appSecConfiguration:AppSecConfiguration")]
     public partial class AppSecConfiguration : Pulumi.CustomResource
     {
+        /// <summary>
+        /// Unique identifier of the new security configuration
+        /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the Akamai contract t associated with the new configuration.
+        /// . Unique identifier of the Akamai contract associated with the new configuration.
         /// </summary>
         [Output("contractId")]
         public Output<string> ContractId { get; private set; } = null!;
@@ -165,7 +168,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecConfigurationArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the Akamai contract t associated with the new configuration.
+        /// . Unique identifier of the Akamai contract associated with the new configuration.
         /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
@@ -219,11 +222,14 @@ namespace Pulumi.Akamai
 
     public sealed class AppSecConfigurationState : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Unique identifier of the new security configuration
+        /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the Akamai contract t associated with the new configuration.
+        /// . Unique identifier of the Akamai contract associated with the new configuration.
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }

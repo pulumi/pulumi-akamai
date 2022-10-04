@@ -25,29 +25,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecSlowPostProtection(ctx, "protection", &akamai.AppSecSlowPostProtectionArgs{
-// 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.String("gms1_134637"),
-// 			Enabled:          pulumi.Bool(true),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecSlowPostProtection(ctx, "protection", &akamai.AppSecSlowPostProtectionArgs{
+//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId: pulumi.String("gms1_134637"),
+//				Enabled:          pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
@@ -61,7 +64,7 @@ type AppSecSlowPostProtection struct {
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// . Set to **true** to enable slow POST protection; set to **false** to disable slow POST protection.
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// Text Export representation
+	// Text representation
 	OutputText pulumi.StringOutput `pulumi:"outputText"`
 	// . Unique identifier of the security policy associated with the slow POST protection settings being modified.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
@@ -109,7 +112,7 @@ type appSecSlowPostProtectionState struct {
 	ConfigId *int `pulumi:"configId"`
 	// . Set to **true** to enable slow POST protection; set to **false** to disable slow POST protection.
 	Enabled *bool `pulumi:"enabled"`
-	// Text Export representation
+	// Text representation
 	OutputText *string `pulumi:"outputText"`
 	// . Unique identifier of the security policy associated with the slow POST protection settings being modified.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
@@ -120,7 +123,7 @@ type AppSecSlowPostProtectionState struct {
 	ConfigId pulumi.IntPtrInput
 	// . Set to **true** to enable slow POST protection; set to **false** to disable slow POST protection.
 	Enabled pulumi.BoolPtrInput
-	// Text Export representation
+	// Text representation
 	OutputText pulumi.StringPtrInput
 	// . Unique identifier of the security policy associated with the slow POST protection settings being modified.
 	SecurityPolicyId pulumi.StringPtrInput
@@ -175,7 +178,7 @@ func (i *AppSecSlowPostProtection) ToAppSecSlowPostProtectionOutputWithContext(c
 // AppSecSlowPostProtectionArrayInput is an input type that accepts AppSecSlowPostProtectionArray and AppSecSlowPostProtectionArrayOutput values.
 // You can construct a concrete instance of `AppSecSlowPostProtectionArrayInput` via:
 //
-//          AppSecSlowPostProtectionArray{ AppSecSlowPostProtectionArgs{...} }
+//	AppSecSlowPostProtectionArray{ AppSecSlowPostProtectionArgs{...} }
 type AppSecSlowPostProtectionArrayInput interface {
 	pulumi.Input
 
@@ -200,7 +203,7 @@ func (i AppSecSlowPostProtectionArray) ToAppSecSlowPostProtectionArrayOutputWith
 // AppSecSlowPostProtectionMapInput is an input type that accepts AppSecSlowPostProtectionMap and AppSecSlowPostProtectionMapOutput values.
 // You can construct a concrete instance of `AppSecSlowPostProtectionMapInput` via:
 //
-//          AppSecSlowPostProtectionMap{ "key": AppSecSlowPostProtectionArgs{...} }
+//	AppSecSlowPostProtectionMap{ "key": AppSecSlowPostProtectionArgs{...} }
 type AppSecSlowPostProtectionMapInput interface {
 	pulumi.Input
 
@@ -246,7 +249,7 @@ func (o AppSecSlowPostProtectionOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AppSecSlowPostProtection) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Text Export representation
+// Text representation
 func (o AppSecSlowPostProtectionOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecSlowPostProtection) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
 }

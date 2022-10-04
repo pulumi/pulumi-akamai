@@ -23,23 +23,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewEdgeWorkersActivation(ctx, "test", &akamai.EdgeWorkersActivationArgs{
-// 			EdgeworkerId: pulumi.Int(1234),
-// 			Network:      pulumi.String("STAGING"),
-// 			Version:      pulumi.String("test1"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewEdgeWorkersActivation(ctx, "test", &akamai.EdgeWorkersActivationArgs{
+//				EdgeworkerId: pulumi.Int(1234),
+//				Network:      pulumi.String("STAGING"),
+//				Version:      pulumi.String("test1"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type EdgeWorkersActivation struct {
 	pulumi.CustomResourceState
@@ -162,7 +165,7 @@ func (i *EdgeWorkersActivation) ToEdgeWorkersActivationOutputWithContext(ctx con
 // EdgeWorkersActivationArrayInput is an input type that accepts EdgeWorkersActivationArray and EdgeWorkersActivationArrayOutput values.
 // You can construct a concrete instance of `EdgeWorkersActivationArrayInput` via:
 //
-//          EdgeWorkersActivationArray{ EdgeWorkersActivationArgs{...} }
+//	EdgeWorkersActivationArray{ EdgeWorkersActivationArgs{...} }
 type EdgeWorkersActivationArrayInput interface {
 	pulumi.Input
 
@@ -187,7 +190,7 @@ func (i EdgeWorkersActivationArray) ToEdgeWorkersActivationArrayOutputWithContex
 // EdgeWorkersActivationMapInput is an input type that accepts EdgeWorkersActivationMap and EdgeWorkersActivationMapOutput values.
 // You can construct a concrete instance of `EdgeWorkersActivationMapInput` via:
 //
-//          EdgeWorkersActivationMap{ "key": EdgeWorkersActivationArgs{...} }
+//	EdgeWorkersActivationMap{ "key": EdgeWorkersActivationArgs{...} }
 type EdgeWorkersActivationMapInput interface {
 	pulumi.Input
 

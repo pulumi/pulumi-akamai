@@ -14,12 +14,12 @@ import (
 // These attributes are returned:
 //
 // * `timezones` — Supported timezones.
-//   * `timezone` - The time zone ID.
-//   * `description` - The description of a time zone, including the GMT +/-.
-//   * `offset` - The time zone offset from GMT.
-//   * `posix` - The time zone posix.
+//   - `timezone` - The time zone ID.
+//   - `description` - The description of a time zone, including the GMT +/-.
+//   - `offset` - The time zone offset from GMT.
+//   - `posix` - The time zone posix.
 //
-// [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getadmintimezones)
+// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-timezones)
 func GetIamTimezones(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamTimezonesResult, error) {
 	var rv GetIamTimezonesResult
 	err := ctx.Invoke("akamai:index/getIamTimezones:getIamTimezones", nil, &rv, opts...)

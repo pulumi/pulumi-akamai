@@ -27,29 +27,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecReputationProtection(ctx, "protection", &akamai.AppSecReputationProtectionArgs{
-// 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.String("gms1_134637"),
-// 			Enabled:          pulumi.Bool(true),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecReputationProtection(ctx, "protection", &akamai.AppSecReputationProtectionArgs{
+//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId: pulumi.String("gms1_134637"),
+//				Enabled:          pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
@@ -63,7 +66,7 @@ type AppSecReputationProtection struct {
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// . Set to **true** to enable reputation protection; set to **false** to disable reputation protection.
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// Text Export representation
+	// Text representation
 	OutputText pulumi.StringOutput `pulumi:"outputText"`
 	// . Unique identifier of the security policy associated with the reputation protection settings being modified.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
@@ -111,7 +114,7 @@ type appSecReputationProtectionState struct {
 	ConfigId *int `pulumi:"configId"`
 	// . Set to **true** to enable reputation protection; set to **false** to disable reputation protection.
 	Enabled *bool `pulumi:"enabled"`
-	// Text Export representation
+	// Text representation
 	OutputText *string `pulumi:"outputText"`
 	// . Unique identifier of the security policy associated with the reputation protection settings being modified.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
@@ -122,7 +125,7 @@ type AppSecReputationProtectionState struct {
 	ConfigId pulumi.IntPtrInput
 	// . Set to **true** to enable reputation protection; set to **false** to disable reputation protection.
 	Enabled pulumi.BoolPtrInput
-	// Text Export representation
+	// Text representation
 	OutputText pulumi.StringPtrInput
 	// . Unique identifier of the security policy associated with the reputation protection settings being modified.
 	SecurityPolicyId pulumi.StringPtrInput
@@ -177,7 +180,7 @@ func (i *AppSecReputationProtection) ToAppSecReputationProtectionOutputWithConte
 // AppSecReputationProtectionArrayInput is an input type that accepts AppSecReputationProtectionArray and AppSecReputationProtectionArrayOutput values.
 // You can construct a concrete instance of `AppSecReputationProtectionArrayInput` via:
 //
-//          AppSecReputationProtectionArray{ AppSecReputationProtectionArgs{...} }
+//	AppSecReputationProtectionArray{ AppSecReputationProtectionArgs{...} }
 type AppSecReputationProtectionArrayInput interface {
 	pulumi.Input
 
@@ -202,7 +205,7 @@ func (i AppSecReputationProtectionArray) ToAppSecReputationProtectionArrayOutput
 // AppSecReputationProtectionMapInput is an input type that accepts AppSecReputationProtectionMap and AppSecReputationProtectionMapOutput values.
 // You can construct a concrete instance of `AppSecReputationProtectionMapInput` via:
 //
-//          AppSecReputationProtectionMap{ "key": AppSecReputationProtectionArgs{...} }
+//	AppSecReputationProtectionMap{ "key": AppSecReputationProtectionArgs{...} }
 type AppSecReputationProtectionMapInput interface {
 	pulumi.Input
 
@@ -248,7 +251,7 @@ func (o AppSecReputationProtectionOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AppSecReputationProtection) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Text Export representation
+// Text representation
 func (o AppSecReputationProtectionOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecReputationProtection) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
 }

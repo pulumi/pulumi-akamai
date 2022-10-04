@@ -29,7 +29,7 @@ class AppSecAttackGroupArgs:
                - **none**. Take no action.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the attack group being modified.
         :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the attack group being modified.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
         """
         pulumi.set(__self__, "attack_group", attack_group)
         pulumi.set(__self__, "attack_group_action", attack_group_action)
@@ -94,7 +94,7 @@ class AppSecAttackGroupArgs:
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> Optional[pulumi.Input[str]]:
         """
-        . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+        . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
         """
         return pulumi.get(self, "condition_exception")
 
@@ -119,7 +119,7 @@ class _AppSecAttackGroupState:
                - **deny**. Block the request,
                - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
                - **none**. Take no action.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the attack group being modified.
         :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the attack group being modified.
         """
@@ -166,7 +166,7 @@ class _AppSecAttackGroupState:
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> Optional[pulumi.Input[str]]:
         """
-        . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+        . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
         """
         return pulumi.get(self, "condition_exception")
 
@@ -242,7 +242,7 @@ class AppSecAttackGroup(pulumi.CustomResource):
                - **deny**. Block the request,
                - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
                - **none**. Take no action.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the attack group being modified.
         :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the attack group being modified.
         """
@@ -346,7 +346,7 @@ class AppSecAttackGroup(pulumi.CustomResource):
                - **deny**. Block the request,
                - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
                - **none**. Take no action.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the attack group being modified.
         :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the attack group being modified.
         """
@@ -385,7 +385,7 @@ class AppSecAttackGroup(pulumi.CustomResource):
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> pulumi.Output[Optional[str]]:
         """
-        . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+        . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
         """
         return pulumi.get(self, "condition_exception")
 

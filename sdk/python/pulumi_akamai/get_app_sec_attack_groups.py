@@ -112,7 +112,42 @@ def get_app_sec_attack_groups(attack_group: Optional[str] = None,
                               security_policy_id: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecAttackGroupsResult:
     """
-    Use this data source to access information about an existing resource.
+    **Scopes**: Security policy; attack group
+
+    Returns the action and the condition-exception information for an attack group or set of attack groups. Attack groups are collections of Kona Rule Set rules used to streamline the management of website protections.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/attack-groups](https://techdocs.akamai.com/application-security/reference/get-policy-attack-groups)
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
+    attack_group = akamai.get_app_sec_attack_groups(config_id=configuration.config_id,
+        security_policy_id="gms1_134637",
+        attack_group="SQL")
+    pulumi.export("attackGroupAction", attack_group.attack_group_action)
+    pulumi.export("conditionException", attack_group.condition_exception)
+    pulumi.export("json", attack_group.json)
+    pulumi.export("outputText", attack_group.output_text)
+    ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `attack_group_action`. Action taken anytime the attack group is triggered. This information is returned only when a single attack group is retrieved. Valid values are:
+      - **alert**. The event is recorded.
+      - **deny**. The request is blocked.
+      - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
+      - **none**. No action is taken.
+    - `condition_exception`. Conditions and exceptions assigned to the attack group. This information is returned only when a single attack group is retrieved.
+    - `json`. JSON-formatted list of the action and the condition-exception information for the attack group. This information is returned only when a single attack group is retrieved.
+    - `output_text`. Tabular report showing the attack group's action as well as Boolean values indicating whether conditions and exceptions have been configured for the group.
+
 
     :param str attack_group: . Unique name of the attack group you want to return information for. If not included, information is returned for all your attack groups.
     :param int config_id: . Unique identifier of the security configuration associated with the attack group.
@@ -142,7 +177,42 @@ def get_app_sec_attack_groups_output(attack_group: Optional[pulumi.Input[Optiona
                                      security_policy_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecAttackGroupsResult]:
     """
-    Use this data source to access information about an existing resource.
+    **Scopes**: Security policy; attack group
+
+    Returns the action and the condition-exception information for an attack group or set of attack groups. Attack groups are collections of Kona Rule Set rules used to streamline the management of website protections.
+
+    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/attack-groups](https://techdocs.akamai.com/application-security/reference/get-policy-attack-groups)
+
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
+    attack_group = akamai.get_app_sec_attack_groups(config_id=configuration.config_id,
+        security_policy_id="gms1_134637",
+        attack_group="SQL")
+    pulumi.export("attackGroupAction", attack_group.attack_group_action)
+    pulumi.export("conditionException", attack_group.condition_exception)
+    pulumi.export("json", attack_group.json)
+    pulumi.export("outputText", attack_group.output_text)
+    ```
+    ## Output Options
+
+    The following options can be used to determine the information returned, and how that returned information is formatted:
+
+    - `attack_group_action`. Action taken anytime the attack group is triggered. This information is returned only when a single attack group is retrieved. Valid values are:
+      - **alert**. The event is recorded.
+      - **deny**. The request is blocked.
+      - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
+      - **none**. No action is taken.
+    - `condition_exception`. Conditions and exceptions assigned to the attack group. This information is returned only when a single attack group is retrieved.
+    - `json`. JSON-formatted list of the action and the condition-exception information for the attack group. This information is returned only when a single attack group is retrieved.
+    - `output_text`. Tabular report showing the attack group's action as well as Boolean values indicating whether conditions and exceptions have been configured for the group.
+
 
     :param str attack_group: . Unique name of the attack group you want to return information for. If not included, information is returned for all your attack groups.
     :param int config_id: . Unique identifier of the security configuration associated with the attack group.

@@ -25,29 +25,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewGtmGeomap(ctx, "demoGeomap", &akamai.GtmGeomapArgs{
-// 			DefaultDatacenter: &GtmGeomapDefaultDatacenterArgs{
-// 				DatacenterId: pulumi.Int(5400),
-// 				Nickname:     pulumi.String("All Others"),
-// 			},
-// 			Domain: pulumi.String("demo_domain.akadns.net"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
-// ## Schema reference
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewGtmGeomap(ctx, "demoGeomap", &akamai.GtmGeomapArgs{
+//				DefaultDatacenter: &GtmGeomapDefaultDatacenterArgs{
+//					DatacenterId: pulumi.Int(5400),
+//					Nickname:     pulumi.String("All Others"),
+//				},
+//				Domain: pulumi.String("demo_domain.akadns.net"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
 //
-// You can download the GTM Geographic Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#geographicmap) page.
+// ```
 type GtmGeomap struct {
 	pulumi.CustomResourceState
 
@@ -186,7 +186,7 @@ func (i *GtmGeomap) ToGtmGeomapOutputWithContext(ctx context.Context) GtmGeomapO
 // GtmGeomapArrayInput is an input type that accepts GtmGeomapArray and GtmGeomapArrayOutput values.
 // You can construct a concrete instance of `GtmGeomapArrayInput` via:
 //
-//          GtmGeomapArray{ GtmGeomapArgs{...} }
+//	GtmGeomapArray{ GtmGeomapArgs{...} }
 type GtmGeomapArrayInput interface {
 	pulumi.Input
 
@@ -211,7 +211,7 @@ func (i GtmGeomapArray) ToGtmGeomapArrayOutputWithContext(ctx context.Context) G
 // GtmGeomapMapInput is an input type that accepts GtmGeomapMap and GtmGeomapMapOutput values.
 // You can construct a concrete instance of `GtmGeomapMapInput` via:
 //
-//          GtmGeomapMap{ "key": GtmGeomapArgs{...} }
+//	GtmGeomapMap{ "key": GtmGeomapArgs{...} }
 type GtmGeomapMapInput interface {
 	pulumi.Input
 

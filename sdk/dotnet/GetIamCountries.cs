@@ -44,7 +44,7 @@ namespace Pulumi.Akamai
         /// 
         /// * `countries` — A list of countries.
         /// 
-        /// [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getadmincountries)
+        /// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-countries)
         /// </summary>
         public static Task<GetIamCountriesResult> InvokeAsync(InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetIamCountriesResult>("akamai:index/getIamCountries:getIamCountries", InvokeArgs.Empty, options.WithDefaults());

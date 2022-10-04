@@ -18,7 +18,7 @@ import * as utilities from "./utilities";
  *   * `offset` - The time zone offset from GMT.
  *   * `posix` - The time zone posix.
  *
- * [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getadmintimezones)
+ * [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-timezones)
  */
 export function getIamTimezones(opts?: pulumi.InvokeOptions): Promise<GetIamTimezonesResult> {
     if (!opts) {

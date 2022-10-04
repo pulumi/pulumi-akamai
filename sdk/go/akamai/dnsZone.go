@@ -221,7 +221,7 @@ func (i *DnsZone) ToDnsZoneOutputWithContext(ctx context.Context) DnsZoneOutput 
 // DnsZoneArrayInput is an input type that accepts DnsZoneArray and DnsZoneArrayOutput values.
 // You can construct a concrete instance of `DnsZoneArrayInput` via:
 //
-//          DnsZoneArray{ DnsZoneArgs{...} }
+//	DnsZoneArray{ DnsZoneArgs{...} }
 type DnsZoneArrayInput interface {
 	pulumi.Input
 
@@ -246,7 +246,7 @@ func (i DnsZoneArray) ToDnsZoneArrayOutputWithContext(ctx context.Context) DnsZo
 // DnsZoneMapInput is an input type that accepts DnsZoneMap and DnsZoneMapOutput values.
 // You can construct a concrete instance of `DnsZoneMapInput` via:
 //
-//          DnsZoneMap{ "key": DnsZoneArgs{...} }
+//	DnsZoneMap{ "key": DnsZoneArgs{...} }
 type DnsZoneMapInput interface {
 	pulumi.Input
 

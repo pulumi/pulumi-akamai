@@ -14,9 +14,9 @@ import (
 // This resource returns this attribute:
 //
 // * `grantableRoles` - Lists which grantable roles you can include in a new custom role or add to an existing custom role.
-//   * `grantedRoleId` - Granted role ID.
-//   * `name` - Granted role name.
-//   * `description` - Granted role description.
+//   - `grantedRoleId` - Granted role ID.
+//   - `name` - Granted role name.
+//   - `description` - Granted role description.
 func GetIamGrantableRoles(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamGrantableRolesResult, error) {
 	var rv GetIamGrantableRolesResult
 	err := ctx.Invoke("akamai:index/getIamGrantableRoles:getIamGrantableRoles", nil, &rv, opts...)

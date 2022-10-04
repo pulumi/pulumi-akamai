@@ -21,32 +21,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewEdgeKv(ctx, "testStaging", &akamai.EdgeKvArgs{
-// 			GeoLocation: pulumi.String("US"),
-// 			GroupId:     pulumi.Int(4284),
-// 			InitialDatas: EdgeKvInitialDataArray{
-// 				&EdgeKvInitialDataArgs{
-// 					Group: pulumi.String("translations"),
-// 					Key:   pulumi.String("lang"),
-// 					Value: pulumi.String("English"),
-// 				},
-// 			},
-// 			NamespaceName:      pulumi.String("Marketing"),
-// 			Network:            pulumi.String("staging"),
-// 			RetentionInSeconds: pulumi.Int(15724800),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewEdgeKv(ctx, "testStaging", &akamai.EdgeKvArgs{
+//				GeoLocation: pulumi.String("US"),
+//				GroupId:     pulumi.Int(4284),
+//				InitialDatas: EdgeKvInitialDataArray{
+//					&EdgeKvInitialDataArgs{
+//						Group: pulumi.String("translations"),
+//						Key:   pulumi.String("lang"),
+//						Value: pulumi.String("English"),
+//					},
+//				},
+//				NamespaceName:      pulumi.String("Marketing"),
+//				Network:            pulumi.String("staging"),
+//				RetentionInSeconds: pulumi.Int(15724800),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Attributes reference
 //
@@ -199,7 +202,7 @@ func (i *EdgeKv) ToEdgeKvOutputWithContext(ctx context.Context) EdgeKvOutput {
 // EdgeKvArrayInput is an input type that accepts EdgeKvArray and EdgeKvArrayOutput values.
 // You can construct a concrete instance of `EdgeKvArrayInput` via:
 //
-//          EdgeKvArray{ EdgeKvArgs{...} }
+//	EdgeKvArray{ EdgeKvArgs{...} }
 type EdgeKvArrayInput interface {
 	pulumi.Input
 
@@ -224,7 +227,7 @@ func (i EdgeKvArray) ToEdgeKvArrayOutputWithContext(ctx context.Context) EdgeKvA
 // EdgeKvMapInput is an input type that accepts EdgeKvMap and EdgeKvMapOutput values.
 // You can construct a concrete instance of `EdgeKvMapInput` via:
 //
-//          EdgeKvMap{ "key": EdgeKvArgs{...} }
+//	EdgeKvMap{ "key": EdgeKvArgs{...} }
 type EdgeKvMapInput interface {
 	pulumi.Input
 

@@ -44,7 +44,7 @@ namespace Pulumi.Akamai
         /// 
         /// * `contact_types` — A list of contact types.
         /// 
-        /// [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getadmincontacttypes)
+        /// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-user-contact-types)
         /// </summary>
         public static Task<GetIamContactTypesResult> InvokeAsync(InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetIamContactTypesResult>("akamai:index/getIamContactTypes:getIamContactTypes", InvokeArgs.Empty, options.WithDefaults());

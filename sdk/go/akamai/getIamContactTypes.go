@@ -17,20 +17,23 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		contactTypes, err := akamai.GetIamContactTypes(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("supportedContactTypes", contactTypes)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			contactTypes, err := akamai.GetIamContactTypes(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("supportedContactTypes", contactTypes)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Attributes reference
 //
@@ -38,7 +41,7 @@ import (
 //
 // * `contactTypes` — A list of contact types.
 //
-// [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getadmincontacttypes)
+// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-user-contact-types)
 func GetIamContactTypes(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamContactTypesResult, error) {
 	var rv GetIamContactTypesResult
 	err := ctx.Invoke("akamai:index/getIamContactTypes:getIamContactTypes", nil, &rv, opts...)

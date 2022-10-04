@@ -202,7 +202,7 @@ func (i *AppSecActivations) ToAppSecActivationsOutputWithContext(ctx context.Con
 // AppSecActivationsArrayInput is an input type that accepts AppSecActivationsArray and AppSecActivationsArrayOutput values.
 // You can construct a concrete instance of `AppSecActivationsArrayInput` via:
 //
-//          AppSecActivationsArray{ AppSecActivationsArgs{...} }
+//	AppSecActivationsArray{ AppSecActivationsArgs{...} }
 type AppSecActivationsArrayInput interface {
 	pulumi.Input
 
@@ -227,7 +227,7 @@ func (i AppSecActivationsArray) ToAppSecActivationsArrayOutputWithContext(ctx co
 // AppSecActivationsMapInput is an input type that accepts AppSecActivationsMap and AppSecActivationsMapOutput values.
 // You can construct a concrete instance of `AppSecActivationsMapInput` via:
 //
-//          AppSecActivationsMap{ "key": AppSecActivationsArgs{...} }
+//	AppSecActivationsMap{ "key": AppSecActivationsArgs{...} }
 type AppSecActivationsMapInput interface {
 	pulumi.Input
 

@@ -12,7 +12,7 @@ import (
 
 // **Scopes**: SIEM definition
 //
-// Returns information about your SIEM (Security Information and Event Management) versions. The returned information is described in the [Get SIEM versions](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemversions) section of the Application Security API.
+// Returns information about your SIEM (Security Information and Event Management) versions. The returned information is described in the [Get SIEM versions](https://techdocs.akamai.com/application-security/reference/get-siem-definitions) section of the Application Security API.
 //
 // **Related API Endpoint**: [/appsec/v1/siem-definitions](https://techdocs.akamai.com/application-security/reference/get-siem-definitions)
 //
@@ -24,28 +24,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		siemDefinitions, err := akamai.GetAppSecSiemDefinitions(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("siemDefinitionsJson", siemDefinitions.Json)
-// 		ctx.Export("siemDefinitionsOutput", siemDefinitions.OutputText)
-// 		siemDefinition, err := akamai.GetAppSecSiemDefinitions(ctx, &GetAppSecSiemDefinitionsArgs{
-// 			SiemDefinitionName: pulumi.StringRef("SIEM Version 01"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("siemDefinitionId", siemDefinition.Id)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			siemDefinitions, err := akamai.GetAppSecSiemDefinitions(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("siemDefinitionsJson", siemDefinitions.Json)
+//			ctx.Export("siemDefinitionsOutput", siemDefinitions.OutputText)
+//			siemDefinition, err := akamai.GetAppSecSiemDefinitions(ctx, &GetAppSecSiemDefinitionsArgs{
+//				SiemDefinitionName: pulumi.StringRef("SIEM Version 01"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("siemDefinitionId", siemDefinition.Id)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //

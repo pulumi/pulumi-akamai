@@ -161,6 +161,10 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_appsec_eval_rule":                            {Tok: makeResource(mainMod, "AppSecEvalRule")},
 			"akamai_appsec_eval_group":                           {Tok: makeResource(mainMod, "AppSecEvalGroup")},
 			"akamai_appsec_ip_geo_protection":                    {Tok: makeResource(mainMod, "AppSecIPGeoProtection")},
+			"akamai_appsec_malware_policy":                       {Tok: makeResource(mainMod, "AppSecMalwarePolicy")},
+			"akamai_appsec_malware_policy_action":                {Tok: makeResource(mainMod, "AppSecMalwarePolicyAction")},
+			"akamai_appsec_malware_policy_actions":               {Tok: makeResource(mainMod, "AppSecMalwarePolicyActions")},
+			"akamai_appsec_malware_protection":                   {Tok: makeResource(mainMod, "AppSecMalwareProtection")},
 			"akamai_appsec_rule":                                 {Tok: makeResource(mainMod, "AppSecRule")},
 			"akamai_appsec_threat_intel":                         {Tok: makeResource(mainMod, "AppSecThreatIntel")},
 			"akamai_appsec_wap_selected_hostnames":               {Tok: makeResource(mainMod, "AppSecWapSelectedHostnames")},
@@ -231,6 +235,9 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_appsec_hostname_coverage_match_targets":      {Tok: makeDataSource(mainMod, "getAppSecHostnameCoverageMatchTargets")},
 			"akamai_appsec_hostname_coverage_overlapping":        {Tok: makeDataSource(mainMod, "getAppSecHostnameCoverageOverlapping")},
 			"akamai_appsec_ip_geo":                               {Tok: makeDataSource(mainMod, "getAppSecIPGeo")},
+			"akamai_appsec_malware_content_types":                {Tok: makeDataSource(mainMod, "getAppSecMalwareContentTypes")},
+			"akamai_appsec_malware_policies":                     {Tok: makeDataSource(mainMod, "getAppSecMalwarePolicies")},
+			"akamai_appsec_malware_policy_actions":               {Tok: makeDataSource(mainMod, "getAppSecMalwarePolicyActions")},
 			"akamai_appsec_penalty_box":                          {Tok: makeDataSource(mainMod, "getAppSecPenaltyBox")},
 			"akamai_appsec_eval_penalty_box":                     {Tok: makeDataSource(mainMod, "getAppSecEvalPenaltyBox")},
 			"akamai_appsec_rate_policies":                        {Tok: makeDataSource(mainMod, "getAppSecRatePolicies")},
@@ -254,6 +261,8 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_appsec_wap_selected_hostnames":               {Tok: makeDataSource(mainMod, "getAppSecWapSelectedHostnames")},
 			"akamai_appsec_advanced_settings_evasive_path_match": {Tok: makeDataSource(mainMod, "getAppSecAdvancedSettingsEvasivePathMatch")},
 			"akamai_appsec_tuning_recommendations":               {Tok: makeDataSource(mainMod, "getAppSecTuningRecommendations")},
+			"akamai_cps_enrollment":                              {Tok: makeDataSource(mainMod, "getCPSEnrollment")},
+			"akamai_cps_enrollments":                             {Tok: makeDataSource(mainMod, "getCPSEnrollments")},
 
 			"akamai_cloudlets_api_prioritization_match_rule":        {Tok: makeDataSource(mainMod, "getCloudletsApiPrioritizationMatchRule")},
 			"akamai_cloudlets_application_load_balancer":            {Tok: makeDataSource(mainMod, "getCloudletsApplicationLoadBalancer")},
@@ -268,6 +277,8 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_datastream_activation_history": {Tok: makeDataSource(mainMod, "getDatastreamActivationHistory")},
 			"akamai_datastream_dataset_fields":     {Tok: makeDataSource(mainMod, "getDatastreamDatasetFields")},
 
+			"akamai_edgeworker":                 {Tok: makeDataSource(mainMod, "getEdgeWorker")},
+			"akamai_edgeworker_activation":      {Tok: makeDataSource(mainMod, "getEdgeWorkerActivation")},
 			"akamai_edgeworkers_property_rules": {Tok: makeDataSource(mainMod, "getEdgeWorkersPropertyRules")},
 			"akamai_edgeworkers_resource_tier":  {Tok: makeDataSource(mainMod, "getEdgeWorkersResourceTier")},
 

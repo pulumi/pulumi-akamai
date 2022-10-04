@@ -25,47 +25,50 @@ import (
 // package main
 //
 // import (
-// 	"fmt"
-// 	"io/ioutil"
 //
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"fmt"
+//	"io/ioutil"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func readFileOrPanic(path string) pulumi.StringPtrInput {
-// 	data, err := ioutil.ReadFile(path)
-// 	if err != nil {
-// 		panic(err.Error())
-// 	}
-// 	return pulumi.String(string(data))
-// }
+//	func readFileOrPanic(path string) pulumi.StringPtrInput {
+//		data, err := ioutil.ReadFile(path)
+//		if err != nil {
+//			panic(err.Error())
+//		}
+//		return pulumi.String(string(data))
+//	}
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecRule(ctx, "rule", &akamai.AppSecRuleArgs{
-// 			ConfigId:           pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId:   pulumi.String("gms1_134637"),
-// 			RuleId:             pulumi.Int(60029316),
-// 			RuleAction:         pulumi.String("deny"),
-// 			ConditionException: readFileOrPanic(fmt.Sprintf("%v/condition_exception.json", path.Module)),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecRule(ctx, "rule", &akamai.AppSecRuleArgs{
+//				ConfigId:           pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId:   pulumi.String("gms1_134637"),
+//				RuleId:             pulumi.Int(60029316),
+//				RuleAction:         pulumi.String("deny"),
+//				ConditionException: readFileOrPanic(fmt.Sprintf("%v/condition_exception.json", path.Module)),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type AppSecRule struct {
 	pulumi.CustomResourceState
 
-	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
 	ConditionException pulumi.StringPtrOutput `pulumi:"conditionException"`
 	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
@@ -119,7 +122,7 @@ func GetAppSecRule(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecRule resources.
 type appSecRuleState struct {
-	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
 	ConditionException *string `pulumi:"conditionException"`
 	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
 	ConfigId *int `pulumi:"configId"`
@@ -136,7 +139,7 @@ type appSecRuleState struct {
 }
 
 type AppSecRuleState struct {
-	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
 	ConditionException pulumi.StringPtrInput
 	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
 	ConfigId pulumi.IntPtrInput
@@ -157,7 +160,7 @@ func (AppSecRuleState) ElementType() reflect.Type {
 }
 
 type appSecRuleArgs struct {
-	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
 	ConditionException *string `pulumi:"conditionException"`
 	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
 	ConfigId int `pulumi:"configId"`
@@ -175,7 +178,7 @@ type appSecRuleArgs struct {
 
 // The set of arguments for constructing a AppSecRule resource.
 type AppSecRuleArgs struct {
-	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
 	ConditionException pulumi.StringPtrInput
 	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
 	ConfigId pulumi.IntInput
@@ -217,7 +220,7 @@ func (i *AppSecRule) ToAppSecRuleOutputWithContext(ctx context.Context) AppSecRu
 // AppSecRuleArrayInput is an input type that accepts AppSecRuleArray and AppSecRuleArrayOutput values.
 // You can construct a concrete instance of `AppSecRuleArrayInput` via:
 //
-//          AppSecRuleArray{ AppSecRuleArgs{...} }
+//	AppSecRuleArray{ AppSecRuleArgs{...} }
 type AppSecRuleArrayInput interface {
 	pulumi.Input
 
@@ -242,7 +245,7 @@ func (i AppSecRuleArray) ToAppSecRuleArrayOutputWithContext(ctx context.Context)
 // AppSecRuleMapInput is an input type that accepts AppSecRuleMap and AppSecRuleMapOutput values.
 // You can construct a concrete instance of `AppSecRuleMapInput` via:
 //
-//          AppSecRuleMap{ "key": AppSecRuleArgs{...} }
+//	AppSecRuleMap{ "key": AppSecRuleArgs{...} }
 type AppSecRuleMapInput interface {
 	pulumi.Input
 
@@ -278,7 +281,7 @@ func (o AppSecRuleOutput) ToAppSecRuleOutputWithContext(ctx context.Context) App
 	return o
 }
 
-// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
 func (o AppSecRuleOutput) ConditionException() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AppSecRule) pulumi.StringPtrOutput { return v.ConditionException }).(pulumi.StringPtrOutput)
 }

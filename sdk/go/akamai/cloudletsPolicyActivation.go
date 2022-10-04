@@ -23,28 +23,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewCloudletsPolicyActivation(ctx, "example", &akamai.CloudletsPolicyActivationArgs{
-// 			AssociatedProperties: pulumi.StringArray{
-// 				pulumi.String("Property_1"),
-// 				pulumi.String("Property_2"),
-// 				pulumi.String("Property_3"),
-// 			},
-// 			Network:  pulumi.String("staging"),
-// 			PolicyId: pulumi.Int(1234),
-// 			Version:  pulumi.Int(1),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewCloudletsPolicyActivation(ctx, "example", &akamai.CloudletsPolicyActivationArgs{
+//				AssociatedProperties: pulumi.StringArray{
+//					pulumi.String("Property_1"),
+//					pulumi.String("Property_2"),
+//					pulumi.String("Property_3"),
+//				},
+//				Network:  pulumi.String("staging"),
+//				PolicyId: pulumi.Int(1234),
+//				Version:  pulumi.Int(1),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // If you're handling two `CloudletsPolicyActivation` resources in the same configuration file with the same `policyId`, but different `network` arguments (for example, `production` and `staging`), you need to add `dependsOn` to the production resource. See the example:
 //
@@ -52,41 +55,44 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		stag, err := akamai.NewCloudletsPolicyActivation(ctx, "stag", &akamai.CloudletsPolicyActivationArgs{
-// 			PolicyId: pulumi.Int(1234567),
-// 			Network:  pulumi.String("staging"),
-// 			Version:  pulumi.Int(1),
-// 			AssociatedProperties: pulumi.StringArray{
-// 				pulumi.String("Property_1"),
-// 				pulumi.String("Property_2"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewCloudletsPolicyActivation(ctx, "prod", &akamai.CloudletsPolicyActivationArgs{
-// 			PolicyId: pulumi.Int(1234567),
-// 			Network:  pulumi.String("production"),
-// 			Version:  pulumi.Int(1),
-// 			AssociatedProperties: pulumi.StringArray{
-// 				pulumi.String("Property_1"),
-// 				pulumi.String("Property_2"),
-// 			},
-// 		}, pulumi.DependsOn([]pulumi.Resource{
-// 			stag,
-// 		}))
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			stag, err := akamai.NewCloudletsPolicyActivation(ctx, "stag", &akamai.CloudletsPolicyActivationArgs{
+//				PolicyId: pulumi.Int(1234567),
+//				Network:  pulumi.String("staging"),
+//				Version:  pulumi.Int(1),
+//				AssociatedProperties: pulumi.StringArray{
+//					pulumi.String("Property_1"),
+//					pulumi.String("Property_2"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewCloudletsPolicyActivation(ctx, "prod", &akamai.CloudletsPolicyActivationArgs{
+//				PolicyId: pulumi.Int(1234567),
+//				Network:  pulumi.String("production"),
+//				Version:  pulumi.Int(1),
+//				AssociatedProperties: pulumi.StringArray{
+//					pulumi.String("Property_1"),
+//					pulumi.String("Property_2"),
+//				},
+//			}, pulumi.DependsOn([]pulumi.Resource{
+//				stag,
+//			}))
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type CloudletsPolicyActivation struct {
 	pulumi.CustomResourceState
@@ -222,7 +228,7 @@ func (i *CloudletsPolicyActivation) ToCloudletsPolicyActivationOutputWithContext
 // CloudletsPolicyActivationArrayInput is an input type that accepts CloudletsPolicyActivationArray and CloudletsPolicyActivationArrayOutput values.
 // You can construct a concrete instance of `CloudletsPolicyActivationArrayInput` via:
 //
-//          CloudletsPolicyActivationArray{ CloudletsPolicyActivationArgs{...} }
+//	CloudletsPolicyActivationArray{ CloudletsPolicyActivationArgs{...} }
 type CloudletsPolicyActivationArrayInput interface {
 	pulumi.Input
 
@@ -247,7 +253,7 @@ func (i CloudletsPolicyActivationArray) ToCloudletsPolicyActivationArrayOutputWi
 // CloudletsPolicyActivationMapInput is an input type that accepts CloudletsPolicyActivationMap and CloudletsPolicyActivationMapOutput values.
 // You can construct a concrete instance of `CloudletsPolicyActivationMapInput` via:
 //
-//          CloudletsPolicyActivationMap{ "key": CloudletsPolicyActivationArgs{...} }
+//	CloudletsPolicyActivationMap{ "key": CloudletsPolicyActivationArgs{...} }
 type CloudletsPolicyActivationMapInput interface {
 	pulumi.Input
 

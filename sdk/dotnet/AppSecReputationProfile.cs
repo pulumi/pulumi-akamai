@@ -63,11 +63,14 @@ namespace Pulumi.Akamai
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Path to a JSON file containing a definition of the reputation profile. You can view a sample JSON file in the [Create a reputation profile](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles) section of the Application Security API documentation.
+        /// . Path to a JSON file containing a definition of the reputation profile.
         /// </summary>
         [Output("reputationProfile")]
         public Output<string> ReputationProfile { get; private set; } = null!;
 
+        /// <summary>
+        /// Unique identifer of the reputation profile
+        /// </summary>
         [Output("reputationProfileId")]
         public Output<int> ReputationProfileId { get; private set; } = null!;
 
@@ -124,7 +127,7 @@ namespace Pulumi.Akamai
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Path to a JSON file containing a definition of the reputation profile. You can view a sample JSON file in the [Create a reputation profile](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles) section of the Application Security API documentation.
+        /// . Path to a JSON file containing a definition of the reputation profile.
         /// </summary>
         [Input("reputationProfile", required: true)]
         public Input<string> ReputationProfile { get; set; } = null!;
@@ -143,11 +146,14 @@ namespace Pulumi.Akamai
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Path to a JSON file containing a definition of the reputation profile. You can view a sample JSON file in the [Create a reputation profile](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles) section of the Application Security API documentation.
+        /// . Path to a JSON file containing a definition of the reputation profile.
         /// </summary>
         [Input("reputationProfile")]
         public Input<string>? ReputationProfile { get; set; }
 
+        /// <summary>
+        /// Unique identifer of the reputation profile
+        /// </summary>
         [Input("reputationProfileId")]
         public Input<int>? ReputationProfileId { get; set; }
 

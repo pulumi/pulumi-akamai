@@ -29,7 +29,7 @@ class AppSecEvalRuleArgs:
                - **none**. Take no action.
         :param pulumi.Input[int] rule_id: . Unique identifier of the evaluation rule being modified.
         :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the evaluation process.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "rule_action", rule_action)
@@ -94,7 +94,7 @@ class AppSecEvalRuleArgs:
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> Optional[pulumi.Input[str]]:
         """
-        . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
+        . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
         """
         return pulumi.get(self, "condition_exception")
 
@@ -113,7 +113,7 @@ class _AppSecEvalRuleState:
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecEvalRule resources.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration in evaluation mode.
         :param pulumi.Input[str] rule_action: . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
                - **alert**. Record the event.
@@ -138,7 +138,7 @@ class _AppSecEvalRuleState:
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> Optional[pulumi.Input[str]]:
         """
-        . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
+        . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
         """
         return pulumi.get(self, "condition_exception")
 
@@ -238,7 +238,7 @@ class AppSecEvalRule(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration in evaluation mode.
         :param pulumi.Input[str] rule_action: . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
                - **alert**. Record the event.
@@ -344,7 +344,7 @@ class AppSecEvalRule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration in evaluation mode.
         :param pulumi.Input[str] rule_action: . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
                - **alert**. Record the event.
@@ -369,7 +369,7 @@ class AppSecEvalRule(pulumi.CustomResource):
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> pulumi.Output[Optional[str]]:
         """
-        . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
+        . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
         """
         return pulumi.get(self, "condition_exception")
 

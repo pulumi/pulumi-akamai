@@ -25,32 +25,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecSlowPost(ctx, "slowPost", &akamai.AppSecSlowPostArgs{
-// 			ConfigId:                 pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId:         pulumi.String("gms1_134637"),
-// 			SlowRateAction:           pulumi.String("alert"),
-// 			SlowRateThresholdRate:    pulumi.Int(10),
-// 			SlowRateThresholdPeriod:  pulumi.Int(30),
-// 			DurationThresholdTimeout: pulumi.Int(20),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecSlowPost(ctx, "slowPost", &akamai.AppSecSlowPostArgs{
+//				ConfigId:                 pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId:         pulumi.String("gms1_134637"),
+//				SlowRateAction:           pulumi.String("alert"),
+//				SlowRateThresholdRate:    pulumi.Int(10),
+//				SlowRateThresholdPeriod:  pulumi.Int(30),
+//				DurationThresholdTimeout: pulumi.Int(20),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type AppSecSlowPost struct {
 	pulumi.CustomResourceState
@@ -207,7 +210,7 @@ func (i *AppSecSlowPost) ToAppSecSlowPostOutputWithContext(ctx context.Context) 
 // AppSecSlowPostArrayInput is an input type that accepts AppSecSlowPostArray and AppSecSlowPostArrayOutput values.
 // You can construct a concrete instance of `AppSecSlowPostArrayInput` via:
 //
-//          AppSecSlowPostArray{ AppSecSlowPostArgs{...} }
+//	AppSecSlowPostArray{ AppSecSlowPostArgs{...} }
 type AppSecSlowPostArrayInput interface {
 	pulumi.Input
 
@@ -232,7 +235,7 @@ func (i AppSecSlowPostArray) ToAppSecSlowPostArrayOutputWithContext(ctx context.
 // AppSecSlowPostMapInput is an input type that accepts AppSecSlowPostMap and AppSecSlowPostMapOutput values.
 // You can construct a concrete instance of `AppSecSlowPostMapInput` via:
 //
-//          AppSecSlowPostMap{ "key": AppSecSlowPostArgs{...} }
+//	AppSecSlowPostMap{ "key": AppSecSlowPostArgs{...} }
 type AppSecSlowPostMapInput interface {
 	pulumi.Input
 

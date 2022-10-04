@@ -26,40 +26,43 @@ import (
 // package main
 //
 // import (
-// 	"fmt"
-// 	"io/ioutil"
 //
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"fmt"
+//	"io/ioutil"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func readFileOrPanic(path string) pulumi.StringPtrInput {
-// 	data, err := ioutil.ReadFile(path)
-// 	if err != nil {
-// 		panic(err.Error())
-// 	}
-// 	return pulumi.String(string(data))
-// }
+//	func readFileOrPanic(path string) pulumi.StringPtrInput {
+//		data, err := ioutil.ReadFile(path)
+//		if err != nil {
+//			panic(err.Error())
+//		}
+//		return pulumi.String(string(data))
+//	}
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ratePolicy, err := akamai.NewAppSecRatePolicy(ctx, "ratePolicy", &akamai.AppSecRatePolicyArgs{
-// 			ConfigId:   pulumi.Int(configuration.ConfigId),
-// 			RatePolicy: readFileOrPanic(fmt.Sprintf("%v/rate_policy.json", path.Module)),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("ratePolicyId", ratePolicy.RatePolicyId)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ratePolicy, err := akamai.NewAppSecRatePolicy(ctx, "ratePolicy", &akamai.AppSecRatePolicyArgs{
+//				ConfigId:   pulumi.Int(configuration.ConfigId),
+//				RatePolicy: readFileOrPanic(fmt.Sprintf("%v/rate_policy.json", path.Module)),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("ratePolicyId", ratePolicy.RatePolicyId)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
@@ -71,9 +74,10 @@ type AppSecRatePolicy struct {
 
 	// . Unique identifier of the security configuration associated with the rate policy being modified.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
-	RatePolicy   pulumi.StringOutput `pulumi:"ratePolicy"`
-	RatePolicyId pulumi.IntOutput    `pulumi:"ratePolicyId"`
+	// . Path to a JSON file containing a rate policy definition.
+	RatePolicy pulumi.StringOutput `pulumi:"ratePolicy"`
+	// Unique identifier of the rate policy
+	RatePolicyId pulumi.IntOutput `pulumi:"ratePolicyId"`
 }
 
 // NewAppSecRatePolicy registers a new resource with the given unique name, arguments, and options.
@@ -113,16 +117,18 @@ func GetAppSecRatePolicy(ctx *pulumi.Context,
 type appSecRatePolicyState struct {
 	// . Unique identifier of the security configuration associated with the rate policy being modified.
 	ConfigId *int `pulumi:"configId"`
-	// . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
-	RatePolicy   *string `pulumi:"ratePolicy"`
-	RatePolicyId *int    `pulumi:"ratePolicyId"`
+	// . Path to a JSON file containing a rate policy definition.
+	RatePolicy *string `pulumi:"ratePolicy"`
+	// Unique identifier of the rate policy
+	RatePolicyId *int `pulumi:"ratePolicyId"`
 }
 
 type AppSecRatePolicyState struct {
 	// . Unique identifier of the security configuration associated with the rate policy being modified.
 	ConfigId pulumi.IntPtrInput
-	// . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
-	RatePolicy   pulumi.StringPtrInput
+	// . Path to a JSON file containing a rate policy definition.
+	RatePolicy pulumi.StringPtrInput
+	// Unique identifier of the rate policy
 	RatePolicyId pulumi.IntPtrInput
 }
 
@@ -133,7 +139,7 @@ func (AppSecRatePolicyState) ElementType() reflect.Type {
 type appSecRatePolicyArgs struct {
 	// . Unique identifier of the security configuration associated with the rate policy being modified.
 	ConfigId int `pulumi:"configId"`
-	// . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
+	// . Path to a JSON file containing a rate policy definition.
 	RatePolicy string `pulumi:"ratePolicy"`
 }
 
@@ -141,7 +147,7 @@ type appSecRatePolicyArgs struct {
 type AppSecRatePolicyArgs struct {
 	// . Unique identifier of the security configuration associated with the rate policy being modified.
 	ConfigId pulumi.IntInput
-	// . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
+	// . Path to a JSON file containing a rate policy definition.
 	RatePolicy pulumi.StringInput
 }
 
@@ -171,7 +177,7 @@ func (i *AppSecRatePolicy) ToAppSecRatePolicyOutputWithContext(ctx context.Conte
 // AppSecRatePolicyArrayInput is an input type that accepts AppSecRatePolicyArray and AppSecRatePolicyArrayOutput values.
 // You can construct a concrete instance of `AppSecRatePolicyArrayInput` via:
 //
-//          AppSecRatePolicyArray{ AppSecRatePolicyArgs{...} }
+//	AppSecRatePolicyArray{ AppSecRatePolicyArgs{...} }
 type AppSecRatePolicyArrayInput interface {
 	pulumi.Input
 
@@ -196,7 +202,7 @@ func (i AppSecRatePolicyArray) ToAppSecRatePolicyArrayOutputWithContext(ctx cont
 // AppSecRatePolicyMapInput is an input type that accepts AppSecRatePolicyMap and AppSecRatePolicyMapOutput values.
 // You can construct a concrete instance of `AppSecRatePolicyMapInput` via:
 //
-//          AppSecRatePolicyMap{ "key": AppSecRatePolicyArgs{...} }
+//	AppSecRatePolicyMap{ "key": AppSecRatePolicyArgs{...} }
 type AppSecRatePolicyMapInput interface {
 	pulumi.Input
 
@@ -237,11 +243,12 @@ func (o AppSecRatePolicyOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecRatePolicy) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
+// . Path to a JSON file containing a rate policy definition.
 func (o AppSecRatePolicyOutput) RatePolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecRatePolicy) pulumi.StringOutput { return v.RatePolicy }).(pulumi.StringOutput)
 }
 
+// Unique identifier of the rate policy
 func (o AppSecRatePolicyOutput) RatePolicyId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecRatePolicy) pulumi.IntOutput { return v.RatePolicyId }).(pulumi.IntOutput)
 }

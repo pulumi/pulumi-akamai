@@ -198,14 +198,14 @@ class _PropertyActivationState:
         :param pulumi.Input[str] activation_id: The ID given to the activation event while it's in progress.
         :param pulumi.Input[bool] auto_acknowledge_rule_warnings: Whether the activation should proceed despite any warnings. By default set to `true`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] contacts: One or more email addresses to send activation status changes to.
-        :param pulumi.Input[str] errors: The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        :param pulumi.Input[str] errors: The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         :param pulumi.Input[str] network: Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
         :param pulumi.Input[str] note: A log message you can assign to the activation request.
         :param pulumi.Input[str] property: - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
         :param pulumi.Input[str] property_id: - (Required) The property's unique identifier, including the `prp_` prefix.
         :param pulumi.Input[str] status: The property version's activation status on the selected network.
         :param pulumi.Input[int] version: The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `Property` resource labeled `example`.
-        :param pulumi.Input[str] warnings: The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        :param pulumi.Input[str] warnings: The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         """
         if activation_id is not None:
             pulumi.set(__self__, "activation_id", activation_id)
@@ -280,7 +280,7 @@ class _PropertyActivationState:
     @pulumi.getter
     def errors(self) -> Optional[pulumi.Input[str]]:
         """
-        The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         """
         return pulumi.get(self, "errors")
 
@@ -370,7 +370,7 @@ class _PropertyActivationState:
     @pulumi.getter
     def warnings(self) -> Optional[pulumi.Input[str]]:
         """
-        The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         """
         return pulumi.get(self, "warnings")
 
@@ -598,14 +598,14 @@ class PropertyActivation(pulumi.CustomResource):
         :param pulumi.Input[str] activation_id: The ID given to the activation event while it's in progress.
         :param pulumi.Input[bool] auto_acknowledge_rule_warnings: Whether the activation should proceed despite any warnings. By default set to `true`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] contacts: One or more email addresses to send activation status changes to.
-        :param pulumi.Input[str] errors: The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        :param pulumi.Input[str] errors: The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         :param pulumi.Input[str] network: Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
         :param pulumi.Input[str] note: A log message you can assign to the activation request.
         :param pulumi.Input[str] property: - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
         :param pulumi.Input[str] property_id: - (Required) The property's unique identifier, including the `prp_` prefix.
         :param pulumi.Input[str] status: The property version's activation status on the selected network.
         :param pulumi.Input[int] version: The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `Property` resource labeled `example`.
-        :param pulumi.Input[str] warnings: The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        :param pulumi.Input[str] warnings: The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -654,7 +654,7 @@ class PropertyActivation(pulumi.CustomResource):
     @pulumi.getter
     def errors(self) -> pulumi.Output[str]:
         """
-        The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         """
         return pulumi.get(self, "errors")
 
@@ -712,7 +712,7 @@ class PropertyActivation(pulumi.CustomResource):
     @pulumi.getter
     def warnings(self) -> pulumi.Output[str]:
         """
-        The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         """
         return pulumi.get(self, "warnings")
 

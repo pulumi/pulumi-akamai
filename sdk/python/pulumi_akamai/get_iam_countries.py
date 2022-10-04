@@ -73,7 +73,7 @@ def get_iam_countries(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableG
 
     * `countries` — A list of countries.
 
-    [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getadmincountries)
+    [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-countries)
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

@@ -25,29 +25,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecIPGeoProtection(ctx, "protection", &akamai.AppSecIPGeoProtectionArgs{
-// 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.String("gms1_134637"),
-// 			Enabled:          pulumi.Bool(true),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecIPGeoProtection(ctx, "protection", &akamai.AppSecIPGeoProtectionArgs{
+//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId: pulumi.String("gms1_134637"),
+//				Enabled:          pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
@@ -61,7 +64,7 @@ type AppSecIPGeoProtection struct {
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// Text Export representation
+	// Text representation
 	OutputText pulumi.StringOutput `pulumi:"outputText"`
 	// . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
@@ -109,7 +112,7 @@ type appSecIPGeoProtectionState struct {
 	ConfigId *int `pulumi:"configId"`
 	// . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
 	Enabled *bool `pulumi:"enabled"`
-	// Text Export representation
+	// Text representation
 	OutputText *string `pulumi:"outputText"`
 	// . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
@@ -120,7 +123,7 @@ type AppSecIPGeoProtectionState struct {
 	ConfigId pulumi.IntPtrInput
 	// . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
 	Enabled pulumi.BoolPtrInput
-	// Text Export representation
+	// Text representation
 	OutputText pulumi.StringPtrInput
 	// . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
 	SecurityPolicyId pulumi.StringPtrInput
@@ -175,7 +178,7 @@ func (i *AppSecIPGeoProtection) ToAppSecIPGeoProtectionOutputWithContext(ctx con
 // AppSecIPGeoProtectionArrayInput is an input type that accepts AppSecIPGeoProtectionArray and AppSecIPGeoProtectionArrayOutput values.
 // You can construct a concrete instance of `AppSecIPGeoProtectionArrayInput` via:
 //
-//          AppSecIPGeoProtectionArray{ AppSecIPGeoProtectionArgs{...} }
+//	AppSecIPGeoProtectionArray{ AppSecIPGeoProtectionArgs{...} }
 type AppSecIPGeoProtectionArrayInput interface {
 	pulumi.Input
 
@@ -200,7 +203,7 @@ func (i AppSecIPGeoProtectionArray) ToAppSecIPGeoProtectionArrayOutputWithContex
 // AppSecIPGeoProtectionMapInput is an input type that accepts AppSecIPGeoProtectionMap and AppSecIPGeoProtectionMapOutput values.
 // You can construct a concrete instance of `AppSecIPGeoProtectionMapInput` via:
 //
-//          AppSecIPGeoProtectionMap{ "key": AppSecIPGeoProtectionArgs{...} }
+//	AppSecIPGeoProtectionMap{ "key": AppSecIPGeoProtectionArgs{...} }
 type AppSecIPGeoProtectionMapInput interface {
 	pulumi.Input
 
@@ -246,7 +249,7 @@ func (o AppSecIPGeoProtectionOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AppSecIPGeoProtection) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Text Export representation
+// Text representation
 func (o AppSecIPGeoProtectionOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecIPGeoProtection) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
 }

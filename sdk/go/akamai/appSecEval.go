@@ -27,39 +27,42 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		evalOperation, err := akamai.NewAppSecEval(ctx, "evalOperation", &akamai.AppSecEvalArgs{
-// 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.String("gms1_134637"),
-// 			EvalOperation:    pulumi.String("START"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("evalModeEvaluatingRuleset", evalOperation.EvaluatingRuleset)
-// 		ctx.Export("evalModeExpirationDate", evalOperation.ExpirationDate)
-// 		ctx.Export("evalModeCurrentRuleset", evalOperation.CurrentRuleset)
-// 		ctx.Export("evalModeStatus", evalOperation.EvalStatus)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			evalOperation, err := akamai.NewAppSecEval(ctx, "evalOperation", &akamai.AppSecEvalArgs{
+//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId: pulumi.String("gms1_134637"),
+//				EvalOperation:    pulumi.String("START"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("evalModeEvaluatingRuleset", evalOperation.EvaluatingRuleset)
+//			ctx.Export("evalModeExpirationDate", evalOperation.ExpirationDate)
+//			ctx.Export("evalModeCurrentRuleset", evalOperation.CurrentRuleset)
+//			ctx.Export("evalModeStatus", evalOperation.EvalStatus)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
 // The following options can be used to determine the information returned, and how that returned information is formatted:
 //
-// - `evaluationRuleset`. Versioning information for the Kona Rule Set being evaluated.
+// - `evaluatingRuleset`. Versioning information for the Kona Rule Set being evaluated.
 // - `expirationDate`. Date when the evaluation period ends.
 // - `currentRuleset`. Versioning information for the Kona Rule Set currently in use on the production network.
 // - `evalStatus`. If **true**, an evaluation is currently in progress; if **false**, evaluation is either paused or is not running.
@@ -67,7 +70,8 @@ type AppSecEval struct {
 	pulumi.CustomResourceState
 
 	// . Unique identifier of the security configuration where evaluation mode will take place (or is currently taking place).
-	ConfigId       pulumi.IntOutput    `pulumi:"configId"`
+	ConfigId pulumi.IntOutput `pulumi:"configId"`
+	// Versioning information for the Kona Rule Set currently in use in production
 	CurrentRuleset pulumi.StringOutput `pulumi:"currentRuleset"`
 	// . Set to **ASE_AUTO** to have your Kona Rule Set rules automatically updated during the evaluation period; set to **ASE_MANUAL** if you want to manually update your evaluation rules. Note that this option is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information about ASE, please contact your Akamai representative.
 	EvalMode pulumi.StringPtrOutput `pulumi:"evalMode"`
@@ -77,10 +81,13 @@ type AppSecEval struct {
 	// - **RESTART**. Resumes an evaluation trial that was paused by using the **STOP** command.
 	// - **UPDATE**. Upgrades the Kona Rule Set rules in the evaluation ruleset to their latest versions.
 	// - **COMPLETE**. Concludes the evaluation period (even if the four-week trial mode is not over) and automatically upgrades the Kona Rule Set on your production network to the same rule set you just finished evaluating.
-	EvalOperation     pulumi.StringOutput `pulumi:"evalOperation"`
-	EvalStatus        pulumi.StringOutput `pulumi:"evalStatus"`
+	EvalOperation pulumi.StringOutput `pulumi:"evalOperation"`
+	// Whether an evaluation is currently in progress
+	EvalStatus pulumi.StringOutput `pulumi:"evalStatus"`
+	// Versioning information for the Kona Rule Set being evaluated
 	EvaluatingRuleset pulumi.StringOutput `pulumi:"evaluatingRuleset"`
-	ExpirationDate    pulumi.StringOutput `pulumi:"expirationDate"`
+	// Date when the evaluation period ends
+	ExpirationDate pulumi.StringOutput `pulumi:"expirationDate"`
 	// . Unique identifier of the security policy associated with the evaluation process.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
@@ -124,7 +131,8 @@ func GetAppSecEval(ctx *pulumi.Context,
 // Input properties used for looking up and filtering AppSecEval resources.
 type appSecEvalState struct {
 	// . Unique identifier of the security configuration where evaluation mode will take place (or is currently taking place).
-	ConfigId       *int    `pulumi:"configId"`
+	ConfigId *int `pulumi:"configId"`
+	// Versioning information for the Kona Rule Set currently in use in production
 	CurrentRuleset *string `pulumi:"currentRuleset"`
 	// . Set to **ASE_AUTO** to have your Kona Rule Set rules automatically updated during the evaluation period; set to **ASE_MANUAL** if you want to manually update your evaluation rules. Note that this option is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information about ASE, please contact your Akamai representative.
 	EvalMode *string `pulumi:"evalMode"`
@@ -134,17 +142,21 @@ type appSecEvalState struct {
 	// - **RESTART**. Resumes an evaluation trial that was paused by using the **STOP** command.
 	// - **UPDATE**. Upgrades the Kona Rule Set rules in the evaluation ruleset to their latest versions.
 	// - **COMPLETE**. Concludes the evaluation period (even if the four-week trial mode is not over) and automatically upgrades the Kona Rule Set on your production network to the same rule set you just finished evaluating.
-	EvalOperation     *string `pulumi:"evalOperation"`
-	EvalStatus        *string `pulumi:"evalStatus"`
+	EvalOperation *string `pulumi:"evalOperation"`
+	// Whether an evaluation is currently in progress
+	EvalStatus *string `pulumi:"evalStatus"`
+	// Versioning information for the Kona Rule Set being evaluated
 	EvaluatingRuleset *string `pulumi:"evaluatingRuleset"`
-	ExpirationDate    *string `pulumi:"expirationDate"`
+	// Date when the evaluation period ends
+	ExpirationDate *string `pulumi:"expirationDate"`
 	// . Unique identifier of the security policy associated with the evaluation process.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppSecEvalState struct {
 	// . Unique identifier of the security configuration where evaluation mode will take place (or is currently taking place).
-	ConfigId       pulumi.IntPtrInput
+	ConfigId pulumi.IntPtrInput
+	// Versioning information for the Kona Rule Set currently in use in production
 	CurrentRuleset pulumi.StringPtrInput
 	// . Set to **ASE_AUTO** to have your Kona Rule Set rules automatically updated during the evaluation period; set to **ASE_MANUAL** if you want to manually update your evaluation rules. Note that this option is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information about ASE, please contact your Akamai representative.
 	EvalMode pulumi.StringPtrInput
@@ -154,10 +166,13 @@ type AppSecEvalState struct {
 	// - **RESTART**. Resumes an evaluation trial that was paused by using the **STOP** command.
 	// - **UPDATE**. Upgrades the Kona Rule Set rules in the evaluation ruleset to their latest versions.
 	// - **COMPLETE**. Concludes the evaluation period (even if the four-week trial mode is not over) and automatically upgrades the Kona Rule Set on your production network to the same rule set you just finished evaluating.
-	EvalOperation     pulumi.StringPtrInput
-	EvalStatus        pulumi.StringPtrInput
+	EvalOperation pulumi.StringPtrInput
+	// Whether an evaluation is currently in progress
+	EvalStatus pulumi.StringPtrInput
+	// Versioning information for the Kona Rule Set being evaluated
 	EvaluatingRuleset pulumi.StringPtrInput
-	ExpirationDate    pulumi.StringPtrInput
+	// Date when the evaluation period ends
+	ExpirationDate pulumi.StringPtrInput
 	// . Unique identifier of the security policy associated with the evaluation process.
 	SecurityPolicyId pulumi.StringPtrInput
 }
@@ -225,7 +240,7 @@ func (i *AppSecEval) ToAppSecEvalOutputWithContext(ctx context.Context) AppSecEv
 // AppSecEvalArrayInput is an input type that accepts AppSecEvalArray and AppSecEvalArrayOutput values.
 // You can construct a concrete instance of `AppSecEvalArrayInput` via:
 //
-//          AppSecEvalArray{ AppSecEvalArgs{...} }
+//	AppSecEvalArray{ AppSecEvalArgs{...} }
 type AppSecEvalArrayInput interface {
 	pulumi.Input
 
@@ -250,7 +265,7 @@ func (i AppSecEvalArray) ToAppSecEvalArrayOutputWithContext(ctx context.Context)
 // AppSecEvalMapInput is an input type that accepts AppSecEvalMap and AppSecEvalMapOutput values.
 // You can construct a concrete instance of `AppSecEvalMapInput` via:
 //
-//          AppSecEvalMap{ "key": AppSecEvalArgs{...} }
+//	AppSecEvalMap{ "key": AppSecEvalArgs{...} }
 type AppSecEvalMapInput interface {
 	pulumi.Input
 
@@ -291,6 +306,7 @@ func (o AppSecEvalOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecEval) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
+// Versioning information for the Kona Rule Set currently in use in production
 func (o AppSecEvalOutput) CurrentRuleset() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecEval) pulumi.StringOutput { return v.CurrentRuleset }).(pulumi.StringOutput)
 }
@@ -310,14 +326,17 @@ func (o AppSecEvalOutput) EvalOperation() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecEval) pulumi.StringOutput { return v.EvalOperation }).(pulumi.StringOutput)
 }
 
+// Whether an evaluation is currently in progress
 func (o AppSecEvalOutput) EvalStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecEval) pulumi.StringOutput { return v.EvalStatus }).(pulumi.StringOutput)
 }
 
+// Versioning information for the Kona Rule Set being evaluated
 func (o AppSecEvalOutput) EvaluatingRuleset() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecEval) pulumi.StringOutput { return v.EvaluatingRuleset }).(pulumi.StringOutput)
 }
 
+// Date when the evaluation period ends
 func (o AppSecEvalOutput) ExpirationDate() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecEval) pulumi.StringOutput { return v.ExpirationDate }).(pulumi.StringOutput)
 }

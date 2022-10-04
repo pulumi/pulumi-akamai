@@ -76,7 +76,7 @@ def get_app_sec_siem_definitions(siem_definition_name: Optional[str] = None,
     """
     **Scopes**: SIEM definition
 
-    Returns information about your SIEM (Security Information and Event Management) versions. The returned information is described in the [Get SIEM versions](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemversions) section of the Application Security API.
+    Returns information about your SIEM (Security Information and Event Management) versions. The returned information is described in the [Get SIEM versions](https://techdocs.akamai.com/application-security/reference/get-siem-definitions) section of the Application Security API.
 
     **Related API Endpoint**: [/appsec/v1/siem-definitions](https://techdocs.akamai.com/application-security/reference/get-siem-definitions)
 
@@ -122,7 +122,7 @@ def get_app_sec_siem_definitions_output(siem_definition_name: Optional[pulumi.In
     """
     **Scopes**: SIEM definition
 
-    Returns information about your SIEM (Security Information and Event Management) versions. The returned information is described in the [Get SIEM versions](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getsiemversions) section of the Application Security API.
+    Returns information about your SIEM (Security Information and Event Management) versions. The returned information is described in the [Get SIEM versions](https://techdocs.akamai.com/application-security/reference/get-siem-definitions) section of the Application Security API.
 
     **Related API Endpoint**: [/appsec/v1/siem-definitions](https://techdocs.akamai.com/application-security/reference/get-siem-definitions)
 

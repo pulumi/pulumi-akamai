@@ -32,37 +32,40 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewProperty(ctx, "example", &akamai.PropertyArgs{
-// 			ProductId:  pulumi.String("prd_SPM"),
-// 			ContractId: pulumi.Any(_var.Contractid),
-// 			GroupId:    pulumi.Any(_var.Groupid),
-// 			Hostnames: PropertyHostnameArray{
-// 				&PropertyHostnameArgs{
-// 					CnameFrom:            pulumi.String("example.com"),
-// 					CnameTo:              pulumi.String("example.com.edgekey.net"),
-// 					CertProvisioningType: pulumi.String("DEFAULT"),
-// 				},
-// 				&PropertyHostnameArgs{
-// 					CnameFrom:            pulumi.String("www.example.com"),
-// 					CnameTo:              pulumi.String("example.com.edgesuite.net"),
-// 					CertProvisioningType: pulumi.String("CPS_MANAGED"),
-// 				},
-// 			},
-// 			RuleFormat: pulumi.String("v2020-03-04"),
-// 			Rules:      pulumi.Any(data.Akamai_property_rules_template.Example.Json),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewProperty(ctx, "example", &akamai.PropertyArgs{
+//				ProductId:  pulumi.String("prd_SPM"),
+//				ContractId: pulumi.Any(_var.Contractid),
+//				GroupId:    pulumi.Any(_var.Groupid),
+//				Hostnames: PropertyHostnameArray{
+//					&PropertyHostnameArgs{
+//						CnameFrom:            pulumi.String("example.com"),
+//						CnameTo:              pulumi.String("example.com.edgekey.net"),
+//						CertProvisioningType: pulumi.String("DEFAULT"),
+//					},
+//					&PropertyHostnameArgs{
+//						CnameFrom:            pulumi.String("www.example.com"),
+//						CnameTo:              pulumi.String("example.com.edgesuite.net"),
+//						CertProvisioningType: pulumi.String("CPS_MANAGED"),
+//					},
+//				},
+//				RuleFormat: pulumi.String("v2020-03-04"),
+//				Rules:      pulumi.Any(data.Akamai_property_rules_template.Example.Json),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -71,40 +74,52 @@ import (
 //
 // # (resource arguments)
 //
-//  } You can import the latest Akamai property version by using either the `property_id` or a comma-delimited string of the property, contract, and group IDs. You'll need to enter the string of IDs if the property belongs to multiple groups or contracts. If using the string of IDs, you need to enter them in this order`property_id,contract_id,group_id` To import a specific property version, pass additional parameters, either* `LATEST` to import the latest version of the property, regardless of whether it's active or not. This works the same as providing just the `property_id` or a string of the property, contract, and group IDs, which is the default behavior. * `PRODUCTION`, `PROD`, or `P` to import the latest version activated on the production environment. * `STAGING`, `STAGE`, `STAG`, or `S` to import the latest version activated on the staging environment. * Version number or version number with the `ver_` prefix to import a specific property version. For example `3` and `ver_3` correspond to the same version number. Here are some examples for the latest property version
+//	} You can import the latest Akamai property version by using either the `property_id` or a comma-delimited string of the property, contract, and group IDs. You'll need to enter the string of IDs if the property belongs to multiple groups or contracts. If using the string of IDs, you need to enter them in this order`property_id,contract_id,group_id` To import a specific property version, pass additional parameters, either* `LATEST` to import the latest version of the property, regardless of whether it's active or not. This works the same as providing just the `property_id` or a string of the property, contract, and group IDs, which is the default behavior. * `PRODUCTION`, `PROD`, or `P` to import the latest version activated on the production environment. * `STAGING`, `STAGE`, `STAG`, or `S` to import the latest version activated on the staging environment. * Version number or version number with the `ver_` prefix to import a specific property version. For example `3` and `ver_3` correspond to the same version number. Here are some examples for the latest property version
 //
 // ```sh
-//  $ pulumi import akamai:properties/property:Property example prp_123
+//
+//	$ pulumi import akamai:properties/property:Property example prp_123
+//
 // ```
 //
-//  Or
+//	Or
 //
 // ```sh
-//  $ pulumi import akamai:properties/property:Property example prp_123,ctr_1-AB123,grp_123
+//
+//	$ pulumi import akamai:properties/property:Property example prp_123,ctr_1-AB123,grp_123
+//
 // ```
 //
-//  Here are some examples for the latest active property version on the production network
+//	Here are some examples for the latest active property version on the production network
 //
 // ```sh
-//  $ pulumi import akamai:properties/property:Property example prp_123,P
+//
+//	$ pulumi import akamai:properties/property:Property example prp_123,P
+//
 // ```
 //
-//  Or
+//	Or
 //
 // ```sh
-//  $ pulumi import akamai:properties/property:Property example prp_123,ctr_1-AB123,grp_123,PROD
+//
+//	$ pulumi import akamai:properties/property:Property example prp_123,ctr_1-AB123,grp_123,PROD
+//
 // ```
 //
-//  Here are some examples for the specific property version
+//	Here are some examples for the specific property version
 //
 // ```sh
-//  $ pulumi import akamai:properties/property:Property example prp_123,3
+//
+//	$ pulumi import akamai:properties/property:Property example prp_123,3
+//
 // ```
 //
-//  Or
+//	Or
 //
 // ```sh
-//  $ pulumi import akamai:properties/property:Property example prp_123,ctr_1-AB123,grp_123,ver_3
+//
+//	$ pulumi import akamai:properties/property:Property example prp_123,ctr_1-AB123,grp_123,ver_3
+//
 // ```
 //
 // Deprecated: akamai.properties.Property has been deprecated in favor of akamai.Property
@@ -147,9 +162,9 @@ type Property struct {
 	ProductionVersion pulumi.IntOutput `pulumi:"productionVersion"`
 	// Required property's version to be read
 	ReadVersion pulumi.IntOutput `pulumi:"readVersion"`
-	// The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+	// The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
 	RuleErrors PropertyRuleErrorArrayOutput `pulumi:"ruleErrors"`
-	// The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
+	// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
 	RuleFormat pulumi.StringOutput `pulumi:"ruleFormat"`
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings PropertyRuleWarningArrayOutput `pulumi:"ruleWarnings"`
@@ -226,9 +241,9 @@ type propertyState struct {
 	ProductionVersion *int `pulumi:"productionVersion"`
 	// Required property's version to be read
 	ReadVersion *int `pulumi:"readVersion"`
-	// The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+	// The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
 	RuleErrors []PropertyRuleError `pulumi:"ruleErrors"`
-	// The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
+	// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
 	RuleFormat *string `pulumi:"ruleFormat"`
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings []PropertyRuleWarning `pulumi:"ruleWarnings"`
@@ -277,9 +292,9 @@ type PropertyState struct {
 	ProductionVersion pulumi.IntPtrInput
 	// Required property's version to be read
 	ReadVersion pulumi.IntPtrInput
-	// The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+	// The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
 	RuleErrors PropertyRuleErrorArrayInput
-	// The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
+	// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
 	RuleFormat pulumi.StringPtrInput
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings PropertyRuleWarningArrayInput
@@ -326,7 +341,7 @@ type propertyArgs struct {
 	Product *string `pulumi:"product"`
 	// Product ID to be assigned to the Property
 	ProductId *string `pulumi:"productId"`
-	// The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
+	// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
 	RuleFormat *string `pulumi:"ruleFormat"`
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings []PropertyRuleWarning `pulumi:"ruleWarnings"`
@@ -368,7 +383,7 @@ type PropertyArgs struct {
 	Product pulumi.StringPtrInput
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringPtrInput
-	// The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
+	// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
 	RuleFormat pulumi.StringPtrInput
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings PropertyRuleWarningArrayInput
@@ -404,7 +419,7 @@ func (i *Property) ToPropertyOutputWithContext(ctx context.Context) PropertyOutp
 // PropertyArrayInput is an input type that accepts PropertyArray and PropertyArrayOutput values.
 // You can construct a concrete instance of `PropertyArrayInput` via:
 //
-//          PropertyArray{ PropertyArgs{...} }
+//	PropertyArray{ PropertyArgs{...} }
 type PropertyArrayInput interface {
 	pulumi.Input
 
@@ -429,7 +444,7 @@ func (i PropertyArray) ToPropertyArrayOutputWithContext(ctx context.Context) Pro
 // PropertyMapInput is an input type that accepts PropertyMap and PropertyMapOutput values.
 // You can construct a concrete instance of `PropertyMapInput` via:
 //
-//          PropertyMap{ "key": PropertyArgs{...} }
+//	PropertyMap{ "key": PropertyArgs{...} }
 type PropertyMapInput interface {
 	pulumi.Input
 
@@ -546,12 +561,12 @@ func (o PropertyOutput) ReadVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v *Property) pulumi.IntOutput { return v.ReadVersion }).(pulumi.IntOutput)
 }
 
-// The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+// The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
 func (o PropertyOutput) RuleErrors() PropertyRuleErrorArrayOutput {
 	return o.ApplyT(func(v *Property) PropertyRuleErrorArrayOutput { return v.RuleErrors }).(PropertyRuleErrorArrayOutput)
 }
 
-// The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
+// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
 func (o PropertyOutput) RuleFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.RuleFormat }).(pulumi.StringOutput)
 }

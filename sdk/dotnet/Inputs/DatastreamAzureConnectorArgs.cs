@@ -19,7 +19,7 @@ namespace Pulumi.Akamai.Inputs
         public Input<string> AccessKey { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) Specifies the Azure Storage account name.
+        /// Specifies the Azure Storage account name.
         /// </summary>
         [Input("accountName", required: true)]
         public Input<string> AccountName { get; set; } = null!;
@@ -40,7 +40,7 @@ namespace Pulumi.Akamai.Inputs
         public Input<string> ConnectorName { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) Specifies the Azure Storage container name.
+        /// Specifies the Azure Storage container name.
         /// </summary>
         [Input("containerName", required: true)]
         public Input<string> ContainerName { get; set; } = null!;

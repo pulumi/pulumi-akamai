@@ -21,56 +21,61 @@ import (
 // package main
 //
 // import (
-// 	"fmt"
 //
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"fmt"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewCloudletsPolicy(ctx, "example", &akamai.CloudletsPolicyArgs{
-// 			CloudletCode: pulumi.String("ER"),
-// 			Description:  pulumi.String("policy description"),
-// 			GroupId:      pulumi.String("grp_123"),
-// 			MatchRules: pulumi.String(fmt.Sprintf(`  [
-//   {
-//     "name": "rule1",
-//     "type": "erMatchRule",
-//     "useRelativeUrl": "none",
-//     "statusCode": 301,
-//     "redirectURL": "https://www.example.com",
-//     "matchURL": "example.com",
-//     "useIncomingQueryString": false,
-//     "useIncomingSchemeAndHost": true
-//   },
-//   {
-//     "name": "rule2",
-//     "type": "erMatchRule",
-//     "matches": [
-//       {
-//         "matchType": "hostname",
-//         "matchValue": "3333.dom",
-//         "matchOperator": "equals",
-//         "caseSensitive": true,
-//         "negate": false
-//       }
-//     ],
-//     "useRelativeUrl": "none",
-//     "statusCode": 301,
-//     "redirectURL": "https://www.example.com",
-//     "useIncomingQueryString": false,
-//     "useIncomingSchemeAndHost": true
-//   }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewCloudletsPolicy(ctx, "example", &akamai.CloudletsPolicyArgs{
+//				CloudletCode: pulumi.String("ER"),
+//				Description:  pulumi.String("policy description"),
+//				GroupId:      pulumi.String("grp_123"),
+//				MatchRules: pulumi.String(fmt.Sprintf(`  [
+//	  {
+//	    "name": "rule1",
+//	    "type": "erMatchRule",
+//	    "useRelativeUrl": "none",
+//	    "statusCode": 301,
+//	    "redirectURL": "https://www.example.com",
+//	    "matchURL": "example.com",
+//	    "useIncomingQueryString": false,
+//	    "useIncomingSchemeAndHost": false
+//	  },
+//	  {
+//	    "name": "rule2",
+//	    "type": "erMatchRule",
+//	    "matches": [
+//	      {
+//	        "matchType": "path",
+//	        "matchValue": "/example/website.html",
+//	        "matchOperator": "equals",
+//	        "caseSensitive": false,
+//	        "negate": false
+//	      }
+//	    ],
+//	    "useRelativeUrl": "copy_scheme_hostname",
+//	    "statusCode": 301,
+//	    "redirectURL": "/website.html",
+//	    "useIncomingQueryString": false,
+//	    "useIncomingSchemeAndHost": true
+//	  }
+//
 // ]
 // `)),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -79,17 +84,19 @@ import (
 //
 // # (resource arguments)
 //
-//  } You can import your Akamai Cloudlets policy using a policy name. For example
+//	} You can import your Akamai Cloudlets policy using a policy name. For example
 //
 // ```sh
-//  $ pulumi import akamai:index/cloudletsPolicy:CloudletsPolicy example policy1
+//
+//	$ pulumi import akamai:index/cloudletsPolicy:CloudletsPolicy example policy1
+//
 // ```
 type CloudletsPolicy struct {
 	pulumi.CustomResourceState
 
-	// The two- or three- character code for the type of Cloudlet, either `ALB` for Application Load Balancer or `ER` for Edge Redirector.
+	// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
 	CloudletCode pulumi.StringOutput `pulumi:"cloudletCode"`
-	// A unique identifier that corresponds to a Cloudlets policy type, either `0` for Edge Redirector or `9` for Application Load Balancer.
+	// A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
 	CloudletId pulumi.IntOutput `pulumi:"cloudletId"`
 	// The description of this specific policy.
 	Description pulumi.StringPtrOutput `pulumi:"description"`
@@ -142,9 +149,9 @@ func GetCloudletsPolicy(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CloudletsPolicy resources.
 type cloudletsPolicyState struct {
-	// The two- or three- character code for the type of Cloudlet, either `ALB` for Application Load Balancer or `ER` for Edge Redirector.
+	// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
 	CloudletCode *string `pulumi:"cloudletCode"`
-	// A unique identifier that corresponds to a Cloudlets policy type, either `0` for Edge Redirector or `9` for Application Load Balancer.
+	// A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
 	CloudletId *int `pulumi:"cloudletId"`
 	// The description of this specific policy.
 	Description *string `pulumi:"description"`
@@ -163,9 +170,9 @@ type cloudletsPolicyState struct {
 }
 
 type CloudletsPolicyState struct {
-	// The two- or three- character code for the type of Cloudlet, either `ALB` for Application Load Balancer or `ER` for Edge Redirector.
+	// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
 	CloudletCode pulumi.StringPtrInput
-	// A unique identifier that corresponds to a Cloudlets policy type, either `0` for Edge Redirector or `9` for Application Load Balancer.
+	// A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
 	CloudletId pulumi.IntPtrInput
 	// The description of this specific policy.
 	Description pulumi.StringPtrInput
@@ -188,7 +195,7 @@ func (CloudletsPolicyState) ElementType() reflect.Type {
 }
 
 type cloudletsPolicyArgs struct {
-	// The two- or three- character code for the type of Cloudlet, either `ALB` for Application Load Balancer or `ER` for Edge Redirector.
+	// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
 	CloudletCode string `pulumi:"cloudletCode"`
 	// The description of this specific policy.
 	Description *string `pulumi:"description"`
@@ -204,7 +211,7 @@ type cloudletsPolicyArgs struct {
 
 // The set of arguments for constructing a CloudletsPolicy resource.
 type CloudletsPolicyArgs struct {
-	// The two- or three- character code for the type of Cloudlet, either `ALB` for Application Load Balancer or `ER` for Edge Redirector.
+	// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
 	CloudletCode pulumi.StringInput
 	// The description of this specific policy.
 	Description pulumi.StringPtrInput
@@ -244,7 +251,7 @@ func (i *CloudletsPolicy) ToCloudletsPolicyOutputWithContext(ctx context.Context
 // CloudletsPolicyArrayInput is an input type that accepts CloudletsPolicyArray and CloudletsPolicyArrayOutput values.
 // You can construct a concrete instance of `CloudletsPolicyArrayInput` via:
 //
-//          CloudletsPolicyArray{ CloudletsPolicyArgs{...} }
+//	CloudletsPolicyArray{ CloudletsPolicyArgs{...} }
 type CloudletsPolicyArrayInput interface {
 	pulumi.Input
 
@@ -269,7 +276,7 @@ func (i CloudletsPolicyArray) ToCloudletsPolicyArrayOutputWithContext(ctx contex
 // CloudletsPolicyMapInput is an input type that accepts CloudletsPolicyMap and CloudletsPolicyMapOutput values.
 // You can construct a concrete instance of `CloudletsPolicyMapInput` via:
 //
-//          CloudletsPolicyMap{ "key": CloudletsPolicyArgs{...} }
+//	CloudletsPolicyMap{ "key": CloudletsPolicyArgs{...} }
 type CloudletsPolicyMapInput interface {
 	pulumi.Input
 
@@ -305,12 +312,12 @@ func (o CloudletsPolicyOutput) ToCloudletsPolicyOutputWithContext(ctx context.Co
 	return o
 }
 
-// The two- or three- character code for the type of Cloudlet, either `ALB` for Application Load Balancer or `ER` for Edge Redirector.
+// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
 func (o CloudletsPolicyOutput) CloudletCode() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringOutput { return v.CloudletCode }).(pulumi.StringOutput)
 }
 
-// A unique identifier that corresponds to a Cloudlets policy type, either `0` for Edge Redirector or `9` for Application Load Balancer.
+// A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
 func (o CloudletsPolicyOutput) CloudletId() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.IntOutput { return v.CloudletId }).(pulumi.IntOutput)
 }

@@ -24,47 +24,52 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		protections, err := akamai.GetAppSecSecurityPolicyProtections(ctx, &GetAppSecSecurityPolicyProtectionsArgs{
-// 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: "gms1_134637",
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("protectionsJson", protections.Json)
-// 		ctx.Export("protectionsApplyApiConstraints", protections.ApplyApiConstraints)
-// 		ctx.Export("protectionsApplyApplicationLayerControls", protections.ApplyApplicationLayerControls)
-// 		ctx.Export("protectionsApplyBotmanControls", protections.ApplyBotmanControls)
-// 		ctx.Export("protectionsApplyNetworkLayerControls", protections.ApplyNetworkLayerControls)
-// 		ctx.Export("protectionsApplyRateControls", protections.ApplyRateControls)
-// 		ctx.Export("protectionsApplyReputationControls", protections.ApplyReputationControls)
-// 		ctx.Export("protectionsApplySlowPostControls", protections.ApplySlowPostControls)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			protections, err := akamai.GetAppSecSecurityPolicyProtections(ctx, &GetAppSecSecurityPolicyProtectionsArgs{
+//				ConfigId:         configuration.ConfigId,
+//				SecurityPolicyId: "gms1_134637",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("protectionsJson", protections.Json)
+//			ctx.Export("protectionsApplyApiConstraints", protections.ApplyApiConstraints)
+//			ctx.Export("protectionsApplyApplicationLayerControls", protections.ApplyApplicationLayerControls)
+//			ctx.Export("protectionsApplyBotmanControls", protections.ApplyBotmanControls)
+//			ctx.Export("protectionsApplyMalwareControls", protections.ApplyMalwareControls)
+//			ctx.Export("protectionsApplyNetworkLayerControls", protections.ApplyNetworkLayerControls)
+//			ctx.Export("protectionsApplyRateControls", protections.ApplyRateControls)
+//			ctx.Export("protectionsApplyReputationControls", protections.ApplyReputationControls)
+//			ctx.Export("protectionsApplySlowPostControls", protections.ApplySlowPostControls)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
 // The following options can be used to determine the information returned and how that returned information is formatted:
 //
 // - `applyApplicationLayerControls`. Returns **true** if application layer controls are enabled; returns **false** if they are not.
+// - `applyApiConstraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
+// - `applyBotmanControls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
+// - `applyMalwareControls`. Returns **true** if malware controls are enabled; returns **false** if they are not.
 // - `applyNetworkLayerControls`. Returns **true** if network layer controls are enabled; returns **false** if they are not.
 // - `applyRateControls`. Returns **true** if rate controls are enabled; returns **false** if they are not.
 // - `applyReputationControls`. Returns **true** if reputation controls are enabled; returns **false** if they are not.
-// - `applyBotmanControls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
-// - `applyApiConstraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
 // - `applySlowPostControls`. Returns **true** if slow POST controls are enabled; returns **false** if they are not.
 // - `json`. JSON-formatted list showing the status of the protection settings.
 // - `outputText`. Tabular report showing the status of the protection settings.
@@ -90,6 +95,7 @@ type GetAppSecSecurityPolicyProtectionsResult struct {
 	ApplyApiConstraints           bool `pulumi:"applyApiConstraints"`
 	ApplyApplicationLayerControls bool `pulumi:"applyApplicationLayerControls"`
 	ApplyBotmanControls           bool `pulumi:"applyBotmanControls"`
+	ApplyMalwareControls          bool `pulumi:"applyMalwareControls"`
 	ApplyNetworkLayerControls     bool `pulumi:"applyNetworkLayerControls"`
 	ApplyRateControls             bool `pulumi:"applyRateControls"`
 	ApplyReputationControls       bool `pulumi:"applyReputationControls"`
@@ -152,6 +158,10 @@ func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplyApplicationLayerCon
 
 func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplyBotmanControls() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) bool { return v.ApplyBotmanControls }).(pulumi.BoolOutput)
+}
+
+func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplyMalwareControls() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAppSecSecurityPolicyProtectionsResult) bool { return v.ApplyMalwareControls }).(pulumi.BoolOutput)
 }
 
 func (o GetAppSecSecurityPolicyProtectionsResultOutput) ApplyNetworkLayerControls() pulumi.BoolOutput {

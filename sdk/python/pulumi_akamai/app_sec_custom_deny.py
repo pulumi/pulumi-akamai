@@ -19,7 +19,7 @@ class AppSecCustomDenyArgs:
         """
         The set of arguments for constructing a AppSecCustomDeny resource.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the custom deny.
-        :param pulumi.Input[str] custom_deny: . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
+        :param pulumi.Input[str] custom_deny: . Path to a JSON file containing properties and property values for the custom deny.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "custom_deny", custom_deny)
@@ -40,7 +40,7 @@ class AppSecCustomDenyArgs:
     @pulumi.getter(name="customDeny")
     def custom_deny(self) -> pulumi.Input[str]:
         """
-        . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
+        . Path to a JSON file containing properties and property values for the custom deny.
         """
         return pulumi.get(self, "custom_deny")
 
@@ -58,7 +58,7 @@ class _AppSecCustomDenyState:
         """
         Input properties used for looking up and filtering AppSecCustomDeny resources.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the custom deny.
-        :param pulumi.Input[str] custom_deny: . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
+        :param pulumi.Input[str] custom_deny: . Path to a JSON file containing properties and property values for the custom deny.
         :param pulumi.Input[str] custom_deny_id: custom_deny_id
         """
         if config_id is not None:
@@ -84,7 +84,7 @@ class _AppSecCustomDenyState:
     @pulumi.getter(name="customDeny")
     def custom_deny(self) -> Optional[pulumi.Input[str]]:
         """
-        . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
+        . Path to a JSON file containing properties and property values for the custom deny.
         """
         return pulumi.get(self, "custom_deny")
 
@@ -143,7 +143,7 @@ class AppSecCustomDeny(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the custom deny.
-        :param pulumi.Input[str] custom_deny: . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
+        :param pulumi.Input[str] custom_deny: . Path to a JSON file containing properties and property values for the custom deny.
         """
         ...
     @overload
@@ -232,7 +232,7 @@ class AppSecCustomDeny(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the custom deny.
-        :param pulumi.Input[str] custom_deny: . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
+        :param pulumi.Input[str] custom_deny: . Path to a JSON file containing properties and property values for the custom deny.
         :param pulumi.Input[str] custom_deny_id: custom_deny_id
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -256,7 +256,7 @@ class AppSecCustomDeny(pulumi.CustomResource):
     @pulumi.getter(name="customDeny")
     def custom_deny(self) -> pulumi.Output[str]:
         """
-        . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
+        . Path to a JSON file containing properties and property values for the custom deny.
         """
         return pulumi.get(self, "custom_deny")
 

@@ -68,7 +68,7 @@ export class AppSecCustomDeny extends pulumi.CustomResource {
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
+     * . Path to a JSON file containing properties and property values for the custom deny.
      */
     public readonly customDeny!: pulumi.Output<string>;
     /**
@@ -118,7 +118,7 @@ export interface AppSecCustomDenyState {
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
+     * . Path to a JSON file containing properties and property values for the custom deny.
      */
     customDeny?: pulumi.Input<string>;
     /**
@@ -136,7 +136,7 @@ export interface AppSecCustomDenyArgs {
      */
     configId: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
+     * . Path to a JSON file containing properties and property values for the custom deny.
      */
     customDeny: pulumi.Input<string>;
 }

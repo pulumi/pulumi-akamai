@@ -19,6 +19,9 @@ class AppSecApiConstraintsProtectionArgs:
                  security_policy_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecApiConstraintsProtection resource.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[bool] enabled: Whether to enable API constraints protection
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "enabled", enabled)
@@ -27,6 +30,9 @@ class AppSecApiConstraintsProtectionArgs:
     @property
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
+        """
+        Unique identifier of the security configuration
+        """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
@@ -36,6 +42,9 @@ class AppSecApiConstraintsProtectionArgs:
     @property
     @pulumi.getter
     def enabled(self) -> pulumi.Input[bool]:
+        """
+        Whether to enable API constraints protection
+        """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
@@ -45,6 +54,9 @@ class AppSecApiConstraintsProtectionArgs:
     @property
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
+        """
+        Unique identifier of the security policy
+        """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
@@ -61,7 +73,10 @@ class _AppSecApiConstraintsProtectionState:
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecApiConstraintsProtection resources.
-        :param pulumi.Input[str] output_text: Text Export representation
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[bool] enabled: Whether to enable API constraints protection
+        :param pulumi.Input[str] output_text: Text representation
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -75,6 +90,9 @@ class _AppSecApiConstraintsProtectionState:
     @property
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
+        """
+        Unique identifier of the security configuration
+        """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
@@ -84,6 +102,9 @@ class _AppSecApiConstraintsProtectionState:
     @property
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to enable API constraints protection
+        """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
@@ -94,7 +115,7 @@ class _AppSecApiConstraintsProtectionState:
     @pulumi.getter(name="outputText")
     def output_text(self) -> Optional[pulumi.Input[str]]:
         """
-        Text Export representation
+        Text representation
         """
         return pulumi.get(self, "output_text")
 
@@ -105,6 +126,9 @@ class _AppSecApiConstraintsProtectionState:
     @property
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Unique identifier of the security policy
+        """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
@@ -150,6 +174,9 @@ class AppSecApiConstraintsProtection(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[bool] enabled: Whether to enable API constraints protection
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         ...
     @overload
@@ -242,7 +269,10 @@ class AppSecApiConstraintsProtection(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] output_text: Text Export representation
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[bool] enabled: Whether to enable API constraints protection
+        :param pulumi.Input[str] output_text: Text representation
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -257,23 +287,32 @@ class AppSecApiConstraintsProtection(pulumi.CustomResource):
     @property
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
+        """
+        Unique identifier of the security configuration
+        """
         return pulumi.get(self, "config_id")
 
     @property
     @pulumi.getter
     def enabled(self) -> pulumi.Output[bool]:
+        """
+        Whether to enable API constraints protection
+        """
         return pulumi.get(self, "enabled")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> pulumi.Output[str]:
         """
-        Text Export representation
+        Text representation
         """
         return pulumi.get(self, "output_text")
 
     @property
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
+        """
+        Unique identifier of the security policy
+        """
         return pulumi.get(self, "security_policy_id")
 

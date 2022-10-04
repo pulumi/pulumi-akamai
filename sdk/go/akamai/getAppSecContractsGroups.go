@@ -12,7 +12,7 @@ import (
 
 // **Scopes**: Contract; group
 //
-// Returns information about the contracts and groups associated with your account. Among other things, this information is required to create a new security configuration and to return a list of the hostnames available for use in a security policy. The returned information for this data source is described in the [List contracts and groups](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getcontractsandgroupswithksdorwaf) of the Application Security API.
+// Returns information about the contracts and groups associated with your account. Among other things, this information is required to create a new security configuration and to return a list of the hostnames available for use in a security policy.
 //
 // **Related API Endpoint**: [/appsec/v1/contracts-groups](https://techdocs.akamai.com/application-security/reference/get-contracts-groups)
 //
@@ -24,26 +24,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		contractsGroups, err := akamai.GetAppSecContractsGroups(ctx, &GetAppSecContractsGroupsArgs{
-// 			Contractid: pulumi.StringRef("5-2WA382"),
-// 			Groupid:    pulumi.IntRef(12198),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("contractsGroupsList", contractsGroups.OutputText)
-// 		ctx.Export("contractsGroupsJson", contractsGroups.Json)
-// 		ctx.Export("contractGroupsDefaultContractid", contractsGroups.DefaultContractid)
-// 		ctx.Export("contractGroupsDefaultGroupid", contractsGroups.DefaultGroupid)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			contractsGroups, err := akamai.GetAppSecContractsGroups(ctx, &GetAppSecContractsGroupsArgs{
+//				Contractid: pulumi.StringRef("5-2WA382"),
+//				Groupid:    pulumi.IntRef(12198),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("contractsGroupsList", contractsGroups.OutputText)
+//			ctx.Export("contractsGroupsJson", contractsGroups.Json)
+//			ctx.Export("contractGroupsDefaultContractid", contractsGroups.DefaultContractid)
+//			ctx.Export("contractGroupsDefaultGroupid", contractsGroups.DefaultGroupid)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //

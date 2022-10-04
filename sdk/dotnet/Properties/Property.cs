@@ -189,13 +189,13 @@ namespace Pulumi.Akamai.Properties
         public Output<int> ReadVersion { get; private set; } = null!;
 
         /// <summary>
-        /// The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        /// The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         /// </summary>
         [Output("ruleErrors")]
         public Output<ImmutableArray<Outputs.PropertyRuleError>> RuleErrors { get; private set; } = null!;
 
         /// <summary>
-        /// The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
+        /// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
         /// </summary>
         [Output("ruleFormat")]
         public Output<string> RuleFormat { get; private set; } = null!;
@@ -343,7 +343,7 @@ namespace Pulumi.Akamai.Properties
         public Input<string>? ProductId { get; set; }
 
         /// <summary>
-        /// The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
+        /// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
         /// </summary>
         [Input("ruleFormat")]
         public Input<string>? RuleFormat { get; set; }
@@ -473,7 +473,7 @@ namespace Pulumi.Akamai.Properties
         private InputList<Inputs.PropertyRuleErrorGetArgs>? _ruleErrors;
 
         /// <summary>
-        /// The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        /// The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         /// </summary>
         public InputList<Inputs.PropertyRuleErrorGetArgs> RuleErrors
         {
@@ -482,7 +482,7 @@ namespace Pulumi.Akamai.Properties
         }
 
         /// <summary>
-        /// The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
+        /// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
         /// </summary>
         [Input("ruleFormat")]
         public Input<string>? RuleFormat { get; set; }

@@ -76,16 +76,28 @@ export class AppSecWafMode extends pulumi.CustomResource {
      * . Unique identifier of the security configuration associated with the WAF mode settings being modified.
      */
     public readonly configId!: pulumi.Output<number>;
+    /**
+     * Versioning information for the current Kona Rule Set
+     */
     public /*out*/ readonly currentRuleset!: pulumi.Output<string>;
+    /**
+     * Date on which the evaluation period ends, if applicable
+     */
     public /*out*/ readonly evalExpirationDate!: pulumi.Output<string>;
+    /**
+     * Versioning information for the Kona Rule Set being evaluated, if applicable
+     */
     public /*out*/ readonly evalRuleset!: pulumi.Output<string>;
+    /**
+     * Whether an evaluation is currently in progress
+     */
     public /*out*/ readonly evalStatus!: pulumi.Output<string>;
     /**
      * . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
      */
     public readonly mode!: pulumi.Output<string>;
     /**
-     * Text Export representation
+     * Text representation
      */
     public /*out*/ readonly outputText!: pulumi.Output<string>;
     /**
@@ -147,16 +159,28 @@ export interface AppSecWafModeState {
      * . Unique identifier of the security configuration associated with the WAF mode settings being modified.
      */
     configId?: pulumi.Input<number>;
+    /**
+     * Versioning information for the current Kona Rule Set
+     */
     currentRuleset?: pulumi.Input<string>;
+    /**
+     * Date on which the evaluation period ends, if applicable
+     */
     evalExpirationDate?: pulumi.Input<string>;
+    /**
+     * Versioning information for the Kona Rule Set being evaluated, if applicable
+     */
     evalRuleset?: pulumi.Input<string>;
+    /**
+     * Whether an evaluation is currently in progress
+     */
     evalStatus?: pulumi.Input<string>;
     /**
      * . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
      */
     mode?: pulumi.Input<string>;
     /**
-     * Text Export representation
+     * Text representation
      */
     outputText?: pulumi.Input<string>;
     /**

@@ -19,7 +19,7 @@ class AppSecCustomRuleArgs:
         """
         The set of arguments for constructing a AppSecCustomRule resource.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the custom rule being modified.
-        :param pulumi.Input[str] custom_rule: . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules) section of the Application Security API documentation.
+        :param pulumi.Input[str] custom_rule: . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "custom_rule", custom_rule)
@@ -40,7 +40,7 @@ class AppSecCustomRuleArgs:
     @pulumi.getter(name="customRule")
     def custom_rule(self) -> pulumi.Input[str]:
         """
-        . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules) section of the Application Security API documentation.
+        . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
         """
         return pulumi.get(self, "custom_rule")
 
@@ -58,7 +58,7 @@ class _AppSecCustomRuleState:
         """
         Input properties used for looking up and filtering AppSecCustomRule resources.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the custom rule being modified.
-        :param pulumi.Input[str] custom_rule: . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules) section of the Application Security API documentation.
+        :param pulumi.Input[str] custom_rule: . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -83,7 +83,7 @@ class _AppSecCustomRuleState:
     @pulumi.getter(name="customRule")
     def custom_rule(self) -> Optional[pulumi.Input[str]]:
         """
-        . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules) section of the Application Security API documentation.
+        . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
         """
         return pulumi.get(self, "custom_rule")
 
@@ -119,7 +119,7 @@ class AppSecCustomRule(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the custom rule being modified.
-        :param pulumi.Input[str] custom_rule: . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules) section of the Application Security API documentation.
+        :param pulumi.Input[str] custom_rule: . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
         """
         ...
     @overload
@@ -188,7 +188,7 @@ class AppSecCustomRule(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the custom rule being modified.
-        :param pulumi.Input[str] custom_rule: . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules) section of the Application Security API documentation.
+        :param pulumi.Input[str] custom_rule: . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -211,7 +211,7 @@ class AppSecCustomRule(pulumi.CustomResource):
     @pulumi.getter(name="customRule")
     def custom_rule(self) -> pulumi.Output[str]:
         """
-        . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postcustomrules) section of the Application Security API documentation.
+        . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
         """
         return pulumi.get(self, "custom_rule")
 

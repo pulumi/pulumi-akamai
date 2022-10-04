@@ -74,7 +74,7 @@ def get_iam_roles(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIa
 
     * `roles` — A list of roles.
 
-    [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getroles)
+    [API Reference](https://techdocs.akamai.com/iam-api/reference/get-roles)
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

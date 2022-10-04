@@ -21,15 +21,18 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		ctx.Export("myPropertyList", data.Akamai_properties.Example)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			ctx.Export("myPropertyList", data.Akamai_properties.Example)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Attributes reference
 //

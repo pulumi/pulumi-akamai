@@ -22,7 +22,7 @@ type GtmASmapAssignment struct {
 // GtmASmapAssignmentInput is an input type that accepts GtmASmapAssignmentArgs and GtmASmapAssignmentOutput values.
 // You can construct a concrete instance of `GtmASmapAssignmentInput` via:
 //
-//          GtmASmapAssignmentArgs{...}
+//	GtmASmapAssignmentArgs{...}
 type GtmASmapAssignmentInput interface {
 	pulumi.Input
 
@@ -54,7 +54,7 @@ func (i GtmASmapAssignmentArgs) ToGtmASmapAssignmentOutputWithContext(ctx contex
 // GtmASmapAssignmentArrayInput is an input type that accepts GtmASmapAssignmentArray and GtmASmapAssignmentArrayOutput values.
 // You can construct a concrete instance of `GtmASmapAssignmentArrayInput` via:
 //
-//          GtmASmapAssignmentArray{ GtmASmapAssignmentArgs{...} }
+//	GtmASmapAssignmentArray{ GtmASmapAssignmentArgs{...} }
 type GtmASmapAssignmentArrayInput interface {
 	pulumi.Input
 
@@ -135,7 +135,7 @@ type GtmASmapDefaultDatacenter struct {
 // GtmASmapDefaultDatacenterInput is an input type that accepts GtmASmapDefaultDatacenterArgs and GtmASmapDefaultDatacenterOutput values.
 // You can construct a concrete instance of `GtmASmapDefaultDatacenterInput` via:
 //
-//          GtmASmapDefaultDatacenterArgs{...}
+//	GtmASmapDefaultDatacenterArgs{...}
 type GtmASmapDefaultDatacenterInput interface {
 	pulumi.Input
 
@@ -173,11 +173,11 @@ func (i GtmASmapDefaultDatacenterArgs) ToGtmASmapDefaultDatacenterPtrOutputWithC
 // GtmASmapDefaultDatacenterPtrInput is an input type that accepts GtmASmapDefaultDatacenterArgs, GtmASmapDefaultDatacenterPtr and GtmASmapDefaultDatacenterPtrOutput values.
 // You can construct a concrete instance of `GtmASmapDefaultDatacenterPtrInput` via:
 //
-//          GtmASmapDefaultDatacenterArgs{...}
+//	        GtmASmapDefaultDatacenterArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type GtmASmapDefaultDatacenterPtrInput interface {
 	pulumi.Input
 
@@ -293,7 +293,7 @@ type GtmCidrmapAssignment struct {
 // GtmCidrmapAssignmentInput is an input type that accepts GtmCidrmapAssignmentArgs and GtmCidrmapAssignmentOutput values.
 // You can construct a concrete instance of `GtmCidrmapAssignmentInput` via:
 //
-//          GtmCidrmapAssignmentArgs{...}
+//	GtmCidrmapAssignmentArgs{...}
 type GtmCidrmapAssignmentInput interface {
 	pulumi.Input
 
@@ -325,7 +325,7 @@ func (i GtmCidrmapAssignmentArgs) ToGtmCidrmapAssignmentOutputWithContext(ctx co
 // GtmCidrmapAssignmentArrayInput is an input type that accepts GtmCidrmapAssignmentArray and GtmCidrmapAssignmentArrayOutput values.
 // You can construct a concrete instance of `GtmCidrmapAssignmentArrayInput` via:
 //
-//          GtmCidrmapAssignmentArray{ GtmCidrmapAssignmentArgs{...} }
+//	GtmCidrmapAssignmentArray{ GtmCidrmapAssignmentArgs{...} }
 type GtmCidrmapAssignmentArrayInput interface {
 	pulumi.Input
 
@@ -406,7 +406,7 @@ type GtmCidrmapDefaultDatacenter struct {
 // GtmCidrmapDefaultDatacenterInput is an input type that accepts GtmCidrmapDefaultDatacenterArgs and GtmCidrmapDefaultDatacenterOutput values.
 // You can construct a concrete instance of `GtmCidrmapDefaultDatacenterInput` via:
 //
-//          GtmCidrmapDefaultDatacenterArgs{...}
+//	GtmCidrmapDefaultDatacenterArgs{...}
 type GtmCidrmapDefaultDatacenterInput interface {
 	pulumi.Input
 
@@ -444,11 +444,11 @@ func (i GtmCidrmapDefaultDatacenterArgs) ToGtmCidrmapDefaultDatacenterPtrOutputW
 // GtmCidrmapDefaultDatacenterPtrInput is an input type that accepts GtmCidrmapDefaultDatacenterArgs, GtmCidrmapDefaultDatacenterPtr and GtmCidrmapDefaultDatacenterPtrOutput values.
 // You can construct a concrete instance of `GtmCidrmapDefaultDatacenterPtrInput` via:
 //
-//          GtmCidrmapDefaultDatacenterArgs{...}
+//	        GtmCidrmapDefaultDatacenterArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type GtmCidrmapDefaultDatacenterPtrInput interface {
 	pulumi.Input
 
@@ -564,7 +564,7 @@ type GtmDatacenterDefaultLoadObject struct {
 // GtmDatacenterDefaultLoadObjectInput is an input type that accepts GtmDatacenterDefaultLoadObjectArgs and GtmDatacenterDefaultLoadObjectOutput values.
 // You can construct a concrete instance of `GtmDatacenterDefaultLoadObjectInput` via:
 //
-//          GtmDatacenterDefaultLoadObjectArgs{...}
+//	GtmDatacenterDefaultLoadObjectArgs{...}
 type GtmDatacenterDefaultLoadObjectInput interface {
 	pulumi.Input
 
@@ -604,11 +604,11 @@ func (i GtmDatacenterDefaultLoadObjectArgs) ToGtmDatacenterDefaultLoadObjectPtrO
 // GtmDatacenterDefaultLoadObjectPtrInput is an input type that accepts GtmDatacenterDefaultLoadObjectArgs, GtmDatacenterDefaultLoadObjectPtr and GtmDatacenterDefaultLoadObjectPtrOutput values.
 // You can construct a concrete instance of `GtmDatacenterDefaultLoadObjectPtrInput` via:
 //
-//          GtmDatacenterDefaultLoadObjectArgs{...}
+//	        GtmDatacenterDefaultLoadObjectArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type GtmDatacenterDefaultLoadObjectPtrInput interface {
 	pulumi.Input
 
@@ -739,7 +739,7 @@ type GtmGeomapAssignment struct {
 // GtmGeomapAssignmentInput is an input type that accepts GtmGeomapAssignmentArgs and GtmGeomapAssignmentOutput values.
 // You can construct a concrete instance of `GtmGeomapAssignmentInput` via:
 //
-//          GtmGeomapAssignmentArgs{...}
+//	GtmGeomapAssignmentArgs{...}
 type GtmGeomapAssignmentInput interface {
 	pulumi.Input
 
@@ -771,7 +771,7 @@ func (i GtmGeomapAssignmentArgs) ToGtmGeomapAssignmentOutputWithContext(ctx cont
 // GtmGeomapAssignmentArrayInput is an input type that accepts GtmGeomapAssignmentArray and GtmGeomapAssignmentArrayOutput values.
 // You can construct a concrete instance of `GtmGeomapAssignmentArrayInput` via:
 //
-//          GtmGeomapAssignmentArray{ GtmGeomapAssignmentArgs{...} }
+//	GtmGeomapAssignmentArray{ GtmGeomapAssignmentArgs{...} }
 type GtmGeomapAssignmentArrayInput interface {
 	pulumi.Input
 
@@ -852,7 +852,7 @@ type GtmGeomapDefaultDatacenter struct {
 // GtmGeomapDefaultDatacenterInput is an input type that accepts GtmGeomapDefaultDatacenterArgs and GtmGeomapDefaultDatacenterOutput values.
 // You can construct a concrete instance of `GtmGeomapDefaultDatacenterInput` via:
 //
-//          GtmGeomapDefaultDatacenterArgs{...}
+//	GtmGeomapDefaultDatacenterArgs{...}
 type GtmGeomapDefaultDatacenterInput interface {
 	pulumi.Input
 
@@ -890,11 +890,11 @@ func (i GtmGeomapDefaultDatacenterArgs) ToGtmGeomapDefaultDatacenterPtrOutputWit
 // GtmGeomapDefaultDatacenterPtrInput is an input type that accepts GtmGeomapDefaultDatacenterArgs, GtmGeomapDefaultDatacenterPtr and GtmGeomapDefaultDatacenterPtrOutput values.
 // You can construct a concrete instance of `GtmGeomapDefaultDatacenterPtrInput` via:
 //
-//          GtmGeomapDefaultDatacenterArgs{...}
+//	        GtmGeomapDefaultDatacenterArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type GtmGeomapDefaultDatacenterPtrInput interface {
 	pulumi.Input
 
@@ -1052,7 +1052,7 @@ type GtmPropertyLivenessTest struct {
 // GtmPropertyLivenessTestInput is an input type that accepts GtmPropertyLivenessTestArgs and GtmPropertyLivenessTestOutput values.
 // You can construct a concrete instance of `GtmPropertyLivenessTestInput` via:
 //
-//          GtmPropertyLivenessTestArgs{...}
+//	GtmPropertyLivenessTestArgs{...}
 type GtmPropertyLivenessTestInput interface {
 	pulumi.Input
 
@@ -1126,7 +1126,7 @@ func (i GtmPropertyLivenessTestArgs) ToGtmPropertyLivenessTestOutputWithContext(
 // GtmPropertyLivenessTestArrayInput is an input type that accepts GtmPropertyLivenessTestArray and GtmPropertyLivenessTestArrayOutput values.
 // You can construct a concrete instance of `GtmPropertyLivenessTestArrayInput` via:
 //
-//          GtmPropertyLivenessTestArray{ GtmPropertyLivenessTestArgs{...} }
+//	GtmPropertyLivenessTestArray{ GtmPropertyLivenessTestArgs{...} }
 type GtmPropertyLivenessTestArrayInput interface {
 	pulumi.Input
 
@@ -1312,7 +1312,7 @@ type GtmPropertyLivenessTestHttpHeader struct {
 // GtmPropertyLivenessTestHttpHeaderInput is an input type that accepts GtmPropertyLivenessTestHttpHeaderArgs and GtmPropertyLivenessTestHttpHeaderOutput values.
 // You can construct a concrete instance of `GtmPropertyLivenessTestHttpHeaderInput` via:
 //
-//          GtmPropertyLivenessTestHttpHeaderArgs{...}
+//	GtmPropertyLivenessTestHttpHeaderArgs{...}
 type GtmPropertyLivenessTestHttpHeaderInput interface {
 	pulumi.Input
 
@@ -1342,7 +1342,7 @@ func (i GtmPropertyLivenessTestHttpHeaderArgs) ToGtmPropertyLivenessTestHttpHead
 // GtmPropertyLivenessTestHttpHeaderArrayInput is an input type that accepts GtmPropertyLivenessTestHttpHeaderArray and GtmPropertyLivenessTestHttpHeaderArrayOutput values.
 // You can construct a concrete instance of `GtmPropertyLivenessTestHttpHeaderArrayInput` via:
 //
-//          GtmPropertyLivenessTestHttpHeaderArray{ GtmPropertyLivenessTestHttpHeaderArgs{...} }
+//	GtmPropertyLivenessTestHttpHeaderArray{ GtmPropertyLivenessTestHttpHeaderArgs{...} }
 type GtmPropertyLivenessTestHttpHeaderArrayInput interface {
 	pulumi.Input
 
@@ -1420,7 +1420,7 @@ type GtmPropertyStaticRrSet struct {
 // GtmPropertyStaticRrSetInput is an input type that accepts GtmPropertyStaticRrSetArgs and GtmPropertyStaticRrSetOutput values.
 // You can construct a concrete instance of `GtmPropertyStaticRrSetInput` via:
 //
-//          GtmPropertyStaticRrSetArgs{...}
+//	GtmPropertyStaticRrSetArgs{...}
 type GtmPropertyStaticRrSetInput interface {
 	pulumi.Input
 
@@ -1452,7 +1452,7 @@ func (i GtmPropertyStaticRrSetArgs) ToGtmPropertyStaticRrSetOutputWithContext(ct
 // GtmPropertyStaticRrSetArrayInput is an input type that accepts GtmPropertyStaticRrSetArray and GtmPropertyStaticRrSetArrayOutput values.
 // You can construct a concrete instance of `GtmPropertyStaticRrSetArrayInput` via:
 //
-//          GtmPropertyStaticRrSetArray{ GtmPropertyStaticRrSetArgs{...} }
+//	GtmPropertyStaticRrSetArray{ GtmPropertyStaticRrSetArgs{...} }
 type GtmPropertyStaticRrSetArrayInput interface {
 	pulumi.Input
 
@@ -1541,7 +1541,7 @@ type GtmPropertyTrafficTarget struct {
 // GtmPropertyTrafficTargetInput is an input type that accepts GtmPropertyTrafficTargetArgs and GtmPropertyTrafficTargetOutput values.
 // You can construct a concrete instance of `GtmPropertyTrafficTargetInput` via:
 //
-//          GtmPropertyTrafficTargetArgs{...}
+//	GtmPropertyTrafficTargetArgs{...}
 type GtmPropertyTrafficTargetInput interface {
 	pulumi.Input
 
@@ -1579,7 +1579,7 @@ func (i GtmPropertyTrafficTargetArgs) ToGtmPropertyTrafficTargetOutputWithContex
 // GtmPropertyTrafficTargetArrayInput is an input type that accepts GtmPropertyTrafficTargetArray and GtmPropertyTrafficTargetArrayOutput values.
 // You can construct a concrete instance of `GtmPropertyTrafficTargetArrayInput` via:
 //
-//          GtmPropertyTrafficTargetArray{ GtmPropertyTrafficTargetArgs{...} }
+//	GtmPropertyTrafficTargetArray{ GtmPropertyTrafficTargetArgs{...} }
 type GtmPropertyTrafficTargetArrayInput interface {
 	pulumi.Input
 
@@ -1681,7 +1681,7 @@ type GtmResourceResourceInstance struct {
 // GtmResourceResourceInstanceInput is an input type that accepts GtmResourceResourceInstanceArgs and GtmResourceResourceInstanceOutput values.
 // You can construct a concrete instance of `GtmResourceResourceInstanceInput` via:
 //
-//          GtmResourceResourceInstanceArgs{...}
+//	GtmResourceResourceInstanceArgs{...}
 type GtmResourceResourceInstanceInput interface {
 	pulumi.Input
 
@@ -1717,7 +1717,7 @@ func (i GtmResourceResourceInstanceArgs) ToGtmResourceResourceInstanceOutputWith
 // GtmResourceResourceInstanceArrayInput is an input type that accepts GtmResourceResourceInstanceArray and GtmResourceResourceInstanceArrayOutput values.
 // You can construct a concrete instance of `GtmResourceResourceInstanceArrayInput` via:
 //
-//          GtmResourceResourceInstanceArray{ GtmResourceResourceInstanceArgs{...} }
+//	GtmResourceResourceInstanceArray{ GtmResourceResourceInstanceArgs{...} }
 type GtmResourceResourceInstanceArrayInput interface {
 	pulumi.Input
 

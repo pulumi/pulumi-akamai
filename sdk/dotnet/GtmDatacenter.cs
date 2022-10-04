@@ -37,9 +37,6 @@ namespace Pulumi.Akamai
     /// 
     /// }
     /// ```
-    /// ## Schema reference
-    /// 
-    /// You can download the GTM Data Center backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#datacenter) page.
     /// </summary>
     [AkamaiResourceType("akamai:index/gtmDatacenter:GtmDatacenter")]
     public partial class GtmDatacenter : Pulumi.CustomResource

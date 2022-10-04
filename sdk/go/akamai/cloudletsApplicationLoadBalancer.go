@@ -21,54 +21,57 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewCloudletsApplicationLoadBalancer(ctx, "example", &akamai.CloudletsApplicationLoadBalancerArgs{
-// 			BalancingType: pulumi.String("WEIGHTED"),
-// 			DataCenters: CloudletsApplicationLoadBalancerDataCenterArray{
-// 				&CloudletsApplicationLoadBalancerDataCenterArgs{
-// 					City:                          pulumi.String("Boston"),
-// 					CloudServerHostHeaderOverride: pulumi.Bool(false),
-// 					CloudService:                  pulumi.Bool(true),
-// 					Continent:                     pulumi.String("NA"),
-// 					Country:                       pulumi.String("US"),
-// 					Hostname:                      pulumi.String("example-hostname"),
-// 					Latitude:                      pulumi.Float64(102.78108),
-// 					LivenessHosts: pulumi.StringArray{
-// 						pulumi.String("example"),
-// 					},
-// 					Longitude:       -116.07064,
-// 					OriginId:        pulumi.String("alb_test_1"),
-// 					Percent:         pulumi.Float64(100),
-// 					StateOrProvince: pulumi.String("MA"),
-// 				},
-// 			},
-// 			Description: pulumi.String("application_load_balancer description"),
-// 			LivenessSettings: &CloudletsApplicationLoadBalancerLivenessSettingsArgs{
-// 				AdditionalHeaders: pulumi.StringMap{
-// 					"additionalHeaders": pulumi.String("123"),
-// 				},
-// 				HostHeader:     pulumi.String("header"),
-// 				Interval:       pulumi.Int(10),
-// 				Path:           pulumi.String("/status"),
-// 				Port:           pulumi.Int(1234),
-// 				Protocol:       pulumi.String("HTTP"),
-// 				RequestString:  pulumi.String("test_request_string"),
-// 				ResponseString: pulumi.String("test_response_string"),
-// 				Timeout:        pulumi.Float64(60),
-// 			},
-// 			OriginId: pulumi.String("alb_test_1"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewCloudletsApplicationLoadBalancer(ctx, "example", &akamai.CloudletsApplicationLoadBalancerArgs{
+//				BalancingType: pulumi.String("WEIGHTED"),
+//				DataCenters: CloudletsApplicationLoadBalancerDataCenterArray{
+//					&CloudletsApplicationLoadBalancerDataCenterArgs{
+//						City:                          pulumi.String("Boston"),
+//						CloudServerHostHeaderOverride: pulumi.Bool(false),
+//						CloudService:                  pulumi.Bool(true),
+//						Continent:                     pulumi.String("NA"),
+//						Country:                       pulumi.String("US"),
+//						Hostname:                      pulumi.String("example-hostname"),
+//						Latitude:                      pulumi.Float64(102.78108),
+//						LivenessHosts: pulumi.StringArray{
+//							pulumi.String("example"),
+//						},
+//						Longitude:       -116.07064,
+//						OriginId:        pulumi.String("alb_test_1"),
+//						Percent:         pulumi.Float64(100),
+//						StateOrProvince: pulumi.String("MA"),
+//					},
+//				},
+//				Description: pulumi.String("application_load_balancer description"),
+//				LivenessSettings: &CloudletsApplicationLoadBalancerLivenessSettingsArgs{
+//					AdditionalHeaders: pulumi.StringMap{
+//						"additionalHeaders": pulumi.String("123"),
+//					},
+//					HostHeader:     pulumi.String("header"),
+//					Interval:       pulumi.Int(10),
+//					Path:           pulumi.String("/status"),
+//					Port:           pulumi.Int(1234),
+//					Protocol:       pulumi.String("HTTP"),
+//					RequestString:  pulumi.String("test_request_string"),
+//					ResponseString: pulumi.String("test_response_string"),
+//					Timeout:        pulumi.Float64(60),
+//				},
+//				OriginId: pulumi.String("alb_test_1"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -77,10 +80,12 @@ import (
 //
 // # (resource arguments)
 //
-//  } You can import your Akamai Application Load Balancer configuration using an origin ID. For example
+//	} You can import your Akamai Application Load Balancer configuration using an origin ID. For example
 //
 // ```sh
-//  $ pulumi import akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer example alb_test_1
+//
+//	$ pulumi import akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer example alb_test_1
+//
 // ```
 type CloudletsApplicationLoadBalancer struct {
 	pulumi.CustomResourceState
@@ -226,7 +231,7 @@ func (i *CloudletsApplicationLoadBalancer) ToCloudletsApplicationLoadBalancerOut
 // CloudletsApplicationLoadBalancerArrayInput is an input type that accepts CloudletsApplicationLoadBalancerArray and CloudletsApplicationLoadBalancerArrayOutput values.
 // You can construct a concrete instance of `CloudletsApplicationLoadBalancerArrayInput` via:
 //
-//          CloudletsApplicationLoadBalancerArray{ CloudletsApplicationLoadBalancerArgs{...} }
+//	CloudletsApplicationLoadBalancerArray{ CloudletsApplicationLoadBalancerArgs{...} }
 type CloudletsApplicationLoadBalancerArrayInput interface {
 	pulumi.Input
 
@@ -251,7 +256,7 @@ func (i CloudletsApplicationLoadBalancerArray) ToCloudletsApplicationLoadBalance
 // CloudletsApplicationLoadBalancerMapInput is an input type that accepts CloudletsApplicationLoadBalancerMap and CloudletsApplicationLoadBalancerMapOutput values.
 // You can construct a concrete instance of `CloudletsApplicationLoadBalancerMapInput` via:
 //
-//          CloudletsApplicationLoadBalancerMap{ "key": CloudletsApplicationLoadBalancerArgs{...} }
+//	CloudletsApplicationLoadBalancerMap{ "key": CloudletsApplicationLoadBalancerArgs{...} }
 type CloudletsApplicationLoadBalancerMapInput interface {
 	pulumi.Input
 

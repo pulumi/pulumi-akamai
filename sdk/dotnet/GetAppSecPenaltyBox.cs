@@ -14,7 +14,7 @@ namespace Pulumi.Akamai
         /// <summary>
         /// **Scopes**: Security policy
         /// 
-        /// Returns penalty box settings for the specified security policy. 
+        /// Returns penalty box settings for the specified security policy.
         /// When the penalty box is enabled for a policy, clients that trigger a WAF Deny action are placed in the “penalty box”.
         /// There, the action you select for penalty box (either Alert or Deny ) continues to apply to any requests from that client for the next 10 minutes.
         /// 
@@ -76,7 +76,7 @@ namespace Pulumi.Akamai
         /// <summary>
         /// **Scopes**: Security policy
         /// 
-        /// Returns penalty box settings for the specified security policy. 
+        /// Returns penalty box settings for the specified security policy.
         /// When the penalty box is enabled for a policy, clients that trigger a WAF Deny action are placed in the “penalty box”.
         /// There, the action you select for penalty box (either Alert or Deny ) continues to apply to any requests from that client for the next 10 minutes.
         /// 

@@ -159,6 +159,7 @@ export class CpsDvEnrollment extends pulumi.CustomResource {
      * Contact information for the certificate administrator at your company.
      */
     public readonly adminContact!: pulumi.Output<outputs.CpsDvEnrollmentAdminContact>;
+    public readonly allowDuplicateCommonName!: pulumi.Output<boolean | undefined>;
     /**
      * Certificate trust chain type.
      */
@@ -228,6 +229,7 @@ export class CpsDvEnrollment extends pulumi.CustomResource {
             const state = argsOrState as CpsDvEnrollmentState | undefined;
             resourceInputs["acknowledgePreVerificationWarnings"] = state ? state.acknowledgePreVerificationWarnings : undefined;
             resourceInputs["adminContact"] = state ? state.adminContact : undefined;
+            resourceInputs["allowDuplicateCommonName"] = state ? state.allowDuplicateCommonName : undefined;
             resourceInputs["certificateChainType"] = state ? state.certificateChainType : undefined;
             resourceInputs["certificateType"] = state ? state.certificateType : undefined;
             resourceInputs["commonName"] = state ? state.commonName : undefined;
@@ -279,6 +281,7 @@ export class CpsDvEnrollment extends pulumi.CustomResource {
             }
             resourceInputs["acknowledgePreVerificationWarnings"] = args ? args.acknowledgePreVerificationWarnings : undefined;
             resourceInputs["adminContact"] = args ? args.adminContact : undefined;
+            resourceInputs["allowDuplicateCommonName"] = args ? args.allowDuplicateCommonName : undefined;
             resourceInputs["certificateChainType"] = args ? args.certificateChainType : undefined;
             resourceInputs["commonName"] = args ? args.commonName : undefined;
             resourceInputs["contractId"] = args ? args.contractId : undefined;
@@ -314,6 +317,7 @@ export interface CpsDvEnrollmentState {
      * Contact information for the certificate administrator at your company.
      */
     adminContact?: pulumi.Input<inputs.CpsDvEnrollmentAdminContact>;
+    allowDuplicateCommonName?: pulumi.Input<boolean>;
     /**
      * Certificate trust chain type.
      */
@@ -381,6 +385,7 @@ export interface CpsDvEnrollmentArgs {
      * Contact information for the certificate administrator at your company.
      */
     adminContact: pulumi.Input<inputs.CpsDvEnrollmentAdminContact>;
+    allowDuplicateCommonName?: pulumi.Input<boolean>;
     /**
      * Certificate trust chain type.
      */

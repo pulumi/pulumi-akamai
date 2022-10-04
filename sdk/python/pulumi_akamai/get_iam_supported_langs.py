@@ -73,7 +73,7 @@ def get_iam_supported_langs(opts: Optional[pulumi.InvokeOptions] = None) -> Awai
 
     * `languages` — Languages supported by Akamai
 
-    [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getadminsupportedlanguages)
+    [API Reference](https://techdocs.akamai.com/iam-api/reference/get-user-languages)
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

@@ -26,7 +26,7 @@ import * as utilities from "./utilities";
  *
  * * `states` — A list of states.
  *
- * [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getadmincountrystates)
+ * [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-states)
  */
 export function getIamStates(args: GetIamStatesArgs, opts?: pulumi.InvokeOptions): Promise<GetIamStatesResult> {
     if (!opts) {
@@ -44,7 +44,7 @@ export function getIamStates(args: GetIamStatesArgs, opts?: pulumi.InvokeOptions
  */
 export interface GetIamStatesArgs {
     /**
-     * — (required, string) Sepcifies USA or Canada.
+     * — (required, string) Specifies USA or Canada.
      */
     country: string;
 }
@@ -70,7 +70,7 @@ export function getIamStatesOutput(args: GetIamStatesOutputArgs, opts?: pulumi.I
  */
 export interface GetIamStatesOutputArgs {
     /**
-     * — (required, string) Sepcifies USA or Canada.
+     * — (required, string) Specifies USA or Canada.
      */
     country: pulumi.Input<string>;
 }

@@ -52,7 +52,7 @@ namespace Pulumi.Akamai
     public partial class AppSecEvalRule : Pulumi.CustomResource
     {
         /// <summary>
-        /// . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
+        /// . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
         /// </summary>
         [Output("conditionException")]
         public Output<string?> ConditionException { get; private set; } = null!;
@@ -132,7 +132,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecEvalRuleArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
+        /// . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
         /// </summary>
         [Input("conditionException")]
         public Input<string>? ConditionException { get; set; }
@@ -173,7 +173,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecEvalRuleState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
+        /// . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
         /// </summary>
         [Input("conditionException")]
         public Input<string>? ConditionException { get; set; }

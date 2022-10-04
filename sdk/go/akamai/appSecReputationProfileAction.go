@@ -25,32 +25,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		appsecReputationProfileAction, err := akamai.NewAppSecReputationProfileAction(ctx, "appsecReputationProfileAction", &akamai.AppSecReputationProfileActionArgs{
-// 			ConfigId:            pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId:    pulumi.String("gms1_134637"),
-// 			ReputationProfileId: pulumi.Int(130713),
-// 			Action:              pulumi.String("alert"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("reputationProfileId", appsecReputationProfileAction.ReputationProfileId)
-// 		ctx.Export("reputationProfileAction", appsecReputationProfileAction.Action)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			appsecReputationProfileAction, err := akamai.NewAppSecReputationProfileAction(ctx, "appsecReputationProfileAction", &akamai.AppSecReputationProfileActionArgs{
+//				ConfigId:            pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId:    pulumi.String("gms1_134637"),
+//				ReputationProfileId: pulumi.Int(130713),
+//				Action:              pulumi.String("alert"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("reputationProfileId", appsecReputationProfileAction.ReputationProfileId)
+//			ctx.Export("reputationProfileAction", appsecReputationProfileAction.Action)
+//			return nil
+//		})
+//	}
+//
 // ```
 type AppSecReputationProfileAction struct {
 	pulumi.CustomResourceState
@@ -200,7 +203,7 @@ func (i *AppSecReputationProfileAction) ToAppSecReputationProfileActionOutputWit
 // AppSecReputationProfileActionArrayInput is an input type that accepts AppSecReputationProfileActionArray and AppSecReputationProfileActionArrayOutput values.
 // You can construct a concrete instance of `AppSecReputationProfileActionArrayInput` via:
 //
-//          AppSecReputationProfileActionArray{ AppSecReputationProfileActionArgs{...} }
+//	AppSecReputationProfileActionArray{ AppSecReputationProfileActionArgs{...} }
 type AppSecReputationProfileActionArrayInput interface {
 	pulumi.Input
 
@@ -225,7 +228,7 @@ func (i AppSecReputationProfileActionArray) ToAppSecReputationProfileActionArray
 // AppSecReputationProfileActionMapInput is an input type that accepts AppSecReputationProfileActionMap and AppSecReputationProfileActionMapOutput values.
 // You can construct a concrete instance of `AppSecReputationProfileActionMapInput` via:
 //
-//          AppSecReputationProfileActionMap{ "key": AppSecReputationProfileActionArgs{...} }
+//	AppSecReputationProfileActionMap{ "key": AppSecReputationProfileActionArgs{...} }
 type AppSecReputationProfileActionMapInput interface {
 	pulumi.Input
 

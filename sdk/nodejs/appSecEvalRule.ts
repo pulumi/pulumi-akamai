@@ -63,7 +63,7 @@ export class AppSecEvalRule extends pulumi.CustomResource {
     }
 
     /**
-     * . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
+     * . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
      */
     public readonly conditionException!: pulumi.Output<string | undefined>;
     /**
@@ -135,7 +135,7 @@ export class AppSecEvalRule extends pulumi.CustomResource {
  */
 export interface AppSecEvalRuleState {
     /**
-     * . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
+     * . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
      */
     conditionException?: pulumi.Input<string>;
     /**
@@ -165,7 +165,7 @@ export interface AppSecEvalRuleState {
  */
 export interface AppSecEvalRuleArgs {
     /**
-     * . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule. To view a sample JSON file, see the [Modify the conditions and exceptions for an evaluation rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions) section of the Application Security API documentation.
+     * . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
      */
     conditionException?: pulumi.Input<string>;
     /**

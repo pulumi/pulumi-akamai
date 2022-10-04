@@ -53,9 +53,15 @@ namespace Pulumi.Akamai
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
+        /// <summary>
+        /// List of hostnames to be evaluated
+        /// </summary>
         [Output("evaluatedHosts")]
         public Output<ImmutableArray<string>> EvaluatedHosts { get; private set; } = null!;
 
+        /// <summary>
+        /// List of hostnames to be protected
+        /// </summary>
         [Output("protectedHosts")]
         public Output<ImmutableArray<string>> ProtectedHosts { get; private set; } = null!;
 
@@ -119,6 +125,10 @@ namespace Pulumi.Akamai
 
         [Input("evaluatedHosts")]
         private InputList<string>? _evaluatedHosts;
+
+        /// <summary>
+        /// List of hostnames to be evaluated
+        /// </summary>
         public InputList<string> EvaluatedHosts
         {
             get => _evaluatedHosts ?? (_evaluatedHosts = new InputList<string>());
@@ -127,6 +137,10 @@ namespace Pulumi.Akamai
 
         [Input("protectedHosts")]
         private InputList<string>? _protectedHosts;
+
+        /// <summary>
+        /// List of hostnames to be protected
+        /// </summary>
         public InputList<string> ProtectedHosts
         {
             get => _protectedHosts ?? (_protectedHosts = new InputList<string>());
@@ -154,6 +168,10 @@ namespace Pulumi.Akamai
 
         [Input("evaluatedHosts")]
         private InputList<string>? _evaluatedHosts;
+
+        /// <summary>
+        /// List of hostnames to be evaluated
+        /// </summary>
         public InputList<string> EvaluatedHosts
         {
             get => _evaluatedHosts ?? (_evaluatedHosts = new InputList<string>());
@@ -162,6 +180,10 @@ namespace Pulumi.Akamai
 
         [Input("protectedHosts")]
         private InputList<string>? _protectedHosts;
+
+        /// <summary>
+        /// List of hostnames to be protected
+        /// </summary>
         public InputList<string> ProtectedHosts
         {
             get => _protectedHosts ?? (_protectedHosts = new InputList<string>());

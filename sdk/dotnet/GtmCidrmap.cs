@@ -41,9 +41,6 @@ namespace Pulumi.Akamai
     /// 
     /// }
     /// ```
-    /// ## Schema reference
-    /// 
-    /// You can download the GTM CIDR Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#cidrmap) page.
     /// </summary>
     [AkamaiResourceType("akamai:index/gtmCidrmap:GtmCidrmap")]
     public partial class GtmCidrmap : Pulumi.CustomResource

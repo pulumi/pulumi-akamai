@@ -66,7 +66,7 @@ namespace Pulumi.Akamai
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// Text Export representation
+        /// Text representation
         /// </summary>
         [Output("outputText")]
         public Output<string> OutputText { get; private set; } = null!;
@@ -161,7 +161,7 @@ namespace Pulumi.Akamai
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// Text Export representation
+        /// Text representation
         /// </summary>
         [Input("outputText")]
         public Input<string>? OutputText { get; set; }

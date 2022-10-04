@@ -52,6 +52,21 @@ __all__ = [
     'PropertyOrigin',
     'PropertyRuleError',
     'PropertyRuleWarning',
+    'GetCPSEnrollmentAdminContactResult',
+    'GetCPSEnrollmentCsrResult',
+    'GetCPSEnrollmentDnsChallengeResult',
+    'GetCPSEnrollmentHttpChallengeResult',
+    'GetCPSEnrollmentNetworkConfigurationResult',
+    'GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationResult',
+    'GetCPSEnrollmentOrganizationResult',
+    'GetCPSEnrollmentTechContactResult',
+    'GetCPSEnrollmentsEnrollmentResult',
+    'GetCPSEnrollmentsEnrollmentAdminContactResult',
+    'GetCPSEnrollmentsEnrollmentCsrResult',
+    'GetCPSEnrollmentsEnrollmentNetworkConfigurationResult',
+    'GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationResult',
+    'GetCPSEnrollmentsEnrollmentOrganizationResult',
+    'GetCPSEnrollmentsEnrollmentTechContactResult',
     'GetCloudletsApiPrioritizationMatchRuleMatchRuleResult',
     'GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchResult',
     'GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueResult',
@@ -1337,9 +1352,9 @@ class DatastreamAzureConnector(dict):
                  connector_id: Optional[int] = None):
         """
         :param str access_key: **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
-        :param str account_name: - (Required) Specifies the Azure Storage account name.
+        :param str account_name: Specifies the Azure Storage account name.
         :param str connector_name: The name of the connector.
-        :param str container_name: - (Required) Specifies the Azure Storage container name.
+        :param str container_name: Specifies the Azure Storage container name.
         :param str path: The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
         :param bool compress_logs: Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
         """
@@ -1365,7 +1380,7 @@ class DatastreamAzureConnector(dict):
     @pulumi.getter(name="accountName")
     def account_name(self) -> str:
         """
-        - (Required) Specifies the Azure Storage account name.
+        Specifies the Azure Storage account name.
         """
         return pulumi.get(self, "account_name")
 
@@ -1381,7 +1396,7 @@ class DatastreamAzureConnector(dict):
     @pulumi.getter(name="containerName")
     def container_name(self) -> str:
         """
-        - (Required) Specifies the Azure Storage container name.
+        Specifies the Azure Storage container name.
         """
         return pulumi.get(self, "container_name")
 
@@ -1435,10 +1450,10 @@ class DatastreamConfig(dict):
                  upload_file_prefix: Optional[str] = None,
                  upload_file_suffix: Optional[str] = None):
         """
-        :param str format: - (Required) The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
-        :param 'DatastreamConfigFrequencyArgs' frequency: - (Required) How often you want to collect logs from each uploader and send them to a destination.
+        :param str format: The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
+        :param 'DatastreamConfigFrequencyArgs' frequency: How often you want to collect logs from each uploader and send them to a destination.
         :param str delimiter: A delimiter that you want to use to separate data set fields in the log lines. Currently, `SPACE` is the only available delimiter. This field is required for the `STRUCTURED` log file `format`.
-        :param str upload_file_prefix: - (Optional) The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
+        :param str upload_file_prefix: The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
         :param str upload_file_suffix: The suffix of the log file that you want to send to a destination. It’s a static string of at most 10 characters. If unspecified, defaults to `ds`.
         """
         pulumi.set(__self__, "format", format)
@@ -1454,7 +1469,7 @@ class DatastreamConfig(dict):
     @pulumi.getter
     def format(self) -> str:
         """
-        - (Required) The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
+        The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
         """
         return pulumi.get(self, "format")
 
@@ -1462,7 +1477,7 @@ class DatastreamConfig(dict):
     @pulumi.getter
     def frequency(self) -> 'outputs.DatastreamConfigFrequency':
         """
-        - (Required) How often you want to collect logs from each uploader and send them to a destination.
+        How often you want to collect logs from each uploader and send them to a destination.
         """
         return pulumi.get(self, "frequency")
 
@@ -1478,7 +1493,7 @@ class DatastreamConfig(dict):
     @pulumi.getter(name="uploadFilePrefix")
     def upload_file_prefix(self) -> Optional[str]:
         """
-        - (Optional) The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
+        The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
         """
         return pulumi.get(self, "upload_file_prefix")
 
@@ -1513,7 +1528,7 @@ class DatastreamConfigFrequency(dict):
     def __init__(__self__, *,
                  time_in_sec: int):
         """
-        :param int time_in_sec: - (Required) The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
+        :param int time_in_sec: The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
         """
         pulumi.set(__self__, "time_in_sec", time_in_sec)
 
@@ -1521,7 +1536,7 @@ class DatastreamConfigFrequency(dict):
     @pulumi.getter(name="timeInSec")
     def time_in_sec(self) -> int:
         """
-        - (Required) The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
+        The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
         """
         return pulumi.get(self, "time_in_sec")
 
@@ -1561,7 +1576,7 @@ class DatastreamDatadogConnector(dict):
                  source: Optional[str] = None,
                  tags: Optional[str] = None):
         """
-        :param str auth_token: - (Required) **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
+        :param str auth_token: **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
                * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
         :param str connector_name: The name of the connector.
         :param str url: Enter the secure URL where you want to send and store your logs.
@@ -1588,7 +1603,7 @@ class DatastreamDatadogConnector(dict):
     @pulumi.getter(name="authToken")
     def auth_token(self) -> str:
         """
-        - (Required) **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
+        **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
         * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
         """
         return pulumi.get(self, "auth_token")
@@ -1688,9 +1703,9 @@ class DatastreamGcsConnector(dict):
         """
         :param str bucket: The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
         :param str connector_name: The name of the connector.
-        :param str private_key: - (Required) **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
-        :param str project_id: - (Required) The unique ID of your Google Cloud project.
-        :param str service_account_name: - (Required)	The name of the service account with the storage.object.create permission or Storage Object Creator role.
+        :param str private_key: **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
+        :param str project_id: The unique ID of your Google Cloud project.
+        :param str service_account_name: The name of the service account with the storage.object.create permission or Storage Object Creator role.
         :param bool compress_logs: Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
         :param str path: The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
         """
@@ -1726,7 +1741,7 @@ class DatastreamGcsConnector(dict):
     @pulumi.getter(name="privateKey")
     def private_key(self) -> str:
         """
-        - (Required) **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
+        **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
         """
         return pulumi.get(self, "private_key")
 
@@ -1734,7 +1749,7 @@ class DatastreamGcsConnector(dict):
     @pulumi.getter(name="projectId")
     def project_id(self) -> str:
         """
-        - (Required) The unique ID of your Google Cloud project.
+        The unique ID of your Google Cloud project.
         """
         return pulumi.get(self, "project_id")
 
@@ -1742,7 +1757,7 @@ class DatastreamGcsConnector(dict):
     @pulumi.getter(name="serviceAccountName")
     def service_account_name(self) -> str:
         """
-        - (Required)	The name of the service account with the storage.object.create permission or Storage Object Creator role.
+        The name of the service account with the storage.object.create permission or Storage Object Creator role.
         """
         return pulumi.get(self, "service_account_name")
 
@@ -2157,7 +2172,7 @@ class DatastreamSplunkConnector(dict):
                  connector_id: Optional[int] = None):
         """
         :param str connector_name: The name of the connector.
-        :param str event_collector_token: - (Required) **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
+        :param str event_collector_token: **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
         :param str url: Enter the secure URL where you want to send and store your logs.
         :param bool compress_logs: Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
         """
@@ -2181,7 +2196,7 @@ class DatastreamSplunkConnector(dict):
     @pulumi.getter(name="eventCollectorToken")
     def event_collector_token(self) -> str:
         """
-        - (Required) **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
+        **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
         """
         return pulumi.get(self, "event_collector_token")
 
@@ -3550,7 +3565,7 @@ class PropertyHostname(dict):
                  cname_type: Optional[str] = None,
                  edge_hostname_id: Optional[str] = None):
         """
-        :param str cert_provisioning_type: The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+        :param str cert_provisioning_type: The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
         :param str cname_from: A string containing the original origin's hostname. For example, `"example.org"`.
         :param str cname_to: A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
         """
@@ -3568,7 +3583,7 @@ class PropertyHostname(dict):
     @pulumi.getter(name="certProvisioningType")
     def cert_provisioning_type(self) -> str:
         """
-        The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+        The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
         """
         return pulumi.get(self, "cert_provisioning_type")
 
@@ -3896,6 +3911,922 @@ class PropertyRuleWarning(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetCPSEnrollmentAdminContactResult(dict):
+    def __init__(__self__, *,
+                 address_line_one: str,
+                 city: str,
+                 country_code: str,
+                 email: str,
+                 first_name: str,
+                 last_name: str,
+                 organization: str,
+                 phone: str,
+                 postal_code: str,
+                 region: str,
+                 address_line_two: Optional[str] = None,
+                 title: Optional[str] = None):
+        pulumi.set(__self__, "address_line_one", address_line_one)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "organization", organization)
+        pulumi.set(__self__, "phone", phone)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "region", region)
+        if address_line_two is not None:
+            pulumi.set(__self__, "address_line_two", address_line_two)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="addressLineOne")
+    def address_line_one(self) -> str:
+        return pulumi.get(self, "address_line_one")
+
+    @property
+    @pulumi.getter
+    def city(self) -> str:
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> str:
+        return pulumi.get(self, "country_code")
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> str:
+        return pulumi.get(self, "first_name")
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> str:
+        return pulumi.get(self, "last_name")
+
+    @property
+    @pulumi.getter
+    def organization(self) -> str:
+        return pulumi.get(self, "organization")
+
+    @property
+    @pulumi.getter
+    def phone(self) -> str:
+        return pulumi.get(self, "phone")
+
+    @property
+    @pulumi.getter(name="postalCode")
+    def postal_code(self) -> str:
+        return pulumi.get(self, "postal_code")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="addressLineTwo")
+    def address_line_two(self) -> Optional[str]:
+        return pulumi.get(self, "address_line_two")
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[str]:
+        return pulumi.get(self, "title")
+
+
+@pulumi.output_type
+class GetCPSEnrollmentCsrResult(dict):
+    def __init__(__self__, *,
+                 city: str,
+                 country_code: str,
+                 organization: str,
+                 organizational_unit: str,
+                 state: str):
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "organization", organization)
+        pulumi.set(__self__, "organizational_unit", organizational_unit)
+        pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter
+    def city(self) -> str:
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> str:
+        return pulumi.get(self, "country_code")
+
+    @property
+    @pulumi.getter
+    def organization(self) -> str:
+        return pulumi.get(self, "organization")
+
+    @property
+    @pulumi.getter(name="organizationalUnit")
+    def organizational_unit(self) -> str:
+        return pulumi.get(self, "organizational_unit")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetCPSEnrollmentDnsChallengeResult(dict):
+    def __init__(__self__, *,
+                 domain: str,
+                 full_path: str,
+                 response_body: str):
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "full_path", full_path)
+        pulumi.set(__self__, "response_body", response_body)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> str:
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="fullPath")
+    def full_path(self) -> str:
+        return pulumi.get(self, "full_path")
+
+    @property
+    @pulumi.getter(name="responseBody")
+    def response_body(self) -> str:
+        return pulumi.get(self, "response_body")
+
+
+@pulumi.output_type
+class GetCPSEnrollmentHttpChallengeResult(dict):
+    def __init__(__self__, *,
+                 domain: str,
+                 full_path: str,
+                 response_body: str):
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "full_path", full_path)
+        pulumi.set(__self__, "response_body", response_body)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> str:
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="fullPath")
+    def full_path(self) -> str:
+        return pulumi.get(self, "full_path")
+
+    @property
+    @pulumi.getter(name="responseBody")
+    def response_body(self) -> str:
+        return pulumi.get(self, "response_body")
+
+
+@pulumi.output_type
+class GetCPSEnrollmentNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 client_mutual_authentications: Sequence['outputs.GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationResult'],
+                 clone_dns_names: bool,
+                 disallowed_tls_versions: Sequence[str],
+                 geography: str,
+                 must_have_ciphers: str,
+                 ocsp_stapling: str,
+                 preferred_ciphers: str,
+                 quic_enabled: bool):
+        pulumi.set(__self__, "client_mutual_authentications", client_mutual_authentications)
+        pulumi.set(__self__, "clone_dns_names", clone_dns_names)
+        pulumi.set(__self__, "disallowed_tls_versions", disallowed_tls_versions)
+        pulumi.set(__self__, "geography", geography)
+        pulumi.set(__self__, "must_have_ciphers", must_have_ciphers)
+        pulumi.set(__self__, "ocsp_stapling", ocsp_stapling)
+        pulumi.set(__self__, "preferred_ciphers", preferred_ciphers)
+        pulumi.set(__self__, "quic_enabled", quic_enabled)
+
+    @property
+    @pulumi.getter(name="clientMutualAuthentications")
+    def client_mutual_authentications(self) -> Sequence['outputs.GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationResult']:
+        return pulumi.get(self, "client_mutual_authentications")
+
+    @property
+    @pulumi.getter(name="cloneDnsNames")
+    def clone_dns_names(self) -> bool:
+        return pulumi.get(self, "clone_dns_names")
+
+    @property
+    @pulumi.getter(name="disallowedTlsVersions")
+    def disallowed_tls_versions(self) -> Sequence[str]:
+        return pulumi.get(self, "disallowed_tls_versions")
+
+    @property
+    @pulumi.getter
+    def geography(self) -> str:
+        return pulumi.get(self, "geography")
+
+    @property
+    @pulumi.getter(name="mustHaveCiphers")
+    def must_have_ciphers(self) -> str:
+        return pulumi.get(self, "must_have_ciphers")
+
+    @property
+    @pulumi.getter(name="ocspStapling")
+    def ocsp_stapling(self) -> str:
+        return pulumi.get(self, "ocsp_stapling")
+
+    @property
+    @pulumi.getter(name="preferredCiphers")
+    def preferred_ciphers(self) -> str:
+        return pulumi.get(self, "preferred_ciphers")
+
+    @property
+    @pulumi.getter(name="quicEnabled")
+    def quic_enabled(self) -> bool:
+        return pulumi.get(self, "quic_enabled")
+
+
+@pulumi.output_type
+class GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationResult(dict):
+    def __init__(__self__, *,
+                 ocsp_enabled: bool,
+                 send_ca_list_to_client: bool,
+                 set_id: str):
+        pulumi.set(__self__, "ocsp_enabled", ocsp_enabled)
+        pulumi.set(__self__, "send_ca_list_to_client", send_ca_list_to_client)
+        pulumi.set(__self__, "set_id", set_id)
+
+    @property
+    @pulumi.getter(name="ocspEnabled")
+    def ocsp_enabled(self) -> bool:
+        return pulumi.get(self, "ocsp_enabled")
+
+    @property
+    @pulumi.getter(name="sendCaListToClient")
+    def send_ca_list_to_client(self) -> bool:
+        return pulumi.get(self, "send_ca_list_to_client")
+
+    @property
+    @pulumi.getter(name="setId")
+    def set_id(self) -> str:
+        return pulumi.get(self, "set_id")
+
+
+@pulumi.output_type
+class GetCPSEnrollmentOrganizationResult(dict):
+    def __init__(__self__, *,
+                 address_line_one: str,
+                 address_line_two: str,
+                 city: str,
+                 country_code: str,
+                 name: str,
+                 phone: str,
+                 postal_code: str,
+                 region: str):
+        pulumi.set(__self__, "address_line_one", address_line_one)
+        pulumi.set(__self__, "address_line_two", address_line_two)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "phone", phone)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "region", region)
+
+    @property
+    @pulumi.getter(name="addressLineOne")
+    def address_line_one(self) -> str:
+        return pulumi.get(self, "address_line_one")
+
+    @property
+    @pulumi.getter(name="addressLineTwo")
+    def address_line_two(self) -> str:
+        return pulumi.get(self, "address_line_two")
+
+    @property
+    @pulumi.getter
+    def city(self) -> str:
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> str:
+        return pulumi.get(self, "country_code")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def phone(self) -> str:
+        return pulumi.get(self, "phone")
+
+    @property
+    @pulumi.getter(name="postalCode")
+    def postal_code(self) -> str:
+        return pulumi.get(self, "postal_code")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        return pulumi.get(self, "region")
+
+
+@pulumi.output_type
+class GetCPSEnrollmentTechContactResult(dict):
+    def __init__(__self__, *,
+                 address_line_one: str,
+                 city: str,
+                 country_code: str,
+                 email: str,
+                 first_name: str,
+                 last_name: str,
+                 organization: str,
+                 phone: str,
+                 postal_code: str,
+                 region: str,
+                 address_line_two: Optional[str] = None,
+                 title: Optional[str] = None):
+        pulumi.set(__self__, "address_line_one", address_line_one)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "organization", organization)
+        pulumi.set(__self__, "phone", phone)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "region", region)
+        if address_line_two is not None:
+            pulumi.set(__self__, "address_line_two", address_line_two)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="addressLineOne")
+    def address_line_one(self) -> str:
+        return pulumi.get(self, "address_line_one")
+
+    @property
+    @pulumi.getter
+    def city(self) -> str:
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> str:
+        return pulumi.get(self, "country_code")
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> str:
+        return pulumi.get(self, "first_name")
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> str:
+        return pulumi.get(self, "last_name")
+
+    @property
+    @pulumi.getter
+    def organization(self) -> str:
+        return pulumi.get(self, "organization")
+
+    @property
+    @pulumi.getter
+    def phone(self) -> str:
+        return pulumi.get(self, "phone")
+
+    @property
+    @pulumi.getter(name="postalCode")
+    def postal_code(self) -> str:
+        return pulumi.get(self, "postal_code")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="addressLineTwo")
+    def address_line_two(self) -> Optional[str]:
+        return pulumi.get(self, "address_line_two")
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[str]:
+        return pulumi.get(self, "title")
+
+
+@pulumi.output_type
+class GetCPSEnrollmentsEnrollmentResult(dict):
+    def __init__(__self__, *,
+                 admin_contacts: Sequence['outputs.GetCPSEnrollmentsEnrollmentAdminContactResult'],
+                 certificate_chain_type: str,
+                 certificate_type: str,
+                 common_name: str,
+                 csrs: Sequence['outputs.GetCPSEnrollmentsEnrollmentCsrResult'],
+                 enable_multi_stacked_certificates: bool,
+                 enrollment_id: int,
+                 network_configurations: Sequence['outputs.GetCPSEnrollmentsEnrollmentNetworkConfigurationResult'],
+                 organizations: Sequence['outputs.GetCPSEnrollmentsEnrollmentOrganizationResult'],
+                 pending_changes: bool,
+                 registration_authority: str,
+                 sans: Sequence[str],
+                 secure_network: str,
+                 signature_algorithm: str,
+                 sni_only: bool,
+                 tech_contacts: Sequence['outputs.GetCPSEnrollmentsEnrollmentTechContactResult'],
+                 validation_type: str):
+        pulumi.set(__self__, "admin_contacts", admin_contacts)
+        pulumi.set(__self__, "certificate_chain_type", certificate_chain_type)
+        pulumi.set(__self__, "certificate_type", certificate_type)
+        pulumi.set(__self__, "common_name", common_name)
+        pulumi.set(__self__, "csrs", csrs)
+        pulumi.set(__self__, "enable_multi_stacked_certificates", enable_multi_stacked_certificates)
+        pulumi.set(__self__, "enrollment_id", enrollment_id)
+        pulumi.set(__self__, "network_configurations", network_configurations)
+        pulumi.set(__self__, "organizations", organizations)
+        pulumi.set(__self__, "pending_changes", pending_changes)
+        pulumi.set(__self__, "registration_authority", registration_authority)
+        pulumi.set(__self__, "sans", sans)
+        pulumi.set(__self__, "secure_network", secure_network)
+        pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        pulumi.set(__self__, "sni_only", sni_only)
+        pulumi.set(__self__, "tech_contacts", tech_contacts)
+        pulumi.set(__self__, "validation_type", validation_type)
+
+    @property
+    @pulumi.getter(name="adminContacts")
+    def admin_contacts(self) -> Sequence['outputs.GetCPSEnrollmentsEnrollmentAdminContactResult']:
+        return pulumi.get(self, "admin_contacts")
+
+    @property
+    @pulumi.getter(name="certificateChainType")
+    def certificate_chain_type(self) -> str:
+        return pulumi.get(self, "certificate_chain_type")
+
+    @property
+    @pulumi.getter(name="certificateType")
+    def certificate_type(self) -> str:
+        return pulumi.get(self, "certificate_type")
+
+    @property
+    @pulumi.getter(name="commonName")
+    def common_name(self) -> str:
+        return pulumi.get(self, "common_name")
+
+    @property
+    @pulumi.getter
+    def csrs(self) -> Sequence['outputs.GetCPSEnrollmentsEnrollmentCsrResult']:
+        return pulumi.get(self, "csrs")
+
+    @property
+    @pulumi.getter(name="enableMultiStackedCertificates")
+    def enable_multi_stacked_certificates(self) -> bool:
+        return pulumi.get(self, "enable_multi_stacked_certificates")
+
+    @property
+    @pulumi.getter(name="enrollmentId")
+    def enrollment_id(self) -> int:
+        return pulumi.get(self, "enrollment_id")
+
+    @property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Sequence['outputs.GetCPSEnrollmentsEnrollmentNetworkConfigurationResult']:
+        return pulumi.get(self, "network_configurations")
+
+    @property
+    @pulumi.getter
+    def organizations(self) -> Sequence['outputs.GetCPSEnrollmentsEnrollmentOrganizationResult']:
+        return pulumi.get(self, "organizations")
+
+    @property
+    @pulumi.getter(name="pendingChanges")
+    def pending_changes(self) -> bool:
+        return pulumi.get(self, "pending_changes")
+
+    @property
+    @pulumi.getter(name="registrationAuthority")
+    def registration_authority(self) -> str:
+        return pulumi.get(self, "registration_authority")
+
+    @property
+    @pulumi.getter
+    def sans(self) -> Sequence[str]:
+        return pulumi.get(self, "sans")
+
+    @property
+    @pulumi.getter(name="secureNetwork")
+    def secure_network(self) -> str:
+        return pulumi.get(self, "secure_network")
+
+    @property
+    @pulumi.getter(name="signatureAlgorithm")
+    def signature_algorithm(self) -> str:
+        return pulumi.get(self, "signature_algorithm")
+
+    @property
+    @pulumi.getter(name="sniOnly")
+    def sni_only(self) -> bool:
+        return pulumi.get(self, "sni_only")
+
+    @property
+    @pulumi.getter(name="techContacts")
+    def tech_contacts(self) -> Sequence['outputs.GetCPSEnrollmentsEnrollmentTechContactResult']:
+        return pulumi.get(self, "tech_contacts")
+
+    @property
+    @pulumi.getter(name="validationType")
+    def validation_type(self) -> str:
+        return pulumi.get(self, "validation_type")
+
+
+@pulumi.output_type
+class GetCPSEnrollmentsEnrollmentAdminContactResult(dict):
+    def __init__(__self__, *,
+                 address_line_one: str,
+                 city: str,
+                 country_code: str,
+                 email: str,
+                 first_name: str,
+                 last_name: str,
+                 organization: str,
+                 phone: str,
+                 postal_code: str,
+                 region: str,
+                 address_line_two: Optional[str] = None,
+                 title: Optional[str] = None):
+        pulumi.set(__self__, "address_line_one", address_line_one)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "organization", organization)
+        pulumi.set(__self__, "phone", phone)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "region", region)
+        if address_line_two is not None:
+            pulumi.set(__self__, "address_line_two", address_line_two)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="addressLineOne")
+    def address_line_one(self) -> str:
+        return pulumi.get(self, "address_line_one")
+
+    @property
+    @pulumi.getter
+    def city(self) -> str:
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> str:
+        return pulumi.get(self, "country_code")
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> str:
+        return pulumi.get(self, "first_name")
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> str:
+        return pulumi.get(self, "last_name")
+
+    @property
+    @pulumi.getter
+    def organization(self) -> str:
+        return pulumi.get(self, "organization")
+
+    @property
+    @pulumi.getter
+    def phone(self) -> str:
+        return pulumi.get(self, "phone")
+
+    @property
+    @pulumi.getter(name="postalCode")
+    def postal_code(self) -> str:
+        return pulumi.get(self, "postal_code")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="addressLineTwo")
+    def address_line_two(self) -> Optional[str]:
+        return pulumi.get(self, "address_line_two")
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[str]:
+        return pulumi.get(self, "title")
+
+
+@pulumi.output_type
+class GetCPSEnrollmentsEnrollmentCsrResult(dict):
+    def __init__(__self__, *,
+                 city: str,
+                 country_code: str,
+                 organization: str,
+                 organizational_unit: str,
+                 state: str):
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "organization", organization)
+        pulumi.set(__self__, "organizational_unit", organizational_unit)
+        pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter
+    def city(self) -> str:
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> str:
+        return pulumi.get(self, "country_code")
+
+    @property
+    @pulumi.getter
+    def organization(self) -> str:
+        return pulumi.get(self, "organization")
+
+    @property
+    @pulumi.getter(name="organizationalUnit")
+    def organizational_unit(self) -> str:
+        return pulumi.get(self, "organizational_unit")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetCPSEnrollmentsEnrollmentNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 client_mutual_authentications: Sequence['outputs.GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationResult'],
+                 clone_dns_names: bool,
+                 disallowed_tls_versions: Sequence[str],
+                 geography: str,
+                 must_have_ciphers: str,
+                 ocsp_stapling: str,
+                 preferred_ciphers: str,
+                 quic_enabled: bool):
+        pulumi.set(__self__, "client_mutual_authentications", client_mutual_authentications)
+        pulumi.set(__self__, "clone_dns_names", clone_dns_names)
+        pulumi.set(__self__, "disallowed_tls_versions", disallowed_tls_versions)
+        pulumi.set(__self__, "geography", geography)
+        pulumi.set(__self__, "must_have_ciphers", must_have_ciphers)
+        pulumi.set(__self__, "ocsp_stapling", ocsp_stapling)
+        pulumi.set(__self__, "preferred_ciphers", preferred_ciphers)
+        pulumi.set(__self__, "quic_enabled", quic_enabled)
+
+    @property
+    @pulumi.getter(name="clientMutualAuthentications")
+    def client_mutual_authentications(self) -> Sequence['outputs.GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationResult']:
+        return pulumi.get(self, "client_mutual_authentications")
+
+    @property
+    @pulumi.getter(name="cloneDnsNames")
+    def clone_dns_names(self) -> bool:
+        return pulumi.get(self, "clone_dns_names")
+
+    @property
+    @pulumi.getter(name="disallowedTlsVersions")
+    def disallowed_tls_versions(self) -> Sequence[str]:
+        return pulumi.get(self, "disallowed_tls_versions")
+
+    @property
+    @pulumi.getter
+    def geography(self) -> str:
+        return pulumi.get(self, "geography")
+
+    @property
+    @pulumi.getter(name="mustHaveCiphers")
+    def must_have_ciphers(self) -> str:
+        return pulumi.get(self, "must_have_ciphers")
+
+    @property
+    @pulumi.getter(name="ocspStapling")
+    def ocsp_stapling(self) -> str:
+        return pulumi.get(self, "ocsp_stapling")
+
+    @property
+    @pulumi.getter(name="preferredCiphers")
+    def preferred_ciphers(self) -> str:
+        return pulumi.get(self, "preferred_ciphers")
+
+    @property
+    @pulumi.getter(name="quicEnabled")
+    def quic_enabled(self) -> bool:
+        return pulumi.get(self, "quic_enabled")
+
+
+@pulumi.output_type
+class GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationResult(dict):
+    def __init__(__self__, *,
+                 ocsp_enabled: bool,
+                 send_ca_list_to_client: bool,
+                 set_id: str):
+        pulumi.set(__self__, "ocsp_enabled", ocsp_enabled)
+        pulumi.set(__self__, "send_ca_list_to_client", send_ca_list_to_client)
+        pulumi.set(__self__, "set_id", set_id)
+
+    @property
+    @pulumi.getter(name="ocspEnabled")
+    def ocsp_enabled(self) -> bool:
+        return pulumi.get(self, "ocsp_enabled")
+
+    @property
+    @pulumi.getter(name="sendCaListToClient")
+    def send_ca_list_to_client(self) -> bool:
+        return pulumi.get(self, "send_ca_list_to_client")
+
+    @property
+    @pulumi.getter(name="setId")
+    def set_id(self) -> str:
+        return pulumi.get(self, "set_id")
+
+
+@pulumi.output_type
+class GetCPSEnrollmentsEnrollmentOrganizationResult(dict):
+    def __init__(__self__, *,
+                 address_line_one: str,
+                 address_line_two: str,
+                 city: str,
+                 country_code: str,
+                 name: str,
+                 phone: str,
+                 postal_code: str,
+                 region: str):
+        pulumi.set(__self__, "address_line_one", address_line_one)
+        pulumi.set(__self__, "address_line_two", address_line_two)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "phone", phone)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "region", region)
+
+    @property
+    @pulumi.getter(name="addressLineOne")
+    def address_line_one(self) -> str:
+        return pulumi.get(self, "address_line_one")
+
+    @property
+    @pulumi.getter(name="addressLineTwo")
+    def address_line_two(self) -> str:
+        return pulumi.get(self, "address_line_two")
+
+    @property
+    @pulumi.getter
+    def city(self) -> str:
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> str:
+        return pulumi.get(self, "country_code")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def phone(self) -> str:
+        return pulumi.get(self, "phone")
+
+    @property
+    @pulumi.getter(name="postalCode")
+    def postal_code(self) -> str:
+        return pulumi.get(self, "postal_code")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        return pulumi.get(self, "region")
+
+
+@pulumi.output_type
+class GetCPSEnrollmentsEnrollmentTechContactResult(dict):
+    def __init__(__self__, *,
+                 address_line_one: str,
+                 city: str,
+                 country_code: str,
+                 email: str,
+                 first_name: str,
+                 last_name: str,
+                 organization: str,
+                 phone: str,
+                 postal_code: str,
+                 region: str,
+                 address_line_two: Optional[str] = None,
+                 title: Optional[str] = None):
+        pulumi.set(__self__, "address_line_one", address_line_one)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "organization", organization)
+        pulumi.set(__self__, "phone", phone)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "region", region)
+        if address_line_two is not None:
+            pulumi.set(__self__, "address_line_two", address_line_two)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="addressLineOne")
+    def address_line_one(self) -> str:
+        return pulumi.get(self, "address_line_one")
+
+    @property
+    @pulumi.getter
+    def city(self) -> str:
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> str:
+        return pulumi.get(self, "country_code")
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> str:
+        return pulumi.get(self, "first_name")
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> str:
+        return pulumi.get(self, "last_name")
+
+    @property
+    @pulumi.getter
+    def organization(self) -> str:
+        return pulumi.get(self, "organization")
+
+    @property
+    @pulumi.getter
+    def phone(self) -> str:
+        return pulumi.get(self, "phone")
+
+    @property
+    @pulumi.getter(name="postalCode")
+    def postal_code(self) -> str:
+        return pulumi.get(self, "postal_code")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="addressLineTwo")
+    def address_line_two(self) -> Optional[str]:
+        return pulumi.get(self, "address_line_two")
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[str]:
+        return pulumi.get(self, "title")
 
 
 @pulumi.output_type

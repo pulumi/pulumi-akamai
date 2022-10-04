@@ -17,20 +17,23 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		my_roles, err := akamai.GetIamRoles(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("roles", my_roles)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			my_roles, err := akamai.GetIamRoles(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("roles", my_roles)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Attributes reference
 //
@@ -38,7 +41,7 @@ import (
 //
 // * `roles` — A list of roles.
 //
-// [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getroles)
+// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-roles)
 func GetIamRoles(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamRolesResult, error) {
 	var rv GetIamRolesResult
 	err := ctx.Invoke("akamai:index/getIamRoles:getIamRoles", nil, &rv, opts...)

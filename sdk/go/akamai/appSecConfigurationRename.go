@@ -26,33 +26,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configurationAppSecConfiguration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecConfigurationRename(ctx, "configurationAppSecConfigurationRename", &akamai.AppSecConfigurationRenameArgs{
-// 			ConfigId:    pulumi.Int(configurationAppSecConfiguration.ConfigId),
-// 			Description: pulumi.String("This configuration is by both the documentation team and the training team."),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configurationAppSecConfiguration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecConfigurationRename(ctx, "configurationAppSecConfigurationRename", &akamai.AppSecConfigurationRenameArgs{
+//				ConfigId:    pulumi.Int(configurationAppSecConfiguration.ConfigId),
+//				Description: pulumi.String("This configuration is by both the documentation team and the training team."),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type AppSecConfigurationRename struct {
 	pulumi.CustomResourceState
 
-	// . Unique identifier of the security configurating being renamed.
+	// . Unique identifier of the security configuring being renamed.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// . Brief description of the security configuration.
 	Description pulumi.StringOutput `pulumi:"description"`
@@ -95,7 +98,7 @@ func GetAppSecConfigurationRename(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecConfigurationRename resources.
 type appSecConfigurationRenameState struct {
-	// . Unique identifier of the security configurating being renamed.
+	// . Unique identifier of the security configuring being renamed.
 	ConfigId *int `pulumi:"configId"`
 	// . Brief description of the security configuration.
 	Description *string `pulumi:"description"`
@@ -104,7 +107,7 @@ type appSecConfigurationRenameState struct {
 }
 
 type AppSecConfigurationRenameState struct {
-	// . Unique identifier of the security configurating being renamed.
+	// . Unique identifier of the security configuring being renamed.
 	ConfigId pulumi.IntPtrInput
 	// . Brief description of the security configuration.
 	Description pulumi.StringPtrInput
@@ -117,7 +120,7 @@ func (AppSecConfigurationRenameState) ElementType() reflect.Type {
 }
 
 type appSecConfigurationRenameArgs struct {
-	// . Unique identifier of the security configurating being renamed.
+	// . Unique identifier of the security configuring being renamed.
 	ConfigId int `pulumi:"configId"`
 	// . Brief description of the security configuration.
 	Description string `pulumi:"description"`
@@ -127,7 +130,7 @@ type appSecConfigurationRenameArgs struct {
 
 // The set of arguments for constructing a AppSecConfigurationRename resource.
 type AppSecConfigurationRenameArgs struct {
-	// . Unique identifier of the security configurating being renamed.
+	// . Unique identifier of the security configuring being renamed.
 	ConfigId pulumi.IntInput
 	// . Brief description of the security configuration.
 	Description pulumi.StringInput
@@ -161,7 +164,7 @@ func (i *AppSecConfigurationRename) ToAppSecConfigurationRenameOutputWithContext
 // AppSecConfigurationRenameArrayInput is an input type that accepts AppSecConfigurationRenameArray and AppSecConfigurationRenameArrayOutput values.
 // You can construct a concrete instance of `AppSecConfigurationRenameArrayInput` via:
 //
-//          AppSecConfigurationRenameArray{ AppSecConfigurationRenameArgs{...} }
+//	AppSecConfigurationRenameArray{ AppSecConfigurationRenameArgs{...} }
 type AppSecConfigurationRenameArrayInput interface {
 	pulumi.Input
 
@@ -186,7 +189,7 @@ func (i AppSecConfigurationRenameArray) ToAppSecConfigurationRenameArrayOutputWi
 // AppSecConfigurationRenameMapInput is an input type that accepts AppSecConfigurationRenameMap and AppSecConfigurationRenameMapOutput values.
 // You can construct a concrete instance of `AppSecConfigurationRenameMapInput` via:
 //
-//          AppSecConfigurationRenameMap{ "key": AppSecConfigurationRenameArgs{...} }
+//	AppSecConfigurationRenameMap{ "key": AppSecConfigurationRenameArgs{...} }
 type AppSecConfigurationRenameMapInput interface {
 	pulumi.Input
 
@@ -222,7 +225,7 @@ func (o AppSecConfigurationRenameOutput) ToAppSecConfigurationRenameOutputWithCo
 	return o
 }
 
-// . Unique identifier of the security configurating being renamed.
+// . Unique identifier of the security configuring being renamed.
 func (o AppSecConfigurationRenameOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecConfigurationRename) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }

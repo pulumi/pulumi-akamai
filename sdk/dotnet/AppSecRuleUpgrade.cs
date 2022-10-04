@@ -69,12 +69,21 @@ namespace Pulumi.Akamai
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
+        /// <summary>
+        /// Versioning information for the current KRS rule set
+        /// </summary>
         [Output("currentRuleset")]
         public Output<string> CurrentRuleset { get; private set; } = null!;
 
+        /// <summary>
+        /// Whether an evaluation is currently in progress
+        /// </summary>
         [Output("evalStatus")]
         public Output<string> EvalStatus { get; private set; } = null!;
 
+        /// <summary>
+        /// Upgrade mode (KRS, AAG, ASE_MANUAL or ASE_AUTO)
+        /// </summary>
         [Output("mode")]
         public Output<string> Mode { get; private set; } = null!;
 
@@ -87,6 +96,9 @@ namespace Pulumi.Akamai
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
 
+        /// <summary>
+        /// Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
+        /// </summary>
         [Output("upgradeMode")]
         public Output<string?> UpgradeMode { get; private set; } = null!;
 
@@ -151,6 +163,9 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 
+        /// <summary>
+        /// Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
+        /// </summary>
         [Input("upgradeMode")]
         public Input<string>? UpgradeMode { get; set; }
 
@@ -167,12 +182,21 @@ namespace Pulumi.Akamai
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
+        /// <summary>
+        /// Versioning information for the current KRS rule set
+        /// </summary>
         [Input("currentRuleset")]
         public Input<string>? CurrentRuleset { get; set; }
 
+        /// <summary>
+        /// Whether an evaluation is currently in progress
+        /// </summary>
         [Input("evalStatus")]
         public Input<string>? EvalStatus { get; set; }
 
+        /// <summary>
+        /// Upgrade mode (KRS, AAG, ASE_MANUAL or ASE_AUTO)
+        /// </summary>
         [Input("mode")]
         public Input<string>? Mode { get; set; }
 
@@ -185,6 +209,9 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
 
+        /// <summary>
+        /// Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
+        /// </summary>
         [Input("upgradeMode")]
         public Input<string>? UpgradeMode { get; set; }
 

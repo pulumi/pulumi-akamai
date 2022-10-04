@@ -21,22 +21,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewCpsDvValidation(ctx, "example", &akamai.CpsDvValidationArgs{
-// 			EnrollmentId: pulumi.Any(akamai_cps_dv_enrollment.Example.Id),
-// 			Sans:         pulumi.Any(akamai_cps_dv_enrollment.Example.Sans),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewCpsDvValidation(ctx, "example", &akamai.CpsDvValidationArgs{
+//				EnrollmentId: pulumi.Any(akamai_cps_dv_enrollment.Example.Id),
+//				Sans:         pulumi.Any(akamai_cps_dv_enrollment.Example.Sans),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Attributes reference
 //
@@ -143,7 +146,7 @@ func (i *CpsDvValidation) ToCpsDvValidationOutputWithContext(ctx context.Context
 // CpsDvValidationArrayInput is an input type that accepts CpsDvValidationArray and CpsDvValidationArrayOutput values.
 // You can construct a concrete instance of `CpsDvValidationArrayInput` via:
 //
-//          CpsDvValidationArray{ CpsDvValidationArgs{...} }
+//	CpsDvValidationArray{ CpsDvValidationArgs{...} }
 type CpsDvValidationArrayInput interface {
 	pulumi.Input
 
@@ -168,7 +171,7 @@ func (i CpsDvValidationArray) ToCpsDvValidationArrayOutputWithContext(ctx contex
 // CpsDvValidationMapInput is an input type that accepts CpsDvValidationMap and CpsDvValidationMapOutput values.
 // You can construct a concrete instance of `CpsDvValidationMapInput` via:
 //
-//          CpsDvValidationMap{ "key": CpsDvValidationArgs{...} }
+//	CpsDvValidationMap{ "key": CpsDvValidationArgs{...} }
 type CpsDvValidationMapInput interface {
 	pulumi.Input
 

@@ -51,18 +51,27 @@ namespace Pulumi.Akamai
     [AkamaiResourceType("akamai:index/appSecApiConstraintsProtection:AppSecApiConstraintsProtection")]
     public partial class AppSecApiConstraintsProtection : Pulumi.CustomResource
     {
+        /// <summary>
+        /// Unique identifier of the security configuration
+        /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
+        /// <summary>
+        /// Whether to enable API constraints protection
+        /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// Text Export representation
+        /// Text representation
         /// </summary>
         [Output("outputText")]
         public Output<string> OutputText { get; private set; } = null!;
 
+        /// <summary>
+        /// Unique identifier of the security policy
+        /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
 
@@ -112,12 +121,21 @@ namespace Pulumi.Akamai
 
     public sealed class AppSecApiConstraintsProtectionArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Unique identifier of the security configuration
+        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
+        /// <summary>
+        /// Whether to enable API constraints protection
+        /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
+        /// <summary>
+        /// Unique identifier of the security policy
+        /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 
@@ -128,18 +146,27 @@ namespace Pulumi.Akamai
 
     public sealed class AppSecApiConstraintsProtectionState : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Unique identifier of the security configuration
+        /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
+        /// <summary>
+        /// Whether to enable API constraints protection
+        /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// Text Export representation
+        /// Text representation
         /// </summary>
         [Input("outputText")]
         public Input<string>? OutputText { get; set; }
 
+        /// <summary>
+        /// Unique identifier of the security policy
+        /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
 

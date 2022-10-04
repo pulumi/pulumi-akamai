@@ -62,7 +62,7 @@ namespace Pulumi.Akamai
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Path to a JSON file containing the logging settings to be configured. A sample JSON file can be found in the [Modify HTTP header log settings for a configuration](https://developer.akamai.com/api/cloud_security/application_security/v1.html#puthttpheaderloggingforaconfiguration) section of the Application Security API documentation.
+        /// . Path to a JSON file containing the logging settings to be configured.
         /// </summary>
         [Output("logging")]
         public Output<string> Logging { get; private set; } = null!;
@@ -126,7 +126,7 @@ namespace Pulumi.Akamai
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Path to a JSON file containing the logging settings to be configured. A sample JSON file can be found in the [Modify HTTP header log settings for a configuration](https://developer.akamai.com/api/cloud_security/application_security/v1.html#puthttpheaderloggingforaconfiguration) section of the Application Security API documentation.
+        /// . Path to a JSON file containing the logging settings to be configured.
         /// </summary>
         [Input("logging", required: true)]
         public Input<string> Logging { get; set; } = null!;
@@ -151,7 +151,7 @@ namespace Pulumi.Akamai
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Path to a JSON file containing the logging settings to be configured. A sample JSON file can be found in the [Modify HTTP header log settings for a configuration](https://developer.akamai.com/api/cloud_security/application_security/v1.html#puthttpheaderloggingforaconfiguration) section of the Application Security API documentation.
+        /// . Path to a JSON file containing the logging settings to be configured.
         /// </summary>
         [Input("logging")]
         public Input<string>? Logging { get; set; }

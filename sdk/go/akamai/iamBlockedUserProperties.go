@@ -21,29 +21,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewIamBlockedUserProperties(ctx, "example", &akamai.IamBlockedUserPropertiesArgs{
-// 			BlockedProperties: pulumi.IntArray{
-// 				pulumi.Int(1),
-// 				pulumi.Int(2),
-// 				pulumi.Int(3),
-// 				pulumi.Int(4),
-// 				pulumi.Int(5),
-// 			},
-// 			GroupId:    pulumi.Int(12345),
-// 			IdentityId: pulumi.String("A-B-123456"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewIamBlockedUserProperties(ctx, "example", &akamai.IamBlockedUserPropertiesArgs{
+//				BlockedProperties: pulumi.IntArray{
+//					pulumi.Int(1),
+//					pulumi.Int(2),
+//					pulumi.Int(3),
+//					pulumi.Int(4),
+//					pulumi.Int(5),
+//				},
+//				GroupId:    pulumi.Int(12345),
+//				IdentityId: pulumi.String("A-B-123456"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Attributes reference
@@ -164,7 +167,7 @@ func (i *IamBlockedUserProperties) ToIamBlockedUserPropertiesOutputWithContext(c
 // IamBlockedUserPropertiesArrayInput is an input type that accepts IamBlockedUserPropertiesArray and IamBlockedUserPropertiesArrayOutput values.
 // You can construct a concrete instance of `IamBlockedUserPropertiesArrayInput` via:
 //
-//          IamBlockedUserPropertiesArray{ IamBlockedUserPropertiesArgs{...} }
+//	IamBlockedUserPropertiesArray{ IamBlockedUserPropertiesArgs{...} }
 type IamBlockedUserPropertiesArrayInput interface {
 	pulumi.Input
 
@@ -189,7 +192,7 @@ func (i IamBlockedUserPropertiesArray) ToIamBlockedUserPropertiesArrayOutputWith
 // IamBlockedUserPropertiesMapInput is an input type that accepts IamBlockedUserPropertiesMap and IamBlockedUserPropertiesMapOutput values.
 // You can construct a concrete instance of `IamBlockedUserPropertiesMapInput` via:
 //
-//          IamBlockedUserPropertiesMap{ "key": IamBlockedUserPropertiesArgs{...} }
+//	IamBlockedUserPropertiesMap{ "key": IamBlockedUserPropertiesArgs{...} }
 type IamBlockedUserPropertiesMapInput interface {
 	pulumi.Input
 

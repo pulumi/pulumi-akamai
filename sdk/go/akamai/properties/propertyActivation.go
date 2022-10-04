@@ -23,67 +23,70 @@ import (
 // package main
 //
 // import (
-// 	"fmt"
-// 	"io/ioutil"
 //
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"fmt"
+//	"io/ioutil"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func readFileOrPanic(path string) pulumi.StringPtrInput {
-// 	data, err := ioutil.ReadFile(path)
-// 	if err != nil {
-// 		panic(err.Error())
-// 	}
-// 	return pulumi.String(string(data))
-// }
+//	func readFileOrPanic(path string) pulumi.StringPtrInput {
+//		data, err := ioutil.ReadFile(path)
+//		if err != nil {
+//			panic(err.Error())
+//		}
+//		return pulumi.String(string(data))
+//	}
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		email := "user@example.org"
-// 		ruleFormat := "v2020-03-04"
-// 		example, err := akamai.NewProperty(ctx, "example", &akamai.PropertyArgs{
-// 			ProductId:  pulumi.String("prd_SPM"),
-// 			ContractId: pulumi.Any(_var.Contractid),
-// 			GroupId:    pulumi.Any(_var.Groupid),
-// 			Hostnames: PropertyHostnameArray{
-// 				Example.org:     "example.org.edgesuite.net",
-// 				Www.example.org: "example.org.edgesuite.net",
-// 				Sub.example.org: "sub.example.org.edgesuite.net",
-// 			},
-// 			RuleFormat: pulumi.String(ruleFormat),
-// 			Rules:      readFileOrPanic(fmt.Sprintf("%v/main.json", path.Module)),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		exampleStaging, err := akamai.NewPropertyActivation(ctx, "exampleStaging", &akamai.PropertyActivationArgs{
-// 			PropertyId: example.ID(),
-// 			Contacts: pulumi.StringArray{
-// 				pulumi.String(email),
-// 			},
-// 			Version: example.LatestVersion,
-// 			Note:    pulumi.String("Sample activation"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewPropertyActivation(ctx, "exampleProd", &akamai.PropertyActivationArgs{
-// 			PropertyId: example.ID(),
-// 			Network:    pulumi.String("PRODUCTION"),
-// 			Version:    pulumi.Int(3),
-// 			Contacts: pulumi.StringArray{
-// 				pulumi.String(email),
-// 			},
-// 		}, pulumi.DependsOn([]pulumi.Resource{
-// 			exampleStaging,
-// 		}))
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			email := "user@example.org"
+//			ruleFormat := "v2020-03-04"
+//			example, err := akamai.NewProperty(ctx, "example", &akamai.PropertyArgs{
+//				ProductId:  pulumi.String("prd_SPM"),
+//				ContractId: pulumi.Any(_var.Contractid),
+//				GroupId:    pulumi.Any(_var.Groupid),
+//				Hostnames: PropertyHostnameArray{
+//					Example.org:     "example.org.edgesuite.net",
+//					Www.example.org: "example.org.edgesuite.net",
+//					Sub.example.org: "sub.example.org.edgesuite.net",
+//				},
+//				RuleFormat: pulumi.String(ruleFormat),
+//				Rules:      readFileOrPanic(fmt.Sprintf("%v/main.json", path.Module)),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			exampleStaging, err := akamai.NewPropertyActivation(ctx, "exampleStaging", &akamai.PropertyActivationArgs{
+//				PropertyId: example.ID(),
+//				Contacts: pulumi.StringArray{
+//					pulumi.String(email),
+//				},
+//				Version: example.LatestVersion,
+//				Note:    pulumi.String("Sample activation"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewPropertyActivation(ctx, "exampleProd", &akamai.PropertyActivationArgs{
+//				PropertyId: example.ID(),
+//				Network:    pulumi.String("PRODUCTION"),
+//				Version:    pulumi.Int(3),
+//				Contacts: pulumi.StringArray{
+//					pulumi.String(email),
+//				},
+//			}, pulumi.DependsOn([]pulumi.Resource{
+//				exampleStaging,
+//			}))
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // Deprecated: akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation
@@ -96,7 +99,7 @@ type PropertyActivation struct {
 	AutoAcknowledgeRuleWarnings pulumi.BoolPtrOutput `pulumi:"autoAcknowledgeRuleWarnings"`
 	// One or more email addresses to send activation status changes to.
 	Contacts pulumi.StringArrayOutput `pulumi:"contacts"`
-	// The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+	// The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
 	Errors pulumi.StringOutput `pulumi:"errors"`
 	// Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
 	Network pulumi.StringPtrOutput `pulumi:"network"`
@@ -115,7 +118,7 @@ type PropertyActivation struct {
 	Status pulumi.StringOutput `pulumi:"status"`
 	// The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latestVersion` attribute in the `Property` resource labeled `example`.
 	Version pulumi.IntOutput `pulumi:"version"`
-	// The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+	// The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
 	Warnings pulumi.StringOutput `pulumi:"warnings"`
 }
 
@@ -160,7 +163,7 @@ type propertyActivationState struct {
 	AutoAcknowledgeRuleWarnings *bool `pulumi:"autoAcknowledgeRuleWarnings"`
 	// One or more email addresses to send activation status changes to.
 	Contacts []string `pulumi:"contacts"`
-	// The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+	// The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
 	Errors *string `pulumi:"errors"`
 	// Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
 	Network *string `pulumi:"network"`
@@ -179,7 +182,7 @@ type propertyActivationState struct {
 	Status *string `pulumi:"status"`
 	// The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latestVersion` attribute in the `Property` resource labeled `example`.
 	Version *int `pulumi:"version"`
-	// The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+	// The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
 	Warnings *string `pulumi:"warnings"`
 }
 
@@ -190,7 +193,7 @@ type PropertyActivationState struct {
 	AutoAcknowledgeRuleWarnings pulumi.BoolPtrInput
 	// One or more email addresses to send activation status changes to.
 	Contacts pulumi.StringArrayInput
-	// The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+	// The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
 	Errors pulumi.StringPtrInput
 	// Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
 	Network pulumi.StringPtrInput
@@ -209,7 +212,7 @@ type PropertyActivationState struct {
 	Status pulumi.StringPtrInput
 	// The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latestVersion` attribute in the `Property` resource labeled `example`.
 	Version pulumi.IntPtrInput
-	// The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+	// The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
 	Warnings pulumi.StringPtrInput
 }
 
@@ -292,7 +295,7 @@ func (i *PropertyActivation) ToPropertyActivationOutputWithContext(ctx context.C
 // PropertyActivationArrayInput is an input type that accepts PropertyActivationArray and PropertyActivationArrayOutput values.
 // You can construct a concrete instance of `PropertyActivationArrayInput` via:
 //
-//          PropertyActivationArray{ PropertyActivationArgs{...} }
+//	PropertyActivationArray{ PropertyActivationArgs{...} }
 type PropertyActivationArrayInput interface {
 	pulumi.Input
 
@@ -317,7 +320,7 @@ func (i PropertyActivationArray) ToPropertyActivationArrayOutputWithContext(ctx 
 // PropertyActivationMapInput is an input type that accepts PropertyActivationMap and PropertyActivationMapOutput values.
 // You can construct a concrete instance of `PropertyActivationMapInput` via:
 //
-//          PropertyActivationMap{ "key": PropertyActivationArgs{...} }
+//	PropertyActivationMap{ "key": PropertyActivationArgs{...} }
 type PropertyActivationMapInput interface {
 	pulumi.Input
 
@@ -368,7 +371,7 @@ func (o PropertyActivationOutput) Contacts() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringArrayOutput { return v.Contacts }).(pulumi.StringArrayOutput)
 }
 
-// The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+// The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
 func (o PropertyActivationOutput) Errors() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringOutput { return v.Errors }).(pulumi.StringOutput)
 }
@@ -414,7 +417,7 @@ func (o PropertyActivationOutput) Version() pulumi.IntOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.IntOutput { return v.Version }).(pulumi.IntOutput)
 }
 
-// The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+// The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
 func (o PropertyActivationOutput) Warnings() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringOutput { return v.Warnings }).(pulumi.StringOutput)
 }

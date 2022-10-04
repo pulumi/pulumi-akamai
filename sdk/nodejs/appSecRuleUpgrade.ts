@@ -72,8 +72,17 @@ export class AppSecRuleUpgrade extends pulumi.CustomResource {
      * . Unique identifier of the security configuration associated with the ruleset being upgraded.
      */
     public readonly configId!: pulumi.Output<number>;
+    /**
+     * Versioning information for the current KRS rule set
+     */
     public /*out*/ readonly currentRuleset!: pulumi.Output<string>;
+    /**
+     * Whether an evaluation is currently in progress
+     */
     public /*out*/ readonly evalStatus!: pulumi.Output<string>;
+    /**
+     * Upgrade mode (KRS, AAG, ASE_MANUAL or ASE_AUTO)
+     */
     public /*out*/ readonly mode!: pulumi.Output<string>;
     /**
      * . Unique identifier of the security policy associated with the ruleset being upgraded.
@@ -82,6 +91,9 @@ export class AppSecRuleUpgrade extends pulumi.CustomResource {
      * - **ASE_MANUAL**. Manually updates your rulesets.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
+    /**
+     * Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
+     */
     public readonly upgradeMode!: pulumi.Output<string | undefined>;
 
     /**
@@ -131,8 +143,17 @@ export interface AppSecRuleUpgradeState {
      * . Unique identifier of the security configuration associated with the ruleset being upgraded.
      */
     configId?: pulumi.Input<number>;
+    /**
+     * Versioning information for the current KRS rule set
+     */
     currentRuleset?: pulumi.Input<string>;
+    /**
+     * Whether an evaluation is currently in progress
+     */
     evalStatus?: pulumi.Input<string>;
+    /**
+     * Upgrade mode (KRS, AAG, ASE_MANUAL or ASE_AUTO)
+     */
     mode?: pulumi.Input<string>;
     /**
      * . Unique identifier of the security policy associated with the ruleset being upgraded.
@@ -141,6 +162,9 @@ export interface AppSecRuleUpgradeState {
      * - **ASE_MANUAL**. Manually updates your rulesets.
      */
     securityPolicyId?: pulumi.Input<string>;
+    /**
+     * Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
+     */
     upgradeMode?: pulumi.Input<string>;
 }
 
@@ -159,5 +183,8 @@ export interface AppSecRuleUpgradeArgs {
      * - **ASE_MANUAL**. Manually updates your rulesets.
      */
     securityPolicyId: pulumi.Input<string>;
+    /**
+     * Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
+     */
     upgradeMode?: pulumi.Input<string>;
 }

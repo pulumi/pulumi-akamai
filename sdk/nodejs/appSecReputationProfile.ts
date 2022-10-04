@@ -70,9 +70,12 @@ export class AppSecReputationProfile extends pulumi.CustomResource {
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Path to a JSON file containing a definition of the reputation profile. You can view a sample JSON file in the [Create a reputation profile](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles) section of the Application Security API documentation.
+     * . Path to a JSON file containing a definition of the reputation profile.
      */
     public readonly reputationProfile!: pulumi.Output<string>;
+    /**
+     * Unique identifer of the reputation profile
+     */
     public /*out*/ readonly reputationProfileId!: pulumi.Output<number>;
 
     /**
@@ -117,9 +120,12 @@ export interface AppSecReputationProfileState {
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing a definition of the reputation profile. You can view a sample JSON file in the [Create a reputation profile](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles) section of the Application Security API documentation.
+     * . Path to a JSON file containing a definition of the reputation profile.
      */
     reputationProfile?: pulumi.Input<string>;
+    /**
+     * Unique identifer of the reputation profile
+     */
     reputationProfileId?: pulumi.Input<number>;
 }
 
@@ -132,7 +138,7 @@ export interface AppSecReputationProfileArgs {
      */
     configId: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing a definition of the reputation profile. You can view a sample JSON file in the [Create a reputation profile](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles) section of the Application Security API documentation.
+     * . Path to a JSON file containing a definition of the reputation profile.
      */
     reputationProfile: pulumi.Input<string>;
 }

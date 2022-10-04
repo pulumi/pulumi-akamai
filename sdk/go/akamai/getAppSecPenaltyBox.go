@@ -26,31 +26,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		penaltyBox, err := akamai.LookupAppSecPenaltyBox(ctx, &GetAppSecPenaltyBoxArgs{
-// 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: "gms1_134637",
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("penaltyBoxAction", penaltyBox.Action)
-// 		ctx.Export("penaltyBoxEnabled", penaltyBox.Enabled)
-// 		ctx.Export("penaltyBoxText", penaltyBox.OutputText)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			penaltyBox, err := akamai.LookupAppSecPenaltyBox(ctx, &GetAppSecPenaltyBoxArgs{
+//				ConfigId:         configuration.ConfigId,
+//				SecurityPolicyId: "gms1_134637",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("penaltyBoxAction", penaltyBox.Action)
+//			ctx.Export("penaltyBoxEnabled", penaltyBox.Enabled)
+//			ctx.Export("penaltyBoxText", penaltyBox.OutputText)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
@@ -61,6 +64,7 @@ import (
 //   - **deny**. The request is blocked.
 //   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
 //   - **none**. Take no action.
+//
 // - `enabled`. If **true**, penalty box protection is enabled. If **false**, penalty box protection is disabled.
 // - `outputText`. Tabular report of penalty box protection settings.
 func LookupAppSecPenaltyBox(ctx *pulumi.Context, args *LookupAppSecPenaltyBoxArgs, opts ...pulumi.InvokeOption) (*LookupAppSecPenaltyBoxResult, error) {

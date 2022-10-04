@@ -88,8 +88,6 @@ def get_app_sec_advanced_settings_pragma_header(config_id: Optional[int] = None,
 
     Returns pragma header settings information. This HTTP header provides information about such things as: the edge routers used in a transaction; the Akamai IP addresses involved; information about whether a request was cached or not; and so on. By default, pragma headers are removed from all responses.
 
-    Additional information is available from the [PragmaHeader members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#64c92ba1) section of the Application Security API.
-
     **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/pragma-header](https://techdocs.akamai.com/application-security/reference/get-advanced-settings-pragma-header)
 
     ## Example Usage
@@ -142,8 +140,6 @@ def get_app_sec_advanced_settings_pragma_header_output(config_id: Optional[pulum
     **Scopes**: Security configuration; security policy
 
     Returns pragma header settings information. This HTTP header provides information about such things as: the edge routers used in a transaction; the Akamai IP addresses involved; information about whether a request was cached or not; and so on. By default, pragma headers are removed from all responses.
-
-    Additional information is available from the [PragmaHeader members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#64c92ba1) section of the Application Security API.
 
     **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/pragma-header](https://techdocs.akamai.com/application-security/reference/get-advanced-settings-pragma-header)
 

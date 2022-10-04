@@ -25,29 +25,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewGtmAsmap(ctx, "demoAsmap", &akamai.GtmAsmapArgs{
-// 			DefaultDatacenter: &GtmAsmapDefaultDatacenterArgs{
-// 				DatacenterId: pulumi.Int(5400),
-// 				Nickname:     pulumi.String("All Other AS numbers"),
-// 			},
-// 			Domain: pulumi.String("demo_domain.akadns.net"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
-// ## Schema reference
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewGtmAsmap(ctx, "demoAsmap", &akamai.GtmAsmapArgs{
+//				DefaultDatacenter: &GtmAsmapDefaultDatacenterArgs{
+//					DatacenterId: pulumi.Int(5400),
+//					Nickname:     pulumi.String("All Other AS numbers"),
+//				},
+//				Domain: pulumi.String("demo_domain.akadns.net"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
 //
-// You can download the GTM AS Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#asmap) page.
+// ```
 //
 // Deprecated: akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap
 type GtmASmap struct {
@@ -182,7 +182,7 @@ func (i *GtmASmap) ToGtmASmapOutputWithContext(ctx context.Context) GtmASmapOutp
 // GtmASmapArrayInput is an input type that accepts GtmASmapArray and GtmASmapArrayOutput values.
 // You can construct a concrete instance of `GtmASmapArrayInput` via:
 //
-//          GtmASmapArray{ GtmASmapArgs{...} }
+//	GtmASmapArray{ GtmASmapArgs{...} }
 type GtmASmapArrayInput interface {
 	pulumi.Input
 
@@ -207,7 +207,7 @@ func (i GtmASmapArray) ToGtmASmapArrayOutputWithContext(ctx context.Context) Gtm
 // GtmASmapMapInput is an input type that accepts GtmASmapMap and GtmASmapMapOutput values.
 // You can construct a concrete instance of `GtmASmapMapInput` via:
 //
-//          GtmASmapMap{ "key": GtmASmapArgs{...} }
+//	GtmASmapMap{ "key": GtmASmapArgs{...} }
 type GtmASmapMapInput interface {
 	pulumi.Input
 

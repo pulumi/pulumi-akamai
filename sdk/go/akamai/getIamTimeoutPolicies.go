@@ -17,20 +17,23 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		timeoutPolicies, err := akamai.GetIamTimeoutPolicies(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("supportedTimeoutPolicies", timeoutPolicies)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			timeoutPolicies, err := akamai.GetIamTimeoutPolicies(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("supportedTimeoutPolicies", timeoutPolicies)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Attributes reference
 //
@@ -38,7 +41,7 @@ import (
 //
 // * `policies` — A map of session timeout policy names to their value in seconds.
 //
-// [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getadmintimeoutpolicies)
+// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-timeout-policies)
 func GetIamTimeoutPolicies(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamTimeoutPoliciesResult, error) {
 	var rv GetIamTimeoutPoliciesResult
 	err := ctx.Invoke("akamai:index/getIamTimeoutPolicies:getIamTimeoutPolicies", nil, &rv, opts...)

@@ -22,32 +22,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		networkListsFilter, err := akamai.GetNetworkLists(ctx, &GetNetworkListsArgs{
-// 			Name: pulumi.StringRef(_var.Network_list),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewNetworkListActivations(ctx, "activation", &akamai.NetworkListActivationsArgs{
-// 			NetworkListId: pulumi.String(networkListsFilter.Lists[0]),
-// 			Network:       pulumi.String("STAGING"),
-// 			Notes:         pulumi.String("TEST Notes"),
-// 			NotificationEmails: pulumi.StringArray{
-// 				pulumi.String("user@example.com"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			networkListsFilter, err := akamai.GetNetworkLists(ctx, &GetNetworkListsArgs{
+//				Name: pulumi.StringRef(_var.Network_list),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewNetworkListActivations(ctx, "activation", &akamai.NetworkListActivationsArgs{
+//				NetworkListId: pulumi.String(networkListsFilter.Lists[0]),
+//				Network:       pulumi.String("STAGING"),
+//				Notes:         pulumi.String("TEST Notes"),
+//				NotificationEmails: pulumi.StringArray{
+//					pulumi.String("user@example.com"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type NetworkListActivations struct {
 	pulumi.CustomResourceState
@@ -200,7 +203,7 @@ func (i *NetworkListActivations) ToNetworkListActivationsOutputWithContext(ctx c
 // NetworkListActivationsArrayInput is an input type that accepts NetworkListActivationsArray and NetworkListActivationsArrayOutput values.
 // You can construct a concrete instance of `NetworkListActivationsArrayInput` via:
 //
-//          NetworkListActivationsArray{ NetworkListActivationsArgs{...} }
+//	NetworkListActivationsArray{ NetworkListActivationsArgs{...} }
 type NetworkListActivationsArrayInput interface {
 	pulumi.Input
 
@@ -225,7 +228,7 @@ func (i NetworkListActivationsArray) ToNetworkListActivationsArrayOutputWithCont
 // NetworkListActivationsMapInput is an input type that accepts NetworkListActivationsMap and NetworkListActivationsMapOutput values.
 // You can construct a concrete instance of `NetworkListActivationsMapInput` via:
 //
-//          NetworkListActivationsMap{ "key": NetworkListActivationsArgs{...} }
+//	NetworkListActivationsMap{ "key": NetworkListActivationsArgs{...} }
 type NetworkListActivationsMapInput interface {
 	pulumi.Input
 

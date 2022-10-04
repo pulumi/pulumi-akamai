@@ -21,7 +21,7 @@ class GetAppSecTuningRecommendationsResult:
     """
     A collection of values returned by getAppSecTuningRecommendations.
     """
-    def __init__(__self__, attack_group=None, config_id=None, id=None, json=None, ruleset_type=None, security_policy_id=None):
+    def __init__(__self__, attack_group=None, config_id=None, id=None, json=None, rule_id=None, ruleset_type=None, security_policy_id=None):
         if attack_group and not isinstance(attack_group, str):
             raise TypeError("Expected argument 'attack_group' to be a str")
         pulumi.set(__self__, "attack_group", attack_group)
@@ -34,6 +34,9 @@ class GetAppSecTuningRecommendationsResult:
         if json and not isinstance(json, str):
             raise TypeError("Expected argument 'json' to be a str")
         pulumi.set(__self__, "json", json)
+        if rule_id and not isinstance(rule_id, int):
+            raise TypeError("Expected argument 'rule_id' to be a int")
+        pulumi.set(__self__, "rule_id", rule_id)
         if ruleset_type and not isinstance(ruleset_type, str):
             raise TypeError("Expected argument 'ruleset_type' to be a str")
         pulumi.set(__self__, "ruleset_type", ruleset_type)
@@ -63,9 +66,14 @@ class GetAppSecTuningRecommendationsResult:
     @pulumi.getter
     def json(self) -> str:
         """
-        JSON-formatted list of the tuning recommendations for the security policy or the attack group. The exception block format in a recommendation conforms to the exception block format used in `condition_exception` element of `attack_group` resource.
+        JSON-formatted list of the tuning recommendations for the security policy, the attack group or the rule. The exception block format in a recommendation conforms to the exception block format used in `condition_exception` element of `attack_group` or ASE rule resource.
         """
         return pulumi.get(self, "json")
+
+    @property
+    @pulumi.getter(name="ruleId")
+    def rule_id(self) -> Optional[int]:
+        return pulumi.get(self, "rule_id")
 
     @property
     @pulumi.getter(name="rulesetType")
@@ -88,21 +96,23 @@ class AwaitableGetAppSecTuningRecommendationsResult(GetAppSecTuningRecommendatio
             config_id=self.config_id,
             id=self.id,
             json=self.json,
+            rule_id=self.rule_id,
             ruleset_type=self.ruleset_type,
             security_policy_id=self.security_policy_id)
 
 
 def get_app_sec_tuning_recommendations(attack_group: Optional[str] = None,
                                        config_id: Optional[int] = None,
+                                       rule_id: Optional[int] = None,
                                        ruleset_type: Optional[str] = None,
                                        security_policy_id: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecTuningRecommendationsResult:
     """
-    Returns tuning recommendations for the specified attack group (or, if the `attack_group` argument is not included, returns tuning recommendations for all the attack groups in the specified security policy).
+    Returns tuning recommendations for the specified attack group or rule (or, if both the `attack_group` and the `rule_id` arguments are not included, returns tuning recommendations for all the attack groups and rules in the specified security policy).
     Tuning recommendations help minimize the number of false positives triggered by a security policy. With a false positive, a client request is marked as having violated the security policy restrictions even though it actually did not.
-    Tuning recommendations are returned as attack group exceptions: if you choose, you can copy the response and use the `AppSecAttackGroup` resource to add the recommended exception to a security policy or attack group.
+    Tuning recommendations are returned as attack group or rule exceptions: if you choose, you can copy the response and use the `AppSecAttackGroup` resource to add the recommended exception to an attack group or the `AppSecRule` resource to add the recommended exception to a rule.\\
     If the data source response is empty, that means that there are no further recommendations for tuning your security policy or attack group.
-    If you need, you can manually merge a recommended exception for an attack group with the exception previously configured in the attack group resource.
+    If you need, you can manually merge a recommended exception for an attack group or a rule with the exception previously configured.
     You can find additional information in our [Application Security API v1 documentation](https://techdocs.akamai.com/application-security/reference/get-recommendations).
 
     **Related API endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/recommendation](https://techdocs.akamai.com/application-security/reference/get-recommendations)
@@ -127,14 +137,16 @@ def get_app_sec_tuning_recommendations(attack_group: Optional[str] = None,
     ```
 
 
-    :param str attack_group: . Unique name of the attack group you want tuning recommendations for. If not included, recommendations are returned for all attack groups.
+    :param str attack_group: . Unique name of the attack group you want tuning recommendations for. If both `attack_group` and `rule_id` not included, recommendations are returned for all attack groups.
     :param int config_id: . Unique identifier of the security configuration you want tuning recommendations for.
+    :param int rule_id: . Unique id of the rule you want tuning recommendations for. If both `attack_group` and `rule_id` not included, recommendations are returned for all attack groups.
     :param str ruleset_type: . Type of ruleset used by the security configuration you want tuning recommendations for. Supported values are `active` and `evaluation`. Defaults to `active`.
     :param str security_policy_id: . Unique identifier of the security policy you want tuning recommendations for.
     """
     __args__ = dict()
     __args__['attackGroup'] = attack_group
     __args__['configId'] = config_id
+    __args__['ruleId'] = rule_id
     __args__['rulesetType'] = ruleset_type
     __args__['securityPolicyId'] = security_policy_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -145,6 +157,7 @@ def get_app_sec_tuning_recommendations(attack_group: Optional[str] = None,
         config_id=__ret__.config_id,
         id=__ret__.id,
         json=__ret__.json,
+        rule_id=__ret__.rule_id,
         ruleset_type=__ret__.ruleset_type,
         security_policy_id=__ret__.security_policy_id)
 
@@ -152,15 +165,16 @@ def get_app_sec_tuning_recommendations(attack_group: Optional[str] = None,
 @_utilities.lift_output_func(get_app_sec_tuning_recommendations)
 def get_app_sec_tuning_recommendations_output(attack_group: Optional[pulumi.Input[Optional[str]]] = None,
                                               config_id: Optional[pulumi.Input[int]] = None,
+                                              rule_id: Optional[pulumi.Input[Optional[int]]] = None,
                                               ruleset_type: Optional[pulumi.Input[Optional[str]]] = None,
                                               security_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecTuningRecommendationsResult]:
     """
-    Returns tuning recommendations for the specified attack group (or, if the `attack_group` argument is not included, returns tuning recommendations for all the attack groups in the specified security policy).
+    Returns tuning recommendations for the specified attack group or rule (or, if both the `attack_group` and the `rule_id` arguments are not included, returns tuning recommendations for all the attack groups and rules in the specified security policy).
     Tuning recommendations help minimize the number of false positives triggered by a security policy. With a false positive, a client request is marked as having violated the security policy restrictions even though it actually did not.
-    Tuning recommendations are returned as attack group exceptions: if you choose, you can copy the response and use the `AppSecAttackGroup` resource to add the recommended exception to a security policy or attack group.
+    Tuning recommendations are returned as attack group or rule exceptions: if you choose, you can copy the response and use the `AppSecAttackGroup` resource to add the recommended exception to an attack group or the `AppSecRule` resource to add the recommended exception to a rule.\\
     If the data source response is empty, that means that there are no further recommendations for tuning your security policy or attack group.
-    If you need, you can manually merge a recommended exception for an attack group with the exception previously configured in the attack group resource.
+    If you need, you can manually merge a recommended exception for an attack group or a rule with the exception previously configured.
     You can find additional information in our [Application Security API v1 documentation](https://techdocs.akamai.com/application-security/reference/get-recommendations).
 
     **Related API endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/recommendation](https://techdocs.akamai.com/application-security/reference/get-recommendations)
@@ -185,8 +199,9 @@ def get_app_sec_tuning_recommendations_output(attack_group: Optional[pulumi.Inpu
     ```
 
 
-    :param str attack_group: . Unique name of the attack group you want tuning recommendations for. If not included, recommendations are returned for all attack groups.
+    :param str attack_group: . Unique name of the attack group you want tuning recommendations for. If both `attack_group` and `rule_id` not included, recommendations are returned for all attack groups.
     :param int config_id: . Unique identifier of the security configuration you want tuning recommendations for.
+    :param int rule_id: . Unique id of the rule you want tuning recommendations for. If both `attack_group` and `rule_id` not included, recommendations are returned for all attack groups.
     :param str ruleset_type: . Type of ruleset used by the security configuration you want tuning recommendations for. Supported values are `active` and `evaluation`. Defaults to `active`.
     :param str security_policy_id: . Unique identifier of the security policy you want tuning recommendations for.
     """

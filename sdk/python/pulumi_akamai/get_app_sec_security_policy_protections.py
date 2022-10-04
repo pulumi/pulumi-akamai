@@ -21,7 +21,7 @@ class GetAppSecSecurityPolicyProtectionsResult:
     """
     A collection of values returned by getAppSecSecurityPolicyProtections.
     """
-    def __init__(__self__, apply_api_constraints=None, apply_application_layer_controls=None, apply_botman_controls=None, apply_network_layer_controls=None, apply_rate_controls=None, apply_reputation_controls=None, apply_slow_post_controls=None, config_id=None, id=None, json=None, output_text=None, security_policy_id=None):
+    def __init__(__self__, apply_api_constraints=None, apply_application_layer_controls=None, apply_botman_controls=None, apply_malware_controls=None, apply_network_layer_controls=None, apply_rate_controls=None, apply_reputation_controls=None, apply_slow_post_controls=None, config_id=None, id=None, json=None, output_text=None, security_policy_id=None):
         if apply_api_constraints and not isinstance(apply_api_constraints, bool):
             raise TypeError("Expected argument 'apply_api_constraints' to be a bool")
         pulumi.set(__self__, "apply_api_constraints", apply_api_constraints)
@@ -31,6 +31,9 @@ class GetAppSecSecurityPolicyProtectionsResult:
         if apply_botman_controls and not isinstance(apply_botman_controls, bool):
             raise TypeError("Expected argument 'apply_botman_controls' to be a bool")
         pulumi.set(__self__, "apply_botman_controls", apply_botman_controls)
+        if apply_malware_controls and not isinstance(apply_malware_controls, bool):
+            raise TypeError("Expected argument 'apply_malware_controls' to be a bool")
+        pulumi.set(__self__, "apply_malware_controls", apply_malware_controls)
         if apply_network_layer_controls and not isinstance(apply_network_layer_controls, bool):
             raise TypeError("Expected argument 'apply_network_layer_controls' to be a bool")
         pulumi.set(__self__, "apply_network_layer_controls", apply_network_layer_controls)
@@ -73,6 +76,11 @@ class GetAppSecSecurityPolicyProtectionsResult:
     @pulumi.getter(name="applyBotmanControls")
     def apply_botman_controls(self) -> bool:
         return pulumi.get(self, "apply_botman_controls")
+
+    @property
+    @pulumi.getter(name="applyMalwareControls")
+    def apply_malware_controls(self) -> bool:
+        return pulumi.get(self, "apply_malware_controls")
 
     @property
     @pulumi.getter(name="applyNetworkLayerControls")
@@ -132,6 +140,7 @@ class AwaitableGetAppSecSecurityPolicyProtectionsResult(GetAppSecSecurityPolicyP
             apply_api_constraints=self.apply_api_constraints,
             apply_application_layer_controls=self.apply_application_layer_controls,
             apply_botman_controls=self.apply_botman_controls,
+            apply_malware_controls=self.apply_malware_controls,
             apply_network_layer_controls=self.apply_network_layer_controls,
             apply_rate_controls=self.apply_rate_controls,
             apply_reputation_controls=self.apply_reputation_controls,
@@ -168,6 +177,7 @@ def get_app_sec_security_policy_protections(config_id: Optional[int] = None,
     pulumi.export("protectionsApplyApiConstraints", protections.apply_api_constraints)
     pulumi.export("protectionsApplyApplicationLayerControls", protections.apply_application_layer_controls)
     pulumi.export("protectionsApplyBotmanControls", protections.apply_botman_controls)
+    pulumi.export("protectionsApplyMalwareControls", protections.apply_malware_controls)
     pulumi.export("protectionsApplyNetworkLayerControls", protections.apply_network_layer_controls)
     pulumi.export("protectionsApplyRateControls", protections.apply_rate_controls)
     pulumi.export("protectionsApplyReputationControls", protections.apply_reputation_controls)
@@ -178,11 +188,12 @@ def get_app_sec_security_policy_protections(config_id: Optional[int] = None,
     The following options can be used to determine the information returned and how that returned information is formatted:
 
     - `apply_application_layer_controls`. Returns **true** if application layer controls are enabled; returns **false** if they are not.
+    - `apply_api_constraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
+    - `apply_botman_controls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
+    - `apply_malware_controls`. Returns **true** if malware controls are enabled; returns **false** if they are not.
     - `apply_network_layer_controls`. Returns **true** if network layer controls are enabled; returns **false** if they are not.
     - `apply_rate_controls`. Returns **true** if rate controls are enabled; returns **false** if they are not.
     - `apply_reputation_controls`. Returns **true** if reputation controls are enabled; returns **false** if they are not.
-    - `apply_botman_controls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
-    - `apply_api_constraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
     - `apply_slow_post_controls`. Returns **true** if slow POST controls are enabled; returns **false** if they are not.
     - `json`. JSON-formatted list showing the status of the protection settings.
     - `output_text`. Tabular report showing the status of the protection settings.
@@ -201,6 +212,7 @@ def get_app_sec_security_policy_protections(config_id: Optional[int] = None,
         apply_api_constraints=__ret__.apply_api_constraints,
         apply_application_layer_controls=__ret__.apply_application_layer_controls,
         apply_botman_controls=__ret__.apply_botman_controls,
+        apply_malware_controls=__ret__.apply_malware_controls,
         apply_network_layer_controls=__ret__.apply_network_layer_controls,
         apply_rate_controls=__ret__.apply_rate_controls,
         apply_reputation_controls=__ret__.apply_reputation_controls,
@@ -238,6 +250,7 @@ def get_app_sec_security_policy_protections_output(config_id: Optional[pulumi.In
     pulumi.export("protectionsApplyApiConstraints", protections.apply_api_constraints)
     pulumi.export("protectionsApplyApplicationLayerControls", protections.apply_application_layer_controls)
     pulumi.export("protectionsApplyBotmanControls", protections.apply_botman_controls)
+    pulumi.export("protectionsApplyMalwareControls", protections.apply_malware_controls)
     pulumi.export("protectionsApplyNetworkLayerControls", protections.apply_network_layer_controls)
     pulumi.export("protectionsApplyRateControls", protections.apply_rate_controls)
     pulumi.export("protectionsApplyReputationControls", protections.apply_reputation_controls)
@@ -248,11 +261,12 @@ def get_app_sec_security_policy_protections_output(config_id: Optional[pulumi.In
     The following options can be used to determine the information returned and how that returned information is formatted:
 
     - `apply_application_layer_controls`. Returns **true** if application layer controls are enabled; returns **false** if they are not.
+    - `apply_api_constraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
+    - `apply_botman_controls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
+    - `apply_malware_controls`. Returns **true** if malware controls are enabled; returns **false** if they are not.
     - `apply_network_layer_controls`. Returns **true** if network layer controls are enabled; returns **false** if they are not.
     - `apply_rate_controls`. Returns **true** if rate controls are enabled; returns **false** if they are not.
     - `apply_reputation_controls`. Returns **true** if reputation controls are enabled; returns **false** if they are not.
-    - `apply_botman_controls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
-    - `apply_api_constraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
     - `apply_slow_post_controls`. Returns **true** if slow POST controls are enabled; returns **false** if they are not.
     - `json`. JSON-formatted list showing the status of the protection settings.
     - `output_text`. Tabular report showing the status of the protection settings.

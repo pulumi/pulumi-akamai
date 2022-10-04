@@ -27,30 +27,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecPenaltyBox(ctx, "penaltyBox", &akamai.AppSecPenaltyBoxArgs{
-// 			ConfigId:             pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId:     pulumi.String("gms1_134637"),
-// 			PenaltyBoxProtection: pulumi.Bool(true),
-// 			PenaltyBoxAction:     pulumi.String("deny"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecPenaltyBox(ctx, "penaltyBox", &akamai.AppSecPenaltyBoxArgs{
+//				ConfigId:             pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId:     pulumi.String("gms1_134637"),
+//				PenaltyBoxProtection: pulumi.Bool(true),
+//				PenaltyBoxAction:     pulumi.String("deny"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type AppSecPenaltyBox struct {
 	pulumi.CustomResourceState
@@ -200,7 +203,7 @@ func (i *AppSecPenaltyBox) ToAppSecPenaltyBoxOutputWithContext(ctx context.Conte
 // AppSecPenaltyBoxArrayInput is an input type that accepts AppSecPenaltyBoxArray and AppSecPenaltyBoxArrayOutput values.
 // You can construct a concrete instance of `AppSecPenaltyBoxArrayInput` via:
 //
-//          AppSecPenaltyBoxArray{ AppSecPenaltyBoxArgs{...} }
+//	AppSecPenaltyBoxArray{ AppSecPenaltyBoxArgs{...} }
 type AppSecPenaltyBoxArrayInput interface {
 	pulumi.Input
 
@@ -225,7 +228,7 @@ func (i AppSecPenaltyBoxArray) ToAppSecPenaltyBoxArrayOutputWithContext(ctx cont
 // AppSecPenaltyBoxMapInput is an input type that accepts AppSecPenaltyBoxMap and AppSecPenaltyBoxMapOutput values.
 // You can construct a concrete instance of `AppSecPenaltyBoxMapInput` via:
 //
-//          AppSecPenaltyBoxMap{ "key": AppSecPenaltyBoxArgs{...} }
+//	AppSecPenaltyBoxMap{ "key": AppSecPenaltyBoxArgs{...} }
 type AppSecPenaltyBoxMapInput interface {
 	pulumi.Input
 

@@ -25,9 +25,6 @@ import * as utilities from "../utilities";
  *     nickname: "demo_datacenter",
  * });
  * ```
- * ## Schema reference
- *
- * You can download the GTM Data Center backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#datacenter) page.
  *
  * @deprecated akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter
  */

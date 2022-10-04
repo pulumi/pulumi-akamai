@@ -14,7 +14,7 @@ namespace Pulumi.Akamai
         /// <summary>
         /// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
         /// 
-        /// Use the `akamai.getCloudletsRequestControlMatchRule` data source to build a match rule JSON object for the Request Control Cloudlet. 
+        /// Use the `akamai.getCloudletsRequestControlMatchRule` data source to build a match rule JSON object for the Request Control Cloudlet.
         /// 
         /// ## Attributes reference
         /// 
@@ -29,7 +29,7 @@ namespace Pulumi.Akamai
         /// <summary>
         /// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
         /// 
-        /// Use the `akamai.getCloudletsRequestControlMatchRule` data source to build a match rule JSON object for the Request Control Cloudlet. 
+        /// Use the `akamai.getCloudletsRequestControlMatchRule` data source to build a match rule JSON object for the Request Control Cloudlet.
         /// 
         /// ## Attributes reference
         /// 

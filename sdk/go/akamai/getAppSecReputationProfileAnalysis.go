@@ -17,8 +17,6 @@ import (
 // - `forwardToHTTPHeader`. When enabled, client reputation information associated with a request is forwarded to origin servers by using an HTTP header.
 // - `forwardSharedIPToHTTPHeaderAndSIEM`. When enabled, both the HTTP header and SIEM integration events include a value indicating that the IP addresses is shared address.
 //
-// The returned information is described in the [ReputationAnalysis members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#f06bb20c) section of the Application Security API.
-//
 // **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://techdocs.akamai.com/application-security/reference/get-reputation-analysis)
 //
 // ## Example Usage
@@ -29,30 +27,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		reputationAnalysis, err := akamai.LookupAppSecReputationProfileAnalysis(ctx, &GetAppSecReputationProfileAnalysisArgs{
-// 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: "gms1_134637",
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("reputationAnalysisText", reputationAnalysis.OutputText)
-// 		ctx.Export("reputationAnalysisJson", reputationAnalysis.Json)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			reputationAnalysis, err := akamai.LookupAppSecReputationProfileAnalysis(ctx, &GetAppSecReputationProfileAnalysisArgs{
+//				ConfigId:         configuration.ConfigId,
+//				SecurityPolicyId: "gms1_134637",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("reputationAnalysisText", reputationAnalysis.OutputText)
+//			ctx.Export("reputationAnalysisJson", reputationAnalysis.Json)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //

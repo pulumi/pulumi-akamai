@@ -31,15 +31,15 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string? Path;
         /// <summary>
-        /// - (Required) **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
+        /// **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
         /// </summary>
         public readonly string PrivateKey;
         /// <summary>
-        /// - (Required) The unique ID of your Google Cloud project.
+        /// The unique ID of your Google Cloud project.
         /// </summary>
         public readonly string ProjectId;
         /// <summary>
-        /// - (Required)	The name of the service account with the storage.object.create permission or Storage Object Creator role.
+        /// The name of the service account with the storage.object.create permission or Storage Object Creator role.
         /// </summary>
         public readonly string ServiceAccountName;
 

@@ -221,7 +221,7 @@ class PropertyHostname(dict):
                  cname_type: Optional[str] = None,
                  edge_hostname_id: Optional[str] = None):
         """
-        :param str cert_provisioning_type: The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+        :param str cert_provisioning_type: The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
         :param str cname_from: A string containing the original origin's hostname. For example, `"example.org"`.
         :param str cname_to: A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
         """
@@ -239,7 +239,7 @@ class PropertyHostname(dict):
     @pulumi.getter(name="certProvisioningType")
     def cert_provisioning_type(self) -> str:
         """
-        The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+        The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
         """
         return pulumi.get(self, "cert_provisioning_type")
 
