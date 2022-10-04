@@ -47,7 +47,7 @@ namespace Pulumi.Akamai
         /// 
         /// * `states` — A list of states.
         /// 
-        /// [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getadmincountrystates)
+        /// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-states)
         /// </summary>
         public static Task<GetIamStatesResult> InvokeAsync(GetIamStatesArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetIamStatesResult>("akamai:index/getIamStates:getIamStates", args ?? new GetIamStatesArgs(), options.WithDefaults());
@@ -88,7 +88,7 @@ namespace Pulumi.Akamai
         /// 
         /// * `states` — A list of states.
         /// 
-        /// [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getadmincountrystates)
+        /// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-states)
         /// </summary>
         public static Output<GetIamStatesResult> Invoke(GetIamStatesInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetIamStatesResult>("akamai:index/getIamStates:getIamStates", args ?? new GetIamStatesInvokeArgs(), options.WithDefaults());
@@ -98,7 +98,7 @@ namespace Pulumi.Akamai
     public sealed class GetIamStatesArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// — (required, string) Sepcifies USA or Canada.
+        /// — (required, string) Specifies USA or Canada.
         /// </summary>
         [Input("country", required: true)]
         public string Country { get; set; } = null!;
@@ -111,7 +111,7 @@ namespace Pulumi.Akamai
     public sealed class GetIamStatesInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// — (required, string) Sepcifies USA or Canada.
+        /// — (required, string) Specifies USA or Canada.
         /// </summary>
         [Input("country", required: true)]
         public Input<string> Country { get; set; } = null!;

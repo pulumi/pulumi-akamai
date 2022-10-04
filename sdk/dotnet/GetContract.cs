@@ -42,7 +42,7 @@ namespace Pulumi.Akamai
         public string? Group { get; set; }
 
         /// <summary>
-        /// The unique ID of the group containing the contract, including the  `grp_` prefix.
+        /// - The unique ID of the group containing the contract, including the  `grp_` prefix.
         /// </summary>
         [Input("groupId")]
         public string? GroupId { get; set; }
@@ -67,7 +67,7 @@ namespace Pulumi.Akamai
         public Input<string>? Group { get; set; }
 
         /// <summary>
-        /// The unique ID of the group containing the contract, including the  `grp_` prefix.
+        /// - The unique ID of the group containing the contract, including the  `grp_` prefix.
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }

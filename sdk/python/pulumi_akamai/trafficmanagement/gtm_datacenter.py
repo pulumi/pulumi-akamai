@@ -603,9 +603,6 @@ class GtmDatacenter(pulumi.CustomResource):
             domain="demo_domain.akadns.net",
             nickname="demo_datacenter")
         ```
-        ## Schema reference
-
-        You can download the GTM Data Center backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#datacenter) page.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -648,9 +645,6 @@ class GtmDatacenter(pulumi.CustomResource):
             domain="demo_domain.akadns.net",
             nickname="demo_datacenter")
         ```
-        ## Schema reference
-
-        You can download the GTM Data Center backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#datacenter) page.
 
         :param str resource_name: The name of the resource.
         :param GtmDatacenterArgs args: The arguments to use to populate this resource's properties.

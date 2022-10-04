@@ -10,6 +10,51 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Use the `getPropertyHostnames` data source to query and retrieve hostnames and their certificate statuses for an existing property. This data source lets you search across the contracts and groups you have access to.
+//
+// ## Basic usage
+//
+// This example returns the property's hostnames based on the selected contract and group:
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			ctx.Export("propertyHostnames", data.Akamai_property_hostnames.My-example.Hostnames)
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ## Attributes reference
+//
+// This data source returns these attributes:
+//
+// * `hostnames` - A list of hostnames for the property, including:
+//   - `cnameType` - A string containing the hostname's cname type value.
+//   - `edgeHostnameId` - The edge hostname's unique ID, including the `ehn_` prefix.
+//   - `cnameFrom` - A string containing the original origin's hostname.
+//   - `cnameTo` - A string containing the hostname for edge content.
+//   - `certProvisioningType` - The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the Certificate Provisioning System (CPS), or `DEFAULT` for certificates provisioned automatically.
+//   - `certStatus` - If applicable, this shows a list of certificate statuses, including:
+//   - `target` - The destination part of the CNAME record used to validate the certificate's domain.
+//   - `hostname` - The hostname part of the CNAME record used to validate the certificate's domain.
+//   - `productionStatus` - A string containing the status of the certificate deployment on the production network.
+//   - `stagingStatus` - A string containing the status of the certificate deployment on the staging network.
+//
+// ## Domain validation for DEFAULT certificates
+//
+// If your `certProvisioningType = "DEFAULT"` and the value for `cert_status.production_status` or `cert_status.staging_status` is either `PENDING`, `EXPIRING_SOON_NEEDS_VALIDATION`, or `EXPIRED_NEEDS_VALIDATION`, you need to perform domain validation. This proves to the certificate authority that you control the domain and are authorized to create certificates for it.
+//
+// In your DNS configuration, create a CNAME record and map the `cert_status.hostname` value to the `cert_status.target` value.
 func GetPropertyHostnames(ctx *pulumi.Context, args *GetPropertyHostnamesArgs, opts ...pulumi.InvokeOption) (*GetPropertyHostnamesResult, error) {
 	var rv GetPropertyHostnamesResult
 	err := ctx.Invoke("akamai:index/getPropertyHostnames:getPropertyHostnames", args, &rv, opts...)

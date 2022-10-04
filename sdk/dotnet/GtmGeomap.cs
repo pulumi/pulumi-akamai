@@ -41,9 +41,6 @@ namespace Pulumi.Akamai
     /// 
     /// }
     /// ```
-    /// ## Schema reference
-    /// 
-    /// You can download the GTM Geographic Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#geographicmap) page.
     /// </summary>
     [AkamaiResourceType("akamai:index/gtmGeomap:GtmGeomap")]
     public partial class GtmGeomap : Pulumi.CustomResource

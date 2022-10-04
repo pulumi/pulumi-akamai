@@ -22,7 +22,7 @@ class CloudletsPolicyArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a CloudletsPolicy resource.
-        :param pulumi.Input[str] cloudlet_code: The two- or three- character code for the type of Cloudlet, either `ALB` for Application Load Balancer or `ER` for Edge Redirector.
+        :param pulumi.Input[str] cloudlet_code: The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
         :param pulumi.Input[str] group_id: Defines the group association for the policy. You must have edit privileges for the group.
         :param pulumi.Input[str] description: The description of this specific policy.
         :param pulumi.Input[str] match_rule_format: The version of the Cloudlet-specific `match_rules`.
@@ -44,7 +44,7 @@ class CloudletsPolicyArgs:
     @pulumi.getter(name="cloudletCode")
     def cloudlet_code(self) -> pulumi.Input[str]:
         """
-        The two- or three- character code for the type of Cloudlet, either `ALB` for Application Load Balancer or `ER` for Edge Redirector.
+        The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
         """
         return pulumi.get(self, "cloudlet_code")
 
@@ -127,8 +127,8 @@ class _CloudletsPolicyState:
                  warnings: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CloudletsPolicy resources.
-        :param pulumi.Input[str] cloudlet_code: The two- or three- character code for the type of Cloudlet, either `ALB` for Application Load Balancer or `ER` for Edge Redirector.
-        :param pulumi.Input[int] cloudlet_id: A unique identifier that corresponds to a Cloudlets policy type, either `0` for Edge Redirector or `9` for Application Load Balancer.
+        :param pulumi.Input[str] cloudlet_code: The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+        :param pulumi.Input[int] cloudlet_id: A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
         :param pulumi.Input[str] description: The description of this specific policy.
         :param pulumi.Input[str] group_id: Defines the group association for the policy. You must have edit privileges for the group.
         :param pulumi.Input[str] match_rule_format: The version of the Cloudlet-specific `match_rules`.
@@ -160,7 +160,7 @@ class _CloudletsPolicyState:
     @pulumi.getter(name="cloudletCode")
     def cloudlet_code(self) -> Optional[pulumi.Input[str]]:
         """
-        The two- or three- character code for the type of Cloudlet, either `ALB` for Application Load Balancer or `ER` for Edge Redirector.
+        The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
         """
         return pulumi.get(self, "cloudlet_code")
 
@@ -172,7 +172,7 @@ class _CloudletsPolicyState:
     @pulumi.getter(name="cloudletId")
     def cloudlet_id(self) -> Optional[pulumi.Input[int]]:
         """
-        A unique identifier that corresponds to a Cloudlets policy type, either `0` for Edge Redirector or `9` for Application Load Balancer.
+        A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
         """
         return pulumi.get(self, "cloudlet_id")
 
@@ -301,23 +301,23 @@ class CloudletsPolicy(pulumi.CustomResource):
             "redirectURL": "https://www.example.com",
             "matchURL": "example.com",
             "useIncomingQueryString": false,
-            "useIncomingSchemeAndHost": true
+            "useIncomingSchemeAndHost": false
           },
           {
             "name": "rule2",
             "type": "erMatchRule",
             "matches": [
               {
-                "matchType": "hostname",
-                "matchValue": "3333.dom",
+                "matchType": "path",
+                "matchValue": "/example/website.html",
                 "matchOperator": "equals",
-                "caseSensitive": true,
+                "caseSensitive": false,
                 "negate": false
               }
             ],
-            "useRelativeUrl": "none",
+            "useRelativeUrl": "copy_scheme_hostname",
             "statusCode": 301,
-            "redirectURL": "https://www.example.com",
+            "redirectURL": "/website.html",
             "useIncomingQueryString": false,
             "useIncomingSchemeAndHost": true
           }
@@ -339,7 +339,7 @@ class CloudletsPolicy(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] cloudlet_code: The two- or three- character code for the type of Cloudlet, either `ALB` for Application Load Balancer or `ER` for Edge Redirector.
+        :param pulumi.Input[str] cloudlet_code: The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
         :param pulumi.Input[str] description: The description of this specific policy.
         :param pulumi.Input[str] group_id: Defines the group association for the policy. You must have edit privileges for the group.
         :param pulumi.Input[str] match_rule_format: The version of the Cloudlet-specific `match_rules`.
@@ -376,23 +376,23 @@ class CloudletsPolicy(pulumi.CustomResource):
             "redirectURL": "https://www.example.com",
             "matchURL": "example.com",
             "useIncomingQueryString": false,
-            "useIncomingSchemeAndHost": true
+            "useIncomingSchemeAndHost": false
           },
           {
             "name": "rule2",
             "type": "erMatchRule",
             "matches": [
               {
-                "matchType": "hostname",
-                "matchValue": "3333.dom",
+                "matchType": "path",
+                "matchValue": "/example/website.html",
                 "matchOperator": "equals",
-                "caseSensitive": true,
+                "caseSensitive": false,
                 "negate": false
               }
             ],
-            "useRelativeUrl": "none",
+            "useRelativeUrl": "copy_scheme_hostname",
             "statusCode": 301,
-            "redirectURL": "https://www.example.com",
+            "redirectURL": "/website.html",
             "useIncomingQueryString": false,
             "useIncomingSchemeAndHost": true
           }
@@ -481,8 +481,8 @@ class CloudletsPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] cloudlet_code: The two- or three- character code for the type of Cloudlet, either `ALB` for Application Load Balancer or `ER` for Edge Redirector.
-        :param pulumi.Input[int] cloudlet_id: A unique identifier that corresponds to a Cloudlets policy type, either `0` for Edge Redirector or `9` for Application Load Balancer.
+        :param pulumi.Input[str] cloudlet_code: The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+        :param pulumi.Input[int] cloudlet_id: A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
         :param pulumi.Input[str] description: The description of this specific policy.
         :param pulumi.Input[str] group_id: Defines the group association for the policy. You must have edit privileges for the group.
         :param pulumi.Input[str] match_rule_format: The version of the Cloudlet-specific `match_rules`.
@@ -510,7 +510,7 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter(name="cloudletCode")
     def cloudlet_code(self) -> pulumi.Output[str]:
         """
-        The two- or three- character code for the type of Cloudlet, either `ALB` for Application Load Balancer or `ER` for Edge Redirector.
+        The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
         """
         return pulumi.get(self, "cloudlet_code")
 
@@ -518,7 +518,7 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter(name="cloudletId")
     def cloudlet_id(self) -> pulumi.Output[int]:
         """
-        A unique identifier that corresponds to a Cloudlets policy type, either `0` for Edge Redirector or `9` for Application Load Balancer.
+        A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
         """
         return pulumi.get(self, "cloudlet_id")
 

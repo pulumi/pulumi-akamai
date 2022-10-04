@@ -21,27 +21,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewIamUser(ctx, "exampleUser", &akamai.IamUserArgs{
-// 			AuthGrantsJson: pulumi.String("[{\"groupId\":18451,\"roleId\":14},{\"groupId\":18453,\"roleId\":13}]"),
-// 			Country:        pulumi.String("Grenada"),
-// 			Email:          pulumi.String("jperez@example.com"),
-// 			EnableTfa:      pulumi.Bool(false),
-// 			FirstName:      pulumi.String("Juan"),
-// 			LastName:       pulumi.String("Perez"),
-// 			Phone:          pulumi.String("+1 206-555-0100"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewIamUser(ctx, "exampleUser", &akamai.IamUserArgs{
+//				AuthGrantsJson: pulumi.String("[{\"groupId\":18451,\"roleId\":14},{\"groupId\":18453,\"roleId\":13}]"),
+//				Country:        pulumi.String("Grenada"),
+//				Email:          pulumi.String("jperez@example.com"),
+//				EnableTfa:      pulumi.Bool(false),
+//				FirstName:      pulumi.String("Juan"),
+//				LastName:       pulumi.String("Perez"),
+//				Phone:          pulumi.String("+1 206-555-0100"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Attributes reference
@@ -385,7 +388,7 @@ func (i *IamUser) ToIamUserOutputWithContext(ctx context.Context) IamUserOutput 
 // IamUserArrayInput is an input type that accepts IamUserArray and IamUserArrayOutput values.
 // You can construct a concrete instance of `IamUserArrayInput` via:
 //
-//          IamUserArray{ IamUserArgs{...} }
+//	IamUserArray{ IamUserArgs{...} }
 type IamUserArrayInput interface {
 	pulumi.Input
 
@@ -410,7 +413,7 @@ func (i IamUserArray) ToIamUserArrayOutputWithContext(ctx context.Context) IamUs
 // IamUserMapInput is an input type that accepts IamUserMap and IamUserMapOutput values.
 // You can construct a concrete instance of `IamUserMapInput` via:
 //
-//          IamUserMap{ "key": IamUserArgs{...} }
+//	IamUserMap{ "key": IamUserArgs{...} }
 type IamUserMapInput interface {
 	pulumi.Input
 

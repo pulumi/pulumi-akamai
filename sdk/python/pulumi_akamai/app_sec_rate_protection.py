@@ -75,7 +75,7 @@ class _AppSecRateProtectionState:
         Input properties used for looking up and filtering AppSecRateProtection resources.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the rate protection settings being modified.
         :param pulumi.Input[bool] enabled: . Set to **true** to enable rate protection; set to **false** to disable rate protection.
-        :param pulumi.Input[str] output_text: Text Export representation
+        :param pulumi.Input[str] output_text: Text representation
         :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the rate protection settings being modified.
         """
         if config_id is not None:
@@ -115,7 +115,7 @@ class _AppSecRateProtectionState:
     @pulumi.getter(name="outputText")
     def output_text(self) -> Optional[pulumi.Input[str]]:
         """
-        Text Export representation
+        Text representation
         """
         return pulumi.get(self, "output_text")
 
@@ -271,7 +271,7 @@ class AppSecRateProtection(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the rate protection settings being modified.
         :param pulumi.Input[bool] enabled: . Set to **true** to enable rate protection; set to **false** to disable rate protection.
-        :param pulumi.Input[str] output_text: Text Export representation
+        :param pulumi.Input[str] output_text: Text representation
         :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the rate protection settings being modified.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -304,7 +304,7 @@ class AppSecRateProtection(pulumi.CustomResource):
     @pulumi.getter(name="outputText")
     def output_text(self) -> pulumi.Output[str]:
         """
-        Text Export representation
+        Text representation
         """
         return pulumi.get(self, "output_text")
 

@@ -25,29 +25,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecRateProtection(ctx, "protection", &akamai.AppSecRateProtectionArgs{
-// 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.String("gms1_134637"),
-// 			Enabled:          pulumi.Bool(true),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecRateProtection(ctx, "protection", &akamai.AppSecRateProtectionArgs{
+//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId: pulumi.String("gms1_134637"),
+//				Enabled:          pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
@@ -61,7 +64,7 @@ type AppSecRateProtection struct {
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// . Set to **true** to enable rate protection; set to **false** to disable rate protection.
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// Text Export representation
+	// Text representation
 	OutputText pulumi.StringOutput `pulumi:"outputText"`
 	// . Unique identifier of the security policy associated with the rate protection settings being modified.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
@@ -109,7 +112,7 @@ type appSecRateProtectionState struct {
 	ConfigId *int `pulumi:"configId"`
 	// . Set to **true** to enable rate protection; set to **false** to disable rate protection.
 	Enabled *bool `pulumi:"enabled"`
-	// Text Export representation
+	// Text representation
 	OutputText *string `pulumi:"outputText"`
 	// . Unique identifier of the security policy associated with the rate protection settings being modified.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
@@ -120,7 +123,7 @@ type AppSecRateProtectionState struct {
 	ConfigId pulumi.IntPtrInput
 	// . Set to **true** to enable rate protection; set to **false** to disable rate protection.
 	Enabled pulumi.BoolPtrInput
-	// Text Export representation
+	// Text representation
 	OutputText pulumi.StringPtrInput
 	// . Unique identifier of the security policy associated with the rate protection settings being modified.
 	SecurityPolicyId pulumi.StringPtrInput
@@ -175,7 +178,7 @@ func (i *AppSecRateProtection) ToAppSecRateProtectionOutputWithContext(ctx conte
 // AppSecRateProtectionArrayInput is an input type that accepts AppSecRateProtectionArray and AppSecRateProtectionArrayOutput values.
 // You can construct a concrete instance of `AppSecRateProtectionArrayInput` via:
 //
-//          AppSecRateProtectionArray{ AppSecRateProtectionArgs{...} }
+//	AppSecRateProtectionArray{ AppSecRateProtectionArgs{...} }
 type AppSecRateProtectionArrayInput interface {
 	pulumi.Input
 
@@ -200,7 +203,7 @@ func (i AppSecRateProtectionArray) ToAppSecRateProtectionArrayOutputWithContext(
 // AppSecRateProtectionMapInput is an input type that accepts AppSecRateProtectionMap and AppSecRateProtectionMapOutput values.
 // You can construct a concrete instance of `AppSecRateProtectionMapInput` via:
 //
-//          AppSecRateProtectionMap{ "key": AppSecRateProtectionArgs{...} }
+//	AppSecRateProtectionMap{ "key": AppSecRateProtectionArgs{...} }
 type AppSecRateProtectionMapInput interface {
 	pulumi.Input
 
@@ -246,7 +249,7 @@ func (o AppSecRateProtectionOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AppSecRateProtection) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Text Export representation
+// Text representation
 func (o AppSecRateProtectionOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecRateProtection) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
 }

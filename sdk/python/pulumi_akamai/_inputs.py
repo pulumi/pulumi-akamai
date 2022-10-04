@@ -1373,9 +1373,9 @@ class DatastreamAzureConnectorArgs:
                  connector_id: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[str] access_key: **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
-        :param pulumi.Input[str] account_name: - (Required) Specifies the Azure Storage account name.
+        :param pulumi.Input[str] account_name: Specifies the Azure Storage account name.
         :param pulumi.Input[str] connector_name: The name of the connector.
-        :param pulumi.Input[str] container_name: - (Required) Specifies the Azure Storage container name.
+        :param pulumi.Input[str] container_name: Specifies the Azure Storage container name.
         :param pulumi.Input[str] path: The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
         :param pulumi.Input[bool] compress_logs: Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
         """
@@ -1405,7 +1405,7 @@ class DatastreamAzureConnectorArgs:
     @pulumi.getter(name="accountName")
     def account_name(self) -> pulumi.Input[str]:
         """
-        - (Required) Specifies the Azure Storage account name.
+        Specifies the Azure Storage account name.
         """
         return pulumi.get(self, "account_name")
 
@@ -1429,7 +1429,7 @@ class DatastreamAzureConnectorArgs:
     @pulumi.getter(name="containerName")
     def container_name(self) -> pulumi.Input[str]:
         """
-        - (Required) Specifies the Azure Storage container name.
+        Specifies the Azure Storage container name.
         """
         return pulumi.get(self, "container_name")
 
@@ -1480,10 +1480,10 @@ class DatastreamConfigArgs:
                  upload_file_prefix: Optional[pulumi.Input[str]] = None,
                  upload_file_suffix: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] format: - (Required) The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
-        :param pulumi.Input['DatastreamConfigFrequencyArgs'] frequency: - (Required) How often you want to collect logs from each uploader and send them to a destination.
+        :param pulumi.Input[str] format: The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
+        :param pulumi.Input['DatastreamConfigFrequencyArgs'] frequency: How often you want to collect logs from each uploader and send them to a destination.
         :param pulumi.Input[str] delimiter: A delimiter that you want to use to separate data set fields in the log lines. Currently, `SPACE` is the only available delimiter. This field is required for the `STRUCTURED` log file `format`.
-        :param pulumi.Input[str] upload_file_prefix: - (Optional) The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
+        :param pulumi.Input[str] upload_file_prefix: The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
         :param pulumi.Input[str] upload_file_suffix: The suffix of the log file that you want to send to a destination. It’s a static string of at most 10 characters. If unspecified, defaults to `ds`.
         """
         pulumi.set(__self__, "format", format)
@@ -1499,7 +1499,7 @@ class DatastreamConfigArgs:
     @pulumi.getter
     def format(self) -> pulumi.Input[str]:
         """
-        - (Required) The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
+        The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
         """
         return pulumi.get(self, "format")
 
@@ -1511,7 +1511,7 @@ class DatastreamConfigArgs:
     @pulumi.getter
     def frequency(self) -> pulumi.Input['DatastreamConfigFrequencyArgs']:
         """
-        - (Required) How often you want to collect logs from each uploader and send them to a destination.
+        How often you want to collect logs from each uploader and send them to a destination.
         """
         return pulumi.get(self, "frequency")
 
@@ -1535,7 +1535,7 @@ class DatastreamConfigArgs:
     @pulumi.getter(name="uploadFilePrefix")
     def upload_file_prefix(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Optional) The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
+        The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
         """
         return pulumi.get(self, "upload_file_prefix")
 
@@ -1561,7 +1561,7 @@ class DatastreamConfigFrequencyArgs:
     def __init__(__self__, *,
                  time_in_sec: pulumi.Input[int]):
         """
-        :param pulumi.Input[int] time_in_sec: - (Required) The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
+        :param pulumi.Input[int] time_in_sec: The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
         """
         pulumi.set(__self__, "time_in_sec", time_in_sec)
 
@@ -1569,7 +1569,7 @@ class DatastreamConfigFrequencyArgs:
     @pulumi.getter(name="timeInSec")
     def time_in_sec(self) -> pulumi.Input[int]:
         """
-        - (Required) The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
+        The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
         """
         return pulumi.get(self, "time_in_sec")
 
@@ -1590,7 +1590,7 @@ class DatastreamDatadogConnectorArgs:
                  source: Optional[pulumi.Input[str]] = None,
                  tags: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] auth_token: - (Required) **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
+        :param pulumi.Input[str] auth_token: **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
                * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
         :param pulumi.Input[str] connector_name: The name of the connector.
         :param pulumi.Input[str] url: Enter the secure URL where you want to send and store your logs.
@@ -1617,7 +1617,7 @@ class DatastreamDatadogConnectorArgs:
     @pulumi.getter(name="authToken")
     def auth_token(self) -> pulumi.Input[str]:
         """
-        - (Required) **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
+        **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
         * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
         """
         return pulumi.get(self, "auth_token")
@@ -1722,9 +1722,9 @@ class DatastreamGcsConnectorArgs:
         """
         :param pulumi.Input[str] bucket: The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
         :param pulumi.Input[str] connector_name: The name of the connector.
-        :param pulumi.Input[str] private_key: - (Required) **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
-        :param pulumi.Input[str] project_id: - (Required) The unique ID of your Google Cloud project.
-        :param pulumi.Input[str] service_account_name: - (Required)	The name of the service account with the storage.object.create permission or Storage Object Creator role.
+        :param pulumi.Input[str] private_key: **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
+        :param pulumi.Input[str] project_id: The unique ID of your Google Cloud project.
+        :param pulumi.Input[str] service_account_name: The name of the service account with the storage.object.create permission or Storage Object Creator role.
         :param pulumi.Input[bool] compress_logs: Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
         :param pulumi.Input[str] path: The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
         """
@@ -1768,7 +1768,7 @@ class DatastreamGcsConnectorArgs:
     @pulumi.getter(name="privateKey")
     def private_key(self) -> pulumi.Input[str]:
         """
-        - (Required) **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
+        **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
         """
         return pulumi.get(self, "private_key")
 
@@ -1780,7 +1780,7 @@ class DatastreamGcsConnectorArgs:
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Input[str]:
         """
-        - (Required) The unique ID of your Google Cloud project.
+        The unique ID of your Google Cloud project.
         """
         return pulumi.get(self, "project_id")
 
@@ -1792,7 +1792,7 @@ class DatastreamGcsConnectorArgs:
     @pulumi.getter(name="serviceAccountName")
     def service_account_name(self) -> pulumi.Input[str]:
         """
-        - (Required)	The name of the service account with the storage.object.create permission or Storage Object Creator role.
+        The name of the service account with the storage.object.create permission or Storage Object Creator role.
         """
         return pulumi.get(self, "service_account_name")
 
@@ -2221,7 +2221,7 @@ class DatastreamSplunkConnectorArgs:
                  connector_id: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[str] connector_name: The name of the connector.
-        :param pulumi.Input[str] event_collector_token: - (Required) **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
+        :param pulumi.Input[str] event_collector_token: **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
         :param pulumi.Input[str] url: Enter the secure URL where you want to send and store your logs.
         :param pulumi.Input[bool] compress_logs: Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
         """
@@ -2249,7 +2249,7 @@ class DatastreamSplunkConnectorArgs:
     @pulumi.getter(name="eventCollectorToken")
     def event_collector_token(self) -> pulumi.Input[str]:
         """
-        - (Required) **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
+        **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
         """
         return pulumi.get(self, "event_collector_token")
 
@@ -3646,7 +3646,7 @@ class PropertyHostnameArgs:
                  cname_type: Optional[pulumi.Input[str]] = None,
                  edge_hostname_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] cert_provisioning_type: The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+        :param pulumi.Input[str] cert_provisioning_type: The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
         :param pulumi.Input[str] cname_from: A string containing the original origin's hostname. For example, `"example.org"`.
         :param pulumi.Input[str] cname_to: A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
         """
@@ -3664,7 +3664,7 @@ class PropertyHostnameArgs:
     @pulumi.getter(name="certProvisioningType")
     def cert_provisioning_type(self) -> pulumi.Input[str]:
         """
-        The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+        The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
         """
         return pulumi.get(self, "cert_provisioning_type")
 

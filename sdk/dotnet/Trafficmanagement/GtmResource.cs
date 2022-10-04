@@ -37,9 +37,6 @@ namespace Pulumi.Akamai.Trafficmanagement
     /// 
     /// }
     /// ```
-    /// ## Schema reference
-    /// 
-    /// You can download the GTM Resource backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#resource) page.
     /// </summary>
     [Obsolete(@"akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource")]
     [AkamaiResourceType("akamai:trafficmanagement/gtmResource:GtmResource")]

@@ -21,26 +21,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewNetworkList(ctx, "networkList", &akamai.NetworkListArgs{
-// 			Type:        pulumi.String("IP"),
-// 			Description: pulumi.String("network list description"),
-// 			Lists:       pulumi.Any(_var.List),
-// 			Mode:        pulumi.String("APPEND"),
-// 			ContractId:  pulumi.String("ABC-123"),
-// 			GroupId:     pulumi.Int(12345),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewNetworkList(ctx, "networkList", &akamai.NetworkListArgs{
+//				Type:        pulumi.String("IP"),
+//				Description: pulumi.String("network list description"),
+//				Lists:       pulumi.Any(_var.List),
+//				Mode:        pulumi.String("APPEND"),
+//				ContractId:  pulumi.String("ABC-123"),
+//				GroupId:     pulumi.Int(12345),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type NetworkList struct {
 	pulumi.CustomResourceState
@@ -233,7 +236,7 @@ func (i *NetworkList) ToNetworkListOutputWithContext(ctx context.Context) Networ
 // NetworkListArrayInput is an input type that accepts NetworkListArray and NetworkListArrayOutput values.
 // You can construct a concrete instance of `NetworkListArrayInput` via:
 //
-//          NetworkListArray{ NetworkListArgs{...} }
+//	NetworkListArray{ NetworkListArgs{...} }
 type NetworkListArrayInput interface {
 	pulumi.Input
 
@@ -258,7 +261,7 @@ func (i NetworkListArray) ToNetworkListArrayOutputWithContext(ctx context.Contex
 // NetworkListMapInput is an input type that accepts NetworkListMap and NetworkListMapOutput values.
 // You can construct a concrete instance of `NetworkListMapInput` via:
 //
-//          NetworkListMap{ "key": NetworkListArgs{...} }
+//	NetworkListMap{ "key": NetworkListArgs{...} }
 type NetworkListMapInput interface {
 	pulumi.Input
 

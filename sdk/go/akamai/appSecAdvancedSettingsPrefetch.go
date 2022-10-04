@@ -29,37 +29,40 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecAdvancedSettingsPrefetch(ctx, "prefetch", &akamai.AppSecAdvancedSettingsPrefetchArgs{
-// 			ConfigId:           pulumi.Int(configuration.ConfigId),
-// 			EnableAppLayer:     pulumi.Bool(false),
-// 			AllExtensions:      pulumi.Bool(true),
-// 			EnableRateControls: pulumi.Bool(false),
-// 			Extensions: pulumi.StringArray{
-// 				pulumi.String(".tiff"),
-// 				pulumi.String(".bmp"),
-// 				pulumi.String(".jpg"),
-// 				pulumi.String(".gif"),
-// 				pulumi.String(".png"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecAdvancedSettingsPrefetch(ctx, "prefetch", &akamai.AppSecAdvancedSettingsPrefetchArgs{
+//				ConfigId:           pulumi.Int(configuration.ConfigId),
+//				EnableAppLayer:     pulumi.Bool(false),
+//				AllExtensions:      pulumi.Bool(true),
+//				EnableRateControls: pulumi.Bool(false),
+//				Extensions: pulumi.StringArray{
+//					pulumi.String(".tiff"),
+//					pulumi.String(".bmp"),
+//					pulumi.String(".jpg"),
+//					pulumi.String(".gif"),
+//					pulumi.String(".png"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type AppSecAdvancedSettingsPrefetch struct {
 	pulumi.CustomResourceState
@@ -202,7 +205,7 @@ func (i *AppSecAdvancedSettingsPrefetch) ToAppSecAdvancedSettingsPrefetchOutputW
 // AppSecAdvancedSettingsPrefetchArrayInput is an input type that accepts AppSecAdvancedSettingsPrefetchArray and AppSecAdvancedSettingsPrefetchArrayOutput values.
 // You can construct a concrete instance of `AppSecAdvancedSettingsPrefetchArrayInput` via:
 //
-//          AppSecAdvancedSettingsPrefetchArray{ AppSecAdvancedSettingsPrefetchArgs{...} }
+//	AppSecAdvancedSettingsPrefetchArray{ AppSecAdvancedSettingsPrefetchArgs{...} }
 type AppSecAdvancedSettingsPrefetchArrayInput interface {
 	pulumi.Input
 
@@ -227,7 +230,7 @@ func (i AppSecAdvancedSettingsPrefetchArray) ToAppSecAdvancedSettingsPrefetchArr
 // AppSecAdvancedSettingsPrefetchMapInput is an input type that accepts AppSecAdvancedSettingsPrefetchMap and AppSecAdvancedSettingsPrefetchMapOutput values.
 // You can construct a concrete instance of `AppSecAdvancedSettingsPrefetchMapInput` via:
 //
-//          AppSecAdvancedSettingsPrefetchMap{ "key": AppSecAdvancedSettingsPrefetchArgs{...} }
+//	AppSecAdvancedSettingsPrefetchMap{ "key": AppSecAdvancedSettingsPrefetchArgs{...} }
 type AppSecAdvancedSettingsPrefetchMapInput interface {
 	pulumi.Input
 

@@ -21,22 +21,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewNetworkListDescription(ctx, "networkListDescription", &akamai.NetworkListDescriptionArgs{
-// 			NetworkListId: pulumi.Any(_var.Network_list_id),
-// 			Description:   pulumi.String("Test network list updated description"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewNetworkListDescription(ctx, "networkListDescription", &akamai.NetworkListDescriptionArgs{
+//				NetworkListId: pulumi.Any(_var.Network_list_id),
+//				Description:   pulumi.String("Test network list updated description"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type NetworkListDescription struct {
 	pulumi.CustomResourceState
@@ -150,7 +153,7 @@ func (i *NetworkListDescription) ToNetworkListDescriptionOutputWithContext(ctx c
 // NetworkListDescriptionArrayInput is an input type that accepts NetworkListDescriptionArray and NetworkListDescriptionArrayOutput values.
 // You can construct a concrete instance of `NetworkListDescriptionArrayInput` via:
 //
-//          NetworkListDescriptionArray{ NetworkListDescriptionArgs{...} }
+//	NetworkListDescriptionArray{ NetworkListDescriptionArgs{...} }
 type NetworkListDescriptionArrayInput interface {
 	pulumi.Input
 
@@ -175,7 +178,7 @@ func (i NetworkListDescriptionArray) ToNetworkListDescriptionArrayOutputWithCont
 // NetworkListDescriptionMapInput is an input type that accepts NetworkListDescriptionMap and NetworkListDescriptionMapOutput values.
 // You can construct a concrete instance of `NetworkListDescriptionMapInput` via:
 //
-//          NetworkListDescriptionMap{ "key": NetworkListDescriptionArgs{...} }
+//	NetworkListDescriptionMap{ "key": NetworkListDescriptionArgs{...} }
 type NetworkListDescriptionMapInput interface {
 	pulumi.Input
 

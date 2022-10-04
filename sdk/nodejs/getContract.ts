@@ -52,7 +52,7 @@ export interface GetContractArgs {
      */
     group?: string;
     /**
-     * The unique ID of the group containing the contract, including the  `grp_` prefix.
+     * - The unique ID of the group containing the contract, including the  `grp_` prefix.
      */
     groupId?: string;
     /**
@@ -92,7 +92,7 @@ export interface GetContractOutputArgs {
      */
     group?: pulumi.Input<string>;
     /**
-     * The unique ID of the group containing the contract, including the  `grp_` prefix.
+     * - The unique ID of the group containing the contract, including the  `grp_` prefix.
      */
     groupId?: pulumi.Input<string>;
     /**

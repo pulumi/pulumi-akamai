@@ -22,34 +22,37 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		my_example, err := akamai.GetPropertyRules(ctx, &GetPropertyRulesArgs{
-// 			PropertyId: "prp_123",
-// 			GroupId:    pulumi.StringRef("grp_12345"),
-// 			ContractId: pulumi.StringRef("ctr_1-AB123"),
-// 			Version:    pulumi.IntRef(3),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("propertyMatch", my_example)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			my_example, err := akamai.GetPropertyRules(ctx, &GetPropertyRulesArgs{
+//				PropertyId: "prp_123",
+//				GroupId:    pulumi.StringRef("grp_12345"),
+//				ContractId: pulumi.StringRef("ctr_1-AB123"),
+//				Version:    pulumi.IntRef(3),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("propertyMatch", my_example)
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Attributes reference
 //
 // This data source returns these attributes:
 //
-// * `ruleFormat` - The rule tree version used. Property rule objects are versioned infrequently, and are known as rule formats. See [About rule formats](https://developer.akamai.com/api/core_features/property_manager/vlatest.html#rf) to learn more.
+// * `ruleFormat` - The rule tree version used. Property rule objects are versioned infrequently, and are known as rule formats. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
 // * `rules` - A JSON-encoded rule tree for the property.
-// * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the Property Manager API documentation.
+// * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the Property Manager API documentation.
 func GetPropertyRules(ctx *pulumi.Context, args *GetPropertyRulesArgs, opts ...pulumi.InvokeOption) (*GetPropertyRulesResult, error) {
 	var rv GetPropertyRulesResult
 	err := ctx.Invoke("akamai:index/getPropertyRules:getPropertyRules", args, &rv, opts...)

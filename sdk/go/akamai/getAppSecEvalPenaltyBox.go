@@ -12,7 +12,8 @@ import (
 
 // **Scopes**: Security policy
 //
-//  __ASE_Beta__.:
+//	__ASE_Beta__.:
+//
 // Returns the penalty box settings for a security policy in evaluation mode - evaluation penalty box.
 // When the penalty box is enabled for a policy in evaluation mode, clients that trigger a WAF Deny action are placed in the “penalty box”.
 // There, the action you select for the penalty box (either Alert or Deny) continues to apply to any requests from that client for the next 10 minutes.
@@ -27,31 +28,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		evalPenaltyBox, err := akamai.LookupAppSecEvalPenaltyBox(ctx, &GetAppSecEvalPenaltyBoxArgs{
-// 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: "gms1_134637",
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("evalPenaltyBoxAction", evalPenaltyBox.Action)
-// 		ctx.Export("evalPenaltyBoxEnabled", evalPenaltyBox.Enabled)
-// 		ctx.Export("evalPenaltyBoxText", evalPenaltyBox.OutputText)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			evalPenaltyBox, err := akamai.LookupAppSecEvalPenaltyBox(ctx, &GetAppSecEvalPenaltyBoxArgs{
+//				ConfigId:         configuration.ConfigId,
+//				SecurityPolicyId: "gms1_134637",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("evalPenaltyBoxAction", evalPenaltyBox.Action)
+//			ctx.Export("evalPenaltyBoxEnabled", evalPenaltyBox.Enabled)
+//			ctx.Export("evalPenaltyBoxText", evalPenaltyBox.OutputText)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
@@ -62,6 +66,7 @@ import (
 //   - **deny**. The request is blocked.
 //   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
 //   - **none**. Take no action.
+//
 // - `enabled`. If **true**, evaluation penalty box protection is enabled. If **false**, evaluation penalty box protection is disabled.
 // - `outputText`. Tabular report of evaluation penalty box protection settings.
 func LookupAppSecEvalPenaltyBox(ctx *pulumi.Context, args *LookupAppSecEvalPenaltyBoxArgs, opts ...pulumi.InvokeOption) (*LookupAppSecEvalPenaltyBoxResult, error) {

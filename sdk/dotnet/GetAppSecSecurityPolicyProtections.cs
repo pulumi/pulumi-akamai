@@ -45,6 +45,7 @@ namespace Pulumi.Akamai
         ///         this.ProtectionsApplyApiConstraints = protections.Apply(protections =&gt; protections.ApplyApiConstraints);
         ///         this.ProtectionsApplyApplicationLayerControls = protections.Apply(protections =&gt; protections.ApplyApplicationLayerControls);
         ///         this.ProtectionsApplyBotmanControls = protections.Apply(protections =&gt; protections.ApplyBotmanControls);
+        ///         this.ProtectionsApplyMalwareControls = protections.Apply(protections =&gt; protections.ApplyMalwareControls);
         ///         this.ProtectionsApplyNetworkLayerControls = protections.Apply(protections =&gt; protections.ApplyNetworkLayerControls);
         ///         this.ProtectionsApplyRateControls = protections.Apply(protections =&gt; protections.ApplyRateControls);
         ///         this.ProtectionsApplyReputationControls = protections.Apply(protections =&gt; protections.ApplyReputationControls);
@@ -59,6 +60,8 @@ namespace Pulumi.Akamai
         ///     public Output&lt;string&gt; ProtectionsApplyApplicationLayerControls { get; set; }
         ///     [Output("protectionsApplyBotmanControls")]
         ///     public Output&lt;string&gt; ProtectionsApplyBotmanControls { get; set; }
+        ///     [Output("protectionsApplyMalwareControls")]
+        ///     public Output&lt;string&gt; ProtectionsApplyMalwareControls { get; set; }
         ///     [Output("protectionsApplyNetworkLayerControls")]
         ///     public Output&lt;string&gt; ProtectionsApplyNetworkLayerControls { get; set; }
         ///     [Output("protectionsApplyRateControls")]
@@ -76,11 +79,12 @@ namespace Pulumi.Akamai
         /// The following options can be used to determine the information returned and how that returned information is formatted:
         /// 
         /// - `apply_application_layer_controls`. Returns **true** if application layer controls are enabled; returns **false** if they are not.
+        /// - `apply_api_constraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
+        /// - `apply_botman_controls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
+        /// - `apply_malware_controls`. Returns **true** if malware controls are enabled; returns **false** if they are not.
         /// - `apply_network_layer_controls`. Returns **true** if network layer controls are enabled; returns **false** if they are not.
         /// - `apply_rate_controls`. Returns **true** if rate controls are enabled; returns **false** if they are not.
         /// - `apply_reputation_controls`. Returns **true** if reputation controls are enabled; returns **false** if they are not.
-        /// - `apply_botman_controls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
-        /// - `apply_api_constraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
         /// - `apply_slow_post_controls`. Returns **true** if slow POST controls are enabled; returns **false** if they are not.
         /// - `json`. JSON-formatted list showing the status of the protection settings.
         /// - `output_text`. Tabular report showing the status of the protection settings.
@@ -122,6 +126,7 @@ namespace Pulumi.Akamai
         ///         this.ProtectionsApplyApiConstraints = protections.Apply(protections =&gt; protections.ApplyApiConstraints);
         ///         this.ProtectionsApplyApplicationLayerControls = protections.Apply(protections =&gt; protections.ApplyApplicationLayerControls);
         ///         this.ProtectionsApplyBotmanControls = protections.Apply(protections =&gt; protections.ApplyBotmanControls);
+        ///         this.ProtectionsApplyMalwareControls = protections.Apply(protections =&gt; protections.ApplyMalwareControls);
         ///         this.ProtectionsApplyNetworkLayerControls = protections.Apply(protections =&gt; protections.ApplyNetworkLayerControls);
         ///         this.ProtectionsApplyRateControls = protections.Apply(protections =&gt; protections.ApplyRateControls);
         ///         this.ProtectionsApplyReputationControls = protections.Apply(protections =&gt; protections.ApplyReputationControls);
@@ -136,6 +141,8 @@ namespace Pulumi.Akamai
         ///     public Output&lt;string&gt; ProtectionsApplyApplicationLayerControls { get; set; }
         ///     [Output("protectionsApplyBotmanControls")]
         ///     public Output&lt;string&gt; ProtectionsApplyBotmanControls { get; set; }
+        ///     [Output("protectionsApplyMalwareControls")]
+        ///     public Output&lt;string&gt; ProtectionsApplyMalwareControls { get; set; }
         ///     [Output("protectionsApplyNetworkLayerControls")]
         ///     public Output&lt;string&gt; ProtectionsApplyNetworkLayerControls { get; set; }
         ///     [Output("protectionsApplyRateControls")]
@@ -153,11 +160,12 @@ namespace Pulumi.Akamai
         /// The following options can be used to determine the information returned and how that returned information is formatted:
         /// 
         /// - `apply_application_layer_controls`. Returns **true** if application layer controls are enabled; returns **false** if they are not.
+        /// - `apply_api_constraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
+        /// - `apply_botman_controls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
+        /// - `apply_malware_controls`. Returns **true** if malware controls are enabled; returns **false** if they are not.
         /// - `apply_network_layer_controls`. Returns **true** if network layer controls are enabled; returns **false** if they are not.
         /// - `apply_rate_controls`. Returns **true** if rate controls are enabled; returns **false** if they are not.
         /// - `apply_reputation_controls`. Returns **true** if reputation controls are enabled; returns **false** if they are not.
-        /// - `apply_botman_controls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
-        /// - `apply_api_constraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
         /// - `apply_slow_post_controls`. Returns **true** if slow POST controls are enabled; returns **false** if they are not.
         /// - `json`. JSON-formatted list showing the status of the protection settings.
         /// - `output_text`. Tabular report showing the status of the protection settings.
@@ -212,6 +220,7 @@ namespace Pulumi.Akamai
         public readonly bool ApplyApiConstraints;
         public readonly bool ApplyApplicationLayerControls;
         public readonly bool ApplyBotmanControls;
+        public readonly bool ApplyMalwareControls;
         public readonly bool ApplyNetworkLayerControls;
         public readonly bool ApplyRateControls;
         public readonly bool ApplyReputationControls;
@@ -232,6 +241,8 @@ namespace Pulumi.Akamai
             bool applyApplicationLayerControls,
 
             bool applyBotmanControls,
+
+            bool applyMalwareControls,
 
             bool applyNetworkLayerControls,
 
@@ -254,6 +265,7 @@ namespace Pulumi.Akamai
             ApplyApiConstraints = applyApiConstraints;
             ApplyApplicationLayerControls = applyApplicationLayerControls;
             ApplyBotmanControls = applyBotmanControls;
+            ApplyMalwareControls = applyMalwareControls;
             ApplyNetworkLayerControls = applyNetworkLayerControls;
             ApplyRateControls = applyRateControls;
             ApplyReputationControls = applyReputationControls;

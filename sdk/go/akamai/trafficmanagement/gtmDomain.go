@@ -23,28 +23,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewGtmDomain(ctx, "demodomain", &akamai.GtmDomainArgs{
-// 			Comment:  pulumi.String("some comment"),
-// 			Contract: pulumi.String("XXX"),
-// 			Group:    pulumi.String("100"),
-// 			Type:     pulumi.String("basic"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
-// ## Schema reference
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewGtmDomain(ctx, "demodomain", &akamai.GtmDomainArgs{
+//				Comment:  pulumi.String("some comment"),
+//				Contract: pulumi.String("XXX"),
+//				Group:    pulumi.String("100"),
+//				Type:     pulumi.String("basic"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
 //
-// You can download the GTM Domain backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#domain) page.
+// ```
 //
 // Deprecated: akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain
 type GtmDomain struct {
@@ -333,7 +333,7 @@ func (i *GtmDomain) ToGtmDomainOutputWithContext(ctx context.Context) GtmDomainO
 // GtmDomainArrayInput is an input type that accepts GtmDomainArray and GtmDomainArrayOutput values.
 // You can construct a concrete instance of `GtmDomainArrayInput` via:
 //
-//          GtmDomainArray{ GtmDomainArgs{...} }
+//	GtmDomainArray{ GtmDomainArgs{...} }
 type GtmDomainArrayInput interface {
 	pulumi.Input
 
@@ -358,7 +358,7 @@ func (i GtmDomainArray) ToGtmDomainArrayOutputWithContext(ctx context.Context) G
 // GtmDomainMapInput is an input type that accepts GtmDomainMap and GtmDomainMapOutput values.
 // You can construct a concrete instance of `GtmDomainMapInput` via:
 //
-//          GtmDomainMap{ "key": GtmDomainArgs{...} }
+//	GtmDomainMap{ "key": GtmDomainArgs{...} }
 type GtmDomainMapInput interface {
 	pulumi.Input
 

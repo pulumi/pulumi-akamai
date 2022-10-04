@@ -58,7 +58,7 @@ export class AppSecConfigurationRename extends pulumi.CustomResource {
     }
 
     /**
-     * . Unique identifier of the security configurating being renamed.
+     * . Unique identifier of the security configuring being renamed.
      */
     public readonly configId!: pulumi.Output<number>;
     /**
@@ -108,7 +108,7 @@ export class AppSecConfigurationRename extends pulumi.CustomResource {
  */
 export interface AppSecConfigurationRenameState {
     /**
-     * . Unique identifier of the security configurating being renamed.
+     * . Unique identifier of the security configuring being renamed.
      */
     configId?: pulumi.Input<number>;
     /**
@@ -126,7 +126,7 @@ export interface AppSecConfigurationRenameState {
  */
 export interface AppSecConfigurationRenameArgs {
     /**
-     * . Unique identifier of the security configurating being renamed.
+     * . Unique identifier of the security configuring being renamed.
      */
     configId: pulumi.Input<number>;
     /**

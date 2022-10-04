@@ -25,29 +25,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecThreatIntel(ctx, "threatIntel", &akamai.AppSecThreatIntelArgs{
-// 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.String("gms1_134637"),
-// 			ThreatIntel:      pulumi.String("on"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecThreatIntel(ctx, "threatIntel", &akamai.AppSecThreatIntelArgs{
+//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId: pulumi.String("gms1_134637"),
+//				ThreatIntel:      pulumi.String("on"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type AppSecThreatIntel struct {
 	pulumi.CustomResourceState
@@ -164,7 +167,7 @@ func (i *AppSecThreatIntel) ToAppSecThreatIntelOutputWithContext(ctx context.Con
 // AppSecThreatIntelArrayInput is an input type that accepts AppSecThreatIntelArray and AppSecThreatIntelArrayOutput values.
 // You can construct a concrete instance of `AppSecThreatIntelArrayInput` via:
 //
-//          AppSecThreatIntelArray{ AppSecThreatIntelArgs{...} }
+//	AppSecThreatIntelArray{ AppSecThreatIntelArgs{...} }
 type AppSecThreatIntelArrayInput interface {
 	pulumi.Input
 
@@ -189,7 +192,7 @@ func (i AppSecThreatIntelArray) ToAppSecThreatIntelArrayOutputWithContext(ctx co
 // AppSecThreatIntelMapInput is an input type that accepts AppSecThreatIntelMap and AppSecThreatIntelMapOutput values.
 // You can construct a concrete instance of `AppSecThreatIntelMapInput` via:
 //
-//          AppSecThreatIntelMap{ "key": AppSecThreatIntelArgs{...} }
+//	AppSecThreatIntelMap{ "key": AppSecThreatIntelArgs{...} }
 type AppSecThreatIntelMapInput interface {
 	pulumi.Input
 

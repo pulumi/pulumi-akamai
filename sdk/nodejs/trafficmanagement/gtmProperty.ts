@@ -29,9 +29,6 @@ import * as utilities from "../utilities";
  *     type: "weighted-round-robin",
  * });
  * ```
- * ## Schema reference
- *
- * You can download the GTM Property backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#property) page.
  *
  * @deprecated akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty
  */

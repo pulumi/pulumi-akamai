@@ -73,7 +73,7 @@ def get_iam_contact_types(opts: Optional[pulumi.InvokeOptions] = None) -> Awaita
 
     * `contact_types` — A list of contact types.
 
-    [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getadmincontacttypes)
+    [API Reference](https://techdocs.akamai.com/iam-api/reference/get-user-contact-types)
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

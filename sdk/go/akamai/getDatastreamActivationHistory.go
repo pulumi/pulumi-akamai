@@ -20,34 +20,37 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		ds, err := akamai.GetDatastreamActivationHistory(ctx, &GetDatastreamActivationHistoryArgs{
-// 			StreamId: 12345,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("dsHistoryStreamId", ds.StreamId)
-// 		ctx.Export("dsHistoryActivations", ds.Activations)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			ds, err := akamai.GetDatastreamActivationHistory(ctx, &GetDatastreamActivationHistoryArgs{
+//				StreamId: 12345,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("dsHistoryStreamId", ds.StreamId)
+//			ctx.Export("dsHistoryActivations", ds.Activations)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Attributes reference
 //
 // This data source returns these attributes:
 //
 // * `activations` - Detailed information about an activation status change for a version of a stream, including:
-//   * `createdBy` - The user who activated or deactivated the stream.
-//   * `createdDate` - The date and time of an activation status change.
-//   * `streamId` - A stream's unique identifier.
-//   * `streamVersionId` - A stream version's unique identifier.
-//   * `isActive` -	Whether the version of the stream is active.
+//   - `createdBy` - The user who activated or deactivated the stream.
+//   - `createdDate` - The date and time of an activation status change.
+//   - `streamId` - A stream's unique identifier.
+//   - `streamVersionId` - A stream version's unique identifier.
+//   - `isActive` -	Whether the version of the stream is active.
 func GetDatastreamActivationHistory(ctx *pulumi.Context, args *GetDatastreamActivationHistoryArgs, opts ...pulumi.InvokeOption) (*GetDatastreamActivationHistoryResult, error) {
 	var rv GetDatastreamActivationHistoryResult
 	err := ctx.Invoke("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", args, &rv, opts...)

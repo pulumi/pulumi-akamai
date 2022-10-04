@@ -24,9 +24,6 @@ import * as utilities from "../utilities";
  *     type: "basic",
  * });
  * ```
- * ## Schema reference
- *
- * You can download the GTM Domain backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#domain) page.
  *
  * @deprecated akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain
  */

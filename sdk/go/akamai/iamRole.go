@@ -21,23 +21,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewIamRole(ctx, "example", &akamai.IamRoleArgs{
-// 			Description:  pulumi.String("This role will allow you to view"),
-// 			GrantedRoles: pulumi.IntArray(2051),
-// 			Type:         pulumi.String("custom"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewIamRole(ctx, "example", &akamai.IamRoleArgs{
+//				Description:  pulumi.String("This role will allow you to view"),
+//				GrantedRoles: pulumi.IntArray(2051),
+//				Type:         pulumi.String("custom"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Attributes reference
@@ -167,7 +170,7 @@ func (i *IamRole) ToIamRoleOutputWithContext(ctx context.Context) IamRoleOutput 
 // IamRoleArrayInput is an input type that accepts IamRoleArray and IamRoleArrayOutput values.
 // You can construct a concrete instance of `IamRoleArrayInput` via:
 //
-//          IamRoleArray{ IamRoleArgs{...} }
+//	IamRoleArray{ IamRoleArgs{...} }
 type IamRoleArrayInput interface {
 	pulumi.Input
 
@@ -192,7 +195,7 @@ func (i IamRoleArray) ToIamRoleArrayOutputWithContext(ctx context.Context) IamRo
 // IamRoleMapInput is an input type that accepts IamRoleMap and IamRoleMapOutput values.
 // You can construct a concrete instance of `IamRoleMapInput` via:
 //
-//          IamRoleMap{ "key": IamRoleArgs{...} }
+//	IamRoleMap{ "key": IamRoleArgs{...} }
 type IamRoleMapInput interface {
 	pulumi.Input
 

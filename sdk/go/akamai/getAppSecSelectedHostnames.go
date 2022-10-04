@@ -24,30 +24,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		selectedHostnamesAppSecSelectedHostnames, err := akamai.LookupAppSecSelectedHostnames(ctx, &GetAppSecSelectedHostnamesArgs{
-// 			ConfigId: configuration.ConfigId,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("selectedHostnames", selectedHostnamesAppSecSelectedHostnames.Hostnames)
-// 		ctx.Export("selectedHostnamesJson", selectedHostnamesAppSecSelectedHostnames.HostnamesJson)
-// 		ctx.Export("selectedHostnamesOutputText", selectedHostnamesAppSecSelectedHostnames.OutputText)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			selectedHostnamesAppSecSelectedHostnames, err := akamai.LookupAppSecSelectedHostnames(ctx, &GetAppSecSelectedHostnamesArgs{
+//				ConfigId: configuration.ConfigId,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("selectedHostnames", selectedHostnamesAppSecSelectedHostnames.Hostnames)
+//			ctx.Export("selectedHostnamesJson", selectedHostnamesAppSecSelectedHostnames.HostnamesJson)
+//			ctx.Export("selectedHostnamesOutputText", selectedHostnamesAppSecSelectedHostnames.OutputText)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //

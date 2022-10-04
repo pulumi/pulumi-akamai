@@ -17,20 +17,23 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		my_example, err := akamai.GetGroups(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("propertyMatch", my_example)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			my_example, err := akamai.GetGroups(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("propertyMatch", my_example)
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Attributes reference
@@ -38,10 +41,10 @@ import (
 // This data source returns these attributes:
 //
 // * `groups` - A list of supported groups, with the following attributes:
-//   * `groupId` - A group's unique ID, including the `grp_` prefix.
-//   * `groupName` - The name of the group.
-//   * `parentGroupId` - The ID of the parent group, if applicable.
-//   * `contractIds` - An array of strings listing the contract IDs for each group.
+//   - `groupId` - A group's unique ID, including the `grp_` prefix.
+//   - `groupName` - The name of the group.
+//   - `parentGroupId` - The ID of the parent group, if applicable.
+//   - `contractIds` - An array of strings listing the contract IDs for each group.
 func GetGroups(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetGroupsResult, error) {
 	var rv GetGroupsResult
 	err := ctx.Invoke("akamai:index/getGroups:getGroups", nil, &rv, opts...)

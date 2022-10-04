@@ -10,6 +10,64 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// **Scopes**: Security policy; attack group
+//
+// Returns the action and the condition-exception information for an attack group or set of attack groups. Attack groups are collections of Kona Rule Set rules used to streamline the management of website protections.
+//
+// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/attack-groups](https://techdocs.akamai.com/application-security/reference/get-policy-attack-groups)
+//
+// ## Example Usage
+//
+// Basic usage:
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			attackGroup, err := akamai.GetAppSecAttackGroups(ctx, &GetAppSecAttackGroupsArgs{
+//				ConfigId:         configuration.ConfigId,
+//				SecurityPolicyId: "gms1_134637",
+//				AttackGroup:      pulumi.StringRef("SQL"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("attackGroupAction", attackGroup.AttackGroupAction)
+//			ctx.Export("conditionException", attackGroup.ConditionException)
+//			ctx.Export("json", attackGroup.Json)
+//			ctx.Export("outputText", attackGroup.OutputText)
+//			return nil
+//		})
+//	}
+//
+// ```
+// ## Output Options
+//
+// The following options can be used to determine the information returned, and how that returned information is formatted:
+//
+// - `attackGroupAction`. Action taken anytime the attack group is triggered. This information is returned only when a single attack group is retrieved. Valid values are:
+//   - **alert**. The event is recorded.
+//   - **deny**. The request is blocked.
+//   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
+//   - **none**. No action is taken.
+//
+// - `conditionException`. Conditions and exceptions assigned to the attack group. This information is returned only when a single attack group is retrieved.
+// - `json`. JSON-formatted list of the action and the condition-exception information for the attack group. This information is returned only when a single attack group is retrieved.
+// - `outputText`. Tabular report showing the attack group's action as well as Boolean values indicating whether conditions and exceptions have been configured for the group.
 func GetAppSecAttackGroups(ctx *pulumi.Context, args *GetAppSecAttackGroupsArgs, opts ...pulumi.InvokeOption) (*GetAppSecAttackGroupsResult, error) {
 	var rv GetAppSecAttackGroupsResult
 	err := ctx.Invoke("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", args, &rv, opts...)

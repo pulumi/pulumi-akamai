@@ -64,13 +64,13 @@ namespace Pulumi.Akamai
         /// 
         /// The following options can be used to determine the information returned, and how that returned information is formatted:
         /// 
-        /// - `eval_rule_action`. Action taken anytime the evaluation rule is triggered. Valid values are:
+        /// - `eval_rule_action`. Action taken anytime the evaluation rule is triggered. This information is returned only when a single rule is retrieved. Valid values are:
         ///   - **alert**. Record the event.
         ///   - **deny**. Reject the request.
         ///   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
         ///   - **none**. Take no action.
-        /// - `condition_exception`. Conditions and exceptions associated with the rule.
-        /// - `json`. JSON-formatted list of the action and the condition-exception information for the rule. This output is only generated if the `rule_id` argument is included.
+        /// - `condition_exception`. Conditions and exceptions associated with the rule. This information is returned only when a single rule is retrieved.
+        /// - `json`. JSON-formatted list of the action and the condition-exception information for the rule. This information is returned only when a single rule is retrieved.
         /// - `output_text`. Tabular report showing the rule action as well as Boolean values indicating whether conditions and exceptions have been configured for the rule.
         /// </summary>
         public static Task<GetAppSecEvalRulesResult> InvokeAsync(GetAppSecEvalRulesArgs args, InvokeOptions? options = null)
@@ -129,13 +129,13 @@ namespace Pulumi.Akamai
         /// 
         /// The following options can be used to determine the information returned, and how that returned information is formatted:
         /// 
-        /// - `eval_rule_action`. Action taken anytime the evaluation rule is triggered. Valid values are:
+        /// - `eval_rule_action`. Action taken anytime the evaluation rule is triggered. This information is returned only when a single rule is retrieved. Valid values are:
         ///   - **alert**. Record the event.
         ///   - **deny**. Reject the request.
         ///   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
         ///   - **none**. Take no action.
-        /// - `condition_exception`. Conditions and exceptions associated with the rule.
-        /// - `json`. JSON-formatted list of the action and the condition-exception information for the rule. This output is only generated if the `rule_id` argument is included.
+        /// - `condition_exception`. Conditions and exceptions associated with the rule. This information is returned only when a single rule is retrieved.
+        /// - `json`. JSON-formatted list of the action and the condition-exception information for the rule. This information is returned only when a single rule is retrieved.
         /// - `output_text`. Tabular report showing the rule action as well as Boolean values indicating whether conditions and exceptions have been configured for the rule.
         /// </summary>
         public static Output<GetAppSecEvalRulesResult> Invoke(GetAppSecEvalRulesInvokeArgs args, InvokeOptions? options = null)

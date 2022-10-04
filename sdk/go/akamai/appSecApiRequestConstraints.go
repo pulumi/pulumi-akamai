@@ -19,38 +19,41 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		apiEndpoint, err := akamai.GetAppSecApiEndpoints(ctx, &GetAppSecApiEndpointsArgs{
-// 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: pulumi.StringRef("gms1_134637"),
-// 			ApiName:          pulumi.StringRef("Contracts"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecApiRequestConstraints(ctx, "apiRequestConstraints", &akamai.AppSecApiRequestConstraintsArgs{
-// 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.String("gms1_134637"),
-// 			ApiEndpointId:    pulumi.String(apiEndpoint.Id),
-// 			Action:           pulumi.String("alert"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			apiEndpoint, err := akamai.GetAppSecApiEndpoints(ctx, &GetAppSecApiEndpointsArgs{
+//				ConfigId:         configuration.ConfigId,
+//				SecurityPolicyId: pulumi.StringRef("gms1_134637"),
+//				ApiName:          pulumi.StringRef("Contracts"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecApiRequestConstraints(ctx, "apiRequestConstraints", &akamai.AppSecApiRequestConstraintsArgs{
+//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId: pulumi.String("gms1_134637"),
+//				ApiEndpointId:    pulumi.String(apiEndpoint.Id),
+//				Action:           pulumi.String("alert"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type AppSecApiRequestConstraints struct {
 	pulumi.CustomResourceState
@@ -197,7 +200,7 @@ func (i *AppSecApiRequestConstraints) ToAppSecApiRequestConstraintsOutputWithCon
 // AppSecApiRequestConstraintsArrayInput is an input type that accepts AppSecApiRequestConstraintsArray and AppSecApiRequestConstraintsArrayOutput values.
 // You can construct a concrete instance of `AppSecApiRequestConstraintsArrayInput` via:
 //
-//          AppSecApiRequestConstraintsArray{ AppSecApiRequestConstraintsArgs{...} }
+//	AppSecApiRequestConstraintsArray{ AppSecApiRequestConstraintsArgs{...} }
 type AppSecApiRequestConstraintsArrayInput interface {
 	pulumi.Input
 
@@ -222,7 +225,7 @@ func (i AppSecApiRequestConstraintsArray) ToAppSecApiRequestConstraintsArrayOutp
 // AppSecApiRequestConstraintsMapInput is an input type that accepts AppSecApiRequestConstraintsMap and AppSecApiRequestConstraintsMapOutput values.
 // You can construct a concrete instance of `AppSecApiRequestConstraintsMapInput` via:
 //
-//          AppSecApiRequestConstraintsMap{ "key": AppSecApiRequestConstraintsArgs{...} }
+//	AppSecApiRequestConstraintsMap{ "key": AppSecApiRequestConstraintsArgs{...} }
 type AppSecApiRequestConstraintsMapInput interface {
 	pulumi.Input
 

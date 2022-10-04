@@ -24,38 +24,41 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		reputationProfiles, err := akamai.GetAppSecReputationProfiles(ctx, &GetAppSecReputationProfilesArgs{
-// 			ConfigId: configuration.ConfigId,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("reputationProfilesOutput", reputationProfiles.OutputText)
-// 		ctx.Export("reputationProfilesJson", reputationProfiles.Json)
-// 		reputationProfile, err := akamai.GetAppSecReputationProfiles(ctx, &GetAppSecReputationProfilesArgs{
-// 			ConfigId:            configuration.ConfigId,
-// 			ReputationProfileId: pulumi.IntRef(12345),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("reputationProfileJson", reputationProfile.Json)
-// 		ctx.Export("reputationProfileOutput", reputationProfile.OutputText)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			reputationProfiles, err := akamai.GetAppSecReputationProfiles(ctx, &GetAppSecReputationProfilesArgs{
+//				ConfigId: configuration.ConfigId,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("reputationProfilesOutput", reputationProfiles.OutputText)
+//			ctx.Export("reputationProfilesJson", reputationProfiles.Json)
+//			reputationProfile, err := akamai.GetAppSecReputationProfiles(ctx, &GetAppSecReputationProfilesArgs{
+//				ConfigId:            configuration.ConfigId,
+//				ReputationProfileId: pulumi.IntRef(12345),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("reputationProfileJson", reputationProfile.Json)
+//			ctx.Export("reputationProfileOutput", reputationProfile.OutputText)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //

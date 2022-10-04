@@ -14,7 +14,7 @@ namespace Pulumi.Akamai.Outputs
     public sealed class DatastreamConfigFrequency
     {
         /// <summary>
-        /// - (Required) The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
+        /// The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
         /// </summary>
         public readonly int TimeInSec;
 

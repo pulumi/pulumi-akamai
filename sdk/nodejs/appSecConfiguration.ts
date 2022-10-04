@@ -78,9 +78,12 @@ export class AppSecConfiguration extends pulumi.CustomResource {
         return obj['__pulumiType'] === AppSecConfiguration.__pulumiType;
     }
 
+    /**
+     * Unique identifier of the new security configuration
+     */
     public /*out*/ readonly configId!: pulumi.Output<number>;
     /**
-     * . Unique identifier of the Akamai contract t associated with the new configuration.
+     * . Unique identifier of the Akamai contract associated with the new configuration.
      */
     public readonly contractId!: pulumi.Output<string>;
     /**
@@ -161,9 +164,12 @@ export class AppSecConfiguration extends pulumi.CustomResource {
  * Input properties used for looking up and filtering AppSecConfiguration resources.
  */
 export interface AppSecConfigurationState {
+    /**
+     * Unique identifier of the new security configuration
+     */
     configId?: pulumi.Input<number>;
     /**
-     * . Unique identifier of the Akamai contract t associated with the new configuration.
+     * . Unique identifier of the Akamai contract associated with the new configuration.
      */
     contractId?: pulumi.Input<string>;
     /**
@@ -197,7 +203,7 @@ export interface AppSecConfigurationState {
  */
 export interface AppSecConfigurationArgs {
     /**
-     * . Unique identifier of the Akamai contract t associated with the new configuration.
+     * . Unique identifier of the Akamai contract associated with the new configuration.
      */
     contractId: pulumi.Input<string>;
     /**

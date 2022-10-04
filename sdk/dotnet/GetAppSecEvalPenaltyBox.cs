@@ -15,7 +15,7 @@ namespace Pulumi.Akamai
         /// **Scopes**: Security policy
         /// 
         ///  __ASE_Beta__.:
-        /// Returns the penalty box settings for a security policy in evaluation mode - evaluation penalty box. 
+        /// Returns the penalty box settings for a security policy in evaluation mode - evaluation penalty box.
         /// When the penalty box is enabled for a policy in evaluation mode, clients that trigger a WAF Deny action are placed in the “penalty box”.
         /// There, the action you select for the penalty box (either Alert or Deny) continues to apply to any requests from that client for the next 10 minutes.
         /// 
@@ -78,7 +78,7 @@ namespace Pulumi.Akamai
         /// **Scopes**: Security policy
         /// 
         ///  __ASE_Beta__.:
-        /// Returns the penalty box settings for a security policy in evaluation mode - evaluation penalty box. 
+        /// Returns the penalty box settings for a security policy in evaluation mode - evaluation penalty box.
         /// When the penalty box is enabled for a policy in evaluation mode, clients that trigger a WAF Deny action are placed in the “penalty box”.
         /// There, the action you select for the penalty box (either Alert or Deny) continues to apply to any requests from that client for the next 10 minutes.
         /// 

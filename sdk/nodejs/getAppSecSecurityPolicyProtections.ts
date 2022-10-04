@@ -30,6 +30,7 @@ import * as utilities from "./utilities";
  * export const protectionsApplyApiConstraints = protections.then(protections => protections.applyApiConstraints);
  * export const protectionsApplyApplicationLayerControls = protections.then(protections => protections.applyApplicationLayerControls);
  * export const protectionsApplyBotmanControls = protections.then(protections => protections.applyBotmanControls);
+ * export const protectionsApplyMalwareControls = protections.then(protections => protections.applyMalwareControls);
  * export const protectionsApplyNetworkLayerControls = protections.then(protections => protections.applyNetworkLayerControls);
  * export const protectionsApplyRateControls = protections.then(protections => protections.applyRateControls);
  * export const protectionsApplyReputationControls = protections.then(protections => protections.applyReputationControls);
@@ -40,11 +41,12 @@ import * as utilities from "./utilities";
  * The following options can be used to determine the information returned and how that returned information is formatted:
  *
  * - `applyApplicationLayerControls`. Returns **true** if application layer controls are enabled; returns **false** if they are not.
+ * - `applyApiConstraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
+ * - `applyBotmanControls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
+ * - `applyMalwareControls`. Returns **true** if malware controls are enabled; returns **false** if they are not.
  * - `applyNetworkLayerControls`. Returns **true** if network layer controls are enabled; returns **false** if they are not.
  * - `applyRateControls`. Returns **true** if rate controls are enabled; returns **false** if they are not.
  * - `applyReputationControls`. Returns **true** if reputation controls are enabled; returns **false** if they are not.
- * - `applyBotmanControls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
- * - `applyApiConstraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
  * - `applySlowPostControls`. Returns **true** if slow POST controls are enabled; returns **false** if they are not.
  * - `json`. JSON-formatted list showing the status of the protection settings.
  * - `outputText`. Tabular report showing the status of the protection settings.
@@ -82,6 +84,7 @@ export interface GetAppSecSecurityPolicyProtectionsResult {
     readonly applyApiConstraints: boolean;
     readonly applyApplicationLayerControls: boolean;
     readonly applyBotmanControls: boolean;
+    readonly applyMalwareControls: boolean;
     readonly applyNetworkLayerControls: boolean;
     readonly applyRateControls: boolean;
     readonly applyReputationControls: boolean;

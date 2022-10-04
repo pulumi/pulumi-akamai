@@ -12,7 +12,7 @@ import (
 
 // **Scopes**: Security policy; API endpoint
 //
-// Returns information about API endpoint constraints and actions. The returned information is described in the [API Constraints members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapirequestconstraints) section of the Application Security API.
+// Returns information about API endpoint constraints and actions.
 //
 // **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/api-request-constraints](https://techdocs.akamai.com/application-security/reference/get-api-request-constraints)
 //
@@ -24,40 +24,43 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		apisRequestConstraints, err := akamai.LookupAppSecApiRequestConstraints(ctx, &GetAppSecApiRequestConstraintsArgs{
-// 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: "gms1_134637",
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("apisConstraintsText", apisRequestConstraints.OutputText)
-// 		ctx.Export("apisConstraintsJson", apisRequestConstraints.Json)
-// 		apiRequestConstraints, err := akamai.LookupAppSecApiRequestConstraints(ctx, &GetAppSecApiRequestConstraintsArgs{
-// 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: "gms1_134637",
-// 			ApiId:            pulumi.IntRef(624913),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("apiConstraintsText", apiRequestConstraints.OutputText)
-// 		ctx.Export("apiConstraintsJson", apiRequestConstraints.Json)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			apisRequestConstraints, err := akamai.LookupAppSecApiRequestConstraints(ctx, &GetAppSecApiRequestConstraintsArgs{
+//				ConfigId:         configuration.ConfigId,
+//				SecurityPolicyId: "gms1_134637",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("apisConstraintsText", apisRequestConstraints.OutputText)
+//			ctx.Export("apisConstraintsJson", apisRequestConstraints.Json)
+//			apiRequestConstraints, err := akamai.LookupAppSecApiRequestConstraints(ctx, &GetAppSecApiRequestConstraintsArgs{
+//				ConfigId:         configuration.ConfigId,
+//				SecurityPolicyId: "gms1_134637",
+//				ApiId:            pulumi.IntRef(624913),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("apiConstraintsText", apiRequestConstraints.OutputText)
+//			ctx.Export("apiConstraintsJson", apiRequestConstraints.Json)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //

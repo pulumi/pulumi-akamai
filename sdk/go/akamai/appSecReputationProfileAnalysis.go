@@ -147,7 +147,7 @@ func (i *AppSecReputationProfileAnalysis) ToAppSecReputationProfileAnalysisOutpu
 // AppSecReputationProfileAnalysisArrayInput is an input type that accepts AppSecReputationProfileAnalysisArray and AppSecReputationProfileAnalysisArrayOutput values.
 // You can construct a concrete instance of `AppSecReputationProfileAnalysisArrayInput` via:
 //
-//          AppSecReputationProfileAnalysisArray{ AppSecReputationProfileAnalysisArgs{...} }
+//	AppSecReputationProfileAnalysisArray{ AppSecReputationProfileAnalysisArgs{...} }
 type AppSecReputationProfileAnalysisArrayInput interface {
 	pulumi.Input
 
@@ -172,7 +172,7 @@ func (i AppSecReputationProfileAnalysisArray) ToAppSecReputationProfileAnalysisA
 // AppSecReputationProfileAnalysisMapInput is an input type that accepts AppSecReputationProfileAnalysisMap and AppSecReputationProfileAnalysisMapOutput values.
 // You can construct a concrete instance of `AppSecReputationProfileAnalysisMapInput` via:
 //
-//          AppSecReputationProfileAnalysisMap{ "key": AppSecReputationProfileAnalysisArgs{...} }
+//	AppSecReputationProfileAnalysisMap{ "key": AppSecReputationProfileAnalysisArgs{...} }
 type AppSecReputationProfileAnalysisMapInput interface {
 	pulumi.Input
 

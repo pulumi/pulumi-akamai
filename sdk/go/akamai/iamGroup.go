@@ -21,21 +21,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewIamGroup(ctx, "example", &akamai.IamGroupArgs{
-// 			ParentGroupId: pulumi.Int(12345),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewIamGroup(ctx, "example", &akamai.IamGroupArgs{
+//				ParentGroupId: pulumi.Int(12345),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Attributes reference
@@ -148,7 +151,7 @@ func (i *IamGroup) ToIamGroupOutputWithContext(ctx context.Context) IamGroupOutp
 // IamGroupArrayInput is an input type that accepts IamGroupArray and IamGroupArrayOutput values.
 // You can construct a concrete instance of `IamGroupArrayInput` via:
 //
-//          IamGroupArray{ IamGroupArgs{...} }
+//	IamGroupArray{ IamGroupArgs{...} }
 type IamGroupArrayInput interface {
 	pulumi.Input
 
@@ -173,7 +176,7 @@ func (i IamGroupArray) ToIamGroupArrayOutputWithContext(ctx context.Context) Iam
 // IamGroupMapInput is an input type that accepts IamGroupMap and IamGroupMapOutput values.
 // You can construct a concrete instance of `IamGroupMapInput` via:
 //
-//          IamGroupMap{ "key": IamGroupArgs{...} }
+//	IamGroupMap{ "key": IamGroupArgs{...} }
 type IamGroupMapInput interface {
 	pulumi.Input
 

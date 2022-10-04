@@ -28,7 +28,7 @@ namespace Pulumi.Akamai
     public partial class Datastream : Pulumi.CustomResource
     {
         /// <summary>
-        /// - (Required) Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
+        /// Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
         /// </summary>
         [Output("active")]
         public Output<bool> Active { get; private set; } = null!;
@@ -40,13 +40,13 @@ namespace Pulumi.Akamai
         public Output<Outputs.DatastreamAzureConnector?> AzureConnector { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) Provides information about the log line configuration, log file format, names of log files sent, and file delivery. The argument includes these sub-arguments:
+        /// Provides information about the log line configuration, log file format, names of log files sent, and file delivery. The argument includes these sub-arguments:
         /// </summary>
         [Output("config")]
         public Output<Outputs.DatastreamConfig> Config { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) Identifies the contract that has access to the product.
+        /// Identifies the contract that has access to the product.
         /// </summary>
         [Output("contractId")]
         public Output<string> ContractId { get; private set; } = null!;
@@ -70,13 +70,13 @@ namespace Pulumi.Akamai
         public Output<Outputs.DatastreamDatadogConnector?> DatadogConnector { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required)	Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
+        /// Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
         /// </summary>
         [Output("datasetFieldsIds")]
         public Output<ImmutableArray<int>> DatasetFieldsIds { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional) A list of email addresses you want to notify about activations and deactivations of the stream.
+        /// A list of email addresses you want to notify about activations and deactivations of the stream.
         /// </summary>
         [Output("emailIds")]
         public Output<ImmutableArray<string>> EmailIds { get; private set; } = null!;
@@ -88,7 +88,7 @@ namespace Pulumi.Akamai
         public Output<Outputs.DatastreamGcsConnector?> GcsConnector { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) Identifies the group that has access to the product and this stream configuration.
+        /// Identifies the group that has access to the product and this stream configuration.
         /// </summary>
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
@@ -142,13 +142,13 @@ namespace Pulumi.Akamai
         public Output<string> ProductName { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
+        /// Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
         /// </summary>
         [Output("propertyIds")]
         public Output<ImmutableArray<string>> PropertyIds { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional) Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
+        /// Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
         /// </summary>
         [Output("s3Connector")]
         public Output<Outputs.DatastreamS3Connector?> S3Connector { get; private set; } = null!;
@@ -160,13 +160,13 @@ namespace Pulumi.Akamai
         public Output<Outputs.DatastreamSplunkConnector?> SplunkConnector { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) The name of the stream.
+        /// The name of the stream.
         /// </summary>
         [Output("streamName")]
         public Output<string> StreamName { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) The type of stream that you want to create. Currently, `RAW_LOGS` is the only possible stream type.
+        /// The type of stream that you want to create. Currently, `RAW_LOGS` is the only possible stream type.
         /// </summary>
         [Output("streamType")]
         public Output<string> StreamType { get; private set; } = null!;
@@ -184,7 +184,7 @@ namespace Pulumi.Akamai
         public Output<Outputs.DatastreamSumologicConnector?> SumologicConnector { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
+        /// The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
         /// </summary>
         [Output("templateName")]
         public Output<string> TemplateName { get; private set; } = null!;
@@ -236,7 +236,7 @@ namespace Pulumi.Akamai
     public sealed class DatastreamArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - (Required) Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
+        /// Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
         /// </summary>
         [Input("active", required: true)]
         public Input<bool> Active { get; set; } = null!;
@@ -248,13 +248,13 @@ namespace Pulumi.Akamai
         public Input<Inputs.DatastreamAzureConnectorArgs>? AzureConnector { get; set; }
 
         /// <summary>
-        /// - (Required) Provides information about the log line configuration, log file format, names of log files sent, and file delivery. The argument includes these sub-arguments:
+        /// Provides information about the log line configuration, log file format, names of log files sent, and file delivery. The argument includes these sub-arguments:
         /// </summary>
         [Input("config", required: true)]
         public Input<Inputs.DatastreamConfigArgs> Config { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) Identifies the contract that has access to the product.
+        /// Identifies the contract that has access to the product.
         /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
@@ -269,7 +269,7 @@ namespace Pulumi.Akamai
         private InputList<int>? _datasetFieldsIds;
 
         /// <summary>
-        /// - (Required)	Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
+        /// Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
         /// </summary>
         public InputList<int> DatasetFieldsIds
         {
@@ -281,7 +281,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _emailIds;
 
         /// <summary>
-        /// - (Optional) A list of email addresses you want to notify about activations and deactivations of the stream.
+        /// A list of email addresses you want to notify about activations and deactivations of the stream.
         /// </summary>
         public InputList<string> EmailIds
         {
@@ -296,7 +296,7 @@ namespace Pulumi.Akamai
         public Input<Inputs.DatastreamGcsConnectorArgs>? GcsConnector { get; set; }
 
         /// <summary>
-        /// - (Required) Identifies the group that has access to the product and this stream configuration.
+        /// Identifies the group that has access to the product and this stream configuration.
         /// </summary>
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;
@@ -317,7 +317,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _propertyIds;
 
         /// <summary>
-        /// - (Required) Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
+        /// Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
         /// </summary>
         public InputList<string> PropertyIds
         {
@@ -326,7 +326,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// - (Optional) Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
+        /// Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
         /// </summary>
         [Input("s3Connector")]
         public Input<Inputs.DatastreamS3ConnectorArgs>? S3Connector { get; set; }
@@ -338,13 +338,13 @@ namespace Pulumi.Akamai
         public Input<Inputs.DatastreamSplunkConnectorArgs>? SplunkConnector { get; set; }
 
         /// <summary>
-        /// - (Required) The name of the stream.
+        /// The name of the stream.
         /// </summary>
         [Input("streamName", required: true)]
         public Input<string> StreamName { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) The type of stream that you want to create. Currently, `RAW_LOGS` is the only possible stream type.
+        /// The type of stream that you want to create. Currently, `RAW_LOGS` is the only possible stream type.
         /// </summary>
         [Input("streamType", required: true)]
         public Input<string> StreamType { get; set; } = null!;
@@ -356,7 +356,7 @@ namespace Pulumi.Akamai
         public Input<Inputs.DatastreamSumologicConnectorArgs>? SumologicConnector { get; set; }
 
         /// <summary>
-        /// - (Required) The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
+        /// The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
         /// </summary>
         [Input("templateName", required: true)]
         public Input<string> TemplateName { get; set; } = null!;
@@ -369,7 +369,7 @@ namespace Pulumi.Akamai
     public sealed class DatastreamState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - (Required) Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
+        /// Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -381,13 +381,13 @@ namespace Pulumi.Akamai
         public Input<Inputs.DatastreamAzureConnectorGetArgs>? AzureConnector { get; set; }
 
         /// <summary>
-        /// - (Required) Provides information about the log line configuration, log file format, names of log files sent, and file delivery. The argument includes these sub-arguments:
+        /// Provides information about the log line configuration, log file format, names of log files sent, and file delivery. The argument includes these sub-arguments:
         /// </summary>
         [Input("config")]
         public Input<Inputs.DatastreamConfigGetArgs>? Config { get; set; }
 
         /// <summary>
-        /// - (Required) Identifies the contract that has access to the product.
+        /// Identifies the contract that has access to the product.
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
@@ -414,7 +414,7 @@ namespace Pulumi.Akamai
         private InputList<int>? _datasetFieldsIds;
 
         /// <summary>
-        /// - (Required)	Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
+        /// Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
         /// </summary>
         public InputList<int> DatasetFieldsIds
         {
@@ -426,7 +426,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _emailIds;
 
         /// <summary>
-        /// - (Optional) A list of email addresses you want to notify about activations and deactivations of the stream.
+        /// A list of email addresses you want to notify about activations and deactivations of the stream.
         /// </summary>
         public InputList<string> EmailIds
         {
@@ -441,7 +441,7 @@ namespace Pulumi.Akamai
         public Input<Inputs.DatastreamGcsConnectorGetArgs>? GcsConnector { get; set; }
 
         /// <summary>
-        /// - (Required) Identifies the group that has access to the product and this stream configuration.
+        /// Identifies the group that has access to the product and this stream configuration.
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
@@ -498,7 +498,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _propertyIds;
 
         /// <summary>
-        /// - (Required) Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
+        /// Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
         /// </summary>
         public InputList<string> PropertyIds
         {
@@ -507,7 +507,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// - (Optional) Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
+        /// Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
         /// </summary>
         [Input("s3Connector")]
         public Input<Inputs.DatastreamS3ConnectorGetArgs>? S3Connector { get; set; }
@@ -519,13 +519,13 @@ namespace Pulumi.Akamai
         public Input<Inputs.DatastreamSplunkConnectorGetArgs>? SplunkConnector { get; set; }
 
         /// <summary>
-        /// - (Required) The name of the stream.
+        /// The name of the stream.
         /// </summary>
         [Input("streamName")]
         public Input<string>? StreamName { get; set; }
 
         /// <summary>
-        /// - (Required) The type of stream that you want to create. Currently, `RAW_LOGS` is the only possible stream type.
+        /// The type of stream that you want to create. Currently, `RAW_LOGS` is the only possible stream type.
         /// </summary>
         [Input("streamType")]
         public Input<string>? StreamType { get; set; }
@@ -543,7 +543,7 @@ namespace Pulumi.Akamai
         public Input<Inputs.DatastreamSumologicConnectorGetArgs>? SumologicConnector { get; set; }
 
         /// <summary>
-        /// - (Required) The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
+        /// The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
         /// </summary>
         [Input("templateName")]
         public Input<string>? TemplateName { get; set; }

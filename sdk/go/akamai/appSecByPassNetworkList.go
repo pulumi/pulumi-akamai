@@ -27,32 +27,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecByPassNetworkList(ctx, "bypassNetworkLists", &akamai.AppSecByPassNetworkListArgs{
-// 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.String("gms1_134637"),
-// 			BypassNetworkLists: pulumi.StringArray{
-// 				pulumi.String("DocumentationNetworkList"),
-// 				pulumi.String("TrainingNetworkList"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecByPassNetworkList(ctx, "bypassNetworkLists", &akamai.AppSecByPassNetworkListArgs{
+//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId: pulumi.String("gms1_134637"),
+//				BypassNetworkLists: pulumi.StringArray{
+//					pulumi.String("DocumentationNetworkList"),
+//					pulumi.String("TrainingNetworkList"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
@@ -174,7 +177,7 @@ func (i *AppSecByPassNetworkList) ToAppSecByPassNetworkListOutputWithContext(ctx
 // AppSecByPassNetworkListArrayInput is an input type that accepts AppSecByPassNetworkListArray and AppSecByPassNetworkListArrayOutput values.
 // You can construct a concrete instance of `AppSecByPassNetworkListArrayInput` via:
 //
-//          AppSecByPassNetworkListArray{ AppSecByPassNetworkListArgs{...} }
+//	AppSecByPassNetworkListArray{ AppSecByPassNetworkListArgs{...} }
 type AppSecByPassNetworkListArrayInput interface {
 	pulumi.Input
 
@@ -199,7 +202,7 @@ func (i AppSecByPassNetworkListArray) ToAppSecByPassNetworkListArrayOutputWithCo
 // AppSecByPassNetworkListMapInput is an input type that accepts AppSecByPassNetworkListMap and AppSecByPassNetworkListMapOutput values.
 // You can construct a concrete instance of `AppSecByPassNetworkListMapInput` via:
 //
-//          AppSecByPassNetworkListMap{ "key": AppSecByPassNetworkListArgs{...} }
+//	AppSecByPassNetworkListMap{ "key": AppSecByPassNetworkListArgs{...} }
 type AppSecByPassNetworkListMapInput interface {
 	pulumi.Input
 

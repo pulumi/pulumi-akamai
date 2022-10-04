@@ -99,7 +99,7 @@ def get_group(contract: Optional[str] = None,
     Each account features a hierarchy of groups, which control access to your
     Akamai configurations and help consolidate reporting functions, typically
     mapping to an organizational hierarchy. Using either Control Center or the
-    [Identity Management: User Administration API](https://developer.akamai.com/en-us/api/core_features/identity_management_user_admin/v2.html),
+    [Identity Management: User Administration API](https://techdocs.akamai.com/iam-api/reference/api),
     account administrators can assign properties to specific groups, each with
     its own set of users and accompanying roles.
 
@@ -143,7 +143,7 @@ def get_group_output(contract: Optional[pulumi.Input[Optional[str]]] = None,
     Each account features a hierarchy of groups, which control access to your
     Akamai configurations and help consolidate reporting functions, typically
     mapping to an organizational hierarchy. Using either Control Center or the
-    [Identity Management: User Administration API](https://developer.akamai.com/en-us/api/core_features/identity_management_user_admin/v2.html),
+    [Identity Management: User Administration API](https://techdocs.akamai.com/iam-api/reference/api),
     account administrators can assign properties to specific groups, each with
     its own set of users and accompanying roles.
 

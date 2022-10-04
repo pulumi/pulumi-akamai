@@ -84,10 +84,10 @@ def get_iam_states(country: Optional[str] = None,
 
     * `states` — A list of states.
 
-    [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getadmincountrystates)
+    [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-states)
 
 
-    :param str country: — (required, string) Sepcifies USA or Canada.
+    :param str country: — (required, string) Specifies USA or Canada.
     """
     __args__ = dict()
     __args__['country'] = country
@@ -123,9 +123,9 @@ def get_iam_states_output(country: Optional[pulumi.Input[str]] = None,
 
     * `states` — A list of states.
 
-    [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getadmincountrystates)
+    [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-states)
 
 
-    :param str country: — (required, string) Sepcifies USA or Canada.
+    :param str country: — (required, string) Specifies USA or Canada.
     """
     ...

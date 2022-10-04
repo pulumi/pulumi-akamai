@@ -78,8 +78,12 @@ class _AppSecWafModeState:
         """
         Input properties used for looking up and filtering AppSecWafMode resources.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the WAF mode settings being modified.
+        :param pulumi.Input[str] current_ruleset: Versioning information for the current Kona Rule Set
+        :param pulumi.Input[str] eval_expiration_date: Date on which the evaluation period ends, if applicable
+        :param pulumi.Input[str] eval_ruleset: Versioning information for the Kona Rule Set being evaluated, if applicable
+        :param pulumi.Input[str] eval_status: Whether an evaluation is currently in progress
         :param pulumi.Input[str] mode: . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
-        :param pulumi.Input[str] output_text: Text Export representation
+        :param pulumi.Input[str] output_text: Text representation
         :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the WAF mode settings being modified.
         """
         if config_id is not None:
@@ -114,6 +118,9 @@ class _AppSecWafModeState:
     @property
     @pulumi.getter(name="currentRuleset")
     def current_ruleset(self) -> Optional[pulumi.Input[str]]:
+        """
+        Versioning information for the current Kona Rule Set
+        """
         return pulumi.get(self, "current_ruleset")
 
     @current_ruleset.setter
@@ -123,6 +130,9 @@ class _AppSecWafModeState:
     @property
     @pulumi.getter(name="evalExpirationDate")
     def eval_expiration_date(self) -> Optional[pulumi.Input[str]]:
+        """
+        Date on which the evaluation period ends, if applicable
+        """
         return pulumi.get(self, "eval_expiration_date")
 
     @eval_expiration_date.setter
@@ -132,6 +142,9 @@ class _AppSecWafModeState:
     @property
     @pulumi.getter(name="evalRuleset")
     def eval_ruleset(self) -> Optional[pulumi.Input[str]]:
+        """
+        Versioning information for the Kona Rule Set being evaluated, if applicable
+        """
         return pulumi.get(self, "eval_ruleset")
 
     @eval_ruleset.setter
@@ -141,6 +154,9 @@ class _AppSecWafModeState:
     @property
     @pulumi.getter(name="evalStatus")
     def eval_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        Whether an evaluation is currently in progress
+        """
         return pulumi.get(self, "eval_status")
 
     @eval_status.setter
@@ -163,7 +179,7 @@ class _AppSecWafModeState:
     @pulumi.getter(name="outputText")
     def output_text(self) -> Optional[pulumi.Input[str]]:
         """
-        Text Export representation
+        Text representation
         """
         return pulumi.get(self, "output_text")
 
@@ -346,8 +362,12 @@ class AppSecWafMode(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the WAF mode settings being modified.
+        :param pulumi.Input[str] current_ruleset: Versioning information for the current Kona Rule Set
+        :param pulumi.Input[str] eval_expiration_date: Date on which the evaluation period ends, if applicable
+        :param pulumi.Input[str] eval_ruleset: Versioning information for the Kona Rule Set being evaluated, if applicable
+        :param pulumi.Input[str] eval_status: Whether an evaluation is currently in progress
         :param pulumi.Input[str] mode: . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
-        :param pulumi.Input[str] output_text: Text Export representation
+        :param pulumi.Input[str] output_text: Text representation
         :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the WAF mode settings being modified.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -375,21 +395,33 @@ class AppSecWafMode(pulumi.CustomResource):
     @property
     @pulumi.getter(name="currentRuleset")
     def current_ruleset(self) -> pulumi.Output[str]:
+        """
+        Versioning information for the current Kona Rule Set
+        """
         return pulumi.get(self, "current_ruleset")
 
     @property
     @pulumi.getter(name="evalExpirationDate")
     def eval_expiration_date(self) -> pulumi.Output[str]:
+        """
+        Date on which the evaluation period ends, if applicable
+        """
         return pulumi.get(self, "eval_expiration_date")
 
     @property
     @pulumi.getter(name="evalRuleset")
     def eval_ruleset(self) -> pulumi.Output[str]:
+        """
+        Versioning information for the Kona Rule Set being evaluated, if applicable
+        """
         return pulumi.get(self, "eval_ruleset")
 
     @property
     @pulumi.getter(name="evalStatus")
     def eval_status(self) -> pulumi.Output[str]:
+        """
+        Whether an evaluation is currently in progress
+        """
         return pulumi.get(self, "eval_status")
 
     @property
@@ -404,7 +436,7 @@ class AppSecWafMode(pulumi.CustomResource):
     @pulumi.getter(name="outputText")
     def output_text(self) -> pulumi.Output[str]:
         """
-        Text Export representation
+        Text representation
         """
         return pulumi.get(self, "output_text")
 

@@ -18,7 +18,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string AccessKey;
         /// <summary>
-        /// - (Required) Specifies the Azure Storage account name.
+        /// Specifies the Azure Storage account name.
         /// </summary>
         public readonly string AccountName;
         /// <summary>
@@ -31,7 +31,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string ConnectorName;
         /// <summary>
-        /// - (Required) Specifies the Azure Storage container name.
+        /// Specifies the Azure Storage container name.
         /// </summary>
         public readonly string ContainerName;
         /// <summary>

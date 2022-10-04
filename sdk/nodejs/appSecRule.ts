@@ -61,7 +61,7 @@ export class AppSecRule extends pulumi.CustomResource {
     }
 
     /**
-     * . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+     * . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
      */
     public readonly conditionException!: pulumi.Output<string | undefined>;
     /**
@@ -130,7 +130,7 @@ export class AppSecRule extends pulumi.CustomResource {
  */
 export interface AppSecRuleState {
     /**
-     * . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+     * . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
      */
     conditionException?: pulumi.Input<string>;
     /**
@@ -160,7 +160,7 @@ export interface AppSecRuleState {
  */
 export interface AppSecRuleArgs {
     /**
-     * . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+     * . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
      */
     conditionException?: pulumi.Input<string>;
     /**

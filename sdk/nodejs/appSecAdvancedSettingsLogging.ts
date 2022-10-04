@@ -70,7 +70,7 @@ export class AppSecAdvancedSettingsLogging extends pulumi.CustomResource {
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Path to a JSON file containing the logging settings to be configured. A sample JSON file can be found in the [Modify HTTP header log settings for a configuration](https://developer.akamai.com/api/cloud_security/application_security/v1.html#puthttpheaderloggingforaconfiguration) section of the Application Security API documentation.
+     * . Path to a JSON file containing the logging settings to be configured.
      */
     public readonly logging!: pulumi.Output<string>;
     /**
@@ -120,7 +120,7 @@ export interface AppSecAdvancedSettingsLoggingState {
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing the logging settings to be configured. A sample JSON file can be found in the [Modify HTTP header log settings for a configuration](https://developer.akamai.com/api/cloud_security/application_security/v1.html#puthttpheaderloggingforaconfiguration) section of the Application Security API documentation.
+     * . Path to a JSON file containing the logging settings to be configured.
      */
     logging?: pulumi.Input<string>;
     /**
@@ -138,7 +138,7 @@ export interface AppSecAdvancedSettingsLoggingArgs {
      */
     configId: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing the logging settings to be configured. A sample JSON file can be found in the [Modify HTTP header log settings for a configuration](https://developer.akamai.com/api/cloud_security/application_security/v1.html#puthttpheaderloggingforaconfiguration) section of the Application Security API documentation.
+     * . Path to a JSON file containing the logging settings to be configured.
      */
     logging: pulumi.Input<string>;
     /**

@@ -29,7 +29,7 @@ import (
 // | Standard TLS | edgesuite.net |
 // | Shared Cert | akamaized.net |
 //
-// For example, if you use Standard TLS and have `www.example.com` as a hostname, your edge hostname would be `www.example.com.edgesuite.net`. If you wanted to use Enhanced TLS with the same hostname, your edge hostname would be `www.example.com.edgekey.net`. See the [Property Manager API (PAPI)](https://developer.akamai.com/api/core_features/property_manager/v1.html#createedgehostnames) for more information.
+// For example, if you use Standard TLS and have `www.example.com` as a hostname, your edge hostname would be `www.example.com.edgesuite.net`. If you wanted to use Enhanced TLS with the same hostname, your edge hostname would be `www.example.com.edgekey.net`. See  [Create a new edge hostname](https://techdocs.akamai.com/property-mgr/reference/post-edgehostnames) in the Property Manager API (PAPI) for more information.
 //
 // ## Example Usage
 //
@@ -39,25 +39,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewEdgeHostName(ctx, "provider-demo", &akamai.EdgeHostNameArgs{
-// 			ContractId:   pulumi.String("ctr_1-AB123"),
-// 			EdgeHostname: pulumi.String("www.example.org.edgesuite.net"),
-// 			GroupId:      pulumi.String("grp_123"),
-// 			IpBehavior:   pulumi.String("IPV4"),
-// 			ProductId:    pulumi.String("prd_Object_Delivery"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewEdgeHostName(ctx, "provider-demo", &akamai.EdgeHostNameArgs{
+//				ContractId:   pulumi.String("ctr_1-AB123"),
+//				EdgeHostname: pulumi.String("www.example.org.edgesuite.net"),
+//				GroupId:      pulumi.String("grp_123"),
+//				IpBehavior:   pulumi.String("IPV4"),
+//				ProductId:    pulumi.String("prd_Object_Delivery"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Attributes reference
 //
@@ -74,7 +77,9 @@ import (
 // `edge_hostname, contract_id, group_id` For example
 //
 // ```sh
-//  $ pulumi import akamai:properties/edgeHostName:EdgeHostName example ehn_123,ctr_1-AB123,grp_123
+//
+//	$ pulumi import akamai:properties/edgeHostName:EdgeHostName example ehn_123,ctr_1-AB123,grp_123
+//
 // ```
 //
 // Deprecated: akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName
@@ -295,7 +300,7 @@ func (i *EdgeHostName) ToEdgeHostNameOutputWithContext(ctx context.Context) Edge
 // EdgeHostNameArrayInput is an input type that accepts EdgeHostNameArray and EdgeHostNameArrayOutput values.
 // You can construct a concrete instance of `EdgeHostNameArrayInput` via:
 //
-//          EdgeHostNameArray{ EdgeHostNameArgs{...} }
+//	EdgeHostNameArray{ EdgeHostNameArgs{...} }
 type EdgeHostNameArrayInput interface {
 	pulumi.Input
 
@@ -320,7 +325,7 @@ func (i EdgeHostNameArray) ToEdgeHostNameArrayOutputWithContext(ctx context.Cont
 // EdgeHostNameMapInput is an input type that accepts EdgeHostNameMap and EdgeHostNameMapOutput values.
 // You can construct a concrete instance of `EdgeHostNameMapInput` via:
 //
-//          EdgeHostNameMap{ "key": EdgeHostNameArgs{...} }
+//	EdgeHostNameMap{ "key": EdgeHostNameArgs{...} }
 type EdgeHostNameMapInput interface {
 	pulumi.Input
 

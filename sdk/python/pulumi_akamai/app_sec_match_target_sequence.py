@@ -19,7 +19,7 @@ class AppSecMatchTargetSequenceArgs:
         """
         The set of arguments for constructing a AppSecMatchTargetSequence resource.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the match target sequence being modified.
-        :param pulumi.Input[str] match_target_sequence: . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://developer.akamai.com/api/cloud_security/application_security/v1.html#matchtargetorder) section of the Application Security API documentation.
+        :param pulumi.Input[str] match_target_sequence: . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
         """
         pulumi.set(__self__, "config_id", config_id)
         if match_target_sequence is not None:
@@ -41,7 +41,7 @@ class AppSecMatchTargetSequenceArgs:
     @pulumi.getter(name="matchTargetSequence")
     def match_target_sequence(self) -> Optional[pulumi.Input[str]]:
         """
-        . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://developer.akamai.com/api/cloud_security/application_security/v1.html#matchtargetorder) section of the Application Security API documentation.
+        . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
         """
         return pulumi.get(self, "match_target_sequence")
 
@@ -58,7 +58,7 @@ class _AppSecMatchTargetSequenceState:
         """
         Input properties used for looking up and filtering AppSecMatchTargetSequence resources.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the match target sequence being modified.
-        :param pulumi.Input[str] match_target_sequence: . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://developer.akamai.com/api/cloud_security/application_security/v1.html#matchtargetorder) section of the Application Security API documentation.
+        :param pulumi.Input[str] match_target_sequence: . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -81,7 +81,7 @@ class _AppSecMatchTargetSequenceState:
     @pulumi.getter(name="matchTargetSequence")
     def match_target_sequence(self) -> Optional[pulumi.Input[str]]:
         """
-        . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://developer.akamai.com/api/cloud_security/application_security/v1.html#matchtargetorder) section of the Application Security API documentation.
+        . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
         """
         return pulumi.get(self, "match_target_sequence")
 
@@ -122,7 +122,7 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the match target sequence being modified.
-        :param pulumi.Input[str] match_target_sequence: . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://developer.akamai.com/api/cloud_security/application_security/v1.html#matchtargetorder) section of the Application Security API documentation.
+        :param pulumi.Input[str] match_target_sequence: . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
         """
         ...
     @overload
@@ -201,7 +201,7 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the match target sequence being modified.
-        :param pulumi.Input[str] match_target_sequence: . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://developer.akamai.com/api/cloud_security/application_security/v1.html#matchtargetorder) section of the Application Security API documentation.
+        :param pulumi.Input[str] match_target_sequence: . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -223,7 +223,7 @@ class AppSecMatchTargetSequence(pulumi.CustomResource):
     @pulumi.getter(name="matchTargetSequence")
     def match_target_sequence(self) -> pulumi.Output[Optional[str]]:
         """
-        . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://developer.akamai.com/api/cloud_security/application_security/v1.html#matchtargetorder) section of the Application Security API documentation.
+        . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
         """
         return pulumi.get(self, "match_target_sequence")
 

@@ -11,8 +11,8 @@ import (
 )
 
 // Use the `getNetworkLists` data source to retrieve information about the available network lists,
-// optionally filtered by list type or based on a search string. The information available is described
-// [here](https://developer.akamai.com/api/cloud_security/network_lists/v2.html#getlists).
+// optionally filtered by list type or based on a search string. The information available is described in
+// [List network lists](https://techdocs.akamai.com/network-lists/reference/get-network-lists).
 //
 // ## Example Usage
 //
@@ -22,32 +22,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		networkLists, err := akamai.GetNetworkLists(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("networkListsText", networkLists.OutputText)
-// 		ctx.Export("networkListsJson", networkLists.Json)
-// 		ctx.Export("networkListsList", networkLists.Lists)
-// 		networkListsFilter, err := akamai.GetNetworkLists(ctx, &GetNetworkListsArgs{
-// 			Name: pulumi.StringRef("Test Whitelist"),
-// 			Type: pulumi.StringRef("IP"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("networkListsFilterText", networkListsFilter.OutputText)
-// 		ctx.Export("networkListsFilterJson", networkListsFilter.Json)
-// 		ctx.Export("networkListsFilterList", networkListsFilter.Lists)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			networkLists, err := akamai.GetNetworkLists(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("networkListsText", networkLists.OutputText)
+//			ctx.Export("networkListsJson", networkLists.Json)
+//			ctx.Export("networkListsList", networkLists.Lists)
+//			networkListsFilter, err := akamai.GetNetworkLists(ctx, &GetNetworkListsArgs{
+//				Name: pulumi.StringRef("Test Whitelist"),
+//				Type: pulumi.StringRef("IP"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("networkListsFilterText", networkListsFilter.OutputText)
+//			ctx.Export("networkListsFilterJson", networkListsFilter.Json)
+//			ctx.Export("networkListsFilterList", networkListsFilter.Lists)
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetNetworkLists(ctx *pulumi.Context, args *GetNetworkListsArgs, opts ...pulumi.InvokeOption) (*GetNetworkListsResult, error) {
 	var rv GetNetworkListsResult

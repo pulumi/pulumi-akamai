@@ -12,7 +12,7 @@ import (
 
 // **Scopes**: Security configuration
 //
-// Returns information about the network lists assigned to the bypass network list; networks on this list are not subject to firewall checking. The returned information is described in the [BypassNetworkList members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#bypassnetworklist) section of the Application Security API.
+// Returns information about the network lists assigned to the bypass network list; networks on this list are not subject to firewall checking.
 //
 // Note that this data source is only applicable to WAP (Web Application Protector) configurations.
 //
@@ -26,31 +26,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		bypassNetworkLists, err := akamai.GetAppSecBypassNetworkLists(ctx, &GetAppSecBypassNetworkListsArgs{
-// 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: "gms1_134637",
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("bypassNetworkListsOutput", bypassNetworkLists.OutputText)
-// 		ctx.Export("bypassNetworkListsJson", bypassNetworkLists.Json)
-// 		ctx.Export("bypassNetworkListsIdList", bypassNetworkLists.BypassNetworkLists)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			bypassNetworkLists, err := akamai.GetAppSecBypassNetworkLists(ctx, &GetAppSecBypassNetworkListsArgs{
+//				ConfigId:         configuration.ConfigId,
+//				SecurityPolicyId: "gms1_134637",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("bypassNetworkListsOutput", bypassNetworkLists.OutputText)
+//			ctx.Export("bypassNetworkListsJson", bypassNetworkLists.Json)
+//			ctx.Export("bypassNetworkListsIdList", bypassNetworkLists.BypassNetworkLists)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //

@@ -19,41 +19,46 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecWapSelectedHostnames(ctx, "appsecwapSelectedhostnames", &akamai.AppSecWapSelectedHostnamesArgs{
-// 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.String("gms1_134637"),
-// 			ProtectedHosts: pulumi.StringArray{
-// 				pulumi.String("documentation.akamai.com"),
-// 			},
-// 			EvaluatedHosts: pulumi.StringArray{
-// 				pulumi.String("training.akamai.com"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecWapSelectedHostnames(ctx, "appsecwapSelectedhostnames", &akamai.AppSecWapSelectedHostnamesArgs{
+//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId: pulumi.String("gms1_134637"),
+//				ProtectedHosts: pulumi.StringArray{
+//					pulumi.String("documentation.akamai.com"),
+//				},
+//				EvaluatedHosts: pulumi.StringArray{
+//					pulumi.String("training.akamai.com"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type AppSecWapSelectedHostnames struct {
 	pulumi.CustomResourceState
 
 	// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
-	ConfigId       pulumi.IntOutput         `pulumi:"configId"`
+	ConfigId pulumi.IntOutput `pulumi:"configId"`
+	// List of hostnames to be evaluated
 	EvaluatedHosts pulumi.StringArrayOutput `pulumi:"evaluatedHosts"`
+	// List of hostnames to be protected
 	ProtectedHosts pulumi.StringArrayOutput `pulumi:"protectedHosts"`
 	// . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
@@ -95,8 +100,10 @@ func GetAppSecWapSelectedHostnames(ctx *pulumi.Context,
 // Input properties used for looking up and filtering AppSecWapSelectedHostnames resources.
 type appSecWapSelectedHostnamesState struct {
 	// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
-	ConfigId       *int     `pulumi:"configId"`
+	ConfigId *int `pulumi:"configId"`
+	// List of hostnames to be evaluated
 	EvaluatedHosts []string `pulumi:"evaluatedHosts"`
+	// List of hostnames to be protected
 	ProtectedHosts []string `pulumi:"protectedHosts"`
 	// . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
@@ -104,8 +111,10 @@ type appSecWapSelectedHostnamesState struct {
 
 type AppSecWapSelectedHostnamesState struct {
 	// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
-	ConfigId       pulumi.IntPtrInput
+	ConfigId pulumi.IntPtrInput
+	// List of hostnames to be evaluated
 	EvaluatedHosts pulumi.StringArrayInput
+	// List of hostnames to be protected
 	ProtectedHosts pulumi.StringArrayInput
 	// . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
 	SecurityPolicyId pulumi.StringPtrInput
@@ -117,8 +126,10 @@ func (AppSecWapSelectedHostnamesState) ElementType() reflect.Type {
 
 type appSecWapSelectedHostnamesArgs struct {
 	// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
-	ConfigId       int      `pulumi:"configId"`
+	ConfigId int `pulumi:"configId"`
+	// List of hostnames to be evaluated
 	EvaluatedHosts []string `pulumi:"evaluatedHosts"`
+	// List of hostnames to be protected
 	ProtectedHosts []string `pulumi:"protectedHosts"`
 	// . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
@@ -127,8 +138,10 @@ type appSecWapSelectedHostnamesArgs struct {
 // The set of arguments for constructing a AppSecWapSelectedHostnames resource.
 type AppSecWapSelectedHostnamesArgs struct {
 	// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
-	ConfigId       pulumi.IntInput
+	ConfigId pulumi.IntInput
+	// List of hostnames to be evaluated
 	EvaluatedHosts pulumi.StringArrayInput
+	// List of hostnames to be protected
 	ProtectedHosts pulumi.StringArrayInput
 	// . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
 	SecurityPolicyId pulumi.StringInput
@@ -160,7 +173,7 @@ func (i *AppSecWapSelectedHostnames) ToAppSecWapSelectedHostnamesOutputWithConte
 // AppSecWapSelectedHostnamesArrayInput is an input type that accepts AppSecWapSelectedHostnamesArray and AppSecWapSelectedHostnamesArrayOutput values.
 // You can construct a concrete instance of `AppSecWapSelectedHostnamesArrayInput` via:
 //
-//          AppSecWapSelectedHostnamesArray{ AppSecWapSelectedHostnamesArgs{...} }
+//	AppSecWapSelectedHostnamesArray{ AppSecWapSelectedHostnamesArgs{...} }
 type AppSecWapSelectedHostnamesArrayInput interface {
 	pulumi.Input
 
@@ -185,7 +198,7 @@ func (i AppSecWapSelectedHostnamesArray) ToAppSecWapSelectedHostnamesArrayOutput
 // AppSecWapSelectedHostnamesMapInput is an input type that accepts AppSecWapSelectedHostnamesMap and AppSecWapSelectedHostnamesMapOutput values.
 // You can construct a concrete instance of `AppSecWapSelectedHostnamesMapInput` via:
 //
-//          AppSecWapSelectedHostnamesMap{ "key": AppSecWapSelectedHostnamesArgs{...} }
+//	AppSecWapSelectedHostnamesMap{ "key": AppSecWapSelectedHostnamesArgs{...} }
 type AppSecWapSelectedHostnamesMapInput interface {
 	pulumi.Input
 
@@ -226,10 +239,12 @@ func (o AppSecWapSelectedHostnamesOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecWapSelectedHostnames) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
+// List of hostnames to be evaluated
 func (o AppSecWapSelectedHostnamesOutput) EvaluatedHosts() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AppSecWapSelectedHostnames) pulumi.StringArrayOutput { return v.EvaluatedHosts }).(pulumi.StringArrayOutput)
 }
 
+// List of hostnames to be protected
 func (o AppSecWapSelectedHostnamesOutput) ProtectedHosts() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AppSecWapSelectedHostnames) pulumi.StringArrayOutput { return v.ProtectedHosts }).(pulumi.StringArrayOutput)
 }

@@ -73,7 +73,7 @@ export class AppSecAttackGroup extends pulumi.CustomResource {
      */
     public readonly attackGroupAction!: pulumi.Output<string>;
     /**
-     * . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+     * . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
      */
     public readonly conditionException!: pulumi.Output<string | undefined>;
     /**
@@ -145,7 +145,7 @@ export interface AppSecAttackGroupState {
      */
     attackGroupAction?: pulumi.Input<string>;
     /**
-     * . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+     * . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
      */
     conditionException?: pulumi.Input<string>;
     /**
@@ -175,7 +175,7 @@ export interface AppSecAttackGroupArgs {
      */
     attackGroupAction: pulumi.Input<string>;
     /**
-     * . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+     * . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
      */
     conditionException?: pulumi.Input<string>;
     /**

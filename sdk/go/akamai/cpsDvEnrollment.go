@@ -23,89 +23,92 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		example, err := akamai.NewCpsDvEnrollment(ctx, "example", &akamai.CpsDvEnrollmentArgs{
-// 			ContractId:                         pulumi.String("ctr_1-AB123"),
-// 			AcknowledgePreVerificationWarnings: pulumi.Bool(true),
-// 			CommonName:                         pulumi.String("cps-test.example.net"),
-// 			Sans: pulumi.StringArray{
-// 				pulumi.String("san1.cps-test.example.net"),
-// 				pulumi.String("san2.cps-test.example.net"),
-// 			},
-// 			SecureNetwork: pulumi.String("enhanced-tls"),
-// 			SniOnly:       pulumi.Bool(true),
-// 			AdminContact: &CpsDvEnrollmentAdminContactArgs{
-// 				FirstName:      pulumi.String("x1"),
-// 				LastName:       pulumi.String("x2"),
-// 				Phone:          pulumi.String("123123123"),
-// 				Email:          pulumi.String("x1x2@example.net"),
-// 				AddressLineOne: pulumi.String("150 Broadway"),
-// 				City:           pulumi.String("Cambridge"),
-// 				CountryCode:    pulumi.String("US"),
-// 				Organization:   pulumi.String("Akamai"),
-// 				PostalCode:     pulumi.String("02142"),
-// 				Region:         pulumi.String("MA"),
-// 				Title:          pulumi.String("Administrator"),
-// 			},
-// 			TechContact: &CpsDvEnrollmentTechContactArgs{
-// 				FirstName:      pulumi.String("x3"),
-// 				LastName:       pulumi.String("x4"),
-// 				Phone:          pulumi.String("123123123"),
-// 				Email:          pulumi.String("x3x4@akamai.com"),
-// 				AddressLineOne: pulumi.String("150 Broadway"),
-// 				City:           pulumi.String("Cambridge"),
-// 				CountryCode:    pulumi.String("US"),
-// 				Organization:   pulumi.String("Akamai"),
-// 				PostalCode:     pulumi.String("02142"),
-// 				Region:         pulumi.String("MA"),
-// 				Title:          pulumi.String("Administrator"),
-// 			},
-// 			CertificateChainType: pulumi.String("default"),
-// 			Csr: &CpsDvEnrollmentCsrArgs{
-// 				CountryCode:        pulumi.String("US"),
-// 				City:               pulumi.String("cambridge"),
-// 				Organization:       pulumi.String("Akamai"),
-// 				OrganizationalUnit: pulumi.String("Dev"),
-// 				State:              pulumi.String("MA"),
-// 			},
-// 			EnableMultiStackedCertificates: pulumi.Bool(false),
-// 			NetworkConfiguration: &CpsDvEnrollmentNetworkConfigurationArgs{
-// 				DisallowedTlsVersions: pulumi.StringArray{
-// 					pulumi.String("TLSv1"),
-// 					pulumi.String("TLSv1_1"),
-// 				},
-// 				CloneDnsNames:    pulumi.Bool(false),
-// 				Geography:        pulumi.String("core"),
-// 				OcspStapling:     pulumi.String("on"),
-// 				PreferredCiphers: pulumi.String("ak-akamai-2020q1"),
-// 				MustHaveCiphers:  pulumi.String("ak-akamai-2020q1"),
-// 				QuicEnabled:      pulumi.Bool(false),
-// 			},
-// 			SignatureAlgorithm: pulumi.String("SHA-256"),
-// 			Organization: &CpsDvEnrollmentOrganizationArgs{
-// 				Name:           pulumi.String("Akamai"),
-// 				Phone:          pulumi.String("123123123"),
-// 				AddressLineOne: pulumi.String("150 Broadway"),
-// 				City:           pulumi.String("Cambridge"),
-// 				CountryCode:    pulumi.String("US"),
-// 				PostalCode:     pulumi.String("02142"),
-// 				Region:         pulumi.String("MA"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("dnsChallenges", example.DnsChallenges)
-// 		ctx.Export("httpChallenges", example.HttpChallenges)
-// 		ctx.Export("enrollmentId", example.ID())
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			example, err := akamai.NewCpsDvEnrollment(ctx, "example", &akamai.CpsDvEnrollmentArgs{
+//				ContractId:                         pulumi.String("ctr_1-AB123"),
+//				AcknowledgePreVerificationWarnings: pulumi.Bool(true),
+//				CommonName:                         pulumi.String("cps-test.example.net"),
+//				Sans: pulumi.StringArray{
+//					pulumi.String("san1.cps-test.example.net"),
+//					pulumi.String("san2.cps-test.example.net"),
+//				},
+//				SecureNetwork: pulumi.String("enhanced-tls"),
+//				SniOnly:       pulumi.Bool(true),
+//				AdminContact: &CpsDvEnrollmentAdminContactArgs{
+//					FirstName:      pulumi.String("x1"),
+//					LastName:       pulumi.String("x2"),
+//					Phone:          pulumi.String("123123123"),
+//					Email:          pulumi.String("x1x2@example.net"),
+//					AddressLineOne: pulumi.String("150 Broadway"),
+//					City:           pulumi.String("Cambridge"),
+//					CountryCode:    pulumi.String("US"),
+//					Organization:   pulumi.String("Akamai"),
+//					PostalCode:     pulumi.String("02142"),
+//					Region:         pulumi.String("MA"),
+//					Title:          pulumi.String("Administrator"),
+//				},
+//				TechContact: &CpsDvEnrollmentTechContactArgs{
+//					FirstName:      pulumi.String("x3"),
+//					LastName:       pulumi.String("x4"),
+//					Phone:          pulumi.String("123123123"),
+//					Email:          pulumi.String("x3x4@akamai.com"),
+//					AddressLineOne: pulumi.String("150 Broadway"),
+//					City:           pulumi.String("Cambridge"),
+//					CountryCode:    pulumi.String("US"),
+//					Organization:   pulumi.String("Akamai"),
+//					PostalCode:     pulumi.String("02142"),
+//					Region:         pulumi.String("MA"),
+//					Title:          pulumi.String("Administrator"),
+//				},
+//				CertificateChainType: pulumi.String("default"),
+//				Csr: &CpsDvEnrollmentCsrArgs{
+//					CountryCode:        pulumi.String("US"),
+//					City:               pulumi.String("cambridge"),
+//					Organization:       pulumi.String("Akamai"),
+//					OrganizationalUnit: pulumi.String("Dev"),
+//					State:              pulumi.String("MA"),
+//				},
+//				EnableMultiStackedCertificates: pulumi.Bool(false),
+//				NetworkConfiguration: &CpsDvEnrollmentNetworkConfigurationArgs{
+//					DisallowedTlsVersions: pulumi.StringArray{
+//						pulumi.String("TLSv1"),
+//						pulumi.String("TLSv1_1"),
+//					},
+//					CloneDnsNames:    pulumi.Bool(false),
+//					Geography:        pulumi.String("core"),
+//					OcspStapling:     pulumi.String("on"),
+//					PreferredCiphers: pulumi.String("ak-akamai-2020q1"),
+//					MustHaveCiphers:  pulumi.String("ak-akamai-2020q1"),
+//					QuicEnabled:      pulumi.Bool(false),
+//				},
+//				SignatureAlgorithm: pulumi.String("SHA-256"),
+//				Organization: &CpsDvEnrollmentOrganizationArgs{
+//					Name:           pulumi.String("Akamai"),
+//					Phone:          pulumi.String("123123123"),
+//					AddressLineOne: pulumi.String("150 Broadway"),
+//					City:           pulumi.String("Cambridge"),
+//					CountryCode:    pulumi.String("US"),
+//					PostalCode:     pulumi.String("02142"),
+//					Region:         pulumi.String("MA"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("dnsChallenges", example.DnsChallenges)
+//			ctx.Export("httpChallenges", example.HttpChallenges)
+//			ctx.Export("enrollmentId", example.ID())
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Attributes reference
 //
@@ -117,27 +120,30 @@ import (
 // * `id` - The unique identifier for this enrollment.
 // * `dnsChallenges` - The validation challenge for the domains listed in the certificate. To successfully perform the validation, only one challenge for each domain must be complete, either `dnsChallenges` or `httpChallenges`.
 //
-//   Returns these additional attributes:
+//	Returns these additional attributes:
 //
-//       * `domain` - The domain to validate.
-//       * `fullPath` - The URL where Akamai publishes `responseBody` for Let's Encrypt to validate.
-//       * `responseBody` - The data Let's Encrypt expects to find served at `fullPath` URL.
+//	    * `domain` - The domain to validate.
+//	    * `fullPath` - The URL where Akamai publishes `responseBody` for Let's Encrypt to validate.
+//	    * `responseBody` - The data Let's Encrypt expects to find served at `fullPath` URL.
+//
 // * `httpChallenges` - The validation challenge for the domains listed in the certificate. To successfully perform the validation, only one challenge for each domain must be complete, either `dnsChallenges` or `httpChallenges`.
 //
-//   Returns these additional attributes:
+//	Returns these additional attributes:
 //
-//       * `domain` - The domain to validate.
-//       * `fullPath` - The URL where Akamai publishes `responseBody` for Let's Encrypt to validate.
-//       * `responseBody` - The data Let's Encrypt expects to find served at `fullPath` URL.
+//	    * `domain` - The domain to validate.
+//	    * `fullPath` - The URL where Akamai publishes `responseBody` for Let's Encrypt to validate.
+//	    * `responseBody` - The data Let's Encrypt expects to find served at `fullPath` URL.
 //
 // ## Import
 //
 // Basic Usagehcl resource "akamai_cps_dv_enrollment" "example" { # (resource arguments) } You can import your Akamai DV enrollment using a comma-delimited string of the enrollment ID and
 //
-//  contract ID, optionally with the `ctr_` prefix. You have to enter the IDs in this order`enrollment_id,contract_id` For example
+//	contract ID, optionally with the `ctr_` prefix. You have to enter the IDs in this order`enrollment_id,contract_id` For example
 //
 // ```sh
-//  $ pulumi import akamai:index/cpsDvEnrollment:CpsDvEnrollment example 12345,1-AB123
+//
+//	$ pulumi import akamai:index/cpsDvEnrollment:CpsDvEnrollment example 12345,1-AB123
+//
 // ```
 type CpsDvEnrollment struct {
 	pulumi.CustomResourceState
@@ -145,7 +151,8 @@ type CpsDvEnrollment struct {
 	// Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
 	AcknowledgePreVerificationWarnings pulumi.BoolPtrOutput `pulumi:"acknowledgePreVerificationWarnings"`
 	// Contact information for the certificate administrator at your company.
-	AdminContact CpsDvEnrollmentAdminContactOutput `pulumi:"adminContact"`
+	AdminContact             CpsDvEnrollmentAdminContactOutput `pulumi:"adminContact"`
+	AllowDuplicateCommonName pulumi.BoolPtrOutput              `pulumi:"allowDuplicateCommonName"`
 	// Certificate trust chain type.
 	CertificateChainType pulumi.StringPtrOutput `pulumi:"certificateChainType"`
 	CertificateType      pulumi.StringOutput    `pulumi:"certificateType"`
@@ -239,7 +246,8 @@ type cpsDvEnrollmentState struct {
 	// Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
 	AcknowledgePreVerificationWarnings *bool `pulumi:"acknowledgePreVerificationWarnings"`
 	// Contact information for the certificate administrator at your company.
-	AdminContact *CpsDvEnrollmentAdminContact `pulumi:"adminContact"`
+	AdminContact             *CpsDvEnrollmentAdminContact `pulumi:"adminContact"`
+	AllowDuplicateCommonName *bool                        `pulumi:"allowDuplicateCommonName"`
 	// Certificate trust chain type.
 	CertificateChainType *string `pulumi:"certificateChainType"`
 	CertificateType      *string `pulumi:"certificateType"`
@@ -275,7 +283,8 @@ type CpsDvEnrollmentState struct {
 	// Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
 	AcknowledgePreVerificationWarnings pulumi.BoolPtrInput
 	// Contact information for the certificate administrator at your company.
-	AdminContact CpsDvEnrollmentAdminContactPtrInput
+	AdminContact             CpsDvEnrollmentAdminContactPtrInput
+	AllowDuplicateCommonName pulumi.BoolPtrInput
 	// Certificate trust chain type.
 	CertificateChainType pulumi.StringPtrInput
 	CertificateType      pulumi.StringPtrInput
@@ -315,7 +324,8 @@ type cpsDvEnrollmentArgs struct {
 	// Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
 	AcknowledgePreVerificationWarnings *bool `pulumi:"acknowledgePreVerificationWarnings"`
 	// Contact information for the certificate administrator at your company.
-	AdminContact CpsDvEnrollmentAdminContact `pulumi:"adminContact"`
+	AdminContact             CpsDvEnrollmentAdminContact `pulumi:"adminContact"`
+	AllowDuplicateCommonName *bool                       `pulumi:"allowDuplicateCommonName"`
 	// Certificate trust chain type.
 	CertificateChainType *string `pulumi:"certificateChainType"`
 	// - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
@@ -347,7 +357,8 @@ type CpsDvEnrollmentArgs struct {
 	// Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
 	AcknowledgePreVerificationWarnings pulumi.BoolPtrInput
 	// Contact information for the certificate administrator at your company.
-	AdminContact CpsDvEnrollmentAdminContactInput
+	AdminContact             CpsDvEnrollmentAdminContactInput
+	AllowDuplicateCommonName pulumi.BoolPtrInput
 	// Certificate trust chain type.
 	CertificateChainType pulumi.StringPtrInput
 	// - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
@@ -400,7 +411,7 @@ func (i *CpsDvEnrollment) ToCpsDvEnrollmentOutputWithContext(ctx context.Context
 // CpsDvEnrollmentArrayInput is an input type that accepts CpsDvEnrollmentArray and CpsDvEnrollmentArrayOutput values.
 // You can construct a concrete instance of `CpsDvEnrollmentArrayInput` via:
 //
-//          CpsDvEnrollmentArray{ CpsDvEnrollmentArgs{...} }
+//	CpsDvEnrollmentArray{ CpsDvEnrollmentArgs{...} }
 type CpsDvEnrollmentArrayInput interface {
 	pulumi.Input
 
@@ -425,7 +436,7 @@ func (i CpsDvEnrollmentArray) ToCpsDvEnrollmentArrayOutputWithContext(ctx contex
 // CpsDvEnrollmentMapInput is an input type that accepts CpsDvEnrollmentMap and CpsDvEnrollmentMapOutput values.
 // You can construct a concrete instance of `CpsDvEnrollmentMapInput` via:
 //
-//          CpsDvEnrollmentMap{ "key": CpsDvEnrollmentArgs{...} }
+//	CpsDvEnrollmentMap{ "key": CpsDvEnrollmentArgs{...} }
 type CpsDvEnrollmentMapInput interface {
 	pulumi.Input
 
@@ -469,6 +480,10 @@ func (o CpsDvEnrollmentOutput) AcknowledgePreVerificationWarnings() pulumi.BoolP
 // Contact information for the certificate administrator at your company.
 func (o CpsDvEnrollmentOutput) AdminContact() CpsDvEnrollmentAdminContactOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollmentAdminContactOutput { return v.AdminContact }).(CpsDvEnrollmentAdminContactOutput)
+}
+
+func (o CpsDvEnrollmentOutput) AllowDuplicateCommonName() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.BoolPtrOutput { return v.AllowDuplicateCommonName }).(pulumi.BoolPtrOutput)
 }
 
 // Certificate trust chain type.

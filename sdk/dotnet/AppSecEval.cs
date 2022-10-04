@@ -60,7 +60,7 @@ namespace Pulumi.Akamai
     /// 
     /// The following options can be used to determine the information returned, and how that returned information is formatted:
     /// 
-    /// - `evaluation_ruleset`. Versioning information for the Kona Rule Set being evaluated.
+    /// - `evaluating_ruleset`. Versioning information for the Kona Rule Set being evaluated.
     /// - `expiration_date`. Date when the evaluation period ends.
     /// - `current_ruleset`. Versioning information for the Kona Rule Set currently in use on the production network.
     /// - `eval_status`. If **true**, an evaluation is currently in progress; if **false**, evaluation is either paused or is not running.
@@ -74,6 +74,9 @@ namespace Pulumi.Akamai
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
+        /// <summary>
+        /// Versioning information for the Kona Rule Set currently in use in production
+        /// </summary>
         [Output("currentRuleset")]
         public Output<string> CurrentRuleset { get; private set; } = null!;
 
@@ -94,12 +97,21 @@ namespace Pulumi.Akamai
         [Output("evalOperation")]
         public Output<string> EvalOperation { get; private set; } = null!;
 
+        /// <summary>
+        /// Whether an evaluation is currently in progress
+        /// </summary>
         [Output("evalStatus")]
         public Output<string> EvalStatus { get; private set; } = null!;
 
+        /// <summary>
+        /// Versioning information for the Kona Rule Set being evaluated
+        /// </summary>
         [Output("evaluatingRuleset")]
         public Output<string> EvaluatingRuleset { get; private set; } = null!;
 
+        /// <summary>
+        /// Date when the evaluation period ends
+        /// </summary>
         [Output("expirationDate")]
         public Output<string> ExpirationDate { get; private set; } = null!;
 
@@ -197,6 +209,9 @@ namespace Pulumi.Akamai
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
+        /// <summary>
+        /// Versioning information for the Kona Rule Set currently in use in production
+        /// </summary>
         [Input("currentRuleset")]
         public Input<string>? CurrentRuleset { get; set; }
 
@@ -217,12 +232,21 @@ namespace Pulumi.Akamai
         [Input("evalOperation")]
         public Input<string>? EvalOperation { get; set; }
 
+        /// <summary>
+        /// Whether an evaluation is currently in progress
+        /// </summary>
         [Input("evalStatus")]
         public Input<string>? EvalStatus { get; set; }
 
+        /// <summary>
+        /// Versioning information for the Kona Rule Set being evaluated
+        /// </summary>
         [Input("evaluatingRuleset")]
         public Input<string>? EvaluatingRuleset { get; set; }
 
+        /// <summary>
+        /// Date when the evaluation period ends
+        /// </summary>
         [Input("expirationDate")]
         public Input<string>? ExpirationDate { get; set; }
 

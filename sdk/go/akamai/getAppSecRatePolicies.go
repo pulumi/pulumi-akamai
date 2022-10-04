@@ -24,38 +24,41 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ratePolicies, err := akamai.GetAppSecRatePolicies(ctx, &GetAppSecRatePoliciesArgs{
-// 			ConfigId: configuration.ConfigId,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("ratePoliciesOutput", ratePolicies.OutputText)
-// 		ctx.Export("ratePoliciesJson", ratePolicies.Json)
-// 		ratePolicy, err := akamai.GetAppSecRatePolicies(ctx, &GetAppSecRatePoliciesArgs{
-// 			ConfigId:     configuration.ConfigId,
-// 			RatePolicyId: pulumi.IntRef(122149),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("ratePolicyJson", ratePolicy.Json)
-// 		ctx.Export("ratePolicyOutput", ratePolicy.OutputText)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ratePolicies, err := akamai.GetAppSecRatePolicies(ctx, &GetAppSecRatePoliciesArgs{
+//				ConfigId: configuration.ConfigId,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("ratePoliciesOutput", ratePolicies.OutputText)
+//			ctx.Export("ratePoliciesJson", ratePolicies.Json)
+//			ratePolicy, err := akamai.GetAppSecRatePolicies(ctx, &GetAppSecRatePoliciesArgs{
+//				ConfigId:     configuration.ConfigId,
+//				RatePolicyId: pulumi.IntRef(122149),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("ratePolicyJson", ratePolicy.Json)
+//			ctx.Export("ratePolicyOutput", ratePolicy.OutputText)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //

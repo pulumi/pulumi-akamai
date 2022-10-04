@@ -24,7 +24,7 @@ class AppSecRuleArgs:
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
         :param pulumi.Input[int] rule_id: . Unique identifier of the rule being modified.
         :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
         :param pulumi.Input[str] rule_action: Allowed values are:
                - **alert**. Record the event.
                - **deny**. Block the request.
@@ -79,7 +79,7 @@ class AppSecRuleArgs:
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> Optional[pulumi.Input[str]]:
         """
-        . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+        . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
         """
         return pulumi.get(self, "condition_exception")
 
@@ -114,7 +114,7 @@ class _AppSecRuleState:
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecRule resources.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
         :param pulumi.Input[str] rule_action: Allowed values are:
                - **alert**. Record the event.
@@ -139,7 +139,7 @@ class _AppSecRuleState:
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> Optional[pulumi.Input[str]]:
         """
-        . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+        . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
         """
         return pulumi.get(self, "condition_exception")
 
@@ -237,7 +237,7 @@ class AppSecRule(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
         :param pulumi.Input[str] rule_action: Allowed values are:
                - **alert**. Record the event.
@@ -339,7 +339,7 @@ class AppSecRule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
         :param pulumi.Input[str] rule_action: Allowed values are:
                - **alert**. Record the event.
@@ -364,7 +364,7 @@ class AppSecRule(pulumi.CustomResource):
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> pulumi.Output[Optional[str]]:
         """
-        . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule. You can view a sample JSON file in the [Modify the conditions and exceptions of a rule](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putruleconditionexception) section of the Application Security API documentation.
+        . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
         """
         return pulumi.get(self, "condition_exception")
 

@@ -131,7 +131,7 @@ func (i *AppSecSecurityPolicyRename) ToAppSecSecurityPolicyRenameOutputWithConte
 // AppSecSecurityPolicyRenameArrayInput is an input type that accepts AppSecSecurityPolicyRenameArray and AppSecSecurityPolicyRenameArrayOutput values.
 // You can construct a concrete instance of `AppSecSecurityPolicyRenameArrayInput` via:
 //
-//          AppSecSecurityPolicyRenameArray{ AppSecSecurityPolicyRenameArgs{...} }
+//	AppSecSecurityPolicyRenameArray{ AppSecSecurityPolicyRenameArgs{...} }
 type AppSecSecurityPolicyRenameArrayInput interface {
 	pulumi.Input
 
@@ -156,7 +156,7 @@ func (i AppSecSecurityPolicyRenameArray) ToAppSecSecurityPolicyRenameArrayOutput
 // AppSecSecurityPolicyRenameMapInput is an input type that accepts AppSecSecurityPolicyRenameMap and AppSecSecurityPolicyRenameMapOutput values.
 // You can construct a concrete instance of `AppSecSecurityPolicyRenameMapInput` via:
 //
-//          AppSecSecurityPolicyRenameMap{ "key": AppSecSecurityPolicyRenameArgs{...} }
+//	AppSecSecurityPolicyRenameMap{ "key": AppSecSecurityPolicyRenameArgs{...} }
 type AppSecSecurityPolicyRenameMapInput interface {
 	pulumi.Input
 

@@ -96,7 +96,7 @@ def get_app_sec_api_request_constraints(api_id: Optional[int] = None,
     """
     **Scopes**: Security policy; API endpoint
 
-    Returns information about API endpoint constraints and actions. The returned information is described in the [API Constraints members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapirequestconstraints) section of the Application Security API.
+    Returns information about API endpoint constraints and actions.
 
     **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/api-request-constraints](https://techdocs.akamai.com/application-security/reference/get-api-request-constraints)
 
@@ -155,7 +155,7 @@ def get_app_sec_api_request_constraints_output(api_id: Optional[pulumi.Input[Opt
     """
     **Scopes**: Security policy; API endpoint
 
-    Returns information about API endpoint constraints and actions. The returned information is described in the [API Constraints members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getapirequestconstraints) section of the Application Security API.
+    Returns information about API endpoint constraints and actions.
 
     **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/api-request-constraints](https://techdocs.akamai.com/application-security/reference/get-api-request-constraints)
 

@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		states, err := akamai.GetIamStates(ctx, &GetIamStatesArgs{
-// 			Country: "canada",
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("supportedStates", states)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			states, err := akamai.GetIamStates(ctx, &GetIamStatesArgs{
+//				Country: "canada",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("supportedStates", states)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Attributes reference
 //
@@ -43,7 +46,7 @@ import (
 //
 // * `states` — A list of states.
 //
-// [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getadmincountrystates)
+// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-states)
 func GetIamStates(ctx *pulumi.Context, args *GetIamStatesArgs, opts ...pulumi.InvokeOption) (*GetIamStatesResult, error) {
 	var rv GetIamStatesResult
 	err := ctx.Invoke("akamai:index/getIamStates:getIamStates", args, &rv, opts...)
@@ -55,7 +58,7 @@ func GetIamStates(ctx *pulumi.Context, args *GetIamStatesArgs, opts ...pulumi.In
 
 // A collection of arguments for invoking getIamStates.
 type GetIamStatesArgs struct {
-	// — (required, string) Sepcifies USA or Canada.
+	// — (required, string) Specifies USA or Canada.
 	Country string `pulumi:"country"`
 }
 
@@ -82,7 +85,7 @@ func GetIamStatesOutput(ctx *pulumi.Context, args GetIamStatesOutputArgs, opts .
 
 // A collection of arguments for invoking getIamStates.
 type GetIamStatesOutputArgs struct {
-	// — (required, string) Sepcifies USA or Canada.
+	// — (required, string) Specifies USA or Canada.
 	Country pulumi.StringInput `pulumi:"country"`
 }
 

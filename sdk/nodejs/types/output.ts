@@ -338,7 +338,7 @@ export interface DatastreamAzureConnector {
      */
     accessKey: string;
     /**
-     * - (Required) Specifies the Azure Storage account name.
+     * Specifies the Azure Storage account name.
      */
     accountName: string;
     /**
@@ -351,7 +351,7 @@ export interface DatastreamAzureConnector {
      */
     connectorName: string;
     /**
-     * - (Required) Specifies the Azure Storage container name.
+     * Specifies the Azure Storage container name.
      */
     containerName: string;
     /**
@@ -366,15 +366,15 @@ export interface DatastreamConfig {
      */
     delimiter?: string;
     /**
-     * - (Required) The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
+     * The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
      */
     format: string;
     /**
-     * - (Required) How often you want to collect logs from each uploader and send them to a destination.
+     * How often you want to collect logs from each uploader and send them to a destination.
      */
     frequency: outputs.DatastreamConfigFrequency;
     /**
-     * - (Optional) The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
+     * The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
      */
     uploadFilePrefix?: string;
     /**
@@ -385,14 +385,14 @@ export interface DatastreamConfig {
 
 export interface DatastreamConfigFrequency {
     /**
-     * - (Required) The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
+     * The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
      */
     timeInSec: number;
 }
 
 export interface DatastreamDatadogConnector {
     /**
-     * - (Required) **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
+     * **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
      * * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
      */
     authToken: string;
@@ -442,15 +442,15 @@ export interface DatastreamGcsConnector {
      */
     path?: string;
     /**
-     * - (Required) **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
+     * **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
      */
     privateKey: string;
     /**
-     * - (Required) The unique ID of your Google Cloud project.
+     * The unique ID of your Google Cloud project.
      */
     projectId: string;
     /**
-     * - (Required)	The name of the service account with the storage.object.create permission or Storage Object Creator role.
+     * The name of the service account with the storage.object.create permission or Storage Object Creator role.
      */
     serviceAccountName: string;
 }
@@ -562,7 +562,7 @@ export interface DatastreamSplunkConnector {
      */
     connectorName: string;
     /**
-     * - (Required) **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
+     * **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
      */
     eventCollectorToken: string;
     /**
@@ -610,6 +610,170 @@ export interface EdgeKvInitialData {
     group?: string;
     key: string;
     value: string;
+}
+
+export interface GetCPSEnrollmentAdminContact {
+    addressLineOne: string;
+    addressLineTwo?: string;
+    city: string;
+    countryCode: string;
+    email: string;
+    firstName: string;
+    lastName: string;
+    organization: string;
+    phone: string;
+    postalCode: string;
+    region: string;
+    title?: string;
+}
+
+export interface GetCPSEnrollmentCsr {
+    city: string;
+    countryCode: string;
+    organization: string;
+    organizationalUnit: string;
+    state: string;
+}
+
+export interface GetCPSEnrollmentDnsChallenge {
+    domain: string;
+    fullPath: string;
+    responseBody: string;
+}
+
+export interface GetCPSEnrollmentHttpChallenge {
+    domain: string;
+    fullPath: string;
+    responseBody: string;
+}
+
+export interface GetCPSEnrollmentNetworkConfiguration {
+    clientMutualAuthentications: outputs.GetCPSEnrollmentNetworkConfigurationClientMutualAuthentication[];
+    cloneDnsNames: boolean;
+    disallowedTlsVersions: string[];
+    geography: string;
+    mustHaveCiphers: string;
+    ocspStapling: string;
+    preferredCiphers: string;
+    quicEnabled: boolean;
+}
+
+export interface GetCPSEnrollmentNetworkConfigurationClientMutualAuthentication {
+    ocspEnabled: boolean;
+    sendCaListToClient: boolean;
+    setId: string;
+}
+
+export interface GetCPSEnrollmentOrganization {
+    addressLineOne: string;
+    addressLineTwo: string;
+    city: string;
+    countryCode: string;
+    name: string;
+    phone: string;
+    postalCode: string;
+    region: string;
+}
+
+export interface GetCPSEnrollmentTechContact {
+    addressLineOne: string;
+    addressLineTwo?: string;
+    city: string;
+    countryCode: string;
+    email: string;
+    firstName: string;
+    lastName: string;
+    organization: string;
+    phone: string;
+    postalCode: string;
+    region: string;
+    title?: string;
+}
+
+export interface GetCPSEnrollmentsEnrollment {
+    adminContacts: outputs.GetCPSEnrollmentsEnrollmentAdminContact[];
+    certificateChainType: string;
+    certificateType: string;
+    commonName: string;
+    csrs: outputs.GetCPSEnrollmentsEnrollmentCsr[];
+    enableMultiStackedCertificates: boolean;
+    enrollmentId: number;
+    networkConfigurations: outputs.GetCPSEnrollmentsEnrollmentNetworkConfiguration[];
+    organizations: outputs.GetCPSEnrollmentsEnrollmentOrganization[];
+    pendingChanges: boolean;
+    registrationAuthority: string;
+    sans: string[];
+    secureNetwork: string;
+    signatureAlgorithm: string;
+    sniOnly: boolean;
+    techContacts: outputs.GetCPSEnrollmentsEnrollmentTechContact[];
+    validationType: string;
+}
+
+export interface GetCPSEnrollmentsEnrollmentAdminContact {
+    addressLineOne: string;
+    addressLineTwo?: string;
+    city: string;
+    countryCode: string;
+    email: string;
+    firstName: string;
+    lastName: string;
+    organization: string;
+    phone: string;
+    postalCode: string;
+    region: string;
+    title?: string;
+}
+
+export interface GetCPSEnrollmentsEnrollmentCsr {
+    city: string;
+    countryCode: string;
+    organization: string;
+    organizationalUnit: string;
+    state: string;
+}
+
+export interface GetCPSEnrollmentsEnrollmentNetworkConfiguration {
+    clientMutualAuthentications: outputs.GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication[];
+    cloneDnsNames: boolean;
+    disallowedTlsVersions: string[];
+    geography: string;
+    mustHaveCiphers: string;
+    ocspStapling: string;
+    preferredCiphers: string;
+    quicEnabled: boolean;
+}
+
+export interface GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication {
+    ocspEnabled: boolean;
+    sendCaListToClient: boolean;
+    setId: string;
+}
+
+export interface GetCPSEnrollmentsEnrollmentOrganization {
+    addressLineOne: string;
+    addressLineTwo: string;
+    city: string;
+    countryCode: string;
+    name: string;
+    phone: string;
+    postalCode: string;
+    region: string;
+}
+
+export interface GetCPSEnrollmentsEnrollmentTechContact {
+    addressLineOne: string;
+    addressLineTwo?: string;
+    city: string;
+    countryCode: string;
+    email: string;
+    firstName: string;
+    lastName: string;
+    organization: string;
+    phone: string;
+    postalCode: string;
+    region: string;
+    title?: string;
 }
 
 export interface GetCloudletsApiPrioritizationMatchRuleMatchRule {
@@ -2074,7 +2238,7 @@ export interface PropertyActivationRuleWarning {
 
 export interface PropertyHostname {
     /**
-     * The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+     * The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
      */
     certProvisioningType: string;
     certStatuses: outputs.PropertyHostnameCertStatus[];
@@ -2224,7 +2388,7 @@ export namespace properties {
 
     export interface PropertyHostname {
         /**
-         * The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+         * The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
          */
         certProvisioningType: string;
         certStatuses: outputs.properties.PropertyHostnameCertStatus[];

@@ -25,6 +25,10 @@ from .app_sec_eval_penalty_box import *
 from .app_sec_eval_rule import *
 from .app_sec_ip_geo import *
 from .app_sec_ip_geo_protection import *
+from .app_sec_malware_policy import *
+from .app_sec_malware_policy_action import *
+from .app_sec_malware_policy_actions import *
+from .app_sec_malware_protection import *
 from .app_sec_match_target import *
 from .app_sec_match_target_sequence import *
 from .app_sec_penalty_box import *
@@ -86,6 +90,9 @@ from .get_app_sec_hostname_coverage import *
 from .get_app_sec_hostname_coverage_match_targets import *
 from .get_app_sec_hostname_coverage_overlapping import *
 from .get_app_sec_ip_geo import *
+from .get_app_sec_malware_content_types import *
+from .get_app_sec_malware_policies import *
+from .get_app_sec_malware_policy_actions import *
 from .get_app_sec_match_targets import *
 from .get_app_sec_penalty_box import *
 from .get_app_sec_rate_policies import *
@@ -121,9 +128,13 @@ from .get_cloudlets_visitor_prioritization_match_rule import *
 from .get_contract import *
 from .get_contracts import *
 from .get_cp_code import *
+from .get_cps_enrollment import *
+from .get_cps_enrollments import *
 from .get_datastream_activation_history import *
 from .get_datastream_dataset_fields import *
 from .get_dns_record_set import *
+from .get_edge_worker import *
+from .get_edge_worker_activation import *
 from .get_edge_workers_property_rules import *
 from .get_edge_workers_resource_tier import *
 from .get_group import *
@@ -360,6 +371,38 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/appSecIPGeoProtection:AppSecIPGeoProtection": "AppSecIPGeoProtection"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appSecMalwarePolicy",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appSecMalwarePolicy:AppSecMalwarePolicy": "AppSecMalwarePolicy"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appSecMalwarePolicyAction",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appSecMalwarePolicyAction:AppSecMalwarePolicyAction": "AppSecMalwarePolicyAction"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appSecMalwarePolicyActions",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appSecMalwarePolicyActions:AppSecMalwarePolicyActions": "AppSecMalwarePolicyActions"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appSecMalwareProtection",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appSecMalwareProtection:AppSecMalwareProtection": "AppSecMalwareProtection"
   }
  },
  {

@@ -81,7 +81,7 @@ export class AppSecSecurityPolicy extends pulumi.CustomResource {
      */
     public readonly defaultSettings!: pulumi.Output<boolean | undefined>;
     /**
-     * Policy ID for new policy
+     * Unique identifier of the new security policy
      */
     public /*out*/ readonly securityPolicyId!: pulumi.Output<string>;
     /**
@@ -152,7 +152,7 @@ export interface AppSecSecurityPolicyState {
      */
     defaultSettings?: pulumi.Input<boolean>;
     /**
-     * Policy ID for new policy
+     * Unique identifier of the new security policy
      */
     securityPolicyId?: pulumi.Input<string>;
     /**

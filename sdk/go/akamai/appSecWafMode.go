@@ -26,34 +26,37 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		wafMode, err := akamai.NewAppSecWafMode(ctx, "wafMode", &akamai.AppSecWafModeArgs{
-// 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.String("gms1_134637"),
-// 			Mode:             pulumi.String("KRS"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("wafModeMode", wafMode.Mode)
-// 		ctx.Export("wafModeCurrentRuleset", wafMode.CurrentRuleset)
-// 		ctx.Export("wafModeEvalStatus", wafMode.EvalStatus)
-// 		ctx.Export("wafModeEvalRuleset", wafMode.EvalRuleset)
-// 		ctx.Export("wafModeEvalExpirationDate", wafMode.EvalExpirationDate)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			wafMode, err := akamai.NewAppSecWafMode(ctx, "wafMode", &akamai.AppSecWafModeArgs{
+//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId: pulumi.String("gms1_134637"),
+//				Mode:             pulumi.String("KRS"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("wafModeMode", wafMode.Mode)
+//			ctx.Export("wafModeCurrentRuleset", wafMode.CurrentRuleset)
+//			ctx.Export("wafModeEvalStatus", wafMode.EvalStatus)
+//			ctx.Export("wafModeEvalRuleset", wafMode.EvalRuleset)
+//			ctx.Export("wafModeEvalExpirationDate", wafMode.EvalExpirationDate)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
@@ -68,14 +71,18 @@ type AppSecWafMode struct {
 	pulumi.CustomResourceState
 
 	// . Unique identifier of the security configuration associated with the WAF mode settings being modified.
-	ConfigId           pulumi.IntOutput    `pulumi:"configId"`
-	CurrentRuleset     pulumi.StringOutput `pulumi:"currentRuleset"`
+	ConfigId pulumi.IntOutput `pulumi:"configId"`
+	// Versioning information for the current Kona Rule Set
+	CurrentRuleset pulumi.StringOutput `pulumi:"currentRuleset"`
+	// Date on which the evaluation period ends, if applicable
 	EvalExpirationDate pulumi.StringOutput `pulumi:"evalExpirationDate"`
-	EvalRuleset        pulumi.StringOutput `pulumi:"evalRuleset"`
-	EvalStatus         pulumi.StringOutput `pulumi:"evalStatus"`
+	// Versioning information for the Kona Rule Set being evaluated, if applicable
+	EvalRuleset pulumi.StringOutput `pulumi:"evalRuleset"`
+	// Whether an evaluation is currently in progress
+	EvalStatus pulumi.StringOutput `pulumi:"evalStatus"`
 	// . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
 	Mode pulumi.StringOutput `pulumi:"mode"`
-	// Text Export representation
+	// Text representation
 	OutputText pulumi.StringOutput `pulumi:"outputText"`
 	// . Unique identifier of the security policy associated with the WAF mode settings being modified.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
@@ -120,14 +127,18 @@ func GetAppSecWafMode(ctx *pulumi.Context,
 // Input properties used for looking up and filtering AppSecWafMode resources.
 type appSecWafModeState struct {
 	// . Unique identifier of the security configuration associated with the WAF mode settings being modified.
-	ConfigId           *int    `pulumi:"configId"`
-	CurrentRuleset     *string `pulumi:"currentRuleset"`
+	ConfigId *int `pulumi:"configId"`
+	// Versioning information for the current Kona Rule Set
+	CurrentRuleset *string `pulumi:"currentRuleset"`
+	// Date on which the evaluation period ends, if applicable
 	EvalExpirationDate *string `pulumi:"evalExpirationDate"`
-	EvalRuleset        *string `pulumi:"evalRuleset"`
-	EvalStatus         *string `pulumi:"evalStatus"`
+	// Versioning information for the Kona Rule Set being evaluated, if applicable
+	EvalRuleset *string `pulumi:"evalRuleset"`
+	// Whether an evaluation is currently in progress
+	EvalStatus *string `pulumi:"evalStatus"`
 	// . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
 	Mode *string `pulumi:"mode"`
-	// Text Export representation
+	// Text representation
 	OutputText *string `pulumi:"outputText"`
 	// . Unique identifier of the security policy associated with the WAF mode settings being modified.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
@@ -135,14 +146,18 @@ type appSecWafModeState struct {
 
 type AppSecWafModeState struct {
 	// . Unique identifier of the security configuration associated with the WAF mode settings being modified.
-	ConfigId           pulumi.IntPtrInput
-	CurrentRuleset     pulumi.StringPtrInput
+	ConfigId pulumi.IntPtrInput
+	// Versioning information for the current Kona Rule Set
+	CurrentRuleset pulumi.StringPtrInput
+	// Date on which the evaluation period ends, if applicable
 	EvalExpirationDate pulumi.StringPtrInput
-	EvalRuleset        pulumi.StringPtrInput
-	EvalStatus         pulumi.StringPtrInput
+	// Versioning information for the Kona Rule Set being evaluated, if applicable
+	EvalRuleset pulumi.StringPtrInput
+	// Whether an evaluation is currently in progress
+	EvalStatus pulumi.StringPtrInput
 	// . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
 	Mode pulumi.StringPtrInput
-	// Text Export representation
+	// Text representation
 	OutputText pulumi.StringPtrInput
 	// . Unique identifier of the security policy associated with the WAF mode settings being modified.
 	SecurityPolicyId pulumi.StringPtrInput
@@ -197,7 +212,7 @@ func (i *AppSecWafMode) ToAppSecWafModeOutputWithContext(ctx context.Context) Ap
 // AppSecWafModeArrayInput is an input type that accepts AppSecWafModeArray and AppSecWafModeArrayOutput values.
 // You can construct a concrete instance of `AppSecWafModeArrayInput` via:
 //
-//          AppSecWafModeArray{ AppSecWafModeArgs{...} }
+//	AppSecWafModeArray{ AppSecWafModeArgs{...} }
 type AppSecWafModeArrayInput interface {
 	pulumi.Input
 
@@ -222,7 +237,7 @@ func (i AppSecWafModeArray) ToAppSecWafModeArrayOutputWithContext(ctx context.Co
 // AppSecWafModeMapInput is an input type that accepts AppSecWafModeMap and AppSecWafModeMapOutput values.
 // You can construct a concrete instance of `AppSecWafModeMapInput` via:
 //
-//          AppSecWafModeMap{ "key": AppSecWafModeArgs{...} }
+//	AppSecWafModeMap{ "key": AppSecWafModeArgs{...} }
 type AppSecWafModeMapInput interface {
 	pulumi.Input
 
@@ -263,18 +278,22 @@ func (o AppSecWafModeOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecWafMode) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
+// Versioning information for the current Kona Rule Set
 func (o AppSecWafModeOutput) CurrentRuleset() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecWafMode) pulumi.StringOutput { return v.CurrentRuleset }).(pulumi.StringOutput)
 }
 
+// Date on which the evaluation period ends, if applicable
 func (o AppSecWafModeOutput) EvalExpirationDate() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecWafMode) pulumi.StringOutput { return v.EvalExpirationDate }).(pulumi.StringOutput)
 }
 
+// Versioning information for the Kona Rule Set being evaluated, if applicable
 func (o AppSecWafModeOutput) EvalRuleset() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecWafMode) pulumi.StringOutput { return v.EvalRuleset }).(pulumi.StringOutput)
 }
 
+// Whether an evaluation is currently in progress
 func (o AppSecWafModeOutput) EvalStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecWafMode) pulumi.StringOutput { return v.EvalStatus }).(pulumi.StringOutput)
 }
@@ -284,7 +303,7 @@ func (o AppSecWafModeOutput) Mode() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecWafMode) pulumi.StringOutput { return v.Mode }).(pulumi.StringOutput)
 }
 
-// Text Export representation
+// Text representation
 func (o AppSecWafModeOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecWafMode) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
 }

@@ -26,39 +26,42 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		reputationProfileActions, err := akamai.GetAppSecReputationProfileActions(ctx, &GetAppSecReputationProfileActionsArgs{
-// 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: "gms1_134637",
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("reputationProfileActionsText", reputationProfileActions.OutputText)
-// 		ctx.Export("reputationProfileActionsJson", reputationProfileActions.Json)
-// 		_, err = akamai.GetAppSecReputationProfileActions(ctx, &GetAppSecReputationProfileActionsArgs{
-// 			ConfigId:            configuration.ConfigId,
-// 			SecurityPolicyId:    "gms1_134637",
-// 			ReputationProfileId: pulumi.IntRef(12345),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("reputationProfileActions2", reputationProfileActions.Action)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			reputationProfileActions, err := akamai.GetAppSecReputationProfileActions(ctx, &GetAppSecReputationProfileActionsArgs{
+//				ConfigId:         configuration.ConfigId,
+//				SecurityPolicyId: "gms1_134637",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("reputationProfileActionsText", reputationProfileActions.OutputText)
+//			ctx.Export("reputationProfileActionsJson", reputationProfileActions.Json)
+//			_, err = akamai.GetAppSecReputationProfileActions(ctx, &GetAppSecReputationProfileActionsArgs{
+//				ConfigId:            configuration.ConfigId,
+//				SecurityPolicyId:    "gms1_134637",
+//				ReputationProfileId: pulumi.IntRef(12345),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("reputationProfileActions2", reputationProfileActions.Action)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
@@ -69,6 +72,7 @@ import (
 //   - **deny**. Block the request.
 //   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
 //   - **none**. Take no action.
+//
 // - `json`. JSON-formatted report of the reputation profile action information.
 // - `outputText`. Tabular report of the reputation profile action information.
 func GetAppSecReputationProfileActions(ctx *pulumi.Context, args *GetAppSecReputationProfileActionsArgs, opts ...pulumi.InvokeOption) (*GetAppSecReputationProfileActionsResult, error) {

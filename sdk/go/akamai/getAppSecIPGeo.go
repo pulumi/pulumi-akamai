@@ -24,32 +24,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ipGeo, err := akamai.LookupAppSecIPGeo(ctx, &GetAppSecIPGeoArgs{
-// 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: "gms1_134637",
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("ipGeoMode", ipGeo.Mode)
-// 		ctx.Export("geoNetworkLists", ipGeo.GeoNetworkLists)
-// 		ctx.Export("ipNetworkLists", ipGeo.IpNetworkLists)
-// 		ctx.Export("exceptionIpNetworkLists", ipGeo.ExceptionIpNetworkLists)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ipGeo, err := akamai.LookupAppSecIPGeo(ctx, &GetAppSecIPGeoArgs{
+//				ConfigId:         configuration.ConfigId,
+//				SecurityPolicyId: "gms1_134637",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("ipGeoMode", ipGeo.Mode)
+//			ctx.Export("geoNetworkLists", ipGeo.GeoNetworkLists)
+//			ctx.Export("ipNetworkLists", ipGeo.IpNetworkLists)
+//			ctx.Export("exceptionIpNetworkLists", ipGeo.ExceptionIpNetworkLists)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
@@ -58,6 +61,7 @@ import (
 // - `mode`. Specifies the action taken by the IP/Geo firewall. Valid values are:
 //   - **block**. Networks on the IP and geographic network lists are prevented from passing through the firewall.
 //   - **allow**.  Networks on the IP and geographic network lists are allowed to pass through the firewall.
+//
 // - `geoNetworkLists`. Network lists blocked or allowed based on geographic location.
 // - `ipNetworkLists`. Network lists blocked or allowed based on IP address.
 // - `exceptionIpNetworkLists`. Network lists allowed through the firewall regardless of the values assigned to the `mode`, `geoNetworkLists`, and `ipNetworkLists` parameters.

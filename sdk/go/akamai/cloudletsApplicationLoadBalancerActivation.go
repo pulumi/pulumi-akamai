@@ -23,24 +23,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		example, err := akamai.NewCloudletsApplicationLoadBalancerActivation(ctx, "example", &akamai.CloudletsApplicationLoadBalancerActivationArgs{
-// 			OriginId: pulumi.String("alb_test_1"),
-// 			Network:  pulumi.String("staging"),
-// 			Version:  pulumi.Int(1),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("status", example.Status)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			example, err := akamai.NewCloudletsApplicationLoadBalancerActivation(ctx, "example", &akamai.CloudletsApplicationLoadBalancerActivationArgs{
+//				OriginId: pulumi.String("alb_test_1"),
+//				Network:  pulumi.String("staging"),
+//				Version:  pulumi.Int(1),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("status", example.Status)
+//			return nil
+//		})
+//	}
+//
 // ```
 type CloudletsApplicationLoadBalancerActivation struct {
 	pulumi.CustomResourceState
@@ -163,7 +166,7 @@ func (i *CloudletsApplicationLoadBalancerActivation) ToCloudletsApplicationLoadB
 // CloudletsApplicationLoadBalancerActivationArrayInput is an input type that accepts CloudletsApplicationLoadBalancerActivationArray and CloudletsApplicationLoadBalancerActivationArrayOutput values.
 // You can construct a concrete instance of `CloudletsApplicationLoadBalancerActivationArrayInput` via:
 //
-//          CloudletsApplicationLoadBalancerActivationArray{ CloudletsApplicationLoadBalancerActivationArgs{...} }
+//	CloudletsApplicationLoadBalancerActivationArray{ CloudletsApplicationLoadBalancerActivationArgs{...} }
 type CloudletsApplicationLoadBalancerActivationArrayInput interface {
 	pulumi.Input
 
@@ -188,7 +191,7 @@ func (i CloudletsApplicationLoadBalancerActivationArray) ToCloudletsApplicationL
 // CloudletsApplicationLoadBalancerActivationMapInput is an input type that accepts CloudletsApplicationLoadBalancerActivationMap and CloudletsApplicationLoadBalancerActivationMapOutput values.
 // You can construct a concrete instance of `CloudletsApplicationLoadBalancerActivationMapInput` via:
 //
-//          CloudletsApplicationLoadBalancerActivationMap{ "key": CloudletsApplicationLoadBalancerActivationArgs{...} }
+//	CloudletsApplicationLoadBalancerActivationMap{ "key": CloudletsApplicationLoadBalancerActivationArgs{...} }
 type CloudletsApplicationLoadBalancerActivationMapInput interface {
 	pulumi.Input
 

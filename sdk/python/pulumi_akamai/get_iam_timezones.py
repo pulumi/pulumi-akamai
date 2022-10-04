@@ -67,7 +67,7 @@ def get_iam_timezones(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableG
       * `offset` - The time zone offset from GMT.
       * `posix` - The time zone posix.
 
-    [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getadmintimezones)
+    [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-timezones)
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

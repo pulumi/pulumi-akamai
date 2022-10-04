@@ -24,35 +24,38 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		wafMode, err := akamai.LookupAppSecWafMode(ctx, &GetAppSecWafModeArgs{
-// 			ConfigId:         configuration.ConfigId,
-// 			SecurityPolicyId: "gms1_134637",
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("wafModeMode", wafMode.Mode)
-// 		ctx.Export("wafModeCurrentRuleset", wafMode.CurrentRuleset)
-// 		ctx.Export("wafModeEvalStatus", wafMode.EvalStatus)
-// 		ctx.Export("wafModeEvalRuleset", wafMode.EvalRuleset)
-// 		ctx.Export("wafModeEvalExpirationDate", wafMode.EvalExpirationDate)
-// 		ctx.Export("wafModeText", wafMode.OutputText)
-// 		ctx.Export("wafModeJson", wafMode.Json)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			wafMode, err := akamai.LookupAppSecWafMode(ctx, &GetAppSecWafModeArgs{
+//				ConfigId:         configuration.ConfigId,
+//				SecurityPolicyId: "gms1_134637",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("wafModeMode", wafMode.Mode)
+//			ctx.Export("wafModeCurrentRuleset", wafMode.CurrentRuleset)
+//			ctx.Export("wafModeEvalStatus", wafMode.EvalStatus)
+//			ctx.Export("wafModeEvalRuleset", wafMode.EvalRuleset)
+//			ctx.Export("wafModeEvalExpirationDate", wafMode.EvalExpirationDate)
+//			ctx.Export("wafModeText", wafMode.OutputText)
+//			ctx.Export("wafModeJson", wafMode.Json)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //

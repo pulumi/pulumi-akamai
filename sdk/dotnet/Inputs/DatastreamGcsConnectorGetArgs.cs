@@ -40,19 +40,19 @@ namespace Pulumi.Akamai.Inputs
         public Input<string>? Path { get; set; }
 
         /// <summary>
-        /// - (Required) **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
+        /// **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
         /// </summary>
         [Input("privateKey", required: true)]
         public Input<string> PrivateKey { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) The unique ID of your Google Cloud project.
+        /// The unique ID of your Google Cloud project.
         /// </summary>
         [Input("projectId", required: true)]
         public Input<string> ProjectId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required)	The name of the service account with the storage.object.create permission or Storage Object Creator role.
+        /// The name of the service account with the storage.object.create permission or Storage Object Creator role.
         /// </summary>
         [Input("serviceAccountName", required: true)]
         public Input<string> ServiceAccountName { get; set; } = null!;

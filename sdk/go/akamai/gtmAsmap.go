@@ -25,29 +25,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewGtmAsmap(ctx, "demoAsmap", &akamai.GtmAsmapArgs{
-// 			DefaultDatacenter: &GtmAsmapDefaultDatacenterArgs{
-// 				DatacenterId: pulumi.Int(5400),
-// 				Nickname:     pulumi.String("All Other AS numbers"),
-// 			},
-// 			Domain: pulumi.String("demo_domain.akadns.net"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
-// ## Schema reference
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewGtmAsmap(ctx, "demoAsmap", &akamai.GtmAsmapArgs{
+//				DefaultDatacenter: &GtmAsmapDefaultDatacenterArgs{
+//					DatacenterId: pulumi.Int(5400),
+//					Nickname:     pulumi.String("All Other AS numbers"),
+//				},
+//				Domain: pulumi.String("demo_domain.akadns.net"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
 //
-// You can download the GTM AS Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#asmap) page.
+// ```
 type GtmAsmap struct {
 	pulumi.CustomResourceState
 
@@ -186,7 +186,7 @@ func (i *GtmAsmap) ToGtmAsmapOutputWithContext(ctx context.Context) GtmAsmapOutp
 // GtmAsmapArrayInput is an input type that accepts GtmAsmapArray and GtmAsmapArrayOutput values.
 // You can construct a concrete instance of `GtmAsmapArrayInput` via:
 //
-//          GtmAsmapArray{ GtmAsmapArgs{...} }
+//	GtmAsmapArray{ GtmAsmapArgs{...} }
 type GtmAsmapArrayInput interface {
 	pulumi.Input
 
@@ -211,7 +211,7 @@ func (i GtmAsmapArray) ToGtmAsmapArrayOutputWithContext(ctx context.Context) Gtm
 // GtmAsmapMapInput is an input type that accepts GtmAsmapMap and GtmAsmapMapOutput values.
 // You can construct a concrete instance of `GtmAsmapMapInput` via:
 //
-//          GtmAsmapMap{ "key": GtmAsmapArgs{...} }
+//	GtmAsmapMap{ "key": GtmAsmapArgs{...} }
 type GtmAsmapMapInput interface {
 	pulumi.Input
 

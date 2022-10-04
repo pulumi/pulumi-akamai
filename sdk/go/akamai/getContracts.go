@@ -17,28 +17,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		my_example, err := akamai.GetContracts(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("propertyMatch", my_example)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			my_example, err := akamai.GetContracts(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("propertyMatch", my_example)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Attributes reference
 //
 // This data source returns these attributes:
 //
 // * `contracts` - A list of supported contracts, with the following properties:
-//   * `contractId` - The contract's unique ID, including the `ctr_` prefix.
-//   * `contractTypeName` - The type of contract, either `DIRECT_CUSTOMER`, `INDIRECT_CUSTOMER`, `PARENT_CUSTOMER`, `REFERRAL_PARTNER`, `TIER_1_RESELLER`, `VAR_CUSTOMER`, `VALUE_ADDED_RESELLER`, `PARTNER`, `PORTAL_PARTNER`, `STREAMING_RESELLER`, `AKAMAI_INTERNAL`, or `UNKNOWN`.
+//   - `contractId` - The contract's unique ID, including the `ctr_` prefix.
+//   - `contractTypeName` - The type of contract, either `DIRECT_CUSTOMER`, `INDIRECT_CUSTOMER`, `PARENT_CUSTOMER`, `REFERRAL_PARTNER`, `TIER_1_RESELLER`, `VAR_CUSTOMER`, `VALUE_ADDED_RESELLER`, `PARTNER`, `PORTAL_PARTNER`, `STREAMING_RESELLER`, `AKAMAI_INTERNAL`, or `UNKNOWN`.
 func GetContracts(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetContractsResult, error) {
 	var rv GetContractsResult
 	err := ctx.Invoke("akamai:index/getContracts:getContracts", nil, &rv, opts...)

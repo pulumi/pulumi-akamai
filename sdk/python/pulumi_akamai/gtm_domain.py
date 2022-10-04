@@ -774,9 +774,6 @@ class GtmDomain(pulumi.CustomResource):
             group="100",
             type="basic")
         ```
-        ## Schema reference
-
-        You can download the GTM Domain backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#domain) page.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -821,9 +818,6 @@ class GtmDomain(pulumi.CustomResource):
             group="100",
             type="basic")
         ```
-        ## Schema reference
-
-        You can download the GTM Domain backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#domain) page.
 
         :param str resource_name: The name of the resource.
         :param GtmDomainArgs args: The arguments to use to populate this resource's properties.

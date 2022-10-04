@@ -23,34 +23,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewGtmProperty(ctx, "demoProperty", &akamai.GtmPropertyArgs{
-// 			Domain:               pulumi.String("demo_domain.akadns.net"),
-// 			HandoutLimit:         pulumi.Int(5),
-// 			HandoutMode:          pulumi.String("normal"),
-// 			ScoreAggregationType: pulumi.String("median"),
-// 			TrafficTargets: GtmPropertyTrafficTargetArray{
-// 				&GtmPropertyTrafficTargetArgs{
-// 					DatacenterId: pulumi.Int(3131),
-// 				},
-// 			},
-// 			Type: pulumi.String("weighted-round-robin"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
-// ## Schema reference
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewGtmProperty(ctx, "demoProperty", &akamai.GtmPropertyArgs{
+//				Domain:               pulumi.String("demo_domain.akadns.net"),
+//				HandoutLimit:         pulumi.Int(5),
+//				HandoutMode:          pulumi.String("normal"),
+//				ScoreAggregationType: pulumi.String("median"),
+//				TrafficTargets: GtmPropertyTrafficTargetArray{
+//					&GtmPropertyTrafficTargetArgs{
+//						DatacenterId: pulumi.Int(3131),
+//					},
+//				},
+//				Type: pulumi.String("weighted-round-robin"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
 //
-// You can download the GTM Property backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#property) page.
+// ```
 //
 // Deprecated: akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty
 type GtmProperty struct {
@@ -465,7 +465,7 @@ func (i *GtmProperty) ToGtmPropertyOutputWithContext(ctx context.Context) GtmPro
 // GtmPropertyArrayInput is an input type that accepts GtmPropertyArray and GtmPropertyArrayOutput values.
 // You can construct a concrete instance of `GtmPropertyArrayInput` via:
 //
-//          GtmPropertyArray{ GtmPropertyArgs{...} }
+//	GtmPropertyArray{ GtmPropertyArgs{...} }
 type GtmPropertyArrayInput interface {
 	pulumi.Input
 
@@ -490,7 +490,7 @@ func (i GtmPropertyArray) ToGtmPropertyArrayOutputWithContext(ctx context.Contex
 // GtmPropertyMapInput is an input type that accepts GtmPropertyMap and GtmPropertyMapOutput values.
 // You can construct a concrete instance of `GtmPropertyMapInput` via:
 //
-//          GtmPropertyMap{ "key": GtmPropertyArgs{...} }
+//	GtmPropertyMap{ "key": GtmPropertyArgs{...} }
 type GtmPropertyMapInput interface {
 	pulumi.Input
 

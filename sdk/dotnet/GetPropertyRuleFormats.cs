@@ -14,8 +14,8 @@ namespace Pulumi.Akamai
         /// <summary>
         /// Use the `akamai.getPropertyRuleFormats` data source to query the list of
         /// known rule formats.
-        /// You use rule formats to [freeze](https://developer.akamai.com/api/core_features/property_manager/v1.html#freezerf) or
-        /// [update](https://developer.akamai.com/api/core_features/property_manager/v1.html#updaterf) the versioned set of behaviors
+        /// You use rule formats to [freeze](https://techdocs.akamai.com/property-mgr/reference/modify-a-rule#freeze-a-feature-set-for-a-rule-tree) or
+        /// [update](https://techdocs.akamai.com/property-mgr/reference/modify-a-rule#update-rules-to-a-newer-set-of-features) the versioned set of behaviors
         /// and criteria a rule tree invokes. Without this mechanism, behaviors and criteria
         /// would update automatically and generate unexpected errors.
         /// 

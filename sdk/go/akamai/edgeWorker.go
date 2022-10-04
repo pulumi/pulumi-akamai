@@ -21,23 +21,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewEdgeWorker(ctx, "ew", &akamai.EdgeWorkerArgs{
-// 			GroupId:        pulumi.Int(72297),
-// 			ResourceTierId: pulumi.Int(100),
-// 			LocalBundle:    pulumi.Any(_var.Bundle_path),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewEdgeWorker(ctx, "ew", &akamai.EdgeWorkerArgs{
+//				GroupId:        pulumi.Int(72297),
+//				ResourceTierId: pulumi.Int(100),
+//				LocalBundle:    pulumi.Any(_var.Bundle_path),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Attributes reference
 //
@@ -191,7 +194,7 @@ func (i *EdgeWorker) ToEdgeWorkerOutputWithContext(ctx context.Context) EdgeWork
 // EdgeWorkerArrayInput is an input type that accepts EdgeWorkerArray and EdgeWorkerArrayOutput values.
 // You can construct a concrete instance of `EdgeWorkerArrayInput` via:
 //
-//          EdgeWorkerArray{ EdgeWorkerArgs{...} }
+//	EdgeWorkerArray{ EdgeWorkerArgs{...} }
 type EdgeWorkerArrayInput interface {
 	pulumi.Input
 
@@ -216,7 +219,7 @@ func (i EdgeWorkerArray) ToEdgeWorkerArrayOutputWithContext(ctx context.Context)
 // EdgeWorkerMapInput is an input type that accepts EdgeWorkerMap and EdgeWorkerMapOutput values.
 // You can construct a concrete instance of `EdgeWorkerMapInput` via:
 //
-//          EdgeWorkerMap{ "key": EdgeWorkerArgs{...} }
+//	EdgeWorkerMap{ "key": EdgeWorkerArgs{...} }
 type EdgeWorkerMapInput interface {
 	pulumi.Input
 

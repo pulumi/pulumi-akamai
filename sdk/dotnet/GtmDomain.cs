@@ -37,9 +37,6 @@ namespace Pulumi.Akamai
     /// 
     /// }
     /// ```
-    /// ## Schema reference
-    /// 
-    /// You can download the GTM Domain backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#domain) page.
     /// </summary>
     [AkamaiResourceType("akamai:index/gtmDomain:GtmDomain")]
     public partial class GtmDomain : Pulumi.CustomResource

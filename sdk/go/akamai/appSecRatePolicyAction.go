@@ -27,49 +27,52 @@ import (
 // package main
 //
 // import (
-// 	"fmt"
-// 	"io/ioutil"
 //
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"fmt"
+//	"io/ioutil"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func readFileOrPanic(path string) pulumi.StringPtrInput {
-// 	data, err := ioutil.ReadFile(path)
-// 	if err != nil {
-// 		panic(err.Error())
-// 	}
-// 	return pulumi.String(string(data))
-// }
+//	func readFileOrPanic(path string) pulumi.StringPtrInput {
+//		data, err := ioutil.ReadFile(path)
+//		if err != nil {
+//			panic(err.Error())
+//		}
+//		return pulumi.String(string(data))
+//	}
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		appsecRatePolicy, err := akamai.NewAppSecRatePolicy(ctx, "appsecRatePolicy", &akamai.AppSecRatePolicyArgs{
-// 			ConfigId:   pulumi.Int(configuration.ConfigId),
-// 			RatePolicy: readFileOrPanic(fmt.Sprintf("%v/rate_policy.json", path.Module)),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecRatePolicyAction(ctx, "appsecRatePolicyAction", &akamai.AppSecRatePolicyActionArgs{
-// 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.String("gms1_134637"),
-// 			RatePolicyId:     appsecRatePolicy.RatePolicyId,
-// 			Ipv4Action:       pulumi.String("deny"),
-// 			Ipv6Action:       pulumi.String("deny"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			appsecRatePolicy, err := akamai.NewAppSecRatePolicy(ctx, "appsecRatePolicy", &akamai.AppSecRatePolicyArgs{
+//				ConfigId:   pulumi.Int(configuration.ConfigId),
+//				RatePolicy: readFileOrPanic(fmt.Sprintf("%v/rate_policy.json", path.Module)),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecRatePolicyAction(ctx, "appsecRatePolicyAction", &akamai.AppSecRatePolicyActionArgs{
+//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId: pulumi.String("gms1_134637"),
+//				RatePolicyId:     appsecRatePolicy.RatePolicyId,
+//				Ipv4Action:       pulumi.String("deny"),
+//				Ipv6Action:       pulumi.String("deny"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type AppSecRatePolicyAction struct {
 	pulumi.CustomResourceState
@@ -247,7 +250,7 @@ func (i *AppSecRatePolicyAction) ToAppSecRatePolicyActionOutputWithContext(ctx c
 // AppSecRatePolicyActionArrayInput is an input type that accepts AppSecRatePolicyActionArray and AppSecRatePolicyActionArrayOutput values.
 // You can construct a concrete instance of `AppSecRatePolicyActionArrayInput` via:
 //
-//          AppSecRatePolicyActionArray{ AppSecRatePolicyActionArgs{...} }
+//	AppSecRatePolicyActionArray{ AppSecRatePolicyActionArgs{...} }
 type AppSecRatePolicyActionArrayInput interface {
 	pulumi.Input
 
@@ -272,7 +275,7 @@ func (i AppSecRatePolicyActionArray) ToAppSecRatePolicyActionArrayOutputWithCont
 // AppSecRatePolicyActionMapInput is an input type that accepts AppSecRatePolicyActionMap and AppSecRatePolicyActionMapOutput values.
 // You can construct a concrete instance of `AppSecRatePolicyActionMapInput` via:
 //
-//          AppSecRatePolicyActionMap{ "key": AppSecRatePolicyActionArgs{...} }
+//	AppSecRatePolicyActionMap{ "key": AppSecRatePolicyActionArgs{...} }
 type AppSecRatePolicyActionMapInput interface {
 	pulumi.Input
 

@@ -13,7 +13,7 @@ import (
 
 // Use the `GtmCidrmap` resource to create, configure, and import a GTM Classless Inter-Domain Routing (CIDR) map. CIDR mapping uses the IP addresses of the requesting name server to provide IP-specific CNAME entries. CNAMEs let you direct internal users to a specific environment or direct them to the origin. This lets you provide different responses to an internal corporate DNS infrastructure, such as internal test environments and another answer for all other name servers (`defaultDatacenter`).
 //
-//  CIDR maps split the Internet into multiple CIDR block zones. Properties that use a map can specify a handout CNAME for each zone on the property's editing page. To configure a property for CIDR mapping, your domain needs at least one CIDR map defined.
+//	CIDR maps split the Internet into multiple CIDR block zones. Properties that use a map can specify a handout CNAME for each zone on the property's editing page. To configure a property for CIDR mapping, your domain needs at least one CIDR map defined.
 //
 // > **Note** Import requires an ID with this format: `existingDomainName`:`existingMapName`.
 //
@@ -25,29 +25,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewGtmCidrmap(ctx, "demoCidrmap", &akamai.GtmCidrmapArgs{
-// 			DefaultDatacenter: &GtmCidrmapDefaultDatacenterArgs{
-// 				DatacenterId: pulumi.Int(5400),
-// 				Nickname:     pulumi.String("All Other CIDR Blocks"),
-// 			},
-// 			Domain: pulumi.String("demo_domain.akadns.net"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
-// ## Schema reference
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewGtmCidrmap(ctx, "demoCidrmap", &akamai.GtmCidrmapArgs{
+//				DefaultDatacenter: &GtmCidrmapDefaultDatacenterArgs{
+//					DatacenterId: pulumi.Int(5400),
+//					Nickname:     pulumi.String("All Other CIDR Blocks"),
+//				},
+//				Domain: pulumi.String("demo_domain.akadns.net"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
 //
-// You can download the GTM CIDR Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#cidrmap) page.
+// ```
 //
 // Deprecated: akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap
 type GtmCidrmap struct {
@@ -182,7 +182,7 @@ func (i *GtmCidrmap) ToGtmCidrmapOutputWithContext(ctx context.Context) GtmCidrm
 // GtmCidrmapArrayInput is an input type that accepts GtmCidrmapArray and GtmCidrmapArrayOutput values.
 // You can construct a concrete instance of `GtmCidrmapArrayInput` via:
 //
-//          GtmCidrmapArray{ GtmCidrmapArgs{...} }
+//	GtmCidrmapArray{ GtmCidrmapArgs{...} }
 type GtmCidrmapArrayInput interface {
 	pulumi.Input
 
@@ -207,7 +207,7 @@ func (i GtmCidrmapArray) ToGtmCidrmapArrayOutputWithContext(ctx context.Context)
 // GtmCidrmapMapInput is an input type that accepts GtmCidrmapMap and GtmCidrmapMapOutput values.
 // You can construct a concrete instance of `GtmCidrmapMapInput` via:
 //
-//          GtmCidrmapMap{ "key": GtmCidrmapArgs{...} }
+//	GtmCidrmapMap{ "key": GtmCidrmapArgs{...} }
 type GtmCidrmapMapInput interface {
 	pulumi.Input
 

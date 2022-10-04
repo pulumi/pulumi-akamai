@@ -3,7 +3,7 @@ module github.com/pulumi/pulumi-akamai/provider/v3
 go 1.18
 
 replace (
-	github.com/akamai/terraform-provider-akamai/v2 => github.com/pulumi/terraform-provider-akamai/v2 v2.0.0-20220725211858-f5cdf269e269
+	github.com/akamai/terraform-provider-akamai/v2 => github.com/pulumi/terraform-provider-akamai/v2 v2.0.0-20221004060031-2c576c5c105a
 	github.com/hashicorp/go-getter v1.5.0 => github.com/hashicorp/go-getter v1.4.0
 	github.com/hashicorp/terraform-exec => github.com/hashicorp/terraform-exec v0.15.0
 	github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20220725190814-23001ad6ec03
@@ -42,7 +42,7 @@ require (
 	github.com/Microsoft/go-winio v0.5.1 // indirect
 	github.com/aead/chacha20 v0.0.0-20180709150244-8b13a72661da // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
-	github.com/akamai/AkamaiOPEN-edgegrid-golang/v2 v2.14.0 // indirect
+	github.com/akamai/AkamaiOPEN-edgegrid-golang/v2 v2.16.0 // indirect
 	github.com/allegro/bigcache/v2 v2.2.5 // indirect
 	github.com/apex/log v1.9.0 // indirect
 	github.com/apparentlymart/go-cidr v1.1.0 // indirect

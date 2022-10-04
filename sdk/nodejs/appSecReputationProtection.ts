@@ -73,7 +73,7 @@ export class AppSecReputationProtection extends pulumi.CustomResource {
      */
     public readonly enabled!: pulumi.Output<boolean>;
     /**
-     * Text Export representation
+     * Text representation
      */
     public /*out*/ readonly outputText!: pulumi.Output<string>;
     /**
@@ -132,7 +132,7 @@ export interface AppSecReputationProtectionState {
      */
     enabled?: pulumi.Input<boolean>;
     /**
-     * Text Export representation
+     * Text representation
      */
     outputText?: pulumi.Input<string>;
     /**

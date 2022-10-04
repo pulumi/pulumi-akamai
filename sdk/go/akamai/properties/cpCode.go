@@ -24,23 +24,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.NewCpCode(ctx, "cpCode", &akamai.CpCodeArgs{
-// 			ContractId: pulumi.Any(akamai_contract.Contract.Id),
-// 			GroupId:    pulumi.Any(akamai_group.Group.Id),
-// 			ProductId:  pulumi.String("prd_Object_Delivery"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.NewCpCode(ctx, "cpCode", &akamai.CpCodeArgs{
+//				ContractId: pulumi.Any(akamai_contract.Contract.Id),
+//				GroupId:    pulumi.Any(akamai_group.Group.Id),
+//				ProductId:  pulumi.String("prd_Object_Delivery"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // Here's a real-life example that includes other data sources as dependencies:
@@ -49,38 +52,41 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		groupName := "example group name"
-// 		_ := "My CP Code"
-// 		exampleContract, err := akamai.GetContract(ctx, &GetContractArgs{
-// 			GroupName: pulumi.StringRef(groupName),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		exampleGroup, err := akamai.GetGroup(ctx, &GetGroupArgs{
-// 			Name:       pulumi.StringRef(groupName),
-// 			ContractId: pulumi.StringRef(exampleContract.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewCpCode(ctx, "exampleCp", &akamai.CpCodeArgs{
-// 			GroupId:    pulumi.String(exampleGroup.Id),
-// 			ContractId: pulumi.String(exampleContract.Id),
-// 			ProductId:  pulumi.String("prd_Object_Delivery"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			groupName := "example group name"
+//			_ := "My CP Code"
+//			exampleContract, err := akamai.GetContract(ctx, &GetContractArgs{
+//				GroupName: pulumi.StringRef(groupName),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			exampleGroup, err := akamai.GetGroup(ctx, &GetGroupArgs{
+//				Name:       pulumi.StringRef(groupName),
+//				ContractId: pulumi.StringRef(exampleContract.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewCpCode(ctx, "exampleCp", &akamai.CpCodeArgs{
+//				GroupId:    pulumi.String(exampleGroup.Id),
+//				ContractId: pulumi.String(exampleContract.Id),
+//				ProductId:  pulumi.String("prd_Object_Delivery"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Attributes reference
 //
@@ -92,10 +98,12 @@ import (
 //
 // # (resource arguments)
 //
-//  } You can import your Akamai CP codes using a comma-delimited string of the CP code, contract, and group IDs. You have to enter the IDs in this order`cpcode_id,contract_id,group_id` For example
+//	} You can import your Akamai CP codes using a comma-delimited string of the CP code, contract, and group IDs. You have to enter the IDs in this order`cpcode_id,contract_id,group_id` For example
 //
 // ```sh
-//  $ pulumi import akamai:properties/cpCode:CpCode example cpc_123,ctr_1-AB123,grp_123
+//
+//	$ pulumi import akamai:properties/cpCode:CpCode example cpc_123,ctr_1-AB123,grp_123
+//
 // ```
 //
 // Deprecated: akamai.properties.CpCode has been deprecated in favor of akamai.CpCode
@@ -270,7 +278,7 @@ func (i *CpCode) ToCpCodeOutputWithContext(ctx context.Context) CpCodeOutput {
 // CpCodeArrayInput is an input type that accepts CpCodeArray and CpCodeArrayOutput values.
 // You can construct a concrete instance of `CpCodeArrayInput` via:
 //
-//          CpCodeArray{ CpCodeArgs{...} }
+//	CpCodeArray{ CpCodeArgs{...} }
 type CpCodeArrayInput interface {
 	pulumi.Input
 
@@ -295,7 +303,7 @@ func (i CpCodeArray) ToCpCodeArrayOutputWithContext(ctx context.Context) CpCodeA
 // CpCodeMapInput is an input type that accepts CpCodeMap and CpCodeMapOutput values.
 // You can construct a concrete instance of `CpCodeMapInput` via:
 //
-//          CpCodeMap{ "key": CpCodeArgs{...} }
+//	CpCodeMap{ "key": CpCodeArgs{...} }
 type CpCodeMapInput interface {
 	pulumi.Input
 

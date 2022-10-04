@@ -13,8 +13,8 @@ namespace Pulumi.Akamai
     {
         /// <summary>
         /// Use the `akamai.getNetworkLists` data source to retrieve information about the available network lists,
-        /// optionally filtered by list type or based on a search string. The information available is described
-        /// [here](https://developer.akamai.com/api/cloud_security/network_lists/v2.html#getlists). 
+        /// optionally filtered by list type or based on a search string. The information available is described in
+        /// [List network lists](https://techdocs.akamai.com/network-lists/reference/get-network-lists).
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -66,8 +66,8 @@ namespace Pulumi.Akamai
 
         /// <summary>
         /// Use the `akamai.getNetworkLists` data source to retrieve information about the available network lists,
-        /// optionally filtered by list type or based on a search string. The information available is described
-        /// [here](https://developer.akamai.com/api/cloud_security/network_lists/v2.html#getlists). 
+        /// optionally filtered by list type or based on a search string. The information available is described in
+        /// [List network lists](https://techdocs.akamai.com/network-lists/reference/get-network-lists).
         /// 
         /// {{% examples %}}
         /// ## Example Usage

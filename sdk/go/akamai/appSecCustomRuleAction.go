@@ -25,31 +25,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		createCustomRuleAction, err := akamai.NewAppSecCustomRuleAction(ctx, "createCustomRuleAction", &akamai.AppSecCustomRuleActionArgs{
-// 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.String("gms1_134637"),
-// 			CustomRuleId:     pulumi.Int(12345),
-// 			CustomRuleAction: pulumi.String("alert"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("customRuleId", createCustomRuleAction.CustomRuleId)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			createCustomRuleAction, err := akamai.NewAppSecCustomRuleAction(ctx, "createCustomRuleAction", &akamai.AppSecCustomRuleActionArgs{
+//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId: pulumi.String("gms1_134637"),
+//				CustomRuleId:     pulumi.Int(12345),
+//				CustomRuleAction: pulumi.String("alert"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("customRuleId", createCustomRuleAction.CustomRuleId)
+//			return nil
+//		})
+//	}
+//
 // ```
 type AppSecCustomRuleAction struct {
 	pulumi.CustomResourceState
@@ -199,7 +202,7 @@ func (i *AppSecCustomRuleAction) ToAppSecCustomRuleActionOutputWithContext(ctx c
 // AppSecCustomRuleActionArrayInput is an input type that accepts AppSecCustomRuleActionArray and AppSecCustomRuleActionArrayOutput values.
 // You can construct a concrete instance of `AppSecCustomRuleActionArrayInput` via:
 //
-//          AppSecCustomRuleActionArray{ AppSecCustomRuleActionArgs{...} }
+//	AppSecCustomRuleActionArray{ AppSecCustomRuleActionArgs{...} }
 type AppSecCustomRuleActionArrayInput interface {
 	pulumi.Input
 
@@ -224,7 +227,7 @@ func (i AppSecCustomRuleActionArray) ToAppSecCustomRuleActionArrayOutputWithCont
 // AppSecCustomRuleActionMapInput is an input type that accepts AppSecCustomRuleActionMap and AppSecCustomRuleActionMapOutput values.
 // You can construct a concrete instance of `AppSecCustomRuleActionMapInput` via:
 //
-//          AppSecCustomRuleActionMap{ "key": AppSecCustomRuleActionArgs{...} }
+//	AppSecCustomRuleActionMap{ "key": AppSecCustomRuleActionArgs{...} }
 type AppSecCustomRuleActionMapInput interface {
 	pulumi.Input
 

@@ -77,15 +77,27 @@ namespace Pulumi.Akamai
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
+        /// <summary>
+        /// Versioning information for the current Kona Rule Set
+        /// </summary>
         [Output("currentRuleset")]
         public Output<string> CurrentRuleset { get; private set; } = null!;
 
+        /// <summary>
+        /// Date on which the evaluation period ends, if applicable
+        /// </summary>
         [Output("evalExpirationDate")]
         public Output<string> EvalExpirationDate { get; private set; } = null!;
 
+        /// <summary>
+        /// Versioning information for the Kona Rule Set being evaluated, if applicable
+        /// </summary>
         [Output("evalRuleset")]
         public Output<string> EvalRuleset { get; private set; } = null!;
 
+        /// <summary>
+        /// Whether an evaluation is currently in progress
+        /// </summary>
         [Output("evalStatus")]
         public Output<string> EvalStatus { get; private set; } = null!;
 
@@ -96,7 +108,7 @@ namespace Pulumi.Akamai
         public Output<string> Mode { get; private set; } = null!;
 
         /// <summary>
-        /// Text Export representation
+        /// Text representation
         /// </summary>
         [Output("outputText")]
         public Output<string> OutputText { get; private set; } = null!;
@@ -184,15 +196,27 @@ namespace Pulumi.Akamai
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
+        /// <summary>
+        /// Versioning information for the current Kona Rule Set
+        /// </summary>
         [Input("currentRuleset")]
         public Input<string>? CurrentRuleset { get; set; }
 
+        /// <summary>
+        /// Date on which the evaluation period ends, if applicable
+        /// </summary>
         [Input("evalExpirationDate")]
         public Input<string>? EvalExpirationDate { get; set; }
 
+        /// <summary>
+        /// Versioning information for the Kona Rule Set being evaluated, if applicable
+        /// </summary>
         [Input("evalRuleset")]
         public Input<string>? EvalRuleset { get; set; }
 
+        /// <summary>
+        /// Whether an evaluation is currently in progress
+        /// </summary>
         [Input("evalStatus")]
         public Input<string>? EvalStatus { get; set; }
 
@@ -203,7 +227,7 @@ namespace Pulumi.Akamai
         public Input<string>? Mode { get; set; }
 
         /// <summary>
-        /// Text Export representation
+        /// Text representation
         /// </summary>
         [Input("outputText")]
         public Input<string>? OutputText { get; set; }

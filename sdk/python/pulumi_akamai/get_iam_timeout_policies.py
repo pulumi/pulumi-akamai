@@ -73,7 +73,7 @@ def get_iam_timeout_policies(opts: Optional[pulumi.InvokeOptions] = None) -> Awa
 
     * `policies` — A map of session timeout policy names to their value in seconds.
 
-    [API Reference](https://developer.akamai.com/api/core_features/identity_management_user_admin/v2.html#getadmintimeoutpolicies)
+    [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-timeout-policies)
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

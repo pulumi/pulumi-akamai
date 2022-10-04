@@ -22,7 +22,7 @@ type DnsZoneTsigKey struct {
 // DnsZoneTsigKeyInput is an input type that accepts DnsZoneTsigKeyArgs and DnsZoneTsigKeyOutput values.
 // You can construct a concrete instance of `DnsZoneTsigKeyInput` via:
 //
-//          DnsZoneTsigKeyArgs{...}
+//	DnsZoneTsigKeyArgs{...}
 type DnsZoneTsigKeyInput interface {
 	pulumi.Input
 
@@ -62,11 +62,11 @@ func (i DnsZoneTsigKeyArgs) ToDnsZoneTsigKeyPtrOutputWithContext(ctx context.Con
 // DnsZoneTsigKeyPtrInput is an input type that accepts DnsZoneTsigKeyArgs, DnsZoneTsigKeyPtr and DnsZoneTsigKeyPtrOutput values.
 // You can construct a concrete instance of `DnsZoneTsigKeyPtrInput` via:
 //
-//          DnsZoneTsigKeyArgs{...}
+//	        DnsZoneTsigKeyArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DnsZoneTsigKeyPtrInput interface {
 	pulumi.Input
 

@@ -25,40 +25,43 @@ import (
 // package main
 //
 // import (
-// 	"fmt"
-// 	"io/ioutil"
 //
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"fmt"
+//	"io/ioutil"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func readFileOrPanic(path string) pulumi.StringPtrInput {
-// 	data, err := ioutil.ReadFile(path)
-// 	if err != nil {
-// 		panic(err.Error())
-// 	}
-// 	return pulumi.String(string(data))
-// }
+//	func readFileOrPanic(path string) pulumi.StringPtrInput {
+//		data, err := ioutil.ReadFile(path)
+//		if err != nil {
+//			panic(err.Error())
+//		}
+//		return pulumi.String(string(data))
+//	}
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		customDeny, err := akamai.NewAppSecCustomDeny(ctx, "customDeny", &akamai.AppSecCustomDenyArgs{
-// 			ConfigId:   pulumi.Int(configuration.ConfigId),
-// 			CustomDeny: readFileOrPanic(fmt.Sprintf("%v/custom_deny.json", path.Module)),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("customDenyId", customDeny.CustomDenyId)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			customDeny, err := akamai.NewAppSecCustomDeny(ctx, "customDeny", &akamai.AppSecCustomDenyArgs{
+//				ConfigId:   pulumi.Int(configuration.ConfigId),
+//				CustomDeny: readFileOrPanic(fmt.Sprintf("%v/custom_deny.json", path.Module)),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("customDenyId", customDeny.CustomDenyId)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
@@ -70,7 +73,7 @@ type AppSecCustomDeny struct {
 
 	// . Unique identifier of the security configuration associated with the custom deny.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
+	// . Path to a JSON file containing properties and property values for the custom deny.
 	CustomDeny pulumi.StringOutput `pulumi:"customDeny"`
 	// custom_deny_id
 	CustomDenyId pulumi.StringOutput `pulumi:"customDenyId"`
@@ -113,7 +116,7 @@ func GetAppSecCustomDeny(ctx *pulumi.Context,
 type appSecCustomDenyState struct {
 	// . Unique identifier of the security configuration associated with the custom deny.
 	ConfigId *int `pulumi:"configId"`
-	// . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
+	// . Path to a JSON file containing properties and property values for the custom deny.
 	CustomDeny *string `pulumi:"customDeny"`
 	// custom_deny_id
 	CustomDenyId *string `pulumi:"customDenyId"`
@@ -122,7 +125,7 @@ type appSecCustomDenyState struct {
 type AppSecCustomDenyState struct {
 	// . Unique identifier of the security configuration associated with the custom deny.
 	ConfigId pulumi.IntPtrInput
-	// . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
+	// . Path to a JSON file containing properties and property values for the custom deny.
 	CustomDeny pulumi.StringPtrInput
 	// custom_deny_id
 	CustomDenyId pulumi.StringPtrInput
@@ -135,7 +138,7 @@ func (AppSecCustomDenyState) ElementType() reflect.Type {
 type appSecCustomDenyArgs struct {
 	// . Unique identifier of the security configuration associated with the custom deny.
 	ConfigId int `pulumi:"configId"`
-	// . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
+	// . Path to a JSON file containing properties and property values for the custom deny.
 	CustomDeny string `pulumi:"customDeny"`
 }
 
@@ -143,7 +146,7 @@ type appSecCustomDenyArgs struct {
 type AppSecCustomDenyArgs struct {
 	// . Unique identifier of the security configuration associated with the custom deny.
 	ConfigId pulumi.IntInput
-	// . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
+	// . Path to a JSON file containing properties and property values for the custom deny.
 	CustomDeny pulumi.StringInput
 }
 
@@ -173,7 +176,7 @@ func (i *AppSecCustomDeny) ToAppSecCustomDenyOutputWithContext(ctx context.Conte
 // AppSecCustomDenyArrayInput is an input type that accepts AppSecCustomDenyArray and AppSecCustomDenyArrayOutput values.
 // You can construct a concrete instance of `AppSecCustomDenyArrayInput` via:
 //
-//          AppSecCustomDenyArray{ AppSecCustomDenyArgs{...} }
+//	AppSecCustomDenyArray{ AppSecCustomDenyArgs{...} }
 type AppSecCustomDenyArrayInput interface {
 	pulumi.Input
 
@@ -198,7 +201,7 @@ func (i AppSecCustomDenyArray) ToAppSecCustomDenyArrayOutputWithContext(ctx cont
 // AppSecCustomDenyMapInput is an input type that accepts AppSecCustomDenyMap and AppSecCustomDenyMapOutput values.
 // You can construct a concrete instance of `AppSecCustomDenyMapInput` via:
 //
-//          AppSecCustomDenyMap{ "key": AppSecCustomDenyArgs{...} }
+//	AppSecCustomDenyMap{ "key": AppSecCustomDenyArgs{...} }
 type AppSecCustomDenyMapInput interface {
 	pulumi.Input
 
@@ -239,7 +242,7 @@ func (o AppSecCustomDenyOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecCustomDeny) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . Path to a JSON file containing properties and property values for the custom deny. For more information, see the [CustomDeny members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#63df3de3) section of the Application Security API documentation.
+// . Path to a JSON file containing properties and property values for the custom deny.
 func (o AppSecCustomDenyOutput) CustomDeny() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecCustomDeny) pulumi.StringOutput { return v.CustomDeny }).(pulumi.StringOutput)
 }

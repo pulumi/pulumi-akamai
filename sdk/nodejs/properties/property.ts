@@ -189,11 +189,11 @@ export class Property extends pulumi.CustomResource {
      */
     public /*out*/ readonly readVersion!: pulumi.Output<number>;
     /**
-     * The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+     * The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
      */
     public /*out*/ readonly ruleErrors!: pulumi.Output<outputs.properties.PropertyRuleError[]>;
     /**
-     * The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
+     * The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
      */
     public readonly ruleFormat!: pulumi.Output<string>;
     /**
@@ -350,11 +350,11 @@ export interface PropertyState {
      */
     readVersion?: pulumi.Input<number>;
     /**
-     * The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+     * The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
      */
     ruleErrors?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRuleError>[]>;
     /**
-     * The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
+     * The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
      */
     ruleFormat?: pulumi.Input<string>;
     /**
@@ -434,7 +434,7 @@ export interface PropertyArgs {
      */
     productId?: pulumi.Input<string>;
     /**
-     * The [rule format](https://developer.akamai.com/api/core_features/property_manager/v1.html#getruleformats) to use. Uses the latest rule format by default.
+     * The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
      */
     ruleFormat?: pulumi.Input<string>;
     /**

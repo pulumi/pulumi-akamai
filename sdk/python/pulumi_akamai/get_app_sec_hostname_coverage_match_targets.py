@@ -86,7 +86,7 @@ def get_app_sec_hostname_coverage_match_targets(config_id: Optional[int] = None,
     """
     **Scopes**: Hostname
 
-    Returns information about the API and website match targets used to protect a hostname. The returned information is described in the [Get the hostname coverage match targets](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames) section of the Application Security API.
+    Returns information about the API and website match targets used to protect a hostname.
 
     **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/hostname-coverage/match-targets](https://techdocs.akamai.com/application-security/reference/get-coverage-match-targets)
 
@@ -133,7 +133,7 @@ def get_app_sec_hostname_coverage_match_targets_output(config_id: Optional[pulum
     """
     **Scopes**: Hostname
 
-    Returns information about the API and website match targets used to protect a hostname. The returned information is described in the [Get the hostname coverage match targets](https://developer.akamai.com/api/cloud_security/application_security/v1.html#getfailoverhostnames) section of the Application Security API.
+    Returns information about the API and website match targets used to protect a hostname.
 
     **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/hostname-coverage/match-targets](https://techdocs.akamai.com/application-security/reference/get-coverage-match-targets)
 

@@ -38,23 +38,23 @@ namespace Pulumi.Akamai
     ///     ""redirectURL"": ""https://www.example.com"",
     ///     ""matchURL"": ""example.com"",
     ///     ""useIncomingQueryString"": false,
-    ///     ""useIncomingSchemeAndHost"": true
+    ///     ""useIncomingSchemeAndHost"": false
     ///   },
     ///   {
     ///     ""name"": ""rule2"",
     ///     ""type"": ""erMatchRule"",
     ///     ""matches"": [
     ///       {
-    ///         ""matchType"": ""hostname"",
-    ///         ""matchValue"": ""3333.dom"",
+    ///         ""matchType"": ""path"",
+    ///         ""matchValue"": ""/example/website.html"",
     ///         ""matchOperator"": ""equals"",
-    ///         ""caseSensitive"": true,
+    ///         ""caseSensitive"": false,
     ///         ""negate"": false
     ///       }
     ///     ],
-    ///     ""useRelativeUrl"": ""none"",
+    ///     ""useRelativeUrl"": ""copy_scheme_hostname"",
     ///     ""statusCode"": 301,
-    ///     ""redirectURL"": ""https://www.example.com"",
+    ///     ""redirectURL"": ""/website.html"",
     ///     ""useIncomingQueryString"": false,
     ///     ""useIncomingSchemeAndHost"": true
     ///   }
@@ -82,13 +82,13 @@ namespace Pulumi.Akamai
     public partial class CloudletsPolicy : Pulumi.CustomResource
     {
         /// <summary>
-        /// The two- or three- character code for the type of Cloudlet, either `ALB` for Application Load Balancer or `ER` for Edge Redirector.
+        /// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
         /// </summary>
         [Output("cloudletCode")]
         public Output<string> CloudletCode { get; private set; } = null!;
 
         /// <summary>
-        /// A unique identifier that corresponds to a Cloudlets policy type, either `0` for Edge Redirector or `9` for Application Load Balancer.
+        /// A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
         /// </summary>
         [Output("cloudletId")]
         public Output<int> CloudletId { get; private set; } = null!;
@@ -182,7 +182,7 @@ namespace Pulumi.Akamai
     public sealed class CloudletsPolicyArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The two- or three- character code for the type of Cloudlet, either `ALB` for Application Load Balancer or `ER` for Edge Redirector.
+        /// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
         /// </summary>
         [Input("cloudletCode", required: true)]
         public Input<string> CloudletCode { get; set; } = null!;
@@ -225,13 +225,13 @@ namespace Pulumi.Akamai
     public sealed class CloudletsPolicyState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The two- or three- character code for the type of Cloudlet, either `ALB` for Application Load Balancer or `ER` for Edge Redirector.
+        /// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
         /// </summary>
         [Input("cloudletCode")]
         public Input<string>? CloudletCode { get; set; }
 
         /// <summary>
-        /// A unique identifier that corresponds to a Cloudlets policy type, either `0` for Edge Redirector or `9` for Application Load Balancer.
+        /// A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
         /// </summary>
         [Input("cloudletId")]
         public Input<int>? CloudletId { get; set; }

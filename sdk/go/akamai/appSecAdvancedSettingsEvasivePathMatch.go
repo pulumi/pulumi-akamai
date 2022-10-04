@@ -28,36 +28,39 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef(_var.Security_configuration),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecAdvancedSettingsEvasivePathMatch(ctx, "configEvasivePathMatch", &akamai.AppSecAdvancedSettingsEvasivePathMatchArgs{
-// 			ConfigId:        pulumi.Int(configuration.ConfigId),
-// 			EnablePathMatch: pulumi.Bool(true),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecAdvancedSettingsEvasivePathMatch(ctx, "policyOverride", &akamai.AppSecAdvancedSettingsEvasivePathMatchArgs{
-// 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.Any(_var.Security_policy_id),
-// 			EnablePathMatch:  pulumi.Bool(true),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef(_var.Security_configuration),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecAdvancedSettingsEvasivePathMatch(ctx, "configEvasivePathMatch", &akamai.AppSecAdvancedSettingsEvasivePathMatchArgs{
+//				ConfigId:        pulumi.Int(configuration.ConfigId),
+//				EnablePathMatch: pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecAdvancedSettingsEvasivePathMatch(ctx, "policyOverride", &akamai.AppSecAdvancedSettingsEvasivePathMatchArgs{
+//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId: pulumi.Any(_var.Security_policy_id),
+//				EnablePathMatch:  pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type AppSecAdvancedSettingsEvasivePathMatch struct {
 	pulumi.CustomResourceState
@@ -171,7 +174,7 @@ func (i *AppSecAdvancedSettingsEvasivePathMatch) ToAppSecAdvancedSettingsEvasive
 // AppSecAdvancedSettingsEvasivePathMatchArrayInput is an input type that accepts AppSecAdvancedSettingsEvasivePathMatchArray and AppSecAdvancedSettingsEvasivePathMatchArrayOutput values.
 // You can construct a concrete instance of `AppSecAdvancedSettingsEvasivePathMatchArrayInput` via:
 //
-//          AppSecAdvancedSettingsEvasivePathMatchArray{ AppSecAdvancedSettingsEvasivePathMatchArgs{...} }
+//	AppSecAdvancedSettingsEvasivePathMatchArray{ AppSecAdvancedSettingsEvasivePathMatchArgs{...} }
 type AppSecAdvancedSettingsEvasivePathMatchArrayInput interface {
 	pulumi.Input
 
@@ -196,7 +199,7 @@ func (i AppSecAdvancedSettingsEvasivePathMatchArray) ToAppSecAdvancedSettingsEva
 // AppSecAdvancedSettingsEvasivePathMatchMapInput is an input type that accepts AppSecAdvancedSettingsEvasivePathMatchMap and AppSecAdvancedSettingsEvasivePathMatchMapOutput values.
 // You can construct a concrete instance of `AppSecAdvancedSettingsEvasivePathMatchMapInput` via:
 //
-//          AppSecAdvancedSettingsEvasivePathMatchMap{ "key": AppSecAdvancedSettingsEvasivePathMatchArgs{...} }
+//	AppSecAdvancedSettingsEvasivePathMatchMap{ "key": AppSecAdvancedSettingsEvasivePathMatchArgs{...} }
 type AppSecAdvancedSettingsEvasivePathMatchMapInput interface {
 	pulumi.Input
 

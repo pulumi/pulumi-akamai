@@ -78,7 +78,7 @@ namespace Pulumi.Akamai
         public Output<bool?> DefaultSettings { get; private set; } = null!;
 
         /// <summary>
-        /// Policy ID for new policy
+        /// Unique identifier of the new security policy
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -197,7 +197,7 @@ namespace Pulumi.Akamai
         public Input<bool>? DefaultSettings { get; set; }
 
         /// <summary>
-        /// Policy ID for new policy
+        /// Unique identifier of the new security policy
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

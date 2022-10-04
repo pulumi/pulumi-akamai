@@ -41,9 +41,6 @@ namespace Pulumi.Akamai
     /// 
     /// }
     /// ```
-    /// ## Schema reference
-    /// 
-    /// You can download the GTM AS Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#asmap) page.
     /// </summary>
     [AkamaiResourceType("akamai:index/gtmAsmap:GtmAsmap")]
     public partial class GtmAsmap : Pulumi.CustomResource

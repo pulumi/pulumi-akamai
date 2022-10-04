@@ -12,7 +12,7 @@ import (
 
 // **Scopes**: Security configuration
 //
-// Returns the SIEM (Security Event and Information Management) settings for a security configuration. The returned information is described in the [SIEM members](https://developer.akamai.com/api/cloud_security/application_security/v1.html#d8470aff) section of the Application Security API.
+// Returns the SIEM (Security Event and Information Management) settings for a security configuration.
 //
 // **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/siem](https://techdocs.akamai.com/application-security/reference/get-siem)
 //
@@ -24,29 +24,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		siemSettings, err := akamai.LookupAppSecSiemSettings(ctx, &GetAppSecSiemSettingsArgs{
-// 			ConfigId: configuration.ConfigId,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("siemSettingsJson", siemSettings.Json)
-// 		ctx.Export("siemSettingsOutput", siemSettings.OutputText)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			siemSettings, err := akamai.LookupAppSecSiemSettings(ctx, &GetAppSecSiemSettingsArgs{
+//				ConfigId: configuration.ConfigId,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("siemSettingsJson", siemSettings.Json)
+//			ctx.Export("siemSettingsOutput", siemSettings.OutputText)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //

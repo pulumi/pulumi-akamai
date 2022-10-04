@@ -96,7 +96,7 @@ namespace Pulumi.Akamai
         public Output<ImmutableArray<string>> Contacts { get; private set; } = null!;
 
         /// <summary>
-        /// The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        /// The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         /// </summary>
         [Output("errors")]
         public Output<string> Errors { get; private set; } = null!;
@@ -144,7 +144,7 @@ namespace Pulumi.Akamai
         public Output<int> Version { get; private set; } = null!;
 
         /// <summary>
-        /// The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        /// The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         /// </summary>
         [Output("warnings")]
         public Output<string> Warnings { get; private set; } = null!;
@@ -302,7 +302,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The contents of `errors` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        /// The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         /// </summary>
         [Input("errors")]
         public Input<string>? Errors { get; set; }
@@ -361,7 +361,7 @@ namespace Pulumi.Akamai
         public Input<int>? Version { get; set; }
 
         /// <summary>
-        /// The contents of `warnings` field returned by the API. For more information see [Errors](https://developer.akamai.com/api/core_features/property_manager/v1.html#errors) in the PAPI documentation.
+        /// The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         /// </summary>
         [Input("warnings")]
         public Input<string>? Warnings { get; set; }

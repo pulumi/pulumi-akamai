@@ -25,55 +25,58 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ipGeoBlock, err := akamai.NewAppSecIPGeo(ctx, "ipGeoBlock", &akamai.AppSecIPGeoArgs{
-// 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.String("gms1_134637"),
-// 			Mode:             pulumi.String("block"),
-// 			GeoNetworkLists: pulumi.StringArray{
-// 				pulumi.String("06038_GEO_TEST"),
-// 			},
-// 			IpNetworkLists: pulumi.StringArray{
-// 				pulumi.String("56921_TEST"),
-// 			},
-// 			ExceptionIpNetworkLists: pulumi.StringArray{
-// 				pulumi.String("07126_EXCEPTION_TEST"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ipGeoAllow, err := akamai.NewAppSecIPGeo(ctx, "ipGeoAllow", &akamai.AppSecIPGeoArgs{
-// 			ConfigId:         pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId: pulumi.String("gms1-090334"),
-// 			Mode:             pulumi.String("allow"),
-// 			ExceptionIpNetworkLists: pulumi.StringArray{
-// 				pulumi.String("07126_EXCEPTION_TEST"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("ipGeoModeBlock", ipGeoBlock.Mode)
-// 		ctx.Export("blockGeoNetworkLists", ipGeoBlock.GeoNetworkLists)
-// 		ctx.Export("blockIpNetworkLists", ipGeoBlock.IpNetworkLists)
-// 		ctx.Export("blockExceptionIpNetworkLists", ipGeoBlock.ExceptionIpNetworkLists)
-// 		ctx.Export("ipGeoModeAllow", ipGeoAllow.Mode)
-// 		ctx.Export("allowExceptionIpNetworkLists", ipGeoAllow.ExceptionIpNetworkLists)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ipGeoBlock, err := akamai.NewAppSecIPGeo(ctx, "ipGeoBlock", &akamai.AppSecIPGeoArgs{
+//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId: pulumi.String("gms1_134637"),
+//				Mode:             pulumi.String("block"),
+//				GeoNetworkLists: pulumi.StringArray{
+//					pulumi.String("06038_GEO_TEST"),
+//				},
+//				IpNetworkLists: pulumi.StringArray{
+//					pulumi.String("56921_TEST"),
+//				},
+//				ExceptionIpNetworkLists: pulumi.StringArray{
+//					pulumi.String("07126_EXCEPTION_TEST"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			ipGeoAllow, err := akamai.NewAppSecIPGeo(ctx, "ipGeoAllow", &akamai.AppSecIPGeoArgs{
+//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId: pulumi.String("gms1-090334"),
+//				Mode:             pulumi.String("allow"),
+//				ExceptionIpNetworkLists: pulumi.StringArray{
+//					pulumi.String("07126_EXCEPTION_TEST"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("ipGeoModeBlock", ipGeoBlock.Mode)
+//			ctx.Export("blockGeoNetworkLists", ipGeoBlock.GeoNetworkLists)
+//			ctx.Export("blockIpNetworkLists", ipGeoBlock.IpNetworkLists)
+//			ctx.Export("blockExceptionIpNetworkLists", ipGeoBlock.ExceptionIpNetworkLists)
+//			ctx.Export("ipGeoModeAllow", ipGeoAllow.Mode)
+//			ctx.Export("allowExceptionIpNetworkLists", ipGeoAllow.ExceptionIpNetworkLists)
+//			return nil
+//		})
+//	}
+//
 // ```
 type AppSecIPGeo struct {
 	pulumi.CustomResourceState
@@ -220,7 +223,7 @@ func (i *AppSecIPGeo) ToAppSecIPGeoOutputWithContext(ctx context.Context) AppSec
 // AppSecIPGeoArrayInput is an input type that accepts AppSecIPGeoArray and AppSecIPGeoArrayOutput values.
 // You can construct a concrete instance of `AppSecIPGeoArrayInput` via:
 //
-//          AppSecIPGeoArray{ AppSecIPGeoArgs{...} }
+//	AppSecIPGeoArray{ AppSecIPGeoArgs{...} }
 type AppSecIPGeoArrayInput interface {
 	pulumi.Input
 
@@ -245,7 +248,7 @@ func (i AppSecIPGeoArray) ToAppSecIPGeoArrayOutputWithContext(ctx context.Contex
 // AppSecIPGeoMapInput is an input type that accepts AppSecIPGeoMap and AppSecIPGeoMapOutput values.
 // You can construct a concrete instance of `AppSecIPGeoMapInput` via:
 //
-//          AppSecIPGeoMap{ "key": AppSecIPGeoArgs{...} }
+//	AppSecIPGeoMap{ "key": AppSecIPGeoArgs{...} }
 type AppSecIPGeoMapInput interface {
 	pulumi.Input
 

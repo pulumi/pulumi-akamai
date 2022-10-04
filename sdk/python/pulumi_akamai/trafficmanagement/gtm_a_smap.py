@@ -225,9 +225,6 @@ class GtmASmap(pulumi.CustomResource):
             ),
             domain="demo_domain.akadns.net")
         ```
-        ## Schema reference
-
-        You can download the GTM AS Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#asmap) page.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -265,9 +262,6 @@ class GtmASmap(pulumi.CustomResource):
             ),
             domain="demo_domain.akadns.net")
         ```
-        ## Schema reference
-
-        You can download the GTM AS Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#asmap) page.
 
         :param str resource_name: The name of the resource.
         :param GtmASmapArgs args: The arguments to use to populate this resource's properties.

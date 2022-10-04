@@ -67,9 +67,12 @@ export class AppSecMatchTarget extends pulumi.CustomResource {
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
+     * . Path to a JSON file containing one or more match target definitions.
      */
     public readonly matchTarget!: pulumi.Output<string>;
+    /**
+     * Unique identifier of the match target
+     */
     public /*out*/ readonly matchTargetId!: pulumi.Output<number>;
 
     /**
@@ -114,9 +117,12 @@ export interface AppSecMatchTargetState {
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
+     * . Path to a JSON file containing one or more match target definitions.
      */
     matchTarget?: pulumi.Input<string>;
+    /**
+     * Unique identifier of the match target
+     */
     matchTargetId?: pulumi.Input<number>;
 }
 
@@ -129,7 +135,7 @@ export interface AppSecMatchTargetArgs {
      */
     configId: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing one or more match target definitions. You can find a sample match target JSON file in the [Create a match target section](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postmatchtargets) of the Application Security API documentation.
+     * . Path to a JSON file containing one or more match target definitions.
      */
     matchTarget: pulumi.Input<string>;
 }

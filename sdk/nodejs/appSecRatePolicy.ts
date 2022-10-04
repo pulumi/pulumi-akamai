@@ -69,9 +69,12 @@ export class AppSecRatePolicy extends pulumi.CustomResource {
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
+     * . Path to a JSON file containing a rate policy definition.
      */
     public readonly ratePolicy!: pulumi.Output<string>;
+    /**
+     * Unique identifier of the rate policy
+     */
     public /*out*/ readonly ratePolicyId!: pulumi.Output<number>;
 
     /**
@@ -116,9 +119,12 @@ export interface AppSecRatePolicyState {
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
+     * . Path to a JSON file containing a rate policy definition.
      */
     ratePolicy?: pulumi.Input<string>;
+    /**
+     * Unique identifier of the rate policy
+     */
     ratePolicyId?: pulumi.Input<number>;
 }
 
@@ -131,7 +137,7 @@ export interface AppSecRatePolicyArgs {
      */
     configId: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing a rate policy definition. You can view a sample rate policy JSON file in the [RatePolicy](https://developer.akamai.com/api/cloud_security/application_security/v1.html#ratepolicy) section of the Application Security API documentation.
+     * . Path to a JSON file containing a rate policy definition.
      */
     ratePolicy: pulumi.Input<string>;
 }

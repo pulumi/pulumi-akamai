@@ -19,19 +19,19 @@ namespace Pulumi.Akamai.Inputs
         public Input<string>? Delimiter { get; set; }
 
         /// <summary>
-        /// - (Required) The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
+        /// The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
         /// </summary>
         [Input("format", required: true)]
         public Input<string> Format { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) How often you want to collect logs from each uploader and send them to a destination.
+        /// How often you want to collect logs from each uploader and send them to a destination.
         /// </summary>
         [Input("frequency", required: true)]
         public Input<Inputs.DatastreamConfigFrequencyGetArgs> Frequency { get; set; } = null!;
 
         /// <summary>
-        /// - (Optional) The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
+        /// The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
         /// </summary>
         [Input("uploadFilePrefix")]
         public Input<string>? UploadFilePrefix { get; set; }

@@ -67,7 +67,7 @@ export class AppSecVersionNodes extends pulumi.CustomResource {
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * Text Export representation
+     * Text representation
      */
     public /*out*/ readonly outputText!: pulumi.Output<string>;
     /**
@@ -117,7 +117,7 @@ export interface AppSecVersionNodesState {
      */
     configId?: pulumi.Input<number>;
     /**
-     * Text Export representation
+     * Text representation
      */
     outputText?: pulumi.Input<string>;
     /**

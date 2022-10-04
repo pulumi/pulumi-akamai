@@ -13,7 +13,8 @@ import (
 
 // **Scopes**: Security policy
 //
-//  __ASE_Beta__.:
+//	__ASE_Beta__.:
+//
 // Modifies the penalty box settings for a security policy in evaluation mode - evaluation penalty box.
 // When the penalty box is enabled for a policy in evaluation mode, clients that trigger a WAF Deny action are placed in the “penalty box”.
 // There, the action you select for the penalty box (either Alert or Deny) continues to apply to any requests from that client for the next 10 minutes.
@@ -27,30 +28,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecEvalPenaltyBox(ctx, "evalPenaltyBox", &akamai.AppSecEvalPenaltyBoxArgs{
-// 			ConfigId:             pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId:     pulumi.String("gms1_134637"),
-// 			PenaltyBoxProtection: pulumi.Bool(true),
-// 			PenaltyBoxAction:     pulumi.String("deny"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecEvalPenaltyBox(ctx, "evalPenaltyBox", &akamai.AppSecEvalPenaltyBoxArgs{
+//				ConfigId:             pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId:     pulumi.String("gms1_134637"),
+//				PenaltyBoxProtection: pulumi.Bool(true),
+//				PenaltyBoxAction:     pulumi.String("deny"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type AppSecEvalPenaltyBox struct {
 	pulumi.CustomResourceState
@@ -200,7 +204,7 @@ func (i *AppSecEvalPenaltyBox) ToAppSecEvalPenaltyBoxOutputWithContext(ctx conte
 // AppSecEvalPenaltyBoxArrayInput is an input type that accepts AppSecEvalPenaltyBoxArray and AppSecEvalPenaltyBoxArrayOutput values.
 // You can construct a concrete instance of `AppSecEvalPenaltyBoxArrayInput` via:
 //
-//          AppSecEvalPenaltyBoxArray{ AppSecEvalPenaltyBoxArgs{...} }
+//	AppSecEvalPenaltyBoxArray{ AppSecEvalPenaltyBoxArgs{...} }
 type AppSecEvalPenaltyBoxArrayInput interface {
 	pulumi.Input
 
@@ -225,7 +229,7 @@ func (i AppSecEvalPenaltyBoxArray) ToAppSecEvalPenaltyBoxArrayOutputWithContext(
 // AppSecEvalPenaltyBoxMapInput is an input type that accepts AppSecEvalPenaltyBoxMap and AppSecEvalPenaltyBoxMapOutput values.
 // You can construct a concrete instance of `AppSecEvalPenaltyBoxMapInput` via:
 //
-//          AppSecEvalPenaltyBoxMap{ "key": AppSecEvalPenaltyBoxArgs{...} }
+//	AppSecEvalPenaltyBoxMap{ "key": AppSecEvalPenaltyBoxArgs{...} }
 type AppSecEvalPenaltyBoxMapInput interface {
 	pulumi.Input
 

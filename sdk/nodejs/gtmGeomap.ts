@@ -28,9 +28,6 @@ import * as utilities from "./utilities";
  *     domain: "demo_domain.akadns.net",
  * });
  * ```
- * ## Schema reference
- *
- * You can download the GTM Geographic Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#geographicmap) page.
  */
 export class GtmGeomap extends pulumi.CustomResource {
     /**

@@ -23,7 +23,7 @@ class AppSecConfigurationArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AppSecConfiguration resource.
-        :param pulumi.Input[str] contract_id: . Unique identifier of the Akamai contract t associated with the new configuration.
+        :param pulumi.Input[str] contract_id: . Unique identifier of the Akamai contract associated with the new configuration.
         :param pulumi.Input[str] description: . Brief description of the new configuration.
         :param pulumi.Input[int] group_id: . Unique identifier of the contract group associated with the new configuration.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] host_names: . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
@@ -46,7 +46,7 @@ class AppSecConfigurationArgs:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Input[str]:
         """
-        . Unique identifier of the Akamai contract t associated with the new configuration.
+        . Unique identifier of the Akamai contract associated with the new configuration.
         """
         return pulumi.get(self, "contract_id")
 
@@ -140,7 +140,8 @@ class _AppSecConfigurationState:
                  name: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecConfiguration resources.
-        :param pulumi.Input[str] contract_id: . Unique identifier of the Akamai contract t associated with the new configuration.
+        :param pulumi.Input[int] config_id: Unique identifier of the new security configuration
+        :param pulumi.Input[str] contract_id: . Unique identifier of the Akamai contract associated with the new configuration.
         :param pulumi.Input[int] create_from_config_id: . Unique identifier of the existing configuration being cloned in order to create the new configuration.
         :param pulumi.Input[int] create_from_version: . Version number of the security configuration being cloned.
         :param pulumi.Input[str] description: . Brief description of the new configuration.
@@ -168,6 +169,9 @@ class _AppSecConfigurationState:
     @property
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
+        """
+        Unique identifier of the new security configuration
+        """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
@@ -178,7 +182,7 @@ class _AppSecConfigurationState:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> Optional[pulumi.Input[str]]:
         """
-        . Unique identifier of the Akamai contract t associated with the new configuration.
+        . Unique identifier of the Akamai contract associated with the new configuration.
         """
         return pulumi.get(self, "contract_id")
 
@@ -316,7 +320,7 @@ class AppSecConfiguration(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] contract_id: . Unique identifier of the Akamai contract t associated with the new configuration.
+        :param pulumi.Input[str] contract_id: . Unique identifier of the Akamai contract associated with the new configuration.
         :param pulumi.Input[int] create_from_config_id: . Unique identifier of the existing configuration being cloned in order to create the new configuration.
         :param pulumi.Input[int] create_from_version: . Version number of the security configuration being cloned.
         :param pulumi.Input[str] description: . Brief description of the new configuration.
@@ -444,7 +448,8 @@ class AppSecConfiguration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] contract_id: . Unique identifier of the Akamai contract t associated with the new configuration.
+        :param pulumi.Input[int] config_id: Unique identifier of the new security configuration
+        :param pulumi.Input[str] contract_id: . Unique identifier of the Akamai contract associated with the new configuration.
         :param pulumi.Input[int] create_from_config_id: . Unique identifier of the existing configuration being cloned in order to create the new configuration.
         :param pulumi.Input[int] create_from_version: . Version number of the security configuration being cloned.
         :param pulumi.Input[str] description: . Brief description of the new configuration.
@@ -469,13 +474,16 @@ class AppSecConfiguration(pulumi.CustomResource):
     @property
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
+        """
+        Unique identifier of the new security configuration
+        """
         return pulumi.get(self, "config_id")
 
     @property
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Output[str]:
         """
-        . Unique identifier of the Akamai contract t associated with the new configuration.
+        . Unique identifier of the Akamai contract associated with the new configuration.
         """
         return pulumi.get(self, "contract_id")
 

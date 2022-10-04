@@ -13,7 +13,7 @@ namespace Pulumi.Akamai.Inputs
     public sealed class DatastreamDatadogConnectorArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - (Required) **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
+        /// **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
         /// * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
         /// </summary>
         [Input("authToken", required: true)]

@@ -25,42 +25,45 @@ import (
 // package main
 //
 // import (
-// 	"fmt"
-// 	"io/ioutil"
 //
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"fmt"
+//	"io/ioutil"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func readFileOrPanic(path string) pulumi.StringPtrInput {
-// 	data, err := ioutil.ReadFile(path)
-// 	if err != nil {
-// 		panic(err.Error())
-// 	}
-// 	return pulumi.String(string(data))
-// }
+//	func readFileOrPanic(path string) pulumi.StringPtrInput {
+//		data, err := ioutil.ReadFile(path)
+//		if err != nil {
+//			panic(err.Error())
+//		}
+//		return pulumi.String(string(data))
+//	}
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewAppSecAttackGroup(ctx, "attackGroup", &akamai.AppSecAttackGroupArgs{
-// 			ConfigId:           pulumi.Int(configuration.ConfigId),
-// 			SecurityPolicyId:   pulumi.String("gms1_134637"),
-// 			AttackGroup:        pulumi.String("SQL"),
-// 			AttackGroupAction:  pulumi.String("deny"),
-// 			ConditionException: readFileOrPanic(fmt.Sprintf("%v/condition_exception.json", path.Module)),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewAppSecAttackGroup(ctx, "attackGroup", &akamai.AppSecAttackGroupArgs{
+//				ConfigId:           pulumi.Int(configuration.ConfigId),
+//				SecurityPolicyId:   pulumi.String("gms1_134637"),
+//				AttackGroup:        pulumi.String("SQL"),
+//				AttackGroupAction:  pulumi.String("deny"),
+//				ConditionException: readFileOrPanic(fmt.Sprintf("%v/condition_exception.json", path.Module)),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type AppSecAttackGroup struct {
 	pulumi.CustomResourceState
@@ -73,7 +76,7 @@ type AppSecAttackGroup struct {
 	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
 	// - **none**. Take no action.
 	AttackGroupAction pulumi.StringOutput `pulumi:"attackGroupAction"`
-	// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+	// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
 	ConditionException pulumi.StringPtrOutput `pulumi:"conditionException"`
 	// . Unique identifier of the security configuration associated with the attack group being modified.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
@@ -130,7 +133,7 @@ type appSecAttackGroupState struct {
 	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
 	// - **none**. Take no action.
 	AttackGroupAction *string `pulumi:"attackGroupAction"`
-	// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+	// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
 	ConditionException *string `pulumi:"conditionException"`
 	// . Unique identifier of the security configuration associated with the attack group being modified.
 	ConfigId *int `pulumi:"configId"`
@@ -147,7 +150,7 @@ type AppSecAttackGroupState struct {
 	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
 	// - **none**. Take no action.
 	AttackGroupAction pulumi.StringPtrInput
-	// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+	// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
 	ConditionException pulumi.StringPtrInput
 	// . Unique identifier of the security configuration associated with the attack group being modified.
 	ConfigId pulumi.IntPtrInput
@@ -168,7 +171,7 @@ type appSecAttackGroupArgs struct {
 	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
 	// - **none**. Take no action.
 	AttackGroupAction string `pulumi:"attackGroupAction"`
-	// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+	// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
 	ConditionException *string `pulumi:"conditionException"`
 	// . Unique identifier of the security configuration associated with the attack group being modified.
 	ConfigId int `pulumi:"configId"`
@@ -186,7 +189,7 @@ type AppSecAttackGroupArgs struct {
 	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
 	// - **none**. Take no action.
 	AttackGroupAction pulumi.StringInput
-	// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+	// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
 	ConditionException pulumi.StringPtrInput
 	// . Unique identifier of the security configuration associated with the attack group being modified.
 	ConfigId pulumi.IntInput
@@ -220,7 +223,7 @@ func (i *AppSecAttackGroup) ToAppSecAttackGroupOutputWithContext(ctx context.Con
 // AppSecAttackGroupArrayInput is an input type that accepts AppSecAttackGroupArray and AppSecAttackGroupArrayOutput values.
 // You can construct a concrete instance of `AppSecAttackGroupArrayInput` via:
 //
-//          AppSecAttackGroupArray{ AppSecAttackGroupArgs{...} }
+//	AppSecAttackGroupArray{ AppSecAttackGroupArgs{...} }
 type AppSecAttackGroupArrayInput interface {
 	pulumi.Input
 
@@ -245,7 +248,7 @@ func (i AppSecAttackGroupArray) ToAppSecAttackGroupArrayOutputWithContext(ctx co
 // AppSecAttackGroupMapInput is an input type that accepts AppSecAttackGroupMap and AppSecAttackGroupMapOutput values.
 // You can construct a concrete instance of `AppSecAttackGroupMapInput` via:
 //
-//          AppSecAttackGroupMap{ "key": AppSecAttackGroupArgs{...} }
+//	AppSecAttackGroupMap{ "key": AppSecAttackGroupArgs{...} }
 type AppSecAttackGroupMapInput interface {
 	pulumi.Input
 
@@ -295,7 +298,7 @@ func (o AppSecAttackGroupOutput) AttackGroupAction() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecAttackGroup) pulumi.StringOutput { return v.AttackGroupAction }).(pulumi.StringOutput)
 }
 
-// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group. You can view a sample JSON file in the [Modify the exceptions of an attack group](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putattackgroupconditionexception) section of the Application Security API documentation.
+// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
 func (o AppSecAttackGroupOutput) ConditionException() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AppSecAttackGroup) pulumi.StringPtrOutput { return v.ConditionException }).(pulumi.StringPtrOutput)
 }

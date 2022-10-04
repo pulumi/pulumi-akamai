@@ -12,7 +12,7 @@ namespace Pulumi.Akamai
     public static class GetContracts
     {
         /// <summary>
-        /// Use the `akamai.getContracts` data source to list contracts associated with the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using. 
+        /// Use the `akamai.getContracts` data source to list contracts associated with the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
         /// 
         /// {{% examples %}}
         /// ## Example Usage

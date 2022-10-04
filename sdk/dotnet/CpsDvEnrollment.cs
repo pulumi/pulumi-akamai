@@ -163,6 +163,9 @@ namespace Pulumi.Akamai
         [Output("adminContact")]
         public Output<Outputs.CpsDvEnrollmentAdminContact> AdminContact { get; private set; } = null!;
 
+        [Output("allowDuplicateCommonName")]
+        public Output<bool?> AllowDuplicateCommonName { get; private set; } = null!;
+
         /// <summary>
         /// Certificate trust chain type.
         /// </summary>
@@ -308,6 +311,9 @@ namespace Pulumi.Akamai
         [Input("adminContact", required: true)]
         public Input<Inputs.CpsDvEnrollmentAdminContactArgs> AdminContact { get; set; } = null!;
 
+        [Input("allowDuplicateCommonName")]
+        public Input<bool>? AllowDuplicateCommonName { get; set; }
+
         /// <summary>
         /// Certificate trust chain type.
         /// </summary>
@@ -404,6 +410,9 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("adminContact")]
         public Input<Inputs.CpsDvEnrollmentAdminContactGetArgs>? AdminContact { get; set; }
+
+        [Input("allowDuplicateCommonName")]
+        public Input<bool>? AllowDuplicateCommonName { get; set; }
 
         /// <summary>
         /// Certificate trust chain type.

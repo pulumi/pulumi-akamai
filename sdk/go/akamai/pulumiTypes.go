@@ -40,7 +40,7 @@ type CloudletsApplicationLoadBalancerDataCenter struct {
 // CloudletsApplicationLoadBalancerDataCenterInput is an input type that accepts CloudletsApplicationLoadBalancerDataCenterArgs and CloudletsApplicationLoadBalancerDataCenterOutput values.
 // You can construct a concrete instance of `CloudletsApplicationLoadBalancerDataCenterInput` via:
 //
-//          CloudletsApplicationLoadBalancerDataCenterArgs{...}
+//	CloudletsApplicationLoadBalancerDataCenterArgs{...}
 type CloudletsApplicationLoadBalancerDataCenterInput interface {
 	pulumi.Input
 
@@ -90,7 +90,7 @@ func (i CloudletsApplicationLoadBalancerDataCenterArgs) ToCloudletsApplicationLo
 // CloudletsApplicationLoadBalancerDataCenterArrayInput is an input type that accepts CloudletsApplicationLoadBalancerDataCenterArray and CloudletsApplicationLoadBalancerDataCenterArrayOutput values.
 // You can construct a concrete instance of `CloudletsApplicationLoadBalancerDataCenterArrayInput` via:
 //
-//          CloudletsApplicationLoadBalancerDataCenterArray{ CloudletsApplicationLoadBalancerDataCenterArgs{...} }
+//	CloudletsApplicationLoadBalancerDataCenterArray{ CloudletsApplicationLoadBalancerDataCenterArgs{...} }
 type CloudletsApplicationLoadBalancerDataCenterArrayInput interface {
 	pulumi.Input
 
@@ -238,7 +238,7 @@ type CloudletsApplicationLoadBalancerLivenessSettings struct {
 // CloudletsApplicationLoadBalancerLivenessSettingsInput is an input type that accepts CloudletsApplicationLoadBalancerLivenessSettingsArgs and CloudletsApplicationLoadBalancerLivenessSettingsOutput values.
 // You can construct a concrete instance of `CloudletsApplicationLoadBalancerLivenessSettingsInput` via:
 //
-//          CloudletsApplicationLoadBalancerLivenessSettingsArgs{...}
+//	CloudletsApplicationLoadBalancerLivenessSettingsArgs{...}
 type CloudletsApplicationLoadBalancerLivenessSettingsInput interface {
 	pulumi.Input
 
@@ -298,11 +298,11 @@ func (i CloudletsApplicationLoadBalancerLivenessSettingsArgs) ToCloudletsApplica
 // CloudletsApplicationLoadBalancerLivenessSettingsPtrInput is an input type that accepts CloudletsApplicationLoadBalancerLivenessSettingsArgs, CloudletsApplicationLoadBalancerLivenessSettingsPtr and CloudletsApplicationLoadBalancerLivenessSettingsPtrOutput values.
 // You can construct a concrete instance of `CloudletsApplicationLoadBalancerLivenessSettingsPtrInput` via:
 //
-//          CloudletsApplicationLoadBalancerLivenessSettingsArgs{...}
+//	        CloudletsApplicationLoadBalancerLivenessSettingsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type CloudletsApplicationLoadBalancerLivenessSettingsPtrInput interface {
 	pulumi.Input
 
@@ -601,7 +601,7 @@ type CpsDvEnrollmentAdminContact struct {
 // CpsDvEnrollmentAdminContactInput is an input type that accepts CpsDvEnrollmentAdminContactArgs and CpsDvEnrollmentAdminContactOutput values.
 // You can construct a concrete instance of `CpsDvEnrollmentAdminContactInput` via:
 //
-//          CpsDvEnrollmentAdminContactArgs{...}
+//	CpsDvEnrollmentAdminContactArgs{...}
 type CpsDvEnrollmentAdminContactInput interface {
 	pulumi.Input
 
@@ -659,11 +659,11 @@ func (i CpsDvEnrollmentAdminContactArgs) ToCpsDvEnrollmentAdminContactPtrOutputW
 // CpsDvEnrollmentAdminContactPtrInput is an input type that accepts CpsDvEnrollmentAdminContactArgs, CpsDvEnrollmentAdminContactPtr and CpsDvEnrollmentAdminContactPtrOutput values.
 // You can construct a concrete instance of `CpsDvEnrollmentAdminContactPtrInput` via:
 //
-//          CpsDvEnrollmentAdminContactArgs{...}
+//	        CpsDvEnrollmentAdminContactArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type CpsDvEnrollmentAdminContactPtrInput interface {
 	pulumi.Input
 
@@ -933,7 +933,7 @@ type CpsDvEnrollmentCsr struct {
 // CpsDvEnrollmentCsrInput is an input type that accepts CpsDvEnrollmentCsrArgs and CpsDvEnrollmentCsrOutput values.
 // You can construct a concrete instance of `CpsDvEnrollmentCsrInput` via:
 //
-//          CpsDvEnrollmentCsrArgs{...}
+//	CpsDvEnrollmentCsrArgs{...}
 type CpsDvEnrollmentCsrInput interface {
 	pulumi.Input
 
@@ -977,11 +977,11 @@ func (i CpsDvEnrollmentCsrArgs) ToCpsDvEnrollmentCsrPtrOutputWithContext(ctx con
 // CpsDvEnrollmentCsrPtrInput is an input type that accepts CpsDvEnrollmentCsrArgs, CpsDvEnrollmentCsrPtr and CpsDvEnrollmentCsrPtrOutput values.
 // You can construct a concrete instance of `CpsDvEnrollmentCsrPtrInput` via:
 //
-//          CpsDvEnrollmentCsrArgs{...}
+//	        CpsDvEnrollmentCsrArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type CpsDvEnrollmentCsrPtrInput interface {
 	pulumi.Input
 
@@ -1139,7 +1139,7 @@ type CpsDvEnrollmentDnsChallenge struct {
 // CpsDvEnrollmentDnsChallengeInput is an input type that accepts CpsDvEnrollmentDnsChallengeArgs and CpsDvEnrollmentDnsChallengeOutput values.
 // You can construct a concrete instance of `CpsDvEnrollmentDnsChallengeInput` via:
 //
-//          CpsDvEnrollmentDnsChallengeArgs{...}
+//	CpsDvEnrollmentDnsChallengeArgs{...}
 type CpsDvEnrollmentDnsChallengeInput interface {
 	pulumi.Input
 
@@ -1168,7 +1168,7 @@ func (i CpsDvEnrollmentDnsChallengeArgs) ToCpsDvEnrollmentDnsChallengeOutputWith
 // CpsDvEnrollmentDnsChallengeArrayInput is an input type that accepts CpsDvEnrollmentDnsChallengeArray and CpsDvEnrollmentDnsChallengeArrayOutput values.
 // You can construct a concrete instance of `CpsDvEnrollmentDnsChallengeArrayInput` via:
 //
-//          CpsDvEnrollmentDnsChallengeArray{ CpsDvEnrollmentDnsChallengeArgs{...} }
+//	CpsDvEnrollmentDnsChallengeArray{ CpsDvEnrollmentDnsChallengeArgs{...} }
 type CpsDvEnrollmentDnsChallengeArrayInput interface {
 	pulumi.Input
 
@@ -1245,7 +1245,7 @@ type CpsDvEnrollmentHttpChallenge struct {
 // CpsDvEnrollmentHttpChallengeInput is an input type that accepts CpsDvEnrollmentHttpChallengeArgs and CpsDvEnrollmentHttpChallengeOutput values.
 // You can construct a concrete instance of `CpsDvEnrollmentHttpChallengeInput` via:
 //
-//          CpsDvEnrollmentHttpChallengeArgs{...}
+//	CpsDvEnrollmentHttpChallengeArgs{...}
 type CpsDvEnrollmentHttpChallengeInput interface {
 	pulumi.Input
 
@@ -1274,7 +1274,7 @@ func (i CpsDvEnrollmentHttpChallengeArgs) ToCpsDvEnrollmentHttpChallengeOutputWi
 // CpsDvEnrollmentHttpChallengeArrayInput is an input type that accepts CpsDvEnrollmentHttpChallengeArray and CpsDvEnrollmentHttpChallengeArrayOutput values.
 // You can construct a concrete instance of `CpsDvEnrollmentHttpChallengeArrayInput` via:
 //
-//          CpsDvEnrollmentHttpChallengeArray{ CpsDvEnrollmentHttpChallengeArgs{...} }
+//	CpsDvEnrollmentHttpChallengeArray{ CpsDvEnrollmentHttpChallengeArgs{...} }
 type CpsDvEnrollmentHttpChallengeArrayInput interface {
 	pulumi.Input
 
@@ -1364,7 +1364,7 @@ type CpsDvEnrollmentNetworkConfiguration struct {
 // CpsDvEnrollmentNetworkConfigurationInput is an input type that accepts CpsDvEnrollmentNetworkConfigurationArgs and CpsDvEnrollmentNetworkConfigurationOutput values.
 // You can construct a concrete instance of `CpsDvEnrollmentNetworkConfigurationInput` via:
 //
-//          CpsDvEnrollmentNetworkConfigurationArgs{...}
+//	CpsDvEnrollmentNetworkConfigurationArgs{...}
 type CpsDvEnrollmentNetworkConfigurationInput interface {
 	pulumi.Input
 
@@ -1414,11 +1414,11 @@ func (i CpsDvEnrollmentNetworkConfigurationArgs) ToCpsDvEnrollmentNetworkConfigu
 // CpsDvEnrollmentNetworkConfigurationPtrInput is an input type that accepts CpsDvEnrollmentNetworkConfigurationArgs, CpsDvEnrollmentNetworkConfigurationPtr and CpsDvEnrollmentNetworkConfigurationPtrOutput values.
 // You can construct a concrete instance of `CpsDvEnrollmentNetworkConfigurationPtrInput` via:
 //
-//          CpsDvEnrollmentNetworkConfigurationArgs{...}
+//	        CpsDvEnrollmentNetworkConfigurationArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type CpsDvEnrollmentNetworkConfigurationPtrInput interface {
 	pulumi.Input
 
@@ -1626,7 +1626,7 @@ type CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication struct {
 // CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationInput is an input type that accepts CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs and CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationOutput values.
 // You can construct a concrete instance of `CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationInput` via:
 //
-//          CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs{...}
+//	CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs{...}
 type CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationInput interface {
 	pulumi.Input
 
@@ -1666,11 +1666,11 @@ func (i CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) ToCps
 // CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrInput is an input type that accepts CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs, CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtr and CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput values.
 // You can construct a concrete instance of `CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrInput` via:
 //
-//          CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs{...}
+//	        CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationPtrInput interface {
 	pulumi.Input
 
@@ -1813,7 +1813,7 @@ type CpsDvEnrollmentOrganization struct {
 // CpsDvEnrollmentOrganizationInput is an input type that accepts CpsDvEnrollmentOrganizationArgs and CpsDvEnrollmentOrganizationOutput values.
 // You can construct a concrete instance of `CpsDvEnrollmentOrganizationInput` via:
 //
-//          CpsDvEnrollmentOrganizationArgs{...}
+//	CpsDvEnrollmentOrganizationArgs{...}
 type CpsDvEnrollmentOrganizationInput interface {
 	pulumi.Input
 
@@ -1863,11 +1863,11 @@ func (i CpsDvEnrollmentOrganizationArgs) ToCpsDvEnrollmentOrganizationPtrOutputW
 // CpsDvEnrollmentOrganizationPtrInput is an input type that accepts CpsDvEnrollmentOrganizationArgs, CpsDvEnrollmentOrganizationPtr and CpsDvEnrollmentOrganizationPtrOutput values.
 // You can construct a concrete instance of `CpsDvEnrollmentOrganizationPtrInput` via:
 //
-//          CpsDvEnrollmentOrganizationArgs{...}
+//	        CpsDvEnrollmentOrganizationArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type CpsDvEnrollmentOrganizationPtrInput interface {
 	pulumi.Input
 
@@ -2091,7 +2091,7 @@ type CpsDvEnrollmentTechContact struct {
 // CpsDvEnrollmentTechContactInput is an input type that accepts CpsDvEnrollmentTechContactArgs and CpsDvEnrollmentTechContactOutput values.
 // You can construct a concrete instance of `CpsDvEnrollmentTechContactInput` via:
 //
-//          CpsDvEnrollmentTechContactArgs{...}
+//	CpsDvEnrollmentTechContactArgs{...}
 type CpsDvEnrollmentTechContactInput interface {
 	pulumi.Input
 
@@ -2149,11 +2149,11 @@ func (i CpsDvEnrollmentTechContactArgs) ToCpsDvEnrollmentTechContactPtrOutputWit
 // CpsDvEnrollmentTechContactPtrInput is an input type that accepts CpsDvEnrollmentTechContactArgs, CpsDvEnrollmentTechContactPtr and CpsDvEnrollmentTechContactPtrOutput values.
 // You can construct a concrete instance of `CpsDvEnrollmentTechContactPtrInput` via:
 //
-//          CpsDvEnrollmentTechContactArgs{...}
+//	        CpsDvEnrollmentTechContactArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type CpsDvEnrollmentTechContactPtrInput interface {
 	pulumi.Input
 
@@ -2410,14 +2410,14 @@ func (o CpsDvEnrollmentTechContactPtrOutput) Title() pulumi.StringPtrOutput {
 type DatastreamAzureConnector struct {
 	// **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
 	AccessKey string `pulumi:"accessKey"`
-	// - (Required) Specifies the Azure Storage account name.
+	// Specifies the Azure Storage account name.
 	AccountName string `pulumi:"accountName"`
 	// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
 	CompressLogs *bool `pulumi:"compressLogs"`
 	ConnectorId  *int  `pulumi:"connectorId"`
 	// The name of the connector.
 	ConnectorName string `pulumi:"connectorName"`
-	// - (Required) Specifies the Azure Storage container name.
+	// Specifies the Azure Storage container name.
 	ContainerName string `pulumi:"containerName"`
 	// The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
 	Path string `pulumi:"path"`
@@ -2426,7 +2426,7 @@ type DatastreamAzureConnector struct {
 // DatastreamAzureConnectorInput is an input type that accepts DatastreamAzureConnectorArgs and DatastreamAzureConnectorOutput values.
 // You can construct a concrete instance of `DatastreamAzureConnectorInput` via:
 //
-//          DatastreamAzureConnectorArgs{...}
+//	DatastreamAzureConnectorArgs{...}
 type DatastreamAzureConnectorInput interface {
 	pulumi.Input
 
@@ -2437,14 +2437,14 @@ type DatastreamAzureConnectorInput interface {
 type DatastreamAzureConnectorArgs struct {
 	// **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
 	AccessKey pulumi.StringInput `pulumi:"accessKey"`
-	// - (Required) Specifies the Azure Storage account name.
+	// Specifies the Azure Storage account name.
 	AccountName pulumi.StringInput `pulumi:"accountName"`
 	// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
 	CompressLogs pulumi.BoolPtrInput `pulumi:"compressLogs"`
 	ConnectorId  pulumi.IntPtrInput  `pulumi:"connectorId"`
 	// The name of the connector.
 	ConnectorName pulumi.StringInput `pulumi:"connectorName"`
-	// - (Required) Specifies the Azure Storage container name.
+	// Specifies the Azure Storage container name.
 	ContainerName pulumi.StringInput `pulumi:"containerName"`
 	// The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
 	Path pulumi.StringInput `pulumi:"path"`
@@ -2473,11 +2473,11 @@ func (i DatastreamAzureConnectorArgs) ToDatastreamAzureConnectorPtrOutputWithCon
 // DatastreamAzureConnectorPtrInput is an input type that accepts DatastreamAzureConnectorArgs, DatastreamAzureConnectorPtr and DatastreamAzureConnectorPtrOutput values.
 // You can construct a concrete instance of `DatastreamAzureConnectorPtrInput` via:
 //
-//          DatastreamAzureConnectorArgs{...}
+//	        DatastreamAzureConnectorArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatastreamAzureConnectorPtrInput interface {
 	pulumi.Input
 
@@ -2532,7 +2532,7 @@ func (o DatastreamAzureConnectorOutput) AccessKey() pulumi.StringOutput {
 	return o.ApplyT(func(v DatastreamAzureConnector) string { return v.AccessKey }).(pulumi.StringOutput)
 }
 
-// - (Required) Specifies the Azure Storage account name.
+// Specifies the Azure Storage account name.
 func (o DatastreamAzureConnectorOutput) AccountName() pulumi.StringOutput {
 	return o.ApplyT(func(v DatastreamAzureConnector) string { return v.AccountName }).(pulumi.StringOutput)
 }
@@ -2551,7 +2551,7 @@ func (o DatastreamAzureConnectorOutput) ConnectorName() pulumi.StringOutput {
 	return o.ApplyT(func(v DatastreamAzureConnector) string { return v.ConnectorName }).(pulumi.StringOutput)
 }
 
-// - (Required) Specifies the Azure Storage container name.
+// Specifies the Azure Storage container name.
 func (o DatastreamAzureConnectorOutput) ContainerName() pulumi.StringOutput {
 	return o.ApplyT(func(v DatastreamAzureConnector) string { return v.ContainerName }).(pulumi.StringOutput)
 }
@@ -2595,7 +2595,7 @@ func (o DatastreamAzureConnectorPtrOutput) AccessKey() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// - (Required) Specifies the Azure Storage account name.
+// Specifies the Azure Storage account name.
 func (o DatastreamAzureConnectorPtrOutput) AccountName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatastreamAzureConnector) *string {
 		if v == nil {
@@ -2634,7 +2634,7 @@ func (o DatastreamAzureConnectorPtrOutput) ConnectorName() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// - (Required) Specifies the Azure Storage container name.
+// Specifies the Azure Storage container name.
 func (o DatastreamAzureConnectorPtrOutput) ContainerName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatastreamAzureConnector) *string {
 		if v == nil {
@@ -2657,11 +2657,11 @@ func (o DatastreamAzureConnectorPtrOutput) Path() pulumi.StringPtrOutput {
 type DatastreamConfig struct {
 	// A delimiter that you want to use to separate data set fields in the log lines. Currently, `SPACE` is the only available delimiter. This field is required for the `STRUCTURED` log file `format`.
 	Delimiter *string `pulumi:"delimiter"`
-	// - (Required) The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
+	// The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
 	Format string `pulumi:"format"`
-	// - (Required) How often you want to collect logs from each uploader and send them to a destination.
+	// How often you want to collect logs from each uploader and send them to a destination.
 	Frequency DatastreamConfigFrequency `pulumi:"frequency"`
-	// - (Optional) The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
+	// The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
 	UploadFilePrefix *string `pulumi:"uploadFilePrefix"`
 	// The suffix of the log file that you want to send to a destination. It’s a static string of at most 10 characters. If unspecified, defaults to `ds`.
 	UploadFileSuffix *string `pulumi:"uploadFileSuffix"`
@@ -2670,7 +2670,7 @@ type DatastreamConfig struct {
 // DatastreamConfigInput is an input type that accepts DatastreamConfigArgs and DatastreamConfigOutput values.
 // You can construct a concrete instance of `DatastreamConfigInput` via:
 //
-//          DatastreamConfigArgs{...}
+//	DatastreamConfigArgs{...}
 type DatastreamConfigInput interface {
 	pulumi.Input
 
@@ -2681,11 +2681,11 @@ type DatastreamConfigInput interface {
 type DatastreamConfigArgs struct {
 	// A delimiter that you want to use to separate data set fields in the log lines. Currently, `SPACE` is the only available delimiter. This field is required for the `STRUCTURED` log file `format`.
 	Delimiter pulumi.StringPtrInput `pulumi:"delimiter"`
-	// - (Required) The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
+	// The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
 	Format pulumi.StringInput `pulumi:"format"`
-	// - (Required) How often you want to collect logs from each uploader and send them to a destination.
+	// How often you want to collect logs from each uploader and send them to a destination.
 	Frequency DatastreamConfigFrequencyInput `pulumi:"frequency"`
-	// - (Optional) The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
+	// The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
 	UploadFilePrefix pulumi.StringPtrInput `pulumi:"uploadFilePrefix"`
 	// The suffix of the log file that you want to send to a destination. It’s a static string of at most 10 characters. If unspecified, defaults to `ds`.
 	UploadFileSuffix pulumi.StringPtrInput `pulumi:"uploadFileSuffix"`
@@ -2714,11 +2714,11 @@ func (i DatastreamConfigArgs) ToDatastreamConfigPtrOutputWithContext(ctx context
 // DatastreamConfigPtrInput is an input type that accepts DatastreamConfigArgs, DatastreamConfigPtr and DatastreamConfigPtrOutput values.
 // You can construct a concrete instance of `DatastreamConfigPtrInput` via:
 //
-//          DatastreamConfigArgs{...}
+//	        DatastreamConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatastreamConfigPtrInput interface {
 	pulumi.Input
 
@@ -2773,17 +2773,17 @@ func (o DatastreamConfigOutput) Delimiter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatastreamConfig) *string { return v.Delimiter }).(pulumi.StringPtrOutput)
 }
 
-// - (Required) The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
+// The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
 func (o DatastreamConfigOutput) Format() pulumi.StringOutput {
 	return o.ApplyT(func(v DatastreamConfig) string { return v.Format }).(pulumi.StringOutput)
 }
 
-// - (Required) How often you want to collect logs from each uploader and send them to a destination.
+// How often you want to collect logs from each uploader and send them to a destination.
 func (o DatastreamConfigOutput) Frequency() DatastreamConfigFrequencyOutput {
 	return o.ApplyT(func(v DatastreamConfig) DatastreamConfigFrequency { return v.Frequency }).(DatastreamConfigFrequencyOutput)
 }
 
-// - (Optional) The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
+// The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
 func (o DatastreamConfigOutput) UploadFilePrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatastreamConfig) *string { return v.UploadFilePrefix }).(pulumi.StringPtrOutput)
 }
@@ -2827,7 +2827,7 @@ func (o DatastreamConfigPtrOutput) Delimiter() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// - (Required) The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
+// The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
 func (o DatastreamConfigPtrOutput) Format() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatastreamConfig) *string {
 		if v == nil {
@@ -2837,7 +2837,7 @@ func (o DatastreamConfigPtrOutput) Format() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// - (Required) How often you want to collect logs from each uploader and send them to a destination.
+// How often you want to collect logs from each uploader and send them to a destination.
 func (o DatastreamConfigPtrOutput) Frequency() DatastreamConfigFrequencyPtrOutput {
 	return o.ApplyT(func(v *DatastreamConfig) *DatastreamConfigFrequency {
 		if v == nil {
@@ -2847,7 +2847,7 @@ func (o DatastreamConfigPtrOutput) Frequency() DatastreamConfigFrequencyPtrOutpu
 	}).(DatastreamConfigFrequencyPtrOutput)
 }
 
-// - (Optional) The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
+// The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
 func (o DatastreamConfigPtrOutput) UploadFilePrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatastreamConfig) *string {
 		if v == nil {
@@ -2868,14 +2868,14 @@ func (o DatastreamConfigPtrOutput) UploadFileSuffix() pulumi.StringPtrOutput {
 }
 
 type DatastreamConfigFrequency struct {
-	// - (Required) The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
+	// The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
 	TimeInSec int `pulumi:"timeInSec"`
 }
 
 // DatastreamConfigFrequencyInput is an input type that accepts DatastreamConfigFrequencyArgs and DatastreamConfigFrequencyOutput values.
 // You can construct a concrete instance of `DatastreamConfigFrequencyInput` via:
 //
-//          DatastreamConfigFrequencyArgs{...}
+//	DatastreamConfigFrequencyArgs{...}
 type DatastreamConfigFrequencyInput interface {
 	pulumi.Input
 
@@ -2884,7 +2884,7 @@ type DatastreamConfigFrequencyInput interface {
 }
 
 type DatastreamConfigFrequencyArgs struct {
-	// - (Required) The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
+	// The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
 	TimeInSec pulumi.IntInput `pulumi:"timeInSec"`
 }
 
@@ -2911,11 +2911,11 @@ func (i DatastreamConfigFrequencyArgs) ToDatastreamConfigFrequencyPtrOutputWithC
 // DatastreamConfigFrequencyPtrInput is an input type that accepts DatastreamConfigFrequencyArgs, DatastreamConfigFrequencyPtr and DatastreamConfigFrequencyPtrOutput values.
 // You can construct a concrete instance of `DatastreamConfigFrequencyPtrInput` via:
 //
-//          DatastreamConfigFrequencyArgs{...}
+//	        DatastreamConfigFrequencyArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatastreamConfigFrequencyPtrInput interface {
 	pulumi.Input
 
@@ -2965,7 +2965,7 @@ func (o DatastreamConfigFrequencyOutput) ToDatastreamConfigFrequencyPtrOutputWit
 	}).(DatastreamConfigFrequencyPtrOutput)
 }
 
-// - (Required) The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
+// The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
 func (o DatastreamConfigFrequencyOutput) TimeInSec() pulumi.IntOutput {
 	return o.ApplyT(func(v DatastreamConfigFrequency) int { return v.TimeInSec }).(pulumi.IntOutput)
 }
@@ -2994,7 +2994,7 @@ func (o DatastreamConfigFrequencyPtrOutput) Elem() DatastreamConfigFrequencyOutp
 	}).(DatastreamConfigFrequencyOutput)
 }
 
-// - (Required) The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
+// The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
 func (o DatastreamConfigFrequencyPtrOutput) TimeInSec() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DatastreamConfigFrequency) *int {
 		if v == nil {
@@ -3005,7 +3005,7 @@ func (o DatastreamConfigFrequencyPtrOutput) TimeInSec() pulumi.IntPtrOutput {
 }
 
 type DatastreamDatadogConnector struct {
-	// - (Required) **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
+	// **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
 	// * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
 	AuthToken string `pulumi:"authToken"`
 	// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
@@ -3026,7 +3026,7 @@ type DatastreamDatadogConnector struct {
 // DatastreamDatadogConnectorInput is an input type that accepts DatastreamDatadogConnectorArgs and DatastreamDatadogConnectorOutput values.
 // You can construct a concrete instance of `DatastreamDatadogConnectorInput` via:
 //
-//          DatastreamDatadogConnectorArgs{...}
+//	DatastreamDatadogConnectorArgs{...}
 type DatastreamDatadogConnectorInput interface {
 	pulumi.Input
 
@@ -3035,7 +3035,7 @@ type DatastreamDatadogConnectorInput interface {
 }
 
 type DatastreamDatadogConnectorArgs struct {
-	// - (Required) **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
+	// **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
 	// * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
 	AuthToken pulumi.StringInput `pulumi:"authToken"`
 	// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
@@ -3076,11 +3076,11 @@ func (i DatastreamDatadogConnectorArgs) ToDatastreamDatadogConnectorPtrOutputWit
 // DatastreamDatadogConnectorPtrInput is an input type that accepts DatastreamDatadogConnectorArgs, DatastreamDatadogConnectorPtr and DatastreamDatadogConnectorPtrOutput values.
 // You can construct a concrete instance of `DatastreamDatadogConnectorPtrInput` via:
 //
-//          DatastreamDatadogConnectorArgs{...}
+//	        DatastreamDatadogConnectorArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatastreamDatadogConnectorPtrInput interface {
 	pulumi.Input
 
@@ -3130,7 +3130,7 @@ func (o DatastreamDatadogConnectorOutput) ToDatastreamDatadogConnectorPtrOutputW
 	}).(DatastreamDatadogConnectorPtrOutput)
 }
 
-// - (Required) **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
+// **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
 // * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
 func (o DatastreamDatadogConnectorOutput) AuthToken() pulumi.StringOutput {
 	return o.ApplyT(func(v DatastreamDatadogConnector) string { return v.AuthToken }).(pulumi.StringOutput)
@@ -3194,7 +3194,7 @@ func (o DatastreamDatadogConnectorPtrOutput) Elem() DatastreamDatadogConnectorOu
 	}).(DatastreamDatadogConnectorOutput)
 }
 
-// - (Required) **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
+// **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
 // * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
 func (o DatastreamDatadogConnectorPtrOutput) AuthToken() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatastreamDatadogConnector) *string {
@@ -3284,18 +3284,18 @@ type DatastreamGcsConnector struct {
 	ConnectorName string `pulumi:"connectorName"`
 	// The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
 	Path *string `pulumi:"path"`
-	// - (Required) **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
+	// **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
 	PrivateKey string `pulumi:"privateKey"`
-	// - (Required) The unique ID of your Google Cloud project.
+	// The unique ID of your Google Cloud project.
 	ProjectId string `pulumi:"projectId"`
-	// - (Required)	The name of the service account with the storage.object.create permission or Storage Object Creator role.
+	// The name of the service account with the storage.object.create permission or Storage Object Creator role.
 	ServiceAccountName string `pulumi:"serviceAccountName"`
 }
 
 // DatastreamGcsConnectorInput is an input type that accepts DatastreamGcsConnectorArgs and DatastreamGcsConnectorOutput values.
 // You can construct a concrete instance of `DatastreamGcsConnectorInput` via:
 //
-//          DatastreamGcsConnectorArgs{...}
+//	DatastreamGcsConnectorArgs{...}
 type DatastreamGcsConnectorInput interface {
 	pulumi.Input
 
@@ -3313,11 +3313,11 @@ type DatastreamGcsConnectorArgs struct {
 	ConnectorName pulumi.StringInput `pulumi:"connectorName"`
 	// The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
 	Path pulumi.StringPtrInput `pulumi:"path"`
-	// - (Required) **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
+	// **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
 	PrivateKey pulumi.StringInput `pulumi:"privateKey"`
-	// - (Required) The unique ID of your Google Cloud project.
+	// The unique ID of your Google Cloud project.
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
-	// - (Required)	The name of the service account with the storage.object.create permission or Storage Object Creator role.
+	// The name of the service account with the storage.object.create permission or Storage Object Creator role.
 	ServiceAccountName pulumi.StringInput `pulumi:"serviceAccountName"`
 }
 
@@ -3344,11 +3344,11 @@ func (i DatastreamGcsConnectorArgs) ToDatastreamGcsConnectorPtrOutputWithContext
 // DatastreamGcsConnectorPtrInput is an input type that accepts DatastreamGcsConnectorArgs, DatastreamGcsConnectorPtr and DatastreamGcsConnectorPtrOutput values.
 // You can construct a concrete instance of `DatastreamGcsConnectorPtrInput` via:
 //
-//          DatastreamGcsConnectorArgs{...}
+//	        DatastreamGcsConnectorArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatastreamGcsConnectorPtrInput interface {
 	pulumi.Input
 
@@ -3422,17 +3422,17 @@ func (o DatastreamGcsConnectorOutput) Path() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatastreamGcsConnector) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
-// - (Required) **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
+// **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
 func (o DatastreamGcsConnectorOutput) PrivateKey() pulumi.StringOutput {
 	return o.ApplyT(func(v DatastreamGcsConnector) string { return v.PrivateKey }).(pulumi.StringOutput)
 }
 
-// - (Required) The unique ID of your Google Cloud project.
+// The unique ID of your Google Cloud project.
 func (o DatastreamGcsConnectorOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v DatastreamGcsConnector) string { return v.ProjectId }).(pulumi.StringOutput)
 }
 
-// - (Required)	The name of the service account with the storage.object.create permission or Storage Object Creator role.
+// The name of the service account with the storage.object.create permission or Storage Object Creator role.
 func (o DatastreamGcsConnectorOutput) ServiceAccountName() pulumi.StringOutput {
 	return o.ApplyT(func(v DatastreamGcsConnector) string { return v.ServiceAccountName }).(pulumi.StringOutput)
 }
@@ -3510,7 +3510,7 @@ func (o DatastreamGcsConnectorPtrOutput) Path() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// - (Required) **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
+// **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
 func (o DatastreamGcsConnectorPtrOutput) PrivateKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatastreamGcsConnector) *string {
 		if v == nil {
@@ -3520,7 +3520,7 @@ func (o DatastreamGcsConnectorPtrOutput) PrivateKey() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// - (Required) The unique ID of your Google Cloud project.
+// The unique ID of your Google Cloud project.
 func (o DatastreamGcsConnectorPtrOutput) ProjectId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatastreamGcsConnector) *string {
 		if v == nil {
@@ -3530,7 +3530,7 @@ func (o DatastreamGcsConnectorPtrOutput) ProjectId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// - (Required)	The name of the service account with the storage.object.create permission or Storage Object Creator role.
+// The name of the service account with the storage.object.create permission or Storage Object Creator role.
 func (o DatastreamGcsConnectorPtrOutput) ServiceAccountName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatastreamGcsConnector) *string {
 		if v == nil {
@@ -3559,7 +3559,7 @@ type DatastreamHttpsConnector struct {
 // DatastreamHttpsConnectorInput is an input type that accepts DatastreamHttpsConnectorArgs and DatastreamHttpsConnectorOutput values.
 // You can construct a concrete instance of `DatastreamHttpsConnectorInput` via:
 //
-//          DatastreamHttpsConnectorArgs{...}
+//	DatastreamHttpsConnectorArgs{...}
 type DatastreamHttpsConnectorInput interface {
 	pulumi.Input
 
@@ -3606,11 +3606,11 @@ func (i DatastreamHttpsConnectorArgs) ToDatastreamHttpsConnectorPtrOutputWithCon
 // DatastreamHttpsConnectorPtrInput is an input type that accepts DatastreamHttpsConnectorArgs, DatastreamHttpsConnectorPtr and DatastreamHttpsConnectorPtrOutput values.
 // You can construct a concrete instance of `DatastreamHttpsConnectorPtrInput` via:
 //
-//          DatastreamHttpsConnectorArgs{...}
+//	        DatastreamHttpsConnectorArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatastreamHttpsConnectorPtrInput interface {
 	pulumi.Input
 
@@ -3810,7 +3810,7 @@ type DatastreamOracleConnector struct {
 // DatastreamOracleConnectorInput is an input type that accepts DatastreamOracleConnectorArgs and DatastreamOracleConnectorOutput values.
 // You can construct a concrete instance of `DatastreamOracleConnectorInput` via:
 //
-//          DatastreamOracleConnectorArgs{...}
+//	DatastreamOracleConnectorArgs{...}
 type DatastreamOracleConnectorInput interface {
 	pulumi.Input
 
@@ -3861,11 +3861,11 @@ func (i DatastreamOracleConnectorArgs) ToDatastreamOracleConnectorPtrOutputWithC
 // DatastreamOracleConnectorPtrInput is an input type that accepts DatastreamOracleConnectorArgs, DatastreamOracleConnectorPtr and DatastreamOracleConnectorPtrOutput values.
 // You can construct a concrete instance of `DatastreamOracleConnectorPtrInput` via:
 //
-//          DatastreamOracleConnectorArgs{...}
+//	        DatastreamOracleConnectorArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatastreamOracleConnectorPtrInput interface {
 	pulumi.Input
 
@@ -4093,7 +4093,7 @@ type DatastreamS3Connector struct {
 // DatastreamS3ConnectorInput is an input type that accepts DatastreamS3ConnectorArgs and DatastreamS3ConnectorOutput values.
 // You can construct a concrete instance of `DatastreamS3ConnectorInput` via:
 //
-//          DatastreamS3ConnectorArgs{...}
+//	DatastreamS3ConnectorArgs{...}
 type DatastreamS3ConnectorInput interface {
 	pulumi.Input
 
@@ -4142,11 +4142,11 @@ func (i DatastreamS3ConnectorArgs) ToDatastreamS3ConnectorPtrOutputWithContext(c
 // DatastreamS3ConnectorPtrInput is an input type that accepts DatastreamS3ConnectorArgs, DatastreamS3ConnectorPtr and DatastreamS3ConnectorPtrOutput values.
 // You can construct a concrete instance of `DatastreamS3ConnectorPtrInput` via:
 //
-//          DatastreamS3ConnectorArgs{...}
+//	        DatastreamS3ConnectorArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatastreamS3ConnectorPtrInput interface {
 	pulumi.Input
 
@@ -4344,7 +4344,7 @@ type DatastreamSplunkConnector struct {
 	ConnectorId  *int  `pulumi:"connectorId"`
 	// The name of the connector.
 	ConnectorName string `pulumi:"connectorName"`
-	// - (Required) **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
+	// **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
 	EventCollectorToken string `pulumi:"eventCollectorToken"`
 	// Enter the secure URL where you want to send and store your logs.
 	Url string `pulumi:"url"`
@@ -4353,7 +4353,7 @@ type DatastreamSplunkConnector struct {
 // DatastreamSplunkConnectorInput is an input type that accepts DatastreamSplunkConnectorArgs and DatastreamSplunkConnectorOutput values.
 // You can construct a concrete instance of `DatastreamSplunkConnectorInput` via:
 //
-//          DatastreamSplunkConnectorArgs{...}
+//	DatastreamSplunkConnectorArgs{...}
 type DatastreamSplunkConnectorInput interface {
 	pulumi.Input
 
@@ -4367,7 +4367,7 @@ type DatastreamSplunkConnectorArgs struct {
 	ConnectorId  pulumi.IntPtrInput  `pulumi:"connectorId"`
 	// The name of the connector.
 	ConnectorName pulumi.StringInput `pulumi:"connectorName"`
-	// - (Required) **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
+	// **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
 	EventCollectorToken pulumi.StringInput `pulumi:"eventCollectorToken"`
 	// Enter the secure URL where you want to send and store your logs.
 	Url pulumi.StringInput `pulumi:"url"`
@@ -4396,11 +4396,11 @@ func (i DatastreamSplunkConnectorArgs) ToDatastreamSplunkConnectorPtrOutputWithC
 // DatastreamSplunkConnectorPtrInput is an input type that accepts DatastreamSplunkConnectorArgs, DatastreamSplunkConnectorPtr and DatastreamSplunkConnectorPtrOutput values.
 // You can construct a concrete instance of `DatastreamSplunkConnectorPtrInput` via:
 //
-//          DatastreamSplunkConnectorArgs{...}
+//	        DatastreamSplunkConnectorArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatastreamSplunkConnectorPtrInput interface {
 	pulumi.Input
 
@@ -4464,7 +4464,7 @@ func (o DatastreamSplunkConnectorOutput) ConnectorName() pulumi.StringOutput {
 	return o.ApplyT(func(v DatastreamSplunkConnector) string { return v.ConnectorName }).(pulumi.StringOutput)
 }
 
-// - (Required) **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
+// **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
 func (o DatastreamSplunkConnectorOutput) EventCollectorToken() pulumi.StringOutput {
 	return o.ApplyT(func(v DatastreamSplunkConnector) string { return v.EventCollectorToken }).(pulumi.StringOutput)
 }
@@ -4527,7 +4527,7 @@ func (o DatastreamSplunkConnectorPtrOutput) ConnectorName() pulumi.StringPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
-// - (Required) **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
+// **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
 func (o DatastreamSplunkConnectorPtrOutput) EventCollectorToken() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatastreamSplunkConnector) *string {
 		if v == nil {
@@ -4562,7 +4562,7 @@ type DatastreamSumologicConnector struct {
 // DatastreamSumologicConnectorInput is an input type that accepts DatastreamSumologicConnectorArgs and DatastreamSumologicConnectorOutput values.
 // You can construct a concrete instance of `DatastreamSumologicConnectorInput` via:
 //
-//          DatastreamSumologicConnectorArgs{...}
+//	DatastreamSumologicConnectorArgs{...}
 type DatastreamSumologicConnectorInput interface {
 	pulumi.Input
 
@@ -4605,11 +4605,11 @@ func (i DatastreamSumologicConnectorArgs) ToDatastreamSumologicConnectorPtrOutpu
 // DatastreamSumologicConnectorPtrInput is an input type that accepts DatastreamSumologicConnectorArgs, DatastreamSumologicConnectorPtr and DatastreamSumologicConnectorPtrOutput values.
 // You can construct a concrete instance of `DatastreamSumologicConnectorPtrInput` via:
 //
-//          DatastreamSumologicConnectorArgs{...}
+//	        DatastreamSumologicConnectorArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatastreamSumologicConnectorPtrInput interface {
 	pulumi.Input
 
@@ -4768,7 +4768,7 @@ type DnsZoneTsigKey struct {
 // DnsZoneTsigKeyInput is an input type that accepts DnsZoneTsigKeyArgs and DnsZoneTsigKeyOutput values.
 // You can construct a concrete instance of `DnsZoneTsigKeyInput` via:
 //
-//          DnsZoneTsigKeyArgs{...}
+//	DnsZoneTsigKeyArgs{...}
 type DnsZoneTsigKeyInput interface {
 	pulumi.Input
 
@@ -4808,11 +4808,11 @@ func (i DnsZoneTsigKeyArgs) ToDnsZoneTsigKeyPtrOutputWithContext(ctx context.Con
 // DnsZoneTsigKeyPtrInput is an input type that accepts DnsZoneTsigKeyArgs, DnsZoneTsigKeyPtr and DnsZoneTsigKeyPtrOutput values.
 // You can construct a concrete instance of `DnsZoneTsigKeyPtrInput` via:
 //
-//          DnsZoneTsigKeyArgs{...}
+//	        DnsZoneTsigKeyArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DnsZoneTsigKeyPtrInput interface {
 	pulumi.Input
 
@@ -4940,7 +4940,7 @@ type EdgeKvInitialData struct {
 // EdgeKvInitialDataInput is an input type that accepts EdgeKvInitialDataArgs and EdgeKvInitialDataOutput values.
 // You can construct a concrete instance of `EdgeKvInitialDataInput` via:
 //
-//          EdgeKvInitialDataArgs{...}
+//	EdgeKvInitialDataArgs{...}
 type EdgeKvInitialDataInput interface {
 	pulumi.Input
 
@@ -4969,7 +4969,7 @@ func (i EdgeKvInitialDataArgs) ToEdgeKvInitialDataOutputWithContext(ctx context.
 // EdgeKvInitialDataArrayInput is an input type that accepts EdgeKvInitialDataArray and EdgeKvInitialDataArrayOutput values.
 // You can construct a concrete instance of `EdgeKvInitialDataArrayInput` via:
 //
-//          EdgeKvInitialDataArray{ EdgeKvInitialDataArgs{...} }
+//	EdgeKvInitialDataArray{ EdgeKvInitialDataArgs{...} }
 type EdgeKvInitialDataArrayInput interface {
 	pulumi.Input
 
@@ -5049,7 +5049,7 @@ type GtmAsmapAssignment struct {
 // GtmAsmapAssignmentInput is an input type that accepts GtmAsmapAssignmentArgs and GtmAsmapAssignmentOutput values.
 // You can construct a concrete instance of `GtmAsmapAssignmentInput` via:
 //
-//          GtmAsmapAssignmentArgs{...}
+//	GtmAsmapAssignmentArgs{...}
 type GtmAsmapAssignmentInput interface {
 	pulumi.Input
 
@@ -5081,7 +5081,7 @@ func (i GtmAsmapAssignmentArgs) ToGtmAsmapAssignmentOutputWithContext(ctx contex
 // GtmAsmapAssignmentArrayInput is an input type that accepts GtmAsmapAssignmentArray and GtmAsmapAssignmentArrayOutput values.
 // You can construct a concrete instance of `GtmAsmapAssignmentArrayInput` via:
 //
-//          GtmAsmapAssignmentArray{ GtmAsmapAssignmentArgs{...} }
+//	GtmAsmapAssignmentArray{ GtmAsmapAssignmentArgs{...} }
 type GtmAsmapAssignmentArrayInput interface {
 	pulumi.Input
 
@@ -5162,7 +5162,7 @@ type GtmAsmapDefaultDatacenter struct {
 // GtmAsmapDefaultDatacenterInput is an input type that accepts GtmAsmapDefaultDatacenterArgs and GtmAsmapDefaultDatacenterOutput values.
 // You can construct a concrete instance of `GtmAsmapDefaultDatacenterInput` via:
 //
-//          GtmAsmapDefaultDatacenterArgs{...}
+//	GtmAsmapDefaultDatacenterArgs{...}
 type GtmAsmapDefaultDatacenterInput interface {
 	pulumi.Input
 
@@ -5200,11 +5200,11 @@ func (i GtmAsmapDefaultDatacenterArgs) ToGtmAsmapDefaultDatacenterPtrOutputWithC
 // GtmAsmapDefaultDatacenterPtrInput is an input type that accepts GtmAsmapDefaultDatacenterArgs, GtmAsmapDefaultDatacenterPtr and GtmAsmapDefaultDatacenterPtrOutput values.
 // You can construct a concrete instance of `GtmAsmapDefaultDatacenterPtrInput` via:
 //
-//          GtmAsmapDefaultDatacenterArgs{...}
+//	        GtmAsmapDefaultDatacenterArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type GtmAsmapDefaultDatacenterPtrInput interface {
 	pulumi.Input
 
@@ -5320,7 +5320,7 @@ type GtmCidrmapAssignment struct {
 // GtmCidrmapAssignmentInput is an input type that accepts GtmCidrmapAssignmentArgs and GtmCidrmapAssignmentOutput values.
 // You can construct a concrete instance of `GtmCidrmapAssignmentInput` via:
 //
-//          GtmCidrmapAssignmentArgs{...}
+//	GtmCidrmapAssignmentArgs{...}
 type GtmCidrmapAssignmentInput interface {
 	pulumi.Input
 
@@ -5352,7 +5352,7 @@ func (i GtmCidrmapAssignmentArgs) ToGtmCidrmapAssignmentOutputWithContext(ctx co
 // GtmCidrmapAssignmentArrayInput is an input type that accepts GtmCidrmapAssignmentArray and GtmCidrmapAssignmentArrayOutput values.
 // You can construct a concrete instance of `GtmCidrmapAssignmentArrayInput` via:
 //
-//          GtmCidrmapAssignmentArray{ GtmCidrmapAssignmentArgs{...} }
+//	GtmCidrmapAssignmentArray{ GtmCidrmapAssignmentArgs{...} }
 type GtmCidrmapAssignmentArrayInput interface {
 	pulumi.Input
 
@@ -5433,7 +5433,7 @@ type GtmCidrmapDefaultDatacenter struct {
 // GtmCidrmapDefaultDatacenterInput is an input type that accepts GtmCidrmapDefaultDatacenterArgs and GtmCidrmapDefaultDatacenterOutput values.
 // You can construct a concrete instance of `GtmCidrmapDefaultDatacenterInput` via:
 //
-//          GtmCidrmapDefaultDatacenterArgs{...}
+//	GtmCidrmapDefaultDatacenterArgs{...}
 type GtmCidrmapDefaultDatacenterInput interface {
 	pulumi.Input
 
@@ -5471,11 +5471,11 @@ func (i GtmCidrmapDefaultDatacenterArgs) ToGtmCidrmapDefaultDatacenterPtrOutputW
 // GtmCidrmapDefaultDatacenterPtrInput is an input type that accepts GtmCidrmapDefaultDatacenterArgs, GtmCidrmapDefaultDatacenterPtr and GtmCidrmapDefaultDatacenterPtrOutput values.
 // You can construct a concrete instance of `GtmCidrmapDefaultDatacenterPtrInput` via:
 //
-//          GtmCidrmapDefaultDatacenterArgs{...}
+//	        GtmCidrmapDefaultDatacenterArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type GtmCidrmapDefaultDatacenterPtrInput interface {
 	pulumi.Input
 
@@ -5591,7 +5591,7 @@ type GtmDatacenterDefaultLoadObject struct {
 // GtmDatacenterDefaultLoadObjectInput is an input type that accepts GtmDatacenterDefaultLoadObjectArgs and GtmDatacenterDefaultLoadObjectOutput values.
 // You can construct a concrete instance of `GtmDatacenterDefaultLoadObjectInput` via:
 //
-//          GtmDatacenterDefaultLoadObjectArgs{...}
+//	GtmDatacenterDefaultLoadObjectArgs{...}
 type GtmDatacenterDefaultLoadObjectInput interface {
 	pulumi.Input
 
@@ -5631,11 +5631,11 @@ func (i GtmDatacenterDefaultLoadObjectArgs) ToGtmDatacenterDefaultLoadObjectPtrO
 // GtmDatacenterDefaultLoadObjectPtrInput is an input type that accepts GtmDatacenterDefaultLoadObjectArgs, GtmDatacenterDefaultLoadObjectPtr and GtmDatacenterDefaultLoadObjectPtrOutput values.
 // You can construct a concrete instance of `GtmDatacenterDefaultLoadObjectPtrInput` via:
 //
-//          GtmDatacenterDefaultLoadObjectArgs{...}
+//	        GtmDatacenterDefaultLoadObjectArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type GtmDatacenterDefaultLoadObjectPtrInput interface {
 	pulumi.Input
 
@@ -5766,7 +5766,7 @@ type GtmGeomapAssignment struct {
 // GtmGeomapAssignmentInput is an input type that accepts GtmGeomapAssignmentArgs and GtmGeomapAssignmentOutput values.
 // You can construct a concrete instance of `GtmGeomapAssignmentInput` via:
 //
-//          GtmGeomapAssignmentArgs{...}
+//	GtmGeomapAssignmentArgs{...}
 type GtmGeomapAssignmentInput interface {
 	pulumi.Input
 
@@ -5798,7 +5798,7 @@ func (i GtmGeomapAssignmentArgs) ToGtmGeomapAssignmentOutputWithContext(ctx cont
 // GtmGeomapAssignmentArrayInput is an input type that accepts GtmGeomapAssignmentArray and GtmGeomapAssignmentArrayOutput values.
 // You can construct a concrete instance of `GtmGeomapAssignmentArrayInput` via:
 //
-//          GtmGeomapAssignmentArray{ GtmGeomapAssignmentArgs{...} }
+//	GtmGeomapAssignmentArray{ GtmGeomapAssignmentArgs{...} }
 type GtmGeomapAssignmentArrayInput interface {
 	pulumi.Input
 
@@ -5879,7 +5879,7 @@ type GtmGeomapDefaultDatacenter struct {
 // GtmGeomapDefaultDatacenterInput is an input type that accepts GtmGeomapDefaultDatacenterArgs and GtmGeomapDefaultDatacenterOutput values.
 // You can construct a concrete instance of `GtmGeomapDefaultDatacenterInput` via:
 //
-//          GtmGeomapDefaultDatacenterArgs{...}
+//	GtmGeomapDefaultDatacenterArgs{...}
 type GtmGeomapDefaultDatacenterInput interface {
 	pulumi.Input
 
@@ -5917,11 +5917,11 @@ func (i GtmGeomapDefaultDatacenterArgs) ToGtmGeomapDefaultDatacenterPtrOutputWit
 // GtmGeomapDefaultDatacenterPtrInput is an input type that accepts GtmGeomapDefaultDatacenterArgs, GtmGeomapDefaultDatacenterPtr and GtmGeomapDefaultDatacenterPtrOutput values.
 // You can construct a concrete instance of `GtmGeomapDefaultDatacenterPtrInput` via:
 //
-//          GtmGeomapDefaultDatacenterArgs{...}
+//	        GtmGeomapDefaultDatacenterArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type GtmGeomapDefaultDatacenterPtrInput interface {
 	pulumi.Input
 
@@ -6079,7 +6079,7 @@ type GtmPropertyLivenessTest struct {
 // GtmPropertyLivenessTestInput is an input type that accepts GtmPropertyLivenessTestArgs and GtmPropertyLivenessTestOutput values.
 // You can construct a concrete instance of `GtmPropertyLivenessTestInput` via:
 //
-//          GtmPropertyLivenessTestArgs{...}
+//	GtmPropertyLivenessTestArgs{...}
 type GtmPropertyLivenessTestInput interface {
 	pulumi.Input
 
@@ -6153,7 +6153,7 @@ func (i GtmPropertyLivenessTestArgs) ToGtmPropertyLivenessTestOutputWithContext(
 // GtmPropertyLivenessTestArrayInput is an input type that accepts GtmPropertyLivenessTestArray and GtmPropertyLivenessTestArrayOutput values.
 // You can construct a concrete instance of `GtmPropertyLivenessTestArrayInput` via:
 //
-//          GtmPropertyLivenessTestArray{ GtmPropertyLivenessTestArgs{...} }
+//	GtmPropertyLivenessTestArray{ GtmPropertyLivenessTestArgs{...} }
 type GtmPropertyLivenessTestArrayInput interface {
 	pulumi.Input
 
@@ -6339,7 +6339,7 @@ type GtmPropertyLivenessTestHttpHeader struct {
 // GtmPropertyLivenessTestHttpHeaderInput is an input type that accepts GtmPropertyLivenessTestHttpHeaderArgs and GtmPropertyLivenessTestHttpHeaderOutput values.
 // You can construct a concrete instance of `GtmPropertyLivenessTestHttpHeaderInput` via:
 //
-//          GtmPropertyLivenessTestHttpHeaderArgs{...}
+//	GtmPropertyLivenessTestHttpHeaderArgs{...}
 type GtmPropertyLivenessTestHttpHeaderInput interface {
 	pulumi.Input
 
@@ -6369,7 +6369,7 @@ func (i GtmPropertyLivenessTestHttpHeaderArgs) ToGtmPropertyLivenessTestHttpHead
 // GtmPropertyLivenessTestHttpHeaderArrayInput is an input type that accepts GtmPropertyLivenessTestHttpHeaderArray and GtmPropertyLivenessTestHttpHeaderArrayOutput values.
 // You can construct a concrete instance of `GtmPropertyLivenessTestHttpHeaderArrayInput` via:
 //
-//          GtmPropertyLivenessTestHttpHeaderArray{ GtmPropertyLivenessTestHttpHeaderArgs{...} }
+//	GtmPropertyLivenessTestHttpHeaderArray{ GtmPropertyLivenessTestHttpHeaderArgs{...} }
 type GtmPropertyLivenessTestHttpHeaderArrayInput interface {
 	pulumi.Input
 
@@ -6447,7 +6447,7 @@ type GtmPropertyStaticRrSet struct {
 // GtmPropertyStaticRrSetInput is an input type that accepts GtmPropertyStaticRrSetArgs and GtmPropertyStaticRrSetOutput values.
 // You can construct a concrete instance of `GtmPropertyStaticRrSetInput` via:
 //
-//          GtmPropertyStaticRrSetArgs{...}
+//	GtmPropertyStaticRrSetArgs{...}
 type GtmPropertyStaticRrSetInput interface {
 	pulumi.Input
 
@@ -6479,7 +6479,7 @@ func (i GtmPropertyStaticRrSetArgs) ToGtmPropertyStaticRrSetOutputWithContext(ct
 // GtmPropertyStaticRrSetArrayInput is an input type that accepts GtmPropertyStaticRrSetArray and GtmPropertyStaticRrSetArrayOutput values.
 // You can construct a concrete instance of `GtmPropertyStaticRrSetArrayInput` via:
 //
-//          GtmPropertyStaticRrSetArray{ GtmPropertyStaticRrSetArgs{...} }
+//	GtmPropertyStaticRrSetArray{ GtmPropertyStaticRrSetArgs{...} }
 type GtmPropertyStaticRrSetArrayInput interface {
 	pulumi.Input
 
@@ -6568,7 +6568,7 @@ type GtmPropertyTrafficTarget struct {
 // GtmPropertyTrafficTargetInput is an input type that accepts GtmPropertyTrafficTargetArgs and GtmPropertyTrafficTargetOutput values.
 // You can construct a concrete instance of `GtmPropertyTrafficTargetInput` via:
 //
-//          GtmPropertyTrafficTargetArgs{...}
+//	GtmPropertyTrafficTargetArgs{...}
 type GtmPropertyTrafficTargetInput interface {
 	pulumi.Input
 
@@ -6606,7 +6606,7 @@ func (i GtmPropertyTrafficTargetArgs) ToGtmPropertyTrafficTargetOutputWithContex
 // GtmPropertyTrafficTargetArrayInput is an input type that accepts GtmPropertyTrafficTargetArray and GtmPropertyTrafficTargetArrayOutput values.
 // You can construct a concrete instance of `GtmPropertyTrafficTargetArrayInput` via:
 //
-//          GtmPropertyTrafficTargetArray{ GtmPropertyTrafficTargetArgs{...} }
+//	GtmPropertyTrafficTargetArray{ GtmPropertyTrafficTargetArgs{...} }
 type GtmPropertyTrafficTargetArrayInput interface {
 	pulumi.Input
 
@@ -6708,7 +6708,7 @@ type GtmResourceResourceInstance struct {
 // GtmResourceResourceInstanceInput is an input type that accepts GtmResourceResourceInstanceArgs and GtmResourceResourceInstanceOutput values.
 // You can construct a concrete instance of `GtmResourceResourceInstanceInput` via:
 //
-//          GtmResourceResourceInstanceArgs{...}
+//	GtmResourceResourceInstanceArgs{...}
 type GtmResourceResourceInstanceInput interface {
 	pulumi.Input
 
@@ -6744,7 +6744,7 @@ func (i GtmResourceResourceInstanceArgs) ToGtmResourceResourceInstanceOutputWith
 // GtmResourceResourceInstanceArrayInput is an input type that accepts GtmResourceResourceInstanceArray and GtmResourceResourceInstanceArrayOutput values.
 // You can construct a concrete instance of `GtmResourceResourceInstanceArrayInput` via:
 //
-//          GtmResourceResourceInstanceArray{ GtmResourceResourceInstanceArgs{...} }
+//	GtmResourceResourceInstanceArray{ GtmResourceResourceInstanceArgs{...} }
 type GtmResourceResourceInstanceArrayInput interface {
 	pulumi.Input
 
@@ -6838,7 +6838,7 @@ type PropertyActivationRuleError struct {
 // PropertyActivationRuleErrorInput is an input type that accepts PropertyActivationRuleErrorArgs and PropertyActivationRuleErrorOutput values.
 // You can construct a concrete instance of `PropertyActivationRuleErrorInput` via:
 //
-//          PropertyActivationRuleErrorArgs{...}
+//	PropertyActivationRuleErrorArgs{...}
 type PropertyActivationRuleErrorInput interface {
 	pulumi.Input
 
@@ -6871,7 +6871,7 @@ func (i PropertyActivationRuleErrorArgs) ToPropertyActivationRuleErrorOutputWith
 // PropertyActivationRuleErrorArrayInput is an input type that accepts PropertyActivationRuleErrorArray and PropertyActivationRuleErrorArrayOutput values.
 // You can construct a concrete instance of `PropertyActivationRuleErrorArrayInput` via:
 //
-//          PropertyActivationRuleErrorArray{ PropertyActivationRuleErrorArgs{...} }
+//	PropertyActivationRuleErrorArray{ PropertyActivationRuleErrorArgs{...} }
 type PropertyActivationRuleErrorArrayInput interface {
 	pulumi.Input
 
@@ -6968,7 +6968,7 @@ type PropertyActivationRuleWarning struct {
 // PropertyActivationRuleWarningInput is an input type that accepts PropertyActivationRuleWarningArgs and PropertyActivationRuleWarningOutput values.
 // You can construct a concrete instance of `PropertyActivationRuleWarningInput` via:
 //
-//          PropertyActivationRuleWarningArgs{...}
+//	PropertyActivationRuleWarningArgs{...}
 type PropertyActivationRuleWarningInput interface {
 	pulumi.Input
 
@@ -7001,7 +7001,7 @@ func (i PropertyActivationRuleWarningArgs) ToPropertyActivationRuleWarningOutput
 // PropertyActivationRuleWarningArrayInput is an input type that accepts PropertyActivationRuleWarningArray and PropertyActivationRuleWarningArrayOutput values.
 // You can construct a concrete instance of `PropertyActivationRuleWarningArrayInput` via:
 //
-//          PropertyActivationRuleWarningArray{ PropertyActivationRuleWarningArgs{...} }
+//	PropertyActivationRuleWarningArray{ PropertyActivationRuleWarningArgs{...} }
 type PropertyActivationRuleWarningArrayInput interface {
 	pulumi.Input
 
@@ -7086,7 +7086,7 @@ func (o PropertyActivationRuleWarningArrayOutput) Index(i pulumi.IntInput) Prope
 }
 
 type PropertyHostname struct {
-	// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+	// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
 	CertProvisioningType string                       `pulumi:"certProvisioningType"`
 	CertStatuses         []PropertyHostnameCertStatus `pulumi:"certStatuses"`
 	// A string containing the original origin's hostname. For example, `"example.org"`.
@@ -7100,7 +7100,7 @@ type PropertyHostname struct {
 // PropertyHostnameInput is an input type that accepts PropertyHostnameArgs and PropertyHostnameOutput values.
 // You can construct a concrete instance of `PropertyHostnameInput` via:
 //
-//          PropertyHostnameArgs{...}
+//	PropertyHostnameArgs{...}
 type PropertyHostnameInput interface {
 	pulumi.Input
 
@@ -7109,7 +7109,7 @@ type PropertyHostnameInput interface {
 }
 
 type PropertyHostnameArgs struct {
-	// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+	// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
 	CertProvisioningType pulumi.StringInput                   `pulumi:"certProvisioningType"`
 	CertStatuses         PropertyHostnameCertStatusArrayInput `pulumi:"certStatuses"`
 	// A string containing the original origin's hostname. For example, `"example.org"`.
@@ -7135,7 +7135,7 @@ func (i PropertyHostnameArgs) ToPropertyHostnameOutputWithContext(ctx context.Co
 // PropertyHostnameArrayInput is an input type that accepts PropertyHostnameArray and PropertyHostnameArrayOutput values.
 // You can construct a concrete instance of `PropertyHostnameArrayInput` via:
 //
-//          PropertyHostnameArray{ PropertyHostnameArgs{...} }
+//	PropertyHostnameArray{ PropertyHostnameArgs{...} }
 type PropertyHostnameArrayInput interface {
 	pulumi.Input
 
@@ -7171,7 +7171,7 @@ func (o PropertyHostnameOutput) ToPropertyHostnameOutputWithContext(ctx context.
 	return o
 }
 
-// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
 func (o PropertyHostnameOutput) CertProvisioningType() pulumi.StringOutput {
 	return o.ApplyT(func(v PropertyHostname) string { return v.CertProvisioningType }).(pulumi.StringOutput)
 }
@@ -7228,7 +7228,7 @@ type PropertyHostnameCertStatus struct {
 // PropertyHostnameCertStatusInput is an input type that accepts PropertyHostnameCertStatusArgs and PropertyHostnameCertStatusOutput values.
 // You can construct a concrete instance of `PropertyHostnameCertStatusInput` via:
 //
-//          PropertyHostnameCertStatusArgs{...}
+//	PropertyHostnameCertStatusArgs{...}
 type PropertyHostnameCertStatusInput interface {
 	pulumi.Input
 
@@ -7258,7 +7258,7 @@ func (i PropertyHostnameCertStatusArgs) ToPropertyHostnameCertStatusOutputWithCo
 // PropertyHostnameCertStatusArrayInput is an input type that accepts PropertyHostnameCertStatusArray and PropertyHostnameCertStatusArrayOutput values.
 // You can construct a concrete instance of `PropertyHostnameCertStatusArrayInput` via:
 //
-//          PropertyHostnameCertStatusArray{ PropertyHostnameCertStatusArgs{...} }
+//	PropertyHostnameCertStatusArray{ PropertyHostnameCertStatusArgs{...} }
 type PropertyHostnameCertStatusArrayInput interface {
 	pulumi.Input
 
@@ -7342,7 +7342,7 @@ type PropertyOrigin struct {
 // PropertyOriginInput is an input type that accepts PropertyOriginArgs and PropertyOriginOutput values.
 // You can construct a concrete instance of `PropertyOriginInput` via:
 //
-//          PropertyOriginArgs{...}
+//	PropertyOriginArgs{...}
 type PropertyOriginInput interface {
 	pulumi.Input
 
@@ -7374,7 +7374,7 @@ func (i PropertyOriginArgs) ToPropertyOriginOutputWithContext(ctx context.Contex
 // PropertyOriginArrayInput is an input type that accepts PropertyOriginArray and PropertyOriginArrayOutput values.
 // You can construct a concrete instance of `PropertyOriginArrayInput` via:
 //
-//          PropertyOriginArray{ PropertyOriginArgs{...} }
+//	PropertyOriginArray{ PropertyOriginArgs{...} }
 type PropertyOriginArrayInput interface {
 	pulumi.Input
 
@@ -7467,7 +7467,7 @@ type PropertyRuleError struct {
 // PropertyRuleErrorInput is an input type that accepts PropertyRuleErrorArgs and PropertyRuleErrorOutput values.
 // You can construct a concrete instance of `PropertyRuleErrorInput` via:
 //
-//          PropertyRuleErrorArgs{...}
+//	PropertyRuleErrorArgs{...}
 type PropertyRuleErrorInput interface {
 	pulumi.Input
 
@@ -7500,7 +7500,7 @@ func (i PropertyRuleErrorArgs) ToPropertyRuleErrorOutputWithContext(ctx context.
 // PropertyRuleErrorArrayInput is an input type that accepts PropertyRuleErrorArray and PropertyRuleErrorArrayOutput values.
 // You can construct a concrete instance of `PropertyRuleErrorArrayInput` via:
 //
-//          PropertyRuleErrorArray{ PropertyRuleErrorArgs{...} }
+//	PropertyRuleErrorArray{ PropertyRuleErrorArgs{...} }
 type PropertyRuleErrorArrayInput interface {
 	pulumi.Input
 
@@ -7597,7 +7597,7 @@ type PropertyRuleWarning struct {
 // PropertyRuleWarningInput is an input type that accepts PropertyRuleWarningArgs and PropertyRuleWarningOutput values.
 // You can construct a concrete instance of `PropertyRuleWarningInput` via:
 //
-//          PropertyRuleWarningArgs{...}
+//	PropertyRuleWarningArgs{...}
 type PropertyRuleWarningInput interface {
 	pulumi.Input
 
@@ -7630,7 +7630,7 @@ func (i PropertyRuleWarningArgs) ToPropertyRuleWarningOutputWithContext(ctx cont
 // PropertyRuleWarningArrayInput is an input type that accepts PropertyRuleWarningArray and PropertyRuleWarningArrayOutput values.
 // You can construct a concrete instance of `PropertyRuleWarningArrayInput` via:
 //
-//          PropertyRuleWarningArray{ PropertyRuleWarningArgs{...} }
+//	PropertyRuleWarningArray{ PropertyRuleWarningArgs{...} }
 type PropertyRuleWarningArrayInput interface {
 	pulumi.Input
 
@@ -7726,7 +7726,7 @@ type ProviderAppsec struct {
 // ProviderAppsecInput is an input type that accepts ProviderAppsecArgs and ProviderAppsecOutput values.
 // You can construct a concrete instance of `ProviderAppsecInput` via:
 //
-//          ProviderAppsecArgs{...}
+//	ProviderAppsecArgs{...}
 type ProviderAppsecInput interface {
 	pulumi.Input
 
@@ -7758,7 +7758,7 @@ func (i ProviderAppsecArgs) ToProviderAppsecOutputWithContext(ctx context.Contex
 // ProviderAppsecArrayInput is an input type that accepts ProviderAppsecArray and ProviderAppsecArrayOutput values.
 // You can construct a concrete instance of `ProviderAppsecArrayInput` via:
 //
-//          ProviderAppsecArray{ ProviderAppsecArgs{...} }
+//	ProviderAppsecArray{ ProviderAppsecArgs{...} }
 type ProviderAppsecArrayInput interface {
 	pulumi.Input
 
@@ -7850,7 +7850,7 @@ type ProviderConfig struct {
 // ProviderConfigInput is an input type that accepts ProviderConfigArgs and ProviderConfigOutput values.
 // You can construct a concrete instance of `ProviderConfigInput` via:
 //
-//          ProviderConfigArgs{...}
+//	ProviderConfigArgs{...}
 type ProviderConfigInput interface {
 	pulumi.Input
 
@@ -7890,11 +7890,11 @@ func (i ProviderConfigArgs) ToProviderConfigPtrOutputWithContext(ctx context.Con
 // ProviderConfigPtrInput is an input type that accepts ProviderConfigArgs, ProviderConfigPtr and ProviderConfigPtrOutput values.
 // You can construct a concrete instance of `ProviderConfigPtrInput` via:
 //
-//          ProviderConfigArgs{...}
+//	        ProviderConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ProviderConfigPtrInput interface {
 	pulumi.Input
 
@@ -8058,7 +8058,7 @@ type ProviderDns struct {
 // ProviderDnsInput is an input type that accepts ProviderDnsArgs and ProviderDnsOutput values.
 // You can construct a concrete instance of `ProviderDnsInput` via:
 //
-//          ProviderDnsArgs{...}
+//	ProviderDnsArgs{...}
 type ProviderDnsInput interface {
 	pulumi.Input
 
@@ -8098,11 +8098,11 @@ func (i ProviderDnsArgs) ToProviderDnsPtrOutputWithContext(ctx context.Context) 
 // ProviderDnsPtrInput is an input type that accepts ProviderDnsArgs, ProviderDnsPtr and ProviderDnsPtrOutput values.
 // You can construct a concrete instance of `ProviderDnsPtrInput` via:
 //
-//          ProviderDnsArgs{...}
+//	        ProviderDnsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ProviderDnsPtrInput interface {
 	pulumi.Input
 
@@ -8266,7 +8266,7 @@ type ProviderGtm struct {
 // ProviderGtmInput is an input type that accepts ProviderGtmArgs and ProviderGtmOutput values.
 // You can construct a concrete instance of `ProviderGtmInput` via:
 //
-//          ProviderGtmArgs{...}
+//	ProviderGtmArgs{...}
 type ProviderGtmInput interface {
 	pulumi.Input
 
@@ -8306,11 +8306,11 @@ func (i ProviderGtmArgs) ToProviderGtmPtrOutputWithContext(ctx context.Context) 
 // ProviderGtmPtrInput is an input type that accepts ProviderGtmArgs, ProviderGtmPtr and ProviderGtmPtrOutput values.
 // You can construct a concrete instance of `ProviderGtmPtrInput` via:
 //
-//          ProviderGtmArgs{...}
+//	        ProviderGtmArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ProviderGtmPtrInput interface {
 	pulumi.Input
 
@@ -8474,7 +8474,7 @@ type ProviderNetwork struct {
 // ProviderNetworkInput is an input type that accepts ProviderNetworkArgs and ProviderNetworkOutput values.
 // You can construct a concrete instance of `ProviderNetworkInput` via:
 //
-//          ProviderNetworkArgs{...}
+//	ProviderNetworkArgs{...}
 type ProviderNetworkInput interface {
 	pulumi.Input
 
@@ -8506,7 +8506,7 @@ func (i ProviderNetworkArgs) ToProviderNetworkOutputWithContext(ctx context.Cont
 // ProviderNetworkArrayInput is an input type that accepts ProviderNetworkArray and ProviderNetworkArrayOutput values.
 // You can construct a concrete instance of `ProviderNetworkArrayInput` via:
 //
-//          ProviderNetworkArray{ ProviderNetworkArgs{...} }
+//	ProviderNetworkArray{ ProviderNetworkArgs{...} }
 type ProviderNetworkArrayInput interface {
 	pulumi.Input
 
@@ -8598,7 +8598,7 @@ type ProviderProperty struct {
 // ProviderPropertyInput is an input type that accepts ProviderPropertyArgs and ProviderPropertyOutput values.
 // You can construct a concrete instance of `ProviderPropertyInput` via:
 //
-//          ProviderPropertyArgs{...}
+//	ProviderPropertyArgs{...}
 type ProviderPropertyInput interface {
 	pulumi.Input
 
@@ -8638,11 +8638,11 @@ func (i ProviderPropertyArgs) ToProviderPropertyPtrOutputWithContext(ctx context
 // ProviderPropertyPtrInput is an input type that accepts ProviderPropertyArgs, ProviderPropertyPtr and ProviderPropertyPtrOutput values.
 // You can construct a concrete instance of `ProviderPropertyPtrInput` via:
 //
-//          ProviderPropertyArgs{...}
+//	        ProviderPropertyArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ProviderPropertyPtrInput interface {
 	pulumi.Input
 
@@ -8794,6 +8794,2054 @@ func (o ProviderPropertyPtrOutput) MaxBody() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
+type GetCPSEnrollmentAdminContact struct {
+	AddressLineOne string  `pulumi:"addressLineOne"`
+	AddressLineTwo *string `pulumi:"addressLineTwo"`
+	City           string  `pulumi:"city"`
+	CountryCode    string  `pulumi:"countryCode"`
+	Email          string  `pulumi:"email"`
+	FirstName      string  `pulumi:"firstName"`
+	LastName       string  `pulumi:"lastName"`
+	Organization   string  `pulumi:"organization"`
+	Phone          string  `pulumi:"phone"`
+	PostalCode     string  `pulumi:"postalCode"`
+	Region         string  `pulumi:"region"`
+	Title          *string `pulumi:"title"`
+}
+
+// GetCPSEnrollmentAdminContactInput is an input type that accepts GetCPSEnrollmentAdminContactArgs and GetCPSEnrollmentAdminContactOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentAdminContactInput` via:
+//
+//	GetCPSEnrollmentAdminContactArgs{...}
+type GetCPSEnrollmentAdminContactInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentAdminContactOutput() GetCPSEnrollmentAdminContactOutput
+	ToGetCPSEnrollmentAdminContactOutputWithContext(context.Context) GetCPSEnrollmentAdminContactOutput
+}
+
+type GetCPSEnrollmentAdminContactArgs struct {
+	AddressLineOne pulumi.StringInput    `pulumi:"addressLineOne"`
+	AddressLineTwo pulumi.StringPtrInput `pulumi:"addressLineTwo"`
+	City           pulumi.StringInput    `pulumi:"city"`
+	CountryCode    pulumi.StringInput    `pulumi:"countryCode"`
+	Email          pulumi.StringInput    `pulumi:"email"`
+	FirstName      pulumi.StringInput    `pulumi:"firstName"`
+	LastName       pulumi.StringInput    `pulumi:"lastName"`
+	Organization   pulumi.StringInput    `pulumi:"organization"`
+	Phone          pulumi.StringInput    `pulumi:"phone"`
+	PostalCode     pulumi.StringInput    `pulumi:"postalCode"`
+	Region         pulumi.StringInput    `pulumi:"region"`
+	Title          pulumi.StringPtrInput `pulumi:"title"`
+}
+
+func (GetCPSEnrollmentAdminContactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentAdminContact)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentAdminContactArgs) ToGetCPSEnrollmentAdminContactOutput() GetCPSEnrollmentAdminContactOutput {
+	return i.ToGetCPSEnrollmentAdminContactOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentAdminContactArgs) ToGetCPSEnrollmentAdminContactOutputWithContext(ctx context.Context) GetCPSEnrollmentAdminContactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentAdminContactOutput)
+}
+
+// GetCPSEnrollmentAdminContactArrayInput is an input type that accepts GetCPSEnrollmentAdminContactArray and GetCPSEnrollmentAdminContactArrayOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentAdminContactArrayInput` via:
+//
+//	GetCPSEnrollmentAdminContactArray{ GetCPSEnrollmentAdminContactArgs{...} }
+type GetCPSEnrollmentAdminContactArrayInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentAdminContactArrayOutput() GetCPSEnrollmentAdminContactArrayOutput
+	ToGetCPSEnrollmentAdminContactArrayOutputWithContext(context.Context) GetCPSEnrollmentAdminContactArrayOutput
+}
+
+type GetCPSEnrollmentAdminContactArray []GetCPSEnrollmentAdminContactInput
+
+func (GetCPSEnrollmentAdminContactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentAdminContact)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentAdminContactArray) ToGetCPSEnrollmentAdminContactArrayOutput() GetCPSEnrollmentAdminContactArrayOutput {
+	return i.ToGetCPSEnrollmentAdminContactArrayOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentAdminContactArray) ToGetCPSEnrollmentAdminContactArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentAdminContactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentAdminContactArrayOutput)
+}
+
+type GetCPSEnrollmentAdminContactOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentAdminContactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentAdminContact)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentAdminContactOutput) ToGetCPSEnrollmentAdminContactOutput() GetCPSEnrollmentAdminContactOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentAdminContactOutput) ToGetCPSEnrollmentAdminContactOutputWithContext(ctx context.Context) GetCPSEnrollmentAdminContactOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentAdminContactOutput) AddressLineOne() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentAdminContact) string { return v.AddressLineOne }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentAdminContactOutput) AddressLineTwo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentAdminContact) *string { return v.AddressLineTwo }).(pulumi.StringPtrOutput)
+}
+
+func (o GetCPSEnrollmentAdminContactOutput) City() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentAdminContact) string { return v.City }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentAdminContactOutput) CountryCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentAdminContact) string { return v.CountryCode }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentAdminContactOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentAdminContact) string { return v.Email }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentAdminContactOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentAdminContact) string { return v.FirstName }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentAdminContactOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentAdminContact) string { return v.LastName }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentAdminContactOutput) Organization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentAdminContact) string { return v.Organization }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentAdminContactOutput) Phone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentAdminContact) string { return v.Phone }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentAdminContactOutput) PostalCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentAdminContact) string { return v.PostalCode }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentAdminContactOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentAdminContact) string { return v.Region }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentAdminContactOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentAdminContact) *string { return v.Title }).(pulumi.StringPtrOutput)
+}
+
+type GetCPSEnrollmentAdminContactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentAdminContactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentAdminContact)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentAdminContactArrayOutput) ToGetCPSEnrollmentAdminContactArrayOutput() GetCPSEnrollmentAdminContactArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentAdminContactArrayOutput) ToGetCPSEnrollmentAdminContactArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentAdminContactArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentAdminContactArrayOutput) Index(i pulumi.IntInput) GetCPSEnrollmentAdminContactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCPSEnrollmentAdminContact {
+		return vs[0].([]GetCPSEnrollmentAdminContact)[vs[1].(int)]
+	}).(GetCPSEnrollmentAdminContactOutput)
+}
+
+type GetCPSEnrollmentCsr struct {
+	City               string `pulumi:"city"`
+	CountryCode        string `pulumi:"countryCode"`
+	Organization       string `pulumi:"organization"`
+	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	State              string `pulumi:"state"`
+}
+
+// GetCPSEnrollmentCsrInput is an input type that accepts GetCPSEnrollmentCsrArgs and GetCPSEnrollmentCsrOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentCsrInput` via:
+//
+//	GetCPSEnrollmentCsrArgs{...}
+type GetCPSEnrollmentCsrInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentCsrOutput() GetCPSEnrollmentCsrOutput
+	ToGetCPSEnrollmentCsrOutputWithContext(context.Context) GetCPSEnrollmentCsrOutput
+}
+
+type GetCPSEnrollmentCsrArgs struct {
+	City               pulumi.StringInput `pulumi:"city"`
+	CountryCode        pulumi.StringInput `pulumi:"countryCode"`
+	Organization       pulumi.StringInput `pulumi:"organization"`
+	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	State              pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetCPSEnrollmentCsrArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentCsr)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentCsrArgs) ToGetCPSEnrollmentCsrOutput() GetCPSEnrollmentCsrOutput {
+	return i.ToGetCPSEnrollmentCsrOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentCsrArgs) ToGetCPSEnrollmentCsrOutputWithContext(ctx context.Context) GetCPSEnrollmentCsrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentCsrOutput)
+}
+
+// GetCPSEnrollmentCsrArrayInput is an input type that accepts GetCPSEnrollmentCsrArray and GetCPSEnrollmentCsrArrayOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentCsrArrayInput` via:
+//
+//	GetCPSEnrollmentCsrArray{ GetCPSEnrollmentCsrArgs{...} }
+type GetCPSEnrollmentCsrArrayInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentCsrArrayOutput() GetCPSEnrollmentCsrArrayOutput
+	ToGetCPSEnrollmentCsrArrayOutputWithContext(context.Context) GetCPSEnrollmentCsrArrayOutput
+}
+
+type GetCPSEnrollmentCsrArray []GetCPSEnrollmentCsrInput
+
+func (GetCPSEnrollmentCsrArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentCsr)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentCsrArray) ToGetCPSEnrollmentCsrArrayOutput() GetCPSEnrollmentCsrArrayOutput {
+	return i.ToGetCPSEnrollmentCsrArrayOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentCsrArray) ToGetCPSEnrollmentCsrArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentCsrArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentCsrArrayOutput)
+}
+
+type GetCPSEnrollmentCsrOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentCsrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentCsr)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentCsrOutput) ToGetCPSEnrollmentCsrOutput() GetCPSEnrollmentCsrOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentCsrOutput) ToGetCPSEnrollmentCsrOutputWithContext(ctx context.Context) GetCPSEnrollmentCsrOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentCsrOutput) City() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentCsr) string { return v.City }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentCsrOutput) CountryCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentCsr) string { return v.CountryCode }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentCsrOutput) Organization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentCsr) string { return v.Organization }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentCsrOutput) OrganizationalUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentCsr) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentCsrOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentCsr) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetCPSEnrollmentCsrArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentCsrArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentCsr)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentCsrArrayOutput) ToGetCPSEnrollmentCsrArrayOutput() GetCPSEnrollmentCsrArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentCsrArrayOutput) ToGetCPSEnrollmentCsrArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentCsrArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentCsrArrayOutput) Index(i pulumi.IntInput) GetCPSEnrollmentCsrOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCPSEnrollmentCsr {
+		return vs[0].([]GetCPSEnrollmentCsr)[vs[1].(int)]
+	}).(GetCPSEnrollmentCsrOutput)
+}
+
+type GetCPSEnrollmentDnsChallenge struct {
+	Domain       string `pulumi:"domain"`
+	FullPath     string `pulumi:"fullPath"`
+	ResponseBody string `pulumi:"responseBody"`
+}
+
+// GetCPSEnrollmentDnsChallengeInput is an input type that accepts GetCPSEnrollmentDnsChallengeArgs and GetCPSEnrollmentDnsChallengeOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentDnsChallengeInput` via:
+//
+//	GetCPSEnrollmentDnsChallengeArgs{...}
+type GetCPSEnrollmentDnsChallengeInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentDnsChallengeOutput() GetCPSEnrollmentDnsChallengeOutput
+	ToGetCPSEnrollmentDnsChallengeOutputWithContext(context.Context) GetCPSEnrollmentDnsChallengeOutput
+}
+
+type GetCPSEnrollmentDnsChallengeArgs struct {
+	Domain       pulumi.StringInput `pulumi:"domain"`
+	FullPath     pulumi.StringInput `pulumi:"fullPath"`
+	ResponseBody pulumi.StringInput `pulumi:"responseBody"`
+}
+
+func (GetCPSEnrollmentDnsChallengeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentDnsChallenge)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentDnsChallengeArgs) ToGetCPSEnrollmentDnsChallengeOutput() GetCPSEnrollmentDnsChallengeOutput {
+	return i.ToGetCPSEnrollmentDnsChallengeOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentDnsChallengeArgs) ToGetCPSEnrollmentDnsChallengeOutputWithContext(ctx context.Context) GetCPSEnrollmentDnsChallengeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentDnsChallengeOutput)
+}
+
+// GetCPSEnrollmentDnsChallengeArrayInput is an input type that accepts GetCPSEnrollmentDnsChallengeArray and GetCPSEnrollmentDnsChallengeArrayOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentDnsChallengeArrayInput` via:
+//
+//	GetCPSEnrollmentDnsChallengeArray{ GetCPSEnrollmentDnsChallengeArgs{...} }
+type GetCPSEnrollmentDnsChallengeArrayInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentDnsChallengeArrayOutput() GetCPSEnrollmentDnsChallengeArrayOutput
+	ToGetCPSEnrollmentDnsChallengeArrayOutputWithContext(context.Context) GetCPSEnrollmentDnsChallengeArrayOutput
+}
+
+type GetCPSEnrollmentDnsChallengeArray []GetCPSEnrollmentDnsChallengeInput
+
+func (GetCPSEnrollmentDnsChallengeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentDnsChallenge)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentDnsChallengeArray) ToGetCPSEnrollmentDnsChallengeArrayOutput() GetCPSEnrollmentDnsChallengeArrayOutput {
+	return i.ToGetCPSEnrollmentDnsChallengeArrayOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentDnsChallengeArray) ToGetCPSEnrollmentDnsChallengeArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentDnsChallengeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentDnsChallengeArrayOutput)
+}
+
+type GetCPSEnrollmentDnsChallengeOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentDnsChallengeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentDnsChallenge)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentDnsChallengeOutput) ToGetCPSEnrollmentDnsChallengeOutput() GetCPSEnrollmentDnsChallengeOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentDnsChallengeOutput) ToGetCPSEnrollmentDnsChallengeOutputWithContext(ctx context.Context) GetCPSEnrollmentDnsChallengeOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentDnsChallengeOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentDnsChallenge) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentDnsChallengeOutput) FullPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentDnsChallenge) string { return v.FullPath }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentDnsChallengeOutput) ResponseBody() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentDnsChallenge) string { return v.ResponseBody }).(pulumi.StringOutput)
+}
+
+type GetCPSEnrollmentDnsChallengeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentDnsChallengeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentDnsChallenge)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentDnsChallengeArrayOutput) ToGetCPSEnrollmentDnsChallengeArrayOutput() GetCPSEnrollmentDnsChallengeArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentDnsChallengeArrayOutput) ToGetCPSEnrollmentDnsChallengeArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentDnsChallengeArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentDnsChallengeArrayOutput) Index(i pulumi.IntInput) GetCPSEnrollmentDnsChallengeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCPSEnrollmentDnsChallenge {
+		return vs[0].([]GetCPSEnrollmentDnsChallenge)[vs[1].(int)]
+	}).(GetCPSEnrollmentDnsChallengeOutput)
+}
+
+type GetCPSEnrollmentHttpChallenge struct {
+	Domain       string `pulumi:"domain"`
+	FullPath     string `pulumi:"fullPath"`
+	ResponseBody string `pulumi:"responseBody"`
+}
+
+// GetCPSEnrollmentHttpChallengeInput is an input type that accepts GetCPSEnrollmentHttpChallengeArgs and GetCPSEnrollmentHttpChallengeOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentHttpChallengeInput` via:
+//
+//	GetCPSEnrollmentHttpChallengeArgs{...}
+type GetCPSEnrollmentHttpChallengeInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentHttpChallengeOutput() GetCPSEnrollmentHttpChallengeOutput
+	ToGetCPSEnrollmentHttpChallengeOutputWithContext(context.Context) GetCPSEnrollmentHttpChallengeOutput
+}
+
+type GetCPSEnrollmentHttpChallengeArgs struct {
+	Domain       pulumi.StringInput `pulumi:"domain"`
+	FullPath     pulumi.StringInput `pulumi:"fullPath"`
+	ResponseBody pulumi.StringInput `pulumi:"responseBody"`
+}
+
+func (GetCPSEnrollmentHttpChallengeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentHttpChallenge)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentHttpChallengeArgs) ToGetCPSEnrollmentHttpChallengeOutput() GetCPSEnrollmentHttpChallengeOutput {
+	return i.ToGetCPSEnrollmentHttpChallengeOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentHttpChallengeArgs) ToGetCPSEnrollmentHttpChallengeOutputWithContext(ctx context.Context) GetCPSEnrollmentHttpChallengeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentHttpChallengeOutput)
+}
+
+// GetCPSEnrollmentHttpChallengeArrayInput is an input type that accepts GetCPSEnrollmentHttpChallengeArray and GetCPSEnrollmentHttpChallengeArrayOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentHttpChallengeArrayInput` via:
+//
+//	GetCPSEnrollmentHttpChallengeArray{ GetCPSEnrollmentHttpChallengeArgs{...} }
+type GetCPSEnrollmentHttpChallengeArrayInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentHttpChallengeArrayOutput() GetCPSEnrollmentHttpChallengeArrayOutput
+	ToGetCPSEnrollmentHttpChallengeArrayOutputWithContext(context.Context) GetCPSEnrollmentHttpChallengeArrayOutput
+}
+
+type GetCPSEnrollmentHttpChallengeArray []GetCPSEnrollmentHttpChallengeInput
+
+func (GetCPSEnrollmentHttpChallengeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentHttpChallenge)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentHttpChallengeArray) ToGetCPSEnrollmentHttpChallengeArrayOutput() GetCPSEnrollmentHttpChallengeArrayOutput {
+	return i.ToGetCPSEnrollmentHttpChallengeArrayOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentHttpChallengeArray) ToGetCPSEnrollmentHttpChallengeArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentHttpChallengeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentHttpChallengeArrayOutput)
+}
+
+type GetCPSEnrollmentHttpChallengeOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentHttpChallengeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentHttpChallenge)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentHttpChallengeOutput) ToGetCPSEnrollmentHttpChallengeOutput() GetCPSEnrollmentHttpChallengeOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentHttpChallengeOutput) ToGetCPSEnrollmentHttpChallengeOutputWithContext(ctx context.Context) GetCPSEnrollmentHttpChallengeOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentHttpChallengeOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentHttpChallenge) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentHttpChallengeOutput) FullPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentHttpChallenge) string { return v.FullPath }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentHttpChallengeOutput) ResponseBody() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentHttpChallenge) string { return v.ResponseBody }).(pulumi.StringOutput)
+}
+
+type GetCPSEnrollmentHttpChallengeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentHttpChallengeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentHttpChallenge)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentHttpChallengeArrayOutput) ToGetCPSEnrollmentHttpChallengeArrayOutput() GetCPSEnrollmentHttpChallengeArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentHttpChallengeArrayOutput) ToGetCPSEnrollmentHttpChallengeArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentHttpChallengeArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentHttpChallengeArrayOutput) Index(i pulumi.IntInput) GetCPSEnrollmentHttpChallengeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCPSEnrollmentHttpChallenge {
+		return vs[0].([]GetCPSEnrollmentHttpChallenge)[vs[1].(int)]
+	}).(GetCPSEnrollmentHttpChallengeOutput)
+}
+
+type GetCPSEnrollmentNetworkConfiguration struct {
+	ClientMutualAuthentications []GetCPSEnrollmentNetworkConfigurationClientMutualAuthentication `pulumi:"clientMutualAuthentications"`
+	CloneDnsNames               bool                                                             `pulumi:"cloneDnsNames"`
+	DisallowedTlsVersions       []string                                                         `pulumi:"disallowedTlsVersions"`
+	Geography                   string                                                           `pulumi:"geography"`
+	MustHaveCiphers             string                                                           `pulumi:"mustHaveCiphers"`
+	OcspStapling                string                                                           `pulumi:"ocspStapling"`
+	PreferredCiphers            string                                                           `pulumi:"preferredCiphers"`
+	QuicEnabled                 bool                                                             `pulumi:"quicEnabled"`
+}
+
+// GetCPSEnrollmentNetworkConfigurationInput is an input type that accepts GetCPSEnrollmentNetworkConfigurationArgs and GetCPSEnrollmentNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentNetworkConfigurationInput` via:
+//
+//	GetCPSEnrollmentNetworkConfigurationArgs{...}
+type GetCPSEnrollmentNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentNetworkConfigurationOutput() GetCPSEnrollmentNetworkConfigurationOutput
+	ToGetCPSEnrollmentNetworkConfigurationOutputWithContext(context.Context) GetCPSEnrollmentNetworkConfigurationOutput
+}
+
+type GetCPSEnrollmentNetworkConfigurationArgs struct {
+	ClientMutualAuthentications GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayInput `pulumi:"clientMutualAuthentications"`
+	CloneDnsNames               pulumi.BoolInput                                                         `pulumi:"cloneDnsNames"`
+	DisallowedTlsVersions       pulumi.StringArrayInput                                                  `pulumi:"disallowedTlsVersions"`
+	Geography                   pulumi.StringInput                                                       `pulumi:"geography"`
+	MustHaveCiphers             pulumi.StringInput                                                       `pulumi:"mustHaveCiphers"`
+	OcspStapling                pulumi.StringInput                                                       `pulumi:"ocspStapling"`
+	PreferredCiphers            pulumi.StringInput                                                       `pulumi:"preferredCiphers"`
+	QuicEnabled                 pulumi.BoolInput                                                         `pulumi:"quicEnabled"`
+}
+
+func (GetCPSEnrollmentNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentNetworkConfigurationArgs) ToGetCPSEnrollmentNetworkConfigurationOutput() GetCPSEnrollmentNetworkConfigurationOutput {
+	return i.ToGetCPSEnrollmentNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentNetworkConfigurationArgs) ToGetCPSEnrollmentNetworkConfigurationOutputWithContext(ctx context.Context) GetCPSEnrollmentNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentNetworkConfigurationOutput)
+}
+
+// GetCPSEnrollmentNetworkConfigurationArrayInput is an input type that accepts GetCPSEnrollmentNetworkConfigurationArray and GetCPSEnrollmentNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentNetworkConfigurationArrayInput` via:
+//
+//	GetCPSEnrollmentNetworkConfigurationArray{ GetCPSEnrollmentNetworkConfigurationArgs{...} }
+type GetCPSEnrollmentNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentNetworkConfigurationArrayOutput() GetCPSEnrollmentNetworkConfigurationArrayOutput
+	ToGetCPSEnrollmentNetworkConfigurationArrayOutputWithContext(context.Context) GetCPSEnrollmentNetworkConfigurationArrayOutput
+}
+
+type GetCPSEnrollmentNetworkConfigurationArray []GetCPSEnrollmentNetworkConfigurationInput
+
+func (GetCPSEnrollmentNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentNetworkConfigurationArray) ToGetCPSEnrollmentNetworkConfigurationArrayOutput() GetCPSEnrollmentNetworkConfigurationArrayOutput {
+	return i.ToGetCPSEnrollmentNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentNetworkConfigurationArray) ToGetCPSEnrollmentNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentNetworkConfigurationArrayOutput)
+}
+
+type GetCPSEnrollmentNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationOutput) ToGetCPSEnrollmentNetworkConfigurationOutput() GetCPSEnrollmentNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationOutput) ToGetCPSEnrollmentNetworkConfigurationOutputWithContext(ctx context.Context) GetCPSEnrollmentNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationOutput) ClientMutualAuthentications() GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentNetworkConfiguration) []GetCPSEnrollmentNetworkConfigurationClientMutualAuthentication {
+		return v.ClientMutualAuthentications
+	}).(GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput)
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationOutput) CloneDnsNames() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentNetworkConfiguration) bool { return v.CloneDnsNames }).(pulumi.BoolOutput)
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationOutput) DisallowedTlsVersions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentNetworkConfiguration) []string { return v.DisallowedTlsVersions }).(pulumi.StringArrayOutput)
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationOutput) Geography() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentNetworkConfiguration) string { return v.Geography }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationOutput) MustHaveCiphers() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentNetworkConfiguration) string { return v.MustHaveCiphers }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationOutput) OcspStapling() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentNetworkConfiguration) string { return v.OcspStapling }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationOutput) PreferredCiphers() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentNetworkConfiguration) string { return v.PreferredCiphers }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationOutput) QuicEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentNetworkConfiguration) bool { return v.QuicEnabled }).(pulumi.BoolOutput)
+}
+
+type GetCPSEnrollmentNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationArrayOutput) ToGetCPSEnrollmentNetworkConfigurationArrayOutput() GetCPSEnrollmentNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationArrayOutput) ToGetCPSEnrollmentNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetCPSEnrollmentNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCPSEnrollmentNetworkConfiguration {
+		return vs[0].([]GetCPSEnrollmentNetworkConfiguration)[vs[1].(int)]
+	}).(GetCPSEnrollmentNetworkConfigurationOutput)
+}
+
+type GetCPSEnrollmentNetworkConfigurationClientMutualAuthentication struct {
+	OcspEnabled        bool   `pulumi:"ocspEnabled"`
+	SendCaListToClient bool   `pulumi:"sendCaListToClient"`
+	SetId              string `pulumi:"setId"`
+}
+
+// GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationInput is an input type that accepts GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArgs and GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationInput` via:
+//
+//	GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArgs{...}
+type GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput() GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput
+	ToGetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutputWithContext(context.Context) GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput
+}
+
+type GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArgs struct {
+	OcspEnabled        pulumi.BoolInput   `pulumi:"ocspEnabled"`
+	SendCaListToClient pulumi.BoolInput   `pulumi:"sendCaListToClient"`
+	SetId              pulumi.StringInput `pulumi:"setId"`
+}
+
+func (GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentNetworkConfigurationClientMutualAuthentication)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) ToGetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput() GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return i.ToGetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) ToGetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutputWithContext(ctx context.Context) GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput)
+}
+
+// GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayInput is an input type that accepts GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArray and GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayInput` via:
+//
+//	GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArray{ GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArgs{...} }
+type GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput() GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput
+	ToGetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutputWithContext(context.Context) GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput
+}
+
+type GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArray []GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationInput
+
+func (GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentNetworkConfigurationClientMutualAuthentication)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArray) ToGetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput() GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput {
+	return i.ToGetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArray) ToGetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput)
+}
+
+type GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentNetworkConfigurationClientMutualAuthentication)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) ToGetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput() GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) ToGetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutputWithContext(ctx context.Context) GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) OcspEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentNetworkConfigurationClientMutualAuthentication) bool { return v.OcspEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) SendCaListToClient() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentNetworkConfigurationClientMutualAuthentication) bool {
+		return v.SendCaListToClient
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) SetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentNetworkConfigurationClientMutualAuthentication) string { return v.SetId }).(pulumi.StringOutput)
+}
+
+type GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentNetworkConfigurationClientMutualAuthentication)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput) ToGetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput() GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput) ToGetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput) Index(i pulumi.IntInput) GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCPSEnrollmentNetworkConfigurationClientMutualAuthentication {
+		return vs[0].([]GetCPSEnrollmentNetworkConfigurationClientMutualAuthentication)[vs[1].(int)]
+	}).(GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput)
+}
+
+type GetCPSEnrollmentOrganization struct {
+	AddressLineOne string `pulumi:"addressLineOne"`
+	AddressLineTwo string `pulumi:"addressLineTwo"`
+	City           string `pulumi:"city"`
+	CountryCode    string `pulumi:"countryCode"`
+	Name           string `pulumi:"name"`
+	Phone          string `pulumi:"phone"`
+	PostalCode     string `pulumi:"postalCode"`
+	Region         string `pulumi:"region"`
+}
+
+// GetCPSEnrollmentOrganizationInput is an input type that accepts GetCPSEnrollmentOrganizationArgs and GetCPSEnrollmentOrganizationOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentOrganizationInput` via:
+//
+//	GetCPSEnrollmentOrganizationArgs{...}
+type GetCPSEnrollmentOrganizationInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentOrganizationOutput() GetCPSEnrollmentOrganizationOutput
+	ToGetCPSEnrollmentOrganizationOutputWithContext(context.Context) GetCPSEnrollmentOrganizationOutput
+}
+
+type GetCPSEnrollmentOrganizationArgs struct {
+	AddressLineOne pulumi.StringInput `pulumi:"addressLineOne"`
+	AddressLineTwo pulumi.StringInput `pulumi:"addressLineTwo"`
+	City           pulumi.StringInput `pulumi:"city"`
+	CountryCode    pulumi.StringInput `pulumi:"countryCode"`
+	Name           pulumi.StringInput `pulumi:"name"`
+	Phone          pulumi.StringInput `pulumi:"phone"`
+	PostalCode     pulumi.StringInput `pulumi:"postalCode"`
+	Region         pulumi.StringInput `pulumi:"region"`
+}
+
+func (GetCPSEnrollmentOrganizationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentOrganization)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentOrganizationArgs) ToGetCPSEnrollmentOrganizationOutput() GetCPSEnrollmentOrganizationOutput {
+	return i.ToGetCPSEnrollmentOrganizationOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentOrganizationArgs) ToGetCPSEnrollmentOrganizationOutputWithContext(ctx context.Context) GetCPSEnrollmentOrganizationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentOrganizationOutput)
+}
+
+// GetCPSEnrollmentOrganizationArrayInput is an input type that accepts GetCPSEnrollmentOrganizationArray and GetCPSEnrollmentOrganizationArrayOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentOrganizationArrayInput` via:
+//
+//	GetCPSEnrollmentOrganizationArray{ GetCPSEnrollmentOrganizationArgs{...} }
+type GetCPSEnrollmentOrganizationArrayInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentOrganizationArrayOutput() GetCPSEnrollmentOrganizationArrayOutput
+	ToGetCPSEnrollmentOrganizationArrayOutputWithContext(context.Context) GetCPSEnrollmentOrganizationArrayOutput
+}
+
+type GetCPSEnrollmentOrganizationArray []GetCPSEnrollmentOrganizationInput
+
+func (GetCPSEnrollmentOrganizationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentOrganization)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentOrganizationArray) ToGetCPSEnrollmentOrganizationArrayOutput() GetCPSEnrollmentOrganizationArrayOutput {
+	return i.ToGetCPSEnrollmentOrganizationArrayOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentOrganizationArray) ToGetCPSEnrollmentOrganizationArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentOrganizationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentOrganizationArrayOutput)
+}
+
+type GetCPSEnrollmentOrganizationOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentOrganizationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentOrganization)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentOrganizationOutput) ToGetCPSEnrollmentOrganizationOutput() GetCPSEnrollmentOrganizationOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentOrganizationOutput) ToGetCPSEnrollmentOrganizationOutputWithContext(ctx context.Context) GetCPSEnrollmentOrganizationOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentOrganizationOutput) AddressLineOne() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentOrganization) string { return v.AddressLineOne }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentOrganizationOutput) AddressLineTwo() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentOrganization) string { return v.AddressLineTwo }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentOrganizationOutput) City() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentOrganization) string { return v.City }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentOrganizationOutput) CountryCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentOrganization) string { return v.CountryCode }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentOrganizationOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentOrganization) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentOrganizationOutput) Phone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentOrganization) string { return v.Phone }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentOrganizationOutput) PostalCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentOrganization) string { return v.PostalCode }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentOrganizationOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentOrganization) string { return v.Region }).(pulumi.StringOutput)
+}
+
+type GetCPSEnrollmentOrganizationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentOrganizationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentOrganization)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentOrganizationArrayOutput) ToGetCPSEnrollmentOrganizationArrayOutput() GetCPSEnrollmentOrganizationArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentOrganizationArrayOutput) ToGetCPSEnrollmentOrganizationArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentOrganizationArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentOrganizationArrayOutput) Index(i pulumi.IntInput) GetCPSEnrollmentOrganizationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCPSEnrollmentOrganization {
+		return vs[0].([]GetCPSEnrollmentOrganization)[vs[1].(int)]
+	}).(GetCPSEnrollmentOrganizationOutput)
+}
+
+type GetCPSEnrollmentTechContact struct {
+	AddressLineOne string  `pulumi:"addressLineOne"`
+	AddressLineTwo *string `pulumi:"addressLineTwo"`
+	City           string  `pulumi:"city"`
+	CountryCode    string  `pulumi:"countryCode"`
+	Email          string  `pulumi:"email"`
+	FirstName      string  `pulumi:"firstName"`
+	LastName       string  `pulumi:"lastName"`
+	Organization   string  `pulumi:"organization"`
+	Phone          string  `pulumi:"phone"`
+	PostalCode     string  `pulumi:"postalCode"`
+	Region         string  `pulumi:"region"`
+	Title          *string `pulumi:"title"`
+}
+
+// GetCPSEnrollmentTechContactInput is an input type that accepts GetCPSEnrollmentTechContactArgs and GetCPSEnrollmentTechContactOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentTechContactInput` via:
+//
+//	GetCPSEnrollmentTechContactArgs{...}
+type GetCPSEnrollmentTechContactInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentTechContactOutput() GetCPSEnrollmentTechContactOutput
+	ToGetCPSEnrollmentTechContactOutputWithContext(context.Context) GetCPSEnrollmentTechContactOutput
+}
+
+type GetCPSEnrollmentTechContactArgs struct {
+	AddressLineOne pulumi.StringInput    `pulumi:"addressLineOne"`
+	AddressLineTwo pulumi.StringPtrInput `pulumi:"addressLineTwo"`
+	City           pulumi.StringInput    `pulumi:"city"`
+	CountryCode    pulumi.StringInput    `pulumi:"countryCode"`
+	Email          pulumi.StringInput    `pulumi:"email"`
+	FirstName      pulumi.StringInput    `pulumi:"firstName"`
+	LastName       pulumi.StringInput    `pulumi:"lastName"`
+	Organization   pulumi.StringInput    `pulumi:"organization"`
+	Phone          pulumi.StringInput    `pulumi:"phone"`
+	PostalCode     pulumi.StringInput    `pulumi:"postalCode"`
+	Region         pulumi.StringInput    `pulumi:"region"`
+	Title          pulumi.StringPtrInput `pulumi:"title"`
+}
+
+func (GetCPSEnrollmentTechContactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentTechContact)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentTechContactArgs) ToGetCPSEnrollmentTechContactOutput() GetCPSEnrollmentTechContactOutput {
+	return i.ToGetCPSEnrollmentTechContactOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentTechContactArgs) ToGetCPSEnrollmentTechContactOutputWithContext(ctx context.Context) GetCPSEnrollmentTechContactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentTechContactOutput)
+}
+
+// GetCPSEnrollmentTechContactArrayInput is an input type that accepts GetCPSEnrollmentTechContactArray and GetCPSEnrollmentTechContactArrayOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentTechContactArrayInput` via:
+//
+//	GetCPSEnrollmentTechContactArray{ GetCPSEnrollmentTechContactArgs{...} }
+type GetCPSEnrollmentTechContactArrayInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentTechContactArrayOutput() GetCPSEnrollmentTechContactArrayOutput
+	ToGetCPSEnrollmentTechContactArrayOutputWithContext(context.Context) GetCPSEnrollmentTechContactArrayOutput
+}
+
+type GetCPSEnrollmentTechContactArray []GetCPSEnrollmentTechContactInput
+
+func (GetCPSEnrollmentTechContactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentTechContact)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentTechContactArray) ToGetCPSEnrollmentTechContactArrayOutput() GetCPSEnrollmentTechContactArrayOutput {
+	return i.ToGetCPSEnrollmentTechContactArrayOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentTechContactArray) ToGetCPSEnrollmentTechContactArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentTechContactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentTechContactArrayOutput)
+}
+
+type GetCPSEnrollmentTechContactOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentTechContactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentTechContact)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentTechContactOutput) ToGetCPSEnrollmentTechContactOutput() GetCPSEnrollmentTechContactOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentTechContactOutput) ToGetCPSEnrollmentTechContactOutputWithContext(ctx context.Context) GetCPSEnrollmentTechContactOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentTechContactOutput) AddressLineOne() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentTechContact) string { return v.AddressLineOne }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentTechContactOutput) AddressLineTwo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentTechContact) *string { return v.AddressLineTwo }).(pulumi.StringPtrOutput)
+}
+
+func (o GetCPSEnrollmentTechContactOutput) City() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentTechContact) string { return v.City }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentTechContactOutput) CountryCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentTechContact) string { return v.CountryCode }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentTechContactOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentTechContact) string { return v.Email }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentTechContactOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentTechContact) string { return v.FirstName }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentTechContactOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentTechContact) string { return v.LastName }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentTechContactOutput) Organization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentTechContact) string { return v.Organization }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentTechContactOutput) Phone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentTechContact) string { return v.Phone }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentTechContactOutput) PostalCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentTechContact) string { return v.PostalCode }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentTechContactOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentTechContact) string { return v.Region }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentTechContactOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentTechContact) *string { return v.Title }).(pulumi.StringPtrOutput)
+}
+
+type GetCPSEnrollmentTechContactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentTechContactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentTechContact)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentTechContactArrayOutput) ToGetCPSEnrollmentTechContactArrayOutput() GetCPSEnrollmentTechContactArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentTechContactArrayOutput) ToGetCPSEnrollmentTechContactArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentTechContactArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentTechContactArrayOutput) Index(i pulumi.IntInput) GetCPSEnrollmentTechContactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCPSEnrollmentTechContact {
+		return vs[0].([]GetCPSEnrollmentTechContact)[vs[1].(int)]
+	}).(GetCPSEnrollmentTechContactOutput)
+}
+
+type GetCPSEnrollmentsEnrollment struct {
+	AdminContacts                  []GetCPSEnrollmentsEnrollmentAdminContact         `pulumi:"adminContacts"`
+	CertificateChainType           string                                            `pulumi:"certificateChainType"`
+	CertificateType                string                                            `pulumi:"certificateType"`
+	CommonName                     string                                            `pulumi:"commonName"`
+	Csrs                           []GetCPSEnrollmentsEnrollmentCsr                  `pulumi:"csrs"`
+	EnableMultiStackedCertificates bool                                              `pulumi:"enableMultiStackedCertificates"`
+	EnrollmentId                   int                                               `pulumi:"enrollmentId"`
+	NetworkConfigurations          []GetCPSEnrollmentsEnrollmentNetworkConfiguration `pulumi:"networkConfigurations"`
+	Organizations                  []GetCPSEnrollmentsEnrollmentOrganization         `pulumi:"organizations"`
+	PendingChanges                 bool                                              `pulumi:"pendingChanges"`
+	RegistrationAuthority          string                                            `pulumi:"registrationAuthority"`
+	Sans                           []string                                          `pulumi:"sans"`
+	SecureNetwork                  string                                            `pulumi:"secureNetwork"`
+	SignatureAlgorithm             string                                            `pulumi:"signatureAlgorithm"`
+	SniOnly                        bool                                              `pulumi:"sniOnly"`
+	TechContacts                   []GetCPSEnrollmentsEnrollmentTechContact          `pulumi:"techContacts"`
+	ValidationType                 string                                            `pulumi:"validationType"`
+}
+
+// GetCPSEnrollmentsEnrollmentInput is an input type that accepts GetCPSEnrollmentsEnrollmentArgs and GetCPSEnrollmentsEnrollmentOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentsEnrollmentInput` via:
+//
+//	GetCPSEnrollmentsEnrollmentArgs{...}
+type GetCPSEnrollmentsEnrollmentInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentsEnrollmentOutput() GetCPSEnrollmentsEnrollmentOutput
+	ToGetCPSEnrollmentsEnrollmentOutputWithContext(context.Context) GetCPSEnrollmentsEnrollmentOutput
+}
+
+type GetCPSEnrollmentsEnrollmentArgs struct {
+	AdminContacts                  GetCPSEnrollmentsEnrollmentAdminContactArrayInput         `pulumi:"adminContacts"`
+	CertificateChainType           pulumi.StringInput                                        `pulumi:"certificateChainType"`
+	CertificateType                pulumi.StringInput                                        `pulumi:"certificateType"`
+	CommonName                     pulumi.StringInput                                        `pulumi:"commonName"`
+	Csrs                           GetCPSEnrollmentsEnrollmentCsrArrayInput                  `pulumi:"csrs"`
+	EnableMultiStackedCertificates pulumi.BoolInput                                          `pulumi:"enableMultiStackedCertificates"`
+	EnrollmentId                   pulumi.IntInput                                           `pulumi:"enrollmentId"`
+	NetworkConfigurations          GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
+	Organizations                  GetCPSEnrollmentsEnrollmentOrganizationArrayInput         `pulumi:"organizations"`
+	PendingChanges                 pulumi.BoolInput                                          `pulumi:"pendingChanges"`
+	RegistrationAuthority          pulumi.StringInput                                        `pulumi:"registrationAuthority"`
+	Sans                           pulumi.StringArrayInput                                   `pulumi:"sans"`
+	SecureNetwork                  pulumi.StringInput                                        `pulumi:"secureNetwork"`
+	SignatureAlgorithm             pulumi.StringInput                                        `pulumi:"signatureAlgorithm"`
+	SniOnly                        pulumi.BoolInput                                          `pulumi:"sniOnly"`
+	TechContacts                   GetCPSEnrollmentsEnrollmentTechContactArrayInput          `pulumi:"techContacts"`
+	ValidationType                 pulumi.StringInput                                        `pulumi:"validationType"`
+}
+
+func (GetCPSEnrollmentsEnrollmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentsEnrollment)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentsEnrollmentArgs) ToGetCPSEnrollmentsEnrollmentOutput() GetCPSEnrollmentsEnrollmentOutput {
+	return i.ToGetCPSEnrollmentsEnrollmentOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentsEnrollmentArgs) ToGetCPSEnrollmentsEnrollmentOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentsEnrollmentOutput)
+}
+
+// GetCPSEnrollmentsEnrollmentArrayInput is an input type that accepts GetCPSEnrollmentsEnrollmentArray and GetCPSEnrollmentsEnrollmentArrayOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentsEnrollmentArrayInput` via:
+//
+//	GetCPSEnrollmentsEnrollmentArray{ GetCPSEnrollmentsEnrollmentArgs{...} }
+type GetCPSEnrollmentsEnrollmentArrayInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentsEnrollmentArrayOutput() GetCPSEnrollmentsEnrollmentArrayOutput
+	ToGetCPSEnrollmentsEnrollmentArrayOutputWithContext(context.Context) GetCPSEnrollmentsEnrollmentArrayOutput
+}
+
+type GetCPSEnrollmentsEnrollmentArray []GetCPSEnrollmentsEnrollmentInput
+
+func (GetCPSEnrollmentsEnrollmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentsEnrollment)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentsEnrollmentArray) ToGetCPSEnrollmentsEnrollmentArrayOutput() GetCPSEnrollmentsEnrollmentArrayOutput {
+	return i.ToGetCPSEnrollmentsEnrollmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentsEnrollmentArray) ToGetCPSEnrollmentsEnrollmentArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentsEnrollmentArrayOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentsEnrollmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentsEnrollment)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentsEnrollmentOutput) ToGetCPSEnrollmentsEnrollmentOutput() GetCPSEnrollmentsEnrollmentOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentOutput) ToGetCPSEnrollmentsEnrollmentOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentOutput) AdminContacts() GetCPSEnrollmentsEnrollmentAdminContactArrayOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollment) []GetCPSEnrollmentsEnrollmentAdminContact { return v.AdminContacts }).(GetCPSEnrollmentsEnrollmentAdminContactArrayOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOutput) CertificateChainType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollment) string { return v.CertificateChainType }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOutput) CertificateType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollment) string { return v.CertificateType }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOutput) CommonName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollment) string { return v.CommonName }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOutput) Csrs() GetCPSEnrollmentsEnrollmentCsrArrayOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollment) []GetCPSEnrollmentsEnrollmentCsr { return v.Csrs }).(GetCPSEnrollmentsEnrollmentCsrArrayOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOutput) EnableMultiStackedCertificates() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollment) bool { return v.EnableMultiStackedCertificates }).(pulumi.BoolOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOutput) EnrollmentId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollment) int { return v.EnrollmentId }).(pulumi.IntOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOutput) NetworkConfigurations() GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollment) []GetCPSEnrollmentsEnrollmentNetworkConfiguration {
+		return v.NetworkConfigurations
+	}).(GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOutput) Organizations() GetCPSEnrollmentsEnrollmentOrganizationArrayOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollment) []GetCPSEnrollmentsEnrollmentOrganization { return v.Organizations }).(GetCPSEnrollmentsEnrollmentOrganizationArrayOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOutput) PendingChanges() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollment) bool { return v.PendingChanges }).(pulumi.BoolOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOutput) RegistrationAuthority() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollment) string { return v.RegistrationAuthority }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOutput) Sans() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollment) []string { return v.Sans }).(pulumi.StringArrayOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOutput) SecureNetwork() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollment) string { return v.SecureNetwork }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOutput) SignatureAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollment) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOutput) SniOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollment) bool { return v.SniOnly }).(pulumi.BoolOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOutput) TechContacts() GetCPSEnrollmentsEnrollmentTechContactArrayOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollment) []GetCPSEnrollmentsEnrollmentTechContact { return v.TechContacts }).(GetCPSEnrollmentsEnrollmentTechContactArrayOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOutput) ValidationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollment) string { return v.ValidationType }).(pulumi.StringOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentsEnrollmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentsEnrollment)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentsEnrollmentArrayOutput) ToGetCPSEnrollmentsEnrollmentArrayOutput() GetCPSEnrollmentsEnrollmentArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentArrayOutput) ToGetCPSEnrollmentsEnrollmentArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentArrayOutput) Index(i pulumi.IntInput) GetCPSEnrollmentsEnrollmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCPSEnrollmentsEnrollment {
+		return vs[0].([]GetCPSEnrollmentsEnrollment)[vs[1].(int)]
+	}).(GetCPSEnrollmentsEnrollmentOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentAdminContact struct {
+	AddressLineOne string  `pulumi:"addressLineOne"`
+	AddressLineTwo *string `pulumi:"addressLineTwo"`
+	City           string  `pulumi:"city"`
+	CountryCode    string  `pulumi:"countryCode"`
+	Email          string  `pulumi:"email"`
+	FirstName      string  `pulumi:"firstName"`
+	LastName       string  `pulumi:"lastName"`
+	Organization   string  `pulumi:"organization"`
+	Phone          string  `pulumi:"phone"`
+	PostalCode     string  `pulumi:"postalCode"`
+	Region         string  `pulumi:"region"`
+	Title          *string `pulumi:"title"`
+}
+
+// GetCPSEnrollmentsEnrollmentAdminContactInput is an input type that accepts GetCPSEnrollmentsEnrollmentAdminContactArgs and GetCPSEnrollmentsEnrollmentAdminContactOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentsEnrollmentAdminContactInput` via:
+//
+//	GetCPSEnrollmentsEnrollmentAdminContactArgs{...}
+type GetCPSEnrollmentsEnrollmentAdminContactInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentsEnrollmentAdminContactOutput() GetCPSEnrollmentsEnrollmentAdminContactOutput
+	ToGetCPSEnrollmentsEnrollmentAdminContactOutputWithContext(context.Context) GetCPSEnrollmentsEnrollmentAdminContactOutput
+}
+
+type GetCPSEnrollmentsEnrollmentAdminContactArgs struct {
+	AddressLineOne pulumi.StringInput    `pulumi:"addressLineOne"`
+	AddressLineTwo pulumi.StringPtrInput `pulumi:"addressLineTwo"`
+	City           pulumi.StringInput    `pulumi:"city"`
+	CountryCode    pulumi.StringInput    `pulumi:"countryCode"`
+	Email          pulumi.StringInput    `pulumi:"email"`
+	FirstName      pulumi.StringInput    `pulumi:"firstName"`
+	LastName       pulumi.StringInput    `pulumi:"lastName"`
+	Organization   pulumi.StringInput    `pulumi:"organization"`
+	Phone          pulumi.StringInput    `pulumi:"phone"`
+	PostalCode     pulumi.StringInput    `pulumi:"postalCode"`
+	Region         pulumi.StringInput    `pulumi:"region"`
+	Title          pulumi.StringPtrInput `pulumi:"title"`
+}
+
+func (GetCPSEnrollmentsEnrollmentAdminContactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentsEnrollmentAdminContact)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentsEnrollmentAdminContactArgs) ToGetCPSEnrollmentsEnrollmentAdminContactOutput() GetCPSEnrollmentsEnrollmentAdminContactOutput {
+	return i.ToGetCPSEnrollmentsEnrollmentAdminContactOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentsEnrollmentAdminContactArgs) ToGetCPSEnrollmentsEnrollmentAdminContactOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentAdminContactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentsEnrollmentAdminContactOutput)
+}
+
+// GetCPSEnrollmentsEnrollmentAdminContactArrayInput is an input type that accepts GetCPSEnrollmentsEnrollmentAdminContactArray and GetCPSEnrollmentsEnrollmentAdminContactArrayOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentsEnrollmentAdminContactArrayInput` via:
+//
+//	GetCPSEnrollmentsEnrollmentAdminContactArray{ GetCPSEnrollmentsEnrollmentAdminContactArgs{...} }
+type GetCPSEnrollmentsEnrollmentAdminContactArrayInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentsEnrollmentAdminContactArrayOutput() GetCPSEnrollmentsEnrollmentAdminContactArrayOutput
+	ToGetCPSEnrollmentsEnrollmentAdminContactArrayOutputWithContext(context.Context) GetCPSEnrollmentsEnrollmentAdminContactArrayOutput
+}
+
+type GetCPSEnrollmentsEnrollmentAdminContactArray []GetCPSEnrollmentsEnrollmentAdminContactInput
+
+func (GetCPSEnrollmentsEnrollmentAdminContactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentsEnrollmentAdminContact)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentsEnrollmentAdminContactArray) ToGetCPSEnrollmentsEnrollmentAdminContactArrayOutput() GetCPSEnrollmentsEnrollmentAdminContactArrayOutput {
+	return i.ToGetCPSEnrollmentsEnrollmentAdminContactArrayOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentsEnrollmentAdminContactArray) ToGetCPSEnrollmentsEnrollmentAdminContactArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentAdminContactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentsEnrollmentAdminContactArrayOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentAdminContactOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentsEnrollmentAdminContactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentsEnrollmentAdminContact)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentsEnrollmentAdminContactOutput) ToGetCPSEnrollmentsEnrollmentAdminContactOutput() GetCPSEnrollmentsEnrollmentAdminContactOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentAdminContactOutput) ToGetCPSEnrollmentsEnrollmentAdminContactOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentAdminContactOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentAdminContactOutput) AddressLineOne() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentAdminContact) string { return v.AddressLineOne }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentAdminContactOutput) AddressLineTwo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentAdminContact) *string { return v.AddressLineTwo }).(pulumi.StringPtrOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentAdminContactOutput) City() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentAdminContact) string { return v.City }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentAdminContactOutput) CountryCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentAdminContact) string { return v.CountryCode }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentAdminContactOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentAdminContact) string { return v.Email }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentAdminContactOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentAdminContact) string { return v.FirstName }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentAdminContactOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentAdminContact) string { return v.LastName }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentAdminContactOutput) Organization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentAdminContact) string { return v.Organization }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentAdminContactOutput) Phone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentAdminContact) string { return v.Phone }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentAdminContactOutput) PostalCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentAdminContact) string { return v.PostalCode }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentAdminContactOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentAdminContact) string { return v.Region }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentAdminContactOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentAdminContact) *string { return v.Title }).(pulumi.StringPtrOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentAdminContactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentsEnrollmentAdminContactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentsEnrollmentAdminContact)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentsEnrollmentAdminContactArrayOutput) ToGetCPSEnrollmentsEnrollmentAdminContactArrayOutput() GetCPSEnrollmentsEnrollmentAdminContactArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentAdminContactArrayOutput) ToGetCPSEnrollmentsEnrollmentAdminContactArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentAdminContactArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentAdminContactArrayOutput) Index(i pulumi.IntInput) GetCPSEnrollmentsEnrollmentAdminContactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCPSEnrollmentsEnrollmentAdminContact {
+		return vs[0].([]GetCPSEnrollmentsEnrollmentAdminContact)[vs[1].(int)]
+	}).(GetCPSEnrollmentsEnrollmentAdminContactOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentCsr struct {
+	City               string `pulumi:"city"`
+	CountryCode        string `pulumi:"countryCode"`
+	Organization       string `pulumi:"organization"`
+	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	State              string `pulumi:"state"`
+}
+
+// GetCPSEnrollmentsEnrollmentCsrInput is an input type that accepts GetCPSEnrollmentsEnrollmentCsrArgs and GetCPSEnrollmentsEnrollmentCsrOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentsEnrollmentCsrInput` via:
+//
+//	GetCPSEnrollmentsEnrollmentCsrArgs{...}
+type GetCPSEnrollmentsEnrollmentCsrInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentsEnrollmentCsrOutput() GetCPSEnrollmentsEnrollmentCsrOutput
+	ToGetCPSEnrollmentsEnrollmentCsrOutputWithContext(context.Context) GetCPSEnrollmentsEnrollmentCsrOutput
+}
+
+type GetCPSEnrollmentsEnrollmentCsrArgs struct {
+	City               pulumi.StringInput `pulumi:"city"`
+	CountryCode        pulumi.StringInput `pulumi:"countryCode"`
+	Organization       pulumi.StringInput `pulumi:"organization"`
+	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	State              pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetCPSEnrollmentsEnrollmentCsrArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentsEnrollmentCsr)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentsEnrollmentCsrArgs) ToGetCPSEnrollmentsEnrollmentCsrOutput() GetCPSEnrollmentsEnrollmentCsrOutput {
+	return i.ToGetCPSEnrollmentsEnrollmentCsrOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentsEnrollmentCsrArgs) ToGetCPSEnrollmentsEnrollmentCsrOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentCsrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentsEnrollmentCsrOutput)
+}
+
+// GetCPSEnrollmentsEnrollmentCsrArrayInput is an input type that accepts GetCPSEnrollmentsEnrollmentCsrArray and GetCPSEnrollmentsEnrollmentCsrArrayOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentsEnrollmentCsrArrayInput` via:
+//
+//	GetCPSEnrollmentsEnrollmentCsrArray{ GetCPSEnrollmentsEnrollmentCsrArgs{...} }
+type GetCPSEnrollmentsEnrollmentCsrArrayInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentsEnrollmentCsrArrayOutput() GetCPSEnrollmentsEnrollmentCsrArrayOutput
+	ToGetCPSEnrollmentsEnrollmentCsrArrayOutputWithContext(context.Context) GetCPSEnrollmentsEnrollmentCsrArrayOutput
+}
+
+type GetCPSEnrollmentsEnrollmentCsrArray []GetCPSEnrollmentsEnrollmentCsrInput
+
+func (GetCPSEnrollmentsEnrollmentCsrArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentsEnrollmentCsr)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentsEnrollmentCsrArray) ToGetCPSEnrollmentsEnrollmentCsrArrayOutput() GetCPSEnrollmentsEnrollmentCsrArrayOutput {
+	return i.ToGetCPSEnrollmentsEnrollmentCsrArrayOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentsEnrollmentCsrArray) ToGetCPSEnrollmentsEnrollmentCsrArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentCsrArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentsEnrollmentCsrArrayOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentCsrOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentsEnrollmentCsrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentsEnrollmentCsr)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentsEnrollmentCsrOutput) ToGetCPSEnrollmentsEnrollmentCsrOutput() GetCPSEnrollmentsEnrollmentCsrOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentCsrOutput) ToGetCPSEnrollmentsEnrollmentCsrOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentCsrOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentCsrOutput) City() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentCsr) string { return v.City }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentCsrOutput) CountryCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentCsr) string { return v.CountryCode }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentCsrOutput) Organization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentCsr) string { return v.Organization }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentCsrOutput) OrganizationalUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentCsr) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentCsrOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentCsr) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentCsrArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentsEnrollmentCsrArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentsEnrollmentCsr)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentsEnrollmentCsrArrayOutput) ToGetCPSEnrollmentsEnrollmentCsrArrayOutput() GetCPSEnrollmentsEnrollmentCsrArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentCsrArrayOutput) ToGetCPSEnrollmentsEnrollmentCsrArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentCsrArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentCsrArrayOutput) Index(i pulumi.IntInput) GetCPSEnrollmentsEnrollmentCsrOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCPSEnrollmentsEnrollmentCsr {
+		return vs[0].([]GetCPSEnrollmentsEnrollmentCsr)[vs[1].(int)]
+	}).(GetCPSEnrollmentsEnrollmentCsrOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentNetworkConfiguration struct {
+	ClientMutualAuthentications []GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication `pulumi:"clientMutualAuthentications"`
+	CloneDnsNames               bool                                                                        `pulumi:"cloneDnsNames"`
+	DisallowedTlsVersions       []string                                                                    `pulumi:"disallowedTlsVersions"`
+	Geography                   string                                                                      `pulumi:"geography"`
+	MustHaveCiphers             string                                                                      `pulumi:"mustHaveCiphers"`
+	OcspStapling                string                                                                      `pulumi:"ocspStapling"`
+	PreferredCiphers            string                                                                      `pulumi:"preferredCiphers"`
+	QuicEnabled                 bool                                                                        `pulumi:"quicEnabled"`
+}
+
+// GetCPSEnrollmentsEnrollmentNetworkConfigurationInput is an input type that accepts GetCPSEnrollmentsEnrollmentNetworkConfigurationArgs and GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentsEnrollmentNetworkConfigurationInput` via:
+//
+//	GetCPSEnrollmentsEnrollmentNetworkConfigurationArgs{...}
+type GetCPSEnrollmentsEnrollmentNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentsEnrollmentNetworkConfigurationOutput() GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput
+	ToGetCPSEnrollmentsEnrollmentNetworkConfigurationOutputWithContext(context.Context) GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput
+}
+
+type GetCPSEnrollmentsEnrollmentNetworkConfigurationArgs struct {
+	ClientMutualAuthentications GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayInput `pulumi:"clientMutualAuthentications"`
+	CloneDnsNames               pulumi.BoolInput                                                                    `pulumi:"cloneDnsNames"`
+	DisallowedTlsVersions       pulumi.StringArrayInput                                                             `pulumi:"disallowedTlsVersions"`
+	Geography                   pulumi.StringInput                                                                  `pulumi:"geography"`
+	MustHaveCiphers             pulumi.StringInput                                                                  `pulumi:"mustHaveCiphers"`
+	OcspStapling                pulumi.StringInput                                                                  `pulumi:"ocspStapling"`
+	PreferredCiphers            pulumi.StringInput                                                                  `pulumi:"preferredCiphers"`
+	QuicEnabled                 pulumi.BoolInput                                                                    `pulumi:"quicEnabled"`
+}
+
+func (GetCPSEnrollmentsEnrollmentNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentsEnrollmentNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentsEnrollmentNetworkConfigurationArgs) ToGetCPSEnrollmentsEnrollmentNetworkConfigurationOutput() GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput {
+	return i.ToGetCPSEnrollmentsEnrollmentNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentsEnrollmentNetworkConfigurationArgs) ToGetCPSEnrollmentsEnrollmentNetworkConfigurationOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput)
+}
+
+// GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayInput is an input type that accepts GetCPSEnrollmentsEnrollmentNetworkConfigurationArray and GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayInput` via:
+//
+//	GetCPSEnrollmentsEnrollmentNetworkConfigurationArray{ GetCPSEnrollmentsEnrollmentNetworkConfigurationArgs{...} }
+type GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutput() GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutput
+	ToGetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutputWithContext(context.Context) GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutput
+}
+
+type GetCPSEnrollmentsEnrollmentNetworkConfigurationArray []GetCPSEnrollmentsEnrollmentNetworkConfigurationInput
+
+func (GetCPSEnrollmentsEnrollmentNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentsEnrollmentNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentsEnrollmentNetworkConfigurationArray) ToGetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutput() GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutput {
+	return i.ToGetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentsEnrollmentNetworkConfigurationArray) ToGetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentsEnrollmentNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput) ToGetCPSEnrollmentsEnrollmentNetworkConfigurationOutput() GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput) ToGetCPSEnrollmentsEnrollmentNetworkConfigurationOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput) ClientMutualAuthentications() GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentNetworkConfiguration) []GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication {
+		return v.ClientMutualAuthentications
+	}).(GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput) CloneDnsNames() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentNetworkConfiguration) bool { return v.CloneDnsNames }).(pulumi.BoolOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput) DisallowedTlsVersions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentNetworkConfiguration) []string { return v.DisallowedTlsVersions }).(pulumi.StringArrayOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput) Geography() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentNetworkConfiguration) string { return v.Geography }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput) MustHaveCiphers() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentNetworkConfiguration) string { return v.MustHaveCiphers }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput) OcspStapling() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentNetworkConfiguration) string { return v.OcspStapling }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput) PreferredCiphers() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentNetworkConfiguration) string { return v.PreferredCiphers }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput) QuicEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentNetworkConfiguration) bool { return v.QuicEnabled }).(pulumi.BoolOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentsEnrollmentNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutput) ToGetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutput() GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutput) ToGetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCPSEnrollmentsEnrollmentNetworkConfiguration {
+		return vs[0].([]GetCPSEnrollmentsEnrollmentNetworkConfiguration)[vs[1].(int)]
+	}).(GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication struct {
+	OcspEnabled        bool   `pulumi:"ocspEnabled"`
+	SendCaListToClient bool   `pulumi:"sendCaListToClient"`
+	SetId              string `pulumi:"setId"`
+}
+
+// GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationInput is an input type that accepts GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArgs and GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationInput` via:
+//
+//	GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArgs{...}
+type GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput() GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput
+	ToGetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutputWithContext(context.Context) GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput
+}
+
+type GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArgs struct {
+	OcspEnabled        pulumi.BoolInput   `pulumi:"ocspEnabled"`
+	SendCaListToClient pulumi.BoolInput   `pulumi:"sendCaListToClient"`
+	SetId              pulumi.StringInput `pulumi:"setId"`
+}
+
+func (GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) ToGetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput() GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return i.ToGetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) ToGetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput)
+}
+
+// GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayInput is an input type that accepts GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArray and GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayInput` via:
+//
+//	GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArray{ GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArgs{...} }
+type GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput() GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput
+	ToGetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutputWithContext(context.Context) GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput
+}
+
+type GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArray []GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationInput
+
+func (GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArray) ToGetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput() GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput {
+	return i.ToGetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArray) ToGetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) ToGetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput() GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) ToGetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) OcspEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication) bool {
+		return v.OcspEnabled
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) SendCaListToClient() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication) bool {
+		return v.SendCaListToClient
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) SetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication) string {
+		return v.SetId
+	}).(pulumi.StringOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput) ToGetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput() GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput) ToGetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput) Index(i pulumi.IntInput) GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication {
+		return vs[0].([]GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication)[vs[1].(int)]
+	}).(GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentOrganization struct {
+	AddressLineOne string `pulumi:"addressLineOne"`
+	AddressLineTwo string `pulumi:"addressLineTwo"`
+	City           string `pulumi:"city"`
+	CountryCode    string `pulumi:"countryCode"`
+	Name           string `pulumi:"name"`
+	Phone          string `pulumi:"phone"`
+	PostalCode     string `pulumi:"postalCode"`
+	Region         string `pulumi:"region"`
+}
+
+// GetCPSEnrollmentsEnrollmentOrganizationInput is an input type that accepts GetCPSEnrollmentsEnrollmentOrganizationArgs and GetCPSEnrollmentsEnrollmentOrganizationOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentsEnrollmentOrganizationInput` via:
+//
+//	GetCPSEnrollmentsEnrollmentOrganizationArgs{...}
+type GetCPSEnrollmentsEnrollmentOrganizationInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentsEnrollmentOrganizationOutput() GetCPSEnrollmentsEnrollmentOrganizationOutput
+	ToGetCPSEnrollmentsEnrollmentOrganizationOutputWithContext(context.Context) GetCPSEnrollmentsEnrollmentOrganizationOutput
+}
+
+type GetCPSEnrollmentsEnrollmentOrganizationArgs struct {
+	AddressLineOne pulumi.StringInput `pulumi:"addressLineOne"`
+	AddressLineTwo pulumi.StringInput `pulumi:"addressLineTwo"`
+	City           pulumi.StringInput `pulumi:"city"`
+	CountryCode    pulumi.StringInput `pulumi:"countryCode"`
+	Name           pulumi.StringInput `pulumi:"name"`
+	Phone          pulumi.StringInput `pulumi:"phone"`
+	PostalCode     pulumi.StringInput `pulumi:"postalCode"`
+	Region         pulumi.StringInput `pulumi:"region"`
+}
+
+func (GetCPSEnrollmentsEnrollmentOrganizationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentsEnrollmentOrganization)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentsEnrollmentOrganizationArgs) ToGetCPSEnrollmentsEnrollmentOrganizationOutput() GetCPSEnrollmentsEnrollmentOrganizationOutput {
+	return i.ToGetCPSEnrollmentsEnrollmentOrganizationOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentsEnrollmentOrganizationArgs) ToGetCPSEnrollmentsEnrollmentOrganizationOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentOrganizationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentsEnrollmentOrganizationOutput)
+}
+
+// GetCPSEnrollmentsEnrollmentOrganizationArrayInput is an input type that accepts GetCPSEnrollmentsEnrollmentOrganizationArray and GetCPSEnrollmentsEnrollmentOrganizationArrayOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentsEnrollmentOrganizationArrayInput` via:
+//
+//	GetCPSEnrollmentsEnrollmentOrganizationArray{ GetCPSEnrollmentsEnrollmentOrganizationArgs{...} }
+type GetCPSEnrollmentsEnrollmentOrganizationArrayInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentsEnrollmentOrganizationArrayOutput() GetCPSEnrollmentsEnrollmentOrganizationArrayOutput
+	ToGetCPSEnrollmentsEnrollmentOrganizationArrayOutputWithContext(context.Context) GetCPSEnrollmentsEnrollmentOrganizationArrayOutput
+}
+
+type GetCPSEnrollmentsEnrollmentOrganizationArray []GetCPSEnrollmentsEnrollmentOrganizationInput
+
+func (GetCPSEnrollmentsEnrollmentOrganizationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentsEnrollmentOrganization)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentsEnrollmentOrganizationArray) ToGetCPSEnrollmentsEnrollmentOrganizationArrayOutput() GetCPSEnrollmentsEnrollmentOrganizationArrayOutput {
+	return i.ToGetCPSEnrollmentsEnrollmentOrganizationArrayOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentsEnrollmentOrganizationArray) ToGetCPSEnrollmentsEnrollmentOrganizationArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentOrganizationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentsEnrollmentOrganizationArrayOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentOrganizationOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentsEnrollmentOrganizationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentsEnrollmentOrganization)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentsEnrollmentOrganizationOutput) ToGetCPSEnrollmentsEnrollmentOrganizationOutput() GetCPSEnrollmentsEnrollmentOrganizationOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentOrganizationOutput) ToGetCPSEnrollmentsEnrollmentOrganizationOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentOrganizationOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentOrganizationOutput) AddressLineOne() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentOrganization) string { return v.AddressLineOne }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOrganizationOutput) AddressLineTwo() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentOrganization) string { return v.AddressLineTwo }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOrganizationOutput) City() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentOrganization) string { return v.City }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOrganizationOutput) CountryCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentOrganization) string { return v.CountryCode }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOrganizationOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentOrganization) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOrganizationOutput) Phone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentOrganization) string { return v.Phone }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOrganizationOutput) PostalCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentOrganization) string { return v.PostalCode }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentOrganizationOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentOrganization) string { return v.Region }).(pulumi.StringOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentOrganizationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentsEnrollmentOrganizationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentsEnrollmentOrganization)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentsEnrollmentOrganizationArrayOutput) ToGetCPSEnrollmentsEnrollmentOrganizationArrayOutput() GetCPSEnrollmentsEnrollmentOrganizationArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentOrganizationArrayOutput) ToGetCPSEnrollmentsEnrollmentOrganizationArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentOrganizationArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentOrganizationArrayOutput) Index(i pulumi.IntInput) GetCPSEnrollmentsEnrollmentOrganizationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCPSEnrollmentsEnrollmentOrganization {
+		return vs[0].([]GetCPSEnrollmentsEnrollmentOrganization)[vs[1].(int)]
+	}).(GetCPSEnrollmentsEnrollmentOrganizationOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentTechContact struct {
+	AddressLineOne string  `pulumi:"addressLineOne"`
+	AddressLineTwo *string `pulumi:"addressLineTwo"`
+	City           string  `pulumi:"city"`
+	CountryCode    string  `pulumi:"countryCode"`
+	Email          string  `pulumi:"email"`
+	FirstName      string  `pulumi:"firstName"`
+	LastName       string  `pulumi:"lastName"`
+	Organization   string  `pulumi:"organization"`
+	Phone          string  `pulumi:"phone"`
+	PostalCode     string  `pulumi:"postalCode"`
+	Region         string  `pulumi:"region"`
+	Title          *string `pulumi:"title"`
+}
+
+// GetCPSEnrollmentsEnrollmentTechContactInput is an input type that accepts GetCPSEnrollmentsEnrollmentTechContactArgs and GetCPSEnrollmentsEnrollmentTechContactOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentsEnrollmentTechContactInput` via:
+//
+//	GetCPSEnrollmentsEnrollmentTechContactArgs{...}
+type GetCPSEnrollmentsEnrollmentTechContactInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentsEnrollmentTechContactOutput() GetCPSEnrollmentsEnrollmentTechContactOutput
+	ToGetCPSEnrollmentsEnrollmentTechContactOutputWithContext(context.Context) GetCPSEnrollmentsEnrollmentTechContactOutput
+}
+
+type GetCPSEnrollmentsEnrollmentTechContactArgs struct {
+	AddressLineOne pulumi.StringInput    `pulumi:"addressLineOne"`
+	AddressLineTwo pulumi.StringPtrInput `pulumi:"addressLineTwo"`
+	City           pulumi.StringInput    `pulumi:"city"`
+	CountryCode    pulumi.StringInput    `pulumi:"countryCode"`
+	Email          pulumi.StringInput    `pulumi:"email"`
+	FirstName      pulumi.StringInput    `pulumi:"firstName"`
+	LastName       pulumi.StringInput    `pulumi:"lastName"`
+	Organization   pulumi.StringInput    `pulumi:"organization"`
+	Phone          pulumi.StringInput    `pulumi:"phone"`
+	PostalCode     pulumi.StringInput    `pulumi:"postalCode"`
+	Region         pulumi.StringInput    `pulumi:"region"`
+	Title          pulumi.StringPtrInput `pulumi:"title"`
+}
+
+func (GetCPSEnrollmentsEnrollmentTechContactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentsEnrollmentTechContact)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentsEnrollmentTechContactArgs) ToGetCPSEnrollmentsEnrollmentTechContactOutput() GetCPSEnrollmentsEnrollmentTechContactOutput {
+	return i.ToGetCPSEnrollmentsEnrollmentTechContactOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentsEnrollmentTechContactArgs) ToGetCPSEnrollmentsEnrollmentTechContactOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentTechContactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentsEnrollmentTechContactOutput)
+}
+
+// GetCPSEnrollmentsEnrollmentTechContactArrayInput is an input type that accepts GetCPSEnrollmentsEnrollmentTechContactArray and GetCPSEnrollmentsEnrollmentTechContactArrayOutput values.
+// You can construct a concrete instance of `GetCPSEnrollmentsEnrollmentTechContactArrayInput` via:
+//
+//	GetCPSEnrollmentsEnrollmentTechContactArray{ GetCPSEnrollmentsEnrollmentTechContactArgs{...} }
+type GetCPSEnrollmentsEnrollmentTechContactArrayInput interface {
+	pulumi.Input
+
+	ToGetCPSEnrollmentsEnrollmentTechContactArrayOutput() GetCPSEnrollmentsEnrollmentTechContactArrayOutput
+	ToGetCPSEnrollmentsEnrollmentTechContactArrayOutputWithContext(context.Context) GetCPSEnrollmentsEnrollmentTechContactArrayOutput
+}
+
+type GetCPSEnrollmentsEnrollmentTechContactArray []GetCPSEnrollmentsEnrollmentTechContactInput
+
+func (GetCPSEnrollmentsEnrollmentTechContactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentsEnrollmentTechContact)(nil)).Elem()
+}
+
+func (i GetCPSEnrollmentsEnrollmentTechContactArray) ToGetCPSEnrollmentsEnrollmentTechContactArrayOutput() GetCPSEnrollmentsEnrollmentTechContactArrayOutput {
+	return i.ToGetCPSEnrollmentsEnrollmentTechContactArrayOutputWithContext(context.Background())
+}
+
+func (i GetCPSEnrollmentsEnrollmentTechContactArray) ToGetCPSEnrollmentsEnrollmentTechContactArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentTechContactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCPSEnrollmentsEnrollmentTechContactArrayOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentTechContactOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentsEnrollmentTechContactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCPSEnrollmentsEnrollmentTechContact)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentsEnrollmentTechContactOutput) ToGetCPSEnrollmentsEnrollmentTechContactOutput() GetCPSEnrollmentsEnrollmentTechContactOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentTechContactOutput) ToGetCPSEnrollmentsEnrollmentTechContactOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentTechContactOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentTechContactOutput) AddressLineOne() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentTechContact) string { return v.AddressLineOne }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentTechContactOutput) AddressLineTwo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentTechContact) *string { return v.AddressLineTwo }).(pulumi.StringPtrOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentTechContactOutput) City() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentTechContact) string { return v.City }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentTechContactOutput) CountryCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentTechContact) string { return v.CountryCode }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentTechContactOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentTechContact) string { return v.Email }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentTechContactOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentTechContact) string { return v.FirstName }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentTechContactOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentTechContact) string { return v.LastName }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentTechContactOutput) Organization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentTechContact) string { return v.Organization }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentTechContactOutput) Phone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentTechContact) string { return v.Phone }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentTechContactOutput) PostalCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentTechContact) string { return v.PostalCode }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentTechContactOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentTechContact) string { return v.Region }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentTechContactOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentTechContact) *string { return v.Title }).(pulumi.StringPtrOutput)
+}
+
+type GetCPSEnrollmentsEnrollmentTechContactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCPSEnrollmentsEnrollmentTechContactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCPSEnrollmentsEnrollmentTechContact)(nil)).Elem()
+}
+
+func (o GetCPSEnrollmentsEnrollmentTechContactArrayOutput) ToGetCPSEnrollmentsEnrollmentTechContactArrayOutput() GetCPSEnrollmentsEnrollmentTechContactArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentTechContactArrayOutput) ToGetCPSEnrollmentsEnrollmentTechContactArrayOutputWithContext(ctx context.Context) GetCPSEnrollmentsEnrollmentTechContactArrayOutput {
+	return o
+}
+
+func (o GetCPSEnrollmentsEnrollmentTechContactArrayOutput) Index(i pulumi.IntInput) GetCPSEnrollmentsEnrollmentTechContactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCPSEnrollmentsEnrollmentTechContact {
+		return vs[0].([]GetCPSEnrollmentsEnrollmentTechContact)[vs[1].(int)]
+	}).(GetCPSEnrollmentsEnrollmentTechContactOutput)
+}
+
 type GetCloudletsApiPrioritizationMatchRuleMatchRule struct {
 	// - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
 	Disabled *bool `pulumi:"disabled"`
@@ -8816,7 +10864,7 @@ type GetCloudletsApiPrioritizationMatchRuleMatchRule struct {
 // GetCloudletsApiPrioritizationMatchRuleMatchRuleInput is an input type that accepts GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs and GetCloudletsApiPrioritizationMatchRuleMatchRuleOutput values.
 // You can construct a concrete instance of `GetCloudletsApiPrioritizationMatchRuleMatchRuleInput` via:
 //
-//          GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs{...}
+//	GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs{...}
 type GetCloudletsApiPrioritizationMatchRuleMatchRuleInput interface {
 	pulumi.Input
 
@@ -8858,7 +10906,7 @@ func (i GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs) ToGetCloudletsApiPr
 // GetCloudletsApiPrioritizationMatchRuleMatchRuleArrayInput is an input type that accepts GetCloudletsApiPrioritizationMatchRuleMatchRuleArray and GetCloudletsApiPrioritizationMatchRuleMatchRuleArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsApiPrioritizationMatchRuleMatchRuleArrayInput` via:
 //
-//          GetCloudletsApiPrioritizationMatchRuleMatchRuleArray{ GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs{...} }
+//	GetCloudletsApiPrioritizationMatchRuleMatchRuleArray{ GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs{...} }
 type GetCloudletsApiPrioritizationMatchRuleMatchRuleArrayInput interface {
 	pulumi.Input
 
@@ -8976,7 +11024,7 @@ type GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch struct {
 // GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchInput is an input type that accepts GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs and GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchOutput values.
 // You can construct a concrete instance of `GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchInput` via:
 //
-//          GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs{...}
+//	GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs{...}
 type GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchInput interface {
 	pulumi.Input
 
@@ -9016,7 +11064,7 @@ func (i GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs) ToGetCloudlets
 // GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArrayInput is an input type that accepts GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArray and GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArrayInput` via:
 //
-//          GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArray{ GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs{...} }
+//	GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArray{ GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs{...} }
 type GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArrayInput interface {
 	pulumi.Input
 
@@ -9127,7 +11175,7 @@ type GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValue struct
 // GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueInput is an input type that accepts GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs and GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOutput values.
 // You can construct a concrete instance of `GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueInput` via:
 //
-//          GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs{...}
+//	GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs{...}
 type GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueInput interface {
 	pulumi.Input
 
@@ -9165,7 +11213,7 @@ func (i GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs
 // GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArrayInput is an input type that accepts GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArray and GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArrayInput` via:
 //
-//          GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArray{ GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs{...} }
+//	GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArray{ GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs{...} }
 type GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArrayInput interface {
 	pulumi.Input
 
@@ -9271,7 +11319,7 @@ type GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptions
 // GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsInput is an input type that accepts GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs and GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput values.
 // You can construct a concrete instance of `GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsInput` via:
 //
-//          GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
+//	GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
 type GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsInput interface {
 	pulumi.Input
 
@@ -9313,11 +11361,11 @@ func (i GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOpti
 // GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput is an input type that accepts GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs, GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsPtr and GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput values.
 // You can construct a concrete instance of `GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput` via:
 //
-//          GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
+//	        GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput interface {
 	pulumi.Input
 
@@ -9478,7 +11526,7 @@ type GetCloudletsApplicationLoadBalancerDataCenter struct {
 // GetCloudletsApplicationLoadBalancerDataCenterInput is an input type that accepts GetCloudletsApplicationLoadBalancerDataCenterArgs and GetCloudletsApplicationLoadBalancerDataCenterOutput values.
 // You can construct a concrete instance of `GetCloudletsApplicationLoadBalancerDataCenterInput` via:
 //
-//          GetCloudletsApplicationLoadBalancerDataCenterArgs{...}
+//	GetCloudletsApplicationLoadBalancerDataCenterArgs{...}
 type GetCloudletsApplicationLoadBalancerDataCenterInput interface {
 	pulumi.Input
 
@@ -9517,7 +11565,7 @@ func (i GetCloudletsApplicationLoadBalancerDataCenterArgs) ToGetCloudletsApplica
 // GetCloudletsApplicationLoadBalancerDataCenterArrayInput is an input type that accepts GetCloudletsApplicationLoadBalancerDataCenterArray and GetCloudletsApplicationLoadBalancerDataCenterArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsApplicationLoadBalancerDataCenterArrayInput` via:
 //
-//          GetCloudletsApplicationLoadBalancerDataCenterArray{ GetCloudletsApplicationLoadBalancerDataCenterArgs{...} }
+//	GetCloudletsApplicationLoadBalancerDataCenterArray{ GetCloudletsApplicationLoadBalancerDataCenterArgs{...} }
 type GetCloudletsApplicationLoadBalancerDataCenterArrayInput interface {
 	pulumi.Input
 
@@ -9641,7 +11689,7 @@ type GetCloudletsApplicationLoadBalancerLivenessSetting struct {
 // GetCloudletsApplicationLoadBalancerLivenessSettingInput is an input type that accepts GetCloudletsApplicationLoadBalancerLivenessSettingArgs and GetCloudletsApplicationLoadBalancerLivenessSettingOutput values.
 // You can construct a concrete instance of `GetCloudletsApplicationLoadBalancerLivenessSettingInput` via:
 //
-//          GetCloudletsApplicationLoadBalancerLivenessSettingArgs{...}
+//	GetCloudletsApplicationLoadBalancerLivenessSettingArgs{...}
 type GetCloudletsApplicationLoadBalancerLivenessSettingInput interface {
 	pulumi.Input
 
@@ -9680,7 +11728,7 @@ func (i GetCloudletsApplicationLoadBalancerLivenessSettingArgs) ToGetCloudletsAp
 // GetCloudletsApplicationLoadBalancerLivenessSettingArrayInput is an input type that accepts GetCloudletsApplicationLoadBalancerLivenessSettingArray and GetCloudletsApplicationLoadBalancerLivenessSettingArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsApplicationLoadBalancerLivenessSettingArrayInput` via:
 //
-//          GetCloudletsApplicationLoadBalancerLivenessSettingArray{ GetCloudletsApplicationLoadBalancerLivenessSettingArgs{...} }
+//	GetCloudletsApplicationLoadBalancerLivenessSettingArray{ GetCloudletsApplicationLoadBalancerLivenessSettingArgs{...} }
 type GetCloudletsApplicationLoadBalancerLivenessSettingArrayInput interface {
 	pulumi.Input
 
@@ -9815,7 +11863,7 @@ type GetCloudletsApplicationLoadBalancerMatchRuleMatchRule struct {
 // GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleInput is an input type that accepts GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs and GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleOutput values.
 // You can construct a concrete instance of `GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleInput` via:
 //
-//          GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs{...}
+//	GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs{...}
 type GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleInput interface {
 	pulumi.Input
 
@@ -9860,7 +11908,7 @@ func (i GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs) ToGetCloudlet
 // GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArrayInput is an input type that accepts GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArray and GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArrayInput` via:
 //
-//          GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArray{ GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs{...} }
+//	GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArray{ GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs{...} }
 type GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArrayInput interface {
 	pulumi.Input
 
@@ -9977,7 +12025,7 @@ type GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSetting struct 
 // GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingInput is an input type that accepts GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs and GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingOutput values.
 // You can construct a concrete instance of `GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingInput` via:
 //
-//          GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs{...}
+//	GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs{...}
 type GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingInput interface {
 	pulumi.Input
 
@@ -10005,7 +12053,7 @@ func (i GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs)
 // GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArrayInput is an input type that accepts GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArray and GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArrayInput` via:
 //
-//          GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArray{ GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs{...} }
+//	GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArray{ GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs{...} }
 type GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArrayInput interface {
 	pulumi.Input
 
@@ -10086,7 +12134,7 @@ type GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatch struct {
 // GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchInput is an input type that accepts GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs and GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchOutput values.
 // You can construct a concrete instance of `GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchInput` via:
 //
-//          GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs{...}
+//	GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs{...}
 type GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchInput interface {
 	pulumi.Input
 
@@ -10126,7 +12174,7 @@ func (i GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs) ToGetClo
 // GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArrayInput is an input type that accepts GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArray and GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArrayInput` via:
 //
-//          GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArray{ GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs{...} }
+//	GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArray{ GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs{...} }
 type GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArrayInput interface {
 	pulumi.Input
 
@@ -10237,7 +12285,7 @@ type GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValue 
 // GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueInput is an input type that accepts GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArgs and GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOutput values.
 // You can construct a concrete instance of `GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueInput` via:
 //
-//          GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArgs{...}
+//	GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArgs{...}
 type GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueInput interface {
 	pulumi.Input
 
@@ -10275,7 +12323,7 @@ func (i GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchVal
 // GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArrayInput is an input type that accepts GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArray and GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArrayInput` via:
 //
-//          GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArray{ GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArgs{...} }
+//	GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArray{ GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArgs{...} }
 type GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArrayInput interface {
 	pulumi.Input
 
@@ -10387,7 +12435,7 @@ type GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueO
 // GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsInput is an input type that accepts GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs and GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput values.
 // You can construct a concrete instance of `GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsInput` via:
 //
-//          GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
+//	GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
 type GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsInput interface {
 	pulumi.Input
 
@@ -10429,11 +12477,11 @@ func (i GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchVal
 // GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput is an input type that accepts GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs, GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsPtr and GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput values.
 // You can construct a concrete instance of `GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput` via:
 //
-//          GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
+//	        GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput interface {
 	pulumi.Input
 
@@ -10597,7 +12645,7 @@ type GetCloudletsAudienceSegmentationMatchRuleMatchRule struct {
 // GetCloudletsAudienceSegmentationMatchRuleMatchRuleInput is an input type that accepts GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs and GetCloudletsAudienceSegmentationMatchRuleMatchRuleOutput values.
 // You can construct a concrete instance of `GetCloudletsAudienceSegmentationMatchRuleMatchRuleInput` via:
 //
-//          GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs{...}
+//	GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs{...}
 type GetCloudletsAudienceSegmentationMatchRuleMatchRuleInput interface {
 	pulumi.Input
 
@@ -10639,7 +12687,7 @@ func (i GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs) ToGetCloudletsAu
 // GetCloudletsAudienceSegmentationMatchRuleMatchRuleArrayInput is an input type that accepts GetCloudletsAudienceSegmentationMatchRuleMatchRuleArray and GetCloudletsAudienceSegmentationMatchRuleMatchRuleArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsAudienceSegmentationMatchRuleMatchRuleArrayInput` via:
 //
-//          GetCloudletsAudienceSegmentationMatchRuleMatchRuleArray{ GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs{...} }
+//	GetCloudletsAudienceSegmentationMatchRuleMatchRuleArray{ GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs{...} }
 type GetCloudletsAudienceSegmentationMatchRuleMatchRuleArrayInput interface {
 	pulumi.Input
 
@@ -10751,7 +12799,7 @@ type GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettings struct {
 // GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsInput is an input type that accepts GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsArgs and GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsOutput values.
 // You can construct a concrete instance of `GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsInput` via:
 //
-//          GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsArgs{...}
+//	GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsArgs{...}
 type GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsInput interface {
 	pulumi.Input
 
@@ -10831,7 +12879,7 @@ type GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatch struct {
 // GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchInput is an input type that accepts GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs and GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchOutput values.
 // You can construct a concrete instance of `GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchInput` via:
 //
-//          GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs{...}
+//	GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs{...}
 type GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchInput interface {
 	pulumi.Input
 
@@ -10871,7 +12919,7 @@ func (i GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs) ToGetCloudl
 // GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArrayInput is an input type that accepts GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArray and GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArrayInput` via:
 //
-//          GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArray{ GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs{...} }
+//	GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArray{ GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs{...} }
 type GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArrayInput interface {
 	pulumi.Input
 
@@ -10982,7 +13030,7 @@ type GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValue str
 // GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueInput is an input type that accepts GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArgs and GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOutput values.
 // You can construct a concrete instance of `GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueInput` via:
 //
-//          GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArgs{...}
+//	GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArgs{...}
 type GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueInput interface {
 	pulumi.Input
 
@@ -11020,7 +13068,7 @@ func (i GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueA
 // GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArrayInput is an input type that accepts GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArray and GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArrayInput` via:
 //
-//          GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArray{ GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArgs{...} }
+//	GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArray{ GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArgs{...} }
 type GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueArrayInput interface {
 	pulumi.Input
 
@@ -11128,7 +13176,7 @@ type GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOpti
 // GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsInput is an input type that accepts GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs and GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput values.
 // You can construct a concrete instance of `GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsInput` via:
 //
-//          GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
+//	GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
 type GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsInput interface {
 	pulumi.Input
 
@@ -11170,11 +13218,11 @@ func (i GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueO
 // GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput is an input type that accepts GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs, GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsPtr and GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput values.
 // You can construct a concrete instance of `GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput` via:
 //
-//          GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
+//	        GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput interface {
 	pulumi.Input
 
@@ -11344,7 +13392,7 @@ type GetCloudletsEdgeRedirectorMatchRuleMatchRule struct {
 // GetCloudletsEdgeRedirectorMatchRuleMatchRuleInput is an input type that accepts GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs and GetCloudletsEdgeRedirectorMatchRuleMatchRuleOutput values.
 // You can construct a concrete instance of `GetCloudletsEdgeRedirectorMatchRuleMatchRuleInput` via:
 //
-//          GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs{...}
+//	GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs{...}
 type GetCloudletsEdgeRedirectorMatchRuleMatchRuleInput interface {
 	pulumi.Input
 
@@ -11392,7 +13440,7 @@ func (i GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs) ToGetCloudletsEdgeRedi
 // GetCloudletsEdgeRedirectorMatchRuleMatchRuleArrayInput is an input type that accepts GetCloudletsEdgeRedirectorMatchRuleMatchRuleArray and GetCloudletsEdgeRedirectorMatchRuleMatchRuleArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsEdgeRedirectorMatchRuleMatchRuleArrayInput` via:
 //
-//          GetCloudletsEdgeRedirectorMatchRuleMatchRuleArray{ GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs{...} }
+//	GetCloudletsEdgeRedirectorMatchRuleMatchRuleArray{ GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs{...} }
 type GetCloudletsEdgeRedirectorMatchRuleMatchRuleArrayInput interface {
 	pulumi.Input
 
@@ -11525,7 +13573,7 @@ type GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch struct {
 // GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchInput is an input type that accepts GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs and GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchOutput values.
 // You can construct a concrete instance of `GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchInput` via:
 //
-//          GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs{...}
+//	GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs{...}
 type GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchInput interface {
 	pulumi.Input
 
@@ -11565,7 +13613,7 @@ func (i GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs) ToGetCloudletsEdg
 // GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArrayInput is an input type that accepts GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArray and GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArrayInput` via:
 //
-//          GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArray{ GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs{...} }
+//	GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArray{ GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs{...} }
 type GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArrayInput interface {
 	pulumi.Input
 
@@ -11676,7 +13724,7 @@ type GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValue struct {
 // GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueInput is an input type that accepts GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgs and GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOutput values.
 // You can construct a concrete instance of `GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueInput` via:
 //
-//          GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgs{...}
+//	GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgs{...}
 type GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueInput interface {
 	pulumi.Input
 
@@ -11714,7 +13762,7 @@ func (i GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgs) T
 // GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArrayInput is an input type that accepts GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArray and GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArrayInput` via:
 //
-//          GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArray{ GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgs{...} }
+//	GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArray{ GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgs{...} }
 type GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArrayInput interface {
 	pulumi.Input
 
@@ -11820,7 +13868,7 @@ type GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptions st
 // GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsInput is an input type that accepts GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs and GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput values.
 // You can construct a concrete instance of `GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsInput` via:
 //
-//          GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
+//	GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
 type GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsInput interface {
 	pulumi.Input
 
@@ -11862,11 +13910,11 @@ func (i GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptions
 // GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput is an input type that accepts GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs, GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsPtr and GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput values.
 // You can construct a concrete instance of `GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput` via:
 //
-//          GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
+//	        GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput interface {
 	pulumi.Input
 
@@ -12030,7 +14078,7 @@ type GetCloudletsForwardRewriteMatchRuleMatchRule struct {
 // GetCloudletsForwardRewriteMatchRuleMatchRuleInput is an input type that accepts GetCloudletsForwardRewriteMatchRuleMatchRuleArgs and GetCloudletsForwardRewriteMatchRuleMatchRuleOutput values.
 // You can construct a concrete instance of `GetCloudletsForwardRewriteMatchRuleMatchRuleInput` via:
 //
-//          GetCloudletsForwardRewriteMatchRuleMatchRuleArgs{...}
+//	GetCloudletsForwardRewriteMatchRuleMatchRuleArgs{...}
 type GetCloudletsForwardRewriteMatchRuleMatchRuleInput interface {
 	pulumi.Input
 
@@ -12072,7 +14120,7 @@ func (i GetCloudletsForwardRewriteMatchRuleMatchRuleArgs) ToGetCloudletsForwardR
 // GetCloudletsForwardRewriteMatchRuleMatchRuleArrayInput is an input type that accepts GetCloudletsForwardRewriteMatchRuleMatchRuleArray and GetCloudletsForwardRewriteMatchRuleMatchRuleArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsForwardRewriteMatchRuleMatchRuleArrayInput` via:
 //
-//          GetCloudletsForwardRewriteMatchRuleMatchRuleArray{ GetCloudletsForwardRewriteMatchRuleMatchRuleArgs{...} }
+//	GetCloudletsForwardRewriteMatchRuleMatchRuleArray{ GetCloudletsForwardRewriteMatchRuleMatchRuleArgs{...} }
 type GetCloudletsForwardRewriteMatchRuleMatchRuleArrayInput interface {
 	pulumi.Input
 
@@ -12184,7 +14232,7 @@ type GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings struct {
 // GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsInput is an input type that accepts GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgs and GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsOutput values.
 // You can construct a concrete instance of `GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsInput` via:
 //
-//          GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgs{...}
+//	GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgs{...}
 type GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsInput interface {
 	pulumi.Input
 
@@ -12264,7 +14312,7 @@ type GetCloudletsForwardRewriteMatchRuleMatchRuleMatch struct {
 // GetCloudletsForwardRewriteMatchRuleMatchRuleMatchInput is an input type that accepts GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs and GetCloudletsForwardRewriteMatchRuleMatchRuleMatchOutput values.
 // You can construct a concrete instance of `GetCloudletsForwardRewriteMatchRuleMatchRuleMatchInput` via:
 //
-//          GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs{...}
+//	GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs{...}
 type GetCloudletsForwardRewriteMatchRuleMatchRuleMatchInput interface {
 	pulumi.Input
 
@@ -12304,7 +14352,7 @@ func (i GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs) ToGetCloudletsFor
 // GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArrayInput is an input type that accepts GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArray and GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArrayInput` via:
 //
-//          GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArray{ GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs{...} }
+//	GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArray{ GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs{...} }
 type GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArrayInput interface {
 	pulumi.Input
 
@@ -12415,7 +14463,7 @@ type GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValue struct {
 // GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueInput is an input type that accepts GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgs and GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOutput values.
 // You can construct a concrete instance of `GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueInput` via:
 //
-//          GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgs{...}
+//	GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgs{...}
 type GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueInput interface {
 	pulumi.Input
 
@@ -12453,7 +14501,7 @@ func (i GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgs) T
 // GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArrayInput is an input type that accepts GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArray and GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArrayInput` via:
 //
-//          GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArray{ GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgs{...} }
+//	GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArray{ GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgs{...} }
 type GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArrayInput interface {
 	pulumi.Input
 
@@ -12559,7 +14607,7 @@ type GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptions st
 // GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsInput is an input type that accepts GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs and GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput values.
 // You can construct a concrete instance of `GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsInput` via:
 //
-//          GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
+//	GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
 type GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsInput interface {
 	pulumi.Input
 
@@ -12601,11 +14649,11 @@ func (i GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptions
 // GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput is an input type that accepts GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs, GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsPtr and GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput values.
 // You can construct a concrete instance of `GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput` via:
 //
-//          GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
+//	        GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput interface {
 	pulumi.Input
 
@@ -12771,7 +14819,7 @@ type GetCloudletsPhasedReleaseMatchRuleMatchRule struct {
 // GetCloudletsPhasedReleaseMatchRuleMatchRuleInput is an input type that accepts GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs and GetCloudletsPhasedReleaseMatchRuleMatchRuleOutput values.
 // You can construct a concrete instance of `GetCloudletsPhasedReleaseMatchRuleMatchRuleInput` via:
 //
-//          GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs{...}
+//	GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs{...}
 type GetCloudletsPhasedReleaseMatchRuleMatchRuleInput interface {
 	pulumi.Input
 
@@ -12815,7 +14863,7 @@ func (i GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs) ToGetCloudletsPhasedRel
 // GetCloudletsPhasedReleaseMatchRuleMatchRuleArrayInput is an input type that accepts GetCloudletsPhasedReleaseMatchRuleMatchRuleArray and GetCloudletsPhasedReleaseMatchRuleMatchRuleArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsPhasedReleaseMatchRuleMatchRuleArrayInput` via:
 //
-//          GetCloudletsPhasedReleaseMatchRuleMatchRuleArray{ GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs{...} }
+//	GetCloudletsPhasedReleaseMatchRuleMatchRuleArray{ GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs{...} }
 type GetCloudletsPhasedReleaseMatchRuleMatchRuleArrayInput interface {
 	pulumi.Input
 
@@ -12930,7 +14978,7 @@ type GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings struct {
 // GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsInput is an input type that accepts GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArgs and GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsOutput values.
 // You can construct a concrete instance of `GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsInput` via:
 //
-//          GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArgs{...}
+//	GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArgs{...}
 type GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsInput interface {
 	pulumi.Input
 
@@ -13001,7 +15049,7 @@ type GetCloudletsPhasedReleaseMatchRuleMatchRuleMatch struct {
 // GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchInput is an input type that accepts GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs and GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchOutput values.
 // You can construct a concrete instance of `GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchInput` via:
 //
-//          GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs{...}
+//	GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs{...}
 type GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchInput interface {
 	pulumi.Input
 
@@ -13041,7 +15089,7 @@ func (i GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs) ToGetCloudletsPhas
 // GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArrayInput is an input type that accepts GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArray and GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArrayInput` via:
 //
-//          GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArray{ GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs{...} }
+//	GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArray{ GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs{...} }
 type GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArrayInput interface {
 	pulumi.Input
 
@@ -13152,7 +15200,7 @@ type GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValue struct {
 // GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueInput is an input type that accepts GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgs and GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOutput values.
 // You can construct a concrete instance of `GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueInput` via:
 //
-//          GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgs{...}
+//	GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgs{...}
 type GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueInput interface {
 	pulumi.Input
 
@@ -13190,7 +15238,7 @@ func (i GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgs) To
 // GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArrayInput is an input type that accepts GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArray and GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArrayInput` via:
 //
-//          GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArray{ GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgs{...} }
+//	GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArray{ GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgs{...} }
 type GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArrayInput interface {
 	pulumi.Input
 
@@ -13296,7 +15344,7 @@ type GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptions str
 // GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsInput is an input type that accepts GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs and GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput values.
 // You can construct a concrete instance of `GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsInput` via:
 //
-//          GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
+//	GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
 type GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsInput interface {
 	pulumi.Input
 
@@ -13338,11 +15386,11 @@ func (i GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsA
 // GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput is an input type that accepts GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs, GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsPtr and GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput values.
 // You can construct a concrete instance of `GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput` via:
 //
-//          GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
+//	        GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput interface {
 	pulumi.Input
 
@@ -13494,7 +15542,7 @@ type GetCloudletsPolicyActivationType struct {
 // GetCloudletsPolicyActivationTypeInput is an input type that accepts GetCloudletsPolicyActivationTypeArgs and GetCloudletsPolicyActivationTypeOutput values.
 // You can construct a concrete instance of `GetCloudletsPolicyActivationTypeInput` via:
 //
-//          GetCloudletsPolicyActivationTypeArgs{...}
+//	GetCloudletsPolicyActivationTypeArgs{...}
 type GetCloudletsPolicyActivationTypeInput interface {
 	pulumi.Input
 
@@ -13524,7 +15572,7 @@ func (i GetCloudletsPolicyActivationTypeArgs) ToGetCloudletsPolicyActivationType
 // GetCloudletsPolicyActivationTypeArrayInput is an input type that accepts GetCloudletsPolicyActivationTypeArray and GetCloudletsPolicyActivationTypeArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsPolicyActivationTypeArrayInput` via:
 //
-//          GetCloudletsPolicyActivationTypeArray{ GetCloudletsPolicyActivationTypeArgs{...} }
+//	GetCloudletsPolicyActivationTypeArray{ GetCloudletsPolicyActivationTypeArgs{...} }
 type GetCloudletsPolicyActivationTypeArrayInput interface {
 	pulumi.Input
 
@@ -13615,7 +15663,7 @@ type GetCloudletsPolicyActivationPolicyInfo struct {
 // GetCloudletsPolicyActivationPolicyInfoInput is an input type that accepts GetCloudletsPolicyActivationPolicyInfoArgs and GetCloudletsPolicyActivationPolicyInfoOutput values.
 // You can construct a concrete instance of `GetCloudletsPolicyActivationPolicyInfoInput` via:
 //
-//          GetCloudletsPolicyActivationPolicyInfoArgs{...}
+//	GetCloudletsPolicyActivationPolicyInfoArgs{...}
 type GetCloudletsPolicyActivationPolicyInfoInput interface {
 	pulumi.Input
 
@@ -13650,7 +15698,7 @@ func (i GetCloudletsPolicyActivationPolicyInfoArgs) ToGetCloudletsPolicyActivati
 // GetCloudletsPolicyActivationPolicyInfoArrayInput is an input type that accepts GetCloudletsPolicyActivationPolicyInfoArray and GetCloudletsPolicyActivationPolicyInfoArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsPolicyActivationPolicyInfoArrayInput` via:
 //
-//          GetCloudletsPolicyActivationPolicyInfoArray{ GetCloudletsPolicyActivationPolicyInfoArgs{...} }
+//	GetCloudletsPolicyActivationPolicyInfoArray{ GetCloudletsPolicyActivationPolicyInfoArgs{...} }
 type GetCloudletsPolicyActivationPolicyInfoArrayInput interface {
 	pulumi.Input
 
@@ -13749,7 +15797,7 @@ type GetCloudletsPolicyActivationPropertyInfo struct {
 // GetCloudletsPolicyActivationPropertyInfoInput is an input type that accepts GetCloudletsPolicyActivationPropertyInfoArgs and GetCloudletsPolicyActivationPropertyInfoOutput values.
 // You can construct a concrete instance of `GetCloudletsPolicyActivationPropertyInfoInput` via:
 //
-//          GetCloudletsPolicyActivationPropertyInfoArgs{...}
+//	GetCloudletsPolicyActivationPropertyInfoArgs{...}
 type GetCloudletsPolicyActivationPropertyInfoInput interface {
 	pulumi.Input
 
@@ -13782,7 +15830,7 @@ func (i GetCloudletsPolicyActivationPropertyInfoArgs) ToGetCloudletsPolicyActiva
 // GetCloudletsPolicyActivationPropertyInfoArrayInput is an input type that accepts GetCloudletsPolicyActivationPropertyInfoArray and GetCloudletsPolicyActivationPropertyInfoArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsPolicyActivationPropertyInfoArrayInput` via:
 //
-//          GetCloudletsPolicyActivationPropertyInfoArray{ GetCloudletsPolicyActivationPropertyInfoArgs{...} }
+//	GetCloudletsPolicyActivationPropertyInfoArray{ GetCloudletsPolicyActivationPropertyInfoArgs{...} }
 type GetCloudletsPolicyActivationPropertyInfoArrayInput interface {
 	pulumi.Input
 
@@ -13885,7 +15933,7 @@ type GetCloudletsRequestControlMatchRuleMatchRule struct {
 // GetCloudletsRequestControlMatchRuleMatchRuleInput is an input type that accepts GetCloudletsRequestControlMatchRuleMatchRuleArgs and GetCloudletsRequestControlMatchRuleMatchRuleOutput values.
 // You can construct a concrete instance of `GetCloudletsRequestControlMatchRuleMatchRuleInput` via:
 //
-//          GetCloudletsRequestControlMatchRuleMatchRuleArgs{...}
+//	GetCloudletsRequestControlMatchRuleMatchRuleArgs{...}
 type GetCloudletsRequestControlMatchRuleMatchRuleInput interface {
 	pulumi.Input
 
@@ -13927,7 +15975,7 @@ func (i GetCloudletsRequestControlMatchRuleMatchRuleArgs) ToGetCloudletsRequestC
 // GetCloudletsRequestControlMatchRuleMatchRuleArrayInput is an input type that accepts GetCloudletsRequestControlMatchRuleMatchRuleArray and GetCloudletsRequestControlMatchRuleMatchRuleArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsRequestControlMatchRuleMatchRuleArrayInput` via:
 //
-//          GetCloudletsRequestControlMatchRuleMatchRuleArray{ GetCloudletsRequestControlMatchRuleMatchRuleArgs{...} }
+//	GetCloudletsRequestControlMatchRuleMatchRuleArray{ GetCloudletsRequestControlMatchRuleMatchRuleArgs{...} }
 type GetCloudletsRequestControlMatchRuleMatchRuleArrayInput interface {
 	pulumi.Input
 
@@ -14045,7 +16093,7 @@ type GetCloudletsRequestControlMatchRuleMatchRuleMatch struct {
 // GetCloudletsRequestControlMatchRuleMatchRuleMatchInput is an input type that accepts GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs and GetCloudletsRequestControlMatchRuleMatchRuleMatchOutput values.
 // You can construct a concrete instance of `GetCloudletsRequestControlMatchRuleMatchRuleMatchInput` via:
 //
-//          GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs{...}
+//	GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs{...}
 type GetCloudletsRequestControlMatchRuleMatchRuleMatchInput interface {
 	pulumi.Input
 
@@ -14085,7 +16133,7 @@ func (i GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs) ToGetCloudletsReq
 // GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayInput is an input type that accepts GetCloudletsRequestControlMatchRuleMatchRuleMatchArray and GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayInput` via:
 //
-//          GetCloudletsRequestControlMatchRuleMatchRuleMatchArray{ GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs{...} }
+//	GetCloudletsRequestControlMatchRuleMatchRuleMatchArray{ GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs{...} }
 type GetCloudletsRequestControlMatchRuleMatchRuleMatchArrayInput interface {
 	pulumi.Input
 
@@ -14196,7 +16244,7 @@ type GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue struct {
 // GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueInput is an input type that accepts GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs and GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOutput values.
 // You can construct a concrete instance of `GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueInput` via:
 //
-//          GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs{...}
+//	GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs{...}
 type GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueInput interface {
 	pulumi.Input
 
@@ -14234,7 +16282,7 @@ func (i GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs) T
 // GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayInput is an input type that accepts GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArray and GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayInput` via:
 //
-//          GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArray{ GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs{...} }
+//	GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArray{ GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs{...} }
 type GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArrayInput interface {
 	pulumi.Input
 
@@ -14340,7 +16388,7 @@ type GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions st
 // GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsInput is an input type that accepts GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs and GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput values.
 // You can construct a concrete instance of `GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsInput` via:
 //
-//          GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
+//	GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
 type GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsInput interface {
 	pulumi.Input
 
@@ -14382,11 +16430,11 @@ func (i GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions
 // GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput is an input type that accepts GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs, GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtr and GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput values.
 // You can construct a concrete instance of `GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput` via:
 //
-//          GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
+//	        GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput interface {
 	pulumi.Input
 
@@ -14550,7 +16598,7 @@ type GetCloudletsVisitorPrioritizationMatchRuleMatchRule struct {
 // GetCloudletsVisitorPrioritizationMatchRuleMatchRuleInput is an input type that accepts GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs and GetCloudletsVisitorPrioritizationMatchRuleMatchRuleOutput values.
 // You can construct a concrete instance of `GetCloudletsVisitorPrioritizationMatchRuleMatchRuleInput` via:
 //
-//          GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs{...}
+//	GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs{...}
 type GetCloudletsVisitorPrioritizationMatchRuleMatchRuleInput interface {
 	pulumi.Input
 
@@ -14592,7 +16640,7 @@ func (i GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs) ToGetCloudletsV
 // GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArrayInput is an input type that accepts GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArray and GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArrayInput` via:
 //
-//          GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArray{ GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs{...} }
+//	GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArray{ GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs{...} }
 type GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArrayInput interface {
 	pulumi.Input
 
@@ -14710,7 +16758,7 @@ type GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch struct {
 // GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchInput is an input type that accepts GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs and GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchOutput values.
 // You can construct a concrete instance of `GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchInput` via:
 //
-//          GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs{...}
+//	GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs{...}
 type GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchInput interface {
 	pulumi.Input
 
@@ -14750,7 +16798,7 @@ func (i GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs) ToGetCloud
 // GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArrayInput is an input type that accepts GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArray and GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArrayInput` via:
 //
-//          GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArray{ GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs{...} }
+//	GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArray{ GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs{...} }
 type GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArrayInput interface {
 	pulumi.Input
 
@@ -14861,7 +16909,7 @@ type GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValue st
 // GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueInput is an input type that accepts GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs and GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOutput values.
 // You can construct a concrete instance of `GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueInput` via:
 //
-//          GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs{...}
+//	GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs{...}
 type GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueInput interface {
 	pulumi.Input
 
@@ -14899,7 +16947,7 @@ func (i GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValue
 // GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArrayInput is an input type that accepts GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArray and GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArrayOutput values.
 // You can construct a concrete instance of `GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArrayInput` via:
 //
-//          GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArray{ GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs{...} }
+//	GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArray{ GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs{...} }
 type GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArrayInput interface {
 	pulumi.Input
 
@@ -15009,7 +17057,7 @@ type GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOpt
 // GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsInput is an input type that accepts GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs and GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsOutput values.
 // You can construct a concrete instance of `GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsInput` via:
 //
-//          GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
+//	GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
 type GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsInput interface {
 	pulumi.Input
 
@@ -15051,11 +17099,11 @@ func (i GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValue
 // GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput is an input type that accepts GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs, GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsPtr and GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrOutput values.
 // You can construct a concrete instance of `GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput` via:
 //
-//          GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
+//	        GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsPtrInput interface {
 	pulumi.Input
 
@@ -15205,7 +17253,7 @@ type GetContractsContract struct {
 // GetContractsContractInput is an input type that accepts GetContractsContractArgs and GetContractsContractOutput values.
 // You can construct a concrete instance of `GetContractsContractInput` via:
 //
-//          GetContractsContractArgs{...}
+//	GetContractsContractArgs{...}
 type GetContractsContractInput interface {
 	pulumi.Input
 
@@ -15233,7 +17281,7 @@ func (i GetContractsContractArgs) ToGetContractsContractOutputWithContext(ctx co
 // GetContractsContractArrayInput is an input type that accepts GetContractsContractArray and GetContractsContractArrayOutput values.
 // You can construct a concrete instance of `GetContractsContractArrayInput` via:
 //
-//          GetContractsContractArray{ GetContractsContractArgs{...} }
+//	GetContractsContractArray{ GetContractsContractArgs{...} }
 type GetContractsContractArrayInput interface {
 	pulumi.Input
 
@@ -15309,7 +17357,7 @@ type GetDatastreamActivationHistoryActivation struct {
 // GetDatastreamActivationHistoryActivationInput is an input type that accepts GetDatastreamActivationHistoryActivationArgs and GetDatastreamActivationHistoryActivationOutput values.
 // You can construct a concrete instance of `GetDatastreamActivationHistoryActivationInput` via:
 //
-//          GetDatastreamActivationHistoryActivationArgs{...}
+//	GetDatastreamActivationHistoryActivationArgs{...}
 type GetDatastreamActivationHistoryActivationInput interface {
 	pulumi.Input
 
@@ -15341,7 +17389,7 @@ func (i GetDatastreamActivationHistoryActivationArgs) ToGetDatastreamActivationH
 // GetDatastreamActivationHistoryActivationArrayInput is an input type that accepts GetDatastreamActivationHistoryActivationArray and GetDatastreamActivationHistoryActivationArrayOutput values.
 // You can construct a concrete instance of `GetDatastreamActivationHistoryActivationArrayInput` via:
 //
-//          GetDatastreamActivationHistoryActivationArray{ GetDatastreamActivationHistoryActivationArgs{...} }
+//	GetDatastreamActivationHistoryActivationArray{ GetDatastreamActivationHistoryActivationArgs{...} }
 type GetDatastreamActivationHistoryActivationArrayInput interface {
 	pulumi.Input
 
@@ -15427,7 +17475,7 @@ type GetDatastreamDatasetFieldsField struct {
 // GetDatastreamDatasetFieldsFieldInput is an input type that accepts GetDatastreamDatasetFieldsFieldArgs and GetDatastreamDatasetFieldsFieldOutput values.
 // You can construct a concrete instance of `GetDatastreamDatasetFieldsFieldInput` via:
 //
-//          GetDatastreamDatasetFieldsFieldArgs{...}
+//	GetDatastreamDatasetFieldsFieldArgs{...}
 type GetDatastreamDatasetFieldsFieldInput interface {
 	pulumi.Input
 
@@ -15456,7 +17504,7 @@ func (i GetDatastreamDatasetFieldsFieldArgs) ToGetDatastreamDatasetFieldsFieldOu
 // GetDatastreamDatasetFieldsFieldArrayInput is an input type that accepts GetDatastreamDatasetFieldsFieldArray and GetDatastreamDatasetFieldsFieldArrayOutput values.
 // You can construct a concrete instance of `GetDatastreamDatasetFieldsFieldArrayInput` via:
 //
-//          GetDatastreamDatasetFieldsFieldArray{ GetDatastreamDatasetFieldsFieldArgs{...} }
+//	GetDatastreamDatasetFieldsFieldArray{ GetDatastreamDatasetFieldsFieldArgs{...} }
 type GetDatastreamDatasetFieldsFieldArrayInput interface {
 	pulumi.Input
 
@@ -15536,7 +17584,7 @@ type GetDatastreamDatasetFieldsFieldDatasetField struct {
 // GetDatastreamDatasetFieldsFieldDatasetFieldInput is an input type that accepts GetDatastreamDatasetFieldsFieldDatasetFieldArgs and GetDatastreamDatasetFieldsFieldDatasetFieldOutput values.
 // You can construct a concrete instance of `GetDatastreamDatasetFieldsFieldDatasetFieldInput` via:
 //
-//          GetDatastreamDatasetFieldsFieldDatasetFieldArgs{...}
+//	GetDatastreamDatasetFieldsFieldDatasetFieldArgs{...}
 type GetDatastreamDatasetFieldsFieldDatasetFieldInput interface {
 	pulumi.Input
 
@@ -15566,7 +17614,7 @@ func (i GetDatastreamDatasetFieldsFieldDatasetFieldArgs) ToGetDatastreamDatasetF
 // GetDatastreamDatasetFieldsFieldDatasetFieldArrayInput is an input type that accepts GetDatastreamDatasetFieldsFieldDatasetFieldArray and GetDatastreamDatasetFieldsFieldDatasetFieldArrayOutput values.
 // You can construct a concrete instance of `GetDatastreamDatasetFieldsFieldDatasetFieldArrayInput` via:
 //
-//          GetDatastreamDatasetFieldsFieldDatasetFieldArray{ GetDatastreamDatasetFieldsFieldDatasetFieldArgs{...} }
+//	GetDatastreamDatasetFieldsFieldDatasetFieldArray{ GetDatastreamDatasetFieldsFieldDatasetFieldArgs{...} }
 type GetDatastreamDatasetFieldsFieldDatasetFieldArrayInput interface {
 	pulumi.Input
 
@@ -15648,7 +17696,7 @@ type GetGroupsGroup struct {
 // GetGroupsGroupInput is an input type that accepts GetGroupsGroupArgs and GetGroupsGroupOutput values.
 // You can construct a concrete instance of `GetGroupsGroupInput` via:
 //
-//          GetGroupsGroupArgs{...}
+//	GetGroupsGroupArgs{...}
 type GetGroupsGroupInput interface {
 	pulumi.Input
 
@@ -15678,7 +17726,7 @@ func (i GetGroupsGroupArgs) ToGetGroupsGroupOutputWithContext(ctx context.Contex
 // GetGroupsGroupArrayInput is an input type that accepts GetGroupsGroupArray and GetGroupsGroupArrayOutput values.
 // You can construct a concrete instance of `GetGroupsGroupArrayInput` via:
 //
-//          GetGroupsGroupArray{ GetGroupsGroupArgs{...} }
+//	GetGroupsGroupArray{ GetGroupsGroupArgs{...} }
 type GetGroupsGroupArrayInput interface {
 	pulumi.Input
 
@@ -15759,7 +17807,7 @@ type GetIamGrantableRolesGrantableRole struct {
 // GetIamGrantableRolesGrantableRoleInput is an input type that accepts GetIamGrantableRolesGrantableRoleArgs and GetIamGrantableRolesGrantableRoleOutput values.
 // You can construct a concrete instance of `GetIamGrantableRolesGrantableRoleInput` via:
 //
-//          GetIamGrantableRolesGrantableRoleArgs{...}
+//	GetIamGrantableRolesGrantableRoleArgs{...}
 type GetIamGrantableRolesGrantableRoleInput interface {
 	pulumi.Input
 
@@ -15788,7 +17836,7 @@ func (i GetIamGrantableRolesGrantableRoleArgs) ToGetIamGrantableRolesGrantableRo
 // GetIamGrantableRolesGrantableRoleArrayInput is an input type that accepts GetIamGrantableRolesGrantableRoleArray and GetIamGrantableRolesGrantableRoleArrayOutput values.
 // You can construct a concrete instance of `GetIamGrantableRolesGrantableRoleArrayInput` via:
 //
-//          GetIamGrantableRolesGrantableRoleArray{ GetIamGrantableRolesGrantableRoleArgs{...} }
+//	GetIamGrantableRolesGrantableRoleArray{ GetIamGrantableRolesGrantableRoleArgs{...} }
 type GetIamGrantableRolesGrantableRoleArrayInput interface {
 	pulumi.Input
 
@@ -15870,7 +17918,7 @@ type GetIamRolesRole struct {
 // GetIamRolesRoleInput is an input type that accepts GetIamRolesRoleArgs and GetIamRolesRoleOutput values.
 // You can construct a concrete instance of `GetIamRolesRoleInput` via:
 //
-//          GetIamRolesRoleArgs{...}
+//	GetIamRolesRoleArgs{...}
 type GetIamRolesRoleInput interface {
 	pulumi.Input
 
@@ -15904,7 +17952,7 @@ func (i GetIamRolesRoleArgs) ToGetIamRolesRoleOutputWithContext(ctx context.Cont
 // GetIamRolesRoleArrayInput is an input type that accepts GetIamRolesRoleArray and GetIamRolesRoleArrayOutput values.
 // You can construct a concrete instance of `GetIamRolesRoleArrayInput` via:
 //
-//          GetIamRolesRoleArray{ GetIamRolesRoleArgs{...} }
+//	GetIamRolesRoleArray{ GetIamRolesRoleArgs{...} }
 type GetIamRolesRoleArrayInput interface {
 	pulumi.Input
 
@@ -16002,7 +18050,7 @@ type GetIamTimezonesTimezone struct {
 // GetIamTimezonesTimezoneInput is an input type that accepts GetIamTimezonesTimezoneArgs and GetIamTimezonesTimezoneOutput values.
 // You can construct a concrete instance of `GetIamTimezonesTimezoneInput` via:
 //
-//          GetIamTimezonesTimezoneArgs{...}
+//	GetIamTimezonesTimezoneArgs{...}
 type GetIamTimezonesTimezoneInput interface {
 	pulumi.Input
 
@@ -16032,7 +18080,7 @@ func (i GetIamTimezonesTimezoneArgs) ToGetIamTimezonesTimezoneOutputWithContext(
 // GetIamTimezonesTimezoneArrayInput is an input type that accepts GetIamTimezonesTimezoneArray and GetIamTimezonesTimezoneArrayOutput values.
 // You can construct a concrete instance of `GetIamTimezonesTimezoneArrayInput` via:
 //
-//          GetIamTimezonesTimezoneArray{ GetIamTimezonesTimezoneArgs{...} }
+//	GetIamTimezonesTimezoneArray{ GetIamTimezonesTimezoneArgs{...} }
 type GetIamTimezonesTimezoneArrayInput interface {
 	pulumi.Input
 
@@ -16122,7 +18170,7 @@ type GetPropertiesProperty struct {
 // GetPropertiesPropertyInput is an input type that accepts GetPropertiesPropertyArgs and GetPropertiesPropertyOutput values.
 // You can construct a concrete instance of `GetPropertiesPropertyInput` via:
 //
-//          GetPropertiesPropertyArgs{...}
+//	GetPropertiesPropertyArgs{...}
 type GetPropertiesPropertyInput interface {
 	pulumi.Input
 
@@ -16160,7 +18208,7 @@ func (i GetPropertiesPropertyArgs) ToGetPropertiesPropertyOutputWithContext(ctx 
 // GetPropertiesPropertyArrayInput is an input type that accepts GetPropertiesPropertyArray and GetPropertiesPropertyArrayOutput values.
 // You can construct a concrete instance of `GetPropertiesPropertyArrayInput` via:
 //
-//          GetPropertiesPropertyArray{ GetPropertiesPropertyArgs{...} }
+//	GetPropertiesPropertyArray{ GetPropertiesPropertyArgs{...} }
 type GetPropertiesPropertyArrayInput interface {
 	pulumi.Input
 
@@ -16277,7 +18325,7 @@ type GetPropertiesSearchProperty struct {
 // GetPropertiesSearchPropertyInput is an input type that accepts GetPropertiesSearchPropertyArgs and GetPropertiesSearchPropertyOutput values.
 // You can construct a concrete instance of `GetPropertiesSearchPropertyInput` via:
 //
-//          GetPropertiesSearchPropertyArgs{...}
+//	GetPropertiesSearchPropertyArgs{...}
 type GetPropertiesSearchPropertyInput interface {
 	pulumi.Input
 
@@ -16316,7 +18364,7 @@ func (i GetPropertiesSearchPropertyArgs) ToGetPropertiesSearchPropertyOutputWith
 // GetPropertiesSearchPropertyArrayInput is an input type that accepts GetPropertiesSearchPropertyArray and GetPropertiesSearchPropertyArrayOutput values.
 // You can construct a concrete instance of `GetPropertiesSearchPropertyArrayInput` via:
 //
-//          GetPropertiesSearchPropertyArray{ GetPropertiesSearchPropertyArgs{...} }
+//	GetPropertiesSearchPropertyArray{ GetPropertiesSearchPropertyArgs{...} }
 type GetPropertiesSearchPropertyArrayInput interface {
 	pulumi.Input
 
@@ -16436,7 +18484,7 @@ type GetPropertyHostnamesHostname struct {
 // GetPropertyHostnamesHostnameInput is an input type that accepts GetPropertyHostnamesHostnameArgs and GetPropertyHostnamesHostnameOutput values.
 // You can construct a concrete instance of `GetPropertyHostnamesHostnameInput` via:
 //
-//          GetPropertyHostnamesHostnameArgs{...}
+//	GetPropertyHostnamesHostnameArgs{...}
 type GetPropertyHostnamesHostnameInput interface {
 	pulumi.Input
 
@@ -16468,7 +18516,7 @@ func (i GetPropertyHostnamesHostnameArgs) ToGetPropertyHostnamesHostnameOutputWi
 // GetPropertyHostnamesHostnameArrayInput is an input type that accepts GetPropertyHostnamesHostnameArray and GetPropertyHostnamesHostnameArrayOutput values.
 // You can construct a concrete instance of `GetPropertyHostnamesHostnameArrayInput` via:
 //
-//          GetPropertyHostnamesHostnameArray{ GetPropertyHostnamesHostnameArgs{...} }
+//	GetPropertyHostnamesHostnameArray{ GetPropertyHostnamesHostnameArgs{...} }
 type GetPropertyHostnamesHostnameArrayInput interface {
 	pulumi.Input
 
@@ -16558,7 +18606,7 @@ type GetPropertyHostnamesHostnameCertStatus struct {
 // GetPropertyHostnamesHostnameCertStatusInput is an input type that accepts GetPropertyHostnamesHostnameCertStatusArgs and GetPropertyHostnamesHostnameCertStatusOutput values.
 // You can construct a concrete instance of `GetPropertyHostnamesHostnameCertStatusInput` via:
 //
-//          GetPropertyHostnamesHostnameCertStatusArgs{...}
+//	GetPropertyHostnamesHostnameCertStatusArgs{...}
 type GetPropertyHostnamesHostnameCertStatusInput interface {
 	pulumi.Input
 
@@ -16588,7 +18636,7 @@ func (i GetPropertyHostnamesHostnameCertStatusArgs) ToGetPropertyHostnamesHostna
 // GetPropertyHostnamesHostnameCertStatusArrayInput is an input type that accepts GetPropertyHostnamesHostnameCertStatusArray and GetPropertyHostnamesHostnameCertStatusArrayOutput values.
 // You can construct a concrete instance of `GetPropertyHostnamesHostnameCertStatusArrayInput` via:
 //
-//          GetPropertyHostnamesHostnameCertStatusArray{ GetPropertyHostnamesHostnameCertStatusArgs{...} }
+//	GetPropertyHostnamesHostnameCertStatusArray{ GetPropertyHostnamesHostnameCertStatusArgs{...} }
 type GetPropertyHostnamesHostnameCertStatusArrayInput interface {
 	pulumi.Input
 
@@ -16668,7 +18716,7 @@ type GetPropertyProductsProduct struct {
 // GetPropertyProductsProductInput is an input type that accepts GetPropertyProductsProductArgs and GetPropertyProductsProductOutput values.
 // You can construct a concrete instance of `GetPropertyProductsProductInput` via:
 //
-//          GetPropertyProductsProductArgs{...}
+//	GetPropertyProductsProductArgs{...}
 type GetPropertyProductsProductInput interface {
 	pulumi.Input
 
@@ -16696,7 +18744,7 @@ func (i GetPropertyProductsProductArgs) ToGetPropertyProductsProductOutputWithCo
 // GetPropertyProductsProductArrayInput is an input type that accepts GetPropertyProductsProductArray and GetPropertyProductsProductArrayOutput values.
 // You can construct a concrete instance of `GetPropertyProductsProductArrayInput` via:
 //
-//          GetPropertyProductsProductArray{ GetPropertyProductsProductArgs{...} }
+//	GetPropertyProductsProductArray{ GetPropertyProductsProductArgs{...} }
 type GetPropertyProductsProductArrayInput interface {
 	pulumi.Input
 
@@ -16770,7 +18818,7 @@ type GetPropertyRulesTemplateTemplate struct {
 // GetPropertyRulesTemplateTemplateInput is an input type that accepts GetPropertyRulesTemplateTemplateArgs and GetPropertyRulesTemplateTemplateOutput values.
 // You can construct a concrete instance of `GetPropertyRulesTemplateTemplateInput` via:
 //
-//          GetPropertyRulesTemplateTemplateArgs{...}
+//	GetPropertyRulesTemplateTemplateArgs{...}
 type GetPropertyRulesTemplateTemplateInput interface {
 	pulumi.Input
 
@@ -16800,7 +18848,7 @@ func (i GetPropertyRulesTemplateTemplateArgs) ToGetPropertyRulesTemplateTemplate
 // GetPropertyRulesTemplateTemplateArrayInput is an input type that accepts GetPropertyRulesTemplateTemplateArray and GetPropertyRulesTemplateTemplateArrayOutput values.
 // You can construct a concrete instance of `GetPropertyRulesTemplateTemplateArrayInput` via:
 //
-//          GetPropertyRulesTemplateTemplateArray{ GetPropertyRulesTemplateTemplateArgs{...} }
+//	GetPropertyRulesTemplateTemplateArray{ GetPropertyRulesTemplateTemplateArgs{...} }
 type GetPropertyRulesTemplateTemplateArrayInput interface {
 	pulumi.Input
 
@@ -16878,7 +18926,7 @@ type GetPropertyRulesTemplateVariable struct {
 // GetPropertyRulesTemplateVariableInput is an input type that accepts GetPropertyRulesTemplateVariableArgs and GetPropertyRulesTemplateVariableOutput values.
 // You can construct a concrete instance of `GetPropertyRulesTemplateVariableInput` via:
 //
-//          GetPropertyRulesTemplateVariableArgs{...}
+//	GetPropertyRulesTemplateVariableArgs{...}
 type GetPropertyRulesTemplateVariableInput interface {
 	pulumi.Input
 
@@ -16910,7 +18958,7 @@ func (i GetPropertyRulesTemplateVariableArgs) ToGetPropertyRulesTemplateVariable
 // GetPropertyRulesTemplateVariableArrayInput is an input type that accepts GetPropertyRulesTemplateVariableArray and GetPropertyRulesTemplateVariableArrayOutput values.
 // You can construct a concrete instance of `GetPropertyRulesTemplateVariableArrayInput` via:
 //
-//          GetPropertyRulesTemplateVariableArray{ GetPropertyRulesTemplateVariableArgs{...} }
+//	GetPropertyRulesTemplateVariableArray{ GetPropertyRulesTemplateVariableArgs{...} }
 type GetPropertyRulesTemplateVariableArrayInput interface {
 	pulumi.Input
 
@@ -17076,6 +19124,36 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ProviderNetworkArrayInput)(nil)).Elem(), ProviderNetworkArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProviderPropertyInput)(nil)).Elem(), ProviderPropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProviderPropertyPtrInput)(nil)).Elem(), ProviderPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentAdminContactInput)(nil)).Elem(), GetCPSEnrollmentAdminContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentAdminContactArrayInput)(nil)).Elem(), GetCPSEnrollmentAdminContactArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentCsrInput)(nil)).Elem(), GetCPSEnrollmentCsrArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentCsrArrayInput)(nil)).Elem(), GetCPSEnrollmentCsrArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentDnsChallengeInput)(nil)).Elem(), GetCPSEnrollmentDnsChallengeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentDnsChallengeArrayInput)(nil)).Elem(), GetCPSEnrollmentDnsChallengeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentHttpChallengeInput)(nil)).Elem(), GetCPSEnrollmentHttpChallengeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentHttpChallengeArrayInput)(nil)).Elem(), GetCPSEnrollmentHttpChallengeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentNetworkConfigurationInput)(nil)).Elem(), GetCPSEnrollmentNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentNetworkConfigurationArrayInput)(nil)).Elem(), GetCPSEnrollmentNetworkConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationInput)(nil)).Elem(), GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayInput)(nil)).Elem(), GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentOrganizationInput)(nil)).Elem(), GetCPSEnrollmentOrganizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentOrganizationArrayInput)(nil)).Elem(), GetCPSEnrollmentOrganizationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentTechContactInput)(nil)).Elem(), GetCPSEnrollmentTechContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentTechContactArrayInput)(nil)).Elem(), GetCPSEnrollmentTechContactArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentsEnrollmentInput)(nil)).Elem(), GetCPSEnrollmentsEnrollmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentsEnrollmentArrayInput)(nil)).Elem(), GetCPSEnrollmentsEnrollmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentsEnrollmentAdminContactInput)(nil)).Elem(), GetCPSEnrollmentsEnrollmentAdminContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentsEnrollmentAdminContactArrayInput)(nil)).Elem(), GetCPSEnrollmentsEnrollmentAdminContactArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentsEnrollmentCsrInput)(nil)).Elem(), GetCPSEnrollmentsEnrollmentCsrArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentsEnrollmentCsrArrayInput)(nil)).Elem(), GetCPSEnrollmentsEnrollmentCsrArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentsEnrollmentNetworkConfigurationInput)(nil)).Elem(), GetCPSEnrollmentsEnrollmentNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayInput)(nil)).Elem(), GetCPSEnrollmentsEnrollmentNetworkConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationInput)(nil)).Elem(), GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayInput)(nil)).Elem(), GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentsEnrollmentOrganizationInput)(nil)).Elem(), GetCPSEnrollmentsEnrollmentOrganizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentsEnrollmentOrganizationArrayInput)(nil)).Elem(), GetCPSEnrollmentsEnrollmentOrganizationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentsEnrollmentTechContactInput)(nil)).Elem(), GetCPSEnrollmentsEnrollmentTechContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCPSEnrollmentsEnrollmentTechContactArrayInput)(nil)).Elem(), GetCPSEnrollmentsEnrollmentTechContactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsApiPrioritizationMatchRuleMatchRuleInput)(nil)).Elem(), GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsApiPrioritizationMatchRuleMatchRuleArrayInput)(nil)).Elem(), GetCloudletsApiPrioritizationMatchRuleMatchRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchInput)(nil)).Elem(), GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs{})
@@ -17279,6 +19357,36 @@ func init() {
 	pulumi.RegisterOutputType(ProviderNetworkArrayOutput{})
 	pulumi.RegisterOutputType(ProviderPropertyOutput{})
 	pulumi.RegisterOutputType(ProviderPropertyPtrOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentAdminContactOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentAdminContactArrayOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentCsrOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentCsrArrayOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentDnsChallengeOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentDnsChallengeArrayOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentHttpChallengeOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentHttpChallengeArrayOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentNetworkConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentOrganizationOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentOrganizationArrayOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentTechContactOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentTechContactArrayOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentsEnrollmentOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentsEnrollmentArrayOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentsEnrollmentAdminContactOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentsEnrollmentAdminContactArrayOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentsEnrollmentCsrOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentsEnrollmentCsrArrayOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentsEnrollmentNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentsEnrollmentNetworkConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationArrayOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentsEnrollmentOrganizationOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentsEnrollmentOrganizationArrayOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentsEnrollmentTechContactOutput{})
+	pulumi.RegisterOutputType(GetCPSEnrollmentsEnrollmentTechContactArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudletsApiPrioritizationMatchRuleMatchRuleOutput{})
 	pulumi.RegisterOutputType(GetCloudletsApiPrioritizationMatchRuleMatchRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchOutput{})

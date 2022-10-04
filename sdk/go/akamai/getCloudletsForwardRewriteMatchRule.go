@@ -22,40 +22,43 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := akamai.GetCloudletsForwardRewriteMatchRule(ctx, &GetCloudletsForwardRewriteMatchRuleArgs{
-// 			MatchRules: []GetCloudletsForwardRewriteMatchRuleMatchRule{
-// 				GetCloudletsForwardRewriteMatchRuleMatchRule{
-// 					ForwardSettings: GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings{
-// 						OriginId:               pulumi.StringRef("1234"),
-// 						PathAndQs:              pulumi.StringRef("/path"),
-// 						UseIncomingQueryString: pulumi.BoolRef(true),
-// 					},
-// 					Matches: []GetCloudletsForwardRewriteMatchRuleMatchRuleMatch{
-// 						GetCloudletsForwardRewriteMatchRuleMatchRuleMatch{
-// 							CaseSensitive: pulumi.BoolRef(false),
-// 							CheckIps:      pulumi.StringRef("CONNECTING_IP XFF_HEADERS"),
-// 							MatchOperator: pulumi.StringRef("equals"),
-// 							MatchType:     pulumi.StringRef("clientip"),
-// 							MatchValue:    pulumi.StringRef("192.0.2.0"),
-// 							Negate:        pulumi.BoolRef(false),
-// 						},
-// 					},
-// 					Name: pulumi.StringRef("rule"),
-// 				},
-// 			},
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := akamai.GetCloudletsForwardRewriteMatchRule(ctx, &GetCloudletsForwardRewriteMatchRuleArgs{
+//				MatchRules: []GetCloudletsForwardRewriteMatchRuleMatchRule{
+//					GetCloudletsForwardRewriteMatchRuleMatchRule{
+//						ForwardSettings: GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings{
+//							OriginId:               pulumi.StringRef("1234"),
+//							PathAndQs:              pulumi.StringRef("/path"),
+//							UseIncomingQueryString: pulumi.BoolRef(true),
+//						},
+//						Matches: []GetCloudletsForwardRewriteMatchRuleMatchRuleMatch{
+//							GetCloudletsForwardRewriteMatchRuleMatchRuleMatch{
+//								CaseSensitive: pulumi.BoolRef(false),
+//								CheckIps:      pulumi.StringRef("CONNECTING_IP XFF_HEADERS"),
+//								MatchOperator: pulumi.StringRef("equals"),
+//								MatchType:     pulumi.StringRef("clientip"),
+//								MatchValue:    pulumi.StringRef("192.0.2.0"),
+//								Negate:        pulumi.BoolRef(false),
+//							},
+//						},
+//						Name: pulumi.StringRef("rule"),
+//					},
+//				},
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Attributes reference

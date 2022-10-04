@@ -58,7 +58,7 @@ class _AppSecVersionNodesState:
         """
         Input properties used for looking up and filtering AppSecVersionNodes resources.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration whose version notes are being modified.
-        :param pulumi.Input[str] output_text: Text Export representation
+        :param pulumi.Input[str] output_text: Text representation
         :param pulumi.Input[str] version_notes: . Brief description of the security configuration version.
         """
         if config_id is not None:
@@ -84,7 +84,7 @@ class _AppSecVersionNodesState:
     @pulumi.getter(name="outputText")
     def output_text(self) -> Optional[pulumi.Input[str]]:
         """
-        Text Export representation
+        Text representation
         """
         return pulumi.get(self, "output_text")
 
@@ -232,7 +232,7 @@ class AppSecVersionNodes(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration whose version notes are being modified.
-        :param pulumi.Input[str] output_text: Text Export representation
+        :param pulumi.Input[str] output_text: Text representation
         :param pulumi.Input[str] version_notes: . Brief description of the security configuration version.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -256,7 +256,7 @@ class AppSecVersionNodes(pulumi.CustomResource):
     @pulumi.getter(name="outputText")
     def output_text(self) -> pulumi.Output[str]:
         """
-        Text Export representation
+        Text representation
         """
         return pulumi.get(self, "output_text")
 

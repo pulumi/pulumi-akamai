@@ -27,46 +27,49 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		selectableHostnames, err := akamai.GetAppSecSelectableHostnames(ctx, &GetAppSecSelectableHostnamesArgs{
-// 			ConfigId: pulumi.IntRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		createConfig, err := akamai.NewAppSecConfiguration(ctx, "createConfig", &akamai.AppSecConfigurationArgs{
-// 			Description: pulumi.String("This configuration is used as a testing environment for the documentation team."),
-// 			ContractId:  pulumi.String("5-2WA382"),
-// 			GroupId:     pulumi.Int(12198),
-// 			HostNames: pulumi.StringArray{
-// 				pulumi.String("documentation.akamai.com"),
-// 				pulumi.String("training.akamai.com"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("createConfigId", createConfig.ConfigId)
-// 		cloneConfig, err := akamai.NewAppSecConfiguration(ctx, "cloneConfig", &akamai.AppSecConfigurationArgs{
-// 			Description:        pulumi.String("This configuration is used as a testing environment for the documentation team."),
-// 			CreateFromConfigId: pulumi.Any(data.Akamai_appsec_configuration.Configuration.Config_id),
-// 			CreateFromVersion:  pulumi.Any(data.Akamai_appsec_configuration.Configuration.Latest_version),
-// 			ContractId:         pulumi.String("5-2WA382"),
-// 			GroupId:            pulumi.Int(12198),
-// 			HostNames:          interface{}(selectableHostnames.Hostnames),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("cloneConfigId", cloneConfig.ConfigId)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			selectableHostnames, err := akamai.GetAppSecSelectableHostnames(ctx, &GetAppSecSelectableHostnamesArgs{
+//				ConfigId: pulumi.IntRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			createConfig, err := akamai.NewAppSecConfiguration(ctx, "createConfig", &akamai.AppSecConfigurationArgs{
+//				Description: pulumi.String("This configuration is used as a testing environment for the documentation team."),
+//				ContractId:  pulumi.String("5-2WA382"),
+//				GroupId:     pulumi.Int(12198),
+//				HostNames: pulumi.StringArray{
+//					pulumi.String("documentation.akamai.com"),
+//					pulumi.String("training.akamai.com"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("createConfigId", createConfig.ConfigId)
+//			cloneConfig, err := akamai.NewAppSecConfiguration(ctx, "cloneConfig", &akamai.AppSecConfigurationArgs{
+//				Description:        pulumi.String("This configuration is used as a testing environment for the documentation team."),
+//				CreateFromConfigId: pulumi.Any(data.Akamai_appsec_configuration.Configuration.Config_id),
+//				CreateFromVersion:  pulumi.Any(data.Akamai_appsec_configuration.Configuration.Latest_version),
+//				ContractId:         pulumi.String("5-2WA382"),
+//				GroupId:            pulumi.Int(12198),
+//				HostNames:          interface{}(selectableHostnames.Hostnames),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("cloneConfigId", cloneConfig.ConfigId)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
@@ -76,8 +79,9 @@ import (
 type AppSecConfiguration struct {
 	pulumi.CustomResourceState
 
+	// Unique identifier of the new security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Unique identifier of the Akamai contract t associated with the new configuration.
+	// . Unique identifier of the Akamai contract associated with the new configuration.
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
 	// . Unique identifier of the existing configuration being cloned in order to create the new configuration.
 	CreateFromConfigId pulumi.IntPtrOutput `pulumi:"createFromConfigId"`
@@ -134,8 +138,9 @@ func GetAppSecConfiguration(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecConfiguration resources.
 type appSecConfigurationState struct {
+	// Unique identifier of the new security configuration
 	ConfigId *int `pulumi:"configId"`
-	// . Unique identifier of the Akamai contract t associated with the new configuration.
+	// . Unique identifier of the Akamai contract associated with the new configuration.
 	ContractId *string `pulumi:"contractId"`
 	// . Unique identifier of the existing configuration being cloned in order to create the new configuration.
 	CreateFromConfigId *int `pulumi:"createFromConfigId"`
@@ -152,8 +157,9 @@ type appSecConfigurationState struct {
 }
 
 type AppSecConfigurationState struct {
+	// Unique identifier of the new security configuration
 	ConfigId pulumi.IntPtrInput
-	// . Unique identifier of the Akamai contract t associated with the new configuration.
+	// . Unique identifier of the Akamai contract associated with the new configuration.
 	ContractId pulumi.StringPtrInput
 	// . Unique identifier of the existing configuration being cloned in order to create the new configuration.
 	CreateFromConfigId pulumi.IntPtrInput
@@ -174,7 +180,7 @@ func (AppSecConfigurationState) ElementType() reflect.Type {
 }
 
 type appSecConfigurationArgs struct {
-	// . Unique identifier of the Akamai contract t associated with the new configuration.
+	// . Unique identifier of the Akamai contract associated with the new configuration.
 	ContractId string `pulumi:"contractId"`
 	// . Unique identifier of the existing configuration being cloned in order to create the new configuration.
 	CreateFromConfigId *int `pulumi:"createFromConfigId"`
@@ -192,7 +198,7 @@ type appSecConfigurationArgs struct {
 
 // The set of arguments for constructing a AppSecConfiguration resource.
 type AppSecConfigurationArgs struct {
-	// . Unique identifier of the Akamai contract t associated with the new configuration.
+	// . Unique identifier of the Akamai contract associated with the new configuration.
 	ContractId pulumi.StringInput
 	// . Unique identifier of the existing configuration being cloned in order to create the new configuration.
 	CreateFromConfigId pulumi.IntPtrInput
@@ -234,7 +240,7 @@ func (i *AppSecConfiguration) ToAppSecConfigurationOutputWithContext(ctx context
 // AppSecConfigurationArrayInput is an input type that accepts AppSecConfigurationArray and AppSecConfigurationArrayOutput values.
 // You can construct a concrete instance of `AppSecConfigurationArrayInput` via:
 //
-//          AppSecConfigurationArray{ AppSecConfigurationArgs{...} }
+//	AppSecConfigurationArray{ AppSecConfigurationArgs{...} }
 type AppSecConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -259,7 +265,7 @@ func (i AppSecConfigurationArray) ToAppSecConfigurationArrayOutputWithContext(ct
 // AppSecConfigurationMapInput is an input type that accepts AppSecConfigurationMap and AppSecConfigurationMapOutput values.
 // You can construct a concrete instance of `AppSecConfigurationMapInput` via:
 //
-//          AppSecConfigurationMap{ "key": AppSecConfigurationArgs{...} }
+//	AppSecConfigurationMap{ "key": AppSecConfigurationArgs{...} }
 type AppSecConfigurationMapInput interface {
 	pulumi.Input
 
@@ -295,11 +301,12 @@ func (o AppSecConfigurationOutput) ToAppSecConfigurationOutputWithContext(ctx co
 	return o
 }
 
+// Unique identifier of the new security configuration
 func (o AppSecConfigurationOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecConfiguration) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . Unique identifier of the Akamai contract t associated with the new configuration.
+// . Unique identifier of the Akamai contract associated with the new configuration.
 func (o AppSecConfigurationOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecConfiguration) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
 }

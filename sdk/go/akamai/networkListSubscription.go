@@ -22,30 +22,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		networkListsFilter, err := akamai.GetNetworkLists(ctx, &GetNetworkListsArgs{
-// 			Name: pulumi.StringRef(_var.Network_list),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewNetworkListSubscription(ctx, "subscribe", &akamai.NetworkListSubscriptionArgs{
-// 			NetworkLists: interface{}(networkListsFilter.Lists),
-// 			Recipients: pulumi.StringArray{
-// 				pulumi.String("user@example.com"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			networkListsFilter, err := akamai.GetNetworkLists(ctx, &GetNetworkListsArgs{
+//				Name: pulumi.StringRef(_var.Network_list),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewNetworkListSubscription(ctx, "subscribe", &akamai.NetworkListSubscriptionArgs{
+//				NetworkLists: interface{}(networkListsFilter.Lists),
+//				Recipients: pulumi.StringArray{
+//					pulumi.String("user@example.com"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type NetworkListSubscription struct {
 	pulumi.CustomResourceState
@@ -159,7 +162,7 @@ func (i *NetworkListSubscription) ToNetworkListSubscriptionOutputWithContext(ctx
 // NetworkListSubscriptionArrayInput is an input type that accepts NetworkListSubscriptionArray and NetworkListSubscriptionArrayOutput values.
 // You can construct a concrete instance of `NetworkListSubscriptionArrayInput` via:
 //
-//          NetworkListSubscriptionArray{ NetworkListSubscriptionArgs{...} }
+//	NetworkListSubscriptionArray{ NetworkListSubscriptionArgs{...} }
 type NetworkListSubscriptionArrayInput interface {
 	pulumi.Input
 
@@ -184,7 +187,7 @@ func (i NetworkListSubscriptionArray) ToNetworkListSubscriptionArrayOutputWithCo
 // NetworkListSubscriptionMapInput is an input type that accepts NetworkListSubscriptionMap and NetworkListSubscriptionMapOutput values.
 // You can construct a concrete instance of `NetworkListSubscriptionMapInput` via:
 //
-//          NetworkListSubscriptionMap{ "key": NetworkListSubscriptionArgs{...} }
+//	NetworkListSubscriptionMap{ "key": NetworkListSubscriptionArgs{...} }
 type NetworkListSubscriptionMapInput interface {
 	pulumi.Input
 

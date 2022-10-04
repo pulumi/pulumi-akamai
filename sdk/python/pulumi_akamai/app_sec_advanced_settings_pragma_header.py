@@ -20,7 +20,7 @@ class AppSecAdvancedSettingsPragmaHeaderArgs:
         """
         The set of arguments for constructing a AppSecAdvancedSettingsPragmaHeader resource.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the pragma header settings being modified.
-        :param pulumi.Input[str] pragma_header: . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`. You can view a sample JSON file in the [Modify pragma settings for a security setting](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpragmaheaderconfiguration) section of the Application Security API documentation.
+        :param pulumi.Input[str] pragma_header: . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`.
         :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the pragma header settings being modified. If not included, pragma header settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
         """
         pulumi.set(__self__, "config_id", config_id)
@@ -44,7 +44,7 @@ class AppSecAdvancedSettingsPragmaHeaderArgs:
     @pulumi.getter(name="pragmaHeader")
     def pragma_header(self) -> pulumi.Input[str]:
         """
-        . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`. You can view a sample JSON file in the [Modify pragma settings for a security setting](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpragmaheaderconfiguration) section of the Application Security API documentation.
+        . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`.
         """
         return pulumi.get(self, "pragma_header")
 
@@ -74,7 +74,7 @@ class _AppSecAdvancedSettingsPragmaHeaderState:
         """
         Input properties used for looking up and filtering AppSecAdvancedSettingsPragmaHeader resources.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the pragma header settings being modified.
-        :param pulumi.Input[str] pragma_header: . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`. You can view a sample JSON file in the [Modify pragma settings for a security setting](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpragmaheaderconfiguration) section of the Application Security API documentation.
+        :param pulumi.Input[str] pragma_header: . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`.
         :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the pragma header settings being modified. If not included, pragma header settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
         """
         if config_id is not None:
@@ -100,7 +100,7 @@ class _AppSecAdvancedSettingsPragmaHeaderState:
     @pulumi.getter(name="pragmaHeader")
     def pragma_header(self) -> Optional[pulumi.Input[str]]:
         """
-        . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`. You can view a sample JSON file in the [Modify pragma settings for a security setting](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpragmaheaderconfiguration) section of the Application Security API documentation.
+        . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`.
         """
         return pulumi.get(self, "pragma_header")
 
@@ -157,7 +157,7 @@ class AppSecAdvancedSettingsPragmaHeader(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the pragma header settings being modified.
-        :param pulumi.Input[str] pragma_header: . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`. You can view a sample JSON file in the [Modify pragma settings for a security setting](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpragmaheaderconfiguration) section of the Application Security API documentation.
+        :param pulumi.Input[str] pragma_header: . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`.
         :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the pragma header settings being modified. If not included, pragma header settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
         """
         ...
@@ -245,7 +245,7 @@ class AppSecAdvancedSettingsPragmaHeader(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the pragma header settings being modified.
-        :param pulumi.Input[str] pragma_header: . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`. You can view a sample JSON file in the [Modify pragma settings for a security setting](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpragmaheaderconfiguration) section of the Application Security API documentation.
+        :param pulumi.Input[str] pragma_header: . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`.
         :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the pragma header settings being modified. If not included, pragma header settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -269,7 +269,7 @@ class AppSecAdvancedSettingsPragmaHeader(pulumi.CustomResource):
     @pulumi.getter(name="pragmaHeader")
     def pragma_header(self) -> pulumi.Output[str]:
         """
-        . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`. You can view a sample JSON file in the [Modify pragma settings for a security setting](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putpragmaheaderconfiguration) section of the Application Security API documentation.
+        . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation's response except in cases where you set `excludeCondition`.
         """
         return pulumi.get(self, "pragma_header")
 

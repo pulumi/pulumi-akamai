@@ -25,29 +25,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		versionNotesAppSecVersionNodes, err := akamai.NewAppSecVersionNodes(ctx, "versionNotesAppSecVersionNodes", &akamai.AppSecVersionNodesArgs{
-// 			ConfigId:     pulumi.Int(configuration.ConfigId),
-// 			VersionNotes: pulumi.String("This version enables reputation profiles."),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("versionNotes", versionNotesAppSecVersionNodes.OutputText)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			versionNotesAppSecVersionNodes, err := akamai.NewAppSecVersionNodes(ctx, "versionNotesAppSecVersionNodes", &akamai.AppSecVersionNodesArgs{
+//				ConfigId:     pulumi.Int(configuration.ConfigId),
+//				VersionNotes: pulumi.String("This version enables reputation profiles."),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("versionNotes", versionNotesAppSecVersionNodes.OutputText)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
@@ -59,7 +62,7 @@ type AppSecVersionNodes struct {
 
 	// . Unique identifier of the security configuration whose version notes are being modified.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// Text Export representation
+	// Text representation
 	OutputText pulumi.StringOutput `pulumi:"outputText"`
 	// . Brief description of the security configuration version.
 	VersionNotes pulumi.StringOutput `pulumi:"versionNotes"`
@@ -102,7 +105,7 @@ func GetAppSecVersionNodes(ctx *pulumi.Context,
 type appSecVersionNodesState struct {
 	// . Unique identifier of the security configuration whose version notes are being modified.
 	ConfigId *int `pulumi:"configId"`
-	// Text Export representation
+	// Text representation
 	OutputText *string `pulumi:"outputText"`
 	// . Brief description of the security configuration version.
 	VersionNotes *string `pulumi:"versionNotes"`
@@ -111,7 +114,7 @@ type appSecVersionNodesState struct {
 type AppSecVersionNodesState struct {
 	// . Unique identifier of the security configuration whose version notes are being modified.
 	ConfigId pulumi.IntPtrInput
-	// Text Export representation
+	// Text representation
 	OutputText pulumi.StringPtrInput
 	// . Brief description of the security configuration version.
 	VersionNotes pulumi.StringPtrInput
@@ -162,7 +165,7 @@ func (i *AppSecVersionNodes) ToAppSecVersionNodesOutputWithContext(ctx context.C
 // AppSecVersionNodesArrayInput is an input type that accepts AppSecVersionNodesArray and AppSecVersionNodesArrayOutput values.
 // You can construct a concrete instance of `AppSecVersionNodesArrayInput` via:
 //
-//          AppSecVersionNodesArray{ AppSecVersionNodesArgs{...} }
+//	AppSecVersionNodesArray{ AppSecVersionNodesArgs{...} }
 type AppSecVersionNodesArrayInput interface {
 	pulumi.Input
 
@@ -187,7 +190,7 @@ func (i AppSecVersionNodesArray) ToAppSecVersionNodesArrayOutputWithContext(ctx 
 // AppSecVersionNodesMapInput is an input type that accepts AppSecVersionNodesMap and AppSecVersionNodesMapOutput values.
 // You can construct a concrete instance of `AppSecVersionNodesMapInput` via:
 //
-//          AppSecVersionNodesMap{ "key": AppSecVersionNodesArgs{...} }
+//	AppSecVersionNodesMap{ "key": AppSecVersionNodesArgs{...} }
 type AppSecVersionNodesMapInput interface {
 	pulumi.Input
 
@@ -228,7 +231,7 @@ func (o AppSecVersionNodesOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecVersionNodes) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// Text Export representation
+// Text representation
 func (o AppSecVersionNodesOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecVersionNodes) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
 }

@@ -10,43 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The `getPropertyRulesTemplate` data source lets you define a rule tree. A rule tree is a nested block of property rules in JSON format that includes match criteria and behaviors. You can break a rule tree out into smaller JSON  template files that cover individual rules.
-//
-// With this data source, you define which JSON template files to use for your property. You can also set values for variables.
-//
-// This data source uses the rule template format from the [Property Manager CLI](https://github.com/akamai/cli-property-manager#set-up-property-snippets).
-//
-// > You can define variables either by using the Property Manager CLI syntax or by using standard variables.
-//
-// ## How to work with JSON template files
-//
-// You have a few options when working with rule template files:
-//
-// * Use a single JSON file that includes all rules for the property.
-// * Create separate JSON template files for each rule and store them in the `property-snippets` directory.
-// * Reference individual template files directly in this data source.
-//
-// ### Create a set of JSON template files
-//
-// If you have a set of JSON template files you want to call:
-//
-// 1. Put them all in a directory called `property-snippets`.
-// 2. Make sure the `property-snippets` folder only contains `.json` files.
-// 3. Add the `templateDir` argument. For example: `templateDir = "property-snippets/"`.
-//
-// > This directory name is different from the one required for the Property Manager CLI, which is called `config-snippets`.
-//
-// ## How to use property variables with a template
-//
-// You can also add variables to a template by using a string like `“${env.<variableName>}"`. These property variables follow the file structure and syntax used when [creating a pipeline in the Property Manager CLI](https://github.com/akamai/cli-property-manager#create-and-set-up-a-new-pipeline).
-//
-// You need to create these files when using property variables:
-//
-// * a `variableDefinitions.json` file to define your variables and their default values.
-// * one or more `variables.json` files to define settings specific to an environment. <br> The file name should always be `variables.json`. If using multiple environments, set up a directory for each environment to store this file in.
-//
-// > Property variables are separate from variables.
-//
 // ## Example Usage
 //
 // ### JSON Template Files
@@ -60,14 +23,17 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			return nil
+//		})
+//	}
+//
 // ```
 // ### Individual JSON rule template file
 //
@@ -77,14 +43,17 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			return nil
+//		})
+//	}
+//
 // ```
 // ### Add Templates To The Data Source
 //
@@ -97,49 +66,52 @@ import (
 // package main
 //
 // import (
-// 	"encoding/json"
 //
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"encoding/json"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		tmpJSON0, err := json.Marshal(map[string]interface{}{
-// 			"rules": map[string]interface{}{
-// 				"name": "default",
-// 				"children": []string{
-// 					"#include:rules.json",
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		json0 := string(tmpJSON0)
-// 		examplePropertyRulesTemplate, err := akamai.GetPropertyRulesTemplate(ctx, &GetPropertyRulesTemplateArgs{
-// 			Templates: []GetPropertyRulesTemplateTemplate{
-// 				GetPropertyRulesTemplateTemplate{
-// 					TemplateData: json0,
-// 					TemplateDir:  "property-snippets/",
-// 				},
-// 			},
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = akamai.NewProperty(ctx, "exampleProperty", &akamai.PropertyArgs{
-// 			ContractId: pulumi.Any(_var.Contractid),
-// 			GroupId:    pulumi.Any(_var.Groupid),
-// 			RuleFormat: pulumi.String("v2020-03-04"),
-// 			Rules:      pulumi.String(examplePropertyRulesTemplate.Json),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			tmpJSON0, err := json.Marshal(map[string]interface{}{
+//				"rules": map[string]interface{}{
+//					"name": "default",
+//					"children": []string{
+//						"#include:rules.json",
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			json0 := string(tmpJSON0)
+//			examplePropertyRulesTemplate, err := akamai.GetPropertyRulesTemplate(ctx, &GetPropertyRulesTemplateArgs{
+//				Templates: []GetPropertyRulesTemplateTemplate{
+//					GetPropertyRulesTemplateTemplate{
+//						TemplateData: json0,
+//						TemplateDir:  "property-snippets/",
+//					},
+//				},
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = akamai.NewProperty(ctx, "exampleProperty", &akamai.PropertyArgs{
+//				ContractId: pulumi.Any(_var.Contractid),
+//				GroupId:    pulumi.Any(_var.Groupid),
+//				RuleFormat: pulumi.String("v2020-03-04"),
+//				Rules:      pulumi.String(examplePropertyRulesTemplate.Json),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ### Variables
 //

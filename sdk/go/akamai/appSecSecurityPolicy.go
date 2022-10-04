@@ -29,31 +29,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
-// 			Name: pulumi.StringRef("Documentation"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		securityPolicyCreateAppSecSecurityPolicy, err := akamai.NewAppSecSecurityPolicy(ctx, "securityPolicyCreateAppSecSecurityPolicy", &akamai.AppSecSecurityPolicyArgs{
-// 			ConfigId:             pulumi.Int(configuration.ConfigId),
-// 			DefaultSettings:      pulumi.Bool(true),
-// 			SecurityPolicyName:   pulumi.String("Documentation Policy"),
-// 			SecurityPolicyPrefix: pulumi.String("gms1"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("securityPolicyCreate", securityPolicyCreateAppSecSecurityPolicy.SecurityPolicyId)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//				Name: pulumi.StringRef("Documentation"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			securityPolicyCreateAppSecSecurityPolicy, err := akamai.NewAppSecSecurityPolicy(ctx, "securityPolicyCreateAppSecSecurityPolicy", &akamai.AppSecSecurityPolicyArgs{
+//				ConfigId:             pulumi.Int(configuration.ConfigId),
+//				DefaultSettings:      pulumi.Bool(true),
+//				SecurityPolicyName:   pulumi.String("Documentation Policy"),
+//				SecurityPolicyPrefix: pulumi.String("gms1"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("securityPolicyCreate", securityPolicyCreateAppSecSecurityPolicy.SecurityPolicyId)
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Output Options
 //
@@ -69,7 +72,7 @@ type AppSecSecurityPolicy struct {
 	CreateFromSecurityPolicyId pulumi.StringPtrOutput `pulumi:"createFromSecurityPolicyId"`
 	// . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
 	DefaultSettings pulumi.BoolPtrOutput `pulumi:"defaultSettings"`
-	// Policy ID for new policy
+	// Unique identifier of the new security policy
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 	// . Name of the new security policy.
 	SecurityPolicyName pulumi.StringOutput `pulumi:"securityPolicyName"`
@@ -121,7 +124,7 @@ type appSecSecurityPolicyState struct {
 	CreateFromSecurityPolicyId *string `pulumi:"createFromSecurityPolicyId"`
 	// . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
 	DefaultSettings *bool `pulumi:"defaultSettings"`
-	// Policy ID for new policy
+	// Unique identifier of the new security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 	// . Name of the new security policy.
 	SecurityPolicyName *string `pulumi:"securityPolicyName"`
@@ -136,7 +139,7 @@ type AppSecSecurityPolicyState struct {
 	CreateFromSecurityPolicyId pulumi.StringPtrInput
 	// . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
 	DefaultSettings pulumi.BoolPtrInput
-	// Policy ID for new policy
+	// Unique identifier of the new security policy
 	SecurityPolicyId pulumi.StringPtrInput
 	// . Name of the new security policy.
 	SecurityPolicyName pulumi.StringPtrInput
@@ -201,7 +204,7 @@ func (i *AppSecSecurityPolicy) ToAppSecSecurityPolicyOutputWithContext(ctx conte
 // AppSecSecurityPolicyArrayInput is an input type that accepts AppSecSecurityPolicyArray and AppSecSecurityPolicyArrayOutput values.
 // You can construct a concrete instance of `AppSecSecurityPolicyArrayInput` via:
 //
-//          AppSecSecurityPolicyArray{ AppSecSecurityPolicyArgs{...} }
+//	AppSecSecurityPolicyArray{ AppSecSecurityPolicyArgs{...} }
 type AppSecSecurityPolicyArrayInput interface {
 	pulumi.Input
 
@@ -226,7 +229,7 @@ func (i AppSecSecurityPolicyArray) ToAppSecSecurityPolicyArrayOutputWithContext(
 // AppSecSecurityPolicyMapInput is an input type that accepts AppSecSecurityPolicyMap and AppSecSecurityPolicyMapOutput values.
 // You can construct a concrete instance of `AppSecSecurityPolicyMapInput` via:
 //
-//          AppSecSecurityPolicyMap{ "key": AppSecSecurityPolicyArgs{...} }
+//	AppSecSecurityPolicyMap{ "key": AppSecSecurityPolicyArgs{...} }
 type AppSecSecurityPolicyMapInput interface {
 	pulumi.Input
 
@@ -277,7 +280,7 @@ func (o AppSecSecurityPolicyOutput) DefaultSettings() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AppSecSecurityPolicy) pulumi.BoolPtrOutput { return v.DefaultSettings }).(pulumi.BoolPtrOutput)
 }
 
-// Policy ID for new policy
+// Unique identifier of the new security policy
 func (o AppSecSecurityPolicyOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecSecurityPolicy) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }

@@ -28,9 +28,6 @@ import * as utilities from "./utilities";
  *     domain: "demo_domain.akadns.net",
  * });
  * ```
- * ## Schema reference
- *
- * You can download the GTM AS Map backing schema from the [Global Traffic Management API](https://developer.akamai.com/api/web_performance/global_traffic_management/v1.html#asmap) page.
  */
 export class GtmAsmap extends pulumi.CustomResource {
     /**

@@ -23,7 +23,7 @@ type PropertyActivationRuleError struct {
 // PropertyActivationRuleErrorInput is an input type that accepts PropertyActivationRuleErrorArgs and PropertyActivationRuleErrorOutput values.
 // You can construct a concrete instance of `PropertyActivationRuleErrorInput` via:
 //
-//          PropertyActivationRuleErrorArgs{...}
+//	PropertyActivationRuleErrorArgs{...}
 type PropertyActivationRuleErrorInput interface {
 	pulumi.Input
 
@@ -56,7 +56,7 @@ func (i PropertyActivationRuleErrorArgs) ToPropertyActivationRuleErrorOutputWith
 // PropertyActivationRuleErrorArrayInput is an input type that accepts PropertyActivationRuleErrorArray and PropertyActivationRuleErrorArrayOutput values.
 // You can construct a concrete instance of `PropertyActivationRuleErrorArrayInput` via:
 //
-//          PropertyActivationRuleErrorArray{ PropertyActivationRuleErrorArgs{...} }
+//	PropertyActivationRuleErrorArray{ PropertyActivationRuleErrorArgs{...} }
 type PropertyActivationRuleErrorArrayInput interface {
 	pulumi.Input
 
@@ -153,7 +153,7 @@ type PropertyActivationRuleWarning struct {
 // PropertyActivationRuleWarningInput is an input type that accepts PropertyActivationRuleWarningArgs and PropertyActivationRuleWarningOutput values.
 // You can construct a concrete instance of `PropertyActivationRuleWarningInput` via:
 //
-//          PropertyActivationRuleWarningArgs{...}
+//	PropertyActivationRuleWarningArgs{...}
 type PropertyActivationRuleWarningInput interface {
 	pulumi.Input
 
@@ -186,7 +186,7 @@ func (i PropertyActivationRuleWarningArgs) ToPropertyActivationRuleWarningOutput
 // PropertyActivationRuleWarningArrayInput is an input type that accepts PropertyActivationRuleWarningArray and PropertyActivationRuleWarningArrayOutput values.
 // You can construct a concrete instance of `PropertyActivationRuleWarningArrayInput` via:
 //
-//          PropertyActivationRuleWarningArray{ PropertyActivationRuleWarningArgs{...} }
+//	PropertyActivationRuleWarningArray{ PropertyActivationRuleWarningArgs{...} }
 type PropertyActivationRuleWarningArrayInput interface {
 	pulumi.Input
 
@@ -271,7 +271,7 @@ func (o PropertyActivationRuleWarningArrayOutput) Index(i pulumi.IntInput) Prope
 }
 
 type PropertyHostname struct {
-	// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+	// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
 	CertProvisioningType string                       `pulumi:"certProvisioningType"`
 	CertStatuses         []PropertyHostnameCertStatus `pulumi:"certStatuses"`
 	// A string containing the original origin's hostname. For example, `"example.org"`.
@@ -285,7 +285,7 @@ type PropertyHostname struct {
 // PropertyHostnameInput is an input type that accepts PropertyHostnameArgs and PropertyHostnameOutput values.
 // You can construct a concrete instance of `PropertyHostnameInput` via:
 //
-//          PropertyHostnameArgs{...}
+//	PropertyHostnameArgs{...}
 type PropertyHostnameInput interface {
 	pulumi.Input
 
@@ -294,7 +294,7 @@ type PropertyHostnameInput interface {
 }
 
 type PropertyHostnameArgs struct {
-	// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+	// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
 	CertProvisioningType pulumi.StringInput                   `pulumi:"certProvisioningType"`
 	CertStatuses         PropertyHostnameCertStatusArrayInput `pulumi:"certStatuses"`
 	// A string containing the original origin's hostname. For example, `"example.org"`.
@@ -320,7 +320,7 @@ func (i PropertyHostnameArgs) ToPropertyHostnameOutputWithContext(ctx context.Co
 // PropertyHostnameArrayInput is an input type that accepts PropertyHostnameArray and PropertyHostnameArrayOutput values.
 // You can construct a concrete instance of `PropertyHostnameArrayInput` via:
 //
-//          PropertyHostnameArray{ PropertyHostnameArgs{...} }
+//	PropertyHostnameArray{ PropertyHostnameArgs{...} }
 type PropertyHostnameArrayInput interface {
 	pulumi.Input
 
@@ -356,7 +356,7 @@ func (o PropertyHostnameOutput) ToPropertyHostnameOutputWithContext(ctx context.
 	return o
 }
 
-// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://learn.akamai.com/en-us/products/core_features/certificate_provisioning_system.html), or `DEFAULT` for certificates provisioned automatically.
+// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
 func (o PropertyHostnameOutput) CertProvisioningType() pulumi.StringOutput {
 	return o.ApplyT(func(v PropertyHostname) string { return v.CertProvisioningType }).(pulumi.StringOutput)
 }
@@ -413,7 +413,7 @@ type PropertyHostnameCertStatus struct {
 // PropertyHostnameCertStatusInput is an input type that accepts PropertyHostnameCertStatusArgs and PropertyHostnameCertStatusOutput values.
 // You can construct a concrete instance of `PropertyHostnameCertStatusInput` via:
 //
-//          PropertyHostnameCertStatusArgs{...}
+//	PropertyHostnameCertStatusArgs{...}
 type PropertyHostnameCertStatusInput interface {
 	pulumi.Input
 
@@ -443,7 +443,7 @@ func (i PropertyHostnameCertStatusArgs) ToPropertyHostnameCertStatusOutputWithCo
 // PropertyHostnameCertStatusArrayInput is an input type that accepts PropertyHostnameCertStatusArray and PropertyHostnameCertStatusArrayOutput values.
 // You can construct a concrete instance of `PropertyHostnameCertStatusArrayInput` via:
 //
-//          PropertyHostnameCertStatusArray{ PropertyHostnameCertStatusArgs{...} }
+//	PropertyHostnameCertStatusArray{ PropertyHostnameCertStatusArgs{...} }
 type PropertyHostnameCertStatusArrayInput interface {
 	pulumi.Input
 
@@ -527,7 +527,7 @@ type PropertyOrigin struct {
 // PropertyOriginInput is an input type that accepts PropertyOriginArgs and PropertyOriginOutput values.
 // You can construct a concrete instance of `PropertyOriginInput` via:
 //
-//          PropertyOriginArgs{...}
+//	PropertyOriginArgs{...}
 type PropertyOriginInput interface {
 	pulumi.Input
 
@@ -559,7 +559,7 @@ func (i PropertyOriginArgs) ToPropertyOriginOutputWithContext(ctx context.Contex
 // PropertyOriginArrayInput is an input type that accepts PropertyOriginArray and PropertyOriginArrayOutput values.
 // You can construct a concrete instance of `PropertyOriginArrayInput` via:
 //
-//          PropertyOriginArray{ PropertyOriginArgs{...} }
+//	PropertyOriginArray{ PropertyOriginArgs{...} }
 type PropertyOriginArrayInput interface {
 	pulumi.Input
 
@@ -652,7 +652,7 @@ type PropertyRuleError struct {
 // PropertyRuleErrorInput is an input type that accepts PropertyRuleErrorArgs and PropertyRuleErrorOutput values.
 // You can construct a concrete instance of `PropertyRuleErrorInput` via:
 //
-//          PropertyRuleErrorArgs{...}
+//	PropertyRuleErrorArgs{...}
 type PropertyRuleErrorInput interface {
 	pulumi.Input
 
@@ -685,7 +685,7 @@ func (i PropertyRuleErrorArgs) ToPropertyRuleErrorOutputWithContext(ctx context.
 // PropertyRuleErrorArrayInput is an input type that accepts PropertyRuleErrorArray and PropertyRuleErrorArrayOutput values.
 // You can construct a concrete instance of `PropertyRuleErrorArrayInput` via:
 //
-//          PropertyRuleErrorArray{ PropertyRuleErrorArgs{...} }
+//	PropertyRuleErrorArray{ PropertyRuleErrorArgs{...} }
 type PropertyRuleErrorArrayInput interface {
 	pulumi.Input
 
@@ -782,7 +782,7 @@ type PropertyRuleWarning struct {
 // PropertyRuleWarningInput is an input type that accepts PropertyRuleWarningArgs and PropertyRuleWarningOutput values.
 // You can construct a concrete instance of `PropertyRuleWarningInput` via:
 //
-//          PropertyRuleWarningArgs{...}
+//	PropertyRuleWarningArgs{...}
 type PropertyRuleWarningInput interface {
 	pulumi.Input
 
@@ -815,7 +815,7 @@ func (i PropertyRuleWarningArgs) ToPropertyRuleWarningOutputWithContext(ctx cont
 // PropertyRuleWarningArrayInput is an input type that accepts PropertyRuleWarningArray and PropertyRuleWarningArrayOutput values.
 // You can construct a concrete instance of `PropertyRuleWarningArrayInput` via:
 //
-//          PropertyRuleWarningArray{ PropertyRuleWarningArgs{...} }
+//	PropertyRuleWarningArray{ PropertyRuleWarningArgs{...} }
 type PropertyRuleWarningArrayInput interface {
 	pulumi.Input
 
