@@ -22,6 +22,7 @@ env:
   SIGNING_PASSWORD: ${{ secrets.JAVA_SIGNING_PASSWORD }}
   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
   TRAVIS_OS_NAME: linux
+  TF_APPEND_USER_AGENT: pulumi
 jobs:
   build_sdk:
     name: build_sdk
